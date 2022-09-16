@@ -5,12 +5,339 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-09-08T11:00:00+02:00</updated>
+    <updated>2022-09-15T21:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/</id>
+        <title>Guía de instalación y uso básico de FreeBSD</title>
+        <updated>2021-04-30T16:30:00+02:00</updated>
+        <published>2021-04-30T16:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Aún con su reducida cuota de uso las distribuciones GNU/Linux son conocidas por muchas personas como alternativa a los sistemas operativos comerciales Windows de Microsoft y macOS de Apple para propósitos de entorno de escritorio. Las distribuciones BSD también son conocidas, cualquier usuario de GNU/Linux con seguridad las conoce. FreeBSD es una abanderada de las BSD, aún así no son tantos los usuarios que deciden instalarla como su sistema operativo de uso cotidiano. Es fácil y rápido de instalar y a un usuario de GNU/Linux e incluso macOS el cambio al nuevo sistema resulta conocido ya que el entorno de escritorio y muchos comandos son exactamente los mismos.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/freebsd.svg" width="200" height="196" alt="FreeBSD" title="FreeBSD"  class=""></p>
+</div>
+<p>La cuota de uso entre los diferentes sistemas operativos para computadoras de escritorio está dominada con más de un 80% por el sistema operativo <a href="https://www.microsoft.com/es-es/windows/">Windows</a> de <a href="https://www.microsoft.com/">Microsoft</a>, un sistema operativo comercial con una licencia de uso privativo dirigido a ser fácil de usar incluso para usuarios sin ser expertos en informática. El éxito de Windows se debe a que es la opción preinstalada por la mayoría de ordenadores y portátiles a la venta, posee el paquete ofimático <a href="https://products.office.com/es-es/">Office</a> también de Microsoft imprescindible en muchos puestos de trabajo, se puede usar sin licencia con algunas limitaciones o se puede <a href="https://picodotdev.github.io/blog-bitix/2020/09/como-comprar-una-licencia-y-activar-windows-10-y-office-2019/">comprar una licencia de Windows 10 completamente válida</a> a un precio significativamente más reducido que el oficial.</p>
+<p>El siguiente sistema operativo de escritorio más usado es <a href="https://www.apple.com/macos/">macOS</a> de <a href="https://www.apple.com/">Apple</a>, un sistema operativo comercial con licencia privativa exclusivo de las computadoras <em>Mac</em>. Los <em>Mac</em> se consideran ordenadores que suelen incorporar las últimas tecnologías y cuidando más diseño que las que se encuentran en ordenadores con Windows, sin embargo, la exclusividad se ve reflejada en un significativo precio comparado con PC de características equivalentes. A pesar del precio son computadoras con cierta popularidad, deseadas y vendidas.</p>
+<p>La tercera opción son alguna de <a href="https://picodotdev.github.io/blog-bitix/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/">las distribuciones de GNU/Linux</a> siendo una de las más populares <a href="https://www.ubuntu.com/">Ubuntu</a>. Las distribuciones y sistema operativo GNU/Linux se caracterizan por tener una licencia de software libre basada en <a href="https://www.gnu.org/licenses/gpl-3.0.html">la GPL</a> y ser generalmente gratuitas incluyendo la práctica totalidad de los programas. Las distribuciones GNU/Linux actualmente son tan fáciles de instalar y usar que los sistemas operativos Windows o <em>macOS</em>, incluyendo ser compatible con la mayoría del hardware. Sin embargo, dado que no hay tantas empresas que vendan y distribuyan equipos con algún GNU/Linux preinstalado no tiene en el escritorio una cuota tan alta como las anteriores, dos empresas que distribuyen GNU/Linux en sus equipos son <a href="https://slimbook.es/">Slimbook</a> y <a href="https://www.vantpc.es/">Vant</a>. En el área de los servidores y computación en la nube, por el contrario, GNU/Linux sí es la opción que domina el mercado, por su licencia, flexibilidad, fiabilidad y potencia.</p>
+<p>La cuarta opción mucho menos conocida y usada son alguna de las distribuciones BSD. Las distribuciones BSD también tienen una licencia de software libre incluso más permisiva que la licencia GPL. La mayor permisividad de las licencias BSD la hace atractiva para algunas empresas, que al contrario de la licencia GPL con la licencia BSD no están obligadas a distribuir el código fuente de los programas lo que les permite proteger sus desarrollos de competidores. Es utilizada por empresas como <a href="https://www.netflix.com/es/">Netflix</a>, <a href="https://www.sony.es/">Sony</a> en las consolas <a href="https://www.playstation.com/es-es/">PlayStation</a> e incluso macOS está basado en partes de BSD. Aunque las licencias BSD permiten usar el software sin obligar a colaborar en el desarrollo de su software se ven beneficiadas por colaboraciones puntuales dado que las empresas están interesadas en mejorar el software en el basan su negocio.</p>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<h3 id="la-distribución-freebsd">La distribución FreeBSD</h3>
+<p>Entre las distribuciones BSD una popular es <a href="https://www.freebsd.org/es/">FreeBSD</a>, que es posible utilizar con propósitos de computadora de escritorio, su uso también está destinado a software de servidor que es conocida por su pila TCP/IP de gran rendimiento para comunicación por red.</p>
+<p>El mérito de las distribuciones BSD como FreeBSD es ciertamente notable, aunque no tienen la popularidad ni el apoyo por parte de las empresas ni disponer del mismo número de desarrolladores dedicado a su mejora de las distribuciones GNU/Linux consigue proporcionar un sistema operativo de gran calidad con funcionalidades equivalentes a las existentes GNU/Linux o incluso más innovadoras con un modelo de desarrollo diferente de GNU/Linux.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/07/las-diferencias-entre-gnu-linux-bsd-y-sus-distribuciones/">Las diferencias entre GNU/Linux, BSD y sus distribuciones</a></li>
+</ul>
+<p>Es perfectamente capaz de realizar las tareas comunes con el propósito de ordenador de escritorio. Posee programas de navegadores web, multimedia como vídeo y audio, ofimática, visor de documentos e imágenes y una colección formada por más de 36000 paquetes de software compatibles. Otras funciones de software que posee son <a href="https://docs.freebsd.org/en/books/handbook/virtualization">virtualización</a>, <a href="https://docs.freebsd.org/en/books/handbook/jails">Jails</a> para crear procesos separados del resto del sistema que es la base de <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">los contenedores de Docker</a>, <a href="https://en.wikipedia.org/wiki/DTrace">DTrace</a> también desarrollada originalmente por <a href="https://es.wikipedia.org/wiki/Sun_Microsystems">Sun Microsystems</a>, <a href="https://www.winehq.org/">WINE</a> para ejecutar programas de Windows y la posibilidad de agregar <a href="https://docs.freebsd.org/en/books/handbook/linuxemu">compatibilidad binaria con Linux</a> lo que hace posible utilizar programas cuando no están disponibles de forma nativa.</p>
+<p>La mayor dificultad de usar FreeBSD es en que sea compatible con todo el hardware de la computadora, si bien la compatibilidad con el hardware en GNU/Linux actualmente no es un problema en FreeBSD dado el mayor limitado de desarrolladores que tiene el interés de las compañía en ofrecer soporte para su hardware puede presentar algún problema de compatibilidad.</p>
+<p>Las novedades de destacadas de FreeBSD 13 publicada en abril de 2021 es el soporte de la arquitectura de procesadores <em>arm64</em> al mismo nivel que la arquitectura de procesadores <em>amd64</em>, actualización de paquetes de compiladores, eliminación de algunos programas obsoletos de GNU, soporte en el <em>kernel</em> de TLS y otras mejoras de menor relevancia.</p>
+<div class="media">
+<figure>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/freebsd.svg" width="200" height="150" alt="FreeBSD" title="FreeBSD"  class="lozad ">
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/beastie.svg" width="200" height="150" alt="Beastie" title="Beastie"  class="lozad "></p>
+<figcaption>Logotipo y mascota de FreeBSD</figcaption>
+</figure>
+</div>
+<h4 id="el-sistema-de-archivos-zfs-qué-lo-hace-diferente">El sistema de archivos ZFS, ¿qué lo hace diferente?</h4>
+<p>Una de las opciones como sistema de archivos es la posibilidad de utilizar ZFS. La licencia BSD permite utilizar más fácilmente el avanzado sistema de archivos ZFS desarrollado originalmente por <a href="https://picodotdev.github.io/blog-bitix/2018/10/sun-microsystems-cae-la-adquiere-oracle/">la difunta Sun Microsystems</a>.</p>
+<p>Lo que hace diferente a ZFS es que combina el rol de gestor de volúmenes con el rol de sistema de archivos. El sistema de archivos ZFS es consciente de la estructura subyacente de discos. Al contrario que los sistemas de archivos tradicionales que solo pueden crearse en un único disco de almacenamiento, esto obliga a que si hay dos discos sea necesario crear dos sistemas de archivos diferentes.</p>
+<p>La combinación de ZFS como gestor de volúmenes y sistema de archivos permite la creación de varios sistemas de archivos todos compartiendo un conjunto de almacenamiento disponible. Una de las mayores ventajas de ZFS de la disposición física de los discos es que los sistemas de archivos existentes pueden ser agrandados automáticamente al añadir discos adicionales al conjunto. Este nuevo espacio queda disponible para todos los sistemas de archivos. También tiene propiedades que pueden ser aplicadas a cada sistema de archivos en vez de crear un único sistema de archivos monolítico.</p>
+<div class="media">
+<figure>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openzfs.svg" width="200" height="150" alt="OpenZFS" title="OpenZFS"  class="lozad "></p>
+<figcaption>OpenZFS</figcaption>
+</figure>
+</div>
+<h3 id="guía-de-instalación">Guía de instalación</h3>
+<p>El primer paso de la instalación es descargar la última de las imágenes de medio de instalación disponibles, ya sea la versión de menor tamaño para realizar la instalación por red o la más completa sin necesidad de descargar nada adicionalmente desde la <a href="https://www.freebsd.org/where/">página de descargas de FreeBSD</a>. En caso de duda en la instalación tiene disponible un <a href="https://docs.freebsd.org/en/books/handbook/">manual completo de la instalación y uso</a> o como documentación de referencia.</p>
+<p>En este caso como primera toma de contacto con FreeBSD realizo la instalación en una máquina virtual con <a href="https://www.virtualbox.org/">VirtualBox</a> que está disponible también para Windows como macOS que permite probarla sin necesidad de eliminar el sistema existente en la computadora. En la definición de la máquina virtual se especifican las características de la máquina virtualizada desde el tamaño de memoria, almacenamiento de disco o tipo de BIOS, adicionalmente se proporciona la imagen del medio de instalación y se inserta en la unidad DVD virtual de la máquina.</p>
+<p>El siguiente <a href="https://www.virtualbox.org/ticket/19910">error de VirtualBox impide iniciar FreeBSD en modo UEFI</a>, hasta que no sea resuelto requiere iniciar el sistema como BIOS, para la prueba el tipo de sistema BIOS o UEFI no tiene relevancia.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/virtualbox-freebsd_hu32b1bbdb557266d42cb574a4337dc8b4_133679_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de máquina virtual con VirtualBox"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/virtualbox-freebsd_hu32b1bbdb557266d42cb574a4337dc8b4_133679_300x200_fit_box_3.png" width="259" height="200" alt="Configuración de máquina virtual con VirtualBox" title="Configuración de máquina virtual con VirtualBox"  class="lozad "></a></p>
+<figcaption>Configuración de máquina virtual con VirtualBox</figcaption>
+</figure>
+</div>
+<p>La instalación de FreeBSD utiliza un asistente que guía y hace la instalación sencilla, rápida y fiable. Descargado el medio de instalación e iniciado el sistema desde él se presenta un menú de opciones que permiten iniciar la instalación. En los diferentes pasos del asistente se van introduciendo las preferencias de configuración desde la disposición del teclado, particionado del sistema de almacenamiento, copiado de archivos del sistema base, establecimiento de contraseña del usuario <em>root</em>, configuración de red, zona horaria y usuarios adicionales.</p>
+<p>Inicio de la instalación.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-1_hu7212a89f790981ae87f2fe0753343803_6265_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de la instalación de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-1_hu7212a89f790981ae87f2fe0753343803_6265_200x150_fit_box_3.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-2_hu906318909643a300a5779a0bf877962a_4028_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de la instalación de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-2_hu906318909643a300a5779a0bf877962a_4028_200x150_fit_box_3.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-3_hu554ab2f7ce3c7381878ae69956f2dcfb_8603_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de la instalación de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-3_hu554ab2f7ce3c7381878ae69956f2dcfb_8603_200x150_fit_box_3.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-4_hu34e1fdf110472532390713092768e5ce_8771_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de la instalación de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-4_hu34e1fdf110472532390713092768e5ce_8771_200x150_fit_box_3.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-5_hu66e401d2aa6084fad1638162df023955_8568_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de la instalación de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-5_hu66e401d2aa6084fad1638162df023955_8568_200x150_fit_box_3.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-6_hu09df91305c856ad0993ef44378aef1d4_4229_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de la instalación de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-6_hu09df91305c856ad0993ef44378aef1d4_4229_200x150_fit_box_3.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-7_hu6af7cb70c9bc59e8698d32af3b938b8f_6484_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de la instalación de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-7_hu6af7cb70c9bc59e8698d32af3b938b8f_6484_200x150_fit_box_3.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-8_hu6ef65e0211dc7edc452e52f103c4bba4_6215_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de la instalación de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-8_hu6ef65e0211dc7edc452e52f103c4bba4_6215_200x150_fit_box_3.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-9_hu87884b55ad29dcefdf14d2574fa057af_8063_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de la instalación de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-9_hu87884b55ad29dcefdf14d2574fa057af_8063_200x150_fit_box_3.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-10_huf1f21f5d40e16b556451bd79e2d169ac_7326_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de la instalación de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-10_huf1f21f5d40e16b556451bd79e2d169ac_7326_200x150_fit_box_3.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-11_hu374be8d6642d27ead820ef52e931d59e_3533_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de la instalación de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-11_hu374be8d6642d27ead820ef52e931d59e_3533_200x150_fit_box_3.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-12_hub76528d1fb52dc47910a470cb6357524_8041_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de la instalación de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-12_hub76528d1fb52dc47910a470cb6357524_8041_200x150_fit_box_3.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-13_hub5f920251f60dd5b75a07b4370161dcd_4401_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de la instalación de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-13_hub5f920251f60dd5b75a07b4370161dcd_4401_200x150_fit_box_3.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></a></p>
+<figcaption>Inicio de la instalación de FreeBSD</figcaption>
+</figure>
+</div>
+<p>El siguiente paso es automático, consiste en la copia de los archivos base del sistema.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-1_hu7c9c5212a146fcd4da1874b8afe773f6_4970_2560x1440_fit_box_3.png" data-gallery="" title="Copia de archivos base de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-1_hu7c9c5212a146fcd4da1874b8afe773f6_4970_200x150_fit_box_3.png" width="200" height="111" alt="Copia de archivos base de FreeBSD" title="Copia de archivos base de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-2_hu85249a26869fcd519a3393054ba4422f_4915_2560x1440_fit_box_3.png" data-gallery="" title="Copia de archivos base de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-2_hu85249a26869fcd519a3393054ba4422f_4915_200x150_fit_box_3.png" width="200" height="111" alt="Copia de archivos base de FreeBSD" title="Copia de archivos base de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-3_hu2a8e7bff5327af24c1d796fd1515a89b_4839_2560x1440_fit_box_3.png" data-gallery="" title="Copia de archivos base de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-3_hu2a8e7bff5327af24c1d796fd1515a89b_4839_200x150_fit_box_3.png" width="200" height="111" alt="Copia de archivos base de FreeBSD" title="Copia de archivos base de FreeBSD"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-4_hu01c7fc69c25b52089d79343322ed4b3d_5397_2560x1440_fit_box_3.png" data-gallery="" title="Copia de archivos base de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-4_hu01c7fc69c25b52089d79343322ed4b3d_5397_200x150_fit_box_3.png" width="200" height="111" alt="Copia de archivos base de FreeBSD" title="Copia de archivos base de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-5_hue0c4cb636d29cae02072a83eb8675fcd_5389_2560x1440_fit_box_3.png" data-gallery="" title="Copia de archivos base de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-5_hue0c4cb636d29cae02072a83eb8675fcd_5389_200x150_fit_box_3.png" width="200" height="111" alt="Copia de archivos base de FreeBSD" title="Copia de archivos base de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-6_hufc9811253542095e6b9321ec5fc5f418_5414_2560x1440_fit_box_3.png" data-gallery="" title="Copia de archivos base de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-6_hufc9811253542095e6b9321ec5fc5f418_5414_200x150_fit_box_3.png" width="200" height="111" alt="Copia de archivos base de FreeBSD" title="Copia de archivos base de FreeBSD"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-7_hud92aff9626f60a3d586c3bd42fb8d10d_5330_2560x1440_fit_box_3.png" data-gallery="" title="Copia de archivos base de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-7_hud92aff9626f60a3d586c3bd42fb8d10d_5330_200x150_fit_box_3.png" width="200" height="111" alt="Copia de archivos base de FreeBSD" title="Copia de archivos base de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-8_hua12d6696355d295139774a890b9a4fff_5378_2560x1440_fit_box_3.png" data-gallery="" title="Copia de archivos base de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-8_hua12d6696355d295139774a890b9a4fff_5378_200x150_fit_box_3.png" width="200" height="111" alt="Copia de archivos base de FreeBSD" title="Copia de archivos base de FreeBSD"  class="lozad "></a></p>
+<figcaption>Copia de archivos base de FreeBSD</figcaption>
+</figure>
+</div>
+<p>A continuación se sigue con la configuración básica del sistema para la conectividad de red, usuarios, fecha y servicios demonio.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-1_hu865c01dcbc5ae2c9714bac9c0a2eccf8_4235_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-1_hu865c01dcbc5ae2c9714bac9c0a2eccf8_4235_200x150_fit_box_3.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-2_huf53fecf1377a1f09be5aaac94a646a67_3666_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-2_huf53fecf1377a1f09be5aaac94a646a67_3666_200x150_fit_box_3.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-3_hueb639bb4871204c9dab99acad0845a0f_3680_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-3_hueb639bb4871204c9dab99acad0845a0f_3680_200x150_fit_box_3.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-4_hue8bfd8c3eecc611ad997e7cb69fc56ee_3661_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-4_hue8bfd8c3eecc611ad997e7cb69fc56ee_3661_200x150_fit_box_3.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-5_hu88c67c073e1480223ad4bd3b06243bf4_4148_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-5_hu88c67c073e1480223ad4bd3b06243bf4_4148_200x150_fit_box_3.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-6_huc2f95f8c6e69f7a19f7d3d7275ccc3c0_5090_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-6_huc2f95f8c6e69f7a19f7d3d7275ccc3c0_5090_200x150_fit_box_3.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-7_hu593080d19c3f10fc571ce8b43ddf0f2d_7442_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-7_hu593080d19c3f10fc571ce8b43ddf0f2d_7442_200x150_fit_box_3.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-8_hu599d1a9416b78d389a5d4b8e93c4f553_6770_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-8_hu599d1a9416b78d389a5d4b8e93c4f553_6770_200x150_fit_box_3.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-9_hu6299e7d8892219a488c6bc8e28776605_6984_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-9_hu6299e7d8892219a488c6bc8e28776605_6984_200x150_fit_box_3.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-10_hu10172274c45fe6491f0ccfbdc2460ed8_5442_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-10_hu10172274c45fe6491f0ccfbdc2460ed8_5442_200x150_fit_box_3.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-11_hu5098b5b05600ad22a73d52d60d36970f_3333_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-11_hu5098b5b05600ad22a73d52d60d36970f_3333_200x150_fit_box_3.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-12_hue621a0b9e3f9e71b62983600aa3249e6_7307_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-12_hue621a0b9e3f9e71b62983600aa3249e6_7307_200x150_fit_box_3.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-13_hu67f7065452d3a9ffd81faf605a521e70_10225_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-13_hu67f7065452d3a9ffd81faf605a521e70_10225_200x150_fit_box_3.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></a></p>
+<figcaption>Configuración de FreeBSD</figcaption>
+</figure>
+</div>
+<p>Se ha de establecer la contraseña del usuario <em>root</em> que otorga permisos de superusuario. También se da la oportunidad de crear los usuarios en el sistema.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/root-password-freebsd_hu93e4cfb29f98e409061bebf208829aff_3040_2560x1440_fit_box_3.png" data-gallery="" title="Contraseña de superusuario en FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/root-password-freebsd_hu93e4cfb29f98e409061bebf208829aff_3040_200x150_fit_box_3.png" width="200" height="111" alt="Contraseña de superusuario en FreeBSD" title="Contraseña de superusuario en FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/usuarios-freebsd-1_hufade51a88785e5942863e1c1e5bf190f_3601_2560x1440_fit_box_3.png" data-gallery="" title="Creación de usuarios en FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/usuarios-freebsd-1_hufade51a88785e5942863e1c1e5bf190f_3601_200x150_fit_box_3.png" width="200" height="111" alt="Creación de usuarios en FreeBSD" title="Creación de usuarios en FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/usuarios-freebsd-2_hu7edac7d8cf7fe1bee82291761b29bc33_7859_2560x1440_fit_box_3.png" data-gallery="" title="Creación de usuarios en FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/usuarios-freebsd-2_hu7edac7d8cf7fe1bee82291761b29bc33_7859_200x150_fit_box_3.png" width="200" height="111" alt="Creación de usuarios en FreeBSD" title="Creación de usuarios en FreeBSD"  class="lozad "></a></p>
+<figcaption>Contraseña de superusuario y creación de usuarios en FreeBSD</figcaption>
+</figure>
+</div>
+<p>Las últimas pantalla indican la finalización de la instalación.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/finalizacion-instalacion-1_hua8f120f8dec2374b3a1950d4f439e385_8918_2560x1440_fit_box_3.png" data-gallery="" title="Finalización de la instalación de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/finalizacion-instalacion-1_hua8f120f8dec2374b3a1950d4f439e385_8918_200x150_fit_box_3.png" width="200" height="111" alt="Finalización de la instalación de FreeBSD" title="Finalización de la instalación de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/finalizacion-instalacion-2_hu6a4b2d6550f802a83e19fe12928c6910_4623_2560x1440_fit_box_3.png" data-gallery="" title="Finalización de la instalación de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/finalizacion-instalacion-2_hu6a4b2d6550f802a83e19fe12928c6910_4623_200x150_fit_box_3.png" width="200" height="111" alt="Finalización de la instalación de FreeBSD" title="Finalización de la instalación de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/finalizacion-instalacion-3_hu17f9f822a4c99352e2c17acb8331a625_4010_2560x1440_fit_box_3.png" data-gallery="" title="Finalización de la instalación de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/finalizacion-instalacion-3_hu17f9f822a4c99352e2c17acb8331a625_4010_200x150_fit_box_3.png" width="200" height="111" alt="Finalización de la instalación de FreeBSD" title="Finalización de la instalación de FreeBSD"  class="lozad "></a></p>
+<figcaption>Finalización de la instalación de FreeBSD</figcaption>
+</figure>
+</div>
+<h4 id="primer-inicio-en-freebsd">Primer inicio en FreeBSD</h4>
+<p>Completada la instalación al reiniciar el sistema se presenta la pantalla del cargador de arranque y posteriormente la de inicio de sesión en modo texto a partir de la cual es posible instalar programas adicionales y un entorno de escritorio con interfaz gráfica.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/cargador-arranque-freebsd_hu2e4546020df6c6ae4fd4c9efab81aa48_6267_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de sesión en modo texto de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/cargador-arranque-freebsd_hu2e4546020df6c6ae4fd4c9efab81aa48_6267_200x150_fit_box_3.png" width="200" height="111" alt="Inicio de sesión en modo texto de FreeBSD" title="Inicio de sesión en modo texto de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/inicio-sesion-texto-freebsd-1_hu758734cbcd91618808d7d98d2ca3a457_10136_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de sesión en modo texto de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/inicio-sesion-texto-freebsd-1_hu758734cbcd91618808d7d98d2ca3a457_10136_200x150_fit_box_3.png" width="200" height="111" alt="Inicio de sesión en modo texto de FreeBSD" title="Inicio de sesión en modo texto de FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/inicio-sesion-texto-freebsd-2_hub71f66c09b9e21ccf21474f0658e66f3_9350_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de sesión en modo texto de FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/inicio-sesion-texto-freebsd-2_hub71f66c09b9e21ccf21474f0658e66f3_9350_200x150_fit_box_3.png" width="200" height="111" alt="Inicio de sesión en modo texto de FreeBSD" title="Inicio de sesión en modo texto de FreeBSD"  class="lozad "></a></p>
+</figure>
+</div>
+<h4 id="instalación-de-entorno-de-escritorio">Instalación de entorno de escritorio</h4>
+<p>La instalación del entorno de escritorio requiere instalar el servidor gráfico y el entorno de escritorio deseado. Los entornos de escritorio disponibles son los mismos que están disponibles en GNU/Linux entre ellos <a href="https://www.gnome.org/">GNOME</a>, <a href="https://www.kde.org/">KDE</a> y <a href="https://xfce.org/">XFCE</a> con lo que la experiencia de usuario es en gran medida la misma que en una distribución GNU/Linux, la mayor diferencia es que las versión del entorno de escritorio de FreeBSD disponible sea la versión anterior o tarde más tiempo en estar disponible desde su publicación.</p>
+<p>A partir de la consola de inicio de sesión en modo texto hay que instalar los paquete del servidor gráfico <a href="https://www.x.org/wiki/">Xorg</a>, el paquete del entorno de escritorio deseado y cambiar un archivo de configuración si se desea iniciar el entorno de escritorio al inicio del sistema.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pkg install xorg</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># pw groupmod video -m freebsd || pw groupmod wheel -m freebsd</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># pkg install gnome3</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pkg-gnome.sh</span>
+    </div>
+</div>
+<p>Para iniciar el gestor de sesión GNOME en el inicio del sistema hay que cambiar la configuración en los archivos <em>/etc/rc.conf</em> y <em>~/.xinitrc</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">dbus_enable=&#34;YES&#34;&#10;</span></span><span class="line"><span class="cl">gdm_enable=&#34;YES&#34;&#10;</span></span><span class="line"><span class="cl">gdm_lang=&#34;es_ES.UTF-8&#34;&#10;</span></span><span class="line"><span class="cl">gnome_enable=&#34;YES&#34;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>rc-gnome.conf</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">exec /usr/local/bin/gnome-session&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>xinitrc.conf</span>
+    </div>
+</div>
+<p>Para establecer como idioma el español se requiere añadir la siguiente configuración en el archivo <em>/usr/local/etc/gdm/locale.conf</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">LANG=&#34;es_ES.UTF-8&#34;&#10;</span></span><span class="line"><span class="cl">LC_CTYPE=&#34;es_ES.UTF-8&#34;&#10;</span></span><span class="line"><span class="cl">LC_MESSAGES=&#34;es_ES.UTF-8&#34;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>locale.conf</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/gnome-freebsd-1_hu199b3fb920010271f55514cba9e8ee93_13452_2560x1440_fit_box_3.png" data-gallery="" title="GNOME en FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/gnome-freebsd-1_hu199b3fb920010271f55514cba9e8ee93_13452_200x150_fit_box_3.png" width="200" height="150" alt="GNOME en FreeBSD" title="GNOME en FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/gnome-freebsd-2_hu3fb0d08f1678df887aa433b87f3258dd_584247_2560x1440_fit_box_3.png" data-gallery="" title="GNOME en FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/gnome-freebsd-2_hu3fb0d08f1678df887aa433b87f3258dd_584247_200x150_fit_box_3.png" width="200" height="150" alt="GNOME en FreeBSD" title="GNOME en FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/gnome-freebsd-3_huc7bc7fe3f990d0a956a802d8870c9d5f_67920_2560x1440_fit_box_3.png" data-gallery="" title="GNOME en FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/gnome-freebsd-3_huc7bc7fe3f990d0a956a802d8870c9d5f_67920_200x150_fit_box_3.png" width="200" height="150" alt="GNOME en FreeBSD" title="GNOME en FreeBSD"  class="lozad "></a></p>
+<figcaption>GNOME en FreeBSD</figcaption>
+</figure>
+</div>
+<h3 id="uso-básico">Uso básico</h3>
+<p>FreeBSD proporciona una colección de programas básicos de línea de comandos incorporados en el sistema, al contrario que en GNU/Linux estos programas están desarrollados por los mismos desarrolladores del núcleo del sistema operativo y se actualizan como una unidad en cada versión en vez de individualmente.</p>
+<p>Instalado el sistema dos tareas básicas son la instalación de programas adicionales y la actualización del sistema para obtener nuevas versiones de los programas, correcciones de errores y actualizaciones de seguridad.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/uname-freebsd_hu422ea38d79f1619ea04a68239cf2210c_312778_2560x1440_fit_box_3.png" data-gallery="" title="Comando uname en FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/uname-freebsd_hu422ea38d79f1619ea04a68239cf2210c_312778_300x200_fit_box_3.png" width="267" height="200" alt="Comando uname en FreeBSD" title="Comando uname en FreeBSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/df-freebsd_hu40fb3d33aaf41cb4833baee97a9765af_347157_2560x1440_fit_box_3.png" data-gallery="" title="Comando df en FreeBSD"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/df-freebsd_hu40fb3d33aaf41cb4833baee97a9765af_347157_300x200_fit_box_3.png" width="267" height="200" alt="Comando df en FreeBSD" title="Comando df en FreeBSD"  class="lozad "></a></p>
+<figcaption>Comandos uname y df en FreeBSD</figcaption>
+</figure>
+</div>
+<h4 id="obtener-permisos-de-superusuario-_root_">Obtener permisos de superusuario <em>root</em></h4>
+<p>Por seguridad algunas tareas administrativas y de edición de archivos de configuración requieren permisos de superusuario <em>root</em>. Esto es posible iniciando sesión en el sistema como el usuario <em>root</em> o obteniendo los privilegios de superusuario con el programa <em>su</em> o <em>sudo</em>.</p>
+<p>Hay un único superusuario en el sistema cuyo nombre de usuario es <em>root</em>, este usuario tiene permisos para realizar cualquier acción en el sistema. La contraseña es necesaria para iniciar sesión, es la proporcionada en la instalación del sistema, y se solicita al obtener privilegios de superusuario en la línea de comandos con el comando <em>su</em>. El resto de usuarios distintos a <em>root</em> son usuarios regulares, para que un usuario regular obtenga privilegios de supersusaurio se ha de utilizar el comando <em>su</em> pertenecer al grupo <em>wheel</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pw groupmod whell -M freebsd</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pw-add-user-to-wheel.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ su -&#10;</span></span><span class="line"><span class="cl"><span class="c1">#</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>su.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/su_hu4b8d9e5441972a95b55ffa0dabb5edba_299404_2560x1440_fit_box_3.png" data-gallery="" title="Obtener privilegios de superusuario"><img src="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/su_hu4b8d9e5441972a95b55ffa0dabb5edba_299404_300x200_fit_box_3.png" width="267" height="200" alt="Obtener privilegios de superusuario" title="Obtener privilegios de superusuario"  class="lozad "></a></p>
+<figcaption>Obtener privilegios de superusuario</figcaption>
+</figure>
+</div>
+<h4 id="instalación-de-paquetes">Instalación de paquetes</h4>
+<p>La finalidad de cualquier sistema operativo es permitir realizar tareas productivas en él a través de los programas. Para usar un programa es necesario instalarlo previamente en el sistema.</p>
+<p>FreeBSD diferencia los programas de dos formas en como están distribuidos, los paquetes con binarios precompilados para su fácil y rápida instalación y los <em>ports</em> que requieren la compilación a partir del código fuente. En este sentido los paquetes de de FreeBSD son similares a los de los repositorios oficiales <a href="https://www.archlinux.org/">Arch Linux</a> y los <em>ports</em> al <a href="https://aur.archlinux.org/">repositorio AUR</a> que requieren igualmente ser compilados a partir del código fuente.</p>
+<p>La instalación de un paquete se realiza con el comando <em>pkg</em> para buscar su nombre e instalarlo.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pkg search gnome</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># pkg search firefox</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># pkg search libreoffice</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># pkg search gimp</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># pkg search vlc</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># pkg search vim</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pkg-search.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pkg install libreoffice</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pkg-install.sh</span>
+    </div>
+</div>
+<h4 id="actualización-del-sistema">Actualización del sistema</h4>
+<p>Una vez realizada la instalación en el futuro se publicarán nuevas versiones de los programas. Para mantener el sistema actualizado hay que ejecutar de forma periódica un comando de actualización.</p>
+<ul>
+<li><a href="https://docs.freebsd.org/en/books/handbook/cutting-edge/">Updating and Upgrading FreeBSD</a></li>
+</ul>
+<p>La actualización de parches de seguridad de FreeBSD se realiza con los siguientes dos comandos. El sistema base del sistema operativo de FreeBSD se actualiza independientemente de los programas instalados como paquetes.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># freebsd-update fetch</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># freebsd-update install</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>freebsd-update.sh</span>
+    </div>
+</div>
+<p>El siguiente comando permite revertir la actualización en caso de algún error.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># freebsd-update rollback</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>freebsd-update-rollback.sh</span>
+    </div>
+</div>
+<p>Para actualizar a versiones mayores se realiza con el siguiente comando en el que se indica la versión a la que actualizar.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># freebsd-update -r 13.0-RELEASE upgrade</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>freebsd-update-upgrade.sh</span>
+    </div>
+</div>
+<p>Los paquetes se actualizan independientemente del sistema base de FreeBSD con el siguiente comando.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pkg upgrade</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pkg-upgrade.sh</span>
+    </div>
+</div>
+<p>En caso de una actualización a una versión mayor de FreeBSD se requiere una reinstalación de todos los paquetes y <em>ports</em> con los siguientes comandos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pkg-static upgrade -f</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># portmaster -af</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># freebsd-update install</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>freebsd-pkg-upgrade.sh</span>
+    </div>
+</div>
+<h3 id="obtener-más-ayuda">Obtener más ayuda</h3>
+<p>La cuota de uso de GNU/Linux no es muy grande en el escritorio pero tiene un grupo de usuarios muy activo que comparte gran cantidad de información, es difícil no encontrar una respuesta a una duda o problema y es fácil obtener respuesta a una pregunta.</p>
+<p>El grupo de usuario de FreeBSD es más reducido y por tanto encontrar respuestas a algo concreto no muy común es más difícil, aún siendo un grupo de usuarios más reducido se caracteriza por recibir calurosamente a los nuevos usuarios de FreeBSD. Una buena forma de obtener respuestas y soporte son los foros de usuario y las listas de distribución. Aunque no hay tantos canales de YouTube y artículos en <em>blogs</em> es posible encontrar información sobre FreeBSD a través de los buscadores.</p>
+<ul>
+<li><a href="https://forums.freebsd.org/">Foros de FreeBSD</a></li>
+<li><a href="https://www.freebsd.org/community/mailinglists/">Listas de distribución</a></li>
+<li><a href="https://www.bsdnow.tv/">BSD Now</a> un <em>podcast</em> semanal sobre las distribuciones BSD</li>
+</ul>
+<h4 id="libros">Libros</h4>
+<p>También hay algunos libros dedicados en exclusiva a FreeBSD como <a href="https://amzn.to/3nLLi0h">Absolute Freebsd: The Complete Guide To FreeBSD</a>, <a href="https://amzn.to/3nCspgc">Design and Implementation of the FreeBSD Operating System</a>, <a href="https://amzn.to/3e3an3p">FreeBSD Device Drivers: A Guide for the Intrepid</a>, <a href="https://amzn.to/3e4mU6t">FreeBSD Mastery: ZFS</a> y <a href="https://amzn.to/2RaJ26j">FreeBSD Mastery: Advanced ZFS</a>.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1593278926&amp;linkId=216b756ebdf87a0f408fad2b0afff135" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=0321968972&amp;linkId=50dcb39bc5e8af2cab746da01ed6e334" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1593272049&amp;linkId=aaf4e00ebd5d4bc04741808aa8ce37e3" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1642350001&amp;linkId=0b5660627ebcf9e436d57e63a3329bcf" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=164235001X&amp;linkId=c56abbe62b62e123f679e7cb762e6f34" title="Amazon" class="lozad"></iframe>
+</div>
+<p>Eso es todo lo básico para empezar a usar FreeBSD, si alguién lee este artículo y usa FreeBSD u otra distribución BSD como sistema principal o en el trabajo me encantaría conocer más detalles así que si quieres puedes dejar un comentario, también si a alguien que acceda al artículo y lo lea seguro que le resulta interesante como forma de animarse a probar este sistemas operativo de la familia UNIX.</p>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="software-libre"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2021/04/crear-de-forma-sencilla-un-cliente-de-un-servicio-rest-o-http-con-retrofit/</id>
         <title>Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit</title>
@@ -1736,27 +2063,27 @@
     </div>
 </div>
 <p>Utilizando el servicio Microsoft Text to Speech.</p>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/microsoft-alvaro.mp3" type="audio/mpeg">
-</amp-audio>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+</audio>
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/microsoft-elvira.mp3" type="audio/mpeg">
-</amp-audio>
+</audio>
 <p>Utilizando el servicio Free TTS.</p>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/freetts-enrique.mp3" type="audio/mpeg">
-</amp-audio>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+</audio>
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/freetts-lucia.mp3" type="audio/mpeg">
-</amp-audio>
+</audio>
 <p>Utilizando Mozilla TTS.</p>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/mozilla-tts.mp3" type="audio/mpeg">
-</amp-audio>
+</audio>
 <p>Utilizando espeak.</p>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/espeak.mp3" type="audio/mpeg">
-</amp-audio>
+</audio>
 <h3 id="convertir-el-audio-en-formato-_wav_-a-_mp3_">Convertir el audio en formato <em>wav</em> a <em>mp3</em></h3>
 <p>En el artículo cómo <a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/">Cambiar el formato de archivos de música o audio en GNU/Linux</a> comentaba cómo convertir diferentes tipos de audio entre formatos con la herramienta <a href="https://www.ffmpeg.org/">FFmpeg</a>.</p>
 <p>El comando para convertir un <em>wav</em> a los formatos <em>mp3</em> y <em>ogg</em> comprimidos que ocupan significativamente menos sin pérdida de calidad perceptible son los siguientes. En función del formato</p>
@@ -2159,152 +2486,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2021/02/licencias-de-software-libre-y-diferencias-con-software-privativo-y-de-codigo-abierto/</id>
-        <title>Licencias de software libre y diferencias con software privativo y de código abierto</title>
-        <updated>2021-02-05T16:00:00+01:00</updated>
-        <published>2021-02-05T16:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/02/licencias-de-software-libre-y-diferencias-con-software-privativo-y-de-codigo-abierto/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Hay varias categorías de licencias de software que los desarrolladores como autores del software le asignan al software que crean o en el caso de empresas le asignan para proteger su propiedad intelectual. En la década de los años 80 Richard Stallman lanzo el movimiento de software libre creando software equivalente al de UNIX utilizando una licencia de software libre con unos principios éticos. Otras categorías de licencias son las privativas y las de código abierto.</strong></p>]]>
-        <![CDATA[<p>Todo software tiene una licencia. Una <a href="https://es.wikipedia.org/wiki/Licencia_de_software">licencia de software</a> es el contrato formal entre el desarrollador del software, los intermediarios y el usuario del mismo, este contrato especifica los derechos que pertenecen al desarrollador y los derechos que otorga al usuario del software. La licencia de software es un documento con jerga legal que especifica los derechos y obligaciones de cada una de las partes.</p>
-<p>Es el desarrollador o desarrolladores como autores de la obra intelectual de creación del software el que determina que licencia aplican a su obra. Incluso tienen la capacidad de en versiones posteriores del software cambiar la licencia en función de sus intereses.</p>
-<p>Hay múltiples licencias de software que se catalogan principalmente en tres grupos: licencias de software privativo, licencias de software libre y licencias de código abierto.</p>
-<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
-<h3 id="software-privativo">Software privativo</h3>
-<p>Para entender las licencias de software libre o código abierto se puede empezar por entender que son las licencias de software privativo. Las licencias de software privativo se denominan así porque privan al usuario de ciertos derechos en el uso o propósito de uso, acceso al código fuente, modificación, distribución o distribución de modificaciones.</p>
-<p>Este suele ser el tipo de licencias que emplean muchas empresas en su software comercial del cual obtienen sus ingresos a través de la venta de licencias de uso. Las limitaciones del software privativo permite a las empresas proteger sus programas de la competencia y les otorga exclusividad en la venta u oferta de servicios.</p>
-<p>Normalmente estas licencias requieren el pago para el uso del software y realmente no se está comprando un producto sino simplemente se está adquiriendo una licencia de uso por un tiempo indefinido o limitado.</p>
-<p>Dado que no se posee el código fuente, no se puede estudiar su funcionamiento. Muchos de los software privativos incluyen funciones malévolas que van contra los intereses de los usuarios, enviando datos acerca del uso del ordenador, la posibilidad de una puerta trasera que realice acciones  como desinstalar programas sin el permiso del usuario o enviar la ubicación del usuario.</p>
-<p>No todos los programas de software privativo contienen funciones malévolas pero como el código es secreto no se puede saber qué programas las contienen. Al mismo tiempo los programadores cometen errores en el código pero como no se tiene el código fuente no es posible corregirlos.</p>
-<p>Los software más populares con una licencia privativa son el sistema operativo <a href="https://www.microsoft.com/es-es/windows/">Windows</a> de <a href="https://www.microsoft.com/">Microsoft</a>, su paquete ofimático <a href="https://products.office.com/es-es/">Office</a> y el sistema operativo <a href="https://www.apple.com/macos/">macOS</a> de <a href="https://www.apple.com/">Apple</a>.</p>
-<div class="media">
-<figure>
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/microsoft.svg" width="200" height="150" alt="Microsoft" title="Microsoft"  class="lozad ">
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apple.svg" width="200" height="150" alt="Apple" title="Apple"  class="lozad "></p>
-<figcaption>Microsoft y Apple</figcaption>
-</figure>
-</div>
-<h3 id="licencias-de-software-libre">Licencias de software libre</h3>
-<p>Las licencias de software libre se caracterizan por otorgar ciertos derechos a los usuarios. Algunos de estos son el acceso al código fuente, no imponer restricciones en el uso o propósito del código fuente, permitir realizar modificaciones a los programas y distribuir esas modificaciones.</p>
-<p>Los programas de software libre también pueden requerir un pago a su distribuidor por su servicio. Pero dado que cualquier usuario al recibir el software recibe los derechos de acceso a código fuente, modificación y distribución esto permite distribuir el software de forma gratuita, por eso mucho del software libre es gratuito. Aunque el software libre normalmente es gratuito, el software libre no es sinónimo de gratuito y se permite el uso comercial.</p>
-<ul>
-<li><a href="https://www.gnu.org/philosophy/free-sw.es.html">¿Qué es el software libre?</a></li>
-<li><a href="https://www.gnu.org/philosophy/open-source-misses-the-point.es.html">Por qué el «código abierto» pierde de vista lo esencial del software libre</a></li>
-</ul>
-<p>Nunca esta demás de ver al menos una vez en la vida o cada ciertos años una conferencia de <a href="https://es.wikipedia.org/wiki/Richard_Stallman">Richard Stallman</a> hablando de la filosofía del software libre y leer el documento <a href="https://www.gnu.org/philosophy/fsfs/free_software.es.pdf">Software libre para una sociedad libre</a>.</p>
-<p>Las siguientes no son los únicos tipos de licencias de software libre pero sí son las mas representativas y más utilizadas.</p>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/VFpIhA5Oufg" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/5t_EcPTEzh4" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<h4 id="gpl-lgpl-y-agpl">GPL, LGPL y AGPL</h4>
-<p>Las licencias de software libre de la fundación de software libre o FSF son las licencias más utilizadas para programas de software libre. La FSF considera que el software libre ha de otorgar las siguientes cuatro libertades al usuario para considerarse un software como software libre. Estas libertades tratan de garantizar los derechos del usuario y que el software conserve su condición de software libre.</p>
-<ul>
-<li>La libertad de ejecutar el programa como se desee, con cualquier propósito (libertad 0).</li>
-<li>La libertad de estudiar cómo funciona el programa, y cambiarlo para que haga lo que usted quiera (libertad 1). El acceso al código fuente es una condición necesaria para ello.</li>
-<li>La libertad de redistribuir copias para ayudar a otros (libertad 2).</li>
-<li>La libertad de distribuir copias de sus versiones modificadas a terceros (libertad 3). Esto le permite ofrecer a toda la comunidad la oportunidad de beneficiarse de las modificaciones. El acceso al código fuente es una condición necesaria para ello.</li>
-</ul>
-<p>Las licencias GPL es una de las licencias más representativas de software libre. La licencia GPL en una licencia <em>copyleft</em> que indica que si se incluye código bajo esta licencia en un programa más grande, el programa más grande también debe estar bajo esta misma licencia. La licencia LGPL es una variante de la GPL que elimina la restricción de que un software combinado con un software GPL haya de tener licencia GPL, esto es, permite combinar un software GPL con software no GPL en el caso de usar un software como una librería. La tercera licencia de la FSF es la AGPL para que el software usado en lado de servidor sea accesible considerando el uso en el lado del servidor como una forma de distribución del software. Requieren que al distribuir software modificado incluya una lista de cambios realizados.</p>
-<p>Un peligro importante que la versión 3 de la GPL impide es la <em>tivoización</em>. La <em>tivoización</em> significa que ciertos aparatos que contienen software cubierto por la GPL que en la práctica no se puede cambiar, porque el aparato se apaga si detecta software modificado. Los fabricantes de estos ordenadores sacan partido de la libertad que proporciona el software libre pero no permiten que el usuario haga lo mismo.</p>
-<ul>
-<li><a href="https://choosealicense.com/licenses/gpl-3.0/">Licencia GPL</a></li>
-<li><a href="https://choosealicense.com/licenses/lgpl-3.0/">Licencia LGPG</a></li>
-<li><a href="https://choosealicense.com/licenses/agpl-3.0/">Liciencia AGPL</a></li>
-<li><a href="https://www.gnu.org/licenses/rms-why-gplv3.es.html">¿Por qué actualizar a la versión 3 de la GPL?</a></li>
-<li><a href="https://www.gnu.org/licenses/why-not-lgpl.es.html">Por qué en su próxima biblioteca no debería utilizar la Licencia Pública General Reducida de LGPL</a></li>
-</ul>
-<p>El software más representativo con licencia de software libre es el núcleo Linux y muchos de los programas GNU de la fundación FSF que junto con Linux forman el sistema operativo <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>.</p>
-<p>Hay muchas <a href="https://picodotdev.github.io/blog-bitix/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/">distribuciones GNU/Linux entre las que elegir</a> según las preferencias o necesidades de cada usuario. <a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/">Ubuntu es fácil de instalar</a> en sencillos pasos y poco tiempo.</p>
-<div class="media">
-<figure>
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="150" alt="GNU" title="GNU"  class="lozad ">
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/fsf.svg" width="200" height="150" alt="FSF" title="FSF"  class="lozad ">
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="150" alt="Linux" title="Linux"  class="lozad "></p>
-<figcaption>GNU, FSF y Linux</figcaption>
-</figure>
-</div>
-<h4 id="bsd">BSD</h4>
-<p>Las licencias de BSD consideran que las 4 libertades de las licencias de software libre del proyecto GNU en realidad limitan las libertades del usuario, ya que la licencia GPL obliga a distribuir todo el código usado aunque otro tenga otra licencia de software libre con una licencia GPL de software libre.</p>
-<p>El software de las licencias de BSD es interesante para algunas empresas ya que pueden utilizar el software y hacer modificaciones sin estar obligados a publicar su software con la misma licencia. Pueden utilizar código con licencia BSD, hacer modificaciones pero al distribuirlo no están obligados a publicar el código fuente.</p>
-<p>Según las cláusulas que incluye la licencia las licencias BSD se clasifican en 4, 3 o 2 cláusulas.</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/BSD_licenses">Licencias BSD</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/07/las-diferencias-entre-gnu-linux-bsd-y-sus-distribuciones/">Las diferencias entre GNU/Linux, BSD y sus distribuciones</a></li>
-</ul>
-<h4 id="mit">MIT</h4>
-<p>Las licencias MIT son de las más permisivas, casi se consideran software de dominio público. Lo único que requieren es incluir la licencia MIT para indicar que el software incluye código con licencia MIT.</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/MIT_License">Licencia MIT</a></li>
-</ul>
-<h4 id="apache-license-20">Apache License 2.0</h4>
-<p>La licencia Apache trata de preservar los derechos de autor, incluir la licencia en el software distribuido y una lista de los cambios realizados. En modificaciones extensivas del software original permite licenciar el software bajo otra licencia sin incluir el código fuente esas modificaciones.</p>
-<ul>
-<li><a href="https://www.apache.org/licenses/LICENSE-2.0">Licencia Apache</a></li>
-</ul>
-<h4 id="mozilla-public-license">Mozilla Public License</h4>
-<p>Esta licencia requiere que los archivos al ser distribuido conserven la misma licencia original pero puede ser usado junto con archivos con otra licencia al contrario que la licencia GPL que requiere que todo el código usado junto con código GPL sea licenciado como código GPL. También en caso de hacer modificaciones extensivas permite distribuirlas bajo diferentes términos y sin incluir el código fuente esas modificaciones</p>
-<ul>
-<li><a href="https://www.mozilla.org/en-US/MPL/">Licencia MPL</a></li>
-</ul>
-<h4 id="código-de-dominio-público">Código de dominio público</h4>
-<p>Es un código que no está sujeto a derechos de autor que puede utilizarse sin restricciones.</p>
-<h4 id="creative-commons">Creative Commons</h4>
-<p>Las licencias de Creative Commons más que para el software se utilizan para cualquier creación artística digital, desde fotos, artículos en blogs, música, vídeos, &hellip;</p>
-<p>Hay varios tipos de licencias de <em>Creative Commons</em> diferenciando entre permitir modificaciones a la obra original o permitiendo un uso comercial de la obra.</p>
-<ul>
-<li><a href="https://creativecommons.org/">Licencia Creative Commons</a></li>
-</ul>
-<h3 id="licencias-de-código-abierto">Licencias de código abierto</h3>
-<p>Por normal general, el término código abierto y de software libre se utiliza indistintamente para denominar la misma categoría de software. Según <a href="https://opensource.org/osd">la definición de código abierto</a> (o la <a href="https://en.wikipedia.org/wiki/The_Open_Source_Definition">definición de código abierto en la wikipedia</a>) se otorgan los mismos derechos derechos de acceso al código fuente, modificación y distribución que el software libre.</p>
-<p>Las licencias de código abierto permiten el acceso al código fuente pero no todas se consideran licencias de software libre al no otorgar otros derechos que se requieren para considerar un software como software libre como el derecho a la uso o con cualquier propósito, modificación y distribución.</p>
-<p>Dado el éxito del software libre como modelo de desarrollo de software algunas empresas cuyo software era privativo pueden decidir hacerlo de código abierto con la intención de suplir algunas carencias de software privativo pero sin perder ciertos derechos que son la fuente de sus ingresos como la venta de licencias. En este caso algunas de las licencias de código abierto son un intermedio entre las licencias privativas y las licencias de software libre.</p>
-<blockquote>
-<p>Las expresiones «software libre» y «código abierto» se refieren casi al mismo conjunto de programas. No obstante, dicen cosas muy diferentes acerca de dichos programas, basándose en valores diferentes. El movimiento del software libre defiende la libertad de los usuarios de ordenadores, en un movimiento en pro de la libertad y la justicia. Por contra, la idea del código abierto valora principalmente las ventajas prácticas y no defiende principios. Esta es la razón por la que estamos en desacuerdo con el movimiento del código abierto y no empleamos esa expresión.</p>
-<p>-  Richard Stallman</p>
-</blockquote>
-<blockquote>
-<p>El término «software de código abierto» es utilizado por alguna gente para indicar más o menos la misma categoría que software libre. No es exactamente el mismo tipo de software: ellos aceptan algunas licencias que nosotros consideramos demasiado restrictivas, y hay licencias de software libre que ellos no aceptan. Sin embargo, las diferencias en la extensión de la categoría son pequeñas: casi todo el software libre es de código abierto, y casi todo el código abierto es libre.</p>
-<p>-  Free Software Foundation</p>
-</blockquote>
-<h4 id="microsoft-public-license">Microsoft Public License</h4>
-<p>La Microsoft Public License es una licencia de código abierto que permite la distribución del software bajo la misma licencia y la modificación para un uso un uso privado. Tiene restricciones en cuanto a las marcas registradas.</p>
-<p>En caso de distribuir el software de forma compiladas o en forma de objeto binario no se exige proporcionar los derechos de acceso al código fuente del software compilado o en forma de objeto binario. En este caso esta licencia no otorga más derechos de los que se reciben pero si permite otorgar menos derechos al distribuir el software en el caso de distribuir software compilado o en forma de objeto binario.</p>
-<ul>
-<li><a href="https://opensource.org/licenses/MS-PL">Licencia pública de Microsoft</a></li>
-</ul>
-<h3 id="modelo-de-desarrollo-de-software-bazar-y-catedral">Modelo de desarrollo de software bazar y catedral</h3>
-<p>El tipo de licencia no determina qué software es mejor o peor, si el privativo o de software libre, la diferencia entre las licencias está en sus características éticas y legales. Aunque el modelo de desarrollo con una licencia de código abierto a la larga suele tener un mejor desarrollo y éxito que el software privativo, más aún con un medio como internet que permite colaborar a cualesquiera personas en el mundo independiente donde estén ubicadas en el mundo.</p>
-<ul>
-<li><a href="https://es.wikipedia.org/wiki/La_catedral_y_el_bazar">La catedral y el bazar</a></li>
-<li><a href="https://openlibra.com/es/book/download/la-catedral-y-el-bazar-version-espanola">La catedral y el bazar. Modelos de desarrollo de softare</a></li>
-<li><a href="https://web.archive.org/web/20130122100227/http://gnuwin.epfl.ch/articles/es/magiccauldron/es-magic-cauldron/node1.html">El caldero mágico</a></li>
-<li><a href="https://biblioweb.sindominio.net/telematica/noosfera.html">Colonizando la noosfera</a></li>
-</ul>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://choosealicense.com/">Choose an open source license</a></li>
-<li><a href="https://choosealicense.com/licenses/">Choose an open source license (licencias)</a></li>
-<li><a href="https://choosealicense.com/appendix/">Choose an open source license (apéndice)</a></li>
-<li><a href="https://www.kiuwan.com/blog/comparison-popular-open-source-licenses/">Open Source Licenses: A Comparison Of The Most Popular Types</a></li>
-<li><a href="https://infogalactic.com/info/Comparison_of_free_and_open-source_software_licenses">Comparison of free and open-source software licenses</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="software-libre"/>
             
         
     </entry>

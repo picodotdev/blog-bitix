@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/keycloak.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/keycloak-750.png">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="OAuth es un protocolo usado para permitir a una aplicación acceder a los recursos de un usuario sin que este proporcione a la aplicación cliente sus credenciales y manteniendo el control de revocar los permisos concedidos. Es ampliamente usado por los servicios de redes sociales de las empresas más conocidas, también lo podemos usar en nuestras aplicaciones. En el ejemplo usaré Keycloak y una aplicación Java con Spring Boot, Apache Shiro y Apache Tapestry. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/keycloak.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/keycloak-750.png">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot">
@@ -54,7 +54,7 @@
     "headline": "Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/logotypes/keycloak.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/keycloak-750.png"
         
       },
     "datePublished": "2016-10-07T10:00:00+02:00",
@@ -262,7 +262,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/keycloak.png" width="200" height="45" alt="Keycloak" title="Keycloak" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/keycloak.svg" width="200" height="200" alt="Keycloak" title="Keycloak" class="" loading="false"></p>
 </div>
 <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
@@ -279,7 +279,7 @@
 </ul>
 <p>Para obtener el <em>token</em> el servidor mantiene seguras sus credenciales como cliente OAuth. Nótese también que con el <em>token</em> el servidor (cliente OAuth) no necesita comunicarse con el servidor OAuth para validar el <em>token</em> ya que está firmado digitalmente, cifrado y tiene concedido un periodo de validez.</p>
 <p>Un cliente se considera inseguro si la aplicación cliente no puede mantener seguras sus credenciales, si las credenciales de la aplicación están en el navegador o en una aplicación nativa del móvil se considera que las credenciales podrían obtenerse. En una aplicación web en un servidor las credenciales de la aplicación se mantienen seguras en el servidor.</p>
-<p>El siguiente ejemplo muestra como autenticar con Keycloak como proveedor de OAuth una aplicación Java que usa Shiro para la autorización, Spring Boot y el <em>framework</em> web Apache Tapestry. OAuth y Keycloak también puede usarse para <a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/">securizar con OAuth un servicio REST con JAX-RS</a> y crear un <a href="https://picodotdev.github.io/blog-bitix/2016/10/cliente-de-un-servicio-rest-autenticado-con-oauth2-en-java/">cliente Java para acceder al servicio REST securizado con OAuth</a> empleando el flujo <em>client credentials</em>. Lo mostrado en este artículo solo es una pequeña parte de las opciones y posibilidades que ofrece Keycloak, en las capturas de pantalla mostradas hay muchas pestañas, opciones y campos con funcionalidades adicionales.</p>
+<p>El siguiente ejemplo muestra como autenticar con Keycloak como proveedor de OAuth una aplicación Java que usa Shiro para la autorización, Spring Boot y el <em>framework</em> web Apache Tapestry. OAuth y Keycloak también puede usarse para <a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/">securizar con OAuth un servicio REST con JAX-RS</a> y crear un <a href="https://picodotdev.github.io/blog-bitix/2016/10/cliente-de-un-servicio-rest-autenticado-con-oauth-en-java/">cliente Java para acceder al servicio REST securizado con OAuth</a> empleando el flujo <em>client credentials</em>. Lo mostrado en este artículo solo es una pequeña parte de las opciones y posibilidades que ofrece Keycloak, en las capturas de pantalla mostradas hay muchas pestañas, opciones y campos con funcionalidades adicionales.</p>
 <p>Iniciar el servidor OAuth de Keycloak usando <a href="https://www.docker.com/">Docker</a> es muy sencillo con el siguiente comando y archivo de <a href="https://docs.docker.com/compose/">Docker Compose</a>, en el primer acceso se nos solicitará una clave y contraseña de administración:</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">keycloak</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">jboss/keycloak</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="m">9080</span><span class="p">:</span><span class="m">8080</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">environment</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">KEYCLOAK_USER=admin</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">KEYCLOAK_PASSWORD=admin</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -493,7 +493,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/">
-                <img src="/blog-bitix/assets/images/logotypes/keycloak.png" width="326" height="125" alt="Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot" title="Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/keycloak.svg" width="326" height="125" alt="Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot" title="Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot" class="" loading="lazy">
                 <h3>Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot</h3>
                 </a>
                 

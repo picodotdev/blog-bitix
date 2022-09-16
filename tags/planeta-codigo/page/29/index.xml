@@ -5,12 +5,227 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-09-08T11:00:00+02:00</updated>
+    <updated>2022-09-15T21:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/</id>
+        <title>Guía básica del intérprete de comandos Bash</title>
+        <updated>2016-07-10T11:00:00+02:00</updated>
+        <published>2016-07-10T11:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>La línea de comandos sigue siendo una poderosa herramienta que aunque menos intuitiva que una interfaz gráfica permite hacer las tareas de forma más sencilla, directa y que se puede automatizar. Conocer las opciones del intérprete de comandos es básico para aprovechar su máximo potencial. Desde las combinaciones de teclas hasta los <em>scripts</em> o archivos de lotes. Tuberías y redirecciones, comandos con ejecución condicional, variables, interpolación de cadenas, <em>scrtips</em>, argumentos, funciones, <em>for</em>, <em>switch</em>, <em>if</em>, comparaciones, &hellip;</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>Automatizar las tareas que realizamos permite ahorrarnos el tiempo de tener que hacerlo manualmente y evita los errores que se puede producir. En <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> el uso de la terminal no es algo extraño y muchas tareas son realizadas más fácil y rápido con un comando que con un programa con interfaz gráfica, además tiene la ventaja de que puede automatizarse creando un <em>script</em> <a href="https://es.wikipedia.org/wiki/Bash">Bash</a>.</p>
+<p>El intérprete de comandos Bash junto con la combinación de otros programas proporcionados por la parte GNU de los sistemas Linux presentes en la mayoría de las distribuciones por defecto es suficiente para automatizar la mayor parte de tareas que necesitemos conociendo que hacen <a href="https://picodotdev.github.io/blog-bitix/2020/04/50-plus-comandos-basicos-y-utiles-de-gnu-linux/">50 comandos útiles de línea de comandos</a>. Para aumentar la productividad es necesario aprender <a href="https://picodotdev.github.io/blog-bitix/2016/06/combinacion-de-teclas-para-copiar-y-pegar-en-la-terminal/">las combinaciones de teclas del intérprete Bash y del emulador de la terminal</a>.</p>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<h3 id="tuberías-y-redirecciones">Tuberías y redirecciones</h3>
+<p>Al ejecutar un comando podemos querer encadenar la salida de un comando con la entrada de otro, mediante una tubería. Uno de los puntos de la filosofía de los programas de los sistemas Unix es que realicen una o pocas tareas pero que lo hagan muy bien. Usando varios programas especializados en una tarea podemos juntarlos como si fuese piezas de Lego para realizarla tarea compleja que necesitamos, encadenando la salida de un comando como la entrada del siguiente.</p>
+<p>Una de las cosas buenas de Bash es que está presente por defecto en la mayoría de las distribuciones Linux y si no es este intérprete de comandos será otro similar por lo que no necesitamos instalar nada más adicional para usarlo. Aún así si necesitaremos algo más potente que Bash como lenguaje de programación podemos optar por un lenguaje de programación como <a href="https://www.python.org/">Python</a> para realizar los <em>scripts</em> aunque necesitaremos instalar su paquete y las dependencias que los <em>scripts</em> usen.</p>
+<p>Por ejemplo, dada una lista de concursantes habilitados en un sorteo podemos obtener 3 ganadores de forma aleatoria con la combinación de los siguientes comandos. El comando <code>grep</code> permite aplicar una expresión regular a cada línea de un fichero que si la cumple es enviada a la salida, <code>shuf</code> reordena las líneas de forma aleatoria y con la opción <code>-n 3</code> emite las 3 primeras. Los comandos proporcionados por GNU en los sistemas Linux proporcionan multitud de comandos como estos muy útiles, combinándolos conseguimos tareas más capaces que lo que son los comandos individualmente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ grep <span class="s2">&#34;^[^#]&#34;</span> sorteo.txt <span class="p">|</span> shuf -n <span class="m">3</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>sorteo-1.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/images/sorteo_huc36cd599563a8744a46d8e6f869842e1_34801_2560x1440_fit_box_3.png" data-gallery="" title="Sorteo implementado con dos comandos de GNU/Linux"><img src="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/images/sorteo_huc36cd599563a8744a46d8e6f869842e1_34801_300x200_fit_box_3.png" width="300" height="193" alt="Sorteo implementado con dos comandos de GNU/Linux" title="Sorteo implementado con dos comandos de GNU/Linux"  class="lozad "></a></p>
+<figcaption>Sorteo implementado con dos comandos de GNU/Linux</figcaption>
+</figure>
+</div>
+<p>Por defecto la salida estándar de un comando es la terminal pero podemos redirigirla a un fichero con la opción <code>&gt;</code>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ grep <span class="s2">&#34;^[^#]&#34;</span> sorteo.txt <span class="p">|</span> shuf -n <span class="m">3</span> &gt; ganadores.txt&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>sorteo-2.sh</span>
+    </div>
+</div>
+<p>Además de la salida estándar los programas tienen la salida de errores que podemos redirigir con <code>2&gt;</code>, si queremos redirigir la salida estándar y la de error podemos usar la redirección <code>&amp;&gt;</code>. Tanto la opción <code>&gt;</code> y <code>2&gt;</code> crean un fichero con la salida redirigida, si en vez de sobrescribir el contenido del archivo queremos añadirlo al final podemos hacer la redirección con <code>&gt;&gt;</code>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ grep <span class="s2">&#34;^[^#]&#34;</span> sorteo.txt <span class="p">|</span> shuf -n <span class="m">3</span> &gt;&gt; ganadores.txt&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>sorteo-3.sh</span>
+    </div>
+</div>
+<h3 id="múltiples-comandos">Múltiples comandos</h3>
+<p>Si necesitamos ejecutar dos comandos seguidos podemos introducirlos en la misma línea en vez de individualmente, ejecutar un comando si el anterior se ha ejecutado correctamente con <code>&amp;&amp;</code> o al contrario ejecutar un comando si el anterior ha fallado con <code>||</code>. Si en la ubicación de trabajo que estamos existe un directorio no se podrá crear otro con el mismo nombre, dependiendo de las opciones de encadenamiento según el resultado del comando anterior se ejecutará o no el siguiente comando.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ mkdir directorio <span class="p">;</span> mkdir directorio <span class="p">;</span> <span class="nb">echo</span> <span class="s2">&#34;Directorio creado&#34;</span>&#10;</span></span><span class="line"><span class="cl">$ mkdir directorio <span class="o">&amp;&amp;</span> mkdir directorio <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&#34;Directorio creado&#34;</span>&#10;</span></span><span class="line"><span class="cl">$ mkdir directorio <span class="p">&amp;</span>&gt; /dev/null <span class="o">||</span> <span class="nb">echo</span> <span class="s2">&#34;La creación de directorio ha fallado&#34;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>multiples-comandos.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/images/multiples-comandos_hu446b606788cc2904d57fcc928566576f_38242_2560x1440_fit_box_3.png" data-gallery="" title="Múltiples comandos en la misma línea"><img src="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/images/multiples-comandos_hu446b606788cc2904d57fcc928566576f_38242_300x200_fit_box_3.png" width="300" height="131" alt="Múltiples comandos en la misma línea" title="Múltiples comandos en la misma línea"  class="lozad "></a></p>
+<figcaption>Múltiples comandos en la misma línea</figcaption>
+</figure>
+</div>
+<h3 id="variables-e-interpolación-de-cadenas">Variables e interpolación de cadenas</h3>
+<p>Podemos definir variables locales en el <em>script</em> o exportarlas para que estén accesibles en otros procesos e incluso interpolarlas en cadenas de la siguiente forma:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">name</span><span class="o">=</span><span class="s2">&#34;picodotdev&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;picodotdev&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="nv">$name</span>&#10;</span></span><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s2">&#34;Hola </span><span class="nv">$name</span><span class="s2">!&#34;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>variables-1.sh</span>
+    </div>
+</div>
+<p>También podemos interpolar la salida de un comando dentro de una cadena:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s2">&#34;Hola </span><span class="nv">$name</span><span class="s2">! a las `date`&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>variables-2.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/images/variables_hu1324bce569120ddba446a5fc6e95a5ee_36485_2560x1440_fit_box_3.png" data-gallery="" title="Interpolación en cadenas de variables y comandos"><img src="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/images/variables_hu1324bce569120ddba446a5fc6e95a5ee_36485_300x200_fit_box_3.png" width="300" height="193" alt="Interpolación en cadenas de variables y comandos" title="Interpolación en cadenas de variables y comandos"  class="lozad "></a></p>
+<figcaption>Interpolación en cadenas de variables y comandos</figcaption>
+</figure>
+</div>
+<h3 id="invocaciones-de-comandos-anteriores">Invocaciones de comandos anteriores</h3>
+<p>Con el comando <code>history</code> podemos ver el historial completo de comandos que hemos ejecutado con anterioridad. Al lado de cada comando vemos un identificador numérico que podemos usar para ejecutarlo de nuevo con <code>![identificador]</code>. Con el siguiente historial podemos ejecutar el comando con identificador 512 indicando una exclamación y el identificador, <code>!512</code>. Si queremos ejecutar el último comando introducido podemos usar la doble exclamación <code>!!</code>. Si queremos ejecutar el último comando completo de cierto comando podemos usar <code>![comando]</code> en vez de su identificador.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/images/history_hudd076ba80f1bdd464ff3e6b38e8a63fc_62037_2560x1440_fit_box_3.png" data-gallery="" title="Historial de comandos"><img src="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/images/history_hudd076ba80f1bdd464ff3e6b38e8a63fc_62037_300x200_fit_box_3.png" width="300" height="193" alt="Historial de comandos" title="Historial de comandos"  class="lozad "></a></p>
+<figcaption>Historial de comandos</figcaption>
+</figure>
+</div>
+<p>Hay más <a href="http://www.softpanorama.org/Scripting/Shellorama/bash_command_history_reuse.shtml">formas de ejecutar comandos del historial</a>. Si quisieramos invocar un comando del historial cambiando algún argumento podemos hacer una búsqueda en orden inverso con <kbd>Ctrl+r</kbd>.</p>
+<h3 id="scripts">Scripts</h3>
+<p>Los <em>scritps</em> son archivos de texto con permisos de ejecución interpretados por Bash u otro intérprete que ejecuta los comandos del <em>script</em>, es la forma de automatizar varios comandos. Al inicio de los <em>scripts</em> se suele incluir el <a href="https://es.wikipedia.org/wiki/Shebang">shebang</a> donde se indica el programa encargado de interpretar el <em>script</em>, puede ser Bash o un programa escrito en un lenguaje de programación como <a href="https://www.python.org/">Python</a>. Se puede indicar de varias formas pero las preferidas son las siguientes:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">#!/usr/bin/env python</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>scripts-1.sh</span>
+    </div>
+</div>
+<p>Una vez escrito el <em>script</em> antes de ejecutarlo debemos darle permisos de ejecución con el comando <code>chmod</code>:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ chmod +x script.sh&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>scripts-2.sh</span>
+    </div>
+</div>
+<h3 id="argumentos">Argumentos</h3>
+<p>Al igual que los comandos pueden recibir opciones y argumentos los <em>scripts</em> también, hacer uso de ellos son mediante las siguientes variables:</p>
+<ul>
+<li>$0: contiene nombre del <em>script</em>.</li>
+<li>$1: primer argumento, $2 segundo argumento, &hellip;</li>
+<li>$#: número de argumentos al invocar el <em>script</em>.</li>
+<li>$*: todos los argumentos al invocar el <em>script</em>.</li>
+<li>$?: valor del estado de salida del último comando ejecutado. Normalmente se usa <em>0</em> para los comandos ejecutados correctamente y <em>1</em> para los que han terminado incorrectamente.</li>
+</ul>
+<h3 id="funciones-_for_-_switch_-_if_-comparaciones">Funciones, <em>for</em>, <em>switch</em>, <em>if</em>, comparaciones</h3>
+<p>En los <em>scripts</em> Bash se pueden definir funciones para reutilizar parte del <em>script</em>. Pueden incluir argumentos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">function</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">   <span class="nb">echo</span> <span class="s2">&#34;Hola </span><span class="nv">$1</span><span class="s2">!&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="k">function</span><span class="o">(</span><span class="s2">&#34;picodotdev&#34;</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">Además los _scripts_ pueden incluir ciertas sentencias para controlar el flujo de ejecución del _script_ con expresiones condicionales, bucles y comparaciones.&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="k">for</span> file in /etc/* <span class="k">do</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">echo</span> <span class="nv">$file</span>&#10;</span></span><span class="line"><span class="cl"><span class="k">done</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">{{</span>% gist <span class="nv">id</span><span class="o">=</span><span class="s2">&#34;&#34;</span> <span class="nv">file</span><span class="o">=</span><span class="s2">&#34;&#34;</span> %<span class="o">}}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="nb">getopts</span> <span class="s2">&#34;:df&#34;</span> opt<span class="p">;</span> <span class="k">do</span>&#10;</span></span><span class="line"><span class="cl">  <span class="k">case</span> <span class="nv">$opt</span> in&#10;</span></span><span class="line"><span class="cl">	d<span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">  	<span class="nb">echo</span> <span class="s2">&#34;Opción «d» indicada&#34;</span>&#10;</span></span><span class="line"><span class="cl">  	<span class="p">;;</span>&#10;</span></span><span class="line"><span class="cl">	f<span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">  	<span class="nb">echo</span> <span class="s2">&#34;Opción «f» indicada&#34;</span>&#10;</span></span><span class="line"><span class="cl">  	<span class="p">;;</span>&#10;</span></span><span class="line"><span class="cl">	<span class="se">\?</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">  	<span class="nb">echo</span> <span class="s2">&#34;Opción inválida: -</span><span class="nv">$OPTARG</span><span class="s2">&#34;</span>&#10;</span></span><span class="line"><span class="cl">  	<span class="p">;;</span>&#10;</span></span><span class="line"><span class="cl">  <span class="k">esac</span>&#10;</span></span><span class="line"><span class="cl"><span class="k">done</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>funciones-1.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/images/opciones_huc5bd046ba171874ce5c02dd19b2d7bdd_44239_2560x1440_fit_box_3.png" data-gallery="" title="Opciones de un script"><img src="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/images/opciones_huc5bd046ba171874ce5c02dd19b2d7bdd_44239_300x200_fit_box_3.png" width="300" height="193" alt="Opciones de un script" title="Opciones de un script"  class="lozad "></a></p>
+<figcaption>Opciones de un script</figcaption>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -f <span class="nv">$1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;El archivo existe.&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="k">fi</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>funciones-2.sh</span>
+    </div>
+</div>
+<p>Los <em>scripts</em> de Bash suelen manejar ficheros y disponemos de una buena cantidad de opciones para comparar:</p>
+<ul>
+<li>[ -a FILE ]: verdadero si el fichero existe.</li>
+<li>[ -d FILE ]: verdadero si el fichero existe y es un directorio.</li>
+<li>[ -e FILE ]: verdadero si el fichero existe.</li>
+<li>[ -f FILE ]: verdadero si el fichero existe y es un fichero regular.</li>
+<li>[ -h FILE ]: verdadero si el fichero existe y es un enlace simbólico.</li>
+<li>[ -r FILE ]: verdadero si el fichero existe y se puede leer.</li>
+<li>[ -s FILE ]: verdadero si el fichero existe y su tamaño es mayor que cero.</li>
+<li>[ -w FILE ]: verdadero si el fichero existe y se puede escribir.</li>
+<li>[ -x FILE ]: verdadero si el fichero existe y se puede ejecutar.</li>
+<li>[ -N FILE ]: verdadero si el fichero existe y ha sido modificado desde la última lectura.</li>
+<li>[ FILE1 -nt FILE2 ]: verdadero si <em>FILE1</em> ha sido modificado más recientemente que <em>FILE2</em> o si <em>FILE1</em> existe y <em>FILE2</em> no.</li>
+<li>[ FILE1 -ot FILE2 ]: verdadero si <em>FILE2</em> ha sido modificado más recientemente que <em>FILE1</em> o si <em>FILE2</em> existe y <em>FILE1</em> no.</li>
+<li>[ FILE1 -ef FILE2 ]: verdadero si <em>FILE1</em> y <em>FILE2</em> se refieren al mismo dispositivo y número de inodo.</li>
+</ul>
+<p>Y otros menos comunes:</p>
+<ul>
+<li>[ -S FILE ]: verdadero si el fichero existe y es un <em>socket</em>.</li>
+<li>[ -b FILE ]: verdadero si el fichero existe y es un fichero especial de bloques.</li>
+<li>[ -c FILE ]: verdadero si el fichero existe y es un fichero especial de caracteres.</li>
+<li>[ -g FILE ]: verdadero si el fichero existe y su bit <em>SGID</em> está establecido.</li>
+<li>[ -k FILE ]: verdadero si el fichero existe y su bit <em>sticky</em> está establecido.</li>
+<li>[ -p FILE ]: verdadero si el fichero existe y es una tubería con nombre (FIFO).</li>
+<li>[ -t FD ]: verdadero si el descriptor de fichero está abierto y refiere a una terminal.</li>
+<li>[ -u FILE ]: verdadero si el fichero existe y su bit <em>SUID</em> está establecido.</li>
+<li>[ -O FILE ]: verdadero si el fichero existe y el ID del usuario efectivo es su propietario.</li>
+<li>[ -G FILE ]: verdadero si el fichero existe y el ID del grupo efectivo es su propietario.</li>
+<li>[ -L FILE ]: verdadero si el fichero existe y es un enlace simbólico.</li>
+</ul>
+<p>Y algunos otros:</p>
+<ul>
+<li>[ -o OPTIONNAME ]: verdadero si la copión <em>OPTIONNAME</em> está activa.</li>
+<li>[ -z STRING ]: verdadero si la longitud de <em>STRING</em> es cero.</li>
+<li>[ -n STRING ] o [ STRING ]: verdadero si la longitud de <em>STRING</em> no es cero.</li>
+<li>[ STRING1 == STRING2 ]: verdadero si las cadenas son iguales.</li>
+<li>[ STRING1 != STRING2 ]: verdadero si las cadenas no son iguales.</li>
+<li>[ STRING1 &lt; STRING2 ]: verdadero si léxicamente <em>STRING1</em> se ordena antes que <em>STRING2</em> en el <em>locale</em> actual.</li>
+<li>[ STRING1 &gt; STRING2 ]: verdadero si léxicamente <em>STRING1</em> se ordena después que <em>STRING2</em> en el <em>locale</em> actual.</li>
+<li>[ ARG1 OP ARG2 ]: donde <em>OP</em> es un operador de entre <em>-eq</em>, <em>-ne</em>, <em>-lt</em>, <em>-le</em>, <em>-gt</em> o <em>-ge</em>. Estas operaciones aritméticas binarias retornan verdadero si <em>ARG1</em> es igual a, no igual a, menor que, menor que o igual, mayor que o mayor que o igual que <em>ARG2</em>, respectivamente. <em>ARG1</em> y <em>ARG2</em> son valores enteros.</li>
+</ul>
+<p>Las expresiones anteriores se pueden combinar:</p>
+<ul>
+<li>[ ! EXPR ]: verdadero si <em>EXPR</em> es false.</li>
+<li>[ ( EXPR ) ]: retorna el valor de <em>EXPR</em>, puede usarse para cambiar la precedencia de operadores.</li>
+<li>[ EXPR1 -a EXPR2 ]: verdadero si ambas <em>EXPR1</em> y <em>EXPR2</em> son verdadero, operador <em>and</em>.</li>
+<li>[ EXPR1 -o EXPR2 ]: verdadero si alguna de <em>EXPR1</em> y <em>EXPR2</em> son verdadero, operador <em>or</em>.</li>
+</ul>
+<h3 id="control-de-trabajos">Control de trabajos</h3>
+<p>El comando <code>jobs</code> obtenemos una lista de trabajos que se está ejecutando junto con su identificador y estado, con la combinación de teclas <kbd>Ctrl+z</kbd> dejamos el proceso actual detenido y en segundo plano, con <code>fg</code> lo devolvemos a primer plano y si estaba detenido se continua su ejecución, con <code>bg</code> si estaba detenido continua su ejecución en segundo plano.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/images/trabajos_hu237159f04275eed2c9a1df42001006ea_76447_2560x1440_fit_box_3.png" data-gallery="" title="Trabajos en primer y segundo plano"><img src="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/images/trabajos_hu237159f04275eed2c9a1df42001006ea_76447_300x200_fit_box_3.png" width="289" height="200" alt="Trabajos en primer y segundo plano" title="Trabajos en primer y segundo plano"  class="lozad "></a></p>
+<figcaption>Trabajos en primer y segundo plano</figcaption>
+</figure>
+</div>
+<p>Esta guía es parte de un tema de los explicados en el completo libro sobre la administración sobre sistemas Unix, <a href="https://amzn.to/29vctVP">UNIX and Linux System Administration Handbook</a>. Un libro con cantidad de temas para conocer más en detalle nuestros sistemas basados en la filosofía Unix. Casi 1300 páginas de documentación con información básica y detallada que deberíamos obligarnos a conocer. Redes, seguridad, virtualización, hospedaje web, copias de seguridad, procesos periódicos, instalación de software, control de procesos y muchos temas más. Otros buenos documentos son <a href="http://www.tldp.org/LDP/abs/html/index.html">Advanced Bash-Scripting Guide</a> y
+el siguiente <a href="http://bash.cyberciti.biz/guide/Main_Page">manual de Bash</a>.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=0131480057&amp;linkId=28302f39b86c5d07ee3db2bc5752c2ed&amp;internal=1" title="Amazon" class="lozad"></iframe>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="http://www.howtogeek.com/howto/44997/how-to-use-bash-history-to-improve-your-command-line-productivity/">How To Use Bash History to Improve Your Command-Line Productivity</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="software-libre"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2016/07/configurar-nginx-como-balanceador-de-carga/</id>
         <title>Configurar Nginx como balanceador de carga</title>
@@ -626,15 +841,15 @@
         <![CDATA[<div class="logotypes">
 <p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/javascript.svg" width="200" height="200" alt="JavaScript" title="JavaScript"  class=""></p>
 </div>
-<p>Hace un tiempo escribí una serie de artículos mostrando el uso de varias de la librerías de JavaScript, el primer artículo fue sobre una <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html">introducción sobre RequireJS</a> hasta un <a href="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">Ejemplo lista de tareas con Backbone y React</a> pasando por otra serie de herramientas útiles en una aplicación que tiene una parte importante en el navegador como:</p>
+<p>Hace un tiempo escribí una serie de artículos mostrando el uso de varias de la librerías de JavaScript, el primer artículo fue sobre una <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.htmlindex-amp.html">introducción sobre RequireJS</a> hasta un <a href="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">Ejemplo lista de tareas con Backbone y React</a> pasando por otra serie de herramientas útiles en una aplicación que tiene una parte importante en el navegador como:</p>
 <ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-mustache.htmlf">Plantillas con Mustache</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/03/logging-en-javascript-con-log4javascript.html"><em>Logging</em> log4javascript</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/capturar-errores-de-javascript.html">Capturar errores de JavaScript</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/introduccion-y-ejemplo-de-backbonejs.html">Modelos con Backbone</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/ejemplo-lista-de-tareas-con-backbone.html">Ejemplo de lista de tareas con Backbone, RESTEasy y Tapestry</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.html">Pruebas unitarias con Jasmine y Sinon</a></li>
-<li>El mismo <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html">ejemplo de lista de tareas con Marionette</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-mustache.htmlfindex-amp.html">Plantillas con Mustache</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/03/logging-en-javascript-con-log4javascript.htmlindex-amp.html"><em>Logging</em> log4javascript</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/capturar-errores-de-javascript.htmlindex-amp.html">Capturar errores de JavaScript</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/introduccion-y-ejemplo-de-backbonejs.htmlindex-amp.html">Modelos con Backbone</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/ejemplo-lista-de-tareas-con-backbone.htmlindex-amp.html">Ejemplo de lista de tareas con Backbone, RESTEasy y Tapestry</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.htmlindex-amp.html">Pruebas unitarias con Jasmine y Sinon</a></li>
+<li>El mismo <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.htmlindex-amp.html">ejemplo de lista de tareas con Marionette</a></li>
 <li>Una vez más el mismo <a href="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">ejemplo de lista de tareas con Backbone y React</a> opción que me gustó más que con <a href="https://marionettejs.com/">Marionette</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/">Internacionalización (i18n) en JavaScript</a></li>
 </ul>
@@ -878,8 +1093,8 @@
 <div class="reference">
     Referencia:<br>
 <ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.html">Herramienta de construcción Gradle</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/usar-gradle-mediante-gradle-wrapper.html">Usar Gradle mediante Gradle wrapper</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.htmlindex-amp.html">Herramienta de construcción Gradle</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/usar-gradle-mediante-gradle-wrapper.htmlindex-amp.html">Usar Gradle mediante Gradle wrapper</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/">Ejemplo de multiproyecto con Gradle</a></li>
 </ul>
 </div>
@@ -911,7 +1126,7 @@
 <p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/libreoffice.svg" width="300" height="58" alt="LibreOffice" title="LibreOffice"  class=""></p>
 </div>
 <p>En el primer artículo de este 2016 comentaba que <a href="https://picodotdev.github.io/blog-bitix/2016/01/windows-10-y-office-2016-tan-faciles-de-usar-sin-licencia-como-siempre/">Windows y Office aún siguen siendo fáciles de usar sin licencia</a>. Licencia que cuesta nada más ni nada menos que unos 125 € para el <a href="https://amzn.to/3cb4v74">hogar y estudiantes</a> y unos 250 € para <a href="https://amzn.to/3sc4aqv">hogar y empresas</a>, por equipo. Y si el equipo se renueva o estropea requiriendo cambiar algunos componentes debe adquirirse una nueva licencia. Dado el coste nada despreciable de la licencia no es de extrañar que tanto Windows como Office sean unos de los productos más usados sin licencia o pirateados.</p>
-<p>Dada lo fácil que es usar Windows y Office sin licencia junto con el <a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.html">impuesto Windows</a> hacen que tengan una cuota de mercado en números prácticamente de monopolio ni hay muestras de que vaya a cambiar a corto plazo. A veces pienso que <a href="https://picodotdev.github.io/blog-bitix/2015/07/a-microsoft-no-le-importa-que-uses-windows-u-office-sin-licencia/">a Microsoft no le importa que uses Windows u Office sin licencia</a> para uso personal. Sin embargo, hay alternativas tanto para Windows como para Office que tienen poco que envidiarle, mucho más baratas o incluso gratuitas y de software libre incluso con un soporte mejor que el que ofrece <a href="https://www.microsoft.com/">Microsoft</a> para su propio software. Lo que no es recomendables usar activadores por ser una fuente de virús informáticos o de troyanos es mejor <a href="https://picodotdev.github.io/blog-bitix/2020/09/como-comprar-una-licencia-y-activar-windows-10-y-office-2019/">comprar una licencia barata de Windows 10 y Microsoft Office</a>.</p>
+<p>Dada lo fácil que es usar Windows y Office sin licencia junto con el <a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.htmlindex-amp.html">impuesto Windows</a> hacen que tengan una cuota de mercado en números prácticamente de monopolio ni hay muestras de que vaya a cambiar a corto plazo. A veces pienso que <a href="https://picodotdev.github.io/blog-bitix/2015/07/a-microsoft-no-le-importa-que-uses-windows-u-office-sin-licencia/">a Microsoft no le importa que uses Windows u Office sin licencia</a> para uso personal. Sin embargo, hay alternativas tanto para Windows como para Office que tienen poco que envidiarle, mucho más baratas o incluso gratuitas y de software libre incluso con un soporte mejor que el que ofrece <a href="https://www.microsoft.com/">Microsoft</a> para su propio software. Lo que no es recomendables usar activadores por ser una fuente de virús informáticos o de troyanos es mejor <a href="https://picodotdev.github.io/blog-bitix/2020/09/como-comprar-una-licencia-y-activar-windows-10-y-office-2019/">comprar una licencia barata de Windows 10 y Microsoft Office</a>.</p>
 <ul>
 <li><a href="https://amzn.to/333Df5X">Licencia de Windows 10 Home</a> en Amazon.</li>
 <li><a href="https://amzn.to/3iZ4dBk">Licencia de Windows 10 Pro</a> en Amazon.</li>
@@ -983,7 +1198,7 @@
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/07/a-microsoft-no-le-importa-que-uses-windows-u-office-sin-licencia/">A Microsoft no le importa que uses Windows u Office sin licencia</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2016/01/windows-10-y-office-2016-tan-faciles-de-usar-sin-licencia-como-siempre/">Windows 10 y Office 2016 tan fáciles de usar sin licencia como siempre</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.html">El impuesto Windows</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.htmlindex-amp.html">El impuesto Windows</a></li>
 </ul>
 </div>
 ]]>
@@ -1062,76 +1277,6 @@
     Referencia:<br>
 <ul>
 <li><a href="https://dzone.com/articles/alternatives-to-global-variables">Alternatives to Global Variables </a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2016/05/que-es-el-concepto-de-heap-pollution-en-java/</id>
-        <title>Qué es el concepto de Heap Pollution en Java</title>
-        <updated>2016-05-14T13:15:00+02:00</updated>
-        <published>2016-05-07T13:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/05/que-es-el-concepto-de-heap-pollution-en-java/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Al trabajar con referencias de tipos genéricos, <em>raw</em> y arrays debemos conocer el concepto de <em>Heap Pollution</em> si no queremos que en algún punto del programa Java se produzca una excepción no esperada del tipo <em>ClassCastException</em>. No teniéndolo en cuenta nos encontraremos con un error de los más difíciles de depurar ya que la excepción solo nos dirá donde se produjo no donde se encuentra el código erróneo que lo provocó.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>La introducción de los <a href="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/">tipos genéricos al lenguaje Java</a> en la versión 5 hizo posible que pudiesemos parametrizar los tipos y que el compilador hiciese validaciones sobre ellos, también se permitieron eliminar muchos <em>cast</em> que hasta entonces eran necesarios al usar el <em>framework</em> de colecciones. Los tipos genéricos permiten evitar errores en tiempo de compilación, al mismo tiempo la eliminación de los <em>cast</em> hace el código más legible y más fácilmente refactorizable. Sin embargo, para mantener la compatibilidad con versiones anteriores se optó por hacer algunos sacrificios en la implementación de genéricos en pos de otros beneficios. Una situación potencialmente problemática es el denominado <a href="https://en.wikipedia.org/wiki/Heap_pollution">Heap Pollution</a>.</p>
-<p>El concepto de <em>Heap Pollution</em> consiste de forma breve (quizá inexacta) en que un tipo genérico contiene un objeto con un tipo que no le corresponde según su tipo genérico, con un ejemplo, que una lista del tipo <em>List&lt;String&gt;</em> contenga un <em>Number</em> entre sus elementos. Que un tipo genérico pueda contener un objeto que no sea de su tipo genérico es detectado en tiempo de compilación con los <em>unchecked warning</em> pero bajo algunas circunstancias se produce en tiempo de ejecución una excepción de tipo <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/ClassCastException.html">ClassCastException</a>, si ignoramos las advertencias y nuestro código no es cuidadoso. Esto es posible porque en Java el tipado de los genéricos sólo está disponible en tiempo de compilación lo que significa que no son <em>reified</em>, el tipado genérico no está disponible en tiempo de ejecución como consecuencia del <a href="https://picodotdev.github.io/blog-bitix/2018/03/que-es-y-como-funciona-el-type-erasure-en-java/">proceso conocido como <em>type erasure</em></a>, al trabajar con referencias de tipo <em>raw</em> y genéricas hay que tener cuidado en las asignaciones y las advertencias del compilador.</p>
-<p>Veamos en código las circunstancias bajo las cuales se pueden producir <em>Heap Pollution</em>. Un tipo <em>List&lt;String&gt;</em> puede asignarse a un <em>List</em> y luego añadir a esa <em>List</em> un <em>Integer</em> momento en el que el compilador nos avisa con un <em>unchecked warning</em> indicando que no puede validar que la lista <em>raw</em> siendo <em>List</em> un tipo genérico se le está añadiendo una referencia del tipo que debería tener, el compilador nos informa de que esa responsabilidad la tenemos nosotros. También podemos asignar un <em>List</em> a un <em>List&lt;Number&gt;</em>, en este caso el compilador tampoco puede validar que la <em>List</em> sea realmente un <em>List&lt;Number&gt;</em> y lo indica también con un <em>unchecked warning</em>. Ignorando estas advertencias se produce un <em>ClassCastException</em> al acceder al elemento <em>Integer</em> que contiene la <em>List&lt;String&gt;</em> como se comprueba en los teses.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">strings</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nd">@Before</span>&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">before</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">strings</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;Hello World!&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nd">@Test</span><span class="o">(</span><span class="n">expected</span> <span class="o">=</span> <span class="n">ClassCastException</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">genericsRaw</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">List</span> <span class="n">objects</span> <span class="o">=</span> <span class="n">strings</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">objects</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">42</span><span class="o">);</span> <span class="c1">// unchecked warning, heap pollution in strings&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">string</span> <span class="o">:</span> <span class="n">strings</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">string</span><span class="o">);</span> <span class="c1">// ClassCastException is thrown&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nd">@Test</span><span class="o">(</span><span class="n">expected</span> <span class="o">=</span> <span class="n">ClassCastException</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">genericsRawNumber</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">List</span> <span class="n">objects</span> <span class="o">=</span> <span class="n">strings</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">List</span><span class="o">&lt;</span><span class="n">Number</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">objects</span><span class="o">;</span> <span class="c1">// unchecked warning&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">numbers</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">42</span><span class="o">);</span> <span class="c1">// heap pollution in strings&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">string</span> <span class="o">:</span> <span class="n">strings</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">string</span><span class="o">);</span> <span class="c1">// ClassCastException is thrown&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>MainTest-generics.java</span>
-    </div>
-</div>
-<p>Por otra parte en Java los arrays en tiempo de ejecución necesitan conocer el tipo <em>reified</em> que contendrá. Esto unido a que los <em>varargs</em> realmente se transforman en un array, el posible <em>Heap Pollution</em> se da también en los métodos que soportan <em>varargs</em>.</p>
-<p>El compilador convierte los <em>varargs</em> de tipos genéricos de la siguiente forma:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">private &lt;T&gt; void add(List&lt;T&gt; list, T... elements) se convierte a&#10;</span></span><span class="line"><span class="cl">private &lt;T&gt; void add(List&lt;T&gt; list, T[] elements) luego a&#10;</span></span><span class="line"><span class="cl">private void add(List list, Object[] elements)&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">private &lt;T&gt; void addFaulty(List&lt;T&gt;... list) se convierte a&#10;</span></span><span class="line"><span class="cl">private void addFaulty(List[] list)</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Erasure-varargs.txt</span>
-    </div>
-</div>
-<p>En un método cuyo último argumento es un <em>vararg</em> y de tipo genérico puede producirse <em>Heap Pollution</em> como indica el compilador, si estamos seguros de que no se puede dar este caso en el código del método podemos eliminar la advertencia del compilador añadiendo la anotación <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SafeVarargs.html">@SafeVarargs</a> en el método. Añadir la anotación solo implica que el compilador eliminará la advertencia pero aún con ella puede seguir produciéndose la excepción <em>ClassCastException</em> si el método no ha sido cuidadoso.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Test</span>&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">warningVarargs</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">add</span><span class="o">(</span><span class="n">strings</span><span class="o">,</span> <span class="s">&#34;Hello&#34;</span><span class="o">,</span> <span class="s">&#34;World!&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nd">@Test</span><span class="o">(</span><span class="n">expected</span> <span class="o">=</span> <span class="n">ClassCastException</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">varargs</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;[]</span> <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="n">List</span><span class="o">[]</span> <span class="o">{</span> <span class="n">strings</span><span class="o">,</span> <span class="n">strings</span> <span class="o">};</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">addFaulty</span><span class="o">(</span><span class="n">strings</span><span class="o">,</span> <span class="n">array</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">:</span> <span class="n">array</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">s</span> <span class="o">:</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span> <span class="c1">// ClassCastException is thrown&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nd">@SafeVarargs</span>&#10;</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="kd">final</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">add</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="n">T</span><span class="o">...</span> <span class="n">elements</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="n">T</span> <span class="n">x</span> <span class="o">:</span> <span class="n">elements</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">addFaulty</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;...</span> <span class="n">elements</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// possible heap polltion warning&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Object</span><span class="o">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="n">elements</span><span class="o">;</span> <span class="c1">// valid, no warning&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">x</span> <span class="o">:</span> <span class="n">elements</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">list</span><span class="o">.</span><span class="na">addAll</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">array</span><span class="o">[</span><span class="n">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">42</span><span class="o">);</span> <span class="c1">// heap pollution&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>MainTest-varargs.java</span>
-    </div>
-</div>
-<p>Tener en cuenta el <em>Heap Pollution</em> es importante ya que la excepción <em>ClassCastException</em> se produce más tarde y en un punto diferente de donde realmente está el error, mucho más tarde si el tipo genérico es serializado e incluso en otra <abbr title="Java Virtual Machine">JVM</abbr> diferente. Estos errores son de los peores de depurar por la poca información que proporcionan ya que la traza de la excepción solo dice quien la lanzó no donde se introdujo el fallo.</p>
-<p>La implementación de los <em>generics</em> en Java viene con la garantía conocida como <em>cast-iron</em> que consiste en que mientras el compilador no produzca una <em>unchecked warning</em> en tiempo de compilación se garantiza que en tiempo de ejecución no se producirá una <em>ClassCastException</em> por los <em>cast</em> introducidos en el proceso de <em>erasure</em>.</p>
-<p>Si nos encontramos con una de estas excepciones con los genéricos en una colección una buena alternativa es hacer uso de los métodos <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedCollection-java.util.Collection-java.lang.Class-">Collections.checkedCollection</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedSet-java.util.Set-java.lang.Class-">Collections.checkedSet</a>,  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedMap-java.util.Map-java.lang.Class-java.lang.Class-">Collections.checkedMap</a> y alguno más similar que evitará que en una colección se produzca <em>Heap Pollution</em>, la excepción <em>ClassCastException</em> se lanzará en el momento de añadir a la colección la referencia que provocaría el <em>Heap Pollution</em>.</p>
-<p>Relacionados con casos de combinar genéricos y arrays y <em>ClassCastException</em> en el libro <a href="https://amzn.to/3D93nvU">Java Generics and Collections</a> se definen dos principios a seguir para evitar excepciones: <em>The Principle of Truth in Advertising</em> y <em>The Principle of Indecent Exposure</em>.</p>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=0596527756&amp;linkId=befd554d504892ac130d115bfc8619b5" title="Amazon" class="lozad"></iframe>
-</div>
-<p>Salvo que hagamos operaciones complicadas entre genéricos de diferentes tipos no será muy habitual que nos encontremos <em>ClassCastException</em> por <em>Heap Pollution</em>, pero es un concepto interesante conocer, en cualquier caso el compilador nos informará con los <em>unchecked warnings</em>.</p>
-<div class="alert alert-secondary sourcecode">
-    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
-    <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaHeapPollution">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew test</code></p>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/">Tutorial sobre los tipos genéricos de Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">Novedades y nuevas características de Java 8</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/">Introducción y nuevas características de Java EE 7</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Heap_pollution">Heap Pollution</a></li>
 </ul>
 </div>
 ]]>

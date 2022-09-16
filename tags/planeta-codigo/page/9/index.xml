@@ -5,12 +5,192 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-09-08T11:00:00+02:00</updated>
+    <updated>2022-09-15T21:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/</id>
+        <title>Qué son, para qué sirven, formato y ejemplos de las expresiones cron</title>
+        <updated>2020-07-10T16:15:00+02:00</updated>
+        <published>2020-07-10T16:15:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<p>Las expresiones <em>cron</em> son el equivalente de expresiones regulares para seleccionar fechas, instantes de tiempo o periodos. Normalmente se utilizan para <a href="https://picodotdev.github.io/blog-bitix/2020/07/tareas-programadas-de-forma-periodica-con-quartz-y-spring-en-java/">planificar la ejecución de tareas automatizadas en librerías como Spring o Quartz</a> o <em>cron</em> de <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> en los momentos seleccionados llegando a la precisión del segundo. Algunas expresiones de fechas pueden ser sencillas como a las 10:15 AM de todos los días o tan complejas como a las 10:15 de cada tercer viernes de cada mes.</p>
+<p>Los propósitos de planificar tareas con expresiones <em>cron</em> son ejecutar procesos automatizados, por ejemplo enviar un correo electrónico a un determinada hora de cada día o generar un informe a las 3:00 de la noche de cada viernes.</p>
+<h3 id="formato-y-posibles-valores-en-cada-campo">Formato y posibles valores en cada campo</h3>
+<p>El formato de las expresiones <em>cron</em> se compone de varios campos separados por un espacios.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">second minute hour day-of-month month day-of-week [year]&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>formato-cron.txt</span>
+    </div>
+</div>
+<p>Según el campo hay varios valores posibles. En los valores numéricos de <em>day-of-week</em> los días empiezan por domingo, el valor 1 es domingo, el lunes es 2 y el 7 es el sábado.</p>
+<table class="table">
+   <thead class="table-light">
+       <th>Campo</th>
+       <th>Requerido</th>
+       <th>Valores permitidos</th>
+       <th>Caracteres especiales permitidos</th>
+   </thead>
+   <tbody>
+       <tr>
+           <td>Seconds</td>
+           <td>Sí</td>
+           <td>0-59</td>
+           <td>, - * /</td>
+       </tr>
+       <tr>
+           <td>Minutes</td>
+           <td>Sí</td>
+           <td>0-59</td>
+           <td>, - * /</td>
+       </tr>
+       <tr>
+           <td>Hours</td>
+           <td>Sí</td>
+           <td>0-23</td>
+           <td>, - * /</td>
+       </tr>
+       <tr>
+           <td>Day of month</td>
+           <td>Sí</td>
+           <td>1-31</td>
+           <td>, - * / L W</td>
+       </tr>
+       <tr>
+           <td>Month</td>
+           <td>Sí</td>
+           <td>0-11 o JAN-DEC</td>
+           <td>, - * /</td>
+       </tr>
+       <tr>
+           <td>Day of week</td>
+           <td>Sí</td>
+           <td>1-7 o SUN-SAT</td>
+           <td>, - * ? / L #</td>
+       </tr>
+       <tr>
+           <td>Year</td>
+           <td>No</td>
+           <td>vacío o 1970-2099</td>
+           <td>, - * /</td>
+       </tr>
+   </tbody>
+</table>
+<p>Los significados de los valores son:</p>
+<ul>
+<li><code>*</code> (todos): es usado para seleccionar cada unidad de tiempo. Por ejemplo, <em>*</em> en el campo minuto significa cada minuto.</li>
+<li><code>?</code> (cualquiera): es utilizando en los campos <em>day-of-month</em> y <em>day-of -week</em> para denotar un valor arbitrario. Por ejemplo, si se quiere seleccionar las fechas de <em>el quinto día de cada mes</em> independientemente del día de la semana, entonces se especifica un <em>?</em> en el campo <em>day-of-week</em>.</li>
+<li><code>–</code> (rango): es usado para seleccionar rangos de valores. Por ejemplo, <em>7-11</em> en el campo <em>hour</em> significa entre las 7 y las 11.</li>
+<li><code>,</code> (valores): es usado para especificar varios valores. Por ejemplo, <em>MON,WED,FRI</em> en el campo <em>day-of-week</em> significa el lunes, miércoles y viernes.</li>
+<li><code>/</code> (incrementos): es usado para especificar valores en incrementos. Por ejemplo, el valor <em>5/15</em> en el campo <em>minute</em> significa en el minuto 5 y con incrementos de 15 minutos siendo los minutos de cada hora seleccionados 5, 20, 35 y 50.</li>
+<li><code>L</code> (último): tiene diferentes significados según el campo en el que se usa. Por ejemplo, si es aplicado al campo <em>day-of-month</em>, entonces significa el último día de cada mes, el día 31 para enero o anterior en otros meses con menos días. Puede usarse con un desplazamiento como <em>L-3</em>, esto significa <em>3 días antes del último día del mes</em>. En el campo <em>day-of-week</em> significa el <em>último día de la semana</em>. También puede usarse con otro valor en el campo <em>day-of-week</em>, como <em>6L</em> lo que significa el <em>último viernes</em> del mes.</li>
+<li><code>W</code> (día entre semana): es usado para especificar en día entre semana (de lunes a viernes) más cercano dado un día del mes. Por ejemplo, si se especifica <em>10W</em> en el campo <em>day-of-month</em> significa <em>el día entre semana más cercano al 10 de cada mes</em>. De modo que si el día 10 del més es sábado se selecciona el viernes 9 y si el día 10 es domingo se selecciona el lunes 11. Si se especifica 1W en en <em>day-of-month</em> y el día 1 es sábado, entonces se selecciona el dia lunes 3, esto es, no se salta al mes anterior.</li>
+<li><code>#</code> (ocurrencia): es usado para especificar el cardinal de la ocurrencia de una semana del mes. Por ejemplo, <em>el tercer viernes del mes</em> se indica con <em>6#3</em> en el campo <em>day-of-week</em>.</li>
+</ul>
+<p>Los valores <code>/</code>, <code>L</code>, <code>W</code> y <code>#</code> son caracteres no estándares, para comprobar si están soportados hay que consultar la documentación de la implementación de las expresiones <em>cron</em>, varía según la herramienta.</p>
+<h3 id="ejemplos-y-generador-de-expresiones-cron">Ejemplos y generador de expresiones cron</h3>
+<p>Las expresiones <em>cron</em> complejas son dífíciles de crear, para asegurar que la expresión cron está bien construida o para generarlas de forma sencilla hay alguna utilidad en internet, una de ellas es este <a href="https://freeformatter.com/cron-expression-generator-quartz.html">generador y explicador de expresiones cron</a>.</p>
+<p>Algunos ejemplos de expresiones con su explicación son los siguientes.</p>
+<table class="table">
+   <thead class="table-light">
+       <th width="300px">Expresión cron</th>
+       <th>Explicación</th>
+   </thead>
+   <tbody>
+       <tr>
+           <td>0 0 12 * * ?</td>
+           <td>Cada día a las 12:00 PM (12 del medio día)</td>
+       </tr>
+       <tr>
+           <td>0 15 10 * * *</td>
+           <td>Cada día a las 10:15 AM</td>
+       </tr>
+       <tr>
+           <td>0 15 10 * * ? 2005</td>
+           <td>Cada día a las 10:15 AM durante el año 2005</td>
+       </tr>
+       <tr>
+           <td>0 * 14 * * ?</td>
+           <td>Cada minuto de la hora 14, de cada día</td>
+       </tr>
+       <tr>
+           <td>0 0/5 14 * * ?</td>
+           <td>Cada 5 minutos de la hora 14 empezando en el minuto 0, de cada día</td>
+       </tr>
+       <tr>
+           <td>0 0/5 14,18 * * ?</td>
+           <td>Cada 5 minutos de las horas 14 y 18 empezando en el minuto 0, de cada día</td>
+       </tr>
+       <tr>
+           <td>0 0-5 14 * * ?</td>
+           <td>Cada minuto entre 0 y 5 de la hora 14, de cada día</td>
+       </tr>
+       <tr>
+           <td>0 10,44 14 ? 3 WED</td>
+           <td>A las 14:10 y 14:44 de cada miércoles de marzo</td>
+       </tr>
+       <tr>
+           <td>0 15 10 ? * MON-FRI</td>
+           <td>A las 10:15 AM de cada lunes, martes, miércoles, jueves y viernes</td>
+       </tr>
+       <tr>
+           <td>0 15 10 15 * ? </td>
+           <td>A las 10:15 AM del día 15 de cada mes</td>
+       </tr>
+       <tr>
+           <td>0 15 10 L * ?</td>
+           <td>A las 10:15 AM del último día del mes</td>
+       </tr>
+       <tr>
+           <td>0 15 10 ? * 6L</td>
+           <td>A las 10:15 AM del último viernes del mes</td>
+       </tr>
+       <tr>
+           <td>0 15 10 ? * 6L 2002-2005</td>
+           <td>A las 10:15 AM de cada viernes del mes de los años 2002, 2003, 2004 y 2005</td>
+       </tr>
+       <tr>
+           <td>0 15 10 ? * 6#3</td>
+           <td>A las 10:15 AM del tercer viernes de cada mes</td>
+       </tr>
+       <tr>
+           <td>0 0 12 1/5 * ?</td>
+           <td>A las 12 PM (12 del medio día) cada cinco días del mes, empezando desde el primer día del mes</td>
+       </tr>
+       <tr>
+           <td>0 11 11 11 11 ?</td>
+           <td>Cada 11 de noviembre a las 11:11 AM</td>
+       </tr>
+   </tbody>
+</table>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm">Cron Expressions</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cron#CRON_expression">Cron expression</a></li>
+<li><a href="https://riptutorial.com/spring/example/21209/cron-expression">Cron expression</a></li>
+<li><a href="http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html">Cron Trigger Tutorial</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2020/07/las-diferencias-entre-gnu-linux-bsd-y-sus-distribuciones/</id>
         <title>Las diferencias entre GNU/Linux, BSD y sus distribuciones</title>
@@ -1462,246 +1642,6 @@
 <li><a href="https://www.reddit.com/r/linux/comments/5n069y/why_do_people_not_like_systemd/">Why do people not like Systemd?</a></li>
 <li><a href="https://www.reddit.com/r/linux/comments/50mpzv/eli5_systemd_advantages_and_disadvantages/">ELI5: systemd - Advantages and disadvantages</a></li>
 <li><a href="https://www.reddit.com/r/linux/comments/4n3t6s/eli5_whats_the_big_issue_with_systemd/">ELI5: What&rsquo;s the big issue with Systemd?</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/</id>
-        <title>Introducción y uso básico de la distribución GNU/Linux Fedora Silverblue</title>
-        <updated>2020-05-15T18:45:00+02:00</updated>
-        <published>2020-05-15T16:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Fedora Silbervlue es una distribución innovadora es su forma de sistema base usando OSTree e instalar aplicaciones gráficas con Flatpak y de paquetes de linea de comandos con Toolbox. Todas estas tecnologías le permiten considerarse una distribución <em>rolling-release</em> tanto en el sistema como aplicaciones y paquetes. Estas tecnologías y forma de actualizar el sistema hace que sea mucho menos propenso a errores que los tradicionales en las distribuciones GNU/Linux de actualización de paquetes, ¿la siguiente generación de distribuciones serán como Fedora Silverblue?.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/fedora.svg" width="200" height="200" alt="Fedora" title="Fedora"  class=""></p>
-</div>
-<p>Distribuciones <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> hay muchas con diferencias en algunos aspectos, el más cercano al usuario es entorno de escritorio entre los más populares <a href="https://www.gnome.org/">GNOME</a>, <a href="https://www.kde.org/">KDE</a>, <a href="https://xfce.org/">XFCE</a>, <a href="https://mate-desktop.org/">MATE</a> o <a href="https://cinnamon-spices.linuxmint.com/">Cinnamon</a> entre otros pero hay otros aspectos relevantes entre ellos el gestor de paquetes que utiliza, el modelo de actualización, en que otra distribución está basada, cual es su periodo de publicación de nuevas versiones, su popularidad, tiempo de vida o si está respaldada por una empresa.</p>
-<p>A pesar de estas diferencias la mayoría de las distribuciones para los usuarios son parecidas en muchos aspectos. Tradicionalmente cada distribución tiene su repositorio de paquetes y su comando gestor de paquetes con el que es posible instalar y desinstalar paquetes. La mayoría usa <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a> como sistema de inicio para controlar los procesos y servicios. El entorno de escritorio GNOME o KDE es el mismo en cada distribución si no se tiene en cuenta que las versiones puedan ser diferentes.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/">Elegir una distribución GNU/Linux según el usuario, uso o equipo</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/">Descargar e instalar la distribución Ubuntu de GNU/Linux paso a paso desde cero</a></li>
-</ul>
-<p>Las distribuciones GNU/Linux han cambiado en algunos aspectos importantes como la sustitución del sistema de inicio de SysV a systemd o cambiado el servidor gráfico <a href="https://www.x.org/wiki/">Xorg</a> por <a href="https://es.wikipedia.org/wiki/Wayland_%28protocolo%29">Wayland</a> y van a hacerlo más en el futuro con el nuevo sistema para crear VPNs con <a href="https://www.wireguard.com/">WireGuard</a> o el sistema multimedia para sonido y vídeo <a href="https://pipewire.org/">PipeWire</a>.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/05/sobre-el-futuro-de-las-distribuciones-gnu-linux-y-los-sistemas-operativos/">Sobre el futuro de las distribuciones GNU/Linux y los sistemas operativos</a></li>
-</ul>
-<p>En mi caso utilizo <a href="https://www.archlinux.org/">Arch Linux</a> desde hace ya casi una década y estoy contento con ella. Los motivos que tengo para preferir esta distribución son su modelo de actualizaciones <em>rolling-release</em> en el que cada actualización todos los paquetes se actualizan a la última versión, su gestor de paquetes <em>pacman</em> que es muy rápido, los paquetes tiene pocas modificaciones realizadas por los mantenedores, es altamente personalizable y también no menos importante casi como todo lo anterior su <a href="https://wiki.archlinux.org/">documentación wiki</a> con información muy útil para cualquier usuario de GNU/Linux.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">De Arch Linux a Arch Linux</a></li>
-</ul>
-<p>Arch Linux es una de las distribuciones más populares pero no proporciona ningún asistente automatizado de instalación sino que después de arrancar el medio de inicio hay que introducir los comandos manualmente uno a uno hasta completar la instalación. Esto la hace difícil para los usuarios recién llegados a GNU/Linux o para los usuarios que no desean invertir tiempo en conocer cómo instalarla. También incluso para los usuarios expertos es que ya conocen como instalarla pero que el hecho de hacerlo manualmente es un tiempo que a veces no se dispone además de repetitivo.</p>
-<p>Por esos motivos creé un <em>script</em> de instalación de Arch Linux completamente automatizado y desatendido con cierto grado de personalización en las opciones más comunes, es un simple <em>script</em> bash con todos los comandos que componen el proceso de instalación y que simplemente revisarlo sirve como documentación que además si se desea se puede ejecutar.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/01/script-para-instalar-arch-linux-facil-rapido-desatendido-automatizado-y-personalizable/">Script para instalar Arch Linux fácil, rápido, desatendido, automatizado y personalizable</a></li>
-</ul>
-<p>Pero a pesar de todo Arch Linux se basa en los principios básicos de los que hasta hoy han estado basadas las distribuciones. Gestor de paquetes, repositorio de paquetes y actualizaciones frágiles. Es muy posible que las distribuciones cambien tal y como las hemos conocido hasta ahora, ya se está produciendo cambios con Flatpak como sistema de instalar aplicaciones independientemente de la distribución y mantenidos por los propios desarrolladores del software y no los mantenedores de la distribución.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux</a></li>
-</ul>
-<p>Una distribución que se basa en principios diferentes que pueden ser el futuro próximo es <a href="https://silverblue.fedoraproject.org/">Fedora Silverblue</a>.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/fedora-silverblue-neofetch_hud186b43fb0137434e1f5afde35eafa67_474181_2560x1440_fit_box_3.png" data-gallery="" title="Fedora Silverblue"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/fedora-silverblue-neofetch_hud186b43fb0137434e1f5afde35eafa67_474181_650x450_fit_box_3.png" width="600" height="450" alt="Fedora Silverblue" title="Fedora Silverblue"  class="lozad "></a></p>
-<figcaption>Fedora Silverblue</figcaption>
-</figure>
-</div>
-<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
-<h3 id="la-distribución-fedora-silverblue">La distribución Fedora Silverblue</h3>
-<p>Una de las mayores fuentes de problemas de las distribuciones y de los sistemas operativos son las actualizaciones que por los cambios que introducen con nuevas versiones del software en ocasiones hace que algunas partes dejen de funcionar. Son solucionables desactualizando un paquete o en los casos más graves hace que el sistema ni siquiera se inicie correctamente llegando incluso a tener que reinstalar el sistema o peor aún provocando pédida de datos.</p>
-<p>Otro problema es que algunas distribuciones tienen como principio la estabilidad del software y dado que las nuevas versiones de los programas son una fuente de inestabilidades optan por únicamente proporciona actualizaciones para errores de seguridad. Esto proporciona una mayor estabilidad pero hace que los programas no estén actualizados a las últimas versiones con lo que no se benefician de mejoras en nuevas características, mejoras de soporte de hardware, de rendimiento o incluso de seguridad.</p>
-<p>Fedora Silverblue adopta varios principios para solucionar esos problemas. Uno es utilizar una base inmutable igual para todos los sistemas en los que se instala de modo que no haya diferencias ni errores por variaciones en el software del sistema. Es posible volver a una versión anterior en caso de algún error de modo que el sistema nunca quede completamente roto. Las aplicaciones de usuario y paquetes se instalan independientemente del sistema base inmutable lo que hace que no afecten a la estabilidad del sistema.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/fedora-silverblue-1_hu72b6fce4c71a639827cbef2d8e03b154_14969_2560x1440_fit_box_3.png" data-gallery="" title="Fedora Silverblue"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/fedora-silverblue-1_hu72b6fce4c71a639827cbef2d8e03b154_14969_200x150_fit_box_3.png" width="200" height="150" alt="Fedora Silverblue" title="Fedora Silverblue"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/fedora-silverblue-2_huea521b43aff143b25ef551af5ca835c7_17177_2560x1440_fit_box_3.png" data-gallery="" title="Fedora Silverblue"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/fedora-silverblue-2_huea521b43aff143b25ef551af5ca835c7_17177_200x150_fit_box_3.png" width="200" height="150" alt="Fedora Silverblue" title="Fedora Silverblue"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/fedora-silverblue-3_hub50f3f6eaa1f534f859628a31c6b8383_18303_2560x1440_fit_box_3.png" data-gallery="" title="Fedora Silverblue"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/fedora-silverblue-3_hub50f3f6eaa1f534f859628a31c6b8383_18303_200x150_fit_box_3.png" width="200" height="150" alt="Fedora Silverblue" title="Fedora Silverblue"  class="lozad "></a></p>
-<figcaption>Fedora Silverblue</figcaption>
-</figure>
-</div>
-<p>Las tecnologías que permiten adoptar esos principios a Fedora Silverblue son <a href="https://en.wikipedia.org/wiki/OSTree">OSTree</a> para el sistema base inmutable, <a href="https://flatpak.org/">Flatpak</a> para las aplicaciones de usuario gráficas y <a href="#ZgotmplZ">Toolbox</a> para instalar software de línea de comandos en contenedores.</p>
-<p>OSTree es un proyecto que combina un modelo parecido a git para establecer y descargar árboles de sistemas de archivos de arranque, junto con una capa para disponerlos y gestionarlos con la configuración de arranque. OSTree es usado por <em>rmp-ostree</em>, un sistema híbrido de paquete e imágenes que usa Silverblue. Replica de forma atómica un sistema operativo base que permite al usuario añadir capas de paquetes RPM tradicionales encima del sistema base si se necesita.</p>
-<ul>
-<li><a href="https://fedoramagazine.org/what-is-silverblue/">What is Silverblue?</a></li>
-<li><a href="https://www.redhat.com/sysadmin/beginners-guide-silverblue">A beginner&rsquo;s guide to Silverblue</a></li>
-<li><a href="https://docs.fedoraproject.org/en-US/fedora-silverblue/getting-started/">Getting Started</a></li>
-<li><a href="https://docs.fedoraproject.org/en-US/fedora-silverblue/updates-upgrades-rollbacks/">Updates, Upgrades &amp; Rollbacks</a></li>
-<li><a href="https://docs.fedoraproject.org/en-US/fedora-silverblue/toolbox/">Toolbox</a></li>
-<li><a href="https://docs.fedoraproject.org/en-US/fedora-silverblue/faq/">Frequently Asked Questions (FAQ)</a></li>
-</ul>
-<h4 id="instalación">Instalación</h4>
-<p>La instalación se realiza con un asistente gráfico después de haber descargado el medio de instalación y haberlo grabado en una memoria USB para iniciar el sistema con él. Es necesario poco más que seleccionar la distribución del teclado, el particionado y la clave del superusuario <em>root</em> para realizar la instalación.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/installation-1_hu334118f14b6e47b10a2e003459f42d7c_147125_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Fedora Silverblue"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/installation-1_hu334118f14b6e47b10a2e003459f42d7c_147125_200x150_fit_box_3.png" width="200" height="150" alt="Instalación de Fedora Silverblue" title="Instalación de Fedora Silverblue"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/installation-2_hu35bf1221fb365956ef4b431d10f715fa_99605_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Fedora Silverblue"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/installation-2_hu35bf1221fb365956ef4b431d10f715fa_99605_200x150_fit_box_3.png" width="200" height="150" alt="Instalación de Fedora Silverblue" title="Instalación de Fedora Silverblue"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/installation-3_hu5fee3273784ebdfde1a9c9b61c11b003_84361_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Fedora Silverblue"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/installation-3_hu5fee3273784ebdfde1a9c9b61c11b003_84361_200x150_fit_box_3.png" width="200" height="150" alt="Instalación de Fedora Silverblue" title="Instalación de Fedora Silverblue"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/installation-4_hua02e537250462088a5e510c6ce9af1a4_93165_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Fedora Silverblue"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/installation-4_hua02e537250462088a5e510c6ce9af1a4_93165_200x150_fit_box_3.png" width="200" height="150" alt="Instalación de Fedora Silverblue" title="Instalación de Fedora Silverblue"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/installation-5_hu35bf1221fb365956ef4b431d10f715fa_96380_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Fedora Silverblue"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/installation-5_hu35bf1221fb365956ef4b431d10f715fa_96380_200x150_fit_box_3.png" width="200" height="150" alt="Instalación de Fedora Silverblue" title="Instalación de Fedora Silverblue"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/installation-6_huc60c7c13f3bd73bf583578f415369a32_74969_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Fedora Silverblue"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/installation-6_huc60c7c13f3bd73bf583578f415369a32_74969_200x150_fit_box_3.png" width="200" height="150" alt="Instalación de Fedora Silverblue" title="Instalación de Fedora Silverblue"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/installation-7_hu967f46395a811c27d46170abde26d672_76282_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Fedora Silverblue"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/installation-7_hu967f46395a811c27d46170abde26d672_76282_200x150_fit_box_3.png" width="200" height="150" alt="Instalación de Fedora Silverblue" title="Instalación de Fedora Silverblue"  class="lozad "></a></p>
-<figcaption>Instalación de Fedora Silverblue</figcaption>
-</figure>
-</div>
-<h4 id="primer-inicio">Primer inicio</h4>
-<p>Al iniciar el sistema por primera vez un nuevo asistente permite crear la cuenta de usuario compuesto de nombre y contraseña con la que iniciar sesión en el sistema.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/initial-setup-1_hufca710f075c9f7238a8aec34a4720969_11522_2560x1440_fit_box_3.png" data-gallery="" title="Primer inicio"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/initial-setup-1_hufca710f075c9f7238a8aec34a4720969_11522_200x150_fit_box_3.png" width="200" height="150" alt="Primer inicio" title="Primer inicio"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/initial-setup-2_hu8e79a4e9bb7b77aaa5efa79b41f17f33_29958_2560x1440_fit_box_3.png" data-gallery="" title="Primer inicio"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/initial-setup-2_hu8e79a4e9bb7b77aaa5efa79b41f17f33_29958_200x150_fit_box_3.png" width="200" height="150" alt="Primer inicio" title="Primer inicio"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/initial-setup-3_huc54e35830ec0ee283d1a571c628d26e7_30222_2560x1440_fit_box_3.png" data-gallery="" title="Primer inicio"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/initial-setup-3_huc54e35830ec0ee283d1a571c628d26e7_30222_200x150_fit_box_3.png" width="200" height="150" alt="Primer inicio" title="Primer inicio"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/initial-setup-4_hub255390288bb13793bb03f4c879f5210_30268_2560x1440_fit_box_3.png" data-gallery="" title="Primer inicio"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/initial-setup-4_hub255390288bb13793bb03f4c879f5210_30268_200x150_fit_box_3.png" width="200" height="150" alt="Primer inicio" title="Primer inicio"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/initial-setup-5_huc81907f85ce1d4df01982d3e2eb2740b_31406_2560x1440_fit_box_3.png" data-gallery="" title="Primer inicio"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/initial-setup-5_huc81907f85ce1d4df01982d3e2eb2740b_31406_200x150_fit_box_3.png" width="200" height="150" alt="Primer inicio" title="Primer inicio"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/initial-setup-6_hu982b3ce94073359abd88d0a20c777723_22194_2560x1440_fit_box_3.png" data-gallery="" title="Primer inicio"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/initial-setup-6_hu982b3ce94073359abd88d0a20c777723_22194_200x150_fit_box_3.png" width="200" height="150" alt="Primer inicio" title="Primer inicio"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/initial-setup-7_huf8d44d8d8228bbbab54a52756693d33b_22369_2560x1440_fit_box_3.png" data-gallery="" title="Primer inicio"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/initial-setup-7_huf8d44d8d8228bbbab54a52756693d33b_22369_200x150_fit_box_3.png" width="200" height="150" alt="Primer inicio" title="Primer inicio"  class="lozad "></a></p>
-<figcaption>Primer inicio</figcaption>
-</figure>
-</div>
-<p>Al usar GNOME como entorno de escritorio no se diferencia a cualquier otro sistema con GNOME. La mayor diferencia está en que las aplicaciones preinstaladas son muy pocas, reduciéndose a las básicas como el navegador <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a>, la terminal, el explorador de archivos y editor de texto. Este permite al usuario tener instaladas únicamente las aplicaciones que desee o no tener que desinstalar las aplicaciones que no desea. Las aplicaciones que se deseen se deben instalar con Flatpak.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/">Las aplicaciones integradas del entorno de escritorio GNOME</a></li>
-</ul>
-<h4 id="administración-del-sistema-actualización">Administración del sistema, actualización</h4>
-<p>El software que compone el sistema base se puede actualizar, los siguientes comandos permiten conocer cuales son las actualizaciones disponibles. Las actualizaciones están integradas con el programa Software de GNOME que muestra notificaciones cuando hay alguna actualización disponible.</p>
-<p>Pero también puede realizarse desde la línea de comandos. El siguiente comando realiza la operación de actualización.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ rpm-ostree upgrade&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>rpm-ostree-upgrade.sh</span>
-    </div>
-</div>
-<p>Para simplemente comprobar que actualizaciones hay disponibles sin instalarlas.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ rmp-ostree status&#10;</span></span><span class="line"><span class="cl">$ rpm-ostree upgrade --check&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>rpm-ostree-status.sh</span>
-    </div>
-</div>
-<p>Para actualizar entre versiones mayores, de la 32 a posteriores, de Fedora Silverblue se utilizan los siguientes comandos en los que cambiará el número de la versión.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ostree remote list&#10;</span></span><span class="line"><span class="cl">$ sudo ostree remote gpg-import fedora -k /etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-32-primary&#10;</span></span><span class="line"><span class="cl">$ rpm-ostree rebase fedora:fedora/32/x86_64/silverblue</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>rpm-ostree-rebase.sh</span>
-    </div>
-</div>
-<p>La mayoría del software de usuario se instala con Flatpak y Toolbox siendo la forma recomendada de hacerlo. Sin embargo, algunos programas ha de instalarse modificando la instalación de Silverblue utilizando <em>package layering</em>, como un intérprete de comandos distinto a bash. La mayoría de paquetes RMP es posible instalarlos, aún así este método debe usarse en casos excepcionales que no sea posible hacerlo con Flatpak o Toolbox ya que podría comprometer la estabilidad del sistema.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ rpm-ostree install &lt;package name&gt;&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>rpm-ostree-install.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/upgrade-1_hu412c2cbe51e0ce4e5f6b662152396528_22474_2560x1440_fit_box_3.png" data-gallery="" title="Actualización"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/upgrade-1_hu412c2cbe51e0ce4e5f6b662152396528_22474_200x150_fit_box_3.png" width="200" height="150" alt="Actualización" title="Actualización"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/upgrade-2_hu6c41790167a0593e469e76a3a3719625_126188_2560x1440_fit_box_3.png" data-gallery="" title="Actualización"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/upgrade-2_hu6c41790167a0593e469e76a3a3719625_126188_200x150_fit_box_3.png" width="200" height="150" alt="Actualización" title="Actualización"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/upgrade-3_hu08f7bc5873f938f2af078c9fc9340331_38541_2560x1440_fit_box_3.png" data-gallery="" title="Actualización"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/upgrade-3_hu08f7bc5873f938f2af078c9fc9340331_38541_200x150_fit_box_3.png" width="200" height="150" alt="Actualización" title="Actualización"  class="lozad "></a></p>
-<figcaption>Actualización</figcaption>
-</figure>
-</div>
-<p>En caso de que una actualización produzca algún error se puede volver a la versión anterior con el siguiente comando.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ rpm-ostree rollback&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>rpm-ostree-rollback.sh</span>
-    </div>
-</div>
-<h4 id="instalación-de-programas-gráficos">Instalación de programas gráficos</h4>
-<p>Las aplicaciones de usuario gráficas se instalan con Flatpak y en el caso de GNOME con la aplicación Software. A medida que pasa el tiempo hay más programas disponibles en esta forma de distribuir software y muchos de los programas más comunes está disponibles como la colección ofimática <a href="https://www.libreoffice.org/">LibreOffice</a>, el reproductor multimedia <a href="https://www.videolan.org/vlc/">VLC</a>, el editor de texto avanzado <a href="https://code.visualstudio.com/">Visual Studio Code</a> o el entorno de desarrollo integrado <a href="https://www.jetbrains.com/idea/">IntelliJ</a>.</p>
-<p>Con la aplicación de software es posible encontrar todo este software, instalarlo y desinstalarlo con un clic en un botón. Lo único necesario es añadir el repositorio <a href="https://flathub.org/">Flathub</a> como fuente de programas.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/flathub-1_hu7b010a6c7dc81cb286a585cf91230867_95670_2560x1440_fit_box_3.png" data-gallery="" title="Repositorio Flathub"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/flathub-1_hu7b010a6c7dc81cb286a585cf91230867_95670_200x150_fit_box_3.png" width="200" height="150" alt="Repositorio Flathub" title="Repositorio Flathub"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/flathub-2_hu0c9ffa6531dce44b313e061f114c9251_30535_2560x1440_fit_box_3.png" data-gallery="" title="Repositorio Flathub"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/flathub-2_hu0c9ffa6531dce44b313e061f114c9251_30535_200x150_fit_box_3.png" width="200" height="150" alt="Repositorio Flathub" title="Repositorio Flathub"  class="lozad "></a></p>
-<figcaption>Repositorio Flathub</figcaption>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/software-1_hu454c37637f78c34af6781e781edc75bd_38613_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de software"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/software-1_hu454c37637f78c34af6781e781edc75bd_38613_200x150_fit_box_3.png" width="200" height="150" alt="Instalación de software" title="Instalación de software"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/software-2_hu5be278704ac1e2552da4e93471377430_168992_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de software"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/software-2_hu5be278704ac1e2552da4e93471377430_168992_200x150_fit_box_3.png" width="200" height="150" alt="Instalación de software" title="Instalación de software"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/software-3_hu8763285f2a4e46b3397677137d750403_76432_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de software"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/software-3_hu8763285f2a4e46b3397677137d750403_76432_200x150_fit_box_3.png" width="200" height="150" alt="Instalación de software" title="Instalación de software"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/software-4_hu398d17e819a65e9b764fcb1a661abb71_80506_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de software"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/software-4_hu398d17e819a65e9b764fcb1a661abb71_80506_200x150_fit_box_3.png" width="200" height="150" alt="Instalación de software" title="Instalación de software"  class="lozad "></a></p>
-<figcaption>Instalación de software</figcaption>
-</figure>
-</div>
-<p>Dos programas instalados como paquetes Flatpak.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/intellij_hud5d7e1f0b18a093b387b76218135f751_83421_2560x1440_fit_box_3.png" data-gallery="" title="Intellij IDEA"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/intellij_hud5d7e1f0b18a093b387b76218135f751_83421_200x150_fit_box_3.png" width="200" height="150" alt="Intellij IDEA" title="Intellij IDEA"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/visual-studio-code_hu14559c2a9aae3faed20e910c38bbe0c4_87736_2560x1440_fit_box_3.png" data-gallery="" title="Visual Studio Code"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/visual-studio-code_hu14559c2a9aae3faed20e910c38bbe0c4_87736_200x150_fit_box_3.png" width="200" height="150" alt="Visual Studio Code" title="Visual Studio Code"  class="lozad "></a></p>
-<figcaption>Programas instalados como Flatpak</figcaption>
-</figure>
-</div>
-<p>También es posible instalar el paquetes Flatpak desde la linea de comandos.</p>
-<h4 id="uso-de-toolbox-programas-de-línea-de-comandos-en-contenedores">Uso de Toolbox, programas de línea de comandos en contenedores</h4>
-<p>El resto de paquetes de línea de comandos se pueden instalar en contenedores con <a href="#ZgotmplZ">Toolbox</a> basados en <a href="https://podman.io/">podman</a> que es una alternativa compatible de <a href="https://www.docker.com/">Docker</a>. Lo especial de estos contenedores es que tiene acceso a la carpeta personal o directorio <em>home</em> del usuario de modo que pueden crear archivos o modificar los existentes en esta ubicación.</p>
-<p>Destro de estos componentes se instalan los paquetes con el gestor de paquetes <em>dnf</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ toolbox run dnf search openjdk&#10;</span></span><span class="line"><span class="cl">Last metadata expiration check: <span class="m">5</span> days, 18:10:47 ago on Sun May <span class="m">10</span> 00:09:19 2020.&#10;</span></span><span class="line"><span class="cl"><span class="o">=======================</span> Name <span class="p">&amp;</span> Summary Matched: <span class="nv">openjdk</span> <span class="o">========================</span>&#10;</span></span><span class="line"><span class="cl">java-11-openjdk-demo.x86_64 : OpenJDK Demos <span class="m">11</span>&#10;</span></span><span class="line"><span class="cl">java-1.8.0-openjdk-demo.x86_64 : OpenJDK Demos <span class="m">8</span>&#10;</span></span><span class="line"><span class="cl">java-latest-openjdk-demo.x86_64 : OpenJDK Demos <span class="m">14</span>&#10;</span></span><span class="line"><span class="cl">java-11-openjdk-jmods.x86_64 : JMods <span class="k">for</span> OpenJDK <span class="m">11</span>&#10;</span></span><span class="line"><span class="cl">java-11-openjdk-src.x86_64 : OpenJDK Source Bundle <span class="m">11</span>&#10;</span></span><span class="line"><span class="cl">java-11-openjdk.x86_64 : OpenJDK Runtime Environment <span class="m">11</span>&#10;</span></span><span class="line"><span class="cl">java-11-openjdk.i686 : OpenJDK Runtime Environment <span class="m">11</span>&#10;</span></span><span class="line"><span class="cl">java-latest-openjdk-jmods.x86_64 : JMods <span class="k">for</span> OpenJDK <span class="m">14</span>&#10;</span></span><span class="line"><span class="cl">java-1.8.0-openjdk-src.x86_64 : OpenJDK Source Bundle <span class="m">8</span>&#10;</span></span><span class="line"><span class="cl">java-latest-openjdk-src.x86_64 : OpenJDK Source Bundle <span class="m">14</span>&#10;</span></span><span class="line"><span class="cl">....&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ sudo dnf install java-11-openjdk.x86_64&#10;</span></span><span class="line"><span class="cl">$ java -version</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>toolbox-package-install.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/toolbox-1_hua1fe30103c61aec086ed268a611df081_23897_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de programas de línea de comandos"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/toolbox-1_hua1fe30103c61aec086ed268a611df081_23897_200x150_fit_box_3.png" width="200" height="150" alt="Instalación de programas de línea de comandos" title="Instalación de programas de línea de comandos"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/toolbox-2_hu8ce579e6bb231f90e0a9b50c788452dd_17786_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de programas de línea de comandos"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/toolbox-2_hu8ce579e6bb231f90e0a9b50c788452dd_17786_200x150_fit_box_3.png" width="200" height="150" alt="Instalación de programas de línea de comandos" title="Instalación de programas de línea de comandos"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/toolbox-3_huee9da92daa7873dda83bedb50fc6a455_29413_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de programas de línea de comandos"><img src="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/images/toolbox-3_huee9da92daa7873dda83bedb50fc6a455_29413_200x150_fit_box_3.png" width="200" height="150" alt="Instalación de programas de línea de comandos" title="Instalación de programas de línea de comandos"  class="lozad "></a></p>
-<figcaption>Instalación de programas de línea de comandos</figcaption>
-</figure>
-</div>
-<p>Para no modificar el sistema base de Silverblue otra forma de instalar Java es con la utilidad <a href="https://sdkman.io/">SDKMAN</a> que además permite cambiar entre versiones fácilmente y tener acceso a diferentes implementaciones del JDK, entre otras utilidades instalables con esta herramienta.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sdk list java&#10;</span></span><span class="line"><span class="cl">$ sdk install java 11.0.7-open&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>sdk-usage.sh</span>
-    </div>
-</div>
-<h3 id="conclusión">Conclusión</h3>
-<p>Si tuviese que probar o usar otra distribución diferente Arch Linux probablemente la que elegiría sería Fedora Silverblue por los principios innovadores en las que está basada que proporcionan varias mejoras en puntos importantes sobre las distribuciones como las hemos conocido tradicionalmente. Igualmente permite tener el software actualizado, es también <em>rolling-release</em> y mejora la fiabilidad de las actualizaciones.</p>
-<p>En estos vídeos se proporciona una introducción sobre esta distribución que quizá marque el camino de aquí en adelante para otras.</p>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/BkrGij4LNC0" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/8b9sTXdQK5k" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://xermansoto.wordpress.com/2020/04/10/fedora-silverblue-31-review-after-3-months/">Fedora Silverblue 31 review (after 3 months)</a></li>
-<li><a href="http://harrymichal.undo.it/posts/2020/a-little-collection-of-how-to-do-x-with-toolbox-on-fedora-silverblue/">A little collection of ‘How to do X with Toolbox on Fedora Silverblue’</a></li>
 </ul>
 </div>
 ]]>
