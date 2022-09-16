@@ -95,7 +95,7 @@ Las aplicaciones de Java que usan [Spring Boot][spring-boot] a través de la dep
 
 El siguiente ejemplo es un servicio de Spring Boot accedido desde el navegador, en caso de que el cliente fuese otra aplicación o servicio hay que obtener un _token_ con el que poder invocar este servicio.
 
-* [Cliente de un servicio REST autenticado con OAuth en Java](https://picodotdev.github.io/blog-bitix/2016/10/cliente-de-un-servicio-rest-autenticado-con-oauth-en-java/)
+* [Cliente de un servicio REST autenticado con OAuth en Java][blogbitix-183]
 * [Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot](https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/)
 
 Primero hay que incluir en el proyecto la dependencia del cliente OAuth2.

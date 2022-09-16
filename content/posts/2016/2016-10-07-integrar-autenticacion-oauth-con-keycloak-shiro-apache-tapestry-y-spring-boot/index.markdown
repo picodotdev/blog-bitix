@@ -10,14 +10,14 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-imagePost: "logotype:keycloak.png"
+imagePost: "logotype:keycloak.svg"
 tags: ["java", "planeta-codigo", "programacion"]
 summary: "OAuth es un protocolo usado para permitir a una aplicación acceder a los recursos de un usuario sin que este proporcione a la aplicación cliente sus credenciales y manteniendo el control de revocar los permisos concedidos. Es ampliamente usado por los servicios de redes sociales de las empresas más conocidas, también lo podemos usar en nuestras aplicaciones. En el ejemplo usaré Keycloak y una aplicación Java con Spring Boot, Apache Shiro y Apache Tapestry."
 ---
 
 {{% post %}}
 
-{{< logotype image1="keycloak.png" title1="Keycloak" width1="200" image2="java.svg" >}}
+{{< logotype image1="keycloak.svg" image2="java.svg" >}}
 
 El protocolo [OAuth][oauth] permite a una aplicación cliente acceder a los recursos de un usuario almacenados en otra aplicación sin que el usuario proporcione a la aplicación cliente sus credenciales, además el usuario tiene la capacidad de revocar en caulquier momento los permisos concedidos a la aplicación cliente. El protocolo OAuth es ampliamente usado por empresas como [Google][google], [Facebook][facebook], [Twitter][twitter] en sus aplicaciones y servicios. También aplicando una arquitectura de microservicios, al dividir una aplicación en varios módulos o simplemente varias aplicaciones independientes pero que son usadas al mismo tiempo por el mismo usuario para evitar que el usuario se autentique en cada aplicación individualmente y que cada aplicación implemente la funcionalidad de autenticación podemos centralizarla usando OAuth a modo de autenticación única o [<abbr title="Single Sign-On">SSO</abbr>][sso]. Usando [Keycloak][keycloak] como servidor de OAuth podemos integrarlo en una aplicación Java que use [Apache Shiro][shiro] para la autorización, [Spring Boot][spring-boot] para iniciar la aplicación y [Apache Tapestry][tapestry] como _framework_ web.
 

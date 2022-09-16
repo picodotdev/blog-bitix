@@ -81,7 +81,7 @@ Otro aspecto importante es que el usuario en caso de tener que autenticarse úni
 
 * [The OAuth 2.0 Authorization Framework, Authorization Code Grant](https://www.rfc-editor.org/rfc/rfc6749#section-4.1)
 
-{{< code file="authorization-code-grant.txt" language="plaintext" options="" >}}
+{{< code file="authorization-code-grant.txt" language="plain" options="" >}}
 
 #### _Client credentials grant_
 
@@ -91,7 +91,7 @@ Para obtener el _token_ el cliente proporciona sus credenciales al servidor de a
 
 * [The OAuth 2.0 Authorization Framework, Client Credentials Grant](https://www.rfc-editor.org/rfc/rfc6749#section-4.4)
 
-{{< code file="client-credentials-grant.txt" language="plaintext" options="" >}}
+{{< code file="client-credentials-grant.txt" language="plain" options="" >}}
 
 #### _Device grant_
 
@@ -99,7 +99,7 @@ Este flujo se utiliza en caso de que el dispositivo no tenga posibilidad de util
 
 * [OAuth 2.0 Device Authorization Grant](https://www.rfc-editor.org/rfc/rfc8628)
 
-{{< code file="device-grant.txt" language="plaintext" options="" >}}
+{{< code file="device-grant.txt" language="plain" options="" >}}
 
 #### _Implicit grant_
 
@@ -109,7 +109,7 @@ Dado que el agente del usuario tiene acceso al _access token_ se considera menos
 
 * [The OAuth 2.0 Authorization Framework, Implicit Grant](https://www.rfc-editor.org/rfc/rfc6749#section-4.2)
 
-{{< code file="implicit-grant.txt" language="plaintext" options="" >}}
+{{< code file="implicit-grant.txt" language="plain" options="" >}}
 
 #### _Resource owner password credentials grant_
 
@@ -119,7 +119,7 @@ En el flujo _resource owner password_ el cliente solicita las credenciales al us
 
 * [The OAuth 2.0 Authorization Framework, Resource Owner Password Credentials Grant](https://www.rfc-editor.org/rfc/rfc6749#section-4.3)
 
-{{< code file="resource-owner-password-credentials-grant.txt" language="plaintext" options="" >}}
+{{< code file="resource-owner-password-credentials-grant.txt" language="plain" options="" >}}
 
 ### Casos de uso
 

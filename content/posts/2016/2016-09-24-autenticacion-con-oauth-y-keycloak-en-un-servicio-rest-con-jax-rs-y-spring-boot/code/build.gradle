@@ -1,18 +1,27 @@
-...
-
-dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.springframework.boot:spring-boot-starter-jersey')
-
-	compile('org.keycloak:keycloak-spring-boot-adapter:2.2.0.Final')
-	compile('org.keycloak:keycloak-tomcat8-adapter:2.2.0.Final')
-	compile('org.keycloak:keycloak-core:2.2.0.Final')
-
-	compile('org.apache.httpcomponents:httpcomponents-client:4.5.2')
-	compile('javax.json:javax.json-api:1.0')
-	compile('org.glassfish:javax.json:1.0.4')
-
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+plugins {
+	id 'application'
 }
 
-...
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.3')
+
+	implementation('org.springframework.boot:spring-boot-starter')
+
+	implementation('com.squareup.okhttp3:okhttp:4.10.0')
+
+	implementation('javax.json:javax.json-api:1.1')
+	implementation('javax.json.bind:javax.json.bind-api:1.0')
+	implementation('javax.json.bind:javax.json.bind-api:1.0')
+	runtimeOnly('org.eclipse:yasson:1.0')
+	runtimeOnly('org.glassfish:javax.json:1.1')
+}
+
+application {
+    mainClass = 'io.github.picodotdev.blogbitix.springbootjaxrsoauth.client.Main'
+	sourceCompatibility = 11
+	targetCompatibility = 11
+}

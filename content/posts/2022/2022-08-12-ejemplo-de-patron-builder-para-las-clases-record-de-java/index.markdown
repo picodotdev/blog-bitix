@@ -59,7 +59,7 @@ El uso de la librería _RecordBuilder_ para generar clases que implementan el pa
 
 {{< code file="Book.java" language="java" options="" >}}
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 Como ocurre con cualquier otra librería hay que incluirla como dependencia del proyecto en este caso con la herramienta de construcción [Gradle][gradle].
 
