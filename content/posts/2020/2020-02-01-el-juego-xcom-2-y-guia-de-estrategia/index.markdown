@@ -31,6 +31,7 @@ Si hay algo que no me ha convencido del juego es las tácticas en las batallas, 
 
 Si te gusta el modo de juego de XCOM 2 otros juegos similares son:
 
+* [Análisis del juego espacial de combates por turnos Spaceland][blogbitix-653]
 * [Phantom Doctrine](https://www.youtube.com/results?search_query=Phantom+Doctrine)
 * [Phoenix Point](https://www.youtube.com/results?search_query=Phoenix+Point)
 * [Mutant Year Zero: Road to Eden](https://www.youtube.com/results?search_query=Mutant+Year+Zero)

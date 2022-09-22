@@ -22,7 +22,7 @@ summary: "Teniendo un servicio REST securizado con OAuth2 al invocarlo deberemos
 
 Explicaba como llamar a un servicio REST autenticado con OAuth2 en el artículo [autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot][blogbitix-180]. Para ello usaba la utilidad _curl_ para hacer las peticiones HTTP _get_ y _post_ necesarias tanto para obtener el _access token_ usando el flujo _client\_credentials_ como para una vez obtenido el _access token_ llamar al servicio REST. En una aplicación usaremos un lenguaje de programación para llamar al servicio.
 
-En este ejemplo mostraré como llamarlo usando un cliente programado en lenguaje Java que hará las mismas peticiones _get_ y _post_ pero usando la librería [HttpComponents][apache-httpcomponents] en vez de _curl_.
+En este ejemplo mostraré como llamarlo usando un cliente programado en lenguaje Java que hará las mismas peticiones _get_ y _post_ pero usando la librería [OkHttp][okhttp] en vez de _curl_.
 
 Primero añadiremos como dependencia del proyecto la librería HttpComponents. Como en las diferentes llamadas el intercambio de datos se realiza mediante el [formato JSON][json] añadiremos otro par dependencias para procesar los datos en este formato, en este caso usando la API de [JSON-P][json-p] y una implementación.
 
