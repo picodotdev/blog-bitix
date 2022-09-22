@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Spaceland es un juego sencillo y simple pero con todas las mecánicas del género de juegos de combates por turnos y de estrategia. Varios tipos de personajes cada uno con unas armas y habilidades únicas, varios tipos de enemigos, un pequeño árbol de habilidades, 28 misiones algunas de supervivencia y 3 jefes junto a una pequeña historia que hace de hilo conductor entre las misiones. Al ser un juego indie se nota que es más simple y menos elaborado que otros juegos similares triple A como XCOM 2 o Wasteland 3 pero que proporciona la misma diversión a los jugadores que les gusta este tipo de juegos. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Análisis del juego espacial de combates por turnos Spaceland</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/" hreflang="es" title="Análisis del juego espacial de combates por turnos Spaceland">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Análisis del juego espacial de combates por turnos Spaceland">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland_hu3d5f3407913079eea5a7d1c7df839664_309498_750x750_fit_q90_box.jpg">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Spaceland es un juego sencillo y simple pero con todas las mecánicas del género de juegos de combates por turnos y de estrategia. Varios tipos de personajes cada uno con unas armas y habilidades únicas, varios tipos de enemigos, un pequeño árbol de habilidades, 28 misiones algunas de supervivencia y 3 jefes junto a una pequeña historia que hace de hilo conductor entre las misiones. Al ser un juego indie se nota que es más simple y menos elaborado que otros juegos similares triple A como XCOM 2 o Wasteland 3 pero que proporciona la misma diversión a los jugadores que les gusta este tipo de juegos. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland_hu3d5f3407913079eea5a7d1c7df839664_309498_750x750_fit_q90_box.jpg">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Análisis del juego espacial de combates por turnos Spaceland">
+<meta name="twitter:description" content="Spaceland es un juego sencillo y simple pero con todas las mecánicas del género de juegos de combates por turnos y de estrategia. Varios tipos de personajes cada uno con unas armas y habilidades únicas, varios tipos de enemigos, un pequeño árbol de habilidades, 28 misiones algunas de supervivencia y 3 jefes junto a una pequeña historia que hace de hilo conductor entre las misiones. Al ser un juego indie se nota que es más simple y menos elaborado que otros juegos similares triple A como XCOM 2 o Wasteland 3 pero que proporciona la misma diversión a los jugadores que les gusta este tipo de juegos. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/"
+    },
+    "headline": "Análisis del juego espacial de combates por turnos Spaceland",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland_hu3d5f3407913079eea5a7d1c7df839664_309498_750x750_fit_q90_box.jpg"
+        
+      },
+    "datePublished": "2022-09-21T21:00:00+02:00",
+    "dateModified": "2022-09-21T21:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1965",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Spaceland es un juego sencillo y simple pero con todas las mecánicas del género de juegos de combates por turnos y de estrategia. Varios tipos de personajes cada uno con unas armas y habilidades únicas, varios tipos de enemigos, un pequeño árbol de habilidades, 28 misiones algunas de supervivencia y 3 jefes junto a una pequeña historia que hace de hilo conductor entre las misiones. Al ser un juego indie se nota que es más simple y menos elaborado que otros juegos similares triple A como XCOM 2 o Wasteland 3 pero que proporciona la misma diversión a los jugadores que les gusta este tipo de juegos."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9R8XCRGSMY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland_hu3d5f3407913079eea5a7d1c7df839664_309498_1040x0_resize_q90_box.jpg" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:600px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="7450235768"></ins>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Análisis del juego espacial de combates por turnos Spaceland</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>21/09/2022</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/juegos/">juegos</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Spaceland es un juego sencillo y simple pero con todas las mecánicas del género de juegos de combates por turnos y de estrategia. Varios tipos de personajes cada uno con unas armas y habilidades únicas, varios tipos de enemigos, un pequeño árbol de habilidades, 28 misiones algunas de supervivencia y 3 jefes junto a una pequeña historia que hace de hilo conductor entre las misiones. Al ser un juego indie se nota que es más simple y menos elaborado que otros juegos similares triple A como XCOM 2 o Wasteland 3 pero que proporciona la misma diversión a los jugadores que les gusta este tipo de juegos.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:90px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="8238629013"></ins>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <p>Hay un amplio catálogo de juegos en la categoría de juegos de combates por turnos de combates estrategia. Uno de los más reconocidos es <a href="https://picodotdev.github.io/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/">el juego XCOM 2</a> pero hay muchos otros. Después de jugar al XCOM 2 era un buen juego pero al terminarlo le encontré algunos defectos como la necesidad de saber que acciones realizar en cada turno y donde están los enemigos de forma anticipada a tenerlos a la vista.</p>
+<p>Un juego más sencillo de la escena indie pero que tiene muchos de los componentes de combates por turnos es <a href="https://www.igdb.com/games/spaceland">Spaceland</a> desarrollado por <a href="https://www.igdb.com/companies/tortuga-team">Tortuga Team</a> en el año 2019 y que se puede conseguir en la <a href="https://www.playstation.com/es-es/">PlayStation</a> Store por unos 4€ en un momento en el que esté rebajado.</p>
+<p>Es similar a XCOM 2 pero a pesar de ser maś simple y más indie este me ha gustado más en la mecánica de combate que en el XCOM 2 que penaliza mucho los errores y una vez alertados los enemigos se acabó la estrategia que en gran medida consistía en utilizar un granadero para eliminar coberturas y lo que quedase en pie aniquilarlo con los francotiradores y si todavía algo sobrevivía con el resto de personajes.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland_hu3d5f3407913079eea5a7d1c7df839664_309498_2560x1440_fit_q90_box.jpg" data-gallery="" title="Pantalla inicial"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland_hu3d5f3407913079eea5a7d1c7df839664_309498_650x450_fit_q90_box.jpg" width="650" height="366" alt="Pantalla inicial" title="Pantalla inicial" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-menu-1_hue598f2aeafa3576fd18180531b2e2fb9_238040_2560x1440_fit_q90_box.jpg" data-gallery="" title="Menú"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-menu-1_hue598f2aeafa3576fd18180531b2e2fb9_238040_300x200_fit_q90_box.jpg" width="300" height="169" alt="Menú" title="Menú" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-menu-2_hu16cd29189c5a0cf1c328e3f9b00715e6_165909_2560x1440_fit_q90_box.jpg" data-gallery="" title="Menú"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-menu-2_hu16cd29189c5a0cf1c328e3f9b00715e6_165909_300x200_fit_q90_box.jpg" width="300" height="169" alt="Menú" title="Menú" class="" loading="lazy"></a></p>
+<figcaption>Pantalla incial y menú</figcaption>
+</figure>
+</div>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07LFY8WBX&amp;linkId=04b657cb040b89e785f3200732e19770" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08KJF2D25&amp;linkId=c163f4b3d3b51d2fe8ccccb302d7425d" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08KKJ37F7&amp;linkId=67903dffe174c7dfe0db72fc8dc4e60a" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B087VM5XC6&amp;linkId=a5f2c3f9344d1e0c053b3107c9206429" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08H93ZRLL&amp;linkId=5e23b04975fd43bca64f34932a56b4f6" title="Amazon" class="lozad"></iframe>
+</div>
+<div class="alert alert-warning fs-6">
+    <h2 class="fs-5">Anticipación del juego</h2>
+    <p>Este artículo contiene información del juego y estrategias para completar más fácilmente, parte de la diversión de un juego es descubrir y superar los retos que se plantean por uno mismo. Sin embargo, algunos juegos son difíciles sin una pequeña ayuda que obliga a tener que dedicarles mucho más tiempo o a recomenzarlos.</p>
+    <p>En algunos juegos el argumento es una de las partes más importantes. El texto del artículo no contiene información acerca del argumento del juego, de la mitad o del final, ni hace ningún <i>spoiler</i> por lo que lo puedes leer sin riesgo de conocer alguna parte del argumento de forma anticipada. Sin embargo, algunos enlaces del artículo a otras páginas y vídeos sí pueden contener información del argumento de modo que recomiendo consultar solo las partes del juego una vez superadas.</p>
+</div>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#el-juego">El juego</a>
+      <ul>
+        <li><a href="#personajes">Personajes</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#armas-equipo-y-habilidades">Armas, equipo y habilidades</a></li>
+        <li><a href="#episodios">Episodios</a></li>
+        <li><a href="#aliens">Aliens</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
+<h3 id="el-juego">El juego</h3>
+<p>Spaceland es un juego indie y se nota en que es mucho más simple, sencillo y corto que otros juegos del género de combate por turnos, táctico y de estrategia como XCOM 2 y <a href="https://www.igdb.com/games/wasteland-3">Wasteland 3</a>. Sin embargo, Spaceland tiene prácticamente todos los elementos esenciales del género, varios personajes entre los que elegir, varias armas, habilidades, recursos y diferentes tipos de enemigos.</p>
+<p>Como es habitual en el género cada personaje tiene varios puntos de acción que hay que decidir cómo emplear y en qué orden en las misiones en las que participan varios personajes.</p>
+<p>Tiene una pequeña historia como hilo conductor de las diferentes misiones que cumple pero es muy básica y en algunos momentos no le he encontrado mucho sentido quizá por la mala traducción. La historia se narra mediante diálogos de texto que están traducidos a un español que deja que desear. En algunos momentos incluye algunos elementos de humor y referencia a otros juegos como cuando se consigue una espada.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-2_hud8715806e088ea0bc9f95d65fceb9f93_336804_2560x1440_fit_q90_box.jpg" data-gallery="" title="Armas"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-2_hud8715806e088ea0bc9f95d65fceb9f93_336804_200x150_fit_q90_box.jpg" width="200" height="113" alt="Armas" title="Armas" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-3_hu575c6458310e4312d41a2259438fb252_213595_2560x1440_fit_q90_box.jpg" data-gallery="" title="Armas"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-3_hu575c6458310e4312d41a2259438fb252_213595_200x150_fit_q90_box.jpg" width="200" height="113" alt="Armas" title="Armas" class="" loading="lazy"></a></p>
+<figcaption>Armas</figcaption>
+</figure>
+</div>
+<p>El juego consta de unas 28 episodios o misiones que tienen una duración corta de unos 15 minutos cada una. En algunas hay opción de elegir varios personajes, en otras algunos personajes se pueden elegir pero otros han de estar incluidos en el grupo de combate. Al ser de estrategia es probable que dos personas opten por diferentes personajes para completar una misión y la completen de diferente forma.</p>
+<p>No penaliza la muerte como ocurría con el XCOM 2 más allá de tener que volver a iniciar la misión con otros personajes o realizando otras acciones para tener mayor éxito. Si un personaje muere en combate en una misión se finaliza con un éxito parcial, al terminar todos los personajes independientemente de su estado al finalizar la misión sigue con vida para siguientes misiones.</p>
+<p>En muchas misiones suele haber escondido un hallazgo que explorando cuenta un pequeño diálogo que complementa la historia. Uno de los retos junto al acabar las misiones en los turnos indicados es descubrir dónde están los hallazgos y realizar su investigación. Si no se descubren al final de la misión se indica si esa misión tenía un hallazgo oculto.</p>
+<p>Las misiones se evalúan por los hallazgos encontrados, los turnos empleados y si todos los personajes se han mantenido con vida, en función del grado de éxito se obtienen un recurso de chips que permiten mejorar las habilidades de los personajes, también según el número de aliens matados se otorgan monedas que permiten comprar con posterioridad equipo para los personajes. Cada misión se puede rejugar tantas veces como se quiera para conseguir acabarla en los turnos indicados o conseguir el hallazgo.</p>
+<p>Al finalizar cada misión se obtiene un grado de éxito en función de si se ha completado en los turnos indicados y si se ha conseguido descubrir e investigar los hallazgos.</p>
+<p>No es complicado sacar el platino si se desea aunque seguramente requiere realizar las misiones varias veces e incluso avanzar más en el juego para volver a una misión anterior con mejor equipo que permita completarla más fácilmente.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-1_huf26f82af4fd04e4ea72987e2333b133d_172945_2560x1440_fit_q90_box.jpg" data-gallery="" title="Juego"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-1_huf26f82af4fd04e4ea72987e2333b133d_172945_200x150_fit_q90_box.jpg" width="200" height="113" alt="Juego" title="Juego" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-2_hua4518d40a2d671b396e159d2897b025b_211687_2560x1440_fit_q90_box.jpg" data-gallery="" title="Juego"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-2_hua4518d40a2d671b396e159d2897b025b_211687_200x150_fit_q90_box.jpg" width="200" height="113" alt="Juego" title="Juego" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-3_hu561f8e139141ad37fea55006a8789568_336943_2560x1440_fit_q90_box.jpg" data-gallery="" title="Juego"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-3_hu561f8e139141ad37fea55006a8789568_336943_200x150_fit_q90_box.jpg" width="200" height="113" alt="Juego" title="Juego" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-4_hu606134b75340fcb7e50b5a35b4b6ae7d_233668_2560x1440_fit_q90_box.jpg" data-gallery="" title="Juego"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-4_hu606134b75340fcb7e50b5a35b4b6ae7d_233668_200x150_fit_q90_box.jpg" width="200" height="113" alt="Juego" title="Juego" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-5_hu27b3ddf192d2328d5c1fb967abb4f9bc_168557_2560x1440_fit_q90_box.jpg" data-gallery="" title="Juego"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-5_hu27b3ddf192d2328d5c1fb967abb4f9bc_168557_200x150_fit_q90_box.jpg" width="200" height="113" alt="Juego" title="Juego" class="" loading="lazy"></a></p>
+<figcaption>Juego</figcaption>
+</figure>
+</div>
+<h4 id="personajes">Personajes</h4>
+<p>A medida que avanza la historia el grupo de personajes crecerá hasta un total de siete componentes. Cada uno tiene sus propias armas, número de puntos de acción y habilidades únicas así como cantidad de vida.</p>
+<p>Según la misión convendrá escoger un personaje u otro, aun así como hay diferentes formas de afrontar cada misión es seguro que algunas se puedan completar con éxito de diferente forma.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-personajes-1_hu2792cd5c7120b280daebb22cf59264fa_234212_2560x1440_fit_q90_box.jpg" data-gallery="" title="Personajes"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-personajes-1_hu2792cd5c7120b280daebb22cf59264fa_234212_200x150_fit_q90_box.jpg" width="200" height="113" alt="Personajes" title="Personajes" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-personajes-2_hu5a87b9da1bd6c08828dd4b6012cf3e46_232692_2560x1440_fit_q90_box.jpg" data-gallery="" title="Personajes"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-personajes-2_hu5a87b9da1bd6c08828dd4b6012cf3e46_232692_200x150_fit_q90_box.jpg" width="200" height="113" alt="Personajes" title="Personajes" class="" loading="lazy"></a></p>
+<figcaption>Personajes</figcaption>
+</figure>
+</div>
+<h4 id="recursos">Recursos</h4>
+<p>Los recursos permiten conseguir nuevas habilidades para los personajes y armas. Por un lado los chips permiten mejorar las habilidades de los personajes que se consiguen según el grado de éxito de las misiones por completarlas en los turnos indicados y descubrir los hallazgos. El otro recurso son las monedas que permiten comprar nuevas armas, armaduras y armas secundarias que se puede elegir cómo repartir entre los personajes de grupo.</p>
+<p>Cada vez que se completa una misión con éxito o fracaso se consiguen unas monedas según los enemigos muertos y los chips solo al finalizar la misión con éxito según los turnos empleados y si se ha descubierto el hallazgo. A diferencia de las monedas los chips posibles están limitados en una misión no se consiguen más chips por repetir la misión, las monedas por el contrario se puede decir que las monedas son infinitas simplemente a base de repetir las misiones.</p>
+<p>Las misiones se pueden rejugar para acabarlas en los turnos objetivo, y para encontrar los hallazgos y conseguir todos los objetivos. Con mejor equipo son más fáciles y ya si se pueden conseguir todos los objetivos.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-recursos-1_huc8d8a780f2ee1cf8c85d7ee69c5b3888_153971_2560x1440_fit_q90_box.jpg" data-gallery="" title="Recursos"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-recursos-1_huc8d8a780f2ee1cf8c85d7ee69c5b3888_153971_200x150_fit_q90_box.jpg" width="200" height="113" alt="Recursos" title="Recursos" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-recursos-2_hu9c2d072919a6e3a05c217b2de9a73c51_142976_2560x1440_fit_q90_box.jpg" data-gallery="" title="Recursos"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-recursos-2_hu9c2d072919a6e3a05c217b2de9a73c51_142976_200x150_fit_q90_box.jpg" width="200" height="113" alt="Recursos" title="Recursos" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-recursos-3_huea3561c7167ba4e1fb0f93ac4559216e_132346_2560x1440_fit_q90_box.jpg" data-gallery="" title="Recursos"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-recursos-3_huea3561c7167ba4e1fb0f93ac4559216e_132346_200x150_fit_q90_box.jpg" width="200" height="113" alt="Recursos" title="Recursos" class="" loading="lazy"></a></p>
+<figcaption>Recursos</figcaption>
+</figure>
+</div>
+<h4 id="armas-equipo-y-habilidades">Armas, equipo y habilidades</h4>
+<p>En ciertos puntos de la historia de la aventura hay unos encuentros en los que permiten adquirir nuevo equipo y armas para los personajes. Algunas armas las puede usar varios personajes con lo que hay repartirlas entre los miembros del grupo. El taller permite investigar las armas principales, armadura para otorgar más puntos de vida a los personajes o un arma secundaria que tiene infinita munición.</p>
+<p>Por otro lado, cada personaje tiene un árbol de habilidades sencillo de dos ramas que permiten mejorar algún aspecto de ese personaje en concreto, la progresión en el árbol de habilidades se realiza mediante los chips obtenidos en las misiones.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-1_huc9a6e3672be5a9a7b65fa532027d2277_244770_2560x1440_fit_q90_box.jpg" data-gallery="" title="Armas"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-1_huc9a6e3672be5a9a7b65fa532027d2277_244770_200x150_fit_q90_box.jpg" width="200" height="113" alt="Armas" title="Armas" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-4_hudcb6005aa57e978ec1a2812cbf19c32f_189215_2560x1440_fit_q90_box.jpg" data-gallery="" title="Armas"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-4_hudcb6005aa57e978ec1a2812cbf19c32f_189215_200x150_fit_q90_box.jpg" width="200" height="113" alt="Armas" title="Armas" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-5_hub529d1ee2fb733729cb3e5512fd34aa1_178296_2560x1440_fit_q90_box.jpg" data-gallery="" title="Armas"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-5_hub529d1ee2fb733729cb3e5512fd34aa1_178296_200x150_fit_q90_box.jpg" width="200" height="113" alt="Armas" title="Armas" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-6_hue71ca113db7a832d2f5fb9b6b1a6c701_200659_2560x1440_fit_q90_box.jpg" data-gallery="" title="Armas"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-6_hue71ca113db7a832d2f5fb9b6b1a6c701_200659_200x150_fit_q90_box.jpg" width="200" height="113" alt="Armas" title="Armas" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-1_hu464535ac06bf631fae5fd29cfefca9be_246378_2560x1440_fit_q90_box.jpg" data-gallery="" title="Habilidades"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-1_hu464535ac06bf631fae5fd29cfefca9be_246378_200x150_fit_q90_box.jpg" width="200" height="113" alt="Habilidades" title="Habilidades" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-2_hu4d21d54612bf02ecb4972c2efc41a430_248807_2560x1440_fit_q90_box.jpg" data-gallery="" title="Habilidades"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-2_hu4d21d54612bf02ecb4972c2efc41a430_248807_200x150_fit_q90_box.jpg" width="200" height="113" alt="Habilidades" title="Habilidades" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-3_hud1f83c57338f8e01af5e5da196f5e5ed_251529_2560x1440_fit_q90_box.jpg" data-gallery="" title="Habilidades"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-3_hud1f83c57338f8e01af5e5da196f5e5ed_251529_200x150_fit_q90_box.jpg" width="200" height="113" alt="Habilidades" title="Habilidades" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-4_huf53aa87d92222a43040ae6c3f253fccd_251098_2560x1440_fit_q90_box.jpg" data-gallery="" title="Habilidades"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-4_huf53aa87d92222a43040ae6c3f253fccd_251098_200x150_fit_q90_box.jpg" width="200" height="113" alt="Habilidades" title="Habilidades" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-5_huab890c8e55122f583726a178d9c9b0a9_204686_2560x1440_fit_q90_box.jpg" data-gallery="" title="Habilidades"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-5_huab890c8e55122f583726a178d9c9b0a9_204686_200x150_fit_q90_box.jpg" width="200" height="113" alt="Habilidades" title="Habilidades" class="" loading="lazy"></a></p>
+<figcaption>Armas y habilidades</figcaption>
+</figure>
+</div>
+<h4 id="episodios">Episodios</h4>
+<p>El juego consta de 28 episodios o misiones cada una con un mapa único que generalmente consisten en avanzar por el mapa hasta llegar a la salida intentado que ningún soldado pierda la vida, completando la misión en el número de turnos indicado y si la misión tiene un hallazgo encontŕandolo e investigandolo.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-hallazgos-1_hu2a9ef1de3db48d5d3af1c85eca512d09_127868_2560x1440_fit_q90_box.jpg" data-gallery="" title="Hallazgos"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-hallazgos-1_hu2a9ef1de3db48d5d3af1c85eca512d09_127868_200x150_fit_q90_box.jpg" width="200" height="113" alt="Hallazgos" title="Hallazgos" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-hallazgos-2_huea56988f7af0e0c53343c608299f7b70_191667_2560x1440_fit_q90_box.jpg" data-gallery="" title="Hallazgos"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-hallazgos-2_huea56988f7af0e0c53343c608299f7b70_191667_200x150_fit_q90_box.jpg" width="200" height="113" alt="Hallazgos" title="Hallazgos" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-hallazgos-3_hu8d7077d66e641adf346ad29116bb5b53_147484_2560x1440_fit_q90_box.jpg" data-gallery="" title="Hallazgos"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-hallazgos-3_hu8d7077d66e641adf346ad29116bb5b53_147484_200x150_fit_q90_box.jpg" width="200" height="113" alt="Hallazgos" title="Hallazgos" class="" loading="lazy"></a></p>
+<figcaption>Hallazgos</figcaption>
+</figure>
+</div>
+<p>En las misiones participan un máximo de cuatro personajes, en algunas dos, en algunos casos ciertos personajes han de participar en la misión y algunos otros es posible elegir qué personajes participan según sean sus habilidades más adecuadas.</p>
+<p>En las primera misiones el nivel de dificultad es fácil, de la mitad adelante cuando ya se han aprendido las mecánicas del juego el nivel aumenta y ya hay que tener a los personajes bien equipados, sin cometer errores y haciendo que cada turno y acciones estén aprovechadas lo mejor posible.</p>
+<p>Al final adolece un poco de los mismos que el XCOM 2 o sabes que enemigos están delante, donde están y vas con los personajes adecuados o cae en combate algún personaje o no se acaba en los turnos indicados. Quizá este problema sea común en el género de este tipo de juegos.</p>
+<p>Cada personaje tiene su arma principal única y unas habilidades únicas con una cantidad limitada de munición que no es la misma para todos los tipos de arma de cada uno de los personajes. Los personajes pueden tener también armas secundarias que en la mayoría de los casos es una pistola con munición ilimitada o una espada. Además otra forma de golpe es una patada para acabar con esos enemigos que se han quedado a pocos puntos de vida, la patada gasta menos puntos de acción que el disparo y no consume munición, aunque hace menos daño.</p>
+<p>La munición es limitada con lo que no hay que malgastarla y tratar de conservarla, cuando sea posible es casi necesario utilizar un ataque que no gaste munición ya sea con el arma secundaria o con la patada. En muchas misiones hay cajas de suministros de dos tipos que basta acercarse a ellas para cogerlas, una caja de suministros de munición que permiten recargar completamente la munición del arma principal de un personaje y una caja de suministros de vida que generalmente recarga casi por completo la vida de un personaje.</p>
+<p>Los mapas tienen puertas y mecanismos, agujeros por donde salen los aliens que con algún personaje se puede tapar. Está también la mecánica de coberturas que pueden usar los personajes en su beneficio y que los enemigos también pueden utilizar en el suyo, antes de hacer un disparo el juego indica la probabilidad y cantidad de vida que quitará el ataque esto permite ver si con el disparo se acabará con la vida del enemigo.</p>
+<p>En muchas misiones no hay suficiente munición para tantos enemigos, en muchas hay que salir a la carrera para terminar en turnos o para que ningún miembro de la misión caiga en combate. Las misiones anteriores se pueden repetir con el equipo conseguido más adelante con lo que las misiones anteriores son más fáciles</p>
+<p>Hay tres jefes y algunos escenarios especiales como la bajada en el montacargas al que van cayendo enemigos que es una misión de supervivencia junto a alguna más del mismo tipo. Y aunque sepas en algunos momentos que enemigos hay delante se depende de la probabilidad y de la suerte el no fallar un tiro, fallando quizá la misión termina mal.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-jefes-1_huecb211d58ee119f7215a00ac4f3dc671_243468_2560x1440_fit_q90_box.jpg" data-gallery="" title="Jefes"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-jefes-1_huecb211d58ee119f7215a00ac4f3dc671_243468_200x150_fit_q90_box.jpg" width="200" height="113" alt="Jefes" title="Jefes" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-jefes-2_hue5b3b692b0904e833449d7eeba6b6f77_229645_2560x1440_fit_q90_box.jpg" data-gallery="" title="Jefes"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-jefes-2_hue5b3b692b0904e833449d7eeba6b6f77_229645_200x150_fit_q90_box.jpg" width="200" height="113" alt="Jefes" title="Jefes" class="" loading="lazy"></a></p>
+<figcaption>Jefes</figcaption>
+</figure>
+</div>
+<h4 id="aliens">Aliens</h4>
+<p>El grupo de diferentes enemigos también es variado, algunos tienen menos vida, hacen menos daño, otros hacen más daño y hay que usar un arma capaz de quitarles toda la vida de un disparo, otros solo tiene como punto débil la espalda y son inmunes a cualquier otro tipo de daño con lo que hay que rodearlos.</p>
+<p>La mayoría hacen daño cuerpo a cuerpo con lo que hay que evitar que se acerquen y se mantengan un turno con vida cuerpo a cuerpo junto algún personaje que les dé tiempo a hacer todos sus puntos de acción en ataques. Un tipo de enemigo hace daño a distancia con pistola.</p>
+<p>En la enciclopedia están las estadísticas de cada uno de los enemigos que se han encontrado, sus puntos de acción y puntos de vida. Esta información es muy útil para posicionar a los personajes justo a la distancia que no puedan ser atacados y en el siguiente turno poder acabar con los enemigos.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-1_hu836b7188159d9a2c89260f6da628c7da_220702_2560x1440_fit_q90_box.jpg" data-gallery="" title="Enemigos"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-1_hu836b7188159d9a2c89260f6da628c7da_220702_200x150_fit_q90_box.jpg" width="200" height="113" alt="Enemigos" title="Enemigos" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-2_hucfcbc6645afe6666dcb4b020d61aea78_233786_2560x1440_fit_q90_box.jpg" data-gallery="" title="Enemigos"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-2_hucfcbc6645afe6666dcb4b020d61aea78_233786_200x150_fit_q90_box.jpg" width="200" height="113" alt="Enemigos" title="Enemigos" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-3_hub3d09740fce2486dcd265dfa2eb19027_236511_2560x1440_fit_q90_box.jpg" data-gallery="" title="Enemigos"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-3_hub3d09740fce2486dcd265dfa2eb19027_236511_200x150_fit_q90_box.jpg" width="200" height="113" alt="Enemigos" title="Enemigos" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-4_hub944489c2c86ca89b716dbe73b53b4af_236968_2560x1440_fit_q90_box.jpg" data-gallery="" title="Enemigos"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-4_hub944489c2c86ca89b716dbe73b53b4af_236968_200x150_fit_q90_box.jpg" width="200" height="113" alt="Enemigos" title="Enemigos" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-5_hu911a95d65bb1a34e78b32c9635242f51_236953_2560x1440_fit_q90_box.jpg" data-gallery="" title="Enemigos"><img src="/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-5_hu911a95d65bb1a34e78b32c9635242f51_236953_200x150_fit_q90_box.jpg" width="200" height="113" alt="Enemigos" title="Enemigos" class="" loading="lazy"></a></p>
+<figcaption>Enemigos</figcaption>
+</figure>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>analisis-juegos</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/">El juego XCOM 2 y guía de estrategia</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/04/introduccion-al-juego-de-batallas-navales-world-of-warships-legends-para-consola/">Introducción al juego de batallas navales World of Warships Legends para consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/">Análisis y guía del juego de estrategia Frostpunk</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/10/analisis-y-guia-completa-del-juego-horizon-zero-dawn/">Análisis y guía completa del juego Horizon Zero Dawn</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/">Análisis y guía del juego de rol For the King</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/">Análisis de la serie de juegos de plataformas Trine</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/07/analisis-guia-y-consejos-del-juego-roguelike-darkest-dungeon/">Análisis, guía y consejos del juego roguelike Darkest Dungeon</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/10/analisis-del-maravilloso-juego-horrible-the-last-of-us/">Análisis del maravilloso juego horrible The Last of Us</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/02/analisis-de-los-juegos-de-aventuras-uncharted-the-nathan-drake-collection/">Análisis de los juegos de aventuras Uncharted The Nathan Drake Collection</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/05/analisis-del-juego-de-aventuras-uncharted-4/">Análisis del juego de aventuras Uncharted 4</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/08/analisis-del-juego-con-combates-epicos-god-of-war/">Análisis del juego con combates épicos God of War</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/08/analisis-del-juego-de-la-aventura-galactica-ratchet-y-clank/">Análisis del juego de la aventura galáctica Ratchet &amp; Clank</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/">Análisis del juego espacial de combates por turnos Spaceland</a>
+            </li>
+          
+        </ol>
+      <h3>Este artículo forma parte de la serie <strong>juegos</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/">Jugar al ajedrez en GNU/Linux con GNOME</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-clasico-de-estrategia-de-tablero-go-en-gnu-linux/">Jugar al clásico de estrategia de tablero Go en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/juegos-incluidos-en-el-entorno-de-escritorio-gnome/">Juegos incluidos en el entorno de escritorio GNOME</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/jugar-a-videojuegos-clasicos-y-miticos-de-arcade-con-mame-en-gnu-linux/">Jugar a videojuegos clásicos y míticos de arcade con Mame en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/22-plus-buenos-juegos-en-gnu-linux/">22&#43; buenos juegos en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/varios-juegos-de-culto-con-scummvm-en-gnu-linux/">Varios juegos de culto con ScummVM en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/">Consola de juegos retro con Lakka y una Raspberry Pi</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/12/como-usar-wine-para-jugar-en-gnu-linux-a-juegos-de-windows/">Cómo usar Wine para jugar en GNU/Linux a juegos de Windows</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/">La aplicación cliente de Steam en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/09/desempaquetado-de-playstation-4-slim-de-1-tb/">Desempaquetado de PlayStation 4 Slim de 1 TB</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/">El juego XCOM 2 y guía de estrategia</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/03/que-es-mejor-para-jugar-y-10-variables-para-elegir-entre-pc-o-consola/">Qué es mejor para jugar y 10&#43; variables para elegir entre PC o consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/04/introduccion-al-juego-de-batallas-navales-world-of-warships-legends-para-consola/">Introducción al juego de batallas navales World of Warships Legends para consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/">Análisis y guía del juego de estrategia Frostpunk</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/">Análisis y guía del juego de rol For the King</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/">Estrategia de batalla básica en el juego World of Warships Legends</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/07/analisis-guia-y-consejos-del-juego-roguelike-darkest-dungeon/">Análisis, guía y consejos del juego roguelike Darkest Dungeon</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/10/analisis-del-maravilloso-juego-horrible-the-last-of-us/">Análisis del maravilloso juego horrible The Last of Us</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/02/analisis-de-los-juegos-de-aventuras-uncharted-the-nathan-drake-collection/">Análisis de los juegos de aventuras Uncharted The Nathan Drake Collection</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/05/analisis-del-juego-de-aventuras-uncharted-4/">Análisis del juego de aventuras Uncharted 4</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/08/analisis-del-juego-con-combates-epicos-god-of-war/">Análisis del juego con combates épicos God of War</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/08/analisis-del-juego-de-la-aventura-galactica-ratchet-y-clank/">Análisis del juego de la aventura galáctica Ratchet &amp; Clank</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/">Análisis del juego espacial de combates por turnos Spaceland</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-653';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2022\/09\/analisis-del-juego-espacial-de-combates-por-turnos-spaceland\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2022 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>
