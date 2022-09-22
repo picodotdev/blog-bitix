@@ -129,9 +129,16 @@ Por otro lado, cada personaje tiene un árbol de habilidades sencillo de dos ram
     image2="image:spaceland-habilidades-5.jpg" optionsthumb2="200x150" title2="Habilidades"
     caption="Armas y habilidades" >}}
 
-#### Combates
+#### Episodios
 
 El juego consta de 28 episodios o misiones cada una con un mapa único que generalmente consisten en avanzar por el mapa hasta llegar a la salida intentado que ningún soldado pierda la vida, completando la misión en el número de turnos indicado y si la misión tiene un hallazgo encontŕandolo e investigandolo.
+
+{{< image
+    gallery="true"
+    image1="image:spaceland-hallazgos-1.jpg" optionsthumb1="200x150" title1="Hallazgos"
+    image2="image:spaceland-hallazgos-2.jpg" optionsthumb2="200x150" title2="Hallazgos"
+    image3="image:spaceland-hallazgos-3.jpg" optionsthumb3="200x150" title3="Hallazgos"
+    caption="Hallazgos" >}}
 
 En las misiones participan un máximo de cuatro personajes, en algunas dos, en algunos casos ciertos personajes han de participar en la misión y algunos otros es posible elegir qué personajes participan según sean sus habilidades más adecuadas.
 
