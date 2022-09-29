@@ -5,12 +5,157 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/posts/2022/</id>
-    <updated>2022-09-21T21:00:00+02:00</updated>
+    <updated>2022-09-28T20:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2022/09/novedades-de-java-19/</id>
+        <title>Novedades de Java 19</title>
+        <updated>2022-09-28T20:00:00+02:00</updated>
+        <published>2022-09-28T20:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/09/novedades-de-java-19/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Las versiones de Java más confiables por su soporte extendido son las LTS, las no LTS dan la oportunidad de probar e ir adaptándose a las novedades que se publicarán de forma definitiva en las LTS. Por ello las empresas seguramente prefieran ir cambiando de versiones de LTS a LTS, los usuarios y desarrolladores a nivel individual o las empresas que alguna novedad supone un cambio importante opten por usar una no LTS. La versión de Java 19 es una no LTS pero incorpora una novedad muy importante aún en vista previa, los <em>virtual threads</em> que permitirán a las aplicaciones pasar de usar miles a millones de <em>threads</em> y usar programación estructurada más sencilla en vez de programación asíncrona o concurrente para resolver problemas de concurrencia.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Una nueva versión de Java que llega ya al número 19, no es una versión LTS con lo que carece de soporte extendido pero que junto con Java 18 incorpora varias novedades desde la última versión LTS alguna muy destacada y esperada que va a suponer un cambio de paradigma en la programación concurrente.</p>
+<p>Las novedades no son muy numerosas ya que en el periodo de seis meses da tiempo a ir incorporando algunas que ya se publican aunque sea en modo de vista previa y aunque pueden cambiar cuando lleguen a la versión final permite a aquellos aventurados experimentar y adaptarse a ellas en futuras versiones e incluso utilizarlas si así lo desean en su versión de vista previa.</p>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<h3 id="introducción">Introducción</h3>
+<p>En esta nueva versión de Java las novedades sin contar las incorporadas en vista previa son muy pocas la única es el <em>port</em> a la arquitectura de procesadores RISC-V que aunque es una prometedora arquitectura de procesadores con la interesante propiedad de no tener costes de licencias por implementarla que probablemente vaya ganando cuota de mercado a día de hoy es muy minoritaria, tanto en el escritorio como en los servidores.</p>
+<p>Sin embargo, en las características en vista previa hay una muy destacada y relevante que son los <em>threads</em> virtuales que supone un cambio de paradigma en la programación concurrente que proporciona las ventajas de la programación estructurada sin la complejidad de la programación asíncrona o concurrente.</p>
+<p>Como complemento a los <em>threads</em> virtuales hay otra ayuda con la concurrencia estructurada, dado que los <em>threads</em> virtuales van a permitir crear varios órdenes de magnitud de <em>threads</em> de lo que era posible hasta ahora, de pasar a únicamente utilizar miles de <em>threads</em> a poder utilizar millones de <em>threads</em>.</p>
+<p>Otras novedades en vista previa son actualizaciones a características en vistas previas anteriores como los <em>Record Patterns</em>, <em>Foreign Function &amp; Memory API</em> para integración de código nativo, el <em>Vector API</em> para aprovechar las instrucciones vectoriales de los procesadores, <em>Pattern Matching for switch</em> y <em>Structured Concurrency</em> que está relacionado con los <em>threads virtuales</em> y lo complementa.</p>
+<ul>
+<li><a href="https://openjdk.java.net/projects/jdk/19/">Características de Java 19</a></li>
+<li><a href="https://jdk.java.net/19/release-notes">Notas de publicación de Java 19</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/19/">Documentación de Java 19</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/19/docs/api/index.html">Documentación Javadoc de Java 19</a></li>
+</ul>
+<p>Las mejoras incluidas en esta versión son:</p>
+<ul>
+<li>405: <a href="https://openjdk.org/jeps/405">Record Patterns (Preview)</a></li>
+<li>422: <a href="https://openjdk.org/jeps/422">Linux/RISC-V Port</a></li>
+<li>424: <a href="https://openjdk.org/jeps/424">Foreign Function &amp; Memory API (Preview)</a></li>
+<li>425: <a href="https://openjdk.org/jeps/425">Virtual Threads (Preview)</a></li>
+<li>426: <a href="https://openjdk.org/jeps/426">Vector API (Fourth Incubator)</a></li>
+<li>427: <a href="https://openjdk.org/jeps/427">Pattern Matching for switch (Third Preview)</a></li>
+<li>428: <a href="https://openjdk.org/jeps/428">Structured Concurrency (Incubator)</a></li>
+</ul>
+<p>Artículos relacionados:</p>
+<ul>
+<li><a href="https://inside.java/2022/09/20/sip066/">JDK 19 Release - Sip of Java</a></li>
+<li><a href="https://inside.java/2022/09/20/the-arrival-of-java-19/">The Arrival of Java 19!</a></li>
+<li><a href="https://inside.java/2022/09/20/podcast-026/">Episode 26 &ldquo;Java 19 is Here!&rdquo;</a></li>
+</ul>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/vvXmO2ZMGsk" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h3 id="nuevas-características">Nuevas características</h3>
+<h4 id="linuxrisc-v-port">Linux/RISC-V Port</h4>
+<p>RISC-V es una es una arquitectura con un conjunto de instrucciones de código abierto, además de un diseño eficiente y moderno no requiere pagar licencias que lo hace interesante para muchas empresas y fabricantes al contrario de otras arquitecturas como ARM que requiere pagar licencias. RISC-V ya es soportado por varias herramientas de desarrollo importantes y hay una disponibilidad de hardware que va en aumento. Por estos motivos, una versión que permite usar Java en procesadores RISC-V es valiosa.</p>
+<p>El <em>port</em> de Java para RISC-V incluye el intérprete el compilador JIT para el cliente y servidor y una implementación para todos los recolectores de basura soportados incluyendo ZGC y Shenandoah.</p>
+<h3 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h3>
+<h4 id="_record-patterns_"><em>Record Patterns</em></h4>
+<p>El <em>patern matching</em> permite eliminar algunos <em>cast</em> explícitos, esto ya ha sido aplicado en expresiones como condiciones. Ahora el <em>pattern matching</em> se aplica a los <em>records</em> que permite una forma de desestructurar este tipo de clases para obtener los elementos de <em>record</em> en variables disponibles en el ámbito de uso de la expresión.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">record</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">void</span> <span class="nf">printSum</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Point</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">x</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">y</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pattern-matching.java</span>
+    </div>
+</div>
+<p>Al escribir la expresión de <em>pattern matching</em> para un <em>record</em> permite al mismo tiempo desestructurar los elementos y extraerlos a variables. La expresión resultante para desestructurar los elementos es muy verbosa pero hace más simple el acceso posterior a las variables de <em>record</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">printSum</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">))</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>record-patterns.java</span>
+    </div>
+</div>
+<h4 id="_foreign-function--memory-api_"><em>Foreign Function &amp; Memory API</em></h4>
+<p>Esta característica facilita el uso del código nativo de forma eficiente y más sencilla que anteriormente con JNI, en esta nueva vista previa es un refinamiento de las versione anteriores incorporando los comentarios y sugerencias desde la última vista previa.</p>
+<p>Para muchos desarrolladores esta característica es irrelevante o solo se benefician de forma indirecta pero para otros que trabajan con software embebido o que desarrollan librerías Java que hacen uso de código nativo implementado en otros lenguajes supone una gran mejora.</p>
+<h4 id="_virtual-threads_"><em>Virtual Threads</em></h4>
+<p>Un sistema operativo como Linux solo es capaz de ofrecer a las aplicaciones una cantidad limitada de <em>threads</em> ya que su consumo de recursos es elevado en el sistema y el cambio de contexto de unos a otros penaliza el rendimiento.</p>
+<p>Para solventar esta limitación Java implementa dentro del JVM los <em>threads</em> virtuales que son más ligeros en recursos que los <em>threads</em> del sistema operativo y el cambio de contexto de uno a otro no supone tanta penalización en el rendimiento. Los <em>threads</em> virtuales permiten a las aplicaciones poder usar un mayor cantidad de hilos pasando de unos miles a varios millones sin ningún problema. Para las aplicaciones que usan gran cantidad de hilos como las de servidor de un hilo por petición permite escalar a un número significativamente mayor de peticiones y un mejor rendimiento.</p>
+<p>Adicionalmente, una de las mejoras cosas es que el uso de los <em>threads</em> virtuales no requiere una nueva API ya que la implementación la realiza usando la misma clase <a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Thread.html">Thread</a> que ha existido siempre en Java desde las versión 1.0 de Java.</p>
+<p>La solución habitual a la escasez de <em>threads</em> y la limitación del sistema operativo para aprovechar el hardware ha sido la programación asíncrona, está sin embargo es más difícil de desarrollar, entender y depurar. Otra opción de algunos lenguajes han sido las <em>coroutines</em> como en <a href="https://kotlinlang.org/">Kotlin</a> y otros lenguajes.</p>
+<p>Los <em>threads</em> virtuales y la concurrencia estructurada promete la simplicidad de la programación estructurada con la ventaja de proporcionar un rendimiento similar que la programación asíncrona.</p>
+<ul>
+<li><a href="https://cr.openjdk.java.net/~rpressler/loom/Loom-Proposal.html">Project Loom: Fibers and Continuations for the Java Virtual Machine</a></li>
+</ul>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/6dpHdo-UnCg" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/I9hQvJO39uM" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h4 id="_structured-concurrency_"><em>Structured Concurrency</em></h4>
+<p>Los <em>threads</em> virtuales permiten dedicar un <em>thread</em> a cada tarea con lo que se prevé que las aplicaciones aprovechen poder utilizar una mayor número de <em>threads</em>, pero gestionarlos sigue siendo un problema ya que los hilos siguen siendo independientes y su depuración complicada.</p>
+<p>Si los <em>threads</em> virtuales permiten utilizar <em>threads</em> en abundancia la concurrencia estructurada asegura que los <em>threads</em> estén relacionados correctamente y de forma robusta además de mostrar los <em>threads</em> en herramientas de depuración de forma que sean entendidos por los desarrolladores.</p>
+<p>La clase <a href="https://docs.oracle.com/en/java/javase/19/docs/api//jdk.incubator.concurrent/jdk/incubator/concurrent/StructuredTaskScope.html">StructuredTaskScope</a> permite estructurar una tarea ejecutada en varios hilos, tanto en los casos en que una tarea se divide en varias operaciones como en los casos de que por cada petición entrante se emplea un hilo como en un servidor.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Response</span> <span class="nf">handle</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">ExecutionException</span><span class="o">,</span> <span class="n">InterruptedException</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">var</span> <span class="n">scope</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StructuredTaskScope</span><span class="o">.</span><span class="na">ShutdownOnFailure</span><span class="o">())</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Future</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">user</span> <span class="o">=</span> <span class="n">scope</span><span class="o">.</span><span class="na">fork</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="n">findUser</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Future</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">order</span> <span class="o">=</span> <span class="n">scope</span><span class="o">.</span><span class="na">fork</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="n">fetchOrder</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">join</span><span class="o">();</span> <span class="c1">// Join both forks&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">throwIfFailed</span><span class="o">();</span> <span class="c1">// ... and propagate errors&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// Here, both forks have succeeded, so compose their results&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="k">new</span> <span class="n">Response</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">resultNow</span><span class="o">(),</span> <span class="n">order</span><span class="o">.</span><span class="na">resultNow</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>structured-concurrency-1.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">serve</span><span class="o">(</span><span class="n">ServerSocket</span> <span class="n">serverSocket</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="o">,</span> <span class="n">InterruptedException</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">var</span> <span class="n">scope</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StructuredTaskScope</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">&gt;())</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">var</span> <span class="n">socket</span> <span class="o">=</span> <span class="n">serverSocket</span><span class="o">.</span><span class="na">accept</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">fork</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="n">handle</span><span class="o">(</span><span class="n">socket</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// If there&#39;s been an error or we&#39;re interrupted, we stop accepting&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">shutdown</span><span class="o">();</span>  <span class="c1">// Close all active connections&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>structured-concurrency-2.java</span>
+    </div>
+</div>
+<h4 id="_pattern-matching-for-switch_"><em>Pattern Matching for switch</em></h4>
+<p>El <em>pattern matching</em> en las expresiones <em>switch</em> han sido mejorados en esta nueva vista previa.</p>
+<ul>
+<li>Las <em>guard patterns</em> son reemplazados con cláusulas <em>when</em> en los bloques <em>switch</em>.</li>
+<li>La semántica del <em>switch</em> en los casos en que es <em>null</em> la expresión se ajusta a la semántica existente que ha existido en los <em>switch</em> lanzando un <em>NullPointerException</em>.</li>
+</ul>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">void</span> <span class="nf">testTriangle</span><span class="o">(</span><span class="n">Shape</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">switch</span> <span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="kc">null</span> <span class="o">-&gt;</span> <span class="o">{</span> <span class="k">break</span><span class="o">;</span> <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">Triangle</span> <span class="n">t</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">when</span> <span class="n">t</span><span class="o">.</span><span class="na">calculateArea</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">100</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Large triangle&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">default</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;A shape, possibly a small triangle&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pattern-matching-switch.java</span>
+    </div>
+</div>
+<p>Por otro lado todo, ahora en los casos de un <em>switch</em> es posible usar el label <em>null</em> para seleccionar la rama cuando la expresión del <em>switch</em> toma un valor nulo, el comportamiento anterior era que si la expresión <em>switch</em> era <em>null</em> producía un <em>NullPointerException</em> lo que requería utilizar un <em>guard clause</em> antes del <em>switch</em> para evitar el NPE.</p>
+<p>Desde Java 16 los bloques switch permiten dos estilos de grupos uno mediante etiquetas con <em>:</em> y otro de una única consecuencia con <em>-&gt;</em> donde la continuación en cascada no es posible. En el primer caso los múltiples labels se escriben <code>case l1: case l2:</code> cuando en el estilo del segundo se escriben <code>case l1, l2 -&gt;</code>.</p>
+<p>Soportar la etiqueta <em>null</em> permite ahora escribir un switch de la siguiente forma.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Object</span> <span class="n">o</span> <span class="o">=</span> <span class="o">...;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="k">switch</span> <span class="o">(</span><span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="kc">null</span><span class="o">:</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">String</span> <span class="n">s</span><span class="o">:</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;String, including null&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">break</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>switch-null-label.java</span>
+    </div>
+</div>
+<h3 id="otras-novedades">Otras novedades</h3>
+<h4 id="interpolación-de-cadenas-_string-templates_">Interpolación de cadenas (<em>String Templates</em>)</h4>
+<p>En un futuro es posible que Java incorpore al lenguaje la interpolación de cadenas con la <a href="https://openjdk.org/jeps/430">JEP 430: String Templates</a>. Facilitará la construcción de cadenas con una mezcla de cadenas y valores de variables que produzcan la cadena resultante deseada. La construcción de cadenas es algo muy utilizado en todos los programas con lo que la interpolación de cadenas será una mejora en la la construcción de cadenas que hace el código más legible.</p>
+<p>Un problema de la interpolación de cadenas es que en ciertas cadenas hay posibilidad de crear un problema de seguridad y por ello es peligrosa, una forma de este problema es el <em>SQL injection</em>. La interpolación de cadenas que se incorporará en Java solucionará al mismo tiempo que la legibilidad del código los problemas que pueden ocurrir con el <em>SQL injection</em> creando una clase <em>TemplateString</em> para las cadenas con interpolación y unos <em>policies</em> específicos para cada lenguaje como SQL o JSON según el formato resultante que garantizará una cadena resultante bien formada y evitará el problema de <em>injection</em>.</p>
+<p>Estos son algunos ejemplos que se están evaluando para implementar la interpolación de cadenas. El <em>STR</em> sería el <em>policy</em> que determina como convertir el <a href="https://cr.openjdk.java.net/~jlaskey/templates/docs/api/java.base/java/lang/template/TemplatedString.html">TemplateString</a> en un <em>String</em>. Además será posible implementar nuevos <em>policies</em> haciendo una implementación de la interfaz funcional <a href="https://cr.openjdk.java.net/~jlaskey/templates/docs/api/java.base/java/lang/template/TemplateProcessor.html">TemplateProcessor</a>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Joan&#34;</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">TemplatedString</span> <span class="n">ts</span> <span class="o">=</span> <span class="s">&#34;My name is \{name}&#34;</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Joan&#34;</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">String</span> <span class="n">info</span> <span class="o">=</span> <span class="n">STR</span><span class="o">.</span><span class="s">&#34;My name is \{name}&#34;</span><span class="o">;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>string-interpolation.java</span>
+    </div>
+</div>
+<p>Personalmente prefiero la sintaxis <code>${&hellip;}</code> en vez de <code>\{&hellip;}</code> ya que la primera es la opción utilizada en otros lenguajes y no me gusta mucho ese <em>syntactic sugar</em> (o <em>rat poison</em>) para usar los <em>TemplateProcessor</em> que me parece nada coherente con el lenguaje. Utilizar el <em>$</em> en vez de <em>\</em> es una alternativa que han evaluado pero que de momento han descartado para evitar conflictos con código heredado. También han evaluado otro tipo de alternativas, en cualquier caso hasta la versión final y que esta sea incorporada en el lenguaje si lo es es muy posible que haya cambios.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/HiHgAh7wWPc" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/</id>
         <title>Análisis del juego espacial de combates por turnos Spaceland</title>
@@ -2355,108 +2500,6 @@
 <li><a href="https://linuxhint.com/differences_between_bash_zsh/">https://linuxhint.com/differences_between_bash_zsh/</a></li>
 <li><a href="https://www.youtube.com/watch?v=SKtauGe0d3I">https://www.youtube.com/watch?v=SKtauGe0d3I</a></li>
 </ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/</id>
-        <title>Los intérpretes de comandos, instalar y cambiar a otro</title>
-        <updated>2022-06-23T21:00:00+02:00</updated>
-        <published>2022-06-23T21:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>La terminal es una herramienta muy utilizada por usuarios avanzados aún habiendo sistemas operativos en los que prácticamente todo se puede realizar desde un programa con interfaz gráfica. La linea de comandos es menos amigable ya que no ofrece apenas ayuda que guíe al usuario pero cuando un usuario conoce como realizar una tarea desde la línea de comandos es mucho más rápido que usar un programa con interfaz gráfica además de otras ventajas. El intérprete de comandos es la pieza que proporciona un entorno dese el que se introducen los comandos y con el que interacciona el usuario desde la terminal con una interfaz basada en texto.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
-</div>
-<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bash.svg" width="300" height="126" alt="bash" title="bash"  class=""></p>
-</div>
-<p>El sistema operativo es una pieza fundamental de software que hace usable el hardware y proporciona una abstracción y servicios más lógicos para los programas sin que estos se tengan que preocupar de detalles de bajo nivel relativos al hardware ni específicos de cada dispositivo hardware.</p>
-<p>Una de las piezas fundamentales de un sistema operativo y la más conocida es el núcleo o <em>kernel</em>, dos núcleos con licencia de software libre son <a href="https://www.linux.com/">Linux</a> y <a href="https://www.freebsd.org/es/">FreeBSD</a> pero hay muchos otros menos conocidos como <a href="https://www.minix3.org/">Minix</a>, <a href="https://www.gnome.org/">Genode</a> o <a href="https://www.haiku-os.org/">Haiku</a> y distribuciones derivadas de estos. Sistemas operativos con núcleo privativos son el de <a href="https://www.microsoft.com/es-es/windows/">Windows</a> de los sistemas de escritorio de <a href="https://www.microsoft.com/">Microsoft</a> y comerciales son el de <a href="https://www.apple.com/macos/">macOS</a> de los ordenadores de <a href="https://www.apple.com/">Apple</a>.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/">Descargar e instalar la distribución Ubuntu de GNU/Linux paso a paso desde cero</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/">Guía de instalación y uso básico de FreeBSD</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/02/licencias-de-software-libre-y-diferencias-con-software-privativo-y-de-codigo-abierto/">Licencias de software libre y diferencias con software privativo y de código abierto</a></li>
-</ul>
-<p>Sin embargo, el núcleo sólo es una parte de lo que se considera un sistema operativo ya que aunque tiene muchas funcionalidades un usuario no interacciona directamente con el sistema operativo sino que lo hace a través de una colección de herramientas y programas de línea de comandos, entre ellas se encuentra en un intérprete de comandos. Generalmente en las distribuciones Linux la colección de herramientas son las proporcionadas por <a href="https://www.gnu.org/">el proyecto GNU</a> que es un proyecto distinto al núcleo de Linux, y por eso muchas veces nos referimos a Linux por el término GNU/Linux cuando se desea dar crédito a ambos proyectos.</p>
-<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
-<h3 id="qué-hace-un-intérprete-de-comandos">Qué hace un intérprete de comandos</h3>
-<p>Un intérprete de comandos es una interfaz basada en texto que permite introducir los comandos a ejecutar compuestos por el nombre del programa, opciones de invocación y sus argumentos. El intérprete de comandos también permite establecer variables de entorno para almacenar valores e incluirlos en el comando así como redirigir la salida a archivos y crear tuberías para redirigir la salida de un programa a la entrada de otros que permiten realizar una funcionalidad compleja a partir de comandos más simples.</p>
-<p>Los sistemas operativos actuales tienen una interfaz gráfica pero todos proporcionan una terminal virtual en la que interactuar con el sistema operativo mediante comandos y texto, se ejecutan desde una terminal virtual, cada entorno de escritorio también proporciona su propia entre su colección de aplicaciones gráficas integradas. En <a href="https://www.gnome.org/">GNOME</a> es <a href="https://help.gnome.org/users/gnome-terminal/stable/">Terminal</a> y <a href="https://apps.gnome.org/es/app/org.gnome.Console/">Console</a> y en <a href="https://www.kde.org/">KDE</a> es <a href="https://konsole.kde.org/">Konsole</a>.</p>
-<p>Aún con las interfaces gráficas las terminales y la línea de comandos siguen siendo muy utilizadas por su posibilidad de automatización y conociendo el comando es más sencillo que utilizar una herramienta gráfica. Además, para la administración de servidores siguen siendo la interfaz de administración principal incluso antes que las interfaces gráficas.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/gnome-terminal_huaca422df68cfe9fbd3622448370807d0_17492_2560x1440_fit_box_3.png" data-gallery="" title="Emulador de terminal de GNOME Terminal"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/gnome-terminal_huaca422df68cfe9fbd3622448370807d0_17492_650x450_fit_box_3.png" width="615" height="450" alt="Emulador de terminal de GNOME Terminal" title="Emulador de terminal de GNOME Terminal"  class="lozad "></a></p>
-<figcaption>Emulador de terminal de GNOME Terminal</figcaption>
-</figure>
-</div>
-<h3 id="funcionalidades-del-intérprete-de-comandos">Funcionalidades del intérprete de comandos</h3>
-<p>Las funcionalidades de introducir comandos y ejecutarlos, variables de entorno, redirecciones y tuberías son funcionalidades básicas que los intérpretes de comandos actuales poseen. Algunas funcionalidades no están presentes en todos los intérprete de comandos y otras en función del inteŕprete funciona de forma ligeramente diferente o con algún añadido adicional.</p>
-<p>Una funcionalidad que cambia en función del intérprete es qué ocurre cuando se pulsa la tecla tabulador. Al pulsar esta tecla los intérpretes suelen proporcionar autocompletado para el nombre del directorio o nombre de comando pero algunos son capaces de hacerlo incluso de forma recursiva en múltiples directorios o aplicando correcciones de fallos de tipografía aplicando la corrección cuando se introduce una letra mal.</p>
-<p>Otra variación en función del intérprete es el tipo de expansión comodín o <em>wildcard expansion</em> que se soporta. Las expansiones comodín son una versión simplificada de las expresiones regulares que permiten encontrar múltiples coincidencias, estos es muy utilizado por ejemplo para seleccionar múltiples archivos o cierto tipo de archivos como todos los archivos de música o vídeo con <em>*.mp3</em> o <em>*.mp4</em> respectivamente, estas expresiones con un comodín del caracter asterisco seleccionan todos los archivos con cualquier nombre y de extensión <em>mp3</em> o <em>mp4</em>.</p>
-<p>Otra funcionalidad es la posibilidad de personalizar el aspecto del símbolo del sistema o <em>prompt</em> para que muestre la información que se desee en texto y con los colores deseados. Los símbolos del sistema por defecto incluyen el directorio de trabajo actual, el nombre de usuario y el nombre del sistema en el que se está trabajando.</p>
-<h3 id="intérpretes-de-comandos">Intérpretes de comandos</h3>
-<p>Dado que el intérprete de comandos es simplemente un programa más hay varios disponibles con ligeras variaciones sobre las funcionalidades básicas pero suficientes para que algunos desarrolladores según sus ideales hayan creado varios.</p>
-<p>En las distribuciones GNU/Linux generalmente el intérprete de comandos preinstalado por defecto es <a href="https://es.wikipedia.org/wiki/Bash">bash</a> y otro popular es <a href="https://zsh.sourceforge.net/">zsh</a> que se ha convertido en el por defecto en el sistema operativo macOS en sustitución de bash. Otros intérprete de comandos menos conocidos son <a href="https://fishshell.com/">fish</a> y <a href="https://wiki.archlinux.org/index.php/Dash">dash</a> pero no son los únicos.</p>
-<p>Las funcionalidades principales de todo intérprete de comandos las soportan todos, casi la mayor diferencia entre ellos aparte de su popularidad es su nivel de personalización y en menor medida algunas mejoras y rendimiento pero que estas dos últimas no suelen ser determinantes para cambiar de uno a otro.</p>
-<ul>
-<li><a href="https://wiki.archlinux.org/title/Command-line_shell">Command-line shell</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/">Guía básica del intérprete de comandos Bash</a></li>
-<li><a href="https://apple.stackexchange.com/questions/361870/what-are-the-practical-differences-between-bash-and-zsh">What are the practical differences between Bash and Zsh?</a></li>
-<li><a href="https://hands-on.cloud/which-terminal-is-better-bash-vs-zsh/#h-features-comparison">Which terminal is better: Bash vs Zsh</a></li>
-<li><a href="https://wiki.archlinux.org/title/Bash">Bash Arc Linux Wiki</a></li>
-<li><a href="https://wiki.archlinux.org/title/Zsh">Zsh Arc Linux Wiki</a></li>
-<li><a href="https://www.gnu.org/software/bash/manual/bash.html">Bash Manual</a></li>
-<li><a href="https://zsh.sourceforge.io/Doc/Release/zsh_toc.html">Zsh Manual</a></li>
-</ul>
-<h3 id="como-cambiar-el-intérprete-de-comandos-del-usuario">Como cambiar el intérprete de comandos del usuario</h3>
-<p>Independientemente del intérprete de comandos que preinstale la distribución GNU/Linux este se puede cambiar instalando el paquete de otro intérprete y ejecutándolo como un comando más. También es posible cambiar el intérprete por defecto al abrir una terminal.</p>
-<p>Este comando permiten instalar el intérprete de comandos zsh.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S zsh&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>pacman-install-zsh.sh</span>
-    </div>
-</div>
-<p>Los siguientes permiten listar los intérpretes de comandos instalados en el sistema y cambiar el por defecto del usuario a otro.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ chsh -l&#10;</span></span><span class="line"><span class="cl">$ chsh -s <span class="o">[</span>path-to-shell<span class="o">]</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>chsh.sh</span>
-    </div>
-</div>
-<p>El aspecto por defecto de los <em>prompts</em> de bash y zsh son los siguientes.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/bash_hud1ce7affd186b95d0d02b737e662d43b_16005_2560x1440_fit_box_3.png" data-gallery="" title="Intérprete de comandos bash"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/bash_hud1ce7affd186b95d0d02b737e662d43b_16005_300x200_fit_box_3.png" width="273" height="200" alt="Intérprete de comandos bash" title="Intérprete de comandos bash"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/zsh_hud7b5a1c1d64d347f44201dacd637097b_17129_2560x1440_fit_box_3.png" data-gallery="" title="Intérprete de comandos zsh"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/zsh_hud7b5a1c1d64d347f44201dacd637097b_17129_300x200_fit_box_3.png" width="273" height="200" alt="Intérprete de comandos zsh" title="Intérprete de comandos zsh"  class="lozad "></a></p>
-<figcaption>Intérprete de comandos bash y zsh</figcaption>
-</figure>
-</div>
-<h3 id="configurar-el-_prompt_-del-símbolo-del-sistema">Configurar el <em>prompt</em> del símbolo del sistema</h3>
-<p>Uno de los motivos de cambiar de un intérprete de comandos por otro es cambiar el aspecto del símbolo del sistema. bash con la variable de entorno <em>PS1</em> permite personalizar en cierta medida <em>prompt</em> y si se usa el sistema de control de versiones Git este ofrece una utilidad para que el símbolo del sistema indique el estado de cambios cuando el directorio de trabajo actual es un repositorio de Git. Sin embargo, estas personalizaciones son limitadas y específicas de cada <em>shell</em>.</p>
-<p>En mi caso este es el aspecto que utilizo con bash, en el que he cambiado los colores y usado la utilidad para mostrar información del repositorio Git. La segunda image es la potente personalización e independiente del <em>shell</em> ofrecida por <a href="https://starship.rs/">Starship</a>.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/">Personalizar el prompt del sistema del intérprete de comandos Bash</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/">Prompt de la terminal personalizado en carpetas de git con el intérprete Bash</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/">Personalizar el símbolo del sistema de la línea de comandos con Starship</a></li>
-</ul>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/bash-custom_hu45818392a957f07fad0e4fd34f7b01f7_15742_2560x1440_fit_box_3.png" data-gallery="" title="Terminal de bash personalizada"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/bash-custom_hu45818392a957f07fad0e4fd34f7b01f7_15742_300x200_fit_box_3.png" width="272" height="200" alt="Terminal de bash personalizada" title="Terminal de bash personalizada"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/starship_hu8f9add5d06d60afa99989e628b6a2ea9_27834_2560x1440_fit_box_3.png" data-gallery="" title="Terminal personalizada con Starship"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/starship_hu8f9add5d06d60afa99989e628b6a2ea9_27834_300x200_fit_box_3.png" width="272" height="200" alt="Terminal personalizada con Starship" title="Terminal personalizada con Starship"  class="lozad "></a></p>
-<figcaption>Terminal de bash personalizada</figcaption>
-</figure>
 </div>
 ]]>
         </content>

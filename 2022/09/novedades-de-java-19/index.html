@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Las versiones de Java más confiables por su soporte extendido son las LTS, las no LTS dan la oportunidad de probar e ir adaptándose a las novedades que se publicarán de forma definitiva en las LTS. Por ello las empresas seguramente prefieran ir cambiando de versiones de LTS a LTS, los usuarios y desarrolladores a nivel individual o las empresas que alguna novedad supone un cambio importante opten por usar una no LTS. La versión de Java 19 es una no LTS pero incorpora una novedad muy importante aún en vista previa, los virtual threads que permitirán a las aplicaciones pasar de usar miles a millones de threads y usar programación estructurada más sencilla en vez de programación asíncrona o concurrente para resolver problemas de concurrencia. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Novedades de Java 19</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/09/novedades-de-java-19/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2022/09/novedades-de-java-19/" hreflang="es" title="Novedades de Java 19">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Novedades de Java 19">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2022/09/novedades-de-java-19/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2022/09/novedades-de-java-19/images/java-19_hu4e24d6abd81a4bf73658726f4592c63a_112951_750x750_fit_q90_box.jpg">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Las versiones de Java más confiables por su soporte extendido son las LTS, las no LTS dan la oportunidad de probar e ir adaptándose a las novedades que se publicarán de forma definitiva en las LTS. Por ello las empresas seguramente prefieran ir cambiando de versiones de LTS a LTS, los usuarios y desarrolladores a nivel individual o las empresas que alguna novedad supone un cambio importante opten por usar una no LTS. La versión de Java 19 es una no LTS pero incorpora una novedad muy importante aún en vista previa, los virtual threads que permitirán a las aplicaciones pasar de usar miles a millones de threads y usar programación estructurada más sencilla en vez de programación asíncrona o concurrente para resolver problemas de concurrencia. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2022/09/novedades-de-java-19/images/java-19_hu4e24d6abd81a4bf73658726f4592c63a_112951_750x750_fit_q90_box.jpg">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Novedades de Java 19">
+<meta name="twitter:description" content="Las versiones de Java más confiables por su soporte extendido son las LTS, las no LTS dan la oportunidad de probar e ir adaptándose a las novedades que se publicarán de forma definitiva en las LTS. Por ello las empresas seguramente prefieran ir cambiando de versiones de LTS a LTS, los usuarios y desarrolladores a nivel individual o las empresas que alguna novedad supone un cambio importante opten por usar una no LTS. La versión de Java 19 es una no LTS pero incorpora una novedad muy importante aún en vista previa, los virtual threads que permitirán a las aplicaciones pasar de usar miles a millones de threads y usar programación estructurada más sencilla en vez de programación asíncrona o concurrente para resolver problemas de concurrencia. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2022/09/novedades-de-java-19/"
+    },
+    "headline": "Novedades de Java 19",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2022/09/novedades-de-java-19/images/java-19_hu4e24d6abd81a4bf73658726f4592c63a_112951_750x750_fit_q90_box.jpg"
+        
+      },
+    "datePublished": "2022-09-28T20:00:00+02:00",
+    "dateModified": "2022-09-28T20:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1829",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Las versiones de Java más confiables por su soporte extendido son las LTS, las no LTS dan la oportunidad de probar e ir adaptándose a las novedades que se publicarán de forma definitiva en las LTS. Por ello las empresas seguramente prefieran ir cambiando de versiones de LTS a LTS, los usuarios y desarrolladores a nivel individual o las empresas que alguna novedad supone un cambio importante opten por usar una no LTS. La versión de Java 19 es una no LTS pero incorpora una novedad muy importante aún en vista previa, los virtual threads que permitirán a las aplicaciones pasar de usar miles a millones de threads y usar programación estructurada más sencilla en vez de programación asíncrona o concurrente para resolver problemas de concurrencia."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9R8XCRGSMY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2022/09/novedades-de-java-19/images/java-19_hu4e24d6abd81a4bf73658726f4592c63a_112951_1040x0_resize_q90_box.jpg" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:600px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="7450235768"></ins>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Novedades de Java 19</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>28/09/2022</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2022/09/novedades-de-java-19/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2022/09/novedades-de-java-19/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Las versiones de Java más confiables por su soporte extendido son las LTS, las no LTS dan la oportunidad de probar e ir adaptándose a las novedades que se publicarán de forma definitiva en las LTS. Por ello las empresas seguramente prefieran ir cambiando de versiones de LTS a LTS, los usuarios y desarrolladores a nivel individual o las empresas que alguna novedad supone un cambio importante opten por usar una no LTS. La versión de Java 19 es una no LTS pero incorpora una novedad muy importante aún en vista previa, los <em>virtual threads</em> que permitirán a las aplicaciones pasar de usar miles a millones de <em>threads</em> y usar programación estructurada más sencilla en vez de programación asíncrona o concurrente para resolver problemas de concurrencia.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:90px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="8238629013"></ins>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Una nueva versión de Java que llega ya al número 19, no es una versión LTS con lo que carece de soporte extendido pero que junto con Java 18 incorpora varias novedades desde la última versión LTS alguna muy destacada y esperada que va a suponer un cambio de paradigma en la programación concurrente.</p>
+<p>Las novedades no son muy numerosas ya que en el periodo de seis meses da tiempo a ir incorporando algunas que ya se publican aunque sea en modo de vista previa y aunque pueden cambiar cuando lleguen a la versión final permite a aquellos aventurados experimentar y adaptarse a ellas en futuras versiones e incluso utilizarlas si así lo desean en su versión de vista previa.</p>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introducción">Introducción</a></li>
+    <li><a href="#nuevas-características">Nuevas características</a>
+      <ul>
+        <li><a href="#linuxrisc-v-port">Linux/RISC-V Port</a></li>
+      </ul>
+    </li>
+    <li><a href="#nuevas-características-en-vista-previa">Nuevas características en vista previa</a>
+      <ul>
+        <li><a href="#_record-patterns_"><em>Record Patterns</em></a></li>
+        <li><a href="#_foreign-function--memory-api_"><em>Foreign Function &amp; Memory API</em></a></li>
+        <li><a href="#_virtual-threads_"><em>Virtual Threads</em></a></li>
+        <li><a href="#_structured-concurrency_"><em>Structured Concurrency</em></a></li>
+        <li><a href="#_pattern-matching-for-switch_"><em>Pattern Matching for switch</em></a></li>
+      </ul>
+    </li>
+    <li><a href="#otras-novedades">Otras novedades</a>
+      <ul>
+        <li><a href="#interpolación-de-cadenas-_string-templates_">Interpolación de cadenas (<em>String Templates</em>)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
+<h3 id="introducción">Introducción</h3>
+<p>En esta nueva versión de Java las novedades sin contar las incorporadas en vista previa son muy pocas la única es el <em>port</em> a la arquitectura de procesadores RISC-V que aunque es una prometedora arquitectura de procesadores con la interesante propiedad de no tener costes de licencias por implementarla que probablemente vaya ganando cuota de mercado a día de hoy es muy minoritaria, tanto en el escritorio como en los servidores.</p>
+<p>Sin embargo, en las características en vista previa hay una muy destacada y relevante que son los <em>threads</em> virtuales que supone un cambio de paradigma en la programación concurrente que proporciona las ventajas de la programación estructurada sin la complejidad de la programación asíncrona o concurrente.</p>
+<p>Como complemento a los <em>threads</em> virtuales hay otra ayuda con la concurrencia estructurada, dado que los <em>threads</em> virtuales van a permitir crear varios órdenes de magnitud de <em>threads</em> de lo que era posible hasta ahora, de pasar a únicamente utilizar miles de <em>threads</em> a poder utilizar millones de <em>threads</em>.</p>
+<p>Otras novedades en vista previa son actualizaciones a características en vistas previas anteriores como los <em>Record Patterns</em>, <em>Foreign Function &amp; Memory API</em> para integración de código nativo, el <em>Vector API</em> para aprovechar las instrucciones vectoriales de los procesadores, <em>Pattern Matching for switch</em> y <em>Structured Concurrency</em> que está relacionado con los <em>threads virtuales</em> y lo complementa.</p>
+<ul>
+<li><a href="https://openjdk.java.net/projects/jdk/19/">Características de Java 19</a></li>
+<li><a href="https://jdk.java.net/19/release-notes">Notas de publicación de Java 19</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/19/">Documentación de Java 19</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/19/docs/api/index.html">Documentación Javadoc de Java 19</a></li>
+</ul>
+<p>Las mejoras incluidas en esta versión son:</p>
+<ul>
+<li>405: <a href="https://openjdk.org/jeps/405">Record Patterns (Preview)</a></li>
+<li>422: <a href="https://openjdk.org/jeps/422">Linux/RISC-V Port</a></li>
+<li>424: <a href="https://openjdk.org/jeps/424">Foreign Function &amp; Memory API (Preview)</a></li>
+<li>425: <a href="https://openjdk.org/jeps/425">Virtual Threads (Preview)</a></li>
+<li>426: <a href="https://openjdk.org/jeps/426">Vector API (Fourth Incubator)</a></li>
+<li>427: <a href="https://openjdk.org/jeps/427">Pattern Matching for switch (Third Preview)</a></li>
+<li>428: <a href="https://openjdk.org/jeps/428">Structured Concurrency (Incubator)</a></li>
+</ul>
+<p>Artículos relacionados:</p>
+<ul>
+<li><a href="https://inside.java/2022/09/20/sip066/">JDK 19 Release - Sip of Java</a></li>
+<li><a href="https://inside.java/2022/09/20/the-arrival-of-java-19/">The Arrival of Java 19!</a></li>
+<li><a href="https://inside.java/2022/09/20/podcast-026/">Episode 26 &ldquo;Java 19 is Here!&rdquo;</a></li>
+</ul>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/vvXmO2ZMGsk" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h3 id="nuevas-características">Nuevas características</h3>
+<h4 id="linuxrisc-v-port">Linux/RISC-V Port</h4>
+<p>RISC-V es una es una arquitectura con un conjunto de instrucciones de código abierto, además de un diseño eficiente y moderno no requiere pagar licencias que lo hace interesante para muchas empresas y fabricantes al contrario de otras arquitecturas como ARM que requiere pagar licencias. RISC-V ya es soportado por varias herramientas de desarrollo importantes y hay una disponibilidad de hardware que va en aumento. Por estos motivos, una versión que permite usar Java en procesadores RISC-V es valiosa.</p>
+<p>El <em>port</em> de Java para RISC-V incluye el intérprete el compilador JIT para el cliente y servidor y una implementación para todos los recolectores de basura soportados incluyendo ZGC y Shenandoah.</p>
+<h3 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h3>
+<h4 id="_record-patterns_"><em>Record Patterns</em></h4>
+<p>El <em>patern matching</em> permite eliminar algunos <em>cast</em> explícitos, esto ya ha sido aplicado en expresiones como condiciones. Ahora el <em>pattern matching</em> se aplica a los <em>records</em> que permite una forma de desestructurar este tipo de clases para obtener los elementos de <em>record</em> en variables disponibles en el ámbito de uso de la expresión.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">record</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">void</span> <span class="nf">printSum</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Point</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">x</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">y</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pattern-matching.java</span>
+    </div>
+</div>
+<p>Al escribir la expresión de <em>pattern matching</em> para un <em>record</em> permite al mismo tiempo desestructurar los elementos y extraerlos a variables. La expresión resultante para desestructurar los elementos es muy verbosa pero hace más simple el acceso posterior a las variables de <em>record</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">printSum</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">))</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>record-patterns.java</span>
+    </div>
+</div>
+<h4 id="_foreign-function--memory-api_"><em>Foreign Function &amp; Memory API</em></h4>
+<p>Esta característica facilita el uso del código nativo de forma eficiente y más sencilla que anteriormente con JNI, en esta nueva vista previa es un refinamiento de las versione anteriores incorporando los comentarios y sugerencias desde la última vista previa.</p>
+<p>Para muchos desarrolladores esta característica es irrelevante o solo se benefician de forma indirecta pero para otros que trabajan con software embebido o que desarrollan librerías Java que hacen uso de código nativo implementado en otros lenguajes supone una gran mejora.</p>
+<h4 id="_virtual-threads_"><em>Virtual Threads</em></h4>
+<p>Un sistema operativo como Linux solo es capaz de ofrecer a las aplicaciones una cantidad limitada de <em>threads</em> ya que su consumo de recursos es elevado en el sistema y el cambio de contexto de unos a otros penaliza el rendimiento.</p>
+<p>Para solventar esta limitación Java implementa dentro del JVM los <em>threads</em> virtuales que son más ligeros en recursos que los <em>threads</em> del sistema operativo y el cambio de contexto de uno a otro no supone tanta penalización en el rendimiento. Los <em>threads</em> virtuales permiten a las aplicaciones poder usar un mayor cantidad de hilos pasando de unos miles a varios millones sin ningún problema. Para las aplicaciones que usan gran cantidad de hilos como las de servidor de un hilo por petición permite escalar a un número significativamente mayor de peticiones y un mejor rendimiento.</p>
+<p>Adicionalmente, una de las mejoras cosas es que el uso de los <em>threads</em> virtuales no requiere una nueva API ya que la implementación la realiza usando la misma clase <a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Thread.html">Thread</a> que ha existido siempre en Java desde las versión 1.0 de Java.</p>
+<p>La solución habitual a la escasez de <em>threads</em> y la limitación del sistema operativo para aprovechar el hardware ha sido la programación asíncrona, está sin embargo es más difícil de desarrollar, entender y depurar. Otra opción de algunos lenguajes han sido las <em>coroutines</em> como en <a href="https://kotlinlang.org/">Kotlin</a> y otros lenguajes.</p>
+<p>Los <em>threads</em> virtuales y la concurrencia estructurada promete la simplicidad de la programación estructurada con la ventaja de proporcionar un rendimiento similar que la programación asíncrona.</p>
+<ul>
+<li><a href="https://cr.openjdk.java.net/~rpressler/loom/Loom-Proposal.html">Project Loom: Fibers and Continuations for the Java Virtual Machine</a></li>
+</ul>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/6dpHdo-UnCg" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/I9hQvJO39uM" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h4 id="_structured-concurrency_"><em>Structured Concurrency</em></h4>
+<p>Los <em>threads</em> virtuales permiten dedicar un <em>thread</em> a cada tarea con lo que se prevé que las aplicaciones aprovechen poder utilizar una mayor número de <em>threads</em>, pero gestionarlos sigue siendo un problema ya que los hilos siguen siendo independientes y su depuración complicada.</p>
+<p>Si los <em>threads</em> virtuales permiten utilizar <em>threads</em> en abundancia la concurrencia estructurada asegura que los <em>threads</em> estén relacionados correctamente y de forma robusta además de mostrar los <em>threads</em> en herramientas de depuración de forma que sean entendidos por los desarrolladores.</p>
+<p>La clase <a href="https://docs.oracle.com/en/java/javase/19/docs/api//jdk.incubator.concurrent/jdk/incubator/concurrent/StructuredTaskScope.html">StructuredTaskScope</a> permite estructurar una tarea ejecutada en varios hilos, tanto en los casos en que una tarea se divide en varias operaciones como en los casos de que por cada petición entrante se emplea un hilo como en un servidor.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Response</span> <span class="nf">handle</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">ExecutionException</span><span class="o">,</span> <span class="n">InterruptedException</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">var</span> <span class="n">scope</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StructuredTaskScope</span><span class="o">.</span><span class="na">ShutdownOnFailure</span><span class="o">())</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Future</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">user</span> <span class="o">=</span> <span class="n">scope</span><span class="o">.</span><span class="na">fork</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="n">findUser</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Future</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">order</span> <span class="o">=</span> <span class="n">scope</span><span class="o">.</span><span class="na">fork</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="n">fetchOrder</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">join</span><span class="o">();</span> <span class="c1">// Join both forks&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">throwIfFailed</span><span class="o">();</span> <span class="c1">// ... and propagate errors&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// Here, both forks have succeeded, so compose their results&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="k">new</span> <span class="n">Response</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">resultNow</span><span class="o">(),</span> <span class="n">order</span><span class="o">.</span><span class="na">resultNow</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>structured-concurrency-1.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">serve</span><span class="o">(</span><span class="n">ServerSocket</span> <span class="n">serverSocket</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="o">,</span> <span class="n">InterruptedException</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">var</span> <span class="n">scope</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StructuredTaskScope</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">&gt;())</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">var</span> <span class="n">socket</span> <span class="o">=</span> <span class="n">serverSocket</span><span class="o">.</span><span class="na">accept</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">fork</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="n">handle</span><span class="o">(</span><span class="n">socket</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// If there&#39;s been an error or we&#39;re interrupted, we stop accepting&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">shutdown</span><span class="o">();</span>  <span class="c1">// Close all active connections&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>structured-concurrency-2.java</span>
+    </div>
+</div>
+<h4 id="_pattern-matching-for-switch_"><em>Pattern Matching for switch</em></h4>
+<p>El <em>pattern matching</em> en las expresiones <em>switch</em> han sido mejorados en esta nueva vista previa.</p>
+<ul>
+<li>Las <em>guard patterns</em> son reemplazados con cláusulas <em>when</em> en los bloques <em>switch</em>.</li>
+<li>La semántica del <em>switch</em> en los casos en que es <em>null</em> la expresión se ajusta a la semántica existente que ha existido en los <em>switch</em> lanzando un <em>NullPointerException</em>.</li>
+</ul>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">void</span> <span class="nf">testTriangle</span><span class="o">(</span><span class="n">Shape</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">switch</span> <span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="kc">null</span> <span class="o">-&gt;</span> <span class="o">{</span> <span class="k">break</span><span class="o">;</span> <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">Triangle</span> <span class="n">t</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">when</span> <span class="n">t</span><span class="o">.</span><span class="na">calculateArea</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">100</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Large triangle&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">default</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;A shape, possibly a small triangle&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pattern-matching-switch.java</span>
+    </div>
+</div>
+<p>Por otro lado todo, ahora en los casos de un <em>switch</em> es posible usar el label <em>null</em> para seleccionar la rama cuando la expresión del <em>switch</em> toma un valor nulo, el comportamiento anterior era que si la expresión <em>switch</em> era <em>null</em> producía un <em>NullPointerException</em> lo que requería utilizar un <em>guard clause</em> antes del <em>switch</em> para evitar el NPE.</p>
+<p>Desde Java 16 los bloques switch permiten dos estilos de grupos uno mediante etiquetas con <em>:</em> y otro de una única consecuencia con <em>-&gt;</em> donde la continuación en cascada no es posible. En el primer caso los múltiples labels se escriben <code>case l1: case l2:</code> cuando en el estilo del segundo se escriben <code>case l1, l2 -&gt;</code>.</p>
+<p>Soportar la etiqueta <em>null</em> permite ahora escribir un switch de la siguiente forma.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Object</span> <span class="n">o</span> <span class="o">=</span> <span class="o">...;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="k">switch</span> <span class="o">(</span><span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="kc">null</span><span class="o">:</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">String</span> <span class="n">s</span><span class="o">:</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;String, including null&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">break</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>switch-null-label.java</span>
+    </div>
+</div>
+<h3 id="otras-novedades">Otras novedades</h3>
+<h4 id="interpolación-de-cadenas-_string-templates_">Interpolación de cadenas (<em>String Templates</em>)</h4>
+<p>En un futuro es posible que Java incorpore al lenguaje la interpolación de cadenas con la <a href="https://openjdk.org/jeps/430">JEP 430: String Templates</a>. Facilitará la construcción de cadenas con una mezcla de cadenas y valores de variables que produzcan la cadena resultante deseada. La construcción de cadenas es algo muy utilizado en todos los programas con lo que la interpolación de cadenas será una mejora en la la construcción de cadenas que hace el código más legible.</p>
+<p>Un problema de la interpolación de cadenas es que en ciertas cadenas hay posibilidad de crear un problema de seguridad y por ello es peligrosa, una forma de este problema es el <em>SQL injection</em>. La interpolación de cadenas que se incorporará en Java solucionará al mismo tiempo que la legibilidad del código los problemas que pueden ocurrir con el <em>SQL injection</em> creando una clase <em>TemplateString</em> para las cadenas con interpolación y unos <em>policies</em> específicos para cada lenguaje como SQL o JSON según el formato resultante que garantizará una cadena resultante bien formada y evitará el problema de <em>injection</em>.</p>
+<p>Estos son algunos ejemplos que se están evaluando para implementar la interpolación de cadenas. El <em>STR</em> sería el <em>policy</em> que determina como convertir el <a href="https://cr.openjdk.java.net/~jlaskey/templates/docs/api/java.base/java/lang/template/TemplatedString.html">TemplateString</a> en un <em>String</em>. Además será posible implementar nuevos <em>policies</em> haciendo una implementación de la interfaz funcional <a href="https://cr.openjdk.java.net/~jlaskey/templates/docs/api/java.base/java/lang/template/TemplateProcessor.html">TemplateProcessor</a>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Joan&#34;</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">TemplatedString</span> <span class="n">ts</span> <span class="o">=</span> <span class="s">&#34;My name is \{name}&#34;</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Joan&#34;</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">String</span> <span class="n">info</span> <span class="o">=</span> <span class="n">STR</span><span class="o">.</span><span class="s">&#34;My name is \{name}&#34;</span><span class="o">;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>string-interpolation.java</span>
+    </div>
+</div>
+<p>Personalmente prefiero la sintaxis <code>${&hellip;}</code> en vez de <code>\{&hellip;}</code> ya que la primera es la opción utilizada en otros lenguajes y no me gusta mucho ese <em>syntactic sugar</em> (o <em>rat poison</em>) para usar los <em>TemplateProcessor</em> que me parece nada coherente con el lenguaje. Utilizar el <em>$</em> en vez de <em>\</em> es una alternativa que han evaluado pero que de momento han descartado para evitar conflictos con código heredado. También han evaluado otro tipo de alternativas, en cualquier caso hasta la versión final y que esta sea incorporada en el lenguaje si lo es es muy posible que haya cambios.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/HiHgAh7wWPc" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>java-platform</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">Novedades y nuevas características de Java 8</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/">Introducción y nuevas características de Java EE 7</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/">Aplicación de ejemplo usando varias especificaciones de Java EE 7</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">Novedades y nuevas características de Java 9, los módulos</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/">Novedades de Java 9, más allá de la modularidad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/03/novedades-de-java-10/">Novedades de Java 10</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/09/novedades-y-nuevas-caracteristicas-de-java-11/">Novedades y nuevas características de Java 11</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/11/novedades-de-java-ee-8/">Novedades de Java EE 8</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/03/novedades-de-java-12/">Novedades de Java 12</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/09/novedades-de-java-13/">Novedades de Java 13</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/03/novedades-de-java-14/">Novedades de Java 14</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/09/novedades-de-java-15/">Novedades de Java 15</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/03/novedades-de-java-16/">Novedades de Java 16</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/">Novedades y nuevas características de Java 17</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/03/novedades-de-java-18/">Novedades de Java 18</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/09/novedades-de-java-19/">Novedades de Java 19</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-654';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2022\/09\/novedades-de-java-19\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2022 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

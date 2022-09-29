@@ -5,12 +5,157 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-09-15T21:00:00+02:00</updated>
+    <updated>2022-09-28T20:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2022/09/novedades-de-java-19/</id>
+        <title>Novedades de Java 19</title>
+        <updated>2022-09-28T20:00:00+02:00</updated>
+        <published>2022-09-28T20:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/09/novedades-de-java-19/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Las versiones de Java más confiables por su soporte extendido son las LTS, las no LTS dan la oportunidad de probar e ir adaptándose a las novedades que se publicarán de forma definitiva en las LTS. Por ello las empresas seguramente prefieran ir cambiando de versiones de LTS a LTS, los usuarios y desarrolladores a nivel individual o las empresas que alguna novedad supone un cambio importante opten por usar una no LTS. La versión de Java 19 es una no LTS pero incorpora una novedad muy importante aún en vista previa, los <em>virtual threads</em> que permitirán a las aplicaciones pasar de usar miles a millones de <em>threads</em> y usar programación estructurada más sencilla en vez de programación asíncrona o concurrente para resolver problemas de concurrencia.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Una nueva versión de Java que llega ya al número 19, no es una versión LTS con lo que carece de soporte extendido pero que junto con Java 18 incorpora varias novedades desde la última versión LTS alguna muy destacada y esperada que va a suponer un cambio de paradigma en la programación concurrente.</p>
+<p>Las novedades no son muy numerosas ya que en el periodo de seis meses da tiempo a ir incorporando algunas que ya se publican aunque sea en modo de vista previa y aunque pueden cambiar cuando lleguen a la versión final permite a aquellos aventurados experimentar y adaptarse a ellas en futuras versiones e incluso utilizarlas si así lo desean en su versión de vista previa.</p>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<h3 id="introducción">Introducción</h3>
+<p>En esta nueva versión de Java las novedades sin contar las incorporadas en vista previa son muy pocas la única es el <em>port</em> a la arquitectura de procesadores RISC-V que aunque es una prometedora arquitectura de procesadores con la interesante propiedad de no tener costes de licencias por implementarla que probablemente vaya ganando cuota de mercado a día de hoy es muy minoritaria, tanto en el escritorio como en los servidores.</p>
+<p>Sin embargo, en las características en vista previa hay una muy destacada y relevante que son los <em>threads</em> virtuales que supone un cambio de paradigma en la programación concurrente que proporciona las ventajas de la programación estructurada sin la complejidad de la programación asíncrona o concurrente.</p>
+<p>Como complemento a los <em>threads</em> virtuales hay otra ayuda con la concurrencia estructurada, dado que los <em>threads</em> virtuales van a permitir crear varios órdenes de magnitud de <em>threads</em> de lo que era posible hasta ahora, de pasar a únicamente utilizar miles de <em>threads</em> a poder utilizar millones de <em>threads</em>.</p>
+<p>Otras novedades en vista previa son actualizaciones a características en vistas previas anteriores como los <em>Record Patterns</em>, <em>Foreign Function &amp; Memory API</em> para integración de código nativo, el <em>Vector API</em> para aprovechar las instrucciones vectoriales de los procesadores, <em>Pattern Matching for switch</em> y <em>Structured Concurrency</em> que está relacionado con los <em>threads virtuales</em> y lo complementa.</p>
+<ul>
+<li><a href="https://openjdk.java.net/projects/jdk/19/">Características de Java 19</a></li>
+<li><a href="https://jdk.java.net/19/release-notes">Notas de publicación de Java 19</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/19/">Documentación de Java 19</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/19/docs/api/index.html">Documentación Javadoc de Java 19</a></li>
+</ul>
+<p>Las mejoras incluidas en esta versión son:</p>
+<ul>
+<li>405: <a href="https://openjdk.org/jeps/405">Record Patterns (Preview)</a></li>
+<li>422: <a href="https://openjdk.org/jeps/422">Linux/RISC-V Port</a></li>
+<li>424: <a href="https://openjdk.org/jeps/424">Foreign Function &amp; Memory API (Preview)</a></li>
+<li>425: <a href="https://openjdk.org/jeps/425">Virtual Threads (Preview)</a></li>
+<li>426: <a href="https://openjdk.org/jeps/426">Vector API (Fourth Incubator)</a></li>
+<li>427: <a href="https://openjdk.org/jeps/427">Pattern Matching for switch (Third Preview)</a></li>
+<li>428: <a href="https://openjdk.org/jeps/428">Structured Concurrency (Incubator)</a></li>
+</ul>
+<p>Artículos relacionados:</p>
+<ul>
+<li><a href="https://inside.java/2022/09/20/sip066/">JDK 19 Release - Sip of Java</a></li>
+<li><a href="https://inside.java/2022/09/20/the-arrival-of-java-19/">The Arrival of Java 19!</a></li>
+<li><a href="https://inside.java/2022/09/20/podcast-026/">Episode 26 &ldquo;Java 19 is Here!&rdquo;</a></li>
+</ul>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/vvXmO2ZMGsk" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h3 id="nuevas-características">Nuevas características</h3>
+<h4 id="linuxrisc-v-port">Linux/RISC-V Port</h4>
+<p>RISC-V es una es una arquitectura con un conjunto de instrucciones de código abierto, además de un diseño eficiente y moderno no requiere pagar licencias que lo hace interesante para muchas empresas y fabricantes al contrario de otras arquitecturas como ARM que requiere pagar licencias. RISC-V ya es soportado por varias herramientas de desarrollo importantes y hay una disponibilidad de hardware que va en aumento. Por estos motivos, una versión que permite usar Java en procesadores RISC-V es valiosa.</p>
+<p>El <em>port</em> de Java para RISC-V incluye el intérprete el compilador JIT para el cliente y servidor y una implementación para todos los recolectores de basura soportados incluyendo ZGC y Shenandoah.</p>
+<h3 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h3>
+<h4 id="_record-patterns_"><em>Record Patterns</em></h4>
+<p>El <em>patern matching</em> permite eliminar algunos <em>cast</em> explícitos, esto ya ha sido aplicado en expresiones como condiciones. Ahora el <em>pattern matching</em> se aplica a los <em>records</em> que permite una forma de desestructurar este tipo de clases para obtener los elementos de <em>record</em> en variables disponibles en el ámbito de uso de la expresión.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">record</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">void</span> <span class="nf">printSum</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Point</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">x</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">y</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pattern-matching.java</span>
+    </div>
+</div>
+<p>Al escribir la expresión de <em>pattern matching</em> para un <em>record</em> permite al mismo tiempo desestructurar los elementos y extraerlos a variables. La expresión resultante para desestructurar los elementos es muy verbosa pero hace más simple el acceso posterior a las variables de <em>record</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">printSum</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">))</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>record-patterns.java</span>
+    </div>
+</div>
+<h4 id="_foreign-function--memory-api_"><em>Foreign Function &amp; Memory API</em></h4>
+<p>Esta característica facilita el uso del código nativo de forma eficiente y más sencilla que anteriormente con JNI, en esta nueva vista previa es un refinamiento de las versione anteriores incorporando los comentarios y sugerencias desde la última vista previa.</p>
+<p>Para muchos desarrolladores esta característica es irrelevante o solo se benefician de forma indirecta pero para otros que trabajan con software embebido o que desarrollan librerías Java que hacen uso de código nativo implementado en otros lenguajes supone una gran mejora.</p>
+<h4 id="_virtual-threads_"><em>Virtual Threads</em></h4>
+<p>Un sistema operativo como Linux solo es capaz de ofrecer a las aplicaciones una cantidad limitada de <em>threads</em> ya que su consumo de recursos es elevado en el sistema y el cambio de contexto de unos a otros penaliza el rendimiento.</p>
+<p>Para solventar esta limitación Java implementa dentro del JVM los <em>threads</em> virtuales que son más ligeros en recursos que los <em>threads</em> del sistema operativo y el cambio de contexto de uno a otro no supone tanta penalización en el rendimiento. Los <em>threads</em> virtuales permiten a las aplicaciones poder usar un mayor cantidad de hilos pasando de unos miles a varios millones sin ningún problema. Para las aplicaciones que usan gran cantidad de hilos como las de servidor de un hilo por petición permite escalar a un número significativamente mayor de peticiones y un mejor rendimiento.</p>
+<p>Adicionalmente, una de las mejoras cosas es que el uso de los <em>threads</em> virtuales no requiere una nueva API ya que la implementación la realiza usando la misma clase <a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Thread.html">Thread</a> que ha existido siempre en Java desde las versión 1.0 de Java.</p>
+<p>La solución habitual a la escasez de <em>threads</em> y la limitación del sistema operativo para aprovechar el hardware ha sido la programación asíncrona, está sin embargo es más difícil de desarrollar, entender y depurar. Otra opción de algunos lenguajes han sido las <em>coroutines</em> como en <a href="https://kotlinlang.org/">Kotlin</a> y otros lenguajes.</p>
+<p>Los <em>threads</em> virtuales y la concurrencia estructurada promete la simplicidad de la programación estructurada con la ventaja de proporcionar un rendimiento similar que la programación asíncrona.</p>
+<ul>
+<li><a href="https://cr.openjdk.java.net/~rpressler/loom/Loom-Proposal.html">Project Loom: Fibers and Continuations for the Java Virtual Machine</a></li>
+</ul>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/6dpHdo-UnCg" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/I9hQvJO39uM" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h4 id="_structured-concurrency_"><em>Structured Concurrency</em></h4>
+<p>Los <em>threads</em> virtuales permiten dedicar un <em>thread</em> a cada tarea con lo que se prevé que las aplicaciones aprovechen poder utilizar una mayor número de <em>threads</em>, pero gestionarlos sigue siendo un problema ya que los hilos siguen siendo independientes y su depuración complicada.</p>
+<p>Si los <em>threads</em> virtuales permiten utilizar <em>threads</em> en abundancia la concurrencia estructurada asegura que los <em>threads</em> estén relacionados correctamente y de forma robusta además de mostrar los <em>threads</em> en herramientas de depuración de forma que sean entendidos por los desarrolladores.</p>
+<p>La clase <a href="https://docs.oracle.com/en/java/javase/19/docs/api//jdk.incubator.concurrent/jdk/incubator/concurrent/StructuredTaskScope.html">StructuredTaskScope</a> permite estructurar una tarea ejecutada en varios hilos, tanto en los casos en que una tarea se divide en varias operaciones como en los casos de que por cada petición entrante se emplea un hilo como en un servidor.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Response</span> <span class="nf">handle</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">ExecutionException</span><span class="o">,</span> <span class="n">InterruptedException</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">var</span> <span class="n">scope</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StructuredTaskScope</span><span class="o">.</span><span class="na">ShutdownOnFailure</span><span class="o">())</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Future</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">user</span> <span class="o">=</span> <span class="n">scope</span><span class="o">.</span><span class="na">fork</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="n">findUser</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Future</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">order</span> <span class="o">=</span> <span class="n">scope</span><span class="o">.</span><span class="na">fork</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="n">fetchOrder</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">join</span><span class="o">();</span> <span class="c1">// Join both forks&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">throwIfFailed</span><span class="o">();</span> <span class="c1">// ... and propagate errors&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// Here, both forks have succeeded, so compose their results&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="k">new</span> <span class="n">Response</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">resultNow</span><span class="o">(),</span> <span class="n">order</span><span class="o">.</span><span class="na">resultNow</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>structured-concurrency-1.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">serve</span><span class="o">(</span><span class="n">ServerSocket</span> <span class="n">serverSocket</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="o">,</span> <span class="n">InterruptedException</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">var</span> <span class="n">scope</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StructuredTaskScope</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">&gt;())</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">var</span> <span class="n">socket</span> <span class="o">=</span> <span class="n">serverSocket</span><span class="o">.</span><span class="na">accept</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">fork</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="n">handle</span><span class="o">(</span><span class="n">socket</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// If there&#39;s been an error or we&#39;re interrupted, we stop accepting&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">shutdown</span><span class="o">();</span>  <span class="c1">// Close all active connections&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>structured-concurrency-2.java</span>
+    </div>
+</div>
+<h4 id="_pattern-matching-for-switch_"><em>Pattern Matching for switch</em></h4>
+<p>El <em>pattern matching</em> en las expresiones <em>switch</em> han sido mejorados en esta nueva vista previa.</p>
+<ul>
+<li>Las <em>guard patterns</em> son reemplazados con cláusulas <em>when</em> en los bloques <em>switch</em>.</li>
+<li>La semántica del <em>switch</em> en los casos en que es <em>null</em> la expresión se ajusta a la semántica existente que ha existido en los <em>switch</em> lanzando un <em>NullPointerException</em>.</li>
+</ul>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">void</span> <span class="nf">testTriangle</span><span class="o">(</span><span class="n">Shape</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">switch</span> <span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="kc">null</span> <span class="o">-&gt;</span> <span class="o">{</span> <span class="k">break</span><span class="o">;</span> <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">Triangle</span> <span class="n">t</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">when</span> <span class="n">t</span><span class="o">.</span><span class="na">calculateArea</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">100</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Large triangle&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">default</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;A shape, possibly a small triangle&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pattern-matching-switch.java</span>
+    </div>
+</div>
+<p>Por otro lado todo, ahora en los casos de un <em>switch</em> es posible usar el label <em>null</em> para seleccionar la rama cuando la expresión del <em>switch</em> toma un valor nulo, el comportamiento anterior era que si la expresión <em>switch</em> era <em>null</em> producía un <em>NullPointerException</em> lo que requería utilizar un <em>guard clause</em> antes del <em>switch</em> para evitar el NPE.</p>
+<p>Desde Java 16 los bloques switch permiten dos estilos de grupos uno mediante etiquetas con <em>:</em> y otro de una única consecuencia con <em>-&gt;</em> donde la continuación en cascada no es posible. En el primer caso los múltiples labels se escriben <code>case l1: case l2:</code> cuando en el estilo del segundo se escriben <code>case l1, l2 -&gt;</code>.</p>
+<p>Soportar la etiqueta <em>null</em> permite ahora escribir un switch de la siguiente forma.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Object</span> <span class="n">o</span> <span class="o">=</span> <span class="o">...;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="k">switch</span> <span class="o">(</span><span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="kc">null</span><span class="o">:</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">String</span> <span class="n">s</span><span class="o">:</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;String, including null&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">break</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>switch-null-label.java</span>
+    </div>
+</div>
+<h3 id="otras-novedades">Otras novedades</h3>
+<h4 id="interpolación-de-cadenas-_string-templates_">Interpolación de cadenas (<em>String Templates</em>)</h4>
+<p>En un futuro es posible que Java incorpore al lenguaje la interpolación de cadenas con la <a href="https://openjdk.org/jeps/430">JEP 430: String Templates</a>. Facilitará la construcción de cadenas con una mezcla de cadenas y valores de variables que produzcan la cadena resultante deseada. La construcción de cadenas es algo muy utilizado en todos los programas con lo que la interpolación de cadenas será una mejora en la la construcción de cadenas que hace el código más legible.</p>
+<p>Un problema de la interpolación de cadenas es que en ciertas cadenas hay posibilidad de crear un problema de seguridad y por ello es peligrosa, una forma de este problema es el <em>SQL injection</em>. La interpolación de cadenas que se incorporará en Java solucionará al mismo tiempo que la legibilidad del código los problemas que pueden ocurrir con el <em>SQL injection</em> creando una clase <em>TemplateString</em> para las cadenas con interpolación y unos <em>policies</em> específicos para cada lenguaje como SQL o JSON según el formato resultante que garantizará una cadena resultante bien formada y evitará el problema de <em>injection</em>.</p>
+<p>Estos son algunos ejemplos que se están evaluando para implementar la interpolación de cadenas. El <em>STR</em> sería el <em>policy</em> que determina como convertir el <a href="https://cr.openjdk.java.net/~jlaskey/templates/docs/api/java.base/java/lang/template/TemplatedString.html">TemplateString</a> en un <em>String</em>. Además será posible implementar nuevos <em>policies</em> haciendo una implementación de la interfaz funcional <a href="https://cr.openjdk.java.net/~jlaskey/templates/docs/api/java.base/java/lang/template/TemplateProcessor.html">TemplateProcessor</a>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Joan&#34;</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">TemplatedString</span> <span class="n">ts</span> <span class="o">=</span> <span class="s">&#34;My name is \{name}&#34;</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Joan&#34;</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">String</span> <span class="n">info</span> <span class="o">=</span> <span class="n">STR</span><span class="o">.</span><span class="s">&#34;My name is \{name}&#34;</span><span class="o">;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>string-interpolation.java</span>
+    </div>
+</div>
+<p>Personalmente prefiero la sintaxis <code>${&hellip;}</code> en vez de <code>\{&hellip;}</code> ya que la primera es la opción utilizada en otros lenguajes y no me gusta mucho ese <em>syntactic sugar</em> (o <em>rat poison</em>) para usar los <em>TemplateProcessor</em> que me parece nada coherente con el lenguaje. Utilizar el <em>$</em> en vez de <em>\</em> es una alternativa que han evaluado pero que de momento han descartado para evitar conflictos con código heredado. También han evaluado otro tipo de alternativas, en cualquier caso hasta la versión final y que esta sea incorporada en el lenguaje si lo es es muy posible que haya cambios.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/HiHgAh7wWPc" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2022/09/como-refrescar-el-access-token-de-un-cliente-oauth-cuando-caduca/</id>
         <title>Cómo refrescar el access token de un cliente OAuth cuando caduca</title>
@@ -1469,131 +1614,6 @@
     <p>
             El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/GradlePlugin">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew build</code></p>
 </div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2022/03/novedades-de-java-18/</id>
-        <title>Novedades de Java 18</title>
-        <updated>2022-03-31T20:00:00+01:00</updated>
-        <published>2022-03-31T20:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/03/novedades-de-java-18/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Las novedades de Java 18 no añaden nada en el lenguaje pero sí incorpora algunas relevantes en la plataforma como el uso de UTF-8 por defecto, una utilidad de línea de comandos para disponer de un servidor web simple, poder añadir fragmentos de código en los comentarios de la documentación Javadoc así como el marcado para su eliminación en futuras versiones de la finalización de objetos. También publican otras novedades en incubación, nuevas versiones en vistas previa de otras características se publicarán de forma definitiva en siguientes versiones y otros numerosos cambios menores.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>Las mejoras incrementales se siguen añadiendo en cada nueva versión lanzada cada seis meses. En marzo de 2022 ha sido publicada la versión de Java 18 como siguiente versión después de Java 17 que es una versión con soporte extendido o LTS. Seguramente no muchos van a poder utilizar esta nueva versión por restricciones en los proyectos que seguirán usando versiones ya consideradas bastante antiguas incluyendo Java 8 y más en los casos que utilizan versiones anteriores. Por otro lado, otra parte de usuarios quizá esperen a la siguiente versión LTS para actualizar las aplicaciones en el caso de que ya estén utilizando Java 17.</p>
-<p>La lista de características de Java 18 no es muy amplia pero hay algunas destacadas.</p>
-<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
-<h3 id="introducción">Introducción</h3>
-<p>Con el paso de los meses muchas librerías y entornos de desarrollo irán publicando nuevas versiones compatibles con Java 18 y añadiendo soporte. Cuatro de las características más destacada son la utilización de la codificación de caracteres UTF-8 por defecto, la inclusión de un pequeño servidor web, soporte para añadir fragmentos de código en la documentación Javadoc y finalmente marcar para ser eliminada en una siguiente versión la finalización de objetos. Otras mejoras son nuevas vistas previas de características que están disponibles para obtener comentarios pero que en una siguiente versión podrían cambiar.</p>
-<ul>
-<li><a href="https://openjdk.java.net/projects/jdk/18/">Características de Java 18</a></li>
-<li><a href="https://jdk.java.net/18/release-notes">Notas de publicación de Java 18</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/18/">Documentación de Java 18</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/18/docs/api/index.html">Documentación Javadoc de Java 18</a></li>
-<li><a href="https://blogs.oracle.com/javamagazine/post/java-jdk-18-generally-available">JavaMagazine: Java 18 is here: 9 JEPs with core library improvements and updates</a></li>
-</ul>
-<p>Las mejoras incluidas en esta versión son:</p>
-<ul>
-<li>400: <a href="https://openjdk.java.net/jeps/400">UTF-8 by Default</a></li>
-<li>408: <a href="https://openjdk.java.net/jeps/408">Simple Web Server</a></li>
-<li>413: <a href="https://openjdk.java.net/jeps/413">Code Snippets in Java API Documentation</a></li>
-<li>416: <a href="https://openjdk.java.net/jeps/416">Reimplement Core Reflection with Method Handles</a></li>
-<li>417: <a href="https://openjdk.java.net/jeps/417">Vector API (Third Incubator)</a></li>
-<li>418: <a href="https://openjdk.java.net/jeps/418">Internet-Address Resolution SPI</a></li>
-<li>419: <a href="https://openjdk.java.net/jeps/419">Foreign Function &amp; Memory API (Second Incubator)</a></li>
-<li>420: <a href="https://openjdk.java.net/jeps/420">Pattern Matching for switch (Second Preview)</a></li>
-<li>421: <a href="https://openjdk.java.net/jeps/421">Deprecate Finalization for Removal</a></li>
-</ul>
-<p>En los siguientes vídeos hace una explicación de estas nuevas características.</p>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/Nu225G7pMHw" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/5GfE1-vEl1A" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<p>Con el nuevo calendario de publicaciones se observa claramente que los desarrolladores pueden predecir de forma más mucho fiable cuando se publicará una nueva versión. Se observa que el tiempo entre versiones se ha reducido considerablemente respecto a lo que tardaron las versiones Java 6 y 7 y se observa la incorporación de novedades de forma constante.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/03/novedades-de-java-18/images/java-releases_hu5c2d03569c43c17cbc0d1487d1032ffa_144383_2560x1440_fit_q90_box.jpg" data-gallery="" title="Publicaciones de Java"><img src="https://picodotdev.github.io/blog-bitix/2022/03/novedades-de-java-18/images/java-releases_hu5c2d03569c43c17cbc0d1487d1032ffa_144383_650x450_fit_q90_box.jpg" width="650" height="309" alt="Publicaciones de Java" title="Publicaciones de Java"  class="lozad "></a></p>
-<figcaption>Publicaciones de Java</figcaption>
-</figure>
-</div>
-<h3 id="nuevas-características">Nuevas características</h3>
-<h4 id="codificación-de-caracteres-utf-8-por-defecto">Codificación de caracteres UTF-8 por defecto</h4>
-<p>Las operaciones que hacían entrada y salida como en el caso del sistema de archivos se utilizaban por defecto si no se indicaba uno explícitamente la codificación del sistema operativo. Dado que cada sistema operativo es capaz de definir su codificación de caracteres esto creaba algunas inconsistencias cuando las aplicaciones se ejecutan en diferentes sistemas operativos. Ahora en caso de que no se indique una codificación de caracteres se utiliza UTF-8 ofreciendo una mejor consistencia entre las diferentes plataformas.</p>
-<h4 id="servidor-web-simple">Servidor web simple</h4>
-<p>Se añade una utilidad de línea de comandos y una API para iniciar un sencillo servidor web para archivos estáticos. La finalidad es que no haya que recurrir a utilidades externas al JDK y sirva para hacer pruebas. No es su intención reemplazar servidores web más completos como <a href="https://httpd.apache.org/">Apache</a> o <a href="https://nginx.org/">Nginx</a> ni ofrece funcionalidades dinámicas como un contenedor de <em>servlets</em> como <a href="https://tomcat.apache.org/">Tomcat</a>.</p>
-<p>Dado que es un servidor web simple tiene algunas limitaciones, como que solo soporta el protocolo HTTP/1.1, no soporta el protocolo seguro HTTPS, solo soporta operaciones idempotentes de los verbos HEAD y GET devolviendo el resto de versos un código de error 501 <em>Not Implemented</em> o 405 <em>Not Allowed Response</em>. Algunos MIME types son configurados de forma automática como los archivos con extensión <em>html</em> que son servidos con la cabecera de contenido <em>text/html</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">$</span> <span class="n">jwebserver</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>jwebserver.sh</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Binding</span> <span class="n">to</span> <span class="n">loopback</span> <span class="n">by</span> <span class="k">default</span><span class="o">.</span> <span class="n">For</span> <span class="n">all</span> <span class="n">interfaces</span> <span class="n">use</span> <span class="s">&#34;-b 0.0.0.0&#34;</span> <span class="n">or</span> <span class="s">&#34;-b ::&#34;</span><span class="o">.</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">Serving</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">picodotdev</span> <span class="n">and</span> <span class="n">subdirectories</span> <span class="n">on</span> <span class="n">127</span><span class="o">.</span><span class="na">0</span><span class="o">.</span><span class="na">0</span><span class="o">.</span><span class="na">1</span> <span class="n">port</span> <span class="n">8000</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">URL</span> <span class="n">http</span><span class="o">:</span><span class="c1">//127.0.0.1:8000/&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>jwebserver.out</span>
-    </div>
-</div>
-<p>Además de la línea de comandos se ofrece una API para iniciar el servidor web mediante código.</p>
-<ul>
-<li><a href="https://inside.java/2021/12/06/working-with-the-simple-web-server/">Working with the Simple Web Server</a></li>
-</ul>
-<h4 id="fragmentos-de-código-en-comentarios-javadoc">Fragmentos de código en comentarios Javadoc</h4>
-<p>Algunos de los comentarios de Javadoc incluyen ejemplos de código. Hasta ahora los fragmentos de código insertaban con el <em>taglet</em> <em>@code</em> que tenía varias deficiencias como no ofrecer resaltado de sintaxis, no poder incluir fragmentos de código de archivos existentes con lo que puede quedar obsoleto y no poder hacer pruebas unitarias sobre este código con lo que podría no funcionar.</p>
-<p>Se añade el <em>taglet</em> <em>@snippet</em> que permite incluir fragmentos o <em>snippets</em> de código en los comentarios de Javadoc, con resaltado de sintaxis y soporte para acceder a los <em>taglets</em> para procesar el código de la anotación. La anotación permite incluir en los comentarios de Javadoc regiones de archivos externos y aplicar transformaciones en el contenido a incorporar en el Javadoc. Pudiendo añadir fragmentos de código de archivos externos y pudiendo realizar transformaciones no hace falta copiar código y pegar código en los comentarios Javadoc sino que los fragmentos de código se extraen directamente de los archivos de código fuente.</p>
-<p>Además se ofrece una API para acceder a esos fragmentos de código pudiendo hacer pruebas unitarias del código incluido en el Javadoc, esto no es solo para los desarrolladores del JDK sino también para cualquier programador que añada fragmentos de su código Java en la documentación Javadoc.</p>
-<p>Los fragmentos de código no están limitados a archivos de código Java sino que también es posible incluir otros formatos utilizados comúnmente en aplicaciones Java como archivos <em>properties</em>,  <em>html</em> u otros. En esta guía se detalla como usar los fragmentos de código con ejemplos de código.</p>
-<ul>
-<li><a href="https://docs.oracle.com/en/java/javase/18/code-snippet/index.html">Programmer&rsquo;s Guide to Snippets</a></li>
-</ul>
-<h4 id="reimplementación-de-la-reflexión-con-manejadores-de-métodos">Reimplementación de la reflexión con manejadores de métodos</h4>
-<p>Se reimplementan varias funcionalidades relacionadas con la reflexión utilizando los manejadores de eventos con la intención de facilitar el mantenimiento del JDK. Los <em>MethodHandlers</em> ofrecen una alternativa a la reflexión con mejor rendimiento a la vez que es más legible. Es un cambio interno más para los desarrolladores del JDK que para los usuarios.</p>
-<ul>
-<li><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/invoke/MethodHandles.html">MethodHandles</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/invoke/MethodHandle.html">MethodHandle</a></li>
-</ul>
-<h4 id="proveedor-para-resolver-direcciones-ip">Proveedor para resolver direcciones IP</h4>
-<p>Hasta ahora el JDK utilizaba el mecanismo del sistema operativo para resolver direcciones IP. Este es compartido por todas las aplicaciones y la operación de resolución es bloqueante que es un problema para la incorporación de los <em>threads</em> ligeros del <a href="http://openjdk.java.net/projects/loom/">project Loom</a>. Se ha añadido un mecanismo extensible para proporcionar otras formas de resolución y soportar nuevos protocolos como DNS sobre QUIC, TLS y HTTPS. Ahora las aplicaciones tiene más control sobre el mecanismo de resolución y es útil en el contexto de pruebas automatizadas.</p>
-<h3 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h3>
-<p>Como ya es habitual en el JDK se van incluyendo algunas características en modo vista previa que pueden ser utilizadas pero que en una siguiente versión y el código que las usen deberá ser modificado. Se ofrecen para que los usuarios puedan experimentar con ellas y los desarrolladores obtengan comentarios y si es necesario hacer cambios en siguientes versiones.</p>
-<h4 id="vector-api">Vector API</h4>
-<p>Se proporciona una nueva versión de la Vector API que permite aprovechar las instrucciones SIMD de los procesadores con una API de Java común  para todas las arquitecturas de procesadores. Se aprovechan las características disponibles de los procesadores y en aquellos que no tengan alguna se ofrece un modo de funcionamiento degradado.</p>
-<p>En esta nueva versión se soportan las instrucciones <em>Scalar Vector Extension</em> (SVE) de la plataforma <a href="https://www.arm.com/">ARM</a>. También se mejora el rendimiento de las operaciones que aceptan enmascaramiento en las arquitecturas hardware que soportan enmascaramiento.</p>
-<h4 id="_foreign-function--memory-api_"><em>Foreign Function &amp; Memory API</em></h4>
-<p>Esta API permite acceder a memoria de procesos externos y utilizar librerías programadas en otros lenguajes como una alternativa más fácil de usar, de mayor rendimiento, más general para diferentes arquitecturas y más simple que la anterior alternativa con JNI. En esta nueva versión se mejora la API para soportar y facilitar operaciones con diferentes tipos y accesos a memoria.</p>
-<h3 id="_pattern-matching_-para-las-sentencias-_switch_"><em>Pattern Matching</em> para las sentencias <em>switch</em></h3>
-<p>El <em>parttern matching</em> en las sentencias <em>switch</em> permite al compilador comprobar de la expresión del <em>switch</em> contra los casos de la expresión del <em>switch</em>. En esta nueva revisión de esta característica el compilador lanza un error en caso de que un patrón domine al siguiente, sea más general siempre se cumpla antes que uno menos general. Ahora también el compilador es más preciso al comprobar la completitud de todos casos del <em>switch</em> en las clases <em>sealed</em>.</p>
-<h3 id="otros-cambios">Otros cambios</h3>
-<h4 id="finalización-de-objetos-marcado-para-ser-eliminado">Finalización de objetos marcado para ser eliminado</h4>
-<p>Java es un lenguaje que ha ofrecido recolección de basura desde las primeras versiones. Los programadores nunca han tenido que liberar la memoria de los objetos de forma explícita sino que de esta tarea se encarga la máquina virtual de Java. Pero también Java desde las primeras versiones ha ofrecido un mecanismo para la finalización de objetos que el tiempo ha demostrado que tiene varios fallos de diseño que no lo hacen útil y se desaconseja su utilización.</p>
-<p>Algunos fallos de su diseño son que tiene una latencia impredecible y arbitraria sin garantía de que la finalización del objeto se realice. Las acciones de finalización no tienen ninguna restricción pudiendo revivir una referencia de objeto. Siempre está activo para cada instancia de una clase se use o no, ni se puede cancelar. Tampoco hay un orden predefinido en un entorno multihilo de modo que la ejecución de la finalización se puede ejecutar en cualquier orden.</p>
-<p>Por los defectos anteriores la eliminación de la finalización de objetos en Java ha sido algo pendiente de realizar, en esta versión de Java aunque no se elimina se marca para la eliminación en versiones futuras de Java de modo que los que lo usen tengan tiempo de actualizar sus librerías y aplicaciones.</p>
-<p>Esto solo impactará a algunos usuarios que realicen tareas avanzadas en las que necesiten la finalización de objetos, no es algo que en circunstancias normales se use. La alternativa a la finalización de objetos es usar la sentencia <em>try-with-resources</em> y en los objetos que tengan un ámbito mayor de vida utilizar la clase <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/ref/Cleaner.html">Cleaner</a> que permite asociar acciones de finalización a una referencia de objeto cuando esta se convierte en una <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/ref/PhantomReference.html">referencia <em>phantom</em></a>.</p>
-<h4 id="otros-cambios-1">Otros cambios</h4>
-<p>Los anteriores son los cambios más destacados de Java 18 pero otro buen número de cambios menores e internos en el JDK. En las notas de publicación se incluye una lista detallada de todos.</p>
-<p>Estos son artículos que también hacen resúmenes de las novedades de Java 18.</p>
-<ul>
-<li><a href="https://blogs.oracle.com/java/post/the-arrival-of-java-18">The Arrival of Java 18</a></li>
-<li><a href="https://www.oracle.com/news/announcement/oracle-releases-java-18-2022-03-22/">Oracle Announces Java 18</a></li>
-<li><a href="https://www.infoworld.com/article/3630510/jdk-18-the-new-features-in-java-18.html">JDK 18: The new features in Java 18</a></li>
-<li><a href="https://blog.jetbrains.com/idea/2022/03/java-18-features-support/">Java 18 Features Support (IntelliJ)</a></li>
-<li><a href="https://seanjmullan.org/blog/2022/03/23/jdk18">JDK 18 Security Enhancements</a></li>
-<li><a href="https://inside.java/2022/03/22/podcast-023/">Episode 23 “Java 18 is Here!”</a></li>
-<li><a href="https://www.itprotoday.com/programming-languages/java-18-brings-new-features-accelerate-software-development">Java 18 Brings New Features to Accelerate Software Development</a></li>
-</ul>
 ]]>
         </content>
         
