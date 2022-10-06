@@ -5,12 +5,118 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-09-28T20:00:00+02:00</updated>
+    <updated>2022-10-05T21:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/</id>
+        <title>Modelo «push» contra modelo «pull» en frameworks web</title>
+        <updated>2015-06-06T11:00:00+02:00</updated>
+        <published>2014-07-06T10:58:10+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes"> 
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+</div>
+<p>En la mayoría de <em>frameworks</em> de desarrollo de aplicaciones o páginas web para producir el contenido HTML que se envía al cliente se emplea un modelo en el que el controlador proporciona los datos que combinados con una plantilla producen el HTML. Este modelo también es el empleado habitualmente en muchos motores de plantillas (<a href="http://www.thymeleaf.org/">thymeleaf</a>, <a href="http://mustache.github.io/">mustache</a>, &hellip;). Sin embargo, hay dos modelos que se pueden seguir para producir un texto como resultado dada una plantilla y datos:</p>
+<ul>
+<li>Push: este es el modelo comentado. El controlador recupera de antemano todos los datos que necesita la vista, el controlador también determina la vista o plantilla que se usar. Combinando los datos y la plantilla se produce el resultado.</li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-push_hu6e494778e33b19912ce2159f71794939_16905_2560x1440_fit_box_3.png" data-gallery="" title="Modelo push"><img src="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-push_hu6e494778e33b19912ce2159f71794939_16905_300x200_fit_box_3.png" width="300" height="176" alt="Modelo push" title="Modelo push"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Los pasos que se siguen en este modelo son:</p>
+<ol>
+<li>La petición llega al servidor</li>
+<li>El dispatcher redirige la petición al controlador</li>
+<li>El controlador solicita los datos a la base de datos</li>
+<li>El controlador obtiene los datos de la base de datos</li>
+<li>El controlador redirige a la vista y le envía los datos que necesita</li>
+<li>La vista genera el contenido y se envía al cliente</li>
+</ol>
+<ul>
+<li>Pull: en este modelo el controlador no conoce los datos que usará la vista y es esta la que los solicita según necesita. La vista tira del controlador, el controlador solo debe ofrecer el soporte par que la vista pueda recuperar los datos que necesite.</li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-pull_hued438e41b6c5cffc6a748be7abce3995_16763_2560x1440_fit_box_3.png" data-gallery="" title="Modelo pull"><img src="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-pull_hued438e41b6c5cffc6a748be7abce3995_16763_300x200_fit_box_3.png" width="300" height="185" alt="Modelo pull" title="Modelo pull"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Los pasos que se siguen en este modelo varían ligeramente del modelo push pero de forma importante, son:</p>
+<ol>
+<li>La petición llega al servidor</li>
+<li>El dispatcher redirige la petición al controlador</li>
+<li>El controlador redirige a la vista</li>
+<li>La vista pide los datos que necesita al controlador y el controlador los pide a la base de datos</li>
+<li>La vista obtiene los datos que ha pedido del controlador</li>
+<li>La vista genera el contenido y se envía al cliente</li>
+</ol>
+<p>El modelo push es empleado en muchos de los <em>frameworks</em> web más usados, algunos ejemplos son <a href="http://symfony.com/">Symfony</a>, <a href="https://www.djangoproject.com/">Django</a>, <a href="https://grails.org/">Grails</a> o <a href="http://www.asp.net/mvc">ASP.NET MVC</a>. En la categoría de <em>frameworks</em> que usan un modelo pull está <a href="http://tapestry.apache.org/">Apache Tapestry</a>.</p>
+<p>Al modelo push le encuentro algunos problemas. Un problema es que el controlador debe conocer que datos necesita la vista y si la vista tiene cierta lógica esta la tendremos duplicada tanto en en controlador como en la vista. Supongamos que en una aplicación tenemos un usuario y dirección con una relación de 1 a 1 entre ambos y que debemos mostrar en una página el usuario y su dirección solo si solo si es un usuario VIP. En el controlador tendremos que recuperar el usuario, comprobar si es VIP y si lo es recuperar su dirección. El problema está que en la vista deberemos hacer también una comprobación si el cliente es VIP o al menos si a la vista se le ha proporcionado una dirección, como resultado la comprobación la tendremos duplicada tanto en el controlador como en la vista, como sabemos la duplicación de código y lógica habitualmente no es buena idea ya que a la larga dificulta el mantenimiento de la aplicación.</p>
+<p>En Grails (pero podría ser cualquier otro <em>framework</em> o motor de plantillas push) podríamos visualizar el usuario y su dirección si es VIP de la siguiente forma:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">// Grails&#10;</span></span><span class="line"><span class="cl">// Controlador (groovy)&#10;</span></span><span class="line"><span class="cl">def showUsuario() {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;def usuario = Usuario.get(params.long(&#39;id&#39;))&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;def direccion = null&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;if (usuario.isVIP()) {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direccion = usuario.direccion&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;render(view:&#39;show&#39;, model: [usuario:usuario, direccion:direccion])&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">// Vista (gsp)&#10;</span></span><span class="line"><span class="cl">Nombre: ${usuario.nombre}&#10;</span></span><span class="line"><span class="cl">&lt;g:if test=&#34;${usuario.vip}&#34;&gt;&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Dirección: ${direccion.toString()}&#10;</span></span><span class="line"><span class="cl">&lt;/g:if&gt;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>push.txt</span>
+    </div>
+</div>
+<p>Si usamos <a href="http://hibernate.org/">hibernate</a> la recuperación de la dirección podemos hacerla navegando la relación pero he querido recuperarla en el controlador expresamente para el ejemplo, si no pudiésemos usar hibernate para recuperar el dato relacionado probablemente lo que haríamos es recuperar el dato en el controlador como en el ejemplo.</p>
+<p>Otro problema del modelo push es que si la vista es usada en múltiples controladores, y precisamente la separación entre vistas y controladores uno de sus motivos es para esto, todos estos controladores van a compartir el código para recuperar los datos que necesite la vista, dependiendo del número de datos y de veces que empleemos una vista en múltiples controladores quizá debamos hacer una clase asociada a la vista que recupere los datos para evitar tener código duplicado (y exactamente esto es lo que se hace en Tapestry).</p>
+<p>En el modelo pull el controlador no debe conocer que datos necesita la vista y si hay lógica para mostrar ciertos datos está lógica solo la tendremos en la vista. Aunque el controlador no deba conocer que datos en concreto necesite la vista si debe ofrecer el soporte para que la vista los recupere cuando necesite. Como se puede ver el código en el siguiente ejemplo la comprobación de si el usuario es VIP solo está en la vista. En Tapestry cada vista tiene asociado una clase Java que es la encargada de ofrecer el soporte para que la vista pueda recuperar los datos, el conjunto de controlador más vista es lo que en Tapestry se conoce como componente, si el componente se usa varias veces en el mismo proyecto no necesitamos duplicar código.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">// Tapestry&#10;</span></span><span class="line"><span class="cl">// Controlador (java)&#10;</span></span><span class="line"><span class="cl">public Usuario getUsuario() {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;return usuarioDAO.get(id);&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">public Direccion getDirecion() {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;return getUsuario().getDireccion();&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">// Vista (tml)&#10;</span></span><span class="line"><span class="cl">Nombre: ${usuario.nombre}&#10;</span></span><span class="line"><span class="cl">&lt;t:if test=&#34;usuario.vip&#34;&gt;&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Direccion: ${direccion.toString()}&#10;</span></span><span class="line"><span class="cl">&lt;t:if&gt;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pull.txt</span>
+    </div>
+</div>
+<p>¿Podemos emplear un modelo pull en un <em>framework</em> que normalmente se suele usar un modelo push? Sí, basta que en el modelo de la vista pasemos un objeto que le permita recuperar los datos que necesite. En Grails empleando un modelo pull el código podría quedarnos de la siguiente forma:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">// Grails&#10;</span></span><span class="line"><span class="cl">// Controlador (groovy)&#10;</span></span><span class="line"><span class="cl">def showUsuario() {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;render(view:&#39;show&#39;, model: [view:new View(params)])&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">private class View {&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Map params&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;View(Map params) {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.params = params&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;def getUsuario() {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return Usuario.get(params.long(&#39;id&#39;))&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;def getDireccion() {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return usuario.direccion&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">// Vista (gsp)&#10;</span></span><span class="line"><span class="cl">Nombre: ${view.usuario.nombre}&#10;</span></span><span class="line"><span class="cl">&lt;g:if test=&#34;${view.usuario.vip}&#34;&gt;&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Dirección: ${view.direccion.toString()}&#10;</span></span><span class="line"><span class="cl">&lt;/g:if&gt;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pull-in-push.txt</span>
+    </div>
+</div>
+<p>Como se ve el if de comprobación en el controlador desaparece, a pesar de todo si la vista fuese usada por varios controladores deberíamos crear algo para evitar tener duplicado el código que permite recuperar los datos a la vista. Aunque esto es perfectamente posible no es la forma habitual de usar los modelos push.</p>
+<p>Este ejemplo es muy sencillo y empleando cualquiera de los dos modelos es viable, pero cuando el número de datos a recuperar en las vistas y el número de veces que se reutiliza una vista aumenta (y en teoría la separación entro controlador y vista uno de sus motivos es posiblemente para reutilizarlas) el modelo push presenta los problemas que he comentado que el modelo pull no tiene.</p>
+<div class="alert alert-warning">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/misc/PugInTapestry.png" alt="Portada libro: PlugIn Tapestry" title="Portada libro: PlugIn Tapestry" style="float: left; margin-right: 1.5em;" class="lozad">
+    <h3>Libro PlugIn Tapestry</h3>
+    <p>Si te interesa Apache Tapestry descarga gratis el libro de más de 300 páginas que he escrito sobre este <i>framework</i> en el formato que prefieras, <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">PlugIn Tapestry: Desarrollo de aplicaciones y páginas web con Apache Tapestry</a>, y el código de ejemplo asociado. En el libro comento detalladamente muchos aspectos que son necesarios en una aplicación web como persistencia, pruebas unitarias y de integración, inicio rápido, seguridad, formularios, internacionalización (i18n) y localización (l10n), AJAX, ... y como abordarlos usando Apache Tapestry.</p>
+    <br style="clear: both;">
+    <div class="buttons">
+        <a href="https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.pdf" class="btn btn-lg btn-success">PDF</a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PlugInTapestry" class="btn btn-lg btn-success">Código fuente ejemplos</a>
+    </div>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="http://www.guyrutenberg.com/2008/04/26/pull-vs-push-mvc-architecture/">Pull vs. Push MVC Architecture</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">Libro PlugIn Tapestry</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html">Documentación sobre Apache Tapestry</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="programacion"/>
+            
+                <category term="tapestry"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2014/06/hemeroteca-5/</id>
         <title>Hemeroteca #5</title>
@@ -1576,139 +1682,6 @@ será dinámico pero no evitará fugas de memoria.</li>
                 <category term="java"/>
             
                 <category term="programacion"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2014/03/guia-para-la-creacion-de-un-blog-con-octopress/</id>
-        <title>Guía para la creación de un blog con Octopress</title>
-        <updated>2014-06-07T01:00:00+02:00</updated>
-        <published>2014-03-14T18:19:24+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/03/guia-para-la-creacion-de-un-blog-con-octopress/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes"> 
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
-</div>
-<p>En la <a href="https://picodotdev.github.io/blog-bitix/2013/12/hola-nuevo-mundo/">primera entrada de este blog usando Octopress</a> ya comentaba las razones por las que he pasado de usar <a href="http://www.blogger.com">Blogger</a> a usar <a href="http://octopress.org/">Octopress</a>. Entre las razones del cambio estaban la posibilidad en Octopress de escribir en markdown, edición desconectado (para textos e imágenes), diseño adaptable y más personalizable, git y control de versiones, alojamiento en cualquier servidor web. Aún sin ser Octpress también tiene cosas mejorables pero desde luego me está resultando mucho mejor que blogger.</p>
-<p>En esta entrada quiero escribir una guía con los pasos necesarios para crear un blog en Octopress de forma rápida y algunas funcionalidades a tener en cuenta o que deberemos realizar.</p>
-<p>Antes de empezar supondré que ya tenemos en nuestro sistema <a href="https://www.archlinux.org/packages/extra/x86_64/ruby/">ruby</a> y <a href="https://www.archlinux.org/packages/extra/x86_64/git/">git</a> instalados. En Linux basta con buscar el paquete correspondiente para nuestra distribución e instalarlo con el gestor de paquetes. Con <a href="https://www.archlinux.org">Arch Linux</a> tan simple como:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pacman -S ruby git</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-1.sh</span>
-    </div>
-</div>
-<p>Empezamos clonando con git el repositorio de Octopress y la configuración inicial, sustituyendo blog-bitix por el nombre del repositorio del blog en GitHub que habremos creado previamente:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git clone git://github.com/imathis/octopress.git blog-bitix&#10;</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> blog-bitix&#10;</span></span><span class="line"><span class="cl">$ gem install bundler&#10;</span></span><span class="line"><span class="cl">$ bundle install&#10;</span></span><span class="line"><span class="cl">$ bundle update rake&#10;</span></span><span class="line"><span class="cl">$ rake install</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-2.sh</span>
-    </div>
-</div>
-<p>En esta guía voy a comentar como alojar el blog empleando <a href="http://pages.github.com/">GitHub Pages</a> que nos ofrece alojamiento gratuito tanto para el blog como para el repositorio git de código fuente, la URL será del estilo <em>http://[usuario].github.io/[nombre-blog]</em>. Para ello, primero en la página de GitHub crearemos el repositorio para alojar el código y el blog, después ejecutaremos el siguiente comando que nos pedirá la dirección de nuestro repositorio en mi caso git@github.com:picodotdev/blog-bitix.git:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ rake setup_github_pages&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-3.sh</span>
-    </div>
-</div>
-<p>Configuramos git para que conozca nuestro usuario al hacer commits:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git config user.email <span class="s2">&#34;pico.dev@gmail.com&#34;</span>&#10;</span></span><span class="line"><span class="cl">$ git config user.name <span class="s2">&#34;pico.dev&#34;</span>&#10;</span></span><span class="line"><span class="cl">$ git config core.editor <span class="s2">&#34;vim&#34;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-4.sh</span>
-    </div>
-</div>
-<p>Hacemos lo mismo en el repositorio git de la carpeta _deploy. Octopress usa dos repositorios git, uno para el código fuente del repositorio y otro para lo que ven los usuarios del blog. Octopress configura git de tal forma que los dos repositorios sean dos ramas del mismo repositorio en GitHub:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nb">cd</span> _deploy&#10;</span></span><span class="line"><span class="cl">$ git config user.email <span class="s2">&#34;pico.dev@gmail.com&#34;</span>&#10;</span></span><span class="line"><span class="cl">$ git config user.name <span class="s2">&#34;pico.dev&#34;</span>&#10;</span></span><span class="line"><span class="cl">$ git config core.editor <span class="s2">&#34;vim&#34;</span>&#10;</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> ..</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-5.sh</span>
-    </div>
-</div>
-<p>Cambiamos el origen de la rama master a la de nuestro GitHub en vez del origen de Octopress:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git remote add origin git@github.com:picodotdev/blog-bitix.git&#10;</span></span><span class="line"><span class="cl">$ git config branch.master.remote origin&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-6.sh</span>
-    </div>
-</div>
-<p>Podemos previsualizar el estado actual del blog en el navegador introduciendo en él la dirección <em>http://localhost:4000/blog-bitix/</em>:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ rake preview&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-7.sh</span>
-    </div>
-</div>
-<p>Haciendo el primer deploy del blog (deberemos <a href="https://help.github.com/articles/generating-ssh-keys">configurar SSH</a>) dispondremos del blog en la siguiente dirección <a href="https://picodotdev.github.io/blog-bitix/">https://picodotdev.github.io/blog-bitix/</a>. Puede que el blog tarde unos minutos en estar disponible y deberemos hacerlo cada vez queramos que los cambios se apliquen al blog.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ rake generate&#10;</span></span><span class="line"><span class="cl">$ rake deploy&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-8.sh</span>
-    </div>
-</div>
-<p>Ya estamos listos para empezar a hacer cambios en el blog y crear entradas:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ rake new_post<span class="o">[</span><span class="s2">&#34;titulo&#34;</span><span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-9.sh</span>
-    </div>
-</div>
-<p>Subimos los cambios al repositorio de GitHub con:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git add .&#10;</span></span><span class="line"><span class="cl">$ git commit -m <span class="s1">&#39;Mensaje del commit&#39;</span>&#10;</span></span><span class="line"><span class="cl">$ git push origin master</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-10.sh</span>
-    </div>
-</div>
-<p>Si queremos que el blog tenga un dominio propio en vez de un subdominio de GitHub deberemos crear un archivo CNAME con el nombre del dominio, subirlo al repositorio y hacer el deploy aparte de la <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">configuración que debamos hacer en los registros DNS de dominio</a>:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s1">&#39;dominio.com&#39;</span> &gt;&gt; source/CNAME&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-11.sh</span>
-    </div>
-</div>
-<p>Probablemente lo siguiente que deberemos empezar a hacer es <a href="http://octopress.org/docs/configuring/">configurar ciertas propiedades</a> que afectan al blog, como las urls, nombre del blog, número de post por página, cambiar estilos, etc&hellip;</p>
-<p>En un futuro quizá necesitemos obtener el repositorio del blog y la forma de disponer de él es diferente que crearlo desde cero con los pasos anteriores. Como comentaba en realidad los blogs con Octopress son dos repositorios de git y por tanto deberemos hacer un clone para cada uno de ellos, los comandos para clonar los repositorios son:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git clone -b master git@github.com:picodotdev/blog-bitix.git&#10;</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> blog-bitix&#10;</span></span><span class="line"><span class="cl">$ git clone -b gh-pages git@github.com:picodotdev/blog-bitix.git _deploy</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-12.sh</span>
-    </div>
-</div>
-<p>Hay algunas cosas adicionales que he tenido que hacer para disponer de un blog completamente funcional como deseaba:</p>
-<ul>
-<li>Dado que el blog lo tengo alojado con el modo Project Pages en vez de User/Organization Pages he necesitado crear otro repositorio para que las <a href="http://www.google.es/webmasters/tools/?hl=ES">Web Master Tools</a> me considere el dueño del dominio <a href="http://picodotdev.github.io">http://picodotdev.github.io</a>.</li>
-<li>En el blog es habitual que incluya capturas de pantalla a modo de explicación. Usando <a href="https://elblogdepicodev.blogspot.com.es/2012/11/convertir-imagenes-entre-formatos-y.html">ImageMagick para crear las pequeñas vistas previas</a> y <a href="http://blueimp.github.io/Bootstrap-Image-Gallery/">Bootstrap Image Gallery</a> consigo reducir el tamaño en KiB de la página ya que inicialmente solo se cargan las thumbnails que son mucho más pequeñas que las imágenes originales, aparte de que si las imágenes son muy grandes y se incluyen en su tamaño original es difícil que entren en el espacio reservado para el texto.</li>
-<li>Para facilitar que el contenido sea compartido he necesitado hacer una cuantas modificaciones para incorporar a Octopress <a href="http://karmacracy.com/">Karmacracy</a>, <a href="https://www.sharethis.com/">ShareThis</a> y <a href="http://disqus.com/">Disqus</a>. Con estas herramientas sociales facilitaremos a los usuarios que compartan el contenido más fácilmente.</li>
-<li>También he necesitado modificar algunos estilos para dar al blog el aspecto que quería, para una persona con algunos conocimientos de programación y desarrollo web no es nada complicado.</li>
-<li>Para tener el directorio de imágenes organizado y no se convierta en un cajón desastre a cada post le doy un identificador y en la carpeta images/custom/posts creo una carpeta con ese identificador. De esa manera es fácil saber que imágenes he usado en cada post. Los logotipos que usaré en varias entradas las pongo en la carpeta images/custom/logotipos.</li>
-</ul>
-<p>En el <a href="https://github.com/picodotdev/blog-bitix">código fuente del blog</a> se puede ver los archivos para hacerlo. Por ejemplo, para integrar Karmacracy he necesitado modificar los siguientes archivos.</p>
-<ul>
-<li>source/layouts/_post.html</li>
-<li>custom/post/karmacracy.html</li>
-</ul>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2013/12/hola-nuevo-mundo/">Hola nuevo mundo</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/01/mi-experiencia-y-consejos-para-un-blog/">Mi experiencia y consejos para un blog</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="blog"/>
-            
-                <category term="software"/>
-            
-                <category term="software-libre"/>
             
                 <category term="planeta-codigo"/>
             
