@@ -5,12 +5,69 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-10-05T21:00:00+02:00</updated>
+    <updated>2022-10-13T18:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/</id>
+        <title>Aplicación con interfaz gráfica para repositorios Git</title>
+        <updated>2022-04-19T00:00:00+02:00</updated>
+        <published>2022-04-19T00:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Una herramienta con interfaz gráfica hace más fácil algunas tareas que usar la línea de comandos directamente. Este también es el caso al trabajar con repositorios de código fuente con la herramienta de control de versiones Git. Usar la linea de comandos tiene sus propias ventajas como permitir automatizar tareas con <em>scripts</em> o realizar operaciones sin tener que usar la interfaz gráfica. La interfaz gráfica y la linea de comandos no son excluyentes, se pueden usar según convenga en cada ocasión. Al trabajar con múltiples repositorios de Git, para realizar operaciones comunes como <em>commits</em>, analizar el historial y ver las diferencias en un archivo entre dos versiones una herramienta gráfica también facilita la tarea.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>El sistema de control de versiones <a href="https://git-scm.com/">Git</a> posee una línea de comandos con la que se realizan todas las acciones para clonar repositorios, para hacer commits, para ver diferencias, para explorar el historial, para crear ramas y cualquier otra acción. La línea de comandos es muy potente y además es <a href="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/">automatizable con un <em>script</em></a> pero como cualquier otra línea de comandos no es intuitiva y difícil de aprender y en algún caso lenta al teclear un comando, sus opciones y argumentos.</p>
+<p>Es aconsejable conocer los comandos básicos de línea de comandos pero en el uso diario o para algunas acciones las aplicaciones con interfaz gráfica son más rápidas, más fáciles de aprender y sin necesidad de recordar las opciones de cada comando. En <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> y <a href="https://www.gnome.org/">GNOME</a> una aplicación cliente de Git es <a href="https://wiki.gnome.org/Apps/Gitg">gitg</a>.</p>
+<h3 id="la-aplicación-gitg">La aplicación gitg</h3>
+<p><a href="https://wiki.gnome.org/Apps/Gitg">Gitg</a> es una aplicación de escritorio con interfaz gráfica que permite visualizar un repositorio de Git, su historial y el contenido de los diferentes archivos en sus versiones. No tiene todas las opciones disponibles de la línea de comandos pero si muchos incluyendo los más comunes. Usar una herramienta con interfaz gráfica puede mejorar la productividad al trabajar con varios repositorios de control de versiones en Git y permite a los usuarios que estén empezando a usar Git una forma de usarlo más intuitiva.</p>
+<p>Está adaptada a la guía de estilos de las aplicaciones de GNOME, es una aplicación de software libre, está disponible tanto para GNU/Linux, <a href="https://www.apple.com/macos/">macOS</a> como <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y en GNU/Linux se puede instalar como paquete de la distribución o como <a href="https://picodotdev.github.io/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">una aplicación en formato Flatpak</a> independiente de la distribución <a href="https://flathub.org/apps/details/org.gnome.gitg">disponible en Flathub con su paquete de gitg</a>.</p>
+<div class="media">
+<figure>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gitg.svg" width="200" height="150" alt="gitg" title="gitg"  class="lozad "></p>
+</figure>
+</div>
+<p>Las operaciones que permite son:</p>
+<ul>
+<li>Ver el historial.</li>
+<li>Ver el contenido de archivos.</li>
+<li>Gestionar el área de <em>staging</em> para componer el <em>commit</em>.</li>
+<li>Añadir y clonar un repositorio.</li>
+<li>Actualizar la información del usuario.</li>
+<li>Cambiar varias opciones de preferencias.</li>
+</ul>
+<p>En esta capturas se muestran los <em>commits</em>, historial y <em>merges</em> en una linea de tiempo gráfica, además de poder ver las ramas locales, las ramas remotas, los orígenes de las ramas así como los archivos modificados en cada <em>commit</em> y las diferencias y cambios realizados en cada archivo.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-1_hufc6c7212bf1f460f3fa6607e19248b9a_29524_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación gitg"><img src="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-1_hufc6c7212bf1f460f3fa6607e19248b9a_29524_300x200_fit_box_3.png" width="238" height="200" alt="Aplicación gitg" title="Aplicación gitg"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-2_hu2a9b977282670e3858193850017f09b7_19224_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación gitg"><img src="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-2_hu2a9b977282670e3858193850017f09b7_19224_300x200_fit_box_3.png" width="238" height="200" alt="Aplicación gitg" title="Aplicación gitg"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-3_hu5b15d53ed39308162b8db2645ba363df_242593_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación gitg"><img src="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-3_hu5b15d53ed39308162b8db2645ba363df_242593_650x400_fit_box_3.png" width="419" height="400" alt="Aplicación gitg" title="Aplicación gitg"  class="lozad "></a></p>
+<figcaption>Aplicación gitg</figcaption>
+</figure>
+</div>
+<p>Otras aplicaciones cliente de Git que tiene características similares son <a href="https://github.com/desktop/desktop">Github Desktop</a> y <a href="https://www.syntevo.com/smartgit/">SmartGit</a> esta última tiene una licencia propietaria y no es gratuita, ambas tienen su versión de Flatpak en el repositorio de <a href="https://flathub.org/">Flathub</a>.</p>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2022/04/por-que-y-ejemplo-de-como-desarrollar-un-plugin-de-gradle/</id>
         <title>Por qué y ejemplo de cómo desarrollar un plugin de Gradle</title>
@@ -2248,98 +2305,6 @@
                 <category term="java"/>
             
                 <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2021/11/ejemplo-de-un-potencial-ataque-informatico-de-phishing-el-caso-de-el-gatico-biever/</id>
-        <title>Ejemplo de un potencial ataque informático de phishing, El caso de El Gatico Biever</title>
-        <updated>2021-11-11T19:00:00+01:00</updated>
-        <published>2021-11-11T19:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/11/ejemplo-de-un-potencial-ataque-informatico-de-phishing-el-caso-de-el-gatico-biever/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>A estas alturas la mayoría de la gente seguramente ya haya recibido a través de un medio u otro algún intento de tipo de ataque informático, ya sea a través del correo electrónico, mensajes SMS con enlaces o a través de aplicaciones de mensajería instantánea. Los ataques informáticos cada vez van a ir a más y serán más peligrosos a medida que más operaciones se realicen a través de internet, surgirán medidas adicionales de seguridad para evitarlos como el segundo factor de autenticación pero también surgirán nuevas formas de ataque, donde el componente humano seguramente siga siendo la parte más débil del sistema de seguridad. Este artículo es el relato de la historia de un potencial ataque informático de <em>phishing</em>.</strong></p>]]>
-        <![CDATA[<p>Los ataques informáticos ya no se producen solo por descargar de una una fuente no confiable y ejecutar un programa en el ordenador, ni siquiera estos son los más peligrosos. Un virus informático requiere conocimientos avanzados de programación, tiempo para desarrollar un programa con la función maliciosa que no sea bloqueada por las medidas de seguridad del sistema operativo y distribuirla de alguna forma entre las potenciales víctimas para que se lo descarguen, los virus informáticos son una forma muy elaborada de realizar un ataque informático.</p>
-<p>Aparte de los virus hay otras formas de ataque informático mucho más sencillas de desarrollar y de distribuir. Una ataque de <em>phishing</em> simplemente requiere desarrollar una página en la que la víctima introduzca los datos que se deseen robar que van desde información personal hasta credenciales de inicio de sesión en la banca online, servicios como <a href="https://www.google.com/intl/es/gmail/about/">Gmail</a> o <a href="https://www.paypal.com/">PayPal</a> o los datos de la tarjeta de crédito con los que robar el límite de saldo diariamente que la tarjeta permita hasta que el usuario o el banco la bloqueen.</p>
-<p>Una vez está desarrollada la página de <em>phising</em> el siguiente paso es hacer que las víctimas accedan a ella, tan simple como enviar un enlace por algún medio como un mensaje de correo electrónico, mensaje SMS o una aplicación de mensajería instantánea a través del móvil.</p>
-<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
-<h3 id="el-caso-de-el-gatico-biever">El caso de El Gatico Biever</h3>
-<p>En este artículo comento un potencial caso como ejemplo y una vez leído me puedes comentar si crees que este era un ataque informático. En el que denominaré El caso del Gatico Biever está basado en una conversación real que mantuve por correo electrónico a la que he cambiado el nombre real del contacto y comentado los hechos relevantes del contenido de los mensajes.</p>
-<p>Sin más, os dejo con la narración de El caso del Gatico Biever.</p>
-<h4 id="el-contacto">El contacto</h4>
-<p>Tengo un blog con ya casi una década de vida y más de 600 artículos publicados algunos posicionados en las primeras posiciones de las páginas de resultados por algunas combinaciones de palabras clave. El blog tiene casi 2.5K páginas vistas diariamente y unas 65K páginas mensuales.</p>
-<p>Por algún motivo que desconozco pero supongo por el buen posicionamiento de algunas páginas y la autoridad del dominio, me sorprende la buena cantidad de comerciales que me contactan solicitando publicar algún artículo a cambio de una pequeña compensación económica. Quizá no todas las semanas recibo una oferta para publicar un artículo pero si cada uno o dos meses, algunas llegan a buen fin otras simplemente se quedan en el conocimiento de las condiciones.</p>
-<p>El interés de estos comerciales al publicar el artículo es incluir algún enlace en los artículos hacia alguna página o servicio por motivos de SEO, a veces el interés es simplemente insertar un enlace en un artículo ya posicionado. Dar a conocer una página web o servicio desde cero o hacerlo crecer es difícil y requiere tiempo, para reducir este tiempo están dispuestos a pagar a sitios web existentes.</p>
-<p>Uno de estos meses recibí un correo electrónico como remitente el Gatico Biever utilizando una dirección de Gmail precisamente proponiendome una oferta de colaboración para el blog con la intención de publicar hasta seis artículos al mes durante varios meses. Una oferta extraordinaria fuera de lo normal que suele ser exclusivamente de un artículo. El correo electrónico estaba redactado en inglés pero haciendo referencia al dominio de mi blog en el asunto del mensaje y diciendo que era un lector asiduo de mi blog.</p>
-<p>El primer paso en estos contactos comerciales suele ser la negociación de las condiciones.</p>
-<h4 id="la-negociación-y-la-propuesta">La negociación y la propuesta</h4>
-<p>Una oferta de seis artículos al mes y durante varios meses parece una oferta muy atractiva. Los primeros puntos a conocer es en qué consiste el acuerdo si en la inserción de enlaces, publicar un artículo ya redactado o que escriba yo un artículo original en función de lo cual se determina el precio ya que cada una me requiere menos  o más tiempo.</p>
-<p>Una vez conocida en qué consiste la colaboración está en la aceptación de las condiciones como que la temática de los artículos esté relacionado la programación, tecnología o software libre así como vetar algunas temáticas de artículos como apuestas, juegos de azar y otras temáticas controvertidas. Otras condiciones es que en el caso de los artículos deben ser únicos para evitar penalizaciones por contenido de publicar y ser detectado como un sitio de contenido no deseado. Comprar artículos y enlaces es una actividad que en caso de que Google la detecte la penaliza ya que es una forma de alternar y algoritmo de posicionamiento de una forma no permitida por Google.</p>
-<p>Seis artículos patrocinados al mes son muchos artículos, casi más de los que escribo como contenido del blog. Para limitar el contenido patrocinado le propongo que solo acepto uno o dos artículos al mes.</p>
-<p>Otro asunto importante de la colaboración es llegar a un acuerdo en el tema económico, poner un precio por publicar el artículo. Yo suelo ser claro y aunque puedo dejar ver que oferta me hacen suelo ir directo al tema para acabar negociar este punto sin mucha demora. Casi siempre empiezo con mi propuesta de oferta económica.</p>
-<p>Hecha mi primera oferta económica al Gatito Biever este me responde con que esta le parece demasiado alta diciendo que su artículos son de calidad y la colaboración serán varios, no me indica en qué precio a él le parece bien el acuerdo económico sino que me deja en una pregunta abierta a que le haga otra oferta. Le hago una segunda oferta económica, que también rechaza y me propone su oferta económica que si fuera por un único artículo probablemente no aceptaría.</p>
-<p>Como la colaboración iba a ser de varios artículos acepto su oferta con la condición de que los dos primeros fueran a un precio intermedio entre lo que ambos proponíamos, en los siguientes artículos al precio de lo que él proponía.</p>
-<h4 id="las-sospechas">Las sospechas</h4>
-<p>Acordados los términos de la colaboración y el precio comienza la colaboración que en este caso es simplemente que el Gatico Biever me proporcione el contenido del artículo, yo lo publique lo cual no suelo tardar más de uno o dos días y procedamos al pago en los términos acordados.</p>
-<p>Pasa casi una semana sin que sepa nada del Gatico Biever con lo que me pongo en contacto con él para ver qué hay del asunto. Me responde al cabo de unos días diciendo que está trabajando en ello y me pide que elimine la página el publicidad en la que detallo que mi blog ofrece la posibilidad de este tipo de colaboraciones, en el correo me incluye la dirección de la página que quiere que elimine con el texto el de la dirección de la página pero el enlace tiene una dirección de un dominio que desconozco, le hago un <em>curl</em> a esa URL y parece simplemente una redirección a la página de mi blog pero a través de un dominio extraño.</p>
-<ul>
-<li><a href="https://www.google.es/">Google</a></li>
-<li><a href="https://duckduckgo.com/">Google</a></li>
-</ul>
-<p>El motivo para solicitar la eliminación de esta página es para evitar penalizaciones por SEO ya que este tipo de colaboraciones no es algo aceptado por Google y seguramente lo penalice en casos extremos. La página de publicidad la tengo desde hace mucho tiempo y no he notado estar penalizado por Google.</p>
-<p>Aquí es donde empiezo a sospechar ya que  en sus correos utiliza el típico lenguaje  de acción rápida como <em>hazlo lo más pronto posible</em>, <em>respondeme hoy</em> cuando él tarda en contestar varios días. Le insisto en que esa página de publicidad no es ningún problema y que me proporcione el contenido del artículo ya poniéndome un poco borde saludándose con un <em>Hola Gatico</em> y para finalizar su misma urgencia con un <em>ASAP</em>.</p>
-<p>Él tarda nuevamente en responder un par de días. Me pongo de nuevo en contacto con él siendo nuevamente borde con que su actitud no es nada profesional. Si alguien me contesta en los mismos términos en los que yo lo hago inmediatamente termino con la colaboración, pero él no, no cae en la provocación me dice que él es un experto en SEO y que eliminar esa página es un requisito indispensable para su cliente.</p>
-<p>Me doy cuenta que en realidad se poco de el Gatico Biever, me escribe en inglés y el dominio oculto del enlace de redirección parece de UK. Le pregunto que si es de UK y que tal van las cosas por UK con la situación que tienen del Brexit con un tono burlesco porque en un primer momento pienso que es alguien gastando una broma. Nuevamente si alguien se dirige a mi en los mismos términos que yo lo hago yo terminaría la colaboración. Pero él no, él responde con un «Sí, sí, lo has entendido bien» a lo de que él es de UK y que hablaremos más adelante cuando tenga un poco más de tiempo.</p>
-<p>Otro correo me responde con un «Seguro querido», un ¿querido?, me dice que nos centremos en los negocios y que su cliente «Indulgente» está esperando a que elimine la página de publicidad.</p>
-<p>Me doy cuenta de que en realidad se poco de el Gatico Biever, su «sí, sí» parece irónico y condescendiente y el «indulgente» parece muy&hellip; no se como definirlo ¿sacro? ¿de practicante, creyente, fiel religioso?, hacer colaboraciones profesionales con una cuenta que como nombre tiene Gatico Biever con una foto de catálogo que se encuentra y he encontrado fácilmente en una búsqueda por imágenes no parece profesional.</p>
-<p>Llega la trampa, mi pequeña trampa.</p>
-<h4 id="la-trampa">La trampa</h4>
-<p>No estoy dispuesto a eliminar esa página de publicidad y ya estoy sospechando de que este sea un ataque informático aunque aún no se qué forma tendrá el ataque.</p>
-<p>Me doy cuenta de que en realidad se poco del Gatico Biever, no es una cuenta profesional ni pone de que empresa de consultoría SEO pertenece, simplemente se identifica con un equipo SEO como organización en la despedida del mensaje.</p>
-<p>Preparo un enlace a una página que tiene un enlace similar a la página de publicidad pero algo modificada que si uno no se fija en detalle pasa desapercibido que las páginas son diferentes. Si la página de publicidad es <em>/publicidad</em> le preparo una página <em>/publiciidad</em> que simula un error de página no encontrada como desea el Gatico Biever que haga.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/pages/advertising/">Publicidad</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/pages/advertiising/">Publicidad</a></li>
-</ul>
-<p>Le envío en un nuevo correo electrónico el enlace de la página de publicidad trucado esperando que él haga clic en él. Esta es la misma técnica para realizar un ataque de <em>phishing</em> en vez de utilizando otro dominio añadiendo simplemente un caracter de una nueva URL parecida a la original, como el dominio y sus URLs lo controlo yo puedo hacerlo y lo hago.</p>
-<p>¿Caerá en la trampa? Necesita hacer clic en el enlace que le he enviado yo, si entra directamente a la página para comprobar si he eliminado la página de publicidad no es de mucha utilidad.</p>
-<p>Pues Gatico Biever cae en la trampa hace clic en enlace directamente desde el correo electrónico y como se que ese enlace solo lo tiene él sé que ha sido él, ahora analizo los datos que me proporciona <a href="https://www.google.es/intl/es/analytics/">Google Analytics</a> para conocer algo más de el Gatico Biever.</p>
-<h4 id="la-exploración">La exploración</h4>
-<p>Los datos de Analytics me permiten ver unos datos básicos anónimos pero algo más de quien es el Gatico Biever como su país de origen, que navegador utiliza y que sistema operativo utiliza. Veo que su país de origen es Pakistan, su sistema operativo es Windows 10 y el navegador web que utiliza es <a href="https://www.google.es/chrome/browser/desktop/">Google Chrome</a> actualizado a la última versión.</p>
-<p>El país de origen me pone en alerta ya que es un país de oriente medio en una zona posiblemente en conflictos armados. Seguramente no tenga muchos visitantes de Pakistan asi que creo un segmento con los visitantes de este país y miro qué páginas ha visitado. No ha visitado muchas páginas pero veo que se ha parado alguna algo más de tiempo en la que hablaba de PayPal, la hemeroteca donde también hablaba de dinero y otra donde mencionaba la aplicación autenticador de Google. Otro dato que veo es que además de visitar la página preparada por mi ha visitado la página de publicidad original después de proporcionarle el enlace, asi que sé que sabe que en realidad no he eliminado la página de publicidad.</p>
-<p>El primer correo ya me debería haber hecho sospechar, por el mismo nombre del remitente, parecer una plantilla, decir que me visita regularmente alguien que habla en inglés. Ahora con estos datos tengo aún más sospechas. Aún no sé de qué forma será el ataque ni qué interés tiene esta yincana de eliminar la página de publicidad en todo ello, igual es un filtro para discriminar a usuarios fáciles de los difíciles o de adoctrinar a la víctima para que haga lo que se le dice.</p>
-<p>El Gatico Biever ignora que en realidad no he eliminado la página de publicidad y me envía el contenido del artículo. Analizó el contenido del artículo que está en buen español, no parece un artículo que esté obteniendo de internet ni esté ya publicado en otro sitio web. Me dice que lo publique cuanto antes porque tiene varios artículos más.</p>
-<p>Le digo que mientras lo publico me conteste de qué forma me va a pagar con una pregunta abierta. Me contesta que me paga con PayPal pero no cuál será el procedimiento, así que le insisto con cual es el procedimiento que suele utilizar para hacer el pago. Me responde con un «querido» y me dice con un tono imperativo en lo que yo haré que su procedimiento es que yo le proporcione mi dirección de PayPal en la que hacerme el pago y que me envía un enlace para que compruebe que me ha hecho el pago.</p>
-<p>Vale ahora tengo claro cual es su forma de ataque si es que es un ataque, un ataque de <em>phishing</em> sobre la página de PayPal. Pobre Gatico Biever que si este es su ataque no sabe que tengo activado el segundo factor de autenticación, no es infalible pero si no lo impide al menos limita el tiempo en el que es posible el ataque, concretamente tienen unos 30 segundos en caso de que sea víctima si su ataque de <em>phishing</em> soporta el segundo factor de autenticación que no creo.</p>
-<p>Le pido más información con la excusa de que por razones legales le tengo que emitir una factura para pagar impuestos, con lo que le pido cierta información como nombre y apellidos, dirección y nombre de la compañía.</p>
-<p>Parece que se ha cansado de esta pequeña yincana que le estoy haciendo y me propone sin yo haber publicado el artículo todavía hacerme el pago por adelantado con lo que me pide mi dirección de correo asociada a PayPal y nuevamente me repite que me proporcionará un enlace que podré usar para comprobar el pago.</p>
-<p>Aquí ya tengo la intención de dejarlo pasar, podría ir más lejos para que me envíe el enlace de la página de <em>phishing</em>, podría inventarme cualquier dirección de correo electrónico como por ejemplo <em>felipin.demaritxalar.yvorvon[at]gmail.com</em> a ver si es capaz de hacer el pago y enviarme el enlace para que lo compruebe que sospecho es de <em>phishing</em>. ¿O será ese nombre demasiado evidente que se de cuenta? Posiblemente para alguien de Pakistan no sea tan evidente. Si le doy una dirección de PayPal, supongo que me insistirá en que me ha hecho el pago y que lo compruebe.</p>
-<p>Como ve que ya no respondo me envía un nuevo correo al cabo de una semana con unos datos para atender a mi petición. Me dice que es de Reino Unido y me da como nombre real Ethan Biever. Busco por el nombre que me da y las primeras referencias son los nombres de dos personajes de un película.</p>
-<p>Llegar hasta el punto de que me de el enlace de <em>phishing</em> tampoco tiene ninguna utilidad, no soy policía, muy posiblemente ni ellos podrían hacer algo aunque fuese víctima del ataque y aunque le denuncie ante Google es seguro que será capaz de crearse una nueva dirección de correo electrónico con la que seguir haciendo ataques.</p>
-<h4 id="el-final-tú-que-crees">El final, ¿tú que crees?</h4>
-<p>Bueno, la mayoría sois lectores, otras personas equivalentes a mi serán <em>youtubers</em>, <em>podcasters</em> o <em>streamers</em> pero todavía quedamos algunos <em>bloggers</em> de la vieja escuela, en cualquier caso este es solo un ejemplo, podría llegar en realidad a cualquiera persona ni siquiera estar englobada en ningún colectivo y podría ser de otra forma con alguna excusa que un delincuente tenga su correo electrónico y una forma de contactarte por el ordenador o con teléfono inteligente.</p>
-<p>Los indicios que parecen indicar ser un ataque informático son el nombre de la cuenta, la forma de dirigirse a mí con un «querido», una oferta de colaboración muy atractiva respecto de lo que suele ser lo habitualmente, algunas respuestas que me da condescendientes, ignora mi mala educación y falta de respeto, ignora que no he hecho lo que me ha pedido de eliminar la página de publicidad, su país de origen, utilizar lenguaje imperativo, pedir inmediatez y se ofrece a hacerme el pago por adelantado sin yo haber publicado el artículo.</p>
-<p>El perfil de la persona que me hago del tipo de Gatico Biever es el siguiente. Aceptan tus insultos y faltas de respeto mientras te están esperando a que cometas un error, tus insultos los soportan hasta que cometes el error, disfrutan de tu desorientación como cuando le pregunto si es de UK y me responde con un «si, si». Es como si buscarán duelos o peleas, pero no son duelos cara a cara son duelos de engaño, en los que dan la imagen de ir todo bien, pierde es el que cae en la trampa. Se burlan a su modo, de forma velada con lo de «Indulgente», igual que yo con lo de «froilin» o su propio nombre sacado de una película.</p>
-<p>No se que criterio ha elegido para realizar un ataque, no sé si entenderá algo de español y habrá investigado algo sobre la víctima en este caso yo con lo que he publicado en en blog y mi cuenta de <a href="https://twitter.com/">Twitter</a>, posiblemente haya recopilado un conjunto de direcciones de correo electrónico públicas y enviado un mensaje a ver cuantos responden. Porque elegir como víctima de un ataque informático a un usuario que es informático y que usa GNU/Linux no parece la víctima ideal, es como intentar ir a robar la casa de un cerrajero. Qué lo puede intentar pero ambos sabemos mucho más de las técnicas que utilizan los delincuentes para cometer sus delitos y seguramente las medidas de seguridad que tenemos son mucho mejores. El cerrajero utilizando una puerta acorazada, una cerradura que evite las técnicas conocidas de apertura sin forzado, técnicas para detectar si una casa está habitada o un escudo en la cerradura que evite ciertas técnicas de forzado. Yo por mi parte como informático es posible que conozco y conozco el segundo factor de autenticación y tengo las nociones básicas de ataques informáticos.</p>
-<p>Parece un ataque de <em>phishing</em> ¿tu que crees? Porque claro no voy a seguir hasta el final para comprobarlo. Al menos le he hecho perder un poco de tiempo, he marcado sus correos como no deseados o <em>spam</em> y le he denunciado en Gmail como ataque de <em>phishing</em> que no sé si servirá de algo o será suficiente para que Google tome alguna acción.</p>
-<p>Fin.</p>
-<h3 id="cómo-denunciar-el-intento-o-ataque-informático">Cómo denunciar el intento o ataque informático</h3>
-<p>Cómo comentaba en el artículo <a href="https://picodotdev.github.io/blog-bitix/2021/10/manual-basico-sobre-ataques-informaticos-peligros-tipos-como-detectarlos-como-evitarlos-y-medidas-de-prevencion/">nociones básicas para detectar un ataque y evitarlo</a> en caso de ser víctima de un ataque conviene denunciarlo. La unidad de delitos informáticos de los diferentes cuerpos de policía y un perito judicial informático seguro que os podría contar cientos de casos, pero seguramente el mejor consejo que den sea evitar ser víctima de un ataque informático. Ellos están para ayudar, proteger, minimizar daños, prevenir nuevos delitos, obtener pruebas y poner a disposición de la justicia a delincuentes pero muchas veces tras haber ocurrido los hechos el grave daño causado ya no es reparable. Y a veces les será muy difícil por estar los delincuentes en otros países. Muchos ataques informáticos como este ejemplo no son difíciles de detectar con las nociones básicas.</p>
-<p>En los términos y condiciones del correo electrónico de Gmail no permite utilizarlo para realizar actividades ilegales incluyendo el <em>phishing</em> y ofrecen herramientas para denunciarlo, desde el propio Gmail y desde páginas específicas. Para <a href="https://www.google.com/gmail/about/policy/">denunciar una cuenta de correo</a> que esté siendo utilizada para realizar actividades ilegales es posible tomar dos medidas, una marcar el correo como <em>spam</em> que Gmail tiene en cuenta, si son varios usuarios lo que lo hacen los correos del remitente a los usuarios les llegará a la carpeta de <em>spam</em> en vez de a la bandeja de entrada. La segunda opción es denunciar un mensaje como suplantación de identidad, aunque en realidad el Gatico Biever no me ha enviado el enlace de <em>phishing</em>.</p>
-<p>En caso de recibir el enlace es posible además <a href="https://support.google.com/a/answer/134413?hl=en">denunciar la página de <em>phishing</em></a> para que esta sea incluida en la lista negra de páginas identificadas maliciosas. Supongo una persona que trabaje para Google analizará estas peticiones y en caso de corroborarlo la página será añadida a la lista negra. Esta lista negra es utilizada por los navegadores para mostrar un mensaje de advertencia cuando un usuario intente entrar en ella, poniendo sobre aviso al usuario y aconsejando no entrar.</p>
-<h3 id="minimizar-daños-de-posibles-ataques-informáticos">Minimizar daños de posibles ataques informáticos</h3>
-<p>Nadie está exento de ataques, ni alguien como yo que tiene conocimientos en informática y conozco las nociones básicas de los ataques, que inicialmente me resultó extraño el correo pero que hasta bastante avanzada la conversación con unos cuantos correos electrónicos enviados no empecé a realmente sospechar.</p>
-<p>Por ello conviene tomar una serie de medidas como establecer límites transferencias y tarjeta de crédito más bajos que los que establecen por defecto los bancos que suelen ser muy generosos, activar el segundo factor de autenticación para que aunque roben las credenciales de una cuenta evitar el ataque o permitirlo únicamente durante un breve periodo de tiempo si la página de <em>phishing</em> fuera tan avanzada como para estar preparada para obtener también el segundo factor de autenticación.</p>
-<p>En una de estas situaciones de ataque informático conviene que el atacante sepa lo menos posible de uno, por ello conviene <a href="https://picodotdev.github.io/blog-bitix/2021/11/por-que-proteger-tu-privacidad-y-que-informacion-tuya-se-puede-encontrar-con-una-busqueda-en-internet/">proteger tu privacidad y minimizar la información tuya se puede encontrar con una búsqueda en internet</a>.</p>
-<p>No hay otra opción de que quede impune, si es un delincuente y parece serlo por los varios indicios va a continuar haciendo su actividad y algún usuario más incauto sea su víctima, está claro que si realizan esta actividad es porque obtienen algún beneficio. La conclusión en cualquier caso es, se bueno pero ten un poco de joputismo para conocer a los malos, hay una buena cantidad de joputas malos por ahí.</p>
-]]>
-        </content>
-        
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="seguridad"/>
             
         
     </entry>
