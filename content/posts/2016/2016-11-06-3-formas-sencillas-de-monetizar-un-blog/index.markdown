@@ -4,6 +4,7 @@ type: "post"
 title: "3 formas sencillas de monetizar un blog"
 url: "/2016/11/3-formas-sencillas-de-monetizar-un-blog/"
 date: 2016-11-06T14:00:00+01:00
+expiryDate: 2022-10-13T18:00:00+02:00
 index: true
 rss: true
 sharing: true
