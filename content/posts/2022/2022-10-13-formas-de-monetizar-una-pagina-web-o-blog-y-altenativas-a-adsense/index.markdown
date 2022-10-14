@@ -40,7 +40,7 @@ En gran medida los ingresos por publicidad dependen del número de usuarios y p�
 
 Otro aspecto que afecta a las visitas e ingresos depende de la temática del sitio web o blog y la ubicación de los usuarios que acceden al sitio web, no es lo mismo un sitio web de contenido muy popular o un sitio web de nicho como uno tecnológico y de programación. Tampoco es lo mismo un público de habla inglés que uno en español, o por región no es lo mismo usuarios de Estados Unidos que de España y latinoamérica.
 
-#### Publicidad Google AdSense
+#### Publicidad con Google AdSense
 
 En mi caso un blog de temática tecnología y programación en español actualmente con unas 40K páginas vistas al mes tengo unos ingresos de 20 €/mes con [AdSense][google-adsense] (los primeros varios años no llegaba a 10 €/mes). No considero que sean muchas páginas vistas para un blog con ya casi 10 años publicando al menos un artículo a la semana nuevo y único. AdSense paga cuando se acumulan 70 € de ingresos y el pago se realiza mediante transferencia bancaria en el mes que se supera dicha cantidad de saldo acumulado.
 
@@ -68,7 +68,7 @@ La gente de Videoo.tv se puso en contacto conmigo y me ofreció la posibilidad d
     image1="logotype:videoo.png" optionsthumb1="200x150" title1="Videoo.tv"
     caption="Videoo.tv" >}}
 
-#### Enlaces de afiliado de Amazon y otras páginas de comercio electrónico
+#### Enlaces de afiliado, Amazon y otras páginas de comercio electrónico
 
 Otra forma de ingresos es la publicidad de afiliado que se monetiza en vez de por visualización cuando los usuarios realizan una compra a través del enlace de afiliado, enlaces que hay que seleccionar en función de contenido del articulo para promocionar productos relacionados, los enlaces pueden ser de texto o en el caso de Amazon unos _widgets_ que muestran una foto del producto y su precio. 
 
@@ -126,7 +126,7 @@ Una vez escrito el artículo uno se puede quedar en propiedad el artículo para 
     gallery="false"
     image1="logotype:kemove.jpg" optionsthumb1="200x150" title1="KEMOVE"
     image2="logotype:maono.png" optionsthumb2="200x150" title2="MAONO"
-    caption="Marcas patrocinadoras de productos" >}}
+    caption="Marcas patrocinadoras de análisis de productos" >}}
 
 #### Servicios asociados al contenido
 
