@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Los monolitos son la opción más sencilla y mejor en la mayoría de casos, los microservicios solo son recomendables cuando los problemas que resuelven compensan los problemas asociados que generan, entre ellos una mayor complejidad en la infraestructura y de comunicación entre servicios que utilizan un medio con fallos, la red de comunicaciones entre diferentes computadoras. Esta mayor complejidad, mayor número de servicios y mayor probabilidad de que alguna falle requiere utilizar herramientas para en el sistema tener seguridad, observabilidad, resiliencia y control de tráfico. Estas son funcionalidades que como una capa de red para los servicios proporciona un service mesh. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Las funcionalidades de un service mesh en una arquitectura de microservicios</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/" hreflang="es" title="Las funcionalidades de un service mesh en una arquitectura de microservicios">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Las funcionalidades de un service mesh en una arquitectura de microservicios">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hashicorp-consul-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Los monolitos son la opción más sencilla y mejor en la mayoría de casos, los microservicios solo son recomendables cuando los problemas que resuelven compensan los problemas asociados que generan, entre ellos una mayor complejidad en la infraestructura y de comunicación entre servicios que utilizan un medio con fallos, la red de comunicaciones entre diferentes computadoras. Esta mayor complejidad, mayor número de servicios y mayor probabilidad de que alguna falle requiere utilizar herramientas para en el sistema tener seguridad, observabilidad, resiliencia y control de tráfico. Estas son funcionalidades que como una capa de red para los servicios proporciona un service mesh. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hashicorp-consul-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Las funcionalidades de un service mesh en una arquitectura de microservicios">
+<meta name="twitter:description" content="Los monolitos son la opción más sencilla y mejor en la mayoría de casos, los microservicios solo son recomendables cuando los problemas que resuelven compensan los problemas asociados que generan, entre ellos una mayor complejidad en la infraestructura y de comunicación entre servicios que utilizan un medio con fallos, la red de comunicaciones entre diferentes computadoras. Esta mayor complejidad, mayor número de servicios y mayor probabilidad de que alguna falle requiere utilizar herramientas para en el sistema tener seguridad, observabilidad, resiliencia y control de tráfico. Estas son funcionalidades que como una capa de red para los servicios proporciona un service mesh. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/"
+    },
+    "headline": "Las funcionalidades de un service mesh en una arquitectura de microservicios",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hashicorp-consul-750.png"
+        
+      },
+    "datePublished": "2022-10-21T20:00:00+02:00",
+    "dateModified": "2022-10-21T20:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "3937",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Los monolitos son la opción más sencilla y mejor en la mayoría de casos, los microservicios solo son recomendables cuando los problemas que resuelven compensan los problemas asociados que generan, entre ellos una mayor complejidad en la infraestructura y de comunicación entre servicios que utilizan un medio con fallos, la red de comunicaciones entre diferentes computadoras. Esta mayor complejidad, mayor número de servicios y mayor probabilidad de que alguna falle requiere utilizar herramientas para en el sistema tener seguridad, observabilidad, resiliencia y control de tráfico. Estas son funcionalidades que como una capa de red para los servicios proporciona un service mesh."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9R8XCRGSMY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:600px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="7450235768"></ins>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Las funcionalidades de un service mesh en una arquitectura de microservicios</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>21/10/2022</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Los monolitos son la opción más sencilla y mejor en la mayoría de casos, los microservicios solo son recomendables cuando los problemas que resuelven compensan los problemas asociados que generan, entre ellos una mayor complejidad en la infraestructura y de comunicación entre servicios que utilizan un medio con fallos, la red de comunicaciones entre diferentes computadoras. Esta mayor complejidad, mayor número de servicios y mayor probabilidad de que alguna falle requiere utilizar herramientas para en el sistema tener seguridad, observabilidad, resiliencia y control de tráfico. Estas son funcionalidades que como una capa de red para los servicios proporciona un <em>service mesh</em>.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:90px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="8238629013"></ins>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="200" height="278" alt="HashiCorp Consul" title="HashiCorp Consul" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp" class="" loading="false"></p>
+</div>
+<p>Los sistemas basados en microservicios tienen sus ventajas como utilizar servicios independientes que pueden ser desarrollados y desplegados de forma independiente incluso por distintos equipos de desarrolladores al menos mientras solo se cambien sus detalles de implementación y mientras sus interfaces de comunicación no cambien. Otras ventajas son una mejor escalabilidad y mejor tolerancia a errores.</p>
+<p>Un monolito es más que suficiente en muchos casos y los microservicios solo son necesarios en sistemas grandes y complejos formados por varios equipos de desarrollo, escalabilidad y tolerancia a fallos. Cuando tiene sentido utilizar un sistema basado en los microservicios se resuelve algunos problemas de los monolitos pero surgen otros propios de los microservicios tan o más complicados que los de los monolitos.</p>
+<p>Uno de los mayores problemas de los microservicios es que el sistema es más complejo, formado por un conjunto mayor de piezas individuales que han de colaborar para proporcionar la funcionalidad global, han de tener en cuenta problemas que en las aplicaciones monolíticas no tienen, los microservicios son independientes pero se relacionan entre ellos a través de la red un medio de comunicación que es poco fiable comparado con la llamada a una función dentro de la misma computadora en un monolito.</p>
+<p>Para tener bajo control las complicaciones de los microservicios son necesarias herramientas que hagan del sistema más fácil de mantener y desarrollar. Una de las herramientas específicamente desarrollada para los microservicios es <a href="https://www.consul.io/">Consul</a> de <a href="https://www.hashicorp.com/">HashiCorp</a> que proporciona varias funcionalidades como descubrimiento de servicios y un almacén compartido de información. Otra de las funcionalidades que implementa y provee Consul es el concepto de <em>service mesh</em> que proporciona seguridad, observabilidad, resiliencia y control de tráfico.</p>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#qué-es-un-_service-mesh_">Qué es un <em>service mesh</em></a>
+      <ul>
+        <li><a href="#seguridad">Seguridad</a></li>
+        <li><a href="#observabilidad">Observabilidad</a></li>
+        <li><a href="#resiliencia">Resiliencia</a></li>
+        <li><a href="#control-de-tráfico">Control de tráfico</a></li>
+      </ul>
+    </li>
+    <li><a href="#ejemplo-práctico-del-_service-mesh_-de-consul">Ejemplo práctico del <em>service mesh</em> de Consul</a>
+      <ul>
+        <li><a href="#creación-de-la-máquina-virtual">Creación de la máquina virtual</a></li>
+        <li><a href="#inicio-de-consul-y-nomad-y-microservicios-del-ejemplo">Inicio de Consul y Nomad y microservicios del ejemplo</a></li>
+        <li><a href="#inicio-de-prometheus-y-jaeger">Inicio de Prometheus y Jaeger</a></li>
+        <li><a href="#inicio-de-los-servicios-_frontend_-y-_backend_">Inicio de los servicios <em>frontend</em> y <em>backend</em></a></li>
+        <li><a href="#demostraciones-de-las-funcionalidades-del-_service-mesh_">Demostraciones de las funcionalidades del <em>service mesh</em></a></li>
+      </ul>
+    </li>
+    <li><a href="#libros-sobre-consul">Libros sobre Consul</a></li>
+  </ul>
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
+<h3 id="qué-es-un-_service-mesh_">Qué es un <em>service mesh</em></h3>
+<p><a href="https://developer.hashicorp.com/consul/docs/concepts/service-mesh">La definición de Consul de un <em>service mesh</em></a> es una capa de red dedicada que proporciona seguridad en la comunicación de servicio a servicio dentro y a través de la infraestructura, incluyendo el sistemas propios y entornos en la nube. Un <em>service mesh</em> es utilizado habitualmente en arquitecturas basadas en microservicios pero son útiles en cualquier escenario en que hay una comunicación por red compleja.</p>
+<p>Los microservicios se comunican entre ellos formado una red distribuida, un <em>service mesh</em> es el nombre que se le da a este tipo de comunicación. En el aspecto de las herramientas de infraestructura para facilitar y dar solución a varios de los problemas de la comunicación por red un <em>service mesh</em> trata todos estos problemas y aporta soluciones.</p>
+<p>En gran medida la solución a los problemas de los microservicios en un <em>service mesh</em> es implementada estableciendo un intermediario <em>proxy</em> en la comunicación entre los servicios siendo en este intermediario denominado <em>sidecar proxy</em> el que implementa la solución. Se denomina <em>sidecar proxy</em> ya que al mismo tiempo que se despliega el servicio se despliega el intermediario adicionalmente para la comunicación entre los diferentes servicios que usa y los servicios en vez de comunicarse entre ellos directamente se comunican con el <em>sidecar proxy</em>.</p>
+<p>El <em>service mesh</em> a través de los <em>proxy sidecar</em> permiten delegar en la infraestructura y no en las aplicaciones varios aspectos que son necesarios resolver en un sistema basado en microservicios.</p>
+<h4 id="seguridad">Seguridad</h4>
+<p>La computación en la nube de los proveedores de infraestructura como <a href="https://aws.amazon.com/es/">Amazon AWS</a>, <a href="https://cloud.google.com/">Google Cloud</a> y <a href="https://azure.microsoft.com/es-es/">Microsoft Azure</a> no dejan de ser entornos compartidos de computación donde todos aun con las medidas de seguridad y lógicas utilizan los mismos medios de red y computación. Por eso se considera que la computación en la nube utiliza un medio no confiable en el que el descubrimiento de un fallo de seguridad tan importante como <a href="https://picodotdev.github.io/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/">el fallo de seguridad Meltdown y Spectre de los procesadores</a> aún con las medidas de mitigación implementadas es un grave problema.</p>
+<p>Para proporcionar mayor seguridad en las comunicaciones de los microservicios en un medio no confiable Consul ofrece una forma de comunicación cifrada, con autenticación mutua entre ambos servicios y la gestión de la autorización en un plano lógico a nivel de servicio con el mecanismo de intenciones y no de más bajo nivel de direcciones IP, puertos y reglas de <em>firewall</em>.</p>
+<p>La seguridad entre los servicios en Consul es implementada mediante el componente denominado <em>sidecar proxy</em> que hace de intermediario o <em>proxy</em> entre los dos servicios. Consul administra el <em>sidecar proxy</em> y este proporciona las funcionalidades comentadas de cifrado, autenticación mutua y autorización. Toda comunicación se realiza de forma cifrada y con autenticación mutua ningún servicio ajeno al <em>service mesh</em> puede comunicarse con sus servicios, para que un servicio externo al <em>service mesh</em> pueda comunicarse con un servicio del <em>service mesh</em> el tráfico entra por un <em>ingress gateway</em> que es un servicio dedicado a esta función.</p>
+<p>Una gran característica es que todas estas funcionalidades son proporcionadas sin que los servicios sean conscientes de que realmente la comunicación la están realizando a través de los <em>sidecar proxy</em>.</p>
+<p>En <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> la seguridad a nivel de red en la misma máquina en la comunicación entre el servicio y el <em>sidecar proxy</em> se protege con <em>namespaces</em> de red que proporciona Linux.</p>
+<h4 id="observabilidad">Observabilidad</h4>
+<p>Dado el gran número de elementos de una arquitectura de microservicios es imprescindible tener visibilidad del estado y comportamiento de cada uno de ellos. Se necesitan métricas que permitan conocer el estado normal de los servicios y en caso de obtener unas métricas diferentes saber que está ocurriendo en el sistema en su conjunto y en cada pieza individual.</p>
+<p>Varias medidas de observabilidad es posible implementarlas en los propios microservicios como parte de su implementación de código, sin embargo, añadir código a cada uno de los microservicios requiere hacerlo individualmente, los hace más complicados y dependientes del lenguaje de implementación para cada uno de ellos para una funcionalidad de infraestructura que no está relacionada con la lógica de negocio que proporcionan los microservicios.</p>
+<p>Por ello en la medida de lo posible es mejor delegar la observabilidad a la infraestructura que además permite aplicar la observabilidad de forma homogénea y con las mismas herramientas para todos los microservicios. Algunas métricas de observabilidad son el número de peticiones que está recibiendo un servicio por unidad de tiempo, la tasa de errores o la latencia de red en diferente percentiles.</p>
+<p>Dado que todo el tráfico entre los microservicios fluye a través de los <em>sidecar</em> que hacen de <em>proxy</em> Consul es capaz de proporcionar estas métricas de forma independiente a los microservicios. Consul exporta el formato de <a href="https://prometheus.io/">Prometheus</a> las métricas, proporciona una visualización básica de las mismas y con <a href="https://grafana.com/">Grafana</a> es posible obtener visualizaciones de los datos más detalladas y complejas.</p>
+<p>Para obtener el flujo completo desde que entra en el <em>service mesh</em> y fluye entre las diferentes llamadas entre los microservicios <a href="https://www.jaegertracing.io/">Jaeger</a> con <a href="https://zipkin.io/">Zipkin</a> o <a href="https://opentelemetry.io/">OpenTelemetry</a> permite obtener una foto de todos los pasos y saltos que ha tenido una petición entre los diferentes servicios.</p>
+<h4 id="resiliencia">Resiliencia</h4>
+<p>Dado el número de servicios y el número de instancias de cada uno de ellos y la no completa fiabilidad de un medio de red que puede fallar es necesario que los microservicios sean resilientes ante la aparición de estos fallos.</p>
+<p>La resiliencia se puede implementar de forma activa donde Consul comprueba que cada servicio mediante un <em>health check</em> esté funcionando ya sea realizando una petición HTTP o TCP al servicio que si responde correctamente se considera que el servicio tiene un buen estado de funcionamiento.</p>
+<p>Los <em>health check</em> no son infalibles y los microservicios para aumentar su resiliencia pueden implementar otras medidas adicionales como reintentos o <em>retries</em> realizando peticiones con la esperanza de que sean problemas temporales y en un siguiente intento funcione. Otra medida son los <em>timeout</em> para poner límites a los tiempos de espera de modo que si un microservicio tarda en responder no ocasiones fallos en otros microservicios y el sistema caiga en cascada. Estas son medidas pasivas que implementan cada microservicio.</p>
+<p>Consul implementa medidas de resiliencia tanto activas como pasivas, y en caso de que una instancia de un servicio falle redirigir el tráfico a otras instancias con buen estado de salud, este enrutamiento se realiza mediante el control de tráfico.</p>
+<h4 id="control-de-tráfico">Control de tráfico</h4>
+<p>Al ser los microservicios independientes estos se despliegan de forma independiente mientras los cambios sean solo de implementación. Al desplegar una nueva versión de un microservicio es muy útil tener la capacidad del enrutamiento de las peticiones entre los microservicios para usar diferentes estrategias de despliegue como <em>rollout</em>, <em>canary</em>, <em>blue/green</em> y cambiar el enrutamiento.</p>
+<p>Consul proporciona tres conceptos para controlar el enrutamiento entre los servicios los <em>resolvers</em> que identifican las instancias de los servicios en grupos, <em>splitters</em> que permite establecer la cantidad de tráfico que es enviada a los grupos de servicios y finalmente los <em>routers</em> que permiten mediante reglas de la petición o de la instancia del servicio a que servicio se le envía el tráfico.</p>
+<h3 id="ejemplo-práctico-del-_service-mesh_-de-consul">Ejemplo práctico del <em>service mesh</em> de Consul</h3>
+<p>En el libro Consul: Up &amp; Running se explica más detalladamente los puntos anteriores junto con un ejemplo con los necesarias configuraciones para Consul de cada uno de ellos utilizando <a href="https://kubernetes.io/">Kubernetes</a> y máquinas virtuales.</p>
+<p>En el libro se usa simplemente Consul, en este artículo muestro la misma configuración y práctica de los conceptos comentados pero usando <a href="https://www.nomadproject.io/">Nomad</a> el orquestador de procesos de HashiCorp equivalente a Kubernetes pero más simple de usar aunque no tan nombrado como Kuberntes. Lo ejecuto dentro de una máquina virtual de <a href="https://www.virtualbox.org/">VirtualBox</a> aprovisionada y creada con <a href="https://www.vagrantup.com/">Vagrant</a> otro producto de HashiCorp.</p>
+<p>El ejemplo consiste en dos procesos uno <em>frontend</em> que muestra la información de una guía de aves y un servicio de <em>backend</em> que devuelve los datos de las aves. Los procesos están empaquetados en sus imágenes de <a href="https://www.docker.com/">Docker</a>. Ambas aplicaciones se comunican mediante una API REST y permiten probar en la práctica todos los conceptos comentados.</p>
+<h4 id="creación-de-la-máquina-virtual">Creación de la máquina virtual</h4>
+<p>Docker es un software desarrollado para GNU/Linux que en otros sistemas no funciona de forma nativa y requiere adaptaciones y virtualización, para poder ejecutar el ejemplo en cualquier sistema operativo y no instalar nada en la máquina local más allá de VirtualBox y Vagrant se utiliza una máquina virtual que permiten crear estas dos herramientas de forma fácil.</p>
+<p>El siguiente es el archivo de configuración para Vagrant de la máquina virtual que aprovisiona una distribución Ubuntu con las herramientas utilizadas en el ejemplo entre ellas Consul, Nomad, <a href="https://www.envoyproxy.io/">Envoy</a> y Docker. También se configura la cantidad de memoria asignada a la máquina virtual y la dirección IP que se le asigna.</p>
+<p>Al iniciar la máquina virtual se aprovisiona, con Vagrant simplemente consiste en ejecutar el siguiente comando. Una vez iniciada se puede hacer SSH para iniciar una sesión de terminal dentro de la máquina virtual.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ vagrant up&#10;</span></span><span class="line"><span class="cl">$ vagrant ssh&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>vagrant.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span><span class="lnt">59&#10;</span><span class="lnt">60&#10;</span><span class="lnt">61&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="c1"># -*- mode: ruby -*-</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># vi: set ft=ruby :</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="no">Vagrant</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="s2">&#34;2&#34;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">define</span> <span class="s2">&#34;ubuntu&#34;</span> <span class="k">do</span> <span class="o">|</span><span class="n">instance</span><span class="o">|</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">instance</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box</span> <span class="o">=</span> <span class="s2">&#34;ubuntu/jammy64&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">instance</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">network</span> <span class="s2">&#34;private_network&#34;</span><span class="p">,</span> <span class="ss">ip</span><span class="p">:</span> <span class="s2">&#34;192.168.56.10&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">instance</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">synced_folder</span> <span class="s2">&#34;.&#34;</span><span class="p">,</span> <span class="s2">&#34;/home/vagrant/ConsulServiceMesh/&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">instance</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provider</span> <span class="ss">:virtualbox</span> <span class="k">do</span> <span class="o">|</span><span class="n">vb</span><span class="o">|</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">vb</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;Ubuntu 22.04 (Vagrant)&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">vb</span><span class="o">.</span><span class="n">memory</span> <span class="o">=</span> <span class="s2">&#34;4096&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">instance</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provision</span> <span class="s2">&#34;shell&#34;</span><span class="p">,</span> <span class="ss">inline</span><span class="p">:</span> <span class="vg">$consul_role_script</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">end</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">end</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="vg">$consul_role_script</span> <span class="o">=</span> <span class="s">&lt;&lt;-SCRIPT&#10;</span></span></span><span class="line"><span class="cl"><span class="s"></span>&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">echo</span> <span class="s2">&#34;Updating...&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">upgrade</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">echo</span> <span class="s2">&#34;Installing Consul...&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">wget</span> <span class="o">-</span><span class="n">O</span><span class="o">-</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">apt</span><span class="o">.</span><span class="n">releases</span><span class="o">.</span><span class="n">hashicorp</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gpg</span> <span class="o">|</span> <span class="n">gpg</span> <span class="o">--</span><span class="n">dearmor</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="sr">/usr/s</span><span class="n">hare</span><span class="o">/</span><span class="n">keyrings</span><span class="o">/</span><span class="n">hashicorp</span><span class="o">-</span><span class="n">archive</span><span class="o">-</span><span class="n">keyring</span><span class="o">.</span><span class="n">gpg</span> <span class="o">&gt;</span> <span class="sr">/dev/nu</span><span class="n">ll</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">echo</span> <span class="s2">&#34;deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main&#34;</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="sr">/etc/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">hashicorp</span><span class="o">.</span><span class="n">list</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">consul</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">echo</span> <span class="s2">&#34;Installing Nomad...&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">wget</span> <span class="o">-</span><span class="n">O</span><span class="o">-</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">apt</span><span class="o">.</span><span class="n">releases</span><span class="o">.</span><span class="n">hashicorp</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gpg</span> <span class="o">|</span> <span class="n">gpg</span> <span class="o">--</span><span class="n">dearmor</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="sr">/usr/s</span><span class="n">hare</span><span class="o">/</span><span class="n">keyrings</span><span class="o">/</span><span class="n">hashicorp</span><span class="o">-</span><span class="n">archive</span><span class="o">-</span><span class="n">keyring</span><span class="o">.</span><span class="n">gpg</span>  <span class="o">&gt;</span> <span class="sr">/dev/nu</span><span class="n">ll</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">echo</span> <span class="s2">&#34;deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main&#34;</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="sr">/etc/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">hashicorp</span><span class="o">.</span><span class="n">list</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">nomad</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">echo</span> <span class="s2">&#34;Installing Envoy...&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">func</span><span class="o">-</span><span class="n">e</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">install</span><span class="o">.</span><span class="n">sh</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">bash</span> <span class="o">-</span><span class="n">s</span> <span class="o">--</span> <span class="o">-</span><span class="n">b</span> <span class="sr">/usr/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span> <span class="o">&amp;&amp;</span> <span class="n">func</span><span class="o">-</span><span class="n">e</span> <span class="n">use</span> <span class="mi">1</span><span class="o">.</span><span class="mi">23</span><span class="o">.</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">cp</span> <span class="o">~</span><span class="sr">/.func-e/</span><span class="n">versions</span><span class="o">/</span><span class="mi">1</span><span class="o">.</span><span class="mi">23</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">envoy</span> <span class="sr">/usr/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">echo</span> <span class="s2">&#34;Installing cni plugins...&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="o">-</span><span class="n">o</span> <span class="n">cni</span><span class="o">-</span><span class="n">plugins</span><span class="o">.</span><span class="n">tgz</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">containernetworking</span><span class="o">/</span><span class="n">plugins</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="n">download</span><span class="o">/</span><span class="n">v1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="o">/</span><span class="n">cni</span><span class="o">-</span><span class="n">plugins</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">amd64</span><span class="o">-</span><span class="n">v1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="n">tgz</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">-</span><span class="nb">p</span> <span class="sr">/opt/</span><span class="n">cni</span><span class="o">/</span><span class="n">bin</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">sudo</span> <span class="n">tar</span> <span class="o">-</span><span class="n">C</span> <span class="sr">/opt/</span><span class="n">cni</span><span class="o">/</span><span class="n">bin</span> <span class="o">-</span><span class="n">xzf</span> <span class="n">cni</span><span class="o">-</span><span class="n">plugins</span><span class="o">.</span><span class="n">tgz</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">echo</span> <span class="mi">1</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="sr">/proc/s</span><span class="n">ys</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">bridge</span><span class="o">/</span><span class="n">bridge</span><span class="o">-</span><span class="n">nf</span><span class="o">-</span><span class="n">call</span><span class="o">-</span><span class="n">arptables</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">echo</span> <span class="mi">1</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="sr">/proc/s</span><span class="n">ys</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">bridge</span><span class="o">/</span><span class="n">bridge</span><span class="o">-</span><span class="n">nf</span><span class="o">-</span><span class="n">call</span><span class="o">-</span><span class="n">ip6tables</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">echo</span> <span class="mi">1</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="sr">/proc/s</span><span class="n">ys</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">bridge</span><span class="o">/</span><span class="n">bridge</span><span class="o">-</span><span class="n">nf</span><span class="o">-</span><span class="n">call</span><span class="o">-</span><span class="n">iptables</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">sudo</span> <span class="n">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span> <span class="o">&gt;</span> <span class="sr">/etc/s</span><span class="n">ysctl</span><span class="o">.</span><span class="n">d</span><span class="o">/</span>&#10;</span></span><span class="line"><span class="cl">  <span class="n">net</span><span class="o">.</span><span class="n">bridge</span><span class="o">.</span><span class="n">bridge</span><span class="o">-</span><span class="n">nf</span><span class="o">-</span><span class="n">call</span><span class="o">-</span><span class="n">arptables</span> <span class="o">=</span> <span class="mi">1</span>&#10;</span></span><span class="line"><span class="cl">  <span class="n">net</span><span class="o">.</span><span class="n">bridge</span><span class="o">.</span><span class="n">bridge</span><span class="o">-</span><span class="n">nf</span><span class="o">-</span><span class="n">call</span><span class="o">-</span><span class="n">ip6tables</span> <span class="o">=</span> <span class="mi">1</span>&#10;</span></span><span class="line"><span class="cl">  <span class="n">net</span><span class="o">.</span><span class="n">bridge</span><span class="o">.</span><span class="n">bridge</span><span class="o">-</span><span class="n">nf</span><span class="o">-</span><span class="n">call</span><span class="o">-</span><span class="n">iptables</span> <span class="o">=</span> <span class="mi">1</span>&#10;</span></span><span class="line"><span class="cl">  <span class="no">EOF</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">echo</span> <span class="s2">&#34;Installing Docker...&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">curl</span> <span class="o">-</span><span class="n">fsSL</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">download</span><span class="o">.</span><span class="n">docker</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">linux</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span><span class="n">gpg</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">gpg</span> <span class="o">--</span><span class="n">dearmor</span> <span class="o">-</span><span class="n">o</span> <span class="sr">/usr/s</span><span class="n">hare</span><span class="o">/</span><span class="n">keyrings</span><span class="o">/</span><span class="n">docker</span><span class="o">.</span><span class="n">gpg</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">echo</span> <span class="p">\</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \&#10;</span></span></span><span class="line"><span class="cl"><span class="s2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  $(lsb_release -cs) stable&#34;</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="sr">/etc/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">docker</span><span class="o">.</span><span class="n">list</span> <span class="o">&gt;</span> <span class="sr">/dev/nu</span><span class="n">ll</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">docker</span><span class="o">-</span><span class="n">ce</span> <span class="n">docker</span><span class="o">-</span><span class="n">ce</span><span class="o">-</span><span class="n">cli</span> <span class="n">containerd</span><span class="o">.</span><span class="n">io</span> <span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="o">-</span><span class="n">plugin</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">enable</span> <span class="n">docker</span><span class="o">.</span><span class="n">service</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">sudo</span> <span class="n">usermod</span> <span class="o">-</span><span class="n">aG</span> <span class="n">docker</span> <span class="n">vagrant</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="no">SCRIPT</span>&#10;</span></span><span class="line"><span class="cl">  <span class="k">end</span>&#10;</span></span><span class="line"><span class="cl">  </span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Vagrantfile</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/virtualbox_hu7a2a034edbf495f255b69302d89bf1d6_176833_2560x1440_fit_box_3.png" data-gallery="" title="VirtualBox"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/virtualbox_hu7a2a034edbf495f255b69302d89bf1d6_176833_650x450_fit_box_3.png" width="582" height="450" alt="VirtualBox" title="VirtualBox" class="" loading="lazy"></a></p>
+<figcaption>VirtualBox</figcaption>
+</figure>
+</div>
+<h4 id="inicio-de-consul-y-nomad-y-microservicios-del-ejemplo">Inicio de Consul y Nomad y microservicios del ejemplo</h4>
+<p>Una de las ventajas de Consul y Nomad es que son muy simples de usar ya que sus programas son simplemente un único binario. Consul y Nomad se inician con los siguientes comandos en modo desarrollo con sus archivos de configuración.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ consul agent -dev -config-dir<span class="o">=</span>consul.d/&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>consul.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo nomad agent -dev-connect -config<span class="o">=</span>nomad.d/&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>nomad.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-hcl" data-lang="hcl"><span class="line"><span class="cl"><span class="n">server</span> <span class="o">=</span> <span class="kt">true</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">bootstrap_expect</span> <span class="o">=</span> <span class="m">1</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">bind_addr</span> <span class="o">=</span> <span class="s2">&#34;127.0.0.1&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">client_addr</span> <span class="o">=</span> <span class="s2">&#34;0.0.0.0&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="k">ports</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;grpc</span> <span class="o">=</span> <span class="m">8502</span>&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="k">connect</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;enabled</span> <span class="o">=</span> <span class="kt">true</span>&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="k">ui_config</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;enabled</span> <span class="o">=</span> <span class="kt">true</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;metrics_provider</span> <span class="o">=</span> <span class="s2">&#34;prometheus&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">metrics_proxy</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;base_url</span> <span class="o">=</span> <span class="s2">&#34;http://localhost:9090&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>consul.d/consul.hcl</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-hcl" data-lang="hcl"><span class="line"><span class="cl"><span class="k">plugin</span> <span class="s2">&#34;docker&#34;</span> {&#10;</span></span><span class="line"><span class="cl">  <span class="k">config</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">volumes</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  enabled</span> <span class="o">=</span> <span class="kt">true</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">  }&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  <span class="k">volumes</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;enabled</span> <span class="o">=</span> <span class="kt">true</span>&#10;</span></span><span class="line"><span class="cl">  }&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>nomad.d/nomad.hcl</span>
+    </div>
+</div>
+<p>Consul requiere la definición del servicio <em>ingress gateway</em> que permite que entre tráfico al <em>service mesh</em>, en esta configuración a través del puerto 8080, el tráfico entrante es redirigido al servicio <em>frontend</em>. Esta configuración se proporciona como un <a href="https://developer.hashicorp.com/consul/docs/connect/config-entries">Config Entry</a> de Consul y se proporciona a Consul con un comando.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ consul config write consul.d/config-entries/proxy-defaults.hcl&#10;</span></span><span class="line"><span class="cl">$ consul config write consul.d/config-entries/ingress-gateway.hcl&#10;</span></span><span class="line"><span class="cl">$ consul connect envoy -gateway<span class="o">=</span>ingress -service ingress-gateway -admin-bind 127.0.0.1:19002 -address 127.0.0.1:20000</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>consul-ingress-gateway.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-hcl" data-lang="hcl"><span class="line"><span class="cl"><span class="n">Kind</span> <span class="o">=</span> <span class="s2">&#34;ingress-gateway&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">Name</span> <span class="o">=</span> <span class="s2">&#34;ingress-gateway&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">Listeners</span> <span class="o">=</span> <span class="p">[</span>{&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;Port</span> <span class="o">=</span> <span class="m">8080</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;Protocol</span> <span class="o">=</span> <span class="s2">&#34;http&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;Services</span> <span class="o">=</span> <span class="p">[</span>{&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name</span> <span class="o">=</span> <span class="s2">&#34;frontend&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hosts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;localhost&#34;, &#34;192.168.56.10&#34;</span><span class="p">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}<span class="p">]</span>&#10;</span></span><span class="line"><span class="cl">}<span class="p">]</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>consul.d/config-entries/ingress-gateway.hcl</span>
+    </div>
+</div>
+<p>La configuración de los <em>sidecar proxy</em> que crear Consul en este ejemplo es necesario para exportar métricas de Prometheus y enviar la trazabilidad a Jaeger usando Zipkin.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-hcl" data-lang="hcl"><span class="line"><span class="cl"><span class="n">Kind</span> <span class="o">=</span> <span class="s2">&#34;proxy-defaults&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">Name</span> <span class="o">=</span> <span class="s2">&#34;global&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="k">Config</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;protocol</span> <span class="o">=</span> <span class="s2">&#34;http&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;envoy_tracing_json</span> <span class="o">=</span> <span class="err">&lt;&lt;</span><span class="k">EOF</span>&#10;</span></span><span class="line"><span class="cl">{&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;http&#34;</span><span class="err">:</span>{&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;name&#34;:&#34;envoy.tracers.zipkin&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;typedConfig&#34;</span><span class="err">:</span>{&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;@type&#34;:&#34;type.googleapis.com/envoy.config.trace.v3.ZipkinConfig&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;collector_cluster&#34;:&#34;jaeger_collector&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;collector_endpoint_version&#34;:&#34;HTTP_JSON&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;collector_endpoint&#34;:&#34;/api/v2/spans&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;shared_span_context&#34;</span><span class="err">:</span><span class="kt">false</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span><span class="line"><span class="cl"><span class="k">EOF</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp; envoy_extra_static_clusters_json</span> <span class="o">=</span> <span class="err">&lt;&lt;</span><span class="k">EOF</span>&#10;</span></span><span class="line"><span class="cl">{&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp; <span class="s2">&#34;connect_timeout&#34;:&#34;3.000s&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp; <span class="s2">&#34;dns_lookup_family&#34;:&#34;V4_ONLY&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp; <span class="s2">&#34;lb_policy&#34;:&#34;ROUND_ROBIN&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp; <span class="s2">&#34;load_assignment&#34;</span><span class="err">:</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;cluster_name&#34;:&#34;jaeger_collector&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;endpoints&#34;</span><span class="err">:</span><span class="p">[</span>{&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;lb_endpoints&#34;</span> <span class="err">:</span><span class="p">[</span>{&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s2">&#34;endpoint&#34;</span><span class="err">:</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;address&#34;</span><span class="err">:</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;socket_address&#34;</span><span class="err">:</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;address&#34;:&#34;localhost&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;port_value&#34;</span><span class="err">:</span><span class="m">9411</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;protocol&#34;:&#34;TCP&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<span class="p">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<span class="p">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}<span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;name&#34;:&#34;jaeger_collector&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;type&#34;:&#34;STRICT_DNS&#34;</span>&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span><span class="line"><span class="cl"><span class="k">EOF</span>&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>consul.d/config-entries/proxy-defaults.hcl</span>
+    </div>
+</div>
+<p>Tanto Consul como Nomad ofrecen una interfaz web para consultar el estado de los servicios y realizar tareas de forma más intuitiva que utilizando la línea de comandos. La interfaz de Consul se inicia en el puerto 8500 y la de Nomad en el puerto 4646 la dirección IP es la de la máquina virtual.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul_hu38ca79e125ea90732c98801666d94a1c_114012_2560x1440_fit_box_3.png" data-gallery="" title="Consul"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul_hu38ca79e125ea90732c98801666d94a1c_114012_300x200_fit_box_3.png" width="246" height="200" alt="Consul" title="Consul" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/nomad_hu9bbb57e399b7a2dffb0f8e1e395e2194_140021_2560x1440_fit_box_3.png" data-gallery="" title="Nomad"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/nomad_hu9bbb57e399b7a2dffb0f8e1e395e2194_140021_300x200_fit_box_3.png" width="246" height="200" alt="Nomad" title="Nomad" class="" loading="lazy"></a></p>
+<figcaption>Consul y Nomad</figcaption>
+</figure>
+</div>
+<h4 id="inicio-de-prometheus-y-jaeger">Inicio de Prometheus y Jaeger</h4>
+<p>Prometheus es una base de datos temporal que permite guardar los datos de métricas y monitorización que generan las aplicaciones, los <em>sidecar proxy</em> generan métricas que Prometheus recolecta y Consul permite mostrar algunos datos básicos de métricas como número de peticiones, tasa de fallos de las peticiones y percentiles de latencia.</p>
+<p>Jaeger es una herramienta de trazabilidad que permite correlacionar todas las peticiones que se realizan entre los servicios, de esta forma es posible relacionar la petición del servicio <em>frontend</em> con la petición del servicio <em>backend</em> y mostrar ambas al mismo tiempo como si estuvieran relacionadas, esta relación se establece mediante un <em>traceId</em> que identifica al conjunto de las peticiones individuales.</p>
+<p>En el ejemplo Prometheus y Jaeger se inician como contenedores de Docker con los siguientes comandos. También se podrían haber iniciado como servicios de Nomad. La configuración de Prometheus es necesaria para recolectar las métricas de Consul.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker run --rm -p 9090:9090 --name prometheus --network host -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>prometheus.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">global</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">scrape_interval</span><span class="p">:</span><span class="w"> </span><span class="l">10s</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">scrape_configs</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">job_name</span><span class="p">:</span><span class="w"> </span><span class="l">consul</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">metrics_path</span><span class="p">:</span><span class="w"> </span><span class="l">/metrics</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">consul_sd_configs</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;localhost:8500&#39;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">relabel_configs</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">source_labels</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">__meta_consul_tagged_address_lan</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">__meta_consul_service_metadata_prometheus_port</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">regex</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;(.*);(.*)&#39;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">replacement</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;${1}:${2}&#39;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">target_label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;__address__&#39;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;replace&#39;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>prometheus.yml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker run --rm --name jaeger <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">COLLECTOR_ZIPKIN_HOST_PORT</span><span class="o">=</span>:9411 <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">COLLECTOR_OTLP_ENABLED</span><span class="o">=</span><span class="nb">true</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p <span class="s2">&#34;6831:6831/udp&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p <span class="s2">&#34;6832:6832/udp&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p <span class="s2">&#34;5778:5778&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p <span class="s2">&#34;16686:16686&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p <span class="s2">&#34;4317:4317&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p <span class="s2">&#34;4318:4318&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p <span class="s2">&#34;14250:14250&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p <span class="s2">&#34;14268:14268&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p <span class="s2">&#34;14269:14269&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p <span class="s2">&#34;9411:9411&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>  jaegertracing/all-in-one:1.38</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>jaeger.sh</span>
+    </div>
+</div>
+<p>Jaeger ofrece una interfaz web en el puerto 16686 para visualizar la trazabilidad de una petición y buscar una traza en concreto a través de su <em>traceId</em> y otros filtros.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/jaeger_hu33e6a5ea76c78b45612ee7e8a8666ca6_100673_2560x1440_fit_box_3.png" data-gallery="" title="Jaeger"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/jaeger_hu33e6a5ea76c78b45612ee7e8a8666ca6_100673_650x450_fit_box_3.png" width="553" height="450" alt="Jaeger" title="Jaeger" class="" loading="lazy"></a></p>
+<figcaption>Jaeger</figcaption>
+</figure>
+</div>
+<h4 id="inicio-de-los-servicios-_frontend_-y-_backend_">Inicio de los servicios <em>frontend</em> y <em>backend</em></h4>
+<p>La aplicación de ejemplo que muestra información de aves está compuesta de dos microservicios el <em>frontend</em> que muestra la información mediante una interfaz web y el servicio de <em>backend</em> que proporciona la información al <em>frontend</em>.</p>
+<p>En el libro Consul: Up &amp; Running los servicios se inician utilizando únicamente Consul que es en lo que se centra el libro, pero en este ejemplo inicio estos servicios utilizando el orquestador Nomad, Nomad permite definir la misma configuración incluyendo la configuración para los <em>sidecar proxy</em> y se integra con Consul.</p>
+<p>La definición del job de Nomad que engloba ambos servicios es la siguiente. Con esta definición declarativa Nomad se encarga de iniciarlos según la descripción indicada, del servicio de <em>backend</em> se inician dos instancias una la de la versión <em>v1</em> y otra de la <em>v2</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ nomad run birds.nomad&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>nomad-birds.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">  1&#10;</span><span class="lnt">  2&#10;</span><span class="lnt">  3&#10;</span><span class="lnt">  4&#10;</span><span class="lnt">  5&#10;</span><span class="lnt">  6&#10;</span><span class="lnt">  7&#10;</span><span class="lnt">  8&#10;</span><span class="lnt">  9&#10;</span><span class="lnt"> 10&#10;</span><span class="lnt"> 11&#10;</span><span class="lnt"> 12&#10;</span><span class="lnt"> 13&#10;</span><span class="lnt"> 14&#10;</span><span class="lnt"> 15&#10;</span><span class="lnt"> 16&#10;</span><span class="lnt"> 17&#10;</span><span class="lnt"> 18&#10;</span><span class="lnt"> 19&#10;</span><span class="lnt"> 20&#10;</span><span class="lnt"> 21&#10;</span><span class="lnt"> 22&#10;</span><span class="lnt"> 23&#10;</span><span class="lnt"> 24&#10;</span><span class="lnt"> 25&#10;</span><span class="lnt"> 26&#10;</span><span class="lnt"> 27&#10;</span><span class="lnt"> 28&#10;</span><span class="lnt"> 29&#10;</span><span class="lnt"> 30&#10;</span><span class="lnt"> 31&#10;</span><span class="lnt"> 32&#10;</span><span class="lnt"> 33&#10;</span><span class="lnt"> 34&#10;</span><span class="lnt"> 35&#10;</span><span class="lnt"> 36&#10;</span><span class="lnt"> 37&#10;</span><span class="lnt"> 38&#10;</span><span class="lnt"> 39&#10;</span><span class="lnt"> 40&#10;</span><span class="lnt"> 41&#10;</span><span class="lnt"> 42&#10;</span><span class="lnt"> 43&#10;</span><span class="lnt"> 44&#10;</span><span class="lnt"> 45&#10;</span><span class="lnt"> 46&#10;</span><span class="lnt"> 47&#10;</span><span class="lnt"> 48&#10;</span><span class="lnt"> 49&#10;</span><span class="lnt"> 50&#10;</span><span class="lnt"> 51&#10;</span><span class="lnt"> 52&#10;</span><span class="lnt"> 53&#10;</span><span class="lnt"> 54&#10;</span><span class="lnt"> 55&#10;</span><span class="lnt"> 56&#10;</span><span class="lnt"> 57&#10;</span><span class="lnt"> 58&#10;</span><span class="lnt"> 59&#10;</span><span class="lnt"> 60&#10;</span><span class="lnt"> 61&#10;</span><span class="lnt"> 62&#10;</span><span class="lnt"> 63&#10;</span><span class="lnt"> 64&#10;</span><span class="lnt"> 65&#10;</span><span class="lnt"> 66&#10;</span><span class="lnt"> 67&#10;</span><span class="lnt"> 68&#10;</span><span class="lnt"> 69&#10;</span><span class="lnt"> 70&#10;</span><span class="lnt"> 71&#10;</span><span class="lnt"> 72&#10;</span><span class="lnt"> 73&#10;</span><span class="lnt"> 74&#10;</span><span class="lnt"> 75&#10;</span><span class="lnt"> 76&#10;</span><span class="lnt"> 77&#10;</span><span class="lnt"> 78&#10;</span><span class="lnt"> 79&#10;</span><span class="lnt"> 80&#10;</span><span class="lnt"> 81&#10;</span><span class="lnt"> 82&#10;</span><span class="lnt"> 83&#10;</span><span class="lnt"> 84&#10;</span><span class="lnt"> 85&#10;</span><span class="lnt"> 86&#10;</span><span class="lnt"> 87&#10;</span><span class="lnt"> 88&#10;</span><span class="lnt"> 89&#10;</span><span class="lnt"> 90&#10;</span><span class="lnt"> 91&#10;</span><span class="lnt"> 92&#10;</span><span class="lnt"> 93&#10;</span><span class="lnt"> 94&#10;</span><span class="lnt"> 95&#10;</span><span class="lnt"> 96&#10;</span><span class="lnt"> 97&#10;</span><span class="lnt"> 98&#10;</span><span class="lnt"> 99&#10;</span><span class="lnt">100&#10;</span><span class="lnt">101&#10;</span><span class="lnt">102&#10;</span><span class="lnt">103&#10;</span><span class="lnt">104&#10;</span><span class="lnt">105&#10;</span><span class="lnt">106&#10;</span><span class="lnt">107&#10;</span><span class="lnt">108&#10;</span><span class="lnt">109&#10;</span><span class="lnt">110&#10;</span><span class="lnt">111&#10;</span><span class="lnt">112&#10;</span><span class="lnt">113&#10;</span><span class="lnt">114&#10;</span><span class="lnt">115&#10;</span><span class="lnt">116&#10;</span><span class="lnt">117&#10;</span><span class="lnt">118&#10;</span><span class="lnt">119&#10;</span><span class="lnt">120&#10;</span><span class="lnt">121&#10;</span><span class="lnt">122&#10;</span><span class="lnt">123&#10;</span><span class="lnt">124&#10;</span><span class="lnt">125&#10;</span><span class="lnt">126&#10;</span><span class="lnt">127&#10;</span><span class="lnt">128&#10;</span><span class="lnt">129&#10;</span><span class="lnt">130&#10;</span><span class="lnt">131&#10;</span><span class="lnt">132&#10;</span><span class="lnt">133&#10;</span><span class="lnt">134&#10;</span><span class="lnt">135&#10;</span><span class="lnt">136&#10;</span><span class="lnt">137&#10;</span><span class="lnt">138&#10;</span><span class="lnt">139&#10;</span><span class="lnt">140&#10;</span><span class="lnt">141&#10;</span><span class="lnt">142&#10;</span><span class="lnt">143&#10;</span><span class="lnt">144&#10;</span><span class="lnt">145&#10;</span><span class="lnt">146&#10;</span><span class="lnt">147&#10;</span><span class="lnt">148&#10;</span><span class="lnt">149&#10;</span><span class="lnt">150&#10;</span><span class="lnt">151&#10;</span><span class="lnt">152&#10;</span><span class="lnt">153&#10;</span><span class="lnt">154&#10;</span><span class="lnt">155&#10;</span><span class="lnt">156&#10;</span><span class="lnt">157&#10;</span><span class="lnt">158&#10;</span><span class="lnt">159&#10;</span><span class="lnt">160&#10;</span><span class="lnt">161&#10;</span><span class="lnt">162&#10;</span><span class="lnt">163&#10;</span><span class="lnt">164&#10;</span><span class="lnt">165&#10;</span><span class="lnt">166&#10;</span><span class="lnt">167&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-hcl" data-lang="hcl"><span class="line"><span class="cl"><span class="k">job</span> <span class="s2">&#34;app-birds&#34;</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">  datacenters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;dc1&#34;</span><span class="p">]</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  <span class="k">group</span> <span class="s2">&#34;frontend&#34;</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">network</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  mode</span> <span class="o">=</span> <span class="s2">&#34;bridge&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">port</span> <span class="s2">&#34;http&#34;</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static</span> <span class="o">=</span> <span class="m">21000</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="o">=</span> <span class="m">21000</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">port</span> <span class="s2">&#34;envoy_metrics&#34;</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static</span> <span class="o">=</span> <span class="m">20200</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to</span> <span class="o">=</span> <span class="m">20200</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">service</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  name</span> <span class="o">=</span> <span class="s2">&#34;frontend&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  port</span> <span class="o">=</span> <span class="m">6060</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">meta</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prometheus_port</span> <span class="o">=</span> <span class="s2">&#34;20200&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">connect</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">sidecar_service</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  port</span> <span class="o">=</span> <span class="m">21000</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">proxy</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">upstreams</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  destination_name</span> <span class="o">=</span> <span class="s2">&#34;backend&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  local_bind_port</span> <span class="o">=</span> <span class="m">6001</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">config</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  envoy_prometheus_bind_addr</span> <span class="o">=</span> <span class="s2">&#34;0.0.0.0:20200&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">task</span> <span class="s2">&#34;frontend&#34;</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  driver</span> <span class="o">=</span> <span class="s2">&#34;docker&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">env</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIND_ADDR</span><span class="o">=</span><span class="s2">&#34;0.0.0.0:6060&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BACKEND_URL</span><span class="o">=</span><span class="s2">&#34;http://localhost:6001&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACING_URL</span><span class="o">=</span><span class="s2">&#34;http://192.168.56.10:9411&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">resources</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cpu</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">=</span> <span class="m">350</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memory</span> <span class="o">=</span> <span class="m">1024</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">config</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image</span> <span class="o">=</span> <span class="s2">&#34;ghcr.io/consul-up/birdwatcher-frontend:1.0.0&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memory_hard_limit</span> <span class="o">=</span> <span class="s2">&#34;1024&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">  }&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  <span class="k">group</span> <span class="s2">&#34;backend&#34;</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">network</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  mode</span> <span class="o">=</span> <span class="s2">&#34;bridge&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">port</span> <span class="s2">&#34;envoy_metrics&#34;</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static</span> <span class="o">=</span> <span class="m">20201</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to</span> <span class="o">=</span> <span class="m">20201</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">service</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  name</span> <span class="o">=</span> <span class="s2">&#34;backend&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  port</span> <span class="o">=</span> <span class="m">7000</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">meta</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prometheus_port</span> <span class="o">=</span> <span class="s2">&#34;20201&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</span> <span class="o">=</span> <span class="s2">&#34;v1&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">connect</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">sidecar_service</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  port</span> <span class="o">=</span> <span class="m">22000</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">proxy</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">config</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  envoy_prometheus_bind_addr</span> <span class="o">=</span> <span class="s2">&#34;0.0.0.0:20201&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">task</span> <span class="s2">&#34;backend&#34;</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  driver</span> <span class="o">=</span> <span class="s2">&#34;docker&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">env</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIND_ADDR</span><span class="o">=</span><span class="s2">&#34;0.0.0.0:7000&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACING_URL</span><span class="o">=</span><span class="s2">&#34;http://192.168.56.10:9411&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">resources</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cpu</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">=</span> <span class="m">350</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memory</span> <span class="o">=</span> <span class="m">1024</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">config</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image</span> <span class="o">=</span> <span class="s2">&#34;ghcr.io/consul-up/birdwatcher-backend:1.0.0&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memory_hard_limit</span> <span class="o">=</span> <span class="s2">&#34;1024&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">  }&#10;</span></span><span class="line"><span class="cl">  &#10;</span></span><span class="line"><span class="cl">  <span class="k">group</span> <span class="s2">&#34;backend-v2&#34;</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">network</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  mode</span> <span class="o">=</span> <span class="s2">&#34;bridge&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">port</span> <span class="s2">&#34;envoy_metrics&#34;</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static</span> <span class="o">=</span> <span class="m">20202</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to</span> <span class="o">=</span> <span class="m">20202</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">service</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  name</span> <span class="o">=</span> <span class="s2">&#34;backend&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  port</span> <span class="o">=</span> <span class="m">7001</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">meta</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prometheus_port</span> <span class="o">=</span> <span class="s2">&#34;20202&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</span> <span class="o">=</span> <span class="s2">&#34;v2&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">connect</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">sidecar_service</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  port</span> <span class="o">=</span> <span class="m">22001</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">proxy</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">config</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  envoy_prometheus_bind_addr</span> <span class="o">=</span> <span class="s2">&#34;0.0.0.0:20202&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">task</span> <span class="s2">&#34;backend&#34;</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  driver</span> <span class="o">=</span> <span class="s2">&#34;docker&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">env</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIND_ADDR</span><span class="o">=</span><span class="s2">&#34;0.0.0.0:7001&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACING_URL</span><span class="o">=</span><span class="s2">&#34;http://192.168.56.10:9411&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VERSION</span><span class="o">=</span><span class="s2">&#34;v2&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">resources</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cpu</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">=</span> <span class="m">350</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memory</span> <span class="o">=</span> <span class="m">1024</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">config</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image</span> <span class="o">=</span> <span class="s2">&#34;ghcr.io/consul-up/birdwatcher-backend:1.0.0&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memory_hard_limit</span> <span class="o">=</span> <span class="s2">&#34;1024&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">  }&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>birds.nomad</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/birds-v1-1_hu7f6d488877be14f859eccdaea4f48797_553771_2560x1440_fit_box_3.png" data-gallery="" title="Frontend con datos de la versión v1 del backend"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/birds-v1-1_hu7f6d488877be14f859eccdaea4f48797_553771_650x450_fit_box_3.png" width="553" height="450" alt="Frontend con datos de la versión v1 del backend" title="Frontend con datos de la versión v1 del backend" class="" loading="lazy"></a></p>
+<figcaption>Frontend con datos de la versión v1 del backend</figcaption>
+</figure>
+</div>
+<h4 id="demostraciones-de-las-funcionalidades-del-_service-mesh_">Demostraciones de las funcionalidades del <em>service mesh</em></h4>
+<p>A la aplicación se accede a través del servicio de <em>ingress-gateway</em> en el puerto 8080 de la máquina virtual. El servicio de <em>ingress-gateway</em> simplemente redirige el tráfico a la aplicación de <em>frontend</em>. Esta es la topología de comunicación para el servicio de <em>frontend</em> proporcionada por Consul, recibe peticiones del <em>ingress-gateway</em> y a su vez realiza peticiones al servicio de <em>backend</em>.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul-topology-1_hu285775030b5ed09f425118c0971ef68e_151608_2560x1440_fit_box_3.png" data-gallery="" title="Toppología de un servicio y métricas en Consul"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul-topology-1_hu285775030b5ed09f425118c0971ef68e_151608_650x450_fit_box_3.png" width="554" height="450" alt="Toppología de un servicio y métricas en Consul" title="Toppología de un servicio y métricas en Consul" class="" loading="lazy"></a></p>
+<figcaption>Toppología de un servicio y métricas en Consul</figcaption>
+</figure>
+</div>
+<p>Al arrancar Consul en modo desarrollo el comportamiento por defecto es permitir la comunicación entre los servicios, en una configuración en grado de producción por el contrario por defecto no se permite.</p>
+<p>Creando una intención es posible denegar el tráfico entre el servicio de <em>frontend</em> al de <em>backend</em>. Las intenciones sirven para permitir o denegar el tráfico en un plano de servicio y no de direcciones IP y cortafuegos lo que lo hace mucho más sencillo de administrar, además de que cualquier cambio es posible hacerlo desde la interfaz web y se aplica de forma instantánea.</p>
+<p>El tráfico entre los servicios a través de los <em>sidecar proxy</em> realizan la comunicación cifrada y utilizando autenticación mutua.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul-intentions_hu9f977235bd6c24c164cf620de1a0ce87_76378_2560x1440_fit_box_3.png" data-gallery="" title="Intenciones en Consul"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul-intentions_hu9f977235bd6c24c164cf620de1a0ce87_76378_650x450_fit_box_3.png" width="553" height="450" alt="Intenciones en Consul" title="Intenciones en Consul" class="" loading="lazy"></a></p>
+<figcaption>Intenciones en Consul</figcaption>
+</figure>
+</div>
+<p>Consul exporta métricas en formato Prometheus que el servidor de Prometheus recolecta de forma periódica, esta información puede ser visualizada con una herramienta como Grafana. También el propio Consul permite obtener una métricas básicas del servicio como el número de peticiones que se están realizando, tasa de errores y latencia agrupadas por percentiles. Esta información es muy valiosa ya que permite monitorizar el estado del servicio.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul-topology-2_hu285775030b5ed09f425118c0971ef68e_151608_2560x1440_fit_box_3.png" data-gallery="" title="Métricas de Prometheus en Consul"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul-topology-2_hu285775030b5ed09f425118c0971ef68e_151608_650x450_fit_box_3.png" width="554" height="450" alt="Métricas de Prometheus en Consul" title="Métricas de Prometheus en Consul" class="" loading="lazy"></a></p>
+<figcaption>Métricas de Prometheus en Consul</figcaption>
+</figure>
+</div>
+<p>Consul y los <em>sidecar proxy</em> de Envoy ofrecen soporte para trazabilidad con Zipkin junto con cierto soporte de los propios servicios la trazabilidad es enviada a un servidor como Jaeger que permite visualizar y relacionar las llamadas entre los diferentes servicios. Desde que entra por el <em>ingress-gateway</em> hasta que llega al <em>backend</em> pasando por el servicio de <em>frontend</em> asi como el tiempo empleado en cada uno de ellos.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/jaeger_hu33e6a5ea76c78b45612ee7e8a8666ca6_100673_2560x1440_fit_box_3.png" data-gallery="" title="Trazabilidad en Jarger"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/jaeger_hu33e6a5ea76c78b45612ee7e8a8666ca6_100673_650x450_fit_box_3.png" width="553" height="450" alt="Trazabilidad en Jarger" title="Trazabilidad en Jarger" class="" loading="lazy"></a></p>
+<figcaption>Trazabilidad en Jarger</figcaption>
+</figure>
+</div>
+<p>Consul conoce y monitoriza el estado de todos los servicios, a los servicios que presenten un mal funcionamiento no se les envía tráfico para evitar errores y tener resiliencia aún con fallos parciales. Consul realiza peticiones de estado de salud de forma activa de forma periódica generalmente cada pocos segundos, para comprobar el estado de cada servicio. En la consola de administración muestra el estado de cada uno de ellos que también es una valiosa información de observabilidad.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul_hu38ca79e125ea90732c98801666d94a1c_114012_2560x1440_fit_box_3.png" data-gallery="" title="Salud de los servicios en Consul"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul_hu38ca79e125ea90732c98801666d94a1c_114012_650x450_fit_box_3.png" width="554" height="450" alt="Salud de los servicios en Consul" title="Salud de los servicios en Consul" class="" loading="lazy"></a></p>
+<figcaption>Salud de los servicios en Consul</figcaption>
+</figure>
+</div>
+<p>Como son los <em>sidecar proxy</em> los que hacen las peticiones de red entre servicios estos tienen capacidad de realizar reintentos y <em>timeouts</em>. Con los reintentos se mitigan los errores temporales y con los <em>timeouts</em> se evita que un servicio que esté tardando en responder afecte a otros servicios.</p>
+<p>El control de tráfico es utilizado para diferentes funciones una de ellas para el despliegue de una nueva versión de forma controlada utilizando diferentes estrategias de despliegue. El servicio de <em>backend</em> tiene dos versiones la <em>v1</em> que da información de aves y la <em>v2</em> que da información de aves pero solo de la familia de canarios.</p>
+<p>Con el control de tráfico es posible distribuir el número de peticiones que va a cada servicio en función de un peso o porcentaje. En una repartición al 50 la mitad de las peticiones van a la <em>v1</em> y la otra mitad a la <em>v2</em>, en el <em>frontend</em> se muestra la información del ave y la versión del servicio que la ha proporcionado. Cada vez que se cambia un archivo de configuración y se quiere aplicar hay que escribir la configuración en Consul.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ consul config write consul.d/config-entries/backend-service-resolver.hcl&#10;</span></span><span class="line"><span class="cl">$ consul config write consul.d/config-entries/backend-service-splitter.hcl&#10;</span></span><span class="line"><span class="cl">$ consul config write consul.d/config-entries/backend-service-router.hcl</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>consul-traffic-control.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-hcl" data-lang="hcl"><span class="line"><span class="cl"><span class="n">Kind</span> <span class="o">=</span> <span class="s2">&#34;service-resolver&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">Name</span> <span class="o">=</span> <span class="s2">&#34;backend&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">Subsets</span> <span class="o">=</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">  v1</span> <span class="o">=</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;Filter</span> <span class="o">=</span><span class="n"> &#34;Service.Meta.version</span> <span class="o">==</span> <span class="k">v1</span><span class="err">&#34;</span>&#10;</span></span><span class="line"><span class="cl">  }&#10;</span></span><span class="line"><span class="cl"><span class="n">  v2</span> <span class="o">=</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;Filter</span> <span class="o">=</span><span class="n"> &#34;Service.Meta.version</span> <span class="o">==</span> <span class="k">v2</span><span class="err">&#34;</span>&#10;</span></span><span class="line"><span class="cl">  }&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>consul.d/config-entries/backend-service-resolver.hcl</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-hcl" data-lang="hcl"><span class="line"><span class="cl"><span class="n">Kind</span> <span class="o">=</span> <span class="s2">&#34;service-router&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">Name</span> <span class="o">=</span> <span class="s2">&#34;backend&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">Routes</span> <span class="o">=</span> <span class="p">[</span>{&#10;</span></span><span class="line"><span class="cl"><span class="n">  Match</span> <span class="o">=</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;HTTP</span> <span class="o">=</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  QueryParam</span> <span class="o">=</span> <span class="p">[</span>{&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name</span> <span class="o">=</span> <span class="s2">&#34;canary&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exact</span> <span class="o">=</span> <span class="s2">&#34;true&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }<span class="p">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">  }&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">  Destination</span> <span class="o">=</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;ServiceSubset</span> <span class="o">=</span> <span class="s2">&#34;v2&#34;</span>&#10;</span></span><span class="line"><span class="cl">  }&#10;</span></span><span class="line"><span class="cl">}<span class="p">]</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>consul.d/config-entries/backend-service-router.hcl</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-hcl" data-lang="hcl"><span class="line"><span class="cl"><span class="n">Kind</span> <span class="o">=</span> <span class="s2">&#34;service-splitter&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">Name</span> <span class="o">=</span> <span class="s2">&#34;backend&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">Splits</span> <span class="o">=</span> <span class="p">[</span>{&#10;</span></span><span class="line"><span class="cl"><span class="n">  Weight</span> <span class="o">=</span> <span class="m">75</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">  ServiceSubset</span> <span class="o">=</span> <span class="s2">&#34;v1&#34;</span>&#10;</span></span><span class="line"><span class="cl">}<span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">{&#10;</span></span><span class="line"><span class="cl"><span class="n">  Weight</span> <span class="o">=</span> <span class="m">25</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">  ServiceSubset</span> <span class="o">=</span> <span class="s2">&#34;v2&#34;</span>&#10;</span></span><span class="line"><span class="cl">}<span class="p">]</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>consul.d/config-entries/backend-service-splitter.hcl</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/birds-v1-2_hu7f6d488877be14f859eccdaea4f48797_553771_2560x1440_fit_box_3.png" data-gallery="" title="Frontend con datos de la versión v1 del backend"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/birds-v1-2_hu7f6d488877be14f859eccdaea4f48797_553771_300x200_fit_box_3.png" width="246" height="200" alt="Frontend con datos de la versión v1 del backend" title="Frontend con datos de la versión v1 del backend" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/birds-v2_huc7de3cba34bed59e33cf30928c44081b_548732_2560x1440_fit_box_3.png" data-gallery="" title="Frontend con datos de la versión v2 del backend"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/birds-v2_huc7de3cba34bed59e33cf30928c44081b_548732_300x200_fit_box_3.png" width="246" height="200" alt="Frontend con datos de la versión v2 del backend" title="Frontend con datos de la versión v2 del backend" class="" loading="lazy"></a></p>
+<figcaption>Frontend con datos de la versión v1 y v2 del backend</figcaption>
+</figure>
+</div>
+<h3 id="libros-sobre-consul">Libros sobre Consul</h3>
+<p>Este artículo es prácticamente un resumen del libro <a href="https://amzn.to/3F0SmjY" rel="sponsored">Consul: Up &amp; Running</a> que muestra y explica todo esto de forma más detallada y extensa además de mostrarlo usando Kubernetes. Está bien explicado y su ejemplo es muy fácil de seguir y probar además de muy didáctico para experimentar con los conceptos y funcionalidades comentadas de Consul. Otros libros sobre Consul y <em>service mesh</em> son <a href="https://amzn.to/3seULzU" rel="sponsored">Simplifying Service Management with Consul</a> y <a href="https://amzn.to/3DiIiS6" rel="sponsored">Mastering Service Mesh</a>.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1098106148&amp;linkId=e909576440e5503d3c2fd4009a91dc61" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1800202628&amp;linkId=0d74c8c655bfda8294f77b83a43ea5eb" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1789615798&amp;linkId=bfdecdefc368de25311d26426c4f7bdd" title="Amazon" class="lozad"></iframe>
+</div>
+<div class="alert alert-secondary sourcecode fs-6">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/ConsulServiceMesh">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub.</p>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+      <div class="alert alert-info fs-6" role="alert">
+        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Este artículo incluye algunos enlaces de afiliado como Amazon que considero relevante en el contenido del artículo y para el lector. En caso de hacer una comprar a través de estos enlaces recibo una pequeña comisión, sin que afecte al precio del producto, que me ayuda a seguir publicando nuevos artículos y realizar <a href="https://picodotdev.github.io/blog-bitix/series/donacion/">pequeñas donaciones a proyectos de software libre</a>. En caso de que el artículo te haya resultado de interés y útil considera realizar la compra a través de alguno de los enlaces de afiliado del artículo, es correcto también ignorarlos.
+      </div>
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>hashicorp</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/">Introducción a Nomad para gestionar aplicaciones y microservicios</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/">Estrategias de despliegue para microservicios con Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/04/servicios-con-persistencia-en-el-orquestador-de-microservicios-nomad/">Servicios con persistencia en el orquestador de microservicios Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/">Crear de forma sencilla y rápida máquinas virtuales de VirtualBox con Vagrant</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/">Administrar secretos y proteger datos sensibles con Vault</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">Generar credenciales de conexión a base de datos bajo demanda con Vault</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/">Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/">Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/">Revertir un servicio a una versión anterior con Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/">Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/">Cifrado y descifrado como servicio con Vault</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/">Acceso simple y seguro a sistemas remotos con Boundary</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/">Planificar procesos periódicos y scripts con Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/">Las funcionalidades de un service mesh en una arquitectura de microservicios</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-657';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2022\/10\/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2022 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

@@ -1,0 +1,1 @@
+$ docker run --rm -p 9090:9090 --name prometheus --network host -v $(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus

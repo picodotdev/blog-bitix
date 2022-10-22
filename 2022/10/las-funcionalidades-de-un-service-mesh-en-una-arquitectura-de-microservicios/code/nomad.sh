@@ -1,0 +1,1 @@
+$ sudo nomad agent -dev-connect -config=nomad.d/

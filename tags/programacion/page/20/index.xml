@@ -5,12 +5,109 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/programacion/</id>
-    <updated>2022-09-08T11:00:00+02:00</updated>
+    <updated>2022-10-21T20:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2014/04/usar-grunt-para-ejecutar-teses-unitarios-de-codigo-javascript/</id>
+        <title>Usar Grunt para ejecutar teses unitarios de código JavaScript</title>
+        <updated>2015-11-10T19:00:00+01:00</updated>
+        <published>2014-04-04T16:43:23+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/04/usar-grunt-para-ejecutar-teses-unitarios-de-codigo-javascript/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes"> 
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/grunt.png" width="200" height="236" alt="Grunt" title="Grunt"  class=""></p>
+</div>
+<p>En la <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html">serie de artículos que escribí sobre javascript</a> hice un ejemplo más o menos complejo y parecido a lo que podría ser una aplicación real usando muchas de las herramientas que ahora se consideran una buena opción para desarrollar aplicaciones javascript como <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html">RequireJS</a>, <a href="http://www.genbetadev.com/desarrollo-web/patron-de-diseno-mvc-del-lado-cliente-con-backbonejs">Backbone</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html">Marionette</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.html">Jasmine y Sinon</a>. En el <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html">ejemplo de la lista de tareas con estas herramientas</a> hice unas cuantas pruebas unitarias para mostrar en un ejemplo como son y la forma de usar <a href="http://jasmine.github.io/">Jasmine</a>.</p>
+<p>Sin embargo, para ejecutar las pruebas unitarias se necesitaba un navegador y hacerlo de forma manual cuando quisiéramos comprobar el estado de las pruebas. Lo ideal tal y como se comenta en el libro <a href="https://amzn.to/2SVraLu">The Pragmatic programmer</a>, es que las pruebas unitarias se ejecuten de forma automatizada con la herramienta de construcción que usemos, esto evitará que se nos olvide ejecutarlas en cada cambio y así descubriremos los errores pronto, también podremos hacer que se ejecuten en un entorno de integración continua como podría ser <a href="http://jenkins-ci.org/">Jenkins</a>. En esta entrada mostraré como ejecutar esas pruebas unitarias de javascript con una tarea de la herramienta <a href="http://www.gradle.org/">Gradle</a> y usando una herramienta similar a Gradle pero para JavaScript llamada <a href="http://gruntjs.com/">Grunt</a>.</p>
+<p>Primeramente necesitaremos instalar node.js y el paquete de javascript grunt-cli con de forma global en el sistema:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pacman -S nodejs</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># npm install -g grunt-cli</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-1.sh</span>
+    </div>
+</div>
+<p>En caso de que tengamos pruebas unitarias con Jasmine como es el caso de este ejemplo deberemos instalar los siguientes paquetes en el directorio raíz del proyecto:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ npm install grunt-contrib-jasmine&#10;</span></span><span class="line"><span class="cl">$ npm install grunt-template-jasmine-requirejs&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-2.sh</span>
+    </div>
+</div>
+<p>La siguiente linea como se explica en <a href="https://www.npmjs.org/package/grunt-template-jasmine-requirejs">la documentación del paquete grunt-template-jasmine-requirejs</a> puede ser necesaria si en algún momento obtenemos el siguiente error:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ npm install grunt-contrib-jasmine@0.5.3 --save-dev&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-3.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">npm ERR! peerinvalid The package grunt-contrib-jasmine does not satisfy its siblings&#39; peerDependencies requirements!&#10;</span></span><span class="line"><span class="cl">npm ERR! peerinvalid Peer grunt-template-jasmine-requirejs@0.1.10 wants grunt-contrib-jasmine@~0.5.3&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>mensaje.txt</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ npm install&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-4.sh</span>
+    </div>
+</div>
+<p>Si usamos <a href="https://mochajs.org/">Mocha</a> como librería de pruebas unitarias probablemente disponemos de varios paquetes que podemos instalar de forma similar. Una vez instaladas estas herramientas debemos crear dos archivos necesarios para Grunt, que son <a href="https://github.com/picodotdev/elblogdepicodev/blob/master/MarionetteREST/package.json">package.json</a> y <a href="https://github.com/picodotdev/elblogdepicodev/blob/master/MarionetteREST/grunt.js">grunt.js</a>. El primero contiene la definición del paquete js para Grunt, quizá lo más destacable es que el nombre del paquete debe estar en minúsculas sino obtendremos un error parecido a «Error: Invalid name: &ldquo;MarionetteREST&rdquo; npm ERR! at ensureValidName». El archivo grunt.js es la descripción de las tareas de grunt que contiene un poco de configuración donde indicamos las especificaciones que contienen las pruebas unitarias, las dependencias necesarias para ejecutar las pruebas y las tareas que se definen. Con todo esto ya podemos ejecutar las pruebas con:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ grunt --gruntfile grunt.js jasmine:requirejs&#10;</span></span><span class="line"><span class="cl">$ ./gradlew jasmine&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-5.sh</span>
+    </div>
+</div>
+<p>Sin embargo, puede que deseemos ejecutarlas desde la herramienta de construcción que usemos, en mi caso con Gradle. Para añadir el soporte a Gradle de ejecutar las pruebas unitarias a su vez con Grunt debemos añadir la siguiente configuración a nuestro archivo build.gradle:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="n">task</span> <span class="nf">jasmine</span><span class="o">(</span><span class="nl">type:</span> <span class="n">GruntTask</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">gruntArgs</span> <span class="o">=</span> <span class="s2">&#34;jasmine:requirejs&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">GruntTask</span> <span class="kd">extends</span> <span class="n">Exec</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">	<span class="kd">private</span> <span class="n">String</span> <span class="n">gruntExecutable</span> <span class="o">=</span> <span class="n">Os</span><span class="o">.</span><span class="na">isFamily</span><span class="o">(</span><span class="n">Os</span><span class="o">.</span><span class="na">FAMILY_WINDOWS</span><span class="o">)</span> <span class="o">?</span> <span class="s2">&#34;grunt.cmd&#34;</span> <span class="o">:</span> <span class="s2">&#34;grunt&#34;</span>&#10;</span></span><span class="line"><span class="cl">	<span class="kd">private</span> <span class="n">String</span> <span class="n">switches</span> <span class="o">=</span> <span class="s2">&#34;--gruntfile grunt.js&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">	<span class="n">String</span> <span class="n">gruntArgs</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span> &#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="nf">GruntTask</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">		<span class="kd">super</span><span class="o">()</span>&#10;</span></span><span class="line"><span class="cl">		<span class="k">this</span><span class="o">.</span><span class="na">setExecutable</span><span class="o">(</span><span class="n">gruntExecutable</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">	<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setGruntArgs</span><span class="o">(</span><span class="n">String</span> <span class="n">gruntArgs</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">		<span class="k">this</span><span class="o">.</span><span class="na">args</span> <span class="o">=</span> <span class="s2">&#34;$switches $gruntArgs&#34;</span><span class="o">.</span><span class="na">trim</span><span class="o">().</span><span class="na">split</span><span class="o">(</span><span class="s2">&#34; &#34;</span><span class="o">)</span> <span class="k">as</span> <span class="n">List</span>&#10;</span></span><span class="line"><span class="cl">	<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<p>Veremos como salida el siguiente resultado en la terminal.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/04/usar-grunt-para-ejecutar-teses-unitarios-de-codigo-javascript/images/grunt-jasmine_hu79f9c7ae54435c10e67b3a5309b3972b_34504_2560x1440_fit_box_3.png" data-gallery="" title="Ejecutar teses Jasmine con Grunt"><img src="https://picodotdev.github.io/blog-bitix/2014/04/usar-grunt-para-ejecutar-teses-unitarios-de-codigo-javascript/images/grunt-jasmine_hu79f9c7ae54435c10e67b3a5309b3972b_34504_300x200_fit_box_3.png" width="300" height="147" alt="Ejecutar teses Jasmine con Grunt" title="Ejecutar teses Jasmine con Grunt"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Al hacer esta entrada de forma que las pruebas se ejecuten con Grunt he movido las plantillas de Mustache de lugar, antes estaban embebidas en el html en el ejemplo <a href="https://elblogdepicodev.blogspot.com.es/2013/04/ejemplo-lista-de-tareas-con-backbone.html">Backbone</a> y las he movido a dentro del javascript de la aplicación de la lista de tareas. Esto hace que para pasar las pruebas no tengamos una dependencia sobre un archivo html externo en el que buscar las plantillas, también así el javascript es más autónomo y está incluido en él todo lo que necesita.</p>
+<p>Aún tengo otra entrada preparada sobre javascript que es el mismo ejemplo de la lista de tareas pero en vez de usando las vistas de Backbone o Marionette usando <a href="https://reactjs.org/">React</a>. El <a href="https://github.com/picodotdev/elblogdepicodev/tree/master/MarionetteREST">código fuente completo de este ejemplo sobre pruebas unitarias y Marionette</a> está en <a href="https://github.com/picodotdev">mi repositorio de GitHub</a>.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html">Introducción y ejemplo de RequireJS</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-mustache.html">Introducción y ejemplo de Mustache</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/03/logging-en-javascript-con-log4javascript.html">Logging en JavaScript con log4javascript</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/capturar-errores-de-javascript.html">Capturar errores de JavaScript</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/optimizar-modulos-de-requirejs.html">Optimizar módulos de RequireJS y archivos JavaScript</a></li>
+<li><a href="http://elblogdepicodev.blogspot.com/2013/04/introduccion-y-ejemplo-de-backbonejs.html">Introducción y ejemplo de Backbone.js</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.html">Ejemplo de pruebas unitarias en javascript con Jasmine y Sinon</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html">Ejemplo lista de tareas con Marionette</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">Ejemplo lista de tareas con Backbone y React</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="software"/>
+            
+                <category term="programacion"/>
+            
+                <category term="javascript"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/</id>
         <title>Novedades y nuevas características de Java 8</title>
@@ -685,7 +782,7 @@ será dinámico pero no evitará fugas de memoria.</li>
 </figure>
 </div>
 <p>En las <a href="http://wildfly.org/news/2014/02/11/WildFly8-Final-Released/">notas de publicación de WildFly 8</a> pueden consultarse las numerosas e interesantes funcionalidades añadidas. También en el siguiente <a href="http://wildfly.org/news/2013/11/21/WildFly-8-Webinar/">vídeo</a> se explican muchos de los detalles que incorpora.</p>
-<p>En posteriores entradas y siguiendo la serie de entradas de seguridad (<a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.htmlindex-amp.html">I</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.htmlindex-amp.html">II</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.htmlindex-amp.html">III</a>, <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">IV</a>, <a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/">V</a> y <a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/">VI</a>) comentaré como crear certificados para usarlos con el protocolo seguro SSL y como configurar diferentes servidores web y de aplicaciones Java, entre ellos WildFly, para usar SSL y el protocolo HTTPS.</p>
+<p>En posteriores entradas y siguiendo la serie de entradas de seguridad (<a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">I</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">II</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">III</a>, <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">IV</a>, <a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/">V</a> y <a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/">VI</a>) comentaré como crear certificados para usarlos con el protocolo seguro SSL y como configurar diferentes servidores web y de aplicaciones Java, entre ellos WildFly, para usar SSL y el protocolo HTTPS.</p>
 <div class="reference">
     Referencia:<br>
 <ul>
@@ -846,9 +943,9 @@ será dinámico pero no evitará fugas de memoria.</li>
     Referencia:<br>
 <ul>
 <li><a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PatronNoOperation">Código fuente del ejemplo del patrón de diseño No Operation</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/patrones-de-diseno-en-la-programacion.htmlindex-amp.html">Patrones de diseño en la programación orientada a objetos</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/ejemplo-del-patron-de-diseno-command-y.htmlindex-amp.html">Ejemplo del patrón de diseño Command y programación concurrente en Java</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-del-patron-de-diseno-state.htmlindex-amp.html">Ejemplo del patrón de diseño State</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/patrones-de-diseno-en-la-programacion.html">Patrones de diseño en la programación orientada a objetos</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/ejemplo-del-patron-de-diseno-command-y.html">Ejemplo del patrón de diseño Command y programación concurrente en Java</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-del-patron-de-diseno-state.html">Ejemplo del patrón de diseño State</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/">Ejemplo del patrón de diseño Builder</a></li>
 </ul>
 </div>
