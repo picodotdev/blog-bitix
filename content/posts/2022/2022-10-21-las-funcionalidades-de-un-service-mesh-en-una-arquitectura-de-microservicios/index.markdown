@@ -26,7 +26,7 @@ Un monolito es más que suficiente en muchos casos y los microservicios solo son
 
 Uno de los mayores problemas de los microservicios es que el sistema es más complejo, formado por un conjunto mayor de piezas individuales que han de colaborar para proporcionar la funcionalidad global, han de tener en cuenta problemas que en las aplicaciones monolíticas no tienen, los microservicios son independientes pero se relacionan entre ellos a través de la red un medio de comunicación que es poco fiable comparado con la llamada a una función dentro de la misma computadora en un monolito.
 
-Para tener bajo control las complicaciones de los microservicios son necesarias herramientas que hagan del sistema más fácil de mantener y desarrollar. Una de las herramientas específicamente desarrollada para los microservicios es [Consul][consul] de [HashiCorp][hashicorp] que proporciona varias funcionalidades como descubrimiento de servicios y un almacén compartido de información. Otra de las funcionalidades que implementa y provee Consul es el concepto de *service mesh* que proporciona seguridad, observabilidad, resiliencia y control de tráfico.
+Para tener bajo control las complicaciones de los microservicios son necesarias herramientas que hagan del sistema más fácil de mantener y desarrollar. Una de las herramientas específicamente desarrollada para los microservicios es [Consul][consul] de [HashiCorp][hashicorp] que proporciona varias funcionalidades como descubrimiento de servicios y un almacén compartido de información. Otra de las funcionalidades que implementa y provee Consul es el concepto de _service mesh_ que proporciona seguridad, observabilidad, resiliencia y control de tráfico.
 
 {{< tableofcontents >}}
 
@@ -38,7 +38,7 @@ Los microservicios se comunican entre ellos formado una red distribuida, un _ser
 
 En gran medida la solución a los problemas de los microservicios en un _service mesh_ es implementada estableciendo un intermediario _proxy_ en la comunicación entre los servicios siendo en este intermediario denominado _sidecar proxy_ el que implementa la solución. Se denomina _sidecar proxy_ ya que al mismo tiempo que se despliega el servicio se despliega el intermediario adicionalmente para la comunicación entre los diferentes servicios que usa y los servicios en vez de comunicarse entre ellos directamente se comunican con el _sidecar proxy_.
 
-El _service mesh_ a través de los _proxy sidecar_ permiten delegar en la infraestructura y no en las aplicaciones varios aspectos que son necesarios resolver en un sistema basado en microservicios.
+El _service mesh_ a través de los _proxy sidecar_ permiten delegar en la infraestructura y no en las aplicaciones varios aspectos que son necesarios resolver en un sistema basado en microservicios y todo ello de forma trasnparente y sin tener que hacer modificaciones en los microservicios más a llá de configuración de puertos.
 
 #### Seguridad
 
