@@ -1,8 +1,9 @@
 ---
 pid: 658
 type: "post"
-title: "Funcionamiento y precauciones a seguir en los servicios de intercambio de productos de segunda mano como Wallapop"
-url: "/2022/10/funcionamiento-y-precauciones-a-seguir-en-los-servicios-de-intercambio-de-productos-de-segunda-mano-como-wallapop/"
+title: "Funcionamiento y precauciones a seguir en los servicios de compraventa de productos de segunda mano como Wallapop"
+url: "/2022/10/funcionamiento-y-precauciones-a-seguir-en-los-servicios-de-compraventa-de-productos-de-segunda-mano-como-wallapop/"
+alises: ["/2022/10/funcionamiento-y-precauciones-a-seguir-en-los-servicios-de-intercambio-de-productos-de-segunda-mano-como-wallapop/"]
 date: 2022-10-28T18:00:00+02:00
 language: "es"
 index: true
@@ -12,7 +13,7 @@ comments: true
 promoted: false
 imagePost: "logotype:wallapop.svg"
 tags: ["opinion", "planeta-codigo"]
-summary: "Los servicios de intercambio de productos de segunda mano son una forma de deshacerse de los productos que ya no se usan, sacarles una compensación económica y darles otra nueva vida a productos  que tal vez fuesen a acabar en la basura de otro modo. Incluso productos que no están en buen estado hay gente capaz de preguntar por ellos. Hasta ahora no he tenido ningún problema grave vendiendo productos de segunda mano que ya no necesito pero en algún momento si he tenido duda de una posible estafa aún tomando las precauciones aconsejadas al usar un servicio de intercambio de segunda mano, en productos de poco valor no es muy importante pero a partir de una cierta cantidad requiere más precaución y en todo momento tener cuidado de no caer en otro tipo de estafas en la que estos servicios se utilizan como una forma de ponerse en contacto con las víctimas."
+summary: "Los servicios de compraventa de productos de segunda mano son una forma de deshacerse de los productos que ya no se usan, sacarles una compensación económica y darles otra nueva vida a productos  que tal vez fuesen a acabar en la basura de otro modo. Incluso productos que no están en buen estado hay gente capaz de preguntar por ellos. Hasta ahora no he tenido ningún problema grave vendiendo productos de segunda mano que ya no necesito pero en algún momento si he tenido duda de una posible estafa aún tomando las precauciones aconsejadas al usar un servicio de intercambio de segunda mano, en productos de poco valor no es muy importante pero a partir de una cierta cantidad requiere más precaución y en todo momento tener cuidado de no caer en otro tipo de estafas en la que estos servicios se utilizan como una forma de ponerse en contacto con las víctimas."
 ---
 
 {{% post %}}
