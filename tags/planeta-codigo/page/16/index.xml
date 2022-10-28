@@ -5,12 +5,48 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-10-21T20:00:00+02:00</updated>
+    <updated>2022-10-28T18:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2019/03/varias-consideraciones-importantes-para-trabajar-con-importes-correctamente-tipo-de-datos-precision-y-guardado/</id>
+        <title>Varias consideraciones importantes para trabajar con importes correctamente (tipo de datos, precisión y guardado)</title>
+        <updated>2019-03-16T11:00:00+01:00</updated>
+        <published>2019-03-16T11:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/03/varias-consideraciones-importantes-para-trabajar-con-importes-correctamente-tipo-de-datos-precision-y-guardado/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Entre las cosas básicas a tener en cuenta en una aplicación que maneja fechas está en guardarlas en la zona horaria UTC que no sufre de cambios por zona horaria de verano o invierno, cambian más habitualmente de lo que parece e incluso por temas políticos.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/por-que-guardar-las-fechas-en-utc-en-la-base-de-datos/">Por qué guardar fechas con UTC en la base de datos</a></li>
+</ul>
+<p>Otra consideración distinta en aplicaciones que manejan importes es usar la clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html">BigDecimal</a> en vez de los tipos de datos de coma flotante <em>float</em> o <em>double</em> ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10. El asunto de este artículo es por que además de usar <em>BigDecimal</em> es aconsejable guardar los importes con al menos un dígito decimal más de la precisión necesaria para evitar problemas en los redondeos al aplicar operaciones matemáticas como multiplicación, división o porcentajes para algunos impuestos como el IVA, comisiones, descuentos o cambios de divisa.</p>
+<p>Sin utilizar una mayor precisión de 2 decimales puede ocurrir que algunos importes tengan una diferencia de céntimos. Por ejemplo, los precios se pueden introducir o bien el precio del producto antes de aplicar el IVA, comisiones o descuentos o puede introducirse en el precio que paga el usuario después de aplicar el IVA y en ambos casos al realizar el cálculo del precio con IVA y el cálculo del precio base ha de coincidir. Por ello la recomendación es utilizar al menos un decimal más de la precisión necesaria.</p>
+<p>Otras pautas importantes son guardar los importes redondeados que el usuario ve en la factura para evitar discrepancias hacia arriba de algún céntimo en la suma de los importes y aplicar el IVA, comisión o descuento no a cada producto individual sino a la suma de los importes de todos ellos.</p>
+<p>Este artículo sobre <a href="http://albertovilches.com/como-hacer-una-aplicacion-que-soporte-precios-con-decimales-sin-errores">Cómo hacer una aplicación que soporte precios con decimales sin errores</a> están muy bien explicadas con ejemplos varios de todos estos puntos imprescindibles al manejar importes, recomendable leerlo.</p>
+<p>Pero el tipo de datos <em>BigDecimal</em> tampoco es el mas apropiado con el que trabajar si la aplicación maneja múltiples divisas, en este caso es recomendable utilizar la librería <a href="https://javamoney.github.io/">Java Money</a> que además ofrece soporte para ratios de conversión los cuales pueden obtenerse de proveedores externos que los proporcionan actualizados a lo largo del tiempo.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2015/07/como-trabajar-con-importes-ratios-y-divisas-en-java/">Cómo trabajar con importes, ratios y divisas en Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2015/06/servicio-para-obtener-ratios-de-conversion-entre-divisas/">Servicio para obtener ratios de conversión entre divisas</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/12/internacionalizar-localizar-y-dar-formato-a-cadenas-numeros-importes-y-fechas-en-java/">Internacionalizar, localizar y dar formato a cadenas, números, importes y fechas en Java</a></li>
+</ul>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2019/03/componentes-en-el-cliente-con-web-components-usando-javascript-html-y-css/</id>
         <title>Componentes en el cliente con Web Components usando JavaScript, HTML y CSS</title>
@@ -1159,106 +1195,6 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/01/usar-expresiones-jsonpath-para-extraer-datos-de-un-json-en-java/">Usar expresiones JSONPath para extraer datos de un JSON en Java</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/02/convertir-un-json-a-objetos-y-objetos-a-json-con-json-b-gson-y-jackson-en-java/">Convertir un JSON a objetos y objetos a JSON con JSON-B, Gson y Jackson en Java</a></li>
 </ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2019/01/comandos-para-compilar-codigo-fuente-y-ejecutar-programas-java/</id>
-        <title>Comandos para compilar código fuente y ejecutar programas Java</title>
-        <updated>2020-10-24T22:30:00+01:00</updated>
-        <published>2019-01-13T14:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/01/comandos-para-compilar-codigo-fuente-y-ejecutar-programas-java/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>Aún recuerdo cuando empecé a programar con el lenguaje Java sobre el año 1997 que la compilación y ejecución del código la hacía manualmente con los comandos <a href="https://docs.oracle.com/en/java/javase/11/tools/javac.html">javac</a> <a href="https://docs.oracle.com/en/java/javase/11/tools/java.html">java</a> y <a href="https://docs.oracle.com/en/java/javase/11/tools/jar.html">jar</a> en un máquina Intel Pentium a 120 Mhz con tan solo 8 MiB, más tarde 32 MiB, con Windows 95 y Java 1.2, momento en el que ni siquiera había un IDE ni las herramientas de construcción modernas como <a href="https://maven.apache.org/">Maven</a> y <a href="https://gradle.org/">Gradle</a>, había que descargar manualmente las librerías de dependencias en forma de archivos <em>jar</em> que se requiriesen. Luego con JBuilder como IDE este se encargaba de realizar la compilación y ejecución y no hacía falta utilizar estos comandos directamente.</p>
-<p>Ahora con herramientas como Gradle además de compilar y ejecutar el programa incluso las dependencias son descargadas de forma automática de repositorios donde se ubican versionadas incluso de forma transitiva, descargando las dependencias de las dependencias.</p>
-<p>Usar estos dos comandos directamente ya no es necesario pero como curiosidad comentaré como es su uso ya que siguen formando parte del <a href="https://picodotdev.github.io/blog-bitix/2020/10/entorno-de-desarrollo-java-para-editar-compilar-y-ejecutar-programas/">entorno de desarrollo mínimo de Java para editar, compilar y ejecutar programas</a>. El comando <em>javac</em> sirve para compilar los archivos de código fuente, dado que los paquetes del código fuente de Java se corresponden con directorios en el sistema de archivos el código fuente se ha de ubicar de forma consistente entre la estructura de directorio y el código fuente. Suponiendo que que hay las siguientes clases que hacen uso de la librería <a href="https://logging.apache.org/log4j/2.x/">log4j2</a> y están ubicadas en el directorio <em>src/main/java</em> con la misma convención que utiliza Gradle el comando para realizar la compilación y copiar los recursos es el siguiente.</p>
-<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
-<h3 id="estructura-de-directorios-de-un-proyecto">Estructura de directorios de un proyecto</h3>
-<p>Las herramientas de construcción Maven y Gradle siguen una convención en la estructura de directorios y archivos para los proyectos Java. Esta convención proporciona que la estructura de directorios sea la misma en todos los proyectos Java y hace innecesaria una configuración específica para cada proyecto lo que hace a los proyectos más sencillos y fáciles de empezar. El código fuente se ubica en el directorio <em>src/main/java</em> y las clases compiladas se generan en el directorio <em>target</em> o <em>build</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ tree&#10;</span></span><span class="line"><span class="cl">.&#10;</span></span><span class="line"><span class="cl">├── jar.sh&#10;</span></span><span class="line"><span class="cl">├── javac.sh&#10;</span></span><span class="line"><span class="cl">├── java-jar.sh&#10;</span></span><span class="line"><span class="cl">├── java.sh&#10;</span></span><span class="line"><span class="cl">├── libraries&#10;</span></span><span class="line"><span class="cl">│   ├── log4j-api-2.11.1.jar&#10;</span></span><span class="line"><span class="cl">│   └── log4j-core-2.11.1.jar&#10;</span></span><span class="line"><span class="cl">├── src&#10;</span></span><span class="line"><span class="cl">│   └── main&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; ├── java&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; │   └── io&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; │  &nbsp;&nbsp;&nbsp;&nbsp; └── github&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; │  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── picodotdev&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; │  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── blogbitix&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; │  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── java8&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; │  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── helloworld&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; │  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── Main.java&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; ├── misc&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; │   └── MANIFEST.MF&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; └── resources&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── log4j2.xml&#10;</span></span><span class="line"><span class="cl">└── target&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;└── classes&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="m">14</span> directories, <span class="m">9</span> files</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>tree.sh</span>
-    </div>
-</div>
-<h3 id="el-programa-hola-mundo-en-java">El programa Hola Mundo en Java</h3>
-<p>El siguiente es el programa mínimo de Java similar al <em>Hola Mundo</em> por el que se suele empezar a programar en cualquier lenguaje de programación, al ejecutarse simplemente emite un mensaje en la consola. El método <em>main</em> es un método estático, con un ámbito de visibilidad público, está dentro de una clase, recibe un <em>array</em> de <em>strings</em> con los argumentos con los que ha invocado su ejecución y retorna <em>void</em>. El método <em>System.out.println()</em> recibe un <em>string</em> y lo emite en la salida estándar del programa.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.java8.helloworld</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.stream.Collectors</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.apache.logging.log4j.Logger</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.apache.logging.log4j.LogManager</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">LogManager</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">Main</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Arguments: {}&#34;</span><span class="o">,</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">args</span><span class="o">).</span><span class="na">stream</span><span class="o">().</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">joining</span><span class="o">(</span><span class="s">&#34;, &#34;</span><span class="o">)));</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Main.java</span>
-    </div>
-</div>
-<h3 id="comando-para-compilar-código-fuente-java">Comando para compilar código fuente Java</h3>
-<p>Para compilar el código fuente Java se usa el compilador de Java, el compilador de Java es un programa que a partir del código fuente genera archivos de <em>bytecode</em>, el programa y comando del compilador de Java es <em>javac</em>.</p>
-<p>Con el parámetro <em>-classpath</em> se indica la ubicación de las librerías o dependencias que requiriere el código fuente, con el parámetro <em>-sourcepath</em> el directorio raíz de los archivos de código fuente, el parámetro <em>-source</em> indica la versión del lenguaje del código fuente, <em>-target</em> la versión de la máquina virtual del <em>bytecode</em> que generará el compilador y con el parámetro <em>-d</em> el directorio donde generan los archivos <em>class</em> con el <em>bytecode</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl"><span class="cp"></span>javac -classpath <span class="s2">&#34;libraries/*&#34;</span> -sourcepath src/main/java -source 1.8 -target 1.8 -d target/classes src/main/java/io/github/picodotdev/blogbitix/java8/helloworld/Main.java&#10;</span></span><span class="line"><span class="cl">cp -r src/main/resources/* target/classes</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>javac.sh</span>
-    </div>
-</div>
-<h3 id="comando-para-ejecutar-un-programa-java">Comando para ejecutar un programa Java</h3>
-<p>Una vez generados los archivos de <em>bytecode</em> a partir de la compilación del código fuente su ejecución se realiza con el comando <em>java</em> donde hay que indicar las ubicaciones del los archivos <em>class</em> y las librerías <em>jar</em> necesarias que necesiten, la clase principal con el punto de entrada del programa que contenga un método <em>public static void main(String[] args)</em> y los parámetros del programa que se reciben en el parámetro <em>args</em> del método <em>main</em>. En la ejecución del programa la máquina virtual de Java interpreta el <em>bytecode</em> que consiste en traducir a código máquina ejecutable por el procesador del sistema anfitrión.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl"><span class="cp"></span>java -classpath <span class="s2">&#34;target/classes:libraries/*&#34;</span> io.github.picodotdev.blogbitix.java8.helloworld.Main <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>java.sh</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ./java.sh arg1 arg2 arg3&#10;</span></span><span class="line"><span class="cl">16:13:45.386 <span class="o">[</span>main<span class="o">]</span> INFO  io.github.picodotdev.blogbitix.java8.helloworld.Main Arguments: arg1, arg2, arg3&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>java-run.sh</span>
-    </div>
-</div>
-<h3 id="comando-para-crear-una-librería-java-ejecutable">Comando para crear una librería Java ejecutable</h3>
-<p>La distribución de los archivos <em>class</em> se suele realizar usando librerías <em>jar</em> y estas se construyen usando el comando <em>jar</em>. El <a href="https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html">archivo de manifiesto</a> es un descriptor en el que se puede indicar la clase de entrada sin tener que especificarla en el comando <em>java</em> haciendo los archivo <em>jar</em> similar a un ejecutable.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl"><span class="cp"></span>jar cvfm holamundojava8.jar src/main/misc/MANIFEST.MF -C target/classes .&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>jar.sh</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Main-Class: io.github.picodotdev.blogbitix.java8.helloworld.Main&#10;</span></span><span class="line"><span class="cl">Class-Path: libraries/log4j-api-2.11.1.jar libraries/log4j-core-2.11.1.jar&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>MANIFEST.MF</span>
-    </div>
-</div>
-<p>Y la ejecución de del programa contenido en el archivo <em>jar</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl"><span class="cp"></span>java -jar holamundojava8.jar <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>java-jar.sh</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ./java-jar.sh arg1 arg2 arg3&#10;</span></span><span class="line"><span class="cl">16:20:33.848 <span class="o">[</span>main<span class="o">]</span> INFO  io.github.picodotdev.blogbitix.java8.helloworld.Main Arguments: arg1, arg2, arg3&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>java-jar-run.sh</span>
-    </div>
-</div>
-<p>Así es la compilación y ejecución de código Java en Java 8 y anteriores, con la <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">introducción de la modularidad a partir de Java 9</a> esto cambia ya que el <em>classpath</em> queda obsoleto y es reemplazado por el equivalente con módulos <em>module-path</em>.</p>
-<div class="alert alert-secondary sourcecode">
-    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
-    <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoJava8">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub.</p>
 </div>
 ]]>
         </content>
