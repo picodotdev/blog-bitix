@@ -3,7 +3,7 @@ pid: 658
 type: "post"
 title: "Funcionamiento y precauciones a seguir en los servicios de compraventa de productos de segunda mano como Wallapop"
 url: "/2022/10/funcionamiento-y-precauciones-a-seguir-en-los-servicios-de-compraventa-de-productos-de-segunda-mano-como-wallapop/"
-alises: ["/2022/10/funcionamiento-y-precauciones-a-seguir-en-los-servicios-de-intercambio-de-productos-de-segunda-mano-como-wallapop/"]
+aliases: ["/2022/10/funcionamiento-y-precauciones-a-seguir-en-los-servicios-de-intercambio-de-productos-de-segunda-mano-como-wallapop/"]
 date: 2022-10-28T18:00:00+02:00
 language: "es"
 index: true
