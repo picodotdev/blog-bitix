@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="El comando curl es la herramienta de línea de comandos para realizar cualquier petición que requiera probar un endpoint de una API o web que utilice el protocolo HTTP, tiene opciones para cualquier petición que sea requerida. Aunque curl es muy versátil y completa es una herramienta de línea de comandos sin algunas otras funcionalidades que las aplicaciones con interfaz gráfica son capaces de proporcionar. Postman es una aplicación con interfaz gráfica que cubre parte de las funcionalidades de curl y la mayoría que habitualmente un desarrollador necesita para probar una API, permite guardar colecciones y compartirlas con otros miembros de equipo de desarrollo asi como entornos y otras funcionalidades. Postman es la herramienta más conocida en su categoría y tiene una licencia comercial en base al numero de miembros de equipo que no es barata. Finalmente, Hoppscotch es una herramienta alternativa y equivalente a Postman de código abierto que no tiene coste de licencia y ofrece la mayoría de funcionalidades importantes como para sustituir a Postman. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Realizar peticiones a APIs con herramientas de línea comandos e interfaz gráfica</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/11/realizar-peticiones-a-apis-con-herramientas-de-linea-comandos-e-interfaz-grafica/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2022/11/realizar-peticiones-a-apis-con-herramientas-de-linea-comandos-e-interfaz-grafica/" hreflang="es" title="Realizar peticiones a APIs con herramientas de línea comandos e interfaz gráfica">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Realizar peticiones a APIs con herramientas de línea comandos e interfaz gráfica">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2022/11/realizar-peticiones-a-apis-con-herramientas-de-linea-comandos-e-interfaz-grafica/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hoppscotch-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="El comando curl es la herramienta de línea de comandos para realizar cualquier petición que requiera probar un endpoint de una API o web que utilice el protocolo HTTP, tiene opciones para cualquier petición que sea requerida. Aunque curl es muy versátil y completa es una herramienta de línea de comandos sin algunas otras funcionalidades que las aplicaciones con interfaz gráfica son capaces de proporcionar. Postman es una aplicación con interfaz gráfica que cubre parte de las funcionalidades de curl y la mayoría que habitualmente un desarrollador necesita para probar una API, permite guardar colecciones y compartirlas con otros miembros de equipo de desarrollo asi como entornos y otras funcionalidades. Postman es la herramienta más conocida en su categoría y tiene una licencia comercial en base al numero de miembros de equipo que no es barata. Finalmente, Hoppscotch es una herramienta alternativa y equivalente a Postman de código abierto que no tiene coste de licencia y ofrece la mayoría de funcionalidades importantes como para sustituir a Postman. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hoppscotch-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Realizar peticiones a APIs con herramientas de línea comandos e interfaz gráfica">
+<meta name="twitter:description" content="El comando curl es la herramienta de línea de comandos para realizar cualquier petición que requiera probar un endpoint de una API o web que utilice el protocolo HTTP, tiene opciones para cualquier petición que sea requerida. Aunque curl es muy versátil y completa es una herramienta de línea de comandos sin algunas otras funcionalidades que las aplicaciones con interfaz gráfica son capaces de proporcionar. Postman es una aplicación con interfaz gráfica que cubre parte de las funcionalidades de curl y la mayoría que habitualmente un desarrollador necesita para probar una API, permite guardar colecciones y compartirlas con otros miembros de equipo de desarrollo asi como entornos y otras funcionalidades. Postman es la herramienta más conocida en su categoría y tiene una licencia comercial en base al numero de miembros de equipo que no es barata. Finalmente, Hoppscotch es una herramienta alternativa y equivalente a Postman de código abierto que no tiene coste de licencia y ofrece la mayoría de funcionalidades importantes como para sustituir a Postman. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2022/11/realizar-peticiones-a-apis-con-herramientas-de-linea-comandos-e-interfaz-grafica/"
+    },
+    "headline": "Realizar peticiones a APIs con herramientas de línea comandos e interfaz gráfica",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hoppscotch-750.png"
+        
+      },
+    "datePublished": "2022-11-03T23:00:00+02:00",
+    "dateModified": "2022-11-03T23:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "950",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "El comando curl es la herramienta de línea de comandos para realizar cualquier petición que requiera probar un endpoint de una API o web que utilice el protocolo HTTP, tiene opciones para cualquier petición que sea requerida. Aunque curl es muy versátil y completa es una herramienta de línea de comandos sin algunas otras funcionalidades que las aplicaciones con interfaz gráfica son capaces de proporcionar. Postman es una aplicación con interfaz gráfica que cubre parte de las funcionalidades de curl y la mayoría que habitualmente un desarrollador necesita para probar una API, permite guardar colecciones y compartirlas con otros miembros de equipo de desarrollo asi como entornos y otras funcionalidades. Postman es la herramienta más conocida en su categoría y tiene una licencia comercial en base al numero de miembros de equipo que no es barata. Finalmente, Hoppscotch es una herramienta alternativa y equivalente a Postman de código abierto que no tiene coste de licencia y ofrece la mayoría de funcionalidades importantes como para sustituir a Postman."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9R8XCRGSMY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:600px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="7450235768"></ins>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Realizar peticiones a APIs con herramientas de línea comandos e interfaz gráfica</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>03/11/2022</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+          <a href="/blog-bitix/tags/software/">software</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2022/11/realizar-peticiones-a-apis-con-herramientas-de-linea-comandos-e-interfaz-grafica/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2022/11/realizar-peticiones-a-apis-con-herramientas-de-linea-comandos-e-interfaz-grafica/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">El comando curl es la herramienta de línea de comandos para realizar cualquier petición que requiera probar un <em>endpoint</em> de una API o web que utilice el protocolo HTTP, tiene opciones para cualquier petición que sea requerida. Aunque curl es muy versátil y completa es una herramienta de línea de comandos sin algunas otras funcionalidades que las aplicaciones con interfaz gráfica son capaces de proporcionar. Postman es una aplicación con interfaz gráfica que cubre parte de las funcionalidades de curl y la mayoría que habitualmente un desarrollador necesita para probar una API, permite guardar colecciones y compartirlas con otros miembros de equipo de desarrollo asi como entornos y otras funcionalidades. Postman es la herramienta más conocida en su categoría y tiene una licencia comercial en base al numero de miembros de equipo que no es barata. Finalmente, Hoppscotch es una herramienta alternativa y equivalente a Postman de código abierto que no tiene coste de licencia y ofrece la mayoría de funcionalidades importantes como para sustituir a Postman.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:90px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="8238629013"></ins>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/hoppscotch.svg" width="200" height="200" alt="Hoppscotch" title="Hoppscotch" class="" loading="false"></p>
+</div>
+<p>Las aplicaciones monolíticas son más simples y más sencillas de programar, la llamada de un módulo a otro de una aplicación consiste simplemente en una invocación de un método, sin embargo tiene sus propios problemas.</p>
+<p>Las aplicaciones compuestas por múltiples microservicios, algunos de esos microservicios publica una API para que la invoquen otros microservicios. Los microservicios se comunican mediante llamadas remotas a través de la red, habitualmente utilizando el protocolo HTTP y REST aunque también es posible utilizar <a href="https://graphql.org/">GraphQL</a> y si se prefiere una API más RPC con <a href="https://grpc.io/">gRPC</a>.</p>
+<p>Para desarrollar y probar pero también para conocer los datos devueltos por un microservicio en alguna de sus <em>endpoints</em> que expone en su API es muy útil utilizar alguna de las siguientes herramientas para hacer peticiones directamente al servicio sin tener que usar la interfaz web que utiliza el usuario hasta llegar al punto donde se realiza la petición.</p>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#el-comando-curl">El comando curl</a></li>
+    <li><a href="#postman">Postman</a></li>
+    <li><a href="#hoppscotch-alternativa-a-postman">Hoppscotch, alternativa a Postman</a></li>
+  </ul>
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
+<h3 id="el-comando-curl">El comando curl</h3>
+<p>La herramienta de línea de comandos curl permite realizar cualquier operación y obtener cualquier detalle tanto de la petición como de la respuesta del servidor del protocolo HTTP. Permite ver los certificados cuando se utiliza el protocolo HTTPS, las cabeceras enviadas y de respuesta de la petición, así como realizar peticiones utilizando cualquier verbo del protocolo HTTP.</p>
+<p>El comando curl permite realizar una petición sin tener que implementar en código la llamada que se quiera probar. Cómo es un comando, no una aplicación, no permite guardar la colección de peticiones ni compartir con otros miembros del equipo de desarrollo una colección de peticiones ni mantener sincronizadas las colecciones y variables para los diferentes entornos de una aplicación.</p>
+<p>Es posible utilizar un repositorio de código fuente como <a href="https://git-scm.com/">Git</a> para guardar, compartir y mantener sincronizadas las colecciones peticiones pero el comando curl no ofrece ningún soporte para esto ni para utilizar variables y datos para diferentes entornos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ curl -v https://picodotdev.github.io/blog-bitix/&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">...&#10;</span></span><span class="line"><span class="cl">&gt; GET /blog-bitix/ HTTP/2&#10;</span></span><span class="line"><span class="cl">&gt; Host: picodotdev.github.io&#10;</span></span><span class="line"><span class="cl">&gt; user-agent: curl/7.86.0&#10;</span></span><span class="line"><span class="cl">&gt; accept: */*&#10;</span></span><span class="line"><span class="cl">&gt; &#10;</span></span><span class="line"><span class="cl">* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):&#10;</span></span><span class="line"><span class="cl">&lt; HTTP/2 200 &#10;</span></span><span class="line"><span class="cl">&lt; server: GitHub.com&#10;</span></span><span class="line"><span class="cl">&lt; content-type: text/html; charset=utf-8&#10;</span></span><span class="line"><span class="cl">&lt; permissions-policy: interest-cohort=()&#10;</span></span><span class="line"><span class="cl">&lt; last-modified: Sat, 29 Oct 2022 03:46:53 GMT&#10;</span></span><span class="line"><span class="cl">&lt; access-control-allow-origin: *&#10;</span></span><span class="line"><span class="cl">&lt; etag: &#34;635ca22d-88fd&#34;&#10;</span></span><span class="line"><span class="cl">&lt; expires: Thu, 03 Nov 2022 22:08:53 GMT&#10;</span></span><span class="line"><span class="cl">&lt; cache-control: max-age=600&#10;</span></span><span class="line"><span class="cl">&lt; x-proxy-cache: MISS&#10;</span></span><span class="line"><span class="cl">&lt; x-github-request-id: 8B94:479F:70D593:739994:6364399D&#10;</span></span><span class="line"><span class="cl">&lt; accept-ranges: bytes&#10;</span></span><span class="line"><span class="cl">&lt; date: Thu, 03 Nov 2022 21:58:53 GMT&#10;</span></span><span class="line"><span class="cl">&lt; via: 1.1 varnish&#10;</span></span><span class="line"><span class="cl">&lt; age: 0&#10;</span></span><span class="line"><span class="cl">&lt; x-served-by: cache-mad22067-MAD&#10;</span></span><span class="line"><span class="cl">&lt; x-cache: MISS&#10;</span></span><span class="line"><span class="cl">&lt; x-cache-hits: 0&#10;</span></span><span class="line"><span class="cl">&lt; x-timer: S1667512734.552326,VS0,VE132&#10;</span></span><span class="line"><span class="cl">&lt; vary: Accept-Encoding&#10;</span></span><span class="line"><span class="cl">&lt; x-fastly-request-id: 3c819d3e28b1a87d6c2f80b4606c3530bcc35fbe&#10;</span></span><span class="line"><span class="cl">&lt; content-length: 35069&#10;</span></span><span class="line"><span class="cl">&lt; &#10;</span></span><span class="line"><span class="cl">&lt;!DOCTYPE html&gt;&#10;</span></span><span class="line"><span class="cl">&lt;html lang=&#34;es&#34;&gt;&#10;</span></span><span class="line"><span class="cl">&lt;head&gt;&#10;</span></span><span class="line"><span class="cl">	&lt;meta name=&#34;generator&#34; content=&#34;Hugo 0.102.3&#34; /&gt;&#10;</span></span><span class="line"><span class="cl">  &lt;meta name=&#34;base&#34; href=&#34;/blog-bitix/&#34;&gt;&#10;</span></span><span class="line"><span class="cl">  &lt;meta http-equiv=&#34;content-type&#34; content=&#34;text/html; charset=utf-8&#34;&gt;&#10;</span></span><span class="line"><span class="cl">  &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34;&gt;&#10;</span></span><span class="line"><span class="cl">  &lt;meta name=&#34;author&#34; content=&#34;picodotdev&#34;&gt;&#10;</span></span><span class="line"><span class="cl">  &lt;meta name=&#34;keywords&#34; content=&#34;java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos&#34;&gt;&#10;</span></span><span class="line"><span class="cl">  &lt;meta name=&#34;description&#34; content=&#34;Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.&#34;&gt;&#10;</span></span><span class="line"><span class="cl">  &lt;meta name=&#34;theme-color&#34; content=&#34;#FFFFFF&#34;/&gt;&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  &lt;title&gt;Blog Bitix&lt;/title&gt;&#10;</span></span><span class="line"><span class="cl">...</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl.out</span>
+    </div>
+</div>
+<h3 id="postman">Postman</h3>
+<p>La aplicación con interfaz gráfica <a href="https://www.postman.com/">Postman</a> realiza en gran medida las mismas funciones que el comando curl pero con una aplicación de escritorio y con interfaz gráfica. Permite crear peticiones, añadir cabeceras en las peticiones y ver los resultados, cabeceras y código de estado devueltos en las peticiones HTTP.</p>
+<p>Adicionalmente ofrece otras funcionalidades como soporte para trabajar en equipos compuesto por varios desarrolladores para compartir colecciones y entornos y mantenerlos sincronizados entre los diferentes miembros del equipo. Otras funciones que tiene es la de poder ejecutar <em>scripts</em> de código antes de realizar la petición para calcular algún dato y enviarlo en la petición. Los entornos permiten crear colecciones de variables y cambiando de un entorno a otro utilizando en las peticiones diferentes valores, por ejemplo las credenciales de autorización para invocar un <em>endpoint</em>.</p>
+<p>Postman es una herramienta muy conocida y utilizada, ofrece una aplicación de escritorio para los diferentes sistemas operativos incluyendo <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> como una aplicación <a href="https://flatpak.org/">Flatpak</a>. Sin embargo, no es gratuita y en entornos profesionales requiere una licencia de uso que está en función del número de usuarios que la utilizan. Es cara y tiene un coste significativo para una herramienta aunque útil cuando se usa es una herramienta que se usa ocasionalmente.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/11/realizar-peticiones-a-apis-con-herramientas-de-linea-comandos-e-interfaz-grafica/images/postman_hu96ea76b13850717ac94d4c1d6cc66d76_133523_2560x1440_fit_box_3.png" data-gallery="" title="Postman"><img src="/blog-bitix/2022/11/realizar-peticiones-a-apis-con-herramientas-de-linea-comandos-e-interfaz-grafica/images/postman_hu96ea76b13850717ac94d4c1d6cc66d76_133523_650x450_fit_box_3.png" width="583" height="450" alt="Postman" title="Postman" class="" loading="lazy"></a></p>
+<figcaption>Postman</figcaption>
+</figure>
+</div>
+<h3 id="hoppscotch-alternativa-a-postman">Hoppscotch, alternativa a Postman</h3>
+<p>Alternativas a Postman hay varias algunas como complementos para el editor de texto y código <a href="https://code.visualstudio.com/">Visual Studio Code</a>. De las alternativas a Postman la más parecida y que tiene funcionalidades equivalentes y suficiente como para reemplazarla es <a href="https://hoppscotch.io/">Hoppscotch</a>.</p>
+<p>Al igual que Postman la aplicación Hoppscotch es una aplicación destinada a realizar peticiones a servicios utilizando HTTP y soportando otros protocolos como GraphQL, Websockets y MQTT. Una de las ventajas de Hoppscotch sobre Postman está en su licencia ya que es de código abierto y sin coste de licencia. La interfaz de usuario de Hoppscotch está muy cuidada y es similar a la de Postman permitiendo crear peticiones junto a sus cabeceras así como ver el resultado devuelto, cabeceras y código de estado.</p>
+<p>Entre las funcionalidades que ofrece Hoppscotch están:</p>
+<ul>
+<li>Posibilidad de trabajar en equipos y compartir colecciones</li>
+<li>Scripts previos a la petición</li>
+<li>Soporta múltiples métodos de autenticación</li>
+<li>Entornos y variables</li>
+<li>Posibilidad de mostrar el curl e importar el curl</li>
+<li>Importar desde OpenAPI y Postman, exportar como JSON</li>
+<li>Posibilidad de ejecutarlo desde su web, en local como un contenedor <a href="https://www.docker.com/">Docker</a> o paquete npm</li>
+</ul>
+<p>Aunque Hoppscotch tiene una licencia sin coste los desarrolladores ofrecen ser patrocinados en <a href="https://github.com/hoppscotch/hoppscotch">su repositorio de GitHub</a> para seguir realizando cambios e implementando mejoras. Si es útil y se utiliza en un entorno profesional se anima a realizar en la medida de lo posible una contribución económica a los desarrolladores.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/11/realizar-peticiones-a-apis-con-herramientas-de-linea-comandos-e-interfaz-grafica/images/hoppscotch_hu5acee9062fc6b8ef34cd56148770b1cc_170461_2560x1440_fit_box_3.png" data-gallery="" title="Hoppscotch"><img src="/blog-bitix/2022/11/realizar-peticiones-a-apis-con-herramientas-de-linea-comandos-e-interfaz-grafica/images/hoppscotch_hu5acee9062fc6b8ef34cd56148770b1cc_170461_650x450_fit_box_3.png" width="584" height="450" alt="Hoppscotch" title="Hoppscotch" class="" loading="lazy"></a></p>
+<figcaption>Hoppscotch</figcaption>
+</figure>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="326" height="125" alt="Microservicios con Spring Cloud, Consul, Nomad y Traefik" title="Microservicios con Spring Cloud, Consul, Nomad y Traefik" class="" loading="lazy">
+                <h3>Microservicios con Spring Cloud, Consul, Nomad y Traefik</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="326" height="125" alt="Generar credenciales de conexión a base de datos bajo demanda con Vault" title="Generar credenciales de conexión a base de datos bajo demanda con Vault" class="" loading="lazy">
+                <h3>Generar credenciales de conexión a base de datos bajo demanda con Vault</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="326" height="125" alt="Administrar secretos y proteger datos sensibles con Vault" title="Administrar secretos y proteger datos sensibles con Vault" class="" loading="lazy">
+                <h3>Administrar secretos y proteger datos sensibles con Vault</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="326" height="125" alt="Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator" title="Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator" class="" loading="lazy">
+                <h3>Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-vagrant.svg" width="326" height="125" alt="Crear de forma sencilla y rápida máquinas virtuales de VirtualBox con Vagrant" title="Crear de forma sencilla y rápida máquinas virtuales de VirtualBox con Vagrant" class="" loading="lazy">
+                <h3>Crear de forma sencilla y rápida máquinas virtuales de VirtualBox con Vagrant</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/04/servicios-con-persistencia-en-el-orquestador-de-microservicios-nomad/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="326" height="125" alt="Servicios con persistencia en el orquestador de microservicios Nomad" title="Servicios con persistencia en el orquestador de microservicios Nomad" class="" loading="lazy">
+                <h3>Servicios con persistencia en el orquestador de microservicios Nomad</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-659';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2022\/11\/realizar-peticiones-a-apis-con-herramientas-de-linea-comandos-e-interfaz-grafica\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2022 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

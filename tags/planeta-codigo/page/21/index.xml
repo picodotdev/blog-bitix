@@ -5,12 +5,80 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-10-28T18:00:00+02:00</updated>
+    <updated>2022-11-03T23:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2018/03/la-herramienta-jlink-para-generar-runtimes-de-java-incluyendo-exclusivamente-los-modulos-que-usa-una-aplicacion/</id>
+        <title>La herramienta jlink para generar runtimes de Java incluyendo exclusivamente los módulos que usa una aplicación</title>
+        <updated>2018-03-24T23:30:00+01:00</updated>
+        <published>2018-03-24T23:30:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/03/la-herramienta-jlink-para-generar-runtimes-de-java-incluyendo-exclusivamente-los-modulos-que-usa-una-aplicacion/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>En versiones anteriores de Java 9 había un único <em>runtime</em> para ejecutar cualquier aplicación que debía ser instalado previamente para la ejecución de la aplicación. Aunque la aplicación no usase <em>Swing</em> por ser una aplicación web o cosas como <a href="https://es.wikipedia.org/wiki/CORBA">CORBA</a> ya en desuso aún estaban disponibles en el <em>runtime</em> por motivos de no romper la compatibilidad con versiones anteriores.</p>
+<p>Esto hacía que las aplicaciones no fuesen lo más eficiente posible y aumenta el tamaño necesario ahora de las imágenes de contenedores como <a href="https://www.docker.com/">Docker</a> estas tuviesen un tamaño mayor del imprescindible, además de hacer que el tiempo de arranque sea algo mayor e incluir clases que aumentan la superficie de ataque ante un fallo de seguridad. Entre las <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">novedades de Java 8</a> se añadieron los <a href="https://www.oracle.com/technetwork/java/embedded/resources/tech/compact-profiles-overview-2157132.html"><em>compact profiles</em></a> que eran subconjuntos más reducidos del <em>runtime</em> pero eran conjuntos prefijados, las aplicaciones debían usar el mínimo que necesitasen si querían usar alguno. La solución de Java 8 fue una solución intermedia, <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">los módulos de Java 9</a> han sido la solución completa.</p>
+<p>Con la incorporación de la modularidad a Java 9 se posibilita generar <em>runtimes</em> con exclusivamente los módulos que necesite la aplicación, si la aplicación solo necesita el módulo <em>java.base</em> por ser muy sencilla se puede generar un <em>runtime</em> con solo este módulo. Los módulos son una mejora conveniente para la tendencia en el desarrollo de aplicaciones en forma de microservicios y ejecución con contenedores. La herramienta que posibilita generar <em>runtimes</em> personalizados con <a href="https://docs.oracle.com/javase/9/tools/jlink.htm">jlink</a> que pueden ser ejecutados sin instalar previamente ningún JDK en el sistema y posibilitando que cada aplicación pueda usar su propio <em>runtime</em>.</p>
+<p>Usando como ejemplo el caso de la <a href="https://picodotdev.github.io/blog-bitix/2017/10/ejemplo-con-el-cliente-http-2-de-java/">aplicación con el cliente de HTTP/2</a> que tiene como dependencias únicamente el módulo <em>jdk.incubator.httpclient</em> de forma explícita y <em>java.base</em> de forma implícita en su definición de módulo la forma de generar un runtime específico para esta aplicación con <em>jlink</em> es la siguiente que utiliza el archivo con las dependencias de módulos declarados en el archivo <em>module-info.java</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">module</span> <span class="n">blogbitix</span><span class="o">.</span><span class="na">http</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">requires</span> <span class="n">jdk</span><span class="o">.</span><span class="na">incubator</span><span class="o">.</span><span class="na">httpclient</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>module-info.java</span>
+    </div>
+</div>
+<p>Usando la linea de comandos o con una tarea de <a href="https://gradle.org/">Gradle</a> se genera el <em>runtime</em> para la aplicación con <em>jlink</em>. El módulo ha de compilarse previamente. Con la opción <em>--launcher</em> se crea un <em>script</em> para lanzar la aplicación con la clase que contiene el método <em>main</em> indicada como punto de entrada, la opción <em>--output</em> indica donde se genera el contenido del <em>runtime</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ jlink --module-path build/classes/java/main --add-modules <span class="s2">&#34;blogbitix.http&#34;</span> --launcher <span class="s2">&#34;run=blogbitix.http/io.github.picodotdev.blogbitix.http.Main&#34;</span> --output build/distributions/jlink&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ ./gradew jlink</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>jlink.sh</span>
+    </div>
+</div>
+<p>El espacio total del <em>runtime</em> en este caso de es de solo 38 MiB. Comparados con los casi 200 MiB que ocupa el <a href="https://openjdk.java.net/">OpenJDK</a> comprimido que incluye todos los módulos, aproximadamente 500 MiB instalado y alrededor de entre 600 y 900 MiB dependiendo de la imagen base de Docker que se use se aprecia que el ahorro de espacio es considerable lo que redunda en tiempos de transferencia por red menores y un inicio más rápido de las aplicaciones.</p>
+<p>El contenido del <em>runtime</em> y de su estructura de directorios es la indicada a continuación. Listando los módulos incluidos en este <em>runtime</em> en vez de todos los del JDK se observa que solo están incluidos los necesarios por la aplicación.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span><span class="lnt">59&#10;</span><span class="lnt">60&#10;</span><span class="lnt">61&#10;</span><span class="lnt">62&#10;</span><span class="lnt">63&#10;</span><span class="lnt">64&#10;</span><span class="lnt">65&#10;</span><span class="lnt">66&#10;</span><span class="lnt">67&#10;</span><span class="lnt">68&#10;</span><span class="lnt">69&#10;</span><span class="lnt">70&#10;</span><span class="lnt">71&#10;</span><span class="lnt">72&#10;</span><span class="lnt">73&#10;</span><span class="lnt">74&#10;</span><span class="lnt">75&#10;</span><span class="lnt">76&#10;</span><span class="lnt">77&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ du -sh build/distributions/jlink&#10;</span></span><span class="line"><span class="cl"> 38M	build/distributions/jlink&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ build/distributions/jlink/bin/java --list-modules&#10;</span></span><span class="line"><span class="cl">blogbitix.http&#10;</span></span><span class="line"><span class="cl">java.base@10&#10;</span></span><span class="line"><span class="cl">jdk.incubator.httpclient@10&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ tree build/distributions/jlink&#10;</span></span><span class="line"><span class="cl">build/distributions/jlink&#10;</span></span><span class="line"><span class="cl">├── bin&#10;</span></span><span class="line"><span class="cl">│   ├── java&#10;</span></span><span class="line"><span class="cl">│   ├── keytool&#10;</span></span><span class="line"><span class="cl">│   └── run&#10;</span></span><span class="line"><span class="cl">├── conf&#10;</span></span><span class="line"><span class="cl">│   ├── net.properties&#10;</span></span><span class="line"><span class="cl">│   └── security&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; ├── java.policy&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; ├── java.security&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; └── policy&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ├── README.txt&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ├── limited&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; │   ├── default_US_export.policy&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; │   ├── default_local.policy&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; │   └── exempt_local.policy&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── unlimited&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ├── default_US_export.policy&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── default_local.policy&#10;</span></span><span class="line"><span class="cl">├── include&#10;</span></span><span class="line"><span class="cl">│   ├── classfile_constants.h&#10;</span></span><span class="line"><span class="cl">│   ├── darwin&#10;</span></span><span class="line"><span class="cl">│   │   └── jni_md.h&#10;</span></span><span class="line"><span class="cl">│   ├── jni.h&#10;</span></span><span class="line"><span class="cl">│   ├── jvmti.h&#10;</span></span><span class="line"><span class="cl">│   └── jvmticmlr.h&#10;</span></span><span class="line"><span class="cl">├── legal&#10;</span></span><span class="line"><span class="cl">│   ├── java.base&#10;</span></span><span class="line"><span class="cl">│   │   ├── COPYRIGHT&#10;</span></span><span class="line"><span class="cl">│   │   ├── LICENSE&#10;</span></span><span class="line"><span class="cl">│   │   ├── aes.md&#10;</span></span><span class="line"><span class="cl">│   │   ├── asm.md&#10;</span></span><span class="line"><span class="cl">│   │   ├── cldr.md&#10;</span></span><span class="line"><span class="cl">│   │   ├── icu.md&#10;</span></span><span class="line"><span class="cl">│   │   ├── public_suffix.md&#10;</span></span><span class="line"><span class="cl">│   │   └── zlib.md&#10;</span></span><span class="line"><span class="cl">│   └── jdk.incubator.httpclient&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; ├── COPYRIGHT -&gt; ../java.base/COPYRIGHT&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; └── LICENSE -&gt; ../java.base/LICENSE&#10;</span></span><span class="line"><span class="cl">├── lib&#10;</span></span><span class="line"><span class="cl">│   ├── classlist&#10;</span></span><span class="line"><span class="cl">│   ├── jli&#10;</span></span><span class="line"><span class="cl">│   │   └── libjli.dylib&#10;</span></span><span class="line"><span class="cl">│   ├── jrt-fs.jar&#10;</span></span><span class="line"><span class="cl">│   ├── jspawnhelper&#10;</span></span><span class="line"><span class="cl">│   ├── jvm.cfg&#10;</span></span><span class="line"><span class="cl">│   ├── libjava.dylib&#10;</span></span><span class="line"><span class="cl">│   ├── libjimage.dylib&#10;</span></span><span class="line"><span class="cl">│   ├── libjsig.dylib&#10;</span></span><span class="line"><span class="cl">│   ├── libnet.dylib&#10;</span></span><span class="line"><span class="cl">│   ├── libnio.dylib&#10;</span></span><span class="line"><span class="cl">│   ├── libosxsecurity.dylib&#10;</span></span><span class="line"><span class="cl">│   ├── libverify.dylib&#10;</span></span><span class="line"><span class="cl">│   ├── libzip.dylib&#10;</span></span><span class="line"><span class="cl">│   ├── modules&#10;</span></span><span class="line"><span class="cl">│   ├── security&#10;</span></span><span class="line"><span class="cl">│   │   ├── blacklist&#10;</span></span><span class="line"><span class="cl">│   │   ├── blacklisted.certs&#10;</span></span><span class="line"><span class="cl">│   │   ├── cacerts&#10;</span></span><span class="line"><span class="cl">│   │   ├── default.policy&#10;</span></span><span class="line"><span class="cl">│   │   ├── public_suffix_list.dat&#10;</span></span><span class="line"><span class="cl">│   │   └── trusted.libraries&#10;</span></span><span class="line"><span class="cl">│   ├── server&#10;</span></span><span class="line"><span class="cl">│   │   ├── Xusage.txt&#10;</span></span><span class="line"><span class="cl">│   │   ├── libjsig.dylib&#10;</span></span><span class="line"><span class="cl">│   │   └── libjvm.dylib&#10;</span></span><span class="line"><span class="cl">│   └── tzdb.dat&#10;</span></span><span class="line"><span class="cl">└── release</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>info.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">&#39;java&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">&#39;application&#39;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">ext</span><span class="o">.</span><span class="na">moduleName</span> <span class="o">=</span> <span class="s1">&#39;blogbitix.http&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">mainClassName</span> <span class="o">=</span> <span class="s2">&#34;$moduleName/io.github.picodotdev.blogbitix.http.Main&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">println</span> <span class="n">sourceSets</span><span class="o">.</span><span class="na">main</span><span class="o">.</span><span class="na">runtimeClasspath</span><span class="o">.</span><span class="na">asPath</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">repositories</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">jcenter</span><span class="o">()</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">dependencies</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">compileJava</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">inputs</span><span class="o">.</span><span class="na">property</span><span class="o">(</span><span class="s2">&#34;moduleName&#34;</span><span class="o">,</span> <span class="n">moduleName</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">doFirst</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">options</span><span class="o">.</span><span class="na">compilerArgs</span> <span class="o">=</span> <span class="o">[</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s1">&#39;--module-path&#39;</span><span class="o">,</span> <span class="n">classpath</span><span class="o">.</span><span class="na">asPath</span><span class="o">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">classpath</span> <span class="o">=</span> <span class="n">files</span><span class="o">()</span>  &#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">run</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">inputs</span><span class="o">.</span><span class="na">property</span><span class="o">(</span><span class="s2">&#34;moduleName&#34;</span><span class="o">,</span> <span class="n">moduleName</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">doFirst</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">jvmArgs</span> <span class="o">=</span> <span class="o">[</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s1">&#39;--module-path&#39;</span><span class="o">,</span> <span class="n">classpath</span><span class="o">.</span><span class="na">asPath</span><span class="o">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s1">&#39;--module&#39;</span><span class="o">,</span> <span class="n">mainClassName</span> &#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">classpath</span> <span class="o">=</span> <span class="n">files</span><span class="o">()</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">task</span> <span class="nf">clearJlink</span><span class="o">(</span><span class="nl">type:</span> <span class="n">Delete</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">  <span class="n">delete</span> <span class="s2">&#34;${distsDir}/jlink&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">task</span> <span class="nf">jlink</span><span class="o">(</span><span class="nl">dependsOn:</span> <span class="o">[</span><span class="n">clearJlink</span><span class="o">,</span> <span class="n">compileJava</span><span class="o">],</span> <span class="nl">type:</span> <span class="n">Exec</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">commandLine</span> <span class="s2">&#34;jlink&#34;</span><span class="o">,</span> <span class="s2">&#34;--module-path&#34;</span><span class="o">,</span> <span class="n">sourceSets</span><span class="o">.</span><span class="na">main</span><span class="o">.</span><span class="na">runtimeClasspath</span><span class="o">.</span><span class="na">asPath</span><span class="o">,</span> <span class="s2">&#34;--add-modules&#34;</span><span class="o">,</span> <span class="n">moduleName</span><span class="o">,</span> <span class="s2">&#34;--launcher&#34;</span><span class="o">,</span> <span class="s2">&#34;run=${mainClassName}&#34;</span><span class="o">,</span> <span class="s2">&#34;--output&#34;</span><span class="o">,</span> <span class="s2">&#34;${distsDir}/jlink&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<p>Una vez generado el <em>runtime</em> su uso es el siguiente:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ build/distributions/jlink/bin/run&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>run.sh</span>
+    </div>
+</div>
+<p>En el vídeo <a href="https://www.oracle.com/java/java9-screencasts.html?bcid=5582437011001&amp;playerType=single-social&amp;size=events">Java in a World of Containers</a> se comenta otra serie de características y opciones incluidas en Java para hacer de esta plataforma más consciente de las condiciones de ejecución propias de los contenedores.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaHttp2">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradew jlink</code></p>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2018/03/novedades-de-java-10/</id>
         <title>Novedades de Java 10</title>
@@ -1537,153 +1605,6 @@
                 <category term="seguridad"/>
             
                 <category term="software"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/</id>
-        <title>Artículo #5 de Yo apoyo al software libre</title>
-        <updated>2018-01-03T13:00:00+01:00</updated>
-        <published>2018-01-03T10:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<p>La última donación que hice a algún proyecto de software libre fue en mayo del 2017, desde entonces he recibido algunos ingresos por la publicidad AdSense que incluyó en el blog. Los ingresos por AdSense están empezando a ser bastantes constantes de al menos 1 € al día con lo que al mes se convierten en 30 €, un més bueno en 50 €, con lo que cada dos o tres meses recibo un ingreso.</p>
-<p>También hace unos meses escribí un artículo patrocinado con enlaces de afiliación sobre varios <a href="https://picodotdev.github.io/blog-bitix/2017/02/cursos-de-formacion-de-keepcoding/">cursos de formación de KeepCoding</a>, la mayoría de usuarios se registran en los cursos gratuitos y ya cuando había perdido las esperanzas de que alguien comprase algún curso pagando un par de usuarios se registraron usando mis códigos de afiliado.</p>
-<p>En esta ocasión los proyectos a los que he hecho una donación han sido <a href="https://lineageos.org/">LineageOS</a> y <a href="https://www.replicant.us/">Replicant</a>, dos distribuciones de <a href="https://www.android.com/">Android</a> que permiten dar una segunda o tercera vida a móviles que desde hace tiempo se han quedado sin soporte oficial del fabricante ni de Google ni parches de seguridad con lo que ello supone en estos dispositivos que se están convirtiendo en cada vez más imprescindibles. Esto genera dispositivos no actualizados, tarde o temprano potencialmente inseguros y la conocida fragmentación en la plataforma Android.</p>
-<div class="media">
-<figure>
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/lineageos.svg" width="200" height="200" alt="Replicant" title="Replicant"  class="lozad ">
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/replicant.svg" width="200" height="200"  class="lozad "></p>
-</figure>
-</div>
-<p>Muchos móviles siguen siendo perfectamente útiles aún pasados más de dos años. En mi móvil, un Samsung Galaxy S3 (i9300) del año 2012 con 4 núcleos y un solo <em>giga</em> de memoria RAM con no tantos años de vida pero que ya podría considerarse obsoleto debido al gran avance en capacidades que experimentado los <em>smartphones</em> usaba la extinta CyanogenMod en su versión 10.2 que incorporaba Android 4.4 (KitKat) cuando de fábrica tenía 4.1 o 4.2 (Jelly Bean). En alguna ocasión he pensado en actualizarlo a alguna versión más reciente de Android aunque por el poco uso que hago del móvil ya me era suficiente con la versión 4.4 de Android, también porque me daba un poco de pereza hacer la actualización aún no siendo demasiado complicado y no tardando mucho sabiendo lo que hay que hacer. En estas dos distribuciones de Android el Samsung Galaxy S3 está soportado.</p>
-<h3 id="lineageos">LineageOS</h3>
-<p>Se trata de la versión heredera de CyanogenMod, soporta una gran cantidad de terminales que con el paso del tiempo va aumentando aunque hasta el momento no he visto que se haya lanzado una versión estable de alguno de ellos, en cualquier caso en el estado actual funcionará bastante bien en cualquiera de los terminales.</p>
-<p>Finalmente, ayer precisamente me decidí a instalar LineageOS 14.1 que incorpora una de las últimas versiones de Android, 7.1, y mucho más reciente que la que tenía, no lo había hecho hasta el momento por eso de no tener una versión estable y no estaba seguro de que tal funcionaría en un móvil tan «antiguo». Después de haberlo hecho he comprobado que funciona de forma perfectamente fluida aún con la poca cantidad de RAM que tiene para los tiempos actuales en los que los móviles ya incorporan entre 2 y 4 GiB, incluso mejor ya que funciona la cámara frontal que antes con CyanogenMod no.</p>
-<ul>
-<li><a href="https://wiki.lineageos.org/devices/i9300/install">Guía de instalación LineageOS para Samsung Galaxy S3</a></li>
-<li><a href="https://www.youtube.com/watch?v=icVFJdBL60w">Vídeo de instalación LineageOS</a></li>
-<li><a href="https://download.lineageos.org/">Dispositivos soportados</a></li>
-</ul>
-<p>Se ofrece de forma gratuita pero los servidores que son necesarios para el desarrollo y el mantenimiento de los sitios web tienen unos costes, este es el detalle de los <a href="https://wiki.lineageos.org/costs/">costes de LineageOS</a>.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/cyanogenmod-10.2_huf3a84ec940d0e4a07e9ca5cf0a2732a5_86598_2560x1440_fit_q90_box.jpg" data-gallery="" title="CynogenMod 10.2"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/cyanogenmod-10.2_huf3a84ec940d0e4a07e9ca5cf0a2732a5_86598_300x200_fit_q90_box.jpg" width="113" height="200" alt="CynogenMod 10.2" title="CynogenMod 10.2"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/lineageos-14.1_hu5d1bf970dbec1af605def033c54a0ed9_87661_2560x1440_fit_q90_box.jpg" data-gallery="" title="LineageOS 14.1"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/lineageos-14.1_hu5d1bf970dbec1af605def033c54a0ed9_87661_300x200_fit_q90_box.jpg" width="113" height="200" alt="LineageOS 14.1" title="LineageOS 14.1"  class="lozad "></a></p>
-<figcaption>CynogenMod 10.2 y LineageOS 14.1</figcaption>
-</figure>
-</div>
-<h3 id="replicant">Replicant</h3>
-<p>Es la distribución de Android recomendada por la <a href="https://www.fsf.org/">FSF</a>. Uno de sus objetivos es los teléfonos móviles respeten la privacidad de los usuarios no realizando seguimiento, posicionamiento y no compartiendo datos e incluyendo en el sistema operativo solo elementos libres. Y es que prácticamente todas las aplicaciones quieren acceder a los contactos, fotos, mensajes SMS, llamadas y otros varios permisos que las aplicaciones solicitan y hay que conceder. Esta distribución de Android es para aquellos le dan gran importancia a la seguridad, privacidad y libertad en estos dispositivos que podrían calificarse de seguimiento y vigilancia. Y por ello esta distribución es importante.</p>
-<p>Está basado en LineageOS 13 y Android 6 quitándole los componentes que no mantienen la privacidad y proporcionándole sustitutos. No soporta tantos dispositivos como LineageOS aunque están varios que fueron y son muy populares.</p>
-<ul>
-<li><a href="https://www.replicant.us/supported-devices.php">Dispositivos soportados</a></li>
-<li><a href="https://redmine.replicant.us/projects/replicant/wiki/ReplicantStatus">Estado de soporte en los dispositivos</a></li>
-<li><a href="https://www.replicant.us/freedom-privacy-security-issues.php">Motivaciones del uso de Replicant, Freedom and privacy/security issues</a></li>
-<li><a href="https://redmine.replicant.us/projects/replicant/wiki#Replicant-installation">Guías de instalación</a></li>
-</ul>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/replicant-6_huf9e3f77883367cad80fcc02422b90b7a_435737_2560x1440_fit_box_3.png" data-gallery="" title="Replicant 6"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/replicant-6_huf9e3f77883367cad80fcc02422b90b7a_435737_300x200_fit_box_3.png" width="120" height="200" alt="Replicant 6" title="Replicant 6"  class="lozad "></a></p>
-<figcaption>Replicant 6</figcaption>
-</figure>
-</div>
-<h3 id="comprobantes-de-las-donaciones">Comprobantes de las donaciones</h3>
-<p>En ambos casos las donaciones que he hecho han sido de 15 €.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/donacion-lineageos_hu363323e9a26d548b6782c5dc77f42687_59453_2560x1440_fit_box_3.png" data-gallery="" title="Donación LineageOS"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/donacion-lineageos_hu363323e9a26d548b6782c5dc77f42687_59453_650x450_fit_box_3.png" width="318" height="450" alt="Donación LineageOS" title="Donación LineageOS"  class="lozad "></a></p>
-<figcaption>Donación LineageOS</figcaption>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/donacion-replicant_hua90b6e38f84426edcfd021dbfc02199c_107406_2560x1440_fit_box_3.png" data-gallery="" title="Donación Replicant"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/donacion-replicant_hua90b6e38f84426edcfd021dbfc02199c_107406_650x450_fit_box_3.png" width="291" height="450" alt="Donación Replicant" title="Donación Replicant"  class="lozad "></a></p>
-<figcaption>Donación Replicant</figcaption>
-</figure>
-</div>
-<table class="table">
-    <thead>
-        <tr class="thead-dark">
-            <th colspan="4">Donaciones que he realizado hasta la última fecha</th>
-        </tr>
-        <tr class="thead-light">
-            <th>#</th>
-            <th>Fecha</th>
-            <th>Proyecto</th>
-            <th>Donación</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>2015/12</td>
-            <td>Free Software Foundation Europe (FSFE)</td>
-            <td>40 €</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>2016/09</td>
-            <td>Wikipedia, Mozilla/Firefox</td>
-            <td>10 €, 10 €</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>2017/01</td>
-            <td>elementaryOS, Libre Office, Arch Linux ARM</td>
-            <td>10 €, 10 €, 10 €</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>2017/05</td>
-            <td>GNOME, VideoLAN (VLC), Arch Linux</td>
-            <td>15,31 €, 10 €, 0,31 €</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>2018/01</td>
-            <td>LineageOS, Replicant</td>
-            <td>15 €, 15 €</td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>2018/12</td>
-            <td>Wine</td>
-            <td>$20</td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>2019/12</td>
-            <td>Calibre</td>
-            <td>$10</td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>2020/12</td>
-            <td>Phoronix, Mozilla/Firefox, GnuPG</td>
-            <td>$12, 10 €, 10 €</td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>2022/01</td>
-            <td>KeePassXC</td>
-            <td>15 €</td>
-        </tr>
-        <tr>
-            <td colspan="3">Total</td>
-            <td>180 €, $42</td>
-        </tr>
-    </tbody>
-</table>
-]]>
-        </content>
-        
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="software-libre"/>
             
         
     </entry>

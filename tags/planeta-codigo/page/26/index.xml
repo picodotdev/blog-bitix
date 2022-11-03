@@ -5,12 +5,91 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-10-28T18:00:00+02:00</updated>
+    <updated>2022-11-03T23:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/</id>
+        <title>Escalar y actualizar un servicio de un cluster de Docker Swarm</title>
+        <updated>2017-04-16T13:00:00+02:00</updated>
+        <published>2017-04-09T11:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Ya tenemos un <em>cluster</em> formado por varios nodos con algún servicio ejecutándose en el <em>cluster</em> de Docker Swarm. Si surge la necesidad los servicios del <em>cluster</em> se pueden escalar cambiando el número de instancias de contenedores que forma el servicio para atender las necesidades computacionales o para ofrecer el servicio a más usuarios. Por otro lado, pasado un tiempo muy posiblemente se publicará una nueva imagen de los contenedores, el servicio se puede actualizar para que los contenedores utilicen esa nueva imagen.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
+</div>
+<p>Una vez que ya hemos <a href="https://picodotdev.github.io/blog-bitix/2017/03/introduccion-y-ejemplo-de-cluster-de-contenedores-con-docker-swarm/">creado un <em>cluster</em> de nodos con Docker Swarm</a> y hemos desplegado algunos servicios ya sea directamente mediante comandos para crear servicios o mediante un <a href="https://picodotdev.github.io/blog-bitix/2017/04/iniciar-un-stack-de-servicios-en-un-cluster-de-docker-swarm/"><em>stack</em> con un archivo similar a un Docker Compose</a> al cabo de un tiempo necesitaremos hacer otras operaciones. Dos de esas operaciónes básicas son escalar hacia arriba o hacia abajo un servicio cambiando el número de instancias de contenedores desplegadas o actualizar la imagen que utilizan los servicios por otra diferente posiblemente más nueva.</p>
+<p>En la documentación de <a href="https://www.docker.com/">Docker</a> están detallados y comentados los <a href="https://docs.docker.com/engine/swarm/swarm-tutorial/scale-service/">comandos para escalar un servicio</a>. Por ejemplo, en el <em>cluster</em> de ejemplo formado por tres nodos, uno con el rol de <em>manager</em> y otros dos como <em>worker</em>, ejecutándose en <a href="https://www.virtualbox.org/">VirtualBox</a> y desplegando un servicio para el servidor <a href="https://nginx.org/">nginx</a> con inicialmente una réplica o instancia podemos escalar el servicio para que se cree alguna instancia o contenedor más del servicio con el siguiente comando <code>docker service scale</code>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl"><span class="cp"></span>&#10;</span></span><span class="line"><span class="cl"><span class="c1">#export MACHINE_STORAGE_PATH=&#34;/run/media/picodotdev/BMOVE ROJO/docker-machine/&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nb">eval</span> <span class="k">$(</span>docker-machine env node-01<span class="k">)</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\n# Nginx service tasks&#34;</span>&#10;</span></span><span class="line"><span class="cl">docker service ps nginx&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\n# Nginx service inspect&#34;</span>&#10;</span></span><span class="line"><span class="cl">docker service inspect --pretty nginx&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">docker service scale <span class="nv">nginx</span><span class="o">=</span><span class="m">4</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">sleep 1m&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\n# Nginx service tasks&#34;</span>&#10;</span></span><span class="line"><span class="cl">docker service ps nginx&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\n# Nginx service inspect&#34;</span>&#10;</span></span><span class="line"><span class="cl">docker service inspect --pretty nginx&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>06-nginx-scale.sh</span>
+    </div>
+</div>
+<p>Al igual que cuando se crea un contenedor para un servicio en el <em>cluster</em> <a href="https://docs.docker.com/swarm/">Docker Swarm</a> si no se indica alguna restricción decidirá en qué nodos se crean las nuevas instancias o contenedores del servicio.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-1_huebd5c25c0b0faf24527b6ab44777e5b5_76821_2560x1440_fit_box_3.png" data-gallery="" title="Servicio de nginx con una réplica"><img src="https://picodotdev.github.io/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-1_huebd5c25c0b0faf24527b6ab44777e5b5_76821_300x200_fit_box_3.png" width="300" height="161" alt="Servicio de nginx con una réplica" title="Servicio de nginx con una réplica"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-4_hu1208181ff1627b77e3058ac3d716d6f5_90824_2560x1440_fit_box_3.png" data-gallery="" title="Servicio de nginx escalado a cuatro réplicas"><img src="https://picodotdev.github.io/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-4_hu1208181ff1627b77e3058ac3d716d6f5_90824_300x200_fit_box_3.png" width="300" height="161" alt="Servicio de nginx escalado a cuatro réplicas" title="Servicio de nginx escalado a cuatro réplicas"  class="lozad "></a></p>
+<figcaption>Servicio de nginx antes y después de escalarlo</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-scale_hub8dd279f35158bcce114c552cc782715_24245_2560x1440_fit_box_3.png" data-gallery="" title="Escalado del servicio de nginx"><img src="https://picodotdev.github.io/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-scale_hub8dd279f35158bcce114c552cc782715_24245_300x200_fit_box_3.png" width="300" height="161" alt="Escalado del servicio de nginx" title="Escalado del servicio de nginx"  class="lozad "></a></p>
+<figcaption>Escalado del servicio de nginx</figcaption>
+</figure>
+</div>
+<p>Por otro lado, una vez desplegados en un <em>cluster</em> algunos servicios llegará el momento en que queramos actualizar algún parámetro del servicio, uno de ellos será probablemente la imagen del servicio cuando se publique una nueva. En la página de documentación <a href="https://docs.docker.com/engine/swarm/swarm-tutorial/rolling-update/">Aplicando actualizaciones a un servicio</a> está explicada esta funcionalidad y los comandos junto con sus opciones que hay que utilizar.</p>
+<p>En el ejemplo al crear el <em>cluster</em> se usa la última imagen de docker para nginx, en un entorno de producción es más recomendable establecer una versión en concreto para evitar que la imagen que se usa no varía desde que se prueba hasta que se despliega. El siguiente <em>script</em> actualiza la imagen a la versión <em>nginx:1.10-alpine</em> en todas las réplicas del servicio de nginx en el <em>cluster</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl"><span class="cp"></span>&#10;</span></span><span class="line"><span class="cl"><span class="c1">#export MACHINE_STORAGE_PATH=&#34;/run/media/picodotdev/BMOVE ROJO/docker-machine/&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nb">eval</span> <span class="k">$(</span>docker-machine env node-01<span class="k">)</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\n# Nginx service tasks&#34;</span>&#10;</span></span><span class="line"><span class="cl">docker service ps nginx&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\n# Nginx service inspect&#34;</span>&#10;</span></span><span class="line"><span class="cl">docker service inspect --pretty nginx&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">docker service update --image nginx:1.10-alpine nginx&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">sleep 1m&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\n# Nginx service tasks&#34;</span>&#10;</span></span><span class="line"><span class="cl">docker service ps nginx&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\n# Nginx service inspect&#34;</span>&#10;</span></span><span class="line"><span class="cl">docker service inspect --pretty nginx&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>06-nginx-update.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-update_huc4c244276d3bb3c7e0dd9083867fc331_62385_2560x1440_fit_box_3.png" data-gallery="" title="Actualización de la imagen del servicio de nginx"><img src="https://picodotdev.github.io/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-update_huc4c244276d3bb3c7e0dd9083867fc331_62385_300x200_fit_box_3.png" width="300" height="161" alt="Actualización de la imagen del servicio de nginx" title="Actualización de la imagen del servicio de nginx"  class="lozad "></a></p>
+<figcaption>Actualización de la imagen del servicio de nginx</figcaption>
+</figure>
+</div>
+<p>Docker Swarm realiza el proceso de actualización siguiendo los siguientes pasos:</p>
+<ul>
+<li>Detiene el primer contenedor o tarea a actualizar.</li>
+<li>Programa la actualización del contenedor o tarea detenida.</li>
+<li>Inicia una nueva tarea actualizado.</li>
+<li>Si la tarea actualizada retorna su estado como <em>RUNNING</em> se espera un tiempo determinado y se inicia el proceso de actualización de una nueva tarea.</li>
+<li>Si, en cualquier momento durante la actualización, una tarea retorna su estado como <em>FAILED</em>, se detiene la actualización.</li>
+</ul>
+<p>Por defecto, el planificador actualiza las tareas o contenedores del servicio de uno en uno. Con la opción <em>--update-parallelism</em> se especifica el número de tareas del servicio que se actualizan simultáneamente. La opción <em>--update-delay</em> especifica el tiempo de espera desde que se actualiza la tarea de un servicio y la siguiente. Se puede describir como una combinación de segundos, minutos o horas, de modo que 1m30s indica una espera de 1 minuto y 30 segundos.</p>
+<p>En los <a href="https://docs.docker.com/compose/compose-file/">archivos en formato YAML de los <em>stacks</em> de Docker Compose</a> hay una sección en cada servicio en el que se indica el número de contenedores que se desea que esté formado el servicio así como las opciones de paralelismo y tiempo de espera entre actualización. Para actualizar el <em>stack</em> basta con hacer de nuevo el <em>deploy</em>, ya sea la imagen usada, el número de réplicas u otros parámetros.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nn">...</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">deploy</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="m">4</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">update_config</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">parallelism</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">delay</span><span class="p">:</span><span class="w"> </span><span class="l">1m30s</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">...</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-compose-stack-app.yml</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/DockerSwarm">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub.</p>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="software-libre"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2017/04/iniciar-un-stack-de-servicios-en-un-cluster-de-docker-swarm/</id>
         <title>Iniciar un stack de servicios en un cluster de Docker Swarm</title>
@@ -1648,48 +1727,6 @@
                 <category term="programacion"/>
             
                 <category term="spring"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2017/01/distribuciones-gnu-linux-mas-seguras-que-windows/</id>
-        <title>Distribuciones GNU/Linux, ¿más seguras que Windows?</title>
-        <updated>2017-01-21T20:00:00+01:00</updated>
-        <published>2017-01-21T10:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/01/distribuciones-gnu-linux-mas-seguras-que-windows/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Los sistemas GNU/Linux pueden ser igual de seguros o inseguros que los sistemas Windows. Sin embargo, en ambas plataformas hay algunas diferencias que explican por que los sistemas Windows tienen peor fama y por que los sistemas GNU/Linux se consideran más seguros que Windows.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
-</div>
-<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
-</div>
-<p>Habitualmente se comenta que los sistemas con alguna distribución <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> son más seguros que los sistemas <a href="https://www.microsoft.com/es-es/windows/">Windows</a>. Probablemente bien configurados y debidamente actualizados ambas opciones sean muy seguras. Sin embargo, desde el punto de vista de un usuario es común que Windows se vea infectado con virus o <em>malware</em> aún con un antivirus instalado.</p>
-<p>Las razones de que Windows se vea más amenazado son varias, una es que es una plataforma con una cuota de uso enorme por tanto muy atractiva de atacar. Otra es que instalar programas o software en las distribuciones GNU/Linux se realiza en su mayor parte desde los repositorios oficiales, es decir, de una fuente confiable. En Windows hay que buscar la página oficial del programa y en los resultados de Google no siempre es la primera opción si se busca por «windows reproductor de vídeo», «windows programa para descargar películas» o segundas o terceras opciones es software dudoso. Esas páginas no oficiales de los programas pueden realmente hospedar programas con virus. Quizá ahora que <a href="https://www.microsoft.com/">Microsoft</a> ha añadido en sus últimas versiones de Windows <a href="https://www.microsoft.com/en-us/windows/windows-10-apps">una tienda de aplicaciones</a> se podrán instalar desde ella con más garantías de forma similar a lo que desde hace mucho tiempo en GNU/Linux son los repositorios de paquetes.</p>
-<p>Otro motivo es que <a href="https://picodotdev.github.io/blog-bitix/2016/01/windows-10-y-office-2016-tan-faciles-de-usar-sin-licencia-como-siempre/">muchos usuarios de Windows y Office los usan sin licencia</a> y no hay mayor problema ya que incluso Microsoft ofrece la descarga de la <a href="https://www.microsoft.com/es-es/software-download/windows10ISO">imagen ISO de Windows 10</a> desde su propia página pero para realizar la activación sin la correspondiente licencia hay que usar un programa que puede contener un virus y en un buen caso obligar a reinstalar Windows para deshacerse de él, un peor caso es que el virus no muestre síntomas de su presencia y pase desapercibido pero recolectando datos (contraseñas, fotos, documentos, &hellip;) del usuario sin que este lo sepa. La lista de programas que los usuarios de Windows usan sin licencia es mucho más extensa <a href="https://www.adobe.com/es/products/photoshop.html">Photoshop</a>, <a href="https://www.adobe.com/es/products/illustrator.html">Illustrator</a>, <a href="https://www.adobe.com/es/products/indesign.html">InDesign</a>, <a href="https://www.adobe.com/es/products/premiere.html">Premiere Pro</a>, <a href="https://www.adobe.com/es/products/aftereffects.html">After Effects</a>, <a href="https://www.adobe.com/es/products/photoshop-lightroom.html">Lightroom</a>, <a href="https://acrobat.adobe.com/es/es/acrobat.html">Acrobat</a>, <a href="https://www.adobe.com/es/creativecloud/catalog/desktop.html">otro software de Adobe</a>, <a href="https://www.autodesk.es/products/autocad/overview">AutoCAD</a>, <a href="https://www.winzip.com/win/es/">Winzip</a>, &hellip; que igualmente al <em>crackearlos</em> para usarlos después de su periodo de prueba, con la que la seguridad de los sistemas Windows se ve comprometida. Para cada uno de estos programas hay otros <a href="https://alternativeto.net/">alternativos con licencias de software libre</a> mejores o las suficientes funciones para la mayoría de usuarios. Los juegos también son muy pirateados y los <em>cracks</em> usados también pueden contener funciones maliciosas y es otra fuente de entrada para comprometer la seguridad.</p>
-<p>Con la cuota de uso que tiene Windows serán muchos usuarios con muchos conocimientos que lo usan pero es mayor el número de sus usuarios que tienen pocos conocimientos informáticos y que a la mayoría les vino con el ordenador preinstalado con <a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.html">el impuesto Windows</a> con lo que la seguridad de los sistemas Windows queda inutilizada. Algunas páginas de reputación dudosa muestran mensajes o correos electrónicos fraudulentos contienen <em>banners</em> advirtiendo que se debe descargar y ejecutar un programa, un usuario con conocimientos simplemente los ignoraría pero algunos usuarios sin conocimientos pueden hacerles caso. E incluso los usuarios con conocimientos si no usan el software con su licencia y usan activadores pueden comprometer la seguridad de sus sistemas.</p>
-<p>Descargar y ejecutar un programa en GNU/Linux de una fuente externa a los repositorios oficiales igualmente puede comprometer la seguridad pero dado que todo el software normalmente se encuentra en los repositorios no suele haber necesidad. Sin embargo, también hay que tener precauciones de <em>scritps</em> como estos dos que pueden destruir de forma catastrófica un sistema GNU/Linux.</p>
-<p><strong>ADVERTENCIA: no los ejecutes!</strong>. El primero elimina todos los archivos del sistema y el segundo por mucho que parezcan unos extraños inocentes emoticonos crea procesos hasta que agota los recursos del sistema. Un usuario de GNU/Linux precavido y con conocimientos antes revisaría el contenido de cualquier <em>script</em> o binario ejecutable y no ejecutaría nada en caso de duda.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo rm -rf /&#10;</span></span><span class="line"><span class="cl">$ :<span class="o">(){</span> :<span class="p">|</span>:<span class="p">&amp;</span> <span class="o">}</span><span class="p">;</span>:&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>nuke.sh</span>
-    </div>
-</div>
-<p>Dicho lo cual, tanto GNU/Linux y Windows tendrán un nivel de seguridad no tan diferente bien configurados pero el hecho de que los primeros normalmente se basan en software libre, usan repositorios de software confiables, se mantienen siempre actualizados y más rápidamente (al no suponer un coste en nuevas licencias de Windows ni tiene una fecha de expiración del soporte como Windows XP, Vista o Windows 7), se evitan usar activadores, el código fuente está disponible para cualquiera que quiera verlo, la seguridad es auditable y si contuviese alguna función maliciosa podría ser descubierta con mayor facilidad, junto con que los usuarios de GNU/Linux tienen de media más conocimientos que los usuarios Windows, es una plataforma minoritaria en cuota de uso, más fragmentada en diferentes distribuciones y por tanto menos atractiva para atacar hace que GNU/Linux a nivel de usuario tenga menos problemas de seguridad.</p>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="microsoft"/>
-            
-                <category term="opinion"/>
-            
-                <category term="planeta-codigo"/>
             
         
     </entry>

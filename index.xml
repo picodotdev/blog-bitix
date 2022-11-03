@@ -5,12 +5,93 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/</id>
-    <updated>2022-10-28T18:00:00+02:00</updated>
+    <updated>2022-11-03T23:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2022/11/realizar-peticiones-a-apis-con-herramientas-de-linea-comandos-e-interfaz-grafica/</id>
+        <title>Realizar peticiones a APIs con herramientas de línea comandos e interfaz gráfica</title>
+        <updated>2022-11-03T23:00:00+02:00</updated>
+        <published>2022-11-03T23:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/11/realizar-peticiones-a-apis-con-herramientas-de-linea-comandos-e-interfaz-grafica/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>El comando curl es la herramienta de línea de comandos para realizar cualquier petición que requiera probar un <em>endpoint</em> de una API o web que utilice el protocolo HTTP, tiene opciones para cualquier petición que sea requerida. Aunque curl es muy versátil y completa es una herramienta de línea de comandos sin algunas otras funcionalidades que las aplicaciones con interfaz gráfica son capaces de proporcionar. Postman es una aplicación con interfaz gráfica que cubre parte de las funcionalidades de curl y la mayoría que habitualmente un desarrollador necesita para probar una API, permite guardar colecciones y compartirlas con otros miembros de equipo de desarrollo asi como entornos y otras funcionalidades. Postman es la herramienta más conocida en su categoría y tiene una licencia comercial en base al numero de miembros de equipo que no es barata. Finalmente, Hoppscotch es una herramienta alternativa y equivalente a Postman de código abierto que no tiene coste de licencia y ofrece la mayoría de funcionalidades importantes como para sustituir a Postman.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hoppscotch.svg" width="200" height="200" alt="Hoppscotch" title="Hoppscotch"  class=""></p>
+</div>
+<p>Las aplicaciones monolíticas son más simples y más sencillas de programar, la llamada de un módulo a otro de una aplicación consiste simplemente en una invocación de un método, sin embargo tiene sus propios problemas.</p>
+<p>Las aplicaciones compuestas por múltiples microservicios, algunos de esos microservicios publica una API para que la invoquen otros microservicios. Los microservicios se comunican mediante llamadas remotas a través de la red, habitualmente utilizando el protocolo HTTP y REST aunque también es posible utilizar <a href="https://graphql.org/">GraphQL</a> y si se prefiere una API más RPC con <a href="https://grpc.io/">gRPC</a>.</p>
+<p>Para desarrollar y probar pero también para conocer los datos devueltos por un microservicio en alguna de sus <em>endpoints</em> que expone en su API es muy útil utilizar alguna de las siguientes herramientas para hacer peticiones directamente al servicio sin tener que usar la interfaz web que utiliza el usuario hasta llegar al punto donde se realiza la petición.</p>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#el-comando-curl">El comando curl</a></li>
+    <li><a href="#postman">Postman</a></li>
+    <li><a href="#hoppscotch-alternativa-a-postman">Hoppscotch, alternativa a Postman</a></li>
+  </ul>
+</nav></div>
+<h3 id="el-comando-curl">El comando curl</h3>
+<p>La herramienta de línea de comandos curl permite realizar cualquier operación y obtener cualquier detalle tanto de la petición como de la respuesta del servidor del protocolo HTTP. Permite ver los certificados cuando se utiliza el protocolo HTTPS, las cabeceras enviadas y de respuesta de la petición, así como realizar peticiones utilizando cualquier verbo del protocolo HTTP.</p>
+<p>El comando curl permite realizar una petición sin tener que implementar en código la llamada que se quiera probar. Cómo es un comando, no una aplicación, no permite guardar la colección de peticiones ni compartir con otros miembros del equipo de desarrollo una colección de peticiones ni mantener sincronizadas las colecciones y variables para los diferentes entornos de una aplicación.</p>
+<p>Es posible utilizar un repositorio de código fuente como <a href="https://git-scm.com/">Git</a> para guardar, compartir y mantener sincronizadas las colecciones peticiones pero el comando curl no ofrece ningún soporte para esto ni para utilizar variables y datos para diferentes entornos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ curl -v https://picodotdev.github.io/blog-bitix/&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">...&#10;</span></span><span class="line"><span class="cl">&gt; GET /blog-bitix/ HTTP/2&#10;</span></span><span class="line"><span class="cl">&gt; Host: picodotdev.github.io&#10;</span></span><span class="line"><span class="cl">&gt; user-agent: curl/7.86.0&#10;</span></span><span class="line"><span class="cl">&gt; accept: */*&#10;</span></span><span class="line"><span class="cl">&gt; &#10;</span></span><span class="line"><span class="cl">* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):&#10;</span></span><span class="line"><span class="cl">&lt; HTTP/2 200 &#10;</span></span><span class="line"><span class="cl">&lt; server: GitHub.com&#10;</span></span><span class="line"><span class="cl">&lt; content-type: text/html; charset=utf-8&#10;</span></span><span class="line"><span class="cl">&lt; permissions-policy: interest-cohort=()&#10;</span></span><span class="line"><span class="cl">&lt; last-modified: Sat, 29 Oct 2022 03:46:53 GMT&#10;</span></span><span class="line"><span class="cl">&lt; access-control-allow-origin: *&#10;</span></span><span class="line"><span class="cl">&lt; etag: &#34;635ca22d-88fd&#34;&#10;</span></span><span class="line"><span class="cl">&lt; expires: Thu, 03 Nov 2022 22:08:53 GMT&#10;</span></span><span class="line"><span class="cl">&lt; cache-control: max-age=600&#10;</span></span><span class="line"><span class="cl">&lt; x-proxy-cache: MISS&#10;</span></span><span class="line"><span class="cl">&lt; x-github-request-id: 8B94:479F:70D593:739994:6364399D&#10;</span></span><span class="line"><span class="cl">&lt; accept-ranges: bytes&#10;</span></span><span class="line"><span class="cl">&lt; date: Thu, 03 Nov 2022 21:58:53 GMT&#10;</span></span><span class="line"><span class="cl">&lt; via: 1.1 varnish&#10;</span></span><span class="line"><span class="cl">&lt; age: 0&#10;</span></span><span class="line"><span class="cl">&lt; x-served-by: cache-mad22067-MAD&#10;</span></span><span class="line"><span class="cl">&lt; x-cache: MISS&#10;</span></span><span class="line"><span class="cl">&lt; x-cache-hits: 0&#10;</span></span><span class="line"><span class="cl">&lt; x-timer: S1667512734.552326,VS0,VE132&#10;</span></span><span class="line"><span class="cl">&lt; vary: Accept-Encoding&#10;</span></span><span class="line"><span class="cl">&lt; x-fastly-request-id: 3c819d3e28b1a87d6c2f80b4606c3530bcc35fbe&#10;</span></span><span class="line"><span class="cl">&lt; content-length: 35069&#10;</span></span><span class="line"><span class="cl">&lt; &#10;</span></span><span class="line"><span class="cl">&lt;!DOCTYPE html&gt;&#10;</span></span><span class="line"><span class="cl">&lt;html lang=&#34;es&#34;&gt;&#10;</span></span><span class="line"><span class="cl">&lt;head&gt;&#10;</span></span><span class="line"><span class="cl">	&lt;meta name=&#34;generator&#34; content=&#34;Hugo 0.102.3&#34; /&gt;&#10;</span></span><span class="line"><span class="cl">  &lt;meta name=&#34;base&#34; href=&#34;https://picodotdev.github.io/blog-bitix/blog-bitix/&#34;&gt;&#10;</span></span><span class="line"><span class="cl">  &lt;meta http-equiv=&#34;content-type&#34; content=&#34;text/html; charset=utf-8&#34;&gt;&#10;</span></span><span class="line"><span class="cl">  &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34;&gt;&#10;</span></span><span class="line"><span class="cl">  &lt;meta name=&#34;author&#34; content=&#34;picodotdev&#34;&gt;&#10;</span></span><span class="line"><span class="cl">  &lt;meta name=&#34;keywords&#34; content=&#34;java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos&#34;&gt;&#10;</span></span><span class="line"><span class="cl">  &lt;meta name=&#34;description&#34; content=&#34;Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.&#34;&gt;&#10;</span></span><span class="line"><span class="cl">  &lt;meta name=&#34;theme-color&#34; content=&#34;#FFFFFF&#34;/&gt;&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  &lt;title&gt;Blog Bitix&lt;/title&gt;&#10;</span></span><span class="line"><span class="cl">...</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl.out</span>
+    </div>
+</div>
+<h3 id="postman">Postman</h3>
+<p>La aplicación con interfaz gráfica <a href="https://www.postman.com/">Postman</a> realiza en gran medida las mismas funciones que el comando curl pero con una aplicación de escritorio y con interfaz gráfica. Permite crear peticiones, añadir cabeceras en las peticiones y ver los resultados, cabeceras y código de estado devueltos en las peticiones HTTP.</p>
+<p>Adicionalmente ofrece otras funcionalidades como soporte para trabajar en equipos compuesto por varios desarrolladores para compartir colecciones y entornos y mantenerlos sincronizados entre los diferentes miembros del equipo. Otras funciones que tiene es la de poder ejecutar <em>scripts</em> de código antes de realizar la petición para calcular algún dato y enviarlo en la petición. Los entornos permiten crear colecciones de variables y cambiando de un entorno a otro utilizando en las peticiones diferentes valores, por ejemplo las credenciales de autorización para invocar un <em>endpoint</em>.</p>
+<p>Postman es una herramienta muy conocida y utilizada, ofrece una aplicación de escritorio para los diferentes sistemas operativos incluyendo <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> como una aplicación <a href="https://flatpak.org/">Flatpak</a>. Sin embargo, no es gratuita y en entornos profesionales requiere una licencia de uso que está en función del número de usuarios que la utilizan. Es cara y tiene un coste significativo para una herramienta aunque útil cuando se usa es una herramienta que se usa ocasionalmente.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/11/realizar-peticiones-a-apis-con-herramientas-de-linea-comandos-e-interfaz-grafica/images/postman_hu96ea76b13850717ac94d4c1d6cc66d76_133523_2560x1440_fit_box_3.png" data-gallery="" title="Postman"><img src="https://picodotdev.github.io/blog-bitix/2022/11/realizar-peticiones-a-apis-con-herramientas-de-linea-comandos-e-interfaz-grafica/images/postman_hu96ea76b13850717ac94d4c1d6cc66d76_133523_650x450_fit_box_3.png" width="583" height="450" alt="Postman" title="Postman"  class="lozad "></a></p>
+<figcaption>Postman</figcaption>
+</figure>
+</div>
+<h3 id="hoppscotch-alternativa-a-postman">Hoppscotch, alternativa a Postman</h3>
+<p>Alternativas a Postman hay varias algunas como complementos para el editor de texto y código <a href="https://code.visualstudio.com/">Visual Studio Code</a>. De las alternativas a Postman la más parecida y que tiene funcionalidades equivalentes y suficiente como para reemplazarla es <a href="https://hoppscotch.io/">Hoppscotch</a>.</p>
+<p>Al igual que Postman la aplicación Hoppscotch es una aplicación destinada a realizar peticiones a servicios utilizando HTTP y soportando otros protocolos como GraphQL, Websockets y MQTT. Una de las ventajas de Hoppscotch sobre Postman está en su licencia ya que es de código abierto y sin coste de licencia. La interfaz de usuario de Hoppscotch está muy cuidada y es similar a la de Postman permitiendo crear peticiones junto a sus cabeceras así como ver el resultado devuelto, cabeceras y código de estado.</p>
+<p>Entre las funcionalidades que ofrece Hoppscotch están:</p>
+<ul>
+<li>Posibilidad de trabajar en equipos y compartir colecciones</li>
+<li>Scripts previos a la petición</li>
+<li>Soporta múltiples métodos de autenticación</li>
+<li>Entornos y variables</li>
+<li>Posibilidad de mostrar el curl e importar el curl</li>
+<li>Importar desde OpenAPI y Postman, exportar como JSON</li>
+<li>Posibilidad de ejecutarlo desde su web, en local como un contenedor <a href="https://www.docker.com/">Docker</a> o paquete npm</li>
+</ul>
+<p>Aunque Hoppscotch tiene una licencia sin coste los desarrolladores ofrecen ser patrocinados en <a href="https://github.com/hoppscotch/hoppscotch">su repositorio de GitHub</a> para seguir realizando cambios e implementando mejoras. Si es útil y se utiliza en un entorno profesional se anima a realizar en la medida de lo posible una contribución económica a los desarrolladores.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/11/realizar-peticiones-a-apis-con-herramientas-de-linea-comandos-e-interfaz-grafica/images/hoppscotch_hu5acee9062fc6b8ef34cd56148770b1cc_170461_2560x1440_fit_box_3.png" data-gallery="" title="Hoppscotch"><img src="https://picodotdev.github.io/blog-bitix/2022/11/realizar-peticiones-a-apis-con-herramientas-de-linea-comandos-e-interfaz-grafica/images/hoppscotch_hu5acee9062fc6b8ef34cd56148770b1cc_170461_650x450_fit_box_3.png" width="584" height="450" alt="Hoppscotch" title="Hoppscotch"  class="lozad "></a></p>
+<figcaption>Hoppscotch</figcaption>
+</figure>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+                <category term="software"/>
+            
+        
+    </entry>
     
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2022/10/funcionamiento-y-precauciones-a-seguir-en-los-servicios-de-compraventa-de-productos-de-segunda-mano-como-wallapop/</id>
@@ -2525,373 +2606,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="programacion"/>
-            
-        
-    </entry>
-    
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/</id>
-        <title>Desempaquetado y análisis del micrófono MAONO HD300T</title>
-        <updated>2022-07-24T02:00:00+02:00</updated>
-        <published>2022-07-24T02:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>El MAONO HD300T es un micrófono dinámico cardioide muy polivalente gracias a sus múltiples conexiones tanto USB, XLR como <em>jack</em> 3.5mm que incluye además en su contenido cables, una peana con soporte antigolpes y un filtro <em>pop</em>. Ofrece el conjunto completo básico para la captura de audio ya sea vocal o instrumental con fin de crear contenido en video blogs, un canal de YouTube, realizar <em>streaming</em> de juegos, contenido en tiempo real o para ser usado en programas de videoconferencia. Un micrófono más que suficiente para un ámbito de usuario, una calidad de audio muy superior a un micrófono interno de un portátil y muy completo con precio muy atractivo que hace de él una adquisición recomendable.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/maono.png" width="350" height="106" alt="MAONO" title="MAONO"  class=""></p>
-</div>
-<p>La comunicación con el ordenador ya no es solo a través de programas de texto ya sean documentos o correos electrónicos sino en muchos casos ha pasado a ser de vídeo o audio con programas de video conferencia. El trabajo en remoto debido a la pandemia del COVID-19, la creación de contenido audiovisual, el <em>streaming</em> o usar los asistentes por voz que incorporan algunos sistemas operativos son varias formas de comunicación en forma de audio y habitualmente de vídeo.</p>
-<p>Los portátiles suelen incorporar un micrófono integrado y una cámara web pero en algunos casos no suelen ofrecer una calidad óptima o se emplean con un monitor externo. Los ordenadores de escritorio no suele ser habitual que incorporen ni micrófono ni cámara web de modo que hay que comprarlos aparte pero con la ventaja de que los micrófonos y cámaras web dedicados pueden usarse en múltiples equipos y suelen ofrecer una calidad mayor que los integrados en un portátil. Incluso sin grandes medios un <em>smarphone</em> actual ofrece la capacidad para la creación del contenido ya que tienen tanto micrófono como cámara.</p>
-<p>Actualmente una persona en su casa que quiera montar en su casa un pequeño estudio de producción tiene a su disposición una amplia gama hardware de micrófonos y cámaras web con los que crear de alta calidad tanto de audio como de vídeo con un nivel cercano al profesional. Asi como varios programas tanto para la captura como para la edición posterior del contenido audiovisual.</p>
-<p>Los principales productos dedicados de un pequeño estudio audiovisual que mejoran la calidad final del contenido son un micrófono, una cámara web, una interfaz de audio, unos cascos y un segundo monitor. Algunos de estos no son indispensables y pueden suplirse con alternativas como un portátil o un <em>smartphone</em> pero al ser productos dedicados la mejora si es significativa.</p>
-<p>La marca <a href="https://www.maono.com">MAONO</a> me ha proporcionado un ejemplar del micrófono para analizar y crear este artículo, aunque el artículo puede considerarse patrocinado en cierta forma, el contenido y opinión del artículo es completamente propio sin ninguna indicación por parte de la marca. En otro artículo he hecho el <a href="https://picodotdev.github.io/blog-bitix/2022/08/desempaquetado-y-analisis-de-la-interfaz-de-audio-maonocaster-e2/">Desemapqueetado y análisis de la interfaz de audio Maonocaster E2</a>, una interfaz de audio es un producto complementario para un micrófono que proporciona una serie de funciones muy útiles en un dispositivo hardware dedicado a la función.</p>
-<p>En la prueba de audio se nota que la calidad de sonido que ofrece el MAONO HD300T es notablemente diferente y mejor que el micrófono integrado de <a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">mi Intel NUC Bean Canyon</a>. Hasta ahora solo he creado contenido en formato de texto en el <em>blog</em> quizá con este micrófono pruebe a crear y compartir contenido en vídeo en un canal de <a href="https://www.youtube.com/">YouTube</a>.</p>
-<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
-    <li><a href="#la-características-que-diferencian-a-los-micrófonos">La características que diferencian a los micrófonos</a>
-      <ul>
-        <li><a href="#tipo-de-transductor">Tipo de transductor</a></li>
-        <li><a href="#patrón-de-captura">Patrón de captura</a></li>
-        <li><a href="#filtro-_pop_">Filtro <em>pop</em></a></li>
-        <li><a href="#conexiones">Conexiones</a></li>
-        <li><a href="#interfaz-de-audio">Interfaz de audio</a></li>
-        <li><a href="#información-de-referencia">Información de referencia</a></li>
-      </ul>
-    </li>
-    <li><a href="#el-micrófono-maono-hd300-series">El micrófono MAONO HD300 SERIES</a>
-      <ul>
-        <li><a href="#especificaciones-técnicas">Especificaciones técnicas</a></li>
-        <li><a href="#dónde-comprar">Dónde comprar</a></li>
-      </ul>
-    </li>
-    <li><a href="#desempaquetado-del-micrófono-maono-hd300t">Desempaquetado del micrófono MAONO HD300T</a>
-      <ul>
-        <li><a href="#la-caja">La caja</a></li>
-        <li><a href="#el-contenido">El contenido</a></li>
-        <li><a href="#el-micrófono">El micrófono</a></li>
-      </ul>
-    </li>
-    <li><a href="#análisis-y-opinión">Análisis y opinión</a>
-      <ul>
-        <li><a href="#prueba-de-audio">Prueba de audio</a></li>
-        <li><a href="#vídeos">Vídeos</a></li>
-      </ul>
-    </li>
-    <li><a href="#otros-productos-relacionados">Otros productos relacionados</a></li>
-  </ul>
-</nav></div>
-<h3 id="la-características-que-diferencian-a-los-micrófonos">La características que diferencian a los micrófonos</h3>
-<p>Los micrófonos se diferencian por al menos dos características importantes que definen sus propiedades, no hay unas características que sean mejores sobre otras sino que dependiendo del uso un micrófono con unas características determinadas ofrece mejores resultados.</p>
-<p>Las dos características importantes que definen su uso y calidad son las siguientes.</p>
-<ul>
-<li>El tipo de transductor que puede ser dinámico, de condensador o de banda o <em>ribbon</em>.</li>
-<li>El patrón polar define el patrón por el que el micrófono captura el audio dependiendo de la fuente del sonido y su posición respecto al micrófono y distancia.</li>
-</ul>
-<h4 id="tipo-de-transductor">Tipo de transductor</h4>
-<p>El transductor es la tecnología física que emplea el micrófono para capturar el audio. Los micrófonos dinámicos no necesitan una fuente de energía para capturar el sonido con lo que pueden conectarse a un dispositivo que lo capture, sin embargo, para capturar el sonido requieren estar cerca de la fuente, si el sonido es una persona hablando requiere tener cerca el micrófono o utilizar un programa que aumente la ganancia del audio para que este tenga una intensidad mayor.</p>
-<p>Los micrófonos de condensador requieren alimentación para funcionar por lo que requieren un tipo de conexión que les proporcione una pequeña cantidad de energía para capturar el audio, ya sea un puerto USB o una interfaz de audio. Al estar alimentados son más sensibles a los sonidos.</p>
-<h4 id="patrón-de-captura">Patrón de captura</h4>
-<p>Los micrófonos tienen un patrón de captura de audio. El patrón polar es el patrón que usa un micrófono para la captura del audio según la posición y orientación y la distancia a la fuente de audio. Un micrófono cardioide sigue un patrón en forma de corazón capturando con gran intensidad el sonido que se produce delante del micrófono, con menor intensidad el posicionado en la parte trasera y atenuando en mayor medida los sonidos posicionados fuera de su patrón de captura.</p>
-<p>Estos son algunos ejemplos de patrones de captura de audio que usan los micrófonos, uno muy común es el cardioide y algunas variantes similares como supercardioide, hyper cardioide y otras como bidireccional u omnidireccional.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/patron-micrfono-cardioid-1_huec1b30e95aa0cf0aa8d7e71bd77de682_57556_2560x1440_fit_box_3.png" data-gallery="" title="Patrón cardioide"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/patron-micrfono-cardioid-1_huec1b30e95aa0cf0aa8d7e71bd77de682_57556_200x150_fit_box_3.png" width="157" height="150" alt="Patrón cardioide" title="Patrón cardioide"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/patron-micrfono-cardioid-2_huacec1aa59ec33fcdaf048fe7a9c1af91_75588_2560x1440_fit_box_3.png" data-gallery="" title="Patrón cardioide"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/patron-micrfono-cardioid-2_huacec1aa59ec33fcdaf048fe7a9c1af91_75588_200x150_fit_box_3.png" width="125" height="150" alt="Patrón cardioide" title="Patrón cardioide"  class="lozad "></a></p>
-<figcaption>Patrón cardioide</figcaption>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/patron-micrfono-hypercardioid-1_hue8c73b4536cf1e40cc0233256f58e31e_65901_2560x1440_fit_box_3.png" data-gallery="" title="Patrón hypercardioide"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/patron-micrfono-hypercardioid-1_hue8c73b4536cf1e40cc0233256f58e31e_65901_200x150_fit_box_3.png" width="157" height="150" alt="Patrón hypercardioide" title="Patrón hypercardioide"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/patron-micrfono-hypercardioid-2_hub94b1c169f7a21ec401038d25ffd87da_72980_2560x1440_fit_box_3.png" data-gallery="" title="Patrón hypercardioide"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/patron-micrfono-hypercardioid-2_hub94b1c169f7a21ec401038d25ffd87da_72980_200x150_fit_box_3.png" width="140" height="150" alt="Patrón hypercardioide" title="Patrón hypercardioide"  class="lozad "></a></p>
-<figcaption>Patrón hypercardioide</figcaption>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/patron-micrfono-bidirectional-1_hucaa50eea07fbe786af52b2d8dd383854_67540_2560x1440_fit_box_3.png" data-gallery="" title="Patrón bidireccional"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/patron-micrfono-bidirectional-1_hucaa50eea07fbe786af52b2d8dd383854_67540_200x150_fit_box_3.png" width="157" height="150" alt="Patrón bidireccional" title="Patrón bidireccional"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/patron-micrfono-bidirectional-2_huc6ec3a3e528c551fa2c57a9693d81506_73542_2560x1440_fit_box_3.png" data-gallery="" title="Patrón bidireccional"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/patron-micrfono-bidirectional-2_huc6ec3a3e528c551fa2c57a9693d81506_73542_200x150_fit_box_3.png" width="167" height="150" alt="Patrón bidireccional" title="Patrón bidireccional"  class="lozad "></a></p>
-<figcaption>Patrón bidireccional</figcaption>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/patron-micrfono-omnidirectional-1_hu7b86db88d22d193974aeead1f6dda110_64402_2560x1440_fit_box_3.png" data-gallery="" title="Patrón omnidireccional"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/patron-micrfono-omnidirectional-1_hu7b86db88d22d193974aeead1f6dda110_64402_200x150_fit_box_3.png" width="157" height="150" alt="Patrón omnidireccional" title="Patrón omnidireccional"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/patron-micrfono-omnidirectional-2_hucf1543fd23c5945350edab903fd08c14_81581_2560x1440_fit_box_3.png" data-gallery="" title="Patrón omnidireccional"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/patron-micrfono-omnidirectional-2_hucf1543fd23c5945350edab903fd08c14_81581_200x150_fit_box_3.png" width="107" height="150" alt="Patrón omnidireccional" title="Patrón omnidireccional"  class="lozad "></a></p>
-<figcaption>Patrón omnidireccional</figcaption>
-</figure>
-</div>
-<h4 id="filtro-_pop_">Filtro <em>pop</em></h4>
-<p>Otros elementos relacionados con los micrófonos son los filtros <em>pop</em> que evitan picos de intensidad de sonido al pronunciar ciertas sílabas que se consideran implosivas como las que empiezan por las letras <em>t</em>, <em>p</em>, <em>b</em> o <em>s</em>. Estos filtros amortiguan la intensidad de estas sílabas y además protegen al micrófono de las gotas de la saliva si se posicionan cerca.</p>
-<h4 id="conexiones">Conexiones</h4>
-<p>Otras propiedades de los micrófonos son las conexiones que ofrece. La estándar de audio es la XLR que es específica y tradicional para los dispositivos de audio y que se suele utilizar para la conexión a una interfaz de audio. Por versatilidad y no necesitar una interfaz de audio para usar un micrófono algunos ofrecen adicionalmente conexiones como USB y una salida <em>jack</em> 3.5mm para la conexión de unos cascos y obtener el audio en tiempo real asi como con los cascos aislarse de cualquier otro sonido en la zona de grabación.</p>
-<h4 id="interfaz-de-audio">Interfaz de audio</h4>
-<p>El programa <a href="https://obsproject.com/">OBS Studio</a> que es uno de los más utilizados por ser de software libre y gratuito permite hacer la función de mezclar las diferentes fuentes del contenido audiovisual, aplicarles transformaciones y producir un resultado final con todas las fuentes mezcladas.</p>
-<p>El inconveniente de OBS es que es un programa de software de modo que mientras se está capturando el contenido requiere interactuar con el programa en caso de querer hacer algún cambio y consume recursos en el ordenador que se usa para la captura, OBS es muy versátil pero también tiene sus inconvenientes.</p>
-<p>Para una mayor facilidad en el ajuste de alguna propiedad de una fuente de entrada como cambiar el volumen, las interfaces de audio aunque no ofrecen toda la versatilidad de un programa como OBS permiten realizar algunos ajustes con un dispositivo dedicado y fácilmente accesible mientras se está haciendo la captura, además de ser un dispositivo preparado para la captura de audio con mejor calidad que las entradas que suelen ofrecer los ordenadores. Algunas opciones que ofrecen es la de mezclar varias fuentes de entrada, aplicar una música de fondo, aplicar efectos al sonido o ajustar el volumen y amplificar micrófono que es útil para los micrófonos dinámicos y proporciona alimentación a los micrófonos de condensador. Por un caso u otro una interfaz de audio es otro dispositivo muy utilizado y un nivel más en la calidad de producción.</p>
-<p>En cualquier caso el programa OBS y las interfaces de audio no son productos excluyentes sino siguen siendo complementarios ya que OBS además de audio permite capturar vídeo y componer la escena final.</p>
-<h4 id="información-de-referencia">Información de referencia</h4>
-<p>En los siguientes buenos artículos se explica de forma mucho más detallada las propiedades esenciales y el conocimiento básico sobre micrófonos.</p>
-<ul>
-<li><a href="https://magroove.com/blog/en-us/cardioid-mic/">Cardioid Mic : What is it? Everything you need to know</a></li>
-<li><a href="https://magroove.com/blog/en-us/condenser-microphone/">Condenser Microphone : What it is and how to use it properly</a></li>
-<li><a href="https://magroove.com/blog/en-us/dynamic-microphone/">Dynamic Microphone : What is it? When to use one?</a></li>
-<li><a href="https://magroove.com/blog/en-us/ribbon-microphone/">Ribbon Microphone – What is it? How to use it? Why would I want one?</a></li>
-<li><a href="https://magroove.com/blog/en-us/what-is-a-pop-filter/">What is a pop filter ? What does it do? Do I need one?</a></li>
-<li><a href="https://magroove.com/blog/en-us/what-is-an-audio-interface/">What is an audio interface ? What does it do? Do I really need one?</a></li>
-<li><a href="https://magroove.com/blog/en-us/home-recording-studio/">Home Recording Studio – Setting one up? Here’s all you need to know</a></li>
-</ul>
-<h3 id="el-micrófono-maono-hd300-series">El micrófono MAONO HD300 SERIES</h3>
-<p>El micrófono <a href="https://www.maono.com/products/usb-xlr-cardioid-dynamic-microphone-maono-hd300t">MAONO HD300T</a> es un micrófono cardioide dinámico con conexiones XLR, USB Type-C y <em>jack</em> 3.5mm con un diseño clásico. Tiene cuerpo completamente metálico con un peso considerable para su tamaño. Incluye una peana de metal regulable en altura y cabeceo con un sistema de montaje absorbe golpes y un filtro <em>pop</em>. Tiene un interruptor de encendido y apagado con LED y botones para controlar el volumen del <em>jack</em> 3.5 para monitorizar en tiempo real el audio capturado por el micrófono.</p>
-<ul>
-<li><a href="https://www.maono.com/products/usb-xlr-cardioid-dynamic-microphone-maono-hd300t">MAONO HD300 USB/XLR Dynamic Broadcast Microphone</a></li>
-<li><a href="https://www.maono.com/pages/manuals-and-drivers">Software &amp; Manual Download</a></li>
-</ul>
-<p>Hay dos variantes de en la serie, el modelo HD300T que muestro en este artículo se proporciona con una peana para colocar sobre la mesa, el modelo el modelo HD300S se proporciona con un brazo artículado. Montado alcanza una altura desde lo 30 cm en su posición más baja hasta los 38 cm en su posición más alta. El micrófono tiene una longitud de unos 19 cm y un diámetro entre 3 y 4 cm.</p>
-<p>Incluye un manual de instrucciones para su montaje que también está disponible en la página del fabricante para su descarga en formato digital.</p>
-<p>Al ser dinámico junto con su amplia variedad de conexiones no es imprescindible una interfaz de audio aunque sí aconsejable. Su patrón cardioide ayuda a evitar que entre sonido ambiente ajeno a la fuente de audio que se desea capturar.</p>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/7FzN9OkP1Pg" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<h4 id="especificaciones-técnicas">Especificaciones técnicas</h4>
-<p>Las especificaciones técnicas completas del micrófono MAONO HD300T son las siguientes:</p>
-<ul>
-<li>Tipo: dinámico.</li>
-<li>Patrón polar: cardioide.</li>
-<li>Frecuencia de respuesta: 40 Hz~17.000 Hz.</li>
-<li>Profundidad de bits: 16 bit.</li>
-<li>Frecuencia de muestreo: 44.1/48 kHz.</li>
-<li>Controles: interruptor on/off.</li>
-<li>Control de volumen de cascos: disponible en modo USB.</li>
-<li>Monitor: disponible en modo USB.</li>
-<li>Conexión de cascos <em>jack</em>: 3.5mm TRS estéreo.</li>
-<li>Potencia de salida de cascos: 30mW, 32Ω.</li>
-<li>Indicador LED: disponible en modo USB.</li>
-<li>requerimientos de energía: USB-DC 5V.</li>
-<li>Conector de salida: USB-C / XLR.</li>
-<li>Peso: 318 gramos.</li>
-<li>Accesorios: cable USB A a C x 1, cable XLR x 1, soporte de brazo articulado x 1.</li>
-<li>Requerimientos del sistema: macOS X USB 2.0, Windows 7/8/10 USB 2.0.</li>
-</ul>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-specs_hue50738285e5b1cf5402e08afb161195d_79169_2560x1440_fit_box_3.png" data-gallery="" title="Especificaciones del micrófono MAONO HD300 SERIES"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-specs_hue50738285e5b1cf5402e08afb161195d_79169_650x450_fit_box_3.png" width="498" height="450" alt="Especificaciones del micrófono MAONO HD300 SERIES" title="Especificaciones del micrófono MAONO HD300 SERIES"  class="lozad "></a></p>
-<figcaption>Especificaciones del micrófono MAONO HD300 SERIES</figcaption>
-</figure>
-</div>
-<h4 id="dónde-comprar">Dónde comprar</h4>
-<p>El micrófono junto a otros elementos de audio se puede comprar directamente en la <a href="https://www.maono.com">página de MAONO</a>. También se puede encontrar en <a href="https://amzn.to/2flFhHA">Amazon</a> a través de algunos vendedores externos. Tiene un precio aproximado de unos 70€ que con la calidad de audio que ofrece es más que suficiente para los usos a los que está destinado.</p>
-<p>El micrófono es todo lo que se necesita para capturar audio ya sea de voz o música pero dado que es cardioide y aunque no es imprescindible una interfaz de audio si es recomendable por la posibilidades de modificación del audio capturado en tiempo real sin necesidad de programas de software. Un programa como OBS es capaz de hacer funciones de interfaz de audio, permite modificar la ganancia del audio o se habla cerca del micrófono para lo que es muy útil su filtro <em>pop</em>.</p>
-<ul>
-<li><a href="https://amzn.to/3cBc5uu">MAONO HD300T en Amazon</a></li>
-</ul>
-<p>Una ventaja de comprar directamente en la página de MAONO es que en ella está el catálogo completo de sus productos que incluye una amplia variedad de micrófonos cuando en Amazon solo hay una parte de ellos, por ejemplo en la página de MAONO es posible comprar las interfaces de audio independientemente de los micrófonos cuando en la página de Amazon solo están las versiones que incluyen micrófono además de cualquier accesorio que se necesite para la grabación de audio.</p>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B09GTMFRGB&amp;linkId=6249bfcd3e3285aeaa56f1f345a1bf14" title="Amazon" class="lozad"></iframe>
-</div>
-<h3 id="desempaquetado-del-micrófono-maono-hd300t">Desempaquetado del micrófono MAONO HD300T</h3>
-<p>Una parte importante antes de comprar el producto es conocer cómo es el mismo desde las especificaciones técnicas hasta cómo es su empaquetado, qué elementos contiene, como es la caja y detalles del producto a través de fotos e incluso vídeos de alta resolución y desde varios puntos de vista.</p>
-<p>Este es el caso de las siguiente fotos y apartado que muestra el micrófono MAONO HD300T es su totalidad desde su empaquetado hasta el estado final montado y preparado para su uso.</p>
-<h4 id="la-caja">La caja</h4>
-<p>La caja del MAONO HD300T de esta edición es amarillo anaranjado y negro. En la parte superior tiene una foto del micrófono montado que permite conocer como es sin necesidad de abrir la caja. Se indica la marca con el logotipo de MAONO y el modelo exacto del micrófono.</p>
-<p>La caja que me ha llegado no tiene ningún precinto de garantía que asegure no ha sido abierta, este precinto permitiría asegurar que las condiciones del producto son las mismas que al salir de fábrica ni corresponda a una devolución de otro cliente que ya lo haya desempaquetado con el posible deterioro si ha sido mal usado. Por el contrario se incluye una etiqueta de autenticidad que permite conocer qué es un producto original de la marca y no una imitación.</p>
-<p>En la parte inferior un lateral se incluye una descripción y características principales como que se trata de un micrófono con patrón cardioide junto con su frecuencia de respuesta que apreciarán los usuarios que noten las diferencias con micrófonos con otras frecuencias de respuesta.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-caja-1_hu8785f10334c1d32be5f5a48ec9d7eeda_592059_2560x1440_fit_q90_box.jpg" data-gallery="" title="Caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-caja-1_hu8785f10334c1d32be5f5a48ec9d7eeda_592059_200x150_fit_q90_box.jpg" width="200" height="115" alt="Caja del micrófono MAONO HD300T" title="Caja del micrófono MAONO HD300T"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-caja-2_hua52a23025d13be29b16e2c3a9be1f4f1_460050_2560x1440_fit_q90_box.jpg" data-gallery="" title="Caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-caja-2_hua52a23025d13be29b16e2c3a9be1f4f1_460050_200x150_fit_q90_box.jpg" width="200" height="92" alt="Caja del micrófono MAONO HD300T" title="Caja del micrófono MAONO HD300T"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-caja-3_hu79e482f6cbbbe9649c02e56638c583e5_435764_2560x1440_fit_q90_box.jpg" data-gallery="" title="Caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-caja-3_hu79e482f6cbbbe9649c02e56638c583e5_435764_200x150_fit_q90_box.jpg" width="200" height="93" alt="Caja del micrófono MAONO HD300T" title="Caja del micrófono MAONO HD300T"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-caja-4_hu85ca42f8c82249200922b34f2512f6d5_222362_2560x1440_fit_q90_box.jpg" data-gallery="" title="Caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-caja-4_hu85ca42f8c82249200922b34f2512f6d5_222362_200x150_fit_q90_box.jpg" width="189" height="150" alt="Caja del micrófono MAONO HD300T" title="Caja del micrófono MAONO HD300T"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-caja-5_hu055204339948ac9c5877bc809850619c_399292_2560x1440_fit_q90_box.jpg" data-gallery="" title="Caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-caja-5_hu055204339948ac9c5877bc809850619c_399292_200x150_fit_q90_box.jpg" width="188" height="150" alt="Caja del micrófono MAONO HD300T" title="Caja del micrófono MAONO HD300T"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-caja-6_hu95943f570e34d7b1d004a4c320948802_828072_2560x1440_fit_q90_box.jpg" data-gallery="" title="Caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-caja-6_hu95943f570e34d7b1d004a4c320948802_828072_200x150_fit_q90_box.jpg" width="200" height="116" alt="Caja del micrófono MAONO HD300T" title="Caja del micrófono MAONO HD300T"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-caja-7_huf9e2b6d85b092a08d97a3cbaa8cb67d7_788828_2560x1440_fit_q90_box.jpg" data-gallery="" title="Caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-caja-7_huf9e2b6d85b092a08d97a3cbaa8cb67d7_788828_200x150_fit_q90_box.jpg" width="144" height="150" alt="Caja del micrófono MAONO HD300T" title="Caja del micrófono MAONO HD300T"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-caja-8_hu6c08b3b2b63bdf6b6fe90a93a1b1e3fb_551053_2560x1440_fit_q90_box.jpg" data-gallery="" title="Caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-caja-8_hu6c08b3b2b63bdf6b6fe90a93a1b1e3fb_551053_200x150_fit_q90_box.jpg" width="124" height="150" alt="Caja del micrófono MAONO HD300T" title="Caja del micrófono MAONO HD300T"  class="lozad "></a></p>
-<figcaption>Caja del micrófono MAONO HD300T</figcaption>
-</figure>
-</div>
-<h4 id="el-contenido">El contenido</h4>
-<p>Los diferentes elementos de la caja están organizados en dos bandejas de una espuma acolchada y algunos elementos envueltos en una funda protectora de modo que hasta su desempaquetado no sufran ningún desperfecto y estén en las condiciones originales.</p>
-<p>El contenido de la caja se compone de:</p>
-<ul>
-<li>El micrófono.</li>
-<li>Base del soporte, tallo para su posición sobre la mesa y soporte antigolpes para la sujeción del micrófono.</li>
-<li>Cable USB por el lado de la conexión al micrófono tipo C y por el lado de la conexión al ordenador tipo A.</li>
-<li>Cable XLR.</li>
-<li>Manual de instrucciones y montaje.</li>
-<li>Filtro <em>pop</em> y alambre de sujeción.</li>
-</ul>
-<p>Este es el aspecto de todos los componentes desmontados junto a su manual.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-1_hue733f15efead495b068b7622ac012672_959233_2560x1440_fit_q90_box.jpg" data-gallery="" title="Contenido de la caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-1_hue733f15efead495b068b7622ac012672_959233_200x150_fit_q90_box.jpg" width="200" height="119" alt="Contenido de la caja del micrófono MAONO HD300T" title="Contenido de la caja del micrófono MAONO HD300T"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-2_huc3e5f2182bd6d44f51f7d43a49b81982_1074227_2560x1440_fit_q90_box.jpg" data-gallery="" title="Contenido de la caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-2_huc3e5f2182bd6d44f51f7d43a49b81982_1074227_200x150_fit_q90_box.jpg" width="200" height="117" alt="Contenido de la caja del micrófono MAONO HD300T" title="Contenido de la caja del micrófono MAONO HD300T"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-3_hucb7d58f64bcb9ff703147c5005c79227_1098732_2560x1440_fit_q90_box.jpg" data-gallery="" title="Contenido de la caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-3_hucb7d58f64bcb9ff703147c5005c79227_1098732_200x150_fit_q90_box.jpg" width="133" height="150" alt="Contenido de la caja del micrófono MAONO HD300T" title="Contenido de la caja del micrófono MAONO HD300T"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-4_hu7715dc8d2f49c8f57cf62ee7f248fb38_559061_2560x1440_fit_q90_box.jpg" data-gallery="" title="Contenido de la caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-4_hu7715dc8d2f49c8f57cf62ee7f248fb38_559061_200x150_fit_q90_box.jpg" width="150" height="150" alt="Contenido de la caja del micrófono MAONO HD300T" title="Contenido de la caja del micrófono MAONO HD300T"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-5_hu2f9e17dbb3f3b111b38bc5d45107087a_805311_2560x1440_fit_q90_box.jpg" data-gallery="" title="Contenido de la caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-5_hu2f9e17dbb3f3b111b38bc5d45107087a_805311_200x150_fit_q90_box.jpg" width="200" height="85" alt="Contenido de la caja del micrófono MAONO HD300T" title="Contenido de la caja del micrófono MAONO HD300T"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-6_hub9eba71becaacd5f0747b102a0832c28_585950_2560x1440_fit_q90_box.jpg" data-gallery="" title="Contenido de la caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-6_hub9eba71becaacd5f0747b102a0832c28_585950_200x150_fit_q90_box.jpg" width="200" height="99" alt="Contenido de la caja del micrófono MAONO HD300T" title="Contenido de la caja del micrófono MAONO HD300T"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-7_hu6b2ca2ec13d0ce62af9006c291943156_174591_2560x1440_fit_q90_box.jpg" data-gallery="" title="Contenido de la caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-7_hu6b2ca2ec13d0ce62af9006c291943156_174591_200x150_fit_q90_box.jpg" width="154" height="150" alt="Contenido de la caja del micrófono MAONO HD300T" title="Contenido de la caja del micrófono MAONO HD300T"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-8_hu06b9f52a465e1596138621b635e17e8c_350133_2560x1440_fit_q90_box.jpg" data-gallery="" title="Contenido de la caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-8_hu06b9f52a465e1596138621b635e17e8c_350133_200x150_fit_q90_box.jpg" width="154" height="150" alt="Contenido de la caja del micrófono MAONO HD300T" title="Contenido de la caja del micrófono MAONO HD300T"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-9_hu519c73b0dd40b428be8cf0019c5f2e5b_434361_2560x1440_fit_q90_box.jpg" data-gallery="" title="Contenido de la caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-9_hu519c73b0dd40b428be8cf0019c5f2e5b_434361_200x150_fit_q90_box.jpg" width="200" height="140" alt="Contenido de la caja del micrófono MAONO HD300T" title="Contenido de la caja del micrófono MAONO HD300T"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-10_hu26d7869a2fe7e687b877734f139f42fb_533559_2560x1440_fit_q90_box.jpg" data-gallery="" title="Contenido de la caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-10_hu26d7869a2fe7e687b877734f139f42fb_533559_200x150_fit_q90_box.jpg" width="149" height="150" alt="Contenido de la caja del micrófono MAONO HD300T" title="Contenido de la caja del micrófono MAONO HD300T"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-11_hud429fd5282b406c020118a95ac00508a_713241_2560x1440_fit_q90_box.jpg" data-gallery="" title="Contenido de la caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-11_hud429fd5282b406c020118a95ac00508a_713241_200x150_fit_q90_box.jpg" width="186" height="150" alt="Contenido de la caja del micrófono MAONO HD300T" title="Contenido de la caja del micrófono MAONO HD300T"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-12_hu2a014d4f372e32df2a1447abc94d974c_443565_2560x1440_fit_q90_box.jpg" data-gallery="" title="Contenido de la caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-12_hu2a014d4f372e32df2a1447abc94d974c_443565_200x150_fit_q90_box.jpg" width="200" height="52" alt="Contenido de la caja del micrófono MAONO HD300T" title="Contenido de la caja del micrófono MAONO HD300T"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-13_hu3e90f7b041baa06ba1b462f4074bd3ae_316299_2560x1440_fit_q90_box.jpg" data-gallery="" title="Contenido de la caja del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-contenido-13_hu3e90f7b041baa06ba1b462f4074bd3ae_316299_200x150_fit_q90_box.jpg" width="200" height="41" alt="Contenido de la caja del micrófono MAONO HD300T" title="Contenido de la caja del micrófono MAONO HD300T"  class="lozad "></a></p>
-<figcaption>Contenido de la caja del micrófono MAONO HD300T</figcaption>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-manual-1_hu965fb79140364d6dfcf95427eaf90d1d_260111_2560x1440_fit_q90_box.jpg" data-gallery="" title="Manual del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-manual-1_hu965fb79140364d6dfcf95427eaf90d1d_260111_200x150_fit_q90_box.jpg" width="108" height="150" alt="Manual del micrófono MAONO HD300T" title="Manual del micrófono MAONO HD300T"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-manual-2_hud0ebac8d3f8ed86bcbd3fe64dc317610_461489_2560x1440_fit_q90_box.jpg" data-gallery="" title="Manual del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-manual-2_hud0ebac8d3f8ed86bcbd3fe64dc317610_461489_200x150_fit_q90_box.jpg" width="200" height="144" alt="Manual del micrófono MAONO HD300T" title="Manual del micrófono MAONO HD300T"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-manual-3_hu894236fcec253910279e72cf67eed29c_472519_2560x1440_fit_q90_box.jpg" data-gallery="" title="Manual del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-manual-3_hu894236fcec253910279e72cf67eed29c_472519_200x150_fit_q90_box.jpg" width="200" height="147" alt="Manual del micrófono MAONO HD300T" title="Manual del micrófono MAONO HD300T"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-manual-4_hu3e0b457956abde9620c1b1e015cecb52_458652_2560x1440_fit_q90_box.jpg" data-gallery="" title="Manual del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-manual-4_hu3e0b457956abde9620c1b1e015cecb52_458652_200x150_fit_q90_box.jpg" width="200" height="147" alt="Manual del micrófono MAONO HD300T" title="Manual del micrófono MAONO HD300T"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-manual-5_hu21a17924775aa0ed5510bcb4716651a5_442371_2560x1440_fit_q90_box.jpg" data-gallery="" title="Manual del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-manual-5_hu21a17924775aa0ed5510bcb4716651a5_442371_200x150_fit_q90_box.jpg" width="192" height="150" alt="Manual del micrófono MAONO HD300T" title="Manual del micrófono MAONO HD300T"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-manual-6_hu0208215b9f800dbf53b7582816b63db6_374476_2560x1440_fit_q90_box.jpg" data-gallery="" title="Manual del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-manual-6_hu0208215b9f800dbf53b7582816b63db6_374476_200x150_fit_q90_box.jpg" width="187" height="150" alt="Manual del micrófono MAONO HD300T" title="Manual del micrófono MAONO HD300T"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-manual-7_hu6dd3b952d1a6698026f743c7300ae8c3_352434_2560x1440_fit_q90_box.jpg" data-gallery="" title="Manual del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-manual-7_hu6dd3b952d1a6698026f743c7300ae8c3_352434_200x150_fit_q90_box.jpg" width="182" height="150" alt="Manual del micrófono MAONO HD300T" title="Manual del micrófono MAONO HD300T"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-manual-8_hucd063a3f4a9258021a64699c0d6ddeb6_503300_2560x1440_fit_q90_box.jpg" data-gallery="" title="Manual del micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-manual-8_hucd063a3f4a9258021a64699c0d6ddeb6_503300_200x150_fit_q90_box.jpg" width="178" height="150" alt="Manual del micrófono MAONO HD300T" title="Manual del micrófono MAONO HD300T"  class="lozad "></a></p>
-<figcaption>Manual del micrófono MAONO HD300T</figcaption>
-</figure>
-</div>
-<h4 id="el-micrófono">El micrófono</h4>
-<p>La pieza fundamental del producto es el micrófono cardioide dinámico, el soporte es útil, para los algunos usuarios que prefieran un montarlo en un brazo articulado está el modelo HD300S para su fácil cambio de posición y evitar que ocupe sitio encima de la mesa.</p>
-<p>Completamente construido en metal hecho para durar y ofrecer gran resistencia tiene las diferentes conexiones con una salida dual XLR y USB en la parte posterior del micrófono lo que hace que los cables no estorben.</p>
-<p>El proceso de montaje es muy sencillo con las instrucciones indicadas en el manual impreso incluido en la caja. El único aspecto en el que me he tenido que fijar es en la posición del tallo en el que la extensión está en la parte superior. La base es perfectamente estable en una superficie plana y el soporte antigolpes aisla al micrófono de la superficie.</p>
-<p>Una vez montado queda listo para su uso que se realiza mediante la conexión del cable USB al ordenador o el cable XLR a una interfaz de audio y si se desea monitorizar sin latencia el audio capturado desde el micrófono un <em>jack</em> 3.5mm conectados a unos cascos.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-microfono-1_hu7da517ec34cb6ebff7a9a9b21b2c1e39_583078_2560x1440_fit_q90_box.jpg" data-gallery="" title="Micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-microfono-1_hu7da517ec34cb6ebff7a9a9b21b2c1e39_583078_650x450_fit_q90_box.jpg" width="650" height="193" alt="Micrófono MAONO HD300T" title="Micrófono MAONO HD300T"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-microfono-2_hu773989650727d33b3c5e358d1f95482d_398587_2560x1440_fit_q90_box.jpg" data-gallery="" title="Micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-microfono-2_hu773989650727d33b3c5e358d1f95482d_398587_650x450_fit_q90_box.jpg" width="565" height="450" alt="Micrófono MAONO HD300T" title="Micrófono MAONO HD300T"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-microfono-3_hub24f885c20c38266e8b0fda7e3545747_292224_2560x1440_fit_q90_box.jpg" data-gallery="" title="Micrófono MAONO HD300T"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-microfono-3_hub24f885c20c38266e8b0fda7e3545747_292224_650x450_fit_q90_box.jpg" width="312" height="450" alt="Micrófono MAONO HD300T" title="Micrófono MAONO HD300T"  class="lozad "></a></p>
-<figcaption>Micrófono MAONO HD300T</figcaption>
-</figure>
-</div>
-<h3 id="análisis-y-opinión">Análisis y opinión</h3>
-<p>El micrófono MAONO HD300T ofrece una calidad de sonido mayor que la que ofrecen los micrófonos integrados tanto de ordenadores como de portátiles. Al ser dinámico requiere hablar de cerca, usar un programa como OBS que permita aumentar la ganancia o usar una interfaz de audio, la ventaja es que no requiere alimentación y en los otros casos la interfaz de audio no es necesaria aunque sí recomendable.</p>
-<p>Gracias a sus múltiples conexiones que lo dota de mucha polivalencia y ajustarse a varias necesidades y ser de patrón cardioide lo hace adecuado para la creación de contenido que incluya audio para tener una buena calidad y evitar o al menos atenuar ruidos ajenos a lo que se desea en la grabación.</p>
-<p>Los medios mejoran la calidad de la grabación y ayuda a que esta sea consumido y compartido pero tan importante como los medios como este micrófono es el propio contenido y que se cuenta o muestra en él.</p>
-<p>Este micrófono tiene un precio que no es nada desorbitado más teniendo en cuenta que incluye una peana y cables como el XLR que en otras marcas y modelos hay que comprar aparte, ofrece con una calidad más que suficiente para un uso por afición e incluso de forma profesional puede ofrecer resultados más que satisfactorios.</p>
-<p>Aparte de las grandes bondades que ofrece el micrófono también hay algunos aspectos que sin ser graves son mejorables. Un punto es que la caja que he recibido no tiene ningún precinto de garantía que no se si será de la que he recibido o es así de fábrica. El precinto asegura al comprador que la caja no haya sido abierta ni usado por otro usuario y venga tal y como salió de fábrica.</p>
-<p>Un poco más grave sin ser dramático es que el cable USB que he recibido debe tener algún defecto ya que al conectarlo a veces el ordenador no lo detectaba o se desconectaba al mover el cable. Por suerte no es un problema del micrófono que es la parte más importante y debe ser únicamente un defecto del cable de este ejemplar que por mala suerte me ha tocado ya que usando otro cable propio el micrófono si se detecta con tan solo conectarlo al ordenador y de forma fiable aún moviéndolo.</p>
-<p>En otro orden de detalles casi irrelevantes es que como ocurre en muchos productos las instrucciones están únicamente explicadas para Windows y para macOS y rara vez para GNU/Linux. Es casi irrelevante ya que el micrófono aunque no se indique explícitamente es totalmente compatible con GNU/Linux, basta conectar el cable al micrófono y al ordenador y se detecta inmediatamente al menos en la distribución Arch Linux y usando GNOME donde en su panel de sonido se puede ajustar la fuente de la entrada si se dispone de más de un medio de entrada, además funciona perfectamente con el programa OBS que es uno de los más utilizados para la realización de grabaciones. También lo he probado en macOS donde igualmente funciona correctamente.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-linux_huf94a2d4a6efac6fd5b1fc16e2e008fcd_115195_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de compatibilidad en GNU/Linux"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-linux_huf94a2d4a6efac6fd5b1fc16e2e008fcd_115195_300x200_fit_box_3.png" width="226" height="200" alt="Prueba de compatibilidad en GNU/Linux" title="Prueba de compatibilidad en GNU/Linux"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-macos_hu4fd2b84c51309f7bcc5c11619f5b0596_158782_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de compatibilidad en macOS"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/maono-hd300-macos_hu4fd2b84c51309f7bcc5c11619f5b0596_158782_300x200_fit_box_3.png" width="248" height="200" alt="Prueba de compatibilidad en macOS" title="Prueba de compatibilidad en macOS"  class="lozad "></a></p>
-<figcaption>Prueba de compatibilidad en GNU/Linux y macOS</figcaption>
-</figure>
-</div>
-<p>Otro detalle es que la base es completamente de metal y que en ciertas superficies o en movimientos bruscos cabe la posibilidad de rallar o crear alguna marca en la superficie de la mesa usando su peana de soporte.</p>
-<p>Sopesando las características de micrófono en conjunto y su precio aun con las mejoras comentadas que no son demasiado grandes el MAONO HD300T es una buena elección para la mayoría de usuarios que lo necesitan para tener un audio de calidad.</p>
-<h4 id="prueba-de-audio">Prueba de audio</h4>
-<p>La compatibilidad con <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> es completa, basta con conectar el cable USB al micrófono y al ordenador y este se reconoce inmediatamente sin necesidad de instalar ningún controlador para que lo reconozca el sistema operativo y quedar listo para empezar a capturar audio. Más en concreto con <a href="https://www.archlinux.org/">Arch Linux</a> que se caracteriza por ser una distribución de GNU/Linux de tener todo el software y paquetes actualizados a las últimas versiones proporcionadas por los desarrolladores.</p>
-<p>En las herramientas de configuración en sonido de <a href="https://www.gnome.org/">GNOME</a> una vez conectado el micrófono al ordenador se puede seleccionar como fuente de entrada de audio. Una vez seleccionado la grabadora de sonidos graba el audio de micrófono, otro programa muy utilizado es OBS que también reconoce el micrófono y realiza la grabación a la perfección con la posibilidad en este programa de aumentar la ganancia en caso de hablar a cierta distancia entre muchas otras opciones de captura como por ejemplo vídeo.</p>
-<p>Las pruebas las he hecho utilizando el servidor de audio <a href="https://www.freedesktop.org/wiki/Software/PulseAudio/">Pulseadio</a> funcionando tanto el micrófono como los programas correctamente, muchos usuarios están migrando ya a la alternativa <a href="https://pipewire.org/">Pipewire</a> que ofrece aún mejor experiencia de sonido y posibilidades en GNU/Linux.</p>
-<p>Para comparar la diferencia del audio entre diferentes micrófonos y el MAONO he realizado la grabación de forma simúltanea por un lado con el micrófono interno del Intel NUC a una distancia de unos 60 centímetros y por otro lado el micrófono MAONO HD300T a una disnacia 30 centímetros. En el programa OBS he modificado la ganancia de ambos micrófonos del MAONO para poder estar algo más lejos y del Intel NUC para igualar el nivel de audio que en este caso he de reducir la ganancia ya que sino satura.</p>
-<p>Micrófono interno del Intel NUC.</p>
-<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
-  <source src="audios/audio-microfono-interno.mp3" type="audio/mpeg">
-</audio>
-<p>Micrófono MAONO HD300T.</p>
-<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
-  <source src="audios/audio-microfono-maono-hd300.mp3" type="audio/mpeg">
-</audio>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/obs_hu747ccabbc48f76ed6fd90617044c7d4b_479388_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de OBS"><img src="https://picodotdev.github.io/blog-bitix/2022/07/desempaquetado-y-analisis-del-microfono-maono-hd300t/images/obs_hu747ccabbc48f76ed6fd90617044c7d4b_479388_300x200_fit_box_3.png" width="282" height="200" alt="Configuración de OBS" title="Configuración de OBS"  class="lozad "></a></p>
-<figcaption>Configuración de OBS Studio</figcaption>
-</figure>
-</div>
-<p>En la prueba la diferencia es muy clara, el micrófono interno del Intel NUC debe tener una ganancia grande lo que permite estar lejos del micrófono y no tener que utilizar un programa como OBS pero el audio es más agudo y no tan grave en la mayoría de tonos además parece que tiene reverberación y dado que el micrófono está integrado en el dispositivo el ventilador se escucha. Por el contrario el audio ofrecido por el micrófono MAONO es más grave, con mucho menos ruido y los usuarios coincidiremos en que el audio del MAONO es significativamente de mayor calidad porque entre otras cosas el audio es más limpio, sin sonidos ajenos al audio que se quiere capturar y un mejor tono.</p>
-<p>Hay que estar a distancia para que el patrón cardioide se note, estando cerca aún lateralmente o por detrás el audio sigue entrando al hablar al menos si se incrementa la ganancia. Sin embargo, el ventilador del ordenador que en el NUC que es equivalente al de un portátil no se percibe en absoluto en el MAONO.</p>
-<h4 id="vídeos">Vídeos</h4>
-<p>En internet hay una buena cantidad de vídeos que lo muestran no en fotos sino en vídeos junto con también pruebas de audio. Otros usuarios con conocimientos avanzados tanto de audio como con experiencia con otras marcas y modelos también lo han analizado y proporcionan valiosa información para conocer todos los detalles del micrófono con aspectos que solo se pueden saber al usarlo.</p>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/LvNzHRjSgK4" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/iDWLYa8UkWM" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/LYAxp45e8CM" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/GqAGV03_LOo" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<h3 id="otros-productos-relacionados">Otros productos relacionados</h3>
-<p>Hay otros varios productos que son complemento de un micrófono y útiles según su caso de uso. Uno que algunos usuarios por sus necesidades consideran básico e imprescindible es una interfaz de audio ya sea por el motivo de poder aumentar la ganancia en un micrófono dinámico o porque el micrófono de es condensador y necesita alimentación, aparte de poder realizar algunas funciones en tiempo real sin necesidad de aplicaciones que requieren procesamiento por parte del ordenador.</p>
-<ul>
-<li><a href="https://www.maono.com/collections/maonocaster-audio-interface">Interfaces de audio de MAONO</a></li>
-</ul>
-<p>Otro producto es un brazo articulado que permite mover el micrófono y ajustarlo en la posición deseada con mayor libertad o apartarlo cuando no se está utilizando sin que ocupe espacio encima de la mesa. Los brazos articulados ofrecen un punto de montaje en el que se monta el soporte anti golpes del micrófono, una vez montado el micrófono se desplaza con la posición del brazo con la libertad de movimiento que permita.</p>
-<p>Unos cascos conectados al <em>jack</em> 3.5mm directamente al micrófono o a la interfaz de audio permiten aislarse del ruido externo sobre todo si tienen cancelación de ruido y oir en tiempo real el audio capturado pudiendo ajustar algún parámetro en caso de que el resultado no sea el deseado.</p>
-<p>MAONO como marca especializada en audio ofrece aparte de micrófonos varias interfaces de audio desde algunos modelos más básicos a otros más completos, brazos articulados y cascos. Adquirir todos los elementos de la misma marca da mayor seguridad de que todos van a ser compatibles entre sí.</p>
-<p>Si la estancia donde se realiza la grabación ofrece eco hay espumas que permiten amortiguar los rebotes del sonido y evitar efectos en el audio capturado.</p>
-<p>Finalmente, si además de grabar audio se graba vídeo un segundo monitor permite grabar un monitor mientras se tiene en el segundo un programa como OBS en segundo plano tanto para ajustar la grabación como para monitorizar en tiempo real la grabación es su formato final si hay varias fuentes de entrada como la pantalla, una cámara web, música, un micrófono además de las fuentes que proporcione el OBS. Una <em>webcam</em> permite grabar a uno mismo además del contenido del ordenador.</p>
-<ul>
-<li><a href="https://www.maono.com/collections/mic-accessories">Accesorios de MAONO</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2018/10/desempaquetado-y-analisis-de-monitor-benq-pd2700q-2k-qhd-ips-27-pulgadas/">Desempaquetado y análisis de monitor BenQ PD2700Q, 2K/QHD, IPS, 27 pulgadas</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2022/08/desempaquetado-y-analisis-de-la-interfaz-de-audio-maonocaster-e2/">Desempaquetado y análisis de la interfaz de audio Maonocaster E2</a></li>
-</ul>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B085XRGSWV&amp;linkId=8a22822b7a2b8773353cf7a504a58560" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B097TRJCGJ&amp;linkId=6ed2315c9a05ed8f4f5dd2a5cf93db1f" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B0973DV11T&amp;linkId=431ee1436d90139b6ef311f06790dff2" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B09V1KJ3J4&amp;linkId=4ece93a4493313ff15aeb319f5bf7d94" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B086R61LN9&amp;linkId=966f9b4d697e23918b8680d5fc29db3f" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B00IZEJFPE&amp;linkId=4417aacbe6fa260739ee969dde401776" title="Amazon" class="lozad"></iframe>
-</div>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B01K2210GS&amp;linkId=37c01c8c71f103d6c7ad009afd2892a9" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B0737M9QP7&amp;linkId=3f46b23e2d6b884222796306587cced8" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07GLR6RQF&amp;linkId=c69a55a9bb5bf63725b1bdffaa567444" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B01N4AIIIV&amp;linkId=076b46557cfcc1a8a97d634ec8558adc" title="Amazon" class="lozad"></iframe>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="hardware"/>
             
         
     </entry>
