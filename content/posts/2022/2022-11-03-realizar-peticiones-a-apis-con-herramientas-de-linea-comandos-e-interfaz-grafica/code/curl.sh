@@ -1,0 +1,1 @@
+$ curl -v https://picodotdev.github.io/blog-bitix/
