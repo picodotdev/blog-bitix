@@ -5,12 +5,72 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-11-03T23:00:00+02:00</updated>
+    <updated>2022-11-10T23:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/</id>
+        <title>Cómo eliminar de forma segura archivos con wipe y dd en GNU/Linux</title>
+        <updated>2016-03-05T12:00:00+01:00</updated>
+        <published>2016-03-05T12:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Eliminar archivos del sistema de ficheros no basta para destruir la información que contuvieran. Con herramientas como <em>Foremost</em> su contenido puede ser recuperado, por ello cuando desechamos una unidad de almacenamiento (disco duro, memoria USB, tarjeta SD, SSD) conviene hacer un borrado seguro de la unidad, si trabajamos con información sensible quizá queramos hacer un borrado seguro de los archivos que eliminemos. Con el comando <code>wipe</code> podemos borrar archivos individuales y con el comando <code>dd</code> una unidad completa.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>Aunque los eliminemos su contenido permanece en el sistema de archivos que con herramientas como <a href="https://wiki.archlinux.org/index.php/Foremost">Foremost</a> pueden recuperarse. Esto es debido a que cuando se elimina un archivo realmente lo que se hace es liberar el espacio ocupado, el contenido mientras no se sobrescriba por el de otro nuevo archivo sigue estando presente en el dispositivo de almacenamiento. Para eliminar de forma segura tal que no sea posible recuperar ni con herramientas como Foremost un archivo del sistema de almacenamiento hay que hacer un borrado seguro del archivo o de la unidad completa, proceso que consiste en sobrescribir la información con datos aleatorios.</p>
+<p>Esto es necesario o recomendable si trabajamos con información sensible como datos personales, contraseñas, claves, &hellip; o si nos deshacemos de la unidad de almacenamiento USB, tarjeta de memoria, disco duro o SSD. En el artículo <a href="https://picodotdev.github.io/blog-bitix/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/">Cómo recuperar archivos con Foremost</a> explico cómo recuperar información que podríamos considerar destruida, en mi experiencia aún habiendo eliminado los archivos usando las facilidades del propio entorno de escritorio se puede recuperar el contenido completo de bastantes de los archivos originales sobre todo si la unidad tiene bastante espacio libre y no ha tenido un uso excesivo.</p>
+<p>En GNU/Linux para eliminar archivos de forma segura disponemos del <a href="http://linux.die.net/man/1/wipe">comando <code>wipe</code></a> que en <a href="https://www.archlinux.org/">Arch Linux</a> su <a href="https://www.archlinux.org/packages/extra/x86_64/wipe/">paquete</a> se encuentra en el repositorio Extra. Su uso es el siguiente, la opción <em>-r</em> hace un borrado recursivo de un directorio por lo que hay que usarla con cuidado y la opción <em>-q</em> hace un borrado rápido sobrescribiendo únicamente 4 veces el contenido del archivo con datos aleatorios, finalmente se indica la ruta del archivo o directorio a eliminar de forma segura. Con otras opciones se puede afinar el comportamiento de borrado.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ wipe -r -q /path/to/directory/&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>wipe.sh</span>
+    </div>
+</div>
+<p>Para destruir la información de forma completa con datos aleatorios de una unidad de almacenamiento podemos usar el <a href="http://linux.die.net/man/1/dd">comando <code>dd</code></a>, deberemos sustituir la <em>X</em> por el identificador adecuado asignado a la unidad que podemos obtener con el comando <code>blkid</code>:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># blkid</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># dd if=/dev/urandom of=/dev/sdX bs=4096 status=progress</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>dd.sh</span>
+    </div>
+</div>
+<p>Como se indica en la <a href="http://manpages.ubuntu.com/manpages/lucid/man1/wipe.1.html">documentación de <em>wipe</em></a> todavía puede ser posible recuperar archivos por el sistema de registro o <em>journaling</em> de los sistemas de archivos modernos en los que algunos datos pueden escribirse en el sistema de registro, también se comenta alguna noción más a tener en cuenta en cuanto a la seguridad.</p>
+<p>Hacer una eliminación segura con el comando <code>wipe</code> o uno similar dificulta la recuperación de información pero no es infalible. Una solución recomendada es <a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/">cifrar completamente el sistema de archivos</a>. Aún no cifrando completamente el sistema de archivos podemos <a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">usar <em>encfs</em> para cifrar determinados archivos</a> para proteger la información.</p>
+<p>Aunque si queremos asegurarnos de que la información sea verdaderamente irrecuperable de una unidad otro buen método es usar un martillo como saben en alguna organización política.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/">Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">Cifrar archivos con EncFS en GNU/Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/">Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux</a></li>
+<li><a href="http://linux.die.net/man/1/wipe">comando <code>wipe</code></a></li>
+<li><a href="http://linux.die.net/man/1/dd">comando <code>dd</code></a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Securely_wipe_disk">Securely wipe disk</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Disk_encryption">Disk encryption</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="seguridad"/>
+            
+                <category term="software-libre"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/</id>
         <title>Configurar HTTP/2 en Nginx, Apache HTTPD, WildFly o Jetty</title>
@@ -125,7 +185,7 @@
 <div class="logotypes">
 <p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
 </div>
-<p>Seguro que tienes varias memorias USB o discos duros externos con los que transportar información de un sitio a otro o como copia de seguridad. No sería extraño perder alguna de esas unidades en una biblioteca, universidad, aeropuerto, vía pública, metro, &hellip; con toda la información que contengan como fotos y documentos con información personal accesible por cualquier persona que se encuentre esa unidad. Si queremos evitar este posible caso de que al perder la unidad USB que al final es lo de menos ya que se puede sustituir fácilmente toda la información este accesible podemos cifrar su contenido. Hay varias formas una <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">cifrando con GPG archivos individuales</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">cifrando con EncFS ciertas carpetas</a> y varios archivos a la vez o la unidad completa con <a href="https://wiki.archlinux.org/index.php/Dm-crypt">dm-crypt</a> que será el caso de este artículo.</p>
+<p>Seguro que tienes varias memorias USB o discos duros externos con los que transportar información de un sitio a otro o como copia de seguridad. No sería extraño perder alguna de esas unidades en una biblioteca, universidad, aeropuerto, vía pública, metro, &hellip; con toda la información que contengan como fotos y documentos con información personal accesible por cualquier persona que se encuentre esa unidad. Si queremos evitar este posible caso de que al perder la unidad USB que al final es lo de menos ya que se puede sustituir fácilmente toda la información este accesible podemos cifrar su contenido. Hay varias formas una <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.htmlindex-amp.html">cifrando con GPG archivos individuales</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">cifrando con EncFS ciertas carpetas</a> y varios archivos a la vez o la unidad completa con <a href="https://wiki.archlinux.org/index.php/Dm-crypt">dm-crypt</a> que será el caso de este artículo.</p>
 <p>Usar GPG es incómodo si necesitamos cifrar múltiples archivos como sería el caso de una memoria USB, EncFS requiere introducir un comando para montar el sistema de archivos cifrado y no obligaremos a que todos los archivos estén cifrados, usando dm-crypt el sistema nos preguntará por la clave de cifrado al conectar la unidad USB y se encargará de hacer el cifrado y descifrado de forma automática y transparente, nosotros trabajaremos con los archivos y sus aplicaciones con normalidad sin ninguna necesidad especial. Además, no es complicado inicializar la unidad USB para que su contenido esté cifrado usando la <a href="https://es.wikipedia.org/wiki/GNOME_Disks">aplicación Discos de GNOME</a>.</p>
 <p>Deberemos formatear la unidad por lo que previamente deberemos hacer una copia de seguridad de su contenido para no perderlo, en teoría desde Nautilus se puede hacer pero en mis pruebas me indicaba un error que usando la aplicación Discos no se produce.</p>
 <div class="code">
@@ -259,8 +319,8 @@
 <div class="logotypes">
 <p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
 </div>
-<p>Nuestros datos es una de las cosas más importantes que podemos perder o nos pueden robar, más que el dispositivo que los contiene ya que este es fácilmente reemplazable no así los datos. La pérdida de datos puede ser porque se nos ha estropeado el disco duro y ha quedado completamente inaccesible, para evitar la pérdida de datos conviene <a href="https://elblogdepicodev.blogspot.com.es/2013/05/copia-de-seguridad-con-rsync.html">realizar copias de seguridad</a> regularmente de las que recuperar los datos perdidos en caso de necesidad. También nos puede ocurrir que perdamos una memoria USB o peor aún nos roben en nuestro propio domicilio y nos extraigan entre otras cosas el portátil o un disco duro. Los productos de electrónica son objetivos apreciados por los ladrones por su valor, por su demanda que los hacen fácilmente colocables en el mercado y por su poco volumen.</p>
-<p>En GNU/Linux podemos proteger nuestros datos de múltiples formas de una memoria USB, de un portátil o disco duro externo. Una de ellas es <a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/">cifrando completamente el sistema de archivos</a> con lo que todos los datos que contuviese estarán protegidos. Otra forma es <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">cifrar ciertos archivos con información sensible con GPG</a> como contraseñas, una solución menos invasiva y más compatible con otros sistemas que cifrar completamente el sistema de archivos, no muy complicada pero en la que debemos cifrar cada archivo individualmente. Para evitar cifrar/descifrar cada archivo individualmente y manualmente con GPG podemos usar <a href="https://wiki.archlinux.org/index.php/EncFS">EncFS</a>. EncFS es un sistema de archivos que podemos montar y cifrará el contenido de todos los archivos que incluyamos en él.</p>
+<p>Nuestros datos es una de las cosas más importantes que podemos perder o nos pueden robar, más que el dispositivo que los contiene ya que este es fácilmente reemplazable no así los datos. La pérdida de datos puede ser porque se nos ha estropeado el disco duro y ha quedado completamente inaccesible, para evitar la pérdida de datos conviene <a href="https://elblogdepicodev.blogspot.com.es/2013/05/copia-de-seguridad-con-rsync.htmlindex-amp.html">realizar copias de seguridad</a> regularmente de las que recuperar los datos perdidos en caso de necesidad. También nos puede ocurrir que perdamos una memoria USB o peor aún nos roben en nuestro propio domicilio y nos extraigan entre otras cosas el portátil o un disco duro. Los productos de electrónica son objetivos apreciados por los ladrones por su valor, por su demanda que los hacen fácilmente colocables en el mercado y por su poco volumen.</p>
+<p>En GNU/Linux podemos proteger nuestros datos de múltiples formas de una memoria USB, de un portátil o disco duro externo. Una de ellas es <a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/">cifrando completamente el sistema de archivos</a> con lo que todos los datos que contuviese estarán protegidos. Otra forma es <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.htmlindex-amp.html">cifrar ciertos archivos con información sensible con GPG</a> como contraseñas, una solución menos invasiva y más compatible con otros sistemas que cifrar completamente el sistema de archivos, no muy complicada pero en la que debemos cifrar cada archivo individualmente. Para evitar cifrar/descifrar cada archivo individualmente y manualmente con GPG podemos usar <a href="https://wiki.archlinux.org/index.php/EncFS">EncFS</a>. EncFS es un sistema de archivos que podemos montar y cifrará el contenido de todos los archivos que incluyamos en él.</p>
 <p>Con EncFS el contenido de los archivos y sus nombres serán cifrados aunque su tamaño, fechas de modificación y estructura de carpetas seguirá siendo visible. Aunque sin sus nombres originales el tamaño, fechas y estructura de carpetas ya es algo indicativo y por tanto para algunas necesidades no es suficiente la seguridad que proporciona.</p>
 <p>Para usar EncFS debemos instalar su paquete, en <a href="https://www.archlinux.org/">Arch Linux</a> con:</p>
 <div class="code">
@@ -595,8 +655,8 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/05/10-razones-para-seguir-usando-java/">10 razones para seguir usando Java</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">Novedades y nuevas características de Java 8</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/06/nueva-visita-a-herramientas-para-un-proyecto-java/">Nueva visita a Herramientas para un proyecto Java</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.html">Herramienta de construcción Gradle</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/usar-gradle-mediante-gradle-wrapper.html">Usar Gradle mediante Gradle wrapper</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.htmlindex-amp.html">Herramienta de construcción Gradle</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/usar-gradle-mediante-gradle-wrapper.htmlindex-amp.html">Usar Gradle mediante Gradle wrapper</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/">Ejemplo de multiproyecto con Gradle</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/10/aplicacion-java-autocontenida-con-spring-boot/">Aplicación Java autocontenida con Spring Boot</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/11/configuracion-de-una-aplicacion-en-diferentes-entornos-con-spring-cloud-config/">Configuración de una aplicación en diferentes entornos con Spring Cloud Config</a></li>
@@ -672,7 +732,7 @@
 </div>
 <p>La cantidad de <em>frameworks</em> web disponibles en Java incluso para la misma tarea es notable, a veces cuesta decidirse por uno, sin embargo, tampoco es cuestión de elegir cualquiera. Deberemos evaluar las necesidades de la aplicación y las opciones que consideramos como adecuadas. <a href="https://sparkjava.com/">Spark Framework</a> es un <em>microframework</em> simple y sencillo, sin muchas de las funcionalidades de otras opciones más completas y complejas y que quizá no necesitemos. Su funcionalidad es suficiente capaz para servirnos en múltiples casos, uno de ellos es una <abbr title="Application Programming Interface">API</abbr> <abbr title="Representational State Transfer">REST</abbr>, otro una página web dinámica sencilla, prototipos funcionales, &hellip; su sencillez hace que podamos empezar a hacer cosas en poco tiempo. Spark es un <em>framework</em> muy sencillo al estilo de otros disponibles en otros lenguajes pero para la plataforma <a href="https://www.oracle.com/technetwork/java/index.html">Java</a>, ofrece soporte para las <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">nuevas características introducidas en la versión 8 de Java</a> que facilitan la tarea de programación como las <em>lambdas</em>.</p>
 <p>Con la aparición de los dispositivos móviles algunas aplicaciones están cambiando su arquitectura. Para evitar duplicar funcionalidades si la aplicación es accedida mediante un navegador, una aplicación de escritorio, mediante un dispositivo móvil en el que queremos aprovecharnos de sus características nativas o queremos que una tercera parte se integre con la aplicación las aplicaciones, en vez de generar <abbr title="HyperText Markup Language">HTML</abbr> en el servidor ofrecen una API REST con la que todos estos clientes se comunican para solicitar los datos o realizar las operaciones que necesitan, una vez que los clientes obtienen los datos estos presentan la información adecuadamente según el dispositivo.</p>
-<p>En Java podemos desarrollar una <a href="https://elblogdepicodev.blogspot.com.es/2013/02/ejemplo-sencillo-de-web-service-con-resteasy.html">interfaz REST usando RESTEasy</a> pero también tenemos otras opciones, una Spark. En este artículo comentaré cómo hacer un ejemplo hola mundo usando Spark como opción si no necesitamos todas las funcionalidades que ofrecen otros <em>frameworks</em> más complejos y de mayor tamaño.</p>
+<p>En Java podemos desarrollar una <a href="https://elblogdepicodev.blogspot.com.es/2013/02/ejemplo-sencillo-de-web-service-con-resteasy.htmlindex-amp.html">interfaz REST usando RESTEasy</a> pero también tenemos otras opciones, una Spark. En este artículo comentaré cómo hacer un ejemplo hola mundo usando Spark como opción si no necesitamos todas las funcionalidades que ofrecen otros <em>frameworks</em> más complejos y de mayor tamaño.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.spark</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import static</span> <span class="nn">spark.Spark.get</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HolaMundoSpark</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">get</span><span class="o">(</span><span class="s">&#34;/hola&#34;</span><span class="o">,</span> <span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">res</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="s">&#34;¡Hola mundo!&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
@@ -697,10 +757,10 @@
 <div class="reference">
     Referencia:<br>
 <ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/02/ejemplo-sencillo-de-web-service-con-resteasy.html">Ejemplo sencillo de servicio web con RESTEasy</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/02/cliente-javascript-y-java-de-servicio-web-resteasy.html">Cliente javascript y java de servicio web REST con RESTEasy </a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/02/devolver-xml-json-o-html-con-resteasy.html">Devolver xml, json o html con RESTEasy </a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/03/integracion-tapestry-con-resteasy.htm.html">Integración de Apache Tapestry con RESTEasy </a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/02/ejemplo-sencillo-de-web-service-con-resteasy.htmlindex-amp.html">Ejemplo sencillo de servicio web con RESTEasy</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/02/cliente-javascript-y-java-de-servicio-web-resteasy.htmlindex-amp.html">Cliente javascript y java de servicio web REST con RESTEasy </a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/02/devolver-xml-json-o-html-con-resteasy.htmlindex-amp.html">Devolver xml, json o html con RESTEasy </a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/03/integracion-tapestry-con-resteasy.htm.htmlindex-amp.html">Integración de Apache Tapestry con RESTEasy </a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/05/alternativa-a-hibernate-u-orm-y-ejemplo-de-jooq/">Alternativa a Hibernate u ORM y ejemplo de jOOQ</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/10/aplicacion-java-autocontenida-con-spring-boot/">Aplicación Java autocontenida con Spring Boot</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/10/multiples-esquemas-o-bases-de-datos-con-jooq-y-spring-en-java/">Múltiples esquemas o bases de datos con jOOQ y Spring en Java</a></li>
@@ -780,8 +840,8 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/05/alternativa-a-hibernate-u-orm-y-ejemplo-de-jooq/">Alternativa a Hibernate u ORM y ejemplo de jOOQ</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/10/multiples-esquemas-o-bases-de-datos-con-jooq-y-spring-en-java/">Múltiples esquemas o bases de datos con jOOQ y Spring en Java</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/11/obtener-datos-de-multiples-tablas-con-jooq/">Obtener datos de múltiples tablas con jOOQ</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.html">Herramienta de construcción Gradle</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/usar-gradle-mediante-gradle-wrapper.html">Usar Gradle mediante Gradle wrapper</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.htmlindex-amp.html">Herramienta de construcción Gradle</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/usar-gradle-mediante-gradle-wrapper.htmlindex-amp.html">Usar Gradle mediante Gradle wrapper</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/">Ejemplo de multiproyecto con Gradle</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2016/01/aplicacion-web-con-spark-framework-y-java/">Aplicación web con Spark <em>framework</em> y Java</a></li>
 </ul>
@@ -817,7 +877,7 @@
 <p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/microsoft-office.svg" width="200" height="240" alt="Microsoft Office" title="Microsoft Office"  class=""></p>
 </div>
 <p>Este 2016 lo he empezando nada más y nada menos que instalando el sistema operativo y programas de un portátil. Uno de esos favores que habitualmente hacemos los informáticos de los que yo normalmente hago de buen grado, en esta ocasión recibí otro a cambio de otra índole así que perfecto. La necesidad de la reinstalación venía de que el portátil era notablemente lento a pesar de tener un disco duro mecánico y tampoco era porque el equipo fuese antiguo o tuviese poca memoria, el procesador era un AMD Athlon x2 QL-65 con 4 GiB de memoria y 320 GB de disco duro, algo que debería ser más que suficiente para su propósito de navegar por internet, ver películas, escuchar música y tareas ofimáticas. Era lento al iniciarse e al iniciar la ejecución programas además de algún mensaje del antivirus quejándose de que su periodo de prueba había expirado que aparecía al entrar al escritorio. Eso no era todo algún virus había cifrado los archivos personales, fotos y documentos, pidiendo a cambio de recuperarlos algo que ni siquiera me molesté ver en detalle, seguro que nada bueno.</p>
-<p>El equipo tenía varios programas de <em>bloatware</em> típicos de los portátiles con <a href="https://www.microsoft.com/es-es/windows/">Windows</a> proporcionados por los fabricantes, un antivirus que podría encajar con la definición de aquello de lo que intenta proteger que caduca al cabo de un tiempo y lo deja desprotegido, un reproductor que se inicia con el escritorio y se esconde en la parte superior de la pantalla por si atípicamente lo necesitas. Los fabricantes son los que preinstalan estos programas indeseables y serán los principales responsables pero si <a href="https://www.microsoft.com/">Microsoft</a> conociendo el mal nombre que le dan a sus sistemas hasta el momento no lo ha impedido algo de culpa tendrá, si su sistema operativo es una imposición en prácticamente la totalidad de portátiles que se venden en las tiendas, ¿conocéis el <a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.html">impuesto Windows</a>?, podría imponer alguna condición para permitir preinstalar Windows y hacer más felices a sus usuarios.</p>
+<p>El equipo tenía varios programas de <em>bloatware</em> típicos de los portátiles con <a href="https://www.microsoft.com/es-es/windows/">Windows</a> proporcionados por los fabricantes, un antivirus que podría encajar con la definición de aquello de lo que intenta proteger que caduca al cabo de un tiempo y lo deja desprotegido, un reproductor que se inicia con el escritorio y se esconde en la parte superior de la pantalla por si atípicamente lo necesitas. Los fabricantes son los que preinstalan estos programas indeseables y serán los principales responsables pero si <a href="https://www.microsoft.com/">Microsoft</a> conociendo el mal nombre que le dan a sus sistemas hasta el momento no lo ha impedido algo de culpa tendrá, si su sistema operativo es una imposición en prácticamente la totalidad de portátiles que se venden en las tiendas, ¿conocéis el <a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.htmlindex-amp.html">impuesto Windows</a>?, podría imponer alguna condición para permitir preinstalar Windows y hacer más felices a sus usuarios.</p>
 <p>Por otra parte desde la época de Windows Vista el equipo se puede reinstalar y dejar como de fábrica incluído todo el <em>bloatware</em> anteriormente citado pero para ello se reservan unos 10 GiB del disco duro espacio que no es usable por el usuario. Con discos duros de capacidades de 320 / 500 GB que queden reservados 10 GiB no es mayor problema pero más de uno ha preguntado porque su espacio disponible no se corresponde con las especificaciones del equipo que compró.</p>
 <p>De modo que para corregir los problemas hice una reinstalación limpia.</p>
 <h3 id="inicio-la-instalación">Inicio la instalación</h3>
@@ -1000,7 +1060,7 @@
 <li>La libertad de redistribuir copias para ayudar a su prójimo (libertad 2).</li>
 <li>La libertad de distribuir copias de sus versiones modificadas a terceros (libertad 3). Esto le permite ofrecer a toda la comunidad la oportunidad de beneficiarse de las modificaciones. El acceso al código fuente es una condición necesaria para ello.</li>
 </ul>
-<p>Si analizas detalladamente estas cuatro libertades te darás cuenta de que el software libre no solo trata de software sino que tiene una parte ética y moral, es una forma de como queremos entender el software y el mundo. El software libre no tiene porque ser gratuito aunque en la mayoría de los casos lo es. Las libertades son importantes aunque por el uso masivo de opciones privativas da la sensación de que los usuarios no conocen, no son conscientes o hacen caso omiso cuando compran un producto de <a href="https://www.microsoft.com/">Microsoft</a> o <a href="https://www.apple.com/">Apple</a>. Algunas empresas se aprovechan de su posición dominante imponiendo a los usuarios su <a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.html">Impuesto Windows</a>, otras formas que comentaba de forma imaginaria pero basada en hechos reales en <a href="https://elblogdepicodev.blogspot.com.es/2011/12/como-seria-si-microsoft-apple-y-linux.html">Como sería si Apple, Microsoft y Linux</a> y licencias de uso con cláusulas abusivas junto con funciones activadas por defecto que recolectan información de sus usuarios comprometiendo su privacidad además de otras que al no tener acceso al código fuente probablemente estén presentes. Realmente a <a href="https://picodotdev.github.io/blog-bitix/2015/07/a-microsoft-no-le-importa-que-uses-windows-u-office-sin-licencia/">Microsoft no le importa que uses Windows u Office sin licencia</a> para uso personal ya que como decía probablemente prefiere esto que se use una alternativa libre, y muchos usuarios usan versiones sin licencia o denominadas piratas de los productos de Microsoft y otros programas. Como comentaba en el artículo anterior si los usuarios pagasen las licencias de todo el software que usan probablemente sería una buena forma de que el uso del software libre aumentase.</p>
+<p>Si analizas detalladamente estas cuatro libertades te darás cuenta de que el software libre no solo trata de software sino que tiene una parte ética y moral, es una forma de como queremos entender el software y el mundo. El software libre no tiene porque ser gratuito aunque en la mayoría de los casos lo es. Las libertades son importantes aunque por el uso masivo de opciones privativas da la sensación de que los usuarios no conocen, no son conscientes o hacen caso omiso cuando compran un producto de <a href="https://www.microsoft.com/">Microsoft</a> o <a href="https://www.apple.com/">Apple</a>. Algunas empresas se aprovechan de su posición dominante imponiendo a los usuarios su <a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.htmlindex-amp.html">Impuesto Windows</a>, otras formas que comentaba de forma imaginaria pero basada en hechos reales en <a href="https://elblogdepicodev.blogspot.com.es/2011/12/como-seria-si-microsoft-apple-y-linux.htmlindex-amp.html">Como sería si Apple, Microsoft y Linux</a> y licencias de uso con cláusulas abusivas junto con funciones activadas por defecto que recolectan información de sus usuarios comprometiendo su privacidad además de otras que al no tener acceso al código fuente probablemente estén presentes. Realmente a <a href="https://picodotdev.github.io/blog-bitix/2015/07/a-microsoft-no-le-importa-que-uses-windows-u-office-sin-licencia/">Microsoft no le importa que uses Windows u Office sin licencia</a> para uso personal ya que como decía probablemente prefiere esto que se use una alternativa libre, y muchos usuarios usan versiones sin licencia o denominadas piratas de los productos de Microsoft y otros programas. Como comentaba en el artículo anterior si los usuarios pagasen las licencias de todo el software que usan probablemente sería una buena forma de que el uso del software libre aumentase.</p>
 <p>Usar el software libre ya es una buena forma de apoyarlo pero también requiere algo de financiación para desarrollar sus proyectos. Muchas empresas usan software libre, algunas en gran medida en su negocio pero ¿cuantas apoyan económicamente a los proyectos que usan o de alguna otra forma?.</p>
 <p>Finalmente como tenía intención, hice una donación a la <a href="https://fsfe.org/index.en.html">organización Europea de la Free Software Foundation</a> comprando unas camisetas reivindicativas en su <a href="https://fsfe.org/order/order.es.html">tienda</a> que además usaré alegremente a modo de promoción, hay más modelos incluidos para mujer y otra serie de artículos como tazas, llaveros, bolígrafos y pins. Estas son las camisetas.</p>
 <div class="media">
@@ -1245,72 +1305,6 @@ Statistics</em>.</li>
                 <category term="planeta-codigo"/>
             
                 <category term="web"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/</id>
-        <title>Monitorizar estado de sitios web con Uptime Robot</title>
-        <updated>2015-12-15T18:00:00+01:00</updated>
-        <published>2015-12-11T17:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes"> 
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/uptime-robot.png" width="300" height="86" alt="Uptime Robot" title="Uptime Robot"  class=""></p>
-</div>
-<p>Los sitios web que ofrecen su servicio de forma ininterrumpida por diferentes causas pueden dejar de funcionar ya sea porque se ha perdido la conexión con la base de datos, se ha llenado el disco de la máquina impidiendo su normal funcionamiento u otras causas. En algunos tipos de servicio como páginas de presencia en internet puede dar una mala imagen pero en los sitios de comercio electrónico la pérdida del servicio es especialmente importante ya que además implica perder ventas o clientes. Para conocer de la forma más inmediata posible el mal funcionamiento y poder restaurar el servicio podemos usar alguna herramienta que monitorice su estado. Para monitorizar el funcionamiento de sitios web una de ellas muy sencilla es <a href="https://uptimerobot.com/">Uptime Robot</a>.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/images/uptime-robot_hue0333c5e8a33fb512ab44af0591f643c_165908_2560x1440_fit_box_3.png" data-gallery="" title="Uptime Robot"><img src="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/images/uptime-robot_hue0333c5e8a33fb512ab44af0591f643c_165908_300x200_fit_box_3.png" width="300" height="187" alt="Uptime Robot" title="Uptime Robot"  class="lozad "></a></p>
-<figcaption>Uptime Robot</figcaption>
-</figure>
-</div>
-<p>Una vez registrados y con acceso al panel de control podemos crear un <em>monitor</em>. Tenemos la posibilidad de crear diferentes tipos:</p>
-<ul>
-<li><abbr title="Hypertext Transfer Protocol">HTTP</abbr>: que comprueba que la respuesta obtenida sea un código de estado 200.</li>
-<li><em>keyword</em>: que comprueba que en la respuesta obtenida esté presente una palabra clave.</li>
-<li><em>ping</em>: que simplemente comprueba que la máquina que ofrece el servicio responda (aunque el servicio web puede que no).</li>
-<li><em>port</em>: comprueba que un determinado puerto esté accesible. En la <a href="https://uptimerobot.com/faq">página de preguntas frecuentes</a> están comentados los diferentes tipos de monitores.</li>
-</ul>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/images/nuevo-monitor_hu9c2737217dc8c4c1904809d1ca6205fc_47725_2560x1440_fit_box_3.png" data-gallery="" title="Nuevo monitor HTTP"><img src="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/images/nuevo-monitor_hu9c2737217dc8c4c1904809d1ca6205fc_47725_300x200_fit_box_3.png" width="300" height="182" alt="Nuevo monitor HTTP" title="Nuevo monitor HTTP"  class="lozad "></a></p>
-<figcaption>Nuevo monitor HTTP</figcaption>
-</figure>
-</div>
-<p>En el momento que un monitor detecte una caída de servicio podemos establecer que nos notifique por correo electrónico, <a href="https://twitter.com/">Twitter</a>, <em>web-hook</em>, <a href="https://slack.com/">Slack</a>, <abbr title="Short Message Service">SMS</abbr> o alguna más de forma que nos enteremos de la circunstancia inmediatamente. También podemos establecer el intervalo de tiempo de la monitorización desde como mínimo cada 5 minutos. En el panel de control podemos ver algunas estadísticas de cada monitor y de la cuenta, también se pueden reiniciar las estadísticas de cada monitor.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/images/dashboard_huc29035de7f83fd767594c92ff5f27042_239953_2560x1440_fit_box_3.png" data-gallery="" title="Dashboard"><img src="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/images/dashboard_huc29035de7f83fd767594c92ff5f27042_239953_300x200_fit_box_3.png" width="300" height="134" alt="Dashboard" title="Dashboard"  class="lozad "></a></p>
-<figcaption>Dashboard</figcaption>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/images/blogstack_huc756c62d73e8d527d9a8a0d4b1a83990_219472_2560x1440_fit_box_3.png" data-gallery="" title="Monitor Blog Stack"><img src="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/images/blogstack_huc756c62d73e8d527d9a8a0d4b1a83990_219472_300x200_fit_box_3.png" width="300" height="130" alt="Monitor Blog Stack" title="Monitor Blog Stack"  class="lozad "></a></p>
-<figcaption>Monitor Blog Stack</figcaption>
-</figure>
-</div>
-<p>En el plan gratuito de Uptime Robot podemos crear 50 monitores, en el <a href="http://uptimerobot.com/pricing">plan de pago</a> se pueden establecer tiempos de monitorización a partir de 1 minuto en vez de 5 y crear más monitores.</p>
-<p>Hay otras herramientas de monitorización similares pero la mayoría son de pago. También hay herramientas que se pueden instalar en el navegador o como una aplicación de escritorio pero no las recomiendo ya que las alertas solo nos llegarían cuando los estemos usando.</p>
-<p>Perfectamente podemos usar Uptime Robot sobre el <em>endpoint</em> <em>health</em> de una <a href="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/">aplicación que usa Spring Boot Actuator</a> para proporcionar información y métricas.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://uptimerobot.com/">Uptime Robot</a></li>
-<li><a href="http://www.herramientas10.com/10-servicios-gratuitos-monitorizar-sitios-web_155.html">Los 10 mejores servicios gratuitos para monitorizar sitios web</a></li>
-<li><a href="http://papelesdeinteligencia.com/como-puedes-monitorizar-una-pagina-web/">Cómo puedes monitorizar una página web</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
             
         
     </entry>
