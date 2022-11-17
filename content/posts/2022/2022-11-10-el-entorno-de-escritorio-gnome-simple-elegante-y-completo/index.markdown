@@ -22,7 +22,7 @@ summary: "GNOME es uno de los entornos de escritorio con interfaz gráfica en GN
 
 Hace ya mucho tiempo cuando migré completamente de [Windows][windows] a [Arch Linux][archlinux] casi desde el principio empecé a usar [GNOME][gnome] en esa época en la versión 2.28 o 2.30. Después de varios años he seguido de [Arch Linux a Arch Linux][blogbitix-36] y sin cambiar ni de distribución ni de entorno de escritorio desde hace ya más de una década.
 
-En los primeros momentos inicialmente al decidir qué entorno de escritorio usar empecé por KDE, ahora llamado Plasma, ya que era más parecido a Windows pero en poco tiempo opté por GNOME. Cuando finalmente di el salto a [GNU][gnu]/[Linux][linux] me resultó más atractivo GNOME por su simplicidad y ausencia de detalles innecesarios. Lo llevo usando desde GNOME 2.28 con el anterior concepto de dos barras y en los inicios de GNOME 3.0 en los que tan duramente fue criticado por cambiar varios conceptos fundamentales de las anteriores versiones, tanto que surgieron como una escisión [Mate][mate] y [Cinnamon].
+En los primeros momentos inicialmente al decidir qué entorno de escritorio usar empecé por KDE, ahora llamado Plasma, ya que era más parecido a Windows pero en poco tiempo opté por GNOME. Cuando finalmente di el salto a [GNU][gnu]/[Linux][linux] me resultó más atractivo GNOME por su simplicidad y ausencia de detalles innecesarios. Lo llevo usando desde GNOME 2.28 con el anterior concepto de dos barras y en los inicios de GNOME 3.0 a fecha de febrero 2011 en los que tan duramente fue criticado por cambiar varios conceptos fundamentales de las anteriores versiones, tanto que surgieron como una escisión [Mate][mate] y [Cinnamon][cinnamon].
 
 Durante este tiempo he usado GNOME no solo a nivel personal sino en un entorno laboral y durante todo este tiempo cada seis meses he pasado por cada una de sus versiones, en cada versión las mejoras han sido notables hasta el estado actual que considero tiene poco que envidiar a cualquier otro entorno de escritorio si no es que no los supera, incluyendo los entornos de escritorios comerciales de Windows y [macOS][macos] aún teniendo a los mejores desarrolladores del mundo que el dinero puede pagar.
 
@@ -58,8 +58,8 @@ GNOME solo es uno de los entornos de escritorio más populares de GNU/Linux, se 
 
 {{< image
     gallery="true"
-    image1="image:gnome.jpg" optionsthumb1="650x450" title1="Entorno de escritorio GNOME"
-    caption="Entorno de escritorio GNOME" >}}
+    image1="image:gnome.jpg" optionsthumb1="650x450" title1="Entorno de escritorio GNOME 43"
+    caption="Entorno de escritorio GNOME 43" >}}
 
 #### Introducción
 
@@ -361,17 +361,17 @@ Sin embargo, algunos usuarios desean algunas opciones más de personalización, 
 {{< image
     gallery="true"
     image1="image:gnome-retoques-1.jpg" optionsthumb1="200x150" title1="Retoques"
-    image2="image:gnome-retoques-1.jpg" optionsthumb2="200x150" title2="Retoques"
-    image3="image:gnome-retoques-1.jpg" optionsthumb3="200x150" title3="Retoques" >}}
+    image2="image:gnome-retoques-2.jpg" optionsthumb2="200x150" title2="Retoques"
+    image3="image:gnome-retoques-3.jpg" optionsthumb3="200x150" title3="Retoques" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-retoques-1.jpg" optionsthumb1="200x150" title1="Retoques"
-    image2="image:gnome-retoques-1.jpg" optionsthumb2="200x150" title2="Retoques"
-    image3="image:gnome-retoques-1.jpg" optionsthumb3="200x150" title3="Retoques" >}}
+    image1="image:gnome-retoques-4.jpg" optionsthumb1="200x150" title1="Retoques"
+    image2="image:gnome-retoques-5.jpg" optionsthumb2="200x150" title2="Retoques"
+    image3="image:gnome-retoques-6.jpg" optionsthumb3="200x150" title3="Retoques" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-retoques-1.jpg" optionsthumb1="300x200" title1="Retoques"
-    image2="image:gnome-retoques-1.jpg" optionsthumb2="300x200" title2="Retoques"
+    image1="image:gnome-retoques-7.jpg" optionsthumb1="300x200" title1="Retoques"
+    image2="image:gnome-retoques-8.jpg" optionsthumb2="300x200" title2="Retoques"
     caption="Retoques" >}}
 
 #### Papelera de reciclaje

@@ -88,8 +88,8 @@ La conectividad de los Kindle se realiza mediante red WIFI o cable USB aceptando
 También [hay fundas para los modelos de Kobo en Amazon](https://amzn.to/3xQI8ge).
 
 {{< amazon
-    linkids="a6d515b0fa22b09f6c8085f1f8c22490,c7e56d247fc06743c49be23705acb7a9"
-    asins="B07CXNMVKY,B07Y34KS9F" >}}
+    linkids="a6f6540fecd4cab154d620198a42b03e,c7e56d247fc06743c49be23705acb7a9"
+    asins="B0BCXLQNCC,B07Y34KS9F" >}}
 
 #### Otras opciones
 
