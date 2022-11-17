@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="La virtualización es la herramienta con la que probar un sistema operativo sin tener que utilizar una máquina física. Con la cantidad de núcleos de los sistemas actuales y la cantidad de memoria RAM que tienen, la virtualización es una opción disponible para los usuarios. Una alternativa a la virtualización son los contenedores pero estos son más para servicios sin interfaz gráfica. Hay aplicaciones que permiten tener una máquina virtual de Windows en un sistema operativo GNU/Linux o probar una distribución de GNU/Linux en un sistema Windows antes de migrar definitivamente a GNU/Linux. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Programas para crear máquinas virtuales y virtualizar sistemas</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/" hreflang="es" title="Programas para crear máquinas virtuales y virtualizar sistemas">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Programas para crear máquinas virtuales y virtualizar sistemas">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/images/cajas-1_hu4131a07a262b6e0097a84a6d3049446a_44755_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="La virtualización es la herramienta con la que probar un sistema operativo sin tener que utilizar una máquina física. Con la cantidad de núcleos de los sistemas actuales y la cantidad de memoria RAM que tienen, la virtualización es una opción disponible para los usuarios. Una alternativa a la virtualización son los contenedores pero estos son más para servicios sin interfaz gráfica. Hay aplicaciones que permiten tener una máquina virtual de Windows en un sistema operativo GNU/Linux o probar una distribución de GNU/Linux en un sistema Windows antes de migrar definitivamente a GNU/Linux. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/images/cajas-1_hu4131a07a262b6e0097a84a6d3049446a_44755_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Programas para crear máquinas virtuales y virtualizar sistemas">
+<meta name="twitter:description" content="La virtualización es la herramienta con la que probar un sistema operativo sin tener que utilizar una máquina física. Con la cantidad de núcleos de los sistemas actuales y la cantidad de memoria RAM que tienen, la virtualización es una opción disponible para los usuarios. Una alternativa a la virtualización son los contenedores pero estos son más para servicios sin interfaz gráfica. Hay aplicaciones que permiten tener una máquina virtual de Windows en un sistema operativo GNU/Linux o probar una distribución de GNU/Linux en un sistema Windows antes de migrar definitivamente a GNU/Linux. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/"
+    },
+    "headline": "Programas para crear máquinas virtuales y virtualizar sistemas",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/images/cajas-1_hu4131a07a262b6e0097a84a6d3049446a_44755_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2022-11-17T20:30:00+02:00",
+    "dateModified": "2022-11-17T20:30:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "902",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "La virtualización es la herramienta con la que probar un sistema operativo sin tener que utilizar una máquina física. Con la cantidad de núcleos de los sistemas actuales y la cantidad de memoria RAM que tienen, la virtualización es una opción disponible para los usuarios. Una alternativa a la virtualización son los contenedores pero estos son más para servicios sin interfaz gráfica. Hay aplicaciones que permiten tener una máquina virtual de Windows en un sistema operativo GNU/Linux o probar una distribución de GNU/Linux en un sistema Windows antes de migrar definitivamente a GNU/Linux."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9R8XCRGSMY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:600px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="7450235768"></ins>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Programas para crear máquinas virtuales y virtualizar sistemas</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>17/11/2022</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">La virtualización es la herramienta con la que probar un sistema operativo sin tener que utilizar una máquina física. Con la cantidad de núcleos de los sistemas actuales y la cantidad de memoria RAM que tienen, la virtualización es una opción disponible para los usuarios. Una alternativa a la virtualización son los contenedores pero estos son más para servicios sin interfaz gráfica. Hay aplicaciones que permiten tener una máquina virtual de Windows en un sistema operativo GNU/Linux o probar una distribución de GNU/Linux en un sistema Windows antes de migrar definitivamente a GNU/Linux.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:90px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="8238629013"></ins>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
+</div>
+<p>La virtualización permite crear un sistema que está instalado como software dentro de otro sistema físico. La virtualización es muy útil para probar sistemas operativos sin necesidad de instalarlo en la máquina física ni riesgo de hacer pruebas que rompan el sistema instalado, por ejemplo para probar la distribución <a href="https://www.ubuntu.com/">Ubuntu</a> que es una de las recomendadas como primera distribución para los nuevos usuarios de <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>.</p>
+<p>La virtualización permite sistemas aislados sin necesitar una máquina física, es posible virtualizar un sistema <a href="https://www.microsoft.com/es-es/windows/">Windows</a> en GNU/Linux, virtualizar un sistema GNU/Linux en un sistema Windows o otros sistema GNU/Linux en un sistema GNU/Linux. Dadas las grandes cantidades de RAM que tienen las computadoras actuales incluso las de los usuarios es posible instalar un sistema virtual dentro de un sistema físico.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/">Elegir una distribución GNU/Linux según el usuario, uso o equipo</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/">Descargar e instalar la distribución Ubuntu de GNU/Linux paso a paso desde cero</a></li>
+</ul>
+<p>La virtualización requiere de un sistema anfitrión con suficiente potencia de cómputo y memoria RAM, pero incluso los procesadores de consumo que actualmente ya tienen más de cuatro núcleos y muchos más de 16 GB de memoria RAM son suficientemente capaces de virtualizar un sistema, con más núcleos y memoria RAM los sistemas virtualizados pueden ser más numerosos.</p>
+<p>Como el sistema virtualizado es algo lógico en el momento de su creación es posible definir sus características como núcleos de CPU que tiene, cantidad de memoria RAM y cantidad de almacenamiento. Es posible crear tantas máquinas como se deseen y tener tantas arrancadas al mismo tiempo como el sistema anfitrión tenga capacidad de ejecutar con buen rendimiento.</p>
+<p>Un sistema virtualizado tiene una pequeña pérdida de rendimiento respecto a un sistema físico, los procesadores actuales incluyen soporte e instrucciones para que la pérdida del rendimiento sea mínima. Algunas características en la virtualización como la aceleración gráfica tiene mayores penalizaciones de rendimiento o directamente no es posible. Por ejemplo, jugar a juegos en un sistema virtualizado no ofrece buen rendimiento más teniendo en cuenta que los juegos son de los programas más exigentes en capacidad de cómputo de tarjeta gráfica y de procesador.</p>
+<p>Para virtualizar un sistemas es necesario un programa, <a href="https://www.virtualbox.org/">VirtualBox</a> está disponible para Windows, <a href="https://www.apple.com/macos/">macOS</a> y GNU/Linux y en GNU/Linux el sistema de virtualización nativo es KVM, el sistema de virtualización nativo es de Windows es Hyper-V.</p>
+<p>La virtualización requiere virtualizar un sistema operativo completo que impone una pequeña penalización de rendimiento y unos tiempos de arranque elevados. Para solventar estos problemas los contenedores y una herramienta como <a href="https://www.docker.com/">Docker</a> permite ofrecer servicios con menor penalización de rendimiento y tiempos de arranque mínimos, los contenedores no virtualizan un sistema operativo completo pero son procesos aislado del resto del sistema.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">Introducción y características de Docker</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">Cómo instalar y guía de inicio básica de Docker</a></li>
+</ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#virtualbox">VirtualBox</a></li>
+    <li><a href="#cajas-de-gnome">Cajas de GNOME</a></li>
+    <li><a href="#otras-opciones">Otras opciones</a></li>
+  </ul>
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
+<h3 id="virtualbox">VirtualBox</h3>
+<p>Dado que VirtualBox está disponible para los tres sistemas operativos que usan la mayoría de usuarios y es gratuito es una opción muy utilizada como programa para virtualizar. Tiene una interfaz gráfica de usuario con la que configurar muchas de las opciones de los sistemas operativos como cantidad de RAM y capacidad de almacenamiento.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/images/virtualbox-1_huf9bc8bcb79732194f0d450f69e0ae31f_178965_2560x1440_fit_box_3.png" data-gallery="" title="VirtualBox"><img src="/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/images/virtualbox-1_huf9bc8bcb79732194f0d450f69e0ae31f_178965_200x150_fit_box_3.png" width="194" height="150" alt="VirtualBox" title="VirtualBox" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/images/virtualbox-2_hu0cc3e30e0cd744a2627863662072d16e_65769_2560x1440_fit_box_3.png" data-gallery="" title="VirtualBox"><img src="/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/images/virtualbox-2_hu0cc3e30e0cd744a2627863662072d16e_65769_200x150_fit_box_3.png" width="200" height="127" alt="VirtualBox" title="VirtualBox" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/images/virtualbox-3_hu3d4e53840c7fa6c441d04d3052498579_51452_2560x1440_fit_box_3.png" data-gallery="" title="VirtualBox"><img src="/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/images/virtualbox-3_hu3d4e53840c7fa6c441d04d3052498579_51452_200x150_fit_box_3.png" width="175" height="150" alt="VirtualBox" title="VirtualBox" class="" loading="lazy"></a></p>
+<figcaption>VirtualBox</figcaption>
+</figure>
+</div>
+<p>La interfaz gráfica permite crear máquinas virtuales manualmente. Un programa <a href="https://www.vagrantup.com/">Vagrant</a> permite automatizar la creación y aprovisionamiento de las máquinas virtuales, en base a una descripción de la máquina a crear con un archivo de configuración.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/">Crear de forma sencilla y rápida máquinas virtuales de VirtualBox con Vagrant</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/">Cómo instalar y probar macOS con VirtualBox en Windows o GNU/Linux</a></li>
+</ul>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="c1"># -*- mode: ruby -*-</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># vi: set ft=ruby :</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="no">Vagrant</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="s2">&#34;2&#34;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">define</span> <span class="s2">&#34;ubuntu&#34;</span> <span class="k">do</span> <span class="o">|</span><span class="n">instance</span><span class="o">|</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">instance</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box</span> <span class="o">=</span> <span class="s2">&#34;ubuntu/jammy64&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">instance</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">network</span> <span class="s2">&#34;private_network&#34;</span><span class="p">,</span> <span class="ss">ip</span><span class="p">:</span> <span class="s2">&#34;192.168.56.10&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">instance</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">synced_folder</span> <span class="s2">&#34;.&#34;</span><span class="p">,</span> <span class="s2">&#34;/home/vagrant/ConsulServiceMesh/&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">instance</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provider</span> <span class="ss">:virtualbox</span> <span class="k">do</span> <span class="o">|</span><span class="n">vb</span><span class="o">|</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">vb</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;Ubuntu 22.04 (Vagrant)&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">vb</span><span class="o">.</span><span class="n">memory</span> <span class="o">=</span> <span class="s2">&#34;4096&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">instance</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provision</span> <span class="s2">&#34;shell&#34;</span><span class="p">,</span> <span class="ss">inline</span><span class="p">:</span> <span class="vg">$consul_role_script</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">end</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">end</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="vg">$consul_role_script</span> <span class="o">=</span> <span class="s">&lt;&lt;-SCRIPT&#10;</span></span></span><span class="line"><span class="cl"><span class="s"></span>&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">echo</span> <span class="s2">&#34;Updating...&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">upgrade</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">echo</span> <span class="s2">&#34;Installing Docker...&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">curl</span> <span class="o">-</span><span class="n">fsSL</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">download</span><span class="o">.</span><span class="n">docker</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">linux</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span><span class="n">gpg</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">gpg</span> <span class="o">--</span><span class="n">dearmor</span> <span class="o">-</span><span class="n">o</span> <span class="sr">/usr/s</span><span class="n">hare</span><span class="o">/</span><span class="n">keyrings</span><span class="o">/</span><span class="n">docker</span><span class="o">.</span><span class="n">gpg</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">echo</span> <span class="p">\</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \&#10;</span></span></span><span class="line"><span class="cl"><span class="s2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  $(lsb_release -cs) stable&#34;</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="sr">/etc/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">docker</span><span class="o">.</span><span class="n">list</span> <span class="o">&gt;</span> <span class="sr">/dev/nu</span><span class="n">ll</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">docker</span><span class="o">-</span><span class="n">ce</span> <span class="n">docker</span><span class="o">-</span><span class="n">ce</span><span class="o">-</span><span class="n">cli</span> <span class="n">containerd</span><span class="o">.</span><span class="n">io</span> <span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="o">-</span><span class="n">plugin</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">enable</span> <span class="n">docker</span><span class="o">.</span><span class="n">service</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">sudo</span> <span class="n">usermod</span> <span class="o">-</span><span class="n">aG</span> <span class="n">docker</span> <span class="n">vagrant</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="no">SCRIPT</span>&#10;</span></span><span class="line"><span class="cl">  <span class="k">end</span>&#10;</span></span><span class="line"><span class="cl">  </span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Vagrantfile</span>
+    </div>
+</div>
+<h3 id="cajas-de-gnome">Cajas de GNOME</h3>
+<p>La aplicación integrada de Cajas de <a href="https://picodotdev.github.io/blog-bitix/2022/11/el-entorno-de-escritorio-gnome-simple-elegante-y-completo/">el entorno de escritorio GNOME</a> permite crear máquinas virtuales usando la virtualización nativa de GNU/Linux. Ofrece una interfaz gráfica no tan completa en opciones como VirtualBox pero si las opciones mínimas como memoria RAM, CPU, EFI, almacenamiento y aceleración gráfica. En caso de no usar GNOME o se desean más opciones de configuración <a href="https://virt-manager.org/">virt-manager</a> ofrece una mucha más completa interfaz y opciones de configuración para KVM.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/images/cajas-1_hu4131a07a262b6e0097a84a6d3049446a_44755_2560x1440_fit_box_3.png" data-gallery="" title="Cajas de GNOME"><img src="/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/images/cajas-1_hu4131a07a262b6e0097a84a6d3049446a_44755_200x150_fit_box_3.png" width="200" height="147" alt="Cajas de GNOME" title="Cajas de GNOME" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/images/cajas-2_hu22bbd741c78f5b01ba558333ff4e6754_68272_2560x1440_fit_box_3.png" data-gallery="" title="Cajas de GNOME"><img src="/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/images/cajas-2_hu22bbd741c78f5b01ba558333ff4e6754_68272_200x150_fit_box_3.png" width="153" height="150" alt="Cajas de GNOME" title="Cajas de GNOME" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/images/cajas-3_hucf4c117c93732b760eb189df949df7f1_96459_2560x1440_fit_box_3.png" data-gallery="" title="Cajas de GNOME"><img src="/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/images/cajas-3_hucf4c117c93732b760eb189df949df7f1_96459_200x150_fit_box_3.png" width="200" height="117" alt="Cajas de GNOME" title="Cajas de GNOME" class="" loading="lazy"></a></p>
+<figcaption>Cajas de GNOME</figcaption>
+</figure>
+</div>
+<p>Con el comando <em>virt-install</em> es posible también automatizar la creación de máquinas virtuales. El siguiente comando permite configurar la ubicación del sistema de almacenamiento de la máquina virtual además de la RAM y definir el sistema como un sistema con arranque EFI.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo pacman -S virt-install dnsmasq dmidecode&#10;</span></span><span class="line"><span class="cl">sudo usermod -a -G libvirtd picodotdev&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">mkdir -p /etc/qemu&#10;</span></span><span class="line"><span class="cl">sudo cat <span class="s">&lt;&lt; EOF &gt; /etc/qemu/bridge.conf&#10;</span></span></span><span class="line"><span class="cl"><span class="s">allow virbr0&#10;</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">sudo systemctl start libvirtd.service&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>virt-install-bridge.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">set</span> -eu&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nv">DISK_DIRECTORY</span><span class="o">=</span><span class="s2">&#34;/run/media/picodotdev/Samsung microSD/KVM VMs&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nv">ISO_DIRECTORY</span><span class="o">=</span><span class="s2">&#34;/run/media/picodotdev/Samsung microSD/Iso&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">virt-install <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--connect<span class="o">=</span>qemu:///session <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--name archlinux-alis <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--os-variant archlinux <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--vcpu <span class="m">2</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--ram <span class="m">4096</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--boot uefi <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--disk <span class="nv">path</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$DISK_DIRECTORY</span><span class="s2">/archlinux-alis.qcow2,format=qcow2,size=40,sparse=yes&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--cdrom <span class="s2">&#34;</span><span class="nv">$ISO_DIRECTORY</span><span class="s2">/archlinux-2022.11.01-x86_64.iso&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--disk cloud-init/alis-cloud-init.iso,device<span class="o">=</span>cdrom,bus<span class="o">=</span>sata <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--network <span class="nv">bridge</span><span class="o">=</span>virbr0 <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--noautoconsole&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>virt-install.sh</span>
+    </div>
+</div>
+<h3 id="otras-opciones">Otras opciones</h3>
+<p>Las anteriores son opciones de software libre sin coste de licencia, <a href="https://www.vmware.com/products/workstation-player.html">VMware Workstation Player</a> y <a href="https://www.parallels.com/es/">Parallels</a> son opciones comerciales para Windows y macOS.</p>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/11/el-entorno-de-escritorio-gnome-simple-elegante-y-completo/">
+                <img src="/blog-bitix/2022/11/el-entorno-de-escritorio-gnome-simple-elegante-y-completo/images/gnome_hu3a6e1478b822fd709bb76aac663fdf76_201835_875x0_resize_q90_box.jpg" width="326" height="125" alt="El entorno de escritorio GNOME, simple, elegante y completo" title="El entorno de escritorio GNOME, simple, elegante y completo" class="" loading="lazy">
+                <h3>El entorno de escritorio GNOME, simple, elegante y completo</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/">
+                <img src="/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-1_hu6bfdba881ddb1d0d6e7ab73029e91741_18565_875x0_resize_box_3.png" width="326" height="125" alt="Personalizar el símbolo del sistema de la línea de comandos con Starship" title="Personalizar el símbolo del sistema de la línea de comandos con Starship" class="" loading="lazy">
+                <h3>Personalizar el símbolo del sistema de la línea de comandos con Starship</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/">
+                <img src="/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/zsh_hud7b5a1c1d64d347f44201dacd637097b_17129_875x0_resize_box_3.png" width="326" height="125" alt="Los intérpretes de comandos, instalar y cambiar a otro" title="Los intérpretes de comandos, instalar y cambiar a otro" class="" loading="lazy">
+                <h3>Los intérpretes de comandos, instalar y cambiar a otro</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/04/como-usar-el-comando-git-bisect-para-descubrir-el-primer-commit-con-un-error/">
+                <img src="/blog-bitix/assets/images/logotypes/git.svg" width="326" height="125" alt="Cómo usar el comando git bisect para descubrir el primer commit con un error" title="Cómo usar el comando git bisect para descubrir el primer commit con un error" class="" loading="lazy">
+                <h3>Cómo usar el comando git bisect para descubrir el primer commit con un error</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/">
+                <img src="/blog-bitix/assets/images/logotypes/gitg.svg" width="326" height="125" alt="Aplicación con interfaz gráfica para repositorios Git" title="Aplicación con interfaz gráfica para repositorios Git" class="" loading="lazy">
+                <h3>Aplicación con interfaz gráfica para repositorios Git</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/03/detectar-errores-y-comprobar-la-sintaxis-de-los-scripts-de-bash/">
+                <img src="/blog-bitix/assets/images/logotypes/linux.svg" width="326" height="125" alt="Detectar errores y comprobar la sintaxis de los scripts de Bash" title="Detectar errores y comprobar la sintaxis de los scripts de Bash" class="" loading="lazy">
+                <h3>Detectar errores y comprobar la sintaxis de los scripts de Bash</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-661';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2022\/11\/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2022 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

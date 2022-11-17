@@ -5,12 +5,101 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-11-10T23:00:00+02:00</updated>
+    <updated>2022-11-17T20:30:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/</id>
+        <title>Ejemplo sensor de golpes y detector de movimiento en la Raspberry Pi con Java</title>
+        <updated>2017-04-13T11:00:00+02:00</updated>
+        <published>2017-04-13T11:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Otro par de sensores que incluye el <a href="https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/">kit de introducción a la electrónica para la Raspberry Pi</a> son un sensor de golpes o <em>tilt</em> y un detector de movimiento. El funcionamiento de ambos es muy similar, utilizando un <em>pin</em> <abbr title="General Purpose Input Output">GPIO</abbr> como entrada se recibe si el sensor de golpes está activo o si el detector de movimiento ha detectado movimiento. El sensor de golpes es una bolita de mercurio encerrada en una ampolla de cristal. Como el mercurio a temperatura ambiente su estado es líquido puede moverse y como es un metal puede conducir la electricidad cuando está en una determinada posición entre dos filamentos.</p>
+<p>El sensor de golpes necesita de tres cables uno para la corriente de 3.3V, otro para tierra y finalmente otro que se conecta como entrada a un <em>pin</em> GPIO. Usando varios cables hembra-hembra y macho-macho hacemos las conexiones entre el sensor y la placa de pruebas sin soldadura o <em>breadboard</em>.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/sensores-1_hu72fde87c50037226c7e027f53998df11_148115_2560x1440_fit_q90_box.jpg" data-gallery="" title="Sensor de golpes y detector de movimiento"><img src="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/sensores-1_hu72fde87c50037226c7e027f53998df11_148115_300x200_fit_q90_box.jpg" width="300" height="121" alt="Sensor de golpes y detector de movimiento" title="Sensor de golpes y detector de movimiento"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/sensores-2_hub246cb2a41f0864b5a6f7e27b3a753b8_190121_2560x1440_fit_q90_box.jpg" data-gallery="" title="Sensor de golpes y detector de movimiento"><img src="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/sensores-2_hub246cb2a41f0864b5a6f7e27b3a753b8_190121_300x200_fit_q90_box.jpg" width="300" height="124" alt="Sensor de golpes y detector de movimiento" title="Sensor de golpes y detector de movimiento"  class="lozad "></a></p>
+<figcaption>Sensor de golpes y detector de movimiento</figcaption>
+</figure>
+</div>
+<p>Usando la librería <a href="http://rtd.diozero.com/en/latest/">diozero</a> para controlar los <em>pines</em> GPIO desde un programa implementado con Java detectamos si el sensor está activo o no según la posición de la bolita de mercurio. El ejemplo consiste en <a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-encender-y-apagar-diodo-led-con-la-raspberry-pi-en-java/">encender un diodo LED</a> que ya mostré en un artículo anterior de esta <a href="https://picodotdev.github.io/blog-bitix/series/electronica/">serie sobre electrónica</a> cuando el sensor <em>tilt</em> esté activo. Usaré el <em>pin</em> 18 para el diodo LED y el <em>pin</em> 21 para el sensor según la nomenclatura de Broadcom. Los <em>pines</em> serían el 12 según la nomenclatura del <em>header</em> y 1 según la nomenclatura de wiringPi para el diodo LED y 13 y 2 para el sensor <em>tilt</em>.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/cableado-tilt_huc426378df3450d2db6296dceb7253079_298261_2560x1440_fit_q90_box.jpg" data-gallery="" title="Cableado sensor de golpes"><img src="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/cableado-tilt_huc426378df3450d2db6296dceb7253079_298261_300x200_fit_q90_box.jpg" width="300" height="198" alt="Cableado sensor de golpes" title="Cableado sensor de golpes"  class="lozad "></a></p>
+<figcaption>Cableado sensor de golpes</figcaption>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javaraspberrypi</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.diozero.LED</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.diozero.api.*</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Tilt</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">LED</span> <span class="n">led</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LED</span><span class="o">(</span><span class="n">18</span><span class="o">);</span> <span class="n">DigitalInputDevice</span> <span class="n">tilt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DigitalInputDevice</span><span class="o">(</span><span class="n">21</span><span class="o">))</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">on</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">2000</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">off</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">tilt</span><span class="o">.</span><span class="na">whenActivated</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">on</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">tilt</span><span class="o">.</span><span class="na">whenDeactivated</span><span class="o">(()</span> <span class="o">-&gt;</span>  <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">off</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">30000</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Tilt.java</span>
+    </div>
+</div>
+<p>En el siguiente vídeo se aprecia como cuando al cambiar de posición del sensor de movimiento se mueve la bolita de mercurio y el diodo LED de ejemplo se enciende y apaga.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/7Rkou-pJWFY" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<p>El detector de movimiento en teoría es similar en funcionamiento al <em>tilt</em> y la librería diozero proporciona la clase <a href="http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/sandpit/MotionSensor.html">MotionSensor</a> para hacer más sencillo su uso. Digo en teoría porque no he conseguido hacerlo funcionar y he revisado varias veces las conexiones mostradas en otros ejemplos incluido el <a href="http://osoyoo.com/2016/07/14/motionsensor-pi/">ejemplo de osoyoo</a>, no se si es porque me falta algo más que debo tener en cuenta y que no conozco o el sensor no funciona viniéndome estropeado. Cuando el sensor detecta movimiento cambia el voltaje de su <em>pin</em> GPIO de datos. Los otros dos <em>pines</em> que utiliza son uno para el voltaje de 5V y el de tierra.</p>
+<p>El programa Java para el sensor de movimiento es similar al sensor <em>tilt</em> e igualmente encendería o apagaría un diodo LED cuando detecta movimiento.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/cableado-motion_hu919daab0ca3f88d0ef311958bdf8b23b_230707_2560x1440_fit_q90_box.jpg" data-gallery="" title="Cableado sensor de movimiento"><img src="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/cableado-motion_hu919daab0ca3f88d0ef311958bdf8b23b_230707_300x200_fit_q90_box.jpg" width="300" height="157" alt="Cableado sensor de movimiento" title="Cableado sensor de movimiento"  class="lozad "></a></p>
+<figcaption>Cableado sensor de movimiento</figcaption>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javaraspberrypi</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.diozero.LED</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.diozero.sandpit.MotionSensor</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Motion</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">LED</span> <span class="n">led</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LED</span><span class="o">(</span><span class="n">18</span><span class="o">);</span> <span class="n">MotionSensor</span> <span class="n">motion</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MotionSensor</span><span class="o">(</span><span class="n">21</span><span class="o">))</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">on</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">2000</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">off</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">motion</span><span class="o">.</span><span class="na">whenActivated</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">on</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">motion</span><span class="o">.</span><span class="na">whenDeactivated</span><span class="o">(()</span> <span class="o">-&gt;</span>  <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">off</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">30000</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Motion.java</span>
+    </div>
+</div>
+<p>Ambos ejemplos pueden usarse con los siguientes comandos cambiando la dirección IP de la Raspberry Pi y el directorio de la misma a donde se suben los ejemplos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ./gradlew upload&#10;</span></span><span class="line"><span class="cl">$ ssh -t 192.168.1.101 <span class="s1">&#39;cd /home/raspberrypi/scripts/javaraspberrypi &amp;&amp; sudo java -classpath &#34;*&#34; io.github.picodotdev.blogbitix.javaraspberrypi.Tilt&#39;</span>&#10;</span></span><span class="line"><span class="cl">$ ssh -t 192.168.1.101 <span class="s1">&#39;cd /home/raspberrypi/scripts/javaraspberrypi &amp;&amp; sudo java -classpath &#34;*&#34; io.github.picodotdev.blogbitix.javaraspberrypi.Motion&#39;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>execute.sh</span>
+    </div>
+</div>
+<p>El siguiente artículo de la sería será sobre cómo usar un <em>servo motor</em> que es diferente de un motor que gira constantemente.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaRaspberryPi">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub.</p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://pimylifeup.com/raspberry-pi-motion-sensor/">Raspberry Pi Motion Sensor using a PIR Sensor</a></li>
+<li><a href="http://www.meccanismocomplesso.org/en/pir-motion-detector/">PIR motion detector – a sensor for Arduino and Raspberry Pi (1st part)</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/</id>
         <title>Cómo usar un diodo LED, un pulsador y un zumbador con la Raspberry Pi y Java</title>
@@ -524,7 +613,8 @@
 <p>Una de las propiedades interesantes del <em>networking</em> de Docker Swarm es que ofrece incorporado balanceo de carga, esto es, si el servicio de nginx del ejemplo estuviese formado por dos instancias las peticiones se distribuirían entre las instancias usando el método <em>round-robin</em>. Otra característica interesante si se observa el ejemplo con detalle es que da igual el nodo al que hagamos la petición que la respuesta se obtendrá igualmente, esto es, aunque la petición se haga al nodo 01 y realmente el contenedor del servidor nginx se esté ejecutando en el nodo 02 la petición se realizará correctamente gracias al <em>routing mesh</em> del <em>networking</em> de Docker Swarm, esto es gracias a que cada servicio tiene asignada una dirección IP, como se ha visto anteriormente en la salida del comando <code>drill</code>.</p>
 <p>En este vídeo de <a href="https://asciinema.org/">asciinema</a> se ve en funcionamiento todos los anteriores comandos. Y en la aplicación de VirtualBox estarán las máquinas virtuales de cada uno de los nodos que crea el ejemplo. En el vídeo se aprecia que el servicio de nginx se está ejecutando en el nodo 02 cuando se listan los procesos de Docker de cada nodo con <em>docker ps</em>, nótese sin embargo que al hacer un petición HTTP a cualquiera de los nodos se devuelve la página de inicio de nginx ya que gracias al <em>routing mesh</em> de Docker Swarm la petición se redirige de forma transparente para el cliente y el servicio al nodo donde realmente se está ejecutando el contenedor de nginx.</p>
 <div class="media">
-<a href="https://asciinema.org/a/107868" target="_blank"><amp-img src="https://asciinema.org/a/107868.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/107868.js" id="asciicast-107868" async></script>
+<noscript><a href="https://asciinema.org/a/107868" target="_blank"><img src="https://asciinema.org/a/107868.png" width="650" height="450"></a></noscript>
 </div>
 <div class="media">
 <figure>
@@ -1356,7 +1446,8 @@
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/102785" target="_blank"><amp-img src="https://asciinema.org/a/102785.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/102785.js" id="asciicast-102785" async></script>
+<noscript><a href="https://asciinema.org/a/102785" target="_blank"><img src="https://asciinema.org/a/102785.png" width="650" height="450"></a></noscript>
 </div>
 <p>La instalación de la aplicación y de los servicios de systemd en el sistema se realizan copiando archivos, cambiando algunos permisos y usando los comandos de systemd para gestionar los servicios. Los mensajes de salida que emite el servicio se obtienen con el comando <code>journalctl -u spring-boot-jaxrs.service</code>.</p>
 <p>Los archivos <em>unit</em> propios deben ser ubicados en el directorio <em>/etc/systemd/system/</em>, siendo el directorio <em>/usr/lib/systemd/system/</em> donde se ubican los instalados por los paquetes del sistema. Iniciado el servicio con el comando <code>sudo systemctl start spring-boot-jaxrs.service</code>, si queremos habilitarlo con el inicio del sistema usamos el comando <code>sudo systemctl enable spring-boot-jaxrs.service</code>. Para ver el estado del servicio usamos el comando <code>sudo systemctl status spring-boot-jaxrs.service</code>.</p>
@@ -1587,115 +1678,6 @@
         
             
                 <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2017/02/cursos-de-formacion-de-keepcoding/</id>
-        <title>Cursos de formación de KeepCoding</title>
-        <updated>2019-06-01T00:00:00+02:00</updated>
-        <published>2017-02-03T23:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/02/cursos-de-formacion-de-keepcoding/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/keepcoding.png" width="300" height="210" alt="KeepCoding" title="KeepCoding"  class=""></p>
-</div>
-<p>En internet hay cantidad de recursos disponibles para aprender de prácticamente cualquier cosas que queramos. También con libros técnicos como los <a href="https://picodotdev.github.io/blog-bitix/2014/12/8-plus-libros-para-mejorar-como-programadores/">8 libros que recomiendo para mejorar como programadores</a> de los que es posible aprender de forma profunda sobre un tema en concreto. Estando suscritos a blogs como este también se pueden aprender ciertos detalles sobre un tema o obtener una pequeña introducción con en ocasiones un ejemplo de código funcional.</p>
-<p>Sin embargo, algunos recursos de los que se encuentran disponibles en internet no están bien estructurados y de forma didáctica para aprender, los libros requieren de bastante atención y de una buena cantidad de tiempo además no tienen un tutor al que preguntar, los blogs como el mío son muy específicos en el tema de los artículos o introductorios sin cubrir tampoco un tema de forma completa y profunda. Asistir a conferencias también es una buena forma de obtener una introducción sobre el tema que se trate, en algunas conferencias sus entradas son gratuitas y otras tienen un coste de algunos cientos de euros a los que hay que sumar el transporte y alojamiento si son de varios días y en ocasiones no coinciden en fechas en las que poder asistir.</p>
-<p>Hay webs en las que se ofrecen cursos de formación a distancia que se pueden completar según el tiempo disponible y aprender al ritmo de cada uno. Además, cuentan con tutores a los que hacer preguntas para resolver las dudas. Una de ellas es <a href="https://plataforma.keepcoding.io/?affcode=897_eznkgvrg">KeepCoding</a> que ofrece varios cursos con un temario bastante completo y de varias decenas de horas de formación. Algunos cursos de los que en este momento tienen disponibles son sobre varias de las tecnologías más demandadas actualmente y conocerlas son un buen punto a incluir en el <em>curriculum vitae</em> con el objetivo de acceder a un puesto de trabajo o desarrollar una carrera profesional como desarrollador. Algunos cursos de los que ofrecen que posiblemente en el futuro amplíen son los siguientes de los que puedes consultar su temario.</p>
-<p>Hay disponibles una buena cantidad de <a href="https://plataforma.keepcoding.io/courses/category/Cursos%20Gratuitos?affcode=897_eznkgvrg">cursos gratuitos</a> introductorios a la programación, sin ningún coste ni compromiso bastando únicamente registrarse para tener acceso inmediato a ellos <em>online</em> desde el navegador.</p>
-<ul>
-<li><a href="https://plataforma.keepcoding.io/p/curso-introduccion-programacion?affcode=897_eznkgvrg">Curso de Introducción a la Programación</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/introduccion-programacion-python?affcode=897_eznkgvrg">Fundamentos de la programación con Python</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/mini-curso-introduccion-php?affcode=897_eznkgvrg">Mini Curso introducción a PHP 7</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/mini-curso-introduccion-go?affcode=897_eznkgvrg">Mini Curso introducción a Go</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/mini-curso-introduccion-kotlin?affcode=897_eznkgvrg">Mini Curso Kotlin - Ventajas y características</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/mini-curso-bbdd-mysql?affcode=897_eznkgvrg">Mini curso Introductorio a BBDD y MySQL</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/curso_arquitectura_aplicaciones_android?affcode=897_eznkgvrg">Mini curso Arquitectura en aplicaciones Android</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/mini-curso-introduccion-microservicios?affcode=897_eznkgvrg">Mini Curso introducción a Microservicios</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/mini-curso_docker_contenedores_101?affcode=897_eznkgvrg">Mini Curso introducción a Docker y Contenedores 101</a></li>
-</ul>
-<p>Cursos desde cero sobre varios de los lenguajes más empleados y demandados en ofertas de trabajo.</p>
-<ul>
-<li><a href="https://plataforma.keepcoding.io/p/curso-programacion-javascript-desde-cero?affcode=897_eznkgvrg">Curso JavaScript desde Cero</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/curso-kotlin-desde-cero?affcode=897_eznkgvrg">Curso Kotlin desde Cero</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/curso-koltin-avanzado?affcode=897_eznkgvrg">Curso Kotlin Avanzado</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/curso-go-desde-cero?affcode=897_eznkgvrg">Curso Go desde Cero</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/scala-spark-desde-cero?affcode=897_eznkgvrg">Curso Scala desde Cero</a></li>
-</ul>
-<p><a href="https://git-scm.com/">Git</a> la herramienta de control de versiones para el código fuente utilizada mayoritariamente. <a href="https://www.docker.com/">Docker</a> se ha convertido en una de las mejores formas de aprovisionar aplicaciones y software tanto en el entorno de desarrollo como en producción.</p>
-<ul>
-<li><a href="https://plataforma.keepcoding.io/p/curso-git-github-sourcetree?affcode=897_eznkgvrg">Curso Git, GitHub &amp; SourceTree</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/curso-docker-desde-cero?affcode=897_eznkgvrg">Curso Docker desde Cero</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/smart-contracts-ethereum-solidity?affcode=897_eznkgvrg">Curso Smart Contracts en Ethereum con Solidity</a></li>
-</ul>
-<p>Otros dedicados a la programación web <em>backend</em> en <a href="https://secure.php.net/">PHP</a>, <a href="https://www.python.org/">Python</a> y <a href="https://www.ruby-lang.org/es/">Ruby</a>.</p>
-<ul>
-<li><a href="https://plataforma.keepcoding.io/p/curso-php-7-y-laravel?affcode=897_eznkgvrg">Curso PHP 7 y Laravel</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/curso-online-python-django-rest?affcode=897_eznkgvrg">Curso Django + Python &amp; REST</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/curso-ruby-on-rails-y-servicios-rest?affcode=897_eznkgvrg">Curso Ruby on Rails y servicios REST desde Cero</a></li>
-</ul>
-<p>Otros a la programación web con varios <em>frameworks</em> populares de <em>frontend</em>.</p>
-<ul>
-<li><a href="https://plataforma.keepcoding.io/p/curso-polymer-web-components?affcode=897_eznkgvrg">Curso Polymer &amp; Web Components</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/curso-completo-react-desde-cero?affcode=897_eznkgvrg">Curso React desde Cero</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/curso-javascript-node-js-express-mongodb?affcode=897_eznkgvrg">Curso JavaScript + Node.js + Express + MongoDB</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/curso-fundamentos-angular-html-css?affcode=897_eznkgvrg">Curso HTML5 + CSS3 + AngularJS</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/curso-angular-6?affcode=897_eznkgvrg">Curso Angular 6</a></li>
-</ul>
-<p>La mayoría de aplicaciones necesitan de una base de datos relacional con lo que el conocimiento adquirido de ellas es muy aprovechado.</p>
-<ul>
-<li><a href="https://plataforma.keepcoding.io/p/curso-de-bbdd-sql-mysql?affcode=897_eznkgvrg">Curso BBDD relacionales, SQL &amp; MySQL</a></li>
-</ul>
-<p>A la seguridad de una aplicación no siempre se le presta la atención que merece, es importante conocer los fundamentos para desarrollar aplicaciones seguras.</p>
-<ul>
-<li><a href="https://plataforma.keepcoding.io/p/curso-desarrollo-seguro-aplicaciones?affcode=897_eznkgvrg">Curso de desarrollo seguro de aplicaciones</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/curso-ciberseguridad-enfocada-pentesting?affcode=897_eznkgvrg">Curso Ciberseguridad enfocada en Pentesting</a></li>
-</ul>
-<p>Uno sobre <a href="https://www.android.com/">Android</a>.</p>
-<ul>
-<li><a href="https://plataforma.keepcoding.io/p/curso-programacion_android_desde_cero?affcode=897_eznkgvrg">Curso Programación Android desde Cero</a></li>
-</ul>
-<p>Varios dedicados a la programación en <a href="https://www.apple.com/es/ios/ios-12/">iOS</a>.</p>
-<ul>
-<li><a href="https://plataforma.keepcoding.io/p/curso-fundamentos-de-swift-3?affcode=897_eznkgvrg">Curso Fundamentos Swift 3.0</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/curso-tdd-para-ios?affcode=897_eznkgvrg">Curso TDD en iOS</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/curso-programacion-ios-avanzada?affcode=897_eznkgvrg">Curso iOS Avanzado</a></li>
-<li><a href="https://plataforma.keepcoding.io/p/curso-fundamentos-ios?affcode=897_eznkgvrg">Curso Fundamentos iOS</a></li>
-</ul>
-<p>Los cursos constan de varias horas lectivas con vídeos explicativos narrados en español como si un profesor estuviese dándonos una clase magistral que podrás revisar siempre que desees. Cada vídeo del curso no suele exceder de diez minutos siendo la mayoría de entre tres minutos y cinco minutos de forma que se pueda visionarlos según el tiempo y momento disponible. Creada la cuenta en KeepCoding e inscritos a un curso se puede ver el progreso en el mismo.</p>
-<p>Para aprender de forma intensiva durante 4 y 6 meses con mayor profundidad imparten 5 <em>bootcamps</em> diferentes según especialización.</p>
-<ul>
-<li><a href="https://keepcoding.io/es/bootcamp-aprende-a-programar-desde-cero/?affcode=897_eznkgvrg">Bootcamp Aprende a Programar desde Cero</a></li>
-<li><a href="https://keepcoding.io/es/keepcoding-web-development-master-bootcamp/?affcode=897_eznkgvrg">Full Stack Web Bootcamp</a></li>
-<li><a href="https://keepcoding.io/es/mobile-startup-coding-bootcamp/?affcode=897_eznkgvrg">Full Stack Mobile Bootcamp</a></li>
-<li><a href="https://keepcoding.io/es/big-data-machine-learning-bootcamp/?affcode=897_eznkgvrg">Full Stack Big Data &amp; Machine Learning Bootcamp</a></li>
-<li><a href="https://keepcoding.io/es/bootcamp-devops/?affcode=897_eznkgvrg">Full Stack DevOps Bootcamp</a></li>
-</ul>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/02/cursos-de-formacion-de-keepcoding/images/keepcoding-course_hu252675a706fe078b74f07f5aa8faade0_178723_2560x1440_fit_box_3.png" data-gallery="" title="Curso online de KeepCoding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/cursos-de-formacion-de-keepcoding/images/keepcoding-course_hu252675a706fe078b74f07f5aa8faade0_178723_300x200_fit_box_3.png" width="300" height="143" alt="Curso online de KeepCoding" title="Curso online de KeepCoding"  class="lozad "></a></p>
-<figcaption>Curso online de KeepCoding</figcaption>
-</figure>
-</div>
-<p>Algunos cursos de que ofrece KeepCoding son gratis y puedes inscribirte en ellos libremente y permite conocer la metodología de los cursos. Los cursos de pago tienen un precio de entre 30 € y 300 €. Si la empresa en la que trabajas tiene interés en formar a sus empleados, y debería, posiblemente también esté interesada en costear el curso con un presupuesto destinado a formación, muchas empresas lo tiene, si no lo tiene puedes solicitarlo. Aunque la cantidad no sea grande ni de para todo al menos posibilitará adquirir algún curso individual, unos meses de suscripción o comprar algún libro técnico, si el trabajo que desarrollas coincide con la temática de los cursos, este puede ser el caso de los <a href="https://plataforma.keepcoding.io/p/curso-programacion_android_desde_cero?affcode=897_eznkgvrg">Curso Programación Android desde Cero</a>, del <a href="https://plataforma.keepcoding.io/p/curso-git-github-sourcetree?affcode=897_eznkgvrg">Curso Git, GitHub &amp; SourceTree</a>, del <a href="https://plataforma.keepcoding.io/p/curso-programacion-ios-avanzada?affcode=897_eznkgvrg">Curso iOS Avanzado</a> o de <a href="https://plataforma.keepcoding.io/p/curso-online-python-django-rest?affcode=897_eznkgvrg">Curso Django + Python &amp; REST</a>. También a nivel personal es una buena opción de formación para optar a puestos de trabajo de nuestro interés y demandados en el mercado laboral.</p>
-<p>En los paquetes Premium todos los cursos individualmente tiene un coste de más de 5000 € pero con el modelo de suscripción se puede adquirir el acceso a todos sin restricciones a un precio significativamente más reducido de unos 49 €/mes. El pago se puede hacer mediante tarjeta de crédito y tienen un derecho de desistimiento de 14 días según las <a href="https://plataforma.keepcoding.io/p/condiciones-generales-contratacion/?affcode=897_eznkgvrg">Condiciones Generales de Contratación de KeepCoding</a>.</p>
-<ul>
-<li>En la página de <a href="https://plataforma.keepcoding.io/p/suscripcion-cursos-programacion-online/?affcode=897_eznkgvrg">Paquetes de suscripciones Premium</a> ocasionalmente hay cupones descuento con los que el precio es aún más reducido.</li>
-<li><a href="https://plataforma.keepcoding.io/p/paquete-keepcoding-online/?affcode=897_eznkgvrg">Todos los cursos con KeepCoding Online Premium</a> que dan acceso al catálogo completo de cursos.</li>
-</ul>
-<p>Si quieres aprender reserva una hora algún día de entre semana o del fin de semana para dedicarle al curso que desees, de modo que tengas ese tiempo para completarlo y puedas empezarlos, terminarlos y que te resulten provechosos con posterioridad.</p>
-]]>
-        </content>
-        
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-                <category term="patrocinado"/>
             
         
     </entry>
