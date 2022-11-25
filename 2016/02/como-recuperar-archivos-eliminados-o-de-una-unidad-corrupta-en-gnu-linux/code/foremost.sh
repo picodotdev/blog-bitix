@@ -1,1 +1,1 @@
-$ foremost -t all -i unidad.image -o archivos/
+$ foremost -t all -i disk.img -o archivos/
