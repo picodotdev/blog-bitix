@@ -34,7 +34,7 @@ Este sería el programa Java para conocer el tiempo que un sistema GNU/Linux lle
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="Main.out" language="plain" options="" >}}
 
-Ejecutar un comando del sistema nos da acceso a un nuevo mundo de posibilidades aunque si podemos es mejor tener disponible un API para invocar la funcionalidad que queremos en vez de una integración más frágil leyendo y escribiendo en la salida, de error y entrada del proceso. En el siguiente artículo basándome es esto comentaré [cómo enviar un correo electrónico en Java firmado digitalmente con GPG][blogbitix-133], aplicando esto mismo podemos [obtener el país y ciudad en base a la dirección IP][blogbitix-147] en una aplicación web.
+Ejecutar un comando del sistema nos da acceso a un nuevo mundo de posibilidades aunque si podemos es mejor tener disponible un API para invocar la funcionalidad que queremos en vez de una integración más frágil leyendo y escribiendo en la salida, de error y entrada del proceso. En el siguiente artículo basándome es esto comentaré [cómo enviar un correo electrónico en Java firmado digitalmente con GPG][blogbitix-133], [Obtener el ancho y alto, escalar y convertir a otro formato imágenes con Java][blogbitix-662], aplicando esto mismo podemos [obtener el país y ciudad en base a la dirección IP][blogbitix-147] en una aplicación web.
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaProcess" command="./gradlew run" >}}
 
