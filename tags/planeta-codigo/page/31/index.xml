@@ -5,12 +5,82 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-11-17T20:30:00+02:00</updated>
+    <updated>2022-11-25T20:30:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2016/03/como-ejecutar-un-proceso-del-sistema-con-java/</id>
+        <title>Cómo ejecutar un proceso del sistema con Java</title>
+        <updated>2016-03-19T11:00:00+01:00</updated>
+        <published>2016-03-12T22:30:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/03/como-ejecutar-un-proceso-del-sistema-con-java/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Dada la popularidad de Java es difícil que no encontremos en el propio JDK o librería la funcionalidad que necesitamos y sino en algún comando del sistema de los muchos que tenemos a disposición en un sistema GNU/Linux. Esto nos da acceso a una gran cantidad de funcionalidades también desde los programas Java.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>Java de por sí incluye una amplia colección de clases con las funcionalidades principales que podamos necesitar, si no lo ofrece en la <a href="https://docs.oracle.com/javase/8/docs/api/overview-summary.html">API</a> es muy posible que haya una librería que lo proporcione. Pero en algún momento quizá se nos dé el caso que un comando del sistema devuelve la información o realiza la acción que necesitamos. Puede ser una un comando del sistema <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>, <a href="https://www.microsoft.com/es-es/windows/">Windows</a> o <a href="https://www.apple.com/es/mac/">Mac OS X</a> o un <a href="https://picodotdev.github.io/blog-bitix/2015/11/java-para-tareas-de-scripting-con-jbang-y-gradle/"><em>script</em> en Java</a>, <a href="https://www.python.org/">Python</a>, <a href="https://www.ruby-lang.org/es/">Ruby</a> u otro lenguaje de programación. A través de las clase <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html">Process</a> y <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/ProcessBuilder.html">ProcessBuilder</a> nos es posible lanzar un proceso de cualquier comando del sistema y acceder a su entrada estándar, salida estándar y salida de error.</p>
+<p>La clase Process representa el proceso que lancemos, tenemos dos formas de obtener un referencia esta clase, una con <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runtime.html#exec-java.lang.String-">Runtime.getInstance().exec()</a> y otra con la clase ProcessBuilder con ambas nos será posible establecer variables de entorno, el directorio de trabajo o redirigir la entrada y salida. Obtenida la referencia a una instancia de Process con el método <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html#getInputStream--">getInputStream()</a> leeremos la salida estándar del proceso, con <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html#getErrorStream--">getErrorInputStream()</a> la salida de errores y con <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html#getOutputStream--">getOutputStream()</a> podremos enviar contenido a la entrada estándar. Otros métodos de utilidad nos permitirán conocer si el proceso sigue vivo con <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html#isAlive--">isAlive()</a>, obtener el código de salida con <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html#exitValue--">exitValue()</a>, esperar a que termine con <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html#waitFor--">waitFor()</a>. Finalmente con <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html#destroy--">destroy()</a> podemos terminar de forma abrupta el proceso.</p>
+<p>No son de <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">las novedades destacables de Java 8</a> pero desde esta versión se puede establecer una espera máxima a la terminación del proceso, las variables de entorno y el directorio de trabajo. Y más cambios pequeños pero muy útiles como estos habrá sido añadidos a otras clases de la API.</p>
+<p>Con esto nos es posible hacer cualquier cosa que el sistema pueda hacer según los comandos que tenga instalados o puedan instalarse y esto significa que está al alcance de Java en un sistema GNU/Linux el poder de su linea de comandos. Por ejemplo, supongamos que queremos saber en un programa Java el tiempo que lleva iniciado un sistema que nos sería útil si queremos implementar algún tipo de <a href="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/">métricas de monitorización con Spring Boot Actuator</a>. Java no tiene en su API un método que proporcione esta información, sin embargo, en GNU/Linux podemos saber este dato usando el sistema de archivos virtual accesible en <em>/proc</em>, concretamente en el archivo <em>/proc/uptime</em>. Este archivo contiene dos números el primero es el que nos interesaría siendo el número de segundos transcurridos desde que el sistema se inició y el segundo el tiempo que ha permanecido en reposo. El segundo número en un sistema con un procesador con varios núcleos físicos o lógicos es probable que se más alto que el primero.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat /proc/uptime &#10;</span></span><span class="line"><span class="cl">1488.79 5666.60&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>uptime.sh</span>
+    </div>
+</div>
+<p>Este sería el programa Java para conocer el tiempo que un sistema GNU/Linux lleva arrancado. Primero se crea el proceso, se espera a que termine y se obtiene su código de salida, se obtiene la salida del proceso (entrada para el programa), se procesa el resultado y se imprimen los segundos que lleva el sistema iniciado.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javaprocess</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.io.InputStreamReader</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.math.BigDecimal</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.text.MessageFormat</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.concurrent.TimeUnit</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.stream.Collectors</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// Iniciar el proceso&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">ProcessBuilder</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ProcessBuilder</span><span class="o">().</span><span class="na">command</span><span class="o">(</span><span class="s">&#34;cat&#34;</span><span class="o">,</span> <span class="s">&#34;/proc/uptime&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Process</span> <span class="n">process</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// Alternativa a ProcessBuilder&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//Process process = Runtime.getRuntime().exec(new String[] { &#34;cat&#34;, &#34;/proc/uptime&#34; });&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// Esperar a que termine el proceso y obtener su valor de salida&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">process</span><span class="o">.</span><span class="na">waitFor</span><span class="o">(</span><span class="n">10</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="na">exitValue</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">value</span> <span class="o">!=</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">throw</span> <span class="k">new</span> <span class="n">Exception</span><span class="o">(</span><span class="n">MessageFormat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Código de salida con error (%d)&#34;</span><span class="o">,</span> <span class="n">value</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// Obtener la salida del proceso&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="n">process</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">(),</span> <span class="s">&#34;UTF-8&#34;</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">br</span><span class="o">.</span><span class="na">lines</span><span class="o">().</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">joining</span><span class="o">(</span><span class="s">&#34;\n&#34;</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">br</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// Obtener el tiempo desde el inicio del sistema &#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">seconds</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&#34; &#34;</span><span class="o">)[</span><span class="n">0</span><span class="o">];</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Segundos desde el inicio del sistema: %.2f&#34;</span><span class="o">,</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="n">seconds</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Segundos desde el inicio del sistema: 3115,77&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.out</span>
+    </div>
+</div>
+<p>Ejecutar un comando del sistema nos da acceso a un nuevo mundo de posibilidades aunque si podemos es mejor tener disponible un API para invocar la funcionalidad que queremos en vez de una integración más frágil leyendo y escribiendo en la salida, de error y entrada del proceso. En el siguiente artículo basándome es esto comentaré <a href="https://picodotdev.github.io/blog-bitix/2016/03/como-firmar-correos-electronicos-con-gpg-y-javamail/">cómo enviar un correo electrónico en Java firmado digitalmente con GPG</a>, <a href="https://picodotdev.github.io/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/">Obtener el ancho y alto, escalar y convertir a otro formato imágenes con Java</a>, aplicando esto mismo podemos <a href="https://picodotdev.github.io/blog-bitix/2016/06/ofrecer-contenido-personalizado-al-usuario-basado-en-su-ubicacion/">obtener el país y ciudad en base a la dirección IP</a> en una aplicación web.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaProcess">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/ProcessBuilder.html">Javadoc ProcessBuilder</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html">Javadoc Process</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runtime.html">Javadoc Runtime</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">Novedades y nuevas características de Java 8</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/03/como-firmar-correos-electronicos-con-gpg-y-javamail/">Cómo firmar correos electrónicos con GPG y JavaMail</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/03/escribir-en-la-misma-linea-de-la-consola-y-obtener-el-ancho-y-alto-de-la-terminal-con-java/">Escribir en la misma línea de la consola y obtener el ancho y alto de la terminal con Java</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/</id>
         <title>Introducción y nuevas características de Java EE 7</title>
@@ -483,8 +553,7 @@
     </div>
 </div>
 <div class="media">
-<script type="text/javascript" src="https://asciinema.org/a/36852.js" id="asciicast-36852" async></script>
-<noscript><a href="https://asciinema.org/a/36852" target="_blank"><img src="https://asciinema.org/a/36852.png" width="650" height="450"></a></noscript>
+<a href="https://asciinema.org/a/36852" target="_blank"><amp-img src="https://asciinema.org/a/36852.png" width="650" height="563" class="lozad"></amp-img></a>
 </div>
 <p>Montado el sistema de archivos veremos que en el explorador de archivos se ha montado una unidad con el nombre del directorio sin cifrar que hemos indicado, como se aprecia en el caso de Nautilus.</p>
 <div class="media">
@@ -1306,67 +1375,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="software-libre"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2015/12/publicado-apache-tapestry-5-4/</id>
-        <title>Publicado Apache Tapestry 5.4</title>
-        <updated>2015-12-24T16:00:00+02:00</updated>
-        <published>2015-12-24T16:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/12/publicado-apache-tapestry-5-4/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes"> 
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
-</div>
-<p>Después 38 betas (han sido tantas porque era barato hacerlas) y una única candidata a publicación, 4 años desde la anterior versión mayor (5.3) y varias versiones menores de esta, la versión final de <a href="https://tapestry.apache.org/">Apache Tapestry</a> 5.4 ha sido publicada. Esta nueva versión incorpora más de 300 correcciones de errores, casi 200 mejoras y varias novedades destacadas  centradas en la integración con JavaScript siguiendo la evolución actual de las aplicaciones web con un peso mayor en el lado del cliente. De esta manera el JavaScript se basa en el uso de <a href="https://requirejs.org/">RequireJS</a> proporcionando a las aplicaciones todas las bondades que los módulos proporcionan como organizar mejor el JavaScript de las aplicaciones, no polucionar el ámbito global evitando conflictos entre librerías y carga de dependencias de forma dinámica. También se proporciona soporte <em>built-in</em> para <a href="https://coffeescript.org/">CofeeScript</a> y <a href="https://lesscss.org/">LESS</a>.</p>
-<ul>
-<li>Añadida una capa de abstracción sobre la librería JavaScript usada, esto permite usar <a href="https://jquery.com/">jQuery</a> en vez de <a href="http://prototypejs.org/">Prototype</a> o cualquier otra del presente o que surja en el futuro.</li>
-<li>En un redespliegue solo los <em>assets</em> modificados se volverán a descargar. Junto con el <em>checksum</em> del <em>asset</em> generado a partir del contenido del recurso e incluido en su URL, también se añade soporte para <a href="https://en.wikipedia.org/wiki/HTTP_ETag">E-tag</a>.</li>
-<li>Soporte a CoffeeScript, LESS, minificación de JavaScript y CSS.</li>
-<li>Mejoras en componentes (<a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Tree.html">Tree</a>, <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Grid.html">Grid</a>, <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Palette.html">Palette</a>).</li>
-<li>Mejor soporte para JavaScript con  RequireJS y <abbr title="Asynchronous Module Definition">AMD</abbr>.</li>
-<li>Componente <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/mixins/Autocomplete.html">Autocomplete</a> basado en <a href="https://twitter.github.io/typeahead.js/">Typeahead</a>.</li>
-<li>Mejoras en el informe de excepciones y la consola de depuración.</li>
-<li>Se incorpora <a href="https://getbootstrap.com/">Bootstrap</a> 3 como <em>framework</em> para los estilos y se adaptan los componentes a las nuevas etiquetas y estilos.</li>
-<li>Nueva página <em>Dashboard</em> que sustituye a las anteriores páginas <em>PageCatalog</em>, <em>ServiceStatus</em> e <em>Hibernate
-Statistics</em>.</li>
-<li>Inclusión de <a href="https://momentjs.com/">Moment.js</a> y nuevos componentes <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/LocalDate.html">LocalDate</a> y <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/TimeInterval.html">TimeInterval</a>.</li>
-<li>Mejoras de rendimiento y multitud de correcciones de errores.</li>
-</ul>
-<p>Y muchas cosas más listadas en las <a href="http://tapestry.apache.org/release-notes-54.html">notas de publicación</a> en las que se incluyen las peticiones resueltas. Muchas centradas en el lado cliente de las aplicaciones web y otras cuantas que perfeccionan funcionalidades ya existentes.</p>
-<p>Si quieres conocer en detalle Tapestry puedes descargar el <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro PlugIn Tapestry</a> que publique hace un tiempo y que tengo pendiente de actualizar con el nuevo contenido que he escrito en el <em>blog</em> desde su última publicación con algunas de estas novedades y otras cosas adicionales.</p>
-<p>Esta nueva versión es un buena oportunidad para conocer este <em>framework</em> orientado a componentes con el objetivo de crear aplicaciones web rápidas, dinámicas, robustas y altamente escalables en la plataforma Java con gran productividad y reutilización de código durante el desarrollo. Al basarse en componentes es distinto de los muchos basados en acciones similares en esencia a uno de los pioneros como <a href="https://struts.apache.org/">Struts</a> que podemos encontrar en la plataforma Java como <a href="https://spring.io/">Spring MVC</a>, <a href="https://grails.org/">Grails</a> y <a href="https://www.playframework.com/">Play!</a> y también de los muchos otros en los que la principal diferencia es el lenguaje como <a href="https://www.djangoproject.com/">Django</a> (<a href="https://www.python.org/">Python</a>), <a href="https://symfony.com/">Symfony</a> (<a href="https://secure.php.net/">PHP</a>), <a href="https://www.microsoft.com/net">.NET MVC</a> (<a href="https://dotnet.microsoft.com/">C#</a>) o <a href="https://rubyonrails.org/">Ruby On Rails</a> (<a href="https://www.ruby-lang.org/es/">Ruby</a>).</p>
-<p>En la <a href="https://picodotdev.github.io/blog-bitix/tags/tapestry/">etiqueta Tapestry</a> puedes consultar los últimos artículos que he publicado sobre este <em>framework</em> en Blog Bitix y en la aplicación <a href="http://jumpstart.doublenegative.com.au/jumpstart/">JumpStart</a> hay multitud de ejemplos funcionales junto con su código fuente.</p>
-<p>Buen regalo para acabar el año 2015, ¡feliz navidad!.</p>
-<div class="media">
-<figure>
-<p><img src="https://picodotdev.github.io/blog-bitix/2015/12/publicado-apache-tapestry-5-4/images/christmastux2015_hu09c4407dd3c160f7acbce99ab680d891_104590_2560x1440_fit_q90_box.jpg" width="600" height="450" alt="ChristmasTux 2015" title="ChristmasTux 2015"  class="lozad "></p>
-</figure>
-</div>
-<div class="alert alert-warning">
-    <img src="https://picodotdev.github.io/blog-bitix/assets/images/misc/PugInTapestry.png" alt="Portada libro: PlugIn Tapestry" title="Portada libro: PlugIn Tapestry" style="float: left; margin-right: 1.5em;" class="lozad">
-    <h3>Libro PlugIn Tapestry</h3>
-    <p>Si te interesa Apache Tapestry descarga gratis el libro de más de 300 páginas que he escrito sobre este <i>framework</i> en el formato que prefieras, <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">PlugIn Tapestry: Desarrollo de aplicaciones y páginas web con Apache Tapestry</a>, y el código de ejemplo asociado. En el libro comento detalladamente muchos aspectos que son necesarios en una aplicación web como persistencia, pruebas unitarias y de integración, inicio rápido, seguridad, formularios, internacionalización (i18n) y localización (l10n), AJAX, ... y como abordarlos usando Apache Tapestry.</p>
-    <br style="clear: both;">
-    <div class="buttons">
-        <a href="https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.pdf" class="btn btn-lg btn-success">PDF</a>
-        <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PlugInTapestry" class="btn btn-lg btn-success">Código fuente ejemplos</a>
-    </div>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="tapestry"/>
-            
-                <category term="programacion"/>
             
         
     </entry>

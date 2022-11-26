@@ -5,12 +5,117 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-11-17T20:30:00+02:00</updated>
+    <updated>2022-11-25T20:30:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/</id>
+        <title>Los modificadores de acceso de clases, propiedades y métodos en Java</title>
+        <updated>2020-02-04T20:00:00+01:00</updated>
+        <published>2020-01-31T17:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Uno de los principios básicos de los lenguajes orientados a objetos es la encapsulación, mediante la cual se garantiza que los datos de una clase solo son modificados por las operaciones apropiadas implementadas en los métodos de sus clases para preservar su invariante, las reglas que define la clase y el estado consistente de su estado.</p>
+<p>El acceso a las propiedades y métodos se determina mediante las palabras reservadas de los modificadores de acceso, en Java hay cuatro modificadores de acceso que definen ámbitos de visibilidad de más restrictivos a menos restrictivos:</p>
+<ul>
+<li><code>private</code>: únicamente la clase puede acceder a la propiedad o método.</li>
+<li><code>package private</code> (valor por defecto si no se indica ninguno): solo las clases en el mismo paquete pueden acceder a la propiedad o método.</li>
+<li><code>protected</code>: las clases del mismo paquete y que heredan de la clase pueden acceder a la propiedad o método.</li>
+<li><code>public</code>: la propiedad o método es accesible desde cualquier método de otra clase.</li>
+</ul>
+<p>Las clases tienen uno de los modificadores de acceso <code>public</code> o <code>package private</code> con el mismo significado que en las propiedades y métodos, visibles desde cualquier otro paquete y solo visible desde su propio paquete.</p>
+<p>Los modificadores de acceso son una palabra reservada del lenguaje y se colocan delante de la propiedad o método, el modificador de acceso <code>package private</code> no tiene palabra reservada se aplica en caso de que no se especifique un modificador de acceso explícitamente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Foo</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  <span class="kd">private</span> <span class="n">String</span> <span class="n">property1</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">  <span class="n">String</span> <span class="n">property2</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">  <span class="kd">protected</span> <span class="n">String</span> <span class="n">property3</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="n">property4</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="n">String</span> <span class="nf">getProperty1</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">format</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">  <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  <span class="n">String</span> <span class="nf">getProperty2</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="n">property2</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">  <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  <span class="kd">protected</span> <span class="n">String</span> <span class="nf">getProperty3</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="n">property3</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">  <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  <span class="kd">private</span> <span class="n">String</span> <span class="nf">getProperty4</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="n">property4</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">  <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Foo.java</span>
+    </div>
+</div>
+<p>Los ámbitos de visibilidad según el modificador de acceso y el origen de acceso a la propiedad o método son los siguientes.</p>
+<table class="table">
+   <thead class="table-light">
+       <th width="250px">Modificador de acceso</th>
+       <th>Misma clase o anidada</th>
+       <th>Clase en el mismo paquete</th>
+       <th>Clase que hereda en otro paquete</th>
+       <th>Clase que no hereda en otro paquete</th>
+   </thead>
+   <tbody>
+       <tr>
+           <td>private</td>
+           <td>Sí</td>
+           <td>No</td>
+           <td>No</td>
+           <td>No</td>
+       </tr>
+       <tr>
+           <td>default (package private)</td>
+           <td>Sí</td>
+           <td>Sí</td>
+           <td>No</td>
+           <td>No</td>
+       </tr>
+       <tr>
+           <td>protected</td>
+           <td>Sí</td>
+           <td>Sí</td>
+           <td>Sí</td>
+           <td>No</td>
+       </tr>
+       <tr>
+           <td>public</td>
+           <td>Sí</td>
+           <td>Sí</td>
+           <td>Sí</td>
+           <td>Sí</td>
+       </tr>
+   </tbody>
+</table>
+<p>En este gráfico hay representados paquetes que contienen clases, clases con rectángulos, las flechas indican herencia entre clases y las clases que están coloreadas indican que tienen visibilidad de la propiedad y método según el ámbito de acceso, la ubicación de la clase que accede y si hay una relación de herencia. En esencia es la misma información de la tabla pero representada de forma gráfica.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/images/java-access-specifier_hua4dc7e14397aa21078ef211e311b7b0c_57114_2560x1440_fit_q90_box.jpg" data-gallery="" title="Modificadores de acceso en Java"><img src="https://picodotdev.github.io/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/images/java-access-specifier_hua4dc7e14397aa21078ef211e311b7b0c_57114_600x450_fit_q90_box.jpg" width="537" height="409" alt="Modificadores de acceso en Java" title="Modificadores de acceso en Java"  class="lozad "></a></p>
+<figcaption>Modificadores de acceso en Java <br>Fuente: wikipedia.org</figcaption>
+</figure>
+</div>
+<p>Una detalle a tener en cuenta es que los modificadores afectan a las clases, una propiedad privada de una clase es accesible para todas las instancias de esa clase. En concreto, este código es válido y el resultado es <em>two</em>, <em>bar1</em> puede acceder a la propiedad <em>thing</em> de la instancia <em>bar2</em> aún siendo privada en la clase.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bar</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">   <span class="kd">private</span> <span class="n">String</span> <span class="n">thing</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">Bar</span><span class="o">(</span><span class="n">String</span> <span class="n">thing</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">this</span><span class="o">.</span><span class="na">thing</span> <span class="o">=</span> <span class="n">thing</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">   <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="n">String</span> <span class="nf">getOtherThing</span><span class="o">(</span><span class="n">Bar</span> <span class="n">other</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="n">other</span><span class="o">.</span><span class="na">thing</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">   <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">Bar</span> <span class="n">bar1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bar</span><span class="o">(</span><span class="s">&#34;one&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">Bar</span> <span class="n">bar2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bar</span><span class="o">(</span><span class="s">&#34;two&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">String</span> <span class="n">thing</span> <span class="o">=</span> <span class="n">bar1</span><span class="o">.</span><span class="na">getOtherThing</span><span class="o">(</span><span class="n">bar2</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">thing</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">   <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Bar.java</span>
+    </div>
+</div>
+<p>No hay encapsulación entre las instancias de la misma clase, la encapsulación es para la clase accedida desde otras clases según los modificadores de acceso. Pero aunque una instancia tenga acceso y capacidad de modificar las propiedades de otra instancia se ha de seguir manteniendo la invariante, si una instancia modifica los datos de otra instancia ha de seguir manteniendo la invariante de la clase de esa otra instancia. Para mantener la invariante y la encapsulación generalmente se proporciona acceso a un método y no directamente a las propiedades.</p>
+<h3 id="la-modularidad-a-partir-java-9">La modularidad a partir Java 9</h3>
+<p>Los ámbitos de visibilidad es un mecanismo bastante limitado ni es suficiente para proporcionar encapsulación. No hay ningún impedimento a que cualquiera pueda crear una clase en un paquete que contiene clases privadas de paquete o métodos <em>package private</em> o heredar de esas clases y de esta manera tener acceso a clases, métodos y propiedades que el autor original no las diseñó para esos propósitos. Puede ser incluso un problema de seguridad.</p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">La modularidad añadida en Java 9</a> viene a complementar y dar una solución más completa a los ámbitos de visibilidad así como garantizar mejor la encapsulación tal y como el programador del paquete original ha diseñado.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Java_syntax">Java syntax</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Class_invariant">Class invariant</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2020/01/conferencia-bilbostack-2020/</id>
         <title>Conferencia BilboStack 2020</title>
@@ -254,8 +359,7 @@
 <h3 id="acabando">Acabando</h3>
 <p>Dicen que en este evento el evento en realidad es el postevento, lo que ocurre a partir de las 14:00 en el <em>networking</em>, pintxo y poteo. No lo conozco por experiencia propia porque no he estado en ninguno, no se me da bien y ya tengo suficiente con dedicar una mañana a la asistencia. En cualquier caso el evento es el momento ideal para saludar a algunos excompañeros de trabajo para saber como les va o como nos va. Este año hubo una charanga animando el <em>networking</em>.</p>
 <div class="media">
-    <amp-twitter width="650" height="550" data-tweetid="1221092391974768641"></amp-twitter>
-    <blockquote placeholder>
+    <blockquote class="twitter-tweet tw-align-center" data-partner="tweetdeck">
 <p lang="es" dir="ltr"><a href="https://twitter.com/hashtag/bilbostack20?src=hash&amp;ref_src=twsrc%5Etfw">#bilbostack20</a> sorpresa!!! <a href="https://t.co/6G1QmUHpe1">pic.twitter.com/6G1QmUHpe1</a></p>&mdash; Sergio (@Sergixnet) <a href="https://twitter.com/Sergixnet/status/1221092391974768641?ref_src=twsrc%5Etfw">January 25, 2020</a>
 </blockquote>
 </div>
@@ -1570,95 +1674,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/</id>
-        <title>Cambiar la ubicación por defecto de los directorios de usuario en GNU/Linux</title>
-        <updated>2019-11-04T19:30:00+01:00</updated>
-        <published>2019-11-03T13:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
-</div>
-<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
-</div>
-<p>Los directorios de <em>Descargas</em>, <em>Documentos</em>, <em>Música</em>, <em>Imágenes</em>, <em>Vídeos</em>, <em>Escritorio</em>, <em>Plantillas</em> y <em>Público</em> «bien conocidos» por defecto se encuentran en el directorio de inicio o <em>home</em> del usuario, en mi caso sería <em>/home/picodotdev/</em> o abreviadamente <em>~/</em>.</p>
-<p>Por preferencias o necesidad según el usuario, la ubicación de cada uno de estos directorios se puede cambiar individualmente. Por ejemplo, si en la carpeta <em>Documentos</em>, <em>Música</em> e <em>Imágenes</em> se tiene un montón de archivos que ocupan varias decenas de gigabytes que no se usan de forma habitual ni se desea tener en el SSD ocupando espacio la ubicación de estos directorios se puede cambiar por uno que se encuentra en un disco mecánico USB o tarjeta microSD externa.</p>
-<p>Los discos duros SSD se han abaratado muchísimo en los últimos años pero aún no han alcanzado a los discos duros mecánicos en el precio de € por GB. Un <a href="https://amzn.to/2NEWsly">disco duro mecánico de 4 TB</a> tiene un precio bastante asequible. A lo largo del tiempo he ido reaprovechando los discos duros de portátiles para los que compré una caja USB para utilizarlos como discos duros externos USB y ahora tengo varios, uno de 500 GB, otro de 320 GB, y dos de 120 GB.</p>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06VVS7S94&amp;linkId=b3935c0c943be983bce3ceb803928e62" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06W55K9N6&amp;linkId=6abae8dc406222e745a56e1405eb282b" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06XG892ZH&amp;linkId=54661b04f99360148ebed3b5528fa2ed" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B0713WPGLL&amp;linkId=3f06bc3776d19ba91f5ab5660781d247" title="Amazon" class="lozad"></iframe>
-</div>
-<p>Cuando compré el <a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">Intel NUC</a> compré la versión <em>slim</em> sin bahía para disco SATA 2.5&quot; y solo le puse un SSD de 500 GB con conexión M.2. Tenía intención de comprar una <a href="https://amzn.to/2NE97Fg">tarjeta SDXC</a> o una <a href="https://amzn.to/2NE97Fg">memoria USB</a> pequeña para tenerla siempre conectada al ordenador y como una forma de ampliar la capacidad de almacenamiento. Sin embargo, ni la tarjeta microSD ni la memoria USB es barata comparada con el precio de un SSD SATA. Al final he optado por utilizar uno de esos discos duros externos que tengo para el mismo propósito. Lo que necesitaba era cambiar la ubicación de esos directorios por defecto para que en vez de estar en la carpeta de inicio de mi usuario y en el SSD estuviesen en el disco duro externo USB.</p>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B083ZS4HYD&amp;linkId=56990d2fedd9adcebc7b4d5b42e0ddfb" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07HPX38XC&amp;linkId=df0fb3936a8db66682dd9f1c56bc8865" title="Amazon" class="lozad"></iframe>
-</div>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07P9W5HJV&amp;linkId=94d207e03eb06aae1e957b8ea9fd541a" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07H1231S8&amp;linkId=a34fdc7896b0bd98cca4bffe8d532f81" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06XFS5657&amp;linkId=186319e6ae3e35777b9412d236a46297" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06XFHQGB9&amp;linkId=69626bf45c9c279219546f122fd33a06" title="Amazon" class="lozad"></iframe>
-</div>
-<p>La ubicación de los directorios de usuario se puede cambiar modificando las rutas en el archivo de configuración <em>~/.config/user-dirs.dirs</em>. En este caso poniendo la ubicación del punto de montaje del disco duro externo USB.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl"># This file is written by xdg-user-dirs-update&#10;</span></span><span class="line"><span class="cl"># If you want to change or add directories, just edit the line you&#39;re&#10;</span></span><span class="line"><span class="cl"># interested in. All local changes will be retained on the next run.&#10;</span></span><span class="line"><span class="cl"># Format is XDG_xxx_DIR=&#34;$HOME/yyy&#34;, where yyy is a shell-escaped&#10;</span></span><span class="line"><span class="cl"># homedir-relative path, or XDG_xxx_DIR=&#34;/yyy&#34;, where /yyy is an&#10;</span></span><span class="line"><span class="cl"># absolute path. No other format is supported.&#10;</span></span><span class="line"><span class="cl"># &#10;</span></span><span class="line"><span class="cl">XDG_DESKTOP_DIR=&#34;/run/media/picodotdev/bmovenegro/Escritorio/&#34;&#10;</span></span><span class="line"><span class="cl">XDG_DOWNLOAD_DIR=&#34;/run/media/picodotdev/bmovenegro/Descargas/&#34;&#10;</span></span><span class="line"><span class="cl">XDG_TEMPLATES_DIR=&#34;/run/media/picodotdev/bmovenegro/Plantillas/&#34;&#10;</span></span><span class="line"><span class="cl">XDG_PUBLICSHARE_DIR=&#34;/run/media/picodotdev/bmovenegro/Público/&#34;&#10;</span></span><span class="line"><span class="cl">XDG_DOCUMENTS_DIR=&#34;$HOME/Documentos&#34;&#10;</span></span><span class="line"><span class="cl">XDG_MUSIC_DIR=&#34;/run/media/picodotdev/bmovenegro/Música/&#34;&#10;</span></span><span class="line"><span class="cl">XDG_PICTURES_DIR=&#34;/run/media/picodotdev/bmovenegro/Imágenes/&#34;&#10;</span></span><span class="line"><span class="cl">XDG_VIDEOS_DIR=&#34;/run/media/picodotdev/bmovenegro/Vídeos/&#34;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>user-dirs.dirs</span>
-    </div>
-</div>
-<p>Cambiar los valores de los directorios de usuario a otro directorio requiere que esos directorios estén disponibles a iniciar sesión de usuario en el entorno de escritorio. Para que el disco duro externo USB se monte al iniciar el sistema he definido un servicio de tipo <em>mount</em> para <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a> en la ubicación <em>/etc/systemd/system/run-media-picodotdev-bmovenegro.mount</em> con el siguiente contenido. El disco duro se monta en el directorio <em>/run/media/bmovenegro/</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">[Unit]&#10;</span></span><span class="line"><span class="cl">Description=Disk bmovenegro mount&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">[Mount]&#10;</span></span><span class="line"><span class="cl">What=/dev/disk/by-uuid/f0fe2765-00aa-4c2a-adef-83a3264b8f4f&#10;</span></span><span class="line"><span class="cl">Where=/run/media/picodotdev/bmovenegro/&#10;</span></span><span class="line"><span class="cl">Type=ext4&#10;</span></span><span class="line"><span class="cl">Options=defaults&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">[Install]&#10;</span></span><span class="line"><span class="cl">WantedBy=multi-user.target</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>run-media-picodotdev-bmovenegro.mount</span>
-    </div>
-</div>
-<p>El identificador UUID de un dispositivo se obtiene con el comando <em>lsblk</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">$ lsblk -o +uuid,name&#10;</span></span><span class="line"><span class="cl">NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   UUID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   NAME&#10;</span></span><span class="line"><span class="cl">sda&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8:0&nbsp;&nbsp;&nbsp;&nbsp;0 465,8G  0 disk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  sda&#10;</span></span><span class="line"><span class="cl">└─sda1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  8:1&nbsp;&nbsp;&nbsp;&nbsp;0 465,8G  0 part  /run/media/picodotdev/bmovenegro f0fe2765-00aa-4c2a-adef-83a3264b8f4f   sda1&#10;</span></span><span class="line"><span class="cl">nvme0n1&nbsp;&nbsp;&nbsp;&nbsp;   259:0&nbsp;&nbsp;&nbsp;&nbsp;0 465,8G  0 disk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  nvme0n1&#10;</span></span><span class="line"><span class="cl">├─nvme0n1p1   259:1&nbsp;&nbsp;&nbsp;&nbsp;0   511M  0 part  /boot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7869-6341&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  nvme0n1p1&#10;</span></span><span class="line"><span class="cl">└─nvme0n1p2   259:2&nbsp;&nbsp;&nbsp;&nbsp;0 465,3G  0 part&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   3067348f-58f4-48fd-be4b-7cb3aae80dd1   nvme0n1p2&#10;</span></span><span class="line"><span class="cl">  └─lvm&nbsp;&nbsp;&nbsp;&nbsp;   254:0&nbsp;&nbsp;&nbsp;&nbsp;0 465,3G  0 crypt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  c0fVvN-1QTv-HccD-tyEt-cl49-GM7M-xDNGJQ lvm&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;└─vg-root 254:1&nbsp;&nbsp;&nbsp;&nbsp;0 465,3G  0 lvm   /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4b561dc9-bbd6-4433-bc53-c879bde68042   vg-root</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>lsblk.sh</span>
-    </div>
-</div>
-<p>Con esta configuración para el explorador de archivos en este caso Nautilus de <a href="https://www.gnome.org/">GNOME</a> la ubicación de estos archivos de usuario es transparente, los directorios aparecen en el panel lateral. Aunque en el directorio <em>home</em> siguen existiendo las carpetas originales de los directorios de usuario realmente cuando se hace clic en el panel lateral del directorio <em>Documentos</em> se muestra el contenido <em>/run/media/bmovenegro/Documentos</em> y no de <em>~/Documentos</em>.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/gnome-user-dirs_hu13dde764cc60835d566a7a5526be178a_35122_2560x1440_fit_box_3.png" data-gallery="" title="Directorios de usuario en el directorio home"><img src="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/gnome-user-dirs_hu13dde764cc60835d566a7a5526be178a_35122_300x200_fit_box_3.png" width="300" height="161" alt="Directorios de usuario en el directorio home" title="Directorios de usuario en el directorio home"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/usb-user-dirs_hu2434c9f8192fcf97ba39eedbddb085c5_40855_2560x1440_fit_box_3.png" data-gallery="" title="Directorios de usuario en disco USB externo"><img src="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/usb-user-dirs_hu2434c9f8192fcf97ba39eedbddb085c5_40855_300x200_fit_box_3.png" width="300" height="161" alt="Directorios de usuario en disco USB externo" title="Directorios de usuario en disco USB externo"  class="lozad "></a></p>
-<figcaption>Directorios de usuario en el directorio home y en disco USB externo</figcaption>
-</figure>
-</div>
-<p>En el caso de GNU/Linux los directorios de usuario además están localizados de forma automática, esto es al listar los directorios los nombres están en el idioma del usuario de forma consistente, al contrario de como ocurre en otros sistemas operativos que sus nombres se mantienen en inglés aún en su explorador de archivos aparecer en el idioma del usuario creando una inconsistencia entre los nombres que se listan desde la terminal y los que aparecen en su explorador de archivos.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/terminal-user-dirs_hu41e0484bcf94be2a2cd5f9b857ee6811_18873_2560x1440_fit_box_3.png" data-gallery="" title="Directorios de usuario en el directorio home"><img src="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/terminal-user-dirs_hu41e0484bcf94be2a2cd5f9b857ee6811_18873_300x200_fit_box_3.png" width="272" height="200" alt="Directorios de usuario en el directorio home" title="Directorios de usuario en el directorio home"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/usb-terminal-user-dirs_hu6ad41259ed9f626bde19d488d145fea7_25770_2560x1440_fit_box_3.png" data-gallery="" title="Directorios de usuario en disco USB externo"><img src="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/usb-terminal-user-dirs_hu6ad41259ed9f626bde19d488d145fea7_25770_300x200_fit_box_3.png" width="272" height="200" alt="Directorios de usuario en disco USB externo" title="Directorios de usuario en disco USB externo"  class="lozad "></a></p>
-<figcaption>Directorios de usuario en el directorio home y en disco USB externo</figcaption>
-</figure>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://wiki.archlinux.org/index.php/XDG_user_directories">XDG user directories</a></li>
-<li><a href="https://sites.google.com/site/installationubuntu/tweaking-ubuntu/change-the-location-of-subfolders-in-your-home-partition">Change the location of subfolders in your Home partition</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
             
         
     </entry>
