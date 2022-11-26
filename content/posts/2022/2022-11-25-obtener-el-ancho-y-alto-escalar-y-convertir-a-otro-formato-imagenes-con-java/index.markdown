@@ -13,7 +13,6 @@ promoted: false
 imagePost: "logotype:java.svg"
 tags: ["java", "planeta-codigo"]
 summary: "Las aplicaciones que tratan con imágenes es posible que necesiten conocer algunos datos de la imagen como anchura y altura, realizar algunas operaciones de manipulación básicas como escalado y conversión entre formatos. El propio JDK de Java ofrece algunas clases y soporta varios de los formatos más comunes de imagen. Para usos más avanzados hay que recurrir a librerías y si no fueran suficientes a comandos del sistema más avanzados."
-draft: true
 ---
 
 {{% post %}}
@@ -49,6 +48,7 @@ En el propio JDK hay varias clases para la utilización de imágenes en el paque
 
 Los formatos de imagen soportados se pueden obtener mediante código y son extensibles añadiendo librerías al _classpath_, es posible que un formato se soporte en modo lectura pero no en escritura.
 
+{{< code file="Main.java" language="java" options="" >}}
 {{< code file="Main-formats.java" language="java" options="" >}}
 
 En esta lista de formatos aparece webp como formato soportados en la lectura porque en el ejemplo de código está incluida la librería de TwelveMonkeys que añade el soporte para la lectura de webp.
