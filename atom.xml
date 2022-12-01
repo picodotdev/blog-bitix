@@ -5,12 +5,171 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/</id>
-    <updated>2022-11-25T20:30:00+02:00</updated>
+    <updated>2022-12-01T19:30:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2022/12/base-de-datos-de-paises-regiones-ciudades-codigos-postales-y-otra-informacion-geografica/</id>
+        <title>Base de datos de países, regiones, ciudades, códigos postales y otra información geográfica</title>
+        <updated>2022-12-01T19:30:00+01:00</updated>
+        <published>2022-12-01T19:30:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/12/base-de-datos-de-paises-regiones-ciudades-codigos-postales-y-otra-informacion-geografica/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Entre las funcionalidades habituales en una aplicación está un formulario para introducir una dirección. El formulario de dirección consta de varios campos en el que suele ser recomendable realizar unas mínimas validaciones como que el código postal o ciudad sea correcto para evitar errores inadvertidos del usuario o intencionados con información incorrecta. La base de datos de GeoNames proporciona información geográfica muy útil y de forma gratuita que incluye países, ciudades, subdivisiones administrativas, códigos postales, nombres en diferentes idiomas y mucha otra información de todos los paises del mundo.</strong></p>]]>
+        <![CDATA[<p>No todo son microservicios es más ni siquiera estos son la mejor opción en muchos casos, las cosas mundanas tienen también mucha importancia en la aplicación cómo ordenar alfabéticamente cadenas o introducir una dirección postal. Otra funcionalidad habitual es un formulario en el que haya que introducir direcciones lo que incluye códigos postales, ciudad, país y quizá adicionalmente un teléfono.</p>
+<p>Lo que parece un simple formulario con varios campos de datos se complica cuando hay que validar los códigos postales, ciudad de un país o al incluir información de las diferentes subdivisiones administrativas. Más si en el formulario hay que tener en cuenta las diferentes variaciones según cada país, los códigos postales de España son muy diferentes de los de Reino Unido lo que significa que la expresión regular es muy diferente y según la normativa del país.</p>
+<p>Estas tareas que parecen sencillas realmente tienen su dificultad, ordenar caracteres alfabéticamente se complica ya que hay que tener en cuenta las tildes o mayúsculas y minúsculas y validar direcciones para recibir datos correctos requiere validaciones y conocer cuales son.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/11/la-forma-correcta-de-ordenar-alfabeticamente-cadenas-en-java/">La forma correcta de ordenar alfabéticamente cadenas en Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/06/ofrecer-contenido-personalizado-al-usuario-basado-en-su-ubicacion/">Ofrecer contenido personalizado al usuario basado en su ubicación</a></li>
+</ul>
+<p>El listado de países, unidades administrativas como comunidades autónomas, ciudades y códigos postales además del código del prefijo telefónico del país o zona horaria es habitual configurarlo como información más o menos estática en las aplicaciones ya sea en una base de datos o en archivos de configuración.</p>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#la-base-de-datos-de-información-geográfica-de-geonames">La base de datos de información geográfica de GeoNames</a>
+      <ul>
+        <li><a href="#countryinfotxt">countryInfo.txt</a></li>
+        <li><a href="#allcountrieszip-y-xxzip">allCountries.zip y XX.zip</a></li>
+        <li><a href="#alternatenamesv2zip">alternateNamesV2.zip</a></li>
+        <li><a href="#admin1codesasciitxt">admin1CodesASCII.txt</a></li>
+        <li><a href="#admin2codestxt">admin2Codes.txt</a></li>
+        <li><a href="#featurecodestxt-timezonestxt-y-hierarchyzip">featureCodes.txt, timeZones.txt y hierarchy.zip</a></li>
+        <li><a href="#shapes_all_lowzip">shapes_all_low.zip</a></li>
+        <li><a href="#información-de-la-base-de-datos">Información de la base de datos</a></li>
+      </ul>
+    </li>
+    <li><a href="#cómo-acceder-a-la-información">Cómo acceder a la información</a></li>
+  </ul>
+</nav></div>
+<h3 id="la-base-de-datos-de-información-geográfica-de-geonames">La base de datos de información geográfica de GeoNames</h3>
+<p>Una fuente que permite obtener esta información geográfica es la página de <a href="https://www.geonames.org/">GeoNames</a> que tiene una <a href="https://creativecommons.org/">licencia de Creative Commons</a>. La base de datos de información está compuesta por varios archivos CSV muchos separados por tabuladores con las varias columnas de información. En el <a href="https://download.geonames.org/export/dump/readme.txt">archivo README</a> hay una lista de los archivos de los que consta la base de datos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">XX.zip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   : features for country with iso code XX, see &#39;geoname&#39; table for columns. &#39;no-country&#39; for features not belonging to a country.&#10;</span></span><span class="line"><span class="cl">allCountries.zip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : all countries combined in one file, see &#39;geoname&#39; table for columns&#10;</span></span><span class="line"><span class="cl">cities500.zip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: all cities with a population &gt; 500 or seats of adm div down to PPLA4 (ca 185.000), see &#39;geoname&#39; table for columns&#10;</span></span><span class="line"><span class="cl">cities1000.zip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   : all cities with a population &gt; 1000 or seats of adm div down to PPLA3 (ca 130.000), see &#39;geoname&#39; table for columns&#10;</span></span><span class="line"><span class="cl">cities5000.zip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   : all cities with a population &gt; 5000 or PPLA (ca 50.000), see &#39;geoname&#39; table for columns&#10;</span></span><span class="line"><span class="cl">cities15000.zip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  : all cities with a population &gt; 15000 or capitals (ca 25.000), see &#39;geoname&#39; table for columns&#10;</span></span><span class="line"><span class="cl">alternateNamesV2.zip&nbsp;&nbsp;&nbsp;&nbsp; : alternate names with language codes and geonameId, file with iso language codes, with new columns from and to&#10;</span></span><span class="line"><span class="cl">alternateNames.zip&nbsp;&nbsp;&nbsp;&nbsp;   : obsolete use V2, this file does not have the new columns to and from and will be removed in the future&#10;</span></span><span class="line"><span class="cl">admin1CodesASCII.txt&nbsp;&nbsp;&nbsp;&nbsp; : names in English for admin divisions. Columns: code, name, name ascii, geonameid&#10;</span></span><span class="line"><span class="cl">admin2Codes.txt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  : names for administrative subdivision &#39;admin2 code&#39; (UTF8), Format : concatenated codes &lt;tab&gt;name &lt;tab&gt; asciiname &lt;tab&gt; geonameId&#10;</span></span><span class="line"><span class="cl">iso-languagecodes.txt&nbsp;&nbsp;&nbsp;&nbsp;: iso 639 language codes, as used for alternate names in file alternateNames.zip&#10;</span></span><span class="line"><span class="cl">featureCodes.txt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : name and description for feature classes and feature codes &#10;</span></span><span class="line"><span class="cl">timeZones.txt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: countryCode, timezoneId, gmt offset on 1st of January, dst offset to gmt on 1st of July (of the current year), rawOffset without DST&#10;</span></span><span class="line"><span class="cl">countryInfo.txt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  : country information : iso codes, fips codes, languages, capital ,...</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>archives.txt</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">The main &#39;geoname&#39; table has the following fields :&#10;</span></span><span class="line"><span class="cl">---------------------------------------------------&#10;</span></span><span class="line"><span class="cl">geonameid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : integer id of record in geonames database&#10;</span></span><span class="line"><span class="cl">name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  : name of geographical point (utf8) varchar(200)&#10;</span></span><span class="line"><span class="cl">asciiname&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : name of geographical point in plain ascii characters, varchar(200)&#10;</span></span><span class="line"><span class="cl">alternatenames&nbsp;&nbsp;&nbsp;&nbsp;: alternatenames, comma separated, ascii names automatically transliterated, convenience attribute from alternatename table, varchar(10000)&#10;</span></span><span class="line"><span class="cl">latitude&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  : latitude in decimal degrees (wgs84)&#10;</span></span><span class="line"><span class="cl">longitude&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : longitude in decimal degrees (wgs84)&#10;</span></span><span class="line"><span class="cl">feature class&nbsp;&nbsp;&nbsp;&nbsp; : see http://www.geonames.org/export/codes.html, char(1)&#10;</span></span><span class="line"><span class="cl">feature code&nbsp;&nbsp;&nbsp;&nbsp;  : see http://www.geonames.org/export/codes.html, varchar(10)&#10;</span></span><span class="line"><span class="cl">country code&nbsp;&nbsp;&nbsp;&nbsp;  : ISO-3166 2-letter country code, 2 characters&#10;</span></span><span class="line"><span class="cl">cc2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   : alternate country codes, comma separated, ISO-3166 2-letter country code, 200 characters&#10;</span></span><span class="line"><span class="cl">admin1 code&nbsp;&nbsp;&nbsp;&nbsp;   : fipscode (subject to change to iso code), see exceptions below, see file admin1Codes.txt for display names of this code; varchar(20)&#10;</span></span><span class="line"><span class="cl">admin2 code&nbsp;&nbsp;&nbsp;&nbsp;   : code for the second administrative division, a county in the US, see file admin2Codes.txt; varchar(80) &#10;</span></span><span class="line"><span class="cl">admin3 code&nbsp;&nbsp;&nbsp;&nbsp;   : code for third level administrative division, varchar(20)&#10;</span></span><span class="line"><span class="cl">admin4 code&nbsp;&nbsp;&nbsp;&nbsp;   : code for fourth level administrative division, varchar(20)&#10;</span></span><span class="line"><span class="cl">population&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: bigint (8 byte int) &#10;</span></span><span class="line"><span class="cl">elevation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : in meters, integer&#10;</span></span><span class="line"><span class="cl">dem&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   : digital elevation model, srtm3 or gtopo30, average elevation of 3&#39;&#39;x3&#39;&#39; (ca 90mx90m) or 30&#39;&#39;x30&#39;&#39; (ca 900mx900m) area in meters, integer. srtm processed by cgiar/ciat.&#10;</span></span><span class="line"><span class="cl">timezone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  : the iana timezone id (see file timeZone.txt) varchar(40)&#10;</span></span><span class="line"><span class="cl">modification date : date of last modification in yyyy-MM-dd format</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>table-geoname.txt</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">The table &#39;alternate names&#39; :&#10;</span></span><span class="line"><span class="cl">-----------------------------&#10;</span></span><span class="line"><span class="cl">alternateNameId   : the id of this alternate name, int&#10;</span></span><span class="line"><span class="cl">geonameid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : geonameId referring to id in table &#39;geoname&#39;, int&#10;</span></span><span class="line"><span class="cl">isolanguage&nbsp;&nbsp;&nbsp;&nbsp;   : iso 639 language code 2- or 3-characters; 4-characters &#39;post&#39; for postal codes and &#39;iata&#39;,&#39;icao&#39; and faac for airport codes, fr_1793 for French Revolution names,  abbr for abbreviation, link to a website (mostly to wikipedia), wkdt for the wikidataid, varchar(7)&#10;</span></span><span class="line"><span class="cl">alternate name&nbsp;&nbsp;&nbsp;&nbsp;: alternate name or name variant, varchar(400)&#10;</span></span><span class="line"><span class="cl">isPreferredName   : &#39;1&#39;, if this alternate name is an official/preferred name&#10;</span></span><span class="line"><span class="cl">isShortName&nbsp;&nbsp;&nbsp;&nbsp;   : &#39;1&#39;, if this is a short name like &#39;California&#39; for &#39;State of California&#39;&#10;</span></span><span class="line"><span class="cl">isColloquial&nbsp;&nbsp;&nbsp;&nbsp;  : &#39;1&#39;, if this alternate name is a colloquial or slang term. Example: &#39;Big Apple&#39; for &#39;New York&#39;.&#10;</span></span><span class="line"><span class="cl">isHistoric&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &#39;1&#39;, if this alternate name is historic and was used in the past. Example &#39;Bombay&#39; for &#39;Mumbai&#39;.&#10;</span></span><span class="line"><span class="cl">from		  : from period when the name was used&#10;</span></span><span class="line"><span class="cl">to		  : to period when the name was used</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>table-alternate-names.txt</span>
+    </div>
+</div>
+<h4 id="countryinfotxt">countryInfo.txt</h4>
+<p>Este archivo contiene la lista de países. Entre su información está el código del país, las expresiones regulares de los códigos postales, el prefijo del teléfono, código de la divisa, lenguaje entre otra información como población, superficie y la capital además de los países vecinos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">ES	ESP	724	SP	Spain	Madrid	504782	46723749	EU	.es	EUR	Euro	34	#####	^(\d{5})$	es-ES,ca,gl,eu,oc	2510769	AD,PT,GI,FR,MA	&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>country-es.txt</span>
+    </div>
+</div>
+<h4 id="allcountrieszip-y-xxzip">allCountries.zip y XX.zip</h4>
+<p>El archivo <em>allCountries.zip</em> contiene las ciudades de todos los países (todos los archivos <em>XX.zip</em>) y en los archivos <em>XX.zip</em> están las ciudades de un país en concreto, <em>ES.zip</em> para las ciudades de España. Contienen el código ciudad, latitud y longitud, zona horaria y los códigos de las unidades administrativas junto con su población, elevación e identificador <em>geonameid</em></p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">3128026	Bilbao	Bilbao	BIO,Bil&#39;baa,Bil&#39;bao,Bilbao,Bilbau,Bilbaum,Bilbaw,Bilbo,Bilbo / Bilbao,Bilmpao,El Bocho,bi er ba e,bil ba xo,bilba&#39;o,bilbao,birubao,blbaw,bylbaw,bylbayw,Μπιλμπάο,Билбао,Бильбао,Більбаа,Більбао,Բիլբաո,בילבאו,بلباو,بیلبائو,بیلباو,बिल्बाओ,บิลบาโอ,ბილბაო,ビルバオ,毕尔巴鄂,빌바오&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>es-bilbao.txt</span>
+    </div>
+</div>
+<p>Hay varios archivos de ciudades filtrados según si superan una cantidad de población, <em>cities500.zip</em>, <em>cities1000.zip</em>, <em>cities5000.zip</em>, <em>cities15000.zip</em>. Las columnas son las mismas que las del archivo anterior donde están agrupadas por país pero en este están agrupadas por población.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">3128026	Bilbao	Bilbao	BIO,Bil&#39;baa,Bil&#39;bao,Bilbao,Bilbau,Bilbaum,Bilbaw,Bilbo,Bilbo / Bilbao,Bilmpao,El Bocho,bi er ba e,bil ba xo,bilba&#39;o,bilbao,birubao,blbaw,bylbaw,bylbayw,Μπιλμπάο,Билбао,Бильбао,Більбаа,Більбао,Բիլբաո,בילבאו,بلباو,بیلبائو,بیلباو,बिल्बाओ,บิลบาโอ,ბილბაო,ビルバオ,毕尔巴鄂,빌바오&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>cities15000-bilbao.txt</span>
+    </div>
+</div>
+<h4 id="alternatenamesv2zip">alternateNamesV2.zip</h4>
+<p>Contiene diversa información más extendida de cada uno de los <em>geonames</em>, incluyendo su nombre en diferentes idiomas, el conjunto de códigos postales asociados, identificador del aeropuerto y enlaces a la wikipedia.</p>
+<p>El archivo <em>alternateNamesV2.txt</em> es tan grande que ocupa varios cientos de megabytes descomprimido de modo que casi no se puede abrir con un editor y hay que recurrir al comando <em>grep</em> para buscar dado el <em>geonameid</em>.</p>
+<p>El <em>geonameid</em> de la ciudad de Bilbao es <em>3128026</em> y buscando en el archivo se encuentran estas referencias que incluyen los diferentes nombres en diferentes lenguajes, códigos postales, <em>iata</em> y <em>uncl</em> para la denominación del aeropuerto además de otra información como enlaces a la wikipedia. En casi de en un mismo lenguaje haber varios nombres el 1 indica cual es la denominación preferida.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ grep <span class="s2">&#34;3128026&#34;</span> alternateNamesV2.txt&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>grep-alternate-names-bilbao.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span><span class="lnt">59&#10;</span><span class="lnt">60&#10;</span><span class="lnt">61&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">1325769	3128026	eu	Bilbo						&#10;</span></span><span class="line"><span class="cl">1565386	3128026	es	El Bocho						&#10;</span></span><span class="line"><span class="cl">1968272	3128026	es	Bilbao	1					&#10;</span></span><span class="line"><span class="cl">1968273	3128026		Bilbao						&#10;</span></span><span class="line"><span class="cl">2039076	3128026	eu	Bilbao	1					&#10;</span></span><span class="line"><span class="cl">2039077	3128026	pt	Bilbau						&#10;</span></span><span class="line"><span class="cl">2039078	3128026	eo	Bilbao						&#10;</span></span><span class="line"><span class="cl">2148428	3128026	post	48080						&#10;</span></span><span class="line"><span class="cl">2148598	3128026	post	48002						&#10;</span></span><span class="line"><span class="cl">2148599	3128026	post	48003						&#10;</span></span><span class="line"><span class="cl">2148600	3128026	post	48004						&#10;</span></span><span class="line"><span class="cl">2148601	3128026	post	48070						&#10;</span></span><span class="line"><span class="cl">2148602	3128026	post	48071						&#10;</span></span><span class="line"><span class="cl">2148614	3128026	post	48006						&#10;</span></span><span class="line"><span class="cl">2148615	3128026	post	48014						&#10;</span></span><span class="line"><span class="cl">2148618	3128026	post	48008						&#10;</span></span><span class="line"><span class="cl">2148619	3128026	post	48015						&#10;</span></span><span class="line"><span class="cl">2148621	3128026	post	48007						&#10;</span></span><span class="line"><span class="cl">2148622	3128026	post	48005						&#10;</span></span><span class="line"><span class="cl">2148623	3128026	post	48012						&#10;</span></span><span class="line"><span class="cl">2148650	3128026	post	48001						&#10;</span></span><span class="line"><span class="cl">2148652	3128026	post	48009						&#10;</span></span><span class="line"><span class="cl">2148653	3128026	post	48013						&#10;</span></span><span class="line"><span class="cl">2148655	3128026	post	48010						&#10;</span></span><span class="line"><span class="cl">2148670	3128026	post	48011						&#10;</span></span><span class="line"><span class="cl">2426128	3128026	ru	Бильбао						&#10;</span></span><span class="line"><span class="cl">2920566	3128026	link	https://en.wikipedia.org/wiki/Bilbao						&#10;</span></span><span class="line"><span class="cl">3055848	3128026	link	https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D0%BB%D1%8C%D0%B1%D0%B0%D0%BE						&#10;</span></span><span class="line"><span class="cl">5882689	3128026	ja	ビルバオ						&#10;</span></span><span class="line"><span class="cl">5882690	3128026	cy	Bilbo						&#10;</span></span><span class="line"><span class="cl">5882691	3128026	os	Бильбао						&#10;</span></span><span class="line"><span class="cl">5882692	3128026	ce	Билбао						&#10;</span></span><span class="line"><span class="cl">5882693	3128026	fa	بیلبائو						&#10;</span></span><span class="line"><span class="cl">5882694	3128026	sr	Билбао						&#10;</span></span><span class="line"><span class="cl">5882695	3128026	uk	Більбао						&#10;</span></span><span class="line"><span class="cl">5882696	3128026	br	Bilbo						&#10;</span></span><span class="line"><span class="cl">5882697	3128026	ug	Bilbaw						&#10;</span></span><span class="line"><span class="cl">5882698	3128026	ext	Bilbau						&#10;</span></span><span class="line"><span class="cl">5882699	3128026	el	Μπιλμπάο						&#10;</span></span><span class="line"><span class="cl">5882700	3128026	ko	빌바오						&#10;</span></span><span class="line"><span class="cl">5882701	3128026	bg	Билбао						&#10;</span></span><span class="line"><span class="cl">5882702	3128026	he	בילבאו						&#10;</span></span><span class="line"><span class="cl">5882703	3128026	be	Більбаа						&#10;</span></span><span class="line"><span class="cl">5882704	3128026	la	Bilbaum						&#10;</span></span><span class="line"><span class="cl">5882705	3128026	an	Bilbau						&#10;</span></span><span class="line"><span class="cl">5882706	3128026	ka	ბილბაო						&#10;</span></span><span class="line"><span class="cl">5882707	3128026	th	บิลบาโอ						&#10;</span></span><span class="line"><span class="cl">5882708	3128026	zh	毕尔巴鄂						&#10;</span></span><span class="line"><span class="cl">5882709	3128026	ar	بلباو						&#10;</span></span><span class="line"><span class="cl">5882710	3128026	mr	बिल्बाओ						&#10;</span></span><span class="line"><span class="cl">5882711	3128026	gl	Bilbo						&#10;</span></span><span class="line"><span class="cl">5882712	3128026	pms	Bilbo / Bilbao						&#10;</span></span><span class="line"><span class="cl">5882713	3128026	mhr	Бильбао						&#10;</span></span><span class="line"><span class="cl">6634068	3128026	iata	BIO						&#10;</span></span><span class="line"><span class="cl">8183693	3128026	hy	Բիլբաո						&#10;</span></span><span class="line"><span class="cl">8183694	3128026	mn	Бильбао						&#10;</span></span><span class="line"><span class="cl">8183695	3128026	xmf	ბილბაო						&#10;</span></span><span class="line"><span class="cl">8183696	3128026	ckb	بیلباو						&#10;</span></span><span class="line"><span class="cl">8183697	3128026	kk	Бильбао						&#10;</span></span><span class="line"><span class="cl">13750954	3128026	unlc	ESBIO						&#10;</span></span><span class="line"><span class="cl">3128026	134091	fa	Gerakān</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>grep-alternate-names-bilbao.out</span>
+    </div>
+</div>
+<h4 id="admin1codesasciitxt">admin1CodesASCII.txt</h4>
+<p>Contiene las unidades administrativas del primer nivel, en el caso de España son las comunidades autónomas. El archivo incluye el <em>geonameid</em> asociado a la comunidad autónoma.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">ES.31	Murcia	Murcia	2513413&#10;</span></span><span class="line"><span class="cl">ES.CE	Ceuta	Ceuta	2519582&#10;</span></span><span class="line"><span class="cl">ES.07	Balearic Islands	Balearic Islands	2521383&#10;</span></span><span class="line"><span class="cl">ES.51	Andalusia	Andalusia	2593109&#10;</span></span><span class="line"><span class="cl">ES.53	Canary Islands	Canary Islands	2593110&#10;</span></span><span class="line"><span class="cl">ES.54	Castille-La Mancha	Castille-La Mancha	2593111&#10;</span></span><span class="line"><span class="cl">ES.57	Extremadura	Extremadura	2593112&#10;</span></span><span class="line"><span class="cl">ES.60	Valencia	Valencia	2593113&#10;</span></span><span class="line"><span class="cl">ES.34	Asturias	Asturias	3114710&#10;</span></span><span class="line"><span class="cl">ES.32	Navarre	Navarre	3115609&#10;</span></span><span class="line"><span class="cl">ES.29	Madrid	Madrid	3117732&#10;</span></span><span class="line"><span class="cl">ES.27	La Rioja	La Rioja	3336897&#10;</span></span><span class="line"><span class="cl">ES.39	Cantabria	Cantabria	3336898&#10;</span></span><span class="line"><span class="cl">ES.52	Aragon	Aragon	3336899&#10;</span></span><span class="line"><span class="cl">ES.55	Castille and León	Castille and Leon	3336900&#10;</span></span><span class="line"><span class="cl">ES.56	Catalonia	Catalonia	3336901&#10;</span></span><span class="line"><span class="cl">ES.58	Galicia	Galicia	3336902&#10;</span></span><span class="line"><span class="cl">ES.59	Basque Country	Basque Country	3336903&#10;</span></span><span class="line"><span class="cl">ES.ML	Melilla	Melilla	6362988</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>admin1-es.txt</span>
+    </div>
+</div>
+<h4 id="admin2codestxt">admin2Codes.txt</h4>
+<p>Contiene las unidades administrativas del segundo nivel, en el caso de España son las provincias. El archivo incluye el <em>geonameid</em> asociado a la provincia.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">ES.60.V	Província de València	Provincia de Valencia	2509951&#10;</span></span><span class="line"><span class="cl">ES.54.TO	Province of Toledo	Province of Toledo	2510407&#10;</span></span><span class="line"><span class="cl">ES.51.SE	Provincia de Sevilla	Provincia de Sevilla	2510910&#10;</span></span><span class="line"><span class="cl">ES.53.TF	Provincia de Santa Cruz de Tenerife	Provincia de Santa Cruz de Tenerife	2511173&#10;</span></span><span class="line"><span class="cl">ES.51.MA	Provincia de Málaga	Provincia de Malaga	2514254&#10;</span></span><span class="line"><span class="cl">ES.53.GC	Provincia de Las Palmas	Provincia de Las Palmas	2515271&#10;</span></span><span class="line"><span class="cl">ES.51.J	Provincia de Jaén	Provincia de Jaen	2516394&#10;</span></span><span class="line"><span class="cl">ES.51.H	Provincia de Huelva	Provincia de Huelva	2516547&#10;</span></span><span class="line"><span class="cl">ES.51.GR	Provincia de Granada	Provincia de Granada	2517115&#10;</span></span><span class="line"><span class="cl">ES.54.CU	Provincia de Cuenca	Provincia de Cuenca	2519034&#10;</span></span><span class="line"><span class="cl">ES.51.CO	Province of Córdoba	Province of Cordoba	2519239&#10;</span></span><span class="line"><span class="cl">ES.54.CR	Provincia de Ciudad Real	Provincia de Ciudad Real	2519401&#10;</span></span><span class="line"><span class="cl">ES.51.CA	Provincia de Cádiz	Provincia de Cadiz	2520597&#10;</span></span><span class="line"><span class="cl">ES.57.CC	Provincia de Cáceres	Provincia de Caceres	2520610&#10;</span></span><span class="line"><span class="cl">ES.57.BA	Provincia de Badajoz	Provincia de Badajoz	2521419&#10;</span></span><span class="line"><span class="cl">ES.51.AL	Almería	Almeria	2521883&#10;</span></span><span class="line"><span class="cl">ES.60.A	Provincia de Alicante	Provincia de Alicante	2521976&#10;</span></span><span class="line"><span class="cl">ES.54.AB	Provincia de Albacete	Provincia de Albacete	2522257&#10;</span></span><span class="line"><span class="cl">ES.52.Z	Provincia de Zaragoza	Provincia de Zaragoza	3104323&#10;</span></span><span class="line"><span class="cl">ES.55.ZA	Provincia de Zamora	Provincia de Zamora	3104341&#10;</span></span><span class="line"><span class="cl">ES.59.BI	Bizkaia	Bizkaia	3104469&#10;</span></span><span class="line"><span class="cl">ES.55.VA	Provincia de Valladolid	Provincia de Valladolid	3106671&#10;</span></span><span class="line"><span class="cl">ES.52.TE	Provincia de Teruel	Provincia de Teruel	3108125&#10;</span></span><span class="line"><span class="cl">ES.56.T	Província de Tarragona	Provincia de Tarragona	3108287&#10;</span></span><span class="line"><span class="cl">ES.55.SO	Provincia de Soria	Provincia de Soria	3108680&#10;</span></span><span class="line"><span class="cl">ES.55.SG	Provincia de Segovia	Provincia de Segovia	3109254&#10;</span></span><span class="line"><span class="cl">ES.39.S	Provincia de Cantabria	Provincia de Cantabria	3109716&#10;</span></span><span class="line"><span class="cl">ES.55.SA	Provincia de Salamanca	Provincia de Salamanca	3111107&#10;</span></span><span class="line"><span class="cl">ES.58.PO	Provincia de Pontevedra	Provincia de Pontevedra	3113208&#10;</span></span><span class="line"><span class="cl">ES.55.P	Provincia de Palencia	Provincia de Palencia	3114530&#10;</span></span><span class="line"><span class="cl">ES.58.OR	Provincia de Ourense	Provincia de Ourense	3114964&#10;</span></span><span class="line"><span class="cl">ES.58.LU	Provincia de Lugo	Provincia de Lugo	3117813&#10;</span></span><span class="line"><span class="cl">ES.55.LE	Provincia de León	Provincia de Leon	3118528&#10;</span></span><span class="line"><span class="cl">ES.58.C	Provincia da Coruña	Provincia da Coruna	3119840&#10;</span></span><span class="line"><span class="cl">ES.52.HU	Provincia de Huesca	Provincia de Huesca	3120513&#10;</span></span><span class="line"><span class="cl">ES.59.SS	Gipuzkoa	Provincia de Guipuzcoa	3120935&#10;</span></span><span class="line"><span class="cl">ES.54.GU	Provincia de Guadalajara	Provincia de Guadalajara	3121069&#10;</span></span><span class="line"><span class="cl">ES.60.CS	Província de Castelló	Provincia de Castello	3125881&#10;</span></span><span class="line"><span class="cl">ES.55.BU	Provincia de Burgos	Provincia de Burgos	3127460&#10;</span></span><span class="line"><span class="cl">ES.56.B	Província de Barcelona	Provincia de Barcelona	3128759&#10;</span></span><span class="line"><span class="cl">ES.55.AV	Provincia de Ávila	Provincia de Avila	3129138&#10;</span></span><span class="line"><span class="cl">ES.59.VI	Araba / Álava	Araba / Alava	3130717&#10;</span></span><span class="line"><span class="cl">ES.56.GI	Província de Girona	Provincia de Girona	6355230&#10;</span></span><span class="line"><span class="cl">ES.56.L	Província de Lleida	Provincia de Lleida	6355231&#10;</span></span><span class="line"><span class="cl">ES.27.LO	Provincia de La Rioja	Provincia de La Rioja	6355232&#10;</span></span><span class="line"><span class="cl">ES.29.M	Provincia de Madrid	Provincia de Madrid	6355233&#10;</span></span><span class="line"><span class="cl">ES.31.MU	Murcia	Murcia	6355234&#10;</span></span><span class="line"><span class="cl">ES.32.NA	Provincia de Navarra	Provincia de Navarra	6355235&#10;</span></span><span class="line"><span class="cl">ES.34.O	Province of Asturias	Province of Asturias	6355236&#10;</span></span><span class="line"><span class="cl">ES.07.PM	Illes Balears	Illes Balears	6424360&#10;</span></span><span class="line"><span class="cl">ES.CE.CE	Ceuta	Ceuta	8335119&#10;</span></span><span class="line"><span class="cl">ES.ML.ME	Melilla	Melilla	8335120</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>admin2-es.txt</span>
+    </div>
+</div>
+<h4 id="featurecodestxt-timezonestxt-y-hierarchyzip">featureCodes.txt, timeZones.txt y hierarchy.zip</h4>
+<p>Los <em>geonames</em> pueden tener un metadato asociado con varios identificadores que en la documentación se denominan <em>features</em>, hay varias categorías de identificadores y varios identificadores dentro de cada categoría. Por ejemplo, la feature <em>P</em> se utiliza para ciudades y villas y <em>PPLA1</em>, <em>PPLA2</em>, <em>PPLA3</em>, <em>PPLA4</em>, <em>PPLA5</em> indica el nivel de unidad administrativa. Las <em>features</em> permiten conocer a qué representa el <em>geoname</em> por ejemplo si es un aeropuerto o una universidad entre muchos otros elementos.</p>
+<p>El archivo <em>hierarchy.zip</em> permite reconstruir la relación jerárquica de los diferentes <em>geonames</em></p>
+<h4 id="shapes_all_lowzip">shapes_all_low.zip</h4>
+<p>Contiene el polígono del <em>geoname</em> que permite una representación gráfica de su superficie, por ejemplo del país.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">337996	{&#34;type&#34;:&#34;Polygon&#34;,&#34;coordinates&#34;:[[[37.916,14.894],[38.045,14.72],[38.258,14.679],[38.455,14.413],[38.797,14.467],[38.978,14.545],[39.032,14.639],[39.154,14.653],[39.261,14.516],[39.252,14.409],[39.346,14.466],[39.373,14.54],[39.538,14.491],[39.508,14.55],[39.587,14.609],[39.77,14.546],[39.93,14.415],[40.127,14.547],[40.213,14.387],[40.26,14.411],[40.942,14.082],[41.249,13.61],[41.644,13.386],[42.056,12.801],[42.218,12.765],[42.404,12.469],[41.973,11.839],[41.835,11.733],[41.771,11.493],[41.81,11.278],[41.787,10.979],[41.947,10.913],[42.066,10.927],[42.146,10.983],[42.42,10.982],[42.634,11.096],[42.689,11.055],[42.752,11.08],[42.79,10.988],[42.967,10.997],[42.67,10.624],[42.799,10.452],[42.854,10.219],[43.009,10.086],[43.087,9.903],[43.255,9.847],[43.299,9.606],[43.396,9.554],[43.46,9.419],[43.643,9.357],[43.995,9.003],[47.001,8.001],[48.001,8.001],[44.97,4.913],[44.01,4.959],[43.635,4.855],[43.082,4.607],[42.844,4.284],[42.541,4.211],[42.079,4.179],[41.945,4.01],[41.833,3.947],[41.718,3.994],[41.677,3.958],[41.551,3.983],[41.197,3.937],[40.756,4.285],[39.866,3.871],[39.773,3.672],[39.553,3.405],[39.493,3.471],[39.192,3.483],[39.079,3.545],[38.903,3.517],[38.712,3.577],[38.684,3.629],[38.576,3.609],[38.536,3.659],[38.446,3.607],[38.127,3.61],[37.029,4.388],[36.843,4.452],[36.05,4.457],[35.94,4.551],[35.949,4.631],[35.809,4.791],[35.862,5.32],[35.538,5.424],[35.316,5.335],[35.315,5.498],[35.126,5.624],[35.13,5.687],[34.998,5.897],[35.005,6.075],[34.95,6.247],[35.022,6.447],[34.939,6.558],[34.864,6.611],[34.768,6.594],[34.64,6.74],[34.531,6.745],[34.543,6.817],[34.471,6.919],[34.293,6.948],[34.305,6.978],[34.192,7.041],[34.19,7.132],[34.022,7.246],[34.002,7.421],[33.716,7.663],[33.542,7.694],[33.47,7.752],[33.323,7.708],[33.247,7.779],[33.046,7.79],[32.998,7.944],[33.121,8.111],[33.193,8.129],[33.17,8.296],[33.219,8.435],[33.618,8.472],[33.7,8.378],[33.769,8.368],[33.876,8.411],[33.903,8.486],[34.024,8.489],[34.145,8.607],[34.102,9.557],[34.224,9.887],[34.233,10.049],[34.334,10.119],[34.295,10.585],[34.466,10.814],[34.603,10.906],[34.795,10.754],[34.786,10.706],[34.868,10.731],[34.869,10.805],[34.987,10.89],[34.953,10.949],[35.001,11.187],[34.928,11.241],[35.077,11.535],[35.044,11.734],[35.27,11.944],[35.662,12.637],[36.009,12.724],[36.16,12.697],[36.176,12.904],[36.143,12.948],[36.497,13.835],[36.466,13.978],[36.556,14.284],[36.866,14.322],[37.018,14.252],[37.097,14.275],[37.135,14.41],[37.312,14.448],[37.523,14.182],[37.916,14.894]]]}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>shape-es.txt</span>
+    </div>
+</div>
+<h4 id="información-de-la-base-de-datos">Información de la base de datos</h4>
+<p>Cada uno de los elementos geográficos tiene asociado un identificador de <em>geonameid</em>, con este identificador es posible obtener más información en el archivo <em>alternateNamesV2.zip</em> y relacionar la información de unos archivos con la información de otros archivos. La información que incluyen están en columnas separadas por tabuladores, las columnas son las indicadas en estructura de la tabla <em>geoname</em> y <em>alternate names</em>.</p>
+<p>Los archivos contienen mucha información, posiblemente en una aplicación solo interese parte de toda esa información y se puede ignorar el resto. Por ejemplo, en la información de los países se incluye su extensión de superficie, población, continente moneda, lenguaje o la capital del país que para validar direcciones no es necesaria pero la moneda o lenguajes es útil para mostrar precios o textos según el idioma del país.</p>
+<p>Hay otra información muy útil como los nombres de las ciudades en diferentes idiomas e incluso las abreviaturas de los aeropuertos. Por supuesto están las expresiones regulares de los códigos postales o los códigos de prefijo de los teléfonos, los propios del país conoceremos pero la de muchos otros países seguro que no.</p>
+<p>La expresión regular de España es esta.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">^(\d{5})$&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>regexp-es.txt</span>
+    </div>
+</div>
+<p>La de Reino Unido es esta otra.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">^([Gg][Ii][Rr]\s?0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z]))))\s?[0-9][A-Za-z]{2})$&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>regexp-uk.txt</span>
+    </div>
+</div>
+<h3 id="cómo-acceder-a-la-información">Cómo acceder a la información</h3>
+<p>Los archivos son muy grandes, seguramente no sea necesaria toda la información y no está en el formato adecuado para un rápido acceso al dato que se necesita en una aplicación, con lo que hay que procesarlos para adaptarlos. Los archivos son archivos de texto con los datos de las columnas separados por tabuladores, una librería para procesar los archivos con el lenguaje Java es <a href="http://opencsv.sourceforge.net/">OpenCSV</a>.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/10/ejemplo-sencillo-de-como-leer-datos-de-un-archivo-excel-o-csv-en-java/">Ejemplo sencillo de cómo leer datos de un archivo Excel o CSV en Java</a></li>
+</ul>
+<p>Es necesario procesar los archivos de alguna forma para extraer y transformar la información de los archivos de GeoNames a un formato adecuado para la aplicación posiblemente con un <em>script</em> en el lenguaje <a href="https://www.groovy-lang.org/">Groovy</a>, Java, <a href="https://kotlinlang.org/">Kotlin</a> u otro lenguaje. La información geográfica quizá no cambie muy habitualmente pero seguramente hay que procesar los archivos cada cierto tiempo o si por alguna circunstancia se produce un cambio significativo que requiera una actualización.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2015/11/java-para-tareas-de-scripting-con-jbang-y-gradle/">Java para tareas de scripting con JBang y Gradle</a></li>
+</ul>
+<p>Una vez disponible la información en la aplicación conviene crear una serie de clases que hagan de fachada en el acceso a la información de tal forma que el resto del código no se acople a la implementación interna de los datos que puede cambiar en el futuro. Hay varias formas de implementación, una en que las clases de información geográfica serían un módulo en la aplicación y propietaria de los datos geográficos. Otra opción es que las tablas estén en una base de datos y sea compartida por varias aplicaciones, en este caso las tablas o vistas se convierten en una interfaz para las aplicaciones.</p>
+]]>
+        </content>
+        
+            
+                <category term="programacion"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/</id>
@@ -2649,209 +2808,6 @@
 ]]>
         </content>
         
-            
-                <category term="hardware"/>
-            
-        
-    </entry>
-    
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/</id>
-        <title>Prueba de velocidad de unidad de almacenamiento en GNU/Linux</title>
-        <updated>2022-08-18T18:00:00+02:00</updated>
-        <published>2022-08-18T18:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>En un dispositivo de almacenamiento hay que tener en cuenta el tipo de la interfaz del dispositivo que determina la tasa de transferencia máxima teórica, el tipo de almacenamiento que determina en qué rangos de tasa de transferencia ofrecen la mayoría de dispositivos, el dispositivo en concreto que dependiendo del fabricante y calidad determina en qué parte del rango está la tasa de transferencia el modelo usado, la capacidad de almacenamiento y finalmente el precio que está en función de todo lo anterior.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
-</div>
-<p>Dependiendo del tipo de interfaz y el tipo de almacenamiento de un dispositivo la tasa de transferencia de un dispositivo varía. Una buena tasa de transferencia permite un óptimo rendimiento y finalizar las tareas en menos tiempo principalmente al copiar archivos de una unidad a otra lo que incluye <a href="https://picodotdev.github.io/blog-bitix/2016/05/como-realizar-copias-de-seguridad-en-windows-con-freefilesync/">hacer copias de seguridad</a> para tener una segunda copia de los datos y sincronizada de forma regular para no perder ningún dato en caso de fallo.</p>
-<p>Más que el procesador las dos mejoras que se le pueden realizar a algunos equipos para mejorar el rendimiento y prolongar su uso es la ampliación de la memoria RAM y cambiar el tipo de almacenamiento. Si es el caso de pasar de un disco duro a un SSD la diferencia será más que significativa y casi parecerá un equipo nuevo siempre y cuando la cantidad de memoria RAM sea suficiente para la tarea.</p>
-<p>A fecha del 2022 tener un SSD y 8 GiB de memoria RAM es lo menos que se le puede exigir a un equipo para usarlo en unas condiciones suficientes que de un rendimiento aceptable para tareas de navegar por internet y ofimática.</p>
-<p>Las tasas de transferencia anunciadas por los fabricantes en algunos casos distan significativamente de las reales al hacer uso de ellas con lo que es recomendable si es posible un análisis del rendimiento de la unidad sobre todo para las memorias USB y tarjetas micro SD.</p>
-<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
-    <li><a href="#tipos-de-interfaces">Tipos de interfaces</a></li>
-    <li><a href="#tipos-de-almacenamiento">Tipos de almacenamiento</a></li>
-    <li><a href="#precios">Precios</a></li>
-    <li><a href="#pruebas-de-velocidad">Pruebas de velocidad</a></li>
-  </ul>
-</nav></div>
-<h3 id="tipos-de-interfaces">Tipos de interfaces</h3>
-<p>A lo largo de los años los ordenadores han ido adoptando varios tipos de interfaces como estándar que todos los fabricantes de equipos incorporan en sus productos. Cada nueva interfaz ha ofrecido un ancho de banda mayor y mayores tasas de transferencia que la interfaz anterior reemplazada. Dentro de los tipos de interfaces se puede diferenciar entre los empleados para el almacenamiento interno donde se instala el sistema operativo y las interfaces empleadas para conectividad de dispositivos externos extraíbles como memorias USB.</p>
-<p>Para el almacenamiento interno se suele utilizar la interfaz SATA que está siendo reemplazada por la interfaz NVMe. Para el almacenamiento externo y dispositivos extraíbles que se pueden conectar y desconectar con el equipo encendido se utiliza la interfaz USB. Cada interfaz también ha evolucionado en diferentes versiones así la última versión de SATA es la 3 que duplicó la tasa de transferencia de la anterior y USB tiene varias versiones como 2.0, 3.0, 3.1/3.2, 4.0 e igualmente para NVMe que tiene 3.0, 4.0 y más adelante 5.0.</p>
-<p>Cada interfaz ofrece un ancho de banda máximo teórico, los dispositivos que son capaces de saturar la interfaz llegan casi al máximo teórico aunque normalmente suelen quedarse cerca y algo por debajo.</p>
-<p>Las tasas de transferencia máximas teóricas para cada una de las interfaces son las siguientes. NVMe que es la más reciente y sustituye a SATA ofrece una tasa de transferencia varias veces mayor que la última versión de SATA. dado que el acceso al almacenamiento una de los motivos en la rapidez de un ordenador el paso de SATA a NVMe supone una gran mejora cuando se usa de forma intensa, cada nueva versión de NVMe está duplicando la tasa de transferencia de la versión anterior. En las diferentes versiones de USB las tasas de transferencia también aumentan en varias veces la ofrecida por la versión anterior además de tener otras ventajas como soportar una mayor capacidad de alimentación a los dispositivos conectados.</p>
-<table class="table">
-    <thead class="table-light">
-        <th width="300px">Tipo de interfaz</th>
-        <th width="300px" colspan="2">Tasa de transferencia</th>
-        <th>Año</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>USB 1.0</td>
-            <td>12 Mbit/s</td>
-            <td>1.5 MB/s</td>
-            <td>1996</td>
-        </tr>
-        <tr>
-            <td>USB 2.0</td>
-            <td>480 Mbit/s</td>
-            <td>60 MB/s</td>
-            <td>2000</td>
-        </tr>
-        <tr>
-            <td>USB 3.0</td>
-            <td>5 Gbit/s</td>
-            <td>500 MB/s</td>
-            <td>2010</td>
-        </tr>
-        <tr>
-            <td>USB 3.1</td>
-            <td>10 Gbit/s</td>
-            <td>1.212 GB/s</td>
-            <td>2013</td>
-        </tr>
-        <tr>
-            <td>USB 3.2</td>
-            <td>20 Gbit/s</td>
-            <td>2.424 GB/s</td>
-            <td>2017</td>
-        </tr>
-        <tr>
-            <td>USB 4.0</td>
-            <td>40 Gbit/s</td>
-            <td>5 GB/s</td>
-            <td>2019</td>
-        </tr>
-        <tr>
-            <td>UHS-I <small>(SDHC, SDXC, SDUC)</small></td>
-            <td>400 Mbit/s</td>
-            <td colspan="2">50 MB/s</td>
-        </tr>
-        <tr>
-            <td>SATA 1</td>
-            <td>1.500 Gbit/s</td>
-            <td>150 MB/s</td>
-            <td>2003</td>
-        </tr>
-        <tr>
-            <td>SATA 2</td>
-            <td>3 Gbit/s</td>
-            <td>300 MB/s</td>
-            <td>2004</td>
-        </tr>
-        <tr>
-            <td>SATA 3</td>
-            <td>6 Gbit/s</td>
-            <td>600 MB/s</td>
-            <td>2008</td>
-        </tr>
-        <tr>
-            <td>NVMe 3.0</td>
-            <td>32 Gbit/s</td>
-            <td>3.938 GB/s</td>
-            <td>2013</td>
-        </tr>
-        <tr>
-            <td>NVMe 4.0</td>
-            <td>64 Gbit/s</td>
-            <td>7.876 GB/s</td>
-            <td>2017</td>
-        </tr>
-        <tr>
-            <td>NVMe 5.0</td>
-            <td>128 Gbit/s</td>
-            <td>15.754 GB/s</td>
-            <td>2019</td>
-        </tr>
-    </tbody>
-</table>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/List_of_interface_bit_rates">List of interface bit rates</a></li>
-</ul>
-<h3 id="tipos-de-almacenamiento">Tipos de almacenamiento</h3>
-<p>El tipo de almacenamiento es la tecnología que se emplea en los dispositivos de almacenamiento, los discos duros con platos circulares en cuya superficie magnética se guarda la información, han sido ya reemplazados por las unidades SSD sin partes móviles que ofrece un tiempo de acceso mucho menor y una tasa de transferencia mucho mayor. Si hay que actualizar un equipo que tiene un disco duro sustituir este componente por un SSD seguramente suponga una gran mejora en el rendimiento de equipo más que cualquier otra actuación salvo quizá la cantidad de memoria.</p>
-<p>Un disco duro que normalmente utiliza la interfaz SATA queda muy lejos de ofrecer una tasa de transferencia cercana a la que es capaz de soportar la interfaz SATA. Un dispositivo de almacenamiento SSD con interfaz SATA si se queda cerca del máximo teórico de la interfaz.</p>
-<p>La tasa de transferencia máxima teórica de la interfaz es una cosa pero la real que observa el usuario al copiar archivos puede ser muy distinta en la que influye el tipo de almacenamiento y la calidad del dispositivo. Las tasas de transferencia que se observa al copiar archivos suelen ser algo inferiores a la máximas teóricas.</p>
-<h3 id="precios">Precios</h3>
-<p>Los precios varían según los diferentes tipos de almacenamiento, el tipo de interfaz y la cantidad de almacenamiento. En el caso del almacenamiento y dado el avance de la tecnología es cuestión de tiempo de que o bien los precios se reduzcan paulatinamente o por el contrario se ofrezca el mayor cantidad de almacenamiento por el mismo precio.</p>
-<p>Por este avance de la tecnología es una buena idea comprar un producto que ofrezca una cantidad de espacio suficiente para el uso actual y de unos pocos años posteriores pero no es recomendable comprar una cantidad desorbitada de almacenamiento si no se le va a dar uso, por el paso del tiempo su coste se reducirá o bien surgirá una nueva interfaz de almacenamiento que deje obsoleta a una unidad actual.</p>
-<p>En los siguientes enlaces hay una muestra de los precios actuales de varios tipos de almacenamiento e interfaces desde una tarjeta microSD hasta un SSD con interfaz NVMe que ofrece las mayores tasas de transferencia pero a un precio más caro por GB de almacenamiento.</p>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07P9W5HJV&amp;linkId=94d207e03eb06aae1e957b8ea9fd541a" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07H1231S8&amp;linkId=a34fdc7896b0bd98cca4bffe8d532f81" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06XFS5657&amp;linkId=186319e6ae3e35777b9412d236a46297" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06XFHQGB9&amp;linkId=69626bf45c9c279219546f122fd33a06" title="Amazon" class="lozad"></iframe>
-</div>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06VVS7S94&amp;linkId=b3935c0c943be983bce3ceb803928e62" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06W55K9N6&amp;linkId=6abae8dc406222e745a56e1405eb282b" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06XG892ZH&amp;linkId=54661b04f99360148ebed3b5528fa2ed" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B0713WPGLL&amp;linkId=3f06bc3776d19ba91f5ab5660781d247" title="Amazon" class="lozad"></iframe>
-</div>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B083ZS4HYD&amp;linkId=56990d2fedd9adcebc7b4d5b42e0ddfb" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07HPX38XC&amp;linkId=df0fb3936a8db66682dd9f1c56bc8865" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08PC5DKZQ&amp;linkId=dcd291ad706e925f4dfca3c39045a54f" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B077SF8KMG&amp;linkId=30e60238410c4c1f9584f13e067e8cca" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08THW4S3T&amp;linkId=4ab585ee143e7c9927e41dc57033f7f5" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08TJ2649W&amp;linkId=a72e8460040ec9d269761918de53ecca" title="Amazon" class="lozad"></iframe>
-</div>
-<h3 id="pruebas-de-velocidad">Pruebas de velocidad</h3>
-<p>La transferencia de una unidad depende de la combinación de la interfaz y tipo de almacenamiento. El máximo teórico de la interfaz de conexión y dependiendo del tipo de almacenamiento el dispositivo está limitado por la interfaz, cercano a la interfaz o por debajo de la interfaz.</p>
-<p>Un dispositivo SSD conectado mediante la interfaz SATA 3 llega a los límites teóricos de la interfaz cercano a los 600 MB/s. Un disco duro conectado en una interfaz SATA se queda en apenas 80 MB/s muy por debajo del máximo teórico de la interfaz, un disco duro no es capaz de saturar la interfaz SATA.</p>
-<p>No dispongo de todos los tipos de almacenamiento, ni de todas las interfaces. Para conocer una medida aproximada de las tasas de transferencia de una marca o tipo de almacenamiento es recomendable consultar un vídeo para conocer si la tasa de transferencia real y si cumple con el mínimo exigido según la tarea a la que se vaya a dedicar el dispositivo de almacenamiento antes de comprarlo.</p>
-<p>Estas son las tasas de transferencia que he obtenido para un disco duro externo con interfaz USB 2.0 y conectado a un concentrador USB 2.0, también de una memoria USB 2.0 y de una tarjeta microSD de tipo SDXC conectado con la interfaz UHS-I al ordenador.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/opciones-prueba-de-rendimiento_hu4e9d7a29d93e145457c6fb8b020cbd67_47495_2560x1440_fit_box_3.png" data-gallery="" title="Opciones de la pruebas de rendimiento"><img src="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/opciones-prueba-de-rendimiento_hu4e9d7a29d93e145457c6fb8b020cbd67_47495_300x200_fit_box_3.png" width="271" height="200" alt="Opciones de la pruebas de rendimiento" title="Opciones de la pruebas de rendimiento"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/usb-20-hdd_huabe7d480a1f47512e874c22c61b72297_203497_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de velocidad de HDD"><img src="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/usb-20-hdd_huabe7d480a1f47512e874c22c61b72297_203497_300x200_fit_box_3.png" width="228" height="200" alt="Prueba de velocidad de HDD" title="Prueba de velocidad de HDD"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/usb-20-memory_hu5f3ef0956119e635fb11c005f7ce85af_236818_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de velocidad de memoria USB"><img src="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/usb-20-memory_hu5f3ef0956119e635fb11c005f7ce85af_236818_300x200_fit_box_3.png" width="214" height="200" alt="Prueba de velocidad de memoria USB" title="Prueba de velocidad de memoria USB"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/uhs-sd_hua013f99ed60192ccacb4ec5b9e4b6253_85525_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de velocidad de tarjeta micro SD"><img src="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/uhs-sd_hua013f99ed60192ccacb4ec5b9e4b6253_85525_300x200_fit_box_3.png" width="214" height="200" alt="Prueba de velocidad de tarjeta micro SD" title="Prueba de velocidad de tarjeta micro SD"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/uhs-sdxc_huab2d8cd2d2a9697e0386dd4018a5caf3_204197_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de velocidad de tarjeta SDXC"><img src="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/uhs-sdxc_huab2d8cd2d2a9697e0386dd4018a5caf3_204197_300x200_fit_box_3.png" width="214" height="200" alt="Prueba de velocidad de tarjeta SDXC" title="Prueba de velocidad de tarjeta SDXC"  class="lozad "></a></p>
-<figcaption>Pruebas de velocidad de HDD, memoria USB, tarjeta SD y SDXC</figcaption>
-</figure>
-</div>
-<p>El uso que le iba a dar a una tarjeta micro SD de tipo SDXC era como almacenamiento para un <em>smartphone</em> pero como finalmente <a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/">compré un Samsung Galaxy S21 FE</a> que no dispone memoria ampliable con tarjeta micro SD he tenido que reutilizar la tarjeta para otro propósito.</p>
-<p>La tarjeta micro SD Samsung de 512 GB ofrece una transferencia de 85 MB/s en lectura y 55 MB/s en escritura que ha sido suficiente para realizar virtualización y usar la micro SD como unidad de almacenamiento externo en el que hacer copias de seguridad. Para virtualizar es más apropiado utilizar la unidad interna NVMe o al menos un SSD con interfaz SATA interno o USB 3.0 pero aunque tenía dudas si iba a ser suficiente la micro SD permite usarla como unidad de almacenamiento al virtualizar con un rendimiento aceptable.</p>
-<p>Las diferencias entre dos dispositivos con la misma interfaz y tipo de almacenamiento también varía y es recomendable consultar algún vídeo donde ver el rendimiento real que observa el usuario y no el anunciado por el fabricante para comprar el mejor producto. Un programa que permite analizar el rendimiento de un dispositivo es <a href="https://crystalmark.info/en/">CrystalMark</a> para <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y la aplicación <em>Discos</em> con su opción <em>Probar rendimiento de la partición</em> para <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> usando el entorno de escritorio <a href="https://www.gnome.org/">GNOME</a>.</p>
-<p>En los siguientes vídeos se muestra la tasa de transferencia de varios de los diferentes tipos de memoria e interfaces.</p>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/kJ5qljYa4aM" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/aazprXilyxY" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/7VuxTnKEKic" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/mVLlPIyvxkY" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://linoxide.com/measure-disk-performance-fio/">How to Measure Disk Performance using Fio in Linux</a></li>
-<li><a href="https://www.youtube.com/watch?v=TASYaWTkg0U">Linux Storage Benchmarking With FIO</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
             
                 <category term="hardware"/>
             
