@@ -10,6 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
+imageHead: "image:geonames.png"
 imagePost: "image:geonames.png"
 tags: ["programacion", "planeta-codigo"]
 summary: "Entre las funcionalidades habituales en una aplicación está un formulario para introducir una dirección. El formulario de dirección consta de varios campos en el que suele ser recomendable realizar unas mínimas validaciones como que el código postal o ciudad sea correcto para evitar errores inadvertidos del usuario o intencionados con información incorrecta. La base de datos de GeoNames proporciona información geográfica muy útil y de forma gratuita que incluye países, ciudades, subdivisiones administrativas, códigos postales, nombres en diferentes idiomas y mucha otra información de todos los paises del mundo."
@@ -17,11 +18,11 @@ summary: "Entre las funcionalidades habituales en una aplicación está un formu
 
 {{% post %}}
 
-No todo son microservicios es más ni siquiera estos son la mejor opción en muchos casos, las cosas mundanas tienen también mucha importancia en la aplicación cómo ordenar alfabéticamente cadenas o introducir una dirección postal. Otra funcionalidad habitual es un formulario en el que haya que introducir direcciones lo que incluye códigos postales, ciudad, país y quizá adicionalmente un teléfono.
+No todo son microservicios es más ni siquiera estos son la mejor opción en muchos casos, las cosas mundanas tienen también mucha importancia en la aplicación cómo ordenar alfabéticamente cadenas o introducir una dirección postal. Es habitual un formulario en el que haya que introducir direcciones lo que incluye códigos postales, ciudad, país y quizá adicionalmente un teléfono.
 
 Lo que parece un simple formulario con varios campos de datos se complica cuando hay que validar los códigos postales, ciudad de un país o al incluir información de las diferentes subdivisiones administrativas. Más si en el formulario hay que tener en cuenta las diferentes variaciones según cada país, los códigos postales de España son muy diferentes de los de Reino Unido lo que significa que la expresión regular es muy diferente y según la normativa del país.
 
-Estas tareas que parecen sencillas realmente tienen su dificultad, ordenar caracteres alfabéticamente se complica ya que hay que tener en cuenta las tildes o mayúsculas y minúsculas y validar direcciones para recibir datos correctos requiere validaciones y conocer cuales son.
+Estas tareas que parecen sencillas realmente tienen su dificultad, ordenar caracteres alfabéticamente se complica ya que hay que tener en cuenta las tildes o mayúsculas y minúsculas y validar direcciones para recibir datos correctos requiere validaciones y conocer cuales son los valores válidos.
 
 * [La forma correcta de ordenar alfabéticamente cadenas en Java][blogbitix-276]
 * [Ofrecer contenido personalizado al usuario basado en su ubicación][blogbitix-147]
