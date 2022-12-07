@@ -16,9 +16,9 @@ tags: ["juegos", "patrocinado"]
 
 {{% post %}}
  
-Alex enciende la **Xbox** y conecta el disco duro externo más vendido del momento, que ha comprado en una [tienda online](https://mercadoactual.es/almacenamiento/discos-duros-externos?marcas=seagate&order=product.quantity.desc) con dos **terabytes** metidos en una caja verde con la que liberará espacio de la consola.
+Alex enciende la _Xbox_ y conecta el disco duro externo más vendido del momento, que ha comprado en una [tienda online](https://mercadoactual.es/almacenamiento/discos-duros-externos?marcas=seagate&order=product.quantity.desc) con dos _terabytes_ metidos en una caja verde con la que liberará espacio de la consola.
 
-Con la **capturadora** que compró y el **micrófono** tiene todo preparado y hoy es un día importante, se enfrenta a los mejores del instituto. Los **cascos** bien ajustados y listo, se deja caer en la parte más alta de la isla.
+Con la _capturadora_ que compró y el _micrófono_ tiene todo preparado y hoy es un día importante, se enfrenta a los mejores del instituto. Los _cascos_ bien ajustados y listo, se deja caer en la parte más alta de la isla.
 
 ### Discos duros externos
 

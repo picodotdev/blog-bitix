@@ -19,7 +19,7 @@ summary: "Ha una cantidad ingente de juegos nuevos y antiguos a los que jugar. Y
 
 {{% post %}}
 
-{{< logotype image1="playstation.svg" title1="PlayStation" width1="200" image2="xbox.svg" title2="Xbox" width2="200" >}}
+{{< logotype image1="playstation.svg" image2="xbox.svg" >}}
 
 Una de los propósitos que se puede utilizar un PC es de dedicarlo en mayor o menor medida a los juegos. Con [NVIDIA][nvidia] y Ati, ahora [AMD][amd], y evolución de las tarjetas gráficas dedicadas y las integradas cada vez más capaces los juegos han ganado en detalles gráficos enormemente.
 

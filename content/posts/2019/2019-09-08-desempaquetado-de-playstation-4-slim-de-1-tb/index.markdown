@@ -20,7 +20,7 @@ summary: "A pesar de estar la PlayStation 4 al final de su ciclo de vida igualme
 
 {{% post %}}
 
-{{< logotype image1="playstation.svg" title1="PlayStation" width1="200" >}}
+{{< logotype image1="playstation.svg" >}}
 
 Desde que me pase a [GNU][gnu]/[Linux][linux] como mi único sistema operativo para mi ordenador personal he dejado de jugar a juegos, en parte porque el ordenador que tenía ya no era suficiente para mover los juegos actuales del momento y porque luego como mi equipo elegí un ordenador portátil que no son los más indicados para los juegos porque estos le exigen a la tarjeta gráfica y al procesador buen desempeño lo que resulta en calor que en los portátiles sus sistemas de refrigeración tienen importantes limitaciones para mantenerse en temperaturas bajas.
 

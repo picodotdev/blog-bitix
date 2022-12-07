@@ -19,7 +19,7 @@ summary: "El Intel NUC que adquirí hace unos meses no es el ideal para jugar so
 
 {{% post %}}
 
-{{< logotype image1="playstation.svg" title1="PlayStation" width1="200" image2="google-stadia.svg" title2="Google Stadia" width2="200" >}}
+{{< logotype image1="playstation.svg" image2="google-stadia.svg" >}}
 
 Desde que me compré un [Intel NUC][blogbitix-363] he estado jugando a [Diablo 3][blizzard-diablo3] en [GNU][gnu]/[Linux][linux] con [Wine][wine] en la distribución [Arch Linux][archlinux] perfectamente, al menos de forma jugable con una resolución de 1600x900 en un [monitor BenQ PD2700Q][blogbitix-356] y con unos detalles de calidad gráfica medios. El NUC con un [gráfica Intel integrada Iris 655][intel-iris-graphics-655] es notablemente mejor que la típica UHD 630 de otros modelos de procesador Intel que cumple para un jugador ocasional pero no se puede comparar con una dedicada NVIDIA o AMD de un equipo más grande. Y aunque funciona sin problemas la temperatura que alcanza llega a a entre los 75º y 80º, teniendo en cuenta que es un equipo de 10cm x 10 cm x 3.5cm es una temperatura para la que probablemente no sea recomendable mantener durante largos periodos de tiempo.
 
