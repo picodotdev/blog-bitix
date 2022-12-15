@@ -33,6 +33,10 @@ Para tomar una decisión al elegir una herramienta u otra hay varios criterios:
 
 En el caso de optar por administrar y mantener uno mismo el servicio otro punto importante a considerar son las actualizaciones a nuevas versiones. Conviene considerar cual es el procedimiento para actualizar a una nueva versión y tener un plan para realizarlas de forma periódica, no solo para tener acceso a las nuevas características que ofrezcan sino también para evitar quedar expuesto a un problema de seguridad de una versión antigua y ya no mantenida.
 
+Son muchas herramientas y cada cierto tiempo surgen nuevas con lo que hay que estar atento a aquellas que resulten útiles en algún aspecto. Para conocer las novedades conviene seguir múltiples fuentes de información para conocer su existencia, descripción e incluso ejemplo de uso.
+
+* [Radar tecnológico y otras fuentes de información sobre programacion][blogbitix-665]
+
 {{< image
     gallery="true"
     image1="image:cncf-landscape.png" optionsthumb1="650x450" title1="Colección de herramientas nativas para la nube"
