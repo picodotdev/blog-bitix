@@ -61,7 +61,7 @@
     "dateModified": "2022-07-28T19:30:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1073",
+    "wordCount": "1129",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -288,6 +288,7 @@
       </ul>
     </li>
     <li><a href="#argumentos">Argumentos</a></li>
+    <li><a href="#implementación-de-inyección-por-constructor-con-spring">Implementación de inyección por constructor con Spring</a></li>
   </ul>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
@@ -337,6 +338,8 @@
 <p>La inyección como una dependencia del <em>logger</em> como cualquier otro colaborador permite realizar teses unitarios de forma más fácil. La dependencia se añade simplemente en el constructor de la clase. Para las clases que son construidas con el contenedor de dependencias es simple y no requiere más que añadir de forma explícita el colaborador en el constructor, crear una variable y realizar la asignación en la implementación del constructor, estos algo más complejo que la inyección estática pero aporta otras ventajas.</p>
 <p>Para las clases que no son construidas con el contenedor de dependencias tener que pasar de forma explícita el <em>logger</em> es una molestia, posiblemente hace el código más complicado además de ser un aspecto de la aplicación no relacionado con la lógica de negocio.</p>
 <p>Estas opciones no son excluyentes, en aquellas clases que son creadas por el contenedor dejar al contenedor inyectar la dependencia del <em>logger</em> y el aquellos puntos de la aplicación como clases de dominio no construidas por el contenedor o en clases con métodos estáticos utilizar una inyección estática, sabiendo que en la inyección estática las pruebas unitarias con más complicadas.</p>
+<h3 id="implementación-de-inyección-por-constructor-con-spring">Implementación de inyección por constructor con Spring</h3>
+<p>Utilizando <a href="https://spring.io/">Spring</a> y <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> la inyección por constructor es posible conseguirla fácilmente con la posibilidad de <a href="https://picodotdev.github.io/blog-bitix/2022/12/crear-un-bean-segun-el-contexto-donde-se-inyecte-con-spring/">Crear un bean según el contexto donde se inyecte con Spring</a> de modo que para las clases que están gestionadas por el contenedor de dependencias se aprovechan sus funcionalidades en la implementación.</p>
 <div class="reference">
     Referencia:<br>
 <ul>
