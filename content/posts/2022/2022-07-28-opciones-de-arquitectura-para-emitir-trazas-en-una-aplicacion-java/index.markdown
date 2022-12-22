@@ -85,6 +85,10 @@ Para las clases que no son construidas con el contenedor de dependencias tener q
 
 Estas opciones no son excluyentes, en aquellas clases que son creadas por el contenedor dejar al contenedor inyectar la dependencia del _logger_ y el aquellos puntos de la aplicación como clases de dominio no construidas por el contenedor o en clases con métodos estáticos utilizar una inyección estática, sabiendo que en la inyección estática las pruebas unitarias con más complicadas.
 
+### Implementación de inyección por constructor con Spring
+
+Utilizando [Spring][spring] y [Spring Boot][spring-boot] la inyección por constructor es posible conseguirla fácilmente con la posibilidad de [Crear un bean según el contexto donde se inyecte con Spring][blogbitix-666] de modo que para las clases que están gestionadas por el contenedor de dependencias se aprovechan sus funcionalidades en la implementación.
+
 {{< reference >}}
 * [Logging Without a Static Logger](https://www.javacodegeeks.com/2019/03/logging-without-static-logger.html)
 {{< /reference >}}

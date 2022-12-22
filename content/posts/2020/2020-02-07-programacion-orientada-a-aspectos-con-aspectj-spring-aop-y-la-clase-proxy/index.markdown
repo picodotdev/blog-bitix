@@ -93,7 +93,7 @@ En el _proxy_ es donde se ejecuta el código del _advice_.
     image2="image:aop-proxy-call.png" optionsthumb2="300x200" title2="Llamada a un método con un proxy"
     caption="Llamada a un método normal y con un proxy" >}}
 
-Para que Spring procese las anotaciones require usar la anotación [@EnableAspectJAutoProxy](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/EnableAspectJAutoProxy.html) y que Spring encuentre la clase de los aspectos, anotándola con [@Component](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/stereotype/Component.html) o devolviendo una instancia en el contenedor de dependencias como en este caso.
+Para que Spring procese las anotaciones require usar la anotación [@EnableAspectJAutoProxy](spring-framework:org/springframework/context/annotation/EnableAspectJAutoProxy.html) y que Spring encuentre la clase de los aspectos, anotándola con [@Component](spring-framework:org/springframework/stereotype/Component.html) o devolviendo una instancia en el contenedor de dependencias como en este caso.
 
 {{< code file="Main-2.java" language="java" options="" >}}
 

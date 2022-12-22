@@ -1,9 +1,9 @@
 ---
 pid: 656
 type: "post"
-title: "Formas de monetizar una página web o blog y altenativas a AdSense"
-url: "/2022/10/formas-de-monetizar-una-pagina-web-o-blog-y-altenativas-a-adsense/"
-aliases: ["/2016/11/3-formas-sencillas-de-monetizar-un-blog/"]
+title: "Formas de monetizar una página web o blog y alternativas a AdSense"
+url: "/2022/10/formas-de-monetizar-una-pagina-web-o-blog-y-alternativas-a-adsense/"
+aliases: ["/2022/10/formas-de-monetizar-una-pagina-web-o-blog-y-altenativas-a-adsense/", "/2016/11/3-formas-sencillas-de-monetizar-un-blog/"]
 date: 2022-10-13T18:00:00+02:00
 language: "es"
 index: true
