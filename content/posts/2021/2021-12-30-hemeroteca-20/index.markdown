@@ -62,8 +62,10 @@ Unos 400 € por ingresos de AdSense, 50 € por afiliado de Amazon y 150 € po
 
 {{< image
    gallery="true"
-   image1="image:google-adsense.png" optionsthumb1="650x450" title1="Evolución ingresos AdSense y Amazon Afiliados 2021"
-   image2="image:amazon-afiliados.png" optionsthumb2="650x450" title2="Evolución ingresos AdSense y Amazon Afiliados 2021"
+   image1="image:google-adsense.png" optionsthumb1="650x450" title1="Evolución ingresos AdSense y Amazon Afiliados 2021" >}}
+{{< image
+   gallery="true"
+   image1="image:amazon-afiliados.png" optionsthumb1="650x450" title1="Evolución ingresos AdSense y Amazon Afiliados 2021"
    caption="Evolución ingresos AdSense y Amazon Afiliados 2021" >}}
 
 #### Sobre Blog Bitix
