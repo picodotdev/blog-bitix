@@ -5,12 +5,52 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/blog/</id>
-    <updated>2022-10-13T18:00:00+02:00</updated>
+    <updated>2022-12-29T21:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2018/05/generador-de-paginas-web-estaticas-y-bitacoras-con-hugo/</id>
+        <title>Generador de páginas web estáticas y bitácoras Hugo</title>
+        <updated>2018-06-05T18:30:00+02:00</updated>
+        <published>2018-05-25T18:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/05/generador-de-paginas-web-estaticas-y-bitacoras-con-hugo/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Hugo es un de las mejores herramientas en la categoría de generadores de páginas web estáticas, también puede utilizarse para generar bitácoras. Su fácil instalación, rapidez, personalización o su gran sistema de plantillas y taxonomía son varias de sus características destacadas. Con Hugo conseguí resolver varias de las necesidades que tenía para Blog Bitix, la gestión de enlaces internos y externos, personalización de diseño y procesado de imágenes.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
+</div>
+<p>En diciembre del 2013 pase de usar <a href="https://www.blogger.com/">Blogger</a> a usar <a href="http://octopress.org/">Ocotpress</a> junto con <a href="https://pages.github.com/">GitHub Pages</a> para el hospedaje. En mayo del 2015 modifiqué mi bitácora para usar en vez de <a href="http://octopress.org/">Octopress</a> la herramienta equivalente <a href="https://gohugo.io/">Hugo</a>, ambas sirven para generar sitios web estáticos formados únicamente por HTML, CSS, imágenes, documentos y JavaScript. Tanto Octopress, <a href="https://jekyllrb.com/">Jekyll</a> como Hugo y otros como <a href="https://docs.getpelican.com/en/stable/">Pelican</a> son similares, a partir de archivos normalmente en formato <em>markdown</em> genera el HTML de la página web o bitácora junto con los recursos estáticos que necesite. Cada una de estas opciones son adecuadas para páginas de presencia en internet y bitácoras.</p>
+<p>Varían en el lenguaje de programación que emplean, Octopress usa <a href="https://www.ruby-lang.org/es/">Ruby</a> y Hugo usa <a href="https://golang.org/">Go</a>, y el formato de las plantillas que utilizan para personalizar la generación del contenido. La <a href="https://picodotdev.github.io/blog-bitix/2014/03/guia-para-la-creacion-de-un-blog-con-octopress/">migración desde Blogger a Octopress</a> que hice en 2013 me supuso una gran mejora al editar los artículos. La edición de los artículos se puede hacer con cualquier editor de textos en la computadora local en vez de usar una editor en un navegador mucho más limitado y lento, además de editar el texto la gestión de las imágenes es mucho más simple al tratarse como simples archivos que basta colocar entre el código fuente de la bitácora que usará el generador para producir la página web o bitácora y no menos importante aprovechar la corrección ortográfica de las palabras que en mi caso hago con <a href="https://www.vim.org/">vim</a>, no me imagino la gran cantidad de errores que tendré en los artículos de Blogger y no me habré dado cuenta a pesar de siempre leer un par de veces cada artículo antes de publicarlo. El <a href="https://picodotdev.github.io/blog-bitix/2015/05/nuevo-diseno-en-blog-bitix/">cambio de Octopress a Hugo</a> más tarde me permitió otros aspectos importantes a la hora de editar los artículos.</p>
+<p>La web está formada por un conjunto de páginas enlazadas, la gestión de los enlaces es un aspecto muy importante en una página web y en una bitácora es igual. Si una página a la que hacíamos referencia cambia de dirección todos los enlaces que tuviésemos quedarán rotos. Hay varias posibilidades para <a href="https://picodotdev.github.io/blog-bitix/2015/12/como-buscar-los-enlaces-rotos-de-un-sitio-web/">buscar enlaces rotos</a>, encontrados y sustituirlos usando Blogger es complicado ya que hay que usar el lento y poco cómodo editor web, usando Octopress era más sencillo haciendo una búsqueda y reemplazo en los archivos de texto en formato <em>markdown</em> con un buen editor de textos pero con Hugo me resulta mucho más sencillo por la forma en que he organizado el código fuente. Los enlaces comunes que utilizo en múltiples artículos los incluyo en un <a href="https://github.com/picodotdev/blog-bitix/blob/master/layouts/partials/links.html"><em>shortcode</em></a> y otro para los <a href="https://github.com/picodotdev/blog-bitix/blob/master/layouts/partials/links-posts.html">propios artículos del blog</a> y luego en la página o artículo hago referencia a ellos usando un identificador de forma que si un día cambia una página de dirección o una URL de algún artículo solo he de hacer la sustitución en un único lugar en esos <em>shortcodes</em>. Con <a href="https://disqus.com/">Disqus</a> externalizo los comentarios.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/gestionar-los-enlaces-de-una-bitacora-con-hugo/">Gestionar los enlaces de una bitácora con Hugo</a></li>
+</ul>
+<p>La gestión de las imágenes es otro aspecto que si no se organiza se acaba con un directorio sin ninguna organización donde es complicado saber que imágenes utiliza cada artículo. Los principales directorios que utilizo son dos uno para <a href="https://github.com/picodotdev/blog-bitix/tree/master/static/assets/images/logotipos">imágenes de logotipos</a> y otro para las <a href="https://github.com/picodotdev/blog-bitix/tree/master/static/assets/images/posts">imágenes de cada artículo</a> con una subcarpeta por año y otra con el identificador del artículo. Hasta hace poco usaba <a href="https://www.imagemagick.org">ImageMagick</a> para producir las previsulizaciones de las imágenes y una reducción de las imágenes originales. Recientemente en Hugo se ha incorporado la funcionalidad de aplicar procesado a las imágenes con lo que es posible generar estas previsualizaciones y reducciones sin necesidad de perder las <a href="https://github.com/picodotdev/blog-bitix/tree/master/content/post/2018/2018-05-04-los-plantones-de-roble/images">imágenes originales</a>, esto tiene la ventaja de que si un tiempo después hay que hacer algún cambio a un imagen se puede utilizar la original. También podido simplificar la forma de organizar las imágenes, ahora al lado del artículo <em>markdown</em> en que se usan.</p>
+<p>Tanto la gestión de enlaces como de los recursos estáticos es algo que no podía hacer con Blogger y fue uno de los principales motivos para migrar a un generador estático de páginas web. Como todo son archivos estáticos lo único que hace falta es un servidor web, hay varias opciones de hospedaje bastante baratas al no necesitar un lenguaje de programación en el servidor como PHP ni una base de datos relacional. Yo utilizo GitHub Pages que es incluso sin coste. Usando algunas de las <a href="https://picodotdev.github.io/blog-bitix/2016/11/3-formas-sencillas-de-monetizar-un-blog/">varias formas para monetizar un blog</a> escribiendo contenido interesante y de forma regular los ingresos por este medio cubren el coste del hospedaje y del dominio.</p>
+<p>Con Hugo personalicé completamente el diseño y estilos de de la bitácora pero <a href="https://themes.gohugo.io/">Hugo dispone de múltiples temas</a>. En la página de <a href="https://gohugo.io/documentation/">documentación de Hugo</a> está el formato a usar en las plantillas, <a href="https://gohugo.io/content-management/shortcodes/"><em>shortcodes</em></a> y <a href="https://gohugo.io/templates/partials/"><em>partials</em></a> así como las <a href="https://gohugo.io/variables/">variables disponibles</a> y <a href="https://gohugo.io/functions/">funciones</a> disponibles en las plantillas. Con la <a href="https://gohugo.io/getting-started/quick-start/">guía de inicio rápido</a> es posible tener una página web en unos pocos minutos y la <a href="https://gohugo.io/getting-started/directory-structure/">estructura básica de directorios</a>.</p>
+<p>Una de las características destacadas de Hugo es que es muy rápido, en unos pocos segundos es capaz de generar la página web completa a partir del código fuente de los archivos. Ya he escrito más de 300 artículos y tarda menos de 3 segundos en generar este blog. Otra que destaco es que solo se necesita un único binario con lo que se evita el infierno de dependencias que en alguna ocasión con Octopress me causó problemas. Usando el servidor web incorporado que posee es posible previsualizar en local el contenido de la página antes de publicarla.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2013/12/hola-nuevo-mundo/">¡Hola nuevo mundo!</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2015/05/nuevo-diseno-en-blog-bitix/">Nuevo diseño en Blog Bitix</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/gestionar-los-enlaces-de-una-bitacora-con-hugo/">Gestionar los enlaces de una bitácora con Hugo</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="blog"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2018/04/introduccion-a-nio-2-el-sistema-de-entrada-salida-de-java/</id>
         <title>Introducción a NIO.2, el sistema de entrada/salida de Java</title>
@@ -382,8 +422,8 @@
 </div>
 <p><a href="https://gradle.org/">Gradle</a> es una herramienta de construcción de proyectos y gestión de dependencias que adopta las mejores características de <a href="https://ant.apache.org/">Ant</a> y <a href="https://maven.apache.org/">Maven</a> con pocas o ninguna de sus deficiencias. <a href="https://amzn.to/2uY2naN">Gradle in Action</a> explica en profundidad esta herramienta de construcción para llegar a dominarla.</p>
 <ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.htmlindex-amp.html">Herramienta de construcción Gradle</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/usar-gradle-mediante-gradle-wrapper.htmlindex-amp.html">Usar Gradle mediante Gradle wrapper</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.html">Herramienta de construcción Gradle</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/usar-gradle-mediante-gradle-wrapper.html">Usar Gradle mediante Gradle wrapper</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/">Ejemplo de multiproyecto con Gradle</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2016/05/incluir-informacion-de-la-version-en-el-artefacto-distribuible-con-gradle/">Incluir información de la versión en el artefacto distribuible con Gradle</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciar-rapido-un-proyecto-de-java-con-gradle-o-de-spring-con-spring-initializr/">Iniciar rápido un proyecto de Java con Gradle o de Spring con Spring Initializr</a></li>
@@ -790,7 +830,7 @@
 </figure>
 </div>
 <p>El lugar donde escribo los borradores de artículo, edito, publico los artículos y programo los ejemplos así como lee libros técnicos no es muy sofisticado. Aunque no solo se hace en esa mesa, muchas ideas me surgen en el trabajo o de vuelta a casa que voy recopilando y escribiendo sobre ellas cuando les llega su turno. A la derecha de la mesa tengo una ventana por la que dispongo de luz natural que siempre se agradece aunque la mayor parte las paso a las noches.</p>
-<p>En cuanto a lo que está en la mesa se compone básicamente de un portátil Sony VAIO del que publique su <a href="https://elblogdepicodev.blogspot.com.es/2012/12/desempaquetado-sony-vaio-e-14p.htmlindex-amp.html">desempaquetado en El blog de pico.dev</a> siendo un procesador Intel Ivy Bridge 3210M, tarjeta gráfica integrada Intel HD 4000, con 8 GiB de memoria y un <a href="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/">disco duro SSD Samsung 840 EVO de 250 GiB</a> que le puse posteriormente sustituyendo un disco mecánico que ahora me sirve para hacer copias de seguridad. Aunque el portátil no genera mucho calor al no jugar a juegos lo tengo en una base refrigeradora Zalman que conservo de un portátil Dell anterior del que no quiero acordarme mucho por los pocos años que duró. Junto a ellos un ratón con cable nada especial y la alfombrilla que me regalaron <a href="https://elblogdepicodev.blogspot.com.es/2011/07/un-dia-en-la-euskal-encounter-19.htmlindex-amp.html">la única vez que fuí a la Euskal Encounter</a>.</p>
+<p>En cuanto a lo que está en la mesa se compone básicamente de un portátil Sony VAIO del que publique su <a href="https://elblogdepicodev.blogspot.com.es/2012/12/desempaquetado-sony-vaio-e-14p.html">desempaquetado en El blog de pico.dev</a> siendo un procesador Intel Ivy Bridge 3210M, tarjeta gráfica integrada Intel HD 4000, con 8 GiB de memoria y un <a href="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/">disco duro SSD Samsung 840 EVO de 250 GiB</a> que le puse posteriormente sustituyendo un disco mecánico que ahora me sirve para hacer copias de seguridad. Aunque el portátil no genera mucho calor al no jugar a juegos lo tengo en una base refrigeradora Zalman que conservo de un portátil Dell anterior del que no quiero acordarme mucho por los pocos años que duró. Junto a ellos un ratón con cable nada especial y la alfombrilla que me regalaron <a href="https://elblogdepicodev.blogspot.com.es/2011/07/un-dia-en-la-euskal-encounter-19.html">la única vez que fuí a la Euskal Encounter</a>.</p>
 <p>En un futuro si tuviese que cambiar de equipo probablemente elegiría un <a href="https://slimbook.es/">Slimbook One</a> ya que aunque tengo portátil no lo muevo de sitio. Pero eso está lejos todavía, el equipo que tengo es más que suficiente para lo que necesito.</p>
 <p>La mesa y la silla son de <a href="http://www.ofiprix.com/">Ofiprix</a>, la mesa aunque es bastante grande echo de menos que sea regulable en altura, gran parte está llena de cables, por una parte la regleta de 8 enchufes con protección de picos de tensiones, el <em>router</em> WIFI del <a href="https://picodotdev.github.io/blog-bitix/2016/08/eligiendo-proveedor-de-internet-finalmente-pepephone/">proveedor de internet Pepephone</a> que al ser ADSL solo me alcanza los 9 MiB de bajada y 1 MiB de subida pero que es más que suficiente para mis necesidades incluso para descargas de libros, series y películas mediante P2P vía torrent. No tengo ninguna estantería con libros técnicos ya que la mayoría los tengo en PDF que además no me ocupan lugar, no tengo ese querer coleccionar los libros en formato físico ya que los leo una vez bastante cómodamente en la pantalla del portátil donde además puedo probar cosas y consultar algo en internet al mismo tiempo, una vez leídos ya no les doy más uso salvo algún repaso. El único libro técnico físico que tengo es <a href="https://amzn.to/2hQe8Nw">Linux. Guía Para Administradores De Redes</a> que compré cuando aún no tenía banda ancha.</p>
 <p>Por otro lado se ve una <a href="https://www.raspberrypi.org/">Raspberry Pi</a> de los primeros modelos, la 1 y la versión B, con únicamente 256 MiB de memoria más que suficiente para realizar descargas a la máxima velocidad que permite mi conexión a internet, no hay nada que le eche que en una noche no sea capaz de descargar. Por supuesto, en mi caso usando la distribución <a href="https://archlinuxarm.org/">Arch Linux ARM</a> en ella y con un disco externo de 120 GiB que <a href="https://picodotdev.github.io/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/">utilizo como disco duro desde el que arrancarla vía USB</a> que es mucho más rápido que la tarjeta SD, seguro que tiene más de un lustro y estará más cerca de la década aún así aguanta y me presta gran utilidad.</p>
@@ -1261,7 +1301,7 @@
 <p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
 </div>
 <p>Este día 6 cumplo un lustro con las bitácoras <a href="https://elblogdepicodev.blogspot.com.es">El blog de pico.dev</a> y desde hace un año con <a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a>. 5 años como <em>blogger</em> en los que normalmente he escrito un artículo cada semana y he publicado los viernes o sábados. 5 años escribiendo artículos en los que comparto el conocimiento que tengo y voy aprendiendo tratando de que sirvan de alguna forma a alguien que los lea.</p>
-<p>Después de pasado todos estos años los motivos por los que lo empecé los sigo manteniendo y quizá aún con más ganas de seguir escribiendo para compartir el bueno o malo mucho o poco (trato de que sea bueno) pero tal como es el conocimiento que poseo. En mi caso tener un <em>blog</em> es una de las buenas cosas que me alegro de haber empezado, por el momento no me canso de seguir escribiendo y me permite aprender sobre cualquier cosa que me interese en cada momento. Los artículos que escribo no suelen tratar temas de actualidad salvo algunas ocasiones relevantes como con la <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">nueva versión de Java 8</a>, de vez en cuando hago algún análisis de los productos tecnológicos que pasan por mis manos como un <a href="https://elblogdepicodev.blogspot.com.es/2012/08/desempaquetado-unboxing-de-amazon.htmlindex-amp.html">lector de libros electrónicos</a>, el <a href="https://elblogdepicodev.blogspot.com.es/2012/12/desempaquetado-sony-vaio-e-14p.htmlindex-amp.html">portátil que compré hace unos años</a> o un <a href="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/">disco SSD</a>. Últimamente publico pocos artículos sobre linux o el software libre como <a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.htmlindex-amp.html">De Windows a Arch Linux</a>, más tarde <a href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">De Arch Linux a Arch Linux</a> o <a href="https://picodotdev.github.io/blog-bitix/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/">instalando linux a un portátil viejo</a> y últimamente más <a href="https://picodotdev.github.io/blog-bitix/tags/java/">artículos sobre programación con java</a>, desarrollo web, html y <a href="https://picodotdev.github.io/blog-bitix/tags/javascript/">javscript</a>. Una amplia colección de artículos que he publicado me han dado incluso para reunirlos y, completándolos con un poco más de contenido, hacer con ellos un <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro sobre Apache Tapestry</a> publicado de forma totalmente gratis en varios formatos incluidos de libro electrónico.</p>
+<p>Después de pasado todos estos años los motivos por los que lo empecé los sigo manteniendo y quizá aún con más ganas de seguir escribiendo para compartir el bueno o malo mucho o poco (trato de que sea bueno) pero tal como es el conocimiento que poseo. En mi caso tener un <em>blog</em> es una de las buenas cosas que me alegro de haber empezado, por el momento no me canso de seguir escribiendo y me permite aprender sobre cualquier cosa que me interese en cada momento. Los artículos que escribo no suelen tratar temas de actualidad salvo algunas ocasiones relevantes como con la <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">nueva versión de Java 8</a>, de vez en cuando hago algún análisis de los productos tecnológicos que pasan por mis manos como un <a href="https://elblogdepicodev.blogspot.com.es/2012/08/desempaquetado-unboxing-de-amazon.html">lector de libros electrónicos</a>, el <a href="https://elblogdepicodev.blogspot.com.es/2012/12/desempaquetado-sony-vaio-e-14p.html">portátil que compré hace unos años</a> o un <a href="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/">disco SSD</a>. Últimamente publico pocos artículos sobre linux o el software libre como <a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.html">De Windows a Arch Linux</a>, más tarde <a href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">De Arch Linux a Arch Linux</a> o <a href="https://picodotdev.github.io/blog-bitix/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/">instalando linux a un portátil viejo</a> y últimamente más <a href="https://picodotdev.github.io/blog-bitix/tags/java/">artículos sobre programación con java</a>, desarrollo web, html y <a href="https://picodotdev.github.io/blog-bitix/tags/javascript/">javscript</a>. Una amplia colección de artículos que he publicado me han dado incluso para reunirlos y, completándolos con un poco más de contenido, hacer con ellos un <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro sobre Apache Tapestry</a> publicado de forma totalmente gratis en varios formatos incluidos de libro electrónico.</p>
 <p>Durante este tiempo en ambos blogs he tenido unas 450K páginas vistas, en realidad no son muchas (por no decir pocas) comparadas con las conseguidas por otras bitácoras personales de temática similar. Actualmente según feedly Blog Bitix tiene aproximadamente 70 suscriptores, seguramente haya algunos más que feedly no contabilice, tampoco son muchos. El mayor tráfico proviene del buscador Google, vistas que llegan como &ldquo;paracaidistas&rdquo; buscando información desde un enlace en la página de resultados con sus búsquedas y las palabras clave. A medida que cada semana publico más contenido un mes tras otro Blog Bitix tiene unas cuantas visitas más pero el crecimiento es lento.</p>
 <div class="media">
 <figure>
@@ -1277,139 +1317,6 @@
         
             
                 <category term="blog"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2014/03/guia-para-la-creacion-de-un-blog-con-octopress/</id>
-        <title>Guía para la creación de un blog con Octopress</title>
-        <updated>2014-06-07T01:00:00+02:00</updated>
-        <published>2014-03-14T18:19:24+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/03/guia-para-la-creacion-de-un-blog-con-octopress/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes"> 
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
-</div>
-<p>En la <a href="https://picodotdev.github.io/blog-bitix/2013/12/hola-nuevo-mundo/">primera entrada de este blog usando Octopress</a> ya comentaba las razones por las que he pasado de usar <a href="http://www.blogger.com">Blogger</a> a usar <a href="http://octopress.org/">Octopress</a>. Entre las razones del cambio estaban la posibilidad en Octopress de escribir en markdown, edición desconectado (para textos e imágenes), diseño adaptable y más personalizable, git y control de versiones, alojamiento en cualquier servidor web. Aún sin ser Octpress también tiene cosas mejorables pero desde luego me está resultando mucho mejor que blogger.</p>
-<p>En esta entrada quiero escribir una guía con los pasos necesarios para crear un blog en Octopress de forma rápida y algunas funcionalidades a tener en cuenta o que deberemos realizar.</p>
-<p>Antes de empezar supondré que ya tenemos en nuestro sistema <a href="https://www.archlinux.org/packages/extra/x86_64/ruby/">ruby</a> y <a href="https://www.archlinux.org/packages/extra/x86_64/git/">git</a> instalados. En Linux basta con buscar el paquete correspondiente para nuestra distribución e instalarlo con el gestor de paquetes. Con <a href="https://www.archlinux.org">Arch Linux</a> tan simple como:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pacman -S ruby git</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-1.sh</span>
-    </div>
-</div>
-<p>Empezamos clonando con git el repositorio de Octopress y la configuración inicial, sustituyendo blog-bitix por el nombre del repositorio del blog en GitHub que habremos creado previamente:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git clone git://github.com/imathis/octopress.git blog-bitix&#10;</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> blog-bitix&#10;</span></span><span class="line"><span class="cl">$ gem install bundler&#10;</span></span><span class="line"><span class="cl">$ bundle install&#10;</span></span><span class="line"><span class="cl">$ bundle update rake&#10;</span></span><span class="line"><span class="cl">$ rake install</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-2.sh</span>
-    </div>
-</div>
-<p>En esta guía voy a comentar como alojar el blog empleando <a href="http://pages.github.com/">GitHub Pages</a> que nos ofrece alojamiento gratuito tanto para el blog como para el repositorio git de código fuente, la URL será del estilo <em>http://[usuario].github.io/[nombre-blog]</em>. Para ello, primero en la página de GitHub crearemos el repositorio para alojar el código y el blog, después ejecutaremos el siguiente comando que nos pedirá la dirección de nuestro repositorio en mi caso git@github.com:picodotdev/blog-bitix.git:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ rake setup_github_pages&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-3.sh</span>
-    </div>
-</div>
-<p>Configuramos git para que conozca nuestro usuario al hacer commits:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git config user.email <span class="s2">&#34;pico.dev@gmail.com&#34;</span>&#10;</span></span><span class="line"><span class="cl">$ git config user.name <span class="s2">&#34;pico.dev&#34;</span>&#10;</span></span><span class="line"><span class="cl">$ git config core.editor <span class="s2">&#34;vim&#34;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-4.sh</span>
-    </div>
-</div>
-<p>Hacemos lo mismo en el repositorio git de la carpeta _deploy. Octopress usa dos repositorios git, uno para el código fuente del repositorio y otro para lo que ven los usuarios del blog. Octopress configura git de tal forma que los dos repositorios sean dos ramas del mismo repositorio en GitHub:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nb">cd</span> _deploy&#10;</span></span><span class="line"><span class="cl">$ git config user.email <span class="s2">&#34;pico.dev@gmail.com&#34;</span>&#10;</span></span><span class="line"><span class="cl">$ git config user.name <span class="s2">&#34;pico.dev&#34;</span>&#10;</span></span><span class="line"><span class="cl">$ git config core.editor <span class="s2">&#34;vim&#34;</span>&#10;</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> ..</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-5.sh</span>
-    </div>
-</div>
-<p>Cambiamos el origen de la rama master a la de nuestro GitHub en vez del origen de Octopress:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git remote add origin git@github.com:picodotdev/blog-bitix.git&#10;</span></span><span class="line"><span class="cl">$ git config branch.master.remote origin&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-6.sh</span>
-    </div>
-</div>
-<p>Podemos previsualizar el estado actual del blog en el navegador introduciendo en él la dirección <em>http://localhost:4000/blog-bitix/</em>:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ rake preview&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-7.sh</span>
-    </div>
-</div>
-<p>Haciendo el primer deploy del blog (deberemos <a href="https://help.github.com/articles/generating-ssh-keys">configurar SSH</a>) dispondremos del blog en la siguiente dirección <a href="https://picodotdev.github.io/blog-bitix/">https://picodotdev.github.io/blog-bitix/</a>. Puede que el blog tarde unos minutos en estar disponible y deberemos hacerlo cada vez queramos que los cambios se apliquen al blog.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ rake generate&#10;</span></span><span class="line"><span class="cl">$ rake deploy&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-8.sh</span>
-    </div>
-</div>
-<p>Ya estamos listos para empezar a hacer cambios en el blog y crear entradas:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ rake new_post<span class="o">[</span><span class="s2">&#34;titulo&#34;</span><span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-9.sh</span>
-    </div>
-</div>
-<p>Subimos los cambios al repositorio de GitHub con:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git add .&#10;</span></span><span class="line"><span class="cl">$ git commit -m <span class="s1">&#39;Mensaje del commit&#39;</span>&#10;</span></span><span class="line"><span class="cl">$ git push origin master</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-10.sh</span>
-    </div>
-</div>
-<p>Si queremos que el blog tenga un dominio propio en vez de un subdominio de GitHub deberemos crear un archivo CNAME con el nombre del dominio, subirlo al repositorio y hacer el deploy aparte de la <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">configuración que debamos hacer en los registros DNS de dominio</a>:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s1">&#39;dominio.com&#39;</span> &gt;&gt; source/CNAME&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-11.sh</span>
-    </div>
-</div>
-<p>Probablemente lo siguiente que deberemos empezar a hacer es <a href="http://octopress.org/docs/configuring/">configurar ciertas propiedades</a> que afectan al blog, como las urls, nombre del blog, número de post por página, cambiar estilos, etc&hellip;</p>
-<p>En un futuro quizá necesitemos obtener el repositorio del blog y la forma de disponer de él es diferente que crearlo desde cero con los pasos anteriores. Como comentaba en realidad los blogs con Octopress son dos repositorios de git y por tanto deberemos hacer un clone para cada uno de ellos, los comandos para clonar los repositorios son:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git clone -b master git@github.com:picodotdev/blog-bitix.git&#10;</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> blog-bitix&#10;</span></span><span class="line"><span class="cl">$ git clone -b gh-pages git@github.com:picodotdev/blog-bitix.git _deploy</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>script-12.sh</span>
-    </div>
-</div>
-<p>Hay algunas cosas adicionales que he tenido que hacer para disponer de un blog completamente funcional como deseaba:</p>
-<ul>
-<li>Dado que el blog lo tengo alojado con el modo Project Pages en vez de User/Organization Pages he necesitado crear otro repositorio para que las <a href="http://www.google.es/webmasters/tools/?hl=ES">Web Master Tools</a> me considere el dueño del dominio <a href="http://picodotdev.github.io">http://picodotdev.github.io</a>.</li>
-<li>En el blog es habitual que incluya capturas de pantalla a modo de explicación. Usando <a href="https://elblogdepicodev.blogspot.com.es/2012/11/convertir-imagenes-entre-formatos-y.html">ImageMagick para crear las pequeñas vistas previas</a> y <a href="http://blueimp.github.io/Bootstrap-Image-Gallery/">Bootstrap Image Gallery</a> consigo reducir el tamaño en KiB de la página ya que inicialmente solo se cargan las thumbnails que son mucho más pequeñas que las imágenes originales, aparte de que si las imágenes son muy grandes y se incluyen en su tamaño original es difícil que entren en el espacio reservado para el texto.</li>
-<li>Para facilitar que el contenido sea compartido he necesitado hacer una cuantas modificaciones para incorporar a Octopress <a href="http://karmacracy.com/">Karmacracy</a>, <a href="https://www.sharethis.com/">ShareThis</a> y <a href="http://disqus.com/">Disqus</a>. Con estas herramientas sociales facilitaremos a los usuarios que compartan el contenido más fácilmente.</li>
-<li>También he necesitado modificar algunos estilos para dar al blog el aspecto que quería, para una persona con algunos conocimientos de programación y desarrollo web no es nada complicado.</li>
-<li>Para tener el directorio de imágenes organizado y no se convierta en un cajón desastre a cada post le doy un identificador y en la carpeta images/custom/posts creo una carpeta con ese identificador. De esa manera es fácil saber que imágenes he usado en cada post. Los logotipos que usaré en varias entradas las pongo en la carpeta images/custom/logotipos.</li>
-</ul>
-<p>En el <a href="https://github.com/picodotdev/blog-bitix">código fuente del blog</a> se puede ver los archivos para hacerlo. Por ejemplo, para integrar Karmacracy he necesitado modificar los siguientes archivos.</p>
-<ul>
-<li>source/layouts/_post.html</li>
-<li>custom/post/karmacracy.html</li>
-</ul>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2013/12/hola-nuevo-mundo/">Hola nuevo mundo</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/01/mi-experiencia-y-consejos-para-un-blog/">Mi experiencia y consejos para un blog</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="blog"/>
-            
-                <category term="software"/>
-            
-                <category term="software-libre"/>
             
                 <category term="planeta-codigo"/>
             
