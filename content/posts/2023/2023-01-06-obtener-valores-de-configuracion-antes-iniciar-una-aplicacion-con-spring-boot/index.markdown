@@ -46,4 +46,6 @@ Para registrar los listeners hay que usar el método [SpringApplication.addListe
 
 {{< code file="Main.java" language="java" options="" >}}
 
+{{% sourcecode git="blog-ejemplos/tree/master/SpringInjectionPoint" command="./gradlew run" %}}
+
 {{% /post %}}
