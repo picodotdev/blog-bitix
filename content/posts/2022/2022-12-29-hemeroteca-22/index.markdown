@@ -21,7 +21,7 @@ summary: "Este 2023 he escrito menos artículos que años anteriores, «solo» 5
 
 {{< logotype image1="blogbitix.svg" >}}
 
-Aprender cada semana algo sobre programación o tecnología me hace sentir bien y como valoro lo que aprendo me gusta compartirlo en el blog para que otras personas aprendan que también me hace sentir bien.
+Aprender cada semana algo sobre programación o tecnología me hace sentir bien y como valoro lo que aprendo me gusta compartirlo en el blog para que otras personas aprendan, que también me hace sentir bien. Si dejase de escribir en el blog no sería porque no quisiera continuar, hay dos motivos por los que probablemente dejaría de escribir. Uno sería por la cantidad de tiempo que requiere escribir cada artículo y el segundo por la falta de ideas que no me requieran gran cantidad de horas de investigación para escribir el artículo. En ambos casos es falta del preciado tiempo o recuperar el tiempo para dedicarlo a otras cosas.
 
 Algunos artículos son necesidades del trabajo que una vez investigadas las comparto en un artículo porque considero que son útiles si a mi me lo resultaron. Otras ideas sin embargo es al revés las investigo y luego las aplico en el trabajo cuando surge la oportunidad.
 
@@ -114,7 +114,7 @@ Revisando los comentarios de este usuario debe ser alguien que le tiene inquina 
 
 No he dejado de mantener el script alis para instalar Arch Linux, varias pequeñas cosas que como ya está en gran parte desarrollado no son tan destacables como al principio, ya soportaba las funcionalidades más comunes.
 
-Este año se ha publicado la versión 7.0 de [Virtualbox][virtualbox] y he enviado la actualización del español de este software de virtualización que en algún momento los desarrolladores mergearán en el código fuente para que sea distribuido en alguna de las siguientes versiones.
+Este año se ha publicado la versión 7.0 de [Virtualbox][virtualbox] y he enviado la actualización del español de este software de virtualización que en algún momento los desarrolladores _mergearán_ en el código fuente para que sea distribuido en alguna de las siguientes versiones.
 
 También sigo manteniendo las traducciones de algunos programas que uso como [KeePassXC][keepassxc], [Transmission][transmissionbt] y [VLC][vlc] aunque en este último solo la versión de escritorio. Las versiones para [Android][android] e [iOS][apple-ios] no las uso y requieren una buena cantidad de tiempo en traducir las cadenas.
 
@@ -161,7 +161,6 @@ Urte berri on 2023!, Buen año nuevo 2023!
 * [Realizar peticiones a APIs con herramientas de línea comandos e interfaz gráfica][blogbitix-659]
 * [El entorno de escritorio GNOME, simple, elegante y completo][blogbitix-660]
 * [Programas para crear máquinas virtuales y virtualizar sistemas][blogbitix-661]
-
 
 #### Artículos sobre juegos
 
