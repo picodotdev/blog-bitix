@@ -5,12 +5,118 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-12-29T21:00:00+01:00</updated>
+    <updated>2023-01-06T01:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/05/copia-de-seguridad-restauracion-y-carga-de-datos-en-postgresql-y-mysql/</id>
+        <title>Copia de seguridad, restauración y carga de datos en PostgreSQL y MySQL</title>
+        <updated>2020-05-09T09:30:00+02:00</updated>
+        <published>2020-05-09T09:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/05/copia-de-seguridad-restauracion-y-carga-de-datos-en-postgresql-y-mysql/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Siempre es recomedable tener una copia de seguridad de algo tan importante como suelen ser los datos en una base de datos. Esa copia de seguridad sirve para en caso de desastre restaurar la mayor parte de los datos, también sirven para restaurarlos en otras máquinas diferentes a la principal. Tanto PostgreSQL como MySQL tienen comandos para hacer copias de seguridad y restaurarlas, también tiene opciones para cargar datos de forma masiva de forma rápida y más eficiente que con sentencias SQL.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/postgresql.svg" width="200" height="206" alt="PostgreSQL" title="PostgreSQL"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/mysql.svg" width="200" height="136" alt="MySql" title="MySql"  class=""></p>
+</div>
+<p>Los datos contenidos en las bases de datos relacionales son de los más importante en una aplicación. Hacer copias de seguridad o volcados de forma regular es indispensable para poder restaurar los datos en caso de desastre en el servidor. Las bases de datos proporcionan herramientas para hacer estas copias de seguridad y restaurado tanto de los datos como del esquema de las bases de datos. Las copias de seguridad y restaurado también nos sirven para disponer en nuestro entorno de desarrollo de una base de datos con datos reales con los que probar la aplicación.</p>
+<p>En la base de datos <a href="https://www.postgresql.org/">PosgreSQL</a> disponemos de los comandos <a href="https://www.postgresql.org/docs/current/app-pgdump.html"><em>pg_dump</em></a> para hacer la copia de seguridad o extraer el esquema y los datos y el comando <a href="https://www.postgresql.org/docs/current/app-pgrestore.html"><em>pg_restore</em></a> para cargarlos en un nuevo servidor u otro esquema. En <a href="https://www.mysql.com/">MySQL</a> disponemos de los comandos <a href="https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html">mysqldump</a> y depende de como hagamos las copias de seguridad <a href="https://dev.mysql.com/doc/refman/8.0/en/mysqlimport.html">mysqlimport</a>.</p>
+<h3 id="postgresql">PostgreSQL</h3>
+<p>Los comandos básicos para hacer la copia de seguridad y restauración en PostgreSQL de una base de datos completa son lo siguientes:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ pg_dump database &gt; database.sql&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ psql -d database -f database.sql</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>postgresql-backup.sh</span>
+    </div>
+</div>
+<p>PosgreSQL usando un formato de copia de seguridad personalizado con la opción <em>-Fc</em> permite restaurar posteriormente partes de la base de datos, por ejemplo, una tabla o un índice en concreto.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ pg_dump -Fc database &gt; db.dump&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ pg_restore -d database db.dump&#10;</span></span><span class="line"><span class="cl">$ pg_restore -U <span class="nv">$username</span> --dbname<span class="o">=</span><span class="nv">$dbname</span> --table<span class="o">=</span><span class="nv">$tablename</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>postgresql-backup-format-custom.sh</span>
+    </div>
+</div>
+<p>También es posible separar la definición y los datos de las copias de seguridad con las opciones <em>&ndash;schema-only</em> y <em>&ndash;data-only</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ pg_dump -Fc --schema-only database &gt; database-ddl.dump&#10;</span></span><span class="line"><span class="cl">$ pg_dump -Fc --data-only database &gt; database-data.dump&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ psql -d database -f database-ddl.sql&#10;</span></span><span class="line"><span class="cl">$ psql -d database -f database-data.sql</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>postgresql-schema-data.sh</span>
+    </div>
+</div>
+<p>Como las bases de datos pueden llegar a ser de varias decenas de GiB generar las copias de seguridad comprimidas que reducirán su tamaño notablemente. Los volcados con la opción <em>-Fc</em> ya está comprimidos con lo que esto solo es necesario si generamos volcados en archivos <em>.sql</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ pg_dump database <span class="p">|</span> gzip &gt; database-backup.sql.gz&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ gunzip &lt; database-backup.sql.gz <span class="p">|</span> psql -d database</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>postgresql-compress.sh</span>
+    </div>
+</div>
+<h3 id="mysql">MySQL</h3>
+<p>En MySQL los comandos de copia de seguridad y restauración son similares.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ mysqldump database &gt; database.sql&#10;</span></span><span class="line"><span class="cl">$ mysql database &lt; database.sql&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>mysql-backup.sh</span>
+    </div>
+</div>
+<p>Con la opción <em>&ndash;extended-insert</em> la importación posterior del volcado será algo más rápida al incluir sentencias <em>insert</em> con múltiples datos de vez de un <em>insert</em> por cada fila.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ mysqldump --extended-insert database &gt; database.sql&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>mysql-backup-extended-insert.sh</span>
+    </div>
+</div>
+<p>También es posible separar los datos de la definición del esquema con las opciones <em>&ndash;no-data</em> y <em>&ndash;no-create-info</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ mysqldump --no-data database &gt; database-ddl.sql&#10;</span></span><span class="line"><span class="cl">$ mysqldump --no-create-info database &gt; database-data.sql&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>mysql-schema-data.sh</span>
+    </div>
+</div>
+<p>Para generar y restaurar copias de seguridad comprimidas se debe usar el comando <em>gzip</em> y <em>gunzip</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ mysqldump database <span class="p">|</span> gzip &gt; database.sql.gz&#10;</span></span><span class="line"><span class="cl">$ gunzip &lt; database.sql.gz <span class="p">|</span> mysql database&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>mysql-compress.sh</span>
+    </div>
+</div>
+<h3 id="carga-masiva-de-datos">Carga masiva de datos</h3>
+<p>Si se desean cargar datos de una fuente externa de forma masiva a una base de datos PostgreSQL o MySQL en vez de generar un archivo con varios cientos de miles las sentencias <em>insert</em> es mejor generar un archivo en formato <em>csv</em> o <em>txt</em> con algunos delimitadores y usar el comando <a href="https://www.postgresql.org/docs/current/sql-copy.html"><em>COPY</em></a> en PostgreSQL o el comando <a href="https://dev.mysql.com/doc/refman/8.0/en/load-data.html"><em>LOAD DATA</em></a> en MySQL complemento de <a href="https://dev.mysql.com/doc/refman/8.0/en/select-into.html">SELECT &hellip; INTO</a>. Estos comandos están diseñados para cargar datos de forma masiva en la base de datos con lo que la importación será mucho más rápida.</p>
+<p>En ambos casos las exportaciones e importaciones soportan archivos en formato texto y csv con la posibilidad de personalizar los caracteres separadores de las columnas y las columnas en las que importar los datos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">COPY table_name <span class="o">[</span> <span class="o">(</span> column_name <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span> <span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;FROM <span class="o">{</span> <span class="s1">&#39;filename&#39;</span> <span class="p">|</span> PROGRAM <span class="s1">&#39;command&#39;</span> <span class="p">|</span> STDIN <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span> <span class="o">[</span> WITH <span class="o">]</span> <span class="o">(</span> option <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span> <span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span> WHERE condition <span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">COPY <span class="o">{</span> table_name <span class="o">[</span> <span class="o">(</span> column_name <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span> <span class="o">]</span> <span class="p">|</span> <span class="o">(</span> query <span class="o">)</span> <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;TO <span class="o">{</span> <span class="s1">&#39;filename&#39;</span> <span class="p">|</span> PROGRAM <span class="s1">&#39;command&#39;</span> <span class="p">|</span> STDOUT <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span> <span class="o">[</span> WITH <span class="o">]</span> <span class="o">(</span> option <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span> <span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">where option can be one of:&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;FORMAT format_name&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;FREEZE <span class="o">[</span> boolean <span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;DELIMITER <span class="s1">&#39;delimiter_character&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;NULL <span class="s1">&#39;null_string&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;HEADER <span class="o">[</span> boolean <span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;QUOTE <span class="s1">&#39;quote_character&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;ESCAPE <span class="s1">&#39;escape_character&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;FORCE_QUOTE <span class="o">{</span> <span class="o">(</span> column_name <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span> <span class="p">|</span> * <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;FORCE_NOT_NULL <span class="o">(</span> column_name <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;FORCE_NULL <span class="o">(</span> column_name <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;ENCODING <span class="s1">&#39;encoding_name&#39;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">COPY table TO <span class="s1">&#39;data.txt&#39;</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">COPY table FROM <span class="s1">&#39;data.txt&#39;</span><span class="p">;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>postgresql-copy.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">LOAD DATA&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>LOW_PRIORITY <span class="p">|</span> CONCURRENT<span class="o">]</span> <span class="o">[</span>LOCAL<span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;INFILE <span class="s1">&#39;file_name&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>REPLACE <span class="p">|</span> IGNORE<span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;INTO TABLE tbl_name&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>PARTITION <span class="o">(</span>partition_name <span class="o">[</span>, partition_name<span class="o">]</span> ...<span class="o">)]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>CHARACTER SET charset_name<span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[{</span>FIELDS <span class="p">|</span> COLUMNS<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>TERMINATED BY <span class="s1">&#39;string&#39;</span><span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[[</span>OPTIONALLY<span class="o">]</span> ENCLOSED BY <span class="s1">&#39;char&#39;</span><span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>ESCAPED BY <span class="s1">&#39;char&#39;</span><span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>LINES&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>STARTING BY <span class="s1">&#39;string&#39;</span><span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>TERMINATED BY <span class="s1">&#39;string&#39;</span><span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>IGNORE number <span class="o">{</span>LINES <span class="p">|</span> ROWS<span class="o">}]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[(</span>col_name_or_user_var&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>, col_name_or_user_var<span class="o">]</span> ...<span class="o">)]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>SET <span class="nv">col_name</span><span class="o">={</span>expr <span class="p">|</span> DEFAULT<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>, <span class="nv">col_name</span><span class="o">={</span>expr <span class="p">|</span> DEFAULT<span class="o">}]</span> ...<span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">SELECT * FROM table INTO <span class="s1">&#39;data.txt&#39;</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">LOAD DATA INFILE <span class="s1">&#39;data.txt&#39;</span> INTO TABLE database.table<span class="p">;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>mysql-load.sh</span>
+    </div>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.postgresql.org/docs/current/populate.html">Populating a Database, Performance Tips</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2020/05/renombrar-multiples-archivos-en-gnome/</id>
         <title>Renombrar múltiples archivos en GNOME</title>
@@ -1671,366 +1777,6 @@
         
             
                 <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/</id>
-        <title>Las aplicaciones integradas del entorno de escritorio GNOME</title>
-        <updated>2020-02-16T11:00:00+01:00</updated>
-        <published>2020-02-16T11:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Todos los entornos de escritorio poseen unas pocas aplicaciones básicas y sencillas pero de uso muy común para todos los usuarios. Estas aplicaciones del entorno de escritorio están estrechamente integradas para ofrecer una experiencia de usuario consistente y funcionar correctamente entre ellas. GNOME posee varias desde un editor de archivos de texto, una calculadora, captura de pantalla, visor de imágenes, reproductor de música y vídeo, gestor de correo electrónico, calendario, navegador web, juegos, &hellip; y otras más.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnome.svg" width="200" height="243" alt="GNOME" title="GNOME"  class=""></p>
-</div>
-<p>Todos los equipos informáticos incorporan un sistema operativo, este es una pieza importante e indispensable de software que abstrae las las especificidades de cada elemento hardware además de permitir se uso compartido desde la CPU, memoria, almacenamiento persistente, comunicación de red entre otros muchos componentes y periféricos que poseen los ordenadores actuales. Pero simplemente ofrece una interfaz de bajo nivel destinada a los programas no el usuario.</p>
-<p>Para facilitar el uso el sistema operativo y en los actuales ofrecer una interfaz gráfica a través de ventanas, imágenes y texto a los usuarios están los entornos de escritorio. Los entornos de escritorio además incorporan una colección de aplicaciones de uso común para todos los usuarios como un navegador de archivos, navegador web, editor de texto, reproductor de música, reproductor de vídeo, visor de imágenes y documentos, gestor de aplicaciones, calculadora, capturador de pantalla entre las básicas.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/interfaz-grafica-usuario_hufd97b91aa78d528e08349545c038bd5b_257743_2560x1440_fit_box_3.png" data-gallery="" title="Capas de software desde el hardware hasta el entorno de escritorio"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/interfaz-grafica-usuario_hufd97b91aa78d528e08349545c038bd5b_257743_300x250_fit_box_3.png" width="300" height="225" alt="Capas de software desde el hardware hasta el entorno de escritorio" title="Capas de software desde el hardware hasta el entorno de escritorio"  class="lozad "></a></p>
-<figcaption>Capas de software desde el hardware hasta el entorno de escritorio</figcaption>
-</figure>
-</div>
-<p>Ejemplos de sistema operativos son <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>, <a href="https://www.microsoft.com/es-es/windows/">Windows</a>, <a href="https://www.apple.com/macos/">macOS</a> o <a href="https://www.freebsd.org/es/">FreeBSD</a>. En los casos de Windows y macOS el mismo nombre engloba la interfaz gráfica y el entorno de escritorio sin ofrecer ninguna alternativa, en GNU/Linux hay varias alternativas de entorno de escritorio a elegir según las preferencias del usuario entre ellas <a href="https://www.gnome.org/">GNOME</a>, <a href="https://www.kde.org/">KDE</a>, <a href="https://xfce.org/">XFCE</a>, Pantheon de elementary OS, <a href="https://mate-desktop.org/">MATE</a>, <a href="https://cinnamon-spices.linuxmint.com/">Cinnamon</a> o <a href="https://lxde.org/">LXDE</a>.</p>
-<p>Las distribuciones de GNU/Linux proporcionan el conjunto de software completo formado por el núcleo o <em>kernel</em> que con el conjunto de aplicaciones de GNU forman el sistema operativo, el entorno de escritorio con sus aplicaciones básicas y finalmente aplicaciones adicionales que no forman parte del entorno de escritorio pero son preinstaladas en la instalación del sistema. Algunos ejemplos de distribuciones GNU/Linux son <a href="https://www.ubuntu.com/">Ubuntu</a>, <a href="https://fedoraproject.org/">Fedora</a>, <a href="https://www.opensuse.org/">openSUSE</a>, <a href="https://www.debian.org/">Debian</a>, <a href="https://www.archlinux.org/">Arch Linux</a> o <a href="https://elementary.io/es/">elementary OS</a> entre muchas otras.</p>
-<div class="media">
-<figure>
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ubuntu.svg" width="100" height="100" alt="Ubuntu" title="Ubuntu"  class="lozad ">
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/opensuse.svg" width="100" height="100" alt="openSUSE" title="openSUSE"  class="lozad ">
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/debian.svg" width="100" height="100" alt="Debian" title="Debian"  class="lozad "></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="100" height="100" alt="Arch Linux" title="Arch Linux"  class="lozad ">
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/fedora.svg" width="100" height="100" alt="Fedora" title="Fedora"  class="lozad ">
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/elementary.svg" width="100" height="100" alt="elementary OS" title="elementary OS"  class="lozad "></p>
-</figure>
-</div>
-<p>El entorno de escritorio se instala con el sistema con lo que primero es <a href="https://picodotdev.github.io/blog-bitix/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/">elegir una distribución GNU/Linux</a>, para los usuarios que proviene de Windows o macOS y quieren probar GNU/Linux una distribución recomendable es Ubuntu. El siguiente paso seguir la guía de <a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/">como instalar Ubuntu paso a paso desde cero</a> y conocer <a href="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/">las tareas básicas de administración y uso después de instalar una distribución</a>. Para los usuarios que ya conocen GNU/Linux, quieren personalizar el sistema con sus preferencias  no las de los desarrolladores de la distribución y prefieren un modelo de ciclo de vida <em>rolling release</em> en el que el software se mantiene en constante actualización con las últimas versiones puede <a href="https://picodotdev.github.io/blog-bitix/2017/01/script-para-instalar-arch-linux-facil-rapido-desatendido-automatizado-y-personalizable/">instalar Arch Linux de forma fácil, rápida, desatendida y personalizable con un script</a>.</p>
-<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
-<h3 id="el-entorno-de-escritorio-gnome">El entorno de escritorio GNOME</h3>
-<p>GNOME con las críticas iniciales a la versión primera de la rama 3.0 publicada en abril del 2011 por el cambio significativo respecto a versiones anteriores ha mejorado mucho y sigue haciéndolo con cada nueva versión publicada cada seis meses.</p>
-<p>En GNOME se opta por la simplicidad, a veces criticada por la falta de opciones de configuración y personalización, en la que los detalles gráficos y la usabilidad del sistema son aspectos con más relevancia respecto a versiones anteriores.</p>
-<ul>
-<li><a href="https://help.gnome.org/misc/release-notes/3.0/">Notas de publicación 3.0</a></li>
-<li><a href="https://help.gnome.org/misc/release-notes/3.2/">Notas de publicación 3.2</a></li>
-<li><a href="https://help.gnome.org/misc/release-notes/3.4/">Notas de publicación 3.4</a></li>
-<li><a href="https://help.gnome.org/misc/release-notes/3.6/">Notas de publicación 3.6</a></li>
-<li><a href="https://help.gnome.org/misc/release-notes/3.8/">Notas de publicación 3.8</a></li>
-<li><a href="https://help.gnome.org/misc/release-notes/3.10/">Notas de publicación 3.10</a></li>
-<li><a href="https://help.gnome.org/misc/release-notes/3.12/">Notas de publicación 3.12</a></li>
-<li><a href="https://help.gnome.org/misc/release-notes/3.14/">Notas de publicación 3.14</a></li>
-<li><a href="https://help.gnome.org/misc/release-notes/3.16/">Notas de publicación 3.16</a></li>
-<li><a href="https://help.gnome.org/misc/release-notes/3.18/">Notas de publicación 3.18</a></li>
-<li><a href="https://help.gnome.org/misc/release-notes/3.20/">Notas de publicación 3.20</a></li>
-<li><a href="https://help.gnome.org/misc/release-notes/3.22/">Notas de publicación 3.22</a></li>
-<li><a href="https://help.gnome.org/misc/release-notes/3.24/">Notas de publicación 3.24</a></li>
-<li><a href="https://help.gnome.org/misc/release-notes/3.26/">Notas de publicación 3.26</a></li>
-<li><a href="https://help.gnome.org/misc/release-notes/3.28/">Notas de publicación 3.28</a></li>
-<li><a href="https://help.gnome.org/misc/release-notes/3.30/">Notas de publicación 3.30</a></li>
-<li><a href="https://help.gnome.org/misc/release-notes/3.32/">Notas de publicación 3.32</a></li>
-<li><a href="https://help.gnome.org/misc/release-notes/3.34/">Notas de publicación 3.34</a></li>
-<li><a href="https://help.gnome.org/misc/release-notes/3.36/">Notas de publicación 3.36</a></li>
-</ul>
-<p>Continúan realizándose mejoras, algunas de las cuales son aplicadas en cada nueva versión y otras registradas para tenerlas en cuenta en futuras versiones.</p>
-<ul>
-<li><a href="https://jatan.blog/2020/02/08/gnome-3-34-is-awesome-but-still-needs-improvements-in-key-areas/">GNOME 3.34 is awesome but still needs improvements in key areas</a></li>
-<li><a href="https://gitlab.gnome.org/groups/GNOME/-/issues">Peticiones de mejoras y correcciones de errores de GNOME</a></li>
-</ul>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/gnome-desktop_hu40c1703f1c888c472a64502ccc6b2842_2306935_2560x1440_fit_box_3.png" data-gallery="" title="Escritorio de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/gnome-desktop_hu40c1703f1c888c472a64502ccc6b2842_2306935_200x150_fit_box_3.png" width="200" height="125" alt="Escritorio de GNOME" title="Escritorio de GNOME"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/gnome-dash-1_hu4d3aebb05d46185bcbad4140edfc5f76_1370610_2560x1440_fit_box_3.png" data-gallery="" title="Lanzador de aplicaciones de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/gnome-dash-1_hu4d3aebb05d46185bcbad4140edfc5f76_1370610_200x150_fit_box_3.png" width="200" height="125" alt="Lanzador de aplicaciones de GNOME" title="Lanzador de aplicaciones de GNOME"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/gnome-dash-2_hucd1f8571e217950d123169a14a74a748_1463857_2560x1440_fit_box_3.png" data-gallery="" title="Lanzador de aplicaciones de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/gnome-dash-2_hucd1f8571e217950d123169a14a74a748_1463857_200x150_fit_box_3.png" width="200" height="125" alt="Lanzador de aplicaciones de GNOME" title="Lanzador de aplicaciones de GNOME"  class="lozad "></a></p>
-<figcaption>Entorno de escritorio y lanzador de aplicaciones de GNOME</figcaption>
-</figure>
-</div>
-<h3 id="aplicaciones-del-entorno-de-escritorio-gnome">Aplicaciones del entorno de escritorio GNOME</h3>
-<p>GNOME integra un conjunto de aplicaciones que proporcionan una funcionalidad importante en la experiencia del entorno de escritorio.</p>
-<p>Estas aplicaciones están diseñadas por los propios diseñadores de GNOME como un paquete coherente, son parte de la experiencia GNOME, están diseñadas para funcionar de forma cooperativa unas con otras, tienen una integración fuerte con el entorno de escritorio, tienen nombres genéricos y son exclusivas de la experiencia GNOME.</p>
-<p>El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por unas 30 agrupadas en diferentes categorías.</p>
-<ul>
-<li><a href="https://wiki.gnome.org/Apps">Conjunto de aplicaciones del núcleo o esenciales de GNOME</a></li>
-<li><a href="https://wiki.gnome.org/Design/Apps/">Página de diseño de las aplicaciones de GNOME</a></li>
-<li><a href="https://en.wikipedia.org/wiki/GNOME_Core_Applications">Aplicaciones de GNOME (wikipedia)</a></li>
-</ul>
-<h4 id="conversaciones-y-organización-personal">Conversaciones y organización personal</h4>
-<ul>
-   <li>Evolution: cliente de correo electrónico y organizador</li>
-   <li>Geary: cliente de correo electrónico</li>
-   <li>Contactos</li>
-   <li>Calendario</li>
-</ul>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/evolution_hu5f40fda8387fef48fc22c4267c261daf_75316_2560x1440_fit_box_3.png" data-gallery="" title="Evolution"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/evolution_hu5f40fda8387fef48fc22c4267c261daf_75316_200x150_fit_box_3.png" width="200" height="134" alt="Evolution" title="Evolution"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/geary_hue31e5f28a3ad478b3764ff704fe9f22e_174192_2560x1440_fit_box_3.png" data-gallery="" title="Geary"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/geary_hue31e5f28a3ad478b3764ff704fe9f22e_174192_200x150_fit_box_3.png" width="200" height="124" alt="Geary" title="Geary"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/contactos_hu1404d49f2589bb0dd9b901869f013d03_15929_2560x1440_fit_box_3.png" data-gallery="" title="Contactos"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/contactos_hu1404d49f2589bb0dd9b901869f013d03_15929_200x150_fit_box_3.png" width="186" height="150" alt="Contactos" title="Contactos"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/calendario-1_hua1c4aecb4914de331d2de6c25f4d3aee_37980_2560x1440_fit_box_3.png" data-gallery="" title="Calendario"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/calendario-1_hua1c4aecb4914de331d2de6c25f4d3aee_37980_200x150_fit_box_3.png" width="198" height="150" alt="Calendario" title="Calendario"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/calendario-2_hu9615414623bfa3c59d2935272bf8349d_43549_2560x1440_fit_box_3.png" data-gallery="" title="Calendario"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/calendario-2_hu9615414623bfa3c59d2935272bf8349d_43549_200x150_fit_box_3.png" width="198" height="150" alt="Calendario" title="Calendario"  class="lozad "></a></p>
-</figure>
-</div>
-<h4 id="archivos">Archivos</h4>
-<ul>
-   <li>Visor de imágenes</li>
-   <li>Fotos</li>
-   <li>Documentos</li>
-   <li>Gestor de archivos (compresor)</li>
-   <li>Lollypop: reproductor de música</li>
-   <li>Música</li>
-   <li>Vídeos</li>
-</ul>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/visor-de-imagenes_hu1ed7c6f65ea0ceb7db7a34f74bab665e_1413931_2560x1440_fit_box_3.png" data-gallery="" title="Visor de imágenes"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/visor-de-imagenes_hu1ed7c6f65ea0ceb7db7a34f74bab665e_1413931_200x150_fit_box_3.png" width="200" height="123" alt="Visor de imágenes" title="Visor de imágenes"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/fotos-1_hu74eadaa211c7776ad45c1f85e68aefe8_25088_2560x1440_fit_box_3.png" data-gallery="" title="Fotos"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/fotos-1_hu74eadaa211c7776ad45c1f85e68aefe8_25088_200x150_fit_box_3.png" width="200" height="150" alt="Fotos" title="Fotos"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/fotos-2_hudb7fb6ba3d450f37432e359a0174826a_67844_2560x1440_fit_box_3.png" data-gallery="" title="Fotos"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/fotos-2_hudb7fb6ba3d450f37432e359a0174826a_67844_200x150_fit_box_3.png" width="200" height="150" alt="Fotos" title="Fotos"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/documentos_hu114bf1e7976158193e5dd5d9d7723eeb_20404_2560x1440_fit_box_3.png" data-gallery="" title="Documentos"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/documentos_hu114bf1e7976158193e5dd5d9d7723eeb_20404_200x150_fit_box_3.png" width="179" height="150" alt="Documentos" title="Documentos"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/archivos_hub1f70bb2560ffcbda204fc31d24a3993_45428_2560x1440_fit_box_3.png" data-gallery="" title="Archivos"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/archivos_hub1f70bb2560ffcbda204fc31d24a3993_45428_200x150_fit_box_3.png" width="200" height="131" alt="Archivos" title="Archivos"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/lollypop_hu8854ad3108d67e3f7cbee5a373160aa7_98112_2560x1440_fit_box_3.png" data-gallery="" title="Lollypop"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/lollypop_hu8854ad3108d67e3f7cbee5a373160aa7_98112_200x150_fit_box_3.png" width="200" height="131" alt="Lollypop" title="Lollypop"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/musica-1_hud28b516806743f0ea88c3ba3f6fb91f3_63883_2560x1440_fit_box_3.png" data-gallery="" title="Música"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/musica-1_hud28b516806743f0ea88c3ba3f6fb91f3_63883_200x150_fit_box_3.png" width="200" height="142" alt="Música" title="Música"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/musica-2_huadf41996f574c2a27356c35e003ba028_20167_2560x1440_fit_box_3.png" data-gallery="" title="Música"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/musica-2_huadf41996f574c2a27356c35e003ba028_20167_200x150_fit_box_3.png" width="200" height="142" alt="Música" title="Música"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/musica-3_hu8075b0cd09398bc03039bdd7881245ca_190692_2560x1440_fit_box_3.png" data-gallery="" title="Música"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/musica-3_hu8075b0cd09398bc03039bdd7881245ca_190692_200x150_fit_box_3.png" width="200" height="142" alt="Música" title="Música"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/videos-1_huec0da726894b98801955445da236072f_13257_2560x1440_fit_box_3.png" data-gallery="" title="Vídeos"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/videos-1_huec0da726894b98801955445da236072f_13257_200x150_fit_box_3.png" width="200" height="142" alt="Vídeos" title="Vídeos"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/videos-2_hudfefcd42e7d9ef06388bf08ed525a01d_65202_2560x1440_fit_box_3.png" data-gallery="" title="Vídeos"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/videos-2_hudfefcd42e7d9ef06388bf08ed525a01d_65202_200x150_fit_box_3.png" width="200" height="142" alt="Vídeos" title="Vídeos"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/videos-3_hu26e97a5e2f3dc43d7b5a3de37c6b661b_526068_2560x1440_fit_box_3.png" data-gallery="" title="Vídeos"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/videos-3_hu26e97a5e2f3dc43d7b5a3de37c6b661b_526068_200x150_fit_box_3.png" width="200" height="142" alt="Vídeos" title="Vídeos"  class="lozad "></a></p>
-</figure>
-</div>
-<h4 id="herramientas-de-sistema">Herramientas de sistema</h4>
-<ul>
-   <li>Captura de pantalla</li>
-   <li>Discos</li>
-   <li>Ayuda</li>
-   <li>Trazas</li>
-   <li>Informar de problema</li>
-   <li>Terminal</li>
-   <li>Uso (system monitor + disk usage)</li>
-</ul>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/captura-de-pantalla_hucc9bd796a0f6332855d62df9635b295e_39302_2560x1440_fit_box_3.png" data-gallery="" title="Captura de pantalla"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/captura-de-pantalla_hucc9bd796a0f6332855d62df9635b295e_39302_200x150_fit_box_3.png" width="192" height="150" alt="Captura de pantalla" title="Captura de pantalla"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/discos_hu897803f45593114b72f7d09057ac3250_77586_2560x1440_fit_box_3.png" data-gallery="" title="Discos"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/discos_hu897803f45593114b72f7d09057ac3250_77586_200x150_fit_box_3.png" width="200" height="147" alt="Discos" title="Discos"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/ayuda-gnome_hu2cc3759592f66d807b4f0ddf5110d1ba_94019_2560x1440_fit_box_3.png" data-gallery="" title="Ayuda de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/ayuda-gnome_hu2cc3759592f66d807b4f0ddf5110d1ba_94019_200x150_fit_box_3.png" width="200" height="149" alt="Ayuda de GNOME" title="Ayuda de GNOME"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/terminal-1_hu5bdb4f987fc6ee092c16ac6fd9674d5d_14118_2560x1440_fit_box_3.png" data-gallery="" title="Terminal"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/terminal-1_hu5bdb4f987fc6ee092c16ac6fd9674d5d_14118_200x150_fit_box_3.png" width="200" height="143" alt="Terminal" title="Terminal"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/terminal-2_hu808afe48fa8e707aa91d7f17ce0e0264_11960_2560x1440_fit_box_3.png" data-gallery="" title="Terminal"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/terminal-2_hu808afe48fa8e707aa91d7f17ce0e0264_11960_200x150_fit_box_3.png" width="200" height="147" alt="Terminal" title="Terminal"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/monitor-sistema_hu2b88abfa8143ede9a63e11701abbc1bb_65835_2560x1440_fit_box_3.png" data-gallery="" title="Monitor del sistema"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/monitor-sistema_hu2b88abfa8143ede9a63e11701abbc1bb_65835_200x150_fit_box_3.png" width="200" height="130" alt="Monitor del sistema" title="Monitor del sistema"  class="lozad "></a></p>
-</figure>
-</div>
-<h4 id="sistema-esencial">Sistema esencial</h4>
-<ul>
-   <li>Configuración: opciones de configuración del sistema</li>
-   <li>Software: instalar, actualizar y desinstalar programas de software</li>
-   <li>Web: navegador de páginas web</li>
-</ul>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/configuracion-1_hud65637b970dcb4653b0f7aedaeb8d456_49865_2560x1440_fit_box_3.png" data-gallery="" title="Configuración"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/configuracion-1_hud65637b970dcb4653b0f7aedaeb8d456_49865_200x150_fit_box_3.png" width="191" height="150" alt="Configuración" title="Configuración"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/configuracion-2_hu7d5a50c7972f34e4cab7fd60e37fdf93_463307_2560x1440_fit_box_3.png" data-gallery="" title="Configuración"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/configuracion-2_hu7d5a50c7972f34e4cab7fd60e37fdf93_463307_200x150_fit_box_3.png" width="191" height="150" alt="Configuración" title="Configuración"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/configuracion-3_hufa401990f7dd79ee13f8dfbc1eda74bc_58881_2560x1440_fit_box_3.png" data-gallery="" title="Configuración"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/configuracion-3_hufa401990f7dd79ee13f8dfbc1eda74bc_58881_200x150_fit_box_3.png" width="191" height="150" alt="Configuración" title="Configuración"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/software-1_hu9018343c80a196efce35f2e00030c729_158833_2560x1440_fit_box_3.png" data-gallery="" title="Software"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/software-1_hu9018343c80a196efce35f2e00030c729_158833_200x150_fit_box_3.png" width="200" height="141" alt="Software" title="Software"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/software-2_hu14230bf4a0adb2e3f6374afae1ac287f_214862_2560x1440_fit_box_3.png" data-gallery="" title="Software"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/software-2_hu14230bf4a0adb2e3f6374afae1ac287f_214862_200x150_fit_box_3.png" width="200" height="141" alt="Software" title="Software"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/web-1_hu7769e1cc01a444e0e3074d1697c55c32_27704_2560x1440_fit_box_3.png" data-gallery="" title="Web"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/web-1_hu7769e1cc01a444e0e3074d1697c55c32_27704_200x150_fit_box_3.png" width="156" height="150" alt="Web" title="Web"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/web-2_hu38470fb80efce928f31fff187a2483fb_53604_2560x1440_fit_box_3.png" data-gallery="" title="Web"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/web-2_hu38470fb80efce928f31fff187a2483fb_53604_200x150_fit_box_3.png" width="156" height="150" alt="Web" title="Web"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/web-3_huea7ca49fe8ec45d47d572233096e4d14_329385_2560x1440_fit_box_3.png" data-gallery="" title="Web"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/web-3_huea7ca49fe8ec45d47d572233096e4d14_329385_200x150_fit_box_3.png" width="156" height="150" alt="Web" title="Web"  class="lozad "></a></p>
-</figure>
-</div>
-<h4 id="mundo">Mundo</h4>
-<ul>
-   <li>Relojes</li>
-   <li>Tiempo</li>
-   <li>Mapas</li>
-</ul>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/relojes_hu321c7b3c86a336573598d500b740d466_85275_2560x1440_fit_box_3.png" data-gallery="" title="Relojes"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/relojes_hu321c7b3c86a336573598d500b740d466_85275_200x150_fit_box_3.png" width="177" height="150" alt="Relojes" title="Relojes"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/tiempo_huf7989cd38a5eba75a69190a54475d02b_322559_2560x1440_fit_box_3.png" data-gallery="" title="Tiempo"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/tiempo_huf7989cd38a5eba75a69190a54475d02b_322559_200x150_fit_box_3.png" width="200" height="147" alt="Tiempo" title="Tiempo"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/mapas-1_hu7d4b6097c2ebf8f2c0e0155863e22ad2_1396496_2560x1440_fit_box_3.png" data-gallery="" title="Mapas"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/mapas-1_hu7d4b6097c2ebf8f2c0e0155863e22ad2_1396496_200x150_fit_box_3.png" width="200" height="122" alt="Mapas" title="Mapas"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/mapas-2_hua3630bb3d252603f42670cd2333bc770_4695362_2560x1440_fit_box_3.png" data-gallery="" title="Mapas"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/mapas-2_hua3630bb3d252603f42670cd2333bc770_4695362_200x150_fit_box_3.png" width="200" height="122" alt="Mapas" title="Mapas"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/mapas-3_hu7e344512af39b2fa78053f310cf6fe00_1274425_2560x1440_fit_box_3.png" data-gallery="" title="Mapas"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/mapas-3_hu7e344512af39b2fa78053f310cf6fe00_1274425_200x150_fit_box_3.png" width="200" height="122" alt="Mapas" title="Mapas"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/mapas-4_hudeb5ff5f352cc026fb98d9b1b342e5c8_558209_2560x1440_fit_box_3.png" data-gallery="" title="Mapas"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/mapas-4_hudeb5ff5f352cc026fb98d9b1b342e5c8_558209_200x150_fit_box_3.png" width="200" height="140" alt="Mapas" title="Mapas"  class="lozad "></a></p>
-</figure>
-</div>
-<h4 id="utilidades">Utilidades</h4>
-<ul>
-   <li>Calculadora</li>
-   <li>Tipografías</li>
-   <li>Herramientas de red</li>
-   <li>Notas</li>
-   <li>Editor de texto</li>
-   <li>Retoques: ofrece varios opciones de personalización</li>
-</ul>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/calculadora-1_hu8aee76b596f5de9d9af29f84b544bee1_21592_2560x1440_fit_box_3.png" data-gallery="" title="Calculadora"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/calculadora-1_hu8aee76b596f5de9d9af29f84b544bee1_21592_200x150_fit_box_3.png" width="154" height="150" alt="Calculadora" title="Calculadora"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/calculadora-2_hu2ef94485eedb3f433c28f331507291d2_36917_2560x1440_fit_box_3.png" data-gallery="" title="Calculadora"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/calculadora-2_hu2ef94485eedb3f433c28f331507291d2_36917_200x150_fit_box_3.png" width="200" height="141" alt="Calculadora" title="Calculadora"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/tipografias-1_huf61cbb5dc0e46da2b657c9adecfe4ab4_147093_2560x1440_fit_box_3.png" data-gallery="" title="Tipografías"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/tipografias-1_huf61cbb5dc0e46da2b657c9adecfe4ab4_147093_200x150_fit_box_3.png" width="163" height="150" alt="Tipografías" title="Tipografías"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/tipografias-2_hu75a35693b3f9c68972fc14fcd99f0539_174675_2560x1440_fit_box_3.png" data-gallery="" title="Tipografías"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/tipografias-2_hu75a35693b3f9c68972fc14fcd99f0539_174675_200x150_fit_box_3.png" width="163" height="150" alt="Tipografías" title="Tipografías"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/herramientas-de-red_hu0206129f2859f2b7ffe6f7c483229cd2_62455_2560x1440_fit_box_3.png" data-gallery="" title="Herramientas de red"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/herramientas-de-red_hu0206129f2859f2b7ffe6f7c483229cd2_62455_200x150_fit_box_3.png" width="195" height="150" alt="Herramientas de red" title="Herramientas de red"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/notas_hu84956005cb4e01c2e35e33defd2686fc_20938_2560x1440_fit_box_3.png" data-gallery="" title="Notas"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/notas_hu84956005cb4e01c2e35e33defd2686fc_20938_200x150_fit_box_3.png" width="187" height="150" alt="Notas" title="Notas"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/editor-de-texto_hue4d8a367c88307ca0138758b479d4451_16778_2560x1440_fit_box_3.png" data-gallery="" title="Editor de texto"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/editor-de-texto_hue4d8a367c88307ca0138758b479d4451_16778_200x150_fit_box_3.png" width="181" height="150" alt="Editor de texto" title="Editor de texto"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/retoques_huf8fb896fda11ccce75b9ab5bc72061a1_42343_2560x1440_fit_box_3.png" data-gallery="" title="Retoques"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/retoques_huf8fb896fda11ccce75b9ab5bc72061a1_42343_200x150_fit_box_3.png" width="200" height="136" alt="Retoques" title="Retoques"  class="lozad "></a></p>
-</figure>
-</div>
-<h4 id="propósito-especial">Propósito especial</h4>
-<ul>
-   <li>Cajas: virtualización</li>
-</ul>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/cajas-1_hu039196362a55f96ebed772d687d571b2_95055_2560x1440_fit_box_3.png" data-gallery="" title="Cajas"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/cajas-1_hu039196362a55f96ebed772d687d571b2_95055_200x150_fit_box_3.png" width="177" height="150" alt="Cajas" title="Cajas"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/cajas-2_hu7e18c6151f601c44afca3d6dd5f54f28_57703_2560x1440_fit_box_3.png" data-gallery="" title="Cajas"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/cajas-2_hu7e18c6151f601c44afca3d6dd5f54f28_57703_200x150_fit_box_3.png" width="165" height="150" alt="Cajas" title="Cajas"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/cajas-3_hu8ffc1b5a74d92ebb3d82dc12368bc198_16378_2560x1440_fit_box_3.png" data-gallery="" title="Cajas"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/cajas-3_hu8ffc1b5a74d92ebb3d82dc12368bc198_16378_200x150_fit_box_3.png" width="200" height="103" alt="Cajas" title="Cajas"  class="lozad "></a></p>
-</figure>
-</div>
-<h4 id="audio-y-vídeo">Audio y vídeo</h4>
-<ul>
-   <li>Cheese: aplicación webcam</li>
-   <li>Sound Juicer: extractor de CD de audio</li>
-   <li>Grabadora de sonido</li>
-</ul>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/camara_hu77425fbc7ba73c275670dc47c52ae008_16232_2560x1440_fit_box_3.png" data-gallery="" title="Cheese"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/camara_hu77425fbc7ba73c275670dc47c52ae008_16232_200x150_fit_box_3.png" width="132" height="150" alt="Cheese" title="Cheese"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/grabadora-de-sonido_hue3051a59f867525e3beb53391037ba56_17958_2560x1440_fit_box_3.png" data-gallery="" title="Grabadora de sonido"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/grabadora-de-sonido_hue3051a59f867525e3beb53391037ba56_17958_200x150_fit_box_3.png" width="200" height="135" alt="Grabadora de sonido" title="Grabadora de sonido"  class="lozad "></a></p>
-</figure>
-</div>
-<h4 id="creación-y-edición">Creación y edición</h4>
-<ul>
-   <li>Brasero: grabadora de CD y DVD</li>
-   <li>EasyTAG: editor de metadados de archivos de música</li>
-   <li>Subtítulos: editor de subtítulos para archivos de vídeo</li>
-</ul>
-<h4 id="comunicación">Comunicación</h4>
-<ul>
-   <li>Fractal</li>
-   <li>Polari</li>
-</ul>
-<h4 id="entorno-de-desarrollo">Entorno de desarrollo</h4>
-<ul>
-   <li>Builder: entorno integrador de desarrollo</li>
-   <li>Glade: diseñador de interfaces gráficas de GNOME</li>
-</ul>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/builder-1_hu3881b0ad50e0a8217dac912f3087aa79_69638_2560x1440_fit_box_3.png" data-gallery="" title="Builder"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/builder-1_hu3881b0ad50e0a8217dac912f3087aa79_69638_200x150_fit_box_3.png" width="200" height="149" alt="Builder" title="Builder"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/builder-2_hu39fe190c2f9d0bc520f4d964efc8e1c2_74237_2560x1440_fit_box_3.png" data-gallery="" title="Builder"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/builder-2_hu39fe190c2f9d0bc520f4d964efc8e1c2_74237_200x150_fit_box_3.png" width="145" height="150" alt="Builder" title="Builder"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/builder-3_hud5ad3a6e869493d2c862e59efa6a5de9_173360_2560x1440_fit_box_3.png" data-gallery="" title="Builder"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/builder-3_hud5ad3a6e869493d2c862e59efa6a5de9_173360_200x150_fit_box_3.png" width="200" height="122" alt="Builder" title="Builder"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/builder-4_hue0717c2b3586eaec755d57ebb0b3fe6e_9951_2560x1440_fit_box_3.png" data-gallery="" title="Builder"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/builder-4_hue0717c2b3586eaec755d57ebb0b3fe6e_9951_200x150_fit_box_3.png" width="200" height="116" alt="Builder" title="Builder"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/glade-1_hu89e83199e38bbbc4c892827150562c8f_54472_2560x1440_fit_box_3.png" data-gallery="" title="Glade"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/glade-1_hu89e83199e38bbbc4c892827150562c8f_54472_200x150_fit_box_3.png" width="197" height="150" alt="Glade" title="Glade"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/glade-2_hu18d47b5cba065410f99eaddc1cf343c6_148081_2560x1440_fit_box_3.png" data-gallery="" title="Glade"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/glade-2_hu18d47b5cba065410f99eaddc1cf343c6_148081_200x150_fit_box_3.png" width="200" height="122" alt="Glade" title="Glade"  class="lozad "></a></p>
-</figure>
-</div>
-<h4 id="juegos">Juegos</h4>
-<ul>
-    <li>Aventura: MUD, Arcade, Nibbles, Robots, Blocks, Quadrapassel (Lines), Board, Chess, Iagno, Mahjongg</li>
-    <li>Cartas: Aisleriot (Solitaire, sol), Tali</li>
-    <li>Emuladores: Juegos</li>
-    <li>Lógica: 2048 Atomix Five or more, Four in a row, gbrainy, Hitori, Klotski, Lights off, Mines, Sudoku, Swell Foop, Taquin, Tetravex</li>
-</ul>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/juegos_hu068a3e3fcd61fa9738134a9141caebc0_21013_2560x1440_fit_box_3.png" data-gallery="" title="Juegos"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/juegos_hu068a3e3fcd61fa9738134a9141caebc0_21013_200x150_fit_box_3.png" width="195" height="150" alt="Juegos" title="Juegos"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/juegos-ajedrez_hua71d30d973c7a8b198768d4ff7c9810d_60091_2560x1440_fit_box_3.png" data-gallery="" title="Ajedrez"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/juegos-ajedrez_hua71d30d973c7a8b198768d4ff7c9810d_60091_200x150_fit_box_3.png" width="181" height="150" alt="Ajedrez" title="Ajedrez"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/juegos-klotski_hufc48a1f24fd6abe7fc125a2db31b030b_28708_2560x1440_fit_box_3.png" data-gallery="" title="Klotski"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/juegos-klotski_hufc48a1f24fd6abe7fc125a2db31b030b_28708_200x150_fit_box_3.png" width="165" height="150" alt="Klotski" title="Klotski"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/juegos-minas_hu5ea0dcc3e3597920a65837b3e4fd40d8_41343_2560x1440_fit_box_3.png" data-gallery="" title="Minas"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/juegos-minas_hu5ea0dcc3e3597920a65837b3e4fd40d8_41343_200x150_fit_box_3.png" width="189" height="150" alt="Minas" title="Minas"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/juegos-sudoku_hu7ea9a533c03017419d88205c3fae4e37_34652_2560x1440_fit_box_3.png" data-gallery="" title="Sudoku"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/juegos-sudoku_hu7ea9a533c03017419d88205c3fae4e37_34652_200x150_fit_box_3.png" width="162" height="150" alt="Sudoku" title="Sudoku"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/juegos-swellfoop_hua74616ce190ea9ac07e6bc7e704e8a83_95747_2560x1440_fit_box_3.png" data-gallery="" title="Swell Foop"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/juegos-swellfoop_hua74616ce190ea9ac07e6bc7e704e8a83_95747_200x150_fit_box_3.png" width="200" height="146" alt="Swell Foop" title="Swell Foop"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/juegos-tetravex_hua3a652743a80c62975e4b7a219e87e70_39550_2560x1440_fit_box_3.png" data-gallery="" title="Tetravex"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/juegos-tetravex_hua3a652743a80c62975e4b7a219e87e70_39550_200x150_fit_box_3.png" width="198" height="150" alt="Tetravex" title="Tetravex"  class="lozad "></a></p>
-</figure>
-</div>
-<h3 id="formatos-de-vídeo-y-audio-y-aplicaciones-de-terceros">Formatos de vídeo y audio y aplicaciones de terceros</h3>
-<p>Para que las aplicaciones de vídeos y música soporten más formatos de archivo es necesario instalar los decodificadores de esos formatos. En Arch Linux los siguientes paquetes.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/videos-4_hu8b8dc370b521cfa0324c8ca3a104ecea_21198_2560x1440_fit_box_3.png" data-gallery="" title="Códecs no encontrados en Vídeos"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/videos-4_hu8b8dc370b521cfa0324c8ca3a104ecea_21198_300x250_fit_box_3.png" width="300" height="84" alt="Códecs no encontrados en Vídeos" title="Códecs no encontrados en Vídeos"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S gstreamer gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>pacman-gstreamer.sh</span>
-    </div>
-</div>
-<h3 id="otras-aplicaciones-diseñadas-para-gnome">Otras aplicaciones diseñadas para GNOME</h3>
-<p>Aunque no están desarrolladas como parte del escritorio hay otras <a href="https://apps.gnome.org/es/">aplicaciones diseñas para GNOME</a> siguiendo su guía de estilos de forma que están perfectamente integradas. Sus funcionalidades son variadas como un editor en formato <em>markdown</em>, copias de seguridad, reproductor de audio libros, compresor de imágenes, escaneador y generador de códigos QR, descarga de tipografías, conversor y generador de tipografías, traductor, dibujo, cliente de BitTorrent, grabador de pantalla, limpiador de metadatos, ofuscador y cifrado de archivos, gráficas, <em>podcasts</em>, recortador de vídeo, radio por internet entre algunas otras más.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/">Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME</a></li>
-</ul>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/gnome-circle-apps_hu2c691b2ad7c4dc14ef21ad17e8de8d06_342454_2560x1440_fit_box_3.png" data-gallery="" title="Aplicaciones diseñadas para GNOME"><img src="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/images/gnome-circle-apps_hu2c691b2ad7c4dc14ef21ad17e8de8d06_342454_300x250_fit_box_3.png" width="123" height="250" alt="Aplicaciones diseñadas para GNOME" title="Aplicaciones diseñadas para GNOME"  class="lozad "></a></p>
-</figure>
-</div>
-<h3 id="aplicaciones-de-terceros">Aplicaciones de terceros</h3>
-<p>Las aplicaciones de terceros proporcionan funcionalidades adicionales, son una alternativa a las de GNOME con más funcionalidades o complementan a estas que algunos usuarios necesitan como paquete ofimático con procesador de documentos, hoja de cálculo y presentaciones, edición de vídeo, editor de fotos,  editor de imágenes vectoriales, editor de animación 3D, gestor de biblioteca de libros electrónicos, descargas de archivos, mensajería instantánea, videoconferencia, nube privada, otro reproductor de audio y vídeo, conversores entre formatos de audio y vídeo, compiladores, bases de datos, gestor de contraseñas, &hellip;</p>
-<p>En otro artículo recojo un <a href="https://picodotdev.github.io/blog-bitix/2020/03/listado-de-programas-esenciales-segun-categoria-para-gnu-linux/">listado de programas esenciales según categoría para GNU/Linux</a> de terceros que no son específicos de ningún entorno de escritorio. Todos esos programas son software libre sin coste de licencia de uso para cualquier propósito incluyendo que sea personal o empresarial con fines lucrativos.</p>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
             
                 <category term="planeta-codigo"/>
             

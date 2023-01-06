@@ -5,12 +5,78 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/</id>
-    <updated>2022-12-29T21:00:00+01:00</updated>
+    <updated>2023-01-06T01:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2023/01/obtener-valores-de-configuracion-antes-iniciar-una-aplicacion-con-spring-boot/</id>
+        <title>Obtener valores de configuración antes iniciar una aplicación con Spring Boot</title>
+        <updated>2023-01-06T01:00:00+01:00</updated>
+        <published>2023-01-06T01:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2023/01/obtener-valores-de-configuracion-antes-iniciar-una-aplicacion-con-spring-boot/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>El mecanismo de configuración de Spring Boot es muy flexible y por otro lado Spring Boot proporciona varias formas de extensión. En el proceso de inicialización de la aplicación Spring Boot permite recibir eventos y realizar las acciones que se deseen. Uno de estos eventos es <em>ApplicationEnvironmentPreparedEvent</em> antes de inicializar el contexto y crear los <em>beans</em> del contenedor de dependencias, cyando se lanza este evento es posible acceder a las propiedades de configuración.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
+</div>
+<p>Los archivos de configuración de las aplicaciones permiten cambiar su comportamiento sin tener que modificar el código fuente ni tener que generar un artefacto de despliegue. Con diferentes archivos de configuración la aplicación es la misma pero su comportamiento diferente por ejemplo según el entorno en el que se despliegue, en la propia máquina de desarrollo, producción u otro entorno.</p>
+<p>Los archivos de configuración son una colección de propiedades y valores. El formato del archivo de configuración también variable puede ser un archivo <em>properties</em> u otros formatos como XML, un formato más legible como YAML u otro tipo de formato. En los archivos de configuración se guardan las variables y los valores y las aplicaciones cuando necesitan el valor de una propiedad lo solicitan a través del nombre de la variable.</p>
+<p><a href="https://projects.spring.io/spring-boot/">Spring Boot</a> proporciona un soporte para archivos de configuración muy flexible que permite obtener los valores de las propiedades de diferentes formas y con un orden de preferencia que incluye archivos de configuración externos y variables de entorno. Uno de los formatos que soporta es YAML que es legible aún con su defecto de ser propenso a errores debido a que su sintaxis se basa en una tabulación correcta.</p>
+<p>Cuando la aplicación de Spring Boot se inicia se cargan las propiedades de configuración y posteriormente se crean los servicios del contenedor de dependencias con los valores de las propiedades de configuración, pero en necesidades muy concretas es necesario acceder al valor de las propiedades de configuración antes incluso de que la aplicación de Spring Boot empiece a crear los <em>beans</em>.</p>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#obtener-valores-de-configuración-antes-de-la-inicialización-del-contexto-de-spring-boot">Obtener valores de configuración antes de la inicialización del contexto de Spring Boot</a></li>
+  </ul>
+</nav></div>
+<h3 id="obtener-valores-de-configuración-antes-de-la-inicialización-del-contexto-de-spring-boot">Obtener valores de configuración antes de la inicialización del contexto de Spring Boot</h3>
+<p>En caso de necesitar obtener valores de configuración Spring Boot proporciona la interfaz <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/ApplicationListener.html">ApplicationListener</a> para recibir el evento <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/context/event/ApplicationEnvironmentPreparedEvent.html">ApplicationEnvironmentPreparedEvent</a> que se invoca antes de iniciar la aplicación de Spring Boot. Se recibe una referencia del evento a través de la cual es posible acceder a los valores de configuración.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springinjectionpoint</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.boot.context.event.ApplicationEnvironmentPreparedEvent</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.context.ApplicationListener</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DefaultApplicationListener</span> <span class="kd">implements</span> <span class="n">ApplicationListener</span><span class="o">&lt;</span><span class="n">ApplicationEnvironmentPreparedEvent</span><span class="o">&gt;</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  <span class="nd">@Override</span>&#10;</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onApplicationEvent</span><span class="o">(</span><span class="n">ApplicationEnvironmentPreparedEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Property (app.property): %s%n&#34;</span><span class="o">,</span> <span class="n">event</span><span class="o">.</span><span class="na">getEnvironment</span><span class="o">().</span><span class="na">getProperty</span><span class="o">(</span><span class="s">&#34;app.property&#34;</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">  <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>DefaultApplicationListener.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">app</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">property</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;value&#34;</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application.yml</span>
+    </div>
+</div>
+<p>Al iniciar la aplicación antes incluso de que aparezca el mensaje del <em>banner</em> de Spring Boot sale la traza con el valor de la propiedad de configuración.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Property (app.property): value&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  .   ____&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  _&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__ _ _&#10;</span></span><span class="line"><span class="cl"> /\\ / ___&#39;_ __ _ _(_)_ __  __ _ \ \ \ \&#10;</span></span><span class="line"><span class="cl">( ( )\___ | &#39;_ | &#39;_| | &#39;_ \/ _` | \ \ \ \&#10;</span></span><span class="line"><span class="cl"> \\/  ___)| |_)| | | | | || (_| |  ) ) ) )&#10;</span></span><span class="line"><span class="cl">  &#39;  |____| .__|_| |_|_| |_\__, | / / / /&#10;</span></span><span class="line"><span class="cl"> =========|_|==============|___/=/_/_/_/&#10;</span></span><span class="line"><span class="cl"> :: Spring Boot ::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(v2.7.6)</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out</span>
+    </div>
+</div>
+<p>En la <a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.spring-application.application-events-and-listeners">documentación sobre eventos y listeners</a> de Spring Boot están todos los eventos a los que una aplicación puede suscribirse junto con la descripción de cuando se lanzan. En la misma documentación se especifica que como alguno de los eventos se lanzan incluso antes de iniciarse el contexto de Spring Boot los <em>listeners</em> no pueden definirse como <em>beans</em> del contenedor de dependencias.</p>
+<p>Para registrar los listeners hay que usar el método <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/SpringApplication.html#addListeners%28org.springframework.context.ApplicationListener...%29">SpringApplication.addListeners</a> al crear y arrancar la aplicación de Spring Boot.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springinjectionpoint</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.boot.CommandLineRunner</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.boot.autoconfigure.SpringBootApplication</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.boot.builder.SpringApplicationBuilder</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nd">@SpringBootApplication</span>&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="kd">implements</span> <span class="n">CommandLineRunner</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Service</span> <span class="n">service</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">service</span><span class="o">.</span><span class="na">echo</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">new</span> <span class="n">SpringApplicationBuilder</span><span class="o">(</span><span class="n">Main</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">listeners</span><span class="o">(</span><span class="k">new</span> <span class="n">DefaultApplicationListener</span><span class="o">())</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">application</span><span class="o">()</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">run</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringInjectionPoint">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2022/12/hemeroteca-22/</id>
@@ -24,7 +90,7 @@
         <![CDATA[<div class="logotypes">
 <p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
 </div>
-<p>Aprender cada semana algo sobre programación o tecnología me hace sentir bien y como valoro lo que aprendo me gusta compartirlo en el blog para que otras personas aprendan que también me hace sentir bien.</p>
+<p>Aprender cada semana algo sobre programación o tecnología me hace sentir bien y como valoro lo que aprendo me gusta compartirlo en el blog para que otras personas aprendan, que también me hace sentir bien. Si dejase de escribir en el blog no sería porque no quisiera continuar, hay dos motivos por los que probablemente dejaría de escribir. Uno sería por la cantidad de tiempo que requiere escribir cada artículo y el segundo por la falta de ideas que no me requieran gran cantidad de horas de investigación para escribir el artículo. En ambos casos es falta del preciado tiempo o recuperar el tiempo para dedicarlo a otras cosas.</p>
 <p>Algunos artículos son necesidades del trabajo que una vez investigadas las comparto en un artículo porque considero que son útiles si a mi me lo resultaron. Otras ideas sin embargo es al revés las investigo y luego las aplico en el trabajo cuando surge la oportunidad.</p>
 <p>Hay gente que escribe artículos mejores y más interesantes que los míos que en gran parte son de cosas técnicas bastante sencillas y muy concretas muchas veces ya disponibles de alguna forma en inglés generalmente. Yo simplemente comparto lo que se o aprendo, hay gente mucho más lista que yo y que sabe mucho más.</p>
 <div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
@@ -112,7 +178,7 @@
 </div>
 <h3 id="otras-contribuciones">Otras contribuciones</h3>
 <p>No he dejado de mantener el script alis para instalar Arch Linux, varias pequeñas cosas que como ya está en gran parte desarrollado no son tan destacables como al principio, ya soportaba las funcionalidades más comunes.</p>
-<p>Este año se ha publicado la versión 7.0 de <a href="https://www.virtualbox.org/">Virtualbox</a> y he enviado la actualización del español de este software de virtualización que en algún momento los desarrolladores mergearán en el código fuente para que sea distribuido en alguna de las siguientes versiones.</p>
+<p>Este año se ha publicado la versión 7.0 de <a href="https://www.virtualbox.org/">Virtualbox</a> y he enviado la actualización del español de este software de virtualización que en algún momento los desarrolladores <em>mergearán</em> en el código fuente para que sea distribuido en alguna de las siguientes versiones.</p>
 <p>También sigo manteniendo las traducciones de algunos programas que uso como <a href="https://keepassxc.org/">KeePassXC</a>, <a href="https://transmissionbt.com/">Transmission</a> y <a href="https://www.videolan.org/vlc/">VLC</a> aunque en este último solo la versión de escritorio. Las versiones para <a href="https://www.android.com/">Android</a> e <a href="https://www.apple.com/es/ios/ios-12/">iOS</a> no las uso y requieren una buena cantidad de tiempo en traducir las cadenas.</p>
 <h3 id="artículos-publicados">Artículos publicados</h3>
 <p>Prácticamente las ideas de los artículos las he ido generando semana a semana en algunos momentos casi no he tenido una idea sobre la que escribir y he estado casi en alguna semana por no escribir un artículo. Al final han sido 52 artículos, exactamente uno por semana del año en las temáticas habituales de este blog.</p>
@@ -2095,189 +2161,6 @@
                 <category term="java"/>
             
                 <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/</id>
-        <title>Análisis del juego espacial de combates por turnos Spaceland</title>
-        <updated>2022-09-21T21:00:00+02:00</updated>
-        <published>2022-09-21T21:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Spaceland es un juego sencillo y simple pero con todas las mecánicas del género de juegos de combates por turnos y de estrategia. Varios tipos de personajes cada uno con unas armas y habilidades únicas, varios tipos de enemigos, un pequeño árbol de habilidades, 28 misiones algunas de supervivencia y 3 jefes junto a una pequeña historia que hace de hilo conductor entre las misiones. Al ser un juego indie se nota que es más simple y menos elaborado que otros juegos similares triple A como XCOM 2 o Wasteland 3 pero que proporciona la misma diversión a los jugadores que les gusta este tipo de juegos.</strong></p>]]>
-        <![CDATA[<p>Hay un amplio catálogo de juegos en la categoría de juegos de combates por turnos de combates estrategia. Uno de los más reconocidos es <a href="https://picodotdev.github.io/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/">el juego XCOM 2</a> pero hay muchos otros. Después de jugar al XCOM 2 era un buen juego pero al terminarlo le encontré algunos defectos como la necesidad de saber que acciones realizar en cada turno y donde están los enemigos de forma anticipada a tenerlos a la vista.</p>
-<p>Un juego más sencillo de la escena indie pero que tiene muchos de los componentes de combates por turnos es <a href="https://www.igdb.com/games/spaceland">Spaceland</a> desarrollado por <a href="https://www.igdb.com/companies/tortuga-team">Tortuga Team</a> en el año 2019 y que se puede conseguir en la <a href="https://www.playstation.com/es-es/">PlayStation</a> Store por unos 4€ en un momento en el que esté rebajado.</p>
-<p>Es similar a XCOM 2 pero a pesar de ser maś simple y más indie este me ha gustado más en la mecánica de combate que en el XCOM 2 que penaliza mucho los errores y una vez alertados los enemigos se acabó la estrategia que en gran medida consistía en utilizar un granadero para eliminar coberturas y lo que quedase en pie aniquilarlo con los francotiradores y si todavía algo sobrevivía con el resto de personajes.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland_hu3d5f3407913079eea5a7d1c7df839664_309498_2560x1440_fit_q90_box.jpg" data-gallery="" title="Pantalla inicial"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland_hu3d5f3407913079eea5a7d1c7df839664_309498_650x450_fit_q90_box.jpg" width="650" height="366" alt="Pantalla inicial" title="Pantalla inicial"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-menu-1_hue598f2aeafa3576fd18180531b2e2fb9_238040_2560x1440_fit_q90_box.jpg" data-gallery="" title="Menú"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-menu-1_hue598f2aeafa3576fd18180531b2e2fb9_238040_300x200_fit_q90_box.jpg" width="300" height="169" alt="Menú" title="Menú"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-menu-2_hu16cd29189c5a0cf1c328e3f9b00715e6_165909_2560x1440_fit_q90_box.jpg" data-gallery="" title="Menú"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-menu-2_hu16cd29189c5a0cf1c328e3f9b00715e6_165909_300x200_fit_q90_box.jpg" width="300" height="169" alt="Menú" title="Menú"  class="lozad "></a></p>
-<figcaption>Pantalla incial y menú</figcaption>
-</figure>
-</div>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07LFY8WBX&amp;linkId=04b657cb040b89e785f3200732e19770" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08KJF2D25&amp;linkId=c163f4b3d3b51d2fe8ccccb302d7425d" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08KKJ37F7&amp;linkId=67903dffe174c7dfe0db72fc8dc4e60a" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B087VM5XC6&amp;linkId=a5f2c3f9344d1e0c053b3107c9206429" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08H93ZRLL&amp;linkId=5e23b04975fd43bca64f34932a56b4f6" title="Amazon" class="lozad"></iframe>
-</div>
-<div class="alert alert-warning fs-6">
-    <h2 class="fs-5">Anticipación del juego</h2>
-    <p>Este artículo contiene información del juego y estrategias para completar más fácilmente, parte de la diversión de un juego es descubrir y superar los retos que se plantean por uno mismo. Sin embargo, algunos juegos son difíciles sin una pequeña ayuda que obliga a tener que dedicarles mucho más tiempo o a recomenzarlos.</p>
-    <p>En algunos juegos el argumento es una de las partes más importantes. El texto del artículo no contiene información acerca del argumento del juego, de la mitad o del final, ni hace ningún <i>spoiler</i> por lo que lo puedes leer sin riesgo de conocer alguna parte del argumento de forma anticipada. Sin embargo, algunos enlaces del artículo a otras páginas y vídeos sí pueden contener información del argumento de modo que recomiendo consultar solo las partes del juego una vez superadas.</p>
-</div>
-<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
-    <li><a href="#el-juego">El juego</a>
-      <ul>
-        <li><a href="#personajes">Personajes</a></li>
-        <li><a href="#recursos">Recursos</a></li>
-        <li><a href="#armas-equipo-y-habilidades">Armas, equipo y habilidades</a></li>
-        <li><a href="#episodios">Episodios</a></li>
-        <li><a href="#aliens">Aliens</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-<h3 id="el-juego">El juego</h3>
-<p>Spaceland es un juego indie y se nota en que es mucho más simple, sencillo y corto que otros juegos del género de combate por turnos, táctico y de estrategia como XCOM 2 y <a href="https://www.igdb.com/games/wasteland-3">Wasteland 3</a>. Sin embargo, Spaceland tiene prácticamente todos los elementos esenciales del género, varios personajes entre los que elegir, varias armas, habilidades, recursos y diferentes tipos de enemigos.</p>
-<p>Como es habitual en el género cada personaje tiene varios puntos de acción que hay que decidir cómo emplear y en qué orden en las misiones en las que participan varios personajes.</p>
-<p>Tiene una pequeña historia como hilo conductor de las diferentes misiones que cumple pero es muy básica y en algunos momentos no le he encontrado mucho sentido quizá por la mala traducción. La historia se narra mediante diálogos de texto que están traducidos a un español que deja que desear. En algunos momentos incluye algunos elementos de humor y referencia a otros juegos como cuando se consigue una espada.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-2_hud8715806e088ea0bc9f95d65fceb9f93_336804_2560x1440_fit_q90_box.jpg" data-gallery="" title="Armas"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-2_hud8715806e088ea0bc9f95d65fceb9f93_336804_200x150_fit_q90_box.jpg" width="200" height="113" alt="Armas" title="Armas"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-3_hu575c6458310e4312d41a2259438fb252_213595_2560x1440_fit_q90_box.jpg" data-gallery="" title="Armas"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-3_hu575c6458310e4312d41a2259438fb252_213595_200x150_fit_q90_box.jpg" width="200" height="113" alt="Armas" title="Armas"  class="lozad "></a></p>
-<figcaption>Armas</figcaption>
-</figure>
-</div>
-<p>El juego consta de unas 28 episodios o misiones que tienen una duración corta de unos 15 minutos cada una. En algunas hay opción de elegir varios personajes, en otras algunos personajes se pueden elegir pero otros han de estar incluidos en el grupo de combate. Al ser de estrategia es probable que dos personas opten por diferentes personajes para completar una misión y la completen de diferente forma.</p>
-<p>No penaliza la muerte como ocurría con el XCOM 2 más allá de tener que volver a iniciar la misión con otros personajes o realizando otras acciones para tener mayor éxito. Si un personaje muere en combate en una misión se finaliza con un éxito parcial, al terminar todos los personajes independientemente de su estado al finalizar la misión sigue con vida para siguientes misiones.</p>
-<p>En muchas misiones suele haber escondido un hallazgo que explorando cuenta un pequeño diálogo que complementa la historia. Uno de los retos junto al acabar las misiones en los turnos indicados es descubrir dónde están los hallazgos y realizar su investigación. Si no se descubren al final de la misión se indica si esa misión tenía un hallazgo oculto.</p>
-<p>Las misiones se evalúan por los hallazgos encontrados, los turnos empleados y si todos los personajes se han mantenido con vida, en función del grado de éxito se obtienen un recurso de chips que permiten mejorar las habilidades de los personajes, también según el número de aliens matados se otorgan monedas que permiten comprar con posterioridad equipo para los personajes. Cada misión se puede rejugar tantas veces como se quiera para conseguir acabarla en los turnos indicados o conseguir el hallazgo.</p>
-<p>Al finalizar cada misión se obtiene un grado de éxito en función de si se ha completado en los turnos indicados y si se ha conseguido descubrir e investigar los hallazgos.</p>
-<p>No es complicado sacar el platino si se desea aunque seguramente requiere realizar las misiones varias veces e incluso avanzar más en el juego para volver a una misión anterior con mejor equipo que permita completarla más fácilmente.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-1_huf26f82af4fd04e4ea72987e2333b133d_172945_2560x1440_fit_q90_box.jpg" data-gallery="" title="Juego"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-1_huf26f82af4fd04e4ea72987e2333b133d_172945_200x150_fit_q90_box.jpg" width="200" height="113" alt="Juego" title="Juego"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-2_hua4518d40a2d671b396e159d2897b025b_211687_2560x1440_fit_q90_box.jpg" data-gallery="" title="Juego"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-2_hua4518d40a2d671b396e159d2897b025b_211687_200x150_fit_q90_box.jpg" width="200" height="113" alt="Juego" title="Juego"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-3_hu561f8e139141ad37fea55006a8789568_336943_2560x1440_fit_q90_box.jpg" data-gallery="" title="Juego"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-3_hu561f8e139141ad37fea55006a8789568_336943_200x150_fit_q90_box.jpg" width="200" height="113" alt="Juego" title="Juego"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-4_hu606134b75340fcb7e50b5a35b4b6ae7d_233668_2560x1440_fit_q90_box.jpg" data-gallery="" title="Juego"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-4_hu606134b75340fcb7e50b5a35b4b6ae7d_233668_200x150_fit_q90_box.jpg" width="200" height="113" alt="Juego" title="Juego"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-5_hu27b3ddf192d2328d5c1fb967abb4f9bc_168557_2560x1440_fit_q90_box.jpg" data-gallery="" title="Juego"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-juego-5_hu27b3ddf192d2328d5c1fb967abb4f9bc_168557_200x150_fit_q90_box.jpg" width="200" height="113" alt="Juego" title="Juego"  class="lozad "></a></p>
-<figcaption>Juego</figcaption>
-</figure>
-</div>
-<h4 id="personajes">Personajes</h4>
-<p>A medida que avanza la historia el grupo de personajes crecerá hasta un total de siete componentes. Cada uno tiene sus propias armas, número de puntos de acción y habilidades únicas así como cantidad de vida.</p>
-<p>Según la misión convendrá escoger un personaje u otro, aun así como hay diferentes formas de afrontar cada misión es seguro que algunas se puedan completar con éxito de diferente forma.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-personajes-1_hu2792cd5c7120b280daebb22cf59264fa_234212_2560x1440_fit_q90_box.jpg" data-gallery="" title="Personajes"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-personajes-1_hu2792cd5c7120b280daebb22cf59264fa_234212_200x150_fit_q90_box.jpg" width="200" height="113" alt="Personajes" title="Personajes"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-personajes-2_hu5a87b9da1bd6c08828dd4b6012cf3e46_232692_2560x1440_fit_q90_box.jpg" data-gallery="" title="Personajes"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-personajes-2_hu5a87b9da1bd6c08828dd4b6012cf3e46_232692_200x150_fit_q90_box.jpg" width="200" height="113" alt="Personajes" title="Personajes"  class="lozad "></a></p>
-<figcaption>Personajes</figcaption>
-</figure>
-</div>
-<h4 id="recursos">Recursos</h4>
-<p>Los recursos permiten conseguir nuevas habilidades para los personajes y armas. Por un lado los chips permiten mejorar las habilidades de los personajes que se consiguen según el grado de éxito de las misiones por completarlas en los turnos indicados y descubrir los hallazgos. El otro recurso son las monedas que permiten comprar nuevas armas, armaduras y armas secundarias que se puede elegir cómo repartir entre los personajes de grupo.</p>
-<p>Cada vez que se completa una misión con éxito o fracaso se consiguen unas monedas según los enemigos muertos y los chips solo al finalizar la misión con éxito según los turnos empleados y si se ha descubierto el hallazgo. A diferencia de las monedas los chips posibles están limitados en una misión no se consiguen más chips por repetir la misión, las monedas por el contrario se puede decir que las monedas son infinitas simplemente a base de repetir las misiones.</p>
-<p>Las misiones se pueden rejugar para acabarlas en los turnos objetivo, y para encontrar los hallazgos y conseguir todos los objetivos. Con mejor equipo son más fáciles y ya si se pueden conseguir todos los objetivos.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-recursos-1_huc8d8a780f2ee1cf8c85d7ee69c5b3888_153971_2560x1440_fit_q90_box.jpg" data-gallery="" title="Recursos"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-recursos-1_huc8d8a780f2ee1cf8c85d7ee69c5b3888_153971_200x150_fit_q90_box.jpg" width="200" height="113" alt="Recursos" title="Recursos"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-recursos-2_hu9c2d072919a6e3a05c217b2de9a73c51_142976_2560x1440_fit_q90_box.jpg" data-gallery="" title="Recursos"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-recursos-2_hu9c2d072919a6e3a05c217b2de9a73c51_142976_200x150_fit_q90_box.jpg" width="200" height="113" alt="Recursos" title="Recursos"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-recursos-3_huea3561c7167ba4e1fb0f93ac4559216e_132346_2560x1440_fit_q90_box.jpg" data-gallery="" title="Recursos"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-recursos-3_huea3561c7167ba4e1fb0f93ac4559216e_132346_200x150_fit_q90_box.jpg" width="200" height="113" alt="Recursos" title="Recursos"  class="lozad "></a></p>
-<figcaption>Recursos</figcaption>
-</figure>
-</div>
-<h4 id="armas-equipo-y-habilidades">Armas, equipo y habilidades</h4>
-<p>En ciertos puntos de la historia de la aventura hay unos encuentros en los que permiten adquirir nuevo equipo y armas para los personajes. Algunas armas las puede usar varios personajes con lo que hay repartirlas entre los miembros del grupo. El taller permite investigar las armas principales, armadura para otorgar más puntos de vida a los personajes o un arma secundaria que tiene infinita munición.</p>
-<p>Por otro lado, cada personaje tiene un árbol de habilidades sencillo de dos ramas que permiten mejorar algún aspecto de ese personaje en concreto, la progresión en el árbol de habilidades se realiza mediante los chips obtenidos en las misiones.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-1_huc9a6e3672be5a9a7b65fa532027d2277_244770_2560x1440_fit_q90_box.jpg" data-gallery="" title="Armas"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-1_huc9a6e3672be5a9a7b65fa532027d2277_244770_200x150_fit_q90_box.jpg" width="200" height="113" alt="Armas" title="Armas"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-4_hudcb6005aa57e978ec1a2812cbf19c32f_189215_2560x1440_fit_q90_box.jpg" data-gallery="" title="Armas"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-4_hudcb6005aa57e978ec1a2812cbf19c32f_189215_200x150_fit_q90_box.jpg" width="200" height="113" alt="Armas" title="Armas"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-5_hub529d1ee2fb733729cb3e5512fd34aa1_178296_2560x1440_fit_q90_box.jpg" data-gallery="" title="Armas"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-5_hub529d1ee2fb733729cb3e5512fd34aa1_178296_200x150_fit_q90_box.jpg" width="200" height="113" alt="Armas" title="Armas"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-6_hue71ca113db7a832d2f5fb9b6b1a6c701_200659_2560x1440_fit_q90_box.jpg" data-gallery="" title="Armas"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-armas-6_hue71ca113db7a832d2f5fb9b6b1a6c701_200659_200x150_fit_q90_box.jpg" width="200" height="113" alt="Armas" title="Armas"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-1_hu464535ac06bf631fae5fd29cfefca9be_246378_2560x1440_fit_q90_box.jpg" data-gallery="" title="Habilidades"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-1_hu464535ac06bf631fae5fd29cfefca9be_246378_200x150_fit_q90_box.jpg" width="200" height="113" alt="Habilidades" title="Habilidades"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-2_hu4d21d54612bf02ecb4972c2efc41a430_248807_2560x1440_fit_q90_box.jpg" data-gallery="" title="Habilidades"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-2_hu4d21d54612bf02ecb4972c2efc41a430_248807_200x150_fit_q90_box.jpg" width="200" height="113" alt="Habilidades" title="Habilidades"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-3_hud1f83c57338f8e01af5e5da196f5e5ed_251529_2560x1440_fit_q90_box.jpg" data-gallery="" title="Habilidades"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-3_hud1f83c57338f8e01af5e5da196f5e5ed_251529_200x150_fit_q90_box.jpg" width="200" height="113" alt="Habilidades" title="Habilidades"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-4_huf53aa87d92222a43040ae6c3f253fccd_251098_2560x1440_fit_q90_box.jpg" data-gallery="" title="Habilidades"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-4_huf53aa87d92222a43040ae6c3f253fccd_251098_200x150_fit_q90_box.jpg" width="200" height="113" alt="Habilidades" title="Habilidades"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-5_huab890c8e55122f583726a178d9c9b0a9_204686_2560x1440_fit_q90_box.jpg" data-gallery="" title="Habilidades"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-habilidades-5_huab890c8e55122f583726a178d9c9b0a9_204686_200x150_fit_q90_box.jpg" width="200" height="113" alt="Habilidades" title="Habilidades"  class="lozad "></a></p>
-<figcaption>Armas y habilidades</figcaption>
-</figure>
-</div>
-<h4 id="episodios">Episodios</h4>
-<p>El juego consta de 28 episodios o misiones cada una con un mapa único que generalmente consisten en avanzar por el mapa hasta llegar a la salida intentado que ningún soldado pierda la vida, completando la misión en el número de turnos indicado y si la misión tiene un hallazgo encontŕandolo e investigandolo.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-hallazgos-1_hu2a9ef1de3db48d5d3af1c85eca512d09_127868_2560x1440_fit_q90_box.jpg" data-gallery="" title="Hallazgos"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-hallazgos-1_hu2a9ef1de3db48d5d3af1c85eca512d09_127868_200x150_fit_q90_box.jpg" width="200" height="113" alt="Hallazgos" title="Hallazgos"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-hallazgos-2_huea56988f7af0e0c53343c608299f7b70_191667_2560x1440_fit_q90_box.jpg" data-gallery="" title="Hallazgos"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-hallazgos-2_huea56988f7af0e0c53343c608299f7b70_191667_200x150_fit_q90_box.jpg" width="200" height="113" alt="Hallazgos" title="Hallazgos"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-hallazgos-3_hu8d7077d66e641adf346ad29116bb5b53_147484_2560x1440_fit_q90_box.jpg" data-gallery="" title="Hallazgos"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-hallazgos-3_hu8d7077d66e641adf346ad29116bb5b53_147484_200x150_fit_q90_box.jpg" width="200" height="113" alt="Hallazgos" title="Hallazgos"  class="lozad "></a></p>
-<figcaption>Hallazgos</figcaption>
-</figure>
-</div>
-<p>En las misiones participan un máximo de cuatro personajes, en algunas dos, en algunos casos ciertos personajes han de participar en la misión y algunos otros es posible elegir qué personajes participan según sean sus habilidades más adecuadas.</p>
-<p>En las primera misiones el nivel de dificultad es fácil, de la mitad adelante cuando ya se han aprendido las mecánicas del juego el nivel aumenta y ya hay que tener a los personajes bien equipados, sin cometer errores y haciendo que cada turno y acciones estén aprovechadas lo mejor posible.</p>
-<p>Al final adolece un poco de los mismos que el XCOM 2 o sabes que enemigos están delante, donde están y vas con los personajes adecuados o cae en combate algún personaje o no se acaba en los turnos indicados. Quizá este problema sea común en el género de este tipo de juegos.</p>
-<p>Cada personaje tiene su arma principal única y unas habilidades únicas con una cantidad limitada de munición que no es la misma para todos los tipos de arma de cada uno de los personajes. Los personajes pueden tener también armas secundarias que en la mayoría de los casos es una pistola con munición ilimitada o una espada. Además otra forma de golpe es una patada para acabar con esos enemigos que se han quedado a pocos puntos de vida, la patada gasta menos puntos de acción que el disparo y no consume munición, aunque hace menos daño.</p>
-<p>La munición es limitada con lo que no hay que malgastarla y tratar de conservarla, cuando sea posible es casi necesario utilizar un ataque que no gaste munición ya sea con el arma secundaria o con la patada. En muchas misiones hay cajas de suministros de dos tipos que basta acercarse a ellas para cogerlas, una caja de suministros de munición que permiten recargar completamente la munición del arma principal de un personaje y una caja de suministros de vida que generalmente recarga casi por completo la vida de un personaje.</p>
-<p>Los mapas tienen puertas y mecanismos, agujeros por donde salen los aliens que con algún personaje se puede tapar. Está también la mecánica de coberturas que pueden usar los personajes en su beneficio y que los enemigos también pueden utilizar en el suyo, antes de hacer un disparo el juego indica la probabilidad y cantidad de vida que quitará el ataque esto permite ver si con el disparo se acabará con la vida del enemigo.</p>
-<p>En muchas misiones no hay suficiente munición para tantos enemigos, en muchas hay que salir a la carrera para terminar en turnos o para que ningún miembro de la misión caiga en combate. Las misiones anteriores se pueden repetir con el equipo conseguido más adelante con lo que las misiones anteriores son más fáciles</p>
-<p>Hay tres jefes y algunos escenarios especiales como la bajada en el montacargas al que van cayendo enemigos que es una misión de supervivencia junto a alguna más del mismo tipo. Y aunque sepas en algunos momentos que enemigos hay delante se depende de la probabilidad y de la suerte el no fallar un tiro, fallando quizá la misión termina mal.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-jefes-1_huecb211d58ee119f7215a00ac4f3dc671_243468_2560x1440_fit_q90_box.jpg" data-gallery="" title="Jefes"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-jefes-1_huecb211d58ee119f7215a00ac4f3dc671_243468_200x150_fit_q90_box.jpg" width="200" height="113" alt="Jefes" title="Jefes"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-jefes-2_hue5b3b692b0904e833449d7eeba6b6f77_229645_2560x1440_fit_q90_box.jpg" data-gallery="" title="Jefes"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-jefes-2_hue5b3b692b0904e833449d7eeba6b6f77_229645_200x150_fit_q90_box.jpg" width="200" height="113" alt="Jefes" title="Jefes"  class="lozad "></a></p>
-<figcaption>Jefes</figcaption>
-</figure>
-</div>
-<h4 id="aliens">Aliens</h4>
-<p>El grupo de diferentes enemigos también es variado, algunos tienen menos vida, hacen menos daño, otros hacen más daño y hay que usar un arma capaz de quitarles toda la vida de un disparo, otros solo tiene como punto débil la espalda y son inmunes a cualquier otro tipo de daño con lo que hay que rodearlos.</p>
-<p>La mayoría hacen daño cuerpo a cuerpo con lo que hay que evitar que se acerquen y se mantengan un turno con vida cuerpo a cuerpo junto algún personaje que les dé tiempo a hacer todos sus puntos de acción en ataques. Un tipo de enemigo hace daño a distancia con pistola.</p>
-<p>En la enciclopedia están las estadísticas de cada uno de los enemigos que se han encontrado, sus puntos de acción y puntos de vida. Esta información es muy útil para posicionar a los personajes justo a la distancia que no puedan ser atacados y en el siguiente turno poder acabar con los enemigos.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-1_hu836b7188159d9a2c89260f6da628c7da_220702_2560x1440_fit_q90_box.jpg" data-gallery="" title="Enemigos"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-1_hu836b7188159d9a2c89260f6da628c7da_220702_200x150_fit_q90_box.jpg" width="200" height="113" alt="Enemigos" title="Enemigos"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-2_hucfcbc6645afe6666dcb4b020d61aea78_233786_2560x1440_fit_q90_box.jpg" data-gallery="" title="Enemigos"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-2_hucfcbc6645afe6666dcb4b020d61aea78_233786_200x150_fit_q90_box.jpg" width="200" height="113" alt="Enemigos" title="Enemigos"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-3_hub3d09740fce2486dcd265dfa2eb19027_236511_2560x1440_fit_q90_box.jpg" data-gallery="" title="Enemigos"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-3_hub3d09740fce2486dcd265dfa2eb19027_236511_200x150_fit_q90_box.jpg" width="200" height="113" alt="Enemigos" title="Enemigos"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-4_hub944489c2c86ca89b716dbe73b53b4af_236968_2560x1440_fit_q90_box.jpg" data-gallery="" title="Enemigos"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-4_hub944489c2c86ca89b716dbe73b53b4af_236968_200x150_fit_q90_box.jpg" width="200" height="113" alt="Enemigos" title="Enemigos"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-5_hu911a95d65bb1a34e78b32c9635242f51_236953_2560x1440_fit_q90_box.jpg" data-gallery="" title="Enemigos"><img src="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/images/spaceland-enemigos-5_hu911a95d65bb1a34e78b32c9635242f51_236953_200x150_fit_q90_box.jpg" width="200" height="113" alt="Enemigos" title="Enemigos"  class="lozad "></a></p>
-<figcaption>Enemigos</figcaption>
-</figure>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="juegos"/>
             
         
     </entry>

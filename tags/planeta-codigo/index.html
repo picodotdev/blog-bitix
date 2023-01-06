@@ -184,6 +184,28 @@
 <ul class="list-unstyled">
     <li>
       <article>
+        <h1><a href="/blog-bitix/2023/01/obtener-valores-de-configuracion-antes-iniciar-una-aplicacion-con-spring-boot/">Obtener valores de configuración antes iniciar una aplicación con Spring Boot</a></h1>
+        <span class="information">
+          <time>06/01/2023</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            El mecanismo de configuración de Spring Boot es muy flexible y por otro lado Spring Boot proporciona varias formas de extensión. En el proceso de inicialización de la aplicación Spring Boot permite recibir eventos y realizar las acciones que se deseen. Uno de estos eventos es <em>ApplicationEnvironmentPreparedEvent</em> antes de inicializar el contexto y crear los <em>beans</em> del contenedor de dependencias, cyando se lanza este evento es posible acceder a las propiedades de configuración.
+          
+          <br>
+          <a href="/blog-bitix/2023/01/obtener-valores-de-configuracion-antes-iniciar-una-aplicacion-con-spring-boot/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2022/12/hemeroteca-22/">Hemeroteca #22</a></h1>
         <span class="information">
           <time>29/12/2022</time>
@@ -492,28 +514,6 @@
         </p>
       </article>
     </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2022/09/introduccion-al-protocolo-oauth-2-para-delegar-la-autorizacion/">Introducción al protocolo OAuth 2 para delegar la autorización</a></h1>
-        <span class="information">
-          <time>08/09/2022</time>
-          
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-          
-        </span>
-        <p>
-          
-            El protocolo OAuth es un protocolo en el ámbito de la seguridad que permite que el dueño de los recursos conceda permisos a un cliente sin necesidad de compartir las credenciales, el servidor de recursos unicamente necesita un <em>token</em> que certifique el cliente tiene permisos para acceder a los recursos, el <em>token</em> es emitido por el servidor de autorización en el que el usuario se autentica y en el que servidor de recursos confía en los <em>tokens</em> de autorización que emite. Gracias a la flexibilidad del protocolo OAuth y estar basado en la ubicuidad del protocolo HTTP este es el mecanismo de autorización adoptado predominantemente en la web por los diferentes servicios que ofrecen sus APIs mediante REST sin limitarse a este tipo de APIs. OAuth se compone de varias especificaciones que permiten delegar la autorización, OpenID Connect construido sobre OAuth proporciona otro aspecto de la seguridad, la autenticación.
-          
-          <br>
-          <a href="/blog-bitix/2022/09/introduccion-al-protocolo-oauth-2-para-delegar-la-autorizacion/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
     
   </ul>
           </div>
@@ -613,7 +613,7 @@
   </div>
   <div class="row">
     <div class="col-12">
-      Copyleft <span class="copyleft">&copy;</span> 2022 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      Copyleft <span class="copyleft">&copy;</span> 2023 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
       <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
       <br/>
       <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
