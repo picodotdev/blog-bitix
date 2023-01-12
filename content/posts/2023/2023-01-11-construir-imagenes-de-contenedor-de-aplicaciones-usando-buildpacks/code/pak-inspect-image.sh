@@ -1,0 +1,1 @@
+$ pack inspect-image spring-injection-point

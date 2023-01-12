@@ -1,0 +1,27 @@
+Setting Active Processor Count to 8
+Calculating JVM memory based on 13813724K available memory
+For more information on this calculation, see https://paketo.io/docs/reference/java-reference/#memory-calculator
+Calculated JVM Memory Configuration: -XX:MaxDirectMemorySize=10M -Xmx13215722K -XX:MaxMetaspaceSize=86001K -XX:ReservedCodeCacheSize=240M -Xss1M (Total Memory: 13813724K, Thread Count: 250, Loaded Class Count: 12770, Headroom: 0%)
+Enabling Java Native Memory Tracking
+Adding 124 container CA certificates to JVM truststore
+Picked up JAVA_TOOL_OPTIONS: -Djava.security.properties=/layers/paketo-buildpacks_adoptium/java-security-properties/java-security.properties -XX:+ExitOnOutOfMemoryError -XX:ActiveProcessorCount=8 -XX:MaxDirectMemorySize=10M -Xmx13215722K -XX:MaxMetaspaceSize=86001K -XX:ReservedCodeCacheSize=240M -Xss1M -XX:+UnlockDiagnosticVMOptions -XX:NativeMemoryTracking=summary -XX:+PrintNMTStatistics
+Property (app.property): value
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.6)
+
+2023-01-11 19:53:33,542 INFO  [main]     io.github.picodotdev.blogbitix.springinjectionpoint.Main Starting Main using Java 11.0.17 on d5713708092f with PID 1 (/workspace/app/lib/app.jar started by cnb in /workspace)
+2023-01-11 19:53:33,550 INFO  [main]     io.github.picodotdev.blogbitix.springinjectionpoint.Main No active profile set, falling back to 1 default profile: "default"
+2023-01-11 19:53:34,402 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+2023-01-11 19:53:34,423 INFO  [main]                     org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-01-11 19:53:34,424 INFO  [main]                      org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-01-11 19:53:34,524 INFO  [main] .apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2023-01-11 19:53:34,524 INFO  [main] .boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 931 ms
+2023-01-11 19:53:34,932 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+2023-01-11 19:53:34,944 INFO  [main]     io.github.picodotdev.blogbitix.springinjectionpoint.Main Started Main in 1.858 seconds (JVM running for 2.534)
+2023-01-11 19:53:34,946 INFO  [main]  io.github.picodotdev.blogbitix.springinjectionpoint.Service Hello World!

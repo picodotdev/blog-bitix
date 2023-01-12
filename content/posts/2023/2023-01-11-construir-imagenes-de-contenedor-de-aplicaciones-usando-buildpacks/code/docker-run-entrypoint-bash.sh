@@ -1,0 +1,1 @@
+$ docker run -it --rm --entrypoint launcher -p 8080:8080 spring-injection-point bash
