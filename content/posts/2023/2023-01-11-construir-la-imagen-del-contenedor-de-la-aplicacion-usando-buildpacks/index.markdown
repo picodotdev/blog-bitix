@@ -109,7 +109,8 @@ A veces interesa iniciar una _shell_ para inspeccionar el sistema de archivos de
 
 Finalmente, es posible inspeccionar la imagen del contenedor sin iniciarlo para obtener información acerca de cómo se ha construido.
 
-{{< code file="pak-inspect-image.sh" language="bash" options="" >}}
+{{< code file="pack-inspect-image.sh" language="bash" options="" >}}
+{{< code file="pack-inspect-image.out" language="plain" options="" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/SpringInjectionPoint" command="./pack-build.sh" %}}
 
