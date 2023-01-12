@@ -1,0 +1,29 @@
+Inspecting image: spring-injection-point
+
+REMOTE:
+(not present)
+
+LOCAL:
+
+Stack: io.buildpacks.stacks.jammy
+
+Base Image:
+  Reference: 9460382ca7aa20a60d1dcb756dbeb1535fe3e2eeb3e0c01a85ad7a60eaa091ad
+  Top Layer: sha256:5853f77d360cc55683c2896aa9fd14bf47430731ad6fec18d9511f56656c232f
+
+Run Images:
+  index.docker.io/paketobuildpacks/run-jammy-base:latest
+
+Buildpacks:
+  ID                                       VERSION        HOMEPAGE
+  paketo-buildpacks/ca-certificates        3.5.1          https://github.com/paketo-buildpacks/ca-certificates
+  paketo-buildpacks/syft                   1.23.0         https://github.com/paketo-buildpacks/syft
+  paketo-buildpacks/procfile               5.5.0          https://github.com/paketo-buildpacks/procfile
+  paketo-buildpacks/adoptium               10.8.0         https://github.com/paketo-buildpacks/adoptium
+  paketo-buildpacks/gradle                 6.10.0         https://github.com/paketo-buildpacks/gradle
+  paketo-buildpacks/executable-jar         6.5.0          https://github.com/paketo-buildpacks/executable-jar
+  paketo-buildpacks/spring-boot            5.22.0         https://github.com/paketo-buildpacks/spring-boot
+
+Processes:
+  TYPE                 SHELL        COMMAND                                                             ARGS        WORK DIR
+  app (default)        bash         JAVA_HOME=/layers/paketo-buildpacks_adoptium/jre app/bin/app                    /workspace
