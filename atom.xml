@@ -5,12 +5,154 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/</id>
-    <updated>2023-01-06T01:00:00+01:00</updated>
+    <updated>2023-01-11T20:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2023/01/construir-imagenes-de-contenedor-de-aplicaciones-usando-buildpacks/</id>
+        <title>Construir imágenes de contenedor de aplicaciones usando Buildpacks</title>
+        <updated>2023-01-11T20:00:00+01:00</updated>
+        <published>2023-01-11T20:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2023/01/construir-imagenes-de-contenedor-de-aplicaciones-usando-buildpacks/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Los sistemas y servicios son significativamente complejos por sí mismos, además en sistemas que se componen de varios de ellos cada uno con sus diferencias añade más complejidad al sistema. Eliminar toda la complejidad posible y simplificar el sistema es algo deseable. La herramienta Buildpacks aplica a la construcción de las aplicaciones lo que los contenedores aplican en tiempo de ejecución de las mismas, uniformizando las aplicaciones independientemente del lenguaje y plataforma que usen.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/buildpacksio.svg" width="200" height="200" alt="Buildpacks" title="Buildpacks"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/paketo.svg" width="150" height="272" alt="Packeto" title="Packeto"  class=""></p>
+</div>
+<p>Los contenedores son una gran tecnología ya que hace muy simple ejecutar servicios independientemente de cómo están implementados y en qué lenguaje, uniformizan los procesos a ejecutar y tratarlos a todos de la misma forma y con la misma herramienta.</p>
+<p>Al igual que en los barcos los contenedores facilitan transportar mercancías, en el ámbito de la tecnología los contenedores simplifican mucho la infraestructura en tiempo de ejecución permitiendo tratar los servicios de forma uniforme.</p>
+<p>Los contendores se basan en una imagen y una herramienta que los ejecuta, una de las herramientas más conocidas para ejecutar contenedores es <a href="https://www.docker.com/">Docker</a> y el archivo con las instrucciones para construir las imágenes son los archivos <em>Dockerfile</em>.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">Introducción y características de Docker</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">Cómo crear una imagen para Docker usando un Dockerfile</a></li>
+</ul>
+<p>Es muy útil poder ejecutar procesos de forma uniforme independientemente del lenguaje y de forma aislada con todas las dependencias del entorno dentro de la imagen lo que permite ejecutar tantos servicios como se deseen sin que las dependencias de estos entre en conflicto.</p>
+<p>La misma utilidad y propiedades de los contenedores en tiempo de ejecución es deseable en el momento de construcción de las imágenes de los servicios.</p>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#la-herramienta-buildpacks">La herramienta Buildpacks</a></li>
+    <li><a href="#el-proyecto-paketo">El proyecto Paketo</a></li>
+    <li><a href="#instalación-de-buildpacks">Instalación de Buildpacks</a></li>
+    <li><a href="#construcción-de-la-imagen-del-contenedor">Construcción de la imagen del contenedor</a></li>
+    <li><a href="#ejecución-del-contenedor-con-docker">Ejecución del contenedor con Docker</a></li>
+  </ul>
+</nav></div>
+<h3 id="la-herramienta-buildpacks">La herramienta Buildpacks</h3>
+<p>La herramienta <a href="https://buildpacks.io/">Buildpacks</a> analiza el código fuente y permite construir imágenes de contenedores compatible con OCI con la misma herramienta independientemente del lenguaje o plataforma que utilice y sin utilizar archivos Dockerfile. Además, permite reutilizar las instrucciones de construcción sin tener que implementarlas.</p>
+<p>Los <em>buildpacks</em> son los módulos que añaden el soporte e implementan las instrucciones para construir las imágenes. Hay un <em>buildpack</em> específico según una necesidad de construcción, una aplicación puede necesitar varios <em>buildpacks</em> al mismo tiempo.</p>
+<p>Por ejemplo, una aplicación Java necesita una versión de la JVM para ejecutarse que es proporcionado por un <em>buildpack</em>, si la aplicación utiliza <a href="https://gradle.org/">Gradle</a> como herramienta de construcción hay un <em>nuildpack</em> para construir aplicaciones Gradle. Y hay <em>buildpacks</em> para Java, <a href="https://nodejs.org/en/">Node</a>, <a href="https://www.python.org/">Python</a> y otros lenguajes.</p>
+<p><a href="https://buildpacks.io/docs/concepts/">Los conceptos que usa Buildpacks</a> son:</p>
+<ul>
+<li><em>Builder</em>: es la imagen del contenedor con la que se realiza la construcción, contiene todos los componentes necesarios junto con los <em>buildpacks</em> para ejecutar la construcción.</li>
+<li><em>Buildpack</em>: es el ejecutable que construye y ejecuta la aplicación. Al realizar la construcción contribuye los archivos necesarios a la imagen del contenedor resultante.</li>
+<li><em>Lifecycle</em>: orquesta la construcción con los <em>buildpacks</em> y ensambla los artefactos resultantes en la imagen del contenedor.</li>
+<li><em>Stack</em>: se compone de dos imágenes de contenedor, la imagen <em>builder</em> que proporciona la imagen para realizar la construcción y la imagen <em>run</em> que proporciona la imagen para la ejecución.</li>
+</ul>
+<p>Buildpacks es extensible y es posible crear y usar <em>builders</em> y <em>buildpaks</em> propios ajustados a las necesidades de la organización o aplicación si los existentes no son suficientes.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2023/01/construir-imagenes-de-contenedor-de-aplicaciones-usando-buildpacks/images/buildpack-what.svg" data-gallery="" title="Buildpack"><img src="https://picodotdev.github.io/blog-bitix/2023/01/construir-imagenes-de-contenedor-de-aplicaciones-usando-buildpacks/images/buildpack-what.svg" width="300" height="200" alt="Buildpack" title="Buildpack"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2023/01/construir-imagenes-de-contenedor-de-aplicaciones-usando-buildpacks/images/buildpack-builder.svg" data-gallery="" title="Buildpack builder"><img src="https://picodotdev.github.io/blog-bitix/2023/01/construir-imagenes-de-contenedor-de-aplicaciones-usando-buildpacks/images/buildpack-builder.svg" width="300" height="200" alt="Buildpack builder" title="Buildpack builder"  class="lozad "></a></p>
+<figcaption>Buildpack</figcaption>
+</figure>
+</div>
+<h3 id="el-proyecto-paketo">El proyecto Paketo</h3>
+<p><a href="https://paketo.io/">Paketo</a> es un proyecto de código abierto que proporciona numerosos <em>buildpacks</em> para diferentes lenguajes de las aplicaciones más populares entre los que por supuesto están Java, Node, Python y Go entre otros.</p>
+<p>En el <a href="https://github.com/paketo-buildpacks">proyecto de GitHub de Paketo</a> están los diferentes repositorios de los <em>buildpacks</em> junto con sus opciones de configuración y código fuente, además proporciona varios <em>builder</em> basados en diferentes versiones de <a href="https://www.ubuntu.com/">Ubuntu</a>.</p>
+<ul>
+<li><a href="https://paketo.io/docs/reference/builders-reference/">Paketo Builders Reference</a></li>
+</ul>
+<h3 id="instalación-de-buildpacks">Instalación de Buildpacks</h3>
+<p>Hay <a href="https://buildpacks.io/docs/tools/pack/">varias formas de instalación de Buildpacks</a> según el sistema operativo que se use, junto a varias formas de instalación usando el gestor de paquetes nativo del sistema operativo o una instalación manual en el sistema.</p>
+<p>Builpacks es una herramienta programada en el lenguaje Go que una de sus ventajas es que generan un único binario que incluye todas las dependencias con lo que su instalación manual es muy sencilla, basta con descargar y copiar un único archivo.</p>
+<p>En <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> basta descargar el paquete de distribución para este sistema operativo, descomprimirlo e instalar el binario en el <em>path</em> del sistema de modo que al ejecutar el comando el intérprete del <em>shell</em> lo encuentre. En GNU/Linux el directorio <em>/usr/local/bin</em> permite añadir al sistema comandos adicionales sin que entren en conflicto con los que se instalan a través de paquetes de la distribución.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ls -l /usr/local/bin/&#10;</span></span><span class="line"><span class="cl">total 23M&#10;</span></span><span class="line"><span class="cl">-rwxr-xr-x <span class="m">1</span> root&nbsp;&nbsp;&nbsp;&nbsp;   root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ene <span class="m">10</span> 11:31 pack&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ls-bin.sh</span>
+    </div>
+</div>
+<h3 id="construcción-de-la-imagen-del-contenedor">Construcción de la imagen del contenedor</h3>
+<p>Utilizando una aplicación escrita con Java con Gradle como herramienta de construcción y que usa <a href="https://projects.spring.io/spring-boot/">Spring Boot</a>, el comando para construir la imagen OCI del contenedor es el siguiente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ pack build spring-injection-point <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--env <span class="s2">&#34;BP_JVM_TYPE=JDK&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--env <span class="s2">&#34;BP_JVM_VERSION=11&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--env <span class="s2">&#34;BP_GRADLE_BUILT_ARTIFACT=app/build/distributions/app.zip&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--builder paketobuildpacks/builder-jammy-base <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/ca-certificates <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/syft <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/procfile <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/adoptium <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/gradle <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/executable-jar <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/spring-boot <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--default-process app <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--path .</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pack-build.sh</span>
+    </div>
+</div>
+<p>Los <em>builpacks</em> permiten ser configurados a través de las variables de entorno, en el comando es posible configurar el <em>buildpack</em> de <em>adoptioum</em> para que use la versión de Java que se desee o el tipo de máquina virtual, distribución JDK o JRE. En el archivo README.md de cada uno de los <em>buildpacks</em> están documentados las variables de entorno con su descripción y en algunos casos sus valores.</p>
+<ul>
+<li><a href="https://github.com/paketo-buildpacks/adoptium">paketo-buildpacks/adoptium README.md</a></li>
+<li><a href="https://github.com/paketo-buildpacks/gradle">paketo-buildpacks/gradle README.md</a></li>
+</ul>
+<p>El comando especifica los <em>buildpacks</em> ya que el <em>builder</em> utilizado no incluye ninguno. En el parámetro <em>path</em> se indica la ruta al código fuente de la aplicación.</p>
+<p>El <em>buildpack</em> <em>paketo-buildpacks/procfile</em> permite especificar diferentes comandos de ejecución en un archivo. El <em>entrypoint</em> que añade el <em>builder</em> en la imagen permite especificar el proceso a iniciar en el comando de ejecución del contenedor.</p>
+<h3 id="ejecución-del-contenedor-con-docker">Ejecución del contenedor con Docker</h3>
+<p>Docker permite almacenar en local y ejecutar las imágenes construidas con Buildpacks como un contenedor normal. El comando para iniciar la aplicación es el siguiente que inicia el proceso por defecto de la imagen.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker run -it --rm -p 8080:8080 spring-injection-point&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-run.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Setting Active Processor Count to 8&#10;</span></span><span class="line"><span class="cl">Calculating JVM memory based on 13813724K available memory&#10;</span></span><span class="line"><span class="cl">For more information on this calculation, see https://paketo.io/docs/reference/java-reference/#memory-calculator&#10;</span></span><span class="line"><span class="cl">Calculated JVM Memory Configuration: -XX:MaxDirectMemorySize=10M -Xmx13215722K -XX:MaxMetaspaceSize=86001K -XX:ReservedCodeCacheSize=240M -Xss1M (Total Memory: 13813724K, Thread Count: 250, Loaded Class Count: 12770, Headroom: 0%)&#10;</span></span><span class="line"><span class="cl">Enabling Java Native Memory Tracking&#10;</span></span><span class="line"><span class="cl">Adding 124 container CA certificates to JVM truststore&#10;</span></span><span class="line"><span class="cl">Picked up JAVA_TOOL_OPTIONS: -Djava.security.properties=/layers/paketo-buildpacks_adoptium/java-security-properties/java-security.properties -XX:+ExitOnOutOfMemoryError -XX:ActiveProcessorCount=8 -XX:MaxDirectMemorySize=10M -Xmx13215722K -XX:MaxMetaspaceSize=86001K -XX:ReservedCodeCacheSize=240M -Xss1M -XX:+UnlockDiagnosticVMOptions -XX:NativeMemoryTracking=summary -XX:+PrintNMTStatistics&#10;</span></span><span class="line"><span class="cl">Property (app.property): value&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  .   ____&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  _&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__ _ _&#10;</span></span><span class="line"><span class="cl"> /\\ / ___&#39;_ __ _ _(_)_ __  __ _ \ \ \ \&#10;</span></span><span class="line"><span class="cl">( ( )\___ | &#39;_ | &#39;_| | &#39;_ \/ _` | \ \ \ \&#10;</span></span><span class="line"><span class="cl"> \\/  ___)| |_)| | | | | || (_| |  ) ) ) )&#10;</span></span><span class="line"><span class="cl">  &#39;  |____| .__|_| |_|_| |_\__, | / / / /&#10;</span></span><span class="line"><span class="cl"> =========|_|==============|___/=/_/_/_/&#10;</span></span><span class="line"><span class="cl"> :: Spring Boot ::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(v2.7.6)&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">2023-01-11 19:53:33,542 INFO  [main]&nbsp;&nbsp;&nbsp;&nbsp; io.github.picodotdev.blogbitix.springinjectionpoint.Main Starting Main using Java 11.0.17 on d5713708092f with PID 1 (/workspace/app/lib/app.jar started by cnb in /workspace)&#10;</span></span><span class="line"><span class="cl">2023-01-11 19:53:33,550 INFO  [main]&nbsp;&nbsp;&nbsp;&nbsp; io.github.picodotdev.blogbitix.springinjectionpoint.Main No active profile set, falling back to 1 default profile: &#34;default&#34;&#10;</span></span><span class="line"><span class="cl">2023-01-11 19:53:34,402 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)&#10;</span></span><span class="line"><span class="cl">2023-01-11 19:53:34,423 INFO  [main]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; org.apache.catalina.core.StandardService Starting service [Tomcat]&#10;</span></span><span class="line"><span class="cl">2023-01-11 19:53:34,424 INFO  [main]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.69]&#10;</span></span><span class="line"><span class="cl">2023-01-11 19:53:34,524 INFO  [main] .apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext&#10;</span></span><span class="line"><span class="cl">2023-01-11 19:53:34,524 INFO  [main] .boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 931 ms&#10;</span></span><span class="line"><span class="cl">2023-01-11 19:53:34,932 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path &#39;&#39;&#10;</span></span><span class="line"><span class="cl">2023-01-11 19:53:34,944 INFO  [main]&nbsp;&nbsp;&nbsp;&nbsp; io.github.picodotdev.blogbitix.springinjectionpoint.Main Started Main in 1.858 seconds (JVM running for 2.534)&#10;</span></span><span class="line"><span class="cl">2023-01-11 19:53:34,946 INFO  [main]  io.github.picodotdev.blogbitix.springinjectionpoint.Service Hello World!</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out</span>
+    </div>
+</div>
+<p>Los <em>buildpacks</em> añaden un <em>launcher</em> que permite <a href="https://buildpacks.io/docs/app-developer-guide/run-an-app/">varias formas de ejecutar el contenedor de la aplicación</a>. También es posible especificar otro proceso de la imagen con la opción <em>&ndash;entrypoint</em> y el nombre del proceso.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker run -it --rm --entrypoint app -p 8080:8080 spring-injection-point&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-run-entrypoint.sh</span>
+    </div>
+</div>
+<p>A veces interesa iniciar una <em>shell</em> para inspeccionar el sistema de archivos del contenedor y ejecutar procesos manualmente. En este ejemplo se muestra la versión de Ubuntu que forma la imagen base del contenedor y se aprecia que está basada en la versión 22.04.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker run -it --rm --entrypoint launcher -p 8080:8080 spring-injection-point bash&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-run-entrypoint-bash.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">$ cat /etc/issue&#10;</span></span><span class="line"><span class="cl">Ubuntu 22.04.1 LTS&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>issue.out</span>
+    </div>
+</div>
+<p>Finalmente, es posible inspeccionar la imagen del contenedor sin iniciarlo para obtener información acerca de cómo se ha construido.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ pack inspect-image spring-injection-point&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pak-inspect-image.sh</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringInjectionPoint">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./pack-build.sh</code></p>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2023/01/obtener-valores-de-configuracion-antes-iniciar-una-aplicacion-con-spring-boot/</id>
@@ -1990,175 +2132,6 @@
         
             
                 <category term="software"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2022/09/novedades-de-java-19/</id>
-        <title>Novedades de Java 19</title>
-        <updated>2022-09-28T20:00:00+02:00</updated>
-        <published>2022-09-28T20:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/09/novedades-de-java-19/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Las versiones de Java más confiables por su soporte extendido son las LTS, las no LTS dan la oportunidad de probar e ir adaptándose a las novedades que se publicarán de forma definitiva en las LTS. Por ello las empresas seguramente prefieran ir cambiando de versiones de LTS a LTS, los usuarios y desarrolladores a nivel individual o las empresas que alguna novedad supone un cambio importante opten por usar una no LTS. La versión de Java 19 es una no LTS pero incorpora una novedad muy importante aún en vista previa, los <em>virtual threads</em> que permitirán a las aplicaciones pasar de usar miles a millones de <em>threads</em> y usar programación estructurada más sencilla en vez de programación asíncrona o concurrente para resolver problemas de concurrencia.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>Una nueva versión de Java que llega ya al número 19, no es una versión LTS con lo que carece de soporte extendido pero que junto con Java 18 incorpora varias novedades desde la última versión LTS alguna muy destacada y esperada que va a suponer un cambio de paradigma en la programación concurrente.</p>
-<p>Las novedades no son muy numerosas ya que en el periodo de seis meses da tiempo a ir incorporando algunas que ya se publican aunque sea en modo de vista previa y aunque pueden cambiar cuando lleguen a la versión final permite a aquellos aventurados experimentar y adaptarse a ellas en futuras versiones e incluso utilizarlas si así lo desean en su versión de vista previa.</p>
-<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
-    <li><a href="#introducción">Introducción</a></li>
-    <li><a href="#nuevas-características">Nuevas características</a>
-      <ul>
-        <li><a href="#linuxrisc-v-port">Linux/RISC-V Port</a></li>
-      </ul>
-    </li>
-    <li><a href="#nuevas-características-en-vista-previa">Nuevas características en vista previa</a>
-      <ul>
-        <li><a href="#_record-patterns_"><em>Record Patterns</em></a></li>
-        <li><a href="#_foreign-function--memory-api_"><em>Foreign Function &amp; Memory API</em></a></li>
-        <li><a href="#_virtual-threads_"><em>Virtual Threads</em></a></li>
-        <li><a href="#_structured-concurrency_"><em>Structured Concurrency</em></a></li>
-        <li><a href="#_pattern-matching-for-switch_"><em>Pattern Matching for switch</em></a></li>
-      </ul>
-    </li>
-    <li><a href="#otras-novedades">Otras novedades</a>
-      <ul>
-        <li><a href="#interpolación-de-cadenas-_string-templates_">Interpolación de cadenas (<em>String Templates</em>)</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-<h3 id="introducción">Introducción</h3>
-<p>En esta nueva versión de Java las novedades sin contar las incorporadas en vista previa son muy pocas la única es el <em>port</em> a la arquitectura de procesadores RISC-V que aunque es una prometedora arquitectura de procesadores con la interesante propiedad de no tener costes de licencias por implementarla que probablemente vaya ganando cuota de mercado a día de hoy es muy minoritaria, tanto en el escritorio como en los servidores.</p>
-<p>Sin embargo, en las características en vista previa hay una muy destacada y relevante que son los <em>threads</em> virtuales que supone un cambio de paradigma en la programación concurrente que proporciona las ventajas de la programación estructurada sin la complejidad de la programación asíncrona o concurrente.</p>
-<p>Como complemento a los <em>threads</em> virtuales hay otra ayuda con la concurrencia estructurada, dado que los <em>threads</em> virtuales van a permitir crear varios órdenes de magnitud de <em>threads</em> de lo que era posible hasta ahora, de pasar a únicamente utilizar miles de <em>threads</em> a poder utilizar millones de <em>threads</em>.</p>
-<p>Otras novedades en vista previa son actualizaciones a características en vistas previas anteriores como los <em>Record Patterns</em>, <em>Foreign Function &amp; Memory API</em> para integración de código nativo, el <em>Vector API</em> para aprovechar las instrucciones vectoriales de los procesadores, <em>Pattern Matching for switch</em> y <em>Structured Concurrency</em> que está relacionado con los <em>threads virtuales</em> y lo complementa.</p>
-<ul>
-<li><a href="https://openjdk.java.net/projects/jdk/19/">Características de Java 19</a></li>
-<li><a href="https://jdk.java.net/19/release-notes">Notas de publicación de Java 19</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/19/">Documentación de Java 19</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/19/docs/api/index.html">Documentación Javadoc de Java 19</a></li>
-</ul>
-<p>Las mejoras incluidas en esta versión son:</p>
-<ul>
-<li>405: <a href="https://openjdk.org/jeps/405">Record Patterns (Preview)</a></li>
-<li>422: <a href="https://openjdk.org/jeps/422">Linux/RISC-V Port</a></li>
-<li>424: <a href="https://openjdk.org/jeps/424">Foreign Function &amp; Memory API (Preview)</a></li>
-<li>425: <a href="https://openjdk.org/jeps/425">Virtual Threads (Preview)</a></li>
-<li>426: <a href="https://openjdk.org/jeps/426">Vector API (Fourth Incubator)</a></li>
-<li>427: <a href="https://openjdk.org/jeps/427">Pattern Matching for switch (Third Preview)</a></li>
-<li>428: <a href="https://openjdk.org/jeps/428">Structured Concurrency (Incubator)</a></li>
-</ul>
-<p>Artículos relacionados:</p>
-<ul>
-<li><a href="https://inside.java/2022/09/20/sip066/">JDK 19 Release - Sip of Java</a></li>
-<li><a href="https://inside.java/2022/09/20/the-arrival-of-java-19/">The Arrival of Java 19!</a></li>
-<li><a href="https://inside.java/2022/09/20/podcast-026/">Episode 26 &ldquo;Java 19 is Here!&rdquo;</a></li>
-</ul>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/vvXmO2ZMGsk" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<h3 id="nuevas-características">Nuevas características</h3>
-<h4 id="linuxrisc-v-port">Linux/RISC-V Port</h4>
-<p>RISC-V es una es una arquitectura con un conjunto de instrucciones de código abierto, además de un diseño eficiente y moderno no requiere pagar licencias que lo hace interesante para muchas empresas y fabricantes al contrario de otras arquitecturas como ARM que requiere pagar licencias. RISC-V ya es soportado por varias herramientas de desarrollo importantes y hay una disponibilidad de hardware que va en aumento. Por estos motivos, una versión que permite usar Java en procesadores RISC-V es valiosa.</p>
-<p>El <em>port</em> de Java para RISC-V incluye el intérprete el compilador JIT para el cliente y servidor y una implementación para todos los recolectores de basura soportados incluyendo ZGC y Shenandoah.</p>
-<h3 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h3>
-<h4 id="_record-patterns_"><em>Record Patterns</em></h4>
-<p>El <em>patern matching</em> permite eliminar algunos <em>cast</em> explícitos, esto ya ha sido aplicado en expresiones como condiciones. Ahora el <em>pattern matching</em> se aplica a los <em>records</em> que permite una forma de desestructurar este tipo de clases para obtener los elementos de <em>record</em> en variables disponibles en el ámbito de uso de la expresión.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">record</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">void</span> <span class="nf">printSum</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Point</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">x</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">y</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>pattern-matching.java</span>
-    </div>
-</div>
-<p>Al escribir la expresión de <em>pattern matching</em> para un <em>record</em> permite al mismo tiempo desestructurar los elementos y extraerlos a variables. La expresión resultante para desestructurar los elementos es muy verbosa pero hace más simple el acceso posterior a las variables de <em>record</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">printSum</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">))</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>record-patterns.java</span>
-    </div>
-</div>
-<h4 id="_foreign-function--memory-api_"><em>Foreign Function &amp; Memory API</em></h4>
-<p>Esta característica facilita el uso del código nativo de forma eficiente y más sencilla que anteriormente con JNI, en esta nueva vista previa es un refinamiento de las versione anteriores incorporando los comentarios y sugerencias desde la última vista previa.</p>
-<p>Para muchos desarrolladores esta característica es irrelevante o solo se benefician de forma indirecta pero para otros que trabajan con software embebido o que desarrollan librerías Java que hacen uso de código nativo implementado en otros lenguajes supone una gran mejora.</p>
-<h4 id="_virtual-threads_"><em>Virtual Threads</em></h4>
-<p>Un sistema operativo como Linux solo es capaz de ofrecer a las aplicaciones una cantidad limitada de <em>threads</em> ya que su consumo de recursos es elevado en el sistema y el cambio de contexto de unos a otros penaliza el rendimiento.</p>
-<p>Para solventar esta limitación Java implementa dentro del JVM los <em>threads</em> virtuales que son más ligeros en recursos que los <em>threads</em> del sistema operativo y el cambio de contexto de uno a otro no supone tanta penalización en el rendimiento. Los <em>threads</em> virtuales permiten a las aplicaciones poder usar un mayor cantidad de hilos pasando de unos miles a varios millones sin ningún problema. Para las aplicaciones que usan gran cantidad de hilos como las de servidor de un hilo por petición permite escalar a un número significativamente mayor de peticiones y un mejor rendimiento.</p>
-<p>Adicionalmente, una de las mejoras cosas es que el uso de los <em>threads</em> virtuales no requiere una nueva API ya que la implementación la realiza usando la misma clase <a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Thread.html">Thread</a> que ha existido siempre en Java desde las versión 1.0 de Java.</p>
-<p>La solución habitual a la escasez de <em>threads</em> y la limitación del sistema operativo para aprovechar el hardware ha sido la programación asíncrona, está sin embargo es más difícil de desarrollar, entender y depurar. Otra opción de algunos lenguajes han sido las <em>coroutines</em> como en <a href="https://kotlinlang.org/">Kotlin</a> y otros lenguajes.</p>
-<p>Los <em>threads</em> virtuales y la concurrencia estructurada promete la simplicidad de la programación estructurada con la ventaja de proporcionar un rendimiento similar que la programación asíncrona.</p>
-<ul>
-<li><a href="https://cr.openjdk.java.net/~rpressler/loom/Loom-Proposal.html">Project Loom: Fibers and Continuations for the Java Virtual Machine</a></li>
-</ul>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/6dpHdo-UnCg" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/I9hQvJO39uM" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<h4 id="_structured-concurrency_"><em>Structured Concurrency</em></h4>
-<p>Los <em>threads</em> virtuales permiten dedicar un <em>thread</em> a cada tarea con lo que se prevé que las aplicaciones aprovechen poder utilizar una mayor número de <em>threads</em>, pero gestionarlos sigue siendo un problema ya que los hilos siguen siendo independientes y su depuración complicada.</p>
-<p>Si los <em>threads</em> virtuales permiten utilizar <em>threads</em> en abundancia la concurrencia estructurada asegura que los <em>threads</em> estén relacionados correctamente y de forma robusta además de mostrar los <em>threads</em> en herramientas de depuración de forma que sean entendidos por los desarrolladores.</p>
-<p>La clase <a href="https://docs.oracle.com/en/java/javase/19/docs/api//jdk.incubator.concurrent/jdk/incubator/concurrent/StructuredTaskScope.html">StructuredTaskScope</a> permite estructurar una tarea ejecutada en varios hilos, tanto en los casos en que una tarea se divide en varias operaciones como en los casos de que por cada petición entrante se emplea un hilo como en un servidor.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Response</span> <span class="nf">handle</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">ExecutionException</span><span class="o">,</span> <span class="n">InterruptedException</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">var</span> <span class="n">scope</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StructuredTaskScope</span><span class="o">.</span><span class="na">ShutdownOnFailure</span><span class="o">())</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Future</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">user</span> <span class="o">=</span> <span class="n">scope</span><span class="o">.</span><span class="na">fork</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="n">findUser</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Future</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">order</span> <span class="o">=</span> <span class="n">scope</span><span class="o">.</span><span class="na">fork</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="n">fetchOrder</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">join</span><span class="o">();</span> <span class="c1">// Join both forks&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">throwIfFailed</span><span class="o">();</span> <span class="c1">// ... and propagate errors&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// Here, both forks have succeeded, so compose their results&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="k">new</span> <span class="n">Response</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">resultNow</span><span class="o">(),</span> <span class="n">order</span><span class="o">.</span><span class="na">resultNow</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>structured-concurrency-1.java</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">serve</span><span class="o">(</span><span class="n">ServerSocket</span> <span class="n">serverSocket</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="o">,</span> <span class="n">InterruptedException</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">var</span> <span class="n">scope</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StructuredTaskScope</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">&gt;())</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">var</span> <span class="n">socket</span> <span class="o">=</span> <span class="n">serverSocket</span><span class="o">.</span><span class="na">accept</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">fork</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="n">handle</span><span class="o">(</span><span class="n">socket</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// If there&#39;s been an error or we&#39;re interrupted, we stop accepting&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">shutdown</span><span class="o">();</span><span class="err"> </span> <span class="c1">// Close all active connections&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">scope</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>structured-concurrency-2.java</span>
-    </div>
-</div>
-<h4 id="_pattern-matching-for-switch_"><em>Pattern Matching for switch</em></h4>
-<p>El <em>pattern matching</em> en las expresiones <em>switch</em> han sido mejorados en esta nueva vista previa.</p>
-<ul>
-<li>Las <em>guard patterns</em> son reemplazados con cláusulas <em>when</em> en los bloques <em>switch</em>.</li>
-<li>La semántica del <em>switch</em> en los casos en que es <em>null</em> la expresión se ajusta a la semántica existente que ha existido en los <em>switch</em> lanzando un <em>NullPointerException</em>.</li>
-</ul>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">void</span> <span class="nf">testTriangle</span><span class="o">(</span><span class="n">Shape</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">switch</span> <span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="kc">null</span> <span class="o">-&gt;</span> <span class="o">{</span> <span class="k">break</span><span class="o">;</span> <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">Triangle</span> <span class="n">t</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">when</span> <span class="n">t</span><span class="o">.</span><span class="na">calculateArea</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">100</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Large triangle&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">default</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;A shape, possibly a small triangle&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>pattern-matching-switch.java</span>
-    </div>
-</div>
-<p>Por otro lado todo, ahora en los casos de un <em>switch</em> es posible usar el label <em>null</em> para seleccionar la rama cuando la expresión del <em>switch</em> toma un valor nulo, el comportamiento anterior era que si la expresión <em>switch</em> era <em>null</em> producía un <em>NullPointerException</em> lo que requería utilizar un <em>guard clause</em> antes del <em>switch</em> para evitar el NPE.</p>
-<p>Desde Java 16 los bloques switch permiten dos estilos de grupos uno mediante etiquetas con <em>:</em> y otro de una única consecuencia con <em>-&gt;</em> donde la continuación en cascada no es posible. En el primer caso los múltiples labels se escriben <code>case l1: case l2:</code> cuando en el estilo del segundo se escriben <code>case l1, l2 -&gt;</code>.</p>
-<p>Soportar la etiqueta <em>null</em> permite ahora escribir un switch de la siguiente forma.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Object</span> <span class="n">o</span> <span class="o">=</span> <span class="o">...;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="k">switch</span> <span class="o">(</span><span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="kc">null</span><span class="o">:</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">String</span> <span class="n">s</span><span class="o">:</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;String, including null&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">break</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>switch-null-label.java</span>
-    </div>
-</div>
-<h3 id="otras-novedades">Otras novedades</h3>
-<h4 id="interpolación-de-cadenas-_string-templates_">Interpolación de cadenas (<em>String Templates</em>)</h4>
-<p>En un futuro es posible que Java incorpore al lenguaje la interpolación de cadenas con la <a href="https://openjdk.org/jeps/430">JEP 430: String Templates</a>. Facilitará la construcción de cadenas con una mezcla de cadenas y valores de variables que produzcan la cadena resultante deseada. La construcción de cadenas es algo muy utilizado en todos los programas con lo que la interpolación de cadenas será una mejora en la la construcción de cadenas que hace el código más legible.</p>
-<p>Un problema de la interpolación de cadenas es que en ciertas cadenas hay posibilidad de crear un problema de seguridad y por ello es peligrosa, una forma de este problema es el <em>SQL injection</em>. La interpolación de cadenas que se incorporará en Java solucionará al mismo tiempo que la legibilidad del código los problemas que pueden ocurrir con el <em>SQL injection</em> creando una clase <em>TemplateString</em> para las cadenas con interpolación y unos <em>policies</em> específicos para cada lenguaje como SQL o JSON según el formato resultante que garantizará una cadena resultante bien formada y evitará el problema de <em>injection</em>.</p>
-<p>Estos son algunos ejemplos que se están evaluando para implementar la interpolación de cadenas. El <em>STR</em> sería el <em>policy</em> que determina como convertir el <a href="https://cr.openjdk.java.net/~jlaskey/templates/docs/api/java.base/java/lang/template/TemplatedString.html">TemplateString</a> en un <em>String</em>. Además será posible implementar nuevos <em>policies</em> haciendo una implementación de la interfaz funcional <a href="https://cr.openjdk.java.net/~jlaskey/templates/docs/api/java.base/java/lang/template/TemplateProcessor.html">TemplateProcessor</a>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Joan&#34;</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">TemplatedString</span> <span class="n">ts</span> <span class="o">=</span> <span class="s">&#34;My name is \{name}&#34;</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Joan&#34;</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">String</span> <span class="n">info</span> <span class="o">=</span> <span class="n">STR</span><span class="o">.</span><span class="s">&#34;My name is \{name}&#34;</span><span class="o">;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>string-interpolation.java</span>
-    </div>
-</div>
-<p>Personalmente prefiero la sintaxis <code>${&hellip;}</code> en vez de <code>\{&hellip;}</code> ya que la primera es la opción utilizada en otros lenguajes y no me gusta mucho ese <em>syntactic sugar</em> (o <em>rat poison</em>) para usar los <em>TemplateProcessor</em> que me parece nada coherente con el lenguaje. Utilizar el <em>$</em> en vez de <em>\</em> es una alternativa que han evaluado pero que de momento han descartado para evitar conflictos con código heredado. También han evaluado otro tipo de alternativas, en cualquier caso hasta la versión final y que esta sea incorporada en el lenguaje si lo es es muy posible que haya cambios.</p>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/HiHgAh7wWPc" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
             
                 <category term="planeta-codigo"/>
             

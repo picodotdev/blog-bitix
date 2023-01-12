@@ -5,12 +5,140 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2023-01-06T01:00:00+01:00</updated>
+    <updated>2023-01-11T20:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/09/novedades-de-java-15/</id>
+        <title>Novedades de Java 15</title>
+        <updated>2020-09-18T14:00:00+02:00</updated>
+        <published>2020-09-18T14:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/09/novedades-de-java-15/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Algunas novedades de anteriores versiones que en la versión de Java 15 pasan a calificarse con el grado de producción y otras características como una segunda versión preliminar. Sin grandes cambios en el lenguaje tan destacables de versiones anteriores como las <em>lambdas</em> de Java 8 o los módulos de Java 9, en Java 15 se añaden las <em>sealed classes</em>.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>En septiembre del 2020 se ha publicado la versión 15 de Java siguiendo el calendario propuesto desde la versión de Java 9 de una nueva versión cada seis meses y de una versión de soporte a largo plazo cada tres años, la primera LTS ha sido Java 11 a la que sucederá Java 17 cómo LTS en septiembre de 2021.</p>
+<p>Con este calendario de publicaciones tan frecuente las novedades son varias en cada nueva versión aunque algunas son simplemente versiones preliminares que pueden cambiar ligeramente en siguientes versiones destinadas a evaluar y probar las funcionalidades que se incorporarán de forma definitiva con posterioridad. Aunque sean versiones preliminares se pueden usar con normalidad, simplemente hay que tener en cuenta que en versiones posteriores requieran modificaciones en el código fuente o lo que es lo mismo no se garantiza la compatibilidad hacia atrás hasta que sean declaradas como una versión definitiva.</p>
+<p>Dado que ahora las versiones de Java son mucho más numerosas y frecuentes se hace más necesario utilizar <a href="https://picodotdev.github.io/blog-bitix/2020/06/la-herramienta-sdkman-para-instalar-varias-versiones-del-jdk-y-software-de-la-plataforma-java/">la herramienta SDKMAN</a> para instalar al mismo tiempo varias versiones del JDK de Java y poder cambiar de una a otra con facilidad.</p>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<h3 id="introducción">Introducción</h3>
+<ul>
+<li><a href="https://openjdk.java.net/projects/jdk/15/">Características de Java 15</a></li>
+<li><a href="https://www.oracle.com/java/technologies/javase/15-relnote-issues.html">Notas de publicación de Java 15</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/15/">Documentación de Java 15</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/15/docs/api/index.html">Documentación Javadoc de Java 15</a></li>
+<li><a href="https://blogs.oracle.com/javamagazine/inside-java-15-fourteen-jeps-in-five-buckets">JavaMagazine: Inside Java 15: Fourteen JEPs in five buckets</a></li>
+</ul>
+<p>Esta es la lista de novedades de Java 15, algunas son cambios que no tiene gran impacto en el lenguaje ni la plataforma al ser más cambios internos que reimplementan y modernizan código existente, otras son versiones preliminares y segundas versiones preliminares no definitivas, algunas características en versiones anteriores se marcan como públicas dejando de ser preliminares, otras que se marcan como obsoletas desaconsejándose su uso y otras ya marcadas como obsoletas anteriormente son eliminadas.</p>
+<ul>
+<li>339: <a href="https://openjdk.java.net/jeps/339">Edwards-Curve Digital Signature Algorithm (EdDSA)</a></li>
+<li>360: <a href="https://openjdk.java.net/jeps/360">Sealed Classes (Preview)</a></li>
+<li>371: <a href="https://openjdk.java.net/jeps/371">Hidden Classes</a></li>
+<li>372: <a href="https://openjdk.java.net/jeps/372">Remove the Nashorn JavaScript Engine</a></li>
+<li>373: <a href="https://openjdk.java.net/jeps/373">Reimplement the Legacy DatagramSocket API</a></li>
+<li>374: <a href="https://openjdk.java.net/jeps/374">Disable and Deprecate Biased Locking</a></li>
+<li>375: <a href="https://openjdk.java.net/jeps/375">Pattern Matching for instanceof (Second Preview)</a></li>
+<li>377: <a href="https://openjdk.java.net/jeps/377">ZGC: A Scalable Low-Latency Garbage Collector</a></li>
+<li>378: <a href="https://openjdk.java.net/jeps/378">Text Blocks</a></li>
+<li>379: <a href="https://openjdk.java.net/jeps/379">Shenandoah: A Low-Pause-Time Garbage Collector</a></li>
+<li>381: <a href="https://openjdk.java.net/jeps/381">Remove the Solaris and SPARC Ports</a></li>
+<li>383: <a href="https://openjdk.java.net/jeps/383">Foreign-Memory Access API (Second Incubator)</a></li>
+<li>384: <a href="https://openjdk.java.net/jeps/384">Records (Second Preview)</a></li>
+<li>385: <a href="https://openjdk.java.net/jeps/385">Deprecate RMI Activation for Removal</a></li>
+</ul>
+<h3 id="nuevas-características">Nuevas características</h3>
+<h4 id="algoritmo-de-firma-digital-edwards-curve-eddsa">Algoritmo de firma digital Edwards-Curve (EdDSA)</h4>
+<p>El algoritmo de firma digital EdDSA o <em>Edwards-Curve Digital Signature Algorithm</em> (EdDSA) es demandado por mejorar la seguridad y el rendimiento comparado con otros algoritmos de firma, ya está implementado en otras librerías de criptografía como <a href="https://www.openssl.org/">OpenSSL</a>. Este esquema de firma es opcional en TLS 1.3 pero es uno de los tres permitidos. Añadir este algoritmo permite usar EdDSA en Java sin recurrir a librerías de terceras partes.</p>
+<h4 id="bloques-de-texto">Bloques de texto</h4>
+<p>En Java embeber en el código un trozo de código HTML, XML, SQL o JSON en un literal como un String requiere editarlo de forma significativa con caracteres de escape y concatenación para que el código compile. La cadena transformada resultante es poco legible y difícil de mantener.</p>
+<p>Un bloque de texto HTML en código Java requiere de múltiples caracteres de escape y concatenaciones de cadenas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">html</span> <span class="o">=</span> <span class="s">&#34;&lt;html&gt;\n&#34;</span> <span class="o">+</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;\n&#34;</span> <span class="o">+</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Hello, world&lt;/p&gt;\n&#34;</span> <span class="o">+</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;\n&#34;</span> <span class="o">+</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;&lt;/html&gt;\n&#34;</span><span class="o">;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>TextBlocks-1.java</span>
+    </div>
+</div>
+<p>Usando bloques de texto se eliminan los caracteres de escape y las concatenaciones. El código resultante es mucho más legible y fácil de mantener.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">html</span> <span class="o">=</span> <span class="s">&#34;&#34;&#34;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;html&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;body&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;p&gt;Hello, world&lt;/p&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;/body&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;/html&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &#34;&#34;&#34;</span><span class="o">;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>TextBlocks-2.java</span>
+    </div>
+</div>
+<h4 id="clases-ocultas">Clases ocultas</h4>
+<p>Se añaden clases ocultas o <em>hidden classes</em> que son clases que no pueden usarse directamente por otras clases. Su intención es que sean usadas por <em>frameworks</em> que generan clases en tiempo de ejecución y las usan de forma indirecta con <em>reflection</em>.</p>
+<h4 id="reimplementación-de-la-antigua-api-datagramsocket">Reimplementación de la antigua API DatagramSocket</h4>
+<p>Se reemplazan las implementaciones de bajo nivel para la comunicación por red <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/net/DatagramSocket.html">java.net.DatagramSocket</a> y <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/net/MulticastSocket.html">java.net.MulticastSocket</a> con una implementación mas simple y moderna que es más fácil de mantener, depurar y fácil de adaptar a <a href="https://picodotdev.github.io/blog-bitix/2020/05/la-concurrencia-en-la-plataforma-java-con-project-loom/">los <em>threads</em> virtuales del proyecto Loom</a>.</p>
+<h4 id="recolectores-de-basura-zgc-y-shenandoah">Recolectores de basura ZGC y Shenandoah</h4>
+<p>Se califican como versión de producción los recolectores de basura <em>ZGC</em> y <em>Shenandoah</em> que ofrecen tiempos de pausa bajos aunque se mantiene como recolector de basura por defecto <em>G1</em>. Se soportan todas las plataformas comunes, Linux/x86_64, Linux/aarch64, Windows y macOS. El recolector de basura <em>ZGC</em> se activa con la opción de la máquina virtual <em>-XX:+UseZGC</em> y <em>Shenandoah</em> con <em>-XX:+UseShenandoahGC</em>.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/">El recolector de basura de Java, qué hace y cómo funciona en cada versión</a></li>
+</ul>
+<h3 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h3>
+<h4 id="_sealed-classes_"><em>Sealed Classes</em></h4>
+<p>En Java las clases permiten la reutilización de código mediante la herencia, los métodos de una clase son heredados por las subclases que la extiendan. Sin embargo, en ocasiones la jerarquía de clases sirve para modelar el dominio sin querer permitir que sea extendido por cuales quiera otras clases.</p>
+<p>En Java toda clase puede ser extendida por defecto la única forma de no permitir extender una clase es utilizando la palabra reservada <em>final</em>. Sin embargo, esto impide la extensión de la clase completamente.</p>
+<p>Las clases <em>sealed</em> especifican de forma explícita que clases tiene permitido la extensión y herencia. Las clases <em>sealed</em> son más restrictivas que el comportamiento por defecto de permitir a cualquier clase la extensión pero más permisivo que si se utiliza la palabra clave <em>final</em> que impide a cualquier clase la extensión.</p>
+<p>Se introduce una nueva palabra reservada <em>sealed</em>. La declaración de la clase <em>sealed</em> se realiza con el siguiente sintaxis, en este ejemplo la clase <em>Shape</em> solo puede ser extendida por las clases <em>Circle</em>, <em>Rectangle</em> y <em>Square</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="n">sealed</span> <span class="kd">class</span> <span class="nc">Shape</span> <span class="n">permits</span> <span class="n">Circle</span><span class="o">,</span> <span class="n">Rectangle</span><span class="o">,</span> <span class="n">Square</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Circle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Rectangle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Square</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>SealedClasses.java</span>
+    </div>
+</div>
+<h4 id="_pattern-matching_-para-_instanceof_"><em>Pattern Matching</em> para <em>instanceof</em></h4>
+<p>Se mantiene en la categoría de funcionalidad preliminar esta funcionalidad ya publicada en Java 14 que permite eliminar algunos <em>cast</em> de tipos explícitos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="n">String</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">obj</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// use s&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>IfPatternMatching-1.java</span>
+    </div>
+</div>
+<p>El operador <em>instanceof</em> permite renombrar la variable y dentro de la rama usarla sin necesidad de realizar el <em>cast</em>, esto simplifica el código y evita posibles errores.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// use s&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>IfPatternMatching-2.java</span>
+    </div>
+</div>
+<h4 id="_records_"><em>Records</em></h4>
+<p>Los <em>records</em> son clases inmutables con unas convenciones implícitas que no requieren escribir mucho del código considerado ceremonial en las clases de datos Java que hacen al lenguaje <em>verboso</em> para estas clases simples.</p>
+<p>Escribir clases portadoras de datos en Java requieren una buena cantidad de código de bajo valor, repetitivo, propenso a errores para especificar constructores, métodos de acceso a propiedades e <a href="https://picodotdev.github.io/blog-bitix/2016/12/como-implementar-correctamente-y-por-que-los-metodos-equals-y-hashcode-de-los-objetos-java/">implementar correctamente los métodos <em>equals</em>, <em>hashCode</em> y <em>toString</em></a>.</p>
+<p>La siguiente clase <em>record</em> es equivalente al POJO tradicional de muchas más líneas de código.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">record</span> <span class="nf">PhoneNumber</span><span class="o">(</span><span class="n">Integer</span> <span class="n">lineNumber</span><span class="o">,</span> <span class="n">Integer</span> <span class="n">prefix</span><span class="o">,</span> <span class="n">Integer</span> <span class="n">areaCode</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Records.java</span>
+    </div>
+</div>
+<h3 id="otras-características-incorporadas-y-cambios">Otras características incorporadas y cambios</h3>
+<p>Otras especificaciones que no tienen tanto impacto desde el punto de vista del programador y en el lenguaje son las siguientes. Algunas eliminan y marcan como desaconsejado su uso.</p>
+<p>Entre las más destacables está <em>Foreign-Memory Access</em> que permite a los programas Java acceder de forma segura y eficiente a memoria externa fuera de la memoria <em>heap</em> de Java. También a destacar el soporte de Unicode 13.0 que añade unos 5K nuevos caracteres o el soporte para el algoritmo de <em>hash</em> SHA-3 en el apartado de seguridad.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://jdk.java.net/15/release-notes">JDK 15 Release Notes</a></li>
+<li><a href="https://blogs.oracle.com/javamagazine/inside-java-15-fourteen-jeps-in-five-buckets">Inside Java 15: Fourteen JEPs in five buckets</a></li>
+<li><a href="https://blogs.oracle.com/java-platform-group/the-arrival-of-java-15">The Arrival of Java 15</a></li>
+<li><a href="https://blog.jetbrains.com/idea/2020/09/java-15-and-intellij-idea/">Java 15 and IntelliJ IDEA </a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2020/09/como-comprar-una-licencia-y-activar-windows-10-y-office-2019/</id>
         <title>Cómo comprar una licencia y activar Windows 10 y Office 2019</title>
@@ -1778,186 +1906,6 @@
                 <category term="javascript"/>
             
                 <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/</id>
-        <title>Qué son, para qué sirven, formato y ejemplos de las expresiones cron</title>
-        <updated>2020-07-10T16:15:00+02:00</updated>
-        <published>2020-07-10T16:15:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<p>Las expresiones <em>cron</em> son el equivalente de expresiones regulares para seleccionar fechas, instantes de tiempo o periodos. Normalmente se utilizan para <a href="https://picodotdev.github.io/blog-bitix/2020/07/tareas-programadas-de-forma-periodica-con-quartz-y-spring-en-java/">planificar la ejecución de tareas automatizadas en librerías como Spring o Quartz</a> o <em>cron</em> de <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> en los momentos seleccionados llegando a la precisión del segundo. Algunas expresiones de fechas pueden ser sencillas como a las 10:15 AM de todos los días o tan complejas como a las 10:15 de cada tercer viernes de cada mes.</p>
-<p>Los propósitos de planificar tareas con expresiones <em>cron</em> son ejecutar procesos automatizados, por ejemplo enviar un correo electrónico a un determinada hora de cada día o generar un informe a las 3:00 de la noche de cada viernes.</p>
-<h3 id="formato-y-posibles-valores-en-cada-campo">Formato y posibles valores en cada campo</h3>
-<p>El formato de las expresiones <em>cron</em> se compone de varios campos separados por un espacios.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">second minute hour day-of-month month day-of-week [year]&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>formato-cron.txt</span>
-    </div>
-</div>
-<p>Según el campo hay varios valores posibles. En los valores numéricos de <em>day-of-week</em> los días empiezan por domingo, el valor 1 es domingo, el lunes es 2 y el 7 es el sábado.</p>
-<table class="table">
-   <thead class="table-light">
-       <th>Campo</th>
-       <th>Requerido</th>
-       <th>Valores permitidos</th>
-       <th>Caracteres especiales permitidos</th>
-   </thead>
-   <tbody>
-       <tr>
-           <td>Seconds</td>
-           <td>Sí</td>
-           <td>0-59</td>
-           <td>, - * /</td>
-       </tr>
-       <tr>
-           <td>Minutes</td>
-           <td>Sí</td>
-           <td>0-59</td>
-           <td>, - * /</td>
-       </tr>
-       <tr>
-           <td>Hours</td>
-           <td>Sí</td>
-           <td>0-23</td>
-           <td>, - * /</td>
-       </tr>
-       <tr>
-           <td>Day of month</td>
-           <td>Sí</td>
-           <td>1-31</td>
-           <td>, - * / L W</td>
-       </tr>
-       <tr>
-           <td>Month</td>
-           <td>Sí</td>
-           <td>0-11 o JAN-DEC</td>
-           <td>, - * /</td>
-       </tr>
-       <tr>
-           <td>Day of week</td>
-           <td>Sí</td>
-           <td>1-7 o SUN-SAT</td>
-           <td>, - * ? / L #</td>
-       </tr>
-       <tr>
-           <td>Year</td>
-           <td>No</td>
-           <td>vacío o 1970-2099</td>
-           <td>, - * /</td>
-       </tr>
-   </tbody>
-</table>
-<p>Los significados de los valores son:</p>
-<ul>
-<li><code>*</code> (todos): es usado para seleccionar cada unidad de tiempo. Por ejemplo, <em>*</em> en el campo minuto significa cada minuto.</li>
-<li><code>?</code> (cualquiera): es utilizando en los campos <em>day-of-month</em> y <em>day-of -week</em> para denotar un valor arbitrario. Por ejemplo, si se quiere seleccionar las fechas de <em>el quinto día de cada mes</em> independientemente del día de la semana, entonces se especifica un <em>?</em> en el campo <em>day-of-week</em>.</li>
-<li><code>–</code> (rango): es usado para seleccionar rangos de valores. Por ejemplo, <em>7-11</em> en el campo <em>hour</em> significa entre las 7 y las 11.</li>
-<li><code>,</code> (valores): es usado para especificar varios valores. Por ejemplo, <em>MON,WED,FRI</em> en el campo <em>day-of-week</em> significa el lunes, miércoles y viernes.</li>
-<li><code>/</code> (incrementos): es usado para especificar valores en incrementos. Por ejemplo, el valor <em>5/15</em> en el campo <em>minute</em> significa en el minuto 5 y con incrementos de 15 minutos siendo los minutos de cada hora seleccionados 5, 20, 35 y 50.</li>
-<li><code>L</code> (último): tiene diferentes significados según el campo en el que se usa. Por ejemplo, si es aplicado al campo <em>day-of-month</em>, entonces significa el último día de cada mes, el día 31 para enero o anterior en otros meses con menos días. Puede usarse con un desplazamiento como <em>L-3</em>, esto significa <em>3 días antes del último día del mes</em>. En el campo <em>day-of-week</em> significa el <em>último día de la semana</em>. También puede usarse con otro valor en el campo <em>day-of-week</em>, como <em>6L</em> lo que significa el <em>último viernes</em> del mes.</li>
-<li><code>W</code> (día entre semana): es usado para especificar en día entre semana (de lunes a viernes) más cercano dado un día del mes. Por ejemplo, si se especifica <em>10W</em> en el campo <em>day-of-month</em> significa <em>el día entre semana más cercano al 10 de cada mes</em>. De modo que si el día 10 del més es sábado se selecciona el viernes 9 y si el día 10 es domingo se selecciona el lunes 11. Si se especifica 1W en en <em>day-of-month</em> y el día 1 es sábado, entonces se selecciona el dia lunes 3, esto es, no se salta al mes anterior.</li>
-<li><code>#</code> (ocurrencia): es usado para especificar el cardinal de la ocurrencia de una semana del mes. Por ejemplo, <em>el tercer viernes del mes</em> se indica con <em>6#3</em> en el campo <em>day-of-week</em>.</li>
-</ul>
-<p>Los valores <code>/</code>, <code>L</code>, <code>W</code> y <code>#</code> son caracteres no estándares, para comprobar si están soportados hay que consultar la documentación de la implementación de las expresiones <em>cron</em>, varía según la herramienta.</p>
-<h3 id="ejemplos-y-generador-de-expresiones-cron">Ejemplos y generador de expresiones cron</h3>
-<p>Las expresiones <em>cron</em> complejas son dífíciles de crear, para asegurar que la expresión cron está bien construida o para generarlas de forma sencilla hay alguna utilidad en internet, una de ellas es este <a href="https://freeformatter.com/cron-expression-generator-quartz.html">generador y explicador de expresiones cron</a>.</p>
-<p>Algunos ejemplos de expresiones con su explicación son los siguientes.</p>
-<table class="table">
-   <thead class="table-light">
-       <th width="300px">Expresión cron</th>
-       <th>Explicación</th>
-   </thead>
-   <tbody>
-       <tr>
-           <td>0 0 12 * * ?</td>
-           <td>Cada día a las 12:00 PM (12 del medio día)</td>
-       </tr>
-       <tr>
-           <td>0 15 10 * * *</td>
-           <td>Cada día a las 10:15 AM</td>
-       </tr>
-       <tr>
-           <td>0 15 10 * * ? 2005</td>
-           <td>Cada día a las 10:15 AM durante el año 2005</td>
-       </tr>
-       <tr>
-           <td>0 * 14 * * ?</td>
-           <td>Cada minuto de la hora 14, de cada día</td>
-       </tr>
-       <tr>
-           <td>0 0/5 14 * * ?</td>
-           <td>Cada 5 minutos de la hora 14 empezando en el minuto 0, de cada día</td>
-       </tr>
-       <tr>
-           <td>0 0/5 14,18 * * ?</td>
-           <td>Cada 5 minutos de las horas 14 y 18 empezando en el minuto 0, de cada día</td>
-       </tr>
-       <tr>
-           <td>0 0-5 14 * * ?</td>
-           <td>Cada minuto entre 0 y 5 de la hora 14, de cada día</td>
-       </tr>
-       <tr>
-           <td>0 10,44 14 ? 3 WED</td>
-           <td>A las 14:10 y 14:44 de cada miércoles de marzo</td>
-       </tr>
-       <tr>
-           <td>0 15 10 ? * MON-FRI</td>
-           <td>A las 10:15 AM de cada lunes, martes, miércoles, jueves y viernes</td>
-       </tr>
-       <tr>
-           <td>0 15 10 15 * ? </td>
-           <td>A las 10:15 AM del día 15 de cada mes</td>
-       </tr>
-       <tr>
-           <td>0 15 10 L * ?</td>
-           <td>A las 10:15 AM del último día del mes</td>
-       </tr>
-       <tr>
-           <td>0 15 10 ? * 6L</td>
-           <td>A las 10:15 AM del último viernes del mes</td>
-       </tr>
-       <tr>
-           <td>0 15 10 ? * 6L 2002-2005</td>
-           <td>A las 10:15 AM de cada viernes del mes de los años 2002, 2003, 2004 y 2005</td>
-       </tr>
-       <tr>
-           <td>0 15 10 ? * 6#3</td>
-           <td>A las 10:15 AM del tercer viernes de cada mes</td>
-       </tr>
-       <tr>
-           <td>0 0 12 1/5 * ?</td>
-           <td>A las 12 PM (12 del medio día) cada cinco días del mes, empezando desde el primer día del mes</td>
-       </tr>
-       <tr>
-           <td>0 11 11 11 11 ?</td>
-           <td>Cada 11 de noviembre a las 11:11 AM</td>
-       </tr>
-   </tbody>
-</table>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm">Cron Expressions</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Cron#CRON_expression">Cron expression</a></li>
-<li><a href="https://riptutorial.com/spring/example/21209/cron-expression">Cron expression</a></li>
-<li><a href="http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html">Cron Trigger Tutorial</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
             
         
     </entry>

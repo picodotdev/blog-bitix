@@ -5,12 +5,67 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2023-01-06T01:00:00+01:00</updated>
+    <updated>2023-01-11T20:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/</id>
+        <title>Cambiar la ruta raíz del entorno de Docker</title>
+        <updated>2015-11-14T12:00:00+02:00</updated>
+        <published>2015-07-24T20:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Cambiando la ruta raíz del entorno de ejecución de docker, dónde guarda las imágenes de los contenedores, los datos de los contenedores y otros metadatos, podemos almacenar esta información en un disco duro externo o memoria USB.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
+</div>
+<p>Por defecto el directorio donde se guardan las imágenes y los contenedores junto con otros metadatos de <a href="https://www.docker.com/">Docker</a> es <em>/var/lib/docker</em>. En mi caso hace un tiempo me compre un <a href="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/">disco de estado sólido Samsung 840 EVO de 250 GiB</a> y comenté en el artículo del anterior enlace. Aunque probablemente un disco SSD sea suficientemente fiable como para que antes de que falle cambiémos de ordenador porque ya es antiguo, yo trato de evitar hacer muchas escrituras al disco. Al trabajar con Docker ya sea descargando imágenes, <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">construyendo imágenes propias con archivos Dockerfile</a> y al arrancar contenedores cuyos procesos escriben en disco prefiero externalizar esas escrituras en una unidad USB ya sea un <em>pendrive</em> o un disco duro. En este artículo comentaré como modificar Docker para que las imágenes y los contenedores estén almacenados en una memoria USB o en otra localización de la por defecto.</p>
+<p>En Arch Linux el proceso de docker se arranca con un servicio de systemd:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo systemctl start docker.service&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-start.sh</span>
+    </div>
+</div>
+<p>En la definición del servicio de docker se establecen los parámetros de inicio del demonio de docker y deberemos cambiarlo para cambiar la localización de las imágenes y contenedores. En la información de ayuda del comando de docker podemos ver que si queremos cambiar la localización por defecto de las imágenes y contenedores de docker debemos emplear la opción <em>-g &ldquo;/var/lib/docker&rdquo;</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker --help&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">Usage: docker <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>arg...<span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">A self-sufficient runtime <span class="k">for</span> linux containers.&#10;</span></span><span class="line"><span class="cl">...&#10;</span></span><span class="line"><span class="cl">-g, --graph<span class="o">=</span><span class="s2">&#34;/var/lib/docker&#34;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Path to use as the root of the Docker runtime&#10;</span></span><span class="line"><span class="cl">...</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-help.sh</span>
+    </div>
+</div>
+<p>En Arch Linux el servicio de systemd de docker se guarda en <em>/usr/lib/systemd/system/docker.service</em>. Modificando el parámetro <em>ExecStart</em> de la sección <em>[Service]</em> para añadir el parámetro <em>-g</em> nos quedaría algo como:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-systemd" data-lang="systemd"><span class="line"><span class="cl"><span class="k">[Unit]</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">Description</span><span class="o">=</span><span class="s">Docker Application Container Engine</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">Documentation</span><span class="o">=</span><span class="s">http://docs.docker.com</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">After</span><span class="o">=</span><span class="s">network.target docker.socket</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">Requires</span><span class="o">=</span><span class="s">docker.socket</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="k">[Service]</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/bin/docker -d -H fd:// -g /run/media/picodotdev/BMOVE_ROJO/docker/root</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">MountFlags</span><span class="o">=</span><span class="s">slave</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">LimitNOFILE</span><span class="o">=</span><span class="s">1048576</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">LimitNPROC</span><span class="o">=</span><span class="s">1048576</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="k">[Install]</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker.service</span>
+    </div>
+</div>
+<p>Iniciando ahora el servicio de Docker veremos que en el directorio que hayamos elegido se crean los metadatos y si hacemos un <em>pull</em> de una imagen se guardará en esta localización.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/images/docker-root_huf301198ed05a6799a7c84e4217e4eb0f_47801_2560x1440_fit_box_3.png" data-gallery="" title="Directorio raíz de docker"><img src="https://picodotdev.github.io/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/images/docker-root_huf301198ed05a6799a7c84e4217e4eb0f_47801_300x200_fit_box_3.png" width="300" height="143" alt="Directorio raíz de docker" title="Directorio raíz de docker"  class="lozad "></a></p>
+<figcaption>Directorio raíz de docker</figcaption>
+</figure>
+</div>
+<div class="alert alert-warning">
+    <p>Cada vez que se actualice el paquete de docker el archivo del servicio de systemd se sobrescribirá y perderemos la configuración, de modo que en cada actualización de docker deberemos realizar de nuevo la modificación.</p>
+</div>
+<p>Este artículo es uno de otros que he publicado, en otros artículos he escrito sobre otras cosas relacionadas con docker.</p>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2015/07/como-trabajar-con-importes-ratios-y-divisas-en-java/</id>
         <title>Cómo trabajar con importes, ratios y divisas en Java</title>
@@ -1259,71 +1314,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="web"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2015/04/nueva-visita-a-5-plus-opciones-de-hosting-para-aplicaciones/</id>
-        <title>Nueva visita a 5&#43; opciones de «hosting» para aplicaciones</title>
-        <updated>2018-04-05T19:00:00+02:00</updated>
-        <published>2015-04-17T19:56:10+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/04/nueva-visita-a-5-plus-opciones-de-hosting-para-aplicaciones/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>En esta nueva revisión de las opciones de alojamiento que disponemos incluyo algunas nuevas que en su momento no conocía. Dependiendo de las necesidades y del presupuesto que tengamos podemos optar por un servidor propio, un proveedor de <em>hosting</em>, usar alguna de las nubes más utilizadas o algún otro PaaS o IaaS.</strong></p>]]>
-        <![CDATA[<p>Hace tres años escribí un artículo sobre <a href="https://elblogdepicodev.blogspot.com.es/2012/02/5-opciones-de-hosting-para-aplicaciones.htmlindex-amp.html">varias opciones de <em>hosting</em></a> que disponemos para hospedar aplicaciones o páginas web. En ese artículo comentaba varias posibilidades desde un servidor propio usando una  Raspberry Pi, proveedores de <em>hosting</em>, <a href="https://aws.amazon.com/es/ec2/">Amazon EC2</a>, <a href="https://cloud.google.com/appengine/">Google App Engine</a>, <a href="https://jelastic.com/">Jelastic</a>, <a href="https://www.openshift.com/">OpenShift</a>, <a href="https://www.appfog.com/">AppFog</a>, <a href="https://cloudfoundry.org/">Cloud Foundry (VMWare)</a>, <a href="https://www.heroku.com/">Heroku</a>, <a href="https://azure.microsoft.com/es-es/">Azure (Microsoft)</a> y <a href="https://cloud.google.com/compute/">Google Compute (Google Cloud Platform)</a>. Pasado todo este tiempo en este artículo revisaré las opciones de hospedaje con algunas nuevas que en su momento no conocía, otras siguen siendo totalmente válidas.</p>
-<h3 id="servidor-propio">Servidor propio</h3>
-<p>Si queremos una opción para algo simple y para nosotros mismos podemos utilizar un servidor propio usando como <em>hardware</em> por ejemplo una <a href="https://amzn.to/2umoNav">Raspberry Pi 4</a>, con la segunda versión de este miniordenador que ahora tiene 4 núcleos y 1 GiB de memoria puede servirnos para cantidad de cosas interesantes. Además de la Raspberry Pi 2 hay multitud de dispositivos similares, en la <a href="https://archlinuxarm.org/">página de Arch Linux ARM</a> podemos ver los modelos soportados en esta distribución. Otro modelo destacado es la <a href="http://www.solid-run.com/products/cubox-i-mini-computer/cubox-i-specifications/">Cubox-i</a> también con 4 núcleos y en el modelo más potente con 2 GiB de memoria aunque bastante más caro que la Raspberry Pi.</p>
-<p>Uno de los usos para los que nos puede servir es para albergar con <a href="https://owncloud.org/">ownCloud</a> tu información personal como archivos, fotos, calendarios, contactos pudiendo acceder desde cualquier dispositivo ya sea el ordenador personal, teléfono inteligente o dispositivo móvil. Su punto a favor es que tus datos están bajo tu control. Aunque esta opción es posible se puede optar por otras opciones que comento más adelante, uno de los motivos es que no es fiable el servicio que podemos ofrecer ya que depende la conexión a internet que podemos tener en nuestra casa y por los cortes de corriente que se pueden producir o los fallos en el <em>hardware</em> que puede provocar que perdamos los datos si no tenemos copias de seguridad.</p>
-<p>Con esta opción tendremos un control total del <em>software</em> instalado sin ninguna limitación, sin embargo, si necesitamos escalar la aplicación tendremos más dificultades si necesitamos comprar <em>hardware</em> nuevo.</p>
-<div class="media">
-<figure>
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="137" height="168" alt="Raspberry Pi" title="Raspberry Pi"  class="lozad "></p>
-</figure>
-</div>
-<h3 id="proveedor-de-_hosting_">Proveedor de <em>hosting</em></h3>
-<p>La siguiente opción a considerar puede ser un servidor ofrecido por muchos registradores de dominios. Si el tráfico del servicio que planeamos ofrecer no es muy alto (y así serán en los inicios) es una opción adecuada. En la mayoría de las opciones de este tipo estaremos limitados en el lenguaje de programación que podremos usar generalmente <a href="https://secure.php.net/">PHP</a> o la base de datos generalmente <a href="https://www.mysql.com/">MySQL</a>.</p>
-<p>Mucha gente usa esta opción para albergar su bitácora con <a href="https://wordpress.org/">WordPress</a> que incluso para un tráfico considerable es suficiente, por supuesto es válida para las empresas que quieran tener presencia en internet aunque solo sea para incluir su dirección teléfono de contacto y una breve descripción y los productos que ofrece. Para estos usos el coste de esta opción puede estar entre 1 €/mes y 20 €/mes aparte del coste del dominio.</p>
-<p>Hay multitud de proveedores algunos de los más conocidos son <a href="https://www.dondominio.com/">DonDominio</a>, <a href="https://www.arsys.es/">Arsys</a>, <a href="https://www.piensasolutions.com/">Piensa Solutions</a>, &hellip; pero ninguno de estos y en otros casos muy pocos ofrecen <em>hosting</em> para aplicaciones de la plataforma Java. No tendremos libertad en la tecnología que usamos ni siquiera en las versiones de la misma.</p>
-<p>Una opción es el <a href="https://www.anw.es/alojamiento-web/alojamiento-hosting-java.html"><em>hosting</em> Java</a> de <a href="https://www.anw.es">anw</a> que tiene unas opciones interesantes que no poseen otros a unos precios similares a los que se ofrecen en este tipo de <em>hosting</em>, en algunos apartados superiores a la competencia como la RAM o cuota de <a href="https://www.mysql.com/">MySQL</a>. A destacar las opciones de tener una máquina virtual de Java dedicada con una versión específica, incluye el dominio gratis y con una centena de cuentas de correo, posibilidad de certificado SSL con <a href="https://letsencrypt.org/">Let&rsquo;s encrypt</a>, pudiendo elegir entre varios de los más populares servidores de aplicaciones Java (<a href="https://tomcat.apache.org/">Tomcat</a>, <a href="https://www.payara.fish/">Glassfish/Payara</a> o <a href="https://wildfly.org/">WildFly</a>), varias cantidades de memoria RAM según el plan contratado que en picos de carga puntuales pueden ser sobrepasados sin caída de servicio como ocurriría en otras opciones y base de datos MySQL. Poseen un <a href="https://www.youtube.com/watch?v=aZFC_8MyLeM">panel de administración</a> con el que administrar la versión del JDK, el servidor de aplicaciones y la aplicación. Es una opción sencilla contando con soporte técnico sin necesidad de tener que administrar el servidor como en otras opciones de <em>hosting</em> pero en la que se posee un buen control de la aplicación. En otras opciones ofrecen también alojamiento web con el popular <a href="https://wordpress.org/">WordPress</a>.</p>
-<h3 id="amazon-ec2-azure-google-cloud">Amazon EC2, Azure, Google Cloud</h3>
-<p>Si la aplicación o proyecto crece las nubes de <a href="https://aws.amazon.com/es/ec2/">Amazon EC2</a>, <a href="https://azure.microsoft.com/es-es/">microsoft-azure</a> y <a href="https://cloud.google.com/">Google Cloud</a> se adaptan a las necesidades que tengamos ahora y, mejor aún, en el futuro. Y si en un futuro es necesario nos proporcionan flexibilidad pudiendo ampliar o reducir los recursos consumidos. Son algo más caras que otras opciones pero por lo que ofrecen son buenas opciones, por ejemplo, Amazon EC2 ofrece <a href="http://aws.amazon.com/es/products/">varios servicios</a> que enriquecen su oferta de <a href="https://en.wikipedia.org/wiki/Cloud_computing">infraestructura como servicio</a> (IaaS, <em>Infrastructure as a service</em>). En estas opciones de IaaS tendremos gran control sobre el <em>software</em> que instalamos, deberemos tener en cuenta que los datos que maneja la aplicación estarán hospedados en los sistemas de la nube elegida.</p>
-<p>En estas opciones IaaS tenemos libertad de elegir el lenguaje de programación que queremos emplear para en la aplicación ya sea <a href="https://www.oracle.com/technetwork/java/index.html">Java</a>, <a href="https://secure.php.net/">PHP</a>, <a href="https://www.python.org/">Python</a>, <a href="https://dotnet.microsoft.com/">C#</a> o <a href="https://www.ruby-lang.org/es/">Ruby</a>, &hellip; también tendremos libertad en la base de datos <a href="https://www.mysql.com/">MySQL</a>, <a href="https://www.postgresql.org/">PosgreSQL</a>, <a href="https://redis.io/">Redis</a>, &hellip; o en el servidor de aplicaciones o servidor web.</p>
-<p>En Amazon EC2 el coste puede variar dependiendo de los recursos que reservemos, para una aplicación mediana una instancia <em>t1.small</em> con 2GiB de memoria reservada previamente y 50 GiB de espacio de disco SSD durante 3 años cuesta unos 332.00 € por reservar la instancia durante ese periodo y unos 2 € adicionales al mes, a esto deberemos sumar el coste del dominio. En la <a href="http://calculator.s3.amazonaws.com/index.html">calculadora de Amazon EC2</a> podemos estimar el coste según los recursos que necesitemos.</p>
-<div class="media">
-<figure>
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/amazon-web-services.png" width="268" height="118" alt="Amazon Web Services" title="Amazon Web Services"  class="lozad ">
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/microsoft-azure.png" width="218" height="118" alt="Microsoft Azure" title="Microsoft Azure"  class="lozad ">
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/google-cloud.png" width="401" height="66" alt="Google Cloud" title="Google Cloud"  class="lozad "></p>
-</figure>
-</div>
-<h3 id="linode-digital-ocean">Linode, Digital Ocean</h3>
-<p>Algunas opciones totalmente válidas para muchos casos que también nos proporcionan flexibilidad son <a href="https://www.linode.com/">Linode</a> y <a href="https://www.digitalocean.com/">Digital Ocean</a>, también entran dentro de la categoría de IaaS. El coste de los planes ofrecidos por cada una de estas es muy sencillo en Linode empieza desde los 10 €/mes hasta los 80 €/mes y en Digital Ocean desde los 5 €/mes pasando por los 80 €/mes hasta los 640 €/mes. Salvo los planes de volúmenes altos de Digital Ocean los precios son similares a Linode según las características disponibles en ambos.</p>
-<p>Estas opciones son totalmente válidas tanto para proyectos personales como un blog con WordPress como para proyectos profesionales. La nube de Amazon ofrece multitud de servicios que en algunos casos son útiles pero si no nos son necesarios las opciones comentadas en este apartado serán suficientes y algo más baratas.</p>
-<div class="media">
-<figure>
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linode.png" width="268" height="117" alt="Linode" title="Linode"  class="lozad ">
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/digital-ocean.png" width="218" height="144" alt="Digital Ocean" title="Digital Ocean"  class="lozad "></p>
-</figure>
-</div>
-<h3 id="otras">Otras</h3>
-<p>Hay otro tipo de opciones conocidas como <a href="https://en.wikipedia.org/wiki/Cloud_computing">plataforma como servicio</a> (PaaS, <em>Platform as a service</em>) como <a href="https://www.openshift.com/">OpenShift</a>, <a href="https://www.appfog.com/">AppFog</a>, <a href="https://cloudfoundry.org/">Cloud Foundry</a>, <a href="https://www.heroku.com/">Heroku</a>. De entre estas destacaré OpenShift ya que proporciona una capa gratuita con la que tendremos lo que ellos denominan <em>gears</em>, nos ofrecen gratuitamente 3 con 512 MiB de memoria y 1 GiB de espacio en disco. Esta opción es la que he utilizado para construir <a href="https://twitter.com/blogstackinfo">Blog Stack</a>, en el artículo <a href="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/">Arquitectura y hospedaje de Blog Stack</a> detallo técnicamente el proyecto en el que el único coste es el dominio (12 €/año).</p>
-<h3 id="notas-finales">Notas finales</h3>
-<p>Las opciones son múltiples para hospedar nuestra aplicación. Si se trata de algo para uso personal una Raspberry Pi pueda valernos, si se trata de una web presencial estática que no requiera programación un proveedor de <em>hosting</em> será suficiente. Si queremos tener flexibilidad y más libertad en las herramientas del proyecto las nubes de Amazon, Azure o Google nos servirán. Si no necesitamos todos los servicios de los anteriores Linode o Digital Ocean ofrecen unos planes de precios muy sencillos y previsibles. Finalmente están los PaaS que permiten desentendernos de la infraestructura y centrarnos en la aplicación.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/02/5-opciones-de-hosting-para-aplicaciones.html">5 opciones de hosting para aplicaciones Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/">Arquitectura y hospedaje de Blog Stack</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="programacion"/>
-            
-                <category term="planeta-codigo"/>
             
         
     </entry>

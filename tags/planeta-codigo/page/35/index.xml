@@ -5,12 +5,77 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2023-01-06T01:00:00+01:00</updated>
+    <updated>2023-01-11T20:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2015/04/nueva-visita-a-5-plus-opciones-de-hosting-para-aplicaciones/</id>
+        <title>Nueva visita a 5&#43; opciones de «hosting» para aplicaciones</title>
+        <updated>2018-04-05T19:00:00+02:00</updated>
+        <published>2015-04-17T19:56:10+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/04/nueva-visita-a-5-plus-opciones-de-hosting-para-aplicaciones/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>En esta nueva revisión de las opciones de alojamiento que disponemos incluyo algunas nuevas que en su momento no conocía. Dependiendo de las necesidades y del presupuesto que tengamos podemos optar por un servidor propio, un proveedor de <em>hosting</em>, usar alguna de las nubes más utilizadas o algún otro PaaS o IaaS.</strong></p>]]>
+        <![CDATA[<p>Hace tres años escribí un artículo sobre <a href="https://elblogdepicodev.blogspot.com.es/2012/02/5-opciones-de-hosting-para-aplicaciones.htmlindex-amp.html">varias opciones de <em>hosting</em></a> que disponemos para hospedar aplicaciones o páginas web. En ese artículo comentaba varias posibilidades desde un servidor propio usando una  Raspberry Pi, proveedores de <em>hosting</em>, <a href="https://aws.amazon.com/es/ec2/">Amazon EC2</a>, <a href="https://cloud.google.com/appengine/">Google App Engine</a>, <a href="https://jelastic.com/">Jelastic</a>, <a href="https://www.openshift.com/">OpenShift</a>, <a href="https://www.appfog.com/">AppFog</a>, <a href="https://cloudfoundry.org/">Cloud Foundry (VMWare)</a>, <a href="https://www.heroku.com/">Heroku</a>, <a href="https://azure.microsoft.com/es-es/">Azure (Microsoft)</a> y <a href="https://cloud.google.com/compute/">Google Compute (Google Cloud Platform)</a>. Pasado todo este tiempo en este artículo revisaré las opciones de hospedaje con algunas nuevas que en su momento no conocía, otras siguen siendo totalmente válidas.</p>
+<h3 id="servidor-propio">Servidor propio</h3>
+<p>Si queremos una opción para algo simple y para nosotros mismos podemos utilizar un servidor propio usando como <em>hardware</em> por ejemplo una <a href="https://amzn.to/2umoNav">Raspberry Pi 4</a>, con la segunda versión de este miniordenador que ahora tiene 4 núcleos y 1 GiB de memoria puede servirnos para cantidad de cosas interesantes. Además de la Raspberry Pi 2 hay multitud de dispositivos similares, en la <a href="https://archlinuxarm.org/">página de Arch Linux ARM</a> podemos ver los modelos soportados en esta distribución. Otro modelo destacado es la <a href="http://www.solid-run.com/products/cubox-i-mini-computer/cubox-i-specifications/">Cubox-i</a> también con 4 núcleos y en el modelo más potente con 2 GiB de memoria aunque bastante más caro que la Raspberry Pi.</p>
+<p>Uno de los usos para los que nos puede servir es para albergar con <a href="https://owncloud.org/">ownCloud</a> tu información personal como archivos, fotos, calendarios, contactos pudiendo acceder desde cualquier dispositivo ya sea el ordenador personal, teléfono inteligente o dispositivo móvil. Su punto a favor es que tus datos están bajo tu control. Aunque esta opción es posible se puede optar por otras opciones que comento más adelante, uno de los motivos es que no es fiable el servicio que podemos ofrecer ya que depende la conexión a internet que podemos tener en nuestra casa y por los cortes de corriente que se pueden producir o los fallos en el <em>hardware</em> que puede provocar que perdamos los datos si no tenemos copias de seguridad.</p>
+<p>Con esta opción tendremos un control total del <em>software</em> instalado sin ninguna limitación, sin embargo, si necesitamos escalar la aplicación tendremos más dificultades si necesitamos comprar <em>hardware</em> nuevo.</p>
+<div class="media">
+<figure>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="137" height="168" alt="Raspberry Pi" title="Raspberry Pi"  class="lozad "></p>
+</figure>
+</div>
+<h3 id="proveedor-de-_hosting_">Proveedor de <em>hosting</em></h3>
+<p>La siguiente opción a considerar puede ser un servidor ofrecido por muchos registradores de dominios. Si el tráfico del servicio que planeamos ofrecer no es muy alto (y así serán en los inicios) es una opción adecuada. En la mayoría de las opciones de este tipo estaremos limitados en el lenguaje de programación que podremos usar generalmente <a href="https://secure.php.net/">PHP</a> o la base de datos generalmente <a href="https://www.mysql.com/">MySQL</a>.</p>
+<p>Mucha gente usa esta opción para albergar su bitácora con <a href="https://wordpress.org/">WordPress</a> que incluso para un tráfico considerable es suficiente, por supuesto es válida para las empresas que quieran tener presencia en internet aunque solo sea para incluir su dirección teléfono de contacto y una breve descripción y los productos que ofrece. Para estos usos el coste de esta opción puede estar entre 1 €/mes y 20 €/mes aparte del coste del dominio.</p>
+<p>Hay multitud de proveedores algunos de los más conocidos son <a href="https://www.dondominio.com/">DonDominio</a>, <a href="https://www.arsys.es/">Arsys</a>, <a href="https://www.piensasolutions.com/">Piensa Solutions</a>, &hellip; pero ninguno de estos y en otros casos muy pocos ofrecen <em>hosting</em> para aplicaciones de la plataforma Java. No tendremos libertad en la tecnología que usamos ni siquiera en las versiones de la misma.</p>
+<p>Una opción es el <a href="https://www.anw.es/alojamiento-web/alojamiento-hosting-java.html"><em>hosting</em> Java</a> de <a href="https://www.anw.es">anw</a> que tiene unas opciones interesantes que no poseen otros a unos precios similares a los que se ofrecen en este tipo de <em>hosting</em>, en algunos apartados superiores a la competencia como la RAM o cuota de <a href="https://www.mysql.com/">MySQL</a>. A destacar las opciones de tener una máquina virtual de Java dedicada con una versión específica, incluye el dominio gratis y con una centena de cuentas de correo, posibilidad de certificado SSL con <a href="https://letsencrypt.org/">Let&rsquo;s encrypt</a>, pudiendo elegir entre varios de los más populares servidores de aplicaciones Java (<a href="https://tomcat.apache.org/">Tomcat</a>, <a href="https://www.payara.fish/">Glassfish/Payara</a> o <a href="https://wildfly.org/">WildFly</a>), varias cantidades de memoria RAM según el plan contratado que en picos de carga puntuales pueden ser sobrepasados sin caída de servicio como ocurriría en otras opciones y base de datos MySQL. Poseen un <a href="https://www.youtube.com/watch?v=aZFC_8MyLeM">panel de administración</a> con el que administrar la versión del JDK, el servidor de aplicaciones y la aplicación. Es una opción sencilla contando con soporte técnico sin necesidad de tener que administrar el servidor como en otras opciones de <em>hosting</em> pero en la que se posee un buen control de la aplicación. En otras opciones ofrecen también alojamiento web con el popular <a href="https://wordpress.org/">WordPress</a>.</p>
+<h3 id="amazon-ec2-azure-google-cloud">Amazon EC2, Azure, Google Cloud</h3>
+<p>Si la aplicación o proyecto crece las nubes de <a href="https://aws.amazon.com/es/ec2/">Amazon EC2</a>, <a href="https://azure.microsoft.com/es-es/">microsoft-azure</a> y <a href="https://cloud.google.com/">Google Cloud</a> se adaptan a las necesidades que tengamos ahora y, mejor aún, en el futuro. Y si en un futuro es necesario nos proporcionan flexibilidad pudiendo ampliar o reducir los recursos consumidos. Son algo más caras que otras opciones pero por lo que ofrecen son buenas opciones, por ejemplo, Amazon EC2 ofrece <a href="http://aws.amazon.com/es/products/">varios servicios</a> que enriquecen su oferta de <a href="https://en.wikipedia.org/wiki/Cloud_computing">infraestructura como servicio</a> (IaaS, <em>Infrastructure as a service</em>). En estas opciones de IaaS tendremos gran control sobre el <em>software</em> que instalamos, deberemos tener en cuenta que los datos que maneja la aplicación estarán hospedados en los sistemas de la nube elegida.</p>
+<p>En estas opciones IaaS tenemos libertad de elegir el lenguaje de programación que queremos emplear para en la aplicación ya sea <a href="https://www.oracle.com/technetwork/java/index.html">Java</a>, <a href="https://secure.php.net/">PHP</a>, <a href="https://www.python.org/">Python</a>, <a href="https://dotnet.microsoft.com/">C#</a> o <a href="https://www.ruby-lang.org/es/">Ruby</a>, &hellip; también tendremos libertad en la base de datos <a href="https://www.mysql.com/">MySQL</a>, <a href="https://www.postgresql.org/">PosgreSQL</a>, <a href="https://redis.io/">Redis</a>, &hellip; o en el servidor de aplicaciones o servidor web.</p>
+<p>En Amazon EC2 el coste puede variar dependiendo de los recursos que reservemos, para una aplicación mediana una instancia <em>t1.small</em> con 2GiB de memoria reservada previamente y 50 GiB de espacio de disco SSD durante 3 años cuesta unos 332.00 € por reservar la instancia durante ese periodo y unos 2 € adicionales al mes, a esto deberemos sumar el coste del dominio. En la <a href="http://calculator.s3.amazonaws.com/index.html">calculadora de Amazon EC2</a> podemos estimar el coste según los recursos que necesitemos.</p>
+<div class="media">
+<figure>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/amazon-web-services.png" width="268" height="118" alt="Amazon Web Services" title="Amazon Web Services"  class="lozad ">
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/microsoft-azure.png" width="218" height="118" alt="Microsoft Azure" title="Microsoft Azure"  class="lozad ">
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/google-cloud.png" width="401" height="66" alt="Google Cloud" title="Google Cloud"  class="lozad "></p>
+</figure>
+</div>
+<h3 id="linode-digital-ocean">Linode, Digital Ocean</h3>
+<p>Algunas opciones totalmente válidas para muchos casos que también nos proporcionan flexibilidad son <a href="https://www.linode.com/">Linode</a> y <a href="https://www.digitalocean.com/">Digital Ocean</a>, también entran dentro de la categoría de IaaS. El coste de los planes ofrecidos por cada una de estas es muy sencillo en Linode empieza desde los 10 €/mes hasta los 80 €/mes y en Digital Ocean desde los 5 €/mes pasando por los 80 €/mes hasta los 640 €/mes. Salvo los planes de volúmenes altos de Digital Ocean los precios son similares a Linode según las características disponibles en ambos.</p>
+<p>Estas opciones son totalmente válidas tanto para proyectos personales como un blog con WordPress como para proyectos profesionales. La nube de Amazon ofrece multitud de servicios que en algunos casos son útiles pero si no nos son necesarios las opciones comentadas en este apartado serán suficientes y algo más baratas.</p>
+<div class="media">
+<figure>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linode.png" width="268" height="117" alt="Linode" title="Linode"  class="lozad ">
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/digital-ocean.png" width="218" height="144" alt="Digital Ocean" title="Digital Ocean"  class="lozad "></p>
+</figure>
+</div>
+<h3 id="otras">Otras</h3>
+<p>Hay otro tipo de opciones conocidas como <a href="https://en.wikipedia.org/wiki/Cloud_computing">plataforma como servicio</a> (PaaS, <em>Platform as a service</em>) como <a href="https://www.openshift.com/">OpenShift</a>, <a href="https://www.appfog.com/">AppFog</a>, <a href="https://cloudfoundry.org/">Cloud Foundry</a>, <a href="https://www.heroku.com/">Heroku</a>. De entre estas destacaré OpenShift ya que proporciona una capa gratuita con la que tendremos lo que ellos denominan <em>gears</em>, nos ofrecen gratuitamente 3 con 512 MiB de memoria y 1 GiB de espacio en disco. Esta opción es la que he utilizado para construir <a href="https://twitter.com/blogstackinfo">Blog Stack</a>, en el artículo <a href="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/">Arquitectura y hospedaje de Blog Stack</a> detallo técnicamente el proyecto en el que el único coste es el dominio (12 €/año).</p>
+<h3 id="notas-finales">Notas finales</h3>
+<p>Las opciones son múltiples para hospedar nuestra aplicación. Si se trata de algo para uso personal una Raspberry Pi pueda valernos, si se trata de una web presencial estática que no requiera programación un proveedor de <em>hosting</em> será suficiente. Si queremos tener flexibilidad y más libertad en las herramientas del proyecto las nubes de Amazon, Azure o Google nos servirán. Si no necesitamos todos los servicios de los anteriores Linode o Digital Ocean ofrecen unos planes de precios muy sencillos y previsibles. Finalmente están los PaaS que permiten desentendernos de la infraestructura y centrarnos en la aplicación.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/02/5-opciones-de-hosting-para-aplicaciones.html">5 opciones de hosting para aplicaciones Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/">Arquitectura y hospedaje de Blog Stack</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="programacion"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/</id>
         <title>Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas</title>
@@ -1235,86 +1300,6 @@ http://tynamo.org/tapestry-security+guide<br></li>
                 <category term="planeta-codigo"/>
             
                 <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/</id>
-        <title>Introducción e inicio a Drupal</title>
-        <updated>2015-11-10T19:00:00+01:00</updated>
-        <published>2015-01-10T11:08:12+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes"> 
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/drupal.svg" width="200" height="218" alt="Drupal" title="Drupal"  class=""></p>
-</div>
-<p>Para los proyectos web cuyo punto central es el contenido disponemos de algunas opciones que prácticamente nos dan la solución hecha o facilitan enormemente la tarea como desarrolladores y posteriormente a los administradores que no necesitarán un gran conocimiento para administrar la web. Estas aplicaciones se les suele conocer como <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">Sistemas de gestión de contenidos</a> (Content Management System, CMS) y como siempre disponemos de varias opciones, algunas similares.</p>
-<p>No soy un experto en CMS ni he usado uno en un proyecto real pero trataré en este artículo hacer una introducción a <a href="https://www.drupal.org/">Drupal</a>. Hay otras opciones como <a href="https://wordpress.org/">Wordpress</a> o <a href="https://www.joomla.org/">Joomla</a> también desarrolladas en <a href="https://secure.php.net/">PHP</a> y en el ámbito <a href="https://www.oracle.com/technetwork/java/index.html">Java</a> otras como <a href="https://www.alfresco.com/">Alfresco</a>, <a href="https://www.nuxeo.com/">Nuxeo</a>, <a href="https://dotcms.com/">dotCMS</a> y <a href="https://www.liferay.com/">Liferay</a> aunque estas en algunos puntos son diferentes ofreciendo gestión documental o <a href="https://es.wikipedia.org/wiki/Portal_%28Internet%29">portales de internet</a>. Wordpress es más simple que Drupal pero si tenemos conocimientos de desarrollo Drupal posiblemente se adapte más a nuestras preferencias. Alfresco y Nuxeo son más bien gestores de contenido y de documentos pero no permiten gestionar como se visualiza el contenido en la web final, Liferay es algo más parecido a lo que ofrece Drupal pero tengo la sensación que es algo más compleja o no exactamente con las mismas opciones y está más destinado a la creación de portales web.</p>
-<p>Drupal como decía está desarrollado sobre PHP pero solo necesitaremos conocer este lenguaje en el momento que queramos desarrollar y personalizarlo. Como usuarios para crear contenido y gestionar la disposición de los elementos en la página web no necesitamos conocer nada de PHP solo necesitaremos conocer como funciona la herramienta de administración que ofrece Drupal. El tipo de los proyectos para los que puede estar indicado Durpal puede ser aquellos en los que los usuarios quieran crear y publicar nuevo contenido y quieran ellos mismos modificar los elementos de las páginas sin necesidad de solicitar un desarrollo. Algunos casos de uso pueden ser instituciones de la administración pública, empresas, tiendas, comercios, &hellip; aquellos que quieran tener una presencia en internet y puedan necesitar añadir, modificar o eliminar en algún momento el contenido de su web. La tarea de los desarrolladores consistirá en personalizar la instalación de Drupal a las necesidades del cliente y sus usuarios ya sea adaptando el aspecto de la web a crear, creando la taxonomía del contenido, definiendo los tipos de contenidos y que información contiene, usuarios y roles, &hellip;</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio_huf2a00d1862abd088cad08a0e96220a73_29179_2560x1440_fit_box_3.png" data-gallery="" title="Inicio Drupal"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio_huf2a00d1862abd088cad08a0e96220a73_29179_300x200_fit_box_3.png" width="282" height="200" alt="Inicio Drupal" title="Inicio Drupal"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio-administracion_hub35f112cec43233d532972ffb246ef4a_31553_2560x1440_fit_box_3.png" data-gallery="" title="Inicio Drupal (Administración)"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio-administracion_hub35f112cec43233d532972ffb246ef4a_31553_300x200_fit_box_3.png" width="284" height="200" alt="Inicio Drupal (Administración)" title="Inicio Drupal (Administración)"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Por defecto Drupal ofrece dos tipos de contenido páginas y artículos que poseen un título y un cuerpo aunque podemos crear nuevos tipos de contenido con información adicional como podría ser eventos que recojan además una fecha y hora de inicio, fecha y hora de fin, lugar, &hellip;. Podemos crear usuarios y roles y asignarles permisos como poder crear contenidos, crear menús con enlaces a ciertos contenidos que queramos destacar. Podemos usar taxonomía para categorizar el contenido y que este esté organizado y sea fácilmente encontrado por los usuarios. Asociar tipos de contenido con ciertos tipo de taxonomía. Modificar los bloques como menús, formulario de inicio de sesión, &hellip; y hacer que solo se vean en ciertas páginas, para algunos tipos de contenidos, ciertos roles o usuarios. Hacer vistas o listas de los contenidos. Modificar la disposición o layout de las páginas por ejemplo para que tenga dos, tres columnas, una cabecera y un pie, &hellip;. Finalmente también podemos modificar y personalizar el aspecto del sitio web con temas que podemos descargar o desarrollar nosotros mismos.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-pagina_hu7d989873d8b0f756fcd2a2f6d4a5079e_29858_2560x1440_fit_box_3.png" data-gallery="" title="Crear página"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-pagina_hu7d989873d8b0f756fcd2a2f6d4a5079e_29858_300x200_fit_box_3.png" width="268" height="200" alt="Crear página" title="Crear página"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-articulo_hu0014f6dd0073fd8d37aeb94d3751c5dd_27499_2560x1440_fit_box_3.png" data-gallery="" title="Crear artículo"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-articulo_hu0014f6dd0073fd8d37aeb94d3751c5dd_27499_300x200_fit_box_3.png" width="268" height="200" alt="Crear artículo" title="Crear artículo"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/tipos-contenido_huba7f8446c7a2941a4e3617665d20c22c_35127_2560x1440_fit_box_3.png" data-gallery="" title="Tipos de contenido"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/tipos-contenido_huba7f8446c7a2941a4e3617665d20c22c_35127_300x200_fit_box_3.png" width="268" height="200" alt="Tipos de contenido" title="Tipos de contenido"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia_hu1fcd59d2c1d62e6b49a85ac111a75cce_31161_2560x1440_fit_box_3.png" data-gallery="" title="Taxonomía"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia_hu1fcd59d2c1d62e6b49a85ac111a75cce_31161_300x200_fit_box_3.png" width="268" height="200" alt="Taxonomía" title="Taxonomía"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia-etiquetas_hu35632a7f6f6e2d9092b91e8ed8f12db8_32967_2560x1440_fit_box_3.png" data-gallery="" title="Etiquetas taxonomía"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia-etiquetas_hu35632a7f6f6e2d9092b91e8ed8f12db8_32967_300x200_fit_box_3.png" width="268" height="200" alt="Etiquetas taxonomía" title="Etiquetas taxonomía"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/bloques_hu1f377a72bcf3cbdca8dcadf3f8fd8ee4_51185_2560x1440_fit_box_3.png" data-gallery="" title="Bloques"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/bloques_hu1f377a72bcf3cbdca8dcadf3f8fd8ee4_51185_300x200_fit_box_3.png" width="268" height="200" alt="Bloques" title="Bloques"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas_huc003da5bd98a62d8b7d13b8ac6eb160e_41340_2560x1440_fit_box_3.png" data-gallery="" title="Personas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas_huc003da5bd98a62d8b7d13b8ac6eb160e_41340_300x200_fit_box_3.png" width="268" height="200" alt="Personas" title="Personas"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-permisos_hue055cb0b63d35a77098fdba63fb778f7_58790_2560x1440_fit_box_3.png" data-gallery="" title="Permisos personas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-permisos_hue055cb0b63d35a77098fdba63fb778f7_58790_300x200_fit_box_3.png" width="268" height="200" alt="Permisos personas" title="Permisos personas"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-roles_hu45fae67c6210dedb2811f13e5443eade_54247_2560x1440_fit_box_3.png" data-gallery="" title="Roles personas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-roles_hu45fae67c6210dedb2811f13e5443eade_54247_300x200_fit_box_3.png" width="268" height="200" alt="Roles personas" title="Roles personas"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Drupal es ampliamente <a href="https://www.drupal.org/project/project_module">extensible mediante módulos</a> permitiendo agregarle funcionalidades de diferentes categorías (contenido, administración, integración con terceros, comercio electrónico, &hellip;) si las incorporadas por defecto no nos son suficientes. Algunos de  los módulos más empleados son <a href="https://www.drupal.org/project/panels">Panels</a> que permite definir contenedores (barra izquierda, región contenido, barra derecha, pie, cabecera, &hellip;) en una página y asignar el contenido que queremos que aparezca en cada uno de ellos, <a href="https://www.drupal.org/project/cck">Content Construction Kit (CCK)</a>, <a href="https://www.drupal.org/project/views">Views</a> para definir vistas de una colección de elementos, <a href="https://www.drupal.org/project/pathauto">Pathauto</a> para hacer las URLs amigables al usuario y buscadores mejorando el SEO del sitio, <a href="https://www.drupal.org/project/webform">Webform</a> para crear formularios y recoger información y otros muchos más para infinidad de cosas. Sin embargo, conviene usar los más populares que están ampliamente probados y hayan demostrado su utilidad, los que tenga buen soporte y un mantenimiento activo, estas cosas las podemos seleccionar con el filtro en el formulario de búsqueda de módulos.</p>
-<p>En definitiva Drupal es una herramienta de mucha utilidad para gestionar un sitio web. Si la parte importante del sitio web es el contenido Drupal puede adaptarse perfectamente a las necesidades y si el sitio web ha de ser administrado por usuarios sin conocimientos técnicos puede ser una solución que no requiera desarrollar una aplicación web a medida costando menos tiempo y menos esfuerzo. Para iniciarse en Drupal los libros <a href="https://amzn.to/2udreMi">Beginning Drupal 7</a> y <a href="https://amzn.to/39PQMzE">Pro Drupal 7 Development</a> son un buen inicio, he leído el primero y están muy bien explicado partiendo desde cero conocimiento sobre Drupal o PHP, contiene suficiente detalle para conocer las diferentes posibilidades que ofrece esta plataforma de gestión de contenidos.</p>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1430228598&amp;linkId=0918d80bc297650520a5ff23dd6aaa77" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1430228385&amp;linkId=6f1cc0aedb7daa7be2fc5b5e4591442f" title="Amazon" class="lozad"></iframe>
-</div>
-<p>Si queremos probarlo posiblemente la solución mas sencilla es usar la <a href="https://bitnami.com/stack/drupal">imagen que ofrece Bitnami de Drupal</a> que contiene todos los requisitos de Drupal ya instalados (servidor web, base de datos, dependencias, &hellip;), podemos descargarla y crear una máquina virtual con VirtualBox, en unos pocos minutos podemos empezar a probar Drupal. En el artículo de <a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">introducción sobre Bitnami</a> explico como crear una máquina virtual e iniciar cualquiera de las <a href="https://bitnami.com/stacks">imágenes</a> de las que ofrece <a href="https://bitnami.com/">Bitnami</a> con VirtualBox.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">Introducción a Bitnami</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/">Introducción al gestor de proyectos y tareas Redmine</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/">Instalar y usar un plugin ágil en Redmine</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="software"/>
-            
-                <category term="software-libre"/>
             
         
     </entry>

@@ -5,12 +5,73 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2023-01-06T01:00:00+01:00</updated>
+    <updated>2023-01-11T20:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2016/05/extraer-elementos-de-una-cadena-con-una-expresion-regular/</id>
+        <title>Extraer elementos de una cadena con una expresión regular</title>
+        <updated>2016-05-06T18:00:00+02:00</updated>
+        <published>2016-05-06T18:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/05/extraer-elementos-de-una-cadena-con-una-expresion-regular/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Las expresiones regulares son muy útiles para comprobar si una cadena de texto o un subconjunto de ella cumple un determinado patrón. Un uso común de las expresiones regulares es para validar cadenas de texto pero también pueden usarse para obtener coincidencias de la cadena, esto se hace con los grupos de captura.</p>
+<p>Por ejemplo, supongamos que tenemos un código de un producto formateado de la siguiente forma <em>123-123456/1</em>, usando guiones y una barra para separar tres grupos de números. Y ahora aparte de validar el formato correcto del código del producto nos interesa obtener los tres grupos de números. En vez de separar la cadena con un <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-">split</a> por el caracter guión y barra de una forma que sería más laboriosa y difícil de mantener si hay algún cambio, vamos a usar los grupos de captura para obtener los tres grupos de números que forman el código.</p>
+<p>Los grupos de captura se especifican mediante paréntesis, «(» y «)», en la expresión regular. En el caso del código usaremos la siguiente expresión regular:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">(\d{3})-(\d{6})/(\d{1})&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>regex.txt</span>
+    </div>
+</div>
+<p>En Java con la clase <a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html">Pattern</a> y <a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html">Matcher</a> podemos hacer las validaciones y obtener los grupos de captura de la usando el método <a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html#group-int-">group</a> de la clase Matcher:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javaregex</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.regex.Matcher</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.regex.Pattern</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">Main</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">REGEX</span> <span class="o">=</span> <span class="s">&#34;(\\d{3})-(\\d{6})/(\\d{1})&#34;</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DEFAULT_STRING</span> <span class="o">=</span> <span class="s">&#34;123-123456/1&#34;</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">string</span> <span class="o">=</span> <span class="o">(</span><span class="n">args</span><span class="o">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">?</span> <span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]:</span> <span class="n">DEFAULT_STRING</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Pattern</span> <span class="n">pattern</span> <span class="o">=</span> <span class="n">Pattern</span><span class="o">.</span><span class="na">compile</span><span class="o">(</span><span class="n">REGEX</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Matcher</span> <span class="n">matcher</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="na">matcher</span><span class="o">(</span><span class="n">string</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">matcher</span><span class="o">.</span><span class="na">matches</span><span class="o">())</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Group count: {}&#34;</span><span class="o">,</span> <span class="n">matcher</span><span class="o">.</span><span class="na">groupCount</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Group #1: {}&#34;</span><span class="o">,</span> <span class="n">matcher</span><span class="o">.</span><span class="na">group</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Group #2: {}&#34;</span><span class="o">,</span> <span class="n">matcher</span><span class="o">.</span><span class="na">group</span><span class="o">(</span><span class="mi">2</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Group #3: {}&#34;</span><span class="o">,</span> <span class="n">matcher</span><span class="o">.</span><span class="na">group</span><span class="o">(</span><span class="mi">3</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;The expression \&#34;{}\&#34; does not matches regex.&#34;</span><span class="o">,</span> <span class="n">string</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/05/extraer-elementos-de-una-cadena-con-una-expresion-regular/images/java-regex_huf44f86e530e876ab3f0fbcfbcc23fcd6_72080_2560x1440_fit_box_3.png" data-gallery="" title="Extracción de valores de una cadena usando una expresión regular"><img src="https://picodotdev.github.io/blog-bitix/2016/05/extraer-elementos-de-una-cadena-con-una-expresion-regular/images/java-regex_huf44f86e530e876ab3f0fbcfbcc23fcd6_72080_300x200_fit_box_3.png" width="300" height="124" alt="Extracción de valores de una cadena usando una expresión regular" title="Extracción de valores de una cadena usando una expresión regular"  class="lozad "></a></p>
+<figcaption>Extracción de valores de una cadena usando una expresión regular</figcaption>
+</figure>
+</div>
+<p>Esto simplifica el extraer los valores de un cadena, de una manera menos frágil y más fácil de leer posteriormente el código fuente que usar la función <em>split</em> por uno o varios determinados caracteres, esta es una cadena bastante sencilla si el patrón es más complejo el código usando <em>split</em> puede complicarse notablemente.</p>
+<p>La clase Matcher contiene más métodos útiles, por ejemplo, con los métodos <a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html#start-int-">start</a> y <a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html#end-int-">end</a> nos es posible conocer la posición inicial y final de cada grupo de captura. En el caso del código de este ejemplo ya los conocemos de antemano pero usando alguna expresión que capture un número variable de caracteres como «X+», «X*», «X{n,}» o «{X{n,m}}» nos permitirá conocer las posiciones inicial y final.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaRegex">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://stackoverflow.com/questions/237061/using-regular-expressions-to-extract-a-value-in-java">Using Regular Expressions to Extract a Value in Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/09/los-cuantificadores-greedy-reluctant-y-possessive-en-expresiones-regulares/">Los cuantificadores greedy, reluctant y posessive en expresiones regulares</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/02/referencias-a-grupos-de-captura-en-expresiones-regulares-y-reemplazos/">Referencias a grupos de captura en expresiones regulares y reemplazos</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/</id>
         <title>El componente Grid de Apache Tapestry</title>
@@ -1333,227 +1394,6 @@
         
             
                 <category term="blog"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2016/01/conferencia-bilbostack-2016/</id>
-        <title>Conferencia BilboStack 2016</title>
-        <updated>2016-02-27T22:00:00+01:00</updated>
-        <published>2016-01-31T00:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/01/conferencia-bilbostack-2016/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes"> 
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bilbostack.png" width="300" height="78" alt="BilboStack" title="BilboStack"  class=""></p>
-</div>
-<p>Esta ha sido la quinta <a href="https://bilbostack.com/">BilboStack</a> celebrada de forma anual en Bilbao en la localización de la <a href="http://www.deusto.es">Universidad de Deusto</a>, este año la edición del 2016. Con más asistentes que en años anteriores y unas aulas dispuestas por la universidad más grandes para dar cabida a todos. Sigue manteniéndose gratuita aunque hay que reservar entrada, todas las entradas se agotaron y ha habido lista de espera para conseguir las de aquellos que finalmente tuvieron la mala suerte de no poder asistir. Si el siguiente año no quieres perdértela no hagas planes desde ya para finales de enero de 2017 cuando esperemos sea la edición del 2017.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/01/conferencia-bilbostack-2016/images/universidad-de-deusto-1_hub7170aa6a9b622037488edc766c27129_261501_2560x1440_fit_q90_box.jpg" data-gallery="" title="Universidad de Deusto"><img src="https://picodotdev.github.io/blog-bitix/2016/01/conferencia-bilbostack-2016/images/universidad-de-deusto-1_hub7170aa6a9b622037488edc766c27129_261501_300x200_fit_q90_box.jpg" width="267" height="200" alt="Universidad de Deusto" title="Universidad de Deusto"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2016/01/conferencia-bilbostack-2016/images/universidad-de-deusto-2_hud10a1dafda6f8da2480f4e9bea4f33a5_139785_2560x1440_fit_q90_box.jpg" data-gallery="" title="Universidad de Deusto"><img src="https://picodotdev.github.io/blog-bitix/2016/01/conferencia-bilbostack-2016/images/universidad-de-deusto-2_hud10a1dafda6f8da2480f4e9bea4f33a5_139785_300x200_fit_q90_box.jpg" width="267" height="200" alt="Universidad de Deusto" title="Universidad de Deusto"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Al igual que en anteriores entregas las presentaciones se han dividido en dos <em>tracks</em> con duración de 45 minutos ofrecidas en una única mañana. Este año estando el <em>track</em> 1 orientado a temas de programación o código y el <em>track</em> 2 con una temática más diversa desde equipos a productos y servicios.</p>
-<table class="table">
-    <thead class="table-light">
-        <th width="140px">Hora</th>
-        <th>Track 1</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td style="vertical-align: top;">8:55</td>
-            <td>Presentación</td>
-        </tr>
-        <tr>
-            <td>9:00</td>
-            <td>Descubriendo Angular 2 <em>por Hugo Biarge</em></td>
-        </tr>
-        <tr>
-            <td>9:55</td>
-            <td>React Native 101 <em>por Carlos Fernández</em></td>
-        </tr>
-        <tr>
-            <td>11:20</td>
-            <td>Web Functional First <em>por Alex Casquete</em></td>
-        </tr>
-        <tr>
-            <td>12:15</td>
-            <td>Java ha muerto! Larga vida a Java (moderno) <em>por Jerónimo López</em></td>
-        </tr>
-        <tr>
-            <td>13:15</td>
-            <td>El <i>browser</i> plataforma del presente <em>por Ibon Tolosana</em></td>
-        </tr>
-    </tbody>
-</table>
-<table class="table">
-    <thead class="table-light">
-        <th width="140px">Hora</th>
-        <th>Track 2</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td style="vertical-align: top;">8:55</td>
-            <td>Presentación</td>
-        </tr>
-        <tr>
-            <td style="vertical-align: top;">9:00</td>
-            <td>Los equipos ¿nacen o se hacen? (Y si no nacen, ¿cómo se hacen?) <em>por Teodora Bozheva</em></td>
-        </tr>
-        <tr>
-            <td>9:55</td>
-            <td>Cómo ser maestros constructores <em>por Zuriñe Menendez</em></td>
-        </tr>
-        <tr>
-            <td>11:20</td>
-            <td>Your code as a crime scene <em>por Vicenç García</em></td>
-        </tr>
-        <tr>
-            <td>12:15</td>
-            <td>Tipografía responsive, tipografía responsable <em>por Diego Rodriguez</em></td>
-        </tr>
-        <tr>
-            <td>13:15</td>
-            <td>Cómo pasar de servicio a producto y no perecer en el intento <em>por Carlos Hernández</em></td>
-        </tr>
-    </tbody>
-</table>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/01/conferencia-bilbostack-2016/images/track1_hu887f5b57e4d963100732a7272dec4583_225551_2560x1440_fit_q90_box.jpg" data-gallery="" title="Sala track 1"><img src="https://picodotdev.github.io/blog-bitix/2016/01/conferencia-bilbostack-2016/images/track1_hu887f5b57e4d963100732a7272dec4583_225551_300x200_fit_q90_box.jpg" width="196" height="200" alt="Sala track 1" title="Sala track 1"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2016/01/conferencia-bilbostack-2016/images/track2_hu9e81c7ae5290f7bac04e4b18e0bbbd9f_270445_2560x1440_fit_q90_box.jpg" data-gallery="" title="Sala track 2"><img src="https://picodotdev.github.io/blog-bitix/2016/01/conferencia-bilbostack-2016/images/track2_hu9e81c7ae5290f7bac04e4b18e0bbbd9f_270445_300x200_fit_q90_box.jpg" width="184" height="200" alt="Sala track 2" title="Sala track 2"  class="lozad "></a></p>
-</figure>
-</div>
-<p>No podía faltar la cuota para el popular lenguaje <a href="https://es.wikipedia.org/wiki/JavaScript">JavaScript</a> este año con las dos primeras presentaciones del <em>track</em> 1 y si el año pasado comentaba que no había habido ninguna de <a href="https://www.oracle.com/technetwork/java/index.html">Java</a> en ya cuatro entregas, este finalmente ha tenido presencia. Aún siendo solo dos <em>tracks</em> me ha costado algo decidirme por la presentaciones a las que asistir. En resumen, he preferido ir salvo a la de Java a las presentaciones del <em>track</em> 2. <a href="https://reactjs.org/">React</a> ya lo conozco al escribir el artículo <a href="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">Ejemplo lista de tareas con Backbone y React</a>, en <a href="https://angular.io/">Angular</a> 2 habrán mejorado las cosas pero se me hace redundante. En general creo que me podría enriquecer más del <em>track</em> 2 que del 1 ya que en mayor o menor medida las del primero ya me iban ser bastante familiares siendo programador.</p>
-<p>Dentro de unos días se publicarán las presentaciones y no se si los vídeos con los que absorber las ideas expuestas de forma propia, aquí resumiré las presentaciones a las que asistí con las notas e ideas principales que conseguí retener al igual que hice el año pasado con la <a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/">BilboStack del 2015</a>.</p>
-<hr>
-<h3 id="los-equipos-nacen-o-se-hacen-y-si-no-nacen-cómo-se-hacen-empor-teodora-bozhevaem">Los equipos ¿nacen o se hacen? (Y si no nacen, ¿cómo se hacen?) <em>por Teodora Bozheva</em></h3>
-<p>Comenzamos viendo el caso de una empresa Armenia, <a href="http://www.armsoft.am/?p=home&amp;lang=en">Armsoft</a>, dedicada al desarrollo de <em>software</em> bancario. En una zona recientemente en conflicto se empieza de poco a construir una organización sin estructuras y sin procesos, todo el mundo sabe de todo. Buscan la excelencia programando. Para contratar, hacen un curso gratuito, dan formación y a los que seleccionan los contratan pero aún así si contratado finalmente no encaja se va (o supongo lo echan). Son buenos técnicamente pero le dan más importancia al trabajo en equipo que a los conocimientos técnicos.</p>
-<p>Los equipos están autoorganizados tomando sus propias decisiones con un objetivo común claro y compartido, estando las personas que lo forman enganchados a lo que están haciendo que con sus diferencias se complementan. Un equipo autoorganizado no significa caos o falta de dirección. La autoorganización es algo natural para los equipos. Sustituir el controlar por confiar es un desafío en muchas organizaciones. Un despacho y repartir el trabajo no une, el control se ejerce por desconfianza.</p>
-<p>¿Como hacer equipos? ¿Cómo se crean donde parece imposible? Hay equipos que emergen pero hay que cuidarlos. La empresas tienen que crear el ambiente adecuado. Los equipos nacen entre personas que confían entre ellas y se crean confiando en las personas. Se hacen uniendo personas con capacidades complementarias. En la presentación se comenta que una forma de crear equipo es realizando actividades como hacer excursiones, <em>karts</em> o <em>paintball</em>.</p>
-<div class="media">
-<iframe src="https://player.vimeo.com/video/154470806?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<h3 id="cómo-ser-maestros-constructores-empor-zuriñe-menendezem">Cómo ser maestros constructores <em>por Zuriñe Menendez</em></h3>
-<p>En el ámbito <em>frontend</em> de una aplicación web existen <em>frameworks</em> para todo pero debemos saber lo que hacen.</p>
-<p>A la hora de organizar los archivos <em>frontend</em> basta con tener los directorios <em>fonts</em>, <em>images</em>, <em>javascripts</em> y <em>stylesheets</em> siendo innecesario cosas como <em>home</em>, <em>custom</em> o <em>new</em> para incluir en ellas elementos para ciertas partes de la aplicación. Con los diseños hechos se puede planificar la organización. Es recomendable añadir comentarios en el CSS, no usar <em>importants</em> (no hay <em>!important</em> de <em>!important</em>), tabular e indentar correctamente para mejor legibilidad.</p>
-<p>Recomendable usar un <a href="http://meyerweb.com/eric/tools/css/reset/">reset.css</a> y un <a href="https://daneden.github.io/animate.css/">animate.css</a>. Se ha de cuidar el rendimiento en el cliente no cargando muchos CSS o JavaScripts (añado yo que con HTTP/2 reducir el número de archivos será menos necesario). Hay que conocer el modelo de cajas CSS. Dependiendo de  archivo sobretodo si es sencillo es mejor tener una única hoja de estilos, con <a href="https://sass-lang.com/">Sass</a> se pueden llegar a tener muchos archivos. En el navegador hay elementos que se procesan más rápido: (de mayor a menor) id, clase, etiqueta, selector universal. Los ids tienen mayor rendimiento siendo utilizables para elementos únicos como la barra de navegación, sin embargo, no son reutilizables y para esto se pueden utilizar las clases.</p>
-<p>Todavía hay quien usa versiones antiguas de Internet Explorer (como administraciones públicas) y en algunos casos hay que soportar 5.5, 6, 7, 8, 9, 10. Para facilitarlo se pueden usar los condicionales como <em>&lt;!-- [if lt IE7]&gt;</em>. Se debe seguir una nomenclatura prefiriendo usar el idioma inglés para dar nombres, usar el guión <em>-</em> para separar palabras compuestas, no usar mayúsculas ni números para los estilos CSS asignando nombre semánticos (evitando <em>col-left</em>, <em>col-right</em>, <em>blue</em>, dark-blue, more-dark-blue), ordenar las propiedades en el mismo orden.</p>
-<p>Se debe usar <a href="http://oocss.org/">CSS orientado a objetos</a> (OOCCS) agrupando propiedades comunes a varios estilos y los específicos de forma individual para el estilo en concreto. Se debe <a href="https://jigsaw.w3.org/css-validator/">validar el CSS con W3C</a>, validar el diseño responsive y hacer minimizado para mejorar el rendimiento. En el diseño adaptable no basta con usar un <em>display: none</em> ya que un vídeo se seguiría cargando y consumiendo datos para evitarlo se necesita ayuda de los <em>backenders</em>, para estos casos se puede empezar por el <em>desktop</em>.</p>
-<h3 id="your-code-as-a-crime-scene-empor-vicenç-garcíaem">Your code as a crime scene <em>por Vicenç García</em></h3>
-<p>Nos quejamos de los jefes pero el código que hacemos nosotros tampoco es perfecto y viéndolo algunas partes apestan. Se puede extraer información analizando el código. La presentación se basa en el libro <a href="https://amzn.to/2STr7jp">Your Code as a Crime Scene</a>.</p>
-<div class="media">
-<iframe src="https://player.vimeo.com/video/154470783?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<p>Hay herramietas para analizar el código:</p>
-<ul>
-<li>El tamaño de los ficheros.</li>
-<li>Que archivos se modifican más habitualmente y si son grandes significa mayor probabilidad de problemas.</li>
-<li>Número de <em>commits</em>, ficheros y cuantos cambios se les ha hecho, autores.</li>
-<li>Número de indentaciones al principio de las lineas.</li>
-<li>Número de autores que están modificando un archivo, que solo una persona modifique un archivo tiene riesgos. O obtener el número de adiciones o eliminaciones por autor para saber quien tiene más conocimiento de él.</li>
-</ul>
-<p>Estos datos son guías algunos datos pueden tener justificación a pesar de su aparente mal indicador. Otra medida es el acoplamiento temporal (ficheros que se modifican en grupo, cada vez que se cambia uno se cambia otro) que permite descubrir acoplamientos que no deberían existir entre ficheros que no deberían tener relación.</p>
-<p>Hay que tener en cuenta:</p>
-<ul>
-<li><em>Process loss</em>: la suma del equipo no es la suma de los integrantes, la necesaria comunicación resta eficiencia.</li>
-<li><a href="https://en.wikipedia.org/wiki/Pluralistic_ignorance">Pluralistic ignorance</a>: todo el mundo sabe que algo está mal pero nadie lo dice.</li>
-<li>Dar por buena una opinión porque se repite mucho.</li>
-<li>Aumentar una opinión porque está con la corriente.</li>
-</ul>
-<p>Es importante tener datos para evaluar pero hay que tener cuidado con las métricas ya que son maleables.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/01/conferencia-bilbostack-2016/images/crime-scene_hube7d0ee5764f4a6cf8c4f854cd36ab2e_165386_2560x1440_fit_q90_box.jpg" data-gallery="" title="Your code as a crime scene"><img src="https://picodotdev.github.io/blog-bitix/2016/01/conferencia-bilbostack-2016/images/crime-scene_hube7d0ee5764f4a6cf8c4f854cd36ab2e_165386_300x200_fit_q90_box.jpg" width="267" height="200" alt="Your code as a crime scene" title="Your code as a crime scene"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<iframe src="https://player.vimeo.com/video/154470784?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<h3 id="java-ha-muerto-larga-vida-a-java-moderno-empor-jerónimo-lópezem">Java ha muerto! Larga vida a Java (moderno) <em>por Jerónimo López</em></h3>
-<p>Hay gente que considera que Java es una mierda y es el nuevo Cobol. Se alegan algunos motivos como:</p>
-<ul>
-<li>Uso <a href="https://maven.apache.org/">Maven</a> y me baja medio internet.</li>
-<li>Es compilado y esto lleva tiempo.</li>
-<li>ProblemFactory. Clases con nombres de 45 y 90 letras.</li>
-<li>XML largos, EJB, XML en Spring, en Struts, también el los pom de Maven, <em>stack traces</em> largos.</li>
-<li>Hola mundo de 7 líneas, con parámetros y verboso.</li>
-<li>Hay que declarar los <em>beans</em> y <em>DTO</em>, hay <em>inner classes</em>.</li>
-</ul>
-<p>Con todo esto si es una mierda, pero si lo usas así tu proyecto es una mierda no Java. A partir de 1990 aparecen nuevos lenguajes, cerca de 1995: <a href="https://www.python.org/">Python</a>, Java, <a href="https://secure.php.net/">PHP</a>, <a href="https://es.wikipedia.org/wiki/JavaScript">JavaScript</a>, 2001: <a href="https://dotnet.microsoft.com/">C#</a>. Anteriormente no había un <em>stack</em> con lógica de negocio no acoplado a la base de datos (existía Oracle, SAP o Access, Visual FoxPro). En 1997 se añade JDBC y <em>servlets</em>, en 1999 Java EE con un montón de especificaciones. Java como lenguaje ha cambiado poco, más en las versiones 5 y 8, mayoritariamente ha cambiado la máquina virtual, en las primeras versiones era lenta, ya no. <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">En Java 8 se añaden varias novedades</a> como propiedades básicas pero muy útiles de programación funcional, <em>lamdas</em>, <em>defaults methods</em> con las que lo que antes eran 5 líneas ahora es 1.</p>
-<p>Aparece <a href="https://gradle.org/">Gradle</a> como herramienta de construcción alternativa a Maven y Ant, con las ventajas de ambos sin sus defectos. Si la herramienta no sirve cámbiala. Antes un servidor de aplicaciones ejecutaba varias aplicaciones, ahora la aplicación ejecuta de forma embebida su propio servidor de aplicaciones que se inicia como una aplicación tradicional con <em>java -jar app.jar</em> de forma que se ha simplificado el despliegue. Se han puesto de moda los <em>microframeworks</em> <a href="https://sparkjava.com/">Spark</a>, <a href="https://projects.spring.io/spring-boot/">Spring Boot</a>, <a href="https://vertx.io/">Vert.x</a>, <a href="https://www.playframework.com/">Play</a>, &hellip; que arrancan la aplicación en muy pocos segundos. El ecosistema Java sigue evolucionando adaptándose a las nuevas tendencias (en su momento el XML era una de ellas, ya no).</p>
-<p>En el <a href="https://www.tiobe.com/tiobe-index/">índice Tiobe</a> sigue siendo el más popular y en GitHub ha crecido mucho. Lo usan empresas como Google, LindedIn, Amazon, Netflix. Google incluso ha creado un compilador que traduce código Java a JavaScript. Se usa en proyectos como <a href="https://cassandra.apache.org/">Casandra</a>, <a href="https://hadoop.apache.org/">Hadoop</a>, <a href="https://spark.apache.org/">Spark</a>, <a href="https://minecraft.net/">Minecraft</a>, <a href="https://www.elastic.co/es/elasticsearch/">elasticsearch</a> o <a href="https://www.android.com/">Android</a>. Es escalable desde tarjetas inteligentes a granjas de servidores, desde una <a href="https://www.raspberrypi.org/">Raspberry Pi</a> a un <em>mainframe</em>. Si Java como lenguaje no te es suficiente puedes usar <a href="https://www.scala-lang.org/">Scala</a>, <a href="https://www.groovy-lang.org/">Groovy</a>, <a href="https://ceylon-lang.org/">Ceylon</a> o <a href="https://clojure.org/">Clojure</a>. Tiene buenos IDEs que facilitan la escritura de código como <a href="https://eclipse.org">eclipse</a>, <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> o <a href="https://netbeans.apache.org/">Netbeans</a>.</p>
-<p>Su futuro es bueno <a href="https://es.wikipedia.org/wiki/Sun_Microsystems">Sun</a> en su momento lo hizo de código abierto y se basa en comités. Están planificadas varias mejoras, Jigsaw para modularizarlo, HTTP2, REPL, soporte JSON y finalmente se eliminará el soporte de los applets.</p>
-<p>En realidad Java nunca dejó de molar y ha evolucionado, esto me es parecido a las bases de datos relacionales y el potente lenguaje SQL que tampoco nunca dejaron de molar y ahí está <a href="https://www.jooq.org/">jOOQ</a> para demostrar que los ORM no son siempre la mejor solución.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/01/conferencia-bilbostack-2016/images/java-moderno_hu480c7aff48016508aa0055b0c5d49fd3_127759_2560x1440_fit_q90_box.jpg" data-gallery="" title="Java ha muerto! Larga vida a Java (moderno)"><img src="https://picodotdev.github.io/blog-bitix/2016/01/conferencia-bilbostack-2016/images/java-moderno_hu480c7aff48016508aa0055b0c5d49fd3_127759_300x200_fit_q90_box.jpg" width="267" height="200" alt="Java ha muerto! Larga vida a Java (moderno)" title="Java ha muerto! Larga vida a Java (moderno)"  class="lozad "></a></p>
-</figure>
-</div>
-<p>La presentación ha expuesto que Java sigue siendo una de los mejores lenguajes, plataforma y ecosistema con el que desarrollar aplicaciones, han sido todo argumentos. Si alguien lo quiere ver en la práctica puede revisar varios de los artículos que he escrito en esta bitácora:</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/05/10-razones-para-seguir-usando-java/">10 razones para seguir usando Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">Novedades y nuevas características de Java 8</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/06/nueva-visita-a-herramientas-para-un-proyecto-java/">Nueva visita a Herramientas para un proyecto Java</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.htmlindex-amp.html">Herramienta de construcción Gradle</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/usar-gradle-mediante-gradle-wrapper.htmlindex-amp.html">Usar Gradle mediante Gradle wrapper</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/">Ejemplo de multiproyecto con Gradle</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/aplicacion-java-autocontenida-con-spring-boot/">Aplicación Java autocontenida con Spring Boot</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/11/configuracion-de-una-aplicacion-en-diferentes-entornos-con-spring-cloud-config/">Configuración de una aplicación en diferentes entornos con Spring Cloud Config</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/">Información y métricas de la aplicación con Spring Boot Actuator</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/05/alternativa-a-hibernate-u-orm-y-ejemplo-de-jooq/">Alternativa a Hibernate u ORM y ejemplo de jOOQ</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/01/introduccion-y-ejemplo-basico-sobre-vertx/">Introducción y ejemplo básico sobre Vert.x</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/01/aplicacion-web-con-spark-framework-y-java/">Aplicación web con Spark <em>framework</em> y Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/introduccion-a-javafx-aplicaciones-de-escritorio-en-java/">Introducción a JavaFX, aplicaciones de escritorio en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/">Programación de juegos y 3D en Java con jMonkeyEngine</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/11/java-para-tareas-de-scripting-con-jbang-y-gradle/">Java para tareas de scripting con JBang y Gradle</a></li>
-</ul>
-<h3 id="cómo-pasar-de-servicio-a-producto-y-no-perecer-en-el-intento-empor-carlos-hernándezem">Cómo pasar de servicio a producto y no perecer en el intento <em>por Carlos Hernández</em></h3>
-<p>Grandes empresas como <a href="https://www.dell.com/">DELL</a> empezaron siendo un servicio de reparar ordenadores a proporcionar ordenadores personalizados o <a href="https://www.microsoft.com/">Microsoft</a> pasando a vender licencias de su software.</p>
-<p>Empezaron ofreciendo servicios para otros a crear un producto que ahora es <a href="https://quaderno.io/">quaderno</a> para llevar el control de facturación y control de gastos. No es fácil pasar de servicio a producto y hay que preguntarse ¿por que quieres cambiar?:</p>
-<ul>
-<li>Ser los propietarios reales de tu trabajo. En el trabajo para otros se aprende.</li>
-<li>Tomar el control de tu destino, tener tu trabajo, no que te lo den otros.</li>
-</ul>
-<p>¿A que estás dispuesto a renunciar?:</p>
-<ul>
-<li>Si pasas de servicio a producto deberás abandonar a los clientes de tus servicios.</li>
-<li>La expectativa de crecimiento o dinero que proporcionará el producto puede ser mucho menor que la real.</li>
-</ul>
-<p>¿Cómo lo hicieron?</p>
-<ul>
-<li>Con muchas horas de trabajo.</li>
-<li>Durante un tiempo trabajando para sus clientes de los servicios.</li>
-<li>Gastando los ahorros.</li>
-</ul>
-<p>En 2005 no había muchas herramientas o se debían instalar en Windows. Empezaron con un SaaS en 2006. En 2009 estaban en varias cosas al mismo tiempo, eran 3 y uno se dedicaba por completo al producto otro al 50% y otro a finalizar con los antiguos clientes. En 2010 se desarrolla la segunda versión de <em>endeve</em> con buenos resultados a base de <em>marketing</em>. En 2012 todos trabajan en el proyecto. España es un mercado pequeño en cuanto a internet, se internacionalizan. En 2013 se renombra <em>endeve</em> a <em>quaderno</em> internacionalizándose de una isla de Canarias a nivel mundial. En 2014 se automatizan las facturas integrándolo con sistemas de pago y el producto va funcionando.</p>
-<p>Hacer negocios básicos no es <em>sexy</em> pero estos resuelven problemas reales y una buena oportunidad para crear productos. Con su experiencia empezando de nuevo daría al inglés importancia desde el principio, crearía una audiencia para tener clientes desde un inicio, elegiría la solución más sencilla evolucionándola a medida que se conoce a los usuarios escuchándoles y diciendo no o sí a sus sugerencias, tu eres el dueño no tienes por que aceptarlas todas. Mejor externalizar servicios como <em>marketing</em> o publicidad ya que es difícil poder con todo siendo pequeños y otros saben más que tú en sus áreas de conocimiento.</p>
-<p>Usan herramientas como <a href="https://slack.com/">Slack</a>, <a href="https://trello.com/">Trello</a>, gmail, pasarela de pago <a href="https://stripe.com/es">stripe</a> que considera mejor opción que <a href="https://www.paypal.com/">PayPal</a> para integrarse.</p>
-<p>Otros ejemplos de productos son:</p>
-<ul>
-<li><a href="http://deathtothestockphoto.com/">Death to the stock photos</a></li>
-<li><a href="https://marvelapp.com/">Marvel app</a></li>
-</ul>
-<div class="media">
-<iframe src="https://player.vimeo.com/video/154470785?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<hr>
-<p>Sigues pudiendo saciar tu curiosidad con algunos vídeos de YouTube de <a href="https://www.meetup.com/es-ES/elcomite/">elComite</a> donde están disponibles casi todas las presentaciones de las ediciones 2012, 2013 y 2014, del 2015 no se hicieron aunque si algunos audios y de este 2016 si que he visto en el <em>track</em> 2 al menos una cámara creo que grabando, de ser así supongo que las encontrarás en el canal del YouTube anterior.</p>
-<p>De nuevo hay que dar las gracias a sus organizadores, ponentes, Universidad de Deusto, asistentes y a la guerrera minoría de asistentas. Hasta el 2017, no te la pierdas.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://www.ricardofelix.es/mi-primer-bilbostack/">Mi primer BilboStack</a></li>
-<li><a href="https://www.genbetadev.com/formacion/mi-experiencia-en-la-bilbostack">Mi experiencia en la BilboStack</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
             
                 <category term="planeta-codigo"/>
             
