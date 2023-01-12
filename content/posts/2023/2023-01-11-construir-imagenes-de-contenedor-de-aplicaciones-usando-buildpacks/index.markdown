@@ -1,8 +1,9 @@
 ---
 pid: 669
 type: "post"
-title: "Construir imágenes de contenedor de aplicaciones usando Buildpacks"
-url: "/2023/01/construir-imagenes-de-contenedor-de-aplicaciones-usando-buildpacks/"
+title: "Construir la imagen del contenedor de la aplicación usando Buildpacks"
+url: "/2023/01/construir-la-imagen-del-contenedor-de-la-aplicacion-usando-buildpacks/"
+aliases: ["/2023/01/construir-imagenes-de-contenedor-de-aplicaciones-usando-buildpacks/"]
 date: 2023-01-11T20:00:00+01:00
 language: "es"
 index: true
