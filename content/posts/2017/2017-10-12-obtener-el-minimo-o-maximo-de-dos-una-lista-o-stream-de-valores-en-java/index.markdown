@@ -28,7 +28,7 @@ Este sería el código para los casos de comparar dos elementos, una lista y un 
 
 {{< image
     gallery="true"
-    image1="image:min-max.png" optionsthumb1="300x200" title1="Diferentes formas de obtener el valor mínimo y máximo"
+    image1="image:min-max.webp" optionsthumb1="300x200" title1="Diferentes formas de obtener el valor mínimo y máximo"
     caption="Diferentes formas de obtener el valor mínimo y máximo" >}}
 
 Para obtener el máximo sería similar pero usando el método [Math.max()](javadoc9:java/lang/Math.html#max-int-int-), [Collections.max()](javadoc9:java/util/Collections.html#max-java.util.Collection-) o [Stream.max()](javadoc9:java/util/stream/Stream.html#max-java.util.Comparator-).

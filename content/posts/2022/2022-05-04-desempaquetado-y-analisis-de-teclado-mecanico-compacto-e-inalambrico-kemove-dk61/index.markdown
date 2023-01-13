@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:kemove-dk61-2.jpg"
-imagePost: "image:kemove-dk61-2.jpg"
+imageHead: "image:kemove-dk61-2.webp"
+imagePost: "image:kemove-dk61-2.webp"
 tags: ["hardware"]
 series: ["desempaquetado-tecnologia"]
 summary: "El KEMOVE DK61 es un teclado mecánico que mejora en varios aspectos y aúna varias de las mejores cosas que tienen los DIERYA DK61E y DK63 sin incrementar demasiado su precio con lo que si no se quiere ajustar el presupuesto al máximo compensa por las características mejoradas. El KEMOVE DK61 es muy compacto, de formato 60% con con la ventaja de tener un tamaño reducido y el inconveniente de no tener algunas teclas. Similar al DIERYA DK61E pero que incorpora la conexión inalámbrica del DK63 e incrementa su autonomía con una batería de mayor capacidad y conservando la iluminación RGB. En otras características como _switches_ y _keycaps_ está a la altura de un buen teclado de gama alta pero que en este caso el KEMOVE a un precio por debajo de los 100€."
@@ -46,7 +46,7 @@ El ejemplar que tengo tiene _switches_ Gateron Brown del tipo táctil, la difere
 
 {{< image
     gallery="true"
-    image1="image:gateron-switches.jpg" optionsthumb1="650x450" title1="Tipos de switches Gateron"
+    image1="image:gateron-switches.webp" optionsthumb1="650x450" title1="Tipos de switches Gateron"
     caption="Tipos de switches Gateron" >}}
 
 El teclado tiene iluminación RGB en diferentes colores, efectos e intensidad que más allá del aspecto estético de tener colores resulta útil en caso de bajas condiciones de luz para ver las teclas. Además la iluminación RGB se utiliza para proporcionar algunas indicaciones al pulsar teclas como por ejemplo conocer de forma aproximada la carga de la batería.
@@ -112,17 +112,17 @@ En la parte trasera se muestran dos ilustraciones y las características básica
 
 {{< image
     gallery="true"
-    image1="image:kemove-dk61-caja-1.jpg" optionsthumb1="200x150" title1="Caja del teclado KEMOVE DK61"
-    image2="image:kemove-dk61-caja-2.jpg" optionsthumb2="200x150" title2="Caja del teclado KEMOVE DK61"
-    image3="image:kemove-dk61-caja-3.jpg" optionsthumb3="200x150" title3="Caja del teclado KEMOVE DK61" >}}
+    image1="image:kemove-dk61-caja-1.webp" optionsthumb1="200x150" title1="Caja del teclado KEMOVE DK61"
+    image2="image:kemove-dk61-caja-2.webp" optionsthumb2="200x150" title2="Caja del teclado KEMOVE DK61"
+    image3="image:kemove-dk61-caja-3.webp" optionsthumb3="200x150" title3="Caja del teclado KEMOVE DK61" >}}
 {{< image
     gallery="true"
-    image1="image:kemove-dk61-caja-4.jpg" optionsthumb1="200x150" title1="Caja del teclado KEMOVE DK61"
-    image2="image:kemove-dk61-caja-5.jpg" optionsthumb2="200x150" title2="Caja del teclado KEMOVE DK61" >}}
+    image1="image:kemove-dk61-caja-4.webp" optionsthumb1="200x150" title1="Caja del teclado KEMOVE DK61"
+    image2="image:kemove-dk61-caja-5.webp" optionsthumb2="200x150" title2="Caja del teclado KEMOVE DK61" >}}
 {{< image
     gallery="true"
-    image1="image:kemove-dk61-caja-6.jpg" optionsthumb1="200x150" title1="Caja del teclado KEMOVE DK61"
-    image2="image:kemove-dk61-caja-7.jpg" optionsthumb2="200x150" title2="Caja del teclado KEMOVE DK61"
+    image1="image:kemove-dk61-caja-6.webp" optionsthumb1="200x150" title1="Caja del teclado KEMOVE DK61"
+    image2="image:kemove-dk61-caja-7.webp" optionsthumb2="200x150" title2="Caja del teclado KEMOVE DK61"
     caption="Caja del teclado KEMOVE DK61" >}}
 
 #### El contenido de la caja
@@ -144,8 +144,8 @@ Un detalle que en mi caso echaba en falta en los DIERYA era que no incluían una
 
 {{< image
     gallery="true"
-    image1="image:kemove-dk61-contenido-1.jpg" optionsthumb1="300x200" title1="Contenido de la caja del teclado KEMOVE DK61"
-    image2="image:kemove-dk61-contenido-2.jpg" optionsthumb2="300x200" title2="Contenido de la caja del teclado KEMOVE DK61"
+    image1="image:kemove-dk61-contenido-1.webp" optionsthumb1="300x200" title1="Contenido de la caja del teclado KEMOVE DK61"
+    image2="image:kemove-dk61-contenido-2.webp" optionsthumb2="300x200" title2="Contenido de la caja del teclado KEMOVE DK61"
     caption="Contenido de la caja del teclado KEMOVE DK61" >}}
 
 #### El teclado
@@ -160,23 +160,23 @@ Conserva las mismas dimensiones que los DIERYA DK61E y DK 63, siendo para el KEM
 
 {{< image
     gallery="true"
-    image1="image:kemove-dk61-teclado-1.jpg" optionsthumb1="200x150" title1="Teclado KEMOVE DK61"
-    image2="image:kemove-dk61-teclado-2.jpg" optionsthumb2="200x150" title2="Teclado KEMOVE DK61"
-    image3="image:kemove-dk61-teclado-3.jpg" optionsthumb3="200x150" title3="Teclado KEMOVE DK61" >}}
+    image1="image:kemove-dk61-teclado-1.webp" optionsthumb1="200x150" title1="Teclado KEMOVE DK61"
+    image2="image:kemove-dk61-teclado-2.webp" optionsthumb2="200x150" title2="Teclado KEMOVE DK61"
+    image3="image:kemove-dk61-teclado-3.webp" optionsthumb3="200x150" title3="Teclado KEMOVE DK61" >}}
 {{< image
     gallery="true"
-    image1="image:kemove-dk61-teclado-4.jpg" optionsthumb1="200x150" title1="Teclado KEMOVE DK61"
-    image2="image:kemove-dk61-teclado-5.jpg" optionsthumb2="200x150" title2="Teclado KEMOVE DK61"
-    image3="image:kemove-dk61-teclado-6.jpg" optionsthumb3="200x150" title3="Teclado KEMOVE DK61" >}}
+    image1="image:kemove-dk61-teclado-4.webp" optionsthumb1="200x150" title1="Teclado KEMOVE DK61"
+    image2="image:kemove-dk61-teclado-5.webp" optionsthumb2="200x150" title2="Teclado KEMOVE DK61"
+    image3="image:kemove-dk61-teclado-6.webp" optionsthumb3="200x150" title3="Teclado KEMOVE DK61" >}}
 {{< image
     gallery="true"
-    image1="image:kemove-dk61-teclado-7.jpg" optionsthumb1="200x150" title1="Teclado KEMOVE DK61"
-    image2="image:kemove-dk61-teclado-8.jpg" optionsthumb2="200x150" title2="Teclado KEMOVE DK61"
-    image3="image:kemove-dk61-teclado-9.jpg" optionsthumb3="200x150" title3="Teclado KEMOVE DK61" >}}
+    image1="image:kemove-dk61-teclado-7.webp" optionsthumb1="200x150" title1="Teclado KEMOVE DK61"
+    image2="image:kemove-dk61-teclado-8.webp" optionsthumb2="200x150" title2="Teclado KEMOVE DK61"
+    image3="image:kemove-dk61-teclado-9.webp" optionsthumb3="200x150" title3="Teclado KEMOVE DK61" >}}
 {{< image
     gallery="true"
-    image1="image:kemove-dk61-teclado-10.jpg" optionsthumb1="200x150" title1="Teclado KEMOVE DK61"
-    image2="image:kemove-dk61-teclado-11.jpg" optionsthumb2="200x150" title2="Teclado KEMOVE DK61"
+    image1="image:kemove-dk61-teclado-10.webp" optionsthumb1="200x150" title1="Teclado KEMOVE DK61"
+    image2="image:kemove-dk61-teclado-11.webp" optionsthumb2="200x150" title2="Teclado KEMOVE DK61"
     caption="Teclado KEMOVE DK61" >}}
 
 #### Los _switches_
@@ -189,7 +189,7 @@ En la página de Gateron hay una leyenda con la descripción de cada _switch_ se
 
 {{< image
     gallery="true"
-    image1="image:kemove-dk61-switches-1.jpg" optionsthumb1="300x200" title1="Swicthes eléctricos Gateron y estabilizador del KEMOVE DK61"
+    image1="image:kemove-dk61-switches-1.webp" optionsthumb1="300x200" title1="Swicthes eléctricos Gateron y estabilizador del KEMOVE DK61"
     caption="Swicthes eléctricos Gateron y estabilizador del KEMOVE DK61" >}}
 
 #### Los _keycaps_
@@ -200,7 +200,7 @@ Al ofrecerse un cubre teclado permite minimizar la cantidad de polvo que se acum
 
 {{< image
     gallery="true"
-    image1="image:kemove-dk61-keycaps.jpg" optionsthumb1="300x200" title1="Keycaps del KEMOVE DK61"
+    image1="image:kemove-dk61-keycaps.webp" optionsthumb1="300x200" title1="Keycaps del KEMOVE DK61"
     caption="Keycaps del KEMOVE DK61" >}}
 
 ### Análisis y primeras impresiones del teclado mecánico KEMOVE DK61
@@ -221,9 +221,9 @@ Lo he probado tanto en GNU/Linux, macOS y Android, en todos estos sistemas opera
 
 {{< image
     gallery="true"
-    image1="image:kemove-dk61-bluetooth-macos.png" optionsthumb1="200x150" title1="Configuración del teclado con conexión inalámbrica en macOS"
-    image2="image:kemove-dk61-bluetooth-linux.png" optionsthumb2="200x150" title2="Configuración del teclado con conexión inalámbrica en GNU/Linux"
-    image3="image:kemove-dk61-bluetooth-android.png" optionsthumb3="200x150" title3="Configuración del teclado con conexión inalámbrica en Android"
+    image1="image:kemove-dk61-bluetooth-macos.webp" optionsthumb1="200x150" title1="Configuración del teclado con conexión inalámbrica en macOS"
+    image2="image:kemove-dk61-bluetooth-linux.webp" optionsthumb2="200x150" title2="Configuración del teclado con conexión inalámbrica en GNU/Linux"
+    image3="image:kemove-dk61-bluetooth-android.webp" optionsthumb3="200x150" title3="Configuración del teclado con conexión inalámbrica en Android"
     caption="Configuración del teclado con conexión inalámbrica" >}}
 
 #### Análisis en vídeo

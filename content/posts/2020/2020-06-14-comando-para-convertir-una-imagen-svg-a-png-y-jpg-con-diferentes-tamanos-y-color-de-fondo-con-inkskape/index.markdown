@@ -50,16 +50,16 @@ El editor Inkscape permite definir capas con diferentes elementos de la imagen, 
 
 {{< image
     gallery="true"
-    image1="image:apache-tapestry-icontext-800-light.png" optionsthumb1="300x200" title1="Imagen en formato PNG"
-    image2="image:apache-tapestry-icontext-800-dark.png" optionsthumb2="300x200" title2="Imagen en formato PNG" >}}
+    image1="image:apache-tapestry-icontext-800-light.webp" optionsthumb1="300x200" title1="Imagen en formato.webp"
+    image2="image:apache-tapestry-icontext-800-dark.webp" optionsthumb2="300x200" title2="Imagen en formato PNG" >}}
 {{< image
     gallery="true"
-    image1="image:apache-tapestry-icon-800-light.png" optionsthumb1="300x200" title1="Imagen en formato PNG"
-    image2="image:apache-tapestry-icon-800-dark.png" optionsthumb2="300x200" title2="Imagen en formato PNG" >}}
+    image1="image:apache-tapestry-icon-800-light.webp" optionsthumb1="300x200" title1="Imagen en formato.webp"
+    image2="image:apache-tapestry-icon-800-dark.webp" optionsthumb2="300x200" title2="Imagen en formato PNG" >}}
 {{< image
     gallery="true"
-    image1="image:apache-tapestry-text-800-light.png" optionsthumb1="300x200" title1="Imagen en formato PNG"
-    image2="image:apache-tapestry-text-800-dark.png" optionsthumb2="300x200" title2="Imagen en formato PNG"
+    image1="image:apache-tapestry-text-800-light.webp" optionsthumb1="300x200" title1="Imagen en formato.webp"
+    image2="image:apache-tapestry-text-800-dark.webp" optionsthumb2="300x200" title2="Imagen en formato.webp"
     caption="Diferentes versiones de la imagen SVG en formato PNG" >}}
 
 También es posible modificar el SVG original para mostrar y ocultar las capas visibles del archivo. Los siguientes comandos permiten exportar a PNG la imagen en diferentes versiones (icono y texto, solo icono o solo texto), con diferente color de fondo (transparente, blanco y negro) y en diferente tamaño. Esto permite automatizar y hacerlo mucho más rápido que el repetitivo proceso que sería realizar manualmente la exportación usando la interfaz gráfica de Inkscape.

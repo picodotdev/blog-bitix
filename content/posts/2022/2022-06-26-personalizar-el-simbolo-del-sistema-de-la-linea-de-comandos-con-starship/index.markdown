@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:starship-1.png"
+imagePost: "image:starship-1.webp"
 tags: ["gnu-linux", "planeta-codigo"]
 summary: "El símbolo del sistema o _prompt_ en la línea de comandos de la terminal precede a la introducción del comando a ejecutar. Los intérpretes de comandos o _shells_ ofrecen un símbolo del sistema por defecto que muestran cierta información y con el formato que sus desarrolladores han elegido. Además de que cada intérprete de comandos tenga uno propio estos son bastante limitados en cuanto a personalización además de utilizar una configuración poco intuitiva. Starship es un personalizador del símbolo del sistema independiente del intérprete de comandos, que ofrece una gran cantidad de módulos para personalizar el símbolo del sistema según el directorio de trabajo actual y cuya configuración es muy intuitiva y está bien documentada."
 ---
@@ -44,7 +44,7 @@ Aún así las personalizaciones que ofrecen tanto bash como zsh son propias de c
 
 {{< image
     gallery="true"
-    image1="image:bash-prompt-1.png" optionsthumb1="650x450" title1="Símbolo del sistema de bash"
+    image1="image:bash-prompt-1.webp" optionsthumb1="650x450" title1="Símbolo del sistema de bash"
     caption="Símbolo del sistema de bash" >}}
 
 ### El configurador del símbolo del sistema Starship
@@ -57,7 +57,7 @@ Starship permite aplicar misma configuración y tener el mismo símbolo del sist
 
 {{< image
     gallery="false"
-    image1="image:starship.png" optionsthumb1="300x200" title1="Starship" >}}
+    image1="image:starship.webp" optionsthumb1="300x200" title1="Starship" >}}
 
 En [Arch Linux][archlinux] se instala con el comando del gestor de paquetes.
 
@@ -81,14 +81,14 @@ Utilizando colores el símbolo del sistema casi tiene un aspecto gráfico y al e
 
 {{< image
     gallery="true"
-    image1="image:starship-1.png" optionsthumb1="650x450" title1="Símbolo del sistema personalizado con Starship" >}}
+    image1="image:starship-1.webp" optionsthumb1="650x450" title1="Símbolo del sistema personalizado con Starship" >}}
 
 Las siguientes capturas muestran información en el símbolo del sistema de una carpeta que es un repositorio de Git que incluye información del estado del espacio de trabajo y en otra además en que la carpeta es un proyecto en el lenguaje Java.
 
 {{< image
     gallery="true"
-    image1="image:starship-2.png" optionsthumb1="300x200" title1="Símbolo del sistema personalizado con Starship"
-    image2="image:starship-3.png" optionsthumb2="300x200" title2="Símbolo del sistema personalizado con Starship"
+    image1="image:starship-2.webp" optionsthumb1="300x200" title1="Símbolo del sistema personalizado con Starship"
+    image2="image:starship-3.webp" optionsthumb2="300x200" title2="Símbolo del sistema personalizado con Starship"
     caption="Símbolo del sistema personalizado con Starship" >}}
 
 La variable principal _format_ incluye el contenido y estilos del símbolo del sistema, por ejemplo el nombre del usuario y el directorio actual, hasta aquí es lo mismo que ofrecen bash y zsh por defecto, pero además permite mostrar información de estado según el contenido de del directorio de trabajo actual como Git, múltiples lenguajes de programación y tecnologías.

@@ -65,9 +65,9 @@ El resultado del comando es un código QR que se puede escanear con la aplicaci�
 
 {{< image
     gallery="true"
-    image1="image:google-authenticator.png" optionsthumb1="300x200" title1="Configuración de Google Authenticator"
-    image2="image:keepassxc-1.png" optionsthumb2="300x200" title2="Configuración OTP en KeePassXC"
-    image3="image:keepassxc-2.png" optionsthumb3="300x200" title3="Obtención de OTP en KeePassXC"
+    image1="image:google-authenticator.webp" optionsthumb1="300x200" title1="Configuración de Google Authenticator"
+    image2="image:keepassxc-1.webp" optionsthumb2="300x200" title2="Configuración OTP en KeePassXC"
+    image3="image:keepassxc-2.webp" optionsthumb3="300x200" title3="Obtención de OTP en KeePassXC"
     caption="Configuracón para Google Authenticator, KeePassXC y obtención OTP desde KeePassXC" >}}
 
 Una vez modificada la configuración hay que reiniciar el servicio de SSH.

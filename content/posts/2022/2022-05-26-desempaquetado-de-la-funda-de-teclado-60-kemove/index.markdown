@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:kemove-funda-3.jpg"
-imagePost: "image:kemove-funda-3.jpg"
+imageHead: "image:kemove-funda-3.webp"
+imagePost: "image:kemove-funda-3.webp"
 tags: ["hardware"]
 series: ["desempaquetado-tecnologia"]
 summary: "Una funda de teclado permite transportarlo en una mochila sin que los _keycaps_ se estropeen, el teclado se raye y lo protege de la humedad y agua en un día de lluvia. La marca KEMOVE ofrece una funda que se ajusta a las dimensiones de los teclados de formato 60% de los que ofrece varios modelos. Los teclados mecánicos tiene un precio más elevado que los de membrana con lo que gastar algo más en una funda si se va a transportar o para guardarlos en periodos de tiempo que no se use el teclado es una buena recomendación."
@@ -49,27 +49,27 @@ La funda teclado no es un elemento de alta tecnología pero muy útil en su func
 
 {{< image
     gallery="true"
-    image1="image:kemove-funda-1.jpg" optionsthumb1="200x150" title1="Funda de teclado KEMOVE"
-    image2="image:kemove-funda-2.jpg" optionsthumb2="200x150" title2="Funda de teclado KEMOVE"
-    image3="image:kemove-funda-3.jpg" optionsthumb3="200x150" title3="Funda de teclado KEMOVE" >}}
+    image1="image:kemove-funda-1.webp" optionsthumb1="200x150" title1="Funda de teclado KEMOVE"
+    image2="image:kemove-funda-2.webp" optionsthumb2="200x150" title2="Funda de teclado KEMOVE"
+    image3="image:kemove-funda-3.webp" optionsthumb3="200x150" title3="Funda de teclado KEMOVE" >}}
 {{< image
     gallery="true"
-    image1="image:kemove-funda-4.jpg" optionsthumb1="200x150" title1="Funda de teclado KEMOVE"
-    image2="image:kemove-funda-5.jpg" optionsthumb2="200x150" title2="Funda de teclado KEMOVE"
-    image3="image:kemove-funda-6.jpg" optionsthumb3="200x150" title3="Funda de teclado KEMOVE" >}}
+    image1="image:kemove-funda-4.webp" optionsthumb1="200x150" title1="Funda de teclado KEMOVE"
+    image2="image:kemove-funda-5.webp" optionsthumb2="200x150" title2="Funda de teclado KEMOVE"
+    image3="image:kemove-funda-6.webp" optionsthumb3="200x150" title3="Funda de teclado KEMOVE" >}}
 {{< image
     gallery="true"
-    image1="image:kemove-funda-7.jpg" optionsthumb1="200x150" title1="Funda de teclado KEMOVE"
-    image2="image:kemove-funda-8.jpg" optionsthumb2="200x150" title2="Funda de teclado KEMOVE"
-    image3="image:kemove-funda-9.jpg" optionsthumb3="200x150" title3="Funda de teclado KEMOVE" >}}
+    image1="image:kemove-funda-7.webp" optionsthumb1="200x150" title1="Funda de teclado KEMOVE"
+    image2="image:kemove-funda-8.webp" optionsthumb2="200x150" title2="Funda de teclado KEMOVE"
+    image3="image:kemove-funda-9.webp" optionsthumb3="200x150" title3="Funda de teclado KEMOVE" >}}
 {{< image
     gallery="true"
-    image1="image:kemove-funda-10.jpg" optionsthumb1="200x150" title1="Funda de teclado KEMOVE"
-    image2="image:kemove-funda-11.jpg" optionsthumb2="200x150" title2="Funda de teclado KEMOVE" >}}
+    image1="image:kemove-funda-10.webp" optionsthumb1="200x150" title1="Funda de teclado KEMOVE"
+    image2="image:kemove-funda-11.webp" optionsthumb2="200x150" title2="Funda de teclado KEMOVE" >}}
 {{< image
     gallery="true"
-    image1="image:kemove-funda-12.jpg" optionsthumb1="200x150" title1="Funda de teclado KEMOVE"
-    image2="image:kemove-funda-13.jpg" optionsthumb2="200x150" title2="Funda de teclado KEMOVE"
+    image1="image:kemove-funda-12.webp" optionsthumb1="200x150" title1="Funda de teclado KEMOVE"
+    image2="image:kemove-funda-13.webp" optionsthumb2="200x150" title2="Funda de teclado KEMOVE"
     caption="Funda de teclado KEMOVE" >}}
 
 ### Análisis de la funda

@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:image-2.jpg"
+imagePost: "image:image-2.webp"
 tags: ["java", "gnu-linux", "planeta-codigo"]
 summary: "Un programa de reconocimiento de caracteres o OCR permite obtener el texto de una imagen o fotografía tomada con la cámara de un teléfono inteligente, captura de pantalla, _scanner_ u otro medio. Al programa OCR se le proporciona la imagen y este genera como resultado el texto reconocido, si la imagen es de buena calidad el reconocimiento de caracteres es bastante preciso. Hay programas OCR de línea de comandos, con interfaz gráfica, en línea sin necesidad de instalar software y también es posible realizar OCR desde en un programa con un lenguaje de programación como Java."
 ---
@@ -51,12 +51,12 @@ Para el ejemplo he usado la siguiente imagen tomada con la cámara de fotos del 
 
 {{< image
     gallery="true"
-    image1="image:image-1.jpg" optionsthumb1="300x250" title1="Imagen original con texto"
-    image2="image:image-2.jpg" optionsthumb2="300x250" title2="Imagen rotada con texto horizontal"
+    image1="image:image-1.webp" optionsthumb1="300x250" title1="Imagen original con texto"
+    image2="image:image-2.webp" optionsthumb2="300x250" title2="Imagen rotada con texto horizontal"
     caption="Imagen original y rotada con texto horizontal" >}}
 {{< image
     gallery="true"
-    image1="image:image-3.jpg" optionsthumb1="650x450" title1="Imagen recortada al área deseada"
+    image1="image:image-3.webp" optionsthumb1="650x450" title1="Imagen recortada al área deseada"
     caption="Imagen recortada al área deseada" >}}
 
 El texto es reconocido con bastante efectividad, el formato no es completamente fiel al original y algunos signos de puntuación pequeños no son reconocidos, sin embargo si la tarea es extrael el texto de un soporte la herramienta es bastante efectiva aunque requiera un revisión y edición posterior.
@@ -73,10 +73,10 @@ El reconocimiento de texto se realiza de forma rápida y se proporciona en forma
 
 {{< image
     gallery="true"
-    image1="image:gimagereader-1.png" optionsthumb1="650x450" title1="Programa con interfaz gráfica para OCR en GNU/Linux" >}}
+    image1="image:gimagereader-1.webp" optionsthumb1="650x450" title1="Programa con interfaz gráfica para OCR en GNU/Linux" >}}
 {{< image
     gallery="true"
-    image1="image:gimagereader-2.png" optionsthumb1="650x450" title1="Programa con interfaz gráfica para OCR en GNU/Linux"
+    image1="image:gimagereader-2.webp" optionsthumb1="650x450" title1="Programa con interfaz gráfica para OCR en GNU/Linux"
     caption="Programa con interfaz gráfica para OCR en GNU/Linux" >}}
 
 #### Herramientas en línea de reconocimiento de texto sin instalar software

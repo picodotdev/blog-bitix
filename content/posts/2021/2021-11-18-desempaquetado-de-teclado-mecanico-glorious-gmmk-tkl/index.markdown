@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:glorious-gmmk-tkl-1.jpg"
-imagePost: "image:glorious-gmmk-tkl-1.jpg"
+imageHead: "image:glorious-gmmk-tkl-1.webp"
+imagePost: "image:glorious-gmmk-tkl-1.webp"
 series: ["desempaquetado-tecnologia"]
 summary: "Al elegir componentes para un ordenador a los que más importancia se les suele dar son el procesador y tarjeta gráfica, más tarde la cantidad de memoria RAM y almacenamiento persistente, luego está el monitor y en menor medida la fuente de alimentación, placa base, caja y ventiladores y disipador del procesador. El teclado para la mayoría de usuarios no suele estar en las primeras posiciones de importancia ni de presupuesto Aún siendo junto al monitor el principal componente hardware con el que se interacciona con el ordenador. Siempre he tenido un teclado de membrana de los económicos, no ha sido hasta ahora cuando he decidido comprar un teclado mecánico. Los buenos teclados mecánicos tienen un precio de venta mayor que los de membrana, sin embargo, para algunos usuarios que usan el ordenador de forma intensiva el precio de más está justificado ya que la experiencia de escritura es mucho mejor en los mecánicos que en los de membrana. En este artículo hago el análisis y desempaquetado del teclado Glorious GMMK TKL, junto con _switches_ Gateron Brown y _keycaps_ ABS."
 ---
@@ -36,8 +36,8 @@ El V7 lo he estado usado casi tres años bastante contento pudiendo moverlo sin 
 
 {{< image
     gallery="true"
-    image1="image:v7-ckw200-1.jpg" optionsthumb1="300x200" title1="Teclado de membrana V7 CKW200"
-    image2="image:v7-ckw200-2.jpg" optionsthumb2="300x200" title2="Teclado de membrana V7 CKW200"
+    image1="image:v7-ckw200-1.webp" optionsthumb1="300x200" title1="Teclado de membrana V7 CKW200"
+    image2="image:v7-ckw200-2.webp" optionsthumb2="300x200" title2="Teclado de membrana V7 CKW200"
     caption="Teclado de membrana V7 CKW200 y borrado de la serigrafía" >}}
 
 ### Los teclados mecánicos
@@ -62,9 +62,9 @@ Algunas teclas son diferentes en la disposición en inglés y española pero son
 
 {{< image
     gallery="true"
-    image1="image:keyboard-ansi-en.png" optionsthumb1="200x150" title1="Formato ANSI con disposición inglés"
-    image2="image:keyboard-iso-es.png" optionsthumb2="200x150" title2="Formato ISO con disposición español"
-    image3="image:keyboard-iso-us-alt.png" optionsthumb3="200x150" title3="Formato ISO con disposición inglés"
+    image1="image:keyboard-ansi-en.webp" optionsthumb1="200x150" title1="Formato ANSI con disposición inglés"
+    image2="image:keyboard-iso-es.webp" optionsthumb2="200x150" title2="Formato ISO con disposición español"
+    image3="image:keyboard-iso-us-alt.webp" optionsthumb3="200x150" title3="Formato ISO con disposición inglés"
     caption="" >}}
 
 Otro aspecto en el que me he informado más ha sido en la forma de impresión de la serigrafía en las teclas ya que un problema habitual de los teclados es que al cabo del tiempo al serigrafía desaparece como en el V7 o se difumina. Los fabricantes emplean varias formas fabricar las _keycaps_ algunas más caras pero con mejor resistencia a este problema de desgaste. En función de la técnica de fabricación de peor a mejor y más cara son las siguientes _pad printing_, _laser etching_, _dye sublimation_ y _double shot_, en un buen teclado de calidad las dos primeras son a evitar por presentar problemas en la serigrafía al cabo del tiempo con el uso intenso.
@@ -73,21 +73,21 @@ Los teclados mecánicos ofrecen la posibilidad de estar premontados incluyendo t
 
 {{< image
     gallery="true"
-    image1="image:keycaps-profiles.jpg" optionsthumb1="300x200" title1="Perfiles de los keycaps"
+    image1="image:keycaps-profiles.webp" optionsthumb1="300x200" title1="Perfiles de los keycaps"
     caption="Perfiles de los keycaps" source="thekeeblog.com" >}}
 
 Si iba a considerar usar un teclado con disposición en inglés he mirado como es la configuración en el entorno de escritorio [GNOME][gnome]. GNOME ofrece configurar la disposición de teclado deseada e incluso cambiar entre las disposiciones fácilmente con la combinación de teclas _Super + Espacio_. La disposición en inglés con la posibilidad de introducir caracteres españoles es _Inglés con teclas muertas por AltGr_.
 
 {{< image
     gallery="true"
-    image1="image:gnome-keyboard-layout-selector.png" optionsthumb1="300x200" title1="Selector de disposición de teclado GNOME"
+    image1="image:gnome-keyboard-layout-selector.webp" optionsthumb1="300x200" title1="Selector de disposición de teclado GNOME"
     caption="Selector de disposición de teclado GNOME" >}}
 
 Al buscar _keycaps_ también hay que tener en cuenta el tamaño de las teclas del teclado, algunos teclados con formatos de tamaño del 75% por ejemplo las teclas de algunas teclas de la fila inferior tiene tamaños distintos a los estándares. Si el tamaño de una tecla del alfabeto es 1x, la tecla _Ctrl_ suele tener un tamaño de 1.25x, la _Bloq Mayus_ 2.25x. Pero por dar cabida a todas las teclas algunos teclados cambian estos tamaños.
 
 {{< image
     gallery="true"
-    image1="image:keycaps-size.jpg" optionsthumb1="300x200" title1="Tamaño de los keycaps"
+    image1="image:keycaps-size.webp" optionsthumb1="300x200" title1="Tamaño de los keycaps"
     caption="Tamaño de los keycaps" >}}
 
 ### Mis requerimientos
@@ -200,9 +200,9 @@ La caja es poco importante en el producto, es suficiente con que tenga una simpl
 
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-1.jpg" optionsthumb1="300x200" title1="Caja del teclado Glorious GMMK TKL"
-    image2="image:glorious-gmmk-tkl-2.jpg" optionsthumb2="300x200" title2="Caja del teclado Glorious GMMK TKL"
-    image3="image:glorious-gmmk-tkl-3.jpg" optionsthumb3="300x200" title3="Caja del teclado Glorious GMMK TKL"
+    image1="image:glorious-gmmk-tkl-1.webp" optionsthumb1="300x200" title1="Caja del teclado Glorious GMMK TKL"
+    image2="image:glorious-gmmk-tkl-2.webp" optionsthumb2="300x200" title2="Caja del teclado Glorious GMMK TKL"
+    image3="image:glorious-gmmk-tkl-3.webp" optionsthumb3="300x200" title3="Caja del teclado Glorious GMMK TKL"
     caption="Caja del teclado Glorious GMMK TKL" >}}
 
 #### El contenido
@@ -211,13 +211,13 @@ El contenido del teclado está compuesto por el propio teclado que viene envuelt
 
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-contenido-1.jpg" optionsthumb1="200x150" title1="Contenido de la caja Glorious GMMK TKL"
-    image2="image:glorious-gmmk-tkl-contenido-2.jpg" optionsthumb2="200x150" title2="Contenido de la caja Glorious GMMK TKL"
-    image3="image:glorious-gmmk-tkl-contenido-3.jpg" optionsthumb3="200x150" title3="Contenido de la caja Glorious GMMK TKL" >}}
+    image1="image:glorious-gmmk-tkl-contenido-1.webp" optionsthumb1="200x150" title1="Contenido de la caja Glorious GMMK TKL"
+    image2="image:glorious-gmmk-tkl-contenido-2.webp" optionsthumb2="200x150" title2="Contenido de la caja Glorious GMMK TKL"
+    image3="image:glorious-gmmk-tkl-contenido-3.webp" optionsthumb3="200x150" title3="Contenido de la caja Glorious GMMK TKL" >}}
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-contenido-4.jpg" optionsthumb1="200x150" title1="Contenido de la caja Glorious GMMK TKL"
-    image2="image:glorious-gmmk-tkl-contenido-5.jpg" optionsthumb2="200x150" title2="Contenido de la caja Glorious GMMK TKL"
+    image1="image:glorious-gmmk-tkl-contenido-4.webp" optionsthumb1="200x150" title1="Contenido de la caja Glorious GMMK TKL"
+    image2="image:glorious-gmmk-tkl-contenido-5.webp" optionsthumb2="200x150" title2="Contenido de la caja Glorious GMMK TKL"
     caption="Contenido de la caja Glorious GMMK TKL" >}}
 
 #### El teclado
@@ -228,22 +228,22 @@ En la parte inferior tiene unas almohadillas de goma para asegurar su fijación 
 
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-teclado-1.jpg" optionsthumb1="200x150" title1="Base del teclado Glorious GMMK TKL"
-    image2="image:glorious-gmmk-tkl-teclado-2.jpg" optionsthumb2="200x150" title2="Base del teclado Glorious GMMK TKL"
-    image3="image:glorious-gmmk-tkl-teclado-3.jpg" optionsthumb3="200x150" title3="Base del teclado Glorious GMMK TKL" >}}
+    image1="image:glorious-gmmk-tkl-teclado-1.webp" optionsthumb1="200x150" title1="Base del teclado Glorious GMMK TKL"
+    image2="image:glorious-gmmk-tkl-teclado-2.webp" optionsthumb2="200x150" title2="Base del teclado Glorious GMMK TKL"
+    image3="image:glorious-gmmk-tkl-teclado-3.webp" optionsthumb3="200x150" title3="Base del teclado Glorious GMMK TKL" >}}
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-teclado-4.jpg" optionsthumb1="200x150" title1="Base del teclado Glorious GMMK TKL"
-    image2="image:glorious-gmmk-tkl-teclado-5.jpg" optionsthumb2="200x150" title2="Base del teclado Glorious GMMK TKL"
-    image3="image:glorious-gmmk-tkl-teclado-6.jpg" optionsthumb3="200x150" title3="Base del teclado Glorious GMMK TKL" >}}
+    image1="image:glorious-gmmk-tkl-teclado-4.webp" optionsthumb1="200x150" title1="Base del teclado Glorious GMMK TKL"
+    image2="image:glorious-gmmk-tkl-teclado-5.webp" optionsthumb2="200x150" title2="Base del teclado Glorious GMMK TKL"
+    image3="image:glorious-gmmk-tkl-teclado-6.webp" optionsthumb3="200x150" title3="Base del teclado Glorious GMMK TKL" >}}
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-teclado-7.jpg" optionsthumb1="200x150" title1="Base del teclado Glorious GMMK TKL"
-    image2="image:glorious-gmmk-tkl-teclado-8.jpg" optionsthumb2="200x150" title2="Base del teclado Glorious GMMK TKL"
-    image3="image:glorious-gmmk-tkl-teclado-9.jpg" optionsthumb3="200x150" title3="Base del teclado Glorious GMMK TKL" >}}
+    image1="image:glorious-gmmk-tkl-teclado-7.webp" optionsthumb1="200x150" title1="Base del teclado Glorious GMMK TKL"
+    image2="image:glorious-gmmk-tkl-teclado-8.webp" optionsthumb2="200x150" title2="Base del teclado Glorious GMMK TKL"
+    image3="image:glorious-gmmk-tkl-teclado-9.webp" optionsthumb3="200x150" title3="Base del teclado Glorious GMMK TKL" >}}
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-teclado-10.jpg" optionsthumb1="200x150" title1="Base del teclado Glorious GMMK TKL"
+    image1="image:glorious-gmmk-tkl-teclado-10.webp" optionsthumb1="200x150" title1="Base del teclado Glorious GMMK TKL"
     caption="Base del teclado Glorious GMMK TKL" >}}
 
 #### Los _switches_
@@ -254,19 +254,19 @@ Aunque el teclado TKL en su versión ISO solo tiene 88 teclas la caja incluye 12
 
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-switches-1.jpg" optionsthumb1="200x150" title1="Conjunto de switches Glorious Gateron Brown"
-    image2="image:glorious-gmmk-tkl-switches-2.jpg" optionsthumb2="200x150" title2="Conjunto de switches Glorious Gateron Brown"
-    image3="image:glorious-gmmk-tkl-switches-3.jpg" optionsthumb3="200x150" title3="Conjunto de switches Glorious Gateron Brown" >}}
+    image1="image:glorious-gmmk-tkl-switches-1.webp" optionsthumb1="200x150" title1="Conjunto de switches Glorious Gateron Brown"
+    image2="image:glorious-gmmk-tkl-switches-2.webp" optionsthumb2="200x150" title2="Conjunto de switches Glorious Gateron Brown"
+    image3="image:glorious-gmmk-tkl-switches-3.webp" optionsthumb3="200x150" title3="Conjunto de switches Glorious Gateron Brown" >}}
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-switches-4.jpg" optionsthumb1="200x150" title1="Conjunto de switches Glorious Gateron Brown"
-    image2="image:glorious-gmmk-tkl-switches-5.jpg" optionsthumb2="200x150" title2="Conjunto de switches Glorious Gateron Brown"
-    image3="image:glorious-gmmk-tkl-switches-6.jpg" optionsthumb3="200x150" title3="Conjunto de switches Glorious Gateron Brown" >}}
+    image1="image:glorious-gmmk-tkl-switches-4.webp" optionsthumb1="200x150" title1="Conjunto de switches Glorious Gateron Brown"
+    image2="image:glorious-gmmk-tkl-switches-5.webp" optionsthumb2="200x150" title2="Conjunto de switches Glorious Gateron Brown"
+    image3="image:glorious-gmmk-tkl-switches-6.webp" optionsthumb3="200x150" title3="Conjunto de switches Glorious Gateron Brown" >}}
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-switches-7.jpg" optionsthumb1="200x150" title1="Conjunto de switches Glorious Gateron Brown"
-    image2="image:glorious-gmmk-tkl-switches-8.jpg" optionsthumb2="200x150" title2="Conjunto de switches Glorious Gateron Brown"
-    image3="image:glorious-gmmk-tkl-switches-9.jpg" optionsthumb3="200x150" title3="Conjunto de switches Glorious Gateron Brown"
+    image1="image:glorious-gmmk-tkl-switches-7.webp" optionsthumb1="200x150" title1="Conjunto de switches Glorious Gateron Brown"
+    image2="image:glorious-gmmk-tkl-switches-8.webp" optionsthumb2="200x150" title2="Conjunto de switches Glorious Gateron Brown"
+    image3="image:glorious-gmmk-tkl-switches-9.webp" optionsthumb3="200x150" title3="Conjunto de switches Glorious Gateron Brown"
     caption="Conjunto de switches Glorious Gateron Brown" >}}
 
 #### Los _keycaps_
@@ -279,26 +279,26 @@ Ya sin escatimar gastos he comprado un conjunto de _keycaps_ ABS en españo en d
 
 {{< image
     gallery="true"
-    image1="image:keycaps-abs-es-black-1.jpg" optionsthumb1="200x150" title1="Keycaps ABS double shot OEM español"
-    image2="image:keycaps-abs-es-white-1.jpg" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español" >}}
+    image1="image:keycaps-abs-es-black-1.webp" optionsthumb1="200x150" title1="Keycaps ABS double shot OEM español"
+    image2="image:keycaps-abs-es-white-1.webp" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español" >}}
 {{< image
     gallery="true"
-    image1="image:keycaps-abs-es-black-2.jpg" optionsthumb1="200x150" title1="Keycaps ABS double shot OEM español"
-    image2="image:keycaps-abs-es-black-3.jpg" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español"
-    image3="image:keycaps-abs-es-black-4.jpg" optionsthumb3="200x150" title3="Keycaps ABS double shot OEM español" >}}
+    image1="image:keycaps-abs-es-black-2.webp" optionsthumb1="200x150" title1="Keycaps ABS double shot OEM español"
+    image2="image:keycaps-abs-es-black-3.webp" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español"
+    image3="image:keycaps-abs-es-black-4.webp" optionsthumb3="200x150" title3="Keycaps ABS double shot OEM español" >}}
 {{< image
     gallery="true"
-    image1="image:keycaps-abs-es-white-2.jpg" optionsthumb1="200x150" title1="Keycaps ABS double shot OEM español"
-    image2="image:keycaps-abs-es-white-3.jpg" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español"
-    image3="image:keycaps-abs-es-white-4.jpg" optionsthumb3="200x150" title3="Keycaps ABS double shot OEM español" >}}
+    image1="image:keycaps-abs-es-white-2.webp" optionsthumb1="200x150" title1="Keycaps ABS double shot OEM español"
+    image2="image:keycaps-abs-es-white-3.webp" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español"
+    image3="image:keycaps-abs-es-white-4.webp" optionsthumb3="200x150" title3="Keycaps ABS double shot OEM español" >}}
 {{< image
     gallery="true"
-    image1="image:keycaps-abs-es-black-5.jpg" optionsthumb1="200x150" title1="Keycaps ABS double shot OEM español"
-    image2="image:keycaps-abs-es-black-6.jpg" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español" >}}
+    image1="image:keycaps-abs-es-black-5.webp" optionsthumb1="200x150" title1="Keycaps ABS double shot OEM español"
+    image2="image:keycaps-abs-es-black-6.webp" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español" >}}
 {{< image
     gallery="true"
-    image1="image:keycaps-abs-es-white-5.jpg" optionsthumb1="200x150" title1="Keycaps ABS double shot OEM español"
-    image2="image:keycaps-abs-es-white-6.jpg" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español"
+    image1="image:keycaps-abs-es-white-5.webp" optionsthumb1="200x150" title1="Keycaps ABS double shot OEM español"
+    image2="image:keycaps-abs-es-white-6.webp" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español"
     caption="Keycaps ABS double shot OEM español en color blanco y negro" >}}
 
 #### Colocación de _switches_ y _keycaps_
@@ -315,14 +315,14 @@ Con el _switch_ en la orientación correcta mi técnica para evitar que las pati
 
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-mount-switches-1.jpg" optionsthumb1="200x150" title1="Progreso de montaje de switches"
-    image2="image:glorious-gmmk-tkl-mount-switches-2.jpg" optionsthumb2="200x150" title2="Progreso de montaje de switches"
-    image3="image:glorious-gmmk-tkl-mount-switches-3.jpg" optionsthumb3="200x150" title3="Progreso de montaje de switches" >}}
+    image1="image:glorious-gmmk-tkl-mount-switches-1.webp" optionsthumb1="200x150" title1="Progreso de montaje de switches"
+    image2="image:glorious-gmmk-tkl-mount-switches-2.webp" optionsthumb2="200x150" title2="Progreso de montaje de switches"
+    image3="image:glorious-gmmk-tkl-mount-switches-3.webp" optionsthumb3="200x150" title3="Progreso de montaje de switches" >}}
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-mount-switches-4.jpg" optionsthumb1="200x150" title1="Progreso de montaje de switches"
-    image2="image:glorious-gmmk-tkl-mount-switches-5.jpg" optionsthumb2="200x150" title2="Progreso de montaje de switches"
-    image3="image:glorious-gmmk-tkl-mount-switches-6.jpg" optionsthumb3="200x150" title3="Progreso de montaje de switches"
+    image1="image:glorious-gmmk-tkl-mount-switches-4.webp" optionsthumb1="200x150" title1="Progreso de montaje de switches"
+    image2="image:glorious-gmmk-tkl-mount-switches-5.webp" optionsthumb2="200x150" title2="Progreso de montaje de switches"
+    image3="image:glorious-gmmk-tkl-mount-switches-6.webp" optionsthumb3="200x150" title3="Progreso de montaje de switches"
     caption="Progreso de montaje de switches" >}}
 
 Una vez colocados todos los _switches_ y en perfecto funcionamiento, el siguiente paso es colocar los _keycaps_. La dificultad, si es posible denominarlo como dificultad, de este paso es no equivocarse en colocar un _keycap_ en una posición que no le corresponde según su serigrafía. Para facilitar ordenar los _keycaps_ en la posición que le corresponde se puede tomar como referencia otro teclado físico o un teclado virtual en pantalla.
@@ -331,8 +331,8 @@ Otra opción es disponer los _keycaps_ previamente en la mesa según su serigraf
 
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-mount-keycaps-1.jpg" optionsthumb1="200x150" title1="Montaje de keycaps"
-    image2="image:glorious-gmmk-tkl-mount-keycaps-2.jpg" optionsthumb2="200x150" title2="Progreso de montaje de switches"
+    image1="image:glorious-gmmk-tkl-mount-keycaps-1.webp" optionsthumb1="200x150" title1="Montaje de keycaps"
+    image2="image:glorious-gmmk-tkl-mount-keycaps-2.webp" optionsthumb2="200x150" title2="Progreso de montaje de switches"
     caption="Montaje de keycaps" >}}
 
 El extractor  de _keycap_ no sirve para la tecla _Retorno_ en del formato ISO ya que los estabilizadores no permiten usarlo, para sacar el _switch_ de la tecla _Retorno_ hay que utilizar alguna herramienta para desengancharlo primero de un lado y luego de otro teniendo en cuenta que los _switches_ tiene una pequeña pestaña a cada lado que es necesario presionar para desengarzar.
@@ -341,7 +341,7 @@ Colocados los _swichtes_ no tuve ninguno en el que hubiese doblado alguna patill
 
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-switches-pin-1.jpg" optionsthumb1="200x150" title1="Switch con pines doblados"
+    image1="image:glorious-gmmk-tkl-switches-pin-1.webp" optionsthumb1="200x150" title1="Switch con pines doblados"
 
     caption="Switch con pines doblados" >}}
 
@@ -353,22 +353,22 @@ Ahora habiendo probado un teclado mecánico y experimentando la diferencia, la d
 
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-mounted-1.jpg" optionsthumb1="200x150" title1="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout"
-    image2="image:glorious-gmmk-tkl-mounted-10.jpg" optionsthumb2="200x150" title2="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout" >}}
+    image1="image:glorious-gmmk-tkl-mounted-1.webp" optionsthumb1="200x150" title1="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout"
+    image2="image:glorious-gmmk-tkl-mounted-10.webp" optionsthumb2="200x150" title2="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout" >}}
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-mounted-2.jpg" optionsthumb1="200x150" title1="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout"
-    image2="image:glorious-gmmk-tkl-mounted-3.jpg" optionsthumb2="200x150" title2="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout"
-    image3="image:glorious-gmmk-tkl-mounted-4.jpg" optionsthumb3="200x150" title3="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout" >}}
+    image1="image:glorious-gmmk-tkl-mounted-2.webp" optionsthumb1="200x150" title1="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout"
+    image2="image:glorious-gmmk-tkl-mounted-3.webp" optionsthumb2="200x150" title2="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout"
+    image3="image:glorious-gmmk-tkl-mounted-4.webp" optionsthumb3="200x150" title3="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout" >}}
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-mounted-6.jpg" optionsthumb1="200x150" title1="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout"
-    image2="image:glorious-gmmk-tkl-mounted-7.jpg" optionsthumb2="200x150" title2="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout"
-    image3="image:glorious-gmmk-tkl-mounted-8.jpg" optionsthumb3="200x150" title3="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout" >}}
+    image1="image:glorious-gmmk-tkl-mounted-6.webp" optionsthumb1="200x150" title1="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout"
+    image2="image:glorious-gmmk-tkl-mounted-7.webp" optionsthumb2="200x150" title2="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout"
+    image3="image:glorious-gmmk-tkl-mounted-8.webp" optionsthumb3="200x150" title3="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout" >}}
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-mounted-5.jpg" optionsthumb1="200x150" title1="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout"
-    image2="image:glorious-gmmk-tkl-mounted-9.jpg" optionsthumb2="200x150" title2="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout"
+    image1="image:glorious-gmmk-tkl-mounted-5.webp" optionsthumb1="200x150" title1="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout"
+    image2="image:glorious-gmmk-tkl-mounted-9.webp" optionsthumb2="200x150" title2="Teclado Glorious GMMK TKL (ISO, barebone) + ABS keycaps double shot ES layout"
     caption="Teclado Glorious GMMK TKL (ISO, barebone) (darkness around, brightness inside™ custom version)" >}}
 
 Para mi uso me gustan más los _switches_ táctiles, pero incluso me gustaría algo más duros que lo son los _brown_, prefiriría algo más duros como los _clear_ de Cherry MX, sin embargo, los Gareron _brown_ son los únicos táctiles de Glorious disponibles en Amazon. El esfuerzo para presionar la tecla es mucho menor que en el de membrana, las teclas anchas son mucho más estables, la respuesta táctil apenas se nota casi parecen lineales.
@@ -387,8 +387,8 @@ El siguiente nivel de adicción a los teclados mecánicos es [lubricar los _swit
 
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-before.jpg" optionsthumb1="300x200" title1="Teclado y ratón antes y después"
-    image2="image:glorious-gmmk-tkl-after.jpg" optionsthumb2="300x200" title2="Teclado y ratón antes y después"
+    image1="image:glorious-gmmk-tkl-before.webp" optionsthumb1="300x200" title1="Teclado y ratón antes y después"
+    image2="image:glorious-gmmk-tkl-after.webp" optionsthumb2="300x200" title2="Teclado y ratón antes y después"
     caption="Teclado y ratón antes y después" >}}
 
 {{< youtube

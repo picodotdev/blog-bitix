@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:adr.png"
+imagePost: "image:adr.webp"
 tags: ["planeta-codigo", "programacion"]
 summary: "Las tareas de un programador no consisten únicamente en escribir líneas de código o de un arquitecto decidir que usar o no usar y como. Una tarea importante de un programador o un arquitecto debe ser también escribir o mantener documentación actualizada. La arquitectura empleada en una aplicación permite conocer cuáles son sus componentes y piezas específicas de las que se compone sin tener que analizar el código fuente. La arquitectura de una aplicación puede ser de muchas formas, las decisiones de arquitectura también son un aspecto susceptible de ser documentadas, que permitan conocer cuáles fueron las motivaciones para elegir entre unas opciones y otras y que cambios de arquitectura ha sufrido una aplicación y por que motivos."
 ---

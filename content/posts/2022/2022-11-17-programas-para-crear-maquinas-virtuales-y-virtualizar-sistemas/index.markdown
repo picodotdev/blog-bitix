@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:cajas-1.png"
+imagePost: "image:cajas-1.webp"
 tags: ["gnu-linux", "planeta-codigo"]
 summary: "La virtualización es la herramienta con la que probar un sistema operativo sin tener que utilizar una máquina física. Con la cantidad de núcleos de los sistemas actuales y la cantidad de memoria RAM que tienen, la virtualización es una opción disponible para los usuarios. Una alternativa a la virtualización son los contenedores pero estos son más para servicios sin interfaz gráfica. Hay aplicaciones que permiten tener una máquina virtual de Windows en un sistema operativo GNU/Linux o probar una distribución de GNU/Linux en un sistema Windows antes de migrar definitivamente a GNU/Linux."
 ---
@@ -47,9 +47,9 @@ Dado que VirtualBox está disponible para los tres sistemas operativos que usan 
 
 {{< image
     gallery="true"
-    image1="image:virtualbox-1.png" optionsthumb1="200x150" title1="VirtualBox"
-    image2="image:virtualbox-2.png" optionsthumb2="200x150" title2="VirtualBox"
-    image3="image:virtualbox-3.png" optionsthumb3="200x150" title3="VirtualBox"
+    image1="image:virtualbox-1.webp" optionsthumb1="200x150" title1="VirtualBox"
+    image2="image:virtualbox-2.webp" optionsthumb2="200x150" title2="VirtualBox"
+    image3="image:virtualbox-3.webp" optionsthumb3="200x150" title3="VirtualBox"
     caption="VirtualBox" >}}
 
 La interfaz gráfica permite crear máquinas virtuales manualmente. Un programa [Vagrant][vagrant] permite automatizar la creación y aprovisionamiento de las máquinas virtuales, en base a una descripción de la máquina a crear con un archivo de configuración.
@@ -65,9 +65,9 @@ La aplicación integrada de Cajas de [el entorno de escritorio GNOME][blogbitix-
 
 {{< image
     gallery="true"
-    image1="image:cajas-1.png" optionsthumb1="200x150" title1="Cajas de GNOME"
-    image2="image:cajas-2.png" optionsthumb2="200x150" title2="Cajas de GNOME"
-    image3="image:cajas-3.png" optionsthumb3="200x150" title3="Cajas de GNOME"
+    image1="image:cajas-1.webp" optionsthumb1="200x150" title1="Cajas de GNOME"
+    image2="image:cajas-2.webp" optionsthumb2="200x150" title2="Cajas de GNOME"
+    image3="image:cajas-3.webp" optionsthumb3="200x150" title3="Cajas de GNOME"
     caption="Cajas de GNOME" >}}
 
 Con el comando _virt-install_ es posible también automatizar la creación de máquinas virtuales. El siguiente comando permite configurar la ubicación del sistema de almacenamiento de la máquina virtual además de la RAM y definir el sistema como un sistema con arranque EFI.

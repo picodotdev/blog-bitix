@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:gnome-user-dirs.png"
+imagePost: "image:gnome-user-dirs.webp"
 tags: ["gnu-linux", "planeta-codigo"]
 ---
 
@@ -51,16 +51,16 @@ Con esta configuración para el explorador de archivos en este caso Nautilus de 
 
 {{< image
     gallery="true"
-    image1="image:gnome-user-dirs.png" optionsthumb1="300x200" title1="Directorios de usuario en el directorio home"
-    image2="image:usb-user-dirs.png" optionsthumb2="300x200" title2="Directorios de usuario en disco USB externo"
+    image1="image:gnome-user-dirs.webp" optionsthumb1="300x200" title1="Directorios de usuario en el directorio home"
+    image2="image:usb-user-dirs.webp" optionsthumb2="300x200" title2="Directorios de usuario en disco USB externo"
     caption="Directorios de usuario en el directorio home y en disco USB externo" >}}
 
 En el caso de GNU/Linux los directorios de usuario además están localizados de forma automática, esto es al listar los directorios los nombres están en el idioma del usuario de forma consistente, al contrario de como ocurre en otros sistemas operativos que sus nombres se mantienen en inglés aún en su explorador de archivos aparecer en el idioma del usuario creando una inconsistencia entre los nombres que se listan desde la terminal y los que aparecen en su explorador de archivos. 
 
 {{< image
     gallery="true"
-    image1="image:terminal-user-dirs.png" optionsthumb1="300x200" title1="Directorios de usuario en el directorio home"
-    image2="image:usb-terminal-user-dirs.png" optionsthumb2="300x200" title2="Directorios de usuario en disco USB externo"
+    image1="image:terminal-user-dirs.webp" optionsthumb1="300x200" title1="Directorios de usuario en el directorio home"
+    image2="image:usb-terminal-user-dirs.webp" optionsthumb2="300x200" title2="Directorios de usuario en disco USB externo"
     caption="Directorios de usuario en el directorio home y en disco USB externo" >}}
 
 {{< reference >}}

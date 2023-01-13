@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:ps4.jpg"
+imageHead: "image:ps4.webp"
 tags: ["juegos", "opinion", "planeta-codigo"]
 summary: "Todo indica que el formato físico de los juegos está a punto de desaparecer en una futura generación de consolas no muy lejana como ya ha ocurrido en gran medida con la música o los libros. Pero los juegos digitales crean otros problemas que los juegos físicos no tienen y es el motivo por el que algunos usuarios son contrarios a solo los digitales, ¿sería posible solución a los problemas de los juegos físicos y de los digitales? Aquí teorizo sobre este tema y planteo una solución, las _smartcards_."
 ---
@@ -34,7 +34,7 @@ El concepto de una _smartcard_ es un objeto tangible como una tarjeta de crédit
 
 {{< image
     gallery="false"
-    image1="image:smartcard-contactless.png" optionsthumb1="300x250" title1="Smartcard contactless" >}}
+    image1="image:smartcard-contactless.webp" optionsthumb1="300x250" title1="Smartcard contactless" >}}
 
 Quedada resuelta la posesión física de los juegos con la _smartcard_, queda como descargarlos y en este modelo que planteo la descarga se realizaría a través de internet tal como ocurre en los juegos digitales. Una vez descargado el juego ya no sería necesaria la conexión a internet y solo introducir la _smartcard_ en cada inicio del juego, en cada 3 inicios o cada 3 días para evitar la incomodidad de tener que usar la _smartcard_ en cada inicio.
 

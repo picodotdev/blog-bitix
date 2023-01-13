@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:gnome-subtitles.png"
+imagePost: "image:gnome-subtitles.webp"
 tags: ["gnu-linux", "planeta-codigo", "software-libre"]
 summary: "Los subtítulos permiten mostrar una transcripción en texto del audio y diálogos en vídeos, películas y series. Algunos reproductores de vídeo permiten seleccionar la pista de subtítulos embebidos en los propios vídeos o añadir nuevas pistas de subtítulos a los vídeos. Hay programas editores que permiten crear y modificar los archivos de subtítulos. También hay algunas páginas de las que descargar los archivos subtítulos."
 ---
@@ -35,7 +35,7 @@ Estos editores muestran una previsualización del vídeo, un área para introduc
 
 {{< image
     gallery="true"
-    image1="image:gnome-subtitles.png" optionsthumb1="650x450" title1="Editor de subtítulos de GNOME Subtitles"
+    image1="image:gnome-subtitles.webp" optionsthumb1="650x450" title1="Editor de subtítulos de GNOME Subtitles"
     caption="Editor de subtítulos de GNOME Subtitles" >}}
 
 Este es el contenido de un archivo de subtítulos en formato _srt_, para vídeos embebidos en una página web hay que usar el formato _vtt_ que es muy similar de modo que en este caso hay que convertir el _srt_ a _vtt_ si el programa editor de subtítulos no lo permite exportar directamente. También es posible editar el archivo de texto de subtítulos y transformar un _srt_ en un _vtt_ ya que son muy similares salvo una línea de cabecera.
@@ -47,7 +47,7 @@ En este vídeo se pueden activar los subtítulos con la transcripción del audio
 
 {{< video
     video="darkest-dungeon.mp4"
-    poster="darkest-dungeon.jpg"
+    poster="darkest-dungeon.webp"
     subtitles="videos/darkest-dungeon-intro-es.vtt"
     subtitlesLabel="Español" subtitlesLang="es"
     caption="Vídeo subtitulado" >}}
@@ -66,14 +66,14 @@ Si el vídeo no tiene pistas de subtítulos se pueden cargar archivos de subtít
 
 {{< image
     gallery="true"
-    image1="image:vlc-subtitles.png" optionsthumb1="650x450" title1="Subtítulos en el reproductor de vídeo VLC"
+    image1="image:vlc-subtitles.webp" optionsthumb1="650x450" title1="Subtítulos en el reproductor de vídeo VLC"
     caption="Subtítulos en el reproductor de vídeo VLC" >}}
 
 El reproductor VLC también permite modificar la apariencia de los subtítulos como su posición, fuente de texto, el tamaño de la fuente y el color de la fuente, su opacidad para que los subtítulos no oculten completamente la imagen sobre la que se muestran, el grosor del borde y su color, este borde permite que los bordes del texto no se confundan con la imagen si hay alguna escena en que tengan colores similares.
 
 {{< image
     gallery="true"
-    image1="image:vlc-subtitles-preferences.png" optionsthumb1="650x450" title1="Preferencias de subtítulos de VLC"
+    image1="image:vlc-subtitles-preferences.webp" optionsthumb1="650x450" title1="Preferencias de subtítulos de VLC"
     caption="Preferencias de subtítulos de VLC" >}}
 
 ### Crear y poner subtítulos con el editor de YouTube
@@ -86,7 +86,7 @@ Las ventajas de añadir subtítulos en vídeos de YouTube son una mayor audienci
 
 {{< image
     gallery="true"
-    image1="image:youtube-subtitles.png" optionsthumb1="650x450" title1="Editor de subtítulos de YouTube"
+    image1="image:youtube-subtitles.webp" optionsthumb1="650x450" title1="Editor de subtítulos de YouTube"
     caption="Editor de subtítulos de YouTube" >}}
 
 {{< reference >}}

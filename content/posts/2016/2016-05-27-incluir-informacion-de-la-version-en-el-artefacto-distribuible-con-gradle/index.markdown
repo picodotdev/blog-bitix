@@ -36,7 +36,7 @@ En el caso de un artefacto _jar_ Gradle lo genera en _build/libs/GradleVersion-1
 
 {{< image
     gallery="true"
-    image1="image:gradle-version.png" optionsthumb1="300x200" title1="Artefacto distribuible con información de versión" >}}
+    image1="image:gradle-version.webp" optionsthumb1="300x200" title1="Artefacto distribuible con información de versión" >}}
 
 En este caso el artefacto que he usado ha sido un archivo _jar_ si se tratase de una aplicación web y de un archivo _war_ en el archivo de construcción de Grade se puede aplicar esto de forma similar. La aplicación podría devolver la versión como una cabecera <abbr title="HyperText Transfer Protocol">HTTP</abbr> o el en código fuente de <abbr title="HyperText Markup Language">HTML</abbr> como un comentario que genere sus páginas web.
 

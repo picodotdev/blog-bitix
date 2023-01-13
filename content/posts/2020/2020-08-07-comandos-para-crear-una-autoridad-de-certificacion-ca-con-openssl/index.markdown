@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:firefox-certificates.png"
+imagePost: "image:firefox-certificates.webp"
 tags: ["gnu-linux", "planeta-codigo"]
 summary: "Los certificados autofirmados no son suficientes para un entorno de producción. En producción hay que usar certificados firmados por una entidad de confianza. AWS Certificate Manager ofrece la suya pero tiene un coste elevado y los certificados de otras entidades tampoco son baratos. Para certificados de uso interno en una organización que proporcionan comunicaciones seguras OpenSSL permite con una serie de comandos crear una autoridad de certificación o CA en la que los servidores y clientes internos confíen. Las funciones de la CA incluyen crear certificados a partir de las solicitudes de los certificados para los servidores y también la revocación y renovación de certificados."
 ---
@@ -38,7 +38,7 @@ El certificado de la CA raíz es simplemente un certificado autofirmado.
 
 {{< image
     gallery="true"
-    image1="image:archivos-ca.png" optionsthumb1="300x250" title1="Archivos y directorios de la autoridad de certificación con OpenSSL"
+    image1="image:archivos-ca.webp" optionsthumb1="300x250" title1="Archivos y directorios de la autoridad de certificación con OpenSSL"
     caption="Archivos y directorios de la autoridad de certificación con OpenSSL" >}}
 
 Al crear el certificado se utiliza un archivo de configuración donde se guardan las opciones por defecto de configuración que determinan varios aspectos de OpenSSL como directorios, políticas, fecha de validez de los certificados emitidos, campos de los certificados que emite o perfiles de firma entre algunos otros.
@@ -101,22 +101,22 @@ Los navegadores incluyen los certificados de algunas autoridades de certificados
 
 {{< image
     gallery="true"
-    image1="image:firefox-security-warning.png" optionsthumb1="300x250" title1="Advertencia con certificado no de confianza en Firefox"
-    image2="image:firefox-certificate-warning.png" optionsthumb2="300x250" title2="Advertencia con certificado no de confianza en Firefox"
+    image1="image:firefox-security-warning.webp" optionsthumb1="300x250" title1="Advertencia con certificado no de confianza en Firefox"
+    image2="image:firefox-certificate-warning.webp" optionsthumb2="300x250" title2="Advertencia con certificado no de confianza en Firefox"
     caption="Advertencia con certificado no de confianza en Firefox" >}}
 
 Para eliminar el mensaje de advertencia al acceder al sitio web y la advertencia del icono de seguridad del sitio web hay que instalar en el navegador el certificado de la CA raíz o intermedia. En el navegador web [Firefox][Firefox] se importa un nuevo certificado de una CA en la que se confía desde la opción _Preferencias > Privacidad y seguridad > Ver certificados > Autoridades > Importar_ en el navegador [Chrome][google-chrome] desde _Configuración > Privacidad y seguridad > Gestionar certificados_. Por defecto los navegadores web ya incorporan los certificados de varias CA importantes de internet.
 
 {{< image
     gallery="true"
-    image1="image:firefox-certificates.png" optionsthumb1="300x250" title1="Certificados de autoridades de certificación de confianza en Firefox"
+    image1="image:firefox-certificates.webp" optionsthumb1="300x250" title1="Certificados de autoridades de certificación de confianza en Firefox"
     caption="Certificados de autoridades de certificación de confianza en Firefox" >}}
 
 Una vez se importa el certificado de la CA el navegador muestra el icono de seguridad del sitio web con el icono sin advertencias indicando que no hay ningún problema de seguridad en la conexión con el sitio web, tampoco se muestra la página inicial de advertencia.
 
 {{< image
     gallery="true"
-    image1="image:firefox-certificate-valid.png" optionsthumb1="300x250" title1="Certificado de confianza y conexión segura en Firefox"
+    image1="image:firefox-certificate-valid.webp" optionsthumb1="300x250" title1="Certificado de confianza y conexión segura en Firefox"
     caption="Certificado de confianza y conexión segura en Firefox" >}}
 
 ### Revocar y renovar un certificado

@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:maono-hd300-caja-1.jpg"
-imagePost: "image:maono-hd300-caja-1.jpg"
+imageHead: "image:maono-hd300-caja-1.webp"
+imagePost: "image:maono-hd300-caja-1.webp"
 tags: ["hardware"]
 series: ["desempaquetado-tecnologia"]
 summary: "El MAONO HD300T es un micrófono dinámico cardioide muy polivalente gracias a sus múltiples conexiones tanto USB, XLR como _jack_ 3.5mm que incluye además en su contenido cables, una peana con soporte antigolpes y un filtro _pop_. Ofrece el conjunto completo básico para la captura de audio ya sea vocal o instrumental con fin de crear contenido en video blogs, un canal de YouTube, realizar _streaming_ de juegos, contenido en tiempo real o para ser usado en programas de videoconferencia. Un micrófono más que suficiente para un ámbito de usuario, una calidad de audio muy superior a un micrófono interno de un portátil y muy completo con precio muy atractivo que hace de él una adquisición recomendable."
@@ -58,23 +58,23 @@ Estos son algunos ejemplos de patrones de captura de audio que usan los micrófo
 
 {{< image
     gallery="true"
-    image1="image:patron-micrfono-cardioid-1.png" optionsthumb1="200x150" title1="Patrón cardioide"
-    image2="image:patron-micrfono-cardioid-2.png" optionsthumb2="200x150" title2="Patrón cardioide"
+    image1="image:patron-micrfono-cardioid-1.webp" optionsthumb1="200x150" title1="Patrón cardioide"
+    image2="image:patron-micrfono-cardioid-2.webp" optionsthumb2="200x150" title2="Patrón cardioide"
     caption="Patrón cardioide" >}}
 {{< image
     gallery="true"
-    image1="image:patron-micrfono-hypercardioid-1.png" optionsthumb1="200x150" title1="Patrón hypercardioide"
-    image2="image:patron-micrfono-hypercardioid-2.png" optionsthumb2="200x150" title2="Patrón hypercardioide"
+    image1="image:patron-micrfono-hypercardioid-1.webp" optionsthumb1="200x150" title1="Patrón hypercardioide"
+    image2="image:patron-micrfono-hypercardioid-2.webp" optionsthumb2="200x150" title2="Patrón hypercardioide"
     caption="Patrón hypercardioide" >}}
 {{< image
     gallery="true"
-    image1="image:patron-micrfono-bidirectional-1.png" optionsthumb1="200x150" title1="Patrón bidireccional"
-    image2="image:patron-micrfono-bidirectional-2.png" optionsthumb2="200x150" title2="Patrón bidireccional"
+    image1="image:patron-micrfono-bidirectional-1.webp" optionsthumb1="200x150" title1="Patrón bidireccional"
+    image2="image:patron-micrfono-bidirectional-2.webp" optionsthumb2="200x150" title2="Patrón bidireccional"
     caption="Patrón bidireccional" >}}
 {{< image
     gallery="true"
-    image1="image:patron-micrfono-omnidirectional-1.png" optionsthumb1="200x150" title1="Patrón omnidireccional"
-    image2="image:patron-micrfono-omnidirectional-2.png" optionsthumb2="200x150" title2="Patrón omnidireccional"
+    image1="image:patron-micrfono-omnidirectional-1.webp" optionsthumb1="200x150" title1="Patrón omnidireccional"
+    image2="image:patron-micrfono-omnidirectional-2.webp" optionsthumb2="200x150" title2="Patrón omnidireccional"
     caption="Patrón omnidireccional" >}}
 
 #### Filtro _pop_
@@ -146,7 +146,7 @@ Las especificaciones técnicas completas del micrófono MAONO HD300T son las sig
 
 {{< image
     gallery="true"
-    image1="image:maono-hd300-specs.png" optionsthumb1="650x450" title1="Especificaciones del micrófono MAONO HD300 SERIES"
+    image1="image:maono-hd300-specs.webp" optionsthumb1="650x450" title1="Especificaciones del micrófono MAONO HD300 SERIES"
     caption="Especificaciones del micrófono MAONO HD300 SERIES" >}}
 
 #### Dónde comprar
@@ -179,18 +179,18 @@ En la parte inferior un lateral se incluye una descripción y características p
 
 {{< image
     gallery="true"
-    image1="image:maono-hd300-caja-1.jpg" optionsthumb1="200x150" title1="Caja del micrófono MAONO HD300T"
-    image2="image:maono-hd300-caja-2.jpg" optionsthumb2="200x150" title2="Caja del micrófono MAONO HD300T"
-    image3="image:maono-hd300-caja-3.jpg" optionsthumb3="200x150" title3="Caja del micrófono MAONO HD300T" >}}
+    image1="image:maono-hd300-caja-1.webp" optionsthumb1="200x150" title1="Caja del micrófono MAONO HD300T"
+    image2="image:maono-hd300-caja-2.webp" optionsthumb2="200x150" title2="Caja del micrófono MAONO HD300T"
+    image3="image:maono-hd300-caja-3.webp" optionsthumb3="200x150" title3="Caja del micrófono MAONO HD300T" >}}
 {{< image
     gallery="true"
-    image1="image:maono-hd300-caja-4.jpg" optionsthumb1="200x150" title1="Caja del micrófono MAONO HD300T"
-    image2="image:maono-hd300-caja-5.jpg" optionsthumb2="200x150" title2="Caja del micrófono MAONO HD300T" >}}
+    image1="image:maono-hd300-caja-4.webp" optionsthumb1="200x150" title1="Caja del micrófono MAONO HD300T"
+    image2="image:maono-hd300-caja-5.webp" optionsthumb2="200x150" title2="Caja del micrófono MAONO HD300T" >}}
 {{< image
     gallery="true"
-    image1="image:maono-hd300-caja-6.jpg" optionsthumb1="200x150" title1="Caja del micrófono MAONO HD300T"
-    image2="image:maono-hd300-caja-7.jpg" optionsthumb2="200x150" title2="Caja del micrófono MAONO HD300T"
-    image3="image:maono-hd300-caja-8.jpg" optionsthumb3="200x150" title3="Caja del micrófono MAONO HD300T"
+    image1="image:maono-hd300-caja-6.webp" optionsthumb1="200x150" title1="Caja del micrófono MAONO HD300T"
+    image2="image:maono-hd300-caja-7.webp" optionsthumb2="200x150" title2="Caja del micrófono MAONO HD300T"
+    image3="image:maono-hd300-caja-8.webp" optionsthumb3="200x150" title3="Caja del micrófono MAONO HD300T"
     caption="Caja del micrófono MAONO HD300T" >}}
 
 #### El contenido
@@ -210,43 +210,43 @@ Este es el aspecto de todos los componentes desmontados junto a su manual.
 
 {{< image
     gallery="true"
-    image1="image:maono-hd300-contenido-1.jpg" optionsthumb1="200x150" title1="Contenido de la caja del micrófono MAONO HD300T"
-    image2="image:maono-hd300-contenido-2.jpg" optionsthumb2="200x150" title2="Contenido de la caja del micrófono MAONO HD300T"
-    image3="image:maono-hd300-contenido-3.jpg" optionsthumb3="200x150" title3="Contenido de la caja del micrófono MAONO HD300T" >}}
+    image1="image:maono-hd300-contenido-1.webp" optionsthumb1="200x150" title1="Contenido de la caja del micrófono MAONO HD300T"
+    image2="image:maono-hd300-contenido-2.webp" optionsthumb2="200x150" title2="Contenido de la caja del micrófono MAONO HD300T"
+    image3="image:maono-hd300-contenido-3.webp" optionsthumb3="200x150" title3="Contenido de la caja del micrófono MAONO HD300T" >}}
 {{< image
     gallery="true"
-    image1="image:maono-hd300-contenido-4.jpg" optionsthumb1="200x150" title1="Contenido de la caja del micrófono MAONO HD300T"
-    image2="image:maono-hd300-contenido-5.jpg" optionsthumb2="200x150" title2="Contenido de la caja del micrófono MAONO HD300T"
-    image3="image:maono-hd300-contenido-6.jpg" optionsthumb3="200x150" title3="Contenido de la caja del micrófono MAONO HD300T" >}}
+    image1="image:maono-hd300-contenido-4.webp" optionsthumb1="200x150" title1="Contenido de la caja del micrófono MAONO HD300T"
+    image2="image:maono-hd300-contenido-5.webp" optionsthumb2="200x150" title2="Contenido de la caja del micrófono MAONO HD300T"
+    image3="image:maono-hd300-contenido-6.webp" optionsthumb3="200x150" title3="Contenido de la caja del micrófono MAONO HD300T" >}}
 {{< image
     gallery="true"
-    image1="image:maono-hd300-contenido-7.jpg" optionsthumb1="200x150" title1="Contenido de la caja del micrófono MAONO HD300T"
-    image2="image:maono-hd300-contenido-8.jpg" optionsthumb2="200x150" title2="Contenido de la caja del micrófono MAONO HD300T"
-    image3="image:maono-hd300-contenido-9.jpg" optionsthumb3="200x150" title3="Contenido de la caja del micrófono MAONO HD300T" >}}
+    image1="image:maono-hd300-contenido-7.webp" optionsthumb1="200x150" title1="Contenido de la caja del micrófono MAONO HD300T"
+    image2="image:maono-hd300-contenido-8.webp" optionsthumb2="200x150" title2="Contenido de la caja del micrófono MAONO HD300T"
+    image3="image:maono-hd300-contenido-9.webp" optionsthumb3="200x150" title3="Contenido de la caja del micrófono MAONO HD300T" >}}
 {{< image
     gallery="true"
-    image1="image:maono-hd300-contenido-10.jpg" optionsthumb1="200x150" title1="Contenido de la caja del micrófono MAONO HD300T"
-    image2="image:maono-hd300-contenido-11.jpg" optionsthumb2="200x150" title2="Contenido de la caja del micrófono MAONO HD300T"
-    image3="image:maono-hd300-contenido-12.jpg" optionsthumb3="200x150" title3="Contenido de la caja del micrófono MAONO HD300T" >}}
+    image1="image:maono-hd300-contenido-10.webp" optionsthumb1="200x150" title1="Contenido de la caja del micrófono MAONO HD300T"
+    image2="image:maono-hd300-contenido-11.webp" optionsthumb2="200x150" title2="Contenido de la caja del micrófono MAONO HD300T"
+    image3="image:maono-hd300-contenido-12.webp" optionsthumb3="200x150" title3="Contenido de la caja del micrófono MAONO HD300T" >}}
 {{< image
     gallery="true"
-    image1="image:maono-hd300-contenido-13.jpg" optionsthumb1="200x150" title1="Contenido de la caja del micrófono MAONO HD300T"
+    image1="image:maono-hd300-contenido-13.webp" optionsthumb1="200x150" title1="Contenido de la caja del micrófono MAONO HD300T"
     caption="Contenido de la caja del micrófono MAONO HD300T" >}}
 
 {{< image
     gallery="true"
-    image1="image:maono-hd300-manual-1.jpg" optionsthumb1="200x150" title1="Manual del micrófono MAONO HD300T"
-    image2="image:maono-hd300-manual-2.jpg" optionsthumb2="200x150" title2="Manual del micrófono MAONO HD300T"
-    image3="image:maono-hd300-manual-3.jpg" optionsthumb3="200x150" title3="Manual del micrófono MAONO HD300T" >}}
+    image1="image:maono-hd300-manual-1.webp" optionsthumb1="200x150" title1="Manual del micrófono MAONO HD300T"
+    image2="image:maono-hd300-manual-2.webp" optionsthumb2="200x150" title2="Manual del micrófono MAONO HD300T"
+    image3="image:maono-hd300-manual-3.webp" optionsthumb3="200x150" title3="Manual del micrófono MAONO HD300T" >}}
 {{< image
     gallery="true"
-    image1="image:maono-hd300-manual-4.jpg" optionsthumb1="200x150" title1="Manual del micrófono MAONO HD300T"
-    image2="image:maono-hd300-manual-5.jpg" optionsthumb2="200x150" title2="Manual del micrófono MAONO HD300T"
-    image3="image:maono-hd300-manual-6.jpg" optionsthumb3="200x150" title3="Manual del micrófono MAONO HD300T" >}}
+    image1="image:maono-hd300-manual-4.webp" optionsthumb1="200x150" title1="Manual del micrófono MAONO HD300T"
+    image2="image:maono-hd300-manual-5.webp" optionsthumb2="200x150" title2="Manual del micrófono MAONO HD300T"
+    image3="image:maono-hd300-manual-6.webp" optionsthumb3="200x150" title3="Manual del micrófono MAONO HD300T" >}}
 {{< image
     gallery="true"
-    image1="image:maono-hd300-manual-7.jpg" optionsthumb1="200x150" title1="Manual del micrófono MAONO HD300T"
-    image2="image:maono-hd300-manual-8.jpg" optionsthumb2="200x150" title2="Manual del micrófono MAONO HD300T"
+    image1="image:maono-hd300-manual-7.webp" optionsthumb1="200x150" title1="Manual del micrófono MAONO HD300T"
+    image2="image:maono-hd300-manual-8.webp" optionsthumb2="200x150" title2="Manual del micrófono MAONO HD300T"
     caption="Manual del micrófono MAONO HD300T" >}}
 
 #### El micrófono
@@ -261,13 +261,13 @@ Una vez montado queda listo para su uso que se realiza mediante la conexión del
 
 {{< image
     gallery="true"
-    image1="image:maono-hd300-microfono-1.jpg" optionsthumb1="650x450" title1="Micrófono MAONO HD300T" >}}
+    image1="image:maono-hd300-microfono-1.webp" optionsthumb1="650x450" title1="Micrófono MAONO HD300T" >}}
 {{< image
     gallery="true"
-    image1="image:maono-hd300-microfono-2.jpg" optionsthumb1="650x450" title1="Micrófono MAONO HD300T" >}}
+    image1="image:maono-hd300-microfono-2.webp" optionsthumb1="650x450" title1="Micrófono MAONO HD300T" >}}
 {{< image
     gallery="true"
-    image1="image:maono-hd300-microfono-3.jpg" optionsthumb1="650x450" title1="Micrófono MAONO HD300T"
+    image1="image:maono-hd300-microfono-3.webp" optionsthumb1="650x450" title1="Micrófono MAONO HD300T"
     caption="Micrófono MAONO HD300T" >}}
 
 ### Análisis y opinión
@@ -288,8 +288,8 @@ En otro orden de detalles casi irrelevantes es que como ocurre en muchos product
 
 {{< image
     gallery="true"
-    image1="image:maono-hd300-linux.png" optionsthumb1="300x200" title1="Prueba de compatibilidad en GNU/Linux"
-    image2="image:maono-hd300-macos.png" optionsthumb2="300x200" title2="Prueba de compatibilidad en macOS"
+    image1="image:maono-hd300-linux.webp" optionsthumb1="300x200" title1="Prueba de compatibilidad en GNU/Linux"
+    image2="image:maono-hd300-macos.webp" optionsthumb2="300x200" title2="Prueba de compatibilidad en macOS"
     caption="Prueba de compatibilidad en GNU/Linux y macOS" >}}
 
 Otro detalle es que la base es completamente de metal y que en ciertas superficies o en movimientos bruscos cabe la posibilidad de rallar o crear alguna marca en la superficie de la mesa usando su peana de soporte.
@@ -316,7 +316,7 @@ Micrófono MAONO HD300T.
 
 {{< image
     gallery="true"
-    image1="image:obs.png" optionsthumb1="300x200" title1="Configuración de OBS"
+    image1="image:obs.webp" optionsthumb1="300x200" title1="Configuración de OBS"
     caption="Configuración de OBS Studio" >}}
 
 En la prueba la diferencia es muy clara, el micrófono interno del Intel NUC debe tener una ganancia grande lo que permite estar lejos del micrófono y no tener que utilizar un programa como OBS pero el audio es más agudo y no tan grave en la mayoría de tonos además parece que tiene reverberación y dado que el micrófono está integrado en el dispositivo el ventilador se escucha. Por el contrario el audio ofrecido por el micrófono MAONO es más grave, con mucho menos ruido y los usuarios coincidiremos en que el audio del MAONO es significativamente de mayor calidad porque entre otras cosas el audio es más limpio, sin sonidos ajenos al audio que se quiere capturar y un mejor tono.

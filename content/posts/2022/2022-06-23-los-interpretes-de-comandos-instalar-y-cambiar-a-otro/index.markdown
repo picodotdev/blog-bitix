@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:zsh.png"
+imagePost: "image:zsh.webp"
 tags: ["gnu-linux", "planeta-codigo"]
 summary: "La terminal es una herramienta muy utilizada por usuarios avanzados aún habiendo sistemas operativos en los que prácticamente todo se puede realizar desde un programa con interfaz gráfica. La linea de comandos es menos amigable ya que no ofrece apenas ayuda que guíe al usuario pero cuando un usuario conoce como realizar una tarea desde la línea de comandos es mucho más rápido que usar un programa con interfaz gráfica además de otras ventajas. El intérprete de comandos es la pieza que proporciona un entorno dese el que se introducen los comandos y con el que interacciona el usuario desde la terminal con una interfaz basada en texto."
 ---
@@ -42,7 +42,7 @@ Aún con las interfaces gráficas las terminales y la línea de comandos siguen 
 
 {{< image
     gallery="true"
-    image1="image:gnome-terminal.png" optionsthumb1="650x450" title1="Emulador de terminal de GNOME Terminal"
+    image1="image:gnome-terminal.webp" optionsthumb1="650x450" title1="Emulador de terminal de GNOME Terminal"
     caption="Emulador de terminal de GNOME Terminal" >}}
 
 ### Funcionalidades del intérprete de comandos
@@ -88,8 +88,8 @@ El aspecto por defecto de los _prompts_ de bash y zsh son los siguientes.
 
 {{< image
     gallery="true"
-    image1="image:bash.png" optionsthumb1="300x200" title1="Intérprete de comandos bash"
-    image2="image:zsh.png" optionsthumb2="300x200" title2="Intérprete de comandos zsh"
+    image1="image:bash.webp" optionsthumb1="300x200" title1="Intérprete de comandos bash"
+    image2="image:zsh.webp" optionsthumb2="300x200" title2="Intérprete de comandos zsh"
     caption="Intérprete de comandos bash y zsh" >}}
 
 ### Configurar el _prompt_ del símbolo del sistema
@@ -104,8 +104,8 @@ En mi caso este es el aspecto que utilizo con bash, en el que he cambiado los co
 
 {{< image
     gallery="true"
-    image1="image:bash-custom.png" optionsthumb1="300x200" title1="Terminal de bash personalizada"
-    image2="image:starship.png" optionsthumb2="300x200" title2="Terminal personalizada con Starship"
+    image1="image:bash-custom.webp" optionsthumb1="300x200" title1="Terminal de bash personalizada"
+    image2="image:starship.webp" optionsthumb2="300x200" title2="Terminal personalizada con Starship"
     caption="Terminal de bash personalizada" >}}
 
 {{% /post %}}

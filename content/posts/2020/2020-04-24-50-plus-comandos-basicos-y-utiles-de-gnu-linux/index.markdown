@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:unix-linux-command-reference.jpg"
+imagePost: "image:unix-linux-command-reference.webp"
 tags: ["gnu-linux", "planeta-codigo"]
 summary: "Desde la línea de comandos hay disponibles una colección de comandos útiles para realizar ciertas tareas de forma rápida y sencilla. Los comandos se pueden incluir en _scripts_ de bash o pequeños programas para el intérprete de comandos y componer la entrada de unos comandos con la salida de otros a través de tuberías dándoles más versatilidad."
 ---
@@ -34,7 +34,7 @@ Algunos ejemplos de lo que es posible realizar desde la línea de comandos son e
 
 {{< image
     gallery="true"
-    image1="image:unix-linux-command-reference.jpg" optionsthumb1="650x450" title1="Referencia de comandos Unix/Linux"
+    image1="image:unix-linux-command-reference.webp" optionsthumb1="650x450" title1="Referencia de comandos Unix/Linux"
     caption="Referencia de comandos Unix/Linux" >}}
 
 {{< tableofcontents >}}

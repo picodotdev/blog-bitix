@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:notion.png"
-imagePost: "image:notion.png"
+imageHead: "image:notion.webp"
+imagePost: "image:notion.webp"
 tags: ["software", "planeta-codigo"]
 summary: "Para uso personal, el blog y las tareas en el trabajo he estado usando Google Docs y posteriormente Evernote. En mi flujo de trabajo estas herramientas no eran todo lo que necesitaba para la gestión de las tareas en los tres usos que les daba. De modo que he estado buscando alguna herramienta alternativa mejor adaptada a mis necesidades, dos de estas herramientas son Notion que es la que finalmente estoy usando de momento y ClickUp que es una muy buena alternativa a Notion en algunos aspectos mejor."
 ---
@@ -56,7 +56,7 @@ Que esté unicamente disponible para GNU/Linux y no disponga de una versión web
 
 {{< image
     gallery="true"
-    image1="image:gtg.png" optionsthumb1="650x450" title1="Getting Things GNOME!"
+    image1="image:gtg.webp" optionsthumb1="650x450" title1="Getting Things GNOME!"
     caption="Getting Things GNOME!" >}}
 
 {{< youtube

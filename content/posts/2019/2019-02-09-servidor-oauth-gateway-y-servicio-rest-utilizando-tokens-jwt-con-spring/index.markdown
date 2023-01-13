@@ -72,7 +72,7 @@ Con el _endpoint_ _/oauth/check\_token_ se decodifica el _token_. En la página 
 
 {{< image
     gallery="true"
-    image1="image:encoded-decoded-jwt.png" optionsthumb1="600x450" title1="Token JWT codificado y decodificado"
+    image1="image:encoded-decoded-jwt.webp" optionsthumb1="600x450" title1="Token JWT codificado y decodificado"
     caption="Token JWT codificado y decodificado" >}}
 
 ### Servidor Gateway

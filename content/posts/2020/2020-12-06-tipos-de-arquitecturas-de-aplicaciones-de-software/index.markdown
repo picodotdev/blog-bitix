@@ -11,8 +11,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:hexagonal-architecture-1040.png"
-imagePost: "image:hexagonal-architecture.png"
+imageHead: "image:hexagonal-architecture-1040.webp"
+imagePost: "image:hexagonal-architecture.webp"
 tags: ["programacion", "planeta-codigo"]
 summary: "Con el paso de los años las arquitectura recomendadas han cambiado. En el caso de las aplicaciones web pasando por la arquitectura _spaghetti_, a la por capas y finalmente con una mezcla de hexagonal, _domain-driven-design_ o DDD y dependiendo del caso siendo RESTful, utilizando CQRS, estándo dirigida por eventos o _event-driven_ y en los casos en los que su aplicación es útil usando _event sourcing_."
 ---
@@ -78,8 +78,8 @@ En la _Figura 1_ el paquete A depende del paquete B para invertir la dependencia
 
 {{< image
     gallery="true"
-    image1="image:hexagonal-architecture.png" optionsthumb1="300x200" title1="Arquitectura hexagonal"
-    image2="image:dependency-inversion.png" optionsthumb2="300x200" title2="Inversión de dependencias"
+    image1="image:hexagonal-architecture.webp" optionsthumb1="300x200" title1="Arquitectura hexagonal"
+    image2="image:dependency-inversion.webp" optionsthumb2="300x200" title2="Inversión de dependencias"
     caption="Arquitectura hexagonal e inversión de dependencias" source="herbertograca.com" >}}
 
 ### Metodologías relacionadas

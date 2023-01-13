@@ -12,7 +12,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:image-1.jpg"
+imagePost: "image:image-1.webp"
 tags: ["gnu-linux", "planeta-codigo"]
 summary: "Las velocidades de conexión actuales de 100 Mbps y de 600 Mbps en los hogares permiten no darle tanta importancia al tamaño de una imagen y aunque los dispositivos móviles también tienen unas velocidades de conexión rápidas reducir el tamaño de las imágenes puede significar que una página web cargue algo más rápido. El ahorro está en un 30% y 60% lo que en colecciones grandes de imágenes el ahorro es considerable. WebP proporciona un ahorro de tamaño en las imágenes con una calidad similar que _jpg_ y _png_."
 ---
@@ -32,7 +32,7 @@ Una imagen que usé para [crear imagen miniatura o _thumbnail_][blogbitix-161] t
 {{< image
     gallery="true"
     image1="image:image-1.jpg" optionsthumb1="300x200" title1="Fotografía en formato jpg"
-    image2="image:image-2.png" optionsthumb2="300x200" title2="Captura de pantalla en formato _png_"
+    image2="image:image-2.png" optionsthumb2="300x200" title2="Captura de pantalla en formato png"
     caption="Imágenes en formato JPEG y PNG" >}}
 
 Las mismas imágenes comprimidas con WebP ocupan 826 KiB, un 18% menos, para la original en formato _jpg_ y 26 KiB, un 66% menos, para la original en formato _png_. Las reducciones de tamaño son importantes y teniendo en cuenta que es sin pérdida de calidad apreciable sobre las originales utilizar WebP como formato de imagen permite ahorrar un tamaño importante de descarga en una página web o en espacio de almacenamiento en colecciones grandes de fotografías e imágenes.

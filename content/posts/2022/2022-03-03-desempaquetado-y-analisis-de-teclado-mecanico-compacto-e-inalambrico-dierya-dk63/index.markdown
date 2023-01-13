@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:dierya-dk63.jpg"
-imagePost: "image:dierya-dk63.jpg"
+imageHead: "image:dierya-dk63.webp"
+imagePost: "image:dierya-dk63.webp"
 tags: ["hardware"]
 series: ["desempaquetado-tecnologia"]
 summary: "Al elegir un teclado para un ordenador como un teclado mecánico hay varias características a tener en cuenta. Quizá la principal es el factor de forma que determina su tamaño y el número de teclas que tiene, pero en el ámbito de teclados mecánicos hay otra buena colección de características importantes a considerar como por ejemplo si ofrece conexión inalámbrica además de por cable, y en los inalámbricos si es de batería recargable o utiliza pilas y si es por radiofrecuencia o por Bluetooth. El teclado mecánico DIERYA es un teclado mecánico en formato de 60% de 63 teclas y con la posibilidad de funcionamiento por cable y de forma inalámbrica por Bluetooth según conveniencia, un  teclado en la gama media con unas características destacables y con un precio adecuado por lo que ofrece."
@@ -106,13 +106,13 @@ Para proteger la caja de daños en el transporte, humedad y polvo y como forma d
 
 {{< image
     gallery="true"
-    image1="image:dierya-dk63-caja-1.jpg" optionsthumb1="200x150" title1="Caja del teclado DIERYA DK63"
-    image2="image:dierya-dk63-caja-2.jpg" optionsthumb2="200x150" title2="Caja del teclado DIERYA DK63"
-    image3="image:dierya-dk63-caja-3.jpg" optionsthumb3="200x150" title3="Caja del teclado DIERYA DK63" >}}
+    image1="image:dierya-dk63-caja-1.webp" optionsthumb1="200x150" title1="Caja del teclado DIERYA DK63"
+    image2="image:dierya-dk63-caja-2.webp" optionsthumb2="200x150" title2="Caja del teclado DIERYA DK63"
+    image3="image:dierya-dk63-caja-3.webp" optionsthumb3="200x150" title3="Caja del teclado DIERYA DK63" >}}
 {{< image
     gallery="true"
-    image1="image:dierya-dk63-caja-4.jpg" optionsthumb1="200x150" title1="Caja del teclado DIERYA DK63"
-    image2="image:dierya-dk63-caja-5.jpg" optionsthumb2="200x150" title2="Caja del teclado DIERYA DK63"
+    image1="image:dierya-dk63-caja-4.webp" optionsthumb1="200x150" title1="Caja del teclado DIERYA DK63"
+    image2="image:dierya-dk63-caja-5.webp" optionsthumb2="200x150" title2="Caja del teclado DIERYA DK63"
     caption="Caja del teclado DIERYA DK63" >}}
 
 #### El contenido de la caja
@@ -129,13 +129,13 @@ Como no es _hot swapable_ no se incluye _switch extractor_ como ocurría en el D
 
 {{< image
     gallery="true"
-    image1="image:dierya-dk63-contenido-1.jpg" optionsthumb1="200x150" title1="Contenido de la caja del teclado DIERYA DK63"
-    image2="image:dierya-dk63-contenido-2.jpg" optionsthumb2="200x150" title2="Contenido de la caja del teclado DIERYA DK63"
-    image3="image:dierya-dk63-contenido-3.jpg" optionsthumb3="200x150" title3="Contenido de la caja del teclado DIERYA DK63" >}}
+    image1="image:dierya-dk63-contenido-1.webp" optionsthumb1="200x150" title1="Contenido de la caja del teclado DIERYA DK63"
+    image2="image:dierya-dk63-contenido-2.webp" optionsthumb2="200x150" title2="Contenido de la caja del teclado DIERYA DK63"
+    image3="image:dierya-dk63-contenido-3.webp" optionsthumb3="200x150" title3="Contenido de la caja del teclado DIERYA DK63" >}}
 {{< image
     gallery="true"
-    image1="image:dierya-dk63-contenido-4.jpg" optionsthumb1="200x150" title1="Contenido de la caja del teclado DIERYA DK63"
-    image2="image:dierya-dk63-contenido-5.jpg" optionsthumb2="200x150" title2="Contenido de la caja del teclado DIERYA DK63"
+    image1="image:dierya-dk63-contenido-4.webp" optionsthumb1="200x150" title1="Contenido de la caja del teclado DIERYA DK63"
+    image2="image:dierya-dk63-contenido-5.webp" optionsthumb2="200x150" title2="Contenido de la caja del teclado DIERYA DK63"
     caption="Contenido de la caja del teclado DIERYA DK63" >}}
 
 #### El teclado
@@ -150,30 +150,30 @@ El teclado aunque es compacto tiene las mismas teclas que un teclado completo, h
 
 {{< image
     gallery="true"
-    image1="image:dierya-dk63-teclado-1.jpg" optionsthumb1="650x450" title1="Teclado DIERYA DK63" >}}
+    image1="image:dierya-dk63-teclado-1.webp" optionsthumb1="650x450" title1="Teclado DIERYA DK63" >}}
 {{< image
     gallery="true"
-    image1="image:dierya-dk63-teclado-2.jpg" optionsthumb1="200x150" title1="Teclado DIERYA DK63"
-    image2="image:dierya-dk63-teclado-3.jpg" optionsthumb2="200x150" title2="Teclado DIERYA DK63" >}}
+    image1="image:dierya-dk63-teclado-2.webp" optionsthumb1="200x150" title1="Teclado DIERYA DK63"
+    image2="image:dierya-dk63-teclado-3.webp" optionsthumb2="200x150" title2="Teclado DIERYA DK63" >}}
 {{< image
     gallery="true"
-    image1="image:dierya-dk63-teclado-4.jpg" optionsthumb1="200x150" title1="Teclado DIERYA DK63"
-    image2="image:dierya-dk63-teclado-5.jpg" optionsthumb2="200x150" title2="Teclado DIERYA DK63"
-    image3="image:dierya-dk63-teclado-6.jpg" optionsthumb3="200x150" title3="Teclado DIERYA DK63" >}}
+    image1="image:dierya-dk63-teclado-4.webp" optionsthumb1="200x150" title1="Teclado DIERYA DK63"
+    image2="image:dierya-dk63-teclado-5.webp" optionsthumb2="200x150" title2="Teclado DIERYA DK63"
+    image3="image:dierya-dk63-teclado-6.webp" optionsthumb3="200x150" title3="Teclado DIERYA DK63" >}}
 {{< image
     gallery="true"
-    image1="image:dierya-dk63-teclado-7.jpg" optionsthumb1="200x150" title1="Teclado DIERYA DK63"
-    image2="image:dierya-dk63-teclado-8.jpg" optionsthumb2="200x150" title2="Teclado DIERYA DK63"
-    image3="image:dierya-dk63-teclado-9.jpg" optionsthumb3="200x150" title3="Teclado DIERYA DK63" >}}
+    image1="image:dierya-dk63-teclado-7.webp" optionsthumb1="200x150" title1="Teclado DIERYA DK63"
+    image2="image:dierya-dk63-teclado-8.webp" optionsthumb2="200x150" title2="Teclado DIERYA DK63"
+    image3="image:dierya-dk63-teclado-9.webp" optionsthumb3="200x150" title3="Teclado DIERYA DK63" >}}
 {{< image
     gallery="true"
-    image1="image:dierya-dk63-teclado-10.jpg" optionsthumb1="200x150" title1="Teclado DIERYA DK63"
-    image2="image:dierya-dk63-teclado-11.jpg" optionsthumb2="200x150" title2="Teclado DIERYA DK63" >}}
+    image1="image:dierya-dk63-teclado-10.webp" optionsthumb1="200x150" title1="Teclado DIERYA DK63"
+    image2="image:dierya-dk63-teclado-11.webp" optionsthumb2="200x150" title2="Teclado DIERYA DK63" >}}
 {{< image
     gallery="true"
-    image1="image:dierya-dk63-teclado-12.jpg" optionsthumb1="200x150" title1="Teclado DIERYA DK63"
-    image2="image:dierya-dk63-teclado-13.jpg" optionsthumb2="200x150" title2="Teclado DIERYA DK63"
-    image3="image:dierya-dk63-teclado-14.jpg" optionsthumb3="200x150" title3="Teclado DIERYA DK63"
+    image1="image:dierya-dk63-teclado-12.webp" optionsthumb1="200x150" title1="Teclado DIERYA DK63"
+    image2="image:dierya-dk63-teclado-13.webp" optionsthumb2="200x150" title2="Teclado DIERYA DK63"
+    image3="image:dierya-dk63-teclado-14.webp" optionsthumb3="200x150" title3="Teclado DIERYA DK63"
     caption="Teclado DIERYA DK63" >}}
 
 #### Los _switches_
@@ -182,7 +182,7 @@ Los _switches_ del teclado son de la marca TMKB que son montados en algunos tecl
 
 {{< image
     gallery="true"
-    image1="image:dierya-dk63-switches-1.jpg" optionsthumb1="300x200" title1="Swicthes eléctricos TMKB y estabilizador del DIERYA DK63"
+    image1="image:dierya-dk63-switches-1.webp" optionsthumb1="300x200" title1="Swicthes eléctricos TMKB y estabilizador del DIERYA DK63"
     caption="Swicthes eléctricos TMKB y estabilizador del DIERYA DK63" >}}
 
 #### Los _keycaps_
@@ -193,7 +193,7 @@ Las _keycaps_ sí se pueden reemplazar pero teniendo en cuenta que algunas tiene
 
 {{< image
     gallery="true"
-    image1="image:dierya-dk63-keycaps-1.jpg" optionsthumb1="300x200" title1="Keycaps del DIERYA DK63"
+    image1="image:dierya-dk63-keycaps-1.webp" optionsthumb1="300x200" title1="Keycaps del DIERYA DK63"
     caption="Keycaps del DIERYA DK63" >}}
 
 ### Análisis y primeras impresiones del teclado mecánico DIERYA DK63
@@ -204,8 +204,8 @@ Para realizar la conexión hay que primero configurar el teclado para su funcion
 
 {{< image
     gallery="true"
-    image1="image:dierya-dk63-bluetooth-linux-1.png" optionsthumb1="300x200" title1="Configuración del teclado con conexión inalámbrica en GNU/Linux"
-    image2="image:dierya-dk63-bluetooth-macos-1.png" optionsthumb2="300x200" title2="Configuración del teclado con conexión inalámbrica en macOS"
+    image1="image:dierya-dk63-bluetooth-linux-1.webp" optionsthumb1="300x200" title1="Configuración del teclado con conexión inalámbrica en GNU/Linux"
+    image2="image:dierya-dk63-bluetooth-macos-1.webp" optionsthumb2="300x200" title2="Configuración del teclado con conexión inalámbrica en macOS"
     caption="Configuración del teclado con conexión inalámbrica en GNU/Linux y macOS" >}}
 
 Quizá lo más que puedo comentar de forma adicional es que aún incluyendo la funcionalidad de poder usar una conexión por cable o Bluetooth según se prefiera o según la situación tiene un precio similar que el DK61E que no es inalámbrico. Sin embargo, hay algunas concesiones que hace el DK63 para mantener el precio como es no ser _hot swappable_, montar _keycaps_ de plástico ABS y serigrafía _pad printing_ y utilizar _switches_ de tipo TMKB eléctrico en vez de Gateron ópticos.
@@ -224,9 +224,9 @@ Finalmente, el interruptor estaría mejor si estuviera más a mano en vez de la 
 
 {{< image
     gallery="true"
-    image1="image:dierya-dk63-setup-1.jpg" optionsthumb1="200x150" title1="Disposición en el escritorio del teclado DIERYA DK63"
-    image2="image:dierya-dk63-setup-2.jpg" optionsthumb2="200x150" title2="Disposición en el escritorio del teclado DIERYA DK63"
-    image3="image:dierya-dk63-setup-3.jpg" optionsthumb3="200x150" title3="Disposición en el escritorio del teclado DIERYA DK63"
+    image1="image:dierya-dk63-setup-1.webp" optionsthumb1="200x150" title1="Disposición en el escritorio del teclado DIERYA DK63"
+    image2="image:dierya-dk63-setup-2.webp" optionsthumb2="200x150" title2="Disposición en el escritorio del teclado DIERYA DK63"
+    image3="image:dierya-dk63-setup-3.webp" optionsthumb3="200x150" title3="Disposición en el escritorio del teclado DIERYA DK63"
     caption="Disposición en el escritorio del teclado DIERYA DK63" >}}
 
 #### Conclusión

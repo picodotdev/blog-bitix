@@ -36,7 +36,7 @@ Los casos de uso de las clases _singleton_ son mantener un estado compartido, pe
 
 {{< image
     gallery="true"
-    image1="image:singleton-pattern.png" optionsthumb1="650x450" title1="Diagrama de clases del patrón de diseño Singleton"
+    image1="image:singleton-pattern.webp" optionsthumb1="650x450" title1="Diagrama de clases del patrón de diseño Singleton"
     caption="Diagrama de clases del patrón de diseño Singleton" >}}
 
 ### Formas de implementar el patrón Singleton en Java

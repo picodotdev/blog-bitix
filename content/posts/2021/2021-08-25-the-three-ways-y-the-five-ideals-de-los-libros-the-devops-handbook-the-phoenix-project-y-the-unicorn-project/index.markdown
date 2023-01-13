@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:the-devops-handbook.jpg"
-imagePost: "image:the-devops-handbook.jpg"
+imageHead: "image:the-devops-handbook.webp"
+imagePost: "image:the-devops-handbook.webp"
 tags: ["planeta-codigo", "programacion"]
 summary: "En la trilogía de los libros _The DevOps Handbook_, _The Phoenix Project_ y _The Unicorn Project_ se explican más detalladamente varios principios para conseguir que la cadena de valor en un producto de software funcione de forma correcta y evitar en gran medida muchos problemas comunes, son los principios denominados como _The three ways_ y _The five ideals_."
 ---
@@ -62,7 +62,7 @@ También conviene eliminar trabajo desperdiciado como un exceso de peticiones re
 
 {{< image
     gallery="true"
-    image1="image:the-first-way.jpg" optionsthumb1="650x450" title1="The first way"
+    image1="image:the-first-way.webp" optionsthumb1="650x450" title1="The first way"
     caption="The first way" >}}
 
 #### _The second way: The technical practices of feedback_
@@ -75,7 +75,7 @@ Otras prácticas de _feedback_ son realizar programación en parejas o _pair pro
 
 {{< image
     gallery="true"
-    image1="image:the-second-way.jpg" optionsthumb1="650x450" title1="The second way"
+    image1="image:the-second-way.webp" optionsthumb1="650x450" title1="The second way"
     caption="The second way" >}}
 
 #### _The third way: The technical practices of continual learning_
@@ -88,7 +88,7 @@ Para compartir información en vez de crear documentos que quedarán desactualiz
 
 {{< image
     gallery="true"
-    image1="image:the-third-way.jpg" optionsthumb1="650x450" title1="The third way"
+    image1="image:the-third-way.webp" optionsthumb1="650x450" title1="The third way"
     caption="The third way" >}}
 
 ### _The five ideals_

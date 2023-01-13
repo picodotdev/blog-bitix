@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:barra-de-busqueda-firefox.png"
+imagePost: "image:barra-de-busqueda-firefox.webp"
 tags: ["planeta-codigo", "software"]
 ---
 
@@ -22,7 +22,7 @@ Los navegadores web guardan un historial de todas las páginas a las que se acce
 
 {{< image
     gallery="true"
-    image1="image:historial-firefox.png" optionsthumb1="650x450" title1="Historial de páginas en Firefox"
+    image1="image:historial-firefox.webp" optionsthumb1="650x450" title1="Historial de páginas en Firefox"
     caption="Historial de páginas en Firefox" >}}
 
 
@@ -39,7 +39,7 @@ En esta captura de hace una búsqueda por el título de las páginas en el histo
 
 {{< image
     gallery="true"
-    image1="image:barra-de-busqueda-firefox.png" optionsthumb1="650x450" title1="Barra de búsqueda inteligente de Firefox"
+    image1="image:barra-de-busqueda-firefox.webp" optionsthumb1="650x450" title1="Barra de búsqueda inteligente de Firefox"
     caption="Barra de búsqueda inteligente de Firefox" >}}
 
 {{< reference >}}

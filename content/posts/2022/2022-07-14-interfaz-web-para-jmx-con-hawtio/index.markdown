@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:hawtio-console.png"
+imagePost: "image:hawtio-console.webp"
 tags: ["java", "planeta-codigo"]
 summary: "Una cosa es la funcionalidad que proporciona una aplicación y otra las tareas de administración y mantenimiento relacionas con la aplicación. Estas tareas de administración y mantenimiento no son tareas destinadas a los usuarios sino destinadas a los administradores de la aplicación. Estas tareas pueden ser manuales y ejecutadas a conveniencia siendo muy útil poder ejecutarlas sin necesidad de realizar cambios en el código ni un despliegue de la aplicación. La tecnología JMX de Java define una arquitectura para administrar y monitorizar aplicaciones que se puede utilizar para estas tareas administrativas, Hawtio es una interfaz que permite el acceso y ejecución a JMX mediante un navegador y proporciona una librería para integrase con Spring Boot."
 ---
@@ -59,7 +59,7 @@ Las operaciones administrativas seguramente sean funcionalidades que realicen ta
 
 {{< image
     gallery="true"
-    image1="image:hawtio-console.png" optionsthumb1="650x450" title1="Consola de Hawtio como un actuator en aplicación de Spring Boot"
+    image1="image:hawtio-console.webp" optionsthumb1="650x450" title1="Consola de Hawtio como un actuator en aplicación de Spring Boot"
     caption="Consola de Hawtio como un actuator en aplicación de Spring Boot" >}}
 
 ### Añadir seguridad a la interfaz de Hawtio con Hashicorp Boundary
@@ -76,13 +76,13 @@ Con Boundary iniciado y el _target_ definido hay que establecer el túnel con la
 
 {{< image
     gallery="true"
-    image1="image:boundary-console.png" optionsthumb1="200x150" title1="Consola de Boundary"
+    image1="image:boundary-console.webp" optionsthumb1="200x150" title1="Consola de Boundary"
     caption="Consola de Boundary" >}}
 {{< image
     gallery="true"
-    image1="image:boundary-target-1.png" optionsthumb1="200x150" title1="Creación de un target en Boundary"
-    image2="image:boundary-target-2.png" optionsthumb2="200x150" title2="Creación de un target en Boundary"
-    image3="image:boundary-target-3.png" optionsthumb3="200x150" title3="Creación de un target en Boundary"
+    image1="image:boundary-target-1.webp" optionsthumb1="200x150" title1="Creación de un target en Boundary"
+    image2="image:boundary-target-2.webp" optionsthumb2="200x150" title2="Creación de un target en Boundary"
+    image3="image:boundary-target-3.webp" optionsthumb3="200x150" title3="Creación de un target en Boundary"
     caption="Creación de un target en Boundary" >}}
 
 Antes de establecer el túnel de la conexión hay que autenticarse en Boudary lo que otorga un _token_ para establecer la conexión, en el siguiente comando el _token_ se guarda en una variable de entorno que comando de Buildary utiliza para la autorización al solicitar la conexión, en la conexión se indica el _target_ y Boundary proporciona el puerto del túnel y el identificativo de la sesión.
@@ -93,14 +93,14 @@ Esto proporciona un puerto en la máquina local abierto contra Boundary y este c
 
 {{< image
     gallery="true"
-    image1="image:boundary-hawtio.png" optionsthumb1="650x450" title1="Conexión a Hawtio a través de Boundary"
+    image1="image:boundary-hawtio.webp" optionsthumb1="650x450" title1="Conexión a Hawtio a través de Boundary"
     caption="Conexión a Hawtio a través de Boundary" >}}
 
 Además, con Boundary es posible monitorizar las conexiones y sesiones establecidas lo que proporciona medidas adicionales de seguridad y auditoría.
 
 {{< image
     gallery="true"
-    image1="image:boundary-sessions.png" optionsthumb1="650x450" title1="Sesiones establecidas y activas establecidas a través de Boudary"
+    image1="image:boundary-sessions.webp" optionsthumb1="650x450" title1="Sesiones establecidas y activas establecidas a través de Boudary"
     caption="Sesiones establecidas y activas establecidas a través de Boudary" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/SpringBootHawtio" command="./gradlew run" %}}

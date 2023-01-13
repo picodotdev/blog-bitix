@@ -24,22 +24,22 @@ Visual Studio Code es un editor de archivos de texto avanzado orientado a desarr
 
 {{< image
     gallery="true"
-    image1="image:visual-studio-code-1.png" optionsthumb1="300x200" title1="Visual Studio Code"
-    image2="image:visual-studio-code-2.png" optionsthumb2="300x200" title2="Visual Studio Code"
+    image1="image:visual-studio-code-1.webp" optionsthumb1="300x200" title1="Visual Studio Code"
+    image2="image:visual-studio-code-2.webp" optionsthumb2="300x200" title2="Visual Studio Code"
     caption="Visual Studio Code" >}}
 
 Incluye una [terminal integrada](https://code.visualstudio.com/docs/editor/integrated-terminal) para ejecutar comandos sin necesidad de salir del editor a la terminal del sistema. Soporta [Emmet](https://code.visualstudio.com/docs/editor/emmet) para crear código con _snippets_ en los tipos de archivos que los soporten entre ellos HTML y CSS. También incluye soporte para el sistema de [control de versiones Git](https://code.visualstudio.com/docs/editor/versioncontrol) y otros con _plugins_ que permiten ver las modificaciones realizadas en los archivos y los archivos modificados, hay gran cantidad de complementos.
 
 {{< image
     gallery="true"
-    image1="image:git.png" optionsthumb1="300x200" title1="Git integrado"
+    image1="image:git.webp" optionsthumb1="300x200" title1="Git integrado"
     caption="Git integrado" >}}
 
 Con la combinación `Ctrl + P` se abre una ventana emergente para abrir archivos por su nombre. Introduciendo `?` se obtienen las posibles acciones que se pueden realizar. Otra muy utilizada es `Ctrl + G` para ir a una línea específica del archivo, también se puede hacer desde la ventana emergente e introduciendo el carácter `:`. Con `Ctrl + Shift + O` se va a los símbolos detectados por editor según el tipo de archivo. Posee una buena [documentación](https://code.visualstudio.com/docs) con la que ir aprendiendo a medida que se usa el mayor provecho posible.
 
 {{< image
     gallery="true"
-    image1="image:ventana-emergente.png" optionsthumb1="300x200" title1="Ventana emergente de acciones rápidas"
+    image1="image:ventana-emergente.webp" optionsthumb1="300x200" title1="Ventana emergente de acciones rápidas"
     caption="Ventana emergente de acciones rápidas" >}}
 
 En definitiva tiene una buena cantidad de opciones que como desarrolladores son muy útiles. Otras funcionalidades que tiene son:

@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:dierya-dk61e-1.jpg"
-imagePost: "image:dierya-dk61e-1.jpg"
+imageHead: "image:dierya-dk61e-1.webp"
+imagePost: "image:dierya-dk61e-1.webp"
 series: ["desempaquetado-tecnologia"]
 summary: "Desde hace un tiempo he cambiado un teclado de membrana completo por uno mecánico dado que quería que ocupase menos espacio. Otra ventaja es que los teclados mecánicos ofrecen mejor experiencia de escritura y personalización, y los TKL o 60% son más compactos y ocupan menos espacio, su contrapartida es que suelen ser algo más caros pero su mayor precio al usarlos a algunos usuarios es algo justificado para uno de los principales dispositivos del ordenador. La marca DIERYA me ha enviado un ejemplar del modelo DK61E con formato 60% y disposición en inglés, un teclado con unas especificaciones de teclado de gama alta pero con un precio muy ajustado que consigue ser un producto con una buena relación calidad/precio y una buena opción de compra a considerar. En este artículo hago el desempaquetado y análisis del teclado mecánico DIERYA DK61E."
 ---
@@ -92,14 +92,14 @@ La caja es una caja especial  con un diseño estético completamente en blanco s
 
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-caja-1.jpg" optionsthumb1="200x150" title1="Caja del teclado DIERYA DK61E"
-    image2="image:dierya-dk61e-caja-2.jpg" optionsthumb2="200x150" title2="Caja del teclado DIERYA DK61E"
-    image3="image:dierya-dk61e-caja-3.jpg" optionsthumb3="200x150" title3="Caja del teclado DIERYA DK61E" >}}
+    image1="image:dierya-dk61e-caja-1.webp" optionsthumb1="200x150" title1="Caja del teclado DIERYA DK61E"
+    image2="image:dierya-dk61e-caja-2.webp" optionsthumb2="200x150" title2="Caja del teclado DIERYA DK61E"
+    image3="image:dierya-dk61e-caja-3.webp" optionsthumb3="200x150" title3="Caja del teclado DIERYA DK61E" >}}
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-caja-4.jpg" optionsthumb1="200x150" title1="Caja del teclado DIERYA DK61E"
-    image2="image:dierya-dk61e-caja-5.jpg" optionsthumb2="200x150" title2="Caja del teclado DIERYA DK61E"
-    image3="image:dierya-dk61e-caja-6.jpg" optionsthumb3="200x150" title3="Caja del teclado DIERYA DK61E"
+    image1="image:dierya-dk61e-caja-4.webp" optionsthumb1="200x150" title1="Caja del teclado DIERYA DK61E"
+    image2="image:dierya-dk61e-caja-5.webp" optionsthumb2="200x150" title2="Caja del teclado DIERYA DK61E"
+    image3="image:dierya-dk61e-caja-6.webp" optionsthumb3="200x150" title3="Caja del teclado DIERYA DK61E"
     caption="Caja del teclado DIERYA DK61E" >}}
 
 #### El contenido de la caja
@@ -117,22 +117,22 @@ El teclado está protegido por un plástico para conservarlo en perfectas condic
 
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-caja-contenido-1.jpg" optionsthumb1="200x150" title1="Contenido de la caja del teclado DIERYA DK61E"
-    image2="image:dierya-dk61e-caja-contenido-2.jpg" optionsthumb2="200x150" title2="Contenido de la caja del teclado DIERYA DK61E"
-    image3="image:dierya-dk61e-caja-contenido-3.jpg" optionsthumb3="200x150" title3="Contenido de la caja del teclado DIERYA DK61E" >}}
+    image1="image:dierya-dk61e-caja-contenido-1.webp" optionsthumb1="200x150" title1="Contenido de la caja del teclado DIERYA DK61E"
+    image2="image:dierya-dk61e-caja-contenido-2.webp" optionsthumb2="200x150" title2="Contenido de la caja del teclado DIERYA DK61E"
+    image3="image:dierya-dk61e-caja-contenido-3.webp" optionsthumb3="200x150" title3="Contenido de la caja del teclado DIERYA DK61E" >}}
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-caja-contenido-4.jpg" optionsthumb1="200x150" title1="Contenido de la caja del teclado DIERYA DK61E"
-    image2="image:dierya-dk61e-caja-contenido-5.jpg" optionsthumb2="200x150" title2="Contenido de la caja del teclado DIERYA DK61E"
-    image3="image:dierya-dk61e-caja-contenido-6.jpg" optionsthumb3="200x150" title3="Contenido de la caja del teclado DIERYA DK61E" >}}
+    image1="image:dierya-dk61e-caja-contenido-4.webp" optionsthumb1="200x150" title1="Contenido de la caja del teclado DIERYA DK61E"
+    image2="image:dierya-dk61e-caja-contenido-5.webp" optionsthumb2="200x150" title2="Contenido de la caja del teclado DIERYA DK61E"
+    image3="image:dierya-dk61e-caja-contenido-6.webp" optionsthumb3="200x150" title3="Contenido de la caja del teclado DIERYA DK61E" >}}
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-caja-contenido-7.jpg" optionsthumb1="200x150" title1="Contenido de la caja del teclado DIERYA DK61E"
-    image2="image:dierya-dk61e-caja-contenido-8.jpg" optionsthumb2="200x150" title2="Contenido de la caja del teclado DIERYA DK61E"
-    image3="image:dierya-dk61e-caja-contenido-9.jpg" optionsthumb3="200x150" title3="Contenido de la caja del teclado DIERYA DK61E" >}}
+    image1="image:dierya-dk61e-caja-contenido-7.webp" optionsthumb1="200x150" title1="Contenido de la caja del teclado DIERYA DK61E"
+    image2="image:dierya-dk61e-caja-contenido-8.webp" optionsthumb2="200x150" title2="Contenido de la caja del teclado DIERYA DK61E"
+    image3="image:dierya-dk61e-caja-contenido-9.webp" optionsthumb3="200x150" title3="Contenido de la caja del teclado DIERYA DK61E" >}}
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-caja-contenido-10.jpg" optionsthumb1="200x150" title1="Contenido de la caja del teclado DIERYA DK61E"
+    image1="image:dierya-dk61e-caja-contenido-10.webp" optionsthumb1="200x150" title1="Contenido de la caja del teclado DIERYA DK61E"
     caption="Contenido de la caja del teclado DIERYA DK61E" >}}
 
 #### El teclado
@@ -141,25 +141,25 @@ El teclado tiene un cuerpo completamente de plástico y no posee patas para regu
 
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-teclado-3.jpg" optionsthumb1="650x450" title1="Teclado DIERYA DK61E" >}}
+    image1="image:dierya-dk61e-teclado-3.webp" optionsthumb1="650x450" title1="Teclado DIERYA DK61E" >}}
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-teclado-1.jpg" optionsthumb1="200x150" title1="Teclado DIERYA DK61E"
-    image2="image:dierya-dk61e-teclado-2.jpg" optionsthumb2="200x150" title2="Teclado DIERYA DK61E"
-    image3="image:dierya-dk61e-teclado-4.jpg" optionsthumb3="200x150" title3="Teclado DIERYA DK61E" >}}
+    image1="image:dierya-dk61e-teclado-1.webp" optionsthumb1="200x150" title1="Teclado DIERYA DK61E"
+    image2="image:dierya-dk61e-teclado-2.webp" optionsthumb2="200x150" title2="Teclado DIERYA DK61E"
+    image3="image:dierya-dk61e-teclado-4.webp" optionsthumb3="200x150" title3="Teclado DIERYA DK61E" >}}
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-teclado-5.jpg" optionsthumb1="200x150" title1="Teclado DIERYA DK61E"
-    image2="image:dierya-dk61e-teclado-6.jpg" optionsthumb2="200x150" title2="Teclado DIERYA DK61E"
-    image3="image:dierya-dk61e-teclado-7.jpg" optionsthumb3="200x150" title3="Teclado DIERYA DK61E" >}}
+    image1="image:dierya-dk61e-teclado-5.webp" optionsthumb1="200x150" title1="Teclado DIERYA DK61E"
+    image2="image:dierya-dk61e-teclado-6.webp" optionsthumb2="200x150" title2="Teclado DIERYA DK61E"
+    image3="image:dierya-dk61e-teclado-7.webp" optionsthumb3="200x150" title3="Teclado DIERYA DK61E" >}}
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-teclado-8.jpg" optionsthumb1="200x150" title1="Teclado DIERYA DK61E"
-    image2="image:dierya-dk61e-teclado-9.jpg" optionsthumb2="200x150" title2="Teclado DIERYA DK61E" >}}
+    image1="image:dierya-dk61e-teclado-8.webp" optionsthumb1="200x150" title1="Teclado DIERYA DK61E"
+    image2="image:dierya-dk61e-teclado-9.webp" optionsthumb2="200x150" title2="Teclado DIERYA DK61E" >}}
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-teclado-10.jpg" optionsthumb1="300x250" title1="Teclado DIERYA DK61E"
-    image2="image:dierya-dk61e-teclado-11.jpg" optionsthumb2="300x250" title2="Teclado DIERYA DK61E"
+    image1="image:dierya-dk61e-teclado-10.webp" optionsthumb1="300x250" title1="Teclado DIERYA DK61E"
+    image2="image:dierya-dk61e-teclado-11.webp" optionsthumb2="300x250" title2="Teclado DIERYA DK61E"
     caption="Teclado DIERYA DK61E" >}}
 
 #### Los _switches_
@@ -168,15 +168,15 @@ Los _switches_ son de teclado mecánico y ópticos, esto significa que para dete
 
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-switches-1.jpg" optionsthumb1="300x200" title1="Swicthes ópticos Gateron del DIERYA DK61E"
+    image1="image:dierya-dk61e-switches-1.webp" optionsthumb1="300x200" title1="Swicthes ópticos Gateron del DIERYA DK61E"
     caption="Swicthes ópticos Gateron del DIERYA DK61E" >}}
 
 Comparando un _switch_ óptico y eléctrico se observan claramente las diferencias físicas entre ambos en el tipo de conexión al teclado, el óptico no tiene las patillas metálicas en la parte inferior.
 
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-switches-2.jpg" optionsthumb1="300x200" title1="Switch óptico Gateron"
-    image2="image:glorious-gmmk-tkl-switches-7.jpg" optionsthumb2="300x200" title2="Switch eléctrico Gateron"
+    image1="image:dierya-dk61e-switches-2.webp" optionsthumb1="300x200" title1="Switch óptico Gateron"
+    image2="image:glorious-gmmk-tkl-switches-7.webp" optionsthumb2="300x200" title2="Switch eléctrico Gateron"
     caption="Izquierda swicth óptico y derecha switch eléctrico, ambos Gateron" >}}
 
 #### Los _keycaps_
@@ -185,9 +185,9 @@ Los _keycaps_ de material PBT _double shot_ hace que se conserven mejor en el us
 
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-keycap-1.jpg" optionsthumb1="200x150" title1="Keycaps del DIERYA DK61E"
-    image2="image:dierya-dk61e-keycap-2.jpg" optionsthumb2="200x150" title2="Keycaps del DIERYA DK61E"
-    image3="image:dierya-dk61e-keycap-3.jpg" optionsthumb3="200x150" title3="Keycaps del DIERYA DK61E"
+    image1="image:dierya-dk61e-keycap-1.webp" optionsthumb1="200x150" title1="Keycaps del DIERYA DK61E"
+    image2="image:dierya-dk61e-keycap-2.webp" optionsthumb2="200x150" title2="Keycaps del DIERYA DK61E"
+    image3="image:dierya-dk61e-keycap-3.webp" optionsthumb3="200x150" title3="Keycaps del DIERYA DK61E"
     caption="Keycaps del DIERYA DK61E" >}}
 
 #### Desmontaje de _switches_ y _keycaps_
@@ -196,14 +196,14 @@ Como todo teclado mecánico los _keycaps_ se pueden desmontar y sustituir por ot
 
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-keycaps.jpg" optionsthumb1="300x200" title1="Keycap PBT double shot del DIERYA DK61E"
+    image1="image:dierya-dk61e-keycaps.webp" optionsthumb1="300x200" title1="Keycap PBT double shot del DIERYA DK61E"
     caption="Keycap PBT doubleshot del DIERYA DK61E" >}}
 
 Las teclas grandes como ambas teclas _Shift_, la tecla _Return_, borrado y espacio tienen estabilizadores para que la tecla descienda de forma vertical al unísono en toda su anchura.
 
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-estabilizadores-1.jpg" optionsthumb1="300x200" title1="Estabilizadores del DIERYA DK61E"
+    image1="image:dierya-dk61e-estabilizadores-1.webp" optionsthumb1="300x200" title1="Estabilizadores del DIERYA DK61E"
     caption="Estabilizadores del DIERYA DK61E" >}}
 
 ### Análisis y primeras impresiones del teclado mecánico DIERYA DK61E
@@ -226,7 +226,7 @@ Los _switches_ ópticos tienen la ventaja de que son algo más precisos y fiable
 
 {{< image
     gallery="true"
-    image1="image:gateron-optical-swtiches.jpg" optionsthumb1="650x450" title1="Tipos de switches ópticos de Gateron"
+    image1="image:gateron-optical-swtiches.webp" optionsthumb1="650x450" title1="Tipos de switches ópticos de Gateron"
     caption="Tipos de switches ópticos de Gateron" >}}
 
 Las personas que el uso principal del teclado es dedicado a escribir suelen preferir los _switches_ de tipo táctil o _clicky_ aunque estos últimos suelen ser percibidos como bastante ruidosos y molestos para otras personas en la misma estancia. Los usuarios que usan el teclado para juegos o son _gamers_ suelen preferir los _switches_ de tipo lineales, aunque en mi experiencia los táctiles de Gateron y Cherry MX _brown_ apenas se notan como táctiles.
@@ -245,8 +245,8 @@ Incluye un pequeño manual en el que se indican las teclas de función, útil so
 
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-setup-1.jpg" optionsthumb1="300x250" title1="Disposición en el escritorio del teclado DIERYA DK61E"
-    image2="image:dierya-dk61e-setup-2.jpg" optionsthumb2="300x250" title2="Disposición en el escritorio del teclado DIERYA DK61E"
+    image1="image:dierya-dk61e-setup-1.webp" optionsthumb1="300x250" title1="Disposición en el escritorio del teclado DIERYA DK61E"
+    image2="image:dierya-dk61e-setup-2.webp" optionsthumb2="300x250" title2="Disposición en el escritorio del teclado DIERYA DK61E"
     caption="Disposición en el escritorio del teclado DIERYA DK61E" >}}
 
 #### Conclusión
@@ -259,7 +259,7 @@ Por comentar algún defecto, si no estoy equivocado la serigrafía de la tecla d
 
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-key-f11.jpg" optionsthumb1="300x200" title1="Serigrafía de la tecla F11"
+    image1="image:dierya-dk61e-key-f11.webp" optionsthumb1="300x200" title1="Serigrafía de la tecla F11"
     caption="Serigrafía de la tecla F11" >}}
 
 Yo utilizo un concentrador USB 2.0 con un disco duro conectado y un ratón, en un primer momento al conectarlo la pantalla piede la señal HDMI se va a negro. Realmente sorprendente sin embargo después de desconectarlo se recupera. Conectando el teclado al Intel NUC directamente a un puerto USB 3.0  funciona sin ningún problema, y posteriormente desconectando todos los elementos del concentrador USB y conectandolos uno a uno funciona sin mostrar el mismo problema. Parece que tiene algún problema con el concentrador USB 2.0 y un disco duro USB, ambos a la vez al conectar el teclado presenta alguna incompatibilidad o problema que hace incluso la señal de monitor por HDMI se pierda. Si conecto el disco duro más tarde no se presenta ningún problema, puede que no sea problema del teclado y lo sea del concentrador USB, del disco duro o de GNU/Linux pero es algo que no me pasa con el teclado Glorious. Quizá es que el teclado es USB 3.0 y el concentrador es USB 2.0.

@@ -40,7 +40,7 @@ Esta definición se compone de cuatro elementos:
 
 {{< image
     gallery="true"
-    image1="image:oauth-components.png" optionsthumb1="650x450" title1="Componentes de OAuth 2.0"
+    image1="image:oauth-components.webp" optionsthumb1="650x450" title1="Componentes de OAuth 2.0"
     caption="Componentes de OAuth 2.0" source="Libro OAuth 2 in Action">}}
 
 El protocolo OAuth define varios flujos de autorización que un cliente puede emplear para obtener un _token_ pero deja otros aspectos sin definir como cuál es el formato o contenido del _token_, tampoco define como el servidor de autorización debe realizar la autenticación del usuario. Esta no definición de algunos aspectos del protocolo le permite ser flexible y adaptarse a diferentes contextos.

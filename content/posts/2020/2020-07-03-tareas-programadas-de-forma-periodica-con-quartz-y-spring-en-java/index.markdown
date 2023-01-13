@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:jobs.png"
+imagePost: "image:jobs.webp"
 tags: ["java", "planeta-codigo"]
 ---
 

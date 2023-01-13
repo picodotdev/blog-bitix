@@ -36,7 +36,7 @@ Con Gradle la documentación Javadoc se genera en el directorio _build/xxx_ y el
 
 {{< image
     gallery="true"
-    image1="image:javadoc.png" optionsthumb1="300x200" title1="Artefacto generado con la documentación javadoc"
+    image1="image:javadoc.webp" optionsthumb1="300x200" title1="Artefacto generado con la documentación javadoc"
     caption="Artefacto generado con la documentación javadoc" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/Javadoc" command="./gradlew build" >}}

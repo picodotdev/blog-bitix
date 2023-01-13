@@ -31,12 +31,12 @@ Al igual que cuando se crea un contenedor para un servicio en el _cluster_ [Dock
 
 {{< image
     gallery="true"
-    image1="image:nginx-service-1.png" optionsthumb1="300x200" title1="Servicio de nginx con una réplica"
-    image2="image:nginx-service-4.png" optionsthumb2="300x200" title2="Servicio de nginx escalado a cuatro réplicas"
+    image1="image:nginx-service-1.webp" optionsthumb1="300x200" title1="Servicio de nginx con una réplica"
+    image2="image:nginx-service-4.webp" optionsthumb2="300x200" title2="Servicio de nginx escalado a cuatro réplicas"
     caption="Servicio de nginx antes y después de escalarlo" >}}
 {{< image
     gallery="true"
-    image1="image:nginx-service-scale.png" optionsthumb1="300x200" title1="Escalado del servicio de nginx"
+    image1="image:nginx-service-scale.webp" optionsthumb1="300x200" title1="Escalado del servicio de nginx"
     caption="Escalado del servicio de nginx" >}}
 
 Por otro lado, una vez desplegados en un _cluster_ algunos servicios llegará el momento en que queramos actualizar algún parámetro del servicio, uno de ellos será probablemente la imagen del servicio cuando se publique una nueva. En la página de documentación [Aplicando actualizaciones a un servicio](https://docs.docker.com/engine/swarm/swarm-tutorial/rolling-update/) está explicada esta funcionalidad y los comandos junto con sus opciones que hay que utilizar.
@@ -47,7 +47,7 @@ En el ejemplo al crear el _cluster_ se usa la última imagen de docker para ngin
 
 {{< image
     gallery="true"
-    image1="image:nginx-service-update.png" optionsthumb1="300x200" title1="Actualización de la imagen del servicio de nginx"
+    image1="image:nginx-service-update.webp" optionsthumb1="300x200" title1="Actualización de la imagen del servicio de nginx"
     caption="Actualización de la imagen del servicio de nginx" >}}
 
 Docker Swarm realiza el proceso de actualización siguiendo los siguientes pasos:

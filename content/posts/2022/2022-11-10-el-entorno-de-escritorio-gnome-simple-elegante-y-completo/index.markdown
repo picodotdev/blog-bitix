@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:gnome.jpg"
-imagePost: "image:gnome.jpg"
+imageHead: "image:gnome.webp"
+imagePost: "image:gnome.webp"
 tags: ["gnu-linux", "planeta-codigo"]
 summary: "GNOME es uno de los entornos de escritorio con interfaz gráfica en GNU/Linux. Se caracteriza por ser simple en su guía de interfaz de usuario y ofreciendo simplemente las opciones de configuración que más utilizan todos los usuarios, dejando para la aplicación de retoques y las extensiones para añadir las funcionalidades que sólo algunos usuarios necesitan. Es simple pero completo incorporando un conjunto amplio de aplicaciones integradas desarrolladas junto al entorno de escritorio todas siguiendo la misma guía de estilos de usuario que permiten realizar las tareas básicas desde archivos hasta fotos, música, vídeos, visor de documentos e incluso juegos de pasatiempo entre muchas otras aplicaciones integradas."
 ---
@@ -28,12 +28,12 @@ Durante este tiempo he usado GNOME no solo a nivel personal sino en un entorno l
 
 {{< image
     gallery="true"
-    image1="image:gnome-1.x.jpg" optionsthumb1="200x150" title1="Versiones antiguas de GNOME, 1.x"
-    image2="image:gnome-2.6.jpg" optionsthumb2="200x150" title2="Versiones antiguas de GNOME, 2.6"
-    image3="image:gnome-2.30.jpg" optionsthumb3="200x150" title3="Versiones antiguas de GNOME, 2.30" >}}
+    image1="image:gnome-1.x.webp" optionsthumb1="200x150" title1="Versiones antiguas de GNOME, 1.x"
+    image2="image:gnome-2.6.webp" optionsthumb2="200x150" title2="Versiones antiguas de GNOME, 2.6"
+    image3="image:gnome-2.30.webp" optionsthumb3="200x150" title3="Versiones antiguas de GNOME, 2.30" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-3.0.jpg" optionsthumb1="300x250" title1="Versiones antiguas de GNOME, 3.0"
+    image1="image:gnome-3.0.webp" optionsthumb1="300x250" title1="Versiones antiguas de GNOME, 3.0"
     caption="Versiones antiguas de GNOME" >}}
 
 No soy _distrohopper_ ni _desktophopper_, durante todo este tiempo Arch Linux y GNOME me han permitido realizar mis tareas de forma productiva y por tanto no he tenido necesidad de cambiar a otra distribución ni a otro entorno de escritorio. Si el modelo _rolling release_ de Arch Linux no fuese lo suficientemente estable para que continúe con mis tareas probablemente cambiaría a [la distribución Fedora Silverblue][blogbitix-483] y si GNOME no me permitiese realizar mis tareas de forma productiva seguro que evaluaría Plasma.
@@ -58,7 +58,7 @@ GNOME solo es uno de los entornos de escritorio más populares de GNU/Linux, se 
 
 {{< image
     gallery="true"
-    image1="image:gnome.jpg" optionsthumb1="650x450" title1="Entorno de escritorio GNOME 43"
+    image1="image:gnome.webp" optionsthumb1="650x450" title1="Entorno de escritorio GNOME 43"
     caption="Entorno de escritorio GNOME 43" >}}
 
 #### Introducción
@@ -81,8 +81,8 @@ Las computadoras pueden ser usadas por diferentes usuarios de modo que los escri
 
 {{< image
     gallery="true"
-    image1="image:gnome-gdm-1.jpg" optionsthumb1="300x200" title1="Inicio de sesión en GNOME con GDM"
-    image2="image:gnome-gdm-2.jpg" optionsthumb2="300x200" title2="Inicio de sesión en GNOME con GDM"
+    image1="image:gnome-gdm-1.webp" optionsthumb1="300x200" title1="Inicio de sesión en GNOME con GDM"
+    image2="image:gnome-gdm-2.webp" optionsthumb2="300x200" title2="Inicio de sesión en GNOME con GDM"
     caption="Inicio de sesión en GNOME con GDM" >}}
 
 #### Escritorio
@@ -93,12 +93,12 @@ El escritorio de GNOME se compone de una barra superior, en la parte izquierda e
 
 {{< image
     gallery="true"
-    image1="image:gnome-escritorio-1.jpg" optionsthumb1="300x200" title1="Escritorio"
-    image2="image:gnome-escritorio-2.jpg" optionsthumb2="300x200" title2="Escritorio" >}}
+    image1="image:gnome-escritorio-1.webp" optionsthumb1="300x200" title1="Escritorio"
+    image2="image:gnome-escritorio-2.webp" optionsthumb2="300x200" title2="Escritorio" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-escritorio-3.jpg" optionsthumb1="300x200" title1="Escritorio"
-    image2="image:gnome-escritorio-4.jpg" optionsthumb2="300x200" title2="Escritorio"
+    image1="image:gnome-escritorio-3.webp" optionsthumb1="300x200" title1="Escritorio"
+    image2="image:gnome-escritorio-4.webp" optionsthumb2="300x200" title2="Escritorio"
     caption="Escritorio" >}}
 
 #### Escritorios virtuales
@@ -109,7 +109,7 @@ Es posible cambiar de un escritorio a otro a través de la pantalla de actividad
 
 {{< image
     gallery="true"
-    image1="image:gnome-escritorios-virtuales-1.jpg" optionsthumb1="300x200" title1="Escritorios virtuales"
+    image1="image:gnome-escritorios-virtuales-1.webp" optionsthumb1="300x200" title1="Escritorios virtuales"
     caption="Escritorios virtuales" >}}
 
 #### Pantalla de bloqueo
@@ -120,8 +120,8 @@ La pantalla de bloqueo permite mostrar ciertas notificaciones de las aplicacione
 
 {{< image
     gallery="true"
-    image1="image:gnome-pantalla-bloqueo-1.jpg" optionsthumb1="300x200" title1="Pantalla de bloqueo"
-    image2="image:gnome-pantalla-bloqueo-2.jpg" optionsthumb2="300x200" title2="Pantalla de bloqueo"
+    image1="image:gnome-pantalla-bloqueo-1.webp" optionsthumb1="300x200" title1="Pantalla de bloqueo"
+    image2="image:gnome-pantalla-bloqueo-2.webp" optionsthumb2="300x200" title2="Pantalla de bloqueo"
     caption="Pantalla de bloqueo" >}}
 
 #### Notificaciones y calendario
@@ -136,7 +136,7 @@ Como las notificaciones pueden interrumpir la concentración y el trabajo está 
 
 {{< image
     gallery="true"
-    image1="image:gnome-notificaciones.jpg" optionsthumb1="300x200" title1="Notificaciones y calendario"
+    image1="image:gnome-notificaciones.webp" optionsthumb1="300x200" title1="Notificaciones y calendario"
     caption="Notificaciones y calendario" >}}
 
 #### Bandeja del sistema y configuración
@@ -145,7 +145,7 @@ En la parte derecha de la barra superior está la bandeja del sistema que muestr
 
 {{< image
     gallery="true"
-    image1="image:gnome-bandeja-del-sistema-1.jpg" optionsthumb1="300x200" title1="Bandeja del sistema"
+    image1="image:gnome-bandeja-del-sistema-1.webp" optionsthumb1="300x200" title1="Bandeja del sistema"
     caption="Bandeja del sistema" >}}
 
 La misma bandeja del sistema da acceso rápido a cambiar ciertas opciones habituales como cambiar cambiar el volumen de sonido, la conexión cableada o WIFI, activar Bluetooth, el modo de rendimiento, activar la luz nocturna y el modo oscuro de las ventanas para evitar la luz blanca de la pantalla que molesten o dañen los ojos.
@@ -154,56 +154,56 @@ También está la opción de tomar una captura de la pantalla completa, de una v
 
 {{< image
     gallery="true"
-    image1="image:gnome-captura-de-pantalla-1.jpg" optionsthumb1="200x150" title1="Captura de pantalla"
-    image2="image:gnome-captura-de-pantalla-2.jpg" optionsthumb2="200x150" title2="Captura de pantalla"
-    image3="image:gnome-captura-de-pantalla-3.jpg" optionsthumb3="200x150" title3="Captura de pantalla"
+    image1="image:gnome-captura-de-pantalla-1.webp" optionsthumb1="200x150" title1="Captura de pantalla"
+    image2="image:gnome-captura-de-pantalla-2.webp" optionsthumb2="200x150" title2="Captura de pantalla"
+    image3="image:gnome-captura-de-pantalla-3.webp" optionsthumb3="200x150" title3="Captura de pantalla"
     caption="Captura de pantalla" >}}
 
 El conjunto completo de opciones de configuración están en la aplicación Configuración, con todas las opciones que se muestran en la siguiente galería de imágenes, desde la conexiones, apariencia, sonido teclado, pantalla e impresoras, región e idioma para los formatos de fecha, moneda y temperatura, accesibilidad, información del sistema entre otras.
 
 {{< image
     gallery="true"
-    image1="image:gnome-configuracion-1.jpg" optionsthumb1="200x150" title1="Configuración"
-    image2="image:gnome-configuracion-2.jpg" optionsthumb2="200x150" title2="Configuración"
-    image3="image:gnome-configuracion-3.jpg" optionsthumb3="200x150" title3="Configuración" >}}
+    image1="image:gnome-configuracion-1.webp" optionsthumb1="200x150" title1="Configuración"
+    image2="image:gnome-configuracion-2.webp" optionsthumb2="200x150" title2="Configuración"
+    image3="image:gnome-configuracion-3.webp" optionsthumb3="200x150" title3="Configuración" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-configuracion-4.jpg" optionsthumb1="200x150" title1="Configuración"
-    image2="image:gnome-configuracion-5.jpg" optionsthumb2="200x150" title2="Configuración"
-    image3="image:gnome-configuracion-6.jpg" optionsthumb3="200x150" title3="Configuración" >}}
+    image1="image:gnome-configuracion-4.webp" optionsthumb1="200x150" title1="Configuración"
+    image2="image:gnome-configuracion-5.webp" optionsthumb2="200x150" title2="Configuración"
+    image3="image:gnome-configuracion-6.webp" optionsthumb3="200x150" title3="Configuración" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-configuracion-7.jpg" optionsthumb1="200x150" title1="Configuración"
-    image2="image:gnome-configuracion-8.jpg" optionsthumb2="200x150" title2="Configuración"
-    image3="image:gnome-configuracion-9.jpg" optionsthumb3="200x150" title3="Configuración" >}}
+    image1="image:gnome-configuracion-7.webp" optionsthumb1="200x150" title1="Configuración"
+    image2="image:gnome-configuracion-8.webp" optionsthumb2="200x150" title2="Configuración"
+    image3="image:gnome-configuracion-9.webp" optionsthumb3="200x150" title3="Configuración" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-configuracion-10.jpg" optionsthumb1="200x150" title1="Configuración"
-    image2="image:gnome-configuracion-11.jpg" optionsthumb2="200x150" title2="Configuración"
-    image3="image:gnome-configuracion-12.jpg" optionsthumb3="200x150" title3="Configuración" >}}
+    image1="image:gnome-configuracion-10.webp" optionsthumb1="200x150" title1="Configuración"
+    image2="image:gnome-configuracion-11.webp" optionsthumb2="200x150" title2="Configuración"
+    image3="image:gnome-configuracion-12.webp" optionsthumb3="200x150" title3="Configuración" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-configuracion-13.jpg" optionsthumb1="200x150" title1="Configuración"
-    image2="image:gnome-configuracion-14.jpg" optionsthumb2="200x150" title2="Configuración"
-    image3="image:gnome-configuracion-15.jpg" optionsthumb3="200x150" title3="Configuración" >}}
+    image1="image:gnome-configuracion-13.webp" optionsthumb1="200x150" title1="Configuración"
+    image2="image:gnome-configuracion-14.webp" optionsthumb2="200x150" title2="Configuración"
+    image3="image:gnome-configuracion-15.webp" optionsthumb3="200x150" title3="Configuración" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-configuracion-16.jpg" optionsthumb1="200x150" title1="Configuración"
-    image2="image:gnome-configuracion-17.jpg" optionsthumb2="200x150" title2="Configuración"
-    image3="image:gnome-configuracion-18.jpg" optionsthumb3="200x150" title3="Configuración" >}}
+    image1="image:gnome-configuracion-16.webp" optionsthumb1="200x150" title1="Configuración"
+    image2="image:gnome-configuracion-17.webp" optionsthumb2="200x150" title2="Configuración"
+    image3="image:gnome-configuracion-18.webp" optionsthumb3="200x150" title3="Configuración" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-configuracion-19.jpg" optionsthumb1="200x150" title1="Configuración"
-    image2="image:gnome-configuracion-20.jpg" optionsthumb2="200x150" title2="Configuración"
-    image3="image:gnome-configuracion-21.jpg" optionsthumb3="200x150" title3="Configuración" >}}
+    image1="image:gnome-configuracion-19.webp" optionsthumb1="200x150" title1="Configuración"
+    image2="image:gnome-configuracion-20.webp" optionsthumb2="200x150" title2="Configuración"
+    image3="image:gnome-configuracion-21.webp" optionsthumb3="200x150" title3="Configuración" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-configuracion-22.jpg" optionsthumb1="200x150" title1="Configuración"
-    image2="image:gnome-configuracion-23.jpg" optionsthumb2="200x150" title2="Configuración"
-    image3="image:gnome-configuracion-24.jpg" optionsthumb3="200x150" title3="Configuración" >}}
+    image1="image:gnome-configuracion-22.webp" optionsthumb1="200x150" title1="Configuración"
+    image2="image:gnome-configuracion-23.webp" optionsthumb2="200x150" title2="Configuración"
+    image3="image:gnome-configuracion-24.webp" optionsthumb3="200x150" title3="Configuración" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-configuracion-25.jpg" optionsthumb1="200x150" title1="Configuración"
+    image1="image:gnome-configuracion-25.webp" optionsthumb1="200x150" title1="Configuración"
     caption="Configuración" >}}
 
 #### Fondos de pantalla
@@ -212,19 +212,19 @@ Una de las opciones de configuración más utilizadas es cambiar la imagen del f
 
 {{< image
     gallery="true"
-    image1="image:gnome-fondo-de-pantalla-1.jpg" optionsthumb1="200x150" title1="Fondo de pantalla"
-    image2="image:gnome-fondo-de-pantalla-2.jpg" optionsthumb2="200x150" title2="Fondo de pantalla"
-    image3="image:gnome-fondo-de-pantalla-3.jpg" optionsthumb3="200x150" title3="Fondo de pantalla" >}}
+    image1="image:gnome-fondo-de-pantalla-1.webp" optionsthumb1="200x150" title1="Fondo de pantalla"
+    image2="image:gnome-fondo-de-pantalla-2.webp" optionsthumb2="200x150" title2="Fondo de pantalla"
+    image3="image:gnome-fondo-de-pantalla-3.webp" optionsthumb3="200x150" title3="Fondo de pantalla" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-fondo-de-pantalla-4.jpg" optionsthumb1="200x150" title1="Fondo de pantalla"
-    image2="image:gnome-fondo-de-pantalla-5.jpg" optionsthumb2="200x150" title2="Fondo de pantalla"
-    image3="image:gnome-fondo-de-pantalla-6.jpg" optionsthumb3="200x150" title3="Fondo de pantalla" >}}
+    image1="image:gnome-fondo-de-pantalla-4.webp" optionsthumb1="200x150" title1="Fondo de pantalla"
+    image2="image:gnome-fondo-de-pantalla-5.webp" optionsthumb2="200x150" title2="Fondo de pantalla"
+    image3="image:gnome-fondo-de-pantalla-6.webp" optionsthumb3="200x150" title3="Fondo de pantalla" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-fondo-de-pantalla-7.jpg" optionsthumb1="200x150" title1="Fondo de pantalla"
-    image2="image:gnome-fondo-de-pantalla-8.jpg" optionsthumb2="200x150" title2="Fondo de pantalla"
-    image3="image:gnome-fondo-de-pantalla-9.jpg" optionsthumb3="200x150" title3="Fondo de pantalla"
+    image1="image:gnome-fondo-de-pantalla-7.webp" optionsthumb1="200x150" title1="Fondo de pantalla"
+    image2="image:gnome-fondo-de-pantalla-8.webp" optionsthumb2="200x150" title2="Fondo de pantalla"
+    image3="image:gnome-fondo-de-pantalla-9.webp" optionsthumb3="200x150" title3="Fondo de pantalla"
     caption="Fondo de pantalla" >}}
 
 #### Modo claro y modo oscuro
@@ -233,8 +233,8 @@ Uno de las funciones que han ido adoptando todos los escritorios incluyendo GNOM
 
 {{< image
     gallery="true"
-    image1="image:gnome-modo-caro-oscuro-1.jpg" optionsthumb1="300x200" title1="Modo claro"
-    image2="image:gnome-modo-caro-oscuro-2.jpg" optionsthumb2="300x200" title2="Modo oscuro"
+    image1="image:gnome-modo-caro-oscuro-1.webp" optionsthumb1="300x200" title1="Modo claro"
+    image2="image:gnome-modo-caro-oscuro-2.webp" optionsthumb2="300x200" title2="Modo oscuro"
     caption="Modo claro y oscuro" >}}
 
 #### Esquina activa
@@ -247,7 +247,7 @@ Los monitores actuales que llegan a ser de 27" y 32" algunos en formatos panorá
 
 {{< image
     gallery="true"
-    image1="image:gnome-patalla-dividida-1.jpg" optionsthumb1="300x200" title1="Pantalla dividida"
+    image1="image:gnome-patalla-dividida-1.webp" optionsthumb1="300x200" title1="Pantalla dividida"
     caption="Pantalla dividida" >}}
 
 #### Siempre encima
@@ -258,8 +258,8 @@ GNOME tiene una funcionalidad de siempre encima, con la funcionalidad activada l
 
 {{< image
     gallery="true"
-    image1="image:gnome-siempre-encima-1.jpg" optionsthumb1="300x200" title1="Siempre encima"
-    image2="image:gnome-siempre-encima-2.jpg" optionsthumb2="300x200" title2="Siempre encima"
+    image1="image:gnome-siempre-encima-1.webp" optionsthumb1="300x200" title1="Siempre encima"
+    image2="image:gnome-siempre-encima-2.webp" optionsthumb2="300x200" title2="Siempre encima"
     caption="Siempre encima" >}}
 
 #### Renombrar múltiples archivos
@@ -272,8 +272,8 @@ La tecla _F2_ permite renombrar el nombre del archivo, también con el clic dere
 
 {{< image
     gallery="true"
-    image1="image:gnome-renombrar-1.jpg" optionsthumb1="300x200" title1="Renombrar archivo"
-    image2="image:gnome-renombrar-2.jpg" optionsthumb2="300x200" title2="Renombrar archivos"
+    image1="image:gnome-renombrar-1.webp" optionsthumb1="300x200" title1="Renombrar archivo"
+    image2="image:gnome-renombrar-2.webp" optionsthumb2="300x200" title2="Renombrar archivos"
     caption="Renombrar archivos" >}}
 
 #### Comprimir archivos
@@ -286,8 +286,8 @@ El compresor de archivos GNOME permite crear archivos zip y archivos zip protegi
 
 {{< image
     gallery="true"
-    image1="image:gnome-comprimir-1.jpg" optionsthumb1="300x200" title1="Comprimir archivo"
-    image2="image:gnome-comprimir-2.jpg" optionsthumb2="300x200" title2="Comprimir archivo"
+    image1="image:gnome-comprimir-1.webp" optionsthumb1="300x200" title1="Comprimir archivo"
+    image2="image:gnome-comprimir-2.webp" optionsthumb2="300x200" title2="Comprimir archivo"
     caption="Comprimir archivo" >}}
 
 #### Atajos de teclado
@@ -300,7 +300,7 @@ Por defecto GNOME no ofrece una barra de tareas como Windows y Plasma y tampoco 
 
 {{< image
     gallery="true"
-    image1="image:gnome-atajos-de-teclado-1.jpg" optionsthumb1="300x200" title1="Atajos de teclado"
+    image1="image:gnome-atajos-de-teclado-1.webp" optionsthumb1="300x200" title1="Atajos de teclado"
     caption="Atajos de teclado" >}}
 
 #### Configuración de teclado
@@ -313,8 +313,8 @@ Los español parlantes lo habitual es utilizar la disposición en español o ing
 
 {{< image
     gallery="true"
-    image1="image:gnome-configuracion-de-teclado-1.jpg" optionsthumb1="300x200" title1="Configuración de teclado"
-    image2="image:gnome-configuracion-de-teclado-2.jpg" optionsthumb2="300x200" title2="Configuración de teclado"
+    image1="image:gnome-configuracion-de-teclado-1.webp" optionsthumb1="300x200" title1="Configuración de teclado"
+    image2="image:gnome-configuracion-de-teclado-2.webp" optionsthumb2="300x200" title2="Configuración de teclado"
     caption="Configuración de teclado" >}}
 
 #### Configuración de monitor
@@ -325,8 +325,8 @@ Los monitores 4K ofrecen gran resolución pero dependiendo de su tamaño de pant
 
 {{< image
     gallery="true"
-    image1="image:gnome-configuracion-de-pantalla-1.jpg" optionsthumb1="300x200" title1="Configuración de pantalla"
-    image2="image:gnome-configuracion-de-pantalla-2.jpg" optionsthumb2="300x200" title2="Configuración de pantalla"
+    image1="image:gnome-configuracion-de-pantalla-1.webp" optionsthumb1="300x200" title1="Configuración de pantalla"
+    image2="image:gnome-configuracion-de-pantalla-2.webp" optionsthumb2="300x200" title2="Configuración de pantalla"
     caption="Configuración de pantalla" >}}
 
 #### Extensiones
@@ -339,17 +339,17 @@ Una funcionalidad demandada es tener una barra de tareas o _dock_ que permite ca
 
 {{< image
     gallery="true"
-    image1="image:gnome-extensiones-1.jpg" optionsthumb1="200x150" title1="Extensiones"
-    image2="image:gnome-extensiones-2.jpg" optionsthumb2="200x150" title2="Extensiones"
-    image3="image:gnome-extensiones-3.jpg" optionsthumb3="200x150" title3="Extensiones" >}}
+    image1="image:gnome-extensiones-1.webp" optionsthumb1="200x150" title1="Extensiones"
+    image2="image:gnome-extensiones-2.webp" optionsthumb2="200x150" title2="Extensiones"
+    image3="image:gnome-extensiones-3.webp" optionsthumb3="200x150" title3="Extensiones" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-extensiones-dash-to-dock-1.jpg" optionsthumb1="300x200" title1="Extensiones"
-    image2="image:gnome-extensiones-dash-to-dock-2.jpg" optionsthumb2="300x200" title2="Extensiones" >}}
+    image1="image:gnome-extensiones-dash-to-dock-1.webp" optionsthumb1="300x200" title1="Extensiones"
+    image2="image:gnome-extensiones-dash-to-dock-2.webp" optionsthumb2="300x200" title2="Extensiones" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-extensiones-dash-to-dock-3.jpg" optionsthumb1="300x200" title1="Extensiones"
-    image2="image:gnome-extensiones-dash-to-dock-4.jpg" optionsthumb2="300x200" title2="Extensiones"
+    image1="image:gnome-extensiones-dash-to-dock-3.webp" optionsthumb1="300x200" title1="Extensiones"
+    image2="image:gnome-extensiones-dash-to-dock-4.webp" optionsthumb2="300x200" title2="Extensiones"
     caption="Extensiones" >}}
 
 #### Aplicación retoques
@@ -360,18 +360,18 @@ Sin embargo, algunos usuarios desean algunas opciones más de personalización, 
 
 {{< image
     gallery="true"
-    image1="image:gnome-retoques-1.jpg" optionsthumb1="200x150" title1="Retoques"
-    image2="image:gnome-retoques-2.jpg" optionsthumb2="200x150" title2="Retoques"
-    image3="image:gnome-retoques-3.jpg" optionsthumb3="200x150" title3="Retoques" >}}
+    image1="image:gnome-retoques-1.webp" optionsthumb1="200x150" title1="Retoques"
+    image2="image:gnome-retoques-2.webp" optionsthumb2="200x150" title2="Retoques"
+    image3="image:gnome-retoques-3.webp" optionsthumb3="200x150" title3="Retoques" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-retoques-4.jpg" optionsthumb1="200x150" title1="Retoques"
-    image2="image:gnome-retoques-5.jpg" optionsthumb2="200x150" title2="Retoques"
-    image3="image:gnome-retoques-6.jpg" optionsthumb3="200x150" title3="Retoques" >}}
+    image1="image:gnome-retoques-4.webp" optionsthumb1="200x150" title1="Retoques"
+    image2="image:gnome-retoques-5.webp" optionsthumb2="200x150" title2="Retoques"
+    image3="image:gnome-retoques-6.webp" optionsthumb3="200x150" title3="Retoques" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-retoques-7.jpg" optionsthumb1="300x200" title1="Retoques"
-    image2="image:gnome-retoques-8.jpg" optionsthumb2="300x200" title2="Retoques"
+    image1="image:gnome-retoques-7.webp" optionsthumb1="300x200" title1="Retoques"
+    image2="image:gnome-retoques-8.webp" optionsthumb2="300x200" title2="Retoques"
     caption="Retoques" >}}
 
 #### Papelera de reciclaje
@@ -382,8 +382,8 @@ Los archivos antes de ser eliminados de forma definitiva se envían a la papeler
 
 {{< image
     gallery="true"
-    image1="image:gnome-papelera-de-reciclaje-1.jpg" optionsthumb1="300x200" title1="Papelera de reciclaje"
-    image2="image:gnome-papelera-de-reciclaje-2.jpg" optionsthumb2="300x200" title2="Papelera de reciclaje"
+    image1="image:gnome-papelera-de-reciclaje-1.webp" optionsthumb1="300x200" title1="Papelera de reciclaje"
+    image2="image:gnome-papelera-de-reciclaje-2.webp" optionsthumb2="300x200" title2="Papelera de reciclaje"
     caption="Papelera de reciclaje" >}}
 
 ### Aplicaciones integradas de GNOME
@@ -428,9 +428,9 @@ La siguiente galería de imágenes muestra varias de las aplicaciones en su aspe
 
 {{< image
     gallery="true"
-    image1="image:gnome-aplicaciones-1.jpg" optionsthumb1="300x200" title1="Aplicaciones"
-    image2="image:gnome-aplicaciones-2.jpg" optionsthumb2="300x200" title2="Aplicaciones"
-    image3="image:gnome-aplicaciones-3.jpg" optionsthumb3="300x200" title3="Aplicaciones"
+    image1="image:gnome-aplicaciones-1.webp" optionsthumb1="300x200" title1="Aplicaciones"
+    image2="image:gnome-aplicaciones-2.webp" optionsthumb2="300x200" title2="Aplicaciones"
+    image3="image:gnome-aplicaciones-3.webp" optionsthumb3="300x200" title3="Aplicaciones"
     caption="Aplicaciones" >}}
 
 ### Otras aplicaciones para GNOME y aplicaciones de terceros

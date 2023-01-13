@@ -28,7 +28,7 @@ En este ejemplo solo se monitorizan los cambios de los archivos pero usando otra
 
 {{< image
     gallery="true"
-    image1="image:main.png" optionsthumb1="300x200" title1="Salida programa Main.java" >}}
+    image1="image:main.webp" optionsthumb1="300x200" title1="Salida programa Main.java" >}}
 
 Esta funcionalidad de monitorización de cambios de archivos junto con la [compilación y carga dinámica de archivos con código fuente Java][blogbitix-42] puede utilizarse para hacer que la configuración de una aplicación esté definida en código Java y se cargue dinámicamente sin tener que reiniciar la aplicación. Y esto es lo que mostraré en la siguiente entrada y explicaré con más detalles que ventajas tienen esta idea.
 

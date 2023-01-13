@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:nginx-virtual-server.png"
+imagePost: "image:nginx-virtual-server.webp"
 tags: ["planeta-codigo", "web"]
 ---
 
@@ -50,7 +50,7 @@ En el ejemplo se usa la misma raíz de documentos que el sitio web para _localho
 
 {{< image
     gallery="true"
-    image1="image:nginx-virtual-server.png" optionsthumb1="300x200" title1="Servidor web virtual en Nginx"
+    image1="image:nginx-virtual-server.webp" optionsthumb1="300x200" title1="Servidor web virtual en Nginx"
     caption="Servidor web virtual en Nginx" >}}
 
 ### Configurar un servidor web virtual en Apache HTTPD
@@ -64,7 +64,7 @@ Usando Apache también se accede al sitio web por su nombre de dominio _www.127.
 
 {{< image
     gallery="true"
-    image1="image:apache-virtual-server.png" optionsthumb1="300x200" title1="Servidor web virtual en Apache"
+    image1="image:apache-virtual-server.webp" optionsthumb1="300x200" title1="Servidor web virtual en Apache"
     caption="Servidor web virtual en Apache" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/WebVirtualServer" command="./docker-nginx.sh, ./docker-apache.sh" %}}

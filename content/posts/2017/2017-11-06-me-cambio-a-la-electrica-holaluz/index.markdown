@@ -34,7 +34,7 @@ Cambiar de compañía comercializadora eléctrica es muy sencillo y no hay ningu
 {{< image
     gallery="false"
     image1="logotype:holaluz.svg" optionsthumb1="300x250" title1="Holaluz"
-    image2="image:pepeenergy.png" optionsthumb2="300x250" title2="Pepeenergy" >}}
+    image2="image:pepeenergy.webp" optionsthumb2="300x250" title2="Pepeenergy" >}}
 
 ### Comparar precios entre compañías y calcular ahorro
 
@@ -60,12 +60,12 @@ Transcurrido un año y unos meses me han actualizado el precio a 0,133000 que es
 
 {{< image
     gallery="true"
-    image1="image:factura-holaluz-1.png" optionsthumb1="300x200" title1="Factura Holaluz"
-    image2="image:factura-holaluz-2.png" optionsthumb2="300x200" title2="Factura Holaluz" >}}
+    image1="image:factura-holaluz-1.webp" optionsthumb1="300x200" title1="Factura Holaluz"
+    image2="image:factura-holaluz-2.webp" optionsthumb2="300x200" title2="Factura Holaluz" >}}
 {{< image
     gallery="true"
-    image1="image:factura-holaluz-3.png" optionsthumb1="300x200" title1="Factura Holaluz"
-    image2="image:factura-holaluz-4.png" optionsthumb2="300x200" title2="Factura Holaluz"
+    image1="image:factura-holaluz-3.webp" optionsthumb1="300x200" title1="Factura Holaluz"
+    image2="image:factura-holaluz-4.webp" optionsthumb2="300x200" title2="Factura Holaluz"
     caption="Factura de Holaluz después de unos meses con consumo" >}}
 
 ### Otros motivos: energía 100% renovable y trato al cliente
@@ -109,10 +109,10 @@ Holaluz además de ser una compañía comercializadora de electricidad ofrece la
 
 {{< image
     gallery="true"
-    image1="image:contratacion-holaluz-1.png" optionsthumb1="600x450" title1="Contratación Holaluz" >}}
+    image1="image:contratacion-holaluz-1.webp" optionsthumb1="600x450" title1="Contratación Holaluz" >}}
 {{< image
     gallery="true"
-    image1="image:contratacion-holaluz-2.png" optionsthumb1="650x450" title1="Contratación Holaluz"
+    image1="image:contratacion-holaluz-2.webp" optionsthumb1="650x450" title1="Contratación Holaluz"
     caption="Contratación Holaluz" >}}
 
 {{% /post %}}

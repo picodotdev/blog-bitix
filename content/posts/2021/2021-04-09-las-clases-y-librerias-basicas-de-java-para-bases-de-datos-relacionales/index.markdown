@@ -127,7 +127,7 @@ Estas no son las únicas librerías existentes pero sí son de las más conocida
     gallery="false"
     image1="logotype:hibernate.svg" optionsthumb1="200x150" title1="Hibernate"
     image2="logotype:spring.svg" optionsthumb2="200x150" title2="Spring"
-    image3="logotype:jooq.png" optionsthumb3="200x150" title3="jOOQ" >}}
+    image3="logotype:jooq.webp" optionsthumb3="200x150" title3="jOOQ" >}}
 
 ### Bases de datos relacionales
 

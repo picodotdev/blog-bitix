@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:teclado-sucio-completo.jpg"
+imagePost: "image:teclado-sucio-completo.webp"
 tags: ["hardware"]
 summary: "Al usar un teclado por mucho cuidado que se tenga al final se acumulan restos de suciedad como polvo y otras partículas que se van acumulando entre las teclas y en la base tras las teclas. Como algunas partes del teclado son de difícil acceso, hacer una correcta y completa limpieza del teclado requiere desmontar las _keycaps_. Por otro lado, hay varios medidas que aunque no por completo, algo de suciedad siempre va a acumular por el uso, permiten reducir la suciedad que se acumula en él y retrasar la frecuencia de limpieza."
 ---
@@ -42,52 +42,52 @@ Las siguientes son la foto de un teclado mecánico y de membrana recien estrenad
 
 {{< image
     gallery="true"
-    image1="image:v7-ckw200.jpg" optionsthumb1="300x200" title1="Teclado de membrana"
-    image2="image:glorious-gmmk-tkl.jpg" optionsthumb2="300x200" title2="Teclado mecánico"
+    image1="image:v7-ckw200.webp" optionsthumb1="300x200" title1="Teclado de membrana"
+    image2="image:glorious-gmmk-tkl.webp" optionsthumb2="300x200" title2="Teclado mecánico"
     caption="Teclado de membrana y mecánico recien estrenados" >}}
 
 Con el paso del tiempo acumulan suciedad, después de tres años de uso intensivo en el de membrana se observa la acumulación de polvo y suciedad en los laterales de los _keycaps_ y bajo ellos. En las fotos se observan todas las partículas de suciedad en el teclado.
 
 {{< image
     gallery="true"
-    image1="image:teclado-sucio-completo.jpg" optionsthumb1="300x200" title1="Teclado sucio"
-    image2="image:teclado-sucio-cerca.jpg" optionsthumb2="300x200" title2="Teclado limpio"
+    image1="image:teclado-sucio-completo.webp" optionsthumb1="300x200" title1="Teclado sucio"
+    image2="image:teclado-sucio-cerca.webp" optionsthumb2="300x200" title2="Teclado limpio"
     caption="Teclado de membrana sucio" >}}
 
 Con la ayuda de un extractor de teclas que suelen utilizarse para los teclados mecánicos pero que también sirven para los teclados de membrana es posible extraer los _keycaps_ de cualquiera de ellos.
 
 {{< image
     gallery="true"
-    image1="image:keycap-puller-1.jpg" optionsthumb1="300x200" title1="Extractor de keycaps"
-    image1="image:keycap-puller-2.jpg" optionsthumb1="300x200" title1="Extractor de keycaps"
+    image1="image:keycap-puller-1.webp" optionsthumb1="300x200" title1="Extractor de keycaps"
+    image1="image:keycap-puller-2.webp" optionsthumb1="300x200" title1="Extractor de keycaps"
     caption="Extractor de keycaps" >}}
 
 Una vez extraído los _keycaps_ con una brocha y un trapo la limpieza del teclado es sencilla con un poco de paciencia quedando el teclado prácticamente igual de limpio que cuando era nuevo.
 
 {{< image
     gallery="true"
-    image1="image:teclado-sucio-completo.jpg" optionsthumb1="300x200" title1="Teclado sucio"
-    image2="image:teclado-limpio-completo.jpg" optionsthumb2="300x200" title2="Teclado limpio" >}}
+    image1="image:teclado-sucio-completo.webp" optionsthumb1="300x200" title1="Teclado sucio"
+    image2="image:teclado-limpio-completo.webp" optionsthumb2="300x200" title2="Teclado limpio" >}}
 {{< image
     gallery="true"
-    image1="image:teclado-sucio-cerca.jpg" optionsthumb1="300x200" title1="Teclado sucio"
-    image2="image:teclado-limpio-cerca.jpg" optionsthumb2="300x200" title2="Teclado limpio" >}}
+    image1="image:teclado-sucio-cerca.webp" optionsthumb1="300x200" title1="Teclado sucio"
+    image2="image:teclado-limpio-cerca.webp" optionsthumb2="300x200" title2="Teclado limpio" >}}
 {{< image
     gallery="true"
-    image1="image:teclado-sucio-base-completo.jpg" optionsthumb1="300x200" title1="Teclado sucio"
-    image2="image:teclado-limpio-base-completo.jpg" optionsthumb2="300x200" title2="Teclado limpio" >}}
+    image1="image:teclado-sucio-base-completo.webp" optionsthumb1="300x200" title1="Teclado sucio"
+    image2="image:teclado-limpio-base-completo.webp" optionsthumb2="300x200" title2="Teclado limpio" >}}
 {{< image
     gallery="true"
-    image1="image:teclado-sucio-base-cerca.jpg" optionsthumb1="300x200" title1="Teclado sucio"
-    image2="image:teclado-limpio-base-cerca.jpg" optionsthumb2="300x200" title2="Teclado limpio"
+    image1="image:teclado-sucio-base-cerca.webp" optionsthumb1="300x200" title1="Teclado sucio"
+    image2="image:teclado-limpio-base-cerca.webp" optionsthumb2="300x200" title2="Teclado limpio"
     caption="Teclado sucio antes de limpiar y teclado limpio después de limpiar" >}}
 
 Una vez limpio tanto la bas del teclado como los _keycaps_, montarlas es igual de fácil tanto en los teclados de membrana como mecánicos. Para montar un _keycap_ basta con presentarlo en el interruptor y hacer un poco de fuerza de forma vertical hasta que quede encajado probando la tecla con varias pulsaciones.
 
 {{< image
     gallery="true"
-    image1="image:teclado-membrana-keycaps.jpg" optionsthumb1="300x200" title1="Keycaps de teclado de membrana"
-    image2="image:teclado-membrana-montaje.jpg" optionsthumb2="300x200" title2="Montaje de keycaps en teclado de membrana"
+    image1="image:teclado-membrana-keycaps.webp" optionsthumb1="300x200" title1="Keycaps de teclado de membrana"
+    image2="image:teclado-membrana-montaje.webp" optionsthumb2="300x200" title2="Montaje de keycaps en teclado de membrana"
     caption="Keycaps y montaje en teclado de membrana" >}}
 
 ### Cómo evitar que el teclado se ensucie
@@ -102,7 +102,7 @@ Finalmente, simplemente por el polvo del ambiente este va cayendo en el teclado 
 
 {{< image
     gallery="true"
-    image1="image:glorious-gmmk-tkl-cover.jpg" optionsthumb1="300x200" title1="Cobertura de plástico para teclado"
+    image1="image:glorious-gmmk-tkl-cover.webp" optionsthumb1="300x200" title1="Cobertura de plástico para teclado"
     caption="Cobertura de plástico para teclado" >}}
 
 {{% /post %}}

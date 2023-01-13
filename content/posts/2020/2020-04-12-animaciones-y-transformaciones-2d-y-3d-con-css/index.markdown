@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:css-animations-transformations.png"
+imagePost: "image:css-animations-transformations.webp"
 tags: ["planeta-codigo", "web"]
 ---
 
@@ -88,13 +88,13 @@ Estos son tres ejemplos de efectos aplicando transformaciones y animaciones, se 
     <div>
         {{< image
             gallery="false"
-            image1="image:alemania-destructor-z-23.jpg" optionsthumb1="450x300" title1="Imagen sin transformación" class1="image"
+            image1="image:alemania-destructor-z-23.webp" optionsthumb1="450x300" title1="Imagen sin transformación" class1="image"
             caption="Imagen sin transformación" >}}
     </div>
     <div>
         {{< image
             gallery="false"
-            image1="image:alemania-destructor-z-23.jpg" optionsthumb1="450x300" title1="Imagen sin transformación" class1="image image-transform"
+            image1="image:alemania-destructor-z-23.webp" optionsthumb1="450x300" title1="Imagen sin transformación" class1="image image-transform"
             caption="Imagen con transformación 2D" >}}
     </div>
 </div>

@@ -46,11 +46,11 @@ En esta capturas se muestran los _commits_, historial y _merges_ en una linea de
 
 {{< image
     gallery="true"
-    image1="image:gitg-1.png" optionsthumb1="300x200" title1="Aplicación gitg"
-    image2="image:gitg-2.png" optionsthumb2="300x200" title2="Aplicación gitg" >}}
+    image1="image:gitg-1.webp" optionsthumb1="300x200" title1="Aplicación gitg"
+    image2="image:gitg-2.webp" optionsthumb2="300x200" title2="Aplicación gitg" >}}
 {{< image
     gallery="true"
-    image1="image:gitg-3.png" optionsthumb1="650x400" title1="Aplicación gitg"
+    image1="image:gitg-3.webp" optionsthumb1="650x400" title1="Aplicación gitg"
     caption="Aplicación gitg" >}}
 
 Otras aplicaciones cliente de Git que tiene características similares son [Github Desktop][github-desktop] y [SmartGit][smartgit] esta última tiene una licencia propietaria y no es gratuita, ambas tienen su versión de Flatpak en el repositorio de [Flathub][flathub].

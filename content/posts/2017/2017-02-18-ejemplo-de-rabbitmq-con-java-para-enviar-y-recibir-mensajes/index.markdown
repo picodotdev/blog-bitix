@@ -52,8 +52,8 @@ Una vez iniciado el contenedor y con el código fuente del ejemplo, iniciamos en
 
 {{< image
     gallery="true"
-    image1="image:send.png" optionsthumb1="300x200" title1="Aplicación de ejemplo enviando mensajes"
-    image2="image:receive.png" optionsthumb2="300x200" title2="Aplicación de ejemplo recibiendo mensajes" >}}
+    image1="image:send.webp" optionsthumb1="300x200" title1="Aplicación de ejemplo enviando mensajes"
+    image2="image:receive.webp" optionsthumb2="300x200" title2="Aplicación de ejemplo recibiendo mensajes" >}}
 
 En la comunicación con RabbitMQ se puede usar [TLS/SSL](http://www.rabbitmq.com/ssl.html) así como mecanismos de [autenticación](http://www.rabbitmq.com/authentication.html) y [autorización](http://www.rabbitmq.com/access-control.html) para mayor seguridad. Usando confirmaciones si el receptor falla en el procesado el mensaje no se pierde ya que no se habrá declarado como _acknowledge_ aún así si RabbitMQ falla los mensajes se perderán a menos que las colas se declaren como persistentes las cuales se guardarán en disco perdurando a una catástrofe.
 
@@ -61,8 +61,8 @@ RabbitMQ posee un [_plugin_ para la administración](https://www.rabbitmq.com/ma
 
 {{< image
     gallery="true"
-    image1="image:rabbitmq-management.png" optionsthumb1="300x200" title1="Aplicación web de administración de RabbitMQ"
-    image2="image:rabbitmq-queue.png" optionsthumb2="300x200" title2="Información de estado de una cola" >}}
+    image1="image:rabbitmq-management.webp" optionsthumb1="300x200" title1="Aplicación web de administración de RabbitMQ"
+    image2="image:rabbitmq-queue.webp" optionsthumb2="300x200" title2="Información de estado de una cola" >}}
 
 Para profundizar más en las aplicaciones basadas en mensajes con RabbitMQ dos buenos libros son [Learning RabbitMQ](https://amzn.to/2lTGMQc) y [Matering RabbitMQ](https://amzn.to/2lW9qwF) cubriendo temas más avanzados como _clustering_, alta disponibilidad, arquitectura, patrones de diseño, seguridad y rendimiento.
 

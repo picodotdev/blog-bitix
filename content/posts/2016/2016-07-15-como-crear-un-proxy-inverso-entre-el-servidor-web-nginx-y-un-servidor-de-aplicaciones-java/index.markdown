@@ -32,7 +32,7 @@ Las aplicaciones web dinámicas Java se despliegan en un contenedor de _servlets
 
 {{< image
     gallery="true"
-    image1="image:reverse-proxy.png" optionsthumb1="300x200" title1="Esquema de un proxy inverso"
+    image1="image:reverse-proxy.webp" optionsthumb1="300x200" title1="Esquema de un proxy inverso"
     caption="Un proxy inverso recibe las peticiones de internet y las reenvía a los servidores de una red interna sin necesidad de que los clientes conozcan la red interna" >}}
 
 Para que un servidor web como Nginx actúe como _proxy_ inverso o _reverse proxy_ para un servidor de aplicaciones debemos añadir unas pocas directivas al archivo de configuración del servidor web. En el caso de Nginx usando la directiva _proxy\_pass_ donde indicamos para una localización la URL del servidor de aplicaciones a la que se le solicitará el contenido, en el ejemplo usando un servidor [Tomcat][tomcat].
@@ -51,7 +51,7 @@ Arrancado los contenedores con el comando `docker-compose up` accediendo al serv
 
 {{< image
     gallery="true"
-    image1="image:nginx-tomcat.png" optionsthumb1="300x200" title1="Nginx configurado como proxy inverso de un servidor de aplicaciones Tomcat"
+    image1="image:nginx-tomcat.webp" optionsthumb1="300x200" title1="Nginx configurado como proxy inverso de un servidor de aplicaciones Tomcat"
     caption="Nginx configurado como proxy inverso de un servidor de aplicaciones Tomcat" >}}
 
 En la [documentación sobre _reverse proxy_ de Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/) se explican algunas directivas más para pasar al servidor Tomcat la dirección IP del usuario usando cabeceras HTTP, en la configuración de Nginx usando _proxy\_set\_header_.

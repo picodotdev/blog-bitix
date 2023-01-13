@@ -9,7 +9,7 @@ index: true
 rss: true
 sharing: true
 comments: true
-imagePost: "logotype:grunt.png"
+imagePost: "logotype:grunt.webp"
 tags: ["software", "programacion", "javascript", "planeta-codigo"]
 ---
 
@@ -49,7 +49,7 @@ Veremos como salida el siguiente resultado en la terminal.
 
 {{< image
     gallery="true"
-    image1="image:grunt-jasmine.png" optionsthumb1="300x200" title1="Ejecutar teses Jasmine con Grunt" >}}
+    image1="image:grunt-jasmine.webp" optionsthumb1="300x200" title1="Ejecutar teses Jasmine con Grunt" >}}
 
 Al hacer esta entrada de forma que las pruebas se ejecuten con Grunt he movido las plantillas de Mustache de lugar, antes estaban embebidas en el html en el ejemplo [Backbone](https://elblogdepicodev.blogspot.com.es/2013/04/ejemplo-lista-de-tareas-con-backbone.html) y las he movido a dentro del javascript de la aplicación de la lista de tareas. Esto hace que para pasar las pruebas no tengamos una dependencia sobre un archivo html externo en el que buscar las plantillas, también así el javascript es más autónomo y está incluido en él todo lo que necesita.
 

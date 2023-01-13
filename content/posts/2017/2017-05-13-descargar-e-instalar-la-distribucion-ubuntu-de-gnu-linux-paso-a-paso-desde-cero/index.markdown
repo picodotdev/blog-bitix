@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:ubuntu-wallpaper.jpg"
+imageHead: "image:ubuntu-wallpaper.webp"
 imagePost: "logotype:ubuntu.svg"
 tags: ["gnu-linux", "planeta-codigo", "software", "software-libre"]
 summary: "Pasar de usar Windows a usar una distribución GNU/Linux es un paso difícil para muchos usuarios, algunos usuarios desconocen incluso que tienen la posibilidad de usar un sistema operativo alternativo a Windows. O si lo conocen pueden creer erróneamente que instalar una distribución GNU/Linux es muy complicado... sabiendo algunas casas por lo demás es tan sencillo instalar como el sistema operativo Windows ya que muchas distribuciones incluyen una interfaz gráfica en su instalador y el proceso consiste en responder unas pocas preguntas, introducir algunos datos y pulsar varios botones siguiente."
@@ -71,7 +71,7 @@ Hay que conectar una memoria USB, seleccionarla, seleccionar el archivo de la im
 
 {{< image
     gallery="true"
-    image1="image:rufus.png" optionsthumb1="300x200" title1="Creación de medio de instalación en memoria USB desde Windows"
+    image1="image:rufus.webp" optionsthumb1="300x200" title1="Creación de medio de instalación en memoria USB desde Windows"
     caption="Creación de medio de instalación en memoria USB dese Windows" >}}
 
 ### Iniciar el sistema con el medio de instalación
@@ -114,47 +114,47 @@ Inicio del asistente.
 
 {{< image
     gallery="true"
-    image1="image:instalacion-ubuntu-01.png" optionsthumb1="300x200" title1="Instalación de Ubuntu"
-    image2="image:instalacion-ubuntu-02.png" optionsthumb2="300x200" title2="Instalación de Ubuntu"
-    image3="image:instalacion-ubuntu-03.png" optionsthumb3="300x200" title3="Instalación de Ubuntu" >}}
+    image1="image:instalacion-ubuntu-01.webp" optionsthumb1="300x200" title1="Instalación de Ubuntu"
+    image2="image:instalacion-ubuntu-02.webp" optionsthumb2="300x200" title2="Instalación de Ubuntu"
+    image3="image:instalacion-ubuntu-03.webp" optionsthumb3="300x200" title3="Instalación de Ubuntu" >}}
 
 Pasos en los que solicitan unos pocos datos como el idioma, la disposición del teclado, tipo de instalación, ubicación y el usuario y contraseña de inicio de sesión.
 
 {{< image
     gallery="true"
-    image1="image:instalacion-ubuntu-04.png" optionsthumb1="300x200" title1="Instalación de Ubuntu"
-    image2="image:instalacion-ubuntu-05.png" optionsthumb2="300x200" title2="Instalación de Ubuntu"
-    image3="image:instalacion-ubuntu-06.png" optionsthumb3="300x200" title3="Instalación de Ubuntu" >}}
+    image1="image:instalacion-ubuntu-04.webp" optionsthumb1="300x200" title1="Instalación de Ubuntu"
+    image2="image:instalacion-ubuntu-05.webp" optionsthumb2="300x200" title2="Instalación de Ubuntu"
+    image3="image:instalacion-ubuntu-06.webp" optionsthumb3="300x200" title3="Instalación de Ubuntu" >}}
 {{< image
     gallery="true"
-    image1="image:instalacion-ubuntu-07.png" optionsthumb1="300x200" title1="Instalación de Ubuntu"
-    image2="image:instalacion-ubuntu-08.png" optionsthumb2="300x200" title2="Instalación de Ubuntu"
-    image3="image:instalacion-ubuntu-09.png" optionsthumb3="300x200" title3="Instalación de Ubuntu" >}}
+    image1="image:instalacion-ubuntu-07.webp" optionsthumb1="300x200" title1="Instalación de Ubuntu"
+    image2="image:instalacion-ubuntu-08.webp" optionsthumb2="300x200" title2="Instalación de Ubuntu"
+    image3="image:instalacion-ubuntu-09.webp" optionsthumb3="300x200" title3="Instalación de Ubuntu" >}}
 
 El resto de la instalación Ubuntu copia los archivos necesarios al dispositivo de almacenamiento.
 
 {{< image
     gallery="true"
-    image1="image:instalacion-ubuntu-10.png" optionsthumb1="300x200" title1="Instalación de Ubuntu"
-    image2="image:instalacion-ubuntu-11.png" optionsthumb2="300x200" title2="Instalación de Ubuntu"
-    image3="image:instalacion-ubuntu-12.png" optionsthumb3="300x200" title3="Instalación de Ubuntu" >}}
+    image1="image:instalacion-ubuntu-10.webp" optionsthumb1="300x200" title1="Instalación de Ubuntu"
+    image2="image:instalacion-ubuntu-11.webp" optionsthumb2="300x200" title2="Instalación de Ubuntu"
+    image3="image:instalacion-ubuntu-12.webp" optionsthumb3="300x200" title3="Instalación de Ubuntu" >}}
 {{< image
     gallery="true"
-    image1="image:instalacion-ubuntu-13.png" optionsthumb1="300x200" title1="Instalación de Ubuntu"
-    image2="image:instalacion-ubuntu-14.png" optionsthumb2="300x200" title2="Instalación de Ubuntu"
-    image3="image:instalacion-ubuntu-15.png" optionsthumb3="300x200" title3="Instalación de Ubuntu" >}}
+    image1="image:instalacion-ubuntu-13.webp" optionsthumb1="300x200" title1="Instalación de Ubuntu"
+    image2="image:instalacion-ubuntu-14.webp" optionsthumb2="300x200" title2="Instalación de Ubuntu"
+    image3="image:instalacion-ubuntu-15.webp" optionsthumb3="300x200" title3="Instalación de Ubuntu" >}}
 {{< image
     gallery="true"
-    image1="image:instalacion-ubuntu-16.png" optionsthumb1="300x200" title1="Instalación de Ubuntu"
-    image2="image:instalacion-ubuntu-17.png" optionsthumb2="300x200" title2="Instalación de Ubuntu"
-    image3="image:instalacion-ubuntu-18.png" optionsthumb3="300x200" title3="Instalación de Ubuntu" >}}
+    image1="image:instalacion-ubuntu-16.webp" optionsthumb1="300x200" title1="Instalación de Ubuntu"
+    image2="image:instalacion-ubuntu-17.webp" optionsthumb2="300x200" title2="Instalación de Ubuntu"
+    image3="image:instalacion-ubuntu-18.webp" optionsthumb3="300x200" title3="Instalación de Ubuntu" >}}
 
 Al final de la instalación se solicita reiniciar para realizar el primer arranque.
 
 {{< image
     gallery="true"
-    image1="image:instalacion-ubuntu-19.png" optionsthumb1="300x200" title1="Instalación de Ubuntu"
-    image2="image:instalacion-ubuntu-20.png" optionsthumb2="300x200" title1="Instalación de Ubuntu"
+    image1="image:instalacion-ubuntu-19.webp" optionsthumb1="300x200" title1="Instalación de Ubuntu"
+    image2="image:instalacion-ubuntu-20.webp" optionsthumb2="300x200" title1="Instalación de Ubuntu"
     caption="Instalación de Ubuntu" >}}
 
 ### Primer inicio de sesión Ubuntu
@@ -163,15 +163,15 @@ Si se ha elegido cifrar el contenido del dispositivo de almacenamiento al realiz
 
 {{< image
     gallery="true"
-    image1="image:ubuntu-01.png" optionsthumb1="300x200" title1="Ubuntu 20.04"
-    image2="image:ubuntu-02.png" optionsthumb2="300x200" title1="Ubuntu 20.04"
-    image3="image:ubuntu-03.png" optionsthumb3="300x200" title3="Ubuntu 20.04 con entorno de escritorio Unity" >}}
+    image1="image:ubuntu-01.webp" optionsthumb1="300x200" title1="Ubuntu 20.04"
+    image2="image:ubuntu-02.webp" optionsthumb2="300x200" title1="Ubuntu 20.04"
+    image3="image:ubuntu-03.webp" optionsthumb3="300x200" title3="Ubuntu 20.04 con entorno de escritorio Unity" >}}
 
 Este es el aspecto del entorno de escritorio con GNOME de Ubuntu 20.04. En la parte izquierda se encuentra el lanzador de aplicaciones con varios iconos. En la parte superior izquierda está a acción actividades con la que buscar el resto de aplicaciones instaladas, el la parte superior derecha el menú del sistema desde donde se puede apagar, reiniciar el equipo o variar el volumen del sistema entre otras opciones de configuración.
 
 {{< image
     gallery="true"
-    image1="image:ubuntu-04.png" optionsthumb1="300x200" title1="Ubuntu 20.04 con entorno de escritorio GNOME"
+    image1="image:ubuntu-04.webp" optionsthumb1="300x200" title1="Ubuntu 20.04 con entorno de escritorio GNOME"
     caption="Ubuntu 20.04 con entorno de escritorio GNOME" >}}
 
 ### Realizar tareas básicas para instalar programas, obtener actualizaciones y mantenimiento
@@ -186,8 +186,8 @@ Ubuntu por defecto ya incorpora una buena cantidad de software preinstalado. En 
 
 {{< image
     gallery="true"
-    image1="image:ubuntu-software.png" optionsthumb1="300x200" title1="Instalar y desinstalar software"
-    image2="image:ubuntu-actualizaciones.png" optionsthumb2="300x200" title2="Notificación de actualizaciones de Ubuntu"
+    image1="image:ubuntu-software.webp" optionsthumb1="300x200" title1="Instalar y desinstalar software"
+    image2="image:ubuntu-actualizaciones.webp" optionsthumb2="300x200" title2="Notificación de actualizaciones de Ubuntu"
     caption="Instalar software y notificación de actualizaciones de seguridad" >}}
 
 ### Obtener ayuda

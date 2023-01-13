@@ -40,10 +40,10 @@ Mediante un _firewall_ ubicado entre el bastión y el sistema de acceso remoto e
 
 {{< image
     gallery="true"
-    image1="image:boundary-workflow.png" optionsthumb1="650x450" title1="Boundary" >}}
+    image1="image:boundary-workflow.webp" optionsthumb1="650x450" title1="Boundary" >}}
 {{< image
     gallery="true"
-    image1="image:boundary-use-cases.png" optionsthumb1="605x450" title1="Casos de uso de Boundary"
+    image1="image:boundary-use-cases.webp" optionsthumb1="605x450" title1="Casos de uso de Boundary"
     caption="Boundary" >}}
 
 ### Acceso remoto con Boundary
@@ -60,8 +60,8 @@ En su modo servidor requiere de una base de datos [PostgreSQL][postgresql] que i
 
 {{< image
     gallery="true"
-    image1="image:boundary-console-1.png" optionsthumb1="300x200" title1="Consola de administración de Boundary"
-    image2="image:boundary-console-2.png" optionsthumb2="300x200" title2="Consola de administración de Boundary"
+    image1="image:boundary-console-1.webp" optionsthumb1="300x200" title1="Consola de administración de Boundary"
+    image2="image:boundary-console-2.webp" optionsthumb2="300x200" title2="Consola de administración de Boundary"
     caption="Consola de administración de Boundary" >}}
 
 {{< youtube
@@ -122,8 +122,8 @@ Las operaciones de estos comandos para crear los recursos están disponibles tam
 
 {{< image
     gallery="true"
-    image1="image:boundary-host-catalog.png" optionsthumb1="300x200" title1="Crear recursos de Boundary"
-    image2="image:boundary-targets.png" optionsthumb2="300x200" title2="Crear recursos de Boundary"
+    image1="image:boundary-host-catalog.webp" optionsthumb1="300x200" title1="Crear recursos de Boundary"
+    image2="image:boundary-targets.webp" optionsthumb2="300x200" title2="Crear recursos de Boundary"
     caption="Crear recursos de Boundary" >}}
 
 {{< code file="boundary-configuration.sh" language="bash" options="" >}}
@@ -134,7 +134,7 @@ Una de las funcionalidades que proporciona Boundary es trazabilidad en el _log_ 
 
 {{< image
     gallery="true"
-    image1="image:boundary-sessions.png" optionsthumb1="300x200" title1="Conexiones realizadas con Boundary"
+    image1="image:boundary-sessions.webp" optionsthumb1="300x200" title1="Conexiones realizadas con Boundary"
     caption="Conexiones realizadas con Boundary" >}}
 
 ### Autenticación con SSH

@@ -43,7 +43,7 @@ Con este ejemplo puede intuirse el ejemplo práctico que comentaré que no es m�
 
 {{< image
     gallery="true"
-    image1="image:main1.png" optionsthumb1="300x200" title1="Salida programa Main1.java" >}}
+    image1="image:main1.webp" optionsthumb1="300x200" title1="Salida programa Main1.java" >}}
 
 Casi para terminar las clases de utilidad:
 

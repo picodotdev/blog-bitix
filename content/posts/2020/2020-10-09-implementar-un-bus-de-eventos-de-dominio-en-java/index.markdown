@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:outbox-pattern.png"
+imagePost: "image:outbox-pattern.webp"
 tags: ["java", "planeta-codigo", "programacion"]
 summary: "Un bus de eventos es el mecanismo por el que los eventos de dominio de DDD son publicados, son tratados y enviados a sus receptores de forma directa, mediante un _middleware_ u de otra forma. El concepto bus de eventos para eventos de dominio se materializa de forma muy sencilla en código, simplemente una interfaz con un método. Cambiando la implementación de la interfaz un bus de eventos envía los eventos a un sistema de mensajería como RabbitMQ, persiste los eventos en base de datos como parte del _outbox pattern_ o simplemente los imprime en la consola como en el ejemplo del artículo."
 ---
@@ -38,7 +38,7 @@ Una solución es utilizar únicamente la base de datos. Los eventos se guardan e
 
 {{< image
     gallery="true"
-    image1="image:outbox-pattern.png" optionsthumb1="650x450" title1="Outbox Pattern"
+    image1="image:outbox-pattern.webp" optionsthumb1="650x450" title1="Outbox Pattern"
     caption="Outbox Pattern" >}}
 
 ### Deduplicación de eventos

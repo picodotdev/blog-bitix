@@ -85,18 +85,18 @@ El blog ha seguido creciendo un poco en cuanto a visitas a base de un esfuerzo t
 
 {{< image
     gallery="true"
-    image1="image:analytics-2015.png" optionsthumb1="300x200" title1="Analytics 2015 de Blog Bitix"
+    image1="image:analytics-2015.webp" optionsthumb1="300x200" title1="Analytics 2015 de Blog Bitix"
     caption="Analytics 2015 de Blog Bitix" >}}
 {{< image
     gallery="true"
-    image1="image:gadsense-2015.png" optionsthumb1="300x200" title1="AdSense 2015 de Blog Bitix"
+    image1="image:gadsense-2015.webp" optionsthumb1="300x200" title1="AdSense 2015 de Blog Bitix"
     caption="AdSense 2015 de Blog Bitix" >}}
 
 Ya solo me queda decir... ¡gracias por leer, compartir y comentar esta bitácora!, no recibo muchos comentarios pero algunos como [este](https://twitter.com/josetesan/status/669434170221928449) me anima a seguir escribiendo y compartiendo, ¡que os vaya bien el 2016!.
 
 {{< image
     gallery="true"
-    image1="image:christmas-tux-2015.jpg" optionsthumb1="300x200" title1="Christmas Tux 2016"
+    image1="image:christmas-tux-2015.webp" optionsthumb1="300x200" title1="Christmas Tux 2016"
     caption="¡Buen 2016!" source="klowner.com" >}}
 
 {{% /post %}}

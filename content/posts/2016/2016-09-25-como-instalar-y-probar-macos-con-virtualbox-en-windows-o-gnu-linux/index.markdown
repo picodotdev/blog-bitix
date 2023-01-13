@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-imageHead: "image:macos-catalina-wallpaper.jpg"
+imageHead: "image:macos-catalina-wallpaper.webp"
 imagePost: "logotype:apple.svg"
 tags: ["apple", "gnu-linux", "planeta-codigo"]
 summary: "¿Quieres comprar un Mac, tienes dudas o deseas probar su sistema operativo antes? Aunque el rendimiento será menor que una máquina real y la experiencia de usuario será peor, usando un _hackintosh_ mediante VirtuaBox ya sea con Windows o GNU/Linux podremos probarlo en detalle y hacernos una idea de su funcionamiento y aspecto visual."
@@ -71,8 +71,8 @@ Una vez descargados los archivos hay que descomprimirlos, **si al descomprimir e
 
 {{< image
     gallery="true"
-    image1="image:descargar-macos-virtualbox.png" optionsthumb1="300x200" title1="Descarga de macOS mediante torrent"
-    image2="image:archivo-imagen-macos-catalina-vmdk.png" optionsthumb2="300x200" title2="Archivo VMDK de instalación de macOS para Virtualbox"
+    image1="image:descargar-macos-virtualbox.webp" optionsthumb1="300x200" title1="Descarga de macOS mediante torrent"
+    image2="image:archivo-imagen-macos-catalina-vmdk.webp" optionsthumb2="300x200" title2="Archivo VMDK de instalación de macOS para Virtualbox"
     caption="Descarga de macOS mediante torrent y archivo VMDK para VirtualBox" >}}
 
 ### Crear la máquina virtual en VirtualBox
@@ -81,13 +81,13 @@ VirtualBox es un software de virtualización gratuito disponible para varios sis
 
 {{< image
     gallery="true"
-    image1="image:configuracion-maquina-virtual-macos-1.png" optionsthumb1="200x150" title1="Configuración de la máquina virtual macOS con VirtualBox"
-    image2="image:configuracion-maquina-virtual-macos-2.png" optionsthumb2="200x150" title2="Configuración de la máquina virtual macOS con VirtualBox"
-    image3="image:configuracion-maquina-virtual-macos-3.png" optionsthumb3="200x150" title3="Configuración de la máquina virtual macOS con VirtualBox" >}}
+    image1="image:configuracion-maquina-virtual-macos-1.webp" optionsthumb1="200x150" title1="Configuración de la máquina virtual macOS con VirtualBox"
+    image2="image:configuracion-maquina-virtual-macos-2.webp" optionsthumb2="200x150" title2="Configuración de la máquina virtual macOS con VirtualBox"
+    image3="image:configuracion-maquina-virtual-macos-3.webp" optionsthumb3="200x150" title3="Configuración de la máquina virtual macOS con VirtualBox" >}}
 {{< image
     gallery="true"
-    image1="image:configuracion-maquina-virtual-macos-4.png" optionsthumb1="200x150" title1="Configuración de la máquina virtual macOS con VirtualBox"
-    image2="image:configuracion-maquina-virtual-macos-5.png" optionsthumb2="200x150" title2="Configuración de la máquina virtual macOS con VirtualBox"
+    image1="image:configuracion-maquina-virtual-macos-4.webp" optionsthumb1="200x150" title1="Configuración de la máquina virtual macOS con VirtualBox"
+    image2="image:configuracion-maquina-virtual-macos-5.webp" optionsthumb2="200x150" title2="Configuración de la máquina virtual macOS con VirtualBox"
     caption="Configuración de la máquina virtual macOS con VirtualBox" >}}
 
 Una vez creada la máquina virtual antes de iniciarla si se usa Windows hay que ejecutar los siguientes comandos en modo administrador, sustituyendo _macOS 10.15 Catalina_ por el nombre que le hayamos dado a la máquina virtual al crearla.
@@ -100,7 +100,7 @@ En el caso de Linux el archivo de comandos es similar aunque no es necesario eje
 
 {{< image
     gallery="true"
-    image1="image:configuracion-maquina-virtual-macos-6.png" optionsthumb1="300x200" title1="Configuración de la máquina virtual macOS con VirtualBox"
+    image1="image:configuracion-maquina-virtual-macos-6.webp" optionsthumb1="300x200" title1="Configuración de la máquina virtual macOS con VirtualBox"
     caption="Comandos de configuración de la máquina virtual macOS con VirtualBox" >}}
 
 Hecho estos dos pasos podemos proceder a iniciar la máquina virtual.
@@ -111,42 +111,42 @@ Al iniciar la ejecución de la máquina virtual de macOS en los primeros segundo
 
 {{< image
     gallery="true"
-    image1="image:inicio-instalacion-macos-1.png" optionsthumb1="300x200" title1="Inicio de la instalación de macOS Catalina"
-    image2="image:inicio-instalacion-macos-2.png" optionsthumb2="300x200" title2="Inicio de la instalación de macOS Catalina"
-    image3="image:inicio-instalacion-macos-3.png" optionsthumb3="300x200" title3="Inicio de la instalación de macOS Catalina"
+    image1="image:inicio-instalacion-macos-1.webp" optionsthumb1="300x200" title1="Inicio de la instalación de macOS Catalina"
+    image2="image:inicio-instalacion-macos-2.webp" optionsthumb2="300x200" title2="Inicio de la instalación de macOS Catalina"
+    image3="image:inicio-instalacion-macos-3.webp" optionsthumb3="300x200" title3="Inicio de la instalación de macOS Catalina"
     caption="Inicio de la instalación de macOS Catalina" >}}
 
 Después de completar la instalación inicial, un reinicio y otros minutos de espera se inicia el asistente de instalación y configuración inicial que consta de varios pasos con una pantalla de bienvenida seguido de otras para introducir algunos datos como el idioma, la disposición del teclado, opciones de localización, privacidad, ... en los que básicamente es dar varias veces al botón siguiente.
 
 {{< image
     gallery="true"
-    image1="image:asistente-de-instalacion-y-configuracion-inicial-1.png" optionsthumb1="200x150" title1="Asistente de instalación y configuración inicial de macOS Catalina"
-    image2="image:asistente-de-instalacion-y-configuracion-inicial-2.png" optionsthumb2="200x150" title2="Asistente de instalación y configuración inicial de macOS Catalina"
-    image3="image:asistente-de-instalacion-y-configuracion-inicial-3.png" optionsthumb3="200x150" title3="Asistente de instalación y configuración inicial de macOS Catalina" >}}
+    image1="image:asistente-de-instalacion-y-configuracion-inicial-1.webp" optionsthumb1="200x150" title1="Asistente de instalación y configuración inicial de macOS Catalina"
+    image2="image:asistente-de-instalacion-y-configuracion-inicial-2.webp" optionsthumb2="200x150" title2="Asistente de instalación y configuración inicial de macOS Catalina"
+    image3="image:asistente-de-instalacion-y-configuracion-inicial-3.webp" optionsthumb3="200x150" title3="Asistente de instalación y configuración inicial de macOS Catalina" >}}
 {{< image
     gallery="true"
-    image1="image:asistente-de-instalacion-y-configuracion-inicial-4.png" optionsthumb1="200x150" title1="Asistente de instalación y configuración inicial de macOS Catalina"
-    image2="image:asistente-de-instalacion-y-configuracion-inicial-5.png" optionsthumb2="200x150" title2="Asistente de instalación y configuración inicial de macOS Catalina"
-    image3="image:asistente-de-instalacion-y-configuracion-inicial-6.png" optionsthumb3="200x150" title3="Asistente de instalación y configuración inicial de macOS Catalina" >}}
+    image1="image:asistente-de-instalacion-y-configuracion-inicial-4.webp" optionsthumb1="200x150" title1="Asistente de instalación y configuración inicial de macOS Catalina"
+    image2="image:asistente-de-instalacion-y-configuracion-inicial-5.webp" optionsthumb2="200x150" title2="Asistente de instalación y configuración inicial de macOS Catalina"
+    image3="image:asistente-de-instalacion-y-configuracion-inicial-6.webp" optionsthumb3="200x150" title3="Asistente de instalación y configuración inicial de macOS Catalina" >}}
 {{< image
     gallery="true"
-    image1="image:asistente-de-instalacion-y-configuracion-inicial-7.png" optionsthumb1="200x150" title1="Asistente de instalación y configuración inicial de macOS Catalina"
-    image2="image:asistente-de-instalacion-y-configuracion-inicial-8.png" optionsthumb2="200x150" title2="Asistente de instalación y configuración inicial de macOS Catalina"
-    image3="image:asistente-de-instalacion-y-configuracion-inicial-9.png" optionsthumb3="200x150" title3="Asistente de instalación y configuración inicial de macOS Catalina" >}}
+    image1="image:asistente-de-instalacion-y-configuracion-inicial-7.webp" optionsthumb1="200x150" title1="Asistente de instalación y configuración inicial de macOS Catalina"
+    image2="image:asistente-de-instalacion-y-configuracion-inicial-8.webp" optionsthumb2="200x150" title2="Asistente de instalación y configuración inicial de macOS Catalina"
+    image3="image:asistente-de-instalacion-y-configuracion-inicial-9.webp" optionsthumb3="200x150" title3="Asistente de instalación y configuración inicial de macOS Catalina" >}}
 {{< image
     gallery="true"
-    image1="image:asistente-de-instalacion-y-configuracion-inicial-10.png" optionsthumb1="200x150" title1="Asistente de instalación y configuración inicial de macOS Catalina"
-    image2="image:asistente-de-instalacion-y-configuracion-inicial-11.png" optionsthumb2="200x150" title2="Asistente de instalación y configuración inicial de macOS Catalina"
-    image3="image:asistente-de-instalacion-y-configuracion-inicial-12.png" optionsthumb3="200x150" title3="Asistente de instalación y configuración inicial de macOS Catalina" >}}
+    image1="image:asistente-de-instalacion-y-configuracion-inicial-10.webp" optionsthumb1="200x150" title1="Asistente de instalación y configuración inicial de macOS Catalina"
+    image2="image:asistente-de-instalacion-y-configuracion-inicial-11.webp" optionsthumb2="200x150" title2="Asistente de instalación y configuración inicial de macOS Catalina"
+    image3="image:asistente-de-instalacion-y-configuracion-inicial-12.webp" optionsthumb3="200x150" title3="Asistente de instalación y configuración inicial de macOS Catalina" >}}
 {{< image
     gallery="true"
-    image1="image:asistente-de-instalacion-y-configuracion-inicial-13.png" optionsthumb1="200x150" title1="Asistente de instalación y configuración inicial de macOS Catalina"
-    image2="image:asistente-de-instalacion-y-configuracion-inicial-14.png" optionsthumb2="200x150" title2="Asistente de instalación y configuración inicial de macOS Catalina"
-    image3="image:asistente-de-instalacion-y-configuracion-inicial-15.png" optionsthumb3="200x150" title3="Asistente de instalación y configuración inicial de macOS Catalina" >}}
+    image1="image:asistente-de-instalacion-y-configuracion-inicial-13.webp" optionsthumb1="200x150" title1="Asistente de instalación y configuración inicial de macOS Catalina"
+    image2="image:asistente-de-instalacion-y-configuracion-inicial-14.webp" optionsthumb2="200x150" title2="Asistente de instalación y configuración inicial de macOS Catalina"
+    image3="image:asistente-de-instalacion-y-configuracion-inicial-15.webp" optionsthumb3="200x150" title3="Asistente de instalación y configuración inicial de macOS Catalina" >}}
 {{< image
     gallery="true"
-    image1="image:asistente-de-instalacion-y-configuracion-inicial-16.png" optionsthumb1="200x150" title1="Asistente de instalación y configuración inicial de macOS Catalina"
-    image2="image:asistente-de-instalacion-y-configuracion-inicial-17.png" optionsthumb2="200x150" title2="Asistente de instalación y configuración inicial de macOS Catalina"
+    image1="image:asistente-de-instalacion-y-configuracion-inicial-16.webp" optionsthumb1="200x150" title1="Asistente de instalación y configuración inicial de macOS Catalina"
+    image2="image:asistente-de-instalacion-y-configuracion-inicial-17.webp" optionsthumb2="200x150" title2="Asistente de instalación y configuración inicial de macOS Catalina"
     caption="Asistente de instalación y configuración inicial de macOS Catalina" >}}
 
 ### Primer inicio de sesión con macOS
@@ -157,12 +157,12 @@ También se puede probar a [instalar otros programas con Homebrew][blogbitix-195
 
 {{< image
     gallery="true"
-    image1="image:primer-inicio-macos-1.png" optionsthumb1="200x150" title1="Primer inicio de macOS Catalina en VirtualBox"
-    image2="image:primer-inicio-macos-2.png" optionsthumb2="200x150" title2="Primer inicio de macOS Catalina en VirtualBox"
-    image3="image:primer-inicio-macos-3.png" optionsthumb3="200x150" title3="Primer inicio de macOS Catalina en VirtualBox" >}}
+    image1="image:primer-inicio-macos-1.webp" optionsthumb1="200x150" title1="Primer inicio de macOS Catalina en VirtualBox"
+    image2="image:primer-inicio-macos-2.webp" optionsthumb2="200x150" title2="Primer inicio de macOS Catalina en VirtualBox"
+    image3="image:primer-inicio-macos-3.webp" optionsthumb3="200x150" title3="Primer inicio de macOS Catalina en VirtualBox" >}}
 {{< image
     gallery="true"
-    image1="image:primer-inicio-macos-4.png" optionsthumb1="300x150" title1="Primer inicio de macOS Catalina en VirtualBox"
+    image1="image:primer-inicio-macos-4.webp" optionsthumb1="300x150" title1="Primer inicio de macOS Catalina en VirtualBox"
     caption="Primer inicio de macOS Catalina en VirtualBox" >}}
 
 ### Conclusión

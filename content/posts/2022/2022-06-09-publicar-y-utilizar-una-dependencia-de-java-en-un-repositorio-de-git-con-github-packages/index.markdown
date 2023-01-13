@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:github-packages-artifact.png"
+imagePost: "image:github-packages-artifact.webp"
 tags: ["java", "planeta-codigo"]
 summary: "El software ofrecido como servicio tiene la ventaja principal de que delega en el proveedor del servicio su administración. El delegar la administración del servicio está motivada por tener ciertas garantías de que el software tiene mayor disponibilidad y fiabilidad. A cambio de esa administración el proveedor del software como servicio establece un precio por su SaaS que llega a compensar tener que administrar el servicio uno mismo que también tiene unos costes en servidor, personal, fiabilidad y también tiempo de dedicación. Una de las funcionalidades que requiere una infraestructura en una organización para desarrollar sus aplicaciones es un repositorio de artefactos o paquetes, GitHub Packages el servicio de repositorio de artefactos compatibles con los artefactos producidos por los principales lenguajes de programación para compartir bibliotecas de código entre ellos Java y JavaScript y tecnologías de contenedores como imágenes Docker."
 ---
@@ -64,7 +64,7 @@ Para publicar artefactos en el repositorio de Maven se requieren unas credencial
 
 {{< image
     gallery="true"
-    image1="image:github-pat.png" optionsthumb1="650x450" title1="GitHub Personal Access Token"
+    image1="image:github-pat.webp" optionsthumb1="650x450" title1="GitHub Personal Access Token"
     caption="GitHub Personal Access Token" >}}
 
 Con el PAT y cambiando la configuración de la definición del proyecto de la herramienta de construcción el artefacto de cada uno de los módulos se publica en el repositorio de Git con el comando _publish_ proporcionado por el plugin [maven-publish](https://docs.gradle.org/current/userguide/publishing_maven.html).
@@ -79,7 +79,7 @@ Una vez publicado el artefacto desde la administración del repositorio es posib
 
 {{< image
     gallery="true"
-    image1="image:github-packages-artifact.png" optionsthumb1="650x450" title1="Artefacto de Maven publicado un repositorio con GitHub Packages"
+    image1="image:github-packages-artifact.webp" optionsthumb1="650x450" title1="Artefacto de Maven publicado un repositorio con GitHub Packages"
     caption="Artefacto de Maven publicado un repositorio con GitHub Packages" >}}
 
 #### Usar la librería del repositorio de Maven

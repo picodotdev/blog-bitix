@@ -51,7 +51,7 @@ Podemos crear la base de datos y los dos esquemas con una tarea de [Gradle][grad
 
 {{< image
     gallery="true"
-    image1="image:basededatos.png" optionsthumb1="300x200" title1="Base de datos con varios esquemas"
+    image1="image:basededatos.webp" optionsthumb1="300x200" title1="Base de datos con varios esquemas"
     caption="Base de datos con varios esquemas, inventory y purchases" >}}
 
 Como en jOOQ la fuente de la verdad es la base de datos los modelos se generan a partir de ella usando otra tarea de Gradle, generará las clases con las que trabajaremos en la aplicación con el comando `./gradlew generateModels`. Las clases son las del paquete [io.github.picodotdev.blogbitix.multidatabase.jooq](https://github.com/picodotdev/blog-ejemplos/tree/master/Multidatabase/src/main/java/io/github/picodotdev/blogbitix/multidatabase/jooq).

@@ -50,15 +50,15 @@ Una aplicación específica para descargar vídeos y audio de YouTube eligiendo 
 
 {{< image
     gallery="true"
-    image1="image:clipgrab.png" optionsthumb1="300x250" title1="ClipGrab"
-    image2="image:jDownloader.png" optionsthumb2="300x250" title2="JDownloader"
+    image1="image:clipgrab.webp" optionsthumb1="300x250" title1="ClipGrab"
+    image2="image:jDownloader.webp" optionsthumb2="300x250" title2="JDownloader"
     caption="ClipGrab y JDownloader" >}}
 
 Este es un vídeo descargado de YouTube con un corto de animación de los varios que ha creado la fundación [Blender][blender] que desarrolla el programa de animación 3D y reproducido con aun aplicación reproductor instalado en la computadora.
 
 {{< image
     gallery="true"
-    image1="image:spring.png" optionsthumb1="300x250" title1="Spring"
+    image1="image:spring.webp" optionsthumb1="300x250" title1="Spring"
     caption="Spring" >}}
 
 #### De línea de comandos

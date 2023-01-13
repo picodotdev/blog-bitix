@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:sqlpad.png"
+imagePost: "image:sqlpad.webp"
 tags: ["software-libre", "programacion"]
 summary: "No siempre las aplicaciones proporcionan los datos que se necesitan. A veces para obtener cierta información de forma puntual o para corregir un dato que no se puede hacer desde la aplicación es necesario lanzar una consulta SQL a la base de datos relacional. Esto no es lo ideal, simplemente en ocasiones es lo más simple y rápido. Por otro lado, para tareas de análisis algunos usuarios necesitan una forma de tener acceso a los datos y obtener gráficas para analizarlos. En el artículo comento varias herramientas para tener acceso a las diferentes bases de datos ya sean de producción o del entorno de QA."
 ---
@@ -37,7 +37,7 @@ SQLPad tiene una licencia de software libre y soporta las bases de datos relacio
 
 {{< image
     gallery="true"
-    image1="image:sqlpad.png" optionsthumb1="600x450" title1="SQLPad"
+    image1="image:sqlpad.webp" optionsthumb1="600x450" title1="SQLPad"
     caption="SQLPad" >}}
 
 Otra funcionalidad habitual es poder exportar los datos en formato CSV o xlsx para procesarlos con algún comando o programa en el equipo en local o simplemente para hacer algún tipo de tratamiento con el programa ofimático de hoja de cálculo.
@@ -46,7 +46,7 @@ Otra funcionalidad habitual es poder exportar los datos en formato CSV o xlsx pa
 
 {{< image
     gallery="true"
-    image1="image:onlyoffice-csv.png" optionsthumb1="300x200" title1="OnlyOffice CSV"
+    image1="image:onlyoffice-csv.webp" optionsthumb1="300x200" title1="OnlyOffice CSV"
     caption="OnlyOffice CSV" >}}
 
 Aunque SQLPad no ofrece la potencia de otras herramientas específicas para la tarea permite visualizar los datos de forma básica en gráficas. Por ejemplo obtener un gráfico de barras de una agrupación de datos.
@@ -54,15 +54,15 @@ Aunque SQLPad no ofrece la potencia de otras herramientas específicas para la t
 {{< code file="docker-compose-up.sh" language="bash" options="" >}}
 {{< image
     gallery="true"
-    image1="image:sqlpad-visualization-1.png" optionsthumb1="300x200" title1="SQLPad Visualization"
-    image2="image:sqlpad-visualization-2.png" optionsthumb2="300x200" title2="SQLPad Visualization"
+    image1="image:sqlpad-visualization-1.webp" optionsthumb1="300x200" title1="SQLPad Visualization"
+    image2="image:sqlpad-visualization-2.webp" optionsthumb2="300x200" title2="SQLPad Visualization"
     caption="SQLPad Visualization" >}}
 
 Permite además guardar las consultas que sirve para compartir entre diferentes miembros de un equipo aquellas que son habituales o proporcionarles a personas que no saben SQL la consulta que deben ejecutar para obtener los datos que necesitan de forma periódica.
 
 {{< image
     gallery="true"
-    image1="image:sqlpad-queries.png" optionsthumb1="300x200" title1="Consultas compartidas en SQLPad"
+    image1="image:sqlpad-queries.webp" optionsthumb1="300x200" title1="Consultas compartidas en SQLPad"
     caption="Consultas compartidas en SQLPad" >}}
 
 Una herramienta que proporciona acceso a los datos de producción requiere autenticación y permisos para otorgar únicamente el acceso a las bases de datos o conceder acceso de solo lectura a los datos. Los usuarios con el rol de administrador puede crear conexiones a bases de datos, crear usuarios y definir qué conexiones pueden utilizar cada usuario con una fecha de expiración para cada usuario. Para crear una conexión de solo lectura hay que crear un usuario en la base de datos que únicamente tenga permisos de solo lectura, posteriormente en SQLPad para definir una conexión de solo lectura se usa este usuario. Del mismo modo con los permisos del usuario de conexión de la base de datos es posible limitar las tablas a las que se tienen acceso u otros permisos que permita la base de datos.
@@ -84,9 +84,9 @@ Algunas herramientas tienen un coste si se usan con el _hosting_ que ofrecen per
 
 {{< image
     gallery="true"
-    image1="image:redash.png" optionsthumb1="300x200" title1="Redash"
-    image2="image:metabase.png" optionsthumb2="300x200" title2="Metabase"
-    image3="image:apache-superset.png" optionsthumb3="300x200" title3="Apache Superset"
+    image1="image:redash.webp" optionsthumb1="300x200" title1="Redash"
+    image2="image:metabase.webp" optionsthumb2="300x200" title2="Metabase"
+    image3="image:apache-superset.webp" optionsthumb3="300x200" title3="Apache Superset"
     caption="Redash, Metabase y Apache Superset" >}}
 
 ### Cómo proteger los datos
@@ -97,7 +97,7 @@ Una forma de proteger los datos aún teniendo acceso a ellos es cifrarlos es uti
 
 {{< image
     gallery="true"
-    image1="image:vault-encryption.png" optionsthumb1="300x200" title1="Vault Encryption"
+    image1="image:vault-encryption.webp" optionsthumb1="300x200" title1="Vault Encryption"
     caption="Vault Encryption" >}}
 
 {{< reference >}}

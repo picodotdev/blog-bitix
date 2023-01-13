@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:the-strangler-pattern-1.png"
+imagePost: "image:the-strangler-pattern-1.webp"
 tags: ["planeta-codigo", "programacion"]
 summary: "Reescribir partiendo desde cero una aplicación grande que tiene sus defectos pero que ha sido desarrollada durante mucho tiempo y su funcionalidad más importante opera mayormente bien no es una estrategia que esté exenta de riesgo ni garantiza que el el nuevo sistema tenga defectos parecidos, más graves o incluso la reescritura fracase. Si la reescritura tiene riesgos pero existe la necesidad de sustituir la aplicación heredada para solventar algunos de sus problemas es necesaria otra estrategia diferente a partir de cero. Una estrategia que se utiliza en estos casos es aplicar el patrón de estrangulación que reemplaza el sistema antiguo de forma incremental cada una de sus piezas."
 ---
@@ -54,10 +54,10 @@ El patrón no es la única estrategia que ayuda a reemplazar un sistema existent
 
 {{< image
     gallery="true"
-    image1="image:the-strangler-pattern-1.png" optionsthumb1="650x450" title1="El patrón estrangulación" >}}
+    image1="image:the-strangler-pattern-1.webp" optionsthumb1="650x450" title1="El patrón estrangulación" >}}
 {{< image
     gallery="true"
-    image1="image:the-strangler-pattern-2.png" optionsthumb1="650x450" title1="El patrón estrangulación"
+    image1="image:the-strangler-pattern-2.webp" optionsthumb1="650x450" title1="El patrón estrangulación"
     caption="El patrón estrangulación" >}}
 
 #### Funcionamiento

@@ -11,8 +11,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:world-of-warships-legends.jpg"
-imagePost: "image:world-of-warships-legends.jpg"
+imageHead: "image:world-of-warships-legends.webp"
+imagePost: "image:world-of-warships-legends.webp"
 tags: ["juegos"]
 series: ["analisis-juegos", "juegos"]
 summary: "World of Warships es un juego de competición entre jugadores ambientado en batallas navales. Tienen un componente de rol a poder elegir barcos cada uno con diferentes estadísticas, capitanes e inspiraciones o módulos pero en lo que creo que destaca sobre otros juegos por internet con otros jugadores es que este tienen un alto componente de estrategia y de juego en equipo que es decisivo para conseguir la victoria, no dependiendo tanto de la habilidad con el apuntado o habilidad en el manejo del mando aunque también es importante lo es en menor medida. Es gratuito y está disponible para PlayStation 4 y Xbox, su versión para PC es un poco distinta estando disponible a través Steam."
@@ -30,7 +30,7 @@ El juego posee una notable calidad gráfica, cada navío es un modelo distinto m
 
 {{< image
     gallery="true"
-    image1="image:world-of-warships-legends.jpg" optionsthumb1="600x450" title1="Imagen inicial del juego World of Warships en PlayStation 4"
+    image1="image:world-of-warships-legends.webp" optionsthumb1="600x450" title1="Imagen inicial del juego World of Warships en PlayStation 4"
     caption="Imagen inicial del juego World of Warships en PlayStation 4" >}}
 
 ### Objetivo
@@ -49,8 +49,8 @@ Cada tipo de navío posee unas características que condicionan la forma de juga
 
 {{< image
     gallery="true"
-    image1="image:inicio-batalla.jpg" optionsthumb1="300x250" title1="Inicio de una batalla"
-    image2="image:mapa-mision.jpg" optionsthumb2="300x250" title2="Mapa y objetivo de una batalla"
+    image1="image:inicio-batalla.webp" optionsthumb1="300x250" title1="Inicio de una batalla"
+    image2="image:mapa-mision.webp" optionsthumb2="300x250" title2="Mapa y objetivo de una batalla"
     caption="Inicio de una batalla, mapa y objetivo" >}}
 
 {{< tableofcontents >}}
@@ -61,7 +61,7 @@ En la versión de consola hay tres tipos de navíos, cada uno por sus caracterí
 
 {{< image
     gallery="true"
-    image1="image:seleccion-navio.jpg" optionsthumb1="600x450" title1="Selección de navío para la batalla, crucero alemán de nivel VII Hipper"
+    image1="image:seleccion-navio.webp" optionsthumb1="600x450" title1="Selección de navío para la batalla, crucero alemán de nivel VII Hipper"
     caption="Selección de navío para la batalla" >}}
 
 #### Cruceros
@@ -70,7 +70,7 @@ Son la unidad media de las tres, versátil, ágil y con una relativa potencia de
 
 {{< image
     gallery="true"
-    image1="image:alemania-crucero-hipper.jpg" optionsthumb1="600x450" title1="Crucero de la nación alemana de nivel VII Hipper"
+    image1="image:alemania-crucero-hipper.webp" optionsthumb1="600x450" title1="Crucero de la nación alemana de nivel VII Hipper"
     caption="Crucero de la nación alemana de nivel VII" >}}
 
 #### Destructores
@@ -79,7 +79,7 @@ Son la unidad con menos puntos de vida de los tres pero es ágil, difícil de de
 
 {{< image
     gallery="true"
-    image1="image:alemania-destructor-z-23.jpg" optionsthumb1="600x450" title1="Destructor de la nación alemana de nivel VII Z-23"
+    image1="image:alemania-destructor-z-23.webp" optionsthumb1="600x450" title1="Destructor de la nación alemana de nivel VII Z-23"
     caption="Destructor de la nación alemana de nivel VII" >}}
 
 #### Acorazados
@@ -88,7 +88,7 @@ Son la unidad con mayor potencia de fuego, disparan a largas distancias, tienen 
 
 {{< image
     gallery="true"
-    image1="image:alemania-acorazado-bismark.jpg" optionsthumb1="600x450" title1="Acorazado de la nación alemana nivel VII Bismark"
+    image1="image:alemania-acorazado-bismark.webp" optionsthumb1="600x450" title1="Acorazado de la nación alemana nivel VII Bismark"
     caption="Acorazado de la nación alemana nivel VII Bismark" >}}
 
 #### Navíos premium
@@ -105,24 +105,24 @@ Dependiendo del modo de juego que uno prefiera elige la nación por la que tiene
 
 {{< image
     gallery="true"
-    image1="image:estadisticas-alemania-hipper-1.jpg" optionsthumb1="200x150" title1="Estadísticas crucero alemán Hipper supervivencia"
-    image2="image:estadisticas-alemania-hipper-2.jpg" optionsthumb2="200x150" title2="Estadísticas crucero alemán Hipper artilleria"
-    image3="image:estadisticas-alemania-hipper-3.jpg" optionsthumb3="200x150" title3="Estadísticas crucero alemán Hipper torpedos" >}}
+    image1="image:estadisticas-alemania-hipper-1.webp" optionsthumb1="200x150" title1="Estadísticas crucero alemán Hipper supervivencia"
+    image2="image:estadisticas-alemania-hipper-2.webp" optionsthumb2="200x150" title2="Estadísticas crucero alemán Hipper artilleria"
+    image3="image:estadisticas-alemania-hipper-3.webp" optionsthumb3="200x150" title3="Estadísticas crucero alemán Hipper torpedos" >}}
 {{< image
     gallery="true"
-    image1="image:estadisticas-alemania-hipper-4.jpg" optionsthumb1="200x150" title1="Estadísticas crucero alemán Hipper maniobrabilidad"
-    image2="image:estadisticas-alemania-hipper-5.jpg" optionsthumb2="200x150" title2="Estadísticas crucero alemán Hipper ocultamiento"
+    image1="image:estadisticas-alemania-hipper-4.webp" optionsthumb1="200x150" title1="Estadísticas crucero alemán Hipper maniobrabilidad"
+    image2="image:estadisticas-alemania-hipper-5.webp" optionsthumb2="200x150" title2="Estadísticas crucero alemán Hipper ocultamiento"
     caption="Estadísticas crucero alemán Hipper" >}}
 
 {{< image
     gallery="true"
-    image1="image:estadisticas-estados-unidos-baltimore-1.jpg" optionsthumb1="200x150" title1="Crucero estadounidense Baltimore"
-    image2="image:estadisticas-estados-unidos-baltimore-2.jpg" optionsthumb2="200x150" title2="Estadísticas crucero estadounidense Baltimore artisupervivencialleria"
-    image3="image:estadisticas-estados-unidos-baltimore-3.jpg" optionsthumb3="200x150" title3="Estadísticas crucero estadounidense Baltimore artilleria" >}}
+    image1="image:estadisticas-estados-unidos-baltimore-1.webp" optionsthumb1="200x150" title1="Crucero estadounidense Baltimore"
+    image2="image:estadisticas-estados-unidos-baltimore-2.webp" optionsthumb2="200x150" title2="Estadísticas crucero estadounidense Baltimore artisupervivencialleria"
+    image3="image:estadisticas-estados-unidos-baltimore-3.webp" optionsthumb3="200x150" title3="Estadísticas crucero estadounidense Baltimore artilleria" >}}
 {{< image
     gallery="true"
-    image1="image:estadisticas-estados-unidos-baltimore-4.jpg" optionsthumb1="200x150" title1="Estadísticas crucero estadounidense Baltimore maniobrabilidad"
-    image2="image:estadisticas-estados-unidos-baltimore-5.jpg" optionsthumb2="200x150" title2="Estadísticas crucero estadounidense Baltimore ocultamiento"
+    image1="image:estadisticas-estados-unidos-baltimore-4.webp" optionsthumb1="200x150" title1="Estadísticas crucero estadounidense Baltimore maniobrabilidad"
+    image2="image:estadisticas-estados-unidos-baltimore-5.webp" optionsthumb2="200x150" title2="Estadísticas crucero estadounidense Baltimore ocultamiento"
     caption="Estadísticas crucero estadounidense Baltimore" >}}
 
 Hay varias naciones para las que desarrollar su árbol de navíos y cada nación ofrece ligeras variaciones sobre las estadísticas de cada navío.
@@ -131,65 +131,65 @@ Para personalizar los barcos estos permiten instalar módulos que le mejoran alg
 
 {{< image
     gallery="true"
-    image1="image:modulos-alemania-hipper-1.jpg" optionsthumb1="200x150" title1="Módulos crucero alemán Hipper"
-    image2="image:modulos-alemania-hipper-2.jpg" optionsthumb2="200x150" title2="Módulos crucero alemán Hipper"
-    image3="image:modulos-alemania-hipper-3.jpg" optionsthumb3="200x150" title3="Módulos crucero alemán Hipper" >}}
+    image1="image:modulos-alemania-hipper-1.webp" optionsthumb1="200x150" title1="Módulos crucero alemán Hipper"
+    image2="image:modulos-alemania-hipper-2.webp" optionsthumb2="200x150" title2="Módulos crucero alemán Hipper"
+    image3="image:modulos-alemania-hipper-3.webp" optionsthumb3="200x150" title3="Módulos crucero alemán Hipper" >}}
 {{< image
     gallery="true"
-    image1="image:modulos-alemania-hipper-4.jpg" optionsthumb1="200x150" title1="Módulos crucero alemán Hipper"
-    image2="image:modulos-alemania-hipper-5.jpg" optionsthumb2="200x150" title2="Módulos crucero alemán Hipper"
-    image3="image:modulos-alemania-hipper-6.jpg" optionsthumb3="200x150" title3="Módulos crucero alemán Hipper" >}}
+    image1="image:modulos-alemania-hipper-4.webp" optionsthumb1="200x150" title1="Módulos crucero alemán Hipper"
+    image2="image:modulos-alemania-hipper-5.webp" optionsthumb2="200x150" title2="Módulos crucero alemán Hipper"
+    image3="image:modulos-alemania-hipper-6.webp" optionsthumb3="200x150" title3="Módulos crucero alemán Hipper" >}}
 {{< image
     gallery="true"
-    image1="image:modulos-alemania-hipper-7.jpg" optionsthumb1="200x150" title1="Módulos crucero alemán Hipper"
-    image2="image:modulos-alemania-hipper-8.jpg" optionsthumb2="200x150" title2="Módulos crucero alemán Hipper"
-    image3="image:modulos-alemania-hipper-9.jpg" optionsthumb3="200x150" title3="Módulos crucero alemán Hipper" >}}
+    image1="image:modulos-alemania-hipper-7.webp" optionsthumb1="200x150" title1="Módulos crucero alemán Hipper"
+    image2="image:modulos-alemania-hipper-8.webp" optionsthumb2="200x150" title2="Módulos crucero alemán Hipper"
+    image3="image:modulos-alemania-hipper-9.webp" optionsthumb3="200x150" title3="Módulos crucero alemán Hipper" >}}
 {{< image
     gallery="true"
-    image1="image:modulos-alemania-hipper-10.jpg" optionsthumb1="200x150" title1="Módulos crucero alemán Hipper"
-    image2="image:modulos-alemania-hipper-11.jpg" optionsthumb2="200x150" title2="Módulos crucero alemán Hipper"
-    image3="image:modulos-alemania-hipper-12.jpg" optionsthumb3="200x150" title3="Módulos crucero alemán Hipper" >}}
+    image1="image:modulos-alemania-hipper-10.webp" optionsthumb1="200x150" title1="Módulos crucero alemán Hipper"
+    image2="image:modulos-alemania-hipper-11.webp" optionsthumb2="200x150" title2="Módulos crucero alemán Hipper"
+    image3="image:modulos-alemania-hipper-12.webp" optionsthumb3="200x150" title3="Módulos crucero alemán Hipper" >}}
 {{< image
     gallery="true"
-    image1="image:modulos-alemania-hipper-13.jpg" optionsthumb1="200x150" title1="Módulos crucero alemán Hipper"
-    image2="image:modulos-alemania-hipper-14.jpg" optionsthumb2="200x150" title2="Módulos crucero alemán Hipper"
-    image3="image:modulos-alemania-hipper-15.jpg" optionsthumb3="200x150" title3="Módulos crucero alemán Hipper"
+    image1="image:modulos-alemania-hipper-13.webp" optionsthumb1="200x150" title1="Módulos crucero alemán Hipper"
+    image2="image:modulos-alemania-hipper-14.webp" optionsthumb2="200x150" title2="Módulos crucero alemán Hipper"
+    image3="image:modulos-alemania-hipper-15.webp" optionsthumb3="200x150" title3="Módulos crucero alemán Hipper"
     caption="Módulos crucero alemán Hipper" >}}
 
 Otra forma de personalización de los barcos son los comandantes que otorgan una mejora con su habilidad base, esta mejora con cada nivel del comandante y otras habilidades a elegir según las preferencias, estilo de juego y barco en el que se emplea. Para personalizar aún más los capitanes pueden adoptar inspiraciones de otros comandantes que permiten aplicar su habilidad base al barco. También cada uno tiene usa serie de habilidades entre las que elegir.
 
 {{< image
     gallery="true"
-    image1="image:comandantes.jpg" optionsthumb1="600x450" title1="Comandantes"
+    image1="image:comandantes.webp" optionsthumb1="600x450" title1="Comandantes"
     caption="Comandantes" >}}
 
 Según el tipo de navío unos capitanes son más adecuados que otros, por ejemplo, algunos otorgan un bonificador al ocultamiento que los hace interesantes para los destructores. Otros más precisión para los cruceros o algunos barcos que tienen poca precisión. Más penetración para la munición AP o más puntos recuperados por consumible de reparación útil para los acorazados. Subir a los niveles más altos requiere insignias y recomendaciones que son difíciles de conseguir requiriendo mucho tiempo de juego.
 
 {{< image
     gallery="true"
-    image1="image:comandante-estados-unidos-andrew-cunningham-1.jpg" optionsthumb1="200x150" title1="Comandante Estados Unidos Andrew Cunningham"
-    image2="image:comandante-estados-unidos-andrew-cunningham-2.jpg" optionsthumb2="200x150" title2="Comandante Estados Unidos Andrew Cunningham"
-    image3="image:comandante-estados-unidos-andrew-cunningham-3.jpg" optionsthumb3="200x150" title3="Comandante Estados Unidos Andrew Cunningham" >}}
+    image1="image:comandante-estados-unidos-andrew-cunningham-1.webp" optionsthumb1="200x150" title1="Comandante Estados Unidos Andrew Cunningham"
+    image2="image:comandante-estados-unidos-andrew-cunningham-2.webp" optionsthumb2="200x150" title2="Comandante Estados Unidos Andrew Cunningham"
+    image3="image:comandante-estados-unidos-andrew-cunningham-3.webp" optionsthumb3="200x150" title3="Comandante Estados Unidos Andrew Cunningham" >}}
 {{< image
     gallery="true"
-    image1="image:comandante-estados-unidos-andrew-cunningham-4.jpg" optionsthumb1="200x150" title1="Comandante Estados Unidos Andrew Cunningham"
-    image2="image:comandante-estados-unidos-andrew-cunningham-5.jpg" optionsthumb2="200x150" title2="Comandante Estados Unidos Andrew Cunningham"
-    image3="image:comandante-estados-unidos-andrew-cunningham-6.jpg" optionsthumb3="200x150" title3="Comandante Estados Unidos Andrew Cunningham" >}}
+    image1="image:comandante-estados-unidos-andrew-cunningham-4.webp" optionsthumb1="200x150" title1="Comandante Estados Unidos Andrew Cunningham"
+    image2="image:comandante-estados-unidos-andrew-cunningham-5.webp" optionsthumb2="200x150" title2="Comandante Estados Unidos Andrew Cunningham"
+    image3="image:comandante-estados-unidos-andrew-cunningham-6.webp" optionsthumb3="200x150" title3="Comandante Estados Unidos Andrew Cunningham" >}}
 {{< image
     gallery="true"
-    image1="image:comandante-estados-unidos-andrew-cunningham-7.jpg" optionsthumb1="200x150" title1="Comandante Estados Unidos Andrew Cunningham"
-    image2="image:comandante-estados-unidos-andrew-cunningham-8.jpg" optionsthumb2="200x150" title2="Comandante Estados Unidos Andrew Cunningham"
-    image3="image:comandante-estados-unidos-andrew-cunningham-9.jpg" optionsthumb3="200x150" title3="Comandante Estados Unidos Andrew Cunningham" >}}
+    image1="image:comandante-estados-unidos-andrew-cunningham-7.webp" optionsthumb1="200x150" title1="Comandante Estados Unidos Andrew Cunningham"
+    image2="image:comandante-estados-unidos-andrew-cunningham-8.webp" optionsthumb2="200x150" title2="Comandante Estados Unidos Andrew Cunningham"
+    image3="image:comandante-estados-unidos-andrew-cunningham-9.webp" optionsthumb3="200x150" title3="Comandante Estados Unidos Andrew Cunningham" >}}
 {{< image
     gallery="true"
-    image1="image:comandante-estados-unidos-andrew-cunningham-10.jpg" optionsthumb1="200x150" title1="Comandante Estados Unidos Andrew Cunningham"
-    image2="image:comandante-estados-unidos-andrew-cunningham-11.jpg" optionsthumb2="200x150" title2="Comandante Estados Unidos Andrew Cunningham"
-    image3="image:comandante-estados-unidos-andrew-cunningham-12.jpg" optionsthumb3="200x150" title3="Comandante Estados Unidos Andrew Cunningham" >}}
+    image1="image:comandante-estados-unidos-andrew-cunningham-10.webp" optionsthumb1="200x150" title1="Comandante Estados Unidos Andrew Cunningham"
+    image2="image:comandante-estados-unidos-andrew-cunningham-11.webp" optionsthumb2="200x150" title2="Comandante Estados Unidos Andrew Cunningham"
+    image3="image:comandante-estados-unidos-andrew-cunningham-12.webp" optionsthumb3="200x150" title3="Comandante Estados Unidos Andrew Cunningham" >}}
 {{< image
     gallery="true"
-    image1="image:comandante-estados-unidos-andrew-cunningham-13.jpg" optionsthumb1="200x150" title1="Comandante Estados Unidos Andrew Cunningham"
-    image2="image:comandante-estados-unidos-andrew-cunningham-14.jpg" optionsthumb2="200x150" title2="Comandante Estados Unidos Andrew Cunningham"
-    image3="image:comandante-estados-unidos-andrew-cunningham-15.jpg" optionsthumb3="200x150" title3="Comandante Estados Unidos Andrew Cunningham"
+    image1="image:comandante-estados-unidos-andrew-cunningham-13.webp" optionsthumb1="200x150" title1="Comandante Estados Unidos Andrew Cunningham"
+    image2="image:comandante-estados-unidos-andrew-cunningham-14.webp" optionsthumb2="200x150" title2="Comandante Estados Unidos Andrew Cunningham"
+    image3="image:comandante-estados-unidos-andrew-cunningham-15.webp" optionsthumb3="200x150" title3="Comandante Estados Unidos Andrew Cunningham"
     caption="Comandante Estados Unidos Andrew Cunningham y experiencia necesaria para subir de nivel" >}}
 
 ### Tipos de munición y consumibles en batalla
@@ -214,7 +214,7 @@ Los acorazados también tienen consumibles, uno muy útil es el de reparación q
 
 {{< image
     gallery="true"
-    image1="image:consumibles-potenciadores-camuflaje.jpg" optionsthumb1="600x450" title1="Consumibles, potenciadores y camuflaje"
+    image1="image:consumibles-potenciadores-camuflaje.webp" optionsthumb1="600x450" title1="Consumibles, potenciadores y camuflaje"
     caption="Consumibles, potenciadores y camuflaje" >}}
 
 ### Recursos
@@ -227,9 +227,9 @@ Cada semana y de forma diaria se dispone de una serie de misiones que completada
 
 {{< image
     gallery="true"
-    image1="image:resultado-batalla.jpg" optionsthumb1="200x150" title1="Resultado de una batalla con victoria, experiencia y créditos conseguidos"
-    image2="image:misiones.jpg" optionsthumb2="200x150" title2="Progreso en las misiones"
-    image3="image:inventario.jpg" optionsthumb3="200x150" title3="Inventario"
+    image1="image:resultado-batalla.webp" optionsthumb1="200x150" title1="Resultado de una batalla con victoria, experiencia y créditos conseguidos"
+    image2="image:misiones.webp" optionsthumb2="200x150" title2="Progreso en las misiones"
+    image3="image:inventario.webp" optionsthumb3="200x150" title3="Inventario"
     caption="Resultado de una batalla con victoria, experiencia y créditos conseguidos. Progreso e inventario." >}}
 
 ### Estrategia básica y guía de aprendizaje

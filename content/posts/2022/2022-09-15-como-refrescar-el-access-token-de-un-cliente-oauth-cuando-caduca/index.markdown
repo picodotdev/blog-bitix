@@ -85,7 +85,7 @@ Como servidor de autorización se utiliza [Keycloak] creando un _realm_ y un cli
 
 {{< image
     gallery="true"
-    image1="image:keycloak-clients.png" optionsthumb1="650x450" title1="Clientes en Keycloak"
+    image1="image:keycloak-clients.webp" optionsthumb1="650x450" title1="Clientes en Keycloak"
     caption="Clientes en Keycloak" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/SpringBootOauthClientServer" command="./gradlew client:run" %}}

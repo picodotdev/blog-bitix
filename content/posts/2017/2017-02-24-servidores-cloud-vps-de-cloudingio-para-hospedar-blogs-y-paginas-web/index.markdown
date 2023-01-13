@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: true
-imageHead: "image:header.png"
+imageHead: "image:header.webp"
 imagePost: "logotype:clouding.svg"
 tags: ["gnu-linux", "planeta-codigo", "patrocinado", "software-libre"]
 summary: "Al escribir este artículo patrocinado sobre Clouding.io he podido probar de primera mano el crear un servidor virtual basado en la computación en la nube. Después de probarlo me parece una opción sencilla y sin complicaciones, adecuada y más que suficiente desde el rango de proyectos más pequeños de presencia en internet, blogs o servicios web y con capacidad suficiente hasta los proyectos más grandes y exigentes de cualquier empresa. Además, con la característica diferenciadora de ofrecer soporte en español en caso de necesitar algún tipo de asistencia o ayuda."
@@ -31,7 +31,7 @@ Una de las ventajas del _cloud computing_ es la elasticidad que permite cambiar 
 
 {{< image
     gallery="true"
-    image1="image:clouding-web.png" optionsthumb1="650x450" title1="Página web de Clouding.io"
+    image1="image:clouding-web.webp" optionsthumb1="650x450" title1="Página web de Clouding.io"
     caption="Página web de Clouding.io" >}}
 
 {{< tableofcontents >}}
@@ -51,34 +51,34 @@ Clouding ofrece una infraestructura de alta disponibilidad, con servicios de cop
 
 {{< image
     gallery="true"
-    image1="image:clouding-caracteristicas-1.png" optionsthumb1="200x150" title1="Características de Clouding"
-    image2="image:clouding-caracteristicas-2.png" optionsthumb2="200x150" title2="Características de Clouding"
-    image3="image:clouding-caracteristicas-3.png" optionsthumb3="200x150" title3="Características de Clouding" >}}
+    image1="image:clouding-caracteristicas-1.webp" optionsthumb1="200x150" title1="Características de Clouding"
+    image2="image:clouding-caracteristicas-2.webp" optionsthumb2="200x150" title2="Características de Clouding"
+    image3="image:clouding-caracteristicas-3.webp" optionsthumb3="200x150" title3="Características de Clouding" >}}
 {{< image
     gallery="true"
-    image1="image:clouding-caracteristicas-4.png" optionsthumb1="200x150" title1="Características de Clouding"
-    image2="image:clouding-caracteristicas-5.png" optionsthumb2="200x150" title2="Características de Clouding"
-    image3="image:clouding-caracteristicas-6.png" optionsthumb3="200x150" title3="Características de Clouding"
+    image1="image:clouding-caracteristicas-4.webp" optionsthumb1="200x150" title1="Características de Clouding"
+    image2="image:clouding-caracteristicas-5.webp" optionsthumb2="200x150" title2="Características de Clouding"
+    image3="image:clouding-caracteristicas-6.webp" optionsthumb3="200x150" title3="Características de Clouding"
     caption="Características de Clouding" >}}
 
 Para garantizar un buen servicio utilizan una infraestructura moderna y de alto rendimiento, redundante y tolerante a fallos compuesta por hardware, software, red, imágenes y centros de datos. Almacenamiento con discos SSD NVMe de alta velocidad, RAM con corrección de errores ECC, consola de emergencia y monitorización, red de alto rendimiento baja velocidad con protecciones frente ataques DDOS y con dirección IP pública, imágenes para servidores basados en Linux o Windows, paneles de control y aplicaciones preinstaladas, finalmente sus centros de datos ubicados en España son redundantes y con energía 100% renovable.
 
 {{< image
     gallery="true"
-    image1="image:clouding-infraestructura-1.png" optionsthumb1="200x150" title1="Infraestructura de Clouding"
-    image2="image:clouding-infraestructura-2.png" optionsthumb2="200x150" title2="Infraestructura de Clouding"
-    image3="image:clouding-infraestructura-3.png" optionsthumb3="200x150" title3="Infraestructura de Clouding" >}}
+    image1="image:clouding-infraestructura-1.webp" optionsthumb1="200x150" title1="Infraestructura de Clouding"
+    image2="image:clouding-infraestructura-2.webp" optionsthumb2="200x150" title2="Infraestructura de Clouding"
+    image3="image:clouding-infraestructura-3.webp" optionsthumb3="200x150" title3="Infraestructura de Clouding" >}}
 {{< image
     gallery="true"
-    image1="image:clouding-infraestructura-4.png" optionsthumb1="200x150" title1="Infraestructura de Clouding"
-    image2="image:clouding-infraestructura-5.png" optionsthumb2="200x150" title2="Infraestructura de Clouding"
+    image1="image:clouding-infraestructura-4.webp" optionsthumb1="200x150" title1="Infraestructura de Clouding"
+    image2="image:clouding-infraestructura-5.webp" optionsthumb2="200x150" title2="Infraestructura de Clouding"
     caption="Infraestructura de Clouding" >}}
 
 Son muchas las empresas que confían en Clouding como proveedor de servicios para sus necesidades tecnológicas. Dado el tamaño de estas empresas es garantía de que el servicio de Clouding está a la altura para tenerlos como clientes.
 
 {{< image
     gallery="true"
-    image1="image:clouding-clientes.png" optionsthumb1="200x150" title1="Clientes de Clouding"
+    image1="image:clouding-clientes.webp" optionsthumb1="200x150" title1="Clientes de Clouding"
     caption="Clientes de Clouding" >}}
 
 ### Crear un servidor _cloud_ en Clouding
@@ -87,40 +87,40 @@ Para probar su servicio ofrecen un cupón de 5 €, que con la opción más bás
 
 {{< image
     gallery="true"
-    image1="image:registro.png" optionsthumb1="300x200" title1="Pasos de verificación del registro"
+    image1="image:registro.webp" optionsthumb1="300x200" title1="Pasos de verificación del registro"
     caption="Registro" >}}
 
 Completado el registro accediendo al panel de administración en la sección servidores podremos crear las instancias y con que cantidad de recursos reservados, para ajustar el precio y dada la elasticidad de los servidores se puede empezar por las opciones mínimas e ir subiendo hasta que los recursos sean suficientes para el correcto funcionamiento de servidor según los recursos necesarios.
 
 {{< image
     gallery="true"
-    image1="image:panel-administracion.png" optionsthumb1="300x200" title1="Panel de administración"
+    image1="image:panel-administracion.webp" optionsthumb1="300x200" title1="Panel de administración"
     caption="Panel de administración" >}}
 
 Como utilidad Clouding.io ofrece un panel donde gestionar los registros DNS del dominio que contratemos y conocer los nombre de _host_ y direcciones IP de los servidores de DNS de Clouding.io. Casi seguro que la entidad registradora del dominio que le asignemos al servicio para su acceso también tenga la opción de administrar los registros DNS, usar el de Clouding.io es más por unificar en un solo sitio toda la administración del servidor. En las opciones avanzadas se pueden administrar multitud de tipos de registro DNS.
 
 {{< image
     gallery="true"
-    image1="image:dns.png" optionsthumb1="300x200" title1="Administración DNS"
+    image1="image:dns.webp" optionsthumb1="300x200" title1="Administración DNS"
     caption="Administración DNS" >}}
 
 La sección principal es la de _Servidores_ donde hay tres pestañas: una para los servidores, otra para las reglas de _firewall_ para controlar el tráfico entrante y saliente de cada servidor y otra para las _llaves SSH_ que usaremos para conectarnos desde nuestro equipo de forma segura. Seleccionado las características del servidor (memoria, procesadores y espacio en disco) al cabo de unos momentos el servidor se iniciará y estará disponible para que nos conectemos mediante SSH o desde la terminal con interfaz web ofrecida. Desde el listado de servidores podremos pararlo, reiniciarlo, redimensionarlo o eliminarlo. En la pestaña _Acceso_ obtendremos el nombre de _host_ asignado y la dirección IP privada y pública asignada, así como la contraseña del usuario _root_. En la pestaña _Estadísticas_ monitorizaremos el estado del servidor y conoceremos si es necesario redimiensionarlo en algún parámetro.
 
 {{< image
     gallery="true"
-    image1="image:servidor.png" optionsthumb1="300x200" title1="Parámetros de acceso de un servidor"
-    image2="image:acceso.png" optionsthumb2="300x200" title2="Parámetros de acceso de un servidor"
+    image1="image:servidor.webp" optionsthumb1="300x200" title1="Parámetros de acceso de un servidor"
+    image2="image:acceso.webp" optionsthumb2="300x200" title2="Parámetros de acceso de un servidor"
     caption="Un servidor y sus parámetros de acceso" >}}
 {{< image
     gallery="true"
-    image1="image:nuevo-servidor.png" optionsthumb1="300x200" title1="Nuevo servidor"
+    image1="image:nuevo-servidor.webp" optionsthumb1="300x200" title1="Nuevo servidor"
     caption="Nuevo servidor" >}}
 
 Las reglas del _firewall_ por defecto son demasiado permisivas, si solo necesitamos que el puerto 80, el del servidor web, esté abierto el resto de reglas para otros puertos se pueden eliminar para evitar posibles agujeros de seguridad. Una cosa buena es que se pueden crear múltiples reglas de seguridad y aplicar a cada servidor la más conveniente.
 
 {{< image
     gallery="true"
-    image1="image:firewall.png" optionsthumb1="300x200" title1="Reglas de firewall"
+    image1="image:firewall.webp" optionsthumb1="300x200" title1="Reglas de firewall"
     caption="Reglas de firewall" >}}
 
 ### Conexión mediante línea de comandos con SSH
@@ -129,7 +129,7 @@ Las llaves SSH son necesarias para conectarnos al servidor y lanzar comandos des
 
 {{< image
     gallery="true"
-    image1="image:llaves-ssh.png" optionsthumb1="300x200" title1="Claves SSH"
+    image1="image:llaves-ssh.webp" optionsthumb1="300x200" title1="Claves SSH"
     caption="Claves SSH" >}}
 {{< code file="config" language="plain" options="" >}}
 {{< code file="clouding.pem" language="plain" options="" >}}
@@ -138,22 +138,22 @@ En los ajustes veremos el saldo disponible que se irá descontando según los re
 
 {{< image
     gallery="true"
-    image1="image:ajustes.png" optionsthumb1="300x200" title1="Ajustes, facturación e informes"
+    image1="image:ajustes.webp" optionsthumb1="300x200" title1="Ajustes, facturación e informes"
     caption="Ajustes, facturación e informes" >}}
 
 Una de las primeras cosas aconsejables realizar es tener acceso mediante SSH descargando la clave privada desde le apartado _Llaves SSH_, con GNU/Linux no se necesita mucho más para conectarse al servidor, en Windows se puede utilizar un programa como [PuTTY][putty]. En cualquier caso siempre está disponible el acceso vía web. Otra de las cosas que a realizar es acceder al servidor SSH mediante un dominio propio que también con anterioridad hay que registrar. Y también es recomendable actualizar todos los paquetes o actualizaciones de seguridad del sistema.
 
 {{< image
     gallery="true"
-    image1="image:ssh.png" optionsthumb1="300x200" title1="Acceso mediante SSH"
-    image2="image:consola-vnc.png" optionsthumb2="300x200" title2="Acceso mediante consola VNC"
+    image1="image:ssh.webp" optionsthumb1="300x200" title1="Acceso mediante SSH"
+    image2="image:consola-vnc.webp" optionsthumb2="300x200" title2="Acceso mediante consola VNC"
     caption="Acceso mediante SSH y consola VNC" >}}
 
 Con acceso vía SSH al servidor ya es posible administrarlo con una herramienta como [Ansible][ansible] instalando paquetes, actualizar el servidor y configurar servicios como los servidores web [nginx][nginx] o [Apache][apache-httpd], [Docker][docker] y otra multitud de tareas que permite esta herramienta. En el artículo [Aprovisionar un servidor en la infraestructura cloud de Clouding con Ubuntu y Nginx usando Ansible y protocolo seguro HTTPS con Let's Encrypt][blogbitix-614] muestro como aprovisionar de forma automatizada un servidor _cloud_ de Clouding.
 
 {{< image
     gallery="true"
-    image1="image:nginx.png" optionsthumb1="300x200" title1="Servidor NGINX"
+    image1="image:nginx.webp" optionsthumb1="300x200" title1="Servidor NGINX"
     caption="Servidor NGINX" >}}
 
 He encontrado en su blog algunos artículos interesantes y base de conocimiento. Otros artículos de interés son los que escribí en la [serie web][blogbitix-serie-web] en la que comentaba aspectos como HTTP/2, HTTPS, redirecciones o GZIP.

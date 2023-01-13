@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:image-1.jpg"
-imagePost: "image:calibre.png"
+imageHead: "image:image-1.webp"
+imagePost: "image:calibre.webp"
 tags: ["hardware"]
 summary: "Un lector de libros electrónico ofrece mayor comodidad frente a los libros en formato físico, en cuanto a peso y volumen de libros ni los libros ocupan espacio una vez leídos. Son ligeros, de tamaño reducido, ofrecen una lectura bajo el sol equivalente al formato impreso y añaden algunas funciones adicionales como luz integrada y un diccionario de palabras. Tienen un precio asequible y muchos libros electrónicos un precio inferior a la versión en formato físico en papel."
 ---
@@ -58,7 +58,7 @@ Los dispositivos de libros electrónicos de Amazon son de los más populares, of
 
 {{< image
     gallery="true"
-    image1="image:image-1.jpg" optionsthumb1="650x450" title1="Lector de libros electrónicos Kindle Touch del año 2011"
+    image1="image:image-1.webp" optionsthumb1="650x450" title1="Lector de libros electrónicos Kindle Touch del año 2011"
     caption="Lector de libros electrónicos Kindle Touch del año 2011" >}}
 
 Hay varios modelos de Kindle con una gama de lectores que se ha ido [renovando a lo largo del tiempo](https://es.wikipedia.org/wiki/Amazon_Kindle) con versiones que mejoran paulatinamente las anteriores. Los modelos actuales se catalogan en los siguientes:
@@ -139,7 +139,7 @@ Si se necesita convertir el formato de libro electrónico a otro formato que sop
 
 {{< image
     gallery="true"
-    image1="image:calibre.png" optionsthumb1="650x450" title1="Gestor de biblioteca y conversor de libros electrónicos Calibre"
+    image1="image:calibre.webp" optionsthumb1="650x450" title1="Gestor de biblioteca y conversor de libros electrónicos Calibre"
     caption="Gestor de biblioteca y conversor de libros electrónicos Calibre" >}}
 
 {{% /post %}}

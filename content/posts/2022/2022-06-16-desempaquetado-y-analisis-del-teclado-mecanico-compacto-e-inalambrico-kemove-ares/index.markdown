@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:kemove-ares-caja-1.jpg"
-imagePost: "image:kemove-ares-caja-1.jpg"
+imageHead: "image:kemove-ares-caja-1.webp"
+imagePost: "image:kemove-ares-caja-1.webp"
 tags: ["hardware"]
 series: ["desempaquetado-tecnologia"]
 summary: "El teclado mecánico KEMOVE ARES está en la gama alta de teclados para los usuarios que desean lo mejor sin tener en cuenta tanto el precio. Compacto en formato 60%, inalámbrico, RGB, _keycaps_ con disposición ANSI y serigrafía de la disposición en inglés. Siendo similar en muchos aspectos al KEMOVE DK61 el ARES tiene un cuerpo de metal y mejores materiales de construcción que se notan en los _keycaps_, estabilidad de las teclas y en el sonido de tecleo. Al ser de metal aluminio ofrece mayor durabilidad, por otro lado por su diseño lo hace único y está disponible en varios colores, tipos y marcas de _switches_."
@@ -86,26 +86,26 @@ La caja del KEMOVE ARES es prácticamente similar al KEMOVE DK61 con la misma ve
 
 {{< image
     gallery="true"
-    image1="image:kemove-ares-caja-1.jpg" optionsthumb1="200x150" title1="Caja del teclado KEMOVE ARES"
-    image2="image:kemove-ares-caja-2.jpg" optionsthumb2="200x150" title2="Caja del teclado KEMOVE ARES"
-    image3="image:kemove-ares-caja-3.jpg" optionsthumb3="200x150" title3="Caja del teclado KEMOVE ARES" >}}
+    image1="image:kemove-ares-caja-1.webp" optionsthumb1="200x150" title1="Caja del teclado KEMOVE ARES"
+    image2="image:kemove-ares-caja-2.webp" optionsthumb2="200x150" title2="Caja del teclado KEMOVE ARES"
+    image3="image:kemove-ares-caja-3.webp" optionsthumb3="200x150" title3="Caja del teclado KEMOVE ARES" >}}
 {{< image
     gallery="true"
-    image1="image:kemove-ares-caja-4.jpg" optionsthumb1="200x150" title1="Caja del teclado KEMOVE ARES"
-    image2="image:kemove-ares-caja-5.jpg" optionsthumb2="200x150" title2="Caja del teclado KEMOVE ARES"
-    image3="image:kemove-ares-caja-6.jpg" optionsthumb3="200x150" title3="Caja del teclado KEMOVE ARES" >}}
+    image1="image:kemove-ares-caja-4.webp" optionsthumb1="200x150" title1="Caja del teclado KEMOVE ARES"
+    image2="image:kemove-ares-caja-5.webp" optionsthumb2="200x150" title2="Caja del teclado KEMOVE ARES"
+    image3="image:kemove-ares-caja-6.webp" optionsthumb3="200x150" title3="Caja del teclado KEMOVE ARES" >}}
 {{< image
     gallery="true"
-    image1="image:kemove-ares-caja-7.jpg" optionsthumb1="200x150" title1="Caja del teclado KEMOVE ARES"
-    image2="image:kemove-ares-caja-8.jpg" optionsthumb2="200x150" title2="Caja del teclado KEMOVE ARES" >}}
+    image1="image:kemove-ares-caja-7.webp" optionsthumb1="200x150" title1="Caja del teclado KEMOVE ARES"
+    image2="image:kemove-ares-caja-8.webp" optionsthumb2="200x150" title2="Caja del teclado KEMOVE ARES" >}}
 {{< image
     gallery="true"
-    image1="image:kemove-ares-caja-9.jpg" optionsthumb1="200x150" title1="Caja del teclado KEMOVE ARES"
-    image2="image:kemove-ares-caja-10.jpg" optionsthumb2="200x150" title2="Caja del teclado KEMOVE ARES"
-    image3="image:kemove-ares-caja-11.jpg" optionsthumb3="200x150" title3="Caja del teclado KEMOVE ARES" >}}
+    image1="image:kemove-ares-caja-9.webp" optionsthumb1="200x150" title1="Caja del teclado KEMOVE ARES"
+    image2="image:kemove-ares-caja-10.webp" optionsthumb2="200x150" title2="Caja del teclado KEMOVE ARES"
+    image3="image:kemove-ares-caja-11.webp" optionsthumb3="200x150" title3="Caja del teclado KEMOVE ARES" >}}
 {{< image
     gallery="true"
-    image1="image:kemove-ares-caja-12.jpg" optionsthumb1="200x150" title1="Caja del teclado KEMOVE ARES"
+    image1="image:kemove-ares-caja-12.webp" optionsthumb1="200x150" title1="Caja del teclado KEMOVE ARES"
     caption="Caja del teclado KEMOVE ARES" >}}
 
 #### El contenido de la caja
@@ -116,12 +116,12 @@ Tiene un folleto de manual de usuario más detallado que el KEMOVE DK61, no incl
 
 {{< image
     gallery="true"
-    image1="image:kemove-ares-contenido-1.jpg" optionsthumb1="200x150" title1="Contenido de la caja del teclado KEMOVE ARES" >}}
+    image1="image:kemove-ares-contenido-1.webp" optionsthumb1="200x150" title1="Contenido de la caja del teclado KEMOVE ARES" >}}
 {{< image
     gallery="true"
-    image1="image:kemove-ares-contenido-2.jpg" optionsthumb1="200x150" title1="Contenido de la caja del teclado KEMOVE ARES"
-    image2="image:kemove-ares-contenido-3.jpg" optionsthumb2="200x150" title2="Contenido de la caja del teclado KEMOVE ARES"
-    image3="image:kemove-ares-contenido-4.jpg" optionsthumb3="200x150" title3="Contenido de la caja del teclado KEMOVE ARES"
+    image1="image:kemove-ares-contenido-2.webp" optionsthumb1="200x150" title1="Contenido de la caja del teclado KEMOVE ARES"
+    image2="image:kemove-ares-contenido-3.webp" optionsthumb2="200x150" title2="Contenido de la caja del teclado KEMOVE ARES"
+    image3="image:kemove-ares-contenido-4.webp" optionsthumb3="200x150" title3="Contenido de la caja del teclado KEMOVE ARES"
     caption="Contenido de la caja del teclado KEMOVE ARES" >}}
 
 #### El teclado
@@ -138,27 +138,27 @@ Los botones para cambiar el tipo de compatibilidad entre Windows y macOS y el bo
 
 {{< image
     gallery="true"
-    image1="image:kemove-ares-teclado-1.jpg" optionsthumb1="200x150" title1="Teclado KEMOVE ARES"
-    image2="image:kemove-ares-teclado-2.jpg" optionsthumb2="200x150" title2="Teclado KEMOVE ARES"
-    image3="image:kemove-ares-teclado-3.jpg" optionsthumb3="200x150" title3="Teclado KEMOVE ARES" >}}
+    image1="image:kemove-ares-teclado-1.webp" optionsthumb1="200x150" title1="Teclado KEMOVE ARES"
+    image2="image:kemove-ares-teclado-2.webp" optionsthumb2="200x150" title2="Teclado KEMOVE ARES"
+    image3="image:kemove-ares-teclado-3.webp" optionsthumb3="200x150" title3="Teclado KEMOVE ARES" >}}
 {{< image
     gallery="true"
-    image1="image:kemove-ares-teclado-4.jpg" optionsthumb1="200x150" title1="Teclado KEMOVE ARES"
-    image2="image:kemove-ares-teclado-5.jpg" optionsthumb2="200x150" title2="Teclado KEMOVE ARES"
-    image3="image:kemove-ares-teclado-6.jpg" optionsthumb3="200x150" title3="Teclado KEMOVE ARES" >}}
+    image1="image:kemove-ares-teclado-4.webp" optionsthumb1="200x150" title1="Teclado KEMOVE ARES"
+    image2="image:kemove-ares-teclado-5.webp" optionsthumb2="200x150" title2="Teclado KEMOVE ARES"
+    image3="image:kemove-ares-teclado-6.webp" optionsthumb3="200x150" title3="Teclado KEMOVE ARES" >}}
 {{< image
     gallery="true"
-    image1="image:kemove-ares-teclado-7.jpg" optionsthumb1="200x150" title1="Teclado KEMOVE ARES"
-    image2="image:kemove-ares-teclado-8.jpg" optionsthumb2="200x150" title2="Teclado KEMOVE ARES"
-    image3="image:kemove-ares-teclado-9.jpg" optionsthumb3="200x150" title3="Teclado KEMOVE ARES" >}}
+    image1="image:kemove-ares-teclado-7.webp" optionsthumb1="200x150" title1="Teclado KEMOVE ARES"
+    image2="image:kemove-ares-teclado-8.webp" optionsthumb2="200x150" title2="Teclado KEMOVE ARES"
+    image3="image:kemove-ares-teclado-9.webp" optionsthumb3="200x150" title3="Teclado KEMOVE ARES" >}}
 {{< image
     gallery="true"
-    image1="image:kemove-ares-teclado-10.jpg" optionsthumb1="200x150" title1="Teclado KEMOVE ARES"
-    image2="image:kemove-ares-teclado-11.jpg" optionsthumb2="200x150" title2="Teclado KEMOVE ARES" >}}
+    image1="image:kemove-ares-teclado-10.webp" optionsthumb1="200x150" title1="Teclado KEMOVE ARES"
+    image2="image:kemove-ares-teclado-11.webp" optionsthumb2="200x150" title2="Teclado KEMOVE ARES" >}}
 {{< image
     gallery="true"
-    image1="image:kemove-ares-teclado-12.jpg" optionsthumb1="200x150" title1="Teclado KEMOVE ARES"
-    image2="image:kemove-ares-teclado-13.jpg" optionsthumb2="200x150" title2="Teclado KEMOVE ARES"
+    image1="image:kemove-ares-teclado-12.webp" optionsthumb1="200x150" title1="Teclado KEMOVE ARES"
+    image2="image:kemove-ares-teclado-13.webp" optionsthumb2="200x150" title2="Teclado KEMOVE ARES"
     caption="Teclado KEMOVE ARES" >}}
 
 #### Los _switches_
@@ -167,9 +167,9 @@ El teclado se ofrece premontado con con _switches_ de la marca Gateron de difere
 
 {{< image
     gallery="true"
-    image1="image:kemove-ares-switches-1.jpg" optionsthumb1="200x150" title1="Switches del teclado KEMOVE ARES"
-    image2="image:kemove-ares-switches-2.jpg" optionsthumb2="200x150" title2="Switches del teclado KEMOVE ARES"
-    image3="image:kemove-ares-switches-3.jpg" optionsthumb3="200x150" title3="Switches del teclado KEMOVE ARES"
+    image1="image:kemove-ares-switches-1.webp" optionsthumb1="200x150" title1="Switches del teclado KEMOVE ARES"
+    image2="image:kemove-ares-switches-2.webp" optionsthumb2="200x150" title2="Switches del teclado KEMOVE ARES"
+    image3="image:kemove-ares-switches-3.webp" optionsthumb3="200x150" title3="Switches del teclado KEMOVE ARES"
     caption="Switches del teclado KEMOVE ARES" >}}
 
 #### Los _keycaps_
@@ -178,7 +178,7 @@ También incluye los _keycaps_ siendo de doble disparo y algunas teclas en dos c
 
 {{< image
     gallery="true"
-    image1="image:kemove-ares-keycaps-1.jpg" optionsthumb1="200x150" title1="Keycaps del teclado KEMOVE ARES"
+    image1="image:kemove-ares-keycaps-1.webp" optionsthumb1="200x150" title1="Keycaps del teclado KEMOVE ARES"
     caption="Keycaps del teclado KEMOVE ARES" >}}
 
 ### Análisis y primeras impresiones del teclado mecánico KEMOVE ARES
@@ -199,7 +199,7 @@ Ofrece un botón para elegir entre Windows y macOS que cambia la disposición de
 
 {{< image
     gallery="true"
-    image1="image:kemove-ares-bluetooth-linux.png" optionsthumb1="300x200" title1="Configuración del teclado con conexión inalámbrica en GNU/Linux"
+    image1="image:kemove-ares-bluetooth-linux.webp" optionsthumb1="300x200" title1="Configuración del teclado con conexión inalámbrica en GNU/Linux"
     caption="Configuración del teclado con conexión inalámbrica" >}}
 
 #### Análisis en vídeo

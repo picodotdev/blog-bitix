@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:java-14.jpg"
-imagePost: "image:java-14.jpg"
+imageHead: "image:java-14.webp"
+imagePost: "image:java-14.webp"
 tags: ["java", "planeta-codigo"]
 series: ["java-platform"]
 ---

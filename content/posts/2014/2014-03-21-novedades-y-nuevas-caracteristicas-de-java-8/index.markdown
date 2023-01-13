@@ -127,7 +127,7 @@ Trabajar con fechas, horas y diferentes zonas horarias en Java tradicionalmente 
 
 {{< image
     gallery="true"
-    image1="image:componentes-jpse8.png" optionsthumb1="300x200" >}}
+    image1="image:componentes-jpse8.webp" optionsthumb1="300x200" >}}
 
 ### Futuro con Java 9
 

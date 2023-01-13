@@ -31,8 +31,8 @@ Quien crea que es mucho que pruebe a crearse una bitácora, un canal en [YouTube
 
 {{< image
     gallery="true"
-    image1="image:analytics-2017.png" optionsthumb1="300x200" title1="Analytics 2017 de Blog Bitix"
-    image2="image:gadsense-2017.png" optionsthumb2="300x200" title2="AdSense 2017 de Blog Bitix"
+    image1="image:analytics-2017.webp" optionsthumb1="300x200" title1="Analytics 2017 de Blog Bitix"
+    image2="image:gadsense-2017.webp" optionsthumb2="300x200" title2="AdSense 2017 de Blog Bitix"
     caption="Evolución visitas e ingresos en 2017" >}}
 
 Pero por otra parte he recibido buenos comentarios sobre lo que escribo en Blog Bitix, por algunas personas vía [Twitter][twitter] y otras en algún comentario que me anima a seguir escribiendo y compartiendo como hasta ahora lo que voy aprendiendo e investigando que algún día espero utilizar en algún trabajo antes de que me jubile o pruebe ser un jardinero o barrendero.
@@ -107,7 +107,7 @@ Espero seguir escribiendo como hasta ahora en el 2018 si el tiempo del que dispo
 
 {{< image
     gallery="true"
-    image1="image:christmas-tux-2017.jpg" optionsthumb1="600x450" title1="Christmas Tux 2019" title1="¡Buen 2018!"
+    image1="image:christmas-tux-2017.webp" optionsthumb1="600x450" title1="Christmas Tux 2019" title1="¡Buen 2018!"
     caption="¡Buen 2018!" source="klowner.com" >}}
 
 {{% /post %}}

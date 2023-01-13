@@ -56,8 +56,8 @@ Este sería el código para crear una instancia de _SelectModel_ para un compone
 
 {{< image
     gallery="true"
-    image1="image:select-1.png" optionsthumb1="300x200" title1="Componente selector con bootstrap-select"
-    image2="image:select-2.png" optionsthumb2="300x200" title1="Componente selector con bootstrap-select"
+    image1="image:select-1.webp" optionsthumb1="300x200" title1="Componente selector con bootstrap-select"
+    image2="image:select-2.webp" optionsthumb2="300x200" title1="Componente selector con bootstrap-select"
     caption="Componente selector con bootstrap-select" >}}
 
 Al ser enviado el formulario que contiene el _select_ el valor seleccionado los tendremos en la propiedad que hayamos indicado en el parámetro _value_ del componente _Select_, este caso en la propiedad _pais_ de la clase _Index_ que representa la página.

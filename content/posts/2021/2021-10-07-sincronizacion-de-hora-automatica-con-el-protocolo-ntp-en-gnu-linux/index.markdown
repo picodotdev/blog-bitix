@@ -39,7 +39,7 @@ Para activar el servicio NTP en GNOME basta con acceder al panel de configuraci�
 
 {{< image
     gallery="true"
-    image1="image:gnome-fecha-hora.png" optionsthumb1="300x250" title1="Configuración de fecha y hora en GNOME"
+    image1="image:gnome-fecha-hora.webp" optionsthumb1="300x250" title1="Configuración de fecha y hora en GNOME"
     caption="Configuración de fecha y hora en GNOME" >}}
 
 ### Sincronización de hora desde línea de comandos

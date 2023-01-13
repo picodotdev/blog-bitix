@@ -4,7 +4,20 @@
 {{- $nil := default nil nil -}}
 
 {{ if (eq $binding "image") }}
-    {{ $resource := .Page.Resources.GetMatch (print "images/" $value) }}
+    {{- $i := $nil -}}
+    {{- $resource := $nil -}}
+    {{- if eq $resource nil -}}
+        {{- $i = replace $value ".webp" ".png" -}}
+        {{ $resource = .Page.Resources.GetMatch (print "images/" $i) }}
+    {{- end -}}
+    {{- if eq $resource nil -}}
+        {{- $i = replace $value ".webp" ".jpg" -}}
+        {{ $resource = .Page.Resources.GetMatch (print "images/" $i) }}
+    {{- end -}}
+    {{- if eq $resource nil -}}
+        {{- $i = replace $value ".webp" ".webp" -}}
+        {{ $resource = .Page.Resources.GetMatch (print "images/" $i) }}
+    {{- end -}}
 
     {{ if eq $resource nil }}
         {{ errorf "Missing image post: %s" $value }}
@@ -17,12 +30,12 @@
     {{ $value1x1 := $value }}
     {{ $image1x1 := $nil }}
     {{ if eq (strings.HasSuffix $value1x1 ".svg") true }}
-        {{ $value1x1 = replaceRE "\\.(svg)$" "-750.png" $value1x1 }}
+        {{ $value1x1 = replaceRE "\\.(svg)$" "-750.webp" $value1x1 }}
         {{ $image1x1 = print "assets/images/structured-data/" $value1x1 }}
     {{ else }}
         {{ $image1x1 = print "assets/images/logotypes/" $value1x1 }}
     {{ end }}
-    
+
     {{ if ne (fileExists (print "static/" $image1x1)) true }}
         {{ errorf "Missing image post logotype: %s" $image1x1 }}
     {{ end }}

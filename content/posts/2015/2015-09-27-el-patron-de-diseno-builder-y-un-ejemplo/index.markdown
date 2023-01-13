@@ -44,7 +44,7 @@ Al igual que [el patrón de diseño Factory][blogbitix-574] se encarga de crear 
 
 {{< image
     gallery="true"
-    image1="image:builder-pattern.png" optionsthumb1="650x450" title1="Diagrama de clases del patrón de diseño Builder"
+    image1="image:builder-pattern.webp" optionsthumb1="650x450" title1="Diagrama de clases del patrón de diseño Builder"
     caption="Diagrama de clases del patrón de diseño Builder" >}}
 
 ### Ejemplo del patrón de diseño _Builder_

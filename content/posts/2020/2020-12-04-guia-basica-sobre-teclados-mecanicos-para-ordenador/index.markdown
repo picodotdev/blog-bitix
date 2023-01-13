@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:ducky-one-2-tkl.png"
-imagePost: "image:ducky-one-2-tkl.png"
+imageHead: "image:ducky-one-2-tkl.webp"
+imagePost: "image:ducky-one-2-tkl.webp"
 tags: ["hardware", "planeta-codigo"]
 summary: "Los teclados mecánicos son un producto de mayor calidad que los teclados de membrana más baratos. Los teclados mecánicos son apreciados por sus usuarios por la diferencia de tacto en la pulsación de las teclas, durabilidad, personalización y formatos de tamaños. Los teclados mecánicos son más caros pero para los usuarios que hacen un uso intensivo de ellos durante muchas horas son una mejora significativa en la escritura y pulsación de teclas."
 ---
@@ -48,11 +48,11 @@ En la siguiente tabla se comparan los diferentes tipos de _switches_ según la f
 
 {{< image
     gallery="true"
-    image1="image:switches-cherrymx.jpg" optionsthumb1="300x200" title1="Switches Cherry MX" >}}
+    image1="image:switches-cherrymx.webp" optionsthumb1="300x200" title1="Switches Cherry MX" >}}
 {{< image
     gallery="true"
-    image2="image:switches-cherrymx-comparation-table.png" optionsthumb2="300x200" title2="Tabla comparación switches Cherry MX"
-    image3="image:switches-gateron-comparation-table.png" optionsthumb3="300x200" title3="Tabla comparación switches Gateron"
+    image2="image:switches-cherrymx-comparation-table.webp" optionsthumb2="300x200" title2="Tabla comparación switches Cherry MX"
+    image3="image:switches-gateron-comparation-table.webp" optionsthumb3="300x200" title3="Tabla comparación switches Gateron"
     caption="Switches Cherry MX y tablas de comparación Cherry MX y Gateron" >}}
 
 #### _Clicky_
@@ -63,8 +63,8 @@ Los códigos de colores asignados para estos _switches clicky_ son el azul o _bl
 
 {{< image
     gallery="true"
-    image1="image:switch-cherrymx-blue.jpg" optionsthumb1="300x200" title1="Switches Cherry MX Clicky"
-    image2="image:switch-cherrymx-green.jpg" optionsthumb2="300x200" title2="Switches Cherry MX Clicky"
+    image1="image:switch-cherrymx-blue.webp" optionsthumb1="300x200" title1="Switches Cherry MX Clicky"
+    image2="image:switch-cherrymx-green.webp" optionsthumb2="300x200" title2="Switches Cherry MX Clicky"
     image3="image:switch-cherrymx-blue.gif" optionsthumb3="300x200" title3="Switch Cherry MX Clicky"
     caption="Switches Cherry MX Clicky" >}}
 
@@ -76,8 +76,8 @@ Los códigos de colores asignados para estos _switches_ con respuesta táctil so
 
 {{< image
     gallery="true"
-    image1="image:switch-cherrymx-brown.jpg" optionsthumb1="300x200" title1="Switches Cherry MX Táctil"
-    image2="image:switch-cherrymx-gray.jpg" optionsthumb2="300x200" title2="Switches Cherry MX Táctil"
+    image1="image:switch-cherrymx-brown.webp" optionsthumb1="300x200" title1="Switches Cherry MX Táctil"
+    image2="image:switch-cherrymx-gray.webp" optionsthumb2="300x200" title2="Switches Cherry MX Táctil"
     image3="image:switch-cherrymx-brown.gif" optionsthumb3="300x200" title3="Switch Cherry MX Táctil"
     caption="Switches Cherry MX Táctil" >}}
 
@@ -89,8 +89,8 @@ Los códigos de colores asignados para estos _switches_ con respuesta táctil so
 
 {{< image
     gallery="true"
-    image1="image:switch-cherrymx-red.jpg" optionsthumb1="300x200" title1="Switches Cherry MX Lineales"
-    image2="image:switch-cherrymx-black.jpg" optionsthumb2="300x200" title2="Switches Cherry MX Lineales"
+    image1="image:switch-cherrymx-red.webp" optionsthumb1="300x200" title1="Switches Cherry MX Lineales"
+    image2="image:switch-cherrymx-black.webp" optionsthumb2="300x200" title2="Switches Cherry MX Lineales"
     image3="image:switch-cherrymx-red.gif" optionsthumb3="300x200" title3="Switch Cherry MX Lineales"
     caption="Switches Cherry MX Lineales" >}}
 
@@ -112,9 +112,9 @@ El probador incluye un extractor de _keycaps_ y aros de goma para probar la dife
 
 {{< image
     gallery="true"
-    image1="image:akwox-1.jpg" optionsthumb1="300x200" title1="Probador de switches Cherry MX"
-    image2="image:akwox-2.jpg" optionsthumb2="300x200" title2="Probador de switches Cherry MX"
-    image3="image:akwox-3.jpg" optionsthumb3="300x200" title3="Probador de switches Cherry MX"
+    image1="image:akwox-1.webp" optionsthumb1="300x200" title1="Probador de switches Cherry MX"
+    image2="image:akwox-2.webp" optionsthumb2="300x200" title2="Probador de switches Cherry MX"
+    image3="image:akwox-3.webp" optionsthumb3="300x200" title3="Probador de switches Cherry MX"
     caption="Probador de switches Cherry MX" >}}
 
 {{< amazon
@@ -165,9 +165,9 @@ Los teclados más comunes son los _QUERTY_ que toman el nombre de los caracteres
 
 {{< image
     gallery="true"
-    image1="image:keyboard-ansi-iso.png" optionsthumb1="300x200" title1="Teclado ISO (es)"
-    image2="image:keyboard-ansi-en.png" optionsthumb2="300x200" title2="Teclado ANSI (en)"
-    image3="image:keyboard-iso-es.png" optionsthumb3="300x200" title3="Teclado ISO (es)"
+    image1="image:keyboard-ansi-iso.webp" optionsthumb1="300x200" title1="Teclado ISO (es)"
+    image2="image:keyboard-ansi-en.webp" optionsthumb2="300x200" title2="Teclado ANSI (en)"
+    image3="image:keyboard-iso-es.webp" optionsthumb3="300x200" title3="Teclado ISO (es)"
     caption="Teclados ANSI (en) e ISO (es)" >}}
 
 En función de la disposición del teclado y formato el tamaño de los _keycaps_ varia, el tamaño de los _keycaps_ y el tamaño soportado por el teclado para los _keycpas_ ha de conincidir para que encajen al colocarlas. Hay que tenerno en cuenta al comprar unos _keycaps_ si estos no están premontados por el fabricante en el teclado.
@@ -176,7 +176,7 @@ Como referencia una tecla del alfabeto se considera que tiene un tamaño de 1x, 
 
 {{< image
     gallery="true"
-    image1="image:keyboard-keycaps-size.png" optionsthumb1="300x200" title1="Tamaño keycaps en teclados ISO"
+    image1="image:keyboard-keycaps-size.webp" optionsthumb1="300x200" title1="Tamaño keycaps en teclados ISO"
     caption="Tamaño keycaps en teclados ISO" >}}
 
 ### Formato de los teclados
@@ -189,7 +189,7 @@ Los teclados completo tienen entre 102 y 105 teclas e incluyen teclas específic
 
 {{< image
     gallery="true"
-    image1="image:ducky-one-2-fullsized.png" optionsthumb1="300x200" title1="Teclado Ducky One 2 completo"
+    image1="image:ducky-one-2-fullsized.webp" optionsthumb1="300x200" title1="Teclado Ducky One 2 completo"
     caption="Teclado Ducky One 2 completo" >}}
 
 #### Sin teclado numérico
@@ -200,7 +200,7 @@ Aunque no poseen teclado numérico conservan la función de las teclas del tecla
 
 {{< image
     gallery="true"
-    image1="image:ducky-one-2-tkl.png" optionsthumb1="300x200" title1="Teclado Ducky One 2 TKL"
+    image1="image:ducky-one-2-tkl.webp" optionsthumb1="300x200" title1="Teclado Ducky One 2 TKL"
     caption="Teclado Ducky One 2 TKL" >}}
 
 #### Compactos
@@ -211,8 +211,8 @@ La versión SF de Ducky tiene como ventaja tener las fechas de desplazamiento y 
 
 {{< image
     gallery="true"
-    image1="image:ducky-one-2-sf.png" optionsthumb1="300x200" title1="Teclado Ducky One 2 SF"
-    image2="image:ducky-one-2-mini.png" optionsthumb2="300x200" title2="Teclado Ducky One 2 Mini"
+    image1="image:ducky-one-2-sf.webp" optionsthumb1="300x200" title1="Teclado Ducky One 2 SF"
+    image2="image:ducky-one-2-mini.webp" optionsthumb2="300x200" title2="Teclado Ducky One 2 Mini"
     caption="Teclado Ducky One 2 SF y Mini" >}}
 
 #### Retroiluminado
@@ -237,8 +237,8 @@ En caso necesario, en GNOME alternar entre las disposiciones de teclado configur
 
 {{< image
     gallery="true"
-    image1="image:keyboard-iso-us-alt.png" optionsthumb1="300x200" title1="Teclado ISO (en, alt)"
-    image2="image:gnome-keyboard-layout-selector.png" optionsthumb2="300x200" title2="Selector de disposición de teclado GNOME"
+    image1="image:keyboard-iso-us-alt.webp" optionsthumb1="300x200" title1="Teclado ISO (en, alt)"
+    image2="image:gnome-keyboard-layout-selector.webp" optionsthumb2="300x200" title2="Selector de disposición de teclado GNOME"
     caption="Teclado ISO (en, alt) y selector de disposición de teclado GNOME" >}}
 
 ### Marcas y modelos de teclados mecánicos

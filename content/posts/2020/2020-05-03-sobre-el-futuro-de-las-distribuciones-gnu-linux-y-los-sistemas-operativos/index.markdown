@@ -92,7 +92,7 @@ Si a Linux le surge una alternativa no será porque es malo sino porque no tiene
 
 {{< image
     gallery="false"
-    image1="logotype:minix.jpg" optionsthumb1="200x150" title1="Minix"
+    image1="logotype:minix.webp" optionsthumb1="200x150" title1="Minix"
     image2="logotype:hurd.svg" optionsthumb2="200x150" title2="GNU/hurd"
     caption="Sistemas operativos basados en microkernel" >}}
 

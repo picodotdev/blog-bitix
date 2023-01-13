@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:geonames.png"
-imagePost: "image:geonames.png"
+imageHead: "image:geonames.webp"
+imagePost: "image:geonames.webp"
 tags: ["programacion", "planeta-codigo"]
 summary: "Entre las funcionalidades habituales en una aplicación está un formulario para introducir una dirección. El formulario de dirección consta de varios campos en el que suele ser recomendable realizar unas mínimas validaciones como que el código postal o ciudad sea correcto para evitar errores inadvertidos del usuario o intencionados con información incorrecta. La base de datos de GeoNames proporciona información geográfica muy útil y de forma gratuita que incluye países, ciudades, subdivisiones administrativas, códigos postales, nombres en diferentes idiomas y mucha otra información de todos los paises del mundo."
 ---

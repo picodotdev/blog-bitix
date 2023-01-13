@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:log4shell.png"
+imagePost: "image:log4shell.webp"
 tags: ["java", "planeta-codigo", "seguridad"]
 summary: "Dada la complejidad de muchas aplicaciones de software hace que estas usen gran cantidad de dependencias, muchas de proyectos de software libre o código abierto. Es muy probable que con el paso del tiempo en alguna de las dependencias de las aplicaciones se descubra un error de seguridad importante y requiera una actualización lo más pronto posible. No es posible estar completamente a salvo de estar afectado por un fallo de seguridad en el software por mucho que se intente, por este motivo la mejor estrategia es detectar proactivamente y temprana los errores de seguridad y actualizar las dependencias a nuevas versiones con el fallo corregido. Varias organizaciones identifican, definen, describen y catalogan los fallos de seguridad de forma pública en una base de datos y hay herramientas automatizadas que con las bases de datos de fallos de seguridad permiten analizar las dependencias de un proyecto. Un ejemplo ha sido el caso de la librería Log4j 2 que por su gravedad y y popularidad muchas organizaciones han estado afectadas."
 
@@ -58,7 +58,7 @@ Esta misma historia ya se repitió en el 2014 con [OpenSSL][openssl] con el deno
 
 {{< image
     gallery="false"
-    image1="image:log4shell.png" optionsthumb1="650x450" title1="Logotipo de Log4Shell"
+    image1="image:log4shell.webp" optionsthumb1="650x450" title1="Logotipo de Log4Shell"
     caption="Logotipo de Log4Shell" source="https://www.lunasec.io/" >}}
 
 ### Analizar y detectar fallos de seguridad en las dependencias de Java con Gradle y Maven

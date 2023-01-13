@@ -38,7 +38,7 @@ Las ventajas de estas herramientas web sobre las siguientes con wget y LinkCheck
 
 {{< image
     gallery="true"
-    image1="image:w3c-linkchecker.png" optionsthumb1="300x200" title1="W3C Link Checker"
+    image1="image:w3c-linkchecker.webp" optionsthumb1="300x200" title1="W3C Link Checker"
     caption="W3C Link Checker" >}}
 
 ### Comprobar enlaces rotos con wget

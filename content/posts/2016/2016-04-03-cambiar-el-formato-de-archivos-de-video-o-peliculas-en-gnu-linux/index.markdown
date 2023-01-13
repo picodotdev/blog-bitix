@@ -55,7 +55,7 @@ Por otro lado, los vídeos pueden tener múltiples pistas de audio y subtítulos
 
 {{< image
     gallery="true"
-    image1="image:ffmpeg-i.png" optionsthumb1="650x450" title1="Información de un vídeo" >}}
+    image1="image:ffmpeg-i.webp" optionsthumb1="650x450" title1="Información de un vídeo" >}}
 
 ### Operaciones comunes con archivos de vídeo
 
@@ -69,7 +69,7 @@ Con el parámetro _-c:v_ indicamos el codificador de vídeo, con _-c:a_ el codif
 
 {{< image
     gallery="true"
-    image1="image:ffmpeg-output.png" optionsthumb1="650x450" title1="Salida conversión de MKV a MPG" >}}
+    image1="image:ffmpeg-output.webp" optionsthumb1="650x450" title1="Salida conversión de MKV a MPG" >}}
 
 #### Cambiar la resolución del vídeo
 
@@ -93,7 +93,7 @@ Si no tenemos instalado un reproductor de vídeo con el comando `ffplay` podemos
 
 {{< image
     gallery="true"
-    image1="image:ffplay.jpg" optionsthumb1="300x250" title1="FFplay" >}}
+    image1="image:ffplay.webp" optionsthumb1="300x250" title1="FFplay" >}}
 
 #### Extraer una imagen de un vídeo
 

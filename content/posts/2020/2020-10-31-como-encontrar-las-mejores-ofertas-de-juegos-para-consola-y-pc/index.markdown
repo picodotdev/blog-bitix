@@ -11,8 +11,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:the-witcher-3.jpg"
-imagePost: "image:the-witcher-3.jpg"
+imageHead: "image:the-witcher-3.webp"
+imagePost: "image:the-witcher-3.webp"
 tags: ["juegos"]
 summary: "En las diferentes tiendas digitales de venta de juegos cada semana o quincena hay nuevos juegos con importantes descuentos y ofertas con los que ahorrar, momento ideal para comprarlos a precio reducido aquellos que están en la lista de deseados y bajo seguimiento. Algunas tiendas de juegos envían notificaciones con los juegos en oferta de la lista de favoritos, otras páginas especializadas permiten además hacer un seguimiento del histórico de los precios y también recibir alertas cuando alguno de los juegos bajo seguimiento varía su precio con un descuento durante un periodo de unos días."
 ---
@@ -31,9 +31,9 @@ En mi pequeño catálogo de juegos ya tengo más de 10 juegos y por ninguno de e
 
 {{< image
     gallery="true"
-    image1="image:the-witcher-3.jpg" optionsthumb1="300x200" title1="The Witcher 3"
-    image2="image:watch-dogs.jpg" optionsthumb2="300x200" title2="Watch Dogs"
-    image3="image:frostpunk.jpg" optionsthumb3="300x200" title3="Frostpunk" >}}
+    image1="image:the-witcher-3.webp" optionsthumb1="300x200" title1="The Witcher 3"
+    image2="image:watch-dogs.webp" optionsthumb2="300x200" title2="Watch Dogs"
+    image3="image:frostpunk.webp" optionsthumb3="300x200" title3="Frostpunk" >}}
 
 {{< tableofcontents >}}
 
@@ -53,9 +53,9 @@ En este ejemplo a fecha de noviembre de 2020 el juego [Red Dead Redemption 2](ht
 
 {{< image
     gallery="true"
-    image1="image:red-dead-redemption-2.png" optionsthumb1="300x200" title1="Descuento del 58% en un juego"
-    image2="image:psdeals-price-history.png" optionsthumb2="300x200" title2="Historial de precios de un juego"
-    image3="image:metal-gear-solid-v.png" optionsthumb3="300x200" title3="Descuento del 80% en un juego"
+    image1="image:red-dead-redemption-2.webp" optionsthumb1="300x200" title1="Descuento del 58% en un juego"
+    image2="image:psdeals-price-history.webp" optionsthumb2="300x200" title2="Historial de precios de un juego"
+    image3="image:metal-gear-solid-v.webp" optionsthumb3="300x200" title3="Descuento del 80% en un juego"
     caption="Descuento e historial de precios en un juego en la página PS Deals" >}}
 
 Estas páginas son es el equivalente de [monitorización de precios CamelCamelCamel para Amazon][blogbitix-414] e igual de útil.

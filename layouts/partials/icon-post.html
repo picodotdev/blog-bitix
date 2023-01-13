@@ -1,27 +1,27 @@
 {{ if (in .Params.tags "tapestry") }}
-  {{ .RenderString "![](url=logotype:apache-tapestry-icon-light.svg,size=32x32,gallery=false,layout=,lazy=false 'Apache Tapestry')" }}
+  {{ .RenderString "![](url=\"logotype:apache-tapestry-icon-light.svg,options=32x32,gallery=false,layout=,lazy=false\" 'Apache Tapestry')" }}
 {{ else if (in .Params.tags "java") }}
-  {{ .RenderString "![](url=logotype:java.svg,size=32x32,gallery=false,layout=,lazy=false 'Java')" }}
+  {{ .RenderString "![](url=\"logotype:java.svg,options=32x32,gallery=false,layout=,lazy=false\" 'Java')" }}
 {{ else if (in .Params.tags "gnu-linux") }}
-  {{ .RenderString "![](url=logotype:linux.svg,size=32x32,gallery=false,layout=,lazy=false 'Linux')" }}
+  {{ .RenderString "![](url=\"logotype:linux.svg,options=32x32,gallery=false,layout=,lazy=false\" 'Linux')" }}
 {{ else if (in .Params.tags "javascript") }}
-  {{ .RenderString "![](url=logotype:javascript.svg,size=32x32,gallery=false,layout=,lazy=false 'JavaScript')" }}
+  {{ .RenderString "![](url=\"logotype:javascript.svg,options=32x32,gallery=false,layout=,lazy=false\" 'JavaScript')" }}
 {{ else if (in .Params.tags "juegos") }}
-  {{ .RenderString "![](url=logotype:playstation.svg,size=32x32,gallery=false,layout=,lazy=false 'Juegos')" }}
+  {{ .RenderString "![](url=\"logotype:playstation.svg,options=32x32,gallery=false,layout=,lazy=false\" 'Juegos')" }}
 {{ else if (in .Params.tags "software-libre") }}
-  {{ .RenderString "![](url=logotype:gnu.svg,size=32x32,gallery=false,layout=,lazy=false 'Software libre')" }}
+  {{ .RenderString "![](url=\"logotype:gnu.svg,options=32x32,gallery=false,layout=,lazy=false\" 'Software libre')" }}
 {{ else if (in .Params.tags "web") }}
-  {{ .RenderString "![](url=logotype:html.svg,size=32x32,gallery=false,layout=,lazy=false 'Web')" }}
+  {{ .RenderString "![](url=\"logotype:html.svg,options=32x32,gallery=false,layout=,lazy=false\" 'Web')" }}
 {{ else if or (in .Params.tags "desempaquetado") (in .Params.series "desempaquetado-tecnologia") (in .Params.series "desempaquetado-otros") }}
-  {{ .RenderString "![](url=logotype:amazon.svg,size=32x32,gallery=false,layout=,lazy=false 'Desempaquetdo')" }}
+  {{ .RenderString "![](url=\"logotype:amazon.svg,options=32x32,gallery=false,layout=,lazy=false\" 'Desempaquetdo')" }}
 {{ else if (in .Params.tags "blog") }}
-  {{ .RenderString "![](url=logotype:blogbitix.svg,size=32x32,gallery=false,layout=,lazy=false 'Blog')" }}
+  {{ .RenderString "![](url=\"logotype:blogbitix.svg,options=32x32,gallery=false,layout=,lazy=false\" 'Blog')" }}
 {{ else if (in .Params.tags "microsoft") }}
-  {{ .RenderString "![](url=logotype:microsoft.svg,size=32x32,gallery=false,layout=,lazy=false 'Microsoft')" }}
+  {{ .RenderString "![](url=\"logotype:microsoft.svg,options=32x32,gallery=false,layout=,lazy=false\" 'Microsoft')" }}
 {{ else if (in .Params.tags "windows") }}
-  {{ .RenderString "![](url=logotype:windows.svg,size=32x32,gallery=false,layout=,lazy=false 'Windows')" }}
+  {{ .RenderString "![](url=\"logotype:windows.svg,options=32x32,gallery=false,layout=,lazy=false\" 'Windows')" }}
 {{ else if (in .Params.tags "apple") }}
-  {{ .RenderString "![](url=logotype:apple.svg,size=32x32,gallery=false,layout=,lazy=false 'Apple')" }}
+  {{ .RenderString "![](url=\"logotype:apple.svg,options=32x32,gallery=false,layout=,lazy=false\" 'Apple')" }}
 {{ else if (in .Params.tags "programacion") }}
   <i class="bi bi-code-square archive-icon" title="Programación"></i>
 {{ else if (in .Params.tags "hardware") }}

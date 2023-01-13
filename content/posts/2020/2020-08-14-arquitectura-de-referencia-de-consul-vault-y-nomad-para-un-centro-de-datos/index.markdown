@@ -11,7 +11,7 @@ sharing: true
 comments: true
 promoted: false
 imageHead: "logotype:hashicorp-text.svg"
-imagePost: "image:consul-reference-architecture.png"
+imagePost: "image:consul-reference-architecture.webp"
 tags: ["gnu-linux", "planeta-codigo"]
 series: ["hashicorp"]
 summary: "HashiCorp proporciona una buena documentación de sus productos con tutoriales, documentación de las herramientas y vídeos de formación en su canal de Youtube. Aunque en la documentación está todo explicado para poner en práctica una arquitectura para un caso más real y con cierto grado de producción requiere leer múltiples artículos para aplicar y aglutinar todo lo descrito. En este artículo muestro una arquitectura de referencia de varios productos de HashiCorp como Consul, Vault y Nomad que forman un centro de datos o entorno de ejecución para servicios en un ejemplo aprovisionado con Vagrant en máquinas virtuales de VirtualBox."
@@ -38,7 +38,7 @@ En este artículo muestro un ejemplo usando tres de estos mismos productos que s
 
 {{< image
     gallery="true"
-    image1="image:hashicorp-static-dynamic.png" optionsthumb1="650x450" title1="Diferencias entre entornos estáticos anteriores y dinámicos nuevos"
+    image1="image:hashicorp-static-dynamic.webp" optionsthumb1="650x450" title1="Diferencias entre entornos estáticos anteriores y dinámicos nuevos"
     caption="Diferencias entre entornos estáticos anteriores y dinámicos nuevos" >}}
 
 Este artículo hace uso, está relacionado y se complementa con otros artículos que muestran varias de las funcionalidades individuales utilizadas en el ejemplo.
@@ -64,20 +64,20 @@ Este artículo hace uso, está relacionado y se complementa con otros artículos
 
 {{< image
     gallery="true"
-    image1="image:hashicorp-products-1.png" optionsthumb1="200x150" title1="Productos de HashiCorp"
-    image2="image:hashicorp-products-2.png" optionsthumb2="200x150" title2="Productos de HashiCorp"
-    image3="image:hashicorp-products-2.png" optionsthumb3="200x150" title3="Productos de HashiCorp"
+    image1="image:hashicorp-products-1.webp" optionsthumb1="200x150" title1="Productos de HashiCorp"
+    image2="image:hashicorp-products-2.webp" optionsthumb2="200x150" title2="Productos de HashiCorp"
+    image3="image:hashicorp-products-2.webp" optionsthumb3="200x150" title3="Productos de HashiCorp"
     caption="Productos de HashiCorp" >}}
 
 {{< image
     gallery="true"
-    image1="image:hashicorp-consul-before-after.png" optionsthumb1="200x150" title1="Antes y después con Consul"
-    image2="image:hashicorp-vault-before-after.png" optionsthumb2="200x150" title2="Antes y después con Vault"
-    image3="image:hashicorp-nomad-before-after.png" optionsthumb3="200x150" title3="Antes y después con Nomad" >}}
+    image1="image:hashicorp-consul-before-after.webp" optionsthumb1="200x150" title1="Antes y después con Consul"
+    image2="image:hashicorp-vault-before-after.webp" optionsthumb2="200x150" title2="Antes y después con Vault"
+    image3="image:hashicorp-nomad-before-after.webp" optionsthumb3="200x150" title3="Antes y después con Nomad" >}}
 {{< image
     gallery="true"
-    image1="image:hashicorp-terraform-before-after.png" optionsthumb1="200x150" title1="Antes y después con Terraform"
-    image2="image:hashicorp-terraform-before-after.png" optionsthumb2="200x150" title2="Ecosistema con Nomad"
+    image1="image:hashicorp-terraform-before-after.webp" optionsthumb1="200x150" title1="Antes y después con Terraform"
+    image2="image:hashicorp-terraform-before-after.webp" optionsthumb2="200x150" title2="Ecosistema con Nomad"
     caption="Ecosistema con Nomad" >}}
 
 #### Consul
@@ -137,9 +137,9 @@ Estos son los esquemas de las arquitecturas de referencia de Consul, Vault y Nom
 
 {{< image
     gallery="true"
-    image1="image:consul-reference-architecture.png" optionsthumb1="200x150" title1="Arquitectura de referencia de Consul"
-    image2="image:vault-reference-architecture.png" optionsthumb2="200x150" title2="Arquitectura de referencia de Vault"
-    image3="image:nomad-reference-architecture.png" optionsthumb3="200x150" title3="Arquitectura de referencia de Nomad"
+    image1="image:consul-reference-architecture.webp" optionsthumb1="200x150" title1="Arquitectura de referencia de Consul"
+    image2="image:vault-reference-architecture.webp" optionsthumb2="200x150" title2="Arquitectura de referencia de Vault"
+    image3="image:nomad-reference-architecture.webp" optionsthumb3="200x150" title3="Arquitectura de referencia de Nomad"
     caption="Arquitecturas de referencia de Consul, Vault y Nomad" >}}
 
 #### Precio
@@ -261,7 +261,7 @@ Vault se comunica con Consul para utilizar el almacén de clave-valor o KV en el
 
 {{< image
     gallery="true"
-    image1="image:virtualbox.png" optionsthumb1="300x250" title1="Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant"
+    image1="image:virtualbox.webp" optionsthumb1="300x250" title1="Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant"
     caption="Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant" >}}
 
 La comunicación entre Consul, Vault y Nomad se realiza utilizando diferentes protocolos y puertos de red, el entorno de computación como el que proporcionan los proveedores de computación en la nube no es confiable por ser compartido aún con las medidas de aislamiento de red que implementan. Para mayor seguridad Consul, Vault y Nomad permite utilizar comunicaciones cifradas para todo el tráfico de red entrante y saliente para lo que es necesario generar certificados que permitan cifrar las comunicaciones y permitan identificar tanto al servidor como al cliente con autenticación mutua basada en certificados.
@@ -299,7 +299,7 @@ Consul tiene la función de servidor DNS con el catálogo de servicios registrad
 
 {{< image
     gallery="true"
-    image1="image:consul-dns.png" optionsthumb1="300x250" title1="Servicio DNS de Consul accedido desde el servidor de Nomad"
+    image1="image:consul-dns.webp" optionsthumb1="300x250" title1="Servicio DNS de Consul accedido desde el servidor de Nomad"
     caption="Servicio DNS de Consul que expone el catálogo de servicios accedido desde el servidor de Nomad" >}}
 
 Este es el archivo de aprovisionamiento de Vagrant para crear las máquinas virtuales en VirtualBox. En todos los servidores no son necesarias todas las herramienta pero por simplicidad en el ejemplo se instalan, por ejemplo, en el servidor de Nomad no es necesario instalar el binario de Vault.
@@ -353,12 +353,12 @@ Las consolas de administración muestran el estado de centro de datos y con todo
 
 {{< image
     gallery="true"
-    image1="image:consul-console.png" optionsthumb1="300x250" title1="Consola web de Consul con los servicios registrados y su estado de salud"
-    image2="image:consul-console-nodes.png" optionsthumb2="300x250" title2="Consola web de Consul con los nodos registrados y su estado de salud" >}}
+    image1="image:consul-console.webp" optionsthumb1="300x250" title1="Consola web de Consul con los servicios registrados y su estado de salud"
+    image2="image:consul-console-nodes.webp" optionsthumb2="300x250" title2="Consola web de Consul con los nodos registrados y su estado de salud" >}}
 {{< image
     gallery="true"
-    image1="image:vault-console.png" optionsthumb1="300x250" title1="Consola web de Vault"
-    image2="image:nomad-console.png" optionsthumb2="300x250" title2="Consola web de Nomad"
+    image1="image:vault-console.webp" optionsthumb1="300x250" title1="Consola web de Vault"
+    image2="image:nomad-console.webp" optionsthumb2="300x250" title2="Consola web de Nomad"
     caption="Consolas web de Consul, Vault y Nomad y estados de salud de los servicios y nodos" >}}
 
 #### Interfaz de línea de comandos para Consul, Vault y Nomad
@@ -379,14 +379,14 @@ El siguiente es la definición de un servicio o _job_ para Nomad que define un s
 
 {{< image
     gallery="true"
-    image1="image:nomad-job-status.png" optionsthumb1="300x250" title1="Estado de un job en la consola web de Nomad"
-    image2="image:nginx.png" optionsthumb2="300x250" title2="Servicio de Nginx ejecutado en Nomad como un contenedor de Docker"
+    image1="image:nomad-job-status.webp" optionsthumb1="300x250" title1="Estado de un job en la consola web de Nomad"
+    image2="image:nginx.webp" optionsthumb2="300x250" title2="Servicio de Nginx ejecutado en Nomad como un contenedor de Docker"
     caption="Ejecución, estado de un job con un servicio de Nginx ejecutando en un contenedor de Docker en la consola web de Nomad" >}}
 
 {{< image
     gallery="true"
-    image1="image:consul-services-web.png" optionsthumb1="300x250" title1="Servicios en consul con el servicio de Nginx registrado por Nomad"
-    image2="image:datacenter-commandline-information.png" optionsthumb2="300x250" title2="Información de estado del centro de datos obtenido desde la línea de comandos"
+    image1="image:consul-services-web.webp" optionsthumb1="300x250" title1="Servicios en consul con el servicio de Nginx registrado por Nomad"
+    image2="image:datacenter-commandline-information.webp" optionsthumb2="300x250" title2="Información de estado del centro de datos obtenido desde la línea de comandos"
     caption="Servicios en consul con el servicio de Nginx registrado por Nomad e información de estado del centro de datos obtenido desde la línea de comandos" >}}
 
 ### Requerimientos de operaciones

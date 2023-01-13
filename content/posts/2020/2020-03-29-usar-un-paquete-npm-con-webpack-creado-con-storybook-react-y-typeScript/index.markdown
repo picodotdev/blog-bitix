@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:hello-world-page.png"
+imagePost: "image:hello-world-page.webp"
 tags: ["javascript", "planeta-codigo", "web"]
 ---
 
@@ -55,7 +55,7 @@ En la página de prueba que hace uso del JavaScript producido por Webpack se car
 
 {{< image
     gallery="true"
-    image1="image:hello-world-page.png" optionsthumb1="300x200" title1=""
+    image1="image:hello-world-page.webp" optionsthumb1="300x200" title1=""
     caption="Componente desarrollado en Storybook en una página" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/StorybookComponente" command="npm install && npm run start" %}}

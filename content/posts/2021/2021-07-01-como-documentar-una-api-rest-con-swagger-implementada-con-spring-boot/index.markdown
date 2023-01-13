@@ -52,11 +52,11 @@ La documentación en formato HTML de Swagger tiene el siguiente aspecto con la q
 
 {{< image
     gallery="true"
-    image1="image:swagger-ui-1.png" optionsthumb1="650x450" title1="Documentación de Swagger UI de una API REST" >}}
+    image1="image:swagger-ui-1.webp" optionsthumb1="650x450" title1="Documentación de Swagger UI de una API REST" >}}
 {{< image
     gallery="true"
-    image1="image:swagger-ui-2.png" optionsthumb1="300x250" title1="Documentación de Swagger UI de una API REST"
-    image2="image:swagger-ui-3.png" optionsthumb2="300x250" title2="Documentación de Swagger UI de una API REST"
+    image1="image:swagger-ui-2.webp" optionsthumb1="300x250" title1="Documentación de Swagger UI de una API REST"
+    image2="image:swagger-ui-3.webp" optionsthumb2="300x250" title2="Documentación de Swagger UI de una API REST"
     caption="Documentación de Swagger UI de una API REST" >}}
 
 ### Ejemplo de documentación REST con Spring Boot y Swagger

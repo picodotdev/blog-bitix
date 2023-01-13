@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:ps4.jpg"
-imagePost: "image:ps4.jpg"
+imageHead: "image:ps4.webp"
+imagePost: "image:ps4.webp"
 tags: ["juegos"]
 series: ["juegos"]
 summary: "Ha una cantidad ingente de juegos nuevos y antiguos a los que jugar. Y múltiples plataformas donde jugar a juegos, las principales PC y consola pero también están los emuladores y aumentarán las personas que lo hacen mediante _streaming_ sin necesidad de gran hardware. Para decidir que plataforma es mejor hay múltiples variables que intervienen, una importante es el precio del hardware, juegos y servicios pero hay algunas otras más. Dada la variabilidad no hay una claramente superior a las otras para todas las personas."

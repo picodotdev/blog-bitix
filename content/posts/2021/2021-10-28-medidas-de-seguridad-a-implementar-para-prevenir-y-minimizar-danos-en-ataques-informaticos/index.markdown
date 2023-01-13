@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:poster.jpg"
+imagePost: "image:poster.webp"
 tags: ["planeta-codigo", "programacion", "seguridad"]
 summary: "Los ataques informáticos dirigidos a los usuarios tienen el objetivo con una motivación económica del delincuente de robarles las credenciales de sus cuentas, datos de tarjetas de crédito y datos personales, otros ataques están dirigidos a los servicios que usan los usuarios. De los ataques dirigidos a los usuarios implementando las medidas de seguridad adecuadas en el servicio varios tipos de ataques son evitables como el _phishing_ que es uno de los más comunes ofreciendo inicio de sesión con segundo factor de autenticación y con otras medidas los daños y riesgos son limitables. Otras medidas de seguridad implementadas en el servicio evita riesgos como usar _salted pasword hashing_. Como programadores los servicios deben hacer uso de buenas prácticas e implementar medidas adicionales para evitar riesgos y daños."
 ---
@@ -69,8 +69,8 @@ Estos son dos ejemplos de correos electrónicos que envía [Gmail][google-gmail]
 
 {{< image
     gallery="true"
-    image1="image:gmail-inicio-sesion.png" optionsthumb1="300x200" title1="Notificación de Gmail de inicio de sesión"
-    image2="image:wallapop-inicio-sesion.png" optionsthumb2="300x200" title2="Notificación de Wallapop de inicio de sesión"
+    image1="image:gmail-inicio-sesion.webp" optionsthumb1="300x200" title1="Notificación de Gmail de inicio de sesión"
+    image2="image:wallapop-inicio-sesion.webp" optionsthumb2="300x200" title2="Notificación de Wallapop de inicio de sesión"
     caption="Correos electrónicos de notificación de inicio de sesión" >}}
 
 ### Registro de actividad
@@ -81,7 +81,7 @@ Además de proporcionar al usuario un registro de actividad al mismo tiempo este
 
 {{< image
     gallery="true"
-    image1="image:gmail-registro-actividad.png" optionsthumb1="300x200" title1="Registro de actividad en una cuenta de Gmail"
+    image1="image:gmail-registro-actividad.webp" optionsthumb1="300x200" title1="Registro de actividad en una cuenta de Gmail"
     caption="Registro de actividad en una cuenta de Gmail" >}}
 
 ### Establecer límites de uso

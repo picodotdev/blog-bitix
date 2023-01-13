@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:world-of-warships-legends.jpg"
-imagePost: "image:world-of-warships-legends.jpg"
+imageHead: "image:world-of-warships-legends.webp"
+imagePost: "image:world-of-warships-legends.webp"
 tags: ["juegos"]
 series: ["juegos"]
 summary: "El juego World of Warships es un juego de estrategia en el que la habilidad en el manejo del mando o disparo no es tan importante para ser un jugador que tenga un nivel por encima de la media. Otra parte importante de este juego es el juego en equipo en la que cada miembro según clase de barco y características ha de desempeñar su papel para que el equipo consiga la victoria. Conocer la misión de cada barco, las características de barco propio y del contrario junto con otras nociones básicas como que objetivos enemigos son los prioritarios, dónde posicionarse y que errores comunes no cometer también contribuyen a ser un mejor jugador."
@@ -31,7 +31,7 @@ Por ello es fundamental tener unas nociones básicas sobre estrategia según el 
 
 {{< image
     gallery="true"
-    image1="image:world-of-warships-legends.jpg" optionsthumb1="650x450" title1="Imagen inicial del juego World of Warships en PlayStation 4"
+    image1="image:world-of-warships-legends.webp" optionsthumb1="650x450" title1="Imagen inicial del juego World of Warships en PlayStation 4"
     caption="Imagen inicial del juego World of Warships en PlayStation 4" >}}
 
 {{< tableofcontents >}}
@@ -44,8 +44,8 @@ Muchos juegos para coordinarse entre miembros del mismo equipo ofrecen un sistem
 
 {{< image
     gallery="true"
-    image1="image:comunicaciones-1.jpg" optionsthumb1="300x200" title1="Mensajes de comunicaciones"
-    image2="image:comunicaciones-2.jpg" optionsthumb2="300x200" title2="Mensajes de comunicaciones"
+    image1="image:comunicaciones-1.webp" optionsthumb1="300x200" title1="Mensajes de comunicaciones"
+    image2="image:comunicaciones-2.webp" optionsthumb2="300x200" title2="Mensajes de comunicaciones"
     caption="Mensajes de comunicaciones" >}}
 
 Según la batalla el juego tiene diferentes objetivos, dominación o capturar la base enemiga. Normalmente las batallas se ganan por eliminar a todos los jugadores del equipo rival pero esto es propiciado en parte por obligar al equipo rival a exponerse. En el caso de dominación en el que otro forma habitual de victoria es a los puntos, si el equipo rival o nuestro equipo no reacciona en no mucho tiempo a las capturas del otro equipo al final se pierde a los puntos, en el caso de dominación quizá se gane por eliminación de todos los rivales pero la situación que en algunos casos ha provocado esto es por obligación a exponerse.
@@ -68,7 +68,7 @@ Aunque los destructores tienen el mejor nivel de ocultamiento que los hace difí
 
 {{< image
     gallery="true"
-    image1="image:humo-destructor.jpg" optionsthumb1="300x200" title1="Humo de destructor y de algunos cruceros"
+    image1="image:humo-destructor.webp" optionsthumb1="300x200" title1="Humo de destructor y de algunos cruceros"
     caption="Humo de destructor y algunos cruceros" >}}
 
 #### Objetivos de los cruceros
@@ -85,8 +85,8 @@ Después de los destructores los cruceros son el siguiente objetivo prioritario 
 
 {{< image
     gallery="true"
-    image1="image:habilidad-ingenio-1.jpg" optionsthumb1="300x200" title1="Habilidad ingenio útil en cruceros"
-    image2="image:habilidad-ingenio-2.jpg" optionsthumb2="300x200" title2="Habilidad ingenio útil en cruceros"
+    image1="image:habilidad-ingenio-1.webp" optionsthumb1="300x200" title1="Habilidad ingenio útil en cruceros"
+    image2="image:habilidad-ingenio-2.webp" optionsthumb2="300x200" title2="Habilidad ingenio útil en cruceros"
     caption="Habilidad ingenio útil en cruceros" >}}
 
 #### Objetivos de los acorazados
@@ -109,9 +109,9 @@ Hay algunas formas de defenderse de los destructores y de los torpedos. Una es p
 
 {{< image
     gallery="true"
-    image1="image:indicador-torpedos-1.jpg" optionsthumb1="200x150" title1="Indicador de impacto de torpedos"
-    image2="image:indicador-torpedos-2.jpg" optionsthumb2="200x150" title2="Indicador de impacto de torpedos"
-    image3="image:indicador-torpedos-3.jpg" optionsthumb3="200x150" title3="Indicador de impacto de torpedos"
+    image1="image:indicador-torpedos-1.webp" optionsthumb1="200x150" title1="Indicador de impacto de torpedos"
+    image2="image:indicador-torpedos-2.webp" optionsthumb2="200x150" title2="Indicador de impacto de torpedos"
+    image3="image:indicador-torpedos-3.webp" optionsthumb3="200x150" title3="Indicador de impacto de torpedos"
     caption="Indicador de impacto de torpedos" >}}
 
 Otra forma de defensa contra los torpedos es conociendo cuando el destructor los está lanzando. Los torpedos se lanzan por los laterales de modo que si un destructor gira para ponerse de forma lateral puede ser indicativo de que los está lanzando o si está girando para alejarse de que ya los ha lanzado y ahora intenta ocultarse. Al mismo tiempo lanzar los torpedos en los destructores requiere cambiar entre los cañones y la lanzadera de torpedos de modo que si un destructor está disparando con los cañones y deja de disparar con cadencia de recargar es indicativo de que el enemigo ha lanzado o está lanzando los torpedos.
@@ -131,7 +131,7 @@ Las excepciones a la regla general de selección de objetivos son las oportunida
 
 {{< image
     gallery="true"
-    image1="image:seleccion-objetivo.jpg" optionsthumb1="300x200" title1="Selección de objetivo"
+    image1="image:seleccion-objetivo.webp" optionsthumb1="300x200" title1="Selección de objetivo"
     caption="Selección de objetivo" >}}
 
 #### Posicionamiento y fuego cruzado
@@ -146,8 +146,8 @@ El juego en las batallas normales suele desplegar a los aliados y a los enemigos
 
 {{< image
     gallery="true"
-    image1="image:ganar-lado-1.jpg" optionsthumb1="300x200" title1="Ganar el lado de la batalla según despliegue"
-    image2="image:ganar-lado-2.jpg" optionsthumb2="300x200" title2="Ganar el lado de la batalla según despliegue"
+    image1="image:ganar-lado-1.webp" optionsthumb1="300x200" title1="Ganar el lado de la batalla según despliegue"
+    image2="image:ganar-lado-2.webp" optionsthumb2="300x200" title2="Ganar el lado de la batalla según despliegue"
     caption="Ganar el lado de la batalla según despliegue" >}}
 
 #### Errores comunes
@@ -184,7 +184,7 @@ También, conocer la distribución de los puntos de blindaje y posición de las 
 
 {{< image
     gallery="true"
-    image1="image:blindaje.jpg" optionsthumb1="300x250" title1="Blindaje de un acorazado"
+    image1="image:blindaje.webp" optionsthumb1="300x250" title1="Blindaje de un acorazado"
     caption="Blindaje de un acorazado" >}}
 
 #### Barcos de las diferentes naciones
@@ -223,9 +223,9 @@ Subir un capitan al nivel 7 no cuestan muchas órdenes de promoción y permite a
 
 {{< image
     gallery="true"
-    image1="image:capitan-destructor.jpg" optionsthumb1="200x150" title1="Capitán destructor"
-    image2="image:capitan-crucero.jpg" optionsthumb2="200x150" title2="Capitán crucero"
-    image3="image:capitan-acorazado.jpg" optionsthumb3="200x150" title3="Capitán acorazado"
+    image1="image:capitan-destructor.webp" optionsthumb1="200x150" title1="Capitán destructor"
+    image2="image:capitan-crucero.webp" optionsthumb2="200x150" title2="Capitán crucero"
+    image3="image:capitan-acorazado.webp" optionsthumb3="200x150" title3="Capitán acorazado"
     caption="Capitanes adecuados para cada tipo de barco según su habilidad base" >}}
 
 ### Canales de YouTube sobre el juego
@@ -246,8 +246,8 @@ Es un juego competitivo, hay jugadores muy buenos, quizá con mayores niveles de
 
 {{< image
     gallery="true"
-    image1="image:ratio-victorias-1.jpg" optionsthumb1="300x200" title1="Proporción de victorias"
-    image2="image:ratio-victorias-2.jpg" optionsthumb2="300x200" title2="Proporción de victorias"
+    image1="image:ratio-victorias-1.webp" optionsthumb1="300x200" title1="Proporción de victorias"
+    image2="image:ratio-victorias-2.webp" optionsthumb2="300x200" title2="Proporción de victorias"
     caption="Proporción de victorias" >}}
 
 ### Diferencias con la versión de PC

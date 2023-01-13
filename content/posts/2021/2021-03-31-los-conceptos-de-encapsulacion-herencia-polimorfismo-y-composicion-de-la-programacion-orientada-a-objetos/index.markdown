@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:polimorfism.png"
+imagePost: "image:polimorfism.webp"
 tags: ["java", "programacion"]
 summary: "La programación orientada a objetos es un paradigma adoptado por todos lenguajes modernos y publicados en las últimas décadas. La programación orientada a objetos proporciona una sintaxis en el lenguaje para definir abstracciones que hacen sencillo utilizar conceptos cuya implementación es compleja. La encapsulación, la abstracción, la herencia, el polimorfismo, la composición y la inyección de dependencias son conceptos fundamentales a conocer en la programación orientada a objetos."
 ---
@@ -51,7 +51,7 @@ Un avión es un objeto físico del mundo real con multitud de propiedades, desde
 
 {{< image
     gallery="true"
-    image1="image:abstraction.png" optionsthumb1="650x450" title1="Abstracción en dos modelos diferentes de un objeto"
+    image1="image:abstraction.webp" optionsthumb1="650x450" title1="Abstracción en dos modelos diferentes de un objeto"
     caption="Abstracción en dos modelos diferentes de un objeto" source="matiasbeltramone.github.io" >}}
 
 #### Objeto, clase e instancia
@@ -96,7 +96,7 @@ En Java las clases abstractas no pueden instanciarse pero si ser extendidas por 
 
 {{< image
     gallery="true"
-    image1="image:classes-interfaces.png" optionsthumb1="650x450" title1="Clases, herencia e interfaces"
+    image1="image:classes-interfaces.webp" optionsthumb1="650x450" title1="Clases, herencia e interfaces"
     caption="Clases, herencia e interfaces" source="matiasbeltramone.github.io" >}}
 
 Desde la versión de Java 8 las interfaces con los métodos _default_ pueden proporcionar implementaciones para métodos.
@@ -114,7 +114,7 @@ El polimorfismo es una propiedad por la cual el método invocado varía en funci
 
 {{< image
     gallery="true"
-    image1="image:polimorfism.png" optionsthumb1="650x450" title1="Polimorfismo"
+    image1="image:polimorfism.webp" optionsthumb1="650x450" title1="Polimorfismo"
     caption="Polimorfismo" source="matiasbeltramone.github.io" >}}
 
 En una jerarquía de clases que representen diferentes figuras geométricas dos operaciones son el cálculo del área y de la longitud del perímetro. La fórmula matemática depende de la clase de figura. En el caso de un cuadrado y de un círculo las fórmulas para el cálculo del área y perímetro son distintas.

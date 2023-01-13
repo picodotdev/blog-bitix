@@ -22,7 +22,7 @@ El sábado 23 de mayo de 2015 el lenguaje Java cumple 20 años de historia y aú
 
 {{< image
     gallery="false"
-    image1="image:java20.jpg" optionsthumb1="600x450" title1="Java 20 años (1995-2015)" >}}
+    image1="image:java20.webp" optionsthumb1="600x450" title1="Java 20 años (1995-2015)" >}}
 
 En [JavaWorld][javaworld] ha publicado varios artículos para celebrar el aniversario comentando su futuro, su pasado y presente o que notables características reunió en su momento para ser hoy uno de los lenguajes más usados.
 

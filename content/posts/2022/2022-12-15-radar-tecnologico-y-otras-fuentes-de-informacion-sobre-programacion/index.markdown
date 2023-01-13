@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:thoughtworks-radar.png"
+imagePost: "image:thoughtworks-radar.webp"
 tags: ["planeta-codigo", "programacion"]
 summary: "Conocer que herramientas hay disponibles permite elegir aquellas que más apropiadas sean para resolver un problema, las herramientas no son el fin pero si un medio determinante. Las herramientas usadas diariamente en el trabajo no permiten experimentar y conocer otras nuevas herramientas que en algún momento puedan pasar a considerarse una mejor opción. El radar tecnológico de Thoughtworks hace un resumen al menos dos veces al año a tener en cuenta con los cambios en las herramientas, además permite conocer nuevas herramientas."
 ---
@@ -35,7 +35,7 @@ El radar tecnológico se divide en cuatro aspectos o cuadrantes de técnicas, pl
 
 {{< image
     gallery="true"
-    image1="image:thoughtworks-radar.png" optionsthumb1="650x450" title1="El radar tecnológico de Thoughtworks"
+    image1="image:thoughtworks-radar.webp" optionsthumb1="650x450" title1="El radar tecnológico de Thoughtworks"
     caption="El radar tecnológico de Thoughtworks" >}}
 
 ### Otras fuentes de información

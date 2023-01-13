@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:consul-connect-communications.png"
+imagePost: "image:consul-connect-communications.webp"
 tags: ["gnu-linux", "planeta-codigo"]
 series: ["hashicorp"]
 summary: "La configuración de seguridad estática y basada en direcciones IP no es adecuada en un entorno en el que los recursos de computación está compartidos y no son confiables, ni para aplicaciones basadas en microservicios cuyo número de servicios e instancias cambia a lo largo del tiempo. Consul y Consul Connect ofrecen un mecanismo de comunicación segura adaptados a la computación en la nube y adecuado para aplicaciones basadas en microservicios."
@@ -30,20 +30,20 @@ Una de estas herramientas es [Consul][Consul] que proporciona la funcionalidad d
 
 {{< image
     gallery="true"
-    image1="image:infrastructure-static.png" optionsthumb1="300x200" title1="Infraestructura estática"
-    image2="image:infrastructure-static-approach.png" optionsthumb2="300x200" title2="Infraestructura estática"
+    image1="image:infrastructure-static.webp" optionsthumb1="300x200" title1="Infraestructura estática"
+    image2="image:infrastructure-static-approach.webp" optionsthumb2="300x200" title2="Infraestructura estática"
     caption="Infraestructura estática" >}}
 {{< image
     gallery="true"
-    image1="image:infrastructure-dynamic.png" optionsthumb1="300x200" title1="Infraestructura dinámica"
-    image2="image:infrastructure-dynamic-approach.png" optionsthumb2="300x200" title2="Infraestructura dinámica"
+    image1="image:infrastructure-dynamic.webp" optionsthumb1="300x200" title1="Infraestructura dinámica"
+    image2="image:infrastructure-dynamic-approach.webp" optionsthumb2="300x200" title2="Infraestructura dinámica"
     caption="Infraestructura dinámica" >}}
 
 El esquema de funcionamiento de [Consul Connect][consul-connect] es hacer que los servicios no se comuniquen directamente entre ellos sino que utilizan _proxys_, la creación del enlace de comunicación se delega en Consul que crea los _proxys_ y con ellos le es posible proporcionar comunicaciones seguras, con autenticación mutua y posibilitando autorización con intenciones. Las intenciones son los permisos que establece el operador de Consul para establecer que dos servicios tiene permitido la comunicación entre ellos, cualquier intento de comunicación si no está aprobado de forma explícita por su intención no se permite.
 
 {{< image
     gallery="true"
-    image1="image:consul-connect-communications.png" optionsthumb1="300x200" title1="Comunicación servicio a servicio con Consul Connect"
+    image1="image:consul-connect-communications.webp" optionsthumb1="300x200" title1="Comunicación servicio a servicio con Consul Connect"
     caption="Comunicación servicio a servicio con Consul Connect" >}}
 
 Otra de las herramientas de [HashiCorp][hashicorp] es [Nomad][nomad] que proporciona la funcionalidad de orquestador de servicios, creando las instancias de los servicios necesarias en los diferentes nodos de computación. Nomad se integra con Consul y Consul Connect haciendo más sencillo utilizar todas estas tecnologías.
@@ -79,9 +79,9 @@ El resultado es esta aplicación sencilla de ejemplo que muestra un contador en 
 
 {{< image
     gallery="true"
-    image1="image:consul-console.png" optionsthumb1="300x200" title1="Consola de administración de Consul"
-    image2="image:nomad-console.png" optionsthumb2="300x200" title2="Consola de administración de Nomad"
-    image3="image:dashboard.png" optionsthumb3="300x200" title3="Servicio count-dashboard"
+    image1="image:consul-console.webp" optionsthumb1="300x200" title1="Consola de administración de Consul"
+    image2="image:nomad-console.webp" optionsthumb2="300x200" title2="Consola de administración de Nomad"
+    image3="image:dashboard.webp" optionsthumb3="300x200" title3="Servicio count-dashboard"
     caption="Consola de administración de Consul y Nomad y servicio count-dashboard" >}}
 
 Dado que el servicio _count-dashboard_ se conecta con el servicio _count-api_ a través de los _proxys_ que crea Consul, Consul es capaz de permitir o denegar la comunicación con las intenciones. Las intenciones son las autorizaciones concedidas a cada servicio origen y servicio destino de comunicación. La ventaja de las intenciones es que son agnósticas de la red como redes físicas, en la nube, basadas en software o cualesquiera otras ya que están basadas en la identidades de los servicios.
@@ -90,14 +90,14 @@ En el modo desarrollo de Consul aún sin una intención la comunicación se auto
 
 {{< image
     gallery="true"
-    image1="image:consul-intentions-deny.png" optionsthumb1="300x200" title1="Intención que deniega la comunicación"
-    image2="image:dashboard-deny.png" optionsthumb2="300x200" title2="Intención que deniega la comunicación"
+    image1="image:consul-intentions-deny.webp" optionsthumb1="300x200" title1="Intención que deniega la comunicación"
+    image2="image:dashboard-deny.webp" optionsthumb2="300x200" title2="Intención que deniega la comunicación"
     caption="Intención que deniega la comunicación" >}}
 
 {{< image
     gallery="true"
-    image1="image:consul-intentions-allow.png" optionsthumb1="300x200" title1="Intención que permite la comunicación"
-    image2="image:dashboard-allow.png" optionsthumb2="300x200" title2="Intención que permite la comunicación"
+    image1="image:consul-intentions-allow.webp" optionsthumb1="300x200" title1="Intención que permite la comunicación"
+    image2="image:dashboard-allow.webp" optionsthumb2="300x200" title2="Intención que permite la comunicación"
     caption="Intención que permite la comunicación" >}}
 
 {{% /post %}}

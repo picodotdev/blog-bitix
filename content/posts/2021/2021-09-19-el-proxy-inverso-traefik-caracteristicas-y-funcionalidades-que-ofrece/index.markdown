@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:traefik-architecture.png"
-imagePost: "image:traefik-architecture.png"
+imageHead: "image:traefik-architecture.webp"
+imagePost: "image:traefik-architecture.webp"
 tags: ["gnu-linux", "planeta-codigo", "software-libre"]
 summary: "Un _proxy_ inverso oculta la complejidad de los servicios para los que hace de intermediario. Al situarse como intermediario el _proxy_ inverso es capaz de proporcionar funcionalidades adicionales como balanceo de carga, limitar el número de peticiones por unidad de tiempo, duplicar peticiones o realizar la autenticación entre otras funciones. Traefik es un _proxy_ inverso diseñado para los entornos _cloud_ dinámicos soportando autoconfigurarción a partir de varios proveedores de registro y descubrimiento de servicios como Consul o Docker, también se integra con herramientas para la observabilidad como Prometheus para métricas y Zipkin y Elastic para trazabilidad y registro de trazas."
 ---
@@ -34,8 +34,8 @@ Como _proxy_ inverso intercepta las peticiones entrantes y las redirige a los se
 
 {{< image
     gallery="true"
-    image1="image:traefik.png" optionsthumb1="300x250" title1="El proxy inverso Traefik"
-    image2="image:traefik-architecture.png" optionsthumb2="300x250" title2="Arquitectura del proxy inverso Traefik"
+    image1="image:traefik.webp" optionsthumb1="300x250" title1="El proxy inverso Traefik"
+    image2="image:traefik-architecture.webp" optionsthumb2="300x250" title2="Arquitectura del proxy inverso Traefik"
     caption="El proxy inverso Traefik y arquitectura" >}}
 
 El ecosistema de Traefik permite integrarse con otras herramientas destacadas soportando de forma nativa observabilidad con trazabilidad distribuida y con varios proveedores de métricas.
@@ -50,12 +50,12 @@ Al iniciar Traefik se integra un panel de información o _dashboard_ en el que o
 
 {{< image
     gallery="true"
-    image1="image:traefik-dashboard.png" optionsthumb1="650x450" title1="El panel de información o dashboard integrado de Traefik" >}}
+    image1="image:traefik-dashboard.webp" optionsthumb1="650x450" title1="El panel de información o dashboard integrado de Traefik" >}}
 {{< image
     gallery="true"
-    image1="image:traefik-dashboard-routes.png" optionsthumb1="200x150" title1="El panel de información o dashboard integrado de Traefik"
-    image2="image:traefik-dashboard-services.png" optionsthumb2="200x150" title2="El panel de información o dashboard integrado de Traefik"
-    image3="image:traefik-dashboard-middlewares.png" optionsthumb3="200x150" title3="El panel de información o dashboard integrado de Traefik"
+    image1="image:traefik-dashboard-routes.webp" optionsthumb1="200x150" title1="El panel de información o dashboard integrado de Traefik"
+    image2="image:traefik-dashboard-services.webp" optionsthumb2="200x150" title2="El panel de información o dashboard integrado de Traefik"
+    image3="image:traefik-dashboard-middlewares.webp" optionsthumb3="200x150" title3="El panel de información o dashboard integrado de Traefik"
     caption="El panel de información o dashboard integrado de Traefik" >}}
 
 ### Casos de uso y características

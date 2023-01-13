@@ -38,8 +38,8 @@ Iniciado Keycloak con [Docker][docker] y [Docker Compose][docker-compose] accede
 
 {{< image
     gallery="true"
-    image1="image:keycloak-login.png" optionsthumb1="300x200" title1="Inicio de sesión en Keycloak"
-    image2="image:keycloak-clients.png" optionsthumb2="300x200" title2="Clientes OAuth"
+    image1="image:keycloak-login.webp" optionsthumb1="300x200" title1="Inicio de sesión en Keycloak"
+    image2="image:keycloak-clients.webp" optionsthumb2="300x200" title2="Clientes OAuth"
     caption="Administación de Keycloak" >}}
 
 ### Un servicio REST con OAuth

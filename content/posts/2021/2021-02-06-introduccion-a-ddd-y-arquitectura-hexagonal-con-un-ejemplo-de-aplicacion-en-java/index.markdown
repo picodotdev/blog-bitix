@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:hexagonal-architecture.png"
+imagePost: "image:hexagonal-architecture.webp"
 tags: ["planeta-codigo", "programacion"]
 summary: "La arquitectura de una aplicación define la estructura, organización y relación entre los componentes de la misma. En aplicaciones complejas utilizar DDD y arquitectura hexagonal son una opción recomendada. Hay varios libros técnicos dedicados a cada uno de ellos. En este artículo hago una introducción a DDD y arquitectura hexagonal y proporciono un ejemplo con el código fuente con el que implementar, analizar y ejecutar los conceptos teóricos en los que se basan."
 ---
@@ -71,7 +71,7 @@ Una gran ventaja de la arquitectura hexagonal es que los puertos y adaptadores n
 
 {{< image
     gallery="true"
-    image1="image:hexagonal-architecture.png" optionsthumb1="650x450" title1="Diagrama de la arquitectura hexagonal"
+    image1="image:hexagonal-architecture.webp" optionsthumb1="650x450" title1="Diagrama de la arquitectura hexagonal"
     caption="Diagrama de la arquitectura hexagonal" source="Libro Implementing Domain-Driven Design">}}
 
 ### Ejemplo de aplicación Java con DDD y arquitectura hexagonal

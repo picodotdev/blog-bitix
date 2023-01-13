@@ -38,7 +38,7 @@ Persistiendo la sesión en [Redis][redis] con [Spring Sesion][spring-session] po
 
 {{< image
     gallery="true"
-    image1="image:spring-session.png" optionsthumb1="600x450" title1="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales"
+    image1="image:spring-session.webp" optionsthumb1="600x450" title1="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales"
     caption="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales" >}}
 
 {{< code file="session-id.txt" language="java" options="" >}}

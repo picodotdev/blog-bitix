@@ -55,17 +55,17 @@ La aplicación Raspberry Pi Image es muy sencilla, basta seleccionar la versión
 
 {{< image
     gallery="true"
-    image1="image:raspberrypi-imager-1.png" optionsthumb1="300x200" title1="Raspberry Pi Imager"
-    image2="image:raspberrypi-imager-2.png" optionsthumb2="300x200" title2="Raspberry Pi Imager"
-    image3="image:raspberrypi-imager-3.png" optionsthumb3="300x200" title3="Raspberry Pi Imager"
+    image1="image:raspberrypi-imager-1.webp" optionsthumb1="300x200" title1="Raspberry Pi Imager"
+    image2="image:raspberrypi-imager-2.webp" optionsthumb2="300x200" title2="Raspberry Pi Imager"
+    image3="image:raspberrypi-imager-3.webp" optionsthumb3="300x200" title3="Raspberry Pi Imager"
     caption="Raspberry Pi Imager" >}}
 
 Una vez instalado Raspberry Pi OS basta con insertar la tarjeta SD y conectar el adaptador de corriente. Para comenzar a trabajar con ella antes del inicio se puede conectar a un monitor y un teclado. También es posible acceder a la terminal de la Raspberry Pi desde otro ordenador en la misma red con SSH sin necesidad de conectar a la RPi un teclado y monitor directamente. Para ello es necesario conocer qué dirección IP le ha asignado el _router_ local mediante DHCP.
 
 {{< image
     gallery="true"
-    image1="image:raspberrypi-os-boot.png" optionsthumb1="300x200" title1="Raspberry Pi OS root"
-    image2="image:raspberrypi-os-root.png" optionsthumb2="300x200" title2="Raspberry Pi OS boot"
+    image1="image:raspberrypi-os-boot.webp" optionsthumb1="300x200" title1="Raspberry Pi OS root"
+    image2="image:raspberrypi-os-root.webp" optionsthumb2="300x200" title2="Raspberry Pi OS boot"
     caption="Archivos de Raspberry Pi OS" >}}
 
 Para activar SSH en la Raspberry Pi hay que crean un archivo de nombre ssh en la partición _boot_. Cuando se inicia la Raspberry Pi lo detecta, activa SSH y lo elimina. El usuario y contraseña por defecto son _pi_ y _raspberry_ respectivamente, es aconsejable eliminar este usuario o cambiar de contraseña.
@@ -88,7 +88,7 @@ El proceso de instalación de Ubuntu tanto para la versión de escritorio como l
 
 {{< image
     gallery="true"
-    image1="image:raspberrypi-imager-other.png" optionsthumb1="300x200" title1="Ubuntu para la Raspberry Pi"
+    image1="image:raspberrypi-imager-other.webp" optionsthumb1="300x200" title1="Ubuntu para la Raspberry Pi"
     caption="Ubuntu para la Raspberry Pi" >}}
 
 El usuario y contraseña por defecto son _ubuntu_ y _ubuntu_ respectivamente, es aconsejable eliminar este usuario o cambiar de contraseña. Como Ubuntu también es una distribución derivada de Debian el gestor de paquetes y los comandos para instalarlos son los mismos.
@@ -102,8 +102,8 @@ La misma Raspberry Pi Image permite instalar otras distribuciones de uso especí
 
 {{< image
     gallery="true"
-    image1="image:raspberrypi-imager-games.png" optionsthumb1="300x200" title1="Juegos retro para la Raspberry Pi"
-    image2="image:raspberrypi-imager-media-player.png" optionsthumb2="300x200" title2="Reproductor multimedia para la Raspberry Pi"
+    image1="image:raspberrypi-imager-games.webp" optionsthumb1="300x200" title1="Juegos retro para la Raspberry Pi"
+    image2="image:raspberrypi-imager-media-player.webp" optionsthumb2="300x200" title2="Reproductor multimedia para la Raspberry Pi"
     caption="Otros sistemas operativos para la Raspberry Pi" >}}
 
 Documentación y ayuda:

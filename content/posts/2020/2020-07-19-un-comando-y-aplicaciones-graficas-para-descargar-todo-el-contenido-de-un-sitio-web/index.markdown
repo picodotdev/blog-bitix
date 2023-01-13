@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:archivos-sitio-web.png"
+imagePost: "image:archivos-sitio-web.webp"
 tags: ["gnu-linux", "planeta-codigo"]
 ---
 
@@ -37,7 +37,7 @@ Terminado el proceso de descarga el contenido del sitio web se guarda en el sist
 
 {{< image
     gallery="true"
-    image1="image:archivos-sitio-web.png" optionsthumb1="650x450" title1="Archivos del sitio web en el explorador de archivos"
+    image1="image:archivos-sitio-web.webp" optionsthumb1="650x450" title1="Archivos del sitio web en el explorador de archivos"
     caption="Archivos del sitio web en el explorador de archivos" >}}
 
 Descargar un sitio web no es la única funcionalidad que ofrece wget, otra necesidad habitual es [buscar los enlaces rotos de una página web][blogbitix-115] que con el paso del tiempo se van generando ya sea porque los sitios web externos desaparecen o por errores en la edición y enlazado interno. Conocer los enlaces rotos permite arreglarlos para ofrecer mejor experiencia de usuario al visitante y para mejorar el SEO en el posicionamiento en los buscadores.

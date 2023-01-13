@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:freebsd-text.png"
+imageHead: "image:freebsd-text.webp"
 imagePost: "logotype:freebsd.svg"
 tags: ["gnu-linux", "planeta-codigo", "software-libre"]
 summary: "Aún con su reducida cuota de uso las distribuciones GNU/Linux son conocidas por muchas personas como alternativa a los sistemas operativos comerciales Windows de Microsoft y macOS de Apple para propósitos de entorno de escritorio. Las distribuciones BSD también son conocidas, cualquier usuario de GNU/Linux con seguridad las conoce. FreeBSD es una abanderada de las BSD, aún así no son tantos los usuarios que deciden instalarla como su sistema operativo de uso cotidiano. Es fácil y rápido de instalar y a un usuario de GNU/Linux e incluso macOS el cambio al nuevo sistema resulta conocido ya que el entorno de escritorio y muchos comandos son exactamente los mismos."
@@ -73,7 +73,7 @@ El siguiente [error de VirtualBox impide iniciar FreeBSD en modo UEFI](https://w
 
 {{< image
     gallery="true"
-    image1="image:virtualbox-freebsd.png" optionsthumb1="300x200" title1="Configuración de máquina virtual con VirtualBox"
+    image1="image:virtualbox-freebsd.webp" optionsthumb1="300x200" title1="Configuración de máquina virtual con VirtualBox"
     caption="Configuración de máquina virtual con VirtualBox" >}}
 
 La instalación de FreeBSD utiliza un asistente que guía y hace la instalación sencilla, rápida y fiable. Descargado el medio de instalación e iniciado el sistema desde él se presenta un menú de opciones que permiten iniciar la instalación. En los diferentes pasos del asistente se van introduciendo las preferencias de configuración desde la disposición del teclado, particionado del sistema de almacenamiento, copiado de archivos del sistema base, establecimiento de contraseña del usuario _root_, configuración de red, zona horaria y usuarios adicionales.
@@ -82,90 +82,90 @@ Inicio de la instalación.
 
 {{< image
     gallery="true"
-    image1="image:instalacion-freebsd-1.png" optionsthumb1="200x150" title1="Inicio de la instalación de FreeBSD"
-    image2="image:instalacion-freebsd-2.png" optionsthumb2="200x150" title2="Inicio de la instalación de FreeBSD"
-    image3="image:instalacion-freebsd-3.png" optionsthumb3="200x150" title3="Inicio de la instalación de FreeBSD" >}}
+    image1="image:instalacion-freebsd-1.webp" optionsthumb1="200x150" title1="Inicio de la instalación de FreeBSD"
+    image2="image:instalacion-freebsd-2.webp" optionsthumb2="200x150" title2="Inicio de la instalación de FreeBSD"
+    image3="image:instalacion-freebsd-3.webp" optionsthumb3="200x150" title3="Inicio de la instalación de FreeBSD" >}}
 {{< image
     gallery="true"
-    image1="image:instalacion-freebsd-4.png" optionsthumb1="200x150" title1="Inicio de la instalación de FreeBSD"
-    image2="image:instalacion-freebsd-5.png" optionsthumb2="200x150" title2="Inicio de la instalación de FreeBSD"
-    image3="image:instalacion-freebsd-6.png" optionsthumb3="200x150" title3="Inicio de la instalación de FreeBSD" >}}
+    image1="image:instalacion-freebsd-4.webp" optionsthumb1="200x150" title1="Inicio de la instalación de FreeBSD"
+    image2="image:instalacion-freebsd-5.webp" optionsthumb2="200x150" title2="Inicio de la instalación de FreeBSD"
+    image3="image:instalacion-freebsd-6.webp" optionsthumb3="200x150" title3="Inicio de la instalación de FreeBSD" >}}
 {{< image
     gallery="true"
-    image1="image:instalacion-freebsd-7.png" optionsthumb1="200x150" title1="Inicio de la instalación de FreeBSD"
-    image2="image:instalacion-freebsd-8.png" optionsthumb2="200x150" title2="Inicio de la instalación de FreeBSD"
-    image3="image:instalacion-freebsd-9.png" optionsthumb3="200x150" title3="Inicio de la instalación de FreeBSD" >}}
+    image1="image:instalacion-freebsd-7.webp" optionsthumb1="200x150" title1="Inicio de la instalación de FreeBSD"
+    image2="image:instalacion-freebsd-8.webp" optionsthumb2="200x150" title2="Inicio de la instalación de FreeBSD"
+    image3="image:instalacion-freebsd-9.webp" optionsthumb3="200x150" title3="Inicio de la instalación de FreeBSD" >}}
 {{< image
     gallery="true"
-    image1="image:instalacion-freebsd-10.png" optionsthumb1="200x150" title1="Inicio de la instalación de FreeBSD"
-    image2="image:instalacion-freebsd-11.png" optionsthumb2="200x150" title2="Inicio de la instalación de FreeBSD"
-    image3="image:instalacion-freebsd-12.png" optionsthumb3="200x150" title3="Inicio de la instalación de FreeBSD" >}}
+    image1="image:instalacion-freebsd-10.webp" optionsthumb1="200x150" title1="Inicio de la instalación de FreeBSD"
+    image2="image:instalacion-freebsd-11.webp" optionsthumb2="200x150" title2="Inicio de la instalación de FreeBSD"
+    image3="image:instalacion-freebsd-12.webp" optionsthumb3="200x150" title3="Inicio de la instalación de FreeBSD" >}}
 {{< image
     gallery="true"
-    image1="image:instalacion-freebsd-13.png" optionsthumb1="200x150" title1="Inicio de la instalación de FreeBSD"
+    image1="image:instalacion-freebsd-13.webp" optionsthumb1="200x150" title1="Inicio de la instalación de FreeBSD"
     caption="Inicio de la instalación de FreeBSD" >}}
 
 El siguiente paso es automático, consiste en la copia de los archivos base del sistema.
 
 {{< image
     gallery="true"
-    image1="image:progreso-instalacion-freebsd-1.png" optionsthumb1="200x150" title1="Copia de archivos base de FreeBSD"
-    image2="image:progreso-instalacion-freebsd-2.png" optionsthumb2="200x150" title2="Copia de archivos base de FreeBSD"
-    image3="image:progreso-instalacion-freebsd-3.png" optionsthumb3="200x150" title3="Copia de archivos base de FreeBSD" >}}
+    image1="image:progreso-instalacion-freebsd-1.webp" optionsthumb1="200x150" title1="Copia de archivos base de FreeBSD"
+    image2="image:progreso-instalacion-freebsd-2.webp" optionsthumb2="200x150" title2="Copia de archivos base de FreeBSD"
+    image3="image:progreso-instalacion-freebsd-3.webp" optionsthumb3="200x150" title3="Copia de archivos base de FreeBSD" >}}
 {{< image
     gallery="true"
-    image1="image:progreso-instalacion-freebsd-4.png" optionsthumb1="200x150" title1="Copia de archivos base de FreeBSD"
-    image2="image:progreso-instalacion-freebsd-5.png" optionsthumb2="200x150" title2="Copia de archivos base de FreeBSD"
-    image3="image:progreso-instalacion-freebsd-6.png" optionsthumb3="200x150" title3="Copia de archivos base de FreeBSD" >}}
+    image1="image:progreso-instalacion-freebsd-4.webp" optionsthumb1="200x150" title1="Copia de archivos base de FreeBSD"
+    image2="image:progreso-instalacion-freebsd-5.webp" optionsthumb2="200x150" title2="Copia de archivos base de FreeBSD"
+    image3="image:progreso-instalacion-freebsd-6.webp" optionsthumb3="200x150" title3="Copia de archivos base de FreeBSD" >}}
 {{< image
     gallery="true"
-    image1="image:progreso-instalacion-freebsd-7.png" optionsthumb1="200x150" title1="Copia de archivos base de FreeBSD"
-    image2="image:progreso-instalacion-freebsd-8.png" optionsthumb2="200x150" title2="Copia de archivos base de FreeBSD"
+    image1="image:progreso-instalacion-freebsd-7.webp" optionsthumb1="200x150" title1="Copia de archivos base de FreeBSD"
+    image2="image:progreso-instalacion-freebsd-8.webp" optionsthumb2="200x150" title2="Copia de archivos base de FreeBSD"
     caption="Copia de archivos base de FreeBSD" >}}
 
 A continuación se sigue con la configuración básica del sistema para la conectividad de red, usuarios, fecha y servicios demonio.
 
 {{< image
     gallery="true"
-    image1="image:configuracion-freebsd-1.png" optionsthumb1="200x150" title1="Configuración de FreeBSD"
-    image2="image:configuracion-freebsd-2.png" optionsthumb2="200x150" title2="Configuración de FreeBSD"
-    image3="image:configuracion-freebsd-3.png" optionsthumb3="200x150" title3="Configuración de FreeBSD" >}}
+    image1="image:configuracion-freebsd-1.webp" optionsthumb1="200x150" title1="Configuración de FreeBSD"
+    image2="image:configuracion-freebsd-2.webp" optionsthumb2="200x150" title2="Configuración de FreeBSD"
+    image3="image:configuracion-freebsd-3.webp" optionsthumb3="200x150" title3="Configuración de FreeBSD" >}}
 {{< image
     gallery="true"
-    image1="image:configuracion-freebsd-4.png" optionsthumb1="200x150" title1="Configuración de FreeBSD"
-    image2="image:configuracion-freebsd-5.png" optionsthumb2="200x150" title2="Configuración de FreeBSD"
-    image3="image:configuracion-freebsd-6.png" optionsthumb3="200x150" title3="Configuración de FreeBSD" >}}
+    image1="image:configuracion-freebsd-4.webp" optionsthumb1="200x150" title1="Configuración de FreeBSD"
+    image2="image:configuracion-freebsd-5.webp" optionsthumb2="200x150" title2="Configuración de FreeBSD"
+    image3="image:configuracion-freebsd-6.webp" optionsthumb3="200x150" title3="Configuración de FreeBSD" >}}
 {{< image
     gallery="true"
-    image1="image:configuracion-freebsd-7.png" optionsthumb1="200x150" title1="Configuración de FreeBSD"
-    image2="image:configuracion-freebsd-8.png" optionsthumb2="200x150" title2="Configuración de FreeBSD"
-    image3="image:configuracion-freebsd-9.png" optionsthumb3="200x150" title3="Configuración de FreeBSD" >}}
+    image1="image:configuracion-freebsd-7.webp" optionsthumb1="200x150" title1="Configuración de FreeBSD"
+    image2="image:configuracion-freebsd-8.webp" optionsthumb2="200x150" title2="Configuración de FreeBSD"
+    image3="image:configuracion-freebsd-9.webp" optionsthumb3="200x150" title3="Configuración de FreeBSD" >}}
 {{< image
     gallery="true"
-    image1="image:configuracion-freebsd-10.png" optionsthumb1="200x150" title1="Configuración de FreeBSD"
-    image2="image:configuracion-freebsd-11.png" optionsthumb2="200x150" title2="Configuración de FreeBSD"
-    image3="image:configuracion-freebsd-12.png" optionsthumb3="200x150" title3="Configuración de FreeBSD" >}}
+    image1="image:configuracion-freebsd-10.webp" optionsthumb1="200x150" title1="Configuración de FreeBSD"
+    image2="image:configuracion-freebsd-11.webp" optionsthumb2="200x150" title2="Configuración de FreeBSD"
+    image3="image:configuracion-freebsd-12.webp" optionsthumb3="200x150" title3="Configuración de FreeBSD" >}}
 {{< image
     gallery="true"
-    image1="image:configuracion-freebsd-13.png" optionsthumb1="200x150" title1="Configuración de FreeBSD"
+    image1="image:configuracion-freebsd-13.webp" optionsthumb1="200x150" title1="Configuración de FreeBSD"
     caption="Configuración de FreeBSD" >}}
 
 Se ha de establecer la contraseña del usuario _root_ que otorga permisos de superusuario. También se da la oportunidad de crear los usuarios en el sistema.
 
 {{< image
     gallery="true"
-    image1="image:root-password-freebsd.png" optionsthumb1="200x150" title1="Contraseña de superusuario en FreeBSD"
-    image2="image:usuarios-freebsd-1.png" optionsthumb2="200x150" title2="Creación de usuarios en FreeBSD"
-    image3="image:usuarios-freebsd-2.png" optionsthumb3="200x150" title3="Creación de usuarios en FreeBSD"
+    image1="image:root-password-freebsd.webp" optionsthumb1="200x150" title1="Contraseña de superusuario en FreeBSD"
+    image2="image:usuarios-freebsd-1.webp" optionsthumb2="200x150" title2="Creación de usuarios en FreeBSD"
+    image3="image:usuarios-freebsd-2.webp" optionsthumb3="200x150" title3="Creación de usuarios en FreeBSD"
     caption="Contraseña de superusuario y creación de usuarios en FreeBSD" >}}
 
 Las últimas pantalla indican la finalización de la instalación.
 
 {{< image
     gallery="true"
-    image1="image:finalizacion-instalacion-1.png" optionsthumb1="200x150" title1="Finalización de la instalación de FreeBSD"
-    image2="image:finalizacion-instalacion-2.png" optionsthumb2="200x150" title2="Finalización de la instalación de FreeBSD"
-    image3="image:finalizacion-instalacion-3.png" optionsthumb3="200x150" title3="Finalización de la instalación de FreeBSD"
+    image1="image:finalizacion-instalacion-1.webp" optionsthumb1="200x150" title1="Finalización de la instalación de FreeBSD"
+    image2="image:finalizacion-instalacion-2.webp" optionsthumb2="200x150" title2="Finalización de la instalación de FreeBSD"
+    image3="image:finalizacion-instalacion-3.webp" optionsthumb3="200x150" title3="Finalización de la instalación de FreeBSD"
     caption="Finalización de la instalación de FreeBSD" >}}
 
 #### Primer inicio en FreeBSD
@@ -174,9 +174,9 @@ Completada la instalación al reiniciar el sistema se presenta la pantalla del c
 
 {{< image
     gallery="true"
-    image1="image:cargador-arranque-freebsd.png" optionsthumb1="200x150" title1="Inicio de sesión en modo texto de FreeBSD"
-    image2="image:inicio-sesion-texto-freebsd-1.png" optionsthumb2="200x150" title2="Inicio de sesión en modo texto de FreeBSD"
-    image3="image:inicio-sesion-texto-freebsd-2.png" optionsthumb3="200x150" title3="Inicio de sesión en modo texto de FreeBSD" >}}
+    image1="image:cargador-arranque-freebsd.webp" optionsthumb1="200x150" title1="Inicio de sesión en modo texto de FreeBSD"
+    image2="image:inicio-sesion-texto-freebsd-1.webp" optionsthumb2="200x150" title2="Inicio de sesión en modo texto de FreeBSD"
+    image3="image:inicio-sesion-texto-freebsd-2.webp" optionsthumb3="200x150" title3="Inicio de sesión en modo texto de FreeBSD" >}}
 
 #### Instalación de entorno de escritorio
 
@@ -197,9 +197,9 @@ Para establecer como idioma el español se requiere añadir la siguiente configu
 
 {{< image
     gallery="true"
-    image1="image:gnome-freebsd-1.png" optionsthumb1="200x150" title1="GNOME en FreeBSD"
-    image2="image:gnome-freebsd-2.png" optionsthumb2="200x150" title2="GNOME en FreeBSD"
-    image3="image:gnome-freebsd-3.png" optionsthumb3="200x150" title3="GNOME en FreeBSD"
+    image1="image:gnome-freebsd-1.webp" optionsthumb1="200x150" title1="GNOME en FreeBSD"
+    image2="image:gnome-freebsd-2.webp" optionsthumb2="200x150" title2="GNOME en FreeBSD"
+    image3="image:gnome-freebsd-3.webp" optionsthumb3="200x150" title3="GNOME en FreeBSD"
     caption="GNOME en FreeBSD" >}}
 
 ### Uso básico
@@ -210,8 +210,8 @@ Instalado el sistema dos tareas básicas son la instalación de programas adicio
 
 {{< image
     gallery="true"
-    image1="image:uname-freebsd.png" optionsthumb1="300x200" title1="Comando uname en FreeBSD"
-    image2="image:df-freebsd.png" optionsthumb2="300x200" title2="Comando df en FreeBSD"
+    image1="image:uname-freebsd.webp" optionsthumb1="300x200" title1="Comando uname en FreeBSD"
+    image2="image:df-freebsd.webp" optionsthumb2="300x200" title2="Comando df en FreeBSD"
     caption="Comandos uname y df en FreeBSD" >}}
 
 #### Obtener permisos de superusuario _root_
@@ -225,7 +225,7 @@ Hay un único superusuario en el sistema cuyo nombre de usuario es _root_, este 
 
 {{< image
     gallery="true"
-    image1="image:su.png" optionsthumb1="300x200" title1="Obtener privilegios de superusuario"
+    image1="image:su.webp" optionsthumb1="300x200" title1="Obtener privilegios de superusuario"
     caption="Obtener privilegios de superusuario" >}}
 
 #### Instalación de paquetes

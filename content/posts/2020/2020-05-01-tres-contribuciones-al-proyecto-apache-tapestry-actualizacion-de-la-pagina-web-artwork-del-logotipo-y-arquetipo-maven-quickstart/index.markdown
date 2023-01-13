@@ -41,12 +41,12 @@ El resultado ha sido este, antes y después. El actual lo puedes ver en la [pág
 
 {{< image
     gallery="true"
-    image1="image:tapestry-site-index-old.png" optionsthumb1="300x200" title1="Página antigua"
-    image2="image:tapestry-site-index-new.png" optionsthumb2="300x200" title2="Página nueva" >}}
+    image1="image:tapestry-site-index-old.webp" optionsthumb1="300x200" title1="Página antigua"
+    image2="image:tapestry-site-index-new.webp" optionsthumb2="300x200" title2="Página nueva" >}}
 {{< image
     gallery="true"
-    image1="image:tapestry-site-documentation-old.png" optionsthumb1="300x200" title1="Página antigua"
-    image2="image:tapestry-site-documentation-new.png" optionsthumb2="300x200" title2="Página nueva"
+    image1="image:tapestry-site-documentation-old.webp" optionsthumb1="300x200" title1="Página antigua"
+    image2="image:tapestry-site-documentation-new.webp" optionsthumb2="300x200" title2="Página nueva"
     caption="Comparación entre la versión antigua (izquierda) y nueva (derecha)" >}}
 
 
@@ -58,30 +58,30 @@ Al mismo tiempo que la mejora de la página web he mejorado el logotipo y genera
     gallery="true"
     image1="image:apache-tapestry-5-apache-original.svg" optionsthumb1="200x150" title1="Una versión antigua del logotipo"
     image2="image:apache-tapestry-index-original.svg" optionsthumb2="200x150" title2="Una versión antigua del logotipo"
-    image3="image:apache-tapestry-index-original.png" optionsthumb3="200x150" title3="Una versión antigua del logotipo"
+    image3="image:apache-tapestry-index-original.webp" optionsthumb3="200x150" title3="Una versión antigua del logotipo"
     caption="Diferentes versiones antiguas del logotipo" >}}
 
 La edición la he realizado con editor de imágenes vectorial [Inkscape][inkscape] y mi intención ha sido generar no solo un logotipo sino varias versiones. Viendo los archivos SVG originales en alguno había un intento de logotipo para fondo oscuro aunque nunca he visto un logotipo de Tapestry generado para este caso así es posible que ni siquiera las personas del proyecto supiesen que existía.
 
 {{< image
     gallery="true"
-    image1="image:inkscape-tapestry.png" optionsthumb1="600x450" title1="Edición del logotipo en Inkscape"
+    image1="image:inkscape-tapestry.webp" optionsthumb1="600x450" title1="Edición del logotipo en Inkscape"
     caption="Edición del logotipo en Inkscape" >}}
 
 He generado varias versiones fondos claros, para fondos oscuros, con icono y texto, solo el icono y solo el texto. He simplificado y eliminado muchos de los degradados del icono y efectos. Como fuentes he utilizado las originales que conocía, Trebuchet MS y Georgia, son fuentes propietarias de [Microsoft][microsoft] pero tienen un aspecto muy bueno y son las fuentes con las que conocía el logotipo del proyecto. El resultado ha sido el siguiente.
 
 {{< image
     gallery="true"
-    image1="image:apache-tapestry-icontext-300-light.png" optionsthumb1="300x200" title1="Icono y texto fondo claro"
-    image2="image:apache-tapestry-icontext-300-dark.png" optionsthumb2="300x200" title2="Icono y texto fondo oscuro" >}}
+    image1="image:apache-tapestry-icontext-300-light.webp" optionsthumb1="300x200" title1="Icono y texto fondo claro"
+    image2="image:apache-tapestry-icontext-300-dark.webp" optionsthumb2="300x200" title2="Icono y texto fondo oscuro" >}}
 {{< image
     gallery="true"
-    image1="image:apache-tapestry-icon-300-light.png" optionsthumb1="300x300" title1="Icono fondo claro"
-    image2="image:apache-tapestry-icon-300-dark.png" optionsthumb2="300x300" title2="Icono fondo oscuro" >}}
+    image1="image:apache-tapestry-icon-300-light.webp" optionsthumb1="300x300" title1="Icono fondo claro"
+    image2="image:apache-tapestry-icon-300-dark.webp" optionsthumb2="300x300" title2="Icono fondo oscuro" >}}
 {{< image
     gallery="true"
-    image1="image:apache-tapestry-text-300-light.png" optionsthumb1="300x200" title1="Texto fondo claro"
-    image2="image:apache-tapestry-text-300-dark.png" optionsthumb2="300x200" title2="Texto fondo oscuro" >}}
+    image1="image:apache-tapestry-text-300-light.webp" optionsthumb1="300x200" title1="Texto fondo claro"
+    image2="image:apache-tapestry-text-300-dark.webp" optionsthumb2="300x200" title2="Texto fondo oscuro" >}}
 
 Como las combinaciones de logotipo son muchas exportar todas esas versiones manualmente desde el SVG original me iba a requerir mucho tiempo con lo que he aprovechado la funcionalidad del Inkscape por línea de comandos para automatizar la exportación del SVG. Esto permite mostrar y ocultar capas, ajustar el SVG al contenido visible y exportar a PNG por ejemplo para generar las diferentes versiones de los iconos.
 
@@ -99,7 +99,7 @@ Las mejoras que he realizado ha sido refactorizar el artefacto de Maven, usar [S
 
 {{< image
     gallery="true"
-    image1="image:apache-tapestry-quickstart.png" optionsthumb1="300x200" title1="Aplicación de inicio rápido" >}}
+    image1="image:apache-tapestry-quickstart.webp" optionsthumb1="300x200" title1="Aplicación de inicio rápido" >}}
 
 ### Conclusión
 

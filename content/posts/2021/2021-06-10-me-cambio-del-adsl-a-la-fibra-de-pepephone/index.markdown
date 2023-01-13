@@ -66,27 +66,27 @@ El modelo del _router_ es un ZTE ZXHN H367A, con cuatro puertos gibagit, WIFI 5 
 
 {{< image
     gallery="true"
-    image1="image:router-zte-1.jpg" optionsthumb1="200x150" title1="Router fibra ZTE ZXHN H367A"
-    image2="image:router-zte-2.jpg" optionsthumb2="200x150" title2="Router fibra ZTE ZXHN H367A"
-    image3="image:router-zte-3.jpg" optionsthumb3="200x150" title3="Router fibra ZTE ZXHN H367A"
+    image1="image:router-zte-1.webp" optionsthumb1="200x150" title1="Router fibra ZTE ZXHN H367A"
+    image2="image:router-zte-2.webp" optionsthumb2="200x150" title2="Router fibra ZTE ZXHN H367A"
+    image3="image:router-zte-3.webp" optionsthumb3="200x150" title3="Router fibra ZTE ZXHN H367A"
     caption="Router fibra ZTE ZXHN H367A" >}}
 {{< image
     gallery="true"
-    image1="image:ont.jpg" optionsthumb1="200x150" title1="ONT semintegrado en el router"
+    image1="image:ont.webp" optionsthumb1="200x150" title1="ONT semintegrado en el router"
     caption="ONT «semintegrado» en el router" >}}
 
 Su panel de administración es muy sencillo pero con las funciones habituales, como abrir puertos, ocultar la WIFI, cambiar su nombre y las credenciales de acceso. Una cosa que me ha gustado es que permite crear varias redes WIFI con distintos nombres y contraseñas, a parte de eso el panel de administración me gustaba más el de Asus, quizá sea cuestión de acostumbrarme las raras ocasiones que deba entrar en él. Una de las primeras cosas que he hecho es cambiar la contraseña de inicio de sesión y poner la WIFI oculta por seguridad.
 
 {{< image
     gallery="true"
-    image1="image:administracion-zte.png" optionsthumb1="300x200" title1="Panel de administración router ZTE"
+    image1="image:administracion-zte.webp" optionsthumb1="300x200" title1="Panel de administración router ZTE"
     caption="Panel de administración router ZTE" >}}
 
 La instalación de la fibra requiere instalar una roseta a la que se conecta el cable de fibra que proviene del edificio, de la roseta sale otro cable de fibra que se conecta al ONT o al _router_ si el _router_ tiene el ONT integrado cosa que no es mi caso. El ONT se conecta al _router_ con un cable ethernet.
 
 {{< image
     gallery="true"
-    image1="image:roseta-fibra.jpg" optionsthumb1="300x200" title1="Roseta fibra"
+    image1="image:roseta-fibra.webp" optionsthumb1="300x200" title1="Roseta fibra"
     caption="Roseta fibra" >}}
 
 ### Que ofrece la fibra respecto al ADSL
@@ -101,16 +101,16 @@ El ancho de banda de bajada y subida es posible comprobarlo en la siguiente pág
 
 {{< image
     gallery="true"
-    image1="image:test-de-velocidad-adsl.png" optionsthumb1="300x200" title1="Prueba de velocidad ADSL"
-    image2="image:test-de-velocidad-fibra.png" optionsthumb2="300x200" title2="Prueba de velocidad fibra"
+    image1="image:test-de-velocidad-adsl.webp" optionsthumb1="300x200" title1="Prueba de velocidad ADSL"
+    image2="image:test-de-velocidad-fibra.webp" optionsthumb2="300x200" title2="Prueba de velocidad fibra"
     caption="Prueba de velocidad ADSL y fibra" >}}
 
 La fibra también tiene una latencia menor de entre 10 ms y 20 ms cuando el ADSL tiene una latencia de más de 40 ms.
 
 {{< image
     gallery="true"
-    image1="image:ping-adsl.png" optionsthumb1="300x200" title1="Latencia ADSL"
-    image2="image:ping-fibra.png" optionsthumb2="300x200" title2="Latencia fibra"
+    image1="image:ping-adsl.webp" optionsthumb1="300x200" title1="Latencia ADSL"
+    image2="image:ping-fibra.webp" optionsthumb2="300x200" title2="Latencia fibra"
     caption="Comparación de latencia entre ADSL y fibra" >}}
 
 {{< reference >}}

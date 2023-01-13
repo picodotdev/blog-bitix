@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:lanterna.png"
+imagePost: "image:lanterna.webp"
 tags: ["java", "planeta-codigo"]
 ---
 
@@ -33,7 +33,7 @@ El siguiente código muestra lo que podría ser la pantalla inicial de este inst
 
 {{< image
     gallery="true"
-    image1="image:lanterna.png" optionsthumb1="650x450" title1="Hola Mundo con Lanterna"
+    image1="image:lanterna.webp" optionsthumb1="650x450" title1="Hola Mundo con Lanterna"
     caption="Hola Mundo con Lanterna" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/Lanterna" command="./gradlew distZip && unzip -o -d app/build/distributions/ app/build/distributions/app.zip && ./app/build/distributions/app/bin/app" %}}

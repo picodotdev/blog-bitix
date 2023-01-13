@@ -38,7 +38,7 @@ Iniciando ahora el servicio de Docker veremos que en el directorio que hayamos e
 
 {{< image
     gallery="true"
-    image1="image:docker-root.png" optionsthumb1="300x200" title1="Directorio raíz de docker"
+    image1="image:docker-root.webp" optionsthumb1="300x200" title1="Directorio raíz de docker"
     caption="Directorio raíz de docker" >}}
 
 {{% warning %}}

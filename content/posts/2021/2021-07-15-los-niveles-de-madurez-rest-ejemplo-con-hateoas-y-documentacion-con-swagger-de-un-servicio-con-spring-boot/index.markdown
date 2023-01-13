@@ -164,10 +164,10 @@ Esta es la documentación de Swagger.
 
 {{< image
     gallery="true"
-    image1="image:swagger-ui-1.png" optionsthumb1="650x450" title1="Documentación de servicio REST con Swagger UI" >}}
+    image1="image:swagger-ui-1.webp" optionsthumb1="650x450" title1="Documentación de servicio REST con Swagger UI" >}}
 {{< image
     gallery="true"
-    image1="image:swagger-ui-2.png" optionsthumb1="300x200" title1="Documentación de servicio REST con Swagger UI"
+    image1="image:swagger-ui-2.webp" optionsthumb1="300x200" title1="Documentación de servicio REST con Swagger UI"
     caption="Documentación de servicio REST con Swagger UI" >}}
 
 {{< reference >}}

@@ -44,7 +44,7 @@ Buen regalo para acabar el año 2015, ¡feliz navidad!.
 
 {{< image
     gallery="false"
-    image1="image:christmastux2015.jpg" optionsthumb1="600x450" title1="ChristmasTux 2015" >}}
+    image1="image:christmastux2015.webp" optionsthumb1="600x450" title1="ChristmasTux 2015" >}}
 
 {{< plugintapestry >}}
 

@@ -43,7 +43,7 @@ Nexus OSS es la versión de código abierto que permite su uso sin coste, la ver
 
 {{< image
     gallery="true"
-    image1="image:nexus.jpg" optionsthumb1="650x450" title1="Nexus"
+    image1="image:nexus.webp" optionsthumb1="650x450" title1="Nexus"
     caption="Arquitectura de un repositorio de artefactos con Nexus" >}}
 
 ### Ejemplo de repositorio con Nexus
@@ -58,8 +58,8 @@ El usuario administrador es _admin_ y la contraseña aleatoria generada al inici
 
 {{< image
     gallery="true"
-    image1="image:nexus-1.png" optionsthumb1="300x250" title1="Nexus"
-    image2="image:nexus-2.png" optionsthumb2="300x250" title2="Nexus"
+    image1="image:nexus-1.webp" optionsthumb1="300x250" title1="Nexus"
+    image2="image:nexus-2.webp" optionsthumb2="300x250" title2="Nexus"
     caption="Nexus" >}}
 
 #### Publicar un artefacto a un repositorio Maven local
@@ -79,7 +79,7 @@ Este es un archivo de construcción de Gradle con un repositorio Maven de Nexus 
 
 {{< image
     gallery="true"
-    image1="image:nexus-maven.png" optionsthumb1="300x250" title1="Librería de Java publicada en repositorio Nexus"
+    image1="image:nexus-maven.webp" optionsthumb1="300x250" title1="Librería de Java publicada en repositorio Nexus"
     caption="Librería de Java publicada en repositorio Nexus" >}}
 
 Una vez publicado el artefacto otro proyecto puede declararlo como una dependencia en la sección _dependencies_ y añadir el repositorio de Maven donde buscar dependencias en la sección _repositories_. Al ejecutar el programa Gradle descarga la dependencia y la añade al proyecto como cualquier dependencia del repositorio de _mavenCentral_.
@@ -99,9 +99,9 @@ Para usar el repositorio de imágenes de Docker en Nexus es necesario crear un r
 
 {{< image
     gallery="true"
-    image1="image:nexus-repository-1.png" optionsthumb1="200x150" title1="Repositorios de Nexus"
-    image2="image:nexus-repository-2.png" optionsthumb2="200x150" title2="Repositorios de Nexus"
-    image3="image:nexus-repository-3.png" optionsthumb3="200x150" title3="Repositorios de Nexus"
+    image1="image:nexus-repository-1.webp" optionsthumb1="200x150" title1="Repositorios de Nexus"
+    image2="image:nexus-repository-2.webp" optionsthumb2="200x150" title2="Repositorios de Nexus"
+    image3="image:nexus-repository-3.webp" optionsthumb3="200x150" title3="Repositorios de Nexus"
     caption="Repositorios de Nexus" >}}
 
 Para subir una imagen de un contenedor al repositorio hay que crear su _tag_ y realizar la subida de la imagen. [Crear una imagen de Docker con un Dockerfile][blogbitix-51] genera una imagen de un contenedor en el repositorio local, una vez se ha generado se le añade la etiqueta y se sube al repositorio.
@@ -109,7 +109,7 @@ Para subir una imagen de un contenedor al repositorio hay que crear su _tag_ y r
 {{< code file="docker-push.sh" language="bash" options="" >}}
 {{< image
     gallery="true"
-    image1="image:nexus-docker.png" optionsthumb1="300x250" title1="Imagen de Docker publicada en repositorio Nexus"
+    image1="image:nexus-docker.webp" optionsthumb1="300x250" title1="Imagen de Docker publicada en repositorio Nexus"
     caption="Imagen de Docker publicada en repositorio Nexus" >}}
 
 Una vez la imagen del contenedor se ha subido se puede utilizar especificando la URL del repositorio de imágenes. Para comprobar que la imagen se descarga del repositorio de Nexus primero se elimina de la caché local.

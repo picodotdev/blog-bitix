@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:beastie.png"
+imagePost: "logotype:beastie.webp"
 tags: ["gnu-linux", "planeta-codigo", "software-libre"]
 summary: "Las distribuciones BSD tienen aún menor cuota de uso que las distribuciones GNU/Linux pero al igual que estas tiene una licencia de software libre aún más permisiva que las GNU/Linux y también se basan en la filosofía UNIX. Pero también tienen diferencias importantes en varios aspectos."
 ---
@@ -31,7 +31,7 @@ Aunque solo para representar a los proyectos una diferencia está en su mascota,
 {{< image
     gallery="true"
     image1="logotype:linux.svg" optionsthumb1="300x200" title1="Tux la mascota de Linux"
-    image2="logotype:beastie.png" optionsthumb2="300x200" title2="Bestie la mascota de BSD"
+    image2="logotype:beastie.webp" optionsthumb2="300x200" title2="Bestie la mascota de BSD"
     image3="logotype:gnu.svg" optionsthumb3="300x200" title3="GNU la mascota de GNU"
     caption="Mascotas de Linux, BSD y GNU" >}}
 

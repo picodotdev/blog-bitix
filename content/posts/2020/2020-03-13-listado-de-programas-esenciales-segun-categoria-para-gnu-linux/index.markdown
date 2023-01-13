@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:onlyoffice-documentos.png"
-imagePost: "image:onlyoffice-documentos.png"
+imageHead: "image:onlyoffice-documentos.webp"
+imagePost: "image:onlyoffice-documentos.webp"
 tags: ["gnu-linux", "planeta-codigo", "software-libre"]
 summary: "El sistema operativo solo proporciona la abstracción del hardware a los programas de usuario. Son los programas los que permiten al usuario realizar las tareas productivas. Según su categoría hay varios programas según los tipos de archivos que soportan o funcionalidad que proporcionan. Ofimática, internet y comunicaciones, fotos y gráficos, multimedia, juegos, programación y desarrollo seguridad y privacidad, ..."
 ---

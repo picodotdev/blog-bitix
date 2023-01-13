@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:paypal-2fa-2.png"
+imagePost: "image:paypal-2fa-2.webp"
 tags: ["planeta-codigo", "seguridad"]
 summary: "Las contraseñas son un mecanismo de seguridad empleado para autenticar a un usuario en un servicio al iniciar sesión. Pero las contraseñas son un mecanismo potencialmente débil, por ello varios de los servicios más importantes implementan mecanismos de seguridad adicionales para proteger en mayor medida las cuentas de los usuarios. El segundo factor de autenticación o 2FA es un mecanismo adicional, las contraseñas son algo que se conoce, el 2FA es algo que se tiene. Varios de los servicios más importantes como Google, Amazon y PayPal entre otros lo ofrecen y es recomendable activarlos en aquellos en los que lo hacen."
 ---
@@ -63,29 +63,29 @@ La autenticación con una aplicación de _authenticator_ se inicia desde el enla
 
 {{< image
     gallery="true"
-    image1="image:google-2fa-1.png" optionsthumb1="200x150" title1="Activación de 2FA en una cuenta de Google"
-    image2="image:google-2fa-2.png" optionsthumb2="200x150" title2="Activación de 2FA en una cuenta de Google"
-    image3="image:google-2fa-3.png" optionsthumb3="200x150" title3="Activación de 2FA en una cuenta de Google" >}}
+    image1="image:google-2fa-1.webp" optionsthumb1="200x150" title1="Activación de 2FA en una cuenta de Google"
+    image2="image:google-2fa-2.webp" optionsthumb2="200x150" title2="Activación de 2FA en una cuenta de Google"
+    image3="image:google-2fa-3.webp" optionsthumb3="200x150" title3="Activación de 2FA en una cuenta de Google" >}}
 {{< image
     gallery="true"
-    image1="image:google-2fa-4.png" optionsthumb1="200x150" title1="Activación de 2FA en una cuenta de Google"
-    image2="image:google-2fa-5.png" optionsthumb2="200x150" title2="Activación de 2FA en una cuenta de Google"
-    image3="image:google-2fa-6.png" optionsthumb3="200x150" title3="Activación de 2FA en una cuenta de Google" >}}
+    image1="image:google-2fa-4.webp" optionsthumb1="200x150" title1="Activación de 2FA en una cuenta de Google"
+    image2="image:google-2fa-5.webp" optionsthumb2="200x150" title2="Activación de 2FA en una cuenta de Google"
+    image3="image:google-2fa-6.webp" optionsthumb3="200x150" title3="Activación de 2FA en una cuenta de Google" >}}
 {{< image
     gallery="true"
-    image1="image:google-2fa-7.png" optionsthumb1="200x150" title1="Activación de 2FA en una cuenta de Google"
+    image1="image:google-2fa-7.webp" optionsthumb1="200x150" title1="Activación de 2FA en una cuenta de Google"
     caption="Activación de 2FA en una cuenta de Google" >}}
 
 Una vez configurado 2FA al iniciar sesión Google por defecto envía una notificación al teléfono móvil con la que solo es necesario realizar la confirmación del inicio de sesión desde el móvil, con la opción _Probar de otra manera_ permite usar otro método de autenticación 2FA entre ellos el de la aplicación _authenticator_.
 
 {{< image
     gallery="true"
-    image1="image:google-2fa-8.png" optionsthumb1="200x150" title1="Inicio de sesión en una cuenta de Google con 2FA"
-    image2="image:google-2fa-9.png" optionsthumb2="200x150" title2="Inicio de sesión en una cuenta de Google con 2FA"
-    image3="image:google-2fa-10.png" optionsthumb3="200x150" title3="Inicio de sesión en una cuenta de Google con 2FA" >}}
+    image1="image:google-2fa-8.webp" optionsthumb1="200x150" title1="Inicio de sesión en una cuenta de Google con 2FA"
+    image2="image:google-2fa-9.webp" optionsthumb2="200x150" title2="Inicio de sesión en una cuenta de Google con 2FA"
+    image3="image:google-2fa-10.webp" optionsthumb3="200x150" title3="Inicio de sesión en una cuenta de Google con 2FA" >}}
 {{< image
     gallery="true"
-    image1="image:google-2fa-11.png" optionsthumb1="200x150" title1="Inicio de sesión en una cuenta de Google con 2FA"
+    image1="image:google-2fa-11.webp" optionsthumb1="200x150" title1="Inicio de sesión en una cuenta de Google con 2FA"
     caption="Inicio de sesión en una cuenta de Google con 2FA" >}}
 
 #### Cómo activar 2FA en una cuenta de Amazon
@@ -94,25 +94,25 @@ En el caso de Amazon la configuración del segundo factor de autenticación se r
 
 {{< image
     gallery="true"
-    image1="image:amazon-2fa-1.png" optionsthumb1="200x150" title1="Activación de 2FA en una cuenta de Amazon"
-    image2="image:amazon-2fa-2.png" optionsthumb2="200x150" title2="Activación de 2FA en una cuenta de Amazon"
-    image3="image:amazon-2fa-3.png" optionsthumb3="200x150" title3="Activación de 2FA en una cuenta de Amazon" >}}
+    image1="image:amazon-2fa-1.webp" optionsthumb1="200x150" title1="Activación de 2FA en una cuenta de Amazon"
+    image2="image:amazon-2fa-2.webp" optionsthumb2="200x150" title2="Activación de 2FA en una cuenta de Amazon"
+    image3="image:amazon-2fa-3.webp" optionsthumb3="200x150" title3="Activación de 2FA en una cuenta de Amazon" >}}
 {{< image
     gallery="true"
-    image1="image:amazon-2fa-4.png" optionsthumb1="200x150" title1="Activación de 2FA en una cuenta de Amazon"
-    image2="image:amazon-2fa-5.png" optionsthumb2="200x150" title2="Activación de 2FA en una cuenta de Amazon"
-    image3="image:amazon-2fa-6.png" optionsthumb3="200x150" title3="Activación de 2FA en una cuenta de Amazon" >}}
+    image1="image:amazon-2fa-4.webp" optionsthumb1="200x150" title1="Activación de 2FA en una cuenta de Amazon"
+    image2="image:amazon-2fa-5.webp" optionsthumb2="200x150" title2="Activación de 2FA en una cuenta de Amazon"
+    image3="image:amazon-2fa-6.webp" optionsthumb3="200x150" title3="Activación de 2FA en una cuenta de Amazon" >}}
 {{< image
     gallery="true"
-    image1="image:amazon-2fa-7.png" optionsthumb1="200x150" title1="Activación de 2FA en una cuenta de Amazon"
+    image1="image:amazon-2fa-7.webp" optionsthumb1="200x150" title1="Activación de 2FA en una cuenta de Amazon"
     caption="Activación de 2FA en una cuenta de Amazon" >}}
 
 Al iniciar sesión en la cuenta de Amazon se solicita el correo electrónico y la contraseña, con 2FA activado adicionalmente se solicita el cógido TOTP, marcando la opción _No vuelvas a pedir ningún código en este navegador_ el código TOTP solo se solicita una vez por dispositivo.
 
 {{< image
     gallery="true"
-    image1="image:amazon-2fa-8.png" optionsthumb1="200x150" title1="Inicio de sesión en una cuenta de Amazon"
-    image2="image:amazon-2fa-9.png" optionsthumb2="200x150" title2="Inicio de sesión en una cuenta de Amazon"
+    image1="image:amazon-2fa-8.webp" optionsthumb1="200x150" title1="Inicio de sesión en una cuenta de Amazon"
+    image2="image:amazon-2fa-9.webp" optionsthumb2="200x150" title2="Inicio de sesión en una cuenta de Amazon"
     caption="Inicio de sesión en una cuenta de Amazon" >}}
 
 #### Cómo activar 2FA en una cuenta de PayPal
@@ -121,17 +121,17 @@ En PayPal la configuración de segundo factor de autenticación se realiza desde
 
 {{< image
     gallery="true"
-    image1="image:paypal-2fa-1.png" optionsthumb1="200x150" title1="Activación de 2FA en una cuenta de PayPal"
-    image2="image:paypal-2fa-2.png" optionsthumb2="200x150" title2="Activación de 2FA en una cuenta de PayPal"
-    image3="image:paypal-2fa-3.png" optionsthumb3="200x150" title3="Activación de 2FA en una cuenta de PayPal"
+    image1="image:paypal-2fa-1.webp" optionsthumb1="200x150" title1="Activación de 2FA en una cuenta de PayPal"
+    image2="image:paypal-2fa-2.webp" optionsthumb2="200x150" title2="Activación de 2FA en una cuenta de PayPal"
+    image3="image:paypal-2fa-3.webp" optionsthumb3="200x150" title3="Activación de 2FA en una cuenta de PayPal"
     caption="Activación de 2FA en una cuenta de PayPal" >}}
 
 Al iniciar sesión en la cuenta de PayPal se solicita también el correo electrónico y la contraseña, con 2FA activado adicionalmente se solicita el código TOTP, marcando la opción _Confiar en este dispositivo_ el código TOTP solo se solicita una vez por dispositivo.
 
 {{< image
     gallery="true"
-    image1="image:paypal-2fa-4.png" optionsthumb1="200x150" title1="Inicio de sesión en una cuenta de PayPal"
-    image2="image:paypal-2fa-5.png" optionsthumb2="200x150" title2="Inicio de sesión en una cuenta de PayPal"
+    image1="image:paypal-2fa-4.webp" optionsthumb1="200x150" title1="Inicio de sesión en una cuenta de PayPal"
+    image2="image:paypal-2fa-5.webp" optionsthumb2="200x150" title2="Inicio de sesión en una cuenta de PayPal"
     caption="Inicio de sesión en una cuenta de PayPal" >}}
 
 ### Aplicación para _smartphone_ generador de TOTP
@@ -144,9 +144,9 @@ Las aplicaciones móviles ofrecen comodidad pero ¿qué ocurre si el móvil se p
 
 {{< image
     gallery="true"
-    image1="image:google-authenticator-1.png" optionsthumb1="200x150" title1="Google Authenticator"
-    image2="image:google-authenticator-2.png" optionsthumb2="200x150" title2="Google Authenticator"
-    image3="image:microsoft-authenticator-1.png" optionsthumb3="200x150" title3="Microsoft Authenticator"
+    image1="image:google-authenticator-1.webp" optionsthumb1="200x150" title1="Google Authenticator"
+    image2="image:google-authenticator-2.webp" optionsthumb2="200x150" title2="Google Authenticator"
+    image3="image:microsoft-authenticator-1.webp" optionsthumb3="200x150" title3="Microsoft Authenticator"
     caption="Aplicaciones Google Authenticator y Microsoft Authenticator" >}}
 
 ### Aplicación de escritorio generador de TOTP
@@ -155,21 +155,21 @@ Las aplicaciones móviles ofrecen comodidad pero ¿qué ocurre si el móvil se p
 
 {{< image
     gallery="true"
-    image1="image:keepass-1.png" optionsthumb1="300x200" title1="Aplicación gestor de contraseñas KeePassXC"
+    image1="image:keepass-1.webp" optionsthumb1="300x200" title1="Aplicación gestor de contraseñas KeePassXC"
     caption="Aplicación gestor de contraseñas KeePassXC" >}}
 
 KeePassXC también sirve para guardar el 2FA siendo capaz de generar los mismo códigos TOTP de las aplicaciones de _smartphone_. Para guardar la semilla con la que se generan los TOTP hay que ir a la opción del menú _Apuntes > TOTP > Configurar TOTP_ o con el menú contextual del botón derecho sobre el apunte, esta opción muestra una ventana en la que introducir el código de letras alternativo al código QR al activar el 2FA del servicio. También es capaz de mostrar el código QR original, lo que permite migrar el 2FA a otro móvil.
 
 {{< image
     gallery="true"
-    image1="image:keepass-2.png" optionsthumb1="300x200" title1="Código TOTP generador por KeePassXC"
+    image1="image:keepass-2.webp" optionsthumb1="300x200" title1="Código TOTP generador por KeePassXC"
     caption="Configuración TOTP en KeePassXC" >}}
 
 Si se configura como generador de códigos un _smartphone_ y KeePassXC es posible comprobar que generan los mismos TOTP y están bien configurados, con la opción _Apuntes > TOTP > Mostrar TOTP_ se muestra un diálogo con el código TOTP válido.
 
 {{< image
     gallery="true"
-    image1="image:keepass-3.png" optionsthumb1="300x200" title1="Código TOTP generador por KeePassXC"
+    image1="image:keepass-3.webp" optionsthumb1="300x200" title1="Código TOTP generador por KeePassXC"
     caption="Código TOTP generador por KeePassXC" >}}
 
 #### Por qué utilizar KeePassXC adicionalmente a una aplicación del móvil

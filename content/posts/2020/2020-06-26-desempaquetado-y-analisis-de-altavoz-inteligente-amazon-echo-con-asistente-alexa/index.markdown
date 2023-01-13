@@ -11,8 +11,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:caja-amazon-echo-1.jpg"
-imagePost: "image:caja-amazon-echo-1.jpg"
+imageHead: "image:caja-amazon-echo-1.webp"
+imagePost: "image:caja-amazon-echo-1.webp"
 tags: []
 series: ["desempaquetado-tecnologia"]
 summary: "El altavoz es un dispositivo que también ha añadido funciones de dispositivo inteligente, al igual que ha ocurrido con los teléfonos móviles y televisores. Son controlados  por voz y con la aplicación para _smartphone_ capaces de leer noticias, el tiempo, el tráfico, música, radios o de servicios en _streaming_, el centro para controlar dispositivos del hogar y muchas otras funcionalidades agregables mediante _skills_. Amazon, Goolge y Apple tiene su versión de altavoz inteligente, pequeños con buena calidad de sonido y diferentes modelos entre los que elegir."
@@ -71,23 +71,23 @@ La caja incluye un pequeño manual de puesta en funcionamiento y configuración.
 
 {{< image
     gallery="true"
-    image1="image:caja-amazon-echo-1.jpg" optionsthumb1="200x150" title1="Desempaquetado Amazon Echo"
-    image2="image:caja-amazon-echo-2.jpg" optionsthumb2="200x150" title2="Desempaquetado Amazon Echo"
-    image3="image:caja-amazon-echo-3.jpg" optionsthumb3="200x150" title3="Desempaquetado Amazon Echo" >}}
+    image1="image:caja-amazon-echo-1.webp" optionsthumb1="200x150" title1="Desempaquetado Amazon Echo"
+    image2="image:caja-amazon-echo-2.webp" optionsthumb2="200x150" title2="Desempaquetado Amazon Echo"
+    image3="image:caja-amazon-echo-3.webp" optionsthumb3="200x150" title3="Desempaquetado Amazon Echo" >}}
 {{< image
     gallery="true"
-    image1="image:caja-amazon-echo-4.jpg" optionsthumb1="200x150" title1="Desempaquetado Amazon Echo"
-    image2="image:caja-amazon-echo-5.jpg" optionsthumb2="200x150" title2="Desempaquetado Amazon Echo"
-    image3="image:caja-amazon-echo-6.jpg" optionsthumb3="200x150" title3="Desempaquetado Amazon Echo" >}}
+    image1="image:caja-amazon-echo-4.webp" optionsthumb1="200x150" title1="Desempaquetado Amazon Echo"
+    image2="image:caja-amazon-echo-5.webp" optionsthumb2="200x150" title2="Desempaquetado Amazon Echo"
+    image3="image:caja-amazon-echo-6.webp" optionsthumb3="200x150" title3="Desempaquetado Amazon Echo" >}}
 {{< image
     gallery="true"
-    image1="image:caja-amazon-echo-7.jpg" optionsthumb1="200x150" title1="Desempaquetado Amazon Echo"
-    image2="image:caja-amazon-echo-8.jpg" optionsthumb2="200x150" title2="Desempaquetado Amazon Echo" >}}
+    image1="image:caja-amazon-echo-7.webp" optionsthumb1="200x150" title1="Desempaquetado Amazon Echo"
+    image2="image:caja-amazon-echo-8.webp" optionsthumb2="200x150" title2="Desempaquetado Amazon Echo" >}}
 {{< image
     gallery="true"
-    image1="image:desempaquetado-amazon-echo-1.jpg" optionsthumb1="200x150" title1="Desempaquetado Amazon Echo"
-    image2="image:desempaquetado-amazon-echo-2.jpg" optionsthumb2="200x150" title2="Desempaquetado Amazon Echo"
-    image3="image:desempaquetado-amazon-echo-3.jpg" optionsthumb3="200x150" title3="Desempaquetado Amazon Echo"
+    image1="image:desempaquetado-amazon-echo-1.webp" optionsthumb1="200x150" title1="Desempaquetado Amazon Echo"
+    image2="image:desempaquetado-amazon-echo-2.webp" optionsthumb2="200x150" title2="Desempaquetado Amazon Echo"
+    image3="image:desempaquetado-amazon-echo-3.webp" optionsthumb3="200x150" title3="Desempaquetado Amazon Echo"
     caption="Desempaquetado Amazon Echo" >}}
 
 ### Primeros pasos, funcionamiento y privacidad
@@ -100,36 +100,36 @@ Cuando se compra en Amazon se ofrece la posibilidad de preconfigurarlo para que 
 
 {{< image
     gallery="true"
-    image1="image:configuracion-amazon-echo.jpg" optionsthumb1="200x150" title1="Configuración Amazon Echo" >}}
+    image1="image:configuracion-amazon-echo.webp" optionsthumb1="200x150" title1="Configuración Amazon Echo" >}}
 {{< image
     gallery="true"
-    image1="image:app-configuracion-1.png" optionsthumb1="200x150" title1="Configuración Amazon Echo"
-    image2="image:app-configuracion-2.png" optionsthumb2="200x150" title2="Configuración Amazon Echo"
-    image3="image:app-configuracion-3.png" optionsthumb3="200x150" title3="Configuración Amazon Echo" >}}
+    image1="image:app-configuracion-1.webp" optionsthumb1="200x150" title1="Configuración Amazon Echo"
+    image2="image:app-configuracion-2.webp" optionsthumb2="200x150" title2="Configuración Amazon Echo"
+    image3="image:app-configuracion-3.webp" optionsthumb3="200x150" title3="Configuración Amazon Echo" >}}
 {{< image
     gallery="true"
-    image1="image:app-configuracion-4.png" optionsthumb1="200x150" title1="Configuración Amazon Echo"
-    image2="image:app-configuracion-5.png" optionsthumb2="200x150" title2="Configuración Amazon Echo"
-    image3="image:app-configuracion-6.png" optionsthumb3="200x150" title3="Configuración Amazon Echo" >}}
+    image1="image:app-configuracion-4.webp" optionsthumb1="200x150" title1="Configuración Amazon Echo"
+    image2="image:app-configuracion-5.webp" optionsthumb2="200x150" title2="Configuración Amazon Echo"
+    image3="image:app-configuracion-6.webp" optionsthumb3="200x150" title3="Configuración Amazon Echo" >}}
 {{< image
     gallery="true"
-    image1="image:app-configuracion-7.png" optionsthumb1="200x150" title1="Configuración Amazon Echo"
-    image2="image:app-configuracion-8.png" optionsthumb2="200x150" title2="Configuración Amazon Echo"
-    image3="image:app-configuracion-9.png" optionsthumb3="200x150" title3="Configuración Amazon Echo" >}}
+    image1="image:app-configuracion-7.webp" optionsthumb1="200x150" title1="Configuración Amazon Echo"
+    image2="image:app-configuracion-8.webp" optionsthumb2="200x150" title2="Configuración Amazon Echo"
+    image3="image:app-configuracion-9.webp" optionsthumb3="200x150" title3="Configuración Amazon Echo" >}}
 {{< image
     gallery="true"
-    image1="image:app-configuracion-10.png" optionsthumb1="200x150" title1="Configuración Amazon Echo"
-    image2="image:app-configuracion-11.png" optionsthumb2="200x150" title2="Configuración Amazon Echo"
-    image3="image:app-configuracion-12.png" optionsthumb3="200x150" title3="Configuración Amazon Echo"
+    image1="image:app-configuracion-10.webp" optionsthumb1="200x150" title1="Configuración Amazon Echo"
+    image2="image:app-configuracion-11.webp" optionsthumb2="200x150" title2="Configuración Amazon Echo"
+    image3="image:app-configuracion-12.webp" optionsthumb3="200x150" title3="Configuración Amazon Echo"
     caption="Configuración Amazon Echo" >}}
 
 La aplicación permite configurar el volumen, el ecualizador según las preferencias y el modo de entrada o salida de la clavija _jack_ 3.5mm. En mi caso tengo el ordenador conectado por HDMI al monitor, por el mismo HDMI va la señal de imagen para el monitor y de sonido para los altavoces, desde el monitor con la salida de _jack_ 3.5mm con un cable macho-macho conecto el monitor a los altavoces.
 
 {{< image
     gallery="true"
-    image1="image:app-alexa.png" optionsthumb1="200x150" title1="Aplicación Alexa"
-    image2="image:app-acerca-de-1.png" optionsthumb2="200x150" title2="Aplicación Alexa"
-    image3="image:app-acerca-de-2.png" optionsthumb3="200x150" title3="Aplicación Alexa"
+    image1="image:app-alexa.webp" optionsthumb1="200x150" title1="Aplicación Alexa"
+    image2="image:app-acerca-de-1.webp" optionsthumb2="200x150" title2="Aplicación Alexa"
+    image3="image:app-acerca-de-2.webp" optionsthumb3="200x150" title3="Aplicación Alexa"
     caption="Aplicación Alexa" >}}
 
 Aparte de la aplicación móvil Alexa tiene una [aplicación accesible con el navegador desde el ordenador](https://alexa.amazon.es), en ella se pueden realizar las acciones de configuración, añadir nuevos dispositivos y ver las listas, recordatorios, alarmas y activar o desactivar _skills_.
@@ -142,8 +142,8 @@ El volumen de sonido al máximo en GNOME es muy bajo, tengo que poner el Echo al
 
 {{< image
     gallery="true"
-    image1="image:retoques.png" optionsthumb1="200x150" title1="Aplicación Retoques de GNOME para activar la sobreamplicación"
-    image2="image:gnome-configuracion-sonido.png" optionsthumb2="200x150" title2=""
+    image1="image:retoques.webp" optionsthumb1="200x150" title1="Aplicación Retoques de GNOME para activar la sobreamplicación"
+    image2="image:gnome-configuracion-sonido.webp" optionsthumb2="200x150" title2=""
     caption="Aplicación Retoques y configuración de sonido en GNOME" >}}
 
 Escuchando música aún perdiendo el estéreo no noto tanta diferencia como pensaba, jugando en la PlayStation si noto diferencia en el estéreo.
@@ -152,9 +152,9 @@ Las rutinas son una serie de comandos que son ejecutados por Alexa, se pueden ac
 
 {{< image
     gallery="true"
-    image1="image:app-rutinas-1.png" optionsthumb1="200x150" title1="Programación de rutinas"
-    image2="image:app-rutinas-2.png" optionsthumb2="200x150" title2="Programación de rutinas"
-    image3="image:app-rutinas-3.png" optionsthumb3="200x150" title3="Programación de rutinas"
+    image1="image:app-rutinas-1.webp" optionsthumb1="200x150" title1="Programación de rutinas"
+    image2="image:app-rutinas-2.webp" optionsthumb2="200x150" title2="Programación de rutinas"
+    image3="image:app-rutinas-3.webp" optionsthumb3="200x150" title3="Programación de rutinas"
     caption="Programación de rutinas" >}}
 
 [El anillo luminoso puede tomar varios colores](https://www.amazon.es/gp/help/customer/display.html?nodeId=201601790) con diferentes significados de notificaciones, error o actividad: Amarillo, Rojo, Azul, Naranja, Morado, Verde, Blanco.
@@ -178,8 +178,8 @@ Se le puede pedir música de diferentes géneros clásica, electrónica, _techno
 
 {{< image
     gallery="true"
-    image1="image:funcionamiento-amazon-echo.jpg" optionsthumb1="300x200" title1="Amazon Echo escuchando un comando de voz "
-    image2="image:cable-jack-macho-macho-3-5mm.jpg" optionsthumb2="300x200" title2="Cable jack 3.5mm macho-macho"
+    image1="image:funcionamiento-amazon-echo.webp" optionsthumb1="300x200" title1="Amazon Echo escuchando un comando de voz "
+    image2="image:cable-jack-macho-macho-3-5mm.webp" optionsthumb2="300x200" title2="Cable jack 3.5mm macho-macho"
     caption="Amazon Echo escuchando un comando de voz y cable jack 3.5mm" >}}
 
 ### Funcionalidades y skills
@@ -250,9 +250,9 @@ Las _skills_ son nuevas funcionalidades, habilidades y comandos que Alexa es cap
 
 {{< image
     gallery="true"
-    image1="image:app-skills-1.png" optionsthumb1="200x150" title1="Skills"
-    image2="image:app-skills-2.png" optionsthumb2="200x150" title2="Skills"
-    image3="image:app-skills-3.png" optionsthumb3="200x150" title3="Skills"
+    image1="image:app-skills-1.webp" optionsthumb1="200x150" title1="Skills"
+    image2="image:app-skills-2.webp" optionsthumb2="200x150" title2="Skills"
+    image3="image:app-skills-3.webp" optionsthumb3="200x150" title3="Skills"
     caption="Skills" >}}
 
 Además de los dispositivos inteligentes como enchufes y bombillas el Echo es capaz de controlar cualquier aparato que tenga un mando por infrarrojos o radiofrecuencia incluyendo televisores, reproductores de vídeo o aires acondicionados. Con un emisor compatible con Alexa es capaz de emitir las señal infrarrojo y radiofrecuencia que el mando del aparato electrónico original y controlarlo. Otros dispositivos controlables son enchufes para encender y apagar aparatos o bombillas regulables en color e intensidad para crear ambientes cómodas para bajar la luminosidad al ver una película.
@@ -293,9 +293,9 @@ Configurar que el sonido no pueda ser más de un nivel a ciertas horas, estar de
 
 {{< image
     gallery="true"
-    image1="image:app-rutinas-1.png" optionsthumb1="200x150" title1="Rutinas"
-    image2="image:app-rutinas-2.png" optionsthumb2="200x150" title2="Rutinas"
-    image3="image:app-rutinas-3.png" optionsthumb3="200x150" title3="Rutinas"
+    image1="image:app-rutinas-1.webp" optionsthumb1="200x150" title1="Rutinas"
+    image2="image:app-rutinas-2.webp" optionsthumb2="200x150" title2="Rutinas"
+    image3="image:app-rutinas-3.webp" optionsthumb3="200x150" title3="Rutinas"
     caption="Rutinas" >}}
 
 El Echo necesita de conexión a internet, en mi caso lo tengo enchufado a la misma regleta de conexión a la corriente que el _router_. Cuando enciendo la regleta con el botón el _router_ tarda más en conectarse en alguna ocasión y proporcionar conexión a internet al resto de dispositivos el Echo incluido. Cuando el Echo se enciende y no tienen internet no sirve de nada y aún pasado varios minutos después de que el _router_ ya proporcione internet el Echo no ha sido capaz de reconectarse a internet por si mismo, le he tenido que desenchufar y enchufar después de que el _router_ haya terminado de inicializarse, en este momento sí el Echo ha tardado menos de 30 segundos en inicializarse.

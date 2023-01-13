@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:intellij-debug.png"
+imagePost: "image:intellij-debug.webp"
 tags: ["java", "planeta-codigo"]
 summary: "La depuración de un programa o _debug_ permite ejecutar un programa de forma interactiva, paso a paso y examinar los valores de las variables. Esto proporciona valiosa información que permite comprobar el correcto funcionamiento de un programa o descubrir la causa de un error del que las trazas no proporcionan información suficiente. Los depuradores o _debuggers_ son las aplicaciones que ejecutan el programa en modo depuración, permiten establecer puntos de ruptura, continuar la ejecución paso a paso o hasta el siguiente punto de ruptura e inspeccionar los valores de las variables. Los entornos integrados de desarrollo o IDE de Java como IntelliJ IDEA y eclipse ofrecen soporte para hacer depuración."
 ---
@@ -75,7 +75,7 @@ Arrancada la máquina virtual en modo depuración hay que configurar [IntelliJ][
 
 {{< image
     gallery="true"
-    image2="image:intellij-debug-configurations.png" optionsthumb2="300x200" title2="Configuración de depuración remota"
+    image2="image:intellij-debug-configurations.webp" optionsthumb2="300x200" title2="Configuración de depuración remota"
     caption="Configuración de depuración remota" >}}
 
 Añadir un punto de ruptura se hace desde el espacio vertical del editor del código fuente al inicio de cada línea, de forma alternativa utilizando la combinación de teclas <kbd>Ctrl+F8</kbd> añade un punto de ruptura en la línea de edición actual. Los puntos de ruptura pueden ser:
@@ -96,7 +96,7 @@ El programa se detiene en el punto de ruptura, los valores de las variables en e
 
 {{< image
     gallery="true"
-    image1="image:intellij-debug.png" optionsthumb1="300x200" title1="Depuración de un programa en IntelliJ IDEA"
+    image1="image:intellij-debug.webp" optionsthumb1="300x200" title1="Depuración de un programa en IntelliJ IDEA"
     caption="Depuración de un programa en IntelliJ IDEA" >}}
 
 #### Cómo depurar código Java con eclipse
@@ -105,7 +105,7 @@ El entorno de desarrollo integrado [eclipse][eclipse] también ofrece un depurad
 
 {{< image
     gallery="true"
-    image1="image:eclipse-debug-configurations.png" optionsthumb1="300x200" title1="Configuración de depuración remota"
+    image1="image:eclipse-debug-configurations.webp" optionsthumb1="300x200" title1="Configuración de depuración remota"
     caption="Configuración de depuración remota" >}}
 
 La combinación de teclas para continuar la ejecución cuando se ha suspendido por llegar a un punto de ruptura son:
@@ -119,7 +119,7 @@ Los puntos de ruptura se crean con la tecla Ctrl+Shift+B o con el botón derecho
 
 {{< image
     gallery="true"
-    image1="image:eclipse-debug.png" optionsthumb1="300x200" title1="Depuración de un programa en eclipse"
+    image1="image:eclipse-debug.webp" optionsthumb1="300x200" title1="Depuración de un programa en eclipse"
     caption="Depuración de un programa en eclipse" >}}
 
 {{< reference >}}

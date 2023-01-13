@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: true
-imageHead: "image:header.png"
+imageHead: "image:header.webp"
 imagePost: "logotype:clouding.svg"
 tags: ["gnu-linux", "planeta-codigo", "patrocinado", "software-libre"]
 summary: "La computación _cloud_ permite crear un servidor con unos pocos _clics_, en unos pocos minutos, con la posibilidad de ajustar a las necesidades su capacidad en unidades de cómputo, memoria y almacenamiento y facturado solo por los recursos consumidos por unidad de tiempo y con la flexibilidad de ampliar o reducir la capacidad del servidor _cloud_ en cualquier momento. Si con la computación _cloud_ ya es muy sencillo y rápido disponer de un servidor la mayor dificultad está en aprovisionarlo para que ofrezca el servicio que se desea, para facilitar el aprovisionamiento hay herramientas como Ansible diseñadas con este objetivo y tratar la infraestructura como código. En este artículo muestro como crear y aprovisionar un servidor _cloud_ en la infraestructura _cloud_ de Clouding para un servidor web con Ubuntu y Nginx aprovisionado con Ansible y configurado con el protocolo seguro HTTPS con certificados generados por Let's Encrypt."
@@ -40,7 +40,7 @@ Clouding permite seleccionar los recursos de cómputo para los servidores según
 
 {{< image
     gallery="true"
-    image1="image:clouding-seleccion-recursos.png" optionsthumb1="650x450" title1="Selección de los recursos de cómputo y coste"
+    image1="image:clouding-seleccion-recursos.webp" optionsthumb1="650x450" title1="Selección de los recursos de cómputo y coste"
     caption="Selección de los recursos de cómputo y coste" >}}
 
 #### Infraestructura
@@ -49,34 +49,34 @@ Clouding ofrece una infraestructura de alta disponibilidad, con servicios de cop
 
 {{< image
     gallery="true"
-    image1="image:clouding-caracteristicas-1.png" optionsthumb1="200x150" title1="Características de Clouding"
-    image2="image:clouding-caracteristicas-2.png" optionsthumb2="200x150" title2="Características de Clouding"
-    image3="image:clouding-caracteristicas-3.png" optionsthumb3="200x150" title3="Características de Clouding" >}}
+    image1="image:clouding-caracteristicas-1.webp" optionsthumb1="200x150" title1="Características de Clouding"
+    image2="image:clouding-caracteristicas-2.webp" optionsthumb2="200x150" title2="Características de Clouding"
+    image3="image:clouding-caracteristicas-3.webp" optionsthumb3="200x150" title3="Características de Clouding" >}}
 {{< image
     gallery="true"
-    image1="image:clouding-caracteristicas-4.png" optionsthumb1="200x150" title1="Características de Clouding"
-    image2="image:clouding-caracteristicas-5.png" optionsthumb2="200x150" title2="Características de Clouding"
-    image3="image:clouding-caracteristicas-6.png" optionsthumb3="200x150" title3="Características de Clouding"
+    image1="image:clouding-caracteristicas-4.webp" optionsthumb1="200x150" title1="Características de Clouding"
+    image2="image:clouding-caracteristicas-5.webp" optionsthumb2="200x150" title2="Características de Clouding"
+    image3="image:clouding-caracteristicas-6.webp" optionsthumb3="200x150" title3="Características de Clouding"
     caption="Características de Clouding" >}}
 
 Para garantizar un buen servicio utilizan una infraestructura moderna y de alto rendimiento, redundante y tolerante a fallos compuesta por hardware, software, red, imágenes y centros de datos. Almacenamiento con discos SSD NVMe de alta velocidad, RAM con corrección de errores ECC, consola de emergencia y monitorización, red de alto rendimiento baja velocidad con protecciones frente ataques DDOS y con dirección IP pública, imágenes para servidores basados en Linux o Windows, paneles de control y aplicaciones preinstaladas, finalmente sus centros de datos ubicados en España son redundantes y con energia 100% renovable.
 
 {{< image
     gallery="true"
-    image1="image:clouding-infraestructura-1.png" optionsthumb1="200x150" title1="Infraestructura de Clouding"
-    image2="image:clouding-infraestructura-2.png" optionsthumb2="200x150" title2="Infraestructura de Clouding"
-    image3="image:clouding-infraestructura-3.png" optionsthumb3="200x150" title3="Infraestructura de Clouding" >}}
+    image1="image:clouding-infraestructura-1.webp" optionsthumb1="200x150" title1="Infraestructura de Clouding"
+    image2="image:clouding-infraestructura-2.webp" optionsthumb2="200x150" title2="Infraestructura de Clouding"
+    image3="image:clouding-infraestructura-3.webp" optionsthumb3="200x150" title3="Infraestructura de Clouding" >}}
 {{< image
     gallery="true"
-    image1="image:clouding-infraestructura-4.png" optionsthumb1="200x150" title1="Infraestructura de Clouding"
-    image2="image:clouding-infraestructura-5.png" optionsthumb2="200x150" title2="Infraestructura de Clouding"
+    image1="image:clouding-infraestructura-4.webp" optionsthumb1="200x150" title1="Infraestructura de Clouding"
+    image2="image:clouding-infraestructura-5.webp" optionsthumb2="200x150" title2="Infraestructura de Clouding"
     caption="Infraestructura de Clouding" >}}
 
 Son muchas las empresas que confían en Clouding como proveedor de servicios para sus necesidades tecnológicas. Dado el tamaño de estas empresas es garantía de que el servicio de Clouding está a la altura para tenerlos como clientes.
 
 {{< image
     gallery="true"
-    image1="image:clouding-clientes.png" optionsthumb1="650x450" title1="Clientes de Clouding"
+    image1="image:clouding-clientes.webp" optionsthumb1="650x450" title1="Clientes de Clouding"
     caption="Clientes de Clouding" >}}
 
 ### Crear un servidor _cloud_ en Clouding
@@ -87,25 +87,25 @@ El primer paso para crear un servidor es crear una llave SSH con la que posterio
 
 {{< image
     gallery="true"
-    image1="image:clouding-virtual-machine-create-1.png" optionsthumb1="200x150" title1="Selección de características para crear instancia de servidor cloud"
-    image2="image:clouding-virtual-machine-create-2.png" optionsthumb2="200x150" title2="Selección de características para crear instancia de servidor cloud"
-    image3="image:clouding-virtual-machine-create-3.png" optionsthumb3="200x150" title3="Selección de características para crear instancia de servidor cloud"
+    image1="image:clouding-virtual-machine-create-1.webp" optionsthumb1="200x150" title1="Selección de características para crear instancia de servidor cloud"
+    image2="image:clouding-virtual-machine-create-2.webp" optionsthumb2="200x150" title2="Selección de características para crear instancia de servidor cloud"
+    image3="image:clouding-virtual-machine-create-3.webp" optionsthumb3="200x150" title3="Selección de características para crear instancia de servidor cloud"
     caption="" >}}
 {{< image
     gallery="true"
-    image1="image:clouding-virtual-machine-create-4.png" optionsthumb1="200x150" title1="Selección de características para crear instancia de servidor cloud"
+    image1="image:clouding-virtual-machine-create-4.webp" optionsthumb1="200x150" title1="Selección de características para crear instancia de servidor cloud"
     caption="Selección de características para crear instancia de servidor cloud" >}}
 
 Después de confirmar las características e iniciar la creación del servidor se inicializa y está disponible al cabo de unos pocos segundos o pocos minutos proporcionado entre sus detalles la dirección IP pública que le ha sido asignada y necesaria para la conexión y la configuración DNS del nombre de dominio en el proveedor externo de registro de dominio o en el panel de DNS de Clouding si se configura como servidor administrativo autorizado para el dominio.
 
 {{< image
     gallery="true"
-    image1="image:clouding-virtual-machine-create-progress.png" optionsthumb1="650x450" title1="Progreso de creación de servidor cloud"
+    image1="image:clouding-virtual-machine-create-progress.webp" optionsthumb1="650x450" title1="Progreso de creación de servidor cloud"
     caption="Progreso de creación de la servidor cloud, estadísticas y claves SSH" >}}
 {{< image
     gallery="true"
-    image1="image:clouding-virtual-machine-statistics.png" optionsthumb1="200x150" title1="Estadisticas de estado para monitorización y observabilidad"
-    image2="image:clouding-virtual-machine-ssh.png" optionsthumb2="200x150" title2="Claves SSH para los servidores"
+    image1="image:clouding-virtual-machine-statistics.webp" optionsthumb1="200x150" title1="Estadisticas de estado para monitorización y observabilidad"
+    image2="image:clouding-virtual-machine-ssh.webp" optionsthumb2="200x150" title2="Claves SSH para los servidores"
     caption="Progreso de creación de la servidor cloud, estadísticas y claves SSH" >}}
 
 ### Conexión desde línea de comandos con SSH
@@ -118,7 +118,7 @@ Para la conexión al servidor por línea de comandos se utiliza el protocolo seg
 
 {{< image
     gallery="true"
-    image1="image:ssh-login.png" optionsthumb1="650x450" title1="Conexión SSH a instancia de servidor cloud"
+    image1="image:ssh-login.webp" optionsthumb1="650x450" title1="Conexión SSH a instancia de servidor cloud"
     caption="Conexión SSH a instancia de servidor cloud" >}}
 
 ### Cómo aprovisionar un servidor _cloud_
@@ -241,7 +241,7 @@ Para configurar el servidor he utilizado como nombre de dominio uno proporcionad
 
 {{< image
     gallery="true"
-    image1="image:site.png" optionsthumb1="650x450" title1="Sitio web"
+    image1="image:site.webp" optionsthumb1="650x450" title1="Sitio web"
     caption="Sitio web" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/CloudingSiteInfrastructure" command="" %}}

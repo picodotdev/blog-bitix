@@ -47,7 +47,7 @@ El resultado es el siguiente {{< resourcelink text="documento PDF" name="documen
 
 {{< image
     gallery="true"
-    image1="image:document.png" optionsthumb1="600x450" title1="Documento generado con PDFBox"
+    image1="image:document.webp" optionsthumb1="600x450" title1="Documento generado con PDFBox"
     caption="Documento generado con PDFBox" >}}
 
 ### Alternativas a PDFBox

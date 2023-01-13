@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:elk-beats-platform.png"
+imagePost: "image:elk-beats-platform.webp"
 tags: ["planeta-codigo", "programacion"]
 summary: "Las aplicaciones monolíticas solo generan un archivo de trazas, es fácil de monitorizar, basta con conectarse por SSH a la máquina de su entorno de ejecución y utilizar los comandos _grep_ o _tail_ o descargarlo para examinarlo con otra herramienta de forma local. Pero aún siendo una aplicación monolítica es raro que una organización tenga solo una aplicación sino varias diferentes y las aplicaciones complejas se dividen en varias aún siendo parte de la misma aplicación. Esto hace que haya múltiples aplicaciones en cuyo caso acceder por SSH a una máquina diferente en cada caso no es cómodo. En el caso de múltiples aplicaciones o aplicaciones basadas en microservicios se opta por centralizar las trazas provenientes de múltiples fuentes en una única herramienta, una de las herramientas es la combinación de Elasticsearch, Logstash y Kibana que forma la pila ELK."
 ---
@@ -39,7 +39,7 @@ En vez de usar Logstash se puede usar la herramienta más ligera [Filebeat][file
 
 {{< image
     gallery="true"
-    image1="image:elk-beats-platform.png" optionsthumb1="300x200" title1="Arquitectura de la plataforma ELK"
+    image1="image:elk-beats-platform.webp" optionsthumb1="300x200" title1="Arquitectura de la plataforma ELK"
     caption="Arquitectura de la plataforma ELK" >}}
 
 ELK también cubre algunas funcionalidades de monitorización y visualización de datos de métricas, que se solapa en algunos aspectos con la funcionalidad proporcionada por [Prometheus][prometheus] y [Grafana][grafana].
@@ -87,8 +87,8 @@ En el ejemplo Kibana se accede a través de la dirección _http:\/\/localhost:56
 
 {{< image
     gallery="true"
-    image1="image:kibana.png" optionsthumb1="300x200" title1="Búsqueda en Kibana de trazas del contenedor Docker de Nginx"
-    image2="image:nginx.png" optionsthumb2="300x200" title2="Página de inicio por defecto de Nginx"
+    image1="image:kibana.webp" optionsthumb1="300x200" title1="Búsqueda en Kibana de trazas del contenedor Docker de Nginx"
+    image2="image:nginx.webp" optionsthumb2="300x200" title2="Página de inicio por defecto de Nginx"
     caption="Búsqueda en Kibana de trazas del contenedor Docker de Nginx al solicitar la página por defecto" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/ELK" %}}

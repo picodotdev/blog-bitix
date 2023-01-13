@@ -151,7 +151,7 @@ Si estos motivos te convencen o estás dispuesto a investigar más los siguiente
 
 {{< image
     gallery="true"
-    image1="image:archlinux-gnome.png" optionsthumb1="650x450" title1="Arch Linux con el entorno de escritorio GNOME"
+    image1="image:archlinux-gnome.webp" optionsthumb1="650x450" title1="Arch Linux con el entorno de escritorio GNOME"
     caption="Arch Linux con el entorno de escritorio GNOME" >}}
     
 {{< reference >}}

@@ -30,7 +30,7 @@ Para copiar el texto deseado hay que usar el ratón para seleccionar el texto pe
 
 {{< image
     gallery="true"
-    image1="image:gnome-terminal.png" optionsthumb1="300x200" title1="Menú para copiar y pegar en la terminal de GNOME"
+    image1="image:gnome-terminal.webp" optionsthumb1="300x200" title1="Menú para copiar y pegar en la terminal de GNOME"
     caption="Menú para copiar y pegar en la terminal de GNOME" >}}
 
 {{< reference >}}

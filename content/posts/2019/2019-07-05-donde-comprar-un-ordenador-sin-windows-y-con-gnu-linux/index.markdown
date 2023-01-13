@@ -25,13 +25,13 @@ Sin embargo, desde hace un tiempo es posible adquirir un ordenador con GNU/Linux
 
 {{< image
     gallery="true"
-    image1="image:slimbook-pro-x.jpg" optionsthumb1="300x200" title1="Portátiles Slimbook PRO y X"
-    image2="image:vant-moove14.jpg" optionsthumb2="300x200" title2="Portátiles VANT MOOVE"
+    image1="image:slimbook-pro-x.webp" optionsthumb1="300x200" title1="Portátiles Slimbook PRO y X"
+    image2="image:vant-moove14.webp" optionsthumb2="300x200" title2="Portátiles VANT MOOVE"
     caption="Portátiles Slimbook y VANT" >}}
 {{< image
     gallery="true"
-    image1="image:slimbook-one.jpg" optionsthumb1="300x200" title1="Ordenadores de escritorio Slimbook ONE"
-    image2="image:vant-pure-a.jpg" optionsthumb2="300x200" title2="Ordenadores de escritorio VANT PURE-A"
+    image1="image:slimbook-one.webp" optionsthumb1="300x200" title1="Ordenadores de escritorio Slimbook ONE"
+    image2="image:vant-pure-a.webp" optionsthumb2="300x200" title2="Ordenadores de escritorio VANT PURE-A"
     caption="Ordenadores de escritorio Slimbook y VANT" >}}
 
 Otra alternativa son los [Intel NUC][intel-nuc] como el [Bean Canyon que adquirí hace unos unos meses][blogbitix-363], al ser un _barebone_ no incluía memoria ni almacenamiento, tanto la memoria como el almacenamiento SSD los adquirí aparte y su instalación realizable en unos pocos minutos es muy sencilla ni requiere grandes conocimiento. Como no incluía almacenamiento tampoco incluía Windows, le instalé [Arch Linux][archlinux] y todo el hardware fue reconocido sin necesidad de controladores adicionales.

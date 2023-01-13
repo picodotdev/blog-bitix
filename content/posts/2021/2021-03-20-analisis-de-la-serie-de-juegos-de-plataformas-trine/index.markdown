@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:trine-1.jpg"
-imagePost: "image:trine-1.jpg"
+imageHead: "image:trine-1.webp"
+imagePost: "image:trine-1.webp"
 tags: ["juegos", "planeta-codigo"]
 series: ["analisis-juegos"]
 summary: "La serie de juegos Trine destacan por su nivel artístico gráfico y como juego de plataformas con puzles, incluso el primer Trine destaca en esto. Los juegos están basados en las aventuras de tres personajes un caballero, un mago y una ladrona cuya historia es narrada antes de cada nivel y está completamente doblada al español. El objetivo es llegar al final de cada nivel empleando una combinación de habilidades de cada personaje pero para darle más diversión al juego es posible completarlo con varios niveles de dificultad o como objetivos adicionales encontrar todo los orbes de experiencia, algunos de los cuales están un poco escondidos."
@@ -27,19 +27,19 @@ Debido a que son juegos ya con varios años en las diferentes tiendas digitales 
 
 {{< image
     gallery="true"
-    image1="image:trine-1.jpg" optionsthumb1="200x150" title1="Pantalla inicial y menú"
-    image2="image:trine-2.jpg" optionsthumb2="200x150" title2="Pantalla inicial y menú"
-    image3="image:trine-3.jpg" optionsthumb3="200x150" title3="Pantalla inicial y menú" >}}
+    image1="image:trine-1.webp" optionsthumb1="200x150" title1="Pantalla inicial y menú"
+    image2="image:trine-2.webp" optionsthumb2="200x150" title2="Pantalla inicial y menú"
+    image3="image:trine-3.webp" optionsthumb3="200x150" title3="Pantalla inicial y menú" >}}
 {{< image
     gallery="true"
-    image1="image:trine-1-menu-1.jpg" optionsthumb1="200x150" title1="Pantalla inicial y menú"
-    image2="image:trine-2-menu-1.jpg" optionsthumb2="200x150" title2="Pantalla inicial y menú"
-    image3="image:trine-3-menu-1.jpg" optionsthumb3="200x150" title3="Pantalla inicial y menú" >}}
+    image1="image:trine-1-menu-1.webp" optionsthumb1="200x150" title1="Pantalla inicial y menú"
+    image2="image:trine-2-menu-1.webp" optionsthumb2="200x150" title2="Pantalla inicial y menú"
+    image3="image:trine-3-menu-1.webp" optionsthumb3="200x150" title3="Pantalla inicial y menú" >}}
 {{< image
     gallery="true"
-    image1="image:trine-1-menu-2.jpg" optionsthumb1="200x150" title1="Pantalla inicial y menú"
-    image2="image:trine-2-menu-2.jpg" optionsthumb2="200x150" title2="Pantalla inicial y menú"
-    image3="image:trine-3-menu-2.jpg" optionsthumb3="200x150" title3="Pantalla inicial y menú"
+    image1="image:trine-1-menu-2.webp" optionsthumb1="200x150" title1="Pantalla inicial y menú"
+    image2="image:trine-2-menu-2.webp" optionsthumb2="200x150" title2="Pantalla inicial y menú"
+    image3="image:trine-3-menu-2.webp" optionsthumb3="200x150" title3="Pantalla inicial y menú"
     caption="Pantalla inicial y menú" >}}
 
 {{< amazon
@@ -54,15 +54,15 @@ Los juegos en toda la saga narran la historia de tres personajes Pontius un caba
 
 {{< image
     gallery="true"
-    image1="image:trine-1-cover.jpg" optionsthumb1="200x150" title1="Portada Trine 1"
-    image2="image:trine-2-cover.jpg" optionsthumb2="200x150" title2="Portada Trine 2"
-    image3="image:trine-3-cover.jpg" optionsthumb3="200x150" title3="Portada Trine 3"
+    image1="image:trine-1-cover.webp" optionsthumb1="200x150" title1="Portada Trine 1"
+    image2="image:trine-2-cover.webp" optionsthumb2="200x150" title2="Portada Trine 2"
+    image3="image:trine-3-cover.webp" optionsthumb3="200x150" title3="Portada Trine 3"
     caption="Portadas de los juegos Trine" >}}
 
 {{< image
     gallery="true"
-    image1="image:trine-1-inicio.jpg" optionsthumb1="300x200" title1="Inicio de nivel en Trine 1"
-    image2="image:trine-2-inicio.jpg" optionsthumb2="300x200" title2="Inicio de nivel en Trine 2"
+    image1="image:trine-1-inicio.webp" optionsthumb1="300x200" title1="Inicio de nivel en Trine 1"
+    image2="image:trine-2-inicio.webp" optionsthumb2="300x200" title2="Inicio de nivel en Trine 2"
     caption="Inicios de nivel en Trine 1 y 2" >}}
 
 El juego consiste en llegar al final de cada uno de los niveles, recoger los orbes de experiencia y abrir los cofres del tesoro. La dificultad radica en que algunos orbes y cofres están un poco escondidos con lo que es necesario fijarse bien en cada sección del nivel para descubrirlos, también en que algunas secciones requieren de la combinación de los personajes y emplear sus habilidades para continuar a la siguiente sección.
@@ -71,17 +71,17 @@ Recoger los orbes de experiencia otorgan puntos de habilidad para emplearlos en 
 
 {{< image
     gallery="true"
-    image1="image:trine-1-habilidades-1.jpg" optionsthumb1="200x150" title1="Habilidades de personajes en Trine 1"
-    image2="image:trine-1-habilidades-2.jpg" optionsthumb2="200x150" title2="Habilidades de personajes en Trine 1"
-    image3="image:trine-2-habilidades.jpg" optionsthumb3="200x150" title3="Habilidades de personajes en Trine 2"
+    image1="image:trine-1-habilidades-1.webp" optionsthumb1="200x150" title1="Habilidades de personajes en Trine 1"
+    image2="image:trine-1-habilidades-2.webp" optionsthumb2="200x150" title2="Habilidades de personajes en Trine 1"
+    image3="image:trine-2-habilidades.webp" optionsthumb3="200x150" title3="Habilidades de personajes en Trine 2"
     caption="Habilidades de personajes en Trine 1 y 2" >}}
 
 En algunos niveles se encuentran varios enemigos, en Trine son esqueletos y en Trine 2 son duendes. En algunos niveles hay jefes enemigos que para eliminarlos hay que emplear una táctica según su comportamiento, variedad de ataques o descubrir sus puntos vulnerables para hacerles daño.
 
 {{< image
     gallery="true"
-    image1="image:trine-1-jefe.jpg" optionsthumb1="300x200" title1="Jefe enemigo de Trine 1"
-    image2="image:trine-2-jefe.jpg" optionsthumb2="300x200" title2="Jefe enemigo de Trine 2"
+    image1="image:trine-1-jefe.webp" optionsthumb1="300x200" title1="Jefe enemigo de Trine 1"
+    image2="image:trine-2-jefe.webp" optionsthumb2="300x200" title2="Jefe enemigo de Trine 2"
     caption="Jefes enemigos de Trine 1 y 2" >}}
 
 Posee varios niveles de dificultad que hacen que los enemigos tengan más vida, los personajes reciban más daño al sufrir heridas o al llegar a ciertos puntos de control los personajes no se curen completamente y sus resurrecciones estén limitadas. En caso de que los tres personajes mueran se ha de reiniciar el nivel desde el principio en el modo _hardcore_, si un personaje muere al llegar a ciertos puntos de control los personajes muertos reviven y se puede continuar. Aunque los personajes puedan resucitar obliga a llegar hasta el siguiente punto de control sin los personajes restantes lo que dificulta continuar avanzando al no poder emplear las habilidades de los personajes muertos.
@@ -98,9 +98,9 @@ En Trine hay 16 niveles con unos 25 orbes de experiencia por nivel, en Trine 2 h
 
 {{< image
     gallery="true"
-    image1="image:trine-1-niveles.jpg" optionsthumb1="200x150" title1="Niveles de Trine 1"
-    image2="image:trine-2-niveles.jpg" optionsthumb2="200x150" title2="Niveles de Trine 2"
-    image3="image:trine-3-niveles.jpg" optionsthumb3="200x150" title3="Niveles de Trine 3"
+    image1="image:trine-1-niveles.webp" optionsthumb1="200x150" title1="Niveles de Trine 1"
+    image2="image:trine-2-niveles.webp" optionsthumb2="200x150" title2="Niveles de Trine 2"
+    image3="image:trine-3-niveles.webp" optionsthumb3="200x150" title3="Niveles de Trine 3"
     caption="Niveles de Trine 1, 2 y 3" >}}
 
 ### Objetivos del juego
@@ -117,15 +117,15 @@ Incluso el primer Trine tiene unos detalles gráficos muy notables, mejorados en
 
 {{< image
     gallery="true"
-    image1="image:trine-1-arte-grafico-1.jpg" optionsthumb1="300x200" title1="Arte gráfico de Trine 1"
-    image2="image:trine-1-arte-grafico-2.jpg" optionsthumb2="300x200" title2="Arte gráfico de Trine 1" >}}
+    image1="image:trine-1-arte-grafico-1.webp" optionsthumb1="300x200" title1="Arte gráfico de Trine 1"
+    image2="image:trine-1-arte-grafico-2.webp" optionsthumb2="300x200" title2="Arte gráfico de Trine 1" >}}
 {{< image
     gallery="true"
-    image1="image:trine-2-arte-grafico-1.jpg" optionsthumb1="300x200" title1="Arte gráfico de Trine 2"
-    image2="image:trine-2-arte-grafico-2.jpg" optionsthumb2="300x200" title2="Arte gráfico de Trine 2" >}}
+    image1="image:trine-2-arte-grafico-1.webp" optionsthumb1="300x200" title1="Arte gráfico de Trine 2"
+    image2="image:trine-2-arte-grafico-2.webp" optionsthumb2="300x200" title2="Arte gráfico de Trine 2" >}}
 {{< image
     gallery="true"
-    image1="image:trine-3-arte-grafico-1.jpg" optionsthumb1="300x200" title1="Arte gráfico de Trine 3"
+    image1="image:trine-3-arte-grafico-1.webp" optionsthumb1="300x200" title1="Arte gráfico de Trine 3"
     caption="Arte gráfico de Trine 1, 2 y 3" >}}
 
 A lo largo de las diferentes versiones y con el paso de los años el arte gráfico ha mejorado en algunos aspectos pero incluso en la versión de _Trine 1: Enchanted Edition_ el aspecto gráfico en la [PlayStation 4][playstation-4] es admirable.

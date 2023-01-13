@@ -62,7 +62,7 @@ Como muchos patrones de diseño añade cierta complejidad en el diseño de las c
 
 {{< image
     gallery="true"
-    image1="image:factory-pattern.png" optionsthumb1="650x450" title1="Diagrama de clases del patrón de diseño Factory"
+    image1="image:factory-pattern.webp" optionsthumb1="650x450" title1="Diagrama de clases del patrón de diseño Factory"
     caption="Diagrama de clases del patrón de diseño Factory" >}}
 
 #### Diferencias con el patrón de diseño _Builder_

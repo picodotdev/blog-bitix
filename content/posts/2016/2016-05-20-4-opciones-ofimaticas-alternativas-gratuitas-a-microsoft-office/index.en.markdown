@@ -43,9 +43,9 @@ Microsoft Office includes Word as a word processor, Powerpoint for presentations
 
 {{< image
     gallery="true"
-    image1="image:microsoft-office-word.png" optionsthumb1="200x150" title1="Microsoft Office Word"
-    image2="image:microsoft-office-excel.png" optionsthumb2="200x150" title2="Microsoft Office Excel"
-    image3="image:microsoft-office-powerpoint.png" optionsthumb3="200x150" title3="Microsoft Office Powerpoint"
+    image1="image:microsoft-office-word.webp" optionsthumb1="200x150" title1="Microsoft Office Word"
+    image2="image:microsoft-office-excel.webp" optionsthumb2="200x150" title2="Microsoft Office Excel"
+    image3="image:microsoft-office-powerpoint.webp" optionsthumb3="200x150" title3="Microsoft Office Powerpoint"
     caption="Microsoft Office" >}}
 
 ### LibreOffice
@@ -54,9 +54,9 @@ The equivalent free and free alternative to Office is [LibreOffice][libreoffice]
 
 {{< image
     gallery="true"
-    image1="image:libreoffice-writer.png" optionsthumb1="200x150" title1="LibreOffice Writer"
-    image2="image:libreoffice-calc.png" optionsthumb2="200x150" title2="LibreOffice Calc"
-    image3="image:libreoffice-impress.png" optionsthumb3="200x150" title3="LibreOffice Impress"
+    image1="image:libreoffice-writer.webp" optionsthumb1="200x150" title1="LibreOffice Writer"
+    image2="image:libreoffice-calc.webp" optionsthumb2="200x150" title2="LibreOffice Calc"
+    image3="image:libreoffice-impress.webp" optionsthumb3="200x150" title3="LibreOffice Impress"
     caption="LibreOffice" >}}
 
 ### WPS Office
@@ -69,9 +69,9 @@ It is available for Windows (XP, Vista, 7, 8, 10) even in versions for which not
 
 {{< image
     gallery="true"
-    image1="image:wpsoffice-writer.png" optionsthumb1="200x150" title1="WPS Office Writer"
-    image2="image:wpsoffice-spreadsheets.png" optionsthumb2="200x150" title2="WPS Office Spreadsheets"
-    image3="image:wpsoffice-presentation.png" optionsthumb3="200x150" title3="WPS Office Presentation"
+    image1="image:wpsoffice-writer.webp" optionsthumb1="200x150" title1="WPS Office Writer"
+    image2="image:wpsoffice-spreadsheets.webp" optionsthumb2="200x150" title2="WPS Office Spreadsheets"
+    image3="image:wpsoffice-presentation.webp" optionsthumb3="200x150" title3="WPS Office Presentation"
     caption="WPS Office" >}}
 
 ### Google Docs
@@ -82,9 +82,9 @@ For companies, it is offered at a price of 4 € per user per month that include
 
 {{< image
     gallery="true"
-    image1="image:googledocs-documento.png" optionsthumb1="200x150" title1="Google Docs"
-    image2="image:googledocs-hoja-de-calculo.png" optionsthumb2="200x150" title2="Google Docs"
-    image3="image:googledocs-presentacion.png" optionsthumb3="200x150" title3="Google Docs"
+    image1="image:googledocs-documento.webp" optionsthumb1="200x150" title1="Google Docs"
+    image2="image:googledocs-hoja-de-calculo.webp" optionsthumb2="200x150" title2="Google Docs"
+    image3="image:googledocs-presentacion.webp" optionsthumb3="200x150" title3="Google Docs"
     caption="Google Docs" >}}
 
 ### OnlyOffice
@@ -93,9 +93,9 @@ For companies, it is offered at a price of 4 € per user per month that include
 
 {{< image
     gallery="true"
-    image1="image:onlyoffice-documentos.png" optionsthumb1="200x150" title1="OnlyOffice Documents"
-    image2="image:onlyoffice-hojas-de-calculo.png" optionsthumb2="200x150" title2="OnlyOffice Spreadsheets"
-    image3="image:onlyoffice-presentaciones.png" optionsthumb3="200x150" title3="OnlyOffice PresentPresentationaciones"
+    image1="image:onlyoffice-documentos.webp" optionsthumb1="200x150" title1="OnlyOffice Documents"
+    image2="image:onlyoffice-hojas-de-calculo.webp" optionsthumb2="200x150" title2="OnlyOffice Spreadsheets"
+    image3="image:onlyoffice-presentaciones.webp" optionsthumb3="200x150" title3="OnlyOffice PresentPresentationaciones"
     caption="OnlyOffice" >}}
 
 ### Other alternatives

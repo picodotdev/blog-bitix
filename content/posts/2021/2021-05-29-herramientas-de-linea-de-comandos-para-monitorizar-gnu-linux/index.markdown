@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:btop.png"
-imagePost: "image:btop.png"
+imageHead: "image:btop.webp"
+imagePost: "image:btop.webp"
 tags: ["gnu-linux", "planeta-codigo"]
 summary: "A veces un proceso del sistema consume gran cantidad de procesador, memoria o realiza muchas operaciones de lectura o escritura en el almacenamiento, simplemente se desea obtener o monitorizar cierta información del sistema. Hay varias herramientas en GNU/Linux para monitorizar los procesos del sistema, en almacenamiento, la red y temperatura de componentes, otros comandos permiten obtener información de los principales componentes hardware y software de la computadora."
 ---
@@ -44,11 +44,11 @@ Com la tecla _h_ se accede al panel de configuración en el que es posible perso
 
 {{< image
     gallery="true"
-    image1="image:top.png" optionsthumb1="300x200" title1="Comando top" >}}
+    image1="image:top.webp" optionsthumb1="300x200" title1="Comando top" >}}
 {{< image
     gallery="true"
-    image1="image:top-help.png" optionsthumb1="300x200" title1="Comando top"
-    image2="image:top-colors.png" optionsthumb2="300x200" title2="Comando top"
+    image1="image:top-help.webp" optionsthumb1="300x200" title1="Comando top"
+    image2="image:top-colors.webp" optionsthumb2="300x200" title2="Comando top"
     caption="Comando top" >}}
 
 #### htop
@@ -63,8 +63,8 @@ Con la tecla _F1_ es posible ver las opciones de configuración de la utilidad.
 
 {{< image
     gallery="true"
-    image1="image:htop.png" optionsthumb1="300x200" title1="Comando htop"
-    image2="image:htop-help.png" optionsthumb2="300x200" title2="Comando htop"
+    image1="image:htop.webp" optionsthumb1="300x200" title1="Comando htop"
+    image2="image:htop-help.webp" optionsthumb2="300x200" title2="Comando htop"
     caption="Comando htop" >}}
 
 #### ps
@@ -75,7 +75,7 @@ El comando _ps_ permite obtener información del estado de los procesos del sist
 
 {{< image
     gallery="true"
-    image1="image:ps.png" optionsthumb1="300x200" title1="Comando ps"
+    image1="image:ps.webp" optionsthumb1="300x200" title1="Comando ps"
     caption="Comando ps" >}}
 
 #### btop
@@ -88,11 +88,11 @@ Con la tecla _M_ se accede al menu del programa donde configurar los diferentes 
 
 {{< image
     gallery="true"
-    image1="image:btop.png" optionsthumb1="300x200" title1="Comando btop" >}}
+    image1="image:btop.webp" optionsthumb1="300x200" title1="Comando btop" >}}
 {{< image
     gallery="true"
-    image1="image:btop-menu.png" optionsthumb1="300x200" title1="Comando btop"
-    image2="image:btop-options.png" optionsthumb2="300x200" title2="Comando btop"
+    image1="image:btop-menu.webp" optionsthumb1="300x200" title1="Comando btop"
+    image2="image:btop-options.webp" optionsthumb2="300x200" title2="Comando btop"
     caption="Comando btop" >}}
 
 #### free
@@ -103,7 +103,7 @@ El comando _free_ permite ver la memoria física del sistema y la cantidad de me
 
 {{< image
     gallery="true"
-    image1="image:free.png" optionsthumb1="300x200" title1="Comando free"
+    image1="image:free.webp" optionsthumb1="300x200" title1="Comando free"
     caption="Comando free" >}}
 
 ### Monitorizar almacenamiento
@@ -118,7 +118,7 @@ El comando _df_ permite ver información del almacenamiento de las unidades cone
 
 {{< image
     gallery="true"
-    image1="image:df.png" optionsthumb1="300x200" title1="Comando df"
+    image1="image:df.webp" optionsthumb1="300x200" title1="Comando df"
     caption="Comando df" >}}
 
 #### iotop
@@ -133,7 +133,7 @@ Esta herramienta requiere permisos de superusuario en su ejecución.
 
 {{< image
     gallery="true"
-    image1="image:iotop.png" optionsthumb1="300x200" title1="Comando iotop"
+    image1="image:iotop.webp" optionsthumb1="300x200" title1="Comando iotop"
     caption="Comando iotop" >}}
 
 #### lsof
@@ -144,7 +144,7 @@ El comando _lsof_ permite conocer cuales son los archivos abiertos por los proce
 
 {{< image
     gallery="true"
-    image1="image:lsof.png" optionsthumb1="300x200" title1="Comando lsof"
+    image1="image:lsof.webp" optionsthumb1="300x200" title1="Comando lsof"
     caption="Comando lsof" >}}
 
 ### Monitorizar red
@@ -165,7 +165,7 @@ El comando _tcpdump_ permite capturar el tráfico de red de una interfaz de red,
 
 {{< image
     gallery="true"
-    image1="image:tcpdump.png" optionsthumb1="300x200" title1="Comando tcpdump"
+    image1="image:tcpdump.webp" optionsthumb1="300x200" title1="Comando tcpdump"
     caption="Comando tcpdump" >}}
 
 ### Otras herramientas de monitorización
@@ -178,7 +178,7 @@ El comando _uptime_ permite ver cuánto tiempo lleva en funcionamiento el sistem
 
 {{< image
     gallery="true"
-    image1="image:uptime.png" optionsthumb1="300x200" title1="Comando uptime"
+    image1="image:uptime.webp" optionsthumb1="300x200" title1="Comando uptime"
     caption="Comando uptime" >}}
 
 #### iostat
@@ -189,7 +189,7 @@ El comando _iostat_ muestra información de entrada y salida del sistema agrupan
 
 {{< image
     gallery="true"
-    image1="image:iostat.png" optionsthumb1="300x200" title1="Comando iostat"
+    image1="image:iostat.webp" optionsthumb1="300x200" title1="Comando iostat"
     caption="Comando iostat" >}}
 
 #### sensors
@@ -200,7 +200,7 @@ El comando _sensors_ permite obtener información de la temperatura que incorpor
 
 {{< image
     gallery="true"
-    image1="image:sensors.png" optionsthumb1="300x200" title1="Comando sensors"
+    image1="image:sensors.webp" optionsthumb1="300x200" title1="Comando sensors"
     caption="Comando sensors" >}}
 
 #### watch
@@ -211,7 +211,7 @@ El comando _sensors_ no muestra la temperatura en tiempo real, únicamente en el
 
 {{< image
     gallery="true"
-    image1="image:watch.png" optionsthumb1="300x200" title1="Comando watch"
+    image1="image:watch.webp" optionsthumb1="300x200" title1="Comando watch"
     caption="Comando watch" >}}
 
 #### neofetch
@@ -224,7 +224,7 @@ El comando _neofetch_ muestra la información básica del sistema en el que se e
 
 {{< image
     gallery="true"
-    image1="image:neofetch.png" optionsthumb1="300x200" title1="Comando neofetch"
+    image1="image:neofetch.webp" optionsthumb1="300x200" title1="Comando neofetch"
     caption="Comando neofetch" >}}
 
 #### hwinfo
@@ -235,8 +235,8 @@ Aunque el comando _hwinfo_ no es un comando de monitorización permite conocer d
 
 {{< image
     gallery="true"
-    image1="image:hwinfo.png" optionsthumb1="300x200" title1="Comando hwinfo"
-    image2="image:hwinfo-help.png" optionsthumb2="300x200" title2="Comando hwinfo"
+    image1="image:hwinfo.webp" optionsthumb1="300x200" title1="Comando hwinfo"
+    image2="image:hwinfo-help.webp" optionsthumb2="300x200" title2="Comando hwinfo"
     caption="Comando hwinfo" >}}
 
 {{< reference >}}

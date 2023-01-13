@@ -42,14 +42,14 @@ Un _assert_ cuya expresión se evalúa como falso produce una excepción del tip
 
 {{< image
     gallery="true"
-    image1="image:activacion-assert-java.png" optionsthumb1="300x200" title1="Activación asserts en eclipse" >}}
+    image1="image:activacion-assert-java.webp" optionsthumb1="300x200" title1="Activación asserts en eclipse" >}}
 
 En la primera de las siguientes capturas de pantalla puede verse como el programa se ejecuta sin producir una excepción a pesar de no cumplirse el _assert_ del método _nextNumber_ ya que los _asserts_ no fueron activados, en la segunda captura activando los _assert_ se lanza una excepción al no cumplirse la postcondición.
 
 {{< image
     gallery="true"
-    image1="image:no-excepcion.png" optionsthumb1="300x200" title1="Ejecución sin excepción"
-    image1="image:excepcion-assert.png" optionsthumb1="300x200" title2="Ejecución con excepción" >}}
+    image1="image:no-excepcion.webp" optionsthumb1="300x200" title1="Ejecución sin excepción"
+    image1="image:excepcion-assert.webp" optionsthumb1="300x200" title2="Ejecución con excepción" >}}
 
 En el recomendable artículo [_Programming With Assertions_](https://docs.oracle.com/javase/8/docs/technotes/guides/language/assert.html) se comenta de forma más detallada y amplia el funcionamiento y uso adecuado de la palabra clave _assert_ de Java.
 

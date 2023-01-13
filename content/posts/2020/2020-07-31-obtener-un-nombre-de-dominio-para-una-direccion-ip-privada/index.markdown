@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:dig.png"
+imagePost: "image:dig.webp"
 tags: ["gnu-linux", "planeta-codigo"]
 ---
 

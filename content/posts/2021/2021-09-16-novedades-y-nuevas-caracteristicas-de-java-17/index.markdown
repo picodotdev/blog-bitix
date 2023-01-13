@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:java-17.jpg"
-imagePost: "image:java-17.jpg"
+imageHead: "image:java-17.webp"
+imagePost: "image:java-17.webp"
 tags: ["java", "planeta-codigo"]
 series: ["java-platform"]
 summary: "La versión Java 17 sucede a Java 11 como versión LTS, por ello es una versión más importante que las no LTS anteriores. Incorpora todas las mejoras incluidas en todas las no LTS previas más otras adicionales dede Java 16 publicada seis meses antes. Como versión LTS ofrece un soporte de correcciones de errores, fallos y alertas de seguridad  por un periodo de cinco años hasta septiembre de 2026 más un periodo adicional de tres años hasta 2029. La versión 6 del _framework_ de Spring y Spring Boot 3 se tendrán como requisito mínimo Java 17 y Jakarta 9."

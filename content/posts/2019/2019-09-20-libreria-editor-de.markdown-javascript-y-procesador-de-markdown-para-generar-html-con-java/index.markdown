@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:editor-md.png"
+imagePost: "image:editor-md.webp"
 tags: ["java", "javascript", "planeta-codigo", "programacion"]
 ---
 
@@ -29,7 +29,7 @@ Como editor JavaScript para _markdown_ de las varias opciones que he encontrado 
 
 {{< image
     gallery="true"
-    image1="image:editor-md.png" optionsthumb1="650x450" title1="Editor JavaScript de markdown"
+    image1="image:editor-md.webp" optionsthumb1="650x450" title1="Editor JavaScript de markdown"
     caption="Editor JavaScript de markdown" >}}
 
 Una vez que se obtiene el texto en formato _markdown_ en algún momento al visualizarlo como parte del código fuente en una página web hay que transformarlo a formato HTML, para esto en Java hay varias librerías algunas ya obsoletas, antiguas y sin mantenimiento. De las que su desarrollo sigue activa una es [Flexmark Java](https://github.com/vsch/flexmark-java).

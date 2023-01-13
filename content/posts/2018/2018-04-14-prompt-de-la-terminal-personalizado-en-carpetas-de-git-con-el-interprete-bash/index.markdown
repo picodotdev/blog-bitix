@@ -24,8 +24,8 @@ El intérprete [Zsh][zsh] y [Oh-My-Zsh](https://ohmyz.sh/) ofrece mediante sus t
 
 {{< image
     gallery="true"
-    image1="image:terminal.png" optionsthumb1="300x200" title1="Prompt de la terminal por defecto"
-    image2="image:git-bash.png" optionsthumb2="300x200" title2="Prompt de la terminal en carpeta git"        
+    image1="image:terminal.webp" optionsthumb1="300x200" title1="Prompt de la terminal por defecto"
+    image2="image:git-bash.webp" optionsthumb2="300x200" title2="Prompt de la terminal en carpeta git"        
     caption="Prompt de la terminal por defecto y en carpeta de git" >}}
 
 * \* la presencia de este caracter indica que hay cambios en alguno de los archivos bajo el control de versiones.

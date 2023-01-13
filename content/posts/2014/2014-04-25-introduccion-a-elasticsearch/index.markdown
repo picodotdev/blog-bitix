@@ -30,7 +30,7 @@ Después de unos segundos deberemos ver algo como lo siguiente.
 
 {{< image
     gallery="true"
-    image1="image:elasticsearch.png" optionsthumb1="300x200" >}}
+    image1="image:elasticsearch.webp" optionsthumb1="300x200" >}}
 
 Elasticsearch usa sus propios conceptos y aunque no es una base de datos relacional algunos pueden ser similares. Lo que en en una base de datos relacional es un esquema en ES es un índice, lo que en la primera es una tabla en ES es un tipo, continuando una fila en ES es un documento y finalmente una columna es una propiedad en ES.
 
@@ -70,7 +70,7 @@ Además de búsquedas ES puede ofrecernos más funcionalidades como las facetas 
 
 {{< image
     gallery="true"
-    image1="image:categorias-amazon.png" optionsthumb1="300x200" title1="Categorías de productos (facets) en Amazon" >}}
+    image1="image:categorias-amazon.webp" optionsthumb1="300x200" title1="Categorías de productos (facets) en Amazon" >}}
 
 Otra de las funcionalidades que nos puede interesar es que ES nos ofrezca sugerencias para determinados términos, en el siguiente ejemplo solicitamos además de la búsqueda sugerencias para algunas palabras que tienen fallos de escritura.
 

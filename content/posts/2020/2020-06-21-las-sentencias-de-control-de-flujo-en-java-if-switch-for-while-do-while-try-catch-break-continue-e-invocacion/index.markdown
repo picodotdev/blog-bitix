@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:sentencia-if-else.png"
+imagePost: "image:sentencia-if-else.webp"
 tags: ["java", "planeta-codigo", "programacion"]
 summary: "El lenguaje de programación Java utiliza un paradigma orientado a objetos pero también emplea otros paradigmas como el funcional con la incorporación de las _lambas_ en Java 8 y el imperativo en los bloques de sentencias de los métodos. En este artículo están los tipos de sentencias de control de flujo disponibles en el lenguaje de programación Java: condicionales, de repetición, de asignación, de gestión de excepciones e invocación de métodos en Java."
 ---
@@ -49,8 +49,8 @@ Las sentencias condicionales son un tipo de sentencia que evalúa una expresión
 
 {{< image
     gallery="true"
-    image1="image:sentencia-if.png" optionsthumb1="300x200" title1="Diagrama sentencia if"
-    image2="image:sentencia-if-else.png" optionsthumb2="300x200" title2="Diagrama sentencia if-else"
+    image1="image:sentencia-if.webp" optionsthumb1="300x200" title1="Diagrama sentencia if"
+    image2="image:sentencia-if-else.webp" optionsthumb2="300x200" title2="Diagrama sentencia if-else"
     caption="Diagramas sentencias if e if-else" source="beginnersbook.com" >}}
 
 {{< code file="CondicionalIf.java" language="java" options="" >}}
@@ -59,7 +59,7 @@ Cuando una sentencia _if_ tiene muchas ramas y la expresión condicional comprue
 
 {{< image
     gallery="true"
-    image1="image:sentencia-switch.png" optionsthumb1="650x450" title1="Diagrama sentencia switch"
+    image1="image:sentencia-switch.webp" optionsthumb1="650x450" title1="Diagrama sentencia switch"
     caption="Diagrama sentencia switch" source="beginnersbook.com" >}}
 
 {{< code file="CondicionalSwitch.java" language="java" options="" >}}
@@ -78,7 +78,7 @@ La sentencia _while_ ejecuta un bloque de sentencias mientras se cumpla una cond
 
 {{< image
     gallery="true"
-    image1="image:sentencia-while.png" optionsthumb1="650x450" title1="Diagrama sentencia while"
+    image1="image:sentencia-while.webp" optionsthumb1="650x450" title1="Diagrama sentencia while"
     caption="Diagrama sentencia while" source="beginnersbook.com" >}}
 
 {{< code file="RepeticionWhile.java" language="java" options="" >}}
@@ -87,7 +87,7 @@ En el bucle _do-while_ la comprobación de la condición está después del bloq
 
 {{< image
     gallery="true"
-    image1="image:sentencia-do-while.png" optionsthumb1="650x450" title1="Diagrama sentencia do-while"
+    image1="image:sentencia-do-while.webp" optionsthumb1="650x450" title1="Diagrama sentencia do-while"
     caption="Diagrama sentencia do-while" source="beginnersbook.com" >}}
 
 {{< code file="RepeticionDoWhile.java" language="java" options="" >}}
@@ -96,7 +96,7 @@ La sentencia _for_ utilizan otra sintaxis para realizar bucles, una de las [4 fo
 
 {{< image
     gallery="true"
-    image1="image:sentencia-for.png" optionsthumb1="650x450" title1="Diagrama sentencia for"
+    image1="image:sentencia-for.webp" optionsthumb1="650x450" title1="Diagrama sentencia for"
     caption="Diagrama sentencia for" source="beginnersbook.com" >}}
 
 {{< code file="RepeticionFor.java" language="java" options="" >}}
@@ -105,7 +105,7 @@ Dentro de las sentencias de bucle se pueden emplear las palabras reservadas _bre
 
 {{< image
     gallery="true"
-    image1="image:sentencia-continue.png" optionsthumb1="650x450" title1="Diagrama sentencia continue"
+    image1="image:sentencia-continue.webp" optionsthumb1="650x450" title1="Diagrama sentencia continue"
     caption="Diagrama sentencia continue" source="beginnersbook.com" >}}
 
 {{< code file="BreakContinue.java" language="java" options="" >}}

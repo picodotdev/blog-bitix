@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:cncf-landscape.png"
+imagePost: "image:cncf-landscape.webp"
 tags: ["planeta-codigo", "programacion"]
 summary: "Los microservicios aún algunas ventajas necesitan una infraestructura mucho más compleja y necesitan de varias funcionalidades que en una aplicación monolítica no son necesarias. Para desarrollar y mantener con éxito una aplicación nativa para la nube basada en microservicios hay varias herramientas individuales específicas que resuelven cada una un problema específico de los microservicios. En este artículo se identifica cuales son las áreas funcionales que necesitan los microservicios, algunas herramientas hay para cada una de esas herramientas y algunos criterios para elegir una u otra herramienta."
 ---
@@ -39,7 +39,7 @@ Son muchas herramientas y cada cierto tiempo surgen nuevas con lo que hay que es
 
 {{< image
     gallery="true"
-    image1="image:cncf-landscape.png" optionsthumb1="650x450" title1="Colección de herramientas nativas para la nube"
+    image1="image:cncf-landscape.webp" optionsthumb1="650x450" title1="Colección de herramientas nativas para la nube"
     caption="Colección de herramientas nativas para la nube" >}}
 
 {{< tableofcontents >}}

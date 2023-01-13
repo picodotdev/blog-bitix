@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:ts.jpg"
+imagePost: "image:ts.webp"
 tags: ["opinion"]
 ---
 
@@ -91,6 +91,6 @@ Si algo de lo que estoy contento de estos 10 años es a estar en lo bueno y en l
 
 {{< image
     gallery="false"
-    image1="image:ts.jpg" optionsthumb1="450x300" title1="" >}}
+    image1="image:ts.webp" optionsthumb1="450x300" title1="" >}}
 
 {{% /post %}}

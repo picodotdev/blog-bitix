@@ -72,7 +72,7 @@ Accediendo con el navegador al servidor nginx del contenedor se devuelve la pág
 
 {{< image
     gallery="true"
-    image1="image:nginx.png" optionsthumb1="300x200" title1="Nginx" >}}
+    image1="image:nginx.webp" optionsthumb1="300x200" title1="Nginx" >}}
 
 Para aprender más sobre Docker es buena idea seguir un manual de referencia como los libros [Docker: Up & Running](https://amzn.to/3DgQj7G) y [Docker in Action](https://amzn.to/3pH6uEr).
 

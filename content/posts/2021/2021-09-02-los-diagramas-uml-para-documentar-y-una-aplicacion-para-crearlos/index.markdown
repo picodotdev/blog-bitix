@@ -67,7 +67,7 @@ Diagramas UML de comportamiento:
     gallery="true"
     image1="image:uml-use-case-diagram.svg" optionsthumb1="200x150" title1="Diagramas UML"
     image2="image:uml-class-diagram.svg" optionsthumb2="200x150" title2="Diagramas UML"
-    image3="image:uml-components-diagram.png" optionsthumb3="200x150" title3="Diagramas UML"
+    image3="image:uml-components-diagram.webp" optionsthumb3="200x150" title3="Diagramas UML"
     caption="Esquema y ejemplos de diagramas UML" >}}
 
 ### Aplicación para crear diagramas de UML
@@ -76,16 +76,16 @@ Para crear los diagramas de UML es necesario utilizar una aplicación, una orien
 
 {{< image
     gallery="true"
-    image1="image:gaphor.png" optionsthumb1="650x450" title1=""
+    image1="image:gaphor.webp" optionsthumb1="650x450" title1=""
     caption="Aplicación Gaphor para crear diagramas UML" >}}
 
 En el panel izquierdo se encuentran los elementos gráficos con los que crear los diferentes diagramas. Los elementos gráficos están categorizados para crear diagramas de clases, paquetes y componentes, también para diagramas de actividad, secuencia, estado y casos de uso, los otros diagramas se pueden crear con los elementos disponibles.
 
 {{< image
     gallery="true"
-    image1="image:gaphor-use-case-diagram.png" optionsthumb1="300x200" title1="Crear diagramas UML con Gaphor"
-    image2="image:gaphor-class-diagram.png" optionsthumb2="300x200" title2="Crear diagramas UML con Gaphor"
-    image3="image:gaphor-sequence-diagram.png" optionsthumb3="300x200" title3="Crear diagramas UML con Gaphor"
+    image1="image:gaphor-use-case-diagram.webp" optionsthumb1="300x200" title1="Crear diagramas UML con Gaphor"
+    image2="image:gaphor-class-diagram.webp" optionsthumb2="300x200" title2="Crear diagramas UML con Gaphor"
+    image3="image:gaphor-sequence-diagram.webp" optionsthumb3="300x200" title3="Crear diagramas UML con Gaphor"
     caption="Crear diagramas UML con Gaphor" >}}
 
 Gaphor permite guardar en un mismo archivo múltiples diagramas que describan los diferentes aspectos del sistema asi como exportar los diagramas a diferentes formatos de archivo como PDF y forma to de imagen como PNG y SVG. Otras de sus funciones son poder personalizar los estilos de los elementos con reglas de CSS. Finalmente, UML es simplemente una de los estándares para crear diagramas, Gaphor soporta otro tipos de estándares como el modelo C4, RAAML y SysML.

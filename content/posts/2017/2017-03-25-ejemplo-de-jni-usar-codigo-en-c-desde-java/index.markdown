@@ -29,7 +29,7 @@ Acceder desde Java a código nativo en C requiere usar [Java Native Interface o 
 
 {{< image
     gallery="true"
-    image1="image:UnsatisfiedLinkError.png" optionsthumb1="300x200" title1="Excepción UnsatisfiedLinkError cuando no se encuentra la librería de código nativo"
+    image1="image:UnsatisfiedLinkError.webp" optionsthumb1="300x200" title1="Excepción UnsatisfiedLinkError cuando no se encuentra la librería de código nativo"
     caption="Excepción UnsatisfiedLinkError cuando no se encuentra la librería de código nativo" >}}
 
 Algunas otras necesidades para hacer uso de JNI son:
@@ -65,8 +65,8 @@ La librería compartida para un sistema _amd64_ la he compilado en mi equipo de 
 
 {{< image
     gallery="true"
-    image1="image:JniHelloWorld-amd64.png" optionsthumb1="300x200" title1="Mensaje en la terminal emitido desde código nativo (amd64)"
-    image2="image:JniHelloWorld-arm.png" optionsthumb2="300x200" title2="Mensaje en la terminal emitido desde código nativo (ARM)"
+    image1="image:JniHelloWorld-amd64.webp" optionsthumb1="300x200" title1="Mensaje en la terminal emitido desde código nativo (amd64)"
+    image2="image:JniHelloWorld-arm.webp" optionsthumb2="300x200" title2="Mensaje en la terminal emitido desde código nativo (ARM)"
     caption="Mensaje en la terminal emitido desde código nativo en un sistema amd64 y ARM" >}}
 
 Ente ejemplo usa Java 8 y requiere instalar el compilador gcc para compilar la librería con código nativo. [Gradle][gradle] ofrece soporte para [compilar código nativo con su plugin](https://docs.gradle.org/3.4.1/userguide/native_software.html), sin embargo, he preferido usar y conocer los comandos javah y gcc sin usar Gradle. En el siguiente artículo mostraré el ejemplo del sensor DHT11 usando JNI y código nativo en C llamando a métodos de un objeto Java desde código C.

@@ -26,12 +26,12 @@ En cuanto al cargador lo que quería era que admitiese al menos pilas del tipo A
 
 {{< image
     gallery="true"
-    image1="image:cargador-1.jpg" optionsthumb1="300x200"
-    image2="image:cargador-2.jpg" optionsthumb2="300x200" >}}
+    image1="image:cargador-1.webp" optionsthumb1="300x200"
+    image2="image:cargador-2.webp" optionsthumb2="300x200" >}}
 {{< image
     gallery="true"
-    image1="image:cargador-3.jpg" optionsthumb1="300x200"
-    image2="image:cargador-4.jpg" optionsthumb2="300x200" >}}
+    image1="image:cargador-3.webp" optionsthumb1="300x200"
+    image2="image:cargador-4.webp" optionsthumb2="300x200" >}}
 
 Otros modelos de cargador en los que me fijé son los siguientes pero el que elegí en su rango de precios considero que es de lo mejor que hay disponible.
 
@@ -46,11 +46,11 @@ Por ello, finalmente me decidí por el siguiente modelo de [reloj de manecillas 
 
 {{< image
     gallery="true"
-    image1="image:reloj-1.jpg" optionsthumb1="300x200"
-    image2="image:reloj-2.jpg" optionsthumb2="300x200" >}}
+    image1="image:reloj-1.webp" optionsthumb1="300x200"
+    image2="image:reloj-2.webp" optionsthumb2="300x200" >}}
 {{< image
     gallery="true"
-    image1="image:reloj-3.jpg" optionsthumb1="300x200" >}}
+    image1="image:reloj-3.webp" optionsthumb1="300x200" >}}
 
 {{< amazon
     linkids="b4520ee6411fb18af5d5eeecf755ca44,ed6aa74ec469d9de2ae7e841c441410d,88427cb384e155bfece40c7d66133ea9"
@@ -68,12 +68,12 @@ Para completar el pedido compré unas [pilas AA recargables de AmazonBasics](htt
 
 {{< image
     gallery="true"
-    image1="image:pila-1.jpg" optionsthumb1="300x200"
-    image2="image:pila-2.jpg" optionsthumb2="300x200" >}}
+    image1="image:pila-1.webp" optionsthumb1="300x200"
+    image2="image:pila-2.webp" optionsthumb2="300x200" >}}
 {{< image
     gallery="true"
-    image1="image:pila-3.jpg" optionsthumb1="300x200"
-    image2="image:pila-4.jpg" optionsthumb2="300x200" >}}
+    image1="image:pila-3.webp" optionsthumb1="300x200"
+    image2="image:pila-4.webp" optionsthumb2="300x200" >}}
 
 Pilas AA y AAA en Amazon.
 

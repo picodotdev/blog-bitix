@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:mozilla-tts.png"
+imagePost: "image:mozilla-tts.webp"
 tags: ["gnu-linux", "planeta-codigo"]
 summary: "Los archivos de audio son difíciles de editar, un cambio requiere volverlos a grabar de forma parcial o de forma completa lo que requiere mucho tiempo. Hay herramientas que permiten convertir texto a audio de voz sintetizada, el resultado de algunas herramientas es suficientemente bueno como para no distinguirse de una voz humana natural."
 ---
@@ -69,7 +69,7 @@ Iniciado el servidor de TTS este ofrece dos interfaces una interfaz web en la di
 
 {{< image
     gallery="true"
-    image1="image:mozilla-tts.png" optionsthumb1="300x200" title1="Interfaz web de Mozilla TTS"
+    image1="image:mozilla-tts.webp" optionsthumb1="300x200" title1="Interfaz web de Mozilla TTS"
     caption="Interfaz web de Mozilla TTS" >}}
 
 #### espeak

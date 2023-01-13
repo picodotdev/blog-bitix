@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:autenticacion-2fa-1.png"
+imagePost: "image:autenticacion-2fa-1.webp"
 tags: ["java", "planeta-codigo", "programacion", "seguridad", "spring"]
 summary: "El segundo factor de autenticación es una medida adicional en la autenticación que proporciona una notable mayor seguridad que utilizar solo un usuario y contraseña. Utilizando Spring y la aplicación para _smatphone_ Google Authenticator se puede implementar en una aplicación Java el segundo factor de autenticación o 2FA con códigos temporales o TOTP."
 ---
@@ -35,14 +35,14 @@ El primer paso de la autenticación utilizando 2FA es introducir el usuario y co
 
 {{< image
     gallery="true"
-    image1="image:autenticacion-2fa-1.png" optionsthumb1="200x150" title1="Autenticación con segundo factor de autenticación"
-    image2="image:autenticacion-2fa-2.png" optionsthumb2="200x150" title2="Autenticación con segundo factor de autenticación"
-    image3="image:autenticacion-2fa-3.png" optionsthumb3="200x150" title3="Autenticación con segundo factor de autenticación"
+    image1="image:autenticacion-2fa-1.webp" optionsthumb1="200x150" title1="Autenticación con segundo factor de autenticación"
+    image2="image:autenticacion-2fa-2.webp" optionsthumb2="200x150" title2="Autenticación con segundo factor de autenticación"
+    image3="image:autenticacion-2fa-3.webp" optionsthumb3="200x150" title3="Autenticación con segundo factor de autenticación"
     caption="Autenticación con segundo factor de autenticación" >}}
 
 {{< image
     gallery="true"
-    image1="image:google-authenticator.png" optionsthumb1="300x200" title1="Aplicación Google Authenticator con varios generadores de códigos temporales"
+    image1="image:google-authenticator.webp" optionsthumb1="300x200" title1="Aplicación Google Authenticator con varios generadores de códigos temporales"
     caption="Aplicación Google Authenticator con varios generadores de códigos temporales" >}}
 
 Validado el código del 2FA al usuario se le asignan los permisos que le corresponden en el sistema y que le otorgan permisos para realizar acciones, en este caso entrar a la página de inicio.
@@ -70,7 +70,7 @@ El código QR es una imagen generada a partir del código secreto y una informac
 
 {{< image
     gallery="true"
-    image1="image:qr-code-decoder.png" optionsthumb1="300x200" title1="Decodificador de imágenes código QR"
+    image1="image:qr-code-decoder.webp" optionsthumb1="300x200" title1="Decodificador de imágenes código QR"
     caption="Decodificador de imágenes código QR" >}}
 
 {{< code file="login.xhtml" language="html" options="" >}}

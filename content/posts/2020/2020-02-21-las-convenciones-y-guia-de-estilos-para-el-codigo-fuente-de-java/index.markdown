@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:intellij-code-style-1.png"
+imagePost: "image:intellij-code-style-1.webp"
 tags: ["java", "planeta-codigo"]
 summary: "Java desde su creación ha definido como parte del lenguaje unas convenciones y guías de estilos como recomendación para ser usadas en el código fuente por los programadores que proporcionan homogeneidad en el código fuente y que facilitan su lectura y mantenimiento. El documento no es muy extenso para leerlo y los entornos de desarrollo integrados como IntelliJ permiten formatear el código fuente siguiendo las reglas preestablecidas con una simple combinación de teclas y herramientas como PMD permiten validar de forma automatizada que el código cumple las reglas con la herramienta de construcción o integración continua."
 ---
@@ -73,17 +73,17 @@ Los entornos integrados de desarrollo ofrecen la funcionalidad de formatear el c
 
 {{< image
     gallery="true"
-    image1="image:intellij-code-style-1.png" optionsthumb1="200x150" title1="Formateo de código y reglas de estilo en IntelliJ IDEA para Java"
-    image2="image:intellij-code-style-2.png" optionsthumb2="200x150" title2="Formateo de código y reglas de estilo en IntelliJ IDEA para Java"
-    image3="image:intellij-code-style-3.png" optionsthumb3="200x150" title3="Formateo de código y reglas de estilo en IntelliJ IDEA para Java" >}}
+    image1="image:intellij-code-style-1.webp" optionsthumb1="200x150" title1="Formateo de código y reglas de estilo en IntelliJ IDEA para Java"
+    image2="image:intellij-code-style-2.webp" optionsthumb2="200x150" title2="Formateo de código y reglas de estilo en IntelliJ IDEA para Java"
+    image3="image:intellij-code-style-3.webp" optionsthumb3="200x150" title3="Formateo de código y reglas de estilo en IntelliJ IDEA para Java" >}}
 {{< image
     gallery="true"
-    image1="image:intellij-code-style-4.png" optionsthumb1="200x150" title1="Formateo de código y reglas de estilo en IntelliJ IDEA para Java"
-    image2="image:intellij-code-style-5.png" optionsthumb2="200x150" title2="Formateo de código y reglas de estilo en IntelliJ IDEA para Java"
-    image3="image:intellij-code-style-6.png" optionsthumb3="200x150" title3="Formateo de código y reglas de estilo en IntelliJ IDEA para Java" >}}
+    image1="image:intellij-code-style-4.webp" optionsthumb1="200x150" title1="Formateo de código y reglas de estilo en IntelliJ IDEA para Java"
+    image2="image:intellij-code-style-5.webp" optionsthumb2="200x150" title2="Formateo de código y reglas de estilo en IntelliJ IDEA para Java"
+    image3="image:intellij-code-style-6.webp" optionsthumb3="200x150" title3="Formateo de código y reglas de estilo en IntelliJ IDEA para Java" >}}
 {{< image
     gallery="true"
-    image1="image:intellij-code-style-7.png" optionsthumb1="200x150" title1="Formateo de código y reglas de estilo en IntelliJ IDEA para Java"
+    image1="image:intellij-code-style-7.webp" optionsthumb1="200x150" title1="Formateo de código y reglas de estilo en IntelliJ IDEA para Java"
     caption="Formateo de código y reglas de estilo en IntelliJ IDEA para Java" >}}
 
 Existen herramientas que automatizan la comprobación de las normas elegidas en un proyecto en el código desde la línea de comandos con la herramienta de construcción como [Gradle][gradle] y aplicable también al código subido al repositorio de control de versiones con la herramienta de integración continua ya sea [Jenkins][jenkins], [GitLab][gitlab] u otra. Una de ellas es [PMD][pmd], otra [Checkstyle][checkstyle], ambas generan un informe con los errores de convenciones con el que es muy fácil realizar los cambios para corregirlos.

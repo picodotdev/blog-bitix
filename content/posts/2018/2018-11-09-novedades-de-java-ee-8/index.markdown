@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:java-ee.png"
+imagePost: "logotype:java-ee.webp"
 tags: ["java", "planeta-codigo", "programacion"]
 series: ["java-platform"]
 ---

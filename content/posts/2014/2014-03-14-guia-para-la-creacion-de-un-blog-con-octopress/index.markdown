@@ -9,7 +9,7 @@ index: true
 rss: true
 sharing: true
 comments: true
-imagePost: "logotype:octopress.png"
+imagePost: "logotype:octopress.webp"
 tags: ["blog", "software", "software-libre", "planeta-codigo"]
 ---
 

@@ -33,8 +33,8 @@ Teniendo instalado previamente VirtualBox, primeramente necesitaremos descargar 
 
 {{< image
     gallery="true"
-    image1="image:virtualbox-importar-servicio-virtualizado.png" optionsthumb1="300x200" title1="Importación de servicio virtualizado en VirtualBox"
-    image2="image:virtualbox-gitlab.png" optionsthumb2="300x200" title2="Máquina virtual de GitLab"
+    image1="image:virtualbox-importar-servicio-virtualizado.webp" optionsthumb1="300x200" title1="Importación de servicio virtualizado en VirtualBox"
+    image2="image:virtualbox-gitlab.webp" optionsthumb2="300x200" title2="Máquina virtual de GitLab"
     caption="Importación de servicio virtualizado de Bitnami en VirtualBox" >}}
 
 Una vez importado el servicio y creada la máquina virtual la tratamos como cualquier otra máquina virtual para iniciarla la máquina virtual está lista para ser iniciada. Una vez iniciada completamente en la terminal se solicita un inicio de sesión con el usuario y contraseña que da acceso a una terminal para realizar tareas administrativas, en la misma página de inicio de sesión se indica el usuario y contraseña a usar y se indica la dirección IP (en el caso de las capturas mostradas es la _192.168.1.3_) que es necesario usar para acceder al servicio con el navegador. En el primer inicio de sesión se solicita cambiar la contraseña.
@@ -43,8 +43,8 @@ Accediendo con el navegador a la dirección _https\://192.168.1.3_ se accede a l
 
 {{< image
     gallery="true"
-    image1="image:gitlab-inicio-sesion.png" optionsthumb1="300x200" title1="Inicio de sesión de GitLab"
-    image2="image:gitlab.png" optionsthumb2="300x200" title2="GitLab"
+    image1="image:gitlab-inicio-sesion.webp" optionsthumb1="300x200" title1="Inicio de sesión de GitLab"
+    image2="image:gitlab.webp" optionsthumb2="300x200" title2="GitLab"
     caption="Servicio de GitLab" >}}
 
 En definitiva, Bitnami es de utilidad si se necesita usar cualquiera de los servicios que ofrece tanto para probarlos con una máquina virtual o para instalarlos en la nube de Amazon EC2, Azure o en Google Cloud. La nube evita adquirir hardware y posibilita escalarlo según las necesidades siempre estando dispuestos a pagar su coste, en algunos casos un mini PC como los [Brix](https://amzn.to/2rauzYV), [NUC](https://amzn.to/2s8GYtI) o [Cubi](https://amzn.to/2r07KGS) que soportan cantidades de memoria de 16 GiB y algunos 32 GiB son mas que suficientes para una infraestructura interna de una empresa pequeña que incluya control de versiones, gestor de peticiones, integración continua, base de datos, servidor de aplicaciones, ... estos ordenadores pequeños en tamaño pero con una capacidad de proceso y memoria nada despreciable son una opción a considerar para algunas tareas y pueden actuar perfectamente como servidores en los que alojar algunos servicios para consumo interno.

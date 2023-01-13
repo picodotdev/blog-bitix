@@ -11,8 +11,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:fedora-silverblue-neofetch.png"
-imagePost: "image:fedora-silverblue-neofetch.png"
+imageHead: "image:fedora-silverblue-neofetch.webp"
+imagePost: "image:fedora-silverblue-neofetch.webp"
 tags: ["gnu-linux", "planeta-codigo"]
 summary: "Fedora Silbervlue es una distribución innovadora es su forma de sistema base usando OSTree e instalar aplicaciones gráficas con Flatpak y de paquetes de linea de comandos con Toolbox. Todas estas tecnologías le permiten considerarse una distribución _rolling-release_ tanto en el sistema como aplicaciones y paquetes. Estas tecnologías y forma de actualizar el sistema hace que sea mucho menos propenso a errores que los tradicionales en las distribuciones GNU/Linux de actualización de paquetes, ¿la siguiente generación de distribuciones serán como Fedora Silverblue?."
 ---
@@ -50,7 +50,7 @@ Una distribución que se basa en principios diferentes que pueden ser el futuro 
 
 {{< image
     gallery="true"
-    image1="image:fedora-silverblue-neofetch.png" optionsthumb1="650x450" title1="Fedora Silverblue"
+    image1="image:fedora-silverblue-neofetch.webp" optionsthumb1="650x450" title1="Fedora Silverblue"
     caption="Fedora Silverblue" >}}
 
 {{< tableofcontents >}}
@@ -65,9 +65,9 @@ Fedora Silverblue adopta varios principios para solucionar esos problemas. Uno e
 
 {{< image
     gallery="true"
-    image1="image:fedora-silverblue-1.png" optionsthumb1="200x150" title1="Fedora Silverblue"
-    image2="image:fedora-silverblue-2.png" optionsthumb2="200x150" title2="Fedora Silverblue"
-    image3="image:fedora-silverblue-3.png" optionsthumb3="200x150" title3="Fedora Silverblue"
+    image1="image:fedora-silverblue-1.webp" optionsthumb1="200x150" title1="Fedora Silverblue"
+    image2="image:fedora-silverblue-2.webp" optionsthumb2="200x150" title2="Fedora Silverblue"
+    image3="image:fedora-silverblue-3.webp" optionsthumb3="200x150" title3="Fedora Silverblue"
     caption="Fedora Silverblue" >}}
 
 Las tecnologías que permiten adoptar esos principios a Fedora Silverblue son [OSTree][ostree] para el sistema base inmutable, [Flatpak][flatpak] para las aplicaciones de usuario gráficas y [Toolbox][toolbox] para instalar software de línea de comandos en contenedores.
@@ -87,17 +87,17 @@ La instalación se realiza con un asistente gráfico después de haber descargad
 
 {{< image
     gallery="true"
-    image1="image:installation-1.png" optionsthumb1="200x150" title1="Instalación de Fedora Silverblue"
-    image2="image:installation-2.png" optionsthumb2="200x150" title2="Instalación de Fedora Silverblue"
-    image3="image:installation-3.png" optionsthumb3="200x150" title3="Instalación de Fedora Silverblue" >}}
+    image1="image:installation-1.webp" optionsthumb1="200x150" title1="Instalación de Fedora Silverblue"
+    image2="image:installation-2.webp" optionsthumb2="200x150" title2="Instalación de Fedora Silverblue"
+    image3="image:installation-3.webp" optionsthumb3="200x150" title3="Instalación de Fedora Silverblue" >}}
 {{< image
     gallery="true"
-    image1="image:installation-4.png" optionsthumb1="200x150" title1="Instalación de Fedora Silverblue"
-    image2="image:installation-5.png" optionsthumb2="200x150" title2="Instalación de Fedora Silverblue"
-    image3="image:installation-6.png" optionsthumb3="200x150" title3="Instalación de Fedora Silverblue" >}}
+    image1="image:installation-4.webp" optionsthumb1="200x150" title1="Instalación de Fedora Silverblue"
+    image2="image:installation-5.webp" optionsthumb2="200x150" title2="Instalación de Fedora Silverblue"
+    image3="image:installation-6.webp" optionsthumb3="200x150" title3="Instalación de Fedora Silverblue" >}}
 {{< image
     gallery="true"
-    image1="image:installation-7.png" optionsthumb1="200x150" title1="Instalación de Fedora Silverblue"
+    image1="image:installation-7.webp" optionsthumb1="200x150" title1="Instalación de Fedora Silverblue"
     caption="Instalación de Fedora Silverblue" >}}
 
 #### Primer inicio
@@ -106,17 +106,17 @@ Al iniciar el sistema por primera vez un nuevo asistente permite crear la cuenta
 
 {{< image
     gallery="true"
-    image1="image:initial-setup-1.png" optionsthumb1="200x150" title1="Primer inicio"
-    image2="image:initial-setup-2.png" optionsthumb2="200x150" title2="Primer inicio"
-    image3="image:initial-setup-3.png" optionsthumb3="200x150" title3="Primer inicio" >}}
+    image1="image:initial-setup-1.webp" optionsthumb1="200x150" title1="Primer inicio"
+    image2="image:initial-setup-2.webp" optionsthumb2="200x150" title2="Primer inicio"
+    image3="image:initial-setup-3.webp" optionsthumb3="200x150" title3="Primer inicio" >}}
 {{< image
     gallery="true"
-    image1="image:initial-setup-4.png" optionsthumb1="200x150" title1="Primer inicio"
-    image2="image:initial-setup-5.png" optionsthumb2="200x150" title2="Primer inicio"
-    image3="image:initial-setup-6.png" optionsthumb3="200x150" title3="Primer inicio" >}}
+    image1="image:initial-setup-4.webp" optionsthumb1="200x150" title1="Primer inicio"
+    image2="image:initial-setup-5.webp" optionsthumb2="200x150" title2="Primer inicio"
+    image3="image:initial-setup-6.webp" optionsthumb3="200x150" title3="Primer inicio" >}}
 {{< image
     gallery="true"
-    image1="image:initial-setup-7.png" optionsthumb1="200x150" title1="Primer inicio"
+    image1="image:initial-setup-7.webp" optionsthumb1="200x150" title1="Primer inicio"
     caption="Primer inicio" >}}
 
 Al usar GNOME como entorno de escritorio no se diferencia a cualquier otro sistema con GNOME. La mayor diferencia está en que las aplicaciones preinstaladas son muy pocas, reduciéndose a las básicas como el navegador [Firefox][firefox], la terminal, el explorador de archivos y editor de texto. Este permite al usuario tener instaladas únicamente las aplicaciones que desee o no tener que desinstalar las aplicaciones que no desea. Las aplicaciones que se deseen se deben instalar con Flatpak.
@@ -145,9 +145,9 @@ La mayoría del software de usuario se instala con Flatpak y Toolbox siendo la f
 
 {{< image
     gallery="true"
-    image1="image:upgrade-1.png" optionsthumb1="200x150" title1="Actualización"
-    image2="image:upgrade-2.png" optionsthumb2="200x150" title2="Actualización"
-    image3="image:upgrade-3.png" optionsthumb3="200x150" title3="Actualización"
+    image1="image:upgrade-1.webp" optionsthumb1="200x150" title1="Actualización"
+    image2="image:upgrade-2.webp" optionsthumb2="200x150" title2="Actualización"
+    image3="image:upgrade-3.webp" optionsthumb3="200x150" title3="Actualización"
     caption="Actualización" >}}
 
 En caso de que una actualización produzca algún error se puede volver a la versión anterior con el siguiente comando.
@@ -162,26 +162,26 @@ Con la aplicación de software es posible encontrar todo este software, instalar
 
 {{< image
     gallery="true"
-    image1="image:flathub-1.png" optionsthumb1="200x150" title1="Repositorio Flathub"
-    image2="image:flathub-2.png" optionsthumb2="200x150" title2="Repositorio Flathub"
+    image1="image:flathub-1.webp" optionsthumb1="200x150" title1="Repositorio Flathub"
+    image2="image:flathub-2.webp" optionsthumb2="200x150" title2="Repositorio Flathub"
     caption="Repositorio Flathub" >}}
 
 {{< image
     gallery="true"
-    image1="image:software-1.png" optionsthumb1="200x150" title1="Instalación de software"
-    image2="image:software-2.png" optionsthumb2="200x150" title2="Instalación de software"
-    image3="image:software-3.png" optionsthumb3="200x150" title3="Instalación de software" >}}
+    image1="image:software-1.webp" optionsthumb1="200x150" title1="Instalación de software"
+    image2="image:software-2.webp" optionsthumb2="200x150" title2="Instalación de software"
+    image3="image:software-3.webp" optionsthumb3="200x150" title3="Instalación de software" >}}
 {{< image
     gallery="true"
-    image1="image:software-4.png" optionsthumb1="200x150" title1="Instalación de software"
+    image1="image:software-4.webp" optionsthumb1="200x150" title1="Instalación de software"
     caption="Instalación de software" >}}
 
 Dos programas instalados como paquetes Flatpak.
 
 {{< image
     gallery="true"
-    image1="image:intellij.png" optionsthumb1="200x150" title1="Intellij IDEA"
-    image2="image:visual-studio-code.png" optionsthumb2="200x150" title2="Visual Studio Code"
+    image1="image:intellij.webp" optionsthumb1="200x150" title1="Intellij IDEA"
+    image2="image:visual-studio-code.webp" optionsthumb2="200x150" title2="Visual Studio Code"
     caption="Programas instalados como Flatpak" >}}
 
 También es posible instalar el paquetes Flatpak desde la linea de comandos.
@@ -196,9 +196,9 @@ Destro de estos componentes se instalan los paquetes con el gestor de paquetes _
 
 {{< image
     gallery="true"
-    image1="image:toolbox-1.png" optionsthumb1="200x150" title1="Instalación de programas de línea de comandos"
-    image2="image:toolbox-2.png" optionsthumb2="200x150" title2="Instalación de programas de línea de comandos"
-    image3="image:toolbox-3.png" optionsthumb3="200x150" title3="Instalación de programas de línea de comandos"
+    image1="image:toolbox-1.webp" optionsthumb1="200x150" title1="Instalación de programas de línea de comandos"
+    image2="image:toolbox-2.webp" optionsthumb2="200x150" title2="Instalación de programas de línea de comandos"
+    image3="image:toolbox-3.webp" optionsthumb3="200x150" title3="Instalación de programas de línea de comandos"
     caption="Instalación de programas de línea de comandos" >}}
 
 Para no modificar el sistema base de Silverblue otra forma de instalar Java es con la utilidad [SDKMAN][sdkman] que además permite cambiar entre versiones fácilmente y tener acceso a diferentes implementaciones del JDK, entre otras utilidades instalables con esta herramienta.

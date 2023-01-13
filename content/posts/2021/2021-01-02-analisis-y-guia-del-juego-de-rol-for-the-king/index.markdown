@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:for-the-king.jpg"
-imagePost: "image:for-the-king.jpg"
+imageHead: "image:for-the-king.webp"
+imagePost: "image:for-the-king.webp"
 tags: ["juegos"]
 series: ["analisis-juegos", "juegos"]
 summary: "El juego de rol For the King no destaca por tener los gráficos más avanzados o una historia muy elaborada. Lo compensa con una muy buena implementación de lo esencial en un juego de rol con múltiples clases de personajes, estadísticas en cada atributo, equipo y objetos, un sistema de combate sencillo, rápido y bien implementado basado en estadística que requiere pensar en la acción a realizar durante el turno de combate. Un juego sencillo a la vez que bastante entretenido en la categoría de juego de rol, estrategia, exploración de mazmorras y combate por turnos."
@@ -35,14 +35,14 @@ Si For the King es sencillo y no muy difícil [el juego Darkest Dungeon][blogbit
 
 {{< image
     gallery="true"
-    image1="image:for-the-king.jpg" optionsthumb1="650x550" title1="Pantalla inicial" >}}
+    image1="image:for-the-king.webp" optionsthumb1="650x550" title1="Pantalla inicial" >}}
 {{< image
     gallery="true"
-    image1="image:for-the-king-menu.jpg" optionsthumb1="300x250" title2="Menú"
+    image1="image:for-the-king-menu.webp" optionsthumb1="300x250" title2="Menú"
     caption="Pantalla inicial y menú del juego For de King" >}}
 {{< image
     gallery="true"
-    image1="image:for-the-king-cover.jpg" optionsthumb1="200x150" title1="Portada del juego For The King"
+    image1="image:for-the-king-cover.webp" optionsthumb1="200x150" title1="Portada del juego For The King"
     caption="Portada del juego For The King" >}}
 
 {{< amazon
@@ -61,20 +61,20 @@ Según la dificultad varía el nivel de vida de los villanos, la inflación que 
 
 {{< image
     gallery="true"
-    image1="image:modo-de-juego-1.jpg" optionsthumb1="200x150" title1="Personalización de personajes"
-    image2="image:modo-de-juego-2.jpg" optionsthumb2="200x150" title2="Personalización de personajes"
-    image3="image:modo-de-juego-3.jpg" optionsthumb3="200x150" title3="Personalización de personajes" >}}
+    image1="image:modo-de-juego-1.webp" optionsthumb1="200x150" title1="Personalización de personajes"
+    image2="image:modo-de-juego-2.webp" optionsthumb2="200x150" title2="Personalización de personajes"
+    image3="image:modo-de-juego-3.webp" optionsthumb3="200x150" title3="Personalización de personajes" >}}
 {{< image
     gallery="true"
-    image1="image:modo-de-juego-4.jpg" optionsthumb1="200x150" title1="Personalización de personajes"
-    image2="image:modo-de-juego-5.jpg" optionsthumb2="200x150" title3="Personalización de personajes"
+    image1="image:modo-de-juego-4.webp" optionsthumb1="200x150" title1="Personalización de personajes"
+    image2="image:modo-de-juego-5.webp" optionsthumb2="200x150" title3="Personalización de personajes"
     caption="Modos de juego" >}}
 
 Al principio hay que crear el grupo de aventureros, hay que darles un nombre, seleccionar la clase que determina sus estadísticas iniciales y personalizar su apariencia e indumentaria. Algunas clases de personajes están desbloqueadas desde el principio, otras hay que desbloquearlas en la biblioteca del saber con el saber conseguido en las aventuras.
 
 {{< image
     gallery="true"
-    image1="image:personajes.jpg" optionsthumb1="650x450" title1="Personalización de personajes"
+    image1="image:personajes.webp" optionsthumb1="650x450" title1="Personalización de personajes"
     caption="Personalización de personajes" >}}
 
 ### El tablero y mundo
@@ -85,7 +85,7 @@ El terreno hay que ir explorándolo ya que está oculto con niebla que a medida 
 
 {{< image
     gallery="true"
-    image1="image:mundo.jpg" optionsthumb1="650x450" title1="Inicio de la aventura For the King y mapa del mundo"
+    image1="image:mundo.webp" optionsthumb1="650x450" title1="Inicio de la aventura For the King y mapa del mundo"
     caption="Inicio de la aventura For the King y mapa del mundo" >}}
 
 Hay un ciclo de día y de noche diferenciados en varios turnos, hay que planificar los viajes para hacer los combates durante el día ya que durante la noche los villanos son algo más fuertes. En la barra de tiempo también se muestra si se acerca alguna plaga que si no se contrarresta desencadena algunos eventos que aumentan la dificultad, también está el nivel de caos que si no se reduce hace que el número de encuentros de villanos por el mapa sea mayor.
@@ -119,8 +119,8 @@ A medida que los personajes van derrotando a villanos ganan puntos de experienci
 
 {{< image
     gallery="true"
-    image1="image:estadisticas-atributos.jpg" optionsthumb1="300x250" title1="Estadísticas de los atributos"
-    image2="image:estadisticas-detalladas.jpg" optionsthumb2="300x250" title2="Estadísticas detalladas"
+    image1="image:estadisticas-atributos.webp" optionsthumb1="300x250" title1="Estadísticas de los atributos"
+    image2="image:estadisticas-detalladas.webp" optionsthumb2="300x250" title2="Estadísticas detalladas"
     caption="Estadísticas de los atributos y detalladas" >}}
 
 Los personajes también tienen ciertos puntos de foco que les permiten asegurar superar una tirada en cualquier estadística. Se van gastando, se recuperan fumando una hierba en los servicios de una ciudad, meditando con el morral al acampar u ocasionalmente con algunas habilidades recuperar puntos de vida, foco o encontrar hierbas al finalizar el turno.
@@ -135,9 +135,9 @@ A lo largo de la aventura hay que equipar a los personajes con los mejores objet
 
 {{< image
     gallery="true"
-    image1="image:inventario-1.jpg" optionsthumb1="200x150" title1="Inventario inicial herrera"
-    image2="image:inventario-2.jpg" optionsthumb2="200x150" title2="Inventario inicial cazadora"
-    image3="image:inventario-3.jpg" optionsthumb3="200x150" title3="Inventario inicial erudita"
+    image1="image:inventario-1.webp" optionsthumb1="200x150" title1="Inventario inicial herrera"
+    image2="image:inventario-2.webp" optionsthumb2="200x150" title2="Inventario inicial cazadora"
+    image3="image:inventario-3.webp" optionsthumb3="200x150" title3="Inventario inicial erudita"
     caption="Inventarios iniciales según clase" >}}
 
 #### Consumibles, hierbas, pergaminos, objetos y oro
@@ -158,7 +158,7 @@ El orden en el combate se determina según la estadística de velocidad del pers
 
 {{< image
     gallery="true"
-    image1="image:combate.jpg" optionsthumb1="650x450" title1="Combate"
+    image1="image:combate.webp" optionsthumb1="650x450" title1="Combate"
     caption="Combate" >}}
 
 #### Información de aventureros y villanos
@@ -187,9 +187,9 @@ Después de cada combate en la mazmorra se permite intercambiar objetos entre pe
 
 {{< image
     gallery="true"
-    image1="image:encuentro-1.jpg" optionsthumb1="200x150" title1="Encuentro con Demonio de ascuas"
-    image2="image:encuentro-2.jpg" optionsthumb2="200x150" title2="Encuentro con Fergus el Loco"
-    image3="image:encuentro-3.jpg" optionsthumb3="200x150" title3="Encuentro con Seño de las momias"
+    image1="image:encuentro-1.webp" optionsthumb1="200x150" title1="Encuentro con Demonio de ascuas"
+    image2="image:encuentro-2.webp" optionsthumb2="200x150" title2="Encuentro con Fergus el Loco"
+    image3="image:encuentro-3.webp" optionsthumb3="200x150" title3="Encuentro con Seño de las momias"
     caption="Encuentro con diferentes personajes malvados con sus frases de amenaza" >}}
 
 #### Aflicciones físicas, maldiciones e inmunidades
@@ -206,7 +206,7 @@ Si en la campaña no se tiene éxito no hay que desesperar, el juego está dise�
 
 {{< image
     gallery="true"
-    image1="image:aviso-reintento.jpg" optionsthumb1="300x250" title1="Aviso de reintento"
+    image1="image:aviso-reintento.webp" optionsthumb1="300x250" title1="Aviso de reintento"
     caption="Aviso de reintento" >}}
 
 Hay algunas cosas que he ido aprendiendo para llegar más lejos en la campaña en cada nuevo intento.
@@ -229,12 +229,12 @@ Una parte importante del juego es la tienda del saber que permite canjear el sab
 
 {{< image
     gallery="true"
-    image1="image:tienda-del-saber-1.jpg" optionsthumb1="200x150" title1="Tienda del saber"
-    image2="image:tienda-del-saber-2.jpg" optionsthumb2="200x150" title2="Tienda del saber"
-    image3="image:tienda-del-saber-3.jpg" optionsthumb3="200x150" title3="Tienda del saber" >}}
+    image1="image:tienda-del-saber-1.webp" optionsthumb1="200x150" title1="Tienda del saber"
+    image2="image:tienda-del-saber-2.webp" optionsthumb2="200x150" title2="Tienda del saber"
+    image3="image:tienda-del-saber-3.webp" optionsthumb3="200x150" title3="Tienda del saber" >}}
 {{< image
     gallery="true"
-    image1="image:tienda-del-saber-4.jpg" optionsthumb1="200x150" title1="Tienda del saber"
+    image1="image:tienda-del-saber-4.webp" optionsthumb1="200x150" title1="Tienda del saber"
     caption="Tienda del saber" >}}
 
 En el juego se ofrece una guía básica del modo del funcionamiento del juego, pero gran parte del saber no está detallado. Que hace cada habilidad, maldición y aflicción física y otros consumibles se aprende por deducción en base a verla durante el juego y después de alguna partida. En la versión de PC se proporcionan algunos mensajes al posicionar el ratón por encima del icono pero en la versión de consola como no se usa ratón no se ofrece esa información.

@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:spaceland.jpg"
-imagePost: "image:spaceland.jpg"
+imageHead: "image:spaceland.webp"
+imagePost: "image:spaceland.webp"
 tags: ["juegos"]
 series: ["analisis-juegos", "juegos"]
 summary: "Spaceland es un juego sencillo y simple pero con todas las mecánicas del género de juegos de combates por turnos y de estrategia. Varios tipos de personajes cada uno con unas armas y habilidades únicas, varios tipos de enemigos, un pequeño árbol de habilidades, 28 misiones algunas de supervivencia y 3 jefes junto a una pequeña historia que hace de hilo conductor entre las misiones. Al ser un juego indie se nota que es más simple y menos elaborado que otros juegos similares triple A como XCOM 2 o Wasteland 3 pero que proporciona la misma diversión a los jugadores que les gusta este tipo de juegos."
@@ -27,11 +27,11 @@ Es similar a XCOM 2 pero a pesar de ser maś simple y más indie este me ha gust
 
 {{< image
     gallery="true"
-    image1="image:spaceland.jpg" optionsthumb1="650x450" title1="Pantalla inicial" >}}
+    image1="image:spaceland.webp" optionsthumb1="650x450" title1="Pantalla inicial" >}}
 {{< image
     gallery="true"
-    image1="image:spaceland-menu-1.jpg" optionsthumb1="300x200" title1="Menú"
-    image2="image:spaceland-menu-2.jpg" optionsthumb2="300x200" title2="Menú"
+    image1="image:spaceland-menu-1.webp" optionsthumb1="300x200" title1="Menú"
+    image2="image:spaceland-menu-2.webp" optionsthumb2="300x200" title2="Menú"
     caption="Pantalla incial y menú" >}}
 
 {{< amazon
@@ -50,8 +50,8 @@ Tiene una pequeña historia como hilo conductor de las diferentes misiones que c
 
 {{< image
     gallery="true"
-    image1="image:spaceland-armas-2.jpg" optionsthumb1="200x150" title1="Armas"
-    image2="image:spaceland-armas-3.jpg" optionsthumb2="200x150" title2="Armas"
+    image1="image:spaceland-armas-2.webp" optionsthumb1="200x150" title1="Armas"
+    image2="image:spaceland-armas-3.webp" optionsthumb2="200x150" title2="Armas"
     caption="Armas" >}}
 
 El juego consta de unas 28 episodios o misiones que tienen una duración corta de unos 15 minutos cada una. En algunas hay opción de elegir varios personajes, en otras algunos personajes se pueden elegir pero otros han de estar incluidos en el grupo de combate. Al ser de estrategia es probable que dos personas opten por diferentes personajes para completar una misión y la completen de diferente forma.
@@ -68,13 +68,13 @@ No es complicado sacar el platino si se desea aunque seguramente requiere realiz
 
 {{< image
     gallery="true"
-    image1="image:spaceland-juego-1.jpg" optionsthumb1="200x150" title1="Juego"
-    image2="image:spaceland-juego-2.jpg" optionsthumb2="200x150" title2="Juego"
-    image3="image:spaceland-juego-3.jpg" optionsthumb3="200x150" title3="Juego" >}}
+    image1="image:spaceland-juego-1.webp" optionsthumb1="200x150" title1="Juego"
+    image2="image:spaceland-juego-2.webp" optionsthumb2="200x150" title2="Juego"
+    image3="image:spaceland-juego-3.webp" optionsthumb3="200x150" title3="Juego" >}}
 {{< image
     gallery="true"
-    image1="image:spaceland-juego-4.jpg" optionsthumb1="200x150" title1="Juego"
-    image2="image:spaceland-juego-5.jpg" optionsthumb2="200x150" title2="Juego"
+    image1="image:spaceland-juego-4.webp" optionsthumb1="200x150" title1="Juego"
+    image2="image:spaceland-juego-5.webp" optionsthumb2="200x150" title2="Juego"
     caption="Juego" >}}
 
 #### Personajes
@@ -85,8 +85,8 @@ Según la misión convendrá escoger un personaje u otro, aun así como hay dife
 
 {{< image
     gallery="true"
-    image1="image:spaceland-personajes-1.jpg" optionsthumb1="200x150" title1="Personajes"
-    image2="image:spaceland-personajes-2.jpg" optionsthumb2="200x150" title2="Personajes"
+    image1="image:spaceland-personajes-1.webp" optionsthumb1="200x150" title1="Personajes"
+    image2="image:spaceland-personajes-2.webp" optionsthumb2="200x150" title2="Personajes"
     caption="Personajes" >}}
 
 #### Recursos
@@ -99,9 +99,9 @@ Las misiones se pueden rejugar para acabarlas en los turnos objetivo, y para enc
 
 {{< image
     gallery="true"
-    image1="image:spaceland-recursos-1.jpg" optionsthumb1="200x150" title1="Recursos"
-    image2="image:spaceland-recursos-2.jpg" optionsthumb2="200x150" title2="Recursos"
-    image3="image:spaceland-recursos-3.jpg" optionsthumb3="200x150" title3="Recursos"
+    image1="image:spaceland-recursos-1.webp" optionsthumb1="200x150" title1="Recursos"
+    image2="image:spaceland-recursos-2.webp" optionsthumb2="200x150" title2="Recursos"
+    image3="image:spaceland-recursos-3.webp" optionsthumb3="200x150" title3="Recursos"
     caption="Recursos" >}}
 
 #### Armas, equipo y habilidades
@@ -112,21 +112,21 @@ Por otro lado, cada personaje tiene un árbol de habilidades sencillo de dos ram
 
 {{< image
     gallery="true"
-    image1="image:spaceland-armas-1.jpg" optionsthumb1="200x150" title1="Armas" >}}
+    image1="image:spaceland-armas-1.webp" optionsthumb1="200x150" title1="Armas" >}}
 {{< image
     gallery="true"
-    image1="image:spaceland-armas-4.jpg" optionsthumb1="200x150" title1="Armas"
-    image2="image:spaceland-armas-5.jpg" optionsthumb2="200x150" title2="Armas"
-    image3="image:spaceland-armas-6.jpg" optionsthumb3="200x150" title3="Armas" >}}
+    image1="image:spaceland-armas-4.webp" optionsthumb1="200x150" title1="Armas"
+    image2="image:spaceland-armas-5.webp" optionsthumb2="200x150" title2="Armas"
+    image3="image:spaceland-armas-6.webp" optionsthumb3="200x150" title3="Armas" >}}
 {{< image
     gallery="true"
-    image1="image:spaceland-habilidades-1.jpg" optionsthumb1="200x150" title1="Habilidades"
-    image2="image:spaceland-habilidades-2.jpg" optionsthumb2="200x150" title2="Habilidades"
-    image3="image:spaceland-habilidades-3.jpg" optionsthumb3="200x150" title3="Habilidades" >}}
+    image1="image:spaceland-habilidades-1.webp" optionsthumb1="200x150" title1="Habilidades"
+    image2="image:spaceland-habilidades-2.webp" optionsthumb2="200x150" title2="Habilidades"
+    image3="image:spaceland-habilidades-3.webp" optionsthumb3="200x150" title3="Habilidades" >}}
 {{< image
     gallery="true"
-    image1="image:spaceland-habilidades-4.jpg" optionsthumb1="200x150" title1="Habilidades"
-    image2="image:spaceland-habilidades-5.jpg" optionsthumb2="200x150" title2="Habilidades"
+    image1="image:spaceland-habilidades-4.webp" optionsthumb1="200x150" title1="Habilidades"
+    image2="image:spaceland-habilidades-5.webp" optionsthumb2="200x150" title2="Habilidades"
     caption="Armas y habilidades" >}}
 
 #### Episodios
@@ -135,9 +135,9 @@ El juego consta de 28 episodios o misiones cada una con un mapa único que gener
 
 {{< image
     gallery="true"
-    image1="image:spaceland-hallazgos-1.jpg" optionsthumb1="200x150" title1="Hallazgos"
-    image2="image:spaceland-hallazgos-2.jpg" optionsthumb2="200x150" title2="Hallazgos"
-    image3="image:spaceland-hallazgos-3.jpg" optionsthumb3="200x150" title3="Hallazgos"
+    image1="image:spaceland-hallazgos-1.webp" optionsthumb1="200x150" title1="Hallazgos"
+    image2="image:spaceland-hallazgos-2.webp" optionsthumb2="200x150" title2="Hallazgos"
+    image3="image:spaceland-hallazgos-3.webp" optionsthumb3="200x150" title3="Hallazgos"
     caption="Hallazgos" >}}
 
 En las misiones participan un máximo de cuatro personajes, en algunas dos, en algunos casos ciertos personajes han de participar en la misión y algunos otros es posible elegir qué personajes participan según sean sus habilidades más adecuadas.
@@ -158,8 +158,8 @@ Hay tres jefes y algunos escenarios especiales como la bajada en el montacargas 
 
 {{< image
     gallery="true"
-    image1="image:spaceland-jefes-1.jpg" optionsthumb1="200x150" title1="Jefes"
-    image2="image:spaceland-jefes-2.jpg" optionsthumb2="200x150" title2="Jefes"
+    image1="image:spaceland-jefes-1.webp" optionsthumb1="200x150" title1="Jefes"
+    image2="image:spaceland-jefes-2.webp" optionsthumb2="200x150" title2="Jefes"
     caption="Jefes" >}}
 
 #### Aliens
@@ -172,13 +172,13 @@ En la enciclopedia están las estadísticas de cada uno de los enemigos que se h
 
 {{< image
     gallery="true"
-    image1="image:spaceland-enemigos-1.jpg" optionsthumb1="200x150" title1="Enemigos"
-    image2="image:spaceland-enemigos-2.jpg" optionsthumb2="200x150" title2="Enemigos"
-    image3="image:spaceland-enemigos-3.jpg" optionsthumb3="200x150" title3="Enemigos" >}}
+    image1="image:spaceland-enemigos-1.webp" optionsthumb1="200x150" title1="Enemigos"
+    image2="image:spaceland-enemigos-2.webp" optionsthumb2="200x150" title2="Enemigos"
+    image3="image:spaceland-enemigos-3.webp" optionsthumb3="200x150" title3="Enemigos" >}}
 {{< image
     gallery="true"
-    image1="image:spaceland-enemigos-4.jpg" optionsthumb1="200x150" title1="Enemigos"
-    image2="image:spaceland-enemigos-5.jpg" optionsthumb2="200x150" title2="Enemigos"
+    image1="image:spaceland-enemigos-4.webp" optionsthumb1="200x150" title1="Enemigos"
+    image2="image:spaceland-enemigos-5.webp" optionsthumb2="200x150" title2="Enemigos"
     caption="Enemigos" >}}
 
 {{% /post %}}

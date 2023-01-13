@@ -29,7 +29,7 @@ Aunque el componente tiene un buen número de parámetros para personalizar seg�
 
 {{< image
     gallery="true"
-    image1="image:grid.png" optionsthumb1="300x200" title1="Componente Grid de Tapestry"
+    image1="image:grid.webp" optionsthumb1="300x200" title1="Componente Grid de Tapestry"
     caption="Componente Grid de Tapestry" >}}
 
 * _source_
@@ -57,7 +57,7 @@ Con el parámetro _empty_ definimos un componente [Block](http://tapestry.apache
 
 {{< image
     gallery="true"
-    image1="image:grid-sin-elementos.png" optionsthumb1="300x200" title1="Mensaje de un Grid sin elementos"
+    image1="image:grid-sin-elementos.webp" optionsthumb1="300x200" title1="Mensaje de un Grid sin elementos"
     caption="Mensaje de un Grid sin elementos" >}}
 
 * _empty_

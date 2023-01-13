@@ -48,7 +48,7 @@ Postman es una herramienta muy conocida y utilizada, ofrece una aplicación de e
 
 {{< image
     gallery="true"
-    image1="image:postman.png" optionsthumb1="650x450" title1="Postman"
+    image1="image:postman.webp" optionsthumb1="650x450" title1="Postman"
     caption="Postman" >}}
 
 ### Hoppscotch, alternativa a Postman
@@ -71,7 +71,7 @@ Aunque Hoppscotch tiene una licencia sin coste los desarrolladores ofrecen ser p
 
 {{< image
     gallery="true"
-    image1="image:hoppscotch.png" optionsthumb1="650x450" title1="Hoppscotch"
+    image1="image:hoppscotch.webp" optionsthumb1="650x450" title1="Hoppscotch"
     caption="Hoppscotch" >}}
 
 {{% /post %}}

@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:java-16.jpg"
-imagePost: "image:java-16.jpg"
+imageHead: "image:java-16.webp"
+imagePost: "image:java-16.webp"
 tags: ["java", "planeta-codigo"]
 series: ["java-platform"]
 summary: "En Java 16 los cambios en el lenguaje no son tan notables que en versiones anteriores, aún así  el calendario se sigue manteniendo y en cada versión se incluyen mejoras incrementales destacables. Se publica la versión final y lista para producción de algunas características y se añaden nuevas en forma de vista previa."
@@ -115,7 +115,7 @@ Más detalles en [JEP-380: Unix domain socket channels](https://inside.java/2021
 
 {{< image
     gallery="true"
-    image1="image:unix-sockets.jpg" optionsthumb1="650x450" title1="Unix Sockets"
+    image1="image:unix-sockets.webp" optionsthumb1="650x450" title1="Unix Sockets"
     caption="Unix Sockets" >}}
 
 #### Portado a Alpine Linux

@@ -11,8 +11,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:darkest-dungeon.jpg"
-imagePost: "image:darkest-dungeon.jpg"
+imageHead: "image:darkest-dungeon.webp"
+imagePost: "image:darkest-dungeon.webp"
 tags: ["juegos"]
 series: ["analisis-juegos", "juegos"]
 summary: "Si hay un juego en el que no hay una decisión perfecta o en el que hay que hacer sacrificios ese es Darkest Dungeon. Seguir avanzando en una mazmorra supone un riesgo, tocar un objeto sin la provisión adecuada puede tener efectos muy negativos, a veces para completar una misión hay que sacrificar un héroe, equiparse con un abalorio aparte de los efectos positivos la mayoría tiene efectos negativos. Darkest Dungeon es un juego difícil en el que en gran medida para completarlo hace falta conocerlo muy bien, sin una guía y consejos es muy difícil llegar al su final o requeriría mucho tiempo para aprender todos sus trucos, con algunos de ellos el éxito no está asegurado pero hay mayor probabilidad de conseguirlo. Está guía es introductoria no es exhaustiva para completarla incluye varios enlaces con mucha información para profundizar más."
@@ -34,16 +34,16 @@ Un juego similar a Darkest Dungeon es [el juego de rol For the King][blogbitix-5
 
 {{< image
     gallery="true"
-    image1="image:darkest-dungeon.jpg" optionsthumb1="650x450" title1="Pantalla inicial" >}}
+    image1="image:darkest-dungeon.webp" optionsthumb1="650x450" title1="Pantalla inicial" >}}
 
 {{< image
     gallery="true"
-    image1="image:darkest-dungeon-menu.jpg" optionsthumb1="300x200" title2="Menú"
+    image1="image:darkest-dungeon-menu.webp" optionsthumb1="300x200" title2="Menú"
     caption="Pantalla inicial y menú del juego Darkest Dungeon" >}}
 
 {{< image
     gallery="true"
-    image1="image:darkest-dungeon-cover.jpg" optionsthumb1="200x150" title1="Portada del juego Darkest Dungeon"
+    image1="image:darkest-dungeon-cover.webp" optionsthumb1="200x150" title1="Portada del juego Darkest Dungeon"
     caption="Portada del juego Darkest Dungeon" >}}
 
 {{< youtube
@@ -71,29 +71,29 @@ Cada héroe puede tener hasta 5 rasgos positivos que se ganan al subir de nivel�
 
 {{< image
     gallery="false"
-    image1="image:hero-abomination.jpg" optionsthumb1="200x150" title1="Abominación"
-    image2="image:hero-antiquarian.jpg" optionsthumb2="200x150" title2="Anticuaria"
-    image3="image:hero-arbalest.jpg" optionsthumb3="200x150" title3="Arbalestera" >}}
+    image1="image:hero-abomination.webp" optionsthumb1="200x150" title1="Abominación"
+    image2="image:hero-antiquarian.webp" optionsthumb2="200x150" title2="Anticuaria"
+    image3="image:hero-arbalest.webp" optionsthumb3="200x150" title3="Arbalestera" >}}
 {{< image
     gallery="false"
-    image1="image:hero-bounty-hunter.jpg" optionsthumb1="200x150" title1="Caza recompensas"
-    image2="image:hero-crusader.jpg" optionsthumb2="200x150" title2="Cruzado"
-    image3="image:hero-grave-robber.jpg" optionsthumb3="200x150" title3="Asaltatumbas" >}}
+    image1="image:hero-bounty-hunter.webp" optionsthumb1="200x150" title1="Caza recompensas"
+    image2="image:hero-crusader.webp" optionsthumb2="200x150" title2="Cruzado"
+    image3="image:hero-grave-robber.webp" optionsthumb3="200x150" title3="Asaltatumbas" >}}
 {{< image
     gallery="false"
-    image1="image:hero-hellion.jpg" optionsthumb1="200x150" title1="Diabla"
-    image2="image:hero-highwayman.jpg" optionsthumb2="200x150" title2="Bandolero"
-    image3="image:hero-hound-master.jpg" optionsthumb3="200x150" title3="Maestro canino" >}}
+    image1="image:hero-hellion.webp" optionsthumb1="200x150" title1="Diabla"
+    image2="image:hero-highwayman.webp" optionsthumb2="200x150" title2="Bandolero"
+    image3="image:hero-hound-master.webp" optionsthumb3="200x150" title3="Maestro canino" >}}
 {{< image
     gallery="false"
-    image1="image:hero-jester.jpg" optionsthumb1="200x150" title1="Bufón"
-    image2="image:hero-leper.jpg" optionsthumb2="200x150" title2="Leproso"
-    image3="image:hero-man-at-arms.jpg" optionsthumb3="200x150" title3="Hombre de armas" >}}
+    image1="image:hero-jester.webp" optionsthumb1="200x150" title1="Bufón"
+    image2="image:hero-leper.webp" optionsthumb2="200x150" title2="Leproso"
+    image3="image:hero-man-at-arms.webp" optionsthumb3="200x150" title3="Hombre de armas" >}}
 {{< image
     gallery="false"
-    image1="image:hero-occultist.jpg" optionsthumb1="200x150" title1="Ocultista"
-    image2="image:hero-plague-doctor.jpg" optionsthumb2="200x150" title2="Doctor de plaga"
-    image3="image:hero-vestal.jpg" optionsthumb3="200x150" title3="Vestal"
+    image1="image:hero-occultist.webp" optionsthumb1="200x150" title1="Ocultista"
+    image2="image:hero-plague-doctor.webp" optionsthumb2="200x150" title2="Doctor de plaga"
+    image3="image:hero-vestal.webp" optionsthumb3="200x150" title3="Vestal"
     caption="Héroes de Darkest Dungeon" >}}
 
 #### Clases, habilidades más destacadas y funciones
@@ -165,8 +165,8 @@ Al finalizar una exploración de mazmorra los héroes habrán ganado esfuerzo, q
 
 {{< image
     gallery="true"
-    image1="image:feudo.jpg" optionsthumb1="300x200" title1="Feudo"
-    image2="image:cuidador.jpg" optionsthumb2="300x200" title2="Cuidador"
+    image1="image:feudo.webp" optionsthumb1="300x200" title1="Feudo"
+    image2="image:cuidador.webp" optionsthumb2="300x200" title2="Cuidador"
     caption="Feudo y cuidador" >}}
 
 ### Mecánicas del juego
@@ -205,7 +205,7 @@ La localización del Darkest Dungeon es el objetivo del juego, tiene algunos asp
 
 {{< image
     gallery="true"
-    image1="image:localizaciones.jpg" optionsthumb1="650x450" title1="Localizaciones"
+    image1="image:localizaciones.webp" optionsthumb1="650x450" title1="Localizaciones"
     caption="Localizaciones" >}}
 
 #### Estadísticas
@@ -238,7 +238,7 @@ Una estadística que no aparece en la ficha del héroe es la virtud. Cuando un h
 
 {{< image
     gallery="true"
-    image1="image:ficha-de-heroe.jpg" optionsthumb1="650x450" title1="Ficha de héroe"
+    image1="image:ficha-de-heroe.webp" optionsthumb1="650x450" title1="Ficha de héroe"
     caption="Ficha de héroe" >}}
 
 * [Estados de virtud](https://darkestdungeon.fandom.com/wiki/Virtue)
@@ -468,7 +468,7 @@ Estos son abalorios destacados para las funciones de algunos héroes, la mayorí
 
 {{< image
     gallery="true"
-    image1="image:abalorios.jpg" optionsthumb1="650x450" title1="Abalorios"
+    image1="image:abalorios.webp" optionsthumb1="650x450" title1="Abalorios"
     caption="Abalorios" >}}
 
 * [Recommended trinkets for classes](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=33837)
@@ -487,8 +487,8 @@ Las reliquias de la  familia son bustos, pinturas, hojas de diario y emblemas. 
 
 {{< image
     gallery="true"
-    image1="image:botin.jpg" optionsthumb1="300x200" title1="Botín"
-    image2="image:curio.jpg" optionsthumb2="300x200" title2="Curio"
+    image1="image:botin.webp" optionsthumb1="300x200" title1="Botín"
+    image2="image:curio.webp" optionsthumb2="300x200" title2="Curio"
     caption="Botín y curio" >}}
 
 ### Misiones y combates
@@ -531,13 +531,13 @@ Las provisiones recomendadas en función de la duración de la misión y la loca
 
 {{< image
     gallery="true"
-    image1="image:localizaciones.jpg" optionsthumb1="300x200" title1="Aprovisionamiento"
-    image2="image:provision.jpg" optionsthumb2="300x200" title2="Aprovisionamiento"
-    image3="image:acampada.jpg" optionsthumb3="300x200" title3="Acampada"
+    image1="image:localizaciones.webp" optionsthumb1="300x200" title1="Aprovisionamiento"
+    image2="image:provision.webp" optionsthumb2="300x200" title2="Aprovisionamiento"
+    image3="image:acampada.webp" optionsthumb3="300x200" title3="Acampada"
     caption="Misión, aprovisionamiento y acampada" >}}
 {{< image
     gallery="true"
-    image1="image:combate.jpg" optionsthumb1="650x450" title1="Combate"
+    image1="image:combate.webp" optionsthumb1="650x450" title1="Combate"
     caption="Combate" >}}
 
 Por muy tranquila que vaya una misión no hay que confiarse, la falta de una pala, falta de comida o un enemigo que realiza un crítico en un ataque da lugar a una situación de riesgo para alguno de los héroes sobre todo en las misiones de nivel campeón.
@@ -574,14 +574,14 @@ Estos son algunos jefes que hay que aniquiar para completar el juego.
 
 {{< image
     gallery="true"
-    image1="image:boss-hag.jpg" optionsthumb1="200x150" title1="Bruja"
-    image2="image:boss-brigand-pounder.jpg" optionsthumb2="200x150" title2="Cañon"
-    image3="image:boss-necromancer.jpg" optionsthumb3="200x150" title3="Nigromante"
+    image1="image:boss-hag.webp" optionsthumb1="200x150" title1="Bruja"
+    image2="image:boss-brigand-pounder.webp" optionsthumb2="200x150" title2="Cañon"
+    image3="image:boss-necromancer.webp" optionsthumb3="200x150" title3="Nigromante"
     caption="Bruja, Cañon y Nigromante" >}}
 {{< image
     gallery="true"
-    image1="image:boss-prophet.jpg" optionsthumb1="300x200" title1="Profeta"
-    image2="image:boss-siren.jpg" optionsthumb2="300x200" title2="Sirena"
+    image1="image:boss-prophet.webp" optionsthumb1="300x200" title1="Profeta"
+    image2="image:boss-siren.webp" optionsthumb2="300x200" title2="Sirena"
     caption="Profeta y Sirena" >}}
 
 ### Estrategia para completar el juego
@@ -596,7 +596,7 @@ Auqí solo doy unos pocos consejos generales, en intenet hay guías mucho más c
 
 {{< image
     gallery="true"
-    image1="image:darkest-dungeon-aviso.jpg" optionsthumb1="650x450" title1="Aviso de la dificultad del juego"
+    image1="image:darkest-dungeon-aviso.webp" optionsthumb1="650x450" title1="Aviso de la dificultad del juego"
     caption="Aviso de la dificultad del juego" >}}
 
 #### Estrategia de grupos de héroes
@@ -816,13 +816,13 @@ Los héroes que completan una mazmorra oscura no pueden participar en una nueva 
 
 {{< image
     gallery="true"
-    image1="image:mazmorra-oscura-1.jpg" optionsthumb1="200x150" title1="Mazmorra oscura"
-    image2="image:mazmorra-oscura-2.jpg" optionsthumb2="200x150" title2="Mazmorra oscura"
-    image3="image:mazmorra-oscura-3.jpg" optionsthumb3="200x150" title3="Mazmorra oscura" >}}
+    image1="image:mazmorra-oscura-1.webp" optionsthumb1="200x150" title1="Mazmorra oscura"
+    image2="image:mazmorra-oscura-2.webp" optionsthumb2="200x150" title2="Mazmorra oscura"
+    image3="image:mazmorra-oscura-3.webp" optionsthumb3="200x150" title3="Mazmorra oscura" >}}
 {{< image
     gallery="true"
-    image1="image:mazmorra-oscura-4.jpg" optionsthumb1="200x150" title1="Mazmorra oscura"
-    image2="image:mazmorra-oscura-5.jpg" optionsthumb2="200x150" title2="Mazmorra oscura"
+    image1="image:mazmorra-oscura-4.webp" optionsthumb1="200x150" title1="Mazmorra oscura"
+    image2="image:mazmorra-oscura-5.webp" optionsthumb2="200x150" title2="Mazmorra oscura"
     caption="Mazmorra oscura" >}}
 
 * [Consejos de inicio](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=33823) ([otra guía](https://darkestdungeon.fandom.com/wiki/Darkest_Dungeon_(location)))

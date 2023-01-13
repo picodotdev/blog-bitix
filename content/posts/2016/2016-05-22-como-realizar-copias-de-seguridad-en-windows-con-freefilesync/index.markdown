@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-imagePost: "logotype:freefilesync.png"
+imagePost: "logotype:freefilesync.webp"
 tags: ["microsoft", "software", "software-libre"]
 summary: "Realizar copias de seguridad cada cierta frecuencia nos salvará de perder los datos en algún momento, no sabemos cuando pero tarde o temprano algo del equipo que usemos fallará ya sea a causa de software o hardware. A nivel de usuario mantener una copia sincronizada en otro dispositivo de nuestros archivos seguramente sea suficiente para no perderlos a causa de un desastre, para ello podemos usar FreeFileSync."
 ---
@@ -38,7 +38,7 @@ FreeFileSync tiene una licencia de software libre y está disponible tanto para 
 
 {{< image
     gallery="true"
-    image1="image:freefilesync.png" optionsthumb1="300x200" title1="FreeFileSync" >}}
+    image1="image:freefilesync.webp" optionsthumb1="300x200" title1="FreeFileSync" >}}
 
 Después de indicar orígenes y destinos debemos seleccionar el tipo sincronización entre ambos directorios. Las opciones que nos ofrece de sincronización son:
 
@@ -73,11 +73,11 @@ Las opciones que ofrece son bastantes y seguro que cubren la mayoría de casos d
 
 {{< image
     gallery="true"
-    image1="image:freefilesync-comparacion.png" optionsthumb1="300x200" title1="Opciones de comparación de FreeFileSync"
-    image2="image:freefilesync-filtro.png" optionsthumb2="300x200" title2="Opciones de filtrado de FreeFileSync" >}}
+    image1="image:freefilesync-comparacion.webp" optionsthumb1="300x200" title1="Opciones de comparación de FreeFileSync"
+    image2="image:freefilesync-filtro.webp" optionsthumb2="300x200" title2="Opciones de filtrado de FreeFileSync" >}}
 {{< image
     gallery="true"
-    image1="image:freefilesync-sincronizacion.png" optionsthumb1="300x200" title1="Opciones de sincronización de FreeFileSync" >}}
+    image1="image:freefilesync-sincronizacion.webp" optionsthumb1="300x200" title1="Opciones de sincronización de FreeFileSync" >}}
 
 La ventaja realizar un copia de los archivos directamente sin comprimir o cifrar es que no necesitaremos ningún programa adicional para acceder a ellos en caso de necesidad. Otros programas de copias de seguridad son capaces de guardar los datos cifrados y comprimidos pero para recuperar los datos necesitaremos esos programas. Dependiendo de los requerimientos para la copia de seguridad podemos [cifrar la unidad USB externa con BitLocker en Windows](http://windows.microsoft.com/es-es/windows/protect-files-bitlocker-drive-encryption#1TC=windows-8) y [cifrar la unidad USB externa con dm-crypt y LUKS en GNU/Linux][blogbitix-128].
 

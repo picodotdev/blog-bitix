@@ -34,13 +34,13 @@ Estas son las pruebas fehacientes que muestran las donaciones que he hecho a los
 
 {{< image
     gallery="true"
-    image1="image:donacion-mozilla.png" optionsthumb1="300x200" title1="Donación Mozilla"
-    image2="image:donacion-mozilla-email.png" optionsthumb2="300x200" title2="Donación Mozilla"
+    image1="image:donacion-mozilla.webp" optionsthumb1="300x200" title1="Donación Mozilla"
+    image2="image:donacion-mozilla-email.webp" optionsthumb2="300x200" title2="Donación Mozilla"
     caption="Donación Mozilla" >}}
 {{< image
     gallery="true"
-    image1="image:donacion-wikipedia.png" optionsthumb1="300x200" title1="Donación Wikipedia"
-    image2="image:donacion-wikipedia-email.png" optionsthumb2="300x200" title2="Donación Wikipedia"
+    image1="image:donacion-wikipedia.webp" optionsthumb1="300x200" title1="Donación Wikipedia"
+    image2="image:donacion-wikipedia-email.webp" optionsthumb2="300x200" title2="Donación Wikipedia"
     caption="Donación Wikipedia" >}}
 
 Probablemente dentro de alrededor de otros 8 meses cuando reciba nuevas transferencias de Google y Amazon haré una nueva donación a otra serie de proyectos que uso quizá en ese caso a [LibreOffice][libreoffice], [VLC][vlc], [GNOME][gnome], [GIMP][gimp], ... o lo intente de nuevo con Arch Linux. Y estos serán proyectos muy conocidos que no necesiten tanta colaboración económica seguro que hay muchos proyectos menos conocidos pero muy importantes que también necesitan financiación.

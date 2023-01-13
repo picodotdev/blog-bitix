@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:java-18.jpg"
+imageHead: "image:java-18.webp"
 imagePost: "logotype:java.svg"
 tags: ["java", "planeta-codigo"]
 series: ["java-platform"]
@@ -60,7 +60,7 @@ Con el nuevo calendario de publicaciones se observa claramente que los desarroll
 
 {{< image
     gallery="true"
-    image1="image:java-releases.jpg" optionsthumb1="650x450" title1="Publicaciones de Java"
+    image1="image:java-releases.webp" optionsthumb1="650x450" title1="Publicaciones de Java"
     caption="Publicaciones de Java" >}}
 
 ### Nuevas características

@@ -57,7 +57,7 @@ Matomo requiere una configuración inicial, en el ejemplo se accede a Matomo en 
 
 {{< image
     gallery="true"
-    image1="image:matomo-configuracion.png" optionsthumb1="300x200" title1="Configuración inicial de Matomo"
+    image1="image:matomo-configuracion.webp" optionsthumb1="300x200" title1="Configuración inicial de Matomo"
     caption="Configuración inicial de Matomo" >}}
 
 Para que tome los datos de analítica del sitio web hay que insertar el _script_ proporcionado en todas la páginas devueltas por el sitio web. Este es la página HTML de ejemplo mínima con el script insertado y el envío de un evento cuando se pulsa un botón.
@@ -65,19 +65,19 @@ Para que tome los datos de analítica del sitio web hay que insertar el _script_
 {{< code file="index.xhtml" language="html" options="" >}}
 {{< image
     gallery="true"
-    image1="image:web.png" optionsthumb1="300x200" title1="Web con analítica de Matomo"
+    image1="image:web.webp" optionsthumb1="300x200" title1="Web con analítica de Matomo"
     caption="Web con analítica de Matomo" >}}
 
 Matomo recibe los datos de analítica de las páginas desde el navegador de los usuarios cuando las páginas web son accedidas. Entre las funciones incluidas en Matomo están los paneles de Visitantes, Adquisición, Comportamiento, Objetivos y Mercado.
 
 {{< image
     gallery="true"
-    image1="image:matomo-tablero.png" optionsthumb1="300x200" title1="Analítica web con Matomo"
-    image2="image:matomo-visitantes.png" optionsthumb2="300x200" title2="Analítica web con Matomo" >}}
+    image1="image:matomo-tablero.webp" optionsthumb1="300x200" title1="Analítica web con Matomo"
+    image2="image:matomo-visitantes.webp" optionsthumb2="300x200" title2="Analítica web con Matomo" >}}
 {{< image
     gallery="true"
-    image1="image:matomo-eventos.png" optionsthumb1="300x200" title1="Analítica web con Matomo"
-    image2="image:matomo-adquisicion.png" optionsthumb2="300x200" title2="Analítica web con Matomo"
+    image1="image:matomo-eventos.webp" optionsthumb1="300x200" title1="Analítica web con Matomo"
+    image2="image:matomo-adquisicion.webp" optionsthumb2="300x200" title2="Analítica web con Matomo"
     caption="Analítica web con Matomo" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/Matomo" command="docker-compose up" %}}

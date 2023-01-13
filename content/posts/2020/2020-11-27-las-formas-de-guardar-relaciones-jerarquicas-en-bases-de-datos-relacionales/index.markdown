@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:hierarchy-comparation.png"
+imagePost: "image:hierarchy-comparation.webp"
 tags: ["planeta-codigo", "programacion"]
 summary: "Para implementar relaciones jerárquicas en base de datos relacionales hay varias soluciones conocidas. En este artículo comento las más conocidas con sus desventajas y cual elegir en función de si la base de datos soporta consultas recursivas o en caso de que no las soporte."
 ---
@@ -82,7 +82,7 @@ Cuando la base de datos no soporta consultas recursivas una solución alternativ
 
 {{< image
     gallery="true"
-    image1="image:closure-table-hierarchy.png" optionsthumb1="300x200" title1="Esquema de las relaciones entre los nodos"
+    image1="image:closure-table-hierarchy.webp" optionsthumb1="300x200" title1="Esquema de las relaciones entre los nodos"
     caption="Esquema de las relaciones entre los nodos" >}}
 
 En este caso las consultas de búsqueda son eficientes, las de inserción son sencillas y hay integridad referencial. Esta solución permite a la misma fila formar parte de varias estructuras jerárquicas al mismo tiempo. Su desventaja es que requiere una tabla adicional.
@@ -146,7 +146,7 @@ Esta es una pequeña comparación entre cada una de las soluciones en su dificul
 
 {{< image
     gallery="true"
-    image1="image:hierarchy-comparation.png" optionsthumb1="600x450" title1="Comparación entre las diferentes soluciones"
+    image1="image:hierarchy-comparation.webp" optionsthumb1="600x450" title1="Comparación entre las diferentes soluciones"
     caption="Comparación entre las diferentes soluciones" >}}
 
 {{< reference >}}

@@ -32,7 +32,7 @@ Un sitio web recomendable al que suscribirse para estar informado sobre los avan
 
 {{< image
     gallery="false"
-    image1="logotype:phoronix.png" optionsthumb1="300x200" title1="Phoronix" >}}
+    image1="logotype:phoronix.webp" optionsthumb1="300x200" title1="Phoronix" >}}
 
 ### Mozilla, Firefox
 
@@ -63,15 +63,15 @@ como estos además ser una forma de motivarme para continuar escribiendo en el b
 
 {{< image
     gallery="true"
-    image1="image:donacion-phoronix.png" optionsthumb1="650x450" title1="Donación Phoronix"
+    image1="image:donacion-phoronix.webp" optionsthumb1="650x450" title1="Donación Phoronix"
     caption="Donación Phoronix" >}}
 {{< image
     gallery="true"
-    image2="image:donacion-mozilla.png" optionsthumb2="650x450" title2="Donación Firefox"
+    image2="image:donacion-mozilla.webp" optionsthumb2="650x450" title2="Donación Firefox"
     caption="Donación Mozilla" >}}
 {{< image
     gallery="true"
-    image3="image:donacion-gnupg.png" optionsthumb3="650x450" title3="Donación GnuPG"
+    image3="image:donacion-gnupg.webp" optionsthumb3="650x450" title3="Donación GnuPG"
     caption="Donación GnuPG" >}}
 
 {{< donations >}}

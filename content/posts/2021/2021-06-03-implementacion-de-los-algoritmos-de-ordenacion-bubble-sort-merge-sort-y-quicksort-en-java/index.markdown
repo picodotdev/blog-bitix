@@ -108,7 +108,7 @@ Los anteriores no son los únicos algoritmos conocidos para realizar ordenación
 
 {{< image
     gallery="true"
-    image1="image:comparison-sort-algorithms.png" optionsthumb1="650x450" title1="Comparación de algunos algoritmos de ordenación"
+    image1="image:comparison-sort-algorithms.webp" optionsthumb1="650x450" title1="Comparación de algunos algoritmos de ordenación"
     caption="Comparación de algunos algoritmos de ordenación" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaSort" command="./gradlew run" %}}

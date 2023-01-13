@@ -48,9 +48,9 @@ En la aplicación Spring Boot incluyendo la dependencia de Spring Boot Actuator 
 
 {{< image
     gallery="true"
-    image1="image:spring-boot-actuator-health.png" optionsthumb1="300x200" title1="Spring Boot Actuator endpoint Health"
-    image2="image:spring-boot-actuator-env.png" optionsthumb2="300x200" title2="Spring Boot Actuator endpoint Env"
-    image3="image:spring-boot-actuator-metrics.png" optionsthumb3="300x200" title3="Spring Boot Actuator endpoint Metrics"
+    image1="image:spring-boot-actuator-health.webp" optionsthumb1="300x200" title1="Spring Boot Actuator endpoint Health"
+    image2="image:spring-boot-actuator-env.webp" optionsthumb2="300x200" title2="Spring Boot Actuator endpoint Env"
+    image3="image:spring-boot-actuator-metrics.webp" optionsthumb3="300x200" title3="Spring Boot Actuator endpoint Metrics"
     caption="Spring Boot Actuator endpoints health, env y metrics " >}}
 
 Spring Boot Actuator es otro de los varios módulos disponibles en Spring Boot. Para conocer más en detalle cuales son sus posibilidades el libro [Spring Boot in Action](https://amzn.to/2SVtJNU) lo explica bastante bien, otro libro sobre Spring Boot es [Spring Boot: Up and Running](https://amzn.to/3kxG3kh).

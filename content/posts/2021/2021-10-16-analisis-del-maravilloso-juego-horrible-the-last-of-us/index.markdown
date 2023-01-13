@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:the-last-of-us.jpg"
-imagePost: "image:the-last-of-us.jpg"
+imageHead: "image:the-last-of-us.webp"
+imagePost: "image:the-last-of-us.webp"
 tags: ["juegos"]
 series: ["analisis-juegos", "juegos"]
 summary: "Algunos juegos están enfocados a la parte de habilidad y acción con la única intención de proporcionar diversion. Otros independiente de la calidad gráfica que es muy notable en la actualidad pueden ser vistos como una forma de obra de arte al mismo nivel que una novela, una película, una canción o música, un cómic, un cuadro u otras formas de arte. Los juegos tienen varios de estas formas de arte como una historia, imágenes, secuencias cinemáticas o una banda sonora que en conjunto forman la obra. El juego The Last of Us sin lugar a dudas entra perfectamente en la categoría de obra de arte siendo uno de los mejores juegos no solo de la generación para la PS3 y PS4. Un juego con una maravillosa historia al mismo tiempo que horrible."
@@ -35,16 +35,16 @@ A veces me cuesta encender la Play y ponerme a jugar pero este al igual o más q
 
 {{< image
     gallery="true"
-    image1="image:the-last-of-us.jpg" optionsthumb1="650x450" title1="Pantalla inicial" >}}
+    image1="image:the-last-of-us.webp" optionsthumb1="650x450" title1="Pantalla inicial" >}}
 {{< image
     gallery="true"
-    image1="image:the-last-of-us-menu.jpg" optionsthumb1="300x200" title2="Menú"
+    image1="image:the-last-of-us-menu.webp" optionsthumb1="300x200" title2="Menú"
     caption="Pantalla inicial y menú del juego The Last of Us" >}}
 {{< image
     gallery="true"
-    image1="image:the-last-of-us-remasterizado.jpg" optionsthumb1="200x150" title1="Portada"
-    image2="image:left-behind.jpg" optionsthumb2="200x150" title2="Portada"
-    image3="image:naughty-dog.jpg" optionsthumb3="200x150" title3="Portada"
+    image1="image:the-last-of-us-remasterizado.webp" optionsthumb1="200x150" title1="Portada"
+    image2="image:left-behind.webp" optionsthumb2="200x150" title2="Portada"
+    image3="image:naughty-dog.webp" optionsthumb3="200x150" title3="Portada"
     caption="Portada" >}}
 
 {{< amazon
@@ -63,7 +63,7 @@ El juego para la PS4 es una versión _remasterizada_ del original para la PS3, c
 
 {{< image
     gallery="true"
-    image1="image:the-last-of-us-cover.jpg" optionsthumb1="200x150" title1="Portada del juego The Last of Us"
+    image1="image:the-last-of-us-cover.webp" optionsthumb1="200x150" title1="Portada del juego The Last of Us"
     caption="Portada del juego The Last of Us" >}}
 
 The Last of Us se cataloga en el género de _survival horror_ en el que los recursos son limitados que obliga a racionarlos. Los combates han de afrontarse con una mezcla de táctica, sigilo y en ocasiones con armas de fuego. No se proporciona ningún mapa pero los escenarios no son muy amplios que simplifica su exploración necesaria para ir obteniendo recursos que se van gastando del equipo y encontrar diferentes artefactos que proporcionan mejoras. Aunque no es un juego de rol tiene varios componentes del género como la fabricación de objetos a partir de recursos, varios tipos de armas y mejora de las mismas así como una pequeña serie de mejoras en la ficha del personaje que dan cierta libertad al jugador de elegir. Aparte de acción y exploración en algunos momentos hay pequeñas mecánicas de puzzle para superar obstáculos.
@@ -78,13 +78,13 @@ En The Last of Us aunque como todo videojuego tiene una parte de acción interac
 
 {{< image
     gallery="true"
-    image1="image:juego-1.jpg" optionsthumb1="200x150" title1="Juego"
-    image2="image:juego-2.jpg" optionsthumb2="200x150" title2="Juego"
-    image3="image:juego-3.jpg" optionsthumb3="200x150" title3="Juego" >}}
+    image1="image:juego-1.webp" optionsthumb1="200x150" title1="Juego"
+    image2="image:juego-2.webp" optionsthumb2="200x150" title2="Juego"
+    image3="image:juego-3.webp" optionsthumb3="200x150" title3="Juego" >}}
 {{< image
     gallery="true"
-    image1="image:juego-4.jpg" optionsthumb1="300x200" title1="Juego"
-    image2="image:juego-5.jpg" optionsthumb2="300x200" title2="Juego"
+    image1="image:juego-4.webp" optionsthumb1="300x200" title1="Juego"
+    image2="image:juego-5.webp" optionsthumb2="300x200" title2="Juego"
     caption="Juego" >}}
 
 #### Combates
@@ -109,20 +109,20 @@ En cuanto a armas hay varios tipos cuerpo a cuerpo, armas blancas, silenciosas, 
 
 {{< image
     gallery="true"
-    image1="image:fabricar.jpg" optionsthumb1="200x150" title1="Fabricar"
-    image2="image:habilidades.jpg" optionsthumb2="200x150" title2="Habilidades"
-    image3="image:coleccionables.jpg" optionsthumb3="200x150" title3="Coleccionables"
+    image1="image:fabricar.webp" optionsthumb1="200x150" title1="Fabricar"
+    image2="image:habilidades.webp" optionsthumb2="200x150" title2="Habilidades"
+    image3="image:coleccionables.webp" optionsthumb3="200x150" title3="Coleccionables"
     caption="Fabricar, habilidades y coleccionables" >}}
 {{< image
     gallery="true"
-    image1="image:manual-de-entrenamiento-1.jpg" optionsthumb1="200x150" title1="Manuales de entrenamiento"
-    image2="image:manual-de-entrenamiento-2.jpg" optionsthumb2="200x150" title2="Manuales de entrenamiento"
-    image3="image:manual-de-entrenamiento-3.jpg" optionsthumb3="200x150" title3="Manuales de entrenamiento"
+    image1="image:manual-de-entrenamiento-1.webp" optionsthumb1="200x150" title1="Manuales de entrenamiento"
+    image2="image:manual-de-entrenamiento-2.webp" optionsthumb2="200x150" title2="Manuales de entrenamiento"
+    image3="image:manual-de-entrenamiento-3.webp" optionsthumb3="200x150" title3="Manuales de entrenamiento"
     caption="Manuales de entrenamiento" >}}
 {{< image
     gallery="true"
-    image1="image:banco-de-trabajo-1.jpg" optionsthumb1="300x200" title1="Banco de trabajo"
-    image2="image:banco-de-trabajo-2.jpg" optionsthumb2="300x200" title2="Banco de trabajo"
+    image1="image:banco-de-trabajo-1.webp" optionsthumb1="300x200" title1="Banco de trabajo"
+    image2="image:banco-de-trabajo-2.webp" optionsthumb2="300x200" title2="Banco de trabajo"
     caption="Banco de trabajo" >}}
 
 #### Coleccionables
@@ -135,15 +135,15 @@ Los coleccionables no están especialmente escondidos, basta con explorar un poc
 
 {{< image
     gallery="true"
-    image1="image:comic-1.jpg" optionsthumb1="200x150" title1="Comics"
-    image2="image:comic-2.jpg" optionsthumb2="200x150" title2="Comics"
-    image3="image:comic-3.jpg" optionsthumb3="200x150" title3="Comics"
+    image1="image:comic-1.webp" optionsthumb1="200x150" title1="Comics"
+    image2="image:comic-2.webp" optionsthumb2="200x150" title2="Comics"
+    image3="image:comic-3.webp" optionsthumb3="200x150" title3="Comics"
     caption="Comics" >}}
 {{< image
     gallery="true"
-    image1="image:colgante-luciernaga-1.jpg" optionsthumb1="200x150" title1="Colgantes de luciérnaga"
-    image2="image:colgante-luciernaga-2.jpg" optionsthumb2="200x150" title2="Colgantes de luciérnaga"
-    image3="image:colgante-luciernaga-3.jpg" optionsthumb3="200x150" title3="Colgantes de luciérnaga"
+    image1="image:colgante-luciernaga-1.webp" optionsthumb1="200x150" title1="Colgantes de luciérnaga"
+    image2="image:colgante-luciernaga-2.webp" optionsthumb2="200x150" title2="Colgantes de luciérnaga"
+    image3="image:colgante-luciernaga-3.webp" optionsthumb3="200x150" title3="Colgantes de luciérnaga"
     caption="Colgantes de luciérnaga" >}}
 
 ### Comparación versión original y remasterizadas

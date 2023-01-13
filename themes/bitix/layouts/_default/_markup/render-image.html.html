@@ -20,13 +20,13 @@
 {{- end -}}
 {{- $page := default "" (index $attributes "page") -}}
 {{- $url := index $attributes "url" -}}
-{{- $size := index $attributes "size" -}}
-{{- $width := index (split $size "x") 0 -}}
-{{- $height := index (split $size "x") 1 -}}
+{{- $url := replaceRE "^\"|\"$" "" $url -}}
 {{- $command := default "Fit" (index $attributes "command") -}}
-{{- $commandthumb := default "Fit" (index $attributes "commandthumb") -}}
 {{- $options := default "2560x1440" (index $attributes "options") -}}
-{{- $optionsthumb := index $attributes "size" -}}
+{{- $options := replace $options "___" " " -}}
+{{- $commandthumb := default "Fit" (index $attributes "commandthumb") -}}
+{{- $optionsthumb := default "300x200" (index $attributes "optionsthumb") -}}
+{{- $optionsthumb := replace $optionsthumb "___" " " -}}
 {{- $gallery := eq "true" (index $attributes "gallery") -}}
 {{- $class := index $attributes "class" -}}
 {{- $class := replace $class "." " " -}}
@@ -44,20 +44,50 @@
 
   {{- if eq $binding "logotype" -}}
     {{- $src = print "assets/images/logotypes/" $image | relURL -}}
-    {{- $srcthumb = cond (eq $imagethumb nil) $src (print "assets/images/logotypes/" $imagethumb | relURL) -}}
+    {{- $srcthumb = print "assets/images/logotypes/" $image | relURL -}}
+    {{- $width = index (split $options "x") 0 -}}
+    {{- $height = index (split $options "x") 1 -}}
   {{- else if or (eq $binding "resource") (eq $binding "image") -}}
     {{- $p := cond (eq $page "") .Page (.Page.GetPage $page) -}}
     {{- $path := cond (eq $binding "image") "images/" "" -}}
 
-    {{- if (findRE "\\.svg$|\\.webp$|\\.gif" $image) -}}
+    {{- if (findRE "\\.svg$|\\.gif$" $image) -}}
       {{- $base := replace .Page.Permalink "/index-amp.html" "/" -}}
       {{- $src = print $base $path $image | relURL -}}
-      {{- $srcthumb = cond (eq $imagethumb nil) $src (print $base $path $imagethumb | relURL) -}}
+      {{- $srcthumb = print $base $path $image | relURL -}}
+      {{- $width = index (split $options "x") 0 -}}
+      {{- $height = index (split $options "x") 1 -}}
     {{- else -}}
-      {{- $resource := $p.Resources.GetMatch (print $path $image) -}}
-      {{- $resourcethumb := $p.Resources.GetMatch (print $path $image) -}}
+      {{- $i := $nil -}}
+      {{- $resource := $nil -}}
+      {{- if eq $resource nil -}}
+        {{- $i = replace $image ".webp" ".png" -}}
+        {{- $resource = $p.Resources.GetMatch (print $path $i) -}}
+      {{- end -}}
+      {{- if eq $resource nil -}}
+        {{- $i = replace $image ".webp" ".jpg" -}}
+        {{- $resource = $p.Resources.GetMatch (print $path $i) -}}
+      {{- end -}}
+      {{- if eq $resource nil -}}
+        {{- $i = replace $image ".webp" ".webp" -}}
+        {{- $resource = $p.Resources.GetMatch (print $path $i) -}}
+      {{- end -}}
+      {{- $it := $nil -}}
+      {{- $resourcethumb := $nil -}}
+      {{- if eq $resourcethumb nil -}}
+        {{- $it = replace $image ".webp" ".png" -}}
+        {{- $resourcethumb = $p.Resources.GetMatch (print $path $it) -}}
+      {{- end -}}
+      {{- if eq $resourcethumb nil -}}
+        {{- $it = replace $image ".webp" ".jpg" -}}
+        {{- $resourcethumb = $p.Resources.GetMatch (print $path $it) -}}
+      {{- end -}}
+      {{- if eq $resourcethumb nil -}}
+        {{- $it = replace $image ".webp" ".webp" -}}
+        {{- $resourcethumb = $p.Resources.GetMatch (print $path $it) -}}
+      {{- end -}}
       {{- $scaled := $nil -}}
-      {{- $scaledhumb := $nil -}}
+      {{- $scaledthumb := $nil -}}
 
       {{- if eq $resource nil -}}{{- errorf "Invalid resource '%s'" $image -}}{{- end -}}
       {{- if eq $optionsthumb nil -}}{{- errorf "Invalid thumb optionsthumb '%s'" $optionsthumb -}}{{- end -}}
@@ -73,20 +103,26 @@
       {{- end -}}
 
       {{- if eq $commandthumb "Fit" -}}
-        {{- $scaledhumb = $resourcethumb.Fit $optionsthumb -}}
+        {{- $scaledthumb = $resourcethumb.Fit $optionsthumb -}}
       {{- else if eq $commandthumb "Resize" -}}
-        {{- $scaledhumb = $resourcethumb.Resize $optionsthumb -}}
+        {{- $scaledthumb = $resourcethumb.Resize $optionsthumb -}}
       {{- else if eq $commandthumb "Fill" -}}
-        {{- $scaledhumb = $resourcethumb.Fill $optionsthumb -}}
+        {{- $scaledthumb = $resourcethumb.Fill $optionsthumb -}}
       {{- else -}}
         {{- errorf "Invalid image processing command: Must be one of Fit, Fill or Resize '%s'" .Destination -}}
       {{- end -}}
 
       {{- $src = $scaled.RelPermalink -}}
-      {{- $srcthumb = $scaledhumb.RelPermalink -}}
-      {{- $width = $scaledhumb.Width -}}
-      {{- $height = $scaledhumb.Height -}}
-      
+      {{- $srcthumb = $scaledthumb.RelPermalink -}}
+
+      {{- if $gallery }}
+        {{- $width = $scaledthumb.Width -}}
+        {{- $height = $scaledthumb.Height -}}
+      {{- else -}}
+        {{- $width = $scaled.Width -}}
+        {{- $height = $scaled.Height -}}
+      {{- end -}}
+
       {{- if eq $layout "fixed-height" -}}
         {{- $width = $nil -}}
       {{- end -}}

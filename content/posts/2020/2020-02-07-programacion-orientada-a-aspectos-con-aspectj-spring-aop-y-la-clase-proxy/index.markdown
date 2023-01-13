@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:aop-proxy-call.png"
+imagePost: "image:aop-proxy-call.webp"
 tags: ["java", "planeta-codigo"]
 summary: "Los aspectos permiten separar código con distintas funcionalidades y centralizar un código común que sin utilizarlos está repartido por toda la aplicación. Son un concepto potente y una vez entendidos sus conceptos ofrecen muchas posibilidades para simplificar el código y mejorar su mantenimiento. Hay varias posibilidades, dos de las más utilizadas son AspectJ y Spring AOP, en el caso de que estas no se puedan utilizar el JDK incluye la clase _Proxy_ para usos básicos aunque más limitados."
 ---
@@ -89,8 +89,8 @@ En el _proxy_ es donde se ejecuta el código del _advice_.
 
 {{< image
     gallery="true"
-    image1="image:aop-proxy-plain-pojo-call.png" optionsthumb1="300x200" title1="Llamada a un método normal"
-    image2="image:aop-proxy-call.png" optionsthumb2="300x200" title2="Llamada a un método con un proxy"
+    image1="image:aop-proxy-plain-pojo-call.webp" optionsthumb1="300x200" title1="Llamada a un método normal"
+    image2="image:aop-proxy-call.webp" optionsthumb2="300x200" title2="Llamada a un método con un proxy"
     caption="Llamada a un método normal y con un proxy" >}}
 
 Para que Spring procese las anotaciones require usar la anotación [@EnableAspectJAutoProxy](spring-framework:org/springframework/context/annotation/EnableAspectJAutoProxy.html) y que Spring encuentre la clase de los aspectos, anotándola con [@Component](spring-framework:org/springframework/stereotype/Component.html) o devolviendo una instancia en el contenedor de dependencias como en este caso.

@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:java-15.jpg"
-imagePost: "image:java-15.jpg"
+imageHead: "image:java-15.webp"
+imagePost: "image:java-15.webp"
 tags: ["java", "planeta-codigo"]
 series: ["java-platform"]
 summary: "Algunas novedades de anteriores versiones que en la versión de Java 15 pasan a calificarse con el grado de producción y otras características como una segunda versión preliminar. Sin grandes cambios en el lenguaje tan destacables de versiones anteriores como las _lambdas_ de Java 8 o los módulos de Java 9, en Java 15 se añaden las _sealed classes_."

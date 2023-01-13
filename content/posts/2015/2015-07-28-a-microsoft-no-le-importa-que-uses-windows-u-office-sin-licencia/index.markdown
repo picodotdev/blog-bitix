@@ -25,7 +25,7 @@ Hay pocas pero algunas opciones para adquirir un portátil sin Windows o con alg
 
 {{< image
     gallery="true"
-    image1="image:windows-10.png" optionsthumb1="300x200" title1="Windows 10" >}}
+    image1="image:windows-10.webp" optionsthumb1="300x200" title1="Windows 10" >}}
 
 * [Licencia de Windows 10 Home](https://amzn.to/333Df5X) en Amazon.
 * [Licencia de Windows 10 Pro](https://amzn.to/3icedXI) en Amazon.
@@ -38,7 +38,7 @@ Hay pocas pero algunas opciones para adquirir un portátil sin Windows o con alg
 
 {{< image
     gallery="true"
-    image1="image:linux-gnu-ditributions.png" optionsthumb1="300x200" title1="Linux, GNU, distribuciones" >}}
+    image1="image:linux-gnu-ditributions.webp" optionsthumb1="300x200" title1="Linux, GNU, distribuciones" >}}
 
 ¿Alguien cree que una empresa como Microsoft con los recursos y capacidad que posee no podría implementar una validación que impidiera su uso indebidamente, más ahora donde la conexión a internet es común? No, la respuesta es que no quiere y tiempo ha tenido para demostrar lo contrario. Perdiendo muchos usuarios a favor de sus alternativas haría que esas personas estuvieran capacitadas para usar esas mismas alternativas en el trabajo (incluidas escuelas y empresas de formación), el mundo empresarial donde Microsoft les es más fácil exigir su derecho legalmente en vez de individualmente a personas y de donde obtendrá sus mayores ingresos. Hacerlo provocaría que bajase su cuota de uso en niveles monopolísticos actualmente y posiblemente a largo plazo un peligro de sus ingresos.
 
@@ -46,7 +46,7 @@ Solo hay que ver las millonadas obscenas que se adjudican en [contratos para la 
 
 {{< image
     gallery="true"
-    image1="image:windows-genuine.jpg" optionsthumb1="300x200" title1="Windows Genuine" >}}
+    image1="image:windows-genuine.webp" optionsthumb1="300x200" title1="Windows Genuine" >}}
 
 Microsoft sabe que estás usando su software sin la correspondiente licencia y te lo dice mostrándote un mensaje cada cierto tiempo o te quita el fondo de pantalla, incordia un poco pero que no impide su uso. Voluntariamente o negligentemente los sistemas de validación incorporados en Windows u Office consienten que muchos usuarios usen la versión la versión _Pirated_, usuarios que no están dispuestos a pagar el considerable coste de la licencia. Aunque preferirá que los usuarios compren la licencia Microsoft permite en cierta medida el uso de su software sin ella, la alternativa sería perder la posibilidad de convencer a algunos a usar el software legalmente aparte de perder cuota de uso a favor de otras alternativas, quizá le es más provechosa una situación donde se use su software ilegalmente que una alternativa. Microsoft también comete las injusticias que la ley le deja o nadie le exige, preinstalado su sistema indeseable por algunos que no lo queremos al mismo tiempo que no proporciona información clara y el proceso sea sencillo para conseguir su devolución junto con el reembolso de su coste y en los [impuestos que usando ingeniería fiscal Microsoft junto con otras empresas se llevan a donde menos pagan](http://economia.elpais.com/economia/2014/01/18/actualidad/1390071860_568641.html).
 

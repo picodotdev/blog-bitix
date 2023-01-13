@@ -33,13 +33,13 @@ He tenido varios móviles empezando por un [Motorola C350](https://www.gsmarena.
 
 {{< image
     gallery="true"
-    image1="image:motorola-c350.jpg" optionsthumb1="200x150" title1="Motorola C350"
-    image2="image:nokia-6630.jpg" optionsthumb2="200x150" title2="Nokia 6630"
-    image3="image:htc-wildfire-cdma.jpg" optionsthumb3="200x150" title3="HTC Wildfire" >}}
+    image1="image:motorola-c350.webp" optionsthumb1="200x150" title1="Motorola C350"
+    image2="image:nokia-6630.webp" optionsthumb2="200x150" title2="Nokia 6630"
+    image3="image:htc-wildfire-cdma.webp" optionsthumb3="200x150" title3="HTC Wildfire" >}}
 {{< image
     gallery="true"
-    image1="image:motorola-defy.jpg" optionsthumb1="300x200" title1="Motorola Defy"
-    image2="image:samsung-galaxy-s3.jpg" optionsthumb2="300x200" title2="Samsung Galaxy S3"
+    image1="image:motorola-defy.webp" optionsthumb1="300x200" title1="Motorola Defy"
+    image2="image:samsung-galaxy-s3.webp" optionsthumb2="300x200" title2="Samsung Galaxy S3"
     caption="Móviles que he tenido" >}}
 
 Pero el Galaxy S3 también ya me estaba dando algunos síntomas de agotamiento, en modo espera me aguanta un día pero con un uso algo más intensivo la batería baja rápidamente y requiere alguna carga más de una carga al día. Algunas aplicaciones como GMail y Twitter se nota que el procesador Exynos 4412 quad-core que tiene cumple pero no va sobrado para la época actual. En total el S3 habrá tenido 7 años de vida, menos lo que no sería mucho si no lo hubiese dado un segundo uso y un tercero con LineageOS.
@@ -68,8 +68,8 @@ Sin embargo, en vez de comprar uno de estos anteriores nuevos como en ocasiones 
 
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s6-1.jpg" optionsthumb1="300x200" title1="Samsung Galaxy S6"
-    image2="image:samsung-galaxy-s6-2.jpg" optionsthumb2="300x200" title2="Samsung Galaxy S6"
+    image1="image:samsung-galaxy-s6-1.webp" optionsthumb1="300x200" title1="Samsung Galaxy S6"
+    image2="image:samsung-galaxy-s6-2.webp" optionsthumb2="300x200" title2="Samsung Galaxy S6"
     caption="Nuevo móvil, Samsung Galaxy S6" >}}
 
 Tiene marcos grandes, no tiene un sensor de huellas integrado en la pantalla, sin triple cámara con gran angular, ni zoom óptico y efecto desenfoque como están incorporando los móviles nuevos como los anteriores y echo de menos una tarjeta microSD para ampliarle la capacidad de almacenamiento sobre todo para añadirle mi colección de música. Pero suficiente para mi.

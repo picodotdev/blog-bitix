@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:horizon-zero-dawn.jpg"
-imagePost: "image:horizon-zero-dawn.jpg"
+imageHead: "image:horizon-zero-dawn.webp"
+imagePost: "image:horizon-zero-dawn.webp"
 tags: ["juegos"]
 series: ["analisis-juegos"]
 summary: "Horizon Zero Dawn un juego de mundo abierto cuenta una historia de acción ambientada en un mundo donde existen unas máquinas metálicas con rasgos de animales, pero un mundo habitado por tribus con una tecnología de arcos y fechas que siguen una religión de la diosa Madre y que repudian y temen el mundo de los antiguos. Aloy quiere conocer porque es una paria en la tribu y en su búsqueda de respuestas a sus preguntas descubre muchas otras cosas del mundo en el que vive."
@@ -39,11 +39,11 @@ Al final del juego te queda la sensación de todas las aventuras, toda la histor
 
 {{< image
     gallery="true"
-    image1="image:horizon-zero-dawn.jpg" optionsthumb1="650x450" title1="Pantalla inicial y menú"
+    image1="image:horizon-zero-dawn.webp" optionsthumb1="650x450" title1="Pantalla inicial y menú"
     caption="Pantalla inicial y menú" >}}
 {{< image
     gallery="true"
-    image1="image:horizon-zero-dawn-cover.jpg" optionsthumb1="200x150" title1="Portada del juego Horizon Zero Dawn"
+    image1="image:horizon-zero-dawn-cover.webp" optionsthumb1="200x150" title1="Portada del juego Horizon Zero Dawn"
     caption="Portada del juego Horizon Zero Dawn" >}}
 
 {{< amazon
@@ -58,27 +58,27 @@ El juego empieza con Aloy de niña y Rost como tutor y mentor en una tribu pero 
 
 {{< image
     gallery="true"
-    image1="image:juego-1.jpg" optionsthumb1="200x150" title1="Juego"
-    image2="image:juego-2.jpg" optionsthumb2="200x150" title2="Juego"
-    image3="image:juego-3.jpg" optionsthumb3="200x150" title3="Juego" >}}
+    image1="image:juego-1.webp" optionsthumb1="200x150" title1="Juego"
+    image2="image:juego-2.webp" optionsthumb2="200x150" title2="Juego"
+    image3="image:juego-3.webp" optionsthumb3="200x150" title3="Juego" >}}
 {{< image
     gallery="true"
-    image1="image:juego-4.jpg" optionsthumb1="200x150" title1="Juego"
-    image2="image:juego-5.jpg" optionsthumb2="200x150" title2="Juego"
-    image3="image:juego-6.jpg" optionsthumb3="200x150" title3="Juego" >}}
+    image1="image:juego-4.webp" optionsthumb1="200x150" title1="Juego"
+    image2="image:juego-5.webp" optionsthumb2="200x150" title2="Juego"
+    image3="image:juego-6.webp" optionsthumb3="200x150" title3="Juego" >}}
 {{< image
     gallery="true"
-    image1="image:juego-7.jpg" optionsthumb1="200x150" title1="Juego"
-    image2="image:juego-8.jpg" optionsthumb2="200x150" title2="Juego"
-    image3="image:juego-9.jpg" optionsthumb3="200x150" title3="Juego" >}}
+    image1="image:juego-7.webp" optionsthumb1="200x150" title1="Juego"
+    image2="image:juego-8.webp" optionsthumb2="200x150" title2="Juego"
+    image3="image:juego-9.webp" optionsthumb3="200x150" title3="Juego" >}}
 {{< image
     gallery="true"
-    image1="image:juego-10.jpg" optionsthumb1="200x150" title1="Juego"
-    image2="image:juego-11.jpg" optionsthumb2="200x150" title2="Juego"
-    image3="image:juego-12.jpg" optionsthumb3="200x150" title3="Juego" >}}
+    image1="image:juego-10.webp" optionsthumb1="200x150" title1="Juego"
+    image2="image:juego-11.webp" optionsthumb2="200x150" title2="Juego"
+    image3="image:juego-12.webp" optionsthumb3="200x150" title3="Juego" >}}
 {{< image
     gallery="true"
-    image1="image:juego-13.jpg" optionsthumb1="200x150" title1="Juego"
+    image1="image:juego-13.webp" optionsthumb1="200x150" title1="Juego"
     caption="Juego" >}}
 
 ### Misiones
@@ -89,8 +89,8 @@ En algunas zonas del mapa se sitúan puntos clave como calderos que son instalac
 
 {{< image
     gallery="true"
-    image1="image:misiones-principales.jpg" optionsthumb1="200x150" title1="Misiones"
-    image2="image:misiones-secundarias.jpg" optionsthumb2="200x150" title2="Misiones"
+    image1="image:misiones-principales.webp" optionsthumb1="200x150" title1="Misiones"
+    image2="image:misiones-secundarias.webp" optionsthumb2="200x150" title2="Misiones"
     caption="Misiones" >}}
 
 ### Coleccionables
@@ -105,13 +105,13 @@ Finalmente, hay unos coleccionables especiales que son unos grilletes, otro es u
 
 {{< image
     gallery="true"
-    image1="image:coleccionables-observatorio.jpg" optionsthumb1="200x150" title1="Coleccionables observatorios"
-    image2="image:coleccionables-vasija.jpg" optionsthumb2="200x150" title2="Coleccionables vasijas"
-    image3="image:coleccionables-flor-de-metal.jpg" optionsthumb3="200x150" title3="Coleccionables flores de metal" >}}
+    image1="image:coleccionables-observatorio.webp" optionsthumb1="200x150" title1="Coleccionables observatorios"
+    image2="image:coleccionables-vasija.webp" optionsthumb2="200x150" title2="Coleccionables vasijas"
+    image3="image:coleccionables-flor-de-metal.webp" optionsthumb3="200x150" title3="Coleccionables flores de metal" >}}
 {{< image
     gallery="true"
-    image1="image:coleccionables-figura-banuk.jpg" optionsthumb1="200x150" title1="Coleccionables figuras banuk"
-    image2="image:coleccionables-frozen-wilds.jpg" optionsthumb2="200x150" title2="Coleccionables Frozen Wilds"
+    image1="image:coleccionables-figura-banuk.webp" optionsthumb1="200x150" title1="Coleccionables figuras banuk"
+    image2="image:coleccionables-frozen-wilds.webp" optionsthumb2="200x150" title2="Coleccionables Frozen Wilds"
     caption="Coleccionables" >}}
 
 ### Máquinas
@@ -128,9 +128,9 @@ Algunas máquinas son vulnerables al fuego como los rapaces que incendiados caen
 
 {{< image
     gallery="true"
-    image1="image:cuaderno-maquinas-1.jpg" optionsthumb1="200x150" title1="Máquinas"
-    image2="image:cuaderno-maquinas-2.jpg" optionsthumb2="200x150" title2="Máquinas"
-    image3="image:cuaderno-maquinas-3.jpg" optionsthumb3="200x150" title3="Máquinas"
+    image1="image:cuaderno-maquinas-1.webp" optionsthumb1="200x150" title1="Máquinas"
+    image2="image:cuaderno-maquinas-2.webp" optionsthumb2="200x150" title2="Máquinas"
+    image3="image:cuaderno-maquinas-3.webp" optionsthumb3="200x150" title3="Máquinas"
     caption="Máquinas" >}}
 
 ### Habilidades
@@ -143,12 +143,12 @@ Cuando empiezan los combates con máquinas más grandes las habilidades que mejo
 
 {{< image
     gallery="true"
-    image1="image:habilidades-recolectora.jpg" optionsthumb1="200x150" title1="Habilidades recolectora"
-    image2="image:habilidades-viajera.jpg" optionsthumb2="200x150" title2="Habilidades viajera"
-    image3="image:habilidades-valiente.jpg" optionsthumb3="200x150" title3="Habilidades valiente" >}}
+    image1="image:habilidades-recolectora.webp" optionsthumb1="200x150" title1="Habilidades recolectora"
+    image2="image:habilidades-viajera.webp" optionsthumb2="200x150" title2="Habilidades viajera"
+    image3="image:habilidades-valiente.webp" optionsthumb3="200x150" title3="Habilidades valiente" >}}
 {{< image
     gallery="true"
-    image1="image:habilidades-merodeadora.jpg" optionsthumb1="200x150" title1="Habilidades merodeadora"
+    image1="image:habilidades-merodeadora.webp" optionsthumb1="200x150" title1="Habilidades merodeadora"
     caption="Habilidades" >}}
 
 ### Hierbas medicinales, recursos, pociones, armas y atuendos
@@ -165,9 +165,9 @@ En una de las misiones se solicita conseguir unas células de energía para cons
 
 {{< image
     gallery="true"
-    image1="image:inventario-recursos.jpg" optionsthumb1="200x150" title1="Pócimas"
-    image2="image:inventario-pocimas.jpg" optionsthumb2="200x150" title2="Recursos"
-    image3="image:inventario-objetos-especiales.jpg" optionsthumb3="200x150" title3="Objetos especiales"
+    image1="image:inventario-recursos.webp" optionsthumb1="200x150" title1="Pócimas"
+    image2="image:inventario-pocimas.webp" optionsthumb2="200x150" title2="Recursos"
+    image3="image:inventario-objetos-especiales.webp" optionsthumb3="200x150" title3="Objetos especiales"
     caption="Inventario" >}}
 
 ### Crítica

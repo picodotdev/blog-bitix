@@ -33,9 +33,9 @@ Esos son los estilos por los que ha pasado el blog.
 
 {{< image
     gallery="true"
-    image1="image:elblogdepicodev-blogger.jpg" optionsthumb1="200x150" title1="El blog de pico.dev con Blogger"
-    image2="image:blogbitix-octopress.jpg" optionsthumb2="200x150" title2="Blog Bitix con Octopress"
-    image3="image:blogbitix-hugo-2020-02.png" optionsthumb3="200x150" title3="Blog Bitix con Hugo"
+    image1="image:elblogdepicodev-blogger.webp" optionsthumb1="200x150" title1="El blog de pico.dev con Blogger"
+    image2="image:blogbitix-octopress.webp" optionsthumb2="200x150" title2="Blog Bitix con Octopress"
+    image3="image:blogbitix-hugo-2020-02.webp" optionsthumb3="200x150" title3="Blog Bitix con Hugo"
     caption="Rediseños que he ido realizando en el blog" >}}
 
 Algunas otras modificaciones ya he realizado, una de ellas crear la versión de [páginas AMP][blogbitix-amp] del blog para ver que resultado da. En un principio esta versión está mejor adaptada para los móviles, siendo más rápida, con lo que para Google es posible que la considere mejor, y dado que Google es la mayor fuente de usuarios quizá se note algo. Al final de año mediré con Analytics cual ha sido el resultado. En las primeras semanas algunos usuarios ya están accediendo a la versión AMP.

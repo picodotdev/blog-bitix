@@ -23,7 +23,7 @@ En la mayoría de _frameworks_ de desarrollo de aplicaciones o páginas web para
 
 {{< image
     gallery="true"
-    image1="image:modelo-push.png" optionsthumb1="300x200" title1="Modelo push" width1="650" >}}
+    image1="image:modelo-push.webp" optionsthumb1="300x200" title1="Modelo push" width1="650" >}}
 
 Los pasos que se siguen en este modelo son:
 
@@ -40,7 +40,7 @@ Los pasos que se siguen en este modelo son:
 
 {{< image
     gallery="true"
-    image1="image:modelo-pull.png" optionsthumb1="300x200" title1="Modelo pull" width1="650" >}}
+    image1="image:modelo-pull.webp" optionsthumb1="300x200" title1="Modelo pull" width1="650" >}}
 
 Los pasos que se siguen en este modelo varían ligeramente del modelo push pero de forma importante, son:
 

@@ -54,28 +54,28 @@ Esta categorización que he hecho es general y muchos usuarios avanzados usan di
 
 {{< image
     gallery="true"
-    image1="image:ubuntu-installer.png" optionsthumb1="300x200" title1="Instalador de Ubuntu"
-    image2="image:ubuntu.png" optionsthumb2="300x200" title2="Ubuntu"
+    image1="image:ubuntu-installer.webp" optionsthumb1="300x200" title1="Instalador de Ubuntu"
+    image2="image:ubuntu.webp" optionsthumb2="300x200" title2="Ubuntu"
     caption="Ubuntu con Unity" >}}
 {{< image
     gallery="true"
-    image1="image:elementary-os-installer.png" optionsthumb1="300x200" title1="Instalador de elementary OS"
-    image2="image:elementary-os.png" optionsthumb2="300x200" title2="elementary OS"
+    image1="image:elementary-os-installer.webp" optionsthumb1="300x200" title1="Instalador de elementary OS"
+    image2="image:elementary-os.webp" optionsthumb2="300x200" title2="elementary OS"
     caption="elementary OS" >}}
 {{< image
     gallery="true"
-    image1="image:linux-mint-installer.png" optionsthumb1="300x200" title1="Instalador de Linux Mint"
-    image2="image:linux-mint.png" optionsthumb2="300x200" title2="Linux Mint con Cinnamon"
+    image1="image:linux-mint-installer.webp" optionsthumb1="300x200" title1="Instalador de Linux Mint"
+    image2="image:linux-mint.webp" optionsthumb2="300x200" title2="Linux Mint con Cinnamon"
     caption="Linux Mint con Cinnamon" >}}
 {{< image
     gallery="true"
-    image1="image:opensuse-installer.png" optionsthumb1="300x200" title1="Instalador de openSUSE"
-    image2="image:opensuse.png" optionsthumb2="300x200" title2="openSUSE con KDE"
+    image1="image:opensuse-installer.webp" optionsthumb1="300x200" title1="Instalador de openSUSE"
+    image2="image:opensuse.webp" optionsthumb2="300x200" title2="openSUSE con KDE"
     caption="openSUSE con KDE" >}}
 {{< image
     gallery="true"
-    image1="image:debian-installer-1.png" optionsthumb1="300x200" title1="Instalador de Debian (1)"
-    image2="image:debian-installer-2.png" optionsthumb2="300x200" title2="Instalador de Debian (2)"
+    image1="image:debian-installer-1.webp" optionsthumb1="300x200" title1="Instalador de Debian (1)"
+    image2="image:debian-installer-2.webp" optionsthumb2="300x200" title2="Instalador de Debian (2)"
     caption="Instalador de Debian" >}}
 
 ### Para un usuario intermedio
@@ -85,17 +85,17 @@ Esta categorización que he hecho es general y muchos usuarios avanzados usan di
 
 {{< image
     gallery="true"
-    image1="image:archlinux-installer-1.png" optionsthumb1="300x200" title1="Instalador de Arch Linux (1)"
-    image2="image:archlinux-installer-2.png" optionsthumb2="300x200" title2="Instalador de Arch Linux (2)"
+    image1="image:archlinux-installer-1.webp" optionsthumb1="300x200" title1="Instalador de Arch Linux (1)"
+    image2="image:archlinux-installer-2.webp" optionsthumb2="300x200" title2="Instalador de Arch Linux (2)"
     caption="Instalador de Arch Linux" >}}
 {{< image
     gallery="true"
-    image1="image:archlinux.jpg" optionsthumb1="300x200" title1="Arch Linux con GNOME"
+    image1="image:archlinux.webp" optionsthumb1="300x200" title1="Arch Linux con GNOME"
     caption="Arch Linux con GNOME" >}}
 {{< image
     gallery="true"
-    image1="image:fedora-installer.png" optionsthumb1="300x200" title1="Instalador de Fedora"
-    image2="image:fedora.png" optionsthumb2="300x200" title2="Fedora con GNOME"
+    image1="image:fedora-installer.webp" optionsthumb1="300x200" title1="Instalador de Fedora"
+    image2="image:fedora.webp" optionsthumb2="300x200" title2="Fedora con GNOME"
     caption="Fedora con GNOME" >}}
 
 ### Para usuario avanzado
@@ -119,8 +119,8 @@ Aún con el gran avance que se produce en la tecnología cada pocos meses equipo
 
 {{< image
     gallery="true"
-    image1="image:xubuntu-installer.png" optionsthumb1="300x200" title1="Instalador de Xubuntu"
-    image2="image:xubuntu.png" optionsthumb2="300x200" title2="Xubuntu con XFCE"
+    image1="image:xubuntu-installer.webp" optionsthumb1="300x200" title1="Instalador de Xubuntu"
+    image2="image:xubuntu.webp" optionsthumb2="300x200" title2="Xubuntu con XFCE"
     caption="Xubuntu con XFCE" >}}
 
 ### Para usuarios con preferencias de software libre
@@ -132,8 +132,8 @@ Aunque las distribuciones GNU/Linux son en su mayoría software libre hay alguna
 
 {{< image
     gallery="true"
-    image1="image:triquel-installer.png" optionsthumb1="300x200" title1="Instalador de Trisquel"
-    image2="image:trisquel.png" optionsthumb2="300x200" title2="Trisquel"
+    image1="image:triquel-installer.webp" optionsthumb1="300x200" title1="Instalador de Trisquel"
+    image2="image:trisquel.webp" optionsthumb2="300x200" title2="Trisquel"
     caption="Trisquel" >}}
 
 ### Otras distribuciones y primeros pasos

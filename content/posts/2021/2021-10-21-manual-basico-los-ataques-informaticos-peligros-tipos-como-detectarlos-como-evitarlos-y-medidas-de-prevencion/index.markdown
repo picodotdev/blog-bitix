@@ -11,8 +11,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:poster.jpg"
-imagePost: "image:poster.jpg"
+imageHead: "image:poster.webp"
+imagePost: "image:poster.webp"
 tags: ["planeta-codigo", "seguridad"]
 summary: "Las compañías realizan importantes esfuerzos para implementar medidas de seguridad pero aún con ellas si el usuario no toma las medidas oportunas muchas de las medidas de seguridad de una organización, computadora o de un dispositivo electrónico son inútiles. En vez de atacar la seguridad de los servicios o dispositivos los delincuentes pueden atacar una parte que suele ser más débil, el usuario. Para evitar ser víctima de un ataque informático conviene conocer unas pocas medidas preventivas que son sencillas para detectar la mayoría de potenciales ataques."
 ---
@@ -39,7 +39,7 @@ Este es un mensaje de audio de lo que parece una comercial o trabajadora en una 
 
 {{< video
     video="audio-ataque-masivo-banco.mp4"
-    poster="poster.jpg"
+    poster="poster.webp"
     caption="Audio con un mensaje de advertencia después de un ataque informático" >}}
 
 En el caso de sufrir un ataque informático los grupos dedicados a delitos informáticos de los diferentes cuerpos de policía harán todo lo posible para evitar más daños, reparar el causado que quizá no sea mucho y poner a disposición de la justicia a los delincuentes si pueden dependiendo del país el país en el que está el delincuente pero tampoco son todo poderosos y sus recursos materiales y de personal son limitados. La policía no da a basto con el número de casos que ya se dan, y los ataques parece que solo van a ir a mayor en número y gravedad. La policía únicamente se centrará en los más graves o en aquellos que se produzcan por bandas organizadas, por reiteración o por la posibilidad de acabar con ataques futuros. El mejor consejo que te va a dar la policía seguramente es la prevención, que evites ser víctima de un ataque informático. Con unas pautas sencillas la mayoría de ataques son detectables y evitables.
@@ -83,12 +83,12 @@ Este es el caso de un ejemplo potencialmente de un ataque de _phishing_ que he r
 
 {{< image
     gallery="true"
-    image1="image:phishing-sms.png" optionsthumb1="300x250" title1="Mensaje SMS de alarma y urgencia con un enlace a una página de phishing"
-    image2="image:phishing-web.jpg" optionsthumb2="300x250" title2="Página web de phishing que suplanta la identidad del inicio de sesión en la banca online"
+    image1="image:phishing-sms.webp" optionsthumb1="300x250" title1="Mensaje SMS de alarma y urgencia con un enlace a una página de phishing"
+    image2="image:phishing-web.webp" optionsthumb2="300x250" title2="Página web de phishing que suplanta la identidad del inicio de sesión en la banca online"
     caption="Ejemplo de los pasos en un ataque de phishing a través de un mensaje SMS" >}}
 {{< image
     gallery="true"
-    image1="image:santander-banca-online.jpg" optionsthumb1="300x250" title1="Página real de inicio de sesión de la banca online"
+    image1="image:santander-banca-online.webp" optionsthumb1="300x250" title1="Página real de inicio de sesión de la banca online"
     caption="Página real de inicio de sesión de la banca online" >}}
 
 #### Ataques personalizados

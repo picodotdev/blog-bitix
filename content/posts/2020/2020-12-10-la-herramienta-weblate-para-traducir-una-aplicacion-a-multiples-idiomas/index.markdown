@@ -78,9 +78,9 @@ Dos de las herramientas más conocidas con [Transifex][transifex] y [Crowdin][cr
 
 {{< image
     gallery="true"
-    image1="image:transifex.png" optionsthumb1="300x200" title1="Web de Transifex"
-    image2="image:crowdin.png" optionsthumb2="300x200" title2="Web de Crowdin"
-    image3="image:weblate.png" optionsthumb3="300x200" title3="Web de Weblate"
+    image1="image:transifex.webp" optionsthumb1="300x200" title1="Web de Transifex"
+    image2="image:crowdin.webp" optionsthumb2="300x200" title2="Web de Crowdin"
+    image3="image:weblate.webp" optionsthumb3="300x200" title3="Web de Weblate"
     caption="Webs de Transifex, Crowdin y Weblate" >}}
 
 #### Costes
@@ -123,22 +123,22 @@ Es necesario crear un archivo _docker-compose.override.yml_, dos de ellas se uti
 
 {{< image
     gallery="true"
-    image1="image:weblate-authentication.png" optionsthumb1="300x200" title1="Autenticación en Weblate"
-    image2="image:weblate-start.png" optionsthumb2="300x200" title2="Página de inicio de Weblate"
+    image1="image:weblate-authentication.webp" optionsthumb1="300x200" title1="Autenticación en Weblate"
+    image2="image:weblate-start.webp" optionsthumb2="300x200" title2="Página de inicio de Weblate"
     caption="Autenticación en Weblate" >}}
 
 Los diferentes recursos de una aplicación se agrupan en proyectos y componentes. El primer paso es crear un proyecto y los componentes como sean necesarios para realizar la traducción de cada uno de los recursos a traducir. Los componentes son los recursos a traducir, es posible obtener el archivo de traducciones desde el repositorio de código fuente o crearlo desde un archivo. Al crear el componente desde un archivo hay que especificar los parámetros _Plantilla para traducciones nuevas_, _Máscara de archivos_, _Formato de archivo_ y _Archivo de base monolingüe_.
 
 {{< image
     gallery="true"
-    image1="image:weblate-create-project.png" optionsthumb1="300x200" title1="Crear un proyecto en Weblate"
-    image2="image:weblate-components.png" optionsthumb2="300x200" title2="Componentes en Weblate"
+    image1="image:weblate-create-project.webp" optionsthumb1="300x200" title1="Crear un proyecto en Weblate"
+    image2="image:weblate-components.webp" optionsthumb2="300x200" title2="Componentes en Weblate"
     caption="Creación de un proyecto en Weblate" >}}
 
 {{< image
     gallery="true"
-    image1="image:weblate-create-component-01.png" optionsthumb1="300x200" title1="Crear un componente en Weblate"
-    image2="image:weblate-create-component-02.png" optionsthumb2="300x200" title2="Crear un componente en Weblate"
+    image1="image:weblate-create-component-01.webp" optionsthumb1="300x200" title1="Crear un componente en Weblate"
+    image2="image:weblate-create-component-02.webp" optionsthumb2="300x200" title2="Crear un componente en Weblate"
     caption="Creación de un componente en Weblate" >}}
 
 Este es un ejemplo de archivo original _properties_ de Java con varias cadenas a traducir.
@@ -149,14 +149,14 @@ El siguiente paso es definir los idiomas deseados en los que realizar la traducc
 
 {{< image
     gallery="true"
-    image1="image:weblate-component-01.png" optionsthumb1="300x200" title1="Componente en Weblate"
-    image2="image:weblate-component-02.png" optionsthumb2="300x200" title2="Componente en Weblate"
-    image3="image:weblate-start-translation.png" optionsthumb3="300x200" title3="Iniciar una traducción en Weblate"
+    image1="image:weblate-component-01.webp" optionsthumb1="300x200" title1="Componente en Weblate"
+    image2="image:weblate-component-02.webp" optionsthumb2="300x200" title2="Componente en Weblate"
+    image3="image:weblate-start-translation.webp" optionsthumb3="300x200" title3="Iniciar una traducción en Weblate"
     caption="Componente e iniciar una traducción en Weblate" >}}
 
 {{< image
     gallery="true"
-    image1="image:weblate-component-03.png" optionsthumb1="300x200" title1="Componente en Weblate"
+    image1="image:weblate-component-03.webp" optionsthumb1="300x200" title1="Componente en Weblate"
     caption="Componente en Weblate" >}}
 
 La herramienta de traducción muestra la cadena a traducir del archivo fuente de traducciones, lac clave de la cadena y múltiples herramientas para asistir en la traducción. Algunas de estas herramientas de asistencia en la traducción son un glosario de términos para que la traducción sea consistente, sugerencias a partir de otras cadenas iguales o similares ya traducidas, comentarios, un historial o como se ha traducido en otros idiomas además de permitir adjuntar una captura de pantalla con el contexto en el que se muestra la cadena.
@@ -165,8 +165,8 @@ Se ofrecen también un filtro para buscar cadenas por su estado o por coincidenc
 
 {{< image
     gallery="true"
-    image1="image:weblate-translation.png" optionsthumb1="300x200" title1="Traducción en Weblate"
-    image2="image:weblate-search.png" optionsthumb2="300x200" title2="Búsqueda en Weblate"
+    image1="image:weblate-translation.webp" optionsthumb1="300x200" title1="Traducción en Weblate"
+    image2="image:weblate-search.webp" optionsthumb2="300x200" title2="Búsqueda en Weblate"
     caption="Traducción en Weblate" >}}
 
 Una vez las cadenas se han traducido y localizado es posible descargar los archivos de recursos localizados a importar en el código fuente de la aplicación, también es posible hacerlo de forma manual o de forma automatizada. Los archivos _properties_ siguen una convención en los nombres de archivos de recursos compuesta por el nombre del recurso, idioma, opcionalmente país y variante separados por una barra baja con el siguiente formato _resource_es_ES.properties_. La descarga manual se realiza desde _Archivos > Descargar archivos de traducción en archivador ZIP_.
@@ -179,7 +179,7 @@ La operación final para completar el flujo de trabajo de traducción es actuali
 
 {{< image
     gallery="true"
-    image1="image:weblate-update-translations.png" optionsthumb1="300x200" title1="Actualizar traducciones en Weblate"
+    image1="image:weblate-update-translations.webp" optionsthumb1="300x200" title1="Actualizar traducciones en Weblate"
     caption="Actualizar traducciones en Weblate" >}}
 
 {{< reference >}}

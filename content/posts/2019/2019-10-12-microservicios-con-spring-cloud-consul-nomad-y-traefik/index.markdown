@@ -56,7 +56,7 @@ El esquema de servicios sería el siguiente. Los _job_ son enviados a Nomad desd
 
 {{< image
     gallery="true"
-    image1="image:esquema-arquitectura.png" optionsthumb1="600x450" title1="Esquema arquitectura"
+    image1="image:esquema-arquitectura.webp" optionsthumb1="600x450" title1="Esquema arquitectura"
     caption="Esquema arquitectura" >}}
 
 La ejecución del ejemplo requiere [Docker][docker] ya que es en este caso el _driver_ empleado en Nomad para ejecutar los servicios del servicio de configuración, el _gateway_, el servicio y el cliente del servicio. Nomad además se encarga de registrar los servicios en el servicio de registro y descubrimiento de Consul.
@@ -81,13 +81,13 @@ Tanto Consul, Nomad como Traefik ofrecen una consola para ver su estado ubicadas
 
 {{< image
     gallery="true"
-    image1="image:consul.png" optionsthumb1="200x150" title1="Consul"
-    image2="image:nomad-1.png" optionsthumb2="200x150" title2="Nomad"
-    image3="image:nomad-2.png" optionsthumb3="200x150" title3="Nomad" >}}
+    image1="image:consul.webp" optionsthumb1="200x150" title1="Consul"
+    image2="image:nomad-1.webp" optionsthumb2="200x150" title2="Nomad"
+    image3="image:nomad-2.webp" optionsthumb3="200x150" title3="Nomad" >}}
 {{< image
     gallery="true"
-    image1="image:traefik-1.png" optionsthumb1="200x150" title1="Traefik"
-    image2="image:traefik-2.png" optionsthumb2="200x150" title2="Traefik"
+    image1="image:traefik-1.webp" optionsthumb1="200x150" title1="Traefik"
+    image2="image:traefik-2.webp" optionsthumb2="200x150" title2="Traefik"
     caption="Consolas de administración de Consul, Nomad y Traefik" >}}
 
 El código del servicio, del cliente implementados con Spring y la salida del cliente son los siguientes.

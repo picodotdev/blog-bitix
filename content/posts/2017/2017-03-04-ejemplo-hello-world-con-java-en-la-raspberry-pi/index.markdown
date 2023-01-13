@@ -42,7 +42,7 @@ El resultado de este ejemplo es un mensaje en la terminal que es emitido por un 
 
 {{< image
     gallery="true"
-    image1="image:java-raspberrypi-hello-world.png" optionsthumb1="300x200" title1="Ejemplo Hello World con Java en la Raspberry Pi"
+    image1="image:java-raspberrypi-hello-world.webp" optionsthumb1="300x200" title1="Ejemplo Hello World con Java en la Raspberry Pi"
     caption="Ejemplo Hello World con Java en la Raspberry Pi" >}}
 
 En los siguientes artículos de la serie mostraré ya como usar diferentes elementos de salida como diodos LED, zumbador, _display_ LCD 1602 o de entrada como un pulsador.

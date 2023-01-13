@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:treenode-3.png"
+imagePost: "image:treenode-3.webp"
 tags: ["java", "planeta-codigo"]
 summary: "El recolector de basura o _garbage collector_ es una de las piezas fundamentales del lenguaje Java y su plataforma, es la funcionalidad que libera al programador de la solicitud y liberación de memoria de forma explícita lo que facilita a los programadores la creación de programas, una mayor productividad, evita errores y fallos de seguridad. Una ventaja sobre lenguajes que no poseen recolectores de basura y que se ha adoptado por los lenguajes desarrollados en la últimas décadas."
 ---
@@ -69,21 +69,21 @@ Al insertar nodos todos los objetos insertados están accesibles.
 
 {{< image
     gallery="true"
-    image1="image:treenode-1.png" optionsthumb1="300x200" title1="Objetos al inicializar la estructura de datos"
+    image1="image:treenode-1.webp" optionsthumb1="300x200" title1="Objetos al inicializar la estructura de datos"
     caption="Objetos al inicializar la estructura de datos" >}}
 
 Al realizar la operación de eliminación de un nodo del árbol el objeto eliminado del árbol deja de ser accesibles para el programa sino hay más referencias en otras estructuras de datos  con la que alcanzar a ese objeto y pasa a ser reclamable por el recolector de basura.
 
 {{< image
     gallery="true"
-    image1="image:treenode-2.png" optionsthumb1="300x200" title1="Objetos después de eliminar un nodo"
+    image1="image:treenode-2.webp" optionsthumb1="300x200" title1="Objetos después de eliminar un nodo"
     caption="Objetos después de eliminar un nodo" >}}
 
 Con más operaciones los objetos no accesibles aumentan. Estos objetos no accesibles siguen consumiendo memoria, el recolector de basura se encarga de liberar la memoria de esos objetos y después compactar la memoria en uso y la liberada queda utilizable para nuevas instancias de objetos.
 
 {{< image
     gallery="true"
-    image1="image:treenode-3.png" optionsthumb1="300x200" title1="Objetos después de realizar múltiples operaciones de inserción"
+    image1="image:treenode-3.webp" optionsthumb1="300x200" title1="Objetos después de realizar múltiples operaciones de inserción"
     caption="Objetos después de realizar múltiples operaciones de inserción" >}}
 
 Al realizar la operación de compactar la memoria los objetos cambian de ubicación y el programa debe conocer la nueva ubicación, esto requiere actualizar las referencias de los objetos almacenados en las estructuras de datos. La forma fácil de realizar la liberación de memoria y la compactación es parar los _threads_ de la aplicación, liberar la memoria, compactarla y actualizar todas las referencias de los objetos a la nueva ubicación, después reiniciar la aplicación. Esta parada de la aplicación se conoce como _stop-the-world_. Sin embargo, el parar la aplicación reduce el rendimiento, esto no es deseable.
@@ -113,7 +113,7 @@ El recolector de basura G1 también divide la memoria en regiones de memoria cat
 
 {{< image
     gallery="true"
-    image1="image:gc-g1.png" optionsthumb1="650x450" title1="División por zonas de G1 y compactación de objetos"
+    image1="image:gc-g1.webp" optionsthumb1="650x450" title1="División por zonas de G1 y compactación de objetos"
     caption="División por zonas de G1 y compactación de objetos" >}}
 
 G1 conoce cuantos datos vivos hay en cada región, lo calcula con la estrategia concurrente mientras la aplicación está funcionando, y el tiempo aproximado que consume copiar los datos vivos. Si se prefieren pausas bajas por el tiempo de pausa configurado G1 puede elegir evacuar solo unas pocas regiones. Si las pausas pueden ser mayores G1 puede elegir mayor número de regiones. Esta flexibilidad le permite a G1 liberar primero las zonas de objetos viejos en las que estime que liberará más objetos dado que conoce cuantos objetos siguen vivos.
@@ -148,7 +148,7 @@ Los recolectores de basura anteriores y hasta ahora necesitaban realizar pausas 
 
 {{< image
     gallery="true"
-    image1="image:zgc-stoptheworld.jpg" optionsthumb1="650x450" title1="Comparación de latencia entre ZGC, Parallel y G1"
+    image1="image:zgc-stoptheworld.webp" optionsthumb1="650x450" title1="Comparación de latencia entre ZGC, Parallel y G1"
     caption="Comparación de latencia entre ZGC, Parallel y G1" >}}
 
 ZGC se puede activar en Java 13 con la siguiente opción para la máquina virtual.

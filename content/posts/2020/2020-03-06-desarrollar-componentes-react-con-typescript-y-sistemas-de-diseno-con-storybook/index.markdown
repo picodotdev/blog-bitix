@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:storybook-helloworld.png"
+imagePost: "image:storybook-helloworld.webp"
 tags: ["javascript", "planeta-codigo", "web"]
 summary: "Con Storybook los componentes de React, Vue o Angular es posible desarrollarlos de forma aislada sin necesidad de hacerlo una una de las aplicaciones finales donde se usen. Esto permite independizar su desarrollo de las aplicaciones finales y proporciona un entorno donde hacerlo. Con complementos permite realizar pruebas unitarias y pruebas visuales."
 ---
@@ -50,9 +50,9 @@ Según los parámetros de los componentes estos tiene variaciones, en el ejemplo
 
 {{< image
     gallery="true"
-    image1="image:storybook-welcome.png" optionsthumb1="200x150" title1="Historia de bienvenida"
-    image2="image:storybook-helloworld.png" optionsthumb2="200x150" title2="Componente HelloWorld con TypeScrtipt"
-    image3="image:storybook-hellopicodotdev.png" optionsthumb3="200x150" title3="Variación del componente HelloWorld"
+    image1="image:storybook-welcome.webp" optionsthumb1="200x150" title1="Historia de bienvenida"
+    image2="image:storybook-helloworld.webp" optionsthumb2="200x150" title2="Componente HelloWorld con TypeScrtipt"
+    image3="image:storybook-hellopicodotdev.webp" optionsthumb3="200x150" title3="Variación del componente HelloWorld"
     caption="Historia de bienvenida y componente HelloWorld" >}}
 
 Storybook ofrece dos formas de desarrollar las _stories_, en formato _Component Story Format_ o CSF o con la sintaxis MDX que es similar a Markdown con algunas cosas adicionales para poder añadir visualizaciones de componentes. El formato MDX permite añadir texto y documentar con descripciones las _stories_.
@@ -131,8 +131,8 @@ En la imagen a revisar se muestra a la izquierda la versión anterior válida, a
 
 {{< image
     gallery="true"
-    image1="image:hello-world-test-visual-snap.png" optionsthumb1="300x200" title1="Imagen válida capturada"
-    image2="image:hello-world-test-visual-differences.png" optionsthumb2="300x200" title2="Diferencias visuales entre válida capturada anterior y nueva con cambios"
+    image1="image:hello-world-test-visual-snap.webp" optionsthumb1="300x200" title1="Imagen válida capturada"
+    image2="image:hello-world-test-visual-differences.webp" optionsthumb2="300x200" title2="Diferencias visuales entre válida capturada anterior y nueva con cambios"
     caption="Imagen válida capturada y diferencias visuales por cambios" >}}
 
 Para lanzar las tareas de ejecución de las pruebas unitarias y visuales hay que añadir unos scripts al archivo _package.json_. Posteriormente con estos comandos de npm se ejecutan y se comprueba si hay cambios visuales.

@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: "external"
-imagePost: "image:seagate-game-drive-2tb-verde.jpg"
+imagePost: "image:seagate-game-drive-2tb-verde.webp"
 tags: ["juegos", "patrocinado"]
 ---
 
@@ -46,7 +46,7 @@ El disco duro externo [HDD portátil diseñado para Xbox One](https://mercadoact
 
 {{< image
     gallery="false"
-    image1="image:seagate-game-drive-2tb-verde.jpg" optionsthumb1="650x450" title1="Disco duro Seagate Game Drive"
+    image1="image:seagate-game-drive-2tb-verde.webp" optionsthumb1="650x450" title1="Disco duro Seagate Game Drive"
     caption="Disco duro Seagate Game Drive" >}}
 
 Comparte sin miedo con los discos duros externos para PS4 y para Xbox de Seagate que están recomendados para aquellos jugadores que no pueden desprenderse de su colección de juegos por muchos motivos, por la pasta que se han gastado en ellos, porque les une un vínculo mucho más fuerte de lo que imaginamos o porque simplemente es un aficionado dispuesto a coleccionar todo lo que pueda.

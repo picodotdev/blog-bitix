@@ -8,7 +8,7 @@ index: true
 rss: true
 sharing: true
 comments: true
-imagePost: "logotype:octopress.png"
+imagePost: "logotype:octopress.webp"
 tags: ["blog"]
 ---
 
@@ -36,7 +36,7 @@ Aún después de estos casi 4 años el blog tiene solamente unas 600 páginas vi
 
 {{< image
     gallery="true"
-    image1="image:evolucion-analytics.png" optionsthumb1="300x200" title1="Evolución vistas según Analytics" >}}
+    image1="image:evolucion-analytics.webp" optionsthumb1="300x200" title1="Evolución vistas según Analytics" >}}
 
 ### Publicidad
 
@@ -44,7 +44,7 @@ En el blog incluyo unos bloques de publicidad adsense, han sido necesarios casi 
 
 {{< image
     gallery="true"
-    image1="image:evolucion-adsense.png" optionsthumb1="300x200" title1="Evolución publicidad según AdSense" >}}
+    image1="image:evolucion-adsense.webp" optionsthumb1="300x200" title1="Evolución publicidad según AdSense" >}}
 
 ### Como lo hago
 

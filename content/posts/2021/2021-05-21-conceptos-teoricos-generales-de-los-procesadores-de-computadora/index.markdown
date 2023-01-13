@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:processors-cpugalaxy.jpg"
-imagePost: "image:intel-pentium.jpg"
+imageHead: "image:processors-cpugalaxy.webp"
+imagePost: "image:intel-pentium.webp"
 tags: ["hardware", "planeta-codigo"]
 summary: "Los procesadores es uno de los principales circuitos integrados que posee toda computadora. Es el encargado de ejecutar el código de los programas y gobierna el resto de componentes. A pesar de su pequeño tamaño son elementos con gran complejidad, para aumentar su rendimiento se aplican diferentes técnicas que los procesadores han incorporando de forma paulatina. Al hablar de procesadores hay varios conceptos que es necesario comprender."
 ---
@@ -28,16 +28,16 @@ Varios de los conceptos teóricos aplicados en los procesadores está destinado 
 
 {{< image
     gallery="true"
-    image1="image:intel-P4004.jpg" optionsthumb1="200x150" title1="Procesador Intel 4004"
-    image2="image:intel-D8086.jpg" optionsthumb2="200x150" title2="Procesador Intel 8086"
-    image3="image:intel-pentium.jpg" optionsthumb3="200x150" title3="Procesador Pentium"
+    image1="image:intel-P4004.webp" optionsthumb1="200x150" title1="Procesador Intel 4004"
+    image2="image:intel-D8086.webp" optionsthumb2="200x150" title2="Procesador Intel 8086"
+    image3="image:intel-pentium.webp" optionsthumb3="200x150" title3="Procesador Pentium"
     caption="Procesadores Intel 4004, 8086 y Pentium" >}}
 
 {{< image
     gallery="true"
-    image1="image:amd-athlon-xp.jpg" optionsthumb1="200x150" title1="Procesador AMD Athlon XP"
-    image2="image:sun-ultra-sparc-II.jpg" optionsthumb2="200x150" title2="Procesador Sun UltraSparc II"
-    image3="image:risc-v.jpg" optionsthumb3="200x150" title3="Procesador RISC-V"
+    image1="image:amd-athlon-xp.webp" optionsthumb1="200x150" title1="Procesador AMD Athlon XP"
+    image2="image:sun-ultra-sparc-II.webp" optionsthumb2="200x150" title2="Procesador Sun UltraSparc II"
+    image3="image:risc-v.webp" optionsthumb3="200x150" title3="Procesador RISC-V"
     caption="Procesadores de AMD, Sun Ultra Sparc y SiFive RISC-V" >}}
 
 Los siguientes apartados son una explicación sencilla, básica y resumida de los conceptos que se utilizan en los procesadores de los que se puede. Esta información está ampliada en la wikipedia.
@@ -130,7 +130,7 @@ La diferencia de velocidad de procesamiento de la CPU y la velocidad de acceso a
 
 {{< image
     gallery="true"
-    image1="image:cache-hierarchy.png" optionsthumb1="300x200" title1="Jerarquía de caché"
+    image1="image:cache-hierarchy.webp" optionsthumb1="300x200" title1="Jerarquía de caché"
     image2="image:computer-memory-hierarchy.svg" optionsthumb2="300x200" title2="Jerarquía de caché"
     caption="Jerarquía de caché" >}}
 

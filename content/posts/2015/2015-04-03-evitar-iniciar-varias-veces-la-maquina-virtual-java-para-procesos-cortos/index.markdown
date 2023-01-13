@@ -20,7 +20,7 @@ Si en una aplicación o proyecto tenemos necesidad de ejecutar uno o varios proc
 
 {{< image
     gallery="true"
-    image1="image:tiempo-inicio-jvm.png" optionsthumb1="300x200" title1="Tiempo de inicio de la JVM" >}}
+    image1="image:tiempo-inicio-jvm.webp" optionsthumb1="300x200" title1="Tiempo de inicio de la JVM" >}}
 
 Por ejemplo, supongamos que tenemos unos procesos que tienen que ejecutarse de forma regular cada cierto tiempo variando los parámetros que se indica en cada uno de ellos. La ejecución de los procesos podría ser:
 

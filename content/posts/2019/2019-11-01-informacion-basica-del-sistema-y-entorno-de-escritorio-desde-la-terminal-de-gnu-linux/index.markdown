@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:neofetch-1.png"
+imagePost: "image:neofetch-1.webp"
 tags: ["gnu-linux", "planeta-codigo"]
 ---
 
@@ -30,8 +30,8 @@ En las imágenes se aprecia que mi distribución es [Arch Linux][archlinux], [mi
 
 {{< image
     gallery="true"
-    image1="image:neofetch-1.png" optionsthumb1="300x250" title1="Información del sistema proporcionada por neofetch"
-    image2="image:neofetch-2.png" optionsthumb2="300x250" title2="Información del sistema proporcionada por neofetch"
+    image1="image:neofetch-1.webp" optionsthumb1="300x250" title1="Información del sistema proporcionada por neofetch"
+    image2="image:neofetch-2.webp" optionsthumb2="300x250" title2="Información del sistema proporcionada por neofetch"
     caption="Información del sistema proporcionada por neofetch" >}}
 
 [Inxi][inxi] es otra herramienta de línea de comandos que permite obtener información del sistema. Al pedir ayuda en un foro no está demás dar esta información básica de nuestro equipo para que nos puedan ayudar mejor a encontrar una solución al problema por el que preguntamos por si el error se debe a algún componente de nuestro equipo, del _kernel_ o la versión del servidor gráfico.
@@ -40,7 +40,7 @@ En las imágenes se aprecia que mi distribución es [Arch Linux][archlinux], [mi
 
 {{< image
     gallery="true"
-    image1="image:inxi-c7.png" optionsthumb1="300x250" title1="Información del sistema proporcionada por inxi"
+    image1="image:inxi-c7.webp" optionsthumb1="300x250" title1="Información del sistema proporcionada por inxi"
     caption="Información del sistema proporcionada por inxi" >}}
 
 Los comandos están disponibles en los repositorios de paquetes de la distribución que se esté usando.

@@ -36,7 +36,7 @@ Además de instalar el paquete de _figlet_ en la distribución de GNU/Linux hay 
 
 {{< image
     gallery="true"
-    image1="image:figlet.png" optionsthumb1="650x450" title1=""
+    image1="image:figlet.webp" optionsthumb1="650x450" title1=""
     caption="Texto convertido a arte de caracteres ASCII" >}}
 
 ### Imagen a arte de caracteres ASCII
@@ -52,12 +52,12 @@ La herramienta _jp2a_ combinada con el [extraer un fotograma de una película][b
 
 {{< image
     gallery="true"
-    image1="image:jp2a-archlinux.png" optionsthumb1="200x150" title1="Logotipo de Arch Linux convertido a arte de caracteres ASCII con jp2a"
-    image2="image:jp2a-linux.png" optionsthumb2="200x150" title2="Logotipo de Linux convertido a arte de caracteres ASCII con jp2a"
-    image3="image:jp2a-gnome.png" optionsthumb3="200x150" title3="Logotipo de GNOME convertido a arte de caracteres ASCII con jp2a" >}}
+    image1="image:jp2a-archlinux.webp" optionsthumb1="200x150" title1="Logotipo de Arch Linux convertido a arte de caracteres ASCII con jp2a"
+    image2="image:jp2a-linux.webp" optionsthumb2="200x150" title2="Logotipo de Linux convertido a arte de caracteres ASCII con jp2a"
+    image3="image:jp2a-gnome.webp" optionsthumb3="200x150" title3="Logotipo de GNOME convertido a arte de caracteres ASCII con jp2a" >}}
 {{< image
     gallery="true"
-    image1="image:jp2a-gnu.png" optionsthumb1="200x150" title1="Logotipo de GNU convertido a arte de caracteres ASCII con jp2a"
+    image1="image:jp2a-gnu.webp" optionsthumb1="200x150" title1="Logotipo de GNU convertido a arte de caracteres ASCII con jp2a"
     caption="Varios logotipos convertidos a arte de caracteres ASCII con jp2a" >}}
 
 ### Páginas web de conversión a arte de caracteres ASCII

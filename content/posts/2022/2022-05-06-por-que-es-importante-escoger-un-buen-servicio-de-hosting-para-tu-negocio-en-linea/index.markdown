@@ -10,8 +10,8 @@ rss: false
 sharing: true
 comments: true
 promoted: "external"
-imageHead: "image:header.jpg"
-imagePost: "image:header.jpg"
+imageHead: "image:header.webp"
+imagePost: "image:header.webp"
 tags: ["patrocinado", "tecnologia"]
 ---
 

@@ -41,7 +41,7 @@ Esto es lo que he podido obtener empezando en abril que es cuando cambié a GA4,
 
 {{< image
     gallery="true"
-    image1="image:google-analytics.png" optionsthumb1="6500x450" title1="Evolución visitas 2022"
+    image1="image:google-analytics.webp" optionsthumb1="6500x450" title1="Evolución visitas 2022"
     caption="Evolución visitas 2022" >}}
 
 #### Evolución ingresos
@@ -64,17 +64,17 @@ Tuvieron el detalle de enviarme una postal en esta época de navidades acompaña
 
 {{< image
     gallery="true"
-    image1="image:videootv-merry-christmas-1.jpg" optionsthumb1="650x450" title1="Videoo.tv Merry Christmas"
+    image1="image:videootv-merry-christmas-1.webp" optionsthumb1="650x450" title1="Videoo.tv Merry Christmas"
     caption="Videoo.tv Merry Christmas" >}}
 
 Unos 220 € por ingresos de AdSense, 50 € que he cobrado ya de Videoo.tv, 50 € por afiliado de Amazon y varios artículos patrocinados de algún teclado que ya vendí y otros productos que me he quedado en propiedad como un micrófono e interfaz de audio.
 
 {{< image
    gallery="true"
-   image1="image:google-adsense.png" optionsthumb1="650x450" title1="Evolución ingresos AdSense y Amazon Afiliados 2022" >}}
+   image1="image:google-adsense.webp" optionsthumb1="650x450" title1="Evolución ingresos AdSense y Amazon Afiliados 2022" >}}
 {{< image
    gallery="true"
-   image1="image:amazon-afiliados.png" optionsthumb1="650x450" title1="Evolución ingresos AdSense y Amazon Afiliados 2022"
+   image1="image:amazon-afiliados.webp" optionsthumb1="650x450" title1="Evolución ingresos AdSense y Amazon Afiliados 2022"
    caption="Evolución ingresos AdSense y Amazon Afiliados 2022" >}}
 
 ### Sobre Blog Bitix
@@ -107,7 +107,7 @@ Revisando los comentarios de este usuario debe ser alguien que le tiene inquina 
 
 {{< image
     gallery="true"
-    image1="image:comentario-teo-el-troll.png" optionsthumb1="650x450" title1="Comentario de Teo el «troll»"
+    image1="image:comentario-teo-el-troll.webp" optionsthumb1="650x450" title1="Comentario de Teo el «troll»"
     caption="Comentario de Teo el «troll»" >}}
 
 ### Otras contribuciones

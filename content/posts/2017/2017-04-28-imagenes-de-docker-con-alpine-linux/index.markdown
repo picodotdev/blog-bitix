@@ -25,7 +25,7 @@ Por ejemplo, la [imagen de Docker que contiene en JDK](https://hub.docker.com/_/
 
 {{< image
     gallery="true"
-    image1="image:imagenes-docker.png" optionsthumb1="300x200" title1="Imágenes de Docker con su tamaño. Ver imágenes openjdk, Ubuntu y Alpine. Linux"
+    image1="image:imagenes-docker.webp" optionsthumb1="300x200" title1="Imágenes de Docker con su tamaño. Ver imágenes openjdk, Ubuntu y Alpine. Linux"
     caption="Imágenes de Docker con su tamaño. Ver imágenes openjdk, Ubuntu y Alpine Linux." >}}
 
 El tiempo de descarga solo se emplea la primera vez que se hace uso de una imagen pero como las imágenes se van actualizando hay que tener en cuenta que en cada nueva versión que se use hay que descargar una nueva imagen, cuanto más pequeñas sean las imágenes menos tiempo se emplea en descargarlas y más rápidamente se iniciarán los contenedores.

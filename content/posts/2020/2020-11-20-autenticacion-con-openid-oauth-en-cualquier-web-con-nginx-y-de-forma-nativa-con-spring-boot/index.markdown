@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:autenticacion-google-1.png"
+imagePost: "image:autenticacion-google-1.webp"
 tags: ["java", "planeta-codigo", "programacion", "software-libre"]
 summary: "La autenticación permite identificar a los usuarios en una aplicación, en muchas es una necesidad para no permitir accesos no autorizados a la información que proporcionan o realizar las acciones que ofrecen. Las aplicaciones heredadas o _legacy_ en ocasiones no es posible modificarlas y cuando una organización tiene varias aplicaciones gestionar los usuarios en cada una de ellas de forma individual se convierte en un problema. OpenID Connect proporciona la autenticación en el protocolo OAuth 2, con este protocolo las aplicaciones pueden delegar la autenticación a un proveedor de autenticación y ser este la que identifique a los usuarios y los gestione de forma forma centralizada además de proporcionar un inicio de sesión único o _single-sing-on_ a varias aplicaciones. El servidor web Nginx tiene _proxys_ que permiten añadir autenticación OAuth 2 a cualquier servicio web y las aplicaciones de Spring Boot pueden implementarlo de forma nativa."
 ---
@@ -39,7 +39,7 @@ Para añadir autenticación OpenId Connect en una aplicación web se suele confi
 
 {{< image
     gallery="true"
-    image1="image:oauth2-proxy.png" optionsthumb1="300x200" title1="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)"
+    image1="image:oauth2-proxy.webp" optionsthumb1="300x200" title1="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)"
     caption="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)" >}}
 
 Con el servidor web [Nginx][nginx] dos intermediarios o _proxys_ que proporcionan autenticación OpenID Connect son [oauth2-proxy][oauth2-proxy] y [vouch-proxy][vouch-proxy]. Tanto [oauth2-proxy][oauth2-proxy] y [vouch-proxy][vouch-proxy] son dos servicios que le indican a Nginx si el usuario está autenticado usando la directiva _auth_request_ de Nginx. Estos _proxys_ simplemente devuelven como respuesta un código de estado _202 Accepted_ o _401 Unauthorized_ para indicarle a Nginx si hay que realizar la autenticación, las otras directivas de configuración son para establecer cabeceras con las que es posible entre otras cosas indicarle a la aplicación web final cual es el usuario autenticado. En caso de que haya que autenticar al usuario el _proxy_ de OAuth redirige al proveedor de autenticación.
@@ -69,16 +69,16 @@ Al acceder a la página en el dominio _nginx.127.0.0.1.xip.io_ se solicita el in
 
 {{< image
     gallery="true"
-    image1="image:autenticacion-google-1.png" optionsthumb1="300x200" title1="Autenticación con cuenta de Google"
-    image2="image:autenticacion-google-2.png" optionsthumb2="300x200" title2="Autenticación con cuenta de Google"
+    image1="image:autenticacion-google-1.webp" optionsthumb1="300x200" title1="Autenticación con cuenta de Google"
+    image2="image:autenticacion-google-2.webp" optionsthumb2="300x200" title2="Autenticación con cuenta de Google"
     caption="Autenticación con cuenta de Google" >}}
 
 Una vez autenticado el usuario se permite el acceso a la página web, en este caso la página por defecto de Nginx, también se observa la creación de la _cookie_ que mantiene la sesión.
 
 {{< image
     gallery="true"
-    image1="image:nginx-1.png" optionsthumb1="300x200" title1="Página web y cookie de sesión"
-    image2="image:nginx-2.png" optionsthumb2="300x200" title2="Página web y cookie de sesión"
+    image1="image:nginx-1.webp" optionsthumb1="300x200" title1="Página web y cookie de sesión"
+    image2="image:nginx-2.webp" optionsthumb2="300x200" title2="Página web y cookie de sesión"
     caption="Página web y cookie de sesión" >}}
 
 Al implementar el ejemplo me he encontrado con dos mensajes de error, _OAuth2: unable to obtain CSRF cookie_ y _http: named cookie not present_. Para resolver el primero es necesario indicar el parámetro de configuración _cookie-domain_ que en el momento de realizar el ejemplo solo me ha sido posible indicándolo a través de la línea de comandos no en el archivo de configuración y para resolver el segundo es necesario que el _host_ del servicio _proxy_ OAuth esté en un subdominio del dominio de la página web.
@@ -118,7 +118,7 @@ Al acceder a una de las URLs del cliente se solicita la autenticación con una c
 
 {{< image
     gallery="true"
-    image1="image:spring-boot-google.png" optionsthumb1="300x200" title1="Aplicación de Spring autenticada con una cuenta de Google"
+    image1="image:spring-boot-google.webp" optionsthumb1="300x200" title1="Aplicación de Spring autenticada con una cuenta de Google"
     caption="Aplicación de Spring autenticada con una cuenta de Google" >}}
 
 ### Configuración de autenticación con cuentas de Google
@@ -140,7 +140,7 @@ Al crear las credenciales para el cliente se indican las URL de retorno permitid
 
 {{< image
     gallery="true"
-    image1="image:google-client.png" optionsthumb1="300x200" title1="Pasos para la creación de credenciales en Google para la autenticación OAuth"
+    image1="image:google-client.webp" optionsthumb1="300x200" title1="Pasos para la creación de credenciales en Google para la autenticación OAuth"
     caption="Pasos para la creación de credenciales en Google para la autenticación OAuth" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/oauth2-proxy" command="docker-compose up" %}}

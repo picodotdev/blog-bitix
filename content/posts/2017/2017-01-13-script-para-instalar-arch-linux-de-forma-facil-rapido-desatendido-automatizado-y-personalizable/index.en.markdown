@@ -22,8 +22,8 @@ For a long time, installing a [GNU][gnu]/[Linux][linux] distribution has no more
 
 {{< image
     gallery="true"
-    image1="image:debian-installer-text.png" optionsthumb1="300x200" title1="Debian installer text mode "
-    image2="image:debian-installer-graphics.png" optionsthumb2="300x200" title2="Debian installer in graphical mode"
+    image1="image:debian-installer-text.webp" optionsthumb1="300x200" title1="Debian installer text mode "
+    image2="image:debian-installer-graphics.webp" optionsthumb2="300x200" title2="Debian installer in graphical mode"
     caption="Guided graphical and text-based Debian installation" >}}
 
 Other distributions based on different principles and intended users with other needs or preferences may require a little more knowledge in exchange for more advanced settings such as disk partitioning, disk encryption or software that is installed. Some distributions like [Arch Linux][archlinux] don't even provide any installer.
@@ -98,22 +98,22 @@ These are some screenshots with different desktop environments that I have teste
 
 {{< image
     gallery="true"
-    image1="image:archlinux-gnome.jpg" optionsthumb1="300x200" title1="GNOME"
-    image2="image:archlinux-kde.jpg" optionsthumb2="300x200" title2="KDE"
+    image1="image:archlinux-gnome.webp" optionsthumb1="300x200" title1="GNOME"
+    image2="image:archlinux-kde.webp" optionsthumb2="300x200" title2="KDE"
     caption="GNOME and KDE desktop environments" >}}
 {{< image
     gallery="true"
-    image1="image:archlinux-xfce.jpg" optionsthumb1="300x200" title1="XFCE"
-    image2="image:archlinux-cinnamon.jpg" optionsthumb2="300x200" title2="Cinnamon"
+    image1="image:archlinux-xfce.webp" optionsthumb1="300x200" title1="XFCE"
+    image2="image:archlinux-cinnamon.webp" optionsthumb2="300x200" title2="Cinnamon"
     caption="Xfce and Cinnamon desktop environments" >}}
 {{< image
     gallery="true"
-    image1="image:archlinux-lxde.jpg" optionsthumb1="300x200" title1="LXDE"
-    image2="image:archlinux-mate.jpg" optionsthumb2="300x200" title2="Mate"
+    image1="image:archlinux-lxde.webp" optionsthumb1="300x200" title1="LXDE"
+    image2="image:archlinux-mate.webp" optionsthumb2="300x200" title2="Mate"
     caption="LXDE and Mate desktop environments" >}}
 {{< image
     gallery="true"
-    image1="image:archlinux-root-password.png" optionsthumb1="300x200" title1="Password request to decrypt root partition"
+    image1="image:archlinux-root-password.webp" optionsthumb1="300x200" title1="Password request to decrypt root partition"
     caption="Password request to decrypt root partition" >}}
 
 ### Installation video of the base system with alis

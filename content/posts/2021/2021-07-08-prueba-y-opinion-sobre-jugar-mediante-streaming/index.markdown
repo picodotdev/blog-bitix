@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:geforce-now.jpg"
-imagePost: "image:cloud-gaming-services.png"
+imageHead: "image:geforce-now.webp"
+imagePost: "image:cloud-gaming-services.webp"
 tags: ["juegos", "opinion"]
 summary: "Cada una de las empresas más importantes en el sector de los juegos ya tienen sus servicios de juego en la nube o mediante _streaming_, en unos años puede ser la opción preferente de muchos jugadores dejando a las consolas como hardware dedicado a comprar obsoletas. El principal requerimiento del juego mediante _streaming_ es tener una buena conexión a internet que sea estable y con un ancho de banda superior de al menos 35 Mbps para la máxima calidad. Ahora que tengo una conexión con fibra óptica he probado uno de estos servicios, GeForce NOW, por la buena experiencia que he tenido me replanteo las opciones a futuro para un nueva computadora, no teniendo que ser un equipo de más de 700 € ni requerir una tarjeta gráfica dedicada, puede ser de nuevo un pequeño y compacto Intel NUC."
 ---
@@ -26,7 +26,7 @@ Con el [cambio de conexión de ADSL a fibra en mi conexión a internet][blogbiti
 
 {{< image
     gallery="false"
-    image1="image:cloud-gaming-services.png" optionsthumb1="650x450" title1="Plataformas de juego por streaming"
+    image1="image:cloud-gaming-services.webp" optionsthumb1="650x450" title1="Plataformas de juego por streaming"
     caption="Plataformas de juego por streaming" >}}
 
 {{< tableofcontents >}}
@@ -96,15 +96,15 @@ El siguiente paso es añadir a la biblioteca de GeForce NOW los juegos adquirido
 
 {{< image
     gallery="true"
-    image1="image:nvidia-geforce-now-juegos.jpg" optionsthumb1="300x200" title1="Juegos de Nvidia GeForce NOW"
-    image2="image:nvidia-geforce-now-juegos-gratuitos.jpg" optionsthumb2="300x200" title2="Juegos de Nvidia GeForce NOW"
+    image1="image:nvidia-geforce-now-juegos.webp" optionsthumb1="300x200" title1="Juegos de Nvidia GeForce NOW"
+    image2="image:nvidia-geforce-now-juegos-gratuitos.webp" optionsthumb2="300x200" title2="Juegos de Nvidia GeForce NOW"
     caption="Juegos de Nvidia GeForce NOW" >}}
 
 Después es necesario [descargar la aplicación cliente de GeForce NOW](https://www.nvidia.com/es-es/geforce-now/download/) adecuada para el sistema operativo e instalarlo o usar el navegador Chrome o Chromium en cualquier sistema operativo también en GNU/Linux. Finalmente, lanzar el cliente, esperar en la cola de espera unos minutos en función del número de usuarios conectados para jugar durante una hora. Para evitar esperas y jugar a mayor calidad está la suscripción con un precio de 10 €/mes.
 
 {{< image
     gallery="true"
-    image1="image:nvidia-geforce-now-cola.jpg" optionsthumb1="300x200" title1="Cola de espera en Nvidia GeForce NOW"
+    image1="image:nvidia-geforce-now-cola.webp" optionsthumb1="300x200" title1="Cola de espera en Nvidia GeForce NOW"
     caption="Cola de espera en Nvidia GeForce NOW" >}}
 
 Si el juego está en nuestra colección de juegos de Steam o Epic Games y está soportado por GeForce NOW, es posible jugarlo en GeForce NOW. Dado que la Epic Games está regalando cada semana uno o dos juegos completamente gratuitos algunos de muy buena calidad como [Control](https://www.igdb.com/games/control), [Metro 2033 Redux](https://www.igdb.com/games/metro-2033-redux), [Frostpunk](https://www.igdb.com/games/frostpunk), [City Skylines](https://www.igdb.com/games/cities-skylines) o [Tropico 5](https://www.igdb.com/games/tropico-5). Por si fuera poco hay algunos juegos gratuitos compatibles con GeForce NOW como [World of Warships](https://www.igdb.com/games/world-of-warships), [League of Legends](https://www.igdb.com/games/league-of-legends), [Path of Exile](https://www.igdb.com/games/path-of-exile), [Albion Online](https://www.igdb.com/games/albion-online), [Counter-Strike: Global Offensive](https://www.igdb.com/games/counter-strike-global-offensive) y muchos más. Utilizando esta combinación de GeForce NOW con juegos regalados por Epic Store he probado este servicio de juego por _streaming_.
@@ -113,23 +113,23 @@ Estas son algunas capturas de pantalla para observar su calidad. Es algo inferio
 
 {{< image
     gallery="true"
-    image1="image:control-1.jpg" optionsthumb1="300x200" title1="Control"
-    image2="image:control-2.jpg" optionsthumb2="300x200" title2="Control"
-    image3="image:control-3.jpg" optionsthumb3="300x200" title3="Control" >}}
+    image1="image:control-1.webp" optionsthumb1="300x200" title1="Control"
+    image2="image:control-2.webp" optionsthumb2="300x200" title2="Control"
+    image3="image:control-3.webp" optionsthumb3="300x200" title3="Control" >}}
 {{< image
     gallery="true"
-    image1="image:metro-2033-1.jpg" optionsthumb1="300x200" title1="Metro 2033"
-    image2="image:metro-2033-2.jpg" optionsthumb2="300x200" title2="Metro 2033"
-    image3="image:metro-2033-3.jpg" optionsthumb3="300x200" title3="Metro 2033" >}}
+    image1="image:metro-2033-1.webp" optionsthumb1="300x200" title1="Metro 2033"
+    image2="image:metro-2033-2.webp" optionsthumb2="300x200" title2="Metro 2033"
+    image3="image:metro-2033-3.webp" optionsthumb3="300x200" title3="Metro 2033" >}}
 {{< image
     gallery="true"
-    image1="image:world-of-warships-1.jpg" optionsthumb1="300x200" title1="World of Warships"
-    image2="image:world-of-warships-2.jpg" optionsthumb2="300x200" title2="World of Warships"
-    image3="image:world-of-warships-3.jpg" optionsthumb3="300x200" title3="World of Warships" >}}
+    image1="image:world-of-warships-1.webp" optionsthumb1="300x200" title1="World of Warships"
+    image2="image:world-of-warships-2.webp" optionsthumb2="300x200" title2="World of Warships"
+    image3="image:world-of-warships-3.webp" optionsthumb3="300x200" title3="World of Warships" >}}
 {{< image
     gallery="true"
-    image1="image:tropico-5-1.jpg" optionsthumb1="300x200" title1="Trópico 5"
-    image2="image:tropico-5-2.jpg" optionsthumb2="300x200" title2="Trópico 5"
+    image1="image:tropico-5-1.webp" optionsthumb1="300x200" title1="Trópico 5"
+    image2="image:tropico-5-2.webp" optionsthumb2="300x200" title2="Trópico 5"
     caption="Juegos Control, Metro 2033, World of Warships, Trópico 5" >}}
 
 En cuanto a retardo de respuesta a las acciones de teclado y ratón apenas se nota, la respuesta es casi inmediata y en muchos juegos no es necesario tener la menor latencia. La experiencia de juego es mejor con una computadora propia pero para los no tan exigentes el servicio de juego por _streaming_ es suficiente.

@@ -38,8 +38,8 @@ Unos pocos kilobytes no son mucho para un único recurso pero si tenemos en cuen
 
 {{< image
     gallery="true"
-    image1="image:nginx-no-gzip.png" optionsthumb1="300x200" title1="Nginx configurado sin compresión GZIP"
-    image2="image:nginx-gzip.png" optionsthumb2="300x200" title2="Nginx configurado con compresión GZIP"
+    image1="image:nginx-no-gzip.webp" optionsthumb1="300x200" title1="Nginx configurado sin compresión GZIP"
+    image2="image:nginx-gzip.webp" optionsthumb2="300x200" title2="Nginx configurado con compresión GZIP"
     caption="Nginx configurado sin y con compresión GZIP" >}}
 
 ### Apache HTTPD
@@ -53,8 +53,8 @@ Vemos una reducción en la transferencia similar a la conseguida en Nginx. En Ap
 
 {{< image
     gallery="true"
-    image1="image:apache-httpd-no-gzip.png" optionsthumb1="300x200" title1="Apache HTTPD configurado sin compresión GZIP"
-    image2="image:apache-httpd-gzip.png" optionsthumb2="300x200" title2="Apache HTTPD configurado con compresión GZIP"
+    image1="image:apache-httpd-no-gzip.webp" optionsthumb1="300x200" title1="Apache HTTPD configurado sin compresión GZIP"
+    image2="image:apache-httpd-gzip.webp" optionsthumb2="300x200" title2="Apache HTTPD configurado con compresión GZIP"
     caption="Apache HTTPD configurado sin y con compresión GZIP" >}}
 
 La compresión se hace en cada petición que se hace al servidor que con los avanzados procesadores actuales con eficientes instrucciones específicas para la tarea implementadas en el hardware salvo un tráfico muy elevado no tiene por que notarse en gran medida el procesado de cada recurso. Si el tráfico fuese elevado y la carga de compresión se notase Nginx y Apache ofrecen la posibilidad de [precomprimir los recursos](http://nginx.org/en/docs/http/ngx_http_gzip_static_module.html) y de forma similar [precomprimir los recursos en apache](http://httpd.apache.org/docs/current/mod/mod_deflate.html#precompressed).

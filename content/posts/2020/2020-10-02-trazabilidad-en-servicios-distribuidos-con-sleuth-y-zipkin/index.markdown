@@ -63,8 +63,8 @@ Tanto el microservicio cliente como el microservicio servidor tienen Sleuth inte
 
 {{< image
     gallery="true"
-    image1="image:nomad.png" optionsthumb1="300x200" title1="Interfaz web de Nomad"
-    image2="image:zipkin.png" optionsthumb2="300x200" title2="Interfaz web de Zipkin"
+    image1="image:nomad.webp" optionsthumb1="300x200" title1="Interfaz web de Nomad"
+    image2="image:zipkin.webp" optionsthumb2="300x200" title2="Interfaz web de Zipkin"
     caption="Interfaz web de Nomad y Zipkin" >}}
 
 Este es el código del cliente que hace la petición al servidor y el código del servidor. Spring ya proporciona integración con Sleuth en sus utilidades como _RestTemplate_. Si se utiliza el cliente HTTP de Java añadido junto con otras [novedades de Java 11][blogbitix-350] hay que añadir el soporte para que en la petición se añadan las cabeceras cuando se haga la petición. La forma que tiene Sleuth de compartir los identificativos de las transacciones entre el cliente y el servidor es a través de las cabeceras en las peticiones HTTP.

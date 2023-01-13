@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:photocall-1.jpg"
-imagePost: "image:photocall-1.jpg"
+imageHead: "image:photocall-1.webp"
+imagePost: "image:photocall-1.webp"
 tags: ["blog", "planeta-codigo"]
 series: ["bilbostack"]
 ---
@@ -28,34 +28,34 @@ Si otros años destacaba el desarrollo web, este año ha habido alguna presentac
 
 {{< image
     gallery="true"
-    image1="image:euskalduna-1.jpg" optionsthumb1="200x150" title1="Palacio Euskalduna"
-    image2="image:euskalduna-2.jpg" optionsthumb2="200x150" title2="Palacio Euskalduna"
-    image3="image:euskalduna-3.jpg" optionsthumb3="200x150" title3="Palacio Euskalduna"
+    image1="image:euskalduna-1.webp" optionsthumb1="200x150" title1="Palacio Euskalduna"
+    image2="image:euskalduna-2.webp" optionsthumb2="200x150" title2="Palacio Euskalduna"
+    image3="image:euskalduna-3.webp" optionsthumb3="200x150" title3="Palacio Euskalduna"
     caption="Palacio Euskalduna" >}}
 
 Distribuidos por el recinto había varios _photocalls_ en los que hacerse una foto.
 
 {{< image
     gallery="true"
-    image1="image:photocall-1.jpg" optionsthumb1="200x150" title1="Photocalls"
-    image2="image:photocall-2.jpg" optionsthumb2="200x150" title2="Photocalls"
-    image3="image:photocall-3.jpg" optionsthumb3="200x150" title3="Photocalls"
+    image1="image:photocall-1.webp" optionsthumb1="200x150" title1="Photocalls"
+    image2="image:photocall-2.webp" optionsthumb2="200x150" title2="Photocalls"
+    image3="image:photocall-3.webp" optionsthumb3="200x150" title3="Photocalls"
     caption="Photocalls" >}}
 
 Este año la acreditación ha sido un detalle que esté hecha de algodón reciclado que incluye semillas, se puede plantar, regar y ver que es lo que surge pasado unas semanas. También ha habido una zona amplia para los patrocinadores en los que ubicar sus _stands_, una oportunidad para conocerlos como posibles futuras oportunidades laborales, recoger varios obsequios que ofrecían y participar en algún sorteo en el tiempo de descanso entre las os primeras conferencias y las dos siguientes últimas.
 
 {{< image
     gallery="true"
-    image1="image:acreditacion-1.jpg" optionsthumb1="200x150" title1="Acreditación"
-    image2="image:acreditacion-2.jpg" optionsthumb2="200x150" title2="Acreditación"
-    image3="image:acreditacion-3.jpg" optionsthumb3="200x150" title3="Acreditación"
+    image1="image:acreditacion-1.webp" optionsthumb1="200x150" title1="Acreditación"
+    image2="image:acreditacion-2.webp" optionsthumb2="200x150" title2="Acreditación"
+    image3="image:acreditacion-3.webp" optionsthumb3="200x150" title3="Acreditación"
     caption="Acreditación" >}}
 
 Dado que los _tracks_ son simultáneos y las charlas no se graban hay que elegir a que presentaciones nos resultan más atractivas, no siempre es fácil elegir y descartar la opción a la que no asistir.
 
 {{< image
     gallery="true"
-    image1="image:bilbostack-hashtag.jpg" optionsthumb1="300x200" title1="BilboStack hashtag"
+    image1="image:bilbostack-hashtag.webp" optionsthumb1="300x200" title1="BilboStack hashtag"
     caption="BilboStack hashtag" >}}
 
 <table class="table">
@@ -134,7 +134,7 @@ Dado que los _tracks_ son simultáneos y las charlas no se graban hay que elegir
 
 {{< image
     gallery="true"
-    image1="image:cartel.jpg" optionsthumb1="300x200" title1="Cartel"
+    image1="image:cartel.webp" optionsthumb1="300x200" title1="Cartel"
     caption="Cartel" >}}
 
 De las presentaciones a las que asistí recojo las ideas principales que he apuntado, es muy posible que haya alguna omisión importante y no les hagan justicia al nivel de las presentaciones pero hago mi esfuerzo para una año más cumplir con el resumen de este año y que de esta forma quede recogido en el artículo sobre lo que versó estas presentaciones.
@@ -145,8 +145,8 @@ La jornada al igual que el año anterior ha empezado con una presentación sobre
 
 {{< image
     gallery="true"
-    image1="image:bilbostack.jpg" optionsthumb1="300x200" title1="BilboStack 2020"
-    image2="image:bilbostack-codigo-conducta.jpg" optionsthumb2="300x200" title2="BilboStack 2020"
+    image1="image:bilbostack.webp" optionsthumb1="300x200" title1="BilboStack 2020"
+    image2="image:bilbostack-codigo-conducta.webp" optionsthumb2="300x200" title2="BilboStack 2020"
     caption="BilboStack 2020" >}}
 
 ### DevOps: el camino de la entrega de valor en software _por Luis Fraile Hernández_
@@ -170,7 +170,7 @@ La monitorización permite conocer si una funcionalidad se está utilizando y ob
 
 {{< image
     gallery="true"
-    image1="image:devops.jpg" optionsthumb1="600x450" title1="DevOps: el camino de la entrega de valor en software _por Luis Fraile Hernández_"
+    image1="image:devops.webp" optionsthumb1="600x450" title1="DevOps: el camino de la entrega de valor en software _por Luis Fraile Hernández_"
     caption="DevOps: el camino de la entrega de valor en software por Luis Fraile Hernández" >}}
 
 ### Monitorización con Prometheus por _Laura Morillo-Velarde Rodríguez y Beatriz Martínez_
@@ -192,7 +192,7 @@ Los sistemas actuales requieren no solo saber el estado de funcionamiento de cad
 
 {{< image
     gallery="true"
-    image1="image:prometheus.jpg" optionsthumb1="600x450" title1="Monitorización con Prometheus por Laura Morillo-Velarde Rodríguez y Beatriz Martínez"
+    image1="image:prometheus.webp" optionsthumb1="600x450" title1="Monitorización con Prometheus por Laura Morillo-Velarde Rodríguez y Beatriz Martínez"
     caption="Monitorización con Prometheus por Laura Morillo-Velarde Rodríguez y Beatriz Martínez" >}}
 
 ### Descanso
@@ -201,18 +201,18 @@ Momento de tomar un café y pasar por los _stands_ de los patrocinadores.
 
 {{< image
     gallery="true"
-    image1="image:patrocinadores-1.jpg" optionsthumb1="200x150" title1="Stands patrocinadores"
-    image2="image:patrocinadores-2.jpg" optionsthumb2="200x150" title2="Stands patrocinadores"
-    image3="image:patrocinadores-3.jpg" optionsthumb3="200x150" title3="Stands patrocinadores" >}}
+    image1="image:patrocinadores-1.webp" optionsthumb1="200x150" title1="Stands patrocinadores"
+    image2="image:patrocinadores-2.webp" optionsthumb2="200x150" title2="Stands patrocinadores"
+    image3="image:patrocinadores-3.webp" optionsthumb3="200x150" title3="Stands patrocinadores" >}}
 {{< image
     gallery="true"
-    image1="image:patrocinadores-4.jpg" optionsthumb1="200x150" title1="Stands patrocinadores"
-    image2="image:patrocinadores-5.jpg" optionsthumb2="200x150" title2="Stands patrocinadores"
-    image3="image:patrocinadores-6.jpg" optionsthumb3="200x150" title3="Stands patrocinadores" >}}
+    image1="image:patrocinadores-4.webp" optionsthumb1="200x150" title1="Stands patrocinadores"
+    image2="image:patrocinadores-5.webp" optionsthumb2="200x150" title2="Stands patrocinadores"
+    image3="image:patrocinadores-6.webp" optionsthumb3="200x150" title3="Stands patrocinadores" >}}
 {{< image
     gallery="true"
-    image1="image:patrocinadores-7.jpg" optionsthumb1="200x150" title1="Stands patrocinadores"
-    image2="image:patrocinadores-8.jpg" optionsthumb2="200x150" title2="Stands patrocinadores"
+    image1="image:patrocinadores-7.webp" optionsthumb1="200x150" title1="Stands patrocinadores"
+    image2="image:patrocinadores-8.webp" optionsthumb2="200x150" title2="Stands patrocinadores"
     caption="Stands patrocinadores" >}}
 
 ### Implementing corporate Design Systems in React _por Ignacio Velázquez_
@@ -236,7 +236,7 @@ Varias herramientas son útiles para las pruebas y el desarrollo de un _design s
 
 {{< image
     gallery="true"
-    image1="image:design-systems.jpg" optionsthumb1="600x450" title1="Implementing corporate Design Systems in React por Ignacio Velázquez"
+    image1="image:design-systems.webp" optionsthumb1="600x450" title1="Implementing corporate Design Systems in React por Ignacio Velázquez"
     caption="Implementing corporate Design Systems in React por Ignacio Velázquez" >}}
 
 ###  Otra charla sobre microservicios _por Isabel Garrido Cardenas y Sergi González_
@@ -254,7 +254,7 @@ El bus de eventos se convierte en un único punto de fallo con problemas que hay
 
 {{< image
     gallery="true"
-    image1="image:microservicios.jpg" optionsthumb1="600x450" title1="Otra charla sobre microservicios por Isabel Garrido Cardenas y Sergi González"
+    image1="image:microservicios.webp" optionsthumb1="600x450" title1="Otra charla sobre microservicios por Isabel Garrido Cardenas y Sergi González"
     caption="Otra charla sobre microservicios por Isabel Garrido Cardenas y Sergi González" >}}
 
 ### Acabando

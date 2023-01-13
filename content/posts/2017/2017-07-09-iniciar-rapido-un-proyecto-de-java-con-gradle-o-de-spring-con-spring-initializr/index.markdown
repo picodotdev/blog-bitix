@@ -32,7 +32,7 @@ Para proyectos que usen [Spring Boot][spring-boot] está disponible la herramien
 
 {{< image
     gallery="true"
-    image1="image:spring-initalizr.png" optionsthumb1="300x200" title1="Generador de proyectos Spring Initalizr" >}}
+    image1="image:spring-initalizr.webp" optionsthumb1="300x200" title1="Generador de proyectos Spring Initalizr" >}}
 
 Cambiando a la versión completa del generador es posible cambiar el tipo de empaquetado (_jar_ o _war_), la versión de Java o el lenguaje de programación, además seleccionar aquellas dependencias que inicialmente sean necesarias, muchas son de otros proyectos de Spring. Las dependencias están agrupadas por categorías y van desde seguridad, _framework_ web, motores de plantillas, SQL, NoSQL, numerosas herramientas para la nube, integración con redes sociales, entrada/salida o utilidades para operaciones.
 

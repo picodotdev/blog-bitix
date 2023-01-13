@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:localstorage.png"
+imagePost: "image:localstorage.webp"
 tags: ["javascript", "planeta-codigo"]
 summary: "En el navegador del usuario hay varias formas de guardar información con diferentes propósitos que perdure entre las visitas realizadas en varias sesiones. Los navegadores ofrecen tres formas de guardar datos: cookies, LocalStorage y SessionStorage e IndexedDB cada una con diferentes características y utilizables con código JavaScript."
 ---
@@ -58,7 +58,7 @@ Desde JavaScript se pueden crear _cookies_, buscar por nombre, obtener sus valor
 
 {{< image
     gallery="true"
-    image1="image:cookie.png" optionsthumb1="650x450" title1="Datos almacenados con cookies"
+    image1="image:cookie.webp" optionsthumb1="650x450" title1="Datos almacenados con cookies"
     caption="Inspección de datos almacenados con cookies" >}}
 
 * [Document.cookie](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
@@ -85,7 +85,7 @@ Otra de las características de LocalStorage y SessionStorage es que permiten es
 
 {{< image
     gallery="true"
-    image1="image:localstorage.png" optionsthumb1="650x450" title1="Datos almacenados con LocalStorage"
+    image1="image:localstorage.webp" optionsthumb1="650x450" title1="Datos almacenados con LocalStorage"
     caption="Inspección de datos almacenados con LocalStorage" >}}
 
 * [Storage](https://developer.mozilla.org/en-US/docs/Web/API/Storage)
@@ -107,7 +107,7 @@ Los espacios de almacenamiento de datos relacionados se denominan _objectStore_.
 
 {{< image
     gallery="true"
-    image1="image:indexeddb.png" optionsthumb1="650x450" title1="Datos almacenados con IdexedDB"
+    image1="image:indexeddb.webp" optionsthumb1="650x450" title1="Datos almacenados con IdexedDB"
     caption="Inspección de datos almacenados con IndexedDB" >}}
 
 * [Using IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)

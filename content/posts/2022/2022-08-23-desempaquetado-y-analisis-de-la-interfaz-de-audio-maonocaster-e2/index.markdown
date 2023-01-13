@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:maonocaster-e2-caja-1.jpg"
-imagePost: "image:maonocaster-e2-caja-1.jpg"
+imageHead: "image:maonocaster-e2-caja-1.webp"
+imagePost: "image:maonocaster-e2-caja-1.webp"
 tags: ["hardware"]
 series: ["desempaquetado-tecnologia"]
 summary: "Para grabar contenido de audio un micrófono es esencial para un audio de calidad, una interfaz de audio no es imprescindible pero si muy recomendable. Las interfaces de audio son un dispositivo hardware capaz de realizar varias funciones. Entre las ventajas de una interfaz de audio están que proporciona un gran número de conexiones que una computadora no suele tener, mezcla el audio de varias fuentes, permite aplicar algunos efectos básicos pero muy útiles y permite realizar grabaciones sin necesidad de un ordenador. En este artículo realizo el desempaquetado y análisis de la interfaz de audio Maonocaster E2 que tiene un conjunto de características y funciones que cubren las necesidades de la mayoría de usuarios que realizan grabaciones por afición, algunos con resultados casi profesionales en el contenido que crean, e incluso es capaz e cubrir las necesidades a nivel profesional, todo con un precio económico para lo que proporciona."
@@ -110,18 +110,18 @@ El embalaje consiste en una caja de color negro y amarillo en la que en su exter
 
 {{< image
     gallery="true"
-    image1="image:maonocaster-e2-caja-1.jpg" optionsthumb1="200x150" title1="Caja de la interfaz de audio Maonocaster E2"
-    image2="image:maonocaster-e2-caja-2.jpg" optionsthumb2="200x150" title2="Caja de la interfaz de audio Maonocaster E2"
-    image3="image:maonocaster-e2-caja-3.jpg" optionsthumb3="200x150" title3="Caja de la interfaz de audio Maonocaster E2" >}}
+    image1="image:maonocaster-e2-caja-1.webp" optionsthumb1="200x150" title1="Caja de la interfaz de audio Maonocaster E2"
+    image2="image:maonocaster-e2-caja-2.webp" optionsthumb2="200x150" title2="Caja de la interfaz de audio Maonocaster E2"
+    image3="image:maonocaster-e2-caja-3.webp" optionsthumb3="200x150" title3="Caja de la interfaz de audio Maonocaster E2" >}}
 {{< image
     gallery="true"
-    image1="image:maonocaster-e2-caja-4.jpg" optionsthumb1="200x150" title1="Caja de la interfaz de audio Maonocaster E2"
-    image2="image:maonocaster-e2-caja-5.jpg" optionsthumb2="200x150" title2="Caja de la interfaz de audio Maonocaster E2"
-    image3="image:maonocaster-e2-caja-6.jpg" optionsthumb3="200x150" title3="Caja de la interfaz de audio Maonocaster E2" >}}
+    image1="image:maonocaster-e2-caja-4.webp" optionsthumb1="200x150" title1="Caja de la interfaz de audio Maonocaster E2"
+    image2="image:maonocaster-e2-caja-5.webp" optionsthumb2="200x150" title2="Caja de la interfaz de audio Maonocaster E2"
+    image3="image:maonocaster-e2-caja-6.webp" optionsthumb3="200x150" title3="Caja de la interfaz de audio Maonocaster E2" >}}
 {{< image
     gallery="true"
-    image1="image:maonocaster-e2-caja-7.jpg" optionsthumb1="200x150" title1="Caja de la interfaz de audio Maonocaster E2"
-    image2="image:maonocaster-e2-caja-8.jpg" optionsthumb2="200x150" title2="Caja de la interfaz de audio Maonocaster E2"
+    image1="image:maonocaster-e2-caja-7.webp" optionsthumb1="200x150" title1="Caja de la interfaz de audio Maonocaster E2"
+    image2="image:maonocaster-e2-caja-8.webp" optionsthumb2="200x150" title2="Caja de la interfaz de audio Maonocaster E2"
     caption="Caja de la interfaz de audio Maonocaster E2" >}}
 
 #### El contenido
@@ -135,34 +135,34 @@ El contenido está protegido por una espuma que protege la interfaz de cualquier
 
 {{< image
     gallery="true"
-    image1="image:maonocaster-e2-contenido-1.jpg" optionsthumb1="200x150" title1="Contenido de la interfaz de audio Maonocaster E2"
-    image2="image:maonocaster-e2-contenido-2.jpg" optionsthumb2="200x150" title2="Contenido de la interfaz de audio Maonocaster E2"
-    image3="image:maonocaster-e2-contenido-3.jpg" optionsthumb3="200x150" title3="Contenido de la interfaz de audio Maonocaster E2" >}}
+    image1="image:maonocaster-e2-contenido-1.webp" optionsthumb1="200x150" title1="Contenido de la interfaz de audio Maonocaster E2"
+    image2="image:maonocaster-e2-contenido-2.webp" optionsthumb2="200x150" title2="Contenido de la interfaz de audio Maonocaster E2"
+    image3="image:maonocaster-e2-contenido-3.webp" optionsthumb3="200x150" title3="Contenido de la interfaz de audio Maonocaster E2" >}}
 {{< image
     gallery="true"
-    image1="image:maonocaster-e2-contenido-4.jpg" optionsthumb1="200x150" title1="Contenido de la interfaz de audio Maonocaster E2"
-    image2="image:maonocaster-e2-contenido-5.jpg" optionsthumb2="200x150" title2="Contenido de la interfaz de audio Maonocaster E2"
-    image3="image:maonocaster-e2-contenido-6.jpg" optionsthumb3="200x150" title3="Contenido de la interfaz de audio Maonocaster E2" >}}
+    image1="image:maonocaster-e2-contenido-4.webp" optionsthumb1="200x150" title1="Contenido de la interfaz de audio Maonocaster E2"
+    image2="image:maonocaster-e2-contenido-5.webp" optionsthumb2="200x150" title2="Contenido de la interfaz de audio Maonocaster E2"
+    image3="image:maonocaster-e2-contenido-6.webp" optionsthumb3="200x150" title3="Contenido de la interfaz de audio Maonocaster E2" >}}
 {{< image
     gallery="true"
-    image1="image:maonocaster-e2-contenido-7.jpg" optionsthumb1="200x150" title1="Contenido de la interfaz de audio Maonocaster E2"
+    image1="image:maonocaster-e2-contenido-7.webp" optionsthumb1="200x150" title1="Contenido de la interfaz de audio Maonocaster E2"
     caption="Contenido de la caja de la interfaz de audio Maonocaster E2" >}}
 
 {{< image
     gallery="true"
-    image1="image:maonocaster-e2-manual-1.jpg" optionsthumb1="200x150" title1="Manual de instrucciones de la interfaz de audio Maonocaster E2"
-    image2="image:maonocaster-e2-manual-2.jpg" optionsthumb2="200x150" title2="Manual de instrucciones de la interfaz de audio Maonocaster E2"
-    image3="image:maonocaster-e2-manual-3.jpg" optionsthumb3="200x150" title3="Manual de instrucciones de la interfaz de audio Maonocaster E2" >}}
+    image1="image:maonocaster-e2-manual-1.webp" optionsthumb1="200x150" title1="Manual de instrucciones de la interfaz de audio Maonocaster E2"
+    image2="image:maonocaster-e2-manual-2.webp" optionsthumb2="200x150" title2="Manual de instrucciones de la interfaz de audio Maonocaster E2"
+    image3="image:maonocaster-e2-manual-3.webp" optionsthumb3="200x150" title3="Manual de instrucciones de la interfaz de audio Maonocaster E2" >}}
 {{< image
     gallery="true"
-    image1="image:maonocaster-e2-manual-4.jpg" optionsthumb1="200x150" title1="Manual de instrucciones de la interfaz de audio Maonocaster E2"
-    image2="image:maonocaster-e2-manual-5.jpg" optionsthumb2="200x150" title2="Manual de instrucciones de la interfaz de audio Maonocaster E2"
-    image3="image:maonocaster-e2-manual-6.jpg" optionsthumb3="200x150" title3="Manual de instrucciones de la interfaz de audio Maonocaster E2" >}}
+    image1="image:maonocaster-e2-manual-4.webp" optionsthumb1="200x150" title1="Manual de instrucciones de la interfaz de audio Maonocaster E2"
+    image2="image:maonocaster-e2-manual-5.webp" optionsthumb2="200x150" title2="Manual de instrucciones de la interfaz de audio Maonocaster E2"
+    image3="image:maonocaster-e2-manual-6.webp" optionsthumb3="200x150" title3="Manual de instrucciones de la interfaz de audio Maonocaster E2" >}}
 {{< image
     gallery="true"
-    image1="image:maonocaster-e2-manual-7.jpg" optionsthumb1="200x150" title1="Manual de instrucciones de la interfaz de audio Maonocaster E2"
-    image2="image:maonocaster-e2-manual-8.jpg" optionsthumb2="200x150" title2="Manual de instrucciones de la interfaz de audio Maonocaster E2"
-    image3="image:maonocaster-e2-manual-9.jpg" optionsthumb3="200x150" title3="Manual de instrucciones de la interfaz de audio Maonocaster E2"
+    image1="image:maonocaster-e2-manual-7.webp" optionsthumb1="200x150" title1="Manual de instrucciones de la interfaz de audio Maonocaster E2"
+    image2="image:maonocaster-e2-manual-8.webp" optionsthumb2="200x150" title2="Manual de instrucciones de la interfaz de audio Maonocaster E2"
+    image3="image:maonocaster-e2-manual-9.webp" optionsthumb3="200x150" title3="Manual de instrucciones de la interfaz de audio Maonocaster E2"
     caption="Manual de instrucciones de la interfaz de audio Maonocaster E2" >}}
 
 #### La interfaz de audio
@@ -181,18 +181,18 @@ En el manual de usuario incluido en la caja en formato papel se explican cada un
 
 {{< image
     gallery="true"
-    image1="image:maonocaster-e2-interfaz-de-audio-1.jpg" optionsthumb1="200x150" title1="Interfaz de audio Maonocaster E2"
-    image2="image:maonocaster-e2-interfaz-de-audio-2.jpg" optionsthumb2="200x150" title2="Interfaz de audio Maonocaster E2"
-    image3="image:maonocaster-e2-interfaz-de-audio-3.jpg" optionsthumb3="200x150" title3="Interfaz de audio Maonocaster E2" >}}
+    image1="image:maonocaster-e2-interfaz-de-audio-1.webp" optionsthumb1="200x150" title1="Interfaz de audio Maonocaster E2"
+    image2="image:maonocaster-e2-interfaz-de-audio-2.webp" optionsthumb2="200x150" title2="Interfaz de audio Maonocaster E2"
+    image3="image:maonocaster-e2-interfaz-de-audio-3.webp" optionsthumb3="200x150" title3="Interfaz de audio Maonocaster E2" >}}
 {{< image
     gallery="true"
-    image1="image:maonocaster-e2-interfaz-de-audio-4.jpg" optionsthumb1="200x150" title1="Interfaz de audio Maonocaster E2"
-    image2="image:maonocaster-e2-interfaz-de-audio-5.jpg" optionsthumb2="200x150" title2="Interfaz de audio Maonocaster E2"
-    image3="image:maonocaster-e2-interfaz-de-audio-6.jpg" optionsthumb3="200x150" title3="Interfaz de audio Maonocaster E2" >}}
+    image1="image:maonocaster-e2-interfaz-de-audio-4.webp" optionsthumb1="200x150" title1="Interfaz de audio Maonocaster E2"
+    image2="image:maonocaster-e2-interfaz-de-audio-5.webp" optionsthumb2="200x150" title2="Interfaz de audio Maonocaster E2"
+    image3="image:maonocaster-e2-interfaz-de-audio-6.webp" optionsthumb3="200x150" title3="Interfaz de audio Maonocaster E2" >}}
 {{< image
     gallery="true"
-    image1="image:maonocaster-e2-interfaz-de-audio-7.jpg" optionsthumb1="650x450" title1="Interfaz de audio Maonocaster E2"
-    image2="image:maonocaster-e2-interfaz-de-audio-8.jpg" optionsthumb2="650x450" title2="Interfaz de audio Maonocaster E2"
+    image1="image:maonocaster-e2-interfaz-de-audio-7.webp" optionsthumb1="650x450" title1="Interfaz de audio Maonocaster E2"
+    image2="image:maonocaster-e2-interfaz-de-audio-8.webp" optionsthumb2="650x450" title2="Interfaz de audio Maonocaster E2"
     caption="Interfaz de audio Maonocaster E2 junto al micrófono MAONO HD300T" >}}
 
 ### Análisis y opinión
@@ -205,8 +205,8 @@ Funciona perfectamente y es compatible con [GNU][gnu]/[Linux][linux] y con el pr
 
 {{< image
     gallery="true"
-    image1="image:maonocaster-e2-linux.png" optionsthumb1="300x250" title1="Prueba de compatibilidad en GNU/Linux y preferencias de audio en GNOME"
-    image2="image:maonocaster-e2-obs.png" optionsthumb2="300x250" title2="Prueba de compatibilidad en GNU/Linux y configuración en OBS Studio"
+    image1="image:maonocaster-e2-linux.webp" optionsthumb1="300x250" title1="Prueba de compatibilidad en GNU/Linux y preferencias de audio en GNOME"
+    image2="image:maonocaster-e2-obs.webp" optionsthumb2="300x250" title2="Prueba de compatibilidad en GNU/Linux y configuración en OBS Studio"
     caption="Prueba de compatibilidad en GNU/Linux, preferencias de audio en GNOME y configuración en OBS Studio" >}}
 
 No es imprescindible pero si un producto muy conveniente junto a el sí imprescindible micrófono para crear contenido de audio de calidad. Con esta interfaz de audio utilizar un ordenador para grabar no es necesario, gracias a que tiene batería que lo dota de una gran autonomía de varias horas permite realizar grabaciones conectando una grabadora en la salida de la interfaz.

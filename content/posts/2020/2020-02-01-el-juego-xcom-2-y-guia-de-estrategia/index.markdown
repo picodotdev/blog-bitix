@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:xcom-2.jpg"
-imagePost: "image:xcom-2.jpg"
+imageHead: "image:xcom-2.webp"
+imagePost: "image:xcom-2.webp"
 tags: ["juegos"]
 series: ["analisis-juegos", "juegos"]
 summary: "XCOM 2 es un juego de estrategia, con combates de acción por turnos, una parte de rol al permitir personalizar los soldados y elegir sus nuevas habilidades al subir de rango, también para las armas, y otra parte de gestión de los limitados recursos ambientado en una lucha contra una invasión alienígena a la tierra. Sin una guía el juego el nivel difícil del juego se convierte en tormento siendo muy difícil de terminar con éxito."
@@ -41,12 +41,12 @@ Si te gusta el modo de juego de XCOM 2 otros juegos similares son:
 
 {{< image
     gallery="true"
-    image1="image:xcom-2.jpg" optionsthumb1="300x250" title1="Pantalla inicial"
-    image2="image:xcom-2-menu.jpg" optionsthumb2="300x250" title2="Menú"
+    image1="image:xcom-2.webp" optionsthumb1="300x250" title1="Pantalla inicial"
+    image2="image:xcom-2-menu.webp" optionsthumb2="300x250" title2="Menú"
     caption="Pantalla inicial y menú del juego XCOM 2" >}}
 {{< image
     gallery="true"
-    image1="image:xcom-2-cover.jpg" optionsthumb1="200x150" title1="Portada del juego XCOM 2"
+    image1="image:xcom-2-cover.webp" optionsthumb1="200x150" title1="Portada del juego XCOM 2"
     caption="Portada del juego XCOM 2" >}}
 
 En un momento de oferta en la [PlayStation Store][playstation-store] en formato digital está en por 13 € desde un precio original de 50 €, un gran precio precio para un gran juego que ofrece una buena cantidad de horas de entretenimiento, más si una vez acabado el juego se optar por rejugarlo en un nivel más difícil. En [Amazon][amazon-affiliate] está en formato físico. Al menos en la versión de la PlayStation 4 del juego en momentos concretos se producen tirones no se si por capacidad de la la PS4 o por un _port_ deficiente en la consola, además los tiempos de carga y guardado incluso para mostrar los menús es significativo en parte puede ser debido a que la PS4 tiene disco duro mecánico y es común a todos los juegos de esta generación de consolas.
@@ -151,7 +151,7 @@ La instalación de defensa proporciona torretas en la misión en la que un ovni 
 
 {{< image
     gallery="true"
-    image1="image:avenger.jpg" optionsthumb1="600x450" title1="Avenger"
+    image1="image:avenger.webp" optionsthumb1="600x450" title1="Avenger"
     caption="Avenger" >}}
 
 {{< youtube
@@ -163,7 +163,7 @@ La tarea principal es ampliar las redes de comunicadores, instalar repetidores, 
 
 {{< image
     gallery="true"
-    image1="image:mapa.jpg" optionsthumb1="600x450" title1="Mapa del mundo"
+    image1="image:mapa.webp" optionsthumb1="600x450" title1="Mapa del mundo"
     caption="Mapa del mundo" >}}
 
 ### Reclutas y soldados
@@ -182,22 +182,22 @@ El granadero es uno de los soldados más importantes ya que con sus lanzagranada
 
 {{< image
     gallery="true"
-    image1="image:granadero.jpg" optionsthumb1="600x450" title1="Granadero"
+    image1="image:granadero.webp" optionsthumb1="600x450" title1="Granadero"
     caption="Granadero" >}}
 
 {{< image
     gallery="true"
-    image1="image:granadero-habilidades-1.jpg" optionsthumb1="200x150" title1="Habilidades granadero"
-    image2="image:granadero-habilidades-2.jpg" optionsthumb2="200x150" title2="Habilidades granadero"
-    image3="image:granadero-habilidades-3.jpg" optionsthumb3="200x150" title3="Habilidades granadero" >}}
+    image1="image:granadero-habilidades-1.webp" optionsthumb1="200x150" title1="Habilidades granadero"
+    image2="image:granadero-habilidades-2.webp" optionsthumb2="200x150" title2="Habilidades granadero"
+    image3="image:granadero-habilidades-3.webp" optionsthumb3="200x150" title3="Habilidades granadero" >}}
 {{< image
     gallery="true"
-    image1="image:granadero-habilidades-4.jpg" optionsthumb1="200x150" title1="Habilidades granadero"
-    image2="image:granadero-habilidades-5.jpg" optionsthumb2="200x150" title2="Habilidades granadero"
-    image3="image:granadero-habilidades-6.jpg" optionsthumb3="200x150" title3="Habilidades granadero" >}}
+    image1="image:granadero-habilidades-4.webp" optionsthumb1="200x150" title1="Habilidades granadero"
+    image2="image:granadero-habilidades-5.webp" optionsthumb2="200x150" title2="Habilidades granadero"
+    image3="image:granadero-habilidades-6.webp" optionsthumb3="200x150" title3="Habilidades granadero" >}}
 {{< image
     gallery="true"
-    image1="image:granadero-habilidades-7.jpg" optionsthumb1="200x150" title1="Habilidades granadero"
+    image1="image:granadero-habilidades-7.webp" optionsthumb1="200x150" title1="Habilidades granadero"
     caption="Habilidades granadero" >}}
 
 {{< youtube
@@ -209,22 +209,22 @@ Están equipados con un fusil que les permite disparar a largas distancias sin e
 
 {{< image
     gallery="true"
-    image1="image:francotirador.jpg" optionsthumb1="600x450" title1="Francotirador"
+    image1="image:francotirador.webp" optionsthumb1="600x450" title1="Francotirador"
     caption="Francotirador" >}}
 
 {{< image
     gallery="true"
-    image1="image:francotirador-habilidades-1.jpg" optionsthumb1="200x150" title1="Habilidades francotirador"
-    image2="image:francotirador-habilidades-2.jpg" optionsthumb2="200x150" title2="Habilidades francotirador"
-    image3="image:francotirador-habilidades-3.jpg" optionsthumb3="200x150" title3="Habilidades francotirador" >}}
+    image1="image:francotirador-habilidades-1.webp" optionsthumb1="200x150" title1="Habilidades francotirador"
+    image2="image:francotirador-habilidades-2.webp" optionsthumb2="200x150" title2="Habilidades francotirador"
+    image3="image:francotirador-habilidades-3.webp" optionsthumb3="200x150" title3="Habilidades francotirador" >}}
 {{< image
     gallery="true"
-    image1="image:francotirador-habilidades-4.jpg" optionsthumb1="200x150" title1="Habilidades francotirador"
-    image2="image:francotirador-habilidades-5.jpg" optionsthumb2="200x150" title2="Habilidades francotirador"
-    image3="image:francotirador-habilidades-6.jpg" optionsthumb3="200x150" title3="Habilidades francotirador" >}}
+    image1="image:francotirador-habilidades-4.webp" optionsthumb1="200x150" title1="Habilidades francotirador"
+    image2="image:francotirador-habilidades-5.webp" optionsthumb2="200x150" title2="Habilidades francotirador"
+    image3="image:francotirador-habilidades-6.webp" optionsthumb3="200x150" title3="Habilidades francotirador" >}}
 {{< image
     gallery="true"
-    image1="image:francotirador-habilidades-7.jpg" optionsthumb1="200x150" title1="Habilidades francotirador"
+    image1="image:francotirador-habilidades-7.webp" optionsthumb1="200x150" title1="Habilidades francotirador"
     caption="Habilidades francotirador" >}}
 
 {{< youtube
@@ -236,22 +236,22 @@ Los especialistas aparte de poder disparar con su fusil tiene la misión de pira
 
 {{< image
     gallery="true"
-    image1="image:especialista.jpg" optionsthumb1="600x450" title1="Especialista"
+    image1="image:especialista.webp" optionsthumb1="600x450" title1="Especialista"
     caption="Especialista" >}}
 
 {{< image
     gallery="true"
-    image1="image:especialista-habilidades-1.jpg" optionsthumb1="200x150" title1="Habilidades especialista"
-    image2="image:especialista-habilidades-2.jpg" optionsthumb2="200x150" title2="Habilidades especialista"
-    image3="image:especialista-habilidades-3.jpg" optionsthumb3="200x150" title3="Habilidades especialista" >}}
+    image1="image:especialista-habilidades-1.webp" optionsthumb1="200x150" title1="Habilidades especialista"
+    image2="image:especialista-habilidades-2.webp" optionsthumb2="200x150" title2="Habilidades especialista"
+    image3="image:especialista-habilidades-3.webp" optionsthumb3="200x150" title3="Habilidades especialista" >}}
 {{< image
     gallery="true"
-    image1="image:especialista-habilidades-4.jpg" optionsthumb1="200x150" title1="Habilidades especialista"
-    image2="image:especialista-habilidades-5.jpg" optionsthumb2="200x150" title2="Habilidades especialista"
-    image3="image:especialista-habilidades-6.jpg" optionsthumb3="200x150" title3="Habilidades especialista" >}}
+    image1="image:especialista-habilidades-4.webp" optionsthumb1="200x150" title1="Habilidades especialista"
+    image2="image:especialista-habilidades-5.webp" optionsthumb2="200x150" title2="Habilidades especialista"
+    image3="image:especialista-habilidades-6.webp" optionsthumb3="200x150" title3="Habilidades especialista" >}}
 {{< image
     gallery="true"
-    image1="image:especialista-habilidades-7.jpg" optionsthumb1="200x150" title1="Habilidades especialista"
+    image1="image:especialista-habilidades-7.webp" optionsthumb1="200x150" title1="Habilidades especialista"
     caption="Habilidades especialista" >}}
 
 {{< youtube
@@ -263,22 +263,22 @@ Los comandos por defecto van equipados con una escopeta y una espada lo que les 
 
 {{< image
     gallery="true"
-    image1="image:comando.jpg" optionsthumb1="600x450" title1="Comando"
+    image1="image:comando.webp" optionsthumb1="600x450" title1="Comando"
     caption="Comando" >}}
 
 {{< image
     gallery="true"
-    image1="image:comando-habilidades-1.jpg" optionsthumb1="200x150" title1="Habilidades comando"
-    image2="image:comando-habilidades-2.jpg" optionsthumb2="200x150" title2="Habilidades comando"
-    image3="image:comando-habilidades-3.jpg" optionsthumb3="200x150" title3="Habilidades comando" >}}
+    image1="image:comando-habilidades-1.webp" optionsthumb1="200x150" title1="Habilidades comando"
+    image2="image:comando-habilidades-2.webp" optionsthumb2="200x150" title2="Habilidades comando"
+    image3="image:comando-habilidades-3.webp" optionsthumb3="200x150" title3="Habilidades comando" >}}
 {{< image
     gallery="true"
-    image1="image:comando-habilidades-4.jpg" optionsthumb1="200x150" title1="Habilidades comando"
-    image2="image:comando-habilidades-5.jpg" optionsthumb2="200x150" title2="Habilidades comando"
-    image3="image:comando-habilidades-6.jpg" optionsthumb3="200x150" title3="Habilidades comando" >}}
+    image1="image:comando-habilidades-4.webp" optionsthumb1="200x150" title1="Habilidades comando"
+    image2="image:comando-habilidades-5.webp" optionsthumb2="200x150" title2="Habilidades comando"
+    image3="image:comando-habilidades-6.webp" optionsthumb3="200x150" title3="Habilidades comando" >}}
 {{< image
     gallery="true"
-    image1="image:comando-habilidades-7.jpg" optionsthumb1="200x150" title1="Habilidades comando"
+    image1="image:comando-habilidades-7.webp" optionsthumb1="200x150" title1="Habilidades comando"
     caption="Habilidades comando" >}}
 
 {{< youtube
@@ -307,8 +307,8 @@ Los especialistas los utilizo para disparar, piratear enemigos robóticos y cura
 
 {{< image
     gallery="true"
-    image1="image:juego-1.jpg" optionsthumb1="300x250" title1="Juego"
-    image2="image:juego-2.jpg" optionsthumb2="300x250" title2="Juego"
+    image1="image:juego-1.webp" optionsthumb1="300x250" title1="Juego"
+    image2="image:juego-2.webp" optionsthumb2="300x250" title2="Juego"
     caption="Juego" >}}
 
 ### Guardado del progreso
@@ -335,15 +335,15 @@ En la [Wiki de XCOM 2 de Fandom](https://xcom.fandom.com/wiki/XCOM_2) están rec
 
 {{< image
     gallery="true"
-    image1="image:pantalla-carga-1.jpg" optionsthumb1="200x150" title1="Pantalla de carga"
-    image2="image:pantalla-carga-2.jpg" optionsthumb2="200x150" title2="Pantalla de carga"
-    image3="image:pantalla-carga-3.jpg" optionsthumb3="200x150" title3="Pantalla de carga"
+    image1="image:pantalla-carga-1.webp" optionsthumb1="200x150" title1="Pantalla de carga"
+    image2="image:pantalla-carga-2.webp" optionsthumb2="200x150" title2="Pantalla de carga"
+    image3="image:pantalla-carga-3.webp" optionsthumb3="200x150" title3="Pantalla de carga"
     caption="Pantallas de carga" >}}
 
 {{< image
     gallery="true"
-    image1="image:ingeniera-shen.jpg" optionsthumb1="300x250" title1="Ingeniera Shen"
-    image2="image:doctor-tygan.jpg" optionsthumb2="300x250" title2="Doctor Shen"
+    image1="image:ingeniera-shen.webp" optionsthumb1="300x250" title1="Ingeniera Shen"
+    image2="image:doctor-tygan.webp" optionsthumb2="300x250" title2="Doctor Shen"
     caption="Ingeniera Shen y Doctor Tygan" >}}
 
 {{< youtube

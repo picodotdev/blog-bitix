@@ -31,7 +31,7 @@ En Java con la clase [Pattern](javadoc8:java/util/regex/Pattern.html) y [Matcher
 
 {{< image
     gallery="true"
-    image1="image:java-regex.png" optionsthumb1="300x200" title1="Extracción de valores de una cadena usando una expresión regular"
+    image1="image:java-regex.webp" optionsthumb1="300x200" title1="Extracción de valores de una cadena usando una expresión regular"
     caption="Extracción de valores de una cadena usando una expresión regular" >}}
 
 Esto simplifica el extraer los valores de un cadena, de una manera menos frágil y más fácil de leer posteriormente el código fuente que usar la función _split_ por uno o varios determinados caracteres, esta es una cadena bastante sencilla si el patrón es más complejo el código usando _split_ puede complicarse notablemente.

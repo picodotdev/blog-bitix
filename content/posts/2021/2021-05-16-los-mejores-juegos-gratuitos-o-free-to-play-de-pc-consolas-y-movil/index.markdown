@@ -11,8 +11,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:fortnite.jpg"
-imagePost: "image:fortnite.jpg"
+imageHead: "image:fortnite.webp"
+imagePost: "image:fortnite.webp"
 tags: ["juegos"]
 summary: "Para jugar no hace falta comprar los juegos en el mismo momento en que los juegos se publican, en poco tiempo bajan de precio de forma significativa. Pero incluso hay muchos juegos de muy buena calidad que son completamente gratuitos, los hay para todas las plataformas ya sean PC, consolas e incluso teléfonos móviles. Hay juegos gratuitos de varios géneros ya sea de disparos, estrategia o rol, algunos tienen mecánicas de juegos de varios de estos géneros."
 ---
@@ -49,14 +49,14 @@ Los juegos gratuitos del género de disparos o _shooters_ son bastante populares
 
 {{< image
     gallery="true"
-    image1="image:fortnite.jpg" optionsthumb1="200x150" title1="Fortnite"
-    image2="image:apex-legends.jpg" optionsthumb2="200x150" title2="Apex Legends"
-    image3="image:destiny-2.jpg" optionsthumb3="200x150" title3="Destiny 2"
+    image1="image:fortnite.webp" optionsthumb1="200x150" title1="Fortnite"
+    image2="image:apex-legends.webp" optionsthumb2="200x150" title2="Apex Legends"
+    image3="image:destiny-2.webp" optionsthumb3="200x150" title3="Destiny 2"
     caption="Fortnite, Apex Legends y Destiny 2" >}}
 {{< image
     gallery="true"
-    image1="image:counter-strike-go.jpg" optionsthumb1="200x150" title1="Counter-Strike: Global Ofensive"
-    image2="image:call-of-duty-infinite-warfare.jpg" optionsthumb2="200x150" title2="Call Of Duty®: Infinite Warfare"
+    image1="image:counter-strike-go.webp" optionsthumb1="200x150" title1="Counter-Strike: Global Ofensive"
+    image2="image:call-of-duty-infinite-warfare.webp" optionsthumb2="200x150" title2="Call Of Duty®: Infinite Warfare"
     caption="Counter-Strike: Global Ofensive y Call Of Duty®: Infinite Warfare" >}}
 
 #### Estrategia por equipos
@@ -76,14 +76,14 @@ Del juego World of Warhips he escrito un par de artículos describiendo en que c
 
 {{< image
     gallery="true"
-    image1="image:league-of-legends.jpg" optionsthumb1="200x150" title1="League of Legends"
-    image2="image:dota-2.jpg" optionsthumb2="200x150" title2="Dota 2"
-    image3="image:world-of-warships.jpg" optionsthumb3="200x150" title3="World of Warships"
+    image1="image:league-of-legends.webp" optionsthumb1="200x150" title1="League of Legends"
+    image2="image:dota-2.webp" optionsthumb2="200x150" title2="Dota 2"
+    image3="image:world-of-warships.webp" optionsthumb3="200x150" title3="World of Warships"
     caption="League of Legends, Dota 2 y World of Warships" >}}
 {{< image
     gallery="true"
-    image1="image:world-of-tanks.jpg" optionsthumb1="200x150" title1="World of Tanks"
-    image2="image:war-thunder.jpg" optionsthumb2="200x150" title2="War Thunder"
+    image1="image:world-of-tanks.webp" optionsthumb1="200x150" title1="World of Tanks"
+    image2="image:war-thunder.webp" optionsthumb2="200x150" title2="War Thunder"
     caption="World of Tanks y War Thunder" >}}
 
 #### Estrategia individual
@@ -96,9 +96,9 @@ En estos juegos se juega contra otros jugadores pero se hace en partidas uno con
 
 {{< image
     gallery="true"
-    image1="image:hearthstone.jpg" optionsthumb1="200x150" title1="Hearthstone"
-    image2="image:auto-chess.jpg" optionsthumb2="200x150" title2="Auto Chess"
-    image3="image:magic-the-gathering.jpg" optionsthumb3="200x150" title3="Magic The Gathering"
+    image1="image:hearthstone.webp" optionsthumb1="200x150" title1="Hearthstone"
+    image2="image:auto-chess.webp" optionsthumb2="200x150" title2="Auto Chess"
+    image3="image:magic-the-gathering.webp" optionsthumb3="200x150" title3="Magic The Gathering"
     caption="Hearthstone, Auto Chess y Magic The Gathering" >}}
 
 #### Rol
@@ -110,8 +110,8 @@ El género de rol y los _MMORPG_ es otro estilo de juegos muy popular entre los 
 
 {{< image
     gallery="true"
-    image1="image:path-of-exile.jpg" optionsthumb1="200x150" title1="Path of Exile"
-    image2="image:albion-online.jpg" optionsthumb2="200x150" title2="Albion Online"
+    image1="image:path-of-exile.webp" optionsthumb1="200x150" title1="Path of Exile"
+    image2="image:albion-online.webp" optionsthumb2="200x150" title2="Albion Online"
     caption="Path of Exile y Albion Online" >}}
 
 #### Otros
@@ -127,14 +127,14 @@ Otros juegos muy conocidos son los siguientes, estos están en varias categoría
 
 {{< image
     gallery="true"
-    image1="image:dauntless.jpg" optionsthumb1="200x150" title1="Dauntless"
-    image2="image:neverwinter.jpg" optionsthumb2="200x150" title2="Neverwinter"
-    image3="image:dungeon-defenders-2.jpg" optionsthumb3="200x150" title3="Dungeon Defenders II"
+    image1="image:dauntless.webp" optionsthumb1="200x150" title1="Dauntless"
+    image2="image:neverwinter.webp" optionsthumb2="200x150" title2="Neverwinter"
+    image3="image:dungeon-defenders-2.webp" optionsthumb3="200x150" title3="Dungeon Defenders II"
     caption="Dauntless, Neverwinter y Dungeon Defenders II" >}}
 {{< image
     gallery="true"
-    image1="image:heavy-metal-machines.jpg" optionsthumb1="200x150" title1="Heavy Metal Machines"
-    image2="image:rocket-league.jpg" optionsthumb2="200x150" title2="Rocket League"
+    image1="image:heavy-metal-machines.webp" optionsthumb1="200x150" title1="Heavy Metal Machines"
+    image2="image:rocket-league.webp" optionsthumb2="200x150" title2="Rocket League"
     caption="Heavy Metal Machines y Rocket League" >}}
 
 ### Los mejores juegos gratuitos para móvil
@@ -154,21 +154,21 @@ Los dispositivos móviles también son una plataforma utilizable para jugar y va
 
 {{< image
     gallery="true"
-    image1="image:clash-royale.jpg" optionsthumb1="200x150" title1="Clash Royale"
-    image2="image:brawl-stars.jpg" optionsthumb2="200x150" title2="Brawl Stars"
-    image3="image:pubg.jpg" optionsthumb3="200x150" title3="PUBG"
+    image1="image:clash-royale.webp" optionsthumb1="200x150" title1="Clash Royale"
+    image2="image:brawl-stars.webp" optionsthumb2="200x150" title2="Brawl Stars"
+    image3="image:pubg.webp" optionsthumb3="200x150" title3="PUBG"
     caption="Clash Royale, Brawl Stars y PUBG" >}}
 {{< image
     gallery="true"
-    image1="image:candy-crush.jpg" optionsthumb1="200x150" title1="Candy Crush"
-    image2="image:clash-of-clans.jpg" optionsthumb2="200x150" title2="Clash of Clans"
-    image3="image:among-us.jpg" optionsthumb3="200x150" title3="Among Us"
+    image1="image:candy-crush.webp" optionsthumb1="200x150" title1="Candy Crush"
+    image2="image:clash-of-clans.webp" optionsthumb2="200x150" title2="Clash of Clans"
+    image3="image:among-us.webp" optionsthumb3="200x150" title3="Among Us"
     caption="Candy Crush, Clash of Clans y Among Us" >}}
 {{< image
     gallery="true"
-    image1="image:genshin-impact.jpg" optionsthumb1="200x150" title1="Genshin Impact"
-    image2="image:plants-vs-zombies.jpg" optionsthumb2="200x150" title2="Plants vs. Zombies"
-    image3="image:teamfight-tactics.jpg" optionsthumb3="200x150" title3="Teamfight Tactics"
+    image1="image:genshin-impact.webp" optionsthumb1="200x150" title1="Genshin Impact"
+    image2="image:plants-vs-zombies.webp" optionsthumb2="200x150" title2="Plants vs. Zombies"
+    image3="image:teamfight-tactics.webp" optionsthumb3="200x150" title3="Teamfight Tactics"
     caption="Genshin Impact, Plants vs. Zombies y Teamfight Tactics" >}}
 
 ### Otros juegos con precio reducido

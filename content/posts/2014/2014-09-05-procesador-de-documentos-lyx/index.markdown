@@ -25,7 +25,7 @@ Empecé evaluando la herramienta más adecuada para escribir el libro, en un pri
 
 {{< image
     gallery="true"
-    image1="image:lyx-plugin.png" optionsthumb1="300x200" title1="LyX" >}}
+    image1="image:lyx-plugin.webp" optionsthumb1="300x200" title1="LyX" >}}
 
 ### LyX
 
@@ -35,13 +35,13 @@ Una de las primeras cosas que deberemos hacer es indicarle a LyX la clase de doc
 
 {{< image
     gallery="true"
-    image1="image:lyx-configuracion-documento.png" optionsthumb1="300x200" title1="Configuración documento, LyX" >}}
+    image1="image:lyx-configuracion-documento.webp" optionsthumb1="300x200" title1="Configuración documento, LyX" >}}
 
 Entre las mismas opciones podemos seleccionar las tipografías, el diseño de la página (A4, A5, ...), los márgenes y una parte importe donde podremos modificar varios aspectos del documento, el preámbulo LaTeX, lo difícil de esta sección es saber cuales son las opciones podemos escribir en él pero si necesitamos modificar algo probablemente debamos insertarlo en esta sección. Un posible contenido es el siguiente donde defino y modifico el color de los hiperenlaces del libro y las opciones por defecto de los listados.
 
 {{< image
     gallery="true"
-    image1="image:lyx-preambulo-latex.png" optionsthumb1="300x200" title1="Configuración documento, LyX" >}}
+    image1="image:lyx-preambulo-latex.webp" optionsthumb1="300x200" title1="Configuración documento, LyX" >}}
 
 {{< code file="preamble.tex" language="plain" options="" >}}
 
@@ -55,7 +55,7 @@ Podemos modificar la fuente del documento en Documento> Configuración> Tipograf
 
 {{< image
     gallery="true"
-    image1="image:lyx-tipografias.png" optionsthumb1="300x200" title1="Tipografías, LyX" >}}
+    image1="image:lyx-tipografias.webp" optionsthumb1="300x200" title1="Tipografías, LyX" >}}
 
 ### Encabezados y pies de página
 
@@ -63,7 +63,7 @@ En Documento> Configuración> Diseño de página podemos establecer si queremos 
 
 {{< image
     gallery="true"
-    image1="image:lyx-diseno-pagina.png" optionsthumb1="300x200" title1="Tipografías, LyX" >}}
+    image1="image:lyx-diseno-pagina.webp" optionsthumb1="300x200" title1="Tipografías, LyX" >}}
 
 ### Referencias
 
@@ -79,7 +79,7 @@ Para insertar un listado de código como documento externo debemos usar la opci�
 
 {{< image
     gallery="true"
-    image1="image:listado-codigo.png" optionsthumb1="300x200" title1="Listados de código" >}}
+    image1="image:listado-codigo.webp" optionsthumb1="300x200" title1="Listados de código" >}}
 
 ### Portada
 
@@ -87,7 +87,7 @@ Con LyX no podremos crear una portada atractiva dado lo limitado que estamos par
 
 {{< image
     gallery="true"
-    image1="image:libreoffice-plugin.png" optionsthumb1="300x200" title1="Tipografías, LyX" >}}
+    image1="image:libreoffice-plugin.webp" optionsthumb1="300x200" title1="Tipografías, LyX" >}}
 
 ### Corrector ortográfico
 

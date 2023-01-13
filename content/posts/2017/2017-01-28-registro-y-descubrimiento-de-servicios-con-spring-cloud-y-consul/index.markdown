@@ -32,7 +32,7 @@ Consul además de descubrimiento de servicios proporciona otras funcionalidades 
 
 {{< image
     gallery="false"
-    image1="image:consul.png" optionsthumb1="300x250" title1="Consul" >}}
+    image1="image:consul.webp" optionsthumb1="300x250" title1="Consul" >}}
 
 Instalar Consul es muy sencillo basta con [descargar un binario](https://www.consul.io/downloads.html) y descargar la interfaz web si queremos tener el _dashboard_ con la información del servicio. Descargados y descomprimidos Consul se inicia con el siguiente comando. Podemos acceder al panel _dashboard_ con la dirección _http\://localhost:8500_ con un navegador web. Inicialmente en el panel de servicios solo se encuentra el propio de Consul cuando aún no se ha registrado ningún servicio, aplicación o microservicio.
 
@@ -47,7 +47,7 @@ Spring Cloud proporciona además un servicio que podemos usar para conocer los s
 
 {{< image
     gallery="true"
-    image1="image:consul-services.png" optionsthumb1="300x200" title1="Servicios registrados en Consul"
+    image1="image:consul-services.webp" optionsthumb1="300x200" title1="Servicios registrados en Consul"
     caption="Servicios registrados en Consul" >}}
 
 Consul para conocer que los servicios siguen en funcionamiento hace una petición <abbr>HTTP</abbr> cada ciertos segundos a una ruta de la aplicación, Spring Boot proporciona una dependencia, _spring-boot-starter-actuator_, que usada provee del _endpoint /health_ para que Consul monitorice el estado del servicio.
@@ -56,7 +56,7 @@ Consul para conocer que los servicios siguen en funcionamiento hace una petició
 
 {{< image
     gallery="true"
-    image1="image:service-health.png" optionsthumb1="300x200" title1="Endpoint de estado de servicio"
+    image1="image:service-health.webp" optionsthumb1="300x200" title1="Endpoint de estado de servicio"
     caption="Endpoint de estado de servicio" >}}
 
 Esta es la salida en la consola listando los servicios disponibles, siendo uno de ellos esta aplicación.

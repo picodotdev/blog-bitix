@@ -12,7 +12,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:windows-10-wallpaper.jpg"
+imageHead: "image:windows-10-wallpaper.webp"
 imagePost: "logotype:microsoft.svg"
 tags: ["microsoft", "planeta-codigo", "windows"]
 summary: "Windows 10 y Microsoft Office 2019 son productos de software con una licencia privativa, para usarlos de forma legal es necesario comprar una licencia que permita activarlos. Recurrir a activadores de estos productos para evitar pagar la licencia no es recomendable ya que son una fuente de entrada de virus informáticos con un peligro importante para la seguridad del equipo y la importancia de las tareas que realizamos actualmente en él, como compras o consultas bancarias. Una sentencia del tribunal europeo del 2012 permite a vendedores de terceros ofrecer licencias de Windows 10 y Microsoft Office 2019 a precios significativamente más baratos para activar estos productos de forma completamente legal."
@@ -110,9 +110,9 @@ Windows 10 se puede activar durante la instalación o una vez instalado seleccio
 
 {{< image
     gallery="true"
-    image1="image:activacion-windows-10-instalacion.png" optionsthumb1="200x150" title1="Activación de Windows durante la instalación"
-    image2="image:activacion-windows-10-1.png" optionsthumb2="200x150" title2="Activación de Windows"
-    image3="image:activacion-windows-10-2.png" optionsthumb3="200x150" title3="Activación de Windows"
+    image1="image:activacion-windows-10-instalacion.webp" optionsthumb1="200x150" title1="Activación de Windows durante la instalación"
+    image2="image:activacion-windows-10-1.webp" optionsthumb2="200x150" title2="Activación de Windows"
+    image3="image:activacion-windows-10-2.webp" optionsthumb3="200x150" title3="Activación de Windows"
     caption="Activación de Windows durante la instalación y una vez instalado" >}}
 
 El siguiente comando ejecutado desde utilidad _Símbolo del sistema_ permite obtener el código de activación de Windows 10.
@@ -123,8 +123,8 @@ Una vez instalado Microsoft Office al abrir una las aplicaciones de la _suite_ o
 
 {{< image
     gallery="true"
-    image1="image:activacion-microsoft-office-1.png" optionsthumb1="200x150" title1="Activación de Microsoft Office 2019"
-    image2="image:activacion-microsoft-office-2.png" optionsthumb2="200x150" title2="Activación de Microsoft Office 2019"
+    image1="image:activacion-microsoft-office-1.webp" optionsthumb1="200x150" title1="Activación de Microsoft Office 2019"
+    image2="image:activacion-microsoft-office-2.webp" optionsthumb2="200x150" title2="Activación de Microsoft Office 2019"
     caption="Activación de Microsoft Office 2019" >}}
 
 {{< reference >}}

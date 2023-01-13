@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-imageHead: "image:windows-10-wallpaper.jpg"
+imageHead: "image:windows-10-wallpaper.webp"
 imagePost: "logotype:microsoft.svg"
 tags: ["microsoft", "opinion", "planeta-codigo", "windows"]
 summary: "Comentaba en un artículo que es sorprendente que Microsoft con la capacidad que tiene y estando los dispositivos conectados a internet mayoritariamente no sea capaz de evitar usar su software sin licencia. Estoy a punto de ver si con Windows 10 y Office 2016 sigue siendo tan fácil como siempre. También tendré una muestra de la injusta fama de Windows pero que permite Microsoft por el _bloatware_ que preinstalan los fabricantes de dispositivos con su sistema operativo."
@@ -52,8 +52,8 @@ Es inicio del 2016 y no he hecho una sino tres instalaciones de Windows y Office
 
 {{< image
     gallery="true"
-    image1="image:windows-10.png" optionsthumb1="300x200" title1="Windows 10"
-    image2="image:microsoft-word-2016.png" optionsthumb2="300x200" title2="Microsoft Word 2016"
+    image1="image:windows-10.webp" optionsthumb1="300x200" title1="Windows 10"
+    image2="image:microsoft-word-2016.webp" optionsthumb2="300x200" title2="Microsoft Word 2016"
     caption="Windows 10 y Microsoft Word 2016" >}}
 
 ### Qué alternativa hay a usar un activador

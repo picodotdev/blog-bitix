@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:nginx-401.png"
+imagePost: "image:nginx-401.webp"
 tags: ["planeta-codigo", "web"]
 ---
 
@@ -26,7 +26,7 @@ Cuando un servidor para el acceso a un recurso requiere autenticación básica e
 
 {{< image
     gallery="true"
-    image1="image:nginx-401.png" optionsthumb1="300x200" title1="Solicitud de credenciales por el navegador con autenticación básica"
+    image1="image:nginx-401.webp" optionsthumb1="300x200" title1="Solicitud de credenciales por el navegador con autenticación básica"
     caption="Solicitud de credenciales por el navegador con autenticación básica" >}}
 
 {{< tableofcontents >}}
@@ -45,8 +45,8 @@ Si los datos proporcionados no son correctos se devuelve el código de estado _4
 
 {{< image
     gallery="true"
-    image1="image:nginx-401.png" optionsthumb1="300x200" title1="Solicitud de credenciales"
-    image2="image:nginx-web.png" optionsthumb2="300x200" title2="Acceso al recurso solicitado"
+    image1="image:nginx-401.webp" optionsthumb1="300x200" title1="Solicitud de credenciales"
+    image2="image:nginx-web.webp" optionsthumb2="300x200" title2="Acceso al recurso solicitado"
     caption="Solicitud de credenciales y acceso al recurso solicitado" >}}
 
 ### Configurar autenticación básica en el servidor web Apache
@@ -61,8 +61,8 @@ En el caso del servidor web Apache las directivas necesarias a añadir en la con
 
 {{< image
     gallery="true"
-    image1="image:apache-401.png" optionsthumb1="300x200" title1="Solicitud de credenciales"
-    image2="image:apache-web.png" optionsthumb2="300x200" title2="Acceso al recurso solicitado"
+    image1="image:apache-401.webp" optionsthumb1="300x200" title1="Solicitud de credenciales"
+    image2="image:apache-web.webp" optionsthumb2="300x200" title2="Acceso al recurso solicitado"
     caption="Solicitud de credeciales y acceso al recurso solicitado" >}}
 
 ### Cómo crear los archivos de credenciales _htpasswd_
@@ -83,7 +83,7 @@ El formulario de autenticación solo se presenta una vez una vez introducidas un
 
 {{< image
     gallery="true"
-    image1="image:nginx-header.png" optionsthumb1="300x200" title1="Cabecera enviada en la petición con las credenciales de acceso al recurso"
+    image1="image:nginx-header.webp" optionsthumb1="300x200" title1="Cabecera enviada en la petición con las credenciales de acceso al recurso"
     caption="Cabecera enviada en la petición con las credenciales de acceso al recurso" >}}
 
 La codificación en base64 no añade seguridad, el valor de la cabecera con las credenciales decodificadas contiene el usuario y la contraseña separados por dos puntos.
@@ -98,7 +98,7 @@ El servidor web indica al navegador que el recurso solicitado requiere autentica
 
 {{< image
     gallery="true"
-    image1="image:http-auth.png" optionsthumb1="650x450" title1="Esquema de peticiones, cabeceras y respuestas del protocolo de autenticación básica"
+    image1="image:http-auth.webp" optionsthumb1="650x450" title1="Esquema de peticiones, cabeceras y respuestas del protocolo de autenticación básica"
     caption="Esquema de peticiones, cabeceras y respuestas del protocolo de autenticación básica" >}}
 
 Cuando no se envían credenciales o se envían unas incorrectas el navegador devuelve un código de estado 401.

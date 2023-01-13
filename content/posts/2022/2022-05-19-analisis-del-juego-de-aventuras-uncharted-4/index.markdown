@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:uncharted-4.jpg"
-imagePost: "image:uncharted-4.jpg"
+imageHead: "image:uncharted-4.webp"
+imagePost: "image:uncharted-4.webp"
 tags: ["juegos"]
 series: ["analisis-juegos", "juegos"]
 summary: "El Uncharted 4 lanzado para la PlayStation 4 tiene una calidad gráfica que destaca sobre los juegos The Uncharted Collection con las remasterizaciones de los tres primeros. La historia gira en torno a los piratas de épocas pasadas y sus tesoros junto a algunos capítulos en los que se conocen más detalles de la juventud de Nathan. Son juegos de aventuras, tesoros y acción que casi parecen una película interviniendo los personajes ya conocidos de entregas anteriores y algunos nuevos. Entre todos los juegos de la serie Uncharted quizá haya uno que guste más que otros en cuanto a historia, secuecias o capítulos pero los cuatro juegos no hay uno malo, todos están a un gran nivel y son una serie de juegos que siguen siendo una buena recomendación para jugar aún después de haberse lanzado la PlayStation 5."
@@ -31,21 +31,21 @@ El juego Uncharted 4 es uno de los juegos imprescindibles de la consola PlayStat
 
 {{< image
     gallery="true"
-    image1="image:uncharted-4.jpg" optionsthumb1="650x450" title1="Pantalla inicial" >}}
+    image1="image:uncharted-4.webp" optionsthumb1="650x450" title1="Pantalla inicial" >}}
 {{< image
     gallery="true"
-    image1="image:uncharted-4-personajes-1.jpg" optionsthumb1="200x150" title1="Personajes"
-    image2="image:uncharted-4-personajes-2.jpg" optionsthumb2="200x150" title2="Personajes"
-    image3="image:uncharted-4-personajes-3.jpg" optionsthumb3="200x150" title3="Personajes" >}}
+    image1="image:uncharted-4-personajes-1.webp" optionsthumb1="200x150" title1="Personajes"
+    image2="image:uncharted-4-personajes-2.webp" optionsthumb2="200x150" title2="Personajes"
+    image3="image:uncharted-4-personajes-3.webp" optionsthumb3="200x150" title3="Personajes" >}}
 {{< image
     gallery="true"
-    image1="image:uncharted-4-personajes-4.jpg" optionsthumb1="200x150" title1="Personajes"
-    image2="image:uncharted-4-personajes-5.jpg" optionsthumb2="200x150" title2="Personajes"
-    image3="image:uncharted-4-personajes-6.jpg" optionsthumb3="200x150" title3="Personajes" >}}
+    image1="image:uncharted-4-personajes-4.webp" optionsthumb1="200x150" title1="Personajes"
+    image2="image:uncharted-4-personajes-5.webp" optionsthumb2="200x150" title2="Personajes"
+    image3="image:uncharted-4-personajes-6.webp" optionsthumb3="200x150" title3="Personajes" >}}
 {{< image
     gallery="true"
-    image1="image:uncharted-4-menu.jpg" optionsthumb1="200x150" title1="Menú"
-    image2="image:uncharted-4-naugthy-dog.jpg" optionsthumb2="200x150" title2="Naugthy Dog"
+    image1="image:uncharted-4-menu.webp" optionsthumb1="200x150" title1="Menú"
+    image2="image:uncharted-4-naugthy-dog.webp" optionsthumb2="200x150" title2="Naugthy Dog"
     caption="Pantalla inicial, personajes y menú" >}}
 
 {{< amazon
@@ -60,24 +60,24 @@ Si uno ha jugado y le han gustado los anteriores juegos de la saga Uncharted es 
 
 {{< image
     gallery="true"
-    image1="image:uncharted-4-nadine.jpg" optionsthumb1="300x250" title1="Nadine"
-    image2="image:uncharted-4-piratas.jpg" optionsthumb2="300x250" title2="Piratas"
+    image1="image:uncharted-4-nadine.webp" optionsthumb1="300x250" title1="Nadine"
+    image2="image:uncharted-4-piratas.webp" optionsthumb2="300x250" title2="Piratas"
     caption="Nadine y los piratas" >}}
 
 El juego al igual que otros anteriores empieza trepidante con una secuencia de acción, y durante el juego se incluyen algunos capítulos de sucesos anteriores algunos en la juventud de Nathan junto a su hermano que cuenta algo más de su vida que algún juego anterior ya desvelaban en parte.
 
 {{< image
     gallery="true"
-    image1="image:uncharted-4-portada.jpg" optionsthumb1="200x150" title1="Portada Uncharted 4"
+    image1="image:uncharted-4-portada.webp" optionsthumb1="200x150" title1="Portada Uncharted 4"
     caption="Portada de Uncharted 4" >}}
 
 Tiene todas las señas de identidad de la saga e incluso mejora algunas. Incluye quizá sino la mejor una de las mejores persecuciones de toda la saga y sus puzzles también son elaborados y de lo mejor de todos juegos. La historia de piratas es excepcional quizá sin llegar al dramatismo o emotividad del TLoU pero también con su punto emocional y sentimientos de Nathan, Elena y Sam. Aparte de estos personajes aparece algún personaje nuevo como Nadine que acompaña a Chloe en otras aventuras en la continuación de este juego.
 
 {{< image
     gallery="true"
-    image1="image:uncharted-4-frase.jpg" optionsthumb1="200x150" title1="Inicio del juego"
-    image2="image:uncharted-4-inicio-1.jpg" optionsthumb2="200x150" title2="Inicio del juego"
-    image3="image:uncharted-4-inicio-2.jpg" optionsthumb3="200x150" title3="Inicio del juego"
+    image1="image:uncharted-4-frase.webp" optionsthumb1="200x150" title1="Inicio del juego"
+    image2="image:uncharted-4-inicio-1.webp" optionsthumb2="200x150" title2="Inicio del juego"
+    image3="image:uncharted-4-inicio-2.webp" optionsthumb3="200x150" title3="Inicio del juego"
     caption="Inicio del juego" >}}
 
 Sin llegar a ser un juego de mundo abierto en algunos puntos el juego ofrece un mapa más abierto con algo más libertad de exploración y que camino elegir para avanzar sin estar tan dirigida por los límites del escenario del mapa. Nathan junto a su hermano va descubriendo pistas hasta conocer la ubicación donde Avery escondió su tesoro lugar en el que conocerán varias pistas de que cual fue si historia junto con el resto de piratas.
@@ -90,8 +90,8 @@ Sin embargo, si se prefiere el combate de disparos el juego incluye una variedad
 
 {{< image
     gallery="true"
-    image1="image:uncharted-4-puzzle-1.jpg" optionsthumb1="200x150" title1="Puzzle"
-    image2="image:uncharted-4-puzzle-2.jpg" optionsthumb2="200x150" title2="Puzzle"
+    image1="image:uncharted-4-puzzle-1.webp" optionsthumb1="200x150" title1="Puzzle"
+    image2="image:uncharted-4-puzzle-2.webp" optionsthumb2="200x150" title2="Puzzle"
     caption="Puzzle" >}}
 
 Después de los tres primeros juegos se podría decir que ya está serie no da más de sí y tiene todo inventado, pero no, incorpora numerosas novedades y no solo son mejores gráficos. La historia creo que también está un incluso mejor nivel que es muy buena aún sin ser la de TLoU también tiene ciertos puntos emocionales, junto a las novedades en la forma de superar obstáculos y poder emplear el sigilo completan algunos elementos que faltan en los juegos anteriores.
@@ -100,13 +100,13 @@ Como en anteriores juegos gran parte del tiempo se dedica a rebuscar por todos l
 
 {{< image
     gallery="true"
-    image1="image:uncharted-4-sigilo-1.jpg" optionsthumb1="200x150" title1="Sigilo"
-    image2="image:uncharted-4-sigilo-2.jpg" optionsthumb2="200x150" title2="Sigilo" >}}
+    image1="image:uncharted-4-sigilo-1.webp" optionsthumb1="200x150" title1="Sigilo"
+    image2="image:uncharted-4-sigilo-2.webp" optionsthumb2="200x150" title2="Sigilo" >}}
 {{< image
     gallery="true"
-    image1="image:uncharted-4-cuerda.jpg" optionsthumb1="200x150" title1="Habilidades"
-    image2="image:uncharted-4-deslizamiento.jpg" optionsthumb2="200x150" title2="Habilidades"
-    image3="image:uncharted-4-roca-porosa.jpg" optionsthumb3="200x150" title3="Habilidades"
+    image1="image:uncharted-4-cuerda.webp" optionsthumb1="200x150" title1="Habilidades"
+    image2="image:uncharted-4-deslizamiento.webp" optionsthumb2="200x150" title2="Habilidades"
+    image3="image:uncharted-4-roca-porosa.webp" optionsthumb3="200x150" title3="Habilidades"
     caption="Sigilo y habilidades" >}}
 
 Tiene un salto de calidad importante respecto a los anteriores Uncharted, posiblemente uno de los juegos con mejores gráficos para la consola PS4 y que muestra todo el potencial de lo que es capaz, tanto que en algunos puntos los fotogramas por segundo bajan. Algunas veces uno se para a observar los varios detalles del escenario y sacar algunas capturas. Si esto es lo que ofrece una PS4 cuando se expriman las PS5 van a ser brutales. Los gráficos son incluso mejor que en [The Last of Us](https://www.igdb.com/games/the-last-of-us-remastered) y [Horizon Zero Dawn](https://www.igdb.com/games/horizon-zero-dawn) que ya eran muy decentes, aunque respecto al primero de estos es lógico ya que era un _remaster_. La música y banda sonora está al mismo nivel del juego ambientando los momentos de acción.
@@ -116,8 +116,8 @@ Tiene un salto de calidad importante respecto a los anteriores Uncharted, posibl
 
 {{< image
     gallery="true"
-    image1="image:uncharted-4-graficos-1.jpg" optionsthumb1="200x150" title1="Calidad gráfica del juego"
-    image2="image:uncharted-4-graficos-2.jpg" optionsthumb2="200x150" title2="Calidad gráfica del juego"
+    image1="image:uncharted-4-graficos-1.webp" optionsthumb1="200x150" title1="Calidad gráfica del juego"
+    image2="image:uncharted-4-graficos-2.webp" optionsthumb2="200x150" title2="Calidad gráfica del juego"
     caption="Calidad gráfica del juego" >}}
 
 #### Otros juegos relacionados con la saga
@@ -126,7 +126,7 @@ Se supone que el Uncharted 4 es el último de los juegos de la saga de Nathan pe
 
 {{< image
     gallery="true"
-    image1="image:uncharted-the-lost-legacy.jpg" optionsthumb1="200x150" title1="Uncharted: El legado perdido"
+    image1="image:uncharted-the-lost-legacy.webp" optionsthumb1="200x150" title1="Uncharted: El legado perdido"
     caption="Uncharted: El legado perdido" >}}
 
 ### Coleccionables
@@ -135,12 +135,12 @@ Muchos tesoros y coleccionables están en puntos por los que hay que pasar para 
 
 {{< image
     gallery="true"
-    image1="image:uncharted-4-tesoros-1.jpg" optionsthumb1="200x150" title1="Coleccionables del juego"
-    image2="image:uncharted-4-tesoros-2.jpg" optionsthumb2="200x150" title2="Coleccionables del juego"
-    image3="image:uncharted-4-notas.jpg" optionsthumb3="200x150" title3="Coleccionables del juego" >}}
+    image1="image:uncharted-4-tesoros-1.webp" optionsthumb1="200x150" title1="Coleccionables del juego"
+    image2="image:uncharted-4-tesoros-2.webp" optionsthumb2="200x150" title2="Coleccionables del juego"
+    image3="image:uncharted-4-notas.webp" optionsthumb3="200x150" title3="Coleccionables del juego" >}}
 {{< image
     gallery="true"
-    image1="image:uncharted-4-conversaciones-opcionales.jpg" optionsthumb1="200x150" title1="Coleccionables del juego"
+    image1="image:uncharted-4-conversaciones-opcionales.webp" optionsthumb1="200x150" title1="Coleccionables del juego"
     caption="Coleccionables del juego" >}}
 
 {{< youtube

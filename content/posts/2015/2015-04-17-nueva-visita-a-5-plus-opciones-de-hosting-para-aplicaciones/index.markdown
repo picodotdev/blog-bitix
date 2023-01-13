@@ -52,9 +52,9 @@ En Amazon EC2 el coste puede variar dependiendo de los recursos que reservemos, 
 
 {{< image
     gallery="false"
-    image1="logotype:amazon-web-services.png" optionsthumb1="268x118" title1="Amazon Web Services"
-    image2="logotype:microsoft-azure.png" optionsthumb2="218x118" title2="Microsoft Azure"
-    image3="logotype:google-cloud.png" optionsthumb3="401x66" title3="Google Cloud" >}}
+    image1="logotype:amazon-web-services.webp" optionsthumb1="268x118" title1="Amazon Web Services"
+    image2="logotype:microsoft-azure.webp" optionsthumb2="218x118" title2="Microsoft Azure"
+    image3="logotype:google-cloud.webp" optionsthumb3="401x66" title3="Google Cloud" >}}
 
 ### Linode, Digital Ocean
 
@@ -64,8 +64,8 @@ Estas opciones son totalmente válidas tanto para proyectos personales como un b
 
 {{< image
     gallery="false"
-    image1="logotype:linode.png" optionsthumb1="268x117" title1="Linode"
-    image2="logotype:digital-ocean.png" optionsthumb2="218x144" title2="Digital Ocean" >}}
+    image1="logotype:linode.webp" optionsthumb1="268x117" title1="Linode"
+    image2="logotype:digital-ocean.webp" optionsthumb2="218x144" title2="Digital Ocean" >}}
 
 ### Otras
 

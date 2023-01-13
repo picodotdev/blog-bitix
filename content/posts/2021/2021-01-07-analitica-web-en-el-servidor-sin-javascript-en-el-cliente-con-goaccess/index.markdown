@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:goaccess-web-1.png"
+imagePost: "image:goaccess-web-1.webp"
 tags: ["planeta-codigo", "web"]
 summary: "Google Analytics es la herramienta más utilizada para implementar la funcionalidad de analítica en un sitio web. Es fácil de usar, de implementar, no requiere mantenimiento de infraestructura propia, es gratuita, ofrece numerosas funcionalidades que ayudan enormemente a obtener información del sitio web, de los usuarios, obtener informes. Sin embargo, Google Analytics es una tercera parte con la que se comparte la información del sitio web que supone una pérdida de privacidad y protección de datos del sitio web y requiere instalar un _script_ de JavaScript que ralentiza la carga de las páginas web. GoAccess ofrece analítica web en tiempo real que al contrario que Analytics obtiene los datos únicamente desde el lado del servidor basándose en los archivos del log del servidor web, es software libre y es utilizable sin necesidad de involucrar a terceras partes."
 ---
@@ -31,7 +31,7 @@ La herramienta más utilizada para hacer analítica web es [Google Analytics][go
 
 {{< image
     gallery="true"
-    image1="image:google-analytics.png" optionsthumb1="300x200" title1="Goolge Analytics"
+    image1="image:google-analytics.webp" optionsthumb1="300x200" title1="Goolge Analytics"
     caption="Goolge Analytics" >}}
 
 Basta con tener una cuenta de Google para tener acceso a Google Analytics. Para integrarlo en un sitio web únicamente requiere insertar el _script_ de JavaScript proporcionado por Google Analytics al configurar el sitio web en todas las páginas del sitio web. Este _script_ se ejecuta en el navegador del usuario, recopila información y la envía a Google para su procesamiento y generación de la analítica web.
@@ -105,7 +105,7 @@ Es posible navegar entre los diferentes paneles de analítica pulsando varias te
 
 {{< image
     gallery="true"
-    image1="image:goaccess-terminal-1.png" optionsthumb1="300x200" title1="Interfaz consola de analítica GoAccess"
+    image1="image:goaccess-terminal-1.webp" optionsthumb1="300x200" title1="Interfaz consola de analítica GoAccess"
     caption="Interfaz consola de analítica GoAccess" >}}
 
 #### Interfaz de navegador web
@@ -116,9 +116,9 @@ Para ello genera un archivo html de informe con los datos que se ha de servir de
 
 {{< image
     gallery="true"
-    image1="image:nginx.png" optionsthumb1="200x150" title1="Sitio web con Nginx"
-    image2="image:goaccess-web-1.png" optionsthumb2="200x150" title2="Interfaz web de analítica GoAccess"
-    image3="image:goaccess-web-2.png" optionsthumb3="200x150" title3="Interfaz web de analítica GoAccess"
+    image1="image:nginx.webp" optionsthumb1="200x150" title1="Sitio web con Nginx"
+    image2="image:goaccess-web-1.webp" optionsthumb2="200x150" title2="Interfaz web de analítica GoAccess"
+    image3="image:goaccess-web-2.webp" optionsthumb3="200x150" title3="Interfaz web de analítica GoAccess"
     caption="Sitio web e interfaz web de analítica GoAccess" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/GoAccess" command="./docker-compose up" %}}

@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:uhs-sdxc.png"
+imagePost: "image:uhs-sdxc.webp"
 tags: ["gnu-linux", "hardware"]
 summary: "En un dispositivo de almacenamiento hay que tener en cuenta el tipo de la interfaz del dispositivo que determina la tasa de transferencia máxima teórica, el tipo de almacenamiento que determina en qué rangos de tasa de transferencia ofrecen la mayoría de dispositivos, el dispositivo en concreto que dependiendo del fabricante y calidad determina en qué parte del rango está la tasa de transferencia el modelo usado, la capacidad de almacenamiento y finalmente el precio que está en función de todo lo anterior."
 ---
@@ -164,15 +164,15 @@ Estas son las tasas de transferencia que he obtenido para un disco duro externo 
 
 {{< image
     gallery="true"
-    image1="image:opciones-prueba-de-rendimiento.png" optionsthumb1="300x200" title1="Opciones de la pruebas de rendimiento" >}}
+    image1="image:opciones-prueba-de-rendimiento.webp" optionsthumb1="300x200" title1="Opciones de la pruebas de rendimiento" >}}
 {{< image
     gallery="true"
-    image1="image:usb-20-hdd.png" optionsthumb1="300x200" title1="Prueba de velocidad de HDD"
-    image2="image:usb-20-memory.png" optionsthumb2="300x200" title2="Prueba de velocidad de memoria USB" >}}
+    image1="image:usb-20-hdd.webp" optionsthumb1="300x200" title1="Prueba de velocidad de HDD"
+    image2="image:usb-20-memory.webp" optionsthumb2="300x200" title2="Prueba de velocidad de memoria USB" >}}
 {{< image
     gallery="true"
-    image1="image:uhs-sd.png" optionsthumb1="300x200" title1="Prueba de velocidad de tarjeta micro SD"
-    image2="image:uhs-sdxc.png" optionsthumb2="300x200" title2="Prueba de velocidad de tarjeta SDXC"
+    image1="image:uhs-sd.webp" optionsthumb1="300x200" title1="Prueba de velocidad de tarjeta micro SD"
+    image2="image:uhs-sdxc.webp" optionsthumb2="300x200" title2="Prueba de velocidad de tarjeta SDXC"
     caption="Pruebas de velocidad de HDD, memoria USB, tarjeta SD y SDXC" >}}
 
 El uso que le iba a dar a una tarjeta micro SD de tipo SDXC era como almacenamiento para un _smartphone_ pero como finalmente [compré un Samsung Galaxy S21 FE][blogbitix-633] que no dispone memoria ampliable con tarjeta micro SD he tenido que reutilizar la tarjeta para otro propósito.

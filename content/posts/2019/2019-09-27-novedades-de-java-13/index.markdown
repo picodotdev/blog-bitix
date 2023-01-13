@@ -11,8 +11,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:java-13.jpg"
-imagePost: "image:java-13.jpg"
+imageHead: "image:java-13.webp"
+imagePost: "image:java-13.webp"
 tags: ["java", "planeta-codigo", "programacion"]
 series: ["java-platform"]
 ---

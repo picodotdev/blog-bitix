@@ -12,7 +12,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:quercus-robur.png"
+imagePost: "logotype:quercus-robur.webp"
 tags: ["fuera-de-tema"]
 series: ["quercus-robur"]
 summary: "Las semillas de roble son sencillas de hacer germinar, básicamente lo único que necesitan es humedad durante unas semanas. Puede emplearse algodón u otro material que haga que la bellota permanezca húmeda. En el caso de querer hacer germinar muchas bellotas el algodón en mis pruebas no es lo más adecuado por tener que gastar este elemento y no ofrecer el mejor resultado. No hace falta más que una simple bolsa de plástico cerrada con algo de agua sin que las belletas esten encharcadas pero si húmedas es suficiente y da muy buen resultado."
@@ -28,8 +28,8 @@ En el caso de las semillas de roble común o _quercus robur_, que serán las que
 
 {{< image
     gallery="true"
-    image1="image:roble.jpg" optionsthumb1="300x200" title1="Ejemplar grande de roble"
-    image2="image:roble-hojas.jpg" optionsthumb2="300x200" title2="Hojas y bellotas de roble"
+    image1="image:roble.webp" optionsthumb1="300x200" title1="Ejemplar grande de roble"
+    image2="image:roble-hojas.webp" optionsthumb2="300x200" title2="Hojas y bellotas de roble"
     caption="Roble, hojas y bellotas" >}}
 
 ### Selección de semillas
@@ -38,8 +38,8 @@ Para obtener una mayor tasa de éxito en la germinación hay que averiguar cuale
 
 {{< image
     gallery="true"
-    image1="image:prueba-viabilidad-semillas-1.jpg" optionsthumb1="300x200" title1="Prueba de viabilidad de semillas"
-    image2="image:prueba-viabilidad-semillas-2.jpg" optionsthumb2="300x200" title2="Prueba de viabilidad de semillas (algunas flotan)"
+    image1="image:prueba-viabilidad-semillas-1.webp" optionsthumb1="300x200" title1="Prueba de viabilidad de semillas"
+    image2="image:prueba-viabilidad-semillas-2.webp" optionsthumb2="300x200" title2="Prueba de viabilidad de semillas (algunas flotan)"
     caption="Prueba de viabilidad de semmillas" >}}
 
 Si la semilla todavía tiene alguna parte de color verde en unos días adquiere el color pardo. Las semillas que tiene un color marrón ya claro se trata de una de la temporada anterior, hay que recolectar las semillas de la temporada actual ya que las de la temporada anterior pierden de su poder de germinación. Tiene que estar sin agujeros que estén causados por algún bicho o grietas para que no estén podridas.
@@ -50,9 +50,9 @@ La época que los robles comunes generan las semillas son a finales de septiembr
 
 {{< image
     gallery="true"
-    image1="image:recogida-bellotas-1.jpg" optionsthumb1="300x200" title1="Recogida de bellotas"
-    image2="image:recogida-bellotas-2.jpg" optionsthumb2="300x200" title2="Recogida de bellotas"
-    image3="image:bellotas.jpg" optionsthumb3="300x200" title3="Bellotas"
+    image1="image:recogida-bellotas-1.webp" optionsthumb1="300x200" title1="Recogida de bellotas"
+    image2="image:recogida-bellotas-2.webp" optionsthumb2="300x200" title2="Recogida de bellotas"
+    image3="image:bellotas.webp" optionsthumb3="300x200" title3="Bellotas"
     caption="Recogida y comparación de bellotas" >}}
 
 ### Germinación
@@ -69,8 +69,8 @@ No todas las semillas germinarán pero las bellotas de roble tienen una buena ta
 
 {{< image
     gallery="true"
-    image1="image:bolsa-plastico-germinacion.jpg" optionsthumb1="300x200" title1="Germinación con bolsa de plástico"
-    image2="image:bellotas-germinando.jpg" optionsthumb2="300x200" title2="Bellotas germinando"
+    image1="image:bolsa-plastico-germinacion.webp" optionsthumb1="300x200" title1="Germinación con bolsa de plástico"
+    image2="image:bellotas-germinando.webp" optionsthumb2="300x200" title2="Bellotas germinando"
     caption="Germinación con bolsa de plástico y bellotas germinando" >}}
 
 ### Plantación
@@ -81,7 +81,7 @@ Como recipiente para plantar las semillas en el caso de los robles comunes es re
 
 {{< image
     gallery="true"
-    image1="image:tiesto-carton-leche.jpg" optionsthumb1="300x200" title1="Tiesto con cartón de leche"
+    image1="image:tiesto-carton-leche.webp" optionsthumb1="300x200" title1="Tiesto con cartón de leche"
     caption="Tiesto con cartón de leche de 1 litro" >}}
 
 Una vez plantadas no hace falta regarlas mucho una vez a la semana sin demasiada abundancia. Los plantones de roble deben tener luz pero no estar expuestos directamente la luz del sol y protegerlos de las heladas los días que haga mucho frío. Al lado de una ventana o en un balcón debería ser suficiente.

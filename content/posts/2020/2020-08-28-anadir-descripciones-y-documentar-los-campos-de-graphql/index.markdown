@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:graphiql-documentation.png"
+imagePost: "image:graphiql-documentation.webp"
 tags: ["java", "planeta-codigo"]
 series: ["graphql"]
 summary: "A diferencia de una API basada REST una API basada GraphQL posee un esquema en el que quedan definidos los tipos, propiedades y tipos de esas propiedades. Para suplir las carencias de una API basada en REST se suele utilizar #Swagger como documentación y entorno de pruebas. GraphQL incluye la documentación en el propio código fuente y ofrece un IDE sin necesidad de herramientas adicionales. En el propio esquema de la API basada en GraphQL se pueden añadir descripciones a los tipos y propiedades para mayor detalle."
@@ -40,8 +40,8 @@ Una vez añadidos los comentarios tanto en [el IDE de GraphiQL][blogbitix-340] c
 
 {{< image
     gallery="true"
-    image1="image:graphiql-documentation.png" optionsthumb1="300x200" title1="Editor GraphiQL mostrando la descripción de los campos"
-    image2="image:graphiql-type.png" optionsthumb2="300x200" title2="Consulta e GraphiQL para inspeccionar un tipo"
+    image1="image:graphiql-documentation.webp" optionsthumb1="300x200" title1="Editor GraphiQL mostrando la descripción de los campos"
+    image2="image:graphiql-type.webp" optionsthumb2="300x200" title2="Consulta e GraphiQL para inspeccionar un tipo"
     caption="Editor GraphiQL mostrando la descripción de los campos" >}}
 
 Poner nombres semánticos y significativos a los tipos y propiedades es una gran ayuda, para mayor detalle, aclaraciones y puntualizaciones están las descripciones que se pueden añadir en GraphQL.

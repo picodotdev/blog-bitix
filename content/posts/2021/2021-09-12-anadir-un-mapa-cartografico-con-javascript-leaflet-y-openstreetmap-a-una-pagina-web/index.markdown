@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:leaflet-openstreetmaps.png"
-imagePost: "image:leaflet-openstreetmaps.png"
+imageHead: "image:leaflet-openstreetmaps.webp"
+imagePost: "image:leaflet-openstreetmaps.webp"
 tags: ["planeta-codigo", "web"]
 summary: "Google Maps es un servicio de mapas cartográficos de Google que permite consultar mapas directamente desde la página de Google pero también insertarlo en páginas de terceros. En el caso de insertar mapas en una página de terceros como muchos de otros de sus servicios ofrece con una capa gratuita que cubre un pequeño número de peticiones. Aunque OpenStreetMap no ofrece el mismo nivel de detalle y calidad de la información que Google Maps permite su uso sin coste incluso con fines comerciales suficiente en muchos casos."
 ---
@@ -38,7 +38,7 @@ Insertar el mapa requiere importar el JavaScript y el CSS de Leaflet en la pági
 
 {{< image
     gallery="true"
-    image1="image:leaflet-openstreetmap.jpg" optionsthumb1="650x450" title1="Mapas de OpenStreetMaps en vista callejero con Leaflet"
+    image1="image:leaflet-openstreetmap.webp" optionsthumb1="650x450" title1="Mapas de OpenStreetMaps en vista callejero con Leaflet"
     caption="Mapas de OpenStreetMap en vista callejero con Leaflet" >}}
 
 {{< code file="leaflet-openstreetmap.html" language="html" options="" >}}
@@ -52,8 +52,8 @@ No he visto que OpenStreetMap ofrezca una vista aérea en modo satélite de las 
 
 {{< image
     gallery="true"
-    image1="image:leaflet-google-maps.jpg" optionsthumb1="300x250" title1="Mapas de Google en vista callejero"
-    image2="image:leaflet-google-maps-hybrid.jpg" optionsthumb2="300x250" title2="Mapas de Google en vista satélite"
+    image1="image:leaflet-google-maps.webp" optionsthumb1="300x250" title1="Mapas de Google en vista callejero"
+    image2="image:leaflet-google-maps-hybrid.webp" optionsthumb2="300x250" title2="Mapas de Google en vista satélite"
     caption="Mapas de Google en vista callejero y satélite" >}}
 
 {{< code file="leaflet-google-maps.html" language="html" options="" >}}

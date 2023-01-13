@@ -75,8 +75,8 @@ En sus respectivas páginas de manual, `man [comando]`, podemos conocer las opci
 
 {{< image
     gallery="true"
-    image1="image:comandos-gnu-linux.png" optionsthumb1="300x200" title1="Uso de comandos GNU/Linux"
-    image2="image:man-grep.png" optionsthumb2="300x200" title2="Página de manual de grep"
+    image1="image:comandos-gnu-linux.webp" optionsthumb1="300x200" title1="Uso de comandos GNU/Linux"
+    image2="image:man-grep.webp" optionsthumb2="300x200" title2="Página de manual de grep"
     caption="Uso de comandos GNU/Linux y página del manual de grep" >}}
 
 {{< reference >}}

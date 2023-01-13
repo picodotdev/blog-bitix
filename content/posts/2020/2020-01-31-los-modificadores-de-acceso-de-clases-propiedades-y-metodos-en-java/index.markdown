@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:java-access-specifier.jpg"
+imagePost: "image:java-access-specifier.webp"
 tags: ["java", "planeta-codigo", "programacion"]
 ---
 
@@ -80,7 +80,7 @@ En este gráfico hay representados paquetes que contienen clases, clases con rec
 
 {{< image
     gallery="true"
-    image1="image:java-access-specifier.jpg" optionsthumb1="600x450" title1="Modificadores de acceso en Java"
+    image1="image:java-access-specifier.webp" optionsthumb1="600x450" title1="Modificadores de acceso en Java"
     caption="Modificadores de acceso en Java" source="wikipedia.org" >}}
 
 Una detalle a tener en cuenta es que los modificadores afectan a las clases, una propiedad privada de una clase es accesible para todas las instancias de esa clase. En concreto, este código es válido y el resultado es _two_, _bar1_ puede acceder a la propiedad _thing_ de la instancia _bar2_ aún siendo privada en la clase.

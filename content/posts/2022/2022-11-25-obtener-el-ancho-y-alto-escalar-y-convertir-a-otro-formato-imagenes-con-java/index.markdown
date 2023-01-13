@@ -88,7 +88,7 @@ Dependiendo de las opciones empleadas en el escalado la calidad y tamaño result
 
 {{< image
     gallery="true"
-    image1="image:gnome-scaled-java.jpg" optionsthumb1="650x450" title1="Imagen escalada con Java"
+    image1="image:gnome-scaled-java.webp" optionsthumb1="650x450" title1="Imagen escalada con Java"
     caption="Imagen escalada con Java" >}}
 
 #### Cambiar el formato de una imagen
@@ -113,9 +113,9 @@ El tamaño de la imagen escalada por el código Java es de 28 KB, el tamaño de 
 
 {{< image
     gallery="true"
-    image1="image:gnome-scaled-thumbnailator.jpg" optionsthumb1="200x150" title1="Imagen escalada con Thumbnailator"
-    image2="image:gnome-scaled-twelvemonkeys.jpg" optionsthumb2="200x150" title2="Imagen escalada con Twelvemonkeys"
-    image3="image:gnome-scaled-imagemagick.jpg" optionsthumb3="200x150" title3="Imagen escalada con ImageMagick y Java"
+    image1="image:gnome-scaled-thumbnailator.webp" optionsthumb1="200x150" title1="Imagen escalada con Thumbnailator"
+    image2="image:gnome-scaled-twelvemonkeys.webp" optionsthumb2="200x150" title2="Imagen escalada con Twelvemonkeys"
+    image3="image:gnome-scaled-imagemagick.webp" optionsthumb3="200x150" title3="Imagen escalada con ImageMagick y Java"
     caption="Imagen escaladas con diferentes librerías (Thumbnailator, Twelvemonkeys y ImageMagick)" >}}
 
 #### Usando ImageMagick

@@ -37,7 +37,7 @@ En este ejemplo solo se firma el contenido del mensaje quedando fuera de la firm
 
 {{< image
     gallery="true"
-    image1="image:gpg-verify.png" optionsthumb1="300x200" title1="Verificación de la firma GPG del correo electrónico"
+    image1="image:gpg-verify.webp" optionsthumb1="300x200" title1="Verificación de la firma GPG del correo electrónico"
     caption="Verificación de la firma GPG del correo electrónico" >}}
 
 En el anillo de claves de GPG la clave que usemos para firmar no ha de tener _passphrase_ de lo contrario cuando se ejecute el comando GPG la solicitará en una ventana emergente. Aunque con las opciones `--passphrase` y `--batch` no debería solicitarla no he conseguido evitarlo.

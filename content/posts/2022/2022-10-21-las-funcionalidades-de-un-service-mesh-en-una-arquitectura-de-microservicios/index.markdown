@@ -101,7 +101,7 @@ Al iniciar la máquina virtual se aprovisiona, con Vagrant simplemente consiste 
 
 {{< image
     gallery="true"
-    image1="image:virtualbox.png" optionsthumb1="650x450" title1="VirtualBox"
+    image1="image:virtualbox.webp" optionsthumb1="650x450" title1="VirtualBox"
     caption="VirtualBox" >}}
 
 #### Inicio de Consul y Nomad y microservicios del ejemplo
@@ -126,8 +126,8 @@ Tanto Consul como Nomad ofrecen una interfaz web para consultar el estado de los
 
 {{< image
     gallery="true"
-    image1="image:consul.png" optionsthumb1="300x200" title1="Consul"
-    image2="image:nomad.png" optionsthumb2="300x200" title2="Nomad"
+    image1="image:consul.webp" optionsthumb1="300x200" title1="Consul"
+    image2="image:nomad.webp" optionsthumb2="300x200" title2="Nomad"
     caption="Consul y Nomad" >}}
 
 #### Inicio de Prometheus y Jaeger
@@ -146,7 +146,7 @@ Jaeger ofrece una interfaz web en el puerto 16686 para visualizar la trazabilida
 
 {{< image
     gallery="true"
-    image1="image:jaeger.png" optionsthumb1="650x450" title1="Jaeger"
+    image1="image:jaeger.webp" optionsthumb1="650x450" title1="Jaeger"
     caption="Jaeger" >}}
 
 #### Inicio de los servicios _frontend_ y _backend_
@@ -161,7 +161,7 @@ La definición del job de Nomad que engloba ambos servicios es la siguiente. Con
 {{< code file="birds.nomad" language="hcl" options="" >}}
 {{< image
     gallery="true"
-    image1="image:birds-v1-1.png" optionsthumb1="650x450" title1="Frontend con datos de la versión v1 del backend"
+    image1="image:birds-v1-1.webp" optionsthumb1="650x450" title1="Frontend con datos de la versión v1 del backend"
     caption="Frontend con datos de la versión v1 del backend" >}}
 
 #### Demostraciones de las funcionalidades del _service mesh_
@@ -170,7 +170,7 @@ A la aplicación se accede a través del servicio de _ingress-gateway_ en el pue
 
 {{< image
     gallery="true"
-    image1="image:consul-topology-1.png" optionsthumb1="650x450" title1="Toppología de un servicio y métricas en Consul"
+    image1="image:consul-topology-1.webp" optionsthumb1="650x450" title1="Toppología de un servicio y métricas en Consul"
     caption="Toppología de un servicio y métricas en Consul" >}}
 
 Al arrancar Consul en modo desarrollo el comportamiento por defecto es permitir la comunicación entre los servicios, en una configuración en grado de producción por el contrario por defecto no se permite.
@@ -181,28 +181,28 @@ El tráfico entre los servicios a través de los _sidecar proxy_ realizan la com
 
 {{< image
     gallery="true"
-    image1="image:consul-intentions.png" optionsthumb1="650x450" title1="Intenciones en Consul"
+    image1="image:consul-intentions.webp" optionsthumb1="650x450" title1="Intenciones en Consul"
     caption="Intenciones en Consul" >}}
 
 Consul exporta métricas en formato Prometheus que el servidor de Prometheus recolecta de forma periódica, esta información puede ser visualizada con una herramienta como Grafana. También el propio Consul permite obtener una métricas básicas del servicio como el número de peticiones que se están realizando, tasa de errores y latencia agrupadas por percentiles. Esta información es muy valiosa ya que permite monitorizar el estado del servicio.
 
 {{< image
     gallery="true"
-    image1="image:consul-topology-2.png" optionsthumb1="650x450" title1="Métricas de Prometheus en Consul"
+    image1="image:consul-topology-2.webp" optionsthumb1="650x450" title1="Métricas de Prometheus en Consul"
     caption="Métricas de Prometheus en Consul" >}}
 
 Consul y los _sidecar proxy_ de Envoy ofrecen soporte para trazabilidad con Zipkin junto con cierto soporte de los propios servicios la trazabilidad es enviada a un servidor como Jaeger que permite visualizar y relacionar las llamadas entre los diferentes servicios. Desde que entra por el _ingress-gateway_ hasta que llega al _backend_ pasando por el servicio de _frontend_ asi como el tiempo empleado en cada uno de ellos.
 
 {{< image
     gallery="true"
-    image1="image:jaeger.png" optionsthumb1="650x450" title1="Trazabilidad en Jarger"
+    image1="image:jaeger.webp" optionsthumb1="650x450" title1="Trazabilidad en Jarger"
     caption="Trazabilidad en Jarger" >}}
 
 Consul conoce y monitoriza el estado de todos los servicios, a los servicios que presenten un mal funcionamiento no se les envía tráfico para evitar errores y tener resiliencia aún con fallos parciales. Consul realiza peticiones de estado de salud de forma activa de forma periódica generalmente cada pocos segundos, para comprobar el estado de cada servicio. En la consola de administración muestra el estado de cada uno de ellos que también es una valiosa información de observabilidad.
 
 {{< image
     gallery="true"
-    image1="image:consul.png" optionsthumb1="650x450" title1="Salud de los servicios en Consul"
+    image1="image:consul.webp" optionsthumb1="650x450" title1="Salud de los servicios en Consul"
     caption="Salud de los servicios en Consul" >}}
 
 Como son los _sidecar proxy_ los que hacen las peticiones de red entre servicios estos tienen capacidad de realizar reintentos y _timeouts_. Con los reintentos se mitigan los errores temporales y con los _timeouts_ se evita que un servicio que esté tardando en responder afecte a otros servicios.
@@ -218,8 +218,8 @@ Con el control de tráfico es posible distribuir el número de peticiones que va
 
 {{< image
     gallery="true"
-    image1="image:birds-v1-2.png" optionsthumb1="300x200" title1="Frontend con datos de la versión v1 del backend"
-    image2="image:birds-v2.png" optionsthumb2="300x200" title2="Frontend con datos de la versión v2 del backend"
+    image1="image:birds-v1-2.webp" optionsthumb1="300x200" title1="Frontend con datos de la versión v1 del backend"
+    image2="image:birds-v2.webp" optionsthumb2="300x200" title2="Frontend con datos de la versión v2 del backend"
     caption="Frontend con datos de la versión v1 y v2 del backend" >}}
 
 ### Libros sobre Consul

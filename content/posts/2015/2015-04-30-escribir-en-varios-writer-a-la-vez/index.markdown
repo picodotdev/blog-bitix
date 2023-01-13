@@ -34,7 +34,7 @@ Independiente de la implementación con Java 7 o con a Java 8 el uso sería el s
 
 {{< image
     gallery="true"
-    image1="image:multiplewriter-consola.png" optionsthumb1="300x200" title1="Salida en la consola" >}}
+    image1="image:multiplewriter-consola.webp" optionsthumb1="300x200" title1="Salida en la consola" >}}
 
 Con [Groovy][groovy] además de las _closures_ no será necesario que declararemos de forma explícita el lanzamiento de las excepciones sin embargo al usarlo perderíamos la ayuda que ofrece el compilador.
 

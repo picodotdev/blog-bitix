@@ -65,7 +65,7 @@ La gente de Videoo.tv se puso en contacto conmigo y me ofreció la posibilidad d
 
 {{< image
     gallery="false"
-    image1="logotype:videoo.png" optionsthumb1="200x150" title1="Videoo.tv"
+    image1="logotype:videoo.webp" optionsthumb1="200x150" title1="Videoo.tv"
     caption="Videoo.tv" >}}
 
 #### Enlaces de afiliado, Amazon y otras páginas de comercio electrónico
@@ -124,8 +124,8 @@ Una vez escrito el artículo uno se puede quedar en propiedad el artículo para 
 
 {{< image
     gallery="false"
-    image1="logotype:kemove.jpg" optionsthumb1="200x150" title1="KEMOVE"
-    image2="logotype:maono.png" optionsthumb2="200x150" title2="MAONO"
+    image1="logotype:kemove.webp" optionsthumb1="200x150" title1="KEMOVE"
+    image2="logotype:maono.webp" optionsthumb2="200x150" title2="MAONO"
     caption="Marcas patrocinadoras de análisis de productos" >}}
 
 #### Servicios asociados al contenido

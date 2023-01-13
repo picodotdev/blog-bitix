@@ -50,12 +50,12 @@ Antes de enviar a Nomad las tareas el panel de administración integrado o _dash
 
 {{< image
     gallery="true"
-    image1="image:nomad-dashboard.png" optionsthumb1="650x450" title1="Dashboard de Nomad"
+    image1="image:nomad-dashboard.webp" optionsthumb1="650x450" title1="Dashboard de Nomad"
     caption="Dashboard de Nomad" >}}
 {{< image
     gallery="true"
-    image1="image:nomad-dashboard-echo-busybox.png" optionsthumb1="300x250" title1="Dashboard de Nomad"
-    image2="image:nomad-dashboard-echo-bash.png" optionsthumb2="300x250" title2="Dashboard de Nomad"
+    image1="image:nomad-dashboard-echo-busybox.webp" optionsthumb1="300x250" title1="Dashboard de Nomad"
+    image2="image:nomad-dashboard-echo-bash.webp" optionsthumb2="300x250" title2="Dashboard de Nomad"
     caption="Dashboard de Nomad" >}}
 
 Las tareas se envían a Nomad para su planificación con el siguiente comando, otros comandos permiten ver el estado de las tareas y las trazas que ha generado. Nomad planifica una ejecución de cada tarea según la expresión _cron_ indicada en la definición de los _jobs_.

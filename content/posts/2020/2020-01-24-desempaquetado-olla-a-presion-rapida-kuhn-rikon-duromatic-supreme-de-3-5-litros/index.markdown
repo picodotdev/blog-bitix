@@ -11,8 +11,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:caja-olla-kuhn-rikon-1.jpg"
-imagePost: "image:olla-kuhn-rikon-3.jpg"
+imageHead: "image:caja-olla-kuhn-rikon-1.webp"
+imagePost: "image:olla-kuhn-rikon-3.webp"
 series: ["desempaquetado-otros"]
 summary: "Las ollas rápidas permiten cocina además de en poco tiempo fácilmente. Son fáciles de usar y una buena con sus recambios dura muchos años. Al igual que con otros productos que voy comprando para mi uso en este artículo hago un resumen de las opciones que he evaluado, que he tenido en cuenta desde la capacidad hasta los recambios y finalmente el desempaquetado de la Kuhn Rikon modelo Duromatic Supreme que he adquirido."
 ---
@@ -105,54 +105,54 @@ Algunas cosas a tener en cuenta es que la goma esté bien ajustada a la tapa ant
 
 {{< image
     gallery="true"
-    image1="image:caja-olla-kuhn-rikon-1.jpg" optionsthumb1="200x150" title1="Caja olla"
-    image2="image:caja-olla-kuhn-rikon-2.jpg" optionsthumb2="200x150" title2="Caja olla"
-    image3="image:caja-olla-kuhn-rikon-3.jpg" optionsthumb3="200x150" title3="Caja olla" >}}
+    image1="image:caja-olla-kuhn-rikon-1.webp" optionsthumb1="200x150" title1="Caja olla"
+    image2="image:caja-olla-kuhn-rikon-2.webp" optionsthumb2="200x150" title2="Caja olla"
+    image3="image:caja-olla-kuhn-rikon-3.webp" optionsthumb3="200x150" title3="Caja olla" >}}
 {{< image
     gallery="true"
-    image1="image:caja-olla-kuhn-rikon-4.jpg" optionsthumb1="200x150" title1="Caja olla"
-    image2="image:caja-olla-kuhn-rikon-5.jpg" optionsthumb2="200x150" title2="Caja olla"
+    image1="image:caja-olla-kuhn-rikon-4.webp" optionsthumb1="200x150" title1="Caja olla"
+    image2="image:caja-olla-kuhn-rikon-5.webp" optionsthumb2="200x150" title2="Caja olla"
     caption="Caja olla" >}}
 
 {{< image
     gallery="true"
-    image1="image:olla-kuhn-rikon-1.jpg" optionsthumb1="200x150" title1="Cuerpo olla, tapa y elementos"
-    image2="image:olla-kuhn-rikon-2.jpg" optionsthumb2="200x150" title2="Cuerpo olla, tapa y elementos"
-    image3="image:olla-kuhn-rikon-3.jpg" optionsthumb3="200x150" title3="Cuerpo olla, tapa y elementos" >}}
+    image1="image:olla-kuhn-rikon-1.webp" optionsthumb1="200x150" title1="Cuerpo olla, tapa y elementos"
+    image2="image:olla-kuhn-rikon-2.webp" optionsthumb2="200x150" title2="Cuerpo olla, tapa y elementos"
+    image3="image:olla-kuhn-rikon-3.webp" optionsthumb3="200x150" title3="Cuerpo olla, tapa y elementos" >}}
 {{< image
     gallery="true"
-    image1="image:olla-kuhn-rikon-4.jpg" optionsthumb1="200x150" title1="Cuerpo olla, tapa y elementos"
-    image2="image:olla-kuhn-rikon-5.jpg" optionsthumb2="200x150" title2="Cuerpo olla, tapa y elementos"
-    image3="image:olla-kuhn-rikon-6.jpg" optionsthumb3="200x150" title3="Cuerpo olla, tapa y elementos" >}}
+    image1="image:olla-kuhn-rikon-4.webp" optionsthumb1="200x150" title1="Cuerpo olla, tapa y elementos"
+    image2="image:olla-kuhn-rikon-5.webp" optionsthumb2="200x150" title2="Cuerpo olla, tapa y elementos"
+    image3="image:olla-kuhn-rikon-6.webp" optionsthumb3="200x150" title3="Cuerpo olla, tapa y elementos" >}}
 {{< image
     gallery="true"
-    image1="image:olla-kuhn-rikon-7.jpg" optionsthumb1="200x150" title1="Cuerpo olla, tapa y elementos"
-    image2="image:olla-kuhn-rikon-8.jpg" optionsthumb2="200x150" title2="Cuerpo olla, tapa y elementos"
-    image3="image:olla-kuhn-rikon-9.jpg" optionsthumb3="200x150" title3="Cuerpo olla, tapa y elementos" >}}
+    image1="image:olla-kuhn-rikon-7.webp" optionsthumb1="200x150" title1="Cuerpo olla, tapa y elementos"
+    image2="image:olla-kuhn-rikon-8.webp" optionsthumb2="200x150" title2="Cuerpo olla, tapa y elementos"
+    image3="image:olla-kuhn-rikon-9.webp" optionsthumb3="200x150" title3="Cuerpo olla, tapa y elementos" >}}
 {{< image
     gallery="true"
-    image1="image:olla-kuhn-rikon-10.jpg" optionsthumb1="200x150" title1="Cuerpo olla, tapa y elementos"
-    image2="image:olla-kuhn-rikon-11.jpg" optionsthumb2="200x150" title2="Cuerpo olla, tapa y elementos"
-    image3="image:olla-kuhn-rikon-12.jpg" optionsthumb3="200x150" title3="Cuerpo olla, tapa y elementos" >}}
+    image1="image:olla-kuhn-rikon-10.webp" optionsthumb1="200x150" title1="Cuerpo olla, tapa y elementos"
+    image2="image:olla-kuhn-rikon-11.webp" optionsthumb2="200x150" title2="Cuerpo olla, tapa y elementos"
+    image3="image:olla-kuhn-rikon-12.webp" optionsthumb3="200x150" title3="Cuerpo olla, tapa y elementos" >}}
 {{< image
     gallery="true"
-    image1="image:olla-kuhn-rikon-13.jpg" optionsthumb1="200x150" title1="Cuerpo olla, tapa y elementos"
-    image2="image:olla-kuhn-rikon-14.jpg" optionsthumb2="200x150" title2="Cuerpo olla, tapa y elementos"
-    image3="image:olla-kuhn-rikon-15.jpg" optionsthumb3="200x150" title3="Cuerpo olla, tapa y elementos" >}}
+    image1="image:olla-kuhn-rikon-13.webp" optionsthumb1="200x150" title1="Cuerpo olla, tapa y elementos"
+    image2="image:olla-kuhn-rikon-14.webp" optionsthumb2="200x150" title2="Cuerpo olla, tapa y elementos"
+    image3="image:olla-kuhn-rikon-15.webp" optionsthumb3="200x150" title3="Cuerpo olla, tapa y elementos" >}}
 {{< image
     gallery="true"
-    image1="image:detalles-kuhn-rikon-1.jpg" optionsthumb1="200x150" title1="Cuerpo olla, tapa y elementos"
-    image2="image:detalles-kuhn-rikon-2.jpg" optionsthumb2="200x150" title2="Cuerpo olla, tapa y elementos"
+    image1="image:detalles-kuhn-rikon-1.webp" optionsthumb1="200x150" title1="Cuerpo olla, tapa y elementos"
+    image2="image:detalles-kuhn-rikon-2.webp" optionsthumb2="200x150" title2="Cuerpo olla, tapa y elementos"
     caption="Cuerpo olla, tapa y elementos" >}}
 
 {{< image
     gallery="true"
-    image1="image:manual-kuhn-rikon-1.jpg" optionsthumb1="200x150" title1="Manual"
-    image2="image:manual-kuhn-rikon-2.jpg" optionsthumb2="200x150" title2="Manual"
-    image3="image:manual-kuhn-rikon-3.jpg" optionsthumb3="200x150" title3="Manual" >}}
+    image1="image:manual-kuhn-rikon-1.webp" optionsthumb1="200x150" title1="Manual"
+    image2="image:manual-kuhn-rikon-2.webp" optionsthumb2="200x150" title2="Manual"
+    image3="image:manual-kuhn-rikon-3.webp" optionsthumb3="200x150" title3="Manual" >}}
 {{< image
     gallery="true"
-    image1="image:manual-kuhn-rikon-4.jpg" optionsthumb1="200x150" title1="Manual"
+    image1="image:manual-kuhn-rikon-4.webp" optionsthumb1="200x150" title1="Manual"
     caption="Manual" >}}
 
 {{< youtube
@@ -180,8 +180,8 @@ La limpieza de la olla también es muy sencilla a mano, no tiene ninguna parte d
 
 {{< image
     gallery="true"
-    image1="image:primer-uso-kuhn-rikon-1.jpg" optionsthumb1="200x150" title1="Primer uso, con unas alubias"
-    image2="image:primer-uso-kuhn-rikon-2.jpg" optionsthumb2="200x150" title2="Primer uso, con unas alubias"
+    image1="image:primer-uso-kuhn-rikon-1.webp" optionsthumb1="200x150" title1="Primer uso, con unas alubias"
+    image2="image:primer-uso-kuhn-rikon-2.webp" optionsthumb2="200x150" title2="Primer uso, con unas alubias"
     caption="Primer uso, con unas alubias" >}}
 
 ### Recipientes para transportar comida
@@ -194,12 +194,12 @@ Los _tuppers_ de 840 ml tiene unas dimensiones de 18,5 cm de largo, 12 cm de anc
 
 {{< image
     gallery="true"
-    image1="image:recipientes-1.jpg" optionsthumb1="200x150" title1="Recipientes de comida"
-    image2="image:recipientes-2.jpg" optionsthumb2="200x150" title2="Recipientes de comida"
-    image3="image:recipientes-3.jpg" optionsthumb3="200x150" title3="Recipientes de comida" >}}
+    image1="image:recipientes-1.webp" optionsthumb1="200x150" title1="Recipientes de comida"
+    image2="image:recipientes-2.webp" optionsthumb2="200x150" title2="Recipientes de comida"
+    image3="image:recipientes-3.webp" optionsthumb3="200x150" title3="Recipientes de comida" >}}
 {{< image
     gallery="true"
-    image1="image:recipientes-4.jpg" optionsthumb1="200x150" title1="Recipientes de comida"
+    image1="image:recipientes-4.webp" optionsthumb1="200x150" title1="Recipientes de comida"
     caption="Recipientes de comida" >}}
 
 840 ml es el equivalente de la capacidad de un plato hondo pero puede quedarse pequeño, en ese caso [unos recipientes de 1040 ml](https://amzn.to/2tF8RQK) es otra opción, la comida tendrá más espacio.

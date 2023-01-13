@@ -144,7 +144,7 @@ Sin embargo, en la plataforma Java la mayor parte de los programadores utilizamo
 
 {{< image
     gallery="true"
-    image1="image:intellij-holamundo.png" optionsthumb1="300x200" title1="IntelliJ IDEA"
+    image1="image:intellij-holamundo.webp" optionsthumb1="300x200" title1="IntelliJ IDEA"
     caption="IntelliJ IDEA" >}}
 
 Son muchos los beneficios de usar un IDE con un lenguaje compilado y fuertemente tipado como Java. Los IDE aprovechan estas características para proporcionar errores precisos y descriptivos de compilación según se escriben las líneas de código, asistencia de código en métodos disponibles de una clase que aún siendo Java un lenguaje verboso permite escribir código pulsando pocas teclas, _refactors_ de código que permiten cambiar el código existente de forma automatizada evitando mucho trabajo manual que aumenta dramáticamente la productividad, integran una terminal para ejecutar comandos sin necesidad de salir del IDE e integración con las herramientas de construcción como Gradle y de pruebas unitarias automatizadas entre otras muchas funcionalidades muy útiles.

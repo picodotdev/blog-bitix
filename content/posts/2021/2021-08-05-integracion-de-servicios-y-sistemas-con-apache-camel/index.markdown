@@ -73,12 +73,12 @@ Algunos de los patrones básicos que soporta Apache Camel son _choice_ para eleg
 
 {{< image
     gallery="true"
-    image1="image:cbr.png" optionsthumb1="300x200" title1="Patrón content based router"
-    image2="image:filter.png" optionsthumb2="300x200" title2="patrón filter" >}}
+    image1="image:cbr.webp" optionsthumb1="300x200" title1="Patrón content based router"
+    image2="image:filter.webp" optionsthumb2="300x200" title2="patrón filter" >}}
 {{< image
     gallery="true"
-    image1="image:multicast.png" optionsthumb1="300x200" title1="Patrón multicast"
-    image2="image:recipient-list.png" optionsthumb2="300x200" title2="Patrón recipient list"
+    image1="image:multicast.webp" optionsthumb1="300x200" title1="Patrón multicast"
+    image2="image:recipient-list.webp" optionsthumb2="300x200" title2="Patrón recipient list"
     caption="Diferentes patrones de integración" >}}
 
 ### Ejemplo básico con Apache Camel

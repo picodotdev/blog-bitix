@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:ratchet-and-clank.jpg"
-imagePost: "image:ratchet-and-clank.jpg"
+imageHead: "image:ratchet-and-clank.webp"
+imagePost: "image:ratchet-and-clank.webp"
 tags: ["juegos"]
 series: ["analisis-juegos", "juegos"]
 summary: "El juego Ratchet & Clank es un juego icónico de las consolas PlayStation, la versión para la PS4 es un buen juego que entretiene con una historia sencilla de los típicos villanos junto a unos muy buenos gráficos. Un juego para todos los públicos que quizá a parte del público más adulto no sea un juego que les emocione tanto como otros juegos de la generación de la PS4."
@@ -28,16 +28,16 @@ Ha habido momentos en el que me ha gustado por sus comentarios graciosos y de hu
 
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank.jpg" optionsthumb1="650x450" title1="Pantalla inicial" >}}
+    image1="image:ratchet-and-clank.webp" optionsthumb1="650x450" title1="Pantalla inicial" >}}
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank-menu-1.jpg" optionsthumb1="200x150" title1="Menú"
-    image1="image:ratchet-and-clank-menu-2.jpg" optionsthumb1="200x150" title1="Menú"
-    image1="image:ratchet-and-clank-menu-3.jpg" optionsthumb1="200x150" title1="Menú" >}}
+    image1="image:ratchet-and-clank-menu-1.webp" optionsthumb1="200x150" title1="Menú"
+    image1="image:ratchet-and-clank-menu-2.webp" optionsthumb1="200x150" title1="Menú"
+    image1="image:ratchet-and-clank-menu-3.webp" optionsthumb1="200x150" title1="Menú" >}}
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank-insomniac-games.jpg" optionsthumb1="200x150" title1="Insomniac Games"
-    image2="image:ratchet-and-clank-cubierta-caja-fisica.jpg" optionsthumb2="200x150" title2="Caja física de Ratchet & Clank" >}}
+    image1="image:ratchet-and-clank-insomniac-games.webp" optionsthumb1="200x150" title1="Insomniac Games"
+    image2="image:ratchet-and-clank-cubierta-caja-fisica.webp" optionsthumb2="200x150" title2="Caja física de Ratchet & Clank" >}}
 
 {{< amazon
     tags="game-console" >}}
@@ -63,28 +63,28 @@ Se van pasando de niveles a medida que se consigue experiencia que otorgan mayor
 
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank-juego-1.jpg" optionsthumb1="200x150" title1="Juego"
-    image2="image:ratchet-and-clank-juego-2.jpg" optionsthumb2="200x150" title2="Juego"
-    image3="image:ratchet-and-clank-juego-3.jpg" optionsthumb3="200x150" title3="Juego" >}}
+    image1="image:ratchet-and-clank-juego-1.webp" optionsthumb1="200x150" title1="Juego"
+    image2="image:ratchet-and-clank-juego-2.webp" optionsthumb2="200x150" title2="Juego"
+    image3="image:ratchet-and-clank-juego-3.webp" optionsthumb3="200x150" title3="Juego" >}}
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank-juego-4.jpg" optionsthumb1="200x150" title1="Juego"
-    image2="image:ratchet-and-clank-juego-5.jpg" optionsthumb2="200x150" title2="Juego"
-    image3="image:ratchet-and-clank-juego-6.jpg" optionsthumb3="200x150" title3="Juego" >}}
+    image1="image:ratchet-and-clank-juego-4.webp" optionsthumb1="200x150" title1="Juego"
+    image2="image:ratchet-and-clank-juego-5.webp" optionsthumb2="200x150" title2="Juego"
+    image3="image:ratchet-and-clank-juego-6.webp" optionsthumb3="200x150" title3="Juego" >}}
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank-mundos-1.jpg" optionsthumb1="200x150" title1="Mundos"
-    image2="image:ratchet-and-clank-puzzles-1.jpg" optionsthumb2="200x150" title2="Puzzles"
-    image3="image:ratchet-and-clank-puzzles-2.jpg" optionsthumb3="200x150" title3="Puzzles" >}}
+    image1="image:ratchet-and-clank-mundos-1.webp" optionsthumb1="200x150" title1="Mundos"
+    image2="image:ratchet-and-clank-puzzles-1.webp" optionsthumb2="200x150" title2="Puzzles"
+    image3="image:ratchet-and-clank-puzzles-2.webp" optionsthumb3="200x150" title3="Puzzles" >}}
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank-carreras-1.jpg" optionsthumb1="200x150" title1="Carreras"
-    image2="image:ratchet-and-clank-carreras-2.jpg" optionsthumb2="200x150" title2="Carreras"
-    image3="image:ratchet-and-clank-carreras-3.jpg" optionsthumb3="200x150" title3="Carreras" >}}
+    image1="image:ratchet-and-clank-carreras-1.webp" optionsthumb1="200x150" title1="Carreras"
+    image2="image:ratchet-and-clank-carreras-2.webp" optionsthumb2="200x150" title2="Carreras"
+    image3="image:ratchet-and-clank-carreras-3.webp" optionsthumb3="200x150" title3="Carreras" >}}
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank-carreras-4.jpg" optionsthumb1="200x150" title1="Carreras"
-    image2="image:ratchet-and-clank-carreras-5.jpg" optionsthumb2="200x150" title2="Carreras"
+    image1="image:ratchet-and-clank-carreras-4.webp" optionsthumb1="200x150" title1="Carreras"
+    image2="image:ratchet-and-clank-carreras-5.webp" optionsthumb2="200x150" title2="Carreras"
     caption="Juego, mundos, puzzles y carreras" >}}
 
 #### Armas y artilugios
@@ -101,19 +101,19 @@ Además de armas los artilugios son piezas de equipo que permiten realizar varia
 
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank-armas-1.jpg" optionsthumb1="200x150" title1="Armas"
-    image2="image:ratchet-and-clank-armas-2.jpg" optionsthumb2="200x150" title2="Armas"
-    image3="image:ratchet-and-clank-armas-3.jpg" optionsthumb3="200x150" title3="Armas" >}}
+    image1="image:ratchet-and-clank-armas-1.webp" optionsthumb1="200x150" title1="Armas"
+    image2="image:ratchet-and-clank-armas-2.webp" optionsthumb2="200x150" title2="Armas"
+    image3="image:ratchet-and-clank-armas-3.webp" optionsthumb3="200x150" title3="Armas" >}}
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank-armas-4.jpg" optionsthumb1="200x150" title1="Armas"
-    image2="image:ratchet-and-clank-armas-5.jpg" optionsthumb2="200x150" title2="Armas"
-    image3="image:ratchet-and-clank-armas-6.jpg" optionsthumb3="200x150" title3="Armas" >}}
+    image1="image:ratchet-and-clank-armas-4.webp" optionsthumb1="200x150" title1="Armas"
+    image2="image:ratchet-and-clank-armas-5.webp" optionsthumb2="200x150" title2="Armas"
+    image3="image:ratchet-and-clank-armas-6.webp" optionsthumb3="200x150" title3="Armas" >}}
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank-armas-7.jpg" optionsthumb1="200x150" title1="Armas"
-    image2="image:ratchet-and-clank-artilugios-1.jpg" optionsthumb2="200x150" title2="Artilugios"
-    image3="image:ratchet-and-clank-senor-zurkon-1.jpg" optionsthumb3="200x150" title3="Señor Zurkon"
+    image1="image:ratchet-and-clank-armas-7.webp" optionsthumb1="200x150" title1="Armas"
+    image2="image:ratchet-and-clank-artilugios-1.webp" optionsthumb2="200x150" title2="Artilugios"
+    image3="image:ratchet-and-clank-senor-zurkon-1.webp" optionsthumb3="200x150" title3="Señor Zurkon"
     caption="Armas, artilugios y el Señor Zurkon" >}}
 
 #### Recursos
@@ -122,14 +122,14 @@ Hay varios recursos que se consiguen a través de destruir cajas y acabar con en
 
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank-guitones-1.jpg" optionsthumb1="200x150" title1="Guitones"
-    image2="image:ratchet-and-clank-raritanio-1.jpg" optionsthumb2="200x150" title2="Raritanio"
+    image1="image:ratchet-and-clank-guitones-1.webp" optionsthumb1="200x150" title1="Guitones"
+    image2="image:ratchet-and-clank-raritanio-1.webp" optionsthumb2="200x150" title2="Raritanio"
     caption="Guitones y raritanio" >}}
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank-cartas-1.jpg" optionsthumb1="200x150" title1="Cartas"
-    image2="image:ratchet-and-clank-cartas-2.jpg" optionsthumb2="200x150" title2="Cartas"
-    image3="image:ratchet-and-clank-cartas-3.jpg" optionsthumb3="200x150" title3="Cartas"
+    image1="image:ratchet-and-clank-cartas-1.webp" optionsthumb1="200x150" title1="Cartas"
+    image2="image:ratchet-and-clank-cartas-2.webp" optionsthumb2="200x150" title2="Cartas"
+    image3="image:ratchet-and-clank-cartas-3.webp" optionsthumb3="200x150" title3="Cartas"
     caption="Cartas" >}}
 
 #### Combates
@@ -146,22 +146,22 @@ Dentro de las mecánicas del juego se incluyen algunas secuencias de persecució
 
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank-combates-1.jpg" optionsthumb1="200x150" title1="Combates"
-    image2="image:ratchet-and-clank-combates-2.jpg" optionsthumb2="200x150" title2="Combates"
-    image3="image:ratchet-and-clank-combates-3.jpg" optionsthumb3="200x150" title3="Combates" >}}
+    image1="image:ratchet-and-clank-combates-1.webp" optionsthumb1="200x150" title1="Combates"
+    image2="image:ratchet-and-clank-combates-2.webp" optionsthumb2="200x150" title2="Combates"
+    image3="image:ratchet-and-clank-combates-3.webp" optionsthumb3="200x150" title3="Combates" >}}
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank-railes-1.jpg" optionsthumb1="200x150" title1="Railes"
-    image2="image:ratchet-and-clank-railes-2.jpg" optionsthumb2="200x150" title2="Railes"
-    image3="image:ratchet-and-clank-railes-3.jpg" optionsthumb3="200x150" title3="Railes" >}}
+    image1="image:ratchet-and-clank-railes-1.webp" optionsthumb1="200x150" title1="Railes"
+    image2="image:ratchet-and-clank-railes-2.webp" optionsthumb2="200x150" title2="Railes"
+    image3="image:ratchet-and-clank-railes-3.webp" optionsthumb3="200x150" title3="Railes" >}}
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank-persecuciones-1.jpg" optionsthumb1="200x150" title1="Persecuciones" >}}
+    image1="image:ratchet-and-clank-persecuciones-1.webp" optionsthumb1="200x150" title1="Persecuciones" >}}
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank-jefes-1.jpg" optionsthumb1="200x150" title1="Jefes"
-    image2="image:ratchet-and-clank-jefes-2.jpg" optionsthumb2="200x150" title2="Jefes"
-    image3="image:ratchet-and-clank-jefes-3.jpg" optionsthumb3="200x150" title3="Jefes"
+    image1="image:ratchet-and-clank-jefes-1.webp" optionsthumb1="200x150" title1="Jefes"
+    image2="image:ratchet-and-clank-jefes-2.webp" optionsthumb2="200x150" title2="Jefes"
+    image3="image:ratchet-and-clank-jefes-3.webp" optionsthumb3="200x150" title3="Jefes"
     caption="Combates, railes, persecuciones y jefes" >}}
 
 #### Coleccionables
@@ -176,17 +176,17 @@ Conseguir el trofeo de platino requiere completar el juego una segunda vez en mo
 
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank-cartas-1.jpg" optionsthumb1="200x150" title1="Cartas"
-    image2="image:ratchet-and-clank-cartas-2.jpg" optionsthumb2="200x150" title2="Cartas"
-    image3="image:ratchet-and-clank-cartas-3.jpg" optionsthumb3="200x150" title3="Cartas" >}}
+    image1="image:ratchet-and-clank-cartas-1.webp" optionsthumb1="200x150" title1="Cartas"
+    image2="image:ratchet-and-clank-cartas-2.webp" optionsthumb2="200x150" title2="Cartas"
+    image3="image:ratchet-and-clank-cartas-3.webp" optionsthumb3="200x150" title3="Cartas" >}}
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank-cartas-4.jpg" optionsthumb1="200x150" title1="Cartas" >}}
+    image1="image:ratchet-and-clank-cartas-4.webp" optionsthumb1="200x150" title1="Cartas" >}}
 {{< image
     gallery="true"
-    image1="image:ratchet-and-clank-guitones-1.jpg" optionsthumb1="200x150" title1="Guitones"
-    image2="image:ratchet-and-clank-guitones-de-oro-1.jpg" optionsthumb2="200x150" title2="Guitones de oro"
-    image3="image:ratchet-and-clank-guitones-de-oro-2.jpg" optionsthumb3="200x150" title3="Guitones de oro"
+    image1="image:ratchet-and-clank-guitones-1.webp" optionsthumb1="200x150" title1="Guitones"
+    image2="image:ratchet-and-clank-guitones-de-oro-1.webp" optionsthumb2="200x150" title2="Guitones de oro"
+    image3="image:ratchet-and-clank-guitones-de-oro-2.webp" optionsthumb3="200x150" title3="Guitones de oro"
     caption="Cartas, guitones y guitones de oro" >}}
 
 ### Banda sonora original

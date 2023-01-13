@@ -61,7 +61,7 @@ Solicitada la instalación en unos días un técnico de Movistar me instaló la 
 
 {{< image
     gallery="true"
-    image1="image:57b048f847e0d91df7ed6dcc.png" optionsthumb1="300x200" title1="Test de velocidad de ADSL Pepephone"
+    image1="image:57b048f847e0d91df7ed6dcc.webp" optionsthumb1="300x200" title1="Test de velocidad de ADSL Pepephone"
     caption="Test de velocidad de ADSL Pepephone" >}}
 
 Estos 9 MiB de bajada y 400 KiB de subida son algo menos de la mitad teórica del ADSL y en algunas [pruebas de velocidad](https://www.testdevelocidad.es/) que he hecho me ha dado resultados de 4 MiB / 200 KiB pero aún en el peor de los casos en la navegación no es perceptible. Respecto a la estabilidad de la linea sin ningún problema, en las pruebas de _ping_ que he hecho no se pierden paquetes. Esta menor velocidad que la teórica es algo que no era una sorpresa para mí que ya me lo esperaba aunque pensaba que sería algo mejor y como he comentado la velocidad no es a lo que más importancia le he dado, si al precio.
@@ -70,7 +70,7 @@ Pasados casi cinco años finalmente he pasado [del ADSL a la fibra de Pepephone]
 
 {{< image
     gallery="true"
-    image1="image:pepephone.jpg" optionsthumb1="300x200" title1="Router ADSL de Pepephone"
+    image1="image:pepephone.webp" optionsthumb1="300x200" title1="Router ADSL de Pepephone"
     caption="Router ADSL de Pepephone" >}}
 
 {{% /post %}}

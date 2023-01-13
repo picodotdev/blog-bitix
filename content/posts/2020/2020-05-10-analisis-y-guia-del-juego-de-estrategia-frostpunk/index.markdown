@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:frostpunk.jpg"
-imagePost: "image:frostpunk.jpg"
+imageHead: "image:frostpunk.webp"
+imagePost: "image:frostpunk.webp"
 tags: ["juegos"]
 series: ["analisis-juegos", "juegos"]
 summary: "Frostpunk ha sido uno de los juegos con los que he disfrutado mucho de los pocos que he jugado hasta el momento en la PlayStation 4. Su historia diferente y el tener que tener que tomar decisiones difíciles para conseguir la supervivencia de la colonia lo hacen distinto a los muchos otros juegos disponibles. No es muy largo pero acabado activa nuevos modos de juego para seguir jugándolo."
@@ -27,16 +27,16 @@ No es un juego complicado pero requiere plantear bien las prioridades y construc
 
 {{< image
     gallery="true"
-    image1="image:frostpunk.jpg" optionsthumb1="650x450" title1="Pantalla inicial" >}}
+    image1="image:frostpunk.webp" optionsthumb1="650x450" title1="Pantalla inicial" >}}
 {{< image
     gallery="true"
-    image1="image:frostpunk.jpg" optionsthumb1="200x150" title1="Pantalla inicial"
-    image2="image:frostpunk-intro.jpg" optionsthumb2="200x150" title2="Pantalla inicial"
-    image3="image:frostpunk-menu.jpg" optionsthumb3="200x150" title3="Menú"
+    image1="image:frostpunk.webp" optionsthumb1="200x150" title1="Pantalla inicial"
+    image2="image:frostpunk-intro.webp" optionsthumb2="200x150" title2="Pantalla inicial"
+    image3="image:frostpunk-menu.webp" optionsthumb3="200x150" title3="Menú"
     caption="Pantalla inicial y menú" >}}
 {{< image
     gallery="true"
-    image1="image:frostpunk-cover.jpg" optionsthumb1="200x150" title1="Portada del juego Frostpunk"
+    image1="image:frostpunk-cover.webp" optionsthumb1="200x150" title1="Portada del juego Frostpunk"
     caption="Portada del juego Frostpunk" >}}
 
 Frostpunk es un juego corto sabiendo cual es la estrategia para sobrevivir. En mi caso me ha gustado mucho y me he divertido bastante con él tomando las decisiones que finalmente me han permitido superar con éxito el juego. Una vez acabada el modo historia inicial se habilitan otros modos de juego que permiten rejugarlo durante más tiempo. Más recientemente también se ha publicado una expansión del juego [Frostpunk The last Autumn](https://www.frostpunkgame.com/) ambientada en un punto anterior en la línea temporal de Frostpunk que permite conocer más detalles de esta historia.
@@ -63,17 +63,17 @@ También hay que proporcionar una casa y atención médica a todos los colonos, 
 
 {{< image
     gallery="true"
-    image1="image:frostpunk-inicio-1.jpg" optionsthumb1="200x150" title1="Inicio"
-    image2="image:frostpunk-inicio-2.jpg" optionsthumb2="200x150" title2="Inicio"
-    image3="image:frostpunk-inicio-3.jpg" optionsthumb3="200x150" title3="Inicio" >}}
+    image1="image:frostpunk-inicio-1.webp" optionsthumb1="200x150" title1="Inicio"
+    image2="image:frostpunk-inicio-2.webp" optionsthumb2="200x150" title2="Inicio"
+    image3="image:frostpunk-inicio-3.webp" optionsthumb3="200x150" title3="Inicio" >}}
 {{< image
     gallery="true"
-    image1="image:frostpunk-inicio-4.jpg" optionsthumb1="200x150" title1="Inicio"
-    image2="image:frostpunk-inicio-5.jpg" optionsthumb2="200x150" title2="Inicio"
-    image3="image:frostpunk-inicio-6.jpg" optionsthumb3="200x150" title3="Inicio" >}}
+    image1="image:frostpunk-inicio-4.webp" optionsthumb1="200x150" title1="Inicio"
+    image2="image:frostpunk-inicio-5.webp" optionsthumb2="200x150" title2="Inicio"
+    image3="image:frostpunk-inicio-6.webp" optionsthumb3="200x150" title3="Inicio" >}}
 {{< image
     gallery="true"
-    image1="image:frostpunk-inicio-7.jpg" optionsthumb1="200x150" title1="Inicio"
+    image1="image:frostpunk-inicio-7.webp" optionsthumb1="200x150" title1="Inicio"
     caption="Inicio" >}}
 
 En el transcurso del juego los colonos realizarán algunas peticiones en las que podremos optar por varias respuestas, hacerles caso o ignorarlos. Dependiendo de la decisión habrá que construir algún edificio y dependiendo del cumplimiento de la promesa aumentará el descontento o bajará la esperanza. Aunque la decisión sea difícil no siempre hay que hacer atender a sus peticiones ya que los recursos son escasos.
@@ -96,31 +96,31 @@ Algunos edificios que permiten tener controlado los niveles de descontento bajos
 
 {{< image
     gallery="true"
-    image1="image:frostpunk-arbol-tecnologias-1.jpg" optionsthumb1="200x150" title1="Árbol de tecnologías"
-    image2="image:frostpunk-arbol-tecnologias-2.jpg" optionsthumb2="200x150" title2="Árbol de tecnologías"
-    image3="image:frostpunk-arbol-tecnologias-3.jpg" optionsthumb3="200x150" title3="Árbol de tecnologías" >}}
+    image1="image:frostpunk-arbol-tecnologias-1.webp" optionsthumb1="200x150" title1="Árbol de tecnologías"
+    image2="image:frostpunk-arbol-tecnologias-2.webp" optionsthumb2="200x150" title2="Árbol de tecnologías"
+    image3="image:frostpunk-arbol-tecnologias-3.webp" optionsthumb3="200x150" title3="Árbol de tecnologías" >}}
 {{< image
     gallery="true"
-    image1="image:frostpunk-arbol-tecnologias-4.jpg" optionsthumb1="200x150" title1="Árbol de tecnologías"
-    image2="image:frostpunk-arbol-tecnologias-5.jpg" optionsthumb2="200x150" title2="Árbol de tecnologías"
-    image3="image:frostpunk-arbol-tecnologias-6.jpg" optionsthumb3="200x150" title3="Árbol de tecnologías" >}}
+    image1="image:frostpunk-arbol-tecnologias-4.webp" optionsthumb1="200x150" title1="Árbol de tecnologías"
+    image2="image:frostpunk-arbol-tecnologias-5.webp" optionsthumb2="200x150" title2="Árbol de tecnologías"
+    image3="image:frostpunk-arbol-tecnologias-6.webp" optionsthumb3="200x150" title3="Árbol de tecnologías" >}}
 {{< image
     gallery="true"
-    image1="image:frostpunk-arbol-tecnologias-7.jpg" optionsthumb1="200x150" title1="Árbol de tecnologías"
-    image2="image:frostpunk-arbol-tecnologias-8.jpg" optionsthumb2="200x150" title2="Árbol de tecnologías"
-    image3="image:frostpunk-arbol-tecnologias-9.jpg" optionsthumb3="200x150" title3="Árbol de tecnologías" >}}
+    image1="image:frostpunk-arbol-tecnologias-7.webp" optionsthumb1="200x150" title1="Árbol de tecnologías"
+    image2="image:frostpunk-arbol-tecnologias-8.webp" optionsthumb2="200x150" title2="Árbol de tecnologías"
+    image3="image:frostpunk-arbol-tecnologias-9.webp" optionsthumb3="200x150" title3="Árbol de tecnologías" >}}
 {{< image
     gallery="true"
-    image1="image:frostpunk-arbol-tecnologias-10.jpg" optionsthumb1="200x150" title1="Árbol de tecnologías"
-    image2="image:frostpunk-arbol-tecnologias-11.jpg" optionsthumb2="200x150" title2="Árbol de tecnologías"
-    image3="image:frostpunk-arbol-tecnologias-12.jpg" optionsthumb3="200x150" title3="Árbol de tecnologías"
+    image1="image:frostpunk-arbol-tecnologias-10.webp" optionsthumb1="200x150" title1="Árbol de tecnologías"
+    image2="image:frostpunk-arbol-tecnologias-11.webp" optionsthumb2="200x150" title2="Árbol de tecnologías"
+    image3="image:frostpunk-arbol-tecnologias-12.webp" optionsthumb3="200x150" title3="Árbol de tecnologías"
     caption="Árbol de tecnologías" >}}
 
 {{< image
     gallery="true"
-    image1="image:frostpunk-arbol-leyes-1.jpg" optionsthumb1="200x150" title1="Árbol de leyes"
-    image2="image:frostpunk-arbol-leyes-2.jpg" optionsthumb2="200x150" title2="Árbol de leyes"
-    image3="image:frostpunk-arbol-leyes-3.jpg" optionsthumb3="200x150" title3="Árbol de leyes"
+    image1="image:frostpunk-arbol-leyes-1.webp" optionsthumb1="200x150" title1="Árbol de leyes"
+    image2="image:frostpunk-arbol-leyes-2.webp" optionsthumb2="200x150" title2="Árbol de leyes"
+    image3="image:frostpunk-arbol-leyes-3.webp" optionsthumb3="200x150" title3="Árbol de leyes"
     caption="Árbol de leyes" >}}
 
 En esa fase el objetivo es acumular recursos sobre todo carbón y comida para hacer frente a la tormenta del final. Será necesario construir depósitos grandes para tener capacidad para acumularlos. También es aconsejable los cuatro talleres que se pueden construir para realizar las investigaciones más rápido, y estar continuamente tiendo alguna investigación en marcha incluso teniendo que realizar turnos nocturnos. El uso de estos turnos nocturnos aumentarán el descontento que se mantendrá controlador con las iglesias, tabernas y templo.
@@ -133,8 +133,8 @@ También será necesario realizar alguna investigación para las mejoras del gen
 
 {{< image
     gallery="true"
-    image1="image:frostpunk-decisiones-1.jpg" optionsthumb1="300x250" title1="Algunas decisiones difíciles"
-    image2="image:frostpunk-decisiones-2.jpg" optionsthumb2="300x250" title2="Algunas decisiones difíciles"
+    image1="image:frostpunk-decisiones-1.webp" optionsthumb1="300x250" title1="Algunas decisiones difíciles"
+    image2="image:frostpunk-decisiones-2.webp" optionsthumb2="300x250" title2="Algunas decisiones difíciles"
     caption="Algunas decisiones difíciles" >}}
 
 ### Estrategia juego final
@@ -147,7 +147,7 @@ Durante las exploraciones habrá que tomar la decisión de dejar abandonados a a
 
 {{< image
     gallery="true"
-    image1="image:frostpunk-end.jpg" optionsthumb1="300x250" title1="Supervivencia"
+    image1="image:frostpunk-end.webp" optionsthumb1="300x250" title1="Supervivencia"
     caption="Supervivencia" >}}
 
 ### Nuevos modos de juego
@@ -156,18 +156,18 @@ Al finalizar el modo historia se habilitan otros modos de juego y escenarios con
 
 {{< image
     gallery="true"
-    image1="image:frostpunk-escenarios.jpg" optionsthumb1="200x150" title1="Escenarios"
-    image2="image:frostpunk-ecenario-nuevo-hogar.jpg" optionsthumb2="200x150" title2="Escenario Nuevo hogar, historia principal"
+    image1="image:frostpunk-escenarios.webp" optionsthumb1="200x150" title1="Escenarios"
+    image2="image:frostpunk-ecenario-nuevo-hogar.webp" optionsthumb2="200x150" title2="Escenario Nuevo hogar, historia principal"
     caption="Escenarios" >}}
 
 {{< image
     gallery="true"
-    image1="image:frostpunk-ecenario-las-arcas.jpg" optionsthumb1="200x150" title1="Escenario Las arcas"
-    image2="image:frostpunk-ecenario-refugiados.jpg" optionsthumb2="200x150" title2="Escenario Refugiados"
-    image3="image:frostpunk-ecenario-la-caida-de-invernia.jpg" optionsthumb3="200x150" title3="Escenario La caída de invernia"  >}}
+    image1="image:frostpunk-ecenario-las-arcas.webp" optionsthumb1="200x150" title1="Escenario Las arcas"
+    image2="image:frostpunk-ecenario-refugiados.webp" optionsthumb2="200x150" title2="Escenario Refugiados"
+    image3="image:frostpunk-ecenario-la-caida-de-invernia.webp" optionsthumb3="200x150" title3="Escenario La caída de invernia"  >}}
 {{< image
     gallery="true"
-    image1="image:frostpunk-modo-infinito.jpg" optionsthumb1="200x150" title1="Modo infinito" >}}
+    image1="image:frostpunk-modo-infinito.webp" optionsthumb1="200x150" title1="Modo infinito" >}}
 
 ### Frostpunk Wiki 
 

@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:poster.jpg"
+imagePost: "image:poster.webp"
 tags: ["planeta-codigo", "seguridad"]
 ---
 

@@ -11,8 +11,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:poster.jpg"
-imagePost: "image:poster.jpg"
+imageHead: "image:poster.webp"
+imagePost: "image:poster.webp"
 tags: ["planeta-codigo", "seguridad"]
 summary: "A estas alturas la mayoría de la gente seguramente ya haya recibido a través de un medio u otro algún intento de tipo de ataque informático, ya sea a través del correo electrónico, mensajes SMS con enlaces o a través de aplicaciones de mensajería instantánea. Los ataques informáticos cada vez van a ir a más y serán más peligrosos a medida que más operaciones se realicen a través de internet, surgirán medidas adicionales de seguridad para evitarlos como el segundo factor de autenticación pero también surgirán nuevas formas de ataque, donde el componente humano seguramente siga siendo la parte más débil del sistema de seguridad. Este artículo es el relato de la historia de un potencial ataque informático de _phishing_."
 ---

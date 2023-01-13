@@ -32,7 +32,7 @@ Es una colección de más de 80 modos de solitario de cartas fáciles de jugar c
 
 {{< image
     gallery="true"
-    image1="image:aisleriot.png" optionsthumb1="300x200" title1="Juego aisleriot"
+    image1="image:aisleriot.webp" optionsthumb1="300x200" title1="Juego aisleriot"
     caption="Juego aisleriot" >}}
 
 ### Cinco o mas
@@ -43,7 +43,7 @@ El objetivo del juego es alinear 5 o más objetos del mismo color y forma hacié
 
 {{< image
     gallery="true"
-    image1="image:five-or-more.png" optionsthumb1="300x200" title1="Juego cinco o más"
+    image1="image:five-or-more.webp" optionsthumb1="300x200" title1="Juego cinco o más"
     caption="Juego cinco o más" >}}
 
 ### Cuatro en raya
@@ -54,7 +54,7 @@ El objetivo de 4 en raya es construir una línea de cuatro fichas mientras inten
 
 {{< image
     gallery="true"
-    image1="image:four-in-a-row.png" optionsthumb1="300x200" title1="Juego cuatro en raya"
+    image1="image:four-in-a-row.webp" optionsthumb1="300x200" title1="Juego cuatro en raya"
     caption="Juego cuatro en raya" >}}
 
 ### Hitori
@@ -65,7 +65,7 @@ Hitori es similar al juego de puzles Sudoku pero en el que se trata de ir elimin
 
 {{< image
     gallery="true"
-    image1="image:hitori.png" optionsthumb1="300x200" title1="Juego hitori"
+    image1="image:hitori.webp" optionsthumb1="300x200" title1="Juego hitori"
     caption="Juego hitori" >}}
 
 ### Iagno
@@ -76,7 +76,7 @@ Iango es una versión para computadora del [juego Reversi](https://es.wikipedia.
 
 {{< image
     gallery="true"
-    image1="image:iagno.png" optionsthumb1="300x200" title1="Juego iagno"
+    image1="image:iagno.webp" optionsthumb1="300x200" title1="Juego iagno"
     caption="Juego iagno" >}}
 
 ### Klotski
@@ -87,7 +87,7 @@ El objetivo es mover el bloque marcado al área con bordes verdes utilizando un 
 
 {{< image
     gallery="true"
-    image1="image:klotski.png" optionsthumb1="300x200" title1="Juego klotski"
+    image1="image:klotski.webp" optionsthumb1="300x200" title1="Juego klotski"
     caption="Juego klotski" >}}
 
 ### Luces fuera
@@ -98,7 +98,7 @@ Luces fuera es un juego de puzle donde el objetivo es apagar todas las baldosas 
 
 {{< image
     gallery="true"
-    image1="image:lights-off.png" optionsthumb1="300x200" title1="Juego luces fuera"
+    image1="image:lights-off.webp" optionsthumb1="300x200" title1="Juego luces fuera"
     caption="Juego luces fuera" >}}
 
 ### Mahjongg
@@ -109,7 +109,7 @@ Mahjongg es un solitario para un jugador donde el objetivo es seleccionar baldos
 
 {{< image
     gallery="true"
-    image1="image:mahjongg.png" optionsthumb1="300x200" title1="Juego mahjongg"
+    image1="image:mahjongg.webp" optionsthumb1="300x200" title1="Juego mahjongg"
     caption="Juego mahjongg" >}}
 
 ### Minas
@@ -120,7 +120,7 @@ Mines es un juego de puzle donde hay que localizar las minas flotando en un océ
 
 {{< image
     gallery="true"
-    image1="image:mines.png" optionsthumb1="300x200" title1="Juego minas"
+    image1="image:mines.webp" optionsthumb1="300x200" title1="Juego minas"
     caption="Juego minas" >}}
 
 ### Nibbles
@@ -131,7 +131,7 @@ En Nibbles es un juego donde controlas una serpiente. La serpiente se mueve alre
 
 {{< image
     gallery="true"
-    image1="image:nibbles.png" optionsthumb1="300x200" title1="Juego nibbles"
+    image1="image:nibbles.webp" optionsthumb1="300x200" title1="Juego nibbles"
     caption="Juego nibbles" >}}
 
 ### Quadrapassel
@@ -142,7 +142,7 @@ Es similar al clásico [juego Tetris](https://es.wikipedia.org/wiki/Tetris). El 
 
 {{< image
     gallery="true"
-    image1="image:quadrapassel.png" optionsthumb1="300x200" title1="Juego quadrapassel"
+    image1="image:quadrapassel.webp" optionsthumb1="300x200" title1="Juego quadrapassel"
     caption="Juego quadrapassel" >}}
 
 ### Robots
@@ -153,7 +153,7 @@ Debes evitar una horda de robots que intentarán alcanzarte. En cada paso que de
 
 {{< image
     gallery="true"
-    image1="image:robots.png" optionsthumb1="300x200" title1="Juego robots"
+    image1="image:robots.webp" optionsthumb1="300x200" title1="Juego robots"
     caption="Juego robots" >}}
 
 ### Sudoku
@@ -164,7 +164,7 @@ Sudoku es un juego de lógica japonés donde iremos colocando números que no se
 
 {{< image
     gallery="true"
-    image1="image:sudoku.png" optionsthumb1="300x200" title1="Juego sudoku"
+    image1="image:sudoku.webp" optionsthumb1="300x200" title1="Juego sudoku"
     caption="Juego sudoku" >}}
 
 ### Swell Foop
@@ -175,7 +175,7 @@ Es un juego de tipo puzle cuyo objetivo es eliminar los objetos del mismo color 
 
 {{< image
     gallery="true"
-    image1="image:swell-foop.png" optionsthumb1="300x200" title1="Juego swell foop"
+    image1="image:swell-foop.webp" optionsthumb1="300x200" title1="Juego swell foop"
     caption="Juego swell foop" >}}
 
 ### Tali
@@ -186,7 +186,7 @@ Es un juego de tipo poker con dados y menos dinero. Lanzas los dados tres veces 
 
 {{< image
     gallery="true"
-    image1="image:tali.png" optionsthumb1="300x200" title1="Juego tali"
+    image1="image:tali.webp" optionsthumb1="300x200" title1="Juego tali"
     caption="Juego tali" >}}
 
 ### Tetravex
@@ -197,7 +197,7 @@ Es un juego tipo puzle donde las piezas han de posicionarse de modo que los mism
 
 {{< image
     gallery="true"
-    image1="image:tetravex.png" optionsthumb1="300x200" title1="Juego tetravex"
+    image1="image:tetravex.webp" optionsthumb1="300x200" title1="Juego tetravex"
     caption="Juego tetravex" >}}
 
 ### Ajedrez
@@ -206,7 +206,7 @@ Es el clásico juego de ajedrez donde las partidas pueden ser jugadas contra un 
 
 {{< image
     gallery="true"
-    image1="image:chess.png" optionsthumb1="300x200" title1="Juego ajedrez"
+    image1="image:chess.webp" optionsthumb1="300x200" title1="Juego ajedrez"
     caption="Juego ajedrez" >}}
 
 {{% /post %}}

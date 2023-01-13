@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:opensessioninview.png"
+imagePost: "image:opensessioninview.webp"
 tags: ["java", "planeta-codigo", "programacion"]
 summary: "En patrón _Open Session in View_ lo que hace es mantener abierta la conexión a la base de datos durante toda la petición a un servidor. Esto tiene la ventaja de que en cualquier momento es posible recuperar datos de la base de datos, incluso desde las vistas pero tiene inconvenientes ya que las conexiones a la base de datos son un recurso escaso. Si además durante la petición se hacen peticiones a otros servicios que añaden tiempo de procesamiento la aplicación es posible que tenga problemas de escalabilidad con muchos usuarios y peticiones durante un corto periodo de tiempo."
 ---
@@ -32,7 +32,7 @@ En este diagrama se aprecia su funcionamiento. La primera acción en una petici�
 
 {{< image
     gallery="true"
-    image1="image:opensessioninview.png" optionsthumb1="650x450" title1="Diagrama del patrón open session in view"
+    image1="image:opensessioninview.webp" optionsthumb1="650x450" title1="Diagrama del patrón open session in view"
     caption="Diagrama del patrón open session in view" source="vladmihalcea.com" >}}
 
 ### Las ventajas

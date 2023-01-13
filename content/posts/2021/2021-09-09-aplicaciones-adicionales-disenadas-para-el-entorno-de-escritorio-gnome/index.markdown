@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:gnome-apps.png"
+imageHead: "image:gnome-apps.webp"
 imagePost: "logotype:gnome.svg"
 tags: ["gnu-linux", "planeta-codigo", "software-libre"]
 summary: "Los entornos de escritorio proporcionan la interfaz gráfica de las computadoras, el aspecto de las ventanas, los estilos de los componentes junto con unas guías de interfaz de usuario que especifican como han de ser las aplicaciones en ese entorno de escritorio. El entorno de escritorio y las guías permiten que todas las aplicaciones tengan uniformidad visual y en su experiencia  que facilite al usuario el uso de las aplicaciones sin tener que aprender unas convenciones únicas para cada aplicación. La mayoría de entornos de escritorio integran unas pocas aplicaciones esenciales como explorador de archivos, visor de documentos e imágenes, editor de texto, terminal, reproductor de vídeo, navegador web y comunicación y gestor de software. El resto de aplicaciones necesarias son proporcionadas por desarrolladores ajenos al entorno de escritorio que no tienen por que seguir las mismas guías de estilos, sin embargo, algunas aplicaciones aún siendo de terceros si siguen las mismas guías de estilos del entorno de escritorio que proporcionan algunas funcionalidades adicionales a las de las aplicaciones esenciales."
@@ -61,12 +61,12 @@ El problema de las aplicaciones de terceros, si es que es un problema, es que no
 
 {{< image
     gallery="true"
-    image1="image:gnome-circle-apps.png" optionsthumb1="200x150" title1="Aplicaciones del círculo de GNOME" >}}
+    image1="image:gnome-circle-apps.webp" optionsthumb1="200x150" title1="Aplicaciones del círculo de GNOME" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-circle-apps-1.png" optionsthumb1="200x150" title1="Aplicaciones del círculo de GNOME"
-    image2="image:gnome-circle-apps-2.png" optionsthumb2="200x150" title2="Aplicaciones del círculo de GNOME"
-    image3="image:gnome-circle-apps-3.png" optionsthumb3="200x150" title3="Aplicaciones del círculo de GNOME"
+    image1="image:gnome-circle-apps-1.webp" optionsthumb1="200x150" title1="Aplicaciones del círculo de GNOME"
+    image2="image:gnome-circle-apps-2.webp" optionsthumb2="200x150" title2="Aplicaciones del círculo de GNOME"
+    image3="image:gnome-circle-apps-3.webp" optionsthumb3="200x150" title3="Aplicaciones del círculo de GNOME"
     caption="Aplicaciones del círculo de GNOME" >}}
 
 Algunas aplicaciones aunque desarrolladas por terceros siguen las guías de estilos de diseño de interfaces del escritorio de GNOME dando la sensación que están perfectamente integradas con el entorno de escritorio. Muchas son aplicaciones distribuidas como paquetes en formato [Flatpak][flatpak] que las hace fácil de instalar en cualquier distribución GNU/Linux sin depender de los paquetes oficiales de la distribución.
@@ -77,20 +77,20 @@ Las siguientes son aplicaciones sencillas desarrolladas por terceros que siguen 
 
 {{< image
     gallery="true"
-    image1="image:apostrophe.png" optionsthumb1="200x150" title1="Aplicaciones del círculo de GNOME"
-    image2="image:curtail.png" optionsthumb2="200x150" title2="Aplicaciones del círculo de GNOME"
-    image3="image:kooha.png" optionsthumb3="200x150" title3="Aplicaciones del círculo de GNOME" >}}
+    image1="image:apostrophe.webp" optionsthumb1="200x150" title1="Aplicaciones del círculo de GNOME"
+    image2="image:curtail.webp" optionsthumb2="200x150" title2="Aplicaciones del círculo de GNOME"
+    image3="image:kooha.webp" optionsthumb3="200x150" title3="Aplicaciones del círculo de GNOME" >}}
 {{< image
     gallery="true"
-    image1="image:pika-backup.png" optionsthumb1="200x150" title1="Aplicaciones del círculo de GNOME"
-    image2="image:shortwave.png" optionsthumb2="200x150" title2="Aplicaciones del círculo de GNOME"
+    image1="image:pika-backup.webp" optionsthumb1="200x150" title1="Aplicaciones del círculo de GNOME"
+    image2="image:shortwave.webp" optionsthumb2="200x150" title2="Aplicaciones del círculo de GNOME"
     caption="Algunas aplicaciones del círculo de GNOME" >}}
 
 En la descripción de cada aplicación y en su página del repositorio en [Flathub][flathub] están los detalles para instalar la aplicación con Flatpak. Se puede instalar con la aplicación software de GNOME o desde la línea de comandos. Una vez instalada la aplicación Flatpak la mantiene actualizada automáticamente en cada nueva publicación de versión.
 
 {{< image
     gallery="true"
-    image1="image:gnome-software.png" optionsthumb1="650x450" title1="Aplicación gestión de software de GNOME"
+    image1="image:gnome-software.webp" optionsthumb1="650x450" title1="Aplicación gestión de software de GNOME"
     caption="Aplicación para instalar y desinstalar software de GNOME" >}}
 
 Comandos para instalar y ejecutar la aplicación con Flatpak, el identificativo de cada aplicación se muestra en la [página de descripción de Apostrophe en Flathub](https://flathub.org/apps/details/org.gnome.gitlab.somas.Apostrophe).

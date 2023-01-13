@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:nomad-versions.png"
+imagePost: "image:nomad-versions.webp"
 tags: ["gnu-linux", "planeta-codigo"]
 series: ["hashicorp"]
 summary: "Los errores no se planifican, se producen de forma inesperada. Además, un error en un entorno de producción es normalmente urgente e importante lo que obliga a cambiar las prioridades del equipo dejando lo que están haciendo y ocuparse de resolver el problema. En ocasiones no será posible resolver el problema y la única solución es revertir la versión de la aplicación a la anterior. Dependiendo de la automatización de los procesos incluso el volver a la versión anterior quizá sea complicado. Los errores no se planifican pero si se puede planificar estar preparado para algunos errores, una forma de estar preparado ante errores es tener un proceso y herramientas para volver a la versión anterior rápido y fácilmente."
@@ -65,9 +65,9 @@ Desde la consola web de administración también se ven las definiciones de los 
 
 {{< image
     gallery="true"
-    image1="image:nomad-service-1.png" optionsthumb1="200x150" title1="Versión 1 del servicio"
-    image2="image:nomad-service-2.png" optionsthumb2="200x150" title2="Versión 2 del servicio"
-    image3="image:nomad-versions.png" optionsthumb3="200x150" title3="Versiones del servicio"
+    image1="image:nomad-service-1.webp" optionsthumb1="200x150" title1="Versión 1 del servicio"
+    image2="image:nomad-service-2.webp" optionsthumb2="200x150" title2="Versión 2 del servicio"
+    image3="image:nomad-versions.webp" optionsthumb3="200x150" title3="Versiones del servicio"
     caption="Versiones del servicio" >}}
 
 {{% /post %}}

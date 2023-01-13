@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:windows-10-wallpaper.jpg"
+imageHead: "image:windows-10-wallpaper.webp"
 imagePost: "logotype:microsoft.svg"
 tags: ["microsoft", "planeta-codigo", "windows"]
 summary: "Windows 10 and Microsoft Office 2019 are software products with a private license, to use them legally it is necessary to buy a license that allows them to be activated. Resorting to activators of these products to avoid paying the license is not recommended since they are a source of entry for computer viruses with a significant danger to the security of the computer and the importance of the tasks that we currently perform in it, such as purchases or banking inquiries. A 2012 European court ruling allows third-party vendors to offer Windows 10 and Microsoft Office 2019 licenses at significantly cheaper prices to activate these products fully legally."
@@ -108,9 +108,9 @@ Windows 10 can be activated during installation or once installed by selecting t
 
 {{< image
     gallery="true"
-    image1="image:activacion-windows-10-instalacion.png" optionsthumb1="200x150" title1="Activación de Windows durante la instalación"
-    image2="image:activacion-windows-10-1.png" optionsthumb2="200x150" title2="Activación de Windows"
-    image3="image:activacion-windows-10-2.png" optionsthumb3="200x150" title3="Activación de Windows"
+    image1="image:activacion-windows-10-instalacion.webp" optionsthumb1="200x150" title1="Activación de Windows durante la instalación"
+    image2="image:activacion-windows-10-1.webp" optionsthumb2="200x150" title2="Activación de Windows"
+    image3="image:activacion-windows-10-2.webp" optionsthumb3="200x150" title3="Activación de Windows"
     caption="Activación de Windows durante la instalación y una vez instalado" >}}
 
 The following command executed from the _Command Prompt_ utility allows you to obtain the Windows 10 activation code.
@@ -121,8 +121,8 @@ Once Microsoft Office is installed, when you open one of the office _suite_ appl
 
 {{< image
     gallery="true"
-    image1="image:activacion-microsoft-office-1.png" optionsthumb1="200x150" title1="Activación de Microsoft Office 2019"
-    image2="image:activacion-microsoft-office-2.png" optionsthumb2="200x150" title2="Activación de Microsoft Office 2019"
+    image1="image:activacion-microsoft-office-1.webp" optionsthumb1="200x150" title1="Activación de Microsoft Office 2019"
+    image2="image:activacion-microsoft-office-2.webp" optionsthumb2="200x150" title2="Activación de Microsoft Office 2019"
     caption="Activación de Microsoft Office 2019" >}}
 
 {{< reference >}}

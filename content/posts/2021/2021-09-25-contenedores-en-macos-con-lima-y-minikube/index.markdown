@@ -91,8 +91,8 @@ _nerdctl_ soporta muchos de los subcomandos de _docker_ tanto para la ejecución
 
 {{< image
     gallery="true"
-    image1="image:lima-nerd-images.png" optionsthumb1="300x200" title1="Imágenes de contenedores con lima en macOS"
-    image2="image:lima-nerd-run.png" optionsthumb2="300x200" title2="Ejecución de un contenedor con lima en macOS"
+    image1="image:lima-nerd-images.webp" optionsthumb1="300x200" title1="Imágenes de contenedores con lima en macOS"
+    image2="image:lima-nerd-run.webp" optionsthumb2="300x200" title2="Ejecución de un contenedor con lima en macOS"
     caption="Ejecución de un contenedor con lima en macOS" >}}
 
 {{< reference >}}

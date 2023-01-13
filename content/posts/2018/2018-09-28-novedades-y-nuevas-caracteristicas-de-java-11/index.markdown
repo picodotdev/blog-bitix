@@ -104,7 +104,7 @@ Esta funcionalidad es compatible con los _shebang_ de los sistemas Unix.
 
 {{< image
     gallery="true"
-    image1="image:java-helloworld.png" optionsthumb1="6500x450" title1="Java 11 HelloWorld!"
+    image1="image:java-helloworld.webp" optionsthumb1="6500x450" title1="Java 11 HelloWorld!"
     caption="Java 11 HelloWorld!" >}}
 
 #### Unicode 10

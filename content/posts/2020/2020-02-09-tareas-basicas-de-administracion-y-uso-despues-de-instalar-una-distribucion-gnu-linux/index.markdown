@@ -61,8 +61,8 @@ Los programas y comandos permiten realizar las tareas de productividad que se de
 
 {{< image
     gallery="true"
-    image1="image:centro-de-software-gnome-1.png" optionsthumb1="300x200" title1="Centro de software de GNOME"
-    image2="image:centro-de-software-gnome-2.png" optionsthumb2="300x200" title2="Programas en el centro de software"
+    image1="image:centro-de-software-gnome-1.webp" optionsthumb1="300x200" title1="Centro de software de GNOME"
+    image2="image:centro-de-software-gnome-2.webp" optionsthumb2="300x200" title2="Programas en el centro de software"
     caption="Centro de software de GNOME" >}}
 
 Si en algún momento se deja de usar un programa o se reemplaza por otro que que se considere mejor es recomendable desinstalar el antiguo lo que permite recuperar el espacio en el almacenamiento persistente que ocupe y evitar la necesidad de descargar las actualizaciones de seguridad de un programa que no se usa.
@@ -71,23 +71,23 @@ Si se trata de un programa gráfico al instalar el programa se añade un acceso 
 
 {{< image
     gallery="true"
-    image1="image:gnome-dash.png" optionsthumb1="300x200" title1="Lanzador de aplicaciones de GNOME"
+    image1="image:gnome-dash.webp" optionsthumb1="300x200" title1="Lanzador de aplicaciones de GNOME"
     caption="Lanzador de aplicaciones de GNOME" >}}
 
 Los programas se pueden usar inmediatamente después de completar su instalación sin necesidad de reiniciar el sistema, las actualizaciones de componentes clave del sistema como el _kernel_ se instalan pero requieren un reinicio para que sean efectivas, este reinicio se puede realizar a conveniencia del usuario sin interrumpir de manera forzosa las tareas que esté realizando.
 
 {{< image
     gallery="true"
-    image1="image:actualizar-ubuntu-4.png" optionsthumb1="300x200" title1="Lanzador de aplicaciones de GNOME"
+    image1="image:actualizar-ubuntu-4.webp" optionsthumb1="300x200" title1="Lanzador de aplicaciones de GNOME"
     caption="Reinicio del sistema después de una actualización de software" >}}
 
 Ubuntu tiene un proceso que se ejecuta periódicamente y notifica al usuario si hay nuevas actualizaciones en la distribución, si las hay muestra un diálogo para aplicarlas. En Arch Linux las actualizaciones se inician a petición del usuario.
 
 {{< image
     gallery="true"
-    image1="image:actualizar-ubuntu-1.png" optionsthumb1="200x150" title1="Actualizar Ubuntu"
-    image2="image:actualizar-ubuntu-2.png" optionsthumb2="200x150" title2="Actualizar Ubuntu"
-    image3="image:actualizar-ubuntu-3.png" optionsthumb3="200x150" title3="Actualizar Ubuntu"
+    image1="image:actualizar-ubuntu-1.webp" optionsthumb1="200x150" title1="Actualizar Ubuntu"
+    image2="image:actualizar-ubuntu-2.webp" optionsthumb2="200x150" title2="Actualizar Ubuntu"
+    image3="image:actualizar-ubuntu-3.webp" optionsthumb3="200x150" title3="Actualizar Ubuntu"
     caption="Actualizar Ubuntu" >}}
 
 Desde la línea de comandos el gestor de paquetes también permite instalar y desinstalar programas, basta con conocer el nombre del paquete. La [base de datos de paquetes de Ubuntu][ubuntu-packages] y de [base de datos de Arch Linux][archlinux-packages] permiten hacer búsquedas por nombre, en el caso de Ubuntu hay varias bases de datos una por versión de la distribución de modo que hay que buscar en la que se tenga instalada.
@@ -124,7 +124,7 @@ Cada entorno de escritorio ofrece un programa gráfico de una terminal virtual.
 
 {{< image
     gallery="true"
-    image1="image:terminal-gnome.png" optionsthumb1="300x200" title1="Terminal de GNOME"
+    image1="image:terminal-gnome.webp" optionsthumb1="300x200" title1="Terminal de GNOME"
     caption="Terminal de GNOME" >}}
 
 El intérprete de comandos es el encargado de entender las sintaxis de los comandos además de interpretar los _scripts_ para automatizar las tareas con pequeños programas de _script_ en vez de tener que introducir los comandos manualmente en la terminal. [El intérprete de comandos Bash][blogbitix-158] es un intérprete que es instalado por defecto en la mayoría de distribuciones GNU/Linux.

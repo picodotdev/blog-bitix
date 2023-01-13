@@ -27,17 +27,17 @@ El comando nos presentará un montón de arquetipos, el propio de Tapestry se co
 
 {{< image
     gallery="true"
-    image1="image:arquetipos-maven.png" optionsthumb1="300x200"
-    image2="image:arquetipos-tapestry.png" optionsthumb2="300x200" >}}
+    image1="image:arquetipos-maven.webp" optionsthumb1="300x200"
+    image2="image:arquetipos-tapestry.webp" optionsthumb2="300x200" >}}
 {{< image
     gallery="true"
-    image1="image:arquetipo-tapestry.png" optionsthumb1="300x200" >}}
+    image1="image:arquetipo-tapestry.webp" optionsthumb1="300x200" >}}
 
 Aunque el arquetipo lo realizamos con Maven los archivos que genera son válidos tanto para trabajar con Maven como con [Gradle](http://www.gradle.org/), una vez que tenemos la aplicación generada podemos usar el que prefiramos, probablemente mejor Gradle. Los archivos generados son los siguientes:
 
 {{< image
     gallery="true"
-    image1="image:archivos-generados.png" optionsthumb1="300x200" title1="Terminal al iniciar la aplicación" >}}
+    image1="image:archivos-generados.webp" optionsthumb1="300x200" title1="Terminal al iniciar la aplicación" >}}
 
 Una vez generada la aplicación podemos iniciarla con un servidor embebido [Jetty](http://www.eclipse.org/jetty/) con la aplicación desplegada en él ya usando [Gradle](http://www.gradle.org/):
 
@@ -47,8 +47,8 @@ Y accediendo con el navegador a la URL que nos indica Tapestry al final de las t
 
 {{< image
     gallery="true"
-    image1="image:inicio-aplicacion-terminal.png" optionsthumb1="300x200" title1="Terminal al iniciar la aplicación"
-    image2="image:inicio-aplicacion-navegador.png" optionsthumb2="300x200" title2="Aplicación en el navegador" >}}
+    image1="image:inicio-aplicacion-terminal.webp" optionsthumb1="300x200" title1="Terminal al iniciar la aplicación"
+    image2="image:inicio-aplicacion-navegador.webp" optionsthumb2="300x200" title2="Aplicación en el navegador" >}}
 
 Probablemente necesitaremos configurar muchas cosas adicionales como usar [Tomcat como servidor embebido](https://github.com/bmuschko/gradle-tomcat-plugin) en vez de Jetty o añadir la [configuración necesaria para ejecutar los teses unitarios y de integración](https://elblogdepicodev.blogspot.com.es/2013/06/pruebas-unitarias-y-de-integracion-en-apache-tapestry.html), Tapestry no es un _framework_ _fullstack_ y será responsabilidad nuestra disponer de esas características si necesitamos. En definitiva, con este arquetipo de Maven en unos pocos minutos y con poco esfuerzo podemos disponer de una aplicación Apache Tapestry a partir de la que empezar a desarrollar.
 

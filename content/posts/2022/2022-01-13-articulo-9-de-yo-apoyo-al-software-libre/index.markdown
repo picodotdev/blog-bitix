@@ -48,7 +48,7 @@ Como es una aplicación muy útil para mi y uso de forma habitual hago una peque
 
 {{< image
     gallery="true"
-    image1="image:donacion-keepassxc.png" optionsthumb1="650x450" title1="Donación KeePassXC"
+    image1="image:donacion-keepassxc.webp" optionsthumb1="650x450" title1="Donación KeePassXC"
     caption="Donación KeePassXC" >}}
 
 {{< donations >}}

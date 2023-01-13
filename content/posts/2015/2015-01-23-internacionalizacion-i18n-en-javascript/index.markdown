@@ -52,28 +52,28 @@ Cambiando el idioma preferido en el navegador podemos ver los textos de la aplic
 
 {{< image
     gallery="true"
-    image1="image:lista-tareas-es.png" optionsthumb1="300x200" title1="Aplicación en español"
-    image2="image:lista-tareas-en.png" optionsthumb2="300x200" title2="Aplicación en inglés" >}}
+    image1="image:lista-tareas-es.webp" optionsthumb1="300x200" title1="Aplicación en español"
+    image2="image:lista-tareas-en.webp" optionsthumb2="300x200" title2="Aplicación en inglés" >}}
 
 El texto que indica cuantas tareas están completadas usa las diferentes formas plurales del lenguaje, en el caso del español dos, singular y plural cuando se marca una o dos tareas completadas.
 
 {{< image
     gallery="true"
-    image1="image:una-tarea-completada.png" optionsthumb1="300x200" title1="Una tarea completada"
-    image2="image:dos-tareas-completadas.png" optionsthumb2="300x200" title2="Dos tareas completadas" >}}
+    image1="image:una-tarea-completada.webp" optionsthumb1="300x200" title1="Una tarea completada"
+    image2="image:dos-tareas-completadas.webp" optionsthumb2="300x200" title2="Dos tareas completadas" >}}
 
 i18next se encarga de obtener los archivos de traducciones automáticamente según el idioma en que se deba mostrar la aplicación, para el caso de que el usuario tenga como idioma preferido es-ES se buscarán los archivos localizados es-ES, es y finalmente dev:
 
 {{< image
     gallery="true"
-    image1="image:peticiones-locales-es-ES.png" optionsthumb1="300x200" title1="Búsqueda de traducciones"
-    image2="image:peticiones-locales-dev.png" optionsthumb2="300x200" title2="Búsqueda de traducciones" >}}
+    image1="image:peticiones-locales-es-ES.webp" optionsthumb1="300x200" title1="Búsqueda de traducciones"
+    image2="image:peticiones-locales-dev.webp" optionsthumb2="300x200" title2="Búsqueda de traducciones" >}}
 
 Una vez hechos los cambios y habiendo modificado las pruebas unitarias de javascript comprobamos que todos siguen pasando correctamente:
 
 {{< image
     gallery="true"
-    image1="image:teses.png" optionsthumb1="300x200" title1="Pruebas unitarias" >}}
+    image1="image:teses.webp" optionsthumb1="300x200" title1="Pruebas unitarias" >}}
 
 Eso es todo, este ejemplo aunque sencillo muestra bastantes cosas que se podrían utilizar como base para algo real, usa [RequireJS][requirejs], [Mustache][mustache], [Backbone][backbone], [React][react], [Jasmine][jasmine], [Grunt][grunt] y ahora [i18next][i18next] por la parte cliente y [RESTEasy][resteasy] y [Apache Tapestry][tapestry] por la parte servidor, cada una de estas tecnologías las he comentado individualmente en varios artículos.
 

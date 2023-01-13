@@ -12,7 +12,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:videoseven.png"
+imagePost: "logotype:videoseven.webp"
 tags: ["hardware", "planeta-codigo"]
 series: ["desempaquetado-tecnologia"]
 summary: "Los teclados básicos son más que suficientes para la mayoría de usuarios, incluso los inalámbricos solo cuestan unos pocos euros más. Buscaba un teclado inalámbrico y al final opté por el V7 CKW200 por ser barato, tener un diseño atractivo, ser teclado completo, inalámbrico y tener teclas multimedia para subir y bajar el volumen entre otras. Este modelo es un _combo_ de teclado y ratón inalámbrico baratos pero básicos, el teclado funciona perfectamente durando las pilas casi un año y medio, el ratón del V7 CKW200 finalmente lo sustituí por uno con cable, un Logitech M90."
@@ -79,45 +79,45 @@ El teclado tiene una dimensiones de 45x14,5 centímetros de ancho y largo respec
 
 {{< image
     gallery="true"
-    image1="image:v7-ckw200-1.jpg" optionsthumb1="200x150" title1="La caja"
-    image2="image:v7-ckw200-2.jpg" optionsthumb2="200x150" title2="La caja"
-    image3="image:v7-ckw200-3.jpg" optionsthumb3="200x150" title3="La caja" >}}
+    image1="image:v7-ckw200-1.webp" optionsthumb1="200x150" title1="La caja"
+    image2="image:v7-ckw200-2.webp" optionsthumb2="200x150" title2="La caja"
+    image3="image:v7-ckw200-3.webp" optionsthumb3="200x150" title3="La caja" >}}
 {{< image
     gallery="true"
-    image1="image:v7-ckw200-4.jpg" optionsthumb1="200x150" title1="La caja"
-    image2="image:v7-ckw200-6.jpg" optionsthumb2="200x150" title2="La caja"
-    image3="image:v7-ckw200-7.jpg" optionsthumb3="200x150" title3="La caja" >}}
+    image1="image:v7-ckw200-4.webp" optionsthumb1="200x150" title1="La caja"
+    image2="image:v7-ckw200-6.webp" optionsthumb2="200x150" title2="La caja"
+    image3="image:v7-ckw200-7.webp" optionsthumb3="200x150" title3="La caja" >}}
 {{< image
     gallery="true"
-    image1="image:v7-ckw200-8.jpg" optionsthumb1="200x150" title1="La caja"
-    image2="image:v7-ckw200-9.jpg" optionsthumb2="200x150" title2="La caja"
+    image1="image:v7-ckw200-8.webp" optionsthumb1="200x150" title1="La caja"
+    image2="image:v7-ckw200-9.webp" optionsthumb2="200x150" title2="La caja"
     caption="La caja, manual y pilas incluídas" >}}
 
 {{< image
     gallery="true"
-    image1="image:v7-ckw200-11.jpg" optionsthumb1="200x150" title1="El teclado"
-    image2="image:v7-ckw200-15.jpg" optionsthumb2="200x150" title2="El teclado"
-    image3="image:v7-ckw200-26.jpg" optionsthumb3="200x150" title3="El teclado" >}}
+    image1="image:v7-ckw200-11.webp" optionsthumb1="200x150" title1="El teclado"
+    image2="image:v7-ckw200-15.webp" optionsthumb2="200x150" title2="El teclado"
+    image3="image:v7-ckw200-26.webp" optionsthumb3="200x150" title3="El teclado" >}}
 {{< image
     gallery="true"
-    image1="image:v7-ckw200-16.jpg" optionsthumb1="200x150" title1="El teclado"
-    image2="image:v7-ckw200-17.jpg" optionsthumb2="200x150" title2="El teclado"
-    image3="image:v7-ckw200-18.jpg" optionsthumb3="200x150" title3="El teclado" >}}
+    image1="image:v7-ckw200-16.webp" optionsthumb1="200x150" title1="El teclado"
+    image2="image:v7-ckw200-17.webp" optionsthumb2="200x150" title2="El teclado"
+    image3="image:v7-ckw200-18.webp" optionsthumb3="200x150" title3="El teclado" >}}
 {{< image
     gallery="true"
-    image1="image:v7-ckw200-19.jpg" optionsthumb1="200x150" title1="El teclado"
+    image1="image:v7-ckw200-19.webp" optionsthumb1="200x150" title1="El teclado"
     caption="El teclado" >}}
 
 {{< image
     gallery="true"
-    image1="image:v7-ckw200-20.jpg" optionsthumb1="200x150" title1="El ratón"
-    image2="image:v7-ckw200-21.jpg" optionsthumb2="200x150" title2="El ratón"
-    image3="image:v7-ckw200-22.jpg" optionsthumb3="200x150" title3="El ratón" >}}
+    image1="image:v7-ckw200-20.webp" optionsthumb1="200x150" title1="El ratón"
+    image2="image:v7-ckw200-21.webp" optionsthumb2="200x150" title2="El ratón"
+    image3="image:v7-ckw200-22.webp" optionsthumb3="200x150" title3="El ratón" >}}
 {{< image
     gallery="true"
-    image1="image:v7-ckw200-25.jpg" optionsthumb1="200x150" title1="El ratón"
-    image2="image:v7-ckw200-27.jpg" optionsthumb2="200x150" title2="El adaptador USB"
-    image3="image:v7-ckw200-24.jpg" optionsthumb3="200x150" title3="El adaptador USB"
+    image1="image:v7-ckw200-25.webp" optionsthumb1="200x150" title1="El ratón"
+    image2="image:v7-ckw200-27.webp" optionsthumb2="200x150" title2="El adaptador USB"
+    image3="image:v7-ckw200-24.webp" optionsthumb3="200x150" title3="El adaptador USB"
     caption="El ratón y el adaptador USB" >}}
 
 ### Las alternativas
@@ -137,7 +137,7 @@ Después de dos años de uso intensivo el teclado V7 CKW200 pierde parte de la i
 
 {{< image
     gallery="true"
-    image1="image:v7-ckw200-impresion-tecla.jpg" optionsthumb1="300x250" title1="Perdida de caracter impreso en una tecla"
+    image1="image:v7-ckw200-impresion-tecla.webp" optionsthumb1="300x250" title1="Perdida de caracter impreso en una tecla"
     caption="Perdida de caracter impreso en una tecla" >}}
 
 Pasado dos años desde que tengo el teclado si tuviese que comprar un teclado me replantearía otro modelo aunque fuese algo más caro, buscaría que fuese mecánico, sin teclado numérico para que fuese más compacto pero con teclas de función, flechas y las de _Insertar_, _Suprimir_, _Inicio_, _Fin_, _RePag_ y _AvPag_, si pudiera ser también inalámbrico, con teclas con función multimedia.
@@ -155,7 +155,7 @@ Cualquiera de estos teclados cumple su función a un precio muy económico pero 
 
 {{< image
     gallery="true"
-    image1="image:ducky-one-2-tkl.png" optionsthumb1="300x200" title1="Teclado Ducky One 2 TKL"
+    image1="image:ducky-one-2-tkl.webp" optionsthumb1="300x200" title1="Teclado Ducky One 2 TKL"
     caption="Teclado mecánico Ducky One 2 TKL" >}}
 
 ### Conclusión
@@ -176,7 +176,7 @@ Al mismo tiempo que he comprado el teclado y ratón he comprado una [alfombrilla
 
 {{< image
     gallery="true"
-    image1="image:v7-ckw200-10.jpg" optionsthumb1="200x150" title1="Alfombrilla, teclado y ratón"
+    image1="image:v7-ckw200-10.webp" optionsthumb1="200x150" title1="Alfombrilla, teclado y ratón"
     caption="Alfombrilla, teclado y ratón" >}}
 
 {{< amazon

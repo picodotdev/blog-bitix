@@ -59,7 +59,7 @@ Usando la aplicación integrada en el entorno de escritorio o sistema operativo 
 
 {{< image
     gallery="true"
-    image1="image:archivo-zip.png" optionsthumb1="300x200" title1="Contenido de archivo Zip"
+    image1="image:archivo-zip.webp" optionsthumb1="300x200" title1="Contenido de archivo Zip"
     caption="Contenido de archivo Zip" >}}
 
 O listar el contenido de un archivo Zip desde la linea de comandos.

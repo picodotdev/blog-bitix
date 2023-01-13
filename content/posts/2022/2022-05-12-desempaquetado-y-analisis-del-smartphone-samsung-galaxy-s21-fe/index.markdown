@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:samsung-galaxy-s21-fe.jpg"
-imagePost: "image:samsung-galaxy-s21-fe.jpg"
+imageHead: "image:samsung-galaxy-s21-fe.webp"
+imagePost: "image:samsung-galaxy-s21-fe.webp"
 tags: ["hardware"]
 series: ["desempaquetado-tecnologia"]
 summary: "He estado usando un Samsung Galaxy S6 lanzado en el 2015 durante unos tres años hasta el 2022 de segunda mano cuando ya alguien lo consideraba obsoleto. A día de hoy la cámara y la batería dan muestras de agotamiento y dejan que desear comparado con un móvil más reciente. Adicionalmente, aunque funcionase perfectamente ya no recibe actualizaciones de software ni de seguridad y la última versión de Android que ha recibido ha sido la 7, ni siquiera Lineage OS ofrece soporte para el S6. Aunque no uso el teléfono de forma intensa la cámara y la versión de Android si son dos cosas que he buscado mejorar al comprar y cambiar a un nuevo móvil que sin ser lo más avanzado del momento si es una mejora muy apreciable en muchos apartados. Después de evaluar no muchas pocas opciones el móvil al que he cambiado es al Samsung Galaxy S21 FE."
@@ -105,34 +105,34 @@ Las [características principales del Samsung Galaxy S21 FE](https://www.gsmaren
 
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-presentacion-1.jpg" optionsthumb1="200x150" title1="Presentación del Samsung Galaxy S21 FE"
-    image2="image:samsung-galaxy-s21-fe-presentacion-2.jpg" optionsthumb2="200x150" title2="Presentación del Samsung Galaxy S21 FE"
-    image3="image:samsung-galaxy-s21-fe-presentacion-3.jpg" optionsthumb3="200x150" title3="Presentación del Samsung Galaxy S21 FE" >}}
+    image1="image:samsung-galaxy-s21-fe-presentacion-1.webp" optionsthumb1="200x150" title1="Presentación del Samsung Galaxy S21 FE"
+    image2="image:samsung-galaxy-s21-fe-presentacion-2.webp" optionsthumb2="200x150" title2="Presentación del Samsung Galaxy S21 FE"
+    image3="image:samsung-galaxy-s21-fe-presentacion-3.webp" optionsthumb3="200x150" title3="Presentación del Samsung Galaxy S21 FE" >}}
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-presentacion-4.jpg" optionsthumb1="200x150" title1="Presentación del Samsung Galaxy S21 FE"
-    image2="image:samsung-galaxy-s21-fe-presentacion-5.jpg" optionsthumb2="200x150" title2="Presentación del Samsung Galaxy S21 FE"
-    image3="image:samsung-galaxy-s21-fe-presentacion-6.jpg" optionsthumb3="200x150" title3="Presentación del Samsung Galaxy S21 FE" >}}
+    image1="image:samsung-galaxy-s21-fe-presentacion-4.webp" optionsthumb1="200x150" title1="Presentación del Samsung Galaxy S21 FE"
+    image2="image:samsung-galaxy-s21-fe-presentacion-5.webp" optionsthumb2="200x150" title2="Presentación del Samsung Galaxy S21 FE"
+    image3="image:samsung-galaxy-s21-fe-presentacion-6.webp" optionsthumb3="200x150" title3="Presentación del Samsung Galaxy S21 FE" >}}
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-presentacion-7.jpg" optionsthumb1="200x150" title1="Presentación del Samsung Galaxy S21 FE"
-    image2="image:samsung-galaxy-s21-fe-presentacion-8.jpg" optionsthumb2="200x150" title2="Presentación del Samsung Galaxy S21 FE"
-    image3="image:samsung-galaxy-s21-fe-presentacion-9.jpg" optionsthumb3="200x150" title3="Presentación del Samsung Galaxy S21 FE" >}}
+    image1="image:samsung-galaxy-s21-fe-presentacion-7.webp" optionsthumb1="200x150" title1="Presentación del Samsung Galaxy S21 FE"
+    image2="image:samsung-galaxy-s21-fe-presentacion-8.webp" optionsthumb2="200x150" title2="Presentación del Samsung Galaxy S21 FE"
+    image3="image:samsung-galaxy-s21-fe-presentacion-9.webp" optionsthumb3="200x150" title3="Presentación del Samsung Galaxy S21 FE" >}}
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-presentacion-10.jpg" optionsthumb1="200x150" title1="Presentación del Samsung Galaxy S21 FE"
-    image2="image:samsung-galaxy-s21-fe-presentacion-11.jpg" optionsthumb2="200x150" title2="Presentación del Samsung Galaxy S21 FE"
-    image3="image:samsung-galaxy-s21-fe-presentacion-12.jpg" optionsthumb3="200x150" title3="Presentación del Samsung Galaxy S21 FE" >}}
+    image1="image:samsung-galaxy-s21-fe-presentacion-10.webp" optionsthumb1="200x150" title1="Presentación del Samsung Galaxy S21 FE"
+    image2="image:samsung-galaxy-s21-fe-presentacion-11.webp" optionsthumb2="200x150" title2="Presentación del Samsung Galaxy S21 FE"
+    image3="image:samsung-galaxy-s21-fe-presentacion-12.webp" optionsthumb3="200x150" title3="Presentación del Samsung Galaxy S21 FE" >}}
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-presentacion-13.jpg" optionsthumb1="200x150" title1="Presentación del Samsung Galaxy S21 FE"
-    image2="image:samsung-galaxy-s21-fe-presentacion-14.jpg" optionsthumb2="200x150" title2="Presentación del Samsung Galaxy S21 FE"
-    image3="image:samsung-galaxy-s21-fe-presentacion-15.jpg" optionsthumb3="200x150" title3="Presentación del Samsung Galaxy S21 FE" >}}
+    image1="image:samsung-galaxy-s21-fe-presentacion-13.webp" optionsthumb1="200x150" title1="Presentación del Samsung Galaxy S21 FE"
+    image2="image:samsung-galaxy-s21-fe-presentacion-14.webp" optionsthumb2="200x150" title2="Presentación del Samsung Galaxy S21 FE"
+    image3="image:samsung-galaxy-s21-fe-presentacion-15.webp" optionsthumb3="200x150" title3="Presentación del Samsung Galaxy S21 FE" >}}
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-presentacion-16.jpg" optionsthumb1="200x150" title1="Presentación del Samsung Galaxy S21 FE"
-    image2="image:samsung-galaxy-s21-fe-presentacion-17.jpg" optionsthumb2="200x150" title2="Presentación del Samsung Galaxy S21 FE"
-    image3="image:samsung-galaxy-s21-fe-presentacion-18.jpg" optionsthumb3="200x150" title3="Presentación del Samsung Galaxy S21 FE"
+    image1="image:samsung-galaxy-s21-fe-presentacion-16.webp" optionsthumb1="200x150" title1="Presentación del Samsung Galaxy S21 FE"
+    image2="image:samsung-galaxy-s21-fe-presentacion-17.webp" optionsthumb2="200x150" title2="Presentación del Samsung Galaxy S21 FE"
+    image3="image:samsung-galaxy-s21-fe-presentacion-18.webp" optionsthumb3="200x150" title3="Presentación del Samsung Galaxy S21 FE"
     caption="Presentación del Samsung Galaxy S21 FE" >}}
 
 #### Dónde comprar
@@ -154,13 +154,13 @@ La caja es bastante pequeña al no incluir el cargador, aparte del móvil única
 
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-caja-1.jpg" optionsthumb1="200x150" title1="Caja del Samsung Galaxy S21 FE"
-    image2="image:samsung-galaxy-s21-fe-caja-2.jpg" optionsthumb2="200x150" title2="Caja del Samsung Galaxy S21 FE"
-    image3="image:samsung-galaxy-s21-fe-caja-3.jpg" optionsthumb3="200x150" title3="Caja del Samsung Galaxy S21 FE" >}}
+    image1="image:samsung-galaxy-s21-fe-caja-1.webp" optionsthumb1="200x150" title1="Caja del Samsung Galaxy S21 FE"
+    image2="image:samsung-galaxy-s21-fe-caja-2.webp" optionsthumb2="200x150" title2="Caja del Samsung Galaxy S21 FE"
+    image3="image:samsung-galaxy-s21-fe-caja-3.webp" optionsthumb3="200x150" title3="Caja del Samsung Galaxy S21 FE" >}}
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-caja-4.jpg" optionsthumb1="200x150" title1="Caja del Samsung Galaxy S21 FE"
-    image2="image:samsung-galaxy-s21-fe-caja-5.jpg" optionsthumb2="200x150" title2="Caja del Samsung Galaxy S21 FE"
+    image1="image:samsung-galaxy-s21-fe-caja-4.webp" optionsthumb1="200x150" title1="Caja del Samsung Galaxy S21 FE"
+    image2="image:samsung-galaxy-s21-fe-caja-5.webp" optionsthumb2="200x150" title2="Caja del Samsung Galaxy S21 FE"
     caption="Caja del Samsung Galaxy S21 FE" >}}
 
 #### El contenido
@@ -171,12 +171,12 @@ El móvil con una película de plástico está protegido en su totalidad de ara�
 
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-contenido-1.jpg" optionsthumb1="200x150" title1="Contenido caja del Samsung Galaxy S21 FE"
-    image2="image:samsung-galaxy-s21-fe-contenido-2.jpg" optionsthumb2="200x150" title2="Contenido caja del Samsung Galaxy S21 FE"
-    image3="image:samsung-galaxy-s21-fe-contenido-3.jpg" optionsthumb3="200x150" title3="Contenido caja del Samsung Galaxy S21 FE" >}}
+    image1="image:samsung-galaxy-s21-fe-contenido-1.webp" optionsthumb1="200x150" title1="Contenido caja del Samsung Galaxy S21 FE"
+    image2="image:samsung-galaxy-s21-fe-contenido-2.webp" optionsthumb2="200x150" title2="Contenido caja del Samsung Galaxy S21 FE"
+    image3="image:samsung-galaxy-s21-fe-contenido-3.webp" optionsthumb3="200x150" title3="Contenido caja del Samsung Galaxy S21 FE" >}}
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-contenido-4.jpg" optionsthumb1="200x150" title1="Contenido caja del Samsung Galaxy S21 FE"
+    image1="image:samsung-galaxy-s21-fe-contenido-4.webp" optionsthumb1="200x150" title1="Contenido caja del Samsung Galaxy S21 FE"
     caption="Contenido caja del Samsung Galaxy S21 FE" >}}
 
 #### El móvil
@@ -189,17 +189,17 @@ Salvo los teléfonos de Apple el resto de móviles de otras marcas entre ellas S
 
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-telefono-1.jpg" optionsthumb1="200x150" title1="Móvil Samsung Galaxy S21 FE"
-    image2="image:samsung-galaxy-s21-fe-telefono-2.jpg" optionsthumb2="200x150" title2="Móvil Samsung Galaxy S21 FE"
-    image3="image:samsung-galaxy-s21-fe-telefono-3.jpg" optionsthumb3="200x150" title3="Móvil Samsung Galaxy S21 FE" >}}
+    image1="image:samsung-galaxy-s21-fe-telefono-1.webp" optionsthumb1="200x150" title1="Móvil Samsung Galaxy S21 FE"
+    image2="image:samsung-galaxy-s21-fe-telefono-2.webp" optionsthumb2="200x150" title2="Móvil Samsung Galaxy S21 FE"
+    image3="image:samsung-galaxy-s21-fe-telefono-3.webp" optionsthumb3="200x150" title3="Móvil Samsung Galaxy S21 FE" >}}
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-telefono-4.jpg" optionsthumb1="200x150" title1="Móvil Samsung Galaxy S21 FE"
-    image2="image:samsung-galaxy-s21-fe-telefono-5.jpg" optionsthumb2="200x150" title2="Móvil Samsung Galaxy S21 FE" >}}
+    image1="image:samsung-galaxy-s21-fe-telefono-4.webp" optionsthumb1="200x150" title1="Móvil Samsung Galaxy S21 FE"
+    image2="image:samsung-galaxy-s21-fe-telefono-5.webp" optionsthumb2="200x150" title2="Móvil Samsung Galaxy S21 FE" >}}
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-telefono-6.jpg" optionsthumb1="200x150" title1="Móvil Samsung Galaxy S21 FE"
-    image2="image:samsung-galaxy-s21-fe-telefono-7.jpg" optionsthumb2="200x150" title2="Móvil Samsung Galaxy S21 FE"
+    image1="image:samsung-galaxy-s21-fe-telefono-6.webp" optionsthumb1="200x150" title1="Móvil Samsung Galaxy S21 FE"
+    image2="image:samsung-galaxy-s21-fe-telefono-7.webp" optionsthumb2="200x150" title2="Móvil Samsung Galaxy S21 FE"
     caption="Móvil Samsung Galaxy S21 FE" >}}
 
 #### El cargador
@@ -210,9 +210,9 @@ El empaquetado del cargador precintado con sellos de plástico es muy pequeño, 
 
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-cargador-1.jpg" optionsthumb1="200x150" title1="Cargador Samsung Galaxy S21 FE"
-    image2="image:samsung-galaxy-s21-fe-cargador-2.jpg" optionsthumb2="200x150" title2="Cargador Samsung Galaxy S21 FE"
-    image3="image:samsung-galaxy-s21-fe-cargador-3.jpg" optionsthumb3="200x150" title3="Cargador Samsung Galaxy S21 FE"
+    image1="image:samsung-galaxy-s21-fe-cargador-1.webp" optionsthumb1="200x150" title1="Cargador Samsung Galaxy S21 FE"
+    image2="image:samsung-galaxy-s21-fe-cargador-2.webp" optionsthumb2="200x150" title2="Cargador Samsung Galaxy S21 FE"
+    image3="image:samsung-galaxy-s21-fe-cargador-3.webp" optionsthumb3="200x150" title3="Cargador Samsung Galaxy S21 FE"
     caption="Cargador Samsung Galaxy S21 FE" >}}
 
 #### Complementos
@@ -223,14 +223,14 @@ Dado que el móvil no tiene puerto _jack_ 3.5mm para seguir usando los cascos co
 
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-complementos-1.jpg" optionsthumb1="200x150" title1="Complementos Samsung Galaxy S21 FE"
-    image2="image:samsung-galaxy-s21-fe-complementos-2.jpg" optionsthumb2="200x150" title2="Complementos Samsung Galaxy S21 FE"
-    image3="image:samsung-galaxy-s21-fe-complementos-3.jpg" optionsthumb3="200x150" title3="Complementos Samsung Galaxy S21 FE" >}}
+    image1="image:samsung-galaxy-s21-fe-complementos-1.webp" optionsthumb1="200x150" title1="Complementos Samsung Galaxy S21 FE"
+    image2="image:samsung-galaxy-s21-fe-complementos-2.webp" optionsthumb2="200x150" title2="Complementos Samsung Galaxy S21 FE"
+    image3="image:samsung-galaxy-s21-fe-complementos-3.webp" optionsthumb3="200x150" title3="Complementos Samsung Galaxy S21 FE" >}}
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-complementos-4.jpg" optionsthumb1="200x150" title1="Complementos Samsung Galaxy S21 FE"
-    image2="image:samsung-galaxy-s21-fe-complementos-5.jpg" optionsthumb2="200x150" title2="Complementos Samsung Galaxy S21 FE"
-    image3="image:samsung-galaxy-s21-fe-complementos-6.jpg" optionsthumb3="200x150" title3="Complementos Samsung Galaxy S21 FE"
+    image1="image:samsung-galaxy-s21-fe-complementos-4.webp" optionsthumb1="200x150" title1="Complementos Samsung Galaxy S21 FE"
+    image2="image:samsung-galaxy-s21-fe-complementos-5.webp" optionsthumb2="200x150" title2="Complementos Samsung Galaxy S21 FE"
+    image3="image:samsung-galaxy-s21-fe-complementos-6.webp" optionsthumb3="200x150" title3="Complementos Samsung Galaxy S21 FE"
     caption="Complementos Samsung Galaxy S21 FE" >}}
 
 ### Análisis y primeras impresiones
@@ -259,14 +259,14 @@ Las diferencias son notables entre la cámara del S6 que no solo es que será pe
 
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-camara-1.jpg" optionsthumb1="300x250" title1="Cámara del Samsung Galaxy S6"
-    image2="image:samsung-galaxy-s21-fe-camara-2.jpg" optionsthumb2="300x250" title2="Cámara del Samsung Galaxy S21 FE"
+    image1="image:samsung-galaxy-s21-fe-camara-1.webp" optionsthumb1="300x250" title1="Cámara del Samsung Galaxy S6"
+    image2="image:samsung-galaxy-s21-fe-camara-2.webp" optionsthumb2="300x250" title2="Cámara del Samsung Galaxy S21 FE"
     caption="Comparación entre cámara del S6 y S21 FE" >}}
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-camara-3.jpg" optionsthumb1="200x150" title1="Cámara del Samsung Galaxy S21 FE"
-    image2="image:samsung-galaxy-s21-fe-camara-4.jpg" optionsthumb2="200x150" title2="Cámara del Samsung Galaxy S21 FE"
-    image3="image:samsung-galaxy-s21-fe-camara-5.jpg" optionsthumb3="200x150" title3="Cámara del Samsung Galaxy S21 FE"
+    image1="image:samsung-galaxy-s21-fe-camara-3.webp" optionsthumb1="200x150" title1="Cámara del Samsung Galaxy S21 FE"
+    image2="image:samsung-galaxy-s21-fe-camara-4.webp" optionsthumb2="200x150" title2="Cámara del Samsung Galaxy S21 FE"
+    image3="image:samsung-galaxy-s21-fe-camara-5.webp" optionsthumb3="200x150" title3="Cámara del Samsung Galaxy S21 FE"
     caption="Fotos tomadas con el S21 FE" >}}
 
 Otro de sus aspectos muy a tener en cuenta de los móviles Samsung es que la marca ha anunciado la intención de proporcionar actualizaciones durante 4 años y 5 de parches de seguridad, tiempo durante el cual se mantendrá actualizado a la última versión de Android. 5 años de vida para un producto tampoco es tanto y seguro que al cabo de ese tiempo el móvil sigue siendo un producto perfectamente usable, quizá con alguna distribución de Android como Lineage OS el móvil pueda tener durante algunos años más la última versión de Android.
@@ -289,34 +289,34 @@ Este es el primer encendido del teléfono y su estado original una vez completad
 
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-inicio-1.jpg" optionsthumb1="200x150" title1="Primer inicio y configuración inicial"
-    image2="image:samsung-galaxy-s21-fe-inicio-2.jpg" optionsthumb2="200x150" title2="Primer inicio y configuración inicial"
-    image3="image:samsung-galaxy-s21-fe-inicio-3.jpg" optionsthumb3="200x150" title3="Primer inicio y configuración inicial" >}}
+    image1="image:samsung-galaxy-s21-fe-inicio-1.webp" optionsthumb1="200x150" title1="Primer inicio y configuración inicial"
+    image2="image:samsung-galaxy-s21-fe-inicio-2.webp" optionsthumb2="200x150" title2="Primer inicio y configuración inicial"
+    image3="image:samsung-galaxy-s21-fe-inicio-3.webp" optionsthumb3="200x150" title3="Primer inicio y configuración inicial" >}}
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-inicio-4.jpg" optionsthumb1="200x150" title1="Primer inicio y configuración inicial"
-    image2="image:samsung-galaxy-s21-fe-inicio-5.jpg" optionsthumb2="200x150" title2="Primer inicio y configuración inicial"
+    image1="image:samsung-galaxy-s21-fe-inicio-4.webp" optionsthumb1="200x150" title1="Primer inicio y configuración inicial"
+    image2="image:samsung-galaxy-s21-fe-inicio-5.webp" optionsthumb2="200x150" title2="Primer inicio y configuración inicial"
     caption="Primer inicio y configuración inicial" >}}
 
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-sistema-inicial-1.jpg" optionsthumb1="200x150" title1="Estado inicial del teléfono"
-    image2="image:samsung-galaxy-s21-fe-sistema-inicial-2.jpg" optionsthumb2="200x150" title2="Estado inicial del teléfono"
-    image3="image:samsung-galaxy-s21-fe-sistema-inicial-3.jpg" optionsthumb3="200x150" title3="Estado inicial del teléfono" >}}
+    image1="image:samsung-galaxy-s21-fe-sistema-inicial-1.webp" optionsthumb1="200x150" title1="Estado inicial del teléfono"
+    image2="image:samsung-galaxy-s21-fe-sistema-inicial-2.webp" optionsthumb2="200x150" title2="Estado inicial del teléfono"
+    image3="image:samsung-galaxy-s21-fe-sistema-inicial-3.webp" optionsthumb3="200x150" title3="Estado inicial del teléfono" >}}
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-sistema-inicial-4.jpg" optionsthumb1="200x150" title1="Estado inicial del teléfono"
-    image2="image:samsung-galaxy-s21-fe-sistema-inicial-5.jpg" optionsthumb2="200x150" title2="Estado inicial del teléfono"
-    image3="image:samsung-galaxy-s21-fe-sistema-inicial-6.jpg" optionsthumb3="200x150" title3="Estado inicial del teléfono" >}}
+    image1="image:samsung-galaxy-s21-fe-sistema-inicial-4.webp" optionsthumb1="200x150" title1="Estado inicial del teléfono"
+    image2="image:samsung-galaxy-s21-fe-sistema-inicial-5.webp" optionsthumb2="200x150" title2="Estado inicial del teléfono"
+    image3="image:samsung-galaxy-s21-fe-sistema-inicial-6.webp" optionsthumb3="200x150" title3="Estado inicial del teléfono" >}}
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-sistema-inicial-7.jpg" optionsthumb1="200x150" title1="Estado inicial del teléfono"
-    image2="image:samsung-galaxy-s21-fe-sistema-inicial-8.jpg" optionsthumb2="200x150" title2="Estado inicial del teléfono"
-    image3="image:samsung-galaxy-s21-fe-sistema-inicial-9.jpg" optionsthumb3="200x150" title3="Estado inicial del teléfono" >}}
+    image1="image:samsung-galaxy-s21-fe-sistema-inicial-7.webp" optionsthumb1="200x150" title1="Estado inicial del teléfono"
+    image2="image:samsung-galaxy-s21-fe-sistema-inicial-8.webp" optionsthumb2="200x150" title2="Estado inicial del teléfono"
+    image3="image:samsung-galaxy-s21-fe-sistema-inicial-9.webp" optionsthumb3="200x150" title3="Estado inicial del teléfono" >}}
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-sistema-inicial-10.jpg" optionsthumb1="200x150" title1="Estado inicial del teléfono"
-    image2="image:samsung-galaxy-s21-fe-sistema-inicial-11.jpg" optionsthumb2="200x150" title2="Estado inicial del teléfono"
+    image1="image:samsung-galaxy-s21-fe-sistema-inicial-10.webp" optionsthumb1="200x150" title1="Estado inicial del teléfono"
+    image2="image:samsung-galaxy-s21-fe-sistema-inicial-11.webp" optionsthumb2="200x150" title2="Estado inicial del teléfono"
     caption="Estado inicial del teléfono" >}}
 
 #### Pruebas de rendimiento
@@ -340,14 +340,14 @@ Comparando el rendimiento según los números ofrecidos por la herramienta Geekb
 
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-geekbench-1.png" optionsthumb1="200x150" title1="Prueba de rendimiento del Samsung Galaxy S21 FE"
-    image2="image:samsung-galaxy-s21-fe-geekbench-2.png" optionsthumb2="200x150" title2="Prueba de rendimiento del Samsung Galaxy S21 FE"
-    image3="image:samsung-galaxy-s21-fe-geekbench-3.png" optionsthumb3="200x150" title3="Prueba de rendimiento del Samsung Galaxy S21 FE" >}}
+    image1="image:samsung-galaxy-s21-fe-geekbench-1.webp" optionsthumb1="200x150" title1="Prueba de rendimiento del Samsung Galaxy S21 FE"
+    image2="image:samsung-galaxy-s21-fe-geekbench-2.webp" optionsthumb2="200x150" title2="Prueba de rendimiento del Samsung Galaxy S21 FE"
+    image3="image:samsung-galaxy-s21-fe-geekbench-3.webp" optionsthumb3="200x150" title3="Prueba de rendimiento del Samsung Galaxy S21 FE" >}}
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-geekbench-4.png" optionsthumb1="200x150" title1="Prueba de rendimiento del Samsung Galaxy S6"
-    image2="image:samsung-galaxy-s21-fe-geekbench-5.png" optionsthumb2="200x150" title2="Prueba de rendimiento del Samsung Galaxy S6"
-    image3="image:samsung-galaxy-s21-fe-geekbench-6.png" optionsthumb3="200x150" title3="Prueba de rendimiento del Samsung Galaxy S6"
+    image1="image:samsung-galaxy-s21-fe-geekbench-4.webp" optionsthumb1="200x150" title1="Prueba de rendimiento del Samsung Galaxy S6"
+    image2="image:samsung-galaxy-s21-fe-geekbench-5.webp" optionsthumb2="200x150" title2="Prueba de rendimiento del Samsung Galaxy S6"
+    image3="image:samsung-galaxy-s21-fe-geekbench-6.webp" optionsthumb3="200x150" title3="Prueba de rendimiento del Samsung Galaxy S6"
     caption="Prueba de rendimiento del Samsung Galaxy S21 FE y del Samsung Galaxy S6" >}}
 
 ### Migración de dispositivo y configuración inicial
@@ -368,14 +368,14 @@ En el apartado de ajustes hay gran cantidad de opciones de configuración alguna
 
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-sistema-configurado-1.png" optionsthumb1="200x150" title1="Estado del teléfono una vez configurado"
-    image2="image:samsung-galaxy-s21-fe-sistema-configurado-2.png" optionsthumb2="200x150" title2="Estado del teléfono una vez configurado"
-    image3="image:samsung-galaxy-s21-fe-sistema-configurado-3.png" optionsthumb3="200x150" title3="Estado del teléfono una vez configurado" >}}
+    image1="image:samsung-galaxy-s21-fe-sistema-configurado-1.webp" optionsthumb1="200x150" title1="Estado del teléfono una vez configurado"
+    image2="image:samsung-galaxy-s21-fe-sistema-configurado-2.webp" optionsthumb2="200x150" title2="Estado del teléfono una vez configurado"
+    image3="image:samsung-galaxy-s21-fe-sistema-configurado-3.webp" optionsthumb3="200x150" title3="Estado del teléfono una vez configurado" >}}
 {{< image
     gallery="true"
-    image1="image:samsung-galaxy-s21-fe-sistema-configurado-4.png" optionsthumb1="200x150" title1="Estado del teléfono una vez configurado"
-    image2="image:samsung-galaxy-s21-fe-sistema-configurado-5.png" optionsthumb2="200x150" title2="Estado del teléfono una vez configurado"
-    image3="image:samsung-galaxy-s21-fe-sistema-configurado-6.png" optionsthumb3="200x150" title3="Estado del teléfono una vez configurado"
+    image1="image:samsung-galaxy-s21-fe-sistema-configurado-4.webp" optionsthumb1="200x150" title1="Estado del teléfono una vez configurado"
+    image2="image:samsung-galaxy-s21-fe-sistema-configurado-5.webp" optionsthumb2="200x150" title2="Estado del teléfono una vez configurado"
+    image3="image:samsung-galaxy-s21-fe-sistema-configurado-6.webp" optionsthumb3="200x150" title3="Estado del teléfono una vez configurado"
     caption="Estado del teléfono una vez configurado" >}}
     
 

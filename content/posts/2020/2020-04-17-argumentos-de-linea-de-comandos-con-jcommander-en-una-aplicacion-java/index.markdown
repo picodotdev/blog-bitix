@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:jcommander.png"
+imagePost: "image:jcommander.webp"
 tags: ["java", "planeta-codigo"]
 ---
 

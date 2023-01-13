@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:god-of-war.jpg"
-imagePost: "image:god-of-war.jpg"
+imageHead: "image:god-of-war.webp"
+imagePost: "image:god-of-war.webp"
 tags: ["juegos"]
 series: ["analisis-juegos", "juegos"]
 summary: "Haber llegado tarde a la generación de PS4 hace que tenga disponible la totalidad del catálogo de PS4. Estoy jugando a muchos de los mejores juegos de la PS4 y del God of War me esperaba un buen juego pero me ha sorprendido por ser mucho mejor de lo que pensaba en historia, mundo y mitología, combates, habilidades, diálogos, puzzles, coleccionables, ... Muy completo."
@@ -34,16 +34,16 @@ El juego hace varias menciones al Ragnarok que es la segunda parte de God of War
 
 {{< image
     gallery="true"
-    image1="image:god-of-war.jpg" optionsthumb1="650x450" title1="Pantalla inicial" >}}
+    image1="image:god-of-war.webp" optionsthumb1="650x450" title1="Pantalla inicial" >}}
 {{< image
     gallery="true"
-    image1="image:god-of-war-menu-1.jpg" optionsthumb1="200x150" title1="Menú"
-    image2="image:god-of-war-menu-2.jpg" optionsthumb2="200x150" title2="Menú"
-    image3="image:god-of-war-menu-3.jpg" optionsthumb3="200x150" title3="Menú" >}}
+    image1="image:god-of-war-menu-1.webp" optionsthumb1="200x150" title1="Menú"
+    image2="image:god-of-war-menu-2.webp" optionsthumb2="200x150" title2="Menú"
+    image3="image:god-of-war-menu-3.webp" optionsthumb3="200x150" title3="Menú" >}}
 {{< image
     gallery="true"
-    image1="image:god-of-war-santa-monica-studio.jpg" optionsthumb1="200x150" title1="Menú"
-    image2="image:god-of-war-cubierta-caja-fisica.jpg" optionsthumb2="200x150" title2="Caja física del God of War" >}}
+    image1="image:god-of-war-santa-monica-studio.webp" optionsthumb1="200x150" title1="Menú"
+    image2="image:god-of-war-cubierta-caja-fisica.webp" optionsthumb2="200x150" title2="Caja física del God of War" >}}
 
 {{< amazon
     tags="game-console" >}}
@@ -62,21 +62,21 @@ La historia en la que transcurre God of War de PS4 es independiente de las anter
 
 {{< image
     gallery="true"
-    image1="image:god-of-war-inicio-1.jpg" optionsthumb1="200x150" title1="Capturas"
-    image2="image:god-of-war-inicio-2.jpg" optionsthumb2="200x150" title2="Capturas"
-    image3="image:god-of-war-inicio-3.jpg" optionsthumb3="200x150" title3="Capturas" >}}
+    image1="image:god-of-war-inicio-1.webp" optionsthumb1="200x150" title1="Capturas"
+    image2="image:god-of-war-inicio-2.webp" optionsthumb2="200x150" title2="Capturas"
+    image3="image:god-of-war-inicio-3.webp" optionsthumb3="200x150" title3="Capturas" >}}
 {{< image
     gallery="true"
-    image1="image:god-of-war-viaje-1.jpg" optionsthumb1="200x150" title1="Capturas"
-    image2="image:god-of-war-viaje-2.jpg" optionsthumb2="200x150" title2="Capturas"
-    image3="image:god-of-war-viaje-3.jpg" optionsthumb3="200x150" title3="Capturas"
+    image1="image:god-of-war-viaje-1.webp" optionsthumb1="200x150" title1="Capturas"
+    image2="image:god-of-war-viaje-2.webp" optionsthumb2="200x150" title2="Capturas"
+    image3="image:god-of-war-viaje-3.webp" optionsthumb3="200x150" title3="Capturas"
     caption="Capturas" >}}
 
 El juego se desarrolla con la misma fórmula que otros juegos como Horizon Zero Dawn y The Last of Us con Kratos como padre y mentor de su hijo Atreus que le acompaña durante todo el juego. Es un juego de mundo abierto con algunas misiones secundarias pero sin llegar a ser un número tan abrumador que haga perder el hilo de la historia principal. Estas misiones secundarias permiten conseguir recursos para mejorar el las armas y equipo que son un requisito para enfrentarse en los combates con enemigos que de otra manera acaban con la vida de Kratos de un solo golpe y el daño realizado por este es mínimo. El viaje en la barca mostrada en la portada del juego es una parte importante del juego ya que la mayor parte del desplazamiento se realiza con este medio de transporte.
 
 {{< image
     gallery="true"
-    image1="image:god-of-war-misiones-1.jpg" optionsthumb1="200x150" title1="Misiones"
+    image1="image:god-of-war-misiones-1.webp" optionsthumb1="200x150" title1="Misiones"
     caption="Misiones y secundarias" >}}
 
 Hay varios mundos que explorar aparte del principal y otros permanecen bloqueados aún habiendo acabado con la historia principal. Seguramente estos son un anticipo de lo que ofrece God of War Ragnarok.
@@ -95,7 +95,7 @@ Lo mismo ocurre con algunos enemigos, son tan poderosos que es muy difícil mata
 
 {{< image
     gallery="true"
-    image1="image:god-of-war-mapa-1.jpg" optionsthumb1="650x450" title1="Mapa"
+    image1="image:god-of-war-mapa-1.webp" optionsthumb1="650x450" title1="Mapa"
     caption="Mapa" >}}
 
 Otros grandes juegos de PS4, en otros he echado en falta algunas de las mecánicas que se utilizan en los juegos. Al Uncharted 4 le falta un árbol de habilidades y ser algo más RPG y a Horizon Zero Dawn le falta algo de maldad a Aloy, es una buenaza, y The Last of Us es lineal y no permite volver atrás. El God of War sin embargo es un juego muy completo en el que no he echado en falta de menos nada.
@@ -104,14 +104,14 @@ A lo largo de la historia del juego Kratos hace de mentor de su hijo Atreus, par
 
 {{< image
     gallery="true"
-    image1="image:god-of-war-kratos-1.jpg" optionsthumb1="200x150" title1="Capturas"
-    image2="image:god-of-war-kratos-2.jpg" optionsthumb2="200x150" title2="Capturas"
-    image3="image:god-of-war-kratos-3.jpg" optionsthumb3="200x150" title3="Capturas" >}}
+    image1="image:god-of-war-kratos-1.webp" optionsthumb1="200x150" title1="Capturas"
+    image2="image:god-of-war-kratos-2.webp" optionsthumb2="200x150" title2="Capturas"
+    image3="image:god-of-war-kratos-3.webp" optionsthumb3="200x150" title3="Capturas" >}}
 {{< image
     gallery="true"
-    image1="image:god-of-war-kratos-4.jpg" optionsthumb1="200x150" title1="Capturas"
-    image2="image:god-of-war-kratos-5.jpg" optionsthumb2="200x150" title2="Capturas"
-    image3="image:god-of-war-kratos-6.jpg" optionsthumb3="200x150" title3="Capturas"
+    image1="image:god-of-war-kratos-4.webp" optionsthumb1="200x150" title1="Capturas"
+    image2="image:god-of-war-kratos-5.webp" optionsthumb2="200x150" title2="Capturas"
+    image3="image:god-of-war-kratos-6.webp" optionsthumb3="200x150" title3="Capturas"
     caption="Capturas" >}}
 
 Una cosa muy buena es que el mapa está dividido en varias zonas y en cada una se indica qué elementos quedan por descubrir para completarla, esto es muy útil para conseguir algunos trofeos.
@@ -122,7 +122,7 @@ El trofeo platino no es difícil de conseguir ni requiere dedicar infinitas hora
 
 {{< image
     gallery="true"
-    image1="image:god-of-war-trofeo-platino.jpg" optionsthumb1="650x450" title1="Trofeo platino"
+    image1="image:god-of-war-trofeo-platino.webp" optionsthumb1="650x450" title1="Trofeo platino"
     caption="Trofeo platino" >}}
 
 #### Armas, recursos, mejoras y equipo
@@ -131,21 +131,21 @@ A lo largo del juego tanto Kratos como Atreus mejoran sus armas, armaduras y hab
 
 {{< image
     gallery="true"
-    image1="image:god-of-war-cofres-1.jpg" optionsthumb1="200x150" title1="Cofres"
-    image2="image:god-of-war-cofres-2.jpg" optionsthumb2="200x150" title2="Cofres"
-    image3="image:god-of-war-recursos-1.jpg" optionsthumb3="200x150" title3="Recursos"
+    image1="image:god-of-war-cofres-1.webp" optionsthumb1="200x150" title1="Cofres"
+    image2="image:god-of-war-cofres-2.webp" optionsthumb2="200x150" title2="Cofres"
+    image3="image:god-of-war-recursos-1.webp" optionsthumb3="200x150" title3="Recursos"
     caption="Cofres" >}}
 
 Las habilidades están organizadas en un árbol de habilidades que se desbloquean consiguiendo cierto nivel en el arma y experiencia, las nuevas habilidades hace más poderosos algunos golpes o permiten nuevas formas de golpear a los enemigos, esta progresión permite ir aprendiendo poco a poco que hace cada nueva habilidad. La experiencia conseguida durante el juego es más que suficiente para desbloquear todas las habilidades de los diferentes árboles de habilidades tanto de Kratos como de Atreus. El hacha, el escudo, las espadas y el propio Atreus tienen su propio árbol de habilidades.
 
 {{< image
     gallery="true"
-    image1="image:god-of-war-habilidades-1.jpg" optionsthumb1="200x150" title1="Árbol de habilidades" >}}
+    image1="image:god-of-war-habilidades-1.webp" optionsthumb1="200x150" title1="Árbol de habilidades" >}}
 {{< image
     gallery="true"
-    image1="image:god-of-war-habilidades-2.jpg" optionsthumb1="200x150" title1="Árbol de habilidades"
-    image2="image:god-of-war-habilidades-3.jpg" optionsthumb2="200x150" title2="Árbol de habilidades"
-    image3="image:god-of-war-habilidades-4.jpg" optionsthumb3="200x150" title3="Árbol de habilidades"
+    image1="image:god-of-war-habilidades-2.webp" optionsthumb1="200x150" title1="Árbol de habilidades"
+    image2="image:god-of-war-habilidades-3.webp" optionsthumb2="200x150" title2="Árbol de habilidades"
+    image3="image:god-of-war-habilidades-4.webp" optionsthumb3="200x150" title3="Árbol de habilidades"
     caption="Árbol de habilidades" >}}
 
 El juego ofrece una comparación del nivel de Kratos y el nivel del enemigo, si el enemigo es más poderoso que Kratos tendrá una barra de vida morada y será mucho más difícil hacerle daño además de poder acabar con Kratos de poco más de un golpe. La mejora del equipo y habilidades es imprescindible.
@@ -158,12 +158,12 @@ Otros objetos destacados son las manzanas de Iddum y cuernos de hidromiel sangri
 
 {{< image
     gallery="true"
-    image1="image:god-of-war-manzana-de-idunn-1.jpg" optionsthumb1="200x150" title1="Manzanas de Iddum"
-    image2="image:god-of-war-manzana-de-idunn-2.jpg" optionsthumb2="200x150" title2="Manzanas de Iddum" >}}
+    image1="image:god-of-war-manzana-de-idunn-1.webp" optionsthumb1="200x150" title1="Manzanas de Iddum"
+    image2="image:god-of-war-manzana-de-idunn-2.webp" optionsthumb2="200x150" title2="Manzanas de Iddum" >}}
 {{< image
     gallery="true"
-    image1="image:god-of-war-cuerno-de-hidromiel-sangrienta-1.jpg" optionsthumb1="200x150" title1="Cuernos de hidromiel sangrienta"
-    image2="image:god-of-war-cuerno-de-hidromiel-sangrienta-2.jpg" optionsthumb2="200x150" title2="Cuernos de hidromiel sangrienta"
+    image1="image:god-of-war-cuerno-de-hidromiel-sangrienta-1.webp" optionsthumb1="200x150" title1="Cuernos de hidromiel sangrienta"
+    image2="image:god-of-war-cuerno-de-hidromiel-sangrienta-2.webp" optionsthumb2="200x150" title2="Cuernos de hidromiel sangrienta"
     caption="Manzanas de Iddum y cuernos de hidromiel sangrienta" >}}
 
 #### Puzzles
@@ -176,8 +176,8 @@ Algunos de esos puzzles tienen algo de lógica pero no dan pistas, simplemente e
 
 {{< image
     gallery="true"
-    image1="image:god-of-war-puzzles-1.jpg" optionsthumb1="200x150" title1="Puzzles"
-    image2="image:god-of-war-puzzles-2.jpg" optionsthumb2="200x150" title2="Puzzles"
+    image1="image:god-of-war-puzzles-1.webp" optionsthumb1="200x150" title1="Puzzles"
+    image2="image:god-of-war-puzzles-2.webp" optionsthumb2="200x150" title2="Puzzles"
     caption="Puzzles" >}}
 
 #### Coleccionables
@@ -190,32 +190,32 @@ Entre los coleccionables están los santuarios de Jötnar, objetos perdidos, mar
 
 {{< image
     gallery="true"
-    image1="image:god-of-war-hallazgos-1.jpg" optionsthumb1="200x150" title1="Hallazgos"
-    image2="image:god-of-war-hallazgos-2.jpg" optionsthumb2="200x150" title2="Hallazgos"
+    image1="image:god-of-war-hallazgos-1.webp" optionsthumb1="200x150" title1="Hallazgos"
+    image2="image:god-of-war-hallazgos-2.webp" optionsthumb2="200x150" title2="Hallazgos"
     caption="Hallazgos" >}}
 
 {{< image
     gallery="true"
-    image1="image:god-of-war-santuario-de-jotnar-1.jpg" optionsthumb1="200x150" title1="Santuarios de Jötnar"
-    image2="image:god-of-war-santuario-de-jotnar-2.jpg" optionsthumb2="200x150" title2="Santuarios de Jötnar"
-    image3="image:god-of-war-santuario-de-jotnar-3.jpg" optionsthumb3="200x150" title3="Santuarios de Jötnar"
+    image1="image:god-of-war-santuario-de-jotnar-1.webp" optionsthumb1="200x150" title1="Santuarios de Jötnar"
+    image2="image:god-of-war-santuario-de-jotnar-2.webp" optionsthumb2="200x150" title2="Santuarios de Jötnar"
+    image3="image:god-of-war-santuario-de-jotnar-3.webp" optionsthumb3="200x150" title3="Santuarios de Jötnar"
     caption="Santuarios de Jötnar" >}}
 
 Los mapas del tesoro ofrecen una descripción y una imagen que hay que reconocer para saber donde está enterrado, encontrarlo proporciona algunos recursos para mejorar el equipo.
 
 {{< image
     gallery="true"
-    image1="image:god-of-war-mapas-del-tesoro-1.jpg" optionsthumb1="200x150" title1="Mapas del tesoro"
-    image2="image:god-of-war-mapas-del-tesoro-2.jpg" optionsthumb2="200x150" title2="Mapas del tesoro"
-    image3="image:god-of-war-mapas-del-tesoro-3.jpg" optionsthumb3="200x150" title3="Mapas del tesoro"
+    image1="image:god-of-war-mapas-del-tesoro-1.webp" optionsthumb1="200x150" title1="Mapas del tesoro"
+    image2="image:god-of-war-mapas-del-tesoro-2.webp" optionsthumb2="200x150" title2="Mapas del tesoro"
+    image3="image:god-of-war-mapas-del-tesoro-3.webp" optionsthumb3="200x150" title3="Mapas del tesoro"
     caption="Mapas del tesoro" >}}
 
 Los cuervos de Odin son los espías y ojos de Odin para seguir los pasos y mantener vigilado a Kratos. Hay medio centenar repartido por el mapa, son verdes, medio transparentes y es de destacar que aunque no se vean emiten un graznido audible al estar cerca que si se está atento es posible reconocer que a poca distancia hay un cuervo y poder acabar con él.
 
 {{< image
     gallery="true"
-    image1="image:god-of-war-cuervos-de-odin-1.jpg" optionsthumb1="200x150" title1="Cuervos de Odin"
-    image2="image:god-of-war-cuervos-de-odin-2.jpg" optionsthumb2="200x150" title2="Cuervos de Odin"
+    image1="image:god-of-war-cuervos-de-odin-1.webp" optionsthumb1="200x150" title1="Cuervos de Odin"
+    image2="image:god-of-war-cuervos-de-odin-2.webp" optionsthumb2="200x150" title2="Cuervos de Odin"
     caption="Cuervos de Odin" >}}
 
 Ninguno de los coleccionables están especialmente escondidos pero requiere explorar los mapas con cierto detalle. En cada zona Midgard y reino se indica una leyenda de que elementos y su número quedan por descubrir. Algunos de los coleccionables son requeridos para obtener el trofeo platino que en el God of War pero que es mucho más sencillo de conseguir que en otros juegos.
@@ -234,31 +234,31 @@ Al llegar a cierto nivel de ira acumulada Kratos la puede emplear para descargar
 
 {{< image
     gallery="true"
-    image1="image:god-of-war-mecanicas-1.jpg" optionsthumb1="200x150" title1="Mecánicas de combate"
-    image2="image:god-of-war-mecanicas-2.jpg" optionsthumb2="200x150" title2="Mecánicas de combate"
-    image3="image:god-of-war-mecanicas-3.jpg" optionsthumb3="200x150" title3="Mecánicas de combate" >}}
+    image1="image:god-of-war-mecanicas-1.webp" optionsthumb1="200x150" title1="Mecánicas de combate"
+    image2="image:god-of-war-mecanicas-2.webp" optionsthumb2="200x150" title2="Mecánicas de combate"
+    image3="image:god-of-war-mecanicas-3.webp" optionsthumb3="200x150" title3="Mecánicas de combate" >}}
 {{< image
     gallery="true"
-    image1="image:god-of-war-mecanicas-4.jpg" optionsthumb1="200x150" title1="Mecánicas de combate"
-    image2="image:god-of-war-mecanicas-5.jpg" optionsthumb2="200x150" title2="Mecánicas de combate"
-    image3="image:god-of-war-mecanicas-6.jpg" optionsthumb3="200x150" title3="Mecánicas de combate"
+    image1="image:god-of-war-mecanicas-4.webp" optionsthumb1="200x150" title1="Mecánicas de combate"
+    image2="image:god-of-war-mecanicas-5.webp" optionsthumb2="200x150" title2="Mecánicas de combate"
+    image3="image:god-of-war-mecanicas-6.webp" optionsthumb3="200x150" title3="Mecánicas de combate"
     caption="Mecánicas de combate" >}}
 
 Hay una gran variedad de enemigos y cada uno tiene su propia personalidad de combate y puntos débiles y puntos fuertes que conviene evitar. Al ir descubriendo enemigos y luchando contra ellos Atreus anota en su códice una breve descripción y consejos de cómo luchar contra ellos.
 
 {{< image
     gallery="true"
-    image1="image:god-of-war-bestiario-1.jpg" optionsthumb1="200x150" title1="Bestiario"
-    image2="image:god-of-war-bestiario-2.jpg" optionsthumb2="200x150" title2="Bestiario"
+    image1="image:god-of-war-bestiario-1.webp" optionsthumb1="200x150" title1="Bestiario"
+    image2="image:god-of-war-bestiario-2.webp" optionsthumb2="200x150" title2="Bestiario"
     caption="Bestiario" >}}
 
 También hay algunos enemigos más poderosos con mayor cantidad de vida. Contra esto no es posible un ataque directo y constante sino que hay que esperar el momento adecuado para atacarlos cuando son vulnerables. Quizá estos jefes no llegan al nivel como un Demon Souls o Elder Ring pero sí requieren conocer la estrategia para acabar con ellos y cómo defenderse de sus ataques.
 
 {{< image
     gallery="true"
-    image1="image:god-of-war-jefes-1.jpg" optionsthumb1="200x150" title1="Jefes"
-    image2="image:god-of-war-jefes-2.jpg" optionsthumb2="200x150" title2="Jefes"
-    image3="image:god-of-war-jefes-3.jpg" optionsthumb3="200x150" title3="Jefes"
+    image1="image:god-of-war-jefes-1.webp" optionsthumb1="200x150" title1="Jefes"
+    image2="image:god-of-war-jefes-2.webp" optionsthumb2="200x150" title2="Jefes"
+    image3="image:god-of-war-jefes-3.webp" optionsthumb3="200x150" title3="Jefes"
     caption="Jefes" >}}
 
 El nivel de los enemigos se muestra en su barra de color respecto a la de Kratos según el equipo propio cuando la barra es morada quiere indicar que el enemigo tiene un nivel superior al de Kratos y el combate va a ser en desventaja con mayor probabilidad de de perder la vida.
@@ -269,9 +269,9 @@ Durante el combate el juego ofrece indicadores de ayuda para evitar los golpes. 
 
 {{< image
     gallery="true"
-    image1="image:god-of-war-indicador-de-amenaza-1.jpg" optionsthumb1="200x150" title1="Indicadores de amenaza"
-    image2="image:god-of-war-indicador-de-amenaza-2.jpg" optionsthumb2="200x150" title2="Indicadores de amenaza"
-    image3="image:god-of-war-indicador-de-amenaza-3.jpg" optionsthumb3="200x150" title3="Indicadores de amenaza"
+    image1="image:god-of-war-indicador-de-amenaza-1.webp" optionsthumb1="200x150" title1="Indicadores de amenaza"
+    image2="image:god-of-war-indicador-de-amenaza-2.webp" optionsthumb2="200x150" title2="Indicadores de amenaza"
+    image3="image:god-of-war-indicador-de-amenaza-3.webp" optionsthumb3="200x150" title3="Indicadores de amenaza"
     caption="Indicadores de amenaza" >}}
 
 #### Valquirias
@@ -292,9 +292,9 @@ Las derrotas iniciales en el periodo de aprendizaje en los primeros enfrentamien
 
 {{< image
     gallery="true"
-    image1="image:god-of-war-valquirias-1.jpg" optionsthumb1="200x150" title1="Valquirias"
-    image2="image:god-of-war-valquirias-2.jpg" optionsthumb2="200x150" title2="Valquirias"
-    image3="image:god-of-war-valquirias-3.jpg" optionsthumb3="200x150" title3="Valquirias"
+    image1="image:god-of-war-valquirias-1.webp" optionsthumb1="200x150" title1="Valquirias"
+    image2="image:god-of-war-valquirias-2.webp" optionsthumb2="200x150" title2="Valquirias"
+    image3="image:god-of-war-valquirias-3.webp" optionsthumb3="200x150" title3="Valquirias"
     caption="Valquirias" >}}
 
 ### Banda sonora original

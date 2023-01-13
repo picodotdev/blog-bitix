@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:schneider-new-unica.jpg"
-imagePost: "image:schneider-750.png"
+imageHead: "image:schneider-new-unica.webp"
+imagePost: "image:schneider-750.webp"
 tags: []
 series: ["desempaquetado-otros"]
 summary: "Los mecanismos de la instalación eléctrica que tenía de mi vivienda ya tienen alguno más de 20 años, con el uso y paso del tiempo algunos interruptores estaban sucios y ni aún intentando limpiarlos quedaban completamente limpios, por otro lado un par de interruptores me estaban haciendo ruido y arco eléctrico con la consecuencia de que alguna bombilla se me estaban fundiendo no cada más de tres o más años que duran las bombillas LED sino en menos de un año. Por estos motivos y también por el motivo estético he reemplazado tanto los interruptores como los enchufes. Reemplazar los mecanismos eléctricos no es difícil con uno mínimos conocimientos pero por seguridad al manipular elementos eléctricos hay que conocerlos y no tener ninguna duda ni cometer ningún error para no tener un accidente."
@@ -29,7 +29,7 @@ En este artículo contiene los conceptos básicos de electricidad para hacer la 
 
 {{< image
     gallery="true"
-    image1="image:ilumitec.png" optionsthumb1="250x200" title1="ilumitec"
+    image1="image:ilumitec.webp" optionsthumb1="250x200" title1="ilumitec"
     image2="image:schneider.svg" optionsthumb2="250x200" title2="Schneider" >}}
 
 {{< warning >}}
@@ -58,10 +58,10 @@ Los interruptores o interruptores simples permiten controlar un elemento de luz 
 
 {{< image
     gallery="true"
-    image1="image:interruptor-1.jpg" optionsthumb1="650x450" title1="Interruptor" >}}
+    image1="image:interruptor-1.webp" optionsthumb1="650x450" title1="Interruptor" >}}
 {{< image
     gallery="true"
-    image1="image:interruptor-2.jpg" optionsthumb1="300x250" title1="Interruptor"
+    image1="image:interruptor-2.webp" optionsthumb1="300x250" title1="Interruptor"
     caption="Interruptor para un punto de luz" >}}
 
 #### Interruptor conmutador
@@ -72,7 +72,7 @@ En estos creo sí que importa que el cable de la línea esté colocado en la ent
 
 {{< image
     gallery="true"
-    image1="image:interruptor-conmutador.jpg" optionsthumb1="650x450" title1="Interruptor conmutador"
+    image1="image:interruptor-conmutador.webp" optionsthumb1="650x450" title1="Interruptor conmutador"
     caption="Interruptor conmutador para dos puntos de luz o en combinación con los de cruzamiento para más puntos de luz" >}}
 
 #### Interruptor de cruzamiento
@@ -85,7 +85,7 @@ En estos creo que también importa la posición donde se colocan los cables tant
 
 {{< image
     gallery="true"
-    image1="image:interruptor-cruzamiento.jpg" optionsthumb1="650x450" title1="Interruptor de cruzamiento"
+    image1="image:interruptor-cruzamiento.webp" optionsthumb1="650x450" title1="Interruptor de cruzamiento"
     caption="Interruptor de cruzamiento para tres o más puntos de luz" >}}
 
 #### Enchufes electricidad
@@ -96,8 +96,8 @@ Para diferenciar la función de los diferentes tipos de cables, estos por normat
 
 {{< image
     gallery="true"
-    image1="image:enchufe-schuko-1.jpg" optionsthumb1="300x250" title1="Enchufe schuko"
-    image2="image:enchufe-schuko-2.jpg" optionsthumb2="300x250" title1="Enchufe schuko"
+    image1="image:enchufe-schuko-1.webp" optionsthumb1="300x250" title1="Enchufe schuko"
+    image2="image:enchufe-schuko-2.webp" optionsthumb2="300x250" title1="Enchufe schuko"
     caption="Enchufe schuko" >}}
 
 #### Marcos y bastidores
@@ -108,21 +108,21 @@ Los marcos son los elementos que dan el acabado al mecanismo eléctrico, permite
 
 {{< image
     gallery="true"
-    image1="image:marco-1a.jpg" optionsthumb1="200x150" title1="Marco simple"
-    image2="image:marco-2a.jpg" optionsthumb2="200x150" title2="Marco doble"
-    image3="image:marco-3a.jpg" optionsthumb3="200x150" title3="Marco triple" >}}
+    image1="image:marco-1a.webp" optionsthumb1="200x150" title1="Marco simple"
+    image2="image:marco-2a.webp" optionsthumb2="200x150" title2="Marco doble"
+    image3="image:marco-3a.webp" optionsthumb3="200x150" title3="Marco triple" >}}
 {{< image
     gallery="true"
-    image1="image:marco-1b.jpg" optionsthumb1="200x150" title1="Marco simple"
-    image2="image:marco-2b.jpg" optionsthumb2="200x150" title2="Marco doble"
-    image3="image:marco-3b.jpg" optionsthumb3="200x150" title3="Marco triple"
+    image1="image:marco-1b.webp" optionsthumb1="200x150" title1="Marco simple"
+    image2="image:marco-2b.webp" optionsthumb2="200x150" title2="Marco doble"
+    image3="image:marco-3b.webp" optionsthumb3="200x150" title3="Marco triple"
     caption="Marcos simple, doble y triple" >}}
 
 Algunas marcas y series tiene bastidores también dobles y triples pero las que solo proporcionan bastidores simples permiten componer bastidores de más elementos juntando tantos simples como se necesiten. En el caso de Schneider en el serie New Unica los bastidores son simples pero permiten juntarse como piezas de un puzzle quedando consistes muy parecido a como si fuese de una sola pieza y conservando las distancias adecuadas para los marcos y las cajas de registro. La ventaja de los bastidores simples es que permiten desmontarse individualmente, su desventaja es que montarlos requiere algo más de trabajo.
 
 {{< image
     gallery="true"
-    image1="image:bastidor.jpg" optionsthumb1="200x150" title1="Bastidor"
+    image1="image:bastidor.webp" optionsthumb1="200x150" title1="Bastidor"
     caption="Bastidor de metal" >}}
 
 #### Otros elementos eléctricos
@@ -131,7 +131,7 @@ Los fabricantes proporcionan  elementos adicionales y diferentes tipos de mecani
 
 {{< image
     gallery="true"
-    image1="image:tapa-ciega.jpg" optionsthumb1="200x150" title1="Mecanismos originales"
+    image1="image:tapa-ciega.webp" optionsthumb1="200x150" title1="Mecanismos originales"
     caption="Tapa ciega" >}}
 
 #### Preguntas frecuentes sobre interruptores
@@ -158,29 +158,29 @@ Lo primero a realizar al recibir el paquete es comprobar que no falta nada, que 
 
 {{< image
     gallery="true"
-    image1="image:paquete.jpg" optionsthumb1="650x450" title1="Paquete con elementos Schneider New Unica" >}}
+    image1="image:paquete.webp" optionsthumb1="650x450" title1="Paquete con elementos Schneider New Unica" >}}
 {{< image
     gallery="true"
-    image1="image:schneider-new-unica.jpg" optionsthumb1="650x450" title1="Schneider New Unica" >}}
+    image1="image:schneider-new-unica.webp" optionsthumb1="650x450" title1="Schneider New Unica" >}}
 {{< image
     gallery="true"
-    image1="image:elementos-1.jpg" optionsthumb1="200x150" title1="Elementos"
-    image2="image:elementos-2.jpg" optionsthumb2="200x150" title2="Elementos"
-    image3="image:elementos-3.jpg" optionsthumb3="200x150" title3="Elementos" >}}
+    image1="image:elementos-1.webp" optionsthumb1="200x150" title1="Elementos"
+    image2="image:elementos-2.webp" optionsthumb2="200x150" title2="Elementos"
+    image3="image:elementos-3.webp" optionsthumb3="200x150" title3="Elementos" >}}
 {{< image
     gallery="true"
-    image1="image:elementos-4.jpg" optionsthumb1="200x150" title1="Elementos"
-    image2="image:elementos-5.jpg" optionsthumb2="200x150" title2="Elementos"
-    image3="image:elementos-7.jpg" optionsthumb3="200x150" title3="Elementos" >}}
+    image1="image:elementos-4.webp" optionsthumb1="200x150" title1="Elementos"
+    image2="image:elementos-5.webp" optionsthumb2="200x150" title2="Elementos"
+    image3="image:elementos-7.webp" optionsthumb3="200x150" title3="Elementos" >}}
 {{< image
     gallery="true"
-    image1="image:elementos-8.jpg" optionsthumb1="200x150" title1="Elementos"
-    image2="image:elementos-9.jpg" optionsthumb2="200x150" title2="Elementos"
-    image3="image:elementos-10.jpg" optionsthumb3="200x150" title3="Elementos" >}}
+    image1="image:elementos-8.webp" optionsthumb1="200x150" title1="Elementos"
+    image2="image:elementos-9.webp" optionsthumb2="200x150" title2="Elementos"
+    image3="image:elementos-10.webp" optionsthumb3="200x150" title3="Elementos" >}}
 {{< image
     gallery="true"
-    image1="image:elementos-11.jpg" optionsthumb1="200x150" title1="Elementos"
-    image2="image:elementos-12.jpg" optionsthumb2="200x150" title2="Elementos"
+    image1="image:elementos-11.webp" optionsthumb1="200x150" title1="Elementos"
+    image2="image:elementos-12.webp" optionsthumb2="200x150" title2="Elementos"
     caption="Elementos de la serie Schneider New Unica" >}}
 
 Un vídeo sobre la serie Schneider New Unica.
@@ -196,8 +196,8 @@ En el cuadro eléctrico tengo puestas unas etiquetas para saber que hace cada in
 
 {{< image
     gallery="true"
-    image1="image:cuadro-electrico-encendido.jpg" optionsthumb1="300x250" title1="Cuadro eléctrico encendido"
-    image2="image:cuadro-electrico-apagado.jpg" optionsthumb2="300x250" title2="Cuadro eléctrico apagado"
+    image1="image:cuadro-electrico-encendido.webp" optionsthumb1="300x250" title1="Cuadro eléctrico encendido"
+    image2="image:cuadro-electrico-apagado.webp" optionsthumb2="300x250" title2="Cuadro eléctrico apagado"
     caption="Cuadro eléctrico encendido y apagado" >}}
 
 Muchos mecanismos nuevos ofrecen un conexionado de fácil instalación sin necesidad de apretar tornillos tanto para los interruptores como para los enchufes. En internet y YouTube hay varios vídeos explicativos sobre cómo realizar estas tareas colocación de mecanismos eléctricos, algunos con información básica y algunos específicos utilizando los mecanismos a utilizar. En caso de no tener los conocimientos básicos antes de nada es mejor ver estos vídeos o ver algunos otros para aclarar las dudas. Hay que comprobar que los cables y bastidores quedan bien fijados, cortar los cables correctamente o limpiar las cajas de cualquier polvo si lo tuviera de construcción. Y evitar empalmes entre los cables, para ello los fabricantes ofrecen dos agujeros. En la serie de mecanismos eléctricos Schneider New Unica los cables se han de pelar con una longitud de 12 milímetros tal y como está serigrafiado en cada uno de los mecanismos con una marca visual y física de la longitud adecuada.
@@ -210,43 +210,43 @@ Los mecanismos originales y su desinstalación.
 
 {{< image
     gallery="true"
-    image1="image:mecanismos-originales-1.jpg" optionsthumb1="200x150" title1="Mecanismos originales"
-    image2="image:mecanismos-originales-2.jpg" optionsthumb2="200x150" title2="Mecanismos originales"
-    image3="image:mecanismos-originales-3.jpg" optionsthumb3="200x150" title3="Mecanismos originales" >}}
+    image1="image:mecanismos-originales-1.webp" optionsthumb1="200x150" title1="Mecanismos originales"
+    image2="image:mecanismos-originales-2.webp" optionsthumb2="200x150" title2="Mecanismos originales"
+    image3="image:mecanismos-originales-3.webp" optionsthumb3="200x150" title3="Mecanismos originales" >}}
 {{< image
     gallery="true"
-    image1="image:mecanismos-originales-4.jpg" optionsthumb1="200x150" title1="Mecanismos originales" >}}
+    image1="image:mecanismos-originales-4.webp" optionsthumb1="200x150" title1="Mecanismos originales" >}}
 {{< image
     gallery="true"
-    image1="image:mecanismos-originales-5.jpg" optionsthumb1="200x150" title1="Mecanismos originales"
-    image2="image:mecanismos-originales-6.jpg" optionsthumb2="200x150" title2="Mecanismos originales"
-    image3="image:mecanismos-originales-7.jpg" optionsthumb3="200x150" title3="Mecanismos originales"
+    image1="image:mecanismos-originales-5.webp" optionsthumb1="200x150" title1="Mecanismos originales"
+    image2="image:mecanismos-originales-6.webp" optionsthumb2="200x150" title2="Mecanismos originales"
+    image3="image:mecanismos-originales-7.webp" optionsthumb3="200x150" title3="Mecanismos originales"
     caption="Mecanismos originales" >}}
 
 Los mecanismos nuevos y su instalación.
 
 {{< image
     gallery="true"
-    image1="image:mecanismos-nuevos-1.jpg" optionsthumb1="200x150" title1="Mecanismos nuevos"
-    image2="image:mecanismos-nuevos-2.jpg" optionsthumb2="200x150" title2="Mecanismos nuevos"
-    image3="image:mecanismos-nuevos-3.jpg" optionsthumb3="200x150" title3="Mecanismos nuevos" >}}
+    image1="image:mecanismos-nuevos-1.webp" optionsthumb1="200x150" title1="Mecanismos nuevos"
+    image2="image:mecanismos-nuevos-2.webp" optionsthumb2="200x150" title2="Mecanismos nuevos"
+    image3="image:mecanismos-nuevos-3.webp" optionsthumb3="200x150" title3="Mecanismos nuevos" >}}
 {{< image
     gallery="true"
-    image1="image:mecanismos-nuevos-4.jpg" optionsthumb1="200x150" title1="Mecanismos nuevos"
-    image2="image:mecanismos-nuevos-5.jpg" optionsthumb2="200x150" title2="Mecanismos nuevos" >}}
+    image1="image:mecanismos-nuevos-4.webp" optionsthumb1="200x150" title1="Mecanismos nuevos"
+    image2="image:mecanismos-nuevos-5.webp" optionsthumb2="200x150" title2="Mecanismos nuevos" >}}
 {{< image
     gallery="true"
-    image1="image:mecanismos-nuevos-6.jpg" optionsthumb1="200x150" title1="Mecanismos nuevos"
-    image2="image:mecanismos-nuevos-7.jpg" optionsthumb2="200x150" title2="Mecanismos nuevos"
-    image3="image:mecanismos-nuevos-8.jpg" optionsthumb3="200x150" title3="Mecanismos nuevos"
+    image1="image:mecanismos-nuevos-6.webp" optionsthumb1="200x150" title1="Mecanismos nuevos"
+    image2="image:mecanismos-nuevos-7.webp" optionsthumb2="200x150" title2="Mecanismos nuevos"
+    image3="image:mecanismos-nuevos-8.webp" optionsthumb3="200x150" title3="Mecanismos nuevos"
     caption="Mecanismos nuevos" >}}
 
 Trenzar bien los cables es importante para facilitar su inserción en los mecanismos y para el correcto funcionamiento sin problemas de electricidad.
 
 {{< image
     gallery="true"
-    image1="image:cables-no-trenzados.jpg" optionsthumb1="200x150" title1="Cables mal trenzados"
-    image2="image:cables-trenzados.jpg" optionsthumb2="200x150" title2="Cables bien trenzados"
+    image1="image:cables-no-trenzados.webp" optionsthumb1="200x150" title1="Cables mal trenzados"
+    image2="image:cables-trenzados.webp" optionsthumb2="200x150" title2="Cables bien trenzados"
     caption="Cables mal y bien trenzados" >}}
 
 #### Mis apuntes
@@ -257,7 +257,7 @@ Comprobar la electricidad de los interruptores y enchufes que funcionan correcta
 
 {{< image
     gallery="true"
-    image2="image:herramientas-2.jpg" optionsthumb2="300x200" title2="Herramienta para comprobar si un enchufe tiene electricidad"
+    image2="image:herramientas-2.webp" optionsthumb2="300x200" title2="Herramienta para comprobar si un enchufe tiene electricidad"
     caption="Herramienta para comprobar si un enchufe tiene electricidad (a falta de una mejor)" >}}
 
 Ten a mano todas las herramientas necesarias, unos destornilladores planos y unos destornilladores de estrella, del tamaño y tipo que sean necesarios, también un pelacables o en su ausencia unas tijeras que sean capaces de pelar un cable y cortar el cable de cobre. Las herramientas adecuadas que sean necesarias para hacer la tarea. Quizá unos guantes aislantes o que al trenzar las puntas de los cables de cobre eviten daño en los dedos, también para evitar que las manos se ensucien. Como algunos enchufes están bajos hay que arrodillarse, para no hacerse daño en las rodillas se puede utilizar algo como almohada como una sábana vieja doblada. Algún aparato eléctrico para comprobar que los enchufes funcionan correctamente. Un nivel para comprobar que los bastidores y marcos quedan horizontalmente que en los interruptores es más fácil verlo a simple vista pero en los enchufes que suelen estar más bajos es más difícil.
@@ -274,15 +274,15 @@ Al limpiar los registros de las cajas si están sucias y tienen mucho polvo que 
 
 {{< image
     gallery="true"
-    image1="image:herramientas-1.jpg" optionsthumb1="300x200" title1="Herramientas"
+    image1="image:herramientas-1.webp" optionsthumb1="300x200" title1="Herramientas"
     caption="Herramientas" >}}
 
 Para evitar que el polvo caiga a la tarima mejor poner un papel que lo evite en la medida de lo posible, solo es polvo pero al barrer es abrasivo con el barniz de la tarima si no se tiene cuidado. Se aprecia la cantidad de suciedad que dejaron en los registros de las cajas los obreros en la construcción.
 
 {{< image
     gallery="true"
-    image1="image:limpieza-cajas-1.jpg" optionsthumb1="300x200" title1="Evitar suciedad"
-    image2="image:limpieza-cajas-2.jpg" optionsthumb2="300x200" title2="Evitar suciedad"
+    image1="image:limpieza-cajas-1.webp" optionsthumb1="300x200" title1="Evitar suciedad"
+    image2="image:limpieza-cajas-2.webp" optionsthumb2="300x200" title2="Evitar suciedad"
     caption="Evitar suciedad" >}}
 
 #### Tutoriales en vídeo
@@ -477,8 +477,8 @@ Además de los elementos eléctricos puede que sea necesario comprar otros produ
 
 {{< image
     gallery="true"
-    image1="image:marca-suciedad.jpg" optionsthumb1="300x200" title1="Marca de suciedad"
-    image2="image:marca-suciedad-arreglada.jpg" optionsthumb2="300x200" title2="Marca de suciedad arreglada"
+    image1="image:marca-suciedad.webp" optionsthumb1="300x200" title1="Marca de suciedad"
+    image2="image:marca-suciedad-arreglada.webp" optionsthumb2="300x200" title2="Marca de suciedad arreglada"
     caption="Marca de suciedad en la pared" >}}
 
 Otro productos puede ser algo de escayola para arreglar algún desperfecto en la pared o la caja del registro eléctrico. Unas tapas de enchufes _schuko_ para que no se les acumule polvo mientras no se usan, cable eléctrico en caso de tener que sustituir alguno que puentea mecanismos, pintura, pinceles o brochas junto con disolvente. De todo estos productos están disponibles en tiendas especializadas y en [Amazon][amazon-affiliate] también se ofrecen.

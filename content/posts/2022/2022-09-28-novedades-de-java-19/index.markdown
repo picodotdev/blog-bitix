@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:java-19.jpg"
-imagePost: "image:java-19.jpg"
+imageHead: "image:java-19.webp"
+imagePost: "image:java-19.webp"
 tags: ["java", "planeta-codigo"]
 series: ["java-platform"]
 summary: "Las versiones de Java más confiables por su soporte extendido son las LTS, las no LTS dan la oportunidad de probar e ir adaptándose a las novedades que se publicarán de forma definitiva en las LTS. Por ello las empresas seguramente prefieran ir cambiando de versiones de LTS a LTS, los usuarios y desarrolladores a nivel individual o las empresas que alguna novedad supone un cambio importante opten por usar una no LTS. La versión de Java 19 es una no LTS pero incorpora una novedad muy importante aún en vista previa, los _virtual threads_ que permitirán a las aplicaciones pasar de usar miles a millones de _threads_ y usar programación estructurada más sencilla en vez de programación asíncrona o concurrente para resolver problemas de concurrencia."

@@ -35,7 +35,7 @@ El siguiente ejemplo crea documento excel con varios datos, aplicando estilos a 
 
 {{< image
     gallery="true"
-    image1="image:libreoffice.png" optionsthumb1="300x200" title1="Excel generado con Apache POI abierto con LibreOffice"
+    image1="image:libreoffice.webp" optionsthumb1="300x200" title1="Excel generado con Apache POI abierto con LibreOffice"
     caption="Excel generado con Apache POI abierto con LibreOffice" >}}
 
 Otro formato de datos muy utilizado es el de columnas separadas por comas o CSV. Con la librería [OpenCSV][opencsv] se pueden escribir archivos bien formados en este formato teniendo en cuenta el caracter separador de las columnas y el entrecomillado de los datos.

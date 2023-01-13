@@ -40,7 +40,7 @@ Este es el contenido de mi archivo _~/.bashrc_ en el que he configurado los colo
 
 {{< image
     gallery="true"
-    image1="image:bash-prompt.png" optionsthumb1="650x450" title1="Terminal personalizada"
+    image1="image:bash-prompt.webp" optionsthumb1="650x450" title1="Terminal personalizada"
     caption="Terminal con los colores del símbolo del sistema personalizados e información del repositorio de Git" >}}
 
 ### Cómo gestionar los archivos _dotfiles_

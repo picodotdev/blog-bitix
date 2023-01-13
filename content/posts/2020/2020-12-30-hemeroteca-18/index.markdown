@@ -52,7 +52,7 @@ El tráfico de visitas durante este 2020 ha sido el siguiente.
 
 {{< image
     gallery="true"
-    image1="image:google-analytics.png" optionsthumb1="650x450" title1="Evolución visitas 2020"
+    image1="image:google-analytics.webp" optionsthumb1="650x450" title1="Evolución visitas 2020"
     caption="Evolución visitas 2020" >}}
 
 #### Evolución ingresos
@@ -69,17 +69,17 @@ A esa cantidad hay que sumarle la donación de una persona de 100 € 😱😱�
 
 {{< image
     gallery="true"
-    image1="image:google-adsense.png" optionsthumb1="650x450" title1="Evolución ingresos AdSense 2020" >}}
+    image1="image:google-adsense.webp" optionsthumb1="650x450" title1="Evolución ingresos AdSense 2020" >}}
 {{< image
     gallery="true"
-    image1="image:amazon-afiliados.png" optionsthumb1="650x450" title1="Evolución ingresos Amazon Afiliados 2020"
+    image1="image:amazon-afiliados.webp" optionsthumb1="650x450" title1="Evolución ingresos Amazon Afiliados 2020"
     caption="Evolución ingresos AdSense y Amazon Afiliados 2020" >}}
 
 Entre una cosa y otra el saldo de mi cuenta de PayPal ha llegado a 164 €.
 
 {{< image
     gallery="true"
-    image1="image:paypal-saldo.png" optionsthumb1="650x450" title1="Saldo cuenta PayPal"
+    image1="image:paypal-saldo.webp" optionsthumb1="650x450" title1="Saldo cuenta PayPal"
     caption="Saldo cuenta PayPal" >}}
 
 #### Mejoras realizadas

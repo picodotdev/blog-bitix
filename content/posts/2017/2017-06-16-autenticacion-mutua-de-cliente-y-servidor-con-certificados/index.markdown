@@ -74,17 +74,17 @@ Lo anterior es usando la herramienta _curl_ o un un programa en la plataforma Ja
 
 {{< image
     gallery="true"
-    image1="image:firefox-bad-request.png" optionsthumb1="300x250" title1="Autenticación mutua fallida"
-    image2="image:firefox-mutual-authorized.png" optionsthumb2="300x250" title2="Autenticación mutua correcta"
-    image3="image:firefox-server-cert.png" optionsthumb3="300x250" title3="Certificado del servidor validado por la CA" >}}
+    image1="image:firefox-bad-request.webp" optionsthumb1="300x250" title1="Autenticación mutua fallida"
+    image2="image:firefox-mutual-authorized.webp" optionsthumb2="300x250" title2="Autenticación mutua correcta"
+    image3="image:firefox-server-cert.webp" optionsthumb3="300x250" title3="Certificado del servidor validado por la CA" >}}
 {{< image
     gallery="true"
-    image1="image:firefox-certs.png" optionsthumb1="300x250" title1="Certificados de cliente"
-    image2="image:firefox-cas.png" optionsthumb2="300x250" title2="Certificados de la autoridades de certificación"
-    image3="image:firefox-ca.png" optionsthumb3="300x250" title3="Añadir certificado de CA" >}}
+    image1="image:firefox-certs.webp" optionsthumb1="300x250" title1="Certificados de cliente"
+    image2="image:firefox-cas.webp" optionsthumb2="300x250" title2="Certificados de la autoridades de certificación"
+    image3="image:firefox-ca.webp" optionsthumb3="300x250" title3="Añadir certificado de CA" >}}
 {{< image
     gallery="true"
-    image1="image:firefox-select-cert.png" optionsthumb1="300x250" title1="Selección de certificado de cliente"
+    image1="image:firefox-select-cert.webp" optionsthumb1="300x250" title1="Selección de certificado de cliente"
     caption="Autenticación mutua de cliente y servidor con el navegador web Firefox" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/WebServerMutualCertAuth" command="docker-compose up, groovy MutualCertAuth.groovy" >}}

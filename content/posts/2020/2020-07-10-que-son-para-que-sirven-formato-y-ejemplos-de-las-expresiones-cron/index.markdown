@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:exrpresion-cron.png"
+imagePost: "image:exrpresion-cron.webp"
 tags: ["java", "planeta-codigo", "programacion"]
 ---
 

@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:game-of-life-glider.png"
-imagePost: "image:game-of-life-glider.png"
+imageHead: "image:game-of-life-glider.webp"
+imagePost: "image:game-of-life-glider.webp"
 tags: ["java", "planeta-codigo", "programacion"]
 summary: "Algunos procesos que aparentemente son complejos siguen reglas muy simples, y aún siguiendo reglas muy simples dan lugar a muchos posibles comportamientos diferentes. Los sistemas que implementan y aplican estas reglas simples se les conoce como autómatas. Los autómatas no poseen inteligencia artificial, no aprenden ni toman decisiones en base a anteriores resultados, los autómatas simplemente siguen sus reglas de comportamiento en el estado del sistema. Dos autómatas conocidos son el juego de la vida de [John Horton Conway](https://es.wikipedia.org/wiki/John_Horton_Conway) publicado en 1970 y la hormiga de Langton de [Chris Langton](https://es.wikipedia.org/wiki/Christopher_Langton) publicado en 1986."
 ---
@@ -64,9 +64,9 @@ En esta [librería de patrones del juego de la vida de Conway](https://conwaylif
 
 {{< image
     gallery="true"
-    image1="image:game-of-life-glider.png" optionsthumb1="200x150" title1="Glider"
-    image2="image:game-of-life-glider-gun.png" optionsthumb2="200x150" title2="Glider gun"
-    image3="image:game-of-life-diehard.png" optionsthumb3="200x150" title3="Diehard"
+    image1="image:game-of-life-glider.webp" optionsthumb1="200x150" title1="Glider"
+    image2="image:game-of-life-glider-gun.webp" optionsthumb2="200x150" title2="Glider gun"
+    image3="image:game-of-life-diehard.webp" optionsthumb3="200x150" title3="Diehard"
     caption="Patrones glider, glider gun y diehard" >}}
 
 * [Glider](https://conwaylife.appspot.com/pattern/glider) (nave espacial)
@@ -75,9 +75,9 @@ En esta [librería de patrones del juego de la vida de Conway](https://conwaylif
 
 {{< image
     gallery="true"
-    image1="image:game-of-life-1.png" optionsthumb1="200x150" title1="Patrones que crecen indefinidamente"
-    image2="image:game-of-life-2.png" optionsthumb2="200x150" title2="Patrones que crecen indefinidamente"
-    image3="image:game-of-life-3.png" optionsthumb3="200x150" title3="Patrones que crecen indefinidamente"
+    image1="image:game-of-life-1.webp" optionsthumb1="200x150" title1="Patrones que crecen indefinidamente"
+    image2="image:game-of-life-2.webp" optionsthumb2="200x150" title2="Patrones que crecen indefinidamente"
+    image3="image:game-of-life-3.webp" optionsthumb3="200x150" title3="Patrones que crecen indefinidamente"
     caption="Patrones que crecen indefinidamente" >}}
 
 * [10 cell infinite growth](https://conwaylife.appspot.com/pattern/10cellinfinitegrowth)
@@ -114,7 +114,7 @@ En está página de la wikipedia se puede probar la hormiga de Langton.
 
 {{< image
     gallery="true"
-    image1="image:hormiga-de-langton.png" optionsthumb1="300x200" title1="Hormiga de Langton"
+    image1="image:hormiga-de-langton.webp" optionsthumb1="300x200" title1="Hormiga de Langton"
     caption="Patrón generado por la hormiga de Langton después de 10K pasos" >}}
 
 #### Reglas

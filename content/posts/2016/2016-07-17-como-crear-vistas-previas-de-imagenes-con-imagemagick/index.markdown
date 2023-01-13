@@ -35,8 +35,8 @@ El primero de los comandos sirve para hacer cambios de tamaño de forma individu
 
 {{< image
     gallery="true"
-    image1="image:201607.jpg" optionsthumb1="450x300" title1="Previsualización de imagen en tamaño 450x300"
-    image2="image:201607.jpg" optionsthumb2="300x200" title2="Previsualización de imagen en tamaño 300x200"
+    image1="image:201607.webp" optionsthumb1="450x300" title1="Previsualización de imagen en tamaño 450x300"
+    image2="image:201607.webp" optionsthumb2="300x200" title2="Previsualización de imagen en tamaño 300x200"
     caption="Previsualización de imagen en tamaño 450x300 y 300x200 del original 1600x1067" >}}
 
 Este sería una ejemplo de la imagen que tengo como fondo de escritorio. Su tamaño original ocupa 1 MB, la vista previa aproximadamente 210 KB en tamaño 650x450 y 50 KB en tamaño de 300x200. Una reducción de tamaño considerable.
@@ -51,7 +51,7 @@ Los siguientes comandos permiten crear imágenes en escala de grises.
 
 {{< image
     gallery="true"
-    image1="image:201607-grayscale.jpg" optionsthumb1="300x200" title1="Imagen en escala de grises"
+    image1="image:201607-grayscale.webp" optionsthumb1="300x200" title1="Imagen en escala de grises"
     caption="Imagen en escala de grises" >}}
 
 ### Convertir svg a jpg o png

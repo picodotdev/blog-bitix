@@ -49,7 +49,7 @@ Pact en la parte consumidor también hace las funciones de servidor sin embargo 
 
 {{< image
     gallery="true"
-    image1="image:pact-summary.png" optionsthumb1="650x450" title1="Pruebas de contrato con Pact"
+    image1="image:pact-summary.webp" optionsthumb1="650x450" title1="Pruebas de contrato con Pact"
     caption="Pruebas de contrato con Pact" >}}
 
 {{< youtube

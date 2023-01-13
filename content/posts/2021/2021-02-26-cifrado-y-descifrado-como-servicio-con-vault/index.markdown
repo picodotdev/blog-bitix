@@ -53,7 +53,7 @@ El proceso de cifrado de Vault transforma el dato original en un valor que no ti
 
 {{< image
     gallery="true"
-    image1="image:vault-encryption.png" optionsthumb1="650x450" title1="Uso del servicio de cifrado y descifrado de Vault"
+    image1="image:vault-encryption.webp" optionsthumb1="650x450" title1="Uso del servicio de cifrado y descifrado de Vault"
     caption="Uso del servicio de cifrado y descifrado de Vault" >}}
 
 #### Servicio de transformación
@@ -103,7 +103,7 @@ Algunas aplicaciones para aumentar la seguridad y evitar usar una única clave q
 
 {{< image
     gallery="true"
-    image1="image:vault-encryption-java.png" optionsthumb1="650x450" title1="Uso del servicio de cifrado y descifrado de Vault en una aplicación Java"
+    image1="image:vault-encryption-java.webp" optionsthumb1="650x450" title1="Uso del servicio de cifrado y descifrado de Vault en una aplicación Java"
     caption="Uso del servicio de cifrado y descifrado de Vault en una aplicación Java" >}}
 
 Para usar el servicio de cifrado y descifrado en una aplicación de Spring, Vault permite la autenticación mediante el mecanismo _AppRole_. _AppRole_ es un método de autenticación destinadas a las aplicaciones, básicamente proporciona unas credenciales como un usuario y contraseña. El _policy_ se asocia con las credenciales de la aplicación para permitirle el acceso a la clave de cifrado y descifrado _app_.

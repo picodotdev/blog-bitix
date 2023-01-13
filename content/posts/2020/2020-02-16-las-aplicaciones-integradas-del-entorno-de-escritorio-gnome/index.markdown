@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:gnome-desktop.png"
+imagePost: "image:gnome-desktop.webp"
 tags: ["gnu-linux", "planeta-codigo"]
 summary: "Todos los entornos de escritorio poseen unas pocas aplicaciones básicas y sencillas pero de uso muy común para todos los usuarios. Estas aplicaciones del entorno de escritorio están estrechamente integradas para ofrecer una experiencia de usuario consistente y funcionar correctamente entre ellas. GNOME posee varias desde un editor de archivos de texto, una calculadora, captura de pantalla, visor de imágenes, reproductor de música y vídeo, gestor de correo electrónico, calendario, navegador web, juegos, ... y otras más."
 ---
@@ -25,7 +25,7 @@ Para facilitar el uso el sistema operativo y en los actuales ofrecer una interfa
 
 {{< image
     gallery="true"
-    image1="image:interfaz-grafica-usuario.png" optionsthumb1="300x250" title1="Capas de software desde el hardware hasta el entorno de escritorio"
+    image1="image:interfaz-grafica-usuario.webp" optionsthumb1="300x250" title1="Capas de software desde el hardware hasta el entorno de escritorio"
     caption="Capas de software desde el hardware hasta el entorno de escritorio" >}}
 
 Ejemplos de sistema operativos son [GNU][gnu]/[Linux][linux], [Windows][windows], [macOS][macos] o [FreeBSD][freebsd]. En los casos de Windows y macOS el mismo nombre engloba la interfaz gráfica y el entorno de escritorio sin ofrecer ninguna alternativa, en GNU/Linux hay varias alternativas de entorno de escritorio a elegir según las preferencias del usuario entre ellas [GNOME][gnome], [KDE][kde], [XFCE][xfce], Pantheon de elementary OS, [MATE][mate], [Cinnamon][cinnamon] o [LXDE][lxde].
@@ -80,9 +80,9 @@ Continúan realizándose mejoras, algunas de las cuales son aplicadas en cada nu
 
 {{< image
     gallery="true"
-    image1="image:gnome-desktop.png" optionsthumb1="200x150" title1="Escritorio de GNOME"
-    image2="image:gnome-dash-1.png" optionsthumb2="200x150" title2="Lanzador de aplicaciones de GNOME"
-    image3="image:gnome-dash-2.png" optionsthumb3="200x150" title3="Lanzador de aplicaciones de GNOME"
+    image1="image:gnome-desktop.webp" optionsthumb1="200x150" title1="Escritorio de GNOME"
+    image2="image:gnome-dash-1.webp" optionsthumb2="200x150" title2="Lanzador de aplicaciones de GNOME"
+    image3="image:gnome-dash-2.webp" optionsthumb3="200x150" title3="Lanzador de aplicaciones de GNOME"
     caption="Entorno de escritorio y lanzador de aplicaciones de GNOME" >}}
 
 ### Aplicaciones del entorno de escritorio GNOME
@@ -108,13 +108,13 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
 
 {{< image
     gallery="true"
-    image1="image:evolution.png" optionsthumb1="200x150" title1="Evolution"
-    image2="image:geary.png" optionsthumb2="200x150" title2="Geary" >}}
+    image1="image:evolution.webp" optionsthumb1="200x150" title1="Evolution"
+    image2="image:geary.webp" optionsthumb2="200x150" title2="Geary" >}}
 {{< image
     gallery="true"
-    image1="image:contactos.png" optionsthumb1="200x150" title1="Contactos"
-    image2="image:calendario-1.png" optionsthumb2="200x150" title2="Calendario"
-    image3="image:calendario-2.png" optionsthumb3="200x150" title3="Calendario" >}}
+    image1="image:contactos.webp" optionsthumb1="200x150" title1="Contactos"
+    image2="image:calendario-1.webp" optionsthumb2="200x150" title2="Calendario"
+    image3="image:calendario-2.webp" optionsthumb3="200x150" title3="Calendario" >}}
 
 #### Archivos
 
@@ -130,24 +130,24 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
 
 {{< image
     gallery="true"
-    image1="image:visor-de-imagenes.png" optionsthumb1="200x150" title1="Visor de imágenes"
-    image2="image:fotos-1.png" optionsthumb2="200x150" title2="Fotos"
-    image3="image:fotos-2.png" optionsthumb3="200x150" title3="Fotos" >}}
+    image1="image:visor-de-imagenes.webp" optionsthumb1="200x150" title1="Visor de imágenes"
+    image2="image:fotos-1.webp" optionsthumb2="200x150" title2="Fotos"
+    image3="image:fotos-2.webp" optionsthumb3="200x150" title3="Fotos" >}}
 {{< image
     gallery="true"
-    image1="image:documentos.png" optionsthumb1="200x150" title1="Documentos"
-    image2="image:archivos.png" optionsthumb2="200x150" title2="Archivos"
-    image3="image:lollypop.png" optionsthumb3="200x150" title3="Lollypop" >}}
+    image1="image:documentos.webp" optionsthumb1="200x150" title1="Documentos"
+    image2="image:archivos.webp" optionsthumb2="200x150" title2="Archivos"
+    image3="image:lollypop.webp" optionsthumb3="200x150" title3="Lollypop" >}}
 {{< image
     gallery="true"
-    image1="image:musica-1.png" optionsthumb1="200x150" title1="Música"
-    image2="image:musica-2.png" optionsthumb2="200x150" title2="Música"
-    image3="image:musica-3.png" optionsthumb3="200x150" title3="Música" >}}
+    image1="image:musica-1.webp" optionsthumb1="200x150" title1="Música"
+    image2="image:musica-2.webp" optionsthumb2="200x150" title2="Música"
+    image3="image:musica-3.webp" optionsthumb3="200x150" title3="Música" >}}
 {{< image
     gallery="true"
-    image1="image:videos-1.png" optionsthumb1="200x150" title1="Vídeos"
-    image2="image:videos-2.png" optionsthumb2="200x150" title2="Vídeos"
-    image3="image:videos-3.png" optionsthumb3="200x150" title3="Vídeos" >}}
+    image1="image:videos-1.webp" optionsthumb1="200x150" title1="Vídeos"
+    image2="image:videos-2.webp" optionsthumb2="200x150" title2="Vídeos"
+    image3="image:videos-3.webp" optionsthumb3="200x150" title3="Vídeos" >}}
 
 #### Herramientas de sistema
 
@@ -163,14 +163,14 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
 
 {{< image
     gallery="true"
-    image1="image:captura-de-pantalla.png" optionsthumb1="200x150" title1="Captura de pantalla"
-    image2="image:discos.png" optionsthumb2="200x150" title2="Discos"
-    image3="image:ayuda-gnome.png" optionsthumb3="200x150" title3="Ayuda de GNOME" >}}
+    image1="image:captura-de-pantalla.webp" optionsthumb1="200x150" title1="Captura de pantalla"
+    image2="image:discos.webp" optionsthumb2="200x150" title2="Discos"
+    image3="image:ayuda-gnome.webp" optionsthumb3="200x150" title3="Ayuda de GNOME" >}}
 {{< image
     gallery="true"
-    image1="image:terminal-1.png" optionsthumb1="200x150" title1="Terminal"
-    image2="image:terminal-2.png" optionsthumb2="200x150" title2="Terminal"
-    image3="image:monitor-sistema.png" optionsthumb3="200x150" title3="Monitor del sistema" >}}
+    image1="image:terminal-1.webp" optionsthumb1="200x150" title1="Terminal"
+    image2="image:terminal-2.webp" optionsthumb2="200x150" title2="Terminal"
+    image3="image:monitor-sistema.webp" optionsthumb3="200x150" title3="Monitor del sistema" >}}
 
 #### Sistema esencial
 
@@ -182,18 +182,18 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
 
 {{< image
     gallery="true"
-    image1="image:configuracion-1.png" optionsthumb1="200x150" title1="Configuración"
-    image2="image:configuracion-2.png" optionsthumb2="200x150" title2="Configuración"
-    image3="image:configuracion-3.png" optionsthumb3="200x150" title3="Configuración" >}}
+    image1="image:configuracion-1.webp" optionsthumb1="200x150" title1="Configuración"
+    image2="image:configuracion-2.webp" optionsthumb2="200x150" title2="Configuración"
+    image3="image:configuracion-3.webp" optionsthumb3="200x150" title3="Configuración" >}}
 {{< image
     gallery="true"
-    image1="image:software-1.png" optionsthumb1="200x150" title1="Software"
-    image2="image:software-2.png" optionsthumb2="200x150" title2="Software" >}}
+    image1="image:software-1.webp" optionsthumb1="200x150" title1="Software"
+    image2="image:software-2.webp" optionsthumb2="200x150" title2="Software" >}}
 {{< image
     gallery="true"
-    image1="image:web-1.png" optionsthumb1="200x150" title1="Web"
-    image2="image:web-2.png" optionsthumb2="200x150" title2="Web"
-    image3="image:web-3.png" optionsthumb3="200x150" title3="Web" >}}
+    image1="image:web-1.webp" optionsthumb1="200x150" title1="Web"
+    image2="image:web-2.webp" optionsthumb2="200x150" title2="Web"
+    image3="image:web-3.webp" optionsthumb3="200x150" title3="Web" >}}
 
 #### Mundo
 
@@ -205,16 +205,16 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
 
 {{< image
     gallery="true"
-    image1="image:relojes.png" optionsthumb1="200x150" title1="Relojes"
-    image2="image:tiempo.png" optionsthumb2="200x150" title2="Tiempo" >}}
+    image1="image:relojes.webp" optionsthumb1="200x150" title1="Relojes"
+    image2="image:tiempo.webp" optionsthumb2="200x150" title2="Tiempo" >}}
 {{< image
     gallery="true"
-    image1="image:mapas-1.png" optionsthumb1="200x150" title1="Mapas"
-    image2="image:mapas-2.png" optionsthumb2="200x150" title2="Mapas"
-    image3="image:mapas-3.png" optionsthumb3="200x150" title3="Mapas" >}}
+    image1="image:mapas-1.webp" optionsthumb1="200x150" title1="Mapas"
+    image2="image:mapas-2.webp" optionsthumb2="200x150" title2="Mapas"
+    image3="image:mapas-3.webp" optionsthumb3="200x150" title3="Mapas" >}}
 {{< image
     gallery="true"
-    image1="image:mapas-4.png" optionsthumb1="200x150" title1="Mapas" >}}
+    image1="image:mapas-4.webp" optionsthumb1="200x150" title1="Mapas" >}}
 
 #### Utilidades
 
@@ -229,18 +229,18 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
 
 {{< image
     gallery="true"
-    image1="image:calculadora-1.png" optionsthumb1="200x150" title1="Calculadora"
-    image2="image:calculadora-2.png" optionsthumb2="200x150" title2="Calculadora" >}}
+    image1="image:calculadora-1.webp" optionsthumb1="200x150" title1="Calculadora"
+    image2="image:calculadora-2.webp" optionsthumb2="200x150" title2="Calculadora" >}}
 {{< image
     gallery="true"
-    image1="image:tipografias-1.png" optionsthumb1="200x150" title1="Tipografías"
-    image2="image:tipografias-2.png" optionsthumb2="200x150" title2="Tipografías"
-    image3="image:herramientas-de-red.png" optionsthumb3="200x150" title3="Herramientas de red" >}}
+    image1="image:tipografias-1.webp" optionsthumb1="200x150" title1="Tipografías"
+    image2="image:tipografias-2.webp" optionsthumb2="200x150" title2="Tipografías"
+    image3="image:herramientas-de-red.webp" optionsthumb3="200x150" title3="Herramientas de red" >}}
 {{< image
     gallery="true"
-    image1="image:notas.png" optionsthumb1="200x150" title1="Notas"
-    image2="image:editor-de-texto.png" optionsthumb2="200x150" title2="Editor de texto"
-    image3="image:retoques.png" optionsthumb3="200x150" title3="Retoques" >}}
+    image1="image:notas.webp" optionsthumb1="200x150" title1="Notas"
+    image2="image:editor-de-texto.webp" optionsthumb2="200x150" title2="Editor de texto"
+    image3="image:retoques.webp" optionsthumb3="200x150" title3="Retoques" >}}
 
 #### Propósito especial
 
@@ -250,9 +250,9 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
 
 {{< image
     gallery="true"
-    image1="image:cajas-1.png" optionsthumb1="200x150" title1="Cajas"
-    image2="image:cajas-2.png" optionsthumb2="200x150" title2="Cajas"
-    image3="image:cajas-3.png" optionsthumb3="200x150" title3="Cajas" >}}
+    image1="image:cajas-1.webp" optionsthumb1="200x150" title1="Cajas"
+    image2="image:cajas-2.webp" optionsthumb2="200x150" title2="Cajas"
+    image3="image:cajas-3.webp" optionsthumb3="200x150" title3="Cajas" >}}
 
 #### Audio y vídeo
 
@@ -264,8 +264,8 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
 
 {{< image
     gallery="true"
-    image1="image:camara.png" optionsthumb1="200x150" title1="Cheese"
-    image2="image:grabadora-de-sonido.png" optionsthumb2="200x150" title2="Grabadora de sonido" >}}
+    image1="image:camara.webp" optionsthumb1="200x150" title1="Cheese"
+    image2="image:grabadora-de-sonido.webp" optionsthumb2="200x150" title2="Grabadora de sonido" >}}
 
 #### Creación y edición
 
@@ -291,14 +291,14 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
 
 {{< image
     gallery="true"
-    image1="image:builder-1.png" optionsthumb1="200x150" title1="Builder"
-    image2="image:builder-2.png" optionsthumb2="200x150" title2="Builder"
-    image3="image:builder-3.png" optionsthumb3="200x150" title3="Builder" >}}
+    image1="image:builder-1.webp" optionsthumb1="200x150" title1="Builder"
+    image2="image:builder-2.webp" optionsthumb2="200x150" title2="Builder"
+    image3="image:builder-3.webp" optionsthumb3="200x150" title3="Builder" >}}
 {{< image
     gallery="true"
-    image1="image:builder-4.png" optionsthumb1="200x150" title1="Builder"
-    image2="image:glade-1.png" optionsthumb2="200x150" title2="Glade"
-    image3="image:glade-2.png" optionsthumb3="200x150" title3="Glade" >}}
+    image1="image:builder-4.webp" optionsthumb1="200x150" title1="Builder"
+    image2="image:glade-1.webp" optionsthumb2="200x150" title2="Glade"
+    image3="image:glade-2.webp" optionsthumb3="200x150" title3="Glade" >}}
 
 #### Juegos
 
@@ -311,17 +311,17 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
 
 {{< image
     gallery="true"
-    image1="image:juegos.png" optionsthumb1="200x150" title1="Juegos" >}}
+    image1="image:juegos.webp" optionsthumb1="200x150" title1="Juegos" >}}
 {{< image
     gallery="true"
-    image1="image:juegos-ajedrez.png" optionsthumb1="200x150" title1="Ajedrez"
-    image2="image:juegos-klotski.png" optionsthumb2="200x150" title2="Klotski"
-    image3="image:juegos-minas.png" optionsthumb3="200x150" title3="Minas" >}}
+    image1="image:juegos-ajedrez.webp" optionsthumb1="200x150" title1="Ajedrez"
+    image2="image:juegos-klotski.webp" optionsthumb2="200x150" title2="Klotski"
+    image3="image:juegos-minas.webp" optionsthumb3="200x150" title3="Minas" >}}
 {{< image
     gallery="true"
-    image1="image:juegos-sudoku.png" optionsthumb1="200x150" title1="Sudoku"
-    image2="image:juegos-swellfoop.png" optionsthumb2="200x150" title2="Swell Foop"
-    image3="image:juegos-tetravex.png" optionsthumb3="200x150" title3="Tetravex" >}}
+    image1="image:juegos-sudoku.webp" optionsthumb1="200x150" title1="Sudoku"
+    image2="image:juegos-swellfoop.webp" optionsthumb2="200x150" title2="Swell Foop"
+    image3="image:juegos-tetravex.webp" optionsthumb3="200x150" title3="Tetravex" >}}
 
 ### Formatos de vídeo y audio y aplicaciones de terceros
 
@@ -329,7 +329,7 @@ Para que las aplicaciones de vídeos y música soporten más formatos de archivo
 
 {{< image
     gallery="true"
-    image1="image:videos-4.png" optionsthumb1="300x250" title1="Códecs no encontrados en Vídeos" >}}
+    image1="image:videos-4.webp" optionsthumb1="300x250" title1="Códecs no encontrados en Vídeos" >}}
 
 {{< code file="pacman-gstreamer.sh" language="bash" options="" >}}
 
@@ -341,7 +341,7 @@ Aunque no están desarrolladas como parte del escritorio hay otras [aplicaciones
 
 {{< image
     gallery="true"
-    image1="image:gnome-circle-apps.png" optionsthumb1="300x250" title1="Aplicaciones diseñadas para GNOME" >}}
+    image1="image:gnome-circle-apps.webp" optionsthumb1="300x250" title1="Aplicaciones diseñadas para GNOME" >}}
 
 ### Aplicaciones de terceros
 

@@ -44,7 +44,7 @@ Primero el código de un modelo Pub/Sub. Como es propio de este modelo los mensa
 
 {{< image
     gallery="true"
-    image1="image:topic.png" optionsthumb1="300x200" title1="Resultado de Topic.java" >}}
+    image1="image:topic.webp" optionsthumb1="300x200" title1="Resultado de Topic.java" >}}
 
 A continuación el código de utilizando un modelo punto a punto en el que vuelve a haber un emisor y dos receptores. En el resultado de la ejecución puede observarse que a pesar de haber dos receptores solo uno de los dos recibe cada mensaje:
 
@@ -52,7 +52,7 @@ A continuación el código de utilizando un modelo punto a punto en el que vuelv
 
 {{< image
     gallery="true"
-    image1="image:queue.png" optionsthumb1="300x200" title1="Resultado de Queue.java" >}}
+    image1="image:queue.webp" optionsthumb1="300x200" title1="Resultado de Queue.java" >}}
 
 Comentar que los mensajes se procesan en serie por cada MessageListener, esto es, hasta que no termina el consumo de uno no se consume el siguiente. Esto se aplica por MensajeListener y sesión.
 
