@@ -60,6 +60,7 @@
     {{- else -}}
       {{- $i := $nil -}}
       {{- $resource := $nil -}}
+      {{- $format := index (split $image ".") 1 -}}
       {{- if eq $resource nil -}}
         {{- $i = replace $image ".webp" ".png" -}}
         {{- $resource = $p.Resources.GetMatch (print $path $i) -}}

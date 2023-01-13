@@ -60,6 +60,7 @@
     {{- else -}}
       {{- $i := $nil -}}
       {{- $resource := $nil -}}
+      {{- $format := index (split $image ".") 1 -}}
       {{- if eq $resource nil -}}
         {{- $i = replace $image ".webp" ".png" -}}
         {{- $resource = $p.Resources.GetMatch (print $path $i) -}}
@@ -93,21 +94,21 @@
       {{- if eq $optionsthumb nil -}}{{- errorf "Invalid thumb optionsthumb '%s'" $optionsthumb -}}{{- end -}}
 
       {{- if eq $command "Fit" -}}
-        {{- $scaled = $resource.Fit $options -}}
+        {{- $scaled = $resource.Fit (print $options " " $format) -}}
       {{- else if eq $command "Resize" -}}
-        {{- $scaled = $resource.Resize $options -}}
+        {{- $scaled = $resource.Resize (print $options " " $format) -}}
       {{- else if eq $command "Fill" -}}
-        {{- $scaled = $resource.Fill $options -}}
+        {{- $scaled = $resource.Fill (print $options " " $format) -}}
       {{- else -}}
         {{- errorf "Invalid image processing command: Must be one of Fit, Fill or Resize '%s'" .Destination -}}
       {{- end -}}
 
       {{- if eq $commandthumb "Fit" -}}
-        {{- $scaledthumb = $resourcethumb.Fit $optionsthumb -}}
+        {{- $scaledthumb = $resourcethumb.Fit (print $optionsthumb " " $format) -}}
       {{- else if eq $commandthumb "Resize" -}}
-        {{- $scaledthumb = $resourcethumb.Resize $optionsthumb -}}
+        {{- $scaledthumb = $resourcethumb.Resize (print $optionsthumb " " $format) -}}
       {{- else if eq $commandthumb "Fill" -}}
-        {{- $scaledthumb = $resourcethumb.Fill $optionsthumb -}}
+        {{- $scaledthumb = $resourcethumb.Fill (print $optionsthumb " " $format) -}}
       {{- else -}}
         {{- errorf "Invalid image processing command: Must be one of Fit, Fill or Resize '%s'" .Destination -}}
       {{- end -}}
