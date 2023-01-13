@@ -19,7 +19,7 @@ summary: "Una funda de teclado permite transportarlo en una mochila sin que los 
 
 {{% post %}}
 
-{{< logotype image1="kemove.jpg" >}}
+{{< logotype image1="kemove.webp" >}}
 
 Los teclados de membrana ajustan el precio al máximo pudiendo encontrarse a partir de 10 €, suelen ser teclados completos, con cable y de membrana, son baratos pero su calidad acorde al precio hacen su función pero la diferencia con los teclados mecánicos es significativa.
 

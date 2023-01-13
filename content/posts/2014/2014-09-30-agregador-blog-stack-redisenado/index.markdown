@@ -15,7 +15,7 @@ tags: ["planeta-codigo"]
 
 {{% post %}}
 
-{{< logotype image="blogstack.png" title="Blog Stack" width="200" >}}
+{{< logotype image="blogstack.webp" title="Blog Stack" width="200" >}}
 
 Estas últimas semanas he podido dedicar un poco de tiempo a al proyecto personal de [Blog Stack][blogstack]. Blog Stack es un agregador o planeta de bitácoras en español sobre linux, software libre, programación, desarrollo, metodologías ágiles y tecnología. En dos artículos anteriores explicaba más en detalle que es Blog Stack, en uno de ellos hacía una [descripción y presentación][blogbitix-23] y en otro explicaba [como está hecho en el aspecto técnico][blogbitix-24] tanto detallando cuales son las tecnología que usa como la arquitectura del proyecto.
 

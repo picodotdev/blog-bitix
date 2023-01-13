@@ -18,7 +18,7 @@ summary: "Dado que los libros electrónicos ocupan muy poco se puede llegar a te
 
 {{% post %}}
 
-{{< logotype image1="calibre.png" title1="Calibre" width1="200" >}}
+{{< logotype image1="calibre.webp" title1="Calibre" width1="200" >}}
 
 Hace ya unos años que tengo un lector de libros electrónicos y estoy muy contento con él, el popular [Amazon Kindle][amazon-kindle-paperwhite] aún echando de menos la luz integrada y el modelo _paperwhite_ que tiene la pantalla más blanca de los modelos más recientes que el mío. Una de las ventajas de los libros electrónicos es que una vez leídos no ocupan espacio físico con lo que no hay que tener varias baldas de libros ocupando espacio, al ser electrónicos no son más que un archivo de ordenador que ocupan muy poco no llegando muchos de ellos al megabyte de espacio. Teniendo una gran cantidad de libros según se obtienen o se empiezan a leer un libro se puede añadir a la biblioteca para tenerlo catalogado. Para gestionar la biblioteca de libros una de las mejores opciones sino la mejor es [Calibre][calibre] no solo por su completa funcionalidad sino porque es software libre.
 

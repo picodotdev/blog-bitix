@@ -18,7 +18,7 @@ summary: "Desde hace un tiempo he cambiado un teclado de membrana completo por u
 
 {{% post %}}
 
-{{< logotype image1="dierya.jpg" >}}
+{{< logotype image1="dierya.webp" >}}
 
 Es la primera vez que una marca me envía uno de sus productos para que lo analice en los más de 10 años de este blog. Me contactaron un jueves y el sábado de forma inesperada ya tenía el artículo en mi casa  tanto que tuve que decirle al repartidor que dejase el paquete en la puerta de mi casa ya que iba a tardar unos minutos a llegar a casa ya que no lo esperaba tan pronto, enviado como un paquete en caja de regalo enviado desde [Amazon][amazon] donde se puede comprar. La marca que me ha enviado uno de los productos que comercializa es [DIERYA][dierya] especializada en teclados mecánicos con varios modelos en formato compacto, y el teclado que me han enviado ha sido un ejemplar del modelo DIERYA DK61E.
 

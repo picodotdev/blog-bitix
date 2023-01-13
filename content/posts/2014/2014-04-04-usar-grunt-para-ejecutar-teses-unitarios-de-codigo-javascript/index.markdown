@@ -15,7 +15,7 @@ tags: ["software", "programacion", "javascript", "planeta-codigo"]
 
 {{% post %}}
 
-{{< logotype image="grunt.png" title="Grunt" width="200" >}}
+{{< logotype image="grunt.webp" title="Grunt" width="200" >}}
 
 En la [serie de artículos que escribí sobre javascript](https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html) hice un ejemplo más o menos complejo y parecido a lo que podría ser una aplicación real usando muchas de las herramientas que ahora se consideran una buena opción para desarrollar aplicaciones javascript como [RequireJS](https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html), [Backbone](http://www.genbetadev.com/desarrollo-web/patron-de-diseno-mvc-del-lado-cliente-con-backbonejs), [Marionette](https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html), [Jasmine y Sinon](https://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.html). En el [ejemplo de la lista de tareas con estas herramientas](https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html) hice unas cuantas pruebas unitarias para mostrar en un ejemplo como son y la forma de usar [Jasmine](http://jasmine.github.io/).
 

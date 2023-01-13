@@ -17,7 +17,7 @@ series: ["donacion"]
 
 {{% post %}}
 
-{{< logotype image1="calibre.png" title1="Calibre" width1="300" >}}
+{{< logotype image1="calibre.webp" title1="Calibre" width1="300" >}}
 
 Continuando con la serie de artículos comentando las donaciones que voy realizando a los proyectos de software libre en este caso comentaré otro programa que uso habitualmente. En este caso de trata del programa el [gestor gestor de libros electrónicos y conversor entre diferentes formatos de libro electrónicos Calibre][blogbitix-443] que que quizá no tiene la interfaz de usuario más atractiva pero es muy útil, funciona realmente bien y permite tener organizada la biblioteca digital.
 

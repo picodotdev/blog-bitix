@@ -20,7 +20,7 @@ summary: "Los teclados básicos son más que suficientes para la mayoría de usu
 
 {{% post %}}
 
-{{< logotype image1="videoseven.png" title1="Videoseven" width1="200" >}}
+{{< logotype image1="videoseven.webp" title1="Videoseven" width1="200" >}}
 
 Aún estoy esperando a que [Intel][intel] comercialice en España como decía en un artículo anterior [entre las opciones que he evaluado los Intel NUC Bean Canyon][blogbitix-329] para comprar nuevo equipo. La espera se me está haciendo un poco larga pero en teoría a mediados de octubre los empezarán a enviar desde la página especializada [SimplyNUC](https://simplynuc.co.uk/) y posiblemente hasta noviembre o diciembre no aparezcan a la venta en [Amazon][amazon-affiliate] que es donde en principio lo compraré o más o menos al mismo tiempo en [PcComponentes][pccomponentes].
 

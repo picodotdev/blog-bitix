@@ -17,7 +17,7 @@ series: ["java-platform"]
 
 {{% post %}}
 
-{{< logotype image1="java-ee.png" title1="Java EE" width1="200" image2="java.svg" >}}
+{{< logotype image1="java-ee.webp" title1="Java EE" width1="200" image2="java.svg" >}}
 
 La [publicación de Java 9][blogbitix-263] en agosto de 2017 con la importante novedad de los módulos ha hecho que la publicación de Java EE 8 haya pasado desapercibida. También ha contribuido el hecho de que [Oracle][oracle] haya entregado el desarrollo de futuras nuevas especificaciones de Java EE a la [fundación Eclipse][eclipse] con el objetivo de que sea más abierto a otras empresas, Java EE a partir de ahora bajo la fundación Eclipse se denominará [Jakarta EE][jakartaee]. Pasados algunos meses los servidores de aplicaciones ya están implementando las nuevas novedades de Java EE 8. Algunos de los servidores que ya soportan estas nuevas especificaciones y novedades son [Wildfly][wildfly], [Payara][payara] [Kumuluz][kumuluzee] o [Tomcat][tomcat] 9.
 

@@ -17,7 +17,7 @@ summary: "Realizar copias de seguridad cada cierta frecuencia nos salvará de pe
 
 {{% post %}}
 
-{{< logotype image1="freefilesync.png" title1="FreeFileSync" width1="200" >}}
+{{< logotype image1="freefilesync.webp" title1="FreeFileSync" width1="200" >}}
 
 Realizar copias de seguridad es algo imprescindible si no queremos perder los datos el día que el sistema falle. No sabemos cuando alguna de las piezas de las que se compone un sistema fallará pero es seguro que un día fallará, puede que sean en meses, años, un lustro o una década. El fallo puede producirse por múltiples motivos relacionados con el hardware en el que algún componente físico se ha estropeado por desgaste, un pico de tensión, un golpe o caída como el disco duro, SSD, la placa base, la pantalla de un portátil, la fuente de alimentación, la memoria, el microprocesador o puede ser que el software como el sistema operativo que no se inicia por una actualización problemática, algún controlador de dispositivo produce algún error fatal en forma de <abbr title="Blue Screen of Dead, Pantalla azúl de la muerte">BSOD</abbr>, algún virus que impide iniciar el sistema, ha cifrado los archivos o ha corrompido el sistema haciendo que no sea usable.
 

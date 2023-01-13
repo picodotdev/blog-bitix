@@ -18,7 +18,7 @@ series: ["quercus-robur"]
 
 {{% post %}}
 
-{{< logotype image1="quercus-robur.png" title1="Quercus Robur" width1="175" >}}
+{{< logotype image1="quercus-robur.webp" title1="Quercus Robur" width1="175" >}}
 
 Hace ya mucho tiempo de pequeño planté alguna semilla de manzana por curiosidad para ver si germinaba, y sí germinó, pero al cabo de unos meses por desconocimiento de la forma de como cuidar una planta, excesivo riego o tierra no adecuada el retoño de manzano pereció. También planté alguna bellota de algún tipo de roble que alguno de mis hermanos trajo a casa, y sí germinó, y al igual que el manzano duró unos cuantos meses pero sucumbió de la misma forma.
 

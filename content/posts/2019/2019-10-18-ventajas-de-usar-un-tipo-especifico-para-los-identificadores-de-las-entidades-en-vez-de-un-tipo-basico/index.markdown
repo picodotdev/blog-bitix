@@ -16,7 +16,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image1="java.svg" image2="hibernate.svg" title2="Hibernate" width2="200" image3="jooq.png" title3="jOOQ" width3="200" >}}
+{{< logotype image1="java.svg" image2="hibernate.svg" title2="Hibernate" width2="200" image3="jooq.webp" title3="jOOQ" width3="200" >}}
 
 Al persistir una entidad de dominio en la base de datos su identificador se guarda como un tipo de datos soportado por la base de datos. Si es una base de datos relacional habitualmente es el equivalente a un _bigint_ o en una base de datos de documentos quizá un UUID. En las entidades de dominio el tipo de datos usado para el identificador es el equivalente de la base de datos en el lenguaje de programación. Por ejemplo, si en una base de datos la clave primaria es un _bigint_ el identificador en la entidad de dominio es un [Long](javadoc11:java.base/java/lang/Long.html). Esto es lo mas simple pero tiene algún inconveniente.
 

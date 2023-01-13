@@ -15,7 +15,7 @@ tags: ["hardware", "software", "software-libre"]
 
 {{% post %}}
 
-{{< logotype image1="geexbox.png" title1="GeeXboX" width1="200" image2="raspberrypi.svg" >}}
+{{< logotype image1="geexbox.webp" title1="GeeXboX" width1="200" image2="raspberrypi.svg" >}}
 
 La Raspberry Pi es un computador del tamaño de una tarjeta de crédito que se puede usar para diferentes propósitos. Hasta hace no mucho a mi me servía para descargar películas mediante torrent, sin embargo, puede usarse perfectamente para otros propósitos muy interesantes como usarla como Media Center en una televisión que no es una Smart TV o como Media Center con más opciones.
 

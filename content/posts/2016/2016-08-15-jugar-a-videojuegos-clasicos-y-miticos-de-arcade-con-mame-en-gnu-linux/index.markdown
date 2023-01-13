@@ -17,7 +17,7 @@ series: ["juegos"]
 
 {{% post %}}
 
-{{< logotype image1="mame.jpg" title1="MAME" width1="200" image2="linux.svg" >}}
+{{< logotype image1="mame.webp" title1="MAME" width1="200" image2="linux.svg" >}}
 
 [GNU][gnu]/[Linux][linux] no es la plataforma preferida por las empresas de desarrollo de videojuegos para lanzar sus juegos triple A. Esto hace que los juegos más destacados no esté disponibles en GNU/Linux o sea con un tiempo de retraso notable de meses y años. Pero esto no quiere decir que en la plataforma del pingüino no haya juegos algunos que ya he comentado como el [ajedrez][blogbitix-160], [go][blogbitix-163], [juegos ofrecidos en el entorno del escritorio GNOME][blogbitix-167] y otros de diferentes géneros como estrategia, _arcade_ o simulación.
 

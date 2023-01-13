@@ -17,7 +17,7 @@ summary: "Google Analytics es la herramienta más utilizada para implementar la 
 
 {{% post %}}
 
-{{< logotype image1="goaccess.png" >}}
+{{< logotype image1="goaccess.webp" >}}
 
 La analítica web es una funcionalidad imprescindible en la mayoría de sitios públicos accesibles desde internet web incluso en aquellos privados. La analítica web es una funcionalidad que proporciona valiosa información acerca del sitio web, desde número de visitas en determinados periodos de tiempo así como información de los usuarios y la interacción de estos con el sitio web.
 

@@ -18,7 +18,7 @@ summary: "Los portales ofrecen una solución para los casos de uso de integraci�
 
 {{% post %}}
 
-{{< logotype image1="apache-tapestry-icon-light.svg" image2="apache-pluto.png" title2="Apache Pluto" width2="300" image3="java.svg" >}}
+{{< logotype image1="apache-tapestry-icon-light.svg" image2="apache-pluto.webp" title2="Apache Pluto" width2="300" image3="java.svg" >}}
 
 La API ofrecida de los _portlets_ se puede considerar de bajo nivel y para facilitar la tarea de su programación es posible emplear un _framework_ al igual que ocurre al programar una aplicación web con los _servlets_ utilizando el lenguaje Java. Aún así es importante conocer los conceptos subyacentes de los _portlets_ que están explicados de forma didáctica en el libro [Portlets in Action](https://amzn.to/2tzpbjL).
 

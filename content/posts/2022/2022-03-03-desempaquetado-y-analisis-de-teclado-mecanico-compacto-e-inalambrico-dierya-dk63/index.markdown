@@ -19,7 +19,7 @@ summary: "Al elegir un teclado para un ordenador como un teclado mecánico hay v
 
 {{% post %}}
 
-{{< logotype image1="dierya.jpg" >}}
+{{< logotype image1="dierya.webp" >}}
 
 En este artículo realizó el desempaquetado y análisis de teclado mecánico DIERYA DK63, en varios aspectos similar al teclado mecánico DK61E pero con algunas diferencias determinantes para elegir entre uno u otro modelo.
 

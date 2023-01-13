@@ -19,7 +19,7 @@ summary: "Algunas de las causas del bajo rendimiento de una aplicación que util
 
 {{% post %}}
 
-{{< logotype image1="jooq.png" title1="jOOQ" width1="200" image2="java.svg" >}}
+{{< logotype image1="jooq.webp" title1="jOOQ" width1="200" image2="java.svg" >}}
 
 La librería [jOOQ][jooq] devuelve al lenguaje SQL de consultas para bases de datos relacionales al primer plano en una aplicación Java. En vez de crear una capa de abstracción como realiza la popular librería [Hibernate][hibernate] del modelo relacional al modelo orientado a objetos de Java permite construir con un DSL mediante su API fluída avanzadas sentencias SQL que soportan las versiones recientes de [PostgreSQL][postgresql] y [MySQL][mysql].
 

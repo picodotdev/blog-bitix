@@ -15,7 +15,7 @@ tags: ["planeta-codigo", "software-libre", "hardware", "software"]
 
 {{% post %}}
 
-{{< logotype image1="archlinux.svg" image2="dnie.jpg" title2="DNIe" width2="200" >}}
+{{< logotype image1="archlinux.svg" image2="dnie.webp" title2="DNIe" width2="200" >}}
 
 Otra forma de la que podemos sacar partido al DNI electrónico además de para [identificarnos en sitios web][blogbitix-1] que lo soporten como medio de autenticación es usarlo para firmar digitalmente los correos electrónicos que enviamos. Ya he comentado [como firmar correos electrónicos con GPG][elblogdepicodev-182] pero hacerlo con el DNI electrónico tiene la ventaja de que no necesitaremos [crear una par de claves GPG][elblogdepicodev-181] sino que con tener el DNI e [instalar un lector de tarjetas inteligentes][elblogdepicodev-183] será suficiente.
 

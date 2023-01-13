@@ -17,7 +17,7 @@ summary: "Ciertas propiedades de la programación funcional fueron una de las ca
 
 {{% post %}}
 
-{{< logotype image1="vavr.png" title1="Vavr" width1="300" >}}
+{{< logotype image1="vavr.webp" title1="Vavr" width1="300" >}}
 
 La programación funcional es un paradigma de programación declarativa que usa múltiples funciones para realizar cálculos y transformaciones a los datos de entrada para producir un resultado, se centra más en las funciones necesarias para realizar los cálculos que en la forma de realizar esos cálculos como ocurre en la programación imperativa. En la programación declarativa el código expresa mejor la intención y suele requerir menos código y estos son algunos motivos de por qué usar la programación funcional.
 

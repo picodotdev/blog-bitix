@@ -19,7 +19,7 @@ summary: "El MAONO HD300T es un micrófono dinámico cardioide muy polivalente g
 
 {{% post %}}
 
-{{< logotype image1="maono.png" >}}
+{{< logotype image1="maono.webp" >}}
 
 La comunicación con el ordenador ya no es solo a través de programas de texto ya sean documentos o correos electrónicos sino en muchos casos ha pasado a ser de vídeo o audio con programas de video conferencia. El trabajo en remoto debido a la pandemia del COVID-19, la creación de contenido audiovisual, el _streaming_ o usar los asistentes por voz que incorporan algunos sistemas operativos son varias formas de comunicación en forma de audio y habitualmente de vídeo.
 

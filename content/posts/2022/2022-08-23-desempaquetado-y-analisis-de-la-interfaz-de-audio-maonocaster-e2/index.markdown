@@ -19,7 +19,7 @@ summary: "Para grabar contenido de audio un micrófono es esencial para un audio
 
 {{% post %}}
 
-{{< logotype image1="maono.png" >}}
+{{< logotype image1="maono.webp" >}}
 
 El contenido escrito en formato de artículos y blogs ha sido desplazado por un contenido en formato de audio y vídeo. Gracias a las plataformas como [YouTube][youtube], [Twitch][twitch], [Discord][discord] y otras formas de crear contenido como _podcasts_ de audio, video blogs y _streams_ en directo muchos usuarios crean contenido en formato audio y vídeo en vez de texto para blogs. Al mismo tiempo, muchos usuarios consumen más contenido en formato de audio y vídeo que en formato escrito lo que incentiva que los creadores creen más contenido audiovisual.
 

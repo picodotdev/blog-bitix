@@ -18,7 +18,7 @@ summary: "Los ORMs nos han facilitado el acceso a los datos de una base de datos
 
 {{% post %}}
 
-{{< logotype image="jooq.png" title="jOOQ" width="200" >}}
+{{< logotype image="jooq.webp" title="jOOQ" width="200" >}}
 
 Con el auge de los lenguajes de programación orientados a objetos han surgido varias herramientas que intentan hacer que el trabajo de unir el mundo orientado a objetos del lenguaje que empleemos y el modelo relacional de las bases de datos sea más transparente, estas herramientas son conocidas como [Object Realtional Mapping][orm] (ORM). Una de las más conocidas y usada en la plataforma Java es [Hibernate][Hibernate]. Sin embargo, aunque facilitan el acceso a los datos no están exentas de problemas y están surgiendo nuevas alternativas para tratar de solventar algunos de ellos, una de ellas es [jOOQ][jooq].
 

@@ -17,7 +17,7 @@ series: ["quercus-robur"]
 
 {{% post %}}
 
-{{< logotype image1="quercus-robur.png" title1="Quercus Robur" width1="175" >}}
+{{< logotype image1="quercus-robur.webp" title1="Quercus Robur" width1="175" >}}
 
 Ya han pasado varios meses desde que hice germinar en septiembre varias bellotas de roble, ha pasado el invierno, ha llegado la primavera y ahora tengo unos pequeños plantones de roble. Al germinar y crecer hasta la altura entre unos 10 o 15 centímetros en un primer momento desarrollaron unas siete hojas de un tamaño bastante grande. Con el invierno las hojas se les comenzaron a amarillear y aún en mayo todavía tienen varias aunque en algún momento se les caerán, cuando veo que la hoja ya está bastante amarilla pruebo a ver si la hora se desprende fácilmente sin hacer mucha fuerza.
 

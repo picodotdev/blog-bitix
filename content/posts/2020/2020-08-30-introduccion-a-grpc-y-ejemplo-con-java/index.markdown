@@ -17,7 +17,7 @@ summary: "Para crear una API expuesta de forma externa o para ofrecer un servici
 
 {{% post %}}
 
-{{< logotype image1="grpc.png" image2="java.svg" >}}
+{{< logotype image1="grpc.webp" image2="java.svg" >}}
 
 Desarrollar una API con interfaz REST o [GraphQL][graphql] es la opción empleada mayoritariamente en los casos que hay que proporcionar datos y acceso a operaciones de forma programática a otra aplicación. Las API REST se basan en los elementos sobre los cuales está construida la web como el protocolo HTTP y su semántica junto con las operaciones de creación, modificación, lectura y eliminación organizando las operaciones alrededor de los recursos que se exponen mediante URLs utilizando JSON como formato de intercambio de datos basado en texto. GraphQL tiene importantes diferencias con REST al utilizar un esquema para definir el formato de los datos y la posibilidad de realizar varias consultas en la misma petición pero igualmente se basa en el protocolo HTTP y JSON.
 

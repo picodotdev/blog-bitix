@@ -18,7 +18,7 @@ summary: "Más lentamente que otras tecnologías Java EE en cada nueva versión 
 
 {{% post %}}
 
-{{< logotype image1="java-ee.png" title1="Java EE" width1="200" image2="java.svg" >}}
+{{< logotype image1="java-ee.webp" title1="Java EE" width1="200" image2="java.svg" >}}
 
 Comentaba las [novedades y nuevas características de Java EE 7][blogbitix-131] que en el 2013 trajo esta nueva versión para el desarrollo de aplicaciones empresariales con el lenguaje Java. Hacía una descripción y cuáles eran las especificaciones y versiones de las mismas que proporcionan la funcionalidades comunes a muchas aplicaciones. En este artículo mostraré un ejemplo con código con la implementación de una aplicación usando varias de las especificaciones de Java EE.
 

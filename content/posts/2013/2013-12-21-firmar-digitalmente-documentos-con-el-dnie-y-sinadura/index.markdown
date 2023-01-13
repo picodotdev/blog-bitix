@@ -15,7 +15,7 @@ tags: ["planeta-codigo", "software-libre", "hardware", "software"]
 
 {{% post %}}
 
-{{< logotype image1="dnie.jpg" title1="DNIe" width1="200" image2="sinadura.png" title2="Sinadura" width2="200" >}}
+{{< logotype image1="dnie.webp" title1="DNIe" width1="200" image2="sinadura.webp" title2="Sinadura" width2="200" >}}
 
 Ya he comentado [como instalar un lector de tarjetas inteligentes en linux para usar el DNI electrónico][elblogdepicodev-183] y que una vez instalado podemos darle algún uso útil como por ejemplo [autenticarnos con en DNI][blogbitix-1] en las páginas que lo soporten como medio de autenticación y el navegador Firefox. También he comentado [como usar el DNI con el cliente de correo Evolution para enviar correos firmados digitalmente][blogbitix-2].
 

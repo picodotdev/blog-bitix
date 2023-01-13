@@ -15,7 +15,7 @@ tags: ["software", "software-libre", "gnu-linux", "programacion", "planeta-codig
 
 {{% post %}}
 
-{{< logotype image="blogstack.png" title="Blog Stack" width="300" >}}
+{{< logotype image="blogstack.webp" title="Blog Stack" width="300" >}}
 
 Con este artículo quiero presentar un nuevo proyecto, Blog Stack. [Blog Stack](http://www.blogstack.info/) (BS) es una agregador, planeta, o fuente de información de bitácoras sobre programación, desarrollo, desarrollo ágil, software, software libre, hardware, gnu/linux o en general temas relacionados con la tecnología.
 

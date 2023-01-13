@@ -17,7 +17,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image1="geb.png" title1="Geb" width1="350" image2="java.svg" >}}
+{{< logotype image1="geb.webp" title1="Geb" width1="350" image2="java.svg" >}}
 
 Las pruebas automatizados permiten comprobar que una aplicación se comporta de la manera esperada en los casos probados, creando pruebas automatizadas se evita hacer las aburridas y repetitivas pruebas manuales que consumen gran cantidad de tiempo. Hay diferentes categorías de pruebas: unitarias, de integración y las funcionales. Para las pruebas unitarias y de integración en la plataforma Java unas de las más populares herramientas son [JUnit][junit] y [Spock][spock], para las pruebas funcionales están [Selenium][selenium] y la herramienta que explicaré en este artículo [Geb][geb] que puede usarse junto con Spock haciendo que el código de los teses sea muy descriptivo.
 

@@ -16,7 +16,7 @@ tags: ["planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image="uptime-robot.png" title="Uptime Robot" width="300" >}}
+{{< logotype image="uptime-robot.webp" title="Uptime Robot" width="300" >}}
 
 Los sitios web que ofrecen su servicio de forma ininterrumpida por diferentes causas pueden dejar de funcionar ya sea porque se ha perdido la conexión con la base de datos, se ha llenado el disco de la máquina impidiendo su normal funcionamiento u otras causas. En algunos tipos de servicio como páginas de presencia en internet puede dar una mala imagen pero en los sitios de comercio electrónico la pérdida del servicio es especialmente importante ya que además implica perder ventas o clientes. Para conocer de la forma más inmediata posible el mal funcionamiento y poder restaurar el servicio podemos usar alguna herramienta que monitorice su estado. Para monitorizar el funcionamiento de sitios web una de ellas muy sencilla es [Uptime Robot][uptimerobot].
 

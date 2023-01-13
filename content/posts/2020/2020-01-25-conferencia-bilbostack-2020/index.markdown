@@ -18,7 +18,7 @@ series: ["bilbostack"]
 
 {{% post %}}
 
-{{< logotype image1="bilbostack-2020.png" title1="BilboStack 2020" width1="300" >}}
+{{< logotype image1="bilbostack-2020.webp" title1="BilboStack 2020" width1="300" >}}
 
 Se cumple la 9º edición de la conferencia del ámbito de proyectos de tecnología que una vez más ha sido hospeda en el palacio Euskalduna. Como anteriores ediciones en un formato de dos _tracks_ simultáneos y cuatro presentaciones en cada uno, en una única mañana pero que se alarga durante la tarde con el _networking_ y los pintxos, y da a tiempo a visitar la ciudad si se viene de viaje.
 

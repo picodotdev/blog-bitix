@@ -15,7 +15,7 @@ tags: ["software", "software-libre", "java", "programacion", "planeta-codigo"]
 
 {{% post %}}
 
-{{< logotype image="blogstack.png" title="Blog Stack" width="300" >}}
+{{< logotype image="blogstack.webp" title="Blog Stack" width="300" >}}
 
 Normalmente en esta bitácora suelo poner ejemplos para explicar como funciona una determinada herramienta, son ejemplos que podrían aprovecharse para algo productivo pero para mantenerlos simples por si mismos no suelen serlo. En esta entrada voy a comentar cual es la arquitectura y como está alojado [Blog Stack](http://www.blogstack.info/), que es un ejemplo de algo práctico y real por si la experiencia de este ejemplo le sirve de ayuda o de inspiración a alguien. En la red he encontrado comentada la experiencia de ~~Planeta Linux~~ y [Meneame](http://gallir.wordpress.com/2009/12/30/como-montamos-meneame-en-amazon-ec2/), otros proyectos web.
 

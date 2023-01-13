@@ -19,7 +19,7 @@ summary: "El KEMOVE DK61 es un teclado mecánico que mejora en varios aspectos y
 
 {{% post %}}
 
-{{< logotype image1="kemove.jpg" >}}
+{{< logotype image1="kemove.webp" >}}
 
 Hay una buena cantidad de teclados mecánicos entre los que elegir en base a las necesidades propias y las características de los teclados entre las que está el formato o número de teclas que tienen y por supuesto su precio entre otras. Aunque hay muchos teclados mecánicos muchos no están destinados de forma específica a los usuarios que los utilizan con disposición de teclas en español, otros cuantos ni siquiera se venden en tiendas españolas y no es tan fácil encontrar _keycaps_ con la disposición española que tenga por ejemplo la letra _ñ_ y la tecla de tilde. Sin embargo, hay algunos disponibles y dada la versatilidad y personalización de los teclados mecánicos se pueden adaptar a las necesidades propias con algunos pasos adicionales.
 

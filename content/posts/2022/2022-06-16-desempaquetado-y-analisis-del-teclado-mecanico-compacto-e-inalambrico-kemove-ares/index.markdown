@@ -19,7 +19,7 @@ summary: "El teclado mecánico KEMOVE ARES está en la gama alta de teclados par
 
 {{% post %}}
 
-{{< logotype image1="kemove.jpg" >}}
+{{< logotype image1="kemove.webp" >}}
 
 Las marcas lanzan productos que cubren un amplio rango de precios según el presupuesto de los compradores. Lógicamente los productos más caros en principio son mejores por tener mayor durabilidad, materiales y en el caso de los productos tecnológicos mejores especificaciones.
 

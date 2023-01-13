@@ -17,7 +17,7 @@ summary: "Asciinema es una herramienta que nos permite grabar un vídeo de texto
 
 {{% post %}}
 
-{{< logotype image1="asciinema.png" title1="Asciinema" width1="200" >}}
+{{< logotype image1="asciinema.webp" title1="Asciinema" width1="200" >}}
 
 Si queremos compartir las acciones en una terminal y su salida tenemos varias opciones, la más simple es ejecutar el comando y copiar la salida en un archivo de texto, correo electrónico o artículo de una bitácora. Sin embargo, con esta opción solo tenemos el contenido final del comando y a veces en donde se usan varios comandos o que limpian la terminal (como por ejemplo con ssh) es difícil seguir en esa foto final la salida que se ha ido produciendo en la terminal. Otra opción es crear un vídeo tradicional de imágenes que podamos reproducir con [VLC][vlc] para ver la evolución de la salida tal y como se produce, sin embargo, en esta opción perdemos el poder copiar y pegar texto, es habitual que tengamos que parar el vídeo y escribir el comando o la salida que vemos en el vídeo, esto es lento y propenso a errores ya que podemos confundirnos varias veces al teclear lo que vemos en el vídeo. Otra opción mejor es usar [Asciinema][asciinema] que captura el texto de la terminal y crea un vídeo de texto que representa la sesión de terminal que hemos tenido.
 

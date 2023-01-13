@@ -19,7 +19,7 @@ summary: "Tener una caldera es cara, bien por el coste fijo del gas tanto por el
 
 {{% post %}}
 
-{{< logotype image1="fleck.jpg" title1="Fleck" width1="300" >}}
+{{< logotype image1="fleck.webp" title1="Fleck" width1="300" >}}
 
 Como cada 5 años me ha tocado hacer la revisión de la instalación de gas de la casa. Además, como hacía tiempo que no la realizaba como defecto me apuntaron que debía hacer en un periodo de menos de dos meses la revisión de la caldera de gas. La revisión de la instalación de gas en la zona que vivo se debe realizar cada cinco años y la revisión de la caldera cada dos. Los costes de ambas corren a cargo del usuario, salvo que tengas contratado un servicio de mantenimiento que incluso sale más caro, siendo para la revisión de la instalación de gas de unos 60 € y la de la revisión de la caldera de 85 €. Hacía tiempo que estaba pensando en sustituir la caldera por un termo eléctrico y estas revisiones junto con sus costes han sido la oportunidad para decidirme a hacer el cambio.
 

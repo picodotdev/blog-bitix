@@ -14,7 +14,7 @@ tags: ["blog"]
 
 {{% post %}}
 
-{{< logotype image="octopress.png" title="Octopress" width="300" >}}
+{{< logotype image="octopress.webp" title="Octopress" width="300" >}}
 
 Al momento de escribir esta entrada el blog ya tiene más de 3 años, ya más cerca de 4. En esta entrada en vez de algo relacionado con la tecnología quiero comentar por que empecé un blog, que supone tener un blog, como ha evolucionado durante este tiempo, como lo hago y por que hago algunas cosas como las hago por si mi modesta experiencia le sirve de utilidad a algún otro blogger.
 

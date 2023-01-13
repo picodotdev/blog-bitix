@@ -15,7 +15,7 @@ tags: ["gnu-linux", "planeta-codigo", "software", "software-libre"]
 
 {{% post %}}
 
-{{< logotype image1="redmine.png" title1="Redmine" width1="200" image2="bitnami.svg" title2="Bitnami" width2="200" >}}
+{{< logotype image1="redmine.webp" title1="Redmine" width1="200" image2="bitnami.svg" title2="Bitnami" width2="200" >}}
 
 Para desarrollar un proyecto de software se hace imprescindible disponer de algunas herramientas que nos permitan realizar las tareas. Una de estas herramientas es un [gestor de tareas, peticiones o errores](https://en.wikipedia.org/wiki/Issue_tracking_system), que nos permite recoger en una herramienta gran parte de la información, conocer el estado, planificar y hacer el seguimiento las tareas necesario para desarrollar de forma ordenada, sin que perdamos nada de información y pudiendo recuperarla en cualquier momento en un futuro.
 

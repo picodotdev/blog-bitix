@@ -17,7 +17,7 @@ tags: ["hardware", "opinion"]
 
 {{% post %}}
 
-{{< logotype image1="slimbook.jpg" title1="Slimbook" width1="200" >}}
+{{< logotype image1="slimbook.webp" title1="Slimbook" width1="200" >}}
 
 Hace unos días [Slimbook][slimbook] presentaba el nuevo equipo [AIO Curve][slimbook-curve] con una pantalla de 24 pulgadas ampliando su catálogo de productos en una nueva categoría, un todo en uno, _all-in-one_ o AIO. Como es el caso de estos modelos el equipo consta de un monitor en el que en parte trasera de la pantalla está integrada el procesador, memoria, almacenamiento SSD, todas las piezas como salida de red, wifi, audio y conexiones. La características de estos equipos es que no necesitan de mucho espacio, solo el que ocupe el monitor, son silenciosos y requiere de algún cable menos.
 

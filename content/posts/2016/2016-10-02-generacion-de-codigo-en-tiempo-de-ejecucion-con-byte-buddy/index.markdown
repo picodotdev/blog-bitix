@@ -17,7 +17,7 @@ summary: "El tipado seguro y el sistema de tipos es sin duda una de las caracter
 
 {{% post %}}
 
-{{< logotype image1="bytebuddy.png" title1="Byte Buddy" width1="200" image2="java.svg" >}}
+{{< logotype image1="bytebuddy.webp" title1="Byte Buddy" width1="200" image2="java.svg" >}}
 
 Java posee un sistema de tipos estricto con el que detectar errores de compilación y hace que el código sea más legible, con un <abbr title="Integrated Development Environment">IDE</abbr> los errores de compilación los detectaremos inmediatamente según escribimos código. Este sistema de tipos estricto es deseable en aplicaciones de negocio y empresariales ya que ayuda a que las aplicaciones tengan menos errores o errores de compilación pasen inadvertidos y ser descubiertos incluso semanas después de haber sido desplegados en producción. Su sistema de tipos es uno de los responsables del éxito de Java. Sin embargo, el sistema de tipos estricto impone restricciones en otro tipo de ámbitos como en una biblioteca de propósito general ya que no se conocerán los tipos en tiempo de compilación y no podrán por tanto ser referenciados o alternativamente hayan ser definidos como interfaces o clases abstractas que posteriormente son implementadas o extendidas.
 
