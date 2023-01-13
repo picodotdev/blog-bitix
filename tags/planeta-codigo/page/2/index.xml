@@ -21,7 +21,7 @@
         <content type="html">
         <![CDATA[<p><strong>Dado que el protocolo HTTP es un protocolo sin estado los <em>access token</em> se envían en cada petición que se hace al <em>endpoint</em> de un recurso ofrecido por una aplicación mediante una interfaz REST. Para limitar el periodo de que un <em>access tokens</em> sea utilizable en caso de ser filtrado estos se crean con un tiempo de vida corto, los clientes para seguir realizando peticiones han de solicitar al servidor de autorización un nuevo <em>access token</em>. La librería OkHttp permite realizar la renovación de forma transparente para el cliente y en el código donde se usa.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/oauth.svg" width="200" height="200" alt="OAuth" title="OAuth"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/oauth.svg" width="200" height="200" alt="OAuth" title="OAuth" class="" loading="false&#34;"></p>
 </div>
 <p>En <a href="https://oauth.net/">el protocolo OAuth</a> la autorización se concede o no en base a un <em>token</em> que para el cliente es simplemente una cadena de letras sin ningún sentido.</p>
 <ul>
@@ -102,7 +102,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/09/como-refrescar-el-access-token-de-un-cliente-oauth-cuando-caduca/images/keycloak-clients_huf173f051969c7b522bafdbc6c824e948_121420_2560x1440_fit_box_3.png" data-gallery="" title="Clientes en Keycloak"><img src="https://picodotdev.github.io/blog-bitix/2022/09/como-refrescar-el-access-token-de-un-cliente-oauth-cuando-caduca/images/keycloak-clients_huf173f051969c7b522bafdbc6c824e948_121420_650x450_fit_box_3.png" width="650" height="373" alt="Clientes en Keycloak" title="Clientes en Keycloak"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/09/como-refrescar-el-access-token-de-un-cliente-oauth-cuando-caduca/images/keycloak-clients_huf173f051969c7b522bafdbc6c824e948_121420_2560x1440_fit_box_3.png" data-gallery="" title="Clientes en Keycloak"><img src="https://picodotdev.github.io/blog-bitix/2022/09/como-refrescar-el-access-token-de-un-cliente-oauth-cuando-caduca/images/keycloak-clients_huf173f051969c7b522bafdbc6c824e948_121420_650x450_fit_box_3.png" width="650" height="373" alt="Clientes en Keycloak" title="Clientes en Keycloak" class="&#34; " loading="lazy"></a></p>
 <figcaption>Clientes en Keycloak</figcaption>
 </figure>
 </div>
@@ -140,7 +140,7 @@
         <content type="html">
         <![CDATA[<p><strong>El protocolo OAuth es un protocolo en el ámbito de la seguridad que permite que el dueño de los recursos conceda permisos a un cliente sin necesidad de compartir las credenciales, el servidor de recursos unicamente necesita un <em>token</em> que certifique el cliente tiene permisos para acceder a los recursos, el <em>token</em> es emitido por el servidor de autorización en el que el usuario se autentica y en el que servidor de recursos confía en los <em>tokens</em> de autorización que emite. Gracias a la flexibilidad del protocolo OAuth y estar basado en la ubicuidad del protocolo HTTP este es el mecanismo de autorización adoptado predominantemente en la web por los diferentes servicios que ofrecen sus APIs mediante REST sin limitarse a este tipo de APIs. OAuth se compone de varias especificaciones que permiten delegar la autorización, OpenID Connect construido sobre OAuth proporciona otro aspecto de la seguridad, la autenticación.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/oauth.svg" width="200" height="200" alt="OAuth" title="OAuth"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/oauth.svg" width="200" height="200" alt="OAuth" title="OAuth" class="" loading="false&#34;"></p>
 </div>
 <p>La web se compone de una multitud de páginas desarrolladas y bajo el control de múltiples organizaciones no relacionadas. Los usuarios almacenan sus datos y recursos en un servicio, en una web interconectada compuesta de múltiples servicios surge la necesidad de que un servicio pueda acceder de forma segura a los recursos de un usuario en otro servicio.</p>
 <p>Este es el caso de una aplicación de un tercero que por ejemplo desea acceder a los documentos,  fotos o datos de un usuario alojada en otro servicio pero sin tener que compartir las credenciales del servicio donde están alojadas las fotos.</p>
@@ -156,7 +156,7 @@
 </ul>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/09/introduccion-al-protocolo-oauth-2-para-delegar-la-autorizacion/images/oauth-components_hu3c2c677b1ec95532986d9daafc565f04_69661_2560x1440_fit_box_3.png" data-gallery="" title="Componentes de OAuth 2.0"><img src="https://picodotdev.github.io/blog-bitix/2022/09/introduccion-al-protocolo-oauth-2-para-delegar-la-autorizacion/images/oauth-components_hu3c2c677b1ec95532986d9daafc565f04_69661_650x450_fit_box_3.png" width="545" height="450" alt="Componentes de OAuth 2.0" title="Componentes de OAuth 2.0"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/09/introduccion-al-protocolo-oauth-2-para-delegar-la-autorizacion/images/oauth-components_hu3c2c677b1ec95532986d9daafc565f04_69661_2560x1440_fit_box_3.png" data-gallery="" title="Componentes de OAuth 2.0"><img src="https://picodotdev.github.io/blog-bitix/2022/09/introduccion-al-protocolo-oauth-2-para-delegar-la-autorizacion/images/oauth-components_hu3c2c677b1ec95532986d9daafc565f04_69661_650x450_fit_box_3.png" width="545" height="450" alt="Componentes de OAuth 2.0" title="Componentes de OAuth 2.0" class="&#34; " loading="lazy"></a></p>
 <figcaption>Componentes de OAuth 2.0 <br>Fuente: Libro OAuth 2 in Action</figcaption>
 </figure>
 </div>
@@ -341,7 +341,7 @@
         <content type="html">
         <![CDATA[<p><strong>Java se ha caracterizado por ser un lenguaje verboso y necesitar declarar todo de forma explícita, esto tiene la ventaja de que el código es muy explícito sin apenas convenciones que es necesario conocer para saber cómo se comporta el código. Por el contrario esta verbosidad requiere declarar gran cantidad de código que se hace repetitivo en muchas clases. Los <em>Records</em> de Java 16 permite declarar clases de datos en muy pocas líneas de código, esto lo consiguen introduciendo algunas convenciones que son de uso común en el lenguaje. Un aspecto que no resuelven los <em>Records</em> es el crear clases Builder que son una necesidad asociada para esas clases de datos.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Java desde la versión 8 ha incorporado muchas novedades y con el ciclo de desarrollo de una nueva versión cada seis meses las novedades han sido numerosas y cada poco tiempo. Una de las novedades disponibles en la versión de Java 16 ha sido una especialización de clase, las clases <em>Record</em>.</p>
 <ul>
@@ -426,7 +426,7 @@
         <content type="html">
         <![CDATA[<p><strong>Incluso para emitir trazas que en principio es algo sencillo y que se da por hecho surgen varias opciones de arquitectura o diseño. Dos de esas decisiones son acoplarse o no a la librería de <em>logging</em> que se use e inyectar de forma estática o por el constructor la instancia de la clase con la que se emiten trazas. Estas decisiones conviene recogerlas en un documento de <em>Architecture Decision Record</em> por si en un futuro hay que revisar las decisiones tomadas con anterioridad o para que una persona en un futuro tenga el contexto y un registro de las decisiones que se han tomado, el contexto, opciones evaluadas, argumentos y decisiones tomadas.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Una de las cosas más esenciales de una aplicación es generar trazas para tener observabilidad de que está realizando la aplicación y un registro que permita consultar qué ha pasado en cualquier momento que sea necesario, que lo será. Las trazas no son solo por observabilidad a veces también por cumplimiento de requerimientos de seguridad y auditoría.</p>
 <p>Por tanto, usar una librería de <em>logging</em> es una de las dependencias básicas, en Java las librerías de logging más utilizadas son <a href="https://logging.apache.org/log4j/2.x/">log4j 2</a>, <a href="https://www.slf4j.org/">SLF4J</a> y las propias <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.logging/java/util/logging/package-summary.html">clases del JDK para logging</a> del paquete conocido como JUL.</p>
@@ -514,7 +514,7 @@
         <content type="html">
         <![CDATA[<p><strong>Una cosa es la funcionalidad que proporciona una aplicación y otra las tareas de administración y mantenimiento relacionas con la aplicación. Estas tareas de administración y mantenimiento no son tareas destinadas a los usuarios sino destinadas a los administradores de la aplicación. Estas tareas pueden ser manuales y ejecutadas a conveniencia siendo muy útil poder ejecutarlas sin necesidad de realizar cambios en el código ni un despliegue de la aplicación. La tecnología JMX de Java define una arquitectura para administrar y monitorizar aplicaciones que se puede utilizar para estas tareas administrativas, Hawtio es una interfaz que permite el acceso y ejecución a JMX mediante un navegador y proporciona una librería para integrase con Spring Boot.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Las computadoras y las aplicaciones realizan sus funciones de forma rápida y determinista ofreciendo su servicio a sus usuarios. El software generalmente se diseña para el caso en el que todo funcione correctamente pero también ha de estar preparado para los casos en los que se produzca un error ya sea simplemente emitiendo una traza o autocorrigiendo el problema con un reintento.</p>
 <p>Especialmente con el advenimiento de los microservicios que se basan en la comunicación por red las aplicaciones han de estar preparadas para los errores. Si un proceso en una computadora es muy fiable salvo por fallo del hardware las redes son mucho menos fiables más cuando hay comunicación entre varios servicios dado que la conectividad de red se puede perder o un servicio puede fallar repentinamente por un fallo de software o por un fallo de hardware.</p>
@@ -564,7 +564,7 @@
 <p>Las operaciones administrativas seguramente sean funcionalidades que realicen tareas que no deban ser accesibles para los usuarios y han de estar protegidos. Hawtio permite la integración con Keycloak para la autenticación y permite solicitar credenciales para el acceso a la consola web.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_huab49737b236e0ceb342763f3af53efc8_92906_2560x1440_fit_box_3.png" data-gallery="" title="Consola de Hawtio como un actuator en aplicación de Spring Boot"><img src="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_huab49737b236e0ceb342763f3af53efc8_92906_650x450_fit_box_3.png" width="650" height="364" alt="Consola de Hawtio como un actuator en aplicación de Spring Boot" title="Consola de Hawtio como un actuator en aplicación de Spring Boot"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_huab49737b236e0ceb342763f3af53efc8_92906_2560x1440_fit_box_3.png" data-gallery="" title="Consola de Hawtio como un actuator en aplicación de Spring Boot"><img src="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_huab49737b236e0ceb342763f3af53efc8_92906_650x450_fit_box_3.png" width="650" height="364" alt="Consola de Hawtio como un actuator en aplicación de Spring Boot" title="Consola de Hawtio como un actuator en aplicación de Spring Boot" class="&#34; " loading="lazy"></a></p>
 <figcaption>Consola de Hawtio como un actuator en aplicación de Spring Boot</figcaption>
 </figure>
 </div>
@@ -578,15 +578,15 @@
 <p>Con Boundary iniciado y el <em>target</em> definido hay que establecer el túnel con la conexión a la máquina destino, esto crea un túnel abriendo un puerto en la máquina local que tiene como destino el <em>target</em> que se ha utilizado para la conexión, en este ejemplo a la propia máquina local al puerto <em>8081</em>.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-console_hua3b1cafcc8796ee645c1aab45a3cb181_73517_2560x1440_fit_box_3.png" data-gallery="" title="Consola de Boundary"><img src="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-console_hua3b1cafcc8796ee645c1aab45a3cb181_73517_200x150_fit_box_3.png" width="200" height="112" alt="Consola de Boundary" title="Consola de Boundary"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-console_hua3b1cafcc8796ee645c1aab45a3cb181_73517_2560x1440_fit_box_3.png" data-gallery="" title="Consola de Boundary"><img src="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-console_hua3b1cafcc8796ee645c1aab45a3cb181_73517_200x150_fit_box_3.png" width="200" height="112" alt="Consola de Boundary" title="Consola de Boundary" class="&#34; " loading="lazy"></a></p>
 <figcaption>Consola de Boundary</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-1_hu63362bb9c631c9095169f69b761c1192_114047_2560x1440_fit_box_3.png" data-gallery="" title="Creación de un target en Boundary"><img src="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-1_hu63362bb9c631c9095169f69b761c1192_114047_200x150_fit_box_3.png" width="136" height="150" alt="Creación de un target en Boundary" title="Creación de un target en Boundary"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-2_hu9f746e9fd5c572d5f381dc2440b2d1db_80836_2560x1440_fit_box_3.png" data-gallery="" title="Creación de un target en Boundary"><img src="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-2_hu9f746e9fd5c572d5f381dc2440b2d1db_80836_200x150_fit_box_3.png" width="136" height="150" alt="Creación de un target en Boundary" title="Creación de un target en Boundary"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-3_huc29e81c93891486d6c47d0dbcbe91f94_88702_2560x1440_fit_box_3.png" data-gallery="" title="Creación de un target en Boundary"><img src="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-3_huc29e81c93891486d6c47d0dbcbe91f94_88702_200x150_fit_box_3.png" width="136" height="150" alt="Creación de un target en Boundary" title="Creación de un target en Boundary"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-1_hu63362bb9c631c9095169f69b761c1192_114047_2560x1440_fit_box_3.png" data-gallery="" title="Creación de un target en Boundary"><img src="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-1_hu63362bb9c631c9095169f69b761c1192_114047_200x150_fit_box_3.png" width="136" height="150" alt="Creación de un target en Boundary" title="Creación de un target en Boundary" class="&#34; " loading="lazy"></a>
+<a href="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-2_hu9f746e9fd5c572d5f381dc2440b2d1db_80836_2560x1440_fit_box_3.png" data-gallery="" title="Creación de un target en Boundary"><img src="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-2_hu9f746e9fd5c572d5f381dc2440b2d1db_80836_200x150_fit_box_3.png" width="136" height="150" alt="Creación de un target en Boundary" title="Creación de un target en Boundary" class="&#34; " loading="lazy"></a>
+<a href="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-3_huc29e81c93891486d6c47d0dbcbe91f94_88702_2560x1440_fit_box_3.png" data-gallery="" title="Creación de un target en Boundary"><img src="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-3_huc29e81c93891486d6c47d0dbcbe91f94_88702_200x150_fit_box_3.png" width="136" height="150" alt="Creación de un target en Boundary" title="Creación de un target en Boundary" class="&#34; " loading="lazy"></a></p>
 <figcaption>Creación de un target en Boundary</figcaption>
 </figure>
 </div>
@@ -600,14 +600,14 @@
 <p>Esto proporciona un puerto en la máquina local abierto contra Boundary y este contra la máquina y el puerto destino. En este ejemplo está todo en la máquina local pero a efectos prácticos ahora es posible utilizar el puerto proporcionado por Boundary para hacer la conexión a la consola de Hawtio, en vez del puerto <em>8081</em> la conexión a través de Boundary se realiza mediante el puerto <em>43923</em>.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-hawtio_hu2fcddd69412a17c72d44de86c1be3b3d_93247_2560x1440_fit_box_3.png" data-gallery="" title="Conexión a Hawtio a través de Boundary"><img src="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-hawtio_hu2fcddd69412a17c72d44de86c1be3b3d_93247_650x450_fit_box_3.png" width="650" height="364" alt="Conexión a Hawtio a través de Boundary" title="Conexión a Hawtio a través de Boundary"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-hawtio_hu2fcddd69412a17c72d44de86c1be3b3d_93247_2560x1440_fit_box_3.png" data-gallery="" title="Conexión a Hawtio a través de Boundary"><img src="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-hawtio_hu2fcddd69412a17c72d44de86c1be3b3d_93247_650x450_fit_box_3.png" width="650" height="364" alt="Conexión a Hawtio a través de Boundary" title="Conexión a Hawtio a través de Boundary" class="&#34; " loading="lazy"></a></p>
 <figcaption>Conexión a Hawtio a través de Boundary</figcaption>
 </figure>
 </div>
 <p>Además, con Boundary es posible monitorizar las conexiones y sesiones establecidas lo que proporciona medidas adicionales de seguridad y auditoría.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-sessions_hu02b45c589b8b257698a797c7d9b5f7a0_80117_2560x1440_fit_box_3.png" data-gallery="" title="Sesiones establecidas y activas establecidas a través de Boudary"><img src="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-sessions_hu02b45c589b8b257698a797c7d9b5f7a0_80117_650x450_fit_box_3.png" width="650" height="377" alt="Sesiones establecidas y activas establecidas a través de Boudary" title="Sesiones establecidas y activas establecidas a través de Boudary"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-sessions_hu02b45c589b8b257698a797c7d9b5f7a0_80117_2560x1440_fit_box_3.png" data-gallery="" title="Sesiones establecidas y activas establecidas a través de Boudary"><img src="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-sessions_hu02b45c589b8b257698a797c7d9b5f7a0_80117_650x450_fit_box_3.png" width="650" height="377" alt="Sesiones establecidas y activas establecidas a través de Boudary" title="Sesiones establecidas y activas establecidas a través de Boudary" class="&#34; " loading="lazy"></a></p>
 <figcaption>Sesiones establecidas y activas establecidas a través de Boudary</figcaption>
 </figure>
 </div>
@@ -636,7 +636,7 @@
         <content type="html">
         <![CDATA[<p><strong>Utilizar las etiquetas de las herramientas de control de versiones permite conservar ciertos hitos o <em>commits</em> importantes para consultarlos en el futuro. Generar una versión de un proyecto suele implicar generar una etiqueta en la herramienta de control de versiones. Dado que la generación de nuevas versiones es parte del ciclo de vida de un proyecto hay <em>plugins</em> tanto para Maven como para Gradle que ofrecen como funcionalidad automatizar esta proceso.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>La generación de <em>releases</em> es una tarea habitual en un proyecto, la <em>release</em> es una forma de identificar de forma exacta la versión que se utiliza para desplegar en un entorno o en producción o es la versión que utilizan otros proyectos para utilizarla como una dependencia.</p>
 <p>Hay varias nomenclaturas para denominar a las versiones. En Java hay varios <em>plugins</em> para las herramientas de construcción <a href="https://maven.apache.org/">Maven</a> o <a href="https://gradle.org/">Gradle</a> para los proyectos Java que permite generar <em>releases</em>.</p>
@@ -714,7 +714,7 @@
         <content type="html">
         <![CDATA[<p><strong>En el resumen de este semestre en Blog Bitix está el haber colaborado con una marca de teclados mecánicos con varios artículos promocionados la primera de este tipo en el blog. He añadido la plataforma publicitaria que hasta el momento va a suponer los ingresos del blog. En cuanto a alis un nuevo diseño para su página web y unos pocos cambios con mejoras en el script. Por la parte de artículos del blog he estado publicado habitualmente un único artículo en vez de dos como en otras épocas pasadas, unos 25 artículos únicos y originales más y van ya más de 600.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix" class="" loading="false&#34;"></p>
 </div>
 <p>Hay algunos medios que hacen cosas horribles como hablar de algo y no poner ni siquiera un enlace a la página de lo que se habla, quizá por falta de tiempo, no tener que mantener esos enlaces en el futuro o quizá pensando que así no sales de su web. En mis artículos siempre trato de incluir un enlace en la primera referencia de algo.</p>
 <p>Otros seis meses de vida para Blog Bitix y otra buena cantidad de artículos publicados y algunas pocas novedades en el blog.</p>
@@ -813,7 +813,7 @@
         <content type="html">
         <![CDATA[<p><strong>El símbolo del sistema o <em>prompt</em> en la línea de comandos de la terminal precede a la introducción del comando a ejecutar. Los intérpretes de comandos o <em>shells</em> ofrecen un símbolo del sistema por defecto que muestran cierta información y con el formato que sus desarrolladores han elegido. Además de que cada intérprete de comandos tenga uno propio estos son bastante limitados en cuanto a personalización además de utilizar una configuración poco intuitiva. Starship es un personalizador del símbolo del sistema independiente del intérprete de comandos, que ofrece una gran cantidad de módulos para personalizar el símbolo del sistema según el directorio de trabajo actual y cuya configuración es muy intuitiva y está bien documentada.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="bash.svg" title="bash.svg"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="bash.svg" title="bash.svg" class="" loading="false&#34;"></p>
 </div>
 <p>Para los usuarios avanzados la línea de comandos sigue siendo la forma más rápida de hacer ciertas tareas y a veces es la única forma de hacerlo ya que no se dispone de la aplicación equivalente. La línea de comandos no solo no ha desaparecido con las interfaces gráficas sino que se sigue usando mucho. Con algunas aplicaciones gráficas la línea de comandos no es necesaria y hay muchas aplicaciones gráficas para multitud de necesidades pero para algunas cosas especializadas no las hay y la mejor opción es un programa de línea de comandos.</p>
 <p>Dada la utilidad de la línea de comandos esta se usa y se seguirá usando. En la línea de comandos un elemento destacado es el símbolo del sistema o <em>prompt</em> que muestra una información básica como el nombre de usuario, directorio y cierta información de estado. Hay varias utilidades para personalizar el símbolo del sistema según las preferencias del usuario.</p>
@@ -837,7 +837,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/bash-prompt-1_hub9aa1f81796a12160d430303811ef951_15311_2560x1440_fit_box_3.png" data-gallery="" title="Símbolo del sistema de bash"><img src="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/bash-prompt-1_hub9aa1f81796a12160d430303811ef951_15311_650x450_fit_box_3.png" width="614" height="450" alt="Símbolo del sistema de bash" title="Símbolo del sistema de bash"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/bash-prompt-1_hub9aa1f81796a12160d430303811ef951_15311_2560x1440_fit_box_3.png" data-gallery="" title="Símbolo del sistema de bash"><img src="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/bash-prompt-1_hub9aa1f81796a12160d430303811ef951_15311_650x450_fit_box_3.png" width="614" height="450" alt="Símbolo del sistema de bash" title="Símbolo del sistema de bash" class="&#34; " loading="lazy"></a></p>
 <figcaption>Símbolo del sistema de bash</figcaption>
 </figure>
 </div>
@@ -847,7 +847,7 @@
 <p>Starship permite aplicar misma configuración y tener el mismo símbolo del sistema independientemente del intérprete de comandos que es útil por ejemplo si se usa equipos diferentes, uno con <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> en las que generalmente utilizan por defecto el intérprete de comandos bash y otro con <a href="https://www.apple.com/macos/">macOS</a> en el que el intérprete de comandos por defecto es zsh.</p>
 <div class="media">
 <figure>
-<p><img src="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship_hu08a1c7f5139027bf84c059a744666286_63046_2560x1440_fit_box_3.png" width="300" height="80" alt="Starship" title="Starship"  class="lozad "></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship_hu08a1c7f5139027bf84c059a744666286_63046_2560x1440_fit_box_3.png" width="2478" height="662" alt="Starship" title="Starship" class="&#34; " loading="lazy"></p>
 </figure>
 </div>
 <p>En <a href="https://www.archlinux.org/">Arch Linux</a> se instala con el comando del gestor de paquetes.</p>
@@ -877,14 +877,14 @@
 <p>Utilizando colores el símbolo del sistema casi tiene un aspecto gráfico y al estar cada información separada por diferentes colores hace que sea fácilmente identificable.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-1_hu6bfdba881ddb1d0d6e7ab73029e91741_18565_2560x1440_fit_box_3.png" data-gallery="" title="Símbolo del sistema personalizado con Starship"><img src="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-1_hu6bfdba881ddb1d0d6e7ab73029e91741_18565_650x450_fit_box_3.png" width="614" height="450" alt="Símbolo del sistema personalizado con Starship" title="Símbolo del sistema personalizado con Starship"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-1_hu6bfdba881ddb1d0d6e7ab73029e91741_18565_2560x1440_fit_box_3.png" data-gallery="" title="Símbolo del sistema personalizado con Starship"><img src="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-1_hu6bfdba881ddb1d0d6e7ab73029e91741_18565_650x450_fit_box_3.png" width="614" height="450" alt="Símbolo del sistema personalizado con Starship" title="Símbolo del sistema personalizado con Starship" class="&#34; " loading="lazy"></a></p>
 </figure>
 </div>
 <p>Las siguientes capturas muestran información en el símbolo del sistema de una carpeta que es un repositorio de Git que incluye información del estado del espacio de trabajo y en otra además en que la carpeta es un proyecto en el lenguaje Java.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-2_hu73bbcc25a35801511f708f70fc58899a_23759_2560x1440_fit_box_3.png" data-gallery="" title="Símbolo del sistema personalizado con Starship"><img src="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-2_hu73bbcc25a35801511f708f70fc58899a_23759_300x200_fit_box_3.png" width="273" height="200" alt="Símbolo del sistema personalizado con Starship" title="Símbolo del sistema personalizado con Starship"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-3_hu827b43744287322c43f0015d1dffad37_23854_2560x1440_fit_box_3.png" data-gallery="" title="Símbolo del sistema personalizado con Starship"><img src="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-3_hu827b43744287322c43f0015d1dffad37_23854_300x200_fit_box_3.png" width="273" height="200" alt="Símbolo del sistema personalizado con Starship" title="Símbolo del sistema personalizado con Starship"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-2_hu73bbcc25a35801511f708f70fc58899a_23759_2560x1440_fit_box_3.png" data-gallery="" title="Símbolo del sistema personalizado con Starship"><img src="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-2_hu73bbcc25a35801511f708f70fc58899a_23759_300x200_fit_box_3.png" width="273" height="200" alt="Símbolo del sistema personalizado con Starship" title="Símbolo del sistema personalizado con Starship" class="&#34; " loading="lazy"></a>
+<a href="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-3_hu827b43744287322c43f0015d1dffad37_23854_2560x1440_fit_box_3.png" data-gallery="" title="Símbolo del sistema personalizado con Starship"><img src="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-3_hu827b43744287322c43f0015d1dffad37_23854_300x200_fit_box_3.png" width="273" height="200" alt="Símbolo del sistema personalizado con Starship" title="Símbolo del sistema personalizado con Starship" class="&#34; " loading="lazy"></a></p>
 <figcaption>Símbolo del sistema personalizado con Starship</figcaption>
 </figure>
 </div>
@@ -926,10 +926,10 @@
         <content type="html">
         <![CDATA[<p><strong>La terminal es una herramienta muy utilizada por usuarios avanzados aún habiendo sistemas operativos en los que prácticamente todo se puede realizar desde un programa con interfaz gráfica. La linea de comandos es menos amigable ya que no ofrece apenas ayuda que guíe al usuario pero cuando un usuario conoce como realizar una tarea desde la línea de comandos es mucho más rápido que usar un programa con interfaz gráfica además de otras ventajas. El intérprete de comandos es la pieza que proporciona un entorno dese el que se introducen los comandos y con el que interacciona el usuario desde la terminal con una interfaz basada en texto.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bash.svg" width="300" height="126" alt="bash" title="bash"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bash.svg" width="300" height="126" alt="bash" title="bash" class="" loading="false&#34;"></p>
 </div>
 <p>El sistema operativo es una pieza fundamental de software que hace usable el hardware y proporciona una abstracción y servicios más lógicos para los programas sin que estos se tengan que preocupar de detalles de bajo nivel relativos al hardware ni específicos de cada dispositivo hardware.</p>
 <p>Una de las piezas fundamentales de un sistema operativo y la más conocida es el núcleo o <em>kernel</em>, dos núcleos con licencia de software libre son <a href="https://www.linux.com/">Linux</a> y <a href="https://www.freebsd.org/es/">FreeBSD</a> pero hay muchos otros menos conocidos como <a href="https://www.minix3.org/">Minix</a>, <a href="https://www.gnome.org/">Genode</a> o <a href="https://www.haiku-os.org/">Haiku</a> y distribuciones derivadas de estos. Sistemas operativos con núcleo privativos son el de <a href="https://www.microsoft.com/es-es/windows/">Windows</a> de los sistemas de escritorio de <a href="https://www.microsoft.com/">Microsoft</a> y comerciales son el de <a href="https://www.apple.com/macos/">macOS</a> de los ordenadores de <a href="https://www.apple.com/">Apple</a>.</p>
@@ -946,7 +946,7 @@
 <p>Aún con las interfaces gráficas las terminales y la línea de comandos siguen siendo muy utilizadas por su posibilidad de automatización y conociendo el comando es más sencillo que utilizar una herramienta gráfica. Además, para la administración de servidores siguen siendo la interfaz de administración principal incluso antes que las interfaces gráficas.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/gnome-terminal_huaca422df68cfe9fbd3622448370807d0_17492_2560x1440_fit_box_3.png" data-gallery="" title="Emulador de terminal de GNOME Terminal"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/gnome-terminal_huaca422df68cfe9fbd3622448370807d0_17492_650x450_fit_box_3.png" width="615" height="450" alt="Emulador de terminal de GNOME Terminal" title="Emulador de terminal de GNOME Terminal"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/gnome-terminal_huaca422df68cfe9fbd3622448370807d0_17492_2560x1440_fit_box_3.png" data-gallery="" title="Emulador de terminal de GNOME Terminal"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/gnome-terminal_huaca422df68cfe9fbd3622448370807d0_17492_650x450_fit_box_3.png" width="615" height="450" alt="Emulador de terminal de GNOME Terminal" title="Emulador de terminal de GNOME Terminal" class="&#34; " loading="lazy"></a></p>
 <figcaption>Emulador de terminal de GNOME Terminal</figcaption>
 </figure>
 </div>
@@ -988,8 +988,8 @@
 <p>El aspecto por defecto de los <em>prompts</em> de bash y zsh son los siguientes.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/bash_hud1ce7affd186b95d0d02b737e662d43b_16005_2560x1440_fit_box_3.png" data-gallery="" title="Intérprete de comandos bash"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/bash_hud1ce7affd186b95d0d02b737e662d43b_16005_300x200_fit_box_3.png" width="273" height="200" alt="Intérprete de comandos bash" title="Intérprete de comandos bash"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/zsh_hud7b5a1c1d64d347f44201dacd637097b_17129_2560x1440_fit_box_3.png" data-gallery="" title="Intérprete de comandos zsh"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/zsh_hud7b5a1c1d64d347f44201dacd637097b_17129_300x200_fit_box_3.png" width="273" height="200" alt="Intérprete de comandos zsh" title="Intérprete de comandos zsh"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/bash_hud1ce7affd186b95d0d02b737e662d43b_16005_2560x1440_fit_box_3.png" data-gallery="" title="Intérprete de comandos bash"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/bash_hud1ce7affd186b95d0d02b737e662d43b_16005_300x200_fit_box_3.png" width="273" height="200" alt="Intérprete de comandos bash" title="Intérprete de comandos bash" class="&#34; " loading="lazy"></a>
+<a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/zsh_hud7b5a1c1d64d347f44201dacd637097b_17129_2560x1440_fit_box_3.png" data-gallery="" title="Intérprete de comandos zsh"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/zsh_hud7b5a1c1d64d347f44201dacd637097b_17129_300x200_fit_box_3.png" width="273" height="200" alt="Intérprete de comandos zsh" title="Intérprete de comandos zsh" class="&#34; " loading="lazy"></a></p>
 <figcaption>Intérprete de comandos bash y zsh</figcaption>
 </figure>
 </div>
@@ -1003,8 +1003,8 @@
 </ul>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/bash-custom_hu45818392a957f07fad0e4fd34f7b01f7_15742_2560x1440_fit_box_3.png" data-gallery="" title="Terminal de bash personalizada"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/bash-custom_hu45818392a957f07fad0e4fd34f7b01f7_15742_300x200_fit_box_3.png" width="272" height="200" alt="Terminal de bash personalizada" title="Terminal de bash personalizada"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/starship_hu8f9add5d06d60afa99989e628b6a2ea9_27834_2560x1440_fit_box_3.png" data-gallery="" title="Terminal personalizada con Starship"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/starship_hu8f9add5d06d60afa99989e628b6a2ea9_27834_300x200_fit_box_3.png" width="272" height="200" alt="Terminal personalizada con Starship" title="Terminal personalizada con Starship"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/bash-custom_hu45818392a957f07fad0e4fd34f7b01f7_15742_2560x1440_fit_box_3.png" data-gallery="" title="Terminal de bash personalizada"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/bash-custom_hu45818392a957f07fad0e4fd34f7b01f7_15742_300x200_fit_box_3.png" width="272" height="200" alt="Terminal de bash personalizada" title="Terminal de bash personalizada" class="&#34; " loading="lazy"></a>
+<a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/starship_hu8f9add5d06d60afa99989e628b6a2ea9_27834_2560x1440_fit_box_3.png" data-gallery="" title="Terminal personalizada con Starship"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/starship_hu8f9add5d06d60afa99989e628b6a2ea9_27834_300x200_fit_box_3.png" width="272" height="200" alt="Terminal personalizada con Starship" title="Terminal personalizada con Starship" class="&#34; " loading="lazy"></a></p>
 <figcaption>Terminal de bash personalizada</figcaption>
 </figure>
 </div>
@@ -1028,10 +1028,10 @@
         <content type="html">
         <![CDATA[<p><strong>El software ofrecido como servicio tiene la ventaja principal de que delega en el proveedor del servicio su administración. El delegar la administración del servicio está motivada por tener ciertas garantías de que el software tiene mayor disponibilidad y fiabilidad. A cambio de esa administración el proveedor del software como servicio establece un precio por su SaaS que llega a compensar tener que administrar el servicio uno mismo que también tiene unos costes en servidor, personal, fiabilidad y también tiempo de dedicación. Una de las funcionalidades que requiere una infraestructura en una organización para desarrollar sus aplicaciones es un repositorio de artefactos o paquetes, GitHub Packages el servicio de repositorio de artefactos compatibles con los artefactos producidos por los principales lenguajes de programación para compartir bibliotecas de código entre ellos Java y JavaScript y tecnologías de contenedores como imágenes Docker.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/github.svg" width="200" height="195" alt="GitHub" title="GitHub"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/github.svg" width="200" height="195" alt="GitHub" title="GitHub" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>La forma de compartir y reutilizar código en Java es a través de librerías java que se incluyen como dependencias en los proyectos que las quieran usar. Las dependencias pueden tener a su vez dependencias que han de incluirse de forma transitiva, ni Java ni el JDK ofrece soporte para gestionar las dependencias en un proyecto más allá de <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">los módulos del incorporados en Java 9</a> pero que no cubren la resolución de dependencias ni el versionado.</p>
 <p>Para gestionar las dependencias en un proyecto Java se ha de utilizar <a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciar-rapido-un-proyecto-de-java-con-gradle-o-de-spring-con-spring-initializr/">la herramienta de construcción como Gradle</a> o <a href="https://maven.apache.org/">Maven</a>. Estas herramientas se encargan de descargar las versiones correctas y las dependencias transitivas declaradas en el proyecto y sus dependencias. Las dependencias se guardan en repositorios de Maven que además de los propios archivos Java de las librerías almacenan metadatos en los que se incluyen qué dependencias tiene cada una de esas librerías.</p>
@@ -1070,7 +1070,7 @@
 <p>Para publicar artefactos en el repositorio de Maven se requieren unas credenciales para limitar publicar únicamente artefactos a aquellas personas o procesos que tengan permisos. Una de las formas de publicar paquetes es utilizar un <em>Personal Access Token</em> o PAT al que se asocian unos permisos y se generan desde la sección <em>Settings</em> de la cuenta dentro de <a href="https://github.com/settings/apps">Developer settings</a> y <em>Personal access tokens</em>.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-pat_hua60e7fa638e2388a781d09b8110ebda1_95319_2560x1440_fit_box_3.png" data-gallery="" title="GitHub Personal Access Token"><img src="https://picodotdev.github.io/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-pat_hua60e7fa638e2388a781d09b8110ebda1_95319_650x450_fit_box_3.png" width="596" height="450" alt="GitHub Personal Access Token" title="GitHub Personal Access Token"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-pat_hua60e7fa638e2388a781d09b8110ebda1_95319_2560x1440_fit_box_3.png" data-gallery="" title="GitHub Personal Access Token"><img src="https://picodotdev.github.io/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-pat_hua60e7fa638e2388a781d09b8110ebda1_95319_650x450_fit_box_3.png" width="596" height="450" alt="GitHub Personal Access Token" title="GitHub Personal Access Token" class="&#34; " loading="lazy"></a></p>
 <figcaption>GitHub Personal Access Token</figcaption>
 </figure>
 </div>
@@ -1091,7 +1091,7 @@
 <p>Una vez publicado el artefacto desde la administración del repositorio es posible descargar cada uno de los elementos del artefacto incluso eliminarlos asi como ver las diferentes versiones publicadas del mismo artefacto. En la siguiente imagen se muestra el artefacto anterior publicado en el repositorio con GitHub Packages.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-packages-artifact_hu97b93db2bef39782052a9530fbd4c21e_190216_2560x1440_fit_box_3.png" data-gallery="" title="Artefacto de Maven publicado un repositorio con GitHub Packages"><img src="https://picodotdev.github.io/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-packages-artifact_hu97b93db2bef39782052a9530fbd4c21e_190216_650x450_fit_box_3.png" width="342" height="450" alt="Artefacto de Maven publicado un repositorio con GitHub Packages" title="Artefacto de Maven publicado un repositorio con GitHub Packages"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-packages-artifact_hu97b93db2bef39782052a9530fbd4c21e_190216_2560x1440_fit_box_3.png" data-gallery="" title="Artefacto de Maven publicado un repositorio con GitHub Packages"><img src="https://picodotdev.github.io/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-packages-artifact_hu97b93db2bef39782052a9530fbd4c21e_190216_650x450_fit_box_3.png" width="342" height="450" alt="Artefacto de Maven publicado un repositorio con GitHub Packages" title="Artefacto de Maven publicado un repositorio con GitHub Packages" class="&#34; " loading="lazy"></a></p>
 <figcaption>Artefacto de Maven publicado un repositorio con GitHub Packages</figcaption>
 </figure>
 </div>
@@ -1157,7 +1157,7 @@
 <p>A continuación incluyo tres aplicaciones que se utilizan para tener un registro de las tareas los aspectos más relevantes de cada una de ellas. Al final, incluyo una pequeña lista de aplicaciones alternativas a las presentadas.</p>
 <h4 id="getting-things-gnome">Getting Things GNOME!</h4>
 <div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gtg.svg" width="200" height="200" alt="Getting Things GNOME!" title="Getting Things GNOME!"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gtg.svg" width="200" height="200" alt="Getting Things GNOME!" title="Getting Things GNOME!" class="" loading="false&#34;"></p>
 </div>
 <p>La aplicación <a href="https://flathub.org/apps/details/org.gnome.GTG">Getting Things GNOME!</a> es una aplicación de escritorio que ofrece la funcionalidad para gestionar listas de tareas, esto permite registrarlas, priorizarlas y tener el registro para centrarse en cada momento en las más prioritarias y más importantes. Esto permite aumentar la productividad y que el cambio de contexto de tarea sea más fácil.</p>
 <p>Está diseñada para el entorno de escritorio <a href="https://www.gnome.org/">GNOME</a> siguiendo sus normas de estilos y disponible para el sistema operativo <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> como una aplicación de <a href="https://flatpak.org/">Flatpak</a>.</p>
@@ -1165,7 +1165,7 @@
 <p>Que esté unicamente disponible para GNU/Linux y no disponga de una versión web que permite compartir las tareas entre varios dispositivos son ventajas que tienen otras opciones.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/herramientas-de-productividad-para-gestionar-tareas-y-notas/images/gtg_hudd55416b0f8a3896ab51731569a5d1e6_52881_2560x1440_fit_box_3.png" data-gallery="" title="Getting Things GNOME!"><img src="https://picodotdev.github.io/blog-bitix/2022/06/herramientas-de-productividad-para-gestionar-tareas-y-notas/images/gtg_hudd55416b0f8a3896ab51731569a5d1e6_52881_650x450_fit_box_3.png" width="650" height="428" alt="Getting Things GNOME!" title="Getting Things GNOME!"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/herramientas-de-productividad-para-gestionar-tareas-y-notas/images/gtg_hudd55416b0f8a3896ab51731569a5d1e6_52881_2560x1440_fit_box_3.png" data-gallery="" title="Getting Things GNOME!"><img src="https://picodotdev.github.io/blog-bitix/2022/06/herramientas-de-productividad-para-gestionar-tareas-y-notas/images/gtg_hudd55416b0f8a3896ab51731569a5d1e6_52881_650x450_fit_box_3.png" width="650" height="428" alt="Getting Things GNOME!" title="Getting Things GNOME!" class="&#34; " loading="lazy"></a></p>
 <figcaption>Getting Things GNOME!</figcaption>
 </figure>
 </div>
@@ -1174,7 +1174,7 @@
 </div>
 <h4 id="notion">Notion</h4>
 <div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/notion.svg" width="200" height="200" alt="Notion" title="Notion"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/notion.svg" width="200" height="200" alt="Notion" title="Notion" class="" loading="false&#34;"></p>
 </div>
 <p><a href="https://www.notion.so/product">Notion</a> ha ganado en popularidad por incorporar varias novedades en la edición de las páginas que hace que sea mucho más versátil que un simple editor de documentos y le hacen una herramienta polivalente que sirve para múltiples propósitos.</p>
 <p>Como editor de páginas o documentos incorpora las funcionalidades habituales de cualquier editor de documentos cómo establecer estilos y una amplia variedad de tipos de párrafos incluyendo listas de tareas y adjuntar tanto imágenes, archivos y otros tipos de contenidos como vídeos de <a href="https://www.youtube.com/">YouTube</a>.</p>
@@ -1193,7 +1193,7 @@
 </div>
 <h4 id="clickup">ClickUp</h4>
 <div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/clickup.svg" width="300" height="63" alt="ClickUp" title="ClickUp"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/clickup.svg" width="300" height="63" alt="ClickUp" title="ClickUp" class="" loading="false&#34;"></p>
 </div>
 <p><a href="https://clickup.com/">ClickUp</a> es una herramienta alternativa a Notion más centrada y preparada en la gestión de tareas, la colaboración en grupo, con características similares en la edición de documentos, algunas adicionales y en algunos aspectos mejor incluso que Notion.</p>
 <p>Tiene un plan gratuito para uso personal no demasiado restrictivo y dispone de aplicaciones para dispositivos móviles. Los siguientes vídeos son una introducción a las funcionalidades que ofrece ClickUp.</p>
@@ -1240,7 +1240,7 @@
         <content type="html">
         <![CDATA[<p><strong>El comando <em>git bisect</em> es muy útil cuando se desea encontrar en que <em>commit</em> se ha introducido un error en un rango de <em>commits</em> ya que permite automatizar la búsqueda sin tener que hacerlo manualmente el desarrollador que simplemente se limita a indicar a Git si el <em>commit</em> a analizar en cada prueba es correcto o incorrecto. Una vez descubierto en que <em>commit</em> se ha introducido el error es cuestión de revisar los cambios de ese <em>commit</em>, analizar sus cambios e identificadas las líneas de código erróneas aplicar la solución.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/git.svg" width="200" height="200" alt="Git" title="Git"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/git.svg" width="200" height="200" alt="Git" title="Git" class="" loading="false&#34;"></p>
 </div>
 <p>Una herramienta de control de versiones para el código fuente de las aplicaciones es esencial, para guardar todos los cambios realizados en el código y permitir compartir código entre los desarrolladores aparte de otras funcionalidades proporcionadas. Una de las herramientas de control de versiones más populares es <a href="https://git-scm.com/">Git</a>, desarrollado por <a href="https://en.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a> también autor original de núcleo <a href="https://www.linux.com/">Linux</a> entre otros colaboradores.</p>
 <p>Una situación habitual al realizar cambios en el código fuente de un programa es pasado un tiempo descubrir un error y no conocer en que cambio lo ha producido y en que <em>commit</em>. Si no se tiene una pista de cual es el cambio que ha introducido error una solución es probar cada <em>commit</em> y para ver si esa versión de la aplicación tiene el error o no. Una vez probados varios <em>commit</em> al final se descubre que <em>commit</em> es el que ha introducido el error. Conociendo el <em>commit</em> que introduce el error hay que revisar los cambios de ese <em>commit</em> para conocer y cambiar las líneas de código erróneas.</p>
@@ -1291,7 +1291,7 @@
         <content type="html">
         <![CDATA[<p><strong>Una herramienta con interfaz gráfica hace más fácil algunas tareas que usar la línea de comandos directamente. Este también es el caso al trabajar con repositorios de código fuente con la herramienta de control de versiones Git. Usar la linea de comandos tiene sus propias ventajas como permitir automatizar tareas con <em>scripts</em> o realizar operaciones sin tener que usar la interfaz gráfica. La interfaz gráfica y la linea de comandos no son excluyentes, se pueden usar según convenga en cada ocasión. Al trabajar con múltiples repositorios de Git, para realizar operaciones comunes como <em>commits</em>, analizar el historial y ver las diferencias en un archivo entre dos versiones una herramienta gráfica también facilita la tarea.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false&#34;"></p>
 </div>
 <p>El sistema de control de versiones <a href="https://git-scm.com/">Git</a> posee una línea de comandos con la que se realizan todas las acciones para clonar repositorios, para hacer commits, para ver diferencias, para explorar el historial, para crear ramas y cualquier otra acción. La línea de comandos es muy potente y además es <a href="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/">automatizable con un <em>script</em></a> pero como cualquier otra línea de comandos no es intuitiva y difícil de aprender y en algún caso lenta al teclear un comando, sus opciones y argumentos.</p>
 <p>Es aconsejable conocer los comandos básicos de línea de comandos pero en el uso diario o para algunas acciones las aplicaciones con interfaz gráfica son más rápidas, más fáciles de aprender y sin necesidad de recordar las opciones de cada comando. En <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> y <a href="https://www.gnome.org/">GNOME</a> una aplicación cliente de Git es <a href="https://wiki.gnome.org/Apps/Gitg">gitg</a>.</p>
@@ -1300,7 +1300,7 @@
 <p>Está adaptada a la guía de estilos de las aplicaciones de GNOME, es una aplicación de software libre, está disponible tanto para GNU/Linux, <a href="https://www.apple.com/macos/">macOS</a> como <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y en GNU/Linux se puede instalar como paquete de la distribución o como <a href="https://picodotdev.github.io/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">una aplicación en formato Flatpak</a> independiente de la distribución <a href="https://flathub.org/apps/details/org.gnome.gitg">disponible en Flathub con su paquete de gitg</a>.</p>
 <div class="media">
 <figure>
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gitg.svg" width="200" height="150" alt="gitg" title="gitg"  class="lozad "></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gitg.svg" width="2560" height="1440" alt="gitg" title="gitg" class="&#34; " loading="lazy"></p>
 </figure>
 </div>
 <p>Las operaciones que permite son:</p>
@@ -1315,13 +1315,13 @@
 <p>En esta capturas se muestran los <em>commits</em>, historial y <em>merges</em> en una linea de tiempo gráfica, además de poder ver las ramas locales, las ramas remotas, los orígenes de las ramas así como los archivos modificados en cada <em>commit</em> y las diferencias y cambios realizados en cada archivo.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-1_hufc6c7212bf1f460f3fa6607e19248b9a_29524_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación gitg"><img src="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-1_hufc6c7212bf1f460f3fa6607e19248b9a_29524_300x200_fit_box_3.png" width="238" height="200" alt="Aplicación gitg" title="Aplicación gitg"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-2_hu2a9b977282670e3858193850017f09b7_19224_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación gitg"><img src="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-2_hu2a9b977282670e3858193850017f09b7_19224_300x200_fit_box_3.png" width="238" height="200" alt="Aplicación gitg" title="Aplicación gitg"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-1_hufc6c7212bf1f460f3fa6607e19248b9a_29524_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación gitg"><img src="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-1_hufc6c7212bf1f460f3fa6607e19248b9a_29524_300x200_fit_box_3.png" width="238" height="200" alt="Aplicación gitg" title="Aplicación gitg" class="&#34; " loading="lazy"></a>
+<a href="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-2_hu2a9b977282670e3858193850017f09b7_19224_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación gitg"><img src="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-2_hu2a9b977282670e3858193850017f09b7_19224_300x200_fit_box_3.png" width="238" height="200" alt="Aplicación gitg" title="Aplicación gitg" class="&#34; " loading="lazy"></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-3_hu5b15d53ed39308162b8db2645ba363df_242593_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación gitg"><img src="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-3_hu5b15d53ed39308162b8db2645ba363df_242593_650x400_fit_box_3.png" width="419" height="400" alt="Aplicación gitg" title="Aplicación gitg"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-3_hu5b15d53ed39308162b8db2645ba363df_242593_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación gitg"><img src="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-3_hu5b15d53ed39308162b8db2645ba363df_242593_650x400_fit_box_3.png" width="419" height="400" alt="Aplicación gitg" title="Aplicación gitg" class="&#34; " loading="lazy"></a></p>
 <figcaption>Aplicación gitg</figcaption>
 </figure>
 </div>
@@ -1348,10 +1348,10 @@
         <content type="html">
         <![CDATA[<p><strong>Generalmente cuando se necesita una funcionalidad en Gradle esta suele estar proporcionada por los propios desarrolladores de Gradle, por los propios mantenedores de otras herramientas para integrarlas en Gradle o en último caso por alguien que antes ha tenido la misma necesidad ha publicado un <em>plugin</em>. Si aún así no hay un <em>plugin</em> que ofrezca la funcionalidad que se desea, Gradle ofrece la posibilidad de que cualquiera desarrolle sus propios <em>plugins</em> y los use para sus necesidades específicas o en caso de ser útil para otras personas compartirlo en un repositorio público como cualquier otro.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gradle.svg" width="200" height="165" alt="Gradle" title="Gradle"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gradle.svg" width="200" height="165" alt="Gradle" title="Gradle" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p><a href="https://gradle.org/">Gradle</a> es una herramienta de construcción y gestión del ciclo de vida de un proyecto principalmente usando en proyectos Java. Realiza importantes tareas como la descarga y gestión de las dependencias y resolución de conflictos entre las diferentes versiones que necesite una aplicación, tareas importantes que ni <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">el sistema de módulos de Java</a> proporciona. Permite ejecutar de forma sencilla la aplicación o las pruebas unitarias de código entre otras muchas tareas que pueden ser automatizadas como pruebas estáticas de código y generación de artefactos además de ser suficientemente flexible para adaptarse a las necesidades que haya en un proyecto.</p>
 <p>Por todas estas importantes tareas que realiza Gradle es una herramienta imprescindible en cualquier cualquier proyecto Java. Su alternativa más usada es <a href="https://maven.apache.org/">Maven</a> que tiene un modelo declarativo y basado en XML con unos archivos más verbosos. Ambas herramientas se consideran ya maduras generalmente equivalentes para la mayoría de funcionalidades más comunes. Dado que los archivos de configuración de Gradle son menos verbosos, más legibles y fáciles de editar que el XML es la herramienta elegida como herramienta de construcción para muchos proyectos.</p>
@@ -1491,7 +1491,7 @@
         <content type="html">
         <![CDATA[<p><strong>Las novedades de Java 18 no añaden nada en el lenguaje pero sí incorpora algunas relevantes en la plataforma como el uso de UTF-8 por defecto, una utilidad de línea de comandos para disponer de un servidor web simple, poder añadir fragmentos de código en los comentarios de la documentación Javadoc así como el marcado para su eliminación en futuras versiones de la finalización de objetos. También publican otras novedades en incubación, nuevas versiones en vistas previa de otras características se publicarán de forma definitiva en siguientes versiones y otros numerosos cambios menores.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Las mejoras incrementales se siguen añadiendo en cada nueva versión lanzada cada seis meses. En marzo de 2022 ha sido publicada la versión de Java 18 como siguiente versión después de Java 17 que es una versión con soporte extendido o LTS. Seguramente no muchos van a poder utilizar esta nueva versión por restricciones en los proyectos que seguirán usando versiones ya consideradas bastante antiguas incluyendo Java 8 y más en los casos que utilizan versiones anteriores. Por otro lado, otra parte de usuarios quizá esperen a la siguiente versión LTS para actualizar las aplicaciones en el caso de que ya estén utilizando Java 17.</p>
 <p>La lista de características de Java 18 no es muy amplia pero hay algunas destacadas.</p>
@@ -1527,7 +1527,7 @@
 <p>Con el nuevo calendario de publicaciones se observa claramente que los desarrolladores pueden predecir de forma más mucho fiable cuando se publicará una nueva versión. Se observa que el tiempo entre versiones se ha reducido considerablemente respecto a lo que tardaron las versiones Java 6 y 7 y se observa la incorporación de novedades de forma constante.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/03/novedades-de-java-18/images/java-releases_hu5c2d03569c43c17cbc0d1487d1032ffa_144383_2560x1440_fit_q90_box.jpg" data-gallery="" title="Publicaciones de Java"><img src="https://picodotdev.github.io/blog-bitix/2022/03/novedades-de-java-18/images/java-releases_hu5c2d03569c43c17cbc0d1487d1032ffa_144383_650x450_fit_q90_box.jpg" width="650" height="309" alt="Publicaciones de Java" title="Publicaciones de Java"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/03/novedades-de-java-18/images/java-releases_hu5c2d03569c43c17cbc0d1487d1032ffa_144383_2560x1440_fit_q90_box.jpg" data-gallery="" title="Publicaciones de Java"><img src="https://picodotdev.github.io/blog-bitix/2022/03/novedades-de-java-18/images/java-releases_hu5c2d03569c43c17cbc0d1487d1032ffa_144383_650x450_fit_q90_box.jpg" width="650" height="309" alt="Publicaciones de Java" title="Publicaciones de Java" class="&#34; " loading="lazy"></a></p>
 <figcaption>Publicaciones de Java</figcaption>
 </figure>
 </div>

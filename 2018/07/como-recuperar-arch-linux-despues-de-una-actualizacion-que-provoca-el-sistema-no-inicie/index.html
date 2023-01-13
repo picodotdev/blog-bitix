@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Como recuperar Arch Linux después de una actualización que provoca el sistema no inicie">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2018/07/como-recuperar-arch-linux-despues-de-una-actualizacion-que-provoca-el-sistema-no-inicie/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/archlinux-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/archlinux-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Instalar un sistema GNU/Linux es sencillo y está muy bien, también es importante saber como intentar recuperarlo cuando una actualización de software provoca que el sistema no se inicie con normalidad hasta el entorno de escritorio gráfico, el motivo puede ser incluso un kernel panic. El objetivo de la recuperación es corregir el problema del inicio, si no es posible, recuperar los valiosos documentos, imágenes, vídeos u otros archivos antes de finalmente llegar al punto de reinstalar el sistema para devolverlo a un estado correcto aunque quizá perdiendo los datos que tuviese. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/archlinux-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/archlinux-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Como recuperar Arch Linux después de una actualización que provoca el sistema no inicie">
@@ -54,7 +54,7 @@
     "headline": "Como recuperar Arch Linux después de una actualización que provoca el sistema no inicie",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/archlinux-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/archlinux-750.webp"
         
       },
     "datePublished": "2018-07-27T16:00:00+02:00",
@@ -262,7 +262,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux" class="" loading="false&#34;"></p>
 </div>
 <p>Estás contento con <a href="https://www.archlinux.org/">Arch Linux</a> y en gran medida despreocupado de las versiones de las aplicaciones ya que sabes que al ser una distribución <em>rolling release</em>, siempre tienes la última versión de todos los paquetes cada vez que haces una actualización completa del sistema. Un día realizas la periódica actualización o has visto una nueva versión de un paquete ya sea una nueva versión del <a href="https://www.archlinux.org/packages/core/x86_64/linux/">kernel</a> o <a href="https://www.archlinux.org/packages/extra/x86_64/mesa/">mesa</a> que pueden contener importante mejoras en el sistema gráfico que quieres aprovechar o una nueva versión de una aplicación con nuevas características relevantes como podría se <a href="https://www.archlinux.org/packages/extra/x86_64/libreoffice-fresh/">LibreOffice</a> o <a href="https://www.archlinux.org/packages/extra/x86_64/vlc/">VLC</a>. Inicias la actualización del sistema como tantas otras veces has hecho. Termina aparentemente bien con todos los paquetes actualizados y sin ningún mensaje de error. Reinicias el equipo para que la actualización de algunos paquetes tengan efecto como el caso del <em>kernel</em>. Sin embargo, ¡sorpresa! el sistema no inicia como normalmente, no llega al inicio de sesión del entorno de escritorio ni siquiera tienes acceso a una terminal basada en consola, el error parece un <a href="https://es.wikipedia.org/wiki/Kernel_panic"><em>kernel panic</em></a>. Reinicias una segunda vez, el mismo error. Parece que está todo perdido, piensas en los importantes archivos que tienes en el sistema de almacenamiento persistente, disco duro o SSD, ¡no tienes una copia completamente reciente!, el corazón te empieza a latir con fuerza.</p>
 <p>Por suerte, habiendo estado usando Arch Linux de forma ininterrumpida durante los 8 años esto solo me ha pasado una vez y por culpa mía después de actualizar <a href="https://www.archlinux.org/packages/core/x86_64/grub/">Grub</a> al ejecutar un comando erróneo, durante todos esos años he tenido importantes actualizaciones como varias versiones de <a href="https://www.archlinux.org/groups/x86_64/gnome/">GNOME</a>, <a href="https://www.archlinux.org/packages/core/x86_64/systemd/">systemd</a> y el <em>kernel</em>. El caso era el que he descrito anteriormente, el sistema no iniciaba dado que Grub es de las primeras cosas necesarias para iniciar el sistema cualquier problema en él origina esta situación. Otros paquetes de especial importancia son el <em>kernel</em>, los controladores gráficos, <em>mesa</em>, systemd, una nueva versión del entorno de escritorio, &hellip; Por una actualización a una nueva versión de VLC el sistema no va a dejar de iniciarse al lo sumo será VLC el que no inicie y es de más sencillo de solucionar volviendo a una versión anterior correcta con <a href="https://picodotdev.github.io/blog-bitix/2015/02/como-hacer-un-downgrade-de-un-paquete-en-arch-linux/">un simple <em>downgrade</em> de paquete</a>.</p>
@@ -332,7 +332,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/06/hemeroteca-13/">
-                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #13" title="Hemeroteca #13" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="875" alt="Hemeroteca #13" title="Hemeroteca #13" class="" loading="lazy">
                 <h3>Hemeroteca #13</h3>
                 </a>
                 
@@ -346,7 +346,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/">
-                <img src="/blog-bitix/assets/images/logotypes/lakka.png" width="326" height="125" alt="Consola de juegos retro con Lakka y una Raspberry Pi" title="Consola de juegos retro con Lakka y una Raspberry Pi" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/lakka.webp" width="875" alt="Consola de juegos retro con Lakka y una Raspberry Pi" title="Consola de juegos retro con Lakka y una Raspberry Pi" class="" loading="lazy">
                 <h3>Consola de juegos retro con Lakka y una Raspberry Pi</h3>
                 </a>
                 
@@ -360,7 +360,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/12/hemeroteca-12/">
-                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #12" title="Hemeroteca #12" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="875" alt="Hemeroteca #12" title="Hemeroteca #12" class="" loading="lazy">
                 <h3>Hemeroteca #12</h3>
                 </a>
                 
@@ -374,7 +374,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/">
-                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Como eliminar metainformación de las fotos en GNU/Linux" title="Como eliminar metainformación de las fotos en GNU/Linux" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="875" alt="Como eliminar metainformación de las fotos en GNU/Linux" title="Como eliminar metainformación de las fotos en GNU/Linux" class="" loading="lazy">
                 <h3>Como eliminar metainformación de las fotos en GNU/Linux</h3>
                 </a>
                 
@@ -388,7 +388,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/06/hemeroteca-11/">
-                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #11" title="Hemeroteca #11" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="875" alt="Hemeroteca #11" title="Hemeroteca #11" class="" loading="lazy">
                 <h3>Hemeroteca #11</h3>
                 </a>
                 
@@ -402,7 +402,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/">
-                <img src="/blog-bitix/assets/images/logotypes/ubuntu.svg" width="326" height="125" alt="Descargar e instalar la distribución Ubuntu de GNU/Linux paso a paso desde cero" title="Descargar e instalar la distribución Ubuntu de GNU/Linux paso a paso desde cero" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/ubuntu.svg" width="875" alt="Descargar e instalar la distribución Ubuntu de GNU/Linux paso a paso desde cero" title="Descargar e instalar la distribución Ubuntu de GNU/Linux paso a paso desde cero" class="" loading="lazy">
                 <h3>Descargar e instalar la distribución Ubuntu de GNU/Linux paso a paso desde cero</h3>
                 </a>
                 

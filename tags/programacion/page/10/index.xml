@@ -21,7 +21,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
 </div>
 <p>El conjunto de datos de una entidad en algunos casos será grande, miles o cientos de miles de registros, y por tanto no es viable devolverlos todos en una misma consulta por lo que es necesario realizar paginación devolviéndolos en pequeños grupos. La paginación se puede implementar de varias formas, habitualmente con un parámetro que limite el número de elementos a incluir en la página y otro parámetro <em>offset</em> que deseche los primeros elementos hasta el primero deseado. Sin embargo, utilizar los parámetros <em>limit</em> y <em>offset</em> puede producir resultados inesperados si mientras la obtención de una página y la siguiente se insertan nuevos elementos anteriores al <em>offset</em> ocasionando que lo que sería por ejemplo el décimo elemento pase a ser el undécimo.</p>
 <p>Si esta situación es importante se suelen utilizar cursores que utilizan un parámetro para indicar el número de elementos a incluir en la página pero en vez de un <em>offset</em> utilizan el identificativo de un registro a partir del cual devolver registros de modo que aunque se inserten registros el primer elemento de la página no cambiará.</p>
@@ -115,7 +115,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
 </div>
 <p>No será extraño que en una API para obtener datos esté la necesidad de realizar algún tipo de filtrado para recuperar únicamente la colección de datos deseados de todos los existentes en un repositorio. A las consultas de <a href="https://graphql.org/">GraphQL</a> se les pueden pasar argumentos que son recibidos por los métodos que actúan como punto de entrada de las consultas. Con los argumentos es posible implementar cualquier funcionalidad que se necesite, entre ellas el filtrado. Los argumentos pueden ser datos escalares o más complejos que se definen con la palabra reservada <em>input</em> en el esquema.</p>
 <p>Usando el mismo ejemplo que he utilizado en artículos anteriores ahora en este caso implemento la funcionalidad de poder filtrar los libros de una biblioteca utilizando una expresión regular que el título del libro debe cumplir para obtenerse como resultado. El esquema del <em>endpoint</em> de GraphQL queda de la siguiente forma para implementar el filtrado, usando el tipo definido con <em>input</em> es posible pasar como argumentos datos complejos o agrupaciones de datos escalares.</p>
@@ -181,7 +181,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
 </div>
 <p>Cuando en una consulta de <a href="https://graphql.org/">GraphQL</a> se indican las propiedades a devolver GraphQL usa para cada una de ellas lo que en la implementación de Java se llama un <em>resolver</em> y en otras implementaciones <em>data fetcher</em>. En la mayoría de casos las propiedades serán propiedades de un objeto y en estos casos se usará un <em>PropertyDataFetcher</em> usando en Java la convención de los <em>java beans</em> o la clave de un mapa. En el caso de que cierto dato no esté almacenado en el objeto sino en un repositorio externo es necesario usar un <em>resolver</em> para devolver esa propiedad en la consulta.</p>
 <p>Por ejemplo, supongamos que en el ejemplo de la librería en el caso de los libros le añadimos un nuevo dato para el ISBN que está almacenado en un sistema externo, en otro repositorio. La nueva definición del esquema quedaría de la siguiente forma, basta con añadir la nueva propiedad al tipo <em>Book</em> y su tipo que será <em>String</em>.</p>
@@ -247,7 +247,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
 </div>
 <p>Por defecto <a href="https://graphql.org/">GraphQL</a> devuelve errores con mensajes descriptivos para los errores del cliente como son los errores de sintaxis en la sentencia de consulta o mutación, en el caso de que el campo solicitado no exista o no se ha indicado ninguno. En el caso de Java si se lanza una excepción en la clase repositorio que guarda los datos o en la lógica de negocio y no se captura GraphQL indicará que se ha producido un error interno en el servidor. Esto no es muy descriptivo y es mejor indicar errores más útiles para el usuario de la API como podría ser que no se tienen permisos para realizar la modificación o el error que se ha producido al validar los datos y por los que la operación no se ha completado.</p>
 <p>En esta consulta de mutación que añade un nuevo libreo a la librería se puede producir dos excepciones, uno en el caso de que el usuario que lanza la consulta no tenga permisos y otro en el caso de que el autor no exista.</p>
@@ -345,7 +345,7 @@
         <content type="html">
         <![CDATA[<p><strong>Sin usar la clase <em>Collator</em> incluida en el JDK al ordenar alfabéticamente una lista de cadenas obtendremos en algún caso un resultado que nos extrañará y seguramente no sea lo esperado. La clase <em>String</em> implementa la interfaz <em>Comprable</em> pero esta ordenación es en base al valor del código <em>unicode</em> sin tener en cuenta los diferentes niveles de diferencias propios del idioma para algunos caracteres de la cadena como tildes o caracteres únicos como la <em>ñ</em>. La forma correcta de ordenar cadenas en Java es utilizando la clase <em>Collator</em>.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Quizá algunos digan que la aparentemente sencilla tarea de ordenar una lista de palabras es algo fácil de hacer con cualquier lenguaje de programación. La realidad es que puede complicarse en una buena cantidad si se ha de realizar con los caracteres del alfabeto de algunos lenguajes. La ordenación no es tan simple como realizar lo siguiente en código Java:</p>
 <div class="code">
@@ -405,7 +405,7 @@
         <content type="html">
         <![CDATA[<p><strong>GraphQL es una forma alternativa a una interfaz REST para crear una interfaz de un servicio basado en la comunicación utilizando los protocolos web HTTP y JSON como formato de intercambio de datos. Tiene varias ventajas sobre REST al poder realizar varias consultas en una misma petición y devolviendo únicamente los datos que requiera el cliente. Es una especificación y hay una implementación para los lenguajes de programación más populares entre ellos Java. Este artículo es una introducción con un ejemplo completo que muestra cómo se hacen consultas y modificaciones en los datos.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
 </div>
 <p>Con anterioridad las aplicaciones que lo necesitaban ofrecían una interfaz como un servicio mediante <em>web services</em>, sin embargo, esta tecnología era complicada por usar XML y no de fácil utilización en clientes JavaScript. La evolución que a día de hoy sigue siendo mayoritaria son las interfaces <a href="https://es.wikipedia.org/wiki/Representational_State_Transfer">REST</a> que emplean la semántica de los verbos del protocolo HTTP para realizar operaciones de búsqueda, creación, modificación y eliminación y normalmente empleando JSON como formato para intercambiar los datos. Sin embargo, REST no está exento de algunos problemas como la necesidad de realizar varias peticiones a cada uno de los recursos que ofrece si se necesitan datos de varios de ellos, otro es que los datos ofrecidos por los servicios REST está prefijados en tiempo de desarrollo no adaptándose a lo que necesita el cliente. En cierta medida estas dos cosas se pueden implementar en la interfaz REST con algunos parámetros pero requiere codificarlo explícitamente.</p>
 <p>Más recientemente ha aparecido otra forma de implementar una interfaz de un servicio con <a href="https://graphql.org/">GraphQL</a> considerándose una <a href="https://www.howtographql.com/basics/1-graphql-is-the-better-rest/">alternativa mejor a REST</a> que solventa los dos problemas de las interfaces REST anteriores. REST ofrece en varios <em>endpoints</em> los recursos que pueden ser accedidos mediante los verbos HTTP (<em>GET</em>, <em>PUT</em>, <em>POST</em>, <em>DELETE</em>), en GraphQL por el contrario hay un único <em>endpoint</em>, los puntos de entrada al grafo y los tipos que se relacionan entre si que son consultados para obtener los datos con el lenguaje de consulta que ofrece GraphQL.</p>
@@ -559,7 +559,7 @@
         <content type="html">
         <![CDATA[<p><strong>Visualizar datos de forma gŕafica ayuda a comprender un conjunto de datos grande mucho mejor que leyendo los valores en una tabla con varias columnas. En Java con la librería JFreeChart podemos generar gráficas de diferentes tipos que podremos incluir en los archivos <em>pdf</em> que generemos en un aplicación o podremos mostrar en forma de imagen en el navegador si se trata de una aplicación web.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Una de las principales tareas de las aplicaciones informáticas es manejar información, almacenar y recuperar datos de diversos tipos según sea el ámbito de la información tratada. Ejemplos podrían ser datos meteorológicos como temperatura, presión, velocidad y dirección del viento o datos poblacionales como número de personas, hombres y mujeres, nativos y extranjeros, &hellip; todos estos datos se pueden recoger a lo largo del tiempo. Al recuperar los datos y presentarlos los datos se pueden presentar de forma tabular con las cifras tal y como están guardadas, sin embargo, esta forma hace difícil comprender los datos ¿si queremos ver como han evolucionado los datos meteorológicos durante un periodo de tiempo? ¿si queremos ver el porcentaje de población que le corresponde a cada comunidad autónoma respecto al total o como ha variado en varios años? Visualizar la información de forma gráfica nos ayuda a visualizar y comprender mejor un gran volumen de datos en mucho menos tiempo. Una vez comprendida la información se extraen tendencias de algunos datos e información útil que ayuden a tomar decisiones.</p>
 <p>Estos son los datos de la evolución de cuota de uso entre los usuarios de tres de los principales navegadores desde el 2007 hasta el 2017. Viendo la tabla es más difícil observar la tendencia de cada uno de ellos y como se relacionan los datos con el resto navegadores. En una gráfica se observaría que Internet Explorer tiene una tendencia descendente, Firefox ascendente hasta el nacimiento de Chrome y este continuamente ascendente mientras las otras opciones pierden usuarios</p>
@@ -631,14 +631,14 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/pie-chart_hued7e4ab9af984c9b5de764f260b7f8e6_131217_2560x1440_fit_box_3.png" data-gallery="" title="Gráfica de tarta"><img src="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/pie-chart_hued7e4ab9af984c9b5de764f260b7f8e6_131217_300x200_fit_box_3.png" width="300" height="193" alt="Gráfica de tarta" title="Gráfica de tarta"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/polar-chart_hu39861a76ffe563daa39e694f63404ab8_192634_2560x1440_fit_box_3.png" data-gallery="" title="Gráfica de coordenadas polares"><img src="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/polar-chart_hu39861a76ffe563daa39e694f63404ab8_192634_300x200_fit_box_3.png" width="300" height="193" alt="Gráfica de coordenadas polares" title="Gráfica de coordenadas polares"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/pie-chart_hued7e4ab9af984c9b5de764f260b7f8e6_131217_2560x1440_fit_box_3.png" data-gallery="" title="Gráfica de tarta"><img src="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/pie-chart_hued7e4ab9af984c9b5de764f260b7f8e6_131217_300x200_fit_box_3.png" width="300" height="193" alt="Gráfica de tarta" title="Gráfica de tarta" class="&#34; " loading="lazy"></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/polar-chart_hu39861a76ffe563daa39e694f63404ab8_192634_2560x1440_fit_box_3.png" data-gallery="" title="Gráfica de coordenadas polares"><img src="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/polar-chart_hu39861a76ffe563daa39e694f63404ab8_192634_300x200_fit_box_3.png" width="300" height="193" alt="Gráfica de coordenadas polares" title="Gráfica de coordenadas polares" class="&#34; " loading="lazy"></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/stacked-xy-bar_hu4dbc526788161eb97c13dfbb173ac490_137815_2560x1440_fit_box_3.png" data-gallery="" title="Gráfica de barras apiladas"><img src="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/stacked-xy-bar_hu4dbc526788161eb97c13dfbb173ac490_137815_300x200_fit_box_3.png" width="300" height="193" alt="Gráfica de barras apiladas" title="Gráfica de barras apiladas"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/time-series_huf826ccf30aa501051f61520af655f1ae_166126_2560x1440_fit_box_3.png" data-gallery="" title="Gráfica de series"><img src="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/time-series_huf826ccf30aa501051f61520af655f1ae_166126_300x200_fit_box_3.png" width="300" height="193" alt="Gráfica de series" title="Gráfica de series"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/stacked-xy-bar_hu4dbc526788161eb97c13dfbb173ac490_137815_2560x1440_fit_box_3.png" data-gallery="" title="Gráfica de barras apiladas"><img src="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/stacked-xy-bar_hu4dbc526788161eb97c13dfbb173ac490_137815_300x200_fit_box_3.png" width="300" height="193" alt="Gráfica de barras apiladas" title="Gráfica de barras apiladas" class="&#34; " loading="lazy"></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/time-series_huf826ccf30aa501051f61520af655f1ae_166126_2560x1440_fit_box_3.png" data-gallery="" title="Gráfica de series"><img src="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/time-series_huf826ccf30aa501051f61520af655f1ae_166126_300x200_fit_box_3.png" width="300" height="193" alt="Gráfica de series" title="Gráfica de series" class="&#34; " loading="lazy"></a></p>
 <figcaption>Ejemplos de gráficas</figcaption>
 </figure>
 </div>
@@ -657,7 +657,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/xy-chart_hu97e473b218bd8977da20755e377486cc_34470_2560x1440_fit_box_3.png" data-gallery="" title="Gráfica de series"><img src="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/xy-chart_hu97e473b218bd8977da20755e377486cc_34470_300x200_fit_box_3.png" width="300" height="200" alt="Gráfica de series" title="Gráfica de series"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/xy-chart_hu97e473b218bd8977da20755e377486cc_34470_2560x1440_fit_box_3.png" data-gallery="" title="Gráfica de series"><img src="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/images/xy-chart_hu97e473b218bd8977da20755e377486cc_34470_300x200_fit_box_3.png" width="300" height="200" alt="Gráfica de series" title="Gráfica de series" class="&#34; " loading="lazy"></a></p>
 <figcaption>Gráfica de series</figcaption>
 </figure>
 </div>
@@ -697,7 +697,7 @@
         <content type="html">
         <![CDATA[<p><strong>La clases POJO o <em>beans</em> de Java son clases que en su mayor parte únicamente tiene la definición de sus propiedades. En Java al ser un lenguaje que promueve el ser explícito requiere definir mucho código que aporta poco valor. Cuando el número de estas clases simples es grande el código aún siendo simple se convierte en un problema de mantenimiento. Las librerías Immutables, Lombok y los <em>records</em> de Java incorporados en la versión 14 permite reducir en gran medida esa cantidad de código, mantener la consistencia y adicionalmente proporcionar clases que implementan el patrón <em>Builder</em>.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Java es un lenguaje verboso además requerir realizar las definiciones de forma explícita y con poco azúcar sintáctico (o como diría algún otro, poco veneno para ratas), esto hace que el número de líneas de código necesarias sea mayor que en otros lenguajes. Que Java sea verboso, explícito y con poco azúcar sintáctico no es necesariamente un inconveniente ya que la mayor parte del tiempo los programadores la dedicamos a leer código ya escrito, sin embargo, a mayor número de líneas mayor tiempo se requiere en mantenerlas.</p>
 <p>Un ejemplo claro está en las clases POJO que sieguen las convenciones de los <em>beans</em> con múltiples propiedades donde por cada propiedad es necesario definir un método <em>get</em> y un método <em>set</em> además <a href="https://picodotdev.github.io/blog-bitix/2016/12/como-implementar-correctamente-y-por-que-los-metodos-equals-y-hashcode-de-los-objetos-java/">implementar de forma correcta los métodos <em>equals</em> y <em>hashCode</em></a>, el método <em>toString</em>, utilizar el <a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/">patrón builder</a>, múltiples constructores con combinaciones de propiedades o comprobaciones para valores no nulos en parámetros.</p>
@@ -785,7 +785,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Las excepciones son un mecanismo incorporado en algunos lenguajes como Java para el manejo de errores y condiciones de error. En la implementación de las excepciones en los lenguajes hay diferencias, por ejemplo, en Java hay <a href="https://picodotdev.github.io/blog-bitix/2017/10/las-excepciones-para-gestionar-errores-con-java/">excepciones <em>checked</em> y <em>unchecked</em></a> y en lenguajes como <a href="https://dotnet.microsoft.com/">C#</a> o <a href="https://www.groovy-lang.org/">Groovy</a> todas las excepciones son consideradas <em>unchecked</em>. En cualquier caso son una mejor forma de forzar a gestionar las condiciones de error que se producen que el comprobar no obligatoriamente el valor de retorno de una función, incluso JavaScript incorpora excepciones.</p>
 <p>Las palabras reservadas en Java para el manejo de excepciones son <em>try</em>, <em>catch</em> , <em>finally</em>, <em>throw</em> y <em>throws</em>. El manejo de algunas excepciones consiste en emitir su pila de llamadas o <em>stacktrace</em> en la terminal o en el sistema de <em>logging</em>. El <em>stacktrace</em> contiene un mensaje de error, los métodos de la pila de llamadas del <em>thread</em> que la causó junto con el número de la línea. Además, las excepciones puede tener asociada una excepción causa por ejemplo un <a href="https://docs.oracle.com/javase/9/docs/api/java/sql/SQLException.html">SQLException</a> puede ser causado por un <a href="https://docs.oracle.com/javase/9/docs/api/java/io/IOException.html">IOException</a> por fallo de comunicación con el servidor de base de datos.</p>
@@ -827,7 +827,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>En la ejecución de los programas se pueden producir numerosas condiciones de error, algunas condiciones son un dato con un formato inesperado como una letra cuando se espera un número o fallos en la entrada o salida al trabajar con archivos o comunicación por red si un archivo que se quiere utilizar en realidad no existe en el sistema de archivos o el servidor no está disponible en la comunicación por red, estos son solo unos pocos ejemplo de errores posibles en un programa. Pero hay muchas otras condiciones de error que se puedan producir para las que un programa ha de estar preparado.</p>
 <p>En la documentación Javadoc de cada clase y utilizando la asistencia de código de los entornos integrados de desarrollo al usar un método es posible conocer que excepciones <em>checked</em> lanza, el saber que excepciones lanza un método permite añadir el código necesario para tratar cada una de ellas de forma adecuada o lanzarlas para que el método invocante las trate.</p>
@@ -915,7 +915,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Si tenemos dos valores y queremos obtener el menor con una línea de código, podemos obtenerlo con un a sentencia <em>if</em> o con el operador condicional <em>? :</em>. Si queremos obtener el menor de tres valores con sentencias <em>if</em> o el operador <em>? :</em>  el problema aparentemente sencillo se complica y si optamos por usar una lista de valores tratándola como si el tamaño fuese desconocido quizá usemos un bucle <em>for</em> junto con una variable que mantenga el menor valor encontrado hasta el momento usando un <em>if</em> que compare el valor menor encontrado con el valor actual de la lista.</p>
 <p>Sin embargo, en la API de Java hay dos métodos que permiten simplificar esta tarea, para dos valores podemos usar el método <a href="https://docs.oracle.com/javase/9/docs/api/java/lang/Math.html#min-int-int-">Math.min()</a> y para una lista de valores de tamaño desconocido podemos usar el método <a href="https://docs.oracle.com/javase/9/docs/api/java/util/Collections.html#min-java.util.Collection-">Collections.min()</a>. Usando un <a href="https://docs.oracle.com/javase/9/docs/api/java/util/stream/Stream.html">Stream</a> aún es más sencillo ya que estos poseen un método <a href="https://docs.oracle.com/javase/9/docs/api/java/util/stream/Stream.html#min-java.util.Comparator-">Stream.min()</a> y <a href="https://docs.oracle.com/javase/9/docs/api/java/util/stream/Stream.html#max-java.util.Comparator-">Stream.max()</a> que devuelven el valor mínimo y máximo.</p>
@@ -928,7 +928,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/10/obtener-el-minimo-o-maximo-de-dos-una-lista-o-stream-de-valores-en-java/images/min-max_hu8cd2690b39faf2912ecde0a7e2758e39_81447_2560x1440_fit_box_3.png" data-gallery="" title="Diferentes formas de obtener el valor mínimo y máximo"><img src="https://picodotdev.github.io/blog-bitix/2017/10/obtener-el-minimo-o-maximo-de-dos-una-lista-o-stream-de-valores-en-java/images/min-max_hu8cd2690b39faf2912ecde0a7e2758e39_81447_300x200_fit_box_3.png" width="300" height="164" alt="Diferentes formas de obtener el valor mínimo y máximo" title="Diferentes formas de obtener el valor mínimo y máximo"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/10/obtener-el-minimo-o-maximo-de-dos-una-lista-o-stream-de-valores-en-java/images/min-max_hu8cd2690b39faf2912ecde0a7e2758e39_81447_2560x1440_fit_box_3.png" data-gallery="" title="Diferentes formas de obtener el valor mínimo y máximo"><img src="https://picodotdev.github.io/blog-bitix/2017/10/obtener-el-minimo-o-maximo-de-dos-una-lista-o-stream-de-valores-en-java/images/min-max_hu8cd2690b39faf2912ecde0a7e2758e39_81447_300x200_fit_box_3.png" width="300" height="164" alt="Diferentes formas de obtener el valor mínimo y máximo" title="Diferentes formas de obtener el valor mínimo y máximo" class="&#34; " loading="lazy"></a></p>
 <figcaption>Diferentes formas de obtener el valor mínimo y máximo</figcaption>
 </figure>
 </div>
@@ -955,7 +955,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Otra de las <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/">nuevas funcionalidades incluidas en Java 9</a> aunque en modo incubación e incorporado en Java 11 de forma estable es el cliente con soporte para HTTP/2 para realizar peticiones a recursos usando este protocolo más eficiente y rápido. Al mismo tiempo se ha simplificado el código necesario para realizar una petición y obtener el resultado de una URL. También se ha añadido la funcionalidad de realizar peticiones asíncronas y creación de conexiones de <em>WebSockets</em>.</p>
 <p>Las clases importantes de esta nueva API con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html">HttpClient</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpRequest.html">HttpRequest</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpResponse.html">HttpResponse</a>. Estas clases se encuentran en el módulo de incubación <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/package-summary.html">jdk.incubator.httpclient</a>, una vez que sea definitiva la API se renombrará el módulo.</p>
@@ -974,7 +974,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/10/ejemplo-con-el-cliente-http-2-de-java/images/java-http2_hubaeef8c2828b46ac6c0352c111958aba_219179_2560x1440_fit_box_3.png" data-gallery="" title="Petición con el cliente de Java para HTTP/2"><img src="https://picodotdev.github.io/blog-bitix/2017/10/ejemplo-con-el-cliente-http-2-de-java/images/java-http2_hubaeef8c2828b46ac6c0352c111958aba_219179_300x200_fit_box_3.png" width="300" height="164" alt="Petición con el cliente de Java para HTTP/2" title="Petición con el cliente de Java para HTTP/2"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/10/ejemplo-con-el-cliente-http-2-de-java/images/java-http2_hubaeef8c2828b46ac6c0352c111958aba_219179_2560x1440_fit_box_3.png" data-gallery="" title="Petición con el cliente de Java para HTTP/2"><img src="https://picodotdev.github.io/blog-bitix/2017/10/ejemplo-con-el-cliente-http-2-de-java/images/java-http2_hubaeef8c2828b46ac6c0352c111958aba_219179_300x200_fit_box_3.png" width="300" height="164" alt="Petición con el cliente de Java para HTTP/2" title="Petición con el cliente de Java para HTTP/2" class="&#34; " loading="lazy"></a></p>
 <figcaption>Petición con el cliente de Java para HTTP/2</figcaption>
 </figure>
 </div>
@@ -1031,7 +1031,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Al escribir el código de un método es habitual hacer algunas comprobaciones sobre los parámetros, por ejemplo, para comprobar que el parámetro tiene una referencia, si es nulo o cumple alguna condición, si es una lista que no esté vacía o para validar mediante alguna otra regla. Estas validaciones o aserciones se realizan al inicio del método con sentencias <em>if</em> que añaden un nivel de tabulación al código si se anidan. Estos niveles de tabulación con sentencias <em>if</em> anidadas hacen poco legible el código.</p>
 <p>Este código que comprueba algunos parámetros no es tan sencillo de entender por los varios niveles de anidación.</p>
@@ -1078,13 +1078,13 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Una de las <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">novedades de Java 9</a> es la incorporación de una herramienta <em>Read-Evaluation-Print-Loop</em> o REPL similar a las disponibles en otros lenguajes dinámicos para permitir evaluar pequeños ejemplos de código, hacer pruebas o como herramienta para alguien que esté aprendiendo a programar sin la necesidad de utilizar un entorno integrado de desarrollo, una herramienta de construcción y los varios archivos y comandos necesarios para compilar y ejecutar el código Java.</p>
 <p>El comando de la herramienta <a href="https://docs.oracle.com/javase/9/jshell/introduction-jshell.htm">JShell</a> es <em>jshell</em> que inicia un símbolo del sistema donde empezar a introducir las expresiones, se sale de <em>jshell</em> con el comando <code>/exit</code>.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell_hu5a1a6eb162003e8d56cf630d98bb91a2_16664_2560x1440_fit_box_3.png" data-gallery="" title="JShell"><img src="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell_hu5a1a6eb162003e8d56cf630d98bb91a2_16664_300x200_fit_box_3.png" width="300" height="187" alt="JShell" title="JShell"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell_hu5a1a6eb162003e8d56cf630d98bb91a2_16664_2560x1440_fit_box_3.png" data-gallery="" title="JShell"><img src="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell_hu5a1a6eb162003e8d56cf630d98bb91a2_16664_300x200_fit_box_3.png" width="300" height="187" alt="JShell" title="JShell" class="&#34; " loading="lazy"></a></p>
 <figcaption>JShell</figcaption>
 </figure>
 </div>
@@ -1092,21 +1092,21 @@
 <p>Se pueden crear clases y métodos como en el ejemplo de la serie de Fibonacci implementada con un <a href="https://docs.oracle.com/javase/9/docs/api/java/util/stream/Stream.html">Stream</a> de la cual se muestran los elementos de la serie menores que el número 100.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-expressions_hu8473ae5cdf472fd51dbd7b04958fec3d_20059_2560x1440_fit_box_3.png" data-gallery="" title="Expresiones"><img src="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-expressions_hu8473ae5cdf472fd51dbd7b04958fec3d_20059_300x200_fit_box_3.png" width="300" height="187" alt="Expresiones" title="Expresiones"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-completion_hu84ffb55c3f34fd3a881938a61fb6728e_45958_2560x1440_fit_box_3.png" data-gallery="" title="Asistencia de código"><img src="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-completion_hu84ffb55c3f34fd3a881938a61fb6728e_45958_300x200_fit_box_3.png" width="300" height="187" alt="Asistencia de código" title="Asistencia de código"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-expressions_hu8473ae5cdf472fd51dbd7b04958fec3d_20059_2560x1440_fit_box_3.png" data-gallery="" title="Expresiones"><img src="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-expressions_hu8473ae5cdf472fd51dbd7b04958fec3d_20059_300x200_fit_box_3.png" width="300" height="187" alt="Expresiones" title="Expresiones" class="&#34; " loading="lazy"></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-completion_hu84ffb55c3f34fd3a881938a61fb6728e_45958_2560x1440_fit_box_3.png" data-gallery="" title="Asistencia de código"><img src="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-completion_hu84ffb55c3f34fd3a881938a61fb6728e_45958_300x200_fit_box_3.png" width="300" height="187" alt="Asistencia de código" title="Asistencia de código" class="&#34; " loading="lazy"></a></p>
 <figcaption>Expresiones y asistencia de código</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-methods_hu80347eb88bdb9a3c5ac7fae1de2c8c4a_34305_2560x1440_fit_box_3.png" data-gallery="" title="Serie de Fibonacci con un Stream en un método"><img src="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-methods_hu80347eb88bdb9a3c5ac7fae1de2c8c4a_34305_300x200_fit_box_3.png" width="300" height="129" alt="Serie de Fibonacci con un Stream en un método" title="Serie de Fibonacci con un Stream en un método"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-methods_hu80347eb88bdb9a3c5ac7fae1de2c8c4a_34305_2560x1440_fit_box_3.png" data-gallery="" title="Serie de Fibonacci con un Stream en un método"><img src="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-methods_hu80347eb88bdb9a3c5ac7fae1de2c8c4a_34305_300x200_fit_box_3.png" width="300" height="129" alt="Serie de Fibonacci con un Stream en un método" title="Serie de Fibonacci con un Stream en un método" class="&#34; " loading="lazy"></a></p>
 <figcaption>Serie de Fibonacci con un Stream en un método</figcaption>
 </figure>
 </div>
 <p>Para diferenciar las expresiones de código de los comandos estos últimos son precedidos por el caracter <em>/</em>. Hay varios como los ya citados para listar los <em>snippets</em> de código y salir de <em>jshell</em>, otros son para listar las definiciones de variables con <code>/vars</code>, métodos con <code>/methods</code>, tipos con <code>/types</code> e <em>imports</em> con <code>/imports</code>. La lista completa de comandos puede obtenerse pulsando la tecla tabulador después de la barra de comando.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-commands_huf7dd9e64613ad7ff7eae2f90be6c431f_18353_2560x1440_fit_box_3.png" data-gallery="" title="Comandos"><img src="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-commands_huf7dd9e64613ad7ff7eae2f90be6c431f_18353_300x200_fit_box_3.png" width="300" height="187" alt="Comandos" title="Comandos"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-commands_huf7dd9e64613ad7ff7eae2f90be6c431f_18353_2560x1440_fit_box_3.png" data-gallery="" title="Comandos"><img src="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-commands_huf7dd9e64613ad7ff7eae2f90be6c431f_18353_300x200_fit_box_3.png" width="300" height="187" alt="Comandos" title="Comandos" class="&#34; " loading="lazy"></a></p>
 <figcaption>Comandos</figcaption>
 </figure>
 </div>
@@ -1141,7 +1141,7 @@
         <content type="html">
         <![CDATA[<p><strong>La modularidad introducida en Java 9 no es la única novedad incorporada en esta nueva versión. Aunque haya llegado a eclipsar al resto hay otra buena colección de mejoras que sin duda facilitarán la programación con uno de los lenguajes más empleados por los programadores aún después de más de 20 años.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>La última versión mayor de Java fue publicada en el año 2014, hace ya mucho tiempo para la época actual donde las cosas avanzan a un ritmo muy rápido. <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">Java 8 introdujo en el lenguaje notables cambios</a> como las expresiones <em>lambda</em> dotándolo de capacidades funcionales y mayor expresividad en menos líneas de código junto con referencias a métodos e interfaces funcionales que permite crear implementaciones anónimas de interfaces con una <em>lambda</em>, se añaden los <em>streams</em> como nueva forma de iterar sobre las colecciones, interfaces con métodos por defecto o estáticos que aumentan la compatibilidad hacia atrás que siempre se le ha dado gran importancia en la plataforma o una nueva API para fechas que solventa las deficiencias de la anterior. Grandes cambios en el lenguaje tan importantes como los que supusieron Java 5.</p>
 <p>Después de algunos aplazamientos principalmente por implementar la modularización de la forma correcta sin que en un futuro suponga un problema ha sido publicada en septiembre de 2017 la versión de Java 9. La característica más llamativa es <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">la modularización de la plataforma con Java 9</a> que supone grandes mejoras como una mejor encapsulación de los paquetes, interfaces entre módulos bien definidas y dependencias explícitas que proporcionan optimización al usarse sólo los módulos que se necesitan, mayor seguridad al ser menor la superficie de ataque y configuración confiable al comprobar las dependencias al compilar o iniciarse la máquina virtual.</p>
@@ -1157,13 +1157,13 @@
 </ul>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/images/tabla-novedades-java-9_hu2ddf17fa6573a8642c53fe506bc499ba_121170_2560x1440_fit_q90_box.jpg" data-gallery="" title="Tabla de novedades de Java 9"><img src="https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/images/tabla-novedades-java-9_hu2ddf17fa6573a8642c53fe506bc499ba_121170_300x200_fit_q90_box.jpg" width="300" height="169" alt="Tabla de novedades de Java 9" title="Tabla de novedades de Java 9"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/images/tabla-novedades-java-9_hu2ddf17fa6573a8642c53fe506bc499ba_121170_2560x1440_fit_q90_box.jpg" data-gallery="" title="Tabla de novedades de Java 9"><img src="https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/images/tabla-novedades-java-9_hu2ddf17fa6573a8642c53fe506bc499ba_121170_300x200_fit_q90_box.jpg" width="300" height="169" alt="Tabla de novedades de Java 9" title="Tabla de novedades de Java 9" class="&#34; " loading="lazy"></a></p>
 <figcaption>Tabla de novedades de Java 9</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><img src="https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/images/duke-java-9_hu5d585ce271f4e7b37c2971ec66b5e26b_86941_2560x1440_fit_box_3.png" width="250" height="250" alt="Duke Java 9" title="Duke Java 9"  class="lozad "></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/images/duke-java-9_hu5d585ce271f4e7b37c2971ec66b5e26b_86941_2560x1440_fit_box_3.png" width="500" height="500" alt="Duke Java 9" title="Duke Java 9" class="&#34; " loading="lazy"></p>
 </figure>
 </div>
 <h3 id="nuevas-características">Nuevas características</h3>
@@ -1195,7 +1195,7 @@
 </ul>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/images/jshell_huf72a8991b2bf5dc9536110a52c1ee560_29761_2560x1440_fit_box_3.png" data-gallery="" title="jshell"><img src="https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/images/jshell_huf72a8991b2bf5dc9536110a52c1ee560_29761_300x200_fit_box_3.png" width="300" height="187" alt="jshell" title="jshell"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/images/jshell_huf72a8991b2bf5dc9536110a52c1ee560_29761_2560x1440_fit_box_3.png" data-gallery="" title="jshell"><img src="https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/images/jshell_huf72a8991b2bf5dc9536110a52c1ee560_29761_300x200_fit_box_3.png" width="300" height="187" alt="jshell" title="jshell" class="&#34; " loading="lazy"></a></p>
 <figcaption>jshell</figcaption>
 </figure>
 </div>
@@ -1260,7 +1260,7 @@
 <p>Ahora la documentación Javadoc se genera con marcado de HTML 5 e incluye un cuadro de búsqueda para encontrar más fácilmente tipos y métodos.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/images/javadoc_hu32f7ef0ead62f1ee7b4492db39ae0b1a_139775_2560x1440_fit_box_3.png" data-gallery="" title="Javadoc"><img src="https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/images/javadoc_hu32f7ef0ead62f1ee7b4492db39ae0b1a_139775_300x200_fit_box_3.png" width="300" height="137" alt="Javadoc" title="Javadoc"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/images/javadoc_hu32f7ef0ead62f1ee7b4492db39ae0b1a_139775_2560x1440_fit_box_3.png" data-gallery="" title="Javadoc"><img src="https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/images/javadoc_hu32f7ef0ead62f1ee7b4492db39ae0b1a_139775_300x200_fit_box_3.png" width="300" height="137" alt="Javadoc" title="Javadoc" class="&#34; " loading="lazy"></a></p>
 <figcaption>Javadoc</figcaption>
 </figure>
 </div>

@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Cómo trabajar con importes, ratios y divisas en Java">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2015/07/como-trabajar-con-importes-ratios-y-divisas-en-java/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Aún en Java 8 no tenemos una API incluida en el JDK dedicada al manejo de importes, divisas y conversiones. Si la especificación JSR-354 se incluye en alguna versión podremos hacer uso de ella sin necesidad de ninguna dependencia adicional, pero si tenemos necesidad ahora podemos usar la librería que ha producido la especificación. Usando las clases y métodos de la API evitaremos hacer y mantener una implementación nosotros mismos que además seguro no llega al nivel de esta. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Cómo trabajar con importes, ratios y divisas en Java">
@@ -54,7 +54,7 @@
     "headline": "Cómo trabajar con importes, ratios y divisas en Java",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp"
         
       },
     "datePublished": "2015-07-21T20:00:00+02:00",
@@ -262,7 +262,7 @@
 
       
       <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Las aplicaciones de comercio electrónico o que realizan operaciones financieras con importes seguro que necesitan una forma de representar un importe junto con una divisa. También si necesitan convertir importes en diferentes divisas necesitarán obtener los ratios de conversión de alguna fuente, en el artículo <a href="https://picodotdev.github.io/blog-bitix/2015/06/servicio-para-obtener-ratios-de-conversion-entre-divisas/">Servicio para obtener ratios de conversión entre divisas</a> comentaba uno que podemos usar, <a href="https://openexchangerates.org/">Open Exchange Rates</a>. Java incluye clases para datos numéricos y con ellos se pueden representar importes como por ejemplo <a href="https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html">BigDecimal</a>. Para importes no debemos usar en ningún caso un tipo de dato <em>float</em> o <em>double</em> ya que estos son incapaces de representar ciertos valores de forma exacta, usando <a href="https://elblogdepicodev.blogspot.com.es/2012/01/errores-de-precision-redondeo-y.html"><em>float</em> y <em>double</em> tendremos errores de precisión, redondeo y representación</a>. En vez de crear un nuevo tipo de datos (una clase) que tenga como propiedades un BigDecimal para el importe y un String o similar para representar la divisa además de implementar las varias operaciones aritméticas y de comparación entre otras muchas cosas que necesitaremos podemos usar la librería que la <a href="https://github.com/JavaMoney/jsr354-api/blob/master/src/main/asciidoc/JavaMoneySpecification.adoc">especificación JSR-354</a> proporciona una API dedicada a importes y divisas en Java. En Java 8 no se incluyó pero en una futura versión quizá si se incluya en el propio JDK. En este artículo comentaré como usando Java 8 podemos hacer uso de esta API desde ya y que ofrece.</p>
 <p>Aunque la especificación no es parte de Java aún el grupo de trabajo encargado ha generado una dependencia que podemos usar. En el <a href="https://github.com/JavaMoney/">repositorio de GitHub</a> podemos encontrar el código de la librería. Incluyéndola como dependencia de un proyecto podemos usarla, usando <a href="https://gradle.org/">Gradle</a> con:</p>
@@ -400,7 +400,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/06/hemeroteca-7/">
-                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #7" title="Hemeroteca #7" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="875" alt="Hemeroteca #7" title="Hemeroteca #7" class="" loading="lazy">
                 <h3>Hemeroteca #7</h3>
                 </a>
                 
@@ -414,7 +414,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/06/servicio-para-obtener-ratios-de-conversion-entre-divisas/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Servicio para obtener ratios de conversión entre divisas" title="Servicio para obtener ratios de conversión entre divisas" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Servicio para obtener ratios de conversión entre divisas" title="Servicio para obtener ratios de conversión entre divisas" class="" loading="lazy">
                 <h3>Servicio para obtener ratios de conversión entre divisas</h3>
                 </a>
                 
@@ -428,7 +428,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/06/nueva-visita-a-herramientas-para-un-proyecto-java/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Nueva visita a Herramientas para un proyecto Java" title="Nueva visita a Herramientas para un proyecto Java" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Nueva visita a Herramientas para un proyecto Java" title="Nueva visita a Herramientas para un proyecto Java" class="" loading="lazy">
                 <h3>Nueva visita a Herramientas para un proyecto Java</h3>
                 </a>
                 
@@ -442,7 +442,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/05/patron-multiples-vistas-de-un-mismo-dato-en-tapestry/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Patrón múltiples vistas de un mismo dato en Tapestry" title="Patrón múltiples vistas de un mismo dato en Tapestry" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Patrón múltiples vistas de un mismo dato en Tapestry" title="Patrón múltiples vistas de un mismo dato en Tapestry" class="" loading="lazy">
                 <h3>Patrón múltiples vistas de un mismo dato en Tapestry</h3>
                 </a>
                 
@@ -456,7 +456,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/05/alternativa-a-hibernate-u-orm-y-ejemplo-de-jooq/">
-                <img src="/blog-bitix/assets/images/logotypes/jooq.png" width="326" height="125" alt="Alternativa a Hibernate u ORM y ejemplo de jOOQ" title="Alternativa a Hibernate u ORM y ejemplo de jOOQ" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/jooq.webp" width="875" alt="Alternativa a Hibernate u ORM y ejemplo de jOOQ" title="Alternativa a Hibernate u ORM y ejemplo de jOOQ" class="" loading="lazy">
                 <h3>Alternativa a Hibernate u ORM y ejemplo de jOOQ</h3>
                 </a>
                 
@@ -470,7 +470,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/05/10-razones-para-seguir-usando-java/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="10 razones para seguir usando Java" title="10 razones para seguir usando Java" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="10 razones para seguir usando Java" title="10 razones para seguir usando Java" class="" loading="lazy">
                 <h3>10 razones para seguir usando Java</h3>
                 </a>
                 

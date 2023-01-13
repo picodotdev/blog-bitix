@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="La clase ThreadLocal de Java y usos prácticos">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2016/05/la-clase-threadlocal-de-java-y-usos-practicos/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="En Java existe una clase con la que podemos asociar un dato al hilo o thread que ejecuta el código. Podemos usar esta clase para evitar incluir en cada método el parámetro de ese dato si es usado en multitud de métodos simplificando en gran medida el código. En las aplicaciones web este dato puede ser el usuario que se ha autenticado, el dominio por el que se ha accedido a la aplicación, el dispositivo móvil, el idioma del usuario o cualquier otra información que queramos esté disponible de forma global en el hilo de ejecución. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="La clase ThreadLocal de Java y usos prácticos">
@@ -54,7 +54,7 @@
     "headline": "La clase ThreadLocal de Java y usos prácticos",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp"
         
       },
     "datePublished": "2016-05-13T17:00:00+02:00",
@@ -262,7 +262,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>En algunos casos nos encontramos con que un determinado dato lo pasamos como parámetro en sucesivas llamadas a métodos, obligándonos a declararlo en cada uno de ellos. En una aplicación web el dato podría ser el usuario autenticado, el dominio por el que se ha accedido a la aplicación, el dispositivo móvil, el idioma del usuario, su preferencia de divisa o cualquier otra información no relativa al usuario pero que igualmente la aplicación necesita en muchos sitios y usa esta información contextual para variar su funcionalidad. En una aplicación web podemos obtener el dominio por el que es accedido la aplicación con la clase <a href="https://docs.oracle.com/javaee/7/api/javax/servlet/ServletRequest.html">Request</a>, asociando el dato como un atributo de la petición lo tendremos disponible de forma global en la capa de presentación. Sin embargo, este objeto <em>request</em> solo estará disponible en la capa de presentación de la aplicación con la intención de que la capa de lógica de negocio sea independiente de la tecnología o <em>framework</em> web. Para hacer que algún dato global también esté disponible en la capa de lógica de negocio podemos usar la clase <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/ThreadLocal.html">ThreadLocal</a>.</p>
 <p>La clase <em>ThreadLocal</em> básicamente asocia un dato con el <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html">Thread</a> que ejecuta el código, teniendo una variable global en la aplicación con la referencia a la clase <em>ThreadLocal</em> podemos acceder al dato desde cualquier punto de la aplicación. Si necesitásemos varios datos tendríamos varias instancias globales de <em>ThreadLocal</em>.</p>
@@ -357,7 +357,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/05/que-es-el-concepto-de-heap-pollution-en-java/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Qué es el concepto de Heap Pollution en Java" title="Qué es el concepto de Heap Pollution en Java" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Qué es el concepto de Heap Pollution en Java" title="Qué es el concepto de Heap Pollution en Java" class="" loading="lazy">
                 <h3>Qué es el concepto de Heap Pollution en Java</h3>
                 </a>
                 
@@ -371,7 +371,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/05/extraer-elementos-de-una-cadena-con-una-expresion-regular/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Extraer elementos de una cadena con una expresión regular" title="Extraer elementos de una cadena con una expresión regular" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Extraer elementos de una cadena con una expresión regular" title="Extraer elementos de una cadena con una expresión regular" class="" loading="lazy">
                 <h3>Extraer elementos de una cadena con una expresión regular</h3>
                 </a>
                 
@@ -385,7 +385,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="El componente Grid de Apache Tapestry" title="El componente Grid de Apache Tapestry" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="El componente Grid de Apache Tapestry" title="El componente Grid de Apache Tapestry" class="" loading="lazy">
                 <h3>El componente Grid de Apache Tapestry</h3>
                 </a>
                 
@@ -399,7 +399,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Tutorial sobre los tipos genéricos de Java" title="Tutorial sobre los tipos genéricos de Java" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Tutorial sobre los tipos genéricos de Java" title="Tutorial sobre los tipos genéricos de Java" class="" loading="lazy">
                 <h3>Tutorial sobre los tipos genéricos de Java</h3>
                 </a>
                 
@@ -413,7 +413,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/04/usar-twitter-desde-java-con-twitter4j/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Usar Twitter desde Java con twitter4j" title="Usar Twitter desde Java con twitter4j" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Usar Twitter desde Java con twitter4j" title="Usar Twitter desde Java con twitter4j" class="" loading="lazy">
                 <h3>Usar Twitter desde Java con twitter4j</h3>
                 </a>
                 
@@ -427,7 +427,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/">
-                <img src="/blog-bitix/assets/images/logotypes/java-ee.png" width="326" height="125" alt="Aplicación de ejemplo usando varias especificaciones de Java EE 7" title="Aplicación de ejemplo usando varias especificaciones de Java EE 7" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java-ee.webp" width="875" alt="Aplicación de ejemplo usando varias especificaciones de Java EE 7" title="Aplicación de ejemplo usando varias especificaciones de Java EE 7" class="" loading="lazy">
                 <h3>Aplicación de ejemplo usando varias especificaciones de Java EE 7</h3>
                 </a>
                 

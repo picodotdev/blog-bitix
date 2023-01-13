@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Ejemplo del patrón de diseño Builder">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Construir objetos es una tarea básica en los lenguajes orientados a objetos. En Java, las instancias de una clase se crean con la palabra clave reservada new y un método especial llamado constructor. Al diseñar una clase debemos tener algunas cuestiones para evitar varios constructores telescópicos, evitar constructores que son combinación de varios argumentos opcionales y permitir obtener instancias de objetos con estado válido. Si se nos presentan estas situaciones podemos usar el patrón de diseño Builder que consiste en básicamente en una clase especializada en construir instancias de otra clase que podemos hacer usable con una API fluida y alguna cosa más deseable que explico en el artículo. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Ejemplo del patrón de diseño Builder">
@@ -54,7 +54,7 @@
     "headline": "Ejemplo del patrón de diseño Builder",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp"
         
       },
     "datePublished": "2015-09-27T12:00:00+02:00",
@@ -262,7 +262,7 @@
 
       
       <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Al escribir los métodos constructores de instancias de una clase puede ocurrirnos que algunos de ellos tienen una lista larga de argumentos (cuatro o más parámetros puede considerarse larga) o el caso de que otros algunos argumentos son opcionales. En el caso de una lista larga de argumentos algunos puedan tomar valores por defecto creando métodos telescópicos (donde hay varios constructores y cada uno solo añade un nuevo argumento al anterior), en el caso de argumentos opcionales nos obliga a crear un constructor por cada combinación de argumentos, peor aún, ambas cosas se pueden producir a la vez.</p>
 <p>Por ejemplo, supongamos que tenemos una entidad de dominio <em>Usuario</em> en la que el correo electrónico es requerido siendo opcionales su nombre, apellidos teléfono o dirección. Sin usar el patrón de diseño <em>Builder</em> probablemente tendríamos los siguientes constructores o tener solo el último de ellos y en los no necesarios usar como valor del argumento <em>null</em>.</p>
@@ -292,7 +292,7 @@
 <p>Al igual que <a href="https://picodotdev.github.io/blog-bitix/2021/05/el-patron-de-diseno-factory-ventajas-sobre-new-y-diferencias-con-builder/">el patrón de diseño Factory</a> se encarga de crear instancias de una clase, sin embargo, tiene algunas diferencias como que el patrón <em>Factory</em> crea las instancias en un único paso cuando el <em>Builder</em> puede crear las instancias en varios pasos, el patrón <em>Builder</em> es más complejo pero más flexible. Otra diferencia es que el patrón de diseño <em>Builder</em> tiene estado y en el <em>Factory</em> no siempre es necesario, esto hace que la instancia de clase <em>Builder</em> no se pueda compartir ni utilizar para crear otras instancias.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/images/builder-pattern_hu02179daacd7b0e854d69456a34c6fd6c_49036_2560x1440_fit_box_3.png" data-gallery="" title="Diagrama de clases del patrón de diseño Builder"><img src="/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/images/builder-pattern_hu02179daacd7b0e854d69456a34c6fd6c_49036_650x450_fit_box_3.png" width="650" height="223" alt="Diagrama de clases del patrón de diseño Builder" title="Diagrama de clases del patrón de diseño Builder" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/images/builder-pattern_hu02179daacd7b0e854d69456a34c6fd6c_49036_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Diagrama de clases del patrón de diseño Builder"><img src="/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/images/builder-pattern_hu02179daacd7b0e854d69456a34c6fd6c_49036_650x450_fit_q90_h2_box_3.webp" width="650" height="223" alt="Diagrama de clases del patrón de diseño Builder" title="Diagrama de clases del patrón de diseño Builder" class="&#34; " loading="lazy"></a></p>
 <figcaption>Diagrama de clases del patrón de diseño Builder</figcaption>
 </figure>
 </div>

@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Consultas con parámetros para filtrar datos en GraphQL">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2017/11/consultas-con-parametros-para-filtrar-datos-en-graphql/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="No será extraño que en una API para obtener datos esté la necesidad de realizar algún tipo de filtrado para recuperar únicamente la colección de datos deseados de todos los existentes en un repositorio. A las consultas de GraphQL se les pueden pasar argumentos que son recibidos por los métodos que actúan como punto de entrada de las consultas. Con los argumentos es posible implementar cualquier funcionalidad que se necesite, entre ellas el filtrado. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Consultas con parámetros para filtrar datos en GraphQL">
@@ -54,7 +54,7 @@
     "headline": "Consultas con parámetros para filtrar datos en GraphQL",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.webp"
         
       },
     "datePublished": "2017-11-25T10:00:00+01:00",
@@ -253,7 +253,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
 </div>
 <p>No será extraño que en una API para obtener datos esté la necesidad de realizar algún tipo de filtrado para recuperar únicamente la colección de datos deseados de todos los existentes en un repositorio. A las consultas de <a href="https://graphql.org/">GraphQL</a> se les pueden pasar argumentos que son recibidos por los métodos que actúan como punto de entrada de las consultas. Con los argumentos es posible implementar cualquier funcionalidad que se necesite, entre ellas el filtrado. Los argumentos pueden ser datos escalares o más complejos que se definen con la palabra reservada <em>input</em> en el esquema.</p>
 <p>Usando el mismo ejemplo que he utilizado en artículos anteriores ahora en este caso implemento la funcionalidad de poder filtrar los libros de una biblioteca utilizando una expresión regular que el título del libro debe cumplir para obtenerse como resultado. El esquema del <em>endpoint</em> de GraphQL queda de la siguiente forma para implementar el filtrado, usando el tipo definido con <em>input</em> es posible pasar como argumentos datos complejos o agrupaciones de datos escalares.</p>

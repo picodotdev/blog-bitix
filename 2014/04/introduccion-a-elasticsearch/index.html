@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Introducción a Elasticsearch">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2014/04/introduccion-a-elasticsearch/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/elastic-elasticsearch-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/elastic-elasticsearch-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Elasticsearch es una potente herramienta que nos permite indexar una gran volumen de datos y posteriormente hacer consultas sobre ellos soportando entre otras muchas cosas búsquedas aproximadas, facetas y resaltado. Un uso puede ser hacer consultas de texto completo, al estar los datos indexados los resultados se obtienen de forma muy rápida. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/elastic-elasticsearch-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/elastic-elasticsearch-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Introducción a Elasticsearch">
@@ -54,7 +54,7 @@
     "headline": "Introducción a Elasticsearch",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/elastic-elasticsearch-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/elastic-elasticsearch-750.webp"
         
       },
     "datePublished": "2014-04-25T17:15:05+02:00",
@@ -262,7 +262,7 @@
 
       
       <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/elastic-elasticsearch.svg" width="200" height="200" alt="Elasticsearch" title="Elasticsearch" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/elastic-elasticsearch.svg" width="200" height="200" alt="Elasticsearch" title="Elasticsearch" class="" loading="false&#34;"></p>
 </div>
 <p>Continuando con la forma de como dar solución a la búsquedas en las entidades de dominio en esta entrada profundizaré en la solución que comentaba de usar <a href="https://www.elastic.co/es/elasticsearch/">Elasticsearch</a>. Elasticsearch se basa en <a href="https://lucene.apache.org/core/">Lucene</a> pero expone su funcionalidad a través de una interfaz REST recibiendo y enviando datos en formato JSON y oculta mediante esta interfaz los detalles internos de Lucene. Esta interfaz permite que pueda ser utilizada por cualquier plataforma no solo Java, puede usarse desde Python, .NET, PHP o incluso desde un navegador con JavaScript. Es persistente, es decir, que lo que indexemos en ella sobrevivirá a un reinicio del servidor.</p>
 <p>Como comentaba en <a href="https://elblogdepicodev.blogspot.com.es/2013/08/busquedas-de-texto-completo-en-objetos-de-dominio.html">el artículo anterior de búsquedas sobre entidades de dominio</a> ES nos puede servir para hacer búsquedas a texto completo pero también podemos hacer otra serie de cosas adicionales que no podemos con una base de datos relacional aunque soporte en su lenguaje SQL búsqueda a texto completo, por ejemplo, resaltado (highlight) y facetas (facets), también permite hacer búsquedas vagas (fuzzy) y soporta diferentes analizadores según el idioma de la propiedad en que se busque. El indexar y desindexar los datos en elasticsearch para que luego puedan ser buscados es responsabilidad nuestra y además de insertarlos o eliminarlos en la base de datos debemos hacer lo mismo en ES ya sea haciéndolo en ambos sitios a la vez o mediante un proceso de fondo que se encargue de ello.</p>
@@ -276,7 +276,7 @@
 <p>Después de unos segundos deberemos ver algo como lo siguiente.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2014/04/introduccion-a-elasticsearch/images/elasticsearch_hu7ee877f142c7fa41ee5fe0416e5b8906_76248_2560x1440_fit_box_3.png" data-gallery=""><img src="/blog-bitix/2014/04/introduccion-a-elasticsearch/images/elasticsearch_hu7ee877f142c7fa41ee5fe0416e5b8906_76248_300x200_fit_box_3.png" width="300" height="126" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2014/04/introduccion-a-elasticsearch/images/elasticsearch_hu7ee877f142c7fa41ee5fe0416e5b8906_76248_2560x1440_fit_q90_h2_box_3.webp" data-gallery=""><img src="/blog-bitix/2014/04/introduccion-a-elasticsearch/images/elasticsearch_hu7ee877f142c7fa41ee5fe0416e5b8906_76248_300x200_fit_q90_h2_box_3.webp" width="300" height="126" class="&#34; " loading="lazy"></a></p>
 </figure>
 </div>
 <p>Elasticsearch usa sus propios conceptos y aunque no es una base de datos relacional algunos pueden ser similares. Lo que en en una base de datos relacional es un esquema en ES es un índice, lo que en la primera es una tabla en ES es un tipo, continuando una fila en ES es un documento y finalmente una columna es una propiedad en ES.</p>
@@ -339,7 +339,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2014/04/introduccion-a-elasticsearch/images/categorias-amazon_hu1dcef78c0f3b8024ebdf2c7c44f6bce9_17382_2560x1440_fit_box_3.png" data-gallery="" title="Categorías de productos (facets) en Amazon"><img src="/blog-bitix/2014/04/introduccion-a-elasticsearch/images/categorias-amazon_hu1dcef78c0f3b8024ebdf2c7c44f6bce9_17382_300x200_fit_box_3.png" width="85" height="200" alt="Categorías de productos (facets) en Amazon" title="Categorías de productos (facets) en Amazon" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2014/04/introduccion-a-elasticsearch/images/categorias-amazon_hu1dcef78c0f3b8024ebdf2c7c44f6bce9_17382_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Categorías de productos (facets) en Amazon"><img src="/blog-bitix/2014/04/introduccion-a-elasticsearch/images/categorias-amazon_hu1dcef78c0f3b8024ebdf2c7c44f6bce9_17382_300x200_fit_q90_h2_box_3.webp" width="85" height="200" alt="Categorías de productos (facets) en Amazon" title="Categorías de productos (facets) en Amazon" class="&#34; " loading="lazy"></a></p>
 </figure>
 </div>
 <p>Otra de las funcionalidades que nos puede interesar es que ES nos ofrezca sugerencias para determinados términos, en el siguiente ejemplo solicitamos además de la búsqueda sugerencias para algunas palabras que tienen fallos de escritura.</p>
@@ -417,7 +417,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">
-                <img src="/blog-bitix/assets/images/logotypes/backbone.svg" width="326" height="125" alt="Ejemplo lista de tareas con Backbone y React" title="Ejemplo lista de tareas con Backbone y React" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/backbone.svg" width="875" alt="Ejemplo lista de tareas con Backbone y React" title="Ejemplo lista de tareas con Backbone y React" class="" loading="lazy">
                 <h3>Ejemplo lista de tareas con Backbone y React</h3>
                 </a>
                 
@@ -431,7 +431,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/04/usar-grunt-para-ejecutar-teses-unitarios-de-codigo-javascript/">
-                <img src="/blog-bitix/assets/images/logotypes/grunt.png" width="326" height="125" alt="Usar Grunt para ejecutar teses unitarios de código JavaScript" title="Usar Grunt para ejecutar teses unitarios de código JavaScript" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/grunt.webp" width="875" alt="Usar Grunt para ejecutar teses unitarios de código JavaScript" title="Usar Grunt para ejecutar teses unitarios de código JavaScript" class="" loading="lazy">
                 <h3>Usar Grunt para ejecutar teses unitarios de código JavaScript</h3>
                 </a>
                 
@@ -445,7 +445,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Novedades y nuevas características de Java 8" title="Novedades y nuevas características de Java 8" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Novedades y nuevas características de Java 8" title="Novedades y nuevas características de Java 8" class="" loading="lazy">
                 <h3>Novedades y nuevas características de Java 8</h3>
                 </a>
                 
@@ -459,7 +459,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/03/guia-para-la-creacion-de-un-blog-con-octopress/">
-                <img src="/blog-bitix/assets/images/logotypes/octopress.png" width="326" height="125" alt="Guía para la creación de un blog con Octopress" title="Guía para la creación de un blog con Octopress" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/octopress.webp" width="875" alt="Guía para la creación de un blog con Octopress" title="Guía para la creación de un blog con Octopress" class="" loading="lazy">
                 <h3>Guía para la creación de un blog con Octopress</h3>
                 </a>
                 
@@ -473,7 +473,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Presentación sobre Apache Tapestry" title="Presentación sobre Apache Tapestry" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Presentación sobre Apache Tapestry" title="Presentación sobre Apache Tapestry" class="" loading="lazy">
                 <h3>Presentación sobre Apache Tapestry</h3>
                 </a>
                 
@@ -487,7 +487,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/">
-                <img src="/blog-bitix/assets/images/logotypes/wildfly.svg" width="326" height="125" alt="El servidor de aplicaciones JBoss/WildFly" title="El servidor de aplicaciones JBoss/WildFly" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/wildfly.svg" width="875" alt="El servidor de aplicaciones JBoss/WildFly" title="El servidor de aplicaciones JBoss/WildFly" class="" loading="lazy">
                 <h3>El servidor de aplicaciones JBoss/WildFly</h3>
                 </a>
                 

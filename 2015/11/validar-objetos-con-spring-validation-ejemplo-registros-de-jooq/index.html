@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Validar objetos con Spring Validation, ejemplo registros de jOOQ">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2015/11/validar-objetos-con-spring-validation-ejemplo-registros-de-jooq/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="jOOQ es una alternativa a Hibernate que devuelve la base de datos a primer plano en una aplicación. Por la importancia en cualquier aplicación de los datos propone que la base de datos sea la única fuente de la verdad. Para los modelos es patente al generarse a partir del esquema de la base de datos para las validaciones se puede hacer con restricciones de integridad pero si queremos conocer los errores detalladamente que se produzcan puede que deseemos usar Spring Validation. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Validar objetos con Spring Validation, ejemplo registros de jOOQ">
@@ -54,7 +54,7 @@
     "headline": "Validar objetos con Spring Validation, ejemplo registros de jOOQ",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp"
         
       },
     "datePublished": "2015-11-17T19:00:00+01:00",
@@ -262,7 +262,7 @@
 
       
       <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>En la documentación de <a href="https://www.jooq.org/">jOOQ</a> no he encontrado nada referente a cómo realizar validaciones antes de guardar los datos en la base de datos. Pero con la herramienta de generación se puede indicar que las clases Java generadas se anoten con las anotaciones de validación de la especificación JSR-303 según las restricciones encontradas en la base de datos. Las clases contendrán validaciones básicas como <a href="https://docs.oracle.com/javaee/7/api/javax/validation/constraints/NotNull.html">@NotNull</a> o <a href="https://docs.oracle.com/javaee/7/api/javax/validation/constraints/Size.html">@Size</a> pero no he visto nada más allá de estas simples validaciones. Si tenemos validaciones dependientes entre campos o más complejas como una expresión regular necesitaremos algo más.</p>
 <p>Si queremos ser puristas las validaciones deberíamos hacerlas en la base de datos usando <em>constraints</em> impidiendo de esta manera que se guarden datos inválidos independientemente de la aplicación o microservicio que intente guardar algo en la base de datos. Sin embargo, realizando solo las validaciones en la base de datos puede que perdamos qué campo o campos son erróneos y los motivos por los que son erróneos, información que seguramente nos interese para indicar detalladamente los datos no válidos al usuario permitiéndole corregirlos.</p>

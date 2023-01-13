@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Cómo implementar correctamente y por qué los métodos equals y hashCode de los objetos Java">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2016/12/como-implementar-correctamente-y-por-que-los-metodos-equals-y-hashcode-de-los-objetos-java/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Los métodos equals y hashCode son esenciales en las colecciones de objetos. Para su correcta implementación es necesario conocer unas cuantas propiedades que han de cumplir estos métodos. Pueden parecer sencillos pero no lo son tanto y una mala implementación posiblemente produzca algún tipo de error o comportamiento anómalo indeseado. En el siguiente artículo comento varias formas de implementarlos de forma sencilla y correcta. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Cómo implementar correctamente y por qué los métodos equals y hashCode de los objetos Java">
@@ -54,7 +54,7 @@
     "headline": "Cómo implementar correctamente y por qué los métodos equals y hashCode de los objetos Java",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp"
         
       },
     "datePublished": "2016-12-07T11:00:00+01:00",
@@ -262,7 +262,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>En Java los métodos <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-">equals</a> y <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--">hashCode</a> están definidos en la raíz de la jerarquía de clases, esto es en la clase <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>, lo que significa que todas las instancias de objetos los poseen. Estos métodos son especialmente importantes ya que afectan al correcto funcionamiento de las colecciones como <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">Collection</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html">Set</a> y <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html">Map</a>, colecciones, listas, conjuntos y mapas que es difícil que cualquier programa no use alguna implementación de ellas.</p>
 <p>El método <em>equals</em> es usado en las colecciones de tipo <em>List</em>, <em>Set</em>, y también <em>Map</em> para determinar si un objeto ya está incluida en la colección, el método <em>hashCode</em> es usado en los <em>Map</em> para encontrar el objeto asociado a la clave. Dado que las colecciones son ampliamente usadas en cualquier programa la correcta implementación implementación de los métodos <em>equals</em> y <em>hashCode</em> es fundamental ya que de lo contrario descubriremos errores poco agradables.</p>
@@ -396,7 +396,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/11/historico-de-datos-auditoria-y-diferencias-entre-objetos-con-javers-en-java/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Histórico de datos, auditoría y diferencias entre objetos con Javers en Java" title="Histórico de datos, auditoría y diferencias entre objetos con Javers en Java" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Histórico de datos, auditoría y diferencias entre objetos con Javers en Java" title="Histórico de datos, auditoría y diferencias entre objetos con Javers en Java" class="" loading="lazy">
                 <h3>Histórico de datos, auditoría y diferencias entre objetos con Javers en Java</h3>
                 </a>
                 
@@ -410,7 +410,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Añadir botones selectores de opciones a select múltiple de bootstrap-select" title="Añadir botones selectores de opciones a select múltiple de bootstrap-select" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Añadir botones selectores de opciones a select múltiple de bootstrap-select" title="Añadir botones selectores de opciones a select múltiple de bootstrap-select" class="" loading="lazy">
                 <h3>Añadir botones selectores de opciones a select múltiple de bootstrap-select</h3>
                 </a>
                 
@@ -424,7 +424,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Componente select múltiple en Apache Tapestry" title="Componente select múltiple en Apache Tapestry" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Componente select múltiple en Apache Tapestry" title="Componente select múltiple en Apache Tapestry" class="" loading="lazy">
                 <h3>Componente select múltiple en Apache Tapestry</h3>
                 </a>
                 
@@ -438,7 +438,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select" title="Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select" title="Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select" class="" loading="lazy">
                 <h3>Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select</h3>
                 </a>
                 
@@ -452,7 +452,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/">
-                <img src="/blog-bitix/assets/images/logotypes/keycloak.svg" width="326" height="125" alt="Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot" title="Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/keycloak.svg" width="875" alt="Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot" title="Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot" class="" loading="lazy">
                 <h3>Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot</h3>
                 </a>
                 
@@ -466,7 +466,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/10/generacion-de-codigo-en-tiempo-de-ejecucion-con-byte-buddy/">
-                <img src="/blog-bitix/assets/images/logotypes/bytebuddy.png" width="326" height="125" alt="Generación de código en tiempo de ejecución con Byte Buddy" title="Generación de código en tiempo de ejecución con Byte Buddy" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/bytebuddy.webp" width="875" alt="Generación de código en tiempo de ejecución con Byte Buddy" title="Generación de código en tiempo de ejecución con Byte Buddy" class="" loading="lazy">
                 <h3>Generación de código en tiempo de ejecución con Byte Buddy</h3>
                 </a>
                 

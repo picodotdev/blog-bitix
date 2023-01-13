@@ -263,7 +263,7 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL" class="" loading="false&#34;"></p>
 </div>
 <p>Para <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">usar el protocolo seguro HTTPS en un servidor web</a> es necesario al menos <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">generar un certificado autofirmado</a> que incluya el dominio del sitio web. El certificado autofirmado proporciona comunicaciones seguras entre el servidor y cliente pero los clientes no lo consideran de confianza de modo que han de omitir la validación del certificado, un entorno de desarrollo o pruebas es suficiente pero en un escenario de producción para añadir más seguridad donde hay varios servidores que además requieren y validan también el certificado del cliente es necesario utilizar certificados generados por una entidad en la que se confíe, esta es la autoridad de certificación. La autoridad de certificación o CA es una entidad en la que se confía, si una CA ha firmado digitalmente un certificado esta asegura que el certificado pertenece a quien dice pertenecer. Las funciones de una CA son firmar los certificados que se le envían, de revocar los certificados cuando han sido comprometidos o de renovarlos cuando su validez expira.</p>
 <p><a href="https://aws.amazon.com/es/">AWS</a> en su oferta de productos tiene <a href="https://aws.amazon.com/es/certificate-manager/">AWS Certificate Manager</a> que hace las funciones de autoridad de certificados, delega la complejidad de hacer las funciones de autoridad de certificados pero su inconveniente es que tiene el significativo precio de $400 mensuales más un pequeño coste por certificado emitido. La herramienta <a href="https://www.openssl.org/">OpenSSL</a> permite hacer las funciones de una autoridad de certificación con un conjunto de comandos.</p>
@@ -295,7 +295,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/archivos-ca_hu33cc35349f9d029cdda225fd09a64c32_41594_2560x1440_fit_box_3.png" data-gallery="" title="Archivos y directorios de la autoridad de certificación con OpenSSL"><img src="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/archivos-ca_hu33cc35349f9d029cdda225fd09a64c32_41594_300x250_fit_box_3.png" width="300" height="202" alt="Archivos y directorios de la autoridad de certificación con OpenSSL" title="Archivos y directorios de la autoridad de certificación con OpenSSL" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/archivos-ca_hu33cc35349f9d029cdda225fd09a64c32_41594_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Archivos y directorios de la autoridad de certificación con OpenSSL"><img src="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/archivos-ca_hu33cc35349f9d029cdda225fd09a64c32_41594_300x250_fit_q90_h2_box_3.webp" width="300" height="202" alt="Archivos y directorios de la autoridad de certificación con OpenSSL" title="Archivos y directorios de la autoridad de certificación con OpenSSL" class="&#34; " loading="lazy"></a></p>
 <figcaption>Archivos y directorios de la autoridad de certificación con OpenSSL</figcaption>
 </figure>
 </div>
@@ -385,22 +385,22 @@
 <p>Los navegadores incluyen los certificados de algunas autoridades de certificados en las que se confía. En el caso de crear una CA propia como lo mostrado en este artículo y un certificado para un servidor firmado por esta autoridad de certificados el navegador mostrará una advertencia indicando que el certificado presentado no es de confianza antes de permitir entrar al sitio web, con este mensaje el usuario es consciente de que el certificado del servidor no es de confianza y si el usuario lo desea se permite el acceso al sitio web. Aún así el navegador muestra una advertencia en el icono de seguridad del sitio web de que hay un problema con el certificado.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-security-warning_hufe8f9d8a0431282fd659700381041a92_85469_2560x1440_fit_box_3.png" data-gallery="" title="Advertencia con certificado no de confianza en Firefox"><img src="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-security-warning_hufe8f9d8a0431282fd659700381041a92_85469_300x250_fit_box_3.png" width="300" height="196" alt="Advertencia con certificado no de confianza en Firefox" title="Advertencia con certificado no de confianza en Firefox" class="" loading="lazy"></a>
-<a href="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificate-warning_hue64cb2700b0868b63449437b8bc142f9_77265_2560x1440_fit_box_3.png" data-gallery="" title="Advertencia con certificado no de confianza en Firefox"><img src="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificate-warning_hue64cb2700b0868b63449437b8bc142f9_77265_300x250_fit_box_3.png" width="300" height="195" alt="Advertencia con certificado no de confianza en Firefox" title="Advertencia con certificado no de confianza en Firefox" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-security-warning_hufe8f9d8a0431282fd659700381041a92_85469_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Advertencia con certificado no de confianza en Firefox"><img src="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-security-warning_hufe8f9d8a0431282fd659700381041a92_85469_300x250_fit_q90_h2_box_3.webp" width="300" height="196" alt="Advertencia con certificado no de confianza en Firefox" title="Advertencia con certificado no de confianza en Firefox" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificate-warning_hue64cb2700b0868b63449437b8bc142f9_77265_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Advertencia con certificado no de confianza en Firefox"><img src="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificate-warning_hue64cb2700b0868b63449437b8bc142f9_77265_300x250_fit_q90_h2_box_3.webp" width="300" height="195" alt="Advertencia con certificado no de confianza en Firefox" title="Advertencia con certificado no de confianza en Firefox" class="&#34; " loading="lazy"></a></p>
 <figcaption>Advertencia con certificado no de confianza en Firefox</figcaption>
 </figure>
 </div>
 <p>Para eliminar el mensaje de advertencia al acceder al sitio web y la advertencia del icono de seguridad del sitio web hay que instalar en el navegador el certificado de la CA raíz o intermedia. En el navegador web <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a> se importa un nuevo certificado de una CA en la que se confía desde la opción <em>Preferencias &gt; Privacidad y seguridad &gt; Ver certificados &gt; Autoridades &gt; Importar</em> en el navegador <a href="https://www.google.es/chrome/browser/desktop/">Chrome</a> desde <em>Configuración &gt; Privacidad y seguridad &gt; Gestionar certificados</em>. Por defecto los navegadores web ya incorporan los certificados de varias CA importantes de internet.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificates_hu3f247b7f03583946d46a95e4b00c73b3_62141_2560x1440_fit_box_3.png" data-gallery="" title="Certificados de autoridades de certificación de confianza en Firefox"><img src="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificates_hu3f247b7f03583946d46a95e4b00c73b3_62141_300x250_fit_box_3.png" width="300" height="200" alt="Certificados de autoridades de certificación de confianza en Firefox" title="Certificados de autoridades de certificación de confianza en Firefox" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificates_hu3f247b7f03583946d46a95e4b00c73b3_62141_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Certificados de autoridades de certificación de confianza en Firefox"><img src="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificates_hu3f247b7f03583946d46a95e4b00c73b3_62141_300x250_fit_q90_h2_box_3.webp" width="300" height="200" alt="Certificados de autoridades de certificación de confianza en Firefox" title="Certificados de autoridades de certificación de confianza en Firefox" class="&#34; " loading="lazy"></a></p>
 <figcaption>Certificados de autoridades de certificación de confianza en Firefox</figcaption>
 </figure>
 </div>
 <p>Una vez se importa el certificado de la CA el navegador muestra el icono de seguridad del sitio web con el icono sin advertencias indicando que no hay ningún problema de seguridad en la conexión con el sitio web, tampoco se muestra la página inicial de advertencia.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificate-valid_hua2bad78e16f7f5135943a01bcdd1e7a8_83586_2560x1440_fit_box_3.png" data-gallery="" title="Certificado de confianza y conexión segura en Firefox"><img src="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificate-valid_hua2bad78e16f7f5135943a01bcdd1e7a8_83586_300x250_fit_box_3.png" width="300" height="195" alt="Certificado de confianza y conexión segura en Firefox" title="Certificado de confianza y conexión segura en Firefox" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificate-valid_hua2bad78e16f7f5135943a01bcdd1e7a8_83586_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Certificado de confianza y conexión segura en Firefox"><img src="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificate-valid_hua2bad78e16f7f5135943a01bcdd1e7a8_83586_300x250_fit_q90_h2_box_3.webp" width="300" height="195" alt="Certificado de confianza y conexión segura en Firefox" title="Certificado de confianza y conexión segura en Firefox" class="&#34; " loading="lazy"></a></p>
 <figcaption>Certificado de confianza y conexión segura en Firefox</figcaption>
 </figure>
 </div>
@@ -487,7 +487,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/07/obtener-un-nombre-de-dominio-para-una-direccion-ip-privada/">
-                <img src="/blog-bitix/2020/07/obtener-un-nombre-de-dominio-para-una-direccion-ip-privada/images/dig_hu3a19147225d8f34127d275e0d47847be_56993_875x0_resize_box_3.png" width="326" height="125" alt="Obtener un nombre de dominio para una dirección IP privada" title="Obtener un nombre de dominio para una dirección IP privada" class="" loading="lazy">
+                <img src="/blog-bitix/2020/07/obtener-un-nombre-de-dominio-para-una-direccion-ip-privada/images/dig_hu3a19147225d8f34127d275e0d47847be_56993_875x0_resize_q90_h2_box_3.webp" width="875" height="644" alt="Obtener un nombre de dominio para una dirección IP privada" title="Obtener un nombre de dominio para una dirección IP privada" class="" loading="lazy">
                 <h3>Obtener un nombre de dominio para una dirección IP privada</h3>
                 </a>
                 
@@ -501,7 +501,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/">
-                <img src="/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-versions_hu940a3480bfb39e48a962826728734d4b_126962_875x0_resize_box_3.png" width="326" height="125" alt="Revertir un servicio a una versión anterior con Nomad" title="Revertir un servicio a una versión anterior con Nomad" class="" loading="lazy">
+                <img src="/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-versions_hu940a3480bfb39e48a962826728734d4b_126962_875x0_resize_q90_h2_box_3.webp" width="875" height="657" alt="Revertir un servicio a una versión anterior con Nomad" title="Revertir un servicio a una versión anterior con Nomad" class="" loading="lazy">
                 <h3>Revertir un servicio a una versión anterior con Nomad</h3>
                 </a>
                 
@@ -515,7 +515,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/">
-                <img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu9b9392122792520048bdeecbe5e8f0fc_25368_875x0_resize_box_3.png" width="326" height="125" alt="Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad" title="Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad" class="" loading="lazy">
+                <img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu9b9392122792520048bdeecbe5e8f0fc_25368_875x0_resize_q90_h2_box_3.webp" width="875" height="285" alt="Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad" title="Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad" class="" loading="lazy">
                 <h3>Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad</h3>
                 </a>
                 
@@ -529,7 +529,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/07/un-comando-y-aplicaciones-graficas-para-descargar-todo-el-contenido-de-un-sitio-web/">
-                <img src="/blog-bitix/2020/07/un-comando-y-aplicaciones-graficas-para-descargar-todo-el-contenido-de-un-sitio-web/images/archivos-sitio-web_hu5abb769a9287f1cc7ec0e2ab9530cb7d_43788_875x0_resize_box_3.png" width="326" height="125" alt="Un comando y aplicaciones gráficas para descargar todo el contenido de un sitio web" title="Un comando y aplicaciones gráficas para descargar todo el contenido de un sitio web" class="" loading="lazy">
+                <img src="/blog-bitix/2020/07/un-comando-y-aplicaciones-graficas-para-descargar-todo-el-contenido-de-un-sitio-web/images/archivos-sitio-web_hu5abb769a9287f1cc7ec0e2ab9530cb7d_43788_875x0_resize_q90_h2_box_3.webp" width="875" height="505" alt="Un comando y aplicaciones gráficas para descargar todo el contenido de un sitio web" title="Un comando y aplicaciones gráficas para descargar todo el contenido de un sitio web" class="" loading="lazy">
                 <h3>Un comando y aplicaciones gráficas para descargar todo el contenido de un sitio web</h3>
                 </a>
                 
@@ -543,7 +543,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/07/las-diferencias-entre-gnu-linux-bsd-y-sus-distribuciones/">
-                <img src="/blog-bitix/assets/images/logotypes/beastie.png" width="326" height="125" alt="Las diferencias entre GNU/Linux, BSD y sus distribuciones" title="Las diferencias entre GNU/Linux, BSD y sus distribuciones" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/beastie.webp" width="875" alt="Las diferencias entre GNU/Linux, BSD y sus distribuciones" title="Las diferencias entre GNU/Linux, BSD y sus distribuciones" class="" loading="lazy">
                 <h3>Las diferencias entre GNU/Linux, BSD y sus distribuciones</h3>
                 </a>
                 
@@ -557,7 +557,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/">
-                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Comando para convertir una imagen SVG a PNG y JPG con diferentes tamaños y color de fondo con Inkskape" title="Comando para convertir una imagen SVG a PNG y JPG con diferentes tamaños y color de fondo con Inkskape" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="875" alt="Comando para convertir una imagen SVG a PNG y JPG con diferentes tamaños y color de fondo con Inkskape" title="Comando para convertir una imagen SVG a PNG y JPG con diferentes tamaños y color de fondo con Inkskape" class="" loading="lazy">
                 <h3>Comando para convertir una imagen SVG a PNG y JPG con diferentes tamaños y color de fondo con Inkskape</h3>
                 </a>
                 

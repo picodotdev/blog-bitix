@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Sincronización de hora automática con el protocolo NTP en GNU/Linux">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/10/sincronizacion-de-hora-automatica-con-el-protocolo-ntp-en-gnu-linux/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/linux-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/linux-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Muchos dispositivos electrónicos entre ellos las computadoras tienen un reloj interno que continúa funcionando aún estando apagados y desconectados de la red electrica gracias a una batería en forma de pila de botón. La fecha y la hora permiten conocer cuando se modifica un documento pero también otros procesos más importantes que también dependen del tiempo como el segundo factor de autenticación y los códigos temporales basados en el tiempo. Los relojes internos usados en las computadoras son bastante imprecisos y se adelantan o retrasan con respecto a la hora oficial, algunos dispositivos electrónicos ni siquiera tienen el hardware de un reloj interno. El protocolo Network Time Protocol o NTP permite a las computadoras obtener la hora de un servidor que ofrezca este servicio de forma regular para evitar diferencias significativas, algunos de estos servidores están respaldados por una organización gubernamental que ofrecen la medida del tiempo oficial de un país y que poseen relojes atómicos mucho más precisos. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/linux-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/linux-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Sincronización de hora automática con el protocolo NTP en GNU/Linux">
@@ -54,7 +54,7 @@
     "headline": "Sincronización de hora automática con el protocolo NTP en GNU/Linux",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/linux-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/linux-750.webp"
         
       },
     "datePublished": "2021-10-07T20:00:00+02:00",
@@ -263,7 +263,7 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false&#34;"></p>
 </div>
 <p>Conocer la hora y fecha actual es importante también en las computadoras y programas para algo tan simple como conocer cuál fue la fecha de creación o modificación de un archivo o algo más importante como conocer la fecha de una compra o transacción bancaria. Las computadoras son capaces de mantener la hora y fecha gracias a una pequeña batería como fuente de energía como una pila de  botón habitualmente una CR2032 y un reloj que sigue funcionando cuando la computadora está apagada y desconectada de toda fuente de energía. La pila de botón es suficiente para mantener el reloj interno de la computadora y otros dispositivos electrónicos funcionando durante más de 10 años.</p>
 <p>Otra funcionalidad importante que depende del tiempo es el segundo factor de autenticación o <em>2FA</em>. Para mayor seguridad es muy recomendable <a href="https://picodotdev.github.io/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/">configurar el segundo factor de autenticación en los principales servicios</a> como correo electrónico junto a otros servicios que tratan con información personal o datos bancarios. El segundo factor de autenticación o TOTP es un código adicional a la contraseña a introducir al autenticarse en un servicio. El TOTP normalmente está formado por unos seis dígitos que solo es válido durante un pequeño espacio de tiempo de unos 30 segundos, pasado este tiempo deja de ser válido y otro código pasa a ser válido. En caso de que el dispositivo que genera el código no posea el tiempo actual genera códigos inválidos.</p>
@@ -283,7 +283,7 @@
 <p>Para activar el servicio NTP en GNOME basta con acceder al panel de configuración en la sección de <em>Fecha y hora</em> y activar la opción <em>Fecha y hora</em> automáticas. Esta opción hace lo mismo que desde la línea de comandos.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2021/10/sincronizacion-de-hora-automatica-con-el-protocolo-ntp-en-gnu-linux/images/gnome-fecha-hora_hub19a9f71586a70f9e62306c94c585c29_61460_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de fecha y hora en GNOME"><img src="/blog-bitix/2021/10/sincronizacion-de-hora-automatica-con-el-protocolo-ntp-en-gnu-linux/images/gnome-fecha-hora_hub19a9f71586a70f9e62306c94c585c29_61460_300x250_fit_box_3.png" width="300" height="211" alt="Configuración de fecha y hora en GNOME" title="Configuración de fecha y hora en GNOME" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2021/10/sincronizacion-de-hora-automatica-con-el-protocolo-ntp-en-gnu-linux/images/gnome-fecha-hora_hub19a9f71586a70f9e62306c94c585c29_61460_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Configuración de fecha y hora en GNOME"><img src="/blog-bitix/2021/10/sincronizacion-de-hora-automatica-con-el-protocolo-ntp-en-gnu-linux/images/gnome-fecha-hora_hub19a9f71586a70f9e62306c94c585c29_61460_300x250_fit_q90_h2_box_3.webp" width="300" height="211" alt="Configuración de fecha y hora en GNOME" title="Configuración de fecha y hora en GNOME" class="&#34; " loading="lazy"></a></p>
 <figcaption>Configuración de fecha y hora en GNOME</figcaption>
 </figure>
 </div>
@@ -371,7 +371,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/09/contenedores-en-macos-con-lima-y-minikube/">
-                <img src="/blog-bitix/assets/images/logotypes/containerd.svg" width="326" height="125" alt="Contenedores en macOS con Lima y minikube" title="Contenedores en macOS con Lima y minikube" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/containerd.svg" width="875" alt="Contenedores en macOS con Lima y minikube" title="Contenedores en macOS con Lima y minikube" class="" loading="lazy">
                 <h3>Contenedores en macOS con Lima y minikube</h3>
                 </a>
                 
@@ -385,7 +385,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/">
-                <img src="/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="326" height="125" alt="Planificar procesos periódicos y scripts con Nomad" title="Planificar procesos periódicos y scripts con Nomad" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="875" alt="Planificar procesos periódicos y scripts con Nomad" title="Planificar procesos periódicos y scripts con Nomad" class="" loading="lazy">
                 <h3>Planificar procesos periódicos y scripts con Nomad</h3>
                 </a>
                 
@@ -399,7 +399,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/">
-                <img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu78821b724a6b0de08cbf0fd88a055a4a_463097_875x0_resize_box_3.png" width="326" height="125" alt="El proxy inverso Traefik, características y funcionalidades que ofrece" title="El proxy inverso Traefik, características y funcionalidades que ofrece" class="" loading="lazy">
+                <img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu78821b724a6b0de08cbf0fd88a055a4a_463097_875x0_resize_q90_h2_box_3.webp" width="875" height="457" alt="El proxy inverso Traefik, características y funcionalidades que ofrece" title="El proxy inverso Traefik, características y funcionalidades que ofrece" class="" loading="lazy">
                 <h3>El proxy inverso Traefik, características y funcionalidades que ofrece</h3>
                 </a>
                 
@@ -413,7 +413,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/">
-                <img src="/blog-bitix/assets/images/logotypes/gnome.svg" width="326" height="125" alt="Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME" title="Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/gnome.svg" width="875" alt="Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME" title="Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME" class="" loading="lazy">
                 <h3>Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME</h3>
                 </a>
                 
@@ -427,7 +427,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/">
-                <img src="/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/images/gnome-subtitles_hu6e011cae91d9fec5bc7576cde312e803_167910_875x0_resize_box_3.png" width="326" height="125" alt="Cómo crear y poner subtítulos a un vídeo" title="Cómo crear y poner subtítulos a un vídeo" class="" loading="lazy">
+                <img src="/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/images/gnome-subtitles_hu6e011cae91d9fec5bc7576cde312e803_167910_875x0_resize_q90_h2_box_3.webp" width="875" height="598" alt="Cómo crear y poner subtítulos a un vídeo" title="Cómo crear y poner subtítulos a un vídeo" class="" loading="lazy">
                 <h3>Cómo crear y poner subtítulos a un vídeo</h3>
                 </a>
                 
@@ -441,7 +441,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/">
-                <img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/btop_hu361184c2af3ca82dc7bf99775b736d3f_247379_875x0_resize_box_3.png" width="326" height="125" alt="Herramientas de línea de comandos para monitorizar GNU/Linux" title="Herramientas de línea de comandos para monitorizar GNU/Linux" class="" loading="lazy">
+                <img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/btop_hu361184c2af3ca82dc7bf99775b736d3f_247379_875x0_resize_q90_h2_box_3.webp" width="875" height="659" alt="Herramientas de línea de comandos para monitorizar GNU/Linux" title="Herramientas de línea de comandos para monitorizar GNU/Linux" class="" loading="lazy">
                 <h3>Herramientas de línea de comandos para monitorizar GNU/Linux</h3>
                 </a>
                 

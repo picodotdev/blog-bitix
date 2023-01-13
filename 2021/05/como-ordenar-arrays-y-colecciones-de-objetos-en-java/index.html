@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Cómo ordenar arrays y colecciones de objetos en Java">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Al implementar un algoritmo es común querer iterar los elementos de una colección en un orden según un criterio, por ejemplo, si se trata de números de menor a mayor, si se trata de fechas de menor a mayor y si se trata de personas por orden alfabético del nombre, de menor a mayor edad o de menor a mayor antigüedad en la empresa, también es posible la necesidad de iterar en orden inverso. El JDK de Java proporciona interfaces para implementar la ordenación de objetos y que ya implementan algunos de los algoritmos de ordenación conocidos. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Cómo ordenar arrays y colecciones de objetos en Java">
@@ -54,7 +54,7 @@
     "headline": "Cómo ordenar arrays y colecciones de objetos en Java",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp"
         
       },
     "datePublished": "2021-05-27T20:00:00+02:00",
@@ -263,15 +263,15 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Entre las clases proporcionadas en el JDK de Java se proporciona un amplio <a href="https://picodotdev.github.io/blog-bitix/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/">conjunto de clases dedicadas a colecciones</a> que son el fundamento de muchos algoritmos de programación y programas. Las clases de colecciones sirven para almacenar referencias a objetos, algunas colecciones no tiene un orden definido como <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html">Set</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a> y otras definen un orden en la iteración de la colección como <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a> pero no un orden entre los elementos, otras colecciones como <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/TreeSet.html">TreeSet</a> y <a href="java.base/java/util/TreeMap.html">TreeMap</a> guardan los elementos ordenados según un criterio manteniéndose ordenada incluyendo al realizar inserciones y eliminaciones de elementos.</p>
 <p>Hay varios <a href="https://es.wikipedia.org/wiki/Algoritmo_de_ordenamiento">algoritmos de ordenación</a> conocidos como la <a href="https://picodotdev.github.io/blog-bitix/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/">ordenación por burbuja o <em>bubble sort</em>, por inserción, <em>merge sort</em> o <em>quicksort</em></a> cada uno con diferentes propiedades de complejidad o consumo de memoria. Normalmente no es necesario implementar estos algoritmos, sino que ya están implementados en las bibliotecas y en el caso de Java en las clases del JDK.</p>
 <p>El usar colecciones ordenadas por un orden es una funcionalidad común al implementar programas lo único que es necesario es utilizar la colección adecuada y únicamente crear una clase que implemente la interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a> que determina el orden entre dos elementos, aplicando la comparación a los elementos de la colección con el algoritmo de ordenación ser ordena la colección.</p>
 <div class="media">
 <figure>
-<p><img src="/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/images/bubble-sort.gif" width="300" height="200" alt="Algoritmo de ordenación bubble-sort" title="Algoritmo de ordenación bubble-sort" class="" loading="lazy">
-<img src="/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/images/merge-sort.gif" width="300" height="200" alt="Algoritmo de ordenación merge-sort" title="Algoritmo de ordenación merge-sort" class="" loading="lazy"></p>
+<p><img src="/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/images/bubble-sort.gif" width="2560" height="1440" alt="Algoritmo de ordenación bubble-sort" title="Algoritmo de ordenación bubble-sort" class="&#34; " loading="lazy">
+<img src="/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/images/merge-sort.gif" width="2560" height="1440" alt="Algoritmo de ordenación merge-sort" title="Algoritmo de ordenación merge-sort" class="&#34; " loading="lazy"></p>
 <figcaption>Algoritmo de ordenación bubble-sort y merge-sort</figcaption>
 </figure>
 </div>
@@ -414,7 +414,7 @@ un orden superior a <em>b</em>.</p>
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/05/el-patron-de-diseno-factory-ventajas-sobre-new-y-diferencias-con-builder/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="El patrón de diseño Factory, ventajas sobre new y diferencias con Builder" title="El patrón de diseño Factory, ventajas sobre new y diferencias con Builder" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="El patrón de diseño Factory, ventajas sobre new y diferencias con Builder" title="El patrón de diseño Factory, ventajas sobre new y diferencias con Builder" class="" loading="lazy">
                 <h3>El patrón de diseño Factory, ventajas sobre new y diferencias con Builder</h3>
                 </a>
                 
@@ -428,7 +428,7 @@ un orden superior a <em>b</em>.</p>
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/04/crear-de-forma-sencilla-un-cliente-de-un-servicio-rest-o-http-con-retrofit/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit" title="Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit" title="Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit" class="" loading="lazy">
                 <h3>Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit</h3>
                 </a>
                 
@@ -442,7 +442,7 @@ un orden superior a <em>b</em>.</p>
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/">
-                <img src="/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/image-2_hu3673d89bfe730e92bf67a0c97d5ad7b7_1128608_875x0_resize_q90_box.jpg" width="326" height="125" alt="Herramientas de reconocimiento de texto en imágenes con OCR" title="Herramientas de reconocimiento de texto en imágenes con OCR" class="" loading="lazy">
+                <img src="/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/image-2_hu3673d89bfe730e92bf67a0c97d5ad7b7_1128608_875x0_resize_q90_h2_box.webp" width="875" height="1208" alt="Herramientas de reconocimiento de texto en imágenes con OCR" title="Herramientas de reconocimiento de texto en imágenes con OCR" class="" loading="lazy">
                 <h3>Herramientas de reconocimiento de texto en imágenes con OCR</h3>
                 </a>
                 
@@ -456,7 +456,7 @@ un orden superior a <em>b</em>.</p>
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/04/las-clases-y-librerias-basicas-de-java-para-bases-de-datos-relacionales/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Las clases y librerías básicas de Java para bases de datos relacionales" title="Las clases y librerías básicas de Java para bases de datos relacionales" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Las clases y librerías básicas de Java para bases de datos relacionales" title="Las clases y librerías básicas de Java para bases de datos relacionales" class="" loading="lazy">
                 <h3>Las clases y librerías básicas de Java para bases de datos relacionales</h3>
                 </a>
                 
@@ -470,7 +470,7 @@ un orden superior a <em>b</em>.</p>
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/04/programas-basados-en-consola-con-java-usando-lanterna/">
-                <img src="/blog-bitix/2021/04/programas-basados-en-consola-con-java-usando-lanterna/images/lanterna_hu24edf9756fc7ba259961f103685e76b6_38126_875x0_resize_box_3.png" width="326" height="125" alt="Programas basados en consola con Java usando Lanterna" title="Programas basados en consola con Java usando Lanterna" class="" loading="lazy">
+                <img src="/blog-bitix/2021/04/programas-basados-en-consola-con-java-usando-lanterna/images/lanterna_hu24edf9756fc7ba259961f103685e76b6_38126_875x0_resize_q90_h2_box_3.webp" width="875" height="646" alt="Programas basados en consola con Java usando Lanterna" title="Programas basados en consola con Java usando Lanterna" class="" loading="lazy">
                 <h3>Programas basados en consola con Java usando Lanterna</h3>
                 </a>
                 
@@ -484,7 +484,7 @@ un orden superior a <em>b</em>.</p>
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/03/novedades-de-java-16/">
-                <img src="/blog-bitix/2021/03/novedades-de-java-16/images/java-16_hued80e256cc9250e83d3c3f558925622f_679086_875x0_resize_q90_box.jpg" width="326" height="125" alt="Novedades de Java 16" title="Novedades de Java 16" class="" loading="lazy">
+                <img src="/blog-bitix/2021/03/novedades-de-java-16/images/java-16_hued80e256cc9250e83d3c3f558925622f_679086_875x0_resize_q90_h2_box.webp" width="875" height="349" alt="Novedades de Java 16" title="Novedades de Java 16" class="" loading="lazy">
                 <h3>Novedades de Java 16</h3>
                 </a>
                 

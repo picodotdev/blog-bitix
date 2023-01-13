@@ -21,10 +21,10 @@
         <content type="html">
         <![CDATA[<p><strong>Ciertos servicios requieren que al hacer un despliegue el servicio continue funcionando. Para esto no es posible parar todas las instancias de un servicio a la vez, actualizarla y volverlas a iniciar porque durante este proceso se dejaría de prestar el servicio durante un corto periodo de tiempo en el mejor de los casos. Hay que hacer el despliegue de forma progresiva en las instancias. Algunas estrategias son <em>Rolling Update</em>, <em>Blue/Green</em> y <em>Canary</em>, el orquestador de servicios Nomad soporta y realiza de forma automatizada los despliegues usando una de estas estrategias.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp" class="" loading="false&#34;"></p>
 </div>
 <p>El ciclo de vida de una aplicación no consiste solo en desarrollarla, incluye también su puesta en producción o despliegue en un entorno de pruebas, pero también una vez la aplicación está desplegada en algún momento será necesario actualizarla con una nueva versión.</p>
 <p>Las aplicaciones monolíticas tienen otros problemas pero en el aspecto de despliegue es sencillo ya que solo hay una aplicación, basta con desplegar la nueva versión. En una aplicación con arquitectura de microservicios es un reto mayor debido a que hay múltiples aplicaciones.</p>
@@ -78,9 +78,9 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
 <p>El proceso de despliegue también se puede monitorizar desde la interfaz web que ofrece Nomad.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/images/nomad-rolling-update-before_hu67a332684efae6ed992319050f36f296_119290_2560x1440_fit_box_3.png" data-gallery="" title="Antes del proceso de despliegue rolling update en Nomad"><img src="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/images/nomad-rolling-update-before_hu67a332684efae6ed992319050f36f296_119290_300x200_fit_box_3.png" width="197" height="200" alt="Antes del proceso de despliegue rolling update en Nomad" title="Antes del proceso de despliegue rolling update en Nomad"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/images/nomad-rolling-update-while_hu1bb43ff17075cacd6588f52ea91a2b44_119731_2560x1440_fit_box_3.png" data-gallery="" title="Durante el proceso de despliegue rolling update en Nomad"><img src="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/images/nomad-rolling-update-while_hu1bb43ff17075cacd6588f52ea91a2b44_119731_300x200_fit_box_3.png" width="197" height="200" alt="Durante el proceso de despliegue rolling update en Nomad" title="Durante el proceso de despliegue rolling update en Nomad"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/images/nomad-rolling-update-after_hu07bde1516a5a8318da3a99b05cb30d02_122603_2560x1440_fit_box_3.png" data-gallery="" title="Después del proceso de despliegue rolling update en Nomad"><img src="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/images/nomad-rolling-update-after_hu07bde1516a5a8318da3a99b05cb30d02_122603_300x200_fit_box_3.png" width="197" height="200" alt="Después del proceso de despliegue rolling update en Nomad" title="Después del proceso de despliegue rolling update en Nomad"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/images/nomad-rolling-update-before_hu67a332684efae6ed992319050f36f296_119290_2560x1440_fit_box_3.png" data-gallery="" title="Antes del proceso de despliegue rolling update en Nomad"><img src="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/images/nomad-rolling-update-before_hu67a332684efae6ed992319050f36f296_119290_300x200_fit_box_3.png" width="197" height="200" alt="Antes del proceso de despliegue rolling update en Nomad" title="Antes del proceso de despliegue rolling update en Nomad" class="&#34; " loading="lazy"></a>
+<a href="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/images/nomad-rolling-update-while_hu1bb43ff17075cacd6588f52ea91a2b44_119731_2560x1440_fit_box_3.png" data-gallery="" title="Durante el proceso de despliegue rolling update en Nomad"><img src="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/images/nomad-rolling-update-while_hu1bb43ff17075cacd6588f52ea91a2b44_119731_300x200_fit_box_3.png" width="197" height="200" alt="Durante el proceso de despliegue rolling update en Nomad" title="Durante el proceso de despliegue rolling update en Nomad" class="&#34; " loading="lazy"></a>
+<a href="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/images/nomad-rolling-update-after_hu07bde1516a5a8318da3a99b05cb30d02_122603_2560x1440_fit_box_3.png" data-gallery="" title="Después del proceso de despliegue rolling update en Nomad"><img src="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/images/nomad-rolling-update-after_hu07bde1516a5a8318da3a99b05cb30d02_122603_300x200_fit_box_3.png" width="197" height="200" alt="Después del proceso de despliegue rolling update en Nomad" title="Después del proceso de despliegue rolling update en Nomad" class="&#34; " loading="lazy"></a></p>
 <figcaption>Progreso del despliegue rolling update en Nomad</figcaption>
 </figure>
 </div>
@@ -133,13 +133,13 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
         <content type="html">
         <![CDATA[<p><strong>En las aplicaciones basadas en microservicios dado el número de ellos y de instancias tienen han de gestionarse como si fuesen ganado en vez como si fuesen animales de compañía. Nomad es un orquestador de servicios que a diferencia de Docker Swarm permite gestionar servicios con otros sistemas de ejecución además de contenedores docker y a diferencia de Kubernetes es más sencillo.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="200" height="278" alt="HashiCorp Consul" title="HashiCorp Consul"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="200" height="278" alt="HashiCorp Consul" title="HashiCorp Consul" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp" class="" loading="false&#34;"></p>
 </div>
 <p>En las arquitecturas de aplicaciones basadas en microservicios cada microservicio o simplemente servicio es una aplicación distinta e independiente, son varias aplicaciones que hay que gestionar y desplegar de forma individual o de forma coordinada.</p>
 <p>Dado su número hay que automatizar todas las tareas para tratar de conseguir la menor intervención manual, ningún proceso manual si es posible. Para que no sean inmanejables han de tratarse como ganado de forma masiva en vez de como animales de compañía que requieran atención individual para continuar generando valor en un proyecto con el tiempo disponible en vez de dedicarlo a tareas que no lo aportan.</p>
@@ -172,9 +172,9 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
 <p>También poseen una interfaz web integrada en la que consultar la misma información, la de Consul está en el puerto <em>8500</em> y la de Nomad en el <em>4646</em> donde ver el estado de los <em>jobs</em> y el progreso de los despliegues.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/images/consul_hu04dfd0a784258ffab8de29ae08a6fa53_49981_2560x1440_fit_box_3.png" data-gallery="" title="Consul"><img src="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/images/consul_hu04dfd0a784258ffab8de29ae08a6fa53_49981_200x150_fit_box_3.png" width="200" height="99" alt="Consul" title="Consul"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/images/nomad-1_hu543e80f6165a80d0eda612b240feaa6b_34563_2560x1440_fit_box_3.png" data-gallery="" title="Nomad"><img src="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/images/nomad-1_hu543e80f6165a80d0eda612b240feaa6b_34563_200x150_fit_box_3.png" width="200" height="99" alt="Nomad" title="Nomad"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/images/nomad-2_hu78cafc3dc4ae78de08bf9c5133a990a6_67847_2560x1440_fit_box_3.png" data-gallery="" title="Nomad"><img src="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/images/nomad-2_hu78cafc3dc4ae78de08bf9c5133a990a6_67847_200x150_fit_box_3.png" width="200" height="136" alt="Nomad" title="Nomad"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/images/consul_hu04dfd0a784258ffab8de29ae08a6fa53_49981_2560x1440_fit_box_3.png" data-gallery="" title="Consul"><img src="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/images/consul_hu04dfd0a784258ffab8de29ae08a6fa53_49981_200x150_fit_box_3.png" width="200" height="99" alt="Consul" title="Consul" class="&#34; " loading="lazy"></a>
+<a href="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/images/nomad-1_hu543e80f6165a80d0eda612b240feaa6b_34563_2560x1440_fit_box_3.png" data-gallery="" title="Nomad"><img src="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/images/nomad-1_hu543e80f6165a80d0eda612b240feaa6b_34563_200x150_fit_box_3.png" width="200" height="99" alt="Nomad" title="Nomad" class="&#34; " loading="lazy"></a>
+<a href="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/images/nomad-2_hu78cafc3dc4ae78de08bf9c5133a990a6_67847_2560x1440_fit_box_3.png" data-gallery="" title="Nomad"><img src="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/images/nomad-2_hu78cafc3dc4ae78de08bf9c5133a990a6_67847_200x150_fit_box_3.png" width="200" height="136" alt="Nomad" title="Nomad" class="&#34; " loading="lazy"></a></p>
 <figcaption>Interfaces web de Consul y Nomad</figcaption>
 </figure>
 </div>
@@ -213,13 +213,13 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/tomcat.svg" width="200" height="133" alt="Tomcat" title="Tomcat"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/tomcat.svg" width="200" height="133" alt="Tomcat" title="Tomcat" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring-boot.svg" width="200" height="166" alt="Spring Boot" title="Spring Boot"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring-boot.svg" width="200" height="166" alt="Spring Boot" title="Spring Boot" class="" loading="false&#34;"></p>
 </div>
 <p>El protocolo HTTP es un protocolo sin estado que quiere decir que entre las peticiones no se comparte estado ni se recuerda ningún dato. Por otro lado las <em>cookies</em> es pequeño conjunto de datos que son almacenados en el cliente y son enviados en cada petición que se hace a un sitio web, cada sitio web mantiene su propia colección de <em>cookies</em>, dos sitios distintos no comparten sus <em>cookies</em>. Para mantener estado entre dos peticiones se hace uso de las <em>cookies</em>.</p>
 <p>En Java los servidores web envían al cliente una <em>cookie</em> con simplemente un identificativo de la sesión, el estado se suele mantener en el servidor en memoria, en almacenamiento de disco o <a href="https://picodotdev.github.io/blog-bitix/2015/03/datos-de-sesion-externalizados-con-spring-session/">persistido en una base de datos como Redis</a>. El identificativo de la sesión por defecto usando un contenedor de <em>servlets</em> como <a href="https://tomcat.apache.org/">Tomcat</a> tiene una longitud de 16 bytes que codificados en hexadecimal da lugar a 32 caracteres o 128 bits. Para aumentar la seguridad por si alguien intenta adivinar el identificativo de cualquier usuario que tenga sesión iniciada por fuerza bruta de casualidad es posible aumentar el número de caracteres para identificar la <em>cookie</em> de sesión. La clase de la API que lo permite en Tomcat es <a href="https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html">Manager</a>.</p>
@@ -247,7 +247,7 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
 </div>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/images/spring-session_hu753693623e6b310d1a7f380031e464c8_72218_2560x1440_fit_box_3.png" data-gallery="" title="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales"><img src="https://picodotdev.github.io/blog-bitix/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/images/spring-session_hu753693623e6b310d1a7f380031e464c8_72218_600x450_fit_box_3.png" width="600" height="229" alt="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales" title="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/images/spring-session_hu753693623e6b310d1a7f380031e464c8_72218_2560x1440_fit_box_3.png" data-gallery="" title="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales"><img src="https://picodotdev.github.io/blog-bitix/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/images/spring-session_hu753693623e6b310d1a7f380031e464c8_72218_600x450_fit_box_3.png" width="600" height="229" alt="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales" title="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales" class="&#34; " loading="lazy"></a></p>
 <figcaption>Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales</figcaption>
 </figure>
 </div>
@@ -295,10 +295,10 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
         <content type="html">
         <![CDATA[<p><strong>Los microservicios son independientes pero se llaman unos a otros, suele ser muy útil para tareas de depuración y de visibilidad de una petición disponer de la traza completa de una petición a lo largo de las llamadas entre varios microservicios. Spring Cloud Sleuth proporciona la infraestructura para que las peticiones salientes envíen un identificativo de correlación de la petición global y para las peticiones entrantes relacionarlo con la petición global.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>En una aplicación distribuida con varios microservicios es imprescindible tener la configuración de forma centralizada que cada microservicio obtiene al iniciarse y disponer de registro y descubrimiento para que los servicios al iniciarse, terminarse, actualizarse o por un fallo se registren o desregistren y obtengan la ubicación de las dependencias que necesitan.</p>
 <p>Otra de <a href="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/">las funcionalidades esenciales en una aplicación distribuida</a> es la trazabilidad de una petición, desde que entra por el <em>API gateway</em> pasando por las diferentes peticiones que hacen los microservicios por la red o envío de mensajes. Es necesaria la funcionalidad que relacione las trazas de todos los servicios para depuración o consulta en un futuro para dar visibilidad a las acciones que se realizan en el sistema.</p>
@@ -381,7 +381,7 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Con la <a href="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/">introducción de los <em>generics</em> en el lenguaje Java</a> en la versión de Java 5 se añadió validación de tipos a por ejemplo las colecciones, y entre ellos los elementos <em>wildcard</em> definidos con un <em>?</em>. Una lista definida como <em>List&lt;?&gt;</em> se considera una lista de elementos de un tipo desconocido, todas las colecciones pre-java5 se consideran a partir de Java 5 de forma efectiva como <em>List&lt;?&gt;</em> o <em>List&lt;? extends Object&gt;</em> a partir de Java 5.</p>
 <p>El siguiente código produce un error de compilación con el mensaje <em>capture of</em> ya que el compilador no puede validar que el tipo que se inserta en la lista, <em>Object</em>, como primer elemento si es compatible en tiempo de ejecución con el tipo de elementos que tiene la lista:</p>
@@ -442,10 +442,10 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Hace ya unos años escribí un <a href="https://picodotdev.github.io/blog-bitix/2015/08/implementacion-de-maquina-de-estados-finita-fsm-con-java-8/">ejemplo y un artículo con una implementación propia de una máquina de estado en Java</a>, para algún caso muy básico puede ser suficiente pero para algo serio no es la opción a elegir. Pasado un tiempo de ese ejemplo y artículo descubrí uno de los muchos proyectos de <a href="https://spring.io/">Spring</a> útiles para una aplicación, para las necesidades más habítuales tiene un proyecto que lo proporciona y para las menos habituales es también posible que la proporcione como en el caso del proyecto <a href="https://projects.spring.io/spring-statemachine/">Spring Statemachine</a> que precisamente tiene el mismo objetivo de implementar una máquina de estados cubriendo muchos casos de uso.</p>
 <p>El uso de una máquina de estados permite modelar un proceso con cierta complejidad. Puede ser el ciclo de vida de una compra, un envío, un proceso documental, financiero, &hellip; cualquiera en el que intervengan estados, transiciones entre esos estados y realización de acciones necesarias para proporcionar la funcionalidad deseada.</p>
@@ -454,7 +454,7 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
 <p>En el ejemplo he definido el siguiente grafo de estados y transiciones que contiene estado inicial, <em>choice</em>, <em>fork</em>, <em>join</em>, jerarquía de estados con en el estado <em>Tasks</em> y un estado final. Una selección completa del conjunto de tipos de estados. En este caso las flechas van únicamente en una dirección pero perfectamente el flujo podría tener transiciones que volviesen a estados anteriores creando ciclos.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/images/graph_hue3316206d4ba6e494d0821f7656ed998_24142_2560x1440_fit_box_3.png" data-gallery="" title="Grafo de la máquina de estados"><img src="https://picodotdev.github.io/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/images/graph_hue3316206d4ba6e494d0821f7656ed998_24142_600x450_fit_box_3.png" width="600" height="99" alt="Grafo de la máquina de estados" title="Grafo de la máquina de estados"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/images/graph_hue3316206d4ba6e494d0821f7656ed998_24142_2560x1440_fit_box_3.png" data-gallery="" title="Grafo de la máquina de estados"><img src="https://picodotdev.github.io/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/images/graph_hue3316206d4ba6e494d0821f7656ed998_24142_600x450_fit_box_3.png" width="600" height="99" alt="Grafo de la máquina de estados" title="Grafo de la máquina de estados" class="&#34; " loading="lazy"></a></p>
 <figcaption>Grafo de la máquina de estados</figcaption>
 </figure>
 </div>
@@ -576,7 +576,7 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Algunas aplicaciones en su salida en la terminal muestran una barra de progreso para la cual necesitan utilizar la secuencia de escape de la terminal o el caracter de carro para posicionar el cursor al inicio de la línea. En algunos casos incluso se muestran varias barras de progreso. Estos son los casos de los gestores de paquetes de <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> como <em>pacman</em> al realizar una actualización del sistema o de <a href="https://gradle.org/">Gradle</a> al descargar las dependencias.</p>
 <p>Con las <a href="http://www.termsys.demon.co.uk/vtansi.htm">secuencias de escape</a> se pueden cambiar los colores de los caracteres tanto del propio caracter como el color de fondo. Otras aplicaciones como el reproductor de música <a href="https://cmus.github.io/">cmus</a> muestran en la terminal una interfaz basada en texto con un barra de estado y varios paneles con la lista de las canciones del tamaño que tenga la terminal. Para esto es necesario conocer cuál es el tamaño de la terminal de columnas a lo ancho y de filas a lo alto.</p>
@@ -648,10 +648,10 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Validar los datos es importante para una aplicación pero no es suficiente para crear una aplicación, es más, para crear una aplicación segura es más importante codificar correctamente los datos emitidos por la aplicación. Los ataques XSS se producen precisamente por no codificar correctamente los datos emitidos provenientes de una fuente no confiable. Una fuente no confiable puede ser un parámetro en una aplicación web pero también puede ser cualquier otro dato que incluya una petición HTTP como una cabecera.</p>
 <p>El siguiente código de un archivo JSP que obtiene un parámetro de la petición y lo emite en la salida permite a un usuario malicioso insertar código en la página web, si el dato que se envía es el contenido de <em>xss.data</em> y las <em>cookies</em> no se crearon con las cabeceras <em>httponly</em> el usuario malicioso puede obtener acceso a la sesión del usuario en el sitio web y es un grave fallo de seguridad. En este caso solo se emplea un <em>alert</em> pero el código podría ser más elaborado y realizar una petición a una URL en la que el usuario malicioso reciba los datos de las <em>cookies</em> de sesión.</p>
@@ -677,8 +677,8 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
 <p>En este caso al cargar la página en el navegador se muestra un mensaje <em>alert</em> con una ventana emergente pero si el usuario malicioso enviase los datos de las <em>cookies</em> a una URL suya el usuario ni siquiera sería consciente de que le han robado la sesión. Y este fallo de seguridad se produce simplemente por cargar una página de una aplicación insegura por XSS.</p>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss_hua6bfdad53ee8266338466bfb56ab4002_13723_2560x1440_fit_box_3.png" data-gallery="" title="XSS"><img src="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss_hua6bfdad53ee8266338466bfb56ab4002_13723_300x200_fit_box_3.png" width="300" height="186" alt="XSS" title="XSS"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss-user_hu94eb1866d4b75191418615173ede475a_10907_2560x1440_fit_box_3.png" data-gallery="" title="XSS"><img src="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss-user_hu94eb1866d4b75191418615173ede475a_10907_300x200_fit_box_3.png" width="300" height="186" alt="XSS" title="XSS"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss_hua6bfdad53ee8266338466bfb56ab4002_13723_2560x1440_fit_box_3.png" data-gallery="" title="XSS"><img src="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss_hua6bfdad53ee8266338466bfb56ab4002_13723_300x200_fit_box_3.png" width="300" height="186" alt="XSS" title="XSS" class="&#34; " loading="lazy"></a>
+<a href="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss-user_hu94eb1866d4b75191418615173ede475a_10907_2560x1440_fit_box_3.png" data-gallery="" title="XSS"><img src="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss-user_hu94eb1866d4b75191418615173ede475a_10907_300x200_fit_box_3.png" width="300" height="186" alt="XSS" title="XSS" class="&#34; " loading="lazy"></a></p>
 <figcaption>XSS</figcaption>
 </figure>
 </div>
@@ -730,7 +730,7 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>El 19 de marzo del 2019 se publicaba la versión Java 12 siguiendo el calendario de lanzar una nueva versión cada seis meses incorporando nuevas funcionalidades de forma incremental. La versión 12 no es una versión con soporte extendido y dejará de tener actualizaciones cuando se publique la siguiente versión. La primera versión LTS con la funcionalidad de módulos es la 11 y la recomendada para proyectos de larga duración o bajo mantenimiento, la siguiente LTS será la versión 17 que según lo planificado se publicará en septiembre de 2021 después de tres años.</p>
 <div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
@@ -816,7 +816,7 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Los <em>streams</em> representan un flujo de elementos producidos por un productor y consumidos por uno o más consumidores. Para procesar los elementos del <em>stream</em> se pueden emplear dos modelos, el modelo <em>push</em> donde el productor produce elementos para el consumidor que es avisado cuando hay un nuevo elemento disponible y el modelo <em>pull</em> en el que es el consumidor el que solicita al productor nuevos elementos que los genera bajo demanda. Ambos modelos presentan problemas cuando el productor y el consumidor no funcionan a la misma velocidad de elementos producidos o procesados. La solución es proporcionar un <em>stream</em> que se adapta a la velocidad de ambos. Los <em>reactive streams</em> son empleados cuando los elementos son producidos y consumidos en tiempo real como en sistemas de mensajes o peticiones HTTP en vez de un flujo constante como un dispositivo de almacenamiento.</p>
 <p>Una estrategia es conocida como <em>backpressure</em> que consiste en que el suscriptor notifica al productor cuántos elementos puede procesar de modo que el productor solo envía el número de elementos solicitados. La implementación de la solución son los <em>reactive stream</em> que proporcionan un mecanismo estándar asíncrono para el <em>stream</em> con <em>backpressure</em>. Estos evitan que el productor se bloquee por no poder entregarlos al ser rápido produciendo elementos o el suscriptor tenga un <em>buffer</em> grande o descarte algunos elementos por ser lento al consumirlos o se bloquee esperando nuevos elementos si es rápido consumiéndolos.</p>
@@ -866,7 +866,7 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Entre las cosas básicas a tener en cuenta en una aplicación que maneja fechas está en guardarlas en la zona horaria UTC que no sufre de cambios por zona horaria de verano o invierno, cambian más habitualmente de lo que parece e incluso por temas políticos.</p>
 <ul>
@@ -902,10 +902,10 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/javascript.svg" width="200" height="200" alt="JavaScript" title="JavaScript"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/javascript.svg" width="200" height="200" alt="JavaScript" title="JavaScript" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML" class="" loading="false&#34;"></p>
 </div>
 <p>En la rapidez con la que evolucionan las tecnologías una tendencia es el usar componentes en el lado del cliente y en los navegadores de una aplicación o página web. Los componentes son muy útiles ya que siguen los principios de encapsulación deseables una la programación que hace que un componente oculte los detalles del funcionamiento interno. Esta encapsulación hace que su funcionamiento interno sea más fácilmente entendible, por otro lado son reutilizables conociendo únicamente la interfaz que exponen y componer otros más complejos con otros más simples.</p>
 <p>Han surgido varias librerías en JavaScript para desarrollar componentes en el lado del cliente, una de las primeras es <a href="https://angular.io/">Angular</a>, otra <a href="https://reactjs.org/">React</a> y otra es <a href="https://vuejs.org/">Vue</a> pero el organismo W3C ha definido un estándar para desarrollar componentes, que los navegadores han de implementar. El estándar se llama <a href="https://www.webcomponents.org/">Web Components</a> está formado por varias especificaciones.</p>
@@ -946,8 +946,8 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
 </div>
 <div class="media">
 <figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2019/03/componentes-en-el-cliente-con-web-components-usando-javascript-html-y-css/images/web-components-1_hu8fb888b13a4bb906e6526f7a4beeeb1e_96182_2560x1440_fit_box_3.png" data-gallery="" title="Web Components"><img src="https://picodotdev.github.io/blog-bitix/2019/03/componentes-en-el-cliente-con-web-components-usando-javascript-html-y-css/images/web-components-1_hu8fb888b13a4bb906e6526f7a4beeeb1e_96182_300x200_fit_box_3.png" width="300" height="180" alt="Web Components" title="Web Components"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2019/03/componentes-en-el-cliente-con-web-components-usando-javascript-html-y-css/images/web-components-2_hu23f8db5589e2072feeeca426fc744e65_100067_2560x1440_fit_box_3.png" data-gallery="" title="Eventos de ciclo de vida Web Components"><img src="https://picodotdev.github.io/blog-bitix/2019/03/componentes-en-el-cliente-con-web-components-usando-javascript-html-y-css/images/web-components-2_hu23f8db5589e2072feeeca426fc744e65_100067_300x200_fit_box_3.png" width="300" height="197" alt="Eventos de ciclo de vida Web Components" title="Eventos de ciclo de vida Web Components"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/03/componentes-en-el-cliente-con-web-components-usando-javascript-html-y-css/images/web-components-1_hu8fb888b13a4bb906e6526f7a4beeeb1e_96182_2560x1440_fit_box_3.png" data-gallery="" title="Web Components"><img src="https://picodotdev.github.io/blog-bitix/2019/03/componentes-en-el-cliente-con-web-components-usando-javascript-html-y-css/images/web-components-1_hu8fb888b13a4bb906e6526f7a4beeeb1e_96182_300x200_fit_box_3.png" width="300" height="180" alt="Web Components" title="Web Components" class="&#34; " loading="lazy"></a>
+<a href="https://picodotdev.github.io/blog-bitix/2019/03/componentes-en-el-cliente-con-web-components-usando-javascript-html-y-css/images/web-components-2_hu23f8db5589e2072feeeca426fc744e65_100067_2560x1440_fit_box_3.png" data-gallery="" title="Eventos de ciclo de vida Web Components"><img src="https://picodotdev.github.io/blog-bitix/2019/03/componentes-en-el-cliente-con-web-components-usando-javascript-html-y-css/images/web-components-2_hu23f8db5589e2072feeeca426fc744e65_100067_300x200_fit_box_3.png" width="300" height="197" alt="Eventos de ciclo de vida Web Components" title="Eventos de ciclo de vida Web Components" class="&#34; " loading="lazy"></a></p>
 <figcaption>Etiquetado y eventos de varios Web Components</figcaption>
 </figure>
 </div>
@@ -989,7 +989,7 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>En la <a href="https://docs.oracle.com/en/java/javase/11/docs/api/index.html">API de Java</a> hay un conjunto amplio de <a href="https://picodotdev.github.io/blog-bitix/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/">estructuras de datos de diferentes tipos para guardar información</a> de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html">API de colecciones</a>. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios <em>threads</em> hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes.</p>
 <p>La interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html">Collection</a> es implementada por varias interfaces y clases <em>ArrayList</em>, <em>HashSet</em>, <em>List</em>, <em>Queue</em>, <em>Set</em>, <em>SortedSet</em>, <em>Stack</em>, <em>TreeSet</em> y algunas otras, por otro lado está la interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a> para estructuras clave-valor. Las colecciones que mantienen un orden en sus elementos heredan de la interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a> que posee métodos con operaciones basadas en un índice como obtener, insertar o eliminar un elemento en una determinada posición. Los <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html">Set</a> no permiten elementos que sean iguales según determine el método <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals%28java.lang.Object%29">equals</a> del objeto y los presentes en la colección. Los <em>Map</em> asocian una clave a cada objeto que se utiliza para realizar operaciones en la colección.</p>
@@ -1018,7 +1018,7 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Los programas en su funcionamiento manejan información y esta se guarda en algún tipo de estructura adecuada según el tipo de uso de esa información, ya sea para lectura al recuperar datos y escritura par insertar nuevos datos. En Java hay dos interfaces que el resto de colecciones implementa, una interfaz es <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html">Collection</a> y la otra es <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a>, estas en su contrato define una serie de métodos que las implementaciones deben proporcionar.</p>
 <p><em>Collection</em> tiene métodos para saber si un determinado elementos está en la colección con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#contains%28java.lang.Object%29">contains</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#containsAll%28java.util.Collection%29">containsAll</a> basándose en el método <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals%28java.lang.Object%29">equals</a>, iterar los elementos de la colección con iterator, desde Java 8 convertir la colección en un <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/Stream.html">Stream</a>, añadir elementos con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#add%28E%29">add</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#addAll%28java.util.Collection%29">addAll</a>, eliminar elementos con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#remove%28java.lang.Object%29">remove</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#removeAll%28java.util.Collection%29">removeAll</a>, comprobar si la colección está vacía con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#isEmpty%28%29">isEmpty</a>, vaciar la colección con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#clear%28%29">clear</a>, obtener el número de elementos con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#size%28%29">size</a> y algunos pocos métodos más.</p>
@@ -1058,7 +1058,7 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Las expresiones regulares son un gran invento y muy útil para comprobar que una cadena cumple el patrón definido en la expresión regular, hay coincidencias en partes de la cadena y para reemplazar coincidencias. Son muy potentes para realizar estas tareas pero al mismo tiempo pueden volverse en cierta medida complicadas.</p>
 <p>Una de las funcionalidades que soportan las cadenas es búsqueda hacia delante o <em>lookahead</em> y búsqueda hacia atrás o <em>lookbehind</em>. La primera permite examinar los siguientes caracteres de la cadena analizada y la segunda los caracteres pasados.</p>

@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Servicios con persistencia en el orquestador de microservicios Nomad">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2019/04/servicios-con-persistencia-en-el-orquestador-de-microservicios-nomad/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hashicorp-nomad-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hashicorp-nomad-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Los servicios que necesitan almacenar datos como las bases de datos o un sistema de archivos tienen más restricciones que los servicios sin estado por la necesidad de tener acceso a esos datos. Esto hace que los contenedores puedan no tener tanta libertad para iniciarse en cualquier nodo. En Nomad una estrategia es imponer ciertas restricciones a los servicios que almacenen estado para que solo se puedan iniciar en el nodo que donde estén almacenados. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hashicorp-nomad-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hashicorp-nomad-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Servicios con persistencia en el orquestador de microservicios Nomad">
@@ -54,7 +54,7 @@
     "headline": "Servicios con persistencia en el orquestador de microservicios Nomad",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hashicorp-nomad-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hashicorp-nomad-750.webp"
         
       },
     "datePublished": "2019-04-26T19:00:00+02:00",
@@ -262,10 +262,10 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp" class="" loading="false&#34;"></p>
 </div>
 <p>Algunos servicios no necesitan almacenar ningún estado porque no lo necesitan o porque el estado se mantiene en otro servicio. Que un servicio no necesite mantener estado es bueno porque de esta manera el servicio se puede escalar al número de instancias adecuadas para prestar el servicio, también porque si falla una instancia la petición puede ser reenviada a otra instancia, una instancia que falla puede ser reemplazada sin problema en otro <em>host</em>. Sin embargo, hay otro tipo de instancias que si almacenan estado como las bases de datos ya sea <a href="https://www.postgresql.org/">PostgreSQL</a>, <a href="https://www.mysql.com/">MySQL</a>, <a href="https://redis.io/">Redis</a>, <a href="https://www.mongodb.com/">MongoDB</a>, otra o simplemente archivos en el sistema de archivos.</p>
 <p>Las instancias que tienen estado no son tan fáciles de reemplazar dado que los datos son necesarios para su funcionamiento, una instancia de un servicio con estado como no puede iniciarse en otro nodo libremente solo se puede iniciar en el nodo que contenga los datos. Eso o cuando el servicio se inicia en otro nodo los datos son trasladados o por algún mecanismo transparente a los servicios están disponibles en el nuevo nodo.</p>

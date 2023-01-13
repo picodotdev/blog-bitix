@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Crear un bean según el contexto donde se inyecte con Spring">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2022/12/crear-un-bean-segun-el-contexto-donde-se-inyecte-con-spring/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Spring permite inyectar un bean construido utilizando información del contexto o clase donde se inyecte. Una caso de uso para esta funcionalidad es eliminar la habitual forma estática de inyectar las referencias a un Logger de una librería de logging, la inyección según el contexto permite proporciona el colaborador del Logger no como una variable estática sino en el constructor igual que otros colaboradores. Los beneficios son dos, se elimina una referencia estática que facilita los teses unitarios y se elimina un poco de código repetido en cada clase donde se use un Logger. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Crear un bean según el contexto donde se inyecte con Spring">
@@ -54,7 +54,7 @@
     "headline": "Crear un bean según el contexto donde se inyecte con Spring",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.webp"
         
       },
     "datePublished": "2022-12-22T19:00:00+02:00",
@@ -263,7 +263,7 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
 </div>
 <p>La opción habitual para inyectar una instancia de Logger con la que emitir trazas es hacerlo mediante un método estático y guardar la referencia en una propiedad estática. Esta es incluso la forma recomendada en el ejemplo de varias de las librerías de Logging. Cada clase donde se quiera añadir Logging requiere añadir el mismo código. Las propiedades estáticas son algo a evitar para evitar algunos problemas como la mayor dificultad de realizar pruebas unitarias.</p>
 <p>En el artículo <a href="https://picodotdev.github.io/blog-bitix/2022/07/opciones-de-arquitectura-para-emitir-trazas-en-una-aplicacion-java/">Opciones de arquitectura para emitir trazas en una aplicación Java</a> mostraba varias opciones de como inyectar el Logger en la clase que quiera emitir trazas. Una la habitual de forma estática mostrada a continuación que es la que se suele mostrar como ejemplo de código en las propias librerías de Logging.</p>
@@ -362,7 +362,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Obtener el ancho y alto, escalar y convertir a otro formato imágenes con Java" title="Obtener el ancho y alto, escalar y convertir a otro formato imágenes con Java" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Obtener el ancho y alto, escalar y convertir a otro formato imágenes con Java" title="Obtener el ancho y alto, escalar y convertir a otro formato imágenes con Java" class="" loading="lazy">
                 <h3>Obtener el ancho y alto, escalar y convertir a otro formato imágenes con Java</h3>
                 </a>
                 
@@ -376,7 +376,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2022/09/novedades-de-java-19/">
-                <img src="/blog-bitix/2022/09/novedades-de-java-19/images/java-19_hu4e24d6abd81a4bf73658726f4592c63a_112951_875x0_resize_q90_box.jpg" width="326" height="125" alt="Novedades de Java 19" title="Novedades de Java 19" class="" loading="lazy">
+                <img src="/blog-bitix/2022/09/novedades-de-java-19/images/java-19_hu4e24d6abd81a4bf73658726f4592c63a_112951_875x0_resize_q90_h2_box.webp" width="875" height="457" alt="Novedades de Java 19" title="Novedades de Java 19" class="" loading="lazy">
                 <h3>Novedades de Java 19</h3>
                 </a>
                 
@@ -390,7 +390,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2022/09/como-refrescar-el-access-token-de-un-cliente-oauth-cuando-caduca/">
-                <img src="/blog-bitix/assets/images/logotypes/oauth.svg" width="326" height="125" alt="Cómo refrescar el access token de un cliente OAuth cuando caduca" title="Cómo refrescar el access token de un cliente OAuth cuando caduca" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/oauth.svg" width="875" alt="Cómo refrescar el access token de un cliente OAuth cuando caduca" title="Cómo refrescar el access token de un cliente OAuth cuando caduca" class="" loading="lazy">
                 <h3>Cómo refrescar el access token de un cliente OAuth cuando caduca</h3>
                 </a>
                 
@@ -404,7 +404,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2022/08/ejemplo-de-patron-builder-para-las-clases-record-de-java/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Ejemplo de patrón Builder para las clases Record de Java" title="Ejemplo de patrón Builder para las clases Record de Java" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Ejemplo de patrón Builder para las clases Record de Java" title="Ejemplo de patrón Builder para las clases Record de Java" class="" loading="lazy">
                 <h3>Ejemplo de patrón Builder para las clases Record de Java</h3>
                 </a>
                 
@@ -418,7 +418,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2022/07/opciones-de-arquitectura-para-emitir-trazas-en-una-aplicacion-java/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Opciones de arquitectura para emitir trazas en una aplicación Java" title="Opciones de arquitectura para emitir trazas en una aplicación Java" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Opciones de arquitectura para emitir trazas en una aplicación Java" title="Opciones de arquitectura para emitir trazas en una aplicación Java" class="" loading="lazy">
                 <h3>Opciones de arquitectura para emitir trazas en una aplicación Java</h3>
                 </a>
                 
@@ -432,7 +432,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/">
-                <img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_huab49737b236e0ceb342763f3af53efc8_92906_875x0_resize_box_3.png" width="326" height="125" alt="Interfaz web para JMX con Hawtio" title="Interfaz web para JMX con Hawtio" class="" loading="lazy">
+                <img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_huab49737b236e0ceb342763f3af53efc8_92906_875x0_resize_q90_h2_box_3.webp" width="875" height="490" alt="Interfaz web para JMX con Hawtio" title="Interfaz web para JMX con Hawtio" class="" loading="lazy">
                 <h3>Interfaz web para JMX con Hawtio</h3>
                 </a>
                 

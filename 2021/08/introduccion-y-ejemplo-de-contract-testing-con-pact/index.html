@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Introducción y ejemplo de contract testing con Pact">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/08/introduccion-y-ejemplo-de-contract-testing-con-pact/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/pact-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/pact-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Al realizar un cambio en un API hay que ser consciente de que los cambios sean compatibles hacia atrás, de lo contrario algunos clientes de la API es probable que dejen de funcionar o tengan un comportamiento erróneo. Para asegurar que los cambios sean compatibles hacia atrás se realizan pruebas unitarias automatizadas de contrato, en Java una opción es Pact para pruebas de contrato de APIs REST. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/pact-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/pact-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Introducción y ejemplo de contract testing con Pact">
@@ -54,7 +54,7 @@
     "headline": "Introducción y ejemplo de contract testing con Pact",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/pact-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/pact-750.webp"
         
       },
     "datePublished": "2021-08-12T20:00:00+02:00",
@@ -263,10 +263,10 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/pact.svg" width="200" height="166" alt="Pact" title="Pact" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/pact.svg" width="200" height="166" alt="Pact" title="Pact" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Las aplicaciones que ofrecen una API establecen un contrato con los consumidores, los consumidores al usar la API crean una dependencia. Para que un cambio API sea compatible hacia atrás no debe requerir cambios en los consumidores, si el cambio en la API requiere cambios en los consumidores estos corren el riesgo de dejar de funcionar correctamente. Los cambios no compatibles hacia atrás son un problema ya que requieren coordinar el cambio con los consumidores, los desarrolladores de la API tienen control sobre el proveedor pero en algunos casos no sobre los consumidores que deben ser adaptados por sus propietarios.</p>
 <p>Idealmente todos los cambios deberían ser compatibles hacia atrás, sin embargo, en ocasiones no queda más alternativa que introducir un cambio no compatible. Para evitar el problema una opción es versionar la API de tal modo que los nuevos consumidores utilicen la nueva API y los consumidores de una versión anterior tengan un tiempo para adaptarse a la nueva API, durante un tiempo la API antigua y la nueva funcionan simultáneamente, pasado un tiempo y cuando los consumidores hayan pasado a usar la nueva API la versión antigua se elimina.</p>
@@ -298,7 +298,7 @@
 <p>Pact en la parte consumidor también hace las funciones de servidor sin embargo adicionalmente <a href="https://picodotdev.github.io/blog-bitix/2021/07/servidor-mock-para-imitar-peticiones-y-respuestas-de-servicios-http-con-wiremock/">el servidor <em>mock</em> de WireMock</a> permite guardar esas interacciones y realizar las pruebas para la parte productora. Esto permite detectar problemas de que un cambio introduzca problemas de incompatibilidad y poder probar de forma desacoplada el consumidor y productor.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2021/08/introduccion-y-ejemplo-de-contract-testing-con-pact/images/pact-summary_hu608f14cb4f6721a7d3618a9d2cbb1c9f_404885_2560x1440_fit_box_3.png" data-gallery="" title="Pruebas de contrato con Pact"><img src="/blog-bitix/2021/08/introduccion-y-ejemplo-de-contract-testing-con-pact/images/pact-summary_hu608f14cb4f6721a7d3618a9d2cbb1c9f_404885_650x450_fit_box_3.png" width="603" height="450" alt="Pruebas de contrato con Pact" title="Pruebas de contrato con Pact" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2021/08/introduccion-y-ejemplo-de-contract-testing-con-pact/images/pact-summary_hu608f14cb4f6721a7d3618a9d2cbb1c9f_404885_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Pruebas de contrato con Pact"><img src="/blog-bitix/2021/08/introduccion-y-ejemplo-de-contract-testing-con-pact/images/pact-summary_hu608f14cb4f6721a7d3618a9d2cbb1c9f_404885_650x450_fit_q90_h2_box_3.webp" width="603" height="450" alt="Pruebas de contrato con Pact" title="Pruebas de contrato con Pact" class="&#34; " loading="lazy"></a></p>
 <figcaption>Pruebas de contrato con Pact</figcaption>
 </figure>
 </div>
@@ -414,7 +414,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-camel.svg" width="326" height="125" alt="Integración de servicios y sistemas con Apache Camel" title="Integración de servicios y sistemas con Apache Camel" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-camel.svg" width="875" alt="Integración de servicios y sistemas con Apache Camel" title="Integración de servicios y sistemas con Apache Camel" class="" loading="lazy">
                 <h3>Integración de servicios y sistemas con Apache Camel</h3>
                 </a>
                 
@@ -428,7 +428,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/07/servidor-mock-para-imitar-peticiones-y-respuestas-de-servicios-http-con-wiremock/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Servidor mock para imitar peticiones y respuestas de servicios HTTP con WireMock" title="Servidor mock para imitar peticiones y respuestas de servicios HTTP con WireMock" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Servidor mock para imitar peticiones y respuestas de servicios HTTP con WireMock" title="Servidor mock para imitar peticiones y respuestas de servicios HTTP con WireMock" class="" loading="lazy">
                 <h3>Servidor mock para imitar peticiones y respuestas de servicios HTTP con WireMock</h3>
                 </a>
                 
@@ -442,7 +442,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/07/formas-de-generar-un-numero-aleatorio-en-un-rango-con-java/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Formas de generar un número aleatorio en un rango con Java" title="Formas de generar un número aleatorio en un rango con Java" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Formas de generar un número aleatorio en un rango con Java" title="Formas de generar un número aleatorio en un rango con Java" class="" loading="lazy">
                 <h3>Formas de generar un número aleatorio en un rango con Java</h3>
                 </a>
                 
@@ -456,7 +456,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/07/los-niveles-de-madurez-rest-ejemplo-con-hateoas-y-documentacion-con-swagger-de-un-servicio-con-spring-boot/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Los niveles de madurez REST, ejemplo con HATEOAS y documentación con Swagger de un servicio con Spring Boot" title="Los niveles de madurez REST, ejemplo con HATEOAS y documentación con Swagger de un servicio con Spring Boot" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Los niveles de madurez REST, ejemplo con HATEOAS y documentación con Swagger de un servicio con Spring Boot" title="Los niveles de madurez REST, ejemplo con HATEOAS y documentación con Swagger de un servicio con Spring Boot" class="" loading="lazy">
                 <h3>Los niveles de madurez REST, ejemplo con HATEOAS y documentación con Swagger de un servicio con Spring Boot</h3>
                 </a>
                 
@@ -470,7 +470,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/07/como-documentar-una-api-rest-con-swagger-implementada-con-spring-boot/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cómo documentar una API REST con Swagger implementada con Spring Boot" title="Cómo documentar una API REST con Swagger implementada con Spring Boot" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Cómo documentar una API REST con Swagger implementada con Spring Boot" title="Cómo documentar una API REST con Swagger implementada con Spring Boot" class="" loading="lazy">
                 <h3>Cómo documentar una API REST con Swagger implementada con Spring Boot</h3>
                 </a>
                 
@@ -484,7 +484,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/">
-                <img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu2efc0f38dfbbf639e271a8370cf93e6f_6602_875x0_resize_box_3.png" width="326" height="125" alt="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" title="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" class="" loading="lazy">
+                <img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu2efc0f38dfbbf639e271a8370cf93e6f_6602_875x0_resize_q90_h2_box_3.webp" width="875" height="292" alt="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" title="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" class="" loading="lazy">
                 <h3>Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java</h3>
                 </a>
                 

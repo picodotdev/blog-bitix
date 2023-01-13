@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/keycloak-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/keycloak-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Keycloak es un proveedor de OAuth que podemos usar en nuestras aplicaciones y servicios para proporcionar autenticación, autorización, SSO y también añadir seguridad a los servicios REST que desarrollemos como muestro en este artículo. OAuth tiene varias ventajas sobre usar autenticación Basic. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/keycloak-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/keycloak-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot">
@@ -54,7 +54,7 @@
     "headline": "Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/keycloak-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/keycloak-750.webp"
         
       },
     "datePublished": "2016-09-24T12:00:00+02:00",
@@ -265,10 +265,10 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/keycloak.svg" width="200" height="200" alt="Keycloak" title="Keycloak" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/keycloak.svg" width="200" height="200" alt="Keycloak" title="Keycloak" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Una forma de autenticar a los clientes de un servicio REST es usar <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">autenticación Basic</a> que se basa en añadir una cabecera en la petición en la que se incluye un usuario y contraseña. La autenticación Basic es sencilla pero para que sea segura ha de <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">usar el protocolo seguro HTTPS</a>.</p>
 <p>Sin embargo, presenta otros inconvenientes y es que si al servicio van a acceder varios clientes y a uno queremos impedirle el acceso no podremos hacerlo sin cambiar el usuario y contraseña lo que obligará al resto de clientes actualizarse para usar las nuevas credenciales si las comparten, que no siempre es posible sobre todo si esos clientes están fuera de nuestro control. Para solventar el segundo problema tenemos la posibilidad de securizar el servicio REST con el <a href="https://oauth.net/">protocolo OAuth</a>.</p>
@@ -299,8 +299,8 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-login_hu76931a158746f389f7dc72faead56018_114711_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de sesión en Keycloak"><img src="/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-login_hu76931a158746f389f7dc72faead56018_114711_300x200_fit_box_3.png" width="300" height="195" alt="Inicio de sesión en Keycloak" title="Inicio de sesión en Keycloak" class="" loading="lazy"></a>
-<a href="/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-clients_huf173f051969c7b522bafdbc6c824e948_121420_2560x1440_fit_box_3.png" data-gallery="" title="Clientes OAuth"><img src="/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-clients_huf173f051969c7b522bafdbc6c824e948_121420_300x200_fit_box_3.png" width="300" height="172" alt="Clientes OAuth" title="Clientes OAuth" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-login_hu76931a158746f389f7dc72faead56018_114711_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Inicio de sesión en Keycloak"><img src="/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-login_hu76931a158746f389f7dc72faead56018_114711_300x200_fit_q90_h2_box_3.webp" width="300" height="195" alt="Inicio de sesión en Keycloak" title="Inicio de sesión en Keycloak" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-clients_huf173f051969c7b522bafdbc6c824e948_121420_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Clientes OAuth"><img src="/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-clients_huf173f051969c7b522bafdbc6c824e948_121420_300x200_fit_q90_h2_box_3.webp" width="300" height="172" alt="Clientes OAuth" title="Clientes OAuth" class="&#34; " loading="lazy"></a></p>
 <figcaption>Administación de Keycloak</figcaption>
 </figure>
 </div>
@@ -409,7 +409,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Ejemplo de API REST en Java con JAX-RS y Spring Boot" title="Ejemplo de API REST en Java con JAX-RS y Spring Boot" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Ejemplo de API REST en Java con JAX-RS y Spring Boot" title="Ejemplo de API REST en Java con JAX-RS y Spring Boot" class="" loading="lazy">
                 <h3>Ejemplo de API REST en Java con JAX-RS y Spring Boot</h3>
                 </a>
                 
@@ -423,7 +423,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/08/por-que-guardar-las-fechas-en-utc-en-la-base-de-datos/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Por qué guardar las fechas en UTC en la base de datos" title="Por qué guardar las fechas en UTC en la base de datos" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Por qué guardar las fechas en UTC en la base de datos" title="Por qué guardar las fechas en UTC en la base de datos" class="" loading="lazy">
                 <h3>Por qué guardar las fechas en UTC en la base de datos</h3>
                 </a>
                 
@@ -437,7 +437,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/07/no-un-tag-jsp-o-un-tag-de-grails-no-es-equivalente-a-un-componente-de-tapestry/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="No, un tag JSP o un tag de Grails no es equivalente a un componente de Tapestry" title="No, un tag JSP o un tag de Grails no es equivalente a un componente de Tapestry" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="No, un tag JSP o un tag de Grails no es equivalente a un componente de Tapestry" title="No, un tag JSP o un tag de Grails no es equivalente a un componente de Tapestry" class="" loading="lazy">
                 <h3>No, un tag JSP o un tag de Grails no es equivalente a un componente de Tapestry</h3>
                 </a>
                 
@@ -451,7 +451,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/07/hemeroteca-9/">
-                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #9" title="Hemeroteca #9" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="875" alt="Hemeroteca #9" title="Hemeroteca #9" class="" loading="lazy">
                 <h3>Hemeroteca #9</h3>
                 </a>
                 
@@ -465,7 +465,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/05/ejemplo-sencillo-de-como-crear-un-excel-o-csv-en-java-con-apache-poi-y-opencsv/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Ejemplo sencillo de como crear un Excel o CSV en Java con Apache POI y OpenCSV" title="Ejemplo sencillo de como crear un Excel o CSV en Java con Apache POI y OpenCSV" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Ejemplo sencillo de como crear un Excel o CSV en Java con Apache POI y OpenCSV" title="Ejemplo sencillo de como crear un Excel o CSV en Java con Apache POI y OpenCSV" class="" loading="lazy">
                 <h3>Ejemplo sencillo de como crear un Excel o CSV en Java con Apache POI y OpenCSV</h3>
                 </a>
                 
@@ -479,7 +479,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/05/incluir-informacion-de-la-version-en-el-artefacto-distribuible-con-gradle/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Incluir información de la versión en el artefacto distribuible con Gradle" title="Incluir información de la versión en el artefacto distribuible con Gradle" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Incluir información de la versión en el artefacto distribuible con Gradle" title="Incluir información de la versión en el artefacto distribuible con Gradle" class="" loading="lazy">
                 <h3>Incluir información de la versión en el artefacto distribuible con Gradle</h3>
                 </a>
                 

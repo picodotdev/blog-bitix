@@ -29,7 +29,7 @@ Algunos servicios CDN están repartidos geográficamente por el mundo de modo qu
   <!-- Social -->
 <meta property="og:title" content="Servir recursos estáticos desde un CDN en Apache Tapestry">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2014/07/servir-recursos-estaticos-desde-un-cdn-en-apache-tapestry/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Un Content Delivery Network (CDN) no es más que un servidor, servidores o servicio dedicado a servir el contenido estático o actuar de cache para los clientes. Alguno de los motivos por los que podríamos querer usar un CDN en una aplicación son:
@@ -37,7 +37,7 @@ Algunos servicios CDN están repartidos geográficamente por el mundo de modo qu
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Servir recursos estáticos desde un CDN en Apache Tapestry">
@@ -57,7 +57,7 @@ Algunos servicios CDN están repartidos geográficamente por el mundo de modo qu
     "headline": "Servir recursos estáticos desde un CDN en Apache Tapestry",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.webp"
         
       },
     "datePublished": "2014-07-26T12:35:50+02:00",
@@ -261,7 +261,7 @@ Algunos servicios CDN están repartidos geográficamente por el mundo de modo qu
 
       
       <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false&#34;"></p>
 </div>
 <p>Un <a href="https://en.wikipedia.org/wiki/Content_delivery_network">Content Delivery Network</a> (CDN) no es más que un servidor, servidores o servicio dedicado a servir el contenido estático o actuar de cache para los clientes. Alguno de los motivos por los que podríamos querer usar un CDN en una aplicación son:</p>
 <ul>
@@ -272,7 +272,7 @@ Algunos servicios CDN están repartidos geográficamente por el mundo de modo qu
 <p><a href="http://aws.amazon.com/es/cloudfront/">Amazon ClodFront</a> es una de las opciones que podemos usar como CDN. En este artículo voy a comentar como tener un CDN para servir el contenido estático en una aplicación que emplee el <em>framework</em> de desarrollo de aplicaciones web en la plataforma Java <a href="http://tapestry.apache.org/">Apache Tapestry</a>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2014/07/servir-recursos-estaticos-desde-un-cdn-en-apache-tapestry/images/nocdn-cdn_hu4bda5a96fc7e95afc34c0e3629c45f5e_124009_2560x1440_fit_box_3.png" data-gallery="" title="Arquitectura no CDN (izquierda) contra arquitectura CDN (derecha)"><img src="/blog-bitix/2014/07/servir-recursos-estaticos-desde-un-cdn-en-apache-tapestry/images/nocdn-cdn_hu4bda5a96fc7e95afc34c0e3629c45f5e_124009_300x200_fit_box_3.png" width="300" height="129" alt="Arquitectura no CDN (izquierda) contra arquitectura CDN (derecha)" title="Arquitectura no CDN (izquierda) contra arquitectura CDN (derecha)" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2014/07/servir-recursos-estaticos-desde-un-cdn-en-apache-tapestry/images/nocdn-cdn_hu4bda5a96fc7e95afc34c0e3629c45f5e_124009_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Arquitectura no CDN (izquierda) contra arquitectura CDN (derecha)"><img src="/blog-bitix/2014/07/servir-recursos-estaticos-desde-un-cdn-en-apache-tapestry/images/nocdn-cdn_hu4bda5a96fc7e95afc34c0e3629c45f5e_124009_300x200_fit_q90_h2_box_3.webp" width="300" height="129" alt="Arquitectura no CDN (izquierda) contra arquitectura CDN (derecha)" title="Arquitectura no CDN (izquierda) contra arquitectura CDN (derecha)" class="&#34; " loading="lazy"></a></p>
 </figure>
 </div>
 <p>Para que el contenido estático se sirva del CDN debemos hacer que las URL de las imágenes y hojas de estilo se generen con la URL propia del CDN, al menos, deberemos cambiar el host de esas URL. No hay que hacer mucho más ya que CloudFront creo que se puede configurar para que cuando le lleguen las peticiones del contenido si no las tiene las delegue en la aplicación, una vez que las tiene cacheadas ya no necesita solicitarselas a la aplicación y las sirve él mismo.</p>
@@ -396,7 +396,7 @@ Algunos servicios CDN están repartidos geográficamente por el mundo de modo qu
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/07/anotacion-cached-de-apache-tapestry/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Anotación Cached de Apache Tapestry" title="Anotación Cached de Apache Tapestry" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Anotación Cached de Apache Tapestry" title="Anotación Cached de Apache Tapestry" class="" loading="lazy">
                 <h3>Anotación Cached de Apache Tapestry</h3>
                 </a>
                 
@@ -410,7 +410,7 @@ Algunos servicios CDN están repartidos geográficamente por el mundo de modo qu
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/07/plantillas-en-apache-tapestry/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Plantillas en Apache Tapestry" title="Plantillas en Apache Tapestry" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Plantillas en Apache Tapestry" title="Plantillas en Apache Tapestry" class="" loading="lazy">
                 <h3>Plantillas en Apache Tapestry</h3>
                 </a>
                 
@@ -424,7 +424,7 @@ Algunos servicios CDN están repartidos geográficamente por el mundo de modo qu
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Modelo «push» contra modelo «pull» en frameworks web" title="Modelo «push» contra modelo «pull» en frameworks web" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Modelo «push» contra modelo «pull» en frameworks web" title="Modelo «push» contra modelo «pull» en frameworks web" class="" loading="lazy">
                 <h3>Modelo «push» contra modelo «pull» en frameworks web</h3>
                 </a>
                 
@@ -438,7 +438,7 @@ Algunos servicios CDN están repartidos geográficamente por el mundo de modo qu
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/06/hemeroteca-5/">
-                <img src="/blog-bitix/assets/images/logotypes/octopress.png" width="326" height="125" alt="Hemeroteca #5" title="Hemeroteca #5" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/octopress.webp" width="875" alt="Hemeroteca #5" title="Hemeroteca #5" class="" loading="lazy">
                 <h3>Hemeroteca #5</h3>
                 </a>
                 
@@ -452,7 +452,7 @@ Algunos servicios CDN están repartidos geográficamente por el mundo de modo qu
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/06/ejecutar-apache-tapestry-en-el-servidor-de-aplicaciones-wildfly/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly" title="Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly" title="Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly" class="" loading="lazy">
                 <h3>Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly</h3>
                 </a>
                 
@@ -466,7 +466,7 @@ Algunos servicios CDN están repartidos geográficamente por el mundo de modo qu
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Presentación sobre Apache Tapestry" title="Presentación sobre Apache Tapestry" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Presentación sobre Apache Tapestry" title="Presentación sobre Apache Tapestry" class="" loading="lazy">
                 <h3>Presentación sobre Apache Tapestry</h3>
                 </a>
                 

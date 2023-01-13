@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Proxy para microservicios con Spring Cloud Netflix y Zuul">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2018/10/proxy-para-microservicios-con-spring-cloud-netflix-y-zuul/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Teniendo una buen número de microservicios con múltiples instancias ofreciendo cada uno una API y en una ubicación diferente para simplificar la visión de los que actúen clientes de los microservicios se puede utilizar un proxy. Con un proxy es posible centralizar todas las peticiones, que sea éste el encargado de conocer la ubicación de todas las instancias de los microservicios y de hacer la llamada allí donde se encuentre cada una de ellas. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Proxy para microservicios con Spring Cloud Netflix y Zuul">
@@ -54,7 +54,7 @@
     "headline": "Proxy para microservicios con Spring Cloud Netflix y Zuul",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.webp"
         
       },
     "datePublished": "2018-10-13T23:00:00+02:00",
@@ -255,10 +255,10 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Teniendo una buen número de microservicios con múltiples instancias ofreciendo cada uno una API y en una ubicación diferente para simplificar la visión de los que actúen clientes de los microservicios se puede utilizar un <em>proxy</em>. Con un <em>proxy</em> es posible centralizar todas las peticiones, que sea éste el encargado de conocer la ubicación de todas las instancias de los microservicios y de hacer la llamada allí donde se encuentre cada una de ellas.</p>
 <p>Entre las varias funcionalidades que proporcionar el proyecto <a href="https://cloud.spring.io/spring-cloud-netflix/">Spring Cloud Netflix</a> es esta de <em>proxy</em> mediante <a href="https://github.com/Netflix/zuul">Zuul</a>. Para hacer de <em>proxy</em> Zuul necesita tener una correspondencia entre URLs y servicios que realmente proporcionan la funcionalidad, una forma que tiene Zuul de conocer la ubicación de las instancias es utilizando el servicio de registro y descubrimiento <a href="https://github.com/Netflix/eureka">Eureka</a>. Además, Zuul como cliente de los microservicios posee la funcionalidad de <a href="https://github.com/Netflix/Hystrix">Hystrix</a> que implementa el patrón <em>circuit breaker</em> para tolerancia a fallos, <a href="https://github.com/Netflix/ribbon">Ribbon</a> para hacer balanceo de carga entre varias instancias de los microservicios a nivel de servidor además de reintentos cuando una instancia falla.</p>

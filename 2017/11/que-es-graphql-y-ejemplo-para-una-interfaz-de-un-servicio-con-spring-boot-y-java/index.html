@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Qué es GraphQL y ejemplo para una interfaz de un servicio con Spring Boot y Java">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2017/11/que-es-graphql-y-ejemplo-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="GraphQL es una forma alternativa a una interfaz REST para crear una interfaz de un servicio basado en la comunicación utilizando los protocolos web HTTP y JSON como formato de intercambio de datos. Tiene varias ventajas sobre REST al poder realizar varias consultas en una misma petición y devolviendo únicamente los datos que requiera el cliente. Es una especificación y hay una implementación para los lenguajes de programación más populares entre ellos Java. Este artículo es una introducción con un ejemplo completo que muestra cómo se hacen consultas y modificaciones en los datos. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Qué es GraphQL y ejemplo para una interfaz de un servicio con Spring Boot y Java">
@@ -54,7 +54,7 @@
     "headline": "Qué es GraphQL y ejemplo para una interfaz de un servicio con Spring Boot y Java",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.webp"
         
       },
     "datePublished": "2017-11-01T12:00:00+01:00",
@@ -264,7 +264,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
 </div>
 <p>Con anterioridad las aplicaciones que lo necesitaban ofrecían una interfaz como un servicio mediante <em>web services</em>, sin embargo, esta tecnología era complicada por usar XML y no de fácil utilización en clientes JavaScript. La evolución que a día de hoy sigue siendo mayoritaria son las interfaces <a href="https://es.wikipedia.org/wiki/Representational_State_Transfer">REST</a> que emplean la semántica de los verbos del protocolo HTTP para realizar operaciones de búsqueda, creación, modificación y eliminación y normalmente empleando JSON como formato para intercambiar los datos. Sin embargo, REST no está exento de algunos problemas como la necesidad de realizar varias peticiones a cada uno de los recursos que ofrece si se necesitan datos de varios de ellos, otro es que los datos ofrecidos por los servicios REST está prefijados en tiempo de desarrollo no adaptándose a lo que necesita el cliente. En cierta medida estas dos cosas se pueden implementar en la interfaz REST con algunos parámetros pero requiere codificarlo explícitamente.</p>
 <p>Más recientemente ha aparecido otra forma de implementar una interfaz de un servicio con <a href="https://graphql.org/">GraphQL</a> considerándose una <a href="https://www.howtographql.com/basics/1-graphql-is-the-better-rest/">alternativa mejor a REST</a> que solventa los dos problemas de las interfaces REST anteriores. REST ofrece en varios <em>endpoints</em> los recursos que pueden ser accedidos mediante los verbos HTTP (<em>GET</em>, <em>PUT</em>, <em>POST</em>, <em>DELETE</em>), en GraphQL por el contrario hay un único <em>endpoint</em>, los puntos de entrada al grafo y los tipos que se relacionan entre si que son consultados para obtener los datos con el lenguaje de consulta que ofrece GraphQL.</p>

@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Crear y usar un repositorio en Docker Hub">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="¿Por qué se habla tanto de Docker y despierta tanto interés si la tecnología ya existía desde hace tiempo tanto en otros sistemas operativos como en Linux? Uno de los éxitos que ha contribuido a ellos es Docker Hub, un repositorio de imágenes en el que cualquiera puede contribuir con las suyas. Esto hace que pueda encontrarse cualquier herramienta de las populares y empezar a usarlas en muy pocos minutos. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Crear y usar un repositorio en Docker Hub">
@@ -54,7 +54,7 @@
     "headline": "Crear y usar un repositorio en Docker Hub",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.webp"
         
       },
     "datePublished": "2015-07-10T20:00:00+02:00",
@@ -260,7 +260,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false&#34;"></p>
 </div>
 <p>Probablemente uno de los éxitos de Docker más que la propia tecnología de contenedores sea <a href="https://registry.hub.docker.com/">Docker Hub</a> que permite a los usuarios compartir las imágenes construidas, se podría decir que es el <a href="https://github.com/">GitHub</a> de los contenedores docker y quizá por ello el paralelismo en el nombre entre ambos. Docker Hub permite subir imágenes o usar las imágenes oficiales de <a href="https://www.postgresql.org/">postgresql</a>, <a href="https://redis.io/">redis</a>, <a href="https://www.mysql.com/">mysql</a>, <a href="https://www.ubuntu.com/">ubuntu</a>, <a href="https://www.rabbitmq.com/">rabbitmq</a>, &hellip; y otra <a href="https://registry.hub.docker.com/">multitud de proyectos</a>.</p>
 <p>El <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">archivo Dockerfile con el que construimos una imagen</a> podemos hospedarlo en un repositorio de GitHub y que Docker Hub lo obtenga para construir la imagen. Docker Hub ofrece repositorios públicos en los que colocar las imágenes que cualquier otro usuario puede acceder y usar o repositorios privados con cierto coste según el número de repositorios privados, el primer repositorio privado es gratuito.</p>
@@ -277,7 +277,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/images/dockerhub_hu5b9976776b1cd163218f0599bbd96d6b_66063_2560x1440_fit_box_3.png" data-gallery="" title="Docker Hub"><img src="/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/images/dockerhub_hu5b9976776b1cd163218f0599bbd96d6b_66063_300x200_fit_box_3.png" width="269" height="200" alt="Docker Hub" title="Docker Hub" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/images/dockerhub_hu5b9976776b1cd163218f0599bbd96d6b_66063_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Docker Hub"><img src="/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/images/dockerhub_hu5b9976776b1cd163218f0599bbd96d6b_66063_300x200_fit_q90_h2_box_3.webp" width="269" height="200" alt="Docker Hub" title="Docker Hub" class="&#34; " loading="lazy"></a></p>
 <figcaption>Docker Hub</figcaption>
 </figure>
 </div>
@@ -288,7 +288,7 @@
 <p>En la creación del repositorio en Docker Hub con <em>build</em> automatizada seleccionamos el repositorio de GitHub que contiene los repositorios y el archivo DockerFile para el que queremos hacer la build automatizada. Le asignamos un nombre al repositorio y un <em>tag</em> a la <em>build</em> que podremos usar al hacer el <em>pull</em> de la imagen.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/images/dockerhub-automated-build_hu82559c1d7c01b549f79d8e413e2351ad_42125_2560x1440_fit_box_3.png" data-gallery="" title="Docker Hub"><img src="/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/images/dockerhub-automated-build_hu82559c1d7c01b549f79d8e413e2351ad_42125_300x200_fit_box_3.png" width="300" height="196" alt="Docker Hub" title="Docker Hub" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/images/dockerhub-automated-build_hu82559c1d7c01b549f79d8e413e2351ad_42125_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Docker Hub"><img src="/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/images/dockerhub-automated-build_hu82559c1d7c01b549f79d8e413e2351ad_42125_300x200_fit_q90_h2_box_3.webp" width="300" height="196" alt="Docker Hub" title="Docker Hub" class="&#34; " loading="lazy"></a></p>
 <figcaption>Build automatizada de Docker Hub</figcaption>
 </figure>
 </div>

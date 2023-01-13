@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Alternativa a Hibernate u ORM y ejemplo de jOOQ">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2015/05/alternativa-a-hibernate-u-orm-y-ejemplo-de-jooq/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/jooq.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/jooq.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Los ORMs nos han facilitado el acceso a los datos de una base de datos relacional. Han solucionado algunos problemas pero traído consigo otros nuevos como el problema N&#43;1 o la pérdida de control del modelo relacional. jOOQ forma parte de una nueva generación de herramientas que puede sustituir o complementar a otras como Hibernate. Y después de haberlo usado considero que puede ser factible. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/jooq.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/jooq.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Alternativa a Hibernate u ORM y ejemplo de jOOQ">
@@ -54,7 +54,7 @@
     "headline": "Alternativa a Hibernate u ORM y ejemplo de jOOQ",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/logotypes/jooq.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/logotypes/jooq.webp"
         
       },
     "datePublished": "2015-05-29T20:00:00+02:00",
@@ -262,7 +262,7 @@
 
       
       <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/jooq.png" width="200" height="200" alt="jOOQ" title="jOOQ" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/jooq.webp" width="200" height="200" alt="jOOQ" title="jOOQ" class="" loading="false&#34;"></p>
 </div>
 <p>Con el auge de los lenguajes de programación orientados a objetos han surgido varias herramientas que intentan hacer que el trabajo de unir el mundo orientado a objetos del lenguaje que empleemos y el modelo relacional de las bases de datos sea más transparente, estas herramientas son conocidas como <a href="https://es.wikipedia.org/wiki/Mapeo_objeto-relacional">Object Realtional Mapping</a> (ORM). Una de las más conocidas y usada en la plataforma Java es <a href="https://hibernate.org/">Hibernate</a>. Sin embargo, aunque facilitan el acceso a los datos no están exentas de problemas y están surgiendo nuevas alternativas para tratar de solventar algunos de ellos, una de ellas es <a href="https://www.jooq.org/">jOOQ</a>.</p>
 <p>Si hemos usado Hibernate sabremos que aunque este ampliamente usado facilitando la conversión entre el modelo relacional en base de datos y el modelo orientado a objetos del lenguaje Java también presenta problemas. Uno de los problemas es que al abstraer el acceso a base de datos no somos tan conscientes de las sentencias SQL que se envían a la base de datos provocando los problemas <a href="https://picodotdev.github.io/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/">N+1</a> y que la aplicación sea lenta, poco eficiente y sobrecargar la base de datos en el caso de realizar demasiadas consultas SQL. Otro problema es que cuando necesitamos realizar una consulta compleja o avanzada el <a href="https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#hql">lenguaje HQL</a> no nos ofrezca todo lo que necesitamos haciendo que tengamos que escribir directamente la consulta en lenguaje SQL con lo que perdemos la validación del compilador y si usamos una funcionalidad específica de un motor de base de datos la independencia del mismo. También puede ocurrirnos que diseñamos los modelos para complacer al <em>framework</em> de persistencia ORM.</p>

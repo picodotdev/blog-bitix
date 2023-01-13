@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2014/06/ejecutar-apache-tapestry-en-el-servidor-de-aplicaciones-wildfly/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Los class loaders del servidor de aplicaciones JBoss/WildFly habitualmente han dado algún problema en la ejecución de las aplicaciones y la carga de clases. En versiones antiguas como la 4 se podían producir conflictos entre las librerías de las aplicaciones y las librerías instaladas en el servidor ya que en JBoss se buscaba las clases por defecto y primero en el class loader del servidor en vez de en el classloader de la aplicación (war). &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly">
@@ -54,7 +54,7 @@
     "headline": "Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.webp"
         
       },
     "datePublished": "2014-06-06T20:58:25+02:00",
@@ -257,10 +257,10 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/wildfly.svg" width="200" height="200" alt="WildFly" title="WildFly" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/wildfly.svg" width="200" height="200" alt="WildFly" title="WildFly" class="" loading="false&#34;"></p>
 </div>
 <p>Los class loaders del <a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/">servidor de aplicaciones JBoss/WildFly</a> habitualmente han dado algún problema en la ejecución de las aplicaciones y la carga de clases. En versiones antiguas como la 4 se podían producir conflictos entre las librerías de las aplicaciones y las librerías instaladas en el servidor ya que en <a href="http://jbossas.jboss.org/">JBoss</a> se buscaba las clases por defecto y primero en el class loader del servidor en vez de en el <em>classloader</em> de la aplicación (war). Ya en las últimas versiones como JBoss 7 y <a href="http://wildfly.org/">WildFly</a> la forma de cargar las clases es más parecido al modelo habitual que se sigue en las aplicaciones Java EE y en servidores como Tomcat buscando primero en el directorio classes WEB-INF/classes y entre las librerías de la carpeta WEB-INF/lib del archivo war. Además, con la inclusión de JBoss Modules se puede seguir un esquema OSGi con lo que incluso podríamos usar simultáneamente en el servidor diferentes versiones de la misma librería.</p>
 <p>Sin embargo, a pesar de seguir el esquema estándar de buscar las clases y usar OSGi para que Tapestry encuentre los archivos que necesita, como plantillas, imágenes, literales que pueden estar embebidos en los archivos jar de librerías es necesario hacer algunas modificaciones. En una <a href="http://wiki.apache.org/tapestry/HowToRunTapestry5OnJBoss7Dot1">guía de uso de Tapestry con JBoss</a> se explica como conseguir hacer funcionar una aplicación Tapestry tanto en JBoss 7 como en WildFly 8. La solución consiste en proporcionar una clase para que encuentre correctamente los archivos que Tapestry necesita y esta clase será la que veremos en el siguiente ejemplo.</p>
@@ -354,7 +354,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/">
-                <img src="/blog-bitix/assets/images/logotypes/grails.svg" width="326" height="125" alt="Detectar problema N&#43;1 y obtener estadísticas de Hibernate con Grails" title="Detectar problema N&#43;1 y obtener estadísticas de Hibernate con Grails" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/grails.svg" width="875" alt="Detectar problema N&#43;1 y obtener estadísticas de Hibernate con Grails" title="Detectar problema N&#43;1 y obtener estadísticas de Hibernate con Grails" class="" loading="lazy">
                 <h3>Detectar problema N&#43;1 y obtener estadísticas de Hibernate con Grails</h3>
                 </a>
                 
@@ -368,7 +368,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/05/pagina-de-excepcion-de-grails/">
-                <img src="/blog-bitix/assets/images/logotypes/grails.svg" width="326" height="125" alt="Página de excepción de Grails" title="Página de excepción de Grails" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/grails.svg" width="875" alt="Página de excepción de Grails" title="Página de excepción de Grails" class="" loading="lazy">
                 <h3>Página de excepción de Grails</h3>
                 </a>
                 
@@ -382,7 +382,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/">
-                <img src="/blog-bitix/assets/images/logotypes/blogstack.png" width="326" height="125" alt="Arquitectura y hospedaje de Blog Stack" title="Arquitectura y hospedaje de Blog Stack" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/blogstack.webp" width="875" alt="Arquitectura y hospedaje de Blog Stack" title="Arquitectura y hospedaje de Blog Stack" class="" loading="lazy">
                 <h3>Arquitectura y hospedaje de Blog Stack</h3>
                 </a>
                 
@@ -396,7 +396,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Libro sobre desarrollo de aplicaciones con Apache Tapestry" title="Libro sobre desarrollo de aplicaciones con Apache Tapestry" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Libro sobre desarrollo de aplicaciones con Apache Tapestry" title="Libro sobre desarrollo de aplicaciones con Apache Tapestry" class="" loading="lazy">
                 <h3>Libro sobre desarrollo de aplicaciones con Apache Tapestry</h3>
                 </a>
                 
@@ -410,7 +410,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Presentación sobre Apache Tapestry" title="Presentación sobre Apache Tapestry" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Presentación sobre Apache Tapestry" title="Presentación sobre Apache Tapestry" class="" loading="lazy">
                 <h3>Presentación sobre Apache Tapestry</h3>
                 </a>
                 
@@ -424,7 +424,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/">
-                <img src="/blog-bitix/assets/images/logotypes/wildfly.svg" width="326" height="125" alt="El servidor de aplicaciones JBoss/WildFly" title="El servidor de aplicaciones JBoss/WildFly" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/wildfly.svg" width="875" alt="El servidor de aplicaciones JBoss/WildFly" title="El servidor de aplicaciones JBoss/WildFly" class="" loading="lazy">
                 <h3>El servidor de aplicaciones JBoss/WildFly</h3>
                 </a>
                 

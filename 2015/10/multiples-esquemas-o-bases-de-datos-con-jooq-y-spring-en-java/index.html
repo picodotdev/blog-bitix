@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Múltiples esquemas o bases de datos con jOOQ y Spring en Java">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2015/10/multiples-esquemas-o-bases-de-datos-con-jooq-y-spring-en-java/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Aún en las aplicaciones monolíticas que comparten una única base de datos tratamos de dividirla en varios servicios que manejen cierto nicho de información con la intención de que un cambio en una parte sea transparente para las otras partes. Cada servicio de la aplicación monolítica podría potencialmente convertirse en un microservicio y en este caso para que cada microservicio tenga un ciclo de vida independiente compartir la base de datos es algo a evitar. Incluso en las aplicaciones monolíticas podemos querer guardar cada nicho de información en su propio esquema para evitar acoplamiento entre las diferentes partes o también como forma de tener varios servidores de bases de datos y escalar la aplicación en cierta forma. En estos casos necesitaremos que la aplicación acceda a varios esquemas o bases de datos simultáneamente, con jOOQ y Spring es bastante sencillo. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Múltiples esquemas o bases de datos con jOOQ y Spring en Java">
@@ -54,7 +54,7 @@
     "headline": "Múltiples esquemas o bases de datos con jOOQ y Spring en Java",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp"
         
       },
     "datePublished": "2015-10-27T19:00:00+02:00",
@@ -262,7 +262,7 @@
 
       
       <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>En el libro <a href="https://amzn.to/35lNGzX" rel="sponsored">Building Microservices</a> se pone de manifiesto que cada microservicio gira alrededor de un concepto que denomina <em>seam</em>, nicho o área de negocio. Este <em>seam</em> es el nicho de información que va a manejar el microservicio. Para hacer que los múltiples microservicios sean independientes y tengan su propio ciclo de vida este nicho de información se guarda en una base de datos o esquema propio de cada uno de modo que un cambio en el sistema en que guarda la información no afecte a otros microservicios como ocurriría si compartiesen la base de datos. Si un microservicio necesita información de otro la solicita mediante una API ya sea <a href="https://es.wikipedia.org/wiki/Representational_State_Transfer">REST</a>, <a href="https://picodotdev.github.io/blog-bitix/2015/03/introduccion-y-ejemplo-de-api-rpc-con-apache-thrift/">usando Apache Thift</a>, <a href="https://grpc.io/">gRPC</a> o de otro tipo evitando el acoplamiento a través de la base de datos y evitando que un microservicio conozca detalles internos de otro.</p>
 <p>Imaginemos el caso de una empresa dedicada al comercio electrónico que ofrece productos a través de internet, un nicho de información podría ser el inventario formado por los productos ofrecidos y sus existencias, otro podría ser las compras. Los nichos podrían ser otros distintos, más numerosos o incluso los comentados más subdivididos, si una aplicación o proceso necesita acceder a todos estos nichos de información simultáneamente o tenemos una aplicación monolítica pero queremos tener cada nicho de información en varios esquemas o bases de datos, con <a href="https://www.jooq.org/">jOOQ</a> y <a href="https://spring.io/">Spring</a> podemos acceder simultáneamente a múltiples esquemas o bases de datos de una forma bastante sencilla. Es importante tener en cuenta que con varios esquemas podremos mantener la integridad referencial de los datos a través de las claves externas, con varias bases de datos no.</p>
@@ -333,7 +333,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2015/10/multiples-esquemas-o-bases-de-datos-con-jooq-y-spring-en-java/images/basededatos_hu8b418a2f026ee7f795586d6f35f56014_41684_2560x1440_fit_box_3.png" data-gallery="" title="Base de datos con varios esquemas"><img src="/blog-bitix/2015/10/multiples-esquemas-o-bases-de-datos-con-jooq-y-spring-en-java/images/basededatos_hu8b418a2f026ee7f795586d6f35f56014_41684_300x200_fit_box_3.png" width="102" height="200" alt="Base de datos con varios esquemas" title="Base de datos con varios esquemas" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2015/10/multiples-esquemas-o-bases-de-datos-con-jooq-y-spring-en-java/images/basededatos_hu8b418a2f026ee7f795586d6f35f56014_41684_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Base de datos con varios esquemas"><img src="/blog-bitix/2015/10/multiples-esquemas-o-bases-de-datos-con-jooq-y-spring-en-java/images/basededatos_hu8b418a2f026ee7f795586d6f35f56014_41684_300x200_fit_q90_h2_box_3.webp" width="102" height="200" alt="Base de datos con varios esquemas" title="Base de datos con varios esquemas" class="&#34; " loading="lazy"></a></p>
 <figcaption>Base de datos con varios esquemas, inventory y purchases</figcaption>
 </figure>
 </div>

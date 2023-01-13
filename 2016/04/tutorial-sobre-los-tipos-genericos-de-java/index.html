@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Tutorial sobre los tipos genéricos de Java">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Hace ya más de una década que en Java 5 se introdujeron los generics para dotar al lenguaje de una mejor comprobación de tipos en tiempo de compilación y al mismo tiempo eliminar los cast que hasta entonces eran necesarios al usar las colecciones. Dada la lentitud de adopción que suele haber en la plataforma Java en los grandes entornos empresariales puede que aún no los hayamos usado extensamente o tengamos alguna duda en su uso. Hay unos cuantos conceptos sobre los generics que son convenientes conocer. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Tutorial sobre los tipos genéricos de Java">
@@ -54,7 +54,7 @@
     "headline": "Tutorial sobre los tipos genéricos de Java",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp"
         
       },
     "datePublished": "2016-04-23T00:00:00+02:00",
@@ -262,7 +262,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Los <em>generics</em> fueron introducidos en la versión 5 de Java en 2004 junto con otras muchas novedades suponiendo en su historia una de las mayores modificaciones o al mismo nivel de las <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">novedades introducidas con Java 8</a> más recientemente al lenguaje Java. Los <em>generics</em> son importantes ya que permiten al compilador informar de muchos errores de compilación que hasta el momento solo se descubrirían en tiempo de ejecución, al mismo tiempo permiten eliminar los <em>cast</em> simplificando, reduciendo la repetición y aumentando la legibilidad el código. Los errores por <em>cast</em> inválido son especialmente problemáticos de <em>debuggear</em> ya que el error se suele producir en un sitio alejado del de la causa.</p>
 <p>Los <em>generics</em> permiten usar tipos para parametrizar las clases, interfaces y métodos al definirlas. Los beneficios son:</p>
@@ -358,13 +358,13 @@
 <p>Sin embargo, en el caso de los <em>generics</em>, ¿una referencia de <em>Box&lt;Number&gt;</em> puede aceptar una instancia <em>Box&lt;Integer&gt;</em> or <em>Box&lt;Double&gt;</em> aun siendo <em>Integer</em> y <em>Double</em> subtipos de <em>Number</em>?. La respuesta es no, ya que <em>Box&lt;Integer&gt;</em> y <em>Box&lt;Double&gt;</em> en Java no son subtipos de <em>Box&lt;Number&gt;</em>. La jerarquía de tipos es la siguiente:</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-subtypeRelationship.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-subtypeRelationship.gif" width="300" height="200" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-subtypeRelationship.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-subtypeRelationship.gif" width="2560" height="1440" class="&#34; " loading="lazy"></a></p>
 </figure>
 </div>
 <p>Los tipos genéricos pueden extenderse o implementarse y mientras no se cambie el tipo del argumento la «relación es un» se preserva. De modo que <em>ArrayList&lt;String&gt;</em> es un subtipo de <em>List&lt;String&gt;</em> que a su vez es un subtipo de <em>Collection&lt;String&gt;</em>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-sampleHierarchy.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-sampleHierarchy.gif" width="300" height="200" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-sampleHierarchy.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-sampleHierarchy.gif" width="2560" height="1440" class="&#34; " loading="lazy"></a></p>
 </figure>
 </div>
 <div class="code">
@@ -375,7 +375,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-payloadListHierarchy.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-payloadListHierarchy.gif" width="300" height="200" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-payloadListHierarchy.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-payloadListHierarchy.gif" width="2560" height="1440" class="&#34; " loading="lazy"></a></p>
 </figure>
 </div>
 <p>En los <em>generics</em> un parámetro para un tipo <em>?</em> se denomina <em>wildcard</em> siendo este un tipo desconocido. Son usados para reducir las restricciones de un tipo de modo que un método pueda funcionar con una lista de <em>List&lt;Integer&gt;</em>, <em>List&lt;Double&gt;</em> y <em>List&lt;Number&gt;</em>. El término <em>List&lt;Number&gt;</em> es más restrictivo que <em>List&lt;? extends Number&gt;</em> porque el primero solo acepta una lista de <em>Number</em> y el segundo una lista de <em>Number</em> o de sus subtipos. <em>List&lt;? extends Number&gt;</em> es un <em>upper bounded wildcard</em>.</p>
@@ -400,8 +400,8 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-listParent.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-listParent.gif" width="300" height="200" class="" loading="lazy"></a>
-<a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-wildcardSubtyping.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-wildcardSubtyping.gif" width="300" height="200" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-listParent.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-listParent.gif" width="2560" height="1440" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-wildcardSubtyping.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-wildcardSubtyping.gif" width="2560" height="1440" class="&#34; " loading="lazy"></a></p>
 </figure>
 </div>
 <p>Uno de las mayores confusiones al usar generics es cuando usar <em>upper bounded wildcards</em> o cuando usar <em>lower bounded wildcards</em>. Podemos usar las siguientes reglas:</p>
@@ -510,7 +510,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/04/usar-twitter-desde-java-con-twitter4j/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Usar Twitter desde Java con twitter4j" title="Usar Twitter desde Java con twitter4j" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Usar Twitter desde Java con twitter4j" title="Usar Twitter desde Java con twitter4j" class="" loading="lazy">
                 <h3>Usar Twitter desde Java con twitter4j</h3>
                 </a>
                 
@@ -524,7 +524,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/">
-                <img src="/blog-bitix/assets/images/logotypes/java-ee.png" width="326" height="125" alt="Aplicación de ejemplo usando varias especificaciones de Java EE 7" title="Aplicación de ejemplo usando varias especificaciones de Java EE 7" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java-ee.webp" width="875" alt="Aplicación de ejemplo usando varias especificaciones de Java EE 7" title="Aplicación de ejemplo usando varias especificaciones de Java EE 7" class="" loading="lazy">
                 <h3>Aplicación de ejemplo usando varias especificaciones de Java EE 7</h3>
                 </a>
                 
@@ -538,7 +538,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/03/como-firmar-correos-electronicos-con-gpg-y-javamail/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cómo firmar correos electrónicos con GPG y JavaMail" title="Cómo firmar correos electrónicos con GPG y JavaMail" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Cómo firmar correos electrónicos con GPG y JavaMail" title="Cómo firmar correos electrónicos con GPG y JavaMail" class="" loading="lazy">
                 <h3>Cómo firmar correos electrónicos con GPG y JavaMail</h3>
                 </a>
                 
@@ -552,7 +552,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/">
-                <img src="/blog-bitix/assets/images/logotypes/java-ee.png" width="326" height="125" alt="Introducción y nuevas características de Java EE 7" title="Introducción y nuevas características de Java EE 7" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java-ee.webp" width="875" alt="Introducción y nuevas características de Java EE 7" title="Introducción y nuevas características de Java EE 7" class="" loading="lazy">
                 <h3>Introducción y nuevas características de Java EE 7</h3>
                 </a>
                 
@@ -566,7 +566,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/01/aplicacion-web-con-spark-framework-y-java/">
-                <img src="/blog-bitix/assets/images/logotypes/sparkjava.png" width="326" height="125" alt="Aplicación web con Spark framework y Java" title="Aplicación web con Spark framework y Java" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/sparkjava.webp" width="875" alt="Aplicación web con Spark framework y Java" title="Aplicación web con Spark framework y Java" class="" loading="lazy">
                 <h3>Aplicación web con Spark framework y Java</h3>
                 </a>
                 
@@ -580,7 +580,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/01/introduccion-y-ejemplo-basico-sobre-vertx/">
-                <img src="/blog-bitix/assets/images/logotypes/vertx.svg" width="326" height="125" alt="Introducción y ejemplo básico sobre Vert.x" title="Introducción y ejemplo básico sobre Vert.x" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/vertx.svg" width="875" alt="Introducción y ejemplo básico sobre Vert.x" title="Introducción y ejemplo básico sobre Vert.x" class="" loading="lazy">
                 <h3>Introducción y ejemplo básico sobre Vert.x</h3>
                 </a>
                 

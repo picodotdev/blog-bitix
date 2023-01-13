@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Cambiar la ruta raíz del entorno de Docker">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Cambiando la ruta raíz del entorno de ejecución de docker, dónde guarda las imágenes de los contenedores, los datos de los contenedores y otros metadatos, podemos almacenar esta información en un disco duro externo o memoria USB. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Cambiar la ruta raíz del entorno de Docker">
@@ -54,7 +54,7 @@
     "headline": "Cambiar la ruta raíz del entorno de Docker",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.webp"
         
       },
     "datePublished": "2015-07-24T20:00:00+02:00",
@@ -260,7 +260,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false&#34;"></p>
 </div>
 <p>Por defecto el directorio donde se guardan las imágenes y los contenedores junto con otros metadatos de <a href="https://www.docker.com/">Docker</a> es <em>/var/lib/docker</em>. En mi caso hace un tiempo me compre un <a href="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/">disco de estado sólido Samsung 840 EVO de 250 GiB</a> y comenté en el artículo del anterior enlace. Aunque probablemente un disco SSD sea suficientemente fiable como para que antes de que falle cambiémos de ordenador porque ya es antiguo, yo trato de evitar hacer muchas escrituras al disco. Al trabajar con Docker ya sea descargando imágenes, <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">construyendo imágenes propias con archivos Dockerfile</a> y al arrancar contenedores cuyos procesos escriben en disco prefiero externalizar esas escrituras en una unidad USB ya sea un <em>pendrive</em> o un disco duro. En este artículo comentaré como modificar Docker para que las imágenes y los contenedores estén almacenados en una memoria USB o en otra localización de la por defecto.</p>
 <p>En Arch Linux el proceso de docker se arranca con un servicio de systemd:</p>
@@ -287,7 +287,7 @@
 <p>Iniciando ahora el servicio de Docker veremos que en el directorio que hayamos elegido se crean los metadatos y si hacemos un <em>pull</em> de una imagen se guardará en esta localización.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/images/docker-root_huf301198ed05a6799a7c84e4217e4eb0f_47801_2560x1440_fit_box_3.png" data-gallery="" title="Directorio raíz de docker"><img src="/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/images/docker-root_huf301198ed05a6799a7c84e4217e4eb0f_47801_300x200_fit_box_3.png" width="300" height="143" alt="Directorio raíz de docker" title="Directorio raíz de docker" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/images/docker-root_huf301198ed05a6799a7c84e4217e4eb0f_47801_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Directorio raíz de docker"><img src="/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/images/docker-root_huf301198ed05a6799a7c84e4217e4eb0f_47801_300x200_fit_q90_h2_box_3.webp" width="300" height="143" alt="Directorio raíz de docker" title="Directorio raíz de docker" class="&#34; " loading="lazy"></a></p>
 <figcaption>Directorio raíz de docker</figcaption>
 </figure>
 </div>

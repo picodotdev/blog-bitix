@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Configuración de una aplicación con Spring Boot y configuración centralizada con Spring Cloud Config">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/12/configuracion-de-una-aplicacion-con-spring-boot-y-configuracion-centralizada-con-spring-cloud-config/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="La configuración de una aplicación es indispensable para su funcionamiento, permite no hardcoredar ciertos valores en el código fuente al mismo tiempo que externalizarlos en archivos de más fácil edición. Externalizar la configuración de la aplicación permite utilizar el mismo artefacto binario en todos los entornos, los valores que cambian en cada entorno es posible proporcionarlos de diferentes formas y formatos desde archivos en el classpath hasta variables de entorno o un servidor de configuración. Spring Boot permite obtener los valores de diferentes fuentes e implementa un mecanismo de prioridad para determinar el valor a usar. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Configuración de una aplicación con Spring Boot y configuración centralizada con Spring Cloud Config">
@@ -54,7 +54,7 @@
     "headline": "Configuración de una aplicación con Spring Boot y configuración centralizada con Spring Cloud Config",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.webp"
         
       },
     "datePublished": "2021-12-16T19:00:00+01:00",
@@ -263,10 +263,10 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>La configuración de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> proporciona un mecanismo muy flexible para la configuración de diferentes fuentes. Cada fuente tiene un orden de preferencia para establecer los valores de las propiedades, además se integra con el servidor de configuración centralizada de <a href="https://cloud.spring.io/spring-cloud-config/">Spring Cloud Config</a>.</p>
 <p>La configuración permite cambiar el comportamiento de la aplicación sin cambiar el código ni generar un nuevo artefacto. No hardcodear los valores en el código y extraer la configuración permite utilizar el mismo artefacto en cualquier entorno, ya sea desarrollo, pruebas o producción. Utilizar el mismo artefacto para todos los entornos tiene la ventaja de no introducir un error en la construcción del artefacto como cabría la posibilidad generando un artefacto binario para cada uno de los entornos, usar el mismo artefacto es necesario para que las pruebas realizadas sobre el artefacto en el entorno de desarrollo o pruebas se consideren válidas para producción.</p>

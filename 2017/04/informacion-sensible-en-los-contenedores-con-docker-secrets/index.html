@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Información sensible en los contenedores con Docker Secrets">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2017/04/informacion-sensible-en-los-contenedores-con-docker-secrets/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Parte de la información que usan los contenedores de Docker se debe proteger de accesos no deseados. Anteriormente en algunos casos se usaban variables de entorno para lanzar los contenedores lo que no es seguro si se listan los procesos del sistema con sus parámetros, incluir archivos en las imágenes de los contenedores tampoco es recomendable. Docker Secrets permite proporcionar y mantener segura la información sensible que usen los contenedores. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Información sensible en los contenedores con Docker Secrets">
@@ -54,7 +54,7 @@
     "headline": "Información sensible en los contenedores con Docker Secrets",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.webp"
         
       },
     "datePublished": "2017-04-22T12:00:00+02:00",
@@ -260,7 +260,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false&#34;"></p>
 </div>
 <p>Los contenedores de <a href="https://www.docker.com/">Docker</a> necesitan acceder a algunos datos sensibles desde el punto de vista de la seguridad como usuarios y contraseñas, certificados SSL, claves privadas SSH o cualquier otra información de acceso restringido. Algunos de estos datos en Docker se proporcionan mediante variables de entorno al lanzar los contenedores, esto es inseguro ya que al hacer un listado de los procesos con sus parámetros de invocación los relativos a Docker mostrarán esta información, lo que es un posible problema de seguridad.</p>
 <p>Con <a href="https://docs.docker.com/engine/swarm/secrets/">Docker Secrets</a> se puede gestionar esta información que se necesita en tiempo de ejecución pero que no se quiere almacenar en la imagen de Docker o en el repositorio de código fuente. Algunos ejemplos de información sensible son:</p>
@@ -308,7 +308,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/04/informacion-sensible-en-los-contenedores-con-docker-secrets/images/message_hu4ebecdd1723c600c663f2f340442b569_13817_2560x1440_fit_box_3.png" data-gallery="" title="Contenido del archivo message.txt"><img src="/blog-bitix/2017/04/informacion-sensible-en-los-contenedores-con-docker-secrets/images/message_hu4ebecdd1723c600c663f2f340442b569_13817_300x200_fit_box_3.png" width="300" height="97" alt="Contenido del archivo message.txt" title="Contenido del archivo message.txt" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/04/informacion-sensible-en-los-contenedores-con-docker-secrets/images/message_hu4ebecdd1723c600c663f2f340442b569_13817_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Contenido del archivo message.txt"><img src="/blog-bitix/2017/04/informacion-sensible-en-los-contenedores-con-docker-secrets/images/message_hu4ebecdd1723c600c663f2f340442b569_13817_300x200_fit_q90_h2_box_3.webp" width="300" height="97" alt="Contenido del archivo message.txt" title="Contenido del archivo message.txt" class="&#34; " loading="lazy"></a></p>
 <figcaption>Contenido del archivo message.txt</figcaption>
 </figure>
 </div>

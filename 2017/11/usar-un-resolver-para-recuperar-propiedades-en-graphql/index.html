@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Usar un resolver para recuperar propiedades en GraphQL">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2017/11/usar-un-resolver-para-recuperar-propiedades-en-graphql/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Cuando en una consulta de GraphQL se indican las propiedades a devolver GraphQL usa para cada una de ellas lo que en la implementación de Java se llama un resolver y en otras implementaciones data fetcher. En la mayoría de casos las propiedades serán propiedades de un objeto y en estos casos se usará un PropertyDataFetcher usando en Java la convención de los java beans o la clave de un mapa. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Usar un resolver para recuperar propiedades en GraphQL">
@@ -54,7 +54,7 @@
     "headline": "Usar un resolver para recuperar propiedades en GraphQL",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.webp"
         
       },
     "datePublished": "2017-11-18T10:00:00+01:00",
@@ -253,7 +253,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
 </div>
 <p>Cuando en una consulta de <a href="https://graphql.org/">GraphQL</a> se indican las propiedades a devolver GraphQL usa para cada una de ellas lo que en la implementación de Java se llama un <em>resolver</em> y en otras implementaciones <em>data fetcher</em>. En la mayoría de casos las propiedades serán propiedades de un objeto y en estos casos se usará un <em>PropertyDataFetcher</em> usando en Java la convención de los <em>java beans</em> o la clave de un mapa. En el caso de que cierto dato no esté almacenado en el objeto sino en un repositorio externo es necesario usar un <em>resolver</em> para devolver esa propiedad en la consulta.</p>
 <p>Por ejemplo, supongamos que en el ejemplo de la librería en el caso de los libros le añadimos un nuevo dato para el ISBN que está almacenado en un sistema externo, en otro repositorio. La nueva definición del esquema quedaría de la siguiente forma, basta con añadir la nueva propiedad al tipo <em>Book</em> y su tipo que será <em>String</em>.</p>

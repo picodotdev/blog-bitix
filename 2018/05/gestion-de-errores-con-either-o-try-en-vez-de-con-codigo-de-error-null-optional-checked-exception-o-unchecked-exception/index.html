@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Gestión de errores con Either o Try en vez de con código de error, null, Optional, checked exception o unchecked exception">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2018/05/gestion-de-errores-con-either-o-try-en-vez-de-con-codigo-de-error-null-optional-checked-exception-o-unchecked-exception/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="A lo largo del tiempo han surgido varias formas de gestionar las excepciones. En C hace muchos años eran con códigos de error, en Java se incorporaron en el lenguaje las excepciones checked o unchecked o la nueva clase Optional en Java cada una con sus ventajas y y algunas deficiencias. Más recientemente usando un tipo tal que Either&lt;L,R&gt; son otra forma para el tratamiento de errores sobre las opciones anteriores. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Gestión de errores con Either o Try en vez de con código de error, null, Optional, checked exception o unchecked exception">
@@ -54,7 +54,7 @@
     "headline": "Gestión de errores con Either o Try en vez de con código de error, null, Optional, checked exception o unchecked exception",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp"
         
       },
     "datePublished": "2018-05-11T20:00:00+02:00",
@@ -262,7 +262,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Una parte importante para el correcto funcionamiento de un programa corresponde a la gestión de errores que pueden producirse en su ejecución. Si se trata de un programa que se comunica vía interfaz de red ha de estar preparado ante la situación que la conexión se pierda o se produzcan errores en la transmisión porque por ejemplo se ha desconectado el cable de red o la WiFi no es estable. Si se trata de un programa que guarda datos en el almacenamiento persistente también pueden producirse errores como que el archivo ya existe, el directorio no existe o el espacio del disco se ha agotado. Los posibles casos de error que pueden producirse en un programa son muchos y variados.</p>
 <p>En épocas más antiguas una forma de gestionar los errores era y sigue siendo con códigos de error donde la función o el código de salida de un programa retorna un 0 si no se ha producido ningún error o un número distinto de cero si se ha producido algún error, con un código de salida diferente por cada error. Dado que no hay obligación de gestionar adecuadamente el código de salida a veces no se hace con el consiguiente posible mal funcionamiento del programa. Otra forma de código de error es retornar un valor <em>null</em> en un método o función pero que no tratado adecuadamente producirá una excepción de tipo <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/NullPointerException.html">NullPointerException</a>. Con la introducción de la clase <a href="https://docs.oracle.com/javase/10/docs/api/java/util/Optional.html">Optional</a> entre otras <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">novedades de Java 8</a> los punteros nulos se gestionan más adecuadamente pero en los casos en los que se devuelve un puntero <em>null</em> no se proporciona información de cuál ha sido la condición de error que se ha producido.</p>
@@ -338,7 +338,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/05/plantillas-con-etiquetas-no-balanceadas-en-apache-tapestry/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Plantillas con etiquetas no balanceadas en Apache Tapestry" title="Plantillas con etiquetas no balanceadas en Apache Tapestry" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Plantillas con etiquetas no balanceadas en Apache Tapestry" title="Plantillas con etiquetas no balanceadas en Apache Tapestry" class="" loading="lazy">
                 <h3>Plantillas con etiquetas no balanceadas en Apache Tapestry</h3>
                 </a>
                 
@@ -352,7 +352,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/04/la-clase-optional-de-java-para-evitar-la-excepcion-nullpointerexception/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="La clase Optional de Java para evitar la excepción NullPointerException" title="La clase Optional de Java para evitar la excepción NullPointerException" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="La clase Optional de Java para evitar la excepción NullPointerException" title="La clase Optional de Java para evitar la excepción NullPointerException" class="" loading="lazy">
                 <h3>La clase Optional de Java para evitar la excepción NullPointerException</h3>
                 </a>
                 
@@ -366,7 +366,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/04/la-sentencia-try-with-resources-de-java/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="La sentencia try-with-resources de Java" title="La sentencia try-with-resources de Java" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="La sentencia try-with-resources de Java" title="La sentencia try-with-resources de Java" class="" loading="lazy">
                 <h3>La sentencia try-with-resources de Java</h3>
                 </a>
                 
@@ -380,7 +380,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/04/la-controversia-sobre-las-excepciones-checked-y-unchecked/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="La controversia sobre las excepciones checked y unchecked" title="La controversia sobre las excepciones checked y unchecked" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="La controversia sobre las excepciones checked y unchecked" title="La controversia sobre las excepciones checked y unchecked" class="" loading="lazy">
                 <h3>La controversia sobre las excepciones checked y unchecked</h3>
                 </a>
                 
@@ -394,7 +394,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/04/introduccion-a-nio-2-el-sistema-de-entrada-salida-de-java/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Introducción a NIO.2, el sistema de entrada/salida de Java" title="Introducción a NIO.2, el sistema de entrada/salida de Java" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Introducción a NIO.2, el sistema de entrada/salida de Java" title="Introducción a NIO.2, el sistema de entrada/salida de Java" class="" loading="lazy">
                 <h3>Introducción a NIO.2, el sistema de entrada/salida de Java</h3>
                 </a>
                 
@@ -408,7 +408,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/03/que-es-y-como-funciona-el-type-erasure-en-java/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Qué es y cómo funciona el type erasure en Java" title="Qué es y cómo funciona el type erasure en Java" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Qué es y cómo funciona el type erasure en Java" title="Qué es y cómo funciona el type erasure en Java" class="" loading="lazy">
                 <h3>Qué es y cómo funciona el type erasure en Java</h3>
                 </a>
                 

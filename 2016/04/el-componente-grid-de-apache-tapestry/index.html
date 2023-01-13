@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="El componente Grid de Apache Tapestry">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="En la mayoría de aplicaciones no solo es habitual sino algo muy usado el mostrar listados de elementos de forma tabular con paginación y columnas ordenables. En estos listados el complejo componente internamente Grid de Apache Tapestry pero a la vez muy sencillo de usar puede marcar una diferencia significativa en el número de líneas de código necesarias a escribir, la flexibilidad, funcionalidad ofrecida, la productividad al hacer la implementación o modificarla comparándolo con lo necesario en otros frameworks web en los que no hay nada comparable de serie. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="El componente Grid de Apache Tapestry">
@@ -54,7 +54,7 @@
     "headline": "El componente Grid de Apache Tapestry",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.webp"
         
       },
     "datePublished": "2016-04-30T12:00:00+02:00",
@@ -264,7 +264,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="400" height="400" alt="Apache Tapstry" title="Apache Tapstry" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="400" height="400" alt="Apache Tapstry" title="Apache Tapstry" class="" loading="false&#34;"></p>
 </div>
 <p><a href="https://tapestry.apache.org/">Apache Tapestry</a> es uno de los muchos <em>frameworks</em> disponibles en Java para el desarrollo de aplicaciones y páginas web. A diferencia de la mayoría se basa en componentes y proporciona una larga lista de ellos listos para usar de serie, pero también se pueden crear componentes nuevos basados en los propios de Tapestry o los que desarrollemos nosotros muy fácilmente. Los componentes son piezas reusables de código que se pueden reutilizar bien directamente o para formar nuevos componentes y es uno de los motivos por los que en Tapestry se consigue una alta productividad además de otros beneficios como la encapsulación.</p>
 <p>Uno de los componentes más complejos pero al mismo tiempo muy simple de usar ofrecidos por el <em>framework</em> es el <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Grid.html">componente Grid</a>. El componente <em>Grid</em> muestra en una tabla un listado de datos ofreciendo las funcionalidades de paginación, ordenación, personalización de columnas, filtrado de columnas, personalización en caso de estar vacío y algunas cosas más. Lo único que debemos tener en cuenta para aprovechar al máximo el componente <em>Grid</em> son los parámetros que declara en su documentación su funcionamiento interno nos es irrelevante, será de los componentes más complejos y no por ello no es más difícil de utilizar basta decir que solo tiene un parámetro requerido y que es lo único imprescindible que es la lista de datos a mostrar.</p>
@@ -283,7 +283,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/images/grid_hudc57d686362064bded7bede661d43988_23776_2560x1440_fit_box_3.png" data-gallery="" title="Componente Grid de Tapestry"><img src="/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/images/grid_hudc57d686362064bded7bede661d43988_23776_300x200_fit_box_3.png" width="300" height="195" alt="Componente Grid de Tapestry" title="Componente Grid de Tapestry" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/images/grid_hudc57d686362064bded7bede661d43988_23776_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Componente Grid de Tapestry"><img src="/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/images/grid_hudc57d686362064bded7bede661d43988_23776_300x200_fit_q90_h2_box_3.webp" width="300" height="195" alt="Componente Grid de Tapestry" title="Componente Grid de Tapestry" class="&#34; " loading="lazy"></a></p>
 <figcaption>Componente Grid de Tapestry</figcaption>
 </figure>
 </div>
@@ -312,7 +312,7 @@
 <p>Con el parámetro <em>empty</em> definimos un componente <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/Block.html">Block</a> que se usará cuando el <em>Grid</em> no tenga filas que mostrar, lo que es útil para mostrar un mensaje indicando que la tabla no tiene filas como cuando no hay elementos.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/images/grid-sin-elementos_hub6bad543fc5977836e7e1055e60375bd_14325_2560x1440_fit_box_3.png" data-gallery="" title="Mensaje de un Grid sin elementos"><img src="/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/images/grid-sin-elementos_hub6bad543fc5977836e7e1055e60375bd_14325_300x200_fit_box_3.png" width="300" height="194" alt="Mensaje de un Grid sin elementos" title="Mensaje de un Grid sin elementos" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/images/grid-sin-elementos_hub6bad543fc5977836e7e1055e60375bd_14325_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Mensaje de un Grid sin elementos"><img src="/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/images/grid-sin-elementos_hub6bad543fc5977836e7e1055e60375bd_14325_300x200_fit_q90_h2_box_3.webp" width="300" height="194" alt="Mensaje de un Grid sin elementos" title="Mensaje de un Grid sin elementos" class="&#34; " loading="lazy"></a></p>
 <figcaption>Mensaje de un Grid sin elementos</figcaption>
 </figure>
 </div>
@@ -391,7 +391,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/01/hemeroteca-8/">
-                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #8" title="Hemeroteca #8" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="875" alt="Hemeroteca #8" title="Hemeroteca #8" class="" loading="lazy">
                 <h3>Hemeroteca #8</h3>
                 </a>
                 
@@ -405,7 +405,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/12/publicado-apache-tapestry-5-4/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Publicado Apache Tapestry 5.4" title="Publicado Apache Tapestry 5.4" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Publicado Apache Tapestry 5.4" title="Publicado Apache Tapestry 5.4" class="" loading="lazy">
                 <h3>Publicado Apache Tapestry 5.4</h3>
                 </a>
                 
@@ -419,7 +419,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Ejemplo de multiproyecto con Gradle" title="Ejemplo de multiproyecto con Gradle" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="875" alt="Ejemplo de multiproyecto con Gradle" title="Ejemplo de multiproyecto con Gradle" class="" loading="lazy">
                 <h3>Ejemplo de multiproyecto con Gradle</h3>
                 </a>
                 
@@ -433,7 +433,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/06/hemeroteca-7/">
-                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #7" title="Hemeroteca #7" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="875" alt="Hemeroteca #7" title="Hemeroteca #7" class="" loading="lazy">
                 <h3>Hemeroteca #7</h3>
                 </a>
                 
@@ -447,7 +447,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/05/patron-multiples-vistas-de-un-mismo-dato-en-tapestry/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Patrón múltiples vistas de un mismo dato en Tapestry" title="Patrón múltiples vistas de un mismo dato en Tapestry" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Patrón múltiples vistas de un mismo dato en Tapestry" title="Patrón múltiples vistas de un mismo dato en Tapestry" class="" loading="lazy">
                 <h3>Patrón múltiples vistas de un mismo dato en Tapestry</h3>
                 </a>
                 
@@ -461,7 +461,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-shiro.png" width="326" height="125" alt="Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas" title="Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-shiro.webp" width="875" alt="Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas" title="Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas" class="" loading="lazy">
                 <h3>Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas</h3>
                 </a>
                 

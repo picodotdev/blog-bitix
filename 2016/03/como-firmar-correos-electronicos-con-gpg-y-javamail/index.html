@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Cómo firmar correos electrónicos con GPG y JavaMail">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2016/03/como-firmar-correos-electronicos-con-gpg-y-javamail/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="El correo electrónico es un medio muy utilizado para realizar ataques de phishing, algunos son muy burdos pero seguramente algunos usuarios sin muchos conocimientos caen víctimas de ellos y aún los usuarios con conocimientos también pueden serlo si están bien realizados y muestran un correo electrónico exactamente igual que el que intentan suplantar. Los usuarios son las víctimas pero si los sitios web que envían los correos electrónicos legítimos los firmasen digitalmente sería una garantía más para proteger a sus usuarios, pudiendo detectar de otra forma el spam y phishing. En este artículo muestro a modo de ejemplo como firmar un correo electrónico con GPG y JavaMail e igualmente podría utilizarse para cifrarlo, aunque usar DKIM sería lo más apropiado. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Cómo firmar correos electrónicos con GPG y JavaMail">
@@ -54,7 +54,7 @@
     "headline": "Cómo firmar correos electrónicos con GPG y JavaMail",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp"
         
       },
     "datePublished": "2016-03-19T10:00:00+01:00",
@@ -264,10 +264,10 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/gnupg.svg" width="200" height="262" alt="GnuPG" title="GnuPG" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/gnupg.svg" width="200" height="262" alt="GnuPG" title="GnuPG" class="" loading="false&#34;"></p>
 </div>
 <p>Los sitios de comercio electrónico y muchas páginas web utilizan el <a href="https://es.wikipedia.org/wiki/Hypertext_Transfer_Protocol_Secure">protocolo seguro HTTPS</a> para cifrar los datos intercambiados entre cliente y servidor impidiendo a una tercera persona conocer qué información se está transmitiendo, además impide que puedan ser alterados sin su conocimiento. Es habitual usar HTTPS y certificados en las páginas de compra en las que hay que introducir datos personales junto con la tarjeta de crédito también en las cuentas de usuario como forma de proporcionar seguridad y proteger la información personal. Generando y usando <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">certificados TLS/SSL en el servidor</a> el sitio y el usuario evitan caer en un ataque de <em>phishing</em> en la que una tercera persona con intenciones maliciosas intenta suplantar la identidad del sitio web.</p>
 <p>Pero los <a href="https://es.wikipedia.org/wiki/Phishing">ataques de <em>phishing</em></a> también son realizados a través del correo electrónico, mensajes en los que se incluyen enlaces hacia páginas que suplantan a un sitio. Algunos usuarios quizá no se den cuenta de la suplantación al hacer clic en los enlaces maliciosos. Los motores de búsqueda mantendrán a los usuarios a salvo de enlaces maliciosos en las páginas de resultados que les lleven a páginas de <em>phishing</em>, pero no del correo electrónico que si no es detectado como <em>spam</em> llegará a la bandeja de entrada de los usuarios. El correo electrónico es una vía para llevar a los usuarios hacia esas páginas de <em>phishing</em>. Para evitar este posible peligro no todos los sitios web y de comercio electrónico son los que firman sus mensajes como forma de verificar la autenticidad de los mismos así como evitar que pueda ser modificados sin conocimiento.</p>
@@ -306,7 +306,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/03/como-firmar-correos-electronicos-con-gpg-y-javamail/images/gpg-verify_hu056ea4a4567d07af3605cd2e5c1611b9_26426_2560x1440_fit_box_3.png" data-gallery="" title="Verificación de la firma GPG del correo electrónico"><img src="/blog-bitix/2016/03/como-firmar-correos-electronicos-con-gpg-y-javamail/images/gpg-verify_hu056ea4a4567d07af3605cd2e5c1611b9_26426_300x200_fit_box_3.png" width="300" height="192" alt="Verificación de la firma GPG del correo electrónico" title="Verificación de la firma GPG del correo electrónico" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/03/como-firmar-correos-electronicos-con-gpg-y-javamail/images/gpg-verify_hu056ea4a4567d07af3605cd2e5c1611b9_26426_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Verificación de la firma GPG del correo electrónico"><img src="/blog-bitix/2016/03/como-firmar-correos-electronicos-con-gpg-y-javamail/images/gpg-verify_hu056ea4a4567d07af3605cd2e5c1611b9_26426_300x200_fit_q90_h2_box_3.webp" width="300" height="192" alt="Verificación de la firma GPG del correo electrónico" title="Verificación de la firma GPG del correo electrónico" class="&#34; " loading="lazy"></a></p>
 <figcaption>Verificación de la firma GPG del correo electrónico</figcaption>
 </figure>
 </div>
@@ -380,7 +380,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/">
-                <img src="/blog-bitix/assets/images/logotypes/java-ee.png" width="326" height="125" alt="Introducción y nuevas características de Java EE 7" title="Introducción y nuevas características de Java EE 7" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/java-ee.webp" width="875" alt="Introducción y nuevas características de Java EE 7" title="Introducción y nuevas características de Java EE 7" class="" loading="lazy">
                 <h3>Introducción y nuevas características de Java EE 7</h3>
                 </a>
                 
@@ -394,7 +394,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/01/aplicacion-web-con-spark-framework-y-java/">
-                <img src="/blog-bitix/assets/images/logotypes/sparkjava.png" width="326" height="125" alt="Aplicación web con Spark framework y Java" title="Aplicación web con Spark framework y Java" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/sparkjava.webp" width="875" alt="Aplicación web con Spark framework y Java" title="Aplicación web con Spark framework y Java" class="" loading="lazy">
                 <h3>Aplicación web con Spark framework y Java</h3>
                 </a>
                 
@@ -408,7 +408,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/01/introduccion-y-ejemplo-basico-sobre-vertx/">
-                <img src="/blog-bitix/assets/images/logotypes/vertx.svg" width="326" height="125" alt="Introducción y ejemplo básico sobre Vert.x" title="Introducción y ejemplo básico sobre Vert.x" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/vertx.svg" width="875" alt="Introducción y ejemplo básico sobre Vert.x" title="Introducción y ejemplo básico sobre Vert.x" class="" loading="lazy">
                 <h3>Introducción y ejemplo básico sobre Vert.x</h3>
                 </a>
                 
@@ -422,7 +422,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/01/hemeroteca-8/">
-                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #8" title="Hemeroteca #8" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="875" alt="Hemeroteca #8" title="Hemeroteca #8" class="" loading="lazy">
                 <h3>Hemeroteca #8</h3>
                 </a>
                 
@@ -436,7 +436,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/12/publicado-apache-tapestry-5-4/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Publicado Apache Tapestry 5.4" title="Publicado Apache Tapestry 5.4" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Publicado Apache Tapestry 5.4" title="Publicado Apache Tapestry 5.4" class="" loading="lazy">
                 <h3>Publicado Apache Tapestry 5.4</h3>
                 </a>
                 
@@ -450,7 +450,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-shiro.png" width="326" height="125" alt="Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas" title="Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-shiro.webp" width="875" alt="Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas" title="Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas" class="" loading="lazy">
                 <h3>Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas</h3>
                 </a>
                 

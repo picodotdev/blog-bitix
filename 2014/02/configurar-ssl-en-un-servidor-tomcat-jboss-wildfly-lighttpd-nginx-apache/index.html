@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/openssl-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/openssl-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Tanto en un servidor web como de aplicaciones podemos hacer que la comunicación entre el cliente y el servidor esté cifrada usando un protocolo seguro. La configuración para usar un protocolo seguro en cada servidor es diferente pero todos se basan en lo mismo, usar un certificado y un clave. En este artículo muestro la configuración necesaria en los servidores web y de aplicaciones más populares. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/openssl-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/openssl-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache">
@@ -54,7 +54,7 @@
     "headline": "Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/openssl-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/openssl-750.webp"
         
       },
     "datePublished": "2014-02-28T16:58:17+01:00",
@@ -269,7 +269,7 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL" class="" loading="false&#34;"></p>
 </div>
 <p>En entradas anteriores he explicado <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">en que consiste la criptografía y GPG</a> y como podemos usarlo a nivel personal para firmar y cifrar archivos y <a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">firmar correos electrónicos con el cliente de correo Evolution</a>. También he comentado <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">cómo crear un certificado con OpenSSL y como convertirlo a diferentes formatos</a>. En esta entrada explicaré como usar un certificado SSL creado con OpenSSL después de conocer los <a href="https://picodotdev.github.io/blog-bitix/2015/04/certificado-ssl-de-empresa-wildcard-y-de-validacion-extendida/">Certificados SSL, de empresa, «wildcard» y de validación extendida</a> para proporcionar acceso cifrado al servidor web o servidor de aplicaciones, explicaré cual es la configuración necesaria para los servidores <a href="http://tomcat.apache.org/">Tomcat</a>, <a href="http://www.lighttpd.net/">Lighttpd</a>, <a href="http://jbossas.jboss.org/">JBoss</a>/<a href="http://wildfly.org/">WildFly</a>, <a href="http://nginx.org/">Nginx</a> y <a href="http://www.apache.org/">Apache</a>.</p>
 <p>Usar una conexión <abbr title="Secure Sockets Layer">SSL</abbr> o <abbr title="Transport Layer Security">TLS</abbr> y un certificado de servidor evita que los datos entre el navegador del usuario y el servidor sean legibles para una tercera parte siendo mayor la seguridad en nuestras aplicaciones o dando mayor confianza al usuario y usando algunos certificados al aparecer en la barra de navegación del navegador en verde el nombre de la entidad detrás de la página evitando problemas de suplantación de identidad.</p>
@@ -393,7 +393,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">
-                <img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="326" height="125" alt="Generar y convertir claves y certificados con OpenSSL" title="Generar y convertir claves y certificados con OpenSSL" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="875" alt="Generar y convertir claves y certificados con OpenSSL" title="Generar y convertir claves y certificados con OpenSSL" class="" loading="lazy">
                 <h3>Generar y convertir claves y certificados con OpenSSL</h3>
                 </a>
                 
@@ -407,7 +407,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Presentación sobre Apache Tapestry" title="Presentación sobre Apache Tapestry" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Presentación sobre Apache Tapestry" title="Presentación sobre Apache Tapestry" class="" loading="lazy">
                 <h3>Presentación sobre Apache Tapestry</h3>
                 </a>
                 
@@ -421,7 +421,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/">
-                <img src="/blog-bitix/assets/images/logotypes/wildfly.svg" width="326" height="125" alt="El servidor de aplicaciones JBoss/WildFly" title="El servidor de aplicaciones JBoss/WildFly" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/wildfly.svg" width="875" alt="El servidor de aplicaciones JBoss/WildFly" title="El servidor de aplicaciones JBoss/WildFly" class="" loading="lazy">
                 <h3>El servidor de aplicaciones JBoss/WildFly</h3>
                 </a>
                 
@@ -435,7 +435,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/">
-                <img src="/blog-bitix/assets/images/logotypes/dnie.jpg" width="326" height="125" alt="Firmar digitalmente documentos con el DNIe y Sinadura" title="Firmar digitalmente documentos con el DNIe y Sinadura" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/dnie.webp" width="875" alt="Firmar digitalmente documentos con el DNIe y Sinadura" title="Firmar digitalmente documentos con el DNIe y Sinadura" class="" loading="lazy">
                 <h3>Firmar digitalmente documentos con el DNIe y Sinadura</h3>
                 </a>
                 
@@ -449,7 +449,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/">
-                <img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="326" height="125" alt="Enviar correos electrónicos firmados con el DNIe y Evolution" title="Enviar correos electrónicos firmados con el DNIe y Evolution" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="875" alt="Enviar correos electrónicos firmados con el DNIe y Evolution" title="Enviar correos electrónicos firmados con el DNIe y Evolution" class="" loading="lazy">
                 <h3>Enviar correos electrónicos firmados con el DNIe y Evolution</h3>
                 </a>
                 
@@ -463,7 +463,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">
-                <img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="326" height="125" alt="Usar el DNI electrónico con Firefox en Linux" title="Usar el DNI electrónico con Firefox en Linux" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="875" alt="Usar el DNI electrónico con Firefox en Linux" title="Usar el DNI electrónico con Firefox en Linux" class="" loading="lazy">
                 <h3>Usar el DNI electrónico con Firefox en Linux</h3>
                 </a>
                 

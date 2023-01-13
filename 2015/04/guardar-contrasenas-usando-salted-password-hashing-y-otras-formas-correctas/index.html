@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-shiro.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-shiro.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Para cada servicio deberíamos emplear una contraseña de una longitud de al menos 8 caracteres que incluya letras en minúscula, mayúscula, números y símbolos, una herramienta que podemos utilizar para generar contraseñas más seguras con los criterios que indiquemos es Strong Password Generator. Sin embargo, recordar cada una de estas contraseñas es muy difícil de modo que es habitual que utilicemos la misma contraseña para varios o todos los servicios y no empleando todos los criterios anteriores o usar una herramienta con la que Guardar contraseñas de forma segura con KeePassXC. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-shiro.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-shiro.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas">
@@ -54,7 +54,7 @@
     "headline": "Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-shiro.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-shiro.webp"
         
       },
     "datePublished": "2015-04-10T18:55:04+02:00",
@@ -257,7 +257,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/apache-shiro.png" width="300" height="106" alt="Apache Shiro" title="Apache Shiro" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/apache-shiro.webp" width="300" height="106" alt="Apache Shiro" title="Apache Shiro" class="" loading="false&#34;"></p>
 </div>
 <p>Para cada servicio deberíamos emplear una contraseña de una longitud de al menos 8 caracteres que incluya letras en minúscula, mayúscula, números y símbolos, una herramienta que podemos utilizar para generar contraseñas más seguras con los criterios que indiquemos es <a href="https://strongpasswordgenerator.com/">Strong Password Generator</a>. Sin embargo, recordar cada una de estas contraseñas es muy difícil de modo que es habitual que utilicemos la misma contraseña para varios o todos los servicios y no empleando todos los criterios anteriores o usar una herramienta con la que <a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">Guardar contraseñas de forma segura con KeePassXC</a>. Por otro lado, los desarrolladores no deberíamos guardar en la base de datos las contraseñas que nos entregan los usuarios en texto plano, para evitar guardalas en texto plano hace un tiempo se utilizaba únicamente una función de <em>hashing</em> unidireccional como MD5 o SHA, de este modo si la base de datos fuese comprometida en teoría no podrían conocer la contraseña original. En este artículo comentaré que aún guardando las contraseñas con una función de <em>hashing</em> no es suficiente para hacerlas seguras y comentaré una implementación con <a href="https://shiro.apache.org/">Apache Shiro</a> de una de las ideas propuestas, también con <a href="https://spring.io/projects/spring-security">Spring Security</a> es posible.</p>
 <h3 id="algo-de-teoría-y-algunas-explicaciones">Algo de teoría y algunas explicaciones</h3>
@@ -266,7 +266,7 @@
 <p>Con <em>Salted Password Hashing</em> el uso de <em>rainbow tables</em> que aceleren el ataque no serían posibles por la entropía añadida por los <em>salt</em>. Aún así conociendo el <em>salt</em> y la función de <em>hash</em> empleada seguiría siendo posible un ataque de fuerza bruta y de diccionario. Con <em>Salted Password Hashing</em> se usa en la función de <em>hash</em> y un dato variable denominado <em>salt</em> que añade suficiente entropía y es diferente para cada contraseña, en la base de datos se guarda el resultado de la función de <em>hash</em> junto con el <em>salt</em>, esto es, el resultado de SHA-512(contraseña + <em>salt</em>) y también el <em>salt</em>.</p>
 <div class="media">
 <figure>
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="127" height="218" alt="Java" title="Java" class="" loading="lazy"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="2560" height="1440" alt="Java" title="Java" class="&#34; " loading="lazy"></p>
 </figure>
 </div>
 <h3 id="ejemplo-de-_salted-password-hashing_-usando-apache-shiro">Ejemplo de <em>Salted Password Hashing</em> usando Apache Shiro</h3>
@@ -294,7 +294,7 @@
 <p>El cambio de <em>Realm</em> para el usuario no supone ninguna modificación y podrá seguir autenticandose con su misma contraseña. En el ejemplo con <em>root</em> como usuario y <em>password</em> como contraseña.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/images/formulario-inicio-sesion_hu975b41828809ab2e6b2d69e11258533c_38361_2560x1440_fit_box_3.png" data-gallery="" title="Formulario de inicio de sesión"><img src="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/images/formulario-inicio-sesion_hu975b41828809ab2e6b2d69e11258533c_38361_300x200_fit_box_3.png" width="300" height="200" alt="Formulario de inicio de sesión" title="Formulario de inicio de sesión" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/images/formulario-inicio-sesion_hu975b41828809ab2e6b2d69e11258533c_38361_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Formulario de inicio de sesión"><img src="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/images/formulario-inicio-sesion_hu975b41828809ab2e6b2d69e11258533c_38361_300x200_fit_q90_h2_box_3.webp" width="300" height="200" alt="Formulario de inicio de sesión" title="Formulario de inicio de sesión" class="&#34; " loading="lazy"></a></p>
 </figure>
 </div>
 <p>Este es todo el código que necesitamos para la implementación de contraseñas codificadas con una función de <em>hashing</em>, en este caso SHA-512, y un <em>salt</em>, no es mucho y además es bastante simple la implementación con Shiro y en este caso en una aplicación usando el <em>framework</em> Apache Tapestry. Estas pocas líneas de código pueden aumentar notablemente la seguridad de las contraseñas que guardamos en la base de datos. En el caso de que la base de datos se vea comprometida será más difícil para alguien con malas intenciones obtener las contraseñas originales.</p>
@@ -312,7 +312,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/images/iniciar-sesion_hu0100868b30eda07619d541fa8f0c283a_4498_2560x1440_fit_box_3.png" data-gallery="" title="Botón de inicio de sesión"><img src="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/images/iniciar-sesion_hu0100868b30eda07619d541fa8f0c283a_4498_300x200_fit_box_3.png" width="300" height="33" alt="Botón de inicio de sesión" title="Botón de inicio de sesión" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/images/iniciar-sesion_hu0100868b30eda07619d541fa8f0c283a_4498_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Botón de inicio de sesión"><img src="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/images/iniciar-sesion_hu0100868b30eda07619d541fa8f0c283a_4498_300x200_fit_q90_h2_box_3.webp" width="300" height="33" alt="Botón de inicio de sesión" title="Botón de inicio de sesión" class="&#34; " loading="lazy"></a></p>
 </figure>
 </div>
 <h3 id="nota-final">Nota final</h3>
@@ -381,7 +381,7 @@ http://tynamo.org/tapestry-security+guide<br></li>
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Productividad y errores de compilación con Apache Tapestry" title="Productividad y errores de compilación con Apache Tapestry" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Productividad y errores de compilación con Apache Tapestry" title="Productividad y errores de compilación con Apache Tapestry" class="" loading="lazy">
                 <h3>Productividad y errores de compilación con Apache Tapestry</h3>
                 </a>
                 
@@ -395,7 +395,7 @@ http://tynamo.org/tapestry-security+guide<br></li>
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/08/actualizacion-del-libro-plugin-tapestry/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Actualización del libro PlugIn Tapestry" title="Actualización del libro PlugIn Tapestry" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Actualización del libro PlugIn Tapestry" title="Actualización del libro PlugIn Tapestry" class="" loading="lazy">
                 <h3>Actualización del libro PlugIn Tapestry</h3>
                 </a>
                 
@@ -409,7 +409,7 @@ http://tynamo.org/tapestry-security+guide<br></li>
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/08/doble-barra-de-botones-con-apache-tapestry/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Doble barra de botones con Apache Tapestry" title="Doble barra de botones con Apache Tapestry" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Doble barra de botones con Apache Tapestry" title="Doble barra de botones con Apache Tapestry" class="" loading="lazy">
                 <h3>Doble barra de botones con Apache Tapestry</h3>
                 </a>
                 
@@ -423,7 +423,7 @@ http://tynamo.org/tapestry-security+guide<br></li>
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/08/forzar-el-uso-del-protocolo-https-en-apache-tapestry/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Forzar el uso del protocolo HTTPS en Apache Tapestry" title="Forzar el uso del protocolo HTTPS en Apache Tapestry" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Forzar el uso del protocolo HTTPS en Apache Tapestry" title="Forzar el uso del protocolo HTTPS en Apache Tapestry" class="" loading="lazy">
                 <h3>Forzar el uso del protocolo HTTPS en Apache Tapestry</h3>
                 </a>
                 
@@ -437,7 +437,7 @@ http://tynamo.org/tapestry-security+guide<br></li>
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/07/usar-apache-tapestry-en-una-aplicacion-standalone/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Usar Apache Tapestry en una aplicación «standalone»" title="Usar Apache Tapestry en una aplicación «standalone»" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Usar Apache Tapestry en una aplicación «standalone»" title="Usar Apache Tapestry en una aplicación «standalone»" class="" loading="lazy">
                 <h3>Usar Apache Tapestry en una aplicación «standalone»</h3>
                 </a>
                 
@@ -451,7 +451,7 @@ http://tynamo.org/tapestry-security+guide<br></li>
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/07/servir-recursos-estaticos-desde-un-cdn-en-apache-tapestry/">
-                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Servir recursos estáticos desde un CDN en Apache Tapestry" title="Servir recursos estáticos desde un CDN en Apache Tapestry" class="" loading="lazy">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="875" alt="Servir recursos estáticos desde un CDN en Apache Tapestry" title="Servir recursos estáticos desde un CDN en Apache Tapestry" class="" loading="lazy">
                 <h3>Servir recursos estáticos desde un CDN en Apache Tapestry</h3>
                 </a>
                 

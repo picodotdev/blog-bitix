@@ -28,14 +28,14 @@
   <!-- Social -->
 <meta property="og:title" content="Recuperar datos eficientemente en GraphQL usando batching con data loaders">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2019/07/recuperar-datos-eficientemente-en-graphql-usando-batching-con-data-loaders/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Al diferencia de una API REST donde cada recurso posee un endpoint propio en GraphQL los recursos están relacionados y forman un grafo. Por otro lado las propiedades devueltas en una consulta de GraphQL son las que se indiquen en la consulta en vez de prefijadas como en una API REST. Hay que tener en cuenta que GraphQL para recuperar las propiedades de las entidades usa un resolver y las recupera una a una, si se devuelve una lista de elementos y de cada uno de esos elementos otra propiedad para la que hay que generar una consulta adicional a la base de datos el rendimiento no será bueno. Los data loaders permiten recuperar las propiedades relacionadas de una colección de entidades eficientemente evitando el problema 1&#43;N. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.webp">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Recuperar datos eficientemente en GraphQL usando batching con data loaders">
@@ -54,7 +54,7 @@
     "headline": "Recuperar datos eficientemente en GraphQL usando batching con data loaders",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.webp"
         
       },
     "datePublished": "2019-07-12T18:00:00+02:00",
@@ -262,10 +262,10 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Una de las dificultades a resolver en GraphQL es evitar los problemas de generar 1+N consultas dado que en algunas peticiones se recupera una lista de elementos para recuperar alguna otra propiedad de esos elementos para la que se realiza otra consulta. Suele ocurrir al navegar las relaciones de las entidades, por ejemplo al solicitar una lista de libros y de cada libro obtener su autor, para obtener los libros se necesita una consulta y hay que evitar que para recuperar el autor de cada libro generar otra consulta, si el número de libros recuperados es grande el número de consultas será grande y la consulta será poco eficiente, lenta y generará una carga a evitar en el servidor de base de datos.</p>
 <p>En el artículo <a href="https://picodotdev.github.io/blog-bitix/2018/05/recuperar-datos-eficientemente-en-graphql-usando-batching/">Recuperar datos eficientemente en GraphQL usando batching</a> comentaba una estrategia para evitar este problema que consistía en dados una serie de elementos recuperados y si la propiedad estaba presente en la consulta se obtenían los identificativos de esos elementos y se recuperaba la propiedad para todos los elementos en una única consulta.</p>
