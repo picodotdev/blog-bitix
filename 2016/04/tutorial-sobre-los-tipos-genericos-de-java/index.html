@@ -358,13 +358,13 @@
 <p>Sin embargo, en el caso de los <em>generics</em>, ¿una referencia de <em>Box&lt;Number&gt;</em> puede aceptar una instancia <em>Box&lt;Integer&gt;</em> or <em>Box&lt;Double&gt;</em> aun siendo <em>Integer</em> y <em>Double</em> subtipos de <em>Number</em>?. La respuesta es no, ya que <em>Box&lt;Integer&gt;</em> y <em>Box&lt;Double&gt;</em> en Java no son subtipos de <em>Box&lt;Number&gt;</em>. La jerarquía de tipos es la siguiente:</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-subtypeRelationship.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-subtypeRelationship.gif" width="2560" height="1440" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-subtypeRelationship.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-subtypeRelationship.gif" width="300" height="200" class="&#34; " loading="lazy"></a></p>
 </figure>
 </div>
 <p>Los tipos genéricos pueden extenderse o implementarse y mientras no se cambie el tipo del argumento la «relación es un» se preserva. De modo que <em>ArrayList&lt;String&gt;</em> es un subtipo de <em>List&lt;String&gt;</em> que a su vez es un subtipo de <em>Collection&lt;String&gt;</em>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-sampleHierarchy.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-sampleHierarchy.gif" width="2560" height="1440" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-sampleHierarchy.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-sampleHierarchy.gif" width="300" height="200" class="&#34; " loading="lazy"></a></p>
 </figure>
 </div>
 <div class="code">
@@ -375,7 +375,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-payloadListHierarchy.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-payloadListHierarchy.gif" width="2560" height="1440" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-payloadListHierarchy.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-payloadListHierarchy.gif" width="300" height="200" class="&#34; " loading="lazy"></a></p>
 </figure>
 </div>
 <p>En los <em>generics</em> un parámetro para un tipo <em>?</em> se denomina <em>wildcard</em> siendo este un tipo desconocido. Son usados para reducir las restricciones de un tipo de modo que un método pueda funcionar con una lista de <em>List&lt;Integer&gt;</em>, <em>List&lt;Double&gt;</em> y <em>List&lt;Number&gt;</em>. El término <em>List&lt;Number&gt;</em> es más restrictivo que <em>List&lt;? extends Number&gt;</em> porque el primero solo acepta una lista de <em>Number</em> y el segundo una lista de <em>Number</em> o de sus subtipos. <em>List&lt;? extends Number&gt;</em> es un <em>upper bounded wildcard</em>.</p>
@@ -400,8 +400,8 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-listParent.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-listParent.gif" width="2560" height="1440" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-wildcardSubtyping.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-wildcardSubtyping.gif" width="2560" height="1440" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-listParent.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-listParent.gif" width="300" height="200" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-wildcardSubtyping.gif" data-gallery=""><img src="/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-wildcardSubtyping.gif" width="300" height="200" class="&#34; " loading="lazy"></a></p>
 </figure>
 </div>
 <p>Uno de las mayores confusiones al usar generics es cuando usar <em>upper bounded wildcards</em> o cuando usar <em>lower bounded wildcards</em>. Podemos usar las siguientes reglas:</p>
