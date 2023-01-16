@@ -7,7 +7,7 @@
             <div class="related-article">
                 {{ with $page }}
                 <a href="{{ .RelPermalink }}">
-                {{ print "![" (i18n "article_image") "](page=" .File.Path ",url=" (default "logotype:hugo.svg" .Params.imagePost) ",size=326x125,command=Resize,options=875x,commandthumb=Resize,optionsthumb=875x,gallery=false" " \"" (.Title | plainify) "\"" ")" | $.Page.RenderString (dict "display" "inline" "markup" "markdown") }}
+                {{ print "![" (i18n "article_image") "](page=" .File.Path ",url=" (default "logotype:hugo.svg" .Params.imagePost) ",commandthumb=Resize,optionsthumb=326x125,gallery=false" " \"" (.Title | plainify) "\"" ")" | $.Page.RenderString (dict "display" "inline" "markup" "markdown") }}
                 <h3>{{ .Title }}</h3>
                 </a>
                 {{ end }}

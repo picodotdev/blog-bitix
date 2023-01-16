@@ -14,7 +14,7 @@
     {{ if .Params.imageHead }}
     <div class="row page-header">
       <div class="col-12">
-        {{ print "![" (i18n "article_image") "](url=" .Params.imageHead ",size=1040x300,command=Resize,options=1040x,commandthumb=Resize,optionsthumb=1040x,gallery=false,layout=,lazy=false" " \"" (i18n "header_image") "\"" ")" | $.Page.RenderString (dict "display" "inline" "markup" "markdown") }}
+        {{ print "![" (i18n "article_image") "](url=" .Params.imageHead ",commandthumb=Fill,optionsthumb=1040x___Center,gallery=false,layout=,lazy=false" " \"" (i18n "header_image") "\"" ")" | $.Page.RenderString (dict "display" "inline" "markup" "markdown") }}
       </div>
     </div>
     {{ end }}
