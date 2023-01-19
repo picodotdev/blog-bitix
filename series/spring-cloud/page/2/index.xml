@@ -28,7 +28,7 @@
 </div>
 <p>Los microservicios en una aplicación con una arquitectura de microservicios son efímeros, se crean, se escalan para atender picos de mayor demanda, pueden desaparecer por problemas de la red de comunicaciones que no es fiable y volverse a crear en una ubicación diferente. Por esta naturaleza efímera es necesario un servicio con el cual los clientes de los microservicios puedan encontrarlos y que los microservicios utilizan para registrarse cuando se inician.</p>
 <p>Este servicio de registro y descubrimiento es esencial y crítico en una aplicación orientada a microservicios ya que sin él los clientes no pueden encontrar los servicios que necesitan. Dado que es un servicio esencial es necesario que esté siempre disponible y para ello es recomendable crear un cluster de servicios de registro y descubrimiento para que en caso de que una instancia de este servicio falle estén disponibles otras instancias para los clientes.</p>
-<p>Una <a href="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/">implementación de registro y descubrimiento es Consul</a>, <a href="https://www.consul.io/">Consul</a> es un servicio externo creado por <a href="https://www.hashicorp.com/">Hashicorp</a>. <a href="https://projects.spring.io/spring-cloud/">Spring Cloud</a> entre sus proyectos, <a href="https://cloud.spring.io/spring-cloud-netflix/">Spring Cloud Netflix</a>, proporciona una implementación con <a href="https://github.com/Netflix/eureka">Eureka</a> de servicio de registro y descubrimiento que se pueden embeber en una aplicación de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a>.</p>
+<p>Una <a href="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/">implementación de registro y descubrimiento es Consul</a>, <a href="https://www.consul.io/">Consul</a> es un servicio externo creado por <a href="https://www.hashicorp.com/">HashiCorp</a>. <a href="https://projects.spring.io/spring-cloud/">Spring Cloud</a> entre sus proyectos, <a href="https://cloud.spring.io/spring-cloud-netflix/">Spring Cloud Netflix</a>, proporciona una implementación con <a href="https://github.com/Netflix/eureka">Eureka</a> de servicio de registro y descubrimiento que se pueden embeber en una aplicación de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a>.</p>
 <p>Para crear un servidor Eureka con Spring y Spring Boot hay que crear una aplicación con las dependencias adecuadas y la anotación <em>@EnableEurekaServer</em> para habilitar el inicio del servidor de registro y descubrimiento. Además, establecer las propiedades de configuración adecuadas para que el cluster de servidores Eureka se forme. Este microservicio es el primero que ha de iniciarse en una aplicación orientada a microservicios.</p>
 <p>Utilizando <a href="https://gradle.org/">Gradle</a> las dependencias y la anotación <em>@EnableEurekaServer</em> a añadir a la clase principal de la aplicación son las siguientes.</p>
 <div class="code">
@@ -461,8 +461,7 @@
 </ul>
 <p>Este sería el inicio del servidor de configuración y el documento JSON que devuelve para la aplicación <em>springcloudclient</em> para el entorno <em>prod</em> en una petición <abbr title="Hypertext Transfer Protocol">HTTP</abbr>.</p>
 <div class="media">
-<script type="text/javascript" src="https://asciinema.org/a/30811.js" id="asciicast-30811" async></script>
-<noscript><a href="https://asciinema.org/a/30811" target="_blank"><img src="https://asciinema.org/a/30811.png" width="650" height="450"></a></noscript>
+<a href="https://asciinema.org/a/30811" target="_blank"><amp-img src="https://asciinema.org/a/30811.png" width="650" height="563" class="lozad"></amp-img></a>
 </div>
 <div class="media">
 <figure>
@@ -491,8 +490,7 @@
 </div>
 <p>Si no queremos obtener las propiedades con la anotación <code>@Value</code> podemos usar el <em>bean</em> <a href="https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/Environment.html">Environment</a> que define Spring y sus métodos <em>getProperty</em> con el que además podremos averiguar los perfiles activos de la aplicación. Por otra parte las mismas propiedades de configuración del cliente podemos especificarlos mediante parámetros, propiedades de sistema, propiedades de entorno y algunas formas más como se explica en como <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html">externalizar la configuración en las aplicaciones Spring</a>. De cualquiera de estas formas podemos indicar o sobrescribir los valores como puede ser el perfil activo de la aplicación.</p>
 <div class="media">
-<script type="text/javascript" src="https://asciinema.org/a/30810.js" id="asciicast-30810" async></script>
-<noscript><a href="https://asciinema.org/a/30810" target="_blank"><img src="https://asciinema.org/a/30810.png" width="650" height="450"></a></noscript>
+<a href="https://asciinema.org/a/30810" target="_blank"><amp-img src="https://asciinema.org/a/30810.png" width="650" height="563" class="lozad"></amp-img></a>
 </div>
 <p>Este ejemplo solo muestra una pequeña parte de las posibilidades que ofrece Spring Cloud Config, otras son la posibilidad de <a href="http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html#_serving_plain_text">servir archivos de configuración completos</a> para por ejemplo <a href="https://nginx.org/">Nginx</a>, los valores de las propiedades de configuración en el repositorio de configuración pueden ser cifradas y al enviarlas al cliente ser descifradas. Spring Cloud Config solo es una pequeña parte del proyecto Spring Cloud que proporciona más funcionalidades útiles para sistemas distribuidos y microservicios y un complemento adicional interesante para Spring Boot.</p>
 <div class="alert alert-secondary sourcecode">
@@ -601,8 +599,7 @@
 </div>
 <p>En el siguiente vídeo puede verse como es la salida en la terminal cuando la aplicación se arranca con Gradle y con el comando <code>java -jar</code>.</p>
 <div class="media">
-<script type="text/javascript" src="https://asciinema.org/a/27694.js" id="asciicast-27694" async></script>
-<noscript><a href="https://asciinema.org/a/27694" target="_blank"><img src="https://asciinema.org/a/27694.png" width="650" height="450"></a></noscript>
+<a href="https://asciinema.org/a/27694" target="_blank"><amp-img src="https://asciinema.org/a/27694.png" width="650" height="563" class="lozad"></amp-img></a>
 </div>
 <p>Añadiendo la dependencia <a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready">Spring Boot Actuator</a> podemos <a href="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/">obtener información de estado y métricas en las aplicaciones Spring Boot</a>.</p>
 <p>En un repositorio de GitHub de Spring hay muchos más <a href="https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples">ejemplos sobre Spring Boot</a>.</p>
