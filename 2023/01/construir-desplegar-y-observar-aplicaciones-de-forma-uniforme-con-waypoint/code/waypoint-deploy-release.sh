@@ -1,0 +1,2 @@
+$ waypoint deploy
+$ waypoint release

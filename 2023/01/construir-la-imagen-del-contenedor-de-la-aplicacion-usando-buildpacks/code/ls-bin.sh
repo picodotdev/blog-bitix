@@ -1,3 +1,2 @@
-$ ls -l /usr/local/bin/
-total 23M
--rwxr-xr-x 1 root       root         ene 10 11:31 pack
+$ ls -lh /usr/local/bin/
+-rwxr-xr-x 1 picodotdev picodotdev  23M ene 10 11:31 pack

@@ -1,0 +1,1 @@
+$ waypoint install -platform=docker -accept-tos

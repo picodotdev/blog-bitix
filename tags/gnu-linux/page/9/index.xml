@@ -5,12 +5,84 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2022-11-17T20:30:00+02:00</updated>
+    <updated>2023-01-19T20:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/</id>
+        <title>Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux</title>
+        <updated>2016-02-26T18:00:00+01:00</updated>
+        <published>2016-02-26T18:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>¿Has perdido alguna vez una memoria USB? ¿sí, aún no? ¿qué datos contenía? Muy posiblemente son varias las memorias USB que tenemos, por su poco tamaño y cada vez mayor capacidad incluso llevaremos alguna en la cartera siempre con nosotros. Si quieres mantener a salvo los datos en caso de pérdida hay varias opciones, una para esta necesidad es cifrar completamente la unidad con dm-crypt junto con LUKS+Ext4 en GNU/Linux. Suena muy técnico pero es muy sencillo usando la aplicación Discos de GNOME y la seguridad de nuestra información aumentará notablemente.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false&#34;"></p>
+</div>
+<p>Seguro que tienes varias memorias USB o discos duros externos con los que transportar información de un sitio a otro o como copia de seguridad. No sería extraño perder alguna de esas unidades en una biblioteca, universidad, aeropuerto, vía pública, metro, &hellip; con toda la información que contengan como fotos y documentos con información personal accesible por cualquier persona que se encuentre esa unidad. Si queremos evitar este posible caso de que al perder la unidad USB que al final es lo de menos ya que se puede sustituir fácilmente toda la información este accesible podemos cifrar su contenido. Hay varias formas una <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.htmlindex-amp.html">cifrando con GPG archivos individuales</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">cifrando con EncFS ciertas carpetas</a> y varios archivos a la vez o la unidad completa con <a href="https://wiki.archlinux.org/index.php/Dm-crypt">dm-crypt</a> que será el caso de este artículo.</p>
+<p>Usar GPG es incómodo si necesitamos cifrar múltiples archivos como sería el caso de una memoria USB, EncFS requiere introducir un comando para montar el sistema de archivos cifrado y no obligaremos a que todos los archivos estén cifrados, usando dm-crypt el sistema nos preguntará por la clave de cifrado al conectar la unidad USB y se encargará de hacer el cifrado y descifrado de forma automática y transparente, nosotros trabajaremos con los archivos y sus aplicaciones con normalidad sin ninguna necesidad especial. Además, no es complicado inicializar la unidad USB para que su contenido esté cifrado usando la <a href="https://es.wikipedia.org/wiki/GNOME_Disks">aplicación Discos de GNOME</a>.</p>
+<p>Deberemos formatear la unidad por lo que previamente deberemos hacer una copia de seguridad de su contenido para no perderlo, en teoría desde Nautilus se puede hacer pero en mis pruebas me indicaba un error que usando la aplicación Discos no se produce.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Error synchronizing after initial wipe: Timed out waiting for object (udisks-error-quark, 0)&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>error.txt</span>
+    </div>
+</div>
+<p>Iniciada la aplicación Discos e identificada y seleccionada la unidad USB que queremos cifrar usando el botón con el icono de una rueda dentada hacemos clic en la opción formatear partición. Se abrirá un diálogo emergente donde podremos seleccionar el sistema de archivos con el que queremos formatear la unidad, seleccionamos LUKS+Ext4, formato lento e introducimos una contraseña con cierta fortaleza que deberemos recordar (de longitud 8 o más que contenga letras en mayúsculas, minúsculas, números y símbolos como «!&quot;·$%&amp;/()=^*,.-;:_»). El formateo lento tardará más o menos tiempo dependiendo de la capacidad de la unidad pero es aconsejable realizarlo para evitar que con <a href="https://picodotdev.github.io/blog-bitix/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/">herramientas de recuperación de archivos como Foremost</a> alguien pueda extraer algún tipo de documento usándola a pesar de en teoría haber sido eliminado, otra forma de evitarlo es <a href="https://picodotdev.github.io/blog-bitix/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/">eliminar ciertos o todos los archivos de forma segura</a>. En una unidad sin cifrar es sorprendente la cantidad de archivos que se puede recuperar usando <a href="https://wiki.archlinux.org/index.php/Foremost">Foremost</a> de los que en algún momento estuvieron.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/discos_hu3135568082e17d239e3100be9a4fc173_67669_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Aplicación Discos de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/discos_hu3135568082e17d239e3100be9a4fc173_67669_300x200_fit_q90_h2_box_3.webp" width="231" height="200" alt="Aplicación Discos de GNOME" title="Aplicación Discos de GNOME" class="&#34; " loading="lazy"></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/opciones-formato_hu7551938eb59310a3fc6f034783853c1e_30403_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Opciones formateo unidad"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/opciones-formato_hu7551938eb59310a3fc6f034783853c1e_30403_300x200_fit_q90_h2_box_3.webp" width="285" height="200" alt="Opciones formateo unidad" title="Opciones formateo unidad" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<p>Formateada la unidad con LUKS+Ext4 al conectarla al equipo o montarla el entorno de escritorio nos preguntará por la contraseña con un diálogo.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/contrasena_hu462b04d32f07aaac78ff1c7af741b59f_27270_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Diálogo solicitud contraseña"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/contrasena_hu462b04d32f07aaac78ff1c7af741b59f_27270_300x200_fit_q90_h2_box_3.webp" width="300" height="179" alt="Diálogo solicitud contraseña" title="Diálogo solicitud contraseña" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/unidad-cifrada_hub794a011a1e5de44731af827bcf93591_6995_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Unidad cifrada en Nautilus"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/unidad-cifrada_hub794a011a1e5de44731af827bcf93591_6995_300x200_fit_q90_h2_box_3.webp" width="290" height="127" alt="Unidad cifrada en Nautilus" title="Unidad cifrada en Nautilus" class="&#34; " loading="lazy"></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/unidad-descifrada_hu0dac15f2dd7e4763b31472da8db73bc3_6210_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Unidad BMOVE ROJO descifrada en Nautilus"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/unidad-descifrada_hu0dac15f2dd7e4763b31472da8db73bc3_6210_300x200_fit_q90_h2_box_3.webp" width="290" height="127" alt="Unidad BMOVE ROJO descifrada en Nautilus" title="Unidad BMOVE ROJO descifrada en Nautilus" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<p>Introducida la contraseña veremos los archivos originales y podremos trabajar con ellos con normalidad como si no estuviesen cifrados. En la <a href="https://wiki.archlinux.org/">wiki de Arch Linux</a> hay varios artículos explicando en que consiste dm-crypt y los comandos que deberíamos usar desde la terminal, los artículos en el apartado de referencia del final de este artículo. Cifrar la unidad completamente con cm-crypt y LUKS+Ext4 es perfectamente compatible con usar EncFS, es decir, podemos usar dm-crypt en la unidad y en ella que ya está cifrada <a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">almacenar un sistema de archivos también cifrado con EncFS</a>.</p>
+<p>Son increíbles las opciones que uno va descubriendo del software libre de GNU/Linux y esta es una con la que haremos nuestras unidades USB y los preciados datos que contienen bastante más seguras y a salvo en caso de pérdida o robo. Y esto es solo una muestra, con dm-crypt es posible hacer muchas más cosas que con curiosidad puedes descubrir en la wiki de Arch Linux.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/">Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">Cifrar archivos con EncFS en GNU/Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/">Cómo eliminar de forma segura archivos con wipe en GNU/Linux</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_a_non-root_file_system">Encrypting a non-root file system</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Dm-crypt">Dm-crypt</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/disk_encryption">Disk encryption</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Dm-crypt/Drive_preparation">Drive preparation</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Dm-crypt/Device_encryption">Device encryption</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="seguridad"/>
+            
+                <category term="software-libre"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/</id>
         <title>Cifrar archivos con EncFS en GNU/Linux</title>
@@ -44,7 +116,8 @@
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/36852" target="_blank"><amp-img src="https://asciinema.org/a/36852.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/36852.js" id="asciicast-36852" async></script>
+<noscript><a href="https://asciinema.org/a/36852" target="_blank"><img src="https://asciinema.org/a/36852.png" width="650" height="450"></a></noscript>
 </div>
 <p>Montado el sistema de archivos veremos que en el explorador de archivos se ha montado una unidad con el nombre del directorio sin cifrar que hemos indicado, como se aprecia en el caso de Nautilus.</p>
 <div class="media">
@@ -326,7 +399,8 @@
 </div>
 <p>Y este es el resultado de un vídeo en el que muestro un <a href="https://picodotdev.github.io/blog-bitix/2017/01/script-para-instalar-arch-linux-facil-rapido-desatendido-automatizado-y-personalizable/">Script para instalar Arch Linux fácil, rápido, desatendido, automatizado y personalizable</a>.</p>
 <div class="media">
-<a href="https://asciinema.org/a/418524" target="_blank"><amp-img src="https://asciinema.org/a/418524.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/418524.js" id="asciicast-418524" async></script>
+<noscript><a href="https://asciinema.org/a/418524" target="_blank"><img src="https://asciinema.org/a/418524.png" width="650" height="450"></a></noscript>
 </div>
 <div class="reference">
     Referencia:<br>
@@ -445,7 +519,8 @@
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/23600" target="_blank"><amp-img src="https://asciinema.org/a/23600.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/23600.js" id="asciicast-23600" async></script>
+<noscript><a href="https://asciinema.org/a/23600" target="_blank"><img src="https://asciinema.org/a/23600.png" width="650" height="450"></a></noscript>
 </div>
 <p>El directorio por defecto donde se guardarán los archivos de las máquinas virtuales es <em>~/.docker/machine</em>, si queremos cambiarlo podemos utilizar el parámetro <em>--storage-path</em> en cada uno de los comandos anteriores de la siguiente forma, el orden de los parámetros es importante:</p>
 <div class="code">
@@ -612,7 +687,8 @@
 </div>
 <p>docker-compose inicia los contenedores en el orden que hemos indicado en el archivo de definición, las trazas emitidas de los servicios de los contenedores aparecerán en la terminal si iniciamos los contenedores en primer plano y con <em>Ctrl+C</em> se pararán los contenedores. Indicando la opción <em>-d</em> los contenedores se iniciarán en segundo plano, con <em>docker-compose stop</em> podremos pararlos, con <em>docker-compose restart</em> reiniciarlos, <em>docker-compose rm</em> para eliminar completamente los contenedores y con <em>docker-compose logs</em> veremos las trazas emitidas por los servicios que nos serán de utilizar si iniciamos los contenedores en segundo plano.</p>
 <div class="media">
-<a href="https://asciinema.org/a/23602" target="_blank"><amp-img src="https://asciinema.org/a/23602.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/23602.js" id="asciicast-23602" async></script>
+<noscript><a href="https://asciinema.org/a/23602" target="_blank"><img src="https://asciinema.org/a/23602.png" width="650" height="450"></a></noscript>
 </div>
 <div class="media media-amazon">
   <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1492036730&amp;linkId=666d0aff3a2629cd87c205370bc5ae87" title="Amazon" class="lozad"></iframe>
@@ -783,7 +859,7 @@
 <p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/drupal.svg" width="200" height="218" alt="Drupal" title="Drupal" class="" loading="false&#34;"></p>
 </div>
 <p>Para los proyectos web cuyo punto central es el contenido disponemos de algunas opciones que prácticamente nos dan la solución hecha o facilitan enormemente la tarea como desarrolladores y posteriormente a los administradores que no necesitarán un gran conocimiento para administrar la web. Estas aplicaciones se les suele conocer como <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">Sistemas de gestión de contenidos</a> (Content Management System, CMS) y como siempre disponemos de varias opciones, algunas similares.</p>
-<p>No soy un experto en CMS ni he usado uno en un proyecto real pero trataré en este artículo hacer una introducción a <a href="https://www.drupal.org/">Drupal</a>. Hay otras opciones como <a href="https://wordpress.org/">Wordpress</a> o <a href="https://www.joomla.org/">Joomla</a> también desarrolladas en <a href="https://secure.php.net/">PHP</a> y en el ámbito <a href="https://www.oracle.com/technetwork/java/index.html">Java</a> otras como <a href="https://www.alfresco.com/">Alfresco</a>, <a href="https://www.nuxeo.com/">Nuxeo</a>, <a href="https://dotcms.com/">dotCMS</a> y <a href="https://www.liferay.com/">Liferay</a> aunque estas en algunos puntos son diferentes ofreciendo gestión documental o <a href="https://es.wikipedia.org/wiki/Portal_%28Internet%29">portales de internet</a>. Wordpress es más simple que Drupal pero si tenemos conocimientos de desarrollo Drupal posiblemente se adapte más a nuestras preferencias. Alfresco y Nuxeo son más bien gestores de contenido y de documentos pero no permiten gestionar como se visualiza el contenido en la web final, Liferay es algo más parecido a lo que ofrece Drupal pero tengo la sensación que es algo más compleja o no exactamente con las mismas opciones y está más destinado a la creación de portales web.</p>
+<p>No soy un experto en CMS ni he usado uno en un proyecto real pero trataré en este artículo hacer una introducción a <a href="https://www.drupal.org/">Drupal</a>. Hay otras opciones como <a href="https://wordpress.org/">Wordpress</a> o <a href="https://www.joomla.org/">Joomla</a> también desarrolladas en <a href="https://secure.php.net/">PHP</a> y en el ámbito <a href="https://www.oracle.com/java/">Java</a> otras como <a href="https://www.alfresco.com/">Alfresco</a>, <a href="https://www.nuxeo.com/">Nuxeo</a>, <a href="https://dotcms.com/">dotCMS</a> y <a href="https://www.liferay.com/">Liferay</a> aunque estas en algunos puntos son diferentes ofreciendo gestión documental o <a href="https://es.wikipedia.org/wiki/Portal_%28Internet%29">portales de internet</a>. Wordpress es más simple que Drupal pero si tenemos conocimientos de desarrollo Drupal posiblemente se adapte más a nuestras preferencias. Alfresco y Nuxeo son más bien gestores de contenido y de documentos pero no permiten gestionar como se visualiza el contenido en la web final, Liferay es algo más parecido a lo que ofrece Drupal pero tengo la sensación que es algo más compleja o no exactamente con las mismas opciones y está más destinado a la creación de portales web.</p>
 <p>Drupal como decía está desarrollado sobre PHP pero solo necesitaremos conocer este lenguaje en el momento que queramos desarrollar y personalizarlo. Como usuarios para crear contenido y gestionar la disposición de los elementos en la página web no necesitamos conocer nada de PHP solo necesitaremos conocer como funciona la herramienta de administración que ofrece Drupal. El tipo de los proyectos para los que puede estar indicado Durpal puede ser aquellos en los que los usuarios quieran crear y publicar nuevo contenido y quieran ellos mismos modificar los elementos de las páginas sin necesidad de solicitar un desarrollo. Algunos casos de uso pueden ser instituciones de la administración pública, empresas, tiendas, comercios, &hellip; aquellos que quieran tener una presencia en internet y puedan necesitar añadir, modificar o eliminar en algún momento el contenido de su web. La tarea de los desarrolladores consistirá en personalizar la instalación de Drupal a las necesidades del cliente y sus usuarios ya sea adaptando el aspecto de la web a crear, creando la taxonomía del contenido, definiendo los tipos de contenidos y que información contiene, usuarios y roles, &hellip;</p>
 <div class="media">
 <figure>
@@ -1044,74 +1120,6 @@
 ]]>
         </content>
         
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="software"/>
-            
-                <category term="software-libre"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/</id>
-        <title>Introducción a Bitnami</title>
-        <updated>2017-05-28T01:00:00+02:00</updated>
-        <published>2014-11-29T10:45:45+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes"> 
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bitnami.svg" width="200" height="224" alt="Bitnami" title="Bitnami" class="" loading="false&#34;"></p>
-</div>
-<p>Instalar algunas aplicaciones, herramientas o servicios no siempre es sencillo y rápido. En la mayoría de los casos los pasos están explicados suficientemente pero en la práctica nos pueden surgir dudas o problemas que no están documentados que pueden hacer que la experiencia de instalación no sea agradable o necesitar dependencias que hay que instalar a la vez para obtener un funcionamiento correcto. Además, sin emplear una máquina virtual se necesita instalar en el propio equipo o servidor cuando quizá solo interesa evaluar el producto con lo que al hacer la desinstalación se acaba con archivos temporales que quizá no se eliminen y permanezcan ocupando espacio para siempre o hasta ser eliminados.</p>
-<p><a href="https://bitnami.com/">Bitnami</a> es una amplia colección de servicios populares que permite instalarlos y disponer de ellos rápidamente completamente configurados sin necesidad de dedicar tiempo a conocer como instalarlos, además, si empleamos virtualización con <a href="https://www.virtualbox.org/">VirtualBox</a> se consigue que el equipo quede completamente limpio una vez que el servicio sea desinstalado bastando únicamente eliminar la máquina virtual. Esta colección de servicios se pueden instalar en el propio equipo, en una máquina virtual con VirtualBox, <a href="https://www.vmware.com/">VMware</a>, <a href="https://www.linux-kvm.org/page/Main_Page">KVM</a> o en la nube por ejemplo de <a href="https://aws.amazon.com/es/ec2/">Amazon EC2</a>, <a href="https://azure.microsoft.com/es-es/">microsoft-azure</a> o <a href="https://cloud.google.com/">Google Cloud</a> y próximamente usando <a href="https://www.docker.com/">Docker</a>.</p>
-<p>¿Alguna vez has querido probar <a href="https://wordpress.org/">Wordpress</a>, <a href="https://www.redmine.org/">Redmine</a>, <a href="https://www.drupal.org/">Drupal</a>, <a href="https://www.mediawiki.org/">MediaWiki</a>, <a href="https://www.phpbb.com/">phpBB</a>, <a href="https://www.liferay.com/">Liferay</a>, <a href="https://jenkins.io/">Jenkins</a>, <a href="https://plone.org/">Plone</a>, <a href="https://www.alfresco.com/">Alfresco</a>, &hellip;? Estos son solo unos pocos ejemplos de <a href="https://bitnami.com/stacks">todos los servicios que nos ofrece Bitnami</a> listos para que empecemos a usarlos en unos pocos minutos, hay muchos otros disponibles y en un futuro se agregarán más según las peticiones que realicen los usuarios de Bitnami. Algunas aplicaciones están compuestas de una pila completa de servicios como por ejemplo LAMP (Linux, Apache, MySQL, PHP) o LAPP (Linux, Apache, PostgreSQL, PHP) que incluyen una lista completa de dependencias que necesitan como FastCGI, OpenSSL, phpMyAdmin, ModSecurity, SQLite, Varnish, ImageMagick, xDebug, Xcache, OpenLDAP, ModSecurity, Memcache, OAuth, PEAR, PECL, APC, GD o cURL. Adicionalmente podemos usar una única pila como LAMP para instalar varios <a href="https://bitnami.com/stack/lamp/modules">módulos</a> en vez de instalar cada aplicación individualmente (Drupal, MediaWiki, &hellip;) de forma que todas las aplicación compartan la infraestructura de la misma pila.</p>
-<p>En un futuro parece que Bitnami ofrecerá soporte para <a href="https://www.docker.com/">Docker</a> haciendo que no necesitemos ni siquiera un entorno de virtualización, ahorrando espacio en disco y ofreciendo el máximo rendimiento que ofrezca la máquina sin ningún tipo de penalización que impone virtualizar.</p>
-<h3 id="cómo-empezar-a-usar-bitnami">¿Cómo empezar a usar Bitnami?</h3>
-<p>A continuación explicaré la opción de usar Bitnami con VirtualBox, para el ejemplo usaré la aplicación de <a href="https://about.gitlab.com/">GitLab</a>. En la <a href="https://docs.bitnami.com/virtual-machine/">guía de inicio rápido de Bitnami</a> están explicadas otras opciones y preguntas frecuentes, en este caso nos interesa la <a href="https://docs.bitnami.com/virtual-machine/get-started-virtualbox/">sección para VirtualBox</a>.</p>
-<p>Teniendo instalado previamente VirtualBox, primeramente necesitaremos descargar la imagen del disco que contiene la <a href="https://bitnami.com/stack/gitlab">aplicación de Bitnami para GitLab</a>. Accedida a la sección <a href="https://bitnami.com/stack/gitlab/virtual-machine"><em>Local Install</em></a> pulsamos el botón <em>Download</em> según la versión del sistema operativo que prefiramos, en este caso usaré la basada en <a href="https://www.debian.org/">Debian</a>. A continuación hay que crear una máquina virtual en VirtualBox mediante la opción <em>Importar servicio virtualizado&hellip;</em> del menú <em>Archivo</em> donde hay que seleccionar el archivo de extensión <em>ova</em> y cambiaremos la memoria asignada a la máquina virtual al menos 2048 MiB.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-importar-servicio-virtualizado_huea606d4532b9c289e2b465a836172f8b_108509_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Importación de servicio virtualizado en VirtualBox"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-importar-servicio-virtualizado_huea606d4532b9c289e2b465a836172f8b_108509_300x200_fit_q90_h2_box_3.webp" width="300" height="198" alt="Importación de servicio virtualizado en VirtualBox" title="Importación de servicio virtualizado en VirtualBox" class="&#34; " loading="lazy"></a>
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-gitlab_hu8207aa8b5020809288ce6ba68fd9735a_23848_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Máquina virtual de GitLab"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-gitlab_hu8207aa8b5020809288ce6ba68fd9735a_23848_300x200_fit_q90_h2_box_3.webp" width="296" height="200" alt="Máquina virtual de GitLab" title="Máquina virtual de GitLab" class="&#34; " loading="lazy"></a></p>
-<figcaption>Importación de servicio virtualizado de Bitnami en VirtualBox</figcaption>
-</figure>
-</div>
-<p>Una vez importado el servicio y creada la máquina virtual la tratamos como cualquier otra máquina virtual para iniciarla la máquina virtual está lista para ser iniciada. Una vez iniciada completamente en la terminal se solicita un inicio de sesión con el usuario y contraseña que da acceso a una terminal para realizar tareas administrativas, en la misma página de inicio de sesión se indica el usuario y contraseña a usar y se indica la dirección IP (en el caso de las capturas mostradas es la <em>192.168.1.3</em>) que es necesario usar para acceder al servicio con el navegador. En el primer inicio de sesión se solicita cambiar la contraseña.</p>
-<p>Accediendo con el navegador a la dirección <em>https://192.168.1.3</em> se accede a la aplicación de GitLab que pide un usuario y contraseña para iniciar sesión, el usuario y contraseña están indicados en la página de descarga de la imagen del servicio.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab-inicio-sesion_hua827c112ebc0dfe1f95fdf1511ae6469_60472_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Inicio de sesión de GitLab"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab-inicio-sesion_hua827c112ebc0dfe1f95fdf1511ae6469_60472_300x200_fit_q90_h2_box_3.webp" width="284" height="200" alt="Inicio de sesión de GitLab" title="Inicio de sesión de GitLab" class="&#34; " loading="lazy"></a>
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab_hu1c9450aa09534aa8f5ca35bf6de1a0dd_55744_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="GitLab"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab_hu1c9450aa09534aa8f5ca35bf6de1a0dd_55744_300x200_fit_q90_h2_box_3.webp" width="266" height="200" alt="GitLab" title="GitLab" class="&#34; " loading="lazy"></a></p>
-<figcaption>Servicio de GitLab</figcaption>
-</figure>
-</div>
-<p>En definitiva, Bitnami es de utilidad si se necesita usar cualquiera de los servicios que ofrece tanto para probarlos con una máquina virtual o para instalarlos en la nube de Amazon EC2, Azure o en Google Cloud. La nube evita adquirir hardware y posibilita escalarlo según las necesidades siempre estando dispuestos a pagar su coste, en algunos casos un mini PC como los <a href="https://amzn.to/2rauzYV">Brix</a>, <a href="https://amzn.to/2s8GYtI">NUC</a> o <a href="https://amzn.to/2r07KGS">Cubi</a> que soportan cantidades de memoria de 16 GiB y algunos 32 GiB son mas que suficientes para una infraestructura interna de una empresa pequeña que incluya control de versiones, gestor de peticiones, integración continua, base de datos, servidor de aplicaciones, &hellip; estos ordenadores pequeños en tamaño pero con una capacidad de proceso y memoria nada despreciable son una opción a considerar para algunas tareas y pueden actuar perfectamente como servidores en los que alojar algunos servicios para consumo interno.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://bitnami.com">Bitnami</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Bitnami">Wikipedia Bitnami</a></li>
-<li><a href="http://www.jsitech.com/generales/bitnami-una-tienda-de-aplicaciones-para-servidores/">Bitnami, Una tienda de Aplicaciones para Servidores</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">Introducción a Docker</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">Guía de inicio básico de Docker</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">Cómo crear una imagen para Docker usando un Dockerfile</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/">Introducción a Ansible</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Integración entre Ansible y Docker</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/">Introducción al gestor de proyectos y tareas Redmine</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/">Instalar y usar plugin ágil en Redmine</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/">Introducción e inicio a Drupal</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="hardware"/>
             
                 <category term="gnu-linux"/>
             

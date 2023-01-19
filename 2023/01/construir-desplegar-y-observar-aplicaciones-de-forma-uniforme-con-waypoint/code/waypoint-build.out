@@ -1,0 +1,29 @@
+
+» Building spring-injection-point...
+
+» Performing operation locally
+✓ Running build v3
+Creating new buildpack-based image using builder: paketobuildpacks/builder:base
+✓ Creating pack client
+✓ Building image
+ │ [exporter] Adding label 'io.buildpacks.build.metadata'
+ │ [exporter] Adding label 'io.buildpacks.project.metadata'
+ │ [exporter] Setting default process type 'app'
+ │ [exporter] Saving spring-injection-point...
+ │ [exporter] *** Images (029d19ed3f4b):
+ │ [exporter]       spring-injection-point
+ │ [exporter] Reusing cache layer 'paketo-buildpacks/syft:syft'
+ │ [exporter] Reusing cache layer 'paketo-buildpacks/adoptium:jdk'
+ │ [exporter] Adding cache layer 'paketo-buildpacks/gradle:application'
+ │ [exporter] Adding cache layer 'paketo-buildpacks/gradle:cache'
+✓ Injecting entrypoint binary to image
+
+Generated new Docker image: spring-injection-point:latest
+✓ Running push build v2
+
+Created artifact v2
+
+» Variables used:
+  VARIABLE | VALUE | TYPE | SOURCE  
+-----------+-------+------+---------
+
