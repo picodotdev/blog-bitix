@@ -13,7 +13,7 @@ promoted: false
 imagePost: "logotype:hashicorp-waypoint.svg"
 tags: ["gnu-linux", "planeta-codigo", "software", "programacion"]
 series: ["hashicorp"]
-summary: "Cuando se tienen muchas aplicaciones si no se tienen unos procesos definidos seguramente cada una requerirá su propio proceso, herramientas de construcción y despliegue. Estas diferencias añaden complejidad y no es deseable para tener un flujo de trabajo ágil. La herramienta Waypoint de Hashicorp permite construir una aplicación independientemente del lenguaje en el que esté implementada, desplegar en diferentes proveedores de computación en la nube y observar las aplicaciones una vez desplegadas, todo con la misma herramienta y de forma uniforme que simplifica en gran medida el flujo de desarrollo."
+summary: "Cuando se tienen muchas aplicaciones si no se tienen unos procesos definidos seguramente cada una requerirá su propio proceso, herramientas de construcción y despliegue. Estas diferencias añaden complejidad y no es deseable para tener un flujo de trabajo ágil. La herramienta Waypoint de HashiCorp permite construir una aplicación independientemente del lenguaje en el que esté implementada, desplegar en diferentes proveedores de computación en la nube y observar las aplicaciones una vez desplegadas, todo con la misma herramienta y de forma uniforme que simplifica en gran medida el flujo de desarrollo."
 ---
 
 {{% post %}}
@@ -24,15 +24,15 @@ No son pocas los lenguajes de programación actuales y hay varias plataformas de
 
 Las aplicaciones para se ejecución en su ciclo de vida esencialmente necesitan al menos dos operaciones, una es su construcción a partir de código fuente y la segunda es su despliegue en el entorno de ejecución. Hay una tercera adicional que es la de publicación consistente en enviarle tráfico, el despliegue simplemente consiste en ejecutar en el entorno pero sin tráfico para la versión desplegada, esto es, separando el despliegue de la publicación.
 
-[Hashicorp][hashicorp] ofrece varias herramientas que cada una cubre una necesidad de las aplicaciones, y de las que varias ya he escrito algunos artículos. Algunas de sus herramientas más conocidas son [Terraform][terraform] para tratar la infraestructura como código, [Consul][consul] para la conectividad entre servicios y [Vault][vault] centrada en la seguridad como servicio pero tiene otras muy interesantes como [Vagrant][vagrant] para la virtualización en local, [Packer][packer] para la construcción de imágenes de máquinas virtuales, [Boundary][boundary] también el apartado de seguridad o [Nomad][nomad] una alternativa similar a [Kubernetes][kubernetes] pero mucho más sencilla de ejecutar en local.
+[HashiCorp][hashicorp] ofrece varias herramientas que cada una cubre una necesidad de las aplicaciones, y de las que varias ya he escrito algunos artículos. Algunas de sus herramientas más conocidas son [Terraform][terraform] para tratar la infraestructura como código, [Consul][consul] para la conectividad entre servicios y [Vault][vault] centrada en la seguridad como servicio pero tiene otras muy interesantes como [Vagrant][vagrant] para la virtualización en local, [Packer][packer] para la construcción de imágenes de máquinas virtuales, [Boundary][boundary] también el apartado de seguridad o [Nomad][nomad] una alternativa similar a [Kubernetes][kubernetes] pero mucho más sencilla de ejecutar en local.
 
-En el caso de la construcción y despliegue, la herramienta que proporciona Hashicorp es [Waypoint][waypoint].
+En el caso de la construcción y despliegue, la herramienta que proporciona HashiCorp es [Waypoint][waypoint].
 
 {{< tableofcontents >}}
 
 ### Waypoint
 
-Waypoint de Hashicorp es una herramienta que permite construir una aplicación y realizar el despliegue independientemente del lenguaje empleado por la aplicación y la infraestructura de ejecución que se utilice.
+Waypoint de HashiCorp es una herramienta que permite construir una aplicación y realizar el despliegue independientemente del lenguaje empleado por la aplicación y la infraestructura de ejecución que se utilice.
 
 Con Waypoint es posible construir cualquier aplicación ya se trate de una aplicación programada en [Java][java], [Node][nodejs] o [Python][python] y desplegarla en cualquier proveedor en la nube soportado como [Amazon Web Services][amazon-web-services], [Google Cloud Platform][google-cloud] o [Microsoft Azure][microsoft-azure].
 
@@ -52,7 +52,7 @@ Si la plataforma de despliegue lo soporta la [fase de publicación](https://deve
 
 #### Instalación de Waypoint
 
-Al igual que muchas de las otras herramientas de Hashicorp que están implementadas con el lenguaje de programación [Go], Waypoint es un único binario con lo que basta descargar la última versión disponible y en el caso de [GNU][gnu]/[Linux][linux] copiarla al directorio _/usr/local/bin/_ donde los usuarios pueden instalar programas sin que entren en conflicto con los instalados por los paquetes de la distribución.
+Al igual que muchas de las otras herramientas de HashiCorp que están implementadas con el lenguaje de programación [Go], Waypoint es un único binario con lo que basta descargar la última versión disponible y en el caso de [GNU][gnu]/[Linux][linux] copiarla al directorio _/usr/local/bin/_ donde los usuarios pueden instalar programas sin que entren en conflicto con los instalados por los paquetes de la distribución.
 
 {{< code file="ls-bin.sh" language="bash" options="" >}}
 

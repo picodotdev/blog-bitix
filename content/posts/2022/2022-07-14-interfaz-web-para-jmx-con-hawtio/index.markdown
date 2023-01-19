@@ -62,9 +62,9 @@ Las operaciones administrativas seguramente sean funcionalidades que realicen ta
     image1="image:hawtio-console.webp" optionsthumb1="650x450" title1="Consola de Hawtio como un actuator en aplicación de Spring Boot"
     caption="Consola de Hawtio como un actuator en aplicación de Spring Boot" >}}
 
-### Añadir seguridad a la interfaz de Hawtio con Hashicorp Boundary
+### Añadir seguridad a la interfaz de Hawtio con HashiCorp Boundary
 
-Por motivos de seguridad es deseable que la consola web de Hawtio no esté accesible mediante una conexión directa. [Bondary][boundary] es uno de los productos de [Hashicorp][hashicorp] que proporciona la funcionalidad de un bastión y un _proxy_ de conexión a servicios internos, es más seguro que una VPN ya que a diferencia de una VPN únicamente otorga acceso a los sistemas necesarios y no a toda una red interna completa.
+Por motivos de seguridad es deseable que la consola web de Hawtio no esté accesible mediante una conexión directa. [Bondary][boundary] es uno de los productos de [HashiCorp][hashicorp] que proporciona la funcionalidad de un bastión y un _proxy_ de conexión a servicios internos, es más seguro que una VPN ya que a diferencia de una VPN únicamente otorga acceso a los sistemas necesarios y no a toda una red interna completa.
 
 * [Acceso simple y seguro a sistemas remotos con Boundary][blogbitix-558]
 
