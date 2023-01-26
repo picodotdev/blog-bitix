@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Que aún GNU/Linux es un sistema minoritario y lo seguirá siendo es una realidad pero que en GNU/Linux no se puede jugar a los mismos juegos de Windows es ya un mito. El cliente de Steam para GNU/Linux da acceso al amplio catálogo de juegos de esta tienda donde la mayoría de juegos se puede jugar. En este artículo muestro como instalar y usar el cliente Heroic Games Launcher para las tiendas Epic Games y GOG que combinado con los juegos que regala semanalmente la Epic Games da acceso a un buen catálogo de juegos. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Los juegos de Epic Games y GOG en GNU/Linux con el lanzador Heroic Games Laucher</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/" hreflang="es" title="Los juegos de Epic Games y GOG en GNU/Linux con el lanzador Heroic Games Laucher">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Los juegos de Epic Games y GOG en GNU/Linux con el lanzador Heroic Games Laucher">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/images/heroic-games-launcher-1_hu5a686bdd85c68762ae5ca3e77acf67f3_569384_750x750_fit_q90_box.jpg">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Que aún GNU/Linux es un sistema minoritario y lo seguirá siendo es una realidad pero que en GNU/Linux no se puede jugar a los mismos juegos de Windows es ya un mito. El cliente de Steam para GNU/Linux da acceso al amplio catálogo de juegos de esta tienda donde la mayoría de juegos se puede jugar. En este artículo muestro como instalar y usar el cliente Heroic Games Launcher para las tiendas Epic Games y GOG que combinado con los juegos que regala semanalmente la Epic Games da acceso a un buen catálogo de juegos. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/images/heroic-games-launcher-1_hu5a686bdd85c68762ae5ca3e77acf67f3_569384_750x750_fit_q90_box.jpg">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Los juegos de Epic Games y GOG en GNU/Linux con el lanzador Heroic Games Laucher">
+<meta name="twitter:description" content="Que aún GNU/Linux es un sistema minoritario y lo seguirá siendo es una realidad pero que en GNU/Linux no se puede jugar a los mismos juegos de Windows es ya un mito. El cliente de Steam para GNU/Linux da acceso al amplio catálogo de juegos de esta tienda donde la mayoría de juegos se puede jugar. En este artículo muestro como instalar y usar el cliente Heroic Games Launcher para las tiendas Epic Games y GOG que combinado con los juegos que regala semanalmente la Epic Games da acceso a un buen catálogo de juegos. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/"
+    },
+    "headline": "Los juegos de Epic Games y GOG en GNU/Linux con el lanzador Heroic Games Laucher",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/images/heroic-games-launcher-1_hu5a686bdd85c68762ae5ca3e77acf67f3_569384_750x750_fit_q90_box.jpg"
+        
+      },
+    "datePublished": "2023-01-26T19:00:00+02:00",
+    "dateModified": "2023-01-26T19:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1379",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Que aún GNU/Linux es un sistema minoritario y lo seguirá siendo es una realidad pero que en GNU/Linux no se puede jugar a los mismos juegos de Windows es ya un mito. El cliente de Steam para GNU/Linux da acceso al amplio catálogo de juegos de esta tienda donde la mayoría de juegos se puede jugar. En este artículo muestro como instalar y usar el cliente Heroic Games Launcher para las tiendas Epic Games y GOG que combinado con los juegos que regala semanalmente la Epic Games da acceso a un buen catálogo de juegos."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9R8XCRGSMY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/images/heroic-games-launcher-1_hu5a686bdd85c68762ae5ca3e77acf67f3_569384_2560x1440_fit_q90_h2_box.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:600px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="7450235768"></ins>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Los juegos de Epic Games y GOG en GNU/Linux con el lanzador Heroic Games Laucher</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>26/01/2023</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/juegos/">juegos</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Que aún GNU/Linux es un sistema minoritario y lo seguirá siendo es una realidad pero que en GNU/Linux no se puede jugar a los mismos juegos de Windows es ya un mito. El cliente de Steam para GNU/Linux da acceso al amplio catálogo de juegos de esta tienda donde la mayoría de juegos se puede jugar. En este artículo muestro como instalar y usar el cliente Heroic Games Launcher para las tiendas Epic Games y GOG que combinado con los juegos que regala semanalmente la Epic Games da acceso a un buen catálogo de juegos.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:90px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="8238629013"></ins>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false&#34;"></p>
+</div>
+<p>El principal motivo por el que <a href="https://www.microsoft.com/es-es/windows/">Windows</a> sigue siendo el sistema operativo más usado en el escritorio son en realidad dos: que Windows viene preinstalado en las computadoras que se venden en las grandes superficies y que a la mayoría de la gente el sistema operativo que usa le da igual mientras pueda realizar unas pocas tareas ofimáticas.</p>
+<p>El siguiente motivo por el que algunos de los usuarios siguen usando Windows aún conociendo <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> son los juegos. Dado el número de usuarios de Windows la mayoría de juegos se desarrollan para este sistema operativo.</p>
+<p>Sin embargo, en la actualidad hay muchas opciones para poder jugar en GNU/Linux tan bien como en Windows. Quizá las excepciones sean los software que detectan trampas o <em>anti-cheat</em> que pueden detectar GNU/Linux como algo extraño. Desde hace ya tiempo hay muchos juegos y opciones de juegos en GNU/Linux, y juegos triple AAA comerciales.</p>
+<p>El cliente de <a href="https://store.steampowered.com/">Steam</a> es compatible con GNU/Linux y la empresa <a href="https://www.valvesoftware.com/es/">Valve</a> que lo desarrolla ha hecho grandes esfuerzos para mejorar la compatibilidad y ejecución de los juegos que han sido diseñados para Windows que puedan jugarse en GNU/Linux con similar rendimiento. La consola portátil <a href="https://www.steamdeck.com/es/">Steam Deck</a> de hecho usa un sistema operativo basado en GNU/Linux.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/">La aplicación cliente de Steam en GNU/Linux</a></li>
+</ul>
+<p>Por otro lado, los controladores gráficos de las tarjetas gráficas de <a href="https://www.amd.com/es">AMD</a> e <a href="https://www.intel.es">Intel</a> y las APIs gráficas como <a href="https://www.khronos.org/opengl/">OpenGL</a> y <a href="https://www.vulkan.org/">Vulkan</a> no están muy detrás de la API gráfica DirectX en Windows. En GNU/Linux los juegos diseñados para Windows que utilizan DirectX se traducen a las APIs gráficas OpenGL y Vulkan que soporta GNU/Linux con un rendimiento muy similar que el nativo en Windows.</p>
+<p>Es posible jugar a juegos de Windows en GNU/Linux gracias a <a href="https://www.winehq.org/">Wine</a> que traduce las APIs de los juegos de Windows a las APIs de GNI/Linux. Gracias a Wine pude jugar al <a href="https://eu.diablo3.com/es/">Diablo 3</a> de <a href="https://www.blizzard.com/es-es/">Blizzard</a>.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/12/como-usar-wine-para-jugar-en-gnu-linux-a-juegos-de-windows/">Cómo usar Wine para jugar en GNU/Linux a juegos de Windows</a></li>
+</ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#juegos-gratuitos-de-la-epic-games">Juegos gratuitos de la Epic Games</a></li>
+    <li><a href="#lanzador-de-juegos-heroic-games-launcher">Lanzador de juegos Heroic Games Launcher</a></li>
+    <li><a href="#equipo-para-jugar-en-gnulinux">Equipo para jugar en GNU/Linux</a></li>
+    <li><a href="#otras-opciones-de-juegos-en-gnulinux">Otras opciones de juegos en GNU/Linux</a></li>
+  </ul>
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
+<h3 id="juegos-gratuitos-de-la-epic-games">Juegos gratuitos de la Epic Games</h3>
+<p>Desde hace mucho tiempo la <a href="https://www.epicgames.com/store/es-ES/">Epic Games</a> regala semanalmente al menos un juego de forma gratuita que se puede reclamar para incorporarlo a la biblioteca digital de esta tienda de juegos. Los juegos regalados son de diferentes géneros con lo que al cabo del tiempo reclamando aquellos en los que se está interesado se forma una colección de juegos interesante.</p>
+<p>Algunos juegos de los gratuitos son minoritarios o que ya pasados más de dos años se consideran antiguos no tanto porque tengan mucho tiempo sino porque en ese periodo hasta hoy han sido publicados muchos otros.</p>
+<p>Aún así entre todos los que regala de vez en cuando hay algunos juegos que son triple AAA que son de lo mejor, por mencionar algunos de la biblioteca digital de la Epic que tengo están <em>Control</em>, <em>A plague Tale: Innocence</em>, <em>Death Stranding</em>, <em>Frost Punk</em>, <em>For the King</em>, la trilogía de <em>Tomb Raider</em>, <em>XCOM 2</em> y muchos otros muy reconocidos.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/">El juego XCOM 2 y guía de estrategia</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/">Análisis y guía del juego de estrategia Frostpunk</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/">Análisis y guía del juego de rol For the King</a></li>
+</ul>
+<p>Para jugar en GNU/Linux a los juegos de la Epic Games se necesita una forma de instalarlos y lanzarlos.</p>
+<h3 id="lanzador-de-juegos-heroic-games-launcher">Lanzador de juegos Heroic Games Launcher</h3>
+<p>Steam tiene un cliente para la instalación y ejecución de los juegos desarrollado específicamente para GNU/Linux usando Wine y Proton, la versión de Wine desarrollada por Steam. La Epic Games no tiene un cliente oficial ni se preocupa por GNU/Linux con lo que hay que recurrir a lanzadores desarrollados por personas de la comunidad de GNU/Linux.</p>
+<p>El cliente o lanzador permite mostrar el catálogo de juegos que se posee de la tienda, comprados o los regalados conseguidos gratuitamente. También permiten descargar e instalar los juegos fácilmente y finalmente ejecutarlos para empezar a jugar.</p>
+<p>El lanzador <a href="https://heroicgameslauncher.com/">Heroic Games Launcher</a> es un cliente compatible con GNU/Linux y las tiendas de la Epic Games y <a href="https://www.gog.com/">GOG</a>. El cliente tiene una versión de aplicación en formato <a href="https://flatpak.org/">Flatpak</a> con lo que su instalación es muy sencilla y compatible con cualquier distribución de GNU/Linux con un simple clic en la tienda de Software de GNOME.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux</a></li>
+<li><a href="https://flathub.org/apps/details/com.heroicgameslauncher.hgl">Flatpak Heroic Games Launcher</a></li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/images/gnome-software_hu3161264c692b8734f842a4dc9db60789_250127_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Software de GNOME"><img src="/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/images/gnome-software_hu3161264c692b8734f842a4dc9db60789_250127_300x200_fit_q90_h2_box.webp" width="300" height="196" alt="Software de GNOME" title="Software de GNOME" class="&#34; " loading="lazy"></a></p>
+<figcaption>Software de GNOME</figcaption>
+</figure>
+</div>
+<p>Una vez instalado el cliente es necesario descargar e instalar una versión de Wine o Proton que también es muy fácil de hacer con un simple clic.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/images/heroic-games-launcher-1_hu5a686bdd85c68762ae5ca3e77acf67f3_569384_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Heroic Games Launcher"><img src="/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/images/heroic-games-launcher-1_hu5a686bdd85c68762ae5ca3e77acf67f3_569384_300x200_fit_q90_h2_box.webp" width="280" height="200" alt="Heroic Games Launcher" title="Heroic Games Launcher" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/images/heroic-games-launcher-2_hu487bc13a42cc73ba4b5494381e4f19fb_355929_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Heroic Games Launcher"><img src="/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/images/heroic-games-launcher-2_hu487bc13a42cc73ba4b5494381e4f19fb_355929_300x200_fit_q90_h2_box.webp" width="280" height="200" alt="Heroic Games Launcher" title="Heroic Games Launcher" class="&#34; " loading="lazy"></a></p>
+<figcaption>Heroic Games Launcher</figcaption>
+</figure>
+</div>
+<p>Hay que iniciar sesión con las credenciales de la Epic Games, GOG o ambas tras lo cual aparecerán los juegos de la biblioteca. Instalar un juego de los que se poseen nuevamente simplemente requiere un clic teniendo en cuenta que se tenga suficiente espacio disponible de almacenamiento y una tarjeta gráfica que permita jugar al juego de forma fluida.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/images/heroic-games-launcher-3_hu4581394cae40ca51edab67a4859a84a1_217161_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Juego de Epic Games con Heroic Games Launcher"><img src="/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/images/heroic-games-launcher-3_hu4581394cae40ca51edab67a4859a84a1_217161_300x200_fit_q90_h2_box.webp" width="279" height="200" alt="Juego de Epic Games con Heroic Games Launcher" title="Juego de Epic Games con Heroic Games Launcher" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/images/heroic-games-launcher-4_hua9ae087cc4bab3f71ee51497d3c66d8d_304450_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Juego de Epic Games con Heroic Games Launcher"><img src="/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/images/heroic-games-launcher-4_hua9ae087cc4bab3f71ee51497d3c66d8d_304450_300x200_fit_q90_h2_box.webp" width="280" height="200" alt="Juego de Epic Games con Heroic Games Launcher" title="Juego de Epic Games con Heroic Games Launcher" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/images/heroic-games-launcher-5_hub08a9a168122e448545d249076c276af_375239_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Juego de Epic Games con Heroic Games Launcher"><img src="/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/images/heroic-games-launcher-5_hub08a9a168122e448545d249076c276af_375239_300x200_fit_q90_h2_box.webp" width="279" height="200" alt="Juego de Epic Games con Heroic Games Launcher" title="Juego de Epic Games con Heroic Games Launcher" class="&#34; " loading="lazy"></a></p>
+<figcaption>Juego de Epic Games con Heroic Games Launcher</figcaption>
+</figure>
+</div>
+<h3 id="equipo-para-jugar-en-gnulinux">Equipo para jugar en GNU/Linux</h3>
+<p>Muchos de los juegos requieren un equipo potente siendo el componente principal la tarjeta gráfica. Hasta hace poco había menos opciones si se quería jugar en GNU/Linux, por un lado los controladores de <a href="https://www.nvidia.com/es-es/">NVIDIA</a> son privativos y su uso en GNU/Linux requiere su instalación lo puede dar lugar a algunos problemas. Intel siempre ha dado buen soporte a GNU/Linux en sus controladores gráficos pero hasta la comercialización de las gráficas <a href="https://www.intel.com/content/www/us/en/products/details/discrete-gpus/arc.html">Intel Arc</a> dedicadas a finales del 2022 solo tenía gráficas integradas de bajo rendimiento para los juegos. Por la parte de AMD que si tenía ya gráficas dedicadas <a href="https://www.amd.com/es/graphics/radeon-rx-graphics">Radeon</a> ha empezado a desarrollar controladores gráficos de código abierto con lo que su uso es sencillo y en general sin ningún problema ni con un <em>kernel</em> reciente de Linux. Para Intel y AMD no hace falta instalar los controladores al contrario de los de NVIDIA.</p>
+<p>Con la oferta de estas tres empresas, Intel, AMD y NVIDIA la recomendación que hago es descartar a NVIDIA y optar alguna de la gráficas dedicadas de Intel o AMD por su controladores de código abierto que están mejor soportados en GNU/Linux que los de NVIDIA para evitar problemas.</p>
+<p>Si la intención es jugar a juegos de forma asidua es necesario un equipo y gráfica dedicada, la gente de <a href="https://slimbook.es/">Slimbook</a> proporciona equipos compatibles con GNU/Linux con gráficas dedicadas de Intel y AMD potentes. El optar por una gráfica dedicada suele ser para un equipo grande de torre por necesitar espacio para la refrigeración.</p>
+<p>Si se desea un equipo compacto pero con la posibilidad de juegos están los Intel NUC como <em>Serpent Canyon</em> que a pesar de su pequeño tamaño llevan una Intel Arc A770. También hay equipos con procesador AMD y gráfica integrada Radeon más capaces que las integradas de Intel con un formato similar a los Intel NUC.</p>
+<p>Hace ya unos años compré un Intel NUC <em>Bean Canyon</em> y para jugar una <a href="https://www.playstation.com/es-es/ps4/">PlayStation 4</a> teniendo el lanzador de Heroic y Steam posiblemente en un futuro quizá mire un equipo como los anteriores que siguiendo siendo compactos tenga una gŕafica más potente que la integrada de Intel como el <em>Serpent Canyon</em> o el parecido que haya en el futuro.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/09/desempaquetado-de-playstation-4-slim-de-1-tb/">Desempaquetado de PlayStation 4 Slim de 1 TB</a></li>
+</ul>
+<h3 id="otras-opciones-de-juegos-en-gnulinux">Otras opciones de juegos en GNU/Linux</h3>
+<p>Más allá de los juegos triple AAA hay muchos usuarios que siguen disfrutando de juegos retro con <a href="https://www.mame.net/">Mame</a> o lanzadores de juegos de arcade y máquinas recreativas como <a href="https://www.retroarch.com/">RetroArch</a>. O los míticos juegos de <em>point and clic</em> como <em>Monkey Island</em>, <em>Maniac Mansion</em> o <em>Day of the Tentacle</em>.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/">Consola de juegos retro con Lakka y una Raspberry Pi</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/jugar-a-videojuegos-clasicos-y-miticos-de-arcade-con-mame-en-gnu-linux/">Jugar a videojuegos clásicos y míticos de arcade con Mame en GNU/Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/varios-juegos-de-culto-con-scummvm-en-gnu-linux/">Varios juegos de culto con ScummVM en GNU/Linux</a></li>
+</ul>
+<p>El entorno de escritorio GNOME también proporciona unos pocos juegos en el apartado de pasatiempo solitarios para lo que no es necesario un equipo potente y que con una gráfica integrada funcionan perfectamente.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2022/11/el-entorno-de-escritorio-gnome-simple-elegante-y-completo/">El entorno de escritorio GNOME, simple, elegante y completo</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/juegos-incluidos-en-el-entorno-de-escritorio-gnome/">Juegos incluidos en el entorno de escritorio GNOME</a></li>
+</ul>
+<p>También hay algunos juegos gratuitos como el <em>Transport Tycoon</em> al que hace ya muchos años dedique una enorme cantidad de tiempo.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/22-plus-buenos-juegos-en-gnu-linux/">22+ buenos juegos en GNU/Linux</a></li>
+</ul>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=lgAGPhHYVNM">Juegos de Epic Games en Linux | Heroic games launcher</a></li>
+<li><a href="https://www.youtube.com/watch?v=2ROg_aTWGV8">Juegos de Windows en Linux | Steam Play</a></li>
+<li><a href="https://www.youtube.com/watch?v=erphUB2Mf4Q">Juegos de bajos recursos y open source</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>juegos</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/">Jugar al ajedrez en GNU/Linux con GNOME</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-clasico-de-estrategia-de-tablero-go-en-gnu-linux/">Jugar al clásico de estrategia de tablero Go en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/juegos-incluidos-en-el-entorno-de-escritorio-gnome/">Juegos incluidos en el entorno de escritorio GNOME</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/jugar-a-videojuegos-clasicos-y-miticos-de-arcade-con-mame-en-gnu-linux/">Jugar a videojuegos clásicos y míticos de arcade con Mame en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/22-plus-buenos-juegos-en-gnu-linux/">22&#43; buenos juegos en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/varios-juegos-de-culto-con-scummvm-en-gnu-linux/">Varios juegos de culto con ScummVM en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/">Consola de juegos retro con Lakka y una Raspberry Pi</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/12/como-usar-wine-para-jugar-en-gnu-linux-a-juegos-de-windows/">Cómo usar Wine para jugar en GNU/Linux a juegos de Windows</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/">La aplicación cliente de Steam en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/09/desempaquetado-de-playstation-4-slim-de-1-tb/">Desempaquetado de PlayStation 4 Slim de 1 TB</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/">El juego XCOM 2 y guía de estrategia</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/03/que-es-mejor-para-jugar-y-10-variables-para-elegir-entre-pc-o-consola/">Qué es mejor para jugar y 10&#43; variables para elegir entre PC o consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/04/introduccion-al-juego-de-batallas-navales-world-of-warships-legends-para-consola/">Introducción al juego de batallas navales World of Warships Legends para consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/">Análisis y guía del juego de estrategia Frostpunk</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/">Análisis y guía del juego de rol For the King</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/">Estrategia de batalla básica en el juego World of Warships Legends</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/07/analisis-guia-y-consejos-del-juego-roguelike-darkest-dungeon/">Análisis, guía y consejos del juego roguelike Darkest Dungeon</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/10/analisis-del-maravilloso-juego-horrible-the-last-of-us/">Análisis del maravilloso juego horrible The Last of Us</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/02/analisis-de-los-juegos-de-aventuras-uncharted-the-nathan-drake-collection/">Análisis de los juegos de aventuras Uncharted The Nathan Drake Collection</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/05/analisis-del-juego-de-aventuras-uncharted-4/">Análisis del juego de aventuras Uncharted 4</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/08/analisis-del-juego-con-combates-epicos-god-of-war/">Análisis del juego con combates épicos God of War</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/08/analisis-del-juego-de-la-aventura-galactica-ratchet-y-clank/">Análisis del juego de la aventura galáctica Ratchet &amp; Clank</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/">Análisis del juego espacial de combates por turnos Spaceland</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/">Los juegos de Epic Games y GOG en GNU/Linux con el lanzador Heroic Games Laucher</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-671';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2023\/01\/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2023 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>
