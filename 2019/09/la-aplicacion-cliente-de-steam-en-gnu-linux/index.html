@@ -61,7 +61,7 @@
     "dateModified": "2019-09-06T18:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "414",
+    "wordCount": "487",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -204,6 +204,12 @@
       </div>
     </div>
     
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/cliente-steam_hu386a3aacce6261c68b735c492818c5bc_2210975_2560x1440_fit_q90_h2_box_3.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
     <div class="row">
       <div class="col-12">
         <div class="adblock-container-sidebar">
@@ -262,32 +268,21 @@
       <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/steam.svg" width="200" height="200" alt="Steam" title="Steam" class="" loading="false&#34;"></p>
 </div>
-<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false&#34;"></p>
+<p>La plataforma de juegos <a href="https://store.steampowered.com/">Steam</a> es una de las más populares. Con su cliente de juegos es posible comprar, descargar e instalar juegos para tanto para <a href="https://www.microsoft.com/es-es/windows/">Windows</a>, <a href="https://www.apple.com/macos/">macOS</a> y también para <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>. Steam y <a href="https://www.valvesoftware.com/es/">Valve</a> han posibilitado que se puedan jugar a varios juegos triple A en GNU/Linux, Valve se está esforzando para que muchos juegos sean jugables en la plataforma del pingüino.</p>
+<h3 id="instalar-el-cliente-de-steam-en-gnulinux">Instalar el cliente de Steam en GNU/Linux</h3>
+<p>Aunque las distribuciones como Arch Linux ofrecen paquetes del cliente de Steam rquieren activar el repositorio <em>multilib</em> para paquetes de 32 bits. Otra forma más sencilla de instalar el cliente de Steam e independiente de la distribución es utilizar la versión en formato <a href="https://flathub.org/apps/details/com.valvesoftware.Steam">Flatpak de Steam</a>. Usando el cliente de software de <a href="https://www.gnome.org/">GNOME</a> se hace de forma gráfica simplemente haciendo una búsqueda y un clic en el botón de instalar.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2022/11/el-entorno-de-escritorio-gnome-simple-elegante-y-completo/">El entorno de escritorio GNOME, simple, elegante y completo</a></li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/gnome-software-steam_huef1a4f050b5f32ba482080c13ea792b5_220886_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Aplicación de software de GNOME"><img src="/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/gnome-software-steam_huef1a4f050b5f32ba482080c13ea792b5_220886_300x200_fit_q90_h2_box.webp" width="300" height="196" alt="Aplicación de software de GNOME" title="Aplicación de software de GNOME" class="&#34; " loading="lazy"></a></p>
+<figcaption>Aplicación de software de GNOME</figcaption>
+</figure>
 </div>
-<p>La plataforma de juegos <a href="https://store.steampowered.com/">Steam</a> es una de las más populares. Con su cliente de juegos es posible comprar, descargar e instalar juegos para tanto para Windows, macOS y también para <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>. Steam y <a href="https://www.valvesoftware.com/es/">Valve</a> han posibilitado que se puedan jugar a varios juegos triple A en GNU/Linux, Valve se está esforzando para que muchos juegos sean jugables en la plataforma del pingüino.</p>
-<p>Steam ofrece un cliente nativo para GNU/Linux que en Arch Linux se ofrece en los repositorios oficiales. Requiere además habilitar el repositorio <em>multilib</em> para paquetes de 32 bits e instalar el controlador gráfico de la tarjeta gráfica de 32 bits.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S steam&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>pacman-steam.sh</span>
-    </div>
-</div>
-<p>Para habilitar el repositorio <em>multilib</em> en Arch Linux hay que editar el archivo de configuración <em>/etc/pacman.conf</em> y descomentar varias líneas quitando el caracter <em>#</em> que las precede.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">...&#10;</span></span><span class="line"><span class="cl"><span class="o">[</span>multilib<span class="o">]</span>&#10;</span></span><span class="line"><span class="cl"><span class="nv">Include</span> <span class="o">=</span> /etc/pacman.d/mirrorlist&#10;</span></span><span class="line"><span class="cl">...</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>pacman.conf</span>
-    </div>
-</div>
-<p>En el caso de un gráfica Intel hay que instalar el paquete lib32-mesa.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S lib32-mesa&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>pacman-lib32-mesa.sh</span>
-    </div>
-</div>
-<p>Hecho esto se puede iniciar el cliente, en el menú de aplicaciones del sistema aparecen su acceso directo de aplicación, se necesita una cuenta por que lo que hay que registrarse antes desde su plataforma web. Los juegos de la biblioteca aparecen en el cliente para instalar. En este caso tengo el juego <a href="https://store.steampowered.com/app/231430/Company_of_Heroes_2/">Company of Heroes 2</a>.</p>
+<h3 id="el-cliente-de-steam">El cliente de Steam</h3>
+<p>Instalado el cliente se puede iniciar, en el menú de aplicaciones del sistema aparecen su acceso directo de aplicación, se necesita una cuenta por que lo que hay que registrarse antes desde su plataforma web. Los juegos de la biblioteca aparecen en el cliente para instalar. En este caso tengo el juego <a href="https://store.steampowered.com/app/231430/Company_of_Heroes_2/">Company of Heroes 2</a>.</p>
 <div class="media">
 <figure>
 <p><a href="/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/cliente-steam_hu386a3aacce6261c68b735c492818c5bc_2210975_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Cliente de Steam en GNU/Linux"><img src="/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/cliente-steam_hu386a3aacce6261c68b735c492818c5bc_2210975_300x200_fit_q90_h2_box_3.webp" width="300" height="196" alt="Cliente de Steam en GNU/Linux" title="Cliente de Steam en GNU/Linux" class="&#34; " loading="lazy"></a>
@@ -303,14 +298,22 @@
 <figcaption>Company of Heroes 2</figcaption>
 </figure>
 </div>
-<p>Los juegos ofrecen diferente nivel de soporte para GNU/Linux, para <a href="https://www.microsoft.com/es-es/windows/">Windows</a>, <a href="https://www.apple.com/macos/">macOS</a> y Steam+Linux, los que deben funcionar sin problema son los de la última categoría. Los de Windows pueden funcionar a través de una capa de emulación desarrollada por Steam, para activarla hay que ir a <em>Steam &gt; Parámetros &gt; Steam Play</em> y activar las opciones <em>Enable Steam Play for Supported title</em> y <em>Activar Steam para todos los demás títulos</em>. Sin embargo, no hay garantía que los juegos con solo soporte de Windows funcionen correctamente, he probado con <a href="https://store.steampowered.com/app/552990/World_of_Warships/">World of Warships</a> y no se iniciaba correctamente mostrando únicamente una pequeña ventana negra.</p>
+<p>Los juegos ofrecen diferente nivel de soporte para GNU/Linux, para Windows, macOS y Steam+Linux, los que deben funcionar sin problema son los de la última categoría. Los de Windows pueden funcionar a través de una capa de emulación desarrollada por Steam, para activarla hay que ir a <em>Steam &gt; Parámetros &gt; Steam Play</em> y activar las opciones <em>Enable Steam Play for Supported title</em> y <em>Activar Steam para todos los demás títulos</em>. Sin embargo, no hay garantía que los juegos con solo soporte de Windows funcionen correctamente, he probado con <a href="https://store.steampowered.com/app/552990/World_of_Warships/">World of Warships</a> y no se iniciaba correctamente mostrando únicamente una pequeña ventana negra.</p>
 <div class="media">
 <figure>
 <p><a href="/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/steam-play-settings_hu68634886819c7bb8c65fa463fe5e149a_55047_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Steam Play Settings"><img src="/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/steam-play-settings_hu68634886819c7bb8c65fa463fe5e149a_55047_300x200_fit_q90_h2_box_3.webp" width="253" height="200" alt="Steam Play Settings" title="Steam Play Settings" class="&#34; " loading="lazy"></a></p>
 <figcaption>Steam Play Settings</figcaption>
 </figure>
 </div>
-<p>De vez en cuando Steam ofrece juegos gratuitos que se pueden añadir libremente a la biblioteca y en ocasiones ofrece grandes descuentos. También a través de su propio cliente es posible <a href="https://picodotdev.github.io/blog-bitix/2018/12/como-usar-wine-para-jugar-en-gnu-linux-a-juegos-de-windows/">jugar a los juegos de Blizzard como Diablo 3</a>, aunque en este caso es necesario utilizar <a href="https://www.winehq.org/">Wine</a>.</p>
+<p>De vez en cuando Steam ofrece juegos gratuitos que se pueden añadir libremente a la biblioteca y en ocasiones ofrece grandes descuentos. También a través de su propio cliente es posible jugar a los juegos de <a href="https://www.blizzard.com/es-es/">Blizzard</a> como <a href="https://eu.diablo3.com/es/">Diablo 3</a>, aunque en este caso es necesario utilizar <a href="https://www.winehq.org/">Wine</a>.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/12/como-usar-wine-para-jugar-en-gnu-linux-a-juegos-de-windows/">Cómo usar Wine para jugar en GNU/Linux a juegos de Windows</a></li>
+</ul>
+<h3 id="un-cliente-para-los-juegos-de-epic-games">Un cliente para los juegos de Epic Games</h3>
+<p>La tienda alternativa a Steam es <a href="https://www.epicgames.com/store/es-ES/">Epic Games</a> que aunque no tiene un cliente y lanzador de juegos oficial está <a href="https://heroicgameslauncher.com/">Heroic Games Launcher</a> también muy fácil de instalar como aplicación Flatpak.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2023/01/los-juegos-de-epic-games-en-gnu-linux-con-el-lanzador-heroic-games-laucher/">Los juegos de Epic Games en GNU/Linux con el lanzador Heroic Games Laucher</a></li>
+</ul>
 
     </div>
 
@@ -397,6 +400,9 @@
             </li>
           <li>
               <a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/">Análisis del juego espacial de combates por turnos Spaceland</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2023/01/los-juegos-de-epic-games-en-gnu-linux-con-el-lanzador-heroic-games-laucher/">Los juegos de Epic Games en GNU/Linux con el lanzador Heroic Games Laucher</a>
             </li>
           
         </ol>

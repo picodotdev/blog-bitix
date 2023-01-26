@@ -5,12 +5,35 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2023-01-19T20:00:00+01:00</updated>
+    <updated>2023-01-26T19:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/</id>
+        <title>Cómo eliminar de forma segura archivos con wipe y dd en GNU/Linux</title>
+        <updated>2016-03-05T12:00:00+01:00</updated>
+        <published>2016-03-05T12:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Eliminar archivos del sistema de ficheros no basta para destruir la información que contuvieran. Con herramientas como <em>Foremost</em> su contenido puede ser recuperado, por ello cuando desechamos una unidad de almacenamiento (disco duro, memoria USB, tarjeta SD, SSD) conviene hacer un borrado seguro de la unidad, si trabajamos con información sensible quizá queramos hacer un borrado seguro de los archivos que eliminemos. Con el comando <code>wipe</code> podemos borrar archivos individuales y con el comando <code>dd</code> una unidad completa.</strong></p>]]>
+        
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="seguridad"/>
+            
+                <category term="software-libre"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/</id>
         <title>Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux</title>
@@ -20,56 +43,7 @@
         <author><name>picodotdev</name></author>
         <content type="html">
         <![CDATA[<p><strong>¿Has perdido alguna vez una memoria USB? ¿sí, aún no? ¿qué datos contenía? Muy posiblemente son varias las memorias USB que tenemos, por su poco tamaño y cada vez mayor capacidad incluso llevaremos alguna en la cartera siempre con nosotros. Si quieres mantener a salvo los datos en caso de pérdida hay varias opciones, una para esta necesidad es cifrar completamente la unidad con dm-crypt junto con LUKS+Ext4 en GNU/Linux. Suena muy técnico pero es muy sencillo usando la aplicación Discos de GNOME y la seguridad de nuestra información aumentará notablemente.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false&#34;"></p>
-</div>
-<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false&#34;"></p>
-</div>
-<p>Seguro que tienes varias memorias USB o discos duros externos con los que transportar información de un sitio a otro o como copia de seguridad. No sería extraño perder alguna de esas unidades en una biblioteca, universidad, aeropuerto, vía pública, metro, &hellip; con toda la información que contengan como fotos y documentos con información personal accesible por cualquier persona que se encuentre esa unidad. Si queremos evitar este posible caso de que al perder la unidad USB que al final es lo de menos ya que se puede sustituir fácilmente toda la información este accesible podemos cifrar su contenido. Hay varias formas una <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.htmlindex-amp.html">cifrando con GPG archivos individuales</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">cifrando con EncFS ciertas carpetas</a> y varios archivos a la vez o la unidad completa con <a href="https://wiki.archlinux.org/index.php/Dm-crypt">dm-crypt</a> que será el caso de este artículo.</p>
-<p>Usar GPG es incómodo si necesitamos cifrar múltiples archivos como sería el caso de una memoria USB, EncFS requiere introducir un comando para montar el sistema de archivos cifrado y no obligaremos a que todos los archivos estén cifrados, usando dm-crypt el sistema nos preguntará por la clave de cifrado al conectar la unidad USB y se encargará de hacer el cifrado y descifrado de forma automática y transparente, nosotros trabajaremos con los archivos y sus aplicaciones con normalidad sin ninguna necesidad especial. Además, no es complicado inicializar la unidad USB para que su contenido esté cifrado usando la <a href="https://es.wikipedia.org/wiki/GNOME_Disks">aplicación Discos de GNOME</a>.</p>
-<p>Deberemos formatear la unidad por lo que previamente deberemos hacer una copia de seguridad de su contenido para no perderlo, en teoría desde Nautilus se puede hacer pero en mis pruebas me indicaba un error que usando la aplicación Discos no se produce.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Error synchronizing after initial wipe: Timed out waiting for object (udisks-error-quark, 0)&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>error.txt</span>
-    </div>
-</div>
-<p>Iniciada la aplicación Discos e identificada y seleccionada la unidad USB que queremos cifrar usando el botón con el icono de una rueda dentada hacemos clic en la opción formatear partición. Se abrirá un diálogo emergente donde podremos seleccionar el sistema de archivos con el que queremos formatear la unidad, seleccionamos LUKS+Ext4, formato lento e introducimos una contraseña con cierta fortaleza que deberemos recordar (de longitud 8 o más que contenga letras en mayúsculas, minúsculas, números y símbolos como «!&quot;·$%&amp;/()=^*,.-;:_»). El formateo lento tardará más o menos tiempo dependiendo de la capacidad de la unidad pero es aconsejable realizarlo para evitar que con <a href="https://picodotdev.github.io/blog-bitix/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/">herramientas de recuperación de archivos como Foremost</a> alguien pueda extraer algún tipo de documento usándola a pesar de en teoría haber sido eliminado, otra forma de evitarlo es <a href="https://picodotdev.github.io/blog-bitix/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/">eliminar ciertos o todos los archivos de forma segura</a>. En una unidad sin cifrar es sorprendente la cantidad de archivos que se puede recuperar usando <a href="https://wiki.archlinux.org/index.php/Foremost">Foremost</a> de los que en algún momento estuvieron.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/discos_hu3135568082e17d239e3100be9a4fc173_67669_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Aplicación Discos de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/discos_hu3135568082e17d239e3100be9a4fc173_67669_300x200_fit_q90_h2_box_3.webp" width="231" height="200" alt="Aplicación Discos de GNOME" title="Aplicación Discos de GNOME" class="&#34; " loading="lazy"></a>
-<a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/opciones-formato_hu7551938eb59310a3fc6f034783853c1e_30403_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Opciones formateo unidad"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/opciones-formato_hu7551938eb59310a3fc6f034783853c1e_30403_300x200_fit_q90_h2_box_3.webp" width="285" height="200" alt="Opciones formateo unidad" title="Opciones formateo unidad" class="&#34; " loading="lazy"></a></p>
-</figure>
-</div>
-<p>Formateada la unidad con LUKS+Ext4 al conectarla al equipo o montarla el entorno de escritorio nos preguntará por la contraseña con un diálogo.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/contrasena_hu462b04d32f07aaac78ff1c7af741b59f_27270_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Diálogo solicitud contraseña"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/contrasena_hu462b04d32f07aaac78ff1c7af741b59f_27270_300x200_fit_q90_h2_box_3.webp" width="300" height="179" alt="Diálogo solicitud contraseña" title="Diálogo solicitud contraseña" class="&#34; " loading="lazy"></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/unidad-cifrada_hub794a011a1e5de44731af827bcf93591_6995_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Unidad cifrada en Nautilus"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/unidad-cifrada_hub794a011a1e5de44731af827bcf93591_6995_300x200_fit_q90_h2_box_3.webp" width="290" height="127" alt="Unidad cifrada en Nautilus" title="Unidad cifrada en Nautilus" class="&#34; " loading="lazy"></a>
-<a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/unidad-descifrada_hu0dac15f2dd7e4763b31472da8db73bc3_6210_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Unidad BMOVE ROJO descifrada en Nautilus"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/unidad-descifrada_hu0dac15f2dd7e4763b31472da8db73bc3_6210_300x200_fit_q90_h2_box_3.webp" width="290" height="127" alt="Unidad BMOVE ROJO descifrada en Nautilus" title="Unidad BMOVE ROJO descifrada en Nautilus" class="&#34; " loading="lazy"></a></p>
-</figure>
-</div>
-<p>Introducida la contraseña veremos los archivos originales y podremos trabajar con ellos con normalidad como si no estuviesen cifrados. En la <a href="https://wiki.archlinux.org/">wiki de Arch Linux</a> hay varios artículos explicando en que consiste dm-crypt y los comandos que deberíamos usar desde la terminal, los artículos en el apartado de referencia del final de este artículo. Cifrar la unidad completamente con cm-crypt y LUKS+Ext4 es perfectamente compatible con usar EncFS, es decir, podemos usar dm-crypt en la unidad y en ella que ya está cifrada <a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">almacenar un sistema de archivos también cifrado con EncFS</a>.</p>
-<p>Son increíbles las opciones que uno va descubriendo del software libre de GNU/Linux y esta es una con la que haremos nuestras unidades USB y los preciados datos que contienen bastante más seguras y a salvo en caso de pérdida o robo. Y esto es solo una muestra, con dm-crypt es posible hacer muchas más cosas que con curiosidad puedes descubrir en la wiki de Arch Linux.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/">Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">Cifrar archivos con EncFS en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/">Cómo eliminar de forma segura archivos con wipe en GNU/Linux</a></li>
-<li><a href="https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_a_non-root_file_system">Encrypting a non-root file system</a></li>
-<li><a href="https://wiki.archlinux.org/index.php/Dm-crypt">Dm-crypt</a></li>
-<li><a href="https://wiki.archlinux.org/index.php/disk_encryption">Disk encryption</a></li>
-<li><a href="https://wiki.archlinux.org/index.php/Dm-crypt/Drive_preparation">Drive preparation</a></li>
-<li><a href="https://wiki.archlinux.org/index.php/Dm-crypt/Device_encryption">Device encryption</a></li>
-</ul>
-</div>
-]]>
+        
         </content>
         
             
@@ -92,69 +66,7 @@
         <author><name>picodotdev</name></author>
         <content type="html">
         <![CDATA[<p><strong>Hacer copias de seguridad es una buena práctica para evitar perder información en caso de que por ejemplo un disco duro se nos estropee. Cifrar la información o al menos parte de ella como las contraseñas (si las guardamos en un archivo de texto) también es una buena práctica por si perdemos una memoria USB, nos roban en un lugar público o en nuestro domicilio un disco duro o un portátil o los extraviamos en algún viaje. Una forma sencilla para proteger su contenido cifrando múltiples archivos es EncFS.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false&#34;"></p>
-</div>
-<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false&#34;"></p>
-</div>
-<p>Nuestros datos es una de las cosas más importantes que podemos perder o nos pueden robar, más que el dispositivo que los contiene ya que este es fácilmente reemplazable no así los datos. La pérdida de datos puede ser porque se nos ha estropeado el disco duro y ha quedado completamente inaccesible, para evitar la pérdida de datos conviene <a href="https://elblogdepicodev.blogspot.com.es/2013/05/copia-de-seguridad-con-rsync.htmlindex-amp.html">realizar copias de seguridad</a> regularmente de las que recuperar los datos perdidos en caso de necesidad. También nos puede ocurrir que perdamos una memoria USB o peor aún nos roben en nuestro propio domicilio y nos extraigan entre otras cosas el portátil o un disco duro. Los productos de electrónica son objetivos apreciados por los ladrones por su valor, por su demanda que los hacen fácilmente colocables en el mercado y por su poco volumen.</p>
-<p>En GNU/Linux podemos proteger nuestros datos de múltiples formas de una memoria USB, de un portátil o disco duro externo. Una de ellas es <a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/">cifrando completamente el sistema de archivos</a> con lo que todos los datos que contuviese estarán protegidos. Otra forma es <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.htmlindex-amp.html">cifrar ciertos archivos con información sensible con GPG</a> como contraseñas, una solución menos invasiva y más compatible con otros sistemas que cifrar completamente el sistema de archivos, no muy complicada pero en la que debemos cifrar cada archivo individualmente. Para evitar cifrar/descifrar cada archivo individualmente y manualmente con GPG podemos usar <a href="https://wiki.archlinux.org/index.php/EncFS">EncFS</a>. EncFS es un sistema de archivos que podemos montar y cifrará el contenido de todos los archivos que incluyamos en él.</p>
-<p>Con EncFS el contenido de los archivos y sus nombres serán cifrados aunque su tamaño, fechas de modificación y estructura de carpetas seguirá siendo visible. Aunque sin sus nombres originales el tamaño, fechas y estructura de carpetas ya es algo indicativo y por tanto para algunas necesidades no es suficiente la seguridad que proporciona.</p>
-<p>Para usar EncFS debemos instalar su paquete, en <a href="https://www.archlinux.org/">Arch Linux</a> con:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S encfs&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>pacman.sh</span>
-    </div>
-</div>
-<p>Instalado el paquete y con el comando <code>encfs</code> indicamos el directorio donde se almacenará el sistema de archivos cifrado y el directorio donde EncFS montará el sistema de archivos sin cifrar, la primera vez que lo usemos nos pedirá la contraseña con la que el sistema de archivos se cifrará que deberemos recordar ya que nos la pedirá cada vez que montemos el sistema de archivos cifrado.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ encfs -f <span class="o">[</span>directorio cifrado<span class="o">]</span> <span class="o">[</span>directorio montaje <span class="o">(</span>sin cifrar<span class="o">)]</span>&#10;</span></span><span class="line"><span class="cl">$ encfs -f cifrado/ descifrado/&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>encfs.sh</span>
-    </div>
-</div>
-<div class="media">
-<a href="https://asciinema.org/a/36852" target="_blank"><amp-img src="https://asciinema.org/a/36852.png" width="650" height="563" class="lozad"></amp-img></a>
-</div>
-<p>Montado el sistema de archivos veremos que en el explorador de archivos se ha montado una unidad con el nombre del directorio sin cifrar que hemos indicado, como se aprecia en el caso de Nautilus.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/images/sistema-archivos-descifrados_huee92fa96ad94c91ffbc0e14d64d1dc98_27549_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Sistema de archivos montado y descifrado"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/images/sistema-archivos-descifrados_huee92fa96ad94c91ffbc0e14d64d1dc98_27549_300x200_fit_q90_h2_box_3.webp" width="300" height="183" alt="Sistema de archivos montado y descifrado" title="Sistema de archivos montado y descifrado" class="&#34; " loading="lazy"></a></p>
-</figure>
-</div>
-<p>La opción <em>-f</em> sirve para usar EncFS en primer plano, si lo usamos de esta forma se quedará esperando hasta que lo finalicemos con <em>Ctrl-C</em> momento en el que desmontará automáticamente la unidad. Cuando queramos desmontar el sistema de archivos otra opción es el siguiente comando:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ fusermount -u <span class="o">[</span>directorio sin cifrar<span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">$ fusermount -u descifrado/&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>fusermount.sh</span>
-    </div>
-</div>
-<p>Montado el sistema de archivos en primer o segundo plano podremos trabajar con los archivos normalmente y EncFS irá cifrando su contenido y nombres de archivos de forma transparente en el directorio de archivos cifrados. Añadiendo algún archivo este podría ser el contenido del directorio de archivos cifrados.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/images/sistema-archivos-cifrados_hu939c6f6be665dd7f1e1b685686a6e1d9_39233_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Sistema de archivos cifrado"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/images/sistema-archivos-cifrados_hu939c6f6be665dd7f1e1b685686a6e1d9_39233_300x200_fit_q90_h2_box_3.webp" width="300" height="183" alt="Sistema de archivos cifrado" title="Sistema de archivos cifrado" class="&#34; " loading="lazy"></a></p>
-</figure>
-</div>
-<p>Por supuesto, el contenido de un archivo cifrado será completamente ininteligible consiguiendo nuestro objetivo de que nuestros datos estén a salvo y protegidos.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/images/contenido-archivo-descifrado_hucd51b3d9b2fe9c447c54add6d3810a5f_16415_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Contenido de un archivo de texto"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/images/contenido-archivo-descifrado_hucd51b3d9b2fe9c447c54add6d3810a5f_16415_300x200_fit_q90_h2_box_3.webp" width="300" height="127" alt="Contenido de un archivo de texto" title="Contenido de un archivo de texto" class="&#34; " loading="lazy"></a>
-<a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/images/contenido-archivo-cifrado_huf84c944abe6cc268efe4e0c6b6d2ca4e_23212_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Contenido del archivo de texto cifrado"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/images/contenido-archivo-cifrado_huf84c944abe6cc268efe4e0c6b6d2ca4e_23212_300x200_fit_q90_h2_box_3.webp" width="300" height="127" alt="Contenido del archivo de texto cifrado" title="Contenido del archivo de texto cifrado" class="&#34; " loading="lazy"></a></p>
-</figure>
-</div>
-<p>En el <a href="https://wiki.archlinux.org/index.php/EncFS">artículo de EncFS de la wiki de Arch Linux</a> está muy bien explicado con alguna información más sobre esta forma de proteger la preciada información personal que poseemos en diversas formas de documentos, imágenes, fotos, vídeos, música y otros formatos.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/">Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/">Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/">Cómo eliminar de forma segura archivos con wipe en GNU/Linux</a></li>
-<li><a href="https://wiki.archlinux.org/index.php/EncFS">Artículo de EncFS de la wiki de Arch Linux</a></li>
-</ul>
-</div>
-]]>
+        
         </content>
         
             
@@ -177,54 +89,7 @@
         <author><name>picodotdev</name></author>
         <content type="html">
         <![CDATA[<p><strong>Muchos archivos y su contenido son recuperables aún después de eliminados y liberado su espacio ocupado del sistema de archivos. Herramientas como Foremost son capaces de recuperar el contenido de un archivo si no ha sido sobrescrito accediendo a bajo nivel a los datos de la unidad, ya esté corrupta y de algún error al montarla o funcione perfectamente. Pudiendo extraer una imagen de la unidad seremos capaces de recuperar gran cantidad de archivos motivo por el cual al deshacernos de una unidad de almacenamiento es recomendable hacer un borrado seguro para evitar que información personal o confidencial sea obtenida con cualquier propósito.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false&#34;"></p>
-</div>
-<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false&#34;"></p>
-</div>
-<p>Hace un tiempo me ocurrió que una memoria USB por algún motivo no se montaba bien ni en un sistema Windows ni tampoco en un sistema Linux. El <em>pendrive</em> estaba formateado con el sistema de archivos NTFS y quizá por haberlo desmontado mal se corrompió.</p>
-<p>Por suerte en GNU/Linux disponemos de cantidad de herramientas y programas que nos ayudan en prácticamente cualquier cosa. En este caso de una memoria que no se dejaba montar buscando algún enlace en la <a href="https://wiki.archlinux.org/">wiki de Arch Linux</a> relacionado con la recuperación de datos encontré en poco tiempo el artículo sobre <a href="https://wiki.archlinux.org/index.php/Foremost">Foremost</a>, siendo un programa que puede ayudarnos a recuperar al menos parte de los datos que tuviésemos guardados. Si la unidad no está dañada físicamente y podemos extraer una imagen de la misma Foremost puede acceder a bajo nivel a las estructuras de datos de la imagen de la unidad. Foremost puede trabajar directamente sobre la unidad dañada o con una imagen, esto último es lo recomendable para evitar corromper los datos y dañar más gravemente la unidad al usarla. Si podemos extraer una imagen de la unidad es buen síntoma de que la unidad no ha dejado de funcionar completamente y tal vez se trate solo de un error lógico en la unidad y no físico pudiendo tal vez recuperarla con un formateo.</p>
-<p>El error en concreto al montarlo en mi sistema <a href="https://www.archlinux.org/">Arch Linux</a> era el siguiente:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Error mounting /dev/sdb1 at /run/media/picodotdev/xxx: Command-line `mount -t &#34;ntfs&#34; -o &#34;uhelper=udisks2,nodev,nosuid,uid=1000,gid=1000,dmask=0077,fmask=0177&#34; &#34;/dev/sdb1&#34; &#34;/run/media/picodotdev/xxx&#34;&#39; exited&#10;</span></span><span class="line"><span class="cl">with non-zero exit status 13: ntfs_mst_post_read_fixup_warn: magic: 0x5bc449c0  size: 4096   usa_ofs: 55304  usa_count: 8: Argumento inválido&#10;</span></span><span class="line"><span class="cl">Actual VCN (0x101010100830081) of index buffer is different from expected VCN (0x1).&#10;</span></span><span class="line"><span class="cl">Failed to mount &#39;/dev/sdb1&#39;: Error de entrada/salida&#10;</span></span><span class="line"><span class="cl">NTFS is either inconsistent, or there is a hardware fault, or it&#39;s a SoftRAID/FakeRAID hardware. In the first case run chkdsk /f on Windows then reboot into Windows twice. The usage of the /f parameter is&#10;</span></span><span class="line"><span class="cl">very important! If the device is a SoftRAID/FakeRAID then first activate it and mount a different device under the /dev/mapper/ directory, (e.g./dev/mapper/nvidia_eahaabcc1). Please see the &#39;dmraid&#39;&#10;</span></span><span class="line"><span class="cl">documentation for more details.</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>error.log</span>
-    </div>
-</div>
-<p>Podemos extraer una imagen de una unidad con el comando <code>dd</code>, el parámetro <em>if</em> será la unidad de entrada y el parámetro <em>of</em> la imagen que se creará en un archivo:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo dd <span class="k">if</span><span class="o">=</span>/dev/sdb1 <span class="nv">of</span><span class="o">=</span>disk.img&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>dd.sh</span>
-    </div>
-</div>
-<p>Una vez que disponemos de la imagen en un archivo en un sistema libre de fallos usaremos Foremost para que intente recuperar los archivos que no han sido completamente corrompidos por el error. Indicamos la imagen del archivo extraída con el parámetro <em>-i</em> y la carpeta donde dejará los archivos recuperados con el parámetro <em>-o</em> agrupados en directorios por tipo, con el parámetro <em>-t</em> indicamos los tipos de archivos que queremos recuperar de entre todos los que pueda (doc, docx, pdf, jpg, png, txt, &hellip;).</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ foremost -t all -i disk.img -o archivos/&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>foremost.sh</span>
-    </div>
-</div>
-<p>Si tenemos suerte con Foremost recuperaremos gran parte de ellos y evitaremos perderlos para siempre. En la wiki de Arch Linux hay una <a href="https://wiki.archlinux.org/index.php/file_recovery">guía con consejos y explicaciones de como proceder en la recuperación de archivos</a>.</p>
-<p>Una vez que recuperé los archivos y viendo que pude extraer una imagen de la unidad probablemente en mi caso el error sería que se corrompió la unidad quizá por no extraerla de forma segura desde Windows. Por lo tanto la volví a formatear e hice algunas pruebas copiando varios archivos, se copiaron sin dar ningún error así que al final conseguí recuperar incluso la unidad.</p>
-<p>Esto mismo es aplicable a una unidad que funcione correctamente, un archivo y su contenido es recuperable aún después de ser eliminado incluido de la papelera, con más probabilidad si la unidad no tiene muchas escrituras o una buena cantidad de espacio libre ya que por defecto únicamente se elimina de las estructuras del sistema de archivos y el contenido sigue estando presente simplemente no referenciado.</p>
-<p>Para hacer irrecuperable el contenido de un archivo hay que hacer un <a href="https://picodotdev.github.io/blog-bitix/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/">borrado seguro de un archivo con el comando <code>wipe</code> o de una unidad con <code>dd</code></a> que consiste en sobrescribir el contenido del archivo con datos aleatorios, otra alternativa es <a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/">cifrar el sistema de archivos</a>. Es recomendable hacerlo cuando sustituyamos y nos deshagamos un disco duro o unidad de almacenamiento porque muchos de los archivos son recuperables incluido después de un formateo rápido de la unidad.</p>
-<p>Te sorprenderá la cantidad de archivos que son recuperados por Foremost: documentos, imágenes, archivos de texto, &hellip;</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">Cifrar archivos con EncFS en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/">Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/">Cómo eliminar de forma segura archivos con wipe en GNU/Linux</a></li>
-<li><a href="https://wiki.archlinux.org/index.php/Foremost">Foremost</a></li>
-<li><a href="https://wiki.archlinux.org/index.php/file_recovery">File recovery</a></li>
-<li><a href="http://linux.die.net/man/1/wipe">Wipe</a></li>
-<li><a href="https://wiki.archlinux.org/index.php/Securely_wipe_disk">Securely Wipe Disk</a></li>
-<li><a href="https://wiki.archlinux.org/index.php/Disk_encryption">Disk encryption</a></li>
-</ul>
-</div>
-]]>
+        
         </content>
         
             
@@ -247,85 +112,7 @@
         <author><name>picodotdev</name></author>
         <content type="html">
         <![CDATA[<p><strong>Seis meses más de artículos la mayoría sobre programación en Java tratando algunas de las nuevas tendencias de programación con las posibilidades de la plataforma de la JVM. Unos pocos artículos más continuando la serie sobre Docker y uno de opinión sobre las licencias de Microsoft.</strong></p>]]>
-        <![CDATA[<p>El 2015 pasó, a mi muy rápido. En cuanto a la bitácora toca recapitular cuáles han sido los artículos que he escrito, de que temas principales he hablado, un poco cómo han evolucionado las visitas y que tengo preparado para publicar durante los siguientes meses ya de 2016.</p>
-<p>Muchos de los <a href="https://picodotdev.github.io/blog-bitix/2015/">artículos que he escrito durante el año 2015</a> han estado relacionados con la programación en la plataforma Java, en los que destacaría prácticamente todos empezando por los relacionados con <a href="https://projects.spring.io/spring-boot/">Spring Boot</a>, <a href="https://cloud.spring.io/spring-cloud-config/">Spring Cloud Config</a> y <a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready">Spring Boot Actuator</a> que forman parte del actual de la tendencia a la hora de desarrollar aplicaciones en Java pero también otros cuantos relacionados con <a href="https://www.jooq.org/">jOOQ</a> que ya es una alternativa a <a href="https://hibernate.org/">Hibernate</a> y su uso probablemente se extienda y aumente, también otro artículo sobre <a href="https://gradle.org/">Gradle</a> que ya es la herramienta de automatización de construcción ampliamente usada.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/aplicacion-java-autocontenida-con-spring-boot/">Aplicación Java autocontenida con Spring Boot</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/multiples-esquemas-o-bases-de-datos-con-jooq-y-spring-en-java/">Múltiples esquemas o bases de datos con jOOQ y Spring en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/11/obtener-datos-de-multiples-tablas-con-jooq/">Obtener datos de múltiples tablas con jOOQ</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/11/validar-objetos-con-spring-validation-ejemplo-registros-de-jooq/">Validar objetos con Spring Validation, ejemplo registros de jOOQ</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/11/configuracion-de-una-aplicacion-en-diferentes-entornos-con-spring-cloud-config/">Configuración de una aplicación en diferentes entornos con Spring Cloud Config</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/">Información y métricas de la aplicación con Spring Boot Actuator</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/">Ejemplo de multiproyecto con Gradle</a></li>
-</ul>
-<p>Un par de artículos comentando la nueva forma de construir aplicaciones de escritorio tradicionales en Java con [JavaFX][javafx]. También algunos artículos más sobre patrones de diseño con ejemplos en código bastante ilustrativos de sus conceptos y posibles usos. O Java para tareas de <em>scripting</em> con la misma facilidad de un lenguaje interpretado o dinámico pero con las ventajas de un lenguaje compilado.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/introduccion-a-javafx-aplicaciones-de-escritorio-en-java/">Introducción a JavaFX, aplicaciones de escritorio en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/javafx-scene-builder-editor-para-crear-archivos-fxml/">JavaFX Scene Builder, editor para crear archivos FXML</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/11/java-para-tareas-de-scripting-con-jbang-y-gradle/">Java para tareas de scripting con JBang y Gradle</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/">Ejemplo del patrón de diseño Builder</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/como-crear-clases-factoria-sin-usar-if-else/">Cómo crear clases factoría sin usar if-else</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/el-patron-de-diseno-observer-y-una-forma-de-implementarlo-en-java/">El patrón de diseño Observer y una forma de implementarlo en Java</a></li>
-</ul>
-<p>Otros artículos sobre Java de varios temas independientes sobre herramientas como <a href="https://github.com/wro4j/wro4j/">wro4j</a>, cómo trabajar con importes, ratios y divisas en las aplicaciones Java que lo necesiten o una forma incorporada en el propio JDK para hacer las aplicaciones extensibles.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/08/implementacion-de-maquina-de-estados-finita-fsm-con-java-8/">Implementación de máquina de estados finita (FSM) con Java 8</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/09/aplicacion-java-extensible-con-la-clase-serviceloader/">Aplicación Java extensible con la clase ServiceLoader</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-practico-de-serviceloader-con-serviceprovider-de-java-money/">Ejemplo práctico de ServiceLoader con ServiceProvider de Java Money</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/07/como-trabajar-con-importes-ratios-y-divisas-en-java/">Cómo trabajar con importes, ratios y divisas en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/09/generar-recursos-estaticos-con-wro4j/">Generar recursos estáticos con wro4j</a></li>
-</ul>
-<p>Un par de artículos de opinión, uno con motivo del lanzamiento de <a href="https://www.microsoft.com/es-es/windows/">Windows</a> 10 que se produjo en julio del 2015 y otro comentando las similitudes que tienen un par de librerías <a href="https://es.wikipedia.org/wiki/JavaScript">JavaScript</a> (<a href="https://reactjs.org/">React</a> y <a href="https://www.polymer-project.org/1.0/">Polymer</a>) de las que mucha gente está hablando con el <em>framework</em> <a href="https://tapestry.apache.org/">Apache Tapestry</a> para desarrollo de aplicaciones y páginas web en Java.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/07/a-microsoft-no-le-importa-que-uses-windows-u-office-sin-licencia/">A Microsoft no le importa que uses Windows u Office sin licencia</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/similitudes-entre-react-y-polymer-con-apache-tapestry/">Similitudes entre React y Polymer con Apache Tapestry</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/caracteristicas-de-los-lenguajes-de-programacion/">Características de los lenguajes de programación</a></li>
-</ul>
-<p>Y otro artículo un poco fuera de tema sobre una compra que hice por internet comentando mi experiencia pero en la que comento algunos consejos para los vendedores y para los compradores.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/11/mi-experiencia-comprando-unos-estores-en-cortinadecor/">Comprando por internet, unos estores en CortinaDecor</a></li>
-</ul>
-<p>Lo más cercano que escrito de <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> ha sido otra serie de artículos sobre <a href="https://www.docker.com/">Docker</a> continuación de otros anteriores.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/">Aplicaciones multicontenedor con Docker Compose</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/">Crear y usar un repositorio en Docker Hub</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/07/usar-docker-con-docker-machine-en-linux-windows-o-mac/">Usar docker con Docker Machine en Linux, Windows o Mac</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/">Cambiar la ruta raíz del entorno de Docker</a></li>
-</ul>
-<p>Los últimos artículos del año, no por ello menos interesantes. Finalmente se publicó la versión 5.4 de Apache Tapestry que ya era usable desde su estado beta con numerosas mejoras en la parte cliente de las aplicaciones. También cumplí mi propósito de hacer una donación a algún proyecto de software libre cuando recibiese la trasferencia por la publicidad AdSense, fue a la <a href="https://fsfe.org/index.en.html">FSFE</a>.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/">Monitorizar estado de sitios web con Uptime Robot</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/12/como-buscar-los-enlaces-rotos-de-un-sitio-web/">Cómo buscar los enlaces rotos de un sitio web</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/12/publicado-apache-tapestry-5-4/">Publicado Apache Tapestry 5.4</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/12/yo-apoyo-al-software-libre-tu-tambien/">Yo apoyo al software libre, tú también</a></li>
-</ul>
-<p>En otro orden de cosas he seguido haciendo algunos cambios en Blog Bitix como que pueda ser accedido por el protocolo seguro <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr> sin que el navegador informe de ningún tipo de advertencia de seguridad, este blog se genera con el generador estático <a href="https://gohugo.io/">Hugo</a> y está alojado en <a href="https://pages.github.com/">GitHub Pages</a> de modo que solo hay ficheros estáticos HTML, CSS y JavaScript pero que permite mayor privacidad y más seguridad. Si yo en una bitácora como esta que solo es contenido estático y algo de JavaScript me preocupo por la seguridad y privacidad de los usuarios me resulta sorprendente que páginas de comercio electrónico que recopilan información personal y datos de tarjetas de crédito o cuantas bancarias mucho más susceptibles de ser atacadas no lo hagan de forma completa y no solo en las áreas de la cuenta del usuario y la página de compra, más ahora que Google lo tiene en cuenta para el <a href="https://en.wikipedia.org/wiki/Search_engine_optimization"><abbr title="Search Engine Optimization">SEO</abbr></a>.</p>
-<p>También he empezado a incluir en los artículos vídeos de texto con <a href="https://asciinema.org/">Asciinema</a> que creo hacen que los ejemplos sean mucho más ilustrativos mostrando la salida real de los comandos de los cuales además se puede copiar y pegar texto.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/09/grabar-y-compartir-video-de-la-terminal-con-asciinema/">Grabar y compartir vídeo de la terminal con Asciinema</a></li>
-</ul>
-<p>Durante este segundo semestre de 2015 he publicado varios artículos entre semana con lo que al final la media ha sido algo mayor de uno por semana. Para el 2016 ya tengo escritos una buena cantidad de artículos suficientes para seguir publicando al ritmo de un artículo por semana durante unos cuantos meses, por supuesto sobre Java pero alguno también sobre GNU/Linux. Uno de ellos espero que sea el de la conferencia <a href="https://bilbostack.com/">BilboStack</a> 2016 que se celebrará a finales de enero para la que escribiré un <a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/">artículo similar al que hice el año pasado</a> resumiendo las charlas a las que asista. También estoy en proceso de realizar una nueva actualización del <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro PlugIn Tapestry</a> en el que incorporaré mucho del contenido que he escrito desde su última publicación.</p>
-<p>El blog ha seguido creciendo un poco en cuanto a visitas a base de un esfuerzo tremendo tratando de escribir y publicar artículos con cierta calidad, los ingresos por publicidad AdSense siguen siendo prácticamente los mismos, entre 6 y 11 € al mes, como el alojamiento y el dominio me es gratuito es suficiente para hacer alguna <a href="https://picodotdev.github.io/blog-bitix/2015/12/yo-apoyo-al-software-libre-tu-tambien/">donación a un proyecto relacionado con el software libre</a> por lo que tú visitando este blog en cierta forma también podrás sentirte contribuidor del software libre ya uses productos <a href="https://www.microsoft.com/">Microsoft</a> o <a href="https://www.apple.com/">Apple</a>. Una de las cosas que dicen para aumentar visitas es casi más importante la cantidad que la calidad pero no puedo dedicar más tiempo a escribir así que opto por que lo que escriba no esté ya en varios otros cientos de sitios para alguien con el mismo interés le resulte aprovechable, además trato de que los artículos incluyan un ejemplo funcional con su código fuente completo que se pueda probar de manera simple descargándolo.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/01/hemeroteca-8/images/analytics-2015_hu2e45f8b2b5f12313f49ee6d57175de05_64277_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Analytics 2015 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2016/01/hemeroteca-8/images/analytics-2015_hu2e45f8b2b5f12313f49ee6d57175de05_64277_300x200_fit_q90_h2_box_3.webp" width="300" height="112" alt="Analytics 2015 de Blog Bitix" title="Analytics 2015 de Blog Bitix" class="&#34; " loading="lazy"></a></p>
-<figcaption>Analytics 2015 de Blog Bitix</figcaption>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/01/hemeroteca-8/images/gadsense-2015_hu47d99b4d8540d2424ce3b09c9b76ded9_44102_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="AdSense 2015 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2016/01/hemeroteca-8/images/gadsense-2015_hu47d99b4d8540d2424ce3b09c9b76ded9_44102_300x200_fit_q90_h2_box_3.webp" width="300" height="84" alt="AdSense 2015 de Blog Bitix" title="AdSense 2015 de Blog Bitix" class="&#34; " loading="lazy"></a></p>
-<figcaption>AdSense 2015 de Blog Bitix</figcaption>
-</figure>
-</div>
-<p>Ya solo me queda decir&hellip; ¡gracias por leer, compartir y comentar esta bitácora!, no recibo muchos comentarios pero algunos como <a href="https://twitter.com/josetesan/status/669434170221928449">este</a> me anima a seguir escribiendo y compartiendo, ¡que os vaya bien el 2016!.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/01/hemeroteca-8/images/christmas-tux-2015_hu9e0bfd41e2bd0872eef6fc5bc9fd63e0_481724_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Christmas Tux 2016"><img src="https://picodotdev.github.io/blog-bitix/2016/01/hemeroteca-8/images/christmas-tux-2015_hu9e0bfd41e2bd0872eef6fc5bc9fd63e0_481724_300x200_fit_q90_h2_box.webp" width="267" height="200" alt="Christmas Tux 2016" title="Christmas Tux 2016" class="&#34; " loading="lazy"></a></p>
-<figcaption>¡Buen 2016! <br>Fuente: klowner.com</figcaption>
-</figure>
-</div>
-]]>
+        
         </content>
         
             
@@ -356,59 +143,7 @@
         <author><name>picodotdev</name></author>
         <content type="html">
         <![CDATA[<p><strong>Asciinema es una herramienta que nos permite grabar un vídeo de texto con la salida de la terminal. El vídeo de texto es mucho mejor que una foto estática de la salida en un determinado punto o un vídeo de imágenes del que no podemos seleccionar y copiar su texto.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/asciinema.webp" width="200" height="200" alt="Asciinema" title="Asciinema" class="" loading="false&#34;"></p>
-</div>
-<p>Si queremos compartir las acciones en una terminal y su salida tenemos varias opciones, la más simple es ejecutar el comando y copiar la salida en un archivo de texto, correo electrónico o artículo de una bitácora. Sin embargo, con esta opción solo tenemos el contenido final del comando y a veces en donde se usan varios comandos o que limpian la terminal (como por ejemplo con ssh) es difícil seguir en esa foto final la salida que se ha ido produciendo en la terminal. Otra opción es crear un vídeo tradicional de imágenes que podamos reproducir con <a href="https://www.videolan.org/vlc/">VLC</a> para ver la evolución de la salida tal y como se produce, sin embargo, en esta opción perdemos el poder copiar y pegar texto, es habitual que tengamos que parar el vídeo y escribir el comando o la salida que vemos en el vídeo, esto es lento y propenso a errores ya que podemos confundirnos varias veces al teclear lo que vemos en el vídeo. Otra opción mejor es usar <a href="https://asciinema.org/">Asciinema</a> que captura el texto de la terminal y crea un vídeo de texto que representa la sesión de terminal que hemos tenido.</p>
-<p>Asciinema es como un vídeo pero de texto que además podemos compartir para que otras personas lo vean y que podemos incrustar en páginas web como artículos de bitácoras. Además permite seleccionar y copiar texto y seguro que necesita mucho menos ancho de banda que un vídeo de <a href="https://www.youtube.com/">YouTube</a>. Empezar a crear vídeos de texto es tan sencillo como <a href="https://github.com/asciinema/asciinema/releases">descargar el binario de Asciinema</a> o <a href="https://asciinema.org/docs/installation">instalarlo con el gestor de paquetes</a> de la distribución GNU/Linux que usemos, también se puede usar en <a href="https://www.apple.com/macos/">Mac OS</a> y <a href="https://www.freebsd.org/es/">FreeBSD</a>.</p>
-<p>Una vez instalado, podemos iniciar una grabación de la terminal, esto creará un archivo <em>video.asciinema</em>. Podremos parar la grabación con la combinación de teclas <kbd>ctrl+d</kbd> o tecleando el comando <code>exit</code>:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ asciinema rec --max-wait<span class="o">=</span><span class="m">2</span> video.asciinema&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>asciinema-rec.sh</span>
-    </div>
-</div>
-<p>Reproducir el vídeo creado con:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ asciinema play video.asciinema&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>asciinema-play.sh</span>
-    </div>
-</div>
-<p>Y compartirlo con:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ asciinema upload video.asciinema&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>asciinema-upload.sh</span>
-    </div>
-</div>
-<p>Para compartir los vídeos solo necesitaremos una cuenta de correo, no necesitaremos una clave ya que la autenticación en Asciinema se hace mediante un enlace que se nos envían a nuestra cuenta de correo cada vez que queremos acceder a nuestra cuenta. Si instalamos Asciinema por segunda vez o en otro ordenador y queremos asociarlo con la cuenta que ya tenemos podemos hacerlo con:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ asciinema auth&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>asciinema-auth.sh</span>
-    </div>
-</div>
-<p>En la <a href="https://asciinema.org/docs">documentación de Asciinema</a> están las opciones completas que podemos usar por ejemplo para añadir un título al vídeo o para ejecutar un comando directamente. Una vez que tenemos subido el vídeo a la web de Asciinema podemos compartirlo ya sea enviando en enlace del vídeo o con un reproductor embebido en una página web o artículo de un <em>blog</em>. Para esto último deberemos incluir un <em>script</em> de JavaScript para el reproductor de la siguiente forma, con el atributo id indicamos el vídeo que queremos reproducir, en la <a href="https://asciinema.org/docs/embedding">documentación de las opciones para embeber los vídeos</a> podemos ver las opciones completas que podemos emplear:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://asciinema.org/a/17648.js&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;asciicast-17648&#34;</span> <span class="na">async</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>asciinema-embed.html</span>
-    </div>
-</div>
-<p>Y este es el resultado de un vídeo en el que muestro un <a href="https://picodotdev.github.io/blog-bitix/2017/01/script-para-instalar-arch-linux-facil-rapido-desatendido-automatizado-y-personalizable/">Script para instalar Arch Linux fácil, rápido, desatendido, automatizado y personalizable</a>.</p>
-<div class="media">
-<a href="https://asciinema.org/a/418524" target="_blank"><amp-img src="https://asciinema.org/a/418524.png" width="650" height="563" class="lozad"></amp-img></a>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://asciinema.org/">Asciinema</a></li>
-<li><a href="https://asciinema.org/docs">Documentación de Asciinema</a></li>
-<li><a href="https://asciinema.org/docs/embedding">Documentación para embeber vídeos</a></li>
-</ul>
-</div>
-]]>
+        
         </content>
         
             
@@ -427,43 +162,7 @@
         <author><name>picodotdev</name></author>
         <content type="html">
         <![CDATA[<p><strong>Cambiando la ruta raíz del entorno de ejecución de docker, dónde guarda las imágenes de los contenedores, los datos de los contenedores y otros metadatos, podemos almacenar esta información en un disco duro externo o memoria USB.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false&#34;"></p>
-</div>
-<p>Por defecto el directorio donde se guardan las imágenes y los contenedores junto con otros metadatos de <a href="https://www.docker.com/">Docker</a> es <em>/var/lib/docker</em>. En mi caso hace un tiempo me compre un <a href="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/">disco de estado sólido Samsung 840 EVO de 250 GiB</a> y comenté en el artículo del anterior enlace. Aunque probablemente un disco SSD sea suficientemente fiable como para que antes de que falle cambiémos de ordenador porque ya es antiguo, yo trato de evitar hacer muchas escrituras al disco. Al trabajar con Docker ya sea descargando imágenes, <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">construyendo imágenes propias con archivos Dockerfile</a> y al arrancar contenedores cuyos procesos escriben en disco prefiero externalizar esas escrituras en una unidad USB ya sea un <em>pendrive</em> o un disco duro. En este artículo comentaré como modificar Docker para que las imágenes y los contenedores estén almacenados en una memoria USB o en otra localización de la por defecto.</p>
-<p>En Arch Linux el proceso de docker se arranca con un servicio de systemd:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo systemctl start docker.service&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-start.sh</span>
-    </div>
-</div>
-<p>En la definición del servicio de docker se establecen los parámetros de inicio del demonio de docker y deberemos cambiarlo para cambiar la localización de las imágenes y contenedores. En la información de ayuda del comando de docker podemos ver que si queremos cambiar la localización por defecto de las imágenes y contenedores de docker debemos emplear la opción <em>-g &ldquo;/var/lib/docker&rdquo;</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker --help&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">Usage: docker <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>arg...<span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">A self-sufficient runtime <span class="k">for</span> linux containers.&#10;</span></span><span class="line"><span class="cl">...&#10;</span></span><span class="line"><span class="cl">-g, --graph<span class="o">=</span><span class="s2">&#34;/var/lib/docker&#34;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Path to use as the root of the Docker runtime&#10;</span></span><span class="line"><span class="cl">...</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-help.sh</span>
-    </div>
-</div>
-<p>En Arch Linux el servicio de systemd de docker se guarda en <em>/usr/lib/systemd/system/docker.service</em>. Modificando el parámetro <em>ExecStart</em> de la sección <em>[Service]</em> para añadir el parámetro <em>-g</em> nos quedaría algo como:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-systemd" data-lang="systemd"><span class="line"><span class="cl"><span class="k">[Unit]</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">Description</span><span class="o">=</span><span class="s">Docker Application Container Engine</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">Documentation</span><span class="o">=</span><span class="s">http://docs.docker.com</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">After</span><span class="o">=</span><span class="s">network.target docker.socket</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">Requires</span><span class="o">=</span><span class="s">docker.socket</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="k">[Service]</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/bin/docker -d -H fd:// -g /run/media/picodotdev/BMOVE_ROJO/docker/root</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">MountFlags</span><span class="o">=</span><span class="s">slave</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">LimitNOFILE</span><span class="o">=</span><span class="s">1048576</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">LimitNPROC</span><span class="o">=</span><span class="s">1048576</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="k">[Install]</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker.service</span>
-    </div>
-</div>
-<p>Iniciando ahora el servicio de Docker veremos que en el directorio que hayamos elegido se crean los metadatos y si hacemos un <em>pull</em> de una imagen se guardará en esta localización.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/images/docker-root_huf301198ed05a6799a7c84e4217e4eb0f_47801_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Directorio raíz de docker"><img src="https://picodotdev.github.io/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/images/docker-root_huf301198ed05a6799a7c84e4217e4eb0f_47801_300x200_fit_q90_h2_box_3.webp" width="300" height="143" alt="Directorio raíz de docker" title="Directorio raíz de docker" class="&#34; " loading="lazy"></a></p>
-<figcaption>Directorio raíz de docker</figcaption>
-</figure>
-</div>
-<div class="alert alert-warning">
-    <p>Cada vez que se actualice el paquete de docker el archivo del servicio de systemd se sobrescribirá y perderemos la configuración, de modo que en cada actualización de docker deberemos realizar de nuevo la modificación.</p>
-</div>
-<p>Este artículo es uno de otros que he publicado, en otros artículos he escrito sobre otras cosas relacionadas con docker.</p>
-]]>
+        
         </content>
         
             
@@ -482,66 +181,7 @@
         <author><name>picodotdev</name></author>
         <content type="html">
         <![CDATA[<p><strong>Aunque no usemos Linux podemos hacer uso de docker a través de una máquina virtual de VirtualBox y con Docker Machine. Docker Machine permite crear un sistema con la misión de albergar contenedores de docker, puede ser en VirtualBox pero también en Amazon EC2 o Digital Ocean además de otras muchas opciones.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false&#34;"></p>
-</div>
-<p><a href="https://www.docker.com/">Docker</a> ha dejado de ser únicamente una tecnología de contenedores formando un ecosistema alrededor de docker más completo, <a href="https://docs.docker.com/compose/">Docker Compose</a> que permite <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">definir un grupo de contenedores en un archivo</a>, por supuesto parte importante de este ecosistema es <a href="https://registry.hub.docker.com/">Docker Hub</a> para <a href="https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/">compartir imágenes de contenedores</a> y <a href="https://docs.docker.com/swarm/">Docker Swarm</a> que permite formar un <em>cluster</em> de máquinas. En este artículo comentaré cómo usar <a href="https://docs.docker.com/machine/">Docker Machine</a> y dejaré para un futuro <a href="https://docs.docker.com/swarm/">Docker Swarm</a> (ya que por el momento las pruebas que he hecho no han sido exitosas).</p>
-<p>Antes de nada decir que tanto Docker Machine en el momento de escribir este artículo están en las fases iniciales de desarrollo y pueden cambiar significativamente antes de lanzar una versión 1.0, ahora Docker Machine está en las version 0.3.0. La combinación de Docker Machine y Docker Swarm en algunos puntos son parecidos a los que se ofrecen en <a href="https://coreos.com/">CoreOS</a>.</p>
-<p>Si has usado <a href="https://www.vagrantup.com/">Vagrant</a> te resultará Docker Machine muy similar ya que permite crear máquinas virtuales en diferentes proveedores en una máquina anfitrión con <a href="https://www.virtualbox.org/">VirtualBox</a> hasta <a href="https://aws.amazon.com/es/ec2/">Amazon EC2</a> o <a href="https://www.digitalocean.com/">Digital Ocean</a>, la <a href="https://docs.docker.com/machine/#drivers">lista de controladores soportados</a> es bastante amplia. Estas máquinas que creamos con Docker Machine están destinadas como único objetivo a albergar contenedores docker usando el sistema operativo <a href="https://github.com/boot2docker/boot2docker">boot2docker</a>.</p>
-<p>Para usar Docker Machine debemos <a href="https://github.com/docker/machine/releases">descargar el binario</a>, darle permisos de ejecución y si queremos añadirlo a la variable <em>PATH</em> del sistema.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker-machine --version&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-machine-version.sh</span>
-    </div>
-</div>
-<p>Con los siguientes comandos podemos crear una máquina virtual para los contenedores docker, listar las máquinas virtuales creadas, hacer SSH a ella, ejecutar un contenedor en ella, pararla y eliminar una máquina virtual además de obtener la <em>IP</em> asignada.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker-machine create --driver virtualbox dev&#10;</span></span><span class="line"><span class="cl">$ docker-machine ls&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-machine-create.sh</span>
-    </div>
-</div>
-<p>Estableciendo las variables de entorno de la máquina virtual podemos usar el comando docker como si de la máquina anfitrión fuera, todos los comandos de docker que lancemos se ejecutarán contra el contenedor docker de la máquina virtual. En el siguiente caso se ejecuta el contenedor de <em>busybox</em> en la máquina virtual <em>dev</em>. Con <em>--unset</em> podemos reiniciar la configuración a la máquina anfitrión.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker-machine env dev&#10;</span></span><span class="line"><span class="cl">$ <span class="nb">eval</span> <span class="s2">&#34;</span><span class="k">$(</span>docker-machine env dev<span class="k">)</span><span class="s2">&#34;</span>&#10;</span></span><span class="line"><span class="cl">$ docker run busybox <span class="nb">echo</span> <span class="s2">&#34;hello world&#34;</span>&#10;</span></span><span class="line"><span class="cl">$ <span class="nb">eval</span> <span class="s2">&#34;</span><span class="k">$(</span>docker-machine env --unset<span class="k">)</span><span class="s2">&#34;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-machine-run.sh</span>
-    </div>
-</div>
-<p>Podemos detener, volver a iniciar, hacer SSH y eliminar la máquina virtual con:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker-machine start dev&#10;</span></span><span class="line"><span class="cl">$ docker-machine ssh dev&#10;</span></span><span class="line"><span class="cl">$ docker-machine stop dev&#10;</span></span><span class="line"><span class="cl">$ docker-machine rm dev</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-machine-manage.sh</span>
-    </div>
-</div>
-<div class="media">
-<a href="https://asciinema.org/a/23600" target="_blank"><amp-img src="https://asciinema.org/a/23600.png" width="650" height="563" class="lozad"></amp-img></a>
-</div>
-<p>El directorio por defecto donde se guardarán los archivos de las máquinas virtuales es <em>~/.docker/machine</em>, si queremos cambiarlo podemos utilizar el parámetro <em>--storage-path</em> en cada uno de los comandos anteriores de la siguiente forma, el orden de los parámetros es importante:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker-machine --storage-path <span class="s2">&#34;/run/media/picodotdev/BMOVE_ROJO/docker/machine&#34;</span> create --driver virtualbox dev&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-machine-storage-path.sh</span>
-    </div>
-</div>
-<p>En el administrador de VirtualBox veremos que se ha creado la máquina virtual <em>dev</em> además de poder cambiar la configuración de memoria y otros parámetros de la máquina virtual.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/07/usar-docker-con-docker-machine-en-linux-windows-o-mac/images/virtualbox_hudd2a5a18303e22b8bb6f9e8594255a23_110586_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Máquina de Docker Machine ne VirtualBox"><img src="https://picodotdev.github.io/blog-bitix/2015/07/usar-docker-con-docker-machine-en-linux-windows-o-mac/images/virtualbox_hudd2a5a18303e22b8bb6f9e8594255a23_110586_300x200_fit_q90_h2_box_3.webp" width="284" height="200" alt="Máquina de Docker Machine ne VirtualBox" title="Máquina de Docker Machine ne VirtualBox" class="&#34; " loading="lazy"></a></p>
-<figcaption>Máquina de Docker Machine en VirtualBox</figcaption>
-</figure>
-</div>
-<p>Dado que los contenedores se ejecutan en una máquina virtual de VirtualBox y VirtualBox está disponible en Windows y Mac OS además del binario de Docker Machine para estas plataformas podemos usar docker en cualquiera de estos. Aunque no sea de forma nativa como en Linux para un entorno de desarrollo donde las personas trabajan con cualquiera de estos sistemas operativos puede sernos de utilidad.</p>
-<p>Como nota final diré que después de crear una máquina virtual las siguientes veces al crear una nueva Docker Machine se me quedaba indefinidamente en el mensaje <em>Starting VM&hellip;</em>, algún problema con Docker Machine o VirtualBox que en una futura versión podría solucionarse, la única forma de resolverlo que se es reiniciando el ordenador pero seguro que hay alguna mejor.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://docs.docker.com/machine/">Docker Machine</a></li>
-</ul>
-</div>
-]]>
+        
         </content>
         
             
@@ -560,48 +200,7 @@
         <author><name>picodotdev</name></author>
         <content type="html">
         <![CDATA[<p><strong>¿Por qué se habla tanto de Docker y despierta tanto interés si la tecnología ya existía desde hace tiempo tanto en otros sistemas operativos como en Linux? Uno de los éxitos que ha contribuido a ellos es Docker Hub, un repositorio de imágenes en el que cualquiera puede contribuir con las suyas. Esto hace que pueda encontrarse cualquier herramienta de las populares y empezar a usarlas en muy pocos minutos.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false&#34;"></p>
-</div>
-<p>Probablemente uno de los éxitos de Docker más que la propia tecnología de contenedores sea <a href="https://registry.hub.docker.com/">Docker Hub</a> que permite a los usuarios compartir las imágenes construidas, se podría decir que es el <a href="https://github.com/">GitHub</a> de los contenedores docker y quizá por ello el paralelismo en el nombre entre ambos. Docker Hub permite subir imágenes o usar las imágenes oficiales de <a href="https://www.postgresql.org/">postgresql</a>, <a href="https://redis.io/">redis</a>, <a href="https://www.mysql.com/">mysql</a>, <a href="https://www.ubuntu.com/">ubuntu</a>, <a href="https://www.rabbitmq.com/">rabbitmq</a>, &hellip; y otra <a href="https://registry.hub.docker.com/">multitud de proyectos</a>.</p>
-<p>El <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">archivo Dockerfile con el que construimos una imagen</a> podemos hospedarlo en un repositorio de GitHub y que Docker Hub lo obtenga para construir la imagen. Docker Hub ofrece repositorios públicos en los que colocar las imágenes que cualquier otro usuario puede acceder y usar o repositorios privados con cierto coste según el número de repositorios privados, el primer repositorio privado es gratuito.</p>
-<h3 id="otros-artículos-sobre-docker">Otros artículos sobre Docker</h3>
-<p>Este artículo forma parte de otros artículos sobre Docker que ya he escrito si quieres empezar por el principio puedes leer primero la <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">Introducción y características sobre Docker</a>, el <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">Inicio básico de Docker</a>, <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">Como crear una imagen con un Dockerfile</a> o <a href="https://picodotdev.github.io/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/">Como usar docker con Docker Compose</a>. En siguientes artículos hablaré de otras herramientas como Docker Machine y Docker Swarm.</p>
-<p>A continuación explicaré como crear un repositorio en Docker Hub que obtenga los Dockerfile de un repositorio de GitHub y construya las imágenes de los Dockerfile de forma automática cuando haya cambios en los archivos dockerfile de GitHub.</p>
-<h3 id="crear-una-cuenta-en-docker-hub">Crear una cuenta en Docker Hub</h3>
-<p>Primero necesitaremos crear una cuenta en Docker Hub. El nombre de usuario determinará el nombre de las imágenes, siendo mi nombre de usuario <em>picodotdev</em> al usar las imágenes debería usar:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker run picodotdev/dockerhub-postgres:9.4&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-run.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/images/dockerhub_hu5b9976776b1cd163218f0599bbd96d6b_66063_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Docker Hub"><img src="https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/images/dockerhub_hu5b9976776b1cd163218f0599bbd96d6b_66063_300x200_fit_q90_h2_box_3.webp" width="269" height="200" alt="Docker Hub" title="Docker Hub" class="&#34; " loading="lazy"></a></p>
-<figcaption>Docker Hub</figcaption>
-</figure>
-</div>
-<h3 id="subir-el-archivo-dockerfile-a-un-repositorio-de-github">Subir el archivo Dockerfile a un repositorio de GitHub</h3>
-<p>Posteriormente deberemos crear un repositorio en GitHub para alojar los archivos Dockerfile que usará Docker Hub para construir las imágenes de Docker. En el ejemplo usaré el <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/DockerHub">repositorio blog-ejemplos</a> y dentro de este los dockerfiles los he <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/DockerHub/postgres/9.4">ubicado dentro de una carpeta</a>.</p>
-<p>Una vez que tenemos el repositorio de GitHub subimos un <a href="https://github.com/picodotdev/blog-ejemplos/blob/master/DockerHub/postgres/9.4/Dockerfile">Dockerfile para el ejemplo</a>, usaré el proporcionado de forma <a href="https://registry.hub.docker.com/_/postgres/">oficial de posgresql</a>, y creamos en Docker Hub una <em>build</em> automatizada, se nos solicitará permisos en la cuenta de GitHub para que Docker Hub pueda acceder a nuestros repositorios.</p>
-<h3 id="crear-el-repositorio-en-dockerhub-y-la-_build_-automática">Crear el repositorio en DockerHub y la <em>build</em> automática</h3>
-<p>En la creación del repositorio en Docker Hub con <em>build</em> automatizada seleccionamos el repositorio de GitHub que contiene los repositorios y el archivo DockerFile para el que queremos hacer la build automatizada. Le asignamos un nombre al repositorio y un <em>tag</em> a la <em>build</em> que podremos usar al hacer el <em>pull</em> de la imagen.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/images/dockerhub-automated-build_hu82559c1d7c01b549f79d8e413e2351ad_42125_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Docker Hub"><img src="https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/images/dockerhub-automated-build_hu82559c1d7c01b549f79d8e413e2351ad_42125_300x200_fit_q90_h2_box_3.webp" width="300" height="196" alt="Docker Hub" title="Docker Hub" class="&#34; " loading="lazy"></a></p>
-<figcaption>Build automatizada de Docker Hub</figcaption>
-</figure>
-</div>
-<p>Docker Hub se encargará de obtener el archivo Dockerfile y construir la imagen, en el proceso podremos ver las trazas generadas.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://docs.docker.com/userguide/dockerrepos/">Get started with Docker Hub</a></li>
-<li><a href="http://docs.docker.com/docker-hub/builds/#the-dockerfile-and-automated-builds">The Dockerfile and Automated Builds</a></li>
-</ul>
-</div>
-]]>
+        
         </content>
         
             
@@ -620,84 +219,7 @@
         <author><name>picodotdev</name></author>
         <content type="html">
         <![CDATA[<p><strong>Continuando la serie de artículos sobre Docker, otra de las herramientas disponibles en el ecosistema y que nos facilitará enormemente el administrar aplicaciones compuestas por varios contenedores relacionados entre sí es Docker Compose. Definiendo en un archivo los contenedores que forman parte de una aplicación podemos iniciarlos, pararlos, eliminarlos o ver su estado como si de una unidad se tratara.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false&#34;"></p>
-</div>
-<p>Una vez que ya sabemos que nos puede proporcionar una de las herramientas de la que más se está hablando con la <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">introducción a Docker</a>, conocemos <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">como empezar a usar Docker</a> y sabemos <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">cómo crear nuestras propias imágenes de Docker</a> para los propósitos específicos que necesitemos nos resultará interesante algunas de las nuevas herramientas que proporciona Docker. El ecosistema de docker ya no solo se compone del entorno de ejecución de los contenedores, explicadas de forma básica son:</p>
-<ul>
-<li><a href="https://www.docker.com/">Docker</a>: el sistema de contenedores (<em>runtime</em>, imágenes, &hellip;).</li>
-<li><a href="https://registry.hub.docker.com/">Docker Hub</a>: el repositorio de imágenes que las diferentes herramientas de forma oficial o a través de usuarios construyen y comparten imágenes que cualquiera puede usar.</li>
-<li><a href="https://docs.docker.com/compose/">Docker Compose</a>: permite describir un conjunto de contenedores que se relacionan entre ellos.</li>
-<li><a href="https://docs.docker.com/machine/">Docker Machine</a>: permite construir máquinas virtuales para alojar contenedores. Similar a lo que hace <a href="https://www.vagrantup.com/">Vagrant</a>, al igual que el anterior también permite construir máquinas que ejecuten contenedores con <a href="https://www.virtualbox.org/">VirtualBox</a> o diferentes sistemas de computación en en la nube como <a href="https://aws.amazon.com/es/ec2/">Amazon EC2</a>, <a href="https://www.digitalocean.com/">Digital Ocean</a> u otros. Docker Machine puede ser la forma de usar Docker en Windows o Mac OS hasta que funcione de forma nativa como en GNU/Linux.</li>
-<li><a href="https://docs.docker.com/swarm/">Docker Swarm</a>: permite construir un <em>cluster</em> de máquinas al que se puede enviar contenedores Docker para su ejecución.</li>
-</ul>
-<p>Continuando la <a href="https://picodotdev.github.io/blog-bitix/series/docker/">serie de artículos sobre Docker</a> que escribí hace unos meses escribiré sobre cada una de estas nuevas herramientas, empezando en este artículo con Docker Compose en el que explicaré de qué forma nos puede servir, como instalarlo y el descriptor de contenedores con un ejemplo.</p>
-<h3 id="introducción-a-docker-compose">Introducción a Docker Compose</h3>
-<p>Las aplicaciones basadas en microservicios se prestan a usar múltiples contenedores cada uno con un servicio, uno puede contener la base de datos <a href="https://www.postgresql.org/">postgresql</a>, otro una base de datos clave/valor <a href="https://redis.io/">redis</a> o de documentos como <a href="https://www.elastic.co/es/elasticsearch/">elasticsearch</a> para hacer búsquedas, otro un sistema de mensajería como <a href="https://www.rabbitmq.com/">rabbitmq</a>, otro <a href="https://tomcat.apache.org/">tomcat</a> o <a href="https://wildfly.org/">wildfly</a> que use los anteriores y un servidor web como <a href="https://nginx.org/">Nginx</a>. Teniendo múltiples contenedores usar el comando <code>docker run</code> para cada uno de ellos nos resultará incómodo.</p>
-<p>En este punto entra Docker Compose que es una herramienta que sirve para definir nuestra aplicación multicontenedor en un archivo de texto con las mismas propiedades que indicaríamos con el comando <code>docker run</code> individualmente, así como las dependencias entre los contenedores. Una vez definidos los múltiples contenedores del servicio en el archivo Docker Compose permite iniciar con un único comando todos los contenedores y en el orden especificado según sus dependencias.</p>
-<p>El archivo descriptor nos puede servir no solo como forma de iniciar los contenedores en un entorno de desarrollo sino como de documentación de la aplicación en la que veremos qué contenedores, imágenes, volúmenes, enlaces y demás propiedades tienen.</p>
-<h3 id="instalar-docker-compose">Instalar Docker Compose</h3>
-<p>Una forma de instalar Docker Compose es <a href="https://github.com/docker/compose/releases">descargar el binario</a> adecuado a nuestra plataforma GNU/Linux o Mac. Otra forma de instalación de Docker Compose es recurrir al paquete de la distribución ya sea <a href="https://www.ubuntu.com/">Ubuntu</a>, <a href="https://www.archlinux.org/">Arch Linux</a> u otra, esta forma tiene la ventaja de que el paquete se mantiene actualizado en cada actualización del sistema.</p>
-<p>Descargando el binario de Docker Compose hay que darle permisos de ejecución y si interesa colocarlo en la variable de entorno <em>PATH</em> del sistema:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ chmod +x docker-compose&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>permisos.sh</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">PATH=$PATH:~/Software/scripts/docker-compose&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>bashrc</span>
-    </div>
-</div>
-<p>Con el siguiente comando veremos que Docker Compose funciona correctamente y la versión del mismo.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker-compose --version&#10;</span></span><span class="line"><span class="cl">docker-compose version: 1.3.1&#10;</span></span><span class="line"><span class="cl">CPython version: 2.7.9&#10;</span></span><span class="line"><span class="cl">OpenSSL version: OpenSSL 1.0.1e <span class="m">11</span> Feb <span class="m">2013</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-compose-version.sh</span>
-    </div>
-</div>
-<h3 id="el-descriptor-de-contenedores">El descriptor de contenedores</h3>
-<p>El descriptor de los contenedores a usar con Docker Compose es un archivo de texto con <a href="https://www.yaml.org/">formato yaml</a> en la que especificamos los diferentes contenedores y sus propiedades, básicamente podemos indicar las mismas propiedades que indicamos arrancando los contenedores individualmente con el comando <code>docker run</code>. En el siguiente ejemplo vemos varios contenedores, dos contenedores de datos para redis y postgresql, los contenedores de redis y postgresql y un contenedor para la aplicación usando tomcat enlazado con los contenedores de redis y postgresql definidos previamente.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">redisdb</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">busybox</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">/var/lib/redis</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">postgresqldb</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">busybox</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">/var/lib/postgresql/data</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">redis</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">redis:3</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">volumes_from</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">redisdb</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="s2">&#34;6379:6379&#34;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">postgresql</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">postgres:9</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">volumes_from</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">postgresqldb</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">environment</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">POSTGRES_USER</span><span class="p">:</span><span class="w"> </span><span class="l">posgresql</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">POSTGRES_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l">posgresql</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="s2">&#34;5432:5432&#34;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">apps</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">library/tomcat:8-jre8</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">links</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">redis</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">postgresql</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="s2">&#34;8080:8080&#34;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-compose.yml</span>
-    </div>
-</div>
-<p>La imagen de los contenedores se indica con la propiedad <em>image</em>, los contenedores de datos, <em>redisdb</em> y <em>posgresqldb</em>, usan la propiedad <em>volumes</em> con los datos que guardarán y la imagen de <em>busybox</em> (se suele usar esta para los contenedores de datos porque es muy pequeña), con la propiedad <em>hostname</em> podemos indicar el nombre de la máquina que al usar la propiedad <em>link</em> docker hará visible al contenedor que los usen, con <em>volumes_from</em> podemos usar volúmenes, con <em>links</em> enlazar contenedores y con <em>ports</em> asociar puertos entre los contenedores y la propia máquina anfitrión, en el ejemplo he usado los puertos por defecto de cada uno de los servicios.</p>
-<p>La <a href="https://docs.docker.com/compose/yml/">descripción completa del formato del archivo de Docker Compose</a> nos da una idea de las opciones que podemos usar, está bastante bien explicado y con ejemplos que nos resultará sencillo entender conociendo los parámetros que usamos con <em>docker run</em>.</p>
-<h3 id="iniciar-los-contenedores-con-docker-compose">Iniciar los contenedores con Docker Compose</h3>
-<p>Escrito el archivo de los contenedores y llamándolo <em>docker-compose.yml</em> podemos iniciar los contenedores con el comando <code>docker-compose up</code> estando en el mismo directorio de trabajo donde esté ubicado del archivo yml (y previamente habiendo iniciado el servicio de docker). Con <em>docker-compose ps</em> podremos ver el estado de los contenedores y de cuales está compuesta la aplicación. Con la opción <em>--help</em> podemos ver la lista completa de comandos que podemos usar.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="l">$ docker-compose up -d</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">$ docker-compose ps</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">$ docker-compose stop</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">$ docker-compose restart</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">$ docker-compose logs</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-compose-up.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/images/docker-compose_hua74a7e9db5f95e72caba74a265683e33_52379_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Docker Compose"><img src="https://picodotdev.github.io/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/images/docker-compose_hua74a7e9db5f95e72caba74a265683e33_52379_300x200_fit_q90_h2_box_3.webp" width="300" height="156" alt="Docker Compose" title="Docker Compose" class="&#34; " loading="lazy"></a></p>
-<figcaption>Docker Compose</figcaption>
-</figure>
-</div>
-<p>docker-compose inicia los contenedores en el orden que hemos indicado en el archivo de definición, las trazas emitidas de los servicios de los contenedores aparecerán en la terminal si iniciamos los contenedores en primer plano y con <em>Ctrl+C</em> se pararán los contenedores. Indicando la opción <em>-d</em> los contenedores se iniciarán en segundo plano, con <em>docker-compose stop</em> podremos pararlos, con <em>docker-compose restart</em> reiniciarlos, <em>docker-compose rm</em> para eliminar completamente los contenedores y con <em>docker-compose logs</em> veremos las trazas emitidas por los servicios que nos serán de utilizar si iniciamos los contenedores en segundo plano.</p>
-<div class="media">
-<a href="https://asciinema.org/a/23602" target="_blank"><amp-img src="https://asciinema.org/a/23602.png" width="650" height="563" class="lozad"></amp-img></a>
-</div>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1492036730&amp;linkId=666d0aff3a2629cd87c205370bc5ae87" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1633430235&amp;linkId=9d344246cd59cd65a952305379c2556a" title="Amazon" class="lozad"></iframe>
-</div>
-<p>En las siguientes semanas publicaré más artículos sobre esta serie de Docker comentando <a href="https://registry.hub.docker.com/">Docker Hub</a>, <a href="https://docs.docker.com/machine/">Docker Machine</a> y explicaré de qué forma nos pueden ser útiles estas otras herramientas.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/04/introduccion-a-elasticsearch/">Introducción a elasticsearch</a></li>
-</ul>
-</div>
-]]>
+        
         </content>
         
             
@@ -716,51 +238,7 @@
         <author><name>picodotdev</name></author>
         <content type="html">
         <![CDATA[<p><strong>Pasado un nuevo semestre he escrito principalmente sobre temas de programación, Java y poco sobre Linux o software libre. Incluyo aquí el listado completo de los artículos que he escrito.</strong></p>]]>
-        <![CDATA[<p>Otros seis meses que han pasado y estos especialmente para mi muy rápido. Como suelo hacer cada este periodo de tiempo recopilo en un artículo <em>Hemeroteca</em> los artículos que he publicado al ritmo que mantengo de uno por semana. Este ya es el séptimo contando los de <a href="https://elblogdepicodev.blogspot.com.es">El blog de pico.dev</a> y de <a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a>.</p>
-<p>Como resumen de estas 26 semanas he publicado 27 artículos destacando que he cambiado de herramienta con la que mantengo la bitácora pasando de usar <a href="http://octopress.org/">Octopress</a> a <a href="https://gohugo.io/">Hugo</a> que me ha permitido cambiar el diseño completamente personalizándolo enteramente a mi gusto y agregar algunas nuevas funcionalidades como un mejor previsualizador de imágenes, resúmenes al inicio de los artículos, o un nuevo menú con las categorías principales de las que escribo. De lo que más he escrito ha sido sobre programación y como no pueden faltar en este <em>blog</em> algún artículo sobre <a href="https://tapestry.apache.org/">Apache Tapestry</a>.</p>
-<p>De los artículos que he escrito destacaré los siguientes, son con los que más a gusto he quedado después de escribirlos y me parece que merecen una lectura, por orden cronológico:</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/">Conferencia BilboStack 2015</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/">Internacionalización (i18n) en JavaScript</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/02/5-aniversario-del-blog/">5º aniversario del blog</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/02/listener-de-eventos-de-hibernate-con-servicios-de-spring/">Listener de eventos de Hibernate con servicios de Spring</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/03/datos-de-sesion-externalizados-con-spring-session/">Datos de sesión externalizados con Spring Session</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/03/aplicacion-web-java-autocontenida-con-tomcat-embedded/">Aplicación web Java autocontenida con Tomcat Embedded</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/">Productividad y errores de compilación con Apache Tapestry</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/04/nueva-visita-a-5-plus-opciones-de-hosting-para-aplicaciones/">Nueva visita a 5+ opciones de «hosting» para aplicaciones</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/04/certificado-ssl-de-empresa-wildcard-y-de-validacion-extendida/">Certificado SSL de empresa wildcard y de validación extendida</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/">Programación de juegos y 3D en Java con jMonkeyEngine</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/05/nuevo-diseno-en-blog-bitix/">Nuevo diseño en Blog Bitix</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/05/10-razones-para-seguir-usando-java/">10 razones para seguir usando Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/05/alternativa-a-hibernate-u-orm-y-ejemplo-de-jooq/">Alternativa a Hibernate u ORM y ejemplo de jOOQ</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/06/nueva-visita-a-herramientas-para-un-proyecto-java/">Nueva visita a herramientas para un proyecto Java</a></li>
-</ul>
-<p>El resto de artículos son los siguientes, también interesantes:</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/">Instalar y usar plugin ágil en Redmine</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/">Introducción e inicio a Drupal</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/como-hacer-un-substring-de-una-cadena-html/">Como hacer un substring de una cadena HTML</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/convertir-fechas-y-husos-horarios-en-java/">Fechas y usos horarios en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/02/como-hacer-un-downgrade-de-un-paquete-en-arch-linux/">Cómo hacer un «downgrade» de un paquete en Arch Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/02/la-palabra-clave-assert-de-java-y-un-ejemplo/">La palabra clave assert de Java y un ejemplo</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/02/ejemplo-de-listener-de-eventos-de-hibernate/">Ejemplo de listener de eventos de Hibernate</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/03/introduccion-y-ejemplo-de-api-rpc-con-apache-thrift/">Introducción y ejemplo de API RPC con Apache Thrift</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/04/evitar-iniciar-varias-veces-la-maquina-virtual-java-para-procesos-cortos/">Evitar iniciar varias veces la máquina virtual Java para procesos cortos</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/04/escribir-en-varios-writer-a-la-vez/">Escribir en varios writer a la vez</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/05/patron-multiples-vistas-de-un-mismo-dato-en-tapestry/">Patrón múltiples vistas de un mismo dato en Tapestry</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/06/servicio-para-obtener-ratios-de-conversion-entre-divisas/">Servicio para obtener ratios de conversión entre divisas</a></li>
-</ul>
-<p>Cada mes sigo aumentando ligeramente o manteniendo el número de visitas del mes anterior, la mayoría procedentes del buscador Google. En enero andaba en unas 1125 sesiones y 1400 páginas vistas semanales, hoy en unas 1450 sesiones y 2000 páginas vistas, siguen siendo pocas comparadas con algunos otras bitácoras de temática similar. De vez en cuando tengo algún nuevo seguidor en twitter y son pocos los comentarios que recibo probablemente esté haciendo algo que podría hacer mejor. Los artículos que publico suelen ser para un público de nivel medio y uno a la semana, <a href="http://www.marketingguerrilla.es">recomiendan escribir artículos de un nivel básico</a> y probablemente si siguiese esta recomendación recibiría más visitas o más comentarios pero me suele gustar escribir de algo que incluso yo aprenda algo y que no esté ya en un millardo de sitios y sea medianamente fácil de encontrar con una búsqueda sencilla, aunque igual me planteo de vez en cuando seguir esta recomendación.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/06/hemeroteca-7/images/analytics_hu1ac75864dcb350a7d40e492d9b491358_64582_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Visitas semanales de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2015/06/hemeroteca-7/images/analytics_hu1ac75864dcb350a7d40e492d9b491358_64582_300x200_fit_q90_h2_box_3.webp" width="300" height="111" alt="Visitas semanales de Blog Bitix" title="Visitas semanales de Blog Bitix" class="&#34; " loading="lazy"></a></p>
-<figcaption>Evolución de sesiones semanales en Blog Bitix</figcaption>
-</figure>
-</div>
-<p>Sigo teniendo pendiente de publicar unos cuantos nuevos artículos que continúen la <a href="https://picodotdev.github.io/blog-bitix/series/docker/">serie sobre Docker</a> que ya publiqué, también tengo más artículos preparados sobre programación con Java y bastantes ideas ya listadas para seguir escribiendo. Pero si te interesa un determinado tema y quisieras que explicase o hablase de algo relacionado con lo que suelo escribir añade un comentario y trataré de ver si me es posible, ¡comenta, pregunta lo que quieras o hazme la recomendación que estés pensando!.</p>
-<p>Para finalizar agradecer a varios usuarios de twitter que aunque no conozco suelen compartir muchos de los artículos que escribo y me ayudan enormemente a hacer que el contenido de Blog Bitix llegue a más personas. <a href="https://twitter.com/jbravo">Joaquin Bravo</a>, <a href="https://twitter.com/Statick_ds">Diego Saavedra</a>, <a href="https://twitter.com/Mr_Prometheus">Camilo Bernal</a>, <a href="https://twitter.com/pereyrada">A. Daniel Pereyra</a> y otros en la <a href="https://twitter.com/search?q=%22Blog%20Bitix%22&amp;src=typd">linea de tiempo de Blog Bitix</a>, ¡gracias!.</p>
-]]>
+        
         </content>
         
             
@@ -791,50 +269,7 @@
         <author><name>picodotdev</name></author>
         <content type="html">
         
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux" class="" loading="false&#34;"></p>
-</div>
-<p><a href="https://www.archlinux.org/">Arch Linux</a> es un distribución <a href="https://en.wikipedia.org/wiki/Rolling_release"><em>rolling release</em></a> en la que los paquetes son actualizados constantemente en cuanto sale una nueva versión. Esto tiene la ventaja de que siempre se tiene el sistema actualizado con las versiones más recientes de los programas, en los que se van añadiendo nuevas características y corrigiendo errores de seguridad y funcionales. Sin embargo, en algún momento puede ocurrir que una actualización de algún paquete nos introduzca algún error, en este caso podemos hacer una desactualización o <em>downgrade</em> de paquete y volver a la última versión estable.</p>
-<p>No es habitual que haya errores pero puede darse el caso, antes de hacer una desactualización es recomendable buscar en los <a href="https://bbs.archlinux.org/">foros de arch linux</a> una respuesta con una alternativa mejor. En todo este tiempo como usuario de Arch Linux, más de 5 años, los <em>downgrades</em> que he tenido que hacer han sido dos, uno para el paquete de <em>subversion</em> y el que voy a comentar.</p>
-<p>El último caso ha sido para el paquete de <a href="https://www.archlinux.org/packages/extra/x86_64/networkmanager/"><em>networkmanager</em></a> al actualizarse a la versión <em>1.0.0-1</em> desde la <em>0.9.10.0-4</em>. El problema que me ocasionaba era varios intentos de conexión y desconexión tanto de la red cableada como de la wifi, después de varios intentos seguidos y menos de un minuto conseguía conectarse a la red correctamente pero era un poco molesto. En los foros de Arch Linux hay varios mensajes de otros usuarios con el mismo problema <a href="https://bbs.archlinux.org/viewtopic.php?id=193275">I</a>, <a href="https://bbs.archlinux.org/viewtopic.php?id=192679">II</a> y <a href="https://bbs.archlinux.org/viewtopic.php?id=192344">III</a>, donde se comenta algunas alternativas, una de ellas la desactualización del paquete.</p>
-<p>En la página <a href="https://wiki.archlinux.org/index.php/Downgrading_packages">desactualizar paquetes</a> de la wiki de Arch Linux hay información más detallada de la desactualización de un paquete.</p>
-<h3 id="cómo-hacer-_downgrade_-de-un-paquete">Cómo hacer <em>downgrade</em> de un paquete</h3>
-<p>El proceso de desactualización o <em>downgrade</em> no tiene complicación, basta con lanzar un comando, se desactualiza el paquete y sus dependencias con la limitación de que en el caso de conflictos con otros paquetes también hay que desactualizar esos otros paquetes.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -U /var/cache/pacman/pkg/networkmanager-0.9.10.0-4-x86_64.pkg.tar.xz&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>pacman-downgrade.sh</span>
-    </div>
-</div>
-<p>Arch Linux guarda en una caché del sistema de archivos local todos los paquetes con sus versiones que descarga, la caché se encuentra por defecto en el directorio <em>/var/cache/pacman/pkg/</em>.</p>
-<h3 id="cómo-buscar-un-paquete-de-una-versión-anterior">Cómo buscar un paquete de una versión anterior</h3>
-<p>Para hacer una desactualización hay que tener la versión del paquete a la que hacer <em>downgrade</em>, si no se ha hecho una limpieza de la caché de los paquetes viejos no usados con el comando <em>pacman -Sc</em> están en el directorio de caché de paquetes. Si se ha hecho la limpieza de la caché y no se dispone del paquete hay que buscar en alguna réplica menos actualizada la versión del paquete desactualizado.</p>
-<p>Otra posibilidad es usar <a href="https://wiki.archlinux.org/index.php/Arch_Rollback_Machine">Arch Rollback Machine</a> que va almacenando instantáneas de las últimas versiones de los paquetes, de los repositorios organizados por fecha y de las imágenes iso del medio de instalación. Usando estas instantáneas de paquetes se puede encontrar una versión desactualizada de cualquier paquete individual. En los casos más extremos Arch Rollback Machine ofrece la posibilidad de desactualizar un equipo completamente a una fecha concreta, aunque no es recomendable.</p>
-<p>Indicando en el comando la dirección completa del paquete este es descargado y desactualizado.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -U https://archive.archlinux.org/packages/n/networkmanager/networkmanager-0.9.10.0-4-x86_64.pkg.tar.xz&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>pacman-arm.sh</span>
-    </div>
-</div>
-<p>Cómo práctica recomendable es mantener hasta la siguiente actualización los paquetes en la caché, una vez actualizado el sistema y comprobado que todo sigue funcionando correctamente. Antes de una actualización se puede eliminar de la cache los paquetes viejos no usados, se actualiza el sistema, con lo que se tiene en la cache los paquetes nuevos y viejos, se comprueba que el sistema funciona correctamente y si hay que hacer un <em>downgrade</em> de alguno se dispone de él en la cache local.</p>
-<p>La secuencia de comandos en una actualización que uso es la siguiente.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -Sc&#10;</span></span><span class="line"><span class="cl">$ sudo pacman -Syu&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>pacman-update.sh</span>
-    </div>
-</div>
-<h3 id="cómo-evitar-que-un-paquete-se-actualice">Cómo evitar que un paquete se actualice</h3>
-<p>Para evitar que un paquete sea actualizado en la siguiente actualización del sistema hay añadirlo a la lista de paquetes ignorados <em>IgnorePkg</em> del archivo <em>/etc/pacman.conf</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">IgnorePkg = networkmanager&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>pacman.conf</span>
-    </div>
-</div>
-<p>No es recomendable mantener muchos paquetes desactualizados y en la lista de <em>IgnorePkg</em> ya que estos pueden tener dependencias sobre paquetes también desactualizados, solo debe ser empleado para casos puntuales.</p>
-]]>
+        
         </content>
         
             
@@ -851,64 +286,7 @@
         <author><name>picodotdev</name></author>
         <content type="html">
         
-        <![CDATA[<div class="logotypes"> 
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/drupal.svg" width="200" height="218" alt="Drupal" title="Drupal" class="" loading="false&#34;"></p>
-</div>
-<p>Para los proyectos web cuyo punto central es el contenido disponemos de algunas opciones que prácticamente nos dan la solución hecha o facilitan enormemente la tarea como desarrolladores y posteriormente a los administradores que no necesitarán un gran conocimiento para administrar la web. Estas aplicaciones se les suele conocer como <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">Sistemas de gestión de contenidos</a> (Content Management System, CMS) y como siempre disponemos de varias opciones, algunas similares.</p>
-<p>No soy un experto en CMS ni he usado uno en un proyecto real pero trataré en este artículo hacer una introducción a <a href="https://www.drupal.org/">Drupal</a>. Hay otras opciones como <a href="https://wordpress.org/">Wordpress</a> o <a href="https://www.joomla.org/">Joomla</a> también desarrolladas en <a href="https://secure.php.net/">PHP</a> y en el ámbito <a href="https://www.oracle.com/java/">Java</a> otras como <a href="https://www.alfresco.com/">Alfresco</a>, <a href="https://www.nuxeo.com/">Nuxeo</a>, <a href="https://dotcms.com/">dotCMS</a> y <a href="https://www.liferay.com/">Liferay</a> aunque estas en algunos puntos son diferentes ofreciendo gestión documental o <a href="https://es.wikipedia.org/wiki/Portal_%28Internet%29">portales de internet</a>. Wordpress es más simple que Drupal pero si tenemos conocimientos de desarrollo Drupal posiblemente se adapte más a nuestras preferencias. Alfresco y Nuxeo son más bien gestores de contenido y de documentos pero no permiten gestionar como se visualiza el contenido en la web final, Liferay es algo más parecido a lo que ofrece Drupal pero tengo la sensación que es algo más compleja o no exactamente con las mismas opciones y está más destinado a la creación de portales web.</p>
-<p>Drupal como decía está desarrollado sobre PHP pero solo necesitaremos conocer este lenguaje en el momento que queramos desarrollar y personalizarlo. Como usuarios para crear contenido y gestionar la disposición de los elementos en la página web no necesitamos conocer nada de PHP solo necesitaremos conocer como funciona la herramienta de administración que ofrece Drupal. El tipo de los proyectos para los que puede estar indicado Durpal puede ser aquellos en los que los usuarios quieran crear y publicar nuevo contenido y quieran ellos mismos modificar los elementos de las páginas sin necesidad de solicitar un desarrollo. Algunos casos de uso pueden ser instituciones de la administración pública, empresas, tiendas, comercios, &hellip; aquellos que quieran tener una presencia en internet y puedan necesitar añadir, modificar o eliminar en algún momento el contenido de su web. La tarea de los desarrolladores consistirá en personalizar la instalación de Drupal a las necesidades del cliente y sus usuarios ya sea adaptando el aspecto de la web a crear, creando la taxonomía del contenido, definiendo los tipos de contenidos y que información contiene, usuarios y roles, &hellip;</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio_huf2a00d1862abd088cad08a0e96220a73_29179_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Inicio Drupal"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio_huf2a00d1862abd088cad08a0e96220a73_29179_300x200_fit_q90_h2_box_3.webp" width="282" height="200" alt="Inicio Drupal" title="Inicio Drupal" class="&#34; " loading="lazy"></a>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio-administracion_hub35f112cec43233d532972ffb246ef4a_31553_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Inicio Drupal (Administración)"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio-administracion_hub35f112cec43233d532972ffb246ef4a_31553_300x200_fit_q90_h2_box_3.webp" width="284" height="200" alt="Inicio Drupal (Administración)" title="Inicio Drupal (Administración)" class="&#34; " loading="lazy"></a></p>
-</figure>
-</div>
-<p>Por defecto Drupal ofrece dos tipos de contenido páginas y artículos que poseen un título y un cuerpo aunque podemos crear nuevos tipos de contenido con información adicional como podría ser eventos que recojan además una fecha y hora de inicio, fecha y hora de fin, lugar, &hellip;. Podemos crear usuarios y roles y asignarles permisos como poder crear contenidos, crear menús con enlaces a ciertos contenidos que queramos destacar. Podemos usar taxonomía para categorizar el contenido y que este esté organizado y sea fácilmente encontrado por los usuarios. Asociar tipos de contenido con ciertos tipo de taxonomía. Modificar los bloques como menús, formulario de inicio de sesión, &hellip; y hacer que solo se vean en ciertas páginas, para algunos tipos de contenidos, ciertos roles o usuarios. Hacer vistas o listas de los contenidos. Modificar la disposición o layout de las páginas por ejemplo para que tenga dos, tres columnas, una cabecera y un pie, &hellip;. Finalmente también podemos modificar y personalizar el aspecto del sitio web con temas que podemos descargar o desarrollar nosotros mismos.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-pagina_hu7d989873d8b0f756fcd2a2f6d4a5079e_29858_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Crear página"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-pagina_hu7d989873d8b0f756fcd2a2f6d4a5079e_29858_300x200_fit_q90_h2_box_3.webp" width="268" height="200" alt="Crear página" title="Crear página" class="&#34; " loading="lazy"></a>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-articulo_hu0014f6dd0073fd8d37aeb94d3751c5dd_27499_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Crear artículo"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-articulo_hu0014f6dd0073fd8d37aeb94d3751c5dd_27499_300x200_fit_q90_h2_box_3.webp" width="268" height="200" alt="Crear artículo" title="Crear artículo" class="&#34; " loading="lazy"></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/tipos-contenido_huba7f8446c7a2941a4e3617665d20c22c_35127_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Tipos de contenido"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/tipos-contenido_huba7f8446c7a2941a4e3617665d20c22c_35127_300x200_fit_q90_h2_box_3.webp" width="268" height="200" alt="Tipos de contenido" title="Tipos de contenido" class="&#34; " loading="lazy"></a>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia_hu1fcd59d2c1d62e6b49a85ac111a75cce_31161_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Taxonomía"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia_hu1fcd59d2c1d62e6b49a85ac111a75cce_31161_300x200_fit_q90_h2_box_3.webp" width="268" height="200" alt="Taxonomía" title="Taxonomía" class="&#34; " loading="lazy"></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia-etiquetas_hu35632a7f6f6e2d9092b91e8ed8f12db8_32967_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Etiquetas taxonomía"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia-etiquetas_hu35632a7f6f6e2d9092b91e8ed8f12db8_32967_300x200_fit_q90_h2_box_3.webp" width="268" height="200" alt="Etiquetas taxonomía" title="Etiquetas taxonomía" class="&#34; " loading="lazy"></a>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/bloques_hu1f377a72bcf3cbdca8dcadf3f8fd8ee4_51185_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Bloques"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/bloques_hu1f377a72bcf3cbdca8dcadf3f8fd8ee4_51185_300x200_fit_q90_h2_box_3.webp" width="268" height="200" alt="Bloques" title="Bloques" class="&#34; " loading="lazy"></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas_huc003da5bd98a62d8b7d13b8ac6eb160e_41340_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Personas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas_huc003da5bd98a62d8b7d13b8ac6eb160e_41340_300x200_fit_q90_h2_box_3.webp" width="268" height="200" alt="Personas" title="Personas" class="&#34; " loading="lazy"></a>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-permisos_hue055cb0b63d35a77098fdba63fb778f7_58790_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Permisos personas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-permisos_hue055cb0b63d35a77098fdba63fb778f7_58790_300x200_fit_q90_h2_box_3.webp" width="268" height="200" alt="Permisos personas" title="Permisos personas" class="&#34; " loading="lazy"></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-roles_hu45fae67c6210dedb2811f13e5443eade_54247_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Roles personas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-roles_hu45fae67c6210dedb2811f13e5443eade_54247_300x200_fit_q90_h2_box_3.webp" width="268" height="200" alt="Roles personas" title="Roles personas" class="&#34; " loading="lazy"></a></p>
-</figure>
-</div>
-<p>Drupal es ampliamente <a href="https://www.drupal.org/project/project_module">extensible mediante módulos</a> permitiendo agregarle funcionalidades de diferentes categorías (contenido, administración, integración con terceros, comercio electrónico, &hellip;) si las incorporadas por defecto no nos son suficientes. Algunos de  los módulos más empleados son <a href="https://www.drupal.org/project/panels">Panels</a> que permite definir contenedores (barra izquierda, región contenido, barra derecha, pie, cabecera, &hellip;) en una página y asignar el contenido que queremos que aparezca en cada uno de ellos, <a href="https://www.drupal.org/project/cck">Content Construction Kit (CCK)</a>, <a href="https://www.drupal.org/project/views">Views</a> para definir vistas de una colección de elementos, <a href="https://www.drupal.org/project/pathauto">Pathauto</a> para hacer las URLs amigables al usuario y buscadores mejorando el SEO del sitio, <a href="https://www.drupal.org/project/webform">Webform</a> para crear formularios y recoger información y otros muchos más para infinidad de cosas. Sin embargo, conviene usar los más populares que están ampliamente probados y hayan demostrado su utilidad, los que tenga buen soporte y un mantenimiento activo, estas cosas las podemos seleccionar con el filtro en el formulario de búsqueda de módulos.</p>
-<p>En definitiva Drupal es una herramienta de mucha utilidad para gestionar un sitio web. Si la parte importante del sitio web es el contenido Drupal puede adaptarse perfectamente a las necesidades y si el sitio web ha de ser administrado por usuarios sin conocimientos técnicos puede ser una solución que no requiera desarrollar una aplicación web a medida costando menos tiempo y menos esfuerzo. Para iniciarse en Drupal los libros <a href="https://amzn.to/2udreMi">Beginning Drupal 7</a> y <a href="https://amzn.to/39PQMzE">Pro Drupal 7 Development</a> son un buen inicio, he leído el primero y están muy bien explicado partiendo desde cero conocimiento sobre Drupal o PHP, contiene suficiente detalle para conocer las diferentes posibilidades que ofrece esta plataforma de gestión de contenidos.</p>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1430228598&amp;linkId=0918d80bc297650520a5ff23dd6aaa77" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1430228385&amp;linkId=6f1cc0aedb7daa7be2fc5b5e4591442f" title="Amazon" class="lozad"></iframe>
-</div>
-<p>Si queremos probarlo posiblemente la solución mas sencilla es usar la <a href="https://bitnami.com/stack/drupal">imagen que ofrece Bitnami de Drupal</a> que contiene todos los requisitos de Drupal ya instalados (servidor web, base de datos, dependencias, &hellip;), podemos descargarla y crear una máquina virtual con VirtualBox, en unos pocos minutos podemos empezar a probar Drupal. En el artículo de <a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">introducción sobre Bitnami</a> explico como crear una máquina virtual e iniciar cualquiera de las <a href="https://bitnami.com/stacks">imágenes</a> de las que ofrece <a href="https://bitnami.com/">Bitnami</a> con VirtualBox.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">Introducción a Bitnami</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/">Introducción al gestor de proyectos y tareas Redmine</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/">Instalar y usar un plugin ágil en Redmine</a></li>
-</ul>
-</div>
-]]>
+        
         </content>
         
             
@@ -931,48 +309,7 @@
         <author><name>picodotdev</name></author>
         <content type="html">
         
-        <![CDATA[<div class="logotypes"> 
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/redmine.webp" width="300" height="89" alt="Redmine" title="Redmine" class="" loading="false&#34;"></p>
-</div>
-<p>Las metodologías ágiles para la gestión de proyectos son ya ampliamente usadas, como <a href="https://es.wikipedia.org/wiki/Scrum_%28desarrollo_de_software%29">scrum</a> o <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_extrema">programación extrema</a> (XP). Una diferencia entre las metodologías ágiles y las metodologías empleadas tradicionalmente como el modelo en cascada es que en las metodologías ágiles se tiene en cuenta que se pueden producir cambios en el desarrollo del proyecto y suelen ser más flexibles y adaptables ante estos cambios.</p>
-<p>En el modelo de metodología ágil podemos usar un panel kanban donde ver de un vistazo rápido las tareas terminadas, las que están en progreso y las próximas tareas planificadas reflejando la realidad del equipo de desarrollo. Reorganizándolas según prioridades que pueden cambiar de una semana a otra, en las metodologías ágiles no se realiza una planificación completa inicial sino que se va realizando a medida que el proyecto progresa.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/panel-kanban_hu4ef8f81386afd1f4c05942e3239ab438_36051_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Panel Kanban de Redmine"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/panel-kanban_hu4ef8f81386afd1f4c05942e3239ab438_36051_300x200_fit_q90_h2_box_3.webp" width="300" height="136" alt="Panel Kanban de Redmine" title="Panel Kanban de Redmine" class="&#34; " loading="lazy"></a></p>
-</figure>
-</div>
-<p>También para la gestión de las tareas de los proyectos se suele usar algún tipo de herramienta que permita recoger y gestionar las peticiones adaptada a la metodología que usemos, una de estas herramientas puede ser <a href="https://www.redmine.org/">Redmine</a>. En la <a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/">introducción sobre Redmine</a> comentaba que es lo nos puede ofrecer para gestionar el proyecto.</p>
-<p>Por defecto, Redmine no dispone de un panel kanban para ver las peticiones pero <a href="http://www.redminecrm.com/projects/agile/pages/1">usando el plugin ágile de RedmineCRM</a> se le puede añadir la funcionalidad con el que además del panel kanban podemos ver otra serie de gráficas como <a href="https://es.wikipedia.org/wiki/Burn_down_chart">burndown</a> y paneles. Hay otras opciones perfectamente válidas como <a href="https://www.atlassian.com/software/jira">JIRA</a> pero esta tiene una política de precios basada en el número de usuarios y a partir de un cierto número es una cantidad considerable.</p>
-<p>Podemos usar la versión gratuita del <a href="http://www.redminecrm.com/">plugin RedmineCRM</a> lo que nos ofrecerá los <em>agile boards</em>, <em>version planner</em> y <em>burndown chart</em>, la versión PRO para un solo sitio tiene un precio de $200, ofrece funcionalidades adicionales como organización en lineas horizontales, subcolumnas y colores para las peticiones en el panel kanban además de algunas opciones más. Para el caso de Redmine también hay otros plugins disponibles para gestionar los proyectos de forma ágil pero no tan buenos como el de RedmineCRM, estos son <a href="http://www.redminebacklogs.net/">Redmine Backlogs</a> y <a href="http://www.redmine.org/plugins/scrum2b">Scrum2B</a>.</p>
-<p>Después de <a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">instalar Redmine con Bitnami</a> si queremos instalar el plugin ágile de RedmineCRM debemos realizar los siguientes pasos desde la terminal de la máquina virtual, en mi caso usando VirtualBox:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo loadkeys es&#10;</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> /opt/bitnami/apps/redmine/htdocs/plugins&#10;</span></span><span class="line"><span class="cl">$ wget http://redminecrm.com/license_manager/15337/redmine_agile-1_3_5-light.zip&#10;</span></span><span class="line"><span class="cl">$ unzip redmine_agile-1_3_5-light.zip&#10;</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> /opt/bitnami/apps/redmine/htdocs/&#10;</span></span><span class="line"><span class="cl">$ bundle install --without development <span class="nb">test</span>&#10;</span></span><span class="line"><span class="cl">$ bundle <span class="nb">exec</span> rake redmine:plugins <span class="nv">NAME</span><span class="o">=</span>redmine_agile <span class="nv">RAILS_ENV</span><span class="o">=</span>production&#10;</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> /opt/bitnami/&#10;</span></span><span class="line"><span class="cl">$ sudo ctlscript.sh restart apache</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>instalar-redminecrm-bitnami.sh</span>
-    </div>
-</div>
-<p>Finalmente, debemos activar el plugin agile en el proyecto usando la opción Administration&gt; Agile.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/configuracion_hue052186d9db87a4a7ddb2d207f6da4d3_32798_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Activación panel Kanban"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/configuracion_hue052186d9db87a4a7ddb2d207f6da4d3_32798_300x200_fit_q90_h2_box_3.webp" width="300" height="139" alt="Activación panel Kanban" title="Activación panel Kanban" class="&#34; " loading="lazy"></a></p>
-</figure>
-</div>
-<p>Una vez activado ya podemos ver el panel kanban mostrado en la primera captura en la pestaña ágil. Por defecto en Redmine solo veremos las columnas New, In progress, Resolved y Feedback pero podemos modificar el flujo de las peticiones adaptándolo a nuestra metodología u organización, podemos hacer esto desde Administración&gt; Estados de peticiones para crear nuevos estados y Administración&gt; Flujo de trabajo para establecer el grafo de estados determinando a que estados puede cambiar una petición desde su estado actual.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/estados-peticiones_hu8a2a9674874943501314cb8d2ca16bed_46591_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Estados de peticiones"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/estados-peticiones_hu8a2a9674874943501314cb8d2ca16bed_46591_300x200_fit_q90_h2_box_3.webp" width="300" height="139" alt="Estados de peticiones" title="Estados de peticiones" class="&#34; " loading="lazy"></a>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/flujo-de-trabajo_hu96763af7a06f0f0b8ba222c218e7f202_64657_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Flujo de trabajo"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/flujo-de-trabajo_hu96763af7a06f0f0b8ba222c218e7f202_64657_300x200_fit_q90_h2_box_3.webp" width="300" height="139" alt="Flujo de trabajo" title="Flujo de trabajo" class="&#34; " loading="lazy"></a></p>
-</figure>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/">Introducción al gestor de proyectos y tareas Redmine</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">Introducción a Bitnami</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/">Introducción e inicio a Drupal</a></li>
-</ul>
-</div>
-]]>
+        
         </content>
         
             
@@ -995,125 +332,7 @@
         <author><name>picodotdev</name></author>
         <content type="html">
         
-        <![CDATA[<div class="logotypes"> 
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.webp" width="300" height="300" alt="Octopress" title="Octopress" class="" loading="false&#34;"></p>
-</div>
-<p>Seis nuevos meses para el Blog Bitix cumpliendo un año como tal y siendo la continuación de los casi cuatro años de <a href="https://elblogdepicodev.blogspot.com.es">El blog de pico.dev</a>. Otro año que finaliza y toca hacer <a href="https://picodotdev.github.io/blog-bitix/2014/">recapitulación de los que he escrito durante este tiempo</a>, 26 nuevos artículos escritos con puntualidad uno por semana y publicados el viernes o sábado.</p>
-<p>Aunque aún no puedo usar profesionalmente el <em>framework</em> web <a href="https://tapestry.apache.org/">Apache Tapestry</a> con el realmente me divierto programando sigo escribiendo sobre él con algunos temas interesantes tales que cómo usar un CDN, cómo crear plantillas para dar un aspecto común a todas las páginas de la aplicación, una comparativa entre el modelo «pull» que usa Tapestry y el modelo «push» que normalmente se usa en los <em>framework</em> basados en acciones, cómo crear una doble barra de botones sin duplicar el mismo código, como forzar el uso de https o la anotación Cached. Todo este contenido lo he añadido al <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro PlugIn Tapestry</a> y que puedes descargar de forma totalmente libre en varios formatos. No está mal y aún tengo más contenido pendiente por publicar tal que como embeber una aplicación web usando tomcat-embed de forma que la aplicación esté autocontenida y el despliegue sea más sencillo y evitemos problemas, hacer un ejemplo con el componente Grid que muestre sus grandes posibilidades y la gran cantidad de trabajo que nos puede ahorrar, &hellip;</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/08/actualizacion-del-libro-plugin-tapestry/">Actualización del libro PlugIn Tapestry</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/08/doble-barra-de-botones-con-apache-tapestry/">Doble barra de botones con Apache Tapestry</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/08/forzar-el-uso-del-protocolo-https-en-apache-tapestry/">Forzar el uso del protocolo https en Apache Tapestry</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/07/usar-apache-tapestry-en-una-aplicacion-standalone/">Usar Apache Tapestry en una aplicación «standalone»</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/07/servir-recursos-estaticos-desde-un-cdn-en-apache-tapestry/">Servir recursos estáticos desde un CDN en Apache Tapestry</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/07/anotacion-cached-de-apache-tapestry/">Anotación Cached de Apache Tapestry</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/07/plantillas-en-apache-tapestry/">Plantillas en Apache Tapestry</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/">Modelo «push» contra modelo «pull» en <em>frameworks</em> web</a></li>
-</ul>
-<p>Respecto a artículos sobre programación también he escrito unos cuantos relativos a Java, me parece que cada uno de estos son interesantes mostrando algunos aspectos avanzados y útiles. Por supuesto, también tengo pendientes por escribir más artículos sobre Java, como generics, palabra reservada assert, los métodos equals y hashCode y como implementarlos&hellip;</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/12/ejercicios-katas-para-mejorar-habilidades-de-programacion-practicando/">Ejercicios (katas) para mejorar habilidades de programación practicando</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/12/8-plus-libros-para-mejorar-como-programadores/">8+ libros para mejorar como programadores</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/10/como-filtrar-contenido-html-de-forma-segura/">Cómo filtrar contenido HTML de forma segura</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/10/que-es-y-como-hacer-web-scraping-en-java/">Qué es y cómo hacer «web scraping» en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/10/generar-urls-semanticas-y-amigables/">Generar URLs semánticas y amigables</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/09/configuracion-usando-codigo-java/">Configuración usando código Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/09/monitorizar-archivos-con-java/">Monitorizar archivos con Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/09/compilar-y-cargar-de-forma-dinamica-una-clase-java/">Compilar y cargar de forma dinámica una clase Java</a></li>
-</ul>
-<p>Desde hace un tiempo estoy escribiendo más sobre temas de programación que sobre Linux más que nada porque Arch Linux me va también y me da tan pocos problemas que no encuentro oportunidades grandes de escribir sobre algún tema que le pueda resultar útil a alguien más. Sin embargo, si que he escrito sobre algunas herramientas que disponemos en Linux y del software libre como <a href="https://www.docker.com/">Docker</a>, <a href="https://www.ansible.com/">Ansible</a> o <a href="https://bitnami.com/">Bitnami</a>, tengo algunos artículos más por escribir sobre <a href="https://memcached.org/">Memcached</a>, EncFS, algo más de <a href="https://www.redmine.org/">Redmine</a>, &hellip;</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">Introducción a Bitnami</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Integración entre Ansible y Docker</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/">Introducción a Ansible</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">Cómo crear una imagen para Docker usando un Dockerfile</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">Cómo instalar y guía de inicio básica de Docker</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">Introducción y características de Docker</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/09/agregador-blog-stack-redisenado/">Agregador Blog Stack rediseñado</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/09/procesador-de-documentos-lyx/">Procesador de documentos LyX</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/">Experiencia instalando sistema operativo a ordenador viejo</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">De Arch Linux a Arch Linux</a></li>
-</ul>
-<p>Si no quieres perderte ninguno de los nuevos artículos que escriba puede suscribirte al <a href="https://picodotdev.github.io/blog-bitix/index.xml">canal RSS de Blog Bitix</a>, <a href="https://twitter.com/picodotdev/">seguirme en twiter</a> o desde hace un poco de tiempo seguir la <a href="https://plus.google.com/114317443908384387611/posts">página de Google+ de Blog Bitix</a>. Por supuesto, en anteriores entregas de hemerotecas dispones de más artículos si algunos de estos te han parecido interesantes.</p>
-<p>Y para finalizar quiero agradecer a <a href="https://twitter.com/fran_mosteiro">Fran Mosteiro</a>, <a href="https://twitter.com/josetesan">Jose Luís Sánchez</a>, <a href="https://twitter.com/jbravo">Joaquín Bravo</a>, <a href="https://twitter.com/mbmerayo">Marcos Bello</a> y algunos otros que esporádicamente también suelen hacer RT o marcar como favoritos los tweets de esta bitácora y que me ayudan un poquito o mucho a difundir lo que escribo ¡muchas gracias!, un saludo y ¡que comencéis bien el nuevo año 2015! :)</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2014/12/hemeroteca-6/images/christmas-tux-2014_huaef2ca66353b2d132c670385d2dd34d4_553762_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Christmastux 2014"><img src="https://picodotdev.github.io/blog-bitix/2014/12/hemeroteca-6/images/christmas-tux-2014_huaef2ca66353b2d132c670385d2dd34d4_553762_600x450_fit_q90_h2_box.webp" width="600" height="338" alt="Christmastux 2014" title="Christmastux 2014" class="&#34; " loading="lazy"></a></p>
-<figcaption>¡Buen 2015! <br>Fuente: klowner.com</figcaption>
-</figure>
-</div>
-]]>
-        </content>
         
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="software"/>
-            
-                <category term="software-libre"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/</id>
-        <title>Introducción al gestor de proyectos y tareas Redmine</title>
-        <updated>2015-01-10T12:00:00+01:00</updated>
-        <published>2014-12-19T19:57:31+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/redmine.webp" width="200" height="59" alt="Redmine" title="Redmine" class="" loading="false&#34;"></p>
-</div>
-<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bitnami.svg" width="200" height="224" alt="Bitnami" title="Bitnami" class="" loading="false&#34;"></p>
-</div>
-<p>Para desarrollar un proyecto de software se hace imprescindible disponer de algunas herramientas que nos permitan realizar las tareas. Una de estas herramientas es un <a href="https://en.wikipedia.org/wiki/Issue_tracking_system">gestor de tareas, peticiones o errores</a>, que nos permite recoger en una herramienta gran parte de la información, conocer el estado, planificar y hacer el seguimiento las tareas necesario para desarrollar de forma ordenada, sin que perdamos nada de información y pudiendo recuperarla en cualquier momento en un futuro.</p>
-<p>Como es habitual herramientas que gestionan tareas disponemos de varias algunas de las más conocidas son <a href="https://www.bugzilla.org/">Bugzilla</a>, <a href="https://www.atlassian.com/software/jira">JIRA</a>, <a href="https://www.mantisbt.org/">Mantis</a>, <a href="https://trac.edgewall.org/">Trac</a> y la herramienta de la que hablaré en este artículo, <a href="https://www.redmine.org/">Redmine</a>. Cada una de estas herramientas como gestores de tareas son parecidas pero se diferencian en algunas cosas como la licencia que tiene, el esquema de precios o la funcionalidad que ofrece. Redmine tiene una <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">licencia de software libre GPL</a> y por tanto la podemos usar sin ningún coste, en la siguiente tabla podemos compararla con los <a href="https://www.atlassian.com/software/jira/pricing">precios de JIRA</a> que para pocos usuarios son asumibles pero que a medida que se aumentan los usuarios empiezan a ser notables aunque posiblemente alcanzables en función del tamaño de la empresa. En cualquier siendo JIRA también una herramienta excelente Redmine cumple perfectamente con la misma función. En la wikipedia podemos encontrar <a href="https://en.wikipedia.org/wiki/Comparison_of_issue-tracking_systems">más opciones y comparar unas con otras</a>.</p>
-<p>Si queremos evaluar Redmine una forma sencilla podemos hacerlo mediante una imagen de Bitnami con VirtualBox. En la <a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">introducción a Bitnami</a> comento qué es y como nos puede ayudar a disponer de software que en algunos casos no es simple de instalar y que con Bitnami podemos disponer de forma sencilla y rápida, además de como usar con VirtualBox cualquier imagen de Bitnami de las herramientas ofrecidas. Una vez seguidos los pasos de la guía anterior podemos acceder a Redmine con el navegador web y una dirección similar a <em>http://192.168.0.11</em>, el usuario y contraseña para acceder es user y bitnami respectivamente.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/proyecto_huc5391f3bb2fe8f890f4052d1e1603f1a_23188_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Proyecto"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/proyecto_huc5391f3bb2fe8f890f4052d1e1603f1a_23188_300x200_fit_q90_h2_box_3.webp" width="300" height="181" alt="Proyecto" title="Proyecto" class="&#34; " loading="lazy"></a>
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/peticion_huee84518d778088ae20bd387a73d5293d_38867_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Petición"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/peticion_huee84518d778088ae20bd387a73d5293d_38867_300x200_fit_q90_h2_box_3.webp" width="300" height="185" alt="Petición" title="Petición" class="&#34; " loading="lazy"></a></p>
-</figure>
-</div>
-<p>Con Redmine podemos adaptar el flujo de las tareas a la forma de organización que empleemos, podemos personalizar el grafo de estados que siguen las tareas y que personas tiene permisos para hacer cada uno de los cambios de estado. También podemos añadir campos personalizados que queremos recoger para cada petición, por ejemplo, podemos querer dar un tamaño a las tareas en función de si estimamos que es grande, media o pequeña. También podemos crear filtros y guardarlos para encontrar fácilmente tareas.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/estados_hue0e3162886816900263a2154c8ee2e5e_42878_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Estados"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/estados_hue0e3162886816900263a2154c8ee2e5e_42878_300x200_fit_q90_h2_box_3.webp" width="300" height="181" alt="Estados" title="Estados" class="&#34; " loading="lazy"></a>
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/propiedades_hua076b1dfa17f61f58d8ee0d6df42ce47_38825_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Propiedades"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/propiedades_hua076b1dfa17f61f58d8ee0d6df42ce47_38825_300x200_fit_q90_h2_box_3.webp" width="300" height="181" alt="Propiedades" title="Propiedades" class="&#34; " loading="lazy"></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/consulta_hub5bad320ba6632e1084e3f266f937585_41369_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Filtros"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/consulta_hub5bad320ba6632e1084e3f266f937585_41369_300x200_fit_q90_h2_box_3.webp" width="249" height="200" alt="Filtros" title="Filtros" class="&#34; " loading="lazy"></a>
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/flujo-estados_hu677460e55ab0aea1e8fac0028295eff7_59509_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Flujo estados"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/flujo-estados_hu677460e55ab0aea1e8fac0028295eff7_59509_300x200_fit_q90_h2_box_3.webp" width="300" height="177" alt="Flujo estados" title="Flujo estados" class="&#34; " loading="lazy"></a></p>
-</figure>
-</div>
-<p>Además de gestionar las tareas Redmine dispone de herramientas que nos pueden ser útiles en el proyecto como una wiki para recoger documentación del proyecto y un repositorio de documentos para aquellos que no queremos incluir en la herramienta de control de versiones por su tamaño pero que queremos que estén disponibles para cualquiera que trabaje con el proyecto.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/wiki_huc8ef37bf4091738b82bd6e3b425a7926_26237_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Wiki"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/wiki_huc8ef37bf4091738b82bd6e3b425a7926_26237_300x200_fit_q90_h2_box_3.webp" width="262" height="200" alt="Wiki" title="Wiki" class="&#34; " loading="lazy"></a>
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/archivos_huf26cedcb4ea27c3a1cb52eb9f4e24372_15256_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Archivos"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/archivos_huf26cedcb4ea27c3a1cb52eb9f4e24372_15256_300x200_fit_q90_h2_box_3.webp" width="300" height="133" alt="Archivos" title="Archivos" class="&#34; " loading="lazy"></a></p>
-</figure>
-</div>
-<p>Pero Redmine es más que una herramienta de gestión de tareas, los complementos pueden añadirle funcionalidad adicional que permite <a href="http://www.redminecrm.com/projects/crm/pages/1">convertirla en un CRM para gestionar las comunicaciones con clientes</a> o en un <a href="http://www.redminecrm.com/projects/helpdesk/pages/1">helpdesk para atender las tareas de clientes</a>. Además de otros como <a href="http://www.redminecrm.com/projects/people/pages/1">personalizar los usuarios de Redmine</a> o crear <a href="http://www.redminecrm.com/projects/checklist/pages/1">pequeñas listas de tareas</a> que nos evitará crear subtareas.</p>
-<p>En el siguiente artículo comentaré como instalar el <a href="http://www.redminecrm.com/projects/agile/pages/1">plugin agile de Redmine</a> con la imagen de Bitnami en VirtualBox de forma que podamos visualizar las tareas en un panel kanban, y de un vistazo y rápidamente conozcamos las tareas que están terminadas, que están en progreso, a punto de empezarse o en la cola de tareas por hacer.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/">Instalar y usar plugin ágil en Redmine</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/">Introducción e inicio a Drupal</a></li>
-<li><a href="http://www.luisblasco.com/5-plugins-gratuitos-instalar-en-redmine/">5 plugins gratuitos para instalar a Redmine</a></li>
-<li><a href="http://www.redmine.org/projects/redmine/wiki/RedmineIssueList#Applying-and-saving-filters">Aplicar y guardar filtros</a></li>
-<li><a href="https://stackoverflow.com/questions/9027479/how-do-you-modify-a-filter-in-redmine">Como modificar un filtro</a></li>
-<li><a href="http://www.luisblasco.com/blog/">Blog con varios artículos interesantes sobre Redmine</a></li>
-</ul>
-</div>
-]]>
         </content>
         
             
