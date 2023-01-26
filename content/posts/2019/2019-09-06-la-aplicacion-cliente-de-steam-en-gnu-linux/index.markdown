@@ -11,6 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
+imageHead: "image:cliente-steam.webp"
 imagePost: "image:cliente-steam.webp"
 tags: ["gnu-linux", "planeta-codigo"]
 series: ["juegos"]
@@ -19,23 +20,25 @@ summary: "Durante unos años he estado sin jugar a juegos porque al haberme pasa
 
 {{% post %}}
 
-{{< logotype image1="steam.svg" title1="Steam" width1="200" image2="linux.svg" >}}
+{{< logotype image1="steam.svg" >}}
 
-La plataforma de juegos [Steam][steam] es una de las más populares. Con su cliente de juegos es posible comprar, descargar e instalar juegos para tanto para Windows, macOS y también para [GNU][gnu]/[Linux][linux]. Steam y [Valve][valve] han posibilitado que se puedan jugar a varios juegos triple A en GNU/Linux, Valve se está esforzando para que muchos juegos sean jugables en la plataforma del pingüino.
+La plataforma de juegos [Steam][steam] es una de las más populares. Con su cliente de juegos es posible comprar, descargar e instalar juegos para tanto para [Windows][windows], [macOS][macos] y también para [GNU][gnu]/[Linux][linux]. Steam y [Valve][valve] han posibilitado que se puedan jugar a varios juegos triple A en GNU/Linux, Valve se está esforzando para que muchos juegos sean jugables en la plataforma del pingüino.
 
-Steam ofrece un cliente nativo para GNU/Linux que en Arch Linux se ofrece en los repositorios oficiales. Requiere además habilitar el repositorio _multilib_ para paquetes de 32 bits e instalar el controlador gráfico de la tarjeta gráfica de 32 bits.
+### Instalar el cliente de Steam en GNU/Linux
 
-{{< code file="pacman-steam.sh" language="bash" options="" >}}
+Aunque las distribuciones como Arch Linux ofrecen paquetes del cliente de Steam rquieren activar el repositorio _multilib_ para paquetes de 32 bits. Otra forma más sencilla de instalar el cliente de Steam e independiente de la distribución es utilizar la versión en formato [Flatpak de Steam](https://flathub.org/apps/details/com.valvesoftware.Steam). Usando el cliente de software de [GNOME][gnome] se hace de forma gráfica simplemente haciendo una búsqueda y un clic en el botón de instalar.
 
-Para habilitar el repositorio _multilib_ en Arch Linux hay que editar el archivo de configuración _/etc/pacman.conf_ y descomentar varias líneas quitando el caracter _#_ que las precede.
+* [Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux][blogbitix-362]
+* [El entorno de escritorio GNOME, simple, elegante y completo][blogbitix-660]
 
-{{< code file="pacman.conf" language="bash" options="" >}}
+{{< image
+    gallery="true"
+    image1="image:gnome-software-steam.webp" optionsthumb1="300x200" title1="Aplicación de software de GNOME"
+    caption="Aplicación de software de GNOME" >}}
 
-En el caso de un gráfica Intel hay que instalar el paquete lib32-mesa.
+### El cliente de Steam
 
-{{< code file="pacman-lib32-mesa.sh" language="bash" options="" >}}
-
-Hecho esto se puede iniciar el cliente, en el menú de aplicaciones del sistema aparecen su acceso directo de aplicación, se necesita una cuenta por que lo que hay que registrarse antes desde su plataforma web. Los juegos de la biblioteca aparecen en el cliente para instalar. En este caso tengo el juego [Company of Heroes 2](https://store.steampowered.com/app/231430/Company_of_Heroes_2/).
+Instalado el cliente se puede iniciar, en el menú de aplicaciones del sistema aparecen su acceso directo de aplicación, se necesita una cuenta por que lo que hay que registrarse antes desde su plataforma web. Los juegos de la biblioteca aparecen en el cliente para instalar. En este caso tengo el juego [Company of Heroes 2](https://store.steampowered.com/app/231430/Company_of_Heroes_2/).
 
 {{< image
     gallery="true"
@@ -51,13 +54,21 @@ Instalado el juego se puede iniciar desde el cliente de Steam. Aún con una grá
     image2="image:company-of-heroes-2-2.webp" optionsthumb2="300x200" title2="Cliente de Steam en GNU/Linux"
     caption="Company of Heroes 2" >}}
 
-Los juegos ofrecen diferente nivel de soporte para GNU/Linux, para [Windows][windows], [macOS][macOS] y Steam+Linux, los que deben funcionar sin problema son los de la última categoría. Los de Windows pueden funcionar a través de una capa de emulación desarrollada por Steam, para activarla hay que ir a _Steam > Parámetros > Steam Play_ y activar las opciones _Enable Steam Play for Supported title_ y _Activar Steam para todos los demás títulos_. Sin embargo, no hay garantía que los juegos con solo soporte de Windows funcionen correctamente, he probado con [World of Warships](https://store.steampowered.com/app/552990/World_of_Warships/) y no se iniciaba correctamente mostrando únicamente una pequeña ventana negra.
+Los juegos ofrecen diferente nivel de soporte para GNU/Linux, para Windows, macOS y Steam+Linux, los que deben funcionar sin problema son los de la última categoría. Los de Windows pueden funcionar a través de una capa de emulación desarrollada por Steam, para activarla hay que ir a _Steam > Parámetros > Steam Play_ y activar las opciones _Enable Steam Play for Supported title_ y _Activar Steam para todos los demás títulos_. Sin embargo, no hay garantía que los juegos con solo soporte de Windows funcionen correctamente, he probado con [World of Warships](https://store.steampowered.com/app/552990/World_of_Warships/) y no se iniciaba correctamente mostrando únicamente una pequeña ventana negra.
 
 {{< image
     gallery="true"
     image1="image:steam-play-settings.webp" optionsthumb1="300x200" title1="Steam Play Settings"
     caption="Steam Play Settings" >}}
 
-De vez en cuando Steam ofrece juegos gratuitos que se pueden añadir libremente a la biblioteca y en ocasiones ofrece grandes descuentos. También a través de su propio cliente es posible [jugar a los juegos de Blizzard como Diablo 3][blogbitix-364], aunque en este caso es necesario utilizar [Wine][wine].
+De vez en cuando Steam ofrece juegos gratuitos que se pueden añadir libremente a la biblioteca y en ocasiones ofrece grandes descuentos. También a través de su propio cliente es posible jugar a los juegos de [Blizzard][blizzard] como [Diablo 3][blizzard-diablo3], aunque en este caso es necesario utilizar [Wine][wine].
+
+* [Cómo usar Wine para jugar en GNU/Linux a juegos de Windows][blogbitix-364]
+
+### Un cliente para los juegos de Epic Games
+
+La tienda alternativa a Steam es [Epic Games][epicgames] que aunque no tiene un cliente y lanzador de juegos oficial está [Heroic Games Launcher][heroicgameslauncher] también muy fácil de instalar como aplicación Flatpak.
+
+* [Los juegos de Epic Games en GNU/Linux con el lanzador Heroic Games Laucher][blogbitix-671]
 
 {{% /post %}}

@@ -38,7 +38,7 @@ Acción y aventura. Astromenace es un juego de naves con la adición que permite
     image1="image:astromenace-1.webp" optionsthumb1="300x200"
     image2="image:astromenace-2.webp" optionsthumb2="300x200" >}}
 
-#### Teeworlds
+### Teeworlds
 Disparos. Es un _shooter_ en dos dimensiones para jugar contra otros jugadores y con diferentes modos de juego como todos contra todos, equipo contra equipo y capturar la bandera. [Sitio web](https://www.teeworlds.com/).
 
 {{< image

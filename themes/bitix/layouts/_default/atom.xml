@@ -21,7 +21,7 @@
         {{ if isset .Params "author" }}<author><name>{{ .Params.author }}</name></author>{{ else }}<author><name>{{ .Site.Author.name }}</name></author>{{ end }}
         <content type="html">
         {{ if isset .Params "summary" }}{{ htmlUnescape "&lt;![CDATA[" | safeHTML }}<p><strong>{{ .Params.summary | markdownify }}</strong></p>]]>{{ end }}
-        {{ htmlUnescape "&lt;![CDATA[" | safeHTML }}{{ replace .Content "<toc></toc>" .TableOfContents | safeHTML }}]]>
+        {{/* htmlUnescape "&lt;![CDATA[" | safeHTML */}}{{/* replace .Content "<toc></toc>" .TableOfContents | safeHTML */}}{{/* printf "]]>" */}}
         </content>
         {{ if isset .Params "tags" }}
             {{ range .Params.tags }}
