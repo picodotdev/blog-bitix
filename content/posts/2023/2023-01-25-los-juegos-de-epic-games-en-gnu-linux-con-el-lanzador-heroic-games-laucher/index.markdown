@@ -1,8 +1,9 @@
 ---
 pid: 671
 type: "post"
-title: "Los juegos de Epic Games en GNU/Linux con el lanzador Heroic Games Laucher"
-url: "/2023/01/los-juegos-de-epic-games-en-gnu-linux-con-el-lanzador-heroic-games-laucher/"
+title: "Los juegos de Epic Games y GOG en GNU/Linux con el lanzador Heroic Games Laucher"
+url: "/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/"
+aliases: ["/2023/01/los-juegos-de-epic-games-en-gnu-linux-con-el-lanzador-heroic-games-laucher/"]
 date: 2023-01-26T19:00:00+02:00
 language: "es"
 index: true
