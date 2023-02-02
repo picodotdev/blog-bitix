@@ -1,0 +1,1 @@
+$ docker exec -it broker1 kafka-consumer-groups --bootstrap-server localhost:9092 --all-groups --describe
