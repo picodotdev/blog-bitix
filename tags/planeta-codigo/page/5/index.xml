@@ -5,12 +5,36 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2023-01-26T19:00:00+02:00</updated>
+    <updated>2023-02-02T20:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2021/08/el-patron-de-estrangulacion-para-reemplazar-aplicaciones-heredadas/</id>
+        <title>El patrón de estrangulación para reemplazar aplicaciones heredadas</title>
+        <updated>2021-08-19T23:00:00+02:00</updated>
+        <published>2021-08-19T23:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/08/el-patron-de-estrangulacion-para-reemplazar-aplicaciones-heredadas/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>Reescribir partiendo desde cero una aplicación grande que tiene sus defectos pero que ha sido desarrollada durante mucho tiempo y su funcionalidad más importante opera mayormente bien no es una estrategia que esté exenta de riesgo ni garantiza que el el nuevo sistema tenga defectos parecidos, más graves o incluso la reescritura fracase. Si la reescritura tiene riesgos pero existe la necesidad de sustituir la aplicación heredada para solventar algunos de sus problemas es necesaria otra estrategia diferente a partir de cero. Una estrategia que se utiliza en estos casos es aplicar el patrón de estrangulación que reemplaza el sistema antiguo de forma incremental cada una de sus piezas.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2021/08/el-patron-de-estrangulacion-para-reemplazar-aplicaciones-heredadas/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2021/08/introduccion-y-ejemplo-de-contract-testing-con-pact/</id>
         <title>Introducción y ejemplo de contract testing con Pact</title>
@@ -19,8 +43,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/08/introduccion-y-ejemplo-de-contract-testing-con-pact/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Al realizar un cambio en un API hay que ser consciente de que los cambios sean compatibles hacia atrás, de lo contrario algunos clientes de la API es probable que dejen de funcionar o tengan un comportamiento erróneo. Para asegurar que los cambios sean compatibles hacia atrás se realizan pruebas unitarias automatizadas de contrato, en Java una opción es Pact para pruebas de contrato de APIs REST.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Al realizar un cambio en un API hay que ser consciente de que los cambios sean compatibles hacia atrás, de lo contrario algunos clientes de la API es probable que dejen de funcionar o tengan un comportamiento erróneo. Para asegurar que los cambios sean compatibles hacia atrás se realizan pruebas unitarias automatizadas de contrato, en Java una opción es Pact para pruebas de contrato de APIs REST.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2021/08/introduccion-y-ejemplo-de-contract-testing-con-pact/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -38,8 +67,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Apache Camel es una librería específica para realizar tareas de integración que ya proporciona e implementa múltiples protocolos de comunicación, formatos de datos, componentes y patrones de integración. Ya tiene implementada toda esta funcionalidad que no hay que implementar en el caso de una aplicación con código propio. Al ser una librería es posible integrarlo en cualquier tipo de aplicación, en el artículo se muestra cómo utilizarlo en una aplicación de Spring Boot en un ejemplo.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Apache Camel es una librería específica para realizar tareas de integración que ya proporciona e implementa múltiples protocolos de comunicación, formatos de datos, componentes y patrones de integración. Ya tiene implementada toda esta funcionalidad que no hay que implementar en el caso de una aplicación con código propio. Al ser una librería es posible integrarlo en cualquier tipo de aplicación, en el artículo se muestra cómo utilizarlo en una aplicación de Spring Boot en un ejemplo.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -57,8 +91,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/07/servidor-mock-para-imitar-peticiones-y-respuestas-de-servicios-http-con-wiremock/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Los microservicios aportan varias ventajas pero también algunos inconvenientes que si no son manejados generan sus propios problemas. Una dificultad de los servicios por las dependencias entre ellos es poder desarrollarlos y probarlos en local, algunos microservicios son complejos con dependencia sobre bases de datos, sistemas de envío de mensajes u otros servicios. Si un microservicio necesita iniciar en local o en entorno todas sus dependencias el desarrollo se vuelve complejo y lento. Para facilitar el desarrollo una opción es utilizar un servidor <em>mock</em> que imite las respuestas para las peticiones que se necesite de uno o varios servicios.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Los microservicios aportan varias ventajas pero también algunos inconvenientes que si no son manejados generan sus propios problemas. Una dificultad de los servicios por las dependencias entre ellos es poder desarrollarlos y probarlos en local, algunos microservicios son complejos con dependencia sobre bases de datos, sistemas de envío de mensajes u otros servicios. Si un microservicio necesita iniciar en local o en entorno todas sus dependencias el desarrollo se vuelve complejo y lento. Para facilitar el desarrollo una opción es utilizar un servidor <em>mock</em> que imite las respuestas para las peticiones que se necesite de uno o varios servicios.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2021/07/servidor-mock-para-imitar-peticiones-y-respuestas-de-servicios-http-con-wiremock/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -76,8 +115,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/07/formas-de-generar-un-numero-aleatorio-en-un-rango-con-java/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>En Java hay varias formas de generar números aleatorios, la clase <em>Random</em> permite generar números aleatorios individuales y desde Java 8 con la adición de <em>streams</em> permite obtener una secuencia de números aleatorios de tamaño determinado o indefinido. La clase <em>Math</em> también permite generar números aleatorios aunque es más recomendable usar la clase <em>Random</em>. Finalmente, en caso de querer un identificativo único universal está la clase UUID que genera números aleatorios de 128 bits que se representan mediante caracteres alfanuméricos.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>En Java hay varias formas de generar números aleatorios, la clase <em>Random</em> permite generar números aleatorios individuales y desde Java 8 con la adición de <em>streams</em> permite obtener una secuencia de números aleatorios de tamaño determinado o indefinido. La clase <em>Math</em> también permite generar números aleatorios aunque es más recomendable usar la clase <em>Random</em>. Finalmente, en caso de querer un identificativo único universal está la clase UUID que genera números aleatorios de 128 bits que se representan mediante caracteres alfanuméricos.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2021/07/formas-de-generar-un-numero-aleatorio-en-un-rango-con-java/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -95,8 +139,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/07/los-niveles-de-madurez-rest-ejemplo-con-hateoas-y-documentacion-con-swagger-de-un-servicio-con-spring-boot/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Los niveles de madurez de una API implementada con las convenciones REST trata de aplicar los conceptos y semántica de la web y el protocolo HTTP a un servicio web. Muchas APIs que dicen ser REST no cumplen con todos los niveles de madurez para ser considerada RESTful que incluyen HATEOAS para crear enlaces entre los recursos y HAL para codificar los datos. Muchas se quedan en el nivel 2 al hacer uso únicamente de recursos y verbos, llegar a cumplir el nivel 3 para incluir controles <em>hypermedia</em> tiene algunas ventajas adicionales. Spring Boot proporciona soporte para crear una API que soporte el nivel de madurez 3 de REST y Springdoc permite generar la documentación de la API con Swagger.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Los niveles de madurez de una API implementada con las convenciones REST trata de aplicar los conceptos y semántica de la web y el protocolo HTTP a un servicio web. Muchas APIs que dicen ser REST no cumplen con todos los niveles de madurez para ser considerada RESTful que incluyen HATEOAS para crear enlaces entre los recursos y HAL para codificar los datos. Muchas se quedan en el nivel 2 al hacer uso únicamente de recursos y verbos, llegar a cumplir el nivel 3 para incluir controles <em>hypermedia</em> tiene algunas ventajas adicionales. Spring Boot proporciona soporte para crear una API que soporte el nivel de madurez 3 de REST y Springdoc permite generar la documentación de la API con Swagger.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2021/07/los-niveles-de-madurez-rest-ejemplo-con-hateoas-y-documentacion-con-swagger-de-un-servicio-con-spring-boot/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -114,8 +163,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/07/como-documentar-una-api-rest-con-swagger-implementada-con-spring-boot/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Una API REST no está obligada a publicar una definición de su API, sin embargo, para quien deba usar API es muy útil disponer de su documentación para usarla correctamente y descubrir de qué <em>endpoints</em> se compone, métodos HTTP, cuales son sus parámetros, el esquema de los cuerpos de la petición y de los resultados, los tipos de los datos y sus formatos, los códigos de retorno devueltos, las cabeceras y su autenticación. OpenAPI permite definir la interfaz de una aplicación de forma agnóstica de la tecnología y lenguaje en el que se implementa, por otro lado Swagger a partir de esa definición permite generar una interfaz HTML con su documentación. La librería Springdoc junto con Spring Boot permite generar tanto la especificación de la API como la documentación simplemente añadiendo una dependencia y varias anotaciones en la implementación de la API.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Una API REST no está obligada a publicar una definición de su API, sin embargo, para quien deba usar API es muy útil disponer de su documentación para usarla correctamente y descubrir de qué <em>endpoints</em> se compone, métodos HTTP, cuales son sus parámetros, el esquema de los cuerpos de la petición y de los resultados, los tipos de los datos y sus formatos, los códigos de retorno devueltos, las cabeceras y su autenticación. OpenAPI permite definir la interfaz de una aplicación de forma agnóstica de la tecnología y lenguaje en el que se implementa, por otro lado Swagger a partir de esa definición permite generar una interfaz HTML con su documentación. La librería Springdoc junto con Spring Boot permite generar tanto la especificación de la API como la documentación simplemente añadiendo una dependencia y varias anotaciones en la implementación de la API.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2021/07/como-documentar-una-api-rest-con-swagger-implementada-con-spring-boot/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -133,8 +187,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/06/hemeroteca-19/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
+        <![CDATA[
+
         
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2021/06/hemeroteca-19/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -152,8 +211,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Algunos procesos que aparentemente son complejos siguen reglas muy simples, y aún siguiendo reglas muy simples dan lugar a muchos posibles comportamientos diferentes. Los sistemas que implementan y aplican estas reglas simples se les conoce como autómatas. Los autómatas no poseen inteligencia artificial, no aprenden ni toman decisiones en base a anteriores resultados, los autómatas simplemente siguen sus reglas de comportamiento en el estado del sistema. Dos autómatas conocidos son el juego de la vida de <a href="https://es.wikipedia.org/wiki/John_Horton_Conway">John Horton Conway</a> publicado en 1970 y la hormiga de Langton de <a href="https://es.wikipedia.org/wiki/Christopher_Langton">Chris Langton</a> publicado en 1986.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Algunos procesos que aparentemente son complejos siguen reglas muy simples, y aún siguiendo reglas muy simples dan lugar a muchos posibles comportamientos diferentes. Los sistemas que implementan y aplican estas reglas simples se les conoce como autómatas. Los autómatas no poseen inteligencia artificial, no aprenden ni toman decisiones en base a anteriores resultados, los autómatas simplemente siguen sus reglas de comportamiento en el estado del sistema. Dos autómatas conocidos son el juego de la vida de <a href="https://es.wikipedia.org/wiki/John_Horton_Conway">John Horton Conway</a> publicado en 1970 y la hormiga de Langton de <a href="https://es.wikipedia.org/wiki/Christopher_Langton">Chris Langton</a> publicado en 1986.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -173,8 +237,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/06/me-cambio-del-adsl-a-la-fibra-de-pepephone/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>El ADSL me ha sido suficiente para mis necesidades y era una opción algo más barata que la fibra. He retrasado el paso del ADSL a fibra todo lo que he podido hasta que por motivos de la compañía de mi servicio de internet me ha obligado. Las compañías están sustituyendo el par de cobre de teléfono con el que funciona el ADSL por la fibra. La fibra ofrece posibilidades que el ADSL no es capaz de ofrecer y el precio ligeramente superior de la fibra compensa para aquellos usuarios que quieran un ancho de banda notablemente superior. He estado varios años con el ADSL de Pepephone y ahora seguiré con la fibra de Pepephone.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>El ADSL me ha sido suficiente para mis necesidades y era una opción algo más barata que la fibra. He retrasado el paso del ADSL a fibra todo lo que he podido hasta que por motivos de la compañía de mi servicio de internet me ha obligado. Las compañías están sustituyendo el par de cobre de teléfono con el que funciona el ADSL por la fibra. La fibra ofrece posibilidades que el ADSL no es capaz de ofrecer y el precio ligeramente superior de la fibra compensa para aquellos usuarios que quieran un ancho de banda notablemente superior. He estado varios años con el ADSL de Pepephone y ahora seguiré con la fibra de Pepephone.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2021/06/me-cambio-del-adsl-a-la-fibra-de-pepephone/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -192,8 +261,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Los subtítulos permiten mostrar una transcripción en texto del audio y diálogos en vídeos, películas y series. Algunos reproductores de vídeo permiten seleccionar la pista de subtítulos embebidos en los propios vídeos o añadir nuevas pistas de subtítulos a los vídeos. Hay programas editores que permiten crear y modificar los archivos de subtítulos. También hay algunas páginas de las que descargar los archivos subtítulos.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Los subtítulos permiten mostrar una transcripción en texto del audio y diálogos en vídeos, películas y series. Algunos reproductores de vídeo permiten seleccionar la pista de subtítulos embebidos en los propios vídeos o añadir nuevas pistas de subtítulos a los vídeos. Hay programas editores que permiten crear y modificar los archivos de subtítulos. También hay algunas páginas de las que descargar los archivos subtítulos.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -213,8 +287,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Hay una buena cantidad de algoritmos de ordenación conocidos, entre los más conocidos está el <em>bubble sort</em>, el <em>merge sort</em> y el <em>quicksort</em>. No es imprescindible conocerlos todos ni implementarlos ya que las librerías y clases del JDK ya los implementan. Sin embargo, son utilizados como ejemplo para implementar un algoritmo al empezar a programar en un lenguaje de programación.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Hay una buena cantidad de algoritmos de ordenación conocidos, entre los más conocidos está el <em>bubble sort</em>, el <em>merge sort</em> y el <em>quicksort</em>. No es imprescindible conocerlos todos ni implementarlos ya que las librerías y clases del JDK ya los implementan. Sin embargo, son utilizados como ejemplo para implementar un algoritmo al empezar a programar en un lenguaje de programación.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -232,8 +311,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>A veces un proceso del sistema consume gran cantidad de procesador, memoria o realiza muchas operaciones de lectura o escritura en el almacenamiento, simplemente se desea obtener o monitorizar cierta información del sistema. Hay varias herramientas en GNU/Linux para monitorizar los procesos del sistema, en almacenamiento, la red y temperatura de componentes, otros comandos permiten obtener información de los principales componentes hardware y software de la computadora.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>A veces un proceso del sistema consume gran cantidad de procesador, memoria o realiza muchas operaciones de lectura o escritura en el almacenamiento, simplemente se desea obtener o monitorizar cierta información del sistema. Hay varias herramientas en GNU/Linux para monitorizar los procesos del sistema, en almacenamiento, la red y temperatura de componentes, otros comandos permiten obtener información de los principales componentes hardware y software de la computadora.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -251,8 +335,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Al implementar un algoritmo es común querer iterar los elementos de una colección en un orden según un criterio, por ejemplo, si se trata de números de menor a mayor, si se trata de fechas de menor a mayor y si se trata de personas por orden alfabético del nombre, de menor a mayor edad o de menor a mayor antigüedad en la empresa, también es posible la necesidad de iterar en orden inverso. El JDK de Java proporciona interfaces para implementar la ordenación de objetos y que ya implementan algunos de los algoritmos de ordenación conocidos.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Al implementar un algoritmo es común querer iterar los elementos de una colección en un orden según un criterio, por ejemplo, si se trata de números de menor a mayor, si se trata de fechas de menor a mayor y si se trata de personas por orden alfabético del nombre, de menor a mayor edad o de menor a mayor antigüedad en la empresa, también es posible la necesidad de iterar en orden inverso. El JDK de Java proporciona interfaces para implementar la ordenación de objetos y que ya implementan algunos de los algoritmos de ordenación conocidos.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -270,35 +359,19 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Los procesadores es uno de los principales circuitos integrados que posee toda computadora. Es el encargado de ejecutar el código de los programas y gobierna el resto de componentes. A pesar de su pequeño tamaño son elementos con gran complejidad, para aumentar su rendimiento se aplican diferentes técnicas que los procesadores han incorporando de forma paulatina. Al hablar de procesadores hay varios conceptos que es necesario comprender.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Los procesadores es uno de los principales circuitos integrados que posee toda computadora. Es el encargado de ejecutar el código de los programas y gobierna el resto de componentes. A pesar de su pequeño tamaño son elementos con gran complejidad, para aumentar su rendimiento se aplican diferentes técnicas que los procesadores han incorporando de forma paulatina. Al hablar de procesadores hay varios conceptos que es necesario comprender.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
                 <category term="hardware"/>
             
                 <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2021/05/el-patron-de-diseno-factory-ventajas-sobre-new-y-diferencias-con-builder/</id>
-        <title>El patrón de diseño Factory, ventajas sobre new y diferencias con Builder</title>
-        <updated>2021-05-14T16:00:00+02:00</updated>
-        <published>2021-05-14T16:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/05/el-patron-de-diseno-factory-ventajas-sobre-new-y-diferencias-con-builder/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>El patrón de diseño <em>Factory</em> es uno de los patrones dedicados a la creación de instancias. El patrón <em>Factory</em> proporciona varias ventajas sobre la palabra reservada <em>new</em> que proporcionan los lenguajes de programación orientada a objetos para la creación de instancias. Es muy utilizado en muchas librerías, en ocasiones también es necesario implementar una clase que implemente este patrón por lo que es muy útil conocer y usar este patrón en las ocasiones que sea adecuado.</strong></p>]]>
-        
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
             
         
     </entry>

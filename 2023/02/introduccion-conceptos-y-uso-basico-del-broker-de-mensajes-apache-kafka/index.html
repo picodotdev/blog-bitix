@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="La comunicación mediante mensajes permite desacoplar las aplicaciones y procesar las peticiones de forma asíncrona. Apache Kafka es un broker de mensajes muy popular por su escalabilidad, tolerancia a fallos y adaptabilidad para ser usado en diferentes casos de uso. Es una herramienta compleja dado el número de casos de uso que soporta y la necesidad de ser distribuida para dotarse de escalabilidad y tolerancia a fallos. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Introducción, conceptos y uso básico del broker de mensajes Apache Kafka</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2023/02/introduccion-conceptos-y-uso-basico-del-broker-de-mensajes-apache-kafka/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2023/02/introduccion-conceptos-y-uso-basico-del-broker-de-mensajes-apache-kafka/" hreflang="es" title="Introducción, conceptos y uso básico del broker de mensajes Apache Kafka">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Introducción, conceptos y uso básico del broker de mensajes Apache Kafka">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2023/02/introduccion-conceptos-y-uso-basico-del-broker-de-mensajes-apache-kafka/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-kafka-750.webp">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="La comunicación mediante mensajes permite desacoplar las aplicaciones y procesar las peticiones de forma asíncrona. Apache Kafka es un broker de mensajes muy popular por su escalabilidad, tolerancia a fallos y adaptabilidad para ser usado en diferentes casos de uso. Es una herramienta compleja dado el número de casos de uso que soporta y la necesidad de ser distribuida para dotarse de escalabilidad y tolerancia a fallos. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-kafka-750.webp">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Introducción, conceptos y uso básico del broker de mensajes Apache Kafka">
+<meta name="twitter:description" content="La comunicación mediante mensajes permite desacoplar las aplicaciones y procesar las peticiones de forma asíncrona. Apache Kafka es un broker de mensajes muy popular por su escalabilidad, tolerancia a fallos y adaptabilidad para ser usado en diferentes casos de uso. Es una herramienta compleja dado el número de casos de uso que soporta y la necesidad de ser distribuida para dotarse de escalabilidad y tolerancia a fallos. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2023/02/introduccion-conceptos-y-uso-basico-del-broker-de-mensajes-apache-kafka/"
+    },
+    "headline": "Introducción, conceptos y uso básico del broker de mensajes Apache Kafka",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-kafka-750.webp"
+        
+      },
+    "datePublished": "2023-02-02T20:00:00+02:00",
+    "dateModified": "2023-02-02T20:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "2790",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "La comunicación mediante mensajes permite desacoplar las aplicaciones y procesar las peticiones de forma asíncrona. Apache Kafka es un broker de mensajes muy popular por su escalabilidad, tolerancia a fallos y adaptabilidad para ser usado en diferentes casos de uso. Es una herramienta compleja dado el número de casos de uso que soporta y la necesidad de ser distribuida para dotarse de escalabilidad y tolerancia a fallos."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9R8XCRGSMY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:600px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="7450235768"></ins>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Introducción, conceptos y uso básico del broker de mensajes Apache Kafka</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>02/02/2023</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+          <a href="/blog-bitix/tags/software/">software</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2023/02/introduccion-conceptos-y-uso-basico-del-broker-de-mensajes-apache-kafka/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2023/02/introduccion-conceptos-y-uso-basico-del-broker-de-mensajes-apache-kafka/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">La comunicación mediante mensajes permite desacoplar las aplicaciones y procesar las peticiones de forma asíncrona. Apache Kafka es un <em>broker</em> de mensajes muy popular por su escalabilidad, tolerancia a fallos y adaptabilidad para ser usado en diferentes casos de uso. Es una herramienta compleja dado el número de casos de uso que soporta y la necesidad de ser distribuida para dotarse de escalabilidad y tolerancia a fallos.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:90px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="8238629013"></ins>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/apache-kafka.svg" width="200" height="200" alt="Apache Kafka" title="Apache Kafka" class="" loading="false&#34;"></p>
+</div>
+<p>Las aplicaciones tienen varias formas de comunicación, la más habitual es una comunicación petición y respuesta síncrona, otra opción es una comunicación mediante mensajes asíncrona. La comunicación mediante mensajes tiene varias ventajas al permitir que el productor del mensaje y consumidor no se conozcan lo que evita el acoplamiento entre servicios salvo por el esquema del mensaje que intercambian, la otra ventaja es que no es necesario que el productor y consumidor estén funcionando al mismo tiempo para comunicarse lo que mejora la fiabilidad y resiliencia de la aplicación.</p>
+<p>Tecnologías de comunicación de mensajes hay varias en Java está JMS, dado que es una tecnología propia de Java limita las opciones del lenguaje en el que implementar los servicios quizá no es la más adecuada. Otra opción es <a href="https://www.rabbitmq.com/">RabbitMQ</a> que proporciona un broker de mensajes más agnóstico del lenguaje de programación que JMS.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/">Introducción y ejemplo sencillo de Java Message Service (JMS)</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/">Ejemplo de RabbitMQ con Java para enviar y recibir mensajes</a></li>
+</ul>
+<p>Siendo RabbitMQ una opción sencilla como cola de mensajes tiene unos límites en la escalabilidad y resiliencia. <a href="https://kafka.apache.org/">Apache Kafka</a> es otro broker de mensajes más compleja que RabbitMQ pero que soporta más casos de uso en cuanto a resiliencia y escalabilidad para dar soporte a un gran volumen de mensajes.</p>
+<p>Como cualquier herramienta Apache Kafka solo es una herramienta y es muy posible que en el futuro surjan nuevas que mejoren en algún aspecto Apache Kafka, una de esas herramientas puede que sea <a href="https://memphis.dev/">Memphis</a> que se define a sí misma como tan simple como RabbitMQ y robusta como Apache Kafka.</p>
+<p>En cualquier caso Apache Kafka es la opción dominante como <em>broker</em> de mensajes por su gran adaptabilidad a diferentes casos de usos, surgida en el año 2010 y siendo en el 2016 en el que empezó a ganar popularidad.</p>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introducción-a-apache-kafka">Introducción a Apache Kafka</a>
+      <ul>
+        <li><a href="#por-qué-apache-kafka">Por qué Apache Kafka</a></li>
+        <li><a href="#conceptos-esenciales">Conceptos esenciales</a></li>
+        <li><a href="#propiedades-de-configuración">Propiedades de configuración</a></li>
+        <li><a href="#descarga-e-inicio-con-contenedores-docker">Descarga e inicio con contenedores Docker</a></li>
+        <li><a href="#uso">Uso</a></li>
+        <li><a href="#tutorial">Tutorial</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
+<h3 id="introducción-a-apache-kafka">Introducción a Apache Kafka</h3>
+<p>Apache Kafka es un <em>broker</em> de mensajes altamente escalable al mismo tiempo que complejo. La complejidad en cierta medida es necesaria para ser resiliente y ofrecer tolerancia a fallos, la tolerancia a fallos y la escalabilidad se proporcionan creando un sistema distribuido que es el que añade complejidad a la herramienta como en la mayoría de herramientas distribuidas.</p>
+<p>La <a href="https://kafka.apache.org/documentation/">documentación de Apache Kafka</a> para conocer y entender los conceptos básicos es un buen sitio por donde empezar a aprender. Si se quiere algo más guiado y estructurado en el libro <a href="https://amzn.to/3HQfnay" rel="sponsored">Apache Kafka: The Definitive Guide</a> se explica de forma detallada todos los principales conceptos de forma detallada incluyendo los parámetros más importantes de configuración, un libro que me ha parecido muy detallado y recomiendo.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1492043087&amp;linkId=e9a76136c36140e0db4a6d1ecc6e180e" title="Amazon" class="lozad"></iframe>
+</div>
+<h4 id="por-qué-apache-kafka">Por qué Apache Kafka</h4>
+<p>Kafka no es el único sistema de mensajería, las características que hacen de Kafka una buena opción son las siguientes:</p>
+<ul>
+<li>Múltiples productores: varios productores pueden escribir en el mismo <em>topic</em>.</li>
+<li>Múltiples consumidores: varios consumidores pueden leer del mismo <em>topic</em> y los mismos mensajes sin que estos se interfieran.</li>
+<li>Durables y retención en disco: los mensajes son persistidos en disco para que ante un error no se pierdan y poder continuar su proceso una vez el error se resuelva. Los <em>topics</em> pueden definir una política de retención en base al tamaño en bytes o de tiempo, superado el límite definido los mensajes se descartan.</li>
+<li>Escalable: la facilidad de particionar los <em>topics</em> y configurar consumidores permite procesar el volumen de mensajes que se tenga aunque sea muy grande, basta con añadir más <em>brokers</em>, particiones y consumidores.</li>
+<li>Alto rendimiento: dada su escalabilidad el número de mensajes que puede entregar también es grande, y manteniendo latencias bajas en la entrega de mensajes.</li>
+<li>Características de la plataforma: proporciona librerías y una API para extender el comportamiento de Kafka, integraciones para conectarlo a otros sistemas con <a href="https://kafka.apache.org/documentation/#connect">Kafka Connect</a> por ejemplo para recibir como mensajes los cambios en una base de datos y <a href="https://kafka.apache.org/documentation/streams/">Kafka Streams</a> permite procesar flujos constantes de datos.</li>
+</ul>
+<h4 id="conceptos-esenciales">Conceptos esenciales</h4>
+<p>Para usar Kafka de forma correcta conviene entender varios de los conceptos que maneja este <em>broker</em> de mensajes.</p>
+<p>Para proporcionar escalabilidad y tolerancia a fallos es necesario utilizar varias instancias de servidor o <em>brokers</em> de Kafka que forman un <em>cluster</em>. En caso de que un <em>broker</em> falle por cualquier motivo el resto de <em>brokers</em> asumen su trabajo. Uno de los <em>brokers</em> es designado por el propio <em>cluster</em> como el <em>controller</em> y encargado de ciertas tareas administrativas del <em>cluster</em>.</p>
+<p>Las aplicaciones tienen un rol de productor de mensajes, consumidor de mensajes o incluso ambos si lee y escribe al mismo tiempo. Las aplicaciones leen y escriben mensajes de Kafka a través de los <em>topics</em>, pudiendo haber múltiples productores y consumidores de un mismo <em>topic</em> al mismo tiempo.</p>
+<p>Los <em>producers</em> envían los mensajes a los <em>topics</em> pero por escalabilidad y tolerancia a fallos los <em>topics</em> se dividen en particiones o <em>partitions</em>. Las particiones son consumidas por un único <em>consumer</em> pero un <em>consumer</em> puede tener asignados varias <em>partitions</em> de las que leer. Al crear el <em>topic</em> se especifica el número de peticiones que se desean para él y se distribuyen entre los diferentes <em>brokers</em>. Los mensajes son entregados a las particiones en base a una clave del mensaje en caso de que la tengan, esto permite entregar y agrupar ciertos mensajes en una misma partición para procesarlos en el orden que se producen por ejemplo todos los mensajes relacionados con un usuario.</p>
+<p>Los mensajes son obtenidos por los consumidores de las particiones, cada partición es asignada a un <em>consumer</em>, solo un consumer lee de una partición y los mensajes de la partición se leen en el mismo orden en que fueron escritos. Por este motivo no tiene sentido tener más consumidores que particiones, y si se necesita escalar el consumo de mensajes con más consumidores es necesario aumentar el número de particiones. En caso de añadir nuevos consumidores se produce un rebalanceo en la asignación de las particiones distribuyendo la carga entre los diferentes <em>consumers</em>. Los <em>consumers</em> están agrupados en grupos de consumidores o <em>consumers groups</em>, dos <em>consumer groups</em> diferentes reciben la misma colección de mensajes que se envíen al <em>topic</em>. A cada mensaje se le asigna un número incremental u <em>offset</em>, la diferencia entre el <em>offset</em> producido en un partition y el <em>offset</em> consumido se denomina <em>lag</em>, estando cercano a cero significa que el consumidor está procesando los mensajes sin retardo y un <em>lag</em> con valores altos y que se incrementan significa que el consumidor no está siendo capaz de procesar el volumen de mensajes producidos.</p>
+<p>Al crear el <em>topic</em> se define el número de particiones que se desea y se especifica el número de réplicas de cada partición. El número de particiones se determina en función del volumen de tráfico previsto del <em>topic</em>. Las particiones y las réplicas se distribuyen entre los diferentes <em>brokers</em>, para cada una de las particiones una es elegida como la partición <em>leader</em> y en la que los <em>producer</em> envían los mensajes. Las réplicas se mantienen sincronizadas con la partición <em>leader</em>, pudiendo definirse también el mínimo número de réplicas que han de estar sincronizadas. A las réplicas que están sincronizadas se les denomina ISR o <em>in sync replica</em>.</p>
+<p>Los mensajes enviados a Kafka se escriben en disco y tienen la durabilidad definida según el periodo de retención definido para el <em>topic</em>. Los mensajes de las particiones escritas en el sistema de archivos se guardan en segmentos. Realmente la durabilidad aplica no a los mensajes individuales sino a los segmentos de las particiones.</p>
+<p>En un sistema distribuido que se comunica por red hay fallos y que pueden ocasionar cosas inesperadas. Kafka proporciona la garantía que los mensajes se entrega en el mismo orden que se reciben, que los mensajes considerados <em>commited</em>, aquellos que se escriben en todas la réplicas sincronizadas, no se pierden y que los consumidores solo leen mensajes <em>commited</em>. Otras garantías que Kafka implementa son medidas de garantía en la entrega de mensajes o <em>delivery garantees</em> para que las aplicaciones se abstraigan de los posibles errores. Las garantías en la entrega de mensajes son como mucho uno o <em>at most one</em> con la que el mensaje solo se entrega como mucho una vez pudiendo perderse mensajes, con al menos uno o <em>at least one</em> se garantiza que se entrega una vez pero pudiendo recibir el mismo mensaje varias veces y finalmente exactamente uno o <em>exactly once</em> con la que el mensaje se entrega exactamente una vez. Sin estas garantías, puede haber casos en los que los mensajes no se entregan o se entregan varias veces.</p>
+<p>Los mensajes tienen una clave, en algunos casos de uso solo interesa mantener el último mensaje de cada clave en un <em>topic</em>, a estos <em>topics</em> que solo mantienen la última versión de un mensaje según su clave se les denomina <em>compacted topics</em>.</p>
+<p>Kafka no impone ninguna restricción en el contenido de los mensajes, los trata simplemente como una cantidad de bytes ya sean de texto, comprimidos o cifrados. Como formato se puede utilizar uno basado en texto como JSON o uno binario más eficiente como Avro y con un esquema.</p>
+<p>Para algunas de tareas Kafka utiliza <a href="https://zookeeper.apache.org/">Zookeeper</a> para la coordinación, consenso y almacenamiento de configuración. Es otro <em>cluster</em> de servidores que hay que mantener y añade complejidad. Los desarrolladores están trabajando para que Zookeeper no sea necesario y simplificar el uso de Kafka.</p>
+<h4 id="propiedades-de-configuración">Propiedades de configuración</h4>
+<p>Kafka soporta numerosas <a href="https://kafka.apache.org/documentation/#configuration">propiedades de configuración</a> entre las que están el número de particiones de los <em>topics</em>, la retención de los segmentos de los mensajes en base a tiempo o número de bytes, el número de réplicas a mantener de cada partición y otros parámetros de tiempos al procesar los mensajes y comunicación entre brokers.</p>
+<p>Estas propiedades se configuran en función del volumen de tráfico generado por los productores, el volumen que es capaz de procesar cada consumidor y el volumen de tráfico o almacenamiento que es capaz de soportar un <em>broker</em>. El conjunto de los consumidores han de tener una capacidad de procesamiento similar a la de los productores, si los consumidores no fueran capaces de soportar el volumen de los productores y la situación se mantuviese de forma prolongada pasado un tiempo se acumularían demasiados mensajes sin procesar, el <em>lag</em> aumentaría, situación que podría generar malos comportamientos en las aplicaciones como pérdida de mensajes.</p>
+<p>Un solo <em>broker</em> soporta un volumen grande de tráfico, pero en los casos de un uso intenso es necesario mayor número de instancias.</p>
+<h4 id="descarga-e-inicio-con-contenedores-docker">Descarga e inicio con contenedores Docker</h4>
+<p>Una opción sencilla para usar Apache Kafka es usándolo a través de un contenedor de <a href="https://www.docker.com/">Docker</a>, basta instalar Docker y descargar el contenedor de Kafka.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">Cómo instalar y guía de inicio básica de Docker</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/">Aplicaciones multicontenedor con Docker Compose</a></li>
+</ul>
+<p>Como imagen de contenedor de Kafka están las proporcionadas por la empresa Confluent que participa en el desarrollo de Kafka y proporciona varias herramientas complementarias de Kafka.</p>
+<ul>
+<li><a href="https://hub.docker.com/r/confluentinc/cp-kafka">Imagen de Docker de cp-kafka</a></li>
+<li><a href="https://hub.docker.com/r/confluentinc/cp-zookeeper">Imagen de Docker de cp-kafka cp-zookeeper</a></li>
+<li><a href="https://developer.confluent.io/quickstart/kafka-docker/">Guida de inicio rápido de Kafka con Docker</a></li>
+<li><a href="https://docs.confluent.io/platform/current/installation/configuration/broker-configs.html">Propiedades de configuración de apache Kafka</a></li>
+<li><a href="https://docs.confluent.io/platform/current/installation/docker/config-reference.html#required-zk-settings">Propieades de configuración de Zookeeper</a></li>
+</ul>
+<p>Este es un archivo de <a href="https://docs.docker.com/compose/">Docker Compose</a> que permite arrancar varios contenedores a la vez, en el se muestra un <em>cluster</em> de tres instancias de Kafka y una única instancia de Zookeeper.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker-compose up&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-compose-up.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nn">---</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">zookeeper</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">confluentinc/cp-zookeeper:7.3.0</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">zookeeper</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">environment</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">ZOOKEEPER_CLIENT_PORT</span><span class="p">:</span><span class="w"> </span><span class="m">2181</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">ZOOKEEPER_TICK_TIME</span><span class="p">:</span><span class="w"> </span><span class="m">2000</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">broker1</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">confluentinc/cp-kafka:7.3.0</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">broker1</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;19092:9092&#34;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">depends_on</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">zookeeper</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">environment</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_BROKER_ID</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_ZOOKEEPER_CONNECT</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;zookeeper:2181&#39;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_ADVERTISED_LISTENERS</span><span class="p">:</span><span class="w"> </span><span class="l">PLAINTEXT://broker1:9092</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_LISTENER_SECURITY_PROTOCOL_MAP</span><span class="p">:</span><span class="w"> </span><span class="l">PLAINTEXT:PLAINTEXT</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_BOOTSTRAP_SERVERS</span><span class="p">:</span><span class="w"> </span><span class="l">kafka1:9092,kafka2:9092,kafka3:9092</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_NUM_PARTITIONS</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_DEFAULT_REPLICATION_FACTOR</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">broker2</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">confluentinc/cp-kafka:7.3.0</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">broker2</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;19093:9092&#34;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">depends_on</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">zookeeper</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">environment</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_BROKER_ID</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_ZOOKEEPER_CONNECT</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;zookeeper:2181&#39;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_ADVERTISED_LISTENERS</span><span class="p">:</span><span class="w"> </span><span class="l">PLAINTEXT://broker2:9092</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_LISTENER_SECURITY_PROTOCOL_MAP</span><span class="p">:</span><span class="w"> </span><span class="l">PLAINTEXT:PLAINTEXT</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_BOOTSTRAP_SERVERS</span><span class="p">:</span><span class="w"> </span><span class="l">kafka1:9092,kafka2:9092,kafka3:9092</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_NUM_PARTITIONS</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_DEFAULT_REPLICATION_FACTOR</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">broker3</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">confluentinc/cp-kafka:7.3.0</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">broker3</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;19094:9092&#34;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">depends_on</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">zookeeper</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">environment</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_BROKER_ID</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_ZOOKEEPER_CONNECT</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;zookeeper:2181&#39;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_ADVERTISED_LISTENERS</span><span class="p">:</span><span class="w"> </span><span class="l">PLAINTEXT://broker3:9092</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_LISTENER_SECURITY_PROTOCOL_MAP</span><span class="p">:</span><span class="w"> </span><span class="l">PLAINTEXT:PLAINTEXT</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_BOOTSTRAP_SERVERS</span><span class="p">:</span><span class="w"> </span><span class="l">kafka1:9092,kafka2:9092,kafka3:9092</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_NUM_PARTITIONS</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">KAFKA_DEFAULT_REPLICATION_FACTOR</span><span class="p">:</span><span class="w"> </span><span class="m">2</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-compose.yml</span>
+    </div>
+</div>
+<h4 id="uso">Uso</h4>
+<p>Los <em>producers</em> y <em>consumers</em> se pueden implementar en diferentes lenguajes entre los que está Java. Kafka proporciona una API para la integración con Kafka y el proyecto <a href="https://spring.io/">Spring</a> una integración para las aplicaciones que utilizan este <em>framework</em> para mayor facilidad de uso en el proyecto <a href="https://spring.io/projects/spring-kafka">Spring for Apache Kafka</a>.</p>
+<p>No es necesario crear un cliente de Kafka con un lenguaje de programación, Kafka proporciona varias utilidades administrativas que permiten consultar información de configuración y enviar y recibir mensajes desde la línea de comandos a un determinado <em>topic</em>.</p>
+<p>Con esta utilidades permite probar Kafka por ejemplo para realizar el balanceo de consumidores cuando se agregan y se quitan, probar el periodo de retención de los mensajes o probar que ocurre cuando un <em>broker</em> se cae o detiene.</p>
+<p>Listar que <em>topics</em> hay en un <em>cluster</em> y crear un <em>topic</em> con las propiedades de número de particiones, réplicas y retención se realiza con las utilidades de línea de comandos para interactuar con el <em>cluster</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker <span class="nb">exec</span> -it broker1 kafka-topics --bootstrap-server broker1:9092 --create --partitions <span class="m">2</span> --replication-factor <span class="m">2</span> --topic quickstart&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>kafka-topics-create.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker <span class="nb">exec</span> -it broker1 kafka-topics --bootstrap-server broker1:9092 --delete --topic quickstart&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>kafka-topics-delete.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker <span class="nb">exec</span> -it broker1 kafka-topics --bootstrap-server broker1:9092 --list&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>kafka-topics-list.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">__consumer_offsets&#10;</span></span><span class="line"><span class="cl">quickstart&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>kafka-topics-list.out</span>
+    </div>
+</div>
+<p>Como se ha indicado de forma explícita al crear el <em>topic</em> y por los valores indicados en las variables de entorno del archivo <em>docker-compose.yml</em> que indican la configuración por defecto si no se hubiese indicado de forma explícita el <em>topic</em> tiene dos particiones y cada partición dos réplicas. al describir el <em>topic</em> se indican que <em>broker</em> es el líder de la partición, en que <em>brokers</em> están las réplicas de cada patición y que <em>brokers</em> tienen su réplica sincronizada.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker <span class="nb">exec</span> -it broker1 kafka-topics --bootstrap-server broker1:9092 --topic quickstart --describe&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>kafka-topics-describe.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Topic: quickstart	TopicId: cqmOrCwcSAesmGGeRawHSw	PartitionCount: 2	ReplicationFactor: 2	Configs: &#10;</span></span><span class="line"><span class="cl">	Topic: quickstart	Partition: 0	Leader: 2	Replicas: 2,1	Isr: 2,1&#10;</span></span><span class="line"><span class="cl">	Topic: quickstart	Partition: 1	Leader: 3	Replicas: 3,2	Isr: 3,2</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>kafka-topics-describe-1.out</span>
+    </div>
+</div>
+<p>Las operaciones básicas son que el productor envíe mensajes y los consumidores los reciban. Las utilidades de línea de comandos permiten crear consumidores y grupos de consumidores.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker <span class="nb">exec</span> -it broker1 kafka-console-producer --bootstrap-server broker1:9092 --topic quickstart&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>kafka-console-producer.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">&gt;1&#10;</span></span><span class="line"><span class="cl">&gt;2&#10;</span></span><span class="line"><span class="cl">&gt;3&#10;</span></span><span class="line"><span class="cl">&gt;&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>kafka-console-producer.out</span>
+    </div>
+</div>
+<p>Diferentes formas de arrancar un consumidor, leyendo el primer mensaje del <em>topic</em>, leyendo solo los nuevos mensajes y dentro de un <em>consumer group</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker <span class="nb">exec</span> -it broker1 kafka-console-consumer --bootstrap-server broker1:9092 --topic quickstart --from-beginning&#10;</span></span><span class="line"><span class="cl">$ docker <span class="nb">exec</span> -it broker1 kafka-console-consumer --bootstrap-server broker1:9092 --topic quickstart&#10;</span></span><span class="line"><span class="cl">$ docker <span class="nb">exec</span> -it broker1 kafka-console-consumer --bootstrap-server broker1:9092 --group consumer-group-1 --topic quickstart&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>kafka-console-consumer.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">1&#10;</span></span><span class="line"><span class="cl">2&#10;</span></span><span class="line"><span class="cl">3&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>kafka-console-consumer.out</span>
+    </div>
+</div>
+<p>Listar los <em>consumers</em> permite ver cuántos hay, que <em>offset</em> están consumiendo y que <em>lag</em> tienen. En esta salida el primer <em>consumer-group</em> hay un único <em>consumer</em> que está consumiendo de ambas particiones del <em>topic</em>, en el segundo <em>consumer-group</em> hay dos <em>consumers</em> diferentes cada uno consumiendo de una partición.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker <span class="nb">exec</span> -it broker1 kafka-consumer-groups --bootstrap-server localhost:9092 --all-groups --describe&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>kafka-consumer-groups.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">GROUP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  TOPIC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONSUMER-ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   HOST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLIENT-ID&#10;</span></span><span class="line"><span class="cl">console-consumer-82790 quickstart&nbsp;&nbsp;&nbsp;&nbsp;  0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   console-consumer-0d7d3567-2bc2-4c7f-ab74-45a57b905e30 /172.24.0.3&nbsp;&nbsp;&nbsp;&nbsp; console-consumer&#10;</span></span><span class="line"><span class="cl">console-consumer-82790 quickstart&nbsp;&nbsp;&nbsp;&nbsp;  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   console-consumer-0d7d3567-2bc2-4c7f-ab74-45a57b905e30 /172.24.0.3&nbsp;&nbsp;&nbsp;&nbsp; console-consumer&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">GROUP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TOPIC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONSUMER-ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   HOST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLIENT-ID&#10;</span></span><span class="line"><span class="cl">consumer-group-1 quickstart&nbsp;&nbsp;&nbsp;&nbsp;  0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   console-consumer-263103d2-61fa-454f-9989-a313be03de36 /172.24.0.3&nbsp;&nbsp;&nbsp;&nbsp; console-consumer&#10;</span></span><span class="line"><span class="cl">consumer-group-1 quickstart&nbsp;&nbsp;&nbsp;&nbsp;  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   console-consumer-82ac7e50-7736-416a-8237-f2a582246053 /172.24.0.3&nbsp;&nbsp;&nbsp;&nbsp; console-consumer</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>kafka-consumer-groups.out</span>
+    </div>
+</div>
+<p>Las réplicas de las particiones son distribuidas entre los <em>brokers</em>, si un <em>broker</em> que es <em>leader</em> de una partición deja de funcionar otro <em>broker</em> con una réplica sincronizada o <em>isr</em> se convertirá en el nuevo <em>leader</em>, este mecanismo es el que utiliza Kafka para tener la propiedad de tolerancia a fallos.</p>
+<p>Aunque Kafka tiene tolerancia a fallos no se auto repara a si mismo en todas las situaciones. Las réplicas que tuviese un <em>broker</em> que ha fallado no se distribuyen en otros <em>brokers</em> para que el número de réplicas definido se mantenga constante. Kafka espera que si se cae un <em>broker</em> esté al cabo de un tiempo se recupere y mientras tanto el resto de <em>brokers</em> siguen procesando los mensajes. Las réplicas no se mueven de <em>broker</em> debido a que podría ser demasiado costoso ya que pueden alcanzar tamaños suficientemente grandes para que el tráfico de red fuese muy elevado y costoso en tiempo.</p>
+<p>Al forzar la parada de un <em>broker</em> simulando un fallo sus réplicas se dejan de considerar sincronizadas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker stop broker2&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-stop-broker2.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Topic: quickstart	TopicId: cqmOrCwcSAesmGGeRawHSw	PartitionCount: 2	ReplicationFactor: 2	Configs: &#10;</span></span><span class="line"><span class="cl">	Topic: quickstart	Partition: 0	Leader: 1	Replicas: 2,1	Isr: 1&#10;</span></span><span class="line"><span class="cl">	Topic: quickstart	Partition: 1	Leader: 3	Replicas: 3,2	Isr: 3</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>kafka-topics-describe-2.out</span>
+    </div>
+</div>
+<p>Una vez el <em>broker</em> se vuelve a levantar quizá por una acción manual del administrador de sistemas o automáticamente por del orquestador de contenedores las réplicas que tenía asignadas el <em>broker</em> 2 se vuelven marcar como sincronizadas en la columna <em>isr</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker start broker2&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-start-broker2.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Topic: quickstart	TopicId: cqmOrCwcSAesmGGeRawHSw	PartitionCount: 2	ReplicationFactor: 2	Configs: &#10;</span></span><span class="line"><span class="cl">	Topic: quickstart	Partition: 0	Leader: 2	Replicas: 2,1	Isr: 1,2&#10;</span></span><span class="line"><span class="cl">	Topic: quickstart	Partition: 1	Leader: 3	Replicas: 3,2	Isr: 3,2</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>kafka-topics-describe-3.out</span>
+    </div>
+</div>
+<h4 id="tutorial">Tutorial</h4>
+<p>En <a href="https://www.youtube.com/">YouTube</a> hay varios tutoriales con varios capítulos acerca de Kafka con más información y mostrándolo en vídeo, basta con hacer un búsqueda.</p>
+<ul>
+<li><a href="https://www.javaguides.net/2022/12/spring-boot-apache-kafka-tutorial-1.html">Spring Boot + Apache Kafka Tutorial - #1 - Apache Kafka Overview</a></li>
+</ul>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/j4bqyAMMb7o" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://stackoverflow.com/questions/64534639/kafka-broker-failures-replicas-was-not-recreated">Kafka - Broker failures, replicas was not recreated</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+      <div class="alert alert-info fs-6" role="alert">
+        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Este artículo incluye algunos enlaces de afiliado como Amazon que considero relevante en el contenido del artículo y para el lector. En caso de hacer una comprar a través de estos enlaces recibo una pequeña comisión, sin que afecte al precio del producto, que me ayuda a seguir publicando nuevos artículos y realizar <a href="https://picodotdev.github.io/blog-bitix/series/donacion/">pequeñas donaciones a proyectos de software libre</a>. En caso de que el artículo te haya resultado de interés y útil considera realizar la compra a través de alguno de los enlaces de afiliado del artículo, es correcto también ignorarlos.
+      </div>
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="326" height="125" alt="Microservicios con Spring Cloud, Consul, Nomad y Traefik" title="Microservicios con Spring Cloud, Consul, Nomad y Traefik" class="" loading="lazy">
+                <h3>Microservicios con Spring Cloud, Consul, Nomad y Traefik</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/02/servidor-oauth-gateway-y-servicio-rest-utilizando-tokens-jwt-con-spring/">
+                <img src="/blog-bitix/assets/images/logotypes/spring.svg" width="326" height="125" alt="Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring" title="Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring" class="" loading="lazy">
+                <h3>Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/12/hemeroteca-14/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #14" title="Hemeroteca #14" class="" loading="lazy">
+                <h3>Hemeroteca #14</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/12/exponer-las-metricas-de-hystrix-en-grafana-con-prometheus-de-una-aplicacion-spring-boot/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot" title="Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot" class="" loading="lazy">
+                <h3>Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/12/monitorizar-una-aplicacion-java-de-spring-boot-con-micrometer-prometheus-y-grafana/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana" title="Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana" class="" loading="lazy">
+                <h3>Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/06/hemeroteca-13/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #13" title="Hemeroteca #13" class="" loading="lazy">
+                <h3>Hemeroteca #13</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-672';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2023\/02\/introduccion-conceptos-y-uso-basico-del-broker-de-mensajes-apache-kafka\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2023 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

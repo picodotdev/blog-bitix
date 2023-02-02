@@ -19,8 +19,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/09/contenedores-en-macos-con-lima-y-minikube/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Para ejecutar contenedores en macOS hay dos opciones entre las posibles, una usar minikube que aunque su objetivo es ejecutar un <em>cluster</em> de Kubernetes permite usarlo para ejecutar contenedores de Docker directamente, la segunda opción es lime que es una opción similar que usa containerd en vez de Docker. La empresa encargada del desarrollo de Docker ha anunciado que el producto Docker Desktop pasa a requerir una licencia de pago para organizaciones empresariales grandes. Docker Desktop es usado tanto en Windows como en macOS para ejecutar contenedores de Docker con la opción también de ejecutar un <em>cluster</em> de Kubernetes, minikube y lima para macOS son una alternativa a Docker Desktop.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Para ejecutar contenedores en macOS hay dos opciones entre las posibles, una usar minikube que aunque su objetivo es ejecutar un <em>cluster</em> de Kubernetes permite usarlo para ejecutar contenedores de Docker directamente, la segunda opción es lime que es una opción similar que usa containerd en vez de Docker. La empresa encargada del desarrollo de Docker ha anunciado que el producto Docker Desktop pasa a requerir una licencia de pago para organizaciones empresariales grandes. Docker Desktop es usado tanto en Windows como en macOS para ejecutar contenedores de Docker con la opción también de ejecutar un <em>cluster</em> de Kubernetes, minikube y lima para macOS son una alternativa a Docker Desktop.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2021/09/contenedores-en-macos-con-lima-y-minikube/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -40,8 +45,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>En los microservicios se hace necesario un servicio de registro y descubrimiento como Eureka o Consul que permita conocer la ubicación de las instancias en cada momento. Las instancias de los servicios se pueden registrar ellas mismas o esta tarea se puede delegar en una en otro servicio. Al usar contenedores de Docker una herramienta que permite delegar el registro y desregistro en Consul de los servicios es GliderLabs Registrator.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>En los microservicios se hace necesario un servicio de registro y descubrimiento como Eureka o Consul que permita conocer la ubicación de las instancias en cada momento. Las instancias de los servicios se pueden registrar ellas mismas o esta tarea se puede delegar en una en otro servicio. Al usar contenedores de Docker una herramienta que permite delegar el registro y desregistro en Consul de los servicios es GliderLabs Registrator.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -61,8 +71,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/04/imagenes-de-docker-con-alpine-linux/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
+        <![CDATA[
+
         
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2017/04/imagenes-de-docker-con-alpine-linux/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -80,8 +95,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/04/informacion-sensible-en-los-contenedores-con-docker-secrets/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Parte de la información que usan los contenedores de Docker se debe proteger de accesos no deseados. Anteriormente en algunos casos se usaban variables de entorno para lanzar los contenedores lo que no es seguro si se listan los procesos del sistema con sus parámetros, incluir archivos en las imágenes de los contenedores tampoco es recomendable. Docker Secrets permite proporcionar y mantener segura la información sensible que usen los contenedores.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Parte de la información que usan los contenedores de Docker se debe proteger de accesos no deseados. Anteriormente en algunos casos se usaban variables de entorno para lanzar los contenedores lo que no es seguro si se listan los procesos del sistema con sus parámetros, incluir archivos en las imágenes de los contenedores tampoco es recomendable. Docker Secrets permite proporcionar y mantener segura la información sensible que usen los contenedores.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2017/04/informacion-sensible-en-los-contenedores-con-docker-secrets/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -99,8 +119,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Salvo que un servicio sea sin estado o <em>stateless</em> los contenedores de Docker necesitan persistir datos y que estos sobrevivan a su terminación, como es el caso de un contenedor de una base de datos. Además en un <em>cluster</em> de nodos Docker hay que tener en cuenta que los datos deben estar accesibles para todos los nodos ya que un contenedor que usase los datos podría ser lanzado en cualquiera de ellos. REX-Ray es un sistema de almacenamiento en red que cubre estas necesidades, es simple de instalar, configurar y de iniciar. En el artículo muestro un ejemplo usando REX-Ray junto con Docker Swarm y VirtualBox.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Salvo que un servicio sea sin estado o <em>stateless</em> los contenedores de Docker necesitan persistir datos y que estos sobrevivan a su terminación, como es el caso de un contenedor de una base de datos. Además en un <em>cluster</em> de nodos Docker hay que tener en cuenta que los datos deben estar accesibles para todos los nodos ya que un contenedor que usase los datos podría ser lanzado en cualquiera de ellos. REX-Ray es un sistema de almacenamiento en red que cubre estas necesidades, es simple de instalar, configurar y de iniciar. En el artículo muestro un ejemplo usando REX-Ray junto con Docker Swarm y VirtualBox.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -118,8 +143,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Ya tenemos un <em>cluster</em> formado por varios nodos con algún servicio ejecutándose en el <em>cluster</em> de Docker Swarm. Si surge la necesidad los servicios del <em>cluster</em> se pueden escalar cambiando el número de instancias de contenedores que forma el servicio para atender las necesidades computacionales o para ofrecer el servicio a más usuarios. Por otro lado, pasado un tiempo muy posiblemente se publicará una nueva imagen de los contenedores, el servicio se puede actualizar para que los contenedores utilicen esa nueva imagen.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Ya tenemos un <em>cluster</em> formado por varios nodos con algún servicio ejecutándose en el <em>cluster</em> de Docker Swarm. Si surge la necesidad los servicios del <em>cluster</em> se pueden escalar cambiando el número de instancias de contenedores que forma el servicio para atender las necesidades computacionales o para ofrecer el servicio a más usuarios. Por otro lado, pasado un tiempo muy posiblemente se publicará una nueva imagen de los contenedores, el servicio se puede actualizar para que los contenedores utilicen esa nueva imagen.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -137,8 +167,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/04/iniciar-un-stack-de-servicios-en-un-cluster-de-docker-swarm/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Los <em>stacks</em> en Docker Swarm son definiciones en un archivo de texto en formato YAML de múltiples servicios además de volúmenes, redes de software y secretos. Esta definición de un <em>stack</em> ejecutado en un <em>cluster</em> de nodos Docker Swarm permite iniciar múltiples contenedores además de los otros elementos que necesiten para su funcionamiento. Los <em>stacks</em> son el equivalente para Docker Swarm de los archivos multicontenedor de Docker Compose, y el formato de ambos muy similar.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Los <em>stacks</em> en Docker Swarm son definiciones en un archivo de texto en formato YAML de múltiples servicios además de volúmenes, redes de software y secretos. Esta definición de un <em>stack</em> ejecutado en un <em>cluster</em> de nodos Docker Swarm permite iniciar múltiples contenedores además de los otros elementos que necesiten para su funcionamiento. Los <em>stacks</em> son el equivalente para Docker Swarm de los archivos multicontenedor de Docker Compose, y el formato de ambos muy similar.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2017/04/iniciar-un-stack-de-servicios-en-un-cluster-de-docker-swarm/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -156,8 +191,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/03/introduccion-y-ejemplo-de-cluster-de-contenedores-con-docker-swarm/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Las funcionalidades de Docker Swarm están incorporadas en Docker para gestionar <em>clusters</em> de nodos con contenedores de los servicios que deseemos. En artículo comentaré algunas de las propiedades de <em>networkning</em> distribuido incorporado en Docker, como crear un <em>cluster</em> de nodos Docker usando VirtualBox con máquinas virtuales para simular múltiples máquinas junto con como lanzar un servicio en el <em>cluster</em> que en este caso consistirá en un servidor web nginx.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Las funcionalidades de Docker Swarm están incorporadas en Docker para gestionar <em>clusters</em> de nodos con contenedores de los servicios que deseemos. En artículo comentaré algunas de las propiedades de <em>networkning</em> distribuido incorporado en Docker, como crear un <em>cluster</em> de nodos Docker usando VirtualBox con máquinas virtuales para simular múltiples máquinas junto con como lanzar un servicio en el <em>cluster</em> que en este caso consistirá en un servidor web nginx.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2017/03/introduccion-y-ejemplo-de-cluster-de-contenedores-con-docker-swarm/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -175,8 +215,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Cambiando la ruta raíz del entorno de ejecución de docker, dónde guarda las imágenes de los contenedores, los datos de los contenedores y otros metadatos, podemos almacenar esta información en un disco duro externo o memoria USB.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Cambiando la ruta raíz del entorno de ejecución de docker, dónde guarda las imágenes de los contenedores, los datos de los contenedores y otros metadatos, podemos almacenar esta información en un disco duro externo o memoria USB.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -194,8 +239,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/07/usar-docker-con-docker-machine-en-linux-windows-o-mac/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Aunque no usemos Linux podemos hacer uso de docker a través de una máquina virtual de VirtualBox y con Docker Machine. Docker Machine permite crear un sistema con la misión de albergar contenedores de docker, puede ser en VirtualBox pero también en Amazon EC2 o Digital Ocean además de otras muchas opciones.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Aunque no usemos Linux podemos hacer uso de docker a través de una máquina virtual de VirtualBox y con Docker Machine. Docker Machine permite crear un sistema con la misión de albergar contenedores de docker, puede ser en VirtualBox pero también en Amazon EC2 o Digital Ocean además de otras muchas opciones.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2015/07/usar-docker-con-docker-machine-en-linux-windows-o-mac/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -213,8 +263,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>¿Por qué se habla tanto de Docker y despierta tanto interés si la tecnología ya existía desde hace tiempo tanto en otros sistemas operativos como en Linux? Uno de los éxitos que ha contribuido a ellos es Docker Hub, un repositorio de imágenes en el que cualquiera puede contribuir con las suyas. Esto hace que pueda encontrarse cualquier herramienta de las populares y empezar a usarlas en muy pocos minutos.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>¿Por qué se habla tanto de Docker y despierta tanto interés si la tecnología ya existía desde hace tiempo tanto en otros sistemas operativos como en Linux? Uno de los éxitos que ha contribuido a ellos es Docker Hub, un repositorio de imágenes en el que cualquiera puede contribuir con las suyas. Esto hace que pueda encontrarse cualquier herramienta de las populares y empezar a usarlas en muy pocos minutos.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -232,8 +287,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Continuando la serie de artículos sobre Docker, otra de las herramientas disponibles en el ecosistema y que nos facilitará enormemente el administrar aplicaciones compuestas por varios contenedores relacionados entre sí es Docker Compose. Definiendo en un archivo los contenedores que forman parte de una aplicación podemos iniciarlos, pararlos, eliminarlos o ver su estado como si de una unidad se tratara.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Continuando la serie de artículos sobre Docker, otra de las herramientas disponibles en el ecosistema y que nos facilitará enormemente el administrar aplicaciones compuestas por varios contenedores relacionados entre sí es Docker Compose. Definiendo en un archivo los contenedores que forman parte de una aplicación podemos iniciarlos, pararlos, eliminarlos o ver su estado como si de una unidad se tratara.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -251,8 +311,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
+        <![CDATA[
+
         
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -270,8 +335,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Podemos usar los contenedores disponibles en Docker Hub, donde están disponibles las aplicaciones de bases de datos, servidores de aplicaciones de múltiples lenguajes, servidores web más populares y entre otras muchas herramientas. Pero también podemos definir nuestras propias imágenes personalizadas con las necesidades que tengamos. Lo que necesitamos es escribir un archivo que contenga la receta para construir la imagen del contenedor, este archivo es el Dockerfile.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Podemos usar los contenedores disponibles en Docker Hub, donde están disponibles las aplicaciones de bases de datos, servidores de aplicaciones de múltiples lenguajes, servidores web más populares y entre otras muchas herramientas. Pero también podemos definir nuestras propias imágenes personalizadas con las necesidades que tengamos. Lo que necesitamos es escribir un archivo que contenga la receta para construir la imagen del contenedor, este archivo es el Dockerfile.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -289,8 +359,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>La tecnología de contenedores nos ofrece múltiples ventajas para nuestras aplicaciones. Docker es una de las más nombradas y que está creciendo muy rápidamente. Es muy sencillo empezarla a usar como mostraré en unos pocos comandos a continuación.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>La tecnología de contenedores nos ofrece múltiples ventajas para nuestras aplicaciones. Docker es una de las más nombradas y que está creciendo muy rápidamente. Es muy sencillo empezarla a usar como mostraré en unos pocos comandos a continuación.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             

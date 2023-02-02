@@ -1,0 +1,1 @@
+$ docker exec -it broker1 kafka-topics --bootstrap-server broker1:9092 --topic quickstart --describe

@@ -5,12 +5,36 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2023-01-26T19:00:00+02:00</updated>
+    <updated>2023-02-02T20:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/</id>
+        <title>Trazabilidad en servicios distribuidos con Sleuth y Zipkin</title>
+        <updated>2020-10-02T17:30:00+02:00</updated>
+        <published>2020-10-02T17:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>En un sistema complejo como una arquitectura de microservicios medir los tiempos de respuesta de cada uno de ellos ayuda a identificar si alguno se está comportando de forma anómala. Sleuth permite asignar un identificador global que es compartido por todos los microservicios invocados en la misma transacción, permite exportar los tiempos de respuesta a Zipkin que ofrece un panel web en el que identificar que llamadas se han hecho entre microservicios y cuales han sido sus tiempos de respuesta.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/</id>
         <title>Centralizar y consultar las trazas de las aplicaciones con Elasticsearch, Logstash y Kibana</title>
@@ -19,8 +43,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Las aplicaciones monolíticas solo generan un archivo de trazas, es fácil de monitorizar, basta con conectarse por SSH a la máquina de su entorno de ejecución y utilizar los comandos <em>grep</em> o <em>tail</em> o descargarlo para examinarlo con otra herramienta de forma local. Pero aún siendo una aplicación monolítica es raro que una organización tenga solo una aplicación sino varias diferentes y las aplicaciones complejas se dividen en varias aún siendo parte de la misma aplicación. Esto hace que haya múltiples aplicaciones en cuyo caso acceder por SSH a una máquina diferente en cada caso no es cómodo. En el caso de múltiples aplicaciones o aplicaciones basadas en microservicios se opta por centralizar las trazas provenientes de múltiples fuentes en una única herramienta, una de las herramientas es la combinación de Elasticsearch, Logstash y Kibana que forma la pila ELK.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Las aplicaciones monolíticas solo generan un archivo de trazas, es fácil de monitorizar, basta con conectarse por SSH a la máquina de su entorno de ejecución y utilizar los comandos <em>grep</em> o <em>tail</em> o descargarlo para examinarlo con otra herramienta de forma local. Pero aún siendo una aplicación monolítica es raro que una organización tenga solo una aplicación sino varias diferentes y las aplicaciones complejas se dividen en varias aún siendo parte de la misma aplicación. Esto hace que haya múltiples aplicaciones en cuyo caso acceder por SSH a una máquina diferente en cada caso no es cómodo. En el caso de múltiples aplicaciones o aplicaciones basadas en microservicios se opta por centralizar las trazas provenientes de múltiples fuentes en una única herramienta, una de las herramientas es la combinación de Elasticsearch, Logstash y Kibana que forma la pila ELK.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -38,8 +67,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Los microservicios aún algunas ventajas necesitan una infraestructura mucho más compleja y necesitan de varias funcionalidades que en una aplicación monolítica no son necesarias. Para desarrollar y mantener con éxito una aplicación nativa para la nube basada en microservicios hay varias herramientas individuales específicas que resuelven cada una un problema específico de los microservicios. En este artículo se identifica cuales son las áreas funcionales que necesitan los microservicios, algunas herramientas hay para cada una de esas herramientas y algunos criterios para elegir una u otra herramienta.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Los microservicios aún algunas ventajas necesitan una infraestructura mucho más compleja y necesitan de varias funcionalidades que en una aplicación monolítica no son necesarias. Para desarrollar y mantener con éxito una aplicación nativa para la nube basada en microservicios hay varias herramientas individuales específicas que resuelven cada una un problema específico de los microservicios. En este artículo se identifica cuales son las áreas funcionales que necesitan los microservicios, algunas herramientas hay para cada una de esas herramientas y algunos criterios para elegir una u otra herramienta.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -57,8 +91,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/09/novedades-de-java-15/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Algunas novedades de anteriores versiones que en la versión de Java 15 pasan a calificarse con el grado de producción y otras características como una segunda versión preliminar. Sin grandes cambios en el lenguaje tan destacables de versiones anteriores como las <em>lambdas</em> de Java 8 o los módulos de Java 9, en Java 15 se añaden las <em>sealed classes</em>.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Algunas novedades de anteriores versiones que en la versión de Java 15 pasan a calificarse con el grado de producción y otras características como una segunda versión preliminar. Sin grandes cambios en el lenguaje tan destacables de versiones anteriores como las <em>lambdas</em> de Java 8 o los módulos de Java 9, en Java 15 se añaden las <em>sealed classes</em>.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/09/novedades-de-java-15/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -76,8 +115,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/09/como-comprar-una-licencia-y-activar-windows-10-y-office-2019/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Windows 10 y Microsoft Office 2019 son productos de software con una licencia privativa, para usarlos de forma legal es necesario comprar una licencia que permita activarlos. Recurrir a activadores de estos productos para evitar pagar la licencia no es recomendable ya que son una fuente de entrada de virus informáticos con un peligro importante para la seguridad del equipo y la importancia de las tareas que realizamos actualmente en él, como compras o consultas bancarias. Una sentencia del tribunal europeo del 2012 permite a vendedores de terceros ofrecer licencias de Windows 10 y Microsoft Office 2019 a precios significativamente más baratos para activar estos productos de forma completamente legal.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Windows 10 y Microsoft Office 2019 son productos de software con una licencia privativa, para usarlos de forma legal es necesario comprar una licencia que permita activarlos. Recurrir a activadores de estos productos para evitar pagar la licencia no es recomendable ya que son una fuente de entrada de virus informáticos con un peligro importante para la seguridad del equipo y la importancia de las tareas que realizamos actualmente en él, como compras o consultas bancarias. Una sentencia del tribunal europeo del 2012 permite a vendedores de terceros ofrecer licencias de Windows 10 y Microsoft Office 2019 a precios significativamente más baratos para activar estos productos de forma completamente legal.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/09/como-comprar-una-licencia-y-activar-windows-10-y-office-2019/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -97,8 +141,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/08/introduccion-a-grpc-y-ejemplo-con-java/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Para crear una API expuesta de forma externa o para ofrecer un servicio a otros servicios en una arquitectura de microservicios ha varias opciones. Tres de las opciones son REST, GraphQL y gRPC cada una con sus características que la hacen mas adecuadas según los requerimientos de la aplicación. gRPC es especialmente adecuada para servicios que requieran un alto rendimiento y solo necesite consumirse de forma interna. gRPC es una implementación de llamada a procedimiento remoto o RPC agnóstica del lenguaje de programación de alto rendimiento al emplear un formato de intercambio de datos binario más eficiente que JSON.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Para crear una API expuesta de forma externa o para ofrecer un servicio a otros servicios en una arquitectura de microservicios ha varias opciones. Tres de las opciones son REST, GraphQL y gRPC cada una con sus características que la hacen mas adecuadas según los requerimientos de la aplicación. gRPC es especialmente adecuada para servicios que requieran un alto rendimiento y solo necesite consumirse de forma interna. gRPC es una implementación de llamada a procedimiento remoto o RPC agnóstica del lenguaje de programación de alto rendimiento al emplear un formato de intercambio de datos binario más eficiente que JSON.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/08/introduccion-a-grpc-y-ejemplo-con-java/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -116,8 +165,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/08/anadir-descripciones-y-documentar-los-campos-de-graphql/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>A diferencia de una API basada REST una API basada GraphQL posee un esquema en el que quedan definidos los tipos, propiedades y tipos de esas propiedades. Para suplir las carencias de una API basada en REST se suele utilizar #Swagger como documentación y entorno de pruebas. GraphQL incluye la documentación en el propio código fuente y ofrece un IDE sin necesidad de herramientas adicionales. En el propio esquema de la API basada en GraphQL se pueden añadir descripciones a los tipos y propiedades para mayor detalle.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>A diferencia de una API basada REST una API basada GraphQL posee un esquema en el que quedan definidos los tipos, propiedades y tipos de esas propiedades. Para suplir las carencias de una API basada en REST se suele utilizar #Swagger como documentación y entorno de pruebas. GraphQL incluye la documentación en el propio código fuente y ofrece un IDE sin necesidad de herramientas adicionales. En el propio esquema de la API basada en GraphQL se pueden añadir descripciones a los tipos y propiedades para mayor detalle.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/08/anadir-descripciones-y-documentar-los-campos-de-graphql/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -135,8 +189,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/08/renombrar-campos-del-esquema-en-las-consultas-graphql/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
+        <![CDATA[
+
         
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/08/renombrar-campos-del-esquema-en-las-consultas-graphql/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -154,8 +213,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/08/que-hace-y-ventajas-de-un-preprocesador-de-estilos-css/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
+        <![CDATA[
+
         
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/08/que-hace-y-ventajas-de-un-preprocesador-de-estilos-css/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -173,8 +237,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>HashiCorp proporciona una buena documentación de sus productos con tutoriales, documentación de las herramientas y vídeos de formación en su canal de Youtube. Aunque en la documentación está todo explicado para poner en práctica una arquitectura para un caso más real y con cierto grado de producción requiere leer múltiples artículos para aplicar y aglutinar todo lo descrito. En este artículo muestro una arquitectura de referencia de varios productos de HashiCorp como Consul, Vault y Nomad que forman un centro de datos o entorno de ejecución para servicios en un ejemplo aprovisionado con Vagrant en máquinas virtuales de VirtualBox.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>HashiCorp proporciona una buena documentación de sus productos con tutoriales, documentación de las herramientas y vídeos de formación en su canal de Youtube. Aunque en la documentación está todo explicado para poner en práctica una arquitectura para un caso más real y con cierto grado de producción requiere leer múltiples artículos para aplicar y aglutinar todo lo descrito. En este artículo muestro una arquitectura de referencia de varios productos de HashiCorp como Consul, Vault y Nomad que forman un centro de datos o entorno de ejecución para servicios en un ejemplo aprovisionado con Vagrant en máquinas virtuales de VirtualBox.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -192,8 +261,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
+        <![CDATA[
+
         
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -211,8 +285,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Los certificados autofirmados no son suficientes para un entorno de producción. En producción hay que usar certificados firmados por una entidad de confianza. AWS Certificate Manager ofrece la suya pero tiene un coste elevado y los certificados de otras entidades tampoco son baratos. Para certificados de uso interno en una organización que proporcionan comunicaciones seguras OpenSSL permite con una serie de comandos crear una autoridad de certificación o CA en la que los servidores y clientes internos confíen. Las funciones de la CA incluyen crear certificados a partir de las solicitudes de los certificados para los servidores y también la revocación y renovación de certificados.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Los certificados autofirmados no son suficientes para un entorno de producción. En producción hay que usar certificados firmados por una entidad de confianza. AWS Certificate Manager ofrece la suya pero tiene un coste elevado y los certificados de otras entidades tampoco son baratos. Para certificados de uso interno en una organización que proporcionan comunicaciones seguras OpenSSL permite con una serie de comandos crear una autoridad de certificación o CA en la que los servidores y clientes internos confíen. Las funciones de la CA incluyen crear certificados a partir de las solicitudes de los certificados para los servidores y también la revocación y renovación de certificados.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -230,8 +309,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
+        <![CDATA[
+
         
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -249,8 +333,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/07/obtener-un-nombre-de-dominio-para-una-direccion-ip-privada/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
+        <![CDATA[
+
         
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/07/obtener-un-nombre-de-dominio-para-una-direccion-ip-privada/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -268,27 +357,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Los errores no se planifican, se producen de forma inesperada. Además, un error en un entorno de producción es normalmente urgente e importante lo que obliga a cambiar las prioridades del equipo dejando lo que están haciendo y ocuparse de resolver el problema. En ocasiones no será posible resolver el problema y la única solución es revertir la versión de la aplicación a la anterior. Dependiendo de la automatización de los procesos incluso el volver a la versión anterior quizá sea complicado. Los errores no se planifican pero si se puede planificar estar preparado para algunos errores, una forma de estar preparado ante errores es tener un proceso y herramientas para volver a la versión anterior rápido y fácilmente.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Los errores no se planifican, se producen de forma inesperada. Además, un error en un entorno de producción es normalmente urgente e importante lo que obliga a cambiar las prioridades del equipo dejando lo que están haciendo y ocuparse de resolver el problema. En ocasiones no será posible resolver el problema y la única solución es revertir la versión de la aplicación a la anterior. Dependiendo de la automatización de los procesos incluso el volver a la versión anterior quizá sea complicado. Los errores no se planifican pero si se puede planificar estar preparado para algunos errores, una forma de estar preparado ante errores es tener un proceso y herramientas para volver a la versión anterior rápido y fácilmente.</strong></p>
         
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/</id>
-        <title>Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad</title>
-        <updated>2020-07-24T15:00:00+02:00</updated>
-        <published>2020-07-24T15:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>La configuración de seguridad estática y basada en direcciones IP no es adecuada en un entorno en el que los recursos de computación está compartidos y no son confiables, ni para aplicaciones basadas en microservicios cuyo número de servicios e instancias cambia a lo largo del tiempo. Consul y Consul Connect ofrecen un mecanismo de comunicación segura adaptados a la computación en la nube y adecuado para aplicaciones basadas en microservicios.</strong></p>]]>
-        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             

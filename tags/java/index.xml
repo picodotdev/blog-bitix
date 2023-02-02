@@ -5,12 +5,40 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/java/</id>
-    <updated>2023-01-11T20:00:00+01:00</updated>
+    <updated>2023-02-02T20:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2023/02/introduccion-conceptos-y-uso-basico-del-broker-de-mensajes-apache-kafka/</id>
+        <title>Introducción, conceptos y uso básico del broker de mensajes Apache Kafka</title>
+        <updated>2023-02-02T20:00:00+02:00</updated>
+        <published>2023-02-02T20:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2023/02/introduccion-conceptos-y-uso-basico-del-broker-de-mensajes-apache-kafka/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>La comunicación mediante mensajes permite desacoplar las aplicaciones y procesar las peticiones de forma asíncrona. Apache Kafka es un <em>broker</em> de mensajes muy popular por su escalabilidad, tolerancia a fallos y adaptabilidad para ser usado en diferentes casos de uso. Es una herramienta compleja dado el número de casos de uso que soporta y la necesidad de ser distribuida para dotarse de escalabilidad y tolerancia a fallos.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2023/02/introduccion-conceptos-y-uso-basico-del-broker-de-mensajes-apache-kafka/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+                <category term="software"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2023/01/construir-la-imagen-del-contenedor-de-la-aplicacion-usando-buildpacks/</id>
         <title>Construir la imagen del contenedor de la aplicación usando Buildpacks</title>
@@ -19,8 +47,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2023/01/construir-la-imagen-del-contenedor-de-la-aplicacion-usando-buildpacks/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Los sistemas y servicios son significativamente complejos por sí mismos, además en sistemas que se componen de varios de ellos cada uno con sus diferencias añade más complejidad al sistema. Eliminar toda la complejidad posible y simplificar el sistema es algo deseable. La herramienta Buildpacks aplica a la construcción de las aplicaciones lo que los contenedores aplican en tiempo de ejecución de las mismas, uniformizando las aplicaciones independientemente del lenguaje y plataforma que usen.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Los sistemas y servicios son significativamente complejos por sí mismos, además en sistemas que se componen de varios de ellos cada uno con sus diferencias añade más complejidad al sistema. Eliminar toda la complejidad posible y simplificar el sistema es algo deseable. La herramienta Buildpacks aplica a la construcción de las aplicaciones lo que los contenedores aplican en tiempo de ejecución de las mismas, uniformizando las aplicaciones independientemente del lenguaje y plataforma que usen.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2023/01/construir-la-imagen-del-contenedor-de-la-aplicacion-usando-buildpacks/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -40,8 +73,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2023/01/obtener-valores-de-configuracion-antes-iniciar-una-aplicacion-con-spring-boot/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>El mecanismo de configuración de Spring Boot es muy flexible y por otro lado Spring Boot proporciona varias formas de extensión. En el proceso de inicialización de la aplicación Spring Boot permite recibir eventos y realizar las acciones que se deseen. Uno de estos eventos es <em>ApplicationEnvironmentPreparedEvent</em> antes de inicializar el contexto y crear los <em>beans</em> del contenedor de dependencias, cyando se lanza este evento es posible acceder a las propiedades de configuración.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>El mecanismo de configuración de Spring Boot es muy flexible y por otro lado Spring Boot proporciona varias formas de extensión. En el proceso de inicialización de la aplicación Spring Boot permite recibir eventos y realizar las acciones que se deseen. Uno de estos eventos es <em>ApplicationEnvironmentPreparedEvent</em> antes de inicializar el contexto y crear los <em>beans</em> del contenedor de dependencias, cyando se lanza este evento es posible acceder a las propiedades de configuración.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2023/01/obtener-valores-de-configuracion-antes-iniciar-una-aplicacion-con-spring-boot/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -59,8 +97,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/12/crear-un-bean-segun-el-contexto-donde-se-inyecte-con-spring/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Spring permite inyectar un <em>bean</em> construido utilizando información del contexto o clase donde se inyecte. Una caso de uso para esta funcionalidad es eliminar la habitual forma estática de inyectar las referencias a un Logger de una librería de <em>logging</em>, la inyección según el contexto permite proporciona el colaborador del Logger no como una variable estática sino en el constructor igual que otros colaboradores. Los beneficios son dos, se elimina una referencia estática que facilita los teses unitarios y se elimina un poco de código repetido en cada clase donde se use un Logger.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Spring permite inyectar un <em>bean</em> construido utilizando información del contexto o clase donde se inyecte. Una caso de uso para esta funcionalidad es eliminar la habitual forma estática de inyectar las referencias a un Logger de una librería de <em>logging</em>, la inyección según el contexto permite proporciona el colaborador del Logger no como una variable estática sino en el constructor igual que otros colaboradores. Los beneficios son dos, se elimina una referencia estática que facilita los teses unitarios y se elimina un poco de código repetido en cada clase donde se use un Logger.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2022/12/crear-un-bean-segun-el-contexto-donde-se-inyecte-con-spring/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -78,8 +121,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Las aplicaciones que tratan con imágenes es posible que necesiten conocer algunos datos de la imagen como anchura y altura, realizar algunas operaciones de manipulación básicas como escalado y conversión entre formatos. El propio JDK de Java ofrece algunas clases y soporta varios de los formatos más comunes de imagen. Para usos más avanzados hay que recurrir a librerías y si no fueran suficientes a comandos del sistema más avanzados.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Las aplicaciones que tratan con imágenes es posible que necesiten conocer algunos datos de la imagen como anchura y altura, realizar algunas operaciones de manipulación básicas como escalado y conversión entre formatos. El propio JDK de Java ofrece algunas clases y soporta varios de los formatos más comunes de imagen. Para usos más avanzados hay que recurrir a librerías y si no fueran suficientes a comandos del sistema más avanzados.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -97,8 +145,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/09/novedades-de-java-19/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Las versiones de Java más confiables por su soporte extendido son las LTS, las no LTS dan la oportunidad de probar e ir adaptándose a las novedades que se publicarán de forma definitiva en las LTS. Por ello las empresas seguramente prefieran ir cambiando de versiones de LTS a LTS, los usuarios y desarrolladores a nivel individual o las empresas que alguna novedad supone un cambio importante opten por usar una no LTS. La versión de Java 19 es una no LTS pero incorpora una novedad muy importante aún en vista previa, los <em>virtual threads</em> que permitirán a las aplicaciones pasar de usar miles a millones de <em>threads</em> y usar programación estructurada más sencilla en vez de programación asíncrona o concurrente para resolver problemas de concurrencia.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Las versiones de Java más confiables por su soporte extendido son las LTS, las no LTS dan la oportunidad de probar e ir adaptándose a las novedades que se publicarán de forma definitiva en las LTS. Por ello las empresas seguramente prefieran ir cambiando de versiones de LTS a LTS, los usuarios y desarrolladores a nivel individual o las empresas que alguna novedad supone un cambio importante opten por usar una no LTS. La versión de Java 19 es una no LTS pero incorpora una novedad muy importante aún en vista previa, los <em>virtual threads</em> que permitirán a las aplicaciones pasar de usar miles a millones de <em>threads</em> y usar programación estructurada más sencilla en vez de programación asíncrona o concurrente para resolver problemas de concurrencia.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2022/09/novedades-de-java-19/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -116,8 +169,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/09/como-refrescar-el-access-token-de-un-cliente-oauth-cuando-caduca/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Dado que el protocolo HTTP es un protocolo sin estado los <em>access token</em> se envían en cada petición que se hace al <em>endpoint</em> de un recurso ofrecido por una aplicación mediante una interfaz REST. Para limitar el periodo de que un <em>access tokens</em> sea utilizable en caso de ser filtrado estos se crean con un tiempo de vida corto, los clientes para seguir realizando peticiones han de solicitar al servidor de autorización un nuevo <em>access token</em>. La librería OkHttp permite realizar la renovación de forma transparente para el cliente y en el código donde se usa.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Dado que el protocolo HTTP es un protocolo sin estado los <em>access token</em> se envían en cada petición que se hace al <em>endpoint</em> de un recurso ofrecido por una aplicación mediante una interfaz REST. Para limitar el periodo de que un <em>access tokens</em> sea utilizable en caso de ser filtrado estos se crean con un tiempo de vida corto, los clientes para seguir realizando peticiones han de solicitar al servidor de autorización un nuevo <em>access token</em>. La librería OkHttp permite realizar la renovación de forma transparente para el cliente y en el código donde se usa.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2022/09/como-refrescar-el-access-token-de-un-cliente-oauth-cuando-caduca/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -135,8 +193,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/08/ejemplo-de-patron-builder-para-las-clases-record-de-java/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Java se ha caracterizado por ser un lenguaje verboso y necesitar declarar todo de forma explícita, esto tiene la ventaja de que el código es muy explícito sin apenas convenciones que es necesario conocer para saber cómo se comporta el código. Por el contrario esta verbosidad requiere declarar gran cantidad de código que se hace repetitivo en muchas clases. Los <em>Records</em> de Java 16 permite declarar clases de datos en muy pocas líneas de código, esto lo consiguen introduciendo algunas convenciones que son de uso común en el lenguaje. Un aspecto que no resuelven los <em>Records</em> es el crear clases Builder que son una necesidad asociada para esas clases de datos.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Java se ha caracterizado por ser un lenguaje verboso y necesitar declarar todo de forma explícita, esto tiene la ventaja de que el código es muy explícito sin apenas convenciones que es necesario conocer para saber cómo se comporta el código. Por el contrario esta verbosidad requiere declarar gran cantidad de código que se hace repetitivo en muchas clases. Los <em>Records</em> de Java 16 permite declarar clases de datos en muy pocas líneas de código, esto lo consiguen introduciendo algunas convenciones que son de uso común en el lenguaje. Un aspecto que no resuelven los <em>Records</em> es el crear clases Builder que son una necesidad asociada para esas clases de datos.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2022/08/ejemplo-de-patron-builder-para-las-clases-record-de-java/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -154,8 +217,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/07/opciones-de-arquitectura-para-emitir-trazas-en-una-aplicacion-java/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Incluso para emitir trazas que en principio es algo sencillo y que se da por hecho surgen varias opciones de arquitectura o diseño. Dos de esas decisiones son acoplarse o no a la librería de <em>logging</em> que se use e inyectar de forma estática o por el constructor la instancia de la clase con la que se emiten trazas. Estas decisiones conviene recogerlas en un documento de <em>Architecture Decision Record</em> por si en un futuro hay que revisar las decisiones tomadas con anterioridad o para que una persona en un futuro tenga el contexto y un registro de las decisiones que se han tomado, el contexto, opciones evaluadas, argumentos y decisiones tomadas.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Incluso para emitir trazas que en principio es algo sencillo y que se da por hecho surgen varias opciones de arquitectura o diseño. Dos de esas decisiones son acoplarse o no a la librería de <em>logging</em> que se use e inyectar de forma estática o por el constructor la instancia de la clase con la que se emiten trazas. Estas decisiones conviene recogerlas en un documento de <em>Architecture Decision Record</em> por si en un futuro hay que revisar las decisiones tomadas con anterioridad o para que una persona en un futuro tenga el contexto y un registro de las decisiones que se han tomado, el contexto, opciones evaluadas, argumentos y decisiones tomadas.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2022/07/opciones-de-arquitectura-para-emitir-trazas-en-una-aplicacion-java/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -175,8 +243,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Una cosa es la funcionalidad que proporciona una aplicación y otra las tareas de administración y mantenimiento relacionas con la aplicación. Estas tareas de administración y mantenimiento no son tareas destinadas a los usuarios sino destinadas a los administradores de la aplicación. Estas tareas pueden ser manuales y ejecutadas a conveniencia siendo muy útil poder ejecutarlas sin necesidad de realizar cambios en el código ni un despliegue de la aplicación. La tecnología JMX de Java define una arquitectura para administrar y monitorizar aplicaciones que se puede utilizar para estas tareas administrativas, Hawtio es una interfaz que permite el acceso y ejecución a JMX mediante un navegador y proporciona una librería para integrase con Spring Boot.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Una cosa es la funcionalidad que proporciona una aplicación y otra las tareas de administración y mantenimiento relacionas con la aplicación. Estas tareas de administración y mantenimiento no son tareas destinadas a los usuarios sino destinadas a los administradores de la aplicación. Estas tareas pueden ser manuales y ejecutadas a conveniencia siendo muy útil poder ejecutarlas sin necesidad de realizar cambios en el código ni un despliegue de la aplicación. La tecnología JMX de Java define una arquitectura para administrar y monitorizar aplicaciones que se puede utilizar para estas tareas administrativas, Hawtio es una interfaz que permite el acceso y ejecución a JMX mediante un navegador y proporciona una librería para integrase con Spring Boot.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -194,8 +267,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/07/generar-releases-de-un-proyecto-java-con-gradle/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Utilizar las etiquetas de las herramientas de control de versiones permite conservar ciertos hitos o <em>commits</em> importantes para consultarlos en el futuro. Generar una versión de un proyecto suele implicar generar una etiqueta en la herramienta de control de versiones. Dado que la generación de nuevas versiones es parte del ciclo de vida de un proyecto hay <em>plugins</em> tanto para Maven como para Gradle que ofrecen como funcionalidad automatizar esta proceso.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Utilizar las etiquetas de las herramientas de control de versiones permite conservar ciertos hitos o <em>commits</em> importantes para consultarlos en el futuro. Generar una versión de un proyecto suele implicar generar una etiqueta en la herramienta de control de versiones. Dado que la generación de nuevas versiones es parte del ciclo de vida de un proyecto hay <em>plugins</em> tanto para Maven como para Gradle que ofrecen como funcionalidad automatizar esta proceso.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2022/07/generar-releases-de-un-proyecto-java-con-gradle/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -213,8 +291,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>El software ofrecido como servicio tiene la ventaja principal de que delega en el proveedor del servicio su administración. El delegar la administración del servicio está motivada por tener ciertas garantías de que el software tiene mayor disponibilidad y fiabilidad. A cambio de esa administración el proveedor del software como servicio establece un precio por su SaaS que llega a compensar tener que administrar el servicio uno mismo que también tiene unos costes en servidor, personal, fiabilidad y también tiempo de dedicación. Una de las funcionalidades que requiere una infraestructura en una organización para desarrollar sus aplicaciones es un repositorio de artefactos o paquetes, GitHub Packages el servicio de repositorio de artefactos compatibles con los artefactos producidos por los principales lenguajes de programación para compartir bibliotecas de código entre ellos Java y JavaScript y tecnologías de contenedores como imágenes Docker.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>El software ofrecido como servicio tiene la ventaja principal de que delega en el proveedor del servicio su administración. El delegar la administración del servicio está motivada por tener ciertas garantías de que el software tiene mayor disponibilidad y fiabilidad. A cambio de esa administración el proveedor del software como servicio establece un precio por su SaaS que llega a compensar tener que administrar el servicio uno mismo que también tiene unos costes en servidor, personal, fiabilidad y también tiempo de dedicación. Una de las funcionalidades que requiere una infraestructura en una organización para desarrollar sus aplicaciones es un repositorio de artefactos o paquetes, GitHub Packages el servicio de repositorio de artefactos compatibles con los artefactos producidos por los principales lenguajes de programación para compartir bibliotecas de código entre ellos Java y JavaScript y tecnologías de contenedores como imágenes Docker.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -232,8 +315,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/04/por-que-y-ejemplo-de-como-desarrollar-un-plugin-de-gradle/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Generalmente cuando se necesita una funcionalidad en Gradle esta suele estar proporcionada por los propios desarrolladores de Gradle, por los propios mantenedores de otras herramientas para integrarlas en Gradle o en último caso por alguien que antes ha tenido la misma necesidad ha publicado un <em>plugin</em>. Si aún así no hay un <em>plugin</em> que ofrezca la funcionalidad que se desea, Gradle ofrece la posibilidad de que cualquiera desarrolle sus propios <em>plugins</em> y los use para sus necesidades específicas o en caso de ser útil para otras personas compartirlo en un repositorio público como cualquier otro.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Generalmente cuando se necesita una funcionalidad en Gradle esta suele estar proporcionada por los propios desarrolladores de Gradle, por los propios mantenedores de otras herramientas para integrarlas en Gradle o en último caso por alguien que antes ha tenido la misma necesidad ha publicado un <em>plugin</em>. Si aún así no hay un <em>plugin</em> que ofrezca la funcionalidad que se desea, Gradle ofrece la posibilidad de que cualquiera desarrolle sus propios <em>plugins</em> y los use para sus necesidades específicas o en caso de ser útil para otras personas compartirlo en un repositorio público como cualquier otro.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2022/04/por-que-y-ejemplo-de-como-desarrollar-un-plugin-de-gradle/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -251,8 +339,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/03/novedades-de-java-18/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Las novedades de Java 18 no añaden nada en el lenguaje pero sí incorpora algunas relevantes en la plataforma como el uso de UTF-8 por defecto, una utilidad de línea de comandos para disponer de un servidor web simple, poder añadir fragmentos de código en los comentarios de la documentación Javadoc así como el marcado para su eliminación en futuras versiones de la finalización de objetos. También publican otras novedades en incubación, nuevas versiones en vistas previa de otras características se publicarán de forma definitiva en siguientes versiones y otros numerosos cambios menores.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Las novedades de Java 18 no añaden nada en el lenguaje pero sí incorpora algunas relevantes en la plataforma como el uso de UTF-8 por defecto, una utilidad de línea de comandos para disponer de un servidor web simple, poder añadir fragmentos de código en los comentarios de la documentación Javadoc así como el marcado para su eliminación en futuras versiones de la finalización de objetos. También publican otras novedades en incubación, nuevas versiones en vistas previa de otras características se publicarán de forma definitiva en siguientes versiones y otros numerosos cambios menores.</strong></p>
         
+        <p><a href="https://picodotdev.github.io/blog-bitix/2022/03/novedades-de-java-18/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
@@ -270,27 +363,13 @@
         <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/03/cambiar-el-comportamiento-de-la-aplicacion-con-configuracion-anotaciones-y-condicionales-en-spring-boot/"/>
         <author><name>picodotdev</name></author>
         <content type="html">
-        <![CDATA[<p><strong>Aparte de un sistema de configuración muy flexible para proporcionar configuración de diferentes fuentes, Spring permite cambiar el comportamiento de la aplicación en base a los valores resueltos de las propiedades de configuración. Mediante configuración y sin realizar cambios en el código fuente el contenedor de inversión de dependencias determina las instancias y sus dependencias que crea.</strong></p>]]>
+        <![CDATA[
+
+        <p><strong>Aparte de un sistema de configuración muy flexible para proporcionar configuración de diferentes fuentes, Spring permite cambiar el comportamiento de la aplicación en base a los valores resueltos de las propiedades de configuración. Mediante configuración y sin realizar cambios en el código fuente el contenedor de inversión de dependencias determina las instancias y sus dependencias que crea.</strong></p>
         
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2022/02/validar-las-propiedades-de-configuracion-de-spring-boot-al-iniciar-la-aplicacion/</id>
-        <title>Validar las propiedades de configuración de Spring Boot al iniciar la aplicación</title>
-        <updated>2022-02-03T18:00:00+01:00</updated>
-        <published>2022-02-03T18:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/02/validar-las-propiedades-de-configuracion-de-spring-boot-al-iniciar-la-aplicacion/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Spring permite realizar validaciones sobre las propiedades de configuración antes de iniciar la aplicación, esto permite evitar errores en tiempo de ejecución más difíciles de depurar ya que la excepción que se origine quizá sea difícil de asociar a que el valor una variable de configuración es incorrecta, por ejemplo, que una variable de configuración no tiene valor y si fuese una contraseña de base de datos originar un fallo de conexión a la base de datos o que un servicio REST devolviese un error 403 por no proporcionar la credencial. Con las mismas anotaciones de validación sobre las propiedades de configuración del paquete <em>javax.validation</em> que se utilizan para validar <em>beans</em> de Java se pueden utilizar para validar los valores de configuración de Spring.</strong></p>]]>
-        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2022/03/cambiar-el-comportamiento-de-la-aplicacion-con-configuracion-anotaciones-y-condicionales-en-spring-boot/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
         </content>
         
             
