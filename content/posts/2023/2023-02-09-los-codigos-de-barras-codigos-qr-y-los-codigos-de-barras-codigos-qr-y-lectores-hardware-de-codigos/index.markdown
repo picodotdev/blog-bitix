@@ -60,12 +60,12 @@ En los formatos matriciales o de dos dimensiones están:
     gallery="true"
     image1="image:ean.webp" optionsthumb1="300x250" title1="Código de barras EAN"
     image2="image:upc.webp" optionsthumb2="300x250" title2="Código de barras UPC"
-    caption="Código de barras lineales EAN y UPC" >}}
+    caption="Códigos de lineales EAN y UPC" >}}
 {{< image
     gallery="true"
     image1="image:qr-code.webp" optionsthumb1="300x250" title1="Código QR"
     image2="image:data-matrix.webp" optionsthumb2="300x250" title2="Código Maxi Code"
-    caption="Código matriciales QR Code y Maxi Code" >}}
+    caption="Códigos matriciales QR Code y Maxi Code" >}}
 
 ### Aplicaciones para generar códigos de barras y códigos
 

@@ -99,8 +99,8 @@ Como el programa Decoder soporta decodificación dada una imagen permite comprob
 
 {{< image
     gallery="true"
-    image1="image:decoder.webp" optionsthumb1="300x200" title1="Código QR"
-    caption="Código QR" >}}
+    image1="image:decoder.webp" optionsthumb1="300x200" title1="Decodificar código QR"
+    caption="Decodificar código QR" >}}
 
 Normalmente los códigos suelen generarse en los colores blanco y negro pero también es posible cambiar el color primario y de fondo si se desean otros colores teniendo en cuenta que han de ser colores que el lector pueda reconocer al leerlo. Hay que cambiar el formato del píxel de la imagen con _BufferedImage.TYPE\_INT\_ARGB_ y especificar otros colores en la clase _Java2DRenderer_.
 
