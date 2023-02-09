@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Los códigos de barras son una forma para que las computadoras reconozcan un código a partir de una etiqueta de un producto. Desde un lenguaje de programación como Java es posible generar códigos lineales o matriciales de diferentes estándares utilizando la librería que implemente el estándar. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Generar códigos de barras y códigos QR con Java</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/" hreflang="es" title="Generar códigos de barras y códigos QR con Java">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Generar códigos de barras y códigos QR con Java">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/qr-code_hu8f8fcfe52013a3436c02f7debd82eb59_1651_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Los códigos de barras son una forma para que las computadoras reconozcan un código a partir de una etiqueta de un producto. Desde un lenguaje de programación como Java es posible generar códigos lineales o matriciales de diferentes estándares utilizando la librería que implemente el estándar. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/qr-code_hu8f8fcfe52013a3436c02f7debd82eb59_1651_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Generar códigos de barras y códigos QR con Java">
+<meta name="twitter:description" content="Los códigos de barras son una forma para que las computadoras reconozcan un código a partir de una etiqueta de un producto. Desde un lenguaje de programación como Java es posible generar códigos lineales o matriciales de diferentes estándares utilizando la librería que implemente el estándar. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/"
+    },
+    "headline": "Generar códigos de barras y códigos QR con Java",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/qr-code_hu8f8fcfe52013a3436c02f7debd82eb59_1651_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2023-02-09T20:00:00+02:00",
+    "dateModified": "2023-02-09T20:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1267",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Los códigos de barras son una forma para que las computadoras reconozcan un código a partir de una etiqueta de un producto. Desde un lenguaje de programación como Java es posible generar códigos lineales o matriciales de diferentes estándares utilizando la librería que implemente el estándar."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9R8XCRGSMY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:600px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="7450235768"></ins>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Generar códigos de barras y códigos QR con Java</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>09/02/2023</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Los códigos de barras son una forma para que las computadoras reconozcan un código a partir de una etiqueta de un producto. Desde un lenguaje de programación como Java es posible generar códigos lineales o matriciales de diferentes estándares utilizando la librería que implemente el estándar.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:90px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="8238629013"></ins>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>Los códigos de barras y códigos QR son una imagen que codifica información y que es fácilmente legible por las computadoras con hardware dedicado. Son muy utilizados y su uso está muy extendido en diferentes ámbitos de la industria como en el sector de la distribución en supermercados, la logística, tiendas y comercios y en las entradas para el acceso a espectáculos digitales o impresas.</p>
+<p>Cualquier producto de un supermercado está identificado por un código de barras que las cajeras al realizar el cobro simplemente tienen que pasar para que el lector lea el código, identifique el producto y añada su coste una el recibo de la compra. Todo automatizado por la computadora del cajero y registrando los productos de forma rápida para el cliente y también de forma sencilla por el empleado del supermercado.</p>
+<p>Hay diferentes estándares de códigos de barras lineales como los de los productos de supermercado y otro tipo de códigos matriciales como los códigos QR con una imagen en dos dimensiones. En esencia codifican en una imagen el código compuesto de números o caracteres, con una cantidad limitada o de cualquier longitud según el estándar.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/">Los códigos de barras, códigos QR y lectores hardware de códigos</a></li>
+</ul>
+<p>Los lectores son un dispositivo hardware que permiten reconocer los códigos, se conectan al ordenador mediante cable USB o de forma inalámbrica y no necesitan de instalar controladores y son compatibles con cualquier sistema operativo ya sea <a href="https://www.microsoft.com/es-es/windows/">Windows</a>, <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> o <a href="https://www.apple.com/macos/">macOS</a>. Los lectores de códigos hardware son en esencia un teclado y el código que reconocen es como si se teclea manualmente con un teclado, teclear el código y son compatibles con cualquier programa.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07CBS52KJ&amp;linkId=48b106fcede17cd5010e264dde0c0821" title="Amazon" class="lozad"></iframe>
+</div>
+<p>Hay algunas aplicaciones para generar códigos de barras y códigos QR, dos aplicaciones disponibles en GNU/Linux en formato <a href="https://flatpak.org/">Flatpak</a> son <a href="https://flathub.org/apps/details/uk.org.zint.zint-qt">Zint Barcode Studio</a> que soporta multitud de estándares y <a href="https://flathub.org/apps/details/com.belmoussaoui.Decoder">Decoder</a> solo sirve para códigos QR pero que permite el reconocimiento dada una imagen o una captura de pantalla.</p>
+<p>Los códigos de barras y códigos QR se pueden generar desde un programa e incluir la imagen del código.</p>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#librerías-para-generar-códigos-de-barras-y-códigos-qr-en-java">Librerías para generar códigos de barras y códigos QR en Java</a></li>
+    <li><a href="#ejemplos-de-código">Ejemplos de código</a>
+      <ul>
+        <li><a href="#generar-un-código-de-barras-con-java">Generar un código de barras con Java</a></li>
+        <li><a href="#generar-un-código-qr-con-java">Generar un código QR con Java</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
+<h3 id="librerías-para-generar-códigos-de-barras-y-códigos-qr-en-java">Librerías para generar códigos de barras y códigos QR en Java</h3>
+<p>En el caso del lenguaje de programación Java hay varias librerías que permiten generar códigos de barras y códigos QR. Cada librería implementa un subconjunto de todos los estándares de códigos lineales o matriciales y ofrecen una API para el lenguaje de programación.</p>
+<p>Como hay varias opciones hay que determinar por algún criterio cuál de ellas utilizar, teniendo en cuenta que varias de estas librerías son de código abierto hechos como un proyecto de una persona. Algunos criterios para elegir una son por supuesto los estándares que soporta este simple hecho ya puede descartar alguna opción si no soporta el estándar que se necesita o hay alguna librería que soporta más estándares o mejor, otro criterio es su popularidad, si tiene actualizaciones recientes de corrección de errores o nuevas características y su antigüedad.</p>
+<p>En Java algunas de las librerías de código abierto son las siguientes pero que por su estado de mantenimiento es mejor otra opción:</p>
+<ul>
+<li><a href="https://github.com/barnhill/barcode-java">barcode-java</a>: soporta varios estándares de códigos lineales.</li>
+<li><a href="https://barbecue.sourceforge.net/">Barbecue</a>: una librería cuya última actualización es del 2007.</li>
+<li><a href="http://barcode4j.sourceforge.net/:">Barcode4J</a> una librería cuya última actualización es del 2012.</li>
+<li><a href="https://github.com/zxing/zxing">ZXing</a>: el autor de esta librería ha dejado de desarrollar y solo incorpora los cambios que se le envíen.</li>
+</ul>
+<p>También hay algunas librerías comerciales con un coste por su uso bastante significativo pero que tienen algunas características que no están en las de código abierto como el reconocimiento del código dada una imagen además de seguramente tener mejor mantenimiento. Dos librerías comerciales para generar códigos son:</p>
+<ul>
+<li><a href="https://www.barcodelib.com/java_barcode/main.html">Barcode for Java</a></li>
+<li><a href="https://products.aspose.com/barcode/java/">Aspose Java Barcode Generation &amp; Recognition API</a></li>
+<li><a href="https://www.e-iceblue.com/Introduce/free-barcode-for-java.html">Free Spire.Barcode for Java</a></li>
+</ul>
+<p>Buscando alguna opción de código abierto pero mejor mantenida que los casos anteriores está la siguiente que soporta una buena cantidad de estándares entre los que están los más utilizados:</p>
+<ul>
+<li><a href="https://github.com/woo-j/OkapiBarcode">OkapiBarcode</a></li>
+</ul>
+<h3 id="ejemplos-de-código">Ejemplos de código</h3>
+<p>Los siguiente ejemplos de código son utilizando la librería OkapiBarcode que en esencia generan una imagen utilizando las clases que incluye el JDK de Java, esta imagen se puede exportar en diferentes formatos como <em>png</em> y <em>jpg</em>.</p>
+<h4 id="generar-un-código-de-barras-con-java">Generar un código de barras con Java</h4>
+<p>La librería ofrece una clase con el mismo nombre por cada estándar que implementa. En los códigos lineales se ofrece la posibilidad de mostrar el código del texto que codifica la imagen, lo que es útil en caso de que el lector hardware no funcione y haya que introducir manualmente el código en el ordenador. Se puede especificar el tamaño vertical de las barras, la fuente y posición del texto y es recomendable utilizar el <em>RenderingHints.VALUE_TEXT_ANTIALIAS_ON</em> para que el texto tenga mejor aspecto aplicando <em>antialias</em> a la fuente al generar la imagen.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/">Obtener el ancho y alto, escalar y convertir a otro formato imágenes con Java</a></li>
+</ul>
+<p>El estándar que se suele utilizar en los productos del supermercado es el EAN o UPN que es el que se muestra en la siguiente imagen, estos son varios estándares de códigos lineales.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/code-128_hu928f0a49a8e08d99ff76348405ff89a4_5255_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Code 128"><img src="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/code-128_hu928f0a49a8e08d99ff76348405ff89a4_5255_200x150_fit_q90_h2_box_3.webp" width="200" height="77" alt="Code 128" title="Code 128" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/ean-13_hu84c31a239302fd91e2292bd829086e6b_5604_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="EAN 13"><img src="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/ean-13_hu84c31a239302fd91e2292bd829086e6b_5604_200x150_fit_q90_h2_box_3.webp" width="200" height="73" alt="EAN 13" title="EAN 13" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/upc_hu2008b2d36fb4b3a2fc165ad53ee59dbc_5509_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="UPC"><img src="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/upc_hu2008b2d36fb4b3a2fc165ad53ee59dbc_5509_200x150_fit_q90_h2_box_3.webp" width="200" height="73" alt="UPC" title="UPC" class="&#34; " loading="lazy"></a></p>
+<figcaption>Code 128, EAN 13 y UPC</figcaption>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span><span class="lnt">59&#10;</span><span class="lnt">60&#10;</span><span class="lnt">61&#10;</span><span class="lnt">62&#10;</span><span class="lnt">63&#10;</span><span class="lnt">64&#10;</span><span class="lnt">65&#10;</span><span class="lnt">66&#10;</span><span class="lnt">67&#10;</span><span class="lnt">68&#10;</span><span class="lnt">69&#10;</span><span class="lnt">70&#10;</span><span class="lnt">71&#10;</span><span class="lnt">72&#10;</span><span class="lnt">73&#10;</span><span class="lnt">74&#10;</span><span class="lnt">75&#10;</span><span class="lnt">76&#10;</span><span class="lnt">77&#10;</span><span class="lnt">78&#10;</span><span class="lnt">79&#10;</span><span class="lnt">80&#10;</span><span class="lnt">81&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javabarcode</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.awt.*</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.awt.image.BufferedImage</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">javax.imageio.ImageIO</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">uk.org.okapibarcode.backend.Code128</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">uk.org.okapibarcode.backend.Ean</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">uk.org.okapibarcode.backend.HumanReadableLocation</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">uk.org.okapibarcode.backend.QrCode</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">uk.org.okapibarcode.backend.Upc</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">uk.org.okapibarcode.output.Java2DRenderer</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Code128</span> <span class="n">barcode</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Code128</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">barcode</span><span class="o">.</span><span class="na">setFontSize</span><span class="o">(</span><span class="mi">32</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">barcode</span><span class="o">.</span><span class="na">setModuleWidth</span><span class="o">(</span><span class="mi">4</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">barcode</span><span class="o">.</span><span class="na">setBarHeight</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">barcode</span><span class="o">.</span><span class="na">setHumanReadableLocation</span><span class="o">(</span><span class="n">HumanReadableLocation</span><span class="o">.</span><span class="na">BOTTOM</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">barcode</span><span class="o">.</span><span class="na">setContent</span><span class="o">(</span><span class="s">&#34;1234567890&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">barcode</span><span class="o">.</span><span class="na">getWidth</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">barcode</span><span class="o">.</span><span class="na">getHeight</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">BufferedImage</span> <span class="n">image</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedImage</span><span class="o">(</span><span class="n">width</span><span class="o">,</span> <span class="n">height</span><span class="o">,</span> <span class="n">BufferedImage</span><span class="o">.</span><span class="na">TYPE_BYTE_GRAY</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Graphics2D</span> <span class="n">g2d</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="na">createGraphics</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">g2d</span><span class="o">.</span><span class="na">setRenderingHint</span><span class="o">(</span><span class="n">RenderingHints</span><span class="o">.</span><span class="na">KEY_TEXT_ANTIALIASING</span><span class="o">,</span> <span class="n">RenderingHints</span><span class="o">.</span><span class="na">VALUE_TEXT_ANTIALIAS_ON</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Java2DRenderer</span> <span class="n">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Java2DRenderer</span><span class="o">(</span><span class="n">g2d</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="n">Color</span><span class="o">.</span><span class="na">WHITE</span><span class="o">,</span> <span class="n">Color</span><span class="o">.</span><span class="na">BLACK</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">renderer</span><span class="o">.</span><span class="na">render</span><span class="o">(</span><span class="n">barcode</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">ImageIO</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">image</span><span class="o">,</span> <span class="s">&#34;png&#34;</span><span class="o">,</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;code-128.png&#34;</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Ean</span> <span class="n">ean13</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Ean</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">ean13</span><span class="o">.</span><span class="na">setFontSize</span><span class="o">(</span><span class="mi">32</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">ean13</span><span class="o">.</span><span class="na">setModuleWidth</span><span class="o">(</span><span class="mi">4</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">ean13</span><span class="o">.</span><span class="na">setBarHeight</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">ean13</span><span class="o">.</span><span class="na">setHumanReadableLocation</span><span class="o">(</span><span class="n">HumanReadableLocation</span><span class="o">.</span><span class="na">BOTTOM</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">ean13</span><span class="o">.</span><span class="na">setContent</span><span class="o">(</span><span class="s">&#34;1234567890&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">ean13</span><span class="o">.</span><span class="na">getWidth</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">ean13</span><span class="o">.</span><span class="na">getHeight</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">BufferedImage</span> <span class="n">image</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedImage</span><span class="o">(</span><span class="n">width</span><span class="o">,</span> <span class="n">height</span><span class="o">,</span> <span class="n">BufferedImage</span><span class="o">.</span><span class="na">TYPE_BYTE_GRAY</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Graphics2D</span> <span class="n">g2d</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="na">createGraphics</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">g2d</span><span class="o">.</span><span class="na">setRenderingHint</span><span class="o">(</span><span class="n">RenderingHints</span><span class="o">.</span><span class="na">KEY_TEXT_ANTIALIASING</span><span class="o">,</span> <span class="n">RenderingHints</span><span class="o">.</span><span class="na">VALUE_TEXT_ANTIALIAS_ON</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Java2DRenderer</span> <span class="n">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Java2DRenderer</span><span class="o">(</span><span class="n">g2d</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="n">Color</span><span class="o">.</span><span class="na">WHITE</span><span class="o">,</span> <span class="n">Color</span><span class="o">.</span><span class="na">BLACK</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">renderer</span><span class="o">.</span><span class="na">render</span><span class="o">(</span><span class="n">ean13</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">ImageIO</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">image</span><span class="o">,</span> <span class="s">&#34;png&#34;</span><span class="o">,</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;ean-13.png&#34;</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Upc</span> <span class="n">upc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Upc</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">upc</span><span class="o">.</span><span class="na">setFontSize</span><span class="o">(</span><span class="mi">32</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">upc</span><span class="o">.</span><span class="na">setModuleWidth</span><span class="o">(</span><span class="mi">4</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">upc</span><span class="o">.</span><span class="na">setBarHeight</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">upc</span><span class="o">.</span><span class="na">setHumanReadableLocation</span><span class="o">(</span><span class="n">HumanReadableLocation</span><span class="o">.</span><span class="na">BOTTOM</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">upc</span><span class="o">.</span><span class="na">setContent</span><span class="o">(</span><span class="s">&#34;1234567890&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">upc</span><span class="o">.</span><span class="na">getWidth</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">upc</span><span class="o">.</span><span class="na">getHeight</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">BufferedImage</span> <span class="n">image</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedImage</span><span class="o">(</span><span class="n">width</span><span class="o">,</span> <span class="n">height</span><span class="o">,</span> <span class="n">BufferedImage</span><span class="o">.</span><span class="na">TYPE_BYTE_GRAY</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Graphics2D</span> <span class="n">g2d</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="na">createGraphics</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">g2d</span><span class="o">.</span><span class="na">setRenderingHint</span><span class="o">(</span><span class="n">RenderingHints</span><span class="o">.</span><span class="na">KEY_TEXT_ANTIALIASING</span><span class="o">,</span> <span class="n">RenderingHints</span><span class="o">.</span><span class="na">VALUE_TEXT_ANTIALIAS_ON</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Java2DRenderer</span> <span class="n">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Java2DRenderer</span><span class="o">(</span><span class="n">g2d</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="n">Color</span><span class="o">.</span><span class="na">WHITE</span><span class="o">,</span> <span class="n">Color</span><span class="o">.</span><span class="na">BLACK</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">renderer</span><span class="o">.</span><span class="na">render</span><span class="o">(</span><span class="n">upc</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">ImageIO</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">image</span><span class="o">,</span> <span class="s">&#34;png&#34;</span><span class="o">,</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;upc.png&#34;</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-1.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="n">plugins</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;application&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">repositories</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">dependencies</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;uk.org.okapibarcode:okapibarcode:0.3.3&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">application</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mainClass</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.javabarcode.Main&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<h4 id="generar-un-código-qr-con-java">Generar un código QR con Java</h4>
+<p>Otro formato de códigos son los que tienen dos dimensiones entre los que está el popular código QR que muchos <em>smartphones</em> reconocen con la cámara.</p>
+<p>En este caso basta instancia la clase que representa el código QR y proporcionarle el contenido que se desea codificar, el proceso de generación de la imagen es igual que en el caso de los códigos de barras.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/qr-code_hu8f8fcfe52013a3436c02f7debd82eb59_1651_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Código QR"><img src="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/qr-code_hu8f8fcfe52013a3436c02f7debd82eb59_1651_300x200_fit_q90_h2_box_3.webp" width="168" height="168" alt="Código QR" title="Código QR" class="&#34; " loading="lazy"></a></p>
+<figcaption>Código QR</figcaption>
+</figure>
+</div>
+<p>Como el programa Decoder soporta decodificación dada una imagen permite comprobar si el código QR contiene el valor codificado al generarla.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/decoder_hucc0c148ba1bec148b8072c202e268533_22250_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Código QR"><img src="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/decoder_hucc0c148ba1bec148b8072c202e268533_22250_300x200_fit_q90_h2_box_3.webp" width="246" height="200" alt="Código QR" title="Código QR" class="&#34; " loading="lazy"></a></p>
+<figcaption>Código QR</figcaption>
+</figure>
+</div>
+<p>Normalmente los códigos suelen generarse en los colores blanco y negro pero también es posible cambiar el color primario y de fondo si se desean otros colores teniendo en cuenta que han de ser colores que el lector pueda reconocer al leerlo. Hay que cambiar el formato del píxel de la imagen con <em>BufferedImage.TYPE_INT_ARGB</em> y especificar otros colores en la clase <em>Java2DRenderer</em>.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/qr-code-blogbitix_huc92b9b6434f68ec7389b29a71115d33a_6620_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Código QR en color"><img src="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/qr-code-blogbitix_huc92b9b6434f68ec7389b29a71115d33a_6620_300x200_fit_q90_h2_box_3.webp" width="200" height="200" alt="Código QR en color" title="Código QR en color" class="&#34; " loading="lazy"></a></p>
+<figcaption>Código QR en color</figcaption>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javabarcode</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">QrCode</span> <span class="n">qrCode</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QrCode</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">qrCode</span><span class="o">.</span><span class="na">setContent</span><span class="o">(</span><span class="s">&#34;1234567890&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">qrCode</span><span class="o">.</span><span class="na">getWidth</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">qrCode</span><span class="o">.</span><span class="na">getHeight</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">BufferedImage</span> <span class="n">image</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedImage</span><span class="o">(</span><span class="n">width</span> <span class="o">*</span> <span class="mi">8</span><span class="o">,</span> <span class="n">height</span> <span class="o">*</span> <span class="mi">8</span><span class="o">,</span> <span class="n">BufferedImage</span><span class="o">.</span><span class="na">TYPE_BYTE_GRAY</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Graphics2D</span> <span class="n">g2d</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="na">createGraphics</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">g2d</span><span class="o">.</span><span class="na">setRenderingHint</span><span class="o">(</span><span class="n">RenderingHints</span><span class="o">.</span><span class="na">KEY_TEXT_ANTIALIASING</span><span class="o">,</span> <span class="n">RenderingHints</span><span class="o">.</span><span class="na">VALUE_TEXT_ANTIALIAS_ON</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Java2DRenderer</span> <span class="n">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Java2DRenderer</span><span class="o">(</span><span class="n">g2d</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="n">Color</span><span class="o">.</span><span class="na">WHITE</span><span class="o">,</span> <span class="n">Color</span><span class="o">.</span><span class="na">BLACK</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">renderer</span><span class="o">.</span><span class="na">render</span><span class="o">(</span><span class="n">qrCode</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">ImageIO</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">image</span><span class="o">,</span> <span class="s">&#34;png&#34;</span><span class="o">,</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;qr-code.png&#34;</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">QrCode</span> <span class="n">qrCode</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QrCode</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">qrCode</span><span class="o">.</span><span class="na">setContent</span><span class="o">(</span><span class="s">&#34;https://picodotdev.github.io/blog-bitix/&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">qrCode</span><span class="o">.</span><span class="na">getWidth</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">qrCode</span><span class="o">.</span><span class="na">getHeight</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">BufferedImage</span> <span class="n">image</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedImage</span><span class="o">(</span><span class="n">width</span> <span class="o">*</span> <span class="mi">8</span><span class="o">,</span> <span class="n">height</span> <span class="o">*</span> <span class="mi">8</span><span class="o">,</span> <span class="n">BufferedImage</span><span class="o">.</span><span class="na">TYPE_INT_ARGB</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Graphics2D</span> <span class="n">g2d</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="na">createGraphics</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">g2d</span><span class="o">.</span><span class="na">setRenderingHint</span><span class="o">(</span><span class="n">RenderingHints</span><span class="o">.</span><span class="na">KEY_TEXT_ANTIALIASING</span><span class="o">,</span> <span class="n">RenderingHints</span><span class="o">.</span><span class="na">VALUE_TEXT_ANTIALIAS_ON</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Java2DRenderer</span> <span class="n">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Java2DRenderer</span><span class="o">(</span><span class="n">g2d</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="n">Color</span><span class="o">.</span><span class="na">YELLOW</span><span class="o">,</span> <span class="n">Color</span><span class="o">.</span><span class="na">BLUE</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">renderer</span><span class="o">.</span><span class="na">render</span><span class="o">(</span><span class="n">qrCode</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">ImageIO</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">image</span><span class="o">,</span> <span class="s">&#34;png&#34;</span><span class="o">,</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;qr-code-blogbitix.png&#34;</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-2.java</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode fs-6">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaBarcode">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.baeldung.com/java-generating-barcodes-qr-codes">Generating Barcodes and QR Codes in Java</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/02/introduccion-conceptos-y-uso-basico-del-broker-de-mensajes-apache-kafka/">
+                <img src="/blog-bitix/assets/images/logotypes/apache-kafka.svg" width="326" height="125" alt="Introducción, conceptos y uso básico del broker de mensajes Apache Kafka" title="Introducción, conceptos y uso básico del broker de mensajes Apache Kafka" class="" loading="lazy">
+                <h3>Introducción, conceptos y uso básico del broker de mensajes Apache Kafka</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/01/construir-la-imagen-del-contenedor-de-la-aplicacion-usando-buildpacks/">
+                <img src="/blog-bitix/assets/images/logotypes/buildpacksio.svg" width="326" height="125" alt="Construir la imagen del contenedor de la aplicación usando Buildpacks" title="Construir la imagen del contenedor de la aplicación usando Buildpacks" class="" loading="lazy">
+                <h3>Construir la imagen del contenedor de la aplicación usando Buildpacks</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/07/opciones-de-arquitectura-para-emitir-trazas-en-una-aplicacion-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Opciones de arquitectura para emitir trazas en una aplicación Java" title="Opciones de arquitectura para emitir trazas en una aplicación Java" class="" loading="lazy">
+                <h3>Opciones de arquitectura para emitir trazas en una aplicación Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/12/buenas-practicas-de-programacion-sencillas-en-el-codigo-fuente/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Buenas prácticas de programación sencillas en el código fuente" title="Buenas prácticas de programación sencillas en el código fuente" class="" loading="lazy">
+                <h3>Buenas prácticas de programación sencillas en el código fuente</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/">
+                <img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu2efc0f38dfbbf639e271a8370cf93e6f_6602_2560x1440_fit_q90_h2_box_3.webp" width="326" height="125" alt="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" title="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" class="" loading="lazy">
+                <h3>Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/05/el-patron-de-diseno-factory-ventajas-sobre-new-y-diferencias-con-builder/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="El patrón de diseño Factory, ventajas sobre new y diferencias con Builder" title="El patrón de diseño Factory, ventajas sobre new y diferencias con Builder" class="" loading="lazy">
+                <h3>El patrón de diseño Factory, ventajas sobre new y diferencias con Builder</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-674';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2023\/02\/generar-codigos-de-barras-y-codigos-qr-con-java\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2023 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

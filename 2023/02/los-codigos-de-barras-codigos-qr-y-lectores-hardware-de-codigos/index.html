@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Los códigos de barras y códigos QR tienen muchas aplicaciones y son numerosos ámbitos en los que se usan por las ventajas que proporcionan, al ser una imagen legible por las máquinas permiten automatizar de forma rápida y sencilla una tarea tan anodina y mundana como la introducción de los códigos en la computadora. Los lectores hardware de códigos de barras y códigos QR funcionan realmente como un teclado, no necesitan de ningún controlador ni programa y son compatibles con cualquier sistema operativo. Hay varios estándares de códigos de barras y códigos QR con su propia representación gráfica impresa o gráfica, en función del estándar codifica diferente información numérica, alfanumérica y limitada o sin limitación en la cantidad de información. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Los códigos de barras, códigos QR y lectores hardware de códigos</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/" hreflang="es" title="Los códigos de barras, códigos QR y lectores hardware de códigos">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Los códigos de barras, códigos QR y lectores hardware de códigos">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/images/qr-code_hu9c728400bb8eae544a7cdb6cdac0b258_228_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Los códigos de barras y códigos QR tienen muchas aplicaciones y son numerosos ámbitos en los que se usan por las ventajas que proporcionan, al ser una imagen legible por las máquinas permiten automatizar de forma rápida y sencilla una tarea tan anodina y mundana como la introducción de los códigos en la computadora. Los lectores hardware de códigos de barras y códigos QR funcionan realmente como un teclado, no necesitan de ningún controlador ni programa y son compatibles con cualquier sistema operativo. Hay varios estándares de códigos de barras y códigos QR con su propia representación gráfica impresa o gráfica, en función del estándar codifica diferente información numérica, alfanumérica y limitada o sin limitación en la cantidad de información. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/images/qr-code_hu9c728400bb8eae544a7cdb6cdac0b258_228_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Los códigos de barras, códigos QR y lectores hardware de códigos">
+<meta name="twitter:description" content="Los códigos de barras y códigos QR tienen muchas aplicaciones y son numerosos ámbitos en los que se usan por las ventajas que proporcionan, al ser una imagen legible por las máquinas permiten automatizar de forma rápida y sencilla una tarea tan anodina y mundana como la introducción de los códigos en la computadora. Los lectores hardware de códigos de barras y códigos QR funcionan realmente como un teclado, no necesitan de ningún controlador ni programa y son compatibles con cualquier sistema operativo. Hay varios estándares de códigos de barras y códigos QR con su propia representación gráfica impresa o gráfica, en función del estándar codifica diferente información numérica, alfanumérica y limitada o sin limitación en la cantidad de información. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/"
+    },
+    "headline": "Los códigos de barras, códigos QR y lectores hardware de códigos",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/images/qr-code_hu9c728400bb8eae544a7cdb6cdac0b258_228_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2023-02-09T18:30:00+02:00",
+    "dateModified": "2023-02-09T18:30:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1106",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Los códigos de barras y códigos QR tienen muchas aplicaciones y son numerosos ámbitos en los que se usan por las ventajas que proporcionan, al ser una imagen legible por las máquinas permiten automatizar de forma rápida y sencilla una tarea tan anodina y mundana como la introducción de los códigos en la computadora. Los lectores hardware de códigos de barras y códigos QR funcionan realmente como un teclado, no necesitan de ningún controlador ni programa y son compatibles con cualquier sistema operativo. Hay varios estándares de códigos de barras y códigos QR con su propia representación gráfica impresa o gráfica, en función del estándar codifica diferente información numérica, alfanumérica y limitada o sin limitación en la cantidad de información."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9R8XCRGSMY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:600px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="7450235768"></ins>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Los códigos de barras, códigos QR y lectores hardware de códigos</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>09/02/2023</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/hardware/">hardware</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/software/">software</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Los códigos de barras y códigos QR tienen muchas aplicaciones y son numerosos ámbitos en los que se usan por las ventajas que proporcionan, al ser una imagen legible por las máquinas permiten automatizar de forma rápida y sencilla una tarea tan anodina y mundana como la introducción de los códigos en la computadora. Los lectores hardware de códigos de barras y códigos QR funcionan realmente como un teclado, no necesitan de ningún controlador ni programa y son compatibles con cualquier sistema operativo. Hay varios estándares de códigos de barras y códigos QR con su propia representación gráfica impresa o gráfica, en función del estándar codifica diferente información numérica, alfanumérica y limitada o sin limitación en la cantidad de información.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:90px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="8238629013"></ins>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <p>Los códigos de barras facilitan la identificación de productos con un lector, no es necesario teclear el código sino que hay dispositivos hardware que los reconocen, se representa con una imagen que es legible por una computadora con un hardware especializado.</p>
+<p>Usar un lector hardware es mucho más sencillo y rápido, facilita mucho la labor y ahorra mucho tiempo en los ámbitos que se utilizan. Es habitual en puntos de venta como tiendas, supermercados y comercios, ámbitos como los de distribución de productos y logística, también es habitual para permitir el acceso a eventos con entradas en papel o digitales en el móvil.</p>
+<p>Hay diferentes estándares y aplicaciones para generar códigos de barras, es posible también generarlos desde un lenguaje de programación como Java y lectores de hardware especializado y programas de software para leerlos.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/">Generar códigos de barras y códigos QR con Java</a></li>
+</ul>
+<p>Dado que los códigos de barras son leídos y procesados por una computadora proporciona varias ventajas como conocer qué productos se están vendiendo, cuál es el inventario de productos en tiempo real, con las tarjetas de cliente permite conocer qué productos consumen cada cliente y cuando, conocer que productos hay que reponer, además de un históricos de datos para extraer valiosa información que permita optimizar el negocio y por supuesto un rápido paso por caja y una simplificación del la tarea del trabajador en la caja.</p>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#códigos-de-barras-y-códigos-qr">Códigos de barras y códigos QR</a></li>
+    <li><a href="#los-diferentes-estándares">Los diferentes estándares</a></li>
+    <li><a href="#aplicaciones-para-generar-códigos-de-barras-y-códigos">Aplicaciones para generar códigos de barras y códigos</a></li>
+    <li><a href="#lectores-de-códigos-de-barras-y-códigos-qr">Lectores de códigos de barras y códigos QR</a></li>
+  </ul>
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
+<h3 id="códigos-de-barras-y-códigos-qr">Códigos de barras y códigos QR</h3>
+<p>El código se corresponde con el identificador de un producto, con el código se realiza la operación ya sea añadirlo a una lista de la compra en un supermercado o permitir el acceso a un evento deportivo. Hay varios estándares de códigos de barras y códigos QR pero en definitiva todos se representan con una imagen, normalmente son en blanco y negro pero también se admiten algunas combinaciones de colores sobre todo el los formatos matriciales o de dos dimensiones.</p>
+<p>Algunos estándares se representan con una secuencia de barras normalmente en blanco y negro con el número de código al pié de del código de barras pos si hay que introducirlo manualmente por estar dañado el soporte en el que está el código o por si no se dispone de un lector hardware de código de barras, se ha estropeado o no funciona en el ordenador.</p>
+<p>Dependiendo del estándar la información que codifica es un conjunto de números limitado, otros formatos permiten almacenar texto de longitud variable. Dependiendo del ámbito que se vayan a usar e información que tienen los códigos es más adecuado utilizar un estándar u otro.</p>
+<h3 id="los-diferentes-estándares">Los diferentes estándares</h3>
+<p>Hay diferentes tipos de códigos en cuanto a sus características y aspecto impreso. Un tipo de códigos son los lineales normalmente de una dimensión dispuesta en horizontal, pueden tener una altura variable y de esta forma tienen el aspecto de códigos de barras verticales formados por un conjunto de lineas en color negro y espacios en blanco de diferente anchura, en los productos de supermercado se usa alguna variación del estándar UPC o EAN. El otro tipo de códigos son los matriciales hay más diversidad en su aspecto visual por ofrecer más opciones incluso utilizando más colores que el blanco y negro, uno de los más conocidos de este tipo son los códigos QR formados por un rectángulo de cuadraditos negros y blancos.</p>
+<p>Otra de sus variaciones está en si son continuos en el que un valor no puede leerse de forma individual dependiendo de la información del gráfico a continuación o discretos en los que cada carácter tiene su propia representación y se pueden leer de forma aislada de los siguientes.</p>
+<p>En la <a href="https://en.wikipedia.org/wiki/Barcode">página de la wikipedia de Barcodes</a> hay una información detallada de los estándares que existen y en algunos casos como se representan gráficamente. Algunos ejemplos de la representación impresa o gráfica de códigos de barras y códigos QR son los siguientes, en la wikipedia hay más ejemplos.</p>
+<p>Algunos de las familias formatos más populares lineales son los siguiente, habiendo dentro de cada familia algunas variaciones:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Code_128">Code 128</a></li>
+<li><a href="https://en.wikipedia.org/wiki/International_Article_Number">EAN</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Universal_Product_Code">UPC</a></li>
+</ul>
+<p>En los formatos matriciales o de dos dimensiones están:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/QR_code">Códigos QR</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Data_Matrix">Data Matrix</a></li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/images/ean_hudf2f7616d942428679ace5c584270460_368_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Código de barras EAN"><img src="/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/images/ean_hudf2f7616d942428679ace5c584270460_368_300x250_fit_q90_h2_box_3.webp" width="226" height="154" alt="Código de barras EAN" title="Código de barras EAN" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/images/upc_hudb22ab22629d7086817cf50be3911e79_372_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Código de barras UPC"><img src="/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/images/upc_hudb22ab22629d7086817cf50be3911e79_372_300x250_fit_q90_h2_box_3.webp" width="226" height="154" alt="Código de barras UPC" title="Código de barras UPC" class="&#34; " loading="lazy"></a></p>
+<figcaption>Código de barras lineales EAN y UPC</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/images/qr-code_hu9c728400bb8eae544a7cdb6cdac0b258_228_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Código QR"><img src="/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/images/qr-code_hu9c728400bb8eae544a7cdb6cdac0b258_228_300x250_fit_q90_h2_box_3.webp" width="184" height="184" alt="Código QR" title="Código QR" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/images/data-matrix_hubb3345d52d819ff2e36a4bbbdb9fc204_171_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Código Maxi Code"><img src="/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/images/data-matrix_hubb3345d52d819ff2e36a4bbbdb9fc204_171_300x250_fit_q90_h2_box_3.webp" width="144" height="144" alt="Código Maxi Code" title="Código Maxi Code" class="&#34; " loading="lazy"></a></p>
+<figcaption>Código matriciales QR Code y Maxi Code</figcaption>
+</figure>
+</div>
+<h3 id="aplicaciones-para-generar-códigos-de-barras-y-códigos">Aplicaciones para generar códigos de barras y códigos</h3>
+<p>La aplicación <a href="https://flathub.org/apps/details/uk.org.zint.zint-qt">Zint Barcode Studio</a> permite generar códigos de barras en una gran cantidad de estándares, se puede instalar en <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> fácilmente al estar en formato <a href="https://flatpak.org/">Flatpak</a> con la aplicación Software de <a href="https://www.gnome.org/">GNOME</a>. Se selecciona el estándar para el código de barras, algunas propiedades de la imagen e introducir el código a codificar en la imagen, finalmente la imagen se puede exportar a diferentes formatos de imagen.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux</a></li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/images/zint-gnome-software_huab19722852b5544cdf68550fdf723e03_155974_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Zint Barcode Studio en Software de GNOME"><img src="/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/images/zint-gnome-software_huab19722852b5544cdf68550fdf723e03_155974_300x200_fit_q90_h2_box_3.webp" width="236" height="200" alt="Zint Barcode Studio en Software de GNOME" title="Zint Barcode Studio en Software de GNOME" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/images/zint-barcode-studio_hu421602b9653134e70dc01ab2899dff80_65797_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Zint Barcode Studio"><img src="/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/images/zint-barcode-studio_hu421602b9653134e70dc01ab2899dff80_65797_300x200_fit_q90_h2_box_3.webp" width="181" height="200" alt="Zint Barcode Studio" title="Zint Barcode Studio" class="&#34; " loading="lazy"></a></p>
+<figcaption>Zint Barcode Studio</figcaption>
+</figure>
+</div>
+<p>Otra aplicación sencilla para códigos QR es <a href="https://flathub.org/apps/details/com.belmoussaoui.Decoder">Decodificador</a>, también disponible en GNU/Linux en formato Flatpak muy fácil de instalar. Zink también permite generar códigos QR pero no leerlos, Decodificador permite generar sólo códigos QR pero también leerlos proporcionada la imagen con una captura de imagen desde el ordenador o desde un archivo, sin necesidad de utilizar un móvil.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/images/decoder-gnome-software_hufb109516beb61531200eaec44cbab1e3_96955_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Decoder en Software de GNOME"><img src="/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/images/decoder-gnome-software_hufb109516beb61531200eaec44cbab1e3_96955_300x200_fit_q90_h2_box_3.webp" width="236" height="200" alt="Decoder en Software de GNOME" title="Decoder en Software de GNOME" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/images/decoder_hu86a74d59560811d07c7aadf5dddfb928_26240_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Decoder"><img src="/blog-bitix/2023/02/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos/images/decoder_hu86a74d59560811d07c7aadf5dddfb928_26240_300x200_fit_q90_h2_box_3.webp" width="246" height="200" alt="Decoder" title="Decoder" class="&#34; " loading="lazy"></a></p>
+<figcaption>Decoder</figcaption>
+</figure>
+</div>
+<h3 id="lectores-de-códigos-de-barras-y-códigos-qr">Lectores de códigos de barras y códigos QR</h3>
+<p>Hay dispositivos hardware especializados para leer códigos, algunos soportan varios estándares. Utilizan un láser que escanea la imagen e identifica el código. Muchos no necesitan de ningún software especializado ni controlador para el sistema operativo ya que el dispositivo hardware es como un teclado y al escanear el código es como si se escribiera manualmente en el teclado.</p>
+<p>Funcionan con conexión por cable USB y algunos son inalámbricos por Bluetooth, son compatibles con los sistemas operativos <a href="https://www.microsoft.com/es-es/windows/">Windows</a>, GNU/Linux y <a href="https://www.apple.com/macos/">macOS</a>. Suelen soportar un modo en el que hay que apretar un gatillo para hacer el reconocimiento o en modo continuo de funcionamiento en el que basta pasar el código por delante sin necesidad de pulsar el gatillo lo que permite liberar las manos para coger los productos, esto es un modo eficiente de lectura de códigos para volúmenes de códigos grandes.</p>
+<p>No son muy caros y hay <a href="https://amzn.to/3YCd1S3" rel="sponsored">multitud de modelos de códigos de barras en Amazon</a>, hay que fijarse en los estándares de códigos que soporta y si funciona mediante cable o también es inalámbrico y si es por Bluetooth o radiofrecuencia con un adaptador, algunos solo soportan códigos lineales, otros más capaces soportan ambos lineales y matriciales.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07CBS52KJ&amp;linkId=48b106fcede17cd5010e264dde0c0821" title="Amazon" class="lozad"></iframe>
+</div>
+<p>Hay aplicaciones para <em>smartphones</em> que combinado con la cámara y reconocimiento de imagen permite actuar como un lector de códigos. En la tienda de aplicaciones <a href="https://play.google.com/store/apps">Google Play</a> para <a href="https://www.android.com/">Android</a> hay varias, algunas gratuitas simplemente hay que elegir una de confianza por los comentarios de los usuarios.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/C%C3%B3digo_de_barras">Código de barras</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+      <div class="alert alert-info fs-6" role="alert">
+        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Este artículo incluye algunos enlaces de afiliado como Amazon que considero relevante en el contenido del artículo y para el lector. En caso de hacer una comprar a través de estos enlaces recibo una pequeña comisión, sin que afecte al precio del producto, que me ayuda a seguir publicando nuevos artículos y realizar <a href="https://picodotdev.github.io/blog-bitix/series/donacion/">pequeñas donaciones a proyectos de software libre</a>. En caso de que el artículo te haya resultado de interés y útil considera realizar la compra a través de alguno de los enlaces de afiliado del artículo, es correcto también ignorarlos.
+      </div>
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">
+                <img src="/blog-bitix/assets/images/logotypes/intel.svg" width="326" height="125" alt="Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)" title="Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)" class="" loading="lazy">
+                <h3>Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/">
+                <img src="/blog-bitix/assets/images/logotypes/intel.svg" width="326" height="125" alt="Explicación del fallo de seguridad Meltdown y Spectre en los microprocesadores Intel" title="Explicación del fallo de seguridad Meltdown y Spectre en los microprocesadores Intel" class="" loading="lazy">
+                <h3>Explicación del fallo de seguridad Meltdown y Spectre en los microprocesadores Intel</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/11/introduccion-a-bitnami/">
+                <img src="/blog-bitix/assets/images/logotypes/bitnami.svg" width="326" height="125" alt="Introducción a Bitnami" title="Introducción a Bitnami" class="" loading="lazy">
+                <h3>Introducción a Bitnami</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/">
+                <img src="/blog-bitix/assets/images/logotypes/dnie.webp" width="326" height="125" alt="Firmar digitalmente documentos con el DNIe y Sinadura" title="Firmar digitalmente documentos con el DNIe y Sinadura" class="" loading="lazy">
+                <h3>Firmar digitalmente documentos con el DNIe y Sinadura</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/">
+                <img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="326" height="125" alt="Enviar correos electrónicos firmados con el DNIe y Evolution" title="Enviar correos electrónicos firmados con el DNIe y Evolution" class="" loading="lazy">
+                <h3>Enviar correos electrónicos firmados con el DNIe y Evolution</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="326" height="125" alt="Usar el DNI electrónico con Firefox en Linux" title="Usar el DNI electrónico con Firefox en Linux" class="" loading="lazy">
+                <h3>Usar el DNI electrónico con Firefox en Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-673';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2023\/02\/los-codigos-de-barras-codigos-qr-y-lectores-hardware-de-codigos\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2023 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>
