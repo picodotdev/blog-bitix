@@ -29,11 +29,11 @@ Hay juegos como The Last of Us que cuentan una historia, juegos que tienen unos 
 * [Análisis de los juegos de aventuras Uncharted The Nathan Drake Collection][blogbitix-622]
 * [Análisis del juego de aventuras Uncharted 4][blogbitix-634]
 
-[Metal Gear Solid V: The Phantom Pain](https://www.igdb.com/games/metal-gear-solid-v-the-phantom-pain) desarrolado por [Kojima Productions](https://www.igdb.com/companies/kojima-productions) del reconocido desarrollador de juegos [Hideo Kojima](https://es.wikipedia.org/wiki/Hideo_Kojima) es un juego que se puede decir de mundo abierto en el que el protagonista es _The Big Boss_, un mercenario considerado una leyenda con grandes dotes para el combate e infiltración en bases enemigas de forma sigilosa. Entre otros personajes que aparecen están Miller, Ocellot y como villano Skull Face que seguramente a los jugadores de la saga ya conocerán. Además, durante las historias aparecen otros personajes secundarios.
+[Metal Gear Solid V: The Phantom Pain](https://www.igdb.com/games/metal-gear-solid-v-the-phantom-pain) desarrolado por [Kojima Productions](https://www.igdb.com/companies/kojima-productions) del reconocido desarrollador de juegos [Hideo Kojima](https://es.wikipedia.org/wiki/Hideo_Kojima) es un juego que se puede decir de mundo abierto en el que el protagonista es _The Big Boss_, un mercenario considerado una leyenda con grandes dotes para el combate e infiltración en bases enemigas de forma sigilosa. Entre otros personajes que aparecen están Miller, Ocelot y como villano Skull Face que seguramente a los jugadores de la saga ya conocerán. Además, durante las historias aparecen otros personajes secundarios.
 
 {{< image
     gallery="true"
-    image1="image:metal-gear-solid-v-personal-ocellot.webp" optionsthumb1="200x150" title1="Ocellot"
+    image1="image:metal-gear-solid-v-personal-ocelot.webp" optionsthumb1="200x150" title1="Ocelot"
     image2="image:metal-gear-solid-v-personal-miller.webp" optionsthumb2="200x150" title2="Miller"
     image3="image:metal-gear-solid-v-personal-huey.webp" optionsthumb3="200x150" title3="Huey" >}}
 {{< image
