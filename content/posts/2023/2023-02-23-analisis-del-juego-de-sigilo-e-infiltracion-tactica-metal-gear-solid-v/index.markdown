@@ -92,7 +92,9 @@ Cada una de las misiones son relativamente largas que pueden tomar al menos el c
 
 Es la parte principal del juego que consta de 31 misiones en un primer capítulo. Acabadas las 31 misiones principales hay una continuación en un segundo capítulo hasta las 50 misiones pero que la mayoría son repeticiones del capítulo uno con un nivel de dificultad mayor salvo unas pocas que cuentan algunos detalles más de la historia.
 
-Una vez acabado el juego tiene un modo de juego en linea para hacer infiltraciones en las bases de otros jugadores y conseguir desarrollar la base por completo así como los desarrollos.
+Es un juego largo, además de por el numeroso número de misiones principales al que hay que añadir las del segundo capítulo cada misión puede durar al menos un cuarto de hora y es seguro que hay que rejugarla varias veces si se quieren completar todos los objetivos secundarios de cada misión. Una vez acabado el juego tiene un modo de juego en linea para hacer infiltraciones en las bases de otros jugadores y conseguir desarrollar la base por completo así como completar los desarrollos.
+
+En definitiva es un juego que proporciona tantas horas de entretenimiento como se le quieran dedicar. Como en muchos juegos modernos es uno que no se puede decir que uno se lo ha pasado por completo, hay que definir primero que es pasarse el juego, ¿completar la historia?, ¿conseguir todos lo objetivos y objetivos secundarios de la misiones principales?, ¿conseguir todos los coleccionables?, ¿completar también todas las misiones secundarias?, ¿tener una buna clasificación en el modo en linea?, todo esto son muchas cosas que hacer y enorme cantidad de horas de juego que seguramente sobrepasen con suficiencia el centenar.
 
 Además de las misiones principales hay un mayor número de misiones secundarias que llegan a las 250, muchas secundarias con objetivos similares pero que al desarrollarse en diferentes partes del mapa no se notan como repetitivas. A medida que se completan las misiones principales y las secundarias se van ofreciendo más misiones.
 
@@ -102,8 +104,8 @@ Es un juego muy rejugable para completar las misiones de forma diferente, más c
 
 {{< image
     gallery="true"
-    image1="image:metal-gear-solid-v-juego.webp" optionsthumb1="650x450" title1="Juego The Phantom Pain"
-    caption="Juego The Phantom Pain" >}}
+    image1="image:metal-gear-solid-v-juego.webp" optionsthumb1="650x450" title1="Juego Metal Gear Solid V: The Phantom Pain"
+    caption="Juego Metal Gear Solid V: The Phantom Pain" >}}
 
 ### El juego
 
@@ -202,7 +204,7 @@ El mapa es suficientemente grande como para divertirse explorando algunas zonas 
 
 El capítulo uno del juego consta de 31 misiones únicas. Una vez completadas hay un segundo capítulo hasta la misión 50. Algunas de estas misiones del capítulo dos simplemente son misiones del capítulo 1 pero con mayor dificultad. Hay 7 nuevas misiones únicas y que cuenta algunos detalles más de la historia con varias escenas de cinemática que se reproducen al regresar a la base.
 
-Aún siendo el capítulo dos básicamente una repetición con mayor dificultad hay gente que las recomienda jugar por las historias de las nuevas misiones. El juego tiene un modo de juego en línea que permite infiltrarse en bases enemigas para conseguir sus recursos y demostrar la pericia de infiltración que se muestra en una clasificación.
+Aún siendo el capítulo 2 básicamente una repetición con mayor dificultad hay gente que las recomienda jugar por las historias de las nuevas misiones. El juego tiene un modo de juego en línea que permite infiltrarse en bases enemigas para conseguir sus recursos y demostrar la pericia de infiltración que se muestra en una clasificación.
 
 * [Metal Gear Solid 5: The Phantom Pain Wiki Guide, Postgame Missions](https://www.ign.com/wikis/metal-gear-solid-5-the-phantom-pain/Postgame_Missions)
 
@@ -215,6 +217,7 @@ Algunas de las mecánicas que ofrece son:
 * El tiempo cambiante con ventiscas de arena dificulta la visión tanto para el personaje como para los enemigos y permite avanzar sin ser detectado pero con la dificultad de tener también uno menos visión.
 * Tiempo cambiante con lluvia que camufla el ruido de los pasos y permite acercarse a los enemigos de forma más rápida sin ser oído. Y es que con el analógico del mando permite diferentes grados de rapidez al andar, para no ser escuchado no hay que avanzar en un término medio, a más velocidad los pasos hacen ruido y los enemigos se alertan, se giran y dan la alarma si no se les neutraliza.
 * Cambio entre el día y la noche que varía la cantidad de luz y afecta al rango de visión de los enemigos. De día los enemigos detectan los movimientos a más distancia, de noche tienen menos rango de visión moviéndose por las zonas no iluminadas por las luces. Las bombillas se pueden romper disparando teniendo cuidado de que no haya enemigos cerca que oigan el ruido del disparo. De día y con luz al salir de las casas hay un breve momento en el que la luz nos deslumbra e impide una correcta visión en el que estamos indefensos y para lo que hay que estar prevenido.
+* Los desarrollos tardan un tiempo en completarse, algunos desarollos pueden tardar unos 40 o varias horas de tiempo de juego, aunque no de tiempo real, un minuto de tiempo de juego son unos 18 segundos de tiempo real. El procesado de recursos también tardar tiempo. Si no se quiere esperar a que nateuralmente se complete los desarrollos o el procesado de recursos el cigarro permite acelerar el tiempo mientras se está fumando, esto solo se puede hacer en una misión pero también se puede hacer en la base, mientras se está en el helicóptero no es posible utilizar el cigarro.
 
 {{< image
     gallery="true"
@@ -444,7 +447,7 @@ Al estar en modo sigilo es recomendable estar equipado con la pistola de tranqui
 ### Guías y trucos
 
 * [Tips and Tricks](https://www.ign.com/wikis/metal-gear-solid-5-the-phantom-pain/Tips_and_Tricks)
-* [Táctica mission 1 Phantom Limbs](https://www.ign.com/wikis/metal-gear-solid-5-the-phantom-pain/Mission_31_Sahelanthropus)
+* [Táctica mission 1 Phantom Limbs](https://www.ign.com/wikis/metal-gear-solid-5-the-phantom-pain/Mission_1_Phantom_Limbs)
 * [20 essential tips for Metal Gear Solid 5: The Phantom Pain](https://www.gamesradar.com/metal-gear-solid-5-tips/)
 
 {{< youtube
