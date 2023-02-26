@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="De los juegos que he jugado en la PlayStation 4 el Metal Gear Solid V me ha parecido uno de los mejores en el aspecto de diversión y mecánicas diferentes. Ofrece gran libertad de movimientos y formas de afrontar o completar las misiones y en el que aún habiendo jugado ya muchas horas puede descubrirse algo nuevo. Además implementa una inteligencia artificial adaptativa única que hace el juego especial para dificultar nuestra forma de juego y obligarnos a no siempre usar la misma forma de combate. Un juego muy rejugable en el que cada partida incluso en la misma misión siempre tiene algo diferente ya sea por la climatología o por elegir otra ruta de infiltración. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Análisis del juego de sigilo e infiltración táctica Metal Gear Solid V</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/" hreflang="es" title="Análisis del juego de sigilo e infiltración táctica Metal Gear Solid V">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Análisis del juego de sigilo e infiltración táctica Metal Gear Solid V">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v_huad7d705a4902657e97b5b5d8c7f2b4b0_256499_750x750_fit_q90_box.jpg">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="De los juegos que he jugado en la PlayStation 4 el Metal Gear Solid V me ha parecido uno de los mejores en el aspecto de diversión y mecánicas diferentes. Ofrece gran libertad de movimientos y formas de afrontar o completar las misiones y en el que aún habiendo jugado ya muchas horas puede descubrirse algo nuevo. Además implementa una inteligencia artificial adaptativa única que hace el juego especial para dificultar nuestra forma de juego y obligarnos a no siempre usar la misma forma de combate. Un juego muy rejugable en el que cada partida incluso en la misma misión siempre tiene algo diferente ya sea por la climatología o por elegir otra ruta de infiltración. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v_huad7d705a4902657e97b5b5d8c7f2b4b0_256499_750x750_fit_q90_box.jpg">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Análisis del juego de sigilo e infiltración táctica Metal Gear Solid V">
+<meta name="twitter:description" content="De los juegos que he jugado en la PlayStation 4 el Metal Gear Solid V me ha parecido uno de los mejores en el aspecto de diversión y mecánicas diferentes. Ofrece gran libertad de movimientos y formas de afrontar o completar las misiones y en el que aún habiendo jugado ya muchas horas puede descubrirse algo nuevo. Además implementa una inteligencia artificial adaptativa única que hace el juego especial para dificultar nuestra forma de juego y obligarnos a no siempre usar la misma forma de combate. Un juego muy rejugable en el que cada partida incluso en la misma misión siempre tiene algo diferente ya sea por la climatología o por elegir otra ruta de infiltración. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/"
+    },
+    "headline": "Análisis del juego de sigilo e infiltración táctica Metal Gear Solid V",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v_huad7d705a4902657e97b5b5d8c7f2b4b0_256499_750x750_fit_q90_box.jpg"
+        
+      },
+    "datePublished": "2023-02-23T21:00:00+02:00",
+    "dateModified": "2023-02-23T21:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "5832",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "De los juegos que he jugado en la PlayStation 4 el Metal Gear Solid V me ha parecido uno de los mejores en el aspecto de diversión y mecánicas diferentes. Ofrece gran libertad de movimientos y formas de afrontar o completar las misiones y en el que aún habiendo jugado ya muchas horas puede descubrirse algo nuevo. Además implementa una inteligencia artificial adaptativa única que hace el juego especial para dificultar nuestra forma de juego y obligarnos a no siempre usar la misma forma de combate. Un juego muy rejugable en el que cada partida incluso en la misma misión siempre tiene algo diferente ya sea por la climatología o por elegir otra ruta de infiltración."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9R8XCRGSMY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v_huad7d705a4902657e97b5b5d8c7f2b4b0_256499_2560x1440_fit_q90_h2_box.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:600px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="7450235768"></ins>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Análisis del juego de sigilo e infiltración táctica Metal Gear Solid V</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>23/02/2023</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/juegos/">juegos</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">De los juegos que he jugado en la PlayStation 4 el Metal Gear Solid V me ha parecido uno de los mejores en el aspecto de diversión y mecánicas diferentes. Ofrece gran libertad de movimientos y formas de afrontar o completar las misiones y en el que aún habiendo jugado ya muchas horas puede descubrirse algo nuevo. Además implementa una inteligencia artificial adaptativa única que hace el juego especial para dificultar nuestra forma de juego y obligarnos a no siempre usar la misma forma de combate. Un juego muy rejugable en el que cada partida incluso en la misma misión siempre tiene algo diferente ya sea por la climatología o por elegir otra ruta de infiltración.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:90px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="8238629013"></ins>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <p>Desconozco la historia de los anteriores Metal Gear Solid o los siguientes en la linea cronológica salvo por ser una saga de juegos conocida y que para mucha gente en un juego imprescindible, aún desconociendo la historia de los anteriores juegos durante el juego se cuenta partes de la historia. Estando en oferta lo conseguí para la PlayStation 4 por unos irresistibles 4 €, un precio irresistible para la calidad que tiene este juego. Da de sí una gran cantidad de horas de juego grande por su rejugabilidad en la que cada partida aún haciendo la misma misión sea algo diferente de la anterior.</p>
+<p>Hay juegos como The Last of Us que cuentan una historia, juegos que tienen unos combates épicos como God of War y una gran cantidad de armas y enemigos únicos cada uno con puntos débiles como Horizon Zero Down. Luego está la calidad gráfica de los juegos que en la actualidad es muy notable en cualquiera de ellos aún siendo remasterizaciones como The Uncharted Collection y uno de los juegos con mejores gráficos y aventura como Uncharted 4.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2021/10/analisis-del-maravilloso-juego-horrible-the-last-of-us/">Análisis del maravilloso juego horrible The Last of Us</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2022/08/analisis-del-juego-con-combates-epicos-god-of-war/">Análisis del juego con combates épicos God of War</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/10/analisis-y-guia-completa-del-juego-horizon-zero-dawn/">Análisis y guía completa del juego Horizon Zero Dawn</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2022/02/analisis-de-los-juegos-de-aventuras-uncharted-the-nathan-drake-collection/">Análisis de los juegos de aventuras Uncharted The Nathan Drake Collection</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2022/05/analisis-del-juego-de-aventuras-uncharted-4/">Análisis del juego de aventuras Uncharted 4</a></li>
+</ul>
+<p><a href="https://www.igdb.com/games/metal-gear-solid-v-the-phantom-pain">Metal Gear Solid V: The Phantom Pain</a> desarrolado por <a href="https://www.igdb.com/companies/kojima-productions">Kojima Productions</a> del reconocido desarrollador de juegos <a href="https://es.wikipedia.org/wiki/Hideo_Kojima">Hideo Kojima</a> es un juego que se puede decir de mundo abierto en el que el protagonista es <em>The Big Boss</em>, un mercenario considerado una leyenda con grandes dotes para el combate e infiltración en bases enemigas de forma sigilosa. Entre otros personajes que aparecen están Miller, Ocellot y como villano Skull Face que seguramente a los jugadores de la saga ya conocerán. Además, durante las historias aparecen otros personajes secundarios.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-personal-ocellot_huc6a090a9f362fbc5281dbed25f6b2436_466216_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Ocellot"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-personal-ocellot_huc6a090a9f362fbc5281dbed25f6b2436_466216_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Ocellot" title="Ocellot" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-personal-miller_hue9a2e4901ecc1077a471fdc24eaca968_442483_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Miller"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-personal-miller_hue9a2e4901ecc1077a471fdc24eaca968_442483_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Miller" title="Miller" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-personal-huey_huc22b5102b86914de90bebb2d09d5ea4a_382762_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Huey"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-personal-huey_huc22b5102b86914de90bebb2d09d5ea4a_382762_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Huey" title="Huey" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-personal-hideo_hu2af7d5d9f0c7986e2b6218d2f1182491_366212_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Hideo"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-personal-hideo_hu2af7d5d9f0c7986e2b6218d2f1182491_366212_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Hideo" title="Hideo" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-personal-quiet_huc9c34a993c422dd8e72b90f73883ef5f_439222_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Quiet"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-personal-quiet_huc9c34a993c422dd8e72b90f73883ef5f_439222_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Quiet" title="Quiet" class="&#34; " loading="lazy"></a></p>
+<figcaption>Varios personajes del juego</figcaption>
+</figure>
+</div>
+<p>En realidad Metal Gear Solid V son dos juegos, una primera parte precuela introductoria con Ground Zeroes formada por cuatro misiones y dos adicionales que se han de desbloquear y luego está el juego principal de Metal Gear Solid V: The Phantom Pain.</p>
+<p>Si tengo que decir uno de los puntos en los que destaca Metal Gear Solid V sobre otros juegos es las mecánicas de juego que implementa y la inteligencia artificial de los enemigos que aún actuando siempre de la misma forma lo hacen de forma más o menos racional y elaborada, además se adaptan en cierta forma a las tácticas que se emplean para combatirlos. Ofrece multitud de formas de como completar las misiones, cada usuario puede utilizar diferentes formas de combate e incluso el mismo jugador en dos partidas diferentes sobre la misma misión probablemente lo complete de forma diferente. Además se añaden otros aspectos aleatorios variables como la meteorología y el paso del día que afectan al combate y que se pueden utilizar de forma beneficiosa contra los enemigos.</p>
+<p>Cualquiera de los juegos que he mencionado antes son grandes juegos y de los mejores del amplio catálogo de la PS4, si tengo que clasificar Metal Gear Solid V seguro que está en los primeros puestos, quizá por detrás de The Last of Us pero no menos que cualquiera de los otros e incluso por delante de God of War principalmente porque es muy rejugable e implementa numerosas mecánicas de juego que hace de cada partida única incluso habiendo acabado la historia principal.</p>
+<p>Tiene unos gráficos acorde a la generación de juegos de la consola PlayStation 4, una narración cinematográfica, con una introducción en cada principio de la misión. Con títulos de crédito al principio, en algunos momentos parece una película, como muchos otros juegos. La historia es algo más difícil de seguir dado a que se escucha en gran medida a través de cintas de <em>cassette</em> y si tiene algún defecto es que no está doblado al español, solo ofrece una traducción con subtítulos.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v_huad7d705a4902657e97b5b5d8c7f2b4b0_256499_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Pantalla inicial"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v_huad7d705a4902657e97b5b5d8c7f2b4b0_256499_650x450_fit_q90_h2_box.webp" width="650" height="366" alt="Pantalla inicial" title="Pantalla inicial" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-menu-ground-zeroes_hu3acdcad7751c3040d481f2cf043940b9_290286_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Menú Ground Zeroes"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-menu-ground-zeroes_hu3acdcad7751c3040d481f2cf043940b9_290286_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Menú Ground Zeroes" title="Menú Ground Zeroes" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-the-phantom-pain_hu7a285b797046aedf9c76139f46dc4048_193661_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Menú The Phantom Pain"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-the-phantom-pain_hu7a285b797046aedf9c76139f46dc4048_193661_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Menú The Phantom Pain" title="Menú The Phantom Pain" class="&#34; " loading="lazy"></a></p>
+<figcaption>Pantalla incial y menú</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-konami_hu0c489907ed13cb292f57e7cb0a1632ba_50090_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Konami"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-konami_hu0c489907ed13cb292f57e7cb0a1632ba_50090_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Konami" title="Konami" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-kojima_hu526262cddeaa2ac28ae2115b2508117e_95176_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Kojima"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-kojima_hu526262cddeaa2ac28ae2115b2508117e_95176_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Kojima" title="Kojima" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-fox-engine_hu8c020ff45cd494f37ece5066d56f3e1d_96355_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Fox Engine"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-fox-engine_hu8c020ff45cd494f37ece5066d56f3e1d_96355_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Fox Engine" title="Fox Engine" class="&#34; " loading="lazy"></a></p>
+<figcaption>Konami, Kojima y Fox Engine</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-ground-zeroes-cover_hu170a235b5b66fe6f078ea8ad58b76cfb_5916148_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Portada del juego Ground Zeroes"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-ground-zeroes-cover_hu170a235b5b66fe6f078ea8ad58b76cfb_5916148_200x150_fit_q90_h2_box.webp" width="200" height="118" alt="Portada del juego Ground Zeroes" title="Portada del juego Ground Zeroes" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-the-phantom-pain-cover_hubefba78efec29173d3f6ebf8dad00d5a_6084887_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Portada del juego The Phantom Pain"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-the-phantom-pain-cover_hubefba78efec29173d3f6ebf8dad00d5a_6084887_200x150_fit_q90_h2_box.webp" width="200" height="118" alt="Portada del juego The Phantom Pain" title="Portada del juego The Phantom Pain" class="&#34; " loading="lazy"></a></p>
+<figcaption>Portadas de los juegos Ground Zeroes y The Phantom Pain</figcaption>
+</figure>
+</div>
+<div class="alert alert-warning fs-6">
+    <h2 class="fs-5">Anticipación del juego</h2>
+    <p>Este artículo contiene información del juego y estrategias para completar más fácilmente, parte de la diversión de un juego es descubrir y superar los retos que se plantean por uno mismo. Sin embargo, algunos juegos son difíciles sin una pequeña ayuda que obliga a tener que dedicarles mucho más tiempo o a recomenzarlos.</p>
+    <p>En algunos juegos el argumento es una de las partes más importantes. El texto del artículo no contiene información acerca del argumento del juego, de la mitad o del final, ni hace ningún <i>spoiler</i> por lo que lo puedes leer sin riesgo de conocer alguna parte del argumento de forma anticipada. Sin embargo, algunos enlaces del artículo a otras páginas y vídeos sí pueden contener información del argumento de modo que recomiendo consultar solo las partes del juego una vez superadas.</p>
+</div>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#metal-gear-solid-v">Metal Gear Solid V</a>
+      <ul>
+        <li><a href="#ground-zeroes">Ground Zeroes</a></li>
+        <li><a href="#the-phantom-pain">The Phantom Pain</a></li>
+      </ul>
+    </li>
+    <li><a href="#el-juego">El juego</a>
+      <ul>
+        <li><a href="#misiones-principales">Misiones principales</a></li>
+        <li><a href="#misiones-secundarias">Misiones secundarias</a></li>
+        <li><a href="#deambular-libremente">Deambular libremente</a></li>
+        <li><a href="#el-capítulo-2-y-el-juego-en-línea">El capítulo 2 y el juego en línea</a></li>
+      </ul>
+    </li>
+    <li><a href="#mecánicas-de-juego">Mecánicas de juego</a>
+      <ul>
+        <li><a href="#inteligencia-de-los-enemigos">Inteligencia de los enemigos</a></li>
+        <li><a href="#desarrollos-recompensas-recursos-y-economía">Desarrollos, recompensas, recursos y economía</a></li>
+        <li><a href="#coleccionables">Coleccionables</a></li>
+        <li><a href="#base-madre">Base madre</a></li>
+      </ul>
+    </li>
+    <li><a href="#estrategia-de-combate">Estrategia de combate</a></li>
+    <li><a href="#guías-y-trucos">Guías y trucos</a></li>
+    <li><a href="#banda-sonora-original">Banda sonora original</a></li>
+    <li><a href="#película-con-la-historia-del-juego">Película con la historia del juego</a></li>
+  </ul>
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07LFY8WBX&amp;linkId=04b657cb040b89e785f3200732e19770" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08KJF2D25&amp;linkId=c163f4b3d3b51d2fe8ccccb302d7425d" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08KKJ37F7&amp;linkId=67903dffe174c7dfe0db72fc8dc4e60a" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B087VM5XC6&amp;linkId=a5f2c3f9344d1e0c053b3107c9206429" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08H93ZRLL&amp;linkId=5e23b04975fd43bca64f34932a56b4f6" title="Amazon" class="lozad"></iframe>
+</div>
+<h3 id="metal-gear-solid-v">Metal Gear Solid V</h3>
+<p>El juego son en realidad dos juegos, Ground Zeroes y The Phantom Pain siendo el primero una introducción y el segundo el juego en sí principal.</p>
+<h4 id="ground-zeroes">Ground Zeroes</h4>
+<p>Ground Zeroes sirve como introducción a la parte principal del juego The Phantom Pain. Constan de unas pocas misiones con una historia precuela que dan algo de contexto al inicio de Phantom Pain. Las misiones de Ground Zeroes son cuatro con adicionales que hay que desbloquear desarrollándose todas en el mismo mapa pero cada una es única ya que tiene diferentes objetivos.</p>
+<p>Es muy difícil pasarse las misiones al primer intento, si ya son difíciles de por sí lo son más aún cuando apenas hay explicación de cuáles son las mecánicas del juego y cuales son las capacidades del personaje y de los enemigos. No se explica ni siquiera algo tan básico de cómo tumbarse para ser menos visible.</p>
+<p>Cada una de las misiones son relativamente largas que pueden tomar al menos el cuarto de hora de juego o incluso la media hora si no se conoce el objetivo de la misma y hay que emplear en primera instancia un tiempo para explorar. Además, no se ofrece la opción de guardado en mitad de la misión salvo una vez se complete y reiniciar la misión desde el último punto de control.</p>
+<h4 id="the-phantom-pain">The Phantom Pain</h4>
+<p>Es la parte principal del juego que consta de 31 misiones en un primer capítulo. Acabadas las 31 misiones principales hay una continuación en un segundo capítulo hasta las 50 misiones pero que la mayoría son repeticiones del capítulo uno con un nivel de dificultad mayor salvo unas pocas que cuentan algunos detalles más de la historia.</p>
+<p>Una vez acabado el juego tiene un modo de juego en linea para hacer infiltraciones en las bases de otros jugadores y conseguir desarrollar la base por completo así como los desarrollos.</p>
+<p>Además de las misiones principales hay un mayor número de misiones secundarias que llegan a las 250, muchas secundarias con objetivos similares pero que al desarrollarse en diferentes partes del mapa no se notan como repetitivas. A medida que se completan las misiones principales y las secundarias se van ofreciendo más misiones.</p>
+<p>No tiene árbol de habilidades como tal de las capacidades propias del personaje aunque sí se pueden coger varias armas, elementos de equipo y un compañero de apoyo con su propias habilidades que se van desbloqueando a medida que se alcanzan sus requisitos y de desarrollan. Los enemigos no muestran un indicador del su vigilancia con lo que hay que utilizar la experiencia para calcular aproximadamente cual es el campo de visión de los enemigos.</p>
+<p>Es un juego muy rejugable para completar las misiones de forma diferente, más cuando se obtiene un nuevo equipo o se quieren completar los objetivos secundarios, además interrogando a los enemigos se puede obtener nueva información. Una vez completada la historia del juego está la parte en linea de infiltración en bases de otros jugadores si se quiere continuar con le juego.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-juego_huf30975f7a1f52dfe5f38332990ba073a_486671_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Juego The Phantom Pain"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-juego_huf30975f7a1f52dfe5f38332990ba073a_486671_650x450_fit_q90_h2_box.webp" width="650" height="366" alt="Juego The Phantom Pain" title="Juego The Phantom Pain" class="&#34; " loading="lazy"></a></p>
+<figcaption>Juego The Phantom Pain</figcaption>
+</figure>
+</div>
+<h3 id="el-juego">El juego</h3>
+<h4 id="misiones-principales">Misiones principales</h4>
+<p>Las misiones del Phantom Pain son más fáciles que las de Ground Zeroes, tanto porque hay menos enemigos como porque se explican algunas mecánicas básicas que ayudan a acabar con los enemigos más fácilmente.</p>
+<p>Las misiones principales se pueden completar en poco tiempo una vez se sabe el objetivo y que hay que hacer pero en un primer intento hay que dedicar algo de tiempo a explorar la zona de combate y al enemigo, cada misión es fácil que llegue entre 15 y 30 minutos. Es un juego pensado para realizar las misiones de forma sigilosa, aunque para completar el objetivo de la misión también se pueden completar realizando disparos y acabando con los enemigos.</p>
+<p>Cada misión tiene una historia introductoria, un objetivo principal y varios secundarios que la mayoría se descubren una vez se completa la misión o se interroga a los enemigos para obtener información. Al final de cada misión principal se proporciona una calificación en el desempeño de la misma en la que principalmente influye el tiempo empleado y el sigilo.</p>
+<p>En algunas misiones son habituales los cambios de planes, tener en primera instancia un objetivo y durante la misión obtener nueva información que hace que el objetivo cambie que da al juego cierta sorpresa y exige adaptarse a nuevas circunstancias en mitad de una misión. Incluso si el objetivo es extraer un personaje este puede moverse y cambiar de ubicación. La mayoría de las misiones no tienen un tiempo límite pero unas pocas requiere completarlas antes de que se de cierto evento pasado el cual la misión fracasa.</p>
+<p>En las primeras misiones se proporcionan consejos y en las pantallas de carga hay numerosos consejos de tácticas. Los consejos entre las cargas de las pantallas son muy útiles y numerosas, como el juego tiene tantas mecánicas es muy útil para conocer nuevas. Aunque las misiones van apareciendo según se van completando suele haber dos o tres disponibles en cada momento lo que da cierta libertad de elección de qué misión iniciar.</p>
+<p>Generalmente todas las misiones tienen un objetivo principal de rescate, extracción, sabotaje o eliminación pero que aún siendo los objetivos estos pocos como cada misión se desarrolla en una zona del mapa amplía casi de mundo abierto diferente además de la variabilidad de luz y meteorológicas, junto con una gran libertad de movimientos además de poder elegir la zona de despliegue hace que las misiones no sean para nada repetitivas.</p>
+<p>A medida que se exploran los mapas van apareciendo indicadores de en que sitio hay recursos, para esto D-Dog es muy util ya su habilidad es detectar soldados y también permite detectar las ubicaciones de hierbas.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-mapa-afganistan_hu0667a1b9007c19d8ad11f4799af8cf6e_491425_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Misión en mapa de Afganistan"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-mapa-afganistan_hu0667a1b9007c19d8ad11f4799af8cf6e_491425_300x250_fit_q90_h2_box.webp" width="300" height="169" alt="Misión en mapa de Afganistan" title="Misión en mapa de Afganistan" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-mapa-africa_hu530c942d31542d384ad2f2d00ac93790_499898_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Misión en mapa de África"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-mapa-africa_hu530c942d31542d384ad2f2d00ac93790_499898_300x250_fit_q90_h2_box.webp" width="300" height="169" alt="Misión en mapa de África" title="Misión en mapa de África" class="&#34; " loading="lazy"></a></p>
+<figcaption>Mapas</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-mapa-zona-de-despligue_hu5d792b19691568bcfae5abc3f2f5c210_359977_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Zona de despliegue"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-mapa-zona-de-despligue_hu5d792b19691568bcfae5abc3f2f5c210_359977_300x250_fit_q90_h2_box.webp" width="300" height="169" alt="Zona de despliegue" title="Zona de despliegue" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-mapa-objetivos_hu1be7200631169beb1902bd27118957a3_426721_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Mapa, objetivos y objetivos secundarios de la misión"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-mapa-objetivos_hu1be7200631169beb1902bd27118957a3_426721_300x250_fit_q90_h2_box.webp" width="300" height="169" alt="Mapa, objetivos y objetivos secundarios de la misión" title="Mapa, objetivos y objetivos secundarios de la misión" class="&#34; " loading="lazy"></a></p>
+<figcaption>Mapa de la misión</figcaption>
+</figure>
+</div>
+<p>Al inicio de cada misión hay que seleccionar el equipo de compañero, armas y equipo. El arma principal es la pistola somnífera para dormir a los enemigos sin hacer ruido y un fusil por si la cosa se complica, en algunas misiones es necesario un lanzacohetes. Otras armas de apoyo son los señuelos para confundir a los enemigos o las cajas para esconderse, moverse sin ser visto y camuflarse.</p>
+<p>Es posible elegir la hora de despliegue que afecta a si se realiza la misión de día o de noche, cambiando la visión de los enemigos. No es necesario ir directamente a completar el objetivo de la misión sino que se pueden realizar algunas acciones secundarias o conseguir recursos para los desarrollos y la base madre.</p>
+<p>El despliegue de cada misión cuesta recursos en función del equipo que se seleccione, aunque generalmente el completar la misión cubre de sobra los costes de la misión.</p>
+<p>Es un juego que me ha resultado en cierta medida difícil, el juego ofrece puntos de control en los que se reiniciar el juego de nuevo si por alguna circunstancia los enemigos han dado la alarma y se quiere completar la misión de forma sigilosa para obtener mejor calificación. Las misiones también se pueden hacer sin sigilo, quizá no se consigue la calificación S pero si se hace en poco tiempo se hace con buena calificación, A o B.</p>
+<p>Las misiones principales se pueden rejugar tantas veces como se quiera, para conseguir la máxima calificación S o conseguir los objetivos secundarios. Dado que conseguir la calificación S depende del tiempo y las misiones suelen tener varios objetivos secundarios para completar todos los objetivos requiere rejugar la misión para conseguir la calificación S que dependen del tiempo o jugar la misión para conseguir los objetivos secundarios que es difícil descubrirlos todos en un primer intento.</p>
+<p>Es posible enviar a una misión al el personal de la base, hay dos categorías de misiones, misiones en linea que son más difíciles y misiones fuera de línea que son más fáciles y dan algunas ventajas en el juego como que los enemigos se queden sin cascos, linternas, armas, &hellip;</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-companero-dhorse_hu8ba870691a43aaddbd0fd85c26f16a11_315016_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Compañero D-Horse"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-companero-dhorse_hu8ba870691a43aaddbd0fd85c26f16a11_315016_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Compañero D-Horse" title="Compañero D-Horse" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-companero-ddog_hu0df9547250bb743b38b78c3efe8608f2_296469_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Compañero D-Dog"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-companero-ddog_hu0df9547250bb743b38b78c3efe8608f2_296469_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Compañero D-Dog" title="Compañero D-Dog" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-companero-quiet_hufbe49925ff2e41f7f96acf4b937feb82_295493_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Compañero Quiet"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-companero-quiet_hufbe49925ff2e41f7f96acf4b937feb82_295493_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Compañero Quiet" title="Compañero Quiet" class="&#34; " loading="lazy"></a></p>
+<figcaption>Compañeros</figcaption>
+</figure>
+</div>
+<p>En esta guía se detalla una táctica utilizar y consejos que seguir para completar cada misión con la calificación S.</p>
+<ul>
+<li><a href="https://www.ign.com/wikis/metal-gear-solid-5-the-phantom-pain/Walkthrough">Metal Gear Solid 5: The Phantom Pain Wiki Guide</a></li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-mision-1_hu8cad4a56aba497d8df16313494b7db50_159047_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Misión 1"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-mision-1_hu8cad4a56aba497d8df16313494b7db50_159047_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Misión 1" title="Misión 1" class="&#34; " loading="lazy"></a></p>
+<figcaption>Misión 1</figcaption>
+</figure>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/bJYNUI9tj0s" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/d8N1acy8XQ4" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h4 id="misiones-secundarias">Misiones secundarias</h4>
+<p>Las misiones secundarias son mucho más numerosas que las principales, no son imprescindibles para completar el juego pero ayudan a obtener recursos sobre todo al principio para conseguir los desarrollos que proporcionan ventajas para realizar las misiones con éxito.</p>
+<p>Al contrario que las misiones principales que promueven acabar las misiones en el menor tiempo posible las misiones secundarias no imponen ninguna restricción de tiempo y no hace falta regresar al centro de mando del helicóptero para iniciar la siguiente. Como no hace falta regresar al centro de mando para terminarlas, se terminan una vez se consigue el objetivo es posible deambular por el mapa para hacer varias misiones secundarias en un mismo despliegue, es posible completar todas las que estén activas en el mapa. Las munición, consumibles y equipo utilizado en cada encuentro es posible recuperarlo solicitando suministros.</p>
+<p>Las misiones secundarias son un momento ideal para experimentar nuevas tácticas, por ejemplo una vez se obtienen señuelos y cajas, además de para conseguir recursos y reclutar personal que aumente el nivel de los varios equipos de la base madre que dan acceso a nuevos desarrollos.</p>
+<p>Así como en las misiones principales el área del mapa está delimitado en una determinada zona de la misión, en las misiones secundarias se puede decir que el juego es un mundo abierto completo pudiendo desplazarse a cualquier lugar del mapa y viajar libremente.</p>
+<p>Los objetivos de las misiones secundarias suelen ser el mismo que el de las misiones principales, rescate, extracción, sabotaje o eliminación. Cada una suele tener varios capítulos pero como se desarrollan en diferentes áreas del mapa tampoco es que se haga repetitivo, más teniendo en cuenta otros factores de variabilidad como horario y efectos meteorológicos además de querer probar diferentes estrategias.</p>
+<p>Las misiones principales se pueden rejugar todas las veces que se quiera, las misiones secundarias una vez completadas ya no se pueden volver a jugar.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-misiones-secundarias-1_hua623ddde4072102c5ec7dc12f5597f33_439469_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Misiones secundarias"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-misiones-secundarias-1_hua623ddde4072102c5ec7dc12f5597f33_439469_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Misiones secundarias" title="Misiones secundarias" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-misiones-secundarias-2_hu040626cfe8a36e6db119d74985a3108a_383680_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Misiones secundarias"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-misiones-secundarias-2_hu040626cfe8a36e6db119d74985a3108a_383680_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Misiones secundarias" title="Misiones secundarias" class="&#34; " loading="lazy"></a></p>
+<figcaption>Misiones secundarias</figcaption>
+</figure>
+</div>
+<h4 id="deambular-libremente">Deambular libremente</h4>
+<p>Deambular permite hacer un despliegue en el mapa sin ningún objetivo en concreto que permite desplazarse libremente por el mapa y explorarlo, o como una forma de conseguir personal y recursos o hacer infiltraciones sin una misión en concreto.</p>
+<p>El mapa es suficientemente grande como para divertirse explorando algunas zonas y aún por las horas dedicadas en las misiones seguir descubriendo mejores sitios por los que entrar o llegar a zonas de forma más fácil cuyo conocimiento luego se puede utilizar durante las misiones principales y secundarias.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-mapa-deambular_hufb000aec7fb10f692521605eedd9a635_374249_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Deambular por el mapa"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-mapa-deambular_hufb000aec7fb10f692521605eedd9a635_374249_300x250_fit_q90_h2_box.webp" width="300" height="169" alt="Deambular por el mapa" title="Deambular por el mapa" class="&#34; " loading="lazy"></a></p>
+<figcaption>Deambular por el mapa</figcaption>
+</figure>
+</div>
+<h4 id="el-capítulo-2-y-el-juego-en-línea">El capítulo 2 y el juego en línea</h4>
+<p>El capítulo uno del juego consta de 31 misiones únicas. Una vez completadas hay un segundo capítulo hasta la misión 50. Algunas de estas misiones del capítulo dos simplemente son misiones del capítulo 1 pero con mayor dificultad. Hay 7 nuevas misiones únicas y que cuenta algunos detalles más de la historia con varias escenas de cinemática que se reproducen al regresar a la base.</p>
+<p>Aún siendo el capítulo dos básicamente una repetición con mayor dificultad hay gente que las recomienda jugar por las historias de las nuevas misiones. El juego tiene un modo de juego en línea que permite infiltrarse en bases enemigas para conseguir sus recursos y demostrar la pericia de infiltración que se muestra en una clasificación.</p>
+<ul>
+<li><a href="https://www.ign.com/wikis/metal-gear-solid-5-the-phantom-pain/Postgame_Missions">Metal Gear Solid 5: The Phantom Pain Wiki Guide, Postgame Missions</a></li>
+</ul>
+<h3 id="mecánicas-de-juego">Mecánicas de juego</h3>
+<p>Si en algo destaca Metal Gear Solid V son en el número de mecánicas que ofrece, muestra de ello son los numerosos consejos e información de las mecánicas en las pantallas de carga. Combinado con la variedad de armas y equipo a disposición de cada misión hace que las posibilidades sean muchas, incluso después de mucho tiempo de juego se aprenden cosas nuevas. Además, con los desarrollos que se desbloquean de forma paulatina hace que aunque los objetivos de las misiones sean unos pocos no se note el juego para nada repetitivo.</p>
+<p>Algunas de las mecánicas que ofrece son:</p>
+<ul>
+<li>El tiempo cambiante con ventiscas de arena dificulta la visión tanto para el personaje como para los enemigos y permite avanzar sin ser detectado pero con la dificultad de tener también uno menos visión.</li>
+<li>Tiempo cambiante con lluvia que camufla el ruido de los pasos y permite acercarse a los enemigos de forma más rápida sin ser oído. Y es que con el analógico del mando permite diferentes grados de rapidez al andar, para no ser escuchado no hay que avanzar en un término medio, a más velocidad los pasos hacen ruido y los enemigos se alertan, se giran y dan la alarma si no se les neutraliza.</li>
+<li>Cambio entre el día y la noche que varía la cantidad de luz y afecta al rango de visión de los enemigos. De día los enemigos detectan los movimientos a más distancia, de noche tienen menos rango de visión moviéndose por las zonas no iluminadas por las luces. Las bombillas se pueden romper disparando teniendo cuidado de que no haya enemigos cerca que oigan el ruido del disparo. De día y con luz al salir de las casas hay un breve momento en el que la luz nos deslumbra e impide una correcta visión en el que estamos indefensos y para lo que hay que estar prevenido.</li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-tormenta-de-arena_hu18f2fd0a1f1877475b4438929dd46fe8_134630_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Tormenta de arena"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-tormenta-de-arena_hu18f2fd0a1f1877475b4438929dd46fe8_134630_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Tormenta de arena" title="Tormenta de arena" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-mision-diurna_huf30975f7a1f52dfe5f38332990ba073a_486671_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Misión diurna"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-mision-diurna_huf30975f7a1f52dfe5f38332990ba073a_486671_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Misión diurna" title="Misión diurna" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-mision-nocturna_hu8f8ab7916184098aeaf729e436085d01_184602_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Misión nocturna"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-mision-nocturna_hu8f8ab7916184098aeaf729e436085d01_184602_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Misión nocturna" title="Misión nocturna" class="&#34; " loading="lazy"></a></p>
+<figcaption>Variación de la meteorología y cambio entre el día y noche</figcaption>
+</figure>
+</div>
+<ul>
+<li>Al abrir puertas si se hace rápido hacen ruido y los enemigos que oigan el ruido se acercará a investigar, para no hacer ruido hay que abrirlas despacio controlando el analógico del mando.</li>
+<li>El tipo de suelo también emite diferente ruidos, no es lo mismo una plancha de metal que arena, un río o tablones de madera que además emiten diferente sonido cuando se pisan. También hay numerosos objetos que si se golpean se rompen y hacen ruido alertando a los enemigos que se acercarán a investigar como cubos, vasijas de cerámica o sillas.</li>
+<li>Hay contenedores y servicios en los que esconderse para evitar a los enemigos que hacen un recorrido en su guardia si no se les quiere neutralizar.</li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-romper-luz-1_hua44350785f644fe92935713466e6a84a_225222_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Romper una luz o bombilla"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-romper-luz-1_hua44350785f644fe92935713466e6a84a_225222_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Romper una luz o bombilla" title="Romper una luz o bombilla" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-romper-luz-2_hu8bfaa2f42730b4587e7c71ccdfbfd5af_209903_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Romper una luz o bombilla"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-romper-luz-2_hu8bfaa2f42730b4587e7c71ccdfbfd5af_209903_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Romper una luz o bombilla" title="Romper una luz o bombilla" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-mobiliario-sillas_hu34ac259c1b772d7165657a376d8f3f09_254777_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Romper una luz o bombilla"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-mobiliario-sillas_hu34ac259c1b772d7165657a376d8f3f09_254777_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Romper una luz o bombilla" title="Romper una luz o bombilla" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-cubo-de-basura-1_hue2a8d9b059f071ccba57a5024c63ebd7_252869_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Cubo de basura"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-cubo-de-basura-1_hue2a8d9b059f071ccba57a5024c63ebd7_252869_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Cubo de basura" title="Cubo de basura" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-cubo-de-basura-2_hu71c1178f26f46e14aaa956a4556ac831_156467_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Cubo de basura"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-cubo-de-basura-2_hu71c1178f26f46e14aaa956a4556ac831_156467_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Cubo de basura" title="Cubo de basura" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-puerta_hu2338e00b3b5fbd125f4235e57afe1161_218256_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Puerta"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-puerta_hu2338e00b3b5fbd125f4235e57afe1161_218256_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Puerta" title="Puerta" class="&#34; " loading="lazy"></a></p>
+<figcaption>Elementos del escenario</figcaption>
+</figure>
+</div>
+<p>La forma habitual de no mantener el sigilo es por no ser lo suficiente prudente en alguna acción o porque algún soldado no detectado nos sorprenda de cerca, sobre todo en zonas en las que hay menos posibilidad de visión como zonas interiores y entre edificios.</p>
+<p>Los binoculares es una parte importante del juego que permite marcar a los soldados enemigos y conocer su posición en todo momento además versiones mejoradas de los binoculares conocer sus capacidades y habilidades.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-binoculares-1_huf403143d6db8aa6ef771b233ebe20fa0_290568_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Binoculares"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-binoculares-1_huf403143d6db8aa6ef771b233ebe20fa0_290568_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Binoculares" title="Binoculares" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-binoculares-2_hue7f4292de102f7e4559228bbf9729cda_495528_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Binoculares"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-binoculares-2_hue7f4292de102f7e4559228bbf9729cda_495528_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Binoculares" title="Binoculares" class="&#34; " loading="lazy"></a></p>
+<figcaption>Binoculares</figcaption>
+</figure>
+</div>
+<p>Para hacer frente al riesgo de alerta hay varias mecánicas de combate para neutralizar a los enemigos.</p>
+<ul>
+<li>La principal son los dardos tranquilizantes que duermen a los enemigos, si se dispara a la cabeza los duerme de forma inmediata y de un solo disparo, disparandoles al cuerpo tardan unos segundos en caer al suelo y quedar dormidos. Con su silenciador que se va desgastando con cada disparo es una forma de neutralizar enemigos de forma rápida y sigilosa.</li>
+<li>El silenciador del arma de dardos tranquilizantes se desgasta con lo que no se puede utilizar de forma infinita, al menos en una misma incursión para neutralizar a todos los enemigos de la misma forma con lo que hay que combinarlo con otras formas de neutralizar a los enemigos usando el combate cuerpo a cuerpo.</li>
+<li>Para confundir a los enemigos, distraerlos o tenderles una trampa es posible lanzar un cargador, el ruido hará que los soldados se acerquen a investigar siendo el momento para neutralizarlos. Otras formas más avanzadas de distracción y para tender trampas son los señuelos, granadas de humo, granadas para aturdir y granadas adormecedoras.</li>
+<li>Como equipo se ofrecen cajas de cartón para esconderse en ellas que son otra forma de pasar desapercibido mientras no detecten una caja que se mueve cuando miran. Además es posible decorarla con un afiche o <em>poster</em> que hace que los soldados se acerquen quedando hipnotizados por la visión, momento en el que se les puede sorprender y neutralizar empleando combate cuerpo a cuerpo.</li>
+<li>Además de armas es posible utilizar el combate cuerpo a cuerpo, tras la pistola tranquilizante es la segunda forma de neutralización ya que además permite interrogar a soldados para obtener valiosa información como recursos, diamantes, planos, prisioneros, soldados de élite, la posición de sus compañeros, etc. Una vez acabado el interrogatorio hay que dejarlos inconscientes ahogándolos o matarlos siendo preferible la primera opción ya no causar bajas en el enemigos se evalúa de forma positiva en la nota de las misiones. En el combate cuerpo a cuerpo también es posible golpearles directamente para dejarles inconscientes es más rápido pero no permite interrogarlo para sacarles información.</li>
+</ul>
+<p>Las municiones son limitadas pero se pueden pedir suministros, para recargar balas, silenciadores u otros consumibles como globos de extracción fulton, señuelos o granadas.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-lanzar-cargador-1_hu50754631138b3deb9bc36a9c72a28616_277783_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Lanzar cargador"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-lanzar-cargador-1_hu50754631138b3deb9bc36a9c72a28616_277783_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Lanzar cargador" title="Lanzar cargador" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-lanzar-cargador-2_hufbe85b7deed9c96768be8f5b47788a7d_484942_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Combate cuerpo a cuerpo"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-lanzar-cargador-2_hufbe85b7deed9c96768be8f5b47788a7d_484942_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Combate cuerpo a cuerpo" title="Combate cuerpo a cuerpo" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-modo-reflejo_hu602c0030998c2da49aabfcb846c93602_144017_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Modo reflejo y tranquilizante"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-modo-reflejo_hu602c0030998c2da49aabfcb846c93602_144017_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Modo reflejo y tranquilizante" title="Modo reflejo y tranquilizante" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-combate-cuerpo-a-cuerpo-1_hu2c9453147c0196f5f9ebd42d3f4b854a_635706_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Comabte cuerpo a cuerpo"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-combate-cuerpo-a-cuerpo-1_hu2c9453147c0196f5f9ebd42d3f4b854a_635706_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Comabte cuerpo a cuerpo" title="Comabte cuerpo a cuerpo" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-combate-cuerpo-a-cuerpo-2_hu1ce3588549e48d4de9173b99a46082eb_610052_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Interrogatorio"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-combate-cuerpo-a-cuerpo-2_hu1ce3588549e48d4de9173b99a46082eb_610052_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Interrogatorio" title="Interrogatorio" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-combate-cuerpo-a-cuerpo-3_hu3abfbcb919e201e81d0f108f0ba0e207_615160_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Interrogatorio"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-combate-cuerpo-a-cuerpo-3_hu3abfbcb919e201e81d0f108f0ba0e207_615160_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Interrogatorio" title="Interrogatorio" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-combate-cuerpo-a-cuerpo-4_hu9b63ca09e2c082919403ac10d5b04f05_519041_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Interrogatorio"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-combate-cuerpo-a-cuerpo-4_hu9b63ca09e2c082919403ac10d5b04f05_519041_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Interrogatorio" title="Interrogatorio" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-combate-cuerpo-a-cuerpo-5_hu53e4ff144ec43054d05df9247634f184_500382_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Comabte cuerpo a cuerpo"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-combate-cuerpo-a-cuerpo-5_hu53e4ff144ec43054d05df9247634f184_500382_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Comabte cuerpo a cuerpo" title="Comabte cuerpo a cuerpo" class="&#34; " loading="lazy"></a></p>
+<figcaption>Acciones de combate</figcaption>
+</figure>
+</div>
+<h4 id="inteligencia-de-los-enemigos">Inteligencia de los enemigos</h4>
+<p>Otra de los puntos en los que destaca Metal Gear Solid V es en la inteligencia artificial adaptativa que han implementados los desarrolladores en el comportamiento de los soldados. Sus comportamientos siguen siendo predecibles pero hacen algunas cosas sensatas.</p>
+<ul>
+<li>Si ven algo sospechoso se acercarán a investigar y de más cerca ya se dispare el modo reflejo en el que el tiempo se ralentiza durante unos segundos y si no se neutraliza al enemigo de alguna forma empezará a dispararnos y dar la alarma momento en el que el sigilo se termina al menos hasta que escapemos y nos pierdan de vista.</li>
+<li>Si encuentran un compañero inconsciente se pondrán en alarma de que hay algo sospechoso y entrarán en modo alerta que dificulta la infiltración. Y si encuentra a algún compañero dormido lo despertarán aunque no den la alarma.</li>
+<li>Si te descubren te siguen hasta que pierdan la pista pero ya se quedan en modo alerta.</li>
+</ul>
+<p>Los soldados hablan entre ellos y dan la alarma por sus medios de comunicación. con el intérprete adecuado entre el personal que traduce el idioma en el que habla permite escuchar sus conversaciones y lo que están diciendo, que básicamente sirve para saber si alguno se acerca a investigar, si avisan de algo extraño y dan la alarma o piden refuerzos en el momento que no se sido lo suficientemente sigiloso o las conversaciones que mantienen cuando hablan entre ellos haciendo la guardia.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-comunicaciones_hu6e58d822599ac745fd80303b4e3f53a6_233117_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Comunicaciones"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-comunicaciones_hu6e58d822599ac745fd80303b4e3f53a6_233117_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Comunicaciones" title="Comunicaciones" class="&#34; " loading="lazy"></a></p>
+<figcaption>Comunicaciones</figcaption>
+</figure>
+</div>
+<p>Los soldados se alertan por algún ruido con lo que hay que tener evitar golpear los objetos de mobiliario en el mapa o por ver algo extraño en su rango de visión. El juego no ofrece ningún indicativo de a qué distancia ven los enemigos o que zonas están mirando salvo por su orientación, hay que calcularlo en base a la experiencia, las condiciones de luz y a el indicativo de alerta que se muestra en caso de que un enemigo haya visto algo extraño.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-alerta_hubc6c2238133e33bcf99db1d40fa8b7ca_257100_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Indicativo de alerta"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-alerta_hubc6c2238133e33bcf99db1d40fa8b7ca_257100_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Indicativo de alerta" title="Indicativo de alerta" class="&#34; " loading="lazy"></a></p>
+<figcaption>Indicativo de alerta</figcaption>
+</figure>
+</div>
+<p>Otra forma de inteligencia es la adaptativa con la que aprenden de la técnica que emplea normalmente para neutralizarlos. Si se ataca siempre de noche empezarán a usar visores nocturnos y se equiparán con linternas. Si se les dispara siempre dardos tranquilizantes a la cabeza se equiparán con cascos que les proteja y dificulte el acertar el disparo. De noche utilizarán bengalas para hacer la búsqueda. A medida que progresa el juego se van equipando mejor algunos con trajes con los que son invulnerables a los dardos tranquilizantes.</p>
+<p>Hay detalles curiosos y es que los enemigos también utilizan los señuelos o muñecos que hay que utilizar los binoculares para reconocerlos como un señuelo.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-soldado-senuelo_hu25ba891e073e711b7efdf5cc1b6c7787_132234_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Soldado señuelo"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-soldado-senuelo_hu25ba891e073e711b7efdf5cc1b6c7787_132234_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Soldado señuelo" title="Soldado señuelo" class="&#34; " loading="lazy"></a></p>
+<figcaption>Soldado señuelo</figcaption>
+</figure>
+</div>
+<h4 id="desarrollos-recompensas-recursos-y-economía">Desarrollos, recompensas, recursos y economía</h4>
+<p>Las misiones son la parte de acción de acción del juego pero también hay una parte de gestión de recursos y de desarrollo para conseguir mejor equipo. Un recurso es la moneda del juego que se consigue al completar las misiones o recuperando los diamantes que se encuentren.</p>
+<p>Muchos de los desarrollos son de nuevas armas, sin embargo los más importantes a desarrollar en cuanto se pueda son los binoculares que permite detectar capacidades de los soldados, el dispositivo de comunicación iDroid y la extracción fulton sobre todo la opción para carga y el aumento de consumibles.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-diamante_hu831d27502796eb2d1a3f3d4aad5243be_310312_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Diamante"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-diamante_hu831d27502796eb2d1a3f3d4aad5243be_310312_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Diamante" title="Diamante" class="&#34; " loading="lazy"></a></p>
+<figcaption>Diamante</figcaption>
+</figure>
+</div>
+<p>Hay otro tipo de recursos como los recursos de combustible, biológicos, metal menor y metales preciosos que permiten desarrollar la base y algunas mejoras de equipo. Estos recursos se consiguen en pequeñas cantidades ya procesados o extrayendo contenedores en mayor cantidad pero que deben ser procesados en la base. Los contenedores solo se pueden extraer con una versión mejorada para carga de la extracción fulton.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-recursos_hue1a22a358d221ef73ad87368b08353f3_151741_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Recursos"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-recursos_hue1a22a358d221ef73ad87368b08353f3_151741_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Recursos" title="Recursos" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-planos-1_hu6f51d4c3a11feee57d7d001bb9f1c0c9_112342_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Planos"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-planos-1_hu6f51d4c3a11feee57d7d001bb9f1c0c9_112342_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Planos" title="Planos" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-planos-2_hu663500e43320c9afd91f3ef4a7b9aac5_121034_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Planos"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-planos-2_hu663500e43320c9afd91f3ef4a7b9aac5_121034_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Planos" title="Planos" class="&#34; " loading="lazy"></a></p>
+<figcaption>Recursos y planos</figcaption>
+</figure>
+</div>
+<p>Otro recurso importante es el personal y el número y nivel de este en cada una de sus capacidades determina el nivel global de la capcidad en la base. Algunos desarrollos requieren no solo cierta cantidad de moneda del juego, recursos sino también cierto nivel de personal e incluso algún soldado con cierta habilidad. Algunos soldados tienen habilidades y para algunos desarrollos es necesario disponer de un soldado con esa habilidad.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-requerimientos-desarrollo_hu0d3a31c772124e33325707a0fd940fe7_379707_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Requerimientos de deesarollo"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-requerimientos-desarrollo_hu0d3a31c772124e33325707a0fd940fe7_379707_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Requerimientos de deesarollo" title="Requerimientos de deesarollo" class="&#34; " loading="lazy"></a></p>
+<figcaption>Desarrollos</figcaption>
+</figure>
+</div>
+<p>Por ciertas completar retos se obtienen algunas recompensas como recursos o persona altamente capacitado.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-retos-1_hudc75fb43e0fa201f1401dac3a1f3ee07_353592_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Retos y recompensas"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-retos-1_hudc75fb43e0fa201f1401dac3a1f3ee07_353592_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Retos y recompensas" title="Retos y recompensas" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-retos-2_hu8907bdbd53bdad3b9dcd04d92e5c5fe2_376461_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Retos y recompensas"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-retos-2_hu8907bdbd53bdad3b9dcd04d92e5c5fe2_376461_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Retos y recompensas" title="Retos y recompensas" class="&#34; " loading="lazy"></a></p>
+<figcaption>Retos y recompensas</figcaption>
+</figure>
+</div>
+<p>Otro recurso importante destacado son las hierbas que para algunos elementos de equipo previo al despliegue de la misión gasta algunos recursos y hierbas.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-costes-de-despliegue_hu5c6358a34bb7ecf6ab3835734ee082a2_268851_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Costes de despliegue"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-costes-de-despliegue_hu5c6358a34bb7ecf6ab3835734ee082a2_268851_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Costes de despliegue" title="Costes de despliegue" class="&#34; " loading="lazy"></a></p>
+<figcaption>Costes de despliegue</figcaption>
+</figure>
+</div>
+<p>Salvo en los momentos iniciales y una vez se consigue la extracción fulton para carga no suele haber escasez de recursos. Las recompensas al finalizar la misión suelen cubrir con suficiencia los costes de despliegue de la misión en los que la mayoría no hace falta muchos elementos de equipo.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-recursos-materiales-procesados_hu9411dcbc719e58e9735d50fdd6485069_369459_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Recursos materiales procesados"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-recursos-materiales-procesados_hu9411dcbc719e58e9735d50fdd6485069_369459_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Recursos materiales procesados" title="Recursos materiales procesados" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-recursos-materiales-no-procesados_hu94e1e0b371b6b802b17d01b9ea2a5182_350505_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Recursos materiales no procesados"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-recursos-materiales-no-procesados_hu94e1e0b371b6b802b17d01b9ea2a5182_350505_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Recursos materiales no procesados" title="Recursos materiales no procesados" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-recursos-hierbas_huaa68a927c4cf11bc362290105334abe4_417527_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Hierbas"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-recursos-hierbas_huaa68a927c4cf11bc362290105334abe4_417527_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Hierbas" title="Hierbas" class="&#34; " loading="lazy"></a></p>
+<figcaption>Inventario de recursos</figcaption>
+</figure>
+</div>
+<h4 id="coleccionables">Coleccionables</h4>
+<p>Como en muchos juegos hay objetos repartidos por el mapa que se encuentran y pueden recoger durante las misiones. No dan ninguna ventaja ni ningún beneficio sino la satisfacción de haberlos encontrado. Por un lado están las cintas de música de grandes éxitos de los 70 y 80, que luego se pueden escuchar. Otro es extraer un animal de cada tipo que deambulan por el mapa como <em>NPC</em>.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-coleccionables-casetes_huff85a6e063a39afe69241cc61a749c73_169284_2560x1440_fit_q90_h2_box_2.webp" data-gallery="" title="Coleccionable casetes"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-coleccionables-casetes_huff85a6e063a39afe69241cc61a749c73_169284_300x250_fit_q90_h2_box_2.webp" width="300" height="169" alt="Coleccionable casetes" title="Coleccionable casetes" class="&#34; " loading="lazy"></a></p>
+<figcaption>Coleccionables</figcaption>
+</figure>
+</div>
+<h4 id="base-madre">Base madre</h4>
+<p>La base madre son las instalaciones secretas donde está el personal de apoyo y desarrollo. El personal se distribuye en las diferentes especializaciones. En función del nivel del personal y los soldados asignados a esa especialización se determina un nivel de la especialización que da acceso a desarrollos, permite procesar los materiales o proporcionan más información durante la misión.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-base-madre_hud9b5f341cb611b57e5a4554813da5e34_449963_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Base madre"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-base-madre_hud9b5f341cb611b57e5a4554813da5e34_449963_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Base madre" title="Base madre" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-base-plataforma_hu04106ae74d34bf3ed680d5f9dfde3a36_358216_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Plataforma"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-base-plataforma_hu04106ae74d34bf3ed680d5f9dfde3a36_358216_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Plataforma" title="Plataforma" class="&#34; " loading="lazy"></a></p>
+<figcaption>Base madre y plataforma</figcaption>
+</figure>
+</div>
+<p>La base madre tiene un poco de gestión y que hay que ir desarrollando para dar cabida a un mayor número de personal que se regula a través de las extracciones durante las misiones o porque se alistan como voluntarios tras una misión con buena calificación. Desarrollar la base cuesta recursos y una cantidad de moneda.</p>
+<p>En los primeros momentos del juego es cuando hay más escasez de recursos y no da para desarrollar todas las opciones al mismo tiempo con lo que hay que dedicar algo de tiempo a recolectarlos. Una vez avanzado en el juego ya se tienen recursos suficientes como para que desarrollar la base para no llegar al límite del personal.</p>
+<p>Para aumentar el nivel de las especialidades es necesario si es posible extraer al personal con buenas habilidades que se detectan en las misiones, la mejora de los binoculares permite analizar a los soldados y si nivel de habilidad lo que permite seleccionar cuales extraer. Mejorar también la extracción fulton para tener mayor número de extracciones y para poder extraer carga pesada como vehículos, armas emplazadas pesadas o contenedores de recursos sin procesar.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-desarrollo-binoculares_huea6a13104bd8056b75bb2f9fb37c9649_328791_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Desarrollo binoculares"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-desarrollo-binoculares_huea6a13104bd8056b75bb2f9fb37c9649_328791_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Desarrollo binoculares" title="Desarrollo binoculares" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-desarrollo-idroid_hu97313686c48f80d393862d4cf38b7f78_286657_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Desarrollo iDroid"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-desarrollo-idroid_hu97313686c48f80d393862d4cf38b7f78_286657_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Desarrollo iDroid" title="Desarrollo iDroid" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-desarrollo-extraccion-fulton_hue23c5a462e565f553003cb4865a03855_305628_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Desarrollo extracción fulton"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-desarrollo-extraccion-fulton_hue23c5a462e565f553003cb4865a03855_305628_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Desarrollo extracción fulton" title="Desarrollo extracción fulton" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-desarrollo-caja-carton_hu26e9c4eed1ec4c1103cf9e4d1a3f286c_357133_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Desarrollo pistola tranquilizante"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-desarrollo-caja-carton_hu26e9c4eed1ec4c1103cf9e4d1a3f286c_357133_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Desarrollo pistola tranquilizante" title="Desarrollo pistola tranquilizante" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-desarrollo-brazo-protesico_hu7075758fd976e43fc0820afa0ed05fda_331692_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Desarrollo rifle francotirador"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-desarrollo-brazo-protesico_hu7075758fd976e43fc0820afa0ed05fda_331692_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Desarrollo rifle francotirador" title="Desarrollo rifle francotirador" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-desarrollo-senuelo_hu7b2aa6d395fd1f18e69096928bf8cedf_308358_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Desarrollo lanzamisiles"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-desarrollo-senuelo_hu7b2aa6d395fd1f18e69096928bf8cedf_308358_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Desarrollo lanzamisiles" title="Desarrollo lanzamisiles" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-desarrollo-pistola-tranquilizadora_hue27f7d8e1a5aae56945aae94c2def33d_380888_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Desarrollo pistola tranquilizante"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-desarrollo-pistola-tranquilizadora_hue27f7d8e1a5aae56945aae94c2def33d_380888_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Desarrollo pistola tranquilizante" title="Desarrollo pistola tranquilizante" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-desarrollo-rifle-francotirador_hue1fbeed17150ec5be38ada342cf90368_420619_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Desarrollo rifle francotirador"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-desarrollo-rifle-francotirador_hue1fbeed17150ec5be38ada342cf90368_420619_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Desarrollo rifle francotirador" title="Desarrollo rifle francotirador" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-desarrollo-lanzamisiles_hu42c8f552937ab3cd1de4fb24793c8698_396740_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Desarrollo lanzamisiles"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-desarrollo-lanzamisiles_hu42c8f552937ab3cd1de4fb24793c8698_396740_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Desarrollo lanzamisiles" title="Desarrollo lanzamisiles" class="&#34; " loading="lazy"></a></p>
+<figcaption>Desarrollos</figcaption>
+</figure>
+</div>
+<p>Una vez completadas las misiones del juego es posible desarrollar plataformas adicionales a la base madre para dar cabida a más personal, ya más orientado al juego <em>online</em> en el que hay una clasificación para competir en habilidad ya contra el juego sino contra otros jugadores.</p>
+<h3 id="estrategia-de-combate">Estrategia de combate</h3>
+<p>El juego está orientado a realizar las misiones de forma sigilosa, hay gran cantidad de armas entre las que elegir y equiparse pero es posible pasarse el juego simplemente empleando la pistola de dardos tranquilizantes disparando a la cabeza y estrangulando con el cuerpo a cuerpo sin ser detectado. Usar el sigilo y tardar poco en completar las misiones son las dos variables que más puntúan en la calificación de la nota final. Seguro que cada persona desarrolla sus propias estrategias, estas son simplemente las que yo he seguido, se ofrecen suficientes posibilidades como para que cada jugador complete las misiones de una forma diferente e incluso un mismo jugador una misma misión la completará de forma diferente.</p>
+<p>Al inicio de una misión y antes de iniciar la infiltración es ubicarse en una zona elevada desde la que marcar a la mayor cantidad de soldados enemigos con los binoculares para conocer su ubicación y una vez iniciada la infiltración entre casas con menos visión no nos sorprendan. A medida que se van haciendo misiones se van aprendiendo las mejores rutas para tardar menos y correr menos riesgos de ser detectado, no suele ser recomendable entrar por zona principal donde hay mayor número de soldados sino que hay que buscar zonas alternativas con menos patrullas, esto requiere conocer el mapa que se consigue al cabo de una misiones, parte de la diversión y satisfacción del juego es probar y descubrir una mejor zona para la infiltración y hacer un pequeño plan previo a la acción.</p>
+<p>No en todas las misiones se conoce la ubicación del objetivo y hay que hacer algún interrogatorio para saber dónde está el prisionero a extraer en caso de ser ese el objetivo pero si es posible es mejor conocer su ubicación antes de empezar a realizar la incursión entre los soldados para tardar menos y realizar la misión con menos riesgo. Los interrogatorios son muy útiles para conocer en algunos casos la ubicación del objetivo de la misión, objetivos secundarios, planos y recursos escondidos.</p>
+<p>Otras técnicas de combate básicas es agacharse, tumbarse, cargar a enemigos una vez inconscientes para hacer una extracción fulton en otra zona sin que lo vean los otros soldados.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-cargar-soldado_hu47d2f2b675a27e1a1b71c03873f4c97b_472980_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Cargar un soldado"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-cargar-soldado_hu47d2f2b675a27e1a1b71c03873f4c97b_472980_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Cargar un soldado" title="Cargar un soldado" class="&#34; " loading="lazy"></a></p>
+<figcaption>Cargar un soldado</figcaption>
+</figure>
+</div>
+<p>Como es un juego orientado al sigilo las técnicas principales de combate es dormir a los soldados con la pistola de dardos tranquilizantes o dejados inconscientes con el combate cuerpo a cuerpo. Cómo se recuperan al cabo de un tiempo y dan la alarma si ven a una compañero inconsciente lo mejor casi siempre es realizar la extracción fulton independientemente del nivel de especialidad que tengan. La extracción fulton tiene sus riesgos ya que durante un tiempo el globo es visible y el ruido puede alertar a alguien cerca pero dejar varios soldados incapacitados tiene más riesgos.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-extracion-fulton_hu7539c5bf4adc5fb3552af6f87e31f289_136361_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Extracción fulton"><img src="/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/images/metal-gear-solid-v-extracion-fulton_hu7539c5bf4adc5fb3552af6f87e31f289_136361_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Extracción fulton" title="Extracción fulton" class="&#34; " loading="lazy"></a></p>
+<figcaption>Extracción fulton</figcaption>
+</figure>
+</div>
+<p>Para facilitar la infiltración de forma sigilosa en el equipo están los señuelos, brazo biónico para hacer ruido, cajas de cartón y habilidades especiales, utilizar cargadores, granadas de humo, granadas aturdidoras, todo este equipo permite confundir a los soldados enemigos o tenderles una trampa para interrogarlos o dejarles inconscientes. No es imprescindible hacer las misiones con sigilo aunque sí es la forma más recomendada y para la que está pensado el juego. Se puede disparar con el fusil pero los enemigos se pondrán en alerta y no es posible acabar con todos con la gran cantidad de soldados que hay en algunas zonas.</p>
+<p>Si hay algún soldado con altas capacidades que quede cercano por la zona de la incursión que se ha decidido no está demás de extraerlos para subir el nivel de las especialidades de la base. En cuanto a la gestión de recursos no suele haber escasez en ningún momento, lo que sí es recomendable es no gastar toda la moneda del juego en los desarrollos sino hacerlo de forma progresiva y manteniendo una cifra suficiente para costear los gastos de las misiones, quedarse en negativo en la moneda del juego baja la moral del personal e igual que se apuntan voluntarios se pueden ir.</p>
+<p>El juego explica las mecánicas pero el saber cómo utilizarlas depende del jugador, no da muchas pistas por donde afrontar las misiones y hay mucha libertad de movimientos e incluso hay varios puntos de aterrizaje donde empezar la misión.</p>
+<p>Si en algún momento nos sorprende un soldado enemigo de cerca se activa el modo reflejo que dura unos segundos durante los cuales el tiempo se ralentiza dando la oportunidad de neutralizar al soldado que nos ha sorprendido, si no lo conseguimos al acabarse el tiempo del modo reflejo dará la alarma e iniciarán una persecución hasta que nos pierdan la pista, pero ya estará alertados y realizará una patrulla más intensa. En caso de que de la alarma las cosas se van a complicar de forma apreciable ya que se quedarán en alerta aunque nos pierdan la pista, es posible reiniciar la misión desde el último punto de control sin gran penalización a la calificación final.</p>
+<p>Conocer a qué distancia te ven tumbado, agachado, de pie y según las condiciones de luz (día y noche) y meteorológicas (ventisca) es algo que se calcula y aprende con la experiencia. Si algún soldado detecta algo extraño aparece en la pantalla una señal de alarma e indica la orientación de donde viene. Algunos se acercarán a investigar con lo que es recomendable alejarse de esa zona lo más rápido posible y sin ser visto aún más.</p>
+<p>Al estar en modo sigilo es recomendable estar equipado con la pistola de tranquilizantes por si nos sorprenden y se activa el modo reflejo tardar menos en neutralizar al soldado. Al viajar entre zonas es mejor salirse de los caminos principales e ir fuera de los caminos ya que estos en ciertos enclaves conducen a puestos de guardia intermedios que están vigilados.</p>
+<ul>
+<li><a href="https://screenrant.com/metal-gear-solid-5-most-important-choices-players-make/">Metal Gear Solid V: 9 Most Important Choices Players Make In The Game</a></li>
+<li><a href="https://www.gamesradar.com/metal-gear-solid-mother-base-guide/">The fastest way to grow Mother Base in Metal Gear Solid 5 The Phantom Pain</a></li>
+<li><a href="https://www.vg247.com/metal-gear-solid-5-phantom-pain-best-tactics">Metal Gear Solid 5: The Phantom Pain - the 11 best tactics you&rsquo;re not using right now </a></li>
+</ul>
+<h3 id="guías-y-trucos">Guías y trucos</h3>
+<ul>
+<li><a href="https://www.ign.com/wikis/metal-gear-solid-5-the-phantom-pain/Tips_and_Tricks">Tips and Tricks</a></li>
+<li><a href="https://www.ign.com/wikis/metal-gear-solid-5-the-phantom-pain/Mission_31_Sahelanthropus">Táctica mission 1 Phantom Limbs</a></li>
+<li><a href="https://www.gamesradar.com/metal-gear-solid-5-tips/">20 essential tips for Metal Gear Solid 5: The Phantom Pain</a></li>
+</ul>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/LS77YgQzyqQ" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h3 id="banda-sonora-original">Banda sonora original</h3>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/xq7GFIKZcoo" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h3 id="película-con-la-historia-del-juego">Película con la historia del juego</h3>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/xq7GFIKZcoo" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>analisis-juegos</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/">El juego XCOM 2 y guía de estrategia</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/04/introduccion-al-juego-de-batallas-navales-world-of-warships-legends-para-consola/">Introducción al juego de batallas navales World of Warships Legends para consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/">Análisis y guía del juego de estrategia Frostpunk</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/10/analisis-y-guia-completa-del-juego-horizon-zero-dawn/">Análisis y guía completa del juego Horizon Zero Dawn</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/">Análisis y guía del juego de rol For the King</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/">Análisis de la serie de juegos de plataformas Trine</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/07/analisis-guia-y-consejos-del-juego-roguelike-darkest-dungeon/">Análisis, guía y consejos del juego roguelike Darkest Dungeon</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/10/analisis-del-maravilloso-juego-horrible-the-last-of-us/">Análisis del maravilloso juego horrible The Last of Us</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/02/analisis-de-los-juegos-de-aventuras-uncharted-the-nathan-drake-collection/">Análisis de los juegos de aventuras Uncharted The Nathan Drake Collection</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/05/analisis-del-juego-de-aventuras-uncharted-4/">Análisis del juego de aventuras Uncharted 4</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/08/analisis-del-juego-con-combates-epicos-god-of-war/">Análisis del juego con combates épicos God of War</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/08/analisis-del-juego-de-la-aventura-galactica-ratchet-y-clank/">Análisis del juego de la aventura galáctica Ratchet &amp; Clank</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/">Análisis del juego espacial de combates por turnos Spaceland</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/">Análisis del juego de sigilo e infiltración táctica Metal Gear Solid V</a>
+            </li>
+          
+        </ol>
+      <h3>Este artículo forma parte de la serie <strong>juegos</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/">Jugar al ajedrez en GNU/Linux con GNOME</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-clasico-de-estrategia-de-tablero-go-en-gnu-linux/">Jugar al clásico de estrategia de tablero Go en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/juegos-incluidos-en-el-entorno-de-escritorio-gnome/">Juegos incluidos en el entorno de escritorio GNOME</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/jugar-a-videojuegos-clasicos-y-miticos-de-arcade-con-mame-en-gnu-linux/">Jugar a videojuegos clásicos y míticos de arcade con Mame en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/22-plus-buenos-juegos-en-gnu-linux/">22&#43; buenos juegos en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/varios-juegos-de-culto-con-scummvm-en-gnu-linux/">Varios juegos de culto con ScummVM en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/">Consola de juegos retro con Lakka y una Raspberry Pi</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/12/como-usar-wine-para-jugar-en-gnu-linux-a-juegos-de-windows/">Cómo usar Wine para jugar en GNU/Linux a juegos de Windows</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/">La aplicación cliente de Steam en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/09/desempaquetado-de-playstation-4-slim-de-1-tb/">Desempaquetado de PlayStation 4 Slim de 1 TB</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/">El juego XCOM 2 y guía de estrategia</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/03/que-es-mejor-para-jugar-y-10-variables-para-elegir-entre-pc-o-consola/">Qué es mejor para jugar y 10&#43; variables para elegir entre PC o consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/04/introduccion-al-juego-de-batallas-navales-world-of-warships-legends-para-consola/">Introducción al juego de batallas navales World of Warships Legends para consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/">Análisis y guía del juego de estrategia Frostpunk</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/">Análisis y guía del juego de rol For the King</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/">Estrategia de batalla básica en el juego World of Warships Legends</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/07/analisis-guia-y-consejos-del-juego-roguelike-darkest-dungeon/">Análisis, guía y consejos del juego roguelike Darkest Dungeon</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/10/analisis-del-maravilloso-juego-horrible-the-last-of-us/">Análisis del maravilloso juego horrible The Last of Us</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/02/analisis-de-los-juegos-de-aventuras-uncharted-the-nathan-drake-collection/">Análisis de los juegos de aventuras Uncharted The Nathan Drake Collection</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/05/analisis-del-juego-de-aventuras-uncharted-4/">Análisis del juego de aventuras Uncharted 4</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/08/analisis-del-juego-con-combates-epicos-god-of-war/">Análisis del juego con combates épicos God of War</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/08/analisis-del-juego-de-la-aventura-galactica-ratchet-y-clank/">Análisis del juego de la aventura galáctica Ratchet &amp; Clank</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/">Análisis del juego espacial de combates por turnos Spaceland</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/">Los juegos de Epic Games y GOG en GNU/Linux con el lanzador Heroic Games Laucher</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/">Análisis del juego de sigilo e infiltración táctica Metal Gear Solid V</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-676';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2023\/02\/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2023 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>
