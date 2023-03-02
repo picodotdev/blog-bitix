@@ -23,6 +23,8 @@ El cifrado o encriptación permite que solo el receptor del mensaje pueda leer l
 
 El cifrado y la firma digital son operaciones muy importantes para garantizar la seguridad en multitud de ámbitos. Sin embargo, la utilización de claves añaden algo de complejidad que a veces no es necesaria, a veces utilizar simplemente un algoritmo de _hashing_ es suficiente y más sencillo ya que no requiere la utilización de claves.
 
+* [Cifrar y descifrar datos usando algoritmos de clave simétrica con Java][blogbitix-677]
+
 {{< tableofcontents >}}
 
 ### Los algoritmos de _hashing_ criptográficos
@@ -64,6 +66,7 @@ Desde un lenguaje de programación de alto nivel como Java también puede ser ú
 Los algoritmos de _hashing_ soportados dependen de la versión del JDK, en el JDK 9 se añadió el soporte para SHA-3. Es posible listar qué algoritmos de _hashing_ soporta el JDK con el que se ejecuta un programa con el siguiente código a través de la clase [Security](javadoc17:java.base/java/security/Security.html).
 
 {{< code file="Main-1.java" language="java" options="" >}}
+{{< code file="Main-1.out" language="plain" options="" >}}
 
 Estos son los algoritmos de _hashing_ soportados por el JDK 17.
 
@@ -98,7 +101,7 @@ Este es el _hash_ calculado por con Java.
 
 En caso de estar obligado a utilizar un JDK antiguo que no soporte alguno de los algoritmos de _hashing_ hay que recurrir a una librería de terceros. Hay varias, entre ellas [Bouncy Castle][bouncycastle], [Guava][guava] y [Apache Commons][apache-commons].
 
-{{% sourcecode git="blog-ejemplos/tree/master/JavaHashing" command="./gradlew run" %}}
+{{% sourcecode git="blog-ejemplos/tree/master/JavaHashingEncrypt" command="./gradlew run" %}}
 
 {{< reference >}}
 * [Hash function](https://en.wikipedia.org/wiki/Hash_function)
