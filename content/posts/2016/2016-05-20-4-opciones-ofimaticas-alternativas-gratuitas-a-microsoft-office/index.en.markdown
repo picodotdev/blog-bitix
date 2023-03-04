@@ -37,7 +37,7 @@ In this article I will focus more on the alternatives to Office which are also s
 
 {{< tableofcontents >}}
 
-### Microsoft Office
+## Microsoft Office
 
 Microsoft Office includes Word as a word processor, Powerpoint for presentations, Excel for spreadsheets, Access for databases, Outlook as an email client, OneNote for taking notes, or Publisher for publications. It is only available for Windows and Mac for the desktop, and the web versions for these and other systems. [Office 365][microsoft-office-365] has a cost of around 8.80 € per user and month depending on the plan that includes more or fewer applications.
 
@@ -48,7 +48,7 @@ Microsoft Office includes Word as a word processor, Powerpoint for presentations
     image3="image:microsoft-office-powerpoint.webp" optionsthumb3="200x150" title3="Microsoft Office Powerpoint"
     caption="Microsoft Office" >}}
 
-### LibreOffice
+## LibreOffice
 
 The equivalent free and free alternative to Office is [LibreOffice][libreoffice]. It includes a text editor with Writer, spreadsheets with Calc, presentations with Impress, Draw to create graphics and Base for simple databases. However, the interface is similar to that of Office in previous editions to the incorporation of _ribbon_ with an aesthetic without the feeling of being cared for. The menus are long and finding an option among the many available is not easy, when opening a menu option one can feel intimidated by its length and it is somewhat more difficult to quickly find the option you are looking for among all those displayed. There will be users who prefer the interface of menus and toolbars, I am one of those who like _ribbon_ the most. It is available for Windows, Linux, and Mac.
 
@@ -59,7 +59,7 @@ The equivalent free and free alternative to Office is [LibreOffice][libreoffice]
     image3="image:libreoffice-impress.webp" optionsthumb3="200x150" title3="LibreOffice Impress"
     caption="LibreOffice" >}}
 
-### WPS Office
+## WPS Office
 
 If we like the _ribbon_ interface more without menus with a multitude of options and that it is more careful in terms of design than LibreOffice, similar to the one used in Microsoft Office, [WPS Office][wps-office] is an option to take into account, it can also be activated in classic mode with menus and toolbars supporting the editing of several documents in tabs. It only offers the basic programs of an office suite: text editor, spreadsheets and presentations. For personal use it is free with some limitations when printing and exporting documents to PDF format but more than enough even without all the options only available in the payment option.
 
@@ -74,7 +74,7 @@ It is available for Windows (XP, Vista, 7, 8, 10) even in versions for which not
     image3="image:wpsoffice-presentation.webp" optionsthumb3="200x150" title3="WPS Office Presentation"
     caption="WPS Office" >}}
 
-### Google Docs
+## Google Docs
 
 Another alternative to Office is [Google Docs][google-docs], it does not have all the options that Office has but for most users it is enough. Simply have a Google account to use that includes a text editor, spreadsheets, presentations and the ability to make forms. It runs in the browser and although it is possible to work without internet connection at specific times is required. The documents are stored in the cloud so we will not lose them in case of spoiling our computer, we can access the documents from any of our devices as a smartphone o tablet, edit the same document by two or more persons simultaneously or share the documents with other people. Being based on the cloud we do not need to perform software updates except the browser.
 
@@ -87,7 +87,7 @@ For companies, it is offered at a price of 4 € per user per month that include
     image3="image:googledocs-presentacion.webp" optionsthumb3="200x150" title3="Google Docs"
     caption="Google Docs" >}}
 
-### OnlyOffice
+## OnlyOffice
 
 [OnlyOffice][onlyoffice] also offers a basic office suite consisting of documents, spreadsheets and presentations. It has a desktop application for the main operating systems and it can also be run in its own cloud hosted with [Nextcloud][nextcloud] preserving document ownership and without the inconvenience of Google Docs loss of privacy. They are applications without all the options offered by Microsoft Office or LibreOffice but for sufficient basic use.
 
@@ -98,7 +98,7 @@ For companies, it is offered at a price of 4 € per user per month that include
     image3="image:onlyoffice-presentaciones.webp" optionsthumb3="200x150" title3="OnlyOffice PresentPresentationaciones"
     caption="OnlyOffice" >}}
 
-### Other alternatives
+## Other alternatives
 
 Some other option that deserves to be discussed is [Calligra][calligra] the _suite_ of the [KDE desktop environment][kde], [Abiword][abiword], [Lyx][lyx] or [Gnumeric][gnumeric].
 

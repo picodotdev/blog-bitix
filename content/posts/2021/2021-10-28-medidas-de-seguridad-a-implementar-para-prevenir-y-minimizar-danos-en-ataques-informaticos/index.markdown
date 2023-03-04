@@ -28,7 +28,7 @@ Sin embargo, me da miedo que un banco que debería ser un referente en medidas d
 
 {{< tableofcontents >}}
 
-### Inyección de SQL, XSS, _tabnabbing_ y otras vulnerabilidades básicas
+## Inyección de SQL, XSS, _tabnabbing_ y otras vulnerabilidades básicas
 
 Hay errores de seguridad comunes identificados hace ya tiempo que aún no están obsoletos, no son errores de seguridad complejos de explotar y tampoco son errores complejos de evitar usando las técnicas adecuadas de programación o evitando utilizar ciertas operaciones en la manipulación de datos. Varios de los errores de seguridad son por usar datos provenientes de fuentes no confiables sin aplicar el tratamiento adecuado. Aún siendo errores simples son peligrosos en una aplicación vulnerable.
 
@@ -40,7 +40,7 @@ La fundación OWASP mantiene un registro detallado de los diferentes tipos de se
 * [Reverse Tabnabbing](https://owasp.org/www-community/attacks/Reverse_Tabnabbing)
 * [El problema de seguridad tabnabbing y phishing en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo][blogbitix-486]
 
-### _Salted Password Hashing_
+## _Salted Password Hashing_
 
 Una aplicación que guarda credenciales para autenticar a los usuarios habitualmente solicita dos datos, un identificador del usuario o de la cuenta y una contraseña que como solo conoce el legítimo usuario permite identificarle en el sistema al iniciar sesión. Los identificadores de los usuarios y las contraseñas la aplicación necesita guardarlas en una base de datos para que la aplicación las compare con las que proporciona un usuario al iniciar sesión.
 
@@ -50,7 +50,7 @@ La forma correcta de guardar contraseñas es utilizando cifrado o sin cifrado ut
 
 * [Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas][blogbitix-75]
 
-### Implementación de segundo factor de autenticación
+## Implementación de segundo factor de autenticación
 
 Muchos usuarios no tienen conocimientos de informática, ni una alfabetización digital avanzada. Estos usuarios con unos conocimientos mínimos utilizan la tecnología por ser necesaria ya para muchas tareas o permitir realizarlas de forma más rápida y sencilla. Pero incluso usuarios con muchos conocimientos avanzados de tecnología también son vulnerables a ciertos tipos de ataques como los de _phishing_ sin las precauciones adecuadas. Los ataques de suplantación de identidad o _phishing_ son empleados por los delincuentes para robar información personal, credenciales de acceso a cualquier tipo de servicio y datos bancarios como tarjetas de crédito.
 
@@ -61,7 +61,7 @@ Los servicios más conocidos implementan el segundo factor de autenticación que
 * [Qué es, por qué y cómo activar un segundo factor de autenticación en Google, Amazon, PayPal y otros servicios][blogbitix-530]
 * [Implementar un segundo factor de autenticación en una aplicación web Java con Spring][blogbitix-445]
 
-### Notificación de acciones relevantes
+## Notificación de acciones relevantes
 
 Algunas operaciones son relevantes desde el punto de vista de seguridad, como el inicio de sesión, un intento fallido de inicio de sesión, cambio de contraseña o realización de algunas operaciones en el ámbito de la aplicación. Para mejorar la seguridad conviene enviar en este tipo de acciones una notificación al usuario que permita advertir ante acciones que se puedan realizar sin su conocimiento. Las notificaciones permiten al usuario tomar medidas en caso de que detecte acciones fraudulentas. Las notificaciones pueden ser a través de un correo electrónico, mensaje SMS o a través de mensajería instantánea.
 
@@ -73,7 +73,7 @@ Estos son dos ejemplos de correos electrónicos que envía [Gmail][google-gmail]
     image2="image:wallapop-inicio-sesion.webp" optionsthumb2="300x200" title2="Notificación de Wallapop de inicio de sesión"
     caption="Correos electrónicos de notificación de inicio de sesión" >}}
 
-### Registro de actividad
+## Registro de actividad
 
 Mantener un registro de la actividad es otra variante para dar visibilidad y permitirle al usuario identificar actividad fraudulenta en su cuenta en caso de que haya sido víctima de un ataque o sus credenciales hayan sido robadas. Algunos servicios mantienen un registro con las fechas de los últimos inicios de sesión, la dirección IP de la computadora junto con su geolocalización que permite conocer su ubicación aproximada, el navegador usado, sistema operativo o fecha de últimos cambios de contraseña.
 
@@ -84,13 +84,13 @@ Además de proporcionar al usuario un registro de actividad al mismo tiempo este
     image1="image:gmail-registro-actividad.webp" optionsthumb1="300x200" title1="Registro de actividad en una cuenta de Gmail"
     caption="Registro de actividad en una cuenta de Gmail" >}}
 
-### Establecer límites de uso
+## Establecer límites de uso
 
 Ya sea por una fallo de seguridad en un servicio vulnerable que ha sufrido un ataque o por un ataque dirigido al usuario por ejemplo con un ataque de _phishing_ es posible implementar medidas no dirigidas a evitar los ataques sino a mitigar o reducir los posibles daños de un posible ataque.
 
 Para mitigar los posibles daños un servicio puede implementar medidas para limitar los datos como establecer un límite de intentos fallidos de inicio de sesión antes de bloquear la cuenta de forma temporal. Los bancos por ejemplo permiten activar o desactivar las tarjetas de crédito a petición del cliente que impidan la autorización de operaciones, con esta medida aunque un usuario haya sido atacado y un delincuente haya robado los datos de su tarjeta de crédito este puede desactivarla para evitar operaciones fraudulentas con ella unido a la notificación de acciones relevante un usuario puede actuar para evitar más daños. Otras medidas que utilizan los bancos son establecer límites de disposición de efectivo diario, importe máximo de transferencias, importe máximo en comercios físicos y electrónicos y de compras por internet.
 
-### Cifrar información personal
+## Cifrar información personal
 
 Los datos personales están protegidos por leyes, un fallo de seguridad con el resultado de robo de datos personales también tiene consecuencias legales para la empresa con importantes multas y económicas por pérdida de clientes y mala imagen.
 
@@ -104,7 +104,7 @@ Vault es una aplicación que ofrece el cifrado como servicio entre otras funcion
 
 * [Cifrado y descifrado como servicio con Vault][blogbitix-557]
 
-### Informar a los usuarios
+## Informar a los usuarios
 
 Para prevenir fraudes otras medidas sencillas son informar a los usuarios de unas medidas básicas de prevención de fraude y explicar cómo son los procedimientos de comunicación.
 
@@ -112,7 +112,7 @@ Algunos son desconfiar de mensajes inesperados, no acceder a enlaces de mensajes
 
 Nunca facilitar datos personales, credenciales de acceso a una cuenta no datos de tarjetas bancarias. Tampoco descargar ni instalar aplicaciones si no provienen de las tiendas oficiales del dispositivo. Y activar las notificaciones para conocer la actividad en la cuenta del servicio.
 
-### Comunicaciones entre servicios
+## Comunicaciones entre servicios
 
 La arquitectura de las aplicaciones tienden a diseñarse de forma que ofrezcan un medio de invocar sus funcionalidades mediante llamadas de red ya sea con el protocolo HTTP mediante REST, GraphQL o gRPC.
 
@@ -126,7 +126,7 @@ Con las funcionalidades de conexión de Consul los servicios no es necesario que
 
 * [Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad][blogbitix-502]
 
-### Contraseñas en repositorios de código fuente y artefactos compilados
+## Contraseñas en repositorios de código fuente y artefactos compilados
 
 La seguridad de las aplicaciones se basa en contraseñas, claves privadas y certificados que únicamente las aplicaciones y los administradores de los servicios deben tener acceso. 
 
@@ -136,7 +136,7 @@ Estos secretos deben proporcionarse a las aplicaciones en tiempo de ejecución p
 
 * [Las contraseñas e información sensible en el código fuente o _bytecode_ de Java no son seguras][blogbitix-371]
 
-### Otras
+## Otras
 
 Otra medida de seguridad es ofrecer la posibilidad de eliminar una cuenta o desactivarla tras un periodo de inactividad prolongado.
 

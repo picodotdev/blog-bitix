@@ -27,7 +27,7 @@ Entre los algoritmos más conocidos están el de ordenación burbuja o _bubble s
 
 {{< tableofcontents >}}
 
-### Propiedades de los algoritmos de ordenación
+## Propiedades de los algoritmos de ordenación
 
 En función de las propiedades del algoritmo y el conjunto de datos a ordenar o su número un algoritmo es más adecuado que otro. Por ejemplo, el algoritmo _bubble sort_ no es el más rápido pero es estable y funciona por intercambio no requiriendo más memoria adicional que una variable temporal. Sin embargo, el algoritmo _bubble sort_ no es paralelizable y hay algoritmos más rápidos.
 
@@ -46,7 +46,7 @@ Un algoritmo de ordenación se clasifica según las siguientes propiedades:
 * Adaptabilidad: la ordenación de los elementos afecta al tiempo de ejecución, los algoritmos que tienen en cuenta esto son adaptativos.
 * _Online_
 
-### Algoritmo _bubble sort_
+## Algoritmo _bubble sort_
 
 El [algoritmo de burbuja](https://en.wikipedia.org/wiki/Bubble_sort) o _bubble sort_ dada una colección de elementos compara los dos primeros elementos de la colección y los intercambia en función de su orden si es necesario.
 
@@ -73,7 +73,7 @@ Esta es la implementación del algoritmos de burbuja.
 
 {{< code file="BubbleSort.java" language="java" options="" >}}
 
-### Algoritmo de ordenación _merge sort_
+## Algoritmo de ordenación _merge sort_
 
 El [algoritmo _merge sort_](https://en.wikipedia.org/wiki/Merge_sort) comienza con una fase de dividir listas, se divide la colección en dos partes del mismo número de elementos o una parte con elemento más que la otra si el número de elementos es impar. La división se aplica recursivamente hasta que las listas sean de un único elemento.
 
@@ -88,7 +88,7 @@ La fase de _merge_ termina cuando se tenga una única lista con los elementos or
 
 {{< code file="MergeSort.java" language="java" options="" >}}
 
-### Algoritmo de ordenación _quicksort_
+## Algoritmo de ordenación _quicksort_
 
 El [algoritmo _quicskort_](https://en.wikipedia.org/wiki/Quicksort)  selecciona un elemento como pivote de la colección. A continuación divide la colección en dos listas de elementos, los que tienen un valor inferior al valor de pivote y los que tiene un valor superior al valor de pivote.
 
@@ -102,7 +102,7 @@ A continuación se aplica la ordenación a cada una de las listas de forma recur
 {{< code file="QuickSort.java" language="java" options="" >}}
 {{< code file="System.out" language="plain" options="" >}}
 
-### Otros algoritmo de ordenación
+## Otros algoritmo de ordenación
 
 Los anteriores no son los únicos algoritmos conocidos para realizar ordenación, el la página de la wikipedia sobre [algoritmos de ordenación](https://en.wikipedia.org/wiki/Sorting_algorithm) hay muchos otros con una tabla de información acerca de su complejidad en el mejor de los casos, promedio y en el peor de los casos, su consumo de memoria, si es estable y el método de ordenación empleado.
 

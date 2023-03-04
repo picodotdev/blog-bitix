@@ -22,7 +22,7 @@ Viendo el panel [Kanban](https://es.wikipedia.org/wiki/Kanban_(desarrollo)) de l
 
 Esta necesidad que en la realidad será implementada con [Grails][grails] quería compararla con una implementación equivalente usando [Apache Tapestry][tapestry] porque como en muchas otras necesidades intuyo que con Tapestry implementarlas es significativamente más sencillo y con un resultado de implementación como en este caso con el que quedo más a gusto.
 
-### La necesidad
+## La necesidad
 
 Definiendo más la necesidad hasta ahora cada fila del listado tiene un conjunto de botones para realizar acciones individuales y ahora se quiere al final del listado otro conjunto de botones para realizar acciones sobre las compras que se seleccionen de forma múltiple. Para seleccionar las compras se usará un _checkbox_ colocado al inicio de cada fila. Para algunas acciones el usuario ha de introducir información adicional cosa que hará con un diálogo modal que ya existe pero que hasta ahora solo permitía hacer la acción de forma individual. Las mismas acciones se realizarán en varias páginas de la aplicación (después de la acción se deberá volver a la página en la que se estaba), solo se podrán hacer las acciones múltiples si en todas las compras seleccionadas es posible realizar esa acción y el contenido de los diálogos solicitando información adicional podrán depender de las compras seleccionadas. Las acciones en el ejemplo serán habilitar o deshabilitar. Determinar las acciones posibles de una compra es compleja y saber si una acción es posible no depende solo de información en la propia compra sino de otras entidades del sistema, en el ejemplo no será así pero se tendrá en cuenta en la implementación.
 
@@ -36,13 +36,13 @@ Esta sería una imagen del prototipo de los botones para hacer acciones múltipl
 
 En la necesidad real las filas son compras pero en el ejemplo usaré la entidad _Product_. Las acciones en el ejemplo serán habilitar para la que no será necesaria información adicional, la otra acción será deshabilitar para la que se necesitará introducir una razón con un modal.
 
-### Las posibilidades
+## Las posibilidades
 
 Para implementar técnicamente el que solo se puedan hacer las acciones múltiples según los productos seleccionadas se habilitarán o deshabilitarán los botones con JavaScript sin peticiones AJAX adicionales al servidor para ello toda la información necesaria deberá estar en el cliente. En este caso bastará habilitar o deshabilitar cada botón según si esa acción es posible en todas los productos seleccionadas pero eso podría no bastar ya que se podría requerir que productos fuesen del mismo vendedor. En el ejemplo con un atributo en un elemento HTML de la fila que contenga las acciones posibles separadas por comas bastará. De esta forma no habrá que hacer consultas adicionales al servidor mediante peticiones AJAX en cada nueva selección.
 
 Sin embargo, como el contenido de los diálogos depende del producto o productos seleccionadas se hará una petición AJAX para obtener su contenido. De esta forma el contenido de los diálogos no tendrá que estar precargado (el número de acciones podría ser una decena) en el cliente ni generarlo con JavaScript en cliente que sería algo más complicado que usar la propia tecnología para generar contenido que está presente en el servidor y posiblemente más propenso a errores por usar JavaScript.
 
-### La implementación con Apache Tapestry
+## La implementación con Apache Tapestry
 
 Definida la necesidad y unas pocas notas voy a poner el código de como con Apache Tapestry implementar la solución. La página del listado será la siguiente. En el _checkbox_ de selección se añade el atributo _data-product-actions_ con las acciones posibles que se obtienen del servicio _AppService_ con el método _getAvaliableActions_. El componente de Tapestry _actions_ generará el código de los botones tanto para los individuales en su uso _\<t:actions\>_ con el parámetro _product_ como múltiples en su uso con el parámetro _type_.
 
@@ -63,7 +63,7 @@ El código del modal para deshabilitar sería el siguiente. En el método _show_
 
 {{< sourcecode git="blog-ejemplos/tree/master/TapestryMultipleActions" command="./gradlew run" >}}
 
-### Algunas diferencias con Servlets/JSP y Grails
+## Algunas diferencias con Servlets/JSP y Grails
 
 La tecnología de presentación de páginas web Java con _Java Server Pages_ o JSP permiten encapsular con un _tag_ la generación de un trozo de HTML no en el propio JSP sino en ese _tag_ que en código Java pudiendo incluir la llamada a un JSP. Los _tags_ y librerías de _tags_ son una forma de reutilizar esas partes de generación de código en el mismo proyecto y entre proyectos. Los _tags_ además son una forma de abstraernos del funcionamiento interno del _tag_ haciendo que solo necesitemos conocer sus parámetros.
 
@@ -88,7 +88,7 @@ Para volver a la misma página en [Spring MVC][spring], [Struts][struts] o [Grai
 
 Esto es solo un pequeño ejemplo de las posibilidades de Apache Tapestry me dejo muchas otras como los eventos, _translators_, _encoders_, _coerces_, librerías de componentes, _inversion of control_, AJAX, validaciones de formularios, ... En un proyecto las herramientas no son lo más importante pero [el lenguaje de programación, _framework_ y librerías importan][blogbitix-153], hay [10 razones para seguir usando Java][blogbitix-81] y varios [motivos para elegir Apache Tapestry][elblogdepicodev-71].
 
-### Finalizando
+## Finalizando
 
 Lamentablemente hasta el momento no he tenido una oportunidad laboral de comprobar y demostrar que como en este ejemplo pero basado en una necesidad real que con Tapestry la implementación de la solución es más sencilla, menos propensa a errores y que la productividad no está relacionado con escribir unas pocas líneas de código menos con un lenguaje menos verboso o dejar de escribir puntos y comas al final de las líneas, más aún con las [novedades de Java 8][blogbitix-17]. Quizá un día llegue esa oportunidad :|.
 

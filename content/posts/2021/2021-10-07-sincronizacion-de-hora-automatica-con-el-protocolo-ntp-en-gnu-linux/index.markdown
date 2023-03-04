@@ -33,7 +33,7 @@ No tenía activado el servicio NTP proporcionado por el gestor de servicios _sys
 
 {{< tableofcontents >}}
 
-### Sincronización de hora en GNOME
+## Sincronización de hora en GNOME
 
 Para activar el servicio NTP en GNOME basta con acceder al panel de configuración en la sección de _Fecha y hora_ y activar la opción _Fecha y hora_ automáticas. Esta opción hace lo mismo que desde la línea de comandos.
 
@@ -42,7 +42,7 @@ Para activar el servicio NTP en GNOME basta con acceder al panel de configuraci�
     image1="image:gnome-fecha-hora.webp" optionsthumb1="300x250" title1="Configuración de fecha y hora en GNOME"
     caption="Configuración de fecha y hora en GNOME" >}}
 
-### Sincronización de hora desde línea de comandos
+## Sincronización de hora desde línea de comandos
 
 El gestor de servicios _systemd_ proporciona un servicio para mantener sincronizada la fecha y hora con el protocolo NTP. Los siguientes comandos permiten conocer el estado del servicio y la información de la fecha y hora del sistema.
 

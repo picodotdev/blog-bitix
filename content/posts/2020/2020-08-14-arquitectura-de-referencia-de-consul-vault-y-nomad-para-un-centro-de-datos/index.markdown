@@ -60,7 +60,7 @@ Este artículo hace uso, está relacionado y se complementa con otros artículos
 
 {{< tableofcontents >}}
 
-### Servicios de HashiCorp
+## Servicios de HashiCorp
 
 {{< image
     gallery="true"
@@ -80,7 +80,7 @@ Este artículo hace uso, está relacionado y se complementa con otros artículos
     image2="image:hashicorp-terraform-before-after.webp" optionsthumb2="200x150" title2="Ecosistema con Nomad"
     caption="Ecosistema con Nomad" >}}
 
-#### Consul
+### Consul
 
 En una aplicación basada en servicios a lo largo del tiempo estos se añaden y se eliminan, varía el número de instancias, cambian de ubicación, pueden dejar de estar accesibles de forma inesperada y los servicios necesitan comunicarse de forma segura.
 
@@ -88,29 +88,29 @@ La herramienta Consul proporciona proporcionan funcionalidades para todas estas 
 
 El catálogo de servicios es accesible mediante una API REST, también ofrece su catálogo de servicios a través de una interfaz DNS ya que incorpora la funcionalidad de servidor DNS. Consul además proporciona un almacén de clave/valor que los servicios pueden utilizar como valores de configuración que cambian de forma dinámica sin necesidad de reiniciar las instancias del servicio para que los nuevos valores surtan efecto.
 
-#### Vault
+### Vault
 
 Vault proporciona servicios de seguridad. En vez de implementar las necesidades de seguridad en cada aplicación con el lenguaje de programación en el que esté desarrollado Vault permite delegar y centralizar en él los requerimientos y políticas de seguridad.
 
 Proporciona funcionalidades de cifrado y descifrado, cifrado y descifrado conservando el formato y enmascaramiento basado en políticas. También permite generar certificados con un tiempo de expiración pequeño y generación de credenciales dinámicas, esto es, en vez de generar unas credenciales de conexión para cada aplicación a una base de datos la aplicación puede solicitar a Vault unas credenciales de conexión para la base de datos que únicamente son válidas mientras la aplicación necesita la conexión. Las credenciales dinámicas permiten aumentar la seguridad.
 
-#### Nomad
+### Nomad
 
 Los servicios necesitan ejecutarse y crear instancias para proporcionar sus funcionalidades, Nomad hace las funciones de orquestador de servicios. Se encarga de planificar el nodo de entre los disponibles en los que se ejecutara cada instancia del servicio, de mantener el número de instancias indicadas en la descripción de cada servicio y de aplicar la estrategia de despliegue según la política definida para cada servicio, como _blue/green_ o _canary_.
 
 Nomad se integra con Consul y permite que al iniciar la instancia de un servicio se registre en Consul y configurar un _health check_ para que Consul monitorice el estado de la instancia del servicio.
 
-#### Vagrant y Terraform
+### Vagrant y Terraform
 
 Para automatizar la creación de los entornos, crear los entornos como código y que estos queden descritos en archivos se utilizan herramientas de aprovisionamiento. HashiCorp proporciona dos, una es Vagrant para crear máquinas virtuales en local con VirtualBox para un entorno de desarrollo. Para un entorno de producción se usará un proveedor de computación en la nube como [Amazon Web Services][amazon-web-services], [Google Cloud Platform][google-cloud], [Microsoft Azure][microsoft-azure] u otros como [Digital Ocean][digital-ocean] o [Linode][linode].
 
 Cada uno de estos entornos de computación tiene sus peculiaridades, Terraform permite describir las necesidades de sistemas en cuanto a infraestructura del entorno de ejecución de forma independiente a cada uno de estos proveedores, automatizar el aprovisionamiento y definir la infraestructura como código lo que permite guardar en un repositorio de control de versiones los cambios que se realizan a la infraestructura.
 
-#### Packer
+### Packer
 
 La herramienta Packer permite construir las imágenes base para los sistemas en la nube y de los contenedores. Es agnóstica de los diferentes sistemas en la nube permitiendo construir imágenes para cada una de ellas, esto permite no estar encadenado a un proveedor determinado.
 
-### Comparación con Kubernetes
+## Comparación con Kubernetes
 
 [Kubernetes][kubernetes] es otro sistema con la funcionalidad de orquestador de contenedores desarrollado originalmente por Google y al que ahora contribuyen numerosas empresas como  [Red Hat][redhat]. Proporciona todas las características que necesitan las aplicaciones basadas en contenedores incluyendo gestión del clúster, planificación, descubrimiento de servicios, monitorización, gestión de secretos y otros más.
 
@@ -123,7 +123,7 @@ La arquitectura de las herramientas de HashiCorp  es más simple, cada  una de l
 * [Nomad vs Kubernetes](https://www.nomadproject.io/intro/vs/kubernetes.html)
 * [Consul vs. Other Software](https://www.consul.io/intro/vs)
 
-### Arquitectura de referencia
+## Arquitectura de referencia
 
 En una arquitectura de referencia para proporcionar alta disponibilidad y tolerancia a fallos es necesario crear varias instancias de cada servicio. Las diferentes instancias de Consul, Vault y Nomad forman un clúster algunas funcionando en modo servidor y otras funcionando en modo cliente. Para los servidores de Consul, Vault y Nomad se recomiendan al menos 3 instancias de cada uno de ellos, en total 9 instancias. En cada instancia de Vault y Nomad se crea un agente de Consul que actúa en modo cliente que atiende a las peticiones de forma local y realiza las comunicaciones con los servidores de Consul. De Nomad habrá varias instancias adicionales más actuando en modo cliente que serán donde se ejecuten las instancias de los servicios de aplicación como un un contenedor Docker con Nginx, una base de datos [PostgresQL][postgresql] o una aplicación Java con [Spring Boot][spring-boot].
 
@@ -142,7 +142,7 @@ Estos son los esquemas de las arquitecturas de referencia de Consul, Vault y Nom
     image3="image:nomad-reference-architecture.webp" optionsthumb3="200x150" title3="Arquitectura de referencia de Nomad"
     caption="Arquitecturas de referencia de Consul, Vault y Nomad" >}}
 
-#### Precio
+### Precio
 
 Dependiendo del tamaño de las máquinas de cómputo elegidas para cada instancia el coste de la infraestructura varia. En AWS una instancia _t3a.medium_, _t3a.large_ y _t3a.xlarge_ con 4, 8 y 16 GiB tienen un coste aproximado de $125, $250 y $400 al año si se paga por adelantado una reserva de 3 años. Multiplicado esto por el número de instancias el coste no es despreciable pero asequible para una empresa que llega a necesitar 100 instancias para sus servicios. La ventaja de la computación en la nube y estas herramientas de HashiCorp es que permiten adaptar el entorno del centro de datos a las necesidades suficientes para cada momento, si se necesitan más máquinas e instancias se añaden si dejan de necesitar se eliminan, esta la elasticidad ofrecida por la computación en la nube que los costes sean únicamente los necesarios.
 
@@ -253,7 +253,7 @@ Es difícil calcular el coste exacto de un centro de datos ya que tendrá una me
    </tbody>
 </table>
 
-### Ejemplo de la arquitectura de referencia con Vagrant
+## Ejemplo de la arquitectura de referencia con Vagrant
 
 Para ejecutar la arquitectura de referencia en vez de crear 3 o 5 instancias de Consul, Vault y Nomad en el siguiente ejemplo se utiliza solo 1 instancia de cada uno de ellos. Para ejecutarlos en local se usa Vagrant para crear y aprovisionar las máquinas virtuales de VirtualBox.
 
@@ -337,7 +337,7 @@ Como se muestra en los esquemas de de arquitectura de referencia Vault y Nomad n
 
 {{< code file="vault-server/consul-agent.hcl" language="hcl" options="" >}}
 
-#### Interfaz web para Consul, Vault y Nomad
+### Interfaz web para Consul, Vault y Nomad
 
 Las consolas de administración web de Consul, Vault y Nomad están accesibles en estas direcciones URL que están protegidas por una autenticación básica, dado que el certificado de la CA no es de confianza para el navegador se muestra previamente un mensaje de advertencia. En la consola web de Consul se observan los servicios y nodos registrados registrados y su estado de salud.
 
@@ -361,7 +361,7 @@ Las consolas de administración muestran el estado de centro de datos y con todo
     image2="image:nomad-console.webp" optionsthumb2="300x250" title2="Consola web de Nomad"
     caption="Consolas web de Consul, Vault y Nomad y estados de salud de los servicios y nodos" >}}
 
-#### Interfaz de línea de comandos para Consul, Vault y Nomad
+### Interfaz de línea de comandos para Consul, Vault y Nomad
 
 Los mismos binarios de Consul, Vault y Nomad que tienen las funciones de servidor y cliente permiten utilizar su línea de comandos para realizar y automatizar con _scripts_ las mismas acciones que se pueden hacer desde las consolas web pero la línea de comandos.
 
@@ -370,7 +370,7 @@ Dado que en el ejemplo los servidores requieren identificar al cliente es necesa
 {{< code file="environment.sh" language="bash" options="" >}}
 {{< code file="environment-status.sh" language="bash" options="" >}}
 
-#### Ejecución de un servicio
+### Ejecución de un servicio
 
 El siguiente es la definición de un servicio o _job_ para Nomad que define un servidor Nginx ejecutado en un contenedor de Docker. Una vez Nomad lo pone en ejecución se registra en Consul de forma automática de forma que pudiera ser encontrado por otros servicios que consulten el catálogo de servicios de Consul.
 
@@ -389,7 +389,7 @@ El siguiente es la definición de un servicio o _job_ para Nomad que define un s
     image2="image:datacenter-commandline-information.webp" optionsthumb2="300x250" title2="Información de estado del centro de datos obtenido desde la línea de comandos"
     caption="Servicios en consul con el servicio de Nginx registrado por Nomad e información de estado del centro de datos obtenido desde la línea de comandos" >}}
 
-### Requerimientos de operaciones
+## Requerimientos de operaciones
 
 Este artículo solo tiene un ejemplo básico pero que sirve como base para crear un entorno de producción real basado en las herramientas de HashiCorp.
 

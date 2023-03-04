@@ -25,7 +25,7 @@ Hay múltiples licencias de software que se catalogan principalmente en tres gru
 
 {{< tableofcontents >}}
 
-### Software privativo
+## Software privativo
 
 Para entender las licencias de software libre o código abierto se puede empezar por entender que son las licencias de software privativo. Las licencias de software privativo se denominan así porque privan al usuario de ciertos derechos en el uso o propósito de uso, acceso al código fuente, modificación, distribución o distribución de modificaciones.
 
@@ -45,7 +45,7 @@ Los software más populares con una licencia privativa son el sistema operativo 
     image2="logotype:apple.svg" optionsthumb2="200x150" title2="Apple"
     caption="Microsoft y Apple" >}}
 
-### Licencias de software libre
+## Licencias de software libre
 
 Las licencias de software libre se caracterizan por otorgar ciertos derechos a los usuarios. Algunos de estos son el acceso al código fuente, no imponer restricciones en el uso o propósito del código fuente, permitir realizar modificaciones a los programas y distribuir esas modificaciones.
 
@@ -64,7 +64,7 @@ Las siguientes no son los únicos tipos de licencias de software libre pero sí 
 {{< youtube
     video="5t_EcPTEzh4" >}}
 
-#### GPL, LGPL y AGPL
+### GPL, LGPL y AGPL
 
 Las licencias de software libre de la fundación de software libre o FSF son las licencias más utilizadas para programas de software libre. La FSF considera que el software libre ha de otorgar las siguientes cuatro libertades al usuario para considerarse un software como software libre. Estas libertades tratan de garantizar los derechos del usuario y que el software conserve su condición de software libre.
 
@@ -94,7 +94,7 @@ Hay muchas [distribuciones GNU/Linux entre las que elegir][blogbitix-190] según
     image3="logotype:linux.svg" optionsthumb3="200x150" title3="Linux"
     caption="GNU, FSF y Linux" >}}
 
-#### BSD
+### BSD
 
 Las licencias de BSD consideran que las 4 libertades de las licencias de software libre del proyecto GNU en realidad limitan las libertades del usuario, ya que la licencia GPL obliga a distribuir todo el código usado aunque otro tenga otra licencia de software libre con una licencia GPL de software libre.
 
@@ -105,29 +105,29 @@ Según las cláusulas que incluye la licencia las licencias BSD se clasifican en
 * [Licencias BSD][bsd-licenses]
 * [Las diferencias entre GNU/Linux, BSD y sus distribuciones][blogbitix-498]
 
-#### MIT
+### MIT
 
 Las licencias MIT son de las más permisivas, casi se consideran software de dominio público. Lo único que requieren es incluir la licencia MIT para indicar que el software incluye código con licencia MIT.
 
 * [Licencia MIT][mit-license]
 
-#### Apache License 2.0
+### Apache License 2.0
 
 La licencia Apache trata de preservar los derechos de autor, incluir la licencia en el software distribuido y una lista de los cambios realizados. En modificaciones extensivas del software original permite licenciar el software bajo otra licencia sin incluir el código fuente esas modificaciones.
 
 * [Licencia Apache][apache-license]
 
-#### Mozilla Public License
+### Mozilla Public License
 
 Esta licencia requiere que los archivos al ser distribuido conserven la misma licencia original pero puede ser usado junto con archivos con otra licencia al contrario que la licencia GPL que requiere que todo el código usado junto con código GPL sea licenciado como código GPL. También en caso de hacer modificaciones extensivas permite distribuirlas bajo diferentes términos y sin incluir el código fuente esas modificaciones
 
 * [Licencia MPL][mpl-license]
 
-#### Código de dominio público
+### Código de dominio público
 
 Es un código que no está sujeto a derechos de autor que puede utilizarse sin restricciones.
 
-#### Creative Commons
+### Creative Commons
 
 Las licencias de Creative Commons más que para el software se utilizan para cualquier creación artística digital, desde fotos, artículos en blogs, música, vídeos, ...
 
@@ -135,7 +135,7 @@ Hay varios tipos de licencias de _Creative Commons_ diferenciando entre permitir
 
 * [Licencia Creative Commons][creativecommons]
 
-### Licencias de código abierto
+## Licencias de código abierto
 
 Por normal general, el término código abierto y de software libre se utiliza indistintamente para denominar la misma categoría de software. Según [la definición de código abierto][opensource-definition] (o la [definición de código abierto en la wikipedia][wikipedia-opensource-definition]) se otorgan los mismos derechos derechos de acceso al código fuente, modificación y distribución que el software libre.
 
@@ -151,7 +151,7 @@ Dado el éxito del software libre como modelo de desarrollo de software algunas 
 >
 > -  Free Software Foundation
 
-#### Microsoft Public License
+### Microsoft Public License
 
 La Microsoft Public License es una licencia de código abierto que permite la distribución del software bajo la misma licencia y la modificación para un uso un uso privado. Tiene restricciones en cuanto a las marcas registradas.
 
@@ -159,7 +159,7 @@ En caso de distribuir el software de forma compiladas o en forma de objeto binar
 
 * [Licencia pública de Microsoft][microsoft-ms-pl-license]
 
-### Modelo de desarrollo de software bazar y catedral
+## Modelo de desarrollo de software bazar y catedral
 
 El tipo de licencia no determina qué software es mejor o peor, si el privativo o de software libre, la diferencia entre las licencias está en sus características éticas y legales. Aunque el modelo de desarrollo con una licencia de código abierto a la larga suele tener un mejor desarrollo y éxito que el software privativo, más aún con un medio como internet que permite colaborar a cualesquiera personas en el mundo independiente donde estén ubicadas en el mundo.
 

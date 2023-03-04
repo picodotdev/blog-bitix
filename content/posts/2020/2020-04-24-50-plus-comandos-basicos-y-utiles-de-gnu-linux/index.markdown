@@ -39,7 +39,7 @@ Algunos ejemplos de lo que es posible realizar desde la línea de comandos son e
 
 {{< tableofcontents >}}
 
-### Sistema de archivos
+## Sistema de archivos
 
 Esta colección de comandos permiten navegar el sistema de archivos, cambiar de directorio actual, copiar, mover y eliminar archivos, crear enlaces simbólicos, crear directorios y eliminar directorios así como cambiar [los permisos del sistema de archivos][blogbitix-455].
 
@@ -54,7 +54,7 @@ Los comandos suelen recibir como parámetros de entrada archivos, los archivos s
 * `chmod`, `chown`: estos comandos permiten cambiar los permisos de lectura, escritura y ejecución de los archivos, el segundo cambia el usuario y grupo del propietario del archivo.
 * `du`: estima el espacio usado por los archivos.
 
-### Intérprete bash
+## Intérprete bash
 
 Los comandos son procesados por un intérprete de comandos algunos están relacionados con el intérprete.
 
@@ -66,7 +66,7 @@ Los comandos son procesados por un intérprete de comandos algunos están relaci
 * `locate`: muestra la ubicación en el sistema de archivos del comando indicado.
 * `man`: páginas de manual y uso de un comando. Incluye la descripción de un comando, sus parámetros y opciones que posee.
 
-### Comunicaciones por red
+## Comunicaciones por red
 
 * `ping`: suele utilizarse para comprobar si la red funciona correctamente. Por ejemplo, comprobando si se puede conectar con el _host_ _google.es_.
 * `ip`: muestra la dirección IP asociada al equipo, suele ser necesario conocer la dirección IP para las comunicaciones en la red local.
@@ -75,7 +75,7 @@ Los comandos son procesados por un intérprete de comandos algunos están relaci
 * `curl`: permite realizar peticiones del protocolo HTTP a un servidor.
 * `dig`: devuelve información de un dominio del sistema DNS.
 
-### Tratamiento de archivos
+## Tratamiento de archivos
 
 * `cut`, `sed`, `awk`, `jq`: permiten manipular cadenas de texto de la entrada y devolverlas transformadas en la salida. _jq_ es para ,manipular cadenas en formato JSON.
 * `grep`: permite buscar coincidencias aplicando expresiones regulares en la entrada de texto.
@@ -88,13 +88,13 @@ Los comandos son procesados por un intérprete de comandos algunos están relaci
 * `df`, `du`: muestra información de uso en el almacenamiento persistente.
 * `free`: muestra el estado de la memoria del sistema.
 
-### Editores de texto
+## Editores de texto
 
 * `nano`: editor de texto básico y sencillo de usar basado en consola.
 * `vim`: editor de texto potente y versátil pero que requiere un periodo de aprendizaje para conocer todas sus combinaciones de teclas.
 * `emacs`: otro editor de texto potente y versátil pero también con un periodo de aprendizaje mayor que _nano_.
 
-### Monitorización y sistema
+## Monitorización y sistema
 
 * `top`: monitor de los procesos del sistema en ejecución, en el se muestra el tiempo de CPU que están usando y la memoria que están consumiendo.
 * `htop`: monitor de procesos similar a _top_ un poco más avanzado y más personalizable.
@@ -107,18 +107,18 @@ Los comandos son procesados por un intérprete de comandos algunos están relaci
 * `sudo`: ejecuta un comando con los permisos de superusuario. Hay que usarlo con precaución ya que su uso incorrecto por poder realizar cualquier cosa en el sistema puede posibilitar acciones indeseadas y fallos en el sistema.
 * `ssh`: permite conectarse a otra máquina de forma segura.
 
-### Fechas y programación de tareas
+## Fechas y programación de tareas
 
 * `date`: muestra la fecha y hora del sistema actual.
 * `cal`: muestra un calendario en la consola.
 * `at`: permite programar una tarea para que se ejecuta a una hora determinada.
 * `crontab`: permite programar tareas para ejecutarse en los momentos indicados por las expresiones _cron_.
 
-### Compresión de archivos y directorios
+## Compresión de archivos y directorios
 
 * `tar`, `gzip`, `unzip`: permiten realizar operaciones de compresión sobre archivos para reducir su tamaño y agrupar múltiples archivos en uno solo.
 
-### Utilidades
+## Utilidades
 
 * `yes`: repite indefinidamente el mensaje _yes_ en la salida hasta que se finaliza. Útil para ejecutar comandos de forma desatendida que requieren la intervención del usuario.
 * `md5sum`: calcula el _hash_ _md5_ de un contenido.

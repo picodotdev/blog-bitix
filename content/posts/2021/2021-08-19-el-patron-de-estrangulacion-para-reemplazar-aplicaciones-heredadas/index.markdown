@@ -23,7 +23,7 @@ Quizá llegue un momento que surge el interés de sustituir la aplicación, una 
 
 {{< tableofcontents >}}
 
-### El problema de las aplicaciones heredadas
+## El problema de las aplicaciones heredadas
 
 Algunos de los motivos para desear sustituir una aplicación son los siguientes.
 
@@ -36,7 +36,7 @@ Algunos de los motivos para desear sustituir una aplicación son los siguientes.
 
 Cuando los problemas son demasiado grandes las consecuencias son que al hacer un cambio en el código existente no haya confianza de que vaya a funcionar correctamente o requiera demasiado tiempo incrementando los tiempos desde que se acepta un cambio hasta que este es aplicado en producción. Más tiempo entre despliegues agrava los problemas, el resultado es que se crea una espiral de decadencia que realimenta si no se toman medidas para evitarlo.
 
-### Reescribir o reemplazar
+## Reescribir o reemplazar
 
 Entre las dos opciones al sustituir una aplicación se puede optar por reescribir la aplicación completamente desde cero o sustituir sus funcionalidades de forma incremental. La reescritura completa de una aplicación grande no está exenta de problemas y riesgos. Probablemente no sea posible dejar de dar servicio a la aplicación existente corrigiendo errores o modificaciones mientras la nueva aplicación se está desarrollando. Sustituir un sistema de un tiempo de vida de más de un lustro de vida en poco tiempo no es fácil conseguirlo en unos pocos meses ya que posiblemente tenga una base de código grande con lógica de negocio complicada embebida, la realidad es que pasado unos pocos meses después de empezada la tarea el nuevo sistema únicamente tiene un porcentaje bajo de todas las funcionalidades de la antigua, también se acumule la deuda técnica con la presión de realizar una entrega y la nueva aplicación contenga varios de los mismos problemas que la aplicación que pretende sustituir.
 
@@ -44,7 +44,7 @@ Como alternativa a la reescritura está el reemplazo de forma incremental de par
 
 Teniendo en cuenta que una aplicación pasado un tiempo se considerará heredada y obsoleta, las aplicaciones deberían diseñarse y estructurarse de tal forma que faciliten su sustitución en un futuro.
 
-### El patrón de estrangulación
+## El patrón de estrangulación
 
 El patrón de estrangulación permite sustituir una aplicación heredada reemplazando de forma gradual y con menos riesgos piezas específicas de funcionalidad por nuevas aplicaciones y servicios. A medida que las funcionalidades de la aplicación heredada son sustituidas, el nuevo sistema eventualmente reemplaza todas las funcionalidades del sistema heredado que es estrangulado hasta que nada de él queda ya por sustituir, lo que queda si no es necesario es posible eliminarlo. La aplicación heredada se mantiene en funcionamiento en todo momento mientras el nuevo sistema funciona de la forma esperada.
 
@@ -60,7 +60,7 @@ El patrón no es la única estrategia que ayuda a reemplazar un sistema existent
     image1="image:the-strangler-pattern-2.webp" optionsthumb1="650x450" title1="El patrón estrangulación"
     caption="El patrón estrangulación" >}}
 
-#### Funcionamiento
+### Funcionamiento
 
 El funcionamiento del patrón de estrangulación es bastante simple. El primer paso consiste en establecer un intermediario entre el código o aplicación heredado a sustituir y el cliente o usuario de este código. En el inicio de proceso de estrangulación, el intermediario simplemente delega cada petición que recibe en el código o aplicación heredado. Una vez que el intermediario está ubicado puede redirigir las peticiones a otra aplicación o componente una vez completado su desarrollo.
 
@@ -72,7 +72,7 @@ En el caso de una aplicación monolítica es posible optar por una opción tambi
 
 El intermediario en una aplicación monolítica es una clase fachada que delega en el código heredado, en el nuevo módulo o en un microservicio que extrae de la aplicación heredada la funcionalidad a estragular. En el caso de una aplicación heredada que funciona mediante llamadas de red como HTTP el intermediario es un _proxy_ inverso que redirige las peticiones a la aplicación heredada o al nuevo servicio sin que los clientes sean conscientes del cambio. Adicionalmente si la aplicación heredada utiliza colas de mensajes una posible opción es hacer cambiar la aplicación heredada para que lea de otras colas nuevas y el intermediario lea de las colas de mensajes originales, de esto modo el intermediario puede decidir si enviar los mensajes a las colas de la aplicación heredada o a su reemplazo.
 
-#### Ventajas e inconvenientes
+### Ventajas e inconvenientes
 
 Las ventajas del patrón de estrangulación son:
 
@@ -85,7 +85,7 @@ Los inconvenientes son:
 * Requiere cuidado en el enrutado de peticiones hacia los diferentes sistemas. Cada nuevo servicio requiere adaptar la lógica del intermediario para redirigir las peticiones de la funcionalidad del viejo servicio al nuevo, cuando una aplicación está compuesta de gran cantidad de servicios es un trabajo significativo.
 * Requiere un plan de vuelta hacia para cada funcionalidad reemplazada en caso de que las casas vayan mal. Aún así esto es más sencillo y está más acotado que en el caso de la reescritura.
 
-#### Que seleccionar primero para estrangular
+### Que seleccionar primero para estrangular
 
 Otra cuestión que funcionalidades de la aplicación heredada reemplazar primero. Es posible utilizar varios criterios pudiendo ser su facilidad de reemplazo, importancia, tamaño o dependencias que tenga.
 

@@ -31,7 +31,7 @@ En esta ocasión los proyectos a los que he hecho una donación han sido [Lineag
 
 Muchos móviles siguen siendo perfectamente útiles aún pasados más de dos años. En mi móvil, un Samsung Galaxy S3 (i9300) del año 2012 con 4 núcleos y un solo _giga_ de memoria RAM con no tantos años de vida pero que ya podría considerarse obsoleto debido al gran avance en capacidades que experimentado los _smartphones_ usaba la extinta CyanogenMod en su versión 10.2 que incorporaba Android 4.4 (KitKat) cuando de fábrica tenía 4.1 o 4.2 (Jelly Bean). En alguna ocasión he pensado en actualizarlo a alguna versión más reciente de Android aunque por el poco uso que hago del móvil ya me era suficiente con la versión 4.4 de Android, también porque me daba un poco de pereza hacer la actualización aún no siendo demasiado complicado y no tardando mucho sabiendo lo que hay que hacer. En estas dos distribuciones de Android el Samsung Galaxy S3 está soportado.
 
-### LineageOS
+## LineageOS
 
 Se trata de la versión heredera de CyanogenMod, soporta una gran cantidad de terminales que con el paso del tiempo va aumentando aunque hasta el momento no he visto que se haya lanzado una versión estable de alguno de ellos, en cualquier caso en el estado actual funcionará bastante bien en cualquiera de los terminales.
 
@@ -49,7 +49,7 @@ Se ofrece de forma gratuita pero los servidores que son necesarios para el desar
     image2="image:lineageos-14.1.webp" optionsthumb2="300x200" title2="LineageOS 14.1"
     caption="CynogenMod 10.2 y LineageOS 14.1" >}}
 
-### Replicant
+## Replicant
 
 Es la distribución de Android recomendada por la [FSF][fsf]. Uno de sus objetivos es los teléfonos móviles respeten la privacidad de los usuarios no realizando seguimiento, posicionamiento y no compartiendo datos e incluyendo en el sistema operativo solo elementos libres. Y es que prácticamente todas las aplicaciones quieren acceder a los contactos, fotos, mensajes SMS, llamadas y otros varios permisos que las aplicaciones solicitan y hay que conceder. Esta distribución de Android es para aquellos le dan gran importancia a la seguridad, privacidad y libertad en estos dispositivos que podrían calificarse de seguimiento y vigilancia. Y por ello esta distribución es importante.
 
@@ -65,7 +65,7 @@ Está basado en LineageOS 13 y Android 6 quitándole los componentes que no mant
     image1="image:replicant-6.webp" optionsthumb1="300x200" title1="Replicant 6"
     caption="Replicant 6" >}}
 
-### Comprobantes de las donaciones
+## Comprobantes de las donaciones
 
 En ambos casos las donaciones que he hecho han sido de 15 €.
 

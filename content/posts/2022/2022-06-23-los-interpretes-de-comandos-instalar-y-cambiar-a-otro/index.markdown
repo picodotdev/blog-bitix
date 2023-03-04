@@ -32,7 +32,7 @@ Sin embargo, el núcleo sólo es una parte de lo que se considera un sistema ope
 
 {{< tableofcontents >}}
 
-### Qué hace un intérprete de comandos
+## Qué hace un intérprete de comandos
 
 Un intérprete de comandos es una interfaz basada en texto que permite introducir los comandos a ejecutar compuestos por el nombre del programa, opciones de invocación y sus argumentos. El intérprete de comandos también permite establecer variables de entorno para almacenar valores e incluirlos en el comando así como redirigir la salida a archivos y crear tuberías para redirigir la salida de un programa a la entrada de otros que permiten realizar una funcionalidad compleja a partir de comandos más simples.
 
@@ -45,7 +45,7 @@ Aún con las interfaces gráficas las terminales y la línea de comandos siguen 
     image1="image:gnome-terminal.webp" optionsthumb1="650x450" title1="Emulador de terminal de GNOME Terminal"
     caption="Emulador de terminal de GNOME Terminal" >}}
 
-### Funcionalidades del intérprete de comandos
+## Funcionalidades del intérprete de comandos
 
 Las funcionalidades de introducir comandos y ejecutarlos, variables de entorno, redirecciones y tuberías son funcionalidades básicas que los intérpretes de comandos actuales poseen. Algunas funcionalidades no están presentes en todos los intérprete de comandos y otras en función del inteŕprete funciona de forma ligeramente diferente o con algún añadido adicional.
 
@@ -55,7 +55,7 @@ Otra variación en función del intérprete es el tipo de expansión comodín o 
 
 Otra funcionalidad es la posibilidad de personalizar el aspecto del símbolo del sistema o _prompt_ para que muestre la información que se desee en texto y con los colores deseados. Los símbolos del sistema por defecto incluyen el directorio de trabajo actual, el nombre de usuario y el nombre del sistema en el que se está trabajando.
 
-### Intérpretes de comandos
+## Intérpretes de comandos
 
 Dado que el intérprete de comandos es simplemente un programa más hay varios disponibles con ligeras variaciones sobre las funcionalidades básicas pero suficientes para que algunos desarrolladores según sus ideales hayan creado varios.
 
@@ -72,7 +72,7 @@ Las funcionalidades principales de todo intérprete de comandos las soportan tod
 * [Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
 * [Zsh Manual](https://zsh.sourceforge.io/Doc/Release/zsh_toc.html)
 
-### Como cambiar el intérprete de comandos del usuario
+## Como cambiar el intérprete de comandos del usuario
 
 Independientemente del intérprete de comandos que preinstale la distribución GNU/Linux este se puede cambiar instalando el paquete de otro intérprete y ejecutándolo como un comando más. También es posible cambiar el intérprete por defecto al abrir una terminal.
 
@@ -92,7 +92,7 @@ El aspecto por defecto de los _prompts_ de bash y zsh son los siguientes.
     image2="image:zsh.webp" optionsthumb2="300x200" title2="Intérprete de comandos zsh"
     caption="Intérprete de comandos bash y zsh" >}}
 
-### Configurar el _prompt_ del símbolo del sistema
+## Configurar el _prompt_ del símbolo del sistema
 
 Uno de los motivos de cambiar de un intérprete de comandos por otro es cambiar el aspecto del símbolo del sistema. bash con la variable de entorno _PS1_ permite personalizar en cierta medida _prompt_ y si se usa el sistema de control de versiones Git este ofrece una utilidad para que el símbolo del sistema indique el estado de cambios cuando el directorio de trabajo actual es un repositorio de Git. Sin embargo, estas personalizaciones son limitadas y específicas de cada _shell_.
 

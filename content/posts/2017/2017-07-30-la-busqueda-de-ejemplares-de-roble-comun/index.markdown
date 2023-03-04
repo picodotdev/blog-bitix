@@ -28,7 +28,7 @@ Y la verdad es que mirando atrás es algo que podría haber hecho desde algún l
 
 Decidido a hacer realidad nuevamente esta idea lo primero que necesito es encontrar ejemplares de roble común o en su  nombre científico [_quercus robur_](https://es.wikipedia.org/wiki/Quercus_robur) en mi ciudad, un árbol autóctono de la región en la que vivo.
 
-### La búsqueda
+## La búsqueda
 
 Puesto a buscar ejemplares de esta especie de árbol desde hace unos días he empezado a fijarme si alguno de los árboles con los que me voy cruzando es un roble común. Hay muchos árboles en la aceras y zonas ajardinadas, muchos aún no se identificar de qué especie pero los robles son fáciles de identificar por sus hojas lobuladas y estos por el momento son los que me interesan.
 
@@ -70,7 +70,7 @@ Incluso debajo de alguno de ellos hay algunos retoños.
 
 Donde esperaba haber encontrado alguno ha sido en el parque de Doña Casilda y sin embargo solo he encontrado uno apartado y no con tan buen aspecto como los anteriores. Aún así, es otro ejemplar y tenía alguna bellota que en julio aún están verdes.
 
-### La primera recolección
+## La primera recolección
 
 Con esta primera búsqueda de ejemplares ya tengo identificados casi una decena que en la época en que las bellotas estén completamente desarrolladas hacia finales de septiembre o inicios de octubre me proveerán de las preciadas semillas para intentar hacer germinar algunos ejemplares.
 

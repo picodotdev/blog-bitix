@@ -139,7 +139,7 @@ Dado que los _tracks_ son simultáneos y las charlas no se graban hay que elegir
 
 De las presentaciones a las que asistí recojo las ideas principales que he apuntado, es muy posible que haya alguna omisión importante y no les hagan justicia al nivel de las presentaciones pero hago mi esfuerzo para una año más cumplir con el resumen de este año y que de esta forma quede recogido en el artículo sobre lo que versó estas presentaciones.
 
-###  Presentación
+## Presentación
 
 La jornada al igual que el año anterior ha empezado con una presentación sobre la conferencia y los agradecimientos a los patrocinadores por su apoyo asi como unos comentarios de un miembro de Lan Ekintza, agencia el sector público del Ayuntamiento de Bilbao para el desarrollo local, sobre sus motivos de la importancia para la ciudad de eventos como este que ya tienen muchos años de constancia y el interés para empresas importantes que cotizan en bolsa ya existentes con sede en Bilbao y para otras que en un futuro se establezcan en el nuevo Zorrozaurre como nuevo polo empresarial, en estos momentos está en una fase de construcción con algunas obras importantes ya realizadas con la apertura del canal y otras obras que ya se están acometiendo.
 
@@ -149,7 +149,7 @@ La jornada al igual que el año anterior ha empezado con una presentación sobre
     image2="image:bilbostack-codigo-conducta.webp" optionsthumb2="300x200" title2="BilboStack 2020"
     caption="BilboStack 2020" >}}
 
-### DevOps: el camino de la entrega de valor en software _por Luis Fraile Hernández_
+## DevOps: el camino de la entrega de valor en software _por Luis Fraile Hernández_
 
 La cultura o método de _devops_ incluye personas, procesos y productos con el objetivo de habilitar la entrega de valor al negocio y a sus usuarios, rápida y constante resolviendo problemas y no creando otros. Incluye ámbitos como el desarrollo, despliegue, monitorización y operación, requiere planificación. No basta con entregar de cualquier forma, ha de funcionar y tener calidad, en pequeños entregables los defectos se pueden descubrir y validar hipótesis antes y más rápido.
 
@@ -173,7 +173,7 @@ La monitorización permite conocer si una funcionalidad se está utilizando y ob
     image1="image:devops.webp" optionsthumb1="600x450" title1="DevOps: el camino de la entrega de valor en software _por Luis Fraile Hernández_"
     caption="DevOps: el camino de la entrega de valor en software por Luis Fraile Hernández" >}}
 
-### Monitorización con Prometheus por _Laura Morillo-Velarde Rodríguez y Beatriz Martínez_
+## Monitorización con Prometheus por _Laura Morillo-Velarde Rodríguez y Beatriz Martínez_
 
 La herramienta de monitorización [Prometheus][prometheus] se está convirtiendo en un estándar, muchas herramientas incluyen exportan métricas en formato _prometheus_, unas de forma nativa y otras mediante adaptadores. [OpenMetrics](https://openmetrics.io/) trata de crear un estándar para la transmisión de métricas en representación en formato de texto y con [Protocol Buffers](https://developers.google.com/protocol-buffers/).
 
@@ -195,7 +195,7 @@ Los sistemas actuales requieren no solo saber el estado de funcionamiento de cad
     image1="image:prometheus.webp" optionsthumb1="600x450" title1="Monitorización con Prometheus por Laura Morillo-Velarde Rodríguez y Beatriz Martínez"
     caption="Monitorización con Prometheus por Laura Morillo-Velarde Rodríguez y Beatriz Martínez" >}}
 
-### Descanso
+## Descanso
 
 Momento de tomar un café y pasar por los _stands_ de los patrocinadores. 
 
@@ -215,7 +215,7 @@ Momento de tomar un café y pasar por los _stands_ de los patrocinadores.
     image2="image:patrocinadores-8.webp" optionsthumb2="200x150" title2="Stands patrocinadores"
     caption="Stands patrocinadores" >}}
 
-### Implementing corporate Design Systems in React _por Ignacio Velázquez_
+## Implementing corporate Design Systems in React _por Ignacio Velázquez_
 
 Un sistema de diseño o _design system_ es importante para tener consistencia de la imagen de marca en todos los canales de comunicación desde la web a una aplicación móvil, un correo electrónico o un folleto impreso. Incluye colores, tipografía, espaciado. Algunos _design systems_ son:
 
@@ -239,7 +239,7 @@ Varias herramientas son útiles para las pruebas y el desarrollo de un _design s
     image1="image:design-systems.webp" optionsthumb1="600x450" title1="Implementing corporate Design Systems in React por Ignacio Velázquez"
     caption="Implementing corporate Design Systems in React por Ignacio Velázquez" >}}
 
-###  Otra charla sobre microservicios _por Isabel Garrido Cardenas y Sergi González_
+## Otra charla sobre microservicios _por Isabel Garrido Cardenas y Sergi González_
 
 Se empieza a desarrollar una aplicación en forma de monolito, a medida que es más grande la aplicación y la organización en número de personas se divide en áreas funcionales. El siguiente paso es crear crear APIs con contratos y microservicios que se comunican unos entre otros, quizá sigan compartiendo la base de datos y tienen dependencias. El resultado es un monolito distribuido que genera sus propios problemas de escalabilidad y pruebas.
 
@@ -257,7 +257,7 @@ El bus de eventos se convierte en un único punto de fallo con problemas que hay
     image1="image:microservicios.webp" optionsthumb1="600x450" title1="Otra charla sobre microservicios por Isabel Garrido Cardenas y Sergi González"
     caption="Otra charla sobre microservicios por Isabel Garrido Cardenas y Sergi González" >}}
 
-### Acabando
+## Acabando
 
 Dicen que en este evento el evento en realidad es el postevento, lo que ocurre a partir de las 14:00 en el _networking_, pintxo y poteo. No lo conozco por experiencia propia porque no he estado en ninguno, no se me da bien y ya tengo suficiente con dedicar una mañana a la asistencia. En cualquier caso el evento es el momento ideal para saludar a algunos excompañeros de trabajo para saber como les va o como nos va. Este año hubo una charanga animando el _networking_.
 

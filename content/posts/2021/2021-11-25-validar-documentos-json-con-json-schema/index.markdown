@@ -33,7 +33,7 @@ La especificación [JSON Schema][json-schema] es el equivalente para los documen
 
 {{< tableofcontents >}}
 
-### La especificación JSON Schema
+## La especificación JSON Schema
 
 La [especificación de JSON Schema](https://json-schema.org/specification.html) tiene varias definiciones formales y versiones. En la [guía de inicio paso a paso](https://json-schema.org/learn/getting-started-step-by-step.html) se incluye una descripción más sencilla y práctica para un primer inicio.
 
@@ -46,7 +46,7 @@ En el siguiente esquema _$schema_ define la versión del esquema que implementa,
 {{< code file="product.json" language="json" options="" >}}
 {{< code file="product-invalid.json" language="json" options="" >}}
 
-### Librerías JSON Schema en Java
+## Librerías JSON Schema en Java
 
 Hay varias [librerías Java que implementan validación de JSON](https://json-schema.org/implementations.html#validator-java) con la especificación de JSON Schema, junto a otras implementaciones en otros lenguajes. De entre las implementaciones Java una de ellas es [JSON Schema Validator](https://github.com/networknt/json-schema-validator) de [networknt](https://github.com/networknt/) en la que los errores que se detectan son devueltos en una estructura de datos en vez de lanzar una excepción en caso de que la validación falle.
 
@@ -54,7 +54,7 @@ Otra de sus funcionalidades es que permite hacer una correspondencia entre los i
 
 Hay que tener en cuenta que varias de estas librerías están implementadas por personas sin seguramente el respaldo de una organización, hay que tenerlo en cuenta como criterio de decisión en el caso de añadir como dependencia de un proyecto una de las implementaciones.
 
-### Ejemplo con Java de validar un JSON con JSON Schema
+## Ejemplo con Java de validar un JSON con JSON Schema
 
 Este es un ejemplo que a partir de un documento JSON se valida que cumple el esquema contra el que se valida. En el caso de que el documento JSON no cumpla el esquema se devuelven los errores como resultado del método de validación, en el caso del ejemplo los errores son emitidos a la salida estándar donde se aprecia que en el caso de la validación del JSON inválido faltan las tres propiedades requeridas.
 
@@ -65,7 +65,7 @@ La librería de JSON Schema Validator además de su propia dependencia requiere 
 
 {{< code file="build.gradle" language="groovy" options="" >}}
 
-### Otras formas de validación con Bean Validation y Spring Validation
+## Otras formas de validación con Bean Validation y Spring Validation
 
 Otra forma de validar un JSON es cargarlo en un objeto Java y validar el objeto con [Bean Validation][beanvalidation] o [Spring Validation][spring-validation]. La diferencia en este caso respeto a JSON Schema es que Bean Validation y Spring Validation es una solución específica de Java, requiere cargar los datos en objetos y más importante no se define ningún esquema sino que el esquema está implícito en las validaciones ya se definan con anotaciones o con validadores personalizados.
 

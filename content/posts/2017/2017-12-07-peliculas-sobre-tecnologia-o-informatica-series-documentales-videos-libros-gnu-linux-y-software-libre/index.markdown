@@ -19,7 +19,7 @@ tags: ["gnu-linux", "planeta-codigo"]
 
 Si estás interesado en la tecnología, informática en general y en el software libre, código abierto y GNU/Linux estoy más que seguro que las siguientes listas de películas, series, documentales y libros te gustarán bastante. Probablemente algunas ya hayas visto pero otra quizá no conocías o aún no has visto y este artículo te anima a ver. En el momento de escribir esto aún no he visto todo el contenido de este artículo pero con esta lista lo tengo anotado y pendiente de ver.
 
-### Películas
+## Películas
 
 * [Piratas de Silicon Valley](https://www.filmaffinity.com/es/film399662.html)
 * [Trabajo basura (Office Space)](https://www.filmaffinity.com/es/film689614.html)
@@ -41,7 +41,7 @@ Si estás interesado en la tecnología, informática en general y en el software
     image2="image:office-space.webp" optionsthumb2="300x200" title2="Trabajo basura"
     image3="image:wargames.webp" optionsthumb3="300x200" title3="Juegos de guerra" >}}
 
-### Series
+## Series
 
 * [Black Mirror](https://www.filmaffinity.com/es/film800295.html)
 * [Mr Robot](https://www.filmaffinity.com/es/film993489.html)
@@ -57,7 +57,7 @@ Si estás interesado en la tecnología, informática en general y en el software
     image2="image:mr-robot.webp" optionsthumb2="300x200" title2="Mr Robot"
     image3="image:silicon-valley.webp" optionsthumb3="300x200" title3="Silicon Valley" >}}
 
-### Documentales
+## Documentales
 
 * [El triunfo de los nerds](https://es.wikipedia.org/wiki/El_triunfo_de_los_nerds)
 * [La historia de la computadora y computación](https://www.youtube.com/watch?v=7eOKcLnm0Xo)
@@ -80,7 +80,7 @@ Si estás interesado en la tecnología, informática en general y en el software
 
 En [YouTube][youtube] hay cantidad de documentales más.
 
-### Documentales sobre el software libre y código abierto
+## Documentales sobre el software libre y código abierto
 
 * [El software libre es como el pastel de la abuela](https://www.youtube.com/watch?v=HuoljD3rgVM)
 * [El software libre](https://www.youtube.com/watch?v=Gm6uLgmqqXs)
@@ -101,7 +101,7 @@ Probablemente ya conozcas el software libre, o quizá no, en cualquier caso te r
     image1="logotype:gnu.svg" optionsthumb1="200x200" title1="GNU"
     image2="logotype:linux.svg" optionsthumb2="200x200" title2="Linux" >}}
 
-### Libros y novelas
+## Libros y novelas
 
 * [El círculo](https://amzn.to/3B7p7aC) de _Dave Eggers_
 * [Microsiervos](https://amzn.to/3FcV43O) de _Douglas Coupland_

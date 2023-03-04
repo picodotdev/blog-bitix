@@ -24,7 +24,7 @@ En el mercado hay varios lectores de libros electrónicos a unos precios bastant
 
 {{< tableofcontents >}}
 
-### La tinta electrónica
+## La tinta electrónica
 
 La experiencia de lectura de los libros electrónicos es equivalente a la de formato en papel. Las pantallas de tinta electrónica son legibles con luz natural ni ofrecen reflejos al contrario de lo que ocurre con el tipo de pantallas que usan los teléfonos móviles inteligentes.
 
@@ -34,7 +34,7 @@ Cuando se generalice comercialización de lectores con tinta electrónica a colo
 
 Utilizan una batería y requieren ser cargados cada cierto tiempo. Las pantallas de tinta electrónica sólo consumen energía cuando se cambia de página, una sola carga de batería es suficiente para la lectura de una novela de 300 páginas. El dispositivo puede estar un mes en modo reposo antes de necesitar ser cargado de nuevo. La carga se realiza igual que un _smartphone_ y tarda menos de 4 horas en cargarse por completo.
 
-### Ventajas de los libros electrónicos
+## Ventajas de los libros electrónicos
 
 Los libros electrónicos tienen varias ventajas sobre los libros en formato en papel. En primer lugar el formato físico es reemplazado por un dispositivo lector de libro electrónico, los libros ya no son físicos sino que son electrónicos con el consiguiente ahorro de espacio para los mismos una vez ya leídos.
 
@@ -48,11 +48,11 @@ En los libros electrónicos ofrecen funciones adicionales que no tiene un libro 
 
 En algunos casos el libro electrónico es más barato que el equivalente en formato físico. Si se es un lector habitual que lee varios libros al año, el precio del dispositivo se ve compensado por el ahorro en los libros electrónicos.
 
-### Lectores de libros electrónicos
+## Lectores de libros electrónicos
 
 En el mercado hay varios modelos de libros electrónicos con un precio entre 80 y 300 €. Los lectores electrónicos más populares son los [Amazon][amazon-affiliate] y los modelos de [Kobo][kobo].
 
-#### Amazon Kindle
+### Amazon Kindle
 
 Los dispositivos de libros electrónicos de Amazon son de los más populares, ofrece varios modelos en diferentes franjas de precios. Amazon al vender libros electrónicos en su tienda y dado que los dispositivos están integrados con sus servicios es fácil dotarles de contenido.
 
@@ -74,7 +74,7 @@ Un accesorio para el lector de libros electrónicos es una [funda para los model
 {{< amazon
     tags="amazon-kindle" >}}
 
-#### Kobo
+### Kobo
 
 Otra empresa que fabrica lectores de libros electrónicos es Kobo que en características son similares a los de Amazon. Estos también se venden en la propia tienda de Amazon y algunas tiendas físicas.
 
@@ -91,7 +91,7 @@ También [hay fundas para los modelos de Kobo en Amazon](https://amzn.to/3xQI8ge
     linkids="a6f6540fecd4cab154d620198a42b03e,c7e56d247fc06743c49be23705acb7a9"
     asins="B0BCXLQNCC,B07Y34KS9F" >}}
 
-#### Otras opciones
+### Otras opciones
 
 Otras tiendas como [El Corte Ingles][elcorteingles] o [PcComponentes][pccomponentes] también ofrecen algunos otros dispositivos de libros electrónicos. Sus precios son similares pero los de Amazon y Kobo son dispositivos en algunos aspectos mejores.
 
@@ -105,7 +105,7 @@ El modelo [PocketBook InkPad Color](https://amzn.to/2PXyLu4) destaca por ser de 
     asins="B08VJK1Y1Q,B08DRTQHF7" >}}
 
 
-### Dónde comprar libros electrónicos
+## Dónde comprar libros electrónicos
 
 Amazon además de los lectores Kindle en su tienda ofrece la compra de una gran variedad de [libros en formato electrónico en Amazon](https://amzn.to/33mu7Ja). [La Casa del Libro][casadellibro] también tiene su tienda de libros electrónicos.
 
@@ -125,13 +125,13 @@ Si el libro deseado a leer no se encuentra en una de estas tiendas porque ya tie
     linkids="9cb921cc59e0bcba29beccbd0496bed3,c352602ae4971e34279221e21dd001eb,076059e35e486ef95640d590bf054f6e,67f13fead95935374d21ee9e01b26cac"
     asins="B00MBFNOF0,B00MBFNOEG,B00PJ3MPVA,B00UNZPP84" >}}
 
-### Cómo añadir libros electrónicos al lector
+## Cómo añadir libros electrónicos al lector
 
 Hay dos formas de añadir los libros electrónicos al lector de libros. Una de ella es conectando el dispositivo con un cable USB al ordenador que es reconocido como un dispositivo de memoria y posteriormente copiando el archivo del libro electrónico al dispositivo.
 
 Otra forma en el caso de los Amazon Kindle a través de la red WIFI, si se ha comprado el libro en la tienda de Amazon aparecerá como descarga y se trata de un libro obteniendo de otra forma enviándolo a una dirección de correo especial que añade el libro al contenido digital descargable en el dispositivo.
 
-### Cómo convertir libros electrónicos a un formato soportado por el lector
+## Cómo convertir libros electrónicos a un formato soportado por el lector
 
 Dependiendo del lector de libro electrónico soportará unos formatos u otros. Los dos más comunes son el EPUB soportado por los Kobo y el AZW o MOBI soportado por los Kindle.
 

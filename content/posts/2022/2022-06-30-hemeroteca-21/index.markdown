@@ -27,7 +27,7 @@ Otros seis meses de vida para Blog Bitix y otra buena cantidad de artículos pub
 
 {{< tableofcontents >}}
 
-### Blog
+## Blog
 
 Durante estos seis últimos meses he publicado menos artículos ya que no estoy teniendo tanto tiempo para escribir en el blog, pensar en ideas y hacer pruebas para los ejemplos. Trato de que sea al menos uno por semana habitualmente cuando hace algo más de tiempo eran casi dos por semana. Un artículo por semana sigue siendo un ritmo de publicación bastante alto y que durante la semana me ocupa varios días. Los artículos ahora los estoy publicado el jueves para tratar de tener el fin de semana libre de tareas relacionadas con el blog para tratar de descansar.
 
@@ -47,7 +47,7 @@ Me contactaron los de Videoo e insertar su red publicitaria es apenas un *script
 
 Además, cuando no se muestra un vídeo de publicidad el área del anuncio hace las funciones de carrusel de artículos lo que permite mostrar en todos los artículos artículos ya publicados que quizá le interesen al lector de contenido relacionado.
 
-### alis
+## alis
 
 Hace ya un tiempo que no hago ninguna modificación importante al [script para instalar Arch Linux][alis]. Al sitio web le he actualizado los estilos y le he añadido un par de páginas de contenido a su sitio web.
 
@@ -65,13 +65,13 @@ Es difícil competir con [arch-install][archinstall], simplemente porque esta es
 >
 > [Tweet](https://twitter.com/arcolinux/status/1480258604162813952)
 
-### Artículos publicados
+## Artículos publicados
 
 Blog Bitix es un blog temático principalmente sobre programación Java y software libre aunque también es un blog personal e incluyo otro tipo de artículos como los análisis de los juegos de la PlayStation que voy jugando y desempaquetados de los productos que compro para uso personal.
 
 Esta es la lista de los artículos publicados este primer semestre.
 
-#### Java
+### Java
 
 A diferencia de muchos años anteriores que escribía sobre Java ahora parte de estos artículos los puedo aplicar en el trabajo y varios de estos y seguramente varios otros que escribiré están basados en necesidades y problemas que me encuentro en el ámbito laboral. Si a mi me han sido útiles quizá las personas que los lean les resulten de interés y por eso los comparto.
 
@@ -83,7 +83,7 @@ A diferencia de muchos años anteriores que escribía sobre Java ahora parte de 
 * [Por qué y ejemplo de cómo desarrollar un plugin de Gradle][blogbitix-627]
 * [Publicar y utilizar una dependencia de Java en un repositorio de Git con GitHub Packages][blogbitix-637]
 
-#### GNU/Linux
+### GNU/Linux
 
 Aún sigo usando Arch Linux y van ya casi una misma década con la misma distribución, me funciona realmente bien, no me ha dado ningún problema grave solo unos problemas menores que con la siguiente actualización del paquete problemático se solucionan.
 
@@ -96,14 +96,14 @@ Apenas personalizo el escritorio pero con [Starship][starship] si es algo que ca
 * [Los intérpretes de comandos, instalar y cambiar a otro][blogbitix-639]
 * [Personalizar el símbolo del sistema de la línea de comandos con Starship][blogbitix-640]
 
-#### Juegos
+### Juegos
 
 Durante estos seis meses completé los juegos de la saga Uncharted, los cuatro principales de Nathan. Al menos la historia principal ya luego conseguir el trofeo de platino requiere mucho tiempo y en muchos juegos no es que aporte mucho más y tengo otros muchos buenos juegos pendientes en la biblioteca y por comprar, me conformo con conseguir la mayor parte de los coleccionables aunque tampoco suelo conseguirlos todos. Ahora estoy ya a punto de completar otro gran juego de la consola de [Sony][sony] como es [God of War](https://www.imdb.com/title/tt5838588/) del que publicaré su respectivo análisis y guía. El GoW es un juegazo, por favor no me hagáis elegir entre este y [The Last of Us](https://www.imdb.com/title/tt2140553/).
 
 * [Análisis de los juegos de aventuras Uncharted The Nathan Drake Collection][blogbitix-622]
 * [Análisis del juego de aventuras Uncharted 4][blogbitix-634]
 
-#### Desempaquetados y análisis de tecnología y productos
+### Desempaquetados y análisis de tecnología y productos
 
 Gracias a la colaboración con la marca de teclados mecánicos KEMOVE que publicado varios artículos de sus modelos, salvo que me contacten de nuevo ya no publicaré más por ahora. También en la lista de artículos de desempaquetado está el _smartphone_ de [Samsung Galaxy S21 FE][samsung-galaxy-s21-fe] con el que renové mi anterior y más antiguo [Samsung Galaxy S6][samsung-galaxy-s6].
 
@@ -117,7 +117,7 @@ Nada que ver con la tecnología renové los mecanismos eléctricos de mi casa, u
 * [Desempaquetado de la funda de teclado tamaño 60% KEMOVE][blogbitix-635]
 * [Desempaquetado y análisis del teclado mecánico compacto e inalámbrico KEMOVE ARES][blogbitix-638]
 
-#### Otros
+### Otros
 
 Con los ingresos de publicidad suelo hacer una donación a algún proyecto de software libre que uso, no es muy grande y solo es una pequeña parte de los ingresos del blog aún así espero que contribuya a que esos proyectos sigan mejorando y publicando nuevas versiones, esta vez fue a principio de año.
 

@@ -30,7 +30,7 @@ Todos estos juegos los encontraremos entre los paquetes para nuestra distribuci�
 
 {{< tableofcontents >}}
 
-### Astromenace
+## Astromenace
 Acción y aventura. Astromenace es un juego de naves con la adición que permite mejorar las armas de la nave. Tiene un aspecto gráfico en tres dimensiones con efectos especiales de gran calidad. [Sitio web](http://www.viewizard.com/astromenace/index_linux.php).
 
 {{< image
@@ -38,7 +38,7 @@ Acción y aventura. Astromenace es un juego de naves con la adición que permite
     image1="image:astromenace-1.webp" optionsthumb1="300x200"
     image2="image:astromenace-2.webp" optionsthumb2="300x200" >}}
 
-### Teeworlds
+## Teeworlds
 Disparos. Es un _shooter_ en dos dimensiones para jugar contra otros jugadores y con diferentes modos de juego como todos contra todos, equipo contra equipo y capturar la bandera. [Sitio web](https://www.teeworlds.com/).
 
 {{< image
@@ -46,7 +46,7 @@ Disparos. Es un _shooter_ en dos dimensiones para jugar contra otros jugadores y
     image1="image:teeworlds-1.webp" optionsthumb1="300x200"
     image2="image:teeworlds-2.webp" optionsthumb2="300x200" >}}
 
-### GCompris
+## GCompris
 Educación. Es una colección de juegos educativos con numerosas actividades para niños de entre dos y 10 años. Algunas actividades están orientadas al juego no obstante orientadas a la educación. [Sitio web](http://gcompris.net/index-es.html).
 
 {{< image
@@ -54,7 +54,7 @@ Educación. Es una colección de juegos educativos con numerosas actividades par
     image1="image:gcompris-1.webp" optionsthumb1="300x200"
     image2="image:gcompris-2.webp" optionsthumb2="300x200" >}}
 
-### Torcs
+## Torcs
 Carreras. Torcs es un juego de simulación de carreras con gráficos 3D. [Sitio web](http://torcs.sourceforge.net/)
 
 {{< image
@@ -62,19 +62,19 @@ Carreras. Torcs es un juego de simulación de carreras con gráficos 3D. [Sitio 
     image1="image:torcs-1.webp" optionsthumb1="300x200"
     image2="image:torcs-2.webp" optionsthumb2="300x200" >}}
 
-### VDrift
+## VDrift
 Carreras. Otro juego de simulación de conducción. [Sitio web](http://vdrift.net/)
 
 
 {{< youtube video="ziUSi5ApD6w" >}}
 
-### Supertux Kart
+## Supertux Kart
 Carreras. Similar al [Mario Kart](https://es.wikipedia.org/wiki/Super_Mario_Kart) pero ambientado con los personajes del mundo Tux. Es un juego de carreras con múltiples circuitos, personajes y modos de juego. Es un juego con la intención de ser divertido para todas las edades más que realista. Se puede jugar contra la computadora y otros jugadores. [Sitio web](https://supertuxkart.net/Main_Page)
 
 
 {{< youtube video="0FEwDH7XU9Q" >}}
 
-### Glest
+## Glest
 Estrategia. Glest es un juego de estrategia en tiempo real donde puedes controlar dos ejércitos de diferentes acciones, Tech que se compone de guerreros y dispositivos mecánicos y Magic que prefieren magos y criaturas invocadas. [Sitio web](http://glest.org/es/)
 
 {{< image
@@ -82,7 +82,7 @@ Estrategia. Glest es un juego de estrategia en tiempo real donde puedes controla
     image1="image:glest-1.webp" optionsthumb1="300x200"
     image2="image:glest-2.webp" optionsthumb2="300x200" >}}
 
-### 0 A.D
+## 0 A.D
 Estrategia. Un juego similar a [Age of Empires](https://www.ageofempires.com/) que no tiene nada que envidiarle. Podremos controlar varias de las civilizaciones más conocidas de la antigüedad. [Sitio web](https://play0ad.com/)
 
 {{< image
@@ -90,7 +90,7 @@ Estrategia. Un juego similar a [Age of Empires](https://www.ageofempires.com/) q
     image1="image:0ad-1.webp" optionsthumb1="300x200"
     image2="image:0ad-2.webp" optionsthumb2="300x200" >}}
 
-### The Battle for Wesnoth
+## The Battle for Wesnoth
 Estrategia. Está basado en turnos con una ambientación de fantasía. Deberás formar gradualmente una armada reclutando nuevos guerreros y formando veteranos. Elige personajes de una amplia selección y forma una fuerza con las habilidades correctas para luchar correctamente en diferentes terrenos.
 
 Wesnoth tiene varias campañas, 200 tipos de unidades, 60 razas, 6 facciones y cientos de años de historia. El mundo de Wesnoth es muy grande. [Sitio web](https://www.wesnoth.org/)
@@ -100,7 +100,7 @@ Wesnoth tiene varias campañas, 200 tipos de unidades, 60 razas, 6 facciones y c
     image1="image:wesnoth-1.webp" optionsthumb1="300x200"
     image2="image:wesnoth-2.webp" optionsthumb2="300x200" >}}
 
-### UFO AI
+## UFO AI
 Estrategia. Un juego de estrategia basado en turnos. Formarás un grupo de resistencia para luchar contra la invasión alien. Crearás una base y equiparán a un grupo de combatientes. Está basado en el conocido juego [X-COM](https://es.wikipedia.org/wiki/X-COM). [Sitio web](http://ufoai.org/)
 
 {{< image
@@ -108,13 +108,13 @@ Estrategia. Un juego de estrategia basado en turnos. Formarás un grupo de resis
     image1="image:ufo-ai-1.webp" optionsthumb1="300x200"
     image2="image:ufo-ai-2.webp" optionsthumb2="300x200" >}}
 
-### Warzone 2100
+## Warzone 2100
 Estrategia. Es un juego de estrategia y táctica en tiempo real donde comandarás fuerzas para reconstruir el mundo después de que haya sido destruido por misiles nucleares. Ofrece un modo de campaña, multijugador y de un solo jugador de escaramuzas. 400 diferentes tecnologías combinado con el sistema de diseño de unidades permite una variedad de posibles unidades y tácticas. [Sitio web](https://wz2100.net/)
 
 
 {{< youtube video="Qq7qUxeTHvo" >}}
 
-### Widelands
+## Widelands
 Estrategia. Inspirado en el gran juego [Settlers II](https://en.wikipedia.org/wiki/The_Settlers_II) pero con una significante más variedad. Deberás recolectar diferentes tipos de materias y productos para hacer crecer a tu pueblo. [Sitio web](https://wl.widelands.org/)
 
 {{< image
@@ -122,7 +122,7 @@ Estrategia. Inspirado en el gran juego [Settlers II](https://en.wikipedia.org/wi
     image1="image:widelands-1.webp" optionsthumb1="300x200"
     image2="image:widelands-2.webp" optionsthumb2="300x200" >}}
 
-### Unknown Horizons
+## Unknown Horizons
 Estrategia. Es un juego de estrategia de simulación en tiempo real en 2D con énfasis en la economía y la construcción de ciudades. Expande tu pequeño establecimiento para forma una colonia poderosa, recolecta impuestos y proporciona a tus habitantes bienes valiosos. Incrementa tu poder con una economía bien balanceada y con comercio estratégico y diplomacia. [Sitio web](http://www.unknown-horizons.org/)
 
 {{< image
@@ -130,10 +130,10 @@ Estrategia. Es un juego de estrategia de simulación en tiempo real en 2D con é
     image1="image:unkonown-horizons-1.webp" optionsthumb1="300x200"
     image2="image:unkonown-horizons-2.webp" optionsthumb2="300x200" >}}
 
-### Angband
+## Angband
 _Roguelike_. Angband es un juego de exploración de mazmorras para un solo jugador. Está basado en texto. Jugarás con un aventurero en busca de riquezas, lucharás contra monstruos y te prepararás para una batalla final con Morgoth, el señor de la oscuridad. [Sitio web](http://rephial.org/)
 
-### Nethack
+## Nethack
 _Roguelike_. Similar a Angband y uno de los juegos de su estilo más conocidos. [Sitio web](http://www.nethack.org/)
 
 {{< image
@@ -141,7 +141,7 @@ _Roguelike_. Similar a Angband y uno de los juegos de su estilo más conocidos. 
     image1="image:nethack-1.webp" optionsthumb1="300x200"
     image2="image:nethack-2.webp" optionsthumb2="300x200" >}}
 
-### Shattered Pixel Dungeon
+## Shattered Pixel Dungeon
 [Shattered Pixel Dungeon](http://pixeldungeon.wikia.com/wiki/Mod-Shattered_Pixel_Dungeon) es del mismo estilo que _Nethack_, _roguelike_ y RPG, pero en modo gráfico un héroe, a elegir entre cuatro, guerrero, mago, ladrón y cazadora, se adentra en una mazmorra con el objetivo de aniquilar a los monstruos y recuperar el Amuleto de Yandor. La dificultad del juego es bastante elevada y hay que usar de forma adecuada las habilidades del personaje y los objetos (no todos son buenos, algunos están malditos) que se encuentren en la mazmorra para llegar lo más lejos posible. Hay trampas, puertas secretas, nuevas armas, armaduras, posibilidad de fabricar nuevos objetos y niveles que alcanzar ganando experiencia y dos carreras que seguir.
 
 {{< image
@@ -153,7 +153,7 @@ _Roguelike_. Similar a Angband y uno de los juegos de su estilo más conocidos. 
     image1="image:shattered-pixel-dungeon-3.webp" optionsthumb1="300x200"
     image2="image:shattered-pixel-dungeon-4.webp" optionsthumb2="300x200" >}}
 
-### Alien Arena, AssaultCube, Cube 2: Sauerbraten, Nexuiz, Warsow, Xonotic
+## Alien Arena, AssaultCube, Cube 2: Sauerbraten, Nexuiz, Warsow, Xonotic
 Disparos. Juegos similares a [Quake](https://es.wikipedia.org/wiki/Quake).
 
 * [Sitio web Alien Arena](http://red.planetarena.org/)
@@ -163,7 +163,7 @@ Disparos. Juegos similares a [Quake](https://es.wikipedia.org/wiki/Quake).
 * [Sitio web Warsow](https://www.warsow.gg/)
 * [Sitio web Xonotic](http://www.xonotic.org/)
 
-### Urban Terror
+## Urban Terror
 Disparos. Juego similar a [Counter Strike](https://es.wikipedia.org/wiki/Counter-Strike) que es la referencia de este estilo. Posee diferentes modos de juego. Ambientado en la actualidad. [Sitio web](http://www.urbanterror.info/home/)
 
 {{< image

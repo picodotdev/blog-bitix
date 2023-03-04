@@ -32,7 +32,7 @@ Hay iniciativas y herramientas para suplir la carencia de las API REST de no obl
 
 {{< tableofcontents >}}
 
-### Documentación de un API con OpenAPI, Swagger y Springdoc
+## Documentación de un API con OpenAPI, Swagger y Springdoc
 
 [OpenAPI][openapi] trata de proporcionar una especificación para definir esquemas de APIs agnósticas de la tecnología y la implementación de las APIs. Definida la interfaz de la API es posible crear un cliente o servidor que cumpla esa API. La definición de la API incluye sus _endpoints_, métodos HTTP, cuales son sus parámetros, el esquema de los cuerpos de la petición y de los resultados, los tipos de los datos y sus formatos, los códigos de retorno devueltos, las cabeceras y su autenticación.
 
@@ -59,7 +59,7 @@ La documentación en formato HTML de Swagger tiene el siguiente aspecto con la q
     image2="image:swagger-ui-3.webp" optionsthumb2="300x250" title2="Documentación de Swagger UI de una API REST"
     caption="Documentación de Swagger UI de una API REST" >}}
 
-### Ejemplo de documentación REST con Spring Boot y Swagger
+## Ejemplo de documentación REST con Spring Boot y Swagger
 
 El siguiente ejemplo de Spring Boot implementa una pequeña API REST con un _endpoint_ y varios métodos HTTP, uno para obtener un mensaje, otro para añadir un mensaje y otro para eliminar un mensaje. La API se define en un interfaz con las anotaciones tanto de Spring para REST como las anotaciones de Swagger para la definición de la API y documentación que al iniciar la aplicación permite generar la definición en formato OpenAPI.
 

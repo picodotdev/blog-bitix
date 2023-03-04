@@ -27,7 +27,7 @@ Para adaptarse a ambos requerimientos Java a partir de Java 9 adoptó un nuevo c
 
 {{< tableofcontents >}}
 
-### Introducción
+## Introducción
 
 En esta nueva versión de Java 11 publicada el 25 de septiembre de 2018 las novedades no son tan relevantes como lo fuero Java 8 con las _lambadas_ y Java 9 con los módulos pero continúa con las mejoras incrementales y proporciona una versión LTS en la que empresas grandes confiarán como base para sus desarrollos.
 
@@ -56,9 +56,9 @@ Las mejoras incluídas en esta versión son:
 * 335: [Deprecate the Nashorn JavaScript Engine](http://openjdk.java.net/jeps/335)
 * 336: [Deprecate the Pack200 Tools and API](http://openjdk.java.net/jeps/336)
 
-### Nuevas características
+## Nuevas características
 
-#### Eliminación de módulos Java EE y CORBA
+### Eliminación de módulos Java EE y CORBA
 
 Se eliminan del JDK paquetes ya desaconsejados hace varias versiones anteriores y que no eran muy usados en cualquier caso. Estos paquetes son los de CORBA una forma de llamada a procedimientos remotos que se utilizó como alternativa a RMI pero que nunca tuvo un uso extendido prefiriéndose SOAP o más recientemente interfaces REST.
 
@@ -74,7 +74,7 @@ La lista de paquetes eliminados son los siguientes.
 * _jdk.xml.ws_ (Tools for JAX-WS)
 * _jdk.xml.bind_ (Tools for JAXB)
 
-#### Sintaxis de variables locales para parámetros en lambdas
+### Sintaxis de variables locales para parámetros en lambdas
 
 Ahora los parámetros de una lambda pueden declararse con _var_ con inferencia de tipos. Esto proporciona uniformidad en el lenguaje al declarar los parámetros permite usar anotaciones en los parámetros de la función lambda como _@NotNull_.
 
@@ -84,13 +84,13 @@ Esta funcionalidad tiene algunas restricciones. No se puede mezclar el uso y no 
 
 {{< youtube video="0eWgRyanQI0" >}}
 
-#### Cliente HTTP
+### Cliente HTTP
 
 En Java 9 se incorporó de forma experimental un cliente HTTP con soporte para HTTP/2 en el propio JDK. En Java 11 alcanza la categoría de estable. Este cliente HTTP es una forma sencilla de hacer llamadas a servicios web ya sean REST o [GraphQL][graphql]. Las clases del nuevo cliente se encuentran en el paquete [java.net.http](javadoc11:java.net.http/java/net/http/package-summary.html). Al estar este cliente HTTP incorporado en el JDK no será necesario depender de librerías de terceros.
 
 {{< youtube video="sZSdWq490Vw" >}}
 
-#### Ejecución desde archivo de código fuente único
+### Ejecución desde archivo de código fuente único
 
 Para ejecutar un programa Java es necesario compilarlo a _bytecode_ y posteriormente ejecutarlos. Se necesitan dos pasos. Para facilitar la ejecución de los programas que se componen de un único archivo de código fuente se añade la posibilidad de lanzar un programa desde el archivo de código fuente. Esto es útil par programas pequeños o para los casos de estar aprendiendo el lenguaje.
 
@@ -107,17 +107,17 @@ Esta funcionalidad es compatible con los _shebang_ de los sistemas Unix.
     image1="image:java-helloworld.webp" optionsthumb1="6500x450" title1="Java 11 HelloWorld!"
     caption="Java 11 HelloWorld!" >}}
 
-#### Unicode 10
+### Unicode 10
 
 Tratar texto es una parte importante casi de cualquier aplicación, este soporte de Unicode 10 añade 16018 nuevos caracteres soportados, 128 nuevos emojis y 19 símbolos nuevos para el estándar en televisiones 4K.
 
-#### TLS 1.3
+### TLS 1.3
 
 Algunas de las versiones anteriores de TLS ya no se consideran seguras añadir soporte para la versión más reciente TLS 1.3 permite a las aplicaciones Java ser más compatibles y más seguras. El protocolo TLS 1.3 proporciona dos beneficios principalmente, es más seguro y más rápido que sus versiones anteriores.
 
 {{< youtube video="HxDb5nwvN_Y" >}}
 
-### Otras mejoras
+## Otras mejoras
 
 Se añaden implementaciones específicas para la arquitectura Aarch64 para un mejor rendimiento en la plataforma [ARM][arm] en algunas funciones. Se añade de forma experimental un nuevo recolector de basura ZGC con pausas para recolectar basura menores capaz de manejar cantidades de memoria pequeñas de megabytes y grandes de terabytes. Al mismo tiempo se añade un recolector de basura Epsilon que no reclama la memoria. Se añade soporte para los algoritmos criptográficos _ChaCha20_ y _Poly1305_ junto con otras funcionalidades criptográficas _RSASSA-PSS_, _AES Encryption with HMAC-SHA2 for Kerberos 5_, ...
 

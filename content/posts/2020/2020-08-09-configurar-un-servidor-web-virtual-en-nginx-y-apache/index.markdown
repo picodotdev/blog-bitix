@@ -35,7 +35,7 @@ En el ejemplo se usa un contenedor de [Docker][docker] de modo que para probar l
 
 {{< tableofcontents >}}
 
-### Configurar un servidor web virtual en Nginx
+## Configurar un servidor web virtual en Nginx
 
 En el servidor web [Nginx][nginx] añadir un servidor web virtual consiste en añadir la configuración del sitio web en el directorio _/etc/nginx/conf.d_. La directiva relevante es _server\_name_ que asocia el servidor web virtual con el nombre del dominio. En base al nombre del dominio por el que se accede al servidor web se utiliza su configuración.
 
@@ -53,7 +53,7 @@ En el ejemplo se usa la misma raíz de documentos que el sitio web para _localho
     image1="image:nginx-virtual-server.webp" optionsthumb1="300x200" title1="Servidor web virtual en Nginx"
     caption="Servidor web virtual en Nginx" >}}
 
-### Configurar un servidor web virtual en Apache HTTPD
+## Configurar un servidor web virtual en Apache HTTPD
 
 En el servidor web [Apache HTTPD][apache-httpd] un servidor web virtual se configura con sus propias directivas que igualmente indican el nombre del dominio asociado al servidor web y la ruta raíz de los recursos estáticos. Dependiendo del nombre del dominio por el que se accede al servidor web, se utiliza su configuración.
 

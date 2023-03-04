@@ -23,7 +23,7 @@ El 19 de marzo del 2019 se publicaba la versión Java 12 siguiendo el calendario
 
 {{< tableofcontents >}}
 
-### Introducción
+## Introducción
 
 Las características destacadas de Java 12 son la incorporación de forma experimental las expresiones _switch_ y mejoras en el recolector de basura para mayor rendimiento.
 
@@ -43,27 +43,27 @@ Las mejoras incluídas en esta versión son:
 * 344: [Abortable Mixed Collections for G1](https://openjdk.java.net/jeps/344)
 * 346: [Promptly Return Unused Committed Memory from G1](https://openjdk.java.net/jeps/346)
 
-### Nuevas características
+## Nuevas características
 
-#### _Teeing Collectors_
+### _Teeing Collectors_
 
 Los _stream_ proporcionan un flujo de elementos a procesar. En el caso de querer recolectar dos valores de ese flujo requiere usar un _reduce_ que complica el código. Se ha añadido un nuevo colector [Collectors.teeing()](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/stream/Collectors.html#teeing(java.util.stream.Collector,java.util.stream.Collector,java.util.function.BiFunction)) para enviar un elemento de un _stream_ a dos _streams_, de forma similar a lo que hace el comando _tee_ en Unix.
 
 {{< code file="TeeingCollectors.java" language="java" options="" >}}
 
-#### Formato de número compacto
+### Formato de número compacto
 
 Ahr se puede expresar un número de forma compacta con la clase [CompactNumberFormat](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/text/CompactNumberFormat.html) o el método [NumberFormat.getCompactNumberInstance()](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/text/NumberFormat.html#getCompactNumberInstance(java.util.Locale,java.text.NumberFormat.Style)).
 
 {{< code file="CompactNumbers.java" language="java" options="" >}}
 
-#### Recolector de basura Shenandoah
+### Recolector de basura Shenandoah
 
 Una de la áreas que más atención reciben para mejorar el rendimiento de las aplicaciones es el recolector de basura. _Shenandoah_ es uno nuevo que independiente del tamaño de la memoria, ya sea de 200 MiB o 200 GiB, el tiempo de las pausas es el mismo. También se han implementado mejoras en el recolector de basura _G1_ actual.
 
-### Nuevas características en vista previa
+## Nuevas características en vista previa
 
-#### Expresiones _switch_
+### Expresiones _switch_
 
 Las expresiones _switch_ permiten quitar varias sentencias _if else_ encadenadas. Cada rama de la sentencia _switch_ devuelve un valor y no hace falta usar la sentencia _break_, se pueden utilizar varios casos para cada rama.
 
@@ -72,7 +72,7 @@ Las expresiones _switch_ permiten quitar varias sentencias _if else_ encadenadas
 
 {{< code file="SwitchExpression.java" language="java" options="" >}}
 
-#### Otras características incorporadas y cambios
+### Otras características incorporadas y cambios
 
 [Algunos métodos han sido eliminados](https://www.oracle.com/technetwork/java/javase/12-relnote-issues-5211422.html#Removed) varios relacionados con el método _finalize_ cuyo uso está desaconsejado desde hace mucho tiempo por no se una forma segura de liberar recursos. Algunos algoritmos de cifrado inseguros han sido deshabilitados. Se ha añadido soporte para Unicode 11.0 con nuevos caracteres, bloques y  _scripts_.
 

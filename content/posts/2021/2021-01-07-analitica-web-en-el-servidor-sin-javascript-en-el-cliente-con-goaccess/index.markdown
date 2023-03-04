@@ -25,7 +25,7 @@ La información proporcionada por la analítica web ayuda a la toma de decisione
 
 {{< tableofcontents >}}
 
-### Google Analytics, la herramienta más utilizada para hace analítica web
+## Google Analytics, la herramienta más utilizada para hace analítica web
 
 La herramienta más utilizada para hacer analítica web es [Google Analytics][google-analytics], es gratuita, fácil de instalar en un sitio web y tiene gran cantidad de funcionalidades básicas y avanzadas que cubren las necesidades de cualesquiera usuarios. Almacena la información recogida a lo largo del tiempo que es consultable con posterioridad incluso pasados varios años de forma muy flexible con diferentes criterios de búsqueda y filtros, también ofrece varios paneles para observar el tráfico en tiempo real.
 
@@ -44,7 +44,7 @@ La privacidad del los usuarios ya es un buen motivo para utilizar una alternativ
 
 Otros sitios web privados de una intranet u aquellos que tienen interés en proteger la privacidad de sus usuarios prefieren utilizar otras herramientas para realizar analítica del sitio web que no involucren terceras partes. 
 
-### GoAccess, una alternativa de analítica
+## GoAccess, una alternativa de analítica
 
 [GoAccess][goaccess] es una pequeña utilidad que cubre una pequeña parte de la funcionalidad de analítica de un sitio web, en concreto ofrece la analítica en tiempo real de uno o múltiples sitios web, [Matomo][matomo] es una [alternativa equivalente a Google Analytics][blogbitix-546] que ofrece las funcionalidades de _tracking_ de eventos y _tag manager_. Sus características principales son que es una herramienta sencilla y pequeña, no requiere insertar ningún _script_ en las páginas del sitio web, no involucra terceras partes y es software libre.
 
@@ -52,7 +52,7 @@ Para realizar la analítica web no requiere insertar ningún _script_ de JavaScr
 
 GoAccess permite obtener información de analítica en tiempo real del número de usuarios, que navegadores utilizan, URLs solicitadas, distribución de las peticiones en el tiempo, navegadores y sistemas operativos de los usuarios, sitios y URLs de referencia, palabras clave de búsqueda, códigos de estado HTTP, geolocalización, ... Ofrece dos interfaces distintas, una basada en una interfaz de terminal y otra basada en una interfaz web.
 
-### Analítica de sitio web con GoAccess en un servidor web Nginx 
+## Analítica de sitio web con GoAccess en un servidor web Nginx 
 
 En el ejemplo de uso de GoAccess para realizar analítica web de un servidor web y acceder a las dos interfaces que ofrece utilizo la herramienta [Docker][docker] que evita tener que instalar estas herramientas de forma directa en la computadora, hace fácil su instalación, prueba, uso y eliminación de la computadora local una vez evaluada la herramienta. En el ejemplo el servidor web que he utilizado ha sido Nginx para Apache HTTPD se sigue el mismo principio de proporcionar a GoAccess los archivos de _log_ de acceso al servidor web.
 
@@ -95,7 +95,7 @@ Una vez los contenedores están en ejecución es posible acceder a las interface
 
 {{< code file="docker-ps.sh" language="bash" options="" >}}
 
-#### Interfaz de terminal
+### Interfaz de terminal
 
 La interfaz de terminal o consola no requiere herramientas adicionales, desde la propia terminal es posible acceder a la información de analítica. Hay que ejecutar el comando de GoAccess, al usar Docker desde dentro de su contenedor. GoAccess se puede iniciar individualmente para acceder a su interfaz basada en la terminal.
 
@@ -108,7 +108,7 @@ Es posible navegar entre los diferentes paneles de analítica pulsando varias te
     image1="image:goaccess-terminal-1.webp" optionsthumb1="300x200" title1="Interfaz consola de analítica GoAccess"
     caption="Interfaz consola de analítica GoAccess" >}}
 
-#### Interfaz de navegador web
+### Interfaz de navegador web
 
 La interfaz de terminal no es la más cómoda de usar ni más accesible de forma remota, por ello GoAccess también proporciona una interfaz web accesible con un navegador web.
 

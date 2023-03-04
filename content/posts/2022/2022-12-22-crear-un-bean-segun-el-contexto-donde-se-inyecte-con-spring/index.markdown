@@ -33,7 +33,7 @@ Una de las propiedades de la inversión de control es que no sean las clases las
 
 {{< tableofcontents >}}
 
-### Crear un _bean_ según el contexto donde se inyecte con Spring
+## Crear un _bean_ según el contexto donde se inyecte con Spring
 
 Las instancias de las dependencias en Spring se crean en los métodos anotados con la anotación [Bean](spring-framework:org/springframework/context/annotation/Bean.html) pero en el caso del Logger el construir la instancia depende del contexto, la clase, donde se inyecte ya que para obtener la referencia del Logger depende de la clase.
 

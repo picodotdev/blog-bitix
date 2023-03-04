@@ -38,9 +38,9 @@ Como cada año hago un repaso del _blog_ con los artículos que he publicado, ci
 
 {{< tableofcontents >}}
 
-### Retrospectiva 2020
+## Retrospectiva 2020
 
-#### Evolución visitas
+### Evolución visitas
 
 Durante este año atípico de confinamiento y en muchos casos trabajo desde casa las visitas se han mantenido constantes, alrededor de unas 50K visitas mensuales. A pesar de escribir nuevo contenido que debería añadir aún más tráfico el caso es que algunos artículos antiguos también lo pierden con lo que el tráfico de los nuevos artículos solo compensan la pérdida del tráfico de los antiguos. Algunos artículos van perdiendo visitas, porque hay otros _blogs_ que también crean contenido y los artículos van perdiendo posiciones en la clasificación de los buscadores.
 
@@ -55,7 +55,7 @@ El tráfico de visitas durante este 2020 ha sido el siguiente.
     image1="image:google-analytics.webp" optionsthumb1="650x450" title1="Evolución visitas 2020"
     caption="Evolución visitas 2020" >}}
 
-#### Evolución ingresos
+### Evolución ingresos
 
 Aunque los ingresos por publicidad AdSense, afiliados de Amazon y algunos enlaces patrocinados no compensa el tiempo que hay que invertir en el blog por cada artículo eso no quiere decir que sean despreciables. Mi blog no creo que sea muy grande, algunas páginas especializadas en noticias y tecnología con algún millón de visitas semanales o mensuales si creo que pueden generar unos ingresos respetables de las diferentes fuentes de ingresos que utilizan, como de esos artículos que dedican en exclusiva una selección de productos de Amazon y sus respectivos enlaces de afiliación. Noto en mi pequeño blog el _Black Friday_ y la época navideña esos medios lo deben notar aún más.
 
@@ -82,7 +82,7 @@ Entre una cosa y otra el saldo de mi cuenta de PayPal ha llegado a 164 €.
     image1="image:paypal-saldo.webp" optionsthumb1="650x450" title1="Saldo cuenta PayPal"
     caption="Saldo cuenta PayPal" >}}
 
-#### Mejoras realizadas
+### Mejoras realizadas
 
 He seguido aplicando algunas mejoras al _blog_ como dividir y poner títulos a las secciones del contenido en el artículo. A mi me ayuda para estructurar el contenido del que voy a escribir, es mejor para el lector que puede ir directamente a la sección que más le interese, e incluso quizá también mejor en cuanto a SEO para los buscadores.
 
@@ -96,13 +96,13 @@ Los artículos los escribo en primera instancia como un borrador que guardo en [
 
 Para la funcionalidad de corrección gramatical he instalado en Code una extensión con el diccionario de palabras en español que me permite corregir a medida que escribo, esto es más sencillo, me ahorra algo de tiempo y encuentro más errores que con Vim alguno se me escapaba. He revisado todos los artículos que ya tenía publicados, los 500, con esta extensión y la verdad es que en la mayoría tenía mínimo dos o tres gazapos que he corregido.
 
-#### Otras contribuciones
+### Otras contribuciones
 
 También he seguido mejorando el _script_ alis de instalación automatizado, desatendido, y personalizable de Arch Linux. He añadido la posibilidad de instalar paquetes de [Flatpak][flatpak] y de [SDKMAN][sdkman], he añadido soporte para los sistemas de archivos F2FS, ReiserFS y btrfs con _subvols_ la posibilidad de configurar un intérprete de comandos alternativo a [bash][bash] como [zsh][zsh], [fish][fishshell] o [dash][dash], poder hacer que alis solicite las contraseñas durante la instalación en vez de _hardcodearlas_ en el archivo de configuración para evitar que alguien las ponga y suba a GitHub si hace un _fork_, añadido el soporte para los entornos de escritorios alternativos [i3-wm][i3wm] e i3m-gaps, soporte para _reflector_, posibilidad de habilitar o deshabilitar _units_ de [systemd][systemd], soporte para probar con [Packer][packer] que me permite automatizar las pruebas en [VirtualBox][virtualbox], además he añadido la posibilidad de hacer una pequeña donación a través de PayPal si alguien considera que el _script_ le es de utilidad.
 
 También he seguido mejorando las traducciones al español de la aplicación gestor de contraseñas [KeePassXC][keepassxc], del cliente _torrent_ [Transmission][transmissionbt] y el reproductor multimedia [VLC][vlc].
 
-### Propósitos para el 2021
+## Propósitos para el 2021
 
 Los últimos meses he estado publicando los artículos que he ido escribiendo esa misma semana casi con ideas sobre la marcha. En otros momentos entre que apuntaba la idea, escribía el borrador y lo publicaba pasaba incluso varios meses o algún año entre cada uno de esos pasos. Y aún tengo muchos artículos escritos como borrador hace algunos años pendientes de publicar.
 
@@ -112,13 +112,13 @@ Alguna vez me he planteado migrar el blog a [AWS][amazon-aws], [Digital Ocean][d
 
 Es posible que este 2021 me lo plantee en serio, administrar mi propio servidor en la nube con [Ubuntu][ubuntu], usar [Nginx][nginx], [CloudFront][amazon-cloudfront] o un CDN, [Let's Encrypt][letsencrypt], [Terraform][terraform], copias de seguridad, _deployments_ y actualizaciones de seguridad todos esos temas interesantes de DevOps en los que no tengo tanto conocimiento al menos en la práctica. ¿Un blog estático necesita todo esto? La respuesta es no, pero como digo el objetivo no es la solución mínima más sencilla para el problema que ya tengo resuelto con GitHub Pages sino aprender en la práctica de lo que me interesa de DevOps con este problema.
 
-### Artículos publicados
+## Artículos publicados
 
 Estos son los 45 artículos que he escrito durante el segundo semestre con un total de 90 artículos publicados durante el 2020, de las temáticas habituales Java, GNU/Linux o software libre.
 
 ¡Qué el 2021 sea mejor!
 
-#### Artículos sobre Java
+### Artículos sobre Java
 
 * [Tareas programadas de forma periódica con Quartz y Spring en Java][blogbitix-497]
 * [Renombrar campos del esquema en las consultas GraphQL][blogbitix-510]
@@ -140,7 +140,7 @@ Estos son los 45 artículos que he escrito durante el segundo semestre con un to
 * [Internacionalizar, localizar y dar formato a cadenas, números, importes y fechas en Java][blogbitix-539]
 * [Para qué sirve la palabra clave final en el código fuente Java][blogbitix-540]
 
-#### Artículos sobre GNU/Linux o software libre
+### Artículos sobre GNU/Linux o software libre
 
 * [Las diferencias entre GNU/Linux, BSD y sus distribuciones][blogbitix-498]
 * [Qué son, para qué sirven, formato y ejemplos de las expresiones cron][blogbitix-499]
@@ -157,14 +157,14 @@ Estos son los 45 artículos que he escrito durante el segundo semestre con un to
 * [Herramienta para ejecutar consultas SQL en la base de datos de producción][blogbitix-531]
 * [La herramienta Weblate para traducir una aplicación a múltiples idiomas][blogbitix-538]
 
-#### Artículos sobre JavaScript y web
+### Artículos sobre JavaScript y web
 
 * [Las 3 formas de guardar datos en el navegador con JavaScript][blogbitix-500]
 * [Un comando y aplicaciones gráficas para descargar todo el contenido de un sitio web][blogbitix-501]
 * [Qué hace y ventajas de un preprocesador de estilos CSS][blogbitix-509]
 * [Qué es, por qué y cómo activar un segundo factor de autenticación en Google, Amazon, PayPal y otros servicios][blogbitix-530]
 
-#### Otros temas
+### Otros temas
 
 * [1 década en la misma empresa, 20 años trabajando][blogbitix-513]
 * [Cómo comprar una licencia y activar Windows 10 y Office 2019][blogbitix-514]

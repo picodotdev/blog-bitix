@@ -33,7 +33,7 @@ No es seguro utilizar archivos sin cifrar aún utilizando los permisos del siste
 
 Por otra parte las contraseñas y claves han de rotarse regularmente para limitar en el tiempo el acceso ante el filtrado de las credenciales en un sistema o para denegar el acceso a una persona que en algún momento haya tenido credenciales de acceso como un empleado que ya no pertenece a la compañía.
 
-### Vault
+## Vault
 
 [Vault][vault] es una herramienta para acceder de forma segura a secretos. Un secreto es cualquier cosa a la que se quiera tener severamente controlado como claves de API, contraseñas y certificados. Vault proporciona una interfaz para cualquier secreto a la vez que mantiene un control de acceso y un _log_ de acceso detallado.
 
@@ -53,7 +53,7 @@ Las características principales de Vault se engloban en tres aspectos de la seg
 {{< youtube
     video="NxL2-XuZ3kc" >}}
 
-### Conceptos
+## Conceptos
 
 Los motores de secretos son uno de los conceptos en el ámbito de Vault. Son componentes que permite almacenar, generar o cifrar datos. Algunos motores de secretos simplemente almacenan y leen datos, otros se conectan a otros servicios y generan credenciales dinámicamente bajo demanda. Otros motores de secretos proporcionan el cifrado como servicio, _tokens_ de un solo uso, certificados y mucho más.
 
@@ -74,7 +74,7 @@ Todo en Vault está basado en _paths_. Las [_policies_](https://www.vaultproject
 
 {{< code file="policy.hcl" language="hcl" options="" >}}
 
-### Instalación y un caso de uso
+## Instalación y un caso de uso
 
 La [instalación de Vault](https://www.vaultproject.io/docs/install/index.html) es muy sencilla ya que es un único binario sin más dependencias. En una distribución [GNU][gnu]/[Linux][linux] estará en los repositorios oficiales. En [Arch Linux][archlinux] se instala con el comando.
 

@@ -33,26 +33,26 @@ En este artículo contiene los conceptos básicos de electricidad para hacer la 
     image2="image:schneider.svg" optionsthumb2="250x200" title2="Schneider" >}}
 
 {{< warning >}}
-### Advertencia
+## Advertencia
 
 Este artículo está escrito por alguien que apenas sabe nada sobre electricidad y simplemente se ha informado buscando en internet y haciendo algunas preguntas para las dudas que no he encontrado. Manipular electricidad y elementos eléctricos aunque sea a nivel doméstico tiene riesgos sin los conocimientos básicos sobre electricidad con lo que usa fuentes fiables generada por profesionales en la materia para informate bien.
 {{< /warning >}}
 
 {{< tableofcontents >}}
 
-### Mecanismos eléctricos
+## Mecanismos eléctricos
 
 Los mecanismos eléctricos básicos de los que trata este artículo son interruptores de luz y enchufes de electricidad para conectar aparatos y herramientas. En cuanto a interruptores hay varios tipos de interruptores dependiendo desde cuántos puntos se desean apagar y encender la luz. Los mecanismos eléctricos ha de cumplir una normativa y aunque cada marca tienen sus propias líneas de productos en cuanto a funcionalidad todos se ajustan a la normativa. Por ejemplo, un enchufe de electricidad de tipo _schuko_ es igual en cualquier marca en cuanto a forma del producto y utiliza los mismos cables de electricidad para su conexión. También todas las marcas ofrecen en sus catálogos los mismos tipos de interruptores.
 
 Luego están los acabados de los mecanismos eléctricos tanto en su forma estética como en color, cada fabricante ofrece varios elementos para satisfacer los gustos y preferencias. Este artículo no habla de los elementos eléctricos del cuadro de electricidad, estos ya requieren tal vez de un profesional para su manipulación.
 
-#### Tipos de interruptores
+### Tipos de interruptores
 
 Una de las cosas básicas de electricidad básica es conocer que tipos de interruptores existen y cuál es la diferencia entre cada uno de ellos. Aparte de los propios mecanismos eléctricos estos requieren de un bastidor para colocarlo sobre la pared y según el modelo de interruptor algunos requieren elementos adicionales como un marco o elementos intermedios.
 
 En algunos casos es posible colocar dos interruptores en el mismo módulo del bastidor, las teclas que accionan el interruptor será ancha o estrecha.
 
-#### Interruptor
+### Interruptor
 
 Los interruptores o interruptores simples permiten controlar un elemento de luz desde un único punto. Es un mecanismo eléctrico que cierra el circuito eléctrico o lo abre con el resultado de encender o apagar el elemento luminoso. Son los interruptores más sencillos, fáciles de colocar y baratos. Únicamente requieren un par de cables, el cable de fase por donde entra la electricidad y el cable de retorno del circuito eléctrico. No estoy seguro de si en estos tipos de mecanismos la posición de los cables importa, en algún vídeo he visto que si importa pero también me han dicho que no importa con lo que aún no estoy seguro, quizá alguien que lea este artículo y sepa más que yo me pueda decir.
 
@@ -64,7 +64,7 @@ Los interruptores o interruptores simples permiten controlar un elemento de luz 
     image1="image:interruptor-2.webp" optionsthumb1="300x250" title1="Interruptor"
     caption="Interruptor para un punto de luz" >}}
 
-#### Interruptor conmutador
+### Interruptor conmutador
 
 Los interruptores conmutadores o conmutadores permiten controlar un elemento de luz desde dos puntos. Este es el caso por ejemplo de un pasillo largo en el que se desea encender y apagar la luz desde dos puntos diferentes del pasillo. A diferencia de los interruptores simples utilizan tres cables para realizar la conexión, el cable de fase y dos cables para conectar los conmutadores entre sí que dependiendo de su estado de actuación cortan o cierran el circuito eléctrico de forma alternativa según se pulsa cada uno de ellos.
 
@@ -75,7 +75,7 @@ En estos creo sí que importa que el cable de la línea esté colocado en la ent
     image1="image:interruptor-conmutador.webp" optionsthumb1="650x450" title1="Interruptor conmutador"
     caption="Interruptor conmutador para dos puntos de luz o en combinación con los de cruzamiento para más puntos de luz" >}}
 
-#### Interruptor de cruzamiento
+### Interruptor de cruzamiento
 
 Los interruptores de cruzamiento o cruzamiento permiten controlar la luz desde tres o más puntos. Normalmente se utilizan en la habitación principal, en la que a la entrada de la habitación y a cada lado de la cama hay interruptores. Los de cruzamiento son los elementos más complicados de los tres tipos de interruptores y requieren cuatro cables para realizar la conexión eléctrica.
 
@@ -88,7 +88,7 @@ En estos creo que también importa la posición donde se colocan los cables tant
     image1="image:interruptor-cruzamiento.webp" optionsthumb1="650x450" title1="Interruptor de cruzamiento"
     caption="Interruptor de cruzamiento para tres o más puntos de luz" >}}
 
-#### Enchufes electricidad
+### Enchufes electricidad
 
 Generalmente en España los enchufes de electricidad para conectar aparatos eléctricos utilizan la forma estándar de _schuko_. Los enchufes utilizan tres cables, el de fase por donde se proporciona la electricidad, el neutro y el de tierra por seguridad en caso de fallos eléctricos.
 
@@ -100,7 +100,7 @@ Para diferenciar la función de los diferentes tipos de cables, estos por normat
     image2="image:enchufe-schuko-2.webp" optionsthumb2="300x250" title1="Enchufe schuko"
     caption="Enchufe schuko" >}}
 
-#### Marcos y bastidores
+### Marcos y bastidores
 
 Aparte del propio mecanismo eléctrico son necesarios otros elementos. El bastidor es el elemento que hace de unión entre la caja embutida de la pared, permite montar el elemento eléctrico sobre el bastidor y colocar el marco para tapar el bastidor. Los bastidores y cajas de electricidad siguen una normativa en cuanto a dimensiones que es común para todos, los bastidores suelen ser compatibles con este estándar para poder montarlos sobre las cajas. Sin embargo, cada bastidor permite colocar elementos eléctricos de esa marca e incluso únicamente de una línea específica de la marca. Por lo que al cambiar los elementos eléctricos suele ser necesario cambiar también los bastidores y los marcos.
 
@@ -125,7 +125,7 @@ Algunas marcas y series tiene bastidores también dobles y triples pero las que 
     image1="image:bastidor.webp" optionsthumb1="200x150" title1="Bastidor"
     caption="Bastidor de metal" >}}
 
-#### Otros elementos eléctricos
+### Otros elementos eléctricos
 
 Los fabricantes proporcionan  elementos adicionales y diferentes tipos de mecanismos para otro tipo de funcionalidades como salida de cables, reguladores, antena televisión, tapas ciegas, dispositivos inteligentes conectados, ... Y algunas series utilizan elementos adicionales o intermedios para proporcionar a los elementos otro tipo de acabado estético más personalizable.
 
@@ -134,13 +134,13 @@ Los fabricantes proporcionan  elementos adicionales y diferentes tipos de mecani
     image1="image:tapa-ciega.webp" optionsthumb1="200x150" title1="Mecanismos originales"
     caption="Tapa ciega" >}}
 
-#### Preguntas frecuentes sobre interruptores
+### Preguntas frecuentes sobre interruptores
 
 Un interruptor conmutador e incluso un interruptor de cruzamiento pueden hacer la función de un interruptor simple, por ello algunas marcas para algunas líneas de interruptores solo fabrican interruptores conmutadores y no fabrican interruptores simples. Aún así aunque un interruptor conmutador y de cruzamiento puedan hacer la función de un interruptor simple generalmente si la línea de interruptores utilizada los ofrece se siguen utilizando interruptores simples ya que son más baratos. El precio entre un interruptor simple y un conmutador generalmente es de unos pocos céntimos pero la diferencia con un conmutador de cruzamiento es ya de varios euros, con lo que sí es posible es mejor utilizar interruptores simples o conmutadores, por costes no es recomendable utilizar un interruptor de cruzamiento como si fuese un interruptor simple.
 
 Finalmente, un interruptor conmutador no puede hacer las funciones de un interruptor de cruzamiento e igualmente un interruptor de cruzamiento no puede hacer las funciones de un interruptor conmutador.
 
-### Desempaquetado Schneider New Unica
+## Desempaquetado Schneider New Unica
 
 Para realizar la sustitución de los elementos eléctricos he elegido los del fabricante [Schneider](https://www.se.com/es/es/) y de la serie [New Unica](https://www.se.com/es/es/product-range/65439-new-unica/?parent-subcategory-id=5620&filter=business-5-residencial-y-peque%C3%B1o-terciario#overview), en la página del fabricante se ofrece información técnica de la serie Schneider New Unica y un documento con su catálogo completo asi como sus elementos de dispositivos inteligentes conectados. Hay varios fabricantes o marcas otras reconocidas son [Simon](https://www.simonelectric.com/), [Niessen](https://new.abb.com/low-voltage/es/productos/niessen), [Legrand](https://www.legrand.es/), [bticino](https://www.bticino.es/) o [Jung](https://www.jung.de/es/). Cada marca tiene varias líneas de interruptores y enchufes, con su estilo y tipos de elementos.
 
@@ -188,7 +188,7 @@ Un vídeo sobre la serie Schneider New Unica.
 {{< youtube
     video="17AiyJ_Vuu8" >}}
 
-### Colocación de interruptores y enchufes
+## Colocación de interruptores y enchufes
 
 La colocación de los interruptores y enchufes no es una tarea complicada ya que no requiere más que desatornillar y atornillar y desmontar y montar cables, sin embargo, es muy importante tener unas nociones básicas sobre electricidad y hay que saber y no tener ninguna duda de lo que se está haciendo. Antes de nada dado que se está manipulando electricidad siempre se ha de cortar la electricidad completamente desde el cuadro general de la electricidad de la vivienda para evitar cualquier accidente y manipular los elementos con seguridad. Antes de hacer ningún cambio se pueden tomar unas fotos de la instalación existente para antes de hacer cambio conocer como estaba realizada la instalación.
 
@@ -249,7 +249,7 @@ Trenzar bien los cables es importante para facilitar su inserción en los mecani
     image2="image:cables-trenzados.webp" optionsthumb2="200x150" title2="Cables bien trenzados"
     caption="Cables mal y bien trenzados" >}}
 
-#### Mis apuntes
+### Mis apuntes
 
 Estas son algunas pautas que he seguido para la colocación de los interruptores y enchufes para hacer la tarea correctamente, con más seguridad y sin contratiempos.
 
@@ -285,7 +285,7 @@ Para evitar que el polvo caiga a la tarima mejor poner un papel que lo evite en 
     image2="image:limpieza-cajas-2.webp" optionsthumb2="300x200" title2="Evitar suciedad"
     caption="Evitar suciedad" >}}
 
-#### Tutoriales en vídeo
+### Tutoriales en vídeo
 
 Si buscas en YouTube algún vídeo mira primero los del fabricante que suelen subir en sus cuentas videotutoriales de como colocar sus mecanismos. También hay profesionales que suben vídeos con tutoriales explicando los conocimientos básicos sobre electricidad para personas que no tienen los conocimientos básicos. Busca los vídeos en los que estén bien explicados y sean de alguien que demuestre tener conocimientos y ser profesional (porque hay algunos vídeos de algunos profesionales que no lo parecen y están más en un festival de humor), en caso de duda ver algún vídeo más o buscar otro.
 
@@ -304,7 +304,7 @@ Estos son los tutoriales para la instalación de interruptores y enchufes.
 {{< youtube
     video="WqXDf0CvP4A" >}}
 
-### Dónde comprar los mecanismos eléctricos
+## Dónde comprar los mecanismos eléctricos
 
 Hay numerosos distribuidores que ofrecen mecanismos eléctricos tanto en tienda física como por internet y en algunos casos ambos. No todos tienen todas las marcas, las series y el catálogo completo de referencias de las series con lo que en caso de querer una específica requiere comprobar que entre su catálogo tengan lo deseado.
 
@@ -471,7 +471,7 @@ En caso de realizar la compra por internet hay que leer siempre siempre las cond
 
 La compra la he realizado en Ilumitec, el envío del paquete ha sido rápido mediante el transportista [Seur][seur], con todos los elementos del pedido, en buen estado y cumpliendo el plazo orientativo indicado al hacer la compra. No puedo hablar de la atención al cliente porque no ha sido necesario que me ponga en contacto con ellos pero para realizar la compra en su página web y el pago ha funcionado todo correctamente. Además, ofrece PayPal como medio de pago que proporciona garantías adicionales en caso de disputas, también con PayPal por no tener que proporcionar el número de la tarjeta de crédito.
 
-### Complementos para los interruptores y enchufes
+## Complementos para los interruptores y enchufes
 
 Además de los elementos eléctricos puede que sea necesario comprar otros productos relacionados. Por ejemplo, en caso de que los marcos sean de diferente tamaño para pintar la pared en caso de que quede marca de suciedad por que la caja no está bien aislada y el polvo que entra deja marca en la pared con la corriente de aire que entra por los tubos y pared. Si se necesita poca pintura para hacer pequeños arreglos [Bruger](https://www.bruguer.es/) en [Amazon][amazon-affiliate] hay disponibles unos probadores de color que se pueden utilizar y son suficientes para hacer los pequeños arreglos para corregir esas pequeñas marcas de suciedad.
 

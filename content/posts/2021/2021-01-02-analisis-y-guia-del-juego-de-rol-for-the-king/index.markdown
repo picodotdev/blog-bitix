@@ -51,7 +51,7 @@ Si For the King es sencillo y no muy difícil [el juego Darkest Dungeon][blogbit
 {{< game-spoiler >}}
 {{< tableofcontents >}}
 
-### Modos de juego
+## Modos de juego
 
 El juego tiene varias campañas, aventuras distintas, varios niveles de dificultad y un modo de juego cooperativo. Las campaña principal de _Por el Rey_ no es muy larga en unos pocos días se completa pero requiere obtener varias ventajas en la biblioteca del saber y reiniciarlo varias veces lo que hace que lleve algo más de tiempo.
 
@@ -77,7 +77,7 @@ Al principio hay que crear el grupo de aventureros, hay que darles un nombre, se
     image1="image:personajes.webp" optionsthumb1="650x450" title1="Personalización de personajes"
     caption="Personalización de personajes" >}}
 
-### El tablero y mundo
+## El tablero y mundo
 
 El juego transcurre entre dos elementos, el viajar por el mundo y los combates. El viaje por el mundo está formado por un mapa en tres dimensiones de ubicaciones en diferentes hexágonos. En cada turno los personajes tienen varios puntos de movimiento para desplazarse por el mapa e ir de una ubicación a otra, tener encuentros, cumplir misiones e ir a ciertas ubicaciones especiales como mazmorras y encuentros especiales aleatorios en los que conseguir objetos.
 
@@ -92,7 +92,7 @@ Hay un ciclo de día y de noche diferenciados en varios turnos, hay que planific
 
 En el mapa hay varias regiones diferenciadas con una capital y una  ciudad en la que comerciar con servicios para curar a los personajes, eliminar maldiciones y aflicciones físicas y equipo, pergaminos, hierbas o mejorar las pipas para fumar las hierbas.
 
-#### Plagas y caos
+### Plagas y caos
 
 A la medida que pasan los turnos en la linea de tiempo aparecerán unos marcadores de plaga y casos que si no son contrarrestados provocarán desastres en el el mundo y dificultará la partida a los aventureros. En algunas misiones a los aventureros se les ofrece completarlas y como recompensa oro, un objeto especial y si se elige reducir el caos.
 
@@ -100,7 +100,7 @@ Para evitar las plagas es necesario descubrir la casilla donde está el personaj
 
 Tanto las plagas como el caso es recomendable evitar que añadan dificultades a la partida.
 
-### Personajes
+## Personajes
 
 La clase del personaje determina las estadísticas de los atributos principales. Los atributos son:
 
@@ -125,7 +125,7 @@ A medida que los personajes van derrotando a villanos ganan puntos de experienci
 
 Los personajes también tienen ciertos puntos de foco que les permiten asegurar superar una tirada en cualquier estadística. Se van gastando, se recuperan fumando una hierba en los servicios de una ciudad, meditando con el morral al acampar u ocasionalmente con algunas habilidades recuperar puntos de vida, foco o encontrar hierbas al finalizar el turno.
 
-### Equipo, armas, armadura y complementos
+## Equipo, armas, armadura y complementos
 
 Los personajes se pueden equipar con objetos para mejorar el daño que hacen por ataque o el nivel de armadura y resistencia que tienen contra los ataques de los villanos. Los personajes tienen varias ubicaciones de equipo: arma, escudo, casco, armadura, botas, anillo y collar. El arma determina el daño físico o mágico, la habilidad que se utiliza para superar la tirada y el número de tiradas a superar.
 
@@ -140,7 +140,7 @@ A lo largo de la aventura hay que equipar a los personajes con los mejores objet
     image3="image:inventario-3.webp" optionsthumb3="200x150" title3="Inventario inicial erudita"
     caption="Inventarios iniciales según clase" >}}
 
-#### Consumibles, hierbas, pergaminos, objetos y oro
+### Consumibles, hierbas, pergaminos, objetos y oro
 
 Una parte importante del equipo con las diferentes hierbas y las pipas que permiten fumarlas y potenciar su efecto. Una de las hierbas más importantes es la _barba de dios_ que permite recuperar cierta cantidad de puntos de vida según la pipa que posee el aventurero. Otra importante es el _panax_ que permite eliminar ciertas aflicciones físicas como el sangrado, el envenenamiento o el prendido. Otras hierbas permiten quitar las maldiciones, en los pueblos el sanador y la bendición quitan las aflicciones y maldiciones a cambio de oro.
 
@@ -148,7 +148,7 @@ Otros consumibles permiten subir de forma permanente en un punto un atributo o a
 
 Algunos de los consumibles no se pueden comprar en los mercados de las ciudades sino con ciertos encuentros que hay que desbloquear en la tienda para saber para lo que hay que hacer algunos intentos previamente.
 
-### Combates
+## Combates
 
 Los combates es el modo alternativo a viajar por el mundo donde los personajes empiezan una lucha por turnos hasta que todos los villanos mueren o todos los aventureros mueren momento en el que se acaba la partida. Los combates son como máximo entre los tres aventureros y tres villanos, emboscando a los villanos los combates pueden ser de los tres o dos aventureros contra un único villano, ocasionalmente algún combate es uno contra uno.
 
@@ -161,7 +161,7 @@ El orden en el combate se determina según la estadística de velocidad del pers
     image1="image:combate.webp" optionsthumb1="650x450" title1="Combate"
     caption="Combate" >}}
 
-#### Información de aventureros y villanos
+### Información de aventureros y villanos
 
 Tanto en el combate como en el viaje por el mundo cada icono ofrece información, el juego no explica que significa cada uno y en mi caso los he ido aprendiendo después de un par de partidas. En la pantalla del combate cada icono y número significa una cosa que es importante conocer, no saberlo significa malgastar turnos, no hacer daño a los villanos, tener que consumir hierbas porque ellos nos hace mucho y si la cosas va muy mal un personaje quizá muera y haya que gastar una vida en resucitarlo.
 
@@ -179,7 +179,7 @@ Para garantizar el éxito de una tirada o ranura se puede gastar uno o más punt
 
 Con toda esta información el jugador debe decidir como afrontar los ataques, a que villano atacar en función de la efectividad del arma, armadura, resistencia e inmunidades del villano, sus puntos de vida, con que ataque, si gastar puntos de foco para garantizar el éxito o si gastar objetos del cinturón.
 
-#### Encuentros y mazmorras
+### Encuentros y mazmorras
 
 En el tablero aparecen encuentros de combate individuales en los que una vez matados a los villanos y terminado el combate se vuelve al tablero. Algunas ubicaciones con mazmorras en los que se han de superar varios combates seguidos para salir con vida, antes de afrontar estos conviene que los personajes estén debidamente equipados con armas y hierbas, tener el nivel de personajes igual o superior al nivel de la mazmorra. Los encuentros se inician a iniciativa de los personajes pero algunos ocasionalmente son inesperados.
 
@@ -192,13 +192,13 @@ Después de cada combate en la mazmorra se permite intercambiar objetos entre pe
     image3="image:encuentro-3.webp" optionsthumb3="200x150" title3="Encuentro con Seño de las momias"
     caption="Encuentro con diferentes personajes malvados con sus frases de amenaza" >}}
 
-#### Aflicciones físicas, maldiciones e inmunidades
+### Aflicciones físicas, maldiciones e inmunidades
 
 En los combates algunos villanos tienen habilidades para causar aflicciones físicas y maldiciones a los personajes. Algunas aflicciones físicas son prendido que quitar unos pocos puntos de vida al finalizar el turno del personaje, sangrado que quita puntos más ocasionalmente pero de mayor cantidad, mojado que quita las inmunidades a maldiciones y aflicciones físicas u otras como envenenado, confundido, congelado, conmocionado entre otras más.
 
 Los aventureros y armas también otorgan la habilidad de provocar maldiciones y aflicciones físicas a los villanos pero estos también pueden tener inmunidades a algunas de ellas.
 
-### Estrategia y consejos para tener éxito en las campañas
+## Estrategia y consejos para tener éxito en las campañas
 
 Como se informa al inicio del juego es muy difícil terminar la campaña de _For the King_ en el primer intento e incluso en el tercero. Para terminar la campaña es necesario haber obtenido saber en partidas anteriores y adquirir ventajas que aparezcan aleatoriamente en la partida en la tienda del saber.
 
@@ -223,7 +223,7 @@ Hay algunas cosas que he ido aprendiendo para llegar más lejos en la campaña e
 * Asegurate de saber con que personaje estas, a quien vas a atacar o la acción que vas a realizar ya que las acciones no se pueden deshacer.
 * Usa los pergaminos de teletransportación, visión y portal cuando sean útiles. Los de visión por ejemplo permite descubrir localizaciones ocultas sin tener que explorarlas acercando un personaje a esa casilla.
 
-### Tienda del saber, guía del juego y enciclopedia
+## Tienda del saber, guía del juego y enciclopedia
 
 Una parte importante del juego es la tienda del saber que permite canjear el saber adquirido en partidas anteriores por ventajas que hagan más fácil las aventuras. Canjear el saber permite la posibilidad de que se activen ciertos encuentros y localizaciones, haya la posibilidad de obtener ciertos objetos poderosos, habilitar las clases de personaje y ciertas personalizaciones de los personajes.
 
@@ -241,14 +241,14 @@ En el juego se ofrece una guía básica del modo del funcionamiento del juego, p
 
 El la [enciclopedia del juego For the King](https://fortheking.gamepedia.com/For_The_King_Wiki) aunque no está completa hay mucha información en la que conocer qué hace cada cosa en el juego, personajes, villanos, habilidades, aflicciones, hechizos, consumibles, hierbas, pergaminos, objetos, tienda del saber, campañas, etc..
 
-### Banda sonora original
+## Banda sonora original
 
 La música es al igual que los gráficos una pieza artística con una calidad tan buena o más que otras composiciones o bandas sonoras, simplemente escuchándola nos trae recuerdos del juego.
 
 {{< youtube
     video="GlpzC2PWOwQ" >}}
 
-### Vídeos de YouTube
+## Vídeos de YouTube
 
 Eso son unos vídeos de introducción, mecánica y funcionamiento básico del juego.
 

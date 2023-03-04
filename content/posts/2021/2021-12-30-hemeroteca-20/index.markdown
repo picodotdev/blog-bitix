@@ -31,13 +31,13 @@ Aquí hay una [recopilación bastante exhaustiva de todos los blogs de habla his
 
 {{< tableofcontents >}}
 
-### Retrospectiva 2021
+## Retrospectiva 2021
 
 Durante este 2021 he ido escribiendo cada semana el artículo que he publicado cuando años anteriores el tema del artículo que escribía lo tenía apuntado en una lista de ideas para que no se me olvidase y escrito desde hace varias semanas. Este es uno de los motivos por los que durante este año he estado escribiendo la mayoría de las semanas un solo artículo cuando en el 2020 muchas de las semanas escribí dos a la semana.
 
 En el 2022 espero seguir escribiendo un artículo a la semana mientras tenga ideas y no eche de menos el tiempo para hacer otras cosas.
 
-#### Evolución visitas
+### Evolución visitas
 
 Hay canales de YouTube que en un par de meses tienen 200 suscriptores, en 6 meses 1000 suscriptores y con únicamente 7 vídeos publicados de 1 hora con de 1K a 10K visualizaciones por vídeo. En mi blog no creo que tenga tantas personas suscritas al _feed_ y en _twitter_ solo tengo 400 seguidores. El truco para conseguir crecer en un _blog_ o cualquier sitio de contenido no depende únicamente de crear buen contenido, con eso solo crecer requiere mucho tiempo, sino conseguir además que el contenido sea compartido por cuentas con muchos seguidores que permite llegar a mucha más gente. La importancia que tienen los suscriptores, al menos la que le doy yo es más por ya que una vez que uno dedica tiempo a escribir contenido este sea leído, ver que es leído por muchas personas y que crece o llega a una cifra respetable es una forma de motivación para seguir creando contenido.
 
@@ -52,7 +52,7 @@ Aunque levemente ascendente las páginas vistas se mantienen entre 45K y 65K dep
    image1="image:google-analytics.webp" optionsthumb1="650x450" title1="Evolución visitas 2021"
    caption="Evolución visitas 2021" >}}
 
-#### Evolución ingresos
+### Evolución ingresos
 
 Al poco tiempo de crear el blog le puse publicidad AdSense, al principio por curiosidad de saber cuántos ingresos pueden obtenerse, posteriormente ya que creaba contenido una forma de monetizarlo que aunque no compensa el tiempo dedicado es una pequeña forma de motivación y suficiente para costear comprar de un teclado mecánico, quizá renovar el lector de libros electrónicos Kindle y algún juego de consola para el que no tengo tanto tiempo para jugar como podría si no se lo dedicase al blog.
 
@@ -68,7 +68,7 @@ Unos 400 € por ingresos de AdSense, 50 € por afiliado de Amazon y 150 € po
    image1="image:amazon-afiliados.webp" optionsthumb1="650x450" title1="Evolución ingresos AdSense y Amazon Afiliados 2021"
    caption="Evolución ingresos AdSense y Amazon Afiliados 2021" >}}
 
-#### Sobre Blog Bitix
+### Sobre Blog Bitix
 
 Desde que divido los artículos en secciones me facilita escribirlos con mejor estructura además de facilitar la lectura, quedan artículos más largos pero también me lleva más tiempo escribirlos. Este 2021 casi todas las semanas he ido escribiendo sobre temas planificados la semana anterior o durante esa misma semana. Estos son los motivos por los que durante este año he escrito muchas semanas un solo artículo.
 
@@ -78,7 +78,7 @@ Cuando un blog tiene muchos artículos parte del trabajo también se emplea en r
 
 Otro apartado que requiere tiempo es mejorar la propia infraestructura del blog. Un cambio que he hecho es utilizar [GitHub Actions][github-actions] para publicar el contenido del blog, me evita tener que crearlo en local con lo que ahorro casi 2 GiB de espacio y bytes escritos en el SSD local. Otro cambio ha sido la gestión de los enlaces de Amazon, con el paso del tiempo muchos se van rompiendo, el cambio me permite saber que enlaces tengo en los artículos dándoles una etiqueta, por ejemplo, enlaces de afiliado de teclado mecánico y poder insertar los mismos enlaces en varios artículos de forma que no tenga que ir a cada artículo cambiándolos, sigue siendo un trabajo manual pero menos que antes. Aún no he tenido necesidad de migrar el blog de Github Pages a otro hospedaje, hasta que no me echen posiblemente no me vaya y entonces tendré que pensar que _hosting_ elijo, una opción es Clouding.
 
-#### Continuando mejorando alis y futuras ideas
+### Continuando mejorando alis y futuras ideas
 
 Aunque [Arch Linux][archlinux] en el medio de instalación incluye un _script_ para facilitar la instalación aún así hay una buena cantidad de usuarios que siguen usando alis que deduzco porque sigue siendo marcado como favorito y con _forks_. Y es que de los _scripts_ de instalación de Arch Linux que he visto sigo prefiriendo los conceptos en los que se basa alis, automatizado, desatendido, simple y configurable. Otros _scripts_ no cumplen alguno o varios de estos principios que tengo para alis, aunque alis sea simplemente un _script_ en bash no he visto ninguna implementación mejor en todos los aspectos.
 
@@ -94,17 +94,17 @@ Pero bueno que tampoco sea muy famoso no está mal porque no quiero que al usarl
 
 He recibido varios _pull request_ que aunque no he incorporado tal cual me han servido como base para hacer los cambios. Durante este año, he hecho el mismo cambio que en el blog para generar el sitio web usando GitHub Actions. He añadido soporte para [PipeWire][pipewire], mejorado el soporte para [systemd-homed][systemd] y la posibilidad de configurar la disposición de sobvolúmnes con el sistema de archivos _btrfs_.
 
-### Otras contribuciones
+## Otras contribuciones
 
 Sigo realizando las traducciones de [VLC][vlc], [KeePassXC][keepassxc] y [VirtualBox][virtualbox]. La de VLC la estoy dejando algo aparcada, me gustaría que hubiese alguien que pudiese contribuir a traducir VLC sobre todo aquellas partes que yo no uso como la versión para iOS y Android.
 
-### Artículos publicados
+## Artículos publicados
 
 Si en el 2020 publiqué unos 90 artículos, este he publicado algunos menos por tiempo y porque no he tenido tantas ideas para escribir artículos. Este 2021 han sido 73 artículos nuevos y algunos pocos más que he actualizado. Los temas son los mismos de siempre, estos artículos son los del segundo semestre.
 
 Urte berri on!, Buen año nuevo!
 
-#### Artículos sobre Java y programación
+### Artículos sobre Java y programación
 
 * [Cómo documentar una API REST con Swagger implementada con Spring Boot][blogbitix-584]
 * [Los niveles de madurez REST, ejemplo con HATEOAS y documentación con Swagger de un servicio con Spring Boot][blogbitix-587]
@@ -122,7 +122,7 @@ Urte berri on!, Buen año nuevo!
 * [Buenas prácticas de programación sencillas en el código fuente][blogbitix-612]
 * [Configuración de una aplicación con Spring Boot y configuración centralizada con Spring Cloud Config][blogbitix-613]
 
-#### Artículos sobre GNU/Linux y software libre
+### Artículos sobre GNU/Linux y software libre
 
 * [Los diagramas UML para documentar y una aplicación para crearlos][blogbitix-594]
 * [Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME][blogbitix-595]
@@ -135,17 +135,17 @@ Urte berri on!, Buen año nuevo!
 * [Ejemplo de un potencial ataque informático de phishing, El caso de El Gatico Biever][blogbitix-608]
 * [Aprovisionar un servidor en la infraestructura cloud de Clouding con Ubuntu y Nginx usando Ansible y protocolo seguro HTTPS con Let's Encrypt][blogbitix-614]
 
-#### Artículos sobre JavaScript y web
+### Artículos sobre JavaScript y web
 
 * [Añadir un mapa cartográfico con JavaScript, Leaflet y OpenStreetMap a una página web][blogbitix-596]
 
-#### Artículos sobre juegos
+### Artículos sobre juegos
 
 * [Análisis, guía y consejos del juego roguelike Darkest Dungeon][blogbitix-585]
 * [Prueba y opinión sobre jugar mediante streaming][blogbitix-586]
 * [Análisis del maravilloso juego horrible The Last of Us][blogbitix-604]
 
-#### Otros temas
+### Otros temas
 
 * [Desempaquetado de teclado mecánico Glorious GMMK TKL][blogbitix-609]
 * [Cómo limpiar a fondo un teclado de ordenador][blogbitix-611]

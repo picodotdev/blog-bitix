@@ -44,7 +44,7 @@ Son muchas herramientas y cada cierto tiempo surgen nuevas con lo que hay que es
 
 {{< tableofcontents >}}
 
-### Base de datos
+## Base de datos
 
 Los datos son una de las partes más importantes para el correcto funcionamiento de un negocio. Una parte importante de las aplicaciones consiste tanto en persistir datos como recuperarlos cuando se necesitan. Una de las ventajas de los microservicios es que cada uno de ellos puede utilizar el tipo de base de datos que más adecuado considere para almacenar los datos. Puede ser una base de datos relacional como [PostgreSQL][postgresql], clave-valor como [Redis][redis], de documentos con [MongoDB][mongodb] o incluso una combinación de varios.
 
@@ -52,41 +52,41 @@ Los datos son una de las partes más importantes para el correcto funcionamiento
 * [Introducción a la base de datos NoSQL MongoDB][blogbitix-237]
 * [Introducción a la base de datos NoSQL Redis][blogbitix-240]
 
-### Mensajería
+## Mensajería
 
 Una forma de comunicar los microservicios sin crear acoplamiento entre los servicios o de forma asíncrona es utilizar una comunicación basada en mensajes. Un sistema de mensajería es [RabbitMQ][rabbitmq], otra popular es [Kafka][apache-kafka] con algunas diferencias.
 
 * [Ejemplo de RabbitMQ con Java para enviar y recibir mensajes][blogbitix-210]
 
-### Construcción de imágenes
+## Construcción de imágenes
 
 La forma nativa de ejecutar las aplicaciones basadas en microservicios es utilizando contenedores. Los contenedores son una forma de independizarse de las dependencias de ejecución que necesita cada microservicio ya sea por el lenguaje de programación que utilizan o librerías que necesitan, los contenedores permite ejecutarlos y tratarlos de la misma forma. [Docker][docker] permite ejecutar aplicaciones en contenedores así como construir imágenes de contenedores, [Packer][packer] es otra herramienta que permite construir diferentes artefactos ya sea para una máquina virtual [VirtualBox][virtualbox] o la computación en la nube de [Amazon Web Services][amazon-web-services], [Google Cloud Computing][google-cloud] o [Microsoft Azure][microsoft-azure].
 
 * [Introducción y características de Docker][blogbitix-49]
 * [Cómo crear una imagen para Docker usando un Dockerfile][blogbitix-51]
 
-### Integración continua y despliegue continuo
+## Integración continua y despliegue continuo
 
 Desarrollando pruebas automatizadas al mismo tiempo que desarrollar la funcionalidad de una aplicación permite conocer que el software desarrollado con los casos creados funciona como se espera. Más tarde al introducir más cambios permiten conocer si un cambio afecta de forma inesperada a alguna funcionalidad cubierta por las pruebas automatizadas. Utilizando integración continua las pruebas automatizadas proporcionan el estado por cada cambio realizado en el repositorio de código fuente. Automatizar el despliegue de los cambios es la entrega continua y permite reducir el tiempo entre que una funcionalidad se ha terminado de desarrollar y el tiempo en que está disponible en el entorno de producción. [Gitlab][gitlab] es una herramienta que cubre varias necesidades, entre ellas la de repositorio de código fuente con [Git][git] y también las funcionalidades de integración y entrega continua. [Jenkins][jenkins] es una herramienta más específica y cubre las funcionalidades de integración y entrega continua.
 
 * [GitLab, la completa herramienta integrada para desarrollo de software][blogbitix-290]
 * [Integración y entrega continua con GitLab sobre Docker][blogbitix-294]
 
-### Planificación y orquestación
+## Planificación y orquestación
 
 Con un número importante de microservicios, incluso múltiples instancias de cada uno de ellos que varían en número a lo largo del tiempo para soportar tolerancia a fallos y alta disponibilidad se hace imprescindible tratar a las instancias como ganado y una herramienta que se encargue de su administración, tanto para planificar en que nodos se crean las instancias según sus restricciones como de aumentar o reducir su número, realizar despliegues utilizando estrategias _blue/green_ o _canary_ y revertir a versiones anteriores. [Kubernetes][kubernetes] es una popular específica para contenedores Docker, [Nomad][nomad] es una herramienta más sencilla e independiente pero integrable con otras herramientas de [HashiCorp][hashicorp] que en conjunto proporcionan similares funcionalidades que Kubernetes.
 
 * [Introducción a Nomad para gestionar aplicaciones y microservicios][blogbitix-398]
 * [Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos][blogbitix-508]
 
-### Descubrimiento de servicios y conexión
+## Descubrimiento de servicios y conexión
 
 Si los microservicios son numerosos, se crean múltiples instancias de cada uno de ellos y son efímeros pudiendo desaparecer es necesario un servicio que guarde un registro de cual es su ubicación que permita conocer al resto de servicios donde se encuentran para comunicarse con ellos. [Consul][consul] es un servicio que proporciona la funcionalidad de de registro y descubrimiento además de otras funcionalidades como conectividad segura entre microservicios basado en intenciones en vez de direcciones IP, puertos y reglas de _firewall_.
 
 * [Registro y descubrimiento de servicios con Spring Cloud y Consul][blogbitix-206]
 * [Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad][blogbitix-502]
 
-### Llamada a procedimientos remotos y API
+## Llamada a procedimientos remotos y API
 
 Unos microservicios tienen como dependencia y ofrecen su funcionalidad a otros a través de una interfaz de programación o API. La interfaz puede ser REST, [GraphQL][graphql] o si es un servicio interno con llamada a procedimiento remoto con [gRPC][grpc]. La comunicación entre servicios mediante API y mensajes no es incompatible, es más, es común que un microservicio utilice ambas formas para comunicarse o otros microservicios.
 
@@ -94,21 +94,21 @@ Unos microservicios tienen como dependencia y ofrecen su funcionalidad a otros a
 * [Introducción a gRPC y ejemplo con Java][blogbitix-512]
 * [Ejemplo de API REST en Java con JAX-RS y Spring Boot][blogbitix-178]
 
-### _Proxy_ de servicios
+## _Proxy_ de servicios
 
 Un _proxy_ permite hacer de intermediario entre el origen servicio origen y el servicio destino para ofrecer una visión más sencilla de los microservicios al consumidor o hacer algunas operaciones en las comunicaciones. [Traefik][traefik] es una _proxy_ adaptado a los microservicios, es integrable con Consul y con Docker.
 
 * [Microservicios con Spring Cloud, Consul, Nomad y Traefik][blogbitix-436]
 
-### Automatización y configuración
+## Automatización y configuración
 
 Para hacer manejable la infraestructura y configuración de la misma es necesario automatizarla tratando a la infraestructura como código. Esto permite evitar cambios manuales, mantener un registro de los cambios y replicar la misma infraestructura rápidamente en caso de ser necesario. La infraestructura puede ser mutable o inmutable, tener una infraestructura inmutable es más deseable ya que en todo momento se tiene conocimiento del estado de la infraestructura evitando cambios temporales aplicados que no estén bajo control e impidan replicar la infraestructura. [Ansible][ansible] permite automatizar ciertas tareas para una infraestructura mutable en algunos casos es herramienta conveniente, [Terraform][terraform] es una herramienta declarativa con la que se especifica la infraestructura deseada y aplica los cambios necesarios para tenerla, sigue la filosofía inmutable con la que si una instancia de una máquina cambia en vez de cambiar la instancia crea una nueva y elimina la antigua.
 
-### Registro de contenedores y artefactos
+## Registro de contenedores y artefactos
 
 A partir del código fuente se construyen los artefactos que posteriormente se incluyen en contenedores que son desplegados. Un repositorio de artefactos permite almacenar los binarios y paquetes de cada versión a partir del código fuente, esto permite volver a una versión anterior y guardar un historial de los mismos para el futuro. [Docker Registry][docker-registry] es un registro para imágenes Docker, [Artifactory][artifactory] o [Nexus][sonatype-nexus] son registros más generalistas que permite guardar artefactos de JavaScript, Python o Java entre otros, [Archiva][apache-archiva] es específico de artefactos para Java.
 
-### Autenticación, claves y secretos
+## Autenticación, claves y secretos
 
 Para autenticar y autorizar las llamadas a los servicios a través de de la API que ofrecen se suele utilizar [OAuth][oauth], como proveedor de autenticación OAuth una opción es [Keycloak][keycloak].
 
@@ -119,7 +119,7 @@ Por otro lado, cierta información que tratan las aplicaciones es de carácter s
 * [Generar credenciales de conexión a base de datos bajo demanda con Vault][blogbitix-428]
 * [Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring][blogbitix-429]
 
-### Monitorización, trazas y trazabilidad
+## Monitorización, trazas y trazabilidad
 
 Un sistema complejo como son los microservicios es indispensable que esté monitorizado para dar visibilidad a su estado y observar su funcionamiento en tiempo real. Las métricas son obtener las trazas que emiten cada uno de los microservicios, monitorizar los tiempos de respuesta de cada microservicio, consumo de memoria, CPU o almacenamiento.
 
@@ -135,7 +135,7 @@ Una solicitud genera varias llamadas entre servicios en cadena, para tener una v
 * [Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot][blogbitix-368]
 * [Trazabilidad en servicios distribuidos con Sleuth y Zipkin][blogbitix-518]
 
-### Repositorio de artefactos
+## Repositorio de artefactos
 
 Los repositorio sde artefactos permiten compartir artefactos generados en la compilación de los proyectos. Los artefactos en Java son librerías que otros proyectos utilizan como dependencias, en Docker son las imágenes que utilizan los contenedores generados con un archivo Dockerfile en Java Script paquetes npm y otros lenguajes como Python, Go o C# los suyos. [Nexus][nexus] permite crear un repositorio de artefactos privado.
 

@@ -41,7 +41,7 @@
       {{ partial "share-this-begin.html" . }}
       {{ if in $content "<toc></toc>" }}
         {{ $content = replaceRE "(.*<toc></toc>.*)" (print $videoo "$1 ") $content 1 }}
-        {{ $content = replace $content "<toc></toc>" .TableOfContents  }}
+        {{ $content = replace $content "<toc></toc>" .TableOfContents }}
       {{ end }}
       {{ $content | safeHTML }}
     </div>

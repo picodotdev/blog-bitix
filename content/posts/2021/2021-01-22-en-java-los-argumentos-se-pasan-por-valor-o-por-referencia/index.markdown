@@ -24,7 +24,7 @@ En el lenguaje Java los punteros realmente son vistos simplemente como variables
 
 Estas diferencias de Java con los lenguajes C y C++, hacen de Java un lenguaje más sencillo en la sintaxis, seguro y menos propenso a errores, por otro lado, la manipulación de punteros en C y C++ es útil en la programación de sistemas por ser un modelo similar al empleado por la CPU en su funcionamiento.
 
-### El paso por valor de los argumentos en Java
+## El paso por valor de los argumentos en Java
 
 En Java todos los argumentos se pasan por valor. El paso por valor de los argumentos de un método en Java tiene varias consecuencias. El paso por valor significa que al método en la variable del argumento le llega una copia del valor en el caso de un tipo primitivo de datos o una copia del puntero a la dirección de memoria del objeto. En el paso por referencia el argumento contiene un puntero con la dirección de memoria de la variable. En el paso por valor al asignar un valor a la variable del argumento no modifica el valor de la variable usada para invocar al método, esto ocurre tanto para argumentos de tipo primitivo y para objetos.
 
@@ -37,7 +37,7 @@ En Java todos los argumentos se pasan por valor. El paso por valor de los argume
 
 Algunas clases como la clase [String](javadoc11:java.base/java/lang/String.html) en Java son inmutables, esto significa que al manipular el objeto se devuelve una nueva instancia de la clase en vez de modificar la original. En Java para manipular un _String_ y obtener la misma referencia en vez de una nueva instancia hay que utilizar la clase [StringBufffer](javadoc11:java/lang/StringBuffer.html) o [StringBuilder](javadoc11:java/lang/StringBuilder.html). Algunas instancias de listas obtenidas con la API de colecciones son inmutables como [List.of](javadoc11:java.base/java/util/List.html), y sus métodos [add](javadoc11:java.base/java/util/List.html#add(E)) y [remove](javadoc11:java.base/java/util/List.html#remove(java.lang.Object)) lanzan la excepción en caso de ser invocados.
 
-### Ejemplo práctico del paso por valor
+## Ejemplo práctico del paso por valor
 
 En este programa aunque a las variables de los argumentos _x_, _y_ y _w_ se les asigne un nuevo valor las variables _a_, _b_ y _c_ usadas en la invocación del método continúan teniendo el mismo valor. Las variables de los argumentos se pasan por valor, sin embargo, los objetos a los que apuntan esas variables si son mutables y son modificados en el método los cambios son visibles en el ámbito de invocación con la variable utilizada como argumento.
 

@@ -26,7 +26,7 @@ Los altavoces que tengo los compré con el primer ordenador, el venerable AMD At
 
 {{< tableofcontents >}}
 
-### El problema de mis altavoces
+## El problema de mis altavoces
 
 El problema es que aleatoriamente en ciertos periodos de tiempo cada pocos minutos el volumen sube y al cabo de un tipo vuelve a bajar, en algunas ocasiones aguanta un cuarto de hora o media hora sin variación de volumen. Para ver vídeos donde alguien está hablando y algunos sonidos no se nota pero escuchando música sí, la diferencia entre el tono alto y bajo tiene suficiente diferencia como para que sea molesto, con este problema es difícil ajustar el volumen y en algunas ocasiones requiere ajustarlo desde el mando de control y desde el volumen del entorno de escritorio del ordenador.
 
@@ -36,7 +36,7 @@ Seguramente los altavoces tengan arreglo pero no sé lo suficiente ni tengo las 
 
 Me dará pena tener que sustituirlos pero para escuchar música de forma cómoda no encuentro otra opción.
 
-### Los altavoces sustitutos candidatos
+## Los altavoces sustitutos candidatos
 
 Cuando compro algo electrónico u algún otro producto que más o menos entiendo para saber las diferencias entre un producto y otro normalmente me informo lo mejor que puedo hasta decidirme por la opción que mejor considero evaluando el precio y características de cada opción. Los artículos de las series de [desempaquetado de tecnología][blogbitix-serie-desempaquetado-tecnologia] y [desempaquetado de productos no tecnológicos][blogbitix-serie-desempaquetado-otros] tienen algunos ejemplos que incluyen un [Intel NUC][blogbitix-363], una [PlayStation 4][blogbitix-432] o un [termo de agua sanitaria Fleck][blogbitix-251] o [el contrato con la compañía eléctrica Holaluz][blogbitix-278].
 
@@ -63,7 +63,7 @@ En el momento de buscar estas opciones y un poco lo que me ha decidido a comprar
 
 Finalmente, me he decidido por el Amazon Echo de tercera generación, por precio está en la categoría de altavoces de gama media-alta de las que he encontrado pero para lo que lo quería y este tiene es la que elegido. Mi uso será principalmente como altavoz para el ordenador y la PlayStation, posiblemente no use muchas de sus opciones como altavoz inteligente pero otras es posible que sí como la posibilidad de escuchar música de Amazon Music o la radio sin necesidad de tener el ordenador encendido o como hilo musical al dormir. Lo que pierdo es el sonido estéreo pero recupero una buena cantidad de espacio en la mesa y quito un par de cables.
 
-### Desempaquetado de Amazon Echo (3ª generación)
+## Desempaquetado de Amazon Echo (3ª generación)
 
 El color que he elegido ha sido el negro o antracita, otros colores son azul o añil, gris claro y gris oscuro. Es bastante compacto, las dimensiones son de 14,5 cm de alto y 9,5 cm de diámetro, requiere alimentación eléctrica e incluye un pequeño cargador rectangular a juego con el color del altavoz también de color negro.
 
@@ -90,7 +90,7 @@ La caja incluye un pequeño manual de puesta en funcionamiento y configuración.
     image3="image:desempaquetado-amazon-echo-3.webp" optionsthumb3="200x150" title3="Desempaquetado Amazon Echo"
     caption="Desempaquetado Amazon Echo" >}}
 
-### Primeros pasos, funcionamiento y privacidad
+## Primeros pasos, funcionamiento y privacidad
 
 La configuración consiste básicamente en hacer que el altavoz Echo se conecte a la red WiFi de nuestra casa. Para hacer la configuración es necesario utilizar un _smartphone_ y descargar e instalar [la aplicación de Alexa para el móvil ya sea Android](https://play.google.com/store/apps/details?id=com.amazon.dee.app&hl=es) o [iOS](https://apps.apple.com/es/app/amazon-alexa/id944011620) de sus tiendas de aplicaciones, en el proceso también se requiere activar la conexión Bluetooth en el móvil y conectarse al dispositivo Echo.
 
@@ -164,7 +164,7 @@ En las páginas de ayuda hay más información de los dispositivos Alexa:
 * [Ayuda para dispositivos Alexa](https://www.amazon.es/gp/help/customer/display.html/ref=hp_bc_nav?ie=UTF8&nodeId=202009680)
 * [Ayuda de Amazon Echo](https://www.amazon.es/gp/help/customer/display.html?nodeId=201399130)
 
-### Primeras impresiones
+## Primeras impresiones
 
 Se configura fácil, es bastante pequeño y requiere menos cables que otros altavoces. Para su tamaño pesa bastante aunque esto no es muy relevante, su peso y tamaño tampoco es muy grande pudiendo colocarse en cualquier lugar. En su tamaño es posiblemente el altavoz con mejor calidad de sonido y diseño. La calidad del sonido en graves es buena, yo no percibo una diferencia significativa con los altavoces 2.1 que tenía con _subwoofer_ y estéreo, y estos eran ya bastante buenos.
 
@@ -182,7 +182,7 @@ Se le puede pedir música de diferentes géneros clásica, electrónica, _techno
     image2="image:cable-jack-macho-macho-3-5mm.webp" optionsthumb2="300x200" title2="Cable jack 3.5mm macho-macho"
     caption="Amazon Echo escuchando un comando de voz y cable jack 3.5mm" >}}
 
-### Funcionalidades y skills
+## Funcionalidades y skills
 
 Para darle el mayor uso al Amazon Echo la dificultad está en conocer qué comandos de voz se pueden utilizar. Aún desconozco en gran medida las posibilidades de los altavoces inteligentes y del asistente virtual Alexa controlador por voz. Requiere conexión a internet mediante WiFi soportando redes redes 802.11 a/b/g/n/ac (WiFi 5) pero no ax (WiFi 6). 
 
@@ -261,7 +261,7 @@ Además de los dispositivos inteligentes como enchufes y bombillas el Echo es ca
     linkids="7a7cea572346dacf8ef2141263ab837a,93d88d8597b0da6936925ad0d6070c24,7284dbe8a31b1691523fb74bd6183c14"
     asins="B07ZSG9Y67,B07SPYB4TQ,B07MSCBGZP" >}}
 
-### Problemas, algunos que he resuelto y cosas que me gustaría que tuviese
+## Problemas, algunos que he resuelto y cosas que me gustaría que tuviese
 
 Y ahora unos problemas y cosas que me gustaría que tuviese después de los primeros momentos de uso. Algunos son por problemas con mi ordenador otros son mejoras que podrían tener los altavoces Echo.
 
@@ -304,7 +304,7 @@ Dado que son unos altavoces dependiente de servicios de Amazon me surgen las sig
 
 Por otro lado, si los altavoces inteligentes tienen éxito como producto con el tiempo saldrá nuevas versiones con más funcionalidades que dejarán desfasados a las versiones anteriores, espero que algunos de los problemas comentados se resuelvan también para las versiones actuales.
 
-### Familia de altavoces inteligentes Amazon Echo y alternativas
+## Familia de altavoces inteligentes Amazon Echo y alternativas
 
 La familia de altavoces Echo con el asistente Alexa tiene varios miembros.
 
@@ -327,7 +327,7 @@ Los Echo Show incluyen una pantalla con la posibilidad de realizar videoconferen
 
 Tanto Apple como Google ofrecen sus versiones de altavoces inteligentes, Apple el [HomePod](https://www.apple.com/es/homepod/) y Google los [Home](https://store.google.com/product/google_home_speaker) y [Nest Mini](https://store.google.com/product/google_nest_mini).
 
-### Conclusión
+## Conclusión
 
 El Amazon Echo es pequeño, tiene buena calidad de sonido, solo necesita dos cables y tiene funciones adicionales a unos altavoces tradiciones, en algunas cosas son mejores y en otras podrían mejorar. En oferta tiene un precio similar al de unos altavoces de calidad 2.1. Se gana en comodidad, en espacio pero no se tiene sonido estéreo, salvo que se compre una pareja de ellos, y la conexión auxiliar de entrada de línea no es la predeterminada.
 
@@ -341,7 +341,7 @@ El Echo y Echo Studio son una buena consideración como altavoz para ver pelícu
 
 Cuando compré el Echo tenía dudas de si sería buena opción como sustituto de mis antiguos altavoces pero pasados unos días de uso por ahora estoy bastante contento con él. Si tienes cualquier duda de los Echo añade un comentario y trataré de darle respuesta.
 
-### Vídeos
+## Vídeos
 
 En YouTube hay numerosos vídeos con desempaquetados, analizando los altavoces y la familia de altavoces Echo y explicando como funcionan las _skills_ que se pueden activar.
 

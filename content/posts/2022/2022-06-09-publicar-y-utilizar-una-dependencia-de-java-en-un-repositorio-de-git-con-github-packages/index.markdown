@@ -31,7 +31,7 @@ Una alternativa a Nexus es el servicio [GitHub Packages][github-packages] que pe
 
 {{< tableofcontents >}}
 
-### El servicio de Github Packages
+## El servicio de Github Packages
 
 GitHub Packages es un servicio de GitHub que permite almacenar artefactos de distintos tipos y paquetes de las principales plataformas de programación como librerías _jar_ de Java, paquetes npm de JavaScript e imágenes de contenedores de Docker. Un repositorio de GitHub Packages se almacena en un repositorio de git de GitHub.
 
@@ -45,20 +45,20 @@ Tiene unos límites de uso bastante reducidos en sus [planes de precios de GitHu
 * [About scopes and permissions for package registries](https://docs.github.com/en/packages/learn-github-packages/about-permissions-for-github-packages#about-scopes-and-permissions-for-package-registries)
 * [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
-### Crear y publicar una librería de Maven en GitHub Packages
+## Crear y publicar una librería de Maven en GitHub Packages
 
-#### Crear la librería
+### Crear la librería
 
 El siguiente proyecto es un proyecto de [Gradle][gradle] que contiene una clase de utilidad que se desea distribuir como una librería para compartirla y que se pueda utilizar en cualesquiera otros proyectos de Gradle o Maven que la necesiten. El código Java de la clase no tiene nada especial y en este caso simplemente contiene una utilidad para ofuscar una cadena de texto.
 
 {{< code file="utils/Utils.java" language="java" options="" >}}
 {{< code file="utils/build.gradle" language="groovy" options="" >}}
 
-#### Crear el repositorio de Maven en GitHub
+### Crear el repositorio de Maven en GitHub
 
 Cada repositorio de git permite generar artefactos o paquetes para que puedan ser descargados. Para agrupar todos los artefactos se puede crear un repositorio específico de git y publicar en él todos los artefactos de modo que en los proyecto únicamente sea necesario incluir la configuración de un único repositorio.
 
-#### Publicar la librería en el repositorio
+### Publicar la librería en el repositorio
 
 Para publicar artefactos en el repositorio de Maven se requieren unas credenciales para limitar publicar únicamente artefactos a aquellas personas o procesos que tengan permisos. Una de las formas de publicar paquetes es utilizar un _Personal Access Token_ o PAT al que se asocian unos permisos y se generan desde la sección _Settings_ de la cuenta dentro de [Developer settings](https://github.com/settings/apps) y _Personal access tokens_.
 
@@ -82,7 +82,7 @@ Una vez publicado el artefacto desde la administración del repositorio es posib
     image1="image:github-packages-artifact.webp" optionsthumb1="650x450" title1="Artefacto de Maven publicado un repositorio con GitHub Packages"
     caption="Artefacto de Maven publicado un repositorio con GitHub Packages" >}}
 
-#### Usar la librería del repositorio de Maven
+### Usar la librería del repositorio de Maven
 
 Una vez publicado el artefacto en el repositorio de Maven para usarlo hay que declarar de forma explícita la ubicación del repositorio de Maven de GitHub Packages y las credenciales para acceder al repositorio.
 

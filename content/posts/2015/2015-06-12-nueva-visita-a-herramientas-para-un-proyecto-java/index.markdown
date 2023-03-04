@@ -21,7 +21,7 @@ summary: "Las tecnologías para desarrollar una aplicación son un medio para re
 
 Hace 5 años escribí un [artículo comentando que tecnologías elegiría][elblogdepicodev-62] para un proyecto Java si tuviese posibilidad. Al ritmo que avanza la tecnología cuatro años es un tiempo bastante largo, también es un tiempo en el que he podido aprender y añadir a mi «caja de herramientas» nuevas opciones que después de evaluarlas me han gustado. En este artículo haré una nueva visita al artículo anterior y comentaré algunas nuevas herramientas.
 
-### Lenguaje de programación
+## Lenguaje de programación
 
 Como lenguaje de programación seguiría usando Java, en mi caso es el lenguaje que más conozco y sigue siendo una de las opciones más válidas. Pero con la salida de una nueva versión usaría Java 8. La [publicación de Java 8 incorporando varias novedades importantes][blogbitix-17] han mejorado varios aspectos de este lenguaje, por mencionar los más relevantes están la incorporación de _lambdas_ que proporciona una cierta forma de programación funcional, también destaca los _streams_ que permite describir los algoritmos que procesan datos de una forma más expresiva y legible además de aprovechar mejor los procesadores multinúcleo, métodos por defecto en interfaces que permite mantener compatibilidad hacia atrás (aunque esto interesa más a los desarrolladores que hacen APIs para que sean usadas por terceras partes), una nueva API para el manejo de fechas eliminando una de las críticas de versiones anteriores y algunas cosas más. El futuro con Java 9 es prometedor si presenta la interesante modularidad.
 
@@ -31,7 +31,7 @@ Como lenguaje de programación seguiría usando Java, en mi caso es el lenguaje 
 * [Introducción y nuevas características de Java EE 7][blogbitix-131]
 * [Novedades de la plataforma Java][blogbitix-serie-java-platform]
 
-### Persistencia en base de datos
+## Persistencia en base de datos
 
 Las librerías más populares de persistencia en Java son [Hibernate][hibernate] aunque para algunos casos usaría o como complemento [jOOQ][jooq], [Spring Data][spring-data] ofrece varias utilidades para facilitar crear las clases repositorio usando Hibernate.
 
@@ -43,13 +43,13 @@ Al persistir datos si es necesario realizar auditoría de datos dos posibilidade
 
 * [Histórico de datos, auditoría y diferencias entre objetos con Javers en Java][blogbitix-191]
 
-### Modificaciones de la base de datos
+## Modificaciones de la base de datos
 
 En un proyecto de larga duración y en el que se realicen mejoras probablemente necesitaremos modificar el modelo de la base de datos. Empleando la herramienta [Liquibase][liquibase] podremos [automatizar la actualización del esquema de la base de datos][elblogdepicodev-155] ya necesitemos añadir campos, cambiarlos de nombre, eliminarlos, crear o eliminar tablas, insertar, eliminar o actualizar datos. Estas actualizaciones de la base de datos se indican en un archivo que podemos guardar en nuestro repositorio de control de versiones de forma que podamos ver y reproducir los cambios que se han hecho a la base de datos a lo largo del tiempo.
 
 * [Modificar la base de datos con Liquibase][elblogdepicodev-155]
 
-### Pruebas
+## Pruebas
 
 Para pruebas unitarias dos buenas posibilidades son [JUnit][junit], [Spock][spock] y [Geb][geb]. Spock permite realizar los teses unitarias con un DSL bastante descriptivo que facilita la lectura posteriormente de la prueba, sin embargo, JUnit ofrece las mismas ventajas para los teses que el para el código de la aplicación al usar Java. Por otro lado Geb permite automatizar las pruebas de las aplicaciones web proporcionando facilidades, se puede integrar con Spock.
 
@@ -62,7 +62,7 @@ Otra herramienta muy útil es [Testcontainers][Testcontainers] que permite hacer
 * [Teses unitarios parametrizados con JUnit][blogbitix-410]
 * [Pruebas de integración con Testcontainers, ejemplo de JPA con la base de datos PostgreSQL][blogbitix-490]
 
-### Cliente
+## Cliente
 
 En el lado cliente de una aplicación web usaría la combinación de varias tecnologías, [jQuery][jquery] para acceder y manipular el DOM de la página web, [RequireJS][requirejs] para cargar los archivos necesarios en la página y evitar la polución del ámbito global JavaScript.
 
@@ -73,7 +73,7 @@ Si la aplicación tiene una carga importante en el lado cliente evaluaría usar 
 * [Componentes en el cliente con Web Components usando JavaScript, HTML y CSS][blogbitix-388]
 * [Usar un paquete npm con Webpack creado con Storybook, React y TypeScript][blogbitix-472]
 
-### _Framework_ web
+## _Framework_ web
 
 Para el desarrollo de una página o aplicación web seguiría usando [Apache Tapestry][tapestry] por la productividad y alta reutilización que se puede conseguir, también por la flexibilidad, extensibilidad y adaptabilidad del _framework_ si necesita recursos de cliente añadiendo dependencias con [Webjars][webjars]. Descargando el [libro PlugIn Tapesty][blogbitix-12] puedes conocer muchos más detalles.
 
@@ -90,7 +90,7 @@ La tendencia actual es desarrollar microservicios y esto en las aplicaciones web
 * [Qué es GraphQL y ejemplo para una interfaz de un servicio con Spring Boot y Java][blogbitix-275]
 * [Dependencias sobre librerías de lado de cliente con Webjars en una aplicación web Java][blogbitix-325]
 
-### Base de datos
+## Base de datos
 
 Para una base de datos relacional en vez de [MySQL][mysql] usaría [PostgreSQL][postgresql]. PostgreSQL posee numerosas opciones avanzadas y es una de las bases de datos libres más reconocidas. El futuro de MySQL con Oracle y su escisión en MariaDB es más incierto además de no poseer algunas características que PostgreSQL sí.
 
@@ -100,7 +100,7 @@ Dependiendo del causística de la aplicación otras opciones complementarias son
 * [Introducción a la base de datos NoSQL MongoDB][blogbitix-237]
 * [Introducción a Elasticsearch][blogbitix-21]
 
-### Entorno de desarrollo
+## Entorno de desarrollo
 
 Para el entorno de desarrollo o _devbox_ usaría [Docker][docker] y [Compose][docker-compose] que permiten disponer de un entorno más parecido al entorno de producción y en menos tiempo que instalando todo lo necesario en la máquina física. También podemos usar Docker para el entorno de producción. Para automatizar la tareas de configuración o despliegue usaría [Ansible][ansible] ya que al contrario de otras opciones no requiere instalar un agente en las máquinas a administrar, con un acceso SSH es suficiente.
 
@@ -109,7 +109,7 @@ Para el entorno de desarrollo o _devbox_ usaría [Docker][docker] y [Compose][do
 * [Cómo crear una imagen para Docker usando un Dockerfile][blogbitix-51]
 * [Introducción a Ansible][blogbitix-52]
 
-### Hospedaje
+## Hospedaje
 
 En cuanto al alojamiento para la aplicación la nube es otra tendencia por su flexibilidad. La [nube de Amazon][amazon-ec2] proporciona muchos servicios que pueden sernos útiles sin embargo si nuestra aplicación no los necesita y no es demasiado complicada podemos optar por otras opciones más baratas. Dos opciones más baratas son [Linode][linode] o [Digital Ocean][digital-ocean] con las que por unos 5 o 10 € al mes podemos disponer de una máquina con 1 GIB de RAM, unos 30 GiB de discos SSD y una amplia transferencia de datos entrantes y salientes.
 
@@ -123,7 +123,7 @@ Aún usando un servicio en la nube para no encadenarse a uno determinado y dispo
 * [Revertir un servicio a una versión anterior con Nomad][blogbitix-503]
 * [Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos][blogbitix-508]
 
-### Otras
+## Otras
 
 Otras funcionalidades que necesita algunas aplicaciones son:
 

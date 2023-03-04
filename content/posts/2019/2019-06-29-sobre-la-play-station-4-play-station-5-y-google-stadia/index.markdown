@@ -29,7 +29,7 @@ Ya han sido publicadas noticias indicando que la PlayStation 4 está al final de
 
 {{< tableofcontents >}}
 
-### PlayStation 4
+## PlayStation 4
 
 La [PlayStation 4](https://es.wikipedia.org/wiki/PlayStation_4) fue comercializada a finales del 2013, con su actualización del modelo _slim_ y _pro_ en el 2016. Habiendo ya pasado varios años desde su lanzamiento posee un amplio catálogo de juegos con muy buena calidad. Su precio está entre los 350 € nueva para el modelo _slim_ o 230 € de segunda mano o seminueva en una tienda. Al haber pasado ya unos años hace que muchos destacados juegos se encuentren en unos razonables precios de entre 10 € y 20 €.
 
@@ -37,13 +37,13 @@ Aún habiéndose anunciado la PlayStation 5 como su sucesora aún están por lan
 
 Algunos de los juegos más populares son los siguientes: Grand Theft Auto V, Watch Dogs y Watch Dogs 2, Last of Us, Assassins Creed, FIFA, Dirt Rally, Horizon Zero Dawn, God of War, Bloodborne, Far Cry 5, The Witcher 3, Mafia 3, Tropico 5, Fallout 4, Dark Souls, Days Gone, Uncharted, The Division, Nioh, XCOM 2, Little Big Plannet, ...
 
-### Diablo 3
+## Diablo 3
 
 Como tengo el Diablo 3 al que juego de forma muy esporádica y aún no le he exprimido completamente puedo pasar un tiempo jugando a este juego. Si Diablo 3 tiene algo es que está diseñado para ser extremadamente rejugable con varios personajes, niveles de dificultad, variaciones en los escenarios y mejora de objetos y personajes aún habiendo completado la historia principal. Tambien tengo en la biblioteca de Steam el Company of Heroes 2 que ni siquiera aún he instalado.
 
 Con lo que en mi caso podría esperar al lanzamiento de la PS5 o esperar a ver que ofrece Stadia jugando al Diablo 3.
 
-### PlayStation 5
+## PlayStation 5
 
 Entre las noticias que han aparecido sobre la PlayStation 5 es que usará nuevamente un procesador y gráfica AMD pero actualizados para ofrecer mucha más potencia. Usará un AMD Ryzen mucho más capaces que los _Jaguar_ de la PS4 y una gráfica _Navi_ ofreciendo una capacidad de cómputo de entre 8 y 10 TFLOPS por los 1,8 de la PS4.
 
@@ -51,7 +51,7 @@ Uno de los problemas de lanzar una nueva consola es que hasta pasado una buena c
 
 * [Sobre la generación de consolas PlayStation 5 y Xbox Series X/S antes de que se comercialice y la renovación del hardware de PC][blogbitix-521]
 
-### Google Stadia, GeForce Now y Amazon Luna
+## Google Stadia, GeForce Now y Amazon Luna
 
 Desde hace bastante tiempo la PlayStation ha sido la consola dominante sobre la [Xbox][xbox] y las varias de [Nintendo][nintendo]. Google ha presentado ya su plataforma de juegos mediante _streaming_ estando disponible a finales del 2019. La ventaja de Stadia es que al estar completamente en la nube no hace falta adquirir hardware, únicamente comprar los juegos con lo que al igual que las consolas se eliminan completamente los problemas de controladores, rendimiento y compatibilidad, dado que se basa en la nube también elimina el tener que descargar pesadas actualizaciones y reducirá sensiblemente los tiempos de carga.
 
@@ -64,7 +64,7 @@ Por lo demás el precio de suscripción de 10 €/mes es recurrente pero teniend
 {{< youtube
     video="9uwunZ2a4gc" >}}
 
-### Evaluando posibilidades
+## Evaluando posibilidades
 
 No es tanto el precio de la PS4 que está en 200 € de segunda mano o 290 € en tienda como saber en un año se lanzará un modelo mucho más capaz que lo dejará descatalogado y que además será retrocompatible con él. Stadia requiere una buena conexión de internet y no tendrá los juegos exclusivos de la PS, uno de los motivos para que haya sido la consola vencedora de esta generación, aunque si otros muy buenos presentes en todas las plataformas.
 
@@ -72,7 +72,7 @@ Un motivo importante para no comprar una consola es que hay muchos juegos como _
 
 Pero esto es la decisión de siempre adquirir lo que hay o esperar, la opción más sensata parece no esperar ya que la PS4 tiene un gran catálogo de juegos que dan para varios años de entretenimiento incluso pasado el tiempo que tarde en aparecer la PS5 _slim_.
 
-### Switch HDMI
+## Switch HDMI
 
 En el caso de utilizar un monitor que solo disponga de una entrada HDMI tanto para el PC como para una consola se necesita un conmutador o _switch_ HDMI que permita conmutar la entrada sin tener que conectar y desconectar cables. En [Amazon][amazon-affiliate] hay muchos modelos, que ofrecen 4K a 60 Hz con hasta cinco entradas HDMI, una salida y está alimentado por USB.
 

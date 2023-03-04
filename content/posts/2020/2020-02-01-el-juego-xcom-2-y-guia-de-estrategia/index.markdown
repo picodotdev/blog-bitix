@@ -59,17 +59,17 @@ Esta es mi guía de estrategia del juego para que he seguido para acabar el jueg
 {{< game-spoiler >}}
 {{< tableofcontents >}}
 
-### Recursos
+## Recursos
 
 En ningún momento habrá recursos para todo, por lo que hay que priorizar en las cosas imprescindibles e importantes ni desperdiciarlos en cosas prescindibles. Incluso para no perder tiempo y tratar de desbaratar el proyecto AVATAR algunas misiones de recolección de recursos prescindibles que no apartan mucho beneficio han de dejarse de hacer, cada día que pasa en el calendario es un día menos para que los alienígenas completen su proyecto de dominación. En el cuartel general a cada inicio de mes existe la posibilidad de incorporar ingenieros o investigadores que en algunos casos también se obtienen en misiones.
 
 Una vez contactado con el mercado negro este sirve tanto para vender botines sobrantes obtenidos en las misiones para obtener recursos en caso de necesidad, también para comprar mejoras de armas o SCP que sean útiles para añadir una propiedad de más movimiento, esquivar, vida o voluntad para resistir intentos de control de mente.
 
-### Ingenieros e investigadores
+## Ingenieros e investigadores
 
 Los ingenieros permiten limpiar las salas del Avenger, realizar construcciones, dotar a las salas de equipos con algunas mejoras y realizar investigaciones de mejor armamento. Los ingenieros sobre todo y los investigadores son un recurso escaso por eso en el momento que aparezca una misión que tenga como recompensa un ingeniero o investigador conviene dar prioridad a estas sobre otras. Se pueden obtener en misiones o al inicio de cada mes en el cuartel general con lo que conviene incorporarlos si se tiene recursos necesarios.
 
-### Investigaciones
+## Investigaciones
 
 Es esencial y muy importante realizar las investigaciones prioritarias que permitirán obtener importantes mejoras en las armas para las misiones. En orden de prioridad conviene investigar las armas modulares que permite acoplarles miras telescópicas que proporcionan más puntería, mayor probabilidad de crítico o un mayor cargador y alguna de las armas magnéticas como fusil, rifle y escopeta que proporcionarán unas armas con mayor capacidad de daño, el cañón magnético para los granaderos no es tan importante ya su arma principal es el lanzagranadas, para ellos es más importante las ventajas que proporciona la autopsia del mutón con lanzagranadas avanzado y la granada de plasma.
 
@@ -122,7 +122,7 @@ El orden las autopsias más importantes es el siguiente, algunas según se avanz
 {{< youtube
     video="At0G57tmbfk" >}}
 
-### Construcciones
+## Construcciones
 
 La primera construcción a realizar es la escuela táctica de guerrilla que permite entrenar a los reclutas en una especialización deseada para tener un ejército equilibrado de soldados y poder cubrir las bajas y heridas de misiones anteriores. Sobretodo y más importante permite además la gran mejora de ampliar el pelotón de 4 a 5 y 6 componentes con las tácticas de pelotón I y pelotón II, que es un mejora determinante ya que es un disparo más o dos por turno. El segundo aumento de tamaño de pelotón se consigue cuando un soldado llega al rango de capitán.
 
@@ -157,7 +157,7 @@ La instalación de defensa proporciona torretas en la misión en la que un ovni 
 {{< youtube
     video="qLxTGnly5Xk" >}}
 
-### Desplazamiento del Avenger por el mapa
+## Desplazamiento del Avenger por el mapa
 
 La tarea principal es ampliar las redes de comunicadores, instalar repetidores, recoger los recursos al inicio de cada mes, pasar por el cuartel general y el mercado negro siempre que no haya misiones encargadas por el consejo. Contactar con otras regiones dará posibilidad de desplazarse a otras regiones para iniciar misiones en las instalaciones controladas por los aliens que permitirá eliminar algún punto en el progreso del proyecto AVATAR.
 
@@ -166,7 +166,7 @@ La tarea principal es ampliar las redes de comunicadores, instalar repetidores, 
     image1="image:mapa.webp" optionsthumb1="600x450" title1="Mapa del mundo"
     caption="Mapa del mundo" >}}
 
-### Reclutas y soldados
+## Reclutas y soldados
 
 En un primer momento los reclutas no tienen especialización, una vez ganan el primer ascenso con la experiencia obtenida en la batalla se puede especializar en una de cuatro clases: francotirador, granadero, especialista y comando. Cada vez que un soldado nuevamente aumenta de rango con la experiencia obtenida en los combates tiene la posibilidad de adquirir una nueva habilidad a elegir entre dos posibilidades o ramas de evolución. Los soldados tienen dos ramas de progreso dando la posibilidad tener dos vertientes distintas según la preferencia de juego o misión como el comando en sus ramas de asalto u ocultación pero en otras especializaciones una ramas es más útil que la otra, aún así cada rango permite elegir la habilidad de cualquiera de las dos ramas.
 
@@ -176,7 +176,7 @@ El comando de las misiones estará compuesto de al menos un tipo de soldado dist
 
 En la descripción de la misión se indica el número de enemigos que la compone y especie de esos enemigos, información útil para elegir la clase de los soldados.
 
-#### Soldados granadero
+### Soldados granadero
 
 El granadero es uno de los soldados más importantes ya que con sus lanzagranadas eliminar las coberturas en las que se protegen los enemigos cuando no estamos en modo oculto y los avistamos, aunque las granadas no hagan el suficiente daño para matar a los enemigos una de sus principales misiones es eliminar las coberturas en las que refugian los enemigos lanzando gradas para que el resto de soldados puedan disparar con mayor probabilidad de éxito. Sus cañones también pueden hacer mucho daño a distancias media y corta así como triturar armaduras para que igualmente el resto de soldados de otras clases inflijan más daño. También tiene la habilidad de equipar armaduras, trajes EXO y WAR,  con puntos de armadura con las que el daño recibido es reducido.
 
@@ -203,7 +203,7 @@ El granadero es uno de los soldados más importantes ya que con sus lanzagranada
 {{< youtube
     video="rUl5N9WGTuk" >}}
 
-#### Soldados francotirador
+### Soldados francotirador
 
 Están equipados con un fusil que les permite disparar a largas distancias sin exponerse a disparos de los enemigos, puede hacer mucho daño y con su característica de puntería tener mayor porcentaje de éxito aún cuando los enemigos estén protegidos por coberturas medias o completas. Todas las mejoras de arma que les permitan tener mayor puntería o pequeño mejor porcentaje de crítico les será muy útiles. Las balas trazadoras les vendrá muy bien para aumentarles mucho más su puntería. Al igual que los comandos son empleados para terminar de eliminar a los enemigos una vez que el granadero les ha desprovisto de coberturas y reducido nos cuantos puntos de vida. Tiene habilidades que cada muerte les proporciona una acción adicional con la que eliminar enemigos a los que les quede pocos puntos de vida.
 
@@ -230,7 +230,7 @@ Están equipados con un fusil que les permite disparar a largas distancias sin e
 {{< youtube
     video="db2izydVkpY" >}}
 
-#### Soldado especialista
+### Soldado especialista
 
 Los especialistas aparte de poder disparar con su fusil tiene la misión de piratear enemigos robóticos y hacer de médicos, con los _gremblins_ con los que van acompañados puede hacerlo a distancia. Su mejor estadística en pirateo permite tener mayor éxito. Son muy útiles para desactivar o tomar el control de enemigos robóticos ya sean _mechs_ o torretas de forma temporal, en vez de tener que destruirlos en una primera instancia, el tomar el control de un enemigo robótico permite eliminar un enemigo y hace que este sea el que reciba el daño cuando actúen las unidades enemigas.
 
@@ -257,7 +257,7 @@ Los especialistas aparte de poder disparar con su fusil tiene la misión de pira
 {{< youtube
     video="2rc1JFZlVcY" >}}
 
-#### Soldado comando
+### Soldado comando
 
 Los comandos por defecto van equipados con una escopeta y una espada lo que les permite hacer mucho daño a corta distancia o cuerpo a cuerpo. Es unidad que junto con algunas de sus habilidades es empleada para terminar de matar a los enemigos heridos por los granaderos y especialistas a los que les queden o tengan pocos puntos de vida. También tienen habilidades para que dada muerte a un enemigo seguir actuando y eliminar a más de uno en el mismo turno
 
@@ -284,20 +284,20 @@ Los comandos por defecto van equipados con una escopeta y una espada lo que les 
 {{< youtube
     video="9XHqpjHwlSI" >}}
 
-#### Soldado psi
+### Soldado psi
 
 Son una unidad adicional que se desarrolla con el laboratorio psi, no es imprescindible para finalizar el juego.
 
 {{< youtube
     video="G_3zRiJG_cw" >}}
 
-### Armas complementos y Simulador de Combate Personal (SCP)
+## Armas complementos y Simulador de Combate Personal (SCP)
 
 Las armas se pueden mejorar acoplándoles complementos lo que les permite tener mayor puntería o crítico con miras telescópicas, cargadores que les permiten tener un disparo más, cargas automáticas gratis, porcentaje de que la acción de disparo no cueste acción o una probabilidad de matar al enemigo independientemente de sus puntos de vida. Las miras telescópicas serán muy útiles para los francotiradores y especialistas, para los granaderos y comandos no son tan útiles ya que estos en muchas ocasiones no realizan la acción de disparar sino la acción de lanzar granadas o atacar cuerpo a cuerpo con la espada con lo que no les sacarán tanto provecho a las mejoras de las armas.
 
 Los SCP son implantados a los soldados para mejorarles la probabilidad de esquivar, más puntos de vida, movilidad o resistencia al control de los enemigos psíquicos, en la escuela de tácticas de guerrilla se puede adquirir la guerra integrada que mejora las estadísticas de los SCP. Las habilidades de esquivar o más puntos de vida combinados con los granaderos que tienen habilidad y puntos armaduras hace que se conviertan en un soldado difícil de eliminar. A los comandos se les puede equipar con SCP también de esquivar pos si se quedan expuestos al atacar con la espada o el SCP de movilidad para moverse más lejos.
 
-### Estrategia en combates
+## Estrategia en combates
 
 El modo de juego suele ser equipar a los granaderos todas las granadas que puedan llevar y con sus puntos de armadura por habilidad antiexplosivos y de traje EXO les permite reducir el daño que se les inflijan, por ello los utilizo como tanques para que sean ellos los que en la medida de lo posible atraigan los disparos, los puntos de armadura les permite reducir el daño equipados con un SCP de esquivar pueden reducir aún más el daño o un SCP de +3 de vida hará que sean más difíciles de matar. Los utilizo para iniciar las emboscadas ya que en el caso de estar en modo oculto los enemigos suelen estar juntos con lo que una granada les hará daño a varios de ellos, al iniciar la emboscada el resto de soldados han de estar en modo guardia para intentar en la medida de los posible dañar a los enemigos o eliminarlos directamente, el comando puede quedarse sin activar la guardia para tener su acción después de ser descubiertos y atacar con la espada a los enemigos que queden en pie y se hayan protegido detrás de coberturas medias y completas.
 
@@ -311,13 +311,13 @@ Los especialistas los utilizo para disparar, piratear enemigos robóticos y cura
     image2="image:juego-2.webp" optionsthumb2="300x250" title2="Juego"
     caption="Juego" >}}
 
-### Guardado del progreso
+## Guardado del progreso
 
 Al iniciar un combate, al entrar en la batalla y en varios pasos de la misma conviene hacer un guardado del juego, para que si se comete un error o por mala estadística poder volver a un punto anterior, no conviene perder soldados o acabar con heridas graves en todos más si ya tiene rangos altos. Es muy fácil que en un mal movimiento o en acierto del enemigo acabe por matar a un soldado.
 
 En el modo de juego difícil y hombre de hierro supone una dificultad adicional ya que el guardado y progreso se realiza automáticamente por lo que una mala decisión o estrategia quizá suponga un error fatal para el resto de la campaña que de termine su fracaso.
 
-### Enciclopedia de XCOM
+## Enciclopedia de XCOM
 
 En la [Wiki de XCOM 2 de Fandom](https://xcom.fandom.com/wiki/XCOM_2) están recogidos con detalle las armas, armaduras, habilidades de de las clases de soldados así como armas, armaduras y elementos de utilidad. Esta información resulta muy útil para elegir la que consideremos la mejor estrategia o revisar si la que utilizamos no es del todo efectiva.
 
@@ -331,7 +331,7 @@ En la [Wiki de XCOM 2 de Fandom](https://xcom.fandom.com/wiki/XCOM_2) están rec
 * [Escuela tácticas de guerrilla](https://xcom.fandom.com/wiki/Guerrilla_Tactics_School)
 * [Construcciones](https://xcom.fandom.com/wiki/Category:Facilities_(XCOM_2))
 
-### Gameplay
+## Gameplay
 
 {{< image
     gallery="true"
@@ -349,7 +349,7 @@ En la [Wiki de XCOM 2 de Fandom](https://xcom.fandom.com/wiki/XCOM_2) están rec
 {{< youtube
     video="vLCaHlZHHkg" >}}
 
-### Banda sonora original
+## Banda sonora original
 
 {{< youtube
     video="hOcSyivJ7kI" >}}

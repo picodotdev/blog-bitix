@@ -22,7 +22,7 @@ Algunas personas y en algunos proyectos Java añaden en la declaración de cada 
 
 La palabra _final_ tiene su utilidad pero hacerlo de forma indiscriminada y en la totalidad de cada parámetro y variable local de cada método hace más verboso el código sin proporcionar una utilidad significativa porque Java ya en ciertas circunstancias considera a muchas variables efectivamente como _final_, si al escribir el código se sigue la recomendación de no hacer nunca asignaciones sobre variables que son parámetros y se prefiere crear una nueva variable local en vez de modificar el valor de una existente.
 
-### ¿Qué hace la palabra clave _final_?
+## ¿Qué hace la palabra clave _final_?
 
 La palabra clave reservada _final_ hace que el compilador genere un error de compilación cuando a una variable _final_ se le intenta asignar un nuevo valor. El error de compilación quizá en algún caso evita un _bug_ ya que no debería haber intención de asignar un nuevo valor a una variable _final_.
 
@@ -43,7 +43,7 @@ Los constructores no pueden declararse como _final_ ya que no se heredan.
 {{< code file="Bike.java" language="java" options="" >}}
 {{< code file="Honda.java" language="java" options="" >}}
 
-### ¿Debería añadirse la palabra clave _final_ a cada uno de los argumentos de un método y variables locales?
+## ¿Debería añadirse la palabra clave _final_ a cada uno de los argumentos de un método y variables locales?
 
 En teoría, sí. En la práctica, no. Sólo es útil en métodos cuyo código es largo y complicado, y en ese caso el método debería simplificarse, o cuando el argumento tiene la posibilidad de confundirse con una variable local o miembro de la clase con la posibilidad de reasignación.
 

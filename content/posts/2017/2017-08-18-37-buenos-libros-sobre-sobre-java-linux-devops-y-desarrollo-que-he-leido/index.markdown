@@ -43,9 +43,9 @@ Estos son los que me ha parecido que están bastante bien, algunos he leído de 
 
 {{< tableofcontents >}}
 
-### Libros sobre Java
+## Libros sobre Java
 
-#### Java 9 Modularity
+### Java 9 Modularity
 
 {{< amazon
     linkids="a4ac0f67b92d5e64b2f115dec0ed246c"
@@ -57,7 +57,7 @@ La modularidad no es la única característica que se incorporará en Java 9 hay
 
 Java 9 será publicado en septiembre y ya tengo ideados unos cuantos artículos para publicar.
 
-#### Java Generics and Collections
+### Java Generics and Collections
 
 {{< amazon
     linkids="7392be28d1ec52d1dca41e10fc216fc1"
@@ -69,7 +69,7 @@ El concepto no es difícil pero dominar las declaraciones de los _generics_ no l
 
 * [Tutorial sobre los tipos genéricos de Java][blogbitix-138]
 
-#### Cloud Native Java
+### Cloud Native Java
 
 {{< amazon
     linkids="cb4b120dd4eac60796de0ec4796fbf8e"
@@ -79,7 +79,7 @@ La flexibilidad que aporta la computación en la nube (o en los ordenadores de o
 
 Algunas librerías como [Spring Boot][spring-boot] proporciona a las aplicaciones Java facilidades para desarrollar aplicaciones que se consideran nativas para la computación en la nube. [Cloud Native Java](https://amzn.to/2v7T4EK) hace un repaso a los factores a tener en cuenta en las aplicaciones.
 
-#### Java The Good Parts
+### Java The Good Parts
 
 {{< amazon
     linkids="c8d9a7967ea7439451a570b1f2659e9d"
@@ -89,7 +89,7 @@ El lenguaje de programación Java es uno de los lenguajes más populares y que m
 
 Todas estas características se comentan detalladamente en [Java The Good Parts](https://amzn.to/2xaP6wf).
 
-#### Building Maintainable Software Java Edition
+### Building Maintainable Software Java Edition
 
 {{< amazon
     linkids="6a378c8faf06d2e362cdeb9226b925cf"
@@ -97,7 +97,7 @@ Todas estas características se comentan detalladamente en [Java The Good Parts]
 
 Hay conocimiento que es independiente del lenguaje que se utilice como tratar de escribir funciones o métodos con pocas líneas de código, mantener las interfaces pequeñas, separar en módulos, mantener el acoplamiento bajo y balanceados, que la base de código sea pequeña, automatizar las pruebas o escribir código limpio. Aunque [Building Maintainable Software Java Edition](https://amzn.to/2vPOQ6v) es una edición para Java con los ejemplos en este lenguaje las motivaciones que describe de cada uno de los puntos anteriores es universal.
 
-#### The Well-Grounded Java Developer
+### The Well-Grounded Java Developer
 
 {{< amazon
     linkids="1b305765190419f6de43b75335e43746"
@@ -105,7 +105,7 @@ Hay conocimiento que es independiente del lenguaje que se utilice como tratar de
 
 [The Well-Grounded Java Developer](https://amzn.to/2fRQgJS) diserta sobre varios conceptos a tener en cuenta para tener una base sólida sobre la plataforma Java. Nuevas características de Java 7, cosas vitales como inyección de dependencias, concurrencia, ficheros _class_ y _bytecode_ o lenguajes alternativos para la máquina virtual.
 
-#### Spring Boot in Action
+### Spring Boot in Action
 
 {{< amazon
     linkids="86ce91eca968f6de1d0a777f48ca3069,61b49fc8ef6bdf7c80975908df76d4af,e4f7f44a8b854b00a547d526b83f6469"
@@ -119,7 +119,7 @@ Spring Boot proporciona una integración con la parte del ecosistema de [Spring]
 * [Información y métricas de la aplicación con Spring Boot Actuator][blogbitix-113]
 * [Ejemplo de API REST en Java con JAX-RS y Spring Boot][blogbitix-178]
 
-#### Gradle in Action
+### Gradle in Action
 
 {{< amazon
     linkids="86af7295a55368699341bfbe2ae7040e"
@@ -133,7 +133,7 @@ Spring Boot proporciona una integración con la parte del ecosistema de [Spring]
 * [Incluir información de la versión en el artefacto distribuible con Gradle][blogbitix-145]
 * [Iniciar rápido un proyecto de Java con Gradle o de Spring con Spring Initializr][blogbitix-245]
 
-#### Java Testing with Spock
+### Java Testing with Spock
 
 {{< amazon
     linkids="ac77f9a86125173cda19c2c4949ce0a3"
@@ -141,7 +141,7 @@ Spring Boot proporciona una integración con la parte del ecosistema de [Spring]
 
 Las pruebas automatizadas son indispensables para escribir código con menos errores y con mayor calidad. En Java hay varias herramientas de _testing_ para hacer pruebas unitarias, de integración o funcionales. [Spock][spock] con el que se escriben especificaciones con un DSL y utilizando el lenguaje [Groovy][groovy] permite automatizar las indispensables pruebas de todo código. [Java Testing with Spock](https://amzn.to/2vPt5Ul) explica esta herramienta.
 
-#### Portlets in Action
+### Portlets in Action
 
 {{< amazon
     linkids="e954596f73982d6fc4c7338ffb4225b7"
@@ -152,9 +152,9 @@ Los portales son utilizados por algunas organizaciones para gestionar el conteni
 * [Introducción a los portales y ejemplo de portlet con Liferay][blogbitix-243]
 * [Portlets con el framework Apache Tapestry y Apache Pluto][blogbitix-244]
 
-### Bases de datos relacionales y SQL
+## Bases de datos relacionales y SQL
 
-#### SQL Antipatterns
+### SQL Antipatterns
 
 {{< amazon
     linkids="f6f8cc4cba1c24fdec9a4a47503e738d"
@@ -162,7 +162,7 @@ Los portales son utilizados por algunas organizaciones para gestionar el conteni
 
 Aún con la popularización de las bases de datos NoSQL las bases de datos relacionales siguen siendo perfectamente válidas. El libro [SQL Antipatterns](https://amzn.to/2icem2F) es una colección de consejos a tener en cuenta al diseñar y utilizar las bases de datos relacionales. Algunas formas de uso que generan problemas están desaconsejados y se consideran antipatrones.
 
-#### Beginning SQL Queries y Learning PostgreSQL
+### Beginning SQL Queries y Learning PostgreSQL
 
 {{< amazon
     linkids="6c88c8326d867c036266f6483f41477d,2f3d39f7290758074e90a66beda9e253,e91efc7d7df2c1cbbccc2793a1e9d0be,0b62f915f94acd860485c75946fa0392"
@@ -172,7 +172,7 @@ El lenguaje declarativo SQL es muy potente y yo al menos desconocía o he usado 
 
 Los libros [Beginning SQL Queries](https://amzn.to/2xbh62O), [SQL Antipatterns](https://amzn.to/3C6IXlW) y [Learning PostgreSQL](http://amzn.to/2vaxQG8) son una buena documentación sobre el lenguaje SQL que van más allá de lo enseñado en algunos cursos académicos.
 
-#### MongoDB in Action
+### MongoDB in Action
 
 {{< amazon
     linkids="497acae6ed525c559c046c38d3ed28c0"
@@ -183,9 +183,9 @@ La misión de las bases de datos es almacenar información para una posterior co
 * [Ejemplo de RabbitMQ con Java para enviar y recibir mensajes][blogbitix-237]
 * [Usar la base de datos NoSQL MongoDB con Java][blogbitix-239]
 
-### Programación web
+## Programación web
 
-#### Learning JavaScript
+### Learning JavaScript
 
 {{< amazon
     linkids="380952682c6e61c533807cd32a6dd038"
@@ -195,7 +195,7 @@ La misión de las bases de datos es almacenar información para una posterior co
 
 * [Introducción al JavaScript de ECMAScript 6][blogbitix-198]
 
-#### The Book of CSS3
+### The Book of CSS3
 
 {{< amazon
     linkids="74be128029bfbd8f789af03a1b673aba"
@@ -203,7 +203,7 @@ La misión de las bases de datos es almacenar información para una posterior co
 
 Al igual que JavaScript el denostado CSS también a veces lo es por el mismo motivo. [The Book of CSS3](https://amzn.to/2wgURft) explica las nuevas posibilidades para aplicar estilos a documentos HTML en los navegadores. _Media queries_, selectores, pseudo-clases y pseudo-elementos, _web fonts_, efectos y estilos de tipografías, disposiciones en múltiples columnas, imágenes de fondo, bordes y efectos de caja, color y opacidad, gradientes transformaciones 3D, animaciones y transiciones, _layouts_, modos _blend_, filtros y máscaras es el contenido del libro.
 
-#### CORS in Action
+### CORS in Action
 
 {{< amazon
     linkids="a1fec0248175841014bd8986c63eb82e"
@@ -211,7 +211,7 @@ Al igual que JavaScript el denostado CSS también a veces lo es por el mismo mot
 
 _Cross-Origin Resource Sharing_ permite a sitios distintos del origen de la página proporcionar su contenido. Por defecto, los navegadores solo permiten hacer peticiones al mismo sitio del origen de la página, con una combinación del navegador y cabeceras en las peticiones que proporcionan los sitios web permiten hacer llamadas entre diferentes sitios manteniendo la seguridad. El libro [CORS in Action](https://amzn.to/2vKvmlf) trata en detalle este tema.
 
-#### Learning HTTP/2
+### Learning HTTP/2
 
 {{< amazon
     linkids="1a89f93cde97f31c639b38ca79811040"
@@ -221,7 +221,7 @@ La siguiente versión del protocolo HTTP mejora varios aspectos del anterior. Es
 
 * [Introducción al protocolo HTTP/2][blogbitix-127]
 
-#### Mastering OAuth 2.0
+### Mastering OAuth 2.0
 
 {{< amazon
     linkids="c62cfbc31fdea33038fa6650c9bf9686"
@@ -232,9 +232,9 @@ La siguiente versión del protocolo HTTP mejora varios aspectos del anterior. Es
 * [Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot][blogbitix-180]
 * [Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot][blogbitix-185]
 
-### Servicios
+## Servicios
 
-#### Learning RabbitMQ y Mastering RabbitMQ
+### Learning RabbitMQ y Mastering RabbitMQ
 
 {{< amazon
     linkids="bffff9170b71717eb95f6be0a95274db,4cce33b79c609e875e6fb2a8b3b9ded2"
@@ -244,7 +244,7 @@ Los libros [Learning RabbitMQ](https://amzn.to/2xbdSN2) y [Mastering RabbitMQ](h
 
 * [Ejemplo de RabbitMQ con Java para enviar y recibir mensajes][blogbitix-210]
 
-#### Microservice Architecture
+### Microservice Architecture
 
 {{< amazon
     linkids="57e9f172013ca12309e2ca2b5fa19fc2"
@@ -252,9 +252,9 @@ Los libros [Learning RabbitMQ](https://amzn.to/2xbdSN2) y [Mastering RabbitMQ](h
 
 El ámbito _cloud_ y una nueva forma de arquitectura para las aplicaciones han originado los denominados microservicios. En vez de desarrollar una aplicación monolítica y grande se tiende hacia múltiples aplicaciones más pequeñas con un contexto específico que colaboran para proporcionar la misma funcionalidad. El libro [Microservice Architecture](https://amzn.to/2vPtaY3) trata las motivaciones, que valor aportan los microservicios así como sus principios y cultura.
 
-### Libros sobre Linux y DevOps
+## Libros sobre Linux y DevOps
 
-#### Git: Mastering Version Control
+### Git: Mastering Version Control
 
 {{< amazon
     linkids="f6eea55958b2783765b4bda371dd3e04"
@@ -262,7 +262,7 @@ El ámbito _cloud_ y una nueva forma de arquitectura para las aplicaciones han o
 
 He leído varios libros sobre [Git][git], muchos empiezan explicando como es la estructura de información que guarda Git, no es necesario empezar por ahí. El libro [Git: Mastering Version Control](https://amzn.to/2vKqyMR) es mucho más pragmático y explica muy bien los casos de uso que uno requiere de este sistema de control de versiones. Con este libro finalmente he aprendido mejor como usar un _rebase_ interactivo para reescribir los _commits_ o hacer un _squash_, también como crear _alias_ y _hooks_, los diferentes modos de _reset_ además de como crear _commits_, hacer búsquedas en el repositorio y otras muchas cosas que no he usado aún.
 
-#### GitLab Cookbook
+### GitLab Cookbook
 
 {{< amazon
     linkids="153454430c956fe5335fe123ab829a40"
@@ -270,7 +270,7 @@ He leído varios libros sobre [Git][git], muchos empiezan explicando como es la 
 
 Como servidor de Git me gustan de [GitLab][gitlab] dos cosas: que tiene una versión para la comunidad usable por ejemplo en un servidor propio de una empresa u organización y que tiene varias herramientas integradas como son una wiki, un sistema de _tracking_ para las tareas de un proyecto junto con tableros y soporte para hacer integración y entrega continua sin necesidad de más herramientas lo que simplifica la infraestructura para el desarrollo en gran medida. También soporta otras características presentes en GitHub como _merge request_, revisiones entre pares o calidad de código entre otras muchas otras, la [lista completa de _features_](https://about.gitlab.com/features/) es grande. [GitLab Cookbook](https://amzn.to/2icQyvr) es un libro introductorio para empezar a manejarlo.
 
-#### Docker in Action y The DevOps 2.1 Toolkit
+### Docker in Action y The DevOps 2.1 Toolkit
 
 {{< amazon
     linkids="f257277b2f9112d7cd77aa1147bafd1d,f250891fe3d29d340f3fd3f82af96671"
@@ -280,7 +280,7 @@ Como servidor de Git me gustan de [GitLab][gitlab] dos cosas: que tiene una vers
 
 * [Serie de artículos sobre Docker][blogbitix-serie-docker]
 
-#### Ansible Up and Running y Implementing DevOps with Ansible 2
+### Ansible Up and Running y Implementing DevOps with Ansible 2
 
 {{< amazon
     linkids="35c25b05f8577bf1bf72e0797ca47367,2e83b442739bb1c91a6637a6f3d50a6c"
@@ -292,7 +292,7 @@ La herramienta es muy útil para tratar a los servidores siendo numerosos como g
 
 * [Introducción a Ansible][blogbitix-52]
 
-#### UNIX and Linux System Administration Handbook, Linux Administration A Beginner’s Guide y How Linux Works
+### UNIX and Linux System Administration Handbook, Linux Administration A Beginner’s Guide y How Linux Works
 
 {{< amazon
     linkids="7c91fcafae6964872c27d9bf3f68a9f1,a7a84bf9b3f731a5b2e4cffba08c00b4,09f1c68e67a12909a5af564fc43cf8d3"
@@ -300,7 +300,7 @@ La herramienta es muy útil para tratar a los servidores siendo numerosos como g
 
 [UNIX and Linux System Administration Handbook](https://amzn.to/2vPg7WB) es un libro que presenta al usuario los sistemas GNU/Linux, [Linux Administration A Beginner’s Guide](https://amzn.to/2wXrJae) detalla las tareas administrativas para un servidor Linux y [How Linux Works](https://amzn.to/2uYcE6Z) es un libro que explica detalles más profundos de aspectos internos de Linux.
 
-#### Amazon Web Services in Action y Amazon Web Services For Dummies
+### Amazon Web Services in Action y Amazon Web Services For Dummies
 
 {{< amazon
     linkids="88093372487f3f14280848b9bec59ef8,03661313e03334c617b0ec833c2e2eb3"
@@ -308,19 +308,19 @@ La herramienta es muy útil para tratar a los servidores siendo numerosos como g
 
 Aún habiendo leído [Amazon Web Services in Action](https://amzn.to/2v8nI0F) y [Amazon Web Services For Dummies](https://amzn.to/2icfumV) como no he tenido la oportunidad de practicar con la nube de Amazon casi todo de lo que leí lo tengo olvidado. [Amazon ofrece una capa gratuita](https://aws.amazon.com/es/free/) para probarlo.
 
-### Publicaciones más breves
+## Publicaciones más breves
 
 Esto ya no son libros sino documentos más pequeños sobre diferentes temas.
 
-#### Guide to the Java Ecosystem 2015
+### Guide to the Java Ecosystem 2015
 
 Aun es la [edición del 2015](https://dzone.com/guides/the-java-ecosystem-2015-edition) y no he visto que hayan publicado una más reciente. Explica las tendencias y el ecosistema de Java. Microservicios, _docker_, Java 8, programación _reactiva_, mejores prácticas, ...
 
-#### Java The Legend
+### Java The Legend
 
 ¿A que es debido el éxito de Java? El libro [Java The Legend](http://www.oreilly.com/programming/free/java-the-legend.csp) expone varios motivos como importancia de la compatibilidad hacia atrás, fácil de aprender y de leer, un sistema de tipos simple o la máquina virtual de Java o JVM. Aunque también según el documento con algunos fracasos como los _Java Bean_ por promover la mutabilidad que es molesta para la concurrencia, la finalización de los objetos, sobre configuración de Java EE o la abstracción muy básica de hilos. Comenta el ecosistema alrededor de la plataforma Java con [Eclipse][eclipse], [Apache][apache] y [Spring][spring] junto con el futuro con Java 9, HTTP/2, JShell y quizá en un futuro el proyecto Panama para una nueva interfaz alternativa a JNI para código nativo y el proyecto Valhalla que trata sobre los tipos para usar cosas como definir colecciones genéricas con tipos primitivos.
 
-#### The daemon, the GNU and the penguin
+### The daemon, the GNU and the penguin
 
 {{< amazon
     linkids="cf2cd5a87906b63405d49e3f74dc59a3"
@@ -328,7 +328,7 @@ Aun es la [edición del 2015](https://dzone.com/guides/the-java-ecosystem-2015-e
 
 [The daemon, the GNU and the penguin](https://amzn.to/2vKs5CH) es un documento que repasa el origen, inicios y evolución del software libre y de código abierto desde el año 1968 con referencias a Unix, BSD, Minix, Sun, GPL, Hurd, la web, Tanenbaum, Torvalds, Linux, ... Este documento y el siguiente son unos clásicos en internet.
 
-####  La catedral y el bazar
+### La catedral y el bazar
 
 La catedral y el bazar hace referencia a dos modelos distintos de desarrollo uno centralizado y controlado por una organización y otro distribuido de más libre albedrío pero también se ha demostrado muy efectivo posibilitado por la democratización de internet. [La catedral y el bazar](http://catb.org/esr/writings/cathedral-bazaar/) está traducido a varios idiomas entre ellos el [español](http://biblioweb.sindominio.net/telematica/catedral.html).
 

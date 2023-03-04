@@ -27,7 +27,7 @@ Para crear contenido en formato de audio y vídeo se necesita al menos un micró
 
 {{< tableofcontents >}}
 
-### ¿Qué es una interfaz de audio?
+## ¿Qué es una interfaz de audio?
 
 Los ordenadores poseen algunas conexiones de audio tanto para la salida como para la entrada pero generalmente solo consisten en sus respectivos jack de 3.5mm. Las conexiones que ofrecen los ordenadores no son suficientes para algunas necesidades de captura de audio.
 
@@ -37,7 +37,7 @@ Además de las funciones que ofrecen las interfaces de audio una de sus ventajas
 
 Una de los parámetros que determinan la calidad de una interfaz de audio es la frecuencia de muestreo que es el número de muestra que se toman del sonido analógico y la profundidad de bits que determina la cantidad de posibles valores del sonido al convertirlo en digital. Para las interfaces de audio la frecuencia de muestreo y profundidad de bits van desde los 48 kHz y 16 bits siendo lo mínimo deseable, pasando por 96 KhZ y los 24 bits hasta los 192 kHz y 32 bits para la mejor calidad a nivel de estudio. En la práctica los 48 kHz y 16 bits ya ofrecen una buena calidad que es difícilmente distinguible de calidades superiores más teniendo en cuenta la compresión que se realizan en las plataformas como YouTube al publicar los vídeos y que hay que tener unos buenos altavoces, un entorno sin ruido y un buen oído al volver a convertir el sonido digital en analógico para realmente alguna diferencia.
 
-#### Funciones
+### Funciones
 
 Una interfaz de audio ofrece muchas más conexiones tanto de entrada como de salida que las que ofrece una tarjeta de audio de un ordenador o las salidas que normalmente incorporan las placas base de un ordenador.
 
@@ -60,7 +60,7 @@ Permiten mezclar el audio capturado por el micrófono con música capturada desd
 
 Otros efectos que realizan las interfaces de audio es modificar los tonos bajos, medios y altos del micrófono, el volumen del instrumento en caso de utilizarse, la gravedad del tono de voz o varios modos de auto tono. Al mismo tiempo que realizan la mezcla proporcionan una salida para monitorizar en tiempo real el audio generado. Finalmente, algunas interfaces tiene varios botones para emitir sonidos pregrabados que suelen utilizar los _streamers_ para emitir algún sonido o que se pueden utilizar para introducir una audio de presentación al inicio o al final de una grabación directamente desde la interfaz de audio sin necesidad de una edición posterior de la grabación.
 
-### La interfaz de audio Maonocaster E2
+## La interfaz de audio Maonocaster E2
 
 La interfaz de audio [Maonocaster E2](https://www.maono.com/products/maonocaster-e2-portable-all-in-one-podcast-production-studio?variant=39993115443265) o AME2 tiene todas las funciones anteriores y gran cantidad de conexiones soportando hasta dos micrófonos, uno por XLR y otro por jack 3.5mm, el micrófono XLR puede ser de condensador ya que la interfaz es capaz de proporciona la alimentación _phantom_ que necesitan los micrófonos de condensador, también admite los micrófonos dinámicos y dos opciones de configuración de ganancia según la especificación del micrófono o preferencia.
 
@@ -70,7 +70,7 @@ Tiene ajustes individuales para los volúmenes de entrada y salida ya sea micró
 * [Why Choose Maonocaster AME2 Audio Mixer?](https://www.maono.com/blogs/blog/maonocaster-ame2-podcast-mixer)
 * [Software & Manual Download](https://www.maono.com/pages/manuals-and-drivers)
 
-#### Especificaciones técnicas
+### Especificaciones técnicas
 
 La Maonocaster E2 posee todas las funciones comentadas que proporciona una interfaz de audio. Las especificaciones completas de la interfaz de audio Maonocaster E2 son las siguientes:
 
@@ -87,7 +87,7 @@ La Maonocaster E2 posee todas las funciones comentadas que proporciona una inter
 * Duración de la batería 8 horas aproximadamente
 * Dimensiones 24.5 ancho, 15.7 largo, 5.5 alto (incluyendo los botones)
 
-#### Dónde comprar
+### Dónde comprar
 
 La Maonocaster E2 se puede comprar directamente en el [sitio web oficial de MAONO](https://www.maono.com) con la ventaja de que en su página están el catálogo completo de sus productos que incluye las varias versiones y modelos y otros productos como cascos y brazos articulados. Por ejemplo, la Maonocaster E2 tiene varias versiones dependiendo de si incluye micrófono o no y el micrófono que incluye. También está disponible para comprar en [Amazon][amazon-affiliate] pero solo está alguna versión y no el catálogo completo de los modelos.
 
@@ -100,11 +100,11 @@ El precio de la Maonocaster E2 está entorno a los 120 € y la AM200 alrededor 
     linkids="a87f56c4cbc3f06f1eca105c96646ccf,6459782529c86b25c7f31da3bc6b21d1"
     asins="B09WVMVZK8,B08NPCY5P3" >}}
 
-### Desempaquetado de la interfaz de audio Maonocaster E2
+## Desempaquetado de la interfaz de audio Maonocaster E2
 
 A continuación incluyo el reportaje gráfico del empaquetado y contenido original de la Maonocaster E2 tal y como llega en su caja. También muestro el producto una vez desempaquetado y montado para su uso.
 
-#### La caja
+### La caja
 
 El embalaje consiste en una caja de color negro y amarillo en la que en su exterior se indica el modelo exacto de la interfaz asi como que contenido incluye y las características principales en la parte inferior y laterales. No incluye un precinto que garantice que no ha sido abierta tal y como ha salido de fábrica pero incluye un sello de garantía de autenticidad del producto.
 
@@ -124,7 +124,7 @@ El embalaje consiste en una caja de color negro y amarillo en la que en su exter
     image2="image:maonocaster-e2-caja-8.webp" optionsthumb2="200x150" title2="Caja de la interfaz de audio Maonocaster E2"
     caption="Caja de la interfaz de audio Maonocaster E2" >}}
 
-#### El contenido
+### El contenido
 
 El contenido está protegido por una espuma que protege la interfaz de cualquier golpe o desperfecto en el transporte para que llegue en las condiciones originales de fábrica. Los cables están a su vez dentro de una pequeña caja de accesorios. No incluye cable XLR ni un segundo cable USB-C pero estos se incluyen en el micrófono MAONO HD300T. El contenido de la caja es el siguiente.
 
@@ -165,7 +165,7 @@ El contenido está protegido por una espuma que protege la interfaz de cualquier
     image3="image:maonocaster-e2-manual-9.webp" optionsthumb3="200x150" title3="Manual de instrucciones de la interfaz de audio Maonocaster E2"
     caption="Manual de instrucciones de la interfaz de audio Maonocaster E2" >}}
 
-#### La interfaz de audio
+### La interfaz de audio
 
 La interfaz de audio es en acabado de color negro, es muy compacta y ligera al estar hecha de una carcasa de plástico pero que se siente de buena calidad y construcción. Las dimensiones de la interfaz de audio son de 24,5 cm de ancho, 15,5 cm de largo y entre 2,5 y 5 cm de alto incluyendo los botones con una pequeña inclinación en la parte frontal.
 
@@ -195,7 +195,7 @@ En el manual de usuario incluido en la caja en formato papel se explican cada un
     image2="image:maonocaster-e2-interfaz-de-audio-8.webp" optionsthumb2="650x450" title2="Interfaz de audio Maonocaster E2"
     caption="Interfaz de audio Maonocaster E2 junto al micrófono MAONO HD300T" >}}
 
-### Análisis y opinión
+## Análisis y opinión
 
 Todas las funciones, controles para ajustar el audio y conexiones tanto de entrada como de salida que ofrece Maonocaster E2 son más que suficientes para cubrir todas las necesidades de los creadores de contenido que lo hacen por afición sean _podcasters_ de audio, video _bloggers_, _streamers_ en directos o grabación de música con instrumentos.
 
@@ -221,7 +221,7 @@ Aparte de los dos puertos USB tipo C y los botones que no se que tal aguantan un
 
 Un micrófono, una interfaz de audio, una _webcam_ y una capturadora junto algunos programas de software son productos específicos para la creación de contenido audiovisual, con estos cualquier usuario puede crear un contenido de muy buena calidad final que nada tiene que envidiar a una producción profesional. En cualquier caso, independientemente del micrófono y de si se utiliza una interfaz de audio lo más importante es el contenido que se crea y que este sea de buena calidad en el sentido de lo que se comparte y se muestra en él para que sea interesante para los usuarios a los que está dirigido.
 
-### Vídeos
+## Vídeos
 
 En el artículo muestro como es el producto desde el empaquetado hasta su uso, todos sus detalles técnicos y las características y funciones que proporciona pero no soy un experto ni tengo mucha experiencia en la creación de contenido en formato de audio y vídeo además aún no tengo muchos conocimientos en este área.
 
@@ -241,7 +241,7 @@ La Maonocaster AM200 tiene algunas funciones menos que la E2 pero también es un
 {{< youtube
     video="tzwn-ge4vBE" >}}
 
-### Otros productos relacionados
+## Otros productos relacionados
 
 Para la interfaz de audio se necesita al menos un micrófono, esta interfaz admite micrófonos tanto de condensador como dinámicos con interfaz XLR y jack 3.5mm. Un micrófono de buena calidad que también ofrece MAONO es el HD300T pero no es el único y esta marca especializada en componentes de audio tiene un catálogo completo según las las preferencias del usuario tanto en características como en precio.
 

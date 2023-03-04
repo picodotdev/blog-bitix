@@ -31,7 +31,7 @@ La instrumentalización se implementa con los objetos _MBean_ similares a los ob
 
 Además de propiedades y operaciones los _MBean_ también pueden emitir notificaciones cuando ocurren ciertos eventos. Una aplicación práctica de JMX es [cambiar de forma dinámica los niveles de log][blogbitix-467] para obtener más información de una funcionalidad o en caso de un error sin necesidad de reiniciar el servidor ni necesidad de hacer cambios en el repositorio de código de la aplicación para simplemente obtener mayor detalle de trazas.
 
-### Ejemplo de JMX en una aplicación Java
+## Ejemplo de JMX en una aplicación Java
 
 Un _MBean_ no es más que una interfaz que una clase Java implementa.
 
@@ -61,7 +61,7 @@ Realizada la conexión al agente se muestran las propiedades y operaciones de lo
 
 En el caso de que la aplicación esté contenida dentro de una aplicación web y desplegada en un servidor de aplicaciones como [Tomcat][tomcat] o [WildFly][wildfly] registrar un _MBean_ es similar al caso del ejemplo de la aplicación Java y posteriormente administrados con la herramienta JConsole.
 
-### Ejemplo de JMX con Spring Boot
+## Ejemplo de JMX con Spring Boot
 
 El ejemplo anterior muestra como usar JMX en una aplicación Java, Spring ofrece soporte para implementar JMX en aplicaciones que usen este _framework_ con las anotaciones [@ManagedResource](spring-framework:org/springframework/jmx/export/annotation/ManagedResource.html), [@ManagedAttribute](spring-framework:org/springframework/jmx/export/metadata/ManagedAttribute.html), [@ManagedOperation](spring-framework:org/springframework/jmx/export/annotation/ManagedOperation.html), [@ManagedOperationParameters](spring-framework:org/springframework/jmx/export/annotation/ManagedOperationParameters.html), ([@ManagedOperationParameter](spring-framework:org/springframework/jmx/export/annotation/ManagedOperationParameter.html)) y [@EnableMBeanExport](spring-framework:org/springframework/context/annotation/EnableMBeanExport.html).
 
@@ -78,7 +78,7 @@ Tanto en el ejemplo de _MBean_ con Java como con Spring el puerto RMI para acced
 
 {{< code file="jmxremote-1.properties" language="plain" options="" >}}
 
-### Cómo añadir acceso remoto y añadir seguridad securizad a JMX
+## Cómo añadir acceso remoto y añadir seguridad securizad a JMX
 
 Por defecto JMX solo es accesible desde la maquina local, esto en producción no es muy útil pero activar el acceso remoto requiere añadir nuevas propiedades de configuración para proporcionar seguridad realizando autenticación y usando una comunicación segura con SSL. Para la comunicación segura se requiere crear un _keystore_.
 

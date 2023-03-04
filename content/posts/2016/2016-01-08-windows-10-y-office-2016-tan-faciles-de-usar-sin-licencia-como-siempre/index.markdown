@@ -28,7 +28,7 @@ Por otra parte desde la época de Windows Vista el equipo se puede reinstalar y 
 
 De modo que para corregir los problemas hice una reinstalación limpia.
 
-### Inicio la instalación
+## Inicio la instalación
 
 Llegado al punto de hacer la reinstalación no tuve mayor problema, el equipo tenía Windows 7 originalmente, se había actualizado a Windows 10 y activado correctamente en el periodo de actualización gratuita que ofrece Microsoft. Como he hecho multitud de veces en años y con versiones anteriores empiezo por [descargar la imagen del medio de instalación de Windows 10](https://www.microsoft.com/es-es/software-download/windows10) y el [medio de instalación de Microsoft Office, Hogar y Estudiantes](http://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/es-es/HomeStudent2019Retail.img). A continuación [iniciar la instalación de Windows 10 paso a paso desde cero][blogbitix-231]. Las imágenes del medio de instalación de Windows 10 la ofrece amablemente Microsoft en su propia página web por lo que no me fué necesario buscarla como antiguamente en las redes de compartición de archivos, punto para ellos.
 
@@ -36,15 +36,15 @@ En uno de los pasos de la instalación borré todas las particiones recuperando 
 
 Toca instalar los programas adicionales básicos con la intención de que sean de software libre o respetando las licencias [Firefox][firefox] junto con [AdBlockPlus][adblockplus], [VLC][vlc], [PeaZip][peazip], [ImgBurn][imgburn], [Acrobat Reader][adobe-acrobat-reader], [FreeFileSync][freefilesync], [uTorrent][utorrent] a los que añado [Java][java]. Finalmente me piden que instale la _suite_ ofimática [Microsoft Office][microsoft-office] ya que va a ser utilizada, mi intención al traste, me planteo recomendar alguna opción alternativa como [Google Docs][google-docs] o [LibreOffice][libreoffice]. Sin embargo, Office es lo que usan ¿piden a los alumnos que adquieran una licencia que aún para estudiantes cuesta unos 125 €? ¿250 € para otros mortales?, es inicio del 2016, es fin de semana y no quiero darle muchas vueltas al tema, descargo la última versión de Office y la instalo.
 
-### Trato de activar Windows y Office
+## Trato de activar Windows y Office
 
 Inicio el Word y me muestra el mensaje que tras unos 30 días se desactivarán muchas de sus funciones. Llega el momento de probar empíricamente una vez más aquello que dije en [A Microsoft no le importa que uses Windows u Office sin licencia][blogbitix-92], busco algún activador en Google, hay cientos de resultados, descargo uno del enlace que me genera algo de esperanza de no tener virus, inmediatamente descargado el archivo ejecutable Windows Defender avisa de que tiene virus, lo ejecuto a pesar de todo y hago clic en el botón para activar el Office, sale un mensaje indicando que no se ha realizado la activación correctamente, pruebo varias opciones sin efecto aparente ¿a ver si no tengo razón y Microsoft ha hecho lo suyo para evitar la piratería?. Rebusco entre los enlaces y me descargo otro, aviso de virus, todo normal, lo ejecuto, empiezan a aparecer iconos en el escritorio de programas raros que se están instalando y al Firefox se le ha cambiado su página de inicio, ¡vaya! este supuesto activador si que era un virus, Defender tenía razón, toca reinstalar de nuevo todo.
 
-### Buscando un activador sin virus
+## Buscando un activador sin virus
 
 Saco las armas gordas, comienzo una nueva reinstalación de Windows 10 y Office en una máquina virtual con [VirtualBox][virtualbox] que me permitirá hacer las pruebas más fácilmente usando las instantáneas del sistema, si algo va mal podré volver a un punto anterior sin tener que reinstalar todo de nuevo. Objetivo encontrar algún activador que funcione, hace tiempo cuando usaba Windows en el primer o segundo quizá el tercero enlace no más de Google estaba el activador que funcionaba, vuelvo a pensar que igual Microsoft ha protegido mejor su software. Me informo un poco más en algunas de los cientos de páginas, encuentro que tengo que desactivar Windows Defender, en la explicación de esas páginas activar Windows y Office (cualquiera de sus versiones) es tan fácil como recordaba, usar un activador y darle a un botón ¿simplemente no he encontrado el correcto?. Pongo un poco más de interés y busco la página «oficial» de un activador, parece que he encontrado una con buenas sensaciones. Desactivado Windows Defender ejecuto el activador, se abre la ventana y selecciono activar Windows y Office, en unos segundos acaba e informa de que la activación ha sido correcta. Compruebo que Windows está activado y Office también.
 
-### A la tercera instalación va la vencida
+## A la tercera instalación va la vencida
 
 Inicio la tercera instalación de nuevo en el portátil y realizo la activación de la misma forma que en la máquina virtual, salvo que solo de Office ya que el portátil ya tiene licencia de Windows. Office informa de que está activado. Me gustaría no haberlo podido conseguir.
 
@@ -56,7 +56,7 @@ Es inicio del 2016 y no he hecho una sino tres instalaciones de Windows y Office
     image2="image:microsoft-word-2016.webp" optionsthumb2="300x200" title2="Microsoft Word 2016"
     caption="Windows 10 y Microsoft Word 2016" >}}
 
-### Qué alternativa hay a usar un activador
+## Qué alternativa hay a usar un activador
 
 Al final recurrí a un activador pero son inseguros, es mejor comprar una licencia a alguno de los vendedores alternativos a Microsoft que ofrecen códigos de licencia totalmente válidas y legales a unos precios mucho más baratos que los de Microsoft. Microsoft vende las licencias de Windows a partir de 145 € para Windows 10 y de Microsoft Office a partir de 149 €, otros vendedores que se pueden encontrar en [Amazon][amazon-affiliate] y [eBay][ebay] ofrecen licencias totalmente legales y mucho más baratas, de entre 10 € y 15 €. Para que no se deshabiliten algunas opciones de personalización en Windows, se deshabilite la edición de documentos en Microsoft Office y no aparezcan más mensajes solicitando la activación hay que [comprar una licencia y activar Windows 10 y Office 2019][blogbitix-514].
 

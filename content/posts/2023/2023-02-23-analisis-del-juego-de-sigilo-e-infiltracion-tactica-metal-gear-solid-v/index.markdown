@@ -76,11 +76,11 @@ Tiene unos gráficos acorde a la generación de juegos de la consola PlayStation
 {{< amazon
     tags="game-console" >}}
 
-### Metal Gear Solid V
+## Metal Gear Solid V
 
 El juego son en realidad dos juegos, Ground Zeroes y The Phantom Pain siendo el primero una introducción y el segundo el juego en sí principal.
 
-#### Ground Zeroes
+### Ground Zeroes
 
 Ground Zeroes sirve como introducción a la parte principal del juego The Phantom Pain. Constan de unas pocas misiones con una historia precuela que dan algo de contexto al inicio de Phantom Pain. Las misiones de Ground Zeroes son cuatro con adicionales que hay que desbloquear desarrollándose todas en el mismo mapa pero cada una es única ya que tiene diferentes objetivos.
 
@@ -88,7 +88,7 @@ Es muy difícil pasarse las misiones al primer intento, si ya son difíciles de 
 
 Cada una de las misiones son relativamente largas que pueden tomar al menos el cuarto de hora de juego o incluso la media hora si no se conoce el objetivo de la misma y hay que emplear en primera instancia un tiempo para explorar. Además, no se ofrece la opción de guardado en mitad de la misión salvo una vez se complete y reiniciar la misión desde el último punto de control.
 
-#### The Phantom Pain
+### The Phantom Pain
 
 Es la parte principal del juego que consta de 31 misiones en un primer capítulo. Acabadas las 31 misiones principales hay una continuación en un segundo capítulo hasta las 50 misiones pero que la mayoría son repeticiones del capítulo uno con un nivel de dificultad mayor salvo unas pocas que cuentan algunos detalles más de la historia.
 
@@ -107,9 +107,9 @@ Es un juego muy rejugable para completar las misiones de forma diferente, más c
     image1="image:metal-gear-solid-v-juego.webp" optionsthumb1="650x450" title1="Juego Metal Gear Solid V: The Phantom Pain"
     caption="Juego Metal Gear Solid V: The Phantom Pain" >}}
 
-### El juego
+## El juego
 
-#### Misiones principales
+### Misiones principales
 
 Las misiones del Phantom Pain son más fáciles que las de Ground Zeroes, tanto porque hay menos enemigos como porque se explican algunas mecánicas básicas que ayudan a acabar con los enemigos más fácilmente.
 
@@ -169,7 +169,7 @@ En esta guía se detalla una táctica utilizar y consejos que seguir para comple
 {{< youtube
     video="d8N1acy8XQ4" >}}
 
-#### Misiones secundarias
+### Misiones secundarias
 
 Las misiones secundarias son mucho más numerosas que las principales, no son imprescindibles para completar el juego pero ayudan a obtener recursos sobre todo al principio para conseguir los desarrollos que proporcionan ventajas para realizar las misiones con éxito.
 
@@ -189,7 +189,7 @@ Las misiones principales se pueden rejugar todas las veces que se quiera, las mi
     image2="image:metal-gear-solid-v-misiones-secundarias-2.webp" optionsthumb2="300x200" title2="Misiones secundarias"
     caption="Misiones secundarias" >}}
 
-#### Deambular libremente
+### Deambular libremente
 
 Deambular permite hacer un despliegue en el mapa sin ningún objetivo en concreto que permite desplazarse libremente por el mapa y explorarlo, o como una forma de conseguir personal y recursos o hacer infiltraciones sin una misión en concreto.
 
@@ -200,7 +200,7 @@ El mapa es suficientemente grande como para divertirse explorando algunas zonas 
     image1="image:metal-gear-solid-v-mapa-deambular.webp" optionsthumb1="300x250" title1="Deambular por el mapa"
     caption="Deambular por el mapa" >}}
 
-#### El capítulo 2 y el juego en línea
+### El capítulo 2 y el juego en línea
 
 El capítulo uno del juego consta de 31 misiones únicas. Una vez completadas hay un segundo capítulo hasta la misión 50. Algunas de estas misiones del capítulo dos simplemente son misiones del capítulo 1 pero con mayor dificultad. Hay 7 nuevas misiones únicas y que cuenta algunos detalles más de la historia con varias escenas de cinemática que se reproducen al regresar a la base.
 
@@ -208,7 +208,7 @@ Aún siendo el capítulo 2 básicamente una repetición con mayor dificultad hay
 
 * [Metal Gear Solid 5: The Phantom Pain Wiki Guide, Postgame Missions](https://www.ign.com/wikis/metal-gear-solid-5-the-phantom-pain/Postgame_Missions)
 
-### Mecánicas de juego
+## Mecánicas de juego
 
 Si en algo destaca Metal Gear Solid V son en el número de mecánicas que ofrece, muestra de ello son los numerosos consejos e información de las mecánicas en las pantallas de carga. Combinado con la variedad de armas y equipo a disposición de cada misión hace que las posibilidades sean muchas, incluso después de mucho tiempo de juego se aprenden cosas nuevas. Además, con los desarrollos que se desbloquean de forma paulatina hace que aunque los objetivos de las misiones sean unos pocos no se note el juego para nada repetitivo.
 
@@ -280,7 +280,7 @@ Las municiones son limitadas pero se pueden pedir suministros, para recargar bal
     image2="image:metal-gear-solid-v-combate-cuerpo-a-cuerpo-5.webp" optionsthumb2="200x150" title2="Comabte cuerpo a cuerpo"
     caption="Acciones de combate" >}}
 
-#### Inteligencia de los enemigos
+### Inteligencia de los enemigos
 
 Otra de los puntos en los que destaca Metal Gear Solid V es en la inteligencia artificial adaptativa que han implementados los desarrolladores en el comportamiento de los soldados. Sus comportamientos siguen siendo predecibles pero hacen algunas cosas sensatas. 
 
@@ -311,7 +311,7 @@ Hay detalles curiosos y es que los enemigos también utilizan los señuelos o mu
     image1="image:metal-gear-solid-v-soldado-senuelo.webp" optionsthumb1="300x200" title1="Soldado señuelo"
     caption="Soldado señuelo" >}}
 
-#### Desarrollos, recompensas, recursos y economía
+### Desarrollos, recompensas, recursos y economía
 
 Las misiones son la parte de acción de acción del juego pero también hay una parte de gestión de recursos y de desarrollo para conseguir mejor equipo. Un recurso es la moneda del juego que se consigue al completar las misiones o recuperando los diamantes que se encuentren.
 
@@ -362,7 +362,7 @@ Salvo en los momentos iniciales y una vez se consigue la extracción fulton para
     image3="image:metal-gear-solid-v-recursos-hierbas.webp" optionsthumb3="200x150" title3="Hierbas"
     caption="Inventario de recursos" >}}
 
-#### Coleccionables
+### Coleccionables
 
 Como en muchos juegos hay objetos repartidos por el mapa que se encuentran y pueden recoger durante las misiones. No dan ninguna ventaja ni ningún beneficio sino la satisfacción de haberlos encontrado. Por un lado están las cintas de música de grandes éxitos de los 70 y 80, que luego se pueden escuchar. Otro es extraer un animal de cada tipo que deambulan por el mapa como _NPC_.
 
@@ -371,7 +371,7 @@ Como en muchos juegos hay objetos repartidos por el mapa que se encuentran y pue
     image1="image:metal-gear-solid-v-coleccionables-casetes.webp" optionsthumb1="300x250" title1="Coleccionable casetes"
     caption="Coleccionables" >}}
 
-#### Base madre
+### Base madre
 
 La base madre son las instalaciones secretas donde está el personal de apoyo y desarrollo. El personal se distribuye en las diferentes especializaciones. En función del nivel del personal y los soldados asignados a esa especialización se determina un nivel de la especialización que da acceso a desarrollos, permite procesar los materiales o proporcionan más información durante la misión.
 
@@ -406,7 +406,7 @@ Para aumentar el nivel de las especialidades es necesario si es posible extraer 
 
 Una vez completadas las misiones del juego es posible desarrollar plataformas adicionales a la base madre para dar cabida a más personal, ya más orientado al juego *online* en el que hay una clasificación para competir en habilidad ya contra el juego sino contra otros jugadores.
 
-### Estrategia de combate
+## Estrategia de combate
 
 El juego está orientado a realizar las misiones de forma sigilosa, hay gran cantidad de armas entre las que elegir y equiparse pero es posible pasarse el juego simplemente empleando la pistola de dardos tranquilizantes disparando a la cabeza y estrangulando con el cuerpo a cuerpo sin ser detectado. Usar el sigilo y tardar poco en completar las misiones son las dos variables que más puntúan en la calificación de la nota final. Seguro que cada persona desarrolla sus propias estrategias, estas son simplemente las que yo he seguido, se ofrecen suficientes posibilidades como para que cada jugador complete las misiones de una forma diferente e incluso un mismo jugador una misma misión la completará de forma diferente.
 
@@ -444,7 +444,7 @@ Al estar en modo sigilo es recomendable estar equipado con la pistola de tranqui
 * [The fastest way to grow Mother Base in Metal Gear Solid 5 The Phantom Pain](https://www.gamesradar.com/metal-gear-solid-mother-base-guide/)
 * [Metal Gear Solid 5: The Phantom Pain - the 11 best tactics you're not using right now ](https://www.vg247.com/metal-gear-solid-5-phantom-pain-best-tactics)
 
-### Guías y trucos
+## Guías y trucos
 
 * [Tips and Tricks](https://www.ign.com/wikis/metal-gear-solid-5-the-phantom-pain/Tips_and_Tricks)
 * [Táctica mission 1 Phantom Limbs](https://www.ign.com/wikis/metal-gear-solid-5-the-phantom-pain/Mission_1_Phantom_Limbs)
@@ -453,12 +453,12 @@ Al estar en modo sigilo es recomendable estar equipado con la pistola de tranqui
 {{< youtube
     video="LS77YgQzyqQ" >}}
 
-### Banda sonora original
+## Banda sonora original
 
 {{< youtube
     video="xq7GFIKZcoo" >}}
 
-### Película con la historia del juego
+## Película con la historia del juego
 
 {{< youtube
     video="WeV992m7L84" >}}

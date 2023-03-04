@@ -39,7 +39,7 @@ Sleuth se encarga de propagar las cabeceras del servicio cliente al servicio ser
 
 En la parte servidora Sleuth proporciona un filtro que se encarga de obtener y crear el _span_ de la petición que contiene los identificativos de correlación que con [Spring][spring] y las dependencias adecuadas se configura automáticamente. Para inyectar y extraer las cabeceras de Sleuth con el cliente HTTP de Java o como en el ejemplo con el de [Jersey][jersey] basta con proporcionar una _lambda_ que realice el añadido o extracción de las cabeceras con la API del cliente.
 
-### Ejemplo de microservicio con Spring Boot y Sleuth
+## Ejemplo de microservicio con Spring Boot y Sleuth
 
 Este es el código para instrumentalizar el cliente HTTP de _Jersey_ que utiliza el servicio cliente que invoca al _gateway_ y el código para crear el _span_ en el cliente con los identificativos de correlación y recogerlos en el servicio servidor.
 

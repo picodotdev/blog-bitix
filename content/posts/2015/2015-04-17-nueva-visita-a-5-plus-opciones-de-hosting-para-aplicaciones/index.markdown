@@ -18,7 +18,7 @@ summary: "En esta nueva revisión de las opciones de alojamiento que disponemos 
 
 Hace tres años escribí un artículo sobre [varias opciones de _hosting_][elblogdepicodev-5-opciones-de-hosting-para-aplicaciones] que disponemos para hospedar aplicaciones o páginas web. En ese artículo comentaba varias posibilidades desde un servidor propio usando una  Raspberry Pi, proveedores de _hosting_, [Amazon EC2][amazon-ec2], [Google App Engine][google-appengine], [Jelastic][jelastic], [OpenShift][openshift], [AppFog][appfog], [Cloud Foundry (VMWare)][cloudfoundry], [Heroku][heroku], [Azure (Microsoft)][microsoft-azure] y [Google Compute (Google Cloud Platform)][google-compute]. Pasado todo este tiempo en este artículo revisaré las opciones de hospedaje con algunas nuevas que en su momento no conocía, otras siguen siendo totalmente válidas.
 
-### Servidor propio
+## Servidor propio
 
 Si queremos una opción para algo simple y para nosotros mismos podemos utilizar un servidor propio usando como _hardware_ por ejemplo una [Raspberry Pi 4](https://amzn.to/2umoNav), con la segunda versión de este miniordenador que ahora tiene 4 núcleos y 1 GiB de memoria puede servirnos para cantidad de cosas interesantes. Además de la Raspberry Pi 2 hay multitud de dispositivos similares, en la [página de Arch Linux ARM][archlinuxarm] podemos ver los modelos soportados en esta distribución. Otro modelo destacado es la [Cubox-i](http://www.solid-run.com/products/cubox-i-mini-computer/cubox-i-specifications/) también con 4 núcleos y en el modelo más potente con 2 GiB de memoria aunque bastante más caro que la Raspberry Pi.
 
@@ -30,7 +30,7 @@ Con esta opción tendremos un control total del _software_ instalado sin ninguna
     gallery="false"
     image1="logotype:raspberrypi.svg" optionsthumb1="137x168" title1="Raspberry Pi" >}}
 
-### Proveedor de _hosting_
+## Proveedor de _hosting_
 
 La siguiente opción a considerar puede ser un servidor ofrecido por muchos registradores de dominios. Si el tráfico del servicio que planeamos ofrecer no es muy alto (y así serán en los inicios) es una opción adecuada. En la mayoría de las opciones de este tipo estaremos limitados en el lenguaje de programación que podremos usar generalmente [PHP][php] o la base de datos generalmente [MySQL][mysql].
 
@@ -42,7 +42,7 @@ Hay multitud de proveedores algunos de los más conocidos son [DonDominio][dondo
 
 Una opción es el [_hosting_ Java](https://www.anw.es/alojamiento-web/alojamiento-hosting-java.html) de [anw](https://www.anw.es) que tiene unas opciones interesantes que no poseen otros a unos precios similares a los que se ofrecen en este tipo de _hosting_, en algunos apartados superiores a la competencia como la RAM o cuota de [MySQL][mysql]. A destacar las opciones de tener una máquina virtual de Java dedicada con una versión específica, incluye el dominio gratis y con una centena de cuentas de correo, posibilidad de certificado SSL con [Let's encrypt][letsencrypt], pudiendo elegir entre varios de los más populares servidores de aplicaciones Java ([Tomcat][tomcat], [Glassfish/Payara][payara] o [WildFly][wildfly]), varias cantidades de memoria RAM según el plan contratado que en picos de carga puntuales pueden ser sobrepasados sin caída de servicio como ocurriría en otras opciones y base de datos MySQL. Poseen un [panel de administración](https://www.youtube.com/watch?v=aZFC_8MyLeM) con el que administrar la versión del JDK, el servidor de aplicaciones y la aplicación. Es una opción sencilla contando con soporte técnico sin necesidad de tener que administrar el servidor como en otras opciones de _hosting_ pero en la que se posee un buen control de la aplicación. En otras opciones ofrecen también alojamiento web con el popular [WordPress][wordpress].
 
-### Amazon EC2, Azure, Google Cloud
+## Amazon EC2, Azure, Google Cloud
 
 Si la aplicación o proyecto crece las nubes de [Amazon EC2][amazon-ec2], [microsoft-azure][microsoft-azure] y [Google Cloud][google-cloud] se adaptan a las necesidades que tengamos ahora y, mejor aún, en el futuro. Y si en un futuro es necesario nos proporcionan flexibilidad pudiendo ampliar o reducir los recursos consumidos. Son algo más caras que otras opciones pero por lo que ofrecen son buenas opciones, por ejemplo, Amazon EC2 ofrece [varios servicios](http://aws.amazon.com/es/products/) que enriquecen su oferta de [infraestructura como servicio][iaas] (IaaS, _Infrastructure as a service_). En estas opciones de IaaS tendremos gran control sobre el _software_ que instalamos, deberemos tener en cuenta que los datos que maneja la aplicación estarán hospedados en los sistemas de la nube elegida.
 
@@ -56,7 +56,7 @@ En Amazon EC2 el coste puede variar dependiendo de los recursos que reservemos, 
     image2="logotype:microsoft-azure.webp" optionsthumb2="218x118" title2="Microsoft Azure"
     image3="logotype:google-cloud.webp" optionsthumb3="401x66" title3="Google Cloud" >}}
 
-### Linode, Digital Ocean
+## Linode, Digital Ocean
 
 Algunas opciones totalmente válidas para muchos casos que también nos proporcionan flexibilidad son [Linode][linode] y [Digital Ocean][digital-ocean], también entran dentro de la categoría de IaaS. El coste de los planes ofrecidos por cada una de estas es muy sencillo en Linode empieza desde los 10 €/mes hasta los 80 €/mes y en Digital Ocean desde los 5 €/mes pasando por los 80 €/mes hasta los 640 €/mes. Salvo los planes de volúmenes altos de Digital Ocean los precios son similares a Linode según las características disponibles en ambos.
 
@@ -67,11 +67,11 @@ Estas opciones son totalmente válidas tanto para proyectos personales como un b
     image1="logotype:linode.webp" optionsthumb1="268x117" title1="Linode"
     image2="logotype:digital-ocean.webp" optionsthumb2="218x144" title2="Digital Ocean" >}}
 
-### Otras
+## Otras
 
 Hay otro tipo de opciones conocidas como [plataforma como servicio][paas] (PaaS, _Platform as a service_) como [OpenShift][openshift], [AppFog][appfog], [Cloud Foundry][cloudfoundry], [Heroku][heroku]. De entre estas destacaré OpenShift ya que proporciona una capa gratuita con la que tendremos lo que ellos denominan _gears_, nos ofrecen gratuitamente 3 con 512 MiB de memoria y 1 GiB de espacio en disco. Esta opción es la que he utilizado para construir [Blog Stack][blogstack], en el artículo [Arquitectura y hospedaje de Blog Stack][blogbitix-24] detallo técnicamente el proyecto en el que el único coste es el dominio (12 €/año).
 
-### Notas finales
+## Notas finales
 
 Las opciones son múltiples para hospedar nuestra aplicación. Si se trata de algo para uso personal una Raspberry Pi pueda valernos, si se trata de una web presencial estática que no requiera programación un proveedor de _hosting_ será suficiente. Si queremos tener flexibilidad y más libertad en las herramientas del proyecto las nubes de Amazon, Azure o Google nos servirán. Si no necesitamos todos los servicios de los anteriores Linode o Digital Ocean ofrecen unos planes de precios muy sencillos y previsibles. Finalmente están los PaaS que permiten desentendernos de la infraestructura y centrarnos en la aplicación.
 

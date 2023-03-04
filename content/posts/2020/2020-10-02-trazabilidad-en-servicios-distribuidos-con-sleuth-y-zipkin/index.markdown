@@ -32,7 +32,7 @@ En el ejemplo hay un microservicio que hace de servidor y otro de cliente que se
 
 Sleuth proporcionar trazabilidad con identificativos globales que podrían ser recuperados a través del sistema de _logging_ centralizado como Elasticsearch, [Logstash][logstash] y [Kibana][Kibana]. Usando una librería de _logging_ como [Log4j][log4j] se puede [configurar Log4j para que emita en las trazas los identificadores globales][blogbitix-336].
 
-### Ejemplo de microservicio con Spring Boot, Sleuth y Zipkin
+## Ejemplo de microservicio con Spring Boot, Sleuth y Zipkin
 
 En el ejemplo de trazabilidad de microservicios con Sleuth consistía en un servicio implementado con Spring Boot, también tiene un cliente que realiza de forma periódica peticiones al servicio. Ambos tienen Sleuth integrado y en las trazas de la consola en ambos aparece el identificador global _traceId_ de la traza. En este ejemplo se configura Sleuth para que envíe a Zipkin las transacciones de estos dos pequeños microservicios.
 

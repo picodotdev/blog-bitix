@@ -28,9 +28,9 @@ Con la herramienta [OpenSSL][openssl] y los siguientes comandos podemos generar 
 
 {{< tableofcontents >}}
 
-### Crear claves y certificados
+## Crear claves y certificados
 
-#### Crear una clave privada y pública
+### Crear una clave privada y pública
 
 Para generar un par de claves RSA pública y privada que nos permitan tanto cifrar datos como realizar firmas se emplea el siguiente comando:
 
@@ -44,7 +44,7 @@ El contenido de un archivo de clave privada sin cifrar tiene el siguiente aspect
 
 {{< code file="localhost.key" language="plain" options="" >}}
 
-#### Exportar la clave pública
+### Exportar la clave pública
 
 El archivo generado al crear el par de claves contiene tanto la clave pública como la privada. La privada no se debe distribuir y se debe mantener protegida de forma que solo la conozca su propietario por ejemplo guardándola en una base de datos de KeePassXC como un archivo adjunto de [la aplicación KeePassXC][blogbitix-196]. La clave pública es la que se distribuye a otras personas o entidades. Para extraer la clave pública del archivo generado anterior por OpenSSL usamos el siguiente comando:
 
@@ -56,13 +56,13 @@ También se puede obtener la clave pública en formato [OpenSSH][openssh] y una 
 
 {{< code file="script-15.sh" language="bash" options="" >}}
 
-#### Obtener la huella digital de la clave pública
+### Obtener la huella digital de la clave pública
 
 La huella digital de una clave pública sirve para comprobar que la clave es la esperada. Son una cadena de números y letras pudiendo estar cada pareja de caracteres separados por _:_.
 
 {{< code file="script-11.sh" language="bash" options="" >}}
 
-#### Crear un certificado
+### Crear un certificado
 
 Un certificado permite utilizar el protocolo seguro HTTPS en un servidor web y contiene la firma de una tercera parte que valida nuestra clave pública como auténtica. Para que esa tercera parte pueda firmar nuestra clave deberemos generar una petición de firma de certificado y enviársela a la autoridad de certificado que nos lo devolverá firmado. La petición firma de certificado se crea con el siguiente comando:
 
@@ -72,41 +72,41 @@ Si no queremos tratar con una autoridad de certificado, ya que cobran por la fir
 
 {{< code file="script-3.sh" language="bash" options="" >}}
 
-### Convertir un certificado a otros formatos
+## Convertir un certificado a otros formatos
 
 Dependiendo de la autoridad de certificado el certificado puede estar en diferentes formatos, también dependiendo del servidor donde se quiera usar es necesario convertirlo a al formato adecuado. OpenSSL permite para hacer las conversiones entre formatos DER, PEM y PKCS#12.
 
-#### Convertir un certificado en formato DER (.crt .cer .der) a PEM
+### Convertir un certificado en formato DER (.crt .cer .der) a PEM
 
 {{< code file="script-4.sh" language="bash" options="" >}}
 
-#### Convertir un certificado en formato PEM a DER
+### Convertir un certificado en formato PEM a DER
 
 {{< code file="script-5.sh" language="bash" options="" >}}
 
-#### Convertir un certificado en formato PEM y una clave privada a PKCS#12 (.pfx .p12)
+### Convertir un certificado en formato PEM y una clave privada a PKCS#12 (.pfx .p12)
 
 {{< code file="script-6.sh" language="bash" options="" >}}
 
-#### Convertir un archivo en formato PKCS#12 (.pfx .p12) que contiene una clave privada y certificado a PEM
+### Convertir un archivo en formato PKCS#12 (.pfx .p12) que contiene una clave privada y certificado a PEM
 
 {{< code file="script-7.sh" language="bash" options="" >}}
 
-#### Convertir PKCS#12 a keystore JKS
+### Convertir PKCS#12 a keystore JKS
 
 {{< code file="script-8.sh" language="bash" options="" >}}
 
-### Examinar certificados
+## Examinar certificados
 
-#### Examinar un certificado
+### Examinar un certificado
 
 {{< code file="script-13.sh" language="bash" options="" >}}
 
-#### Examinar el certificado de un servidor web
+### Examinar el certificado de un servidor web
 
 {{< code file="script-14.sh" language="bash" options="" >}}
 
-### Autoridad de certificación
+## Autoridad de certificación
 
 Los comandos anteriores permiten generar un certificado autofirmado válido para proporcionar una conexión cifrada entre un servidor y un cliente como es el caso de un servidor web y un navegador web. Pero los certificados autofirmados no permiten todas las validaciones de seguridad, el cliente no puede confiar en que realmente se está conectando al nombre del dominio del servidor que el certificado incluye y por ello en el cliente hay que eliminar la validación de comprobación del certificado. Para mayor seguridad y en un entorno de producción se ha de utilizar una autoridad de certificación, es posible [crear una autoridad de certificación propia con comandos de OpenSSL][blogbitix-506].
 

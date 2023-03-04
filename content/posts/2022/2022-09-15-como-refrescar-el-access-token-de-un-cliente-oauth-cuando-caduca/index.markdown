@@ -27,7 +27,7 @@ Dado que los _access token_ tienen un tiempo de expiración relativamente corto 
 
 {{< tableofcontents >}}
 
-### Los access token y refresh token de protocolo OAuth
+## Los access token y refresh token de protocolo OAuth
 
 El acceso a un servicio depende de tener un _token_ a través de alguna de las formas que proporciona el protocolo OAuth, la principal y recomendada el que denomina _authorization code grant_ que permite mantener privado tanto el secreto del cliente como el _access token_ del agente del usuario.
 
@@ -37,18 +37,18 @@ Cuando un _access token_ ya no es válido el servidor de recurso devuelve un có
 
 El obtener un _access token_ implica hacer una petición al servidor de autorización proporcionando entre otros datos el _refresh token_. Para que el cliente no sea consciente de la renovación del _access token_ y que estos pueden caducar en cualquier momento algunas librerías como [OkHttp][okhttp] permiten a los clientes implementar el obtener un nuevo _access token_ de forma transparente en las peticiones que se hagan.
 
-### _Authenticator_ de OkHttp
+## _Authenticator_ de OkHttp
 
 La clase [Authenticator](https://square.github.io/okhttp/3.x/okhttp/okhttp3/Authenticator.html) permite realizar la autenticación antes de hacer la petición al servidor o cuando el servidor devuelva un determinado código de estado. Con una implementación de esta clase el código no necesita ser consciente de la autenticación que se necesita realizar en las peticiones al servidor.
 
 Esta interfaz incluye un único método que hay que implementar, en el caso de que el método sea invocado y el código de respuesta de la petición haya sido un 401 y la petición incluya una cabecera de autorización quiere decir que las credenciales proporcionadas no son válidas en el caso de usar OAuth que el _access token_ proporcionado no es válido, un caso es que el _access token_ haya caducado, caso en el que hay que realizar la renovación del _access token_.
 
-### Implementar un autenticator para OkHttp
+## Implementar un autenticator para OkHttp
 
 * [Cliente de un servicio REST autenticado con OAuth en Java][blogbitix-183]
 * [Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot][blogbitix-180]
 
-#### Cliente de servicio OAuth
+### Cliente de servicio OAuth
 
 Esta es la implementación de una interfaz _Autheticator_ que permite renovar el _access token_ cuando este caduca.
 
@@ -66,7 +66,7 @@ El programa del cliente OAuth realiza peticiones al servidor del recurso utiliza
 
 {{< code file="client/System.out" language="plain" options="" >}}
 
-#### Servidor de recurso
+### Servidor de recurso
 
 El servidor de recursos implementado como una aplicación del [Spring Boot][spring-boot] comprueba el _access token_ como parte de su autorización, en caso de que el _access token_ sea inválido porque haya caducado o sea incorrecto se devuelve un código de estado 401. [Spring Security][spring-security] proporciona las utilidades para validar el _access token_ enviado en cada petición y configura Spring para todas las peticiones al servidor requieran un _access token_ simplemente añadiendo la anotación _@EnableWebSecurity_ y un poco de configuración en la aplicación.
 
@@ -77,7 +77,7 @@ Definiendo el _bean_ del tipo JwtDecoder peremite personalizar las validaciones 
 {{< code file="server/Main.java" language="java" options="" >}}
 {{< code file="server/application.yml" language="yaml" options="" >}}
 
-#### Servidor de autorización
+### Servidor de autorización
 
 Como servidor de autorización se utiliza [Keycloak] creando un _realm_ y un cliente que hay que crear en el _realm_ que al hacerlo se obtienen sus credenciales, en este caso el servidor de Keycloak se inicia como [un contenedor de Docker][blogbitix-50].
 

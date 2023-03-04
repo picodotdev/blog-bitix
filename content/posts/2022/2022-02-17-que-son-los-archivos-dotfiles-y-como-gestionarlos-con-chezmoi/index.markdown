@@ -26,7 +26,7 @@ En [GNU][gnu]/[Linux][linux] buena parte de los archivos de configuración de lo
 
 {{< tableofcontents >}}
 
-### Qué son los archivos _dotfiles_
+## Qué son los archivos _dotfiles_
 
 Los archivos _dotfiles_ son archivos dedicados a guardar la configuración de los programas. Se guardan en la carpeta personal del usuario (_/home/${usuario}_) y se denominan _dotfiles_ porque su nombre empieza por un punto, en GNU/Linux los archivos que empiezan por punto son especiales ya que son archivos que los exploradores de archivos ocultan por defecto.
 
@@ -43,19 +43,19 @@ Este es el contenido de mi archivo _~/.bashrc_ en el que he configurado los colo
     image1="image:bash-prompt.webp" optionsthumb1="650x450" title1="Terminal personalizada"
     caption="Terminal con los colores del símbolo del sistema personalizados e información del repositorio de Git" >}}
 
-### Cómo gestionar los archivos _dotfiles_
+## Cómo gestionar los archivos _dotfiles_
 
 Una forma de migrar los archivos _dotfiles_ de un sistema a otro es haciendo una copia de estos y restaurándolos en el otro sistema. Sin embargo, los problemas son que las copias de seguridad no permiten mantener un registro de los cambios que se realizan a cada uno de estos archivos, no es tan fácil mantener sincronizadas todas las copias de los archivos entre varios equipos que pueden ser de diferentes sistemas operativos como GNU/Linux, [macOS][macos] o [Windows][windows] y algunos archivos de configuración tienen requerimientos de seguridad que hay que mantener depositados en un almacén seguro como son las claves privadas SSH de conexión o algunas credenciales. Además de programas como [el programa KeePassXC para guadar contraseñas y secretos de forma segura][blogbitix-196] también soportan funcionalidades de cifrado y descifrado para algunos datos.
 
 Para dar solución a los problemas de la gestión de los archivos _dotfiles_ hay varios programas específicos para la tarea, en GNU/Linux es [chezmoi][chezmoi] que también está disponible para otros sistemas operativos como macOS e incluso Windows. También es posible utilizarlo en máquinas virtuales.
 
-### El programa chezmoi y guía de uso para gestionar archivos _dotfiles_
+## El programa chezmoi y guía de uso para gestionar archivos _dotfiles_
 
 chezmoi es uno de los programas dedicados a la tarea de gestionar los archivos de configuración _dotfiles_, hay otros varios pero chezmoi en su [lista de características que soporta chezmoi comparándolo con las alternativas](https://www.chezmoi.io/comparison-table/) lo hacen más potente, además al estar basado en Go generalmente los programas en este lenguaje se componen de un único binario hace que sean muy fácilmente de instalar y fiable al carecer de dependencias externas.
 
 Muchas de estas herramientas para gestionar archivos _dotfiles_ se basan en un repositorio de Git en el que mantienen el control de versiones de los archivos y de cada uno de los cambios que se realizan en ellos. Entre las funcionalidades que ofrecen además de mantener el control de versiones están facilitar las tareas de uso básico como subir cambios al repositorio de Git para aplicar a otros sistemas o a un nuevo sistema y aplicar cambios al sistema local provenientes de otros sistemas, soportan variables y plantillas con las que generar el contenido de los archivos de forma dinámica y obtener datos de programas de base de datos que guardan secretos como KeePassXC entre muchos otros gestores de contraseñas.
 
-#### Inicialización del repositorio
+### Inicialización del repositorio
 
 En la distribución [Arch Linux][archlinux] el programa chezmoi se instala instalando su paquete con el gestor de paquetes. En otras distribuciones basadas en [Debian][debian] o [Fedora][fedora] basta con buscar el nombre del paquete equivalente en esas distribuciones e instalarlo con su gestor de paquetes.
 
@@ -65,13 +65,13 @@ El siguiente paso es crear el repositorio de Git en local con los siguientes com
 
 {{< code file="chezmoi-create-repository.sh" language="bash" options="" >}}
 
-#### Compartir archivos _dotfiles_ entre máquinas
+### Compartir archivos _dotfiles_ entre máquinas
 
 Para inicializar el repositorio de Git de los archivos _dotfiles_ a partir del contenido de uno existente se utiliza este comando. Aunque los archivos se puede compartir entre máquinas incluso de diferentes sistemas operativos la intención es que todos esos archivos de _dotfiles_ de un usuario compartan la mayor similitud posible, aunque a veces por las diferencias de las máquinas no es completamente posible. Para ayudar a compartir lo más posible están las variables y plantillas, en caso de necesidad es posible administrar un _dotfile_ completamente diferente según el sistema operativo añadiendo condiciones en las plantillas.
 
 {{< code file="chezmoi-init.sh" language="bash" options="" >}}
 
-#### Ver cambios sin aplicarlos
+### Ver cambios sin aplicarlos
 
 El siguiente comando aplica los cambios a los archivos _dotfiles_ locales a partir del contenido del repositorio de archivos _dotfiles_ de chezmoi. Con las opciones _-v_ se muestra información más detallada de los cambios que se aplican, y con _-n_ permite ver que cambios se aplicarían en caso de realizar la acción sin la opción, sus opciones en formato largo son _-verbose_ y _--dry-run_.
 
@@ -81,7 +81,7 @@ El comando _update_ actualiza el repositorio Git local con los cambios del repos
 
 {{< code file="chezmoi-diff-apply.sh" language="bash" options="" >}}
 
-#### Realizar cambios en los archivos _dotfiles_
+### Realizar cambios en los archivos _dotfiles_
 
 Al empezar a usar chezmoi y a medida que se desean guardar las configuraciones de los archivos _dotfiles_ hay que añadir los archivos y sus cambios al repositorio de Git de los archivos _dotfiles_. El comando que permite añadir un archivo al repositorio es _add_.
 
@@ -102,7 +102,7 @@ El editar un _dotfile_ se puede configurar para que chezmoi lo añada al reposit
 
 {{< code file="chezmoi.yaml" language="yaml" options="" >}}
 
-#### Subir al repositorio cambios en los archivos _dotfiles_
+### Subir al repositorio cambios en los archivos _dotfiles_
 
 Después de realizar cambios en los archivos _dotfiles_ estos quedan en el repositorio de Git local en el directorio de trabajo, para subir los archivos al repositorio de Git origen es necesario hacer el _commit_ y el _push_ en el repositorio. chezmoi proporciona varios comandos de utilidad para trabajar con el repositorio de Git en el que se guardan los _dotfiles_.
 
@@ -118,7 +118,7 @@ Si no se quiere entrar en el modo de edición del repositorio de Git se ofrece u
 
 {{< code file="chezmoi-git.sh" language="bash" options="" >}}
 
-#### Variables y plantillas
+### Variables y plantillas
 
 Algunos datos de los archivos _dotfiles_ para compartirlos entre máquinas o para externalizarlos de los archivos permite guardarlos de forma externa. chezmoi soporta plantillas, una plantilla se procesa junto varias las variables y genera el contenido del archivo final del _dotfile_. Las plantillas no solo soportan variables sino también expresiones con condiciones.
 
@@ -145,7 +145,7 @@ El comando _execute-template_ permite evaluar una plantilla con el contenido de 
 
 {{< code file="chezmoi-execute-template.sh" language="bash" options="" >}}
 
-#### Gestionar secretos
+### Gestionar secretos
 
 Algunas variables por su contenido sensible por motivos de seguridad hay que protegerlos y no deben ser compartidos, esto es importante tenerlo en cuenta ya que el contenido que se usa al repositorio de los _dotfiles_ cualquier usuario que tenga acceso a él puede ver su contenido, esto incluye credenciales e incluso claves SSH. Estos secretos se han de almacenar de forma diferente y no el repositorio de Git de los _dotfiles_ sobre todo si el repositorio de Git es público como puede ser el caso de si se utiliza un hospedaje como GitHub.
 
@@ -161,7 +161,7 @@ Y en las plantillas se utiliza la siguiente expresión para recuperar credencial
 
 {{< code file="chezmoi-template-2.file" language="plain" options="" >}}
 
-#### Otras características
+### Otras características
 
 Los _dotfiles_ de algunos programas son más complejos de los de este ejemplo y hay varios programas que los utilizan, ¿no sería maravilloso poder utilizar los archivos de otros usuarios que comparten en sus repositorios de _dotfiles_? lo es y es posible utilizar estos archivos _dotfiles_ de otros usuarios, no solo para utilizarlos sino como ejemplo de cómo se configura alguna propiedad del _dotfile_ sobre todo si la documentación oficial del _dotfile_ no es amplia o no es lo suficientemente clara. En la wiki de Arch Linux hay una [colección de repositorios de usuarios con ejemplos de _dotfiles_](https://wiki.archlinux.org/title/Dotfiles#User_repositories) con ejemplos para intérpretes de comandos, gestores de ventanas y entornos de escritorio, editores, terminal, multiplexores de terminal entre varios otros programas.
 

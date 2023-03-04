@@ -25,7 +25,7 @@ En este artículo muestro cómo crear anotaciones para generar errores de compil
 
 {{< tableofcontents >}}
 
-### Qué es una anotación en Java
+## Qué es una anotación en Java
 
 Las anotaciones es una metainformación que se añade en el código fuente. Por sí mismas no hacen nada, es al procesarlas cuando se añade su comportamiento, sirve desde para añadir documentación, realizar comprobaciones de compilación, generar código o programar funcionalidades transversales.
 
@@ -60,7 +60,7 @@ No es habitual tener que crear un procesador de anotaciones, [Spring][spring] us
 * [Generación de código en tiempo de ejecución con Byte Buddy][blogbitix-184]
 * [Formas de reducir el código de las clases POJO de Java][blogbitix-272]
 
-### Procesador de anotaciones
+## Procesador de anotaciones
 
 El JDK ofrece una API para el desarrollo de procesadores de anotaciones. Un procesador de anotaciones es una clase que implementa la interfaz [Processor](javadoc11:java.compiler/javax/annotation/processing/Processor.html), normalmente al crear un procesador de anotaciones se extiende de la clase [AbstractProcessor](javadoc11:java.compiler/javax/annotation/processing/AbstractProcessor.html).
 
@@ -72,7 +72,7 @@ Con la infraestructura de servicios de Java se define el procesador de anotacion
 
 {{< code file="javax.annotation.processing.Processor" language="plain" options="" >}}
 
-#### Generar código fuente
+### Generar código fuente
 
 Utilizando el servicio _Filer_ el procesador de anotaciones es capaz de generar nuevos archivos de código fuente. En este ejemplo se muestra como generar una clase que implementa el patrón _Builder_ para la clase _Foo_ anotada con la anotación _@Builder_. El procesador de anotaciones explora los elementos de la clase y con las propiedades que descubre genera el código fuente de la clase y los métodos adecuados de la clase _Builder_. El procesador de anotaciones en este caso emite el resultado mediante un [PrintStream](javadoc11:java.base/java/io/PrintStream.html).
 
@@ -86,7 +86,7 @@ El uso de la clase _builder_ es igual que cualquier otra clase del proyecto.
 
 {{< code file="Main.java" language="java" options="" >}}
 
-#### Realizar comprobaciones de compilación
+### Realizar comprobaciones de compilación
 
 La anotación _@Value_ es una anotación mediante la cual en tiempo de compilación se comprueba que una clase tiene redefinidos en este caso los métodos _equals()_, _hashCode()_ y _toString()_. Es importante [implementar correctamente los métodos _equals()_, _hashCode()_][blogbitix-199] porque son usados por las colecciones, una implementación de estos que no cumple con los contratos de los métodos da lugar a potenciales errores y comportamientos anómalos. En caso de que la clase anotada no tenga redefinidos estos métodos se emite una advertencia de compilación.
 
@@ -98,7 +98,7 @@ La clase _Foo_ al estar anotada con la anotación _Foo_ pero no redefinir los m�
 
 {{< code file="System.out" language="plain" options="" >}}
 
-### Procesador de anotaciones en Gradle
+## Procesador de anotaciones en Gradle
 
 Para que Gradle utilice los procesadores de anotaciones definidos en una librería hay que declararlo en la sección de dependencias mediante _annotationProcessor_.
 

@@ -27,7 +27,7 @@ La aplicación [Google Authenticator][google-authenticator] para dispositivos m�
 
 Dado que los códigos de verificación tienen un tiempo de vida corto, habitualmente de 30 segundos, y acceder al generador del segundo factor de autenticación requiere acceso físico al dispositivo móvil la combinación de que las credenciales queden comprometidas es significativamente más difícil y por tanto la seguridad aumenta al mismo tiempo. Los principales servicios de internet como [Google][google], [Amazon][amazon-affiliate], [PayPal][paypal] o [Twitter][twitter] y otros servicios utilizados por millones de usuarios permiten ya utilizar 2FA, un fallo en su seguridad por la cantidad de usuarios e importante información que registran les supondría una muy mala imagen, pérdida de ingresos, costes, reputación, usuarios o dependiendo de la gravedad del fallo y los datos comprometidos multas millonarias. Cualquiera de estos servicios importantes por el número de usuarios que los utilizan a diario a nivel mundial que deben garantizar gran seguridad ofrecen la posibilidad de [activar la verificación en dos pasos][blogbitix-530].
 
-### Librería para implementar segundo factor de autenticación en Java
+## Librería para implementar segundo factor de autenticación en Java
 
 A través de [Spring Security][spring-security] y la librería [aerogear-otp-java](https://github.com/aerogear/aerogear-otp-java) una aplicación Java puede implementar el segundo factor de autenticación o verificación en dos pasos de la misma forma que los servicios de Google, Amazon, PayPal o Twitter, incluso posibilitar de que el requerimiento de solicitar segundo factor de autenticación sea opcional según la preferencia de un usuario o como forma de que los usuarios progresivamente habiliten el 2FA. El primer paso es proporcionar al usuario una clave secreta a través de un código QR que codifica una clave secreta que se utiliza para generar los códigos de verificación, el usuario debe escanearlo con la aplicación Google Authenticator con la cámara para que genere código de 6 dígitos con una validez de 30 segundos en el momento de autenticarse, este paso se realiza en el momento de registrarse o de activar el 2FA si es opcional. Con Google Authenticator el código en vez con la cámara también se puede introducir mediante el teclado si la aplicación se lo proporciona en forma de texto en vez de como imagen QR. La ventaja del código QR es que es más rápido y cómodo.
 
@@ -47,7 +47,7 @@ El primer paso de la autenticación utilizando 2FA es introducir el usuario y co
 
 Validado el código del 2FA al usuario se le asignan los permisos que le corresponden en el sistema y que le otorgan permisos para realizar acciones, en este caso entrar a la página de inicio.
 
-### Ejemplo de implementación de segundo factor de autenticación en una aplicación Java
+## Ejemplo de implementación de segundo factor de autenticación en una aplicación Java
 
 La implementación en código contiene las clases que representan una cuenta en el sistema, en _InMemoryAccountRepository_ se crean dos usuarios _admin_ y _user_ con sus contraseñas en el ejemplo en texto plano y los roles que tiene asignados que les otorgarán permisos para realizar acciones en la aplicación.
 

@@ -25,7 +25,7 @@ Instalar algunas aplicaciones, herramientas o servicios no siempre es sencillo y
 
 En un futuro parece que Bitnami ofrecerá soporte para [Docker][docker] haciendo que no necesitemos ni siquiera un entorno de virtualización, ahorrando espacio en disco y ofreciendo el máximo rendimiento que ofrezca la máquina sin ningún tipo de penalización que impone virtualizar.
 
-### ¿Cómo empezar a usar Bitnami?
+## ¿Cómo empezar a usar Bitnami?
 
 A continuación explicaré la opción de usar Bitnami con VirtualBox, para el ejemplo usaré la aplicación de [GitLab][gitlab]. En la [guía de inicio rápido de Bitnami](https://docs.bitnami.com/virtual-machine/) están explicadas otras opciones y preguntas frecuentes, en este caso nos interesa la [sección para VirtualBox](https://docs.bitnami.com/virtual-machine/get-started-virtualbox/).
 

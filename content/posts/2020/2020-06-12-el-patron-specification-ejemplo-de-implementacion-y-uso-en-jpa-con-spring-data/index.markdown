@@ -30,7 +30,7 @@ En estos casos implementar el patrón de diseño _Specification_ ayuda a hacer e
 
 Los siguientes ejemplos implementan el patrón _Specification_ para comprobar si un objeto cumple una serie de condiciones de negocio y como Spring Data hace uso del patrón para construir las condiciones de las consultas de JPA. Los ejemplos incluyen teses que usan [la herramienta TestConainers para hacer pruebas de integración en Java][blogbitix-490] con la base de datos [PostgreSQL][postgresql] en un contenedor [Docker][docker].
 
-### El problema en las consultas
+## El problema en las consultas
 
 Suponiendo que se tiene la siguiente entidad del dominio con una serie de campos la idea primera y más directa para implementar si un producto cumple una serie de condiciones es añadir métodos en las clases, un método por cada condición. Por ejemplo, para buscar los productos que que son baratos, tienen un tiempo largo de existencia o un _sobrestock_.
 
@@ -40,7 +40,7 @@ Esta aproximación sencilla de implementar y suficiente en aplicaciones pequeña
 
 Aquí es donde el patrón  de diseño _Specification_ es de utilidad. Este patrón también es aplicable a las consultas presentes en las clases repositorio de acceso a la base de datos donde seguramente es más probable repetir la misma lógica de condiciones en varias consultas _hardcodeado_ en las SQLs. Con los mismos problemas, condiciones repetidas en varios métodos y proliferación de métodos de consulta. Esta es la razón de que [Spring Data][spring-data] implemente el patrón _Specification_.
 
-### Qué es y ventajas del patrón de diseño Specification
+## Qué es y ventajas del patrón de diseño Specification
 
 El patrón de diseño _Specification_ permite encapsular una pieza del conocimiento del dominio y rehusarla en diferentes partes de la aplicación. Utilizándolo se mueven estas reglas de negocio a clases llamadas _specifications_.
 
@@ -77,7 +77,7 @@ La siguiente prueba unitaria muestra con código el uso del patrón _Specificati
 
 {{< code file="ProductSpecificationTest.java" language="java" options="" >}}
 
-### Implementación para JPA con Spring Data
+## Implementación para JPA con Spring Data
 
 El proyecto Spring Data para el acceso a bases de datos con JPA implementa el patrón de diseño _Specification_, la interfaz [JpaSpecificationExecutor](https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaSpecificationExecutor.html) añade a los repositorios métodos de búsqueda que reciben un argumento de tipo [Specification](https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/domain/Specification.html).
 

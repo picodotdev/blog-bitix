@@ -29,7 +29,7 @@ La monitorización y las trazas son dos de las [necesidades de funcionalidad de 
 
 Para cubrir la necesidad de monitorización y trazas de las aplicaciones hay múltiples herramientas, entre las que tienen una licencia de software libre o de código abierto están la combinación de [Elasticsearch][elasticsearch], [Logstash][logstash] y [Kibana][kibana] también conocidas por las siglas _ELK_.
 
-### ElasticSearch, Logstash, Filebeat y Kibana
+## ElasticSearch, Logstash, Filebeat y Kibana
 
 ElasticSearch proporciona la indexación y el almacenamiento, Logstash que permite la recolección, tratamiento y envío a Elasticsearch y Kibana permite su consulta y visualización con una interfaz web.
 
@@ -57,7 +57,7 @@ Otra parte importante en las trazas es no incluir u ofuscar los datos sensibles 
 
 * [Ofuscar datos sensibles en las trazas con Log4j][blogbitix-383]
 
-### Ejemplo monitorización de trazas con ELK y Docker
+## Ejemplo monitorización de trazas con ELK y Docker
 
 ELK son en realidad tres herramientas individuales diferentes que en conjunto proporcionan la funcionalidad que permite monitorizar las trazas de los servicios de forma centralizada y almacenarlas para su consulta en un futuro. Pueden ser cuatro herramientas si se usa Logstash como intermediario entre Filebeat y Elasticsearch.
 

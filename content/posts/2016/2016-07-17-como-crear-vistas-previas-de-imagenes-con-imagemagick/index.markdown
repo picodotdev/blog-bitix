@@ -25,7 +25,7 @@ Si con antelación hacemos el escalado podremos ahorrar una buena cantidad de an
 
 Si tenemos unas pocas imágenes y no es algo que hagamos a menudo podemos usar una herramienta de retoque fotográfico como [GIMP][gimp] pero si tenemos muchas imágenes o es algo que hacemos de forma regular es conveniente automatizar la tarea, nos ahorraremos bastante tiempo de algo que es tedioso hacer de forma manual.
 
-### Crear una miniatura o vista previa
+## Crear una miniatura o vista previa
 
 Al igual que podemos [convertir imágenes entre diferentes formatos][elblogdepicodev-129] o [añadir marcas de agua a imágenes][elblogdepicodev-58] de forma automatizada con [Image Magick][imagemagick] podemos escalar imágenes para generar miniaturas o _thumbnails_ más pequeñas para que ocupen menos. El comando para escalar todas las imágenes de una extensión _jpg_ en este caso a un tamaño original de 1600 de ancho y 1067 de alto en pixeles conservando la proporción de la imagen es el siguiente:
 
@@ -43,7 +43,7 @@ Este sería una ejemplo de la imagen que tengo como fondo de escritorio. Su tama
 
 Los ahorros de espacio conseguidos anteriores son consecuencia de reducir el tamaño de la imagen, [utilizar el formato de imagen WebP en vez de _jpg_ y _png_][blogbitix-447] además permite conseguir importantes reducciones de tamaño del espacio ocupado por las fotografías e imágenes originales, en torno al 20% y 60%.
 
-### Escala de grises
+## Escala de grises
 
 Los siguientes comandos permiten crear imágenes en escala de grises.
 
@@ -54,7 +54,7 @@ Los siguientes comandos permiten crear imágenes en escala de grises.
     image1="image:201607-grayscale.webp" optionsthumb1="300x200" title1="Imagen en escala de grises"
     caption="Imagen en escala de grises" >}}
 
-### Convertir svg a jpg o png
+## Convertir svg a jpg o png
 
 Si la imagen original está en el formato escalar _svg_ para convertir a formatos _jpg_, _png_, o generar vistas previas el comando es similar indicando también el tamaño de la imagen deseada.
 

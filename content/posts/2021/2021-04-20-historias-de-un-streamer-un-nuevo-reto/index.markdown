@@ -20,7 +20,7 @@ Alex enciende la _Xbox_ y conecta el disco duro externo más vendido del momento
 
 Con la _capturadora_ que compró y el _micrófono_ tiene todo preparado y hoy es un día importante, se enfrenta a los mejores del instituto. Los _cascos_ bien ajustados y listo, se deja caer en la parte más alta de la isla.
 
-### Discos duros externos
+## Discos duros externos
 
 Sale a toda velocidad en busca de una fuente de armas. El [disco externo](https://mercadoactual.es/marca/seagate/discos-duros-externos) está encendido y graba de manera automática sus avances y también sus emociones. Se relaja en el momento en que observa por la mirilla y ve a su oponente que está en el campanario, pero falla el disparo dejando una estela de humo que puede localizarle.
 
@@ -36,11 +36,11 @@ Ha nacido **un nuevo _streamer_**.
 
 Esta es una breve historia, una ficción para explicar lo práctico que sería disponer de este tipo de discos. Y ahora damos algunas características especiales de este disco duro externo recomendado tan vendido.
 
-### Características del disco Seagate Game Drive - 2TB
+## Características del disco Seagate Game Drive - 2TB
 
 Tamaño del HDD 2.5", capacidad 2 TB (2000 GB), conector USB micro-USB B, versión USB 3.2 Gen 1 (3.1 Gen 1), tasa de transferencia de datos USB 480-5000 Mbit/s, color verde, alimentación USB, ancho 80 mm, profundidad 117 mm, altura 14.8 mm y peso 170 gr.
 
-#### Diseñado para Xbox
+### Diseñado para Xbox
 
 El disco duro externo [HDD portátil diseñado para Xbox One](https://mercadoactual.es/marca/seagate/seagate-game-drive) es una solución perfecta para liberar espacio de tu consola. Con 2 años de servicios _rescue_ y 2 TB. _Top ventas_ con miles de unidades vendidas. Es sin dudar una de las mejores opciones para el almacenamiento masivo de juegos y datos que se formatea automáticamente y sin problemas de compatibilidad.
 

@@ -27,7 +27,7 @@ Las novedades no son muy numerosas ya que en el periodo de seis meses da tiempo 
 
 {{< tableofcontents >}}
 
-### Introducción
+## Introducción
 
 En esta nueva versión de Java las novedades sin contar las incorporadas en vista previa son muy pocas la única es el _port_ a la arquitectura de procesadores RISC-V que aunque es una prometedora arquitectura de procesadores con la interesante propiedad de no tener costes de licencias por implementarla que probablemente vaya ganando cuota de mercado a día de hoy es muy minoritaria, tanto en el escritorio como en los servidores.
 
@@ -61,17 +61,17 @@ Artículos relacionados:
 {{< youtube
     video="vvXmO2ZMGsk" >}}
 
-### Nuevas características
+## Nuevas características
 
-#### Linux/RISC-V Port
+### Linux/RISC-V Port
 
 RISC-V es una es una arquitectura con un conjunto de instrucciones de código abierto, además de un diseño eficiente y moderno no requiere pagar licencias que lo hace interesante para muchas empresas y fabricantes al contrario de otras arquitecturas como ARM que requiere pagar licencias. RISC-V ya es soportado por varias herramientas de desarrollo importantes y hay una disponibilidad de hardware que va en aumento. Por estos motivos, una versión que permite usar Java en procesadores RISC-V es valiosa.
 
 El _port_ de Java para RISC-V incluye el intérprete el compilador JIT para el cliente y servidor y una implementación para todos los recolectores de basura soportados incluyendo ZGC y Shenandoah.
 
-### Nuevas características en vista previa
+## Nuevas características en vista previa
 
-#### _Record Patterns_
+### _Record Patterns_
 
 El _patern matching_ permite eliminar algunos _cast_ explícitos, esto ya ha sido aplicado en expresiones como condiciones. Ahora el _pattern matching_ se aplica a los _records_ que permite una forma de desestructurar este tipo de clases para obtener los elementos de _record_ en variables disponibles en el ámbito de uso de la expresión.
 
@@ -81,13 +81,13 @@ Al escribir la expresión de _pattern matching_ para un _record_ permite al mism
 
 {{< code file="record-patterns.java" language="java" options="" >}}
 
-#### _Foreign Function & Memory API_
+### _Foreign Function & Memory API_
 
 Esta característica facilita el uso del código nativo de forma eficiente y más sencilla que anteriormente con JNI, en esta nueva vista previa es un refinamiento de las versione anteriores incorporando los comentarios y sugerencias desde la última vista previa.
 
 Para muchos desarrolladores esta característica es irrelevante o solo se benefician de forma indirecta pero para otros que trabajan con software embebido o que desarrollan librerías Java que hacen uso de código nativo implementado en otros lenguajes supone una gran mejora.
 
-#### _Virtual Threads_
+### _Virtual Threads_
 
 Un sistema operativo como Linux solo es capaz de ofrecer a las aplicaciones una cantidad limitada de _threads_ ya que su consumo de recursos es elevado en el sistema y el cambio de contexto de unos a otros penaliza el rendimiento.
 
@@ -107,7 +107,7 @@ Los _threads_ virtuales y la concurrencia estructurada promete la simplicidad de
 {{< youtube
     video="I9hQvJO39uM" >}}
 
-#### _Structured Concurrency_
+### _Structured Concurrency_
 
 Los _threads_ virtuales permiten dedicar un _thread_ a cada tarea con lo que se prevé que las aplicaciones aprovechen poder utilizar una mayor número de _threads_, pero gestionarlos sigue siendo un problema ya que los hilos siguen siendo independientes y su depuración complicada.
 
@@ -118,7 +118,7 @@ La clase [StructuredTaskScope](javadoc19:/jdk.incubator.concurrent/jdk/incubator
 {{< code file="structured-concurrency-1.java" language="java" options="" >}}
 {{< code file="structured-concurrency-2.java" language="java" options="" >}}
 
-#### _Pattern Matching for switch_
+### _Pattern Matching for switch_
 
 El _pattern matching_ en las expresiones _switch_ han sido mejorados en esta nueva vista previa.
 
@@ -135,9 +135,9 @@ Soportar la etiqueta _null_ permite ahora escribir un switch de la siguiente for
 
 {{< code file="switch-null-label.java" language="java" options="" >}}
 
-### Otras novedades
+## Otras novedades
 
-#### Interpolación de cadenas (_String Templates_)
+### Interpolación de cadenas (_String Templates_)
 
 En un futuro es posible que Java incorpore al lenguaje la interpolación de cadenas con la [JEP 430: String Templates](https://openjdk.org/jeps/430). Facilitará la construcción de cadenas con una mezcla de cadenas y valores de variables que produzcan la cadena resultante deseada. La construcción de cadenas es algo muy utilizado en todos los programas con lo que la interpolación de cadenas será una mejora en la la construcción de cadenas que hace el código más legible.
 

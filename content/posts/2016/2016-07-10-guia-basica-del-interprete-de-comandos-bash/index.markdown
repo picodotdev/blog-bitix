@@ -25,7 +25,7 @@ El intérprete de comandos Bash junto con la combinación de otros programas pro
 
 {{< tableofcontents >}}
 
-### Tuberías y redirecciones
+## Tuberías y redirecciones
 
 Al ejecutar un comando podemos querer encadenar la salida de un comando con la entrada de otro, mediante una tubería. Uno de los puntos de la filosofía de los programas de los sistemas Unix es que realicen una o pocas tareas pero que lo hagan muy bien. Usando varios programas especializados en una tarea podemos juntarlos como si fuese piezas de Lego para realizarla tarea compleja que necesitamos, encadenando la salida de un comando como la entrada del siguiente.
 
@@ -48,7 +48,7 @@ Además de la salida estándar los programas tienen la salida de errores que pod
 
 {{< code file="sorteo-3.sh" language="bash" options="" >}}
 
-### Múltiples comandos
+## Múltiples comandos
 
 Si necesitamos ejecutar dos comandos seguidos podemos introducirlos en la misma línea en vez de individualmente, ejecutar un comando si el anterior se ha ejecutado correctamente con `&&` o al contrario ejecutar un comando si el anterior ha fallado con `||`. Si en la ubicación de trabajo que estamos existe un directorio no se podrá crear otro con el mismo nombre, dependiendo de las opciones de encadenamiento según el resultado del comando anterior se ejecutará o no el siguiente comando.
 
@@ -59,7 +59,7 @@ Si necesitamos ejecutar dos comandos seguidos podemos introducirlos en la misma 
     image1="image:multiples-comandos.webp" optionsthumb1="300x200" title1="Múltiples comandos en la misma línea"
     caption="Múltiples comandos en la misma línea" >}}
 
-### Variables e interpolación de cadenas
+## Variables e interpolación de cadenas
 
 Podemos definir variables locales en el _script_ o exportarlas para que estén accesibles en otros procesos e incluso interpolarlas en cadenas de la siguiente forma:
 
@@ -74,7 +74,7 @@ También podemos interpolar la salida de un comando dentro de una cadena:
     image1="image:variables.webp" optionsthumb1="300x200" title1="Interpolación en cadenas de variables y comandos"
     caption="Interpolación en cadenas de variables y comandos" >}}
 
-### Invocaciones de comandos anteriores
+## Invocaciones de comandos anteriores
 
 Con el comando `history` podemos ver el historial completo de comandos que hemos ejecutado con anterioridad. Al lado de cada comando vemos un identificador numérico que podemos usar para ejecutarlo de nuevo con `![identificador]`. Con el siguiente historial podemos ejecutar el comando con identificador 512 indicando una exclamación y el identificador, `!512`. Si queremos ejecutar el último comando introducido podemos usar la doble exclamación `!!`. Si queremos ejecutar el último comando completo de cierto comando podemos usar `![comando]` en vez de su identificador.
 
@@ -85,7 +85,7 @@ Con el comando `history` podemos ver el historial completo de comandos que hemos
 
 Hay más [formas de ejecutar comandos del historial](http://www.softpanorama.org/Scripting/Shellorama/bash_command_history_reuse.shtml). Si quisieramos invocar un comando del historial cambiando algún argumento podemos hacer una búsqueda en orden inverso con <kbd>Ctrl+r</kbd>.
 
-### Scripts
+## Scripts
 
 Los _scritps_ son archivos de texto con permisos de ejecución interpretados por Bash u otro intérprete que ejecuta los comandos del _script_, es la forma de automatizar varios comandos. Al inicio de los _scripts_ se suele incluir el [shebang](https://es.wikipedia.org/wiki/Shebang) donde se indica el programa encargado de interpretar el _script_, puede ser Bash o un programa escrito en un lenguaje de programación como [Python][python]. Se puede indicar de varias formas pero las preferidas son las siguientes:
 
@@ -95,7 +95,7 @@ Una vez escrito el _script_ antes de ejecutarlo debemos darle permisos de ejecuc
 
 {{< code file="scripts-2.sh" language="bash" options="" >}}
 
-### Argumentos
+## Argumentos
 
 Al igual que los comandos pueden recibir opciones y argumentos los _scripts_ también, hacer uso de ellos son mediante las siguientes variables:
 
@@ -105,7 +105,7 @@ Al igual que los comandos pueden recibir opciones y argumentos los _scripts_ tam
 * $\*: todos los argumentos al invocar el _script_.
 * $?: valor del estado de salida del último comando ejecutado. Normalmente se usa _0_ para los comandos ejecutados correctamente y _1_ para los que han terminado incorrectamente.
 
-### Funciones, _for_, _switch_, _if_, comparaciones
+## Funciones, _for_, _switch_, _if_, comparaciones
 
 En los _scripts_ Bash se pueden definir funciones para reutilizar parte del _script_. Pueden incluir argumentos.
 
@@ -166,7 +166,7 @@ Las expresiones anteriores se pueden combinar:
 * [ EXPR1 -a EXPR2 ]: verdadero si ambas _EXPR1_ y _EXPR2_ son verdadero, operador _and_.
 * [ EXPR1 -o EXPR2 ]: verdadero si alguna de _EXPR1_ y _EXPR2_ son verdadero, operador _or_.
 
-### Control de trabajos
+## Control de trabajos
 
 El comando `jobs` obtenemos una lista de trabajos que se está ejecutando junto con su identificador y estado, con la combinación de teclas <kbd>Ctrl+z</kbd> dejamos el proceso actual detenido y en segundo plano, con `fg` lo devolvemos a primer plano y si estaba detenido se continua su ejecución, con `bg` si estaba detenido continua su ejecución en segundo plano.
 

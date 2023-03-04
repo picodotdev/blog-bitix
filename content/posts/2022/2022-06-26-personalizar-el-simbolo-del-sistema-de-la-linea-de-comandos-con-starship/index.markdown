@@ -25,7 +25,7 @@ Dada la utilidad de la línea de comandos esta se usa y se seguirá usando. En l
 
 {{< tableofcontents >}}
 
-### Formas de personalizar el símbolo del sistema de la línea de comandos
+## Formas de personalizar el símbolo del sistema de la línea de comandos
 
 La información y formato del símbolo del sistema por defecto depende del intérprete de comandos usado, [bash][bash] tiene un formato diferente de [zsh][zsh]. Sin utilidades adicionales tanto bash como zsh permiten personalizar el símbolo del sistema cambiando la información que muestra, el formato y los colores.
 
@@ -47,7 +47,7 @@ Aún así las personalizaciones que ofrecen tanto bash como zsh son propias de c
     image1="image:bash-prompt-1.webp" optionsthumb1="650x450" title1="Símbolo del sistema de bash"
     caption="Símbolo del sistema de bash" >}}
 
-### El configurador del símbolo del sistema Starship
+## El configurador del símbolo del sistema Starship
 
 [Starship][starship] es una utilidad para configurar el símbolo del sistema fácil de instalar, sencillo de configurar, muchas opciones y elementos de configuración, moderno, tiene numerosos módulos que soportan múltiples tecnologías de las cuales mostrar información y compatible tanto con bash como zsh entre muchos otros intérpretes de comandos.
 
@@ -63,7 +63,7 @@ En [Arch Linux][archlinux] se instala con el comando del gestor de paquetes.
 
 {{< code file="pacman-install-starship.sh" language="bash" options="" >}}
 
-### Configuración de Starship
+## Configuración de Starship
 
 Además de ofrecer un alto grado de personalización la configuración de Starship es muy sencilla con la ayuda de su [documentación para cada módulo de configuración](https://starship.rs/config/). Dado que tiene una buena cantidad de opciones lo más rápido es partir de una configuración ya creada y adaptarla ligeramente a las necesidades o preferencias personales.
 

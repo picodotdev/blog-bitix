@@ -30,7 +30,7 @@ Utilizar el protocolo HTTP no es suficiente para que en servicio se considere qu
 
 {{< tableofcontents >}}
 
-### Los niveles de madurez REST
+## Los niveles de madurez REST
 
 REST se basa en los mismos estándares que se utilizan para las páginas web, estos son el protocolo HTTP y los hiperenlaces que construyen la web. El protocolo HTTP tiene una semántica para cada una de sus operaciones que incluyen las diferentes operaciones básicas de CRUD (crear, leer, actualizar y eliminar), códigos de estado para el resultado de la operación y direcciones de los recursos. Las páginas web devuelven HTML, los servicios REST como formato de datos suelen emplear JSON. Los servicios REST son la aplicación de los mismos conceptos de la web a integración de servicios para computadoras, en vez de a humanos o navegadores web.
 
@@ -38,7 +38,7 @@ Los niveles de madurez de REST son la aplicación de la semántica del protocolo
 
 Muchos servicios que se denominan REST no cumplen con todos los niveles de madurez de REST, no es suficiente utilizar HTTP como transporte, utilizar URLs bonitas para los recursos y usar verbos HTTP. No son pocos los servicios que se denominan como REST pero que no implementan todos los niveles de madurez.
 
-#### Nivel 0, transporte HTTP
+### Nivel 0, transporte HTTP
 
 En este nivel simplemente se usa HTTP como medio de transporte para hacer llamadas remotas sin usar la semántica de la web. Cada petición tiene su propia dirección de _endpoint_, estas URLs puede que sigan algunas convenciones como utilizar guiones medios para mejorar legibilidad de las URLs, preferiblemente letras en minúsculas y sin extensiones en las URLs, un _endpoint_ puede devolver los datos en el formato solicitado según la cabecera _Accept_ de modo que la extensión es redundante o no es necesaria.
 
@@ -46,7 +46,7 @@ En este nivel de madurez las URLs suelen incluir verbos que es una mala práctic
 
 {{< code file="rest-0.txt" language="plain" options="" >}}
 
-#### Nivel 1, recursos
+### Nivel 1, recursos
 
 Los recursos son una parte fundamental del protocolo HTTP, cada recurso tiene su propia dirección web, _endpoint_ o URL. Normalmente en una aplicación los modelos corresponden con su propio recurso junto a su propio  _endpoint_ o URL.
 
@@ -56,7 +56,7 @@ Los _endpoints_ en este nivel de madurez son de la siguiente forma.
 
 {{< code file="rest-1.txt" language="plain" options="" >}}
 
-#### Nivel 2, verbos
+### Nivel 2, verbos
 
 Las operaciones que se realizan sobre los recursos son las operaciones de creación, obtención, actualización y eliminación o CRUD. Usando los diferentes verbos del protocolo HTTP es posible asignar a cada uno de ellos las diferentes operaciones básicas de manipulación de datos.
 
@@ -87,7 +87,7 @@ Tanto para enviar datos como obtener datos el formato utilizado es JSON por ser 
 
 Aunque hasta este nivel puede ser suficiente para implementar un servicio y proporcionar la funcionalidad, no es suficiente para considerarlo RESTful, es necesario el siguiente nivel de madurez con los controles _hypermedia_.
 
-#### Nivel 3, controles _hypermedia_
+### Nivel 3, controles _hypermedia_
 
 Este nivel se divide en dos aspectos, negociación de contenido y descubrimiento de enlaces del recurso. Este es el nivel al que muchas implementaciones de servicios REST no implementan por mayor sencillez aún sin las ventajas que proporcionan los controles _hypermedia_ o por los problemas de los controles _hypermedia_ que si son ignorados ni utilizados no proporcionan ninguna de sus ventajas.
 
@@ -109,7 +109,7 @@ Con HATEOAS en vez de que los clientes construyen las URLs de los recursos para 
 
 HAL es un formato de tipos de datos que permite codificar no sólo datos sino también controles _hypermedia_, indicando a los consumidores otras partes de la API a las que llamar. El enlace _self_ indica al propio recurso, el enlace _root_ indica el recurso de la colección, los enlaces _add_ y _delete_ indican dos operaciones posibles.
 
-### Ventajas y problemas de HATEOAS
+## Ventajas y problemas de HATEOAS
 
 Al cambiar la estructura de las URLs se rompe la compatibilidad de la API con versiones anteriores, uno de los beneficios de HATEOAS es que si la estructura de la URL de la API puede cambiar sin afectar a los clientes al describir estos las URLs de forma dinámica.
 
@@ -123,7 +123,7 @@ Los clientes de la API también tienen complejidad añadida para entender la sem
 
 Si la API es pública seguramente algún cliente la use de forma que la usa incorrectamente sin usar el _hypermedia_, haciendo a HATEOAS inútil.
 
-### Ejemplo de recurso REST con HATEOAS y ejemplo de código
+## Ejemplo de recurso REST con HATEOAS y ejemplo de código
 
 En el artículo [Cómo documentar una API REST con Swagger implementada con Spring Boot][blogbitix-584] incluía como ejemplo un servicio REST que únicamente implementa hasta el nivel de madurez 2 de REST, esta es la revisión del servicio para implementar hasta el nivel 3 incluyendo _hypermedia_ con HATEOAS y HAL.
 
@@ -152,7 +152,7 @@ Para usar las clases que ofrecen el soporte para HATEOAS es necesario incluir la
 
 {{< code file="build.gradle" language="groovy" options="" >}}
 
-### Documentación con Swagger
+## Documentación con Swagger
 
 Swagger permite documentar un servicio REST, también incluye soporte para documentar un servicio que cumpla con el principio de _hypermedia_ HATEOAS. Swagger proporciona varias anotaciones que se incluyen en la interfaz del servicio, al procesarlas genera un esquema de la interfaz del servicio con [OpenAPI][openapi] a partir del cual genera la documentación que incluye los _endpoints_ y argumentos, verbos, códigos de respuesta y datos de los modelos. Swagger también permite hacer llamadas a los servicios y obtener el comando _curl_ para hacer la petición desde la línea de comandos.
 

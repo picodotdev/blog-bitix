@@ -19,10 +19,10 @@ tags: ["blog", "planeta-codigo"]
 
 Esta es la última entrada que publicaré en el [elblogdepicodev.blogspot.com.es][elblogdepicodev] o la primera de [picodotdev.github.io/blog-bitix][blogbitix] dependiendo del blog al que hayas accedido, es decir, seguiré teniendo un blog y escribiendo sobre la temática alrededor de la tecnología como hasta ahora pero a partir de este momento todo el nuevo contenido que publique lo haré en el nuevo blog [picodotdev.github.io/blog-bitix][blogbitix], por lo que si estás suscrito al feed de elblogdepicodev te recomiendo que te suscribas al [feed de bitix][blogbitix-feed] para no perderte ninguna de las nuevas entradas que publique.
 
-### Que está por venir en Bitix
+## Que está por venir en Bitix
 Tengo bastante cotenido por publicar en el futuro más o menos inmediato empezando por continuar con la [serie de artículos sobre criptografía, GPG y DNI electrónico][elblogdepicodev-181], instalar la [Raspberry Pi][raspberrypi] en una memoria USB o disco duro externo para ganar velocidad en vez de en la tarjeta SD como he explicado en la [guía de instalación con Arch Linux para la RPi][elblogdepicodev-108], como usar la Raspberry Pi como «media center» con [GeeXboX][geexbox], explicar como usar [Octopress][octopress] y [GitHub Pages][github-pages] para bloggear y como personalizarlo, programas para «scrapear» webs, mi experiencia y consejos como blogger, el patrón de diseño no operation, usar marcadores con herramientas de logging como [SLF4J](http://www.slf4j.org/), el servidor de aplicaciones [JBoss](http://jbossas.jboss.org/) y [Wildfly](http://www.wildfly.org/) y muchas otras cosas que tengo apuntadas o que se me vayan ocurriendo según publico estas. Desde luego tengo contenido para seguir escribiendo en el nuevo blog que al ritmo de una entrada por semana continuaré publicando.
 
-### ¿Por que este cambio?
+## ¿Por que este cambio?
 
 Por varias razones, [blogger][blogger] es una plataforma estupenda y a mi durante todo este tiempo me ha servidor perfectamente, es sencillo usarla y en muy poco tiempo se puede tener un blog listo para empezar a escribir en él sin necesidad de muchos conocimientos. Pero también tiene varias desventajas, algunas de ellas son:
 
@@ -33,7 +33,7 @@ Por varias razones, [blogger][blogger] es una plataforma estupenda y a mi durant
 * Parece que blogger no es una de las herramientas que Google cuide (al igual que otras varias), las actualizaciones son escasas y con el tiempo van surgiendo herramientas mejores que blogger.
 * Los ejemplos de código los añado a cada entrada utilizando [Gist][github-gist] e introducir la referencias adecuadas en cada entrada implica editar e introducir código en la vista html. Además en la vista del editor wysiwyg los gist no se visualizan y si no se tiene cuidado se pueden borrar sin querer con lo que hay que volver a introducirlos. Nuevamente incluir las referencias de los gist me consume tiempo.
 
-### ¿Que herramienta de _blogging_ he elegido?
+## ¿Que herramienta de _blogging_ he elegido?
 
 La plataforma de_blogging_ que he elegido ha sido [Octopress][octopress], una plataforma de_blogging_ que en mi caso solventa casi todos los problemas o molestias  que actualmente me ocasiona blogger descritos en los anteriores puntos. Es una plataforma basada en [Ruby][ruby] y [Jekyll][jekyll], uno de los precursores de una nueva generación de plataforma para blogear y es la plataforma de referencia para escribir en blogs y alojarlos en [GitHub Pages][github-pages]. Aún asi hay alternativas parecidas en otros lenguajes de programación como en Python con [Pelican](http://docs.getpelican.com). La verdad es que usar Pelican en un principio me atraía más porque con ello quizá aprendiese algo de Python pero el hecho de que Jekyll sea la plataforma de referencia de GitHub es un punto a su favor.
 

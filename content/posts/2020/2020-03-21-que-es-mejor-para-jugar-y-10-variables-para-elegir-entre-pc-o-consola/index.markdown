@@ -33,13 +33,13 @@ En mi opinión no me parece que haya una opción clara ganadora para todas las p
 
 {{< tableofcontents >}}
 
-### Versatilidad
+## Versatilidad
 
 El PC es un producto polivalente capaz de realizar múltiples funciones, una de ellas los juegos pero también tareas ofimáticas, navegación por internet, descargas y muchas otras. Las consolas aunque en realidad son como un PC son un producto que solo se pueden utilizar exclusivamente para juegos.
 
 De modo que si una persona compra una consola es probable que también necesite comprar también un PC cosa que con únicamente el PC ya tendría cubiertas todas las necesidades informáticas que necesite. Aunque no tiene por que ser así ya que los _smartphones_ pueden suplir algunas de las funciones de los PC.
 
-### Precio hardware
+## Precio hardware
 
 El precio es uno de los puntos más decisivos a lo hora de tomar la decisión entre PC o consola. Dado que un PC es capaz de realizar múltiples funciones sin nada más adicionalmente puede parecer que es una opción más económica pero también depende de qué componentes monte el PC.
 
@@ -53,7 +53,7 @@ Pero una consola no cubre todas las necesidades y es posible que también sea ne
 
 La generación de una consola está en torno a 7 años y un PC _gamer_ puede estar en torno a eso para seguir jugando aceptablemente bien a los últimos lanzamientos. Un PC ofimático de 400 € y consola de 400 € empieza a compensar si el precio del PC _gamer_ está a partir de 1000 €.
 
-### Precio juegos
+## Precio juegos
 
 Tanto en PC como en consola los se hacen muy frecuentemente ofertas, prácticamente cada semana, con grandes descuentos que pueden partir del 25% hasta llegar al 90%, y un juego que cuesta 70 € quedarse en 10 € y otros quedarse en 4 €. A 4 € juegos que en su momento de lanzamiento eran de lo mejor que había y que siguen siendo juegazos como Watch Dogs y The Witcher 3. Es fácil [encontrar las ofertas de los juegos][blogbitix-527] ya que algunas de las propias tiendas ofrecen crear listas de favoritos y recibir notificaciones, otras páginas especializadas además incluso ofrecen un histórico de los precios.
 
@@ -61,7 +61,7 @@ En el PC con plataformas como [Steam][steam] y [Epic Games][epicgames] quizá al
 
 Aún con esto dependiendo del precio del PC puede seguir compensando una consola incluso si se es del tipo de jugador que juega muchos de juegos.
 
-### Tipo jugador
+## Tipo jugador
 
 Hay juegos que exigen más a los PC que otros. Y hay personas que juegan exclusivamente a uno o pocos juegos y otros jugadores que juegan a muchos juegos incluídas las novedades.
 
@@ -69,17 +69,17 @@ Los juegos competitivos en línea no requieren potentes PC y hay personas que ju
 
 Otras personas juegan a las novedades como Red Dead Redemption 2 que a medida que pasa el tiempo requieren PC más potentes. Si se es de este tipo de jugador el PC más consola puede ser más económico.
 
-### Mando o teclado y ratón
+## Mando o teclado y ratón
 
 Algunos juegos se juegan mejor con teclado y ratón que con mando. Y algunas personas prefieren teclado y ratón para jugar.
 
 Esto no influye en el precio pero sin en la decisión de una persona de elegir PC o consola independientemente del precio.
 
-### Juego en línea
+## Juego en línea
 
 Otra diferencia entre PC y consola es que en los PC no es necesario pagar por poder jugar a través de internet con otras personas. En la PlayStation si es necesario adquirir una suscripción para algunos juegos que en el caso de la PlayStation llega a los 60 € por doce meses de juego.
 
-### Sistema
+## Sistema
 
 La mayoría de los juegos disponibles en PC se desarrollan para el sistema [Windows][windows] de modo que hace necesario tener instalado este sistema operativo para evitar problemas de compatibilidades. La licencia de Windows llega a los 100 € a incluir en el precio del PC.
 
@@ -94,19 +94,19 @@ También puede influir el tipo de PC que se quiera tener, un PC compacto como lo
 * [Decidido a comprar un Intel NUC entre las opciones que he evaluado][blogbitix-329]
 * [Desempaquetado de PlayStation 4 Slim de 1 TB][blogbitix-432]
 
-### Retrocompatibilidad
+## Retrocompatibilidad
 
 Los juegos de las consolas requieren del hardware de la consola y cambiar a la siguiente generación puede que no sea posible jugar a los juegos antiguos en ella. En los PC comprar un nuevo PC no solo es posible jugar a los juegos antiguos sino que además es posible jugarlos en mejores calidades e incluso jugar a juegos de consola antiguos con emuladores.
 
 En el caso de la PS5 y Xbox Series X se ha anunciado que son retrocompatibles con los juegos de anteriores generaciones, la PS5 con la mayoría de los juegos de la PS4 y en el caso de la Xbox Series X con todo el catálogo de las anteriores.
 
-### Disponibilidad juegos
+## Disponibilidad juegos
 
 Algunos pocos juegos son exclusivos de una plataforma y para jugarlos hay que tener esa plataforma. Esto es un argumento de venta para las consolas y el hecho de que haya más exclusivos en estas.
 
 Dependiendo si un juego al que se quiere jugar es exclusivo de esa plataforma es necesario adquirirla. Algunos juegos son exclusivos de una plataforma de forma temporal y pasado ese tiempo sale en el resto de plataformas si a uno no le importa esperar. E incluso Horizon Zero Dawn que era exclusivo de PS4 se ha anunciado que saldrá en PC.
 
-### Juegos en streaming
+## Juegos en streaming
 
 En el futuro es posible que la decisión entre elegir PC y consola se termine y se sustituya por servicios de juegos mediante en _streaming_ que ya están disponibles como [Stadia][google-stadia], [Amazon Luna][amazon-luna], [GeForce Now][nvidia-geforce-now] o [PlayStation Now][playstation-now].
 

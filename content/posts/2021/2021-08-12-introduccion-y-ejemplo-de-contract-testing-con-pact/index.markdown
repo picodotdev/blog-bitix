@@ -31,7 +31,7 @@ Para garantizar que los cambios realizados en una API no introduzcan problemas d
 
 {{< tableofcontents >}}
 
-### Las pruebas de contrato
+## Las pruebas de contrato
 
 En el caso de las API con REST para garantizar que tanto el consumidor y el productor son compatibles a veces se realizan pruebas de integración o pruebas _end-to-end_ o E2E, sin embargo, estas son costosas de realizar en tiempo y esfuerzo requerido. Para simplificar y automatizar estas pruebas de integración una opción es realizar pruebas de contrato.
 
@@ -41,7 +41,7 @@ Con el contrato generado por el consumidor las interacciones se reproducen en la
 
 Las pruebas de contrato permiten convertir las pruebas de integración en pruebas unitarias, para ello separa las pruebas del consumidor y las pruebas de productor. Una herramienta de pruebas de contrato es Pact.
 
-### La herramienta Pact
+## La herramienta Pact
 
 [Pact][pact] es una herramienta para realizar pruebas de contrato que soporta el lenguaje Java con la librería [JUnit][junit] para realizar pruebas unitarias entre otros lenguajes.
 
@@ -55,7 +55,7 @@ Pact en la parte consumidor también hace las funciones de servidor sin embargo 
 {{< youtube
     video="IetyhDr48RI" >}}
 
-### Ejemplo de _contract testing_ con Pact
+## Ejemplo de _contract testing_ con Pact
 
 Este ejemplo consiste  en un _endpoint_ REST programado usando [Spring Boot][spring-boot] que acepta un argumento opcional en la ruta y un parámetro de consulta. La respuesta consiste simplemente en un mensaje en forma de cadena que varía según la cabecera _Accept-Language_.
 
@@ -66,19 +66,19 @@ El consumidor del servicio está implementado usando [la librería Retrofit para
 {{< code file="Service.java" language="java" options="" >}}
 {{< code file="ServiceClient.java" language="java" options="" >}}
 
-#### Pruebas unitarias del consumidor
+### Pruebas unitarias del consumidor
 
 En los casos de prueba se codifican las interacciones esperadas por el cliente que son proporcionadas por Pact en un servidor _mock_, las pruebas unitarias usan el cliente HTTP con la dirección del servidor _mock_ de Pact que es proporcionado como un parámetro en los métodos de _test_.
 
 {{< code file="ServiceConsumerPactTest.java" language="java" options="" >}}
 
-#### El documento del contrato generado por el consumidor
+### El documento del contrato generado por el consumidor
 
 Al finalizar las pruebas unitarias del consumidor Pact genera en el directorio _build/pact_ un archivo con las interacciones y sus datos que ha requerido el consumidor en sus pruebas unitarias.
 
 {{< code file="serviceConsumer-serviceProvider.json" language="json" options="" >}}
 
-#### Pruebas unitarias del proveedor
+### Pruebas unitarias del proveedor
 
 Este archivo es usado para realizar las pruebas unitarias de contrato de la parte proveedora, Pact lee el archivo de interacciones del consumidor y las lanza contra la parte proveedora comprobando los resultados devueltos.
 

@@ -27,7 +27,7 @@ Para reparar los efectos de estos errores o simplemente para ejecutar de forma e
 
 {{< tableofcontents >}}
 
-### La funcionalidad principal y las tareas administrativas
+## La funcionalidad principal y las tareas administrativas
 
 Seguramente la funcionalidad principal que proporciona una aplicación no requiera ninguna acción, mantenimiento ni acciones manuales. La aplicación mientras esté en funcionamiento proporcionará su servicio ya sea una aplicación web que sirva contenido para un navegador web o una API basada en REST que proporcione datos y reciba peticiones de otras aplicaciones.
 
@@ -35,7 +35,7 @@ Otras funcionalidades relacionadas con la aplicación se desean ejecutar por eje
 
 Hay que poder acceder a ellas de alguna forma, idealmente mejor sin desplegar una nueva versión por los riesgos de un despliegue sobre todo si los procesos y aseguramiento de calidad no permiten hacer despliegues con confianza o los despliegues requieren demasiado tiempo o suponen una interrupción del servicio. Que esté la funcionalidad disponible e invocarla en el momento que se necesite hace más sencilla la necesidad.
 
-### La tecnología JMX de Java
+## La tecnología JMX de Java
 
 La tecnología [JMX][java-jmx] es un estándar de Java que define una arquitectura para administrar y monitorizar aplicaciones y servicios Java. Desde el punto de vista del desarrollador JMX requiere programar unas clases de Java siguiendo las convenciones del estándar denominadas MBean. Las instancias de estas clases son registradas y administradas por el contenedor de JMX donde quedan disponibles para uso.
 
@@ -47,7 +47,7 @@ En el artículo [Interfaz de monitorización e instrumentalización con JMX en a
 {{< code file="application.yml" language="java" options="" >}}
 {{< code file="build.gradle" language="groovy" options="" >}}
 
-### La interfaz Hawtio
+## La interfaz Hawtio
 
 La tecnología de JMX es una buena opción como punto de entrada en la implementación de esas tareas administrativas. Sin embargo, es necesario una forma de poder invocarlas.
 
@@ -62,7 +62,7 @@ Las operaciones administrativas seguramente sean funcionalidades que realicen ta
     image1="image:hawtio-console.webp" optionsthumb1="650x450" title1="Consola de Hawtio como un actuator en aplicación de Spring Boot"
     caption="Consola de Hawtio como un actuator en aplicación de Spring Boot" >}}
 
-### Añadir seguridad a la interfaz de Hawtio con HashiCorp Boundary
+## Añadir seguridad a la interfaz de Hawtio con HashiCorp Boundary
 
 Por motivos de seguridad es deseable que la consola web de Hawtio no esté accesible mediante una conexión directa. [Bondary][boundary] es uno de los productos de [HashiCorp][hashicorp] que proporciona la funcionalidad de un bastión y un _proxy_ de conexión a servicios internos, es más seguro que una VPN ya que a diferencia de una VPN únicamente otorga acceso a los sistemas necesarios y no a toda una red interna completa.
 

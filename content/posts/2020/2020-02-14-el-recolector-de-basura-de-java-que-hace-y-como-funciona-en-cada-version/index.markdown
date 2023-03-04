@@ -55,7 +55,7 @@ Otros artículos relativos a la recolección de basura y su configuración son l
 
 {{< tableofcontents >}}
 
-### Cómo funciona el recolector de basura
+## Cómo funciona el recolector de basura
 
 En un lenguaje orientado a objetos como Java los datos están contenidos en los objetos. Los objetos son almacenados en el espacio de memoria del sistema denominado _heap_ distinta a la memoria del código ejecutable del programa, datos para las constantes y de las pilas de memoria para los argumentos y valores de retorno entre métodos.
 
@@ -95,7 +95,7 @@ Para reducir las pausas de los recolectores de basura hay dos estrategias:
 
 El recolector de basura por defecto en Java 8 usar la estrategia paralela, usa varios _threads_ para tener un alto rendimiento. Otras versiones de algoritmos emplean ambas técnicas simultáneamente para tener un alto rendimiento y apenas sin pausas. Hay dos áreas de mejora en los algoritmos de recolección de basura y medir su desempeño. La primera es el rendimiento, cuanta cantidad de tiempo de CPU de la aplicación es gastada en realizar recolección de basura en vez de ejecutar código de la aplicación. La segunda es el tiempo de latencia en las pausas.
 
-### Recolector de basura Parallel
+## Recolector de basura Parallel
 
 El recolector de basura _parallel_ emplea zonas para segregar los objetos, la zona de objetos jóvenes y la zona de objetos viejos. Inicialmente los objetos se crean en la zona de objetos jóvenes, cuando han sobrevivido a varios ciclos del recolector de basura son movidos a la zona de objetos viejos. 
 
@@ -105,7 +105,7 @@ Es el recolector de basura por defecto en Java 8 y anteriores. La opción para u
 
 {{< code file="java-option-gc-parallel.txt" language="plain" options="" >}}
 
-### Recolector de basura Garbage First o G1
+## Recolector de basura Garbage First o G1
 
 El recolector de basura G1 usa ambas estrategias la paralela y la concurrente. Usa _threads_ concurrentes mientras la aplicación está funcionando buscando los objetos vivos y usa la estrategia paralela para realizar la recolección y compactación rápidamente manteniendo las pausas bajas.
 
@@ -124,7 +124,7 @@ G1 en general es un recolector con un buen balance entre rendimiento y restricci
 
 {{< code file="java-option-gc-g1.txt" language="plain" options="" >}}
 
-### Recolector de basura Shenandoah
+## Recolector de basura Shenandoah
 
 Usa la misma disposición de regiones que G1 y usa el mismo sistema de escaneo concurrente para calcular la cantidad de objetos vivos en cada región. Difiere en que la compactación también es concurrente, de modo que no necesita limitar el número de regiones a recolectar para minimizar los tiempos de las pausas.
 
@@ -138,7 +138,7 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
 
 {{< code file="java-option-gc-shenandoah.txt" language="plain" options="" >}}
 
-### Recolector de basura ZGC
+## Recolector de basura ZGC
 
 Para los algoritmos que realizan pausas incrementar la memoria _heap_ mejora el rendimiento dado que el número de pausas es menor por la menor necesidad de liberar memoria pero hace que las pausas sean más largas porque hay más trabajo que realizar dado que la memoria total es mayor.
 

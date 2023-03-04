@@ -27,7 +27,7 @@ Cuando la funcionalidad ofrecida por Gradle no es suficiente, no existe un _plug
 
 {{< tableofcontents >}}
 
-### Por qué desarrollar un _plugin_ propio de Gradle
+## Por qué desarrollar un _plugin_ propio de Gradle
 
 Es seguro que en una empresa a lo largo del tiempo esta desarrolle varios proyectos, siendo varios una cantidad de unas pocas decenas a cientos dependiendo del tamaño de la organización. Con múltiples proyectos por motivos de mantenimiento el copiar y pegar código entre proyectos no es una opción viable con lo que también seguro que surge la necesidad de reutilizar código propio de la organización entre los diferentes proyectos tal y como se reutiliza código de otras librerías como [Spring][spring], [Hibernate][hibernate] y otra multitud de librerías desarrolladas por terceros. La forma de reutilizar código en Java es a través de librerías que se publican en un repositorio de Maven igual que cualquier otra librería de terceros.
 
@@ -43,7 +43,7 @@ Por ejemplo, hace tiempo hice un ejemplo en el que generaba un archivo al hacer 
 
 * [Incluir información de la versión en el artefacto distribuible con Gradle][blogbitix-145]
 
-### Conceptos de Gradle
+## Conceptos de Gradle
 
 Gradle define varios conceptos propios para la configuración y ejecución. La configuración permite cambiar el comportamiento o adaptarlo a las necesidades propias. La configuración se definen en lo que Gradle denomina extensiones que son simplemente objetos de datos en los que Gradle permite al usuario introducir datos y que en el archivo de construcción se manifiestan como bloques de configuración con propiedades, las tareas al ejecutarse obtienen las extensiones y los datos configurados en ellas, en función de los datos las tareas varían su comportamiento.
 
@@ -51,7 +51,7 @@ Los _plugins_ a través de la API que ofrece Gradle pueden realizar cualquier ac
 
 Una vez creado el _plugin_ este se publica y comparte en un repositorio de Maven del que los proyectos que lo quieran usar simplemente han de incluir la URL del repositorio y la referencia al _plugin_.
 
-### Ejemplo de _plugin_ para Gradle
+## Ejemplo de _plugin_ para Gradle
 
 Lo que hace este ejemplo es mediante código aplicar cambios a través de la clase _Project_ que representa al proyecto de Gradle. A través de esta clase se añaden nuevos _plugins_, se configuran las extensiones y las tareas para aplicar la funcionalidad deseada en el _plugin_.
 
@@ -59,7 +59,7 @@ El ejemplo añade los _plugins_ y configura sus extensiones para realizar compro
 
 Incluir información variable en el artefacto que es diferente en función de la fecha de ejecución hace que la generación no sea reproducible, esto es, no genere exactamente el mismo binario dado que su contenido es diferente con cada _build_ aunque el código no haya cambiado y solo lo haya hecho un archivo de configuración y únicamente ligeramente su contenido. Que la generación de los artefactos sean reproducibles tiene el beneficio de que el artefacto generado sea auditable por motivos de seguridad y es posible que esté libre de modificaciones diferentes del código empleado para la construcción.
 
-#### Crear un _plugin_ de Gradle
+### Crear un _plugin_ de Gradle
 
 Hay varias formas de desarrollar un _plugin_ de Gradle, se puede desarrollar dentro de un proyecto existente o como un proyecto independiente, Gradle ofrece un comando para disponer de la estructura básica de un proyecto para el _plugin_ rápidamente y de forma sencilla al igual que se realiza para disponer de una aplicación normal. En el archivo de construcción del _plugin_ que genera Gradle incluye un _plugin_ propio de Gradle necesario para desarrollar _plugins_ de Gradle, _java-gradle-plugin_.
 
@@ -78,7 +78,7 @@ Los _plugins_ de Gradle se publican en un repositorio de Maven como cualquier li
 
 También es posible realizar teses unitarios y funcionales sobre el _plugin_, al utilizar la tarea de creación del proyecto del _plugin_ Gradle crea unos ejemplos en los basarse para crear más.
 
-#### Aplicar el _plugin_ de Gradle a un proyecto
+### Aplicar el _plugin_ de Gradle a un proyecto
 
 Una vez el _plugin_ está en el repositorio de Maven usar el _plugin_ y aplicarlo a un proyecto es exactamente igual que cualquier otro _plugin_ de Gradle, basta incluirlo en la sección _plugins_ con su identificador y su versión. Una vez aplicado el _plugin_ como este añade otros _plugins_ al ejecutar la tareas _tasks_ que muestra las tareas existentes en el proyecto se observa que aunque los _plugins_ de PMD, Checkstyle, SpotBugs han incluido sus tareas en el proyecto aunque no se hayan aplicado de forma explícita sino de forma transitiva a través del _plugin_ propio.
 

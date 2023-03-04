@@ -24,7 +24,7 @@ La web se basa en un conjunto de páginas donde unas hacen referencia a otras a 
 
 Otras tareas útiles para mejorar un sitio web es utilizar [herramientas para mejorar una página web en SEO, conformidad estándares y rendimiento][blogbitix-573] y hacer las modificaciones detectadas.
 
-### Comprobar enlaces rotos con herramientas web
+## Comprobar enlaces rotos con herramientas web
 
 Por enlaces o referencias consideramos tanto a páginas como a recursos de imágenes, estilos CSS, JavaScript u otros. Con que un sitio web contenga unas pocas decenas de páginas comprobar manualmente los enlaces se hace una tarea tediosa, que necesita mucho tiempo además de posiblemente no conseguir descubrir todos los enlaces rotos. Hay herramientas disponibles para comprobar los enlaces de forma automatizada. Algunas de estas que he usado recientemente en esta bitácora y con las que he encontrado numerosos enlaces han sido:
 
@@ -41,7 +41,7 @@ Las ventajas de estas herramientas web sobre las siguientes con wget y LinkCheck
     image1="image:w3c-linkchecker.webp" optionsthumb1="300x200" title1="W3C Link Checker"
     caption="W3C Link Checker" >}}
 
-### Comprobar enlaces rotos con wget
+## Comprobar enlaces rotos con wget
 
 Si el sitio web no está accesible en internet o queremos encontrar enlaces rotos en el momento de desarrollo podemos usar el comando `wget` para que nos rastree los enlaces, cada petición que devuelva un código 404 será un enlace roto. En el archivo _wget.log_ tendremos los resultados del rastreo.
 
@@ -50,7 +50,7 @@ Si el sitio web no está accesible en internet o queremos encontrar enlaces roto
 
 `wget` es una herramienta con múltiples usos, otro uso que tiene es la de [descargar el contenido de un sitio web completo]
 
-### Comprobar enlaces rotos con LinkChecker
+## Comprobar enlaces rotos con LinkChecker
 
 Otra opción es [LinkChecker](https://github.com/linkchecker/linkchecker) que además de comprobar los enlaces internos de un sitio web también tiene la opción de comprobar los enlaces del sitio web hacia a los externos. Un modo de ejecución es utilizando [Docker][docker] con lo que no hace falta instalar nada localmente salvo Docker.
 
@@ -59,7 +59,7 @@ El siguiente comando comprueba los enlaces internos de un sitio web y los extern
 {{< code file="linkchecker.sh" language="bash" options="" >}}
 {{< code file="linkchecker.log" language="plain" options="" >}}
 
-### Comprobar enlaces rotos de otros sitios web hacia el nuestro
+## Comprobar enlaces rotos de otros sitios web hacia el nuestro
 
 Lo anterior nos sirve para detectar los enlaces rotos que tenemos en nuestro sitio hacia otros, seguramente también nos interesará conocer los enlaces rotos que tienen otros sitios hacia el nuestro. Podemos saber a que páginas no encontradas están accediendo los usuarios de nuestro sitio web lanzando un evento personalizado de [Google Analytics][google-analytics] en la página para el error 404 que mostremos. Dado que los enlaces hacia nuestro sitio incluidos en otros no podemos modificarlos si se tratase de alguno especialmente importante al menos podremos hacer una redirección para que los usuarios lleguen al contenido más apropiado en vez de a una página no encontrada:
 

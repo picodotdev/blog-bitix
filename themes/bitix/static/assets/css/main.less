@@ -162,10 +162,40 @@ header {
 article {
   h1 {
     font-size: 2.6em;
+    counter-reset: heading-l1;
   }
 
   h2 {
     font-size: 1.75rem;
+    counter-reset: heading-l2;
+
+    &:before {
+      font-size: 1rem;
+      counter-increment: heading-l1;
+      content: counter(heading-l1) ". ";
+    }
+  }
+
+  h3 {
+    font-size: 1.50rem;
+    counter-reset: heading-l3;
+
+    &:before {
+      font-size: 1rem;
+      counter-increment: heading-l2;
+      content: counter(heading-l1) "." counter(heading-l2) ". ";
+    }
+  }
+
+  h4 {
+    font-size: 1.50rem;
+    counter-reset: heading-l4;
+
+    &:before {
+      font-size: 1rem;
+      counter-increment: heading-l3;
+      content: counter(heading-l1) "." counter(heading-l2) "." counter(heading-l3) ". ";
+    }
   }
 
   @media (max-width: 576px) {
@@ -241,12 +271,12 @@ article {
         }
       }
     }
-  
+
     div.highlight-meta {
       font-size: 0.8em;
       background-color: #f7f7f7;
       padding: 6px;
-  
+
       span.raw {
         float: right;
       }
@@ -334,6 +364,28 @@ article {
 
   div.tableofcontents {
     display: inline-block;
+
+    p.title {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+
+    & > nav > ol { padding-left: 0rem; list-style: none; }
+    & > nav > ol > li:first-child { counter-reset: list-l1; }
+    & > nav > ol > li { counter-increment: list-l1; }
+    & > nav > ol > li:before { font-size: 1rem; content: counter(list-l1) ". "; }
+
+    & > nav > ol > li > ol { list-style: none; }
+    & > nav > ol > li > ol > li:first-child { counter-reset: list-l2; }
+    & > nav > ol > li > ol > li { counter-increment: list-l2; }
+    & > nav > ol > li > ol > li:before { font-size: 1rem; content: counter(list-l1) "." counter(list-l2) ". "; }
+
+    & > nav > ol > li > ol > li > ol { list-style: none; }
+    & > nav > ol > li > ol > li > ol > li:first-child { counter-reset: list-l3; }
+    & > nav > ol > li > ol > li > ol > li { counter-increment: list-l3; }
+    & > nav > ol > li > ol > li > ol > li:before { font-size: 1rem; content: counter(list-l1) "." counter(list-l2) "." counter(list-l3) ". "; }
   }
 
   div.reference {

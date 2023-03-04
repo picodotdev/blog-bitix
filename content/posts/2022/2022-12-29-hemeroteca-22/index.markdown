@@ -29,9 +29,9 @@ Hay gente que escribe artículos mejores y más interesantes que los míos que e
 
 {{< tableofcontents >}}
 
-### Retrospectiva 2022
+## Retrospectiva 2022
 
-#### Evolución visitas
+### Evolución visitas
 
 Google tiene intención de eliminar UA y hacer que los usuarios se pasen a Google Analytics 4, en principio en julio de 2023. Son dos herramientas muy diferentes y aún después de varios meses no he obtenido de forma clara una métrica fiable ni tan simple de cuantas visitas tiene mi blog y su evolución a lo largo del tiempo mensualmente, he perdido mucha información como poder comparar las visitas mes a mes a lo largo del año, compararlo con otros años y conocer cuales son los artículos más visitados.
 
@@ -44,7 +44,7 @@ Esto es lo que he podido obtener empezando en abril que es cuando cambié a GA4,
     image1="image:google-analytics.webp" optionsthumb1="6500x450" title1="Evolución visitas 2022"
     caption="Evolución visitas 2022" >}}
 
-#### Evolución ingresos
+### Evolución ingresos
 
 Este año no se por que pero los ingresos por [AdSense][google-adsense] han bajado tanto como un 70% respecto a años anteriores, lo que eran casi 25 € mensuales normalmente y algún mes 35€ han pasado a ser entre 10 € y 15 €. Desconozco el motivo de por que ya en cuanto a visitas haya tenido también algunas menos las páginas vistas no han bajado tanto como un 70%. Añadí la publicidad de [Videoo.tv][videoo] pero no creo que debiera hacerle tanta competencia a Adsense como para una bajada tan importante.
 
@@ -77,7 +77,7 @@ Unos 220 € por ingresos de AdSense, 50 € que he cobrado ya de Videoo.tv, 50 
    image1="image:amazon-afiliados.webp" optionsthumb1="650x450" title1="Evolución ingresos AdSense y Amazon Afiliados 2022"
    caption="Evolución ingresos AdSense y Amazon Afiliados 2022" >}}
 
-### Sobre Blog Bitix
+## Sobre Blog Bitix
 
 Desde hace ya un tiempo publico solo un artículo a la semana, este año ha sido exactamente 52 tantos como semanas tiene el año. Por comparar el año pasado que también muchas semanas estuve publicando un artículo al año fueron 73 artículos.
 
@@ -97,7 +97,7 @@ Quité la generación del contenido de las páginas en formato _amp_, formato pr
 
 Otra tarea que tengo pendiente es cambiar el formato de las imágenes de _jpg_ a _webp_ que supone una mejora considerable en el tamaño de las imágenes además de poder utilizar un único formato de imagen tanto para fotos donde utilizo _jpg_ como para capturas de pantalla donde utilizo _png_.
 
-#### Teo, «el troll»
+### Teo, «el troll»
 
 Durante el año pasado recibí el contacto del que denominé con el nombre de «Gatico Bieber», lo que tenía el aspecto de un intento de fraude de _phising_ entre los diferentes contactos que recibo preguntando sobre artículos patrocinados.
 
@@ -110,7 +110,7 @@ Revisando los comentarios de este usuario debe ser alguien que le tiene inquina 
     image1="image:comentario-teo-el-troll.webp" optionsthumb1="650x450" title1="Comentario de Teo el «troll»"
     caption="Comentario de Teo el «troll»" >}}
 
-### Otras contribuciones
+## Otras contribuciones
 
 No he dejado de mantener el script alis para instalar Arch Linux, varias pequeñas cosas que como ya está en gran parte desarrollado no son tan destacables como al principio, ya soportaba las funcionalidades más comunes.
 
@@ -118,7 +118,7 @@ Este año se ha publicado la versión 7.0 de [Virtualbox][virtualbox] y he envia
 
 También sigo manteniendo las traducciones de algunos programas que uso como [KeePassXC][keepassxc], [Transmission][transmissionbt] y [VLC][vlc] aunque en este último solo la versión de escritorio. Las versiones para [Android][android] e [iOS][apple-ios] no las uso y requieren una buena cantidad de tiempo en traducir las cadenas.
 
-### Artículos publicados
+## Artículos publicados
 
 Prácticamente las ideas de los artículos las he ido generando semana a semana en algunos momentos casi no he tenido una idea sobre la que escribir y he estado casi en alguna semana por no escribir un artículo. Al final han sido 52 artículos, exactamente uno por semana del año en las temáticas habituales de este blog.
 
@@ -126,7 +126,7 @@ Con este 2023 ya serán 10 años de Blog Bitix que empezaré habiendo escrito ya
 
 Urte berri on 2023!, Buen año nuevo 2023!
 
-#### Artículos sobre Java y programación
+### Artículos sobre Java y programación
 
 * [Analizar y detectar fallos de seguridad en las dependencias de Java][blogbitix-616]
 * [Las clases para logging del paquete JUL incluidas en la API de Java][blogbitix-618]
@@ -148,7 +148,7 @@ Urte berri on 2023!, Buen año nuevo 2023!
 * [Radar tecnológico y otras fuentes de información sobre programación][blogbitix-665]
 * [Crear un bean según el contexto donde se inyecte con Spring][blogbitix-666]
 
-#### Artículos sobre GNU/Linux y software libre
+### Artículos sobre GNU/Linux y software libre
 
 * [Qué son los archivos dotfiles y cómo gestionarlos con chezmoi][blogbitix-621]
 * [Detectar errores y comprobar la sintaxis de los scripts de Bash][blogbitix-625]
@@ -162,7 +162,7 @@ Urte berri on 2023!, Buen año nuevo 2023!
 * [El entorno de escritorio GNOME, simple, elegante y completo][blogbitix-660]
 * [Programas para crear máquinas virtuales y virtualizar sistemas][blogbitix-661]
 
-#### Artículos sobre juegos
+### Artículos sobre juegos
 
 * [Análisis de los juegos de aventuras Uncharted The Nathan Drake Collection][blogbitix-622]
 * [Análisis del juego de aventuras Uncharted 4][blogbitix-634]
@@ -171,7 +171,7 @@ Urte berri on 2023!, Buen año nuevo 2023!
 * [Análisis del juego espacial de combates por turnos Spaceland][blogbitix-653]
 * [La PlayStation 4, otras consolas más antiguas y sus juegos unos años después desde la siguiente generación][blogbitix-664]
 
-#### Desempaquetados y análisis de tecnología y productos
+### Desempaquetados y análisis de tecnología y productos
 
 * [Desempaquetado y análisis de teclado mecánico compacto DIERYA DK61E][blogbitix-619]
 * [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico DIERYA DK63][blogbitix-623]
@@ -183,7 +183,7 @@ Urte berri on 2023!, Buen año nuevo 2023!
 * [Desempaquetado y análisis del micrófono MAONO HD300T][blogbitix-644]
 * [Desempaquetado y análisis de la interfaz de audio Maonocaster E2][blogbitix-649]
 
-#### Otros temas
+### Otros temas
 
 * [Artículo #9 de Yo apoyo al software libre][blogbitix-617]
 * [¿Por qué es importante escoger un buen servicio de hosting para tu negocio en línea?][blogbitix-632]

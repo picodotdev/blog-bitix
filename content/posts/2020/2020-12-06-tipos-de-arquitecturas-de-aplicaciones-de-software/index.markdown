@@ -21,7 +21,7 @@ summary: "Con el paso de los años las arquitectura recomendadas han cambiado. E
 
 {{< tableofcontents >}}
 
-### ¿Qué es arquitectura en una aplicación de software?
+## ¿Qué es arquitectura en una aplicación de software?
 
 La arquitectura en una aplicación de software son los aspectos comunes a las diferentes implementaciones concretas. La arquitectura de software define la estructura y comportamiento de los elementos relevantes, balanceando las necesidades de sus interesados, aplica decisiones de forma racional, definiendo estilos de arquitectura aplicables a múltiples aplicaciones con necesidades similares, está influenciada por su entorno de aplicación, influencia la estructura de los equipos, está presente en cada sistema y tiene un ámbito particular.
 
@@ -41,9 +41,9 @@ El estándar define los siguientes términos de la definición:
 
 > A **stakeholder** is an individual, team, or organization (or classes thereof) with interests in, or concerns relative to, a system.
 
-### Tipos de arquitecturas
+## Tipos de arquitecturas
 
-#### Arquitectura Spaghetti
+### Arquitectura Spaghetti
 
 En los inicios de las aplicaciones web con la aparición de las páginas programadas en en lado del servidor con _servlets_ y JSP en Java, ASP de [Microsoft][microsoft] y [PHP][php] la arquitectura de las mismas se caracterizaba por que no había arquitectura. En el mismo _servlet_ o JSP, ASP o PHP el mismo código tenía diferentes responsabilidades sin ninguna separación entre ellas.
 
@@ -53,7 +53,7 @@ Esta no arquitectura de las aplicaciones _spaghetti_ se denomina así porque  me
 
 {{< code file="spaghetti.jsp" language="html" options="" >}}
 
-#### Arquitectura por capas
+### Arquitectura por capas
 
 Para suplir las carencias de la arquitectura _spaghetti_ surge la arquitectura por capas. En la arquitectura por capas cada capa tiene una responsabilidad definida, una capa se encarga de la visualización de los datos y la interacción con el usuario, otra capa se encarga de la lógica de negocio y otra capa del acceso a la base de datos. Esta distribución de responsabilidades pone cierto orden a la organización del código y estructura de las aplicaciones. Las capas superiores dependen de las capas inferiores, ya sea en un modelo estricto donde la superior depende únicamente de la inmediatamente inferior o en un modelo más permisivo donde una capa superior puede depender de cualquiera de las inferiores.
 
@@ -64,7 +64,7 @@ La aparición de los _frameworks_ de desarrollo facilitan la creación de los co
     image1="image:layer-architecture.svg" optionsthumb1="300x200" title1="Arquitectura por capas"
     caption="Arquitectura por capas" >}}
 
-#### Arquitectura hexagonal
+### Arquitectura hexagonal
 
 En la arquitectura hexagonal o también conocida como puertos-adaptadores aísla las entradas y salidas de la aplicación de la lógica interna de la aplicación. Este aislamiento de las partes exteriores hace que la aplicación no requiera prácticamente ningún cambio que esté influenciado por cambios externos ya sea una nueva base de datos para persistir los datos o un nuevo tipo de cliente como un dispositivo móvil.
 
@@ -82,9 +82,9 @@ En la _Figura 1_ el paquete A depende del paquete B para invertir la dependencia
     image2="image:dependency-inversion.webp" optionsthumb2="300x200" title2="Inversión de dependencias"
     caption="Arquitectura hexagonal e inversión de dependencias" source="herbertograca.com" >}}
 
-### Metodologías relacionadas
+## Metodologías relacionadas
 
-#### _Domain Driven Design_
+### _Domain Driven Design_
 
 La metodología _domain-driven-design_ o DDD promueve que la aplicación ha de estar desarrollada basándose en los aspectos del negocio y del dominio de la aplicación, esto afecta tanto al lenguaje compartido denominado lenguaje ubicuo tanto en la aplicación como por todos _stakeholders_ de cada contexto de la aplicación, también afecta a como se modulariza en subdominios la aplicación con las diferentes funcionalidades. El diseño estratégico define los aspectos de análisis de la aplicación el diseño estratégico los de implementación con los agregados, entidades, _value objects_, repositorios o eventos de dominio.
 
@@ -92,7 +92,7 @@ La arquitectura hexagonal se complementa perfectamente con la metodología y pri
 
 * [Introducción a DDD y arquitectura hexagonal con un ejemplo de aplicación en Java][blogbitix-553]
 
-#### APIs, REST o GraphQL
+### APIs, REST o GraphQL
 
 Con la aparición de múltiples dispositivos ya sean navegadores, teléfonos inteligentes, aplicaciones nativas de teléfonos inteligentes, tabletas o incluso otras aplicaciones, para dar soporte a todos estos clientes las aplicaciones se desarrollan desde el primer momento con el objetivo de ofrecer una API que todos los dispositivos comparten y posteriormente cada dispositivo adapta su interfaz gráfica a sus necesidades.
 
@@ -100,19 +100,19 @@ Muchas aplicaciones utilizan una API denominada REST basada en los principios de
 
 Otra forma de implementación de un API es mediante [GraphQL][graphql] que a diferencia de REST no se basa en los principios del protocolo HTTP y la semántica de la web aunque lo utiliza. A diferencia de REST que siempre se devuelven los mismos datos GrapqhQL permite realizar consultas indicando únicamente los datos deseados como respuesta.
 
-#### CQRS
+### CQRS
 
 La metodología CQRS separa las operaciones de consulta que solicitan datos de las operaciones que modifican datos o comandos incluso utilizando diferentes bases de datos. El modelo necesario para la consulta puede ser distinto del necesario para la modificación y variar en diferentes casos de uso, por eso la necesidad o ventaja de separar el modelo de consulta del modelo de modificación. El modelo de consulta puede estar desnormalizado para ser más sencillo o eficiente a las necesidades de consulta que utilizando un único modelo para ambas operaciones.
 
 El modelo de consulta se actualiza de forma asíncrona con el modelo de modificación utilizando consistencia eventual. Para manejar esta consistencia eventual en la interfaz del usuario hay varias opciones, una de ellas mostrar los datos en la interfaz como si se hubieran modificado inmediatamente aún estándo pendientes de modificarse. Otra posibilidad es mostrar la fecha y hora de la última actualización de los datos o simplemente indicar al usuario que su petición ha sido aceptada y su procesamiento requiere algo de tiempo en procesarse.
 
-#### _Event-Driven_
+### _Event-Driven_
 
 En las aplicaciones dirigidas por eventos o _event-driven_ las aplicaciones reaccionan a los eventos que se producen en el sistema. El procesamiento de un evento devuelve una respuesta o genera nuevos eventos en el sistema.
 
 * [Event-driven architecture](https://en.wikipedia.org/wiki/Event-driven_architecture)
 
-#### _Event Sourcing_
+### _Event Sourcing_
 
 En vez de realizar modificaciones sobre los datos existentes simplemente se añaden nuevos eventos en el sistema, el estado actual del sistema se obtiene al procesar todos los eventos.
 

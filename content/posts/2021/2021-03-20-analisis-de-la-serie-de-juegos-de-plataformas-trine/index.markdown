@@ -48,7 +48,7 @@ Debido a que son juegos ya con varios años en las diferentes tiendas digitales 
 {{< game-spoiler >}}
 {{< tableofcontents >}}
 
-### El juego
+## El juego
 
 Los juegos en toda la saga narran la historia de tres personajes Pontius un caballero, Amadeus un mago y Zoya una ladrona. Al inicio de cada nivel hay una narración que sirve como hilo conductor del juego e incluso dentro de los niveles los personajes conversan haciendo algún comentario con un toque de humor, los juegos Trine poseen un buen doblaje al español.
 
@@ -88,7 +88,7 @@ Posee varios niveles de dificultad que hacen que los enemigos tengan más vida, 
 
 El juego soporta un modo cooperativo entre varios jugadores que pueden jugar simultáneamente en la misma partida con varios mandos. Se hace uso de físicas para interactuar con los objetos objetos, utiliza la tecnología [Nvidia PhysX][nvidia-physx] que da más realismo en el comportamiento físico de los objetos. Los tiempos de carga son más bajos que en otros juegos debido a que el juego no requiere grandes recursos.
 
-#### Diferencias entre los juegos de la serie Trine
+### Diferencias entre los juegos de la serie Trine
 
 Los juegos de Trine en realidad no son juegos completamente distintos sino que más bien cada uno de ellos es una nueva colección de niveles con algunos aspectos cambiados de los personajes.
 
@@ -103,13 +103,13 @@ En Trine hay 16 niveles con unos 25 orbes de experiencia por nivel, en Trine 2 h
     image3="image:trine-3-niveles.webp" optionsthumb3="200x150" title3="Niveles de Trine 3"
     caption="Niveles de Trine 1, 2 y 3" >}}
 
-### Objetivos del juego
+## Objetivos del juego
 
 El juego básicamente es un juego de plataformas en el que en alguno puntos hay que resolver sencillos puzles con las habilidades combinadas de los personajes. Si la solución para resolver un puzle es demasiado complicada es que esa forma de resolverlo no es la que pensaron los desarrolladores, dados los diferentes personajes y sus habilidades hay múltiples formas válidas de resolver cada puzle. Otro objetivo del juego es recoger todos los orbes de experiencia y encontrar los cofres de tesoro, algunos están un poco escondidos con lo que es necesario fijarse bien en cada una de las secciones de los niveles, después de los primeros niveles se va conociendo que sitios son susceptibles de tener alguna zona oculta a explorar.
 
 El juego posee varios niveles de dificultad y un modo _hardcore_, para conseguir todos los objetivos del juego hay que completar cada nivel en el mayor nivel de dificultad y en el modo _hardcore_.
 
-### Arte gráfico y banda sonora
+## Arte gráfico y banda sonora
 
 Los juegos de Trine destacan por su nivel artístico lleno de detalles, colores vivos, brumas y efectos de luz que los hacen interesantes para disfrutar de su aspecto gráfico. El hecho de que para encontrar los orbes y tesoros haya que fijarse en cada una de las secciones refuerzan el disfrutar del aspecto artístico y ser consciente del mismo.
 
@@ -133,7 +133,7 @@ A lo largo de las diferentes versiones y con el paso de los años el arte gráfi
 {{< youtube
     video="mMXGE9bgfpg" >}}
 
-### Historia
+## Historia
 
 El juego se desarrolla con una pequeña historia lineal como hilo conductor al inicio de cada nivel que dan sentida a las aventuras de los personajes y niveles. No es una historia muy elaborada ni diferentes lineas argumentales pero completa con su papel en el juego con suficiencia. En estos vídeos están los inicios de las historias.
 
@@ -149,7 +149,7 @@ El juego se desarrolla con una pequeña historia lineal como hilo conductor al i
 {{< youtube
     video="2ukNLC2DPBI" >}}
 
-### Banda sonora original
+## Banda sonora original
 
 La banda sonora enriquece el juego estando a la altura del arte gráfico, completa el juego en el aspecto del audio.
 
@@ -165,7 +165,7 @@ La banda sonora enriquece el juego estando a la altura del arte gráfico, comple
 {{< youtube
     video="kfo1G8EjqB8" >}}
 
-### Ubicación de los orbes de experiencia y cofres
+## Ubicación de los orbes de experiencia y cofres
 
 Algunos de los orbes de experiencia y los cofres del tesoro están escondidos, con la experiencia de juego uno se fija donde pueden estar y encontrarlos requiere explorar de forma completa los rincones escondidos de cada sección. Aún así quizá alguno se resista el encontrarlo, algunos niveles son un poco largos con lo que intentar encontrarlos requiere tiempo y aún así cuesta recogerlos todos, en caso de querer obtenerlos todos en YouTube hay vídeos donde se muestra la ubicación de cada uno de ellos.
 

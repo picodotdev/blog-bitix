@@ -30,7 +30,7 @@ La programación de las tareas también se puede realizar a nivel de sistema ope
 
 {{< tableofcontents >}}
 
-### Tareas programadas con Quartz y Spring Boot
+## Tareas programadas con Quartz y Spring Boot
 
 Entre las muchas itegraciones que ofrece Spring una de ellas es para Quartz. Las clases importantes que ofrece Quartz son:
 
@@ -57,7 +57,7 @@ En las clases de las tareas se pueden inyectar _beans_ de Spring con la anotaci�
 {{< code file="QuartzJob.java" language="java" options="" >}}
 {{< code file="QuartzJobListener.java" language="java" options="" >}}
 
-### Tareas programadas con Spring
+## Tareas programadas con Spring
 
 Las tareas programadas con Spring son una opción sencilla, basta con anotar un método con la anotación [@Scheduled](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/scheduling/annotation/Scheduled.html) e indicar los parámetros de la anotación el mecanismo que dispara la tarea y los periodos de tiempo. Las planificaciones pueden ser:
 
@@ -68,7 +68,7 @@ Las tareas programadas con Spring son una opción sencilla, basta con anotar un 
 
 {{< code file="springJobs.java" language="java" options="" >}}
 
-### Tareas programadas con las clases del JDK
+## Tareas programadas con las clases del JDK
 
 Otra tercera forma de ejecutar tareas periódicas es con las clases [Executors](javadoc11:java.base/java/util/concurrent/Executors.html) y [ScheduledExecutorService](javadoc11:java.base/java/util/concurrent/ScheduledExecutorService.html) que están disponibles desde la versión 5 de Java. Proporcionan una funcionalidad similar a las tareas programadas de Spring sin la funcionalidad de expresiones _cron_.
 
@@ -76,13 +76,13 @@ Otra tercera forma de ejecutar tareas periódicas es con las clases [Executors](
 
 {{< code file="JavaJob.java" language="java" options="" >}}
 
-### Elegir entre usar Quartz, usar Spring o usar las clases del JDK
+## Elegir entre usar Quartz, usar Spring o usar las clases del JDK
 
 La ventaja de usar las clases del JDK es que ya están incluidas en el JDK y no se necesita incluir ninguna dependencia en el proyecto. Si se usa Spring tampoco se necesitan dependencias adicionales y además proporciona la funcionalidad de expresiones _cron_ que no tienen las clases del JDK. La desventaja de usar el JDK y Spring está en que no tienen todas las opciones de Quartz como la persistencia en la base de datos, la ejecución de tareas que reciban parámetros a modo de contexto o la característica de los _listeners_ que en Spring habría que implementar con alguna otra solución como [usar Guava para publicar y suscribirse a eventos][blogbitix-422].
 
 Dependiendo de las nacesidades de la aplicación será más adecuado usar las clases del JDK, Spring o Quartz.
 
-### Ejemplo de tareas programadas con Quartz, Spring y las clases del JDK
+## Ejemplo de tareas programadas con Quartz, Spring y las clases del JDK
 
 El ejemplo incluye varias tareas definidas con Quartz y con Spring. En las trazas se observan los tiempos de ejecución de cada tarea. La tarea de Quartz tiene dos _triggers_, uno que se ejecuta cada 10 segundos y otro cada minuto. Los _jobs_ de Spring _scheduleJobWithFixedRate_ se ejecuta cada dos segundos, _scheduleJobWithDelay_ se ejecuta cada dos segundos después de haber terminado la anterior ejecución que como tarda dos segundos en ejecutarse se ejecuta en realidad cada cuatro segundos y finalmente _scheduleJobWithCron_ se ejecuta cada minuto. Las tareas planificadas con las clases del JDK se ejecutan igual que las tareas de Spring cada dos y cada cuatro segundos.
 

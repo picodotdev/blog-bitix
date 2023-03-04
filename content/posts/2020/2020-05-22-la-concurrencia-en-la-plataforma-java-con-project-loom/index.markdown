@@ -31,7 +31,7 @@ En general la plataforma Java se basa en:
 * Las excepciones proporcionan información útil indicando la operación fallida en el contexto del _thread_ actual.
 * Los depuradores siguen el orden de ejecución aunque se realice procesado de E/S.
 
-### Los problemas de los threads y sus alternativas
+## Los problemas de los threads y sus alternativas
 
 En la implementación de Linux los _threads_ no se diferencian de los procesos. Los _threads_ son costosos de crear y pesados aún empleando _pools_ de _threads_ por lo que el sistema operativo solo es capaz de mantener unos pocos miles activos. Esto afecta especialmente en las aplicaciones Java en el lado de servidor ya que para procesar cada petición se le asigna un _thread_ de modo que el número de peticiones simultáneas se ve limitado por el número de _threads_ que soporta el sistema operativo. En aplicaciones con un número elevado de usuarios y peticiones la escalabilidad se ve limitada.
 
@@ -39,7 +39,7 @@ Por este motivo ha surgido la programación asíncrona, la programación reactiv
 
 Estos estilos de programación no han sido inventados porque sean más fáciles de entender, son más difíciles también de depurar y de hacer _profile_. Son muy intrusivos y hacen la integración con el código síncrono virtualmente imposible simplemente porque la implementación de los _threads_ es simplemente inadecuada en Java tanto en carga del sistema como rendimiento. La programación asíncrona es contraria al modelo original diseñado en la programación de la plataforma Java en varios aspectos con un alto coste de mantenibilidad y observabilidad. Pero lo hacen por una buena razón, para conseguir la escalabilidad y el rendimiento haciendo buen uso de los costosos recursos hardware.
 
-### La nueva implementación de los threads
+## La nueva implementación de los threads
 
 El [proyecto Loom](https://wiki.openjdk.java.net/display/loom) persigue crear unos _threads_ que eliminen los costes de los hilos tradicionales del sistema operativo. Serán mucho más ligeros, con ellos Java será capaz de mantener varios órdenes de magnitud superior, millones de _threads_ en vez de solo unos pocos miles. Estos _threads_ virtuales o fibras de la plataforma Java son también simplemente _threads_ pero que crearlos y bloquearlos es mucho más barato. Son gestionados por el entorno de ejecución de Java y no son una representación uno a uno de un envoltorio de los _threads_ del sistema operativo, en vez de eso están implementados en el espacio de usuario del JDK.
 
@@ -66,7 +66,7 @@ Estos párrafos son varios extractos del magnífico artículo [State of Loom](ht
 {{< youtube
     video="lIq-x_iI-kc" >}}
 
-### La API de threads
+## La API de threads
 
 La forma de programación con los nuevos _threads_ es muy parecida a la tradicional que ha existido siempre. Se parece tanto a los _threads_ de siempre que incluso ni siquiera cambia la clase que los representa, que sigue siendo [Thread](javadoc11:java.base/java/lang/Thread.html), las diferencias de implementación son internas a la clase y en la JVM. En estos ejemplos se ejecutan tareas de dos formas diferentes y en la tercera se envían tareas para su ejecución  y posteriormente se espera a obtener el resultado.
 
@@ -74,7 +74,7 @@ La forma de programación con los nuevos _threads_ es muy parecida a la tradicio
 {{< code file="threads-api-2.java" language="java" options="" >}}
 {{< code file="threads-api-3.java" language="java" options="" >}}
 
-### Conclusión
+## Conclusión
 
 Esta nueva implementación de los _threads_ es una mejora significativa sobre la implementación original basada en el sistema operativo. Una vez esté disponible en una versión del JDK muchas aplicaciones se beneficiarán de forma transparente de sus mejoras simplemente por usar un JDK más reciente. Como es principio en la plataforma Java estos cambios están implementados de forma que sean compatibles hacia atrás para que no haya que realizar ningún cambio o muy pocos en las aplicaciones o librerías para beneficiarse de ellos.
 

@@ -36,7 +36,7 @@ En este caso solo hay tres argumentos opcionales si hubiera más el número de c
 
 Sin embargo, esta solución aunque permite reducir el número de constructores también tiene problemas, uno de ellos es que el constructor y los _set_ no obligan a crear un objeto con estado consistente o válido, otro es que usando los _set_ de los JavaBean nos impide hacer el objeto inmutable, si no es devolviendo una nueva instancia, que con las [nuevas características funcionales añadidas en Java 8][blogbitix-17] y en la programación concurrente es deseable.
 
-### El patrón de diseño _Builder_
+## El patrón de diseño _Builder_
 
 El patrón de diseño _Builder_ es un patrón de diseño clasificado en los creacionales que se encarga de la creación de instancias de clases. Sus ventajas son que solucionan el problema de los  constructores telescópicos y combinación de argumentos es usar el patrón de diseño _Builder_, además permite crear objetos complejos de forma flexible en varios pasos con propiedades opcionales.
 
@@ -47,7 +47,7 @@ Al igual que [el patrón de diseño Factory][blogbitix-574] se encarga de crear 
     image1="image:builder-pattern.webp" optionsthumb1="650x450" title1="Diagrama de clases del patrón de diseño Builder"
     caption="Diagrama de clases del patrón de diseño Builder" >}}
 
-### Ejemplo del patrón de diseño _Builder_
+## Ejemplo del patrón de diseño _Builder_
 
 Empleando el mismo caso que los anteriores de la siguiente forma.
 

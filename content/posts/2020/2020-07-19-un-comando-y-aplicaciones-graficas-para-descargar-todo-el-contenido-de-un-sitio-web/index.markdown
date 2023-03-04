@@ -25,7 +25,7 @@ Los navegadores web con el botón derecho del ratón ofrecen la posibilidad de d
 
 {{< tableofcontents >}}
 
-### Cómo descargar un sitio web desde la línea de comandos con wget
+## Cómo descargar un sitio web desde la línea de comandos con wget
 
 La herramienta de línea de comandos [wget][wget] permite descargar un sitio web completo con un comando ejecutado desde la terminal incluyendo los archivos HTML y de recursos como imágenes, vídeos, contenido multimedia como audio o música, de estilos CSS o archivos JavaScript. El contenido que descarga wget es el referenciado a través de los enlaces presentes en el propio contenido, wget explora los archivos HTML en busca de enlaces a recursos u otras páginas HTML y de forma recursiva descarga el contenido completo al sistema de archivos local. Está disponible para los sistemas operativos [Windows][windows], [GNU][gnu]/[Linux][linux] y [macOS][macOS] y es una herramienta de software libre y gratuita.
 
@@ -42,7 +42,7 @@ Terminado el proceso de descarga el contenido del sitio web se guarda en el sist
 
 Descargar un sitio web no es la única funcionalidad que ofrece wget, otra necesidad habitual es [buscar los enlaces rotos de una página web][blogbitix-115] que con el paso del tiempo se van generando ya sea porque los sitios web externos desaparecen o por errores en la edición y enlazado interno. Conocer los enlaces rotos permite arreglarlos para ofrecer mejor experiencia de usuario al visitante y para mejorar el SEO en el posicionamiento en los buscadores.
 
-### Cómo descargar un sitio web con programas de interfaz gráfica o páginas web
+## Cómo descargar un sitio web con programas de interfaz gráfica o páginas web
 
 Hay algunas herramientas con interfaz gráfica como [HTTrack](https://www.httrack.com/) o [Cyotek WebCopy](https://www.cyotek.com/cyotek-webcopy) que realizan la misma tarea que wget de forma más intuitiva. Aún así el comando de wget es una forma sencilla y rápida de realizar la descarga de un sitio web completo.
 

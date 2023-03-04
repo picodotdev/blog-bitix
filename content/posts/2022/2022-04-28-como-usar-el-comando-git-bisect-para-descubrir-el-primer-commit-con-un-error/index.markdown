@@ -23,7 +23,7 @@ Una herramienta de control de versiones para el código fuente de las aplicacion
 
 Una situación habitual al realizar cambios en el código fuente de un programa es pasado un tiempo descubrir un error y no conocer en que cambio lo ha producido y en que _commit_. Si no se tiene una pista de cual es el cambio que ha introducido error una solución es probar cada _commit_ y para ver si esa versión de la aplicación tiene el error o no. Una vez probados varios _commit_ al final se descubre que _commit_ es el que ha introducido el error. Conociendo el _commit_ que introduce el error hay que revisar los cambios de ese _commit_ para conocer y cambiar las líneas de código erróneas.
 
-### El comando _git bisect_
+## El comando _git bisect_
 
 Una de las funcionalidades que proporciona la herramienta de control de versiones Git es el subcomando _bisect_. [El comando _git bisect_](https://git-scm.com/docs/git-bisect) automatiza encontrar que _commit_ ha introducido un error dado un rango de _commits_ en el que se sospecha está el _commit_ con el error.
 

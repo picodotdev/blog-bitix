@@ -32,14 +32,14 @@ Para una fácil instalación de una instancia de la base de datos PostgreSQL usa
 
 {{< tableofcontents >}}
 
-### Instalación PostgreSQL con Docker
+## Instalación PostgreSQL con Docker
 
 Una vez instalado Docker e iniciado su servicio y con el comando `docker-compose` y el archivo _docker-compose.yml_ que contiene la definición del contenedor lo iniciamos con el comando `docker-compose up`. El comando `docker ps` lista los contenedores en ejecución y con el comando `docker exec` iniciamos un proceso bash en el contenedor indicado con su identificativo.
 
 {{< code file="docker-compose.yml" language="yaml" options="" >}}
 {{< code file="docker-compose.sh" language="bash" options="" >}}
 
-### Comandos básicos del _shell_ psql
+## Comandos básicos del _shell_ psql
 
 El _shell_ de psql usa varios comandos precedidos por una contrabarra para interpretar algunos comandos muy útiles como listar las bases de datos, cambiar de base de datos de trabajo, listar las tablas de una base de datos, mostrar la definición de una tabla para saber sus campos y tipos o salir del _shell_. Los siguientes son solo unos pocos de los disponibles.
 
@@ -51,7 +51,7 @@ El _shell_ de psql usa varios comandos precedidos por una contrabarra para inter
 
 * [psql _shell_](https://www.postgresql.org/docs/current/static/app-psql.html)
 
-### Importación base de datos de ejemplo
+## Importación base de datos de ejemplo
 
 Antes de lanzar sentencias SQL hay que crear una base de datos con varias tablas y datos, en este caso usando una base de datos de ejemplo que se descarga con el comando `wget`, se descomprime, se crea un nuevo esquema y se importan las tablas y datos, finalmente se listas las definiciones de las tablas.
 
@@ -65,7 +65,7 @@ Para algunas sentencias usaré una base de datos un poco más sencilla que con u
 
 {{< code file="database-companies.sh" language="bash" options="" >}}
 
-### Inserción múltiple
+## Inserción múltiple
 
 Si insertamos muchos datos en una misma tabla podemos insertarlos en una única sentencia en vez de múltiples para un mejor rendimiento, evitando enviar al servidor múltiples sentencias individuales.
 
@@ -73,7 +73,7 @@ Si insertamos muchos datos en una misma tabla podemos insertarlos en una única 
 
 * [Inserting Data](https://www.postgresql.org/docs/current/static/dml-insert.html)
 
-### UPSERT
+## UPSERT
 
 En algún caso quizá tengamos la necesidad de hacer un _insert_ y si el registro ya existe hacer un _update_. Usando la expresión _ON CONFLICT UPDATE_ conocida como _UPSERT_ podemos hacer esta operación que nos evitará hacerlo de forma programática en la aplicación.
 
@@ -83,13 +83,13 @@ En el ejemplo, se hace una _insert_ de la empresa _Canonical_, en el segundo cas
 
 * [UPSERT](https://wiki.postgresql.org/wiki/UPSERT)
 
-### _Common table expressions_
+## _Common table expressions_
 
 Las cláusula _WITH_ que define las _common table expressions_ o _CTE_ proporcionan una forma de escribir sentencias auxiliares para su uso en una sentencia más grande. Cada sentencia auxiliar de una cláusula  _WITH_ puede ser un _SELECT_, _INSERT_, _UPDATE_ o _DELETE_ y la sentencia primaria asociada a la cláusula _WITH_ también puede ser un _SELECT_, _INSERT_, _UPDATE_ o _DELETE_.
 
 * [WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/static/queries-with.html)
 
-### _Window functions_
+## _Window functions_
 
 Las _window functions_ realizan cálculos sobre un conjunto de datos que están relacionados de alguna forma con la fila actual. Al contrario que las funciones de agregación el cálculo de las _window functions_ no causan que las filas se agrupen en una única fila manteniéndose como filas separadas.
 
@@ -102,13 +102,13 @@ Usando la base de datos _world_ que contienen ciudades y países con sus poblaci
 * [Window Functions Functions](https://www.postgresql.org/docs/current/static/functions-window.html)
 * [Window Function Processing](https://www.postgresql.org/docs/current/static/queries-table-expressions.html#QUERIES-WINDOW)
 
-### Consultas recursivas
+## Consultas recursivas
 
 El modificador _RECURSIVE_ cambia la sentencia _WITH_ de una conveniencia sintáctica en una funcionalidad que proporciona algo que no sería posible con el SQL que soporta algunas otras bases de datos. Usando _RECURSIVE_, una cláusula _WITH_ puede referenciar su propia salida. Con esta cláusula las relaciones jerárquicas pueden implementarse sin usar [otras soluciones más complejas](https://stackoverflow.com/questions/4048151/what-are-the-options-for-storing-hierarchical-data-in-a-relational-database).
 
 * [WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/static/queries-with.html)
 
-### Tipo array, enumerado
+## Tipo array, enumerado
 
 Con la ayuda de los arrays podemos definir una columna con un conjunto de valores que en casos simples nos evitarán crear una tabla con una relación 1 a N. Además, con las funciones asociadas a los arrays podemos definir una columna con un conjunto de valores cuyos valores no se repitan o si la lista es un conjunto limitados de valores con un enumerado.
 
@@ -118,7 +118,7 @@ Con la ayuda de los arrays podemos definir una columna con un conjunto de valore
 * [Enumerated Types](https://www.postgresql.org/docs/current/static/datatype-enum.html)
 * [Range Types](https://www.postgresql.org/docs/current/static/rangetypes.html)
 
-### Tipo personalizado
+## Tipo personalizado
 
 En PostgresSQL se pueden definir nuevos tipos de datos así como nuevas funciones sobre estos tipos de datos. Una vez definidos las columnas de las tablas pueden hacer uso de ellos. Pueden ser:
 
@@ -138,13 +138,13 @@ Creando tipos de datos personalizados se evita crear en las tablas varios campos
 * [Query Language (SQL) Functions](https://www.postgresql.org/docs/current/static/xfunc-sql.html)
 * [Arrays](https://www.postgresql.org/docs/current/static/arrays.html)
 
-### Índices
+## Índices
 
 Los índices cuando son utilizados son una forma que mejora enormemente el rendimiento de una consulta. Permiten buscar y obtener filas específicas mucho más rápido que sin un usar un índice.
 
 * [Indexes](https://www.postgresql.org/docs/current/static/indexes.html)
 
-### Índice parcial
+## Índice parcial
 
 Un índice parcial es un índice construido sobre un subconjunto de una tabla, el subconjunto es definido por una expresión condicional. El índice contiene entradas solo para las filas de la tabla que satisfacen el predicado.
 
@@ -152,13 +152,13 @@ La motivación de los índices parciales es evitar indexar valores comunes. Dado
 
 * [Partial Indexes](https://www.postgresql.org/docs/current/static/indexes-partial.html)
 
-### Índices multicolumna
+## Índices multicolumna
 
 Un índice puede ser definido sobre más de una columna de una tabla. Son apropiados cuando hay consultas con predicados por las dos columnas del índice.
 
 * [Multicolumn Indexes](https://www.postgresql.org/docs/current/static/indexes-multicolumn.html)
 
-### Restricciones, _Constraints_
+## Restricciones, _Constraints_
 
 Los tipos de datos son una forma de limitar los tipos de datos que pueden ser almacenados en una tabla. Para muchas aplicaciones las restricciones que proporcionan son demasiado simples. Por ejemplo, una columna que contenga el precio de un producto debería aceptar solo valores positivos. Pero no hay un tipo de datos que acepte solo números positivos. Otro problema es que quizá deseemos restringir el dato de una columna respecto a otras columnas o filas. Por ejemplo, en una tabla que contenga información de un producto el número del producto debería ser único.
 
@@ -168,13 +168,13 @@ SQL permite definir restricciones en columnas y tablas proporcionando el control
 
 * [Constraints](https://www.postgresql.org/docs/current/static/ddl-constraints.html)
 
-### Tipos de tablas
+## Tipos de tablas
 
 Si se especifica en la creación de la tabla _TEMPORARY_ o _TEMP_ esta es creada con una tabla temporal que es eliminada al final de la sesión u opcionalmente al finalizar la transacción actual. Si se especifica _UNLOGGED_ es creada como no trazable haciendo que los datos escritos en la tabla no sean escritos en el _write-ahead log_ que lo hace considerablemente más rápido que las tablas ordinarias. Sin embargo, no son seguras ante fallos.
 
 * [CREATE TABLE](https://www.postgresql.org/docs/current/static/sql-createtable.html)
 
-### PL/pgSQL
+## PL/pgSQL
 
 PostgreSQL al igual que otras bases de datos ofrece un lenguaje procedural que puede ser usado para crear procedimientos de funciones o _triggers_, añadir estructuras de control al lenguaje SQL, realizar cálculos complejos, hereda todos los tipos de usuario, funciones y operadores, puede ser definido como de confianza por el servidor y es fácil de usar. El lenguaje sql es fácil de aprender y es común a las bases de datos relacionales pero cada sentencia SQL debe ser ejecutada individualmente por el servidor. Esto significa que la aplicación cliente debe enviar cada sentencia al servidor, esperar a que sea procesada, recibir y procesar los resultados, realizar algún cálculo y entonces enviar más sentencias al servidor. Todo esto incurre en comunicación entre procesos y de red si el cliente está en una máquina diferente del servidor de base de datos.
 
@@ -182,7 +182,7 @@ Con PL/pgSQL se puede crear un bloque de computación y una serie de sentencias 
 
 * [PL/pgSQL - SQL Procedural Language](https://www.postgresql.org/docs/current/static/plpgsql.html)
 
-### Otras
+## Otras
 
 Otros elementos que soporta la base de datos PostgreSQL en el lenguaje SQL son _Grouping Sets_, _ROLLUP_, _CUBE_, [Set Returning Functions](https://www.postgresql.org/docs/current/static/functions-srf.html), [tablefunc](https://www.postgresql.org/docs/current/static/tablefunc.html), [búsquedas a texto completo](https://www.postgresql.org/docs/current/static/textsearch.html) que para casos sencillos no hace falta recurrir a soluciones más especializadas como [Elasticsearch][elasticsearch], selección y bloqueo de filas con la [cláusula _FOR UPDATE_](https://www.postgresql.org/docs/current/static/sql-select.html#SQL-FOR-UPDATE-SHARE), [vistas](https://www.postgresql.org/docs/current/static/sql-createview.html) y [vistas materializadas](https://www.postgresql.org/docs/current/static/sql-creatematerializedview.html) entre seguro otras muchas cosas de las que me olvido o desconozco.
 

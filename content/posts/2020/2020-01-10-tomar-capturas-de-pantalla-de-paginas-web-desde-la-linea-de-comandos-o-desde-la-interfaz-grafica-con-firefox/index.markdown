@@ -28,7 +28,7 @@ Aunque la revisión visual no esté automatizada y dependa de intervención huma
 
 Esta automatización es interesante también ya que guardando los archivos de captura permiten tener un registro del estado de la visualización de una página a lo largo del tiempo y ver los cambios que se han ido realizando.
 
-### Captura de pantalla desde la linea de comandos con Firefox
+## Captura de pantalla desde la linea de comandos con Firefox
 
 Para obtener la captura de pantalla el navegador [Firefox][firefox] permite desde la línea de comandos cargar una página a partir de su URL y obtener su captura de pantalla guardándola en un archivo _jpg_ o _png_. Las capturas de pantalla también se pueden tomar en un servidor [GNU][gnu]/[Linux][linux] sin interfaz gráfica con un comando habiendo instalado Firefox previamente para este propósito.
 
@@ -68,7 +68,7 @@ Con un gran número de páginas validar visualmente cada una de las páginas med
 
 {{< code file="firefox-screenshot-links-random-firts.sh" language="bash" options="" >}}
 
-### Captura de pantalla desde Firefox
+## Captura de pantalla desde Firefox
 
 Firefox también permite tomar capturas de pantalla desde la interfaz gráfica, con el botón derecho y la opción del menú emergente _Hacer una captura de pantalla_ de la pantalla completa o de la parte visible en ese momento o también desde el _Inspector_ que se muestra con el botón derecho y la opción _Inspeccionar elemento_ y habilitando la opción _Hacer una captura de pantalla de la página completa_ y si se desea _Captura de pantalla al portapapeles_ con las opciones de los ajustes.
 

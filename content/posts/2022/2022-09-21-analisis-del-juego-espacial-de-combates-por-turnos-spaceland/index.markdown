@@ -40,7 +40,7 @@ Es similar a XCOM 2 pero a pesar de ser maś simple y más indie este me ha gust
 {{< game-spoiler >}}
 {{< tableofcontents >}}
 
-### El juego
+## El juego
 
 Spaceland es un juego indie y se nota en que es mucho más simple, sencillo y corto que otros juegos del género de combate por turnos, táctico y de estrategia como XCOM 2 y [Wasteland 3](https://www.igdb.com/games/wasteland-3). Sin embargo, Spaceland tiene prácticamente todos los elementos esenciales del género, varios personajes entre los que elegir, varias armas, habilidades, recursos y diferentes tipos de enemigos.
 
@@ -77,7 +77,7 @@ No es complicado sacar el platino si se desea aunque seguramente requiere realiz
     image2="image:spaceland-juego-5.webp" optionsthumb2="200x150" title2="Juego"
     caption="Juego" >}}
 
-#### Personajes
+### Personajes
 
 A medida que avanza la historia el grupo de personajes crecerá hasta un total de siete componentes. Cada uno tiene sus propias armas, número de puntos de acción y habilidades únicas así como cantidad de vida.
 
@@ -89,7 +89,7 @@ Según la misión convendrá escoger un personaje u otro, aun así como hay dife
     image2="image:spaceland-personajes-2.webp" optionsthumb2="200x150" title2="Personajes"
     caption="Personajes" >}}
 
-#### Recursos
+### Recursos
 
 Los recursos permiten conseguir nuevas habilidades para los personajes y armas. Por un lado los chips permiten mejorar las habilidades de los personajes que se consiguen según el grado de éxito de las misiones por completarlas en los turnos indicados y descubrir los hallazgos. El otro recurso son las monedas que permiten comprar nuevas armas, armaduras y armas secundarias que se puede elegir cómo repartir entre los personajes de grupo.
 
@@ -104,7 +104,7 @@ Las misiones se pueden rejugar para acabarlas en los turnos objetivo, y para enc
     image3="image:spaceland-recursos-3.webp" optionsthumb3="200x150" title3="Recursos"
     caption="Recursos" >}}
 
-#### Armas, equipo y habilidades
+### Armas, equipo y habilidades
 
 En ciertos puntos de la historia de la aventura hay unos encuentros en los que permiten adquirir nuevo equipo y armas para los personajes. Algunas armas las puede usar varios personajes con lo que hay repartirlas entre los miembros del grupo. El taller permite investigar las armas principales, armadura para otorgar más puntos de vida a los personajes o un arma secundaria que tiene infinita munición.
 
@@ -129,7 +129,7 @@ Por otro lado, cada personaje tiene un árbol de habilidades sencillo de dos ram
     image2="image:spaceland-habilidades-5.webp" optionsthumb2="200x150" title2="Habilidades"
     caption="Armas y habilidades" >}}
 
-#### Episodios
+### Episodios
 
 El juego consta de 28 episodios o misiones cada una con un mapa único que generalmente consisten en avanzar por el mapa hasta llegar a la salida intentado que ningún soldado pierda la vida, completando la misión en el número de turnos indicado y si la misión tiene un hallazgo encontŕandolo e investigandolo.
 
@@ -162,7 +162,7 @@ Hay tres jefes y algunos escenarios especiales como la bajada en el montacargas 
     image2="image:spaceland-jefes-2.webp" optionsthumb2="200x150" title2="Jefes"
     caption="Jefes" >}}
 
-#### Aliens
+### Aliens
 
 El grupo de diferentes enemigos también es variado, algunos tienen menos vida, hacen menos daño, otros hacen más daño y hay que usar un arma capaz de quitarles toda la vida de un disparo, otros solo tiene como punto débil la espalda y son inmunes a cualquier otro tipo de daño con lo que hay que rodearlos.
 

@@ -24,7 +24,7 @@ Para hacer la conversión usaba la herramienta [FFmpeg][ffmpeg], esta misma herr
 
 {{< tableofcontents >}}
 
-### Formatos de archivos de vídeo, contenedor y codificador de vídeo y audio
+## Formatos de archivos de vídeo, contenedor y codificador de vídeo y audio
 
 Formatos de vídeo hay bastantes, en el futuro surgirán más y por tanto los reproductores no son capaces de manejar correctamente todos o solo los más comunes, si el reproductor es algo antiguo seguramente los nuevos formatos no sea capaz de reproducirlos, el reproductor puede ser un aparato específico o una Smart TV que pasado un tiempo quedan en parte obsoletos si no pueden actualizarse para soportar nuevos y mejores formatos de vídeo o audio. Por otro lado la calidad de los vídeos varía según el tamaño pudiendo ser menor de lo considerado como alta definición, HD (720 líneas), Full HD (1080 líneas) o 4K (2160 líneas). Según sea la resolución de la televisión o pantalla donde vayamos a visualizar el vídeo no se va a ver mejor aunque el vídeo tenga más resolución que la pantalla por lo que cambiar la resolución del vídeo si es mayor que la resolución de la pantalla haremos que el vídeo ocupe mucho menos sin perder apenas o ninguna calidad de forma perceptible.
 
@@ -37,7 +37,7 @@ Algunos de los codificadores (_encoders_) y decodificadores (_decoders_) más co
 * Codecs de vídeo: h264, mpeg4, libxvid, vp8, vp9, ...
 * Codecs de audio: mp3, ac3, libvorbis, ...
 
-### Obtener codecs soportados por FFmpeg
+## Obtener codecs soportados por FFmpeg
 
 Si antes de reproducirlos en el reproductor multimedia o Smart TV pruebas en vídeo convertido con el [reproductor multimedia VLC][vlc] has de tener en cuenta que VLC es capaz de reproducir casi todo lo que se le eche, por tanto que funcione con VLC no quiere decir que vaya a funcionar con el reproductor que usemos.
 
@@ -45,7 +45,7 @@ Con el siguiente comando obtenemos la lista de codificadores y decodificadores q
 
 {{< code file="ffmpeg-codecs.sh" language="bash" options="" >}}
 
-### Obtener información de un archivo de vídeo
+## Obtener información de un archivo de vídeo
 
 Si no se indica la tasa de bits como indican en la [documentación de FFmpeg](https://ffmpeg.org/ffmpeg.html) el codificador seleccionará por defecto una tasa de bits muy baja resultando en una calidad muy pobre por lo que deberemos indicar una similar a la original. Para ver ver la calidad de un vídeo y del audio usamos el parámetro _-i_:
 
@@ -57,9 +57,9 @@ Por otro lado, los vídeos pueden tener múltiples pistas de audio y subtítulos
     gallery="true"
     image1="image:ffmpeg-i.webp" optionsthumb1="650x450" title1="Información de un vídeo" >}}
 
-### Operaciones comunes con archivos de vídeo
+## Operaciones comunes con archivos de vídeo
 
-#### Convertir un archivo de vídeo entre formatos
+### Convertir un archivo de vídeo entre formatos
 
 Partiendo de un vídeo en un contenedor MKV, vídeo codificado con H.264 y audio codificado con _mp3_ estos son los comandos que me han servidor para recodificarlo y reproducirlo correctamente en un reproductor multimedia [iomega ScreenPlay TV Link](https://www.google.es/search?q=omega+ScreenPlay+TV+Link&ie=utf-8&oe=utf-8&gws_rd=cr&ei=_Q4BV7WXBcnXU9nQtcgI) que tendrá ya más de 7 años. De MKV/H.264/MP3 a MPG/MPEG2/MP3, a MPG/MPEG1/MP3, a MP4/H.264/AC3 y en el caso de DivX AVI/XViD/MP el vídeo se reproducía con unos molestos frecuentes pequeños parones en la imagen.
 
@@ -71,13 +71,13 @@ Con el parámetro _-c:v_ indicamos el codificador de vídeo, con _-c:a_ el codif
     gallery="true"
     image1="image:ffmpeg-output.webp" optionsthumb1="650x450" title1="Salida conversión de MKV a MPG" >}}
 
-#### Cambiar la resolución del vídeo
+### Cambiar la resolución del vídeo
 
 Con la información de la calidad el vídeo y audio original lo indicamos en la conversión con los parámetros _-b:v_ y _-b:a_ para el vídeo y audio de los como se ha usado en los ejemplos anteriores. Si queremos cambiar la resolución del vídeo lo indicamos con el parámetro _-vf_, reduciremos también la tasa de bits dedicados si el tamaño del vídeo de salida es menor.
 
 {{< code file="ffmpeg-scale.sh" language="bash" options="" >}}
 
-#### Extraer el audio de un vídeo
+### Extraer el audio de un vídeo
 
 Con FFmpeg también nos es posible extraer el audio de un vídeo a un archivo de sonido _mp3_ o _ogg_ o quitar el audio del vídeo, para ello con el parámetro _-vn_ omitiremos el vídeo y con _-an_ omitiremos el audio.
 
@@ -95,7 +95,7 @@ Si no tenemos instalado un reproductor de vídeo con el comando `ffplay` podemos
     gallery="true"
     image1="image:ffplay.webp" optionsthumb1="300x250" title1="FFplay" >}}
 
-#### Extraer una imagen de un vídeo
+### Extraer una imagen de un vídeo
 
 Otra operación es extraer una imagen o fotograma de un archivo de vídeo indicando el tiempo específico del vídeo de la que se quiere la imagen. El parámetro _-ss_ indica el tiempo específico en segundos desde el inicio del fotograma y el parámetro _-frames:v_ indica que solo se desea un fotograma, el parámetro _-i_ especifica el vídeo de entrada y _image.jpg_ es el archivo de salida con el formato de imagen según la extensión indicada.
 
@@ -103,7 +103,7 @@ Otra operación es extraer una imagen o fotograma de un archivo de vídeo indica
 
 Esta operación de obtener un fotograma de una película o vídeo se puede combinar con [la herramienta j2pa para convertir una imagen a arte de caracteres ASCII][blogbitix-563].
 
-### Realizar conversiones de forma masiva
+## Realizar conversiones de forma masiva
 
 Al igual que comentaba en el artículo de convertir archivos de audio todas estas operaciones son realizables de forma masiva en un directorio o recursiva en múltiples directorios con los siguientes comandos.
 
@@ -115,13 +115,13 @@ Otras opciones útiles disponibles en los comandos de FFmpeg son:
 
 {{< code file="ffmpeg-masive.sh" language="bash" options="" >}}
 
-### Herramientas gráficas para convertir formatos y editar vídeos
+## Herramientas gráficas para convertir formatos y editar vídeos
 
 Si preferimos realizar la conversión mediante una interfaz gráfica podemos se pueden utilizar varias herramientas, una de ellas es [HandBrake][handbrake] específica para realizar conversiones con multitud de opciones con la que es posible hacer las mismas operaciones que con FFmpeg e incluye preconfiguraciones para producir resultados compatibles y eficientes para dispositivos y páginas como YouTube o compartirlos en redes sociales. Tiene la opción de realizar encolar tareas de conversión a aplicar a varios archivos.
 
 Otra herramienta de conversión pero también de edición son [Pitivi][pitivi] o [OpenShot][openshot], como herramientas de edición permiten crear vídeos con fragmentos de varios vídeos, cambiar o añadir el audio, definir la resolución y formato de salida.
 
-#### Herramientas para archivos multimedia
+### Herramientas para archivos multimedia
 
 Hay muchas otras operaciones y herramientas para archivos multimedia de vídeo o audio en formato de línea de comandos o con interfaz gráfica. En esta página [lista de aplicaciones multimedia](https://wiki.archlinux.org/index.php/List_of_applications/Multimedia) de la [wiki de Arch Linux][archlinux-wiki].
 

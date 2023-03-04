@@ -47,7 +47,7 @@ El entorno de escritorio se instala con el sistema con lo que primero es [elegir
 
 {{< tableofcontents >}}
 
-### El entorno de escritorio GNOME
+## El entorno de escritorio GNOME
 
 GNOME con las críticas iniciales a la versión primera de la rama 3.0 publicada en abril del 2011 por el cambio significativo respecto a versiones anteriores ha mejorado mucho y sigue haciéndolo con cada nueva versión publicada cada seis meses.
 
@@ -85,7 +85,7 @@ Continúan realizándose mejoras, algunas de las cuales son aplicadas en cada nu
     image3="image:gnome-dash-2.webp" optionsthumb3="200x150" title3="Lanzador de aplicaciones de GNOME"
     caption="Entorno de escritorio y lanzador de aplicaciones de GNOME" >}}
 
-### Aplicaciones del entorno de escritorio GNOME
+## Aplicaciones del entorno de escritorio GNOME
 
 GNOME integra un conjunto de aplicaciones que proporcionan una funcionalidad importante en la experiencia del entorno de escritorio.
 
@@ -97,7 +97,7 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
 * [Página de diseño de las aplicaciones de GNOME](https://wiki.gnome.org/Design/Apps/)
 * [Aplicaciones de GNOME (wikipedia)](https://en.wikipedia.org/wiki/GNOME_Core_Applications)
 
-#### Conversaciones y organización personal
+### Conversaciones y organización personal
 
 <ul>
    <li>Evolution: cliente de correo electrónico y organizador</li>
@@ -116,7 +116,7 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
     image2="image:calendario-1.webp" optionsthumb2="200x150" title2="Calendario"
     image3="image:calendario-2.webp" optionsthumb3="200x150" title3="Calendario" >}}
 
-#### Archivos
+### Archivos
 
 <ul>
    <li>Visor de imágenes</li>
@@ -149,7 +149,7 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
     image2="image:videos-2.webp" optionsthumb2="200x150" title2="Vídeos"
     image3="image:videos-3.webp" optionsthumb3="200x150" title3="Vídeos" >}}
 
-#### Herramientas de sistema
+### Herramientas de sistema
 
 <ul>
    <li>Captura de pantalla</li>
@@ -172,7 +172,7 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
     image2="image:terminal-2.webp" optionsthumb2="200x150" title2="Terminal"
     image3="image:monitor-sistema.webp" optionsthumb3="200x150" title3="Monitor del sistema" >}}
 
-#### Sistema esencial
+### Sistema esencial
 
 <ul>
    <li>Configuración: opciones de configuración del sistema</li>
@@ -195,7 +195,7 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
     image2="image:web-2.webp" optionsthumb2="200x150" title2="Web"
     image3="image:web-3.webp" optionsthumb3="200x150" title3="Web" >}}
 
-#### Mundo
+### Mundo
 
 <ul>
    <li>Relojes</li>
@@ -216,7 +216,7 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
     gallery="true"
     image1="image:mapas-4.webp" optionsthumb1="200x150" title1="Mapas" >}}
 
-#### Utilidades
+### Utilidades
 
 <ul>
    <li>Calculadora</li>
@@ -242,7 +242,7 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
     image2="image:editor-de-texto.webp" optionsthumb2="200x150" title2="Editor de texto"
     image3="image:retoques.webp" optionsthumb3="200x150" title3="Retoques" >}}
 
-#### Propósito especial
+### Propósito especial
 
 <ul>
    <li>Cajas: virtualización</li>
@@ -254,7 +254,7 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
     image2="image:cajas-2.webp" optionsthumb2="200x150" title2="Cajas"
     image3="image:cajas-3.webp" optionsthumb3="200x150" title3="Cajas" >}}
 
-#### Audio y vídeo
+### Audio y vídeo
 
 <ul>
    <li>Cheese: aplicación webcam</li>
@@ -267,7 +267,7 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
     image1="image:camara.webp" optionsthumb1="200x150" title1="Cheese"
     image2="image:grabadora-de-sonido.webp" optionsthumb2="200x150" title2="Grabadora de sonido" >}}
 
-#### Creación y edición
+### Creación y edición
 
 <ul>
    <li>Brasero: grabadora de CD y DVD</li>
@@ -275,14 +275,14 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
    <li>Subtítulos: editor de subtítulos para archivos de vídeo</li>
 </ul>
 
-#### Comunicación
+### Comunicación
 
 <ul>
    <li>Fractal</li>
    <li>Polari</li>
 </ul>
 
-#### Entorno de desarrollo
+### Entorno de desarrollo
 
 <ul>
    <li>Builder: entorno integrador de desarrollo</li>
@@ -300,7 +300,7 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
     image2="image:glade-1.webp" optionsthumb2="200x150" title2="Glade"
     image3="image:glade-2.webp" optionsthumb3="200x150" title3="Glade" >}}
 
-#### Juegos
+### Juegos
 
 <ul>
     <li>Aventura: MUD, Arcade, Nibbles, Robots, Blocks, Quadrapassel (Lines), Board, Chess, Iagno, Mahjongg</li>
@@ -323,7 +323,7 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
     image2="image:juegos-swellfoop.webp" optionsthumb2="200x150" title2="Swell Foop"
     image3="image:juegos-tetravex.webp" optionsthumb3="200x150" title3="Tetravex" >}}
 
-### Formatos de vídeo y audio y aplicaciones de terceros
+## Formatos de vídeo y audio y aplicaciones de terceros
 
 Para que las aplicaciones de vídeos y música soporten más formatos de archivo es necesario instalar los decodificadores de esos formatos. En Arch Linux los siguientes paquetes.
 
@@ -333,7 +333,7 @@ Para que las aplicaciones de vídeos y música soporten más formatos de archivo
 
 {{< code file="pacman-gstreamer.sh" language="bash" options="" >}}
 
-### Otras aplicaciones diseñadas para GNOME
+## Otras aplicaciones diseñadas para GNOME
 
 Aunque no están desarrolladas como parte del escritorio hay otras [aplicaciones diseñas para GNOME][gnome-apps] siguiendo su guía de estilos de forma que están perfectamente integradas. Sus funcionalidades son variadas como un editor en formato _markdown_, copias de seguridad, reproductor de audio libros, compresor de imágenes, escaneador y generador de códigos QR, descarga de tipografías, conversor y generador de tipografías, traductor, dibujo, cliente de BitTorrent, grabador de pantalla, limpiador de metadatos, ofuscador y cifrado de archivos, gráficas, _podcasts_, recortador de vídeo, radio por internet entre algunas otras más.
 
@@ -343,7 +343,7 @@ Aunque no están desarrolladas como parte del escritorio hay otras [aplicaciones
     gallery="true"
     image1="image:gnome-circle-apps.webp" optionsthumb1="300x250" title1="Aplicaciones diseñadas para GNOME" >}}
 
-### Aplicaciones de terceros
+## Aplicaciones de terceros
 
 Las aplicaciones de terceros proporcionan funcionalidades adicionales, son una alternativa a las de GNOME con más funcionalidades o complementan a estas que algunos usuarios necesitan como paquete ofimático con procesador de documentos, hoja de cálculo y presentaciones, edición de vídeo, editor de fotos,  editor de imágenes vectoriales, editor de animación 3D, gestor de biblioteca de libros electrónicos, descargas de archivos, mensajería instantánea, videoconferencia, nube privada, otro reproductor de audio y vídeo, conversores entre formatos de audio y vídeo, compiladores, bases de datos, gestor de contraseñas, ...
 

@@ -22,7 +22,7 @@ Con las velocidades de transferencia que proporciona la fibra, el ADSL incluso e
 
 Dependiendo del servidor web la configuración que deberemos añadir será diferente, en este artículo mostraré la configuración a usar para dos de los servidores web más populares en internet, que son [Nginx][nginx] y [Apache HTTPD][apache-httpd].
 
-### Nginx
+## Nginx
 
 Usando varias [directivas de Nginx para la compresión](http://nginx.org/en/docs/http/ngx_http_gzip_module.html) la activamos, establecemos el nivel de compresión, el tamaño de los _buffers_ dedicados a la compresión y finalmente los _mimetypes_ de los archivos que queremos sean comprimidos antes de enviarse al cliente (el texto plano, contenido CSS, JSON, XML, RSS y JavaScript). El _mimetype_ _text/html_ no hace falta indicarlo porque siempre está activo y para los formatos de archivos que ya están comprimidos es innecesario como fotos o vídeos.
 
@@ -42,7 +42,7 @@ Unos pocos kilobytes no son mucho para un único recurso pero si tenemos en cuen
     image2="image:nginx-gzip.webp" optionsthumb2="300x200" title2="Nginx configurado con compresión GZIP"
     caption="Nginx configurado sin y con compresión GZIP" >}}
 
-### Apache HTTPD
+## Apache HTTPD
 
 Activado el módulo para realizar la compresión al igual que el caso de Nginx podemos establecer la cantidad de memoria reservada para la compresión, el nivel de compresión y los _mimetypes_ del contenido a comprimir. Con las [directivas adicionales de la documentación](http://httpd.apache.org/docs/current/mod/mod_deflate.html) se puede personalizar aún más el proceso de compresión.
 

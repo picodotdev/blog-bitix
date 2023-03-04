@@ -21,35 +21,35 @@ En este artículo comentaré algunos libros que a mí me han gustado y que mucha
 
 {{< tableofcontents >}}
 
-### Thinking in Java
+## Thinking in Java
 
 Yo como programador Java el libro que recomiendo para aquellos que ya tengan unos pocos conocimientos de programación estén empezando a programar en Java es [Thinking in Java](https://amzn.to/2Qo38qQ) aunque también es recomendable para aquellos que incluso llevan varios años programando en Java, contiene una explicación detallada de cada uno de los aspectos del lenguaje. Java 8 ha introducido numerosas novedades (streams, lambdas, mejorada la programación asíncrona, date api, default methods, programación funcional, ...) y el libro [Java 8 in Action](https://amzn.to/2ZThJxJ) nos permite conocerlas detalladamente. En otros lenguajes hay otros libros que nos pueden introducir en la materia como [C# 5.0 All-in-One For Dummies](https://amzn.to/39GxlsU) o [Beginning Python](https://amzn.to/35oMxHG).
 
-### Effective Java
+## Effective Java
 
 Para aquellos que ya tienen varios años de experiencia el libro [Effective Java](https://amzn.to/39C8Ehn) contiene numerosos consejos para usar Java de forma "efectiva" aunque algunos puntos del libro son aplicables a cualquier otro lenguaje de programación orientado objetos. La segunda edición no está actualizada con las novedades introducidas en Java 8 pero prácticamente todo sigue siendo válido, el libro <a href="v">Java 8 in Action</a> también contiene algunos consejos en la misma linea que complementan a este libro.
 
-### Head First - Design Patterns
+## Head First - Design Patterns
 
 Los patrones de diseño nos presentan una solución que se ha comprobado válida para resolver problemas. En varios casos tratan de hacer que los cambios no afecten de forma notable a la estructura de los programas. Hay patrones de creación, estructurales o de comportamiento, ... conviene conocerlos por si en algún momento determinado podemos aplicarlos a nuestro código. El formato del libro [Head First Design Patterns](https://amzn.to/37GFpYV) no sigue la estructura tradicional de los libros sino una estructura más esquemática y con ejemplos que hacen sencillo comprender los patrones, cuando aplicarlos, que ventajas tienen, que desventajas y como están relacionados los patrones entre ellos. Otro libro con un formato más tradicional y muy comentado es [Design Patterns](https://amzn.to/36qiq3P).
 
-### Clean Code
+## Clean Code
 
 El contenido de [Clean code](https://amzn.to/2T0L5IS) es aplicable a cualquier lenguaje y de interés para cualquier programador, contiene consejos para escribir mejor código en nuestras aplicaciones, desde como asignar nombres, como escribir funciones, comentarios, formatear el código, objetos y estructuras de datos, ..., temás relacionados con el código que escribimos. El objetivo de la programación es escribir código que funciona y resuelva necesidades pero también es casi tan importante que sea fácilmente entendible por otros programadores o nosotros mismos unas semanas más tarde ya que la mayor parte del tiempo no la dedicamos a escribir nuevo código sino a modificarlo.
 
-### Code Complete
+## Code Complete
 
 [Code Complete](https://amzn.to/37Gh59B) es otro libro que se centra en como mejorar el código que escribimos de forma similar a Clean Code, explica muchos principios que pueden guiar el código que desarrollamos. Aún no lo he leído pero es mencionado bastante bastantes veces en libros de lectura recomendada. Por una lectura rápida por encima parece que está bastante bien.
 
-### The Pragmatic Programmer
+## The Pragmatic Programmer
 
 El libro [Pragmatic programmer](https://amzn.to/2MXRVuZ) también es aplicable independientemente de lenguaje que utilicemos. Contienen consejos que podemos usar como guía para tomar decisiones, para escribir mejor código y también para ser mejores programadores y profesionales.
 
-### The Clean Coder
+## The Clean Coder
 
 Quizá ya conocieses Clean Code pero conocías ¿[The Clean Coder](https://amzn.to/2MXB4II)?. Del mismo autor que Clean Code pero en este caso se centra no en el código sino en el programador, explica como enfrentarnos a situaciones que nos encontramos como programadores en el trabajo, en la programación escribir código solo es una pequeña parte y comprende mucho más que escribir lineas de código, también dar solución a las necesidades del negocio y de forma correcta. Trata de explicar como comportarnos de forma profesional, el decir no, el decir sí, practicar, gestión del tiempo, estimaciones, colaboración, equipos, aprender de un mentor, ser un mentor, ...
 
-### Refactoring
+## Refactoring
 
 Comenzar un proyecto desde el inicio no es lo habitual y aún así pasado un tiempo no muy grande el código se convierte en heredado, lo habitual es que tengamos que modificar código que ya están escrito. El libro [Refactoring](https://amzn.to/39CyVMm) nos explica como modificar el código para que tenga mejor diseño y sea más legible o fácil de modificar en un futuro y ante los posibles cambios que se vayan introduciendo. Algunas de las acciones están relacionadas con aplicar algunos principios de los patrones de diseño explicados en Head First - Design Patterns o algunos principios comentados en Clean Code.
 

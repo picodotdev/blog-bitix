@@ -29,7 +29,7 @@ Dado que los códigos de barras son leídos y procesados por una computadora pro
 
 {{< tableofcontents >}}
 
-### Códigos de barras y códigos QR
+## Códigos de barras y códigos QR
 
 El código se corresponde con el identificador de un producto, con el código se realiza la operación ya sea añadirlo a una lista de la compra en un supermercado o permitir el acceso a un evento deportivo. Hay varios estándares de códigos de barras y códigos QR pero en definitiva todos se representan con una imagen, normalmente son en blanco y negro pero también se admiten algunas combinaciones de colores sobre todo el los formatos matriciales o de dos dimensiones.
 
@@ -37,7 +37,7 @@ Algunos estándares se representan con una secuencia de barras normalmente en bl
 
 Dependiendo del estándar la información que codifica es un conjunto de números limitado, otros formatos permiten almacenar texto de longitud variable. Dependiendo del ámbito que se vayan a usar e información que tienen los códigos es más adecuado utilizar un estándar u otro.
 
-### Los diferentes estándares
+## Los diferentes estándares
 
 Hay diferentes tipos de códigos en cuanto a sus características y aspecto impreso. Un tipo de códigos son los lineales normalmente de una dimensión dispuesta en horizontal, pueden tener una altura variable y de esta forma tienen el aspecto de códigos de barras verticales formados por un conjunto de lineas en color negro y espacios en blanco de diferente anchura, en los productos de supermercado se usa alguna variación del estándar UPC o EAN. El otro tipo de códigos son los matriciales hay más diversidad en su aspecto visual por ofrecer más opciones incluso utilizando más colores que el blanco y negro, uno de los más conocidos de este tipo son los códigos QR formados por un rectángulo de cuadraditos negros y blancos.
 
@@ -67,7 +67,7 @@ En los formatos matriciales o de dos dimensiones están:
     image2="image:data-matrix.webp" optionsthumb2="300x250" title2="Código Maxi Code"
     caption="Códigos matriciales QR Code y Maxi Code" >}}
 
-### Aplicaciones para generar códigos de barras y códigos
+## Aplicaciones para generar códigos de barras y códigos
 
 La aplicación [Zint Barcode Studio](https://flathub.org/apps/details/uk.org.zint.zint-qt) permite generar códigos de barras en una gran cantidad de estándares, se puede instalar en [GNU][gnu]/[Linux][linux] fácilmente al estar en formato [Flatpak][flatpak] con la aplicación Software de [GNOME][gnome]. Se selecciona el estándar para el código de barras, algunas propiedades de la imagen e introducir el código a codificar en la imagen, finalmente la imagen se puede exportar a diferentes formatos de imagen.
 
@@ -87,7 +87,7 @@ Otra aplicación sencilla para códigos QR es [Decodificador](https://flathub.or
     image2="image:decoder.webp" optionsthumb2="300x200" title2="Decoder"
     caption="Decoder" >}}
 
-### Lectores de códigos de barras y códigos QR
+## Lectores de códigos de barras y códigos QR
 
 Hay dispositivos hardware especializados para leer códigos, algunos soportan varios estándares. Utilizan un láser que escanea la imagen e identifica el código. Muchos no necesitan de ningún software especializado ni controlador para el sistema operativo ya que el dispositivo hardware es como un teclado y al escanear el código es como si se escribiera manualmente en el teclado.
 

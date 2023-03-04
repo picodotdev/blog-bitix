@@ -26,7 +26,7 @@ Dependiendo del servidor web o de aplicaciones que usemos la configuración ser�
 
 {{< tableofcontents >}}
 
-### Redirigir de HTTP a HTTPS en Nginx
+## Redirigir de HTTP a HTTPS en Nginx
 
 Usando [Docker][docker] nos resultará más sencillo hacer la prueba que teniendo que instalar el paquete de Nginx en nuestra distribución. Puedes consultar [varios artículos sobre Docker][blogbitix-serie-docker] que he escrito a modo introducción y para empezar a usarlo.
 
@@ -40,7 +40,7 @@ En la sección del servidor que escucha en el puerto HTTP (80) realizamos la red
     image1="image:nginx-https.webp" optionsthumb1="300x200" title1="Redirección de HTTP a HTTPS en Nginx"
     caption="Redirección de HTTP a HTTPS en Nginx" >}}
 
-### Redirigir de HTTP a HTTPS en Apache HTTPD
+## Redirigir de HTTP a HTTPS en Apache HTTPD
 
 La configuración para Apache HTTPD es similar simplemente cambian las directivas según su propia configuración. Se activan los módulos para usar TLS/SSL y el que permite hacer reescrituras de las URL.
 
@@ -52,7 +52,7 @@ La configuración para Apache HTTPD es similar simplemente cambian las directiva
     image1="image:apache-httpd-https.webp" optionsthumb1="300x200" title1="Redirección de HTTP a HTTPS en Apache HTTPD"
     caption="Redirección de HTTP a HTTPS en Apache HTTPD" >}}
 
-### Redirigir de HTTP a HTTPS en Tomcat, Jetty y WildFly
+## Redirigir de HTTP a HTTPS en Tomcat, Jetty y WildFly
 
 Es muy habitual que los servidores de aplicaciones como Tomcat, Jetty o WildFly sean accedidos no directamente por el navegador del usuario sino a través de un servidor web como Nginx o Apache haciendo de _proxy_. Cuando hay un servidor web que actúa de _proxy_ para el servidor de aplicaciones es posible decidir que el establecimiento de la conexión cifrada TLS/SSL del protocolo HTTPS se realice en el servidor web y la comunicación cifrada termine al mismo tiempo en él, la comunicación entre el servidor web y el servidor de aplicaciones se realizaría usando el protocolo HTTP. Esto descarga del servidor de aplicaciones la tarea algo costosa del establecimiento de la conexión cifrada y tener que cifrar el tráfico.
 
@@ -60,7 +60,7 @@ Para el caso de Tomcat, Jetty y WildFly habiendo configurado la posibilidad de u
 
 {{< code file="web.xml" language="XML" options="" >}}
 
-### Redirigir de HTTP a HTTPS en en una aplicación Java
+## Redirigir de HTTP a HTTPS en en una aplicación Java
 
 Con algún mecanismo propio que empleemos al programar la aplicación (en Java por ejemplo con un filtro) o el _framework_ web que usemos para desarrollar la aplicación web quizá nos ofrezca algún mecanismo para redirigir las peticiones al puerto seguro cuando sea accedida por el puerto inseguro, por ejemplo, para que la redirección la haga la aplicación en vez del servidor con el _framework_ Apache Tapestry basta añadir la siguiente configuración en el módulo de la aplicación.
 

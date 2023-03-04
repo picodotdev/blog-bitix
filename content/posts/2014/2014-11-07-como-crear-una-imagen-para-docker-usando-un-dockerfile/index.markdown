@@ -27,7 +27,7 @@ Si no hay ninguna que se adapte totalmente a nuestras necesidades, no nos gusta 
 
 {{< tableofcontents >}}
 
-### Archivo Dockerfile
+## Archivo Dockerfile
 
 Este podría ser el contenido y la receta de un dockerfile si quisiésemos crear una imagen de docker con el servidor web nginx como servicio basada en la distribución [Ubuntu][ubuntu].
 
@@ -44,7 +44,7 @@ Los archivos Dockerfile son archivos de texto con una secuencia de directivas:
 * _EXPOSE_: indica los puertos TCP/IP por los que se pueden acceder a los servicios del contenedor, los típicos son 22 (SSH), 80 (HTTP) u 443 (HTTP).
 * _CMD_: establece el comando del proceso de inicio que se usará si no se indica uno al iniciar un contenedor con la imagen.
 
-### Construir una imagen de Docker
+## Construir una imagen de Docker
 
 Las instrucciones RUN y ADD permiten aprovisionar la imagen a partir de la imagen base, ejecutando comandos para instalar paquetes como Nginx y añadir archivos de configuración si los hubiera copiados de la máquina anfitrión. El archivo _Dockerfile_ es la receta con la que se construye una imagen de Docker.
 
@@ -56,7 +56,7 @@ La imagen construida queda almacenada en el registro local de imágenes.
 {{< code file="docker-images.sh" language="bash" options="" >}}
 {{< code file="docker-images.out" language="plain" options="" >}}
 
-### Iniciar un contenedor con la imagen
+## Iniciar un contenedor con la imagen
 
 El siguiente comando inicia una instancia del contenedor con un servidor web virtual para el dominio _www.127.0.0.1.xip.io_.
 

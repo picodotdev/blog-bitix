@@ -25,7 +25,7 @@ Dentro de la categoría de bases de datos las relacionales son unas de las más 
 
 {{< tableofcontents >}}
 
-### Clases del JDK para acceso a base de datos relacionales
+## Clases del JDK para acceso a base de datos relacionales
 
 Java ofrece soporte para las bases de datos relacionales desde prácticamente las primeras versiones del JDK hasta día de hoy incorporando un conjunto de clases en el paquete _java.sql_ en la denominada API en Java de [Java Database Connectivity][wikipedia-jdbc] o JDBC.
 
@@ -43,7 +43,7 @@ Cada base de datos utiliza un protocolo diferente de comunicación con los clien
 
 En el [tutorial sobre SQL con Java](https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html) se explican los conceptos básicos y fundamentales para usar bases de datos relacionales.
 
-### Ejemplo de conexión y consulta a un base de datos relacional con la API de Java
+## Ejemplo de conexión y consulta a un base de datos relacional con la API de Java
 
 En este ejemplo de código se muestra el uso de las clases fundamentales de Java para usar una base de datos relacional. El primer paso es establecer una conexión con la base de datos, en este caso usando la base de datos H2 en memoria.
 
@@ -51,41 +51,41 @@ Posteriormente se ejecuta una sentencia DDL para crear una tabla, se insertan va
 
 Las clases _Connection_, _Statemente_, _PreparedStatement_ y _ResultSet_ al finalizar su uso hay que invocar su método _close_ para liberar los recursos que tienen reservados, especialmente en el caso de las conexiones ya que son un recurso limitado. Estas clases implementan la interfaz [AutoCloseable](javadoc11:java.base/java/lang/AutoCloseable.html) con lo que son adecuadas para las sentencias _try-with-resources_ de Java.
 
-#### Establecer la conexión a la base de datos
+### Establecer la conexión a la base de datos
 
 Por defecto después de cada sentencia Java emite un _commit_, esto no es lo deseado en el caso de querer agrupar la ejecución de varias sentencias en una transacción, para evitarlo hay que usar la opción _setAutoCommit_ a _false_.
 
 {{< code file="Main-1.java" language="java" options="" >}}
 
-#### Ejecutar una sentencia con _Statement_
+### Ejecutar una sentencia con _Statement_
 
 {{< code file="Main-2.java" language="java" options="" >}}
 
-#### Ejecutar una sentencia con _PreparedStatement_
+### Ejecutar una sentencia con _PreparedStatement_
 
 {{< code file="Main-3.java" language="java" options="" >}}
 
-#### Ejecutar una consulta
+### Ejecutar una consulta
 
 {{< code file="Main-4.java" language="java" options="" >}}
 
-#### Cerrar la conexión de forma explícita
+### Cerrar la conexión de forma explícita
 
 {{< code file="Main-5.java" language="java" options="" >}}
 
-#### Resultado 
+### Resultado 
 
 El resultado del programa en la terminal es el siguiente.
 
 {{< code file="System.out" language="plain" options="" >}}
 
-#### Dependencia con el _driver_ de la base de datos
+### Dependencia con el _driver_ de la base de datos
 
 En el archivo de construcción hay quu añadir la dependencia que contiene el _driver_ para la base de datos a conectarse.
 
 {{< code file="build.gradle" language="groovy" options="" >}}
 
-### El problema de seguridad de _SQL injection_
+## El problema de seguridad de _SQL injection_
 
 El problema de seguridad de _SQL injection_ es un grave problema de seguridad que afecta a las aplicaciones que construyen sentencias de forma dinámica a partir de datos provenientes de origen no confiable. Un origen no confiable es cualquier dato proveniente de forma externa a la aplicación, en el caso de las aplicaciones web o servicios REST es un parámetro de la petición o un dato de un JSON.
 
@@ -105,7 +105,7 @@ La solución al problema de seguridad de _SQL injection_ en Java es no construir
 
 {{< code file="sql-injection-prepared-statement.java" language="java" options="" >}}
 
-### Librerías de persistencia en Java
+## Librerías de persistencia en Java
 
 Habitualmente no se utilizan directamente las clases de la API de Java sino que se utilizan otras librerías de más alto nivel. Una de las más conocidas es [Hibernate][hibernate], es un ORM que proporciona acceso a los datos con una correspondencia entre el modelo relacional de las bases de datos y el modelo de objetos de Java. La aplicación trabaja con objetos y relaciones entre los objetos e Hibernate se encarga de transformar esos objetos en el modelo relacional de la base de datos, la aplicación no ejecuta sentencias SQL de forma directa sino que es Hibernate el encargado de emitir las sentencias adecuadas según los cambios realizados en los datos. Es la implementación más utilizada de ORM en Java para la especificación JPA.
 
@@ -129,7 +129,7 @@ Estas no son las únicas librerías existentes pero sí son de las más conocida
     image2="logotype:spring.svg" optionsthumb2="200x150" title2="Spring"
     image3="logotype:jooq.webp" optionsthumb3="200x150" title3="jOOQ" >}}
 
-### Bases de datos relacionales
+## Bases de datos relacionales
 
 Las bases de datos de software libre más utilizadas son [PostgreSQL][postgresql], [MariaDB][mariadb] y [MySQL][mysql] que rivalizan con la base de datos [Oracle][oracle-database] comercial. PostgreSQL es adecuada incluso para organizaciones y proyectos de gran tamaño.
 

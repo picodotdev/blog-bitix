@@ -27,7 +27,7 @@ In the above cases, a reinstallation of Windows from scratch is necessary. Many 
 
 {{< tableofcontents >}}
 
-### Minimum requirements
+## Minimum requirements
 
 The first thing is to know that Windows 10 to function correctly has minimum requirements for the computer on which it will be installed, it was marketed in July 2015 and any computer after that date will already meet the minimum requirements and also the computers that meet with Windows 7 or pre-installed with this previous version. In the page of [Specifications and system requirements for Windows](https://www.microsoft.com/es-es/windows/windows-10-specifications) are detailed a good amount of informative notes and the requirements that are the following:
 
@@ -41,7 +41,7 @@ These are the basic requirements, the recommended ones for a good user experienc
 
 Any new computer meets these requirements but perhaps some do not have an SSD hard disk, these disks are more expensive and offer less capacity although they have already become cheaper and are quite affordable and their capacity from 128 GiB or 256 GiB are enough for many users. Paying a little more for a computer with an SSD disk is a good decision, a computer with a mechanical disk may take 1 or 2 minutes to start up, one with an SSD less than 10 seconds, which is just an example between the difference between one and the other.
 
-### Windows 10 versions
+## Windows 10 versions
 
 Windows 10 has different versions, the differences between them are in the features they support.
 
@@ -49,7 +49,7 @@ Windows 10 has different versions, the differences between them are in the featu
 * _Pro_: this version includes all the functionalities of the _Home_ edition with some additional ones normally necessary in business environments. Some of its additional functionalities are Active Directory, Remote Desktop, BitLocker, virtualization with Hyper-V and _Windows Defender Device Guard_.
 * _Pro for Workstations_: is the version that allows you to use Windows on high-performance computers with Intel Xeon or AMD Epyc processors, large amounts of memory and some more advanced options.
 
-### Backup
+## Backup
 
 Once you know that the equipment meets the minimum requirements, you have to make a backup copy of the documents, photos and other personal files that the equipment has and you want to keep on an external hard drive or USB memory, if there is a lot of data instead of copying and pasting with the file explorer you can make the [backup with the FreeFileSync program][blogbitix-144] and restore the data also with the same program once Windows is reinstalled.
 
@@ -58,11 +58,11 @@ Once you know that the equipment meets the minimum requirements, you have to mak
     image1="image:freefilesync.webp" optionsthumb1="200x150" title1="Backup with FreeFileSync"
     caption="Backup with FreeFileSync" >}}
 
-### How to download Windows 10 for free
+## How to download Windows 10 for free
 
 In previous versions of Windows it had to be searched on file-sharing or P2P networks as a torrent. It is Microsoft itself that offers by direct download the Windows 10 ISO image for free from its own page and a tool for creating the USB or DVD media from which to start the installation. Simply [download the Windows 10 installation media](https://www.microsoft.com/en-us/software-download/windows10) to your computer by accessing the download page with a web browser, the installation media includes all versions of Windows, _Home_, _Pro_ and _Pro for Workstations_. With a good internet connection the download is fast, it does not take more than a few minutes.
 
-### Creating the installation media
+## Creating the installation media
 
 Depending on the Windows update downloaded, the screenshots or steps will vary but will be largely similar. Accessing the Windows 10 download page from a Windows 7, Windows 8.1 or Windows 10 system will display the option to download the Media Creation Tool or _Media Creation Tool_. Once downloaded and executed, the tool also allows the download of Windows 10 and the creation of media either a DVD or USB memory. In the case of the USB memory, it must have a capacity of at least 8 GiB and all the data it has will be lost, so your data must be saved in another external drive.
 
@@ -78,7 +78,7 @@ To install Windows 10, it is more advisable to use a USB memory with the _Media 
     image2="image:windows-media-creation-tool-04.webp" optionsthumb2="200x150" title2="Media Creation Tool"
     caption="Creating the installation media" >}}
 
-### Start Window 10 installation
+## Start Window 10 installation
 
 Once the Windows 10 installation media is ready in the form of a USB memory or DVD with the computer turned off and the installation media connected to a USB port or inserted in the DVD reader, it must be started so that it starts from the installation media. Depending on the manufacturer, starting the computer from the installation media varies slightly but the press of a key is usually used when the computer starts, the key is usually F2, F8, F10, F12 or the Escape key that allows you to select the drive from which the computer starts where you have to choose the USB memory or DVD.
 
@@ -98,7 +98,7 @@ In the following pages you can find several possible keys to enter the BIOS and 
 
 It may be the case that when the equipment starts, it shows a message with the key to press if it is necessary to try until it is found. After pressing the power button shortly after or as a logo is displayed is when the key must be pressed.
 
-### Windows 10 setup wizard
+## Windows 10 setup wizard
 
 One of the successes of Windows 10 is that the installation offers a wizard with which after completing several steps and pressing buttons _Next_ the system is installed and ready to use. Installation is complete in less than an hour.
 
@@ -123,7 +123,7 @@ The _Customized installation is recommended: install only Windows_ and do not ke
     image3="image:instalacion-windows-10-09.webp" optionsthumb3="200x150" title3="Windows 10 installation"
     caption="Windows 10 installation" >}}
 
-#### Basic configuration
+### Basic configuration
 
 After installing Windows, it offers a new wizard where some additional things about the system are customized. Some options to select in these steps before starting to use Windows 10 are:
 
@@ -178,7 +178,7 @@ After the Windows 10 configuration steps, prepare the system for the first login
     image3="image:primer-inicio-sesion-windows-10-03.webp" optionsthumb3="200x150" title3="First start with Windows 10"
     caption="First start with Windows 10" >}}
 
-### Using Windows and what to do after installation
+## Using Windows and what to do after installation
 
 If the computer already had a Windows license and was activated, surely Windows 10 will already recognize it as activated. It is also very likely that Windows 10 will be able to automatically recognize all the hardware that you have in the computer, including the graphics card, to use the maximum resolution offered by the screen, so if necessary, you must install an additional device driver by downloading it from the official website of the product manufacturer.
 
@@ -197,13 +197,13 @@ Even without a license and without activating Windows 10 it is perfectly usable,
     image2="image:windows-10-05.webp" optionsthumb2="200x150" title2="Windows 10"
     caption="Windows 10" >}}
 
-#### Buy a license and activate Windows 10
+### Buy a license and activate Windows 10
 
 Installing and using Windows 10 is free but after a few days after installation it must be activated with a valid license code, if it is not activated, some customization options such as changing the desktop background are disabled, although they do not prevent its use.
 
 Windows 10 licenses sold by Microsoft are not cheap, between € 145 and € 439 depending on the version. Some sellers offer cheap and legal licenses at very reduced prices of between $ 10 and $ 15 as I explain in the article [How to buy a license and activate Windows 10 and Microsoft Office 2019][blogbitix-514-en].
 
-### Alternative to Windows with GNU/Linux distributions
+## Alternative to Windows with GNU/Linux distributions
 
 You should know that Windows is not the only operating system option that you can install, if you want you can try any of the [GNU][gnu]/[Linux][linux] distributions as an alternative to Windows and discover the world of free software that it respects your rights and it does not take them away as proprietary software, you can read the article [choose a GNU/Linux distribution according to the user or team][blogbitix-190] and [install Ubuntu step by step from scratch][blogbitix-232].
 

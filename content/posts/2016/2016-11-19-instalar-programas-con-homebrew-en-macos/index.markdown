@@ -21,7 +21,7 @@ summary: "Para no tener que descargar binarios e instalarlos manualmente y estar
 
 Como nuevo usuario de [mi primer mac][blogbitix-193] he tenido que empezar instalando los programas que voy a usar. Una de las cosas buenas de las distribuciones [GNU][gnu]/[Linux][linux] es la forma de obtener e instalar programas. Cada distribución de GNU/Linux tiene su repositorio de paquetes y programas de los que el gestor de paquetes obtiene e instala. Los gestores paquetes se encargan de instalar, actualizar y desinstalar cada paquete junto las dependencias que requiera. Con el gestor de paquetes y desde la terminal es posible instalar múltiples programas rápidamente con un comando. En [Windows][windows] y [macOS][macos] los programas se instalan descargando un binario y ejecutándolo que inicia un asistente. Instalar programas de esta forma en Windows y macOS tiene los inconvenientes de que hay que hay que ir a la página oficial de programa y descargar el último binario disponible, además cuando se publique una nueva versión hay que descargar el nuevo binario y volverlo a instalar, también es una fuente de introducción de virus si se descarga e instala el software de fuentes no confiables. En GNU/Linux el gestor de paquetes se encarga de actualizar los paquetes y programas que estén desactualizados cuando haya nuevas versiones.
 
-### El gestor de paquete Homebrew para macOS
+## El gestor de paquete Homebrew para macOS
 
 En macOS existe un gestor de paquetes similar a los existentes en GNU/Linux, [Homebrew][homebrew] se define así mismo como el gestor de paquetes que le falta a macOS. Con Homebrew podemos instalar los programas y mantenerlos actualizados sin tener que estar observando cuando se publica una nueva versión de cada programa. Con Homebrew también podremos instalar muchos de los comandos que están disponibles en GNU/Linux como wget, cmus, gimp, ... [Homebrew Cask][homebrew-cask] es un añadido que proporciona los mismo para los binarios de los programas de macOS. Con estas dos herramientas podemos instalar y mantener actualizado la mayor parte del software que utilicemos.
 
@@ -33,7 +33,7 @@ Para instalar Homebrew ejecutamos el siguiente comando en la terminal:
 
 {{< code file="homebrew.sh" language="bash" options="" >}}
 
-### Comandos para tareas administrativas de paquetes
+## Comandos para tareas administrativas de paquetes
 
 Lo siguiente será buscar los programas en el repositorio de brew que queramos instalar:
 
@@ -71,7 +71,7 @@ Y para desinstalar paquetes:
 
 {{< code file="brew-uninstall.sh" language="bash" options="" >}}
 
-### Otras utilidades y administración de software
+## Otras utilidades y administración de software
 
 En caso de utilizar Java como lenguaje de programación para el desarrollo de aplicaciones es recomendable utilizar [la herramienta SDKMAN que permite instalar varias versiones del JDK y software de la plataforma Java][blogbitix-489], además de cambiar fácilmente entre las diferentes versiones.
 

@@ -37,7 +37,7 @@ La [revista MagPi][magpi] en PDF se puede descargar de forma gratuita y contiene
 
 {{< tableofcontents >}}
 
-### Cómo instalar GNU/Linux en la Raspberry Pi
+## Cómo instalar GNU/Linux en la Raspberry Pi
 
 Una vez en posesión de una Raspberry Pi y elementos imprescindibles, cargador de alimentación y tarjeta SD o microSD y opcionalmente teclado y monitor, el primer paso es realizar la instalación del sistema operativo. El sistema operativo oficial es [Raspberry Pi OS][raspberrypi-software].
 
@@ -45,7 +45,7 @@ La instalación se hace en una tarjeta de memoria microSD o una memoria USB, par
 
 El grabar la imagen en la tarjeta de almacenamiento conlleva la pérdida de los datos que tuviese con lo es necesario previamente haber hecho una copia de seguridad de los datos que contenga.
 
-#### Raspberry Pi OS
+### Raspberry Pi OS
 
 El sistema operativo Raspberry Pi OS está basado en la distribución [Debian][debian], dispone de varias versiones una con entorno gráfico de escritorio y la versión _Lite_ sin entorno de escritorio.
 
@@ -80,7 +80,7 @@ Una vez con acceso a la Raspberry Pi se pueden instalar los paquetes y programas
 {{< code file="apt-update-upgrade.sh" language="bash" options="" >}}
 {{< code file="apt-install-nginx.sh" language="bash" options="" >}}
 
-#### Ubuntu Server
+### Ubuntu Server
 
 [Ubuntu][ubuntu] también ofrece una versión de su distribución GNU/Linux para la Raspberry Pi para las versiones 2+, no soportando los primeros modelos originales de la Raspberry Pi. La versión de escritorio de Ubuntu para la Raspberry Pi requiere al menos 4 GiB y la versión RPi 4, Ubuntu Server y Ubuntu Core no incluye interfaz gráfica.
 
@@ -96,7 +96,7 @@ El usuario y contraseña por defecto son _ubuntu_ y _ubuntu_ respectivamente, es
 {{< code file="apt-update-upgrade.sh" language="bash" options="" >}}
 {{< code file="apt-install-nginx.sh" language="bash" options="" >}}
 
-#### Otras distribuciones y documentación
+### Otras distribuciones y documentación
 
 La misma Raspberry Pi Image permite instalar otras distribuciones de uso específico o paquetes como consola de juegos retro, servidor multimedia, servidor NAS, _proxy_ de navegación para evitar publicidad y ser rastreado, nube de documentos personal, ... Otras distribuciones también ofrecen una versión de su sistema operativo para la Raspberry como [Debian RPi](https://wiki.debian.org/RaspberryPi) y [Arch Linux ARM][archlinuxarm]. Como el sistema operativo se almacena en una tarjeta de memoria o USB es fácil cambiar de una distribución a otra.
 

@@ -27,7 +27,7 @@ Las ventajas de los microservicios son varios como los anteriores junto a alguno
 
 {{< tableofcontents >}}
 
-### El servidor _mock_
+## El servidor _mock_
 
 Muchas aplicaciones se basan en [microservicios REST haciendo uso del protocolo HTTP y JSON][blogbitix-178] como formato de datos. Un servidor _mock_ es simplemente un servidor web que en caso de los microservicios es utilizado para programar las respuestas para las peticiones que se le hagan según el _endpoint_ invocado, variables en el _path_, parámetros o cabeceras. Las respuestas programadas incluyen el código de estado, cabeceras devueltas y datos del cuerpo.
 
@@ -37,13 +37,13 @@ Otro caso de uso de un servidor _mock_ es permitir realizar pruebas de código o
 
 Uno de los potenciales riesgos de utilizar un servidor _mock_ es que este no se ajuste a la realidad del servicio real cuando este contenga cambios incompatibles. Un servidor _mock_ permite simular las respuestas de un servicio HTTP lo que facilita las pruebas unitarias de la parte cliente, sin embargo, esto no asegura que el servidor al realizar en las pruebas de integración o en producción cumpla con el contrato que el cliente espera de su API. Para asegurar que el servidor soporta las peticiones esperadas por la parte cliente y devuelve los datos esperados otra forma de pruebas son las [pruebas de contrato o _contract testing_ con Pact][blogbitix-591], una herramienta de pruebas de contrato que soporta el lenguaje Java entre otros.
 
-### Opciones de servidores _mock_
+## Opciones de servidores _mock_
 
 Como cualquier otro tipo de herramienta hay múltiples opciones entre las que elegir. La principal característica de todo servidor _mock_ es permitir programar las respuestas según las peticiones, sus diferencias está en el lenguaje de programación en el que están implementadas y su entorno de ejecución necesario así como su tipo de licencia. Algunas ofrecen programar las respuestas a través de una API del lenguaje de programación para el que están destinadas.
 
 Hay muchas opciones de servidor _mock_ algunas conocidas son [MockServer][mockserver], [WireMock][wiremock], [Imposter][imposter] o [Prism][prism]. Varias implementadas con JavaScript, otras en Java y algunas incluso se ofrecen en forma de software como servicio para delegar el mantenimiento de la herramienta en una tercera parte.
 
-### Características de WireMock
+## Características de WireMock
 
 WireMock es una opción bastante conocida de servidor para hacer _mocking_. Ofrece bastante flexibilidad en la forma de aprovisionar las respuestas programadas ya sea a través de un archivo de configuración, peticiones REST una vez iniciado el servidor _mock_ o de forma programática mediante una API de Java. También es bastante flexible en su forma de ejecución pudiendo ser como una aplicación Java independiente, de forma embebida como parte de una aplicación Java como sería el caso de querer utilizarlo para realizar pruebas unitarias o como un contenedor de [Docker][docker].
 
@@ -51,11 +51,11 @@ Ofrece una potente definición de correspondencia entre las peticiones realizada
 
 Es simple de iniciar y configurar, tiene una documentación suficiente para aprender sus conceptos básicos, configuración junto la [documentación completa de la API REST](http://wiremock.org/docs/api/) y empezar a usarlo en poco tiempo, está implementado en Java que lo hace adecuado si es el entorno de ejecución utilizado para los microservicios.
 
-### Ejemplo de prueba de WireMock
+## Ejemplo de prueba de WireMock
 
 De forma oficial el proyecto ofrece un archivo _jar_ ejecutable que inicia el servidor web de WireMock de forma independiente, una vez iniciado expone una API REST a través de la cual es posible aprovisionar las respuestas, el aprovisionamiento y configuración también es posible realizarlo mediante parámetros de inicio. A partir de este archivo _jar_ ejecutable es posible [crear una imagen de Docker][blogbitix-51] con el servicio para ejecutarlo en forma de contenedor o [en pruebas unitarias o de integración con Testcontainers][blogbitix-490], alguna persona ya ha creado una [imagen de Docker de WireMock](https://github.com/rodolpheche/wiremock-docker).
 
-#### Como aplicación independiente
+### Como aplicación independiente
 
 Este es el comando de inicio de WireMock como aplicación independiente.
 
@@ -76,7 +76,7 @@ En caso de que la petición no coincida con una aprovisionada se devuelve en err
 
 Modificando la aplicación para que las peticiones las haga al servidor de WireMock la aplicación es posible desarrollarla o probarla sin necesidad del servicio real y sus dependencias.
 
-#### Embebido en una aplicación para hacer pruebas unitarias
+### Embebido en una aplicación para hacer pruebas unitarias
 
 En el caso de utilizar WireMock para realizar pruebas unitarias el servidor de WireMock ha de iniciarse y aprovisionarse en el contexto de las pruebas, en este caso para las [pruebas unitarias con teses de Junit5][blogbitix-410].
 

@@ -25,7 +25,7 @@ Por otro lado, en un proyecto en el que trabajan varias personas es recomendable
 
 {{< tableofcontents >}}
 
-### OOCSS
+## OOCSS
 
 La metodología _Object-Oriented CSS_ o OOCSS se basa en los siguientes dos principios:
 
@@ -49,7 +49,7 @@ Por otro lado, las propiedades de apariencia son propiedades que modifican el as
 * Shadow
 * Gradient
 
-#### Separar la estructura del diseño
+### Separar la estructura del diseño
 
 Para aplicar la regla de separar la estructura del diseño en OOCSS se diferencian las propiedades que modifican la estructura de las propiedades que modifican el diseño, para ello se crean diferentes estilos sin mezclar propiedades de estos dos grupos. Por ejemplo, las propiedades _padding_ o _margin_ son propiedades que modifican la estructura o maquetación mientras que _color_ o _border_ son propiedades que modifican la visualización pero no la maquetación.
 
@@ -63,7 +63,7 @@ En los estilos anteriores no se separa la estructura del diseño, las propiedade
 {{< code file="oocss-2.css" language="css" options="" >}}
 {{< code file="oocss-2.xhtml" language="html" options="" >}}
 
-#### Separar contenedor del contenido
+### Separar contenedor del contenido
 
 La segunda regla trata de evitar que los estilos dependen del contenedor en el que están dada la estructura de HTML ya que esto hace que el estilo aplicado al contenido no sea reutilizable.
 
@@ -77,7 +77,7 @@ Aplicando OOCSS para separar el contenedor del contenido los estilos se transfor
 {{< code file="oocss-4.css" language="css" options="" >}}
 {{< code file="oocss-4.xhtml" language="html" options="" >}}
 
-### BEM
+## BEM
 
 La metodología _Block Element Modifier_ o BEM se basa en que las páginas web están compuestas de bloques como encabezado, pié de página o contenido, dentro de esos bloques están elementos como título, fecha o texto y los elementos tienen modificadores que varían su apariencia como estilo de fuente o color. La ventaja de BEM es que los estilos de un bloque están separados de los estilos de otros bloques de modo que cada uno de ellos se puede modificar de forma independiente sin afectar a otros.
 
@@ -91,7 +91,7 @@ En este ejemplo hay un bloque _header_, los elementos _title_, _date_ y _text_ y
 
 {{< code file="bem-2.css" language="css" options="" >}}
 
-### SMACSS
+## SMACSS
 
 SMACSS son las siglas de _Scalable and Modular Architecture for CSS_ es otra metodología CSS que tiene como objetivo que el código CSS sea mejor, más fácil de leer y modular. En SMACSS se separan los siguientes elementos.
 

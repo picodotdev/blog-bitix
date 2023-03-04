@@ -29,7 +29,7 @@ Cuando la aplicación de Spring Boot se inicia se cargan las propiedades de conf
 
 {{< tableofcontents >}}
 
-### Obtener valores de configuración antes de la inicialización del contexto de Spring Boot
+## Obtener valores de configuración antes de la inicialización del contexto de Spring Boot
 
 En caso de necesitar obtener valores de configuración Spring Boot proporciona la interfaz [ApplicationListener](spring-framework:org/springframework/context/ApplicationListener.html) para recibir el evento [ApplicationEnvironmentPreparedEvent](spring-boot:org/springframework/boot/context/event/ApplicationEnvironmentPreparedEvent.html) que se invoca antes de iniciar la aplicación de Spring Boot. Se recibe una referencia del evento a través de la cual es posible acceder a los valores de configuración.
 

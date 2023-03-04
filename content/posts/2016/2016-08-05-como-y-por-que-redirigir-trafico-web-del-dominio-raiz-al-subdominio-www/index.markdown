@@ -27,7 +27,7 @@ Esta es una de las cosas básicas que debemos realizar cuando instalemos un serv
 
 Dependiendo del servidor web que utilicemos la configuración a añadir para hacer la redirección será distinta, a continuación indicaré como hacerlo en dos de los servidores web más populares como son [Nginx][nginx] y [Apache HTTPD][apache-httpd].
 
-### Nginx
+## Nginx
 
 Usando Docker y el archivo de configuración completo podemos probar que funciona en local sin necesidad de instalar o cambiar la configuración de Nginx si tenemos instalado su paquete.
 
@@ -40,7 +40,7 @@ Usando Docker y el archivo de configuración completo podemos probar que funcion
     image2="image:nginx-www.webp" optionsthumb2="300x200" title2="Dominio después de acceder al sitio"
     caption="Dominio antes y después de acceder al sitio con Nginx" >}}
 
-### Apache
+## Apache
 
 {{< code file="docker-run-httpd.sh" language="bash" options="" >}}
 {{< code file="httpd.conf" language="apache" options="" >}}

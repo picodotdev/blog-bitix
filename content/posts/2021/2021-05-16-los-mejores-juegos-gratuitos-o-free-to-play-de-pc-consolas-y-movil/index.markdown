@@ -33,11 +33,11 @@ Algunos de estos juegos son competitivos en el que el objetivos es derrotar al e
 
 {{< tableofcontents >}}
 
-### Los mejores juegos gratuitos para PC y consolas
+## Los mejores juegos gratuitos para PC y consolas
 
 La mayoría de juegos están disponibles tanto para PC como para consolas, en algunos casos aunque el juego tenga el mismo nombre la versión para consolas es una adaptación del juego en PC ambientado en el mismo mundo pero una versión más reducida. Cada persona tiene [motivos para preferir jugar en PC o jugar en consola][blogbitix-471].
 
-#### De disparos
+### De disparos
 
 Los juegos gratuitos del género de disparos o _shooters_ son bastante populares, hay varios gratuitos en los que juegan algunos millones de personas. Aunque se pueden jugar de forma individual o en equipo con otras personas algunos están desarrollados con la intención de jugar en equipo con amigos.
 
@@ -59,7 +59,7 @@ Los juegos gratuitos del género de disparos o _shooters_ son bastante populares
     image2="image:call-of-duty-infinite-warfare.webp" optionsthumb2="200x150" title2="Call Of Duty®: Infinite Warfare"
     caption="Counter-Strike: Global Ofensive y Call Of Duty®: Infinite Warfare" >}}
 
-#### Estrategia por equipos
+### Estrategia por equipos
 
 Estos juegos requieren jugar en equipo contra otro equipo en una batalla con un tiempo limitado de duración, en función de juego es posible elegir el personaje al que se encarna que tiene unas habilidades únicas respecto a otros personajes y que lo hace más adecuado en ciertas situaciones de batalla pero quizá más vulnerable en otras batallas o contra otros personajes.
 
@@ -86,7 +86,7 @@ Del juego World of Warhips he escrito un par de artículos describiendo en que c
     image2="image:war-thunder.webp" optionsthumb2="200x150" title2="War Thunder"
     caption="World of Tanks y War Thunder" >}}
 
-#### Estrategia individual
+### Estrategia individual
 
 En estos juegos se juega contra otros jugadores pero se hace en partidas uno contra uno.
 
@@ -101,7 +101,7 @@ En estos juegos se juega contra otros jugadores pero se hace en partidas uno con
     image3="image:magic-the-gathering.webp" optionsthumb3="200x150" title3="Magic The Gathering"
     caption="Hearthstone, Auto Chess y Magic The Gathering" >}}
 
-#### Rol
+### Rol
 
 El género de rol y los _MMORPG_ es otro estilo de juegos muy popular entre los juegos gratuitos. En el aspecto de rol permiten mejorar el personaje con nuevas habilidades, subir de nivel para hacerlo más poderosas, varios tipos de personajes entre los que elegir y conseguir mejores armas y armaduras para entrar en combate con enemigos cada vez más poderosos.
 
@@ -114,7 +114,7 @@ El género de rol y los _MMORPG_ es otro estilo de juegos muy popular entre los 
     image2="image:albion-online.webp" optionsthumb2="200x150" title2="Albion Online"
     caption="Path of Exile y Albion Online" >}}
 
-#### Otros
+### Otros
 
 Otros juegos muy conocidos son los siguientes, estos están en varias categorías de juegos.
 
@@ -137,7 +137,7 @@ Otros juegos muy conocidos son los siguientes, estos están en varias categoría
     image2="image:rocket-league.webp" optionsthumb2="200x150" title2="Rocket League"
     caption="Heavy Metal Machines y Rocket League" >}}
 
-### Los mejores juegos gratuitos para móvil
+## Los mejores juegos gratuitos para móvil
 
 Los dispositivos móviles también son una plataforma utilizable para jugar y varias empresas se dedican en exclusiva a esta plataforma de juegos. Son juegos con partidas más cortas más adaptadas a jugar en momentos esporádicos, su ventaja es que se puede jugar a ellos en cualquier lugar, simplemente hace falta tener un poco de tiempo disponible.
 
@@ -171,7 +171,7 @@ Los dispositivos móviles también son una plataforma utilizable para jugar y va
     image3="image:teamfight-tactics.webp" optionsthumb3="200x150" title3="Teamfight Tactics"
     caption="Genshin Impact, Plants vs. Zombies y Teamfight Tactics" >}}
 
-### Otros juegos con precio reducido
+## Otros juegos con precio reducido
 
 También hay juegos que aunque no son gratuitos al tener unos años desde su publicación en ofertas puntuales es posible comprarlos a un precio muy reducido entre 3 € y 20 €, incluso juegos que en su momento eran la última novedad muy esperada y que fueron publicados con un precio de lanzamiento de 70 €. Hay páginas que monitorizan el precio de las tiendas y permiten [encontrar las mejores ofertas de juegos para PC y consola][blogbitix-527].
 

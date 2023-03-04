@@ -25,7 +25,7 @@ La versión 16 de Java será la última antes de la siguiente versión de soport
 
 {{< tableofcontents >}}
 
-### Introducción
+## Introducción
 
 No hay cambios importantes en el lenguaje, el más destacado es la inclusión de _pattern matching_ para el operador _instanceof_, la incorporación de forma final de los _Records_, soporte para las plataformas Windows/AArch64, distribuciones como Alpine basadas en _musl_ y soporte para la comunicación mediante canales _Unix-Domain Socket_.
 
@@ -60,9 +60,9 @@ Las mejoras incluídas en esta versión son:
 {{< youtube
     video="L0tOTN7Dkso" >}}
 
-### Nuevas características
+## Nuevas características
 
-#### Habilitar características de C++14
+### Habilitar características de C++14
 
 Hasta el JDK 15, las características usadas por el código C++ en el JDK ha estado limitado a los estándares de C++98/02. Con el JDK 11, el código fué actualizado para soportar nuevas versiones del estándar C++, aunque hasta ahora no han sido usadas nuevas características. Esto incluye poder construirse con versiones recientes de varios compiladores que soportan características de C++11/14.
 
@@ -71,11 +71,11 @@ Ahora se permiten formalmente cambios en el código C++ del JDK para aprovechar 
 * [C++14 wikipedia](https://en.wikipedia.org/wiki/C%2B%2B14)
 * [C++14](https://isocpp.org/wiki/faq/cpp14)
 
-#### Migración de Mercurial a Git
+### Migración de Mercurial a Git
 
 Se migra como herramienta de control de versiones de [Mercurial][mercurial-scm] a [Git][git]. Esto incluye todos los repositorio de los proyectos de OpenJDK preservando el historial, incluyendo las etiquetas y formateando los mensajes de _commits_ según las convenciones de Git.
 
-#### Migración a GitHub
+### Migración a GitHub
 
 Relacionada con la migración de Mercurial a Git es la migración a la plataforma [GitHub][github] como proveedor de hospedaje para los repositorios. Los diferentes proyectos del OpenJDK están accesibles en GiHub.
 
@@ -87,7 +87,7 @@ Usar un proveedor de hospedaje externo libera a los contribuidores de implementa
 
 La razón de usar GitHub es que destaca en las tres razones principales de usar un proveedor externo.
 
-#### ZGC: procesado concurrente de pila del _thread_
+### ZGC: procesado concurrente de pila del _thread_
 
 El recolector de basura ZGC tiene como objetivo hacer que las pausas de recolección de basura sean una cosa del pasado. Muchas de las operaciones del recolector de basura ya se han hecho ya escalables al tamaño de la memoria y del _metaespace_.
 
@@ -99,7 +99,7 @@ Después de los cambios nada significativo se hará dentro de las pausas seguras
 
 * [El recolector de basura de Java, qué hace y cómo funciona en cada versión][blogbitix-463]
 
-#### Canales de comunicación Unix
+### Canales de comunicación Unix
 
 Se ha añadido soporte para la comunicación mediante _sockets_ Unix a las APIs del paquete [java.nio.channels](javadoc16:java.base/java/nio/channels/package-summary.html). Los _sockets_ Unix con una forma de comunicación entre procesos o IPC en la misma máquina. Son similares a los _sockets_ TCP/IP en la mayoría de aspectos excepto que son resueltos por nombres del sistema de archivos en vez de direcciones IP y números de puertos. La comunicación mediante _sockets_ Unix es más segura y eficiente que las conexiones TCP/IP.
 
@@ -118,7 +118,7 @@ Más detalles en [JEP-380: Unix domain socket channels](https://inside.java/2021
     image1="image:unix-sockets.webp" optionsthumb1="650x450" title1="Unix Sockets"
     caption="Unix Sockets" >}}
 
-#### Portado a Alpine Linux
+### Portado a Alpine Linux
 
 Se ha portado el JDK a Alpine Linux y otras distribuciones que usan [musl][musl-libc] como librería C en las arquitecturas x64 y AArch64. _musl_ es una implementación para los sistemas basados en Linux de la librería estándar con su funcionalidad descrita en los estándares de ISO C y POSIX. Varias distribuciones Linux incluyendo [Alpine Linux][alpine-linux] y [OpenWrt][openwrt] están basadas en _musl_, mientras que otras proporcionan soporte de forma opcional como [Arch Linux][archlinux].
 
@@ -128,15 +128,15 @@ Complementandlo con _jlink_ para reducir el tamaño en tiempo de ejecución del 
 
 * [Imágenes de Docker con Alpine Linux][blogbitix-228]
 
-#### Metaspace elásctico
+### Metaspace elásctico
 
 La memoria no usada de _metaespace_ es retornada al sistema operativo con más rapidez reduciendo el tamaño del _metaspace_ y simplificando el código de _metaspace_ con la intención de reducir los costes de mantenimiento.
 
-#### Portado a Windows/AArch64
+### Portado a Windows/AArch64
 
 Con la disponibilidad del nuevo hardware de consumo y servidor basado en la arquitectura AArch64 (ARM64), Windows/AArch64 se ha convertido en una plataforma importante debido a la demanda de los usuarios. Se ha portado el JDK a Windows/AArch64 continuando el trabajo anterior para la portabilidad de Linux/AArch64 (JEP 237) y en un futuro se hará lo equivalente para macOS.
 
-#### Mensajes de advertencias para clases valor
+### Mensajes de advertencias para clases valor
 
 Las clases envoltorio o _wrapper_ de los tipos primitivos se designan como [clases valor](javadoc16:java.base/java/lang/doc-files/ValueBased.html), ahora se emiten nuevos mensajes de advertencia en sus constructores marcados como _deprecated_ desde Java 9 y candidatos a ser eliminados en futuras versiones.
 
@@ -147,13 +147,13 @@ Esto es un objetivo para el [proyecto Valhalla](https://openjdk.java.net/project
 * [Value-based Classes](javadoc16:java.base/java/lang/doc-files/ValueBased.html)
 * [Integer(int value)](javadoc16:https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Integer.html#%3Cinit%3E(int))
 
-#### _Packaging Tool_
+### _Packaging Tool_
 
 Se proporciona una herramienta para empaquetar aplicaciones Java que genera instaladores nativos para las diferentes plataformas. La herramienta _jpackage_ fue incorporada en Java 14 y ahora pasa a considerarse con la categoría de listo para producción, su API está en el [jdk.jpackage](javadoc16:jdk.jpackage/module-summary.html).
 
 Soporta los formatos de empaquetado nativos de la plataforma para tener una experiencia de instalación natural. Estos formatos incluyen archivos _msi_ y _exe_ en windows, _pkg_ y _dmg_ en macOS, _deb_ y _rpm_ en Linux. Permite especificar en tiempo de empaquetado parámetros a usar en tiempo de ejecución. Se puede invocar de forma directa desde la línea de comandos y de forma programática mediante su API.
 
-#### _Pattern Matching_ para _instanceof_
+### _Pattern Matching_ para _instanceof_
 
 Se mejora el soporte del lenguaje para soportar _pattern matching_ en el operador _instanceof_. Esto evita la necesidad de realizar _cast_ de forma explícita simplificando el código, más legible y seguro.
 
@@ -163,7 +163,7 @@ El uso de _pattern matching_ reduce la necesidad de hacer _cast_ de forma explí
 
 {{< code file="instanceof-pattern-matching-2.java" language="java" options="" >}}
 
-#### _Records_
+### _Records_
 
 Las clases _Record_  son un nuevo tipo de clases en el lenguaje Java, ayudan a modelar agregados de datos con menos ceremonia que las clases normales. Son clases que actúan como contenedores para datos inmutables, pueden ser considerados como tuplas. La declaración de un _record_ mayormente consiste en la declaración de su estado. No es su objetivo resolver los problemas de las clases mutables que usan las convenciones de nombres de los JavaBeans.
 
@@ -177,7 +177,7 @@ Las siguientes dos versiones de la clase _Point_ son equivalentes.
 {{< youtube
     video="tLHUqXeiC4w" >}}
 
-#### Encapsulación fuerte del clases internas del JDK por defecto
+### Encapsulación fuerte del clases internas del JDK por defecto
 
 Se cambia el comportamiento por defecto de la encapsulación de permitido a fuerte para las clases internas del JDK aunque siguiendo posible relajar el comportamiento de la encapsulación con la opción de línea de comandos _--illegal-access=permit_, la encapsulación fuerte hace una excepción para ciertas clases internas como _sun.misc.Unsafe_  que siguen siendo posible utilizarlas. Esto permite continuar con la encapsulación y mantenibilidad del JDK que era el objetivo del proyecto _Jigsaw_ materializado en la incorporación de los módulos en Java 9. Se promueve el uso de APIs estándares para actualizaciones a futuras versiones sin problemas.
 
@@ -185,9 +185,9 @@ A lo largo de los años los desarrolladores han estado usando clases internas de
 
 Ahora se encapsula de forma más fuerte las API internas que aplica tanto en tiempo de compilación como de ejecución, incluyendo los intentos del código de acceder a elementos mediante _reflection_.
 
-### Nuevas características en vista previa
+## Nuevas características en vista previa
 
-#### Vector API
+### Vector API
 
 El objetivo es proporcionar una API para aprovechar las instrucciones vectoriales hardware de las arquitecturas de CPU que permiten conseguir un mejor rendimiento a las computaciones equivalentes escalares. Las instrucciones vectoriales son conocidas como [Single Instruction Multiple Data](https://en.wikipedia.org/wiki/SIMD) (SIMD) que permiten mayor paralelismo al aplicar la misma operación a múltiples datos en un único ciclo de reloj de la CPU.
 
@@ -198,7 +198,7 @@ La API de vectorial es muy útil para funcionalidases como procesado de imágene
 {{< youtube
     video="HARDCbSog0c" >}}
 
-#### Foreign Linker API
+### Foreign Linker API
 
 El objetivo es ofrecer una API con tipado estático y código Java para acceso a código nativo. Junto con _Foreign-Memory Access API_ simplifica considerablemente el proceso propenso a errores de enlazado a una librería nativa.
 
@@ -209,14 +209,14 @@ Sus objetivos son facilidad de uso reemplazando JNI con un modelo de desarrollo 
 {{< youtube
     video="DjiKlOE9ibY" >}}
 
-#### Foreign-Memory Access API
+### Foreign-Memory Access API
 
 Su objetivo es proporcionar a los programas Java una forma segura y eficiente de acceder a memoria fuera de la memoria de la máquina virtual de Java.
 
 {{< youtube
     video="Edls8HIREk4" >}}
 
-#### _Sealed Classes_
+### _Sealed Classes_
 
 Las clases selladas o _sealed classes_ permiten al autor de la clase o interfaz controlar que código es responsable de implementarlo. Proporcionan una forma de restringir el uso de la superclase distinta de los modificadores de acceso. En un futuro puede ser la base para implementar _pattern matching_ para un análisis exhaustivo de patrones.
 

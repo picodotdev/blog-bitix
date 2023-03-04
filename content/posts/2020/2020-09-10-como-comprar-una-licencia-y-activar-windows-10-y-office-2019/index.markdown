@@ -28,7 +28,7 @@ A través de vendedores distintos a Microsoft es posible comprar una licencia ba
 
 {{< tableofcontents >}}
 
-### Versiones y tipos de licencia de Windows 10
+## Versiones y tipos de licencia de Windows 10
 
 Windows 10 tiene diferentes versiones, las diferencias entre ellas está en las características que soportan.
 
@@ -42,7 +42,7 @@ Microsoft comercializa las licencias y distribuye su software de diferentes form
 * _Retail_: el software es comercializado de forma independiente junto al equipo o para un equipo existente, al contrario que las _OEM_ esta sirve para varios equipos.
 * _Microsoft Volume Licensing_: permite usar licencias a organizaciones que tienen grandes volúmenes de equipos informáticos como empresas, gobiernos o instituciones educativas.
 
-### Versiones de Microsoft Office
+## Versiones de Microsoft Office
 
 Office también tiene diferentes versiones de los programa del paquete ofimático que comprende principalmente el editor de documentos Word, la hoja de cálculo Excel y PowerPoint para crear presentaciones junto algunos otros programas como Outlook como aplicación de correo electrónico o Access para crear bases de datos sencillas.
 
@@ -57,7 +57,7 @@ De las aplicaciones de escritorio de Microsoft Office 2019 hay varias versiones 
 * _Professional_: además de Word, Excel, PowerPoint y Outlook incluye la aplicación Publisher para crear documentos impresos como folletos, catálogos, trípticos o sobres entre otros. También incluye la aplicación Access para crear bases de datos.
 * _Professional Plus_: incluye todas las aplicaciones de la versión _Professional_ e incluye la aplicación de comunicación por videoconferencia Skype.
 
-### Cuanto cuestan las licencias de Windows 10 y Microsoft Office 2019
+## Cuanto cuestan las licencias de Windows 10 y Microsoft Office 2019
 
 En algunos casos el precio de la licencia de Windows 10 ha de adquirirse a parte del ordenador aunque se ofrezca de hacerlo al mismo tiempo, en la factura el coste del ordenador y la licencia de Windows 10 estará desglosada. El coste de la licencia de Windows 10 vendida por Microsoft cuesta entre 145 € para la versión _Home_, 259 € para la _Pro_ y 439 € para la _Pro for Workstations_, no es nada barata. La licencia de Microsoft Office 2019 vendida por Microsoft cuesta 149 €, también tiene modalidades de pago bajo suscripción con un coste mensual.
 
@@ -67,7 +67,7 @@ Hay varios vendedores distintos a Microsoft que permiten obtener una licencia de
 
 Si el precio de Windows 10 vendido por Microsoft en su versión _Retail_ es de 145 € para la versión _Home_ o 259 € para la _Pro_ estos otros vendedores ofrecen licencias válidas a precios mucho más baratos, de entre unos 10 € y 15 €, lo que supone un ahorro importante en este software. Si la versión de _Office Hogar y Estudiantes 2019_ cuesta 149 € comprándola a Microsoft, otros vendedores ofrecen licencias con códigos de activación también por entre 10 € y 15 €.
 
-### Descargar Windows 10 y Microsoft Office 2019
+## Descargar Windows 10 y Microsoft Office 2019
 
 Tanto Windows 10 como el paquete ofimático Microsoft Office 2019 se pueden descargar gratis con el paquete de idioma español original desde la página oficial de Microsoft con el navegador web mediante descarga directa. La imagen de Windows 10 incluye las diferentes versiones. Aunque la descarga es gratuita es necesario comprar una licencia que otorga el derecho de uso.
 
@@ -77,7 +77,7 @@ Tanto Windows 10 como el paquete ofimático Microsoft Office 2019 se pueden desc
 * [Descargar Microsoft Office 2019, Professional](http://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/es-es/Professional2019Retail.img)
 * [Descargar Microsoft Office 2019, Professional Plus](https://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/es-es/ProPlus2019Retail.img)
 
-### Qué ocurre si no tengo licencia de Windows 10 u Microsoft Office 2019
+## Qué ocurre si no tengo licencia de Windows 10 u Microsoft Office 2019
 
 [Windows 10 se puede descargar e instalar desde cero][blogbitix-231] aún sin tener una licencia para su uso. Sin embargo, al cabo de unos 30 días Windows 10 desactiva algunas opciones de personalización estéticas que no afectan a su funcionalidad, permite continuar usándolo de forma indefinida incluyendo seguir obteniendo las últimas actualizaciones de seguridad. Algunas de las opciones de personalización que se desactivan son aplicar temas personalizados, modificar los colores y fuentes del sistema, configurar el menú inicio o el fondo de pantalla y de la pantalla de bloqueo.
 
@@ -85,7 +85,7 @@ Si no se quiere comprar una licencia de Windows 10 se puede instalar una distrib
 
 Microsoft Office también puede instalarse pero al cabo de un mes impide la edición de documentos si no se activa lo que limita enormemente su funcionalidad. En todo momento es posible abrir documentos en modo lectura pero para recuperar las opciones de edición es necesario adquirir su licencia y activar el producto. Si no se quiere comprar una licencia o si se prefiere utilizar un paquete ofimático con una licencia libre estas son [4 de las mejores alternativas para Microsoft Office][blogbitix-143].
 
-### Dónde comprar una licencia de Windows 10 y Microsoft Office 2019
+## Dónde comprar una licencia de Windows 10 y Microsoft Office 2019
 
 Dado el económico precio de los vendedores distintos a Microsoft que ofrecen de las licencias de Windows 10 y Microsoft Office es recomendable adquirir una licencia que permite activar estos productos. Sin necesidad de piratear o recurrir a activadores que muchos de ellos son una fuente de virus y son ilegales, solo ya buscarlos es un riesgo para la seguridad del ordenador y una de las mayores fuentes de entrada de virus en sistemas Windows ya que las búsquedas pueden llevar a páginas maliciosas. Hoy en día hacemos tareas importantes en el ordenador desde almacenar numerosa información personal al pago por internet o acceso a la cuenta del banco o recibos con lo que conviene evitar el riesgo de los virus informáticos.
 
@@ -104,7 +104,7 @@ Una vez realizada la compra el código de activación del producto se envía en 
 * [Licencia de Windows 10 Pro](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=windows+10+professional+key+espa%C3%B1ol&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=windows+10+professional+64+bits+key+espa%C3%B1ol) en eBay.
 * [Licencia de Microsoft Office 2019](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=microsoft+office+2019+key+espa%C3%B1ol&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=microsoft+office+2019+licencia+espa%C3%B1ol) en eBay.
 
-### Cómo activar Windows 10 y Microsoft Office 2019
+## Cómo activar Windows 10 y Microsoft Office 2019
 
 Windows 10 se puede activar durante la instalación o una vez instalado seleccionando el botón _Inicio_, luego siguiendo las opciones _Configuración > Actualización y seguridad > Activación > Actualizar clave de producto > Cambiar clave de producto_. En esta sección se introduce el código de activación comprado. Una vez activado correctamente en esta misma sección se muestra un mensaje que informa del estado de activación de Windows, si está activado debe aparecer el mensaje _Windows está activado_.
 
@@ -135,3 +135,5 @@ Una vez instalado Microsoft Office al abrir una las aplicaciones de la _suite_ o
 * [Descargar e instalar o volver a instalar Microsoft 365 u Office 2019 en un equipo PC o Mac](https://support.microsoft.com/es-es/office/descargar-e-instalar-o-volver-a-instalar-microsoft-365-u-office-2019-en-un-equipo-pc-o-mac-4414eaaf-0478-48be-9c42-23adc4716658)
 * [Descargar Microsoft Office 2019 Hogar y Estudiantes](https://www.ardilu.com/descargar/office-2019-home-student)
 {{< /reference >}}
+
+{{% /post %}}

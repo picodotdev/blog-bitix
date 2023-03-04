@@ -123,7 +123,7 @@ La agenda comienza a las 9:00 de la mañana del sábado con una presentación y 
 
 Cómo ocasiones anteriores hago un compendio de las ideas con las que me quedé de las presentaciones a las que asistí, seguro que me dejo cosas de las comentadas.
 
-### Web Components API: esto va en serio por _Belén Albeza_
+## Web Components API: esto va en serio por _Belén Albeza_
 
 Desde los inicios la web está formada por dos elementos el protocolo HTTP y los documentos HTML con el contenido. Con el paso del tiempo las páginas añadieron CSS y comportamiento con el lenguaje JavaScript. En gran medida las bases iniciales no han cambiado y una página de hace 20 años se verán igualmente en un navegador actual, al contrario que las aplicaciones nativas que pueden dejar de funcionar con actualizaciones de dispositivos móviles en un lustro.
 
@@ -143,7 +143,7 @@ Tenía claro que quería acudir a esta presentación, era una en la que no tení
     image2="image:webcomponents-2.webp" optionsthumb2="300x200" title2="Web Components API"
     caption="Web Components API" >}}
 
-### Agile JavaScript por _Ricardo Borillo_
+## Agile JavaScript por _Ricardo Borillo_
 
 En el [State of JavaScript del 2018](https://stateofjs.com/) se mencionan numerosas herramientas de JavaScript más populares del momento y otras nuevas que están surgiendo como alternativa.
 
@@ -157,7 +157,7 @@ Esta presentación junto con la anterior forman la representación de JavaScript
     image2="image:agilejavascript-2.webp" optionsthumb2="300x200" title2="Agile JavaScript"
     caption="Agile JavaScript" >}}
 
-### Descanso
+## Descanso
 
 No saque fotos pero algunos patrocinadores dispusieron _stands_ en los que hacerse con algunas pegatinas y bagatelas, de las empresas una oportunidad de conocerlas e iniciar algún contacto.
 
@@ -168,7 +168,7 @@ No saque fotos pero algunos patrocinadores dispusieron _stands_ en los que hacer
     image3="image:bilbostack-hashtag.webp" optionsthumb3="300x200" title3="Hashtag"
     caption="Networking + Café, photocall y hashtag" >}}
 
-### UX para desarrolladores front y back por _Virginia Aguirre_
+## UX para desarrolladores front y back por _Virginia Aguirre_
 
 A veces hay más atención puesta en la tecnología que en la experiencia de usuario y en estos casos ocurren ejemplos como el Nokia Ngage con su peculiar forma para hacer llamadas, aplicaciones con gran cantidad de barras de herramientas que ocupan gran parte del espacio vertical de la pantalla o el incómodo menú inicio de Windows 8 más adaptado a interfaces táctiles que a escritorio. La UX hace hincapié en las necesidades del usuario primero, las necesidades del negocio y finalmente las posibilidades técnicas, el orden es importante.
 
@@ -183,7 +183,7 @@ De las que he asistido esta y la del otro _track_ era la presentación que podr�
     image1="image:ux.webp" optionsthumb1="300x200" title1="UX para desarrolladores front y back"
     caption="UX para desarrolladores front y back" >}}
 
-### Viaje desde Arquitectura Hexagonal al Event Sourcing por _Carlos Buenosvinos_
+## Viaje desde Arquitectura Hexagonal al Event Sourcing por _Carlos Buenosvinos_
 
 Las arquitecturas pueden evolucionar en seis niveles.
 

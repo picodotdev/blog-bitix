@@ -27,7 +27,7 @@ Dado el avance de la tecnología muchos dispositivos que en un año se considera
 
 {{< tableofcontents >}}
 
-### Mis necesidades, anterior móvil y opciones
+## Mis necesidades, anterior móvil y opciones
 
 En mi caso no uso de forma intensiva el móvil poco más que la aplicación de mensajería instantánea, consultar el correo electrónico cuando no estoy con el ordenador y el reproductor de música. Uno de los usos que más le doy al móvil es como cámara de fotos cuando publico algún artículo de desempaquetado.
 
@@ -43,7 +43,7 @@ Los móviles de [Apple][apple] aunque les eche un vistazo ni me planteo comprar 
 
 Aún así quizá lo más inteligente sea comprar un móvil de 250 € cada tres años que gastarse 1000 € o más en uno hoy. Un móvil de 250 € a día de hoy es bastante decente y como los de año anterior bajan de precio rápido sin comprar la última novedad es posible encontrar los del año anterior en esos rangos de precio. Seguro que un móvil dentro de 6 o 9 años de 250 € supera o no es muy inferior a uno de 1000 € de hoy aunque solo sea porque la batería está en mejor estado. Eso sí, la cantidad de desechos electrónicos generados no creo que sea sostenible si cada persona cambia de terminal cada tres años.
 
-#### Otras alternativas y la opción que he elegido
+### Otras alternativas y la opción que he elegido
 
 Teniendo decidida la marca para el siguiente móvil lo más que he visto en algo más detalle ha sido las varias gamas de dispositivos que tiene Samsung en diferentes rangos de precios y gamas. Dispositivos que casi se hacen competencia entre ellos aún siendo de la misma marca. Mi primera opción era la serie A5x y he estado esperando a que saliese el A53 que correspondía a este año que se suelen lanzar aproximadamente en el mes de abril cada año. Pero también tiene la gama M53 y dispositivos A33 y M33 que son opciones perfectamente candidatas. Así que toca ver un poco ver un poco más en detalle cuales son sus especificaciones y que es lo principal que les diferencia si es que hay algo más allá del precio.
 
@@ -69,7 +69,7 @@ Los móviles Android suelen bajar de precio o a aparecer momentos de oferta al d
     linkids="199b100e5abee25c505b22d230e55b08,6d783bd14c5ec563eb9992141778e26b,d125d3cbcb2b64ae1124dbbd2c07ca77"
     asins="B09BVKZGHL,B09BK5PSPH,B092ZTDBG3" >}}
 
-### Especificaciones técnicas del Samsung Galaxy S21 FE
+## Especificaciones técnicas del Samsung Galaxy S21 FE
 
 El [Samsung Galaxy S21 FE][samsung-galaxy-s21-fe] al igual que otros móviles se ofrece en dos configuraciones de memoria y almacenamiento, algunos móviles incluso tienen diferentes versiones según la región en la que varía el procesador o SoC que emplea. La mayoría de los móviles tienen ocho núcleos incluso los de gama baja, sin embargo la diferencia de rendimiento entre los móviles de gama alta y los de gama baja es significativa. La diferencia de rendimiento está principalmente en el tipo de los núcleos en los que se basan esos ocho núcleos.
 
@@ -135,7 +135,7 @@ Las [características principales del Samsung Galaxy S21 FE](https://www.gsmaren
     image3="image:samsung-galaxy-s21-fe-presentacion-18.webp" optionsthumb3="200x150" title3="Presentación del Samsung Galaxy S21 FE"
     caption="Presentación del Samsung Galaxy S21 FE" >}}
 
-#### Dónde comprar
+### Dónde comprar
 
 El precio de los móviles Android debido a la competencia suelen bajar de precio al cabo de unos pocos meses, por ejemplo este mismo S21 FE lanzado en enero del 2022 a un precio de 760 €. Al cabo de unos meses se encuentra de forma puntual en el rango de los 480 € para la versión de 6/128 GB y desde los 580 € para la versión de 8/256 GB. Seguramente a medida que pasen los meses y se sigan lanzado móviles se pueda encontrar incluso con alguna rebaja adicional.
 
@@ -146,9 +146,9 @@ El Samsung Galaxy S21 FE lo he comprado en [Amazon][amazon-affiliate] y también
 {{< amazon
     tags="smartphone-samsung-galaxy-s21-fe" >}}
 
-### Desempaquetado de Samsung Galaxy S21 FE
+## Desempaquetado de Samsung Galaxy S21 FE
 
-#### La caja
+### La caja
 
 La caja es bastante pequeña al no incluir el cargador, aparte del móvil únicamente incluye un cable USB-C en ambos extremos para el cargador y una herramienta extractor de la bandeja para insertar la tarjeta SIM. Una caja blanca en la mayoría de su totalidad con dibujos estampados y unas letras plateadas con una S grande en la parte delantera junto al modelo de móvil en letras más pequeñas, el nombre de la marca en un lateral y en el otro el modelo de móvil de nuevo. La caja está precintada por dos sellos que garantizan no ha sido abierto conservando el estado original de fábrica.
 
@@ -163,7 +163,7 @@ La caja es bastante pequeña al no incluir el cargador, aparte del móvil única
     image2="image:samsung-galaxy-s21-fe-caja-5.webp" optionsthumb2="200x150" title2="Caja del Samsung Galaxy S21 FE"
     caption="Caja del Samsung Galaxy S21 FE" >}}
 
-#### El contenido
+### El contenido
 
 Además del propio móvil la caja incluye un cable USB-C por ambos extremos, unos manuales de instrucciones y el extractor de la bandeja para insertar la tarjeta SIM.
 
@@ -179,7 +179,7 @@ El móvil con una película de plástico está protegido en su totalidad de ara�
     image1="image:samsung-galaxy-s21-fe-contenido-4.webp" optionsthumb1="200x150" title1="Contenido caja del Samsung Galaxy S21 FE"
     caption="Contenido caja del Samsung Galaxy S21 FE" >}}
 
-#### El móvil
+### El móvil
 
 El S21 FE se comercializa en varios colores de carcasa posterior, en total 4 entre los que están en negro, blanco, oliva con un tono verdoso claro y lavanda con un tomo morado claro según la preferencia. El color no diferencia en nada más a los diferentes modelos salvo la disponibilidad de alguno de ellos y ligeramente el precio también según la disponibilidad y unidades comercializadas de cada uno.
 
@@ -202,7 +202,7 @@ Salvo los teléfonos de Apple el resto de móviles de otras marcas entre ellas S
     image2="image:samsung-galaxy-s21-fe-telefono-7.webp" optionsthumb2="200x150" title2="Móvil Samsung Galaxy S21 FE"
     caption="Móvil Samsung Galaxy S21 FE" >}}
 
-#### El cargador
+### El cargador
 
 El S21 FE se comercializa sin cargador de modo que se tiene uno o se ha de comprar aparte. El móvil soporta tanto la carga con cable de 25 W e inalámbrica de 15 W. En oferta no es demasiado caro, únicamente unos 12 €. No es imprescindible usar el cargador de Samsung y hay de marcas menores que ofrecen más puertos para cargar varios dispositivos simultáneamente con un único cargador. La ventaja del cargador de Samsung es que da más garantías de que va a funcionar correctamente con el móvil.
 
@@ -215,7 +215,7 @@ El empaquetado del cargador precintado con sellos de plástico es muy pequeño, 
     image3="image:samsung-galaxy-s21-fe-cargador-3.webp" optionsthumb3="200x150" title3="Cargador Samsung Galaxy S21 FE"
     caption="Cargador Samsung Galaxy S21 FE" >}}
 
-#### Complementos
+### Complementos
 
 Para cuidar el teléfono lo mejor posible un complemento habitual suele ser una funda para evitar algún golpe, caída o arañazo. La funda protege gran parte del móvil pero la pantalla y cámaras no quedan cubiertas, una funda con cremallera lo protege completamente a la hora de guardarlo junto a otros elementos por ejemplo junto a unas llaves que podrían rayar de otro modo la pantalla.
 
@@ -233,7 +233,7 @@ Dado que el móvil no tiene puerto _jack_ 3.5mm para seguir usando los cascos co
     image3="image:samsung-galaxy-s21-fe-complementos-6.webp" optionsthumb3="200x150" title3="Complementos Samsung Galaxy S21 FE"
     caption="Complementos Samsung Galaxy S21 FE" >}}
 
-### Análisis y primeras impresiones
+## Análisis y primeras impresiones
 
 En mi caso mi anterior móvil ha sido un Samsung Galaxy S6 que ya no estaba en sus mejores momentos en los aspectos de batería y cámara. La diferencia con el Samsung Galaxy S21 FE es muy apreciable en multitud de aspectos. Un aspecto muy visible es que la pantalla ocupa la práctica totalidad de la parte frontal.
 
@@ -319,7 +319,7 @@ Este es el primer encendido del teléfono y su estado original una vez completad
     image2="image:samsung-galaxy-s21-fe-sistema-inicial-11.webp" optionsthumb2="200x150" title2="Estado inicial del teléfono"
     caption="Estado inicial del teléfono" >}}
 
-#### Pruebas de rendimiento
+### Pruebas de rendimiento
 
 Las pruebas sintéticas de rendimiento son una guía del rendimiento bruto de un procesador tanto en su parte de cómputo como en su parte gráfica. La aplicación [Geekbench][geekbench] disponible para Android da una medida de ambas para cualquier dispositivo y en su base de datos se encuentran las pruebas de rendimiento de un procesador determinado o modelo de móvil.
 
@@ -350,7 +350,7 @@ Comparando el rendimiento según los números ofrecidos por la herramienta Geekb
     image3="image:samsung-galaxy-s21-fe-geekbench-6.webp" optionsthumb3="200x150" title3="Prueba de rendimiento del Samsung Galaxy S6"
     caption="Prueba de rendimiento del Samsung Galaxy S21 FE y del Samsung Galaxy S6" >}}
 
-### Migración de dispositivo y configuración inicial
+## Migración de dispositivo y configuración inicial
 
 A estas alturas seguramente ya no es el primer móvil que se tiene con lo que es necesario migrar del móvil anterior al nuevo. Android permite realizar una copia de seguridad de los datos del dispositivo anterior y migrar al nuevo utilizando la copia de seguridad utilizando la misma cuenta de Google. La mayoría de datos se copian y algunas opciones de configuración también. Sin embargo, conviene conservar el móvil anterior hasta haber migrado de forma completa al nuevo dispositivo.
 
@@ -379,7 +379,7 @@ En el apartado de ajustes hay gran cantidad de opciones de configuración alguna
     caption="Estado del teléfono una vez configurado" >}}
     
 
-#### Artículos y análisis en vídeo del S21 FE
+### Artículos y análisis en vídeo del S21 FE
 
 En YouTube hay numerosos vídeos analizando el teléfono que permite obtener unas primeras impresiones y opiniones del teléfono o teléfonos comentados. Conviene ver varios vídeos y varias opiniones para obtener una idea más formada del teléfono y evitar las críticas o halagos de un único usuario. Los vídeos son interesantes ya que las personas que los comentan suelen tener uno de estos móviles para analizar y se pueden obtener detalles que sin probar el móvil pasan desapercibidos como algún defecto o una alternativa mejor al modelo de móvil que en principio se tenía interés.
 
@@ -390,7 +390,7 @@ Estos son varios [vídeos con análisis y opiniones sobre el Samsung Galaxy S21 
 {{< youtube
     video="hAhgy8NlI-s" >}}
 
-#### Artículos y análisis en vídeo de otros móviles y comparaciones
+### Artículos y análisis en vídeo de otros móviles y comparaciones
 
 También hay análisis de otros móviles que pueden considerarse candidatos en una posible decisión y su comparación con terminales similares. En los siguientes se comentan varios móviles que he considerado en un principio incluso antes que el S21 FE como el A53, A52 o algún iPhone.
 
@@ -401,7 +401,7 @@ Estos son varios [vídeos con análisis y opiniones sobre los Samsung Galaxy A53
 {{< youtube
     video="mbFnldgbNuI" >}}
 
-#### Sobre las pantallas AMOLED
+### Sobre las pantallas AMOLED
 
 La mayoría de móviles de gama alta ofrecen ya pantallas con tecnología AMOLED ya que ofrece negros puros y colores más intensos que las pantallas IPS. En cuanto a calidad de imagen las pantallas AMOLED son mejores que las pantallas IPS. El problema de las pantallas AMOLED está en que se basan en en un compuesto orgánico que se degrada con el uso y más aquellas zonas que mantienen siempre la misma imagen como en el área de notificaciones, botones en pantalla o algunos icono de la barra de estado. En los casos más extremos o al cabo de un tiempo las pantallas OLED y las AMOLED, que son otra forma de pantallas OLED propietaria de Samsung, sufren de quemado o retención de imagen.
 
@@ -411,7 +411,7 @@ Una forma de conservar mejor las pantallas AMOLED en los móviles es usar el tem
 
 Además de usar el tema oscuro es recomendable no usar la función _always on display_ que mantiene encendida la pantalla en todo momento mostrando las notificaciones y otra información, útil en los móviles que no tiene led de notificación pero malo para la pantalla y batería. También es posible eliminar los botones navegación que se muestran siempre en la misma posición y usar gestos para sus funciones, aún siendo los gestos son más incómodos de usar.
 
-### Complementos para el móvil
+## Complementos para el móvil
 
 Después de gastar entre 300 y 1400 € en el propio móvil hay otros productos complementarios para el teléfono. Uno de ellos es una funda para evitar que en caso de una caída se raye o tenga menos probabilidades sufrir alguna rotura en la carcasa o en la pantalla. Las fundas son específicas para cada modelo de móvil ya que requieren adaptarse a la perfección de cada uno, tanto en la posición de las cámaras, botones, micrófonos y cargador. Son de un material de goma que absorbe en pequeña medida el golpe de un impacto y lo protege de rayaduras al guardarlo. Las fundas pueden ser una bolsa para cubrirlo de forma entera al móvil.
 

@@ -30,7 +30,7 @@ Algunas ventajas de las excepciones son:
 * Propagar errores hacia arriba en la pila de llamadas.
 * Agrupar y diferenciar entre diferentes tipos de errores.
 
-### Los problemas de las excepciones _checked_
+## Los problemas de las excepciones _checked_
 
 Hay una cierta polémica sobre si las excepciones _checked_ son una buena idea. Entre los motivos que se alegan en contra de su uso están que cambiar la firma de un método añadiendo una nueva excepción como lanzable hace que el código que usase ese método podría ocasionar errores de compilación y que hace necesario el tratarla o declararla en la cadena de métodos hasta que sea tratada. Otro motivo es que a mayor nivel en la jerarquía de llamada en los métodos se necesitarán manejar una lista amplia de excepciones.
 
@@ -52,7 +52,7 @@ Las excepciones _checked_ presentan los siguientes problemas:
 * No funciona bien con la herencia: si un método se sobreescribe no puede lanzar una excepción si el método sobreescrito no declara que lanza una excepción.
 * No funcionan bien con las _lambdas_: en Java las _lambdas_ se implementan usando interfaces con un único método abstracto, ese método debe o declarar la posible excepción, en cuyo caso todo método que lo use debe manejarla, o el cuerpo de la _lambda_ debe capturar la excepción. Ambas opciones incrementan el código necesario para usar las _lambdas_ reduciendo uno de sus beneficios de ser más concisas.
 
-### La solución a las excepciones _checked_ de otros lenguajes posteriores a Java
+## La solución a las excepciones _checked_ de otros lenguajes posteriores a Java
 
 La solución por la que han optado otros lenguajes más modernos que Java como [C#][csharp] y [Kotlin][kotlin] es considerar a todas las excepciones como _unchecked_. Dado que en muchos casos el único tratamiento posible de una excepción posible es relanzarla, para manejar las excepciones en muchos casos es suficiente un manejador global de excepciones que las capture. Otro beneficio del manejador global de excepciones es que centraliza en un único punto el tratamiento de las excepciones.
 

@@ -27,7 +27,7 @@ Teniendo un [servicio web REST implementado con JAX-RS y Spring Boot][blogbitix-
 
 {{< tableofcontents >}}
 
-### El servidor de autorización
+## El servidor de autorización
 
 En el servicio REST bastará usar el [adaptador para Spring Boot de Keycloak](https://keycloak.gitbooks.io/securing-client-applications-guide/content/v/latest/topics/oidc/java/java-adapters.html) y añadamos en Keycloak cierta configuración que consistirá en un _realm_ y el registro de un cliente. Para acceder al servicio REST usaremos el flujo _client\_credentials_ que nos permitirá obtener un _token_ usando las credenciales del cliente.
 
@@ -42,7 +42,7 @@ Iniciado Keycloak con [Docker][docker] y [Docker Compose][docker-compose] accede
     image2="image:keycloak-clients.webp" optionsthumb2="300x200" title2="Clientes OAuth"
     caption="Administación de Keycloak" >}}
 
-### Un servicio REST con OAuth
+## Un servicio REST con OAuth
 
 Una vez realizada la configuración en el servidor de OAuth/Keycloak obtendremos la configuración para el adaptador de Keycloak para el servicio REST desde la pestaña _Installation_ que añadiremos en el fichero de configuración de Spring Boot _application.yml_. Además, indicaremos que el cliente solo aceptará _access tokens_ mediante la opción _bearer-only_ de modo que no hará redirecciones para autenticar.
 
@@ -51,7 +51,7 @@ Indicaremos también el rol que deberá poseer el cliente para acceder al servic
 {{< code file="application.yml" language="yaml" options="" >}}
 {{< code file="MessageResource.java" language="java" options="" >}}
 
-### Iniciar el servidor de autorización y el servicio REST
+## Iniciar el servidor de autorización y el servicio REST
 
 Iniciado Keycloak y el servicio REST con el comando `gradlew run` podemos iniciar el proceso de obtención de un _access token_ y llamar al servicio proporcionando el _access token_ obtenido y ver que pasa si no proporcionamos _token_ o uno modificado o inválido. Para obtener el _access token_ podemos emplear _curl_ accediendo al _endpoint_ de Keycloak para obtenerlos.
 

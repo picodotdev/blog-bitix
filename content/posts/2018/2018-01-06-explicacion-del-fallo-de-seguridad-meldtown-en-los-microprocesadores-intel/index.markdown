@@ -38,7 +38,7 @@ Como usuarios domésticos para estar protegidos conviene descargar únicamente s
     image2="logotype:amd.svg" optionsthumb2="200x200" title2="AMD"
     image3="logotype:arm.svg" optionsthumb3="200x200" title3="ARM" >}}
 
-### Técnicas para aumentar el rendimiento
+## Técnicas para aumentar el rendimiento
 
 Los microprocesadores modernos implementan varias técnicas para aumentar el rendimiento. Una de las mas simples es aumentar la frecuencia de trabajo del microprocesador, uno de los primeros Pentium trabajaba únicamente a 100 Mhz y los actuales llegan hasta los 3 Ghz, casi 30 veces más. Pero aumentar la frecuencia solo es posible hasta cierto límite a partir del cual el microprocesador se calienta mucho y consume mucha energía. Por lo que hay que emplear otras técnicas al mismo tiempo.
 
@@ -46,13 +46,13 @@ Otra de las mas simples es reducir el tamaño de los transistores, unos transist
 
 Con la ayuda de unos transistores más pequeños y más espacio se aprovecha para aumentar el rendimiento incluyendo más núcleos de cómputo. Pero para aumentar el rendimiento de un núcleo de cómputo individual o el <abbr title="Instructions Per Cicle">IPC</abbr> se emplean otras técnicas como utilizar múltiples _pipelines_ para ejecutar varias instrucciones simultáneamente, ejecución fuera de orden para reorganizar las instrucciones y la ejecución especulativa para mantener llenos esos _pipelines_.
 
-### Escalar
+## Escalar
 
 En un microprocesador escalar se ejecuta una instrucción por ciclo, por ejemplo, en esta secuencia de instrucciones que realizan unas sumas se tardarían 6 ciclos de reloj. A estos microprocesadores que ejecutan una instrucción por ciclo de reloj se les denomina escalares, siendo ejemplos el Intel 486 y el ARM1176 usado en la Raspberry Pi 1. 
 
 {{< code file="escalar.py" language="Python" options="" >}}
 
-### Superescalar
+## Superescalar
 
 En un microprocesador con dos _pipelines_ o [superescalar][wikipedia-superescalar] se pueden realizar varias operaciones simultáneamente, es decir, mientras se realiza la primera operación en la variable _m_ se realiza al mismo tiempo la segunda operación de _n_, con lo que estas operaciones podrían completarse en únicamente tres ciclos de reloj con la siguiente equivalencia de programa. Ejemplos de microprocesadores superescalares son el Intel Pentium y los [ARM][arm] Cortex-A7 y Cortex-A53 estos últimos usados en la Raspberry Pi 2 y 3 respectivamente.
 
@@ -62,13 +62,13 @@ Sin embargo, hacer la suma de _o_ y _x_ al mismo tiempo no es posible ya que ant
 
 {{< code file="suprescalar-2.py" language="Python" options="" >}}
 
-### Fuera de orden
+## Fuera de orden
 
 Los microprocesadores [fuera de orden][wikipedia-out-of-order] reordenan las instrucciones de la forma adecuada para que el programa sea equivalente pero manteniendo los _pipelines_ llenos. Cambiando el orden entre las instrucciones _x_ e _y_ se consigue ejecutar las instrucciones en tres ciclos de reloj. Ejemplos de microprocesadores fuera de orden son el Pentium 2 y siguientes microprocesadores Intel y [AMD][amd] incluyendo varios ARM Cortex-A9, A15, A17 y A57.
 
 {{< code file="fuera-de-orden.py" language="Python" options="" >}}
 
-### Predicción de salto y ejecución especulativa
+## Predicción de salto y ejecución especulativa
 
 Los programas incluyen saltos con sentencias condicionales _if_ o de bucle. Los microprocesadores tratan de adivinar si una sentencia de salto se producirá o no (con heurísticas y son bastante buenos acertando) para recuperar y tener preparadas las siguientes instrucciones. Mantener los _pipelines_ llenos es difícil al aumentar su número a tres o cuatro. Para tratar de mantenerlos llenos los microprocesadores usan la predicción de salto y van ejecutando las instrucciones desechando las operaciones si finalmente no se acierta en el salto pero habiendo aumentado el rendimiento si se ha acertado, realizan [ejecución especulativa][wikipedia-speculative-execution] de las instrucciones.
 
@@ -84,11 +84,11 @@ Y con la ejecución superescalar se mantiene los _pipelines_ ocupados de modo qu
 
 {{< code file="ejecucion-especulativa-3.py" language="Python" options="" >}}
 
-### Cache
+## Cache
 
 Los microprocesadores son muy rápidos comparados con la memoria o el acceso al almacenamiento secundario. Un Cortex-A53 de una Raspberry Pi puede ejecutar una instrucción en 0.5 nanosegundos pero el acceso a memoria costar 100 nanosegundos. Esto no es bueno pero por fortuna los accesos a memoria siguen patrones, accediendo repetidamente a variables recientemente accedidas y accediendo a variables en posiciones cercanas, de forma que colocando estas variables en una cache más rápida y cercana al procesador que la memoria principal se mitiga en gran medida el problema.
 
-### Relación entre ejecución especulativa, cache y _Meltdown_ y _Spectre_
+## Relación entre ejecución especulativa, cache y _Meltdown_ y _Spectre_
 
 La ejecución especulativa tiene el efecto colateral de colocar datos en la memoria cache del microprocesador y esto es utilizado para realizar una forma de [ataque side-channel](https://en.wikipedia.org/wiki/Side-channel_attack). Desde el punto de vista de _Meltdown_ y _Spectre_ y la ejecución especulativa lo importante es que midiendo el tiempo que tarda el acceso a memoria se puede conocer si el dato está en la cache (tarda poco) o no (tarda mucho). 
 
@@ -100,7 +100,7 @@ _u_ tiene una dependencia sobre _t_ y _v_ sobre _u_ con lo que el microprocesado
 
 El microprocesador lee de el valor de una dirección del _kernel_ de forma especulativa pero el fallo en la operación de acceso no se produce hasta se conoce el valor de _v_ utilizando en la sentencia condicional no es cero. Limpiando la cache previamente y haciendo que _v_ de cero para que no se produzca la excepción con los valores adecuados de las variables (_a_, _b_, _c_, _d_) la ejecución especulativa de `v, y_ = u+d, user_mem[x_]` producirá un acceso a la dirección de memoria _0x000_ o _0x100_ dependiendo del valor del octavo bit recuperado en el acceso ilegal a la dirección de memoria `kern_mem[address]`. El ataque _side-channel_ se produce midiendo el tiempo que tarda una instrucción posterior que utilice estas direcciones, si está o no está en la cache (por el tiempo que tarda) determina a que dirección de memoria se ha accedido y cual es el valor del octavo bit de una dirección del _kernel_. ¡Felicidades has leído un bit de la memoria del kernel!. Bit a bit y con tiempo se puede leer todo el contenido de la memoria del _kernel_ aplicando esta operación millones de veces.
 
-### Notas finales
+## Notas finales
 
 Los microprocesadores ARM1176, Cortex-A7, and Cortex-A53 usados en la Raspberry Pi no se ven afectados por el _Meltdown_ ya que no poseen ejecución especulativa, los AMD Ryzen tampoco se ven afectados por el _Meltdown_ ya que aunque si soportan ejecución especulativa al contrario de Intel la ejecución especulativa no se permite entre diferentes anillos de seguridad, el _kernel_ se ejecuta en el anillo 0 y las aplicaciones en el anillo 3. Sin embargo, una variante de _Meltdown_ es _Spectre_ que es el mismo caso pero en vez de con la memoria del _kernel_ con la memoria de otra aplicación. Como las aplicaciones se ejecutan en el mismo anillo en este caso los AMD Ryzen y algunos modelos de ARM si se ven afectados por _Spectre_ al igual que también los Intel.
 

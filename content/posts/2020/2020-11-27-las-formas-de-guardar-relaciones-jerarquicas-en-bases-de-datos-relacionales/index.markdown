@@ -27,7 +27,7 @@ En el libro [SQL Antipatterns](https://amzn.to/2G2oRN1) se trata con detalle las
 
 {{< tableofcontents >}}
 
-### Ejemplo de relación jerárquica
+## Ejemplo de relación jerárquica
 
 Las relaciones jerárquicas establecen unas normas en las relaciones de los elementos, los elementos se organizan en niveles en el que los elementos se relacionan como nivel por encima, por debajo o en el mismo nivel que otro. El número de niveles que tiene una estructura jerárquica es indefinido pudiendo tener cualquier profundidad.
 
@@ -35,9 +35,9 @@ Esta es una estructura pequeña jerárquica de productos con dos niveles de prof
 
 {{< code file="hierarchy.txt" language="plain" options="" >}}
 
-### Formas de guardar relaciones jerárquicas
+## Formas de guardar relaciones jerárquicas
 
-#### Adjacency List
+### Adjacency List
 
 La solución de listas adyacentes o _adjacency list_ se basa en añadir un campo adicional a la tabla en el que cada fila guarda el identificador del elemento por encima en la estructura jerárquica.
 
@@ -60,7 +60,7 @@ Para este caso y con consultas recursivas el ejemplo se puede probar con [Docker
 {{< code file="docker-run.sh" language="plain" options="" >}}
 {{< code file="insert-data.sql" language="sql" options="" >}}
 
-#### Consultas recursivas
+### Consultas recursivas
 
 Las otras implementaciones están originadas a la limitación del modelo relacional y del lenguaje SQL. En las últimas versiones de las bases de datos el lenguaje SQL soporta consultas recursivas o _recursive queries_ con las que implementar la sencilla solución de _adjacency list_ sin sus desventajas. [MySQL][mysql] soporta consultas recursivas desde la versión 8 y [PostgreSQL][postgresql] ya era posible en la versión 9.
 
@@ -71,7 +71,7 @@ Las consultas para obtener los ascendientes y los descendientes son las siguient
 {{< code file="recursive-queries-descendants.sql" language="sql" options="" >}}
 {{< code file="recursive-queries-descendants.out" language="plain" options="" >}}
 
-#### Closure Table
+### Closure Table
 
 Cuando la base de datos no soporta consultas recursivas una solución alternativa es la de _closure table_, esta se basa en guardar las relaciones entre los nodos en una tabla adicional, se guardan la relación de un nodo con todos sus descendientes o las de un nodo con todos sus ascendientes además de consigo mismo.
 
@@ -100,11 +100,11 @@ Y para eliminar una rama del árbol.
 
 {{< code file="closure-table-delete-subtree.sql" language="sql" options="" >}}
 
-### Otras implementaciones
+## Otras implementaciones
 
 Estas otras soluciones son válidas para implementar estructuras jerárquicas en bases de datos relacionales. aunque en algunos aspectos con desventajas sobre las recomendadas de consultas recursivas si están soportadas por la base de datos o la solución de _closure table_.
 
-#### Path Enumeration
+### Path Enumeration
 
 La solución _path enumeration_ se basa en añadir una columna que contiene en una cadena la colección de identificadores de sus ascendientes incluido el propio nodo.
 
@@ -118,7 +118,7 @@ Las consultas para obtener los ascendientes y los descendientes.
 {{< code file="path-enumeration-ancestors.sql" language="sql" options="" >}}
 {{< code file="path-enumeration-descendants.sql" language="sql" options="" >}}
 
-#### Nested Set
+### Nested Set
 
 La solución de _nested set_ es una solución a las limitaciones del modelo relacional para guardar relaciones jerárquicas. Se basa en añadir a la tabla dos nuevos campos con el rango de nodos contenidos en el nivel inferior.
 
@@ -136,7 +136,7 @@ Las consultas para obtener los ascendientes, los descendientes y de inserción d
 {{< code file="nested-set-ancestors.sql" language="sql" options="" >}}
 {{< code file="nested-set-descendants.sql" language="sql" options="" >}}
 
-### ¿Cúal es la mejor solución para estructuras jerárquicas en bases de datos relacionales?
+## ¿Cúal es la mejor solución para estructuras jerárquicas en bases de datos relacionales?
 
 Si la base de datos soporta consultas recursivas la mejor solución para estructuras jerárquicas en bases de datos relacionales es la de consultas recursivas. Si la base de datos no soporta consultas recursivas la solución de _closure table_ ofrece integridad referencial y es sencilla.
 

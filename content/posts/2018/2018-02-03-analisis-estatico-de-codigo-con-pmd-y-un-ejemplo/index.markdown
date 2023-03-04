@@ -32,7 +32,7 @@ Otra forma de análisis estático de código posible es comprobar que los fallos
 
 * [Analizar y detectar fallos de seguridad en las dependencias de Java][blogbitix-616]
 
-### Qué es PMD y para qué sirve
+## Qué es PMD y para qué sirve
 
 Si la base de código del software es grande será tedioso y costoso revisarlo manualmente sin embargo hay herramientas como [PMD][pmd] que nos permite automatizar la tarea de análisis. PMD es una herramienta de análisis estático de código que sirve para  comprobar que el código sigue las normas de estilo definidas para el proyecto o en una organización además de esos otros aspectos que afectan a la facilidad de mantenimiento del software también útil cuando se incorpora una nueva persona a un proyecto para que siga las normas ya establecidas. Al igual que se deben tener teses unitarios y de integración para comprobar el correcto funcionamiento del software con PMD se obtiene un informe con las violaciones de las reglas que quieran aplicar al analizar el código.
 
@@ -42,7 +42,7 @@ En la documentación del proyecto PMD en la sección _Rule Reference_ están la 
 
 Al heredar un nuevo proyecto cuyo mantenimiento es complicado y grande por no cumplir varias de las reglas anteriores no es posible revisar todo el código completamente manualmente, se puede intuir cuales son algunos de los problemas haciendo una revisión a algunas partes y suponer que en el resto también están. Un buen paso es utilizar PMD para detectar de forma precisa una buena cantidad e ir corrigiéndolas a medida que se van haciendo cambios al código, con el paso del tiempo el mantenimiento si sigue siendo difícil no será por que hay código innecesario, no usado bloques de código vacíos o _imports_ no usados que son completamente innecesarios y eliminables sin riesgo.
 
-### Ejemplo de análisis con PMD
+## Ejemplo de análisis con PMD
 
 Usando la [herramienta de construcción Gradle][elblogdepicodev-98] y su [_plugin_ de PMD](https://docs.gradle.org/current/userguide/pmd_plugin.html) es posible realizar el análisis automatizado del código. Hay una serie de reglas predefinidas que se pueden aplicar con valores generalmente aceptados pero que es posible personalizar.
 

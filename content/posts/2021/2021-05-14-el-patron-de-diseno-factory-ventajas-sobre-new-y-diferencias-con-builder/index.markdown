@@ -26,7 +26,7 @@ El patrón de diseño _Factory_ es uno de patrones ya identificados como útiles
 
 {{< tableofcontents >}}
 
-### Las limitaciones de instanciar objetos con la palabra reservada _new_
+## Las limitaciones de instanciar objetos con la palabra reservada _new_
 
 Los lenguajes de programación orientada a objetos modelan los conceptos que trata una aplicación mediante clases que define las propiedades del objeto y los métodos que permiten el acceso o modifican el estado del objeto, esto proporciona encapsulación y es uno de los [conceptos fundamentales de la programación orientada a objetos][blogbitix-564] entre los que también se encuentran el polimorfismo, herencia y composición.
 
@@ -48,7 +48,7 @@ Otra limitación es que el código que usa _new_ tiene la responsabilidad de cre
 
 Para evitar las las limitaciones de la palabra _new_ se suele emplear alguno de los patrones creacionales, como el patrón de diseño _Factory_.
 
-### El patrón de diseño Factory
+## El patrón de diseño Factory
 
 El patrón _Factory_ es un patrón de diseño creacional que tiene como función crear instancias de objetos sin las limitaciones de la palabra reservada _new_. El patrón _Factory_ solventa las dos limitaciones comentadas de _new_, pudiendo crear diferentes tipos de instancias que implementen una interfaz o hereden de una clase común, al mismo tiempo el código de creación de las instancias queda encapsulado en la clase que implementa el patrón _Factory_ abstrayendo al código que lo usa de la responsabilidad de creación de instancias.
 
@@ -65,7 +65,7 @@ Como muchos patrones de diseño añade cierta complejidad en el diseño de las c
     image1="image:factory-pattern.webp" optionsthumb1="650x450" title1="Diagrama de clases del patrón de diseño Factory"
     caption="Diagrama de clases del patrón de diseño Factory" >}}
 
-#### Diferencias con el patrón de diseño _Builder_
+### Diferencias con el patrón de diseño _Builder_
 
 El patrón de diseño _Builder_ es otro patrón creacional dedicado a la creación de instancias, aunque comparte objetivos las implementación es diferente del patrón _Factory_.
 
@@ -75,7 +75,7 @@ Los _Builder_ son objetos con estado y requieren crear una instancia de _Builder
 
 Por el contrario el patrón _Builder_ proporciona más control sobre los pasos de la creación de la instancia y proporciona más flexibilidad para variar la representación interna de la instancia creada. Otra diferencia es que el _Builder_ crea instancias con diferente composición de objetos.
 
-### Ejemplo de patrón de diseño _Factory_
+## Ejemplo de patrón de diseño _Factory_
 
 En el siguiente ejemplo de implementación en Java de patrón _Factory Method_  se observa que el método factoría en función del parámetro se devuelve una instancia u otra empleando una sentencia _if-else_. Esta factoría además contiene otros dos métodos de factoría específicos para tipos concretos de _Shape_.
 

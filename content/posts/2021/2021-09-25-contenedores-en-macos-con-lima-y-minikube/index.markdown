@@ -36,7 +36,7 @@ El cambio en el acuerdo de uso de Docker Desktop obliga a los usuarios de Apple 
 
 {{< tableofcontents >}}
 
-### Contenedores de Docker y Kuberntes con Minikube en macOS
+## Contenedores de Docker y Kuberntes con Minikube en macOS
 
 minikube tiene el objetivo de crear un _cluster_ de Kubernetes rápidamente en GNU/Linux, Windows y macOS, pero dado que usa Docker el comando _docker_ puede interaccionar con la instancia de minikube. Docker es una herramienta nativa de GNU/Linux en el caso de macOS y Windows usa virtualización, en estos dos sistemas operativos Docker se ejecuta en una máquina virtual con GNU/Linux y se proporcionan una serie de integraciones para el reenvío de puertos entre la máquina anfitrión y la máquina virtual con los contenedores.
 
@@ -63,7 +63,7 @@ Para destruir la máquina virtual que usa minikube hay otro comando.
 
 {{< code file="minikube-delete.sh" language="bash" options="" >}}
 
-### Contenedores de Docker con Lima en macOS
+## Contenedores de Docker con Lima en macOS
 
 Aunque minikube permite ejecutar contenedores de Docker directamente su propósito es ejecutar recursos de Kubernetes como _pods_ en vez de directamente contenedores. Para el caso de simplemente contenedores de Docker minikube no ofrece reenvío de puertos y compartición de archivos entre la máquina virtual y local que requiere hacer el paso adicional del comando _minikube-ip.sh_.
 

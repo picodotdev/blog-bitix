@@ -27,7 +27,7 @@ Este es el caso de una aplicación de un tercero que por ejemplo desea acceder a
 
 {{< tableofcontents >}}
 
-### El protocolo OAuth
+## El protocolo OAuth
 
 El protocolo OAuth permite al usuario delegar la autorización a un cliente para el acceso a sus recursos proporcionado por un servidor de recursos, permite delegar la autorización de forma segura y sin que el usuario comparta sus credenciales de acceso en el servicio donde están los recursos al mismo tiempo que mantiene la posibilidad de revocar el acceso u otorgarlo de forma temporal.
 
@@ -54,7 +54,7 @@ El servidor de autorización junto al _access token_ emite el _refresh token_, l
 * [OAuth 2.0](https://oauth.net/2/)
 * [Especificaciones de OAuth 2.0](https://oauth.net/specs/)
 
-### Flujos de autorización
+## Flujos de autorización
 
 El protocolo OAuth define varios flujos o _grant types_ que un cliente puede seguir para la obtención del _access token_ que le permite acceder los recursos. Para el servidor de recursos la forma que el cliente emplee para obtener el _token_ y para el cliente el contenido o formato del _token_ si tiene alguno no tiene relevancia.
 
@@ -62,7 +62,7 @@ El flujo por defecto, más completo, seguro y recomendado es el flujo de _author
 
 * [OAuth Grant Types](https://oauth.net/2/grant-types/)
 
-#### _Authorization code grant_
+### _Authorization code grant_
 
 El flujo de _authorization code_ es el más completo y por ello más recomendado de usar siempre que se pueda. De forma simplificada en cuanto a la información que se utiliza en las peticiones los pasos de este flujo son los siguientes:
 
@@ -83,7 +83,7 @@ Otro aspecto importante es que el usuario en caso de tener que autenticarse úni
 
 {{< code file="authorization-code-grant.txt" language="plain" options="" >}}
 
-#### _Client credentials grant_
+### _Client credentials grant_
 
 El flujo _client credentials_ se usa cuando el cliente accede a los recursos en su propia representación sin la intervención de un usuario.
 
@@ -93,7 +93,7 @@ Para obtener el _token_ el cliente proporciona sus credenciales al servidor de a
 
 {{< code file="client-credentials-grant.txt" language="plain" options="" >}}
 
-#### _Device grant_
+### _Device grant_
 
 Este flujo se utiliza en caso de que el dispositivo no tenga posibilidad de utilizar un agente de usuario. En vez de ello el dispositivo simplemente presenta un código que el usuario utilizando otro dispositivo se autentica con sus credenciales y junto al código realiza la autorización. El dispositivo comprueba periódicamente si el usuario ha realizado la autorización al servidor de autorización que en caso de ser correcta le devuelve el _access token_.
 
@@ -101,7 +101,7 @@ Este flujo se utiliza en caso de que el dispositivo no tenga posibilidad de util
 
 {{< code file="device-grant.txt" language="plain" options="" >}}
 
-#### _Implicit grant_
+### _Implicit grant_
 
 El uso del flujo _implicit_ está desaconsejado y se recomienda utilizar el flujo _authorization code_ en caso de ser posible. En este flujo se utiliza cuando el cliente se ubica en el propio agente del usuario. En la redirección del _front channel_ el servidor responde con una redirección que incluyen el fragmento de la URL el _access token_.
 
@@ -111,7 +111,7 @@ Dado que el agente del usuario tiene acceso al _access token_ se considera menos
 
 {{< code file="implicit-grant.txt" language="plain" options="" >}}
 
-#### _Resource owner password credentials grant_
+### _Resource owner password credentials grant_
 
 Antes de OAuth para que un servicio pudiera acceder a los recursos de otro servicio una posibilidad era que el usuario compartiera las credenciales del servicio del recurso con el cliente. Compartir las credenciales del usuario entre servicios es una de las cosas que trata de evitar OAuth ya que cualquier cliente inseguro compromete las credenciales del usuario.
 
@@ -121,21 +121,21 @@ En el flujo _resource owner password_ el cliente solicita las credenciales al us
 
 {{< code file="resource-owner-password-credentials-grant.txt" language="plain" options="" >}}
 
-### Casos de uso
+## Casos de uso
 
 De forma preferente los clientes han de utilizar el flujo _authorization code_ por ser el más seguro de los flujos que define OAuth 2. La flexibilidad de OAuth le permite ser usado en múltiples dispositivos y protocolos.
 
-#### Web
+### Web
 
 En los servicios y aplicaciones web las arquitecturas de las aplicaciones se componen de una parte cliente que se ejecuta en el navegador del usuario y una parte servidor. En esta arquitectura la parte que hace de servidor para el cliente del navegador web a su vez hace de cliente para el servidor del recurso.
 
 En este caso dado el flujo de autorización OAuth que se utiliza es el de _authorization code_.
 
-#### Servicio _backend_
+### Servicio _backend_
 
 Algunos clientes no dependen de ningún usuario, esto es el caso de servicios que únicamente tienen una parte de _backend_ En este caso dado el flujo de autorización OAuth que se utiliza es el de _client credentials_.
 
-#### Aplicación nativa
+### Aplicación nativa
 
 Los clientes actuales incluyen dispositivos con capacidades de cómputo como los teléfonos inteligentes y tabletas que se ejecutan como aplicaciones nativas de estos dispositivos sin utilizar un navegador. 
 
@@ -143,17 +143,17 @@ Este tipo de dispositivos pueden utilizar también el flujo de autenticación _a
 
 El protocolo OAuth en algunas especificaciones relacionadas del protocolo permite el registro de forma dinámica de los clientes que en esencia proporciona unas credenciales únicas para cada instalación de la aplicación de forma que si las credenciales de un cliente son filtradas el problema no afecte al resto de clientes, solo exclusivamente a las credenciales del cliente afectado que puedan ser revocadas sin afectar al resto de clientes.
 
-#### Dispositivo
+### Dispositivo
 
 Los televisores inteligentes también tienen capacidades para acceder a servicios de terceros pero son unos dispositivos especiales por su limitación de métodos de entrada y de entorno de ejecución que limitan el poder utilizar el flujo de _authorization code_. Para cubrir las necesidades de estos dispositivos está el flujo _device_.
 
-### Especificaciones
+## Especificaciones
 
 El protocolo OAuth está definido en una colección de especificaciones que son bastante cortas, componen la teoría del protocolo y bastante clarificadoras en varios puntos.
 
 Algunas de las especificaciones definen el protocolo y otras elementos relacionados con OAuth como el registro de clientes de forma dinámica que se utiliza para el caso concreto o las especificaciones que permiten implementar un protocolo de autenticación sobre el protocolo de autorización OAuth como lo es [OpenID Connect][openid-connect], OpenID Connect a su vez define otro conjunto de especificaciones.
 
-#### OpenID Connect
+### OpenID Connect
 
 La autorización permite aceptar o rechazar una petición en base a algunos criterios de la petición, también en función del usuario o cliente que realiza la acción o los permisos concedidos.
 
@@ -168,7 +168,7 @@ Otro aspecto que modifica OpenID Connect es la introducción de algunos elemento
 * [OpenID Connect][openid-connect]
 * [OpenID Connect Specifications](https://openid.net/developers/specs/)
 
-#### _Discovery_
+### _Discovery_
 
 Hay múltiples proveedores que proporcionan identidad, el estándar de OpenID Connect define un archivo que los proveedores hacen accesible en una URL y que los clientes pueden utilizar para utilizarlo independientemente de del proveedor mientras cumpla con el estándar, este archivo forma parte.
 
@@ -178,7 +178,7 @@ En el caso de Google por ejemplo hace público su definición de OpenID Connect 
 
 * [Gogle OpenID Connect Configuration](https://accounts.google.com/.well-known/openid-configuration)
 
-#### JOSE y JWT
+### JOSE y JWT
 
 En OpenID Connect tanto el _identity token_ como el _access token_ son en realidad un JSON codificado en base64, el cliente no necesita conocer ni analizar su contenido pero el servidor de recursos puede analizarlo para tomar alguna decisión de autorización. El servidor de recurso tiene dos posibilidades, analizar el contenido de _token_ lo que requiere conocer qué formato contiene o hacer una petición al _identity provider_ para que este le devuelva su contenido, ambas tienen alguna ventaja pero si es suficiente para evitar una llamada adicional y latencia en las llamadas se evita hacer peticiones al _identity provider_.
 
@@ -195,7 +195,7 @@ El formato de los _tokens_ se engloban en una serie de colección de siglas rela
 
 Otra término mencionado es _proof key for code exchange_ o PKCE que evita algunos problemas de seguridad al enviar servidor de autorización un dato que solo conoce el cliente de modo que solo el cliente legítimo pueda intercambiar el _autorization code_ por el _access token_, útil principalmente para las aplicaciones nativas que no pueden garantizar el secreto de sus credenciales.
 
-### Implementar OAuth y OpenID Connect
+## Implementar OAuth y OpenID Connect
 
 Dado que los protocolos OAuth y OpenID Connect se basan en el protocolo HTTP cualquier herramienta que utilice este protocolo es capaz de utilizar OAuth incluso de forma transparente sin que el servicio protegido sea consciente de ello con un _proxy_ y un servidor en el que delegar la autenticación y autorización.
 
@@ -203,13 +203,13 @@ Tanto el servidor web [Apache HTTPD][apache-httpd] como [Nginx][nginx] ofrecen _
 
 * [Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot][blogbitix-533]
 
-### Servidor OpenID Connect
+## Servidor OpenID Connect
 
 [Keycloak][keycloak] es un servidor implementado en el lenguaje Java desarrollado por [RedHat][redhat] y publicado con una licencia de código abierto que proporciona la funcionalidad de servidor de autorización y OpenID Connect para cualquier aplicación incluso aquellas no implementadas en Java. Keycloak se caracteriza por implementar las especificaciones con los diferentes flujos de autorización del protocolo OAuth y OpenID Connect.
 
 * [Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot][blogbitix-185]
 
-### Cliente de OAuth con Spring
+## Cliente de OAuth con Spring
 
 En Java el framework [Spring][spring] que proporciona dependencias para prácticamente cualquier funcionalidad común que un desarrollador necesite también proporciona soporte para OAuth y OpenID Connect añadiendo unas pocas líneas de configuración e integrándose con el framework de seguridad [Spring Security][spring-security].
 
@@ -217,7 +217,7 @@ Dado que los _access tokens_ tienen un tiempo de expiración relativamente corto
 
 * [Cliente de un servicio REST autenticado con OAuth en Java][blogbitix-183]
 
-### Servidor de recurso
+## Servidor de recurso
 
 Al igual que Spring proporciona soporte para la utilización de OpenID Connect el framework de seguridad Spring Security ofrece soporte para la integración de autorización con OAuth de modo que un _endpoint_ de una API REST o funcionalidad de un servicio pueda implementar la lógica para permitir o denegar una petición.
 

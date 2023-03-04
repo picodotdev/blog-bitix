@@ -27,7 +27,7 @@ Aún así a pocas semanas de sus lanzamientos quedan muchas dudas por resolver q
 
 {{< tableofcontents >}}
 
-### El hardware de las consolas Xbox Series y PlayStation 5
+## El hardware de las consolas Xbox Series y PlayStation 5
 
 Ambas consolas tienen un hardware similar, incorporan almacenamiento SSD y nuevamente el procesador y la gráfica está basado en un diseño personalizado por AMD para consolas de sus procesadores y gráficas para PC. 
 
@@ -35,15 +35,15 @@ Las consolas de ambas marcas ofrecen una versión solo digital junto a otro mode
 
 Se lleva hablando de la nueva generación desde hace ya varios años, ya se conocen los detalles más importantes de ambos productos como el precio y su diseño pero aún quedan muchas dudas por resolver. De lo que no hay duda es que a lo largo de su generación va a haber juegos con una calidad gráfica muy importante. Los juegos de la Xbox One y PlayStation 4 ya tienen juegos reseñables, la nueva generación con una capacidad gráfica casi cinco veces superior va a posibilitar juegos espectaculares. Sin embargo, los gráficos no son lo único destacable ni quizá lo más destacable.
 
-#### El almacenamiento SSD
+### El almacenamiento SSD
 
 Los SDD proporciona una importante mejora en la tasa de transferencia entre el almacenamiento y la memoria respecto al disco duro de las generaciones anteriores, si el disco duro tiene una tasa de transferencia de entre 50-100 MB/s el almacenamiento llega a los 5000 y 9000 MB/s con algoritmos de compresión lo que va a suponer una reducción importante en los tiempos de carga de los juegos, un aspecto muy criticado de la One y PS4. Al mismo tiempo, tener ese ancho de banda permite a los desarrolladores nuevas técnicas de programación aprovechando mejor el hardware al evitar precargar datos y mantenerlos en memoria cuando realmente no se usan, simplemente permanecen cargados por si se necesitan sin tener que recurrir al disco duro que tiene un ancho de banda insuficiente para cargar datos bajo demanda.
 
-#### Procesador y gráfica, el SoC
+### Procesador y gráfica, el SoC
 
 El SoC tanto de la Xbox como de la PlayStation están basados igualmente en una CPU de 8 núcleos que la generación anterior pero basados en la arquitectura Zen 2 mucho más moderna y potente. Por otro lado la gráfica en el mismo _chip_ está basada la arquitectura RNDA 2 con soporte para trazado de rayos e igual mucho más potente que la generación anterior, las gráficas para PC se presentan unos días antes de la comercialización de las consolas. Los SoC tienen diferencias en cuanto a frecuencias de trabajo y número de núcleos gráficos pero que ofrecen similar rendimiento de entre 10 y 12 TFOPS, en teoría capaces de ofrecer juegos en 4K con 60 FPS.
 
-### PlayStation 5
+## PlayStation 5
 
 La PS5 esta generación ofrece dos modelos, uno solo digital sin disco y otra con disco pero que salvo por esto en el resto de características son iguales. El modelo [PlayStation 5 digital](https://amzn.to/3lzY7rD) con un precio de lanzamiento de 400 € y la [PlaysStation 5 con disco](https://amzn.to/3qnTmF1) con un precio de 500 €. La PS5 compite con la Series X.
 
@@ -69,7 +69,7 @@ Se ha anunciado que los miembros de la suscripción Plus en el momento de lanzam
     gallery="false"
     image1="logotype:playstation.svg" optionsthumb1="300x200" title1="PlayStation" >}}
 
-#### Especificaciones técnicas
+### Especificaciones técnicas
 
 Las características del hardware son las siguientes:
 
@@ -199,7 +199,7 @@ Las características del hardware son las siguientes:
     </tbody>
 </table>
 
-### Xbox Series X/S
+## Xbox Series X/S
 
 La Xbox Series X/S son dos modelos de nueva generación con diferentes características en cuanto almacenamiento, solo digital o con disco, diseño y potencia gráfica. También en precio son diferentes, la [Xbox Series S](https://amzn.to/33ETjLr) se sitúa en el precio de los 300 € en el momento de lanzamiento y la [Xbox Series X](https://amzn.to/36xjIfZ) en los 500 €.
 
@@ -234,7 +234,7 @@ La estrategia de Microsoft con las Series X/S con dos modelos diferentes en pote
     gallery="false"
     image1="logotype:xbox.svg" optionsthumb1="300x200" title1="Xbox" >}}
 
-#### Especificaciones técnicas
+### Especificaciones técnicas
 
 Las características del hardware son las siguientes:
 
@@ -469,7 +469,7 @@ Las características del hardware son las siguientes:
 </table>
 
 
-#### Dudas no resueltas
+### Dudas no resueltas
 
 Ya se conoce la información más importante de las consolas que son su precio, fecha de lanzamiento, especificaciones técnicas y aspecto externo e interno.
 
@@ -489,7 +489,7 @@ Algunos juegos se juegan mejor con teclado y ratón, es el motivo por el que alg
 
 Las especificaciones técnicas no lo son todo, la diferencia la marcarán los juegos potentes que hagan vender consolas y millones de copias de esos juegos. Xbox en esta generación parece haber trabajado bien sus consolas y [ha reforzafo a base de talonario sus desarrolladoras comprando Bethesda](https://www.3djuegos.com/noticias-ver/207958/xbox-cierra-una-compra-historica-con-bethesda-y-se-lleva/) lo que le proporcionará futuros juegos de las conocidas franquicias The Elder Scrolls, DOOM, Fallout o Dishonored. Sin embargo, algo en lo que ha destacado Sony en sus consolas es en proporcionarles un catálogo amplio y de calidad durante toda la generación.
 
-#### ¿Comprar o esperar? ¿Si es comprar, cúal?
+### ¿Comprar o esperar? ¿Si es comprar, cúal?
 
 Aún quedan muchos e importantes detalles por revelar, realizar una prereserva antes de que el producto se lance sin esperar a las primeras opiniones de los usuarios es arriesgado ya que en los lanzamientos pasados unas semanas o meses se descubren los primeros problemas de diseño y experiencia en las consolas.
 
@@ -501,7 +501,7 @@ Es casi seguro que pasados unos años ambas marcas lancen modelos más pequeños
 
 En cuanto a que consola comprar es una decisión que depende de cada uno. Si se es usuario de juegos digitales comprar la siguiente generación permite aprovechar el catálogo de la anterior con una mejor experiencia en tiempos de carga y fotogramas por segundo más estables. La Xbox Series S tiene un precio muy atractivo pero con importantes limitaciones. El siguiente año es casi seguro que reducirán algo su precio y se ofrezcan con algún juego incluido en el mismo paquete.
 
-### El hardware de los PCs
+## El hardware de los PCs
 
 Pero las consolas no es el único hardware que va a ser renovado en las mismas fechas. Las [gráficas Ampere de la serie 3000][nvidia-ampere] de [Nvidia][nvidia] con un mejor proceso litográfico que las [Turing de la serie 2000][nvidia-turing] y otras mejoras implementadas proporcionan una mejora notable en el rendimiento con el que Nvidia confía mantenerse sin demasiada competencia en el segmento de la gama alta. Las gráficas Ampere presentan la segunda versión de sus núcleos dedicados a [Ray Tracing][wikipedia-ray-tracing] que ofrecen mayor realismo gráfico en las luces y reflejos.
 
@@ -513,7 +513,7 @@ Otra noticia muy relevante es que [Nvidia ha comprado Arm](https://nvidianews.nv
 
 Sobre [qué es mejor para jugar, PC o consola, hay motivos para ambas plataformas][blogbitix-471], este es otro debate. Hay gente que pudiendo que no tiene ningún inconveniente en jugar tanto en consola como PC o incluso tener varias consolas de diferentes marcas de la misma generación. Lo que está claro es que en poco tiempo se van a renovar muchos de los elementos hardware dedicados a los juegos para disfrute de los jugadores.
 
-### El juego en la nube
+## El juego en la nube
 
 Durante los próximos años las consolas seguirán siendo relevantes pero quizá no haya una siguiente generación si los servicios como de juego en _streaming_ empiezan a tener un catálogo de juegos equivalente al de las consolas en títulos triple A. De aquí a unos 7 años de la siguiente generación las cosas no van a ser las mismas.
 
@@ -523,11 +523,11 @@ Los servicios en la nube tiene varias ventajas como no tener tiempos de descarga
 
 * [Sobre la PlayStation 4, PlayStation 5 y Google Stadia][blogbitix-417]
 
-### Presentaciones
+## Presentaciones
 
 En los meses previos al lanzamiento tanto Sony como Microsoft han realizado varios eventos y vídeos en los que han ido proporcionando información tanto de las consolas como de juegos en desarrollo, _gameplays_ e incluso el interior de las consolas. Todo esto para excitar a los usuarios para saciar la sed de información, mantener unas expectativas de compra altas e influenciar en la decisión de compra.
 
-#### PlayStation 5
+### PlayStation 5
 
 Presentación PS5.
 
@@ -549,7 +549,7 @@ Aspecto e interior de la PS5.
 {{< youtube
     video="CaAY-jAjm0w" >}}
 
-#### Xbox Series X/S
+### Xbox Series X/S
 
 Presentación de Series X/S.
 

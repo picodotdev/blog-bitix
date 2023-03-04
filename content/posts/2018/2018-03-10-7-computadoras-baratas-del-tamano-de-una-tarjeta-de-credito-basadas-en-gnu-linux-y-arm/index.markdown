@@ -42,7 +42,7 @@ El uso que se les puede dar a estas computadores es muy diverso quizá no como p
 
 {{< tableofcontents >}}
 
-### Raspberry Pi
+## Raspberry Pi
 
 Cuando apareció en el 2012 ya había placas similares pero su bajo precio y _marketing_ ha sido la que ha alcanzado la mayor popularidad sin ser la más potente. Gracias a su éxito con más de 14 millones de unidades vendidas es la mejor opción por su gran soporte de la comunidad aunque para algunos casos de uso su gigabyte de memoria en el modelo [Raspberry Pi 3](https://www.raspberrypi.org/magpi/raspberry-pi-3-specs-benchmarks/) puede quedarse escaso. Su _SoC_ BCM2837 de Broadcom no es el más capaz tanto en CPU (_quad-core_ ARM Cortex-A53 a 1.4 GHz) como en GPU (VideoCore IV) y con su gigabit ethernet compartida con los puertos USB y limitada lo que es un inconveniente importante en las transferencias de datos.
 
@@ -83,7 +83,7 @@ El precio del modelo de 1 GiB de memoria se mantiene en $35 y el de 4 GiB llega 
 {{< amazon
     tags="raspberrypi" >}}
 
-### Rock64
+## Rock64
 
 El segundo modelo que destacaré es este de [PINE64][pine64] porque posee versiones de 1, 2 y 4 GiB de memoria, gigabit ethernet y 1 puerto USB 3.0 a un precio similar al de una Raspberry Pi, lo único que le falta es WiFi para superar en todo a la RPi. También posee un módulo eMMC más rápido que las tarjetas microSD, SPI de 128 MiB para prescincir de tarjeta microSD en el arranque, salida de audio, otros 2 puertos USB 2.0, salida HDMI con soporte para 4K@60fps HDR10, botones dedicados de encendido y reinicio y los 40 _pines_ para usar sensores. El _SoC_ es un [Rockchip RK3328](http://www.rock-chips.com/a/en/products/RK33_Series/2017/0118/829.html) _quad-core_ ARM Cortex-A53 y la GPU [ARM Mali-450MP2](https://developer.arm.com/products/graphics-and-multimedia/mali-gpus/mali-450-gpu) con capacidad para OpenGL ES 1.1 / 2.0.
 
@@ -128,7 +128,7 @@ Aunque no es como los modelos anteriores de placas base este es destacable por s
     image1="image:pinebook-pro.webp" optionsthumb1="300x200" title1="PineBook Pro"
     caption="PineBook Pro" source="arstechnica.com" >}}
 
-### Rock Pi 4B
+## Rock Pi 4B
 
 Un modelo de placa mas reciente también basada en el mismo _SoC_ de la Rock64Pro el Rockchip RK3399 con algunas características muy completas. Esta [Rock Pi](http://rockpi.org/) no tiene uno de los defectos de la Rock64 y es que tiene WiFi AC y Bluetooth 5.0, su memoria también es de hasta 4 GiB pero LPDDR4, puerto Gigabit Ethernet, tiene dos puertos USB 2.0 y otros dos 3.0, GPIO de 40 _pines_ compatible con la Raspberry Pi, además de conector de 3.5mm para el audio y salida HDMI de hasta 4K, se alimenta mediante conector USB Type-C, tarjeta microSD, tiene _socket_ eMMC pero es que además tiene un conector M.2 lo que le permite tener SSD con esta interfaz y un gran ancho de banda para el almacenamiento.
 
@@ -147,7 +147,7 @@ Por si fuera poco tiene un precio razonable y similar al resto de placas que est
 
 {{< youtube video="C4p9EpjA0ZM" >}}
 
-### ASUS Tinker Board
+## ASUS Tinker Board
 
 La [ASUS Tinker Board](https://www.asus.com/uk/Single-Board-Computer/Tinker-Board/overview/) también está basada en un _SoC_ de Rockchip pero en este caso el modelo [RK3288](http://www.rock-chips.com/a/en/products/RK32_Series/2014/0504/484.html) que como CPU tiene el modelo más potente de 32 bits con una ARM Cortex-A17 _quad-core_ e incorporando una GPU Mali-T764 mejor que la Mali de la Rock64. Tiene 2 GiB de memoria e incorpora de serie WiFi N y Bluetooth 4.0.
 
@@ -168,7 +168,7 @@ Su precio es algo más elevado que la Rock64 y tiene menos memoria pero más que
     image1="image:asus-tinker-board.webp" optionsthumb1="300x200" title1="ASUS Tinker Board"
     caption="ASUS Tinker Board" >}}
 
-### Cubox
+## Cubox
 
 Aunque los modelos de [SolidRun][solid-run] son significativamente más caros poseen buenas especificaciones como el modelo [CuBox i4x4](https://www.solid-run.com/product/cubox-i4x4/) con un procesador _quad core_ aunque en si versión ARMv7 de 32 bits pero con 4 GiB de memoria, gigabit ethernet, WiFi y bluetooth incluido en un formato de cubo de 2 pulgadas. Como decía a un precio mas elevado, $170.
 
@@ -191,7 +191,7 @@ El modelo mas reciente [Cubox Pulse](https://www.solid-run.com/nxp-family/cubox-
     image2="image:cubox-pulse.webp" optionsthumb2="300x200" title2="Cubox Pulse"
     caption="Cubox y Cubox Pulse" >}}
 
-### ODROID
+## ODROID
 
 Otro distribuidor importante es [Hardkernel][hardkernel] con sus modelos ODROID de pequeñas computadoras basadas en ARM con varios modelos entre ellos el [ODROID C2](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G145457216438) que posee un procesador ARM Cortex-A53 _quad-core_, 2 GiB de memoria, gigabit ethernet, soporta HDMI 2.0 4K@60fps, eMMC, 4 puertos USB 2.0 pero sin WiFi ni bluetooth. A un precio de $46.
 
@@ -202,13 +202,13 @@ Están preparando el modelo [ODROID N1](https://forum.armbian.com/topic/6496-odr
     image1="image:odroid-c2.webp" optionsthumb1="300x200" title1="ODROID C2"
     caption="ODROID C2" >}}
 
-### NanoPi, OrangePi y BananaPi
+## NanoPi, OrangePi y BananaPi
 
 De [NanoPi][nanopi] voy a destacar el modelo [NanoPi K2](http://nanopi.org/NanoPi-K2_Feature.html) con 2 GiB de memoria, procesador quad core, con WiFi y bluetooth y gigabit ethernet y soporte de 4K@60fps y H.265 10bit, H.264 a un precio de $50.
 
 Parece que con la costumbre de denominar a estas placas bases el nombre de frutos están [OrangePi Plus 2](http://www.orangepi.org/orangepiplus2/) y [BananaPi M3](http://www.banana-pi.org/m3.html), el primero a un precio de 45 € con 2 GiB de memoria y soporte para HDMI 4K además de incluir gigabit ethernet y WiFi. El modelo de Banana Pi se diferencia en tener un procesador _octa-core_, un puerto SATA y un precio superior de 85 €.
 
-### Conclusión
+## Conclusión
 
 Estos no son los únicos modelos que existen pero son algunos de los más destacables. La Raspberry Pi 4 destaca por tener un modelo con 8 GiB de memoria y conectividad con WiFi sin necesidad de adaptadores. A pesar de que las alternativas de placas bases sean tan capaces como la Raspberry Pi esta les gana en mejor soporte del software como distribuciones GNU/Linux y programas como Kodi que también es algo a tener muy en cuenta y este posiblemente es el motivo de que aún siendo menos capaz tiene más éxito e igualmente una muy buena opción. Quizá con algunas de estas placas alternativas hay que leer la documentación que tengan, algún foro y probar más cosas de las que requeriría una Raspberry Pi.
 

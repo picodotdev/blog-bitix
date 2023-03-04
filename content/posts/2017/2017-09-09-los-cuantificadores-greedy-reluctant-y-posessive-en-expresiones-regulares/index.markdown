@@ -55,3 +55,5 @@ En el tercer caso se se hayan coincidencias ya que el cuantificador es posesivo.
 * [Greedy vs. Reluctant vs. Possessive Quantifiers](https://stackoverflow.com/questions/5319840/greedy-vs-reluctant-vs-possessive-quantifiers)
 * [Regex Quantifier Tutorial: Greedy, Lazy, Possessive](http://www.rexegg.com/regex-quantifiers.html)
 {{< /reference >}}
+
+{{% /post %}}

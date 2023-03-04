@@ -28,7 +28,7 @@ Aunque la especificación no es parte de Java aún el grupo de trabajo encargado
 
 La librería hace uso de lambdas, una de las [novedades que introdujo de Java 8 en el lenguaje][blogbitix-17], y nos facilita varias funcionalidades. También permite usar _streams_. Veamos algunas de las posibilidades.
 
-### Representación de divisas e importes
+## Representación de divisas e importes
 
 Las divisas se representan con [CurrencyUnit](https://github.com/JavaMoney/jsr354-api/blob/master/src/main/java/javax/money/CurrencyUnit.java) y los  importes se representan usando la clase [MoneyAmount](https://github.com/JavaMoney/jsr354-api/blob/master/src/main/java/javax/money/MonetaryAmount.java), tenemos varias formas de crear instancias de estas clases.
 
@@ -38,7 +38,7 @@ La API ofrece varios métodos para extraer los valores numéricos, la parte ente
 
 {{< code file="Main-2.java" language="java" options="" >}}
 
-### Operaciones aritméticas, de comparación y operaciones personalizadas
+## Operaciones aritméticas, de comparación y operaciones personalizadas
 
 Podemos hacer operaciones aritméticas (suma, resta, multiplicación y división) entre dos importes.
 
@@ -48,13 +48,13 @@ También podremos hacer comparaciones:
 
 {{< code file="Main-4.java" language="java" options="" >}}
 
-### Redondear importes
+## Redondear importes
 
 {{< code file="Main-9.java" language="java" options="" >}}
 
 E incluso implementar operaciones más complejas y habituales personalizadas con la clase [MonetaryOperator](https://github.com/JavaMoney/jsr354-api/blob/master/src/main/java/javax/money/MonetaryOperator.java) que se puede aplicar usando el método _with_ de _MonetaryAmount_.
 
-### Formateado y analizado
+## Formateado y analizado
 
 Dependiendo de país o la moneda los importes se representan de forma diferente, por ejemplo, en Estados Unidos se usa «,» como separador de millares y «.» como separador de los decimales, en España es diferente, se usa «.» para los millares y «,» para los decimales. También hay monedas que no tienen decimales como el Yen japonés. Disponemos de métodos y clases para formatear correctamente el importe.
 
@@ -64,7 +64,7 @@ Podemos hacer la operación contraria _parseando_ o analizando la cadena, obtene
 
 {{< code file="Main-6.java" language="java" options="" >}}
 
-### Ratios de conversión, conversiones entre divisas
+## Ratios de conversión, conversiones entre divisas
 
 Si necesitamos convertir el importe de una moneda a otra necesitaremos el ratio de conversión entre las monedas, es decir, por cada dólar estadounidense cuántos euros son si queremos hacer una conversión de USD a euro. Se puede obtener el ratio de conversión o hacer la conversión directamente entre las dos monedas. En el siguiente código se muestra cuántos euros son 10 USD con la cotización entre las divisas en el momento de escribir el artículo.
 
@@ -72,7 +72,7 @@ Si necesitamos convertir el importe de una moneda a otra necesitaremos el ratio 
 
 La librería incluye varias fuentes para las cotizaciones de cada moneda, una de ellas es el Banco Central Europeo pero también podemos crear la implementación de una nueva fuente que por ejemplo use Open Exchange Rates.
 
-### Streams y filtros
+## Streams y filtros
 
 Por si todo esto fuera poco podemos usar las características de programación funcional de Java 8 ya que la librería ofrece soporte para streams para ejemplo filtrar o para agrupar.
 

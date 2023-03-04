@@ -41,7 +41,7 @@ La virtualización requiere virtualizar un sistema operativo completo que impone
 
 {{< tableofcontents >}}
 
-### VirtualBox
+## VirtualBox
 
 Dado que VirtualBox está disponible para los tres sistemas operativos que usan la mayoría de usuarios y es gratuito es una opción muy utilizada como programa para virtualizar. Tiene una interfaz gráfica de usuario con la que configurar muchas de las opciones de los sistemas operativos como cantidad de RAM y capacidad de almacenamiento.
 
@@ -59,7 +59,7 @@ La interfaz gráfica permite crear máquinas virtuales manualmente. Un programa 
 
 {{< code file="Vagrantfile" language="ruby" options="" >}}
 
-### Cajas de GNOME
+## Cajas de GNOME
 
 La aplicación integrada de Cajas de [el entorno de escritorio GNOME][blogbitix-660] permite crear máquinas virtuales usando la virtualización nativa de GNU/Linux. Ofrece una interfaz gráfica no tan completa en opciones como VirtualBox pero si las opciones mínimas como memoria RAM, CPU, EFI, almacenamiento y aceleración gráfica. En caso de no usar GNOME o se desean más opciones de configuración [virt-manager][virt-manager] ofrece una mucha más completa interfaz y opciones de configuración para KVM.
 
@@ -75,7 +75,7 @@ Con el comando _virt-install_ es posible también automatizar la creación de m�
 {{< code file="virt-install-bridge.sh" language="bash" options="" >}}
 {{< code file="virt-install.sh" language="bash" options="" >}}
 
-### Otras opciones
+## Otras opciones
 
 Las anteriores son opciones de software libre sin coste de licencia, [VMware Workstation Player](https://www.vmware.com/products/workstation-player.html) y [Parallels](https://www.parallels.com/es/) son opciones comerciales para Windows y macOS.
 

@@ -44,7 +44,7 @@ Esta categorización que he hecho es general y muchos usuarios avanzados usan di
 
 {{< tableofcontents >}}
 
-### Para nuevo usuario de GNU/Linux
+## Para nuevo usuario de GNU/Linux
 
 * [Ubuntu][ubuntu]: una de las distribuciones más usadas y que más han contribuido a popularizar GNU/Linux. Posee varios sabores según el entorno de escritorio usado GNOME, KDE, XFCE y LXDE.
 * [elementary OS][elementary]: es una distribución con una estética muy cuidada con ciertas similitudes a macOS. Está basada en Ubuntu, tiene buenas opiniones y es una de las mejores candidatas para un usuario recién llegado a GNU/Linux o que quiera un sistema para trabajar sin complicaciones.
@@ -78,7 +78,7 @@ Esta categorización que he hecho es general y muchos usuarios avanzados usan di
     image2="image:debian-installer-2.webp" optionsthumb2="300x200" title2="Instalador de Debian (2)"
     caption="Instalador de Debian" >}}
 
-### Para un usuario intermedio
+## Para un usuario intermedio
 
 * [Arch Linux][archlinux]: de las distribuciones _rolling release_ es una de las más populares, no posee instalador gráfico y su instalación puede intimidar a un usuario nuevo de GNU/Linux que se hace leyendo la [guía de instalación](https://wiki.archlinux.org/index.php/Installation_guide) y sus referencias, adaptándola cada uno a sus preferencias y equipo y ejecutando comandos en la terminal paso a paso desde la selección desde la disposición del teclado, pasando por el particionado del disco hasta la instalación del cargador de arranque. [El _script_ alis para instalar Arch Linux][alis] ofrece un instalador basado en la consola que hace mucho más fácil, rápida y desatendida la instalación de una distribución Arch Linux.
 * [Fedora][fedora]: es la distribución comunitario que ofrece [RedHat][redhat] a los usuarios en la que desarrollan los cambios que luego se incorporan a la distribución empresarial RHEL.
@@ -98,18 +98,18 @@ Esta categorización que he hecho es general y muchos usuarios avanzados usan di
     image2="image:fedora.webp" optionsthumb2="300x200" title2="Fedora con GNOME"
     caption="Fedora con GNOME" >}}
 
-### Para usuario avanzado
+## Para usuario avanzado
 
 * [Gentoo][gentoo]: la instalación de los programas se hace compilando el código fuente. Permite personalizar y obtener el máximo rendimiento del equipo en que sea instalado pero el tiempo de compilación puede ser notable.
 
-### Para servidor
+## Para servidor
 
 * [Ubuntu][ubuntu]: la versión para servidores de Ubuntu, con características empresariales desarrollada por [Canonical][canonical].
 * [RHEL][rhel]: distribución con soporte empresarial y orientada a la empresa creada por RedHat.
 * [CentOS][centos]: distribución basada en RHEL sin el coste del soporte empresarial.
 * [SUSE][suse]: distribución con soporte empresarial y orientada a las empresas.
 
-### Para equipos antiguos
+## Para equipos antiguos
 
 Aún con el gran avance que se produce en la tecnología cada pocos meses equipos con algún lustro siguen siendo útiles para muchos usuarios. Con una distribución que use pocos recursos el equipo seguirá siendo válido.
 
@@ -123,7 +123,7 @@ Aún con el gran avance que se produce en la tecnología cada pocos meses equipo
     image2="image:xubuntu.webp" optionsthumb2="300x200" title2="Xubuntu con XFCE"
     caption="Xubuntu con XFCE" >}}
 
-### Para usuarios con preferencias de software libre
+## Para usuarios con preferencias de software libre
 
 Aunque las distribuciones GNU/Linux son en su mayoría software libre hay algunas partes que no lo son como controladores privativos de la tarjeta gráfica o diversos _firmware_ del núcleo o controladores. Estas distribuciones tratan de eliminar la mayor parte posible de ese software que no es libre.
 
@@ -136,7 +136,7 @@ Aunque las distribuciones GNU/Linux son en su mayoría software libre hay alguna
     image2="image:trisquel.webp" optionsthumb2="300x200" title2="Trisquel"
     caption="Trisquel" >}}
 
-### Otras distribuciones y primeros pasos
+## Otras distribuciones y primeros pasos
 
 Estas son solo algunas de las distribuciones más populares y usadas de GNU/Linux y las que recomiendo pero en [DistroWatch][distrowatch] hay un listado más completo. En el libro [Introduction Linux Distros](https://amzn.to/2fol03B) encontraremos una introducción más detallada a GNU/Linux y sus distribuciones.
 

@@ -30,7 +30,7 @@ Que la entidad no tenga identidad asignado y esté incompleta en el momento de c
 
 También en DDD se suelen utilizar eventos como mecanismo de comunicar que en el sistema se ha sucedido algo, si la entidad no tiene identificativo no es posible comunicar que ha ocurrido algo, al menos no incluyendo el identificativo.
 
-### Identificativos universales como identificadores
+## Identificativos universales como identificadores
 
 Una posibilidad es generar identificativos universales para los identificativos de las entidades, sin embargo, la clase [UUID](javadoc11:java.base/java/util/UUID.html) depende de elementos externos al dominio como el tiempo del sistema. Al mismo tiempo la entidad no es consciente de la existencia de otras entidades y no le es posible determinar la unicidad del identificativo.
 
@@ -38,13 +38,13 @@ En DDD todo elemento que dependa de algo externo ha de se independizado del domi
 
 {{< code file="UuidGenerator.java" language="java" options="" >}}
 
-### Delegar la generación de identificativos en el repositorio
+## Delegar la generación de identificativos en el repositorio
 
 Dado que en DDD se utiliza un repositorio para persistir las entidades en una base de datos externa a la lógica de dominio, la tarea de generar los identificadores que depende de un elemento externo es posible ubicarla en la misma clase repositorio, de esta manera la lógica queda con cohesión ya que todo lo relativo a la entidad está ubicada en su repositorio.
 
 Al mismo tiempo delegar la tarea de crear el identificativo en el repositorio permite variar la implementación, una opción es delegar en la base de datos la obtención del identificativo o utilizar el método de identificativo universal anterior. En el caso de delegar en la base de datos la generación del identificativo, es la base de datos la que lo genera igual que en el caso de la autogeneración pero ahora no de manera implícita sino de forma explícita.
 
-### Ejemplo utilizando JPA y Spring Data
+## Ejemplo utilizando JPA y Spring Data
 
 Utilizando [Spring Data][spring-data] con JPA para añadir métodos personalizados en la clase del repositorio hay que crear una interfaz que los incluya y construir una implementación de esa interfaz. La misma interfaz es implementada por la interfaz de Spring Data, y Spring haciendo su magia y por composición crea un repositorio que tiene tanto los métodos implementados por Spring como la implementación de los métodos personalizados, en este caso el de generar el identificativo.
 

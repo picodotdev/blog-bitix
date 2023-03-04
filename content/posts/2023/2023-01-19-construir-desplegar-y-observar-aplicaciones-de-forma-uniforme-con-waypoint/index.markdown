@@ -30,7 +30,7 @@ En el caso de la construcción y despliegue, la herramienta que proporciona Hash
 
 {{< tableofcontents >}}
 
-### Waypoint
+## Waypoint
 
 Waypoint de HashiCorp es una herramienta que permite construir una aplicación y realizar el despliegue independientemente del lenguaje empleado por la aplicación y la infraestructura de ejecución que se utilice.
 
@@ -50,13 +50,13 @@ Si la plataforma de despliegue lo soporta la [fase de publicación](https://deve
 {{< youtube
     video="DsZVvv2dlUs" >}}
 
-#### Instalación de Waypoint
+### Instalación de Waypoint
 
 Al igual que muchas de las otras herramientas de HashiCorp que están implementadas con el lenguaje de programación [Go], Waypoint es un único binario con lo que basta descargar la última versión disponible y en el caso de [GNU][gnu]/[Linux][linux] copiarla al directorio _/usr/local/bin/_ donde los usuarios pueden instalar programas sin que entren en conflicto con los instalados por los paquetes de la distribución.
 
 {{< code file="ls-bin.sh" language="bash" options="" >}}
 
-#### Inicio del servidor de Waypoint
+### Inicio del servidor de Waypoint
 
 Waypoint se ejecuta en modo servidor, en este ejemplo se inicia como un contenedor de Docker en local y ejecutar un comando para su inicialización.
 
@@ -70,7 +70,7 @@ Una vez inicializado el servidor se puede iniciar sin necesidad de inicializarlo
 
 {{< code file="waypoint-server-run.sh" language="bash" options="" >}}
 
-#### Construcción de un proyecto con Waypoint utilizando Buildpacks
+### Construcción de un proyecto con Waypoint utilizando Buildpacks
 
 En un artículo anterior mostraba cómo construir una aplicación con el lenguaje Java de [Spring Boot][spring-boot] con [Gradle][gradle] y Buildpacks para generar la imagen del contenedor.
 
@@ -103,7 +103,7 @@ La imagen construida no es más que una imagen de Docker normal que se lista con
 {{< code file="docker-images.sh" language="bash" options="" >}}
 {{< code file="docker-images.out" language="plain" options="" >}}
 
-#### Despliegue de la aplicación con Waypoint
+### Despliegue de la aplicación con Waypoint
 
 En este ejemplo el despliegue consiste en ejecutar una instancia del contenedor con Docker en local, su _stanza_ es muy sencilla en la que solo se especifica el puerto en el que arrancar el el contenedor aunque también a través de diferentes propiedades se podrían especificar argumentos distintos.
 
@@ -125,7 +125,7 @@ La aplicación y su _endpoint_ _web_ responden al realizar una petición.
 {{< code file="curl.sh" language="bash" options="" >}}
 {{< code file="curl.out" language="plain" options="" >}}
 
-#### Interfaz web y de linea de comandos
+### Interfaz web y de linea de comandos
 
 La interfaz web de Waypoint accesible con un navegador ofrece información de los proyectos, _builds_, _deployments_ y _releases_ además de _logs_.
 
@@ -145,7 +145,7 @@ La linea de comandos también ofrece información acerca de la aplicación con l
     image3="image:waypoint-releases.webp" optionsthumb3="200x150" title3="Relases"
     caption="Builds, deployments y releases de una aplicación en un proyecto" >}}
 
-### Desarrollo en local
+## Desarrollo en local
 
 Para desarrollar en local todo este proceso de Buildpacks y Waypoint no es necesario, en el caso de la aplicación de ejemplo al estar basada en Spring Boot y utilizar Gradle es posible iniciarla con un comando directamente sin necesidad de construir una imagen de contenedor ni iniciar un contenedor en local.
 

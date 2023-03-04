@@ -26,7 +26,7 @@ El problema de los desarrolladores surge cuando hay empresas que se basan y lucr
 
 Desde hace un tiempo y con una pequeña parte de los ingresos del blog tengo la costumbre de hacer una donación al menos cada año a alguno de los programas que uso y que me resultan muy útiles, la donación que hago es sin lugar a dudas mucho menor que si usase una alternativa equivalente comercial pero al menos espero contribuir un poco a que estos programas sigan teniendo nuevas versiones con nuevas características y corrigiendo errores.
 
-### KeePassXC
+## KeePassXC
 
 [KeePassXC][keepassxc] es una aplicación que proporciona la funcionalidad de generar y almacenar las credenciales de inicio de sesión de cualquier servicio en una base de datos cifrada protegida por una contraseña o archivo de clave maestro. Esta aplicación de gestor de contraseñas permite mantener varias buenas prácticas de seguridad como generar contraseñas fuertes del número de caracteres que se desee utilizando una combinación de letras, números y símbolos, utilizar una contraseña única para cada servicio, soporta generar códigos del segundo factor de autenticación que hace mucho más difícil ser víctima de un ataque de _phishing_ y permite asociar a cada apunte notas y archivos adjuntos que también se guardan cifrados entre otras funcionalidades.
 
@@ -44,7 +44,7 @@ Como es una aplicación muy útil para mi y uso de forma habitual hago una peque
     gallery="false"
     image1="logotype:keepassxc.svg" optionsthumb1="300x200" title1="KeePassXC" >}}
 
-### Comprobante de la donación
+## Comprobante de la donación
 
 {{< image
     gallery="true"

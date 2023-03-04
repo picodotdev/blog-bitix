@@ -25,7 +25,7 @@ En cualquier caso se un consumidor responsable, no hace falta estar a la última
 
 {{< tableofcontents >}}
 
-### Unidad de almacenamiento SSD y memoria USB
+## Unidad de almacenamiento SSD y memoria USB
 
 Una unidad SSD es la mejor actualización que se le puede hacer a un portátil o equipo que aún tenga un disco mecánico. He visto un ordenador con un Intel Pentium 6100 con 4 GiB de memoria que tardaba en ser usable casi 10 minutos por estar leyendo constantemente del disco duro y revivir una vez instalado un SSD pasando a iniciarse en 10 segundos y ser totalmente operativo. Los precios que tienen actualmente son muy asequibles, cada trimestre que pasa aún así siguen reduciendo su precio y continúan aumentado su capacidad.
 
@@ -38,7 +38,7 @@ Las memorias o disco duros USB también son muy útiles para transportar documen
 {{< amazon
     tags="storage-microsd" >}}
 
-### Mini PC o portátil
+## Mini PC o portátil
 
 Salvo que seas un usuario _gamer_ de PC, [un mini PC  como un Intel NUC te será más que suficiente][blogbitix-363] y que no tienen nada que envidiar en cuanto a potencia sobre un ordenador de torre de gama media ocupando un espacio muy reducido y siendo muy silenciosos. Se les puede instalar la misma cantidad de memoria llegando incluso a 32 o más GiB o discos SSD NVMe de alta velocidad con la posibilidad de colocarlos en la parte trasera del monitor ocupando un espacio mínimo encima de la mesa.
 
@@ -57,7 +57,7 @@ Un teclado inalámbrico permite eliminar un cable de la mesa y desplazarlo sin m
 {{< amazon
     tags="keyboard-mechanical" >}}
 
-### Monitor Full HD, 2K y 4K
+## Monitor Full HD, 2K y 4K
 
 Los monitores 2K y 4K tiene mayor definición mostrando el texto con más claridad y fácil de leer además de permitir mostrar mayor cantidad de contenido lo que los hace ideales para los programadores, personas que pasen buena cantidad de tiempo delante de la pantalla o _gamers_. Ya están empezando a tener unos precios bastante asequibles y hay varios modelos entre los que elegir.
 
@@ -75,7 +75,7 @@ Si el monitor es compartido tanto por el ordenador como por una consola es neces
 {{< amazon
     tags="hdmi-switch" >}}
 
-### Teléfono móvil _smartphone_
+## Teléfono móvil _smartphone_
 
 Seguramente los teléfonos móviles tabletas y libros electrónicos son de los aparatos electrónicos más regalados en navidades. En el caso de los móviles para alguna gente hace prescindible el uso ordenador y quizá en un futuro para muchos amenace la existencia de ordenadores salvo para usuarios y usos concretos. Hay modelos en cualquier rango de precio para el presupuesto que se disponga o se quiera dedicar.
 
@@ -88,7 +88,7 @@ En la gama alta están el [Samsung Galaxy S21](https://amzn.to/3BapC3B) y el [iP
 {{< amazon
     tags="smartphone" >}}
 
-### Dispositivos Amazon: tableta, libro electrónico y altavoz inteligente
+## Dispositivos Amazon: tableta, libro electrónico y altavoz inteligente
 
 Entre la cantidad de modelos y marcas que hay en tabletas y libros electrónicos destacan las de Amazon por su calidad, potencia y precio muy ajustado con la posibilidad de acceder al amplio catálogo de contenidos de la enorme tienda de Amazon. Yo tengo un Kindle Touch de cuarta generación y estoy encantado con él. Las versiones más recientes son aún mejores con una pantalla de mayor resolución, mayor contraste y con luz integrada.
 
@@ -112,7 +112,7 @@ Aunque las televisiones ya tiene funciones de reproducir contenido por internet 
 {{< amazon
     tags="amazon-fire-stick" >}}
 
-### Consola
+## Consola
 
 Las consolas son otro de los regalos más populares, entre ellas están la [Sony PlayStation 4][amazon-playstation-4] con su buen [catálogo de juegos](http://amzn.to/2i3pzDx) y la que le está dando buenos resultados a la otra compañía nipona con la [Nintendo Switch](https://amzn.to/2tOmUTw) o la versión más económica [Nintendo Swtich Lite](https://amzn.to/351eZiw) con sus juegos franquicia de [The Legend Of Zelda: Breath Of The Wild](https://amzn.to/2EXt1HK) y [Mario Odissey](https://amzn.to/2MyaHsV) pero también está la [Nintendo 2DS](http://amzn.to/2i3VgfU) más económica para los más pequeños. La [Xbox Series S](https://amzn.to/3uCsMKQ) o [Xbox Series X][amazon-xbox-series-x] también con su _Game Pass_ es una muy buena opción para disfrutar de una completa colección de juegos de su generación.
 
@@ -125,7 +125,7 @@ Yo acabé comprando una PlayStation 4, aún estando en su fase final de vida tie
 
 * [Desempaquetado de PlayStation 4 Slim de 1 TB][blogbitix-432]
 
-### Televisión 4K, HDR, Smart TV
+## Televisión 4K, HDR, Smart TV
 
 De las [televisiones que he visto](http://amzn.to/2jlOZsn) me gustan más los modelos de Sony ya que estos incorporan el sistema [Android TV](https://www.android.com/tv/) para el sistema _Smart TV_ lo que les permite tener mayor cantidad de aplicaciones disponibles. Aún así los modelos de Samsung y LG también son buenas opciones. En un futuro aunque todavía tardará unos años pero no muy lejano habrá una nueva reantenización y será necesario que las televisiones dispongan de un decodificacdor DVB-T2 que solo he visto que incorporen las televisiones 4K. Las televisiones 4K ya están empezando a tener unos precios que no son exageradamente superiores a los modelos Full HD.
 
@@ -134,7 +134,7 @@ Estos modelos está disponibles en tamaños desde 43" hasta 65" son de resoluci�
 {{< amazon
     tags="smarttv" >}}
 
-### Otros componentes
+## Otros componentes
 
 El mimiordenador [Raspberry Pi][amazon-raspberrypi] permite convertirlo en multitud de cosas desde un reproductor para el salón, [consola para juegos _retro_][blogbitix-301], servidor de descargas, [nube personal con Nextcloud][blogbitix-446] para proteger la privacidad de la información personal o [cacharrear con componentes electrónicos][blogbitix-212] ideales para que un niño o niña aprendan sobre los ordenadores y tengan su primer ordenador propio con el que aprender a programar, que en un futuro podría convertirse en su profesión si les gusta con buenas perspectivas laborales ya hoy y en el futuro, con componentes electrónicos como LEDs, pulsadores, zumbadores, _displays_ de 16 caracteres por 2 filas con la ayuda de un adulto con algunos conocimientos. Incluso hacer con varias de estas computadoras un pequeño cluster de servidores con [Docker][docker].
 

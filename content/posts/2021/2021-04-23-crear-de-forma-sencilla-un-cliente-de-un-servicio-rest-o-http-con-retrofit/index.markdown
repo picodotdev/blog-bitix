@@ -25,7 +25,7 @@ Estas librerías cumplen su función y ofrecen total flexibilidad en su uso, sin
 
 {{< tableofcontents >}}
 
-### La librería Retrofit para crear un cliente de un servicio REST o HTTP
+## La librería Retrofit para crear un cliente de un servicio REST o HTTP
 
 [Retrofit][retrofit] es una librería que simplifica en gran medida el construir clientes HTTP de una API REST o realizar un cliente de un servicio REST. Con Retrofit basta con crear una interfaz Java que represente el servicio y decorarla con las anotaciones que proporciona Retrofit. También es posible utilizar Retrofit para [servicios implementados con GraphQL][blogbitix-275] que aunque no están basados en REST si utilizan el protocolo HTTP.
 
@@ -39,7 +39,7 @@ Al proporcionar a Retrofit la interfaz este crea una instancia que implementa la
 
 {{< code file="Main-buildService.java" language="java" options="" >}}
 
-#### Anotaciones de Retrofit
+### Anotaciones de Retrofit
 
 Las anotaciones de Retrofit en la interfaz de Java describen el servicio como variables en el _path_ de la URL, parámetros, para realizar conversiones a JSON o el método HTTP a invocar o cabeceras HTTP.
 
@@ -48,7 +48,7 @@ Las anotaciones de Retrofit en la interfaz de Java describen el servicio como va
 * _Headers_, _Header_: la anotación _Headers_ permite especificar una colección de cabeceras HTTP a incluir en la petición. La anotación _Header_ añade una cabecera a partir del valor de un argumento en la firma del método.
 * _Body_: la anotación _Body_ transforma el argumento como los datos a incluir como JSON en cuerpo de la petición utilizando la librería que implementa la conversión de objetos a JSON.
 
-#### Aplicar funcionalidades transversales con interceptores
+### Aplicar funcionalidades transversales con interceptores
 
 Algunas funcionalidades comunes al crear un cliente de un servicio REST son obtener trazas de las peticiones que se están realizando, realizar autenticación, generar métricas o [trazabilidad con Sleuth][blogbitix-396]. Estas son funcionalidades transversales a todos los métodos de la interfaz del servicio REST que se implementan usando interceptores.
 
@@ -58,7 +58,7 @@ OkHttp proporciona una implementación de interceptor que emite trazas cuando se
 
 {{< code file="Main-interceptor.java" language="java" options="" >}}
 
-### Servicio de ejemplo con Retrofit
+## Servicio de ejemplo con Retrofit
 
 Un controlador como el siguiente de un servicio REST definido con [Spring Framework][spring-framework] sencillo que únicamente devuelve un mensaje en función de los parámetros recibidos a través de una en la petición, una variable en el _path_ de la petición y un parámetro en la _query_.
 

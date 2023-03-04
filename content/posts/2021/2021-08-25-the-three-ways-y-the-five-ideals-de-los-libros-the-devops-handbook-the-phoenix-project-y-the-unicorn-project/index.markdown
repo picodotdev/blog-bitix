@@ -26,7 +26,7 @@ Los mismos principios que se aplican en una cadena de valor en una cadena de mon
 
 {{< tableofcontents >}}
 
-### _The three ways_
+## _The three ways_
 
 _The three ways_ son tres principios que se centran en el aspecto productivo, estos principios son explicados en el libro [The DevOps Handbook](https://amzn.to/2UFmLzB) de una forma teórica, detallada y extensa y en el libro [The Phoenix Project](https://amzn.to/3zcYDDC) que son el argumento subyacente de una historia de ficción sobre una empresa con problemas en sus proyectos de software, algunos son reconocibles a los que uno pueda tener en su organización.
 
@@ -42,7 +42,7 @@ Son libros muy recomendables de leer en los que se mencionan muchos otros bastan
     linkids="9bde9b606b1e5d657881bee89a764d08,12422320bbd79294d7fd0b73ab29b714,2e0e926c66741529fa1963ab16f581d9"
     asins="1942788002,1942788290,1492091774" >}}
 
-#### _The first way: The technical practices of flow_
+### _The first way: The technical practices of flow_
 
 El primer principio trata sobre la efectividad del flujo de trabajo, para medirlo toma como métrica principal el tiempo entre que entra una petición y esta es entregada que se denomina como el _lead time_. En el caso de desarrollo de software desde se crea una petición hasta que ésta es desplegada en producción, su finalización engloba el despliegue no solo su desarrollo. Las prácticas de este principio tratan de mejorar y evitar problemas en esta métrica.
 
@@ -65,7 +65,7 @@ También conviene eliminar trabajo desperdiciado como un exceso de peticiones re
     image1="image:the-first-way.webp" optionsthumb1="650x450" title1="The first way"
     caption="The first way" >}}
 
-#### _The second way: The technical practices of feedback_
+### _The second way: The technical practices of feedback_
 
 Una vez el flujo es correcto para mejorar la cadena de valor es necesario obtener información lo antes posible. Para ello se utilizan prácticas como integración continua en la que cada _commit_ al repositorio de código fuente ejecuta los teses unitarios y de integración con el objetivo de comprobar que los cambios no introducen errores en las partes probadas del código ni errores de regresión.
 
@@ -78,7 +78,7 @@ Otras prácticas de _feedback_ son realizar programación en parejas o _pair pro
     image1="image:the-second-way.webp" optionsthumb1="650x450" title1="The second way"
     caption="The second way" >}}
 
-#### _The third way: The technical practices of continual learning_
+### _The third way: The technical practices of continual learning_
 
 El tercer principio propone prácticas que permitan mejorar de forma continua y adquirir nuevo conocimiento. Unas de estas prácticas son crear _post mortems_ cuando ocurra un error con un impacto en el servicio. Los _post mortem_ permiten averiguar la causa que generó el problema y establecer acciones para evitar que ocurra en el futuro, aplicando las acciones  de los _post mortem_ según sucedan los problemas a lo largo del tiempo deberían evitarse que sucedan los mismo problemas de forma recurrente. Los _post mortem_ no deben ser utilizados para castigar o identificar personas culpables sino para evitar que los mismo problemas sucedan en el futuro, deben ser _blameless_. Y en sistemas complejos como son muchos productos de software con muchas dependencias en los que una única persona no posee el conocimiento completo problemas se producirán sin ninguna duda.
 
@@ -91,7 +91,7 @@ Para compartir información en vez de crear documentos que quedarán desactualiz
     image1="image:the-third-way.webp" optionsthumb1="650x450" title1="The third way"
     caption="The third way" >}}
 
-### _The five ideals_
+## _The five ideals_
 
 De los mismos autores que los libros anteriores es el libro [The Unicorn Project](https://amzn.to/384Yt5l), es una novela de una historia ficticia simultánea a la historia del de libro _The Phoenix Project_ ambientada en la misma organización, la historia es similar con un comienzo en el que hay varios problemas, en este caso un grupo de personas forma «la rebelión aplicando también mejoras de forma paulatina que les permite retomar el control, el mismo personaje misterioso aparece en este libro.
 
@@ -101,7 +101,7 @@ El libro _The Unicorn Project_ explica _The five ideals_ con varios principios q
     linkids="81db509fbd9848a1d9c5e7e0c9454703"
     asins="1942788762" >}}
 
-#### _The first ideal: locality and simplicity_
+### _The first ideal: locality and simplicity_
 
 Uno de los problemas que afecta al _lead time_ es que en una determinada tarea sea necesario que intervengan varias personas y roles diferentes, sobre todo cuando cada una tiene sus propias tareas y prioridades. Estos cambios de manos generan tiempos de espera por cambios de contexto, comunicación y coordinación que retrasan la entrega.
 
@@ -109,23 +109,23 @@ Este ideal propone que la persona encargada de hacer los cambios de una tarea te
 
 Una medida para implementar este ideal es las personas tenga a su disposición servicios en forma de autoservicio, por ejemplo si un desarrollador necesita un nuevo entorno de pruebas o desplegar en producción sea este el que pueda crearlo con alguna herramienta de forma automatizada o tenber la capacidad de hacer despliegues. A evitar sería el requerir de una persona con el rol de operaciones de forma manual cree el entorno o haga el despliegue. En este caso el rol de operaciones es proporcionar a desarrollo las herramientas necesarias para realizar las tareas de forma automatizada.
 
-#### _The second ideal: focus, flow, and joy_
+### _The second ideal: focus, flow, and joy_
 
 El segundo ideal indica que el trabajo no debería ser desagradable. Para que no lo sea hay que evitar esperas a que otras personas hagan cosas, estar trabajando en pequeñas cosas sin conocer su objetivo, evitar estar constantemente apagando fuegos, evitar identificar responsables cuando algo no funciona y evitar el agotamiento.
 
 En vez de eso hay que tener visibilidad de los resultados del trabajo y tener una visión global de su impacto que sirvan de motivación, trabajar en pequeños lotes de trabajo que fluyan rápido en la cadena de valor y obtener realimentación del trabajo. Estas condiciones permiten un desempeño correcto, ser un reto, aprender y crecer como profesionales, dominar el dominio de negocio e incluso disfrutar de ello.
 
-#### _The third ideal: Improvement of daily work_
+### _The third ideal: Improvement of daily work_
 
 El tercer ideal indica que mejorar el trabajo diario es al menos tan importante como el propio trabajo. Cuando se crea deuda técnica el eliminarla es tratada como una prioridad, la arquitectura es mejorada y modernizada de forma constante de modo que siga siendo posible entregar trabajo con fluidez y más valor antes, de forma segura sin miedos a hacer cambios por riesgos de generar errores y de forma agradable.
 
-#### _The fourth ideal: psychological safety_
+### _The fourth ideal: psychological safety_
 
 En el cuarto ideal es necesario que haya seguridad psicológica de tal forma que los miembros del equipo se sientan seguros al hablar de problemas, de esta forma no solo se pueden resolver sino también prevenir. Resolver problemas requiere honestidad y la honestidad requiere ausencia de miedo a ser castigado.
 
 Los _post mortem_ han de ser _blameless_ de lo contrario las personas tenderán a ocultar información o no visibilizar los problemas para tratar de evitar los castigos.
 
-#### _The fifth ideal: customer focus_
+### _The fifth ideal: customer focus_
 
 El quinto ideal trata sobre cual es el objetivo de la organización y que parte de la misma es la esencial y cuál es contextual. La esencial del negocio es la diferenciadora y por la que están dispuestos a pagar los clientes, la contextual aunque importante no es relevante para el cliente. Los esfuerzos e iniciativas más importantes de una organización deben estar dirigidos a aportar valor al cliente.
 

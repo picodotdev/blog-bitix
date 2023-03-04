@@ -29,13 +29,13 @@ Bash ofrece varias opciones para capturar algunos de los errores en la ejecució
 
 {{< tableofcontents >}}
 
-### Opciones para detectar errores
+## Opciones para detectar errores
 
 Bash permite establecer varias opciones de ejecución. La opción _-e_ permite detener el _script_ en cuanto un comando se ejecuta y devuelve un código de error distinto de cero que como convención indica que el comando se ejecutó con algún error, un valor distinto de cero significa un código de error o código de estado que tiene un significado que indica el motivo. Otra opción, con _-u_ permite detener el _script_ cuando una variable de entorno intenta evaluar su valor y la variable aún no está definida, continuar sin el valor adecuado supone probablemente que el _script_ realiza acciones incorrectas.
 
 Por defecto al ejecutar un _script_ este solo genera como resultado la salida de los comandos que ejecuta, para depurar los _scripts_ o ver que comandó están ejecutando la opción _-x trace_ emite el comando ejecutado que permite ver el valor de los argumentos del comando y ver qué valores han tomado los argumentos de las variables de ese comando.
 
-### Opciones de Bash para comprobar un _script_
+## Opciones de Bash para comprobar un _script_
 
 Otra forma de probar un _script_ es ejecutar las líneas del _script_ pero sin ejecutar los comandos de esas líneas. La opción _-n_ permite ejecutar un _script_ sin ejecutar los comandos. Esto tiene la parte buena de que los comandos no se ejecutan con las posibles acciones de modificación. Para algunos _scripts_ esto es una forma de probarlos con ciertas garantías de que funciona, para los complejos no es suficiente.
 
@@ -46,7 +46,7 @@ La opción se puede activar en la ejecución del _script_ dentro del _script_ ca
 {{< code file="test.sh" language="bash" options="" >}}
 {{< code file="test.out" language="plain" options="" >}}
 
-### Programa para validar la sintaxis de un _script_ de Bash
+## Programa para validar la sintaxis de un _script_ de Bash
 
 Las opciones anteriores permiten validar los _scripts_ de Bash en buena parte pero tienen limitaciones y dependiendo del código del _script_ quizá no generen ningún error un _script_ que en realidad tiene errores. Para una validación más completa la utilidad [shellcheck][shellcheck] realiza una validación que es capaz de detectar una mayor cantidad de errores, de forma más precisa y más sencilla. _shellcheck_ realiza comprobaciones adicionales que se basan en entender la sintaxis de Bash y comprobar que el _script_ tiene una sintaxis válida acorde a la definición del lenguaje.
 

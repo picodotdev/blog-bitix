@@ -18,7 +18,7 @@ tags: ["patrocinado", "software"]
 Las TV inteligentes o Smart TVs son cada vez más comunes, bien en la propia televisión, o con dispositivos externos o con mini PCs o, [como ya vimos en su momento][blogbitix-5], con una Raspberry Pi
 En este artículo veremos que hay cierto contenido o algunos servicios a los que no podréis acceder por estar limitados geográficamente, es decir, que solo podréis acceder a ellos si os conectáis desde una dirección IP localizada en la región en la que se presta el servicio. Empecemos con algunos conceptos básicos.
 
-### Direcciones IP
+## Direcciones IP
 
 Para conectarse a internet es necesario disponer de un identificador público (una dirección IP) reconocido por otros elementos de internet, estos identificadores son entregados por los proveedores de acceso a internet a sus clientes como parte del servicio de conexión a internet.
 
@@ -30,7 +30,7 @@ Para racionalizar y dirigir la asignación de direcciones se crearon organismos 
 
 Además de esto, cuando un proveedor solicita la asignación de un grupo de direcciones ha de identificar en qué país se utilizarán cada uno de los distintos grupos asignados, de tal manera que conociendo la dirección IP de una conexión es posible conocer de forma altamente fiable el país de origen de dicha conexión.
 
-### Servicios limitados geográficamente
+## Servicios limitados geográficamente
 
 Existen servicios populares como Hulu que no pueden verse fuera de los EEUU o servicios como Netflix que varían su catálogo en función del país en el que se tenga la suscripción, además de países que restringen algunos tipos de contenidos por motivos políticos o legales.
 
@@ -40,7 +40,7 @@ Además, algunos canales de televisión ofrecen a sus suscriptores un servicio d
     gallery="false"
     image1="image:pagina-bloqueada.webp" optionsthumb1="600x450" title1="Página bloqueada" >}}
 
-### Evitando las limitaciones geográficas
+## Evitando las limitaciones geográficas
 
 Existen dos formas en las que puede evitar este tipo de limitaciones, en primer lugar, el uso de _proxies_, y en segundo lugar el uso de VPNs.
 
@@ -48,7 +48,7 @@ Existen dos formas en las que puede evitar este tipo de limitaciones, en primer 
 
 No es el objetivo de este artículo entrar en detalles sobre [qué es una VPN](https://www.expressvpn.com/es/what-is-vpn,rel=nofollow) o [qué es un proxy](https://es.wikipedia.org/wiki/Servidor_proxy), si lo deseas puedes seguir los vínculos para leer con más detalle acerca de ambos elementos, la VPN introduce un nivel adicional de seguridad al encriptar todo el tráfico de extremo a extremo, lo que evita que pueda inyectarse código malicioso, cosa que es más difícil de garantizar en un servidor proxy. Adicionalmente, las VPNs, al crear un túnel privado, suelen ofrecer mayor estabilidad en la conexión, cosa que os será muy útil si vais conectar a un servicio de _streaming_.
 
-### Cosas a tener en cuenta al evaluar un servicio de VPN
+## Cosas a tener en cuenta al evaluar un servicio de VPN
 
 Hay una serie de puntos que es necesario tener en cuenta a la hora de buscar un buen servicio de VPN para acceder a servicios de TV por internet:
 
@@ -58,7 +58,7 @@ Hay una serie de puntos que es necesario tener en cuenta a la hora de buscar un 
 4. Ausencia de límites de transmisión, los servicios de _streaming_ consumen un volumen importante de datos, por lo que es importante que el servicio no tenga límites de transmisión.
 5. Seguridad, el uso de una VPN nos permite añadir un nivel adicional de seguridad a la conexión, normalmente ofrecen diversos grados de encriptación, servicios de garantía de anonimato o ausencia de registros, son capacidades que pueden resultar muy interesantes a la hora de elegir un buen servicio de VPN.
 
-### ¿Cómo puede conectarse a una VPN con nuestra Smart TV?
+## ¿Cómo puede conectarse a una VPN con nuestra Smart TV?
 
 Hay tres formas de conectar nuestra Smart TV a internet mediante una VPN, las detallamos a continuación:
 

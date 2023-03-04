@@ -20,7 +20,7 @@ summary: "Otros productos que he comprado han sido un cargador de pilas recargab
 
 Una de las ventajas de comprar en [Amazon][amazon-affiliate] es que casi siempre hay una cantidad muy amplia de modelos de cada producto con algunas diferencias entre ellos además del precio, una cantidad de modelos mucho mayor que en las tiendas físicas o incluso grandes almacenes. Encontrar entre las muchas opciones que hay la mejor opción requiere dedicarle algo de tiempo y fijarse bien en las descripciones del producto y comentarios tanto positivos y casi más en los negativos.
 
-### Cargador de pilas recargables
+## Cargador de pilas recargables
 
 En cuanto al cargador lo que quería era que admitiese al menos pilas del tipo AA, que son las tradicionales, y AAA que son similares pero algo más pequeñas y con algo menos de capacidad. También quería que diese algo de información al menos para saber si estaba completamente cargada. Después de ver casi todos los modelos que hay disponibles en Amazon me decidí por el modelo HXK-H2 para dos pilas con capacidad para cargar dos pilas simultáneamente e independientemente. Me gustó que no es muy caro uno 20 €, cumple con las necesidades básicas que tenía y además de los tipos de pilas AA y AAA Ni-MH y Ni-CD admite otros tipos de pilas como Li-ion, LiFePO. También que admite pilas de diferentes tamaños ya que el cargador se ajusta al maño de la pila. También me gusto que se puede seleccionar si se quieren cargar las pilas con 1000mA o con 500mA que hace la carga más lenta pero hace que las pilas duren más. Tiene un _display_ que muestra un indicador aproximado de la carga de la batería actual, el tipo de batería que detecta automáticamente, el voltaje de carga, el tiempo de carga y la intensidad de la carga seleccionada. La única función que no tiene es la de descargar las pilas antes de cargarlas pero para la mayoría de usuarios es más que suficiente. El material y construcción del cargador da una sensación de buena calidad.
 
@@ -38,7 +38,7 @@ Otros modelos de cargador en los que me fijé son los siguientes pero el que ele
 {{< amazon
     tags="battery-rechargable" >}}
 
-### Reloj analógico
+## Reloj analógico
 
 También compré un reloj para poner en el salón y ver en todo momento la hora que es. Al igual que cargadores hay muchos modelos de relojes analógicos y digitales y de diferentes tamaños e incluso muy grandes de hasta 37 centímetros de ancho con números grandes. En principio estaba decidido por uno digital pero eran bastante más caros que los tradicionales de manecillas, además necesitan entre tres y cuatro pilas AA o AAA con lo que creo que consumirán bastante y agotarán las pilas seguramente no en un més pero probablemente no les duren más de 6 meses con lo que hay que reemplazar las pilas bastante habitualmente o como yo optar por comprar pilas recargables y un cargador.
 
@@ -62,7 +62,7 @@ Otros modelos de relojes digitales de pared y mesa que ví son los siguientes, c
     linkids="bd6a22abb84218e18458f0f33b5c6354,fc9f4b5c9696b82aa015faf870993e91,ab0420b22a221629ea512e5d00dca56f,e4c59a48332124cead194f867605cde6"
     asins="B00J8Q59R6,B00D8ZMNH2,B00I023BB0,B00D2PIA7U" >}}
 
-### Pilas recargables AA
+## Pilas recargables AA
 
 Para completar el pedido compré unas [pilas AA recargables de AmazonBasics](https://amzn.to/2nxr4tP), la marca blanca de Amazon, para no estar comprando pilas cada cierto tiempo y no generar residuos que son muy contaminantes si no se depositan en lo puntos de recogida de residuos habilitados. Con las pilas y el cargador en teoría no tendré que comprar más en bastante tiempo. Hay varios modelos de pilas y en _packs_ de 8, también hay de los [tipos AAA](https://amzn.to/2nRgS0d), las que compré yo están anunciadas como que duran 1000 ciclos de cargas y descarga con una capacidad aproximada de 2000mAh.
 

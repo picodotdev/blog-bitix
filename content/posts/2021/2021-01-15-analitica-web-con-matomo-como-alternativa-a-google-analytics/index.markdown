@@ -25,7 +25,7 @@ La herramienta de analítica web más utilizada es [Google Analytics][google-ana
 
 Los motivos para usar Google Analytics están en que es gratuita, fácil de instalar en un sitio web, tiene gran cantidad de funcionalidades básicas y avanzadas que cubren las necesidades de cualesquiera usuarios y no requiere mantener infraestructura propia. Los motivos en contra de usar Google Analytics están en que los datos de un sitio web y de los usuarios es recogido por una tercera parte que establece su propia licencia al servicio y los datos, lo que afecta a la privacidad de los usuarios.
 
-### Matomo, una alternativa a Google Analytics
+## Matomo, una alternativa a Google Analytics
 
 [Matomo][matomo] es una de las herramientas como alternativa a Google Analytics. Tiene funciones equivalentes a las de Google Analytics, tiene una licencia software libre y es posible instalarlo en infraestructura propia para controlar los datos de los sitios web sin depender de una tercera parte. Matomo también ofrece la posibilidad de usarlo hospedado y administrado en su modelo _cloud_ ofrecido por Matomo.
 
@@ -38,7 +38,7 @@ Las funciones _premium_ se pueden adquirir de forma individual las que se usen o
 * [A Tour of Matomo](https://matomo.org/docs/matomo-tour/)
 * [Precios de Matomo](https://matomo.org/pricing/)
 
-### Ejemplo de sitio web con Matomo
+## Ejemplo de sitio web con Matomo
 
 Matomo requiere una base de datos [MySQL][mysql] o [MariaDB][mariadb] para persistir los datos de analítica. En este ejemplo uso [Docker][docker] con un archivo de [Docker Compose][docker-compose] para iniciar los contenedores de una base de datos MySQL, el servidor de Matomo y un servidor _proxy_ con [Nginx][nginx]. La versión de MySQL con la que es compatible Matomo es la 5.7 o superior.
 

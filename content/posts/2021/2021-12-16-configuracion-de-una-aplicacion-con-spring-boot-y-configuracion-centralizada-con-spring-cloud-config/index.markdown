@@ -31,7 +31,7 @@ Por otro lado es aconsejable tener bajo el control de versiones los archivos de 
 
 {{< tableofcontents >}}
 
-### Necesidades según el rol
+## Necesidades según el rol
 
 Las diferentes personas cada una con su rol desea tener la capacidad de configurar la aplicación. A los desarrolladores nos interesa para poder externalizar ciertas variables del código de la aplicación para tener la capacidad de cambiar los valores sin modificar el código. Esto es más fácil que encontrar donde están los valores hardcodeados y modificar las diferentes coincidencias, y evitando tener que recompilar.
 
@@ -49,13 +49,13 @@ La solución para estas diferentes necesidades de los diferentes roles es obtene
 
 En las configuraciones más avanzadas es necesario un mecanismo para que las aplicaciones obtengan la configuración de un servidor donde esté centralizada. Al igual que un servicio de registro y descubrimiento es esencial para los microservicios un servicio de obtención de configuración de donde obtengan su configuración es también útil. Dado el gran número de microservicios de los que puede estar compuesto un sistema, su carácter efímero, los varios entornos de ejecución (desarrollo, pruebas, producción, ...) mantener centralizada la configuración en un único sitio hace las cosas mucho más sencillas cuando hay que cambiar el valor de alguna propiedad. En vez de las alternativas con un archivo de configuración, aún externalizado del artefacto, en el sistema de archivos del entorno de ejecución o a través de variables de entorno que deben ser aprovisionadas.
 
-### Configuración en una aplicación de Spring Boot
+## Configuración en una aplicación de Spring Boot
 
 Spring Boot integra la funcionalidad de obtener la configuración de varias fuente y define un orden de preferencias en caso de conflicto. Spring Cloud Config Server es un servicio que proporciona un mecanismo adicional para centralizar la configuración de las aplicaciones.
 
 En una aplicación monolítica, un monolito modular o en un entorno donde no hay muchas aplicaciones el mecanismo de configuración proporcionado Spring Boot es suficiente. Sin embargo, en un entorno de microservicios o donde hay muchas aplicaciones tener una configuración centralizada proporciona varios beneficios. Los beneficios de un servidor de configuración es centralizar en un única fuente lo que facilita su ubicación, modificación y despliegue en las aplicaciones.
 
-#### Orden de preferencia de las propiedades
+### Orden de preferencia de las propiedades
 
 Spring Boot soporta varias fuentes de las que obtener la configuración desde archivos de configuración en el _classpath_, archivos externalizados en el sistemas de archivos, argumentos del programa, propiedades del sistema de la máquina virtual, variables de entorno e incluso otros mecanismos extensibles personalizados.
 
@@ -67,7 +67,7 @@ En la documentación de Spring Boot están detalladas estas fuentes y prioridad 
 
 Con Spring Cloud Config las propiedades del servidor de configuración se cargan con posterioridad de los archivos de datos de configuración incluidos en el _classpath_ dentro del artefacto o de los archivos externalizados en el sistema de archivos. Sin embargo, la configuración establecida como variables de entorno siguen teniendo más preferencia.
 
-#### Archivos de datos de configuración
+### Archivos de datos de configuración
 
 Los archivos de configuración entre ellos también tienen un orden de búsqueda en varios directorios y prioridad, iguamente detallado en la documentación de Spring Boot. Teniendo más preferencia los archivos externalizados y dentro de estos los más específicos para un entorno de ejecución. 
 
@@ -81,7 +81,7 @@ Los archivos de configuración se pueden definir en el formato _properties_ y _y
 {{< code file="application-format.properties" language="plain" options="" >}}
 {{< code file="application-format.yml" language="yaml" options="" >}}
 
-#### Propiedades que afectan a la configuración
+### Propiedades que afectan a la configuración
 
 En el sistema de configuración de Spring hay ciertas variables que afectan y permiten adaptar la configuración por defecto a las preferencias o necesidades de la aplicación.
 
@@ -97,7 +97,7 @@ En las rutas de búsqueda con el prefijo _optional:_ en caso de no encontrarse l
 
 {{< code file="spring-boot-optional.yml" language="yaml" options="" >}}
 
-### El servidor de configuración centralizada Spring Cloud Config Server
+## El servidor de configuración centralizada Spring Cloud Config Server
 
 Un servidor de configuración permite cambiar o proporcionar una forma adicional de la que la aplicación obtiene propiedades y valores de configuración. La aplicación al iniciar realiza una petición al servidor de configuración y obtiene las propiedades adicionales de configuración. En el caso de Spring Cloud Config Server ofrece una interfaz REST que usa las aplicaciones para realizar la petición.
 
@@ -107,7 +107,7 @@ Otra de sus utilidades es una forma de que ciertos servicios obtengan la configu
 
 Dado que este servicio de configuración es esencial para que los microservicios puedan obtener su configuración sin el cual no pueden proporcionar su funcionalidad hay que configurarlo de tal manera que sea  tolerante a fallos. Una de las medidas para hacerlo tolerante a fallos es iniciar varias instancias de servidores de configuración, estas instancias se autorregistran en el servicio de descubrimiento para que  los microservicios puedan descubrirlos y obtener su configuración al iniciarse.
 
-#### Fuentes de configuración
+### Fuentes de configuración
 
 El servidor de configuración centralizada Spring Cloud Config soporta varios sistemas diferentes en los que almacenar las propiedades de configuración o _backends_ para recuperarlos cuando una instancia del servicio la solicite.
 
@@ -115,7 +115,7 @@ Una opción es utilizar un repositorio de [Git][git] con las ventajas asociadas 
 
 * [Spring Cloud Config Server, Environment Repository](https://docs.spring.io/spring-cloud-config/docs/current/reference/html/#_environment_repository)
 
-#### Propiedades que afectan a la configuración de Spring Cloud Config Server
+### Propiedades que afectan a la configuración de Spring Cloud Config Server
 
 El servidor de configuración de Spring Cloud Config también tiene variables de configuración, varias según el sistema de almacenamiento o _backend_ donde se persisten las propiedades de configuración de los servicios. Otras propiedades son para proporcionar las credenciales de autenticación de los _backends_.
 
@@ -133,7 +133,7 @@ Las propiedades _application_, _profile_  y _label_ permiten identificar la conf
 
 {{< code file="spring-cloud-config-server-filesystem-properties.yml" language="yaml" options="" >}}
 
-### Ejemplo de configuración en aplicación de Spring Boot
+## Ejemplo de configuración en aplicación de Spring Boot
 
 Esta aplicación de Spring Boot tiene varias propiedades de configuración. Para mostrar el mecanismo de preferencia en la resolución de los valores cada una de las propiedades se obtiene de una fuente distinta. En esta lista de menor preferencia a mayor preferencia, desde un archivo de configuración en el _classpath_, archivo externalizado, servidor de configuración, argumento de programa y variable de entorno.
 
@@ -177,7 +177,7 @@ Las dependencias en el archivo de construcción con [Gradle][gradle] son las sig
 
 {{< code file="build-client.gradle" language="groovy" options="" >}}
 
-### Ejemplo de configuración centralizada con Spring Cloud Config Server
+## Ejemplo de configuración centralizada con Spring Cloud Config Server
 
 El servidor de configuración de Spring Cloud Config es posible implementarlo como una aplicación de Spring Boot. La aplicación de Spring Boot simplemente requiere utilizar la anotación _@EnableConfigServer_ y configurar el almacenamiento del _backend_ para las propiedades de configuración, en el ejemplo utilizando el sistema de archivos.
 

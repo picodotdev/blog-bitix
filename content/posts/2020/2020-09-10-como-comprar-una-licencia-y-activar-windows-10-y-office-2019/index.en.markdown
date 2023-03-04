@@ -26,7 +26,7 @@ Through vendors other than Microsoft, it is possible to buy a cheap and complete
 
 {{< tableofcontents >}}
 
-### Windows 10 license types and versions
+## Windows 10 license types and versions
 
 Windows 10 has different versions, the differences between them are in the features they support.
 
@@ -40,7 +40,7 @@ Microsoft licenses and distributes its software in different ways.
 * _Retail_: the software is sold independently together with the equipment or for an existing equipment, unlike the _OEM_ it is used for several equipment.
 * _Microsoft Volume Licensing_: allows the use of licenses by organizations that have large volumes of computer equipment such as companies, governments or educational institutions.
 
-### Microsoft Office versions
+## Microsoft Office versions
 
 Office also has different versions of the office suite programs that mainly comprise the Word document editor, the Excel spreadsheet and PowerPoint to create presentations along with some other programs such as Outlook such as an e-mail application or Access to create simple databases.
 
@@ -55,7 +55,7 @@ Of the desktop applications of Microsoft Office 2019 there are several versions 
 * _Professional_: in addition to Word, Excel, PowerPoint and Outlook, it includes the Publisher application to create printed documents such as brochures, catalogs, brochures or envelopes, among others. It also includes the Access application for creating databases.
 * _Professional Plus_: includes all the applications of the _Professional_ version and includes the Skype videoconference communication application.
 
-### How much do Windows 10 and Microsoft Office 2019 licenses cost?
+## How much do Windows 10 and Microsoft Office 2019 licenses cost?
 
 In some cases, the price of the Windows 10 license has to be purchased separately from the computer even if it is offered to do so at the same time, in the invoice the cost of the computer and the Windows 10 license will be itemized. The cost of the Windows 10 license sold by Microsoft costs between 145 € for the _Home_ version, 259 € for the _Pro_ and 439 € for the _Pro for Workstations_, it is not cheap. The Microsoft Office 2019 license sold by Microsoft costs 149 €, it also has payment methods under subscription with a monthly cost.
 
@@ -65,7 +65,7 @@ There are several vendors other than Microsoft that allow you to obtain a licens
 
 If the price of Windows 10 sold by Microsoft in its _Retail_ version is 145 € for the _Home_ version or 259 € for the _Pro_, these other sellers offer valid licenses at much cheaper prices, between about 10 € and 15 €, which represents a significant saving in this software. If the version of _Office Home and Students 2019_ costs 149 € buying it from Microsoft, other sellers offer licenses with activation codes also for between 10 € and 15 €.
 
-### Download Windows 10 and Microsoft Office 2019
+## Download Windows 10 and Microsoft Office 2019
 
 Both Windows 10 and the Microsoft Office 2019 office suite can be downloaded for free with the original Spanish language pack from Microsoft's official website with the web browser via direct download. The Windows 10 image includes the different versions. Although the download is free, it is necessary to buy a license that grants the right of use.
 
@@ -75,7 +75,7 @@ Both Windows 10 and the Microsoft Office 2019 office suite can be downloaded for
 * [Download Microsoft Office 2019, Professional](http://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/es-es/Professional2019Retail.img)
 * [Download Microsoft Office 2019, Professional Plus](https://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/es-es/ProPlus2019Retail.img)
 
-### What if I don't have a Windows 10 and Microsoft Office 2019 license
+## What if I don't have a Windows 10 and Microsoft Office 2019 license
 
 [Windows 10 can be downloaded and installed from scratch][blogbitix-231-en] even without having a license to use it. However, after about 30 days Windows 10 deactivates some aesthetic customization options that do not affect its functionality, it allows you to continue using it indefinitely, including continuing to obtain the latest security updates. Some of the customization options that are disabled are applying custom themes, modifying the system colors and fonts, configuring the start menu or the wallpaper and lock screen.
 
@@ -83,7 +83,7 @@ If you do not want to buy a Windows 10 license, you can install a free distribut
 
 Microsoft Office can also be installed but after a month it prevents the editing of documents if it is not activated, which greatly limits its functionality. Documents can be opened in read mode at any time, but to recover the editing options it is necessary to purchase your license and activate the product. If you don't want to buy a license or if you prefer to use an office suite with a free license, these are [4 of the best alternatives for Microsoft Office][blogbitix-143-en].
 
-### Where to buy a Windows 10 and Microsoft Office 2019 license
+## Where to buy a Windows 10 and Microsoft Office 2019 license
 
 Given the inexpensive price of vendors other than Microsoft that offer Windows 10 and Microsoft Office licenses, it is advisable to purchase a license that allows you to activate these products. Without the need to hack or resort to activators that many of them are a source of viruses and are illegal, just looking for them is a risk for the security of the computer and one of the biggest sources of entry of viruses in Windows systems since searches can lead to malicious pages. Today we do important tasks on the computer from storing numerous personal information to paying online or accessing the bank account or receipts, thus avoiding the risk of computer viruses.
 
@@ -102,7 +102,7 @@ Once the purchase is made, the product activation code is sent in a few hours by
 * [Windows 10 Pro License](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=windows+10+professional+key+espa%C3%B1ol&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=windows+10+professional+64+bits+key+espa%C3%B1ol) on eBay.
 * [Microsoft Office 2019 License](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=microsoft+office+2019+key+espa%C3%B1ol&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=microsoft+office+2019+license+espa%C3%B1ol) on eBay.
 
-### How to activate Windows 10 and Microsoft Office 2019
+## How to activate Windows 10 and Microsoft Office 2019
 
 Windows 10 can be activated during installation or once installed by selecting the _Start_ button, then following the options _Settings > Update and security > Activation > Update product key > Change product key_. In this section you enter the activation code purchased. Once successfully activated in this same section a message is displayed that informs the Windows activation status, if it is activated the message _Windows is activated_ should appear.
 
@@ -133,3 +133,5 @@ Once Microsoft Office is installed, when you open one of the office _suite_ appl
 * [Descargar e instalar o volver a instalar Microsoft 365 u Office 2019 en un equipo PC o Mac](https://support.microsoft.com/es-es/office/descargar-e-instalar-o-volver-a-instalar-microsoft-365-u-office-2019-en-un-equipo-pc-o-mac-4414eaaf-0478-48be-9c42-23adc4716658)
 * [Descargar Microsoft Office 2019 Hogar y Estudiantes](https://www.ardilu.com/descargar/office-2019-home-student)
 {{< /reference >}}
+
+{{% /post %}}

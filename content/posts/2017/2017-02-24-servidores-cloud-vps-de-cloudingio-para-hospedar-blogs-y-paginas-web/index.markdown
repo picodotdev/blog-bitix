@@ -36,7 +36,7 @@ Una de las ventajas del _cloud computing_ es la elasticidad que permite cambiar 
 
 {{< tableofcontents >}}
 
-### Infraestructura _cloud_ de Clouding
+## Infraestructura _cloud_ de Clouding
 
 Algunas de las características de Clouding.io algo más detalladas en su página web es que ofrecen soporte en español y discos SSD rápidos para el almacenamiento además de las siguientes:
 
@@ -81,7 +81,7 @@ Son muchas las empresas que confían en Clouding como proveedor de servicios par
     image1="image:clouding-clientes.webp" optionsthumb1="200x150" title1="Clientes de Clouding"
     caption="Clientes de Clouding" >}}
 
-### Crear un servidor _cloud_ en Clouding
+## Crear un servidor _cloud_ en Clouding
 
 Para probar su servicio ofrecen un cupón de 5 €, que con la opción más básica son unos 45 días de uso continuado en su configuración más básica para evaluar su servicio sin compromiso. El registro requiere validar una cuenta de correo electrónico, móvil y tarjeta de crédito. Requerir el móvil y la tarjeta de crédito para probar el servicio es algo excesivo pero quizá necesario para evitar _spam_ y usos no deseados. Realizado el registro ya está disponible el acceso al panel de administración desde el que crear nuevos servidores, arrancarlos, modificarlos, pararlos o eliminarlos.
 
@@ -123,7 +123,7 @@ Las reglas del _firewall_ por defecto son demasiado permisivas, si solo necesita
     image1="image:firewall.webp" optionsthumb1="300x200" title1="Reglas de firewall"
     caption="Reglas de firewall" >}}
 
-### Conexión mediante línea de comandos con SSH
+## Conexión mediante línea de comandos con SSH
 
 Las llaves SSH son necesarias para conectarnos al servidor y lanzar comandos desde la terminal. Generada una llave SSH desde el apartado _Llaves SSH_ descargaremos la clave privada, la añadiremos al directorio _~/.ssh_ y configuraremos el archivo _~/.ssh/config_ para acceder al servidor.
 

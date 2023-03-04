@@ -35,7 +35,7 @@ En la prueba de audio se nota que la calidad de sonido que ofrece el MAONO HD300
 
 {{< tableofcontents >}}
 
-### La características que diferencian a los micrófonos
+## La características que diferencian a los micrófonos
 
 Los micrófonos se diferencian por al menos dos características importantes que definen sus propiedades, no hay unas características que sean mejores sobre otras sino que dependiendo del uso un micrófono con unas características determinadas ofrece mejores resultados.
 
@@ -44,13 +44,13 @@ Las dos características importantes que definen su uso y calidad son las siguie
 * El tipo de transductor que puede ser dinámico, de condensador o de banda o _ribbon_.
 * El patrón polar define el patrón por el que el micrófono captura el audio dependiendo de la fuente del sonido y su posición respecto al micrófono y distancia.
 
-#### Tipo de transductor
+### Tipo de transductor
 
 El transductor es la tecnología física que emplea el micrófono para capturar el audio. Los micrófonos dinámicos no necesitan una fuente de energía para capturar el sonido con lo que pueden conectarse a un dispositivo que lo capture, sin embargo, para capturar el sonido requieren estar cerca de la fuente, si el sonido es una persona hablando requiere tener cerca el micrófono o utilizar un programa que aumente la ganancia del audio para que este tenga una intensidad mayor.
 
 Los micrófonos de condensador requieren alimentación para funcionar por lo que requieren un tipo de conexión que les proporcione una pequeña cantidad de energía para capturar el audio, ya sea un puerto USB o una interfaz de audio. Al estar alimentados son más sensibles a los sonidos.
 
-#### Patrón de captura
+### Patrón de captura
 
 Los micrófonos tienen un patrón de captura de audio. El patrón polar es el patrón que usa un micrófono para la captura del audio según la posición y orientación y la distancia a la fuente de audio. Un micrófono cardioide sigue un patrón en forma de corazón capturando con gran intensidad el sonido que se produce delante del micrófono, con menor intensidad el posicionado en la parte trasera y atenuando en mayor medida los sonidos posicionados fuera de su patrón de captura.
 
@@ -77,15 +77,15 @@ Estos son algunos ejemplos de patrones de captura de audio que usan los micrófo
     image2="image:patron-micrfono-omnidirectional-2.webp" optionsthumb2="200x150" title2="Patrón omnidireccional"
     caption="Patrón omnidireccional" >}}
 
-#### Filtro _pop_
+### Filtro _pop_
 
 Otros elementos relacionados con los micrófonos son los filtros _pop_ que evitan picos de intensidad de sonido al pronunciar ciertas sílabas que se consideran implosivas como las que empiezan por las letras _t_, _p_, _b_ o _s_. Estos filtros amortiguan la intensidad de estas sílabas y además protegen al micrófono de las gotas de la saliva si se posicionan cerca.
 
-#### Conexiones
+### Conexiones
 
 Otras propiedades de los micrófonos son las conexiones que ofrece. La estándar de audio es la XLR que es específica y tradicional para los dispositivos de audio y que se suele utilizar para la conexión a una interfaz de audio. Por versatilidad y no necesitar una interfaz de audio para usar un micrófono algunos ofrecen adicionalmente conexiones como USB y una salida _jack_ 3.5mm para la conexión de unos cascos y obtener el audio en tiempo real asi como con los cascos aislarse de cualquier otro sonido en la zona de grabación.
 
-#### Interfaz de audio
+### Interfaz de audio
 
 El programa [OBS Studio][obs] que es uno de los más utilizados por ser de software libre y gratuito permite hacer la función de mezclar las diferentes fuentes del contenido audiovisual, aplicarles transformaciones y producir un resultado final con todas las fuentes mezcladas.
 
@@ -95,7 +95,7 @@ Para una mayor facilidad en el ajuste de alguna propiedad de una fuente de entra
 
 En cualquier caso el programa OBS y las interfaces de audio no son productos excluyentes sino siguen siendo complementarios ya que OBS además de audio permite capturar vídeo y componer la escena final.
 
-#### Información de referencia
+### Información de referencia
 
 En los siguientes buenos artículos se explica de forma mucho más detallada las propiedades esenciales y el conocimiento básico sobre micrófonos.
 
@@ -107,7 +107,7 @@ En los siguientes buenos artículos se explica de forma mucho más detallada las
 * [What is an audio interface ? What does it do? Do I really need one?](https://magroove.com/blog/en-us/what-is-an-audio-interface/)
 * [Home Recording Studio – Setting one up? Here’s all you need to know](https://magroove.com/blog/en-us/home-recording-studio/)
 
-### El micrófono MAONO HD300 SERIES
+## El micrófono MAONO HD300 SERIES
 
 El micrófono [MAONO HD300T](https://www.maono.com/products/usb-xlr-cardioid-dynamic-microphone-maono-hd300t) es un micrófono cardioide dinámico con conexiones XLR, USB Type-C y _jack_ 3.5mm con un diseño clásico. Tiene cuerpo completamente metálico con un peso considerable para su tamaño. Incluye una peana de metal regulable en altura y cabeceo con un sistema de montaje absorbe golpes y un filtro _pop_. Tiene un interruptor de encendido y apagado con LED y botones para controlar el volumen del _jack_ 3.5 para monitorizar en tiempo real el audio capturado por el micrófono.
 
@@ -123,7 +123,7 @@ Al ser dinámico junto con su amplia variedad de conexiones no es imprescindible
 {{< youtube
     video="7FzN9OkP1Pg" >}}
 
-#### Especificaciones técnicas
+### Especificaciones técnicas
 
 Las especificaciones técnicas completas del micrófono MAONO HD300T son las siguientes:
 
@@ -149,7 +149,7 @@ Las especificaciones técnicas completas del micrófono MAONO HD300T son las sig
     image1="image:maono-hd300-specs.webp" optionsthumb1="650x450" title1="Especificaciones del micrófono MAONO HD300 SERIES"
     caption="Especificaciones del micrófono MAONO HD300 SERIES" >}}
 
-#### Dónde comprar
+### Dónde comprar
 
 El micrófono junto a otros elementos de audio se puede comprar directamente en la [página de MAONO][maono]. También se puede encontrar en [Amazon][amazon-affiliate] a través de algunos vendedores externos. Tiene un precio aproximado de unos 70€ que con la calidad de audio que ofrece es más que suficiente para los usos a los que está destinado.
 
@@ -163,13 +163,13 @@ Una ventaja de comprar directamente en la página de MAONO es que en ella está 
     linkids="6249bfcd3e3285aeaa56f1f345a1bf14"
     asins="B09GTMFRGB" >}}
 
-### Desempaquetado del micrófono MAONO HD300T
+## Desempaquetado del micrófono MAONO HD300T
 
 Una parte importante antes de comprar el producto es conocer cómo es el mismo desde las especificaciones técnicas hasta cómo es su empaquetado, qué elementos contiene, como es la caja y detalles del producto a través de fotos e incluso vídeos de alta resolución y desde varios puntos de vista.
 
 Este es el caso de las siguiente fotos y apartado que muestra el micrófono MAONO HD300T es su totalidad desde su empaquetado hasta el estado final montado y preparado para su uso.
 
-#### La caja
+### La caja
 
 La caja del MAONO HD300T de esta edición es amarillo anaranjado y negro. En la parte superior tiene una foto del micrófono montado que permite conocer como es sin necesidad de abrir la caja. Se indica la marca con el logotipo de MAONO y el modelo exacto del micrófono.
 
@@ -193,7 +193,7 @@ En la parte inferior un lateral se incluye una descripción y características p
     image3="image:maono-hd300-caja-8.webp" optionsthumb3="200x150" title3="Caja del micrófono MAONO HD300T"
     caption="Caja del micrófono MAONO HD300T" >}}
 
-#### El contenido
+### El contenido
 
 Los diferentes elementos de la caja están organizados en dos bandejas de una espuma acolchada y algunos elementos envueltos en una funda protectora de modo que hasta su desempaquetado no sufran ningún desperfecto y estén en las condiciones originales.
 
@@ -249,7 +249,7 @@ Este es el aspecto de todos los componentes desmontados junto a su manual.
     image2="image:maono-hd300-manual-8.webp" optionsthumb2="200x150" title2="Manual del micrófono MAONO HD300T"
     caption="Manual del micrófono MAONO HD300T" >}}
 
-#### El micrófono
+### El micrófono
 
 La pieza fundamental del producto es el micrófono cardioide dinámico, el soporte es útil, para los algunos usuarios que prefieran un montarlo en un brazo articulado está el modelo HD300S para su fácil cambio de posición y evitar que ocupe sitio encima de la mesa.
 
@@ -270,7 +270,7 @@ Una vez montado queda listo para su uso que se realiza mediante la conexión del
     image1="image:maono-hd300-microfono-3.webp" optionsthumb1="650x450" title1="Micrófono MAONO HD300T"
     caption="Micrófono MAONO HD300T" >}}
 
-### Análisis y opinión
+## Análisis y opinión
 
 El micrófono MAONO HD300T ofrece una calidad de sonido mayor que la que ofrecen los micrófonos integrados tanto de ordenadores como de portátiles. Al ser dinámico requiere hablar de cerca, usar un programa como OBS que permita aumentar la ganancia o usar una interfaz de audio, la ventaja es que no requiere alimentación y en los otros casos la interfaz de audio no es necesaria aunque sí recomendable.
 
@@ -296,7 +296,7 @@ Otro detalle es que la base es completamente de metal y que en ciertas superfici
 
 Sopesando las características de micrófono en conjunto y su precio aun con las mejoras comentadas que no son demasiado grandes el MAONO HD300T es una buena elección para la mayoría de usuarios que lo necesitan para tener un audio de calidad.
 
-#### Prueba de audio
+### Prueba de audio
 
 La compatibilidad con [GNU][gnu]/[Linux][linux] es completa, basta con conectar el cable USB al micrófono y al ordenador y este se reconoce inmediatamente sin necesidad de instalar ningún controlador para que lo reconozca el sistema operativo y quedar listo para empezar a capturar audio. Más en concreto con [Arch Linux][archlinux] que se caracteriza por ser una distribución de GNU/Linux de tener todo el software y paquetes actualizados a las últimas versiones proporcionadas por los desarrolladores.
 
@@ -323,7 +323,7 @@ En la prueba la diferencia es muy clara, el micrófono interno del Intel NUC deb
 
 Hay que estar a distancia para que el patrón cardioide se note, estando cerca aún lateralmente o por detrás el audio sigue entrando al hablar al menos si se incrementa la ganancia. Sin embargo, el ventilador del ordenador que en el NUC que es equivalente al de un portátil no se percibe en absoluto en el MAONO.
 
-#### Vídeos
+### Vídeos
 
 En internet hay una buena cantidad de vídeos que lo muestran no en fotos sino en vídeos junto con también pruebas de audio. Otros usuarios con conocimientos avanzados tanto de audio como con experiencia con otras marcas y modelos también lo han analizado y proporcionan valiosa información para conocer todos los detalles del micrófono con aspectos que solo se pueden saber al usarlo.
 
@@ -336,7 +336,7 @@ En internet hay una buena cantidad de vídeos que lo muestran no en fotos sino e
 {{< youtube
     video="GqAGV03_LOo" >}}
 
-### Otros productos relacionados
+## Otros productos relacionados
 
 Hay otros varios productos que son complemento de un micrófono y útiles según su caso de uso. Uno que algunos usuarios por sus necesidades consideran básico e imprescindible es una interfaz de audio ya sea por el motivo de poder aumentar la ganancia en un micrófono dinámico o porque el micrófono de es condensador y necesita alimentación, aparte de poder realizar algunas funciones en tiempo real sin necesidad de aplicaciones que requieren procesamiento por parte del ordenador.
 

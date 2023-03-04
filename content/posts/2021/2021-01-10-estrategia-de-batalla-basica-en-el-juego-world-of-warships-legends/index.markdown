@@ -36,7 +36,7 @@ Por ello es fundamental tener unas nociones básicas sobre estrategia según el 
 
 {{< tableofcontents >}}
 
-### Estrategia básica
+## Estrategia básica
 
 En el juego hay una estrategia básica independiente del tipo de barco con el que se juegue. Como juego en equipo la primera regla es jugar en equipo, actuar en formaciones, cubrir y dar soporte a los aliados, no exponerse individualmente o asumir riesgos innecesarios, conocer la situación de la batalla de los enemigos y aliados, designar un objetivo preferente y disparar al mismo enemigo que los compañeros. Esto en conjunto aumenta las posibilidades de victoria en la batalla.
 
@@ -52,9 +52,9 @@ Según la batalla el juego tiene diferentes objetivos, dominación o capturar la
 
 En el caso de captura de la base enemiga, su captura significa la victoria. Por lo que igualmente iniciar la captura de la base enemiga obliga a reaccionar el equipo contrario que puede ocasionar hacerle exponerse, dividir las fuerzas que otorga superioridad al equipo contrario al tener que retroceder para impedir la captura.
 
-### Objetivos según tipo de navío
+## Objetivos según tipo de navío
 
-#### Objetivos de los destructores
+### Objetivos de los destructores
 
 La principal característica de los destructores es su bajo radio de distancia en la que son detectados, esto les dota de un buen nivel de ocultamiento. Por el contrario son el tipo de barco que menos puntos de vida tiene con lo que han de tratar de no ser detectados. Es la unidad más importante en el juego y determinante para el éxito de una batalla.
 
@@ -71,7 +71,7 @@ Aunque los destructores tienen el mejor nivel de ocultamiento que los hace difí
     image1="image:humo-destructor.webp" optionsthumb1="300x200" title1="Humo de destructor y de algunos cruceros"
     caption="Humo de destructor y algunos cruceros" >}}
 
-#### Objetivos de los cruceros
+### Objetivos de los cruceros
 
 Los cruceros son la unidad media del juego. Son ágiles, veloces, un tiempo de recarga de los cañones bajo comparado con los acorazados, unos cañones relativamente potentes e incluso similares a los de algunos acorazados. Son una unidad polivalente aunque frágil expuesta a un acorazado.
 
@@ -89,7 +89,7 @@ Después de los destructores los cruceros son el siguiente objetivo prioritario 
     image2="image:habilidad-ingenio-2.webp" optionsthumb2="300x200" title2="Habilidad ingenio útil en cruceros"
     caption="Habilidad ingenio útil en cruceros" >}}
 
-#### Objetivos de los acorazados
+### Objetivos de los acorazados
 
 Los acorazados son la unidad pesada del juego, con más puntos de vida, con los cañones de mayor calibre y de largo alcance. Por el contrario son menos ágiles y tienen una velocidad máxima menor que los hacen más vulnerables a los torpedos.
 
@@ -99,9 +99,9 @@ Por lo general son efectivos contra los cruceros por sus ciudadelas vulnerables,
 
 Junto con exponerse de forma completamente lateral a otros acorazados, los incendios de algunos cruceros que están especializados en provocar son un riesgo. Un incendio no es peligroso estando con prácticamente la totalidad de los puntos de vida e incluso dos durante un poco de tiempo ya que tiene la habilidad de reparación que les permite recuperar gran parte de los puntos de vida perdidos por incendio. Una amenaza más grave es una inundación causada por el impacto de un torpedo, una inundación al igual que los incendios causan la pérdida constante de puntos de vida pero en algo mayor número por segundo y durante algo más de tiempo, por ello una inundación obliga casi siempre a utilizar un consumible de reparación, si el consumible de reparación no está disponible por haber sido utilizado con anterioridad y está en periodo de recarga la pérdida de puntos de la inundación al cabo de unas cuanta decenas de segundos puede causar el hundimiento del acorazado.
 
-### Otras nociones comunes básicas de estrategia
+## Otras nociones comunes básicas de estrategia
 
-#### Defensa contra torpedos
+### Defensa contra torpedos
 
 Los acorazados en solitario son un objetivo sencillo para el destructor, un acorazado no tiene forma de detectar un destructor si el capitán del destructor no quiere. Son lentos y poco maniobrables que los hace más vulnerables a los torpedos.
 
@@ -121,7 +121,7 @@ Tener el conocimiento de cuando un destructor es probable que haya lanzado torpe
 {{< youtube
     video="QFqRwedbsPY" >}}
 
-#### Selección de objetivos
+### Selección de objetivos
 
 Una parte importante en la táctica es la selección de objetivos. Por norma general, los objetivos por orden de prioridad son los destructores, luego los cruceros con radar por su peligro para los destructores aliados que los permite detectar por un periodo breve de tiempo pero aún estando a largas distancias, luego los cruceros y finalmente el tipo de barco menos importante son los acorazados aún siendo estos los que más puntos de vida tienen y  aún siendo estos los que tienen los cañones de mayor calibre. Los otros tipos de barcos son más importantes tácticamente y más fáciles de eliminar por tener menor número de puntos y blindaje que los acorazados.
 
@@ -134,7 +134,7 @@ Las excepciones a la regla general de selección de objetivos son las oportunida
     image1="image:seleccion-objetivo.webp" optionsthumb1="300x200" title1="Selección de objetivo"
     caption="Selección de objetivo" >}}
 
-#### Posicionamiento y fuego cruzado
+### Posicionamiento y fuego cruzado
 
 Los destructores y cruceros tienen buena movilidad por el mapa, durante los 15 minutos de la partida tiene tiempo de cambiar de posición varias veces. Los acorazados por el contrario no tienen tanta movilidad y se basan más en tomar una posición inicial en la que tener un buen ángulo de disparo según las islas del mapa para buscar coberturas, los puntos calientes como las zonas de captura donde normalmente se dirigen los barcos y la experiencia de partidas anteriores sabiendo que posiciones son las utilizadas por los enemigos.
 
@@ -150,7 +150,7 @@ El juego en las batallas normales suele desplegar a los aliados y a los enemigos
     image2="image:ganar-lado-2.webp" optionsthumb2="300x200" title2="Ganar el lado de la batalla según despliegue"
     caption="Ganar el lado de la batalla según despliegue" >}}
 
-#### Errores comunes
+### Errores comunes
 
 Hay varios errores comunes que no pocos jugadores suelen cometer y que hay que conocerlos para no cometerlos uno mismo. Cometer estos errores significa en ocasiones la diferencia entre la victoria o la derrota, y ver que un jugador los está cometiendo no sienta bien a uno mismo y supongo al resto de compañeros del equipo, más en las batallas clasificatorias o _ranked_. En arenas bajas quizá está justificado ya que algunos serán jugadores inexpertos que aún no conocen todas las estrategias básicas, no está justificado en una arena alta del juego en la que ya hay que haber jugado bastante para llegar a ella.
 
@@ -166,7 +166,7 @@ Los acorazados son lentos y tienen un tiempo de recarga de sus baterías princip
 
 En el fragor de los combates a veces uno pierde la noción de que está pasando en el resto del mapa, se tiene visión de túnel. Salvo en los enfrentamiento directos la mayor parte del juego es estar observando el minimapa, las posiciones de los enemigos o sus últimas posiciones conocidas y la situación de los aliados. Cada cierto tiempo aprovechando entre recarga y recarga conviene observar el minimapa para conocer la situación táctica de la batalla. Ayuda a saber si está en ventaja, se puede cargar, si se está en desventaja y conviene retroceder, mantener la posición o moverse para ayudar en otra parte del mapa.
 
-#### Supervivencia
+### Supervivencia
 
 La supervivencia en una partida de los destructores y cruceros es fundamental para acabar las partidas en las posiciones altas de la tabla y para ayudar a los acorazados como apoyo dándoles visión. Los destructores aúnque tiene un buen ocultamiento una vez descubiertos son el objetivo prioritario para defenderse la forma que tiene de defenderse es salir del rango de visión, protegerse detrás de una isla si le da tiempo o más habitualmente utilizar una pantalla de humo para despintarse y reiniciar el enfrentamiento sin estar avistado.
 
@@ -174,7 +174,7 @@ La estrategia de los cruceros para sobrevivir las partidas o durante más tiempo
 
 Los acorazados han de ser conscientes de la ubicación de los destructores para no ser sorprendido para una salva de torpedos que le resulte imposible de esquivar y volver a puerto. En caso de enfrentarse a un destructor utilizar las tácticas para defenderse de los torpedos.
 
-#### Características del rival
+### Características del rival
 
 Los mejores jugadores, con mayor conocimiento y mayor experiencia además de las reglas básicas tácticas teóricas anteriores, además tienen en cuenta que barco tienen y los aliados, por que barcos está formado en equipo rival o contra qué barco se están enfrentando en un combate uno a uno.
 
@@ -187,7 +187,7 @@ También, conocer la distribución de los puntos de blindaje y posición de las 
     image1="image:blindaje.webp" optionsthumb1="300x250" title1="Blindaje de un acorazado"
     caption="Blindaje de un acorazado" >}}
 
-#### Barcos de las diferentes naciones
+### Barcos de las diferentes naciones
 
 Los niveles de las arenas de los barcos con los que se juega normalmente son los de la 5, 6 y 7. Son los de la 5 son los más rentables en cuanto a recompensa de moneda para comprar más barcos y los de la 7 son los de la arena más alta.
 
@@ -200,7 +200,7 @@ Algunas naciones tienen ciertas características comunes a su rama de barcos:
 * Japonesa: los destructores tiene dos ramas una más torpederos y otra más cañoneros, sus torpedos destacan por hacer mayor número puntos de daño, más lanzaderas, menor tiempo de recarga de torpedos y tener mejor ocultamiento que otras naciones. En sus acorazados destaca el Yamato que tiene los cañones de mayor calibre del juego capaz de hacer _overmatch_  y ciudadelas a otros acorazados aún no teniendo el lateral expuesto.
 * Británica: los destructores británicos son más cañoneros siendo capaces de disparar los torpedos en salvas o de uno en uno en vez de solo en salvas como otros destructores. Sus cruceros solo tienen munición AP pero aún así es efectiva contra los destructores. Sus acorazados son lentos y poco maniobrables, su munición HE tiene una probabilidad muy alta de causar incendios e incluso de hacer ciudadelas, son capaces de hundir destructores de una sola salva a distancias cortas y una alta capacidad de reparación del daño causado por los incendios.
 
-#### Mejores barcos según arena
+### Mejores barcos según arena
 
 Algunos barcos tienen diferencias en sus estadísticas que combinado con las habilidades de los capitanes, habilidades seleccionadas e inspiraciones hace que dada barco sea más efectivo jugado de cierta forma. En términos absolutos no hay un barco mejor que otro ya que también depende de la situación de combate. sin embargo, algunos barcos destacan un poco más que los demás según su arena. Estos son una selección de barcos considerados que en una clasificación estarían en las primeras posiciones.
 
@@ -213,7 +213,7 @@ Algunos barcos tienen diferencias en sus estadísticas que combinado con las hab
 {{< youtube
     video="T0XtUNHTQWQ" >}}
 
-### Uso de recursos
+## Uso de recursos
 
 Al final de cada batalla, con las misiones semanales o de varias semanas se obtienen diversos recursos con los que comprar nuevos barcos y subir el nivel de los capitanes. Los recursos más valiosos por ser más difíciles de conseguir o requieren más tiempo para conseguirlos son las insignias y las recomendaciones.
 
@@ -228,7 +228,7 @@ Subir un capitan al nivel 7 no cuestan muchas órdenes de promoción y permite a
     image3="image:capitan-acorazado.webp" optionsthumb3="200x150" title3="Capitán acorazado"
     caption="Capitanes adecuados para cada tipo de barco según su habilidad base" >}}
 
-### Canales de YouTube sobre el juego
+## Canales de YouTube sobre el juego
 
 Algunos de estos canales son del juego en PC pero dado que en gran parte las mecánicas son las mismas se aplican las mismas reglas de estrategia. Algunos _youtubers_ comparten vídeos de las partidas que juegan a las que les añaden comentarios con lecciones sobre estrategia, toma de decisiones y errores cometidos.
 
@@ -238,7 +238,7 @@ Algunos de estos canales son del juego en PC pero dado que en gran parte las mec
 * [Canal del Tbull](https://www.youtube.com/channel/UC_U5rsqGwuwPOqev6FMclDQ), un jugador también experimentado con algunas [guías específicas de WoW Legends](https://www.youtube.com/watch?v=3Mo_dLIpUU8) y consejos sobre estrategia de batalla según su experiencia de mucho valor. El canal es en inglés.
 * [Canal de Xarkun](https://www.youtube.com/c/Xarkun/videos), otro jugador que ofrece consejos y revisiones de partidas comentando estrategias de batalla al mismo tiempo que análisis de barcos. El canal es específico de WoW Legends de habla inglesa.
 
-### Toxicidad
+## Toxicidad
 
 En la versión de consola dado la limitada forma de comunicación la toxicidad no es elevada, salvo por el _chat_ de voz que algún iluminado que no tiene nada mejor que hacer que culpar con tono de enfadado y reproche a otro de la derrota o de que ha resultado hundido por no darle ayuda, en la versión para PC además dado que tiene un _chat_ de texto puede darse en alguna ocasión alguna situación desagradable. Siguiendo estas reglas tácticas de juego que hacen del juego lo entretenido que es, y coordinandose con el resto de aliados no debería ser uno el que reciba estos mensajes tóxicos.
 
@@ -250,13 +250,13 @@ Es un juego competitivo, hay jugadores muy buenos, quizá con mayores niveles de
     image2="image:ratio-victorias-2.webp" optionsthumb2="300x200" title2="Proporción de victorias"
     caption="Proporción de victorias" >}}
 
-### Diferencias con la versión de PC
+## Diferencias con la versión de PC
 
-#### Portaaviones
+### Portaaviones
 
 Los portaaviones existen ya en la versión para PC y está previsto que se añadan al juego para consola lo que cambiará la estrategia en el juego significativamente. Los aviones de los portaaviones hacen que los destructores sean más fácilmente detectables y los barcos hayan de maniobrar más para evitar los ataques de los aviones bombarderos o torpederos.
 
-#### Submarinos
+### Submarinos
 
 Otra pieza de las batallas navales son los submarinos. En la versión de PC se están probando y buscando formas de añadirlos de modo que no desequilibran el juego y sean divertidos de jugarlos. Este nuevo tipo de barcos es otra forma distinta de juego que también cambia las estrategias básicas.
 

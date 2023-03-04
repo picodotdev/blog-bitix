@@ -136,7 +136,7 @@ La agenda del evento en esta edición ha sido la siguiente, dos _tracks_ con cua
     </tbody>
 </table>
 
-### Lo que no se Vue <em>por Angélica Lozano</em>
+## Lo que no se Vue <em>por Angélica Lozano</em>
 
 En una aplicación con algunos indicadores para el sector de la automoción en la que el _front_ era «una puta chapuza» la replantean para permitir diferentes dispositivos y desacoplar el _frontend_ y _backend_. Usando [Vue][vuejs] las cosas se simplifican al usar sus componentes (componentes... de que me suena...) encapsulando la funcionalidad y utilizando un solo fichero en el que se incluye la plantilla para el HTML, el código JavaScript asociado y los estilos CSS.
 
@@ -157,7 +157,7 @@ Referencia:
     gallery="true"
     image1="image:lo-que-no-se-vue.webp" optionsthumb1="300x200" title1="Lo que no se Vue" >}}
 
-### CSS Grid Layout en acción <em>por Diana Aceves</em>
+## CSS Grid Layout en acción <em>por Diana Aceves</em>
 
 Mas que una charla ha sido una demostración de como implementar con [CSS Grid](https://www.w3.org/TR/css-grid-1/) una [plantilla existente para Wordpress](http://themes.themewaves.com/fuze/#!layout-1) con once variaciones de _layout_, una columna y fila con un texto alineado horizontalmente y verticalmente, dos columnas, tres columnas, dos filas, dos filas dos columnas y así hasta once.
 
@@ -189,7 +189,7 @@ Referencia:
     gallery="true"
     image1="image:css-grid-layout-en-accion.webp" optionsthumb1="300x200" title1="CSS Grid Layout en acción" >}}
 
-### Camino a producción <em>por Mario Marin</em>
+## Camino a producción <em>por Mario Marin</em>
 
 Había oído algo de la tienda de componentes electrónicos para ordenadores [PC Componentes](https://www.pccomponentes.com/) que ahí está luchando con [Amazon][amazon-affiliate], nada más y nada menos, en este nicho de mercado. Es un ejemplo de éxito por como ha pasado de ser una tienda de barrio a convertirse en una de las web de referencia en internet del comercio electrónico. Algunos de sus números en el 2017 son:
 
@@ -208,7 +208,7 @@ Echando la vista atrás se ve lo que has mejorado y es satisfactorio, a pesar de
     gallery="true"
     image1="image:camino-a-produccion.webp" optionsthumb1="300x200" title1="Camino a producción" >}}
 
-### Evitando el efecto dominó en nuestros (mico)servicios <em>por Javi Ferrer y Rafa Gómez</em>
+## Evitando el efecto dominó en nuestros (mico)servicios <em>por Javi Ferrer y Rafa Gómez</em>
 
 Muchas aplicaciones empiezan siendo un monolito, sin embargo aún siendo más fáciles de saber como funcionan y de desarrollar nuevas características no están exentas de problemas como el escalado ante picos de tráfico o que cuando se cae deja de funcionar todo. Los microservicios tratan de solventar algunos de las deficiencias de los monolitos y permiten cosas como múltiples equipos para diferentes funcionalidades, trocear el monolito en partes más pequeñas, usar diferentes lenguajes de programación según se considere el más adecuado para cada parte y escalarlas individualmente.
 

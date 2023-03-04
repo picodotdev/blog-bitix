@@ -43,7 +43,7 @@ Los servicios los mantengo separados ya que al combinarlos pueden surgir problem
     image1="logotype:oauth.svg" optionsthumb1="200x200" title1="OAuth"
     image2="logotype:jwt.svg" optionsthumb2="318x168" title2="JWT" >}}
 
-### Servidor OAuth
+## Servidor OAuth
 
 {{< warning >}}
 Spring ha marcado como obsoleta su implementación de servidor OAuth mostrada a continuación y recomienda usar un proveedor alternativo de autenticación como [Keycloak][keycloak] o [Okta][okta] u otros servicios como [Google][google] o [Github][github].
@@ -75,7 +75,7 @@ Con el _endpoint_ _/oauth/check\_token_ se decodifica el _token_. En la página 
     image1="image:encoded-decoded-jwt.webp" optionsthumb1="600x450" title1="Token JWT codificado y decodificado"
     caption="Token JWT codificado y decodificado" >}}
 
-### Servidor Gateway
+## Servidor Gateway
 
 El servidor _gateway_ en realidad no interviene en la lógica de OAuth porque la autorización se delega en cada servicio que contiene el recurso. Como se indicaba en Idealista estaría bien que el _gateway_ librase de la responsabilidad de autorización a los servicios de los recursos para hacerlos más sencillos, creo que Spring Security en el momento del artículo no está soportado en Spring WebFlux que utiliza el _gateway_.
 
@@ -84,7 +84,7 @@ Lo único necesario par definir el _gateway_ son las dependencias del proyecto, 
 {{< code file="gateway/build.gradle" language="groovy" options="" >}}
 {{< code file="gateway/application.yml" language="yaml" options="" >}}
 
-### Servicio, servidor de recurso
+## Servicio, servidor de recurso
 
 Dado que el servicio interpreta los _tokens_ JWT y aplica reglas de seguridad necesita las mismas dependencias que utiliza el servidor OAuth.
 

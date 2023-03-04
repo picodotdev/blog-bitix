@@ -22,7 +22,7 @@ Los ingresos que me genera el blog por la publicidad de [AdSense][google-adsense
 
 Aunque este año 2020 no ha sido normal y lo he notado significativamente en los ingresos de AdSense respecto a los años anteriores son suficientes para contribuir aunque sea un poco con estas donaciones.
 
-### Phoronix
+## Phoronix
 
 [Phoronix][phoronix] es un sitio web dedicado a noticias relacionadas con el software y hardware libre o de código abierto. Un medio que da noticias sobre los progresos desde en el _kernel_ de Linux, avances en los controladores gráficos pero también de las distribuciones BSD y otra multitud de programas junto con detallados análisis de rendimiento.
 
@@ -34,7 +34,7 @@ Un sitio web recomendable al que suscribirse para estar informado sobre los avan
     gallery="false"
     image1="logotype:phoronix.webp" optionsthumb1="300x200" title1="Phoronix" >}}
 
-### Mozilla, Firefox
+## Mozilla, Firefox
 
 En esta ocasión repito en la donación de hace unos años a la fundación [Mozilla][mozilla] que desarrolla el navegador web [Firefox][firefox]. Es mi navegador web preferido y que sigo usando para uso personal. Un navegador que le da importancia a la privacidad y seguridad para que sitios web malintencionados no puedan rastrear, recolectar ni abusar de los datos de los usuarios sin su consentimiento o desconocimiento al navegar por internet.
 
@@ -44,7 +44,7 @@ Es la alternativa más usada al navegador [Chrome][google-chrome] y [Chromium][g
     gallery="false"
     image1="logotype:mozilla.svg" optionsthumb1="300x200" title1="Mozilla" >}}
 
-### GnuPG
+## GnuPG
 
 [GnuPG][gnupg] permite mantener comunicaciones seguras y proteger la privacidad de los usuarios, no solo permite cifrar y descifrar correos electrónicos sino también cualquier otro archivo. El correo electrónico [Gmail][google-gmail] de [Google][google] lee y analiza el contenido de los correos electrónicos que reciben y envían sus usuarios e incluye algunos enlaces de publicidad. Algunas alternativas a Gmail centradas en la seguridad y privacidad son [ProtonMail][protonmail] y [Tutanota][tutanota], por otro lado el cliente de correo electrónico [Thunderbird][thunderbird] ha añadido soporte para OpenPGP sin necesidad de complementos adicionales, se puede usar como alternativa a la interfaz web de Gmail que no incluye esta funcionalidad.
 
@@ -54,7 +54,7 @@ Hace tiempo que no hago uso habitual de GnuPG, pero es uno de esos proyectos que
     gallery="false"
     image1="logotype:gnupg.svg" optionsthumb1="300x200" title1="GnuPG" >}}
 
-### Comprobantes de las donaciones
+## Comprobantes de las donaciones
 
 Me gusta pensar que realmente los que hacen posible estas donaciones aun con su desconocimiento son las personas que acceden a este blog en busca de los artículos que escribo, los que lo siguen de forma habitual y la mayoría que llegan de rebote a través del buscador de Google. No acepto [donaciones][blogbitix-page-p4], al menos no de forma directa pero si ofrezco como alternativa que cuando alguien haga [una compra en Amazon][amazon-affiliate] utilice uno de los enlaces de afiliado de este blog, el precio es el mismo al hacer la compra pero yo recibo una pequeña comisión que cada cierto tiempo además de AdSense me permite hacer estas donaciones a proyectos 
 como estos además ser una forma de motivarme para continuar escribiendo en el blog.

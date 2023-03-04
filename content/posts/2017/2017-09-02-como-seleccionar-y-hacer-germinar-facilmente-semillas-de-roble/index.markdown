@@ -32,7 +32,7 @@ En el caso de las semillas de roble común o _quercus robur_, que serán las que
     image2="image:roble-hojas.webp" optionsthumb2="300x200" title2="Hojas y bellotas de roble"
     caption="Roble, hojas y bellotas" >}}
 
-### Selección de semillas
+## Selección de semillas
 
 Para obtener una mayor tasa de éxito en la germinación hay que averiguar cuales de las semillas son viables. En el caso de las semillas o bellotas de roble común las viables son aquellas que sumergiéndolas en agua no flotan, en la foto izquierda no hay ninguna que flote ya que estas las he recogido en la temporada en curso pero en la de la derecha si hay algunas que flotan por ser de alguna temporada anterior y aunque tenga el color adecuado se consideran no viables y aptas para germinar ya que muy posiblemente tengan algún tipo de podredumbre. Las que flotan están vacías o podridas y no es probable que germinen por lo que se tiran a la basura directamente. En la recolección las mejores semillas son aquellas con color parduzco, con cierto brillo al limpiarlas, que apretándola no ceda y que tengan el mayor tamaño de las que encontremos.
 
@@ -55,7 +55,7 @@ La época que los robles comunes generan las semillas son a finales de septiembr
     image3="image:bellotas.webp" optionsthumb3="300x200" title3="Bellotas"
     caption="Recogida y comparación de bellotas" >}}
 
-### Germinación
+## Germinación
 
 Para forzar la germinación he leído varios métodos comentado en algunas páginas de internet. Uno de ellos consiste en envolver las semillas con un papel de cocina y dejarlas humedecidas de forma constante (no sumergidas) durante unos 10-15 días en un vaso. Otro método similar es en vez de usar papel de cocina usar algodón. El tercero es usar una bolsa de plástico cerrada también manteniéndola humedecida de forma constante. En los tres casos proporcionado oscuridad a las semillas.
 
@@ -73,7 +73,7 @@ No todas las semillas germinarán pero las bellotas de roble tienen una buena ta
     image2="image:bellotas-germinando.webp" optionsthumb2="300x200" title2="Bellotas germinando"
     caption="Germinación con bolsa de plástico y bellotas germinando" >}}
 
-### Plantación
+## Plantación
 
 Una vez que la semilla ya ha empezado a brotar la raíz se recomienda plantarla de forma vertical con la raíz hacia abajo y en otras de forma horizontal sobre la tierra parcialmente tapada pero siempre intentando que el tallo quede en la parte superior para facilitar el crecimiento al futuro plantón.
 

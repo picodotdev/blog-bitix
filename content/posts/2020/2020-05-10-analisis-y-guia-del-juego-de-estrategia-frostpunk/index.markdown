@@ -51,7 +51,7 @@ Ha sido lanzado para PC y consolas, yo lo he jugado en la PlayStation 4. Los tex
 {{< game-spoiler >}}
 {{< tableofcontents >}}
 
-### Estrategia inicial
+## Estrategia inicial
 
 Frostpunk es un juego de gestión de recursos en el que hay que ser previsor a las necesidades futuras para no malgastar tiempo esperando a tener los recursos necesarios. Hay que construir edificios por adelantado antes de que sean imprescindibles o acumular recursos para acometer la siguiente investigación en cuanto se pueda. De forma regular es aconsejable realizar guardados para poder volver a un punto anterior para poder reconducir la partida tomando otras decisiones.
 
@@ -84,7 +84,7 @@ El otro árbol de desarrollo son las investigaciones proporcionadas por los tall
 
 En la fase inicial también será necesario construir un puesto de investigación para explorar los alrededores que proporcionarán detalles de la historia, conseguir recursos y nuevos colonos. Hay diferentes construcciones entre las que están las dedicadas a la gente como casas y que mejoran la esperanza, salud como puestos médicos y hospitales, los dedicados a recursos como comida y materias primas como carbón, madera y acero, finalmente los dedicados a tecnología como los talleres, factoría y calefactores.
 
-### Estrategia juego medio
+## Estrategia juego medio
 
 Una vez asegurada la obtención de recursos imprescindibles en la fase de juego medio los objetivos son mantener el descontento en niveles bajos y la esperanza en niveles altos de lo contrario será la causa de finalización del juego.
 
@@ -137,7 +137,7 @@ También será necesario realizar alguna investigación para las mejoras del gen
     image2="image:frostpunk-decisiones-2.webp" optionsthumb2="300x250" title2="Algunas decisiones difíciles"
     caption="Algunas decisiones difíciles" >}}
 
-### Estrategia juego final
+## Estrategia juego final
 
 El juego final consiste en una tormenta que dura una semana y en la que hay que disponer del suficiente carbón y comida acumulada en los depósitos grandes. Ya que en la tormenta final los puestos de cazadores no pueden salir a obtener comida y en los peores momentos de la tormenta los trabajadores dejarán sus puestos de trabajo. Tener autómatas permite seguir pudiendo conseguir carbón.
 
@@ -150,7 +150,7 @@ Durante las exploraciones habrá que tomar la decisión de dejar abandonados a a
     image1="image:frostpunk-end.webp" optionsthumb1="300x250" title1="Supervivencia"
     caption="Supervivencia" >}}
 
-### Nuevos modos de juego
+## Nuevos modos de juego
 
 Al finalizar el modo historia se habilitan otros modos de juego y escenarios con otras formas de supervivencia que le dan al juego mas rejugabilidad.
 
@@ -169,7 +169,7 @@ Al finalizar el modo historia se habilitan otros modos de juego y escenarios con
     gallery="true"
     image1="image:frostpunk-modo-infinito.webp" optionsthumb1="200x150" title1="Modo infinito" >}}
 
-### Frostpunk Wiki 
+## Frostpunk Wiki 
 
 En la [Wiki de Frostpunk de Fandom](https://frostpunk.fandom.com/wiki/Frostpunk_Wiki) están recogidos con detalle de los construcciones, recursos, tecnologías, leyes y escenarios. Esta información resulta muy útil para elegir la que consideremos la mejor estrategia o revisar si la que utilizamos no es del todo efectiva.
 
@@ -182,7 +182,7 @@ En la [Wiki de Frostpunk de Fandom](https://frostpunk.fandom.com/wiki/Frostpunk_
 * [Ciudadanos](https://frostpunk.fandom.com/wiki/Citizens)
 * [Ciudades](https://frostpunk.fandom.com/wiki/Cities)
 
-### Banda sonora original
+## Banda sonora original
 
 {{< youtube
     video="uLF6VFME2jc" >}}

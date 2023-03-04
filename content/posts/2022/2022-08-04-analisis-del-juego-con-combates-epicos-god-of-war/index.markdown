@@ -51,7 +51,7 @@ El juego hace varias menciones al Ragnarok que es la segunda parte de God of War
 {{< game-spoiler >}}
 {{< tableofcontents >}}
 
-### Juego
+## Juego
 
 El God of War de la PlayStation 4 no es el primero de la saga ya que en anteriores generaciones se lanzaron ya varios para las consolas de PS2 y PS3 de los cuales solo está la remasterización de God of War III para la PS4.
 
@@ -125,7 +125,7 @@ El trofeo platino no es difícil de conseguir ni requiere dedicar infinitas hora
     image1="image:god-of-war-trofeo-platino.webp" optionsthumb1="650x450" title1="Trofeo platino"
     caption="Trofeo platino" >}}
 
-#### Armas, recursos, mejoras y equipo
+### Armas, recursos, mejoras y equipo
 
 A lo largo del juego tanto Kratos como Atreus mejoran sus armas, armaduras y habilidades gracias a los diferentes recursos de materiales que consiguen asi como piezas de plata con las que se pueden adquirir encantamientos y fabricar nuevas armaduras. Estas nuevas habilidades, armas y armaduras permiten enfrentarse a enemigos más poderosos.
 
@@ -166,7 +166,7 @@ Otros objetos destacados son las manzanas de Iddum y cuernos de hidromiel sangri
     image2="image:god-of-war-cuerno-de-hidromiel-sangrienta-2.webp" optionsthumb2="200x150" title2="Cuernos de hidromiel sangrienta"
     caption="Manzanas de Iddum y cuernos de hidromiel sangrienta" >}}
 
-#### Puzzles
+### Puzzles
 
 A lo largo del juego hay una variedad bastante amplia de puzzles que resolver para abrir algunos cofres. El juego simplemente proporciona un ejemplo de la mecánica pero no da apenas ayuda ni ninguna pista en los siguientes casos con lo que quiere pensar y aunque parezca que no hay solución la hay.
 
@@ -180,7 +180,7 @@ Algunos de esos puzzles tienen algo de lógica pero no dan pistas, simplemente e
     image2="image:god-of-war-puzzles-2.webp" optionsthumb2="200x150" title2="Puzzles"
     caption="Puzzles" >}}
 
-#### Coleccionables
+### Coleccionables
 
 Para completar el amplio conjunto de mecánicas de juego que ofrece God of War al igual que en muchos otros juegos hay coleccionables. Muchos de los coleccionables no son imprescindibles para completar el juego sin embargo algunos dan un poco de experiencia y encontrarlos es otra forma de reto.
 
@@ -220,7 +220,7 @@ Los cuervos de Odin son los espías y ojos de Odin para seguir los pasos y mante
 
 Ninguno de los coleccionables están especialmente escondidos pero requiere explorar los mapas con cierto detalle. En cada zona Midgard y reino se indica una leyenda de que elementos y su número quedan por descubrir. Algunos de los coleccionables son requeridos para obtener el trofeo platino que en el God of War pero que es mucho más sencillo de conseguir que en otros juegos.
 
-#### Combate
+### Combate
 
 La historia de God of War está a la altura de la categoría del juego, pero quizá el aspecto en el que más destaca el juego es en de combate y lucha. Los combates son significativamente violentos, épicos y en momentos frenéticos.
 
@@ -274,7 +274,7 @@ Durante el combate el juego ofrece indicadores de ayuda para evitar los golpes. 
     image3="image:god-of-war-indicador-de-amenaza-3.webp" optionsthumb3="200x150" title3="Indicadores de amenaza"
     caption="Indicadores de amenaza" >}}
 
-#### Valquirias
+### Valquirias
 
 Los enemigos más poderosos y más difíciles son las valquirias. Estas ofrecen una lucha sin descanso con ataques que si no se esquivan o bloquean quitan gran cantidad de vida. No dan mucho margen de error y fallar e esquivar varios de sus ataques seguidos significa perder o quedarse con muy poca vida.
 
@@ -297,21 +297,21 @@ Las derrotas iniciales en el periodo de aprendizaje en los primeros enfrentamien
     image3="image:god-of-war-valquirias-3.webp" optionsthumb3="200x150" title3="Valquirias"
     caption="Valquirias" >}}
 
-### Banda sonora original
+## Banda sonora original
 
 La banda sonora completa y ambienta el juego acorde a su temática.
 
 {{< youtube
     video="0boEgOtjhJk" >}}
 
-### Película con la historia del juego
+## Película con la historia del juego
 
 La historia del juego se puede ver como una película en vídeos de YouTube, para ver cómo es, para recordar algún detalle o ver de nuevo una escena del juego.
 
 {{< youtube
     video="moWL3uodbgY" >}}
 
-### Ubicación de coleccionables
+## Ubicación de coleccionables
 
 La mayoría de coleccionables no están especialmente escondidos, la mayoría se encuentra de camino a las misiones. Aún así, dado su número hay algunos que pasarán desapercibidos y para obtenerlos hay que buscarlos. Por suerte, en el mapa hay una leyenda dividida en zonas de qué elementos faltan de encontrar lo que facilita enormemente la tarea de completar toda la zona.
 

@@ -32,7 +32,7 @@ Los editores de documentos ahora tienen funciones para que varias personas colab
 
 {{< tableofcontents >}}
 
-### Herramientas de productividad y organización
+## Herramientas de productividad y organización
 
 Usar las aplicaciones adecuadas que faciliten la tarea o a organizarse suponen una mejora en la productividad tanto en la facilidad para realizar la tarea como en el tiempo empleado para completarla. A esta categoría pertenecen las aplicaciones de productividad.
 
@@ -42,7 +42,7 @@ Estas aplicaciones pueden ser utilizadas para uso personal pero también para gr
 
 A continuación incluyo tres aplicaciones que se utilizan para tener un registro de las tareas los aspectos más relevantes de cada una de ellas. Al final, incluyo una pequeña lista de aplicaciones alternativas a las presentadas.
 
-#### Getting Things GNOME!
+### Getting Things GNOME!
 
 {{< logotype image1="gtg.svg" >}}
 
@@ -62,7 +62,7 @@ Que esté unicamente disponible para GNU/Linux y no disponga de una versión web
 {{< youtube
     video="0u1hQxsIB1M" >}}
 
-#### Notion
+### Notion
 
 {{< logotype image1="notion.svg" >}}
 
@@ -85,7 +85,7 @@ Notion es una aplicación de pago pero dispone de una opción de uso personal si
 {{< youtube
     video="O8qdvSxDYNY" >}}
 
-#### ClickUp
+### ClickUp
 
 {{< logotype image1="clickup.svg" >}}
 
@@ -102,7 +102,7 @@ Tiene un plan gratuito para uso personal no demasiado restrictivo y dispone de a
 {{< youtube
     video="SYktbpKcVp0" >}}
 
-#### Otras
+### Otras
 
 Tanto Notion como ClickUp son herramientas de una nueva generación que añaden nuevas características a los más simples editores de textos. Estas nuevas características les hacen muy flexibles y les permiten integrar en una única herramienta varías específicas según el propósito con el ahorro de costes y simplificación y número de de herramientas diferentes usadas.
 

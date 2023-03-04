@@ -23,7 +23,7 @@ Hace tiempo que quería cambiarme de compañía eléctrica. No es que estuviese 
 
 {{< tableofcontents >}}
 
-### Opciones de compañías de suministro de electricidad y de gas
+## Opciones de compañías de suministro de electricidad y de gas
 
 Entre las compañías eléctricas que empecé a barajar como posibles candidatas estaban [Holaluz][holaluz], [Pepeenergy][pepeenergy] y algunas otras menos conocidas entre las alternativas a las tradicionales grandes como [Iberdrola](https://www.iberdrola.es/), [Gas Natural](https://areaclientes.gasnaturalfenosa.es/hogar), [EDP](http://www.edpenergia.es/es/) o [Endesa](https://www.endesaclientes.com/).
 
@@ -36,7 +36,7 @@ Cambiar de compañía comercializadora eléctrica es muy sencillo y no hay ningu
     image1="logotype:holaluz.svg" optionsthumb1="300x250" title1="Holaluz"
     image2="image:pepeenergy.webp" optionsthumb2="300x250" title2="Pepeenergy" >}}
 
-### Comparar precios entre compañías y calcular ahorro
+## Comparar precios entre compañías y calcular ahorro
 
 Es fácil calcular el ahorro que supondría cambiar de una compañía a otra. Basta obtener el último recibo de la factura con la compañía actual, en el recibo hay dos conceptos principalmente el coste del término de potencia fijo que es independiente del consumo y el coste de la energía consumida que es variable en función del consumo en el periodo facturado. Por otro lado, para comparar cual sería el importe con otra compañía hay que informarse del precio de estos mismos conceptos. [Holaluz tiene detallados los precios de las tarifas](https://www.holaluz.com/tarifas-electricidad/) en su propia web, con y sin impuestos en los diferentes modelos de tarifas.
 
@@ -68,7 +68,7 @@ Transcurrido un año y unos meses me han actualizado el precio a 0,133000 que es
     image2="image:factura-holaluz-4.webp" optionsthumb2="300x200" title2="Factura Holaluz"
     caption="Factura de Holaluz después de unos meses con consumo" >}}
 
-### Otros motivos: energía 100% renovable y trato al cliente
+## Otros motivos: energía 100% renovable y trato al cliente
 
 Otro de los motivos de cambiarme a Holaluz es que me daba la sensación de tratar a los clientes mejor, sin cometer los abusos que a veces hacen las grandes compañías tradicionales que forman el oligopolio energético en España enviando comerciales importunando a puerta fría, por teléfono y ofreciendo regalos envenenados en forma de caros servicios de mantenimiento con cierto descuento durante un año pasado el cual el sablazo es grande. Este mismo motivo es el que utilicé para [elegir proveedor de internet][blogbitix-238] cuando opté por Pepephone. En ambos casos no es solo que estas empresas traten mejor a sus clientes sino que también sus precios son mejores y en el caso de Holaluz por si fuera poco ofreciendo energía verde.
 
@@ -82,7 +82,7 @@ Otra ventaja de Holaluz es que factura mensualmente y no bimensualmente o factur
 
 En cada factura se puede ver lo facturado, el ajuste de lo estimado una vez conocen el consumo real y solicitar modificar la cuota mensual del modo de pago sin sorpresas. En la zona de usuario es posible realizar de forma sencilla ciertos trámites sin necesidad de realizar llamadas telefónicas al servicio de atención al cliente como cambiar la potencia contratada que ajustándola se puede conseguir un ahorro de unos 3 € al mes por cada tramo de potencia reducido y no necesario o cambiar la cuota de la tarifa sin sorpresas.
 
-### Trámites para el cambio de compañía
+## Trámites para el cambio de compañía
 
 No hay ninguna diferencia entre la electricidad de cualquier compañía, la diferencia entre las empresas está en el precio, el origen de la electricidad que ofrecen, el servicio de atención al cliente y el trato que ofrecen a sus clientes. Compañías como Holaluz tienen un precio mejor que las grandes tradicionales, ofrecen energía 100% de origen renovable, el servicio de atención al cliente es bueno y el trato significativamente mejor.
 
@@ -97,7 +97,7 @@ En el blog de Holaluz escriben artículos muy buenos sobre el funcionamiento de 
 * [Blog Holaluz](https://blog.holaluz.com)
 * [Preguntas frecuentes](https://www.holaluz.com/preguntas/)
 
-### Código amigo para obtener un cheque regalo
+## Código amigo para obtener un cheque regalo
 
 Finalmente, disponen de una promoción con la que ofrecen un cheque regalo en forma de ingreso en cuenta bancaria si al hacer la contratación se introduce un código un amigo obtenido por la recomendación de otro cliente. Al hacer la contratación introduciendo el código del amigo Holaluz dan un descuento de 20 € a cada uno una vez se completa el alta, al nuevo cliente y al cliente que proporciona el código amigo.
 

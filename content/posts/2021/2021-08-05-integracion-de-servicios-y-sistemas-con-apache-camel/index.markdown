@@ -27,7 +27,7 @@ En vez de sustituir servicios y sistemas por unos nuevos una opción que se suel
 
 {{< tableofcontents >}}
 
-### La librería Apache Camel
+## La librería Apache Camel
 
 Apache Camel es una librería ligera destinada a realizar tareas de integración entre servicios y sistemas. La de utilizar esta librería sobre realizar una integración con código propio específico para cada integración es que Apache Camel ya proporciona una buena cantidad de funcionalidades sin necesidad de tener que implementarlas.
 
@@ -39,7 +39,7 @@ Apache Camel soporta multitud de protocolos de comunicación como HTTP, FTP o JM
     linkids="cb1717df1c060bb1b5abc52dbef1eca4"
     asins="1617292931" >}}
 
-#### Conceptos de Apache Camel
+### Conceptos de Apache Camel
 
 Apache Camel utiliza varios conceptos. La integración o funcionalidades desarrolladas se modelan como un flujo, ruta o _route_ que comienza a partir de un origen o _consumer_ y se envía a un destino o _producer_. En este flujo se tratan mensajes o _Exchange_ que contiene además de los datos del mensaje o _payload_ metadatos como cabeceras asociadas. En los diferentes pasos del flujo el _Exchange_ puede sufrir transformaciones con los procesadores o _processor_ y en el que se aplican los diferentes patrones de integración o _integration patterns_.
 
@@ -67,7 +67,7 @@ También soporta los patrones de integración identificados en el libro [Enterpr
     linkids="69d583b77830660c9d50944e53b68bba"
     asins="0321127420" >}}
 
-#### Patrones de integración
+### Patrones de integración
 
 Algunos de los patrones básicos que soporta Apache Camel son _choice_ para elegir rutas alternativas a las que dirigir los mensajes, _filter_ para descartar los mensajes que no cumplan alguna condición, _multicast_ para enviar un mensaje a varios destinos, _recipient list_ para enviar a varios destinos de forma dinámica o _wire tap_ para inspeccionar los mensajes sin alterar su flujo normal. Esos son solo unos pocos patrones de integración soportados.
 
@@ -81,7 +81,7 @@ Algunos de los patrones básicos que soporta Apache Camel son _choice_ para eleg
     image2="image:recipient-list.webp" optionsthumb2="300x200" title2="Patrón recipient list"
     caption="Diferentes patrones de integración" >}}
 
-### Ejemplo básico con Apache Camel
+## Ejemplo básico con Apache Camel
 
 Apache Camel al ser una librería es muy fácil de integrarlo en cualquier tipo de aplicación, en este ejemplo se utiliza Spring Boot. El ejemplo consiste en dos rutas, una que simplemente muestra en la salida los mensajes que se envía, la otra ruta lee los archivos CSV de un directorio que contienen listas de productos en diferentes columnas, filtra los productos que no tienen un importe superior a una cantidad, los transforma y les añade el IVA y finalmente los muestra en la salida, cada vez que en el directorio se añade un CSV se procesa.
 

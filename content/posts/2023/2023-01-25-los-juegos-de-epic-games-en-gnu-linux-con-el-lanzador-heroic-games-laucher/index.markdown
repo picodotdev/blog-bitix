@@ -40,7 +40,7 @@ Es posible jugar a juegos de Windows en GNU/Linux gracias a [Wine][wine] que tra
 
 {{< tableofcontents >}}
 
-### Juegos gratuitos de la Epic Games
+## Juegos gratuitos de la Epic Games
 
 Desde hace mucho tiempo la [Epic Games][epicgames] regala semanalmente al menos un juego de forma gratuita que se puede reclamar para incorporarlo a la biblioteca digital de esta tienda de juegos. Los juegos regalados son de diferentes géneros con lo que al cabo del tiempo reclamando aquellos en los que se está interesado se forma una colección de juegos interesante.
 
@@ -54,7 +54,7 @@ Aún así entre todos los que regala de vez en cuando hay algunos juegos que son
 
 Para jugar en GNU/Linux a los juegos de la Epic Games se necesita una forma de instalarlos y lanzarlos.
 
-### Lanzador de juegos Heroic Games Launcher
+## Lanzador de juegos Heroic Games Launcher
 
 Steam tiene un cliente para la instalación y ejecución de los juegos desarrollado específicamente para GNU/Linux usando Wine y Proton, la versión de Wine desarrollada por Steam. La Epic Games no tiene un cliente oficial ni se preocupa por GNU/Linux con lo que hay que recurrir a lanzadores desarrollados por personas de la comunidad de GNU/Linux.
 
@@ -87,7 +87,7 @@ Hay que iniciar sesión con las credenciales de la Epic Games, GOG o ambas tras 
     image3="image:heroic-games-launcher-5.webp" optionsthumb3="300x200" title3="Juego de Epic Games con Heroic Games Launcher"
     caption="Juego de Epic Games con Heroic Games Launcher" >}}
 
-### Equipo para jugar en GNU/Linux
+## Equipo para jugar en GNU/Linux
 
 Muchos de los juegos requieren un equipo potente siendo el componente principal la tarjeta gráfica. Hasta hace poco había menos opciones si se quería jugar en GNU/Linux, por un lado los controladores de [NVIDIA][nvidia] son privativos y su uso en GNU/Linux requiere su instalación lo puede dar lugar a algunos problemas. Intel siempre ha dado buen soporte a GNU/Linux en sus controladores gráficos pero hasta la comercialización de las gráficas [Intel Arc][intel-arc] dedicadas a finales del 2022 solo tenía gráficas integradas de bajo rendimiento para los juegos. Por la parte de AMD que si tenía ya gráficas dedicadas [Radeon][amd-radeon] ha empezado a desarrollar controladores gráficos de código abierto con lo que su uso es sencillo y en general sin ningún problema ni con un _kernel_ reciente de Linux. Para Intel y AMD no hace falta instalar los controladores al contrario de los de NVIDIA.
 
@@ -102,7 +102,7 @@ Hace ya unos años compré un Intel NUC _Bean Canyon_ y para jugar una [PlayStat
 * [Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)][blogbitix-363]
 * [Desempaquetado de PlayStation 4 Slim de 1 TB][blogbitix-432]
 
-### Otras opciones de juegos en GNU/Linux
+## Otras opciones de juegos en GNU/Linux
 
 Más allá de los juegos triple AAA hay muchos usuarios que siguen disfrutando de juegos retro con [Mame][mame] o lanzadores de juegos de arcade y máquinas recreativas como [RetroArch][retroarch]. O los míticos juegos de _point and clic_ como _Monkey Island_, _Maniac Mansion_ o _Day of the Tentacle_.
 

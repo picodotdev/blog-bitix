@@ -27,7 +27,7 @@ La marca [KEMOVE][kemove] me envía un nuevo teclado mecánico el [KEMOVE DK61](
 
 {{< tableofcontents >}}
 
-### Características técnicas del teclado KEMOVE DK61
+## Características técnicas del teclado KEMOVE DK61
 
 El [KEMOVE DK61](https://www.kemove.com/product/dk61-snowfox-shadow/?wpam_id=17) es un teclado mecánico compacto que tiene una combinación de características de los [DIERYA DK61E](https://www.dieryatech.com/item/dk61e-wired-mechanical-keyboard) y el [DIERYA DK63](https://www.dieryatech.com/item/dk63-wireless-wired-mechanical-keyboard). La marca KEMOVE se diferencia de la marca DIERYA en la calidad de los teclados y materiales, también sus teclados tiene un precio ligeramente mayor pero sin ser excesivamente mucho más y que salvo que se quiera ajustar el presupuesto la diferencia de precio compensa en las las mejoras proporcionadas. Loas DIERYA aún siendo unos buenos teclados con un precio muy ajustado para lo que ofrecen tenían algunos puntos a mejorar, algunos de ellos han sido resueltos en el KEMOVE DK61.
 
@@ -72,19 +72,19 @@ Las características completas del teclado son:
 
 Para conocer más detalles sobre los teclados mecánicos y en qué se diferencia de los teclados de membrana con una guía de introducción escribí el siguiente artículo comentando sus principales características, así como varios desempaquetados y análisis de teclados mecánicos con la que comparar con otros modelos más en detalle. Escribí una [introducción a los conceptos básicos de los teclados mecánicos][blogbitix-536] puedes visitar la guía de ese artículo y si quieres compararlo con un tecla de otra marca y tipo para saber cual te conviene según tus necesidades o preferencias escribí un [Desempaquetado de teclado mecánico Glorious GMMK TKL][blogbitix-609] junto con otros buenos modelos de teclados a considerar.
 
-#### Diferencias con los teclados DIERYA DK63 y DK61E
+### Diferencias con los teclados DIERYA DK63 y DK61E
 
 Los modelos DIERYA DK63, DK61E y el KEMOVE DK61 son modelos muy parecidos entre ellos, pero examinando los detalles del KEMOVE DK61 se nota que es un teclado con algunas características que aúnan lo mejor de todos. Empezando porque el KEMOVE DK61 es inalámbrico al igual que el DK63 al contrario que el DK61E que solo era cableado, pero tiene una gran batería de 3000 mAh mayor que la del DK63 que era de 1900 mAh.
 
 Tiene patas para regular la altura que ninguno de los DIERYA ofrecía. El switch para activar la conexión inalámbrica está en el lateral del teclado más accesible que en la parte inferior del DK63 y con un _switch_ con un acabado de mejor calidad. La serigrafía de las funciones en vez de en la parte superior de la tecla está en un lateral, esto tiene la ventaja de que al ser de tipo _pad printing_ evita que se desgaste y por otro lado hace la tecla más legible al tener menos símbolos en la parte superior para funciones que se usan menos habitualmente. Aún estando en un lateral la serigrafía es perfectamente legible desde la posición de uso. El _backplate_ es de color blanco que resalta la iluminación RGB y finalmente se incluye un muy útil cubre teclado de plástico para evitar polvo cuando no se usa.
 
-#### Consideraciones a tener en cuenta
+### Consideraciones a tener en cuenta
 
 Al ser un teclado compacto hay que considerar que algunas teclas han de usarse como una combinación, hasta acostumbrarse puede resultar incómodo. También hay que tener en cuenta que es un teclado con disposición ANSI que es diferente de la habitual en España que es ISO, tiene algunas diferencias en los tamaños de algunas teclas como la tecla _Return_. En caso de querer _keycaps_ con serigrafía de teclado en Español hay que comprarlas aparte, en [AliExpress hay unos _keycaps_ con disposición en Español](https://es.aliexpress.com/item/4000130061265.html) que usa mucha gente.
 
 La conexión inalámbrica es Bluetooth con lo que requiere de que el dispositivo donde se tenga Bluetooth y esté la conexión disponible, por esto al acceder a la BIOS del equipo es probable que requiera utilizar la conexión por cable que tampoco es demasiado inconveniente.
 
-#### Dónde comprar
+### Dónde comprar
 
 El [teclado mecánico KEMOVE DK61 se puede comprar directamente en la página oficial](https://www.kemove.com/product/dk61-snowfox-shadow/?wpam_id=17) al mejor precio con la ventaja de poder hacer el pago mediante [PayPal][paypal] así como otros accesorios como una funda de transporte para el teclado, _keycaps_ y _switches_. Si el modelo elegido está [disponible en la página de Amazon][amazon-kemove-dk61] del propio país lo envían directamente de Amazon en vez de China a un precio de unos 90 € y algo más barato en los momentos en tiene aplicado un descuento en el precio.
 
@@ -102,9 +102,9 @@ Si después de leer el artículo decides comprar uno de estos teclados y en el m
 {{< amazon
     tags="keyboard-kemove-dierya" >}}
 
-### Desempaquetado del teclado mecánico KEMOVE DK61
+## Desempaquetado del teclado mecánico KEMOVE DK61
 
-#### La caja
+### La caja
 
 La caja del KEMOVE muestra el logotipo de la marca en la parte delantera y y se compone de una ventana que con el protector de plástico del teclado deja ver una parte del él, tiene una serigrafía con relieve únicamente por motivos estéticos pero que indica que hasta la caja está cuidada.
 
@@ -125,7 +125,7 @@ En la parte trasera se muestran dos ilustraciones y las características básica
     image2="image:kemove-dk61-caja-7.webp" optionsthumb2="200x150" title2="Caja del teclado KEMOVE DK61"
     caption="Caja del teclado KEMOVE DK61" >}}
 
-#### El contenido de la caja
+### El contenido de la caja
 
 El contenido de la caja aparte del propio teclado se compone de su manual de usuario en el que se muestran los diferentes grupos de teclas que se usan en combinación con la tecla de función junto con la descripción de que hacen que es útil como referencia en caso de cambiar los _keycaps_, el cable para la conexión al ordenador y carga de la batería, una tarjeta de garantía, un extractor de _keycaps_ y un extractor de _switches_ y tres _switches_ adicionales para probar otros tipos de _switches_ o reemplazar alguno, también sirven como reemplazo en caso de que alguno se estropee.
 
@@ -148,7 +148,7 @@ Un detalle que en mi caso echaba en falta en los DIERYA era que no incluían una
     image2="image:kemove-dk61-contenido-2.webp" optionsthumb2="300x200" title2="Contenido de la caja del teclado KEMOVE DK61"
     caption="Contenido de la caja del teclado KEMOVE DK61" >}}
 
-#### El teclado
+### El teclado
 
 El cuerpo del teclado es completamente de plástico que da sensación de resistente con un pequeño biselado en la parte delantera. En gran medida tiene el mismo aspecto de los DIERYA y es que el teclado tampoco necesitaba ninguna mejora adicional. Las diferencias están en la parte trasera que incluye el nombre de la marca y las patas que permite regular la altura al menos en una posición cosa de las que carecían los DIERYA. Por otro lado en este KEMOVE tiene dos interruptores que están en el lateral para activar el modo inalámbrico y cambiar el modo de compatibilidad entre [Windows][windows] y [macOS][macos].
 
@@ -179,7 +179,7 @@ Conserva las mismas dimensiones que los DIERYA DK61E y DK 63, siendo para el KEM
     image2="image:kemove-dk61-teclado-11.webp" optionsthumb2="200x150" title2="Teclado KEMOVE DK61"
     caption="Teclado KEMOVE DK61" >}}
 
-#### Los _switches_
+### Los _switches_
 
 El teclado se ofrece premontado con switches Gateron, Cherry MX y Kailh, los primeros están en Amazon y se envían desde el país de la página si están disponibles, los Kailh se ofrecen en la página de KEMOVE. Por supuesto, se ofrece una amplia gama de colores dentro de los Gateron, que incluyen los tres tipos básicos de lineales, táctiles y sonoros, dentro de estos tipos básicos algunos con mayor resistencia para aquellos que prefieran unas teclas que sean algo más duras.
 
@@ -192,7 +192,7 @@ En la página de Gateron hay una leyenda con la descripción de cada _switch_ se
     image1="image:kemove-dk61-switches-1.webp" optionsthumb1="300x200" title1="Swicthes eléctricos Gateron y estabilizador del KEMOVE DK61"
     caption="Swicthes eléctricos Gateron y estabilizador del KEMOVE DK61" >}}
 
-#### Los _keycaps_
+### Los _keycaps_
 
 Los keycaps son de plástico PBT considerado generalmente mejor por ofrecer mayor durabilidad que el plástico ABS más barato, el plástico PBT no es de lo más gruesos que hay pero es más que suficiente y no presenta ningún problema en su uso y durabilidad. La serigrafía para las leyendas principales de la tecla es de doble disparo o _double shot_ que evita que con el uso se deteriore como ocurre en otras formas de impresión más baratas pero también de peor calidad. La leyenda de las teclas de función es de _pad printing_ que no ofrece las mismas garantías de durabilidad pero al está en una lateral del _keycap_ que no se suele tocar con los dedos su durabilidad no es afectada, por otro lado, al esta la leyenda de las teclas de función en un lateral hace que las teclas tengan un aspecto limpio y la leyenda principal se vea sin ninguna distracción.
 
@@ -203,7 +203,7 @@ Al ofrecerse un cubre teclado permite minimizar la cantidad de polvo que se acum
     image1="image:kemove-dk61-keycaps.webp" optionsthumb1="300x200" title1="Keycaps del KEMOVE DK61"
     caption="Keycaps del KEMOVE DK61" >}}
 
-### Análisis y primeras impresiones del teclado mecánico KEMOVE DK61
+## Análisis y primeras impresiones del teclado mecánico KEMOVE DK61
 
 Al usarlo no he tenido ningún inconveniente para que el teclado sea reconocido por cualquiera de los sistemas operativos donde lo he probado tanto de forma cableada como de forma inalámbrica, las pulsaciones se registran de forma inmediata, en el modo inalámbrico la latencia es imperceptible y la conexión inalámbrica se muestra estable.
 
@@ -215,7 +215,7 @@ Que los _switches_ para cambiar entre el modo inalámbrico y modo de compatibili
 
 Algunos de estos detalles es algo que echaba en falta en los DIERYA y que en los KEMOVE están resueltos, aunque si no estoy equivocado en la serigrafía de la tecla dónde está el F11 tiene el mismo error de serigrafía que el DK61E estando los caracteres en la posición contraria. Dónde está el _-_ debería estar el _\__, no es algo muy grave pero al ser algo de diseño es algo que seguro se podría corregir si añadir costes de fabricación.
 
-#### Compatibilidad con sistemas operativos
+### Compatibilidad con sistemas operativos
 
 Lo he probado tanto en GNU/Linux, macOS y Android, en todos estos sistemas operativos el teclado es detectado correctamente en el momento que se pone en modo de configuración. Permite cambiar de uno a otro sistema con la combinación de teclas. Si es compatible con esos sistemas operativos es seguro que lo será también con Windows tal y como se indica en su caja de empaquetado. Para Windows se ofrece una [aplicación de escritorio](https://www.kemove.com/support/) para configurar la iluminación y macros de teclado, los controladores y manual de usuario. Al tener un botón de compatibilidad para macOS las teclas se adaptarán es modo de funcionamiento específico de macOS.
 
@@ -226,7 +226,7 @@ Lo he probado tanto en GNU/Linux, macOS y Android, en todos estos sistemas opera
     image3="image:kemove-dk61-bluetooth-android.webp" optionsthumb3="200x150" title3="Configuración del teclado con conexión inalámbrica en Android"
     caption="Configuración del teclado con conexión inalámbrica" >}}
 
-#### Análisis en vídeo
+### Análisis en vídeo
 
 Aquí muestro un vídeo con la parte frontal del teclado visto desde la posición de uso y cerca tanto sin iluminación RBG como con iluminación RGB y en YouTube hay una buena cantidad de vídeos que analizan y hacen el desempaquetado de este modelo de teclado KEMOVE DK61. En los vídeos se explican detalles desde otro punto de vista, información adicional o complementaria a la ofrecida en este artículo.
 
@@ -245,7 +245,7 @@ Aquí muestro un vídeo con la parte frontal del teclado visto desde la posició
 {{< youtube
     video="CF5fTKDeTTc" >}}
 
-#### Conclusión
+### Conclusión
 
 El teclado KEMOVE mejora en varios aspectos a los teclados DIERYA sin incrementar demasiado su precio. Un precio que sigue siendo muy ajustado y con características que otras marcas ofrecen en un rango de precios más elevado. Encontrar un teclado con teclas PBT de doble disparo, que sea hot _swappable_, inalámbrico por Bluetooth y cableado, con iluminación RGB en este rango de precios no es tán fácil de encontrar.
 
@@ -253,7 +253,7 @@ Para algunos el mayor inconveniente sea tener unos _keycaps_ en disposición de 
 
 El KEMOVE DK61 en los aspectos más importantes no tiene nada que envidiar a teclados considerados de gama alta y es que el KEMOVE puede considerarse también de gama alta, pero a diferencia de muchos otros tiene un precio asequible que se mantiene ajustado para muchos usuarios. Si se desea un teclado 60% con disposición ANSI e inglés sabiendo que se pueden cambiar los _keycaps_ es una muy buena opción de compra pudiendo hacerlo además en Amazon o en su propia página a través del medio de pago PayPal.
 
-### Complementos para el teclado
+## Complementos para el teclado
 
 Al comprar un teclado mecánico puede interesar comprar a la vez otros complementos para el teclado, como un [concentrador USB](https://amzn.to/3Hpch9P) para tener los puertos de conexión cerca especialmente si se suele estar conectando y desconectando dispositivos o el ordenador tiene difícil acceso a los puertos USB estando en la parte trasera del ordenador de torre.
 

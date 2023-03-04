@@ -30,13 +30,13 @@ Uno de los problemas que presentaban las llamadas a métodos remotos es que sol�
 
 * [Introducción y ejemplo de API RPC con Apache Thrift][blogbitix-72]
 
-### Qué es gRPC
+## Qué es gRPC
 
 [gRPC][grpc] es una implementación de llamada a procedimiento remoto o _Remote Procedure Call_ (RPC) de alto rendimiento. Las invocaciones RPC permiten hacer llamadas a funciones remotas como si se tratase de llamadas a funciones locales ocultando en gran parte la dificultad en la comunicación por la red subyacente. Los servicios remotos se define en archivos descriptores o _Interface Description Language_ (IDL) en los que se incluyen las operaciones que ofrece el servicio así como las propiedades de los argumentos que recibe y devuelve como respuesta esta descripción basándose en [Protocol Buffers][protocol-buffers]. Los [tipos soportados](https://developers.google.com/protocol-buffers/docs/proto3#scalar) para las propiedades incluyen varios numéricos, de coma flotante, boleano, _string_ y byte.
 
 gRPC al contrario que RMI que era específico de Java es agnóstico del lenguaje de programación en el que se implemente el servicio, a partir del archivo descriptor del servicio se genera unos archivos que sirven como base tanto para realizar la implementación en el lenguaje para la parte servidor como de la parte cliente del servicio pudiendo el servidor y cliente estar implementado en diferentes lenguajes. Los lenguajes soportados por gRPC están los más populares como Java, C#, C++, Dart, Go, Kotlin, Node/JavaScript, PHP, Python o Ruby.
 
-#### Características de gRPC
+### Características de gRPC
 
 * Alto rendimiento con seguridad: gRPC tiene alto rendimiento al usar _protobuf_ y HTTP/2 que son multiplexados, requieren una única conexión TCP, utilizan un formato de datos binario y posibilitan la comunicación bidireccional. Los mensajes al tener un esquema son más seguros de procesar.
 * Comunicación bidireccional: esto permite a la parte cliente y servidor enviar datos simultáneamente en ambas direcciones.
@@ -44,7 +44,7 @@ gRPC al contrario que RMI que era específico de Java es agnóstico del lenguaje
 * Compresión selectiva: si se envían datos en formato texto e imagen se puede deshabilitar la compresión para las imágenes.
 * Generación de código servidor y cliente: a partir del esquema se generan artefactos en cualquiera de los lenguajes soportado con los cuales crear la implementación del servidor y cliente rápidamente.
 
-#### Las diferencias entre gRPC y REST
+### Las diferencias entre gRPC y REST
 
 * Formato de intercambio de dato (Protobuf contra JSON): esa es una de las diferencias principales entre REST y gRPC, los mensajes REST contiene datos en formato JSON habitualmente mientras gRPC hace uso de Protobuf. Protobuf es una mejor forma de codificar datos estructurados, tiene mejor compresión y es más eficiente que JSON.
 * Tipado fuerte contra serialización: en REST que normalmente se usa JSON no hay ningún mecanismo pra coordinar el formato de los datos intercambiados en las peticiones y respuestas que hay que tener en cuenta especialmente cuando se hacen cambios en la API para mantener la compatibilidad con los clientes o requiere actualizar los clientes de forma coordinada a la nueva versión lo que suele ser muy difícil. Por otro lado el formato JSON ha de ser convertir tanto en el servidor como en el cliente a estructuras de datos del lenguaje en el que estén implementados, la serialización es otro paso que añade la posibilidad de errores así como sobrecarga en el rendimiento.
@@ -52,7 +52,7 @@ gRPC al contrario que RMI que era específico de Java es agnóstico del lenguaje
 * _Streaming_ contra Petición-Respuesta: REST solo soporta el único modelo petición-respuesta disponible en HTTP/1. gRPC hace uso de las capacidades de HTTP/2 y permite enviar y recibir información de forma constante tanto en el servidor como en el cliente.
 * gRPC se basa en HTTP/2: HTTP/2 es un protocolo binario más eficiente y seguro de procesar, REST puede usarse con HTTP/1 pero si se usa junto a HTTP/2 obtiene algunos de sus beneficios.
 
-#### Desventajas de gRPC
+### Desventajas de gRPC
 
 * No hay soporte para los navegadores web de modo que no puede ser usado en ellos como servicios expuestos al exterior. Para no imponer su uso su aplicación son para servicios que sean consumidos de forma interna y ofrecer una API basada en REST o GraphQL de forma externa.
 * No hay _endpoints_ basados en URLs de modo que las peticiones y respuestas no pueden ser probadas con las herramientas [Postman][postman] o el comando _curl_.
@@ -67,7 +67,7 @@ Estas [presentaciones en formato vídeo sobre gRPC](https://www.grpc.io/docs/tal
 {{< youtube
     video="S7WIYLcPS1Y" >}}
 
-### Ejemplo de servicio gRPC con Java
+## Ejemplo de servicio gRPC con Java
 
 La construcción de un servicio o API basada en gRPC comienza con la definición del servicio en un archivo descriptor que incluye tanto las operaciones disponibles así como las estructuras de datos que incluye los nombres de los campos y tipos que reciben y devuelven como respuestas las llamadas a funciones remotas. El archivo descriptor del servicio sigue el [formato de Protocol Buffers](https://developers.google.com/protocol-buffers/docs/proto3).
 

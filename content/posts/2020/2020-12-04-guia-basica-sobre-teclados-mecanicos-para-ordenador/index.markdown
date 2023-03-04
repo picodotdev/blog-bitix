@@ -24,7 +24,7 @@ Los teclados mecánicos son una alternativa a los teclados de membrana, aunque t
 
 {{< tableofcontents >}}
 
-### Características de los teclados mecánicos
+## Características de los teclados mecánicos
 
 En los teclados mecánicos cada tecla tiene su propio interruptor o _switch_ lo que hace las pulsaciones de teclas más precisas, también cada tecla tiene su propio mecanismo para hacer subir la tecla una vez se ha dejado de pulsar. Al tener cada tecla su propio interruptor el número de teclas que se puede pulsar simultáneamente es mayor sin que el teclado deje de registrar las teclas.
 
@@ -34,7 +34,7 @@ Los teclados mecánicos son sensiblemente más caros que los de membrana, aún a
 
 También hay teclados mecánicos en diferentes formatos ya sea completos con teclado numérico, sin teclado numérico y aún más compactos con algunas teclas menos.
 
-### Los _switches_
+## Los _switches_
 
 En los teclados mecánicos se emplean diferentes tipos de interruptores o _switches_, los _switches_ son el mecanismo mecánico y electrónico que registra las pulsaciones de las teclas. Para diferenciar los tipos de interruptores tiene asignado un código de color, los tres grandes tipos de _switches_ son en función de la respuesta táctil que usan _clicky_, táctil o lineal, dentro de cada tipos algunos _switches_ se diferencian en la presión que hay que ejercer para presionarlos.
 
@@ -55,7 +55,7 @@ En la siguiente tabla se comparan los diferentes tipos de _switches_ según la f
     image3="image:switches-gateron-comparation-table.webp" optionsthumb3="300x200" title3="Tabla comparación switches Gateron"
     caption="Switches Cherry MX y tablas de comparación Cherry MX y Gateron" >}}
 
-#### _Clicky_
+### _Clicky_
 
 Los _switches_ sonoros o _clicky_ emiten un sonido al ser pulsados además de ofrecer una respuesta táctil que mejora su precisión y saber cuando se ha pulsado la tecla por el sonido. Son un tanto ruidosos pero algunos usuarios aprecian su sonido como respuesta cuando una tecla se pulsa.
 
@@ -68,7 +68,7 @@ Los códigos de colores asignados para estos _switches clicky_ son el azul o _bl
     image3="image:switch-cherrymx-blue.gif" optionsthumb3="300x200" title3="Switch Cherry MX Clicky"
     caption="Switches Cherry MX Clicky" >}}
 
-#### Táctiles
+### Táctiles
 
 Los _switches_ con respuesta táctil ofrecen una resistencia al ser pulsados una vez superado un nivel de presión se disparan y se registra la pulsación. Son como los _switches clicky_ pero sin la respuesta sonora que los hace algo menos ruidosos.
 
@@ -81,7 +81,7 @@ Los códigos de colores asignados para estos _switches_ con respuesta táctil so
     image3="image:switch-cherrymx-brown.gif" optionsthumb3="300x200" title3="Switch Cherry MX Táctil"
     caption="Switches Cherry MX Táctil" >}}
 
-#### Lineales
+### Lineales
 
 Los _switches_ lineales no ofrecen respuesta táctil ni la sonora de los _clicky_, la presión que hay que ejercer para pulsar la tecla es constante durante todo su recorrido.
 
@@ -94,11 +94,11 @@ Los códigos de colores asignados para estos _switches_ con respuesta táctil so
     image3="image:switch-cherrymx-red.gif" optionsthumb3="300x200" title3="Switch Cherry MX Lineales"
     caption="Switches Cherry MX Lineales" >}}
 
-#### Marcas de _switches_
+### Marcas de _switches_
 
 La marca más conocida de _switches_  son los [Cherry MX][cherrymx] y son los que se encuentran en la mayoría de teclados mecánicos. Una alternativa a los Cherry MX e imitación de estos que no peores son los [Gateron][gateron], Outemu, [Kaihl][kaihl] que se encuentran en los teclados mecánicos algo más económicos.
 
-#### Probador de _switches_
+### Probador de _switches_
 
 Para probar que tipo de _switch_ es el que más nos agrada en [Amazon][amazon-affiliate] se venden unos [probadores con diferentes tipos de _switches_](https://amzn.to/2WW3U4j). No son baratos pero pueden compensar para acertar mejor al comprar un teclado mecánico.
 
@@ -128,11 +128,11 @@ En este vídeo se muestran los diferentes tipos de _switches_ y el sonido caract
 {{< youtube
     video="DZzsR1u493M" >}}
 
-### Los _keycaps_
+## Los _keycaps_
 
 Las tapas de las teclas o _keycaps_ es la pieza de plástico que da forma a la tecla y que pulsamos para activar el interruptor, se montan encima del interruptor. La ventaja de los teclados mecánicos es que estos permiten personalizar el teclado con el diseño y disposición que quiera el usuario, incluso de cambiarlo con posterioridad en cualquier momento. Para algunos usuarios con afición los _keycaps_ no son vistas como simplemente caras piezas de plástico sino una forma de arte y expresión.
 
-#### Materiales
+### Materiales
 
 Los materiales que se emplean para las teclas de los teclados mecánicos son de plástico ABS o PBT. Las teclas PBT tiene mayor durabilidad y se consideran de mayor calidad aunque son más comunes las ABS ya que estás son más económicas. La textura de las ABS es más suave y con el tiempo adquieren brillo por el aceite de los dedos mientras que las PBT tienen un tacto con una ligera rugosidad, un color más mate sin ser tan propensas a adquirir brillo. El sonido también cambia ligeramente, las teclas PBT al ser más gruesas tiene un sonido más grave.
 
@@ -143,7 +143,7 @@ En algunos casos para la fabricación de la teclas se utiliza un proceso de manu
 * [Intro to Keycaps](https://drop.com/talk/108/massdrop-101-intro-to-keycaps)
 * [Keycap Types, Keycap Sizes, Profile and other characteristics](https://rowsofkeys.com/keycap-types/)
 
-#### Impresión de la leyenda
+### Impresión de la leyenda
 
 Los fabricantes emplean diferentes técnicas para imprimir en el _keycap_ la leyenda del caracter o símbolo. La técnica empleada determina el coste del _keycap_ y también la durabilidad de la leyenda al desgaste.
 
@@ -155,7 +155,7 @@ Los fabricantes emplean diferentes técnicas para imprimir en el _keycap_ la ley
 {{< youtube
     video="HqyrpQrjZ4k" >}}
 
-### Disposición de los teclados
+## Disposición de los teclados
 
 En los teclados hay dos organizaciones que definen el tamaño y posición de las teclas, según la organización varía ligeramente el número de teclas y la orientación de la tecla _Enter_. Por un lado está la organización ANSI más utilizada en Estados Unidos y por otro la ISO más utilizada en los países europeos.
 
@@ -179,11 +179,11 @@ Como referencia una tecla del alfabeto se considera que tiene un tamaño de 1x, 
     image1="image:keyboard-keycaps-size.webp" optionsthumb1="300x200" title1="Tamaño keycaps en teclados ISO"
     caption="Tamaño keycaps en teclados ISO" >}}
 
-### Formato de los teclados
+## Formato de los teclados
 
 Los teclados típicos son los completos de entre unas 102 y 105 teclas. Algunos otros tienen menos teclas que los hace más pequeños y ocupan menos espacio en la superficie de la mesa.
 
-#### Completo
+### Completo
 
 Los teclados completo tienen entre 102 y 105 teclas e incluyen teclas específicas para el teclado numérico, teclas de función, de desplazamiento y de utilidad. Son los de mayor número de teclas lo que hace que sean los más grandes.
 
@@ -192,7 +192,7 @@ Los teclados completo tienen entre 102 y 105 teclas e incluyen teclas específic
     image1="image:ducky-one-2-fullsized.webp" optionsthumb1="300x200" title1="Teclado Ducky One 2 completo"
     caption="Teclado Ducky One 2 completo" >}}
 
-#### Sin teclado numérico
+### Sin teclado numérico
 
 Los teclados sin teclado numérico prescinden de las teclas del teclado numérico, también se les conoce como _ten key less_ o por sus siglas TKL. Al tener menos teclas hace que sean más compactos y pequeños. El teclado numérico no es de uso habitual para muchos usuarios, si es el caso prescindir de estas teclas permite tener más espacio en la mesa.
 
@@ -203,7 +203,7 @@ Aunque no poseen teclado numérico conservan la función de las teclas del tecla
     image1="image:ducky-one-2-tkl.webp" optionsthumb1="300x200" title1="Teclado Ducky One 2 TKL"
     caption="Teclado Ducky One 2 TKL" >}}
 
-#### Compactos
+### Compactos
 
 Hay algunos modelos de teclados que tienen aún menos teclas ya que prescinden de las teclas de función, de desplazamiento y de utilidad. A algunos se les conoce como 75%, 65%, 60% o 40%. Dependiendo de cada uno prescinden de algunas teclas de utilidad, de las de función, de desplazamiento o de números.
 
@@ -215,19 +215,19 @@ La versión SF de Ducky tiene como ventaja tener las fechas de desplazamiento y 
     image2="image:ducky-one-2-mini.webp" optionsthumb2="300x200" title2="Teclado Ducky One 2 Mini"
     caption="Teclado Ducky One 2 SF y Mini" >}}
 
-#### Retroiluminado
+### Retroiluminado
 
 Los teclados retroiluminados poseen un LED debajo del teclado o en cada tecla que iluminan el teclado para su visión en situaciones de poca luz o de noche con la luz apagada. Algunos teclados son monocromo que emiten una luz de un único color, otros son RGB que permiten variar el color según la preferencia. En algunos casos también permiten variar la intensidad de la luz.
 
 Los teclados que tienen un LED en cada tecla permiten establecer animaciones de colores con diferentes secuencias de funcionamiento.
 
-#### Inalámbrico
+### Inalámbrico
 
 Los teclados normales se conectan al ordenador mediante un cable USB, los inalámbricos no tienen necesidad del cable lo que permite eliminar un cable encima de la mesa y permite mover el teclado sin la atadura del cable o desplazarse a unos pocos metros de distancia. La forma de conectarse al ordenador es mediante radiofrecuencia con un adaptador conectado al ordenador en un puerto USB que recibe la señal del teclado o mediante Bluetooth que no requieren adaptador si el ordenador dispone de hardware Bluetooth.
 
 Los teclados inalámbricos utilizan dos pilas AA o AAAA para su funcionamiento que con un uso normal llegan a durar incluso un año sin tener que cambiarlas, con pilas recargables no hace falta estar comprando pilas cada cierto tiempo. Dado que los inalámbricos utilizan pilas para una mayor duración de las mismas no suelen ser retroiluminados.
 
-### Caracteres del teclado en español en teclados no español
+## Caracteres del teclado en español en teclados no español
 
 Muchos de los teclados mecánicos se ofrecen en formato ANSI y con disposición de teclas de Estados Unidos o US. En algunos otros casos son el formato ISO pero con una disposición de caracteres diferente a la normalizada del teclado español.
 
@@ -241,13 +241,13 @@ En caso necesario, en GNOME alternar entre las disposiciones de teclado configur
     image2="image:gnome-keyboard-layout-selector.webp" optionsthumb2="300x200" title2="Selector de disposición de teclado GNOME"
     caption="Teclado ISO (en, alt) y selector de disposición de teclado GNOME" >}}
 
-### Marcas y modelos de teclados mecánicos
+## Marcas y modelos de teclados mecánicos
 
 En la siguiente [web de teclados mecánicos](https://mechanicalkeyboard.com/) tiene filtros para encontrar modelos de teclado con las características deseadas en cuando a marca, tipos de _switches_, tipo retroiluminación, color, tamaño y tipo de conexión.
 
-### Precios, dónde comprar y recomendación teclados mecánicos
+## Precios, dónde comprar y recomendación teclados mecánicos
 
-#### DIERYA DK61E
+### DIERYA DK61E
 
 Un teclado mecánico muy interesante es el [DIERYA DK61E][amazon-dierya-dk61] o el [DIERYA DK63][amazon-dierya-dk63]. Son de un formato 60% sin las teclas de función, uno con y otro sin flechas de desplazammiento y el bloque superior ni teclado numérico que lo hacen muy compacto, por lo que ocupa muy poco en el espacio en la mesa y resulta muy cómodo de utilizar. Con disposición ANSI y teclas en inglés, algunas personas prefieren con esta disposición ya que para ciertas tareas la disposición de los caracteres es más adecuada en vez de la ISO en español, aunque su disposición de fábrica no es mayor problema ya que como cualquier teclado mecánico permite cambiar los _keycaps_ por cualquier otra disposición incluyendo la español y configurar la entrada de teclado en el sistema para adaptarlo a nuestra preferencias. Uno es con conexión con cable y otro además ofrece conexión inalámbrica por _bluetooth_.
 
@@ -272,7 +272,7 @@ La marca tiene otros modelos como el [DIERYA DK61 Pro][amazon-dierya-dk61-pro] q
 {{< youtube
     video="2siY3SO3ATY" >}}
 
-#### DREVO Calibur V2 TE
+### DREVO Calibur V2 TE
 
 El teclado [DREVO Calibur V2 TE][amazon-drevo-calibur-v2-te] ofrece un interedio entre TKL y SF, no posee teclas de función pero si las que se enuentran arriba de los TKL muy útiles al programar que permiten seleccionar el texto de una linea y cortar y pegar de forma alternativa a utilizar _Ctrl+X_ y _Ctrl+V_, al estar cerca de las teclas de desplazamiento evita tener que desplazar la mano para posicionar el cursor al escribir texto. El DREVO Calibur no tiene la calidad de los Ducky pero es más económico, compacto y con una disposición de teclas intermedia entre el SF y TKL sin perder ninguna de esas teclas de función de la parte superior de las flechas.
 
@@ -285,7 +285,7 @@ El teclado [DREVO Calibur V2 TE][amazon-drevo-calibur-v2-te] ofrece un interedio
 {{< youtube
     video="nD42ZkgvhTs" >}}
 
-#### Glorious GMMK TKL
+### Glorious GMMK TKL
 
 Otra opción muy interesante es el [Glorious PC Gaming Race GMMK TKL][amazon-glorious-gmmk-tkl], es un teclado en formato ISO con la característica destacada de ser personalizable tanto en los interruptores como en las teclas, los interruptores son intercambiables compatibles con los de la marca Cherry como Gateron y Kailh. Aparte Glorious ofrece como producto independiente los interruptores Gateron y los _keykaps_ del material ABS con la disposición de teclado española. Se vende tanto en Amazon como en [Coolmod][coolmod] y algunos elementos en PcComponentes. Soporta macros y pefiles configurados por software y personalización de varios efectos de luz.
 
@@ -308,7 +308,7 @@ Depués de analizar las opciones esta es el teclado mecánico que he comprado.
 * [_Keycaps_ disposición español, ABS, doble disparo, RGB, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/4000395759765.html)
 * [_Keycaps_ disposición inglés, PBT, doble disparo, RGB, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/1005002662013875.html)
 
-#### Ducky One 2
+### Ducky One 2
 
 De los teclados mecánicos una marca reconocida es [Ducky][duckychannel] que ofrece modelos completos, TKL y compactos en diferente tamaño, número de teclas, tipos de _switches_ y retroiluminados. Su precio suele estar a partir de 100 € y se pueden encontrar en la tienda [Versus Gamers][vsgamers] y también en Coolmod con el formato ISO con la disposición en español y diferentes tipos de _switches_ _blue_, _brown_ y _red_. A diferencia del Glorious soporta macros y perfiles por hardware sin necesidad de un software que normalmente solo está disponible para Windows, este soporte por hardware para macros y perfiles permite no perder estas funcionalidades si se usa macOS o GNU/Linux.
 
@@ -320,7 +320,7 @@ De los teclados mecánicos una marca reconocida es [Ducky][duckychannel] que ofr
 * [Ducky One 2 Cherry MX Blue RGB en Versus Gamers](https://www.vsgamers.es/product/teclado-gaming-mecanico-ducky-one-2-rgb-cherry-mx-blue)
 * [Ducky One 2 TKL RGB MX Brown ABS (ES) en Versus Gamers](https://www.coolmod.com/ducky-one-2-tkl-rgb-mx-brown-abs-es-teclado/)
 
-#### Otros
+### Otros
 
 Teclados mecánicos económicos. En [PcComponentes][pccomponentes] también hay algunos modelos de teclado mecánico económicos de las marcas Newskill y Krom entre otras, otras marcas reconocidas son [Akko][akko], [Keychron][keychron] y [Royal Kludge][royal-kludge].
 

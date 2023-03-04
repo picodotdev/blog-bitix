@@ -25,7 +25,7 @@ Pasados dos años desde que compré todo este equipo informático quiero hacer u
 
 {{< tableofcontents >}}
 
-### Evaluación Intel NUC
+## Evaluación Intel NUC
 
 El principal motivo por el que compré un Intel NUC es que son ordenadores extremadamente pequeños pero con las capacidades de un ordenador de gama media. Dentro de unos cuantos años cuando la potencia del Intel NUC, memoria o almacenamiento se me quede escasa lo podré seguir dando un uso como centro multimedia o servidor web casero, o en caso contrario no me costará tanto deshacerme de él que de un equipo de torre ATX.
 
@@ -41,7 +41,7 @@ Estoy muy satisfecho con la potencia del Intel NUC que cumple con mis necesidade
 
 No me arrepiento del formato NUC, de elegir otra cosa sería porque ahora al contrario que en su momento hay en este formato opciones en las que elegir un Ryzen como este [ASRock Jupiter X300](https://www.geeknetic.es/Noticia/21044/EL-mini-PC-ASRock-Jupiter-X300-apuesta-por-APUs-Ryzen-4000G-en-un-formato-de-1-litro.html) o este [Minis Forum](https://amzn.to/39ua7Iv) con un formato igual a los NUC.
 
-### Evaluación monitor BenQ PD2700
+## Evaluación monitor BenQ PD2700
 
 Los equipos anteriores que había tenido antes del Intel NUC fueron dos portátiles, no tenía monitor externo dedicado. Al comprar el Intel NUC necesitaba un monitor. Opté por comprar BenQ PD2700Q, un monitor de 27 pulgadas de diagonal, de resolución 2560x1440, panel IPS, altura y orientación regulables, entrada HDMI y DisplayPort.
 
@@ -51,7 +51,7 @@ No veo mucha televisión poco más que los telediarios, algo de deporte o algún
 
 Si tuviese que comprar un monitor de nuevo el mismo BenQ PD2700 sería una buena opción, no es el más barato de los 27" pero el regular la altura y orientación no es algo que todos tienen y estoy contento con su calidad. Si cambiase algo sería comprar un monitor incluso aún más grande y quizá panorámico y ya en esos tamaños optar sí por el 4K.
 
-### Evaluación teclado y ratón V7
+## Evaluación teclado y ratón V7
 
 Una de las cosas evalué para comprar teclado y ratón era que fueran inalámbricos, opté por un modelo de V7. Es un teclado y ratón sencillos y baratos.
 
@@ -61,7 +61,7 @@ Aparte del cable y ratón compre una [alfombrilla para colocar ratón y teclado]
 
 En su momento no conocía [que ofrecen los teclados mecánicos][blogbitix-536], si tuviese comprar un nuevo teclado probablemente optaría por un teclado mecánico. Los teclados mecánicos son significativamente más caros pero su experiencia de uso es mejor que los de membrana, son más personalizables y duraderos. Lo principal que buscaría es que el teclado fuese sin teclado numérico o TKL que apenas uso y hace que el teclado ocupe menos espacio y la distancia entre el ratón y teclado sea menor si eres diestro, lo que lo hace más cómodo.
 
-### Evaluación PlayStation 4
+## Evaluación PlayStation 4
 
 Dadas las limitaciones del Intel NUC y que quería jugar a juegos [compré una PlayStation 4][blogbitix-432] ya al final de la generación de consolas sabiendo que al año siguiente las Xbox Series X/S y la PlayStation 5 se lanzarían al mercado. No esperé un año más debido a que la PS4 tiene un catálogo de juegos excepcional lo que en cualquier caso me va a dar muchos años de entretenimiento.
 
@@ -69,7 +69,7 @@ Solo he jugado a unos pocos juegos, Watch Dogs, [XCOM 2]([blogbitix-459]), Basti
 
 No me arrepiento de haber comprado la PS4 y estoy contento con ella. Lo que echo de menos son tiempos de carga más reducidos y poder jugar con teclado y ratón que en algunos juegos se hace más cómodo que con el mando, al mando en algunos juegos se nota que le faltan botones. La PS4 va a seguir teniendo su mercado ya que la retrocompatibilidad de la PS5 con los juegos de la PS4 seguramente haga que los juegos y la PS4 siga teniendo vida y que Sony siga cuidando dada la cantidad de jugadores que tienen su consola.
 
-### Equipo futuro
+## Equipo futuro
 
 A finales del 2020 se ha producido una renovación de la mayoría de componentes de PC y la renovación de las consolas con la PlayStation 5 y Xbox Series X/S. Tanto procesadores son los Ryzen 5000 basados en Zen 3 por parte de AMD, nuevos procesadores de Intel para tratar de estar a la altura de los Ryzen, la nueva generación de gráficas Ampere de la serie 3000 de Nvidia y las gráficas RNDA 2 de AMD, y durante el año 2021 se espera el regreso de Intel a las gráficas dedicadas al menos en las las gamas media y baja. Y AMD ya ha publicado detalles de su siguiente arquitectura Zen 4 y RNDA 3.
 

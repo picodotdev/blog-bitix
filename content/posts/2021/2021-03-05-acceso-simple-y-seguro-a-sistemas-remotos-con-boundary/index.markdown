@@ -28,7 +28,7 @@ Permitir el acceso remoto es necesario, sin embargo, requiere seguridad de forma
 
 {{< tableofcontents >}}
 
-### Funcionamiento acceso remoto tradicional
+## Funcionamiento acceso remoto tradicional
 
 La forma habitual de proporcionar acceso remoto a sistemas de una red privada es mediante una VPN o a través de un sistema intermediario denominado bastión. Estos conceptos proporcionan acceso remoto en ciertos aspectos de forma segura pero no están exentas de problemas e inconvenientes.
 
@@ -46,7 +46,7 @@ Mediante un _firewall_ ubicado entre el bastión y el sistema de acceso remoto e
     image1="image:boundary-use-cases.webp" optionsthumb1="605x450" title1="Casos de uso de Boundary"
     caption="Boundary" >}}
 
-### Acceso remoto con Boundary
+## Acceso remoto con Boundary
 
 Para tratar de solventar los problemas de acceso remoto con VPN, bastión y _firewall_, simplificar la infraestructura y una administración de más alto nivel lógico de usuarios, permisos y sistemas HashiCorp ha publicado otra herramienta dedicada a la seguridad específica para el acceso remoto.
 
@@ -67,13 +67,13 @@ En su modo servidor requiere de una base de datos [PostgreSQL][postgresql] que i
 {{< youtube
     video="tUMe7EsXYBQ" >}}
 
-#### Conceptos
+### Conceptos
 
 Boundary tiene varios conceptos de dominio, por un lado está el catálogo o inventario de _hosts_, un conjunto de _hosts_ agrupados en un _host set_ y estos a su vez en un _host catalog_. Por otro lado, están los usuarios, grupo y roles. Finalmente los _targets_ son la abstracción del elemento al que se quiere realizar una conexión, el _target_ se traduce en un _host_. Finalmente, todos estos elementos se agrupan en ámbitos o _scopes_ y proyectos o _projects_.
 
 En una organización con unas cuantas decenas de sistemas y usuarios, la gestión de este inventario se vuelve ciertamente complicado.
 
-### Clientes soportados
+## Clientes soportados
 
 Boundary incorpora varios clientes en su modo de funcionamiento como cliente. Estos son:
 
@@ -87,7 +87,7 @@ Boundary soportar estos clientes de forma nativa sin embargo es agnóstico de la
 
 * [Connect to Your First Target](https://www.boundaryproject.io/docs/getting-started/connect-to-target)
 
-### Ejemplo de conexión SSH con Boundary
+## Ejemplo de conexión SSH con Boundary
 
 En el siguiente ejemplo muestro como conectarse a un _host_ a través de Boundary con SSH. En el mismo ejemplo muestro como usar Boundary con autenticación con claves SSH y como usar Boundary con Vault que generar un OTP para realizar la misma conexión sin usar claves SSH y únicamente con credenciales temporales. En este ejemplo el _host_ remoto es una [Raspberry Pi con sistema operativo Raspberry Pi OS instalado][blogbitix-554] y con el servicio de SSH iniciado.
 
@@ -105,7 +105,7 @@ Iniciar el servidor Boundary es sencillo, basta [instalar el binario de Boundary
 {{< code file="start-boudary.sh" language="bash" options="" >}}
 {{< code file="docker-ps.sh" language="bash" options="" >}}
 
-#### Conexión SSH a sistema remoto
+### Conexión SSH a sistema remoto
 
 Realizando la conexión directamente al _host_ remoto con SSH se realiza con el siguiente comando, esta es la forma tradicional de hacerlo usando claves SSH.
 
@@ -137,14 +137,14 @@ Una de las funcionalidades que proporciona Boundary es trazabilidad en el _log_ 
     image1="image:boundary-sessions.webp" optionsthumb1="300x200" title1="Conexiones realizadas con Boundary"
     caption="Conexiones realizadas con Boundary" >}}
 
-### Autenticación con SSH
+## Autenticación con SSH
 
 La autenticaión de SSH usando Boudary no cambia, se solicita la contraseña del usuario con el que se realiza la conexión, la clave pública en caso de que el servidor se haya configurado con clave pública y privada o incluso un segundo factor de autenticación.
 
 * [Autenticación mediante clave pública y privada con SSH][blogbitix-401]
 * [Autenticación con segundo factor de autenticación en SSH][blogbitix-562]
 
-#### Segundo factor de autenticación con Vault
+### Segundo factor de autenticación con Vault
 
 Vault permite generar contraseñas de un solo uso y configurando SSH validar los OTP proporcionados en la conexión. La ventaja de usar OTP es que no es necesario distribuir las claves públicas en cada una de las máquinas en las que se quiera realizar la conexión SSH. Hay que cambiar los archivos de configuración _/etc/pam.d/sshd_, _/etc/ssh/sshd_config_, _/etc/vault-ssh-helper.d/config.hcl_ y reiniciar el servicio de SSH, estos cambios permiten al servidor SSH validar los _tokens_ proporcionados conectándose con Vault.
 

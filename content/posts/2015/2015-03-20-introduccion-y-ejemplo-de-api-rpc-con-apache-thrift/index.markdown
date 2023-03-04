@@ -36,7 +36,7 @@ Apache Thrift es un _framework_ para desarrollar servicios eficientes e interope
 
 * [Introducción a gRPC y ejemplo con Java][blogbitix-512]
 
-### Ejemplo con Apache Thrift
+## Ejemplo con Apache Thrift
 
 Primeramente, para usar Apache Thrift debemos instalar el paquete en la distribución que usemos. En Arch Linux con:
 

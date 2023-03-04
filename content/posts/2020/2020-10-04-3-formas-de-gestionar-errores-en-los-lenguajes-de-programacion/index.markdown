@@ -27,7 +27,7 @@ A lo largo de la historia los lenguajes han implementado varias formas de gestio
 
 {{< tableofcontents >}}
 
-### Códigos de retorno
+## Códigos de retorno
 
 En el lenguaje C la gestión de errores se hace con códigos de retorno. Al llamar a una función esta devuelve un retorno y según sea su valor se indica que la función se ha ejecutado correctamente o por el contrario se ha producido algún error que ha de ser tratado.
 
@@ -35,7 +35,7 @@ Los códigos de retorno tienen dos problemas. El primer problema es que comproba
 
 {{< code file="error-handling.c" language="c" options="" >}}
 
-### Excepciones
+## Excepciones
 
 En los lenguajes posteriores a C algunos optan por proporcionar un mecanismo de gestión de errores con sintaxis específica, en Java con las excepciones y el bloque _try-catch_. Una ventaja de las excepciones sobre los códigos de retorno es que las excepciones se han de capturar o lanzar de forma obligatoria, sino el compilador emite un error. Otra ventaja es que los métodos declaran cuales son las posibles excepciones que lanzan de modo que al usar esos métodos se conoce cuales hay que tratar, los entornos integrados de desarrollo suelen ofrecer asistencia del código para tratar las excepciones.
 
@@ -45,7 +45,7 @@ Cuando un método detecta una condición de error que el usuario del método no 
 
 Al igual que los códigos de retorno el problema de las excepciones es que también pueden ser ignoradas, aunque se ha de hacer de forma explícita, ya sea incluyendo en la firma del método la clausula _throws_ que delega el tratamiento en el método superior en la pila de invocaciones o con bloques de código _catch_ vacíos. Otro aspecto a tener en cuenta es que de entre todas las sentencias del bloque _try_ es ambiguo que método ha provocado la excepción.
 
-### Retorno de valor y error
+## Retorno de valor y error
 
 Los lenguajes [Go][go] y [Rust][rust] usan una aproximación diferente, no usa excepciones. Usan códigos de retorno como C pero retornando múltiples valores, un valor es para el caso de que en la función se haya ejecutado sin error y otro valor para el caso de error.
 

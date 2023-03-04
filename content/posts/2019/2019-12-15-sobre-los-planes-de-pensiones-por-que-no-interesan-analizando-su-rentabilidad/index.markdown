@@ -36,7 +36,7 @@ También hay que decir que los gestores personales que las entidades bancarias a
     image2="image:bankia.svg" optionsthumb2="200x150" title2="Bankia"
     image3="image:kutxabank.svg" optionsthumb3="200x150" title3="Kutxabank" >}}
 
-### Características de los planes de pensiones
+## Características de los planes de pensiones
 
 El ya incluir la palabra _pensión_ en el nombre del producto financiero puede inducir a engaño, porque no proporciona una renta vitalicia, para el resto de la vida, al llegar a la edad de jubilación como la pensión de la seguridad social.
 
@@ -48,7 +48,7 @@ Dado que los fondos solo se pueden recuperar una vez llegada la jubilación o a 
 
 La otra parte de los planes de pensiones es que el dinero es gestionado de forma similar a un fondo de inversión. Ls fondos de inversión en plazos largos de tiempo suelen tener rentabilidades positivas aunque todos tienen riesgos, también tener rentabilidades negativas, muchos los tienen algunos años, y por tanto perder dinero si se dispone del dinero en un año malo.
 
-### Ventajas fiscales en tributación por IRPF de los planes de pensiones
+## Ventajas fiscales en tributación por IRPF de los planes de pensiones
 
 El principal atractivo con el que se publicitan los planes de pensiones es su ahorro fiscal, salvo por el ahorro fiscal en IRPF un plan de pensiones es un fondo de inversión. Pero cuidado, hay que tener en cuenta que aunque hoy no se tribute por IRPF por el dinero aportado en el año a un plan de pensiones, en el momento de disponer del dinero si se hace.
 
@@ -107,19 +107,19 @@ Aportar a un plan 5K€ durante los últimos 10 años ya son 50K€ ahorrados y 
 
 En cualquier caso estamos hablando de cotizaciones al IRPF de un dinero en una declaración de la renta dentro de 20 o 30 años donde nadie, ni los mayores expertos fiscales, ni el banco, ni el gestor personal saben cuales van a ser los tramos impositivos del IRPF, ni los tipos impositivos ya que durante estos periodos de tiempo tan largos muy posiblemente sean cambiados por el gobierno de turno y las circunstancias económicas.
 
-### Rentabilidad del fondo de inversión asociado a los planes de pensiones
+## Rentabilidad del fondo de inversión asociado a los planes de pensiones
 
 El capital aportado al plan de pensiones es gestionado como un fondo de inversión. Los fondos de inversión son productos con riesgo, unos fondos tiene más riesgo que otros, también hay planes de pensiones con más riesgo que otros dependiendo del riesgo del fondo de inversión asociado. Aún con el fondo de menos riesgo se puede llegar a tener una rentabilidad negativa y por tanto perder dinero. El fondo de inversión asociado al plan de pensión no es fijo y se puede cambiar de uno más agresivo con la esperanza de obtener mayor rentabilidad a uno más conservador para tener menos riesgo cuando queda poco para la jubilación.
 
 Analizando algunos planes de pensiones conservadores en sus rentabilidades a 10 años quedan en 0,43%, 2,69%, 1,95% y 2,41% invirtiendo en renta fija a corto plazo, en renta fija, 15% en renta variable y 30% en renta variable respectivamente, rentabilidades donde ya está descontada la comisión de gestión. Los fondos no conservadores (los del 15% y 30% en variable) tienen más riesgo, pero hay que tener en cuenta que como los propios bancos indican en sus pasquines _Rentabilidades pasadas no garantizan rentabilidades futuras_. Algunos fondos con riesgo tienen años con rentabilidades del 5% pero también años de pérdidas del -4,4% y como resultado a 10 años su rentabilidad ser del 1,95%, para no perder dinero desinvirtiendo de los fondos en el momento de tener perdidas es necesario mantener el periodo de tiempo previsto para obtener rentabilidades positivas, para ello es necesario no necesitar ese dinero y mantener la posición en momentos de bajada.
 
-### Inversión inmobiliaria
+## Inversión inmobiliaria
 
 En España es costumbre «invertir» en bienes inmobiliarios, como una segunda vivienda con vistas a alquilarla para obtener rentabilidad. Sin embargo, este tipo de inversión también tiene sus riesgos e inconvenientes, entre ellos que el precio de la vivienda baje, en décadas anteriores siempre se ha revalorizado pero esto puede cambiar en el futuro por demografía y natalidad. Por otro lado es una inversión muy ilíquida ya que puede no ser fácil deshacerse de ella. Tiene gastos como reparaciones, IBI, comunidad, seguro, reformas y si es adquirida para alquilar incertidumbre de si el inquilino la va a tratar bien.
 
 Con el conjunto de gastos de un bien inmobiliario por alquiler su rentabilidad puede quedar cerca de la de un fondo de inversión con la ventaja este último de ser mucho más líquido y más sencillo de gestionar.
 
-### Conclusión
+## Conclusión
 
 Los planes de pensiones son más beneficiosos para gente que tenga rentas altas (a partir de 50K-60K) y tribute en los tramos altos del IRPF, tenga capacidad de ahorro y no tenga deudas como crédito e hipoteca. En primera instancia el dinero está mejor empleado a saldar una deuda por crédito o hipoteca, olvidándose de plan de pensiones.
 

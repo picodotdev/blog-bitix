@@ -25,7 +25,7 @@ Desde hace un tiempo tenía la necesidad un aspirador. De aspiradoras sabía lo 
 
 No quería que después de comprar la aspiradora tener que comprar ningún tipo de recambio como por ejemplo bolsas porque a la larga compensa y por pereza de buscar un sitio donde las vendan compatibles, por lo que estas quedaban descartadas, tampoco quería uno de los modernos robots aspiradores ya que no me convencen. Los robots por muy autónomos que sean no mueven los muebles y hay sitios a los que por su tamaño y forma no pueden acceder, si tenía que mover un sillón o sillas para que el robot hiciese un buen trabajo me era indiferente comprar una aspiradora manual, además son sensiblemente más caros que otras aspiradoras y hay [alguna opinión de que no son muy efectivos](http://es.gizmodo.com/he-probado-4-robots-aspiradora-y-ahora-solo-quiero-barr-1694536566), algunos se denominan aspiradores cuando realmente son solo barredores. El precio no me importaba mucho, lógicamente que fuese lo menos posible pero tenía un presupuesto amplio sobre los 350 €.
 
-### Rowenta Compacteo Ergo 4359EA
+## Rowenta Compacteo Ergo 4359EA
 
 De los primeros aspiradores que vi interesantes uno fue el [Rowenta Compacteo Ergo 4359EA](https://amzn.to/2kdF2gT), me gustó que era pequeño, sin bolsa, barato y podría guardarlo en el mismo armario junto con la escoba. El precio era similar tanto en Amazon, Media Markt y El Corte Inglés. Pudiendo, prefiero comprar en una tienda física, el bulto iba a ser grande con lo que no quería enviármelo al trabajo y por si quería hacer alguna devolución es más fácil en una tienda física como finalmente me ocurrió, además quería ver físicamente el producto. En El Corte Inglés no tenían disponibilidad, fui a comprarlo a Media Markt por poco menos de 80 €. Amablemente un par de personas del personal de Media Markt me atendieron resolviendo varias dudas que tenía. Me llevé este modelo a casa.
 
@@ -36,7 +36,7 @@ Ya en casa leyendo el manual de instrucciones me percaté de que aunque muchas a
 
 No quiere decir que sea mala, por su precio está muy bien pero yo simplemente quería otra cosa. Por el buen trato recibido por los empleados y servicio de atención al cliente de Media Markt me siento un poco en deuda con ellos, finalmente elegí otro modelo y lo compré en otra tienda pero muy posiblemente compraré alguna otra cosa en un futuro, tiene buenos precios y una gama amplia de modelos de diferentes aparatos electrónicos.
 
-### Dyson DC37c Advanced Allergy
+## Dyson DC37c Advanced Allergy
 
 ¿Todas las aspiradoras sin bolsa necesitan recambios? Afortunadamente buscando un poco más detalladamente encontré que los modelos [Dyson](https://www.dyson.es/), tienen filtros lavables con agua bajo el grifo, en algunos modelos ni siquiera hay que lavar los filtros y son permanentes durante toda su vida útil de modo que no hay que sustituirlos. Lo que buscaba. Por el precio más elevado inicialmente las pasé por alto. Sin embargo, a la larga el no tener que realizar recambios ni incurrir en gastos adicionales junto que son más eficientes recogiendo el polvo, la Rowenta tenía una eficiencia D y muchos modelos Dyson una A, el precio está justificado.
 
@@ -61,7 +61,7 @@ Este modelo de aspiradora Dyson ya está descatalogado, ahora Dyson solo fabrica
 {{< amazon
     tags="vaccum-robot" >}}
 
-### Caja y desempaquetado
+## Caja y desempaquetado
 
 {{< image
     gallery="true"
@@ -84,7 +84,7 @@ Este modelo de aspiradora Dyson ya está descatalogado, ahora Dyson solo fabrica
     image1="image:dyson-dc37c-20160124-091708.webp" optionsthumb1="300x200"
     image2="image:dyson-dc37c-20160124-091738.webp" optionsthumb2="300x200" >}}
 
-### Cuerpo principal
+## Cuerpo principal
 
 {{< image
     gallery="true"
@@ -115,7 +115,7 @@ Este modelo de aspiradora Dyson ya está descatalogado, ahora Dyson solo fabrica
     image1="image:dyson-dc37c-20160124-093201.webp" optionsthumb1="300x200"
     image2="image:dyson-dc37c-20160124-093941.webp" optionsthumb2="300x200" >}}
 
-### Componentes y accesorios
+## Componentes y accesorios
 
 En la caja no viene pero se proporcionan más accesorios de los indicados además de para suelos duros y tarima o parquet y el de antibloqueo _tangle-free_ para hebras.
 
@@ -149,7 +149,7 @@ Estos son los accesorios adicionales no indicados en la caja, está el de esquin
     gallery="true"
     image1="image:dyson-dc37c-20160124-092405.webp" optionsthumb1="300x200" >}}
 
-### Filtro y ciclón
+## Filtro y ciclón
 
 {{< image
     gallery="true"
@@ -168,7 +168,7 @@ Estos son los accesorios adicionales no indicados en la caja, está el de esquin
     image1="image:dyson-dc37c-20160124-100702.webp" optionsthumb1="300x200"
     image2="image:dyson-dc37c-20160124-102301.webp" optionsthumb2="300x200" >}}
 
-### Manual de usuario
+## Manual de usuario
 
 El manual de usuario está en perfecto español sin ninguna falta de ortografía, otros múltiples idiomas y cumple con su función de mostrar el montaje, las normas y precauciones básicas de uso.
 
@@ -193,7 +193,7 @@ El manual de usuario está en perfecto español sin ninguna falta de ortografía
     image1="image:dyson-dc37c-20160124-094457.webp" optionsthumb1="300x200"
     image2="image:dyson-dc37c-20160124-094529.webp" optionsthumb2="300x200" >}}
 
-### Otros detalles
+## Otros detalles
 
 {{< image
     gallery="true"

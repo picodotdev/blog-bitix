@@ -29,7 +29,7 @@ On the other hand since Windows Vista era the computer can be reinstalled and le
 
 So to fix the problems I did a clean reinstallation.
 
-### Starting the installation
+## Starting the installation
 
 At the point of doing the reinstallation I had no problem, the computer had Windows 7 originally, had been upgraded to Windows 10 and activated correctly in the period of free upgrade offered by Microsoft. As I have done many times in years and with previous versions I start by [downloading the Windows 10 installation image media](https://www.microsoft.com/es-es/software-download/windows10ISO) and [the installation media for Microsoft Office, Home and Students](http://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/es-es/HomeStudent2019Retail.img). I continue [starting the Windows 10 installation step by step from scratch][blogbitix-231-en]. The installation media images are offered kindly by Microsoft so I had not to search them in the file sharing networks like in the older times.
 
@@ -37,15 +37,15 @@ In one of the installation steps I deleted all the partitions recovering the spa
 
 I have to install the basic additional programs with the intention of being free software or respecting the licenses [Firefox][firefox] along with [AdBlockPlus][adblockplus], [VLC][vlc], [PeaZip][peazip], [ImgBurn][imgburn], [Acrobat Reader][adobe-acrobat-reader], [FreeFilesync][freefilesync], [uTorrent][utorrent] to which I add [Java][java]. Finally I am asked to install the office suite [Microsoft Office][microsoft-office] as it will be used, my intention fails, I propose to recommend some alternative option as [Google Docs][google-docs] or [LibreOffice][libreoffice]. However, Office is what they use, do they ask students to take a license that still costs about 125 € for students? 250 € for other mortals? It 's the start of 2016, it's the weekend and I do not want to think much about it, I download the latest version of Office and I install it.
 
-### I try to activate Windows and Office
+## I try to activate Windows and Office
 
 I start Word and it shows me a message that after about 30 days many of its functions will be disabled. The time comes to prove empirically once again what I said in [Microsoft does not care that you use Windows or Office without a license][blogbitix-285-en], I look for some activator in Google, there are hundreds of results, I download one from one of links that gives me some hope of not have a virus, immediately after download the executable file and Windows Defender warns that it have a virus, I run it anyway and click on the button to activate the Office, a message indicating that the activation has failed, I try several options without apparent effect to see if I am not right and Microsoft has done its job to avoid piracy. I search the links and I download another, virus warning, everything normal, I run it, icons begin to appear on the desktop of rare programs that are being installed and Firefox has been changed its home page, wow! this supposed activator was a virus, Defender was right, I will have to reinstall everything again.
 
-### Searching an activator without virus
+## Searching an activator without virus
 
 I put in the table the fat weapons, start a new reinstallation of Windows 10 and Office in a virtual machine with [VirtualBox][virtualbox] that will allow me to make the tests more easily using the snapshots of the system, if something goes wrong I will be able to return to an earlier point without having to reinstall all again. I aim to find some activator that works, long ago when using Windows in the first or second, maybe the third link no more than that in Google was the activator that worked, I think again that maybe Microsoft has protected better their software. I inform myself a little more on some of the hundreds of pages, I find that I have to disable Windows Defender, as explained in those pages activate Windows and Office (any of its versions) is as easy as I remembered, use an activator and push a button. I just did not find the right one? I put a little more interest and I look for the "official" page of an activator, it seems that I have found one with good feelings. I disable Windows Defender, I run the activator, the activator window opens and I select to activate Windows and Office pushing button, in a few seconds it ends and it informs that the activation was correct. I check that Windows is enabled and Office is also enabled.
 
-### I start the third installation
+## I start the third installation
 
 I start the third installation again on the laptop and perform the activation in the same way as in the virtual machine, except Office only since the laptop has already a legal Windows license. Office reports that it is activated. I wish I had not been able to get it.
 
@@ -57,7 +57,7 @@ It is the beginning of 2016 and I have not made one but three installations of W
     image2="image:microsoft-word-2016.webp" optionsthumb2="300x200" title2="Microsoft Word 2016"
     caption="Windows 10 and Microsoft Word 2016" >}}
 
-### What are the alternatives to use an activator
+## What are the alternatives to use an activator
 
 Finally I used an activator but they are insecure, is better to purchase a license to one the alternative sellers to Microsoft that offer valid and legal license keys with prices much more cheaper than Microsoft. Microsoft sells the licenses of Windows starting at 145 € for Windows 10 and for Microsoft Office starting from 149 €, other sellers that can be found in [Amazon][amazon-affiliate] and [eBay][eBay] offer legal licenses much more cheaper, between 10 € and 15 €. So that some personalization options does not get disabled in Windows, does not get disabled the Microsoft Office documents edition and does not appears popup messages requesting the activation is necessary to [buy a license and activate Windows 10 and Office 2019][blogbitix-514-en].
 

@@ -22,7 +22,7 @@ En esta página quiero poner la selección de páginas web y blogs personales o 
 
 {{< tableofcontents >}}
 
-### Arch Linux
+## Arch Linux
 
 Si usas la distribución Arch Linux estos son algunos enlaces que no debes perderte para estar informado de las noticias sobre esta distribución.
 
@@ -32,7 +32,7 @@ Si usas la distribución Arch Linux estos son algunos enlaces que no debes perde
 Aunque no hace falta actualizar cada día es aconsejable seguirlo para conocer si va a ser necesario actualizar un paquete importante del sistema como el _kernel_ de linux, los controlador gráfico, etc...
 * [Arch Linux Forums](https://bbs.archlinux.org/index.php): el foro oficial de Arch Linux. Si no encuentras solución en el foro en español posiblemente el problema o la solución este ya comentada por otro usuario.
 
-### Noticias
+## Noticias
 
 * [Phoronix][phoronix]: Una de las mejores páginas que tengo en mi lector de noticias, suele publicar un montón de información interesante sobre varias distribuciones linux, avances en el _kernel_, _drivers_, programas y análisis de rendimiento.
 * [DistroWatch](https://distrowatch.com/): distribuciones de linux hay muchas, unas más conocidas y otras no tanto en esta página podrás encontrar la que mejor se adapte a tus necesidades, además podrás conocer cuando se publica una nueva versión y el calendario de nuevas versiones de varias distribuciones. Una página para estar informado de cada una de las nuevas versiones. También publica un semanario con el análisis de alguna distribución o noticias recientes. Además, se puede encontrar en esta página una categorización de la distribuciones según su popularidad basada en las visitas que reciben y las últimas versiones publicadas del software que compone las distribuciones GNU/Linux.
@@ -54,7 +54,7 @@ uno nuevo según tus necesidades y restricciones de presupuesto.
 * [Hardware Unboxed](https://www.youtube.com/c/Hardwareunboxednow): canal de YouTube en inglés independiente con información orientada al consumidor sobre tecnología hardware de procesadores, gráficos y componentes de computadoras de consumo. Incluye análisis de productos, comparaciones, análisis de rendimiento, recomendaciones de compra.
 * Barrapunto (actualmente discontinuada): era la web al estilo de [slashdot](https://slashdot.org/) en español donde tan importante como la noticia eran los comentarios de sus usuarios.
 
-### Software libre y GNU/Linux
+## Software libre y GNU/Linux
 
 * [Red Hat](https://www.redhat.com): web de una de las empresas que más colaboran con el desarrollo de GNU/Linux y que ofrece servicios para empresas siendo una de las que más éxito han tenido usando este modelo de negocio. Su distribución empresarial es RHEL.
 * [Fedora](https://getfedora.org/): distribución que incorpora rápido las nuevas tecnologías de Linux, respaldada por Red Hat y que pasado un tiempo incluye en su distribución empresarial RHEL las nuevas características ya probadas en Fedora.
@@ -76,7 +76,7 @@ uno nuevo según tus necesidades y restricciones de presupuesto.
 * [LiGNUx](https://lignux.com/)
 * [Listado de excelentes webs en español sobre software libre, código abierto y GNU/Linux](https://proyectotictac.com/blogs-linux/): un listado muy amplio de blogs, _podcasts_, canales de YouTube y otros formatos para compartir contenido centrados en la temática de software libre, código abierto y GNU/Linux.
 
-### Desarrollo y programación
+## Desarrollo y programación
 
 Varios blogs relacionados con la programación y el desarrollo, principalmente de java, javascript, desarrollo web, ...
 
@@ -104,7 +104,7 @@ En español también hay algunos blogs personales con artículos desde la progra
 * [Félix López](https://flopezluis.medium.com/) en Medium y [en Substack](https://flopezluis.substack.com/): más centrado en los aspectos de _manager_ los artículos los artículos están más centrados en los aspectos organizativos, desde aspectos de modelos y cultura de organización, gestión de personas hasta reclutamiento todos esos aspectos no relacionados directamente con la programación pero también importantes para una empresa tecnológica.
 * [Koalite](http://blog.koalite.com/): un blog sobre programación con una buena cantidad de artículos interesantes. Muy recomendable.
 
-### Juegos
+## Juegos
 
 A modo de entretenimiento los juegos son una buena opción. Hay múltiples páginas y foros, entre los siguientes enlaces destaco varios canales de YouTube personales muy alejados de la estridente, forzada y poco natural forma de hablar de algunos famosos _youtubers_ que puede tengan más suscriptores pero que en mi caso aborrezco su forma de publicar contenido, me gusta mas el tono de los siguientes enlaces.
 
@@ -117,7 +117,7 @@ A modo de entretenimiento los juegos son una buena opción. Hay múltiples pági
 * [CUBTC](https://www.youtube.com/channel/UC3-yxBBaDoMl-VhLjef_Vbw/videos): la mayoría de vídeos son sobre los juegos _free to play_ de [Wargaming][wargaming] como [World of Tanks][wargaming-worldoftanks] y [World of Warships][wargaming-worldofwarships] con una muy buena cantidad de guías de como jugar y guías con consejos sobre estrategia explicados muy detalladamente.
 * [Choche](https://www.youtube.com/channel/UCi6h7SZl37d7toCGHFvLUtQ/videos): el canal de YouTube de otro jugador dedicado al juego World of Warships, explicando tácticas, consejos y como mejorar como jugador.
 
-### Ciencia, matemáticas y conocimiento
+## Ciencia, matemáticas y conocimiento
 
 Quizá en la educación básica, en el instituto o la universidad las asignaturas de ciencia o matemáticas no eran todo lo divertidas que podrían ser. Sin embargo, la ciencia y adquirir nuevo conocimiento es apasionante. Aunque la humanidad ha adquirido un gran conocimiento sobre ciencia aún siguen habiendo preguntas para las que aún no se han encontrado respuesta. Los siguientes canales de YouTube hacen divulgación científica de una manera amena y sencilla sobre problemas complejos, invertir en ciencia y las personas dedicadas a la investigación hacen una gran labor, los divulgadores científicos hacen otra gran labor de gran importancia para algunas personas de entretenimiento pero para otras para dar visibilidad a es trabajo de los científicos y contribuyendo a despertar vocaciones. Además, varios de estos canales lo hacen en el español lo que facilita la compresión.
 
@@ -141,12 +141,12 @@ Sobre informática.
 
 * [Dot CSV](https://www.youtube.com/channel/UCy5znSnfMsDwaLlROnZ7Qbg)
 
-### Política
+## Política
 
 * [David Saavedra](https://www.youtube.com/c/DavidSaavedra): el canal de YouTube de un antiguo radicalizado neonazi que al contrario del esteriotipo que podemos tener de los nazis de incultos, paletos y poco ilusrados demuestra en su canal con solo ver unos pocos vídeos de su canal que este en concreto ha leído bastante y seguramente mucho más que muchas personas. El problema es que aún ilustrado debido sus sesgos está ilutrado en propaganda nazi y argumentos nacionalistas muy tóxicos. Por fortuna pora él finalmente se ha dado cuenta de su propio radicalismoa y ahora en su canal da importantes y valiasas lecciones sobre como funciona el fanatistmo y radcalismo que quizá ayuden a alguien a no caer en el radicalismo, radicalismo que incluso hace pensar a personas y actuar de tal forma que va en contra de sus propios intereses, por ejemplo al votar en unas elecciones.
 * [La Base](https://www.youtube.com/watch?v=DM0vt3dMwE0&list=PLAJPOTilSSeLQIVQKFIPTtmFCoI0R7FTD): el canal de Pablo Iglesias para el periódico digital [Público](https://www.publico.es/) después de dejar la política como político y de la presión mediatica que ha sufrido en su persona. Ahora en La Base analiza la actualdad política y como funciona la política y los medios estando fuera de ella, otra forma de activismo estando fuera de la política y sin estar tanto en el punto de mira del poder formado por políticos y empresarios que tiene la capacidad de cancelar a quién les interese si va en contra de sus intereses, Pablo Iglesias no ha sido el primero y posiblemente no sea el último cancelado.
 
-### Otros
+## Otros
 
 Otros blog aunque un fuera de tema de los anteriores también muy interesantes.
 

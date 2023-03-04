@@ -34,7 +34,7 @@ En cualquier caso Apache Kafka es la opción dominante como _broker_ de mensajes
 
 {{< tableofcontents >}}
 
-### Introducción a Apache Kafka
+## Introducción a Apache Kafka
 
 Apache Kafka es un _broker_ de mensajes altamente escalable al mismo tiempo que complejo. La complejidad en cierta medida es necesaria para ser resiliente y ofrecer tolerancia a fallos, la tolerancia a fallos y la escalabilidad se proporcionan creando un sistema distribuido que es el que añade complejidad a la herramienta como en la mayoría de herramientas distribuidas.
 
@@ -44,7 +44,7 @@ La [documentación de Apache Kafka](https://kafka.apache.org/documentation/) par
     linkids="e9a76136c36140e0db4a6d1ecc6e180e"
     asins="1492043087" >}}
 
-#### Por qué Apache Kafka
+### Por qué Apache Kafka
 
 Kafka no es el único sistema de mensajería, las características que hacen de Kafka una buena opción son las siguientes:
 
@@ -55,7 +55,7 @@ Kafka no es el único sistema de mensajería, las características que hacen de 
 * Alto rendimiento: dada su escalabilidad el número de mensajes que puede entregar también es grande, y manteniendo latencias bajas en la entrega de mensajes.
 * Características de la plataforma: proporciona librerías y una API para extender el comportamiento de Kafka, integraciones para conectarlo a otros sistemas con [Kafka Connect](https://kafka.apache.org/documentation/#connect) por ejemplo para recibir como mensajes los cambios en una base de datos y [Kafka Streams](https://kafka.apache.org/documentation/streams/) permite procesar flujos constantes de datos.
 
-#### Conceptos esenciales
+### Conceptos esenciales
 
 Para usar Kafka de forma correcta conviene entender varios de los conceptos que maneja este _broker_ de mensajes.
 
@@ -79,7 +79,7 @@ Kafka no impone ninguna restricción en el contenido de los mensajes, los trata 
 
 Para algunas de tareas Kafka utiliza [Zookeeper][apache-zookeeper] para la coordinación, consenso y almacenamiento de configuración. Es otro _cluster_ de servidores que hay que mantener y añade complejidad. Los desarrolladores están trabajando para que Zookeeper no sea necesario y simplificar el uso de Kafka.
 
-#### Propiedades de configuración
+### Propiedades de configuración
 
 Kafka soporta numerosas [propiedades de configuración](https://kafka.apache.org/documentation/#configuration) entre las que están el número de particiones de los _topics_, la retención de los segmentos de los mensajes en base a tiempo o número de bytes, el número de réplicas a mantener de cada partición y otros parámetros de tiempos al procesar los mensajes y comunicación entre brokers.
 
@@ -87,7 +87,7 @@ Estas propiedades se configuran en función del volumen de tráfico generado por
 
 Un solo _broker_ soporta un volumen grande de tráfico, pero en los casos de un uso intenso es necesario mayor número de instancias.
 
-#### Descarga e inicio con contenedores Docker
+### Descarga e inicio con contenedores Docker
 
 Una opción sencilla para usar Apache Kafka es usándolo a través de un contenedor de [Docker][docker], basta instalar Docker y descargar el contenedor de Kafka.
 
@@ -107,7 +107,7 @@ Este es un archivo de [Docker Compose][docker-compose] que permite arrancar vari
 {{< code file="docker-compose-up.sh" language="bash" options="" >}}
 {{< code file="docker-compose.yml" language="yaml" options="" >}}
 
-#### Uso
+### Uso
 
 Los _producers_ y _consumers_ se pueden implementar en diferentes lenguajes entre los que está Java. Kafka proporciona una API para la integración con Kafka y el proyecto [Spring][spring] una integración para las aplicaciones que utilizan este _framework_ para mayor facilidad de uso en el proyecto [Spring for Apache Kafka][spring-kafka].
 
@@ -156,7 +156,7 @@ Una vez el _broker_ se vuelve a levantar quizá por una acción manual del admin
 {{< code file="docker-start-broker2.sh" language="bash" options="" >}}
 {{< code file="kafka-topics-describe-3.out" language="plain" options="" >}}
 
-#### Tutorial
+### Tutorial
 
 En [YouTube][youtube] hay varios tutoriales con varios capítulos acerca de Kafka con más información y mostrándolo en vídeo, basta con hacer un búsqueda.
 

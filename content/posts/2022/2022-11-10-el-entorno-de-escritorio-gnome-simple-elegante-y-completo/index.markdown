@@ -46,7 +46,7 @@ Más que la distribución las tareas que se hacen con la computadora al final so
 
 {{< tableofcontents >}}
 
-### El entorno de escritorio GNOME
+## El entorno de escritorio GNOME
 
 Un entorno de escritorio proporciona un modelo de interacción gráfica con el sistema, una guía de estilos y un conjunto de aplicaciones sencillas que cubren las necesidades básicas de los usuarios sin tener que instalar aplicaciones de terceros.
 
@@ -61,7 +61,7 @@ GNOME solo es uno de los entornos de escritorio más populares de GNU/Linux, se 
     image1="image:gnome.webp" optionsthumb1="650x450" title1="Entorno de escritorio GNOME 43"
     caption="Entorno de escritorio GNOME 43" >}}
 
-#### Introducción
+### Introducción
 
 GNOME es uno de los entornos de escritorio más populares en GNU/Linux junto a Plasma. GNOME se caracteriza por su simplicidad y elegancia, al mismo tiempo que ser un entorno de escritorio completo que cubre las necesidades esenciales que ha de integrar todo entorno de escritorio sin necesidad de aplicaciones adicionales proporcionadas por terceros y todas manteniendo una consistencia de diseño. Esta simplicidad a veces adolece de opciones de personalización y configuración, aunque las opciones de configuración más usadas suelen estar o se van incorporando con el tiempo.
 
@@ -69,13 +69,13 @@ Hay una nueva versión de GNOME cada seis meses que incorpora cambios y mejoras 
 
 En el modelo de desarrollo de GNOME este está en constante actualización y cambio. Dado que es muy completo tiene numerosos componentes y aplicaciones, esto puede resultar que en las [guía de estilos para la interfaz de las aplicaciones de GNOME][gnome-hig] algunas aplicaciones tardan algunas versiones en actualizarse que resulta en algunas pequeñas inconsistencias en las aplicaciones. Esto no es algo que ocurra solo en GNOME y un sistema operativo de pago como Windows también sigue incorporando el obsoleto panel de control de versiones antediluvianas.
 
-#### Funcionalidades generales
+### Funcionalidades generales
 
 Independientemente de las aplicaciones integradas y de terceros el entorno de escritorio define un marco de trabajo para el usuario. La forma de trabajar y de interaccionar con el entorno de escritorio es diferente en Windows, macOS, GNOME o Plasma aunque todos comparten ciertas convenciones como que las aplicaciones se representan de forma gráfica en lo que en el contexto de los escritorios se denominan ventanas.
 
 Los entornos de escritorio modernos se aprovechan de las capacidades de las GPU para ofrecer mejor rendimiento y animaciones fluidas que más allá de los efectos gráficos permiten transiciones suaves y progresivas para evitar cambios bruscos que desorientan al usuario. Esto hace que el escritorio se note más agradable al trabajar con él. Atrás han quedado los llamativos efectos sorprendentes de [Compiz][wikipedia-compiz] y [Beryl][wikipedia-beryl] con su cubo, ventanas gelatinosas o ardiendo para en los entornos de escritorio actuales únicamente usar los mínimos efectos que realmente mejoran la experiencia del usuario.
 
-#### GDM
+### GDM
 
 Las computadoras pueden ser usadas por diferentes usuarios de modo que los escritorios primero han de autenticar al usuario que va a usarlo generalmente con un usuario y contraseña. Una vez el sistema autentica al usuario con la pantalla de inicio de sesión el sistema muestra los archivos del usuario y sus configuraciones personalizadas del sistema. La pantalla de inicio de sesión de GNOME es implementada por GDM.
 
@@ -85,7 +85,7 @@ Las computadoras pueden ser usadas por diferentes usuarios de modo que los escri
     image2="image:gnome-gdm-2.webp" optionsthumb2="300x200" title2="Inicio de sesión en GNOME con GDM"
     caption="Inicio de sesión en GNOME con GDM" >}}
 
-#### Escritorio
+### Escritorio
 
 Al iniciar sesión en GNOME el escritorio se muestra en la vista de actividades mostrando una miniatura del escritorio y las aplicaciones ancladas en la barra de acceso rápido para iniciarlas, también se permite teclear para iniciar una búsqueda de otras aplicaciones o documentos.
 
@@ -101,7 +101,7 @@ El escritorio de GNOME se compone de una barra superior, en la parte izquierda e
     image2="image:gnome-escritorio-4.webp" optionsthumb2="300x200" title2="Escritorio"
     caption="Escritorio" >}}
 
-#### Escritorios virtuales
+### Escritorios virtuales
 
 El escritorio GNOME ofrece no solo un escritorio sino varios virtuales que permite organizar las diferentes ventanas de las aplicaciones a conveniencia del usuario, por ejemplo para tener una organización que permite realizar más fácilmente el trabajo.
 
@@ -112,7 +112,7 @@ Es posible cambiar de un escritorio a otro a través de la pantalla de actividad
     image1="image:gnome-escritorios-virtuales-1.webp" optionsthumb1="300x200" title1="Escritorios virtuales"
     caption="Escritorios virtuales" >}}
 
-#### Pantalla de bloqueo
+### Pantalla de bloqueo
 
 Cuando no se esté usando el equipo GNOME permite bloquear la sesión temporalmente de modo que otro usuario tenga acceso a él. Para volver al abrir la sesión hay que volver a autenticarse pero todas las aplicaciones y estado del trabajo seguirá en el mismo punto donde se dejó.
 
@@ -124,7 +124,7 @@ La pantalla de bloqueo permite mostrar ciertas notificaciones de las aplicacione
     image2="image:gnome-pantalla-bloqueo-2.webp" optionsthumb2="300x200" title2="Pantalla de bloqueo"
     caption="Pantalla de bloqueo" >}}
 
-#### Notificaciones y calendario
+### Notificaciones y calendario
 
 En la parte central de la barra superior la fecha y hora da acceso al área de notificaciones, calendario, relojes y meteorología. Las notificaciones de las aplicaciones ofrecen información al usuario de cierto evento como que ha llegado un mensaje de correo electrónico, también permiten realizar algunas acciones sin tener que usar la aplicación como pausar la música de un reproductor de audio.
 
@@ -139,7 +139,7 @@ Como las notificaciones pueden interrumpir la concentración y el trabajo está 
     image1="image:gnome-notificaciones.webp" optionsthumb1="300x200" title1="Notificaciones y calendario"
     caption="Notificaciones y calendario" >}}
 
-#### Bandeja del sistema y configuración
+### Bandeja del sistema y configuración
 
 En la parte derecha de la barra superior está la bandeja del sistema que muestra varios iconos con información de estado como el volumen de sonido, el tipo de conexión de red junto a otros iconos que las aplicaciones pueden agregar como un poder cambiar de disposición de teclado rápidamente. Como está captura de imagen está tomada de una máquina virtual ha varias opcione que no se muestra como opción de conexión WIFI y Bluetooth.
 
@@ -206,7 +206,7 @@ El conjunto completo de opciones de configuración están en la aplicación Conf
     image1="image:gnome-configuracion-25.webp" optionsthumb1="200x150" title1="Configuración"
     caption="Configuración" >}}
 
-#### Fondos de pantalla
+### Fondos de pantalla
 
 Una de las opciones de configuración más utilizadas es cambiar la imagen del fondo del escritorio. GNOME proporciona varias dinámicas que cambian según la hora y según se utilice el modo claro o el modo oscuro. El usuario también puede añadir sus propias imágenes si lo desea.
 
@@ -227,7 +227,7 @@ Una de las opciones de configuración más utilizadas es cambiar la imagen del f
     image3="image:gnome-fondo-de-pantalla-9.webp" optionsthumb3="200x150" title3="Fondo de pantalla"
     caption="Fondo de pantalla" >}}
 
-#### Modo claro y modo oscuro
+### Modo claro y modo oscuro
 
 Uno de las funciones que han ido adoptando todos los escritorios incluyendo GNOME es la funcionalidad de modo claro y oscuro para las ventanas. El modo oscuro utiliza tonos oscuros para evitar la luz blanca que moleste a los ojos. El cambio de un modo a otro es posible realizarlo sin tener que reiniciar la sesión con una animación de transición entre ambos tonos. Esto se aplica tanto a los bordes de las ventanas y objetos gráficos de las mismas en aquellas aplicaciones que soportan los modos claros y oscuro.
 
@@ -237,11 +237,11 @@ Uno de las funciones que han ido adoptando todos los escritorios incluyendo GNOM
     image2="image:gnome-modo-caro-oscuro-2.webp" optionsthumb2="300x200" title2="Modo oscuro"
     caption="Modo claro y oscuro" >}}
 
-#### Esquina activa
+### Esquina activa
 
 El acceso a la pantalla de actividades también es posible mediante la esquina activa de modo que sin hacer clic en la opción _Actividades_ en la barra superior a la izquierda tan solo moviendo el ratón a la esquina superior izquierda. Como esta acción a veces es posible activarla sin querer es posible desactivarla con la opción de configuración.
 
-#### Pantalla dividida
+### Pantalla dividida
 
 Los monitores actuales que llegan a ser de 27" y 32" algunos en formatos panorámicos con resolución 2K, 4K nativos y resoluciones híbridas en los panorámicos. En los monitores con gran cantidad de espacio horizontal una funcionalidad muy útil es colocar dos ventanas lado a lazo una ocupando el lado izquierdo y otra el lado derecho de la pantalla pudiendo cambiar entre una y otra el foco fácilmente sin que ninguna parte de ambas quede oculta por otras ventanas.
 
@@ -250,7 +250,7 @@ Los monitores actuales que llegan a ser de 27" y 32" algunos en formatos panorá
     image1="image:gnome-patalla-dividida-1.webp" optionsthumb1="300x200" title1="Pantalla dividida"
     caption="Pantalla dividida" >}}
 
-#### Siempre encima
+### Siempre encima
 
 Cada vez que una ventana toma la foto se eleva sobre el resto de las otras ventanas para mostrar todo su contenido. Cuando otra ventana toma el foco esta se eleva y la que lo tenía desciende quedando oculta parte de su contenido si ambas coinciden en parte de su ubicación.
 
@@ -262,7 +262,7 @@ GNOME tiene una funcionalidad de siempre encima, con la funcionalidad activada l
     image2="image:gnome-siempre-encima-2.webp" optionsthumb2="300x200" title2="Siempre encima"
     caption="Siempre encima" >}}
 
-#### Renombrar múltiples archivos
+### Renombrar múltiples archivos
 
 El nombre del archivo es el elemento que los identifica, no puede haber dos archivos con el mismo nombre, teniendo en cuenta que GNU/Linux es sensible a mayúsculas y minúsculas y Windows es insensible a mayúsculas y minúsculas, en GNU/Linux _archivo.txt_ y _Archivo.txt_ son dos nombres de archivo diferentes y válidos cuando en Windows producen conflicto en el nombre del archivo.
 
@@ -276,7 +276,7 @@ La tecla _F2_ permite renombrar el nombre del archivo, también con el clic dere
     image2="image:gnome-renombrar-2.webp" optionsthumb2="300x200" title2="Renombrar archivos"
     caption="Renombrar archivos" >}}
 
-#### Comprimir archivos
+### Comprimir archivos
 
 La compresión de archivos permite reducir el tamaño de los mismos, los archivos de texto suelen ser altamente comprimibles otros archivos que ya están comprimidos como música, fotos y vídeo la reducción de tamaño suele ser menor.
 
@@ -290,7 +290,7 @@ El compresor de archivos GNOME permite crear archivos zip y archivos zip protegi
     image2="image:gnome-comprimir-2.webp" optionsthumb2="300x200" title2="Comprimir archivo"
     caption="Comprimir archivo" >}}
 
-#### Atajos de teclado
+### Atajos de teclado
 
 Los atajos de teclado son una forma de realizar una acción más fácil y rápida con una combinación de teclas en vez de usar el ratón y varios clic utilizando la interfaz gráfica.
 
@@ -303,7 +303,7 @@ Por defecto GNOME no ofrece una barra de tareas como Windows y Plasma y tampoco 
     image1="image:gnome-atajos-de-teclado-1.webp" optionsthumb1="300x200" title1="Atajos de teclado"
     caption="Atajos de teclado" >}}
 
-#### Configuración de teclado
+### Configuración de teclado
 
 Lo habitual es utilizar el teclado con la disposición de caracteres del lenguaje propio y según la serigrafía del teclado. Algunos usuarios prefieren utilizar un teclado con disposición en inglés aún siendo el lenguaje del usuario el español, para tareas de programación la disposición en inglés si uno se acostumbra la disposición de caracteres requiere menos combinaciones de teclas.
 
@@ -317,7 +317,7 @@ Los español parlantes lo habitual es utilizar la disposición en español o ing
     image2="image:gnome-configuracion-de-teclado-2.webp" optionsthumb2="300x200" title2="Configuración de teclado"
     caption="Configuración de teclado" >}}
 
-#### Configuración de monitor
+### Configuración de monitor
 
 No son pocos los usuarios que tiene un monitor de alta resolución 4K o 2K o usuarios que utilizan dos pantallas externas o una pantalla externa y la del portátil. GNOME ofrece varias opciones de configuración para los monitores pudiendo elegir la resolución del monitor y la disposición de los monitores para que corresponda con la disposición física y el paso del puntero del ratón de un monitor a otro sea algo natural.
 
@@ -329,7 +329,7 @@ Los monitores 4K ofrecen gran resolución pero dependiendo de su tamaño de pant
     image2="image:gnome-configuracion-de-pantalla-2.webp" optionsthumb2="300x200" title2="Configuración de pantalla"
     caption="Configuración de pantalla" >}}
 
-#### Extensiones
+### Extensiones
 
 Las extensiones de GNOME son una forma de permitir a los desarrolladores implementar ciertas funcionalidades que GNOME no implementa y ofrece por defecto a todos los usuarios. Instalando una extensión permite añadir y personalizar el escritorio a las preferencias y necesidades del usuario.
 
@@ -352,7 +352,7 @@ Una funcionalidad demandada es tener una barra de tareas o _dock_ que permite ca
     image2="image:gnome-extensiones-dash-to-dock-4.webp" optionsthumb2="300x200" title2="Extensiones"
     caption="Extensiones" >}}
 
-#### Aplicación retoques
+### Aplicación retoques
 
 La simplicidad de GNOME hace que solo ofrezca las opciones de personalización más utilizadas por la mayoría de usuarios. Esto tiene la ventaja de que la interfaz gráfica no esté llena de opciones de personalización que apenas se usan, lo que hace la interfaz de GNOME más simple y menos recargada.
 
@@ -374,7 +374,7 @@ Sin embargo, algunos usuarios desean algunas opciones más de personalización, 
     image2="image:gnome-retoques-8.webp" optionsthumb2="300x200" title2="Retoques"
     caption="Retoques" >}}
 
-#### Papelera de reciclaje
+### Papelera de reciclaje
 
 Eliminar un archivo es una operación destructiva y si se realiza por error la recuperación del archivo y su contenido no es posible sin herramientas especializadas que no son de uso habitual. Para evitar errores y poder recuperar los archivos si más tarde se cambia de opinión los entornos de escritorio ofrecen el concepto de papelera de reciclaje.
 
@@ -386,7 +386,7 @@ Los archivos antes de ser eliminados de forma definitiva se envían a la papeler
     image2="image:gnome-papelera-de-reciclaje-2.webp" optionsthumb2="300x200" title2="Papelera de reciclaje"
     caption="Papelera de reciclaje" >}}
 
-### Aplicaciones integradas de GNOME
+## Aplicaciones integradas de GNOME
 
 Junto al sistema de ventanas y escritorio se proporcionan una amplia colección de aplicaciones que cubren las necesidades de cualquier usuario al menos en necesidades básicas con la que habitualmente no es necesario recurrir a instalar aplicaciones adicionales de terceros.
 
@@ -433,7 +433,7 @@ La siguiente galería de imágenes muestra varias de las aplicaciones en su aspe
     image3="image:gnome-aplicaciones-3.webp" optionsthumb3="300x200" title3="Aplicaciones"
     caption="Aplicaciones" >}}
 
-### Otras aplicaciones para GNOME y aplicaciones de terceros
+## Otras aplicaciones para GNOME y aplicaciones de terceros
 
 Si la colección de aplicaciones integradas no es suficiente y se requieren funcionalidades más avanzadas hay desarrolladores que ofrecen sus aplicaciones y funcionan en el entorno de escritorio GNOME.
 
@@ -457,7 +457,7 @@ Para cada una de ellas suele haber varias opciones entre las que elegir que pued
 
 Para cada necesidad distinta es muy probable que exista no solo una sino varias aplicaciones específicas, en GNU/Linux además es posible que exista una opción sin costes de licencia y sea fácilmente instalable en formato Flatpak usando la aplicación _Software_.
 
-### Análisis de GNOME en vídeo
+## Análisis de GNOME en vídeo
 
 Las imágenes estáticas de este artículo no muestran el escritorio de GNOME en funcionamiento, las animaciones su fluidez. En varios videos de [YouTube][youtube] hay guías en vídeo del entorno de escritorio asi como las novedades y cambios de la última versión.
 

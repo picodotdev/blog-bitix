@@ -29,7 +29,7 @@ Los repositorios anteriores son públicos donde los desarrolladores suben sus ar
 
 {{< tableofcontents >}}
 
-### Repositorio de artefactos con Nexus
+## Repositorio de artefactos con Nexus
 
 [Nexus] es un software que ofrece la funcionalidad de repositorio de artefactos. Permite a una organización compartir de forma privada los artefactos entre los diferentes proyectos. Soporta diferentes tipos de repositorios según el tipo de artefactos, librerías _jar_ para Java, paquetes npm para JavaScript, imágenes de contenedores para Docker, paquetes de [Python][python] y [Go][go].
 
@@ -46,7 +46,7 @@ Nexus OSS es la versión de código abierto que permite su uso sin coste, la ver
     image1="image:nexus.webp" optionsthumb1="650x450" title1="Nexus"
     caption="Arquitectura de un repositorio de artefactos con Nexus" >}}
 
-### Ejemplo de repositorio con Nexus
+## Ejemplo de repositorio con Nexus
 
 Nexus ofrece una imagen de Docker que permite iniciar el servidor de Nexus de forma fácil como un contenedor. El siguiente _script_ lo inicia en el puerto 8081 y en el puerto adicional 8082 para el repositorio de Docker.
 
@@ -62,13 +62,13 @@ El usuario administrador es _admin_ y la contraseña aleatoria generada al inici
     image2="image:nexus-2.webp" optionsthumb2="300x250" title2="Nexus"
     caption="Nexus" >}}
 
-#### Publicar un artefacto a un repositorio Maven local
+### Publicar un artefacto a un repositorio Maven local
 
 Usando Gradle o Maven las dependencias de un proyecto se cachean en un directorio local del directorio de inicio del usuario, _~/.gradle_ o _~/.m2_. Al desarrollar es posible publicar una versión de una librería en estos repositorios de caché. Para publicar un artefacto en un repositorio de Maven con Gradle se utiliza el _plugin_ [Maven Publish](https://docs.gradle.org/current/userguide/publishing_maven.html).
 
 {{< code file="gradlew-publishToMavenLocal.sh" language="bash" options="" >}}
 
-#### Publicar un artefacto a un repositorio Maven en Nexus con Gradle
+### Publicar un artefacto a un repositorio Maven en Nexus con Gradle
 
 Gradle ofrece el _plugin_ _Maven Publish_ para publicar artefactos en repositorios de Maven. Hay que configurar y definir los artefactos y los repositorios en los que se puede publicar. El _plugin_ añade varias tareas de Gradle con las que elegir de forma específica que artefacto publicar, en que repositorio, el grupo del artefacto, su nombre y versión.
 
@@ -93,7 +93,7 @@ El programa trata las clases de la librería del repositorio de Nexus como cualq
 {{< code file="gradlew-run.sh" language="bash" options="" >}}
 {{< code file="System.out" language="plain" options="" >}}
 
-#### Publicar una imagen Docker a un repositorio repositorio en Nexus
+### Publicar una imagen Docker a un repositorio repositorio en Nexus
 
 Para usar el repositorio de imágenes de Docker en Nexus es necesario crear un repositorio y configurar Nexus para que se ubique en un puerto diferente del del puerto estándar. En este caso el contenedor de Docker de Nexus además del puerto 8081 se inicia en el puerto 8082.
 

@@ -31,7 +31,7 @@ Una de las formas de analizar el código fuente de una aplicación es analizar s
 
 {{< tableofcontents >}}
 
-### Base de datos de fallos de seguridad
+## Base de datos de fallos de seguridad
 
 Los fallos de seguridad descubiertos se identifican, definen y catalogan con un nombre y se añaden a una [base de datos pública de vulnerabilidades de seguridad][cve]. Al definir los fallos de seguridad se les asigna un nivel orientativo de gravedad, dos propiedades importantes que sirven para asignar la gravedad son como es la forma de explotar el fallo de seguridad, si requiere acceso físico al sistema o es posible explotarlo de forma remota, y que permite el fallo de seguridad, como ejecución de código remoto o obtención de información confidencial.
 
@@ -39,7 +39,7 @@ Aunque algunos fallos de seguridad permiten la ejecución remota de código no s
 
 Por otro lado, la organización [OWASP][owasp] tiene documentados fallos de seguridad comunes en las aplicaciones y que conviene evitar, por ejemplo, el error de _sql injection_ o _cross site scripting_ que no por ser ya muy conocidos y no complicados de evitar dejan de ser graves si la aplicación no se implementa adecuadamente.
 
-### El problema de seguridad de Log4j 2
+## El problema de seguridad de Log4j 2
 
 Un caso de error grave de seguridad denominado identificado con el nivel máximo en la escala de gravedad es el de la librería [Log4j 2][log4j] en las versiones menores a 2.3.2 (para Java 6), 2.12.4 (para Java 7) y 2.17.1 (para Java 8 y posteriores) que es posible explotarlo de forma remota y permite ejecución remota de código denominado _Log4Shell_. Log4j 2 es una librería de Java muy utilizada en los proyectos por ser una funcionalidad fundamental para cualquier aplicación que sirve para emitir trazas o _logging_.
 
@@ -61,7 +61,7 @@ Esta misma historia ya se repitió en el 2014 con [OpenSSL][openssl] con el deno
     image1="image:log4shell.webp" optionsthumb1="650x450" title1="Logotipo de Log4Shell"
     caption="Logotipo de Log4Shell" source="https://www.lunasec.io/" >}}
 
-### Analizar y detectar fallos de seguridad en las dependencias de Java con Gradle y Maven
+## Analizar y detectar fallos de seguridad en las dependencias de Java con Gradle y Maven
 
 Dado que se volverá a repetir un fallo de seguridad como Log4 2 o _Heartbleed_ y dado que es imposible estar seguro de que una dependencia no se vea afectada en algún momento por un fallo grave de seguridad conviene estar suscrito a los boletines de seguridad y analizar las dependencias, automatizar el análisis de las dependencias es la mejor opción para que la mayor parte del trabajo lo hagan las computadoras en vez de personas y detectar los fallos de seguridad en cuanto sean publicados.
 
@@ -89,7 +89,7 @@ En un proyecto con Maven el análisis se realiza con el siguiente comando:
 
 {{< code file="mvn.sh" language="java" options="" >}}
 
-#### Analizar repositorios de Git
+### Analizar repositorios de Git
 
 En una organización con gran cantidad de repositorios de Git un error como este supone analizar cada uno de los proyectos, para automatizar la tarea el siguiente _script_ clona los repositorios a analizar, detecta si es un repositorio Gradle o Maven y ejecuta la tarea de análisis de las dependencias.
 

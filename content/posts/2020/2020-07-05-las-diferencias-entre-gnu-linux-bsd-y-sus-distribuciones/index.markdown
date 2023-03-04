@@ -37,7 +37,7 @@ Aunque solo para representar a los proyectos una diferencia está en su mascota,
 
 {{< tableofcontents >}}
 
-### Diferencias en el modelo de desarrollo
+## Diferencias en el modelo de desarrollo
 
 Lo que conocemos como Linux es simplemente el núcleo del sistema operativo de las distribuciones GNU/Linux. Las distribuciones GNU/Linux están compuestas por otra multitud de programas de usuario que forman el sistema operativo completo y lo hacen usable, estos programas son muchos de los programados bajo los proyectos de la fundación GNU. Este es el motivo de que las distribuciones GNU/Linux incluyan los términos de ambos proyectos. Las distribuciones GNU/Linux son una recopilación de programas de terceras partes, todos estos programas GNU y no GNU incluidos en los sistemas GNU/Linux están desarrollados por diferentes programadores ajenos a Linux y los creadores de la distribución. Los creadores de las distribuciones GNU/Linux son los encargados de juntar los diferentes programas de cada fuente y empaquetarlas como un sistema usable, estable y libre de errores.
 
@@ -49,7 +49,7 @@ Las distribuciones BSD siguen un enfoque en el que el sistema base es fijo pero 
 
 Esta diferencia en el modelo de desarrollo del sistema base e independiente de las aplicaciones hace que en BSD las aplicaciones se instalen de forma independiente a los paquetes del sistema. Los _ports_ son la colección de paquetes con las aplicaciones instalables en los sistemas BSD.
 
-### Diferencias en la licencia
+## Diferencias en la licencia
 
 Otro aspecto importante con diferencias está en la licencia del código fuente. Mientras que Linux usa una [licencia _GNU General Public License_ o GPL][gnu-gpl] los sistemas BSD usan una de las diferentes [licencias BSD][bsd-licenses] que tiene diferentes versiones según su número de clausulas de cuatro a cero en cuyo caso es considerado software de dominio público. Ambas son licencias consideradas como software libre.
 
@@ -61,7 +61,7 @@ En los últimos años el soporte de hardware en Linux ha mejorado notablemente y
 
 * [Licencias de software libre y diferencias con software privativo y de código abierto][blogbitix-552]
 
-### Distribuciones más importantes BSD
+## Distribuciones más importantes BSD
 
 Al igual que en GNU/Linux ha varias distribuciones BSD con algunos propósitos más prioritarios en cada una de ellas. Soportan múltiples arquitecturas de procesadores incluyendo x86, ARM, MIPS, PowerPC y UltraSPARC. Estas son algunas de las distribuciones BSD más conocidas:
 
@@ -96,7 +96,7 @@ La publicación digital [BSD Magazine][bsdmag] gratuita bajo suscripción se pub
 * [Wikipedia DragonFly BSD](https://en.wikipedia.org/wiki/DragonFly_BSD)
 * [Wikipedia macOS](https://en.wikipedia.org/wiki/MacOS)
 
-### Razones por las que usar y no usar una distribución BSD
+## Razones por las que usar y no usar una distribución BSD
 
 Entre las razones para usar BSD están:
 
@@ -117,7 +117,7 @@ Algunas de las razones por las que no usar BSD están:
 * _ports_ rotos.
 * Menos información y ayuda en internet que de GNU/Linux.
 
-### Distribuciones más importantes de GNU/Linux
+## Distribuciones más importantes de GNU/Linux
 
 Las distribuciones GNU/Linux son más numerosas si bien es cierto que muchas de ellas no tienen un objetivo que las diferencie claramente de otras. Algunas importantes son:
 

@@ -49,7 +49,7 @@ Esta es otra ventaja de llegar tarde a la generación de las consolas, que está
 {{< game-spoiler >}}
 {{< tableofcontents >}}
 
-### Los juegos de Uncharted The Nathan Drake Collection
+## Los juegos de Uncharted The Nathan Drake Collection
 
 El juego Uncharted The Nathan Drake Collection en realidad es la colección de los tres primeros juegos de Uncharted lanzados originalmente para PS3 y remasterizados para PS4 y que alguno muy posiblemente sean remasterizados para PS5. Los tres juegos incluidos en la colección son los siguientes.
 
@@ -102,7 +102,7 @@ Una vez completado un capítulo este se puede repetir en otro modo de dificultad
     image3="image:uncharted-3-la-traición-de-drake-3.webp" optionsthumb3="200x150" title3="Uncharted 3: La traición de Drake"
     caption="Uncharted 3: La traición de Drake" >}}
 
-#### Los juegos de la saga Uncharted
+### Los juegos de la saga Uncharted
 
 Los juegos Uncharted son juegos de aventuras y combates con armas y cuerpo a cuerpo. Tiene varios niveles de dificultad pero sin la mecánica de juego de progresión de habilidades que suelen incluir la mayoría de juegos, lo más que se puede hacer es recoger diferentes tipos de armas para combatir con ellas con un máximo de un arma corta y fusil por arma pesada. No es un juego en el que los recursos están limitados y hay abundancia de armas y balas, cada enemigo abatido suele dejar su arma para equiparse. Otras formas de armas son granadas y bombonas de gas o barriles a los que si se dispara explotan acabando con los enemigos cercanos. En los combates cuerpo a cuerpo en en cientos momentos hay que pulsar un botón para esquivar el golpe del enemigo o poder zafarse del enemigo cuando atrapa a Nathan.
 
@@ -151,7 +151,7 @@ Algunos trofeos en el juego se consiguen por encontrar tesoros y otros por acaba
     image3="image:uncharted-tesoros-3.webp" optionsthumb3="200x150" title3="Tesoros"
     caption="Tesoros" >}}
 
-#### Diferencias entre los tres primeros Uncharted
+### Diferencias entre los tres primeros Uncharted
 
 La calidad gráfica de los tres Uncharted es buena, sin ser mala quizá el primer Uncharted se nota que no está a la altura de todo lo que puede ofrecer la PS4, en los 2 y 3 el salto de calidad gráfica es notable, ambos están casi al mismo nivel y ya se pueden considerar más juegos del nivel de PS4.
 
@@ -176,14 +176,14 @@ En grandes rasgos los tres Uncharted son muy parecidos, quizá el segundo y terc
     image1="image:uncharted-fotos-1.webp" optionsthumb1="200x150" title1="Fotos"
     caption="Bocetos y fotos" >}}
 
-### Comparación versiones originales y remasterizadas
+## Comparación versiones originales y remasterizadas
 
 Remasterizar un juego aporta mejoras visuales para aprovechar la mayor capacidad gráfica de la nueva generación de consolas. En los siguientes vídeos se muestran las diferencias visuales entre las versiones no remasterizada de PS3 y remasterizadas de PS4, teniendo estas últimas más detalles gráficos como vegetación y elementos en el escenario. Sin embargo, desde el punto de vista de la historia entre ambas versiones no hay ninguna diferencia.
 
 {{< youtube
     video="vZc0-K7wOSs" >}}
 
-### Ubicación de todos los tesoros
+## Ubicación de todos los tesoros
 
 Cómo suele ocurrir en los juegos que tienen coleccionables es muy difícil encontrar todos los tesoros en la primera partida, si se quieren conseguir todos salvo que se quiera invertir mucho tiempo en conseguirlos hay que consultar alguna guía para saber dónde están esos que están especialmente escondidos y en sitios poco intuitivos.
 
@@ -202,7 +202,7 @@ Cómo suele ocurrir en los juegos que tienen coleccionables es muy difícil enco
 {{< youtube
     video="ZPRU9u0zKvI" >}}
 
-### Película
+## Película
 
 {{< youtube
     video="dkZ6zdUCgqI" >}}
@@ -211,7 +211,7 @@ Cómo suele ocurrir en los juegos que tienen coleccionables es muy difícil enco
 {{< youtube
     video="zUg4TAYIS_o" >}}
 
-### Banda sonora original
+## Banda sonora original
 
 La banda sonora del juego está a la altura de una de las series de juegos más reconocibles de la PlayStation.
 

@@ -27,7 +27,7 @@ En la medida de mis posibilidades he buscado formas de contribuir al proyecto Ap
 
 Con el paso del tiempo y continuando siguiendo el proyecto otras formas en las que he contribuido y ahora sí al proyecto es el arquetipo de [Maven][maven] que permite iniciar una aplicación de Apache Tapestry rápidamente. Y más recientemente la actualización de la página web del proyecto junto con el _artwork_ del logotipo.
 
-### Página web del proyecto
+## Página web del proyecto
 
 Entre esas cosas que consideraba mejorables era la página web del proyecto y documentación. Con el paso del tiempo el diseño de la misma estaba desfasado, no era adaptable para dispositivos móviles y tiene algunos errores como que la búsqueda personalizada de Google no funcionaba y algunos enlaces rotos. Otra mejora ha sido redirigir el tráfico del protocolo http a https con JavaScript.
 
@@ -50,7 +50,7 @@ El resultado ha sido este, antes y después. El actual lo puedes ver en la [pág
     caption="Comparación entre la versión antigua (izquierda) y nueva (derecha)" >}}
 
 
-### Artwork del logotipo
+## Artwork del logotipo
 
 Al mismo tiempo que la mejora de la página web he mejorado el logotipo y generado un nuevo _artwork_. Después de recopilar las diferentes versiones logotipos y viendo las diferencias de cada una de ellas en tipo de fuente, formas del icono, colores, etc he creado uno nuevo seleccionado lo que he considerado lo mejor de cada uno de ellos. La forma del unicornio de uno, los elementos de fondo del icono de otro, el ojo del unicornio, la fuente del texto, cambiado el color de la palabra _apache_ en vez de gris a negro de modo que en resoluciones bajas y fondo claro a resoluciones bajas se siga leyendo correctamente, añadido la mosca del _trademark, ™_ para cumplir con algunos requerimientos de la fundación Apache para proteger sus marcas. En las versiones originales unicamente ofrecen un fondo claro en las nuevas también una versión para fondos oscuros.
 
@@ -89,7 +89,7 @@ El resultado es una colección de más de 50 imágenes en formato PNG y SVG entr
 
 {{< code file="generate-logotype-artwork.sh" language="bash" options="" >}}
 
-### Artefacto de Maven quickstart
+## Artefacto de Maven quickstart
 
 En una contribución anterior había realizado cambios en el artefacto de Maven que permite generar un esqueleto de aplicación que hace uso de Tapestry. Y simplemente no funcionaba, además de usar una librería para iniciar un [Tomcat][tomcat] embebido más antigua.
 
@@ -101,7 +101,7 @@ Las mejoras que he realizado ha sido refactorizar el artefacto de Maven, usar [S
     gallery="true"
     image1="image:apache-tapestry-quickstart.webp" optionsthumb1="300x200" title1="Aplicación de inicio rápido" >}}
 
-### Conclusión
+## Conclusión
 
 Los que trabajan en proyecto _open source_ tienen mucho conocimiento deben tenerlo si son capaces de construir un proyecto que en algunos casos utilizan miles de desarrolladores y empresas pero su tiempo es limitado, ni en muchos casos es su trabajo principal y en algunos aspectos no tienen por qué saber más que tú en todo. Contribuir a un proyecto es sencillo solo requiere tiempo y algo de conocimiento para conocer que cambios hay que realizar, con interés y tiempo poco a poco uno va conociendo más detalles del proyecto que permiten realizar contribuciones como estas.
 

@@ -27,7 +27,7 @@ Si además como en los microservicios hay múltiples bases de datos para varios 
 
 {{< tableofcontents >}}
 
-### Herramienta para obtener y modificar datos de una base de datos relacional
+## Herramienta para obtener y modificar datos de una base de datos relacional
 
 [SQLPad][sqlpad] es una pequeña herramienta que actúa como cliente de una base de datos relacional con la que es posible lanzar consultas SQL mediante una interfaz web. Esta herramienta hace muy sencillo el acceso a la base de datos de producción, entorno de QA o a una de sus réplicas, dado que utiliza una interfaz web no es necesario instalar ni configurar ninguna herramienta adicional, solo requiere un navegador web que todo ordenador ya posee.
 
@@ -72,7 +72,7 @@ SQLPad ofrece un contenedor de [Docker][docker] y un archivo de [Docker Compose]
 {{< code file="docker-compose.yml" language="bash" options="" >}}
 {{< code file="docker-compose-up.sh" language="bash" options="" >}}
 
-### Herramientas para visualizar datos
+## Herramientas para visualizar datos
 
 Obtener los datos y descargarlos en formato csv o xlsx permite extraer información, para comprender mejor un gran volumen de datos se utilizan diferentes tipos de gráficas.
 
@@ -89,7 +89,7 @@ Algunas herramientas tienen un coste si se usan con el _hosting_ que ofrecen per
     image3="image:apache-superset.webp" optionsthumb3="300x200" title3="Apache Superset"
     caption="Redash, Metabase y Apache Superset" >}}
 
-### Cómo proteger los datos
+## Cómo proteger los datos
 
 Además de limitar a que bases de datos tiene permisos de acceso cada usuario algunos datos almacenados son sensibles, por motivos de seguridad si se tratan de contraseñas si no se utiliza [una forma correcta de guardar contraseñas con _salted-password-hashing_ en la base de datos][blogbitix-75], datos personales protegidos por leyes que de no custodiar correctamente los datos en caso de filtración suponen sanciones como importantes multas económicas o datos de tarjetas de crédito, códigos de seguridad, fechas de expiración o cuentas bancarias.
 

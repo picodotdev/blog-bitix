@@ -53,7 +53,7 @@ El propio entorno de escritorio que proporciona la interfaz gráfica también in
 * [Las aplicaciones integradas del entorno de escritorio GNOME][blogbitix-464]
 * [Juegos incluidos en el entorno de escritorio GNOME][blogbitix-167]
 
-### Aplicaciones adicionales del círculo de GNOME
+## Aplicaciones adicionales del círculo de GNOME
 
 Las aplicaciones del entorno de escritorio de GNOME son aplicaciones sencillas que cubren las necesidades más básicas, para propósitos adicionales específicos es necesario instalar aplicaciones desarrolladas por terceros fuera del entorno de escritorio.
 

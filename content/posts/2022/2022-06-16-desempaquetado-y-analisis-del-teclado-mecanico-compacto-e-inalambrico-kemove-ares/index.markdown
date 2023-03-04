@@ -29,7 +29,7 @@ Otros productos y usuarios buscan tener lo mejor que haya en el mercado sin impo
 
 {{< tableofcontents >}}
 
-### Características técnicas del teclado KEMOVE ARES
+## Características técnicas del teclado KEMOVE ARES
 
 El teclado mecánico [KEMOVE ARES](https://www.kemove.com/product/k64-ares/?wpam_id=17) es un teclado de gama alta cuya principal característica es que emplea los mejores materiales y una mayor calidad de construcción, tiene un cuerpo de metal de aluminio y los _keycaps_ son de mejor construcción respecto al teclado KEMOVE DK61 que siendo también un buen teclado emplea otros materiales más económicos principalmente en el cuerpo de plástico. El teclado se vende nuevo por unos 150€ que sin ser de los más caros es mayor que el propio KEMOVE DK61 que salvo el cuerpo de metal ofrece lo mismo.
 
@@ -48,7 +48,7 @@ Las características completas del teclado son las siguientes:
 * Disponible en varios colores.
 * Incluye cubre teclado de plástico para evitar polvo.
 
-#### Diferencias con los teclados KEMOVE DK61, DIERYA DK63 y DK61E
+### Diferencias con los teclados KEMOVE DK61, DIERYA DK63 y DK61E
 
 La familia de teclados mecánicos KEMOVE ARES, KEMOVE DK61, DIERYA DK63 y DK61E cubren la gama completa de teclados mećanicos compactos que un usuario desee comprar. Todos ofrecen RGB algunos tiene conexión inalámbrica por Bluetooth con batería y posibilidad de conexión con cable, algunos con _keycaps_ de plástico PBT y los más económicos con teclas de plástico ABS, la mayoría con interruptores eléctricos y alguno con interruptores ópticos, todos de formato 60% ya sea con 61 o 63 teclas. Todos con la disposición teclas ANSI y serigrafía en inglés.
 
@@ -58,11 +58,11 @@ Finalmente, en la gama alta está el KEMOVE ARES con un cuerpo de aluminio CNC q
 
 Algunos de los DIERYA tenían un problema de diseño en la serigrafía de la tecla F11, no afecta al funcionamiento ni es muy importante pero es un detalle. Las _keycaps_ del KEMOVE ARES está perfectamente serigrafiado en todas sus teclas. Aparte de utilizar aluminio para el cuerpo los _keycaps_ parecen mejores y el sonido al pulsar las teclas se siente mejor, sin embargo, no tiene muchas más diferencias tanto que el KEMOEVE ARES al conectarlo por Bluetooth se identifica como KEMOVE DK61 con lo que utiliza el mismo firmware y los mismos componentes electrónicos.
 
-#### Consideraciones a tener en cuenta
+### Consideraciones a tener en cuenta
 
 El KEMOVE ARES al tener un cuerpo de metal de aluminio tiene la desventaja de que hace que pese más. Si el uso que se le va a dar es transportarlo ocasionalmente no parece lo más adecuado ya que su peso es de unos 1.8 kg, no parecen mucho al levantarlo pero cuando se lleva en una mochila la diferencia es mucha. El KEMOVE DK61 siendo de plástico pesa al menos 1 kg menos. El uso del teclado ARES es más adecuado para tenerlo en un sitio fijo y no moverlo mucho.
 
-#### Dónde comprar
+### Dónde comprar
 
 En el momento de publicar el artículo el KEMOVE ARES solo está disponible para su compra en la [página oficial de KEMOVE][kemove] cuando otros modelos de la marca si están disponibles en [Amazon][amazon-affiliate] y con envío desde Europa.
 
@@ -78,9 +78,9 @@ El envío desde China es rápido y en la página de KEMOVE se puede pagar con [P
 {{< amazon
     tags="keyboard-kemove-dierya" >}}
 
-### Desempaquetado del teclado mecánico KEMOVE ARES
+## Desempaquetado del teclado mecánico KEMOVE ARES
 
-#### La caja
+### La caja
 
 La caja del KEMOVE ARES es prácticamente similar al KEMOVE DK61 con la misma ventana que deja ver el teclado en el interior. En la parte frontal tiene el logotipo de la marca, en la parte trasera las características. En los laterales una leyenda con las características del teclado y nuevamente el logotipo tanto gráfico como en texto.
 
@@ -108,7 +108,7 @@ La caja del KEMOVE ARES es prácticamente similar al KEMOVE DK61 con la misma ve
     image1="image:kemove-ares-caja-12.webp" optionsthumb1="200x150" title1="Caja del teclado KEMOVE ARES"
     caption="Caja del teclado KEMOVE ARES" >}}
 
-#### El contenido de la caja
+### El contenido de la caja
 
 El contenido de la caja se compone del propio teclado con el plástico protector que en la caja hace de parte del embalaje y que su utilidad desempaquetado es utilizarlo para cubrir el teclado cuando no se usa para protegerlo del polvo.
 
@@ -124,7 +124,7 @@ Tiene un folleto de manual de usuario más detallado que el KEMOVE DK61, no incl
     image3="image:kemove-ares-contenido-4.webp" optionsthumb3="200x150" title3="Contenido de la caja del teclado KEMOVE ARES"
     caption="Contenido de la caja del teclado KEMOVE ARES" >}}
 
-#### El teclado
+### El teclado
 
 El teclado incluye tanto los _keycaps_ como los _switches_ que en este ejemplar son de la reconocida marca [Gateron][gateron] del tipo táctiles _brown_ pero también está disponible con _switches_ lineales _red_ y sonoros o _clicky_ _blue_.
 
@@ -161,7 +161,7 @@ Los botones para cambiar el tipo de compatibilidad entre Windows y macOS y el bo
     image2="image:kemove-ares-teclado-13.webp" optionsthumb2="200x150" title2="Teclado KEMOVE ARES"
     caption="Teclado KEMOVE ARES" >}}
 
-#### Los _switches_
+### Los _switches_
 
 El teclado se ofrece premontado con con _switches_ de la marca Gateron de diferentes tipos ya sean lineales, táctiles o sonoros. Son compatibles con la iluminación RGB.
 
@@ -172,7 +172,7 @@ El teclado se ofrece premontado con con _switches_ de la marca Gateron de difere
     image3="image:kemove-ares-switches-3.webp" optionsthumb3="200x150" title3="Switches del teclado KEMOVE ARES"
     caption="Switches del teclado KEMOVE ARES" >}}
 
-#### Los _keycaps_
+### Los _keycaps_
 
 También incluye los _keycaps_ siendo de doble disparo y algunas teclas en dos colores acorde al cuerpo del teclado. Los _keycaps_ son bastante gruesos que hace que tengan un sonido más grave al pulsar las teclas. Tienen algo de textura y los iconos de la capa de función están serigrafiados no en la parte superior sino en el lateral delantero del _keycap_.
 
@@ -181,7 +181,7 @@ También incluye los _keycaps_ siendo de doble disparo y algunas teclas en dos c
     image1="image:kemove-ares-keycaps-1.webp" optionsthumb1="200x150" title1="Keycaps del teclado KEMOVE ARES"
     caption="Keycaps del teclado KEMOVE ARES" >}}
 
-### Análisis y primeras impresiones del teclado mecánico KEMOVE ARES
+## Análisis y primeras impresiones del teclado mecánico KEMOVE ARES
 
 El KEMOVE ARES es el teclado de más calidad de la marca, el cuerpo de metal de aluminio y la mejor calidad los _keycaps_ hace que el teclado tenga mejor calidad en materiales y sonido al pulsar las teclas. Sin embargo, el aumento de calidad significa un aumento también importante en el precio y por oto lado el aumento de peso respecto al plástico hace que el KEMOVE DK61 sea más recomendable si el uso que se le va a dar ocasionalmente es transportarlo o simplemente se quiere un teclado más ligero.
 
@@ -191,7 +191,7 @@ En cuanto la uso las teclas suenan realmente bien y hay una diferencia apreciabl
 
 Está disponible en varios colores para el cuerpo y los _keycaps_, con varios tipos de _switches_ de la marca Gateron reconocida con lo que ofrece bastantes posibilidades de elegir uno según las preferencias. Hubiera preferido el teclado en color negro o grafito pero para la evaluación me enviaron el modelo con color azul o carmesí por disponibilidad.
 
-#### Compatibilidad con sistemas operativos
+### Compatibilidad con sistemas operativos
 
 El _firmware_ del teclado parece que es el mismo del DK61 porque se identifica con este nombre al realizar la conexión Bluetooth. Es compatible con GNU/Linux con lo que supongo que también ofrece compatibilidad con [Windows][windows], [macOS][macos] y [Android][android] tanto en la conexión por cable como Bluetooth como es el caso del KEMOVE DK61.
 
@@ -202,7 +202,7 @@ Ofrece un botón para elegir entre Windows y macOS que cambia la disposición de
     image1="image:kemove-ares-bluetooth-linux.webp" optionsthumb1="300x200" title1="Configuración del teclado con conexión inalámbrica en GNU/Linux"
     caption="Configuración del teclado con conexión inalámbrica" >}}
 
-#### Análisis en vídeo
+### Análisis en vídeo
 
 No hay tantos análisis de este teclado en internet por haber otras opciones más asequibles que en lo esencial ofrecen lo mismo y por tanto son más populares. En los siguientes vídeos se muestran todos los detalles más importantes.
 
@@ -221,13 +221,13 @@ No hay tantos análisis de este teclado en internet por haber otras opciones má
 {{< youtube
     video="fUYJ7C_XqyI" >}}
 
-#### Conclusión
+### Conclusión
 
 En el rango de precios de 150€ el KEMOVE ARES es un teclado ajustado en su categoría. Quizá algo que se echa en falta en los modelos ya más avanzados es la funcionalidad de configurar macros por hardware y varias capas de teclas para funcionalidades personalizadas sin necesidad de utilizar una app que solo está disponible para Windows, para los usuarios de Windows no es un inconveniente pero para los usuarios de otros sistemas operativos sí, incluso para los usuarios de Windows en futuras versiones del sistema operativo pueden perder la compatibilidad.
 
 Aún siendo el KEMOVE ARES un buen teclado el KEMOVE DK61 ofrece prácticamente lo mismo con un precio mucho más ajustado y si el peso es un criterio para elegir uno u otro incluso el DK61 es mejor opción.
 
-### Complementos para el teclado
+## Complementos para el teclado
 
 Al comprar un teclado mecánico puede interesar comprar a la vez otros complementos para el teclado, como un [concentrador USB](https://amzn.to/3Hpch9P) para tener los puertos de conexión cerca especialmente si se suele estar conectando y desconectando dispositivos o el ordenador tiene difícil acceso a los puertos USB estando en la parte trasera del ordenador de torre.
 

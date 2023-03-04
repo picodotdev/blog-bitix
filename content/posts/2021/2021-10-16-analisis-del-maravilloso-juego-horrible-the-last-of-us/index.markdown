@@ -53,7 +53,7 @@ A veces me cuesta encender la Play y ponerme a jugar pero este al igual o más q
 {{< game-spoiler >}}
 {{< tableofcontents >}}
 
-### El juego
+## El juego
 
 El juego se desarrolla en un mundo apocalíptico que muestra la historia de principalmente dos personajes principales Joel y Ellie junto a otros personajes en momentos puntuales. The Last of Us cuenta una maravillosa historia emocional pero al mismo tiempo horrible, dramática, violenta y cruel en la que no solo se vive en tercera persona como espectador sino que el juego te obliga a participar en ella en varias ocasiones. La historia no tiene complejos giros de guión ni detalles incomprensibles o de interpretación libre aunque no explica las cosas de forma explícita permite comprender lo que sucede con un poco de atención.
 
@@ -87,7 +87,7 @@ En The Last of Us aunque como todo videojuego tiene una parte de acción interac
     image2="image:juego-5.webp" optionsthumb2="300x200" title2="Juego"
     caption="Juego" >}}
 
-#### Combates
+### Combates
 
 A lo largo del juego se alterna entre pequeñas escenas cinemáticas, travesías con momentos de acción y combate sin ser tan frenético como la de un _shooter_. Los combates en _The Last of Us_ no son para afrontarlos como un juego de disparos o _shooter_ puro aunque se dispongan de varias armas de fuego, por la limitada munición y recursos, y porque en cuanto a combate los personajes no tienen la agilidad suficiente para afrontar una lucha contra varios enemigos al mismo tiempo, los personajes son torpes de movimientos. Se ha de emplear una mezcla de distracción y sigilo combinado con las armas adecuadas, las armas de fuego no es posible utilizarlas de forma continuada únicamente cuando el grupo de enemigos ya ha sufrido alguna baja con sigilo. Los combates suelen acabar con todos los enemigos muertos.
 
@@ -95,7 +95,7 @@ Durante la aventura aparecen varios grupos de enemigos, muchos son los propios h
 
 Otra estrategia es saber que recursos no se han podido recoger por tener ya el inventario lleno y si hay que gastar algún recurso es mejor hacerlo de aquellos que se pueden reaprovisionar con esos que no se han podido recoger. En mi caso durante el juego me han matado muchas veces y me he dejado matar muchas veces por no gastar muchos recursos o vida, en vez de agotar todos los recursos que llevaba. En caso de perder la vida el castigo que aplica el juego no es muy severo ya que se vuelve al último punto de control con los mismos recursos que se tenían en él, además los puntos de control son numerosos con lo que no se pierde mucho progreso.
 
-#### Armas, recursos, mejoras y equipo
+### Armas, recursos, mejoras y equipo
 
 La combinación de _survival horror_ promueve a explorar el mapa por completo aunque sea un mapa sin demasiadas alternativas, esto encaja perfectamente con un juego lineal en el que se sabe que una vez pasado un punto ya no se puede volver a atrás al contrario de los juegos de mundo abierto.
 
@@ -125,7 +125,7 @@ En cuanto a armas hay varios tipos cuerpo a cuerpo, armas blancas, silenciosas, 
     image2="image:banco-de-trabajo-2.webp" optionsthumb2="300x200" title2="Banco de trabajo"
     caption="Banco de trabajo" >}}
 
-#### Coleccionables
+### Coleccionables
 
 Los coleccionables son objetos que se pueden recoger a lo largo de la aventura, en este caso no suelen estar muy escondidos pero obliga a explorar cada zona del mapa de forma completa y prestar cierta atención para verlos. Lo más escondidos son algunos de los colgantes de los luciérnagas enganchados en las ramas de los árboles, es fácil no verlos ya que se suele ir mirando al suelo porque es donde están los recursos. Los coleccionables no suponen ningún beneficio o perjuicio encontrarlos o no encontrarlos más que obtener el trofeo de encontrarlos todos.
 
@@ -146,14 +146,14 @@ Los coleccionables no están especialmente escondidos, basta con explorar un poc
     image3="image:colgante-luciernaga-3.webp" optionsthumb3="200x150" title3="Colgantes de luciérnaga"
     caption="Colgantes de luciérnaga" >}}
 
-### Comparación versión original y remasterizadas
+## Comparación versión original y remasterizadas
 
 Remasterizar un juego aporta mejoras visuales para aprovechar la mayor capacidad gráfica de la nueva generación de consolas. En el siguiente vídeo se muestran las diferencias visuales entre la versión no remasterizada y remasterizada, teniendo estas últimas más detalles gráficos como vegetación y elementos en el escenario. Sin embargo, desde el punto de vista de la historia entre ambas versiones no hay ninguna diferencia.
 
 {{< youtube
     video="a99dEkiuJjo" >}}
 
-### Banda sonora original
+## Banda sonora original
 
 La [música y banda sonora del juego The Last of Us](https://www.youtube.com/watch?v=XtDXp-E38x4&list=OLAK5uy_m1EqJ-uUVzc9MzWMBHtQiuiOJrwQFcF-Q&index=29) está a la altura del juego, si el juego es una obra de arte la música es otra. La música en cierta medida suena descompasada y estridente que le da una mala sensación para acompañar a la historia horrible del juego, también es música triste y melancólica. Una vez terminado el juego escuchar una de estas canciones los traen los recuerdos y sentimientos de la historia. Estos dos primeros temas son únicos.
 
@@ -164,7 +164,7 @@ La [música y banda sonora del juego The Last of Us](https://www.youtube.com/wat
 {{< youtube
     video="GQuC67_mFtU" >}}
 
-### Película de la historia
+## Película de la historia
 
 En YouTube se encuentran vídeos de la historia de los juegos como si de una película se tratara. También, sirven para volver a ver ciertas escenas sin tener que rejugar el juego. Estos vídeos contienen detalles importantes de la historia del juego de modo que solo recomiendo ver aquellas partes que hayan sido superadas, más en un juego como este en el que la historia es casi lo principal.
 
@@ -175,7 +175,7 @@ En YouTube se encuentran vídeos de la historia de los juegos como si de una pel
 {{< youtube
     video="8X6DDyjMS5Y" >}}
 
-### Ubicación de los coleccionables y artefactos
+## Ubicación de los coleccionables y artefactos
 
 Los coleccionables y artefactos no son difíciles de encontrar porque no están muy escondidos, sin embargo, hay que ser muy meticuloso para fijarse en todo y explorar todo el mapa, no es raro que algún coleccionable o artefacto pase desapercibido aún pasando no muy lejos de él. En YouTube también hay vídeos de donde se encuentran todos en un mismo vídeo o los [coleccionables separados por capítulos](https://www.youtube.com/playlist?list=PLRr5L69yg_kEqs3xqlvjkjaxbPC_M3800). Al igual que la película de la historia es recomendable revisar estos vídeos únicamente superado ese punto de la historia ya que muestran detalles de los escenarios.
 

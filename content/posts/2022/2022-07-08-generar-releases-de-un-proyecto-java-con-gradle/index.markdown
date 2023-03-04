@@ -25,7 +25,7 @@ Hay varias nomenclaturas para denominar a las versiones. En Java hay varios _plu
 
 {{< tableofcontents >}}
 
-### Las _releases_ de un proyecto o artefacto
+## Las _releases_ de un proyecto o artefacto
 
 En el ciclo de vida de un proyecto o repositorio hay ciertos hitos importantes como cómo son los momentos en los que se desea generar una nueva versión a partir de un _commit_ ya sea para ser desplegada en un servidor o ser usada por otros proyectos como una dependencia.
 
@@ -35,7 +35,7 @@ Una forma habitual para los nombres de las versiones o _releases_ es utilizar un
 
 Dado que la construcción y ciclo de vida del proyecto se gestiona generalmente con una herramienta de construcción la generación de _releases_ se automatiza con Maven o Gradle en el caso de proyectos Java.
 
-### _Plugin_ de _release_ para Gradle
+## _Plugin_ de _release_ para Gradle
 
 Gradle no dispone de un _plugin_ oficial para generar _releases_ de un proyectos y hay que recurrir a _plugins_ desarrollados por un tercero. En Gradle hay dos _plugins_ destacables que permiten automatizar la generación de _releases_ en un proyecto. El segundo no ha generado una nueva versión desde hace cinco años con lo que parece más recomendable el primero por estar mejor mantenido actualmente
 
@@ -46,13 +46,13 @@ El [_plugin_ de Axion](https://axion-release-plugin.readthedocs.io/en/latest/) p
 
 Que la release consista simplemente en crear una etiqueta tiene la ventaja de que no es necesario crear _commits_ adicionales en el repositorio de código fuente lo que potencialmente invalida la versión probada en un proceso de aseguramiento de calidad.
 
-### _Plugin_ de _release_ para Maven
+## _Plugin_ de _release_ para Maven
 
 El [_plugin_ de _release_ de Maven](https://github.com/researchgate/gradle-release) es ofrecido de forma oficial por los desarrolladores de esta herramienta de construcción.
 
 Su forma de funcionamiento también incrementa las versiones siguiendo la nomenclatura _major.minor.patch_ pero dado que en Maven la versión del proyecto se especifica en los archivos descriptores de construcción _pom.xml_ implica que el proceso de _release_ crea _commits_ en el repositorio de código fuente.
 
-### Ejemplo usando el _plugin_ de _release_ para Gradle
+## Ejemplo usando el _plugin_ de _release_ para Gradle
 
 Usar el _plugin_ de Axion en Gradle requiere añadir el _plugin_ en la lista de _plugins_ del proyecto. El _plugin_ ofrece una sección en la que personalizar algunas opciones de configuración según las preferencias que se deseen en la sección _scmVersion_. Para diferenciar las etiquetas de _releases_ del resto de etiquetas se puede establecer en prefijo, en el ejemplo con la letra _v_.
 

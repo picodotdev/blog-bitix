@@ -25,7 +25,7 @@ Tenía la duda de si esta experiencia me iba a convencer de pasarme al lado oscu
 
 {{< tableofcontents >}}
 
-### Software
+## Software
 
 Empezando por el software libre, ¿hace falta que mecione [las cuatro libertades esenciales](https://www.gnu.org/philosophy/free-sw.es.html)? o la posibilidad de elegir la distribución o entorno de escritorio que más me guste o mejor se adapte a mis requerimientos. Pensando mal, en el portátil Mac no estoy seguro de que no tengan algún tipo de software espía, algún tipo de monitorización o telemetría.
 
@@ -35,7 +35,7 @@ Sin embargo, para algunas otras necesidades en Mac seguramente hay que sacar otr
 
 Y [en GNU/Linux también hay juegos de buena calidad][blogbitix-172].
 
-### Hardware
+## Hardware
 
 El hardware de Apple es bonito y es un aspecto que lo cuidan mucho al menos más que en los típicos portátiles de la mayoría de las marcas que fabrican para Windows. Sin embargo, en cuanto a características no es de lo mejor que uno puede encontrar y a un precio significativamente mayor.
 
@@ -43,7 +43,7 @@ Mi equipo es del 2012 y el Mac que uso del 2015, realmente lo único que echo de
 
 Compara el [Slimbook Pro 2][slimbook] y el [MacBook Pro](https://www.apple.com/es/macbook-pro/), para empezar en el Slimbook se pueden instalar 32 GiB de memoria en el Mac solo 16 GiB, a características similares con disco SSD de 512 GiB y pantalla de HiDPI el Slimbook está sobre los 1000 € y los Mac empezando por 1500 €.
 
-### Entorno de escritorio
+## Entorno de escritorio
 
 El entorno de escritorio en lo personal uso [GNOME][gnome] y en ciertos aspectos tiene similitudes como la barra superior, la vista de ventas o la gestión de escritorios. GNOME ha evolucionado de forma muy notable desde las primeras versiones 3.0 añadiendo muchas nuevas funcionalidades y mejorando varios aspectos visuales en cada ciclo de desarrollo de seis meses. KDE también ha mejorado mucho.
 
@@ -57,23 +57,23 @@ GNOME puede personalizarse en cierta medida con algunos complementos para por ej
 
 GNOME incluye todo lo que un usuario necesita desde navegador de archivos, visor de fotos, visor de documentos, aplicación de correo electrónico, terminal, editor de texto plano. Y GNOME no es la única opción también está [KDE][kde] o [XFCE][xfce] por nombrar solo dos de los otros entornos e escritorio más conocidos.
 
-### Gestor de paquetes
+## Gestor de paquetes
 
 La forma de instalar y actualizar aplicaciones de las distribuciones GNU/Linux con los gestores y repositorios de paquetes es muy sencillo. En Arch Linux que es una distribución [rolling release][rollingrelease] cada vez que hago una actualización tengo las últimas versiones de cada paquete y aplicación.
 
 En los Mac se puede utilizar algo similar con [Homebrew][homebrew] y menos mal que existe para hacer más fácil instalar y sobre todo matener actualizados los programas a las últimas versiones.
 
-### Precio
+## Precio
 
 No se cuanto costaría exactamente el equipo Mac pero con su configuración al menos unos 2000 €. Pues bien un Slimbook a día de hoy con con una configuración del modelo tal que Intel Core i5 8250U (4 núcleos, 8 hilos), 32 GiB de memoria, 250 GiB de almacenamiento SSD con interfaz NVMe y pantalla QHD+ 3200 x 1800 HiDPI cuesta unos 1400 € siendo el tope de gama. Eso para los usuarios que necesiten tal ingente cantidad de memoria y en una de las configuraciones más completas.
 
 El MacBook Pro más barato empieza en 1500 € y con únicamente 8 GiB de memoria y solo 128 GiB de SSD, con 16 GiB de memoria y 256 GiB de SSD se va a los 2000 €.
 
-### Obsolescencia
+## Obsolescencia
 
 Es Apple quien decide cuando deja de dar soporte a sus equipos, en forma de actualizaciones de seguridad o nuevas versiones de macOS, 6+ años aproximadamente lo que me parece poco tiempo, posiblemente en ese momento uno ya se platee comprar otro pero también el equipo seguramente es útil para ciertos propósitos. En GNU/Linux los equipos siguen teniendo actualizaciones y siguen siendo usables incluso con 10 años. Dejan de ser válidos cuando el software demanda más al equipo del lo que es capaz principalmente por la cantidad de memoria. Pero aún en estos casos utilizando una distribución que consuma pocos recursos siguen siendo usables para ciertas tareas.
 
-### Mi conclusión
+## Mi conclusión
 
 La marca Apple tiene un halo de idolatración, de que no hay nada mejor ya sea en el hardware o en el software y si se me permite de elitismo, superioridad, ir a contracorriente, tener algo diferenciativo o exclusividad. Por mi experiencia no creo que GNU/Linux hoy día tenga mucho envidiar, ni sea más difícil de instalar o usar, quizá un buen soporte de hardware desde el primer día pero eso es consecuencia de la cuota de uso de GNU/Linux en el escritorio, aún así las cosas han mejorado mucho en la última década.
 

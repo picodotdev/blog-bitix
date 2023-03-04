@@ -45,7 +45,7 @@ Ha habido momentos en el que me ha gustado por sus comentarios graciosos y de hu
 {{< game-spoiler >}}
 {{< tableofcontents >}}
 
-### El juego
+## El juego
 
 El juego narra las aventuras de dos de sus principales personajes, Ratchet que es un Lombax que desea convertirse en un guardián galáctico y Clank es un robot que salió de fábrica defectuoso. El juego es una historia de lucha contra varios villanos entre los que se encuentra Drek como gerente de industrias Drek que fabrican robots de combate, y por otro lado y el científico Nefarious.
 
@@ -87,7 +87,7 @@ Se van pasando de niveles a medida que se consigue experiencia que otorgan mayor
     image2="image:ratchet-and-clank-carreras-5.webp" optionsthumb2="200x150" title2="Carreras"
     caption="Juego, mundos, puzzles y carreras" >}}
 
-#### Armas y artilugios
+### Armas y artilugios
 
 A lo largo del juego se consigue muchas armas únicas con las que eliminar a los enemigos, también se dispone de una cantidad limitada de munición de la que hay que ir aprovisionando, dada la limitación de munición obliga a utilizar las diferentes armas o según la situación para acabar con los enemigos sin recibir daño y de la forma más sencilla o rápida dependiendo de si el enemigo es muy numeroso, se trata de un enemigo con gran cantidad de vida o se acercan al cuerpo a cuerpo en gran número.
 
@@ -116,7 +116,7 @@ Además de armas los artilugios son piezas de equipo que permiten realizar varia
     image3="image:ratchet-and-clank-senor-zurkon-1.webp" optionsthumb3="200x150" title3="Señor Zurkon"
     caption="Armas, artilugios y el Señor Zurkon" >}}
 
-#### Recursos
+### Recursos
 
 Hay varios recursos que se consiguen a través de destruir cajas y acabar con enemigos. El más común son los guitones que permiten comprar armas y munición. Otro recurso importante más escaso es el raritanio que se consigue acabando también con enemigos y en algunas formaciones cristalinas, este permite mejorar las habilidades de las armas según las preferencias del jugador.
 
@@ -132,7 +132,7 @@ Hay varios recursos que se consiguen a través de destruir cajas y acabar con en
     image3="image:ratchet-and-clank-cartas-3.webp" optionsthumb3="200x150" title3="Cartas"
     caption="Cartas" >}}
 
-#### Combates
+### Combates
 
 Los combates son de disparos pero dado el público al que está dirigido no es un juego que muestre escenas con el nivel de violencia de otros juegos, los enemigos al ser eliminados que muchos son robots de combate al perder la vida explotan en una nube de guitones, tuercas y arandelas que Ratchet recoge al acercarse.
 
@@ -164,7 +164,7 @@ Dentro de las mecánicas del juego se incluyen algunas secuencias de persecució
     image3="image:ratchet-and-clank-jefes-3.webp" optionsthumb3="200x150" title3="Jefes"
     caption="Combates, railes, persecuciones y jefes" >}}
 
-#### Coleccionables
+### Coleccionables
 
 Los coleccionables son los elementos que se recogen durante el juego que no influyen para acabar la historia, dependiendo del juego cada coleccionable recogido cuenta un poco más del trasfondo de la historia y permite conseguir algunos trofeos. Los coleccionables más que necesarios son un reto de conseguirlos todos ya que algunos suelen estar en los márgenes de los mapas y escenarios algo escondidos y fuera del camino principal ni a simple vista, encontrarlos requiere explorar los mapas en detalle.
 
@@ -189,21 +189,21 @@ Conseguir el trofeo de platino requiere completar el juego una segunda vez en mo
     image3="image:ratchet-and-clank-guitones-de-oro-2.webp" optionsthumb3="200x150" title3="Guitones de oro"
     caption="Cartas, guitones y guitones de oro" >}}
 
-### Banda sonora original
+## Banda sonora original
 
 La banda sonora cumple con el cometido de ambientar la aventura.
 
 {{< youtube
     video="v4B0RgJqC0Y" >}}
 
-### Película
+## Película
 
 Como el juego no incluye un diario de los hechos relevantes de la historia ver alguna secuencia de la película permite recordar algún detalle.
 
 {{< youtube
     video="l5BFB2gUD9s" >}}
 
-### Ubicación de todos los coleccionables
+## Ubicación de todos los coleccionables
 
 Como los coleccionables suelen estar algo escondidos alguno puede resistirse a ser encontrado o no se da con la forma de acceder a alguno de ellos, en algunos vídeos se muestra donde se encuentran todos y como se llega hasta ellos.
 

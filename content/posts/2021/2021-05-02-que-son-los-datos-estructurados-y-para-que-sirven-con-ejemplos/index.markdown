@@ -27,7 +27,7 @@ Mostrar los enlaces más relevantes de una búsqueda no es una tarea sencilla, e
 
 {{< tableofcontents >}}
 
-### Qué son los datos estructurados en una página web
+## Qué son los datos estructurados en una página web
 
 Los buscadores hacen el mejor esfuerzo por entender el contenido de las páginas, los datos estructurados facilitan en gran medida el análisis del contenido. Los datos estructurados son un formato estandarizado que permite proporcionar de forma más precisa cuál es el contenido e información de una página. Para los buscadores obtener la información de la página es más sencillo y preciso obtener de los datos estructurados que analizando el texto del contenido HTML sin ninguna estructura.
 
@@ -39,29 +39,29 @@ El siguiente es un ejemplo de contenido que contiene datos como un título o fec
 
 {{< code file="no-structured-data.html" language="html" options="" >}}
 
-### Formatos de datos estructurados
+## Formatos de datos estructurados
 
 Hay varios formatos de datos estructurados, el formato recomendado por Google es utilizar JSON-LD.
 
-#### JSON-LD
+### JSON-LD
 
 [JSON for Linking Data](https://json-ld.org/) o JSON-LD es un formato de datos estructurados que se especifica en formato JSON y se incluye en la página normalmente en la cabecera separada del contenido, también se puede incluir en el cuero de la página. La diferencia de este formato es que el contenido no está mezclado con los datos estructurados.
 
 {{< code file="json-ld.html" language="html" options="" >}}
 
-#### Microdatos
+### Microdatos
 
 El formato [HTML Microdata](https://www.w3.org/TR/microdata/) define nuevos atributos HTML para embeber datos simples legibles por computadoras en documentos HTML. Es similar a RDFa pero menos expresivo, simple de aprender y procesar  pero no ofrece el mismo nivel para la internacionalización, por ello en su lugar se suele recomendar usar RDFa o JSON-LD.
 
 {{< code file="microdata.html" language="html" options="" >}}
 
-#### RDFa
+### RDFa
 
 [RDFa](https://rdfa.info/) es una extensión de HTML que ayuda a marcar los datos de la página, embebiendo ciertos atributos en las etiquetas HTML.
 
 {{< code file="rdfa.html" language="html" options="" >}}
 
-### Tipos de datos estructurados
+## Tipos de datos estructurados
 
 Hay múltiples tipos de datos estructurados según el contenido de la página. Por ejemplo, si el contenido de una página trata sobre un producto un dato es la imagen del producto, su nombre y descripción, su precio o su valoración. En el caso de un evento, por ejemplo un evento deportivo o concierto, sus datos específicos son la ubicación en la que tiene lugar, su hora de comienzo y final, además de también los participantes en el evento una su descripción.
 
@@ -81,7 +81,7 @@ Algunos tipos de datos estructurados son:
 * Análisis de productos
 * Acciones
 
-### Ejemplo de datos estructurados
+## Ejemplo de datos estructurados
 
 Hay múltiples formas de incluir los datos estructurados en una página web. Una de ellas es embebiendo en el HTML los datos estructurados añadiendo ciertos atributos a etiquetas HTML.
 
@@ -91,7 +91,7 @@ El el caso de mi blog en el que publico artículos el dato estructurado adecuado
 
 {{< code file="json-ld-blogbitix.html" language="html" options="" >}}
 
-### Herramienta para validar los datos estructurados
+## Herramienta para validar los datos estructurados
 
 Una vez incluidos los datos estructurados es recomendable validarlos, esto permite conocer con exactitud qué está extrayendo un buscador. Google ofrece una [herramienta de prueba de datos estructurados](https://search.google.com/structured-data/testing-tool/), basta con proporcionar la URL de la página y en el resultado se muestran los distintos tipos de datos estructurados que ha extraído de la página y sus propiedades. Para uno de los artículos del _blog_, [Analítica web con Matomo como alternativa a Google Analytics][blogbitix-546], la herramienta de análisis de Google muestra como resultado tipos de datos estructurados que reconoce que están incluídos en la cabecera de la página.
 

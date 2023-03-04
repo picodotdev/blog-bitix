@@ -28,7 +28,7 @@ El despliegue en un entorno de pruebas o producción de un _script_ es sencillo,
 
 {{< tableofcontents >}}
 
-### Java para tareas de _scripting_
+## Java para tareas de _scripting_
 
 Pero al contrario de lo que piensa mucha gente Java puede ser usado perfectamente como lenguaje de _scripting_ con igual simpleza o más que Python, Ruby o Groovy. Java es más verboso sí pero en mi opinión estas son [10 razones para seguir usando Java][blogbitix-81] entre ellas el compilador, en el artículo [Java for everything](https://www.teamten.com/lawrence/writings/java-for-everything.html) dan una buena extensa descripción de porque usar Java también para los _scripts_ y donde se expone una forma de usarlo, en este artículo mostraré otras dos creo que mejores.
 
@@ -40,7 +40,7 @@ Entrando a discutir el apartado de la simplicidad de ejecución de un lenguaje i
 
 Los ejemplos en cada caso consisten en tres pequeños _scripts_ programados en Java con una dependencia de una librería. Son lo más sencillos posible emitiendo en la consola simplemente un mensaje pero podrían hacer cualquier cosa desde [realizar peticiones a una API REST con Retrofit][blogbitix-569] a [generar archivos Excel o CSV con Apache POI y OpenCSV][blogbitix-146] por mencionar dos cosas habituales que pueden realizan los _scripts_.
 
-#### _Scripting_ en Java con JBang
+### _Scripting_ en Java con JBang
 
 JBang es una utilidad que proporciona una experiencia de uso igual que un _script_ de Python o Groovy. Un _script_ de Java con JBang no requiere ninguna estructura de directorios y es posible ejecutarlo desde el código fuente. SDKMAN permite instalar JBang de forma sencilla con el siguiente comando.
 
@@ -71,7 +71,7 @@ En caso necesario también permite exportar el _script_ a un archivo _jar_ o ins
 
 {{< code file="jbang-1.sh" language="bash" options="" >}}
 
-#### _Scripting_ en Java con Gradle
+### _Scripting_ en Java con Gradle
 
 Gradle requiere un archivo _build.gradle_ y cierta estructura de directorios pero no es algo suficiente complejo como para descartar Java como lenguaje para este propósito más teniendo en cuenta sus ventajas. Gradle es una solución algo más complicada que JBang pero a cambio no tiene la limitación de dependencias entre clases de diferente paquetes y adicionalmente ofrece poder tener teses unitarios ejecutables de forma sencilla.
 

@@ -42,19 +42,19 @@ Para coordinar y facilitar el proceso de localización de una aplicación a los 
 
 {{< tableofcontents >}}
 
-### Cómo funciona el proceso de internacionalización (i18n)
+## Cómo funciona el proceso de internacionalización (i18n)
 
 El proceso de internacionalización realiza cambios en el código fuente de la aplicación para que la aplicación pueda ser localizada a múltiples lenguajes, países, regiones o culturas. Se ha de tener en cuenta los números aspectos de la internacionalización y localización de la lista anterior como formas plurales, formato de fechas, formatos monetarios, formato de números, etc.
 
 El proceso de internacionalización genera como resultado un archivo fuente de cadenas originales que es proporcionado a la herramienta de traducción para su localización por los traductores. A lo largo del tiempo habrá cadenas que se modifiquen y requieran una nueva traducción, nuevas cadenas que se añadan y cadenas que se eliminen. Las cadenas originales suelen estar en inglés por ser el lenguaje compartido en los lenguajes de programación y el más común entendido por los posibles traductores.
 
-### Cómo funciona el proceso de localización (i10n)
+## Cómo funciona el proceso de localización (i10n)
 
 El proceso de localización consisten en traducir el archivo fuente de cadenas originales generado en el proceso de internacionalización a un lenguaje, país, región o cultura. El traductor es la persona que tiene conocimiento para realizar correctamente la localización, la herramienta de traducción y localización es la que facilita la traducción.
 
 La herramienta de traducción y localización ofrece al traductor varias funcionalidades que facilitan su tarea.
 
-### Herramientas de traducción y localización
+## Herramientas de traducción y localización
 
 Para facilitar la tarea de los traductores con diferentes funcionalidades y gestionar el ciclo de vida de las cadenas se utiliza una herramienta u aplicación especializada en la tarea. El archivo fuente de cadenas originales generadas en el proceso de internacionalización se importan en la herramienta de traducción par que los traductores realicen la traducción, una vez los traductores completan la traducción la aplicación genera como resultado un archivo localizado que se importa en la aplicación para su uso en el lenguaje, país, región o cultura adecuado.
 
@@ -72,7 +72,7 @@ Las funcionalidades que ofrecen las herramientas de traducciones facilitan la ta
 * Integraciones: las herramientas ofrecen una API para integrarlas en los procesos de desarrollo y automatizar las tareas de importación de nuevas cadenas o de exportación de las cadenas e incluso con los repositorios de código fuente de [Git][git] como [GitHub][github] o [GitLab][gitlab].
 * Autenticación: la herramienta será utilizada tanto por desarrolladores como por múltiples traductores, esto hace necesario que posea un sistema de autenticación y permisos.
 
-#### Alternativas de herramientas
+### Alternativas de herramientas
 
 Dos de las herramientas más conocidas con [Transifex][transifex] y [Crowdin][crowdin], son herramientas comerciales ofrecidas como SaaS aunque para proyectos de software libre permiten su uso sin ningún coste. Otra alternativa a estas de software libre es [Weblate][weblate] que además de ofrecerse como SaaS con un coste por el servicio permite autoalojarlo.
 
@@ -83,7 +83,7 @@ Dos de las herramientas más conocidas con [Transifex][transifex] y [Crowdin][cr
     image3="image:weblate.webp" optionsthumb3="300x200" title3="Web de Weblate"
     caption="Webs de Transifex, Crowdin y Weblate" >}}
 
-#### Costes
+### Costes
 
 Los costes de las herramientas suelen varia en función del número de cadenas o palabras originales a traducir, algunas funcionalidades solo está disponibles en función del plan contratado y algunos tienen limitaciones en el número de proyectos. No tiene un coste insignificante que pueden partir de unos 100 € al mes pero llegar a 600 € o 1000 € en proyectos de tamaño medio y grande.
 
@@ -95,7 +95,7 @@ Dependiendo del caso Weblate es una opción más económica que Transifex y Crow
 * [Precios Crowdin](https://crowdin.com/pricing#annual)
 * [Precios Weblate](https://weblate.org/es/hosting/)
 
-### La herramienta para traducciones Weblate
+## La herramienta para traducciones Weblate
 
 Weblate es una de las herramientas disponibles para realizar traducciones de aplicaciones de software. Su característica diferenciadora con respecto a Transifex y Crowdin es que es software libre, esto permite hospedarlo uno mismo y un coste más económico por la funcionalidad.
 
@@ -103,7 +103,7 @@ Posee las múltiples funcionalidades que tienen estas herramientas de utilidad p
 
 En la extensa y detallada [documentación de Weblate](https://docs.weblate.org/en/latest/) se ofrece un manual de usuario y administración de la herramienta tanto para instalarla con [Docker][docker], configurarla como para realizar copias de seguridad y actualizaciones a nuevas versiones.
 
-### Formatos de archivos de traducciones
+## Formatos de archivos de traducciones
 
 Weblate soporta numerosos [formatos de archivos](https://docs.weblate.org/en/latest/formats.html). Cada formato de archivo soporta diferentes características, el formato de archivo a utilizar dependen del lenguaje de programación utilizado en la aplicación, librerías o _framework_ de desarrollo. Algunos formatos de archivo soportan múltiples idiomas en el mismo archivo de recurso, múltiples formas normales, comentarios, contexto, ubicación dela cadena en el código fuente o indicadores para las cadenas como no traducida, traducida o por revisar. 
 
@@ -111,7 +111,7 @@ El formato de archivo para los recursos de traducciones en Java son los archivos
 
 Otros formatos de archivos de recursos son para las aplicaciones Android, iOS, PHP, i18next para JavaScript entre otros muchos.
 
-#### Inicio usando Docker
+### Inicio usando Docker
 
 Weblate proporciona un archivo de [Docker Compose][docker-compose] con el que iniciar la herramienta fácilmente. Weblate utiliza una base de datos [PostgreSQL][postgresql] y [Redis][redis] que en el archivo de Docker Compose se inician al mismo tiempo que el contenedor de Weblate. En el archivo de Docker Compose se indica en nombre de usuario y contraseña entre otras muchas [variables de entorno de configuración](https://docs.weblate.org/en/latest/admin/install/docker.html) con el que realizar la autenticación en la página _http\://localhost_ de inicio de sesión.
 

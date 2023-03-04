@@ -25,7 +25,7 @@ De las cosas básicas en una cocina una es la olla rápida a presión, permite c
 
 Necesitaba comprar una y he evaluado varios modelos, finalmente eligiendo una olla de la que se considera la gama alta, al menos por precio. Lo primero que he tenido que decidir ha sido la capacidad adecuada para mi caso, también la facilidad de encontrar repuestos, facilidad de limpieza y durabilidad. Una olla buena dura perfectamente varios lustros y alguna década tratándola con un poco de cuidado.
 
-### Elegir la capacidad según número de platos o personas
+## Elegir la capacidad según número de platos o personas
 
 Lo primero que hay que decidir al comprar una olla es la capacidad más adecuada para el uso que se va a dar. Los modelos más pequeños están entre 2,5 litros, 3,5 litros y 4 litros, suficientes para 1 persona hasta 4 personas. Los modelos grandes alcanzan los 6, 8 y 10 litros para una familia grande. También hay conjuntos de ollas que tienen dos cuerpos de olla de diferentes capacidades en las que la misma tapa sirve para las dos utilizando la de capacidad más adecuada según la ocasión.
 
@@ -42,7 +42,7 @@ Mi uso habitual es poner la olla un día haciendo comida para entre dos o tres p
 
 Para hacerme una idea aproximada de las dimensiones de la olla he hecho con unos folios el cuerpo de la olla, doblándolos y pegándolos con celo ajustando a un diámetro de 20 centímetros y una altura aproximada de 18 centímetros que es la que se indicaba en el paquete de la olla, aunque finalmente tiene menos altura de la que se indicaba para el paquete en la descripción del producto.
 
-### Opciones que he evaluado
+## Opciones que he evaluado
 
 Modelos hay muchos, de diferentes capacidades y de precios. Los modelos de entrada están entre 50 € y los modelos de la gama que se considera la superior está entre 130 € o hasta 200 € según capacidad. Pero el precio no lo he considerado algo determinante sabiendo que una olla perfectamente puede durar toda la vida si sale buena. Los modelos de entrada son perfectamente válidos pero en algunos detalles como los materiales se nota la diferencia con los modelos de gama alta.
 
@@ -68,7 +68,7 @@ Mi madre tenía una Fissler y le ha durado mucho tiempo aunque permite elegir la
 
 La [WMF Perfect Plus](https://amzn.to/36lAFGP) también utiliza una membrana para la válvula y no permite seleccionar la presión de trabajo. Quizá hubiese elegido una WMF porque hay algún modelo con 3 litros de capacidad, sin embargo sus repuestos los he visto algo más caros, y por lo de la membrana de la válvula al final la que más me ha convencido es una [Kuhn Rikon Duromatic Supreme](https://amzn.to/37kR5Rc). Todas tenían un precio alrededor de 130 €.
 
-### Modelo que he elegido, Kuhn Rikon Duromatic Supreme 3,5 litros
+## Modelo que he elegido, Kuhn Rikon Duromatic Supreme 3,5 litros
 
 De Kuhn Rikon hay varias gamas, en unas varía algo el aspecto estético o en el aspecto funcional al tener asas o mango pero todas son muy similares con su aspecto acampanado en la parte superior. He elegido una [Kuhn Rikon Duromatic Supreme de 3,5 litros](https://amzn.to/37kR5Rc), esta gama tiene capacidades en capacidades de 2,5, 3,5, 4, 5, 6, y 8 litros.
 
@@ -158,7 +158,7 @@ Algunas cosas a tener en cuenta es que la goma esté bien ajustada a la tapa ant
 {{< youtube
     video="ZQA0n_g4swc" >}}
 
-### Repuestos para ollas Kuhn Rikon
+## Repuestos para ollas Kuhn Rikon
 
 A lo largo de la vida de la olla hay que sumarle los repuestos que necesite. Cambiar la goma es necesario cada unos dos años dependiendo de su uso ya que con el paso del tiempo van perdiendo sus propiedades de flexibilidad y en algún momento hacen que la olla gotee algo de agua por los bordes o no coja presión impidiendo su correcto funcionamiento.
 
@@ -170,7 +170,7 @@ Encontrar repuestos hace que no sea necesario comprar una nueva olla que salvo l
     linkids="d8dcfee2893422f4b8b1c15ce2d3aa9c,034dfff978a06245f548eeb4bdeb9715,ae9611cd66ce6971c2d65bd25dbbd6a6,fde1e977858635e14a86442d343bead0,eb4d7ed033e0d21454f46297749b1f09"
     asins="B00009A9Y1,B07QXTBSJB,B07QXTBSJC,B000P152I4,B000P1AIV0" >}}
 
-### Primer uso
+## Primer uso
 
 En el primer uso he comprobado que su funcionamiento es muy sencillo, no emite apenas ruido y salvo algo muy puntual no emite nada de agua ni vapor. En 9 minutos coge presión y una vez la primera anilla roja o la segunda según la comida aparece basta con dejarla el tiempo indicado en el manual para que el alimento quede cocinado. Una vez pasado el tiempo hay que apagar el fuego y apartarla, para que baje la presión se puede dejar a que de forma natural o presionando el émbolo indicador de presión para hacer una despresurización rápida.
 
@@ -184,7 +184,7 @@ La limpieza de la olla también es muy sencilla a mano, no tiene ninguna parte d
     image2="image:primer-uso-kuhn-rikon-2.webp" optionsthumb2="200x150" title2="Primer uso, con unas alubias"
     caption="Primer uso, con unas alubias" >}}
 
-### Recipientes para transportar comida
+## Recipientes para transportar comida
 
 Si comes en el trabajo es necesario utilizar también unos contenedores para llevar la comida, además de la olla he comprado unos recipientes. Mis requisitos en este caso era que fueran de cristal ya que son más fáciles de limpiar, no adquieren olores ni con el paso del tiempo color sobre todo con el tomate de unos espaguetis. El otro aspecto que buscaba era que el cierre fuese con bisagra y no una fina pieza de plástico que con la acción continuada de abrir y cerrar al final se termina rompiendo. El último aspecto que buscaba era que fuesen rectangulares para que entrasen bien en una mochila.
 
@@ -208,7 +208,7 @@ Los _tuppers_ de 840 ml tiene unas dimensiones de 18,5 cm de largo, 12 cm de anc
     linkids="c06f642ccc95b7397a03c9ec47623f59,6c27a616445315e7445ed7ef5c0792f8"
     asins="B07XJDRDDM,B07RRK38K1" >}}
 
-### Otros complementos
+## Otros complementos
 
 Un complemento a una olla exprés son los robots de cocina que permiten realizar algunas recetas y elaboraciones adicionales como salsas, cremas y sofritos, la diferencia está en que suelen tener una capacidad de mayor de 5 litros y ser sensiblemente más caros al menos los modelos de gama alta. Son un complemento porque hasta donde he visto estos aparatos no hacen la función de una olla rápida, no trabajan con presión.
 

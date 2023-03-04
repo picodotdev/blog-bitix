@@ -31,7 +31,7 @@ Con el [cambio de conexión de ADSL a fibra en mi conexión a internet][blogbiti
 
 {{< tableofcontents >}}
 
-### Juegos mediante _streaming_
+## Juegos mediante _streaming_
 
 El juego en la nube o por _streaming_ consiste en vez de utilizar una computadora propia para ejecutar el juego hacerlo utilizando una computadora en la nube. Esto es muy diferente al modo de jugar empleado hasta el momento, ya sea con un ordenador o consola pero siempre disponiendo de este hardware dedicado a juegos.
 
@@ -39,7 +39,7 @@ Con el juego en la nube los juegos se ejecutan en los servidores del servicio de
 
 El juego mediante _streaming_ cambia las reglas no solo por el hardware necesario sino por el modelo de comercialización de los juegos.
 
-#### Ventajas
+### Ventajas
 
 La principal ventaja del juego mediante _streaming_ es que no requiere un hardware potente para jugar, los juegos son uno de los programas aún con su aspecto dedicado al ocio que requieren más capacidad de cómputo de un ordenador. Un juego requiere una potente tarjeta gráfica para poder jugar a las últimas novedades lanzadas al mercado, pasado un tiempo salen juegos más exigentes y requieren cambiarla por una nueva más potente. El procesador ha de estar acorde a la gráfica, es otra pieza de hardware a renovar pasado el tiempo. En definitiva una computadora dedicada a juegos requiere ser renovada al cabo de unos años, unos 7 años para poder seguir jugando o menos para los más exigentes.
 
@@ -51,7 +51,7 @@ Otra ventaja de los juegos en la nube, es que no requieren instalación ni actua
 
 Finalmente, es posible jugar en cualquier ubicación en la que haya disponible una conexión a internet suficiente con cualquier dispositivo que se posea.
 
-#### Requerimientos
+### Requerimientos
 
 El principal requerimiento del juego mediante _streaming_ es que requiere conexión a internet, preferiblemente de fibra que ofrece unos anchos de banda de entre 100 Mbps y 600 Mbps junto con una menor latencia que otras conexiones, en España son lo habitual en nuevas contrataciones y alta de instalaciones. No en todos los países hay este tipo de conexiones pero a medida que pase el tiempo la cobertura será mayor y llegará a más lugares y países.
 
@@ -64,7 +64,7 @@ El segundo requerimiento es un ordenador o un dispositivo compatible con la plat
 
 El tercer requerimiento es una aplicación que haga de cliente para el servicio de _streaming_. Es un programa para el que hay clientes nativos para los sistemas operativos [Windows][windows] y [macOS][macos], para los usuarios de GNU/Linux en vez de un cliente nativo es posible con un navegador [Chrome][google-chrome] o [Chromium][google-chromium], otra opción es con un dispositivo [Google Chromecast](https://amzn.to/3dVP2s1) instalando la aplicación GeForce NOW de la tienda de Android o Stadia.
 
-#### Opinión
+### Opinión
 
 Ahora que tengo fibra como conexión a internet he probado el servicio de juego en _streaming_ de Nvidia GeForce NOW. La característica más destacada de GeForce NOW es que es un simplemente un servicio de juego, los juegos se importan de las colecciones de juegos comprados en [Steam][steam] o [Epic Games][epicgames]. Otra propiedad de GeForce NOW es que ofrece crear una cuenta con la que es posible jugar de forma gratuita durante periodos de una hora esperando en una cola con el resto de usuarios de la plataforma a que se libere un servidor. Los usuarios que pagan por el servicio tienen preferencia en la cola y se ofrece mejor calidad gráfica, su coste es de uno 10 €/mes o de 100 € pagando de forma anual.
 
@@ -88,7 +88,7 @@ Un punto para mí muy interesante es que por _streaming_ es posible jugar con el
 
 Por otro lado, aun con el gran trabajo de Steam de permitir ejecutar juegos en GNU/Linux que solo están para Windows el _streaming_ evita los problemas de los controladores gráficos e incluso para los usuarios de [FreeBSD][freebsd] u otros BSD que son aún más minoritarios y tienen peor soporte de controladores gráficos que en GNU/Linux el _streaming_ es una opción que da acceso a jugar sin ningún tipos de problema de compatibilidad y rendimiento.
 
-### Prueba del servicio GeForce NOW
+## Prueba del servicio GeForce NOW
 
 El primer paso para probar GeForce NOW es crear una cuenta de NVidia que únicamente requiere una dirección de correo electrónico, la contraseñas de la cuenta, verificar la cuenta de correo electrónico y elegir un apodo para la cuenta, edad e idioma preferido, no hace falta más información personal.
 

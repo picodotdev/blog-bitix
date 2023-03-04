@@ -94,3 +94,5 @@ Según vaya escribiendo y publicando los artículos aparecerán en la lista de l
 {{< reference >}}
 * [Monolithic vs. Microservices Architecture](https://articles.microservices.com/monolithic-vs-microservices-architecture-5c4848858f59)
 {{< /reference >}}
+
+{{% /post %}}

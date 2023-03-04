@@ -33,7 +33,7 @@ En el caso de usar un ordenador de forma intensiva como ocurre en muchos puestos
 
 {{< tableofcontents >}}
 
-### Por qué un teclado compacto y una funda
+## Por qué un teclado compacto y una funda
 
 Usar una combinación de teclas es más incómodo que tener una tecla dedicada para una función de uso habitual pero a cambio se tiene un teclado más pequeño que ocupa menos en la mesa y deja más espacio para otros elementos. Otra ventaja de los teclados compactos es que son más cómodos de transportar al pesar y ocupar menos con lo que se pueden meter en una mochila para moverlo de un sitio a otro con mayor comodidad.
 
@@ -43,7 +43,7 @@ Para proteger el teclado y los _keycaps_ en el transporte una funda es un comple
 
 La marca [KEMOVE][kemove] además de tener una gama teclados mecánicos completa para cualquiera en en los teclados de 60% y 65% tanto en precio como en características tiene otros complementos entre los que se encuentran _keycaps_ para personalizar el teclado y una funda de teclado. La marca me ha enviado un ejemplar de funda para teclado compacto que muestro en este artículo.
 
-### La funda para teclado tamaño 60% de KEMOVE
+## La funda para teclado tamaño 60% de KEMOVE
 
 La funda teclado no es un elemento de alta tecnología pero muy útil en su función de guardar un teclado y transportarlo. Teniendo en cuenta que un muy buen teclado mecánico cuesta unos 100 € y algunos personalizados el doble la funda es un complemento para un teclado que lo protege al transportarlo.
 
@@ -72,7 +72,7 @@ La funda teclado no es un elemento de alta tecnología pero muy útil en su func
     image2="image:kemove-funda-13.webp" optionsthumb2="200x150" title2="Funda de teclado KEMOVE"
     caption="Funda de teclado KEMOVE" >}}
 
-### Análisis de la funda
+## Análisis de la funda
 
 La funda tiene un tamaño de 35,5 cm de ancho, 14 cm de largo y 5 cm de alto, un poco más grande que las dimensiones de un teclado 60 % con suficiente espacio para meter también el cable y algún pequeño objeto no muy grueso, su peso es insignificante comparado con la de un teclado. Es apta para teclados de 61 teclas, 63 teclas y posiblemente para teclados para teclados un poco más grandes. Los teclados TKL son demasiado grandes para esta funda.
 

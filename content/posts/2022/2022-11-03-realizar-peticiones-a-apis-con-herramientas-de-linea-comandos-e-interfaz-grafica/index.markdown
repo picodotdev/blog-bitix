@@ -27,7 +27,7 @@ Para desarrollar y probar pero también para conocer los datos devueltos por un 
 
 {{< tableofcontents >}}
 
-### El comando curl
+## El comando curl
 
 La herramienta de línea de comandos curl permite realizar cualquier operación y obtener cualquier detalle tanto de la petición como de la respuesta del servidor del protocolo HTTP. Permite ver los certificados cuando se utiliza el protocolo HTTPS, las cabeceras enviadas y de respuesta de la petición, así como realizar peticiones utilizando cualquier verbo del protocolo HTTP.
 
@@ -38,7 +38,7 @@ Es posible utilizar un repositorio de código fuente como [Git][git] para guarda
 {{< code file="curl.sh" language="bash" options="" >}}
 {{< code file="curl.out" language="plain" options="" >}}
 
-### Postman
+## Postman
 
 La aplicación con interfaz gráfica [Postman][postman] realiza en gran medida las mismas funciones que el comando curl pero con una aplicación de escritorio y con interfaz gráfica. Permite crear peticiones, añadir cabeceras en las peticiones y ver los resultados, cabeceras y código de estado devueltos en las peticiones HTTP.
 
@@ -51,7 +51,7 @@ Postman es una herramienta muy conocida y utilizada, ofrece una aplicación de e
     image1="image:postman.webp" optionsthumb1="650x450" title1="Postman"
     caption="Postman" >}}
 
-### Hoppscotch, alternativa a Postman
+## Hoppscotch, alternativa a Postman
 
 Alternativas a Postman hay varias algunas como complementos para el editor de texto y código [Visual Studio Code][microsoft-visual-studio-code]. De las alternativas a Postman la más parecida y que tiene funcionalidades equivalentes y suficiente como para reemplazarla es [Hoppscotch][hoppscotch].
 

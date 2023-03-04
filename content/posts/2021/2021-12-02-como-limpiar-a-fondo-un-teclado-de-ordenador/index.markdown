@@ -32,7 +32,7 @@ Para limpiar el teclado en profundidad requiere desmontar los _keycaps_ de las t
 
 {{< tableofcontents >}}
 
-### Limpieza de teclado mecánico o de membrana
+## Limpieza de teclado mecánico o de membrana
 
 Aunque la forma de montar los _keycaps_ varía entre los teclados mecánicos y de membrana el desmontar el _keycap_ es similar. Para el desmontaje del _keycap_ en ambos tipos de teclado se emplea una herramienta específica para extraer los _keycaps_, llamada extractor de teclas o _keycap puller_ es una herramienta que permite agarrar el _keycap_ y desmontarlo fácilmente. Si se trata de un teclado mecánico con los interruptores os _switches_ desmontables es posible que al intentar extraer un _keycap_ al mismo tiempo se extraiga el _switch_.
 
@@ -90,7 +90,7 @@ Una vez limpio tanto la bas del teclado como los _keycaps_, montarlas es igual d
     image2="image:teclado-membrana-montaje.webp" optionsthumb2="300x200" title2="Montaje de keycaps en teclado de membrana"
     caption="Keycaps y montaje en teclado de membrana" >}}
 
-### Cómo evitar que el teclado se ensucie
+## Cómo evitar que el teclado se ensucie
 
 Con algunas medidas es posible reducir la suciedad que se acumula a lo largo del tiempo o hace que el teclado permanezca más tiempo limpio.
 

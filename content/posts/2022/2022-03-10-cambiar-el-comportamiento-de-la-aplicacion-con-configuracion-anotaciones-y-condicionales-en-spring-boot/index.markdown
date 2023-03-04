@@ -31,7 +31,7 @@ El _framework_ [Spring][spring] proporciona un mecanismo muy flexible para propo
 
 {{< tableofcontents >}}
 
-### Anotaciones y condicionales para crear _beans_
+## Anotaciones y condicionales para crear _beans_
 
 Una de las funcionalidades proporcionadas por Spring es el contenedor de _beans_ que realiza la construcción de las instancias mediante la inyección de dependencias. Mediante la inyección de dependencias la aplicación ya no es responsable de realizar la creación de la instancias sino que esta tarea es delegada al contenedor de _beans_ que es capaz de elegir las implementaciones según diferentes condiciones y valores. A través del los perfiles de inicio de la aplicación, valores de configuración, de anotaciones y mediante un lenguaje de expresiones el contenedor de _beans_ crea las instancias de las implementaciones de las interfaces deseadas según la configuración proporcionada a la aplicación en tiempo de ejecución.
 
@@ -58,7 +58,7 @@ Además de las anteriores anotaciones proporcionadas por Spring es posible crear
 {{< code file="OnLinuxCondition.java" language="java" options="" >}}
 {{< code file="OperatingSystem.java" language="java" options="" >}}
 
-### Ejemplo de _beans_ condicionales de con Spring Boot
+## Ejemplo de _beans_ condicionales de con Spring Boot
 
 En este pequeño ejemplo de aplicación se definen dos implementaciones de una interfaz. En base al valor de una propiedad de configuración proporcionada por configuración y con la posibilidad de cambiar su valor en tiempo de ejecución con una variable de entorno se selecciona la implementación deseada utilizando las anotaciones condicionales.
 

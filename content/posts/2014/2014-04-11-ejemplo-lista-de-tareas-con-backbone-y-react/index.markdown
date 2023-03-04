@@ -74,5 +74,6 @@ El ejemplo con el [código fuente completo de este ejemplo](https://github.com/p
 * [Internacionalización (i18n) en JavaScript][blogbitix-63]
 * [Function/bind#Compatibility](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind#Compatibility)
 * [React, JSX, and CoffeeScript](http://neugierig.org/software/blog/2014/02/react-jsx-coffeescript.html)
+{{< /reference >}}
 
 {{% /post %}}

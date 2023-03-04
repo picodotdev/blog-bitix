@@ -32,7 +32,7 @@ El propio JDK ofrece en su API soporte para los formatos de imágenes más comun
 
 {{< tableofcontents >}}
 
-### Formatos de imágenes
+## Formatos de imágenes
 
 Hay varios formatos de imágenes que se pueden categorizar en dos grandes grupos: imágenes sin pérdida o con pérdida. Los formatos sin pérdida son más fieles a la imagen original pero con mayor tamaño que la equivalente en un formato con pérdida de calidad, en las imágenes con pérdida de calidad los algoritmos tratan de que visualmente la pérdida sea lo menos apreciable posible con un tamaño de imagen significativamente menor.
 
@@ -40,11 +40,11 @@ El formato png es un formato sin pérdida que ofrece buenos resultados para capt
 
 Más recientemente han surgido nuevos formatos de imagen que utilizan otros algoritmos para la reducción de tamaño heic y heif utilizan el algoritmo con coste de licencia de x265 y el formato sin coste de licencia webp que ofrece similar o mejor resultado que el x265 que además soporta imágenes sin pérdida.
 
-### Procesar imágenes con Java
+## Procesar imágenes con Java
 
 En el propio JDK hay varias clases para la utilización de imágenes en el paquete [java.awt](javadoc17:java.desktop/java/awt/package-summary.html).
 
-#### Formatos de imagen soportados
+### Formatos de imagen soportados
 
 Los formatos de imagen soportados se pueden obtener mediante código y son extensibles añadiendo librerías al _classpath_, es posible que un formato se soporte en modo lectura pero no en escritura.
 
@@ -55,7 +55,7 @@ En esta lista de formatos aparece webp como formato soportados en la lectura por
 
 {{< code file="Main-formats.out" language="plain" options="" >}}
 
-#### Lectura y escritura de una imagen
+### Lectura y escritura de una imagen
 
 La clase que representa una imagen en Java es [BufferedImage](havadoc17:java.desktop/java/awt/image/BufferedImage.html) que se obtiene al leer el archivo del sistema de archivos o el [InputStream](javadoc17:java.base/java/io/InputStream.html), para la lectura y la escritura está la clase [ImageIO](javadoc17:java.desktop/javax/imageio/ImageIO.html).
 
@@ -69,14 +69,14 @@ La imagen en formato jpg tiene un tamaño de 192 KB y en formato webp tiene un t
     image2="image:gnome-webp.webp" optionsthumb2="300x200" title2="Imagen en formato webp"
     caption="Imagenes en formatos jpg y webp" >}}
 
-#### Obtener el ancho y alto de una imagen
+### Obtener el ancho y alto de una imagen
 
 Una vez obtenida una instancia de BufferedImage esta clase ofrece métodos para conocer el ancho y alto de la imagen y a partir de estos la proporción o _aspect ratio_ entre ambos valores.
 
 {{< code file="Main-width-height.java" language="java" options="" >}}
 {{< code file="Main-width-height.out" language="plain" options="" >}}
 
-#### Escalar una imagen
+### Escalar una imagen
 
 Escalar una imagen consiste en cambiar de tamaño a la imagen, normalmente el escalado se realiza conservando la proporción de anchura y altura para no distorsionar la imagen original.
 
@@ -91,7 +91,7 @@ Dependiendo de las opciones empleadas en el escalado la calidad y tamaño result
     image1="image:gnome-scaled-java.webp" optionsthumb1="650x450" title1="Imagen escalada con Java"
     caption="Imagen escalada con Java" >}}
 
-#### Cambiar el formato de una imagen
+### Cambiar el formato de una imagen
 
 Cambiar de formato a una imagen es otra operación común, por ejemplo convertir al formato webp que ofrece una calidad mejor en el mismo tamaño o un significativo reducción de tamaño que puede llegar al más del 50% con una calidad similar.
 
@@ -99,7 +99,7 @@ Una vez cargada la imagen en un BufferedImage es posible escribir la imagen a un
 
 {{< code file="Main-convert-java.java" language="java" options="" >}}
 
-#### Librerías de terceros
+### Librerías de terceros
 
 Hay varias librerías que añaden o facilitan algunas funcionalidades sobre la API de Java. [Thuilmator](https://github.com/coobird/thumbnailator) permite realizar escalados de imágenes de una forma más sencilla que la API de Java.
 
@@ -118,7 +118,7 @@ El tamaño de la imagen escalada por el código Java es de 28 KB, el tamaño de 
     image3="image:gnome-scaled-imagemagick.webp" optionsthumb3="200x150" title3="Imagen escalada con ImageMagick y Java"
     caption="Imagen escaladas con diferentes librerías (Thumbnailator, Twelvemonkeys y ImageMagick)" >}}
 
-#### Usando ImageMagick
+### Usando ImageMagick
 
 Las funcionalidades de Java y de las librerías de Java para casos avanzados no son suficientes. El software de [ImageMagick][imagemagick] ofrece a través de un comando muchas más opciones para la manipulación de imágenes. El inconveniente de ImageMagick es que para ser usado desde Java requiere instalar el comando en el sistema. El uso de ImageMagick desde Java es como la invocación de cualquier otro proceso del sistema, es posible pasar la imagen a manipular por la entrada estándar del sistema y obtener la imagen resultado por la salida estándar del sistema del proceso.
 

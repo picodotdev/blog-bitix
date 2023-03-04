@@ -30,7 +30,7 @@ La cuarta opción mucho menos conocida y usada son alguna de las distribuciones 
 
 {{< tableofcontents >}}
 
-### La distribución FreeBSD
+## La distribución FreeBSD
 
 Entre las distribuciones BSD una popular es [FreeBSD][freebsd], que es posible utilizar con propósitos de computadora de escritorio, su uso también está destinado a software de servidor que es conocida por su pila TCP/IP de gran rendimiento para comunicación por red.
 
@@ -50,7 +50,7 @@ Las novedades de destacadas de FreeBSD 13 publicada en abril de 2021 es el sopor
     image2="logotype:beastie.svg" optionsthumb2="200x150" title2="Beastie"
     caption="Logotipo y mascota de FreeBSD" >}}
 
-#### El sistema de archivos ZFS, ¿qué lo hace diferente?
+### El sistema de archivos ZFS, ¿qué lo hace diferente?
 
 Una de las opciones como sistema de archivos es la posibilidad de utilizar ZFS. La licencia BSD permite utilizar más fácilmente el avanzado sistema de archivos ZFS desarrollado originalmente por [la difunta Sun Microsystems][blogbitix-355].
 
@@ -63,7 +63,7 @@ La combinación de ZFS como gestor de volúmenes y sistema de archivos permite l
     image1="logotype:openzfs.svg" optionsthumb1="200x150" title1="OpenZFS"
     caption="OpenZFS" >}}
 
-### Guía de instalación
+## Guía de instalación
 
 El primer paso de la instalación es descargar la última de las imágenes de medio de instalación disponibles, ya sea la versión de menor tamaño para realizar la instalación por red o la más completa sin necesidad de descargar nada adicionalmente desde la [página de descargas de FreeBSD](https://www.freebsd.org/where/). En caso de duda en la instalación tiene disponible un [manual completo de la instalación y uso](https://docs.freebsd.org/en/books/handbook/) o como documentación de referencia.
 
@@ -168,7 +168,7 @@ Las últimas pantalla indican la finalización de la instalación.
     image3="image:finalizacion-instalacion-3.webp" optionsthumb3="200x150" title3="Finalización de la instalación de FreeBSD"
     caption="Finalización de la instalación de FreeBSD" >}}
 
-#### Primer inicio en FreeBSD
+### Primer inicio en FreeBSD
 
 Completada la instalación al reiniciar el sistema se presenta la pantalla del cargador de arranque y posteriormente la de inicio de sesión en modo texto a partir de la cual es posible instalar programas adicionales y un entorno de escritorio con interfaz gráfica.
 
@@ -178,7 +178,7 @@ Completada la instalación al reiniciar el sistema se presenta la pantalla del c
     image2="image:inicio-sesion-texto-freebsd-1.webp" optionsthumb2="200x150" title2="Inicio de sesión en modo texto de FreeBSD"
     image3="image:inicio-sesion-texto-freebsd-2.webp" optionsthumb3="200x150" title3="Inicio de sesión en modo texto de FreeBSD" >}}
 
-#### Instalación de entorno de escritorio
+### Instalación de entorno de escritorio
 
 La instalación del entorno de escritorio requiere instalar el servidor gráfico y el entorno de escritorio deseado. Los entornos de escritorio disponibles son los mismos que están disponibles en GNU/Linux entre ellos [GNOME][gnome], [KDE][kde] y [XFCE][xfce] con lo que la experiencia de usuario es en gran medida la misma que en una distribución GNU/Linux, la mayor diferencia es que las versión del entorno de escritorio de FreeBSD disponible sea la versión anterior o tarde más tiempo en estar disponible desde su publicación.
 
@@ -202,7 +202,7 @@ Para establecer como idioma el español se requiere añadir la siguiente configu
     image3="image:gnome-freebsd-3.webp" optionsthumb3="200x150" title3="GNOME en FreeBSD"
     caption="GNOME en FreeBSD" >}}
 
-### Uso básico
+## Uso básico
 
 FreeBSD proporciona una colección de programas básicos de línea de comandos incorporados en el sistema, al contrario que en GNU/Linux estos programas están desarrollados por los mismos desarrolladores del núcleo del sistema operativo y se actualizan como una unidad en cada versión en vez de individualmente.
 
@@ -214,7 +214,7 @@ Instalado el sistema dos tareas básicas son la instalación de programas adicio
     image2="image:df-freebsd.webp" optionsthumb2="300x200" title2="Comando df en FreeBSD"
     caption="Comandos uname y df en FreeBSD" >}}
 
-#### Obtener permisos de superusuario _root_
+### Obtener permisos de superusuario _root_
 
 Por seguridad algunas tareas administrativas y de edición de archivos de configuración requieren permisos de superusuario _root_. Esto es posible iniciando sesión en el sistema como el usuario _root_ o obteniendo los privilegios de superusuario con el programa _su_ o _sudo_.
 
@@ -228,7 +228,7 @@ Hay un único superusuario en el sistema cuyo nombre de usuario es _root_, este 
     image1="image:su.webp" optionsthumb1="300x200" title1="Obtener privilegios de superusuario"
     caption="Obtener privilegios de superusuario" >}}
 
-#### Instalación de paquetes
+### Instalación de paquetes
 
 La finalidad de cualquier sistema operativo es permitir realizar tareas productivas en él a través de los programas. Para usar un programa es necesario instalarlo previamente en el sistema. 
 
@@ -239,7 +239,7 @@ La instalación de un paquete se realiza con el comando _pkg_ para buscar su nom
 {{< code file="pkg-search.sh" language="bash" options="" >}}
 {{< code file="pkg-install.sh" language="bash" options="" >}}
 
-#### Actualización del sistema
+### Actualización del sistema
 
 Una vez realizada la instalación en el futuro se publicarán nuevas versiones de los programas. Para mantener el sistema actualizado hay que ejecutar de forma periódica un comando de actualización.
 
@@ -265,7 +265,7 @@ En caso de una actualización a una versión mayor de FreeBSD se requiere una re
 
 {{< code file="freebsd-pkg-upgrade.sh" language="bash" options="" >}}
 
-### Obtener más ayuda
+## Obtener más ayuda
 
 La cuota de uso de GNU/Linux no es muy grande en el escritorio pero tiene un grupo de usuarios muy activo que comparte gran cantidad de información, es difícil no encontrar una respuesta a una duda o problema y es fácil obtener respuesta a una pregunta.
 
@@ -275,7 +275,7 @@ El grupo de usuario de FreeBSD es más reducido y por tanto encontrar respuestas
 * [Listas de distribución](https://www.freebsd.org/community/mailinglists/)
 * [BSD Now](https://www.bsdnow.tv/) un _podcast_ semanal sobre las distribuciones BSD
 
-#### Libros
+### Libros
 
 También hay algunos libros dedicados en exclusiva a FreeBSD como [Absolute Freebsd: The Complete Guide To FreeBSD](https://amzn.to/3nLLi0h), [Design and Implementation of the FreeBSD Operating System](https://amzn.to/3nCspgc), [FreeBSD Device Drivers: A Guide for the Intrepid](https://amzn.to/3e3an3p), [FreeBSD Mastery: ZFS](https://amzn.to/3e4mU6t) y [FreeBSD Mastery: Advanced ZFS](https://amzn.to/2RaJ26j).
 

@@ -99,7 +99,7 @@ Este era el programa completo con su horario, temas muy distintos y variados com
 
 Al igual que en ediciones previas hago un pequeño resumen de las presentaciones a las que asistí. Los resúmenes no le hace justicia a las grandes ponencias que fueron en realidad pero espero haber captado y transmitir aquí escuetamente las ideas básicas que se expusieron. Y con este es el tercer resumen consecutivo que escribo de la BilboStack, los anteriores (y posteriores que si tengo oportunidad espero escribir) de esta serie de artículos están al final de este artículo.
 
-### Invisible o desaparece... <em>por Isabel Cabezas y Juliet Moreiro</em>
+## Invisible o desaparece... <em>por Isabel Cabezas y Juliet Moreiro</em>
 
 El <abbr title="Internet of Things">IoT</abbr> o esos pequeños dispositivos que tienen conexión a internet están surgiendo como una forma de ayudarnos en algunas situaciones cotidianas como cambiar la ruta cuando hay un accidente para no llegar a un atasco o encender la calefacción antes de llegar a casa o antes de levantarnos, espejos que proporcionan información como notificaciones o el tiempo o un centro comercial que te posiciona y ofrece ofertas según la localización en la que estas y tus hábitos de consumo. Aparatos como [Amazon Echo](https://www.microsoft.com/cognitive-services/en-us/) son asistentes a través de los cuales mediante comandos de voz podemos realizar acciones como pedir comida a domicilio.
 
@@ -115,7 +115,7 @@ El _hardware_ era la propia lámpara y una placa de computación [Intel Edison](
     gallery="true"
     image1="image:invisible-o-desaparece.webp" optionsthumb1="300x200" title1="Invisible o desaparece..." >}}
 
-### Érase una vez... el Design System <em>por Naiara Abaroa</em>
+## Érase una vez... el Design System <em>por Naiara Abaroa</em>
 
 El diseño de una página es una parte importante de la misma, no considerarlo así seguramente nos encontremos con problemas.
 
@@ -144,7 +144,7 @@ Algunos recursos de diseño e implementaciones conocidas de _Design Systems_ son
     gallery="true"
     image1="image:design-system.webp" optionsthumb1="300x200" title1="Érase una vez... el Design System" >}}
 
-### Agile for scrummies <em>por Jorge Uriarte</em>
+## Agile for scrummies <em>por Jorge Uriarte</em>
 
 La situación respecto a las metodologías de desarrollo ha cambiado, hace 10 años había resistencia al cambio ahora se aplica pero tampoco resuelve mágicamente los problemas del desarrollo de todos los casos donde se usa.
 
@@ -174,7 +174,7 @@ La combinación de un WIP pequeño junto con un sistema _pull_ en el que no se c
     gallery="true"
     image1="image:agile-for-scrummies.webp" optionsthumb1="300x200" title1="Agile for scrummies" >}}
 
-### Domain-Driven Design, uniendo negocio con el software <em>por Gorka Laucirica y Beñat Espiña</em>
+## Domain-Driven Design, uniendo negocio con el software <em>por Gorka Laucirica y Beñat Espiña</em>
 
 El _Domain-Driven Design_ o DDD se centra en el dominio de la aplicación, la lógica de negocio y lo que quiere el negocio de la aplicación.
 

@@ -24,7 +24,7 @@ Entre las novedades más destacadas que incorpora Java 14 están los _records_, 
 
 {{< tableofcontents >}}
 
-### Introducción
+## Introducción
 
 * [Características de Java 14](https://openjdk.java.net/projects/jdk/14/)
 * [Notas de publicación de Java 14](https://www.oracle.com/java/technologies/javase/14-relnote-issues.html)
@@ -51,9 +51,9 @@ Las mejoras incluídas en esta versión son:
 * 368: [Text Blocks (Second Preview)](https://openjdk.java.net/jeps/368)
 * 370: [Foreign-Memory Access API (Incubator)](https://openjdk.java.net/jeps/370)
 
-### Nuevas características
+## Nuevas características
 
-#### Excepciones _NullPointerException_ más útiles
+### Excepciones _NullPointerException_ más útiles
 
 Cuando se produce una excepción _NullPointerException_ por usar una referencia de objeto cuyo valor es _null_ Java emite una traza indicando la línea de código donde se ha producido, la clase y método donde se ha intentado referenciar pero no se ha podido.
 
@@ -67,28 +67,28 @@ A partir de Java 14 las excepciones NullPointerException son más útiles e indi
 
 {{< code file="NullPointerException-3.out" language="plain" options="" >}}
 
-#### Expresiones _switch_
+### Expresiones _switch_
 
 La características de expresiones _switch_ introducida en modo vista previa en las versiones de Java 12 y 13 se califica como estándar.
 
 {{< code file="Switch-1.java" language="java" options="" >}}
 {{< code file="Switch-2.java" language="java" options="" >}}
 
-#### ZGC para Windows y macOS
+### ZGC para Windows y macOS
 
 La versión del recolector de basura ZGC que permite pausas muy reducidas en memorias de unos pocos MB hasta varios TB ahora es posible utilizarla en los sistemas operativos macOS y Windows.
 
 * [El recolector de basura de Java, que hace y como funciona en cada versión][blogbitix-463]
 
-### Nuevas características en vista previa
+## Nuevas características en vista previa
 
-#### Bloques de texto
+### Bloques de texto
 
 En esta nueva revisión de los bloques de texto se definen dos nuevos caracteres de escape. El _terminador de línea_ para poder definir bloques de texto en varias líneas pero sin insertar saltos de línea en el bloque de texto y _\s_ para evitar que los espacios en blanco sean eliminados por la operación _trim_.
 
 {{< code file="TextBlocks.java" language="java" options="" >}}
 
-#### _Records_
+### _Records_
 
 Esta es la característica más destacada añadida al lenguaje que permite reducir significativamente el código necesario para algunas clases.
 
@@ -120,7 +120,7 @@ Con los registros se define de la siguiente forma.
 
 {{< code file="Records-2.java" language="java" options="" >}}
 
-#### _Pattern Matching_ para el operador _instanceof_
+### _Pattern Matching_ para el operador _instanceof_
 
 Al usar el operador _instanceOf_ para comprobar si un objeto es una instancia de una clase si se realiza en un _if_ posteriormente es necesario hacer un _cast_ del objeto a la clase.
 

@@ -39,35 +39,35 @@ El producto de software [Vault][vault] de [Hashicorp][hashicorp] ofrece como ser
 
 {{< tableofcontents >}}
 
-### Algoritmos de cifrado con clave simétrica
+## Algoritmos de cifrado con clave simétrica
 
 En los algoritmos simétricos se utiliza la misma clave tanto para cifrar como para descifrar los datos. Las claves de los algoritmos simétricos son más pequeñas, proporcionan mayor seguridad y se siguen utilizando ya que son más rápidos en el cifrado y descifrado. El inconveniente de estos algoritmos es que es necesario compartir la clave secreta de alguna forma para evitar el [ataque _man-in-the-middle_][wikipedia-man-in-the-middle-attack] para lo que se utiliza un algoritmo de clave asimétrica.
 
 En general, un algoritmo con claves de mayor cantidad de bits para el tamaño de la clave proporciona una mayor seguridad. De esta forma AES con una clave de 256 bits es más seguro que AES con una clave de 128 bits.  Los algoritmos de clave simétrica cifran los datos en bloques, algunos algoritmos utilizan bloques de 64 bits y otros de 128 bits. Entre los algoritmos de cifrado simétricos están los siguientes algunos han sido reemplazados por AES.
 
-#### AES
+### AES
 
 [AES][wikipedia-aes] (_Advanced Encryption Standard_) es un algoritmo de cifrado de clave simétrica que utiliza bloques de 128 bits. AES es uno de los algoritmos de cifrado más seguros y eficientes disponibles. Es compatible con claves de 128, 192 y 256 bits.
 
-#### 3DES
+### 3DES
 
 3DES (_Triple Data Encryption Standard_) es un algoritmo de cifrado de clave simétrica que utiliza bloques de 64 bits y una clave de 168 bits.
 
-#### Blowfish
+### Blowfish
 
 Blowfish es un algoritmo de cifrado de clave simétrica que utiliza bloques de 64 bits y una clave de entre 32 y 448 bits. Fue desarrollado en 1993 y se utiliza en algunas aplicaciones.
 
-#### RC5
+### RC5
 
 RC5 es un algoritmo de cifrado de clave simétrica que utiliza bloques de 64 bits y una clave de entre 0 y 2040 bits. Fue desarrollado en 1994 y se utiliza en algunas aplicaciones.
 
-#### IDEA
+### IDEA
 
 IDEA (_International Data Encryption Algorithm_) es un algoritmo de cifrado de clave simétrica que utiliza bloques de 64 bits y una clave de 128 bits. IDEA fue desarrollado en 1991 y es utilizado en algunas aplicaciones.
 
-### Ejemplos de código de cifrado y descifrado con Java
+## Ejemplos de código de cifrado y descifrado con Java
 
-#### Listar algoritmos de cifrado soportados con Java
+### Listar algoritmos de cifrado soportados con Java
 
 Java soporta varios algoritmos de cifrado simétrico dependiendo de la versión de Java que se pueden listar utilizando la API que ofrece el JDK.
 
@@ -79,7 +79,7 @@ El siguiente código muestra el resultado de cifrar un texto asi como descifrar 
 {{< code file="Main-2.java" language="java" options="" >}}
 {{< code file="Main-2.out" language="plain" options="" >}}
 
-#### Generar una clave simétrica
+### Generar una clave simétrica
 
 En los algoritmos de clave simétrica es necesario generar la clave para realizar el cifrado y descifrado de datos. La clave es simplemente un número binario de cierta longitud habiendo dos forma de generarlo, una generando el número de forma aleatoria pero segura al que en la jerga de criptografía se le denomina material.  La clave en Java se representa por la clase [SecretKey](javadoc17:java.base/javax/crypto/SecretKey.html)
 
@@ -89,23 +89,23 @@ La segunda forma es generar la clave como una derivada de una contraseña. Un n�
 
 {{< code file="Main-4.java" language="java" options="" >}}
 
-#### Cifrar datos
+### Cifrar datos
 
 Una vez generada la contraseña se cifran los datos, los datos cifrados sólo pueden ser devueltos a su estado original aplicando la operación inversa del algoritmo con la misma clave simétrica.
 
 {{< code file="Main-5.java" language="java" options="" >}}
 
-#### Descifrar datos
+### Descifrar datos
 
 {{< code file="Main-6.java" language="java" options="" >}}
 
-#### Cifrar flujos de datos y archivos
+### Cifrar flujos de datos y archivos
 
 A veces se desea cifrar un flujo de datos de tamaño no conocido de antemano, las clases [CipherIntputStream](javadoc17:java.base/javax/crypto/CipherInputStream.html) e [CipherOutputStream](javadoc17:java.base/javax/crypto/CipherOutputStream.html) permite realizar el cifrado a un flujo de datos.
 
 {{< code file="Main-7.java" language="java" options="" >}}
 
-#### Calcular el _hash_ HMAC
+### Calcular el _hash_ HMAC
 
 Los algoritmos criptográficos de _hashing_ proporcionan una huella digital de los datos que tienen ciertas propiedades de seguridad. Estos utilizan como entrada los datos y un algoritmo de _hashing_.
 

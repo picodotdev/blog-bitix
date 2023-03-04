@@ -27,7 +27,7 @@ Sin embargo, otra parte para maximizar el rendimiento de un sitio web se debe a 
 
 {{< tableofcontents >}}
 
-### Evaluar SEO
+## Evaluar SEO
 
 El SEO es un arte ya que no hay una medida precisa de qué criterios emplean los buscadores para clasificar las páginas indexadas en las páginas de resultados. Sin embargo, sí hay algunas pautas que sí contribuyen a un mejor posicionamiento.
 
@@ -45,7 +45,7 @@ La herramienta Google Search Console proporciona métricas de visitas, informa d
 * [moz](https://moz.com/domain-analysis?site=picodotdev.github.io)
 * [Evaluar datos enriquecidos de una página](https://search.google.com/test/rich-results)
 
-### Evaluar conformidad a estándares web
+## Evaluar conformidad a estándares web
 
 La organización [W3C][w3] es la encargada de definir los estándares de la web. Cumplir los estándares es importante ya que de lo contrario es posible que algún navegador o versión de los mismo no muestre correctamente el contenido del sitio web, lo que ocasiona la pérdida de una visitas por una mala experiencia de usuario. Al mismo tiempo en caso de que el contenido de la página no cumpla los estándares los rastreadores quizá no sean capaces de indexar todo el contenido del sitio web o en la clasificación de las páginas de resultados acabe posicionado peor que otros artículos.
 
@@ -56,14 +56,14 @@ La W3C proporciona tres herramientas para evaluar la conformidad de una página 
 * [Evaluar conformidad _feeds_ de suscripción](https://validator.w3.org/feed/check.cgi)
 * [Evaluar conformidad de contenido _amp_](https://validator.ampproject.org/)
 
-#### Accesibilidad
+### Accesibilidad
 
 Otro aspecto de conformidad de estándares que ha de ser tenido en cuenta es hacer que las páginas del sitio web sean accesibles para que el acceder a la páginas no suponga ninguna barrera a ningún usuario incluyendo a aquellos que poseen algún tipo de discapacidad. Algunas pruebas de accesibilidad es incluir un texto alternativo para todas las imágenes de la página web y que el contraste de color de la fuente y de fondo tenga un mínimo de diferencia.
 
 * [Herramientas para evaluar la accesibilidad](https://www.w3.org/WAI/ER/tools/)
 * [Test de accesibilidad de una página](https://www.webaccessibility.com/)
 
-### Evaluar rendimiento
+## Evaluar rendimiento
 
 El tiempo que tarda en descargar una página es otro criterio que los buscadores tiene en cuenta para clasificar los resultados. Se considera como positivo para la experiencia de usuario que una página tarde el menor tiempo posible en descargarse por ello los motores de búsqueda lo tienen en cuenta en la indexación. En el tiempo de descarga influyen factores como el tamaño en KiB de la página, número de peticiones y recursos que carga la página.
 
@@ -73,7 +73,7 @@ Estas dos herramientas proporcionan información sobre la página, con resultado
 * [Website Speed Test](https://webspeedtest.cloudinary.com/)
 * [Medir la velocidad de un sitio web](https://gtmetrix.com/)
 
-### Buscar enlaces rotos
+## Buscar enlaces rotos
 
 Con el paso de tiempo algunos de los enlaces incluidos en los artículos quedarán rotos al cambiarlos de ubicación el propietario de esos sitios web. Que un sitio web contenga enlaces rotos proporciona una mala experiencia de usuario y posiblemente los buscadores lo tomen como un criterio negativo si el sitio web tiene muchos enlaces rotos.
 

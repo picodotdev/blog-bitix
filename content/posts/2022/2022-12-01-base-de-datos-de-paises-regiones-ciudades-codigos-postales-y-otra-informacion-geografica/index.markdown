@@ -31,7 +31,7 @@ El listado de países, unidades administrativas como comunidades autónomas, ciu
 
 {{< tableofcontents >}}
 
-### La base de datos de información geográfica de GeoNames
+## La base de datos de información geográfica de GeoNames
 
 Una fuente que permite obtener esta información geográfica es la página de [GeoNames][geonames] que tiene una [licencia de Creative Commons][creativecommons]. La base de datos de información está compuesta por varios archivos CSV muchos separados por tabuladores con las varias columnas de información. En el [archivo README](https://download.geonames.org/export/dump/readme.txt) hay una lista de los archivos de los que consta la base de datos.
 
@@ -39,13 +39,13 @@ Una fuente que permite obtener esta información geográfica es la página de [G
 {{< code file="table-geoname.txt" language="plain" options="" >}}
 {{< code file="table-alternate-names.txt" language="plain" options="" >}}
 
-#### countryInfo.txt
+### countryInfo.txt
 
 Este archivo contiene la lista de países. Entre su información está el código del país, las expresiones regulares de los códigos postales, el prefijo del teléfono, código de la divisa, lenguaje entre otra información como población, superficie y la capital además de los países vecinos.
 
 {{< code file="country-es.txt" language="plain" options="" >}}
 
-#### allCountries.zip y XX.zip
+### allCountries.zip y XX.zip
 
 El archivo _allCountries.zip_ contiene las ciudades de todos los países (todos los archivos _XX.zip_) y en los archivos _XX.zip_ están las ciudades de un país en concreto, _ES.zip_ para las ciudades de España. Contienen el código ciudad, latitud y longitud, zona horaria y los códigos de las unidades administrativas junto con su población, elevación e identificador _geonameid_
 
@@ -55,7 +55,7 @@ Hay varios archivos de ciudades filtrados según si superan una cantidad de pobl
 
 {{< code file="cities15000-bilbao.txt" language="plain" options="" >}}
 
-#### alternateNamesV2.zip
+### alternateNamesV2.zip
 
 Contiene diversa información más extendida de cada uno de los _geonames_, incluyendo su nombre en diferentes idiomas, el conjunto de códigos postales asociados, identificador del aeropuerto y enlaces a la wikipedia.
 
@@ -66,31 +66,31 @@ El _geonameid_ de la ciudad de Bilbao es _3128026_ y buscando en el archivo se e
 {{< code file="grep-alternate-names-bilbao.sh" language="bash" options="" >}}
 {{< code file="grep-alternate-names-bilbao.out" language="plain" options="" >}}
 
-#### admin1CodesASCII.txt
+### admin1CodesASCII.txt
 
 Contiene las unidades administrativas del primer nivel, en el caso de España son las comunidades autónomas. El archivo incluye el _geonameid_ asociado a la comunidad autónoma.
 
 {{< code file="admin1-es.txt" language="plain" options="" >}}
 
-#### admin2Codes.txt
+### admin2Codes.txt
 
 Contiene las unidades administrativas del segundo nivel, en el caso de España son las provincias. El archivo incluye el _geonameid_ asociado a la provincia.
 
 {{< code file="admin2-es.txt" language="plain" options="" >}}
 
-#### featureCodes.txt, timeZones.txt y hierarchy.zip
+### featureCodes.txt, timeZones.txt y hierarchy.zip
 
 Los _geonames_ pueden tener un metadato asociado con varios identificadores que en la documentación se denominan _features_, hay varias categorías de identificadores y varios identificadores dentro de cada categoría. Por ejemplo, la feature _P_ se utiliza para ciudades y villas y _PPLA1_, _PPLA2_, _PPLA3_, _PPLA4_, _PPLA5_ indica el nivel de unidad administrativa. Las _features_ permiten conocer a qué representa el _geoname_ por ejemplo si es un aeropuerto o una universidad entre muchos otros elementos.
 
 El archivo _hierarchy.zip_ permite reconstruir la relación jerárquica de los diferentes _geonames_
 
-#### shapes_all_low.zip
+### shapes_all_low.zip
 
 Contiene el polígono del _geoname_ que permite una representación gráfica de su superficie, por ejemplo del país.
 
 {{< code file="shape-es.txt" language="plain" options="" >}}
 
-#### Información de la base de datos
+### Información de la base de datos
 
 Cada uno de los elementos geográficos tiene asociado un identificador de _geonameid_, con este identificador es posible obtener más información en el archivo _alternateNamesV2.zip_ y relacionar la información de unos archivos con la información de otros archivos. La información que incluyen están en columnas separadas por tabuladores, las columnas son las indicadas en estructura de la tabla _geoname_ y _alternate names_.
 
@@ -106,7 +106,7 @@ La de Reino Unido es esta otra.
 
 {{< code file="regexp-uk.txt" language="plain" options="" >}}
 
-### Cómo acceder a la información
+## Cómo acceder a la información
 
 Los archivos son muy grandes, seguramente no sea necesaria toda la información y no está en el formato adecuado para un rápido acceso al dato que se necesita en una aplicación, con lo que hay que procesarlos para adaptarlos. Los archivos son archivos de texto con los datos de las columnas separados por tabuladores, una librería para procesar los archivos con el lenguaje Java es [OpenCSV][opencsv].
 

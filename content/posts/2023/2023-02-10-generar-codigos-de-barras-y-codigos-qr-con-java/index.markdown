@@ -39,7 +39,7 @@ Los códigos de barras y códigos QR se pueden generar desde un programa e inclu
 
 {{< tableofcontents >}}
 
-### Librerías para generar códigos de barras y códigos QR en Java
+## Librerías para generar códigos de barras y códigos QR en Java
 
 En el caso del lenguaje de programación Java hay varias librerías que permiten generar códigos de barras y códigos QR. Cada librería implementa un subconjunto de todos los estándares de códigos lineales o matriciales y ofrecen una API para el lenguaje de programación.
 
@@ -62,11 +62,11 @@ Buscando alguna opción de código abierto pero mejor mantenida que los casos an
 
 * [OkapiBarcode](https://github.com/woo-j/OkapiBarcode)
 
-### Ejemplos de código
+## Ejemplos de código
 
 Los siguiente ejemplos de código son utilizando la librería OkapiBarcode que en esencia generan una imagen utilizando las clases que incluye el JDK de Java, esta imagen se puede exportar en diferentes formatos como _png_ y _jpg_.
 
-#### Generar un código de barras con Java
+### Generar un código de barras con Java
 
 La librería ofrece una clase con el mismo nombre por cada estándar que implementa. En los códigos lineales se ofrece la posibilidad de mostrar el código del texto que codifica la imagen, lo que es útil en caso de que el lector hardware no funcione y haya que introducir manualmente el código en el ordenador. Se puede especificar el tamaño vertical de las barras, la fuente y posición del texto y es recomendable utilizar el _RenderingHints.VALUE\_TEXT\_ANTIALIAS\_ON_ para que el texto tenga mejor aspecto aplicando _antialias_ a la fuente al generar la imagen.
 
@@ -84,7 +84,7 @@ El estándar que se suele utilizar en los productos del supermercado es el EAN o
 {{< code file="Main-1.java" language="java" options="" >}}
 {{< code file="build.gradle" language="groovy" options="" >}}
 
-#### Generar un código QR con Java
+### Generar un código QR con Java
 
 Otro formato de códigos son los que tienen dos dimensiones entre los que está el popular código QR que muchos _smartphones_ reconocen con la cámara.
 

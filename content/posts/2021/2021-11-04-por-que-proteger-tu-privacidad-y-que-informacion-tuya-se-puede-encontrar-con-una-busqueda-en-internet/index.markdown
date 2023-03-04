@@ -20,7 +20,7 @@ La privacidad de las personas es un derecho. Un derecho que con internet y el tr
 
 Un buscador como [Google][google] permite encontrar datos de una persona relacionada con ella incluso pasado algún lustro. A través de las redes sociales es posible conocer cualquier cosa que una persona comparta de forma pública.
 
-### Por qué proteger tu privacidad
+## Por qué proteger tu privacidad
 
 Internet ofrece muchas posibilidades pero también tiene otros inconvenientes. Uno de ellos es que es muy fácil perder el control de la privacidad. Una vez algo se ha publicado a través de internet es difícil revocar la información y ejercer el derecho al olvido para que esa información que se desea eliminar lo sea. Una vez publicado algo en internet cualquier persona que tenga acceso lo puede copiar o republicar en cualquier otra ubicación en la que ya no se tiene el control. Lo que en un momento se considera como poco importante publicar más adelante puede desearse que no hubiese sido publicado, el problema es que publicar algo es muy fácil pero eliminar algo publicado es muy difícil.
 
@@ -32,7 +32,7 @@ Algunos ataques informáticos son realizados de forma masiva pero otros son llev
 
 * [Manual básico sobre ataques informáticos, peligros, tipos, cómo detectarlos, cómo evitarlos y medidas de prevención][blogbitix-605]
 
-### Busca información tuya a través de datos que te identifican
+## Busca información tuya a través de datos que te identifican
 
 Es fácil averiguar cuánta información personal de uno mismo hay publicada en internet con una simple búsqueda en Google cualquier dato personal que identifique a una persona. A partir de uno de estos datos personales es posible encontrar mucha información de lo que hace una persona, que piensa a través de lo que dice, fotos suyas, de sus familiares y amigos, su ciudad y lugar de residencia, de vacaciones, lugar de trabajo y profesión, aficiones, ...
 
@@ -42,7 +42,7 @@ Pon en Google tu nombre y apellidos, DNI, tu correo electrónico, tu número de 
 
 Y Google también es capaz de reconocer texto en las imágenes. Busca también en [Google Imágenes][google-images] ahí también se encuentran fotos a partir de los datos identificativos.
 
-### Conclusión
+## Conclusión
 
 Quizá te asustes de lo que puede conocer alguien de ti con interés por información que tú mismo has publicado. En el momento de publicar la información quizá no se le da importancia pero en el futuro en alguna circunstancia quizá se desease eliminar esa información cosa que erá muy difícil o quizá no sea posible.
 

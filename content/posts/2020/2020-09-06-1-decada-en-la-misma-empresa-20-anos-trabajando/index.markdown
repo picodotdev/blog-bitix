@@ -19,7 +19,7 @@ tags: ["opinion"]
 
 Llevo casi 20 años de vida laboral, 10 de los cuales en la misma empresa, en ese periodo hay a quien le da tiempo a venir, marchar, volver a venir y volver a marchar. En estos años he pasado diría que por pocas empresas comparado con lo rápido que otras personas se cambian de trabajo, aún así han sido empresas bastante diferentes entre ellas. Los últimos 10 años se me han pasado mucho más rápido que los 10 anteriores. Si pasase 10 años más en la misma empresa muy posiblemente sería bueno pero con la situación pandémica actual y el desenlace de acontecimientos que crea incertidumbre es mucho decir.
 
-### Prácticas en empresa
+## Prácticas en empresa
 
 Mi primera experiencia laboral ha sido durante los últimos años de carrera a través de unas prácticas en empresa. Las prácticas duraron unos 6 meses y aunque no mucho fueron remuneradas.
 
@@ -27,7 +27,7 @@ Fue mi primera experiencia laboral aunque realmente más allá de eso no me sirv
 
 A pesar de todo y dado que era una empresa dedicada a la industria pesada un día pude ver una máquina de colada continua produciendo barras metalúrgicas literalmente como churros y el horno junto con la sala de control bunkerizada donde se funde la chatarra en la cubeta que luego pasa a la máquina de colada continua, ver esto estuvo muy bien.
 
-### Las consultoras
+## Las consultoras
 
 En los 10 primeros años de vida laboral he estado trabajando en dos consultoras principalmente con proyectos para la administración pública. Cada proyecto de apenas una duración de más de 9 meses o menos, entre las cosas buenas de estos proyectos es que algunos se empezaban desde cero lo que es una buena oportunidad para aplicar lo aprendido en anteriores proyectos, en los muy pocos incluso con cierta libertad de elegir _frameworks_ y librerías.
 
@@ -39,7 +39,7 @@ Aún con sus defectos en la segunda consultora hice varios proyectos mas satisfe
 
 A pesar de que prefiero Apache Tapestry como _framework_ web basado en componentes, otros de los proyectos de lo que que guardo buen recuerdo era precisamente uno hecho en JSF, que si no recuerdo mal servía para evaluar el grado de cumplimiento de una organización en cuanto a seguridad según diferentes parámetros. Tenía su parte de introducción de datos y formularios mediante una aplicación web y también una parte importante eran los informes PDF generados con JasperReports de varias páginas que incluían algunas gráficas de araña generadas con JFreeChart, me permitió descubrir lo muy interesante que era esa herramienta de JasperRports que a día de hoy todavía no se si hay algo mejor en su propósito. En esa época no hacía teses unitarios pero tengo el recuerdo de que tanto el código como la aplicación web tenían un aspecto muy decente y cuidado.
 
-### La _startup_
+## La _startup_
 
 El motivo del cambio de una consultora a _startup_ en mi caso no fue el salario fue más el aspecto técnico de poder usar algo más moderno que Java 1.4, _frameworks_ propietarios de administraciones públicas y el potencial de poder usar cualesquiera otras cosas más modernas que se necesitasen. Aún siendo Grails y Groovy junto con la base de datos MySQL no mis favoritos al menos era más moderno que lo que podía usar hasta ese momento. El segundo motivo era la experiencia de conocer otro tipo de empresa distinta de una consultora y diferente proyecto.
 
@@ -59,7 +59,7 @@ En el aspecto negativo de las _startups_ están en que si el negocio no crece a 
 
 Por suerte en la que he estado aunque nunca ha llegado ha ser rentable, su objetivo principal era crecer aún a costa de quemar dinero, pero ha ido creciendo con números importantes que al final la ha hecho apetecible para ser vendida a una multinacional.
 
-### La multinacional
+## La multinacional
 
 Donde antes era prácticamente austeridad como lo de las mesas, sillas y oficinas a una multinacional que no escatima en gastos, «money is not problem». En cuanto se dan las circunstancias nuevas oficinas completamente remodeladas con mesas grandes y de oficina, sillas ergonómicas nuevas no de Ikea, espacio para muchas más personas y salas de reuniones, lo mejor que he visto con mucha diferencia hasta el momento.
 
@@ -77,7 +77,7 @@ El salario, la experiencia u oportunidades que ofrece una multinacional son aspe
 
 Quizá no en las mismas condiciones pero en esta época oportunidades no faltan que permitan encontrar otro empleo en no mucho tiempo, también decir que hay mucho trabajo de baja calidad, por lo que siempre conviene tener cierta garantía económica más en el caso de tener deudas de cuantías como una hipoteca, responsabilidades familiares o gastos recurrentes importantes como un alquiler.
 
-### Conclusión, ¿y el futuro?
+## Conclusión, ¿y el futuro?
 
 El trabajo técnico en la informática puede parecer que sea tratar con ordenadores y sistemas informáticos, la realidad es que la mayor parte es tratar con personas. Durante estos 20 años he coincidido con muchas personas, aunque las ha habido por fortuna las malas experiencias han sido la excepción de todos modos al menos en estos casos por mi parte han sido lo suficientes para mantener una relación profesional, también ha habido algunas personas admirables.
 

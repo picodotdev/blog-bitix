@@ -54,7 +54,7 @@ El juego Uncharted 4 es uno de los juegos imprescindibles de la consola PlayStat
 {{< game-spoiler >}}
 {{< tableofcontents >}}
 
-### El juego
+## El juego
 
 Si uno ha jugado y le han gustado los anteriores juegos de la saga Uncharted es muy difícil que el Uncharted 4 no le guste e incluso considere mejor aún que los anteriores. En esta ocasión la historia está centrada en averiguar que le pasó a Henrry Avery junto a otros varios piratas famosos de la época y que fué de sus tesoros, con una historia similar a una buena película con algunas referencias a los juegos anteriores. En el juego aparecen todos los personajes destacados de la saga de juegos como el compañero de aventuras Sully, la chica Elena, Chloe y otros varios personajes como el hermano de Nathan.
 
@@ -120,7 +120,7 @@ Tiene un salto de calidad importante respecto a los anteriores Uncharted, posibl
     image2="image:uncharted-4-graficos-2.webp" optionsthumb2="200x150" title2="Calidad gráfica del juego"
     caption="Calidad gráfica del juego" >}}
 
-#### Otros juegos relacionados con la saga
+### Otros juegos relacionados con la saga
 
 Se supone que el Uncharted 4 es el último de los juegos de la saga de Nathan pero si la desarrolladora quisiese publicar un nuevo juego los guionistas tienen varias opciones para publicar un nuevo Uncharted y quizá pudiera ocurrir en la PS5 o e una hipotética PS6 ya que seguro más de uno por nostalgia en un futuro demandará un nuevo juego en la serie. De hecho una continuación del Uncharted 4 y en la saga de los Uncharted es el juego [Uncharted: The Lost Legacy](https://www.igdb.com/games/uncharted-the-lost-legacy).
 
@@ -129,7 +129,7 @@ Se supone que el Uncharted 4 es el último de los juegos de la saga de Nathan pe
     image1="image:uncharted-the-lost-legacy.webp" optionsthumb1="200x150" title1="Uncharted: El legado perdido"
     caption="Uncharted: El legado perdido" >}}
 
-### Coleccionables
+## Coleccionables
 
 Muchos tesoros y coleccionables están en puntos por los que hay que pasar para avanzar en el juego, otros se descubren sin mucho esfuerzo, otros más conociendo donde los desarrolladores suelen esconder los tesoros se intuyen donde puede haber alguno, sin embargo otros son más difíciles de encontrar ya que los escenarios tiene cierto tamaño y no hay ninguna pista que haya uno cerca a menos que se vea. En estos últimos si se quiere completar la colección completa de coleccionables para no invertir gran cantidad de tiempo o conocer dónde están hay muchos vídeos donde otros usuarios publican vídeos exclusivamente con la ubicación de los coleccionables.
 
@@ -146,14 +146,14 @@ Muchos tesoros y coleccionables están en puntos por los que hay que pasar para 
 {{< youtube
     video="ANRWt-q7TRs" >}}
 
-### Película del juego
+## Película del juego
 
 El juego se puede ver como una película, otros vídeos incluyen únicamente las secuencias importantes de la historia del juego útiles para recordar o volver a ver una secuencia en concreto.
 
 {{< youtube
     video="1-UC76B-NLE" >}}
 
-### Banda sonora original
+## Banda sonora original
 
 Los juegos incluyen bandas sonoras que igualan a las bandas sonoras de las mejores películas cinematográficas y es que en algunos casos un juego es incluso más grande que una película en ingresos.
 

@@ -35,7 +35,7 @@ Otras distribuciones basadas en principios diferentes y usuarios a los que está
 
 {{< tableofcontents >}}
 
-### La instalación del sistena con Arch Linux
+## La instalación del sistena con Arch Linux
 
 En Arch Linux con su [forma de hacer las cosas](https://wiki.archlinux.org/index.php/Arch_Linux) deja al usuario el poder de personalizar el sistema completamente a sus necesidades y preferencias únicamente limitado por su determinación de conseguirlo. Solo proporciona [el medio con el que iniciar la instalación][archlinux-download] que comienza con una terminal y un _prompt_ del sistema, una [guía de instalación][archlinux-install-guide] junto con las [recomendaciones generales][archlinux-general-recomendations] y [una de las mejores fuentes de información en GNU/Linux][archlinux-wiki] además de completa de cada aspecto que necesitemos en la instalación. Después de haber leído las páginas relevantes de la wiki de Arch Linux, seguramente más de una y dos veces, hasta comprenderla en su mayor parte se empieza a realizar la receta que contenga los comandos necesarios hasta completar la instalación.
 
@@ -45,7 +45,7 @@ Pero saber los comandos que hay que introducir para realizar la instalación de 
 
 Hace unos meses conocí [arch-anywhere][arch-anywhere] que básicamente es un _script_ de bash, con un instalador guiado y basado en texto que hace menos laboriosa la instalación de Arch Linux de forma similar a las existentes en otras distribuciones más amigables. Sin embargo, hay un dos cosas que no me convencen de _arch-anywhere_, una es que no es desatendido requiriendo contestar a varias preguntas de forma interactiva, esperar a que termine ejecute algún comando según la contestación anterior y contestar a la siguiente pregunta. Otra cosa que no me convence es que usa una imagen ISO propia y no la original de Arch Linux. Por lo demás, ofrece un buen nivel de personalización cubriendo las necesidades más comunes de los usuarios como personalizar el particionado, elegir el sistema de archivos, si se quiere LVM, cifrado, el entorno de escritorio (GNOME, KDE, XFCE, ...), kernel, cargador de arranque (GRUB) y programas a instalar.
 
-### El instalador alis y características soportadas
+## El instalador alis y características soportadas
 
 Basándome en la idea de _arch-anywhere_ y dedicando un poco de tiempo he creado un _script_ en [bash][bash] para instalar Arch Linux de forma automatizada, desatendida y personalizable hasta cierto punto aunque siendo útil para los casos de configuraciones más comunes, sin ser imprescindible leer unas decenas de páginas de la wiki de Arch Linux ni seguir ninguna guía o tutorial paso a paso. Algunas de las funcionalidades que soporta son:
 
@@ -94,7 +94,7 @@ Estos son los comandos de uso de alis y su archivo de configuración con el que 
 {{< code file="alis-install.sh" language="bash" options="" >}}
 {{< code file="alis.conf" language="bash" options="" >}}
 
-### Capturas de diferentes entornos de escritorio soportados
+###  Capturas de diferentes entornos de escritorio soportados
 
 Estas son algunas capturas de pantalla con diferentes entornos de escritorio que he probado con VirtualBox.
 
@@ -118,13 +118,13 @@ Estas son algunas capturas de pantalla con diferentes entornos de escritorio que
     image1="image:archlinux-root-password.webp" optionsthumb1="300x200" title1="Solicitud de contraseña para descifrar partición root"
     caption="Solicitud de contraseña para descifrar partición root" >}}
 
-### Vídeo de instalación del sistema base con alis
+## Vídeo de instalación del sistema base con alis
 
 El siguiente vídeo capturado con [asciinema][asciinema] muestra como utilizando alis se instala Arch Linux en una computadora con el proceso completo de la instalación base del sistema.
 
 {{< asciinema id="418524" caption="Instalación de sistema base de Arch Linux con alis" >}}
 
-### Código fuente de alis
+## Código fuente de alis
 
 El código del instalador no es muy complicado y mucho más sencillo que otros _scripts_ interactivos similares, al no mezclar los comandos de la instalación con los mensajes interactivos que hacen preguntas y esperan respuestas, además después de configurar las variables e iniciado el proceso de instalación la misma se realiza de forma desatendida hasta completarse sin requerir que el usuario introduzca más datos de forma interactiva.
 

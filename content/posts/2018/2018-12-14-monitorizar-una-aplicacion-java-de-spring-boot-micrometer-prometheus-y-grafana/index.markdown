@@ -38,7 +38,7 @@ Micrometer y Prometheus ofrecen varios tipos de métricas:
 * _Timer_: mide periodos de tiempo. Puede ser el tiempo de respuesta empleado para atender una petición de un servicio.
 * _Distribution summaries_: recolecta la distribución de una serie de datos con los que se pueden obtener percentiles.
 
-### Ejemplo de microservicio con Spring Boot, Micrometer, Prometheus y Grafana
+## Ejemplo de microservicio con Spring Boot, Micrometer, Prometheus y Grafana
 
 Utilizando el ejemplo que hice para la [serie de artículos sobre Spring Cloud][blogbitix-serie-spring-cloud] he añadido al micro servicio _service_ un contador con el número de invocaciones que se le ha realizado. Este dato se expone en el _endpoint_ con la clave _service.invocations_ como se ha definido al registrar el contador en Micrometer con la clase _MeterRegistry_. Además de esta métrica propia del servicio Spring Boot Actuator añade otras muchas más del uso de la CPU, memoria, ...
 

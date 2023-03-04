@@ -32,7 +32,7 @@ Aunque no he tenido ningún problema grave hay que seguir unas recomendaciones p
 
 {{< tableofcontents >}}
 
-### Funcionamiento de Wallapop y páginas de segunda mano
+## Funcionamiento de Wallapop y páginas de segunda mano
 
 Los servicios de intercambio generalmente de segunda mano son un lugar de encuentro entre vendedores y compradores. Por un lado los vendedores ponen el anuncio de sus productos que las páginas muestran como tablones de anuncios con una descripción y su estado, un precio y adjuntando varias fotos reales del producto. Los compradores tienen el catálogo completo de los productos de los vendedores y con la posibilidad de hacer búsquedas por categoría, precio, y distancia entre el vendedor y comprador.
 
@@ -40,7 +40,7 @@ En los términos de uso de estas páginas se detalla que el intercambio es un ac
 
 En caso de problemas o desacuerdos entre el comprador y vendedor están las disputas pero ellos solo median en el conflicto y la disputa se puede resolver de forma desfavorable a lo que consideramos justo.
 
-#### Negociación del precio
+### Negociación del precio
 
 Los servicios de intercambio ofrecen una aplicación de mensajería para que el comprador pueda ponerse en contacto con el vendedor e iniciar una conversación para aclarar cualquier duda que haya y llegar a un acuerdo en el precio.
 
@@ -56,11 +56,11 @@ Con todo acordado el vendedor ha de preparar el paquete y entregarlo en un punto
 
 Con el código de seguimiento tanto el comprador como el vendedor pueden conocer el estado del envío y su entrega.
 
-#### Garantías
+### Garantías
 
 Para dar seguridad a comprador y vendedor en los envíos Wallapop hace de intermediario en el pago, por un lado cobra y retiene el dinero del comprador hasta que este confirme el estado del producto de acuerdo a lo descrito en el anuncio y el vendedor también evita problemas y tiene una forma más cómoda de realizar el intercambio económico. En caso de un problema en la transacción al comprador se le devuelve el dinero y la disputa no se resuelve a favor del vendedor.
 
-#### Disputas
+### Disputas
 
 Al recibir el producto el comprador debe revisar el producto, confirmar que está correcto o abrir una disputa antes de 48 horas que da como plazo Wallapop. Pasado el cual el producto se considerará correcto y se liberará el dinero al vendedor.
 
@@ -76,21 +76,21 @@ Dado que las disputas las revisa de forma manual un agente de Wallapop son lenta
 
 Las disputas se abren desde la aplicación móvil. Adicionalmente en el caso de Wallapop ofrece varias formas de contacto en caso de algún problema adicionalmente a las disputas, mediante su cuenta de Twitter [@wallapop](https://twitter.com/wallapop) y un [formulario de contacto de Wallapop](https://ayuda.wallapop.com/hc/es-es/requests/new) en su [Centro de ayuda](https://ayuda.wallapop.com/hc/es-es) en la que proporcionar un correo electrónico para continuar el caso mediante correo electrónico.
 
-### Seguridad al usar Wallapop
+## Seguridad al usar Wallapop
 
 Si bien en la mayoría de los casos y en mi experiencia las transacciones finalizan correctamente hay que mantener algunas precauciones al usar servicios de intercambio de segunda mano para evitar estafas y problemas.
 
-#### Transacción en mano
+### Transacción en mano
 
 En las transacciones en mano los servicios de segunda mano solo ponen en contacto a vendedor y comprador. Estos si están en la misma ciudad pueden quedar en un lugar físicamente en la que realizar el intercambio de dinero por el producto en mano sin intermediación en el pago por parte de Wallapop, aunque en mano también pueden hacer de intermediario en el pago.
 
 Quizá la mayor precaución es quedar preferentemente en un lugar público, transitado y fácilmente reconocible como una parada de metro o un edificio público conocido, al fin y al cabo se está quedando con un desconocido y salvo que el producto lo requiera por su volumen como un mueble es preferible no quedar en un domicilio.
 
-#### Envíos
+### Envíos
 
 En los envíos es seguramente la forma en la que pueden surgir más problemas ya que el comprador ha de confiar en el vendedor de que enviará un producto en el estado descrito en el anuncio y el vendedor ha de confiar que el comprador no va a alegar ningún problema con el producto.
 
-#### Como comprador
+### Como comprador
 
 Las transacciones entre comprador y vendedor en los envíos requieren confianza y buena fe entre ambas partes. Las plataformas de segunda mano ofrecen información para dar confianza e información a ambos.
 
@@ -102,7 +102,7 @@ En caso de cualquier duda no aclarada en la descripción del anuncio o fotos el 
 
 Una vez con la información del vendedor y del anuncio, el _chat_ además de para llegar a un acuerdo permite también evaluar al vendedor con la conversación que se mantenga si es de confianza respondiendo rápido, con buena comunicación y proporcionando la información que se le pida.
 
-#### Como vendedor
+### Como vendedor
 
 Como vendedor se ha de comprobar igualmente el perfil del comprador como que no sea una cuenta de reciente creación, que tenga información verificada como teléfono o email, que tenga información de su ubicación, leer las opiniones y valoraciones de otros usuarios de transacciones anteriores.
 
@@ -112,7 +112,7 @@ Al formalizar la compra y recibir la notificación de que la venta se ha realiza
 
 Como vendedor se quiere vender un producto pero se ha de asegurar de que no es una estafa, en productos de poco precio no importan tanto pero en productos a partir de cierta cantidad y demandados como los productos tecnológicos es mejor ser precavido. En caso de duda de confianza mejor no venderlo por mucho que se quiera venderlo.
 
-#### Problemas típicos a evitar
+### Problemas típicos a evitar
 
 Los servicios de intercambio de artículos de segunda mano en esencia son un medio de poner en contacto a un vendedor y comprador que no se conocen entre ellos y realizar un intercambio incluso realizando un envío, operación que incluye el intercambio de dinero. A pesar de que los servicios establecen medidas de seguridad y dan consejos de uso hay que tener algunas precauciones a la hora de estos servicios para evitar estafas.
 

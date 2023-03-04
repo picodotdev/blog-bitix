@@ -26,7 +26,7 @@ Una herramienta específica para hacer de _proxy_ inverso adaptada a la nube es 
 
 {{< tableofcontents >}}
 
-### El _proxy_ inverso Traefik
+## El _proxy_ inverso Traefik
 
 [Traefik][traefik] es un _proxy_ inverso y balanceador de carga adaptado a la computación en la nube mediante microservicios. Traefik se integra con los principales componentes de infraestructura configurándose a sí mismo automáticamente y de forma dinámica. Traefik es simple de operar pero capaz de manejar sistemas complejos y grandes en entornos diversos y diferentes capas de la pila de red como HTTP, TCP o UDP. Proporciona funcionalidades de intermediario que aumenta sus capacidades para realizar balanceo de carga o servir como _gateway_ API.
 
@@ -58,7 +58,7 @@ Al iniciar Traefik se integra un panel de información o _dashboard_ en el que o
     image3="image:traefik-dashboard-middlewares.webp" optionsthumb3="200x150" title3="El panel de información o dashboard integrado de Traefik"
     caption="El panel de información o dashboard integrado de Traefik" >}}
 
-### Casos de uso y características
+## Casos de uso y características
 
 Los principales casos de uso deTraefik son:
 
@@ -76,7 +76,7 @@ Sus características son:
 
 Estas [funcionalidades son extensibles mediante _plugins_](https://traefik.io/blog/using-private-plugins-in-traefik-proxy-2-5/).
 
-### Conceptos
+## Conceptos
 
 Como _proxy_ inverso la funcionalidad de Traefik es redirigir las peticiones entrantes a los servicios de _backend_ para los que hace de _proxy_. Traefik emplea los siguientes conceptos fundamentales para su configuración:
 
@@ -86,7 +86,7 @@ Como _proxy_ inverso la funcionalidad de Traefik es redirigir las peticiones ent
 * [Servicios](https://doc.traefik.io/traefik/routing/services/): son los destinos de las peticiones entrantes pudiendo aplicar funcionalidad de balanceo de carga entre las diferentes instancias de los servicios de _backend_ para los que se hace de _proxy_.
 * [_Middlewares_](https://doc.traefik.io/traefik/middlewares/overview/): pueden actualizar la petición como añadir cabeceras HTTP, actualizar la ruta o realizar acciones de intermediario como autenticación o limitación de peticiones.
 
-### Ejemplos de funcionalidades
+## Ejemplos de funcionalidades
 
 En este ejemplo se utiliza Traefik como _proxy_ inverso para dos instancias de servidor web [Nginx][nginx]. La configuración de los _entry points_ de Traefik es estática que en el ejemplo se define un un archivo de configuración estático.
 
@@ -107,7 +107,7 @@ Y los archivos HTML de los servidores web.
 {{< code file="index-1.html" language="html" options="" >}}
 {{< code file="index-2.html" language="html" options="" >}}
 
-#### Balanceador de carga
+### Balanceador de carga
 
 Un balanceador de carga permite distribuir la carga entre las diferentes instancias del servicio de _backend_. Por defecto, se aplican una estrategia _round-robin_ para distribuir la carga de forma equitativa entre las diferentes instancias.
 
@@ -116,7 +116,7 @@ Con esta configuración al realizar peticiones se distribuyen entre la instancia
 {{< code file="traefik-dynamic-load-balancer.yml" language="yaml" options="" >}}
 {{< code file="curl-load-balancer.sh" language="bash" options="" >}}
 
-#### Balanceador de carga con peso
+### Balanceador de carga con peso
 
 A veces interesa no distribuir la carga de forma uniforme entre las diferentes instancias de los servicios de _backend_, sino realizar un balanceo de carga con peso.
 
@@ -125,7 +125,7 @@ En este caso el balanceo de carga se configura para que la instancia de _nginx-1
 {{< code file="traefik-dynamic-load-balancer-weighted.yml" language="yaml" options="" >}}
 {{< code file="curl-load-balancer-weighted.sh" language="bash" options="" >}}
 
-#### Limitar número de peticiones
+### Limitar número de peticiones
 
 Para evitar que un servicio reciba más peticiones de las que es capaz de procesar según su nivel de servicio, con el objetivo de evitar que se sature y falle o  evitar denegación de servicio por una carga excesiva es posible establecer un límite en el número de peticiones que se envían a los servicios de _backend_. El límite se puede establecer de forma global para todas las peticiones o agruparse según la dirección IP origen o el valor de una cabecera.
 
@@ -134,7 +134,7 @@ En esta configuración se establece que el servicio de _backend_ no reciba más 
 {{< code file="traefik-dynamic-rate-limit.yml" language="yaml" options="" >}}
 {{< code file="curl-rate-limit.sh" language="bash" options="" >}}
 
-#### Duplicar peticiones o _mirroring_
+### Duplicar peticiones o _mirroring_
 
 Este _middleware_ permite duplicar la petición que se envía a un servicio a otros servicios descartando el resultado devuelto por esos otros servicios.
 
@@ -150,7 +150,7 @@ Traefik al mismo tiempo que realiza la petición a _nginx-1_ se realiza a _nginx
 
 {{< code file="curl-mirroring-nginx.out" language="plain" options="" >}}
 
-### Otras funcionalidades
+## Otras funcionalidades
 
 Hay otros _middlewares_ que se pueden aplicar como el de _retry_ para reintentar las peticiones en caso de fallo, aplicar el patrón _circuit breaker_ para aplicar resiliencia evitando enviar peticiones a un servicio que está fallando, autenticación, reescribir el _path_ de las peticiones o quitar un prefijo del _path_ y añadir o eliminar cabeceras.
 

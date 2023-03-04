@@ -28,7 +28,7 @@ Otros lenguajes como [Python][python] y [C#][csharp] definen sus propias convenc
 
 {{< tableofcontents >}}
 
-### Convenciones de código en Java
+## Convenciones de código en Java
 
 Algunas recomendaciones en Java son:
 
@@ -48,13 +48,13 @@ Aparte de las convenciones del propio lenguaje Java otras organizaciones como [G
 
 Como ejemplo de pequeñas variaciones prefiero declarar las variables en el momento del primer uso en el que se le puede asignar un valor en vez del inicio del bloque de código o con las pantallas de gran resolución en mi opinión el límite de línea máximo es más amplio que 70 caracteres.
 
-### Ejemplos de código con convenciones de Java
+## Ejemplos de código con convenciones de Java
 
 Este es el aspecto de algunos pequeños trozos de código siguiendo las convenciones definidas por Java.
 
 {{< code file="Main.java" language="java" options="" >}}
 
-### Idioma español o inglés para dar nombres
+## Idioma español o inglés para dar nombres
 
 Otro punto a tener en cuenta en el código fuente es si utilizar palabras del lenguaje materno, en nuestro caso español, o utilizar palabras solo en inglés para dar nombres a clases, métodos y variables. Es válido utilizar cualquiera de las dos opciones siempre que se utilice en todo el código fuente.
 
@@ -67,7 +67,7 @@ Aún así yo prefiero utilizar solo inglés por dos motivos:
 
 Por suerte en Java refactorizar cualquier nombre es bastante más sencillo y rápido con el soporte de los IDE. En un lenguaje dinámico hacer un renombrado es básicamente buscar y reemplazar todas las ocurrencias con riesgo de omitir alguna que cause un «error de compilación» en tiempo de ejecución del código erróneo.
 
-### Herramientas automatizadas
+## Herramientas automatizadas
 
 Los entornos integrados de desarrollo ofrecen la funcionalidad de formatear el código de forma automática con las reglas que tengan configuradas. En IntelliJ se configuran en _File > Settings > Editor > Code Style_ para que todos los desarrolladores utilicen las mismas reglas, estas se pueden compartir con las opciones de [exportar e importar en otro ordenador](https://github.com/HPI-Information-Systems/Metanome/wiki/Installing-the-google-styleguide-settings-in-intellij-and-eclipse). En estos paneles hay multitud de opciones para personalizar el formateo del código.
 
@@ -90,7 +90,7 @@ Existen herramientas que automatizan la comprobación de las normas elegidas en 
 
 * [Análisis estático de código con PMD y un ejemplo][blogbitix-297]
 
-### Otras recomendaciones
+## Otras recomendaciones
 
 Aparte de las convenciones es recomendable seguir unas pautas sencillas como guía al escribir código para entre otras cosas que su legibilidad sea más sencilla.
 

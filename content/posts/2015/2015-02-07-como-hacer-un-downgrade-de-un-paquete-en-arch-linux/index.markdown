@@ -25,7 +25,7 @@ El último caso ha sido para el paquete de [_networkmanager_](https://www.archli
 
 En la página [desactualizar paquetes](https://wiki.archlinux.org/index.php/Downgrading_packages) de la wiki de Arch Linux hay información más detallada de la desactualización de un paquete.
 
-### Cómo hacer _downgrade_ de un paquete
+## Cómo hacer _downgrade_ de un paquete
 
 El proceso de desactualización o _downgrade_ no tiene complicación, basta con lanzar un comando, se desactualiza el paquete y sus dependencias con la limitación de que en el caso de conflictos con otros paquetes también hay que desactualizar esos otros paquetes.
 
@@ -33,7 +33,7 @@ El proceso de desactualización o _downgrade_ no tiene complicación, basta con 
 
 Arch Linux guarda en una caché del sistema de archivos local todos los paquetes con sus versiones que descarga, la caché se encuentra por defecto en el directorio _/var/cache/pacman/pkg/_.
 
-### Cómo buscar un paquete de una versión anterior
+## Cómo buscar un paquete de una versión anterior
 
 Para hacer una desactualización hay que tener la versión del paquete a la que hacer _downgrade_, si no se ha hecho una limpieza de la caché de los paquetes viejos no usados con el comando _pacman -Sc_ están en el directorio de caché de paquetes. Si se ha hecho la limpieza de la caché y no se dispone del paquete hay que buscar en alguna réplica menos actualizada la versión del paquete desactualizado.
 
@@ -49,7 +49,7 @@ La secuencia de comandos en una actualización que uso es la siguiente.
 
 {{< code file="pacman-update.sh" language="bash" options="" >}}
 
-### Cómo evitar que un paquete se actualice
+## Cómo evitar que un paquete se actualice
 
 Para evitar que un paquete sea actualizado en la siguiente actualización del sistema hay añadirlo a la lista de paquetes ignorados _IgnorePkg_ del archivo _/etc/pacman.conf_.
 

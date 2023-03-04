@@ -31,7 +31,7 @@ Si te gusta y convence macOS estos son varios de los equipos Apple en formato de
 
 En esta guía muestro como instalar y probar macOS 10.15 Catalina con VirtualBox, los pasos on similares para las versiones 10.14 Mojave y 10.13 High Sierra.
 
-### Requerimientos mínimos
+## Requerimientos mínimos
 
 Los requerimientos mínimos de macOS en la versión Catalina son los siguientes:
 
@@ -51,7 +51,7 @@ Algunas características requieren una conexión a internet estable con una velo
 
 Dado que al virtualizar se están ejecutando dos sistemas operativos a la vez los requerimientos de la computadora anfitrión donde se ejecutan ambos son más elevados en cuando a memoria y almacenamiento siendo recomendable tener al menos 8 GiB de memoria, asignando 4 GiB a la máquina virtual y 25 GiB de almacenamiento. Para probar macOS Catalina en VirtualBox es necesario asignar a la máquina virtual 8 GiB de modo que es necesario tener en el sistema al menos 16 GiB.
 
-### Descargar la imagen de macOS para Virtualbox
+## Descargar la imagen de macOS para Virtualbox
 
 Los pasos para instalar macOS en una máquina virtual con VirtualBox requieren descargar un archivo _torrent_ con la imagen del disco duro de macOS y una vez creada la máquina virtual en VirtualBox ejecutar unos comandos para cambiar algunos parámetros del sistema de arranque EFI. Hay que descomprimir la imagen del disco duro para obtener el archivo de extensión _vmdk_ y proceder a crear la máquina virtual. Hay que elegir crear una máquina virtual de tipo macOS, cambiando algunas opciones, asignando unos 2 o 3 GiB de memoria, seleccionar el disco duro con la imagen _vmdk_ descomprimida y cambiar la memoria asignada a la pantalla.
 
@@ -75,7 +75,7 @@ Una vez descargados los archivos hay que descomprimirlos, **si al descomprimir e
     image2="image:archivo-imagen-macos-catalina-vmdk.webp" optionsthumb2="300x200" title2="Archivo VMDK de instalación de macOS para Virtualbox"
     caption="Descarga de macOS mediante torrent y archivo VMDK para VirtualBox" >}}
 
-### Crear la máquina virtual en VirtualBox
+## Crear la máquina virtual en VirtualBox
 
 VirtualBox es un software de virtualización gratuito disponible para varios sistemas operativos entre ellos Windows, GNU/Linux y macOS. De modo que probar macOS se puede hacer en cualquiera de estas plataformas. Instalado Virtuabox hay que crear una nueva máquina virtual asignar los parámetros de memoria RAM, almacenamiento de disco, memoria de vídeo y seleccionar usar un disco duro virtual existente que será el archivo _vmdk_ descomprimido descargado mediante _torrent_.
 
@@ -105,7 +105,7 @@ En el caso de Linux el archivo de comandos es similar aunque no es necesario eje
 
 Hecho estos dos pasos podemos proceder a iniciar la máquina virtual.
 
-### Instalar macOS en una máquina virtual
+## Instalar macOS en una máquina virtual
 
 Al iniciar la ejecución de la máquina virtual de macOS en los primeros segundos empiezan a salir unos cuantos mensajes en modo texto hasta que se inicia el sistema gráfico con un proceso que inicia la instalación que tarda varios minutos pudiendo llegar a más de la media hora. 
 
@@ -149,7 +149,7 @@ Después de completar la instalación inicial, un reinicio y otros minutos de es
     image2="image:asistente-de-instalacion-y-configuracion-inicial-17.webp" optionsthumb2="200x150" title2="Asistente de instalación y configuración inicial de macOS Catalina"
     caption="Asistente de instalación y configuración inicial de macOS Catalina" >}}
 
-### Primer inicio de sesión con macOS
+## Primer inicio de sesión con macOS
 
 Completados los pasos del asistente se entra en el escritorio con el fondo de pantalla característico según la versión de macOS y algunas de las aplicaciones incorporadas en el propio sistema por defecto en la barra de tareas inferior.
 
@@ -165,7 +165,7 @@ También se puede probar a [instalar otros programas con Homebrew][blogbitix-195
     image1="image:primer-inicio-macos-4.webp" optionsthumb1="300x150" title1="Primer inicio de macOS Catalina en VirtualBox"
     caption="Primer inicio de macOS Catalina en VirtualBox" >}}
 
-### Conclusión
+## Conclusión
 
 Como partidario del software libre y la privacidad además de [los ínfimos impuestos que paga Apple][blogbitix-175] usando reprobable ingeniería fiscal y su software privativo no recomiendo usar un Mac pero si alguien quiere probar este sistema operativo antes de decidirse a hacer una compra usarlo de forma virtualizado es una buena ayuda para tomar una decisión y ver si nos gusta su sistema operativo aparte del propio equipo junto con su precio que podemos ver en las tiendas. Si no nos convence ni su software ni su abultado precio podemos optar por un portátil de [Slimbook][slimbook] mucho más económico y con características notables con los que no tendremos que pagar tampoco [el impuesto Windows][elblogdepicodev-57] ya que podemos elegir entre varias la distribución GNU/Linux preinstalada que deseamos.
 

@@ -19,7 +19,7 @@ tags: ["java", "planeta-codigo", "programacion", "tapestry"]
 
 Hace unos meses publiqué el libro PlugIn Tapestry, un libro acerca del desarrollo de aplicaciones y páginas web en el lenguaje Java y con el _framework_ [Apache Tapestry](http://tapestry.apache.org/).
 
-### PlugIn Tapestry
+## PlugIn Tapestry
 
 Apache Tapestry es un _framework_ orientado a componentes para crear aplicaciones web rápidas, dinámicas, robustas y altamente escalables en la plataforma Java. Al basarse en componentes es distinto de los muchos basados en acciones similares en esencia a Struts que podemos encontrar en la plataforma Java como [Spring](http://projects.spring.io/spring-framework/), [Grails][grails] y [Play!](http://www.playframework.com/) y también de los muchos otros en los que la principal diferencia es el lenguaje como [Django](https://www.djangoproject.com/) (Python), [Symfony](http://symfony.com/) (PHP), [ASP.NET MVC](http://www.asp.net/mvc) (C#) o [Ruby On Rails](http://rubyonrails.org/) (Ruby).
 
@@ -65,51 +65,51 @@ Puedes obtenerlo desde los enlaces que proporciono de forma totalmente libre y a
   </div>
 </div>
 
-### Apache Tapestry
+## Apache Tapestry
 
 Algunas características destacadas de Apache Tapestry son:
 
-#### Java 
+### Java 
 
 Normalmente se usa el lenguaje Java con lo que el compilador y el asistente de código de tu IDE te ayudarán.
 
-#### Políglota
+### Políglota
 
 Si prefieres puedes utilizar Groovy, Scala o cualquier otro lenguaje soportado por la JVM.
 
-#### Productivo
+### Productivo
 
 La recarga de clases en caliente evitará que tengas que reiniciar el servidor para ver tus cambios aplicados. Simplemente actualiza el navegador.
 
-#### Rápido
+### Rápido
 
 El _framework_ está programado en Java sin hacer uso de reflection. Incorpora varias optimizaciones que harán tu aplicación más eficiente sin trabajo por tu parte como compresión gzip, minificación y agregación css/javascript, cacheo agresivo en el cliente de assets, supresión de espacios en blanco innecesarios, ...
 
-#### Basado en componentes
+### Basado en componentes
 
 Los componentes son piezas autónomas y resusables de código. Para usar uno simplemente necesitarás conocer sus parámetros todo lo demás como archivos javascript, hojas de estilo y mensajes localizados son proporcionados por el componente. Los componentes pueden lanzar eventos y diferentes contenedores comportarse de diferente forma ante el mismo evento.
 
-#### Informe de error avanzado
+### Informe de error avanzado
 
 El informe te proporciona mucha más información que simplemente la traza de la excepción, verás que se estaba haciendo, que fué mal y como corregirlo. Con toda esta información solucionar las excepciones será mucho más rápido y fácil. El informe de error también es presentado en caso de errores en las peticiones AJAX.
 
-#### Testable
+### Testable
 
 Puedes probar los componentes de forma unitaria, el html generado o hacer pruebas de integración y funcionales. Los componentes son POJOs que no necesitan heredar ni implementar ninguna clase del _framework_. Podrás utilizar la herramienta que desees JUnit/Mockito, Spock, Geb, ...
 
-#### Extensible, adaptable y modular
+### Extensible, adaptable y modular
 
 Gracias al contenedor de dependencias y a que los servicios están programados en base a interfaces puedes definir una nueva implementación que modifique el comportamiento del _framework_. Todo servicio en el contenedor de dependencias puede ser redefinido, la mayoría de las cosas son servicios. Existen módulos para Hibernate, Apache Shiro, Quartz, ... y si no existe puedes usar cualquier librería como RESTEasy, JasperReports, EHCache, JFreeChart, RestFB...
 
-#### i18n y l10n
+### i18n y l10n
 
 Puedes tener catálogos de mensajes por componente o de manera global en la aplicación. Los assets (imágenes, css, ...) también son localizables y tener una plantilla con un contenido totalmente diferente según el idioma del usuario.
 
-#### Convención sobre configuración
+### Convención sobre configuración
 
 Las convenciones permiten evitar la configuración y los posibles errores que podemos cometer al realizarla. Pero más importante, hace que cualquier programador que conozca las convenciones sepa inmediatamente como están organizadas todas las cosas con lo que el tiempo de aprendizaje se reduce considerablemente.
 
-#### Librerías de componentes
+### Librerías de componentes
 
 Los componentes comunes a varios proyectos pueden ser agregados en una librería de componentes (no es más que un archivo jar) para ser reutilizados. Nuevamente para usar los componentes solo tendrás que preocuparte de los parámetros, todos los recursos que necesiten serán extraídos de la librería. No necesitarás copiar y pegar archivos de un proyecto a otro, solo agregar una dependencia o jar a tu proyecto.
 

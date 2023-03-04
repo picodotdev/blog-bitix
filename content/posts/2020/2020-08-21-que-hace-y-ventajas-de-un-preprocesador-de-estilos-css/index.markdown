@@ -24,7 +24,7 @@ Las hojas de estilos cambian propiedades de visualización de diferentes element
 
 Siendo las páginas web cada vez más complejas, en gran medida las hojas de estilo también se convierten en más complejas con la aparición de los dispositivos móviles un poco más dado que hay que adaptar la página al tamaño de cada uno de los dispositivos. Por esto se suelen usar _toolkits_ o librerías como [Bootstrap][bootstrap] con unos estilos elegantes listos para usar sin tener que crearlos desde cero en cada proyecto,  proporciona diferentes componentes como _layouts_, botones, formularios, modales, _popovers_, barras de progreso, desplegables y algunos más. Sin embargo, aún con Bootstrap suelen ser necesarios escribir algunos estilos adicionales propios de la página.
 
-### El preprocesador de estilos CSS
+## El preprocesador de estilos CSS
 
 Para facilitar la escritura de hojas de estilos complejas con menor código y más legibles han aparecido preprocesadores de hojas de estilos o _css preprocessors_ con funcionalidades adicionales y una nueva forma de escribir hojas de estilo menos tediosa que el CSS.
 
@@ -38,7 +38,7 @@ Este es un ejemplo de código fuente en formato del preprocesador Less que muest
 
 {{< code file="example.less" language="plain" options="" >}}
 
-### Cómo transformar el pseudo-codigo CSS a CSS con un preprocesador
+## Cómo transformar el pseudo-codigo CSS a CSS con un preprocesador
 
 El archivo CSS en formato _less_ hay que compilarlo para producir el archivo CSS que los navegadores entienden. La herramienta para compilar el archivo de estilos en formato _less_ es _lessc_. Se puede usar directamente en un _script_ Bash o con una herramienta de construcción como [npm][npm] o a través de [webpack][webpack].
 

@@ -27,27 +27,27 @@ Loops are one of [Java's basic flow control structures and statement types][blog
 
 {{< tableofcontents >}}
 
-### for loop
+## for loop
 
 Before Java 5, a _for_ loop from 0 to 5 and a collection was done in the following way, maintaining a variable normally named _i_ that acts as a counter and _j_ if the _for_ loop is nested in another. In addition to the counter variable, it requires setting the condition that allows to exit the loop when the end of the iteration is reached, the condition is very important not to create an infinite loop.
 
 {{<code file="For.java" language="java" options="">}}
 {{<code file="Iterator.java" language="java" options="">}}
 
-### foreach loop
+## foreach loop
 
 In Java 5 the _for_ loop was significantly enriched, the _foreach_ loop is an improved _for_ loop with which you can loop through a collection and any object that implements the [Iterable](javadoc8:java/lang/Iterable.html) interface. This loop has the advantage that there is no need to maintain a variable that acts as a counter, nor does it require establishing a condition to check if the end of the iteration has been reached, this avoids the possibility of creating an infinite loop. With the _foreach_ loop a [Collection](javadoc8:java/util/Collection.html) is traversed as follows.
 
 {{<code file="Foreach.java" language="java" options="">}}
 
-### Loop with Iterable
+## Loop with Iterable
 
 But the _forearch_ is for collections if you want to make a loop of a fixed number of iterations as in the first case, from 0 to 5, knowing that to use the _foreach_ it is enough that we indicate an object that implements the interface _Iterable_ we can use the following expression and its implementation that has the advantage of not having to include the initial value of the counter, the condition expression and the increment or decrement of the variable. The _Counter_ class implements the _Iterable_ interface and returns an _Iterator_ on the values ​​of the indicated range.
 
 {{<code file="CounterIterable.java" language="java" options="">}}
 {{<code file="Counter.java" language="java" options="">}}
 
-### Loop with streams
+## Loop with streams
 
 In Java 8 with the introduction of [Stream](javadoc8:java/util/stream/Stream.html) and [IntStream](javadoc8:java/util/stream/IntStream.html) we can use the [range](javadoc8:java/util/stream/IntStream.html#range-int-int-) and [rangeClosed](javadoc8:java/util/stream/IntStream.html#rangeClosed-int-int-) to get a _Stream_ of integers and make a loop with a behavior similar to the previous ones.
 
@@ -55,7 +55,7 @@ In Java 8 with the introduction of [Stream](javadoc8:java/util/stream/Stream.htm
 
 The Java 8 _Stream_ are fine to simplify some complex operations but for a simple _for_ loop it has its drawbacks such as significantly obfuscating the _stacktrace_ in case of an exception. Any option can be used, but the first with the traditional _for_ loop is the least recommended, having at our disposal the _Counter_ class with Java 5 or the _Stream_ and _lambdas_ with Java 8.
 
-### Example with the different types of loop
+## Example with the different types of loop
 
 The following program shows the four options, its output on the console would be the following:
 

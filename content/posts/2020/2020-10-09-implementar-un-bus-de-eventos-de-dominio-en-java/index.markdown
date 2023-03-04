@@ -28,7 +28,7 @@ Los _bounded context_ y eventos de dominio se adaptan especialmente bien a las a
 
 {{< tableofcontents >}}
 
-### Transaccionalidad y eventos de dominio
+## Transaccionalidad y eventos de dominio
 
 En las aplicaciones un concepto importante es la transaccionalidad, es un requerimiento que se impone al sistema para su buen funcionamiento. Una transacción consiste en que un conjunto de acciones o cambios funciona todo de forma completa o no funciona nada pero nunca de forma parcial. Si la lógica de una aplicación emite varios eventos según se ejecuta y en la mitad del proceso algo falla las acciones desencadenadas por los eventos emitidos deben deshacerse o de lo contrario posiblemente se produzca un mal funcionamiento o una inconsistencia de datos.
 
@@ -41,17 +41,17 @@ Una solución es utilizar únicamente la base de datos. Los eventos se guardan e
     image1="image:outbox-pattern.webp" optionsthumb1="650x450" title1="Outbox Pattern"
     caption="Outbox Pattern" >}}
 
-### Deduplicación de eventos
+## Deduplicación de eventos
 
 Para resolver el problema de eventos duplicados se suele optar por hacer el tratamiento del evento idempotente o deduplicando de eventos. La deduplicación se suele hacer asignando a cada evento un identificador único y luego en la parte receptora comprobar si ese evento ya ha sido procesado.
 
 * [Cómo deduplicar eventos de dominio][blogbitix-524]
 
-### Consistencia eventual
+## Consistencia eventual
 
 Otro problema es que todos los cambios que origina una petición no se aplican al mismo tiempo, un _bounded context_ o microservicio hace los cambios de su ámbito y emite un evento que origina otros cambios en otras entidades, _bounded context_ o microservicios. Esto hace que el sistema por un tiempo más o menos largo está en un estado inconsistente. Pero en un sistema distribuido si es posible esto es más sencillo que utilizar un transacción en dos fases de dos sistemas diferentes.
 
-### Implementar un bus de eventos en Java
+## Implementar un bus de eventos en Java
 
 Un bus de eventos no es nada complicado, esta interfaz es lo que define un bus de eventos, básicamente consiste en un método para publicar un mensaje con un argumento que representa los datos del evento. Los otros dos métodos son de utilidad, en este caso se implementan en la interfaz como métodos _default_ permitido con [las novedades de Java 8][blogbitix-17].
 
@@ -62,7 +62,7 @@ En una arquitectura hexagonal que separa el dominio de los detalles de implement
 {{< code file="ConsoleEventBus.java" language="java" options="" >}}
 {{< code file="SpringEventBus.java" language="java" options="" >}}
 
-### Como generar y lanzar un evento de dominio
+## Como generar y lanzar un evento de dominio
 
 En _Domain Driven Design_ un agregado es una entidad que se encarga de mantener la consistencia e invariantes de negocio con las otras entidades con las que está relacionada y que mantiene. Por ejemplo, en una orden de compra compuesta de varios productos las líneas de compra están gestionadas por el agregado de la orden de compra, las lineas de compra no tienen sentido por si mismas fuera de una orden de compra. Si existe una regla de negocio que no permita más de tres lineas de compra o con un importe mayor de 3000€, el agregado de orden de compra o un servicio de dominio se encargaría de que su estado cumpla las reglas de negocio.
 
@@ -95,7 +95,7 @@ Con la implementación del bus de eventos que imprime en la consola se muestra u
 {{< code file="CreateOrderCommandHandler.java" language="java" options="" >}}
 {{< code file="System.out" language="plain" options="" >}}
 
-### Otras preguntas
+## Otras preguntas
 
 Si un evento incluye el identificativo de la entidad este ha de ser generado con anterioridad. Habitualmente se delega en la base de datos el generar el identificativo con un autonumérico en el momento de inserción, hacerlo en el momento de la persistencia impide conocer su identificativo con antelación. La solución es [generar su identificativo antes de crear la entidad][blogbitix-493].
 

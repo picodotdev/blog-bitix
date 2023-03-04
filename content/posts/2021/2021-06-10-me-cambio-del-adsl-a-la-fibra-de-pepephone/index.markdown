@@ -32,7 +32,7 @@ A pesar de todo, por los motivos que comento a continuación he tenido que cambi
 
 {{< tableofcontents >}}
 
-### Motivo del cambio
+## Motivo del cambio
 
 La razón del motivo del cambio de ADSL a fibra no ha sido por necesidad sino por obligación del servicio de internet que me ofrece mi compañía [Pepephone][pepephone]. Las compañías de internet ya solo ofrecen ADSL cuando no hay posibilidad de fibra, y a los clientes de ADSL cuando hay posibilidad de fibra les ofrecen cambiar a fibra a medida que se van cerrando centrales de par de cobre telefónico.
 
@@ -44,7 +44,7 @@ Hace cuestión de un mes recibí una notificación de que Pepephone con motivo d
 
 El proceso de instalación de fibra es muy rápido, al día siguiente ya tenía cita con el técnico para realizar la instalación y la instalación se realiza en un par de horas. En el proceso de instalación de fibra no se elimina el servicio anterior sino que se añade al existente y posteriormente se da de baja el antiguo. El técnico necesita acceso a los cuadros de telecomunicaciones del portal y al registro de la planta, se encarga de realizar la acometida canalizando el cable hasta el punto donde se desea la roseta de la fibra. Dado que la cita con el técnico es muy rápida, antes de iniciar el proceso es aconsejable tener acceso al cuarto de telecomunicaciones pidiendo la llave del armario al presidente de la comunidad o a un vecino si no se posee la llave.
 
-### Qué compañía de servicio de internet he elegido
+## Qué compañía de servicio de internet he elegido
 
 El ADSL lo tenía con Pepephone, desde hace casi cinco años y durante todo este tiempo no he tenido ninguna incidencia que me haya obligado a contactar con su servicio de atención al cliente. He estado muy contento con el servicio y con el precio, el ADSL era de 23,6 € al mes, posiblemente la opción más económica de acceso a internet. Durante todos estos años no he tenido ninguna subida de precio tan habitual cada nuevo año en otras operadoras. No he dudado en ningún momento ni he tenido ninguna otra opinión de a qué compañía cambiarme, más bien seguir con Pepephone como primera opción, pero ahora con su fibra.
 
@@ -52,13 +52,13 @@ Con Pepephone tampoco he tenido molestas llamadas comerciales, ofrecen un servic
 
 [Así es como trata Pepephone a sus clientes][blogbitix-238], y sin que lo reclames.
 
-### Características del servicio de fibra
+## Características del servicio de fibra
 
 El precio de la fibra de Pepephone es de unos 35 € al mes, con la posibilidad de un descuento si se tiene una línea de teléfono con datos. A diferencia del ADSL la fibra permite que el servicio sea simétrico con la misma velocidad de bajada que de subida y muy superior al ADSL, la fibra de Pepephone básica llega a los 300 Mbits (básica en Pepephone, pero 300 es un ancho de banda muy respetable y superior a la básica de otras compañías) tanto en bajada como en subida que en realidad suele ser superior a lo ofertado para tener un margen de cumplir con el servicio contratado.
 
 Desde hace algún tiempo en Pepephone no hay tiempo de permanencia, ni coste de alta, ni de instalación, ni de baja. El único punto a tener en cuenta es que el _router_ se ofrece en modo cesión, que en caso de baja del servicio hay que devolverlo o adquirirlo en propiedad con un coste, la devolución es gratuita y se puede hacer en una oficina de correos.
 
-### El ONT y _router_ ZTE
+## El ONT y _router_ ZTE
 
 Al realizar la instalación los técnicos me han proporcionado un _router_ ZTE sin ONT integrado, hubiese preferido que el _router_ tuviese el ONT integrado ya que es un aparato menos, menos cables y una toma de energía menos en la regleta.
 
@@ -89,7 +89,7 @@ La instalación de la fibra requiere instalar una roseta a la que se conecta el 
     image1="image:roseta-fibra.webp" optionsthumb1="300x200" title1="Roseta fibra"
     caption="Roseta fibra" >}}
 
-### Que ofrece la fibra respecto al ADSL
+## Que ofrece la fibra respecto al ADSL
 
 Lo que ofrece la fibra es un mucho mayor ancho de banda tanto de bajada como de subida, en la navegación por páginas web la diferencia entre el ADSL y fibra no me ha parecido tan notable, sin embargo, si se nota en las descargas directas y sobre todo en momentos puntuales de subidas de datos como fotos, en las descargas por _torrent_ la velocidad en ningún momento me ha importando esperar algunos minutos u hora hasta que la descarga se completase esperando algo de tiempo.
 

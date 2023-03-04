@@ -20,7 +20,7 @@ Las expresiones _cron_ son el equivalente de expresiones regulares para seleccio
 
 Los propósitos de planificar tareas con expresiones _cron_ son ejecutar procesos automatizados, por ejemplo enviar un correo electrónico a un determinada hora de cada día o generar un informe a las 3:00 de la noche de cada viernes.
 
-### Formato y posibles valores en cada campo
+## Formato y posibles valores en cada campo
 
 El formato de las expresiones _cron_ se compone de varios campos separados por un espacios.
 
@@ -94,7 +94,7 @@ Los significados de los valores son:
 
 Los valores `/`, `L`, `W` y `#` son caracteres no estándares, para comprobar si están soportados hay que consultar la documentación de la implementación de las expresiones _cron_, varía según la herramienta.
 
-### Ejemplos y generador de expresiones cron
+## Ejemplos y generador de expresiones cron
 
 Las expresiones _cron_ complejas son dífíciles de crear, para asegurar que la expresión cron está bien construida o para generarlas de forma sencilla hay alguna utilidad en internet, una de ellas es este [generador y explicador de expresiones cron](https://freeformatter.com/cron-expression-generator-quartz.html).
 

@@ -28,7 +28,7 @@ Para desarrollar componentes en lado del cliente se necesita la aplicación fina
 
 En este artículo muestro cómo utilizar [Storybook][storybook], componentes React con [TypeScript][typescript], pruebas unitarias con [Jest][jestjs] y visuales con [Jest Image Snapshot][jest-image-snapshot], archivos CSS con [Less][less] finalmente como crear un paquete de [npm][npm] para utilizarlo en otra librería o proyecto.
 
-### Desarrollo aislado de componentes, sistemas de diseño y documentación con Storybook
+## Desarrollo aislado de componentes, sistemas de diseño y documentación con Storybook
 
 Storybook es una herramienta que permite desarrollar los componentes de React, Vue o Angular entre otros de forma aislada, es como una caja de arena donde desarrollarlos, probarlos y además documentarlos. El desarrollo incluye las pruebas unitarias con Jest y _visual testing_ con un complemento para Jest que permite si con algún cambio ha habido alguna variación en el aspecto visual de un componente a nivel de píxel. También permite ver el comportamiento de los componentes en diseños _resposive_ y ver su documentación así como en diferentes configuraciones.
 
@@ -80,7 +80,7 @@ Para usar un complemento hay que instalar su paquete y añadirlo en el archivo d
 {{< code file="npm-install-storybook-addons.sh" language="bash" options="" >}}
 {{< code file="main.js" language="javascript" options="" >}}
 
-### Lenguaje de programación TypeScript y TSLint
+## Lenguaje de programación TypeScript y TSLint
 
 TypeScript es un superconjunto de JavaScript, su principal diferencia es que es un lenguaje tipado lo que permite descubrir en tiempo de compilación numerosos errores que se producirán en tiempo de ejecución y que los editores ofrecen soporte realizar _refactors_ de forma rápida y segura. Los componentes de React pueden desarrollarse con TypeScript.
 
@@ -104,7 +104,7 @@ Para analizar y validar el formato del código fuente se suelen emplear un _lint
 {{< code file="tslint.json" language="json" options="" >}}
 {{< code file="tslint-run.sh" language="bash" options="" >}}
 
-### Pruebas unitarias y visuales con Jest y Jest Image Snapshot
+## Pruebas unitarias y visuales con Jest y Jest Image Snapshot
 
 En los tiempos actuales desarrollar pruebas debería ser parte del desarrollo, Jest permite realizar pruebas unitarias y _jest-image-snapshot_ para realizar pruebas visuales. Hay instalar los paquetes de estas herramientas y añadir varios archivos de configuración, las pruebas también pueden desarrollarse con TypeScript, hay que añadir varios archivos de configuración.
 
@@ -144,7 +144,7 @@ En caso de haber diferencias visuales al ejecutar de nuevo los teses se produce 
 
 {{< code file="test-visual-update.sh" language="bash" options="" >}}
 
-### Hojas de estilos CSS con Less
+## Hojas de estilos CSS con Less
 
 Las hojas de estilo CSS permite separar el formato del contenido HTML. Para facilitar el desarrollo de hojas de estilo han surgido herramientas que añaden capacidades que CSS no posee. Estas herramientas como Less permiten generar como resultado un archivo CSS. Hay múltiples herramientas Less es una de ellas que se caracteriza por su simplicidad.
 
@@ -153,7 +153,7 @@ Storybook permite utilizar archivos de hojas de estilo _less_. Para realizar la 
 {{< code file="npm-install-webpack.sh" language="bash" options="" >}}
 {{< code file="webpack.config.js" language="javascript" options="" >}}
 
-### Creación del paquete NPM
+## Creación del paquete NPM
 
 El objetivo final es crear un paquete npm que incluya los componentes de React para ser utilizados en una aplicación. Para crear el paquete npm basta ejecutar el comando _npm pack_ pero este lo crea usando la misma estructura de directorios del código fuente lo que hace que al usar los componentes los _imports_ reflejen la estructura del código fuente. Si esto no se desea hay que crear un directorio con el contenido del paquete npm y ejecutar el comando _npm pack_ desde él, esto es lo que hacen los diferentes _scripts_ _build_.
 
@@ -181,4 +181,7 @@ Storybook es una gran ayuda para desarrollar componentes de lado de cliente. Otr
 * [Webpack TypeScript](https://webpack.js.org/guides/typescript/)
 * [TypeScript React & Webpack](https://www.typescriptlang.org/docs/handbook/react-&-webpack.html)
 * [Publishing flat npm packages for easier import paths & smaller consumer bundle sizes](https://davidwells.io/blog/publishing-flat-npm-packages-for-easier-import-paths-smaller-consumer-bundle-sizes)
+{{< /reference >}}
+
 {{% /post %}}
+

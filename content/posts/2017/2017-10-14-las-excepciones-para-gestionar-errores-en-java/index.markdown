@@ -23,7 +23,7 @@ En la ejecución de los programas se pueden producir numerosas condiciones de er
 
 En la documentación Javadoc de cada clase y utilizando la asistencia de código de los entornos integrados de desarrollo al usar un método es posible conocer que excepciones _checked_ lanza, el saber que excepciones lanza un método permite añadir el código necesario para tratar cada una de ellas de forma adecuada o lanzarlas para que el método invocante las trate.
 
-### Qué son las excepciones de Java
+## Qué son las excepciones de Java
 
 Las excepciones son un mecanismo para capturar y generar errores en un programa en tiempo de ejecución. Son una de las [formas de gestionar errores][blogbitix-519] como alternativa al retorno de valores especiales, otra forma de gestionar errores alternativa a las excepciones son [gestionar errores con la clase Either][blogbitix-319] de [Vavr][vavr].
 
@@ -31,7 +31,7 @@ En Java las excepciones están incorporadas en el lenguaje desde Java desde la p
 
 En Java las excepciones son objetos que extienden la clase [Throwable](javadoc11:java.base/lang/Throwable.html) de la que en el JDK es extendida por la clase [Error](javadoc11:java.base/lang/Error.html) y [Exception](javadoc11:java.base/lang/Exception.html) de la que de esta última a su vez hereda [RuntimeException](javadoc11:java.base/lang/RuntimeException.html). Entre las comprobaciones que realiza el compilador está que las excepciones _checked_ lanzadas por un método son capturadas por el código que lo llama. Solo los objetos que hereden de _Throwable_ pueden ser lanzados y capturados en los bloques _try-catch_.
 
-### Tipos de excepciones, _checked_ y _unchecked_
+## Tipos de excepciones, _checked_ y _unchecked_
 
 Las excepciones que heredan de _Exception_ se denominan _checked exceptions_, han declararse en los métodos siendo de obligada captura o relanzado para su tratamiento en el método que invoca al que lanza la excepción. Estas son los tipos de excepciones que normalmente crea un programa para gestionar sus propias excepciones. Para crear una nueva excepción basta con crear una nueva clase que extienda de _Exception_, para lanzar una excepción hay que crear una instancia de la clase y lanzarla con la palabra reservada _throws_, en la firma del método ha de declararse que puede lanzar una excepción con la palabra reservada _throws_.
 
@@ -39,7 +39,7 @@ Las excepciones que heredan de _RuntimeException_ también se les conoce como _u
 
 Las excepciones que heredan de _Error_ son empleadas para casos en los que se han agotado recursos del sistema como la memoria o condiciones de error en el sistema que generalmente impiden el correcto funcionamiento del programa y de difícil tratamiento salvo terminar la ejecución.
 
-### Las excepciones más comunes de Java
+## Las excepciones más comunes de Java
 
 En la colección de clases de la API de Java se incluyen muchas excepciones, en la documentación Javadoc como en el resto de clases incluyen una descripción con la condición de error que indican. Algunas de las excepciones más comunes de Java son:
 
@@ -56,7 +56,7 @@ En la colección de clases de la API de Java se incluyen muchas excepciones, en 
 * [StackOverflowError](javadoc11:java.base/java/lang/StackOverflowError.html): se produce cuando se hacen demasiadas llamadas recursivas a un método.
 * [InterruptedException](javadoc11:java.base/java/lang/InterruptedException.html): se produce cuando un _thread_ es interrumpido. Esto ocurre al trabajar en Java con hilos y operaciones de concurrencia.
 
-### Ejemplo de código usando excepciones
+## Ejemplo de código usando excepciones
 
 Este sería un ejemplo de código que hace uso de una excepción propia para detectar una condición de error, una excepción es _checked_ y otra _unchecked_.
 

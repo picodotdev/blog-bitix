@@ -31,7 +31,7 @@ He mirado varias opciones y modelos de  monitor y aún así tampoco estoy seguro
 
 {{< tableofcontents >}}
 
-### Opciones
+## Opciones
 
 Partía de unos requerimientos de que fuera IPS por su calidad de colores, de 27 pulgadas y con resolución 2K o 2560x1440 en un rango de precio de hasta unos 300 €. En otro orden de cosas menos importantes que valoraba era que tuviese conexión [HDMI][hdmi] y [DisplayPort][displayport], marcos finos y compatibilidad con soporte VESA. Hay opciones en formato ultrapanorámico de 29 pulgadas y resolución 2560x1080. He visto alguno de estos pero finalmente he preferido que tenga más resolución vertical y no sea tan ancho para no tener que girar la cabeza.
 
@@ -78,7 +78,7 @@ En [PcComponentes][pccomponentes] los precios no varían tanto pero en Amazon en
     image1="image:camelcamelcamel-benq-pd2700q.webp" optionsthumb1="300x200" title1="Evolución del precio del monitor BenQ PD2700Q"
     caption="Evolución del precio del monitor BenQ PD2700Q" >}}
 
-### BenQ PD2700Q
+## BenQ PD2700Q
 
 Teniendo en cuenta todo finalmente me he decidido por el [BenQ PD2700Q](https://www.benq.eu/es-es/monitor/designer/pd2700q.html). Tiene buena conectividad, sin conexiones obsoletas como en el caso del BenQ GW. Es un monitor orientado a diseñadores aunque mi uso es principalmente en tareas ofimáticas y posiblemente algún juego ocasional. Los monitores ultra anchos no los he usado pero se me hacen demasiado anchos obligando a mover la cabeza para cubrir su área de visualización. Ya con 27" el monitor se me hace grande aunque me acostumbraré a este tamaño pasado un tiempo, para la gente que aún quiere un monitor 
 más grande los hay de 32" aunque en estos ya hay que ir a una resolución de UHD 3840x2160. Dentro de la categoría de monitores de 27 pulgadas, con resolución 2560x1440, IPS y con conectividad HDMI y DisplayPort el BenQ PD2700Q es uno de los más baratos y con una mejor relación calidad precio.
@@ -128,7 +128,7 @@ En YouTube hay unos cuantos vídeos analizando este mismo monitor u otros pareci
 * [BenQ PD3200U Review](https://www.youtube.com/watch?v=6DyJVoNyMX0)
 * [Review Monitor para profesionales del diseño digital PD3200U](https://www.youtube.com/watch?v=1THPLkNEH3k)
 
-### Desempaquetado
+## Desempaquetado
 
 El monitor está perfectamente embalado en una caja impresa con las principales características del monitor, dentro lleva sus respectivos protectores e incluye los siguientes elementos. Que incluya una cable DisplayPort, HDMI y USB es de agradecer para no tener que comprarlos aparte y poder usar el monitor desde el primer momento.
 
@@ -228,7 +228,7 @@ Los botones para ajustar los parámetros del monitor y OSD están detrás del mo
 
 Habitualmente estoy trabajando con un portátil MacBook Pro con pantalla retina y anteriormente he usado un Sony VAIO E 14P con panel TN de resolución 1600x900 y un monitor [LG 2351](https://www.lg.com/hk_en/monitor/lg-E2351VR-home) también TN de resolución 1920x1080. Con respecto a los dos paneles TN que he usado hasta el momento la mejora es apreciable en sus ángulos de visión, colores más intensos, este es el motivo de requerir un panel tipo IPS. Si tengo que destacar algo del MacBook es la pantalla, la pantalla del BenQ cumple pero al no ser retina la diferencia es clara, aún conservando buena vista la definición del texto no es mala pero no llega a la calidad de la pantalla del MacBook, eso si en cuanto a colores no tiene nada que envidiar a la pantalla del Mac.
 
-### Análisis
+## Análisis
 
 Después de un tiempo de uso ya veré como son las impresiones, las primeras impresiones son buenas aunque viniendo de una pantalla retina no tanto. Si el texto resultase demasiado pequeño según las preferencias el MacBook permite reducir la resolución a 2048x1152, 1600x900, 1080p o 720p. Si se desea un monitor UHD que tenga HDMI 2.0 a 60 Hz y en esa resolución casi pensando en las 32”. Con el monitor externo no tengo que tener la pantalla tan cerca ni tener la cabeza agachada como con el portátil con lo que la postura corporal y de espalda es mejor para evitar cansancios y dolores que con el uso continuado pueden surgir, la verdad es que lo he notado ya desde el primer momento. Otra cosa que me gusta es que su fuente de alimentación está integrada con lo que no hay un transformador encima de la mesa y sus respectivos cables.
 
@@ -263,27 +263,27 @@ Con una resolución QHD hay más espacio que en una Full HD que agradecen los pr
 
 En un futuro probablemente aparezcan nuevos monitores que soporten HDR y con resolución retina que supondrá otro salto en la calidad de la imagen. Me va a quedar la duda de si un monitor con resolución UHD de 27 pulgadas bajando la resolución sería una buena opción en cuanto a definición de texto, se suele comentar que no, usar una resolución escalada del panel no es lo mismo que en la resolución nativa pero me gustaría experimentarlo. Al menos en el Mac de resolución nativa 2560x1440 cambiar a 1600x900 se sigue viendo perfectamente el texto y en este BenQ de 27" bajando la resolución no aprecio que el texto se vea peor. En cualquier caso los monitores UHD por el momento tienen un precio mayor, más del doble o al menos unos cientos de euros más según el modelo comparado, y este BenQ PD2700Q es de buena calidad acorde a su precio mayor que algunos otros QHD y que muchos Full HD pero de todas formas asequible para alguien que le da buen uso.
 
-### Detección de píxeles muertos o vagos
+## Detección de píxeles muertos o vagos
 
 Es recomendable realizar una primera prueba al monitor para buscar píxeles muertos, que no se encienden, o vagos, que permanecen encendidos todo el tiempo con el color de un componente. El siguiente test se compone de varias imágenes en los colores básicos (negro, blanco, azul, rojo y verde) que visualizadas individualmente a pantalla completa muestran si algún pixel es defectuoso. Que haya un pixel defectuoso es molesto ya que basta para que haya solo uno y sepas donde está entre los casi 3 millones que tiene el monitor para que estés fijándote constantemente en él, más si se encuentra en el área central de la pantalla. También conviene informarse antes de comprar acerca de la garantía que ofrece cada fabricante respecto a los píxeles muertos, algunos toleran y no aceptan la devolución con cierto número de píxeles que permanecen encendidos, apagados o algún subpixel estropeado.
 
 * [BenQ LCD Monitor Pixel Policy](https://www.benq.com/en-us/support/downloads-faq/faq/product/application/dead-pixel-policy.html)
 * [Imágenes de prueba para detectar píxeles muertos o vagos](https://jasonfarrell.com/misc/deadpixeltest.php)
 
-### Vídeos de prueba
+## Vídeos de prueba
 
 Para probar la calidad del monitor (o televisor) en cuanto a colores o resolución [en YouTube hay varios](https://www.youtube.com/results?search_query=4k+video+test), uno de ellos de ejemplo es este pudiendo seleccionar la calidad desde 720p (HD), 1080p (FHD, 1K), 1440p (QHD, 2K) y 2160p (UHD, 4K). Lógicamente para apreciar las diferencias de calidad con respecto a una resolución más baja hay que tener un monitor o televisor que soporte la resolución más alta. Esto da una idea de como se ve una película, vídeo o imágenes. Las tareas ofimáticas no es lo mismo que ver vídeos, en UHD y usando escalado el texto gracias a su mayor PPI en el mismo tamaño que un QHD se ve más definido y claro. Sin embargo, el escalado aún presenta problemas ya que no todas las aplicaciones está preparadas.
 
 {{< youtube video="LXb3EKWsInQ" >}}
 
-### _Switch_ HDMI y cables, monitor con el ordenador y consola
+## _Switch_ HDMI y cables, monitor con el ordenador y consola
 
 Si el monitor es compartido tanto por el [ordenador como un Intel NUC][blogbitix-363] como por [una consola como la PlayStation 4 como muestro en su desempaquetado][blogbitix-432] es necesario un adaptador o _switch_ HDMI de múltiples entradas y una salida para usar ambos sin necesidad de conectar y desconectar cables, no son caros y ofrecen mucha comodidad, con un botón se alterna entre la entrada del ordenador y la consola, además detecta la entrada y se cambia automáticamente.
 
 {{< amazon
     tags="hdmi-switch,hdmi-cable,audio-jack-cable" >}}
 
-### Soporte VESA
+## Soporte VESA
 
 En todos los modelos he buscado que sea compatible con la norma VESA 100x100 por si en un futuro lo pongo en uno soporte de modo que el pie no ocupe sitio en la mesa. La peana de algunos monitores no soportan ajustes en altura, inclinación, ajuste laterales o modo vertical pero con un soporte compatible con VESA se puede suplir la carencia además de evitar que la peana ocupe espacio. Con un soporte tienen la ventaja de que se puede ajustar la posición del monitor muy fácilmente. Estos soportes funcionan con una mordaza para anclarlos a la mesa.
 
@@ -293,7 +293,7 @@ Algunos soportes compatibles con VESA que he mirado son los siguientes.
     linkids="de98aa0a1a642d8b7b8bd36c4ca7ca4f,d21eaafcd8bdff06c18668e60d08e71a"
     asins="B079YQQDT2,B079YSGQKW" >}}
 
-### _Hub_ de puertos USB
+## _Hub_ de puertos USB
 
 Teniendo el monitor un _hub_ USB 2.0 no merece la pena un _hub_ externo USB 3.0 o 3.1, sin embargo, con otros monitores puede ser una opción como con el PD2500Q o el PD2700U. Los discos duros externos que tengo son USB 2.0 y por limitaciones del disco duro si fuesen 3.0 el rendimiento adicional no se si sería mucho mayor. Hay concentradores de 4, 7 y 10 puertos pero con esta cantidad de puertos es recomendable que sea alimentado sobre todo si se conectan discos duros externos sin alimentación propia, también hay algunos con interruptor individual de encendido por puerto.
 

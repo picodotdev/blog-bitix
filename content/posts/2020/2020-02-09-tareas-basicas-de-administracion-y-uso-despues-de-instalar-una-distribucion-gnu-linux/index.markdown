@@ -37,7 +37,7 @@ Dependiendo de la distribución cada una de estas tareas puede variar el comando
 
 {{< tableofcontents >}}
 
-### Actualizar los paquetes instalados del sistema
+## Actualizar los paquetes instalados del sistema
 
 En todas las distribuciones hay un gestor de paquetes que se encarga de forma automatizada de descargar desde los repositorios las nuevas versiones y actualizar los paquetes. Cada paquete tiene unas dependencias que el gestor de paquetes también se encarga de descargar, instalar y actualizar. Es importante realizar la actualización regularmente, todas las semanas o cada dos semanas, dado que estos incluyen importantes correcciones de seguridad, correcciones de errores o mejoras con nuevas opciones.
 
@@ -55,7 +55,7 @@ En Arch Linux la actualización de los paquetes se realiza con el el siguiente c
 
 En el raro caso de que al actualizar un paquete en Arch Linux haya algún error se puede [desactualizar a la versión anterior o hacer un _downgrade_][blogbitix-66].
 
-### Instalar y desinstalar nuevos paquetes y programas
+## Instalar y desinstalar nuevos paquetes y programas
 
 Los programas y comandos permiten realizar las tareas de productividad que se deseen realizar. Para instalar nuevos programas también se utiliza el gestor de paquetes. Se puede realizar desde la linea de comandos o de forma gráfica usando el centro de software de GNOME. Basta con buscar el programa deseado y pulsar el botón instalar, la desinstalación se realiza también desde el centro de Software de GNOME con el botón desinstalar.
 
@@ -97,7 +97,7 @@ Desde la línea de comandos el gestor de paquetes también permite instalar y de
 
 El centro de software de GNOME instala los [programas empaquetados con Flatpak][blogbitix-362] en vez de usando los paquetes de la distribución.
 
-### Uso básico de la terminal
+## Uso básico de la terminal
 
 La línea de comandos de GNU/Linux al principio es difícil de utilizar dado que no es muy amigable al tener que conocer los comandos y sus parámetros para realizar la acción, las interfaces gráficas son más simples de utilizar dado que ofrecen una guía al usuario sin necesidad de que tenga un conocimiento previo de cómo utilizarlo.
 
@@ -129,7 +129,7 @@ Cada entorno de escritorio ofrece un programa gráfico de una terminal virtual.
 
 El intérprete de comandos es el encargado de entender las sintaxis de los comandos además de interpretar los _scripts_ para automatizar las tareas con pequeños programas de _script_ en vez de tener que introducir los comandos manualmente en la terminal. [El intérprete de comandos Bash][blogbitix-158] es un intérprete que es instalado por defecto en la mayoría de distribuciones GNU/Linux.
 
-### Que no hacer
+## Que no hacer
 
 Por muchas medidas de seguridad que implemente un sistema no son suficientes si el usuario no es consciente de algunos peligros y cosas que no se deben hacer sin saber que se está haciendo.
 

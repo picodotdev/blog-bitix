@@ -25,7 +25,7 @@ Los servicios de una aplicación pueden [utilizar comunicación con mensajes med
 
 Con el paso del tiempo y dependiendo del volumen de eventos procesados el número de eventos marcados como procesados en la base de datos si es tan grande como para suponer un problema de rendimiento para saber si un evento ya ha sido procesado se puede eliminar de forma periódica aquellos que ya se estimen que ya no van a volver a llegar pasado un tiempo, puede ser tan simple como eliminar todos los eventos ya procesados de hace más de un mes o la fecha más adecuada que se estime.
 
-### Ejemplo de implementación de deduplicación de eventos de dominio
+## Ejemplo de implementación de deduplicación de eventos de dominio
 
 Para asignar un identificativo a cada mensaje se puede utilizar un identificador único universal, en Java estos se generan con la clase [UUID](javadoc11:java.base/java/util/UUID.html). El mensaje además de los datos que incluya incluye este identificativo del mensaje.
 

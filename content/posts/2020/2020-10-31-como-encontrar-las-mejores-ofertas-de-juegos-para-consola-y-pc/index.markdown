@@ -37,13 +37,13 @@ En mi pequeño catálogo de juegos ya tengo más de 10 juegos y por ninguno de e
 
 {{< tableofcontents >}}
 
-### Ofertas en tiendas de juegos
+## Ofertas en tiendas de juegos
 
 En el PC y otras tiendas como [Steam][steam], [Epic Games][epicgames], [GOG][gog] y la [Microsoft Store para Windows][microsoft-store-windows] o [para Xbox][microsoft-store-xbox] y la [tienda de Nintendo][nintendo-store] entre otras también se publican ofertas muy a menudo e igualmente se pueden adquirir juegos a unos precios prácticamente irrechazables en cualquier plataforma.
 
 Algunas de las tiendas anteriores permiten crear listas de favoritos y recibir alertas cuando cambian de precio aunque no todas.
 
-### Páginas para encontrar las mejores ofertas en juegos
+## Páginas para encontrar las mejores ofertas en juegos
 
 Para las que no lo permiten hay varias páginas que monitorizan los precios de las tiendas de juegos, ofrecen la posibilidad de crear listas de favoritos con las que seguir juegos en los que se está interesado pero sin recibir notificaciones de ellos y recibir una alerta mediante correo electrónico cuando un juego bajo seguimiento baja de precio momento ideal si el precio nos parece interesante comprarlo. También permiten ver un histórico para conocer las temporadas anteriores en las que ha estado de oferta y a que precio.
 
@@ -62,7 +62,7 @@ Estas páginas son es el equivalente de [monitorización de precios CamelCamelCa
 
 Las ofertas de estas páginas son interesantes para aquellos que prefieren o no les importa tener juegos en formato digital y no compran los juegos físicos como forma de coleccionismo. El gran peligro de estos precios reducidos y las ofertas es acabar comprando juegos para los que uno dispone poco tiempo para jugarlos o incluso comprarlos sin llegar a tener tiempo libre para jugarlos, casi como si por comprarlos es como si se desease comprar tiempo para jugarlos. E incluso comprar juegos en oferta y no jugarlos mucho tiempo después incluso después de publicarse otra oferta a un precio algo más bajo.
 
-### Juegos gratuitos
+## Juegos gratuitos
 
 Hay juegos muy buenos a precios muy bajos de unos pocos euros, pero es que también hay juegos que proporcionan mucho entretenimiento incluso gratuitos, en esta [lista de los mejores juegos gratuitos o _free to play_ de PC, consolas y móvil][blogbitix-575] hay una colección de juegos en varias categorías y para varias de las plataformas más populares tanto de PC, consola y móvil.
 

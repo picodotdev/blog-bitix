@@ -41,7 +41,7 @@ Nuevas ya solo se puede elegir el modelo _Slim_ que reduce el consumo de energí
 
 {{< tableofcontents >}}
 
-### PlayStation, Xbox, Stadia o PC
+## PlayStation, Xbox, Stadia o PC
 
 Entre la Xbox y la PlayStation he preferido la última aún siendo más cara por tres motivos principalmente. Uno, porque los juegos de la PlayStation me ha dado la sensación de que son más baratos al menos sus respectivas tiendas digitales, la PlayStation tiene varios juegos muy populares catalogados como _PlayStation Hits_ al precio de unos razonables 20 € y la PS4 parece tener más ofertas puntuales en algunos juegos para incentivar su compra, los juegos de la Xbox en lo que he visto los mismos están alrededor de 30 € cuando en la PS están en 20 €. Dos, porque el mano de la Xbox va con pilas y no quiero estar cambiándolas o usando pilas recargables, creo que se puede comprar una batería aunque aparte con su cargador. La Xbox está más barata para hacerla más atractiva en el mercado en parte seguramente porque la consola que ha vendido más unidades ha sido la PlayStation, la he visto en algunos momentos a 200 € la de 1 TB con unidad de disco cuando la PlayStation en algunos momentos de rebajas únicamente la he visto a 300 € aunque con un paquete de juegos. Tres, para jugar a través de internet en la Xbox se requiere una suscripción mensual y en la PlayStation para el _World of Warships_ que es del estilo _free to play_ no he visto que sea necesario, y este es un juego que me llama la atención.
 
@@ -57,7 +57,7 @@ En el caso de Stadia con mi conexión actual de ADSL no creo que me posibilite j
 
 Si hubiese sabido que los juegos con Wine en GNU/Linux funcionan en lo que probado tan bien quizá en vez de un NUC hubiese evaluado de forma más positiva un ordenador ITX, aún así por el tamaño posiblemente hubiese seguido eligiendo el NUC y la PlayStation. Quizá en un futuro si que opte por un ITX o un equipo del tamaño del NUC pero más destinado a _gaming_ como los de [Zotac][zotac].
 
-### La nueva generación, PlayStation 5 y Xbox Series X/S
+## La nueva generación, PlayStation 5 y Xbox Series X/S
 
 Con la nueva generación de consolas ya a la venta en el mercado tanto de [Sony][sony] con la PlayStation 5 y [Microsoft][microsoft] con la Xbox Series X/S optar por una de esta nueva generación es la opción recomendada. Ya sea en la versión más económica de la generación [Xbox Series S](https://amzn.to/33ETjLr) pero con diferentes características en cuanto a potencia y capacidad de almacenamiento que la [Xbox Series X](https://amzn.to/36xjIfZ) que es la que compite con la [PlayStation 5 con disco](https://amzn.to/3qnTmF1) y la [PlayStation 5 digital](https://amzn.to/3lzY7rD) que es algo más económica pero que se deshace del formato físico en discos.
 
@@ -71,25 +71,25 @@ Dado que ambas consolas ofrecen compatibilidad con los juegos de la anterior gen
 {{< amazon
     tags="xbox-seriesx,xbox-seriesx-controller" >}}
 
-### Lista de juegos de PlayStation
+## Lista de juegos de PlayStation
 
 * [Juegos PlayStation 4](https://en.wikipedia.org/wiki/List_of_best-selling_PlayStation_4_video_games)
 * [Juegos exclusivos PlayStation 4](https://en.wikipedia.org/wiki/Category:PlayStation_4-only_games)
 * [Juegos más vendidos PlayStation 4](https://es.wikipedia.org/wiki/Anexo:Videojuegos_m%C3%A1s_vendidos_de_la_PlayStation_4)
 * [Juegos _free to play_ PlayStation 4](https://en.wikipedia.org/wiki/List_of_PlayStation_4_free-to-play_games)
 
-### Lista de juegos de XBOX
+## Lista de juegos de XBOX
 
 * [Juegos Xbox One](https://es.wikipedia.org/wiki/Anexo:Videojuegos_para_Xbox_One)
 * [Video juegos más vendidos de Xbox One](https://es.wikipedia.org/wiki/Anexo:Videojuegos_m%C3%A1s_vendidos_de_la_Xbox_One)
 
-### Juegos digitales o físicos
+## Juegos digitales o físicos
 
 Los juegos que tengo apuntados como candidatos a jugar son los siguientes, tendría entretenimiento para varios años. Muchos usuarios de consolas prefieren los juegos físicos, el motivo puede ser por coleccionarlos, ponerlos en una balda y verlos, palparlos y recordar algún buen momento, por poder venderlos una vez completados o por poderlos jugar siempre que deseen sin necesidad de internet o ante un hipotético caso de que Sony ya no preste el servicio.
 
 En mi caso seguramente adquiera la mayoría en formato digital por la comodidad de no tener que estar introduciendo el disco en una unidad lectora que con el uso intensivo es probable que empiece a fallar, en mi caso no soy coleccionista y prefiero ahorrar espacio por no tener objetos en casa que no uso de forma cotidiana. La Xbox por ejemplo ofrece una edición completamente digital a un más atractivo precio que su edición equivalente con unidad lectora.
 
-### Mi lista de juegos
+## Mi lista de juegos
 
 La PS5 seguramente ofrezca compatibilidad con los juegos de PS4 lo que hará que posee un buen catálogo de salida y que todos los juegos digitales de la PS4 en principio puedan ser aprovechados en la PS5, así que los juegos digitales no me parece mala idea. Después de averiguar [cómo encontrar los juegos en oferta][blogbitix-527] iré comprando según reciba una notificación de los de esta lista.
 
@@ -156,7 +156,7 @@ Estos son los juegos que incluye el _pack_ del modelo de la consola que he compr
     image3="image:juegos-8.webp" optionsthumb3="200x150" title3="Juegos incluidos en el pack"
     caption="Juegos incluidos en el pack" >}}
 
-### Desempaquetado PlayStation 4 Slim 1 TB
+## Desempaquetado PlayStation 4 Slim 1 TB
 
 La PS4 tiene 1.84 TFLOPs de potencia, la PS5 tendrá alrededor de 10 TFLOPS con lo que es claro que será mucho más potente y eso se notará en la calidad gráfica muy significativamente, posiblemente incorporando trazado de rayos que dotará a las imágenes de una física de luces y reflejos mucho más realista. La PlayStation 4 Pro tiene más potencia, 4 TFLOPS pero consume más energía, es algo más grande y más ruidosa, ofrece algo mejor calidad gráfica para los juegos que los aprovechen o tasas de fotogramas más estables, pero realmente no hay mucha más diferencia.
 
@@ -243,7 +243,7 @@ Y los cables y manuales incluidos. En la foto se ven el mando, el cable HDMI, el
 
 La verdad es que el precio no la he comprado en el mejor momento como se puede comprobar usando el [seguidor de precios CamelCamelCamel][blogbitix-414], para estar el producto en el final de su vida el precio no es que sea mucho menor que desde su comercialización ni comparándolo con sus competidores. Para adquirirla a mejor precio hubiera sido mejor que esperase un par e meses al _black friday_ o época navideña o un día sin IVA de algún centro comercial o ya casi hasta que salga la PS5 momento en el que bajara algo de precio por empezar a agotar existencias y quedar descatalogada. Pero es durante unas semanas de vacaciones en las que iba a poder jugar de forma más intensiva, los ingresos de Adsense del blog los empleo en esto, de esta manera me compensa la dedicación que me requiere, otra gente tendrá otros vicios y gastos que yo no tengo. Otra posibilidad era haber cogido la versión de 500 GB que salía algo más económica y un disco de 1 o 2 TB aparte pero entre portátiles que voy desechando quedándome con los discos duros no quería tener otro más de 500 GB junto con tener que adquirirle una caja USB de disco duro externa.
 
-### Primera toma de contacto
+## Primera toma de contacto
 
 Como decía prefiero juegos digitales pero con mi lento ADSL que descarga entre 1 y 1.5 MiB por segundo descargar 25 GiB tarda como unas 5 horas, nada que no pueda poner varios juegos en la cola de descarga y dejarlo bajando una noche pero es posible que las actualizaciones quizá me impida jugar en algún momento que quisiese. Salvo estos momentos puntuales de descarga mi ADSL me es más que suficiente, para mi no es mayor inconveniente.
 
@@ -297,7 +297,7 @@ Al finalizar toda la configuración se muestra la pantalla inicial de la consola
 
 Uso un monitor de resolución 2560x1440 (2K), la PlayStation está preparada para un resolución 1920x1080 (FullHD) pero tanto en la interfaz de los menús como en los juegos la calidad de imagen es muy buena. Tiene una opción de configuración para elegir ampliar la imagen a 2K o usar el área nativo de FullHD.
 
-### Limpieza de ventilador y disipador, desmontaje y montaje, como cargar del mando
+## Limpieza de ventilador y disipador, desmontaje y montaje, como cargar del mando
 
 En un futuro con el uso como a todo elemento electrónico que utiliza para refrigerarse un ventilador y un disipador se le acumulará polvo, con lo que cada cierto tiempo para que no haga demasiado ruido y disipe de forma más eficiente el calor que genera es recomendable limpiar el polvo que se le acumulará. En el modelo CUH-2216B la plancha de metal que cubre la unidad de discos y el disipador vienen fijados con unos tornillos de plástico a los que se les ha fundido la cabeza, con lo que no se pueden desatornillar. Para limpiar el ventilador un bastoncillo de algodón basta pero para limpiar el disipador completamente hay que desmontar la consola.
 
@@ -337,7 +337,7 @@ Por último, el mando se puede cargar con un cable USB a microUSB, el mismo que 
     image1="image:adaptador-de-corriente-de-telefono-movil.webp" optionsthumb1="200x150" title1="Adaptador de corriente de teléfono móvil con salida de corriente 5V, 1.55A"
     caption="Adaptador de corriente de teléfono móvil con salida de corriente 5V, 1.55A" >}}
 
-### Tienda donde comprar la consola
+## Tienda donde comprar la consola
 
 Si no se tiene preferencia por en que tienda comprarla hay varias posibilidades. Iba a comprarla en [El Corte Inglés][elcorteingles] por el hecho de ir, pagarla y llevármela para casa pero el día que fui solo tenían modelos de 500 GB y yo quería el de 1 TB de modo que al final la he adquirido por [Amazon][amazon-affiliate], además necesitaba un conmutador HDMI para intercambiar la señal entre el NUC y la consola, también quería una funda para el mando y necesitaba un cable HDMI adicional.
 
@@ -353,7 +353,7 @@ Tanto en Wallapop como [Ebay][ebay] se pueden encontrar consolas de segunda mano
 * [Ebay PS4](https://www.ebay.es/sch/Consolas/139971/i.html?_from=R40&_sop=2&_nkw=playstation%204%201tb&LH_PrefLoc=1&_dcat=139971&Modelo=PlayStation%25204%2520%252D%2520Slim&rt=nc&_trksid=p2045573.m1684)
 * [Cash Converters PS4](https://www.cashconverters.es/es/es/comprar/videojuegos-y-consolas/consolas/consola-ps4/ps4-slim-1tb/?srule=price-low-to-high&sz=12&start=0)
 
-### Otros accesorios, switch HDMI, funda mando y teclado inalámbrico
+## Otros accesorios, switch HDMI, funda mando y teclado inalámbrico
 
 Para utilizar el ordenador y la consola en el mismo monitor sin tener que conectar y desconectar cables he comprado también un [conmutador HDMI 4K de tres entradas y una salida](https://amzn.to/2NaQDyL) con soporte para una resolución de hasta 4K@60Hz, hay modelos de conmutadores de hasta 5 entradas. Lo que me ha convencido de este conmutador HDMI es que el sensor infrarrojo del mando lo tiene incorporado y no necesita un elemento externo, posee un botón para realizar la selección de la fuente de entrada sin mando, soporta 60 Hz en resolución 4K cuando otros conmutadores solo soportan 30 Hz, no necesita alimentación aunque si fuera necesario posee un puerto USB para proporcionarle corriente y todos los puertos HDMI tanto de entrada como de salida están en el mismo lado. El conmutador no incluye cable HDMI por lo que es necesario adquirir un [cable HDMI](https://amzn.to/2Q7Tt9Q) si no se tiene uno adicional disponible.
 
@@ -400,7 +400,7 @@ Otro accesorio de utilidad es un [teclado pequeño con soporte dual para bluetoo
     linkids="ac037d001d51556cbf14f680b30146c2"
     asins="B07RQBRRR7" >}}
 
-### Conclusión
+## Conclusión
 
 Quizá la calidad de las consolas de esta generación da muestras de agotamiento y está siendo superada por los juegos en PC, teniendo en cuenta que llevo muchos años sin jugar a juegos llegar a estos de la PS4 va a ser un salto importante sobre lo último que he jugado. En vídeos de YouTube los juegos que he visto me parece que tiene una muy buena calidad gráfica aún siendo YouTube una mala plataforma para apreciar la calidad por la compresión que le realiza a los vídeos. La PS5 seguro que es también un salto importante, sobre todo si le añaden trazado de rayos lo que le dotará de más realismo en reflejos y luces.
 

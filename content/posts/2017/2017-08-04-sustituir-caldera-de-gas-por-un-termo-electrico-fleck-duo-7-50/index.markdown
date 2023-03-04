@@ -32,7 +32,7 @@ Los termos no necesitan de revisiones al utilizar electricidad, no usan un eleme
 
 {{< tableofcontents>}}
 
-### Caldera de gas
+## Caldera de gas
 
 Uno de los problemas que tenía con la cadera es que en algunos momentos se apagaba por algún motivo que desconozco con lo que durante un periodo de 10 segundos el agua sale fría con las molestias que ocasiona si te te pilla en el aclarado y en invierno. Con el termo no hay estas pérdidas de temperatura mientras tenga en el depósito suficiente agua caliente.
 
@@ -45,7 +45,7 @@ El sustituir la caldera de gas por un termo me evitará los costes de las revisi
     image3="image:caldera-03.webp" optionsthumb3="300x200" title3="Caldera de gas"
     caption="Caldera de gas" >}}
 
-### Termo eléctrico
+## Termo eléctrico
 
 Ya decidido a cambiar la caldera por un termo empecé a informarme de los modelos de termos y que diferenciaba uno más caro de uno más barato. Los termos eléctricos por el hecho de almacenar agua de forma constante en un depósito sufren de corrosión por el agua y la cal que esta lleva por lo que los fabricantes para proteger a los termos proporcionan al calderín un recubrimiento especial más resistente y para evitar la corrosión incluyen un ánodo de magnesio también llamado ánodo de sacrificio para que la corrosión ataque al ánodo en vez de al calderín.
 
@@ -58,7 +58,7 @@ También hay que elegir la capacidad del depósito del termo, los hay de 15 litr
     image1="image:mapa-dureza-agua.webp" optionsthumb1="300x200" title1="Mapa de dureza del agua"
     caption="Mapa de dureza del agua" >}}
 
-### Fleck Duo 7 50
+## Fleck Duo 7 50
 
 Pasando a elegir entre los muchos de modelos de termos que hay me fije entre tres modelos el [Cointra TDG-50](https://amzn.to/2vzua5A), el [Fagor CB-50ECO](https://amzn.to/2voZ6Vy) y el [Fleck Duo 7 50 de 50 litros](https://amzn.to/2vzfEdU) de 50 litros, otra opción es era el [Fleck Duo 5 de 30 litros](https://amzn.to/3D6QzWn) o el [Fleck Duo 5 de 50 litros](https://amzn.to/3otjX5l). El [Cointra](https://www.cointra.es/) tiene ánodos de magnesio pero son de gran tamaño y además incorpora dos. Del [Fagor](http://www.fagorcnagroup.com/) CB-50 ECO me gustaba que poseía las resistencias envainadas y un ánodo electrónico que induce una corriente dentro del agua para evitar la corrosión del calderín. Del [Fleck](http://www.fleck.es/) Duo7 50 me gustaba que poseía dos depósitos y es algo más eficiente que los otros aunque este posee las resistencias sumergidas.
 
@@ -114,7 +114,7 @@ Incluye dos tacos y tornillos de unos 8 centímetros de largo y 8 milímetros de
     image2="image:soportes-04.webp" optionsthumb2="300x200" title2="Soportes con taco químico y varilla roscada"
     caption="Soportes con taco químico y varilla roscada" >}}
 
-### Instalación del termo eléctrico
+## Instalación del termo eléctrico
 
 Antes de empezar la instalación del termo solicite la baja del suministro del gas, en unas dos semanas mi compañía me notificó que ya me lo habían dado de baja y comprobé ya que la caldera no encendía por falta de gas. La baja de gas implica la eliminación del contador, una posterior solicitud de alta conlleva unos 60 € por el concepto de enganche. En cualquier caso no hay que manipular la instalación del gas hasta que llega a la ventana, en todo caso cerrar las llaves de paso y colocar un tapón en el tubo del gas de la caldera que queda sin uso para que no le entre suciedad. La instalación del termo se puede realizar en el mismo lugar en el que estuviese la caldera aunque para evitar pérdidas de calor se recomienda que esté los más cerca de la ducha. Como en mi caso la caldera proporcionaba agua caliente también para la calefacción los tubos del circuito cerrado de la calefacción quedarán sin uso, he vaciado el circuito y para que no les entre suciedad los he tapado con un tapón de metal. La entrada del agua y la salida del agua caliente que usa el termo son las mismas que usaba la caldera aunque para las conexiones hay que utilizar alguna llave de paso para cortar si es necesario la entrada del agua o vaciar el termo, unos codos de fontanería apropiados según las anchuras de los latiguillos y entrada de agua y unos latiguillos de 30cm para unir el termo con los tubos del agua.
 
@@ -137,11 +137,11 @@ También he tenido que adaptar la conexión eléctrica ya que de construcción a
     image2="image:instalacion-termo-08.webp" optionsthumb2="300x200" title2="Instalación termo eléctrico"
     caption="Pantalla táctil y digital en modo mantenimiento de temperatura y calentando agua" >}}
 
-### Tiendas en las que comprar un termo eléctrico Fleck
+## Tiendas en las que comprar un termo eléctrico Fleck
 
 El termo Fleck me costó 315 € comprándolo en [Bricomart](https://www.bricomart.es/), si lo hubiese comprador en internet ya sea en [Amazon][amazon-affiliate] o en la tienda de [Droitek](https://www.droitek.com/) me podría haber salido por unos 50 € más barato, unos 265 € con gastos de envío incluido. Desde luego no lo compraría en [El Corte Inglés][elcorteingles] ya que el modelo Fleck en concreto costaba unos 400 € lo que es significativamente superior. Al final por no tener que esperar a que llegase y estar presente en casa para recogerlo lo compré en Bricomart. En [Amazon][amazon-affiliate] algunos vendedores ofrecen algo mejor precio.
 
-### Uso
+## Uso
 
 Con el grifo monomando que tengo la temperatura del agua caliente se puede regular perfectamente pero si quieres tener mayor control existen los grifos termoestáticos que regulan el caudal de agua caliente y fría automáticamente para que en la salida el agua esté a la temperatura deseada.
 

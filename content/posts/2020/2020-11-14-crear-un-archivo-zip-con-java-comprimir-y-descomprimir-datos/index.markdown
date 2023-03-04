@@ -26,13 +26,13 @@ Aparte del ahorro de espacio, crear un archivo Zip que agrupe varios es útil en
 
 {{< tableofcontents >}}
 
-### Clases de Java para comprimir y descomprimir
+## Clases de Java para comprimir y descomprimir
 
 Las clases del paquete [java.util.zip](javadoc11:java.base/java/util/zip/package-summary.html) permiten comprimir y descomprimir datos utilizando diferentes algoritmos. Se proporcionan soporte para el formato [archivo Zip][wikipedia-zip], [GZIP][wikipedia-gzip], el algoritmo de compresión [DEFLATE][wikipedia-deflate] usando la librería [ZLIB][wikipedia-zlib] y otras clases para la corrección de errores o _checksums_.
 
 Para la creación de archivos Zip las clases básicas son [ZipEntry](javadoc11:java.base/java/util/zip/ZipEntry.html) que representa un flujo de datos comprimido o archivo en un archivo Zip, [ZipFile](javadoc11:java.base/java/util/zip/ZipFile.html) representa un archivo Zip, [ZipInputStream](javadoc11:java.base/java/util/zip/ZipInputStream.html) que permite descomprimir los flujos de datos al leerlos y [ZipOutputStream](javadoc11:java.base/java/util/zip/ZipOutputStream.html) que permite comprimir flujos de datos.
 
-### Cómo crear un archivo Zip con Java
+## Cómo crear un archivo Zip con Java
 
 El siguiente código permite comprime varios archivos en diferentes formatos en un único archivo Zip. Este caso es el de una aplicación Java de línea de comandos, el código para una aplicación web consistiría en crear el archivo Zip y devolver como resultado el _stream_ de _ZipOutputStream_ de datos en el [OutputStream](javadoc11:java.base/java/io/OutputStream.html) empleado por la aplicación web para devolver el resultado al cliente. 
 
@@ -41,14 +41,14 @@ Los archivos de extensión _jar_ utilizados en Java para crear librerías y _war
 {{< code file="Main-compress.java" language="java" options="" >}}
 {{< code file="System.out-compress" language="plain" options="" >}}
 
-### Cómo descomprimir un archivo Zip con Java
+## Cómo descomprimir un archivo Zip con Java
 
 El proceso contrario a la compresión es la descompresión, la descompresión permite recuperar los datos originales. Para esto se utiliza la clase _ZipFile_ en el caso de leer de un archivo, la clase _ZipInputStream_ también permite leer el Zip creado con _ZipOutputStream_.
 
 {{< code file="Main-decompress.java" language="java" options="" >}}
 {{< code file="System.out-decompress" language="plain" options="" >}}
 
-### Listar el contenido de un archivo Zip con Java
+## Listar el contenido de un archivo Zip con Java
 
 En Java el contenido de un _ZipFile_ se representa con la clase _ZipEntry_, el siguiente código lista el contenido de un archivo Zip.
 
@@ -66,7 +66,7 @@ O listar el contenido de un archivo Zip desde la linea de comandos.
 
 {{< code file="unzip.sh" language="bash" options="" >}}
 
-### Otros formatos de archivos comprimidos
+## Otros formatos de archivos comprimidos
 
 Los algoritmos ofrecidos en la API de Java no son los únicos, hay otros con diferentes características. Zip es un formato de archivos comprimidos popular disponible en los sistemas operativos mayoritarios como [Windows][windows], [GNU][gnu]/[Linux][linux] y [macOS][macOS] ofrecen soporte para comprimir y descomprimir archivos con este formato. Otro algoritmos distintos al Zip son mejores en varios aspectos, ofreciendo ratios de compresión mayores o con velocidades de compresión y descompresión mayores.
 

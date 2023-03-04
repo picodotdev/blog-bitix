@@ -26,7 +26,7 @@ Posteriormente, apareció el concepto de inyección de dependencias e inversión
 
 {{< tableofcontents >}}
 
-### _Domain-Driven Design_
+## _Domain-Driven Design_
 
 _Domain-driven design o DDD_ es un concepto que propone que la estructura y lenguaje en el código del software (nombres de clases, métodos y variables) debería reflejar el dominio de negocio. Por ejemplo, en un software de eventos debería haber clases para el concepto de evento, recinto, tipos de entrada métodos como crear evento, cambiar fecha de evento, cancelar o posponer entre otros. DDD intenta evitar la existencia de modelos anémicos con poca lógica de negocio o conceptos exclusivamente técnicos. DDD define dos tipos de patrones, los estratégicos que hacen referencia a aspectos de negocio y los patrones tácticos más relacionados con detalles de implementación.
 
@@ -53,7 +53,7 @@ Hay varios libros de referencia sobre DDD, dos de ellos son [Domain-Driven Desig
     linkids="c544ebe228faa80db01bf2fc99ae9078,680dc168e873e6558051b99d115cca0b,0c0434c4b1c647c9aad0334f51990282"
     asins="0321125215,0134434420,0321834577" >}}
 
-### Arquitectura hexagonal
+## Arquitectura hexagonal
 
 La arquitectura hexagonal aísla e independiza al modelo de dominio de los elementos externos con el objetivo de que aunque los elementos externos cambien estos no afecten al modelo y de que se puedan hacer cambios en el dominio los elementos externos requieran los menores cambios necesarios.
 
@@ -74,7 +74,7 @@ Una gran ventaja de la arquitectura hexagonal es que los puertos y adaptadores n
     image1="image:hexagonal-architecture.webp" optionsthumb1="650x450" title1="Diagrama de la arquitectura hexagonal"
     caption="Diagrama de la arquitectura hexagonal" source="Libro Implementing Domain-Driven Design">}}
 
-### Ejemplo de aplicación Java con DDD y arquitectura hexagonal
+## Ejemplo de aplicación Java con DDD y arquitectura hexagonal
 
 En el siguiente ejemplo de implementación en Java de una aplicación con DDD y arquitectura hexagonal me baso en parte en los siguientes artículos relacionados o estos sirven como ejemplos de implementación de sus temas específicos.
 
@@ -92,13 +92,13 @@ La programación orientada a aspectos permite aplicar funcionalidades transversa
 
 En la aplicación de ejemplo con [Spring Boot][spring-boot] y Java se usa como puerto una API REST y como adaptador una interfaz que representaría base de datos relacional pero que en este caso para simplificar se implementa en un repositorio en memoria. Se utiliza [Gradle][gradle] como herramienta de construcción.
 
-#### Estructura de directorios y paquetes
+### Estructura de directorios y paquetes
 
 Esta es la estructura de directorios ubicando los artefactos de REST e implementación de repositorios en el paquete de infraestructura y otras dependencias e implementaciones del _framework_ Spring. Los buses de comandos y consultas con las implementaciones de los casos de uso en el paquete de aplicación, estos llaman a los artefactos del dominio como repositorios y entidades. En infraestrucutra están los puertos y adaptadores dependientes de librerías y _frameworks_ aislados del dominio como los elementos que componen la interfaz REST, varios elementos de Spring y las implementaciones de los repositorios que estarían acoplados a una base de datos relacional o no sql.
 
 {{< code file="tree.sh" language="plain" options="" >}}
 
-#### Entidades y _value objects_
+### Entidades y _value objects_
 
 En el dominio de catálogo hay eventos y habría varios _value objects_ para representar ciertas propiedades del dominio.
 
@@ -114,7 +114,7 @@ Y varios _value objects_.
 {{< code file="EventDate.java" language="java" options="" >}}
 {{< code file="EventSchedule.java" language="java" options="" >}}
 
-#### Eventos de dominio
+### Eventos de dominio
 
 Cuando suceden cosas relevantes en el dominio se lanzan eventos de dominio para notificar a los interesados y que actúen en consecuencia. En este caso que un evento se ha creado, ha cambiado de fecha para notificar a los asistentes y realizar otra serie de acciones o ha sido cancelado que también desencadenará otras acciones.
 
@@ -126,7 +126,7 @@ El evento se registra en la entidad de dominio, es lanzado al bus de eventos por
 
 {{< code file="SpringEventBus.java" language="java" options="" >}}
 
-#### Aplicación y casos de uso
+### Aplicación y casos de uso
 
 La capa de aplicación es la interfaz que ofrece el dominio a sus consumidores, en esta implementación la interfaz se proporciona mediante un _command bus_ y el _query bus_ que hacen de intermediario entre la capa de aplicación y los casos de uso. Los casos de uso se abstraen de la utilización de los _command bus_ y _query bus_ y utilizan los servicios de dominio, entidades y _value objects_.
 
@@ -139,7 +139,7 @@ Los casos de uso de operaciones que realizan modificaciones en el modelo en el c
 {{< code file="GetEventUseCase.java" language="java" options="" >}}
 {{< code file="CreateEventUseCase.java" language="java" options="" >}}
 
-#### Puertos y adaptadores
+### Puertos y adaptadores
 
 La interfaz REST es un puerto, punto de entrada o interfaz de la aplicación. Cuando se realiza una petición REST se construye y se envía al bus de consultas o comandos el objeto que representa la consulta o comando para el dominio. 
 
@@ -157,7 +157,7 @@ El repositorio es un adaptador, punto de salida o interfaz con un sistema extern
 {{< code file="EventRepository.java" language="java" options="" >}}
 {{< code file="InMemoryEventRepository.java" language="java" options="" >}}
 
-#### Ejecución del ejemplo
+### Ejecución del ejemplo
 
 Los _endpoints_ para la interfaz REST, para la operación de modificación y para la operación de consulta son los siguientes.
 

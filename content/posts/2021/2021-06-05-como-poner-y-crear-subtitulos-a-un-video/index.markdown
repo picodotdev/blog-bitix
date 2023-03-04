@@ -25,7 +25,7 @@ Para mostrar subtítulos en un vídeo o película es necesario el archivo de sub
 
 {{< tableofcontents >}}
 
-### Cómo crear archivos de subtítulos para vídeos
+## Cómo crear archivos de subtítulos para vídeos
 
 Los archivos de subtítulos se crean con aplicaciones editores de subtítulos con una interfaz gráfica adaptada para facilitar la creación de subtítulos, además de soportar múltiples formatos de archivos de subtítulos. Estas aplicaciones muestran el vídeo con la capacidad de reproducirlo a diferentes velocidades, cada uno de los subtítulos y permiten especificar en que tiempo exacto se muestran y se ocultan.
 
@@ -52,13 +52,13 @@ En este vídeo se pueden activar los subtítulos con la transcripción del audio
     subtitlesLabel="Español" subtitlesLang="es"
     caption="Vídeo subtitulado" >}}
 
-### Cómo descargar pistas de subtítulos
+## Cómo descargar pistas de subtítulos
 
 Algunas páginas permiten descargar archivos de subtítulos de películas y series en diferentes idiomas ya creados por otras personas, dos de ellas son [Audio-Track][audio-track] y [Subscene][subscene]. Tiene un buscador para buscar por el título de la película o serie.
 
 Un formato de archivo de subtítulos es _srt_, estos archivos hay que cargarlos en el programa reproductor usado para visualizar la película.
 
-### Cómo poner archivos de subtítulos en el reproductor VLC
+## Cómo poner archivos de subtítulos en el reproductor VLC
 
 El [reproductor VLC][vlc] permite cargar archivos de subtítulos específicos de diferentes formatos, aunque algunos vídeos incluyen embebidos varias pistas de subtítulos en diferentes idiomas. En el menú _Subtítulos > Pista de subtítulos_ se muestran las pistas disponibles en el vídeo.
 
@@ -76,7 +76,7 @@ El reproductor VLC también permite modificar la apariencia de los subtítulos c
     image1="image:vlc-subtitles-preferences.webp" optionsthumb1="650x450" title1="Preferencias de subtítulos de VLC"
     caption="Preferencias de subtítulos de VLC" >}}
 
-### Crear y poner subtítulos con el editor de YouTube
+## Crear y poner subtítulos con el editor de YouTube
 
 Los vídeos de YouTube también se pueden subtitular con unos propios mejores que las transcripciones que hace el YouTube convirtiendo el audio del vídeo en texto. Se pueden crear desde [YouTube][youtube-studio] o subir un archivo de subtítulos creados con alguna de las aplicaciones anteriores.
 

@@ -29,7 +29,7 @@ Es recomendable [usar segundo factor de autenticación en servicios como Google,
 
 {{< tableofcontents >}}
 
-### Instalar el módulo SSH de Google 2FA
+## Instalar el módulo SSH de Google 2FA
 
 Usar 2FA con SSH requiere instalar un módulo de autenticación que valide el proceso de autenticación. El módulo permite usar los _tokens_ de un solo uso en el proceso de autenticación adicionalmente a la contraseña o clave SSH.
 
@@ -47,7 +47,7 @@ También hay que modificar el archivo de configuración de SSH _/etc/ssh/sshd\_c
 {{< code file="sshd_config.sh" language="bash" options="" >}}
 {{< code file="sshd_config-1" language="plain" options="" >}}
 
-### Configurar el módulo SSH de Google 2FA
+## Configurar el módulo SSH de Google 2FA
 
 La autenticación con 2FA es una segunda contraseña o código a introducir al iniciar sesión en el sistema remoto. Para utilizar 2FA hay que configurar previamente una aplicación que proporcione los códigos temporales.
 
@@ -74,7 +74,7 @@ Una vez modificada la configuración hay que reiniciar el servicio de SSH.
 
 {{< code file="sshd-restart.sh" language="plain" options="" >}}
 
-### Usar autenticación 2FA con claves SSH
+## Usar autenticación 2FA con claves SSH
 
 Al utilizar la autenticación mediante claves públicas y privadas con la configuración por defecto es suficiente para otorgar acceso al sistema remoto, con lo que no se solicitará el segundo factor de autenticación. 
 {{< code file="ssh-copy-id.sh" language="bash" options="" >}}
@@ -93,7 +93,7 @@ Y después reiniciar el servicio de SSH.
 
 {{< code file="sshd-restart.sh" language="plain" options="" >}}
 
-### Probar la autenticación SSH
+## Probar la autenticación SSH
 
 Una vez realizada la configuración es recomendable probar que la autenticación se realiza de forma correcta tanto con usuario y contraseña como en el caso de claves. Una vez proporcionado el usuario y la contraseña se solicita el _token_ del segundo factor de autenticación que es generado por la aplicación Google Authenticator, KeePassXC u otra aplicación configurada para generarlos.
 

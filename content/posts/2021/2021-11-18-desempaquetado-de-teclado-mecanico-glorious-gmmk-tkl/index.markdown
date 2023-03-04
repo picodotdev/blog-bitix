@@ -28,7 +28,7 @@ Teniendo en cuenta las diferentes características, variedad de modelos y precio
 
 {{< tableofcontents >}}
 
-### Mi anterior teclado de membrana
+## Mi anterior teclado de membrana
 
 Mi anterior teclado era uno de esos económicos, un [V7 CKW200 de membrana tradicional con teclado numérico][blogbitix-348] cuya única particularidad era que era inalámbrico además de ser un conjunto con un ratón inalámbrico. El ratón tuve que guardarlo no me importaba tanto tener que estar recargando las pilas recargables cada dos o tres semanas, su mayor problema era que sin motivo aparente perdía la conexión aleatoriamente unido a que tardaba en recuperarla que era una gran molestia en su uso. Al teclado le duraban las pilas casi nueve meses y su conexión inalámbrica era mucho más fiable que la del ratón.
 
@@ -40,7 +40,7 @@ El V7 lo he estado usado casi tres años bastante contento pudiendo moverlo sin 
     image2="image:v7-ckw200-2.webp" optionsthumb2="300x200" title2="Teclado de membrana V7 CKW200"
     caption="Teclado de membrana V7 CKW200 y borrado de la serigrafía" >}}
 
-### Los teclados mecánicos
+## Los teclados mecánicos
 
 Desde hace ya un tiempo he estado informandome y conociendo un poco más sobre los teclados mecánicos, escribí una [guía básica sobre los teclados mecánicos][blogbitix-536] con los conceptos fundamentales de esto teclados y no ha sido hasta ahora después de casi un año viendo información de algunas cosas más cuando finalmente he comprado un teclado mecánico que satisface mis necesidades.
 
@@ -52,7 +52,7 @@ Otra ventaja de los teclados mecánicos es que estos ofrecen mayor diversidad se
 
 Los _keycaps_ y teclados mecánicos debido a su personalización al gusto de cada uno permiten adaptarlo enormemente al estilo que más le guste a cada uno. Para unos los teclados mecánicos son una afición e incluso motivo de coleccionismo que la comunidad no considera a los teclados ni a los _keycaps_ como simplemente piezas de plástico, sino que son consideradas casi como obras de arte y personalización y diferenciación según el gusto o personalidad de cada usuario. Incluso hay gente que se dedica a montar teclados mecánicos cobrando por el servicio.
 
-#### Consideraciones adicionales antes de comprar un teclado mecánico
+### Consideraciones adicionales antes de comprar un teclado mecánico
 
 Ya conociendo las cosas básicas de los teclados mecánicos y decidido a comprar uno hay algunas cosas en las que he tenido que evaluar y tomar una decisión.
 
@@ -90,7 +90,7 @@ Al buscar _keycaps_ también hay que tener en cuenta el tamaño de las teclas de
     image1="image:keycaps-size.webp" optionsthumb1="300x200" title1="Tamaño de los keycaps"
     caption="Tamaño de los keycaps" >}}
 
-### Mis requerimientos
+## Mis requerimientos
 
 Mis necesidades para el nuevo teclado era principalmente que fuera mecánico por la mejor experiencia de uso que uno de membrana. Soy un usuario que usa de forma intensiva el ordenador y el teclado era un aspecto que no le había dado la importancia que requería.
 
@@ -102,7 +102,7 @@ Dicen que para programar es más adecuado un teclado con la disposición en ingl
 
 He estado filtrando bastantes modelos por no tener disposición en español, pero con _keycaps_ o usando la variante _en_ para español es perfectamente usable esta disposición. En los teclados mecánicos la posibilidad de comprarlo en una tienda española es importante, porque teclados mecánicos hay muchos pero algunos solo están disponibles y dirigidos a usuarios de otros países.
 
-### Mis opciones de teclado mecánico
+## Mis opciones de teclado mecánico
 
 Teniendo en cuenta mis requerimientos he tenido principalmente tres teclados mecánicos como candidatos. Muchas otras opciones las he descartado ya que las económicas de teclados mecánicos son económicos pero su calidad en algunos aspectos no dista mucho de los teclados de membrana, otras opciones las he descartado precisamente por ser marcas y modelos que no están dirigidos a usuarios españoles por su disposición de teclado ni poseen tiendas comercializadoras en España con lo que es comprarlos en su página web y hacer un envío internacional.
 
@@ -113,7 +113,7 @@ Las tres opciones que he estado siguiendo son estos tres teclados mecánicos. Ca
 * [Ducky One 2 TKL](https://www.duckychannel.com.tw/en/Keyboards/One2-Series), [Ducky One 3 TKL](https://www.duckychannel.com.tw/en/Keyboards/One3-Series)
 * [Glorious GMMK TKL](https://www.pcgamingrace.com/products/gmmk-tkl-tenkeyless-brown-switch)
 
-#### DIERYA DK61E
+### DIERYA DK61E
 
 Más tarde he podido probar un teclado compacto DIERYA DK61E, un teclado mecánico compacto en formato del 60% sin teclas dedicadas de desplazamiento, las del bloque superior a estas y de función con una disposición de teclas en inglés. El DK61E es un teclado con unas características de teclado de gama alta pero con un precio muy ajustado para todo lo que ofrece, con _switches_ ópticos, _hot swappable_, _keycaps_ PBT _double shot_, USB 3.0 o cable tipo A reversible por citar unas pocas y que en otros modelos de otras marcas tiene un precio notablemente superior. Es un teclado premontado con la ventaja de incluir todo ni tener que buscar y comprar aparte los _switches_ y _keycaps_.
 
@@ -122,7 +122,7 @@ Más tarde he podido probar un teclado compacto DIERYA DK61E, un teclado mecáni
 {{< amazon
     tags="keyboard-kemove-dierya" >}}
 
-#### DREVO Calibur V2 TE
+### DREVO Calibur V2 TE
 
 Del DREVO Calibur V2 TE me gusta que es un teclado incluso más compacto que un TKL sin prescindir de las teclas de flechas de desplazamiento y el bloque superior a estas que me son imprescindibles para mi. Es bastante compacto por prescindir de las teclas de función y una disposición más compacta para las teclas de desplazamiento y el bloque superior pero sin perder ninguna de esa teclas que los modelos compactos optan por prescindir.
 
@@ -133,7 +133,7 @@ En sus defectos le encuentro que su material de construcción es completamente d
 {{< amazon
     tags="keyboard-drevo" >}}
 
-#### Ducky One 2 TKL
+### Ducky One 2 TKL
 
 Esta era mi opción preferente, sin embargo dado los problemas de suministros y componentes a raíz de la pandemia del Covid justo esta versión de los Ducky One la han dejado de fabricar temporalmente y en el distribuidor de Ducky oficial en España que es [Versus Gamers][vsgamers] tenía unidades en el inventario de cualesquiera otros modelos _full_, _SF_ o _mini_ pero de los TKL estaban agotados.
 
@@ -141,7 +141,7 @@ Del  Ducky One 2 TKL me gusta su calidad de construcción que aunque es completa
 
 Lo que no me gustaba es que no he encontrado disponibilidad y ya han anunciado la [tercera versión con los Ducky One](https://www.duckychannel.com.tw/en/Keyboards/One3-Series). Sin embargo, si hubiese mirado en [Wallapop][wallapop] hay muchos Ducky en venta, algunos en buen estado y precio. Su precio algo más caro que el DREVO y su calidad también mayor lo justifica. Otra cosa que no me gustaba eran sus teclas ABS que serán de más calidad de otras ABS pero que siguen siendo grabadas a _laser etched_.
 
-#### Glorious GMMK TKL
+### Glorious GMMK TKL
 
 El último modelo que realmente he considerado como opción de compra ha sido el Glorious GMMK TKL. Al igual que el Ducky One 2 es un teclado con una calidad que está un escalón por encima del DREVO, estos ya se pueden considerar teclados de gama alta.
 
@@ -153,7 +153,7 @@ Posee luz RGB, cable desconectable mallado USB-C y una aplicación aunque solo d
 
 Algo que no se si me gusta o disgusta es el aspecto elevado para los _swithes_ cuyo cuerpo queda visible, no es la estética acostumbrada de los teclados ni gusta a todo el mundo sin embargo por otro lado facilita la limpieza.
 
-#### El teclado mecánico ideal
+### El teclado mecánico ideal
 
 Del DREVO me gusta que es más compacto pero sin perder ninguna tecla de las que son necesarias para mí. Del Ducky me gusta su calidad de construcción y la función de configurar macros por _hardware_ sin necesidad de aplicación para el sistema operativo. Y del Glorious me gusta su característica de modularidad incluso para los _switches_ con su _hot-swappable_, los Ducky One 3 también ya son _hot-swappable_.
 
@@ -168,7 +168,7 @@ Comprado en Amazon aún siendo más caro que en otras tiendas y no estando en el
 
 Finalmente, he optado por el Glorious GMMK TKL en su versión barebone principalmente por su modularidad y por su disponibilidad en Amazon cosas que el Ducky no complía ninguna. En Amazon unos días después lo he visto 15 € más barato aunque los _switches_ algo más caros con lo que la diferencia e haber esperado algunos días hubiera sido de unos 13 €. Para conocer si un producto está algo por encima de si precio normal la página [CamelCamelCamel muestra el historial y evolución de precio de los prodcutos en Amazon][blogbitix-414].
 
-### Desempaquetado teclado mecánico Glorious GMMK TKL
+## Desempaquetado teclado mecánico Glorious GMMK TKL
 
 Una vez elegido el modelo de teclado mecánico que más se ajustaba a mis preferencias  y estando disponible en Amazon tanto el teclado como los interruptores Gateron de Glorious, hacer la compra y que llegue a casa como suele ser habitual en Amazon solo pasan unos pocos días. El teclado es el Glorious GMMK TKL en formato ISO y en su modalidad _barebone_, esto es que no está premontado con _switches_ y _keycaps_ sino que es únicamente el teclado, los _swittches_ y _keycaps_ hay que comprarlos aparte. Los _switches_ de la propia marca Glorious también están disponibles en Amazon en los diferentes colores tanto lineales, táctiles y sonoros.
 
@@ -194,7 +194,7 @@ El conjunto completo de productos que he comprado ha sido el siguiente, tanto en
 * [_Keycaps_ disposición español, PBT, _laser etched_, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/4000130061265.html)
 * [_Keycaps_ disposición español, PBT, dye sub, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/1005003516268627.html)
 
-#### La caja
+### La caja
 
 La caja es poco importante en el producto, es suficiente con que tenga una simple serigrafia de su contenido y el modelo de teclado que se trata, sin embargo, tiene un detalle curioso acorde a la categoría de gama alta del teclado y es que la parte frontal las letras del modelo y la representación del teclado tienen un efecto irisado que hace que cambien de color con el reflejo de la luz.
 
@@ -205,7 +205,7 @@ La caja es poco importante en el producto, es suficiente con que tenga una simpl
     image3="image:glorious-gmmk-tkl-3.webp" optionsthumb3="300x200" title3="Caja del teclado Glorious GMMK TKL"
     caption="Caja del teclado Glorious GMMK TKL" >}}
 
-#### El contenido
+### El contenido
 
 El contenido del teclado está compuesto por el propio teclado que viene envuelto en una funda protectora para evitar cualquier daño en el transporte, un cubre teclas de plástico con la forma y tamaño del teclado muy útil ya que permite colocarlo cuando no se usa para evitar que se le acumule polvo con el tiempo, un cable USB por un lado con conector USB-C para conectar al teclado y por el otro lado un conector tipo A para conectar al ordenador o a un concentrador USB. Incluye también una pequeña octavilla informativa, una par de _keycaps_ una para la tecla Windows con el logotipo de Glorious y otra para la tecla escape con la palabra _Ascencd_ distintiva de Glorious. Se incluye también una pegatina, un extractor para los _switches_ y un segundo juego de almohadillas.
 
@@ -220,7 +220,7 @@ El contenido del teclado está compuesto por el propio teclado que viene envuelt
     image2="image:glorious-gmmk-tkl-contenido-5.webp" optionsthumb2="200x150" title2="Contenido de la caja Glorious GMMK TKL"
     caption="Contenido de la caja Glorious GMMK TKL" >}}
 
-#### El teclado
+### El teclado
 
 El Glorious GMMK TKL es un teclado de _switches_ mecánicos de dos pines, con la particularidad de ser completamente modular incluido los _switches_, al ser TKL no tiene teclado numérico con un más compacto tamaño de 35,5cm de ancho y 12.8cm de largo, con una altura de la base de entre 1,5cm en la parte frontal y 2cm en la trasera. El peso del GMMK es mayor que el teclado de membrana. Soporta iluminación RGB con múltiples efectos de luz, estando los LEDs en la parte superior del zócalo de la tecla. Soporta la función de _N-key-roll-over_ para que independientemente del número de teclas que se pulsen todas sean reconocidas cosa que no pasa en los teclados de membrana.
 
@@ -246,7 +246,7 @@ En la parte inferior tiene unas almohadillas de goma para asegurar su fijación 
     image1="image:glorious-gmmk-tkl-teclado-10.webp" optionsthumb1="200x150" title1="Base del teclado Glorious GMMK TKL"
     caption="Base del teclado Glorious GMMK TKL" >}}
 
-#### Los _switches_
+### Los _switches_
 
 Al ser la versión _barebone_ la que he comprado no se incluyen los _switches_ ni _keycaps_ con lo que estos los he tenido que adquirir como producto aparte. Por suerte en la misma Amazon he podido comprar los _switches_ de la propia Glorious para los teclados GMMK que son de la marca Gateron. Lo que yo he comprado son los táctiles _Brown_.
 
@@ -269,7 +269,7 @@ Aunque el teclado TKL en su versión ISO solo tiene 88 teclas la caja incluye 12
     image3="image:glorious-gmmk-tkl-switches-9.webp" optionsthumb3="200x150" title3="Conjunto de switches Glorious Gateron Brown"
     caption="Conjunto de switches Glorious Gateron Brown" >}}
 
-#### Los _keycaps_
+### Los _keycaps_
 
 Los _keycaps_ no son tan fáciles de encontrar, muchos son con la disposición en inglés y los que tienen  disposición en español son la minoría. La propia Glorious ofrece sus _keycaps_ que son de material ABS con serigrafía para las leyendas de las teclas utilizando la técnica de _laser etched_ que no es la mejor. Por eso, en vez de comprar los de la marca Glorious en Amazon casi la única posibilidad de comprar unas _keycaps_ de más calidad a un precio razonable ha sido en AliExpress. En AliExpress he encontrado _keycaps_ con disposición española de material ABS _double shot_, también hay _keycaps_ de material PBT _double shot_ a buenos precios pero en disposición en inglés aunque hay algún producto de _keycaps_ PBT con disposición en español con serigrafía con _laser etched_.
 
@@ -301,7 +301,7 @@ Ya sin escatimar gastos he comprado un conjunto de _keycaps_ ABS en españo en d
     image2="image:keycaps-abs-es-white-6.webp" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español"
     caption="Keycaps ABS double shot OEM español en color blanco y negro" >}}
 
-#### Colocación de _switches_ y _keycaps_
+### Colocación de _switches_ y _keycaps_
 
 Una vez recibidos todos los componentes, como el modelo que he comprado ha sido el modelo _barebone_ el primer paso antes de usar el teclado es colocar tanto los _switches_ uno a uno en sus zócalos como posteriormente los _keycaps_. Con unas pocas y sencillas indicaciones a tener en cuenta colocar los _switches_ no presenta ningún problema, lo más que requiere es un poco de tiempo y hacerlo sin prisa para no cometer errores.
 
@@ -345,7 +345,7 @@ Colocados los _swichtes_ no tuve ninguno en el que hubiese doblado alguna patill
 
     caption="Switch con pines doblados" >}}
 
-#### Primeras impresiones
+### Primeras impresiones
 
 Al comprar un equipo principalmente los componentes hardware que más atención reciben habitualmente son la CPU, tarjeta gráfica, placa base, memoria, SSD, a veces en el monitor, pero el teclado no siempre tiene la atención que se merece aún siendo uno de los principales elementos de hardware con los que se interacciona.
 
@@ -400,7 +400,7 @@ El siguiente nivel de adicción a los teclados mecánicos es [lubricar los _swit
 {{< youtube
     video="153UCpnojbE" >}}
 
-#### Análisis en vídeo
+### Análisis en vídeo
 
 Estos son algunos vídeos de análisis de los teclados que he evaluado, en [YouTube][youtube] hay canales dedicados en exclusiva a los teclados mecánicos en los que informarse muy bien después de ver varios de sus vídeos. Recomiendo el [canal de YouTube Switch and Click](https://www.youtube.com/c/SwitchandClickOfficial) y también el [blog de Switch and Click](https://switchandclick.com/). En cualquier caso en YouTube hay multitud de otros vídeos con análisis sobre diferentes teclados mecánicos y comparaciones entre ellos.
 
@@ -420,7 +420,7 @@ Otra fuente de información son los canales de [Twitch][twitch] en los que algun
 {{< youtube
     video="lMyWnk31bao" >}}
 
-### Otras opciones de teclados mecánicos
+## Otras opciones de teclados mecánicos
 
 Marcas de teclados mecánicos reconocidos por su calidad son los [Anne][anne], [Keycron][keychron], [Akko][akko], [DIERYA][dierya], [Royal Kludge][royal-kludge] o [DURGOD][durgod] con los siguientes modelos destacados perfectamente a considerar si la disposición en inglés o en formato ANSI no es ningún inconveniente.
 
@@ -445,7 +445,7 @@ Marcas de teclados mecánicos reconocidos por su calidad son los [Anne][anne], [
 {{< youtube
     video="bOUrAbF59-8" >}}
 
-#### Otros complementos
+### Otros complementos
 
 Aparte del teclado hay otros complementos para un teclado mecánico. Un complemento para un teclado mecánico es un concentrador USB para ampliar el número de puertos del ordenador o portátil si tienen pocos y para acercar los conectores de los puertos USB a una ubicación que permita conectar y desconectar elementos como memorias USB fácilmente.
 

@@ -26,7 +26,7 @@ El modo _lazy_ tiene la ventaja de que los datos de las relaciones solo se carga
 
 Para que el modo _lazy_ funcione se ha de mantener la conexión a la base de datos abierta para cargar los datos cuando se soliciten. Mantener la sesión y conexión de base de datos abierta es lo que define el patrón _Open Session in View_. Sin embargo, mantener la conexión abierta durante toda la petición incluida la parte de generación de la vista tiene inconvenientes, incluso llegando a considerar el patrón _Open Session in View_ un antipatrón que no se de debe usar.
 
-### Qué es y como funciona
+## Qué es y como funciona
 
 En este diagrama se aprecia su funcionamiento. La primera acción en una petición es abrir una sesión para obtener datos de la base de datos, lo que se traduce en apropiarse de una conexión a la base de datos. El flujo del programa procesa la petición invocando la lógica de la aplicación y empleando los diferentes servicios en las diferentes capas formadas por el controlador, servicio y DAO para el acceso a la base de datos. El último paso es generar el resultado que es devuelto al cliente, puede ser contenido HTML o un resultado en formato JSON si es un servicio REST. En este punto se accede de nuevo a la base de datos para recuperar las relaciones _lazy_ de los objetos que fueron devueltas por el servicio, esto es habitual en el caso de emplear un ORM como Hibernate o JPA.
 
@@ -35,7 +35,7 @@ En este diagrama se aprecia su funcionamiento. La primera acción en una petici�
     image1="image:opensessioninview.webp" optionsthumb1="650x450" title1="Diagrama del patrón open session in view"
     caption="Diagrama del patrón open session in view" source="vladmihalcea.com" >}}
 
-### Las ventajas
+## Las ventajas
 
 Con el patrón _Open Session in View_ durante toda la petición se mantiene la conexión a la base de datos abierta de modo que al solicitar las relaciones de una entidad las excepciones [LazyInitializationException](https://docs.jboss.org/hibernate/stable/core/javadocs/org/hibernate/LazyInitializationException.html) de Hibernate no se producen en las relaciones cargadas en modo _lazy_. Sin mantener la conexión abierta todos los datos que se necesiten han de cargarse con antelación de lo contrario al acceder a las relaciones de un objeto provocará esa excepción _LazyInitializationException_. El modo _lazy_ permite solicitar los datos según se necesiten sin necesidad de hacerlo con antelación.
 
@@ -43,7 +43,7 @@ En Spring hay una variable de configuración con la que se activa o desactiva un
 
 {{< code file="SpringJpaOpenSessionInView.properties" language="plain" options="" >}}
 
-### Los problemas, por que se considera una mala práctica
+## Los problemas, por que se considera una mala práctica
 
 El patrón _Open Session in View_ tiene varios problemas. Uno de ellos es que al mantener la sesión abierta durante toda la petición y permitir en todo momento acceso a la base de datos no se es consciente de las consultas que se lanzan más usando Hibernate que hace precisamente esto más fácil. El resultado es que hay que tener especial cuidado en no generar el problema 1+N donde se ejecuta una consulta para recuperar una lista de objetos y N para cargar una relación de cada uno de los objetos de la lista anteriores recuperados.
 
@@ -55,7 +55,7 @@ Además, las conexiones a la base de datos son un recurso escaso, más incluso q
 
 Establecer las consultas en modo [FetchType.EAGER](https://docs.jboss.org/hibernate/stable/orm/javadocs/org/hibernate/jpamodelgen/xml/jaxb/FetchType.html) para recuperar las relaciones cuanto antes aún no conociendo si se usarán los datos no es una solución ya que tampoco puede cambiarse a nivel de consulta. Por estas razones las asociaciones suelen configurarse en modo [FetchType.LAZY](https://docs.jboss.org/hibernate/stable/orm/javadocs/org/hibernate/jpamodelgen/xml/jaxb/FetchType.html).
 
-### La alternativa
+## La alternativa
 
 La alternativa al patrón _Open Session in View_ es usar objetos DTO para proporcionar a la vista todos los datos que necesite sin que esta al usar esos datos lance consultas. Esto obliga al controlador del patrón modelo-vista-controlador o [MVC][mvc] a conocer y recuperar de antemano los datos que necesite la vista.
 
@@ -67,7 +67,7 @@ En el modelo DTO usando la lógica que recupera los datos ha de estar sincroniza
 
 Cada vista necesitará unos datos específicos de modo que serán necesarias consultas específicas para recuperar cada uno de los datos. Para el acceso en modo lectura y recuperar algunas de las consultas en vez de usar Hibernate se puede usar la librería [jOOQ][jooq] que proporciona una API en el lenguaje Java para la construcciones de consultas con comprobación de tipos proporcionado por el compilador.
 
-### Conclusión
+## Conclusión
 
 En muchas aplicaciones usar el patrón _Open Session in View_ con Hibernate no supone un gran problema y simplifica el código. Para aquellas aplicaciones que necesitan escalabilidad y soportar un gran número de usuarios concurrentes o hagan operaciones que impliquen operaciones de red se aconseja usar DTO en las vistas ya sean mapeando las entidades Hibernate recuperadas por el controlador a esos DTO con una librería específica para el propósito como [ModdelMapper][modelmapper] y recuperar únicamente los datos que necesita la vista usando librerías como jOOQ que ofrecen mayor control sobre las columnas de la base de datos datos recuperadas para reducir los datos recuperados de la base de datos a únicamente lo necesario.
 

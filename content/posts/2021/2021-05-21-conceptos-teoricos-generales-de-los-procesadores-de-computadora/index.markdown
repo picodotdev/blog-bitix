@@ -44,7 +44,7 @@ Los siguientes apartados son una explicación sencilla, básica y resumida de lo
 
 {{< tableofcontents >}}
 
-### Arquitectura
+## Arquitectura
 
 Los computadores siguen una organización definida en el [modelo de von Neumann](https://en.wikipedia.org/wiki/Von_Neumann_architecture) en el que una computadora consta de:
 
@@ -60,7 +60,7 @@ Los computadores siguen una organización definida en el [modelo de von Neumann]
     image2="image:von-neumann-architecture.svg" optionsthumb2="300x200" title2="Arquitectura de Von Neumann"
     caption="Esquema de computadora y arquitectura de Von Neumann" >}}
 
-#### Componentes de un procesador
+### Componentes de un procesador
 
 Los componentes son los siguientes:
 
@@ -69,11 +69,11 @@ Los componentes son los siguientes:
 * Registros: son unas pequeñas zonas de memoria en las que operan las instrucciones del procesador.
 * Unidad de control: es la encargada de enviar las señales a las otras unidades del procesador.
 
-#### Tamaño de palabra
+### Tamaño de palabra
 
 El tamaño de palabra es la unidad de datos nativa del procesador media en número bits. Los registros del procesador suelen tener tener el mismo tamaño de palabra que el procesador y la máxima cantidad de información que se suele poder transferir desde y a la memoria en una única operación coincide con el tamaño de palabra. Los procesadores x86-64 tiene un tamaño de palabra de 64 bits.
 
-#### _Endianness_
+### _Endianness_
 
 La arquitectura de un procesador define cómo se almacenan los datos en memoria, puede ser de dos formas _litte-endian_ o _big-endian_. En la primera el byte de datos menos significativo se almacena en la dirección de memoria más baja, por el contrario en _big-endian_ el byte más significativo se almacena en la dirección más baja.
 
@@ -89,7 +89,7 @@ En el protocolo IP se utiliza _big-endian_, por el contrario el la mayoría de p
     image2="image:little-endian.svg" optionsthumb2="300x200" title2="Little endian"
     caption="Big y little endian" >}}
 
-#### Almacenamiento de computadora, NUMA y UMA
+### Almacenamiento de computadora, NUMA y UMA
 
 El significado de las siglas de NUMA son _Non-uniform memory access_ y de UMA son _Uniform memory access_, en el primer caso el tiempo de acceso  a memoria no es uniforme y depende de la ubicación del la memoria relativa al procesador, en este caso para un procesador es más rápido acceder a su memoria local que a la memoria de otro procesador.
 
@@ -100,7 +100,7 @@ AMD lo implementó el almacenamiento NUMA en los procesadores Opteron con [Hyper
 * [Non-uniform memory access](https://en.wikipedia.org/wiki/Non-uniform_memory_access)
 * [Uniform memory access](https://en.wikipedia.org/wiki/Uniform_memory_access)
 
-#### Memoria y jerarquía de memoria
+### Memoria y jerarquía de memoria
 
 La memoria contiene los datos y las instrucciones de los programas, el procesador lee los datos de la memoria los carga en las cachés y los registros del procesador, realiza el cálculo deseado y los resultados son almacenados de nuevo en la memoria principal.
 
@@ -134,19 +134,19 @@ La diferencia de velocidad de procesamiento de la CPU y la velocidad de acceso a
     image2="image:computer-memory-hierarchy.svg" optionsthumb2="300x200" title2="Jerarquía de caché"
     caption="Jerarquía de caché" >}}
 
-#### Memoria virtual
+### Memoria virtual
 
 La memoria principal del sistema es limitada aun siendo de varias decenas de GB. La memoria virtual es una técnica que permite ampliar la memoria del sistema utilizando el siguiente nivel de la jerarquía de memoria , normalmente el almacenamiento persistente de mayor capacidad.
 
 El sistema operativo con ayuda de funciones de gestión de memoria implementadas en el procesador se encarga de mover fuera de la memoria principal la que no se está utilizando y de cargar en la memoria principal la que se necesite.
 
-#### Microcódigo
+### Microcódigo
 
 El microcódigo es un software que traduce las instrucciones en operaciones a ejecutar en el _chip_. Esta traducción de instrucciones permite los desarrolladores de _chips_ flexibilidad en la implementación. Por ejemplo, en una versión mejorada del _chip_ se puede soportar el mismo conjunto de instrucciones que versiones anteriores o soportar diferentes conjuntos de instrucciones en el mismo _chip_.
 
 * [Microcode](https://en.wikipedia.org/wiki/Microcode)
 
-### Arquitecturas de conjunto de instrucciones
+## Arquitecturas de conjunto de instrucciones
 
 La arquitectura del conjunto de instrucciones o ISA es el modelo abstracto de una computadora, define los tipos de datos soportados, los registros, el hardware de soporte para la memoria principal y el modelo de entrada y salida. También forma parte el conjunto de instrucciones soportadas y su codificación binaria.
 
@@ -160,7 +160,7 @@ El conjunto de instrucciones es una de las características mas relevantes de un
     image1="image:mips32-addi.svg" optionsthumb1="300x200" title1="Instrucción addi de un procesador MIPS"
     caption="Instrucción addi de un procesador MIPS" >}}
 
-#### Conjuntos de instrucciones
+### Conjuntos de instrucciones
 
 El conjunto de instrucciones soportados por un procesador depende de su arquitectura. La arquitectura más popular en ordenadores de escritorio es la x86, en los dispositivos móviles como teléfonos inteligentes es ARM, otras arquitecturas alternativas son RISC-V que es una arquitectura abierta sin costes de licencia, otras son MIPS, POWER y Sparc.
 
@@ -189,13 +189,13 @@ En la arquitectura x86 las instrucciones MMX, SSE y AVX son variantes de instruc
 * [RISC-V](https://en.wikipedia.org/wiki/RISC-V)
 * [SPARC](https://en.wikipedia.org/wiki/SPARC)
 
-### Ciclo de ejecución del procesador
+## Ciclo de ejecución del procesador
 
 La principal tarea de un procesador es ejecutar instrucciones, para ello el procesador sigue un ciclo de obtener la siguiente instrucción de la memoria principal según el contador del programa, decodificación en la que se determina que instrucción se ejecuta y ejecución en la que se utilizan los diferentes componentes del procesador como la unidad de lógica aritmética.
 
 * [Instruction cycle](https://en.wikipedia.org/wiki/Instruction_cycle)
 
-#### _Pipelining_ de instrucciones
+### _Pipelining_ de instrucciones
 
 Los procesadores tiene varios componentes, para mantenerlos todos en funcionamiento con el objetivo de maximizar el rendimiento las instrucciones se ejecutan en varias etapas. En un momento determinado el procesador posee varias instrucciones en diferentes etapas de ejecución. Cada uno de estos pasos de ejecución es un segmento de ejecución, denominando a estos procesadores como segmentados.
 
@@ -210,7 +210,7 @@ Un procesador como los Intel Pentium 4 llegaba a tener un _pipeline_ de ejecuci�
     image1="image:pipeline-4-stage-with-bubble.svg" optionsthumb1="300x200" title1="Pipeline de 4 segmentos"
     caption="Pipeline de 4 segmentos" >}}
 
-#### _Hazards_
+### _Hazards_
 
 Hay varios peligros en la ejecución paralela que ha de tenerse en cuenta para un buen funcionamiento de los procesadores segmentados. Los riesgos son de tres tipos, de datos, estructurales y de control.
 
@@ -222,13 +222,13 @@ Los riesgos de control consisten en que se hayan insertado en el _pipeline_ inst
 
 * [Hazard (computer architecture)](https://en.wikipedia.org/wiki/Hazard_(computer_architecture))
 
-#### Ejecución fuera de orden
+### Ejecución fuera de orden
 
 La ejecución fuera de orden permite aprovechar los ciclos de CPU que de otra manera no se utilizarían. Con este paradigma, el procesador ejecuta las instrucciones según la disponibilidad de los datos de entrada y las unidades de ejecución, en vez de en el orden original del programa. Esto permite evitar tiempos inactivos esperando a que la instrucción precedente se complete en el caso de que sean independientes.
 
 * [Out-of-order execution](https://en.wikipedia.org/wiki/Out-of-order_execution)
 
-#### Ejecución especulativa
+### Ejecución especulativa
 
 La ejecución especulativa es otra optimización que permite aumentar el rendimiento que consiste en ejecutar instrucciones aún antes de saber si son necesarias.
 
@@ -238,17 +238,17 @@ Esta técnica aumenta el rendimiento pero con la cual se han descubierto varios 
 
 * [Speculative execution](https://en.wikipedia.org/wiki/Speculative_execution)
 
-### Paralelismo 
+## Paralelismo 
 
 Para aumentar el rendimiento los procesadores intentan ejecutar las operaciones de forma paralela.
 
 * [Parallel computing](https://en.wikipedia.org/wiki/Parallel_computing)
 
-#### _Bit_
+### _Bit_
 
 Una forma de aumentar el paralelismo es aumentar el tamaño de palabra del procesador. Un procesador con una palabra de 8 bits necesita dos ciclos para realizar la suma de dos números de 16 bits, un procesador de 16 bits solo necesita un ciclo con lo que en la práctica es duplicar el rendimiento del procesador en este tipos de operaciones.
 
-#### Escalar y superescalar
+### Escalar y superescalar
 
 Un procesador escalar en todo momento solo ejecuta una instrucción, en cambio un procesador superescalar ejecutar múltiples instrucciones usando varias unidades de ejecución. Los procesadores superescalares tienen varias unidades de ejecución del mismo tipo, por ejemplo un procesador superescalar tiene varias unidades ALU o de FPU. El procesador trata de mantener cada una de estas diferentes unidades con instrucciones a ejecutar. Un procesador superescalar con dos ALU es capaz de realizar el doble de operaciones por ciclo de reloj y por tanto supone duplicar el rendimiento en este tipos de operaciones.
 
@@ -257,7 +257,7 @@ El primer procesador superescalar fabricado por Intel fue el Pentium.
 * [Scalar processor](https://en.wikipedia.org/wiki/Scalar_processor)
 * [Superscalar processor](https://en.wikipedia.org/wiki/Superscalar_processor)
 
-#### Multihilo
+### Multihilo
 
 Un procesador con procesamiento multihilo o SMT trata de mejorar el rendimiento del procesador superescalar. Cada núcleo físico es visto por el sistema operativo como dos o más núcleos lógicos, cada procesador lógico tiene sus propios registros de control sin embargo las unidades de ejecución son compartidas por los hilos. Cada hilo puede ser detenido o interrumpido de forma independiente al resto de hilos.
 
@@ -268,13 +268,13 @@ El primer procesador con hyper-threading fabricado por fue el Intel Pentium 4.
 Los procesadores y sistemas operativos conceden a los programas un tiempo de ejecución en el procesador, transcurrido el tiempo sin interrumpidos y se continua con otro proceso, el proceso no tiene el control de cuando se interrumpe su ejecución, a este estilo de compartir el recurso del procesador se le denomina [multitarea preemtiva](https://en.wikipedia.org/wiki/Preemption_(computing)). Incluso con la velocidad de los procesadores de mononucleo en los que solo se ejecutan un solo programa la sensación es que los programas se están ejecutando de forma paralela.
 
 
-#### Multinúcleo
+### Multinúcleo
 
 Un procesador con procesamiento paralelo o SMP incorpora varios núcleos físicos en el mismo procesador. Cada núcleo es independiente y ejecuta un proceso en cada núcleo de forma simultánea. En un procesador mononúcleo la programación simultánea era simulada mediante la apropiación preemptiva junto con la rapidez del procesador para en la ejecución de instrucciones y cambios de contexto de un procesador a otro.
 
 El primer procesador multinúcleo fabricado por Intel fue el Pentium D.
 
-#### Número de núcleos
+### Número de núcleos
 
 Los primeros procesadores tenían un único núcleo o unidad de cómputo denominados _single-core_, posteriormente se ha implementado en un mismo procesador varios núcleos denominados _multi-core_.
 
@@ -282,7 +282,7 @@ Los procesadores _multi-core_ de escritorio consumno están diseñados para ejec
 
 Los procesadores _many-core_ están especializados en ejecutar gran cantidad de operaciones en paralelo, para ello tienen una gran cantidad de núcleos de computación. Si un procesador _muti-core_ tiene unos pocos núcleos al estar limitados el número de ellos por la coherencia de la caché los procesadores _many-core_ se cuentan por miles. Las GPU son un ejemplo del procesador _many-core_.
 
-### Seguridad
+## Seguridad
 
 Los procesadores incluyen funcionalidades con la colaboración del sistema operativo para que la computación de los programas sea segura, con el objetivo de que un programa no se apropie de toda la capacidad de computación o que la memoria de un programa esté aislada de otros programas.
 
@@ -293,7 +293,7 @@ Los procesadores incluyen funcionalidades con la colaboración del sistema opera
     image1="image:processor-security-rings.svg" optionsthumb1="300x200" title1="Anillos de seguridad de un procesador"
     caption="Anillos de seguridad de un procesador" >}}
 
-#### Modo protegido
+### Modo protegido
 
 Los procesadores incluyen un modo de ejecución con privilegios especiales que son exclusiva del sistema operativo. Algunas instrucciones solo pueden ser ejecutadas en el modo protegido por seguridad.
 
@@ -301,11 +301,11 @@ El primer procesador con un modo protegido fabricado por Intel fue el 386.
 
 * [Protected mode](https://en.wikipedia.org/wiki/Protected_mode)
 
-#### Cifrado de memoria
+### Cifrado de memoria
 
 Para minimizar las consecuencias de una fallo de seguridad los procesadores más recientes destinados a la computación en la nube, donde el entorno de computación es compatido aún estando en ciertamedia aislado lógicamente, también incluyen funcionalidades para cifrar completamente la memoria de los datos y programas, de modo que aunque un programa tenga acceso a la memoria de otro la información al estar cifrada no sea legible.
 
-### Rendimiento de procesador
+## Rendimiento de procesador
 
 El rendimiento de un procesador se mide en instrucciones por ciclo o IPC, instrucciones por segundo o IPS, operaciones de coma flotante por segundo FLOPS, rendimiento por vatio o PPW.
 
@@ -315,7 +315,7 @@ Los diseñadores de procesadores han de encontrar un equilibrio óptimo entre n�
 
 Una mejora de los procesos litográficos que permiten crear transistores de menor tamaño es beneficioso para los procesadores ya que mejoran el número de transistores que se pueden incluir en el procesador en el mismo espacio, hacen los procesadores más pequeños, la energía consumida y el calor disipado es menor y el precio de fabricación del procesador se abarata.
 
-### Tipos de procesadores
+## Tipos de procesadores
 
 La CPU es el principal componente de una computadora que se encarga de ejecutar las instrucciones del programa, otro tipo de procesador especializado son las GPU dedicadas al procesamiento de gráficos o en tareas de inteligencia artificial. Las GPU están especializadas en ejecutar gran cantidad de operaciones de forma paralela.
 
@@ -323,7 +323,7 @@ Un _system on chip_ o SoC incluye la mayoría de componentes de un sistema es un
 
 * [Processor](https://en.wikipedia.org/wiki/Processor_(computing))
 
-### Gestión de energía
+## Gestión de energía
 
 Los procesadores para reducir su consumo de energía y el calor que dispan emplean diferetnes técnicas como variar el voltaje de funcionamiento o la frecuencia de funcionamiento.
 

@@ -31,7 +31,7 @@ Una buena documentación ha de se concisa y transmitir su información de forma 
 
 {{< tableofcontents >}}
 
-### El lenguaje unificado de modelado o UML
+## El lenguaje unificado de modelado o UML
 
 [El lenguaje unificado de desarrollo][wikipedia-uml] o UML estandariza las convenciones y elementos utilizados en los diagramas además de identificar y describir varios tipos de diagramas para describir un sistema desde varios puntos de vista. Cada uno de estos diagramas describen un sistema a alto nivel de forma esquematizada los conceptos fundamentales.
 
@@ -70,7 +70,7 @@ Diagramas UML de comportamiento:
     image3="image:uml-components-diagram.webp" optionsthumb3="200x150" title3="Diagramas UML"
     caption="Esquema y ejemplos de diagramas UML" >}}
 
-### Aplicación para crear diagramas de UML
+## Aplicación para crear diagramas de UML
 
 Para crear los diagramas de UML es necesario utilizar una aplicación, una orientada y especifica para crear diagramas UML es [Gaphor][gaphor]. Está disponible a través de [aplicación Flatpak](https://flathub.org/apps/details/org.gaphor.Gaphor) como [forma de empaquetar una aplicación para cualquier distribución GNU/Linux][blogbitix-362], para [Windows][windows] y [macOS][macos] además de ser una aplicación de software libre. Gaphor es una aplicación sencilla con un aspecto cuidado que forma parte del [círculo de aplicaciones de GNOME][gnome-apps] y sigue la guía de estilos para las aplicaciones de este escritorio.
 

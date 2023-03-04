@@ -27,7 +27,7 @@ Continuo con la colaboración con la marca [DIERYA][dierya] dedicada a la comerc
 
 {{< tableofcontents >}}
 
-### Características técnicas del teclado DIERYA DK63
+## Características técnicas del teclado DIERYA DK63
 
 El [teclado mecánico DIERYA DK63](https://www.dieryatech.com/item/dk63-wireless-wired-mechanical-keyboard) en varios aspectos es igual que el teclado mecánico DIERYA DK61E, mucho de lo que comenté para el DK61E es también aplicable al DK63, sin embargo tienen algunas diferencias importantes que pueden ser determinantes para elegir comprar un modelo u otro según el uso que se le desee dar al teclado.
  
@@ -60,7 +60,7 @@ Se puede usar tanto con cable como en modo inalámbrico con conexión Bluetooth,
 
 Para conocer más detalles sobre los teclados mecánicos y en qué se diferencia de los teclados de membrana con una guía de introducción escribí el siguiente artículo comentando los principales características de los teclados mecánicos, así como varios desempaquetados y análisis de teclados mecánicos con la que comparar con otros modelos más en detalle. Escribí una [introducción a los conceptos básicos de los teclados mecánicos][blogbitix-536] puedes visitar la guía de ese artículo y si quieres compararlo con un tecla de otra marca y tipo para saber cual te conviene según tus necesidades o preferencias escribí un [Desempaquetado de teclado mecánico Glorious GMMK TKL][blogbitix-609] junto con otros buenos modelos de teclados a considerar.
 
-#### Dónde comprar
+### Dónde comprar
 
 El [teclado mecánico DIERYA DK63 se puede comprar en Amazon][amazon-dierya-dk63] a un precio de unos 70 € y algo más barato en los momentos en tiene aplicado un descuento en el precio. Aparte de este modelo la marca tiene disponibles otros modelos de teclado compactos como el [DIERYA DK61E][amazon-dierya-dk61] y el [DIERYA DK61 Pro][amazon-dierya-dk61-pro], ambos DK61 son iguales pero el Pro tiene con conexión inalámbrica también por Bluetooth. El [KEMOVE DK61][amazon-kemove-dk61] es otra buena opción que aunque con un precio un poco mayor combina varias de las mejores cosas de los DIERYA y con mejor calidad.
 
@@ -76,7 +76,7 @@ Si después de leer el artículo decides comprar uno de estos teclados y en el m
 {{< amazon
     tags="keyboard-kemove-dierya" >}}
 
-#### Diferencias entre el teclado DK63 y DK61E
+### Diferencias entre el teclado DK63 y DK61E
 
 Aunque con el tiempo posiblemente uno se acostumbra a usar la combinación de teclas, si una determinada tecla se usa bastante es mejor tener una tecla dedicada que usarla como una combinación de teclas. Y esta es una diferencia importante entre los teclados DK63 y DK61E, el teclado DK63 tiene teclas dedicadas para las fechas de desplazamiento que suelen ser útiles para desplazar la máscara de entrada al escribir texto.
 
@@ -88,7 +88,7 @@ También hay diferencias entre el DK63 y el DK61E en cuanto a los _keycaps_, en 
 
 La última diferencia importante que puede determinar entre que modelo elegir, entre el DK63 o el DK61E, es que el DK63 además de conexión con cable permite la conexión inalámbrica por Bluetooth con hasta 3 dispositivos.
 
-#### Consideraciones a tener en cuenta
+### Consideraciones a tener en cuenta
 
 En este apartado de consideraciones a tener en cuenta se aplican las mismas que para el teclado DK61E. Y es que el DK63 es también un teclado con disposición ANSI en inglés y compacto que no suele ser lo habitual en España que suelen tener disposición ISO en español.
 
@@ -96,9 +96,9 @@ En cuanto a consideraciones específicas del DK63 está que al usarse en modo in
 
 Es compatible con GNU/Linux usando la disposición de teclado _Inglés internacional con teclas muertas por AltGr_, con esta disposición las tildes se escriben con la combinación de teclas _Alt derecho+vocal_. También es compatible con macOS usando la disposición de teclado _US internacional - PC_, con esta disposición las tildes se escriben con la combinación de teclas _Option+e_ para poner primero la tilde y luego la vocal.
 
-### Desempaquetado del teclado mecánico DIERYA DK63
+## Desempaquetado del teclado mecánico DIERYA DK63
 
-#### La caja
+### La caja
 
 La caja tiene un diseño minimalista y simple, la caja en color completamente negro salvo por unos detalles con el logotipo de la marca y el nombre de la marca en letras plateadas con un efecto irisado que cambia de color al contraste de la luz. La caja no muestra el contenido ni tiene ninguna foto de como es el teclado, pero tiene una pequeña leyenda con el modelo del teclado donde se aprecia además el tipo de _switches_, color y tipo de conexión.
 
@@ -115,7 +115,7 @@ Para proteger la caja de daños en el transporte, humedad y polvo y como forma d
     image2="image:dierya-dk63-caja-5.webp" optionsthumb2="200x150" title2="Caja del teclado DIERYA DK63"
     caption="Caja del teclado DIERYA DK63" >}}
 
-#### El contenido de la caja
+### El contenido de la caja
 
 El contenido de la caja se compone de:
 
@@ -138,7 +138,7 @@ Como no es _hot swapable_ no se incluye _switch extractor_ como ocurría en el D
     image2="image:dierya-dk63-contenido-5.webp" optionsthumb2="200x150" title2="Contenido de la caja del teclado DIERYA DK63"
     caption="Contenido de la caja del teclado DIERYA DK63" >}}
 
-#### El teclado
+### El teclado
 
 El teclado es completamente de plástico, en este modelo de color negro, de plástico pero que da sensación de robustez y una calidad adecuada. No tiene las típicas patas para regular la altura pero la disposición sobre la mesa es como la de un teclado con cierta inclinación. El tamaño es exactamente el mismo que el DK61E, tiene un tamaño de 29 cm de ancho, 10 cm de largo, por unos 3 cm en la parte baja y unos 4,5 en la parte alta de altura incluyendo los _keycaps_. Por supuesto es de un tamaño significativamente inferior a un teclado completo e incluso también notablemente inferior que un teclado TKL, que hace que ocupe mucho menos y deje más espacio libre en la mesa para trabajar con documentos o mayor espacio para mover el ratón.
 
@@ -176,7 +176,7 @@ El teclado aunque es compacto tiene las mismas teclas que un teclado completo, h
     image3="image:dierya-dk63-teclado-14.webp" optionsthumb3="200x150" title3="Teclado DIERYA DK63"
     caption="Teclado DIERYA DK63" >}}
 
-#### Los _switches_
+### Los _switches_
 
 Los _switches_ del teclado son de la marca TMKB que son montados en algunos teclados de DIERYA y KEMOVE más desconocida de entre las alternativas de las alternativas más económicas de calidad a los _switches_ de la marca [Cherry MX][cherrymx], y en este ejemplar táctiles _brown_ aunque también se ofrece el switches de tipo lineales y _clicky_. Son eléctricos y el teclado no es _hot swappable_ con lo que no es posible cambiar los _switches_ por los de otro tipo o marca o cambiar algunos de ellos.
 
@@ -185,7 +185,7 @@ Los _switches_ del teclado son de la marca TMKB que son montados en algunos tecl
     image1="image:dierya-dk63-switches-1.webp" optionsthumb1="300x200" title1="Swicthes eléctricos TMKB y estabilizador del DIERYA DK63"
     caption="Swicthes eléctricos TMKB y estabilizador del DIERYA DK63" >}}
 
-#### Los _keycaps_
+### Los _keycaps_
 
 Los _keycaps_ son de plástico ABS de _double shot_ para la serigrafía principal de la tecla y con serigrafía por _pad printing_ para el indicativo de función en aquellas teclas que se puede usar en combinación con la tecla de función. Las teclas son compatibles con la iluminación RGB dejando pasar la luz a través de la serigrafía de doble disparo.
 
@@ -196,7 +196,7 @@ Las _keycaps_ sí se pueden reemplazar pero teniendo en cuenta que algunas tiene
     image1="image:dierya-dk63-keycaps-1.webp" optionsthumb1="300x200" title1="Keycaps del DIERYA DK63"
     caption="Keycaps del DIERYA DK63" >}}
 
-### Análisis y primeras impresiones del teclado mecánico DIERYA DK63
+## Análisis y primeras impresiones del teclado mecánico DIERYA DK63
 
 Mucho de lo que comenté como análisis y primeras impresiones del DK61E también aplican al DK63 como el que sea un teclado completamente montado de fábrica, el que sale un teclado 60% con sus ventajas en cuanto a tamaño y transportabilidad y sus desventajas en cuanto a requerir en algunos casos de usar combinaciones  de teclas, el no tener patas para regular la altura, el que sean un teclado ANSI con disposición en inglés y que hay que hacer para configurarlo y usar las teclas del alfabeto español aún con  disposición en inglés en el sistema operativo que se use ya sea Windows, GNU/Linux o macOS, la iluminación RGB y como configurarla, el sonido de las _keycaps_ y el destacable cable USB mallado tipo C y tipo A reversible.
 
@@ -229,7 +229,7 @@ Finalmente, el interruptor estaría mejor si estuviera más a mano en vez de la 
     image3="image:dierya-dk63-setup-3.webp" optionsthumb3="200x150" title3="Disposición en el escritorio del teclado DIERYA DK63"
     caption="Disposición en el escritorio del teclado DIERYA DK63" >}}
 
-#### Conclusión
+### Conclusión
 
 El DK61E y este DK63 son teclados muy similares en diseño y factor de forma pero tiene algunas diferencias importantes determinantes para elegir un teclado u otro. El precio no es un factor muy relevante ya que ambos modelos de teclado tienen un precio muy similar alrededor de unos 70 €, por lo que la decisión de elegir uno u otro está es si se desea un teclado con las teclas dedicadas de desplazamiento y si se quiere un teclado inalámbrico por Bluetooth en el caso del DK63. En cuanto a la opción para elegir el DK61E está el ser _hot swappable_ para cambiar los _switches_ si mas tarde se quieren de otro tipo o alguno falla, si se prefieren los _switches_ ópticos aunque es difícil notar una gran diferencia entre unos ópticos o eléctricos, si se quieren las teclas de plástico PBT más duraderas y una disposición de teclas igual a las que tiene un teclado de tamaño completo. Dicho de forma más resumida el DK61E tiene unos materiales y construcción de algo más calidad y la característica de ser _hot swappable_, pero el DK61 tiene la conexión dual por cable e inalámbrica Bluetooth y las fechas dedicadas de desplazamiento.
 
@@ -241,7 +241,7 @@ Que el DK63 sea inalámbrico es una característica que no hace mal que la tenga
 
 El teclado DK63 está dentro de la gama media de teclados mecánicos, tiene algunos aspectos mejorables y otros teclados mecánicos quizá los tengan mejores pero seguramente sean más caros, el precio en un producto es otra de sus características y teniendo en cuenta su precio hace del DK63 una buena opción.
 
-#### Análisis en vídeo
+### Análisis en vídeo
 
 En estos vídeos se muestra el teclado en el formato gráfico de vídeo. En YouTube hay varios desempaquetados y análisis de usuarios acerca de este modelo de teclado en los que obtener alguna información adicional o punto de vista diferente.
 
@@ -252,7 +252,7 @@ En estos vídeos se muestra el teclado en el formato gráfico de vídeo. En YouT
 {{< youtube
     video="ypcDeA5wx9o" >}}
 
-### Complementos para el teclado
+## Complementos para el teclado
 
 Al comprar un teclado mecánico puede interesar comprar a la vez otros complementos para el teclado, como un [concentrador USB](https://amzn.to/3Hpch9P) para tener los puertos de conexión cerca especialmente si se suele estar conectando y desconectando dispositivos o el ordenador tiene difícil acceso a los puertos USB estando en la parte trasera del ordenador de torre.
 

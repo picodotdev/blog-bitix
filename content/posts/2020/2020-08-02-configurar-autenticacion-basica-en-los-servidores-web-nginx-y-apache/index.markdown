@@ -31,7 +31,7 @@ Cuando un servidor para el acceso a un recurso requiere autenticación básica e
 
 {{< tableofcontents >}}
 
-### Configurar autenticación básica en el servidor web Nginx
+## Configurar autenticación básica en el servidor web Nginx
 
 La autenticación básica en [Nginx][nginx] se activan añadiendo dos directivas, _auth_basic_ y _auth_basic_user_file_, en el archivo de configuración del sitio web y recurso a proteger. En este caso con la raíz del sitio web _/_ cualquier ruta está protegida con autenticación básica.
 
@@ -49,7 +49,7 @@ Si los datos proporcionados no son correctos se devuelve el código de estado _4
     image2="image:nginx-web.webp" optionsthumb2="300x200" title2="Acceso al recurso solicitado"
     caption="Solicitud de credenciales y acceso al recurso solicitado" >}}
 
-### Configurar autenticación básica en el servidor web Apache
+## Configurar autenticación básica en el servidor web Apache
 
 El comando de Docker para Apache es similar e incluye el archivo de configuración del servidor virtual con el recurso protegido, la clave privada y el certificado que proporcionan cifrado en las comunicaciones con el protocolo HTTPS.
 
@@ -65,7 +65,7 @@ En el caso del servidor web Apache las directivas necesarias a añadir en la con
     image2="image:apache-web.webp" optionsthumb2="300x200" title2="Acceso al recurso solicitado"
     caption="Solicitud de credeciales y acceso al recurso solicitado" >}}
 
-### Cómo crear los archivos de credenciales _htpasswd_
+## Cómo crear los archivos de credenciales _htpasswd_
 
 La autenticación se realiza solicitando el navegador a petición del servidor un usuario y contraseña. En este caso el navegador presenta un diálogo al usuario que una vez introducidos realiza la petición de nuevo con las credenciales proporcionadas. El servidor para un recurso que requiere autenticación comprueba los datos de autenticación enviados y los valida con una pequeña base de datos en un archivo _htpasswd_ que el administrador del servidor ha creado previamente con las credenciales de todos los usuarios.
 
@@ -77,7 +77,7 @@ El resultado del archivo es una línea por credencial creada con el nombre del u
 
 {{< code file=".localhost.htpasswd" language="plain" options="" >}}
 
-### Funcionamiento y cabecera de la autenticación básica
+## Funcionamiento y cabecera de la autenticación básica
 
 El formulario de autenticación solo se presenta una vez una vez introducidas unas credenciales correctas, dado que el protocolo HTTP es un protocolo sin estado el navegador en cada solicitud de cada página y recurso envía la cabecera _Authorization_ que contiene el usuario y contraseña codificadas en base64. Esta cabecera y su valor aunque codificadas no tienen un mecanismo adicional de seguridad por eso es necesario utilizar el protocolo seguro HTTPS cuando se utiliza autenticación básica de modo que los datos incluidos en las cabeceras se transmitan cifrados.
 
@@ -105,7 +105,7 @@ Cuando no se envían credenciales o se envían unas incorrectas el navegador dev
 
 {{< code file="curl-authorization.sh" language="bash" options="" >}}
 
-### Alternativas a la autenticación básica
+## Alternativas a la autenticación básica
 
 La ventaja de la autenticación básica es que es sencilla de implementar pero con algunos inconvenientes a tener en cuenta que son motivo de buscar alternativa más avanzadas aunque también mas complejas. Una desventaja es que los usuarios y contraseñas de las base de datos _htpasswd_ son fijas, por seguridad las contraseñas se deberían rotar cada cierto tiempo para que usuarios que ya no deberían tener acceso tengan conocimiento de la contraseña válida actual, en una empresa es el caso de personas que ya no son empleados pero que si no se rotan las contraseñas seguirían teniendo acceso si no se implementan mecanismos de seguridad adicionales.
 
@@ -121,3 +121,5 @@ Estas desventajas hace de la autenticación básica no adecuada para algunos cas
 * [Autenticación y Autorización (apache)](https://httpd.apache.org/docs/2.4/howto/auth.html)
 * [htpasswd - Manage user files for basic authentication](https://httpd.apache.org/docs/2.4/en/programs/htpasswd.html)
 {{< /reference >}}
+
+{{% /post %}}

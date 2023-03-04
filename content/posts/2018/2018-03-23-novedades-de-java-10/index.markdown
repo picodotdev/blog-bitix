@@ -27,7 +27,7 @@ Lo mejor de este nuevo calendario de publicaciones cada seis meses es que las em
 
 {{< tableofcontents >}}
 
-### Introducción
+## Introducción
 
 En Java es un principio no añadir características según lo que está de moda sino pensando en décadas futuras. Java 10 tiene una lista más reducida de cambios que Java 9 pero importantes y significativos. Java es el último en unirse a la fiesta de la inferencia de tipos pero ha sido de forma intencionada ya que el coste de implementarla de forma incorrecta supone un alto coste que hay que mantener en adelante. Otras ideas que ha sido implementadas el lenguajes de programación funcional y están listas para su uso masivo tomarán su propio camino en futuras versiones de Java por ejemplo _pattern matching_ y _value types_.
 
@@ -51,9 +51,9 @@ La lista más relevante de es la siguiente:
 * 319: [Root Certificates](http://openjdk.java.net/jeps/319), se han añadido varios certificados raíz al _keystore_ incluído para permitir que las conexiones TLS funcionen por defecto.
 * 322: [Time-Based Release Versioning](http://openjdk.java.net/jeps/322)
 
-### Nuevas características
+## Nuevas características
 
-#### Inferencia de tipos para variables locales
+### Inferencia de tipos para variables locales
 
 De las novedades la inferencia de tipos para variables locales es la más destacada en cuanto a cambios en el lenguaje con la adición de la nueva palabra reservada _var_, esto ayuda a no tener que repetir varias veces los tipos en la construcción de un objeto. En las _lambdas_ los parámetros no es necesario declararlos infiriéndose de la interfaz que implementan. La inferencia de tipos es la idea que permite al compilador obtener el tipo estático sin que sea necesario escribirlo de forma explícita.
 
@@ -95,7 +95,7 @@ La existencia de _var_ no significa que haya de usarse de forma indiscriminada p
 
 Los entornos integrados de desarrollo tardarán un tiempo en implementar la inferencia de tipos para variables locales hasta que lancen nuevas versiones.
 
-### Otras novedades
+## Otras novedades
 
 El tiempo para iniciar el interprete REPL de [JShell](https://docs.oracle.com/javase/9/jshell/introduction-jshell.htm) ha sido reducido significativamente especialmente en casos donde se inicia con un archivo que incluye varios _snippets_.
 
@@ -107,7 +107,7 @@ Se añade el método [Optional.orElseThrow()](javadoc10:java/util/Optional.html#
 
 Algunas [otras características ya obsoletas se han eliminado](https://www.oracle.com/technetwork/java/javase/10-relnote-issues-4108729.html#Removed) y [otras se han marcado como _deprecated_](https://www.oracle.com/technetwork/java/javase/10-relnote-issues-4108729.html#Deprecated).
 
-### El posible futuro JDK 11+
+## El posible futuro JDK 11+
 
 Está planificado en seis meses después de Java 10 y con soporte extendido, el soporte de Java 10 durará tan solo hasta 2018.09, el de Java 11 al ser una _LTS_ durará un periodo de 8 años hasta el 2026.09.
 

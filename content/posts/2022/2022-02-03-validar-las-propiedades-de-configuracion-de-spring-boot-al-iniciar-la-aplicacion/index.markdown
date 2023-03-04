@@ -27,7 +27,7 @@ La configuración de una aplicación es otra forma de datos que un programa util
 
 {{< tableofcontents >}}
 
-### Cómo validar propiedades de configuración
+## Cómo validar propiedades de configuración
 
 La configuración de una aplicación son simplemente variables a la que se les da un nombre y a través del cual se recupera un valor. El programa no tiene hardcodeado en el código el valor e incluyéndose en un archivo de configuración permite cambiarlo sin cambiar el código.
 
@@ -37,7 +37,7 @@ El _framework_ Spring proporciona varias funcionalidades útiles para las aplica
 
 Aunque no sean validaciones complejas son útiles ya que normalmente las variables las crean los desarrolladores pero al desplegar la aplicación o tener que cambiar algún valor puede que lo realicen personas con el rol de sistemas que quizá no conozcan tan en detalle las variables de configuración existentes y sus reglas de validación. Al añadir las validaciones si alguna falla se obtiene un mensaje de error bastante descriptivo de cual es el problema de configuración.
 
-### Ejemplo de código
+## Ejemplo de código
 
 Una forma de recuperar los valores de configuración en una aplicación de Spring es trasladando los valores de los archivos de configuración a clases Java que contengan sus valores y sean fácilmente usables desde el lenguaje Java. Es en estas clases Java donde se colocan las anotaciones  de validación.
 

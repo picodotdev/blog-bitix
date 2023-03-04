@@ -28,19 +28,19 @@ Usar estos dos comandos directamente ya no es necesario pero como curiosidad com
 
 {{< tableofcontents >}}
 
-### Estructura de directorios de un proyecto
+## Estructura de directorios de un proyecto
 
 Las herramientas de construcción Maven y Gradle siguen una convención en la estructura de directorios y archivos para los proyectos Java. Esta convención proporciona que la estructura de directorios sea la misma en todos los proyectos Java y hace innecesaria una configuración específica para cada proyecto lo que hace a los proyectos más sencillos y fáciles de empezar. El código fuente se ubica en el directorio _src/main/java_ y las clases compiladas se generan en el directorio _target_ o _build_.
 
 {{< code file="tree.sh" language="bash" options="" >}}
 
-### El programa Hola Mundo en Java
+## El programa Hola Mundo en Java
 
 El siguiente es el programa mínimo de Java similar al _Hola Mundo_ por el que se suele empezar a programar en cualquier lenguaje de programación, al ejecutarse simplemente emite un mensaje en la consola. El método _main_ es un método estático, con un ámbito de visibilidad público, está dentro de una clase, recibe un _array_ de _strings_ con los argumentos con los que ha invocado su ejecución y retorna _void_. El método _System.out.println()_ recibe un _string_ y lo emite en la salida estándar del programa.
 
 {{< code file="Main.java" language="java" options="" >}}
 
-### Comando para compilar código fuente Java
+## Comando para compilar código fuente Java
 
 Para compilar el código fuente Java se usa el compilador de Java, el compilador de Java es un programa que a partir del código fuente genera archivos de _bytecode_, el programa y comando del compilador de Java es _javac_.
 
@@ -48,14 +48,14 @@ Con el parámetro _-classpath_ se indica la ubicación de las librerías o depen
 
 {{< code file="javac.sh" language="bash" options="" >}}
 
-### Comando para ejecutar un programa Java
+## Comando para ejecutar un programa Java
 
 Una vez generados los archivos de _bytecode_ a partir de la compilación del código fuente su ejecución se realiza con el comando _java_ donde hay que indicar las ubicaciones del los archivos _class_ y las librerías _jar_ necesarias que necesiten, la clase principal con el punto de entrada del programa que contenga un método _public static void main(String[] args)_ y los parámetros del programa que se reciben en el parámetro _args_ del método _main_. En la ejecución del programa la máquina virtual de Java interpreta el _bytecode_ que consiste en traducir a código máquina ejecutable por el procesador del sistema anfitrión.
 
 {{< code file="java.sh" language="bash" options="" >}}
 {{< code file="java-run.sh" language="bash" options="" >}}
 
-### Comando para crear una librería Java ejecutable
+## Comando para crear una librería Java ejecutable
 
 La distribución de los archivos _class_ se suele realizar usando librerías _jar_ y estas se construyen usando el comando _jar_. El [archivo de manifiesto](https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html) es un descriptor en el que se puede indicar la clase de entrada sin tener que especificarla en el comando _java_ haciendo los archivo _jar_ similar a un ejecutable.
 

@@ -32,7 +32,7 @@ Este artículo contiene las herramientas básicas para disponer del entorno mín
 
 {{< tableofcontents >}}
 
-### Libros sobre Java para aprender
+## Libros sobre Java para aprender
 
 Una buena forma de aprender a programar en un lenguaje es utilizando un libro específico sobre el lenguaje, un libro que comience si es necesario por los fundamentos del lenguaje considerando que el lector no tiene conocimientos previos en el lenguaje ni en la programación. Los libros tienen un contenido bien estructurado y son más didácticos que artículos individuales.
 
@@ -42,7 +42,7 @@ De Java hay mucha documetación y libros con los que aprender a programar, desde
     linkids="2a437ba4126a093af22af88c893ac407,3a13c135d5cd40ca21d3f1dd853ab2a3,2256857b147eea05bc79aef83d2548fe"
     asins="0131872486,0134685997,1617291994" >}}
 
-### El programa Hola Mundo en Java
+## El programa Hola Mundo en Java
 
 El primer programa que se suele escribir al empezar a aprender un lenguaje de programación, es el programa _Hola Mundo_ que emite en la consola simplemente un mensaje. En Java es el siguiente.
 
@@ -57,7 +57,7 @@ Las sentencias de control son los elementos básicos con los que se construyen l
 * [Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)][blogbitix-494]
 * [4 formas de hacer un bucle for en Java][blogbitix-247]
 
-### El JDK y la máquina virtual de Java
+## El JDK y la máquina virtual de Java
 
 En Java la herramienta básica que se necesita para compilar programas y ejecutarlos es un JDK que incluye el compilador que transforma el código fuente en _bytecode_ independiente de la arquitectura del procesador de la máquina ya sea x86, Arm, PowerPC o RISC-V y sistema operativo [Windows][windows], [GNU][gnu]/[Linux][linux], [macOS][macos] o [FreeBSD][freebsd]. 
 
@@ -79,7 +79,7 @@ El resultado de la ejecución del programa es un mensaje en la terminal.
 
 {{< code file="System.out" language="bash" options="" >}}
 
-### La herramienta SDKMAN
+## La herramienta SDKMAN
 
 A lo largo del tiempo Java ha publicado varias versiones del lenguaje y del JDK. Con el calendario de publicaciones aplicado desde la versión 9 se publica una nueva versión de Java cada seis meses y una versión de soporte a largo plazo cada tres años siendo la 11 la primera LTS en el 2018/09 y la 17 en el 2021/09.
 
@@ -97,7 +97,7 @@ La herramienta SDKMAN se instala y usa con los siguientes comandos.
 {{< code file="sdk-usage.sh" language="bash" options="" >}}
 {{< code file="sdk-commands.sh" language="bash" options="" >}}
 
-### La herramienta de construcción Gradle
+## La herramienta de construcción Gradle
 
 En programas y proyectos grandes con muchas clases no se usa el compilador del JDK directamente y su comando para compilar las clases sino que se suele utilizar una herramienta de construcción, una de ellas es [Maven][maven] que con un archivo de descripción del proyecto en formato XML y siguiendo varias convenciones compila el programa, otra herramienta es Gradle que a diferencia de Maven su archivo descriptor de proyecto es con el lenguaje Groovy o Kotlin menos verboso y propenso a errores que el XML.
 
@@ -124,7 +124,7 @@ Además, Gradle permite crear la estructura básica de directorios y archivos ne
 
 * [Iniciar rápido un proyecto de Java con Gradle o de Spring con Spring Initializr][blogbitix-245]
 
-### Ejecutar un programa Java desde el código fuente
+## Ejecutar un programa Java desde el código fuente
 
 Para simplificar el primer acercamiento al lenguaje Java desde la versión 11 de Java se ofrece la posibilidad de ejecutar un archivo de código fuente Java sin necesidad de compilar el código previamente de forma explícita. El propio comando [java][java-command] ofrece esta posibilidad. La limitación está en que el programa Java ha de estar contenido en un único archivo de código fuente aunque con la posiblidad de contener múltiples clases en el mismo archivo y no puede tener dependencias de librerías de terceros.
 
@@ -136,7 +136,7 @@ La consola REPL de Java se inicia con el comando _jshell_ y sirve para hacer peq
 
 {{< code file="jshell.sh" language="bash" options="" >}}
 
-### Entorno integrado de desarrollo
+## Entorno integrado de desarrollo
 
 Escribir código el código fuente de un programa es posible con cualquier editor de texto incluído el básico que incluyen los sistemas operativos de escritorio como Bloc de notas en Windows o Gedit del entorno de escritorio [GNOME][gnome] y GNU/Linux, también con editores basados en consola como Nano o Vim.
 
@@ -149,7 +149,7 @@ Sin embargo, en la plataforma Java la mayor parte de los programadores utilizamo
 
 Son muchos los beneficios de usar un IDE con un lenguaje compilado y fuertemente tipado como Java. Los IDE aprovechan estas características para proporcionar errores precisos y descriptivos de compilación según se escriben las líneas de código, asistencia de código en métodos disponibles de una clase que aún siendo Java un lenguaje verboso permite escribir código pulsando pocas teclas, _refactors_ de código que permiten cambiar el código existente de forma automatizada evitando mucho trabajo manual que aumenta dramáticamente la productividad, integran una terminal para ejecutar comandos sin necesidad de salir del IDE e integración con las herramientas de construcción como Gradle y de pruebas unitarias automatizadas entre otras muchas funcionalidades muy útiles.
 
-### Distribuciones GNU/Linux
+## Distribuciones GNU/Linux
 
 Uno de los beneficios del software libre y del código abierto es que normalmente es gratuito, no tienen costosas licencias comerciales para usar el software lo que permite usarlo sin grandes barreras ya sea con fines educativos o comerciales.
 

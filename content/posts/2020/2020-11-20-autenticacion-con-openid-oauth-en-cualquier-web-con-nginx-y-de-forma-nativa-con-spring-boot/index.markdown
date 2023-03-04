@@ -27,13 +27,13 @@ Para administrar de forma centralizada los usuarios o credenciales de las aplica
 
 {{< tableofcontents >}}
 
-### Qué es OpenID Connect
+## Qué es OpenID Connect
 
 OpenID Connect es una capa de identidad que funciona sobre el [protocolo OAuth][oauth] 2.0. Permite a los clientes verificar la identidad del usuario basándose en la autenticación realizada por el servidor de autorización, así como obtener información básica del perfil del usuario. El protocolo funciona con principios similares a REST lo que lo hace interoperable con cualquier sistema.
 
 Son varios los proveedores que ofrecen autenticación con sus cuentas, algunos de ellos son [Google][google], [GitHub][github], [Azure Active Directory][microsft-azure-active-directory], [AWS Cognito][amazon-cognito] u [Okta][okta]. Para implementar el servicio de autenticación y autorización OAuth gestionando sin depender de esas otras organizaciones está [Keycloak][keycloak].
 
-### Autenticación OpenID/OAuth con Nginx
+## Autenticación OpenID/OAuth con Nginx
 
 Para añadir autenticación OpenId Connect en una aplicación web se suele configurar con el servidor web actuando de _proxy_ y un _proxy_ de OAuth. La función del servidor web y el _proxy_ es requerir que el usuario esté autenticado en el proveedor de autenticación. De este modo entre el usuario y la página web están el servidor web, el intermediario de OAuth y el proveedor de autenticación, el esquema es el siguiente.
 
@@ -85,11 +85,11 @@ Al implementar el ejemplo me he encontrado con dos mensajes de error, _OAuth2: u
 
 {{< code file="docker-compose.yml" language="yaml" options="" >}}
 
-### Autenticación OpenID/OAuth con Apache
+## Autenticación OpenID/OAuth con Apache
 
 En el caso del servidor web [Apache HTTPD][apache-httpd] la solución que he encontrado es usar el módulo [mod_auth_openidc](https://www.mod-auth-openidc.org/).
 
-### Autenticación OpenID en una aplicación Spring Boot
+## Autenticación OpenID en una aplicación Spring Boot
 
 Las aplicaciones de Java que usan [Spring Boot][spring-boot] a través de la dependencia de [Spring Security][spring-security] que soporta OpenID Connect con el que añadir soporte a la aplicación fácilmente con un proveedor de autenticación. En este ejemplo se usa Google como proveedor de autenticación , [Keycloak][keycloak] es otro [proveedor de autenticación OAuth para autenticar un servicio REST][blogbitix-180].
 
@@ -121,7 +121,7 @@ Al acceder a una de las URLs del cliente se solicita la autenticación con una c
     image1="image:spring-boot-google.webp" optionsthumb1="300x200" title1="Aplicación de Spring autenticada con una cuenta de Google"
     caption="Aplicación de Spring autenticada con una cuenta de Google" >}}
 
-### Configuración de autenticación con cuentas de Google
+## Configuración de autenticación con cuentas de Google
 
 En el ejemplo de este artículo muestro la autenticación con Google como proveedor de autenticación Oauth 2 pero perfectamente podría ser otro como Keycloak, en todos básicamente se trata de obtener las credenciales _client-id_ y _client-secret_ que permiten validar la autenticación tanto en estos casos Nginx como la aplicación de Spring Boot. Con una cuenta de Google y desde la [consola para desarrolladores](https://console.developers.google.com/) en el apartado credenciales es posible generar las credenciales para la autenticación de usuarios en una aplicación. Estas credenciales son los mencionados _client-id_ y _client-secret_.
 

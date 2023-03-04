@@ -27,7 +27,7 @@ Después de algunos aplazamientos principalmente por implementar la modularizaci
 
 {{< tableofcontents >}}
 
-### Introducción
+###  Introducción
 
 Pero Java 9 además de los módulos incorpora en la plataforma otros cambios destacables. Esta no es una lista exhaustiva pero si contiene muchas de ellas.
 
@@ -45,9 +45,9 @@ Pero Java 9 además de los módulos incorpora en la plataforma otros cambios des
     gallery="false"
     image1="image:duke-java-9.webp" optionsthumb1="300x250" title1="Duke Java 9" >}}
 
-### Nuevas características
+## Nuevas características
 
-#### Métodos factoría para colecciones
+### Métodos factoría para colecciones
 
 Aún Java no incorpora en el lenguaje una forma de definir como literales elementos tan comunes como listas, conjuntos o mapas. Como alternativa se proporcionan métodos factoría estáticos para crear este tipo de estructuras de datos usando métodos por defecto en sus respectivas interfaces. Además, estos métodos crean colecciones inmutables.
 
@@ -57,11 +57,11 @@ Aparte de definir este tipo de colecciones de una forma mucho más sencilla que 
 
 {{< iframe src="https://players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582422289001" size="640x360" >}}
 
-#### Mejoras en la clase _Optional_
+### Mejoras en la clase _Optional_
 
 Los métodos [or()](javadoc9:java/util/Optional.html#or-java.util.function.Supplier-) y [ifPresentOrElse()](javadoc9:java/util/Optional.html#ifPresentOrElse-java.util.function.Consumer-java.lang.Runnable-) así como [stream()](javadoc9:java/util/Optional.html#stream--) mejoran la experiencia de uso en esta clase que contiene o no un objeto. El método _or()_ en caso de no contener el _Optional_ un objeto permite proporcionar un _Optional_ alternativo. Los métodos _ifPresent()_ y _ifPresentOrElse()_ permiten realizar una acción con el objeto del opcional si está presente u otra acción con un valor vacío si no está presente. El método _stream()_ convierte el _Optional_ en un _stream_ de cero o un elemento.
 
-#### Mejoras en la API de _streams_
+### Mejoras en la API de _streams_
 
 Los nuevos métodos de los _streams_ [dropWhile()](javadoc9:java/util/stream/Stream.html#dropWhile-java.util.function.Predicate-), [takeWhile()](javadoc9:java/util/stream/Stream.html#takeWhile-java.util.function.Predicate-) permiten descartar o tomar elementos del _stream_ mientras se comprueba una condición. El método [ofNullable()](javadoc9:java/util/stream/Stream.html#ofNullable-T-) devuelve un _stream_ de un elemento o vacío dependiendo de si el objeto es _null_ o no. Los métodos [iterate()](javadoc9:java/util/stream/Stream.html#iterate-T-java.util.function.Predicate-java.util.function.UnaryOperator-) permiten generar un secuencia de valores similar a un bucle _for_.
 
@@ -69,7 +69,7 @@ También se añaden varias interfaces para el uso de _reactive streams_.
 
 * [Ejemplo de Reactive Streams en Java][blogbitix-390]
 
-#### REPL con jshell
+### REPL con jshell
 
 Otra de las características destacables es la incorporación de [la herramienta JShell][blogbitix-265] para evaluar código siguiendo el patrón _Read-Evaluate-Print-Loop_ o REPL para hacer pruebas de código sin la necesidad de un IDE, una herramienta de construcción o toda la infraestructura de un proyecto. Esta herramienta es el comando _jshell_.
 
@@ -84,7 +84,7 @@ Se pueden introducir expresiones que son evaluadas y comandos precedidos por el 
 
 {{< iframe src="https://players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582429016001" size="640x360" >}}
 
-#### jlink para generar _runtimes_ mínimos
+### jlink para generar _runtimes_ mínimos
 
 Java 8 proporciona varios _runtimes_ reducidos con los _compact profiles_ que contienen algunas clases menos de las que incluye el JDK completo. Sin embargo, estos _runtimes_ están preconfigurados y las aplicaciones deben optar por el que ofrezca todas las clases que necesita.
 
@@ -94,29 +94,29 @@ Esto es especialmente útil para los contenedores de [Docker][docker] y los ento
 
 {{< iframe src="https://players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582437011001" size="640x360" >}}
 
-#### Concurrencia
+### Concurrencia
 
 Se añade un _framework_ con un conjunto de clases para programación reactiva de publicación-subscripción con las clases [Flow](javadoc9:java/util/concurrent/Flow.html), [Flow.Processor](javadoc9:java/util/concurrent/Flow.Processor.html), [Flow.Subscriber](javadoc9:java/util/concurrent/Flow.Subscriber.html), [Flow.Publisher](javadoc9:java/util/concurrent/Flow.Processor.html) y [Flow.Subscription](javadoc9:java/util/concurrent/Flow.Processor.html). La clase _Subsription_ posee dos métodos: [cancel()](javadoc9:java/util/concurrent/Flow.Subscription.html#cancel--) y [request()](javadoc9:java/util/concurrent/Flow.Subscription.html#request-long-) para dejar de recibir mensajes y solicitar recibir _n_ mensajes en la siguientes llamadas de [onNext​()](javadoc9:java/util/concurrent/Flow.Subscriber.html#onNext-T-).
 
 El método [copy()](javadoc9:java/util/concurrent/CompletableFuture.html#copy--) de la clase [CompletableFuture](javadoc9:java/util/concurrent/CompletableFuture.html) permite obtener un copia completándose con el mismo valor cuando la operación se completa normalmente.
 
-#### Variable Handles
+### Variable Handles
 
 Una de las justificaciones de la modularidad es el uso que hasta ahora se le ha dado a la famosa clase interna del JDK _sun.misc.Unsafe_. Para proporcionar parte de la funcionalidad de esta clase en una API pública se introduce la clase [VarHandle](javadoc9:java/lang/invoke/VarHandle.html) para referenciar a variables estáticas y no estáticas así como a _arrays_. Estas instancias se obtienen mediante la clase [MethodHandle.Lookup](javadoc9:java/lang/invoke/MethodHandles.Lookup.html). Una vez obtenida una instancia de _VarHandle_ se pueden realizar operaciones de bajo nivel sobre la variable que referencia como operaciones atómicas comparar y establecer pero sin la sobrecarga de rendimiento con las clases equivalentes del paquete [java.util.concurrent.atomic](javadoc9:java/util/concurrent/atomic/package-summary.html).
 
 Para la mayoría de los programadores esto no les afectará directamente pero sí será una mejora para los desarrolladores de librerías importantes muy populares que si usan la clase _Unsafe_ y deberían aprovechar estas nuevas capacidades para dejar de usar la clase interna del JDK en la medida de lo posible.
 
-#### Actualizaciones en la API para procesos
+### Actualizaciones en la API para procesos
 
 Ahora es posible obtener el identificador del proceso o _pid_ con el método [pid()](javadoc9:java/lang/Process.html#pid--) y los procesos hijos y descendientes con los métodos [children​()](javadoc9:java/lang/Process.html#children--) y [descendants​()](javadoc9:java/lang/Process.html#descendants--) respectivamente.
 
-#### StackWalker
+### StackWalker
 
 La clase [StackWalker](javadoc9:java/lang/StackWalker.html) permite obtener un _stream_ secuencial de [StackWalker.StackFrames](javadoc9:java/lang/StackWalker.StackFrame.html) del _thread_ actual para procesar la pila de llamadas o _stacktrace_.
 
 {{< code file="StackWalker.java" language="java" options="" >}}
 
-#### Strings compactos
+### Strings compactos
 
 Internamente los la clase [String](javadoc9:java/lang/String.html) contiene un array de _char_, cada _char_ se representa en formato con la codificación UTF-8 ocupando 16 bits o 2 bytes por cada caracter. Para cadenas en aquellos lenguajes como inglés los caracteres pueden ser representados usando un único _byte_.
 
@@ -126,7 +126,7 @@ Lo mejor de todo es que esta optimización será transparente para los programad
 
 * [Compact Strings In Java 9](https://www.javagists.com/compact-strings-java-9)
 
-#### Recolector de basura G1 por defecto
+### Recolector de basura G1 por defecto
 
 Se cambia el recolector de basura por defecto al llamado _G1_ optimizado para una balance adecuado entre alto rendimiento y baja latencia. En los siguientes artículos se explica de forma más detallada. Al igual que los _string_ compactos para la mayoría de los programadores será un cambio transparente que no tenga repercusión en la forma de programar las aplicaciones.
 
@@ -135,23 +135,23 @@ Se cambia el recolector de basura por defecto al llamado _G1_ optimizado para un
 
 {{< iframe src="https://players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582428191001" size="640x360" >}}
 
-#### Identificador para variables _
+### Identificador para variables _
 
 El identificador _\__ queda reservado para en un futuro usarlo en parámetros a los que no se les dé un uso y no sean relevantes como por ejemplo en las _lambdas_. También se evaluará en el [proyecto Amber](http://openjdk.java.net/projects/amber/) usar este identificador para tipos diamante parciales como _Foo\<String, \_\>_ o en referencias a métodos _foo.\<String, \_\>bar()_.
 
 * [Project Amber: The Future of Java Exposed](http://blog.takipi.com/project-amber-the-future-of-java-exposed/)
 
-#### Métodos privados en interfaces
+### Métodos privados en interfaces
 
 Ahora se pueden crear métodos privados en interfaces como utilidad a las implementaciones de los métodos por defecto.
 
-#### Mejor _try-with-resource_
+### Mejor _try-with-resource_
 
 Ahora las variables finales o efectivamente finales pueden ser colocadas en los bloques _try-with-resource_ simplificando  algunos usos.
 
 {{< code file="TryWithResources.java" language="java" options="" >}}
 
-#### Javadoc
+### Javadoc
 
 Ahora la documentación Javadoc se genera con marcado de HTML 5 e incluye un cuadro de búsqueda para encontrar más fácilmente tipos y métodos.
 
@@ -160,7 +160,7 @@ Ahora la documentación Javadoc se genera con marcado de HTML 5 e incluye un cua
     image1="image:javadoc.webp" optionsthumb1="300x200" title1="Javadoc"
     caption="Javadoc" >}}
 
-#### Archivos Jar multiversión
+### Archivos Jar multiversión
 
 Los desarrolladores de librerías para dar soporte a varias versiones de Java debían optar entre generar un artefacto para cada versión o un único archivo _jar_ limitándose a usar la mínima versión soportada y sin aprovechar las nuevas capacidades de siguientes versiones. Esto es un impedimento para el uso de nuevas versiones.
 
@@ -170,7 +170,7 @@ Con Java 9 se puede generar un único archivo _jar_ con algunas clases para una 
 
 * [JEP 238: Multi-Release JAR Files](http://openjdk.java.net/jeps/238)
 
-### Nuevo modelo de publicación
+## Nuevo modelo de publicación
 
 A partir de la publicación de Java 9 se cambia el modelo de publicación de nuevas versiones optando por una basada en calendario en vez de una por características a incluir. El caso de versiones que han de incluir las características previstas ocasiona el problema que si una se retrasa provoca un retraso en la versión. Con el modelo basado en fechas fijas preestablecidas la versión se liberará con aquellas características que estén listas en la fecha planificada de publicación sin ser retrasadas por aquellas que no.
 

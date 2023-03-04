@@ -27,7 +27,7 @@ La lista de características de Java 18 no es muy amplia pero hay algunas destac
 
 {{< tableofcontents >}}
 
-### Introducción
+## Introducción
 
 Con el paso de los meses muchas librerías y entornos de desarrollo irán publicando nuevas versiones compatibles con Java 18 y añadiendo soporte. Cuatro de las características más destacada son la utilización de la codificación de caracteres UTF-8 por defecto, la inclusión de un pequeño servidor web, soporte para añadir fragmentos de código en la documentación Javadoc y finalmente marcar para ser eliminada en una siguiente versión la finalización de objetos. Otras mejoras son nuevas vistas previas de características que están disponibles para obtener comentarios pero que en una siguiente versión podrían cambiar.
 
@@ -63,13 +63,13 @@ Con el nuevo calendario de publicaciones se observa claramente que los desarroll
     image1="image:java-releases.webp" optionsthumb1="650x450" title1="Publicaciones de Java"
     caption="Publicaciones de Java" >}}
 
-### Nuevas características
+## Nuevas características
 
-#### Codificación de caracteres UTF-8 por defecto
+### Codificación de caracteres UTF-8 por defecto
 
 Las operaciones que hacían entrada y salida como en el caso del sistema de archivos se utilizaban por defecto si no se indicaba uno explícitamente la codificación del sistema operativo. Dado que cada sistema operativo es capaz de definir su codificación de caracteres esto creaba algunas inconsistencias cuando las aplicaciones se ejecutan en diferentes sistemas operativos. Ahora en caso de que no se indique una codificación de caracteres se utiliza UTF-8 ofreciendo una mejor consistencia entre las diferentes plataformas.
 
-#### Servidor web simple
+### Servidor web simple
 
 Se añade una utilidad de línea de comandos y una API para iniciar un sencillo servidor web para archivos estáticos. La finalidad es que no haya que recurrir a utilidades externas al JDK y sirva para hacer pruebas. No es su intención reemplazar servidores web más completos como [Apache][apache-httpd] o [Nginx][nginx] ni ofrece funcionalidades dinámicas como un contenedor de _servlets_ como [Tomcat][tomcat].
 
@@ -82,7 +82,7 @@ Además de la línea de comandos se ofrece una API para iniciar el servidor web 
 
 * [Working with the Simple Web Server](https://inside.java/2021/12/06/working-with-the-simple-web-server/)
 
-#### Fragmentos de código en comentarios Javadoc
+### Fragmentos de código en comentarios Javadoc
 
 Algunos de los comentarios de Javadoc incluyen ejemplos de código. Hasta ahora los fragmentos de código insertaban con el _taglet_ _@code_ que tenía varias deficiencias como no ofrecer resaltado de sintaxis, no poder incluir fragmentos de código de archivos existentes con lo que puede quedar obsoleto y no poder hacer pruebas unitarias sobre este código con lo que podría no funcionar.
 
@@ -94,38 +94,38 @@ Los fragmentos de código no están limitados a archivos de código Java sino qu
 
 * [Programmer's Guide to Snippets](https://docs.oracle.com/en/java/javase/18/code-snippet/index.html)
 
-#### Reimplementación de la reflexión con manejadores de métodos
+### Reimplementación de la reflexión con manejadores de métodos
 
 Se reimplementan varias funcionalidades relacionadas con la reflexión utilizando los manejadores de eventos con la intención de facilitar el mantenimiento del JDK. Los _MethodHandlers_ ofrecen una alternativa a la reflexión con mejor rendimiento a la vez que es más legible. Es un cambio interno más para los desarrolladores del JDK que para los usuarios.
 
 * [MethodHandles](javadoc18:java.base/java/lang/invoke/MethodHandles.html)
 * [MethodHandle](javadoc18:java.base/java/lang/invoke/MethodHandle.html)
 
-#### Proveedor para resolver direcciones IP
+### Proveedor para resolver direcciones IP
 
 Hasta ahora el JDK utilizaba el mecanismo del sistema operativo para resolver direcciones IP. Este es compartido por todas las aplicaciones y la operación de resolución es bloqueante que es un problema para la incorporación de los _threads_ ligeros del [project Loom](http://openjdk.java.net/projects/loom/). Se ha añadido un mecanismo extensible para proporcionar otras formas de resolución y soportar nuevos protocolos como DNS sobre QUIC, TLS y HTTPS. Ahora las aplicaciones tiene más control sobre el mecanismo de resolución y es útil en el contexto de pruebas automatizadas.
 
-### Nuevas características en vista previa
+## Nuevas características en vista previa
 
 Como ya es habitual en el JDK se van incluyendo algunas características en modo vista previa que pueden ser utilizadas pero que en una siguiente versión y el código que las usen deberá ser modificado. Se ofrecen para que los usuarios puedan experimentar con ellas y los desarrolladores obtengan comentarios y si es necesario hacer cambios en siguientes versiones.
 
-#### Vector API
+### Vector API
 
 Se proporciona una nueva versión de la Vector API que permite aprovechar las instrucciones SIMD de los procesadores con una API de Java común  para todas las arquitecturas de procesadores. Se aprovechan las características disponibles de los procesadores y en aquellos que no tengan alguna se ofrece un modo de funcionamiento degradado.
 
 En esta nueva versión se soportan las instrucciones _Scalar Vector Extension_ (SVE) de la plataforma [ARM][arm]. También se mejora el rendimiento de las operaciones que aceptan enmascaramiento en las arquitecturas hardware que soportan enmascaramiento.
 
-#### _Foreign Function & Memory API_
+### _Foreign Function & Memory API_
 
 Esta API permite acceder a memoria de procesos externos y utilizar librerías programadas en otros lenguajes como una alternativa más fácil de usar, de mayor rendimiento, más general para diferentes arquitecturas y más simple que la anterior alternativa con JNI. En esta nueva versión se mejora la API para soportar y facilitar operaciones con diferentes tipos y accesos a memoria.
 
-### _Pattern Matching_ para las sentencias _switch_
+## _Pattern Matching_ para las sentencias _switch_
 
 El _parttern matching_ en las sentencias _switch_ permite al compilador comprobar de la expresión del _switch_ contra los casos de la expresión del _switch_. En esta nueva revisión de esta característica el compilador lanza un error en caso de que un patrón domine al siguiente, sea más general siempre se cumpla antes que uno menos general. Ahora también el compilador es más preciso al comprobar la completitud de todos casos del _switch_ en las clases _sealed_.
 
-### Otros cambios
+## Otros cambios
 
-#### Finalización de objetos marcado para ser eliminado
+### Finalización de objetos marcado para ser eliminado
 
 Java es un lenguaje que ha ofrecido recolección de basura desde las primeras versiones. Los programadores nunca han tenido que liberar la memoria de los objetos de forma explícita sino que de esta tarea se encarga la máquina virtual de Java. Pero también Java desde las primeras versiones ha ofrecido un mecanismo para la finalización de objetos que el tiempo ha demostrado que tiene varios fallos de diseño que no lo hacen útil y se desaconseja su utilización.
 
@@ -135,7 +135,7 @@ Por los defectos anteriores la eliminación de la finalización de objetos en Ja
 
 Esto solo impactará a algunos usuarios que realicen tareas avanzadas en las que necesiten la finalización de objetos, no es algo que en circunstancias normales se use. La alternativa a la finalización de objetos es usar la sentencia _try-with-resources_ y en los objetos que tengan un ámbito mayor de vida utilizar la clase [Cleaner](javadoc18:java.base/java/lang/ref/Cleaner.html) que permite asociar acciones de finalización a una referencia de objeto cuando esta se convierte en una [referencia _phantom_](javadoc18:java.base/java/lang/ref/PhantomReference.html).
 
-#### Otros cambios
+### Otros cambios
 
 Los anteriores son los cambios más destacados de Java 18 pero otro buen número de cambios menores e internos en el JDK. En las notas de publicación se incluye una lista detallada de todos.
 

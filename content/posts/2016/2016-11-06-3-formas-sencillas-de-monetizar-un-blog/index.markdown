@@ -21,7 +21,7 @@ Lo que más cuesta de tener un blog es el tiempo que requiere escribir los artí
 
 El tiempo de dedicación que requiere un blog y los gastos que genera son dos motivos por los que un blog puede ser abandonado al cabo de unos meses o pocos años. Para minimizar el problema de los costes o conseguir otra motivación podemos obtener ingresos de algunas formas sencillas.
 
-### Publicidad AdSense y enlaces de afiliado de Amazon
+## Publicidad AdSense y enlaces de afiliado de Amazon
 
 En mi caso actualmente con unas 25K páginas vistas al mes tengo uno ingresos de 20 €/mes con [AdSense][google-adsense] (hasta hace pocos meses conseguía 12 €/mes) y unos 30 €/año por los enlaces de [afiliado de Amazon][amazon-afiliados] cuando alguien hace una compra a través del enlace obtenemos una pequeña comisión, pueden ser libros, películas, aparatos electrónicos, ropa, ... cualquier artículo de una de las mayores y populares tiendas de comercio electrónico como [Amazon][amazon-affiliate] que esté relacionado con la temática del blog o del artículo donde incluimos los enlaces. Y esto con las vistas que tengo en mi blog, otros blogs con mayor número de visitas los ingresos serán notablemente mayores, suficientes para costear los gastos del blog y permitirnos algún pequeño capricho.
 
@@ -29,7 +29,7 @@ AdSense y los enlaces de afiliado de Amazon son dos formas sencillas y pasivas d
 
 Llegar a tener una cifra respetable de visitas no es fácil, cuesta mucho tiempo de dedicación al blog y constancia para escribir artículos al ritmo de al menos uno a la semana durante meses e incluso algún año. Este blog tiene ya tres años, 200 artículos escritos (multiplícarlo por las horas de dedicación por artículo) y aún solo tengo esas 25K páginas vistas.
 
-### Artículos patrocinados
+## Artículos patrocinados
 
 Otra forma son la de aceptar artículos patrocinados por los que se suele pagar entre 50 € y 150 € aproximadamente por artículo con al menos unas 300 y 500 palabras de contenido, dependiendo de las visitas de nuestro blog, posicionamiento en los buscadores y de lo que valoremos nuestro tiempo para redactar y publicar el artículo.
 

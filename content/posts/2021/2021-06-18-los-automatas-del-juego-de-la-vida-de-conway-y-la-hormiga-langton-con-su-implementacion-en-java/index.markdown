@@ -20,7 +20,7 @@ summary: "Algunos procesos que aparentemente son complejos siguen reglas muy sim
 
 {{< tableofcontents >}}
 
-### El juego de la vida de Conway
+## El juego de la vida de Conway
 
 El juego de la vida de Conway es un autómata con unas reglas muy simples que da lugar a múltiples y variados comportamientos. Es un autómata de cero jugadores que se desarrolla por sí mismo en base al estado inicial y las reglas del juego.
 
@@ -28,7 +28,7 @@ El juego es un tablero bidimensional formado por cuadrados o células que poseen
 
 * [Juego de la vida](https://es.wikipedia.org/wiki/Juego_de_la_vida)
 
-#### Reglas
+### Reglas
 
 Las reglas del juego de la vida definido por Conway son las siguientes:
 
@@ -36,13 +36,13 @@ Las reglas del juego de la vida definido por Conway son las siguientes:
 * Una célula viva con 2 o 3 células vecinas vivas sigue viva.
 * En cualquier otro caso la célula muere o se apaga, por tener menos o más células adyacentes vivas de las reglas anteriores. Una célula viva muere por soledad o por superpoblación.
 
-#### Variaciones, con otras reglas
+### Variaciones, con otras reglas
 
 El juego de la vida definido por Conway se representa con la siguiente nomenclatura 23/3, los primeros dos números indican las células necesarias para que una célula siga viva y el tercer número indica las células adyacentes necesarias para que una célula nazca.
 
 Con otro número de células requeridas es posible crear variaciones del juego de la vida. Por ejemplo, 16/6 en el que una célula nace si tiene 6 vivas adyacentes y sigue viva si tiene un número igual a 1 o 6. Otra variación es 23/36 en el que una célula nace si el número de adyacentes vivas es 3 o 6 y sigue viva si el número de células vivas es 2 o 3, este caso es similar al juego de la vida de Conway variando que una célula nace si tiene 6 adyacentes vivas.
 
-#### Patrones
+### Patrones
 
 Dado el estado inicial y las reglas de juego de la vida se observan varios patrones de comportamiento.
 
@@ -97,14 +97,14 @@ Otros patrones:
 * [88p28](https://conwaylife.appspot.com/pattern/88p28) (oscilador)
 * [Line puffer](https://conwaylife.appspot.com/pattern/linepuffer) (locomotora)
 
-#### Cómo probar el juego de la vida
+### Cómo probar el juego de la vida
 
 En algunas páginas es posible probar el juego de la vida para experimentar con su comportamiento.
 
 * [Visualizador del juego de la vida I](https://conwaylife.appspot.com/new)
 * [Visualizador del juego de la vida II](https://playgameoflife.com/)
 
-### La hormiga de Langton
+## La hormiga de Langton
 
 La hormiga de Langton es otro tipo de autómata con unas reglas muy simples pero que da lugar a un comportamiento complejo. Al igual que el juego de la vida de Conway se desarrolla en un tablero de dos dimensiones en el que cada celda del tablero está encendida o apagada.
 
@@ -117,7 +117,7 @@ En está página de la wikipedia se puede probar la hormiga de Langton.
     image1="image:hormiga-de-langton.webp" optionsthumb1="300x200" title1="Hormiga de Langton"
     caption="Patrón generado por la hormiga de Langton después de 10K pasos" >}}
 
-#### Reglas
+### Reglas
 
 La hormiga de Langton se basa en las siguientes reglas:
 
@@ -126,18 +126,18 @@ La hormiga de Langton se basa en las siguientes reglas:
 
 En el caso de la hormiga de Langton al cabo de unos 10000 turnos crea un patrón que sigue de forma indefinida.
 
-#### Variaciones, con otras reglas
+### Variaciones, con otras reglas
 
 A la hormiga de Langton también es posible aplicarle otra reglas, por ejemplo añadiendo más estados a las celdas con colores o incluyendo varias hormigas en el tablero.
 
-### Implementación del juego de la vida en Java
+## Implementación del juego de la vida en Java
 
 Esta es la implementación en código con lenguaje Java del juego de la vida de Conway y sus reglas. Estas son las clases principales que implementan el juego, la clase _Cell_ representa una célula con su estado y la clase _Board_ en el método _step_ produce el siguiente estado con las reglas del juego implementadas en los métodos _survives_, _borns_ y _countAliveNeighbours_.
 
 {{< code file="conway/Cell.java" language="java" options="" >}}
 {{< code file="conway/Board.java" language="java" options="" >}}
 
-### Implementación de la hormiga de Hormiga de Langton en Java
+## Implementación de la hormiga de Hormiga de Langton en Java
 
 Esta es la implementación en lenguaje Java de la hormiga de Langton y las reglas propias del juego. La clase _Turmite_ representa la hormiga, el método _step_ aplica la lógica del autómata de la hormiga en función del estádo de la celda en la que está. Los metodos _turnLeft_, _turnRight_ y _forward_ cambian el estado de la hormiga haciéndola cambiar de dirección y avanzando a otra celda.
 

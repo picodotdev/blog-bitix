@@ -23,7 +23,7 @@ Una de las cosas que me gustan de [GitLab][gitlab] es que se puede usar en un se
 
 Después de [instalar GitLab usando Docker][blogbitix-290] o de alguna de sus otras formas, creado un usuario no administrador y un proyecto se puede empezar a usar las herramientas de gestión de incidencias, wiki y _pages_. Estas son solo tres de sus herramientas incluidas, además incluye [integración y entrega continua][blogbitix-294].
 
-### Gestión de peticiones
+## Gestión de peticiones
 
 La herramienta de gestión de peticiones permite crear historias que recojan las tareas a realizar, las historias pueden ser de diferente tipo como nuevas funcionalidades, mejoras técnicas o errores, es posible asignarlas a diferentes usuarios, relacionar peticiones entre si o incluir documentos adjuntos. Las historias también se pueden mostrar en un panel [Kanban](https://es.wikipedia.org/wiki/Kanban_(desarrollo)) para visualizar el estado de las peticiones, las que están realizándose, las desplegadas en producción, las siguientes peticiones y donde puede haber cuellos de botella en los procesos. El flujo y el panel Kanban que siguen las peticiones desde que se crean hasta que se dan por terminadas es personalizable.
 
@@ -48,7 +48,7 @@ Para crear una nueva petición hay que acceder en el proyecto a _Issues_ y pulsa
     image1="image:board.webp" optionsthumb1="300x200" title1="Panel Kanban"
     caption="Panel Kanban" >}}
 
-### Wiki
+## Wiki
 
 Una wiki ayuda a recoger información útil en el mismo proyecto pero no en el repositorio de código fuente, por ejemplo, cómo iniciar la aplicación de un proyecto a partir del repositorio de código fuente, qué dependencias tiene como el JDK o una base de datos. También puede recoger información general de lógica de negocio que no cambien tan a menudo como el código como pudiera ser un esquema de alto nivel de arquitectura o por que se han tomado algunas decisiones en la arquitectura y los requerimientos.
 
@@ -62,7 +62,7 @@ Cuando se accede por primera vez a la wiki se crea la página de inicio que se p
     image2="image:page.webp" optionsthumb2="300x200" title2="Página"
     caption="Nueva página y página" >}}
 
-### Pages
+## Pages
 
 La herramienta de _pages_ o páginas permite crear un pequeño sitio web. Se pueden utilizar varias de las herramientas generadoras de sitios web estáticos como [Jekyll][jekyll] o [Hugo][hugo]. Para crear un sitio web hay que crear un repositorio de código fuente con un archivo _.gitlab-ci.yml_ y una tarea de nombre _pages_ que contiene los comandos para construir el sitio web.
 

@@ -27,13 +27,13 @@ Una vez está desarrollada la página de _phising_ el siguiente paso es hacer qu
 
 {{< tableofcontents >}}
 
-### El caso de El Gatico Biever
+## El caso de El Gatico Biever
 
 En este artículo comento un potencial caso como ejemplo y una vez leído me puedes comentar si crees que este era un ataque informático. En el que denominaré El caso del Gatico Biever está basado en una conversación real que mantuve por correo electrónico a la que he cambiado el nombre real del contacto y comentado los hechos relevantes del contenido de los mensajes.
 
 Sin más, os dejo con la narración de El caso del Gatico Biever.
 
-#### El contacto
+### El contacto
 
 Tengo un blog con ya casi una década de vida y más de 600 artículos publicados algunos posicionados en las primeras posiciones de las páginas de resultados por algunas combinaciones de palabras clave. El blog tiene casi 2.5K páginas vistas diariamente y unas 65K páginas mensuales.
 
@@ -45,7 +45,7 @@ Uno de estos meses recibí un correo electrónico como remitente el Gatico Bieve
 
 El primer paso en estos contactos comerciales suele ser la negociación de las condiciones.
 
-#### La negociación y la propuesta
+### La negociación y la propuesta
 
 Una oferta de seis artículos al mes y durante varios meses parece una oferta muy atractiva. Los primeros puntos a conocer es en qué consiste el acuerdo si en la inserción de enlaces, publicar un artículo ya redactado o que escriba yo un artículo original en función de lo cual se determina el precio ya que cada una me requiere menos  o más tiempo.
 
@@ -59,7 +59,7 @@ Hecha mi primera oferta económica al Gatito Biever este me responde con que est
 
 Como la colaboración iba a ser de varios artículos acepto su oferta con la condición de que los dos primeros fueran a un precio intermedio entre lo que ambos proponíamos, en los siguientes artículos al precio de lo que él proponía.
 
-#### Las sospechas
+### Las sospechas
 
 Acordados los términos de la colaboración y el precio comienza la colaboración que en este caso es simplemente que el Gatico Biever me proporcione el contenido del artículo, yo lo publique lo cual no suelo tardar más de uno o dos días y procedamos al pago en los términos acordados.
 
@@ -82,7 +82,7 @@ Me doy cuenta de que en realidad se poco de el Gatico Biever, su «sí, sí» pa
 
 Llega la trampa, mi pequeña trampa.
 
-#### La trampa
+### La trampa
 
 No estoy dispuesto a eliminar esa página de publicidad y ya estoy sospechando de que este sea un ataque informático aunque aún no se qué forma tendrá el ataque.
 
@@ -99,7 +99,7 @@ Le envío en un nuevo correo electrónico el enlace de la página de publicidad 
 
 Pues Gatico Biever cae en la trampa hace clic en enlace directamente desde el correo electrónico y como se que ese enlace solo lo tiene él sé que ha sido él, ahora analizo los datos que me proporciona [Google Analytics][google-analytics] para conocer algo más de el Gatico Biever.
 
-#### La exploración
+### La exploración
 
 Los datos de Analytics me permiten ver unos datos básicos anónimos pero algo más de quien es el Gatico Biever como su país de origen, que navegador utiliza y que sistema operativo utiliza. Veo que su país de origen es Pakistan, su sistema operativo es Windows 10 y el navegador web que utiliza es [Google Chrome][google-chrome] actualizado a la última versión.
 
@@ -123,7 +123,7 @@ Como ve que ya no respondo me envía un nuevo correo al cabo de una semana con u
 
 Llegar hasta el punto de que me de el enlace de _phishing_ tampoco tiene ninguna utilidad, no soy policía, muy posiblemente ni ellos podrían hacer algo aunque fuese víctima del ataque y aunque le denuncie ante Google es seguro que será capaz de crearse una nueva dirección de correo electrónico con la que seguir haciendo ataques.
 
-#### El final, ¿tú que crees?
+### El final, ¿tú que crees?
 
 Bueno, la mayoría sois lectores, otras personas equivalentes a mi serán _youtubers_, _podcasters_ o _streamers_ pero todavía quedamos algunos _bloggers_ de la vieja escuela, en cualquier caso este es solo un ejemplo, podría llegar en realidad a cualquiera persona ni siquiera estar englobada en ningún colectivo y podría ser de otra forma con alguna excusa que un delincuente tenga su correo electrónico y una forma de contactarte por el ordenador o con teléfono inteligente.
 
@@ -137,7 +137,7 @@ Parece un ataque de _phishing_ ¿tu que crees? Porque claro no voy a seguir hast
 
 Fin.
 
-### Cómo denunciar el intento o ataque informático
+## Cómo denunciar el intento o ataque informático
 
 Cómo comentaba en el artículo [nociones básicas para detectar un ataque y evitarlo][blogbitix-605] en caso de ser víctima de un ataque conviene denunciarlo. La unidad de delitos informáticos de los diferentes cuerpos de policía y un perito judicial informático seguro que os podría contar cientos de casos, pero seguramente el mejor consejo que den sea evitar ser víctima de un ataque informático. Ellos están para ayudar, proteger, minimizar daños, prevenir nuevos delitos, obtener pruebas y poner a disposición de la justicia a delincuentes pero muchas veces tras haber ocurrido los hechos el grave daño causado ya no es reparable. Y a veces les será muy difícil por estar los delincuentes en otros países. Muchos ataques informáticos como este ejemplo no son difíciles de detectar con las nociones básicas.
 
@@ -145,7 +145,7 @@ En los términos y condiciones del correo electrónico de Gmail no permite utili
 
 En caso de recibir el enlace es posible además [denunciar la página de _phishing_](https://support.google.com/a/answer/134413?hl=en) para que esta sea incluida en la lista negra de páginas identificadas maliciosas. Supongo una persona que trabaje para Google analizará estas peticiones y en caso de corroborarlo la página será añadida a la lista negra. Esta lista negra es utilizada por los navegadores para mostrar un mensaje de advertencia cuando un usuario intente entrar en ella, poniendo sobre aviso al usuario y aconsejando no entrar.
 
-### Minimizar daños de posibles ataques informáticos
+## Minimizar daños de posibles ataques informáticos
 
 Nadie está exento de ataques, ni alguien como yo que tiene conocimientos en informática y conozco las nociones básicas de los ataques, que inicialmente me resultó extraño el correo pero que hasta bastante avanzada la conversación con unos cuantos correos electrónicos enviados no empecé a realmente sospechar.
 

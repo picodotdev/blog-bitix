@@ -55,3 +55,5 @@ En los enlaces de referencia hay documentación más detallada tanto para gestio
 * [Installing Spring Boot applications](https://docs.spring.io/spring-boot/docs/1.5.1.RELEASE/reference/htmlsingle/#deployment-install)
 * [Systemd (Arch Linux Wiki)](https://wiki.archlinux.org/index.php/Systemd)
 {{< /reference >}}
+
+{{% /post %}}

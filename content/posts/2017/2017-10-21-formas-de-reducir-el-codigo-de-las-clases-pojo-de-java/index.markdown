@@ -31,7 +31,7 @@ Y aunque los IDE tiene la capacidad e generar algunos métodos no tienen la func
 
 Para facilitar el mantenimiento y reducir numerosas líneas de código de _boilerplate_ que requiere Java para estas clases, que aún simples sean numerosas y no tengan muchos métodos propios, hay dos librerías utilizables que se encargan mediante anotaciones de generarlas y construir las clases _Builder_ asociadas.
 
-### Librerías para reducir el código de las clase POJO de Java
+## Librerías para reducir el código de las clase POJO de Java
 
 Es habitual que en una aplicación se necesiten clases como simplemente estructuras de datos y objetos para transferir datos o en el caso de [implementar DDD y algunos patrones tácticos][blogbitix-553] como los _value objects_. Clases que que tienen unas pocas propiedades y son inmutables.
 
@@ -39,7 +39,7 @@ Dos librerías que permiten simplificar estas clases son [Immutables][immutables
 
 Las anotaciones de estas librerías permiten escribir menos código repetitivo en _beans_ o objetos de transferencia de datos o DTO pero conviene conocer lo que hacen esas anotaciones. Una de las características por las que algunas personas usan otros lenguajes más recientes como [Groovy][groovy] es que en estos requieren menos líneas código para hacer lo mismo que en Java como el caso de los métodos _get_ y _set_ de las propiedades que en Groovy se proporcionan de forma implícita y en Java de forma explícita, con Immutables o Lombok en Java estos métodos también se pueden proporcionar con anotaciones sin tener que codificarlos.
 
-#### Immutables
+### Immutables
 
 Immutables es una librería que permite generar clases y eliminar código repetitivo. Funciona a través de la definición de una interfaz de la clase o una clase abstracta, el uso de anotaciones y un procesador de anotaciones. Al realizar la compilación el procesador de anotaciones genera el código fuente de una clase que implementa la interfaz o clase abstracta y la clase _Builder_.
 
@@ -49,7 +49,7 @@ La anotación principal es _@Value.Immutable_ que permite definir una clase que 
 
 {{< code file="Car-immutables.java" language="java" options="" >}}
 
-#### Lombok
+### Lombok
 
 Lombok es una librería popular para el propósito de eliminar todo ese código repetitivo necesario en cada _bean_ o clase Java utilizando varias anotaciones. Usarla no requiere ninguna complicación basta añadirla a la lista de dependencias de compilación y las anotaciones serán procesadas.
 
@@ -61,13 +61,13 @@ Además de por modificar el archivo _class_ generado por el compilador y necesit
 
 {{< code file="Car-lombok.java" language="java" options="" >}}
 
-#### _Records_ de Java 14
+### _Records_ de Java 14
 
 Los _records_ de Java incorporados desde la versión 14 de Java permiten definir clases inmutables y con un código mínimo para estas clases que básicamente se componen de un conjunto de propiedades. Los _recrods_ son la implementación nativa proporcionada por Java para estas clases, sin embargo, no se proporcionan las clases _Builder_ y estos hay que seguir implementándolos.
 
 {{< code file="Car-record.java" language="java" options="" >}}
 
-### Ejemplo de código
+## Ejemplo de código
 
 Un programa de ejemplo que hace uso de estas clases es el siguiente.
 

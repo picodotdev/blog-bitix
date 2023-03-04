@@ -26,7 +26,7 @@ Por otro lado me paso mucho tiempo y leyendo y trabajando delante del ordenador 
 
 Estoy barajando tres opciones: un portátil, un Intel NUC o montarme un equipo de escritorio mini ITX. Aún no estoy decidido y estoy escribiendo este artículo también para plasmar por escrito las ideas que tengo.
 
-### El portátil
+## El portátil
 
 En caso de que me decidiese por otro portátil tengo claro que la opción sería un [Slimbook PRO2](https://slimbook.es/pro-ultrabook-13-aluminio). Porque es un equipo potente, más incluso que un MacBook Pro que cuesta el doble de precio, porque es un equipo ensamblado por una empresa española, porque el soporte para GNU/Linux que tiene es bueno y está libre de adquirir licencia Windows aunque se puede si uno quisiese. En el 2012 no conocía opciones de portátil sin tener que pagar el [impuesto Windows][elblogdepicodev-57], hoy hay varias opciones entre las que los usuarios de GNU/Linux podemos elegir para no tener que pagarlo.
 
@@ -36,7 +36,7 @@ Lo que no me gusta es que montan un Intel de 8ª generación con el grave fallo 
 
 Un portátil me permitiría tener una segunda pantalla pero la batería, la portabilidad por ser un portátil es algo que en este momento no me interesa y por solo ofrecer procesadores Intel defectuosos estoy barajando otras opciones.
 
-### Un NUC, Brix, Cubi o similar
+## Un NUC, Brix, Cubi o similar
 
 Estos pequeños equipos de escritorio aún con su pequeño tamaño se les puede instalar hasta 32 GiB, usando los mismos procesadores de los portátiles de última generación tienen 4 núcleos físicos y 8 hilos lo que es el doble de lo que tenía con el 3210M y con esa cantidad de memoria 4 veces más y que al menos por un lustro espero me sea más que suficiente.
 
@@ -51,7 +51,7 @@ Ocupan poco incluso se les puede instalar detrás del monitor, son muy silencios
 {{< amazon
     tags="minipc" >}}
 
-### Un mini ITX
+## Un mini ITX
 
 Dado que en los casos anteriores solo encuentro procesadores Intel defectuosos me planteo montar mi propio equipo en formato mini ITX, no quiero sea tan grande como un micro ATX o ATX. Esta opción ya si en este momento me permite tener un AMD Ryzen. Una micro ATX o ATX podría tener incluso más de esos 32 GiB de memoria, hasta 64 GiB y más núcleos pudiendo incluso 8 núcleos y 16 hilos, sin embargo, una de las cosas que valoro de forma alta es el espacio que ocupa el ordenador y el ruido que haga que si no es silencioso me molestaría, al menos le pediría que navegando o leyendo documentos fuese muy silencioso o inaudible cosa que no si habrá mejorado desde el 2008 de mi último equipo en este formato. No se si aún en tamaño mini ITX serán todo lo silenciosos que requiero.
 
@@ -62,7 +62,7 @@ Estos son los componentes que hasta el momento he buscado, la memoria DDR4 está
 {{< amazon
     tags="hardware-pccomponents" >}}
 
-### Conclusión
+## Conclusión
 
 Todavía no estoy decidido. Ninguna opción en este momento cumple posiblemente todo lo que pido o me genera alguna duda. Quizá tenga preguntar en algún foro especializado para recabar opiniones, o que esperar a que Intel saque nuevos procesadores sin fallos de seguridad, o por lo menos no conocidos hasta pasado un tiempo. No se si saldrá algunos portátiles de calidad o formato NUC pero con AMD. Y es que me paso el tiempo esperando... en otros casos y en este también hasta estar en buena medida convencido. 
 

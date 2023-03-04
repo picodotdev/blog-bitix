@@ -25,11 +25,11 @@ Todos los lenguajes de programación ofrecen funciones de soporte para generar n
 
 {{< tableofcontents >}}
 
-### Generar números aleatorios en un rango
+## Generar números aleatorios en un rango
 
 Java ofrece varias clases y formas para generar números aleatorios, dependiendo de cada una la forma de generar un número aleatorio u obtener un número aleatorio en un rango varía ligeramente.
 
-#### Con la clase Random
+### Con la clase Random
 
 La clase [Random](javadoc11:java.base/java/util/Random.html) permite generar números aleatorios con varios métodos según el tipo de datos deseado, en el caso de querer números enteros del tipo _int_ con el método [nextInt](javadoc11:java.base/java/util/Random.html#nextInt(int)) que devuelve números enteros uniformemente distribuidos entre 0 de forma inclusiva y el límite superior indicado de forma exclusiva.
 
@@ -39,7 +39,7 @@ Dada la especificación del método _nextInt_ si se desea un número aleatorio e
 {{< code file="Main-random.java" language="java" options="" >}}
 {{< code file="RandomUtil-random.out" language="plain" options="" >}}
 
-#### Usando un _stream_
+### Usando un _stream_
 
 En el caso de desear una secuencia de números aleatorios la clase _Random_ ofrece soporte para obtener [un _stream_ en Java 8][blogbitix-17] de enteros que son números aleatorios.
 
@@ -47,7 +47,7 @@ En el caso de desear una secuencia de números aleatorios la clase _Random_ ofre
 {{< code file="Main-stream.java" language="java" options="" >}}
 {{< code file="RandomUtil-stream.out" language="plain" options="" >}}
 
-#### Con la clase Math
+### Con la clase Math
 
 Es más eficiente usar la clase _Random_ pero otra forma posible de generar números aleatorios es con la clase [Math](javadoc11:java.base/java/lang/Math.html). El método [random](javdoc11:java.base/java/lang/Math.html#random()) de _Math_ devuelve números aleatorios del tipo _double_ entre 0 de forma inclusiva y 1 de forma exclusiva. Para obtener el número aleatorio hay que hacer una multiplicación y conversión a entero.
 
@@ -55,7 +55,7 @@ Es más eficiente usar la clase _Random_ pero otra forma posible de generar núm
 {{< code file="Main-math.java" language="java" options="" >}}
 {{< code file="RandomUtil-math.out" language="plain" options="" >}}
 
-#### Generar un identificativo único universal
+### Generar un identificativo único universal
 
 Si se desea generar un identificador único universal para una entidad en vez de un número aleatorio en un rango que tiene posibilidades de repetirse está la clase [UUID](javaoc11:java.base/java/util/UUID.html) que genera número únicos de 128 bits que se presentan con caracteres alfanuméricos.
 

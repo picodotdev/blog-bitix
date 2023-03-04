@@ -33,7 +33,7 @@ Other distributions based on different principles and intended users with other 
 
 {{< tableofcontents >}}
 
-### System installation with Arch Linux
+## System installation with Arch Linux
 
 In Arch Linux with his [way of doing things](https://wiki.archlinux.org/index.php/Arch_Linux) leaves the power to fully customize the system to his needs and preferences limited only by his determination of to get it. It only provides [the media to start the installation with][archlinux-download] starting with a terminal and a system _prompt_, an [installation guide][archlinux-install-guide] along with the [general recommendations][archlinux-general-recommendations] and [one of the best sources of information on GNU/Linux][archlinux-wiki] as well as complete information on every aspect that we need in the installation. After having read the relevant pages of the Arch Linux wiki, probably more than once and twice, until you understand it for the most part, you begin to make the recipe that contains the necessary commands until the installation is complete.
 
@@ -43,7 +43,7 @@ But knowing the commands to enter to install Arch Linux does not avoid having to
 
 A few months ago I met [arch-anywhere][arch-anywhere] which is basically a bash _script_, with a guided and text-based installer that makes the installation of Arch Linux less laborious in a similar way to those existing in other more friendly distributions. However, there are two things that do not convince me about _arch-anywhere_, one is that it is not unattended, requiring you to answer several questions interactively, wait for it to finish, execute a command according to the previous answer and answer the next question. Another thing that doesn't convince me is that it uses its own ISO image and not the original Arch Linux image. For the rest, it offers a good level of customization, covering the most common needs of users such as customizing the partitioning, choosing the file system, if you want LVM, encryption, the desktop environment (GNOME, KDE, XFCE, ... ), kernel, boot loader (GRUB) and programs to install.
 
-### The alis installer and supported features
+## The alis installer and supported features
 
 Based on the idea of _arch-anywhere_ and spending a little time I have created a _script_ in [bash][bash] to install Arch Linux in an automated, unattended and customizable way to some extent although being useful for the most common configuration cases, without being essential to read a few dozen pages of the Arch Linux wiki or follow any step-by-step guide or tutorial. Some of the functionalities it supports are:
 
@@ -92,7 +92,7 @@ These are the commands to use alis and its configuration file with which to cust
 {{< code file="alis-install.sh" language="bash" options="" >}}
 {{< code file="alis.conf" language="bash" options="" >}}
 
-### Screenshots of different supported desktop environments
+## Screenshots of different supported desktop environments
 
 These are some screenshots with different desktop environments that I have tested with VirtualBox.
 
@@ -116,13 +116,13 @@ These are some screenshots with different desktop environments that I have teste
     image1="image:archlinux-root-password.webp" optionsthumb1="300x200" title1="Password request to decrypt root partition"
     caption="Password request to decrypt root partition" >}}
 
-### Installation video of the base system with alis
+## Installation video of the base system with alis
 
 The following video captured with [asciinema][asciinema] shows how using alis to install Arch Linux on a computer with the complete process of the basic system installation.
 
 {{< asciinema id="418524" caption="Instalación de sistema base de Arch Linux con alis" >}}
 
-### Alis source code
+## Alis source code
 
 The installer code is not very complicated and much simpler than other similar interactive _scripts_, as it does not mix the installation commands with the interactive messages that ask questions and wait for answers, also after setting the variables and starting the installation process the it is done unattended until completed without requiring the user to enter more data interactively.
 

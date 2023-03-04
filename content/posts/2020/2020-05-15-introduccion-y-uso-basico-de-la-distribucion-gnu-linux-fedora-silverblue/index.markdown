@@ -55,7 +55,7 @@ Una distribución que se basa en principios diferentes que pueden ser el futuro 
 
 {{< tableofcontents >}}
 
-### La distribución Fedora Silverblue
+## La distribución Fedora Silverblue
 
 Una de las mayores fuentes de problemas de las distribuciones y de los sistemas operativos son las actualizaciones que por los cambios que introducen con nuevas versiones del software en ocasiones hace que algunas partes dejen de funcionar. Son solucionables desactualizando un paquete o en los casos más graves hace que el sistema ni siquiera se inicie correctamente llegando incluso a tener que reinstalar el sistema o peor aún provocando pédida de datos.
 
@@ -81,7 +81,7 @@ OSTree es un proyecto que combina un modelo parecido a git para establecer y des
 * [Toolbox](https://docs.fedoraproject.org/en-US/fedora-silverblue/toolbox/)
 * [Frequently Asked Questions (FAQ)](https://docs.fedoraproject.org/en-US/fedora-silverblue/faq/)
 
-#### Instalación
+### Instalación
 
 La instalación se realiza con un asistente gráfico después de haber descargado el medio de instalación y haberlo grabado en una memoria USB para iniciar el sistema con él. Es necesario poco más que seleccionar la distribución del teclado, el particionado y la clave del superusuario _root_ para realizar la instalación.
 
@@ -100,7 +100,7 @@ La instalación se realiza con un asistente gráfico después de haber descargad
     image1="image:installation-7.webp" optionsthumb1="200x150" title1="Instalación de Fedora Silverblue"
     caption="Instalación de Fedora Silverblue" >}}
 
-#### Primer inicio
+### Primer inicio
 
 Al iniciar el sistema por primera vez un nuevo asistente permite crear la cuenta de usuario compuesto de nombre y contraseña con la que iniciar sesión en el sistema.
 
@@ -123,7 +123,7 @@ Al usar GNOME como entorno de escritorio no se diferencia a cualquier otro siste
 
 * [Las aplicaciones integradas del entorno de escritorio GNOME][blogbitix-464]
 
-#### Administración del sistema, actualización
+### Administración del sistema, actualización
 
 El software que compone el sistema base se puede actualizar, los siguientes comandos permiten conocer cuales son las actualizaciones disponibles. Las actualizaciones están integradas con el programa Software de GNOME que muestra notificaciones cuando hay alguna actualización disponible.
 
@@ -154,7 +154,7 @@ En caso de que una actualización produzca algún error se puede volver a la ver
 
 {{< code file="rpm-ostree-rollback.sh" language="bash" options="" >}}
 
-#### Instalación de programas gráficos
+### Instalación de programas gráficos
 
 Las aplicaciones de usuario gráficas se instalan con Flatpak y en el caso de GNOME con la aplicación Software. A medida que pasa el tiempo hay más programas disponibles en esta forma de distribuir software y muchos de los programas más comunes está disponibles como la colección ofimática [LibreOffice][libreoffice], el reproductor multimedia [VLC][vlc], el editor de texto avanzado [Visual Studio Code][microsoft-visual-studio-code] o el entorno de desarrollo integrado [IntelliJ][intellij].
 
@@ -186,7 +186,7 @@ Dos programas instalados como paquetes Flatpak.
 
 También es posible instalar el paquetes Flatpak desde la linea de comandos.
 
-#### Uso de Toolbox, programas de línea de comandos en contenedores
+### Uso de Toolbox, programas de línea de comandos en contenedores
 
 El resto de paquetes de línea de comandos se pueden instalar en contenedores con [Toolbox][toolbox] basados en [podman][podman] que es una alternativa compatible de [Docker][docker]. Lo especial de estos contenedores es que tiene acceso a la carpeta personal o directorio _home_ del usuario de modo que pueden crear archivos o modificar los existentes en esta ubicación.
 
@@ -205,7 +205,7 @@ Para no modificar el sistema base de Silverblue otra forma de instalar Java es c
 
 {{< code file="sdk-usage.sh" language="bash" options="" >}}
 
-### Conclusión
+## Conclusión
 
 Si tuviese que probar o usar otra distribución diferente Arch Linux probablemente la que elegiría sería Fedora Silverblue por los principios innovadores en las que está basada que proporcionan varias mejoras en puntos importantes sobre las distribuciones como las hemos conocido tradicionalmente. Igualmente permite tener el software actualizado, es también _rolling-release_ y mejora la fiabilidad de las actualizaciones.
 
@@ -220,3 +220,5 @@ En estos vídeos se proporciona una introducción sobre esta distribución que q
 * [Fedora Silverblue 31 review (after 3 months)](https://xermansoto.wordpress.com/2020/04/10/fedora-silverblue-31-review-after-3-months/)
 * [A little collection of ‘How to do X with Toolbox on Fedora Silverblue’](http://harrymichal.undo.it/posts/2020/a-little-collection-of-how-to-do-x-with-toolbox-on-fedora-silverblue/)
 {{< /reference >}}
+
+{{% /post %}}

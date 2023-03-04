@@ -33,7 +33,7 @@ El juego posee una notable calidad gráfica, cada navío es un modelo distinto m
     image1="image:world-of-warships-legends.webp" optionsthumb1="600x450" title1="Imagen inicial del juego World of Warships en PlayStation 4"
     caption="Imagen inicial del juego World of Warships en PlayStation 4" >}}
 
-### Objetivo
+## Objetivo
 
 En juego consite en batallas navales formadas por dos equipos de jugadores de nueve miembros en diferentes mapas seleccionados por el juego de forma aleatoria con una duración máxima de 15 minutos por batalla. En las batallas participan cada vez una combinación diferente de los tres tipos de navíos, destructores, cruceros y acorazados.
 
@@ -55,7 +55,7 @@ Cada tipo de navío posee unas características que condicionan la forma de juga
 
 {{< tableofcontents >}}
 
-### Tipos de navíos
+## Tipos de navíos
 
 En la versión de consola hay tres tipos de navíos, cada uno por sus características y consumibles participan de una forma distinta en la batalla. Cada tipo como norma general tiene un enemigo mortal, el de los destructores son son cruceros, el de los cruceros son los acorazados y el de los acorazados son los destructores.
 
@@ -64,7 +64,7 @@ En la versión de consola hay tres tipos de navíos, cada uno por sus caracterí
     image1="image:seleccion-navio.webp" optionsthumb1="600x450" title1="Selección de navío para la batalla, crucero alemán de nivel VII Hipper"
     caption="Selección de navío para la batalla" >}}
 
-#### Cruceros
+### Cruceros
 
 Son la unidad media de las tres, versátil, ágil y con una relativa potencia de fuego. Puede actuar contra destructores por su rápida cadencia de fuego y consumibles adecuados para defenderse de los torpedos de los destructores como el sonar y los aviones. A otros cruceros pueden hacerles gran cantidad de daño con la munición perforante si se encuentran mostrando el lateral completo e impactándoles en la ciudadela. También sirven para hostigar a acorazados causándoles incendios con la munición altamente explosiva o con torpedos si están a corta distancia. Si están al alcance de un acorazado son un blanco fácil o para otros cruceros si exponen el lateral del barco por el riesgo de recibir impactos en la ciudadela.
 
@@ -73,7 +73,7 @@ Son la unidad media de las tres, versátil, ágil y con una relativa potencia de
     image1="image:alemania-crucero-hipper.webp" optionsthumb1="600x450" title1="Crucero de la nación alemana de nivel VII Hipper"
     caption="Crucero de la nación alemana de nivel VII" >}}
 
-#### Destructores
+### Destructores
 
 Son la unidad con menos puntos de vida de los tres pero es ágil, difícil de detectar y sus torpedos de larga distancia causan gran cantidad de daño por impacto. Son adecuados para encontrar otros destructores y con el apoyo el resto del equipo destruirlos, aúnque es la unidad más débil en puntos de vida con los torpedos son capaces de destruir la unidad más fuerte de las tres si está desprevenida, los acorazados. Su debilidad son los cruceros que los pueden detectar y destruir con más facilidad, u otros destructores con apoyo de cruceros, si recibe el impacto de un torpedo si no lo destruye lo deja a falta de pocos puntos de vida.
 
@@ -82,7 +82,7 @@ Son la unidad con menos puntos de vida de los tres pero es ágil, difícil de de
     image1="image:alemania-destructor-z-23.webp" optionsthumb1="600x450" title1="Destructor de la nación alemana de nivel VII Z-23"
     caption="Destructor de la nación alemana de nivel VII" >}}
 
-#### Acorazados
+### Acorazados
 
 Son la unidad con mayor potencia de fuego, disparan a largas distancias, tienen más puntos de vida, mayor blindaje y pueden hacer gran cantidad de daño por salva a cualquiera de los tipos de los barcos, aúnque sus objetivos principales son los cruceros y otros acorazados. Sus puntos débiles son que son poco maniobrables lo que los hace más vulnerables a los torpedos de los destructores, alcanzan menos velocidad y por su tamaño son detectables a largas distancias.
 
@@ -91,11 +91,11 @@ Son la unidad con mayor potencia de fuego, disparan a largas distancias, tienen 
     image1="image:alemania-acorazado-bismark.webp" optionsthumb1="600x450" title1="Acorazado de la nación alemana nivel VII Bismark"
     caption="Acorazado de la nación alemana nivel VII Bismark" >}}
 
-#### Navíos premium
+### Navíos premium
 
 Estos barcos pueden comprarse con una gran cantidad de experiencia global o comprando doblones con dinero real. Su beneficio es que tienen un bonus en la experiencia otorgada de forma que es más fácil conseguir experiencia con estos navíos.
 
-### Estadísticas, naciones, comandantes y módulos
+## Estadísticas, naciones, comandantes y módulos
 
 Cada navío tiene unas estadísticas diferentes agrupadas en 4 apartados supervivencia, artillería, maniobrabilidad, ocultamiento y torpedos si los dispone.
 
@@ -192,7 +192,7 @@ Según el tipo de navío unos capitanes son más adecuados que otros, por ejempl
     image3="image:comandante-estados-unidos-andrew-cunningham-15.webp" optionsthumb3="200x150" title3="Comandante Estados Unidos Andrew Cunningham"
     caption="Comandante Estados Unidos Andrew Cunningham y experiencia necesaria para subir de nivel" >}}
 
-### Tipos de munición y consumibles en batalla
+## Tipos de munición y consumibles en batalla
 
 Hay dos tipos de munición, la altamente explosiva o HP (_high-explosive_) que explota en la superficie según impacta y tiene una probabilidad de dañar armamento, motor o timón y causar incendios. No llega a hacer tanto daño como la perforante pero garantiza con mayor regularidad el daño que hace por impacto. Los destructores tienen mayor probabilidad de quedar inutilizados por timón o motor si son impactados por munición HE en la proa, en esta situación son un blanco fácil y para sobrevivir han de utilizar el consumible de reparación u ocultarse con el de humo.
 
@@ -217,7 +217,7 @@ Los acorazados también tienen consumibles, uno muy útil es el de reparación q
     image1="image:consumibles-potenciadores-camuflaje.webp" optionsthumb1="600x450" title1="Consumibles, potenciadores y camuflaje"
     caption="Consumibles, potenciadores y camuflaje" >}}
 
-### Recursos
+## Recursos
 
 Al finalizar la batalla, según el resultado de la misma de victoria o derrota y según el desempeño individual de cada miembro por daño causado, medallas conseguidas o capturas realizadas se otorgan una serie de créditos con los que comprar otros barcos e instalarles módulos.
 
@@ -232,7 +232,7 @@ Cada semana y de forma diaria se dispone de una serie de misiones que completada
     image3="image:inventario.webp" optionsthumb3="200x150" title3="Inventario"
     caption="Resultado de una batalla con victoria, experiencia y créditos conseguidos. Progreso e inventario." >}}
 
-### Estrategia básica y guía de aprendizaje
+## Estrategia básica y guía de aprendizaje
 
 El juego con sus diferentes mecánicas tiene un componente de estrategia no solo individual y de habilidad en el apuntado sino que es casi tan importante o más el juego en equipo, jugar en formaciones y apoyar a los compañeros, esto es decisivo para el resultado de la batalla. Otros juegos dependen mucho más de la habilidad individual.
 

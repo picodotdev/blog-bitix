@@ -29,7 +29,7 @@ Una de las cosas que tenemos que tener cuenta es que siempre que sobrescribamos 
 * Si dos objetos son iguales según sus métodos _equals_ entonces el valor devuelto por _hashCode_ en cada uno de los dos objetos debe devolver el mismo valor.
 * Si dos objetos son distintos según sus métodos _equals_ el valor devuelto no ha de ser necesariamente distinto aunque se recomienda para mejorar el rendimiento de las colecciones _Map_.
 
-### Cómo implementar el método _equals_
+## Cómo implementar el método _equals_
 
 Según la [especificación del método equals](javadoc8:java/lang/Object.html#equals-java.lang.Object-) definido en la clase _Object_ debe tener las siguientes propiedades:
 
@@ -50,7 +50,7 @@ Usando la clase [EqualsBuilder](https://commons.apache.org/proper/commons-lang/a
 
 {{< code file="PhoneNumber-equals-commons-lang.java" language="java" options="" >}}
 
-### Como implementar el método _hashCode_
+## Como implementar el método _hashCode_
 
 La implementación del [método hashCode](javadoc8:java/lang/Object.html#hashCode--) se debe realizar según los siguientes pasos:
 

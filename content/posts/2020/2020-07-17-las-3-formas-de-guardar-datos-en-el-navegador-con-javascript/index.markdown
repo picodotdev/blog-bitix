@@ -32,7 +32,7 @@ Dado que los datos se almacenan en el navegador del usuario hay que tener en cue
 
 {{< tableofcontents >}}
 
-### Guardar datos en el navegador con cookies
+## Guardar datos en el navegador con cookies
 
 El protocolo HTTP es un protocolo sin estado, esto significa que cada petición al servidor es independiente y no comparten información. Las _cookies_ son la forma de convertir el protocolo HTTP a un protocolo con estado identificando al usuario en las diferentes peticiones. Las _cookies_ son unos pequeños datos guardados por el navegador y enviados al servidor en cada petición al servidor.
 
@@ -63,7 +63,7 @@ Desde JavaScript se pueden crear _cookies_, buscar por nombre, obtener sus valor
 
 * [Document.cookie](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
 
-### Guardar datos en el navegador con LocalStorage y SessionStorage
+## Guardar datos en el navegador con LocalStorage y SessionStorage
 
 Las _cookies_ tiene la limitación de que son pequeñas y de enviarse en cada petición al servidor incluidas las peticiones de solicitudes de recursos como imágenes y hojas de estilo lo que aumenta la cantidad de datos transmitidos en el caso de realizar por cada página solicitada con muchos recursos un gran número de peticiones. Aunque el navegador soporte la [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API) algunos navegadores en el modo privado y restringidos impiden su uso para proteger la privacidad y el rastreo de los usuarios.
 
@@ -91,7 +91,7 @@ Otra de las características de LocalStorage y SessionStorage es que permiten es
 * [Storage](https://developer.mozilla.org/en-US/docs/Web/API/Storage)
 * [Window: storage event](https://developer.mozilla.org/en-US/docs/Web/API/Window/storage_event)
 
-### Guardar datos en el navegador con IndexedDB
+## Guardar datos en el navegador con IndexedDB
 
 En el caso de querer grandes cantidades de datos o de poder buscar datos por varias claves la otra forma disponible es IndexedDB. Sus propiedades son:
 

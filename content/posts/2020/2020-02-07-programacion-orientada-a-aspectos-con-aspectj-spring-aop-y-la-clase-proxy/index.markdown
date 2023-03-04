@@ -48,7 +48,7 @@ Si no se usa spring o se necesitan aplicar aspectos en objetos no gestionados po
 
 {{< tableofcontents >}}
 
-### Programación orientada a aspectos con AspectJ
+## Programación orientada a aspectos con AspectJ
 
 AspectJ es una librería específica y la que más posibilidades ofrece de las que muestro en el artículo. Hay varias formas de utilizar AspectJ, la de usarla mediante anotaciones es bastante simple.
 
@@ -75,7 +75,7 @@ En la salida del programa para el apartado de AspectJ se observa que el código 
 * [Getting Started with AspectJ](https://www.eclipse.org/aspectj/doc/released/progguide/starting.html)
 * [Join Points and Pointcuts](https://www.eclipse.org/aspectj/doc/released/progguide/language-joinPoints.html)
 
-### Programación orientada a aspectos con Spring AOP
+## Programación orientada a aspectos con Spring AOP
 
 Spring incluye su solución para la programación orientada a aspectos, más limitada que AspectJ pero suficiente para la mayoría de los casos tampoco requiere aplicar el proceso _weaving_ de AspectJ en tiempo de compilación. La limitación de Spring AOP es que los _joint points_ solo pueden ser métodos. Utiliza las mismas anotaciones de AspectJ para aplicar los aspects en tiempo de ejecución.
 
@@ -105,7 +105,7 @@ El resultado es el mismo que con AspectJ.
 
 {{< code file="System.out-2" language="plain" options="" >}}
 
-### Programación orientada a aspectos con la clase Proxy
+## Programación orientada a aspectos con la clase Proxy
 
 Para casos muy sencillos donde no sea posible aplicar una de las opciones anteriores al no poder usar sus librerías por restricciones del proyecto en cuanto a dependencias usables está la alternativa incluida en el JDK. La clase [Proxy](javadoc11:java.base/java/lang/reflect/Proxy.html) está incorporada en el propio JDK, permite hacer cosas sencillas sin dependencias adicionales.
 

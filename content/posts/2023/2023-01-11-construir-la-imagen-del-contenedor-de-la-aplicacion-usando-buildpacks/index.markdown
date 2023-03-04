@@ -35,7 +35,7 @@ La misma utilidad y propiedades de los contenedores en tiempo de ejecución es d
 
 {{< tableofcontents >}}
 
-### La herramienta Buildpacks
+## La herramienta Buildpacks
 
 La herramienta [Buildpacks][buildpacks] analiza el código fuente y permite construir imágenes de contenedores compatible con OCI con la misma herramienta independientemente del lenguaje o plataforma que utilice y sin utilizar archivos Dockerfile. Además, permite reutilizar las instrucciones de construcción sin tener que implementarlas.
 
@@ -58,7 +58,7 @@ Buildpacks es extensible y es posible crear y usar _builders_ y _buildpaks_ prop
     image2="image:buildpack-builder.svg" optionsthumb2="300x200" title2="Buildpack builder"
     caption="Buildpack" >}}
 
-### El proyecto Paketo
+## El proyecto Paketo
 
 [Paketo][paketo] es un proyecto de código abierto que proporciona numerosos _buildpacks_ para diferentes lenguajes de las aplicaciones más populares entre los que por supuesto están Java, Node, Python y Go entre otros.
 
@@ -66,7 +66,7 @@ En el [proyecto de GitHub de Paketo](https://github.com/paketo-buildpacks) está
 
 * [Paketo Builders Reference](https://paketo.io/docs/reference/builders-reference/)
 
-### Instalación de Buildpacks
+## Instalación de Buildpacks
 
 Hay [varias formas de instalación de Buildpacks](https://buildpacks.io/docs/tools/pack/) según el sistema operativo que se use, junto a varias formas de instalación usando el gestor de paquetes nativo del sistema operativo o una instalación manual en el sistema.
 
@@ -76,7 +76,7 @@ En [GNU][gnu]/[Linux][linux] basta descargar el paquete de distribución para es
 
 {{< code file="ls-bin.sh" language="bash" options="" >}}
 
-### Construcción de la imagen del contenedor
+## Construcción de la imagen del contenedor
 
 Utilizando una aplicación escrita con Java con Gradle como herramienta de construcción y que usa [Spring Boot][spring-boot], el comando para construir la imagen OCI del contenedor es el siguiente.
 
@@ -91,7 +91,7 @@ El comando especifica los _buildpacks_ ya que el _builder_ utilizado no incluye 
 
 El _buildpack_ _paketo-buildpacks/procfile_ permite especificar diferentes comandos de ejecución en un archivo. El _entrypoint_ que añade el *builder* en la imagen permite especificar el proceso a iniciar en el comando de ejecución del contenedor.
 
-### Ejecución del contenedor con Docker
+## Ejecución del contenedor con Docker
 
 Docker permite almacenar en local y ejecutar las imágenes construidas con Buildpacks como un contenedor normal. El comando para iniciar la aplicación es el siguiente que inicia el proceso por defecto de la imagen.
 

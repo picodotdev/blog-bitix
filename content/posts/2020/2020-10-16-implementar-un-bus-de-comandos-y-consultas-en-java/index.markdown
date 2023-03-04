@@ -29,7 +29,7 @@ Un bus de comandos y consultas es una infraestructura que permite añadir nuevos
 
 {{< tableofcontents >}}
 
-### Interfaces del bus de comandos y consultas
+## Interfaces del bus de comandos y consultas
 
 Un bus de comandos y un bus de eventos son simplemente la definición de esta interfaz que tiene un único método a implementar. La interfaz del bus de comandos no devuelve datos y la interfaz del bus de consultas si devuelve datos.
 
@@ -46,7 +46,7 @@ Los comandos y consultas permiten independizar a la aplicación de la interfaz q
 * [Ejemplo de RabbitMQ con Java para enviar y recibir mensajes][blogbitix-210]
 * [Qué es GraphQL y ejemplo para una interfaz de un servicio con Spring Boot y Java][blogbitix-275]
 
-### Implementación de bus de comandos y consultas
+## Implementación de bus de comandos y consultas
 
 La implementación de la interfaz del bus de comandos y consultas reciben clases concretas _Command_ y _Query_, para aplicar los principios SOLID se necesita un manejador por cada clase _Command_ y _Query_ admitido por los buses. Esta clase manejador es la que contiene la lógica de dominio para proporcionar la funcionalidad del comando y consulta, contiene las dependencias de los servicios de dominio o repositorios de las entidades y hace uso de los métodos de las dependencias que necesita.
 

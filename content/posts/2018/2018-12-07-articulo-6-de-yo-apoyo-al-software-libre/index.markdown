@@ -25,7 +25,7 @@ Uno, dos o tres euros al día no parece significativo pero multiplicado por los 
 
 Todo esto es como introducción en que debido a estos ingresos que me genera el blog en ocasiones ya desde hace un tiempo hago una pequeña donación económica a los proyectos que me resultan de interés o he usado. En esta ocasión la donación que haré será a un proyecto dedicado a hacer posible que juegos triple A y software escrito para [Windows][windows] sea posible utilizarlos en [GNU][gnu]/[Linux][linux] cuando no ofrecen soporte nativo, este proyecto es [Wine][wine].
 
-### Wine
+## Wine
 
 Después de haber comprado un [Intel NUC8i5BEK][blogbitix-363] le he instalado [Arch Linux][archlinux] estoy jugando a [Diablo 3][blizzard-diablo3] en él sin ningún tipo de problema, sin cierres inesperados y con buenos fps. La gráfica [Intel Iris 655][intel-iris-graphics-655] del modelo [Intel Core i5-8259U][intel-i5-8259U] no es tan potente comparada con cualquier dedicada [NVIDIA][nvidia] o [AMD][amd] pero suficiente para este juego que ya tiene unos años, si es necesario bajando la resolución o detalles gráficos.
 
@@ -59,7 +59,7 @@ Wine es una implementación de la API de Windows con la que los programas de Win
     image3="image:diablo-3-5.webp" optionsthumb3="200x150" title3="Jugando a Diablo 3"
     caption="Juego de Diablo 3" >}}
 
-### Donación
+## Donación
 
 La donación no es muy grande pero espero que ayude para cubrir los costes que tengan las personas que contribuyen en el desarrollo de este proyecto. La donación se puede realizar mediante el medio de pago [PayPal][paypal]. Como tenía algo de dinero acumulado de un par de artículos patrocinados que escribí he utilizado $20 de ese saldo para donar a [Wine][wine].
 

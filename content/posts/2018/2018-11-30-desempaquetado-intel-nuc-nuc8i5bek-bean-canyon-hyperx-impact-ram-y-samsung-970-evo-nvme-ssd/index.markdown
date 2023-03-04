@@ -26,7 +26,7 @@ Llevaba unos cuantos meses buscando entre las muchas opciones que hay un nuevo o
 
 {{< tableofcontents >}}
 
-### Anteriores equipos
+## Anteriores equipos
 
 Siempre que puedo cuando algún familiar necesita un ordenador lo que hago es darle el que tengo yo y yo comprar uno nuevo, de esta forma al ordenador que entrego le doy una segunda vida para la que es perfectamente útil, así ha sido con los tres ordenadores que he comprado hasta el momento desde el 2002. Mis usos son mucho más exigentes, principalmente los equipos se me han quedado pequeños por la cantidad de memoria RAM. El primer ordenador que compré en el 2004 fue un ordenador de escritorio en formato torre tradicional ATX con un [AMD Athlon][amd-athlon] 1800+ (32 bits), 512 MiB de memoria, 60 GB de disco duro y tarjeta gráfica [NVIDIA GeForce2][nvidia-geforce2] MX 400 creo que con 32 MiB. Viendo que al finalizar su vida útil era algo complicado donar un ordenador ATX por tema de espacio el siguiente equipo que compré en el 2008 fue un portátil Dell XPS 1530 con un [Intel Core 2 Duo T8100][intel-core-t8100], 4 GiB de memoria, 320 GB de disco duro y gráfica [NVIDIA 8600GT](https://www.nvidia.es/object/geforce_8600_es.html) con 512 MiB, al poco tiempo de donarlo se estropeó, se quedó completamente muerto sin llegar a hacer ningún atisbo de encenderse, desde entonces no quiero nada que venga de Dell incluidos monitores tampoco me convenció pasado el tiempo de deslumbramiento inicial de su posesión la calidad de esta marca. El tercer equipo que compré a finales del 2012 también fue un portátil con la misma intención de poder donarlo llegado el momento, un Sony VAIO de 14" de resolución 1600x900 en panel TN con un [Intel Core i5 3210M][intel-i5-3210M] (Ivy Bridge, con un [gráfica integrada HD 4000][intel-hd-4000]), 8 GB de memoria con la que poder virtualizar más a gusto y un SSD Samsung 840 EVO de 250 GB SATA III (550 MB/s lectura, 500 MB/s escritura) que le puse a posteriori con el que el aumento de rendimiento en acceso a almacenamiento persistente. El SSD fue una gran mejora respecto a los discos duros mecánicos, mejor inversión que mejor procesador y más cantidad de memoria. Una pena que Sony haya abandonado el mercado de los portátiles porque con este Sony he estado realmente contento aún con algunos acabados en plástico y su pantalla TN.
 
@@ -37,11 +37,11 @@ Siempre que puedo cuando algún familiar necesita un ordenador lo que hago es da
     image3="image:intel-core-2-duo.webp" optionsthumb3="200x150" title3="Microprocesador Intel Core 2 Duo (T8100)"
     caption="4 GiB DDR2 de memoria RAM, AMD Athlon e Intel Core 2 Duo (T8100) de anteriores equipos" >}}
 
-### La búsqueda
+## La búsqueda
 
 Empezaba por decidirme que formato de ordenador quería con [Intentando elegir portátil, NUC o mini ITX para comprar nuevo equipo][blogbitix-309] y pasado un tiempo ya casi optado por la opción que quería, [Decidido a comprar un Intel NUC entre las opciones que he evaluado][blogbitix-329] pasando por un [análisis del Slimbook Curve][blogbitix-311] que hice. Para el nuevo ordenador personal en cualquier opción que eligiese quería monitor externo, al final elegí un [BenQ PD2700Q con resolución QHD (2560x1440) e IPS](https://amzn.to/2OFdFi9). Descarté un ATX por tamaño e igualmente un ITX que aún siendo un formato más pequeño seguía siendo grande para mi, a pesar de que con esta opción podría elegir un [AMD Ryzen][amd-ryzen] con mayor cantidad de núcleos. Un portátil seguía siendo una opción válida para poder donarlo en un futuro pero ocupa cierto espacio en la mesa y no tengo intención de moverlo por lo que la función que le da nombre no me es necesaria, si eligiese uno sería un [Slimbook Pro2](https://slimbook.es/en/pro-ultrabook-13-aluminium) seguramente. Como opción me quede con algún ordenador en formato Intel NUC, en un futuro cuando ya se me quede no válido para mis usos principales lo utilizaré como ordenador servidor de archivos, de descargas u otros usos personales que pueda darle como [OwnCloud][owncloud] o [GitLab][gitlab], como ocupa poco el espacio no será un problema.
 
-### Intel NUC8i5BEK (Bean Canyon)
+## Intel NUC8i5BEK (Bean Canyon)
 
 Es una pena que AMD no ofrezca equipos en formato de Intel NUC, muy posiblemente lo hubiese elegido principalmente por [los graves fallos de seguridad Meltdown y Spectre][blogbitix-293] que se hicieron públicos a inicios del 2018 que afectan más a Intel y que por ser un fallo del hardware solo se pueden no arreglar, simplemente mitigar haciendo que sea más difícil explotarlos y con pérdida de rendimiento. Para que en el cambio del equipo fuese una mejora significativa respecto al anterior portátil Sony que tenía quería que tuviese algún núcleo más en esta guerra entre Intel y AMD por ver quien ofrece más núcleos que parece por ahora va ganando AMD con su nueva arquitectura Zen y los problemas que está teniendo Intel para bajar de los 14 nanómetros de litografía para el tamaño de los transistores.
 
@@ -108,7 +108,7 @@ También se puede ver una comparativa del rendimiento entre los modelos de proce
 
 * [NUC7i5BNK vs NUC8i5BEK](https://browser.geekbench.com/v4/cpu/compare/10847596?baseline=10972155)
 
-### Memoria HyperX Impact
+## Memoria HyperX Impact
 
 Como desarrollador suelo virtualizar sistemas operativos con [VirtualBox][virtualbox] o iniciar contenedores de [Docker][docker] que demandan en buena medida cantidad de memoria. Todos los equipos principalmente se me quedan pequeños por la cantidad de memoria mucho más incluso que por potencia de procesador o por la velocidad o tamaño del almacenamiento ya habiendo pasado a los SSD, incluso los 8 GiB del portátil Sony se me quedaron pequeños. La memoria DDR4 está muy cara, más incluso que en el momento de su salida (casi el doble) lo que es una anomalía en la tecnología que siempre baja de precio por la presión de los avances, los fabricantes deben estar teniendo unos márgenes de beneficios brutales con la memoria DDR4. La excusa es que han preferido producir memoria NAND y RAM para teléfonos móviles que memoria RAM para ordenadores. En el 2019 está previsto que baje de precio entre un 10% y 20% por menor demanda.
 
@@ -125,7 +125,7 @@ Dos modelos validados por Intel compatibles con esto NUC son HyperX Impact de Ki
 
 * [Memoria HyperX Impact](https://www.hyperxgaming.com/es/memory/impact-ddr4)
 
-### Samsung 970 EVO M.2 NVMe
+## Samsung 970 EVO M.2 NVMe
 
 El almacenamiento en formato SSD está bajando notablemente de precio a cada mes o par de meses que pasa. En tamaño de 250 GB ya tienen un precio muy asequible e incluso en 500 GB y 1 TB no son prohibitivos. Cambiar el disco duro por un SSD es la mejor inversión a realizar en un ordenador si la cantidad de memoria es suficiente, cualquier procesador cumple para usos ofimáticos. Se puede optar por un SSD con interfaz SATA III con una velocidad de lectura y escritura de 550 / 500 MB/s que ya es bastante rápido para muchos usuarios o en formato M.2 NVMe que ofrece sensiblemente mayores tasas de transferencia de hasta 3500 / 2500 MB/s.
 
@@ -144,11 +144,11 @@ Es muy posible que compre adicionalmente una tarjeta micro SDXC de 128 GB o de 2
 * [Samsung 970 EVO NVMe M.2 500GB SSD](https://www.samsung.com/es/memory-storage/ssd-970-evo/MZ-V7E500BW/)
 * [Samsung EVO Plus microSD](https://www.samsung.com/es/memory-storage/evo-plus-microsd-with-adapter-mb-mc128gaeu/MB-MC128GAEU/)
 
-### Desempaquetado
+## Desempaquetado
 
 Con estos componentes he realizado el pedido en [Amazon][amazon-affiliate] ya que es la tienda que suelo utilizar para las compras en internet que hago, por comodidad, ahorrar tiempo, poder informarme lo mejor que puedo con las opiniones de otros clientes y por el amplio catálogo de productos que tiene. En total el conjunto de todos estos componentes me ha salido por unos 830 €, algo más barato que el portátil Sony si tengo en cuenta el SSD que le compre luego pero sensiblemente mejor con el lustro que ha pasado entre uno y otro.
 
-#### NUC
+### NUC
 
 La caja del NUC es muy pequeña en la que se incluye el NUC y la fuente de alimentación que es mucho más pequeña que el ladrillo de los Hades Canyon.
 
@@ -210,7 +210,7 @@ El ventilador es más grande que en generaciones anteriores.
     image2="image:nucblog-nuc8i3beh-heatsink.webp" optionsthumb2="200x150" title2="Disipador"
     caption="Ventilador y disipador" source="nucblog.net" >}}
 
-#### Memoria
+### Memoria
 
 El _kit_ de la memoria DDR4 a 2400 Mhz no tiene nada especial. Cada módulo está empaquetado en un _blister_ de plástico.
 
@@ -221,7 +221,7 @@ El _kit_ de la memoria DDR4 a 2400 Mhz no tiene nada especial. Cada módulo est�
     image3="image:desempaquetado-ram-3.webp" optionsthumb3="200x150" title3="Desempaquetado memoria HyperX Impact"
     caption="Desempaquetado memoria HyperX Impact" >}}
 
-#### SSD
+### SSD
 
 El _stick_ del SSD también es muy pequeño solo mide 8cm de largo y unos 2,5 cm de ancho.
 
@@ -235,7 +235,7 @@ El _stick_ del SSD también es muy pequeño solo mide 8cm de largo y unos 2,5 cm
     image1="image:desempaquetado-ssd-4.webp" optionsthumb1="200x150" title1="Desempaquetado SSD Samsung 970 EVO NVMe"
     caption="Desempaquetado SSD Samsung 970 EVO NVMe" >}}
 
-### Montaje de memoria y SSD
+## Montaje de memoria y SSD
 
 Montar la memoria y el SSD en el NUC es sencillo. Para acceder al interior del NUC hay que quitar los cuatro tornillos de la tapa inferior que da acceso a los _slots_ de memoria y el conector M.2, estos tornillos tienen unos topes de modo que no se puede quitarlos completamente tampoco se perderán.
 
@@ -256,7 +256,7 @@ El ventilador está en la parte superior del NUC, para acceder a él hay que des
 
 * [Desmontaje de un Intel NUC](https://www.ifixit.com/Guide/Intel+NUC5i7RYH+Disassembly/98011)
 
-### Análisis
+## Análisis
 
 El NUC es realmente pequeño con sus 11x11cm ocupa muy poco espacio, además la versión _slim_ solo tiene 3,6 cm de altura. Para instalar el sistema operativo, en mi caso la distribución Arch Linux de GNU/Linux he tenido que deshabilitar el _Secure Boot_ desde la BIOS a la que se accede pulsando la tecla F2 en el momento que se inicia el sistema, con la tecla F10 se puede elegir la unidad de inicio que será una memoria USB formateada con el medio de instalación, la tecla F7 sirve para instalar actualizaciones del firmware y BIOS cuando Intel los publica, el nuevo firmware se ha de guardar en una memoria USB formateada en FAT32. La BIOS es gráfica y se puede manejar con ratón con opciones que se muestran en las capturas. Por el contrario la selección de unidad de inicio y actualización del firmware son basadas en texto.
 
@@ -285,9 +285,9 @@ Me están entrando dudas de si mejor hubiese optado por la versión BEH (_tall_)
 
 Aún tengo que probarlo más pero estos NUCs se ajustan perfectamente a lo que finalmente estaba buscando en un futuro espero que AMD desarrolle un producto similar. Para tareas ofimáticas y de navegación por internet es más que suficiente, los ordenadores ATX e ITX quedan para los que quieren un rendimiento máximo o quieren jugar a las últimas novedades en juegos con grandes detalles y a altas resoluciones.
 
-### Alternativas a los Intel NUC
+## Alternativas a los Intel NUC
 
-#### Apple Mac mini
+### Apple Mac mini
 
 Un equipo equivalente a los NUC son los [Apple Mac mini](https://www.apple.com/es/mac-mini/). Después de unos años Apple los ha renovado como unos procesadores más recientes, más cantidad de memoria y SSD instalable. Pero a unos precios muy exagerados, tanto que el Mac mini con una configuración similar a la de este artículo del NUC saldría por 2100 €, bastante más del doble. Salvo que uno quiera macOS sí o sí y uno esté muy obcecado en querer Apple no es una opción en mi opinión acertada. Paro bueno esto pasa con cualquier producto de Apple no solo es específico de Mac mini aunque como se aprecia es un ejemplo claro y sangrante al compararlo. Por si fuera poco el procesador no soporta HyperThreading o SMT con lo que son 4 núcleos y 4 hilos y la gráfica es una UHD 630 la mitad de potente que la Iris Graphics 655.
 
@@ -334,7 +334,7 @@ En cualquier caso no entraba dentro de mis planes un Mac mini ni aunque tuviese 
     </tbody>
 </table>
 
-#### Slimbook One
+### Slimbook One
 
 También hubiese podido optar por un [Slimbook One](https://slimbook.es/one) per no me convenció porque solo tienen un _slot_ de memoria, admite hasta 32GB pero aún no hay módulos de esa cantidad si no es en _kit_, lo que en la práctica limita su memoria a 16GB. La tarjeta gráfica que tienen es una UHD 630 como comentaba la mitad de potente en teoría que la Iris Graphics 655. El diseño que tiene no es muy atractivo y no tiene tarjeta microSD como una forma de ampliarle el almacenamiento. El ONE sin descuento parte de 480 € más caro que los 400 € del Intel NUC.
 
@@ -345,14 +345,14 @@ También hubiese podido optar por un [Slimbook One](https://slimbook.es/one) per
     image3="image:slimbook-one-3.webp" optionsthumb3="200x150" title3="Slimbook ONE (v2)"
     caption="Slimbook ONE (v2)" >}}
 
-#### Minis Forum
+### Minis Forum
 
 Después de un tiempo y a medida que AMD lanzando modelos de procesadores con bajo consumo y el buen rendimiento basados en la arquitectura Ryzen han aparecido algunos modelos similares en formato a los Intel NUC pero basados en los procesadores de AMD. Uno de ellos es el [Minis Forum UM300](https://amzn.to/3kQkg4Z) que ya equipado con memoria y almacenamiento SSD tiene un precio muy competitivo.
 
 {{< amazon
     tags="minipc" >}}
 
-### Switch HDMI y cables, monitor con el ordenador y consola
+## Switch HDMI y cables, monitor con el ordenador y consola
 
 Si el monitor es compartido tanto por el ordenador como por [una consola como la PlayStation 4 como muestro en su desempaquetado][blogbitix-432] es necesario un adaptador o [_switch_ HDMI de múltiples entradas](https://amzn.to/3kxT2Cx) y una salida para usar ambos sin necesidad de conectar y desconectar cables, no son caros y ofrecen mucha comodidad, con un botón se alterna entre la entrada del ordenador y la consola, además detecta la entrada pdesey se cambia automáticamente.
 
@@ -367,7 +367,7 @@ Otro accesorio de utilidad es un [teclado pequeño con soporte dual para bluetoo
     linkids="ac037d001d51556cbf14f680b30146c2"
     asins="B07RQBRRR7" >}}
 
-### Nuevo escritorio
+## Nuevo escritorio
 
 Este es la disposición que tenía antes con el Sony VAIO y la que tengo ahora con el NUC, la pantalla externa una [BenQ PD2700Q](https://amzn.to/2Qjs7MT) de 27" y resolución QHD (2560x1440), teclado y ratón inalámbrico [V7 CKW200](https://amzn.to/2TKzmMT) a los que añadí un ratón [Logitech M90](https://amzn.to/2S9Bex2) con cable básico de tres botones ya que el ratón inalámbrico en algunos momentos funciona con problemas, el teclado sin embargo funciona perfectamente, y [alfombrilla](https://amzn.to/2P5jocE) para ellos junto con un [concentrador USB 2.0 de Amazon Basics](https://amzn.to/2BwubZJ). He ganado mucho espacio en la mesa si en algún momento quiero trabajar en ella para otras cosas, la pantalla la tengo ahora al final de la mesa y el NUC me ocupa menos espacio que el portátil además de que puedo colocarlo en cualquier sitio.
 

@@ -33,7 +33,7 @@ Una vez descargado el vídeo o el audio quizá dependiendo del dispositivo donde
 
 {{< tableofcontents >}}
 
-### Aplicaciones para descargar vídeos de YouTube
+## Aplicaciones para descargar vídeos de YouTube
 
 Una aplicación con interfaz gráfica en principio es muy intuitiva de usar y no requiere tanto conocimiento inicial para usarla, por el otro lado una aplicación con interfaz de línea de comandos aunque requiere conocer las opciones del comando para realizar la tarea deseada una vez conocido es más rápido conseguir lo que se desea que con una aplicación de interfaz gráfica, para conocer el comando exacto y las opciones se suelen proporcionar ejemplos de uso.
 
@@ -42,7 +42,7 @@ Los gestores de descargas son simplemente una de las categorías de programas qu
 * [Listado de programas esenciales según categoría para GNU/Linux][blogbitix-469]
 * [Download managers](https://wiki.archlinux.org/title/List_of_applications#Download_managers)
 
-#### Con interfaz gráfica
+### Con interfaz gráfica
 
 Un gestor de descargas, permite gestionar las descargas de cualquier fuente lo único necesario es el enlace del contenido a descargar. Algunos gestores de descargas entre las fuentes de descarga que permite está YouTube y es posible descargar un vídeo como únicamente el audio o la música.
 
@@ -61,7 +61,7 @@ Este es un vídeo descargado de YouTube con un corto de animación de los varios
     image1="image:spring.webp" optionsthumb1="300x250" title1="Spring"
     caption="Spring" >}}
 
-#### De línea de comandos
+### De línea de comandos
 
 La línea de comandos es más rápida conociendo el comando y hace fácil la descarga. La opción más conocida es [youtube-dl](https://github.com/ytdl-org/youtube-dl/) y un _fork_ de esta es [yt-dlp](https://github.com/yt-dlp/yt-dlp) que incorpora algunas características adicionales.
 

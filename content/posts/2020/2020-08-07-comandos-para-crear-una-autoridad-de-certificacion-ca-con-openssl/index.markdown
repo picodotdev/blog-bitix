@@ -26,7 +26,7 @@ Para [usar el protocolo seguro HTTPS en un servidor web][blogbitix-14] es necesa
 
 {{< tableofcontents >}}
 
-### Crear la clave y certificado de la autoridad de certificación raíz
+## Crear la clave y certificado de la autoridad de certificación raíz
 
 El certificado de una autoridad de certificación es un certificado autofirmado que se utilizar para comprobar que la firma de los certificados que emite la entidad es válida. Es necesario crear un par de claves asimétricas privada y pública y posteriormente generar su certificado.
 
@@ -45,7 +45,7 @@ Al crear el certificado se utiliza un archivo de configuración donde se guardan
 
 {{< code file="ca/openssl.conf" language="ini" options="" >}}
 
-### Crear la clave y certificado de la autoridad de certificación intermedia
+## Crear la clave y certificado de la autoridad de certificación intermedia
 
 De la confianza en la CA raíz depende toda la seguridad de los certificados que emite, que su clave privada y pública o certificado sean comprometidos es posiblemente lo peor que le puede ocurrir a una CA. Para minimizar el riesgo se intenta hacer el menor uso posible de la clave privada y pública de la autoridad de certificación raíz, para esto se suele crear una autoridad de certificación intermedia que es la que realmente firma, revoca y renueva los certificados para el servidor, clientes o usuarios. Si la CA intermedia es comprometida aún siendo también un problema grave de seguridad al menos la CA raíz puede crear una nueva CA intermedia en la que se pueda confiar.
 
@@ -73,7 +73,7 @@ La CA intermedia también utiliza su propio archivo de configuración de OpenSSL
 
 {{< code file="intermediate/openssl.conf" language="ini" options="" >}}
 
-### Crear y firmar el certificado del servidor, clientes o usuarios
+## Crear y firmar el certificado del servidor, clientes o usuarios
 
 Para cada servidor, cliente de servidor o usuario hay que crear nuevamente su clave privada y pública, crear la solicitud de firma o _Certificate Sign Request_ (CSR) que se envía a la autoridad de certificación intermedia para que lo firme y esta devuelva un certificado firmado. En el caso de un certificado para un servidor se incluye en el campo _Common Name_ o _CN_ el nombre del dominio del servidor, un certificado multidominio contiene varios nombres de dominio para los que es válido en el campo _Subject Alternative Names_ o _SAN_, los certificados también se pueden asociar a una dirección IP concreta pero lo habitual es utilizar nombres de dominio.
 
@@ -95,7 +95,7 @@ Inspeccionando la información del documento se observa que en la sección _X509
 
 {{< code file="server-certs-3.sh" language="bash" options="" >}}
 
-### Añadir el certificado de la CA en el navegador Firefox
+## Añadir el certificado de la CA en el navegador Firefox
 
 Los navegadores incluyen los certificados de algunas autoridades de certificados en las que se confía. En el caso de crear una CA propia como lo mostrado en este artículo y un certificado para un servidor firmado por esta autoridad de certificados el navegador mostrará una advertencia indicando que el certificado presentado no es de confianza antes de permitir entrar al sitio web, con este mensaje el usuario es consciente de que el certificado del servidor no es de confianza y si el usuario lo desea se permite el acceso al sitio web. Aún así el navegador muestra una advertencia en el icono de seguridad del sitio web de que hay un problema con el certificado.
 
@@ -119,7 +119,7 @@ Una vez se importa el certificado de la CA el navegador muestra el icono de segu
     image1="image:firefox-certificate-valid.webp" optionsthumb1="300x250" title1="Certificado de confianza y conexión segura en Firefox"
     caption="Certificado de confianza y conexión segura en Firefox" >}}
 
-### Revocar y renovar un certificado
+## Revocar y renovar un certificado
 
 Además de firmar y generar de certificados las funciones de una CA es revocar un certificado cuando se ha comprometido y ya no es de confianza por un problema de seguridad y renovar de los certificados cuando se fecha de validez expira. 
 

@@ -25,7 +25,7 @@ Continuando las mejoras incrementales cada seis meses el 17 de septiembre se pub
 
 {{< tableofcontents >}}
 
-### Introducción
+## Introducción
 
 Casi coincidiendo con la publicación de Java 13 se publicado [Jakarta EE][jakartaee] 8 que únicamente tiene como novedad que su propiedad ha pasado a estar baja la fundación Eclipse, es totalmente compatible con [Java EE 8 y sus últimas mejoras][blogbitix-360], las novedades vendrán en versiones posteriores de Jakarta EE en las que se dará importancia a la tendencia de las aplicaciones para su funcionamiento en entornos orientados a la nube. Casi al mismo tiempo se ha publicado [JavaFX](https://openjfx.io/) 13 ya fuera del JDK en onde puede seguir su propio ciclo de publicaciones independiente del JDK.
 
@@ -43,9 +43,9 @@ Las mejoras incluídas en esta versión son:
 * JEP 354: [Switch Expressions (Preview)](https://openjdk.java.net/jeps/354)
 * JEP 355: [Text Blocks (Preview)](https://openjdk.java.net/jeps/355)
 
-### Nuevas características en vista previa
+## Nuevas características en vista previa
 
-#### Bloques de texto
+### Bloques de texto
 
 Para definir una cadena de caracteres que tuviese varias lineas en Java había que emplear concatenación de cadenas, si esa cadena contiene el caracter comilla doble _"_ de inicio de cadena había que escaparlo, si esa cadena contenía saltos de línea había que emplear el caracter de escape de salto de línea _\n_. El resultado es una cadena con problemas de legibilidad por los caracteres de escape que incluye en el código fuente del lenguaje. Esto podría se al definir una cadena de texto que tuviese elementos HTML, JSON, sentencias SQL o expresiones regulares.
 
@@ -59,7 +59,7 @@ Como ayuda a las cadenas de texto en la clase [String](https://docs.oracle.com/e
 
 * [Text Blocks Come to Java](https://blogs.oracle.com/javamagazine/text-blocks-come-to-java)
 
-#### Expresiones _switch_ mejoradas
+### Expresiones _switch_ mejoradas
 
 En las [novedades de Java 12][blogbitix-391] se añadió la posibilidad de los _switch_ fueran expresiones que retornan un valor en vez de sentencias y se evita el uso de la palabra reservada _break_.
 
@@ -71,7 +71,7 @@ En Java 13 en vez únicamente el valor a retornar se permite crear bloques de se
 
 * [Inside Java 13’s switch Expressions and Reimplemented Socket API](https://blogs.oracle.com/javamagazine/inside-java-13s-switch-expressions-and-reimplemented-socket-api)
 
-#### Otras características incorporadas y cambios
+### Otras características incorporadas y cambios
 
 Las las otras tres características destacadas _Dynamic CDS Archives_, _ZGC: Uncommit Unused Memory_ para la mejora del recolector de basura y _Reimplement the Legacy Socket API_ reescribiendo el código para los _sockets_ en lenguaje Java son cambios internos que afectan a la plataforma Java pero no al lenguaje.
 

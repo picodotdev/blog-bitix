@@ -30,7 +30,7 @@ Para tener bajo control las complicaciones de los microservicios son necesarias 
 
 {{< tableofcontents >}}
 
-### Qué es un _service mesh_
+## Qué es un _service mesh_
 
 [La definición de Consul de un _service mesh_](https://developer.hashicorp.com/consul/docs/concepts/service-mesh) es una capa de red dedicada que proporciona seguridad en la comunicación de servicio a servicio dentro y a través de la infraestructura, incluyendo el sistemas propios y entornos en la nube. Un _service mesh_ es utilizado habitualmente en arquitecturas basadas en microservicios pero son útiles en cualquier escenario en que hay una comunicación por red compleja.
 
@@ -40,7 +40,7 @@ En gran medida la solución a los problemas de los microservicios en un _service
 
 El _service mesh_ a través de los _proxy sidecar_ permiten delegar en la infraestructura y no en las aplicaciones varios aspectos que son necesarios resolver en un sistema basado en microservicios y todo ello de forma trasnparente y sin tener que hacer modificaciones en los microservicios más a llá de configuración de puertos.
 
-#### Seguridad
+### Seguridad
 
 La computación en la nube de los proveedores de infraestructura como [Amazon AWS][amazon-aws], [Google Cloud][google-cloud] y [Microsoft Azure][microsoft-azure] no dejan de ser entornos compartidos de computación donde todos aun con las medidas de seguridad y lógicas utilizan los mismos medios de red y computación. Por eso se considera que la computación en la nube utiliza un medio no confiable en el que el descubrimiento de un fallo de seguridad tan importante como [el fallo de seguridad Meltdown y Spectre de los procesadores][blogbitix-293] aún con las medidas de mitigación implementadas es un grave problema.
 
@@ -52,7 +52,7 @@ Una gran característica es que todas estas funcionalidades son proporcionadas s
 
 En [GNU][gnu]/[Linux][linux] la seguridad a nivel de red en la misma máquina en la comunicación entre el servicio y el _sidecar proxy_ se protege con _namespaces_ de red que proporciona Linux.
 
-#### Observabilidad
+### Observabilidad
 
 Dado el gran número de elementos de una arquitectura de microservicios es imprescindible tener visibilidad del estado y comportamiento de cada uno de ellos. Se necesitan métricas que permitan conocer el estado normal de los servicios y en caso de obtener unas métricas diferentes saber que está ocurriendo en el sistema en su conjunto y en cada pieza individual.
 
@@ -64,7 +64,7 @@ Dado que todo el tráfico entre los microservicios fluye a través de los _sidec
 
 Para obtener el flujo completo desde que entra en el _service mesh_ y fluye entre las diferentes llamadas entre los microservicios [Jaeger][jaeger] con [Zipkin][zipkin] o [OpenTelemetry][opentelemetry] permite obtener una foto de todos los pasos y saltos que ha tenido una petición entre los diferentes servicios.
 
-#### Resiliencia
+### Resiliencia
 
 Dado el número de servicios y el número de instancias de cada uno de ellos y la no completa fiabilidad de un medio de red que puede fallar es necesario que los microservicios sean resilientes ante la aparición de estos fallos.
 
@@ -74,13 +74,13 @@ Los _health check_ no son infalibles y los microservicios para aumentar su resil
 
 Consul implementa medidas de resiliencia tanto activas como pasivas, y en caso de que una instancia de un servicio falle redirigir el tráfico a otras instancias con buen estado de salud, este enrutamiento se realiza mediante el control de tráfico.
 
-#### Control de tráfico
+### Control de tráfico
 
 Al ser los microservicios independientes estos se despliegan de forma independiente mientras los cambios sean solo de implementación. Al desplegar una nueva versión de un microservicio es muy útil tener la capacidad del enrutamiento de las peticiones entre los microservicios para usar diferentes estrategias de despliegue como _rollout_, _canary_, _blue/green_ y cambiar el enrutamiento.
 
 Consul proporciona tres conceptos para controlar el enrutamiento entre los servicios los _resolvers_ que identifican las instancias de los servicios en grupos, _splitters_ que permite establecer la cantidad de tráfico que es enviada a los grupos de servicios y finalmente los _routers_ que permiten mediante reglas de la petición o de la instancia del servicio a que servicio se le envía el tráfico.
 
-### Ejemplo práctico del _service mesh_ de Consul
+## Ejemplo práctico del _service mesh_ de Consul
 
 En el libro Consul: Up & Running se explica más detalladamente los puntos anteriores junto con un ejemplo con los necesarias configuraciones para Consul de cada uno de ellos utilizando [Kubernetes][kubernetes] y máquinas virtuales.
 
@@ -88,7 +88,7 @@ En el libro se usa simplemente Consul, en este artículo muestro la misma config
 
 El ejemplo consiste en dos procesos uno _frontend_ que muestra la información de una guía de aves y un servicio de _backend_ que devuelve los datos de las aves. Los procesos están empaquetados en sus imágenes de [Docker][docker]. Ambas aplicaciones se comunican mediante una API REST y permiten probar en la práctica todos los conceptos comentados.
 
-#### Creación de la máquina virtual
+### Creación de la máquina virtual
 
 Docker es un software desarrollado para GNU/Linux que en otros sistemas no funciona de forma nativa y requiere adaptaciones y virtualización, para poder ejecutar el ejemplo en cualquier sistema operativo y no instalar nada en la máquina local más allá de VirtualBox y Vagrant se utiliza una máquina virtual que permiten crear estas dos herramientas de forma fácil.
 
@@ -104,7 +104,7 @@ Al iniciar la máquina virtual se aprovisiona, con Vagrant simplemente consiste 
     image1="image:virtualbox.webp" optionsthumb1="650x450" title1="VirtualBox"
     caption="VirtualBox" >}}
 
-#### Inicio de Consul y Nomad y microservicios del ejemplo
+### Inicio de Consul y Nomad y microservicios del ejemplo
 
 Una de las ventajas de Consul y Nomad es que son muy simples de usar ya que sus programas son simplemente un único binario. Consul y Nomad se inician con los siguientes comandos en modo desarrollo con sus archivos de configuración.
 
@@ -130,7 +130,7 @@ Tanto Consul como Nomad ofrecen una interfaz web para consultar el estado de los
     image2="image:nomad.webp" optionsthumb2="300x200" title2="Nomad"
     caption="Consul y Nomad" >}}
 
-#### Inicio de Prometheus y Jaeger
+### Inicio de Prometheus y Jaeger
 
 Prometheus es una base de datos temporal que permite guardar los datos de métricas y monitorización que generan las aplicaciones, los _sidecar proxy_ generan métricas que Prometheus recolecta y Consul permite mostrar algunos datos básicos de métricas como número de peticiones, tasa de fallos de las peticiones y percentiles de latencia.
 
@@ -149,7 +149,7 @@ Jaeger ofrece una interfaz web en el puerto 16686 para visualizar la trazabilida
     image1="image:jaeger.webp" optionsthumb1="650x450" title1="Jaeger"
     caption="Jaeger" >}}
 
-#### Inicio de los servicios _frontend_ y _backend_
+### Inicio de los servicios _frontend_ y _backend_
 
 La aplicación de ejemplo que muestra información de aves está compuesta de dos microservicios el _frontend_ que muestra la información mediante una interfaz web y el servicio de _backend_ que proporciona la información al _frontend_.
 
@@ -164,7 +164,7 @@ La definición del job de Nomad que engloba ambos servicios es la siguiente. Con
     image1="image:birds-v1-1.webp" optionsthumb1="650x450" title1="Frontend con datos de la versión v1 del backend"
     caption="Frontend con datos de la versión v1 del backend" >}}
 
-#### Demostraciones de las funcionalidades del _service mesh_
+### Demostraciones de las funcionalidades del _service mesh_
 
 A la aplicación se accede a través del servicio de _ingress-gateway_ en el puerto 8080 de la máquina virtual. El servicio de _ingress-gateway_ simplemente redirige el tráfico a la aplicación de _frontend_. Esta es la topología de comunicación para el servicio de _frontend_ proporcionada por Consul, recibe peticiones del _ingress-gateway_ y a su vez realiza peticiones al servicio de _backend_.
 
@@ -222,7 +222,7 @@ Con el control de tráfico es posible distribuir el número de peticiones que va
     image2="image:birds-v2.webp" optionsthumb2="300x200" title2="Frontend con datos de la versión v2 del backend"
     caption="Frontend con datos de la versión v1 y v2 del backend" >}}
 
-### Libros sobre Consul
+## Libros sobre Consul
 
 Este artículo es prácticamente un resumen del libro [Consul: Up & Running](https://amzn.to/3F0SmjY) que muestra y explica todo esto de forma más detallada y extensa además de mostrarlo usando Kubernetes. Está bien explicado y su ejemplo es muy fácil de seguir y probar además de muy didáctico para experimentar con los conceptos y funcionalidades comentadas de Consul. Otros libros sobre Consul y _service mesh_ son [Simplifying Service Management with Consul](https://amzn.to/3seULzU) y [Mastering Service Mesh](https://amzn.to/3DiIiS6).
 

@@ -25,14 +25,14 @@ Nuestros datos en forma de documentos, fotos, música o vídeos son más importa
 
 Las copias de seguridad deben guardase en un dispositivo diferente al origen ya que en caso de fallo del hardware origen la copia de seguridad no se podría recuperar, la función de la copia de seguridad es tener un respaldo de los datos en caso de una pérdida de los datos en el dispositivo origen, ya sea por un fallo en el hardware o por la eliminación accidental de los datos por software. Para mayor seguridad dependiendo de la importancia de los datos incluso es recomendable hacer copias de seguridad por duplicado en varios discos. En los datos más críticos y para proteger de otras forma de pérdidas de datos como un incendio o robo incluso almacenar las copias de seguridad en diferentes ubicaciones. Las copias de seguridad deben realizarse de forma periódica ya sea manualmente o con herramientas que permiten realizar las copias de seguridad de forma automatizada.
 
-### Discos duros externos para hacer copia de seguridad de datos
+## Discos duros externos para hacer copia de seguridad de datos
 
 Una opción sencilla sin más complicaciones de opciones más avanzadas es un disco duro externo USB de 2.5 pulgadas, estos discos son pequeños además de portables, en diferentes capacidades según la necesidad llegando incluso a 4 TB y a unos precios muy asequibles. Una buena opción son estos discos duros externos de 2.5" con conexión 3.0 USB en capacidades de [1 TB](https://amzn.to/31h8F7y), [2 TB](https://amzn.to/3j7ZAUY), [3 TB](https://amzn.to/346DnSW) y [4 TB](https://amzn.to/358X8Zf). Hay que tener en cuenta que la copia de seguridad requiere al menos tanto espacio como los datos originales.
 
 {{< amazon
     tags="storage-usb-external" >}}
 
-### Utilizar el programa FreeFileSync para hace copias de seguridad
+## Utilizar el programa FreeFileSync para hace copias de seguridad
 
 FreeFileSync tiene una licencia de software libre y está disponible tanto para [Windows][windows], [GNU][gnu]/[Linux][linux] y [macOS][macos]. Ofrece una interfaz gráfica y su uso no es complicado. Primero deberemos seleccionar los directorios de los que hacer copia de seguridad y para cada uno de ellos el directorio destino en el que se guardará la copia de seguridad, FreeFileSync llama al origen y destino izquierdo y derecho ya que los presenta así en la interfaz y con la característica que cualquiera de ellos puede actuar como origen y destino. Habitualmente el directorio origen será uno del disco duro del sistema y el directorio destino un directorio de un disco duro o memoria USB externa.
 

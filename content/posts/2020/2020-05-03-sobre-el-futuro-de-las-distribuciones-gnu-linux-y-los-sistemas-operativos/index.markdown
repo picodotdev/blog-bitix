@@ -30,7 +30,7 @@ En cualquier caso las actualizaciones son frágiles tal como las conocemos, esto
 
 Hay cuatro puntos en los que es muy posible que los sistemas operativos cambien tal y como los conocemos: actualizaciones, aplicaciones, lenguaje de programación y _kernel_. Otros cambios que ya se han producido es la sustitución del antiguo sistema de inicio y gestor de servicios [System V][systemv] por [systemd][systemd] y del servidor gráfico [Xorg][xorg] por [Wayland][wayland] pero estos no son los únicos cambios que próximamente llegarán a algunas distribuciones GNU/Linux o surgirán nuevas basadas en estos nuevos principios y herramientas.
 
-### Actualizaciones
+## Actualizaciones
 
 Dada la fragilidad de las actualizaciones es deseable que en caso de que una produzca algún error sea posible volver a un estado anterior bueno conocido.
 
@@ -45,7 +45,7 @@ Ya se están produciendo cambios y surgiendo nuevas distribuciones. [Fedora Silv
     image3="logotype:gnu-guix.svg" optionsthumb3="200x150" title3="GNU Guix"
     caption="Tres des las distribuciones de la siguiente generación" >}}
 
-### Aplicaciones
+## Aplicaciones
 
 Hasta hoy una parte característica de cada distribución es que tiene su propio repositorio de paquetes con el software que ofrece. Cada paquete de cada distribución es compilado y probado específicamente para cada distribución, cada paquete de cada distribución es mantenido por una persona lo que requiere mucho tiempo del escaso tiempo que tienen estos mantenedores más teniendo en cuenta que muchos de ellos lo hacen en su tiempo libre y no están respaldados económicamente por ninguna organización.
 
@@ -64,7 +64,7 @@ Estas tres opciones son independientes de la distribución, el software es distr
     image3="logotype:appimage.svg" optionsthumb3="200x150" title3="AppImage"
     caption="Diferentes gestores de aplicaciones para instalar software y programas" >}}
 
-### Lenguaje de programación
+## Lenguaje de programación
 
 Mucho del software actual y sobre todo el de sistemas y los sistemas operativos ha sido desarrollado en el lenguaje de programación C por su abstracción del lenguaje máquina en un lenguaje de alto nivel pero conservando la proximidad al modo del funcionamiento de las máquinas. Bien empleado es capaz de obtener el máximo rendimiento de una máquina.
 
@@ -80,7 +80,7 @@ Es difícil que surja un nuevo sistema operativo que sustituya rápidamente a lo
     image2="logotype:go.svg" optionsthumb2="200x150" title2="Go"
     caption="Lenguajes de sistemas que pueden reemplazar a C" >}}
 
-### Kernel
+## Kernel
 
 El kernel de Linux es monolítico no porque sea lo mejor sino porque como [Linus Torvalds][linus-torvalds] considera es lo más pragmático por su mayor facilidad de desarrollo. Pero un fallo en cualquier parte de su gran cantidad de código sobre todo el los controladores de dispositivos hace que el sistema produzca un volcado del sistema y deje de funcionar completamente. También es más inseguro ya que cualquier código que el kernel cargue y funcione en modo superusuario supone un potencial problema ya que es capaz de realizar cualquier cosa.
 
@@ -96,7 +96,7 @@ Si a Linux le surge una alternativa no será porque es malo sino porque no tiene
     image2="logotype:hurd.svg" optionsthumb2="200x150" title2="GNU/hurd"
     caption="Sistemas operativos basados en microkernel" >}}
 
-### Sistema de archivos
+## Sistema de archivos
 
 Aún ext4 sigue siendo el sistema de archivos mayoritariamente empleado por la distribuciones GNU/Linux. Pero hay algunos otros sistemas que pretenden reemplazarlo, uno de ellos es [ZFS][zfs] y su reencarnación [openzfs][openzfs] originario de la extinta [Sun Microsystems][sun-microsystems] que como características destacadas tiene _snapshoting_, evitar corrupción de datos en metadatos y un mayor límite de espacio de almacenamiento máximo teórico que puede considerarse hoy en día infinito y únicamente relevante para superordenadores.
 

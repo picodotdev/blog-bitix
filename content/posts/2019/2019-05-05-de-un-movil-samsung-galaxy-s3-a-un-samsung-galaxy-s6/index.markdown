@@ -27,7 +27,7 @@ Sobre la década de los años 2000 se desarrollaron los primeros teléfonos inte
 
 En mi caso el móvil me sigue pareciendo un dispositivo incómodo para trabajar sobre todo para escribir texto y sigo utilizando en mucha mayor medida un ordenador de escritorio. Aunque hay algunos intentos como el [Samsung Galaxy DeX](https://www.samsung.com/global/galaxy/apps/samsung-dex/) u otro aún no se ha masificado el baticinio que hacía en [La siguiente disrupción tecnológica, la convergencia][blogbitix-149] en el 2016 como elemento que puede convertir el móvil en un ordenador personal. Mis necesidades no son tales como para que el móvil pueda sustituir el ordenador personal pero ya he pasado por varios móviles y hoy ha llegado el momento de buscar un sustituto al [Samsung Galaxy S3](https://es.wikipedia.org/wiki/Samsung_Galaxy_S_III) que me ha servido perfectamente y con el que he estado muy contento más aún después de instalarle [LineageOS][lineageos] 14.1 para tener [Android][android] 7.1 (Nougat) desde su original 4.0 (Ice Cream Sandwich) actualizado a 4.3 (Jelly Bean) y 4.4 (KitKat).
 
-### Mis anteriores móviles
+## Mis anteriores móviles
 
 He tenido varios móviles empezando por un [Motorola C350](https://www.gsmarena.com/motorola_c350-381.php) y pasando por [Nokia 6630](https://www.gsmarena.com/nokia_6630-811.php), [HTC Wildfire CDMA](https://www.gsmarena.com/htc_wildfire_cdma-3577.php), [Motorola Defy](https://www.gsmarena.com/motorola_defy+-4098.php), el citado [Samsung Galaxy S3](https://www.gsmarena.com/samsung_i9300_galaxy_s_iii-4238.php) lanzado en el 2012 hasta que he vuelto a cambiar. Realmente el único móvil que he comprado fue el primero el resto los he ido heredando de los descartes de otras personas y el Samsung Galaxy S3 es un móvil con el que he hecho todo lo que he necesitado. Principalmente usar [GMail][google-gmail], [Twitter][twitter], mensajería con [WhatsApp][whatsapp], ocasionalmente [Firefox][firefox] para el móvil y algún juego como [Clash Royale](https://play.google.com/store/apps/details?id=com.supercell.clashroyale&hl=es). En buenas condiciones de luz realizando un enfoque adecuado con sus 8 megapixeles de cámara principal es capaz de tomar buenas fotografías y sacar buenos vídeos.
 
@@ -44,7 +44,7 @@ He tenido varios móviles empezando por un [Motorola C350](https://www.gsmarena.
 
 Pero el Galaxy S3 también ya me estaba dando algunos síntomas de agotamiento, en modo espera me aguanta un día pero con un uso algo más intensivo la batería baja rápidamente y requiere alguna carga más de una carga al día. Algunas aplicaciones como GMail y Twitter se nota que el procesador Exynos 4412 quad-core que tiene cumple pero no va sobrado para la época actual. En total el S3 habrá tenido 7 años de vida, menos lo que no sería mucho si no lo hubiese dado un segundo uso y un tercero con LineageOS.
 
-### El nuevo móvil
+## El nuevo móvil
 
 Como opciones candidatas he estado barajando un [Samsung Galaxy A50](https://www.samsung.com/es/smartphones/galaxy-a50/SM-A505FZKSPHE/), [Samsung Galaxy A70](https://www.samsung.com/es/smartphones/galaxy-a70-a705/SM-A705FZKUPHE/), [Xiaomi Mi 9](https://www.mi.com/es/mi9/) y [Xiaomi Mi 9 SE](https://www.mi.com/es/mi-9-se/). Cualquiera de ellos unos pedazo móviles en el rango de los 300-450 € que no tienen mucho que envidiar a otros de gama alta pero que cuestan el doble o más.
 

@@ -32,7 +32,7 @@ Una de las funcionalidades que ofrece [Vault][vault] de [HashiCorp][hashicorp] e
 
 {{< tableofcontents >}}
 
-### Vault como servicio de cifrado y descifrado
+## Vault como servicio de cifrado y descifrado
 
 Vault es una herramienta dedicada a la seguridad de la empresa HashiCorp. Tiene diferentes funcionalidades como servir de almacenamiento de secretos en su base de datos de claves y valores, [generar credenciales de acceso bajo demanda a recursos como bases de datos][blogbitix-428] entre otras como cifrado y descifrado como servicio. En todas estás funcionalidades diversos aspectos de la seguridad se centralizan en un único componente del sistema.
 
@@ -45,7 +45,7 @@ Vault ofrece dos servicios para proteger los datos, el servicio de cifrado y des
 {{< youtube
     video="DOw0Y6ig1i4" >}}
 
-#### Servicio de cifrado y descifrado
+### Servicio de cifrado y descifrado
 
 El servicio de cifrado y descifrado de Vault consisten simplemente en aplicar un algoritmo de cifrado a un dato en texto plano y devolverlo cifrado y realizar la operación contraria aplicar el algoritmo de descifrado a un dato cifrado y devolverlo en texto plano. Además de mantener las claves de cifrado con la posibilidad rotarlas, es decir, crear nuevas claves.
 
@@ -56,7 +56,7 @@ El proceso de cifrado de Vault transforma el dato original en un valor que no ti
     image1="image:vault-encryption.webp" optionsthumb1="650x450" title1="Uso del servicio de cifrado y descifrado de Vault"
     caption="Uso del servicio de cifrado y descifrado de Vault" >}}
 
-#### Servicio de transformación
+### Servicio de transformación
 
 En vez de cifrado Vault también ofrece un servicio de transformación que permite obtener un dato ofuscado pero que conserva el mismo formato y longitud que el original. Que el dato tenga el formato original es importante en una base de datos relacional ya que la longitud y formato de la columna para guardarlo será el mismo que el original, en el caso de un dato cifrado el campo se ha ade adaptar al resultado cifrado lo que no es deseable.
 
@@ -67,7 +67,7 @@ En este ejemplo se codifica y descodifica un número de tarjeta de crédito cons
 {{< code file="vault-transform-encode.sh" language="plain" options="" >}}
 {{< code file="vault-transform-decode.sh" language="plain" options="" >}}
 
-#### Proveedor de claves
+### Proveedor de claves
 
 En un caso de uso en el que es necesario cifrar volúmenes de datos grandes, como _blobs_ de 1 GB, requiere codificar en _base64_ y enviar a Vault por red y obtener la respuesta de tal volumen de datos, esto no es deseable para obtener el mejor rendimiento. En vez de enviar los datos se pueden cifrar los datos localmente con la clave obtenida de Vault. La idea es permitir a la aplicación cifrar y descifrar los datos sin necesidad de llamadas y retornos a Vault con grandes volúmenes de datos.
 
@@ -75,7 +75,7 @@ La respuesta para obtener la clave de cifrado contiene la clave de datos tanto e
 
 Esta idea permite cifrar y descifrar grandes volúmenes de datos a la aplicación sin realizar comunicaciones de red costosas con Vault. En este caso Vault no proporciona el servicio de cifrado y descifrado sino que lo hace la aplicación, sin embargo, Vault administra la gestión de las claves usadas por la aplicación que no ha de mantener ninguna clave privada.
 
-### Ejemplo de cifrado y descifrado de datos
+## Ejemplo de cifrado y descifrado de datos
 
 Vault dispone tres métodos de acceso a sus funcionalidades entre ellas el servicio de cifrado y descifrado. Los tres métodos son mediante línea de comandos, mediante API REST o mediante la consola web de administración. En este ejemplo solo se muestra la versión de línea de comandos, la opción mediante API REST es posible probarla mediante una herramienta de linea de comandos como _curl_.
 
@@ -97,7 +97,7 @@ Algunas aplicaciones para aumentar la seguridad y evitar usar una única clave q
 
 {{< code file="vault-rotate-key.sh" language="bash" options="" >}}
 
-### Ejemplo aplicación con Spring
+## Ejemplo aplicación con Spring
 
 [Spring][spring] proporciona clases de soporte para el acceso al servicio de Vault. Tanto para la configuración de acceso a Vault como para usar sus servicios mediante una API de clases Java sin tener que recurrir a la API REST de Vault directamente. La clase [VaultOperations](https://docs.spring.io/spring-vault/docs/current/api/org/springframework/vault/core/VaultOperations.html) contiene las referencias de clases para el acceso a las API de Vault, para el caso de el servicio de cifrado y descifrado con la clase [VaultTransitOperations](https://docs.spring.io/spring-vault/docs/current/api/org/springframework/vault/core/VaultTransitOperations.html).
 

@@ -27,9 +27,9 @@ En la actualidad hay herramientas de conversión de texto a voz natural que prod
 
 {{< tableofcontents >}}
 
-### Convertir texto a voz natural
+## Convertir texto a voz natural
 
-#### Herramientas web
+### Herramientas web
 
 Hay algunas páginas web que ofrecen el servicio de conversión de texto a audio sin necesidad de software adicional a un navegador web. Algunas con limitaciones de número de caracteres pero suficiente para un uso básico. También algunas permiten descargar el archivo de audio, en caso de que no ofrezcan la descargar se puede reproducir y capturar con el [reproductor multimedia VLC][vlc] en la opción _Captura de audio > Monitor de audio interno (HDMI) > Guardar_.
 
@@ -37,7 +37,7 @@ Hay algunas páginas web que ofrecen el servicio de conversión de texto a audio
 * [Free TTS](https://freetts.com/)
 * [Free online Text To Speech](http://fromtexttospeech.com/)
 
-#### Servicios de conversión
+### Servicios de conversión
 
 Para un uso más profesional y avanzado hay algunas aplicaciones para [Windows][windows] y entre los muchos servicios que ofrecen [Amazon AWS][amazon-ec2], [Google][google] y [Microsoft][microsoft] para hacer la operación de convertir audio a texto que realmente producen unos resultados muy buenos con una voz natural difícil de distinguir de una real.
 
@@ -53,7 +53,7 @@ Servicios.
 * [Google Text‑to‑Speech][google-tts]
 * [Microsoft Text to Speech][microsoft-tts]
 
-#### Mozilla TTS
+### Mozilla TTS
 
 La herramienta TTS es capaz de generar un audio de voz sintética a partir de un texto de bastante buena calidad. El audio de voz sintética no es perfecta ni tiene todos los matices en tono, velocidad de habla, contiene algunos defectos y otros matices de las voces humanas pero es aceptablemente bueno.
 
@@ -72,13 +72,13 @@ Iniciado el servidor de TTS este ofrece dos interfaces una interfaz web en la di
     image1="image:mozilla-tts.webp" optionsthumb1="300x200" title1="Interfaz web de Mozilla TTS"
     caption="Interfaz web de Mozilla TTS" >}}
 
-#### espeak
+### espeak
 
 _espeak_ y _espeak-ng_ son dos herramientas de linea de comandos que aunque producen una voz sintetizada con un tono fácilmente reconocible como generado por computadora, robótico y metálico, son otras opciones conocidas.
 
 {{< code file="espeak.sh" language="bash" options="" >}}
 
-### Lenguaje de marcado de síntesis de voz (SSML)
+## Lenguaje de marcado de síntesis de voz (SSML)
 
 Dependiendo de la herramienta de conversión de texto a voz la calidad de las voces de resultado son más fieles a la voz humana o son fácilmente reconocibles como haber sido generadas por una computadora. Algunas de estas herramientas ya producen conversiones de texto a voz que imitan con fidelidad las voces humanas haciendo uso de redes neuronales entrenadas. Un aspecto por el que son todavía fácilmente identificables es por la entonación y personalidad que los humanos imprimimos en el habla, sin ayuda las conversiones sintéticas de texto a voz son monótonas.
 
@@ -90,7 +90,7 @@ Hay aplicaciones que permite la edición del texto para añadirle el lenguaje de
 * [SSML Editor](https://www.ssml-editor.com/)
 * [SSML Editor](https://www.amazon.com/-/es/dp/B07L64KVNR) para Alexa, [SSML WYSIWYG editor y probador](https://topvoiceapps.com/ssml)
 
-### Resultado y ejemplo de conversión de texto a voz
+## Resultado y ejemplo de conversión de texto a voz
 
 El texto que he utilizado para hacer pruebas ha sido el de la descripción de mi blog. Con los siguientes resultados.
 
@@ -114,7 +114,7 @@ Utilizando espeak.
 
 {{< audio src="espeak.mp3" type="audio/mpeg" >}}
 
-### Convertir el audio en formato _wav_ a _mp3_
+## Convertir el audio en formato _wav_ a _mp3_
 
 En el artículo cómo [Cambiar el formato de archivos de música o audio en GNU/Linux][blogbitix-134] comentaba cómo convertir diferentes tipos de audio entre formatos con la herramienta [FFmpeg][ffmpeg].
 

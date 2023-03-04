@@ -35,37 +35,37 @@ Después de leer el artículo de Fowller y este artículo, ¿qué opción usas? 
 
 {{< tableofcontents >}}
 
-### Opciones
+## Opciones
 
 Estas cuatro opciones tratan dos asuntos diferentes. Las dos primeras tratan de si crear una abstracción o usar la librería de _logging_ directamente sin ninguna abstracción.
 
 La tercera y la cuarta tratan otro aspecto que es como inyectar el _logger_ en las clases que emitan trazas, en realidad no son excluyentes y como comento se puede optar por una u otra forma de inyectar el _logger_ según la clase.
 
-#### Acoplarse a la librería que emite los _logs_
+### Acoplarse a la librería que emite los _logs_
 
 En esta opción las clases de la librería de _logging_ se consideran como parte de la plataforma y el código se acopla a ellas.
 
 {{< code file="Service-1.java" language="java" options="" >}}
 
-#### Abstracción sobre la librería que emite los _logs_
+### Abstracción sobre la librería que emite los _logs_
 
 Para no acoplarse a una librería en concreto de *logging* se crea una abstracción que independice de la librería de modo que si esta cambia no haga falta el código sino simplemente la implementación de la abstracción.
 
 {{< code file="Service-2.java" language="java" options="" >}}
 
-#### Inyección estática del _logger_
+### Inyección estática del _logger_
 
 La forma habitual que ponen de ejemplo las librerías de _logging_ para inyectar la instancia de la clase de *logger* se realizan mediante una factoría e inicialización estática.
 
 {{< code file="Service-3.java" language="java" options="" >}}
 
-#### Inyección por constructor del _logger_
+### Inyección por constructor del _logger_
 
 En vez de inyectar de forma estática el _logger_, la instancia se inyecta en el constructor como cualquier otro colaborador de la clase.
 
 {{< code file="Service-4.java" language="java" options="" >}}
 
-### Argumentos
+## Argumentos
 
 Evitar el acoplamiento es algo deseable dado que permite flexibilidad y realizar cambios afectando a una una pequeña parte del código. Con una abstracción es posible cambiar de una implementación a otra y los cambios solo afectan a la abstracción y no al resto del código.
 
@@ -85,7 +85,7 @@ Para las clases que no son construidas con el contenedor de dependencias tener q
 
 Estas opciones no son excluyentes, en aquellas clases que son creadas por el contenedor dejar al contenedor inyectar la dependencia del _logger_ y el aquellos puntos de la aplicación como clases de dominio no construidas por el contenedor o en clases con métodos estáticos utilizar una inyección estática, sabiendo que en la inyección estática las pruebas unitarias con más complicadas.
 
-### Implementación de inyección por constructor con Spring
+## Implementación de inyección por constructor con Spring
 
 Utilizando [Spring][spring] y [Spring Boot][spring-boot] la inyección por constructor es posible conseguirla fácilmente con la posibilidad de [Crear un bean según el contexto donde se inyecte con Spring][blogbitix-666] de modo que para las clases que están gestionadas por el contenedor de dependencias se aprovechan sus funcionalidades en la implementación.
 

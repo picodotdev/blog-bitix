@@ -27,7 +27,7 @@ El cifrado y la firma digital son operaciones muy importantes para garantizar la
 
 {{< tableofcontents >}}
 
-### Los algoritmos de _hashing_ criptográficos
+## Los algoritmos de _hashing_ criptográficos
 
 Los algoritmos de _hashing_ transforman un conjunto arbitrario de bytes a una cadena binaria de bytes de longitud fija, dependiendo del algoritmo la longitud fija resultante es diferente, algunos generan como resultado un número de 160 bits y los más seguros llegando a 512 bits.
 
@@ -46,7 +46,7 @@ Hay diferentes algoritmos de _hashing_ criptográfico:
 * SHA-2: es la segunda versión de SHA utilizando algoritmos y funciones criptográficas más seguras. También se conoce como SHA-224, SHA-256, SHA-384 o SHA-512 donde el número indica el número de bits de _hash_ de resultado.
 * SHA-3: es la última adición a los algoritmos SHA pero que es diferente de forma significativa en su estructuras internas a MD5, SHA-1 y SHA-2. También soporta diferentes longitudes de _hash_ denominándose SHA3-224, SHA3-256, SHA3-384 o SHA3-512.
 
-### Comandos de GNU/Linux para el cálculo de _hashes_
+## Comandos de GNU/Linux para el cálculo de _hashes_
 
 El sistema operativo [GNU][gnu]/[Linux][linux] ofrece varios comandos, uno para cada algoritmo, para utilizar y calcular los _hashes_ de una cadena de texto o un archivo. Basta indicar el algoritmo y el contenido del que calcular su hash. En los siguientes comandos se calcula el _hash_ de la siguiente supuesta contraseña generada con [el gestor de contraseñas KeePassXC][blogbitix-196].
 
@@ -57,11 +57,11 @@ El resultado de los algoritmos de _hashing_ es un número de un determinado núm
 
 El paquete _sha3sum_ hay que instalarlo manualmente si no está instalado, los otros comandos generalmente están instalados por ser dependencia de otro.
 
-### Usar algoritmos de _hashing_ con Java
+## Usar algoritmos de _hashing_ con Java
 
 Desde un lenguaje de programación de alto nivel como Java también puede ser útil utilizar algoritmos de _hashing_. Java incorpora una API e implementa de forma eficiente los estándares de _hashing_ criptográficos para ser utilizados de forma fácil por los programas.
 
-#### Listar algoritmos de _hashing_ soportados por el JDK
+### Listar algoritmos de _hashing_ soportados por el JDK
 
 Los algoritmos de _hashing_ soportados dependen de la versión del JDK, en el JDK 9 se añadió el soporte para SHA-3. Es posible listar qué algoritmos de _hashing_ soporta el JDK con el que se ejecuta un programa con el siguiente código a través de la clase [Security](javadoc17:java.base/java/security/Security.html).
 
@@ -80,7 +80,7 @@ Y por el JDK 8.
 
 {{< code file="java-8-hash-algorithms.out" language="plain" options="" >}}
 
-#### Calcular _hashes_ con las clases del JDK de Java
+### Calcular _hashes_ con las clases del JDK de Java
 
 La clase principal para calcular _hashes_ criptográficos en Java es [MessageDigest](javadoc17:java.base/java/security/MessageDigest.html), se obtiene una instancia de la clase a partir del algoritmo que se desea utilizar para calcular el _hash_. La clase _MessageDigest_ ofrece los métodos [update](javadoc17:java.base/java/security/MessageDigest.html#update(byte)) para proporcionar los bytes del contenido sobre él que calcular el _hash_ y para terminar el cálculo se utiliza el método [digest](javadoc17:java.base/java/security/MessageDigest.html#digest()).
 
@@ -97,7 +97,7 @@ Este es el _hash_ calculado por con Java.
 
 {{< code file="Main-3.out" language="java" options="" >}}
 
-#### Calcular _hashes_ con una librería de terceros
+### Calcular _hashes_ con una librería de terceros
 
 En caso de estar obligado a utilizar un JDK antiguo que no soporte alguno de los algoritmos de _hashing_ hay que recurrir a una librería de terceros. Hay varias, entre ellas [Bouncy Castle][bouncycastle], [Guava][guava] y [Apache Commons][apache-commons].
 

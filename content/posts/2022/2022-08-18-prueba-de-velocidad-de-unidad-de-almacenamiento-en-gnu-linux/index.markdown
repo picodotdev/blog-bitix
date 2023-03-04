@@ -29,7 +29,7 @@ Las tasas de transferencia anunciadas por los fabricantes en algunos casos dista
 
 {{< tableofcontents >}}
 
-### Tipos de interfaces
+## Tipos de interfaces
 
 A lo largo de los años los ordenadores han ido adoptando varios tipos de interfaces como estándar que todos los fabricantes de equipos incorporan en sus productos. Cada nueva interfaz ha ofrecido un ancho de banda mayor y mayores tasas de transferencia que la interfaz anterior reemplazada. Dentro de los tipos de interfaces se puede diferenciar entre los empleados para el almacenamiento interno donde se instala el sistema operativo y las interfaces empleadas para conectividad de dispositivos externos extraíbles como memorias USB.
 
@@ -128,7 +128,7 @@ Las tasas de transferencia máximas teóricas para cada una de las interfaces so
 
 * [List of interface bit rates](https://en.wikipedia.org/wiki/List_of_interface_bit_rates)
 
-### Tipos de almacenamiento
+## Tipos de almacenamiento
 
 El tipo de almacenamiento es la tecnología que se emplea en los dispositivos de almacenamiento, los discos duros con platos circulares en cuya superficie magnética se guarda la información, han sido ya reemplazados por las unidades SSD sin partes móviles que ofrece un tiempo de acceso mucho menor y una tasa de transferencia mucho mayor. Si hay que actualizar un equipo que tiene un disco duro sustituir este componente por un SSD seguramente suponga una gran mejora en el rendimiento de equipo más que cualquier otra actuación salvo quizá la cantidad de memoria.
 
@@ -136,7 +136,7 @@ Un disco duro que normalmente utiliza la interfaz SATA queda muy lejos de ofrece
 
 La tasa de transferencia máxima teórica de la interfaz es una cosa pero la real que observa el usuario al copiar archivos puede ser muy distinta en la que influye el tipo de almacenamiento y la calidad del dispositivo. Las tasas de transferencia que se observa al copiar archivos suelen ser algo inferiores a la máximas teóricas.
 
-### Precios
+## Precios
 
 Los precios varían según los diferentes tipos de almacenamiento, el tipo de interfaz y la cantidad de almacenamiento. En el caso del almacenamiento y dado el avance de la tecnología es cuestión de tiempo de que o bien los precios se reduzcan paulatinamente o por el contrario se ofrezca el mayor cantidad de almacenamiento por el mismo precio.
 
@@ -151,7 +151,7 @@ En los siguientes enlaces hay una muestra de los precios actuales de varios tipo
 {{< amazon
     tags="storage-usb-memory,storage-ssd,storage-nvme" >}}
 
-### Pruebas de velocidad
+## Pruebas de velocidad
 
 La transferencia de una unidad depende de la combinación de la interfaz y tipo de almacenamiento. El máximo teórico de la interfaz de conexión y dependiendo del tipo de almacenamiento el dispositivo está limitado por la interfaz, cercano a la interfaz o por debajo de la interfaz.
 

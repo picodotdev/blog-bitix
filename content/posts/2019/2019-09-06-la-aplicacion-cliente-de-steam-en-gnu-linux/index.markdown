@@ -24,7 +24,7 @@ summary: "Durante unos años he estado sin jugar a juegos porque al haberme pasa
 
 La plataforma de juegos [Steam][steam] es una de las más populares. Con su cliente de juegos es posible comprar, descargar e instalar juegos para tanto para [Windows][windows], [macOS][macos] y también para [GNU][gnu]/[Linux][linux]. Steam y [Valve][valve] han posibilitado que se puedan jugar a varios juegos triple A en GNU/Linux, Valve se está esforzando para que muchos juegos sean jugables en la plataforma del pingüino.
 
-### Instalar el cliente de Steam en GNU/Linux
+## Instalar el cliente de Steam en GNU/Linux
 
 Aunque las distribuciones como Arch Linux ofrecen paquetes del cliente de Steam rquieren activar el repositorio _multilib_ para paquetes de 32 bits. Otra forma más sencilla de instalar el cliente de Steam e independiente de la distribución es utilizar la versión en formato [Flatpak de Steam](https://flathub.org/apps/details/com.valvesoftware.Steam). Usando el cliente de software de [GNOME][gnome] se hace de forma gráfica simplemente haciendo una búsqueda y un clic en el botón de instalar.
 
@@ -36,7 +36,7 @@ Aunque las distribuciones como Arch Linux ofrecen paquetes del cliente de Steam 
     image1="image:gnome-software-steam.webp" optionsthumb1="300x200" title1="Aplicación de software de GNOME"
     caption="Aplicación de software de GNOME" >}}
 
-### El cliente de Steam
+## El cliente de Steam
 
 Instalado el cliente se puede iniciar, en el menú de aplicaciones del sistema aparecen su acceso directo de aplicación, se necesita una cuenta por que lo que hay que registrarse antes desde su plataforma web. Los juegos de la biblioteca aparecen en el cliente para instalar. En este caso tengo el juego [Company of Heroes 2](https://store.steampowered.com/app/231430/Company_of_Heroes_2/).
 
@@ -65,7 +65,7 @@ De vez en cuando Steam ofrece juegos gratuitos que se pueden añadir libremente 
 
 * [Cómo usar Wine para jugar en GNU/Linux a juegos de Windows][blogbitix-364]
 
-### Un cliente para los juegos de Epic Games
+## Un cliente para los juegos de Epic Games
 
 La tienda alternativa a Steam es [Epic Games][epicgames] que aunque no tiene un cliente y lanzador de juegos oficial está [Heroic Games Launcher][heroicgameslauncher] también muy fácil de instalar como aplicación Flatpak.
 

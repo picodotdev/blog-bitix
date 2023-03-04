@@ -23,7 +23,7 @@ La arquitectura de una aplicación y los componentes de los que está formada un
 
 Siempre se quiere tener documentación actualizada con la información que se necesita, a nadie le apetece extraer información a partir de código fuente ya que esto requiere mucho tiempo e impreciso. Querer documentación no es lo mismo que querer escribirla, pero normalmente es de gran ayuda para otros o para uno mismo en el futuro. Y no solo es escribirla sino también mantenerla actualizada.
 
-### Documentación _Architecture Decision Records_
+## Documentación _Architecture Decision Records_
 
 La documentación de decisiones de arquitectura o _Architecture Decision Records_ (ADR) es una colección de documentos que recogen individualmente cada una de las decisiones de arquitectura tomadas. Los ADR pueden ser simplemente un documento en Google Docs, una Wiki o una colección de documentos de texto en formato _markdown_. Como toda documentación esta requiere mantenimiento para que esté completa y no quede desfasada con el paso del tiempo, de modo que ha de sar fácil de mantener, accesible para su edición y tener visibilidad en la organización para encontrarla fácilmente.
 
@@ -59,7 +59,7 @@ Estos son algunos apartados de un ADR:
 
 Un buen ejemplo de _Architecture Decision Records_ son los documentos de [especificaciones JEP](https://openjdk.java.net/jeps/0) de Java que incluyen un resumen, objetivos, motivaciones y una descripción detallada de la proposición.
 
-### Decisiones de arquitectura tomadas en mi blog
+## Decisiones de arquitectura tomadas en mi blog
 
 Emitir trazas en una aplicación parece algo simple sin embargo hay unas pocas decisiones que tomar, el enlace es un [ejemplo de ADR para decidir como emitir las trazas][blogbitix-645] en una aplicación o como normativa en una organización según las posibilidades analizadas.
 

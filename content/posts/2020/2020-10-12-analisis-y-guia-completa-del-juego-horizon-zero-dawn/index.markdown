@@ -52,7 +52,7 @@ Al final del juego te queda la sensación de todas las aventuras, toda la histor
 {{< game-spoiler >}}
 {{< tableofcontents >}}
 
-### Inicio de la historia y argumento
+## Inicio de la historia y argumento
 
 El juego empieza con Aloy de niña y Rost como tutor y mentor en una tribu pero que están apartados ya que son unos parias, la tribu está regida una religión que adora a la diosa Madre y es temerosa del mundo de los antiguos. Enseguida Aloy se hace preguntas de porque es una paria, el juego se desarrolla con la intención de buscar esas respuestas, a medida que avanza el juego se desarrolla una historia con nuevas preguntas a las que buscar respuestas con las que se comprende que es lo que ha pasado en el mundo, cuál es el origen de las máquinas y que les está afectando para cada que cada vez sean más agresivas o de donde surgen nuevos tipos de máquinas aún más peligrosas.
 
@@ -81,7 +81,7 @@ El juego empieza con Aloy de niña y Rost como tutor y mentor en una tribu pero 
     image1="image:juego-13.webp" optionsthumb1="200x150" title1="Juego"
     caption="Juego" >}}
 
-### Misiones
+## Misiones
 
 Las misiones son variadas, a medida que se avanza en el juego las de de la historia principal se intercalan con las misiones secundarias, algunos recados y conseguir los coleccionables. La mayoría de misiones secundarias y recados surgen a solicitud de diversos personajes a los que Aloy siempre está dispuesta a ayudar. En todas estas misiones se va descubriendo y explorando el mapa.
 
@@ -93,7 +93,7 @@ En algunas zonas del mapa se sitúan puntos clave como calderos que son instalac
     image2="image:misiones-secundarias.webp" optionsthumb2="200x150" title2="Misiones"
     caption="Misiones" >}}
 
-### Coleccionables
+## Coleccionables
 
 Al mismo tiempo que se completan las misiones y se va explorando el mapa en él hay repartidos numerosos y diferentes coleccionables, ya sean datos que permiten conocer más de la historia u objetos. Algunos coleccionables se van encontrando según se completan las misiones si se explora con un poco de exhaustividad el terreno o instalaciones, otros coleccionables hay que viajar a ese punto para conseguirlo.
 
@@ -114,7 +114,7 @@ Finalmente, hay unos coleccionables especiales que son unos grilletes, otro es u
     image2="image:coleccionables-frozen-wilds.webp" optionsthumb2="200x150" title2="Coleccionables Frozen Wilds"
     caption="Coleccionables" >}}
 
-### Máquinas
+## Máquinas
 
 A lo largo del juego aparecen numerosos tipos de máquinas con diferentes comportamientos, algunas pequeñas con pocos puntos de vida, más grandes y fuertes, lentas, otras rápidas y otras voladoras. Todas las máquinas si no se actúa con sigilo se ponen en modo agresivo y atacan.
 
@@ -133,7 +133,7 @@ Algunas máquinas son vulnerables al fuego como los rapaces que incendiados caen
     image3="image:cuaderno-maquinas-3.webp" optionsthumb3="200x150" title3="Máquinas"
     caption="Máquinas" >}}
 
-### Habilidades
+## Habilidades
 
 A medida que se matan máquinas se consigue experiencia que permite subir de nivel, cada nivel otorga un punto de habilidad, completando algunas misiones también se consiguen puntos de habilidad que emplear para conseguir alguna nueva habilidad del árbol de habilidades. Completar las misiones principales, secundarias y con los enemigos abatidos permite conseguir los puntos de habilidad suficientes para adquirir la mayor parte del árbol de habilidades.
 
@@ -151,7 +151,7 @@ Cuando empiezan los combates con máquinas más grandes las habilidades que mejo
     image1="image:habilidades-merodeadora.webp" optionsthumb1="200x150" title1="Habilidades merodeadora"
     caption="Habilidades" >}}
 
-### Hierbas medicinales, recursos, pociones, armas y atuendos
+## Hierbas medicinales, recursos, pociones, armas y atuendos
 
 Al igual que se pueden recoger recursos de las máquinas que se emplean para fabricar algunos tipos de armas y trampas, se pueden coger recursos de la naturaleza para fabricar medicinas para curar la vida al recibir daño en los combates, para fabricar algunos tipos de flechas y cazando animales conseguir algunas pieles y huesos con los que aumentar la capacidad de carga que reduce el número de veces en los que hay que ponerse a fabricar. Hay también cierta variedad de plantas como medicinales, madera, ígnea, eléctrica, ... y animales como jabalí, zorro, rata, ganso, pavo o truchas. Algunas ubicaciones tienen más de estos animales donde cazar si se quieren conseguir sus recursos. Lo que no hace Aloy en ningún caso es acariciar a los animales como en otros juegos, Aloy simplemente los caza para conseguir sus recursos.
 
@@ -170,7 +170,7 @@ En una de las misiones se solicita conseguir unas células de energía para cons
     image3="image:inventario-objetos-especiales.webp" optionsthumb3="200x150" title3="Objetos especiales"
     caption="Inventario" >}}
 
-### Crítica
+## Crítica
 
 El juego en su estilo no tiene prácticamente defectos. Simplemente algunos pequeños inconvenientes al jugar. Uno de ellos es que de todas las armas solo se puede tener equipadas cuatro lo que en alguna ocasión hace que haya que equiparse con el arma adecuada para enfrentarse a una determinada máquina. De forma similar con la limitación de botones del mando de las consolas en acceso rápido a las pociones solo permite poder activar las hierbas medicinales y una poción, en los combates usar los botones de la cruceta laterales es un tanto incómodo ya que requiere parase un pequeño tiempo a realizar la acción en el cual los enemigos nos pueden golpear.
 
@@ -178,16 +178,16 @@ Encontrar todos los datos de texto requiere utilizar alguna guía para conocer s
 
 El fallo más grave que me ha dado el juego es que en algunas pocas ocasiones al realizar un guardado manual se produce un error CE fatal que llega producir un apagado completo de la consola de forma repentina, en el siguiente reinicio de la consola se inicia un proceso de recuperación.
 
-### Tutoriales y guías
+## Tutoriales y guías
 
-#### Cómo matar a cada tipo de máquina
+### Cómo matar a cada tipo de máquina
 
 En YouTube hay vídeos que explican cómo matar a cada máquina con una efectividad.
 
 {{< youtube
     video="PBfN65mw0Kc" >}}
 
-#### Dónde están y cómo conseguir todos los coleccionables
+### Dónde están y cómo conseguir todos los coleccionables
 
 Los coleccionables de los que no aparece su ubicación en el mapa como los datos hace difícil conseguirlos todos. En algunos vídeos se muestran la ubicación de todos si se quieren conseguir.
 
@@ -201,7 +201,7 @@ Lo mismo si no hemos encontrado alguna célula de energía para conseguir el atu
 {{< youtube
     video="53Qur5oEfy4" >}}
 
-#### Enciclopedia del juego
+### Enciclopedia del juego
 
 En las siguientes wikis se ofrece información detallada del argumento, personajes, máquinas, armas y sus estadísticas.
 
@@ -209,30 +209,30 @@ En las siguientes wikis se ofrece información detallada del argumento, personaj
 * [Wiki de Horizon Zero Dawn II](https://horizon.fandom.com/wiki/Horizon_Zero_Dawn)
 * [Wiki de Horizon Zero Dawn III (en español)](https://horizonzerodawn.fandom.com/es/wiki/Inicio)
 
-#### Guía terrenos de caza
+### Guía terrenos de caza
 
 Si alguna prueba de habilidad de los terrenos de caza se nos resiste para conseguir todos los soles abrasadores es que quizá no estamos usando la estrategia adecuada, si no se nos ocurre una en el siguiente vídeo se muestran algunas posibilidades.
 
 {{< youtube
     video="Og0XFfXGf8c" >}}
 
-### Gameplay
+## Gameplay
 
 Este _gameplay_ del inicio del juego muestra como es si jugabilidad y aspecto gráfico.
 
 {{< youtube
     video="Q0UGCUT1qs4" >}}
 
-### Historia y argumento completo
+## Historia y argumento completo
 
-#### Todas las elecciones
+### Todas las elecciones
 
 A lo largo del juego en los diálogos Aloy puede responder con varias posibilidades: con inteligencia, con compasión o con fortaleza según lo que consideremos más apropiado que en la mayoría únicamente varía como responden los personajes. Para ver todas las posibilidades de los diálogos también hay lista de vídeos con las que saber qué hubieran dicho eligiendo otra opción.
 
 {{< youtube
     video="h9MtLn2V_eg" >}}
 
-#### Película
+### Película
 
 Si se quiere repasar el hilo argumental principal del juego en algunos vídeos de YouTube están como si el juego se tratase de una película. Ya que es un juego largo con misiones secundarias intercaladas a veces hace perder el hilo argumental principal del juego.
 
@@ -244,7 +244,7 @@ Y la película de la expansión de Frozen Wilds.
 {{< youtube
     video="rwcUBgmgC5s" >}}
 
-### Banda sonora original
+## Banda sonora original
 
 Al igual que el apartado gráfico la banda sonora suelen completar un buen juego, con las que escuchar unos pocos segundos de la melodía permite identificarlos rápidamente y atraer los recuerdos del momento del juego. Algunas bandas sonoras tienen gran calidad que no tienen nada que envidiar a las de las producciones cinematográficas, como en el caso de este juego.
 

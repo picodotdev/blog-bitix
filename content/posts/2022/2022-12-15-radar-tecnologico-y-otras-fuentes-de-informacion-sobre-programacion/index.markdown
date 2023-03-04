@@ -21,13 +21,13 @@ Con el paso del tiempo surgen nuevas herramientas que pretenden sustituir a otra
 
 Es recomendable seguir las novedades que van surgiendo en la tecnología y herramientas de desarrollo. Aunque las herramientas no son el principal factor para desarrollar un buen programa o un producto bien utilizadas y utilizando las adecuadas si contribuyen a evitar problemas y facilitar su desarrollo por no mencionar que utilizar tecnologías que ya se consideran obsoletas tienen otras consideraciones como un motivo de decisión para trabajar o no en una empresa simplemente porque es una consideración para la evolución profesional de los empleados.
 
-### Qué necesitan las aplicaciones
+## Qué necesitan las aplicaciones
 
 Las funcionalidades que necesitan las aplicaciones no cambian tanto como las herramientas. Una aplicación monolítica es muy diferente de otra basada en microservicios y sus necesidades de herramientas son muy distintas pero comparten algunas necesidades. Ambas con seguridad necesitan herramientas de integración continua, una base de datos y monitorización y observabilidad, las aplicaciones basadas en microservicios al ser más complejas necesitarán más herramientas aún.
 
 * [Funcionalidades que necesitan las aplicaciones basadas en microservicios y herramientas que las proporcionan][blogbitix-516]
 
-### El radar tecnológico de Thoughtworks
+## El radar tecnológico de Thoughtworks
 
 [El radar tecnológico de Thoughtworks](https://www.thoughtworks.com/radar) hace un resumen de las novedades que se producen en la tecnología relacionadas con el desarrollo de aplicaciones. Se publica más o menos cada seis meses con las novedades de ese periodo de tiempo y mantiene un archivo para consultar las ediciones anteriores. Este radar es una fuente de información muy interesante para conocer herramientas y novedades que se producen en la tecnología, no todos los meses pero cada año es posible que surjan novedades interesantes que hay que evaluar si adoptar.
 
@@ -38,7 +38,7 @@ El radar tecnológico se divide en cuatro aspectos o cuadrantes de técnicas, pl
     image1="image:thoughtworks-radar.webp" optionsthumb1="650x450" title1="El radar tecnológico de Thoughtworks"
     caption="El radar tecnológico de Thoughtworks" >}}
 
-### Otras fuentes de información
+## Otras fuentes de información
 
 En el caso de Java con su nuevo calendario de publicación cada seis meses hace que las nuevas versiones y novedades que incorpora sean más numerosas. Las notas de publicación de Java incluyen todas las novedades que va incorporando el lenguaje y la plataforma.
 

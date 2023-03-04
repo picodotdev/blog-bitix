@@ -27,7 +27,7 @@ Para generar los archivos localizados se suele utilizar una [herramienta especia
 
 {{< tableofcontents >}}
 
-### Archivos de cadenas y recursos localizados con Java
+## Archivos de cadenas y recursos localizados con Java
 
 El lenguaje Java ofrece soporte para la internacionalización y localización con varias clases incluidas en el JDK y la API. La clase [Locale](javadoc11:java.base/java/util/Locale.html) identifica un idioma, país, región y cultura. La clase [ResourceBundle](javadoc11:java.base/java/util/ResourceBundle.html) ofrece acceso a los archivos de recursos y _properties_ adecuado según el _Locale_ para el que se quieran obtener los recursos.
 
@@ -37,7 +37,7 @@ Los archivos de recursos de Java en formato _properties_ son archivos de texto c
 {{< code file="resource_en.properties" language="plain" options="" >}}
 {{< code file="resource_es.properties" language="plain" options="" >}}
 
-### La clase Locale y Locales soportados por Java
+## La clase Locale y Locales soportados por Java
 
 El JDK de Java proporciona soporte para múltiples _locales_ con los idiomas mayoritarios en el mundo. La lista completa de locales para los que Java incluye soporte en el JDK se obtiene con la clase _Locale_. En caso de que el _Locale_ no tenga una variable con el _locale_ estática se ofrece un constructor para indicar el código del lenguaje, el país y su variante.
 
@@ -48,14 +48,14 @@ La clase _Locale_ está formada por el identificador de dos letras del idioma y 
 
 {{< code file="Main-locales-2.txt" language="plain" options="" >}}
 
-### Localización de cadenas
+## Localización de cadenas
 
 La clase _ResourceBundle_ busca y devuelve el literal adecuando según la clave que lo identifica y el _Locale_ deseado.
 
 {{< code file="Main-literals-1.java" language="java" options="" >}}
 {{< code file="System-literals-1.out" language="plain" options="" >}}
 
-#### Cadenas con argumentos
+### Cadenas con argumentos
 
 Algunas cadenas tienen datos o _placeholders_ que son insertados en tiempo de ejecución como un número, fecha, importe u otra pequeña cadena como un nombre, para insertar estos datos se utiliza la clase [MessageFomat](javadoc11:java.base/java/text/MessageFormat.html) que sustituye los argumentos o _placeholders_ por los valores proporcionados.
 
@@ -64,14 +64,14 @@ Los argumentos o _placeholders_ están numerados entre llaves.
 {{< code file="Main-literals-2.java" language="java" options="" >}}
 {{< code file="System-literals-2.out" language="plain" options="" >}}
 
-#### Herencia de cadenas
+### Herencia de cadenas
 
 La clase _ResourceBundle_ implementa un mecanismo de herencia por el que si no existe el archivo o clave de la cadena de la clave solicitada en el archivo de recursos del _locale_ indicado se obtiene la cadena del siguiente _locale_ más general. Por ejemplo, si se desea obtener una cadena para el _Locale_ _es\_ES_ (español de España) o _es\_MX_ (español de México) para el que no existe su propio archivo de recursos o la clave de la cadena entonces se obtiene la cadena del archivo de recurso español (_es_), si incluso no existiese en el _locale_ _es_ se obtendría la cadena del recurso base _resource.properties_.
 
 {{< code file="Main-literals-3.java" language="java" options="" >}}
 {{< code file="System-literals-3.out" language="plain" options="" >}}
 
-#### Localización de cadenas con múltiples formas plurales
+### Localización de cadenas con múltiples formas plurales
 
 La localización de las cadenas también ha de tener en cuenta que los lenguajes usan varias formas plurales, cada lenguaje tiene su propio número de formas plurales. El español tiene dos formas plurales, la de un elemento y más de un elemento. Otros lenguajes tiene tres o más formas plurales según las propias reglas del lenguaje y número de elementos a los que se refiera la expresión, por ejemplo el ruso tiene tres formas plurales y el chino una sola forma plural.
 
@@ -88,7 +88,7 @@ En Java la clase que permite utilizar diferentes formas plurales es [ChoiceForma
 {{< code file="Main-pluralforms-3.java" language="java" options="" >}}
 {{< code file="System-pluralforms-3.out" language="plain" options="" >}}
 
-### Localización de fechas
+## Localización de fechas
 
 Las fechas también son textos que varían según el _Locale_ ya sea según el formato que se utilicen para convertir las fechas a texto como por incluir nombres de semana, nombres de los meses e intercalar algunas preposiciones. También según el país varía el formato, en Estados Unidos el mes se indica antes que el día, con el formato _MM/dd/yyyy_ cuando en España y muchos otros países se utiliza el formato _dd/MM/yyyy_ con el día primero.
 
@@ -97,7 +97,7 @@ Al usar fechas también suele ser necesario [convertir fechas y husos horarios][
 {{< code file="Main-dates-1.java" language="java" options="" >}}
 {{< code file="System-dates-1.out" language="plain" options="" >}}
 
-### Localización de números e importes
+## Localización de números e importes
 
 Al igual que con las fechas hay que tener algunas [consideraciones al trabajar con importes][blogbitix-389] como utilizar la clase [BigDecimal](javadoc11:java.base/java/math/BigDecimal.html) en vez de un _float_ o _double_ y en ocasiones es necesario realizar [conversiones de importes entre diferentes divisas con ratios de conversión][blogbitix-90]. Java tiene una especificación que define una API para tareas monetarias, la [librería Moneta][java-money] es la implementación de referencia.
 
@@ -111,7 +111,7 @@ Los importes suelen incluir el símbolo de la moneda y dependiendo del _Locale_ 
 {{< code file="Main-money-1.java" language="java" options="" >}}
 {{< code file="System-money-1.out" language="plain" options="" >}}
 
-### Ordenar cadenas correctamente de forma alfabética
+## Ordenar cadenas correctamente de forma alfabética
 
 Incluso ordenar cadenas alfabéticamente correctamente no es una tarea tan simple como parece a primera vista. Para ordenar correctamente cadenas hay que tener en cuenta o considerar como iguales ciertos caracteres cómo la letra _a_ o la letra _á_ con tilde. Si la ordenación se hace únicamente por el código numérico del caracter dependiendo de la lista de cadenas la lista supuestamente ordenada quizá no sea la que debería.
 

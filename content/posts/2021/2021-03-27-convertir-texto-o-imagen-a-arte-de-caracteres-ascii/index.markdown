@@ -25,7 +25,7 @@ El arte ASCII es adecuado para ser mostrado en interfaces basadas en texto como 
 
 {{< tableofcontents >}}
 
-### Texto a arte de caracteres ASCII
+## Texto a arte de caracteres ASCII
 
 La herramienta [figlet][figlet] de linea de comandos permite convertir una frase a arte ASCII, es posible configurarla con diferentes estilos de fuente que producen resultados diferentes en el arte ASCII. Utilizando caracteres de escape de la terminal es posible añadir colores, [Jansi es una librería Java que permite añadir colores a texto emitido en la terminal][blogbitix-359].
 
@@ -39,7 +39,7 @@ Además de instalar el paquete de _figlet_ en la distribución de GNU/Linux hay 
     image1="image:figlet.webp" optionsthumb1="650x450" title1=""
     caption="Texto convertido a arte de caracteres ASCII" >}}
 
-### Imagen a arte de caracteres ASCII
+## Imagen a arte de caracteres ASCII
 
 También es posible convertir una imagen a arte ASCII, en el caso de las imágenes el resultado ha de tener un número adecuado de líneas y columnas para producir resultados con la suficiente definición para obtener resultados fieles a la imagen original.
 
@@ -60,7 +60,7 @@ La herramienta _jp2a_ combinada con el [extraer un fotograma de una película][b
     image1="image:jp2a-gnu.webp" optionsthumb1="200x150" title1="Logotipo de GNU convertido a arte de caracteres ASCII con jp2a"
     caption="Varios logotipos convertidos a arte de caracteres ASCII con jp2a" >}}
 
-### Páginas web de conversión a arte de caracteres ASCII
+## Páginas web de conversión a arte de caracteres ASCII
 
 No es necesario instalar aplicaciones para generar tanto un texto en arte ASCII como convertir una imagen a arte ASCII, hay algunas páginas que ofrecen estas funcionalidades simplemente introduciendo el texto a convertir a arte ASCII como proporcionando la imagen a convertir a arte ASCII.
 

@@ -133,9 +133,34 @@ header form.search {
 }
 article h1 {
   font-size: 2.6em;
+  counter-reset: heading-l1;
 }
 article h2 {
   font-size: 1.75rem;
+  counter-reset: heading-l2;
+}
+article h2:before {
+  font-size: 1rem;
+  counter-increment: heading-l1;
+  content: counter(heading-l1) ". ";
+}
+article h3 {
+  font-size: 1.5rem;
+  counter-reset: heading-l3;
+}
+article h3:before {
+  font-size: 1rem;
+  counter-increment: heading-l2;
+  content: counter(heading-l1) "." counter(heading-l2) ". ";
+}
+article h4 {
+  font-size: 1.5rem;
+  counter-reset: heading-l4;
+}
+article h4:before {
+  font-size: 1rem;
+  counter-increment: heading-l3;
+  content: counter(heading-l1) "." counter(heading-l2) "." counter(heading-l3) ". ";
 }
 @media (max-width: 576px) {
   article h1 {
@@ -294,6 +319,51 @@ article div.alert h6 {
 }
 article div.tableofcontents {
   display: inline-block;
+}
+article div.tableofcontents p.title {
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+article div.tableofcontents > nav > ol {
+  padding-left: 0rem;
+  list-style: none;
+}
+article div.tableofcontents > nav > ol > li:first-child {
+  counter-reset: list-l1;
+}
+article div.tableofcontents > nav > ol > li {
+  counter-increment: list-l1;
+}
+article div.tableofcontents > nav > ol > li:before {
+  font-size: 1rem;
+  content: counter(list-l1) ". ";
+}
+article div.tableofcontents > nav > ol > li > ol {
+  list-style: none;
+}
+article div.tableofcontents > nav > ol > li > ol > li:first-child {
+  counter-reset: list-l2;
+}
+article div.tableofcontents > nav > ol > li > ol > li {
+  counter-increment: list-l2;
+}
+article div.tableofcontents > nav > ol > li > ol > li:before {
+  font-size: 1rem;
+  content: counter(list-l1) "." counter(list-l2) ". ";
+}
+article div.tableofcontents > nav > ol > li > ol > li > ol {
+  list-style: none;
+}
+article div.tableofcontents > nav > ol > li > ol > li > ol > li:first-child {
+  counter-reset: list-l3;
+}
+article div.tableofcontents > nav > ol > li > ol > li > ol > li {
+  counter-increment: list-l3;
+}
+article div.tableofcontents > nav > ol > li > ol > li > ol > li:before {
+  font-size: 1rem;
+  content: counter(list-l1) "." counter(list-l2) "." counter(list-l3) ". ";
 }
 article div.reference {
   font-size: 0.9em;

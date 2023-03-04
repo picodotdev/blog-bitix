@@ -29,7 +29,7 @@ Otra alternativa es usar las clases que se incluyen en él la propia API de Java
 
 {{< tableofcontents >}}
 
-### Las clases de _logging_ de Java
+## Las clases de _logging_ de Java
 
 Al ofrecer Java en su API clases para realizar tareas de _logging_ significa que cualquier aplicación las pueda utilizar sin ninguna dependencia adicional a partir de la versión 1.4 en la que fueron incluidas. A las clases y sistema de _logging_ de Java se le denomina JUL por las primeras letras de los paquetes en las que están, _java.util.logging_.
 
@@ -42,7 +42,7 @@ Las clases principales de JUL son equivalentes a las que se encuentran en otras 
 * [Filter](javadoc17:java.logging/java/util/logging/Filter.html): proporciona un control fino sobre lo que es emitido, más allá del control proporcionado por los niveles de _log_. La API de _logging_ soporta un mecanismo de propósito general que permite al código de la aplicación asociar filtros arbitrarios para controlar la salida de las trazas..
 * [Formatter](javadoc17:java/util/logging/Formatter.html): proporciona soporte para especificar cómo son formateados los objetos _LogRecord_. El paquete de JUL incluye dos formateadores, SimpleFormatter y XMLFormatter, para formatear los registros de log en texto plano o XML respectivamente. Al igual que con los _Handlers_, terceras partes pueden desarrollar _Formatters_ adicionales.
 
-### Motivos para usar JUL
+## Motivos para usar JUL
 
 Log4j es una de las mejores sino la mejor librería para trazas en Java, las ventajas son flexibilidad en caso de necesitar funcionalidades más en el futuro siendo raro que se necesite algo en materia de _logging_ que no soporte Log4j de alguna forma. Logj4 permite guardar archivos, rotar los archivos por fecha o volumen de datos guardando cierto número de copias de seguridad, información de contexto entre más funcionalidades avanzadas, cosas adicionales que no tiene JUL. JUL por el contrario es una solución que no requiere incluir una dependencia adicional el proyecto y una solución más sencilla que puede ser más que suficiente para una aplicación o un pequeño _script_.
 
@@ -50,7 +50,7 @@ Depende del contexto del proyecto en sí es más conveniente usar solo JUL u opt
 
 Incluir una dependencia en una aplicación debe estar justificado, no conviene añadir dependencias que de las que solo se usan una sola clase. Incluir una dependencia añade tamaño a la aplicación teniendo en cuenta que no solo se incluye esa dependencia sino además las transitivas, incluir dependencias de forma indiscriminada en un proyecto hace que pueda ocurrir un conflicto entre las diferentes versiones de dos. También en el caso de que una dependencia está justificada conviene optar por una que tenga pocas dependencias de forma transitiva por los mismos motivos.
 
-### Ejemplo usando las clases de Java para trazas
+## Ejemplo usando las clases de Java para trazas
 
 Este ejemplo muestra un uso básico de las clases de JUL que emite varias trazas usando diferente nivel para cada mensaje, en la salida de la consola se muestra cada uno de los mensajes con el formato por defecto que además del nivel y el mensaje incluye la fecha y hora como metadato adicional en la que ha ido emitido. Como suele ser una convención la instancia de _Logger_ se inicializa como una variable estática privada a partir del nombre de la clase que queda disponible para ser usada en cualquier parte del código de la clase. En este caso la instancia no está en una variable estática para el caso de indicar un argumento hacer la configuración previa.
 
@@ -63,7 +63,7 @@ El formato del mensaje se puede cambiar estableciendo una propiedad de sistema e
 {{< code file="main-run-2.sh" language="bash" options="" >}}
 {{< code file="Main-run-2.out" language="plain" options="" >}}
 
-#### Configuración de JUL
+### Configuración de JUL
 
 Una forma de configurar JUL es a través de un archivo de propiedades, utilizar un archivo de configuración en vez código tiene la ventaja que no es necesario cambiar código en la aplicación para cambiar el comportamiento de JUL y si el archivo de configuración es obtenido de forma externa a la aplicación no es necesario compilar ni generar un nuevo artefacto ejecutable para cambiar la configuración.
 
@@ -75,7 +75,7 @@ En este ejemplo de archivo de configuración se cambia el nivel de trazas de los
 {{< code file="main-run-3.sh" language="bash" options="" >}}
 {{< code file="Main-run-3.out" language="plain" options="" >}}
 
-#### Soportar JUL y Log4j como implementación
+### Soportar JUL y Log4j como implementación
 
 A veces por flexibilidad interesa poder cambiar de implementación de _framework_ de _logging_, añadir esta flexibilidad implica añadir un intermediario entre la aplicación y la implementación, en Java la librería SLF4J es precisamente este intermediario y permite cambiar de implementación a través de configuración sin necesidad de más cambios en el código de la aplicación cuya dependencia directa está en el intermediario y no en la implementación.
 

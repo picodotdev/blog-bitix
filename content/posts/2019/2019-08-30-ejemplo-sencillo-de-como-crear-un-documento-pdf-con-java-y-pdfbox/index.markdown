@@ -27,7 +27,7 @@ Uno de estos casos podría ser la generación de una factura en base a una plant
 
 {{< tableofcontents >}}
 
-### Generar un documento PDF con Java y PDFBox
+## Generar un documento PDF con Java y PDFBox
 
 Para generar documentos en PDF en Java está disponible la librería [Apache PDFBox][apache-pdfbox]. Un ejemplo sencillo de como generar un archivo PDF con algunos estilos de texto, fuentes, un tamaño específico de página y una imagen es el siguiente.
 
@@ -37,7 +37,7 @@ Hay que añadir la dependencia de la librería en el archivo de construcción de
 
 {{< code file="build.gradle" language="groovy" options="" >}}
 
-#### Documento PDF generado
+### Documento PDF generado
 
 {{< comment >}}Sponsored link: Smallpdf{{< /comment >}}
 
@@ -50,7 +50,7 @@ El resultado es el siguiente {{< resourcelink text="documento PDF" name="documen
     image1="image:document.webp" optionsthumb1="600x450" title1="Documento generado con PDFBox"
     caption="Documento generado con PDFBox" >}}
 
-### Alternativas a PDFBox
+## Alternativas a PDFBox
 
 Una alternativa a PDFBox es [iText][itext], la primera tiene una [licencia Apache][apache-license] e iText una [licencia AGPL][gnu-agpl] o comercial lo que puede ser determinante para un proyecto. La licencia AGPL obliga a que una aplicación web haga público su código fuente lo que probablemente en usos comerciales no sea lo deseado y usar la versión de la licencia comercial obliga a adquirir el derecho de uso al que obliga la licencia que posee un coste tal vez indeseado o que directamente hace que quede descartada.
 

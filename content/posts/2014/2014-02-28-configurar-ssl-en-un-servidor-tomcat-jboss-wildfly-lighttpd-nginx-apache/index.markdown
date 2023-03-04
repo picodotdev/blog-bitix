@@ -26,7 +26,7 @@ Los principales navegadores han anunciado que una conexión cifrada SSL/TLS es c
 
 {{< tableofcontents >}}
 
-### Configurar SSL/TLS en Tomcat
+## Configurar SSL/TLS en Tomcat
 
 Tomcat es uno de los servidores de aplicaciones más usado para desplegar aplicaciones web desarrolladas con el lenguaje Java. La forma que explicaré a continuación sobre como obtener cifrado SSL con este servidor será usando APR (_Apache Portable Runtime_). Previamente deberemos haber generado un certificado SSL con OpenSSL, una vez dispongamos del nuestro aunque sea autofirmado debemos añadir la siguiente configuración al archivo server.xml:
 
@@ -34,19 +34,19 @@ Tomcat es uno de los servidores de aplicaciones más usado para desplegar aplica
 
 Hay que activar el conector SSL (el anterior xml) y disponer del certificado y su clave privada, ambos archivos se indican en los atributos SSLCertificateFile y SSLCertificateKeyFile. Si queremos usar el puerto estándar del protocolo HTTPS cambiaremos el valor del puerto de 8443 a 443 en el atributo port. La configuración es la misma tanto para Tomcat 7 como para Tomcat 8.
 
-### Configurar SSL/TLS en JBoss
+## Configurar SSL/TLS en JBoss
 
 JBoss es otro de los servidores que es ampliamente usado para desplegar aplicaciones Java y que proporciona un perfil completo de las especificaciones EE al contrario que Tomcat que solo proporciona un perfil web. La configuración que hay que indicar en JBoss 7.1 es la siguiente:
 
 {{< code file="standalone-jboss.xml" language="XML" options="" >}}
 
-### Configurar SSL/TLS en WildFly
+## Configurar SSL/TLS en WildFly
 
 JBoss cambió recientemente el nombre de la versión community de JBoss, esta ha pasado a llamarse WildFly y la comercial con soporte sigue llamándose JBoss. WildFly soporta las especificaciones de Java EE 7. En WildFly el contenedor web es [undertow](http://undertow.io/) en vez de Tomcat y cambia la configuración de SSL. Se necesita crear un keystore JKS que contenga tanto la clave como el certificado.
 
 {{< code file="standalone-wildfly.xml" language="XML" options="" >}}
 
-### Configurar SSL/TLS en Lighttpd
+## Configurar SSL/TLS en Lighttpd
 
 Lighttpd es un servidor web de los denominados ligeros que aunque posiblemente no tiene toda la versatilidad de Apache ofrece un mayor rendimiento. Para activar SSL en lighttpd debemos modificar el archivo de configuración y añadir lo siguiente:
 
@@ -58,13 +58,13 @@ Quizá debamos cambiar el propietario y permisos con:
 
 El archivo localhost.pem contiene la clave y el certificado.
 
-### Configurar SSL/TLS en Nginx
+## Configurar SSL/TLS en Nginx
 
 El proceso es similar para el servidor web Nginx aunque lógicamente se usan las directivas propias de configuración de Nginx.
 
 {{< code file="nginx.conf" language="nginx" options="" >}}
 
-### Configurar SSL/TLS en Apache
+## Configurar SSL/TLS en Apache
 
 Apache es uno de los servidores web más utilizados para servir sitios web en internet. Para activar SSL en Apache debemos modificar el archivo de configuración, añadiendo la siguiente configuración que activa el soporte de SSL y especifica el archivo de clave y certificado, nada distinto de lo necesario en los servidores anteriores:
 

@@ -34,7 +34,7 @@ En este artículo comento otro caso habitual en el que es interesante añadir tr
 
 {{< tableofcontents >}}
 
-### Añadir trazas de las peticiones HTTP
+## Añadir trazas de las peticiones HTTP
 
 Una de las características que definen a los microservicios es que unos se comunican con otros. Pueden estar basados en REST o en [GraphQL][graphql] en ambos casos utilizando el protocolo HTTP, también pueden estar basados en RPC con [gRPC][grpc].
 
@@ -52,7 +52,7 @@ Estas son las dependencias de librerías para los cliente.
 
 {{< code file="build.gradle" language="groovy" options="" >}}
 
-#### Trazas con el cliente Java
+### Trazas con el cliente Java
 
 El cliente de Java en la versión de Java 9 no incluye en su API un soporte sencillo para añadir trazas al contrario de las otras librerías, sin embargo, aún no ofrececiendo este soporte como el cliente está incluido en el JDK sigue siendo una buena opción para reducir el número de dependencias.
 
@@ -61,14 +61,14 @@ Una posibilidad para no tener que crear una implementación propia para añadirl
 {{< code file="Main-HttpClient.java" language="java" options="" >}}
 {{< code file="System.out-HttpClient" language="plain" options="" >}}
 
-#### Trazas con Spring WebClient
+### Trazas con Spring WebClient
 
 El cliente WebClient de Spring posee una API que permite realizar peticiones HTTP con pocas líneas de código.
 
 {{< code file="Main-WebClient.java" language="java" options="" >}}
 {{< code file="System.out-WebClient" language="plain" options="" >}}
 
-#### Trazas con Retrofit
+### Trazas con Retrofit
 
 Lo interesante del [cliente Retrofit es que convierte una interfaz REST de un servicio en una interfaz de Java][blogbitix-569], se está usando un objeto que implementa una interfaz pero que de forma subyacente se hacen peticiones HTTP. La librería cliente de HTTP que utiliza Retrofit es [OkHttp][okhttp].
 
@@ -77,7 +77,7 @@ El _interceptor_ se añade sobre el cliente OkHttp que luego es utilizado para c
 {{< code file="Main-Retrofit.java" language="java" options="" >}}
 {{< code file="System.out-Retrofit" language="plain" options="" >}}
 
-#### Trazas con OkHttp
+### Trazas con OkHttp
 
 OkHttp es otra de las librerías para realizar peticiones HTTP populares en Java. Para añadir trazas hay que crear un interceptor y añadirlo al cliente.
 

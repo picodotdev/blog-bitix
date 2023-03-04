@@ -26,7 +26,7 @@ Los lenguajes habitualmente usados para realizar tareas de _scripting_ son diná
 
 Una vez creado un _script_ este ha de ser ejecutado en un sistema, dependiendo de las dependencias como fuentes de datos que tenga el _script_ la ejecución se puede realizar de forma manual en la propia computadora de un usuario o desarrollador. Por el contrario, como cualquier otra aplicación requiere su propio entorno de ejecución en producción, la forma más simple con una expresión _cron_ como un proceso del sistema habiendo aprovisionado previamente el entorno y las dependencias necesarias del mismo. Otra propiedad de muchos _scripts_ es que su tiempo de ejecución no es continuo durando unos pocos minutos u alguna hora realizan su atarea y terminan hasta la siguiente ejecución, al contrario que las aplicaciones con funciones de servidor que están continuamente funcionado por si algún cliente se conecta. En función de las necesidades del _script_ su ejecución se planifica con [una expresión cron cada minuto, hora, día o una vez a la semana][blogbitix-499].
 
-### Ejemplo de planificar procesos o _scripts_ de forma periódica con Nomad
+## Ejemplo de planificar procesos o _scripts_ de forma periódica con Nomad
 
 Una de las ventajas de la computación en la nube es poder crear máquinas virtuales cuando se necesitan y destruirlas cuando ya no son necesarias, de forma rápida y bajo demanda. Los contenedores permiten ejecutar procesos en cualquier máquina que soporte para la ejecución de contenedores, esto permite que un proceso no dependa de una máquina física o virtual en concreto.
 

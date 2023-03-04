@@ -26,7 +26,7 @@ La parte de tener un servidor accesible en internet para proporcionar un servici
 
 {{< tableofcontents >}}
 
-### Infraestructura _cloud_ de Clouding
+## Infraestructura _cloud_ de Clouding
 
 Uno de los proveedores de infraestructura _cloud_ más reconocidos con sede en España es [Clouding][cloudingio], con un servicio de grado empresarial que ofrece un servicio de IaaS con oficinas y centro de datos en Barcelona. Como proveedor de computación _cloud_ ofrece las varias importantes ventajas de este modelo de alojar servicios entre los que están disponer de un servidor en unos pocos clics y en pocos minutos, gran flexibilidad en la selección para configuración del servidor en capacidad de cómputo, memoria y almacenamiento permitiendo ajustar el precio a las necesidad del servicio, flexibilidad para cambiar ya sea ampliar o reducir la configuración del servidor y facturación según uso por unidad de tiempo en horas.
 
@@ -34,7 +34,7 @@ Una de las ventajas determinante y diferenciadora de Clouding sobre otros provee
 
 Al crear una cuenta en Clouding ofrecen un cupón de 5 € para probar su servicio gratis, este saldo permite crear una instancia de servidor _cloud_ con un tiempo de funcionamiento ininterrumpido de unos 45 días en la configuración más básica.
 
-#### Selección de capacidad de los servidores
+### Selección de capacidad de los servidores
 
 Clouding permite seleccionar los recursos de cómputo para los servidores según las necesidades partiendo de la opción más básica de 1/2 unidades de cómputo, 2 GiB por core y 5 GiB de almacenamiento con la opción de elegir Linux o Windows como sistema operativo y dentro de Linux con varias distribuciones y versiones como [Ubuntu][ubuntu], [Centos][centos] o [Debian][debian]. Esta opción más básica que ya es apta para algunos servicios parte de los 3 € al mes, la opción más capaz llega a las 48 unidades de cómputo o _cores_, 192 GiB de memoria y casi 2 TiB de almacenamiento suficiente incluso para las necesidades empresariales más exigentes con un precio de 550 € al mes. Y entre la opción más básica y la más capaz la posibilidad de elegir individualmente cada uno de los tres parámetros principales de configuración como unidades de cómputo, memoria y almacenamiento gracias a la computación _cloud_ y una ventaja de los servidores virtuales privados de la generación anterior que no tenían una configuración tan flexible.
 
@@ -43,7 +43,7 @@ Clouding permite seleccionar los recursos de cómputo para los servidores según
     image1="image:clouding-seleccion-recursos.webp" optionsthumb1="650x450" title1="Selección de los recursos de cómputo y coste"
     caption="Selección de los recursos de cómputo y coste" >}}
 
-#### Infraestructura
+### Infraestructura
 
 Clouding ofrece una infraestructura de alta disponibilidad, con servicios de copias de seguridad para preservar datos y restauración, toma de instantáneas como medida de seguridad y recuperación, archivado de servidores para ahorrar costes, redimensionado de servidores gracias a la computación _cloud_ y configuración de red privada para mayor seguridad. En el panel de administración de los servidores también se ofrecen detalles para la monitorización y observabilidad con los que comprobar el buen estado de funcionamiento del servidor.
 
@@ -79,7 +79,7 @@ Son muchas las empresas que confían en Clouding como proveedor de servicios par
     image1="image:clouding-clientes.webp" optionsthumb1="650x450" title1="Clientes de Clouding"
     caption="Clientes de Clouding" >}}
 
-### Crear un servidor _cloud_ en Clouding
+## Crear un servidor _cloud_ en Clouding
 
 Empezar a usar Clouding es sencillo y rápido, necesitando únicamente crear una cuenta en el servicio  y añadir algo de saldo a través de las formas de pago que se ofrecen como pago con tarjeta, domiciliación bancaria o cuenta de PayPal. Dispone de notificaciones de saldo bajo y autorecarga para evitar supervisar el saldo y que un servicio no deje de funcionar por motivos de facturación. Informes con el detalle del coste usado en un periodo de tiempo y en el apartado _Cuenta_ la posibilidad de configurar la muy útil y recomendable medida de seguridad del segundo factor de autenticación.
 
@@ -108,7 +108,7 @@ Después de confirmar las características e iniciar la creación del servidor s
     image2="image:clouding-virtual-machine-ssh.webp" optionsthumb2="200x150" title2="Claves SSH para los servidores"
     caption="Progreso de creación de la servidor cloud, estadísticas y claves SSH" >}}
 
-### Conexión desde línea de comandos con SSH
+## Conexión desde línea de comandos con SSH
 
 Para la conexión al servidor por línea de comandos se utiliza el protocolo seguro SSH, para ello en GNU/Linux como cliente se usa [OpenSSH][openssh] y en [Windows][windows] una posibilidad es [PuTTY][putty]. La clave privada es una clave privada RSA en formato _pem_ que para usar con OpenSSH si se desea usar una propia primero hay que convertirla a formato _ssh-rsa_ con el siguiente comando y aprovisionar la clave pública en forma _ssh-rsa_ en el servidor. Para usar la llave hay que configurar el archivo _.ssh/config_ con la dirección IP pública del servidor. Como Clouding ya se encarga de tanto generar la llave privada como de aprovisionarla en el servidor la conversión y aprovisionamiento no es imprescindible.
 
@@ -121,7 +121,7 @@ Para la conexión al servidor por línea de comandos se utiliza el protocolo seg
     image1="image:ssh-login.webp" optionsthumb1="650x450" title1="Conexión SSH a instancia de servidor cloud"
     caption="Conexión SSH a instancia de servidor cloud" >}}
 
-### Cómo aprovisionar un servidor _cloud_
+## Cómo aprovisionar un servidor _cloud_
 
 Una vez la conexión al servidor por línea de comandos funciona ya es posible configurar el servidor, no se diferencia en ningún aspecto a configurar un servidor por linea de comandos según el sistema operativo elegido. El aprovisionamiento del servidor y configuración consiste básicamente en la instalación de paquetes, configuración de servicios editando archivos de configuración y reinicio de servicios para que la configuración modificada tome efecto. Los paquetes a instalar dependen del propósito o propósitos del servicio para el servidor puede ser un servidor web con [Nginx][nginx] o [Apache HTTPD][apache-httpd], un servidor de base de datos con [PostgreSQL][postgresql] o [MySQL][mysql], un servidor de documentos personales  con [Nextcloud][nextcloud] o servidor de archivos entre otras muchas otras funcionalidades.
 
@@ -129,7 +129,7 @@ Aunque es posible configurar un servidor introduciendo los comandos uno a uno es
 
 En un primer momento para desarrollar los _scripts_ de aprovisionamiento es posible crear una máquina virtual en local y tratarla como si de un servidor se tratase. [Vagrant][vagrant] permite crear máquinas virtuales de forma automatizada con una de sus posibilidades crear máquinas virtuales en [VirtualBox][virtualbox]. Una vez que el script de aprovisionamiento funciona ya es posible lanzarlo contra el servidor _cloud_.
 
-### Ejemplo de aprovisionamiento de un servidor _cloud_ de Clouding con Ansible
+## Ejemplo de aprovisionamiento de un servidor _cloud_ de Clouding con Ansible
 
 En este ejemplo muestro como aprovisionar un servidor _cloud_ de Clouding de forma automatizada con la herramienta Ansible. El servidor _cloud_ creado en el paso anterior tiene el sistema operativo Ubuntu en la versión LTS 20.04, la funcionalidad del servidor es la de un servidor web con Nginx instalado como paquete de software de Ubuntu por más sencillez para el ejemplo que instalarlo con [Docker][docker], para que el servidor utilice el protocolo HTTPS es necesario un certificado que con el servicio de [Let's Encrypt][letsencrypt] permite obtenerlo de forma rápida y automatizada.
 
@@ -137,7 +137,7 @@ Let's Encrypt ofrece la herramienta [certbot][certbot] y siguiendo sus [instrucc
 
 Además, de la configuración básica mostrada en este artículo es posible configurar otras opciones en Nginx para variar su comportamiento, de las que he escrito en [otros artículos con la etiqueta web][blogbitix-tag-web].
 
-#### Organización de roles en Ansible
+### Organización de roles en Ansible
 
 Ansible define unas convenciones para los nombres de archivos  necesarios, estructura de directorios y formato para los archivos. El archivo _hosts_ define el inventario de máquinas a las que Ansible puede conectarse y las credenciales de conexión además de poder definir variables asociadas a las máquinas y definir grupos de máquinas según un rol como servidor web o servidor de base de datos si hay varias instancias con ese rol, tiene un formato INI.
 
@@ -181,7 +181,7 @@ Estos son los archivos del rol _picodotdev.system_ y _picodotdev.ufw_ de Ansible
 {{< code file="ansible/picodotdev.system/tasks/users.yml" language="yaml" options="" >}}
 {{< code file="ansible/picodotdev.ufw/tasks/main.yml" language="yaml" options="" >}}
 
-#### Comandos de ejecución
+### Comandos de ejecución
 
 Para configurar el servidor en el ejemplo la aplicación de los roles están divididas en cuatro _playbooks_ con sus cuatro archivos bash para su ejecución.
 
@@ -205,7 +205,7 @@ Además en el archivo _ansible-env.conf_ se definen algunos datos como variables
 
 {{< code file="ansible/ansible-env.conf" language="bash" options="" >}}
 
-#### Certificado de seguridad con Let's Encrypt en servidor web Nginx
+### Certificado de seguridad con Let's Encrypt en servidor web Nginx
 
 Para generar el certificado para el servidor web con Let's Encrypt está la herramienta _certbot_ disponible para Nginx y usando Ubuntu a través del paquete en formato de aplicación [snap][snapcraft]. El rol _picodotdev.certbot_ contiene las tareas para realizar la configuración de Nginx una vez este está al menos configurado e iniciado para funcionar con el protocolo HTTP.
 
@@ -218,7 +218,7 @@ Estos son unos ejemplos de certificados generados por Let's Encrypt y certbot. L
 
 {{< code file="certbot-certificates.sh" language="bash" options="" >}}
 
-#### Configuración del servidor web Nginx
+### Configuración del servidor web Nginx
 
 Antes de generar los certificados de Let's Encrypt es necesario configurar el servidor web Nginx e iniciar el servicio, la configuración incluye modificar los archivos de configuración de Nginx para crear en este caso un servidor web virtual y su contenido. Un servidor web virtual permite devolver un contenido u otro en función del nombre del dominio por el que se acceda al servidor. Las tareas también crean varios directorios y archivos como por ejemplo de directorio raíz que el servidor web utiliza para obtener los recursos estáticos que devuelve.
 
@@ -235,7 +235,7 @@ En este ejemplo el contenido del servidor web es simplemente un archivo _html_ c
 
 {{< code file="ansible/picodotdev.site/files/index.html" language="html" options="" >}}
 
-#### Servidor web público
+### Servidor web público
 
 Para configurar el servidor he utilizado como nombre de dominio uno proporcionado por [sslip][sslip] de forma que sea posible configurar el servidor web virtual en Nginx. Con el servidor configurado con los pasos anteriores el y accediendo con el navegador web a la dirección del servidor se obtiene la página con el mensaje de bienvenida, utiliza el protocolo seguro HTTPS con el certificado de Let's Encrypt y que el navegador [Firefox][firefox] reconocer como autoridad de certificación válida y sin mostrar ningún error en la barra de direcciones.
 

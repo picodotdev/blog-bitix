@@ -32,7 +32,7 @@ Como los juegos son desarrollados para Windows hay que utilizar una capa que imp
 
 {{< tableofcontents >}}
 
-### Como instalar Wine en la distribución GNU/Linux
+## Como instalar Wine en la distribución GNU/Linux
 
 Como siempre he empezado por leer el artículo de la [wiki de Arch Linux dedicado a Wine](https://wiki.archlinux.org/index.php/Wine) pra ver que paquetes son necesarios instalar además del repositorio _multilib_ y que información contiene, en un primer momento hay que habilitar el repositorio _multilib_ con implementaciones de librerías de 32 bits. Para juegos la opción recomendable es [wine-staging](https://www.archlinux.org/packages/multilib/x86_64/wine-staging/) que contiene los últimos parches añadidos, [wine](https://www.archlinux.org/packages/multilib/x86_64/wine/) es una versión más estable pero con una cadencia de versiones más lenta que no tiene los últimos parches. También son necesarios los [controladores gráficos de 32 bits de la tarjeta](https://www.archlinux.org/packages/multilib/x86_64/lib32-mesa/), en este caso de Intel. Y el sistema de sonido para 32 bits, si no se instala [lib32-libpulse](https://www.archlinux.org/packages/multilib/x86_64/lib32-libpulse/)  en la terminal aparecen mensajes de que no se encuentra las librerías _libpulse.so.0_ y _libpulse.so.2_. [wine_gecko](https://www.archlinux.org/packages/multilib/x86_64/wine_gecko/) y [wine-mono](https://www.archlinux.org/packages/community/any/wine-mono/) son unos requerimientos de Wine y los programas Windows.
 
@@ -40,7 +40,7 @@ Como siempre he empezado por leer el artículo de la [wiki de Arch Linux dedicad
 
 En otras distribuciones como Ubuntu basta con instalar su paquete desde la linea de comandos o con el centro de software.
 
-### Instalar un programa y juego de Windows con Wine, Battle.net y Diablo 3
+## Instalar un programa y juego de Windows con Wine, Battle.net y Diablo 3
 
 Por otro lado Wine posee una [base de datos con información de compatibilidad y estabilidad][wine-appdb] de programas Windows sobre Wine en GNU/Linux. [Diablo 3][blizzard-diablo3] es un juego de [Blizzard][blizzard] que posee un sistema con una aplicación propia para descargar, instalar y controlar el uso adecuado del juego, la aplicación es [Battle.net][blizzard-battlenet] con la que se pueden instalar [todos los juegos de este estudio](http://eu.blizzard.com/es-es/games/). Para obtenerla hay que registrarse como usuario y una vez registrados se puede descargar el cliente que es un archivo ejecutable de Windows _.exe_ que hay que ejecutar con Wine. 
 
@@ -76,7 +76,7 @@ Una vez instalados los paquetes necesarios y realizada la configuración se pued
     image3="image:battle-net-6.webp" optionsthumb3="200x150" title3="Instalación de Diablo 3"
     caption="Instalación de Diablo 3" >}}
 
-### Ejecutar el programa o juego de Windows con Wine
+## Ejecutar el programa o juego de Windows con Wine
 
 Instalado el juego se inicia con un comando de Wine o con el acceso directo del menú de aplicaciones del juego o del cliente de Battle.net.
 
@@ -149,11 +149,11 @@ Otros juegos en mi lista:
 * [Tropico 5](https://store.steampowered.com/app/245620/Tropico_5/)
 * [Baldur's Gate II: Enhanced Edition](https://store.steampowered.com/app/257350/Baldurs_Gate_II_Enhanced_Edition/)
 
-### Otras formas de ejecutar juegos y programas en GNU/Linux
+## Otras formas de ejecutar juegos y programas en GNU/Linux
 
 Hay alguna utilidad que realiza algunas modificaciones a Wine, una de ellas es [PlayOnLinux][playonlinux] que es una colección de _scripts_ que en principio mejora la experiencia y compatibilidad pero en algún comentario he leído que alguno de esos _scripts_ están desactualizados y es mejor usar Wine directamente leyendo las páginas de la base de datos con la información de pasos relevantes si hay que hacer alguno. La siguiente versión de PlaynLinux se llamará [Phoenicis][phoenicis], otro proyecto que estoy siguiendo es [Winepak][winepak] que es un repositorio específico para aplicaciones Windows de [Flatpak][flatpak], [Flatpak es una nueva forma de distribuir software en GNU/Linux][blogbitix-362] que tiene algunas ventajas a utilizar los paquetes propios de la distribuciones GNU/Linux.
 
-### Desinstalar Wine
+## Desinstalar Wine
 
 Al instalar programas en Wine se crean accesos directos en el menú de aplicaciones con lo que la integración en el sistema es perfecta y una aplicación Wine se puede ejecutar como cualquier otra aplicación del sistema. Si más tarde se desea [desinstalar todos esos paquetes de _multilib_](https://wiki.archlinux.org/index.php/Official_repositories#Disabling_multilib), Wine y [eliminar los accesos directos en el menú de aplicaciones creados por Wine](https://wiki.archlinux.org/index.php/Wine#Removing_menu_entries) hay que ejecutar los siguientes comandos, en Arch Linux.
 

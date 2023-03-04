@@ -28,7 +28,7 @@ Sin embargo, [Google Maps tiene límites de uso](https://cloud.google.com/maps-p
 
 {{< tableofcontents >}}
 
-### Mapas con Leaflet e imágenes de OpenStreetMap
+## Mapas con Leaflet e imágenes de OpenStreetMap
 
 La librería [Leaflet][leafletjs] de JavaScript de código abierto permite insertar un _iframe_ en cualquier página web usando los mapas cartográficos de OpenStreetMap. Soporta marcadores, ventanas emergentes con información, capas vectoriales, navegadores de escritorio y móvil, navegación el teclado y eventos de JavaScript como las habituales interacciones para hacer _zoom_ con la rueda del ratón o arrastrar y soltar para desplazar el mapa entre otras funcionalidades.
 
@@ -43,7 +43,7 @@ Insertar el mapa requiere importar el JavaScript y el CSS de Leaflet en la pági
 
 {{< code file="leaflet-openstreetmap.html" language="html" options="" >}}
 
-### Mapas con Leaflet e imágenes de Google Maps
+## Mapas con Leaflet e imágenes de Google Maps
 
 No he visto que OpenStreetMap ofrezca una vista aérea en modo satélite de las ubicaciones, sin embargo, cambiando el origen de las imágenes Leaflet es capaz de cargar las capas de otros servicios incluído el de Google. Este es el mismo mapa con la vista de callejero y satélite de la misma ubicación utilizando como fuente de las imágenes el servicio de Google.
 

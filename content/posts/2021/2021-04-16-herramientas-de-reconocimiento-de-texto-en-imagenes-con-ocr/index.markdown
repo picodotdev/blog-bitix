@@ -27,7 +27,7 @@ El reconocimiento de caracteres en una imagen es útil y necesario cuando el tex
 
 {{< tableofcontents >}}
 
-### Programas de reconocimiento de caracteres con OCR
+## Programas de reconocimiento de caracteres con OCR
 
 Para extraer el texto de una imagen es necesario un programa OCR, un programa OCR es un software especializado en reconocer patrones de caracteres en una imagen aún cuando los caracteres y texto de la imagen tiene cierta distorsión, baja calidad o defectos. Por supuesto, a mejor calidad de la imagen origen el programa OCR es capaz de ser más preciso en el reconocimiento del texto. Aunque los programas OCR no son siempre perfectos son bastante fiables con una imagen de buena calidad y son capaces de extraer el texto con un éxito cercano al cien por cien.
 
@@ -35,7 +35,7 @@ Los usos de OCR son múltiples, como digitalización de libros, páginas de un l
 
 Hay programas OCR que se invocan desde la línea de comandos, programas con interfaz gráfica y herramientas en línea sin necesidad de programas adicionales.
 
-#### Reconocimiento de caracteres desde línea de comandos
+### Reconocimiento de caracteres desde línea de comandos
 
 La ventaja de una herramienta de línea de comandos es que permite automatizar la tarea de extracción de texto de un conjunto de imágenes, o también permite hacer la tarea más rápido sin necesidad de usar de forma interactiva con una aplicación de interfaz gráfica.
 
@@ -63,7 +63,7 @@ El texto es reconocido con bastante efectividad, el formato no es completamente 
 
 {{< code file="output.txt" language="plain" options="" >}}
 
-#### Reconocimiento de texto con un programa con interfaz gráfica
+### Reconocimiento de texto con un programa con interfaz gráfica
 
 Para usos esporádicos, realizar de forma más intuitiva o con alguna funcionalidad adicional también hay disponibles programas con interfaz gráfica.
 
@@ -79,7 +79,7 @@ El reconocimiento de texto se realiza de forma rápida y se proporciona en forma
     image1="image:gimagereader-2.webp" optionsthumb1="650x450" title1="Programa con interfaz gráfica para OCR en GNU/Linux"
     caption="Programa con interfaz gráfica para OCR en GNU/Linux" >}}
 
-#### Herramientas en línea de reconocimiento de texto sin instalar software
+### Herramientas en línea de reconocimiento de texto sin instalar software
 
 También hay disponibles herramientas en internet que proporcionan la funcionalidad de reconocimiento de texto proporcionando la imagen de la que se quiere reconocer el texto. Por privacidad y seguridad, la imagen proporcionada a estas herramientas en línea no ha de contener información personal o con información privada importante es más conveniente instalar la herramienta de línea de comandos o con interfaz gráfica anteriores.
 
@@ -88,7 +88,7 @@ Dos herramientas en línea de OCR que aceptan diferentes formatos de imagen son:
 * [Free Online OCR ](https://www.newocr.com/)
 * [Online OCR](https://onlineocr.org/).
 
-### OCR con Java
+## OCR con Java
 
 Para automatizar el reconocimiento de caracteres en un programa propio hay una librería que permite invocar la funcionalidad de _tesseract_ desde un programa implementado con el lenguaje de programación Java.
 

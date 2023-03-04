@@ -23,7 +23,7 @@ El 18 de marzo de 2014 se publicó la nueva versión de la plataforma [Java 8](h
 
 {{< tableofcontents >}}
 
-### Introducción
+## Introducción
 
 Java 8 representa una evolución notable en este lenguaje de programación al mismo nivel o más del que supuso la versión Java 5. Aunque tengas varios años de experiencia quizá aún no has tenido oportunidad de usar todas las novedades que se han incorporado en cada versión en proyectos reales, probablemente porque los caminos de migración de las empresas son lentos y muchas siguen usando versiones antiguas en sus aplicaciones. Para conocer y aprovechar todas estas novedades de Java recomiendo los siguientes libros que son de lo mejor que he encontrado como documentación, el primer libro es [Thinking in Java](https://amzn.to/2Qt2Mzv) que nos introduce en este lenguaje de programación desde el inicio, aunque ya conozcas o uses Java el libro [Effective Java](https://amzn.to/39FqX5c) contiene gran cantidad de información y consejos para usar Java de una forma más efectiva haciendo un repaso de las características del lenguaje que aunque no esté actualizado con las novedades que introduce Java 8 casi todo sigue siendo aplicable, el último libro es [Java 8 in Action](https://amzn.to/2QNW1XJ) que explica en mucho más detalle que lo hecho en este artículo cada una de las nuevas características de Java 8 y complementa el libro Effective Java pero aprovechando las novedades introducidas en el lenguaje.
 
@@ -53,9 +53,9 @@ será dinámico pero no evitará fugas de memoria.
     linkids="13cd447a466645c3dd9162d935caf076,8bb841ba7a877bb075e20d754e9df4fd,51d39d999467395851bae9f3931e788c"
     asins="0131872486,B00B8V09HY,1617291994" >}}
 
-### Nuevas características
+## Nuevas características
 
-#### Streams
+### Streams
 
 Los streams no son un nuevo tipo de colección son una nueva forma de recorrer las colecciones distinta a los [Iterator](javadoc8:java/util/Iterator.html). La ventaja de los streams es que pueden procesarse de forma serializada o paralela y proporcionan un estilo de operaciones más funcionales. Un flujo consiste un una fuente (una colección), varias operaciones intermedias (de filtrado o transformación) y una operación final que produce un resultado (suma, cuenta...). Los streams son lazy de modo que las operaciones solo se realizan cuando se llama a la operación final, también son eficientes no necesitando en algunos casos procesar todos los elementos del stream para devolver el resultado final.
 
@@ -63,7 +63,7 @@ Tradicionalmente en la API de colecciones la iteración sobre los elementos deb�
 
 {{< code file="Stream.java" language="java" options="" >}}
 
-#### Lambda
+### Lambda
 
 Esta es una de las principales novedades y que más se estaba echando de menos en Java de otros lenguajes como [Groovy][groovy] o [Python][python]. Las expresiones _lambda_ son funciones que no está asociadas a un determinado nombre y que pueden pasarse como argumento a otras funciones. Tienen el siguiente aspecto:
 
@@ -71,7 +71,7 @@ Esta es una de las principales novedades y que más se estaba echando de menos e
 
 El uso de expresiones lambdas junto con el stream API proporciona a Java 8 características de programación funcional, pero sobre todo hace el código más sencillo, menos extenso, más expresivo y más legible. En las expresiones _lambda_ de Java podemos seguir aprovechándonos de la compilación estática y del tipado fuerte.
 
-#### Referencias de métodos
+### Referencias de métodos
 
 Todo el código desarrollado previamente a Java 8 no hace uso de las lambdas, pero con las [referencias a métodos](https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html) podemos usar esos métodos ya implementados como si se tratasen de funciones lambdas. Hay diferentes formas de hacer referencias a métodos:
 
@@ -82,7 +82,7 @@ Todo el código desarrollado previamente a Java 8 no hace uso de las lambdas, pe
 
 {{< code file="ReferenciaMetodos.java" language="java" options="" >}}
 
-#### Interfaces funcionales
+### Interfaces funcionales
 
 Una interfaz funcional es aquella que solo tiene un método abstracto (sin implementación). Algunos ejemplos de interfaces funcionales son [Runnable](javadoc8:java/lang/Runnable.html), [ActionListener](javadoc8:java/awt/event/ActionListener.html), [Comparator](javadoc8:java/util/Comparator.html) y [Callable](javadoc8:java/util/concurrent/Callable.html). Para definir una interfaz funcional se puede usar la anotación [@FunctionalInterface](javadoc8:java/lang/FunctionalInterface.html) y pueden representarse con una expresión lambda. En el siguiente ejemplo puede apreciarse que con las interfaces funcionales y las lambdas podemos hacer lo mismo de forma más clara, menos verbosa y con código más legible.
 
@@ -99,29 +99,29 @@ Java 8 incorpora varias interfaces funcionales que puede ser usadas en expresion
 * [Supplier](javadoc8:java/util/function/Supplier.html): producen un tipo, al contrario que las funciones no tienen argumento
 * [Consumer](javadoc8:java/util/function/Consumer.html): representa una operación a realizarse en un argumento.
 
-#### Métodos por defecto en interfaces
+### Métodos por defecto en interfaces
 
 Hasta ahora las interfaces en Java solo podían definir métodos pero no sus implementaciones. El problema con las interfaces es que cuando se modifican se rompen todas las clases que las usan. Esto se ha resuelto de tal forma que se puedan añadir nuevos métodos con implementación a las interfaces y ha sido necesario para incorporar las lambdas a interfaces existentes como List. En Java 8 las interfaces podrán incorporar implementaciones para algunos de sus métodos, teniendo así algo parecido a herencia múltiple.
 
 {{< code file="MetodosDefault.java" language="java" options="" >}}
 
-#### Métodos estáticos en interfaces
+### Métodos estáticos en interfaces
 
 Además de definir métodos por defecto en las interfaces a partir de ahora podemos definir métodos estáticos. Definiendo métodos estáticos en las interfaces evitaremos tener que crear clases de utilidad. Podremos incluir en un mismo tipo (la interfaz) todos los métodos relacionados.
 
 {{< code file="MetodosStatic.java" language="java" options="" >}}
 
-#### Mejoras en la programación asíncrona
+### Mejoras en la programación asíncrona
 
 Los procesadores actuales están aumentando su capacidad de proceso más a base de concurrencia proporcionando más núcleos que a base de hacerlos más rápidos en Ghz o [instrucciones por ciclo](https://es.wikipedia.org/wiki/Instrucciones_por_ciclo), los lenguajes de programación tienen que adaptarse para facilitar su aprovechamiendo de forma fácil. Desde las primeras versiones de Java ya se incluía soporte para trabajar con hilos o threads sin embargo su programación es propensa a errores y difícil de depurar. Java 7 con el nuevo soporte conocido como [Fork/Join](https://docs.oracle.com/javase/tutorial/essential/concurrency/forkjoin.html) mejoraba la situación.
 
 Por otra parte para maximizar el aprovechamiento de los recursos disponibles cuando surgen bloqueos de entrada/salida como acceso a disco o comunicación por red surge la programación asíncrona. Para ello Java 8 mejora el soporte existente desde Java 7 con la clase [Future](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Future.html) que permite recoger el resultado de una operación mientras se realiza otra al mismo tiempo, en Java 8 se proporciona la clase [CompletableFuture](javadoc8:java/util/concurrent/CompletableFuture.html) que implementa la interfaz Future. La clase CompletableFuture soporta el uso de lambdas, hace más fácil la programación concurrente y programación asíncrona que el Fork/Join y el Future respectivamente permitiendo igualmente ejecutar tareas de forma concurrente, combinar el resultado de dos tareas que se ejecutan al mismo tiempo, realizar otra tarea al terminar una prevía o por supuesto esperar a que todas las tareas concurrentes finalicen.
 
-#### Anotaciones en cualquier uso de tipos
+### Anotaciones en cualquier uso de tipos
 
 Con la introducción de anotaciones en Java 5 podemos usar anotaciones en la declaración de los tipos (definición de clases, interfaces, propiedades, métodos, ...). Desde ahora podremos usar las anotaciones en el uso de cualquier tipo como por ejemplo expresiones new, casts, cláusulas implements y cláusulas throws.
 
-#### Java Time
+### Java Time
 
 Trabajar con fechas, horas y diferentes zonas horarias en Java tradicionalmente ha sido molesto, para tratar de mejorar la situación podíamos usar la librería JodaTime. Finalmente, después de mucho tiempo esperando a que se hiciera se va a proporcionar una mejor [API en el JDK 8 para trabajar con fechas, horas y zonas horarias](javadoc8:java/time/package-summary.html).
 
@@ -129,17 +129,17 @@ Trabajar con fechas, horas y diferentes zonas horarias en Java tradicionalmente 
     gallery="true"
     image1="image:componentes-jpse8.webp" optionsthumb1="300x200" >}}
 
-### Futuro con Java 9
+## Futuro con Java 9
 
 Viendo el pasado reciente de Java hablar del futuro puede ser precipitado, quizá la característica más comentada sea la modularización con el proyecto conocido como [Jigsaw](http://openjdk.java.net/projects/jigsaw/), pero ha sido abandonada para Java 8 según tengo entendido por ser difícil incorporarla manteniendo la compatibilidad hacia atrás, por el momento dispondremos de una solución intermedia con los compact profiles.
 
 Otro de los puntos donde parece que se pondrá énfasis es en el soporte para entornos en la nube que son en estos momentos la tendencia hacia la que evolucionan las aplicaciones.
 
-### Versiones anteriores de Java
+## Versiones anteriores de Java
 
 Las versiones de Java 5, 6 y 7 también incluyeron varias novedades y dado que en el ámbito empresarial la tecnología se adopta de forma lenta es posible que mucha gente (incluido yo mismo) aún desconozca cuales eran algunas de las principales novedades y características de versiones anteriores.
 
-#### Java 7
+### Java 7
 
 * Project coin
 * Strings en switchs
@@ -154,7 +154,7 @@ Las versiones de Java 5, 6 y 7 también incluyeron varias novedades y dado que e
 
 Más en [Java 7 New Features and Enhancements](https://www.oracle.com/technetwork/java/javase/jdk7-relnotes-418459.html) y [Java 7 a look back](https://www.javacodegeeks.com/2013/10/java7-a-look-back.html)
 
-#### Java 6
+### Java 6
 
 * Lenguajes de scripting
 * API para el compilador
@@ -163,7 +163,7 @@ Más en [Java 7 New Features and Enhancements](https://www.oracle.com/technetwor
 
 Más en [Java 6 New Features and Enhancements](https://www.oracle.com/technetwork/java/javase/features-141434.html) y [Introduction to java 6 new features](https://www.javabeat.net/introduction-to-java-6-0-new-features-part-i/)
 
-#### Java 5
+### Java 5
 
 * Generics
 * Bucle for mejorado
@@ -175,7 +175,7 @@ Más en [Java 6 New Features and Enhancements](https://www.oracle.com/technetwor
 
 Más en [Java 5 New Features and Enhancements](https://docs.oracle.com/javase/1.5.0/docs/relnotes/features.html)
 
-### Presentación
+## Presentación
 
 Finalmente, una presentación muy interesante en forma de [vídeo de Youtube](https://www.youtube.com/watch?v=FTfAP29TjUk) en español y la [presentación de la que se habla en formato pdf](http://www.javahispano.org/storage/documentacion/2013-JUG-Madrid.pdf) que fue publicada en [JavaHispano](http://www.javahispano.org/portada/2014/3/10/video-y-presentacion-de-la-charla-sobre-java-8.html), en él se habla de muchas de las novedades y de algunas futuras en Java 9.
 

@@ -105,7 +105,7 @@ Dentro de unos días se publicarán las presentaciones y no se si los vídeos co
 
 <hr>
 
-### Los equipos ¿nacen o se hacen? (Y si no nacen, ¿cómo se hacen?) <em>por Teodora Bozheva</em>
+## Los equipos ¿nacen o se hacen? (Y si no nacen, ¿cómo se hacen?) <em>por Teodora Bozheva</em>
 
 Comenzamos viendo el caso de una empresa Armenia, [Armsoft](http://www.armsoft.am/?p=home&lang=en), dedicada al desarrollo de _software_ bancario. En una zona recientemente en conflicto se empieza de poco a construir una organización sin estructuras y sin procesos, todo el mundo sabe de todo. Buscan la excelencia programando. Para contratar, hacen un curso gratuito, dan formación y a los que seleccionan los contratan pero aún así si contratado finalmente no encaja se va (o supongo lo echan). Son buenos técnicamente pero le dan más importancia al trabajo en equipo que a los conocimientos técnicos.
 
@@ -115,7 +115,7 @@ Los equipos están autoorganizados tomando sus propias decisiones con un objetiv
 
 {{< iframe src="https://player.vimeo.com/video/154470806?title=0&byline=0&portrait=0" size="500x281" >}}
 
-### Cómo ser maestros constructores <em>por Zuriñe Menendez</em>
+## Cómo ser maestros constructores <em>por Zuriñe Menendez</em>
 
 En el ámbito _frontend_ de una aplicación web existen _frameworks_ para todo pero debemos saber lo que hacen.
 
@@ -127,7 +127,7 @@ Todavía hay quien usa versiones antiguas de Internet Explorer (como administrac
 
 Se debe usar [CSS orientado a objetos][oocss] (OOCCS) agrupando propiedades comunes a varios estilos y los específicos de forma individual para el estilo en concreto. Se debe [validar el CSS con W3C](https://jigsaw.w3.org/css-validator/), validar el diseño responsive y hacer minimizado para mejorar el rendimiento. En el diseño adaptable no basta con usar un _display: none_ ya que un vídeo se seguiría cargando y consumiendo datos para evitarlo se necesita ayuda de los _backenders_, para estos casos se puede empezar por el _desktop_.
 
-### Your code as a crime scene <em>por Vicenç García</em>
+## Your code as a crime scene <em>por Vicenç García</em>
 
 Nos quejamos de los jefes pero el código que hacemos nosotros tampoco es perfecto y viéndolo algunas partes apestan. Se puede extraer información analizando el código. La presentación se basa en el libro [Your Code as a Crime Scene](https://amzn.to/2STr7jp).
 
@@ -158,7 +158,7 @@ Es importante tener datos para evaluar pero hay que tener cuidado con las métri
 
 {{< iframe src="https://player.vimeo.com/video/154470784?title=0&byline=0&portrait=0" size="500x281" >}}
 
-### Java ha muerto! Larga vida a Java (moderno) <em>por Jerónimo López</em>
+## Java ha muerto! Larga vida a Java (moderno) <em>por Jerónimo López</em>
 
 Hay gente que considera que Java es una mierda y es el nuevo Cobol. Se alegan algunos motivos como:
 
@@ -201,7 +201,7 @@ La presentación ha expuesto que Java sigue siendo una de los mejores lenguajes,
 * [Programación de juegos y 3D en Java con jMonkeyEngine][blogbitix-79]
 * [Java para tareas de scripting con JBang y Gradle][blogbitix-108]
 
-### Cómo pasar de servicio a producto y no perecer en el intento <em>por Carlos Hernández</em>
+## Cómo pasar de servicio a producto y no perecer en el intento <em>por Carlos Hernández</em>
 
 Grandes empresas como [DELL][dell] empezaron siendo un servicio de reparar ordenadores a proporcionar ordenadores personalizados o [Microsoft][microsoft] pasando a vender licencias de su software.
 

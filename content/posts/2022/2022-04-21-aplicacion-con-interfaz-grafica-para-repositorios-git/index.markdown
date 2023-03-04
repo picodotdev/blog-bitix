@@ -23,7 +23,7 @@ El sistema de control de versiones [Git][git] posee una línea de comandos con l
 
 Es aconsejable conocer los comandos básicos de línea de comandos pero en el uso diario o para algunas acciones las aplicaciones con interfaz gráfica son más rápidas, más fáciles de aprender y sin necesidad de recordar las opciones de cada comando. En [GNU][gnu]/[Linux][linux] y [GNOME][gnome] una aplicación cliente de Git es [gitg][gitg].
 
-### La aplicación gitg
+## La aplicación gitg
 
 [Gitg] es una aplicación de escritorio con interfaz gráfica que permite visualizar un repositorio de Git, su historial y el contenido de los diferentes archivos en sus versiones. No tiene todas las opciones disponibles de la línea de comandos pero si muchos incluyendo los más comunes. Usar una herramienta con interfaz gráfica puede mejorar la productividad al trabajar con varios repositorios de control de versiones en Git y permite a los usuarios que estén empezando a usar Git una forma de usarlo más intuitiva.
 

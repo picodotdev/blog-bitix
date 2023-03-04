@@ -29,13 +29,13 @@ En la programación orientada a objetos hay varios conceptos que definen este pa
 
 {{< tableofcontents >}}
 
-### Conceptos de la programación orientada a objetos
+## Conceptos de la programación orientada a objetos
 
 Los lenguajes de programación orientados a objetos se diferencian de los imperativos en que el propio lenguaje incluye abstracciones y sintaxis específica para el soporte de la programación orientada a objetos.
 
 El lenguaje de programación Java considerado como un lenguaje de programación a objetos incluye palabras reservadas para la definición de clases e interfaces e implementa los conceptos de herencia y polimorfismo.
 
-#### Encapsulación
+### Encapsulación
 
 La encapsulación no es un concepto propio de la programación orientada a objetos pero es fundamental, los objetos son la abstracción que proporciona la encapsulación.
 
@@ -43,7 +43,7 @@ La encapsulación consiste en hacer que los datos sean modificados únicamente p
 
 Se denomina encapsulación porque los datos y sus estructuras de datos no están accesibles de forma directa, sino que para acceder a los datos o manipularlos se ha de realizar a través de las funciones asociadas, los datos están encapsulados.
 
-#### Abstracción
+### Abstracción
 
 La abstracción es el concepto por el que un modelo es creado con las propiedades relevantes a observar. Un programa trata únicamente con las propiedades de un objeto que al programa le interesa. Las clases son la abstracción de los conceptos que maneja la aplicación, pueden ser conceptos que existan en el mundo real pero simplificados al tener únicamente las propiedades relevantes para la aplicación. Las clases también pueden ser conceptos que no tengan una existencia física en el mundo real como una lista de elementos, una dirección IP o un archivo de ordenador.
 
@@ -54,7 +54,7 @@ Un avión es un objeto físico del mundo real con multitud de propiedades, desde
     image1="image:abstraction.webp" optionsthumb1="650x450" title1="Abstracción en dos modelos diferentes de un objeto"
     caption="Abstracción en dos modelos diferentes de un objeto" source="matiasbeltramone.github.io" >}}
 
-#### Objeto, clase e instancia
+### Objeto, clase e instancia
 
 Los objetos, clases e instancias son conceptos característicos de la programación a objetos. Son la denominación que le dan los lenguajes de programación orientada a objetos para la encapsulación y las abstracciones.
 
@@ -74,7 +74,7 @@ El formato de la invocación de un método en una instancia de un objeto es el s
 
 {{< code file="Car-method.java" language="java" options="" >}}
 
-#### Herencia e interfaces
+### Herencia e interfaces
 
 Otro de los conceptos propios de la programación orientada a objetos es la herencia. Al implementar una clase y para reutilizar el código una clase puede extender de otra, heredando el comportamiento de la clase extendida. La relación de herencia entre las clases es una relación de «es-un».
 
@@ -103,12 +103,12 @@ Desde la versión de Java 8 las interfaces con los métodos _default_ pueden pro
 
 {{< code file="Math-interface-default-method.java" language="java" options="" >}}
 
-### Ejemplos de clases, herencia e interfaces
+## Ejemplos de clases, herencia e interfaces
 
 {{< code file="Animal-classes.java" language="java" options="" >}}
 {{< code file="Shapes-classes.java" language="java" options="" >}}
 
-#### Polimorfismo
+### Polimorfismo
 
 El polimorfismo es una propiedad por la cual el método invocado varía en función de la clase de la instancia de un objeto. El polimorfismo es una característica única en la programación orientada a objetos, mientras que la encapsulación y herencia es posible conseguirla en lenguajes no orientados a objetos de una manera razonablemente segura el polimorfismo al usar punteros a funciones es propensa a errores. Los los lenguajes orientados lo que proporcionan es un uso sencillo y seguro del polimorfismo ocultando los detalles internos de su implementación de sus punteros a funciones.
 
@@ -125,7 +125,7 @@ La potencia del polimorfismo es que teniendo una referencia de _Shape_ al invoca
 
 {{< code file="Shape-polymorfism-example.java" language="java" options="" >}}
 
-### Los problemas de la herencia
+## Los problemas de la herencia
 
 El principal problema de la herencia es que en ocasiones no es el mecanismo adecuado para reutilizar el comportamiento, ocasionado que al intentar usar herencia provoque un problema exponencial del número de clases posibles.
 
@@ -139,7 +139,7 @@ El problema surge cuando a las pizzas se les añade otro vector adicional de dis
 
 Con el tipo de masa podría haber sido otro vector de diseño pero en este caso se ha implementado con una relación «tiene-un» en vez de «es-un», la solución para el tipo de cocina es aplicar una relación «tiene-un», esto es, en vez de usar herencia la solución es usar composición.
 
-### Composición
+## Composición
 
 Si la herencia es una relación «es-un» entre dos clases, la composición es una relación «tiene-un» entre dos clases. La composición se produce cuando una clase contiene referencias a instancias de otras clases en sus propiedades. La clase coche contiene una marca, modelo, motor, ruedas, aceite, color, velocidad y velocidad máxima.
 
@@ -149,7 +149,7 @@ En el problema de las pizzas utilizando herencia la solución es usar composici�
 
 {{< code file="Pizza-composition.java" language="java" options="" >}}
 
-#### Beneficios de la composición
+### Beneficios de la composición
 
 Aunque la herencia es útil y adecuado en algunos casos por regla general se recomienda usar composición sobre herencia por los siguientes beneficios:
 
@@ -157,7 +157,7 @@ Aunque la herencia es útil y adecuado en algunos casos por regla general se rec
 * Herencia múltiple: la herencia en Java solo permite extender de una única clase padre. Las interfaces y los métodos por defecto suplen en cierta medida la herencia múltiple pero también tienen limitaciones como no poder tener propiedades.
 * Evitar duplicidad: aún usando interfaces si no es a través de los métodos por defecto obliga a duplicar código en diferentes clases. La duplicidad de código por norma general es algo a evitar.
 
-### Inyección de dependencias
+## Inyección de dependencias
 
 Los lenguajes de programación ofrecen un mecanismo para construir instancias, en Java es a través de la palabra reservada _new_ y los constructores, las relaciones con otras instancias se establecen pasando sus referencias como argumentos del constructor o con los métodos de la instancia.
 
@@ -172,3 +172,5 @@ El contenedor de objetos para la creación de las instancias y el recolector de 
 * [Composition over Inheritance (what it is, why use it)](http://marcotroisi.com/composition-over-inheritance/)
 * [POO Lección 1: ¿Qué rayos es un paradigma orientado a objetos?](https://matiasbeltramone.github.io/oop-lesson-1/)
 {{< /reference >}}
+
+{{% /post %}}

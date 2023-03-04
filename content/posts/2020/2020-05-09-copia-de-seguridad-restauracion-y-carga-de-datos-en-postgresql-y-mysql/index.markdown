@@ -23,7 +23,7 @@ Los datos contenidos en las bases de datos relacionales son de los más importan
 
 En la base de datos [PosgreSQL][postgresql] disponemos de los comandos [_pg\_dump_](https://www.postgresql.org/docs/current/app-pgdump.html) para hacer la copia de seguridad o extraer el esquema y los datos y el comando [_pg\_restore_](https://www.postgresql.org/docs/current/app-pgrestore.html) para cargarlos en un nuevo servidor u otro esquema. En [MySQL][mysql] disponemos de los comandos [mysqldump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html) y depende de como hagamos las copias de seguridad [mysqlimport](https://dev.mysql.com/doc/refman/8.0/en/mysqlimport.html).
 
-### PostgreSQL
+## PostgreSQL
 
 Los comandos básicos para hacer la copia de seguridad y restauración en PostgreSQL de una base de datos completa son lo siguientes:
 
@@ -41,7 +41,7 @@ Como las bases de datos pueden llegar a ser de varias decenas de GiB generar las
 
 {{< code file="postgresql-compress.sh" language="bash" options="" >}}
 
-### MySQL
+## MySQL
 
 En MySQL los comandos de copia de seguridad y restauración son similares.
 
@@ -59,7 +59,7 @@ Para generar y restaurar copias de seguridad comprimidas se debe usar el comando
 
 {{< code file="mysql-compress.sh" language="bash" options="" >}}
 
-### Carga masiva de datos
+## Carga masiva de datos
 
 Si se desean cargar datos de una fuente externa de forma masiva a una base de datos PostgreSQL o MySQL en vez de generar un archivo con varios cientos de miles las sentencias _insert_ es mejor generar un archivo en formato _csv_ o _txt_ con algunos delimitadores y usar el comando [_COPY_](https://www.postgresql.org/docs/current/sql-copy.html) en PostgreSQL o el comando [_LOAD DATA_](https://dev.mysql.com/doc/refman/8.0/en/load-data.html) en MySQL complemento de [SELECT ... INTO](https://dev.mysql.com/doc/refman/8.0/en/select-into.html). Estos comandos están diseñados para cargar datos de forma masiva en la base de datos con lo que la importación será mucho más rápida.
 
