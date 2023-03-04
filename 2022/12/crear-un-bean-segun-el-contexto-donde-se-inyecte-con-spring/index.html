@@ -281,7 +281,7 @@
     </div>
 </div>
 <p>Una de las propiedades de la inversión de control es que no sean las clases las que creen sus dependencias sino que sea el contenedor el que las inyecte según las propiedades que necesita su constructor. <a href="https://spring.io/">Spring</a> y <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> proporcionan un contenedor de inversión de control con el que evitar la obtención de la referencia al Logger de forma estática y transformarlo a una inyección en el constructor siempre y cuando la clase en la que inyectar el <em>Loggger</em> esté gestionada por el contenedor de dependencias de Spring, de lo contrario hay que seguir recurriendo a la variable estática o gestionar manualmente la inyección de la dependencia al crear las instancias.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
     <li><a href="#crear-un-_bean_-según-el-contexto-donde-se-inyecte-con-spring">Crear un <em>bean</em> según el contexto donde se inyecte con Spring</a></li>
   </ol>
