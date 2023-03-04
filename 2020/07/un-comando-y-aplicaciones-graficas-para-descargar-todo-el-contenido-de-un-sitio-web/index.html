@@ -140,7 +140,7 @@ Los navegadores web con el botón derecho del ratón ofrecen la posibilidad de d
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -262,15 +262,15 @@ Los navegadores web con el botón derecho del ratón ofrecen la posibilidad de d
 </div>
 <p>La necesidad puede ser hacer una copia de seguridad periódicas para conservar el historial del sitio web, descargar el contenido para procesarlo de alguna forma, para consultarlo sin conexión a internet u <em>offline</em> si nuestra conexión es lenta o inestable o el servidor está caído, migrar un sitio web de un servidor web a otro o descargar los archivos de vídeo, audio, imágenes o multimedia.</p>
 <p>Los navegadores web con el botón derecho del ratón ofrecen la posibilidad de descargar y guardar en el sistema de archivos la página que se está visualizando, está es la opción más simple ya que no se necesitan herramientas adicionales si solo se quiere guardar una página de las muchas de un sitio web. Su desventaja es que no sirve para guardar un sitio web completo por requerir hacer la operación manualmente por cada página, de forma que para realizar la operación de forma másiva y automatizada para el sitio web completo hay que utilizar alguna herramienta especializada.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#cómo-descargar-un-sitio-web-desde-la-línea-de-comandos-con-wget">Cómo descargar un sitio web desde la línea de comandos con wget</a></li>
     <li><a href="#cómo-descargar-un-sitio-web-con-programas-de-interfaz-gráfica-o-páginas-web">Cómo descargar un sitio web con programas de interfaz gráfica o páginas web</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="cómo-descargar-un-sitio-web-desde-la-línea-de-comandos-con-wget">Cómo descargar un sitio web desde la línea de comandos con wget</h3>
+<h2 id="cómo-descargar-un-sitio-web-desde-la-línea-de-comandos-con-wget">Cómo descargar un sitio web desde la línea de comandos con wget</h2>
 <p>La herramienta de línea de comandos <a href="https://www.gnu.org/software/wget/">wget</a> permite descargar un sitio web completo con un comando ejecutado desde la terminal incluyendo los archivos HTML y de recursos como imágenes, vídeos, contenido multimedia como audio o música, de estilos CSS o archivos JavaScript. El contenido que descarga wget es el referenciado a través de los enlaces presentes en el propio contenido, wget explora los archivos HTML en busca de enlaces a recursos u otras páginas HTML y de forma recursiva descarga el contenido completo al sistema de archivos local. Está disponible para los sistemas operativos <a href="https://www.microsoft.com/es-es/windows/">Windows</a>, <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> y <a href="https://www.apple.com/macos/">macOS</a> y es una herramienta de software libre y gratuita.</p>
 <p>Basta indicar el o los dominios del sitio web de los que se quiere descargar el contenido y la URL de rastreo de inicio u otras URLs adicionales que se desean descargar. Este comando con las opciones indicadas solo descarga los enlaces del sitio web puesto como argumento, los enlaces a sitios web externos no indicados expresamente en la opción <em>&ndash;domain</em> son ignorados. El comando wget soporta numerosas opciones para personalizar la descarga explicadas en su <a href="https://www.gnu.org/software/wget/manual/wget.html">página de manual</a>.</p>
 <div class="code">
@@ -287,7 +287,7 @@ Los navegadores web con el botón derecho del ratón ofrecen la posibilidad de d
 </figure>
 </div>
 <p>Descargar un sitio web no es la única funcionalidad que ofrece wget, otra necesidad habitual es <a href="https://picodotdev.github.io/blog-bitix/2015/12/como-buscar-los-enlaces-rotos-de-un-sitio-web/">buscar los enlaces rotos de una página web</a> que con el paso del tiempo se van generando ya sea porque los sitios web externos desaparecen o por errores en la edición y enlazado interno. Conocer los enlaces rotos permite arreglarlos para ofrecer mejor experiencia de usuario al visitante y para mejorar el SEO en el posicionamiento en los buscadores.</p>
-<h3 id="cómo-descargar-un-sitio-web-con-programas-de-interfaz-gráfica-o-páginas-web">Cómo descargar un sitio web con programas de interfaz gráfica o páginas web</h3>
+<h2 id="cómo-descargar-un-sitio-web-con-programas-de-interfaz-gráfica-o-páginas-web">Cómo descargar un sitio web con programas de interfaz gráfica o páginas web</h2>
 <p>Hay algunas herramientas con interfaz gráfica como <a href="https://www.httrack.com/">HTTrack</a> o <a href="https://www.cyotek.com/cyotek-webcopy">Cyotek WebCopy</a> que realizan la misma tarea que wget de forma más intuitiva. Aún así el comando de wget es una forma sencilla y rápida de realizar la descarga de un sitio web completo.</p>
 <p>También hay algunas herramientas o páginas web <em>online</em> que realizan la descarga de sitios web como <a href="https://websitedownloader.io">Website Downloader</a> o <a href="https://archivarix.com/en/website-downloader-cms-converter/">Archivarix</a> sin necesidad de instalar ningún programa en el ordenador aunque tienen unos límites muy reducidos que sobrepasados no son gratuitas y hay que pagar por utilizarlas.</p>
 <div class="reference">

@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -284,15 +284,15 @@
 <p>Mucho del software de código abierto y libre es gratuito, sin embargo, es mantenido en algunos casos por personas en su propio tiempo personal con poco soporte económico. En el caso de Docker Desktop la empresa propietaria seguramente ha tomado esta medida como una vía para monetizar y financiar el desarrollo de Docker. Dada la popularidad que Docker ha adquirido en los últimos años muchas empresas basan de forma importante sus entornos de producción o desarrollo en Docker.</p>
 <p>Docker Desktop permite ejecutar contenedores de Docker en sistemas distintos a GNU/Linux como macOS y Windows, incluye otras herramientas como <a href="https://docs.docker.com/compose/">Docker Compose</a> y se integra con <a href="https://registry.hub.docker.com/">Docker Hub</a> para almacenar imágenes, también integra una versión de <a href="https://kubernetes.io/">Kuberntes</a> para orquestar contenedores.</p>
 <p>El cambio en el acuerdo de uso de Docker Desktop obliga a los usuarios de Apple macOS que no cumplan los criterios para usar la suscripción <em>Personal</em> han de pagar por su uso o buscar una alternativa. Para uso personal uso la distribución <a href="https://www.archlinux.org/">Arch Linux</a> pero por política de empresa en el trabajo estoy obligado a usar macOS con lo que he tenido que buscar una alternativa para seguir usando Docker. En el caso de macOS dos de las opciones como alternativa a Docker Desktop son <a href="https://kubernetes.io/docs/setup/minikube/">minikube</a> y <a href="https://github.com/lima-vm/lima">Lima</a>.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#contenedores-de-docker-y-kuberntes-con-minikube-en-macos">Contenedores de Docker y Kuberntes con Minikube en macOS</a></li>
     <li><a href="#contenedores-de-docker-con-lima-en-macos">Contenedores de Docker con Lima en macOS</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="contenedores-de-docker-y-kuberntes-con-minikube-en-macos">Contenedores de Docker y Kuberntes con Minikube en macOS</h3>
+<h2 id="contenedores-de-docker-y-kuberntes-con-minikube-en-macos">Contenedores de Docker y Kuberntes con Minikube en macOS</h2>
 <p>minikube tiene el objetivo de crear un <em>cluster</em> de Kubernetes rápidamente en GNU/Linux, Windows y macOS, pero dado que usa Docker el comando <em>docker</em> puede interaccionar con la instancia de minikube. Docker es una herramienta nativa de GNU/Linux en el caso de macOS y Windows usa virtualización, en estos dos sistemas operativos Docker se ejecuta en una máquina virtual con GNU/Linux y se proporcionan una serie de integraciones para el reenvío de puertos entre la máquina anfitrión y la máquina virtual con los contenedores.</p>
 <ul>
 <li><a href="https://minikube.sigs.k8s.io/docs/">Documentación de minikube</a></li>
@@ -338,7 +338,7 @@
         <span>minikube-delete.sh</span>
     </div>
 </div>
-<h3 id="contenedores-de-docker-con-lima-en-macos">Contenedores de Docker con Lima en macOS</h3>
+<h2 id="contenedores-de-docker-con-lima-en-macos">Contenedores de Docker con Lima en macOS</h2>
 <p>Aunque minikube permite ejecutar contenedores de Docker directamente su propósito es ejecutar recursos de Kubernetes como <em>pods</em> en vez de directamente contenedores. Para el caso de simplemente contenedores de Docker minikube no ofrece reenvío de puertos y compartición de archivos entre la máquina virtual y local que requiere hacer el paso adicional del comando <em>minikube-ip.sh</em>.</p>
 <p>Otra opción en macOS alternativa a Docker en macOS es Lima, denominada a sí misma como <em>macOS subsystem for Linux</em> parafraseando el <em>Windows subsystem for Linux</em> o WSL de Windows. El funcionamiento de Lima es también a través de una máquina virtual en la que se ejecutan los contenedores, la ventaja de Lima es que ofrece compartición de archivos entre la máquina local y la virtual y reenvío de puertos de forma automática de modo que la experiencia de uso es similar a Docker en GNU/Linux.</p>
 <p>Lima como entorno de ejecución de contenedores utiliza <a href="https://containerd.io/">containerd</a>, pero dado que las imágenes de los contenedores de Docker de DockerHub siguen el estándar OCI son compatibles con <em>containerd</em> lo que permite usar exactamente las mismas imágenes.</p>

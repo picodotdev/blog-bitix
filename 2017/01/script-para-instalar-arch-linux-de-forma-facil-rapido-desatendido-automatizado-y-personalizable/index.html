@@ -63,7 +63,7 @@
     "dateModified": "2020-06-20T20:30:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "7238",
+    "wordCount": "7237",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -138,7 +138,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -285,22 +285,26 @@
 <p>It is targeted at the proficient GNU/Linux user, or anyone with a do-it-yourself attitude who is
 willing to read the documentation, and solve their own problems.</p>
 </blockquote>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#la-instalación-del-sistena-con-arch-linux">La instalación del sistena con Arch Linux</a></li>
-    <li><a href="#el-instalador-alis-y-características-soportadas">El instalador alis y características soportadas</a></li>
+    <li><a href="#el-instalador-alis-y-características-soportadas">El instalador alis y características soportadas</a>
+      <ol>
+        <li><a href="#capturas-de-diferentes-entornos-de-escritorio-soportados"> Capturas de diferentes entornos de escritorio soportados</a></li>
+      </ol>
+    </li>
     <li><a href="#vídeo-de-instalación-del-sistema-base-con-alis">Vídeo de instalación del sistema base con alis</a></li>
     <li><a href="#código-fuente-de-alis">Código fuente de alis</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="la-instalación-del-sistena-con-arch-linux">La instalación del sistena con Arch Linux</h3>
+<h2 id="la-instalación-del-sistena-con-arch-linux">La instalación del sistena con Arch Linux</h2>
 <p>En Arch Linux con su <a href="https://wiki.archlinux.org/index.php/Arch_Linux">forma de hacer las cosas</a> deja al usuario el poder de personalizar el sistema completamente a sus necesidades y preferencias únicamente limitado por su determinación de conseguirlo. Solo proporciona <a href="https://www.archlinux.org/download/">el medio con el que iniciar la instalación</a> que comienza con una terminal y un <em>prompt</em> del sistema, una <a href="https://wiki.archlinux.org/index.php/Installation_guide">guía de instalación</a> junto con las <a href="https://wiki.archlinux.org/index.php/General_recommendations">recomendaciones generales</a> y <a href="https://wiki.archlinux.org/">una de las mejores fuentes de información en GNU/Linux</a> además de completa de cada aspecto que necesitemos en la instalación. Después de haber leído las páginas relevantes de la wiki de Arch Linux, seguramente más de una y dos veces, hasta comprenderla en su mayor parte se empieza a realizar la receta que contenga los comandos necesarios hasta completar la instalación.</p>
 <p>En multitud de blogs y vídeos de YouTube hay guías que contienen los comandos y las explicaciones necesarias. Cualquier usuario de Arch Linux con un blog seguramente ha publicado un artículo con su guía de instalación (sí, <a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/">yo también publiqué la mía</a>). Un usuario que quiera instalar Arch Linux debe leer varios de esos artículos además de la guía oficial de instalación. Según la filosofía de Arch Linux este proceso de aprendizaje se considera necesario y permite una mayor comprensión del sistema.</p>
 <p>Pero saber los comandos que hay que introducir para realizar la instalación de Arch Linux no evita tener que teclearlos uno de tras de otro y esperar a que termine el anterior para introducir el siguiente. Tampoco todas las personas tienen el tiempo para realizarlo. Varias <a href="https://wiki.archlinux.org/index.php/Arch-based_distributions">distribuciones derivadas de Arch Linux</a> como <a href="https://antergos.com/">Antergos</a>, <a href="https://kaosx.us/">KaOS</a> o <a href="https://manjaro.org/">Manjaro</a> ofrecen los instaladores gráficos y guiados más amigables que atraen a algunos usuarios buscando usar Arch Linux pero no pasar por su poco amigable proceso de instalación. Por fortuna al ser una distribución <em>rolling release</em> (en constante actualización) solo hay que hacer una única instalación por equipo en principio durante toda su vida de uso. Pero incluso para los usuarios de Arch Linux realizar una segunda instalación en un nuevo equipo es cansina.</p>
 <p>Hace unos meses conocí <a href="https://arch-anywhere.org/">arch-anywhere</a> que básicamente es un <em>script</em> de bash, con un instalador guiado y basado en texto que hace menos laboriosa la instalación de Arch Linux de forma similar a las existentes en otras distribuciones más amigables. Sin embargo, hay un dos cosas que no me convencen de <em>arch-anywhere</em>, una es que no es desatendido requiriendo contestar a varias preguntas de forma interactiva, esperar a que termine ejecute algún comando según la contestación anterior y contestar a la siguiente pregunta. Otra cosa que no me convence es que usa una imagen ISO propia y no la original de Arch Linux. Por lo demás, ofrece un buen nivel de personalización cubriendo las necesidades más comunes de los usuarios como personalizar el particionado, elegir el sistema de archivos, si se quiere LVM, cifrado, el entorno de escritorio (GNOME, KDE, XFCE, &hellip;), kernel, cargador de arranque (GRUB) y programas a instalar.</p>
-<h3 id="el-instalador-alis-y-características-soportadas">El instalador alis y características soportadas</h3>
+<h2 id="el-instalador-alis-y-características-soportadas">El instalador alis y características soportadas</h2>
 <p>Basándome en la idea de <em>arch-anywhere</em> y dedicando un poco de tiempo he creado un <em>script</em> en <a href="https://es.wikipedia.org/wiki/Bash">bash</a> para instalar Arch Linux de forma automatizada, desatendida y personalizable hasta cierto punto aunque siendo útil para los casos de configuraciones más comunes, sin ser imprescindible leer unas decenas de páginas de la wiki de Arch Linux ni seguir ninguna guía o tutorial paso a paso. Algunas de las funcionalidades que soporta son:</p>
 <ul>
 <li><strong>Sistema</strong>: UEFI, BIOS</li>
@@ -352,7 +356,7 @@ willing to read the documentation, and solve their own problems.</p>
         <span>alis.conf</span>
     </div>
 </div>
-<p>### Capturas de diferentes entornos de escritorio soportados</p>
+<h3 id="capturas-de-diferentes-entornos-de-escritorio-soportados"> Capturas de diferentes entornos de escritorio soportados</h3>
 <p>Estas son algunas capturas de pantalla con diferentes entornos de escritorio que he probado con VirtualBox.</p>
 <div class="media">
 <figure>
@@ -381,13 +385,13 @@ willing to read the documentation, and solve their own problems.</p>
 <figcaption>Solicitud de contraseña para descifrar partición root</figcaption>
 </figure>
 </div>
-<h3 id="vídeo-de-instalación-del-sistema-base-con-alis">Vídeo de instalación del sistema base con alis</h3>
+<h2 id="vídeo-de-instalación-del-sistema-base-con-alis">Vídeo de instalación del sistema base con alis</h2>
 <p>El siguiente vídeo capturado con <a href="https://asciinema.org/">asciinema</a> muestra como utilizando alis se instala Arch Linux en una computadora con el proceso completo de la instalación base del sistema.</p>
 <div class="media">
 <script type="text/javascript" src="https://asciinema.org/a/418524.js" id="asciicast-418524" async></script>
 <noscript><a href="https://asciinema.org/a/418524" target="_blank"><img src="https://asciinema.org/a/418524.png" width="650" height="450"></a></noscript>
 </div>
-<h3 id="código-fuente-de-alis">Código fuente de alis</h3>
+<h2 id="código-fuente-de-alis">Código fuente de alis</h2>
 <p>El código del instalador no es muy complicado y mucho más sencillo que otros <em>scripts</em> interactivos similares, al no mezclar los comandos de la instalación con los mensajes interactivos que hacen preguntas y esperan respuestas, además después de configurar las variables e iniciado el proceso de instalación la misma se realiza de forma desatendida hasta completarse sin requerir que el usuario introduzca más datos de forma interactiva.</p>
 <p>Los comandos que he recopilado de la receta son los que ejecutaríamos uno detrás de otro partiendo el medio de instalación original de Arch Linux. La función <em>main</em> contiene los pasos en los que consiste la instalación, desde el particionado y cifrado del disco hasta el reinicio una vez completada la instalación, el resto de las funciones los comandos de ese paso de la instalación.</p>
 <div class="code">

@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -272,16 +272,16 @@
 </div>
 <p>Con la combinación adecuada de caracteres y varias líneas de texto es posible crear composiciones artísticas de texto, formando un arte ASCII basado en múltiples caracteres. El arte ASCII permite crear dibujos o convertir una frase en un texto en forma de dibujo.</p>
 <p>El arte ASCII es adecuado para ser mostrado en interfaces basadas en texto como la terminal del sistema operativo. En <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> hay utilidades de línea de comandos que permiten crear arte ASCII, también hay páginas web que proporcionan la funcionalidad sin necesidad de instalar ningún software en el sistema.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#texto-a-arte-de-caracteres-ascii">Texto a arte de caracteres ASCII</a></li>
     <li><a href="#imagen-a-arte-de-caracteres-ascii">Imagen a arte de caracteres ASCII</a></li>
     <li><a href="#páginas-web-de-conversión-a-arte-de-caracteres-ascii">Páginas web de conversión a arte de caracteres ASCII</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="texto-a-arte-de-caracteres-ascii">Texto a arte de caracteres ASCII</h3>
+<h2 id="texto-a-arte-de-caracteres-ascii">Texto a arte de caracteres ASCII</h2>
 <p>La herramienta <a href="http://www.figlet.org/">figlet</a> de linea de comandos permite convertir una frase a arte ASCII, es posible configurarla con diferentes estilos de fuente que producen resultados diferentes en el arte ASCII. Utilizando caracteres de escape de la terminal es posible añadir colores, <a href="https://picodotdev.github.io/blog-bitix/2018/11/formatear-con-color-sentencias-sql-o-codigo-fuente-en-la-terminal-con-java-y-jansi/">Jansi es una librería Java que permite añadir colores a texto emitido en la terminal</a>.</p>
 <p>Además de instalar el paquete de <em>figlet</em> en la distribución de GNU/Linux hay que descargar los <a href="http://www.figlet.org/fontdb.cgi">archivos de las fuentes</a> para generar el arte ASCII con el estilo deseado. La fuente se indica en el comando con el parámetro <em>-f</em>.</p>
 <div class="code">
@@ -302,7 +302,7 @@
 <figcaption>Texto convertido a arte de caracteres ASCII</figcaption>
 </figure>
 </div>
-<h3 id="imagen-a-arte-de-caracteres-ascii">Imagen a arte de caracteres ASCII</h3>
+<h2 id="imagen-a-arte-de-caracteres-ascii">Imagen a arte de caracteres ASCII</h2>
 <p>También es posible convertir una imagen a arte ASCII, en el caso de las imágenes el resultado ha de tener un número adecuado de líneas y columnas para producir resultados con la suficiente definición para obtener resultados fieles a la imagen original.</p>
 <p>La herramienta <a href="https://csl.name/jp2a/">jp2a</a> permite convertir una imagen a arte ASCII. Basta con indicar la imagen fuente y personalizar las opciones del resultado como la anchura de caracteres con la opción <em>&ndash;width</em>. Utilizando las tuberías del intérprete de comandos es posible combinar el resultado de un comando que procese o transforme la imagen y se la proporcione como entrada a <em>jp2a</em>, en este caso para utilizar formatos no soportado por <em>jp2a</em> convirtiéndolo previamente a uno soportado permite obtener el arte ASCII.</p>
 <p>La herramienta <em>jp2a</em> combinada con el <a href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/">extraer un fotograma de una película</a> permite generar el arte ASCII de un momento de una película.</p>
@@ -331,7 +331,7 @@
 <figcaption>Varios logotipos convertidos a arte de caracteres ASCII con jp2a</figcaption>
 </figure>
 </div>
-<h3 id="páginas-web-de-conversión-a-arte-de-caracteres-ascii">Páginas web de conversión a arte de caracteres ASCII</h3>
+<h2 id="páginas-web-de-conversión-a-arte-de-caracteres-ascii">Páginas web de conversión a arte de caracteres ASCII</h2>
 <p>No es necesario instalar aplicaciones para generar tanto un texto en arte ASCII como convertir una imagen a arte ASCII, hay algunas páginas que ofrecen estas funcionalidades simplemente introduciendo el texto a convertir a arte ASCII como proporcionando la imagen a convertir a arte ASCII.</p>
 <p>El resultado es un conjunto de caracteres que forman el arte ASCII. El propio <a href="https://picodotdev.github.io/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/">buscador DuckDuckGo</a> es capaz de generar el arte ASCII de <em>figlet</em> con la fuente <em>standard</em>, la página <a href="https://onlineasciitools.com/convert-text-to-ascii-art">Online Ascii Tools</a> permite convertir un texto a arte ASCII seleccionando la fuente o incluyendo <a href="https://textfancy.com/ascii-art/">una colección de arte ASCII</a> y la página <a href="https://ascii-generator.site/">ASCII Generator</a> permite convertir una imagen a arte ASCII.</p>
 <div class="reference">

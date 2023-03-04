@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -257,27 +257,27 @@
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>El 19 de marzo del 2019 se publicaba la versión Java 12 siguiendo el calendario de lanzar una nueva versión cada seis meses incorporando nuevas funcionalidades de forma incremental. La versión 12 no es una versión con soporte extendido y dejará de tener actualizaciones cuando se publique la siguiente versión. La primera versión LTS con la funcionalidad de módulos es la 11 y la recomendada para proyectos de larga duración o bajo mantenimiento, la siguiente LTS será la versión 17 que según lo planificado se publicará en septiembre de 2021 después de tres años.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#introducción">Introducción</a></li>
     <li><a href="#nuevas-características">Nuevas características</a>
-      <ul>
+      <ol>
         <li><a href="#_teeing-collectors_"><em>Teeing Collectors</em></a></li>
         <li><a href="#formato-de-número-compacto">Formato de número compacto</a></li>
         <li><a href="#recolector-de-basura-shenandoah">Recolector de basura Shenandoah</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#nuevas-características-en-vista-previa">Nuevas características en vista previa</a>
-      <ul>
+      <ol>
         <li><a href="#expresiones-_switch_">Expresiones <em>switch</em></a></li>
         <li><a href="#otras-características-incorporadas-y-cambios">Otras características incorporadas y cambios</a></li>
-      </ul>
+      </ol>
     </li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="introducción">Introducción</h3>
+<h2 id="introducción">Introducción</h2>
 <p>Las características destacadas de Java 12 son la incorporación de forma experimental las expresiones <em>switch</em> y mejoras en el recolector de basura para mayor rendimiento.</p>
 <ul>
 <li><a href="https://openjdk.java.net/projects/jdk/12/">Características de Java 12</a></li>
@@ -296,8 +296,8 @@
 <li>344: <a href="https://openjdk.java.net/jeps/344">Abortable Mixed Collections for G1</a></li>
 <li>346: <a href="https://openjdk.java.net/jeps/346">Promptly Return Unused Committed Memory from G1</a></li>
 </ul>
-<h3 id="nuevas-características">Nuevas características</h3>
-<h4 id="_teeing-collectors_"><em>Teeing Collectors</em></h4>
+<h2 id="nuevas-características">Nuevas características</h2>
+<h3 id="_teeing-collectors_"><em>Teeing Collectors</em></h3>
 <p>Los <em>stream</em> proporcionan un flujo de elementos a procesar. En el caso de querer recolectar dos valores de ese flujo requiere usar un <em>reduce</em> que complica el código. Se ha añadido un nuevo colector <a href="https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/stream/Collectors.html#teeing%28java.util.stream.Collector">Collectors.teeing()</a> para enviar un elemento de un <em>stream</em> a dos <em>streams</em>, de forma similar a lo que hace el comando <em>tee</em> en Unix.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Range</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">range</span> <span class="o">=</span> <span class="n">Stream</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">5</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">teeing</span><span class="o">(</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// the collectors produce Optional&lt;Integer&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Collectors</span><span class="o">.</span><span class="na">minBy</span><span class="o">(</span><span class="n">Integer</span><span class="o">::</span><span class="n">compareTo</span><span class="o">),</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Collectors</span><span class="o">.</span><span class="na">maxBy</span><span class="o">(</span><span class="n">Integer</span><span class="o">::</span><span class="n">compareTo</span><span class="o">),</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// I wrote a static factory method that creates&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// a range from two Optional&lt;Integer&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Range</span><span class="o">::</span><span class="n">ofOptional</span><span class="o">))</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">orElseThrow</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">IllegalStateException</span><span class="o">(</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;Non-empty stream was empty.&#34;</span><span class="o">));</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -305,7 +305,7 @@
         <span>TeeingCollectors.java</span>
     </div>
 </div>
-<h4 id="formato-de-número-compacto">Formato de número compacto</h4>
+<h3 id="formato-de-número-compacto">Formato de número compacto</h3>
 <p>Ahr se puede expresar un número de forma compacta con la clase <a href="https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/text/CompactNumberFormat.html">CompactNumberFormat</a> o el método <a href="https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/text/NumberFormat.html#getCompactNumberInstance%28java.util.Locale">NumberFormat.getCompactNumberInstance()</a>.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">NumberFormat</span> <span class="n">followers</span> <span class="o">=</span> <span class="n">NumberFormat</span><span class="o">.</span><span class="na">getCompactNumberInstance</span><span class="o">(</span><span class="n">Locale</span><span class="o">.</span><span class="na">US</span><span class="o">,</span> <span class="n">NumberFormat</span><span class="o">.</span><span class="na">Style</span><span class="o">.</span><span class="na">SHORT</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">followers</span><span class="o">.</span><span class="na">setMaximumFractionDigits</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">followers</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="mi">5412</span><span class="o">)</span> <span class="o">+</span> <span class="s">&#34; followers&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1">// Resultado: 5.4K followers&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&#10;</span></span><span class="line"><span class="cl"><span class="n">NumberFormat</span> <span class="n">number</span> <span class="o">=</span> <span class="n">NumberFormat</span><span class="o">.</span><span class="na">getCompactNumberInstance</span><span class="o">(</span><span class="n">Locale</span><span class="o">.</span><span class="na">US</span><span class="o">,</span> <span class="n">NumberFormat</span><span class="o">.</span><span class="na">Style</span><span class="o">.</span><span class="na">SHORT</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">number</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="mi">1000</span><span class="o">));</span> &#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1">// Resultado: 1K&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -313,10 +313,10 @@
         <span>CompactNumbers.java</span>
     </div>
 </div>
-<h4 id="recolector-de-basura-shenandoah">Recolector de basura Shenandoah</h4>
+<h3 id="recolector-de-basura-shenandoah">Recolector de basura Shenandoah</h3>
 <p>Una de la áreas que más atención reciben para mejorar el rendimiento de las aplicaciones es el recolector de basura. <em>Shenandoah</em> es uno nuevo que independiente del tamaño de la memoria, ya sea de 200 MiB o 200 GiB, el tiempo de las pausas es el mismo. También se han implementado mejoras en el recolector de basura <em>G1</em> actual.</p>
-<h3 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h3>
-<h4 id="expresiones-_switch_">Expresiones <em>switch</em></h4>
+<h2 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h2>
+<h3 id="expresiones-_switch_">Expresiones <em>switch</em></h3>
 <p>Las expresiones <em>switch</em> permiten quitar varias sentencias <em>if else</em> encadenadas. Cada rama de la sentencia <em>switch</em> devuelve un valor y no hace falta usar la sentencia <em>break</em>, se pueden utilizar varios casos para cada rama.</p>
 <ul>
 <li><a href="https://dzone.com/articles/jdk-12-switch-statementsexpressions-in-action">JDK 12: Switch Statements/Expressions in Action</a></li>
@@ -328,7 +328,7 @@
         <span>SwitchExpression.java</span>
     </div>
 </div>
-<h4 id="otras-características-incorporadas-y-cambios">Otras características incorporadas y cambios</h4>
+<h3 id="otras-características-incorporadas-y-cambios">Otras características incorporadas y cambios</h3>
 <p><a href="https://www.oracle.com/technetwork/java/javase/12-relnote-issues-5211422.html#Removed">Algunos métodos han sido eliminados</a> varios relacionados con el método <em>finalize</em> cuyo uso está desaconsejado desde hace mucho tiempo por no se una forma segura de liberar recursos. Algunos algoritmos de cifrado inseguros han sido deshabilitados. Se ha añadido soporte para Unicode 11.0 con nuevos caracteres, bloques y  <em>scripts</em>.</p>
 <div class="reference">
     Referencia:<br>

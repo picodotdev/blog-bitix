@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -266,16 +266,16 @@
 <p>En ambos casos del <em>bug</em> o de alguien que necesita información en ocasiones tienen la mala costumbre de necesitar ser atendidos con rapidez. Si para obtener la información se necesita un proceso que involucra a varias personas, cada una con sus propias tareas y prioridades, el proceso es lento y el demandante de esa información acabará poco contento quejándose del departamento de IT. El proceso también será lento si es complicado o sólo determinadas personas tienen los permisos necesarios pare realizarlo o con riesgos si las herramientas que se usan otorgan gran poder pero requieren gran responsabilidad.</p>
 <p>Proporcionando una herramienta a modo de sírvete tú mismo uno se sorprende de las consultas que alguien del departamento financiero o de <em>marketing</em> son capaces de hacer ellos mismos para obtener la información que necesitan si tienen el interés de aprender algo de SQL. Lo cual es beneficioso en varios sentidos, ellos son más autónomos en su trabajo y las personas de IT no se ven interrumpidas para atender este tipo de tareas, sólo cuando la consulta tiene cierta dificultad.</p>
 <p>Si además como en los microservicios hay múltiples bases de datos para varios de ellos tener acceso a todas las bases de datos es más complicado de gestionar. Por otro lado, al decir la base de datos de producción también es válido para tener acceso a las bases de datos del entorno de QA.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#herramienta-para-obtener-y-modificar-datos-de-una-base-de-datos-relacional">Herramienta para obtener y modificar datos de una base de datos relacional</a></li>
     <li><a href="#herramientas-para-visualizar-datos">Herramientas para visualizar datos</a></li>
     <li><a href="#cómo-proteger-los-datos">Cómo proteger los datos</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="herramienta-para-obtener-y-modificar-datos-de-una-base-de-datos-relacional">Herramienta para obtener y modificar datos de una base de datos relacional</h3>
+<h2 id="herramienta-para-obtener-y-modificar-datos-de-una-base-de-datos-relacional">Herramienta para obtener y modificar datos de una base de datos relacional</h2>
 <p><a href="https://sqlpad.github.io/sqlpad/#/">SQLPad</a> es una pequeña herramienta que actúa como cliente de una base de datos relacional con la que es posible lanzar consultas SQL mediante una interfaz web. Esta herramienta hace muy sencillo el acceso a la base de datos de producción, entorno de QA o a una de sus réplicas, dado que utiliza una interfaz web no es necesario instalar ni configurar ninguna herramienta adicional, solo requiere un navegador web que todo ordenador ya posee.</p>
 <p>Simplemente es necesario seleccionar la base de datos de la que se quieren los datos y ejecutar la consulta SQL deseada para obtener los datos como resultado. Permite explorar los esquemas de la base de datos, las tablas, los campos y cuales son sus tipos.</p>
 <p>SQLPad tiene una licencia de software libre y soporta las bases de datos relacionales más populares como <a href="https://www.postgresql.org/">Postgres</a>, <a href="https://www.mysql.com/">MySQL</a>, <a href="https://www.microsoft.com/en-us/sql-server/sql-server-2016">SQL Server</a>, <a href="https://cassandra.apache.org/">Cassandra</a>, <a href="https://cloud.google.com/bigquery?hl=es">Google BigQuery</a>, <a href="https://sqlite.org/index.html">SQLite</a> entre otras.</p>
@@ -333,7 +333,7 @@
         <span>docker-compose-up.sh</span>
     </div>
 </div>
-<h3 id="herramientas-para-visualizar-datos">Herramientas para visualizar datos</h3>
+<h2 id="herramientas-para-visualizar-datos">Herramientas para visualizar datos</h2>
 <p>Obtener los datos y descargarlos en formato csv o xlsx permite extraer información, para comprender mejor un gran volumen de datos se utilizan diferentes tipos de gráficas.</p>
 <p>SQLPad tiene una funcionalidad básica para representar los datos en formato gráfico pero no es una herramienta especializada en esta tarea.</p>
 <p><a href="https://redash.io/">Redash</a>, <a href="https://www.metabase.com/">Metabase</a>, <a href="https://superset.apache.org/">Apache Superset</a> son herramientas dedicadas a construir gráficas a partir de datos de la categoría inteligencia empresarial o <em>business intelligence</em>. Permiten crear paneles de control con la información que se desee y ver la evolución y tendencia de los datos. Esta información sirve como apoyo para tomar decisiones basadas en los datos.</p>
@@ -346,7 +346,7 @@
 <figcaption>Redash, Metabase y Apache Superset</figcaption>
 </figure>
 </div>
-<h3 id="cómo-proteger-los-datos">Cómo proteger los datos</h3>
+<h2 id="cómo-proteger-los-datos">Cómo proteger los datos</h2>
 <p>Además de limitar a que bases de datos tiene permisos de acceso cada usuario algunos datos almacenados son sensibles, por motivos de seguridad si se tratan de contraseñas si no se utiliza <a href="https://picodotdev.github.io/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">una forma correcta de guardar contraseñas con <em>salted-password-hashing</em> en la base de datos</a>, datos personales protegidos por leyes que de no custodiar correctamente los datos en caso de filtración suponen sanciones como importantes multas económicas o datos de tarjetas de crédito, códigos de seguridad, fechas de expiración o cuentas bancarias.</p>
 <p>Una forma de proteger los datos aún teniendo acceso a ellos es cifrarlos es utilizando <a href="https://www.vaultproject.io/">Vault</a> con su funcionalidad de <a href="https://www.hashicorp.com/products/vault/data-protection">protección de datos</a>. Vault permite actuar como servicio para cifrar los datos a guardar en la base de datos y descifrar los datos al recuperarlos de modo que aún teniendo acceso a la base de datos no supone ningún problema de seguridad. Aún así siempre es recomendable otorgar a los usuarios los permisos mínimos que necesiten o limitar únicamente a ciertos usuarios los permisos.</p>
 <div class="media">

@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -275,25 +275,25 @@
 </div>
 <p>La tendencia de desarrollo es utilizar microservicios, contenedores y computación en la nube. Una característica de este tipo de aplicaciones es que se componen de múltiples elementos muy dinámicos que se crean, eliminan o cambia el número de instancias. La configuración de las herramientas nativas para la nube ha de ser dinámica en vez de estática.</p>
 <p>Una herramienta específica para hacer de <em>proxy</em> inverso adaptada a la nube es Traefik.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#el-_proxy_-inverso-traefik">El <em>proxy</em> inverso Traefik</a></li>
     <li><a href="#casos-de-uso-y-características">Casos de uso y características</a></li>
     <li><a href="#conceptos">Conceptos</a></li>
     <li><a href="#ejemplos-de-funcionalidades">Ejemplos de funcionalidades</a>
-      <ul>
+      <ol>
         <li><a href="#balanceador-de-carga">Balanceador de carga</a></li>
         <li><a href="#balanceador-de-carga-con-peso">Balanceador de carga con peso</a></li>
         <li><a href="#limitar-número-de-peticiones">Limitar número de peticiones</a></li>
         <li><a href="#duplicar-peticiones-o-_mirroring_">Duplicar peticiones o <em>mirroring</em></a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#otras-funcionalidades">Otras funcionalidades</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="el-_proxy_-inverso-traefik">El <em>proxy</em> inverso Traefik</h3>
+<h2 id="el-_proxy_-inverso-traefik">El <em>proxy</em> inverso Traefik</h2>
 <p><a href="https://traefik.io/">Traefik</a> es un <em>proxy</em> inverso y balanceador de carga adaptado a la computación en la nube mediante microservicios. Traefik se integra con los principales componentes de infraestructura configurándose a sí mismo automáticamente y de forma dinámica. Traefik es simple de operar pero capaz de manejar sistemas complejos y grandes en entornos diversos y diferentes capas de la pila de red como HTTP, TCP o UDP. Proporciona funcionalidades de intermediario que aumenta sus capacidades para realizar balanceo de carga o servir como <em>gateway</em> API.</p>
 <p>Como <em>proxy</em> inverso intercepta las peticiones entrantes y las redirige a los servicios adecuados. A diferencia de <em>proxys</em> inversos configurados de forma estática, Traefik usa descubrimiento de servicios para configurarse a sí mismo según los servicios en ejecución. Puede hacer de <em>proxy</em> en diferentes capas de la pila de red proporcionando funcionalidades como balanceo de carga, limitación de peticiones, <em>circuit breaker</em>, duplicación o <em>mirroring</em>, autenticación y más. También soporta terminación de SSL y puede usar un proveedor ACME como <a href="https://letsencrypt.org/">Let’s Encrypt</a> para la generación automática de certificados.</p>
 <div class="media">
@@ -324,7 +324,7 @@
 <figcaption>El panel de información o dashboard integrado de Traefik</figcaption>
 </figure>
 </div>
-<h3 id="casos-de-uso-y-características">Casos de uso y características</h3>
+<h2 id="casos-de-uso-y-características">Casos de uso y características</h2>
 <p>Los principales casos de uso deTraefik son:</p>
 <ul>
 <li>Balanceador de carga: permite distribuir la carga de peticiones con un enrutamiento flexible en la capa 4 (TCP y UDP) y 7 (HTTP, aplicación) junto con un conjunto amplio de <em>midleware</em> que permite escalado dinámico, despliegues <em>blue-green</em> y <em>canary</em> sin caídas, duplicación de peticiones y más.</li>
@@ -340,7 +340,7 @@
 <li><a href="https://docs.traefik.io/observability/metrics/overview/">Observabilidad</a>: posee un panel informativo de forma nativa, trazabilidad distribuida (Jaeger, Open Tracing, Zipkin) y métricas en tiempo real (Datadog, Grafana, InfluxDB, Prometheus, StatsD).</li>
 </ul>
 <p>Estas <a href="https://traefik.io/blog/using-private-plugins-in-traefik-proxy-2-5/">funcionalidades son extensibles mediante <em>plugins</em></a>.</p>
-<h3 id="conceptos">Conceptos</h3>
+<h2 id="conceptos">Conceptos</h2>
 <p>Como <em>proxy</em> inverso la funcionalidad de Traefik es redirigir las peticiones entrantes a los servicios de <em>backend</em> para los que hace de <em>proxy</em>. Traefik emplea los siguientes conceptos fundamentales para su configuración:</p>
 <ul>
 <li><a href="https://doc.traefik.io/traefik/providers/overview/">Proveedores</a>: permiten descubrir los servicios disponibles proporcionando su ubicación y salud y al mismo tiempo realizar la configuración de Traefik de forma dinámica.</li>
@@ -349,7 +349,7 @@
 <li><a href="https://doc.traefik.io/traefik/routing/services/">Servicios</a>: son los destinos de las peticiones entrantes pudiendo aplicar funcionalidad de balanceo de carga entre las diferentes instancias de los servicios de <em>backend</em> para los que se hace de <em>proxy</em>.</li>
 <li><a href="https://doc.traefik.io/traefik/middlewares/overview/"><em>Middlewares</em></a>: pueden actualizar la petición como añadir cabeceras HTTP, actualizar la ruta o realizar acciones de intermediario como autenticación o limitación de peticiones.</li>
 </ul>
-<h3 id="ejemplos-de-funcionalidades">Ejemplos de funcionalidades</h3>
+<h2 id="ejemplos-de-funcionalidades">Ejemplos de funcionalidades</h2>
 <p>En este ejemplo se utiliza Traefik como <em>proxy</em> inverso para dos instancias de servidor web <a href="https://nginx.org/">Nginx</a>. La configuración de los <em>entry points</em> de Traefik es estática que en el ejemplo se define un un archivo de configuración estático.</p>
 <p>La configuración de los enrutadores, servicios y <em>middlewares</em> es dinámica pudiendo actualizarse sin necesidad de reiniciar Traefik. La configuración dinámica la obtiene de los proveedores como Consul o Docker donde los servicios al iniciarse incluyen metainformación que Traefik obtiene se autoconfigura como se muestra en el artículo <a href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a>. En el caso de este ejemplo por sencillez la configuración dinámica se proporciona a Traefik en un archivo de texto, aún siendo manual escribir esta configuración Traefik la puede recargar y aplicar sin necesidad de reiniciar el servidor.</p>
 <p>La configuración de Traefik del ejemplo se divide en tres secciones que son: enrutadores, <em>middlewares</em> y servicios. En la configuración se definen varios enrutadores que aplican reglas en función del <em>host</em> de la petición, los enrutadores definen que <em>middlewares</em> se aplican y a que servicios se redirigen las peticiones coincidentes.</p>
@@ -380,7 +380,7 @@
         <span>index-2.html</span>
     </div>
 </div>
-<h4 id="balanceador-de-carga">Balanceador de carga</h4>
+<h3 id="balanceador-de-carga">Balanceador de carga</h3>
 <p>Un balanceador de carga permite distribuir la carga entre las diferentes instancias del servicio de <em>backend</em>. Por defecto, se aplican una estrategia <em>round-robin</em> para distribuir la carga de forma equitativa entre las diferentes instancias.</p>
 <p>Con esta configuración al realizar peticiones se distribuyen entre la instancia <em>nginx-1</em> y <em>nginx-2</em> de forma alternativa. La primera petición a la instancia <em>nginx-1</em>, la segunda a la instancia <em>nginx-2</em> y la tercera de nuevo a la instancia <em>nginx-1</em>.</p>
 <div class="code">
@@ -395,7 +395,7 @@
         <span>curl-load-balancer.sh</span>
     </div>
 </div>
-<h4 id="balanceador-de-carga-con-peso">Balanceador de carga con peso</h4>
+<h3 id="balanceador-de-carga-con-peso">Balanceador de carga con peso</h3>
 <p>A veces interesa no distribuir la carga de forma uniforme entre las diferentes instancias de los servicios de <em>backend</em>, sino realizar un balanceo de carga con peso.</p>
 <p>En este caso el balanceo de carga se configura para que la instancia de <em>nginx-1</em> tenga un peso de 3 y la instancia de <em>nginx-2</em> tenga un peso de 1, según estos pesos la instancia <em>nginx-1</em> de cada 4 peticiones recibe 3 mientras que la instancia <em>nginx-2</em> de cada 4 peticiones recibe 1.</p>
 <div class="code">
@@ -410,7 +410,7 @@
         <span>curl-load-balancer-weighted.sh</span>
     </div>
 </div>
-<h4 id="limitar-número-de-peticiones">Limitar número de peticiones</h4>
+<h3 id="limitar-número-de-peticiones">Limitar número de peticiones</h3>
 <p>Para evitar que un servicio reciba más peticiones de las que es capaz de procesar según su nivel de servicio, con el objetivo de evitar que se sature y falle o  evitar denegación de servicio por una carga excesiva es posible establecer un límite en el número de peticiones que se envían a los servicios de <em>backend</em>. El límite se puede establecer de forma global para todas las peticiones o agruparse según la dirección IP origen o el valor de una cabecera.</p>
 <p>En esta configuración se establece que el servicio de <em>backend</em> no reciba más de una petición por segundo, en caso de que se realicen más peticiones por unidad de tiempo que este límite Traefik devuelve un error <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429">429 Too Many Requests</a>.</p>
 <div class="code">
@@ -425,7 +425,7 @@
         <span>curl-rate-limit.sh</span>
     </div>
 </div>
-<h4 id="duplicar-peticiones-o-_mirroring_">Duplicar peticiones o <em>mirroring</em></h4>
+<h3 id="duplicar-peticiones-o-_mirroring_">Duplicar peticiones o <em>mirroring</em></h3>
 <p>Este <em>middleware</em> permite duplicar la petición que se envía a un servicio a otros servicios descartando el resultado devuelto por esos otros servicios.</p>
 <p>Esto puede ser útil en el caso de aplicar el patrón de estrangulación ya que permite probar las peticiones sin riesgos. El servicio heredado continúa recibiendo y procesando las peticiones a la vez que el nuevo servicio recibe las mismas peticiones, una vez que el nuevo servicio se comporta de la forma esperada las peticiones del servicio heredado se redirigen al nuevo servicio completando la estrangulación.</p>
 <div class="code">
@@ -448,7 +448,7 @@
         <span>curl-mirroring-nginx.out</span>
     </div>
 </div>
-<h3 id="otras-funcionalidades">Otras funcionalidades</h3>
+<h2 id="otras-funcionalidades">Otras funcionalidades</h2>
 <p>Hay otros <em>middlewares</em> que se pueden aplicar como el de <em>retry</em> para reintentar las peticiones en caso de fallo, aplicar el patrón <em>circuit breaker</em> para aplicar resiliencia evitando enviar peticiones a un servicio que está fallando, autenticación, reescribir el <em>path</em> de las peticiones o quitar un prefijo del <em>path</em> y añadir o eliminar cabeceras.</p>
 <p>Al aplicar <a href="https://picodotdev.github.io/blog-bitix/2021/08/el-patron-de-estrangulacion-para-reemplazar-aplicaciones-heredadas/">el patrón de estrangulación para reemplazar aplicaciones heredadas</a> la solución es añadir un intermediario como Traefik que permita redirigir las peticiones a la aplicación heredada o a su reemplazo cuando esté esté implementado. Este intermediario permite ir reemplazando de forma incremental la aplicación heredada.</p>
 <p>Traefik también permite delegar la autenticación en <a href="https://www.keycloak.org/">Keycloak</a> u otros servicios con los <em>middlewares</em> <a href="https://doc.traefik.io/traefik/middlewares/forwardauth/">Forward Auth</a>, <a href="https://doc.traefik.io/traefik/middlewares/digestauth/">Digest Auth</a> y <a href="https://doc.traefik.io/traefik/middlewares/basicauth/">Basic Auth</a>.</p>

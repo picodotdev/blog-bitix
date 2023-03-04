@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -262,7 +262,7 @@
       <p>Al desarrollar una aplicación desde cero se han de tomar numerosa decisiones relativas a la arquitectura de la aplicación. Desde que lenguaje de programación a usar, que tecnología cómo que base de datos, si va a utilizar mensajes, el conjunto de librerías, si va a estar implementada con DDD o arquitectura hexagonal, que funcionalidades se implementan y como, como se va a hospedar y con que infraestructura entre muchas otras decisiones. La documentación es importante para conservar y transmitir el conocimiento sin tener que analizar el código fuente de la aplicación, ya sea de los componentes de arquitectura y cómo interactúan entre ellos o cuales son los requerimientos de un determinado proyecto para iniciarlo.</p>
 <p>La arquitectura de una aplicación y los componentes de los que está formada una aplicación suelen documentarse con un esquema gráfico. Pero el esquema gráfico muestra únicamente la situación actual de la arquitectura y no es suficiente para conocer las motivaciones y requerimientos que han intervenido para optar por esa arquitectura y no otra, o los cambios que se han realizado en la arquitectura con el paso del tiempo.</p>
 <p>Siempre se quiere tener documentación actualizada con la información que se necesita, a nadie le apetece extraer información a partir de código fuente ya que esto requiere mucho tiempo e impreciso. Querer documentación no es lo mismo que querer escribirla, pero normalmente es de gran ayuda para otros o para uno mismo en el futuro. Y no solo es escribirla sino también mantenerla actualizada.</p>
-<h3 id="documentación-_architecture-decision-records_">Documentación <em>Architecture Decision Records</em></h3>
+<h2 id="documentación-_architecture-decision-records_">Documentación <em>Architecture Decision Records</em></h2>
 <p>La documentación de decisiones de arquitectura o <em>Architecture Decision Records</em> (ADR) es una colección de documentos que recogen individualmente cada una de las decisiones de arquitectura tomadas. Los ADR pueden ser simplemente un documento en Google Docs, una Wiki o una colección de documentos de texto en formato <em>markdown</em>. Como toda documentación esta requiere mantenimiento para que esté completa y no quede desfasada con el paso del tiempo, de modo que ha de sar fácil de mantener, accesible para su edición y tener visibilidad en la organización para encontrarla fácilmente.</p>
 <p>Estas son siglas relacionadas con la documentación ADR:</p>
 <ul>
@@ -294,7 +294,7 @@
 <li>Argumentos</li>
 </ul>
 <p>Un buen ejemplo de <em>Architecture Decision Records</em> son los documentos de <a href="https://openjdk.java.net/jeps/0">especificaciones JEP</a> de Java que incluyen un resumen, objetivos, motivaciones y una descripción detallada de la proposición.</p>
-<h3 id="decisiones-de-arquitectura-tomadas-en-mi-blog">Decisiones de arquitectura tomadas en mi blog</h3>
+<h2 id="decisiones-de-arquitectura-tomadas-en-mi-blog">Decisiones de arquitectura tomadas en mi blog</h2>
 <p>Emitir trazas en una aplicación parece algo simple sin embargo hay unas pocas decisiones que tomar, el enlace es un <a href="https://picodotdev.github.io/blog-bitix/2022/07/opciones-de-arquitectura-para-emitir-trazas-en-una-aplicacion-java/">ejemplo de ADR para decidir como emitir las trazas</a> en una aplicación o como normativa en una organización según las posibilidades analizadas.</p>
 <p>Utilizando como ejemplo mi blog a lo largo de los años he tenido que tomar varias decisiones que podrían ser de arquitectura. Entre Blogger, el generador estático de sitios web con Hugo y quizá en un futuro con AWS las cosas han cambiado mucho en mi blog, sin embargo, no he recogido en ningún documento específico cuáles son las decisiones en cada uno de esos cambios y los motivos.</p>
 <p>El siguiente no sigue ninguna plantilla en concreto en los enlaces de referencia se incluyen algunas de ejemplo. Cualquier cosa relevante en la arquitectura es candidato a ser incluido en el ADR.</p>

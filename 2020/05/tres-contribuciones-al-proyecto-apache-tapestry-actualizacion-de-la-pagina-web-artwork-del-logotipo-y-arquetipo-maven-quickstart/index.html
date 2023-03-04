@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -257,7 +257,7 @@
 <p>La tendencia de las aplicaciones actuales es desarrollar la parte del cliente con tecnologías basadas en JavaScript como <a href="https://reactjs.org/">React</a>, <a href="https://vuejs.org/">Vue</a>, <a href="https://angular.io/">Angular</a> o incluso <a href="https://www.webcomponents.org/">Web Components</a> que hagan uso de APIs ya sean en REST o <a href="https://graphql.org/">GraphQL</a> en el lado del servidor que solo transmitan los datos y todo el renderizado del HTML se haga en el lado del cliente. Sin embargo, esto tiene sus inconvenientes como que la página parece que se carga en diferentes pasos, el tiempo de carga inicial es mayor y el JavaScript en grandes proyectos adolece de los mismos problemas de los lenguajes no tipados salvo que se use <a href="https://www.typescriptlang.org/">TypeScript</a>. Para algunos proyectos renderizar el HTML en el lado del servidor es una opción más sencilla y todos estos frameworks con ciertos años siguen siendo válidos.</p>
 <p>En la medida de mis posibilidades he buscado formas de contribuir al proyecto Apache Tapestry aún sin tener la posibilidad de usar el proyecto profesionalmente. Una de ellas ha sido escribir un <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro en español y totalmente gratis</a> con muchos de los artículos que he escrito sobre el framework. Esto es algo relacionado pero externo al proyecto.</p>
 <p>Con el paso del tiempo y continuando siguiendo el proyecto otras formas en las que he contribuido y ahora sí al proyecto es el arquetipo de <a href="https://maven.apache.org/">Maven</a> que permite iniciar una aplicación de Apache Tapestry rápidamente. Y más recientemente la actualización de la página web del proyecto junto con el <em>artwork</em> del logotipo.</p>
-<h3 id="página-web-del-proyecto">Página web del proyecto</h3>
+<h2 id="página-web-del-proyecto">Página web del proyecto</h2>
 <p>Entre esas cosas que consideraba mejorables era la página web del proyecto y documentación. Con el paso del tiempo el diseño de la misma estaba desfasado, no era adaptable para dispositivos móviles y tiene algunos errores como que la búsqueda personalizada de Google no funcionaba y algunos enlaces rotos. Otra mejora ha sido redirigir el tráfico del protocolo http a https con JavaScript.</p>
 <p>He teneido que conocer como se generaba el HTML de la página y cuál era el proceso de publicación. El contenido se edita en <a href="#ZgotmplZ">Confluence</a>, se exporta con un <em>script</em> y unas plantillas y el resultado es incorporado en un repositorio de <a href="https://subversion.apache.org/">Subversion</a> desde el cual es servido con algún servidor web.</p>
 <p>Con mi experiencia con <a href="https://gohugo.io/">Hugo</a> me planteaba reescribir la forma de edición del sitio web, sin embargo, esto es una tarea más grande que requiere reemplazar una buena parte de la infraestructura existente, como cambiar de Subversion a Git, <a href="https://picodotdev.github.io/blog-bitix/2020/02/como-migrar-el-contenido-de-un-sitio-web-html-a-formato-markdown/">reescribir la página web exportando el contenido existente de HTML a markdown</a>, no imposible pero requeriría más trabajo, y sustituir el flujo de trabajo actual por otro que permita la edición del contenido desde un dispositivo móvil y que disponga de despliegue continuo cuando se hagan cambios como ocurre desde la edición actual con Confluence.</p>
@@ -276,7 +276,7 @@
 <figcaption>Comparación entre la versión antigua (izquierda) y nueva (derecha)</figcaption>
 </figure>
 </div>
-<h3 id="artwork-del-logotipo">Artwork del logotipo</h3>
+<h2 id="artwork-del-logotipo">Artwork del logotipo</h2>
 <p>Al mismo tiempo que la mejora de la página web he mejorado el logotipo y generado un nuevo <em>artwork</em>. Después de recopilar las diferentes versiones logotipos y viendo las diferencias de cada una de ellas en tipo de fuente, formas del icono, colores, etc he creado uno nuevo seleccionado lo que he considerado lo mejor de cada uno de ellos. La forma del unicornio de uno, los elementos de fondo del icono de otro, el ojo del unicornio, la fuente del texto, cambiado el color de la palabra <em>apache</em> en vez de gris a negro de modo que en resoluciones bajas y fondo claro a resoluciones bajas se siga leyendo correctamente, añadido la mosca del <em>trademark, ™</em> para cumplir con algunos requerimientos de la fundación Apache para proteger sus marcas. En las versiones originales unicamente ofrecen un fondo claro en las nuevas también una versión para fondos oscuros.</p>
 <div class="media">
 <figure>
@@ -320,7 +320,7 @@
         <span>generate-logotype-artwork.sh</span>
     </div>
 </div>
-<h3 id="artefacto-de-maven-quickstart">Artefacto de Maven quickstart</h3>
+<h2 id="artefacto-de-maven-quickstart">Artefacto de Maven quickstart</h2>
 <p>En una contribución anterior había realizado cambios en el artefacto de Maven que permite generar un esqueleto de aplicación que hace uso de Tapestry. Y simplemente no funcionaba, además de usar una librería para iniciar un <a href="https://tomcat.apache.org/">Tomcat</a> embebido más antigua.</p>
 <p>Las mejoras que he realizado ha sido refactorizar el artefacto de Maven, usar <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> para iniciar la aplicación, añadir <a href="https://gradle.org/">Gradle</a> como herramienta de construcción y algunos teses de ejemplo. El nuevo artefacto está incluido en la versión 5.5.0.</p>
 <div class="code">
@@ -334,7 +334,7 @@
 <p><a href="/blog-bitix/2020/05/tres-contribuciones-al-proyecto-apache-tapestry-actualizacion-de-la-pagina-web-artwork-del-logotipo-y-arquetipo-maven-quickstart/images/apache-tapestry-quickstart_huba63486b065486b49128f0c2b913dfb3_109484_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Aplicación de inicio rápido"><img src="/blog-bitix/2020/05/tres-contribuciones-al-proyecto-apache-tapestry-actualizacion-de-la-pagina-web-artwork-del-logotipo-y-arquetipo-maven-quickstart/images/apache-tapestry-quickstart_huba63486b065486b49128f0c2b913dfb3_109484_300x200_fit_q90_h2_box_3.webp" width="262" height="200" alt="Aplicación de inicio rápido" title="Aplicación de inicio rápido" class="&#34; " loading="lazy"></a></p>
 </figure>
 </div>
-<h3 id="conclusión">Conclusión</h3>
+<h2 id="conclusión">Conclusión</h2>
 <p>Los que trabajan en proyecto <em>open source</em> tienen mucho conocimiento deben tenerlo si son capaces de construir un proyecto que en algunos casos utilizan miles de desarrolladores y empresas pero su tiempo es limitado, ni en muchos casos es su trabajo principal y en algunos aspectos no tienen por qué saber más que tú en todo. Contribuir a un proyecto es sencillo solo requiere tiempo y algo de conocimiento para conocer que cambios hay que realizar, con interés y tiempo poco a poco uno va conociendo más detalles del proyecto que permiten realizar contribuciones como estas.</p>
 <p>Estas contribuciones no aportan código al proyecto pero la documentación y página web es también importante como muestra del estado del proyecto. Si usase a diario una aplicación con Apache Tapestry en el trabajo es posible que pudiese realizar algunas contribuciones al código fuente del framework pero sin tener esa posibilidad mi motivación para realizarlas no es tan alta.</p>
 <ul>

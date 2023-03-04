@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -273,33 +273,33 @@
 </div>
 <p>Una nueva versión de Java que llega ya al número 19, no es una versión LTS con lo que carece de soporte extendido pero que junto con Java 18 incorpora varias novedades desde la última versión LTS alguna muy destacada y esperada que va a suponer un cambio de paradigma en la programación concurrente.</p>
 <p>Las novedades no son muy numerosas ya que en el periodo de seis meses da tiempo a ir incorporando algunas que ya se publican aunque sea en modo de vista previa y aunque pueden cambiar cuando lleguen a la versión final permite a aquellos aventurados experimentar y adaptarse a ellas en futuras versiones e incluso utilizarlas si así lo desean en su versión de vista previa.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#introducción">Introducción</a></li>
     <li><a href="#nuevas-características">Nuevas características</a>
-      <ul>
+      <ol>
         <li><a href="#linuxrisc-v-port">Linux/RISC-V Port</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#nuevas-características-en-vista-previa">Nuevas características en vista previa</a>
-      <ul>
+      <ol>
         <li><a href="#_record-patterns_"><em>Record Patterns</em></a></li>
         <li><a href="#_foreign-function--memory-api_"><em>Foreign Function &amp; Memory API</em></a></li>
         <li><a href="#_virtual-threads_"><em>Virtual Threads</em></a></li>
         <li><a href="#_structured-concurrency_"><em>Structured Concurrency</em></a></li>
         <li><a href="#_pattern-matching-for-switch_"><em>Pattern Matching for switch</em></a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#otras-novedades">Otras novedades</a>
-      <ul>
+      <ol>
         <li><a href="#interpolación-de-cadenas-_string-templates_">Interpolación de cadenas (<em>String Templates</em>)</a></li>
-      </ul>
+      </ol>
     </li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="introducción">Introducción</h3>
+<h2 id="introducción">Introducción</h2>
 <p>En esta nueva versión de Java las novedades sin contar las incorporadas en vista previa son muy pocas la única es el <em>port</em> a la arquitectura de procesadores RISC-V que aunque es una prometedora arquitectura de procesadores con la interesante propiedad de no tener costes de licencias por implementarla que probablemente vaya ganando cuota de mercado a día de hoy es muy minoritaria, tanto en el escritorio como en los servidores.</p>
 <p>Sin embargo, en las características en vista previa hay una muy destacada y relevante que son los <em>threads</em> virtuales que supone un cambio de paradigma en la programación concurrente que proporciona las ventajas de la programación estructurada sin la complejidad de la programación asíncrona o concurrente.</p>
 <p>Como complemento a los <em>threads</em> virtuales hay otra ayuda con la concurrencia estructurada, dado que los <em>threads</em> virtuales van a permitir crear varios órdenes de magnitud de <em>threads</em> de lo que era posible hasta ahora, de pasar a únicamente utilizar miles de <em>threads</em> a poder utilizar millones de <em>threads</em>.</p>
@@ -329,12 +329,12 @@
 <div class="media media-video">
   <iframe width="640" height="360" data-src="https://www.youtube.com/embed/vvXmO2ZMGsk" frameborder="0" class="lozad" allowfullscreen></iframe>
 </div>
-<h3 id="nuevas-características">Nuevas características</h3>
-<h4 id="linuxrisc-v-port">Linux/RISC-V Port</h4>
+<h2 id="nuevas-características">Nuevas características</h2>
+<h3 id="linuxrisc-v-port">Linux/RISC-V Port</h3>
 <p>RISC-V es una es una arquitectura con un conjunto de instrucciones de código abierto, además de un diseño eficiente y moderno no requiere pagar licencias que lo hace interesante para muchas empresas y fabricantes al contrario de otras arquitecturas como ARM que requiere pagar licencias. RISC-V ya es soportado por varias herramientas de desarrollo importantes y hay una disponibilidad de hardware que va en aumento. Por estos motivos, una versión que permite usar Java en procesadores RISC-V es valiosa.</p>
 <p>El <em>port</em> de Java para RISC-V incluye el intérprete el compilador JIT para el cliente y servidor y una implementación para todos los recolectores de basura soportados incluyendo ZGC y Shenandoah.</p>
-<h3 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h3>
-<h4 id="_record-patterns_"><em>Record Patterns</em></h4>
+<h2 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h2>
+<h3 id="_record-patterns_"><em>Record Patterns</em></h3>
 <p>El <em>patern matching</em> permite eliminar algunos <em>cast</em> explícitos, esto ya ha sido aplicado en expresiones como condiciones. Ahora el <em>pattern matching</em> se aplica a los <em>records</em> que permite una forma de desestructurar este tipo de clases para obtener los elementos de <em>record</em> en variables disponibles en el ámbito de uso de la expresión.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">record</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">void</span> <span class="nf">printSum</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Point</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">x</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">y</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -349,10 +349,10 @@
         <span>record-patterns.java</span>
     </div>
 </div>
-<h4 id="_foreign-function--memory-api_"><em>Foreign Function &amp; Memory API</em></h4>
+<h3 id="_foreign-function--memory-api_"><em>Foreign Function &amp; Memory API</em></h3>
 <p>Esta característica facilita el uso del código nativo de forma eficiente y más sencilla que anteriormente con JNI, en esta nueva vista previa es un refinamiento de las versione anteriores incorporando los comentarios y sugerencias desde la última vista previa.</p>
 <p>Para muchos desarrolladores esta característica es irrelevante o solo se benefician de forma indirecta pero para otros que trabajan con software embebido o que desarrollan librerías Java que hacen uso de código nativo implementado en otros lenguajes supone una gran mejora.</p>
-<h4 id="_virtual-threads_"><em>Virtual Threads</em></h4>
+<h3 id="_virtual-threads_"><em>Virtual Threads</em></h3>
 <p>Un sistema operativo como Linux solo es capaz de ofrecer a las aplicaciones una cantidad limitada de <em>threads</em> ya que su consumo de recursos es elevado en el sistema y el cambio de contexto de unos a otros penaliza el rendimiento.</p>
 <p>Para solventar esta limitación Java implementa dentro del JVM los <em>threads</em> virtuales que son más ligeros en recursos que los <em>threads</em> del sistema operativo y el cambio de contexto de uno a otro no supone tanta penalización en el rendimiento. Los <em>threads</em> virtuales permiten a las aplicaciones poder usar un mayor cantidad de hilos pasando de unos miles a varios millones sin ningún problema. Para las aplicaciones que usan gran cantidad de hilos como las de servidor de un hilo por petición permite escalar a un número significativamente mayor de peticiones y un mejor rendimiento.</p>
 <p>Adicionalmente, una de las mejoras cosas es que el uso de los <em>threads</em> virtuales no requiere una nueva API ya que la implementación la realiza usando la misma clase <a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Thread.html">Thread</a> que ha existido siempre en Java desde las versión 1.0 de Java.</p>
@@ -367,7 +367,7 @@
 <div class="media media-video">
   <iframe width="640" height="360" data-src="https://www.youtube.com/embed/I9hQvJO39uM" frameborder="0" class="lozad" allowfullscreen></iframe>
 </div>
-<h4 id="_structured-concurrency_"><em>Structured Concurrency</em></h4>
+<h3 id="_structured-concurrency_"><em>Structured Concurrency</em></h3>
 <p>Los <em>threads</em> virtuales permiten dedicar un <em>thread</em> a cada tarea con lo que se prevé que las aplicaciones aprovechen poder utilizar una mayor número de <em>threads</em>, pero gestionarlos sigue siendo un problema ya que los hilos siguen siendo independientes y su depuración complicada.</p>
 <p>Si los <em>threads</em> virtuales permiten utilizar <em>threads</em> en abundancia la concurrencia estructurada asegura que los <em>threads</em> estén relacionados correctamente y de forma robusta además de mostrar los <em>threads</em> en herramientas de depuración de forma que sean entendidos por los desarrolladores.</p>
 <p>La clase <a href="https://docs.oracle.com/en/java/javase/19/docs/api//jdk.incubator.concurrent/jdk/incubator/concurrent/StructuredTaskScope.html">StructuredTaskScope</a> permite estructurar una tarea ejecutada en varios hilos, tanto en los casos en que una tarea se divide en varias operaciones como en los casos de que por cada petición entrante se emplea un hilo como en un servidor.</p>
@@ -383,7 +383,7 @@
         <span>structured-concurrency-2.java</span>
     </div>
 </div>
-<h4 id="_pattern-matching-for-switch_"><em>Pattern Matching for switch</em></h4>
+<h3 id="_pattern-matching-for-switch_"><em>Pattern Matching for switch</em></h3>
 <p>El <em>pattern matching</em> en las expresiones <em>switch</em> han sido mejorados en esta nueva vista previa.</p>
 <ul>
 <li>Las <em>guard patterns</em> son reemplazados con cláusulas <em>when</em> en los bloques <em>switch</em>.</li>
@@ -404,8 +404,8 @@
         <span>switch-null-label.java</span>
     </div>
 </div>
-<h3 id="otras-novedades">Otras novedades</h3>
-<h4 id="interpolación-de-cadenas-_string-templates_">Interpolación de cadenas (<em>String Templates</em>)</h4>
+<h2 id="otras-novedades">Otras novedades</h2>
+<h3 id="interpolación-de-cadenas-_string-templates_">Interpolación de cadenas (<em>String Templates</em>)</h3>
 <p>En un futuro es posible que Java incorpore al lenguaje la interpolación de cadenas con la <a href="https://openjdk.org/jeps/430">JEP 430: String Templates</a>. Facilitará la construcción de cadenas con una mezcla de cadenas y valores de variables que produzcan la cadena resultante deseada. La construcción de cadenas es algo muy utilizado en todos los programas con lo que la interpolación de cadenas será una mejora en la la construcción de cadenas que hace el código más legible.</p>
 <p>Un problema de la interpolación de cadenas es que en ciertas cadenas hay posibilidad de crear un problema de seguridad y por ello es peligrosa, una forma de este problema es el <em>SQL injection</em>. La interpolación de cadenas que se incorporará en Java solucionará al mismo tiempo que la legibilidad del código los problemas que pueden ocurrir con el <em>SQL injection</em> creando una clase <em>TemplateString</em> para las cadenas con interpolación y unos <em>policies</em> específicos para cada lenguaje como SQL o JSON según el formato resultante que garantizará una cadena resultante bien formada y evitará el problema de <em>injection</em>.</p>
 <p>Estos son algunos ejemplos que se están evaluando para implementar la interpolación de cadenas. El <em>STR</em> sería el <em>policy</em> que determina como convertir el <a href="https://cr.openjdk.java.net/~jlaskey/templates/docs/api/java.base/java/lang/template/TemplatedString.html">TemplateString</a> en un <em>String</em>. Además será posible implementar nuevos <em>policies</em> haciendo una implementación de la interfaz funcional <a href="https://cr.openjdk.java.net/~jlaskey/templates/docs/api/java.base/java/lang/template/TemplateProcessor.html">TemplateProcessor</a>.</p>

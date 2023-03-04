@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -271,30 +271,30 @@
 <p>El acceso de forma remota a sistemas es necesario y útil más cuando las máquinas ya no son máquinas físicas sino que están en centros de datos en diferentes ubicaciones en el mundo e incluso son máquinas lógicas como las máquinas virtuales ejecutadas en la computación de la nube.</p>
 <p>El acceso a las máquinas no solo se requiere para las aplicaciones de forma automatizada sino que en algunas situaciones se requiere acceso manual para realizar tareas administrativas o conexión con clientes específicos como escritorio remoto o clientes de bases de datos.</p>
 <p>Permitir el acceso remoto es necesario, sin embargo, requiere seguridad de forma que únicamente los usuarios autorizados accedan únicamente a los sistemas autorizados.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#funcionamiento-acceso-remoto-tradicional">Funcionamiento acceso remoto tradicional</a></li>
     <li><a href="#acceso-remoto-con-boundary">Acceso remoto con Boundary</a>
-      <ul>
+      <ol>
         <li><a href="#conceptos">Conceptos</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#clientes-soportados">Clientes soportados</a></li>
     <li><a href="#ejemplo-de-conexión-ssh-con-boundary">Ejemplo de conexión SSH con Boundary</a>
-      <ul>
+      <ol>
         <li><a href="#conexión-ssh-a-sistema-remoto">Conexión SSH a sistema remoto</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#autenticación-con-ssh">Autenticación con SSH</a>
-      <ul>
+      <ol>
         <li><a href="#segundo-factor-de-autenticación-con-vault">Segundo factor de autenticación con Vault</a></li>
-      </ul>
+      </ol>
     </li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="funcionamiento-acceso-remoto-tradicional">Funcionamiento acceso remoto tradicional</h3>
+<h2 id="funcionamiento-acceso-remoto-tradicional">Funcionamiento acceso remoto tradicional</h2>
 <p>La forma habitual de proporcionar acceso remoto a sistemas de una red privada es mediante una VPN o a través de un sistema intermediario denominado bastión. Estos conceptos proporcionan acceso remoto en ciertos aspectos de forma segura pero no están exentas de problemas e inconvenientes.</p>
 <p>El primer problema es que una vez conectado a una VPN o un bastión se tiene acceso a cualquier ordenador de la red privada a la que uno se ha conectado. Un usuario que necesite acceso a una máquina potencialmente tiene conectividad con otros sistemas en esa red, lo que es riesgo de seguridad por permitir la posibilidad de accesos a sistemas no autorizados.</p>
 <p>El segundo problema es que las infraestructuras actuales de computación en la nube no son estáticas sino que son dinámicas en las que los sistemas cambian de dirección IP o se crean y destruyen instancias.</p>
@@ -310,7 +310,7 @@
 <figcaption>Boundary</figcaption>
 </figure>
 </div>
-<h3 id="acceso-remoto-con-boundary">Acceso remoto con Boundary</h3>
+<h2 id="acceso-remoto-con-boundary">Acceso remoto con Boundary</h2>
 <p>Para tratar de solventar los problemas de acceso remoto con VPN, bastión y <em>firewall</em>, simplificar la infraestructura y una administración de más alto nivel lógico de usuarios, permisos y sistemas HashiCorp ha publicado otra herramienta dedicada a la seguridad específica para el acceso remoto.</p>
 <p><a href="https://www.boundaryproject.io/">Boundary</a> es una herramienta adaptada a los entornos modernos de computación en la nube y dinámicos agnóstica de la infraestructura y de las aplicaciones utilizadas por los clientes remotos. Su funcionamiento es similar al de un bastión con una diferencia importante de que Boundary es el que realiza la conexión a los equipos remotos y no la aplicación cliente.</p>
 <p>Boundary gestiona el inventario de <em>hosts</em>, usuarios, grupos y roles y permisos con los que es capaz de permitir o denegar el acceso únicamente a los <em>hosts</em> permitidos y denegar el acceso a los hosts para los que no se dispone acceso. Funciona en modo cliente y servidor, el servidor hace de bastión y es el que realmente se conecta al sistema remoto, en el modo cliente proporciona a la aplicación cliente conexión con el servidor, a diferencia de un sistema con un bastión o VPC la aplicación cliente no se conecta con el sistema remoto sino que únicamente se conecta al servidor de Boundary.</p>
@@ -326,10 +326,10 @@
 <div class="media media-video">
   <iframe width="640" height="360" data-src="https://www.youtube.com/embed/tUMe7EsXYBQ" frameborder="0" class="lozad" allowfullscreen></iframe>
 </div>
-<h4 id="conceptos">Conceptos</h4>
+<h3 id="conceptos">Conceptos</h3>
 <p>Boundary tiene varios conceptos de dominio, por un lado está el catálogo o inventario de <em>hosts</em>, un conjunto de <em>hosts</em> agrupados en un <em>host set</em> y estos a su vez en un <em>host catalog</em>. Por otro lado, están los usuarios, grupo y roles. Finalmente los <em>targets</em> son la abstracción del elemento al que se quiere realizar una conexión, el <em>target</em> se traduce en un <em>host</em>. Finalmente, todos estos elementos se agrupan en ámbitos o <em>scopes</em> y proyectos o <em>projects</em>.</p>
 <p>En una organización con unas cuantas decenas de sistemas y usuarios, la gestión de este inventario se vuelve ciertamente complicado.</p>
-<h3 id="clientes-soportados">Clientes soportados</h3>
+<h2 id="clientes-soportados">Clientes soportados</h2>
 <p>Boundary incorpora varios clientes en su modo de funcionamiento como cliente. Estos son:</p>
 <ul>
 <li><em>ssh</em>: por defecto es el cliente SSH local (<em>ssh</em>)</li>
@@ -342,7 +342,7 @@
 <ul>
 <li><a href="https://www.boundaryproject.io/docs/getting-started/connect-to-target">Connect to Your First Target</a></li>
 </ul>
-<h3 id="ejemplo-de-conexión-ssh-con-boundary">Ejemplo de conexión SSH con Boundary</h3>
+<h2 id="ejemplo-de-conexión-ssh-con-boundary">Ejemplo de conexión SSH con Boundary</h2>
 <p>En el siguiente ejemplo muestro como conectarse a un <em>host</em> a través de Boundary con SSH. En el mismo ejemplo muestro como usar Boundary con autenticación con claves SSH y como usar Boundary con Vault que generar un OTP para realizar la misma conexión sin usar claves SSH y únicamente con credenciales temporales. En este ejemplo el <em>host</em> remoto es una <a href="https://picodotdev.github.io/blog-bitix/2021/02/guia-de-instalacion-de-gnu-linux-para-la-raspberry-pi/">Raspberry Pi con sistema operativo Raspberry Pi OS instalado</a> y con el servicio de SSH iniciado.</p>
 <p>En este ejemplo el servidor de Boundary y Vault están en la misma máquina. Los pasos del ejemplo para usar Boundary y SSH, los pasos que involucran ORP son opcionales si se usan claves SSH:</p>
 <ul>
@@ -376,7 +376,7 @@
         <span>docker-ps.sh</span>
     </div>
 </div>
-<h4 id="conexión-ssh-a-sistema-remoto">Conexión SSH a sistema remoto</h4>
+<h3 id="conexión-ssh-a-sistema-remoto">Conexión SSH a sistema remoto</h3>
 <p>Realizando la conexión directamente al <em>host</em> remoto con SSH se realiza con el siguiente comando, esta es la forma tradicional de hacerlo usando claves SSH.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>picodotdev@archlinux ~<span class="o">]</span>$ ssh pi@192.168.1.101&#10;</span></span><span class="line"><span class="cl">Linux raspberrypi 5.10.11+ <span class="c1">#1399 Thu Jan 28 12:02:28 GMT 2021 armv6l</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">The programs included with the Debian GNU/Linux system are free software<span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">the exact distribution terms <span class="k">for</span> each program are described in the&#10;</span></span><span class="line"><span class="cl">individual files in /usr/share/doc/*/copyright.&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent&#10;</span></span><span class="line"><span class="cl">permitted by applicable law.&#10;</span></span><span class="line"><span class="cl">Last login: Thu Feb <span class="m">25</span> 21:21:31 <span class="m">2021</span> from 192.168.1.7&#10;</span></span><span class="line"><span class="cl"><span class="o">[</span>pi@raspberrypi ~<span class="o">]</span>$</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -425,13 +425,13 @@
 <figcaption>Conexiones realizadas con Boundary</figcaption>
 </figure>
 </div>
-<h3 id="autenticación-con-ssh">Autenticación con SSH</h3>
+<h2 id="autenticación-con-ssh">Autenticación con SSH</h2>
 <p>La autenticaión de SSH usando Boudary no cambia, se solicita la contraseña del usuario con el que se realiza la conexión, la clave pública en caso de que el servidor se haya configurado con clave pública y privada o incluso un segundo factor de autenticación.</p>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/">Autenticación mediante clave pública y privada con SSH</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2021/03/autenticacion-con-segundo-factor-de-autenticacion-en-ssh/">Autenticación con segundo factor de autenticación en SSH</a></li>
 </ul>
-<h4 id="segundo-factor-de-autenticación-con-vault">Segundo factor de autenticación con Vault</h4>
+<h3 id="segundo-factor-de-autenticación-con-vault">Segundo factor de autenticación con Vault</h3>
 <p>Vault permite generar contraseñas de un solo uso y configurando SSH validar los OTP proporcionados en la conexión. La ventaja de usar OTP es que no es necesario distribuir las claves públicas en cada una de las máquinas en las que se quiera realizar la conexión SSH. Hay que cambiar los archivos de configuración <em>/etc/pam.d/sshd</em>, <em>/etc/ssh/sshd_config</em>, <em>/etc/vault-ssh-helper.d/config.hcl</em> y reiniciar el servicio de SSH, estos cambios permiten al servidor SSH validar los <em>tokens</em> proporcionados conectándose con Vault.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ssh pi@192.168.1.101&#10;</span></span><span class="line"><span class="cl">$ wget https://releases.hashicorp.com/vault-ssh-helper/0.2.1/vault-ssh-helper_0.2.1_linux_amd64.zip&#10;</span></span><span class="line"><span class="cl">$ wget https://releases.hashicorp.com/vault-ssh-helper/0.2.1/vault-ssh-helper_0.2.1_linux_arm.zip&#10;</span></span><span class="line"><span class="cl">$ sudo unzip -q vault-ssh-helper_0.2.1_linux_arm.zip -d /usr/local/bin&#10;</span></span><span class="line"><span class="cl">$ sudo chmod <span class="m">0755</span> /usr/local/bin/vault-ssh-helper&#10;</span></span><span class="line"><span class="cl">$ sudo chown root:root /usr/local/bin/vault-ssh-helper&#10;</span></span><span class="line"><span class="cl">$ sudo mkdir /etc/vault-ssh-helper.d/&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ sudo tee /etc/vault-ssh-helper.d/config.hcl <span class="s">&lt;&lt;EOF&#10;</span></span></span><span class="line"><span class="cl"><span class="s">vault_addr = &#34;http://192.168.1.4:8200&#34;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">tls_skip_verify = false&#10;</span></span></span><span class="line"><span class="cl"><span class="s">ssh_mount_point = &#34;ssh&#34;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">allowed_roles = &#34;*&#34;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ vault-ssh-helper -verify-only -dev -config /etc/vault-ssh-helper.d/config.hcl&#10;</span></span><span class="line"><span class="cl"><span class="o">==</span>&gt; WARNING: Dev mode is enabled!&#10;</span></span><span class="line"><span class="cl"><span class="o">[</span>INFO<span class="o">]</span> using SSH mount point: ssh&#10;</span></span><span class="line"><span class="cl"><span class="o">[</span>INFO<span class="o">]</span> using namespace: us&#10;</span></span><span class="line"><span class="cl"><span class="o">[</span>INFO<span class="o">]</span> vault-ssh-helper verification successful!</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>

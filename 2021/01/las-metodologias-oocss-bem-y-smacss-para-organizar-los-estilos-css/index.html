@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -267,21 +267,21 @@
 </div>
 <p>Las funciones de un preprocesador y algunas nativas como variables, funciones, <em>mixis</em>, operaciones matemáticas o anidaciones de estilos no son garantía para escribir código CSS bien organizado pero no son garantía para escribir código CSS con menos líneas de código, más mantenible y legible.</p>
 <p>Por otro lado, en un proyecto en el que trabajan varias personas es recomendable seguir alguna metodología o convenciones como guía para editar los estilos y mantener la uniformidad del código. Para CSS hay varias metodologías entre las más utilizadas están OOCSS, BEM y SMACSS. Cada una de estas metodologías son independientes pero a veces se aplican varios de los principios y varias metodologías al mismo tiempo.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#oocss">OOCSS</a>
-      <ul>
+      <ol>
         <li><a href="#separar-la-estructura-del-diseño">Separar la estructura del diseño</a></li>
         <li><a href="#separar-contenedor-del-contenido">Separar contenedor del contenido</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#bem">BEM</a></li>
     <li><a href="#smacss">SMACSS</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="oocss">OOCSS</h3>
+<h2 id="oocss">OOCSS</h2>
 <p>La metodología <em>Object-Oriented CSS</em> o OOCSS se basa en los siguientes dos principios:</p>
 <ul>
 <li>Separar la estructura del diseño.</li>
@@ -303,7 +303,7 @@
 <li>Shadow</li>
 <li>Gradient</li>
 </ul>
-<h4 id="separar-la-estructura-del-diseño">Separar la estructura del diseño</h4>
+<h3 id="separar-la-estructura-del-diseño">Separar la estructura del diseño</h3>
 <p>Para aplicar la regla de separar la estructura del diseño en OOCSS se diferencian las propiedades que modifican la estructura de las propiedades que modifican el diseño, para ello se crean diferentes estilos sin mezclar propiedades de estos dos grupos. Por ejemplo, las propiedades <em>padding</em> o <em>margin</em> son propiedades que modifican la estructura o maquetación mientras que <em>color</em> o <em>border</em> son propiedades que modifican la visualización pero no la maquetación.</p>
 <p>Estos son dos ejemplos de estilos que mezclan tanto propiedades de estructura como de diseño visual.</p>
 <div class="code">
@@ -331,7 +331,7 @@
         <span>oocss-2.html</span>
     </div>
 </div>
-<h4 id="separar-contenedor-del-contenido">Separar contenedor del contenido</h4>
+<h3 id="separar-contenedor-del-contenido">Separar contenedor del contenido</h3>
 <p>La segunda regla trata de evitar que los estilos dependen del contenedor en el que están dada la estructura de HTML ya que esto hace que el estilo aplicado al contenido no sea reutilizable.</p>
 <p>Estos son dos ejemplos de estilos en los que el contenedor y contenido tienen una dependencia.</p>
 <div class="code">
@@ -359,7 +359,7 @@
         <span>oocss-4.html</span>
     </div>
 </div>
-<h3 id="bem">BEM</h3>
+<h2 id="bem">BEM</h2>
 <p>La metodología <em>Block Element Modifier</em> o BEM se basa en que las páginas web están compuestas de bloques como encabezado, pié de página o contenido, dentro de esos bloques están elementos como título, fecha o texto y los elementos tienen modificadores que varían su apariencia como estilo de fuente o color. La ventaja de BEM es que los estilos de un bloque están separados de los estilos de otros bloques de modo que cada uno de ellos se puede modificar de forma independiente sin afectar a otros.</p>
 <p>La nomenclatura usa dos guiones bajos para separar el bloque de un elemento y dos guiones medios para separar el modificador. Se usan dos guiones para no crear ambigüedad en caso de que el elemento tenga un guión medio en el nombre. Un defecto de esta nomenclatura es que genera nombres largos para los nombres de los estilos.</p>
 <p>Para nombrar las clases de los estilos se siguen unas convenciones:</p>
@@ -376,7 +376,7 @@
         <span>bem-2.css</span>
     </div>
 </div>
-<h3 id="smacss">SMACSS</h3>
+<h2 id="smacss">SMACSS</h2>
 <p>SMACSS son las siglas de <em>Scalable and Modular Architecture for CSS</em> es otra metodología CSS que tiene como objetivo que el código CSS sea mejor, más fácil de leer y modular. En SMACSS se separan los siguientes elementos.</p>
 <ul>
 <li><em>Base</em>: son los elementos base de una página web como <em>body</em>, <em>h1</em> o <em>a</em>.</li>

@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -272,60 +272,60 @@
 <p>Un monolito es más que suficiente en muchos casos y los microservicios solo son necesarios en sistemas grandes y complejos formados por varios equipos de desarrollo, escalabilidad y tolerancia a fallos. Cuando tiene sentido utilizar un sistema basado en los microservicios se resuelve algunos problemas de los monolitos pero surgen otros propios de los microservicios tan o más complicados que los de los monolitos.</p>
 <p>Uno de los mayores problemas de los microservicios es que el sistema es más complejo, formado por un conjunto mayor de piezas individuales que han de colaborar para proporcionar la funcionalidad global, han de tener en cuenta problemas que en las aplicaciones monolíticas no tienen, los microservicios son independientes pero se relacionan entre ellos a través de la red un medio de comunicación que es poco fiable comparado con la llamada a una función dentro de la misma computadora en un monolito.</p>
 <p>Para tener bajo control las complicaciones de los microservicios son necesarias herramientas que hagan del sistema más fácil de mantener y desarrollar. Una de las herramientas específicamente desarrollada para los microservicios es <a href="https://www.consul.io/">Consul</a> de <a href="https://www.hashicorp.com/">HashiCorp</a> que proporciona varias funcionalidades como descubrimiento de servicios y un almacén compartido de información. Otra de las funcionalidades que implementa y provee Consul es el concepto de <em>service mesh</em> que proporciona seguridad, observabilidad, resiliencia y control de tráfico.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#qué-es-un-_service-mesh_">Qué es un <em>service mesh</em></a>
-      <ul>
+      <ol>
         <li><a href="#seguridad">Seguridad</a></li>
         <li><a href="#observabilidad">Observabilidad</a></li>
         <li><a href="#resiliencia">Resiliencia</a></li>
         <li><a href="#control-de-tráfico">Control de tráfico</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#ejemplo-práctico-del-_service-mesh_-de-consul">Ejemplo práctico del <em>service mesh</em> de Consul</a>
-      <ul>
+      <ol>
         <li><a href="#creación-de-la-máquina-virtual">Creación de la máquina virtual</a></li>
         <li><a href="#inicio-de-consul-y-nomad-y-microservicios-del-ejemplo">Inicio de Consul y Nomad y microservicios del ejemplo</a></li>
         <li><a href="#inicio-de-prometheus-y-jaeger">Inicio de Prometheus y Jaeger</a></li>
         <li><a href="#inicio-de-los-servicios-_frontend_-y-_backend_">Inicio de los servicios <em>frontend</em> y <em>backend</em></a></li>
         <li><a href="#demostraciones-de-las-funcionalidades-del-_service-mesh_">Demostraciones de las funcionalidades del <em>service mesh</em></a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#libros-sobre-consul">Libros sobre Consul</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="qué-es-un-_service-mesh_">Qué es un <em>service mesh</em></h3>
+<h2 id="qué-es-un-_service-mesh_">Qué es un <em>service mesh</em></h2>
 <p><a href="https://developer.hashicorp.com/consul/docs/concepts/service-mesh">La definición de Consul de un <em>service mesh</em></a> es una capa de red dedicada que proporciona seguridad en la comunicación de servicio a servicio dentro y a través de la infraestructura, incluyendo el sistemas propios y entornos en la nube. Un <em>service mesh</em> es utilizado habitualmente en arquitecturas basadas en microservicios pero son útiles en cualquier escenario en que hay una comunicación por red compleja.</p>
 <p>Los microservicios se comunican entre ellos formado una red distribuida, un <em>service mesh</em> es el nombre que se le da a este tipo de comunicación. En el aspecto de las herramientas de infraestructura para facilitar y dar solución a varios de los problemas de la comunicación por red un <em>service mesh</em> trata todos estos problemas y aporta soluciones.</p>
 <p>En gran medida la solución a los problemas de los microservicios en un <em>service mesh</em> es implementada estableciendo un intermediario <em>proxy</em> en la comunicación entre los servicios siendo en este intermediario denominado <em>sidecar proxy</em> el que implementa la solución. Se denomina <em>sidecar proxy</em> ya que al mismo tiempo que se despliega el servicio se despliega el intermediario adicionalmente para la comunicación entre los diferentes servicios que usa y los servicios en vez de comunicarse entre ellos directamente se comunican con el <em>sidecar proxy</em>.</p>
 <p>El <em>service mesh</em> a través de los <em>proxy sidecar</em> permiten delegar en la infraestructura y no en las aplicaciones varios aspectos que son necesarios resolver en un sistema basado en microservicios y todo ello de forma trasnparente y sin tener que hacer modificaciones en los microservicios más a llá de configuración de puertos.</p>
-<h4 id="seguridad">Seguridad</h4>
+<h3 id="seguridad">Seguridad</h3>
 <p>La computación en la nube de los proveedores de infraestructura como <a href="https://aws.amazon.com/es/">Amazon AWS</a>, <a href="https://cloud.google.com/">Google Cloud</a> y <a href="https://azure.microsoft.com/es-es/">Microsoft Azure</a> no dejan de ser entornos compartidos de computación donde todos aun con las medidas de seguridad y lógicas utilizan los mismos medios de red y computación. Por eso se considera que la computación en la nube utiliza un medio no confiable en el que el descubrimiento de un fallo de seguridad tan importante como <a href="https://picodotdev.github.io/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/">el fallo de seguridad Meltdown y Spectre de los procesadores</a> aún con las medidas de mitigación implementadas es un grave problema.</p>
 <p>Para proporcionar mayor seguridad en las comunicaciones de los microservicios en un medio no confiable Consul ofrece una forma de comunicación cifrada, con autenticación mutua entre ambos servicios y la gestión de la autorización en un plano lógico a nivel de servicio con el mecanismo de intenciones y no de más bajo nivel de direcciones IP, puertos y reglas de <em>firewall</em>.</p>
 <p>La seguridad entre los servicios en Consul es implementada mediante el componente denominado <em>sidecar proxy</em> que hace de intermediario o <em>proxy</em> entre los dos servicios. Consul administra el <em>sidecar proxy</em> y este proporciona las funcionalidades comentadas de cifrado, autenticación mutua y autorización. Toda comunicación se realiza de forma cifrada y con autenticación mutua ningún servicio ajeno al <em>service mesh</em> puede comunicarse con sus servicios, para que un servicio externo al <em>service mesh</em> pueda comunicarse con un servicio del <em>service mesh</em> el tráfico entra por un <em>ingress gateway</em> que es un servicio dedicado a esta función.</p>
 <p>Una gran característica es que todas estas funcionalidades son proporcionadas sin que los servicios sean conscientes de que realmente la comunicación la están realizando a través de los <em>sidecar proxy</em>.</p>
 <p>En <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> la seguridad a nivel de red en la misma máquina en la comunicación entre el servicio y el <em>sidecar proxy</em> se protege con <em>namespaces</em> de red que proporciona Linux.</p>
-<h4 id="observabilidad">Observabilidad</h4>
+<h3 id="observabilidad">Observabilidad</h3>
 <p>Dado el gran número de elementos de una arquitectura de microservicios es imprescindible tener visibilidad del estado y comportamiento de cada uno de ellos. Se necesitan métricas que permitan conocer el estado normal de los servicios y en caso de obtener unas métricas diferentes saber que está ocurriendo en el sistema en su conjunto y en cada pieza individual.</p>
 <p>Varias medidas de observabilidad es posible implementarlas en los propios microservicios como parte de su implementación de código, sin embargo, añadir código a cada uno de los microservicios requiere hacerlo individualmente, los hace más complicados y dependientes del lenguaje de implementación para cada uno de ellos para una funcionalidad de infraestructura que no está relacionada con la lógica de negocio que proporcionan los microservicios.</p>
 <p>Por ello en la medida de lo posible es mejor delegar la observabilidad a la infraestructura que además permite aplicar la observabilidad de forma homogénea y con las mismas herramientas para todos los microservicios. Algunas métricas de observabilidad son el número de peticiones que está recibiendo un servicio por unidad de tiempo, la tasa de errores o la latencia de red en diferente percentiles.</p>
 <p>Dado que todo el tráfico entre los microservicios fluye a través de los <em>sidecar</em> que hacen de <em>proxy</em> Consul es capaz de proporcionar estas métricas de forma independiente a los microservicios. Consul exporta el formato de <a href="https://prometheus.io/">Prometheus</a> las métricas, proporciona una visualización básica de las mismas y con <a href="https://grafana.com/">Grafana</a> es posible obtener visualizaciones de los datos más detalladas y complejas.</p>
 <p>Para obtener el flujo completo desde que entra en el <em>service mesh</em> y fluye entre las diferentes llamadas entre los microservicios <a href="https://www.jaegertracing.io/">Jaeger</a> con <a href="https://zipkin.io/">Zipkin</a> o <a href="https://opentelemetry.io/">OpenTelemetry</a> permite obtener una foto de todos los pasos y saltos que ha tenido una petición entre los diferentes servicios.</p>
-<h4 id="resiliencia">Resiliencia</h4>
+<h3 id="resiliencia">Resiliencia</h3>
 <p>Dado el número de servicios y el número de instancias de cada uno de ellos y la no completa fiabilidad de un medio de red que puede fallar es necesario que los microservicios sean resilientes ante la aparición de estos fallos.</p>
 <p>La resiliencia se puede implementar de forma activa donde Consul comprueba que cada servicio mediante un <em>health check</em> esté funcionando ya sea realizando una petición HTTP o TCP al servicio que si responde correctamente se considera que el servicio tiene un buen estado de funcionamiento.</p>
 <p>Los <em>health check</em> no son infalibles y los microservicios para aumentar su resiliencia pueden implementar otras medidas adicionales como reintentos o <em>retries</em> realizando peticiones con la esperanza de que sean problemas temporales y en un siguiente intento funcione. Otra medida son los <em>timeout</em> para poner límites a los tiempos de espera de modo que si un microservicio tarda en responder no ocasiones fallos en otros microservicios y el sistema caiga en cascada. Estas son medidas pasivas que implementan cada microservicio.</p>
 <p>Consul implementa medidas de resiliencia tanto activas como pasivas, y en caso de que una instancia de un servicio falle redirigir el tráfico a otras instancias con buen estado de salud, este enrutamiento se realiza mediante el control de tráfico.</p>
-<h4 id="control-de-tráfico">Control de tráfico</h4>
+<h3 id="control-de-tráfico">Control de tráfico</h3>
 <p>Al ser los microservicios independientes estos se despliegan de forma independiente mientras los cambios sean solo de implementación. Al desplegar una nueva versión de un microservicio es muy útil tener la capacidad del enrutamiento de las peticiones entre los microservicios para usar diferentes estrategias de despliegue como <em>rollout</em>, <em>canary</em>, <em>blue/green</em> y cambiar el enrutamiento.</p>
 <p>Consul proporciona tres conceptos para controlar el enrutamiento entre los servicios los <em>resolvers</em> que identifican las instancias de los servicios en grupos, <em>splitters</em> que permite establecer la cantidad de tráfico que es enviada a los grupos de servicios y finalmente los <em>routers</em> que permiten mediante reglas de la petición o de la instancia del servicio a que servicio se le envía el tráfico.</p>
-<h3 id="ejemplo-práctico-del-_service-mesh_-de-consul">Ejemplo práctico del <em>service mesh</em> de Consul</h3>
+<h2 id="ejemplo-práctico-del-_service-mesh_-de-consul">Ejemplo práctico del <em>service mesh</em> de Consul</h2>
 <p>En el libro Consul: Up &amp; Running se explica más detalladamente los puntos anteriores junto con un ejemplo con los necesarias configuraciones para Consul de cada uno de ellos utilizando <a href="https://kubernetes.io/">Kubernetes</a> y máquinas virtuales.</p>
 <p>En el libro se usa simplemente Consul, en este artículo muestro la misma configuración y práctica de los conceptos comentados pero usando <a href="https://www.nomadproject.io/">Nomad</a> el orquestador de procesos de HashiCorp equivalente a Kubernetes pero más simple de usar aunque no tan nombrado como Kuberntes. Lo ejecuto dentro de una máquina virtual de <a href="https://www.virtualbox.org/">VirtualBox</a> aprovisionada y creada con <a href="https://www.vagrantup.com/">Vagrant</a> otro producto de HashiCorp.</p>
 <p>El ejemplo consiste en dos procesos uno <em>frontend</em> que muestra la información de una guía de aves y un servicio de <em>backend</em> que devuelve los datos de las aves. Los procesos están empaquetados en sus imágenes de <a href="https://www.docker.com/">Docker</a>. Ambas aplicaciones se comunican mediante una API REST y permiten probar en la práctica todos los conceptos comentados.</p>
-<h4 id="creación-de-la-máquina-virtual">Creación de la máquina virtual</h4>
+<h3 id="creación-de-la-máquina-virtual">Creación de la máquina virtual</h3>
 <p>Docker es un software desarrollado para GNU/Linux que en otros sistemas no funciona de forma nativa y requiere adaptaciones y virtualización, para poder ejecutar el ejemplo en cualquier sistema operativo y no instalar nada en la máquina local más allá de VirtualBox y Vagrant se utiliza una máquina virtual que permiten crear estas dos herramientas de forma fácil.</p>
 <p>El siguiente es el archivo de configuración para Vagrant de la máquina virtual que aprovisiona una distribución Ubuntu con las herramientas utilizadas en el ejemplo entre ellas Consul, Nomad, <a href="https://www.envoyproxy.io/">Envoy</a> y Docker. También se configura la cantidad de memoria asignada a la máquina virtual y la dirección IP que se le asigna.</p>
 <p>Al iniciar la máquina virtual se aprovisiona, con Vagrant simplemente consiste en ejecutar el siguiente comando. Una vez iniciada se puede hacer SSH para iniciar una sesión de terminal dentro de la máquina virtual.</p>
@@ -347,7 +347,7 @@
 <figcaption>VirtualBox</figcaption>
 </figure>
 </div>
-<h4 id="inicio-de-consul-y-nomad-y-microservicios-del-ejemplo">Inicio de Consul y Nomad y microservicios del ejemplo</h4>
+<h3 id="inicio-de-consul-y-nomad-y-microservicios-del-ejemplo">Inicio de Consul y Nomad y microservicios del ejemplo</h3>
 <p>Una de las ventajas de Consul y Nomad es que son muy simples de usar ya que sus programas son simplemente un único binario. Consul y Nomad se inician con los siguientes comandos en modo desarrollo con sus archivos de configuración.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ consul agent -dev -config-dir<span class="o">=</span>consul.d/&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -401,7 +401,7 @@
 <figcaption>Consul y Nomad</figcaption>
 </figure>
 </div>
-<h4 id="inicio-de-prometheus-y-jaeger">Inicio de Prometheus y Jaeger</h4>
+<h3 id="inicio-de-prometheus-y-jaeger">Inicio de Prometheus y Jaeger</h3>
 <p>Prometheus es una base de datos temporal que permite guardar los datos de métricas y monitorización que generan las aplicaciones, los <em>sidecar proxy</em> generan métricas que Prometheus recolecta y Consul permite mostrar algunos datos básicos de métricas como número de peticiones, tasa de fallos de las peticiones y percentiles de latencia.</p>
 <p>Jaeger es una herramienta de trazabilidad que permite correlacionar todas las peticiones que se realizan entre los servicios, de esta forma es posible relacionar la petición del servicio <em>frontend</em> con la petición del servicio <em>backend</em> y mostrar ambas al mismo tiempo como si estuvieran relacionadas, esta relación se establece mediante un <em>traceId</em> que identifica al conjunto de las peticiones individuales.</p>
 <p>En el ejemplo Prometheus y Jaeger se inician como contenedores de Docker con los siguientes comandos. También se podrían haber iniciado como servicios de Nomad. La configuración de Prometheus es necesaria para recolectar las métricas de Consul.</p>
@@ -430,7 +430,7 @@
 <figcaption>Jaeger</figcaption>
 </figure>
 </div>
-<h4 id="inicio-de-los-servicios-_frontend_-y-_backend_">Inicio de los servicios <em>frontend</em> y <em>backend</em></h4>
+<h3 id="inicio-de-los-servicios-_frontend_-y-_backend_">Inicio de los servicios <em>frontend</em> y <em>backend</em></h3>
 <p>La aplicación de ejemplo que muestra información de aves está compuesta de dos microservicios el <em>frontend</em> que muestra la información mediante una interfaz web y el servicio de <em>backend</em> que proporciona la información al <em>frontend</em>.</p>
 <p>En el libro Consul: Up &amp; Running los servicios se inician utilizando únicamente Consul que es en lo que se centra el libro, pero en este ejemplo inicio estos servicios utilizando el orquestador Nomad, Nomad permite definir la misma configuración incluyendo la configuración para los <em>sidecar proxy</em> y se integra con Consul.</p>
 <p>La definición del job de Nomad que engloba ambos servicios es la siguiente. Con esta definición declarativa Nomad se encarga de iniciarlos según la descripción indicada, del servicio de <em>backend</em> se inician dos instancias una la de la versión <em>v1</em> y otra de la <em>v2</em>.</p>
@@ -452,7 +452,7 @@
 <figcaption>Frontend con datos de la versión v1 del backend</figcaption>
 </figure>
 </div>
-<h4 id="demostraciones-de-las-funcionalidades-del-_service-mesh_">Demostraciones de las funcionalidades del <em>service mesh</em></h4>
+<h3 id="demostraciones-de-las-funcionalidades-del-_service-mesh_">Demostraciones de las funcionalidades del <em>service mesh</em></h3>
 <p>A la aplicación se accede a través del servicio de <em>ingress-gateway</em> en el puerto 8080 de la máquina virtual. El servicio de <em>ingress-gateway</em> simplemente redirige el tráfico a la aplicación de <em>frontend</em>. Esta es la topología de comunicación para el servicio de <em>frontend</em> proporcionada por Consul, recibe peticiones del <em>ingress-gateway</em> y a su vez realiza peticiones al servicio de <em>backend</em>.</p>
 <div class="media">
 <figure>
@@ -524,7 +524,7 @@
 <figcaption>Frontend con datos de la versión v1 y v2 del backend</figcaption>
 </figure>
 </div>
-<h3 id="libros-sobre-consul">Libros sobre Consul</h3>
+<h2 id="libros-sobre-consul">Libros sobre Consul</h2>
 <p>Este artículo es prácticamente un resumen del libro <a href="https://amzn.to/3F0SmjY" rel="sponsored">Consul: Up &amp; Running</a> que muestra y explica todo esto de forma más detallada y extensa además de mostrarlo usando Kubernetes. Está bien explicado y su ejemplo es muy fácil de seguir y probar además de muy didáctico para experimentar con los conceptos y funcionalidades comentadas de Consul. Otros libros sobre Consul y <em>service mesh</em> son <a href="https://amzn.to/3seULzU" rel="sponsored">Simplifying Service Management with Consul</a> y <a href="https://amzn.to/3DiIiS6" rel="sponsored">Mastering Service Mesh</a>.</p>
 <div class="media media-amazon">
   <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1098106148&amp;linkId=e909576440e5503d3c2fd4009a91dc61" title="Amazon" class="lozad"></iframe>

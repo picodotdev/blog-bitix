@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -273,16 +273,16 @@
 <p>Los navegadores web modernos ofrecen tres formas diferentes de almacenar o persistir datos en lado del cliente cada una siendo más apropiada según las necesidades, estas tres formas de guardar datos son con las <em>cookies</em>, LocalStorage o SessionStorage y finalmente IndexedDB. Los datos están accesibles aún sin conexión con el servidor desde donde se descargó la página siguiendo la <a href="https://www.w3.org/Security/wiki/Same_Origin_Policy">política de mismo origen</a> para mantener la seguridad y que solo la página origen tenga acceso a los datos almacenados. Una aplicación puede utilizar una o varias de estas formas de guardar datos al mismo tiempo que perduran al cierre del navegador y de las páginas estando disponible en futuras sesiones.</p>
 <p>En los navegadores se pueden inspeccionar estos datos almacenados en el lado del cliente utilizando las herramientas para desarrolladores, en el navegador <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a> en la sección <em>Almacenamiento</em> de las herramientas para desarrolladores.</p>
 <p>Dado que los datos se almacenan en el navegador del usuario hay que tener en cuenta en que el propio usuario tiene acceso a ellos y es capaz de modificarlos, de modo que si estos datos se envían al servidor hay que tratarlos como una fuente de datos no confiable y validarlos en el lado del servidor si es necesario para evitar fallos de seguridad ni ser datos que comprometan la seguridad.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#guardar-datos-en-el-navegador-con-cookies">Guardar datos en el navegador con cookies</a></li>
     <li><a href="#guardar-datos-en-el-navegador-con-localstorage-y-sessionstorage">Guardar datos en el navegador con LocalStorage y SessionStorage</a></li>
     <li><a href="#guardar-datos-en-el-navegador-con-indexeddb">Guardar datos en el navegador con IndexedDB</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="guardar-datos-en-el-navegador-con-cookies">Guardar datos en el navegador con cookies</h3>
+<h2 id="guardar-datos-en-el-navegador-con-cookies">Guardar datos en el navegador con cookies</h2>
 <p>El protocolo HTTP es un protocolo sin estado, esto significa que cada petición al servidor es independiente y no comparten información. Las <em>cookies</em> son la forma de convertir el protocolo HTTP a un protocolo con estado identificando al usuario en las diferentes peticiones. Las <em>cookies</em> son unos pequeños datos guardados por el navegador y enviados al servidor en cada petición al servidor.</p>
 <p>Las <em>cookies</em> se utilizan para mantener la sesión, para ofrecer personalización o para realizar seguimiento de usuarios. Cuando se realiza la autenticación en un servidor la sesión se mantiene creado una <em>cookie</em> que contiene un identificativo de sesión y en el lado del servidor el identificativo de la sesión se mantiene en memoria o externalizada del servidor en una base de datos como <a href="https://redis.io/">Redis</a> o relacional. El identificativo de la sesión guardado en una <em>cookie</em> no es más que al menos 128 bits aleatorios únicos para cada usuario.</p>
 <ul>
@@ -316,7 +316,7 @@
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie">Document.cookie</a></li>
 </ul>
-<h3 id="guardar-datos-en-el-navegador-con-localstorage-y-sessionstorage">Guardar datos en el navegador con LocalStorage y SessionStorage</h3>
+<h2 id="guardar-datos-en-el-navegador-con-localstorage-y-sessionstorage">Guardar datos en el navegador con LocalStorage y SessionStorage</h2>
 <p>Las <em>cookies</em> tiene la limitación de que son pequeñas y de enviarse en cada petición al servidor incluidas las peticiones de solicitudes de recursos como imágenes y hojas de estilo lo que aumenta la cantidad de datos transmitidos en el caso de realizar por cada página solicitada con muchos recursos un gran número de peticiones. Aunque el navegador soporte la <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API">Web Storage API</a> algunos navegadores en el modo privado y restringidos impiden su uso para proteger la privacidad y el rastreo de los usuarios.</p>
 <p>El sistema de persistencia <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">LocalStorage</a> y <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage">SessionStorage</a> tiene las propiedades:</p>
 <ul>
@@ -350,7 +350,7 @@
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage">Storage</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/storage_event">Window: storage event</a></li>
 </ul>
-<h3 id="guardar-datos-en-el-navegador-con-indexeddb">Guardar datos en el navegador con IndexedDB</h3>
+<h2 id="guardar-datos-en-el-navegador-con-indexeddb">Guardar datos en el navegador con IndexedDB</h2>
 <p>En el caso de querer grandes cantidades de datos o de poder buscar datos por varias claves la otra forma disponible es IndexedDB. Sus propiedades son:</p>
 <ul>
 <li>Permite almacenar grandes cantidades de datos.</li>

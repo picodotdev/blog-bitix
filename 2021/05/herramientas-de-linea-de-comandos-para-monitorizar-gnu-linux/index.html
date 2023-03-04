@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -274,47 +274,47 @@
 <p>En GNU/Linux hay una colección de herramientas de línea de comandos para obtener información y monitorizar el estado del sistema. Estas herramientas permiten dar respuesta a las preguntas ¿qué porcentaje del procesador están usando los procesos?, ¿cuánta memoria están usando los procesos y cuanta queda libre?, ¿cual es el espacio de almacenamiento usado y cuanto espacio de almacenamiento queda libre?, ¿cual es la tasa de transferencia para el disco y red? o ¿que temperatura tiene el procesador?.</p>
 <p>Otra información que es posible conocer es cuanta memoria tiene el sistema, cuánto almacenamiento tiene el sistema en total, cual es el modelo de procesador, cuál es el modelo de tarjeta gráfica o cual es el entorno de escritorio.</p>
 <p>Las siguientes herramientas permiten monitorizar en tiempo real el estado del sistema y obtener información del mismo, tanto para los procesos, almacenamiento y red.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#monitorizar-procesos-del-sistema">Monitorizar procesos del sistema</a>
-      <ul>
+      <ol>
         <li><a href="#top">top</a></li>
         <li><a href="#htop">htop</a></li>
         <li><a href="#ps">ps</a></li>
         <li><a href="#btop">btop</a></li>
         <li><a href="#free">free</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#monitorizar-almacenamiento">Monitorizar almacenamiento</a>
-      <ul>
+      <ol>
         <li><a href="#df">df</a></li>
         <li><a href="#iotop">iotop</a></li>
         <li><a href="#lsof">lsof</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#monitorizar-red">Monitorizar red</a>
-      <ul>
+      <ol>
         <li><a href="#netstat">netstat</a></li>
         <li><a href="#tcpdump">tcpdump</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#otras-herramientas-de-monitorización">Otras herramientas de monitorización</a>
-      <ul>
+      <ol>
         <li><a href="#uptime">uptime</a></li>
         <li><a href="#iostat">iostat</a></li>
         <li><a href="#sensors">sensors</a></li>
         <li><a href="#watch">watch</a></li>
         <li><a href="#neofetch">neofetch</a></li>
         <li><a href="#hwinfo">hwinfo</a></li>
-      </ul>
+      </ol>
     </li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="monitorizar-procesos-del-sistema">Monitorizar procesos del sistema</h3>
+<h2 id="monitorizar-procesos-del-sistema">Monitorizar procesos del sistema</h2>
 <p>Estas herramientas permiten monitorizar los procesos del sistema, principalmente en consumo de procesador y memoria.</p>
-<h4 id="top">top</h4>
+<h3 id="top">top</h3>
 <p>Esta herramienta permite monitorizar los procesos del sistema en tiempo real, ver cuánto porcentaje de procesador se está usando, cuanta memoria se está usando y qué procesos lo están haciendo además de conocer qué cantidad de memoria total tiene el sistema.</p>
 <p>Es una herramienta que está entre la colección de herramientas instaladas por defecto en la mayoría de sistema GNU/Linux.</p>
 <p>Com la tecla <em>h</em> se accede al panel de configuración en el que es posible personalizar los colores, ver las teclas de acceso para mostrar información y otras opciones de configuración que se mantienen entre diferentes ejecuciones del programa.</p>
@@ -336,7 +336,7 @@
 <figcaption>Comando top</figcaption>
 </figure>
 </div>
-<h4 id="htop">htop</h4>
+<h3 id="htop">htop</h3>
 <p><em>htop</em> es una herramienta con el mismo propósito que <em>top</em> pero un poco más avanzada mostrando algo más de información, permite ver los procesos del sistema, consumo de procesador y memoria que están usando. Permite ver el uso del procesador por núcleo de CPU.</p>
 <p>Al igual que <em>top</em> permite ordenar la lista de procesos por uso de procesador, uso de memoria, o tipos de CPU consumidos en orden descendente o en orden ascendente. Ofrece integración con el comando <em>lsof</em>.</p>
 <p>Con la tecla <em>F1</em> es posible ver las opciones de configuración de la utilidad.</p>
@@ -353,7 +353,7 @@
 <figcaption>Comando htop</figcaption>
 </figure>
 </div>
-<h4 id="ps">ps</h4>
+<h3 id="ps">ps</h3>
 <p>El comando <em>ps</em> permite obtener información del estado de los procesos del sistema en el instante que se ejecuta. Posee varias opciones para filtrar los procesos que devuelve y su información de estado.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ps&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -367,7 +367,7 @@
 <figcaption>Comando ps</figcaption>
 </figure>
 </div>
-<h4 id="btop">btop</h4>
+<h3 id="btop">btop</h3>
 <p><a href="https://github.com/aristocratos/btop">btop</a>, antiguamente <a href="https://github.com/aristocratos/bpytop">bpytop</a> y <a href="https://github.com/aristocratos/bashtop">bashtop</a>, es una herramienta similar a <em>top</em> y <em>htop</em> que muestra información del sistema en tiempo real pero incluyendo también tráfico de red y almacenamiento además del procesador, memoria, procesos. Algunas estadísticas las muestra en formato gráfica utilizando texto para ver más rápidamente el porcentaje de utilización del recurso.</p>
 <p>Con la tecla <em>M</em> se accede al menu del programa donde configurar los diferentes paneles de información que muestra el programa. Además de ofrecer información de varios aspectos esenciales del sistema otra de sus grandes ventajas es que las teclas de acceso rápido para cambiar las opciones están visibles  en la interfaz general con lo que no hace falta recordar las teclas para cada opción.</p>
 <div class="code">
@@ -388,7 +388,7 @@
 <figcaption>Comando btop</figcaption>
 </figure>
 </div>
-<h4 id="free">free</h4>
+<h3 id="free">free</h3>
 <p>El comando <em>free</em> permite ver la memoria física del sistema y la cantidad de memoria virtual o <em>swap</em>.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ free -h&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -402,9 +402,9 @@
 <figcaption>Comando free</figcaption>
 </figure>
 </div>
-<h3 id="monitorizar-almacenamiento">Monitorizar almacenamiento</h3>
+<h2 id="monitorizar-almacenamiento">Monitorizar almacenamiento</h2>
 <p>Las siguientes herramientas permiten monitorizar el almacenamiento del sistema. Permiten ver cuál es la capacidad de todas las unidades conectadas, cuanto espacio de almacenamiento queda libre en cada una de ellas y cual es la tasa de transferencia de almacenamiento que está utilizando el sistema tanto en lectura como en escritura.</p>
-<h4 id="df">df</h4>
+<h3 id="df">df</h3>
 <p>El comando <em>df</em> permite ver información del almacenamiento de las unidades conectadas al sistema en el momento de ejecutar el comando. Permite ver en cada una de ellas su capacidad total y espacio libre restante que le queda, dispositivo hardware, sus particiones y puntos de montaje. Con la opción <em>-h</em> muestra los datos en unidades más comprensibles como KiB, MiB y GiB en vez de en <em>bytes</em>.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ df -h&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -418,7 +418,7 @@
 <figcaption>Comando df</figcaption>
 </figure>
 </div>
-<h4 id="iotop">iotop</h4>
+<h3 id="iotop">iotop</h3>
 <p>El comando <em>iotop</em> permite ver en tiempo real la tasa de transferencia de lectura y escritura que están empleando los procesos del sistema. Se puede ordenar los procesos por cantidad de lectura o cantidad de escritura.</p>
 <p>Esta herramienta requiere permisos de superusuario en su ejecución.</p>
 <ul>
@@ -436,7 +436,7 @@
 <figcaption>Comando iotop</figcaption>
 </figure>
 </div>
-<h4 id="lsof">lsof</h4>
+<h3 id="lsof">lsof</h3>
 <p>El comando <em>lsof</em> permite conocer cuales son los archivos abiertos por los procesos del sistema en el momento de ejecutar el comando.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S lsof&#10;</span></span><span class="line"><span class="cl">$ lsof&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -450,9 +450,9 @@
 <figcaption>Comando lsof</figcaption>
 </figure>
 </div>
-<h3 id="monitorizar-red">Monitorizar red</h3>
+<h2 id="monitorizar-red">Monitorizar red</h2>
 <p>Las siguientes herramientas permite monitorizar la entrada y salida del trafico red.</p>
-<h4 id="netstat">netstat</h4>
+<h3 id="netstat">netstat</h3>
 <p>El comando <em>netstat</em> permite ver cuales son las conexiones de red establecidas por los procesos del sistema y su estado. Con la opción <em>-c</em> monitoriza el tráfico de red en tiempo real o de forma continua.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S netstat-nat&#10;</span></span><span class="line"><span class="cl">$ netstat-nat&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -460,7 +460,7 @@
         <span>netstat.sh</span>
     </div>
 </div>
-<h4 id="tcpdump">tcpdump</h4>
+<h3 id="tcpdump">tcpdump</h3>
 <p>El comando <em>tcpdump</em> permite capturar el tráfico de red de una interfaz de red, para un puerto de red o para un nombre de <em>host</em> como origen o destino específico. Con la opción <em>-c</em> se limita la captura a un número de paquetes determinado. También es posible guardar la captura a un archivo para analizarlo una vez terminada la captura con la opción <em>-w</em>.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S tcpdump&#10;</span></span><span class="line"><span class="cl">$ sudo tcpdump -i any -c5 -nn port <span class="m">80</span>&#10;</span></span><span class="line"><span class="cl">$ sudo tcpdump -i any -c5 -nn src 192.168.1.6&#10;</span></span><span class="line"><span class="cl">$ sudo tcpdump -i any -c5 -nn dst 192.168.1.6&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ sudo tcpdump -i any -c10 -nn -w webserver.pcap port <span class="m">80</span>&#10;</span></span><span class="line"><span class="cl">$ tcpdump -nn -r webserver.pcap</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -474,8 +474,8 @@
 <figcaption>Comando tcpdump</figcaption>
 </figure>
 </div>
-<h3 id="otras-herramientas-de-monitorización">Otras herramientas de monitorización</h3>
-<h4 id="uptime">uptime</h4>
+<h2 id="otras-herramientas-de-monitorización">Otras herramientas de monitorización</h2>
+<h3 id="uptime">uptime</h3>
 <p>El comando <em>uptime</em> permite ver cuánto tiempo lleva en funcionamiento el sistema desde su último apagado o reinicio.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ uptime&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -489,7 +489,7 @@
 <figcaption>Comando uptime</figcaption>
 </figure>
 </div>
-<h4 id="iostat">iostat</h4>
+<h3 id="iostat">iostat</h3>
 <p>El comando <em>iostat</em> muestra información de entrada y salida del sistema agrupando la información por dispositivo de almacenamiento. A diferencia de <em>iotop</em> no muestra cual es el proceso que está realizando la operación de entrada y salida.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S sysstat&#10;</span></span><span class="line"><span class="cl">$ iostat&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -503,7 +503,7 @@
 <figcaption>Comando iostat</figcaption>
 </figure>
 </div>
-<h4 id="sensors">sensors</h4>
+<h3 id="sensors">sensors</h3>
 <p>El comando <em>sensors</em> permite obtener información de la temperatura que incorporan varios de los componente de las computadoras. Este comando muestra la temperatura del procesador para cada uno de sus núcleos, también del dispositivo de almacenamiento NVMe.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sensors&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -517,7 +517,7 @@
 <figcaption>Comando sensors</figcaption>
 </figure>
 </div>
-<h4 id="watch">watch</h4>
+<h3 id="watch">watch</h3>
 <p>El comando <em>sensors</em> no muestra la temperatura en tiempo real, únicamente en el momento de su ejecución. El comando <em>watch</em> permite ejecutar un comando según el intervalo de tiempo deseado, utilizado con el comando <em>sensors</em> permite dotarle a este de monitorización casi en tiempo real configurando el intervalo de ejecución cada un segundo.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ watch -n <span class="m">1</span> sensors&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -531,7 +531,7 @@
 <figcaption>Comando watch</figcaption>
 </figure>
 </div>
-<h4 id="neofetch">neofetch</h4>
+<h3 id="neofetch">neofetch</h3>
 <p>El comando <em>neofetch</em> muestra la información básica del sistema en el que se ejecuta. Aunque la información no es muy detallada contiene la descripción del los componentes de hardware y software principales del sistema como procesador, memoria, tarjeta gráfica, <em>kernel</em>, distribución de GNU/Linux, entorno de escritorio, número de paquetes instalados y algunas informaciones adicionales menos relevantes.</p>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/11/informacion-basica-del-sistema-y-entorno-de-escritorio-desde-la-terminal-de-gnu-linux/">Información básica del sistema y entorno de escritorio desde la terminal de GNU/Linux</a></li>
@@ -548,7 +548,7 @@
 <figcaption>Comando neofetch</figcaption>
 </figure>
 </div>
-<h4 id="hwinfo">hwinfo</h4>
+<h3 id="hwinfo">hwinfo</h3>
 <p>Aunque el comando <em>hwinfo</em> no es un comando de monitorización permite conocer diversa y detallada información del hardware del sistema. La información incluye datos sobre el modelo de procesador, modelo de placa base, unidad de almacenamiento y tarjeta gráfica. Esta información es útil en caso de necesitar algún paquete ya que algunos son específicos según el hardware del sistema por ejemplo los controladores de la tarjeta gráfica.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S hwinfo&#10;</span></span><span class="line"><span class="cl">$ hwinfo --cpu&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>

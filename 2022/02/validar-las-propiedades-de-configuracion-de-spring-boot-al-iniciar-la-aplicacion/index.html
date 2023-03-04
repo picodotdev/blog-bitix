@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -271,20 +271,20 @@
 <p>Al recibir datos los programas tienen varias opciones. Una es ser estricto, validar los datos y en caso de que no sean válidos emitir un mensaje y devolver un error impidiendo continuar. Otra opción es ser flexible para validar los datos y en caso de que sean incorrectos tomar valores por defecto para al menos realizar la tarea aunque sea en un modo degradado. La opción final es no validar los datos y dar por supuesto que son correctos.</p>
 <p>No validar los datos tiene varios problemas que se pueden manifestar en la aplicación de diferentes formas, fallando en el procesado de los datos quizá habiendo realizado parte de la tarea, ocasionando algún fallo de seguridad o generando resultados incorrectos o inconsistencias en otros datos. Cualquiera de estas formas de errores son manifestaciones que pueden tener como causa unos datos no válidos de entrada, errores cuya causa raíz pueden no ser fácilmente identificable al intentar depurar el programa y que suelen requerir muchas horas de investigación. Por ello validar los datos es una buena práctica al crear aplicaciones, sobre todo validar datos que provienen de fuentes no confiables como información introducida por el usuario o programas externos.</p>
 <p>La configuración de una aplicación es otra forma de datos que un programa utiliza, en este caso para variar su comportamiento en tiempo de ejecución sin necesidad de recompilar la aplicación o generar un nuevo artefacto binario para su ejecución. Sobre las variables de configuración también es posible realizar validaciones y en caso de que las variables de configuración sean incorrectas fallar de forma temprana en vez de fallar más tarde cuando se realiza una acción.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#cómo-validar-propiedades-de-configuración">Cómo validar propiedades de configuración</a></li>
     <li><a href="#ejemplo-de-código">Ejemplo de código</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="cómo-validar-propiedades-de-configuración">Cómo validar propiedades de configuración</h3>
+<h2 id="cómo-validar-propiedades-de-configuración">Cómo validar propiedades de configuración</h2>
 <p>La configuración de una aplicación son simplemente variables a la que se les da un nombre y a través del cual se recupera un valor. El programa no tiene hardcodeado en el código el valor e incluyéndose en un archivo de configuración permite cambiarlo sin cambiar el código.</p>
 <p>Por ejemplo, si un programa necesita conectarse a una base de datos seguramente necesite unas credenciales compuestas por el <em>host</em> del servidor de base de datos, un usuario y una contraseña de conexión. Estos datos de configuración para el programa son requeridos ya que quizá sin poder conectarse a la base de datos va a fallar. Otros datos quizá deban ser numéricos, no vacíos, deban tener un valor mínimo o máximo o deban cumplir una expresión regular.</p>
 <p>El <em>framework</em> Spring proporciona varias funcionalidades útiles para las aplicaciones relacionadas con la configuración desde <a href="https://picodotdev.github.io/blog-bitix/2021/12/configuracion-de-una-aplicacion-con-spring-boot-y-configuracion-centralizada-con-spring-cloud-config/">un mecanismo muy flexible de proporcionar los valores de las propiedades de diferentes fuentes hasta un servidor de configuración centralizada</a>. Otra de sus funcionalidades es precisamente validar las propiedades de configuración a través de anotaciones.</p>
 <p>Aunque no sean validaciones complejas son útiles ya que normalmente las variables las crean los desarrolladores pero al desplegar la aplicación o tener que cambiar algún valor puede que lo realicen personas con el rol de sistemas que quizá no conozcan tan en detalle las variables de configuración existentes y sus reglas de validación. Al añadir las validaciones si alguna falla se obtiene un mensaje de error bastante descriptivo de cual es el problema de configuración.</p>
-<h3 id="ejemplo-de-código">Ejemplo de código</h3>
+<h2 id="ejemplo-de-código">Ejemplo de código</h2>
 <p>Una forma de recuperar los valores de configuración en una aplicación de Spring es trasladando los valores de los archivos de configuración a clases Java que contengan sus valores y sean fácilmente usables desde el lenguaje Java. Es en estas clases Java donde se colocan las anotaciones  de validación.</p>
 <p>Las anotaciones que se pueden utilizar son <a href="https://javaee.github.io/javaee-spec/javadocs/javax/validation/constraints/package-summary.html">las anotaciones del paquete javax.validation</a>, realmente son las mismas anotaciones para realizar validaciones sobre cualquier otro tipo de objeto Java, en este caso simplemente son clases con propiedades de configuración.</p>
 <p>Este es un ejemplo de archivo de configuración de una aplicación en la que hay una serie de propiedades. Dependiendo del entorno y de los valores proporcionados en tiempo de ejecución a través de este archivo de configuración, propiedades del sistema o variables de entorno las propiedades tendrán unos valores u otros y algunos valores como las contraseñas por motivos de seguridad es preferible no incluirlos en los archivos de configuración del código fuente para no compartirlas en el sistema de control de versiones.</p>

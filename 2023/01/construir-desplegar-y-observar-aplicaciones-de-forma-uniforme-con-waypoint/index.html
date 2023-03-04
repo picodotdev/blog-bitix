@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -276,23 +276,23 @@
 <p>Las aplicaciones para se ejecución en su ciclo de vida esencialmente necesitan al menos dos operaciones, una es su construcción a partir de código fuente y la segunda es su despliegue en el entorno de ejecución. Hay una tercera adicional que es la de publicación consistente en enviarle tráfico, el despliegue simplemente consiste en ejecutar en el entorno pero sin tráfico para la versión desplegada, esto es, separando el despliegue de la publicación.</p>
 <p><a href="https://www.hashicorp.com/">HashiCorp</a> ofrece varias herramientas que cada una cubre una necesidad de las aplicaciones, y de las que varias ya he escrito algunos artículos. Algunas de sus herramientas más conocidas son <a href="https://www.terraform.io/">Terraform</a> para tratar la infraestructura como código, <a href="https://www.consul.io/">Consul</a> para la conectividad entre servicios y <a href="https://www.vaultproject.io/">Vault</a> centrada en la seguridad como servicio pero tiene otras muy interesantes como <a href="https://www.vagrantup.com/">Vagrant</a> para la virtualización en local, <a href="https://www.packer.io/">Packer</a> para la construcción de imágenes de máquinas virtuales, <a href="https://www.boundaryproject.io/">Boundary</a> también el apartado de seguridad o <a href="https://www.nomadproject.io/">Nomad</a> una alternativa similar a <a href="https://kubernetes.io/">Kubernetes</a> pero mucho más sencilla de ejecutar en local.</p>
 <p>En el caso de la construcción y despliegue, la herramienta que proporciona HashiCorp es <a href="https://www.waypointproject.io/">Waypoint</a>.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#waypoint">Waypoint</a>
-      <ul>
+      <ol>
         <li><a href="#instalación-de-waypoint">Instalación de Waypoint</a></li>
         <li><a href="#inicio-del-servidor-de-waypoint">Inicio del servidor de Waypoint</a></li>
         <li><a href="#construcción-de-un-proyecto-con-waypoint-utilizando-buildpacks">Construcción de un proyecto con Waypoint utilizando Buildpacks</a></li>
         <li><a href="#despliegue-de-la-aplicación-con-waypoint">Despliegue de la aplicación con Waypoint</a></li>
         <li><a href="#interfaz-web-y-de-linea-de-comandos">Interfaz web y de linea de comandos</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#desarrollo-en-local">Desarrollo en local</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="waypoint">Waypoint</h3>
+<h2 id="waypoint">Waypoint</h2>
 <p>Waypoint de HashiCorp es una herramienta que permite construir una aplicación y realizar el despliegue independientemente del lenguaje empleado por la aplicación y la infraestructura de ejecución que se utilice.</p>
 <p>Con Waypoint es posible construir cualquier aplicación ya se trate de una aplicación programada en <a href="https://www.oracle.com/java/">Java</a>, <a href="https://nodejs.org/en/">Node</a> o <a href="https://www.python.org/">Python</a> y desplegarla en cualquier proveedor en la nube soportado como <a href="https://aws.amazon.com/es/">Amazon Web Services</a>, <a href="https://cloud.google.com/">Google Cloud Platform</a> o <a href="https://azure.microsoft.com/es-es/">Microsoft Azure</a>.</p>
 <p>El utilizar la misma herramienta uniformiza el ciclo de vida de las aplicaciones y tratan a todas por igual simplificando el flujo de desarrollo, de forma similar que una propiedad de los contenedores es que permiten ejecutar procesos independientemente del lenguaje de programación en el que están programados, Waypoint uniformiza la construcción y despliegue.</p>
@@ -306,7 +306,7 @@
 <div class="media media-video">
   <iframe width="640" height="360" data-src="https://www.youtube.com/embed/DsZVvv2dlUs" frameborder="0" class="lozad" allowfullscreen></iframe>
 </div>
-<h4 id="instalación-de-waypoint">Instalación de Waypoint</h4>
+<h3 id="instalación-de-waypoint">Instalación de Waypoint</h3>
 <p>Al igual que muchas de las otras herramientas de HashiCorp que están implementadas con el lenguaje de programación <a href="https://golang.org/">Go</a>, Waypoint es un único binario con lo que basta descargar la última versión disponible y en el caso de <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> copiarla al directorio <em>/usr/local/bin/</em> donde los usuarios pueden instalar programas sin que entren en conflicto con los instalados por los paquetes de la distribución.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ls -lh /usr/local/bin/&#10;</span></span><span class="line"><span class="cl">-rwxr-xr-x <span class="m">1</span> picodotdev picodotdev  23M ene <span class="m">10</span> 11:31 pack&#10;</span></span><span class="line"><span class="cl">-rwxr-xr-x <span class="m">1</span> picodotdev picodotdev 180M dic <span class="m">15</span> 18:59 waypoint</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -314,7 +314,7 @@
         <span>ls-bin.sh</span>
     </div>
 </div>
-<h4 id="inicio-del-servidor-de-waypoint">Inicio del servidor de Waypoint</h4>
+<h3 id="inicio-del-servidor-de-waypoint">Inicio del servidor de Waypoint</h3>
 <p>Waypoint se ejecuta en modo servidor, en este ejemplo se inicia como un contenedor de Docker en local y ejecutar un comando para su inicialización.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ waypoint install -platform<span class="o">=</span>docker -accept-tos&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -336,7 +336,7 @@
         <span>waypoint-server-run.sh</span>
     </div>
 </div>
-<h4 id="construcción-de-un-proyecto-con-waypoint-utilizando-buildpacks">Construcción de un proyecto con Waypoint utilizando Buildpacks</h4>
+<h3 id="construcción-de-un-proyecto-con-waypoint-utilizando-buildpacks">Construcción de un proyecto con Waypoint utilizando Buildpacks</h3>
 <p>En un artículo anterior mostraba cómo construir una aplicación con el lenguaje Java de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> con <a href="https://gradle.org/">Gradle</a> y Buildpacks para generar la imagen del contenedor.</p>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2023/01/construir-la-imagen-del-contenedor-de-la-aplicacion-usando-buildpacks/">Construir la imagen del contenedor de la aplicación usando Buildpacks</a></li>
@@ -394,7 +394,7 @@
         <span>docker-images.out</span>
     </div>
 </div>
-<h4 id="despliegue-de-la-aplicación-con-waypoint">Despliegue de la aplicación con Waypoint</h4>
+<h3 id="despliegue-de-la-aplicación-con-waypoint">Despliegue de la aplicación con Waypoint</h3>
 <p>En este ejemplo el despliegue consiste en ejecutar una instancia del contenedor con Docker en local, su <em>stanza</em> es muy sencilla en la que solo se especifica el puerto en el que arrancar el el contenedor aunque también a través de diferentes propiedades se podrían especificar argumentos distintos.</p>
 <p>El comando que realiza el <em>deploy</em> es el siguiente. Y siguiendo la misma lógica hay un comando para el <em>release</em> si fuera necesario.</p>
 <div class="code">
@@ -436,7 +436,7 @@
         <span>curl.out</span>
     </div>
 </div>
-<h4 id="interfaz-web-y-de-linea-de-comandos">Interfaz web y de linea de comandos</h4>
+<h3 id="interfaz-web-y-de-linea-de-comandos">Interfaz web y de linea de comandos</h3>
 <p>La interfaz web de Waypoint accesible con un navegador ofrece información de los proyectos, <em>builds</em>, <em>deployments</em> y <em>releases</em> además de <em>logs</em>.</p>
 <p>La linea de comandos también ofrece información acerca de la aplicación con los comandos de Waypoint sin utilizar la interfaz web. La línea de comandos soporta más operaciones como destruir los recursos de un proyecto o eliminar el proyecto completamente.</p>
 <div class="code">
@@ -465,7 +465,7 @@
 <figcaption>Builds, deployments y releases de una aplicación en un proyecto</figcaption>
 </figure>
 </div>
-<h3 id="desarrollo-en-local">Desarrollo en local</h3>
+<h2 id="desarrollo-en-local">Desarrollo en local</h2>
 <p>Para desarrollar en local todo este proceso de Buildpacks y Waypoint no es necesario, en el caso de la aplicación de ejemplo al estar basada en Spring Boot y utilizar Gradle es posible iniciarla con un comando directamente sin necesidad de construir una imagen de contenedor ni iniciar un contenedor en local.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ./gradlew run&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>

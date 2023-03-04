@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -267,12 +267,12 @@
 </div>
 <p>A lo largo de los meses y años de uso de un equipo los usuarios vamos configurando el sistema con las aplicaciones necesarias y configurando esas aplicaciones a las preferencias de cada usuario. El problema es que cuando hay que mudarse a otro sistema porque se cambia a un equipo más nuevo y potente o porque deja de funcionar por un motivo de software o por una mala actualización que requiere reinstalar el sistema. Para estos casos y como medida de seguridad es recomendable <a href="https://picodotdev.github.io/blog-bitix/2016/05/como-realizar-copias-de-seguridad-en-windows-con-freefilesync/">hacer copias de seguridad de los datos</a> con lo que migrarlos a otro equipo es menos complicada. Sin embargo, hacer copias de las configuraciones de los programas no es tán habitual con lo que si no se hace al instalar un nuevo sistema requiere configurarlo tal como se tenía anteriormente lo que requiere una buena cantidad de tiempo que hay que volver a dedicar en una nueva instalación.</p>
 <p>En <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> buena parte de los archivos de configuración de los programas se guardan en los archivos <em>dotfiles</em>.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#qué-son-los-archivos-_dotfiles_">Qué son los archivos <em>dotfiles</em></a></li>
     <li><a href="#cómo-gestionar-los-archivos-_dotfiles_">Cómo gestionar los archivos <em>dotfiles</em></a></li>
     <li><a href="#el-programa-chezmoi-y-guía-de-uso-para-gestionar-archivos-_dotfiles_">El programa chezmoi y guía de uso para gestionar archivos <em>dotfiles</em></a>
-      <ul>
+      <ol>
         <li><a href="#inicialización-del-repositorio">Inicialización del repositorio</a></li>
         <li><a href="#compartir-archivos-_dotfiles_-entre-máquinas">Compartir archivos <em>dotfiles</em> entre máquinas</a></li>
         <li><a href="#ver-cambios-sin-aplicarlos">Ver cambios sin aplicarlos</a></li>
@@ -281,13 +281,13 @@
         <li><a href="#variables-y-plantillas">Variables y plantillas</a></li>
         <li><a href="#gestionar-secretos">Gestionar secretos</a></li>
         <li><a href="#otras-características">Otras características</a></li>
-      </ul>
+      </ol>
     </li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="qué-son-los-archivos-_dotfiles_">Qué son los archivos <em>dotfiles</em></h3>
+<h2 id="qué-son-los-archivos-_dotfiles_">Qué son los archivos <em>dotfiles</em></h2>
 <p>Los archivos <em>dotfiles</em> son archivos dedicados a guardar la configuración de los programas. Se guardan en la carpeta personal del usuario (<em>/home/${usuario}</em>) y se denominan <em>dotfiles</em> porque su nombre empieza por un punto, en GNU/Linux los archivos que empiezan por punto son especiales ya que son archivos que los exploradores de archivos ocultan por defecto.</p>
 <ul>
 <li><a href="https://wiki.archlinux.org/title/Dotfiles">Arch Linux Wiki Dotfiles</a></li>
@@ -306,13 +306,13 @@
 <figcaption>Terminal con los colores del símbolo del sistema personalizados e información del repositorio de Git</figcaption>
 </figure>
 </div>
-<h3 id="cómo-gestionar-los-archivos-_dotfiles_">Cómo gestionar los archivos <em>dotfiles</em></h3>
+<h2 id="cómo-gestionar-los-archivos-_dotfiles_">Cómo gestionar los archivos <em>dotfiles</em></h2>
 <p>Una forma de migrar los archivos <em>dotfiles</em> de un sistema a otro es haciendo una copia de estos y restaurándolos en el otro sistema. Sin embargo, los problemas son que las copias de seguridad no permiten mantener un registro de los cambios que se realizan a cada uno de estos archivos, no es tan fácil mantener sincronizadas todas las copias de los archivos entre varios equipos que pueden ser de diferentes sistemas operativos como GNU/Linux, <a href="https://www.apple.com/macos/">macOS</a> o <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y algunos archivos de configuración tienen requerimientos de seguridad que hay que mantener depositados en un almacén seguro como son las claves privadas SSH de conexión o algunas credenciales. Además de programas como <a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">el programa KeePassXC para guadar contraseñas y secretos de forma segura</a> también soportan funcionalidades de cifrado y descifrado para algunos datos.</p>
 <p>Para dar solución a los problemas de la gestión de los archivos <em>dotfiles</em> hay varios programas específicos para la tarea, en GNU/Linux es <a href="https://github.com/twpayne/chezmoi">chezmoi</a> que también está disponible para otros sistemas operativos como macOS e incluso Windows. También es posible utilizarlo en máquinas virtuales.</p>
-<h3 id="el-programa-chezmoi-y-guía-de-uso-para-gestionar-archivos-_dotfiles_">El programa chezmoi y guía de uso para gestionar archivos <em>dotfiles</em></h3>
+<h2 id="el-programa-chezmoi-y-guía-de-uso-para-gestionar-archivos-_dotfiles_">El programa chezmoi y guía de uso para gestionar archivos <em>dotfiles</em></h2>
 <p>chezmoi es uno de los programas dedicados a la tarea de gestionar los archivos de configuración <em>dotfiles</em>, hay otros varios pero chezmoi en su <a href="https://www.chezmoi.io/comparison-table/">lista de características que soporta chezmoi comparándolo con las alternativas</a> lo hacen más potente, además al estar basado en Go generalmente los programas en este lenguaje se componen de un único binario hace que sean muy fácilmente de instalar y fiable al carecer de dependencias externas.</p>
 <p>Muchas de estas herramientas para gestionar archivos <em>dotfiles</em> se basan en un repositorio de Git en el que mantienen el control de versiones de los archivos y de cada uno de los cambios que se realizan en ellos. Entre las funcionalidades que ofrecen además de mantener el control de versiones están facilitar las tareas de uso básico como subir cambios al repositorio de Git para aplicar a otros sistemas o a un nuevo sistema y aplicar cambios al sistema local provenientes de otros sistemas, soportan variables y plantillas con las que generar el contenido de los archivos de forma dinámica y obtener datos de programas de base de datos que guardan secretos como KeePassXC entre muchos otros gestores de contraseñas.</p>
-<h4 id="inicialización-del-repositorio">Inicialización del repositorio</h4>
+<h3 id="inicialización-del-repositorio">Inicialización del repositorio</h3>
 <p>En la distribución <a href="https://www.archlinux.org/">Arch Linux</a> el programa chezmoi se instala instalando su paquete con el gestor de paquetes. En otras distribuciones basadas en <a href="https://www.debian.org/">Debian</a> o <a href="https://fedoraproject.org/">Fedora</a> basta con buscar el nombre del paquete equivalente en esas distribuciones e instalarlo con su gestor de paquetes.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S chezmoi&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -327,7 +327,7 @@
         <span>chezmoi-create-repository.sh</span>
     </div>
 </div>
-<h4 id="compartir-archivos-_dotfiles_-entre-máquinas">Compartir archivos <em>dotfiles</em> entre máquinas</h4>
+<h3 id="compartir-archivos-_dotfiles_-entre-máquinas">Compartir archivos <em>dotfiles</em> entre máquinas</h3>
 <p>Para inicializar el repositorio de Git de los archivos <em>dotfiles</em> a partir del contenido de uno existente se utiliza este comando. Aunque los archivos se puede compartir entre máquinas incluso de diferentes sistemas operativos la intención es que todos esos archivos de <em>dotfiles</em> de un usuario compartan la mayor similitud posible, aunque a veces por las diferencias de las máquinas no es completamente posible. Para ayudar a compartir lo más posible están las variables y plantillas, en caso de necesidad es posible administrar un <em>dotfile</em> completamente diferente según el sistema operativo añadiendo condiciones en las plantillas.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ chezmoi init https://github.com/picodotdev/dotfiles.git&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -335,7 +335,7 @@
         <span>chezmoi-init.sh</span>
     </div>
 </div>
-<h4 id="ver-cambios-sin-aplicarlos">Ver cambios sin aplicarlos</h4>
+<h3 id="ver-cambios-sin-aplicarlos">Ver cambios sin aplicarlos</h3>
 <p>El siguiente comando aplica los cambios a los archivos <em>dotfiles</em> locales a partir del contenido del repositorio de archivos <em>dotfiles</em> de chezmoi. Con las opciones <em>-v</em> se muestra información más detallada de los cambios que se aplican, y con <em>-n</em> permite ver que cambios se aplicarían en caso de realizar la acción sin la opción, sus opciones en formato largo son <em>-verbose</em> y <em>&ndash;dry-run</em>.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ chezmoi --verbose --dry-run update&#10;</span></span><span class="line"><span class="cl">$ chezmoi update&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -350,7 +350,7 @@
         <span>chezmoi-diff-apply.sh</span>
     </div>
 </div>
-<h4 id="realizar-cambios-en-los-archivos-_dotfiles_">Realizar cambios en los archivos <em>dotfiles</em></h4>
+<h3 id="realizar-cambios-en-los-archivos-_dotfiles_">Realizar cambios en los archivos <em>dotfiles</em></h3>
 <p>Al empezar a usar chezmoi y a medida que se desean guardar las configuraciones de los archivos <em>dotfiles</em> hay que añadir los archivos y sus cambios al repositorio de Git de los archivos <em>dotfiles</em>. El comando que permite añadir un archivo al repositorio es <em>add</em>.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ chezmoi add .bashrc&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -383,7 +383,7 @@
         <span>chezmoi.yaml</span>
     </div>
 </div>
-<h4 id="subir-al-repositorio-cambios-en-los-archivos-_dotfiles_">Subir al repositorio cambios en los archivos <em>dotfiles</em></h4>
+<h3 id="subir-al-repositorio-cambios-en-los-archivos-_dotfiles_">Subir al repositorio cambios en los archivos <em>dotfiles</em></h3>
 <p>Después de realizar cambios en los archivos <em>dotfiles</em> estos quedan en el repositorio de Git local en el directorio de trabajo, para subir los archivos al repositorio de Git origen es necesario hacer el <em>commit</em> y el <em>push</em> en el repositorio. chezmoi proporciona varios comandos de utilidad para trabajar con el repositorio de Git en el que se guardan los <em>dotfiles</em>.</p>
 <p>Con el comando <em>cd</em> se entra en un modo de edición del repositorio de Git, usándolo el directorio actual de trabajo se cambia a la carpeta del repositorio de Git. Para salir de este modo hay que usar el comando <em>exit</em>.</p>
 <div class="code">
@@ -406,7 +406,7 @@
         <span>chezmoi-git.sh</span>
     </div>
 </div>
-<h4 id="variables-y-plantillas">Variables y plantillas</h4>
+<h3 id="variables-y-plantillas">Variables y plantillas</h3>
 <p>Algunos datos de los archivos <em>dotfiles</em> para compartirlos entre máquinas o para externalizarlos de los archivos permite guardarlos de forma externa. chezmoi soporta plantillas, una plantilla se procesa junto varias las variables y genera el contenido del archivo final del <em>dotfile</em>. Las plantillas no solo soportan variables sino también expresiones con condiciones.</p>
 <ul>
 <li><a href="https://www.chezmoi.io/user-guide/templating/#more-complicated-logic">More complicated logic</a></li>
@@ -452,7 +452,7 @@
         <span>chezmoi-execute-template.sh</span>
     </div>
 </div>
-<h4 id="gestionar-secretos">Gestionar secretos</h4>
+<h3 id="gestionar-secretos">Gestionar secretos</h3>
 <p>Algunas variables por su contenido sensible por motivos de seguridad hay que protegerlos y no deben ser compartidos, esto es importante tenerlo en cuenta ya que el contenido que se usa al repositorio de los <em>dotfiles</em> cualquier usuario que tenga acceso a él puede ver su contenido, esto incluye credenciales e incluso claves SSH. Estos secretos se han de almacenar de forma diferente y no el repositorio de Git de los <em>dotfiles</em> sobre todo si el repositorio de Git es público como puede ser el caso de si se utiliza un hospedaje como GitHub.</p>
 <p>La forma que utiliza chezmoi para guardar estos secretos es utilizar un programa de base de datos cifrada para guardar credenciales como los gestores de contraseñas. Uno de ellos es KeePassXC pero chezmoi soporta muchos entre los que están los más populares. chezmoi es capaz de recuperar usuarios, contraseñas e incluso valores de atributos del apunte guardado en la base de datos cifrada.</p>
 <ul>
@@ -472,7 +472,7 @@
         <span>chezmoi-template-2.file</span>
     </div>
 </div>
-<h4 id="otras-características">Otras características</h4>
+<h3 id="otras-características">Otras características</h3>
 <p>Los <em>dotfiles</em> de algunos programas son más complejos de los de este ejemplo y hay varios programas que los utilizan, ¿no sería maravilloso poder utilizar los archivos de otros usuarios que comparten en sus repositorios de <em>dotfiles</em>? lo es y es posible utilizar estos archivos <em>dotfiles</em> de otros usuarios, no solo para utilizarlos sino como ejemplo de cómo se configura alguna propiedad del <em>dotfile</em> sobre todo si la documentación oficial del <em>dotfile</em> no es amplia o no es lo suficientemente clara. En la wiki de Arch Linux hay una <a href="https://wiki.archlinux.org/title/Dotfiles#User_repositories">colección de repositorios de usuarios con ejemplos de <em>dotfiles</em></a> con ejemplos para intérpretes de comandos, gestores de ventanas y entornos de escritorio, editores, terminal, multiplexores de terminal entre varios otros programas.</p>
 <ul>
 <li><a href="https://www.chezmoi.io/user-guide/include-dotfiles-from-elsewhere/">Include dotfiles from elsewhere</a></li>

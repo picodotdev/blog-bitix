@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -255,7 +255,7 @@
 <p>No es habitual que haya errores pero puede darse el caso, antes de hacer una desactualización es recomendable buscar en los <a href="https://bbs.archlinux.org/">foros de arch linux</a> una respuesta con una alternativa mejor. En todo este tiempo como usuario de Arch Linux, más de 5 años, los <em>downgrades</em> que he tenido que hacer han sido dos, uno para el paquete de <em>subversion</em> y el que voy a comentar.</p>
 <p>El último caso ha sido para el paquete de <a href="https://www.archlinux.org/packages/extra/x86_64/networkmanager/"><em>networkmanager</em></a> al actualizarse a la versión <em>1.0.0-1</em> desde la <em>0.9.10.0-4</em>. El problema que me ocasionaba era varios intentos de conexión y desconexión tanto de la red cableada como de la wifi, después de varios intentos seguidos y menos de un minuto conseguía conectarse a la red correctamente pero era un poco molesto. En los foros de Arch Linux hay varios mensajes de otros usuarios con el mismo problema <a href="https://bbs.archlinux.org/viewtopic.php?id=193275">I</a>, <a href="https://bbs.archlinux.org/viewtopic.php?id=192679">II</a> y <a href="https://bbs.archlinux.org/viewtopic.php?id=192344">III</a>, donde se comenta algunas alternativas, una de ellas la desactualización del paquete.</p>
 <p>En la página <a href="https://wiki.archlinux.org/index.php/Downgrading_packages">desactualizar paquetes</a> de la wiki de Arch Linux hay información más detallada de la desactualización de un paquete.</p>
-<h3 id="cómo-hacer-_downgrade_-de-un-paquete">Cómo hacer <em>downgrade</em> de un paquete</h3>
+<h2 id="cómo-hacer-_downgrade_-de-un-paquete">Cómo hacer <em>downgrade</em> de un paquete</h2>
 <p>El proceso de desactualización o <em>downgrade</em> no tiene complicación, basta con lanzar un comando, se desactualiza el paquete y sus dependencias con la limitación de que en el caso de conflictos con otros paquetes también hay que desactualizar esos otros paquetes.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -U /var/cache/pacman/pkg/networkmanager-0.9.10.0-4-x86_64.pkg.tar.xz&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -264,7 +264,7 @@
     </div>
 </div>
 <p>Arch Linux guarda en una caché del sistema de archivos local todos los paquetes con sus versiones que descarga, la caché se encuentra por defecto en el directorio <em>/var/cache/pacman/pkg/</em>.</p>
-<h3 id="cómo-buscar-un-paquete-de-una-versión-anterior">Cómo buscar un paquete de una versión anterior</h3>
+<h2 id="cómo-buscar-un-paquete-de-una-versión-anterior">Cómo buscar un paquete de una versión anterior</h2>
 <p>Para hacer una desactualización hay que tener la versión del paquete a la que hacer <em>downgrade</em>, si no se ha hecho una limpieza de la caché de los paquetes viejos no usados con el comando <em>pacman -Sc</em> están en el directorio de caché de paquetes. Si se ha hecho la limpieza de la caché y no se dispone del paquete hay que buscar en alguna réplica menos actualizada la versión del paquete desactualizado.</p>
 <p>Otra posibilidad es usar <a href="https://wiki.archlinux.org/index.php/Arch_Rollback_Machine">Arch Rollback Machine</a> que va almacenando instantáneas de las últimas versiones de los paquetes, de los repositorios organizados por fecha y de las imágenes iso del medio de instalación. Usando estas instantáneas de paquetes se puede encontrar una versión desactualizada de cualquier paquete individual. En los casos más extremos Arch Rollback Machine ofrece la posibilidad de desactualizar un equipo completamente a una fecha concreta, aunque no es recomendable.</p>
 <p>Indicando en el comando la dirección completa del paquete este es descargado y desactualizado.</p>
@@ -282,7 +282,7 @@
         <span>pacman-update.sh</span>
     </div>
 </div>
-<h3 id="cómo-evitar-que-un-paquete-se-actualice">Cómo evitar que un paquete se actualice</h3>
+<h2 id="cómo-evitar-que-un-paquete-se-actualice">Cómo evitar que un paquete se actualice</h2>
 <p>Para evitar que un paquete sea actualizado en la siguiente actualización del sistema hay añadirlo a la lista de paquetes ignorados <em>IgnorePkg</em> del archivo <em>/etc/pacman.conf</em>.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">IgnorePkg = networkmanager&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>

@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -273,25 +273,25 @@
 <p>El problema de reconocimiento de caracteres es una tarea simple para un humano pero no es una tarea sencilla para una computadora que no posee la inteligencia y experiencia de un humano sino simplemente la que los programadores le han dotado dentro de sus posibilidades. La ventaja de usar una computadora, al igual que en muchas otras tareas posibles con una computadora, es que con el software adecuado es capaz de hacer el reconocimiento de caracteres de manera mucho más rápida y bastante efectiva aunque requiera cierto trabajo de revisión y edición posterior del texto obtenido. La <a href="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/">conversión de texto a voz natural</a> es otra tarea simple para un humano pero difícil para una computadora si el resultado deseado ha de ser natural o difícilmente indistinguible de la entonación de un humana.</p>
 <p>El texto de una imagen no es extraíble de forma directa ya que por el formato de las imágenes el texto es visiblemente únicamente por la disposición de los pixeles. Para extraer el texto es necesario aplicar un algoritmo que utilizando varias heurísticas es capaz de reconocer el texto de la imagen, el software de reconocimiento de caracteres se le denomina <em>Optical Character Recognition</em> o OCR.</p>
 <p>El reconocimiento de caracteres en una imagen es útil y necesario cuando el texto está insertado en una imagen o fotografía, por ejemplo cuando se toma una fotografía de un coche con su número de matrícula o cuando se toma una fotografía de una página de un libro y se quiere extraer el texto de la imagen, los teléfonos inteligentes con cámara son capaces de sustituir para usos básicos a dispositivos hardware como escáneres ópticos.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#programas-de-reconocimiento-de-caracteres-con-ocr">Programas de reconocimiento de caracteres con OCR</a>
-      <ul>
+      <ol>
         <li><a href="#reconocimiento-de-caracteres-desde-línea-de-comandos">Reconocimiento de caracteres desde línea de comandos</a></li>
         <li><a href="#reconocimiento-de-texto-con-un-programa-con-interfaz-gráfica">Reconocimiento de texto con un programa con interfaz gráfica</a></li>
         <li><a href="#herramientas-en-línea-de-reconocimiento-de-texto-sin-instalar-software">Herramientas en línea de reconocimiento de texto sin instalar software</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#ocr-con-java">OCR con Java</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="programas-de-reconocimiento-de-caracteres-con-ocr">Programas de reconocimiento de caracteres con OCR</h3>
+<h2 id="programas-de-reconocimiento-de-caracteres-con-ocr">Programas de reconocimiento de caracteres con OCR</h2>
 <p>Para extraer el texto de una imagen es necesario un programa OCR, un programa OCR es un software especializado en reconocer patrones de caracteres en una imagen aún cuando los caracteres y texto de la imagen tiene cierta distorsión, baja calidad o defectos. Por supuesto, a mejor calidad de la imagen origen el programa OCR es capaz de ser más preciso en el reconocimiento del texto. Aunque los programas OCR no son siempre perfectos son bastante fiables con una imagen de buena calidad y son capaces de extraer el texto con un éxito cercano al cien por cien.</p>
 <p>Los usos de OCR son múltiples, como digitalización de libros, páginas de un libro, periódico, documento, reconocimiento de matrículas de vehículos o direcciones postales entre otros muchos usos.</p>
 <p>Hay programas OCR que se invocan desde la línea de comandos, programas con interfaz gráfica y herramientas en línea sin necesidad de programas adicionales.</p>
-<h4 id="reconocimiento-de-caracteres-desde-línea-de-comandos">Reconocimiento de caracteres desde línea de comandos</h4>
+<h3 id="reconocimiento-de-caracteres-desde-línea-de-comandos">Reconocimiento de caracteres desde línea de comandos</h3>
 <p>La ventaja de una herramienta de línea de comandos es que permite automatizar la tarea de extracción de texto de un conjunto de imágenes, o también permite hacer la tarea más rápido sin necesidad de usar de forma interactiva con una aplicación de interfaz gráfica.</p>
 <p>En el sistema operativo <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> una herramienta de OCR es <a href="https://github.com/tesseract-ocr/tesseract">tesseract</a>. Basta con instalar el paquete de distribución para usarlo, en este caso también es posible instalar un diccionario con las palabras del idioma para un mejor reconocimiento del texto.</p>
 <div class="code">
@@ -328,7 +328,7 @@
         <span>output.txt</span>
     </div>
 </div>
-<h4 id="reconocimiento-de-texto-con-un-programa-con-interfaz-gráfica">Reconocimiento de texto con un programa con interfaz gráfica</h4>
+<h3 id="reconocimiento-de-texto-con-un-programa-con-interfaz-gráfica">Reconocimiento de texto con un programa con interfaz gráfica</h3>
 <p>Para usos esporádicos, realizar de forma más intuitiva o con alguna funcionalidad adicional también hay disponibles programas con interfaz gráfica.</p>
 <p>Una herramienta con interfaz gráfica en GNU/Linux es <a href="https://github.com/manisandro/gImageReader">gImageReader</a>. Es un programa que utiliza el reconocimiento de caracteres de <em>tesseract</em> que como funcionalidad adicional permite seleccionar el área o áreas de la imagen de las que se desea reconocer el texto.</p>
 <p>El reconocimiento de texto se realiza de forma rápida y se proporciona en forma de texto que se puede copiar y pegar en otro programa o documento. Es posible seleccionar las diferentes áreas de la imagen en las que realizar el reconocimiento de texto. También es posible realizar cierta edición en la imagen para rotarla y que las líneas de texto estén lo más horizontales posible, también es posible instalar un diccionario del idioma del texto para en las palabras en las que haya errores de reconocimiento utilizando un diccionario sean corregidos.</p>
@@ -343,14 +343,14 @@
 <figcaption>Programa con interfaz gráfica para OCR en GNU/Linux</figcaption>
 </figure>
 </div>
-<h4 id="herramientas-en-línea-de-reconocimiento-de-texto-sin-instalar-software">Herramientas en línea de reconocimiento de texto sin instalar software</h4>
+<h3 id="herramientas-en-línea-de-reconocimiento-de-texto-sin-instalar-software">Herramientas en línea de reconocimiento de texto sin instalar software</h3>
 <p>También hay disponibles herramientas en internet que proporcionan la funcionalidad de reconocimiento de texto proporcionando la imagen de la que se quiere reconocer el texto. Por privacidad y seguridad, la imagen proporcionada a estas herramientas en línea no ha de contener información personal o con información privada importante es más conveniente instalar la herramienta de línea de comandos o con interfaz gráfica anteriores.</p>
 <p>Dos herramientas en línea de OCR que aceptan diferentes formatos de imagen son:</p>
 <ul>
 <li><a href="https://www.newocr.com/">Free Online OCR </a></li>
 <li><a href="https://onlineocr.org/">Online OCR</a>.</li>
 </ul>
-<h3 id="ocr-con-java">OCR con Java</h3>
+<h2 id="ocr-con-java">OCR con Java</h2>
 <p>Para automatizar el reconocimiento de caracteres en un programa propio hay una librería que permite invocar la funcionalidad de <em>tesseract</em> desde un programa implementado con el lenguaje de programación Java.</p>
 <p>La librería requiere instalar el paquete de <em>tesseract</em> en el sistema o en <a href="https://www.microsoft.com/es-es/windows/">Windows</a> extraer y cargar su librería <em>dll</em> incluída en el propio archivo <em>jar</em> de la librería. También para mayor efectividad requiere descargar los <a href="https://github.com/tesseract-ocr/tessdata_best">modelos entrenados para mayor efectividad</a> o los <a href="https://github.com/tesseract-ocr/tessdata_fast">modelos para mayor rapided</a> según el idioma para los caracteres del texto.</p>
 <p>Por defecto, la librería procesa la imagen entera, sin embargo al igual que en la aplicación con interfaz gráfica es posible aplicar el reconocimiento de texto a un área especifica de la imagen usando un objeto <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Rectangle.html">java.awt.Rectangle</a> al invocar el método sobrecargado <em>doOCR</em>.</p>

@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -277,21 +277,21 @@
 <p>Para reutilizar las librerías los proyectos declaran las librerías de las que dependen, la herramienta de construcción se encargan de descargarlas y almacenarlas en un repositorio local para evitar una nueva descargacon su transferencia de red en usos posteriores. En Java las herramientas de construcción <a href="https://gradle.org/">Gradle</a> y <a href="https://maven.apache.org/">Maven</a> automatizan la descarga y enlazado de las dependencias declaradas con el código del proyecto. Para JavaScript una herramienta de dependencias es <a href="https://www.npmjs.com/">npm</a>.</p>
 <p>Las librerías requieren de la funcionalidad de un repositorio de librerías o artefactos que permite descargarlas cuando un proyecto las declare como dependencias. En Java el repositorio más popular es <a href="https://search.maven.org/">Maven Central</a>, las imágenes para iniciar un contenedor de Docker también tienen su propio repositorio de imágenes de Docker con <a href="https://registry.hub.docker.com/">Docker Hub</a> o el repositorio de librerías JavaScript que utiliza  npm.</p>
 <p>Los repositorios anteriores son públicos donde los desarrolladores suben sus artefactos cada vez que publican una nueva versión de sus librerías o <em>frameworks</em>. Una organización en sus proyectos utiliza numerosas dependencias de los repositorios oficiales de cada lenguaje o herramienta pero también con seguridad desarrollará sus propias librerías que necesita compartir en diferentes proyectos de forma interna sin compartirlos en los repositorios públicos.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#repositorio-de-artefactos-con-nexus">Repositorio de artefactos con Nexus</a></li>
     <li><a href="#ejemplo-de-repositorio-con-nexus">Ejemplo de repositorio con Nexus</a>
-      <ul>
+      <ol>
         <li><a href="#publicar-un-artefacto-a-un-repositorio-maven-local">Publicar un artefacto a un repositorio Maven local</a></li>
         <li><a href="#publicar-un-artefacto-a-un-repositorio-maven-en-nexus-con-gradle">Publicar un artefacto a un repositorio Maven en Nexus con Gradle</a></li>
         <li><a href="#publicar-una-imagen-docker-a-un-repositorio-repositorio-en-nexus">Publicar una imagen Docker a un repositorio repositorio en Nexus</a></li>
-      </ul>
+      </ol>
     </li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="repositorio-de-artefactos-con-nexus">Repositorio de artefactos con Nexus</h3>
+<h2 id="repositorio-de-artefactos-con-nexus">Repositorio de artefactos con Nexus</h2>
 <p><a href="https://www.sonatype.com/nexus/repository-oss">Nexus</a> es un software que ofrece la funcionalidad de repositorio de artefactos. Permite a una organización compartir de forma privada los artefactos entre los diferentes proyectos. Soporta diferentes tipos de repositorios según el tipo de artefactos, librerías <em>jar</em> para Java, paquetes npm para JavaScript, imágenes de contenedores para Docker, paquetes de <a href="https://www.python.org/">Python</a> y <a href="https://golang.org/">Go</a>.</p>
 <p>Nexus OSS es la versión de código abierto que permite su uso sin coste, la versión <a href="https://www.sonatype.com/nexus/repository-pro">Nexus Pro</a> tiene características empresariales como autenticación SSO.</p>
 <ul>
@@ -307,7 +307,7 @@
 <figcaption>Arquitectura de un repositorio de artefactos con Nexus</figcaption>
 </figure>
 </div>
-<h3 id="ejemplo-de-repositorio-con-nexus">Ejemplo de repositorio con Nexus</h3>
+<h2 id="ejemplo-de-repositorio-con-nexus">Ejemplo de repositorio con Nexus</h2>
 <p>Nexus ofrece una imagen de Docker que permite iniciar el servidor de Nexus de forma fácil como un contenedor. El siguiente <em>script</em> lo inicia en el puerto 8081 y en el puerto adicional 8082 para el repositorio de Docker.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker run -it --rm -p 8081:8081 -p 8082:8082 --name nexus sonatype/nexus3&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -329,7 +329,7 @@
 <figcaption>Nexus</figcaption>
 </figure>
 </div>
-<h4 id="publicar-un-artefacto-a-un-repositorio-maven-local">Publicar un artefacto a un repositorio Maven local</h4>
+<h3 id="publicar-un-artefacto-a-un-repositorio-maven-local">Publicar un artefacto a un repositorio Maven local</h3>
 <p>Usando Gradle o Maven las dependencias de un proyecto se cachean en un directorio local del directorio de inicio del usuario, <em>~/.gradle</em> o <em>~/.m2</em>. Al desarrollar es posible publicar una versión de una librería en estos repositorios de caché. Para publicar un artefacto en un repositorio de Maven con Gradle se utiliza el <em>plugin</em> <a href="https://docs.gradle.org/current/userguide/publishing_maven.html">Maven Publish</a>.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ./gradlew publishToMavenLocal&#10;</span></span><span class="line"><span class="cl">$ ./gradlew publishLibraryPublicationToMavenLocal&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -337,7 +337,7 @@
         <span>gradlew-publishToMavenLocal.sh</span>
     </div>
 </div>
-<h4 id="publicar-un-artefacto-a-un-repositorio-maven-en-nexus-con-gradle">Publicar un artefacto a un repositorio Maven en Nexus con Gradle</h4>
+<h3 id="publicar-un-artefacto-a-un-repositorio-maven-en-nexus-con-gradle">Publicar un artefacto a un repositorio Maven en Nexus con Gradle</h3>
 <p>Gradle ofrece el <em>plugin</em> <em>Maven Publish</em> para publicar artefactos en repositorios de Maven. Hay que configurar y definir los artefactos y los repositorios en los que se puede publicar. El <em>plugin</em> añade varias tareas de Gradle con las que elegir de forma específica que artefacto publicar, en que repositorio, el grupo del artefacto, su nombre y versión.</p>
 <p>Este es un archivo de construcción de Gradle con un repositorio Maven de Nexus en el que publicar los artefactos de la librería.</p>
 <div class="code">
@@ -390,7 +390,7 @@
         <span>System.out</span>
     </div>
 </div>
-<h4 id="publicar-una-imagen-docker-a-un-repositorio-repositorio-en-nexus">Publicar una imagen Docker a un repositorio repositorio en Nexus</h4>
+<h3 id="publicar-una-imagen-docker-a-un-repositorio-repositorio-en-nexus">Publicar una imagen Docker a un repositorio repositorio en Nexus</h3>
 <p>Para usar el repositorio de imágenes de Docker en Nexus es necesario crear un repositorio y configurar Nexus para que se ubique en un puerto diferente del del puerto estándar. En este caso el contenedor de Docker de Nexus además del puerto 8081 se inicia en el puerto 8082.</p>
 <div class="media">
 <figure>

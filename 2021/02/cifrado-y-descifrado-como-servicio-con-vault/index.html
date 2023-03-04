@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -273,22 +273,22 @@
 <p>La seguridad de los datos es muy importante, ciertos datos personales sensibles y que permiten identificar a personas están protegidos por leyes. El no cumplimiento de las leyes implica potencialmente a una empresa recibir importantes multas o descrédito que afecte a la viabilidad del negocio o suponga una reducción de facturación. Algunos datos candidatos a ser cifrados o transformados al guardarse en base de datos son, datos personales e identificativos como nombre y apellidos, DNI, dirección, tarjetas de crédito, bancarios u otros datos que estén regulados por las leyes de protección de datos.</p>
 <p>Los datos protegidos incluso no es deseable que sean accesibles por cualesquiera trabajadores de la propia empresa, solo debería tener acceso a ellos aquellos trabajadores que los necesitan para desempeñar su trabajo y ofrecer el servicio que proporciona la empresa. Para el desarrollo de una aplicación los programadores necesitan una base de datos con el mismo esquema de la base de datos de producción y un conjunto de datos, una opción es <a href="https://picodotdev.github.io/blog-bitix/2020/05/copia-de-seguridad-restauracion-y-carga-de-datos-en-postgresql-y-mysql/">obtener una copia de la base de datos</a> de producción, sin embargo, obtener una copia de la base de datos de producción otorga acceso a los programadores acceso a los datos, al hacer la copia es posible aplicar un proceso que ofusque los datos sin embargo esto sigue sin solventar el problema de mantener seguros los datos en la propia base de datos de producción o sus réplicas. Si algunos datos se guardan cifrados aunque se tenga acceso a la base de datos los datos cifrados siguen protegidos.</p>
 <p>Una de las funcionalidades que ofrece <a href="https://www.vaultproject.io/">Vault</a> de <a href="https://www.hashicorp.com/">HashiCorp</a> es ofrecer el cifrado y descifrado como servicio. Este artículo está basado en la <a href="https://learn.hashicorp.com/tutorials/vault/eaas-spring-demo?in=vault/encryption-as-a-service">guía de Vault sobre la funcionalidad de cifrado y descifrado</a>.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#vault-como-servicio-de-cifrado-y-descifrado">Vault como servicio de cifrado y descifrado</a>
-      <ul>
+      <ol>
         <li><a href="#servicio-de-cifrado-y-descifrado">Servicio de cifrado y descifrado</a></li>
         <li><a href="#servicio-de-transformación">Servicio de transformación</a></li>
         <li><a href="#proveedor-de-claves">Proveedor de claves</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#ejemplo-de-cifrado-y-descifrado-de-datos">Ejemplo de cifrado y descifrado de datos</a></li>
     <li><a href="#ejemplo-aplicación-con-spring">Ejemplo aplicación con Spring</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="vault-como-servicio-de-cifrado-y-descifrado">Vault como servicio de cifrado y descifrado</h3>
+<h2 id="vault-como-servicio-de-cifrado-y-descifrado">Vault como servicio de cifrado y descifrado</h2>
 <p>Vault es una herramienta dedicada a la seguridad de la empresa HashiCorp. Tiene diferentes funcionalidades como servir de almacenamiento de secretos en su base de datos de claves y valores, <a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">generar credenciales de acceso bajo demanda a recursos como bases de datos</a> entre otras como cifrado y descifrado como servicio. En todas estás funcionalidades diversos aspectos de la seguridad se centralizan en un único componente del sistema.</p>
 <p>Las claves de cifrado únicamente se almacenan en Vault, por otro lado las aplicaciones no han de mantener credenciales para el acceso a una base de datos sino que es Vault el que crea las credenciales válidas únicamente por un periodo de tiempo corto con posibilidad de renovación. Esto aumenta la seguridad ya que una aplicación no ha de mantener unas credenciales para la base de datos válidas por un tiempo indefinido, al mismo tiempo las claves de cifrado están centralizadas en vez estar incluidas en cada aplicación. En caso necesario Vault es capaz de revocar las credenciales de cualquier aplicación.</p>
 <p>Vault ofrece dos servicios para proteger los datos, el servicio de cifrado y descifrado está disponible en Vault y el de transformación requiere la versión <em>Enterprise</em>.</p>
@@ -298,7 +298,7 @@
 <div class="media media-video">
   <iframe width="640" height="360" data-src="https://www.youtube.com/embed/DOw0Y6ig1i4" frameborder="0" class="lozad" allowfullscreen></iframe>
 </div>
-<h4 id="servicio-de-cifrado-y-descifrado">Servicio de cifrado y descifrado</h4>
+<h3 id="servicio-de-cifrado-y-descifrado">Servicio de cifrado y descifrado</h3>
 <p>El servicio de cifrado y descifrado de Vault consisten simplemente en aplicar un algoritmo de cifrado a un dato en texto plano y devolverlo cifrado y realizar la operación contraria aplicar el algoritmo de descifrado a un dato cifrado y devolverlo en texto plano. Además de mantener las claves de cifrado con la posibilidad rotarlas, es decir, crear nuevas claves.</p>
 <p>El proceso de cifrado de Vault transforma el dato original en un valor que no tiene ningún sentido sin aplicar el proceso de descifrado. El formato del dato original se pierde, esto es, si el dato original es un número de teléfono con el formato <em>(+34) 666554433</em> el dato cifrado es una secuencia de caracteres de cierta longitud con otro formato. Esta pérdida de formato es un inconveniente al guardar el dato en la base de datos para solventarlo Vault ofrece el servicio de transformación.</p>
 <div class="media">
@@ -307,7 +307,7 @@
 <figcaption>Uso del servicio de cifrado y descifrado de Vault</figcaption>
 </figure>
 </div>
-<h4 id="servicio-de-transformación">Servicio de transformación</h4>
+<h3 id="servicio-de-transformación">Servicio de transformación</h3>
 <p>En vez de cifrado Vault también ofrece un servicio de transformación que permite obtener un dato ofuscado pero que conserva el mismo formato y longitud que el original. Que el dato tenga el formato original es importante en una base de datos relacional ya que la longitud y formato de la columna para guardarlo será el mismo que el original, en el caso de un dato cifrado el campo se ha ade adaptar al resultado cifrado lo que no es deseable.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">$ vault secrets enable transform&#10;</span></span><span class="line"><span class="cl">...&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -328,11 +328,11 @@
         <span>vault-transform-decode.sh</span>
     </div>
 </div>
-<h4 id="proveedor-de-claves">Proveedor de claves</h4>
+<h3 id="proveedor-de-claves">Proveedor de claves</h3>
 <p>En un caso de uso en el que es necesario cifrar volúmenes de datos grandes, como <em>blobs</em> de 1 GB, requiere codificar en <em>base64</em> y enviar a Vault por red y obtener la respuesta de tal volumen de datos, esto no es deseable para obtener el mejor rendimiento. En vez de enviar los datos se pueden cifrar los datos localmente con la clave obtenida de Vault. La idea es permitir a la aplicación cifrar y descifrar los datos sin necesidad de llamadas y retornos a Vault con grandes volúmenes de datos.</p>
 <p>La respuesta para obtener la clave de cifrado contiene la clave de datos tanto en texto plano como en forma cifrada. Con la clave de datos en texto plano se pueden cifrar los datos y almacenar la clave de datos cifrada junto a los datos. Al necesitar descifrar los datos se solicita a Vault descifrar la clave de datos cifrada para obtener la clave de datos en texto plano permitiendo de esta forma descifrar los datos localmente. Esto es, una vez que el <em>blob</em> está cifrado no es necesario almacenar la clave de datos, solo se necesita almacenar la versión cifrada de la misma.</p>
 <p>Esta idea permite cifrar y descifrar grandes volúmenes de datos a la aplicación sin realizar comunicaciones de red costosas con Vault. En este caso Vault no proporciona el servicio de cifrado y descifrado sino que lo hace la aplicación, sin embargo, Vault administra la gestión de las claves usadas por la aplicación que no ha de mantener ninguna clave privada.</p>
-<h3 id="ejemplo-de-cifrado-y-descifrado-de-datos">Ejemplo de cifrado y descifrado de datos</h3>
+<h2 id="ejemplo-de-cifrado-y-descifrado-de-datos">Ejemplo de cifrado y descifrado de datos</h2>
 <p>Vault dispone tres métodos de acceso a sus funcionalidades entre ellas el servicio de cifrado y descifrado. Los tres métodos son mediante línea de comandos, mediante API REST o mediante la consola web de administración. En este ejemplo solo se muestra la versión de línea de comandos, la opción mediante API REST es posible probarla mediante una herramienta de linea de comandos como <em>curl</em>.</p>
 <p>El primer paso es iniciar Vault, en este caso por simplicidad en modo desarrollo y habilitar el <em>transit engine</em> que proporciona el servicio de cifrado y descifrado.</p>
 <div class="code">
@@ -374,7 +374,7 @@
         <span>vault-rotate-key.sh</span>
     </div>
 </div>
-<h3 id="ejemplo-aplicación-con-spring">Ejemplo aplicación con Spring</h3>
+<h2 id="ejemplo-aplicación-con-spring">Ejemplo aplicación con Spring</h2>
 <p><a href="https://spring.io/">Spring</a> proporciona clases de soporte para el acceso al servicio de Vault. Tanto para la configuración de acceso a Vault como para usar sus servicios mediante una API de clases Java sin tener que recurrir a la API REST de Vault directamente. La clase <a href="https://docs.spring.io/spring-vault/docs/current/api/org/springframework/vault/core/VaultOperations.html">VaultOperations</a> contiene las referencias de clases para el acceso a las API de Vault, para el caso de el servicio de cifrado y descifrado con la clase <a href="https://docs.spring.io/spring-vault/docs/current/api/org/springframework/vault/core/VaultTransitOperations.html">VaultTransitOperations</a>.</p>
 <div class="media">
 <figure>

@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -276,24 +276,24 @@
 <p>El propósito original de la Raspberry Pi es el educativo y la electrónica, en cualquier caso es capaz de utilizarse para multitud de propósitos como servidor NAS, descargas torrent, centro multimedia, servidor <a href="https://nextcloud.com/">NextCloud</a> como alternativa a las herramientas de <a href="https://www.google.es/intl/es/docs/about/">Google Docs</a> o <a href="https://www.google.com/photos/about/">Photos</a> o evitar anuncios con AdGuard, consola de juegos retro con <a href="https://retropie.org.uk/">RetroPie</a> o <a href="https://www.lakka.tv/">Lakka</a>.</p>
 <p>Desde su aparición en el año 2010 han surgido <a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/">numerosas alternativas de la Raspberry Pi</a> en formato y características similares. Algunas incluso más potentes, sin embargo, dada la popularidad de la RPi es la que mejor soporte de software ofrece y de la que hay más información en caso de buscarla.</p>
 <p>La <a href="https://magpi.raspberrypi.org/">revista MagPi</a> en PDF se puede descargar de forma gratuita y contiene numerosos artículos sobre como realizar proyectos de programación y electrónica con esta computadora. También puede adquirirse en formato impreso, se solicita pagar un pequeño importe  para mantener la publicación así que si la sueles obtener todos los números considera hacer un pago de vez en cuando.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#cómo-instalar-gnulinux-en-la-raspberry-pi">Cómo instalar GNU/Linux en la Raspberry Pi</a>
-      <ul>
+      <ol>
         <li><a href="#raspberry-pi-os">Raspberry Pi OS</a></li>
         <li><a href="#ubuntu-server">Ubuntu Server</a></li>
         <li><a href="#otras-distribuciones-y-documentación">Otras distribuciones y documentación</a></li>
-      </ul>
+      </ol>
     </li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="cómo-instalar-gnulinux-en-la-raspberry-pi">Cómo instalar GNU/Linux en la Raspberry Pi</h3>
+<h2 id="cómo-instalar-gnulinux-en-la-raspberry-pi">Cómo instalar GNU/Linux en la Raspberry Pi</h2>
 <p>Una vez en posesión de una Raspberry Pi y elementos imprescindibles, cargador de alimentación y tarjeta SD o microSD y opcionalmente teclado y monitor, el primer paso es realizar la instalación del sistema operativo. El sistema operativo oficial es <a href="https://www.raspberrypi.org/software/">Raspberry Pi OS</a>.</p>
 <p>La instalación se hace en una tarjeta de memoria microSD o una memoria USB, para la instalación se requiere de otra computadora en la que utilizar la aplicación <em>Raspberry Pi Image</em> que descarga la imagen del sistema operativo y formatea la unidad de almacenamiento. Dispone de una versión para los sistemas operativos <a href="https://www.microsoft.com/es-es/windows/">Windows</a>, <a href="https://www.apple.com/macos/">macOS</a> y como aplicación <a href="https://flatpak.org/">Flatpak</a> para cualquier distribución <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>.</p>
 <p>El grabar la imagen en la tarjeta de almacenamiento conlleva la pérdida de los datos que tuviese con lo es necesario previamente haber hecho una copia de seguridad de los datos que contenga.</p>
-<h4 id="raspberry-pi-os">Raspberry Pi OS</h4>
+<h3 id="raspberry-pi-os">Raspberry Pi OS</h3>
 <p>El sistema operativo Raspberry Pi OS está basado en la distribución <a href="https://www.debian.org/">Debian</a>, dispone de varias versiones una con entorno gráfico de escritorio y la versión <em>Lite</em> sin entorno de escritorio.</p>
 <p>Una de las ventajas de Raspberry Pi OS es que la misma imagen de la distribución sirve par cualesquiera versiones de la Raspberry Pi independientemente de las diferentes versiones que se han lanzado, incluyendo las primeras 1, 2, 3 y 4.</p>
 <p>La aplicación Raspberry Pi Image es muy sencilla, basta seleccionar la versión de la Raspberry Pi OS, insertar la tarjeta SD, seleccionar la unidad de la tarjeta SD y proceder a la instalación que se completa en unos pocos minutos. En la tarjeta SD se crean dos particiones, la de arranque o <em>boot</em> y la raíz o <em>root</em>.</p>
@@ -345,7 +345,7 @@
         <span>apt-install-nginx.sh</span>
     </div>
 </div>
-<h4 id="ubuntu-server">Ubuntu Server</h4>
+<h3 id="ubuntu-server">Ubuntu Server</h3>
 <p><a href="https://www.ubuntu.com/">Ubuntu</a> también ofrece una versión de su distribución GNU/Linux para la Raspberry Pi para las versiones 2+, no soportando los primeros modelos originales de la Raspberry Pi. La versión de escritorio de Ubuntu para la Raspberry Pi requiere al menos 4 GiB y la versión RPi 4, Ubuntu Server y Ubuntu Core no incluye interfaz gráfica.</p>
 <p>El proceso de instalación de Ubuntu tanto para la versión de escritorio como la para las versiones <em>Server</em> y <em>Core</em>, es posible realizarlas mediante Raspberry Pi Image. Raspberry Pi Image permite seleccionar la versión de Ubuntu y esta se encarga de descargarla e instalarla en la tarjeta microSD seleccionada.</p>
 <div class="media">
@@ -367,7 +367,7 @@
         <span>apt-install-nginx.sh</span>
     </div>
 </div>
-<h4 id="otras-distribuciones-y-documentación">Otras distribuciones y documentación</h4>
+<h3 id="otras-distribuciones-y-documentación">Otras distribuciones y documentación</h3>
 <p>La misma Raspberry Pi Image permite instalar otras distribuciones de uso específico o paquetes como consola de juegos retro, servidor multimedia, servidor NAS, <em>proxy</em> de navegación para evitar publicidad y ser rastreado, nube de documentos personal, &hellip; Otras distribuciones también ofrecen una versión de su sistema operativo para la Raspberry como <a href="https://wiki.debian.org/RaspberryPi">Debian RPi</a> y <a href="https://archlinuxarm.org/">Arch Linux ARM</a>. Como el sistema operativo se almacena en una tarjeta de memoria o USB es fácil cambiar de una distribución a otra.</p>
 <div class="media">
 <figure>

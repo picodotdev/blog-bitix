@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -276,18 +276,18 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2021/02/licencias-de-software-libre-y-diferencias-con-software-privativo-y-de-codigo-abierto/">Licencias de software libre y diferencias con software privativo y de código abierto</a></li>
 </ul>
 <p>Sin embargo, el núcleo sólo es una parte de lo que se considera un sistema operativo ya que aunque tiene muchas funcionalidades un usuario no interacciona directamente con el sistema operativo sino que lo hace a través de una colección de herramientas y programas de línea de comandos, entre ellas se encuentra en un intérprete de comandos. Generalmente en las distribuciones Linux la colección de herramientas son las proporcionadas por <a href="https://www.gnu.org/">el proyecto GNU</a> que es un proyecto distinto al núcleo de Linux, y por eso muchas veces nos referimos a Linux por el término GNU/Linux cuando se desea dar crédito a ambos proyectos.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#qué-hace-un-intérprete-de-comandos">Qué hace un intérprete de comandos</a></li>
     <li><a href="#funcionalidades-del-intérprete-de-comandos">Funcionalidades del intérprete de comandos</a></li>
     <li><a href="#intérpretes-de-comandos">Intérpretes de comandos</a></li>
     <li><a href="#como-cambiar-el-intérprete-de-comandos-del-usuario">Como cambiar el intérprete de comandos del usuario</a></li>
     <li><a href="#configurar-el-_prompt_-del-símbolo-del-sistema">Configurar el <em>prompt</em> del símbolo del sistema</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="qué-hace-un-intérprete-de-comandos">Qué hace un intérprete de comandos</h3>
+<h2 id="qué-hace-un-intérprete-de-comandos">Qué hace un intérprete de comandos</h2>
 <p>Un intérprete de comandos es una interfaz basada en texto que permite introducir los comandos a ejecutar compuestos por el nombre del programa, opciones de invocación y sus argumentos. El intérprete de comandos también permite establecer variables de entorno para almacenar valores e incluirlos en el comando así como redirigir la salida a archivos y crear tuberías para redirigir la salida de un programa a la entrada de otros que permiten realizar una funcionalidad compleja a partir de comandos más simples.</p>
 <p>Los sistemas operativos actuales tienen una interfaz gráfica pero todos proporcionan una terminal virtual en la que interactuar con el sistema operativo mediante comandos y texto, se ejecutan desde una terminal virtual, cada entorno de escritorio también proporciona su propia entre su colección de aplicaciones gráficas integradas. En <a href="https://www.gnome.org/">GNOME</a> es <a href="https://help.gnome.org/users/gnome-terminal/stable/">Terminal</a> y <a href="https://apps.gnome.org/es/app/org.gnome.Console/">Console</a> y en <a href="https://www.kde.org/">KDE</a> es <a href="https://konsole.kde.org/">Konsole</a>.</p>
 <p>Aún con las interfaces gráficas las terminales y la línea de comandos siguen siendo muy utilizadas por su posibilidad de automatización y conociendo el comando es más sencillo que utilizar una herramienta gráfica. Además, para la administración de servidores siguen siendo la interfaz de administración principal incluso antes que las interfaces gráficas.</p>
@@ -297,12 +297,12 @@
 <figcaption>Emulador de terminal de GNOME Terminal</figcaption>
 </figure>
 </div>
-<h3 id="funcionalidades-del-intérprete-de-comandos">Funcionalidades del intérprete de comandos</h3>
+<h2 id="funcionalidades-del-intérprete-de-comandos">Funcionalidades del intérprete de comandos</h2>
 <p>Las funcionalidades de introducir comandos y ejecutarlos, variables de entorno, redirecciones y tuberías son funcionalidades básicas que los intérpretes de comandos actuales poseen. Algunas funcionalidades no están presentes en todos los intérprete de comandos y otras en función del inteŕprete funciona de forma ligeramente diferente o con algún añadido adicional.</p>
 <p>Una funcionalidad que cambia en función del intérprete es qué ocurre cuando se pulsa la tecla tabulador. Al pulsar esta tecla los intérpretes suelen proporcionar autocompletado para el nombre del directorio o nombre de comando pero algunos son capaces de hacerlo incluso de forma recursiva en múltiples directorios o aplicando correcciones de fallos de tipografía aplicando la corrección cuando se introduce una letra mal.</p>
 <p>Otra variación en función del intérprete es el tipo de expansión comodín o <em>wildcard expansion</em> que se soporta. Las expansiones comodín son una versión simplificada de las expresiones regulares que permiten encontrar múltiples coincidencias, estos es muy utilizado por ejemplo para seleccionar múltiples archivos o cierto tipo de archivos como todos los archivos de música o vídeo con <em>*.mp3</em> o <em>*.mp4</em> respectivamente, estas expresiones con un comodín del caracter asterisco seleccionan todos los archivos con cualquier nombre y de extensión <em>mp3</em> o <em>mp4</em>.</p>
 <p>Otra funcionalidad es la posibilidad de personalizar el aspecto del símbolo del sistema o <em>prompt</em> para que muestre la información que se desee en texto y con los colores deseados. Los símbolos del sistema por defecto incluyen el directorio de trabajo actual, el nombre de usuario y el nombre del sistema en el que se está trabajando.</p>
-<h3 id="intérpretes-de-comandos">Intérpretes de comandos</h3>
+<h2 id="intérpretes-de-comandos">Intérpretes de comandos</h2>
 <p>Dado que el intérprete de comandos es simplemente un programa más hay varios disponibles con ligeras variaciones sobre las funcionalidades básicas pero suficientes para que algunos desarrolladores según sus ideales hayan creado varios.</p>
 <p>En las distribuciones GNU/Linux generalmente el intérprete de comandos preinstalado por defecto es <a href="https://es.wikipedia.org/wiki/Bash">bash</a> y otro popular es <a href="https://zsh.sourceforge.net/">zsh</a> que se ha convertido en el por defecto en el sistema operativo macOS en sustitución de bash. Otros intérprete de comandos menos conocidos son <a href="https://fishshell.com/">fish</a> y <a href="https://wiki.archlinux.org/index.php/Dash">dash</a> pero no son los únicos.</p>
 <p>Las funcionalidades principales de todo intérprete de comandos las soportan todos, casi la mayor diferencia entre ellos aparte de su popularidad es su nivel de personalización y en menor medida algunas mejoras y rendimiento pero que estas dos últimas no suelen ser determinantes para cambiar de uno a otro.</p>
@@ -316,7 +316,7 @@
 <li><a href="https://www.gnu.org/software/bash/manual/bash.html">Bash Manual</a></li>
 <li><a href="https://zsh.sourceforge.io/Doc/Release/zsh_toc.html">Zsh Manual</a></li>
 </ul>
-<h3 id="como-cambiar-el-intérprete-de-comandos-del-usuario">Como cambiar el intérprete de comandos del usuario</h3>
+<h2 id="como-cambiar-el-intérprete-de-comandos-del-usuario">Como cambiar el intérprete de comandos del usuario</h2>
 <p>Independientemente del intérprete de comandos que preinstale la distribución GNU/Linux este se puede cambiar instalando el paquete de otro intérprete y ejecutándolo como un comando más. También es posible cambiar el intérprete por defecto al abrir una terminal.</p>
 <p>Este comando permiten instalar el intérprete de comandos zsh.</p>
 <div class="code">
@@ -340,7 +340,7 @@
 <figcaption>Intérprete de comandos bash y zsh</figcaption>
 </figure>
 </div>
-<h3 id="configurar-el-_prompt_-del-símbolo-del-sistema">Configurar el <em>prompt</em> del símbolo del sistema</h3>
+<h2 id="configurar-el-_prompt_-del-símbolo-del-sistema">Configurar el <em>prompt</em> del símbolo del sistema</h2>
 <p>Uno de los motivos de cambiar de un intérprete de comandos por otro es cambiar el aspecto del símbolo del sistema. bash con la variable de entorno <em>PS1</em> permite personalizar en cierta medida <em>prompt</em> y si se usa el sistema de control de versiones Git este ofrece una utilidad para que el símbolo del sistema indique el estado de cambios cuando el directorio de trabajo actual es un repositorio de Git. Sin embargo, estas personalizaciones son limitadas y específicas de cada <em>shell</em>.</p>
 <p>En mi caso este es el aspecto que utilizo con bash, en el que he cambiado los colores y usado la utilidad para mostrar información del repositorio Git. La segunda image es la potente personalización e independiente del <em>shell</em> ofrecida por <a href="https://starship.rs/">Starship</a>.</p>
 <ul>

@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -274,7 +274,7 @@
 <p>Algunas de estas nuevas capacidades de JavaScript son nuevas versiones del lenguaje con <a href="https://es.wikipedia.org/wiki/ECMAScript">ECMAScript</a> con soporte para módulos, <a href="https://www.khronos.org/webgl/">WebGL</a> o componentes de lado de cliente con <a href="https://www.webcomponents.org/">Web Components</a>. Con las nuevas capacidades de JavaScript han surgido una comunidad de JavaScript con numerosas librerías entre las que elegir para realizar tareas. Una de las áreas son los componentes de lado del cliente, <a href="https://picodotdev.github.io/blog-bitix/2019/03/componentes-en-el-cliente-con-web-components-usando-javascript-html-y-css/">el estándar que define la W3C son los Web Components</a> pero hay algunas otras alternativas que sustituyen o complementan como <a href="https://reactjs.org/">React</a>, <a href="https://vuejs.org/">Vue</a> o <a href="https://angular.io/">Angular</a>.</p>
 <p>Para desarrollar componentes en lado del cliente se necesita la aplicación final donde se van a usar, si se está desarrollando una librería para ser usada en múltiples aplicaciones de una organización o incluso un sistema de diseño o <em>design system</em> para la organización es muy útil poder desarrollar, probar y ejecutar estos componentes de forma aislada de la aplicación donde se usen.</p>
 <p>En este artículo muestro cómo utilizar <a href="https://storybook.js.org/">Storybook</a>, componentes React con <a href="https://www.typescriptlang.org/">TypeScript</a>, pruebas unitarias con <a href="https://jestjs.io/">Jest</a> y visuales con <a href="https://github.com/americanexpress/jest-image-snapshot">Jest Image Snapshot</a>, archivos CSS con <a href="https://lesscss.org/">Less</a> finalmente como crear un paquete de <a href="https://www.npmjs.com/">npm</a> para utilizarlo en otra librería o proyecto.</p>
-<h3 id="desarrollo-aislado-de-componentes-sistemas-de-diseño-y-documentación-con-storybook">Desarrollo aislado de componentes, sistemas de diseño y documentación con Storybook</h3>
+<h2 id="desarrollo-aislado-de-componentes-sistemas-de-diseño-y-documentación-con-storybook">Desarrollo aislado de componentes, sistemas de diseño y documentación con Storybook</h2>
 <p>Storybook es una herramienta que permite desarrollar los componentes de React, Vue o Angular entre otros de forma aislada, es como una caja de arena donde desarrollarlos, probarlos y además documentarlos. El desarrollo incluye las pruebas unitarias con Jest y <em>visual testing</em> con un complemento para Jest que permite si con algún cambio ha habido alguna variación en el aspecto visual de un componente a nivel de píxel. También permite ver el comportamiento de los componentes en diseños <em>resposive</em> y ver su documentación así como en diferentes configuraciones.</p>
 <p>Storybook puede utilizarse para implementar un <em>design system</em> de una organización y ver los diferentes colores, estilos y componentes en ejecución y no solo como un diseño. Esto hace que el diseño y la implementación del diseño se mantengan sincronizados y no surjan inconsistencias entre ellos.</p>
 <p>En su <a href="https://storybook.js.org/docs/guides/quick-start-guide/">guía de inicio</a> un comando permite crear la estructura de archivos para empezar a usarlo.</p>
@@ -349,7 +349,7 @@
         <span>main.js</span>
     </div>
 </div>
-<h3 id="lenguaje-de-programación-typescript-y-tslint">Lenguaje de programación TypeScript y TSLint</h3>
+<h2 id="lenguaje-de-programación-typescript-y-tslint">Lenguaje de programación TypeScript y TSLint</h2>
 <p>TypeScript es un superconjunto de JavaScript, su principal diferencia es que es un lenguaje tipado lo que permite descubrir en tiempo de compilación numerosos errores que se producirán en tiempo de ejecución y que los editores ofrecen soporte realizar <em>refactors</em> de forma rápida y segura. Los componentes de React pueden desarrollarse con TypeScript.</p>
 <p>Para desarrollar un componente propio basta con crear el archivo del componente en la carpeta <em>src/components</em> con la definición del componente en este caso de React. Con React se incluye el soporte para desarrollar componentes con ES2016 y JSX de React, a continuación se muestra usando TypeScript y archivos TSX que es el equivalente de JSX en TypeScript.</p>
 <p>Para añadir el soporte de TypeScript a Storybook hay que instalar algunos paquetes npm, crear algún archivo de configuración y realizar modificaciones en otros. Además de TypeScript se añade el paquete para utilizar el <em>linter</em> <a href="https://palantir.github.io/tslint/">TSLint</a> para este lenguaje que muestra errores en caso de no cumplir las convenciones y reglas de formateo.</p>
@@ -392,7 +392,7 @@
         <span>tslint-run.sh</span>
     </div>
 </div>
-<h3 id="pruebas-unitarias-y-visuales-con-jest-y-jest-image-snapshot">Pruebas unitarias y visuales con Jest y Jest Image Snapshot</h3>
+<h2 id="pruebas-unitarias-y-visuales-con-jest-y-jest-image-snapshot">Pruebas unitarias y visuales con Jest y Jest Image Snapshot</h2>
 <p>En los tiempos actuales desarrollar pruebas debería ser parte del desarrollo, Jest permite realizar pruebas unitarias y <em>jest-image-snapshot</em> para realizar pruebas visuales. Hay instalar los paquetes de estas herramientas y añadir varios archivos de configuración, las pruebas también pueden desarrollarse con TypeScript, hay que añadir varios archivos de configuración.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ npm install --save-dev @storybook/addon-storyshots-puppeteer jest puppeteer jest-puppeteer jest-image-snapshot jest-transform-stub puppeteer-extra start-server-and-test ts-jest @types/jest @types/puppeteer @types/jest-environment-puppeteer @types/expect-puppeteer&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -468,7 +468,7 @@
         <span>test-visual-update.sh</span>
     </div>
 </div>
-<h3 id="hojas-de-estilos-css-con-less">Hojas de estilos CSS con Less</h3>
+<h2 id="hojas-de-estilos-css-con-less">Hojas de estilos CSS con Less</h2>
 <p>Las hojas de estilo CSS permite separar el formato del contenido HTML. Para facilitar el desarrollo de hojas de estilo han surgido herramientas que añaden capacidades que CSS no posee. Estas herramientas como Less permiten generar como resultado un archivo CSS. Hay múltiples herramientas Less es una de ellas que se caracteriza por su simplicidad.</p>
 <p>Storybook permite utilizar archivos de hojas de estilo <em>less</em>. Para realizar la transformación de less a css Storybook utiliza <a href="https://webpack.js.org/">Webpack</a>, hay que instalar las dependencias que le permiten transformar los archivos y la configuración para que detecte los archivos <em>less</em> para transformarlos a <em>css</em>.</p>
 <div class="code">
@@ -483,7 +483,7 @@
         <span>webpack.config.js</span>
     </div>
 </div>
-<h3 id="creación-del-paquete-npm">Creación del paquete NPM</h3>
+<h2 id="creación-del-paquete-npm">Creación del paquete NPM</h2>
 <p>El objetivo final es crear un paquete npm que incluya los componentes de React para ser utilizados en una aplicación. Para crear el paquete npm basta ejecutar el comando <em>npm pack</em> pero este lo crea usando la misma estructura de directorios del código fuente lo que hace que al usar los componentes los <em>imports</em> reflejen la estructura del código fuente. Si esto no se desea hay que crear un directorio con el contenido del paquete npm y ejecutar el comando <em>npm pack</em> desde él, esto es lo que hacen los diferentes <em>scripts</em> <em>build</em>.</p>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2020/03/usar-un-paquete-npm-con-webpack-creado-con-storybook-react-y-typescript/">Uso de un paquete npm con Webpack creado con Storybook, React y TypeScript</a></li>

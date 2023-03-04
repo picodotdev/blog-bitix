@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -267,7 +267,7 @@
 </div>
 <p>Los datos contenidos en las bases de datos relacionales son de los más importante en una aplicación. Hacer copias de seguridad o volcados de forma regular es indispensable para poder restaurar los datos en caso de desastre en el servidor. Las bases de datos proporcionan herramientas para hacer estas copias de seguridad y restaurado tanto de los datos como del esquema de las bases de datos. Las copias de seguridad y restaurado también nos sirven para disponer en nuestro entorno de desarrollo de una base de datos con datos reales con los que probar la aplicación.</p>
 <p>En la base de datos <a href="https://www.postgresql.org/">PosgreSQL</a> disponemos de los comandos <a href="https://www.postgresql.org/docs/current/app-pgdump.html"><em>pg_dump</em></a> para hacer la copia de seguridad o extraer el esquema y los datos y el comando <a href="https://www.postgresql.org/docs/current/app-pgrestore.html"><em>pg_restore</em></a> para cargarlos en un nuevo servidor u otro esquema. En <a href="https://www.mysql.com/">MySQL</a> disponemos de los comandos <a href="https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html">mysqldump</a> y depende de como hagamos las copias de seguridad <a href="https://dev.mysql.com/doc/refman/8.0/en/mysqlimport.html">mysqlimport</a>.</p>
-<h3 id="postgresql">PostgreSQL</h3>
+<h2 id="postgresql">PostgreSQL</h2>
 <p>Los comandos básicos para hacer la copia de seguridad y restauración en PostgreSQL de una base de datos completa son lo siguientes:</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ pg_dump database &gt; database.sql&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ psql -d database -f database.sql</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -296,7 +296,7 @@
         <span>postgresql-compress.sh</span>
     </div>
 </div>
-<h3 id="mysql">MySQL</h3>
+<h2 id="mysql">MySQL</h2>
 <p>En MySQL los comandos de copia de seguridad y restauración son similares.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ mysqldump database &gt; database.sql&#10;</span></span><span class="line"><span class="cl">$ mysql database &lt; database.sql&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -325,7 +325,7 @@
         <span>mysql-compress.sh</span>
     </div>
 </div>
-<h3 id="carga-masiva-de-datos">Carga masiva de datos</h3>
+<h2 id="carga-masiva-de-datos">Carga masiva de datos</h2>
 <p>Si se desean cargar datos de una fuente externa de forma masiva a una base de datos PostgreSQL o MySQL en vez de generar un archivo con varios cientos de miles las sentencias <em>insert</em> es mejor generar un archivo en formato <em>csv</em> o <em>txt</em> con algunos delimitadores y usar el comando <a href="https://www.postgresql.org/docs/current/sql-copy.html"><em>COPY</em></a> en PostgreSQL o el comando <a href="https://dev.mysql.com/doc/refman/8.0/en/load-data.html"><em>LOAD DATA</em></a> en MySQL complemento de <a href="https://dev.mysql.com/doc/refman/8.0/en/select-into.html">SELECT &hellip; INTO</a>. Estos comandos están diseñados para cargar datos de forma masiva en la base de datos con lo que la importación será mucho más rápida.</p>
 <p>En ambos casos las exportaciones e importaciones soportan archivos en formato texto y csv con la posibilidad de personalizar los caracteres separadores de las columnas y las columnas en las que importar los datos.</p>
 <div class="code">

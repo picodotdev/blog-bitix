@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -267,44 +267,44 @@
 </div>
 <p>La autenticación es el mecanismo de seguridad que permite identificar a un usuario y es quien dice ser. Para comprobar que el usuario es quien dice ser se utiliza una contraseña que solo conoce el usuario. Pero las contraseñas como medida de seguridad no son perfectas, ya que algunos de los usuarios utilizan contraseñas débiles con pocos caracteres, con palabras de diccionario o conocidas y utilizan la misma contraseña en varias cuentas de modo que si un servicio sufre un problema de seguridad las cuentas de otros servicios con la misma contraseña quedan vulnerables.</p>
 <p>Toda la seguridad de las contraseñas depende de que solo sea conocida por el propietario de la cuenta, las contraseñas son un factor de seguridad de algo que sólo el legítimo propietario conoce. Otro mecanismo de seguridad es basar la seguridad adicionalmente en algo que se tiene, esto es el segundo factor de autenticación.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#qué-es-un-segundo-factor-de-autenticación-o-2fa">Qué es un segundo factor de autenticación o 2FA</a></li>
     <li><a href="#por-qué-activar-un-segundo-factor-de-autenticación">Por qué activar un segundo factor de autenticación</a></li>
     <li><a href="#cómo-funciona-un-segundo-factor-de-autenticación">Cómo funciona un segundo factor de autenticación</a></li>
     <li><a href="#cómo-activar-un-segundo-factor-de-autenticación">Cómo activar un segundo factor de autenticación</a>
-      <ul>
+      <ol>
         <li><a href="#cómo-activar-2fa-en-una-cuenta-de-google">Cómo activar 2FA en una cuenta de Google</a></li>
         <li><a href="#cómo-activar-2fa-en-una-cuenta-de-amazon">Cómo activar 2FA en una cuenta de Amazon</a></li>
         <li><a href="#cómo-activar-2fa-en-una-cuenta-de-paypal">Cómo activar 2FA en una cuenta de PayPal</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#aplicación-para-_smartphone_-generador-de-totp">Aplicación para <em>smartphone</em> generador de TOTP</a></li>
     <li><a href="#aplicación-de-escritorio-generador-de-totp">Aplicación de escritorio generador de TOTP</a>
-      <ul>
+      <ol>
         <li><a href="#por-qué-utilizar-keepassxc-adicionalmente-a-una-aplicación-del-móvil">Por qué utilizar KeePassXC adicionalmente a una aplicación del móvil</a></li>
-      </ul>
+      </ol>
     </li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="qué-es-un-segundo-factor-de-autenticación-o-2fa">Qué es un segundo factor de autenticación o 2FA</h3>
+<h2 id="qué-es-un-segundo-factor-de-autenticación-o-2fa">Qué es un segundo factor de autenticación o 2FA</h2>
 <p>El segundo factor de autenticación o 2FA es un mecanismo de seguridad que se suele utilizar adicionalmente al mecanismo de seguridad de contraseña. Adicionalmente a la contraseña el usuario ha de proporcionar un código generado con el segundo factor de autenticación.</p>
 <p>El generador de segundo factor de autenticación puede ser de diferentes formas, una de ellas es una aplicación para móvil y otra una aplicación de escritorio, también hay dispositivos hardware específicos de 2FA que se conectan por USB al ordenador. También se denomina doble factor de autenticación o autenticación de dos factores.</p>
-<h3 id="por-qué-activar-un-segundo-factor-de-autenticación">Por qué activar un segundo factor de autenticación</h3>
+<h2 id="por-qué-activar-un-segundo-factor-de-autenticación">Por qué activar un segundo factor de autenticación</h2>
 <p>Con el segundo factor de autenticación activado aunque la contraseña de un servicio se vea comprometida la cuenta seguirá protegida ya que adicionalmente a la contraseña se necesita el segundo factor de seguridad. Las contraseñas quedan expuestas si un servicio tiene una vulnerabilidad de seguridad o por alguno de los varios <a href="https://picodotdev.github.io/blog-bitix/2021/10/manual-basico-sobre-ataques-informaticos-peligros-tipos-como-detectarlos-como-evitarlos-y-medidas-de-prevencion/">tipos de ataque informático contra el usuario</a> que es aprovechada por delincuentes para obtener las contraseñas de seguridad de usuarios con el objetivo de poder acceder a sus cuentas. Estos fallos de seguridad son explotables a través de la red sin necesidad de acceso físico a los servidores del servicio.</p>
 <p>El segundo factor de autenticación añade más seguridad ya que los delincuentes deben comprometer no solo el servicio sino adicionalmente el dispositivo generador de segundo factor de autenticación.</p>
 <p>Activar el segundo factor de autenticación es recomendable porque añade una seguridad adicional mucho mayor que utilizando únicamente una contraseña. Los servicios como el correo electrónico de <a href="https://www.google.es/">Google</a>, la plataforma de comercio electrónico <a href="https://amzn.to/2flFhHA" rel="sponsored">Amazon</a>, el sistema de pagos <a href="https://www.paypal.com/">PayPal</a> permite a los usuarios activar el 2FA. Es recomendable hacerlo cuando sea posible ya que servicios como estos se utilizan para tareas importantes como toda la comunicación e información del usuario, compras por internet donde se guardan tarjetas de crédito y números de cuenta bancaria.</p>
-<h3 id="cómo-funciona-un-segundo-factor-de-autenticación">Cómo funciona un segundo factor de autenticación</h3>
+<h2 id="cómo-funciona-un-segundo-factor-de-autenticación">Cómo funciona un segundo factor de autenticación</h2>
 <p>Al realizar la autenticación en un servicio para iniciar sesión se ha de introducir el identificativo del usuario y la contraseña, después con el segundo factor de autenticación activado adicionalmente se solicita un código adicional que el usuario ha de proporcionar. El código adicional es proporcionado por las aplicaciones generadores de 2FA.</p>
 <p>Las aplicaciones generadoras de códigos 2FA se inicializan al activar el 2FA en la cuenta, en el caso de una aplicación móvil normalmente se hace escaneando un código QR con la cámara de fotos, para otros dispositivos se proporciona una secuencia de letras. El código QR o la secuencia de letras son la semilla con la que se generan los códigos.</p>
 <p>Los códigos 2FA que se generan adicionalmente son temporales y solo son válidos durante un periodo corto de tiempo, a estos códigos 2FA se les denomina TOTP acrónimo de <em>time-based one-time password</em> normalmente formados por 6 dígitos. De modo que aunque un código quedase comprometido sólo sería válido durante un periodo corto de tiempo de unos segundos, habitualmente de unos 30 segundos. Los generadores de códigos generan un nuevo código de forma periódica. Dado que la validez de los códigos generados dependen de la fecha y hora actual el dispositivo generador de códigos TOTP debe <a href="https://picodotdev.github.io/blog-bitix/2021/10/sincronizacion-de-hora-automatica-con-el-protocolo-ntp-en-gnu-linux/">mantener la fecha y hora sincronizada con el protocolo NTP</a>.</p>
 <p>En la autenticación en dos pasos las credenciales para autenticar un usuario están compuestas de dos factores, la contraseña y el código TOTP.</p>
-<h3 id="cómo-activar-un-segundo-factor-de-autenticación">Cómo activar un segundo factor de autenticación</h3>
+<h2 id="cómo-activar-un-segundo-factor-de-autenticación">Cómo activar un segundo factor de autenticación</h2>
 <p>El segundo factor de autenticación ha de activarse en cada servicio de forma individual. Al realizar la activación se proporciona el código QR a escanear por la aplicación móvil del generador de códigos con la cámara de fotos y alternativamente la secuencia de letras para otro tipo de aplicaciones o dispositivos que no tiene cámara de fotos.</p>
 <p>El proceso de activar el 2FA es similar en todos los servicios, varía la interfaz que se utilizan pero básicamente todos proporcionan el código QR y la secuencia de letras. En este caso muestro como activar el segundo factor de autenticación en los servicios de Google, Amazon y PayPal, para otros servicios como <a href="https://twitter.com/">Twitter</a>, <a href="https://www.facebook.com/">Facebook</a> u cualquier otro el proceso es similar.</p>
-<h4 id="cómo-activar-2fa-en-una-cuenta-de-google">Cómo activar 2FA en una cuenta de Google</h4>
+<h3 id="cómo-activar-2fa-en-una-cuenta-de-google">Cómo activar 2FA en una cuenta de Google</h3>
 <p>Para activar el segundo factor de autenticación en una cuenta de Google hay que realizar la configuración desde <em>Gestionar tu cuenta de Google</em> ubicado en el desplegable del menú del usuario, después acceder a las opciones de seguridad del menú <em>Protegemos tu cuenta</em>. En la <em>Revisión de seguridad</em> el proceso de configuración de 2FA se inicia desde la opción <em>Verificación en dos pasos</em>, hay varios opciones de utilizar 2FA una de ellas es con una notificación de Google en el teléfono móvil, un SMS o un código de seguridad, la otra opción es utilizar una aplicación de autenticación o <em>authenticator</em>.</p>
 <p>La autenticación con una aplicación de <em>authenticator</em> se inicia desde el enlace <em>configuración de la verificación en dos pasos</em> para configurar la aplicación <em>authenticator</em>. Es un proceso de varios pasos en el que se muestra el código QR a escánear por la aplicación <em>authenticator</em> y el código formado por varios grupos de 4 letras equivalente, el código de letras solo se muestra con el enlace <em>¿No puedes escanearlo?</em> debajo del código QR. Para asegurar que la aplicación <em>authenticator</em> ha escaneado correctamente el código QR y genéra códigos de 6 dígitos se ha de verificar introduciendo su valor actual.</p>
 <div class="media">
@@ -341,7 +341,7 @@
 <figcaption>Inicio de sesión en una cuenta de Google con 2FA</figcaption>
 </figure>
 </div>
-<h4 id="cómo-activar-2fa-en-una-cuenta-de-amazon">Cómo activar 2FA en una cuenta de Amazon</h4>
+<h3 id="cómo-activar-2fa-en-una-cuenta-de-amazon">Cómo activar 2FA en una cuenta de Amazon</h3>
 <p>En el caso de Amazon la configuración del segundo factor de autenticación se realiza desde <em>Mi cuenta &gt; Inicio de sesión y seguridad &gt; Configuración de la verificación en dos pasos (2SV)</em>. Hay que registra un autenticador de verificación de dos pasos, al seleccionar utilizar una <em>app</em> de verificación se muestra el cogido QR y en código de letras en el enlace <em>¿No puedes escanear el código de barras?</em>. Escáneado el código QR el y el código de letras se verifica la aplicación <em>autenticator</em> está configurada correctamente y genera códigos TOTP correctos.</p>
 <div class="media">
 <figure>
@@ -371,7 +371,7 @@
 <figcaption>Inicio de sesión en una cuenta de Amazon</figcaption>
 </figure>
 </div>
-<h4 id="cómo-activar-2fa-en-una-cuenta-de-paypal">Cómo activar 2FA en una cuenta de PayPal</h4>
+<h3 id="cómo-activar-2fa-en-una-cuenta-de-paypal">Cómo activar 2FA en una cuenta de PayPal</h3>
 <p>En PayPal la configuración de segundo factor de autenticación se realiza desde el <em>Centro de seguridad</em> con la opción <em>Verificación en dos pasos</em> para configurarlo. En la configuración se muestra el código QR y el código de letras introducir en la aplicación <em>authenticator</em>. Como en los otros casos para verificar que la aplicación <em>authenticator</em> se ha configurado correctamente para generar los código TOTP se solicita validar uno.</p>
 <div class="media">
 <figure>
@@ -389,7 +389,7 @@
 <figcaption>Inicio de sesión en una cuenta de PayPal</figcaption>
 </figure>
 </div>
-<h3 id="aplicación-para-_smartphone_-generador-de-totp">Aplicación para <em>smartphone</em> generador de TOTP</h3>
+<h2 id="aplicación-para-_smartphone_-generador-de-totp">Aplicación para <em>smartphone</em> generador de TOTP</h2>
 <p>Dos aplicaciones gratuitas para teléfono inteligente o <em>smartphone</em> son <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2">Google Authenticator</a> y <a href="https://play.google.com/store/apps/details?id=com.azure.authenticator">Microsoft Authenticator</a> disponibles tanto para los que utilizan <a href="https://www.android.com/">Android</a> como <a href="https://www.apple.com/es/ios/ios-12/">iOS</a> como sistema operativo en sus respectivas tiendas de aplicaciones.</p>
 <p>Instalada la aplicación en el <em>smartphone</em> el primer paso es iniciar el proceso de activación de 2FA en un servicio, este servicio proporciona el código QR que escaneándolo con la aplicación permite generar generar los códigos temporales 2FA. Una vez escaneado el código QR se muestra como información el servicio y cuenta, el código temporal válido y un indicador de tiempo que una vez expirado se genera un nuevo código.</p>
 <p>Las aplicaciones móviles ofrecen comodidad pero ¿qué ocurre si el móvil se pierde, nos lo roban o se estropea? No disponer del dispositivo generador de 2FA es un problema ya que sin él no se impide el inicio de sesión ya que en algún momento se solicitará el código 2FA.</p>
@@ -401,7 +401,7 @@
 <figcaption>Aplicaciones Google Authenticator y Microsoft Authenticator</figcaption>
 </figure>
 </div>
-<h3 id="aplicación-de-escritorio-generador-de-totp">Aplicación de escritorio generador de TOTP</h3>
+<h2 id="aplicación-de-escritorio-generador-de-totp">Aplicación de escritorio generador de TOTP</h2>
 <p><a href="https://keepassxc.org/">KeePassXC</a> es una aplicación de escritorio que sirve como base de datos para <a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">guardar contraseñas de forma segura y generar contraseñas únicas seguras</a> para los servicios. Está disponible para los sistemas operativos <a href="https://www.microsoft.com/es-es/windows/">Windows</a>, <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> y <a href="https://www.apple.com/macos/">macOS</a>.</p>
 <div class="media">
 <figure>
@@ -423,7 +423,7 @@
 <figcaption>Código TOTP generador por KeePassXC</figcaption>
 </figure>
 </div>
-<h4 id="por-qué-utilizar-keepassxc-adicionalmente-a-una-aplicación-del-móvil">Por qué utilizar KeePassXC adicionalmente a una aplicación del móvil</h4>
+<h3 id="por-qué-utilizar-keepassxc-adicionalmente-a-una-aplicación-del-móvil">Por qué utilizar KeePassXC adicionalmente a una aplicación del móvil</h3>
 <p>No conviene guardar los 2FA únicamente en el <em>smartphone</em>, perder el dispositivo generador de códigos 2FA impide iniciar sesión en los servicios cuando se solicite el TOTP. Algunos servicios permiten recuperar la cuenta utilizando otras formas de autenticación pero algunos otros servicios perder el 2FA quizá suponga la pérdida del acceso a la cuenta.</p>
 <p>Utilizar KeePassXC permite tener un segundo dispositivo con el que generar los TOTP, además es fácil <a href="https://picodotdev.github.io/blog-bitix/2016/05/como-realizar-copias-de-seguridad-en-windows-con-freefilesync/">hacer una copia de seguridad</a> del archivo de la base de datos de las contraseñas de KeePassXC ya que es simplemente un archivo cifrado y permite configurar otros dispositivos como generadores de TOTP a través del código QR original.</p>
 

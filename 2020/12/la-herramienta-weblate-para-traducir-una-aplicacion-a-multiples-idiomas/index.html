@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -284,33 +284,33 @@
 </ul>
 <p>En los puntos anteriores también hay que tener en cuenta que las traducciones y localización han de realizarlas múltiples personas o traductores, quizá tantos traductores como idiomas haya de soportar la aplicación que entiendan tanto el idioma original en el que se entregan las cadenas para traducir como el idioma, región y cultura a la que hay que localizar.</p>
 <p>Para coordinar y facilitar el proceso de localización de una aplicación a los múltiples idiomas se suele utilizar una herramienta específica para esta tarea de traducción y localización. Los recursos localizados son utilizados en la aplicación para <a href="https://picodotdev.github.io/blog-bitix/2020/12/internacionalizar-localizar-y-dar-formato-a-cadenas-numeros-importes-y-fechas-en-java/">localizar y formatear cadenas, cadenas con múltiples formas plurales, fechas, números e importes en un idioma</a>.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#cómo-funciona-el-proceso-de-internacionalización-i18n">Cómo funciona el proceso de internacionalización (i18n)</a></li>
     <li><a href="#cómo-funciona-el-proceso-de-localización-i10n">Cómo funciona el proceso de localización (i10n)</a></li>
     <li><a href="#herramientas-de-traducción-y-localización">Herramientas de traducción y localización</a>
-      <ul>
+      <ol>
         <li><a href="#alternativas-de-herramientas">Alternativas de herramientas</a></li>
         <li><a href="#costes">Costes</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#la-herramienta-para-traducciones-weblate">La herramienta para traducciones Weblate</a></li>
     <li><a href="#formatos-de-archivos-de-traducciones">Formatos de archivos de traducciones</a>
-      <ul>
+      <ol>
         <li><a href="#inicio-usando-docker">Inicio usando Docker</a></li>
-      </ul>
+      </ol>
     </li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="cómo-funciona-el-proceso-de-internacionalización-i18n">Cómo funciona el proceso de internacionalización (i18n)</h3>
+<h2 id="cómo-funciona-el-proceso-de-internacionalización-i18n">Cómo funciona el proceso de internacionalización (i18n)</h2>
 <p>El proceso de internacionalización realiza cambios en el código fuente de la aplicación para que la aplicación pueda ser localizada a múltiples lenguajes, países, regiones o culturas. Se ha de tener en cuenta los números aspectos de la internacionalización y localización de la lista anterior como formas plurales, formato de fechas, formatos monetarios, formato de números, etc.</p>
 <p>El proceso de internacionalización genera como resultado un archivo fuente de cadenas originales que es proporcionado a la herramienta de traducción para su localización por los traductores. A lo largo del tiempo habrá cadenas que se modifiquen y requieran una nueva traducción, nuevas cadenas que se añadan y cadenas que se eliminen. Las cadenas originales suelen estar en inglés por ser el lenguaje compartido en los lenguajes de programación y el más común entendido por los posibles traductores.</p>
-<h3 id="cómo-funciona-el-proceso-de-localización-i10n">Cómo funciona el proceso de localización (i10n)</h3>
+<h2 id="cómo-funciona-el-proceso-de-localización-i10n">Cómo funciona el proceso de localización (i10n)</h2>
 <p>El proceso de localización consisten en traducir el archivo fuente de cadenas originales generado en el proceso de internacionalización a un lenguaje, país, región o cultura. El traductor es la persona que tiene conocimiento para realizar correctamente la localización, la herramienta de traducción y localización es la que facilita la traducción.</p>
 <p>La herramienta de traducción y localización ofrece al traductor varias funcionalidades que facilitan su tarea.</p>
-<h3 id="herramientas-de-traducción-y-localización">Herramientas de traducción y localización</h3>
+<h2 id="herramientas-de-traducción-y-localización">Herramientas de traducción y localización</h2>
 <p>Para facilitar la tarea de los traductores con diferentes funcionalidades y gestionar el ciclo de vida de las cadenas se utiliza una herramienta u aplicación especializada en la tarea. El archivo fuente de cadenas originales generadas en el proceso de internacionalización se importan en la herramienta de traducción par que los traductores realicen la traducción, una vez los traductores completan la traducción la aplicación genera como resultado un archivo localizado que se importa en la aplicación para su uso en el lenguaje, país, región o cultura adecuado.</p>
 <p>Las funcionalidades que ofrecen las herramientas de traducciones facilitan la tarea a los traductores y permiten gestionar las cadenas cuando se modifica alguna existente, se añaden nuevas o se eliminan. Algunas funcionalidades que ofrecen son:</p>
 <ul>
@@ -326,7 +326,7 @@
 <li>Integraciones: las herramientas ofrecen una API para integrarlas en los procesos de desarrollo y automatizar las tareas de importación de nuevas cadenas o de exportación de las cadenas e incluso con los repositorios de código fuente de <a href="https://git-scm.com/">Git</a> como <a href="https://github.com/">GitHub</a> o <a href="https://about.gitlab.com/">GitLab</a>.</li>
 <li>Autenticación: la herramienta será utilizada tanto por desarrolladores como por múltiples traductores, esto hace necesario que posea un sistema de autenticación y permisos.</li>
 </ul>
-<h4 id="alternativas-de-herramientas">Alternativas de herramientas</h4>
+<h3 id="alternativas-de-herramientas">Alternativas de herramientas</h3>
 <p>Dos de las herramientas más conocidas con <a href="https://www.transifex.com/">Transifex</a> y <a href="https://crowdin.com/">Crowdin</a>, son herramientas comerciales ofrecidas como SaaS aunque para proyectos de software libre permiten su uso sin ningún coste. Otra alternativa a estas de software libre es <a href="https://weblate.org/es/">Weblate</a> que además de ofrecerse como SaaS con un coste por el servicio permite autoalojarlo.</p>
 <div class="media">
 <figure>
@@ -336,7 +336,7 @@
 <figcaption>Webs de Transifex, Crowdin y Weblate</figcaption>
 </figure>
 </div>
-<h4 id="costes">Costes</h4>
+<h3 id="costes">Costes</h3>
 <p>Los costes de las herramientas suelen varia en función del número de cadenas o palabras originales a traducir, algunas funcionalidades solo está disponibles en función del plan contratado y algunos tienen limitaciones en el número de proyectos. No tiene un coste insignificante que pueden partir de unos 100 € al mes pero llegar a 600 € o 1000 € en proyectos de tamaño medio y grande.</p>
 <p>Weblate permite autoalojarlo sin coste por el servicio salvo por el coste que tenga gestionar el servicio uno mismo. Las herramientas de traducciones son usadas de forma intensiva en el proceso inicial de traducción, una vez las traducciones están completadas la tarea de traducción es de mantenimiento con unas pocas cadenas a traducir o modificar cada cierto tiempo de forma esporádica, estár afrontando sus costes mensuales para esos momentos quizá no compensa o cuando se pretenden ahorrar costes o ser más eficiente en los mismos.</p>
 <p>Dependiendo del caso Weblate es una opción más económica que Transifex y Crowdin.</p>
@@ -345,15 +345,15 @@
 <li><a href="https://crowdin.com/pricing#annual">Precios Crowdin</a></li>
 <li><a href="https://weblate.org/es/hosting/">Precios Weblate</a></li>
 </ul>
-<h3 id="la-herramienta-para-traducciones-weblate">La herramienta para traducciones Weblate</h3>
+<h2 id="la-herramienta-para-traducciones-weblate">La herramienta para traducciones Weblate</h2>
 <p>Weblate es una de las herramientas disponibles para realizar traducciones de aplicaciones de software. Su característica diferenciadora con respecto a Transifex y Crowdin es que es software libre, esto permite hospedarlo uno mismo y un coste más económico por la funcionalidad.</p>
 <p>Posee las múltiples funcionalidades que tienen estas herramientas de utilidad para los traductores y para gestionar las traducciones en la aplicación. Posee una API para integrar Weblate y automatizar los procesos de desarrollo y autenticación con cuentas OpenID/OAuth con los que gestionar de forma centraliza las múltiples cuentas y accesos de los usuarios que usen la herramienta.</p>
 <p>En la extensa y detallada <a href="https://docs.weblate.org/en/latest/">documentación de Weblate</a> se ofrece un manual de usuario y administración de la herramienta tanto para instalarla con <a href="https://www.docker.com/">Docker</a>, configurarla como para realizar copias de seguridad y actualizaciones a nuevas versiones.</p>
-<h3 id="formatos-de-archivos-de-traducciones">Formatos de archivos de traducciones</h3>
+<h2 id="formatos-de-archivos-de-traducciones">Formatos de archivos de traducciones</h2>
 <p>Weblate soporta numerosos <a href="https://docs.weblate.org/en/latest/formats.html">formatos de archivos</a>. Cada formato de archivo soporta diferentes características, el formato de archivo a utilizar dependen del lenguaje de programación utilizado en la aplicación, librerías o <em>framework</em> de desarrollo. Algunos formatos de archivo soportan múltiples idiomas en el mismo archivo de recurso, múltiples formas normales, comentarios, contexto, ubicación dela cadena en el código fuente o indicadores para las cadenas como no traducida, traducida o por revisar.</p>
 <p>El formato de archivo para los recursos de traducciones en Java son los archivos <em>properties</em>. Los archivos <em>properties</em> empleados en Java para los recursos de traducciones son un archivo de texto con una linea por cadena compuesta por la clave o identificador de la cadena y el texto de la cadena. Los archivos <em>properties</em> no soportan múltiples formas plurales. Para implementar múltiples formas plurales se ha de utilizar la clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/ChoiceFormat.html">ChoiceFormat</a>, las cadenas con múltiples formas plurales necesitan un formato de cadena especial. Por otro lado las cadenas pueden tener ciertos datos o <em>placeholders</em> que son proporcionadas por la aplicación en el momento de ejecución al construir la cadena definitiva que ve el usuario, los datos son un nombre, número o un importe, la clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/MessageFormat.html">MessageFormat</a> permite realizar la inserción de estas palabras en los <em>placeholders</em> de las cadenas.</p>
 <p>Otros formatos de archivos de recursos son para las aplicaciones Android, iOS, PHP, i18next para JavaScript entre otros muchos.</p>
-<h4 id="inicio-usando-docker">Inicio usando Docker</h4>
+<h3 id="inicio-usando-docker">Inicio usando Docker</h3>
 <p>Weblate proporciona un archivo de <a href="https://docs.docker.com/compose/">Docker Compose</a> con el que iniciar la herramienta fácilmente. Weblate utiliza una base de datos <a href="https://www.postgresql.org/">PostgreSQL</a> y <a href="https://redis.io/">Redis</a> que en el archivo de Docker Compose se inician al mismo tiempo que el contenedor de Weblate. En el archivo de Docker Compose se indica en nombre de usuario y contraseña entre otras muchas <a href="https://docs.weblate.org/en/latest/admin/install/docker.html">variables de entorno de configuración</a> con el que realizar la autenticación en la página <em>http://localhost</em> de inicio de sesión.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git clone https://github.com/WeblateOrg/docker-compose.git weblate-docker&#10;</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> weblate-docker&#10;</span></span><span class="line"><span class="cl">$ docker-compose up</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>

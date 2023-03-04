@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -268,21 +268,21 @@
 <p>Las computadoras y las aplicaciones realizan sus funciones de forma rápida y determinista ofreciendo su servicio a sus usuarios. El software generalmente se diseña para el caso en el que todo funcione correctamente pero también ha de estar preparado para los casos en los que se produzca un error ya sea simplemente emitiendo una traza o autocorrigiendo el problema con un reintento.</p>
 <p>Especialmente con el advenimiento de los microservicios que se basan en la comunicación por red las aplicaciones han de estar preparadas para los errores. Si un proceso en una computadora es muy fiable salvo por fallo del hardware las redes son mucho menos fiables más cuando hay comunicación entre varios servicios dado que la conectividad de red se puede perder o un servicio puede fallar repentinamente por un fallo de software o por un fallo de hardware.</p>
 <p>Para reparar los efectos de estos errores o simplemente para ejecutar de forma explícita ciertos procesos administrativos independientemente de si es a raíz de un error o no. Las aplicaciones puden incorporar estas adicionalmente estas funcionalidades administrativas y proporcionar una forma de invocarlas, de forma sencilla, rápida y evitando en la medida posible errores manuales.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#la-funcionalidad-principal-y-las-tareas-administrativas">La funcionalidad principal y las tareas administrativas</a></li>
     <li><a href="#la-tecnología-jmx-de-java">La tecnología JMX de Java</a></li>
     <li><a href="#la-interfaz-hawtio">La interfaz Hawtio</a></li>
     <li><a href="#añadir-seguridad-a-la-interfaz-de-hawtio-con-hashicorp-boundary">Añadir seguridad a la interfaz de Hawtio con HashiCorp Boundary</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="la-funcionalidad-principal-y-las-tareas-administrativas">La funcionalidad principal y las tareas administrativas</h3>
+<h2 id="la-funcionalidad-principal-y-las-tareas-administrativas">La funcionalidad principal y las tareas administrativas</h2>
 <p>Seguramente la funcionalidad principal que proporciona una aplicación no requiera ninguna acción, mantenimiento ni acciones manuales. La aplicación mientras esté en funcionamiento proporcionará su servicio ya sea una aplicación web que sirva contenido para un navegador web o una API basada en REST que proporcione datos y reciba peticiones de otras aplicaciones.</p>
 <p>Otras funcionalidades relacionadas con la aplicación se desean ejecutar por ejemplo para corregir algún error puntual en la aplicación, para obtener algún dato o simplemente para realizar una acción que se desea iniciar de forma manual. Las tareas administrativas pueden ser parte una parte de la funcionalidad que es necesario ejecutar a conveniencia en momentos determinados.</p>
 <p>Hay que poder acceder a ellas de alguna forma, idealmente mejor sin desplegar una nueva versión por los riesgos de un despliegue sobre todo si los procesos y aseguramiento de calidad no permiten hacer despliegues con confianza o los despliegues requieren demasiado tiempo o suponen una interrupción del servicio. Que esté la funcionalidad disponible e invocarla en el momento que se necesite hace más sencilla la necesidad.</p>
-<h3 id="la-tecnología-jmx-de-java">La tecnología JMX de Java</h3>
+<h2 id="la-tecnología-jmx-de-java">La tecnología JMX de Java</h2>
 <p>La tecnología <a href="https://www.oracle.com/technical-resources/articles/javase/jmx.html">JMX</a> es un estándar de Java que define una arquitectura para administrar y monitorizar aplicaciones y servicios Java. Desde el punto de vista del desarrollador JMX requiere programar unas clases de Java siguiendo las convenciones del estándar denominadas MBean. Las instancias de estas clases son registradas y administradas por el contenedor de JMX donde quedan disponibles para uso.</p>
 <p>En el artículo <a href="https://picodotdev.github.io/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/">Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java</a> comentaba cómo crear una clase MBean con unos métodos para realizar acciones y otro método para devolver datos. El ejemplo incluía la forma de usar JMX en una aplicación Java y en una aplicación de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> con el soporte que ofrece el <em>framework</em> para la utilización de <a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator.jmx">JMX en Spring Boot</a>.</p>
 <div class="code">
@@ -315,7 +315,7 @@
         <span>build.gradle</span>
     </div>
 </div>
-<h3 id="la-interfaz-hawtio">La interfaz Hawtio</h3>
+<h2 id="la-interfaz-hawtio">La interfaz Hawtio</h2>
 <p>La tecnología de JMX es una buena opción como punto de entrada en la implementación de esas tareas administrativas. Sin embargo, es necesario una forma de poder invocarlas.</p>
 <p>El proyecto <a href="https://hawt.io/">Hawtio</a> proporciona una interfaz web en la que poder ver, obtener datos e invocar las operaciones ofrecidas por los MBeans registrados en el contenedor de JMX, los propios de la aplicación y muchos otros que proporciona Java y en el caso de utilizarlo Spring Boot.</p>
 <p>Hawtio utiliza el proyecto <a href="https://jolokia.org/">Jolokia</a> que expone mediante una interfaz REST los MBeans del contenedor JMX, Hawtio utiliza la interfaz REST de Jolokia para invocar las operaciones. Spring Boot proporciona soporte para la implementación de JMX y Hawtio proporciona una dependencia para su integración con Spring Boot que añade en la interfaz de administración un <em>endpoint</em> para acceder a la consola de Hawtio.</p>
@@ -326,7 +326,7 @@
 <figcaption>Consola de Hawtio como un actuator en aplicación de Spring Boot</figcaption>
 </figure>
 </div>
-<h3 id="añadir-seguridad-a-la-interfaz-de-hawtio-con-hashicorp-boundary">Añadir seguridad a la interfaz de Hawtio con HashiCorp Boundary</h3>
+<h2 id="añadir-seguridad-a-la-interfaz-de-hawtio-con-hashicorp-boundary">Añadir seguridad a la interfaz de Hawtio con HashiCorp Boundary</h2>
 <p>Por motivos de seguridad es deseable que la consola web de Hawtio no esté accesible mediante una conexión directa. <a href="https://www.boundaryproject.io/">Bondary</a> es uno de los productos de <a href="https://www.hashicorp.com/">HashiCorp</a> que proporciona la funcionalidad de un bastión y un <em>proxy</em> de conexión a servicios internos, es más seguro que una VPN ya que a diferencia de una VPN únicamente otorga acceso a los sistemas necesarios y no a toda una red interna completa.</p>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/">Acceso simple y seguro a sistemas remotos con Boundary</a></li>

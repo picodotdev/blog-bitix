@@ -140,7 +140,7 @@ El lenguaje Java utiliza un mecanismo de excepciones, las excepciones son objeto
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -267,7 +267,7 @@ El lenguaje Java utiliza un mecanismo de excepciones, las excepciones son objeto
 <li>Propagar errores hacia arriba en la pila de llamadas.</li>
 <li>Agrupar y diferenciar entre diferentes tipos de errores.</li>
 </ul>
-<h3 id="los-problemas-de-las-excepciones-_checked_">Los problemas de las excepciones <em>checked</em></h3>
+<h2 id="los-problemas-de-las-excepciones-_checked_">Los problemas de las excepciones <em>checked</em></h2>
 <p>Hay una cierta polémica sobre si las excepciones <em>checked</em> son una buena idea. Entre los motivos que se alegan en contra de su uso están que cambiar la firma de un método añadiendo una nueva excepción como lanzable hace que el código que usase ese método podría ocasionar errores de compilación y que hace necesario el tratarla o declararla en la cadena de métodos hasta que sea tratada. Otro motivo es que a mayor nivel en la jerarquía de llamada en los métodos se necesitarán manejar una lista amplia de excepciones.</p>
 <p>En el lado contrario las excepciones se consideran que son buenas porque conocer las condiciones de error o excepción que puede lanzar el método forma parte del contrato del método y es necesario para realizar un correcto manejo de errores. Las excepciones <em>checked</em> pueden parecer un incordio pero son necesarias para hacer un correcto manejo de errores y evitar que el programa falle por no tratar las condiciones de error de las que advertirían. Por otro lado no deberían silenciarse con un bloque <em>catch</em> vacío sin una buena razón. En las excepciones <em>checked</em> el compilador es capaz de advertir si alguna excepción no ha sido capturada o lanzada.</p>
 <p>Como regla general las excepciones <em>checked</em> se usan cuando el programa es capaz de recuperarse del error y tratarlo adecuadamente, las <em>unchecked</em> cuando se trata de un error de programación o no se puede hacer nada para recuperarse.</p>
@@ -293,7 +293,7 @@ El lenguaje Java utiliza un mecanismo de excepciones, las excepciones son objeto
 <li>No funciona bien con la herencia: si un método se sobreescribe no puede lanzar una excepción si el método sobreescrito no declara que lanza una excepción.</li>
 <li>No funcionan bien con las <em>lambdas</em>: en Java las <em>lambdas</em> se implementan usando interfaces con un único método abstracto, ese método debe o declarar la posible excepción, en cuyo caso todo método que lo use debe manejarla, o el cuerpo de la <em>lambda</em> debe capturar la excepción. Ambas opciones incrementan el código necesario para usar las <em>lambdas</em> reduciendo uno de sus beneficios de ser más concisas.</li>
 </ul>
-<h3 id="la-solución-a-las-excepciones-_checked_-de-otros-lenguajes-posteriores-a-java">La solución a las excepciones <em>checked</em> de otros lenguajes posteriores a Java</h3>
+<h2 id="la-solución-a-las-excepciones-_checked_-de-otros-lenguajes-posteriores-a-java">La solución a las excepciones <em>checked</em> de otros lenguajes posteriores a Java</h2>
 <p>La solución por la que han optado otros lenguajes más modernos que Java como <a href="https://dotnet.microsoft.com/">C#</a> y <a href="https://kotlinlang.org/">Kotlin</a> es considerar a todas las excepciones como <em>unchecked</em>. Dado que en muchos casos el único tratamiento posible de una excepción posible es relanzarla, para manejar las excepciones en muchos casos es suficiente un manejador global de excepciones que las capture. Otro beneficio del manejador global de excepciones es que centraliza en un único punto el tratamiento de las excepciones.</p>
 <p>Por el contrario dado que las excepciones <em>unchecked</em> no necesitan declararse en los métodos ni el compilador produce ningún error en caso de que una excepción no se capture o lance al usar un método se desconoce que ese método puede lanzar una excepción. Para mitigar el problema de no conocer si un método lanzan una excepción en Java se pueden usar las anotaciones de Javadoc para declararlas al menos en la documentación. Dado que los IDEs muestran la documentación del Javadoc al usar un método no es necesario inspeccionar el cuerpo de un método para conocer si lanza una excepción.</p>
 <p>En el aparatado referencia incluyo unos buenos enlaces que amplían y detallan más apropiadamente la controversia sobre las excepciones <em>checked</em> y <em>unchecked</em>.</p>

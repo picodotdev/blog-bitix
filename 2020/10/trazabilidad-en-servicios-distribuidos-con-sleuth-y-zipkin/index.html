@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -271,7 +271,7 @@
 <p><a href="https://zipkin.io/">Zipkin</a> es una herramienta que recolecta las transacciones creadas por Sleuth en la ejecución de los microservicios e información de los tiempos de respuesta de las invocaciones que han intervenido en una transación. Ofrece las dos funcionalidades la recolección de datos y la obtención de los mismos. Tanto la recolección como el almacenamiento ofrecen diferentes herramientas para implementarlo, la recolección puede ser mediante peticiones HTTP, <a href="https://www.rabbitmq.com/">RabbitMQ</a> o <a href="https://kafka.apache.org/">Kafka</a> y el almacenamiento en memoria, <a href="https://www.mysql.com/">MySQL</a>, <a href="https://cassandra.apache.org/">Cassandra</a> o <a href="https://www.elastic.co/es/elasticsearch/">Elasticsearch</a>.</p>
 <p>En el ejemplo hay un microservicio que hace de servidor y otro de cliente que se comunican mediante peticiones HTTP con REST. Tanto el microservicio cliente como el microservicio servidor usan <a href="https://spring.io/projects/spring-cloud-sleuth">Sleuth</a> que genera identificativos globales que permiten correlacionar todas las peticiones entre los diferentes servicios.</p>
 <p>Sleuth proporcionar trazabilidad con identificativos globales que podrían ser recuperados a través del sistema de <em>logging</em> centralizado como Elasticsearch, <a href="https://www.elastic.co/es/logstash">Logstash</a> y <a href="https://www.elastic.co/es/kibana">Kibana</a>. Usando una librería de <em>logging</em> como <a href="https://logging.apache.org/log4j/2.x/">Log4j</a> se puede <a href="https://picodotdev.github.io/blog-bitix/2018/07/identificar-todas-las-trazas-de-una-peticion-en-una-aplicacion-web-java-con-log4j/">configurar Log4j para que emita en las trazas los identificadores globales</a>.</p>
-<h3 id="ejemplo-de-microservicio-con-spring-boot-sleuth-y-zipkin">Ejemplo de microservicio con Spring Boot, Sleuth y Zipkin</h3>
+<h2 id="ejemplo-de-microservicio-con-spring-boot-sleuth-y-zipkin">Ejemplo de microservicio con Spring Boot, Sleuth y Zipkin</h2>
 <p>En el ejemplo de trazabilidad de microservicios con Sleuth consistía en un servicio implementado con Spring Boot, también tiene un cliente que realiza de forma periódica peticiones al servicio. Ambos tienen Sleuth integrado y en las trazas de la consola en ambos aparece el identificador global <em>traceId</em> de la traza. En este ejemplo se configura Sleuth para que envíe a Zipkin las transacciones de estos dos pequeños microservicios.</p>
 <p>Para que Sleuth envíe al servidor las métricas de las llamadas entre los microservicios basta con añadir al proyecto del cliente y microservicio la dependencia <em>spring-cloud-starter-zipkin</em> y configurar el medio de transporte que se utiliza para enviar las métricas al servidor, en este caso mediante peticiones HTTP y la dirección de Zipkin. Esto se configura con las propiedades de Spring Boot <em>spring.zipkin.enabled</em>, <em>spring.zipkin.baseUrl</em> y <em>spring.zipkin.sender.type</em>.</p>
 <div class="code">

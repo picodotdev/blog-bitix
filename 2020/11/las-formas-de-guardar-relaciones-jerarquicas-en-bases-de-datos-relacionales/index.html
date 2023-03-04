@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -268,28 +268,28 @@
 <p>Las bases de datos relacionales guardan los datos en tablas, filas y columnas. Los datos de unas tablas se relacionan con los de otras a través de las claves primarias y claves foráneas. Este modelo relacional permite guardar datos y es suficiente para muchos casos, habitualmente utilizando la tercera forma normal de <a href="https://picodotdev.github.io/blog-bitix/2018/02/las-6-plus-2-formas-normales-de-las-bases-de-datos-relacionales/">las 6+2 formas normales de las bases de datos relacionales</a>.</p>
 <p>Sin embargo, el modelo relacional en principio no se ajusta a guardar relaciones jerárquicas, hay varias soluciones para implementar este tipo de relaciones en los datos en una base de datos relacional. Algunas soluciones aunque válidas en la teoría tiene importantes limitaciones en su uso práctico. Algunas solución depende de que la base de datos ofrezcan el soporte para implementarla en caso contrario hay que elegir otra opción.</p>
 <p>En el libro <a href="https://amzn.to/2G2oRN1" rel="sponsored">SQL Antipatterns</a> se trata con detalle las diferentes las formas de guardar relaciones jerárquicas en bases de datos relacionales entre otros diversos aspectos y buenas prácticas.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#ejemplo-de-relación-jerárquica">Ejemplo de relación jerárquica</a></li>
     <li><a href="#formas-de-guardar-relaciones-jerárquicas">Formas de guardar relaciones jerárquicas</a>
-      <ul>
+      <ol>
         <li><a href="#adjacency-list">Adjacency List</a></li>
         <li><a href="#consultas-recursivas">Consultas recursivas</a></li>
         <li><a href="#closure-table">Closure Table</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#otras-implementaciones">Otras implementaciones</a>
-      <ul>
+      <ol>
         <li><a href="#path-enumeration">Path Enumeration</a></li>
         <li><a href="#nested-set">Nested Set</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#cúal-es-la-mejor-solución-para-estructuras-jerárquicas-en-bases-de-datos-relacionales">¿Cúal es la mejor solución para estructuras jerárquicas en bases de datos relacionales?</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="ejemplo-de-relación-jerárquica">Ejemplo de relación jerárquica</h3>
+<h2 id="ejemplo-de-relación-jerárquica">Ejemplo de relación jerárquica</h2>
 <p>Las relaciones jerárquicas establecen unas normas en las relaciones de los elementos, los elementos se organizan en niveles en el que los elementos se relacionan como nivel por encima, por debajo o en el mismo nivel que otro. El número de niveles que tiene una estructura jerárquica es indefinido pudiendo tener cualquier profundidad.</p>
 <p>Esta es una estructura pequeña jerárquica de productos con dos niveles de profundidad.</p>
 <div class="code">
@@ -298,8 +298,8 @@
         <span>hierarchy.txt</span>
     </div>
 </div>
-<h3 id="formas-de-guardar-relaciones-jerárquicas">Formas de guardar relaciones jerárquicas</h3>
-<h4 id="adjacency-list">Adjacency List</h4>
+<h2 id="formas-de-guardar-relaciones-jerárquicas">Formas de guardar relaciones jerárquicas</h2>
+<h3 id="adjacency-list">Adjacency List</h3>
 <p>La solución de listas adyacentes o <em>adjacency list</em> se basa en añadir un campo adicional a la tabla en el que cada fila guarda el identificador del elemento por encima en la estructura jerárquica.</p>
 <p>Esta solución utiliza un modelo de datos sencillo, es fácil de añadir nuevos elementos a la estructura jerárquica además de mantener la integridad referencial.</p>
 <div class="code">
@@ -353,7 +353,7 @@
         <span>insert-data.sql</span>
     </div>
 </div>
-<h4 id="consultas-recursivas">Consultas recursivas</h4>
+<h3 id="consultas-recursivas">Consultas recursivas</h3>
 <p>Las otras implementaciones están originadas a la limitación del modelo relacional y del lenguaje SQL. En las últimas versiones de las bases de datos el lenguaje SQL soporta consultas recursivas o <em>recursive queries</em> con las que implementar la sencilla solución de <em>adjacency list</em> sin sus desventajas. <a href="https://www.mysql.com/">MySQL</a> soporta consultas recursivas desde la versión 8 y <a href="https://www.postgresql.org/">PostgreSQL</a> ya era posible en la versión 9.</p>
 <p>Las consultas para obtener los ascendientes y los descendientes son las siguientes.</p>
 <div class="code">
@@ -380,7 +380,7 @@
         <span>recursive-queries-descendants.out</span>
     </div>
 </div>
-<h4 id="closure-table">Closure Table</h4>
+<h3 id="closure-table">Closure Table</h3>
 <p>Cuando la base de datos no soporta consultas recursivas una solución alternativa es la de <em>closure table</em>, esta se basa en guardar las relaciones entre los nodos en una tabla adicional, se guardan la relación de un nodo con todos sus descendientes o las de un nodo con todos sus ascendientes además de consigo mismo.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">products_categories</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -440,9 +440,9 @@
         <span>closure-table-delete-subtree.sql</span>
     </div>
 </div>
-<h3 id="otras-implementaciones">Otras implementaciones</h3>
+<h2 id="otras-implementaciones">Otras implementaciones</h2>
 <p>Estas otras soluciones son válidas para implementar estructuras jerárquicas en bases de datos relacionales. aunque en algunos aspectos con desventajas sobre las recomendadas de consultas recursivas si están soportadas por la base de datos o la solución de <em>closure table</em>.</p>
-<h4 id="path-enumeration">Path Enumeration</h4>
+<h3 id="path-enumeration">Path Enumeration</h3>
 <p>La solución <em>path enumeration</em> se basa en añadir una columna que contiene en una cadena la colección de identificadores de sus ascendientes incluido el propio nodo.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">products_categories</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -470,7 +470,7 @@
         <span>path-enumeration-descendants.sql</span>
     </div>
 </div>
-<h4 id="nested-set">Nested Set</h4>
+<h3 id="nested-set">Nested Set</h3>
 <p>La solución de <em>nested set</em> es una solución a las limitaciones del modelo relacional para guardar relaciones jerárquicas. Se basa en añadir a la tabla dos nuevos campos con el rango de nodos contenidos en el nivel inferior.</p>
 <p>Esta solución también tiene un modelo de datos sencillo, no requiere tablas adicionales, es fácil de añadir un nuevo nodo a la jerarquía y las consultas para buscar los ascendientes y descendientes son rápidas.</p>
 <div class="code">
@@ -500,7 +500,7 @@
         <span>nested-set-descendants.sql</span>
     </div>
 </div>
-<h3 id="cúal-es-la-mejor-solución-para-estructuras-jerárquicas-en-bases-de-datos-relacionales">¿Cúal es la mejor solución para estructuras jerárquicas en bases de datos relacionales?</h3>
+<h2 id="cúal-es-la-mejor-solución-para-estructuras-jerárquicas-en-bases-de-datos-relacionales">¿Cúal es la mejor solución para estructuras jerárquicas en bases de datos relacionales?</h2>
 <p>Si la base de datos soporta consultas recursivas la mejor solución para estructuras jerárquicas en bases de datos relacionales es la de consultas recursivas. Si la base de datos no soporta consultas recursivas la solución de <em>closure table</em> ofrece integridad referencial y es sencilla.</p>
 <p><em>Nested set</em> es adecuada solo sin la estructura de datos jerárquica no cambia con frecuencia y la de <em>adjacency list</em> sin consultas recursivas es adecuada si el rendimiento no es significativo para la aplicación y el nivel de profundidad máximo de la estructura es conocido y está limitado a unos pocos.</p>
 <p>Esta es una pequeña comparación entre cada una de las soluciones en su dificultad de implementación y si soporta integridad referencial.</p>

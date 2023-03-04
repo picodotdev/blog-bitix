@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -285,8 +285,8 @@
 <figcaption>Referencia de comandos Unix/Linux</figcaption>
 </figure>
 </div>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#sistema-de-archivos">Sistema de archivos</a></li>
     <li><a href="#intérprete-bash">Intérprete bash</a></li>
     <li><a href="#comunicaciones-por-red">Comunicaciones por red</a></li>
@@ -296,11 +296,11 @@
     <li><a href="#fechas-y-programación-de-tareas">Fechas y programación de tareas</a></li>
     <li><a href="#compresión-de-archivos-y-directorios">Compresión de archivos y directorios</a></li>
     <li><a href="#utilidades">Utilidades</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="sistema-de-archivos">Sistema de archivos</h3>
+<h2 id="sistema-de-archivos">Sistema de archivos</h2>
 <p>Esta colección de comandos permiten navegar el sistema de archivos, cambiar de directorio actual, copiar, mover y eliminar archivos, crear enlaces simbólicos, crear directorios y eliminar directorios así como cambiar <a href="https://picodotdev.github.io/blog-bitix/2020/01/los-permisos-del-sistema-de-archivos-de-gnu-linux/">los permisos del sistema de archivos</a>.</p>
 <p>Los comandos suelen recibir como parámetros de entrada archivos, los archivos se indican con su nombre completo o con expresiones <em>glob</em> que seleccionan múltiples archivos con una expresión regular limitada.</p>
 <ul>
@@ -313,7 +313,7 @@
 <li><code>chmod</code>, <code>chown</code>: estos comandos permiten cambiar los permisos de lectura, escritura y ejecución de los archivos, el segundo cambia el usuario y grupo del propietario del archivo.</li>
 <li><code>du</code>: estima el espacio usado por los archivos.</li>
 </ul>
-<h3 id="intérprete-bash">Intérprete bash</h3>
+<h2 id="intérprete-bash">Intérprete bash</h2>
 <p>Los comandos son procesados por un intérprete de comandos algunos están relacionados con el intérprete.</p>
 <ul>
 <li><code>alias</code>: permite definir un sinónimo más corto para un comando con la posibilidad de incluir parte de los argumentos.</li>
@@ -324,7 +324,7 @@
 <li><code>locate</code>: muestra la ubicación en el sistema de archivos del comando indicado.</li>
 <li><code>man</code>: páginas de manual y uso de un comando. Incluye la descripción de un comando, sus parámetros y opciones que posee.</li>
 </ul>
-<h3 id="comunicaciones-por-red">Comunicaciones por red</h3>
+<h2 id="comunicaciones-por-red">Comunicaciones por red</h2>
 <ul>
 <li><code>ping</code>: suele utilizarse para comprobar si la red funciona correctamente. Por ejemplo, comprobando si se puede conectar con el <em>host</em> <em>google.es</em>.</li>
 <li><code>ip</code>: muestra la dirección IP asociada al equipo, suele ser necesario conocer la dirección IP para las comunicaciones en la red local.</li>
@@ -333,7 +333,7 @@
 <li><code>curl</code>: permite realizar peticiones del protocolo HTTP a un servidor.</li>
 <li><code>dig</code>: devuelve información de un dominio del sistema DNS.</li>
 </ul>
-<h3 id="tratamiento-de-archivos">Tratamiento de archivos</h3>
+<h2 id="tratamiento-de-archivos">Tratamiento de archivos</h2>
 <ul>
 <li><code>cut</code>, <code>sed</code>, <code>awk</code>, <code>jq</code>: permiten manipular cadenas de texto de la entrada y devolverlas transformadas en la salida. <em>jq</em> es para ,manipular cadenas en formato JSON.</li>
 <li><code>grep</code>: permite buscar coincidencias aplicando expresiones regulares en la entrada de texto.</li>
@@ -346,13 +346,13 @@
 <li><code>df</code>, <code>du</code>: muestra información de uso en el almacenamiento persistente.</li>
 <li><code>free</code>: muestra el estado de la memoria del sistema.</li>
 </ul>
-<h3 id="editores-de-texto">Editores de texto</h3>
+<h2 id="editores-de-texto">Editores de texto</h2>
 <ul>
 <li><code>nano</code>: editor de texto básico y sencillo de usar basado en consola.</li>
 <li><code>vim</code>: editor de texto potente y versátil pero que requiere un periodo de aprendizaje para conocer todas sus combinaciones de teclas.</li>
 <li><code>emacs</code>: otro editor de texto potente y versátil pero también con un periodo de aprendizaje mayor que <em>nano</em>.</li>
 </ul>
-<h3 id="monitorización-y-sistema">Monitorización y sistema</h3>
+<h2 id="monitorización-y-sistema">Monitorización y sistema</h2>
 <ul>
 <li><code>top</code>: monitor de los procesos del sistema en ejecución, en el se muestra el tiempo de CPU que están usando y la memoria que están consumiendo.</li>
 <li><code>htop</code>: monitor de procesos similar a <em>top</em> un poco más avanzado y más personalizable.</li>
@@ -365,18 +365,18 @@
 <li><code>sudo</code>: ejecuta un comando con los permisos de superusuario. Hay que usarlo con precaución ya que su uso incorrecto por poder realizar cualquier cosa en el sistema puede posibilitar acciones indeseadas y fallos en el sistema.</li>
 <li><code>ssh</code>: permite conectarse a otra máquina de forma segura.</li>
 </ul>
-<h3 id="fechas-y-programación-de-tareas">Fechas y programación de tareas</h3>
+<h2 id="fechas-y-programación-de-tareas">Fechas y programación de tareas</h2>
 <ul>
 <li><code>date</code>: muestra la fecha y hora del sistema actual.</li>
 <li><code>cal</code>: muestra un calendario en la consola.</li>
 <li><code>at</code>: permite programar una tarea para que se ejecuta a una hora determinada.</li>
 <li><code>crontab</code>: permite programar tareas para ejecutarse en los momentos indicados por las expresiones <em>cron</em>.</li>
 </ul>
-<h3 id="compresión-de-archivos-y-directorios">Compresión de archivos y directorios</h3>
+<h2 id="compresión-de-archivos-y-directorios">Compresión de archivos y directorios</h2>
 <ul>
 <li><code>tar</code>, <code>gzip</code>, <code>unzip</code>: permiten realizar operaciones de compresión sobre archivos para reducir su tamaño y agrupar múltiples archivos en uno solo.</li>
 </ul>
-<h3 id="utilidades">Utilidades</h3>
+<h2 id="utilidades">Utilidades</h2>
 <ul>
 <li><code>yes</code>: repite indefinidamente el mensaje <em>yes</em> en la salida hasta que se finaliza. Útil para ejecutar comandos de forma desatendida que requieren la intervención del usuario.</li>
 <li><code>md5sum</code>: calcula el <em>hash</em> <em>md5</em> de un contenido.</li>

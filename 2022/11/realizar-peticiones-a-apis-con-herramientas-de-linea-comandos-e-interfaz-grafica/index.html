@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -270,16 +270,16 @@
 <p>Las aplicaciones monolíticas son más simples y más sencillas de programar, la llamada de un módulo a otro de una aplicación consiste simplemente en una invocación de un método, sin embargo tiene sus propios problemas.</p>
 <p>Las aplicaciones compuestas por múltiples microservicios, algunos de esos microservicios publica una API para que la invoquen otros microservicios. Los microservicios se comunican mediante llamadas remotas a través de la red, habitualmente utilizando el protocolo HTTP y REST aunque también es posible utilizar <a href="https://graphql.org/">GraphQL</a> y si se prefiere una API más RPC con <a href="https://grpc.io/">gRPC</a>.</p>
 <p>Para desarrollar y probar pero también para conocer los datos devueltos por un microservicio en alguna de sus <em>endpoints</em> que expone en su API es muy útil utilizar alguna de las siguientes herramientas para hacer peticiones directamente al servicio sin tener que usar la interfaz web que utiliza el usuario hasta llegar al punto donde se realiza la petición.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#el-comando-curl">El comando curl</a></li>
     <li><a href="#postman">Postman</a></li>
     <li><a href="#hoppscotch-alternativa-a-postman">Hoppscotch, alternativa a Postman</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="el-comando-curl">El comando curl</h3>
+<h2 id="el-comando-curl">El comando curl</h2>
 <p>La herramienta de línea de comandos curl permite realizar cualquier operación y obtener cualquier detalle tanto de la petición como de la respuesta del servidor del protocolo HTTP. Permite ver los certificados cuando se utiliza el protocolo HTTPS, las cabeceras enviadas y de respuesta de la petición, así como realizar peticiones utilizando cualquier verbo del protocolo HTTP.</p>
 <p>El comando curl permite realizar una petición sin tener que implementar en código la llamada que se quiera probar. Cómo es un comando, no una aplicación, no permite guardar la colección de peticiones ni compartir con otros miembros del equipo de desarrollo una colección de peticiones ni mantener sincronizadas las colecciones y variables para los diferentes entornos de una aplicación.</p>
 <p>Es posible utilizar un repositorio de código fuente como <a href="https://git-scm.com/">Git</a> para guardar, compartir y mantener sincronizadas las colecciones peticiones pero el comando curl no ofrece ningún soporte para esto ni para utilizar variables y datos para diferentes entornos.</p>
@@ -295,7 +295,7 @@
         <span>curl.out</span>
     </div>
 </div>
-<h3 id="postman">Postman</h3>
+<h2 id="postman">Postman</h2>
 <p>La aplicación con interfaz gráfica <a href="https://www.postman.com/">Postman</a> realiza en gran medida las mismas funciones que el comando curl pero con una aplicación de escritorio y con interfaz gráfica. Permite crear peticiones, añadir cabeceras en las peticiones y ver los resultados, cabeceras y código de estado devueltos en las peticiones HTTP.</p>
 <p>Adicionalmente ofrece otras funcionalidades como soporte para trabajar en equipos compuesto por varios desarrolladores para compartir colecciones y entornos y mantenerlos sincronizados entre los diferentes miembros del equipo. Otras funciones que tiene es la de poder ejecutar <em>scripts</em> de código antes de realizar la petición para calcular algún dato y enviarlo en la petición. Los entornos permiten crear colecciones de variables y cambiando de un entorno a otro utilizando en las peticiones diferentes valores, por ejemplo las credenciales de autorización para invocar un <em>endpoint</em>.</p>
 <p>Postman es una herramienta muy conocida y utilizada, ofrece una aplicación de escritorio para los diferentes sistemas operativos incluyendo <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> como una aplicación <a href="https://flatpak.org/">Flatpak</a>. Sin embargo, no es gratuita y en entornos profesionales requiere una licencia de uso que está en función del número de usuarios que la utilizan. Es cara y tiene un coste significativo para una herramienta aunque útil cuando se usa es una herramienta que se usa ocasionalmente.</p>
@@ -305,7 +305,7 @@
 <figcaption>Postman</figcaption>
 </figure>
 </div>
-<h3 id="hoppscotch-alternativa-a-postman">Hoppscotch, alternativa a Postman</h3>
+<h2 id="hoppscotch-alternativa-a-postman">Hoppscotch, alternativa a Postman</h2>
 <p>Alternativas a Postman hay varias algunas como complementos para el editor de texto y código <a href="https://code.visualstudio.com/">Visual Studio Code</a>. De las alternativas a Postman la más parecida y que tiene funcionalidades equivalentes y suficiente como para reemplazarla es <a href="https://hoppscotch.io/">Hoppscotch</a>.</p>
 <p>Al igual que Postman la aplicación Hoppscotch es una aplicación destinada a realizar peticiones a servicios utilizando HTTP y soportando otros protocolos como GraphQL, Websockets y MQTT. Una de las ventajas de Hoppscotch sobre Postman está en su licencia ya que es de código abierto y sin coste de licencia. La interfaz de usuario de Hoppscotch está muy cuidada y es similar a la de Postman permitiendo crear peticiones junto a sus cabeceras así como ver el resultado devuelto, cabeceras y código de estado.</p>
 <p>Entre las funcionalidades que ofrece Hoppscotch están:</p>

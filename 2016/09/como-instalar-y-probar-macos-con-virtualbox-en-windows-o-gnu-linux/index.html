@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -284,7 +284,7 @@
   <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B09333S7C4&amp;linkId=cc5de8b310a6a7a1e39f5acb3f5b8005" title="Amazon" class="lozad"></iframe>
 </div>
 <p>En esta guía muestro como instalar y probar macOS 10.15 Catalina con VirtualBox, los pasos on similares para las versiones 10.14 Mojave y 10.13 High Sierra.</p>
-<h3 id="requerimientos-mínimos">Requerimientos mínimos</h3>
+<h2 id="requerimientos-mínimos">Requerimientos mínimos</h2>
 <p>Los requerimientos mínimos de macOS en la versión Catalina son los siguientes:</p>
 <ul>
 <li>4 GiB de memoria RAM</li>
@@ -299,7 +299,7 @@
 </ul>
 <p>Algunas características requieren una conexión a internet estable con una velocidad de descarga mínima de 5 Mbps para una buena experiencia de usuario. Para comprobar tu conexión haz una prueba de velocidad y estabilidad en <a href="https://www.speedcheck.org/es">www.speedcheck.org</a>.</p>
 <p>Dado que al virtualizar se están ejecutando dos sistemas operativos a la vez los requerimientos de la computadora anfitrión donde se ejecutan ambos son más elevados en cuando a memoria y almacenamiento siendo recomendable tener al menos 8 GiB de memoria, asignando 4 GiB a la máquina virtual y 25 GiB de almacenamiento. Para probar macOS Catalina en VirtualBox es necesario asignar a la máquina virtual 8 GiB de modo que es necesario tener en el sistema al menos 16 GiB.</p>
-<h3 id="descargar-la-imagen-de-macos-para-virtualbox">Descargar la imagen de macOS para Virtualbox</h3>
+<h2 id="descargar-la-imagen-de-macos-para-virtualbox">Descargar la imagen de macOS para Virtualbox</h2>
 <p>Los pasos para instalar macOS en una máquina virtual con VirtualBox requieren descargar un archivo <em>torrent</em> con la imagen del disco duro de macOS y una vez creada la máquina virtual en VirtualBox ejecutar unos comandos para cambiar algunos parámetros del sistema de arranque EFI. Hay que descomprimir la imagen del disco duro para obtener el archivo de extensión <em>vmdk</em> y proceder a crear la máquina virtual. Hay que elegir crear una máquina virtual de tipo macOS, cambiando algunas opciones, asignando unos 2 o 3 GiB de memoria, seleccionar el disco duro con la imagen <em>vmdk</em> descomprimida y cambiar la memoria asignada a la pantalla.</p>
 <p>De macOS hay múltiples versiones que con el tiempo Apple ha publicado incorporando mejoras en el sistema operativo. Entre ellas:</p>
 <ul>
@@ -321,7 +321,7 @@
 <figcaption>Descarga de macOS mediante torrent y archivo VMDK para VirtualBox</figcaption>
 </figure>
 </div>
-<h3 id="crear-la-máquina-virtual-en-virtualbox">Crear la máquina virtual en VirtualBox</h3>
+<h2 id="crear-la-máquina-virtual-en-virtualbox">Crear la máquina virtual en VirtualBox</h2>
 <p>VirtualBox es un software de virtualización gratuito disponible para varios sistemas operativos entre ellos Windows, GNU/Linux y macOS. De modo que probar macOS se puede hacer en cualquiera de estas plataformas. Instalado Virtuabox hay que crear una nueva máquina virtual asignar los parámetros de memoria RAM, almacenamiento de disco, memoria de vídeo y seleccionar usar un disco duro virtual existente que será el archivo <em>vmdk</em> descomprimido descargado mediante <em>torrent</em>.</p>
 <div class="media">
 <figure>
@@ -358,7 +358,7 @@
 </figure>
 </div>
 <p>Hecho estos dos pasos podemos proceder a iniciar la máquina virtual.</p>
-<h3 id="instalar-macos-en-una-máquina-virtual">Instalar macOS en una máquina virtual</h3>
+<h2 id="instalar-macos-en-una-máquina-virtual">Instalar macOS en una máquina virtual</h2>
 <p>Al iniciar la ejecución de la máquina virtual de macOS en los primeros segundos empiezan a salir unos cuantos mensajes en modo texto hasta que se inicia el sistema gráfico con un proceso que inicia la instalación que tarda varios minutos pudiendo llegar a más de la media hora.</p>
 <div class="media">
 <figure>
@@ -411,7 +411,7 @@
 <figcaption>Asistente de instalación y configuración inicial de macOS Catalina</figcaption>
 </figure>
 </div>
-<h3 id="primer-inicio-de-sesión-con-macos">Primer inicio de sesión con macOS</h3>
+<h2 id="primer-inicio-de-sesión-con-macos">Primer inicio de sesión con macOS</h2>
 <p>Completados los pasos del asistente se entra en el escritorio con el fondo de pantalla característico según la versión de macOS y algunas de las aplicaciones incorporadas en el propio sistema por defecto en la barra de tareas inferior.</p>
 <p>También se puede probar a <a href="https://picodotdev.github.io/blog-bitix/2016/11/instalar-programas-con-homebrew-en-macos/">instalar otros programas con Homebrew</a>, para instalar programas de la <a href="https://www.apple.com/es/ios/app-store/">Apple Store</a> es necesario tener una cuenta.</p>
 <div class="media">
@@ -427,7 +427,7 @@
 <figcaption>Primer inicio de macOS Catalina en VirtualBox</figcaption>
 </figure>
 </div>
-<h3 id="conclusión">Conclusión</h3>
+<h2 id="conclusión">Conclusión</h2>
 <p>Como partidario del software libre y la privacidad además de <a href="https://picodotdev.github.io/blog-bitix/2016/08/sobre-los-infimos-impuestos-que-paga-apple/">los ínfimos impuestos que paga Apple</a> usando reprobable ingeniería fiscal y su software privativo no recomiendo usar un Mac pero si alguien quiere probar este sistema operativo antes de decidirse a hacer una compra usarlo de forma virtualizado es una buena ayuda para tomar una decisión y ver si nos gusta su sistema operativo aparte del propio equipo junto con su precio que podemos ver en las tiendas. Si no nos convence ni su software ni su abultado precio podemos optar por un portátil de <a href="https://slimbook.es/">Slimbook</a> mucho más económico y con características notables con los que no tendremos que pagar tampoco <a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.html">el impuesto Windows</a> ya que podemos elegir entre varias la distribución GNU/Linux preinstalada que deseamos.</p>
 <p>Hay que tener en cuenta que al probar macOS con VirtualBox el rendimiento de la máquina virtual no será exactamente el mismo que en un equipo real por la sobrecarga impuesta por la virtualización. La experiencia de usuario puede cambiar significativamente junto con el hecho de que los portátiles Mac tiene una pantalla bastante mejor y con más resolución que la mayoría de portátiles diseñados para Windows o GNU/Linux y un SSD de gran rendimiento además de la falta de su <em>touchpad</em>, todo esto puede marcar diferencias en la experiencia de uso global.</p>
 <div class="reference">

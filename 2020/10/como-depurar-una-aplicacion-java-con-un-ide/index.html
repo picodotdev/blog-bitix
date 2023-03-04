@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -271,28 +271,28 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/">Centralizar y consultar las trazas de las aplicaciones con Elasticsearch, Logstash y Kibana</a></li>
 </ul>
 <p>La depuración se emplea en el momento de desarrollo o para reproducir y descubrir en el entorno de desarrollo local un error que se está produciendo en producción. Por la utilidad de la depuración todos los lenguajes ofrecen alguna posibilidad de hacer depuración. En Java la depuración se realiza configurando la máquina virtual con ciertos argumentos y el entorno integrado de desarrollo o IDE para conectarse a la máquina virtual.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#qué-es-la-depuración-de-un-programa">Qué es la depuración de un programa</a></li>
     <li><a href="#configurar-la-máquina-virtual-java-para-hacer-_debug_">Configurar la máquina virtual Java para hacer <em>debug</em></a>
-      <ul>
+      <ol>
         <li><a href="#debug-con-el-comando-java">Debug con el comando java</a></li>
         <li><a href="#debug-con-gradle">Debug con Gradle</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#depurar-una-aplicación-java-con-un-ide">Depurar una aplicación Java con un IDE</a>
-      <ul>
+      <ol>
         <li><a href="#cómo-depurar-código-java-con-intellij-idea">Cómo depurar código Java con IntelliJ IDEA</a></li>
         <li><a href="#cómo-depurar-código-java-con-eclipse">Cómo depurar código Java con eclipse</a></li>
-      </ul>
+      </ol>
     </li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="qué-es-la-depuración-de-un-programa">Qué es la depuración de un programa</h3>
+<h2 id="qué-es-la-depuración-de-un-programa">Qué es la depuración de un programa</h2>
 <p>La depuración o <em>debug</em> es una forma de ejecución de un programa con la que el programador puede observar de forma interactiva la ejecución línea a línea del código fuente con el objetivo de eliminar algún error. El depurador o <em>debugger</em> es una aplicación que permite añadir puntos de ruptura o <em>breakpoints</em> donde el depurador para la ejecución, inspeccionar los valores de las variables, continuar la ejecución hasta la siguiente línea o hasta el siguiente punto de ruptura, continuar la ejecución entrando en una función o sin entrar en la función.</p>
-<h3 id="configurar-la-máquina-virtual-java-para-hacer-_debug_">Configurar la máquina virtual Java para hacer <em>debug</em></h3>
+<h2 id="configurar-la-máquina-virtual-java-para-hacer-_debug_">Configurar la máquina virtual Java para hacer <em>debug</em></h2>
 <p>Para depurar un programa Java es necesario configurar la máquina virtual Java o JVM en modo <em>debug</em>. Esta configuración de la JVM se realiza añadiendo ciertos argumentos al comando que inicia la aplicación.</p>
 <p>Un ejemplo de programa para practicar cómo depurar es el siguiente.</p>
 <div class="code">
@@ -301,7 +301,7 @@
         <span>Main.java</span>
     </div>
 </div>
-<h4 id="debug-con-el-comando-java">Debug con el comando java</h4>
+<h3 id="debug-con-el-comando-java">Debug con el comando java</h3>
 <p>Si la aplicación se inicia con el comando <a href="https://docs.oracle.com/en/java/javase/11/tools/java.html">java</a> hay que añadir los siguientes argumentos para la máquina virtual. Estos argumentos indican a la máquina virtual que acepte conexiones de red para realizar depuración desde un depurador como un IDE de forma remota o desde la máquina local.</p>
 <ul>
 <li><em>-agentlib:jdwp</em>: habilita el protocolo de depuración (JDWP) en la máquina virtual. Este es el argumento principal que habilita la depuración.</li>
@@ -316,7 +316,7 @@
         <span>java-debug.sh</span>
     </div>
 </div>
-<h4 id="debug-con-gradle">Debug con Gradle</h4>
+<h3 id="debug-con-gradle">Debug con Gradle</h3>
 <p>En el momento de desarrollo si se emplea la herramienta de construcción <a href="https://gradle.org/">Gradle</a> también es posible arrancar la máquina virtual de la aplicación en modo depuración a la espera de la conexión del depurador. En el primer comando se inicia la depuración en el puerto <em>5005</em> y con el segundo comando utilizando la variable de entorno <em>GRADLE_OPTS</em> es posible especificar los mismos parámetros de la máquina virtual que al ejecutar la aplicación Java directamente.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ./gradlew run --debug-jvm&#10;</span></span><span class="line"><span class="cl">...&#10;</span></span><span class="line"><span class="cl">Listening <span class="k">for</span> transport dt_socket at address: <span class="m">5005</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ <span class="nv">GRADLE_OPTS</span><span class="o">=</span><span class="s2">&#34;-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005&#34;</span> ./gradlew run&#10;</span></span><span class="line"><span class="cl">Listening <span class="k">for</span> transport dt_socket at address: <span class="m">5005</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -337,10 +337,10 @@
         <span>gradle-run-2.sh</span>
     </div>
 </div>
-<h3 id="depurar-una-aplicación-java-con-un-ide">Depurar una aplicación Java con un IDE</h3>
+<h2 id="depurar-una-aplicación-java-con-un-ide">Depurar una aplicación Java con un IDE</h2>
 <p>El depurador permite añadir puntos de ruptura en cualquiera de las líneas del código fuente del programa para que la ejecución se detenga cuando se llegue a ese punto. Una vez detenida la ejecución el depurador permite examinar los valores de las variables disponibles en el ámbito de detención de la ejecución.</p>
 <p>Para continuar la ejecución si se ha detenido en una línea de código con una llamada a una función el depurador ofrece la posibilidad de continuar entrando al código de esa función o saltar a la siguiente línea de código, también se ofrece la posibilidad de continuar la ejecución hasta la siguiente punto de ruptura. Los puntos de ruptura se pueden habilitar o deshabilitar, no siendo necesario eliminarlos para que no tengan efecto.</p>
-<h4 id="cómo-depurar-código-java-con-intellij-idea">Cómo depurar código Java con IntelliJ IDEA</h4>
+<h3 id="cómo-depurar-código-java-con-intellij-idea">Cómo depurar código Java con IntelliJ IDEA</h3>
 <p>Arrancada la máquina virtual en modo depuración hay que configurar <a href="https://www.jetbrains.com/idea/">IntelliJ</a> para que se conecte a la máquina virtual ya sea con una configuración de inicio de la aplicación o uniendo el IDE a un proceso local de la máquina virtual en modo depuración desde el menú <em>Run &gt; Attach to Process</em>.</p>
 <div class="media">
 <figure>
@@ -369,7 +369,7 @@
 <figcaption>Depuración de un programa en IntelliJ IDEA</figcaption>
 </figure>
 </div>
-<h4 id="cómo-depurar-código-java-con-eclipse">Cómo depurar código Java con eclipse</h4>
+<h3 id="cómo-depurar-código-java-con-eclipse">Cómo depurar código Java con eclipse</h3>
 <p>El entorno de desarrollo integrado <a href="https://eclipse.org">eclipse</a> también ofrece un depurador para aplicaciones Java. Permite iniciar una aplicación en modo depuración, conectarse a una máquina virtual externa configurada con soporte para depuración, establecer puntos de ruptura con la combinación de teclas <kbd>Ctrl+Shift+B</kbd>, continuar la ejecución cuando se ha suspendido e inspeccionar los valores de las variables.</p>
 <div class="media">
 <figure>

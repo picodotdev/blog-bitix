@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -278,29 +278,29 @@
 <p>Siendo RabbitMQ una opción sencilla como cola de mensajes tiene unos límites en la escalabilidad y resiliencia. <a href="https://kafka.apache.org/">Apache Kafka</a> es otro broker de mensajes más compleja que RabbitMQ pero que soporta más casos de uso en cuanto a resiliencia y escalabilidad para dar soporte a un gran volumen de mensajes.</p>
 <p>Como cualquier herramienta Apache Kafka solo es una herramienta y es muy posible que en el futuro surjan nuevas que mejoren en algún aspecto Apache Kafka, una de esas herramientas puede que sea <a href="https://memphis.dev/">Memphis</a> que se define a sí misma como tan simple como RabbitMQ y robusta como Apache Kafka.</p>
 <p>En cualquier caso Apache Kafka es la opción dominante como <em>broker</em> de mensajes por su gran adaptabilidad a diferentes casos de usos, surgida en el año 2010 y siendo en el 2016 en el que empezó a ganar popularidad.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#introducción-a-apache-kafka">Introducción a Apache Kafka</a>
-      <ul>
+      <ol>
         <li><a href="#por-qué-apache-kafka">Por qué Apache Kafka</a></li>
         <li><a href="#conceptos-esenciales">Conceptos esenciales</a></li>
         <li><a href="#propiedades-de-configuración">Propiedades de configuración</a></li>
         <li><a href="#descarga-e-inicio-con-contenedores-docker">Descarga e inicio con contenedores Docker</a></li>
         <li><a href="#uso">Uso</a></li>
         <li><a href="#tutorial">Tutorial</a></li>
-      </ul>
+      </ol>
     </li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="introducción-a-apache-kafka">Introducción a Apache Kafka</h3>
+<h2 id="introducción-a-apache-kafka">Introducción a Apache Kafka</h2>
 <p>Apache Kafka es un <em>broker</em> de mensajes altamente escalable al mismo tiempo que complejo. La complejidad en cierta medida es necesaria para ser resiliente y ofrecer tolerancia a fallos, la tolerancia a fallos y la escalabilidad se proporcionan creando un sistema distribuido que es el que añade complejidad a la herramienta como en la mayoría de herramientas distribuidas.</p>
 <p>La <a href="https://kafka.apache.org/documentation/">documentación de Apache Kafka</a> para conocer y entender los conceptos básicos es un buen sitio por donde empezar a aprender. Si se quiere algo más guiado y estructurado en el libro <a href="https://amzn.to/3HQfnay" rel="sponsored">Apache Kafka: The Definitive Guide</a> se explica de forma detallada todos los principales conceptos de forma detallada incluyendo los parámetros más importantes de configuración, un libro que me ha parecido muy detallado y recomiendo.</p>
 <div class="media media-amazon">
   <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1492043087&amp;linkId=e9a76136c36140e0db4a6d1ecc6e180e" title="Amazon" class="lozad"></iframe>
 </div>
-<h4 id="por-qué-apache-kafka">Por qué Apache Kafka</h4>
+<h3 id="por-qué-apache-kafka">Por qué Apache Kafka</h3>
 <p>Kafka no es el único sistema de mensajería, las características que hacen de Kafka una buena opción son las siguientes:</p>
 <ul>
 <li>Múltiples productores: varios productores pueden escribir en el mismo <em>topic</em>.</li>
@@ -310,7 +310,7 @@
 <li>Alto rendimiento: dada su escalabilidad el número de mensajes que puede entregar también es grande, y manteniendo latencias bajas en la entrega de mensajes.</li>
 <li>Características de la plataforma: proporciona librerías y una API para extender el comportamiento de Kafka, integraciones para conectarlo a otros sistemas con <a href="https://kafka.apache.org/documentation/#connect">Kafka Connect</a> por ejemplo para recibir como mensajes los cambios en una base de datos y <a href="https://kafka.apache.org/documentation/streams/">Kafka Streams</a> permite procesar flujos constantes de datos.</li>
 </ul>
-<h4 id="conceptos-esenciales">Conceptos esenciales</h4>
+<h3 id="conceptos-esenciales">Conceptos esenciales</h3>
 <p>Para usar Kafka de forma correcta conviene entender varios de los conceptos que maneja este <em>broker</em> de mensajes.</p>
 <p>Para proporcionar escalabilidad y tolerancia a fallos es necesario utilizar varias instancias de servidor o <em>brokers</em> de Kafka que forman un <em>cluster</em>. En caso de que un <em>broker</em> falle por cualquier motivo el resto de <em>brokers</em> asumen su trabajo. Uno de los <em>brokers</em> es designado por el propio <em>cluster</em> como el <em>controller</em> y encargado de ciertas tareas administrativas del <em>cluster</em>.</p>
 <p>Las aplicaciones tienen un rol de productor de mensajes, consumidor de mensajes o incluso ambos si lee y escribe al mismo tiempo. Las aplicaciones leen y escriben mensajes de Kafka a través de los <em>topics</em>, pudiendo haber múltiples productores y consumidores de un mismo <em>topic</em> al mismo tiempo.</p>
@@ -322,11 +322,11 @@
 <p>Los mensajes tienen una clave, en algunos casos de uso solo interesa mantener el último mensaje de cada clave en un <em>topic</em>, a estos <em>topics</em> que solo mantienen la última versión de un mensaje según su clave se les denomina <em>compacted topics</em>.</p>
 <p>Kafka no impone ninguna restricción en el contenido de los mensajes, los trata simplemente como una cantidad de bytes ya sean de texto, comprimidos o cifrados. Como formato se puede utilizar uno basado en texto como JSON o uno binario más eficiente como Avro y con un esquema.</p>
 <p>Para algunas de tareas Kafka utiliza <a href="https://zookeeper.apache.org/">Zookeeper</a> para la coordinación, consenso y almacenamiento de configuración. Es otro <em>cluster</em> de servidores que hay que mantener y añade complejidad. Los desarrolladores están trabajando para que Zookeeper no sea necesario y simplificar el uso de Kafka.</p>
-<h4 id="propiedades-de-configuración">Propiedades de configuración</h4>
+<h3 id="propiedades-de-configuración">Propiedades de configuración</h3>
 <p>Kafka soporta numerosas <a href="https://kafka.apache.org/documentation/#configuration">propiedades de configuración</a> entre las que están el número de particiones de los <em>topics</em>, la retención de los segmentos de los mensajes en base a tiempo o número de bytes, el número de réplicas a mantener de cada partición y otros parámetros de tiempos al procesar los mensajes y comunicación entre brokers.</p>
 <p>Estas propiedades se configuran en función del volumen de tráfico generado por los productores, el volumen que es capaz de procesar cada consumidor y el volumen de tráfico o almacenamiento que es capaz de soportar un <em>broker</em>. El conjunto de los consumidores han de tener una capacidad de procesamiento similar a la de los productores, si los consumidores no fueran capaces de soportar el volumen de los productores y la situación se mantuviese de forma prolongada pasado un tiempo se acumularían demasiados mensajes sin procesar, el <em>lag</em> aumentaría, situación que podría generar malos comportamientos en las aplicaciones como pérdida de mensajes.</p>
 <p>Un solo <em>broker</em> soporta un volumen grande de tráfico, pero en los casos de un uso intenso es necesario mayor número de instancias.</p>
-<h4 id="descarga-e-inicio-con-contenedores-docker">Descarga e inicio con contenedores Docker</h4>
+<h3 id="descarga-e-inicio-con-contenedores-docker">Descarga e inicio con contenedores Docker</h3>
 <p>Una opción sencilla para usar Apache Kafka es usándolo a través de un contenedor de <a href="https://www.docker.com/">Docker</a>, basta instalar Docker y descargar el contenedor de Kafka.</p>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">Cómo instalar y guía de inicio básica de Docker</a></li>
@@ -353,7 +353,7 @@
         <span>docker-compose.yml</span>
     </div>
 </div>
-<h4 id="uso">Uso</h4>
+<h3 id="uso">Uso</h3>
 <p>Los <em>producers</em> y <em>consumers</em> se pueden implementar en diferentes lenguajes entre los que está Java. Kafka proporciona una API para la integración con Kafka y el proyecto <a href="https://spring.io/">Spring</a> una integración para las aplicaciones que utilizan este <em>framework</em> para mayor facilidad de uso en el proyecto <a href="https://spring.io/projects/spring-kafka">Spring for Apache Kafka</a>.</p>
 <p>No es necesario crear un cliente de Kafka con un lenguaje de programación, Kafka proporciona varias utilidades administrativas que permiten consultar información de configuración y enviar y recibir mensajes desde la línea de comandos a un determinado <em>topic</em>.</p>
 <p>Con esta utilidades permite probar Kafka por ejemplo para realizar el balanceo de consumidores cuando se agregan y se quitan, probar el periodo de retención de los mensajes o probar que ocurre cuando un <em>broker</em> se cae o detiene.</p>
@@ -462,7 +462,7 @@
         <span>kafka-topics-describe-3.out</span>
     </div>
 </div>
-<h4 id="tutorial">Tutorial</h4>
+<h3 id="tutorial">Tutorial</h3>
 <p>En <a href="https://www.youtube.com/">YouTube</a> hay varios tutoriales con varios capítulos acerca de Kafka con más información y mostrándolo en vídeo, basta con hacer un búsqueda.</p>
 <ul>
 <li><a href="https://www.javaguides.net/2022/12/spring-boot-apache-kafka-tutorial-1.html">Spring Boot + Apache Kafka Tutorial - #1 - Apache Kafka Overview</a></li>

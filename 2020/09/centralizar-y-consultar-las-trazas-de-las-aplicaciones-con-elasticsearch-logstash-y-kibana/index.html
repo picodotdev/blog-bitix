@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -267,7 +267,7 @@
 <p>En una aplicación monolíticas guardar las trazas en un archivo puede ser suficiente, en las aplicaciones distribuidas y compuestas por varios microservicios cada uno emitiendo su propio registro de trazas se hace necesario recopilarlos y centralizarlos en una herramienta para su almacenamiento y consulta sencilla.</p>
 <p>La monitorización y las trazas son dos de las <a href="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/">necesidades de funcionalidad de las aplicaciones basadas en microservicios</a> aunque es también aplicable a las aplicaciones monolíticas. El complemento a las trazas son las <a href="https://picodotdev.github.io/blog-bitix/2018/12/monitorizar-una-aplicacion-java-de-spring-boot-con-micrometer-prometheus-y-grafana/">métricas y monitorización con Prometheus y Grafana</a>.</p>
 <p>Para cubrir la necesidad de monitorización y trazas de las aplicaciones hay múltiples herramientas, entre las que tienen una licencia de software libre o de código abierto están la combinación de <a href="https://www.elastic.co/es/elasticsearch/">Elasticsearch</a>, <a href="https://www.elastic.co/es/logstash">Logstash</a> y <a href="https://www.elastic.co/es/kibana">Kibana</a> también conocidas por las siglas <em>ELK</em>.</p>
-<h3 id="elasticsearch-logstash-filebeat-y-kibana">ElasticSearch, Logstash, Filebeat y Kibana</h3>
+<h2 id="elasticsearch-logstash-filebeat-y-kibana">ElasticSearch, Logstash, Filebeat y Kibana</h2>
 <p>ElasticSearch proporciona la indexación y el almacenamiento, Logstash que permite la recolección, tratamiento y envío a Elasticsearch y Kibana permite su consulta y visualización con una interfaz web.</p>
 <p>Cada aplicación que emite trazas necesita tener un recolector de trazas asociado que permite enviarlas a Elasticsearch para su indexación y almacenamiento. Logstash es una herramienta pesada como para incluirla en cada máquina donde se instancian los servicios, por ello la propia empresa Elasticsearch ha desarrollado herramientas más ligeras, <a href="https://www.elastic.co/es/beats/">Beats</a>, compuestas de varias herramientas como por ejemplo para archivos de log, métricas, de red o de actividad entre algunos otros.</p>
 <p>En vez de usar Logstash se puede usar la herramienta más ligera <a href="https://www.elastic.co/es/beats/filebeat">Filebeat</a> para indexar la salida estándar de las aplicaciones directamente en Elasticsearch o para enviar a una instancia de Logstash que realice el procesado y el indexado en Elasticsearch.</p>
@@ -291,7 +291,7 @@
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/02/ofuscar-datos-sensibles-en-las-trazas-con-log4j/">Ofuscar datos sensibles en las trazas con Log4j</a></li>
 </ul>
-<h3 id="ejemplo-monitorización-de-trazas-con-elk-y-docker">Ejemplo monitorización de trazas con ELK y Docker</h3>
+<h2 id="ejemplo-monitorización-de-trazas-con-elk-y-docker">Ejemplo monitorización de trazas con ELK y Docker</h2>
 <p>ELK son en realidad tres herramientas individuales diferentes que en conjunto proporcionan la funcionalidad que permite monitorizar las trazas de los servicios de forma centralizada y almacenarlas para su consulta en un futuro. Pueden ser cuatro herramientas si se usa Logstash como intermediario entre Filebeat y Elasticsearch.</p>
 <p>Utilizando <a href="https://www.docker.com/">Docker</a> y <a href="https://docs.docker.com/compose/">Docker Compose</a> en un archivo se puede definir la colección de contenedores para arrancarlos como una unidad. En este caso se inicia un contenedor para Elasticsearch, para Kibana y otro para Filebeats que monitoriza el servicio de Docker con todos los contenedores que se inicien.</p>
 <div class="code">

@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -263,28 +263,28 @@
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Entre las novedades más destacadas que incorpora Java 14 están los <em>records</em>, la incorporación definitiva de las expresiones <em>switch</em> o el <em>pattern matching</em> para el operador <em>instanceof</em>. Otra de las novedades más destacadas es una traza de <em>NullPointerException</em> más útil, también destaca la posibilidad de utilizar el recolector de basura ZGC en Windows y macOS. El resto de novedades son la eliminación de algunas funcionalidades con poco uso y la preparación marcando como desaconsejado su uso con <em>deprecated</em>.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#introducción">Introducción</a></li>
     <li><a href="#nuevas-características">Nuevas características</a>
-      <ul>
+      <ol>
         <li><a href="#excepciones-_nullpointerexception_-más-útiles">Excepciones <em>NullPointerException</em> más útiles</a></li>
         <li><a href="#expresiones-_switch_">Expresiones <em>switch</em></a></li>
         <li><a href="#zgc-para-windows-y-macos">ZGC para Windows y macOS</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#nuevas-características-en-vista-previa">Nuevas características en vista previa</a>
-      <ul>
+      <ol>
         <li><a href="#bloques-de-texto">Bloques de texto</a></li>
         <li><a href="#_records_"><em>Records</em></a></li>
         <li><a href="#_pattern-matching_-para-el-operador-_instanceof_"><em>Pattern Matching</em> para el operador <em>instanceof</em></a></li>
-      </ul>
+      </ol>
     </li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="introducción">Introducción</h3>
+<h2 id="introducción">Introducción</h2>
 <ul>
 <li><a href="https://openjdk.java.net/projects/jdk/14/">Características de Java 14</a></li>
 <li><a href="https://www.oracle.com/java/technologies/javase/14-relnote-issues.html">Notas de publicación de Java 14</a></li>
@@ -311,8 +311,8 @@
 <li>368: <a href="https://openjdk.java.net/jeps/368">Text Blocks (Second Preview)</a></li>
 <li>370: <a href="https://openjdk.java.net/jeps/370">Foreign-Memory Access API (Incubator)</a></li>
 </ul>
-<h3 id="nuevas-características">Nuevas características</h3>
-<h4 id="excepciones-_nullpointerexception_-más-útiles">Excepciones <em>NullPointerException</em> más útiles</h4>
+<h2 id="nuevas-características">Nuevas características</h2>
+<h3 id="excepciones-_nullpointerexception_-más-útiles">Excepciones <em>NullPointerException</em> más útiles</h3>
 <p>Cuando se produce una excepción <em>NullPointerException</em> por usar una referencia de objeto cuyo valor es <em>null</em> Java emite una traza indicando la línea de código donde se ha producido, la clase y método donde se ha intentado referenciar pero no se ha podido.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Exception in thread &#34;main&#34; java.lang.NullPointerException&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;at Prog.main(Prog.java:5)&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -334,7 +334,7 @@
         <span>NullPointerException-3.out</span>
     </div>
 </div>
-<h4 id="expresiones-_switch_">Expresiones <em>switch</em></h4>
+<h3 id="expresiones-_switch_">Expresiones <em>switch</em></h3>
 <p>La características de expresiones <em>switch</em> introducida en modo vista previa en las versiones de Java 12 y 13 se califica como estándar.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">numericString</span> <span class="o">=</span> <span class="k">switch</span><span class="o">(</span><span class="n">integer</span><span class="o">)</span> <span class="o">{</span> &#10;</span></span><span class="line"><span class="cl">   <span class="k">case</span> <span class="mi">0</span> <span class="o">-&gt;</span> <span class="s">&#34;zero&#34;</span><span class="o">;</span> &#10;</span></span><span class="line"><span class="cl">   <span class="k">case</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">9</span> <span class="o">-&gt;</span> <span class="s">&#34;odd&#34;</span><span class="o">;</span> &#10;</span></span><span class="line"><span class="cl">   <span class="k">case</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">10</span> <span class="o">-&gt;</span> <span class="s">&#34;even&#34;</span><span class="o">;</span> &#10;</span></span><span class="line"><span class="cl">   <span class="k">default</span> <span class="o">-&gt;</span> <span class="s">&#34;N/A&#34;</span><span class="o">;</span> &#10;</span></span><span class="line"><span class="cl"><span class="o">};</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -348,13 +348,13 @@
         <span>Switch-2.java</span>
     </div>
 </div>
-<h4 id="zgc-para-windows-y-macos">ZGC para Windows y macOS</h4>
+<h3 id="zgc-para-windows-y-macos">ZGC para Windows y macOS</h3>
 <p>La versión del recolector de basura ZGC que permite pausas muy reducidas en memorias de unos pocos MB hasta varios TB ahora es posible utilizarla en los sistemas operativos macOS y Windows.</p>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/">El recolector de basura de Java, que hace y como funciona en cada versión</a></li>
 </ul>
-<h3 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h3>
-<h4 id="bloques-de-texto">Bloques de texto</h4>
+<h2 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h2>
+<h3 id="bloques-de-texto">Bloques de texto</h3>
 <p>En esta nueva revisión de los bloques de texto se definen dos nuevos caracteres de escape. El <em>terminador de línea</em> para poder definir bloques de texto en varias líneas pero sin insertar saltos de línea en el bloque de texto y <em>\s</em> para evitar que los espacios en blanco sean eliminados por la operación <em>trim</em>.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="s">&#34;&#34;&#34;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Lorem ipsum dolor sit amet, consectetur adipiscing \&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   elit, sed do eiusmod tempor incididunt ut labore \&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   et dolore magna aliqua.\&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &#34;&#34;&#34;</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">String</span> <span class="n">colors</span> <span class="o">=</span> <span class="s">&#34;&#34;&#34;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">   red  \s&#10;</span></span></span><span class="line"><span class="cl"><span class="s">   green\s&#10;</span></span></span><span class="line"><span class="cl"><span class="s">   blue \s&#10;</span></span></span><span class="line"><span class="cl"><span class="s">   &#34;&#34;&#34;</span><span class="o">;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -362,7 +362,7 @@
         <span>TextBlocks.java</span>
     </div>
 </div>
-<h4 id="_records_"><em>Records</em></h4>
+<h3 id="_records_"><em>Records</em></h3>
 <p>Esta es la característica más destacada añadida al lenguaje que permite reducir significativamente el código necesario para algunas clases.</p>
 <p>Los registros son clases que no contienen más datos que los públicos declarados. Evitan mucho del código que es necesario en Java para definir los constructores, los métodos <em>getter</em>, los <em>setter</em> e <a href="https://picodotdev.github.io/blog-bitix/2016/12/como-implementar-correctamente-y-por-que-los-metodos-equals-y-hashcode-de-los-objetos-java/">implementar de forma correcta los métodos equals y hashCode</a>.</p>
 <p>Para reducir el código de las clases de datos los registros adquieren automáticamente varios miembros:</p>
@@ -395,7 +395,7 @@
         <span>Records-2.java</span>
     </div>
 </div>
-<h4 id="_pattern-matching_-para-el-operador-_instanceof_"><em>Pattern Matching</em> para el operador <em>instanceof</em></h4>
+<h3 id="_pattern-matching_-para-el-operador-_instanceof_"><em>Pattern Matching</em> para el operador <em>instanceof</em></h3>
 <p>Al usar el operador <em>instanceOf</em> para comprobar si un objeto es una instancia de una clase si se realiza en un <em>if</em> posteriormente es necesario hacer un <em>cast</em> del objeto a la clase.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="n">String</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">obj</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// use s&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>

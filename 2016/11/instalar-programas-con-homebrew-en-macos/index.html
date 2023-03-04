@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -266,7 +266,7 @@
 <p><img src="/blog-bitix/assets/images/logotypes/macos.svg" width="300" height="70" alt="macOS" title="macOS" class="" loading="false&#34;"></p>
 </div>
 <p>Como nuevo usuario de <a href="https://picodotdev.github.io/blog-bitix/2016/11/mi-primer-mac-yo-usuario-de-gnu-linux/">mi primer mac</a> he tenido que empezar instalando los programas que voy a usar. Una de las cosas buenas de las distribuciones <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> es la forma de obtener e instalar programas. Cada distribución de GNU/Linux tiene su repositorio de paquetes y programas de los que el gestor de paquetes obtiene e instala. Los gestores paquetes se encargan de instalar, actualizar y desinstalar cada paquete junto las dependencias que requiera. Con el gestor de paquetes y desde la terminal es posible instalar múltiples programas rápidamente con un comando. En <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y <a href="https://www.apple.com/macos/">macOS</a> los programas se instalan descargando un binario y ejecutándolo que inicia un asistente. Instalar programas de esta forma en Windows y macOS tiene los inconvenientes de que hay que hay que ir a la página oficial de programa y descargar el último binario disponible, además cuando se publique una nueva versión hay que descargar el nuevo binario y volverlo a instalar, también es una fuente de introducción de virus si se descarga e instala el software de fuentes no confiables. En GNU/Linux el gestor de paquetes se encarga de actualizar los paquetes y programas que estén desactualizados cuando haya nuevas versiones.</p>
-<h3 id="el-gestor-de-paquete-homebrew-para-macos">El gestor de paquete Homebrew para macOS</h3>
+<h2 id="el-gestor-de-paquete-homebrew-para-macos">El gestor de paquete Homebrew para macOS</h2>
 <p>En macOS existe un gestor de paquetes similar a los existentes en GNU/Linux, <a href="https://brew.sh/">Homebrew</a> se define así mismo como el gestor de paquetes que le falta a macOS. Con Homebrew podemos instalar los programas y mantenerlos actualizados sin tener que estar observando cuando se publica una nueva versión de cada programa. Con Homebrew también podremos instalar muchos de los comandos que están disponibles en GNU/Linux como wget, cmus, gimp, &hellip; <a href="https://caskroom.github.io/">Homebrew Cask</a> es un añadido que proporciona los mismo para los binarios de los programas de macOS. Con estas dos herramientas podemos instalar y mantener actualizado la mayor parte del software que utilicemos.</p>
 <div class="media">
 <figure>
@@ -280,7 +280,7 @@
         <span>homebrew.sh</span>
     </div>
 </div>
-<h3 id="comandos-para-tareas-administrativas-de-paquetes">Comandos para tareas administrativas de paquetes</h3>
+<h2 id="comandos-para-tareas-administrativas-de-paquetes">Comandos para tareas administrativas de paquetes</h2>
 <p>Lo siguiente será buscar los programas en el repositorio de brew que queramos instalar:</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ brew search firefox&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -344,7 +344,7 @@
         <span>brew-uninstall.sh</span>
     </div>
 </div>
-<h3 id="otras-utilidades-y-administración-de-software">Otras utilidades y administración de software</h3>
+<h2 id="otras-utilidades-y-administración-de-software">Otras utilidades y administración de software</h2>
 <p>En caso de utilizar Java como lenguaje de programación para el desarrollo de aplicaciones es recomendable utilizar <a href="https://picodotdev.github.io/blog-bitix/2020/06/la-herramienta-sdkman-para-instalar-varias-versiones-del-jdk-y-software-de-la-plataforma-java/">la herramienta SDKMAN que permite instalar varias versiones del JDK y software de la plataforma Java</a>, además de cambiar fácilmente entre las diferentes versiones.</p>
 <p>Otras opciones son <a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/">personalizar el <em>prompt</em> del sistema del intérprete de comandos Bash</a> y <a href="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/">personalizar el <em>prompt</em> para el directorio de trabajo cuando contiene un repositorio del control de versiones git</a>.</p>
 <p>La terminal incluida de serie en macOS es muy básica por ello mucha gente suele instalar una más avanzada como <a href="http://iterm2.com/">iTerm2</a>. iTerm2 añade funcionalidades como pestañas y podemos dividir una terminal horizontal y verticalmente. También se puede instalar <a href="https://ohmyz.sh/">oh-my-zsh</a> que permite gestionar la configuración del intérprete de comandos <a href="https://zsh.sourceforge.net/">zsh</a> pudiendo añadir temas para modificar el <em>prompt</em> del sistema o cambiarlo según la información del directorio actual, por ejemplo, si estamos en un directorio de git veremos en que rama estamos y si hay cambios realizados.</p>

@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -273,24 +273,24 @@
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2018/02/analisis-estatico-de-codigo-con-pmd-y-un-ejemplo/">Análisis estático de código con PMD y un ejemplo</a></li>
 </ul>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#base-de-datos-de-fallos-de-seguridad">Base de datos de fallos de seguridad</a></li>
     <li><a href="#el-problema-de-seguridad-de-log4j-2">El problema de seguridad de Log4j 2</a></li>
     <li><a href="#analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java-con-gradle-y-maven">Analizar y detectar fallos de seguridad en las dependencias de Java con Gradle y Maven</a>
-      <ul>
+      <ol>
         <li><a href="#analizar-repositorios-de-git">Analizar repositorios de Git</a></li>
-      </ul>
+      </ol>
     </li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="base-de-datos-de-fallos-de-seguridad">Base de datos de fallos de seguridad</h3>
+<h2 id="base-de-datos-de-fallos-de-seguridad">Base de datos de fallos de seguridad</h2>
 <p>Los fallos de seguridad descubiertos se identifican, definen y catalogan con un nombre y se añaden a una <a href="https://www.cve.org/">base de datos pública de vulnerabilidades de seguridad</a>. Al definir los fallos de seguridad se les asigna un nivel orientativo de gravedad, dos propiedades importantes que sirven para asignar la gravedad son como es la forma de explotar el fallo de seguridad, si requiere acceso físico al sistema o es posible explotarlo de forma remota, y que permite el fallo de seguridad, como ejecución de código remoto o obtención de información confidencial.</p>
 <p>Aunque algunos fallos de seguridad permiten la ejecución remota de código no se consideran tan importantes si requieren acceso físico al sistema. Los más graves son aquellos que concurren ambas circunstancias, permiten explotar los fallos de seguridad de forma remota y permite realizar acciones graves como ejecución de código remoto, escalar privilegios u obtener información confidencial.</p>
 <p>Por otro lado, la organización <a href="https://owasp.org/">OWASP</a> tiene documentados fallos de seguridad comunes en las aplicaciones y que conviene evitar, por ejemplo, el error de <em>sql injection</em> o <em>cross site scripting</em> que no por ser ya muy conocidos y no complicados de evitar dejan de ser graves si la aplicación no se implementa adecuadamente.</p>
-<h3 id="el-problema-de-seguridad-de-log4j-2">El problema de seguridad de Log4j 2</h3>
+<h2 id="el-problema-de-seguridad-de-log4j-2">El problema de seguridad de Log4j 2</h2>
 <p>Un caso de error grave de seguridad denominado identificado con el nivel máximo en la escala de gravedad es el de la librería <a href="https://logging.apache.org/log4j/2.x/">Log4j 2</a> en las versiones menores a 2.3.2 (para Java 6), 2.12.4 (para Java 7) y 2.17.1 (para Java 8 y posteriores) que es posible explotarlo de forma remota y permite ejecución remota de código denominado <em>Log4Shell</em>. Log4j 2 es una librería de Java muy utilizada en los proyectos por ser una funcionalidad fundamental para cualquier aplicación que sirve para emitir trazas o <em>logging</em>.</p>
 <ul>
 <li><a href="https://www.lunasec.io/docs/blog/log4j-zero-day/">Log4Shell: RCE 0-day exploit found in log4j 2, a popular Java logging package</a></li>
@@ -309,7 +309,7 @@
 <figcaption>Logotipo de Log4Shell <br>Fuente: https://www.lunasec.io/</figcaption>
 </figure>
 </div>
-<h3 id="analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java-con-gradle-y-maven">Analizar y detectar fallos de seguridad en las dependencias de Java con Gradle y Maven</h3>
+<h2 id="analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java-con-gradle-y-maven">Analizar y detectar fallos de seguridad en las dependencias de Java con Gradle y Maven</h2>
 <p>Dado que se volverá a repetir un fallo de seguridad como Log4 2 o <em>Heartbleed</em> y dado que es imposible estar seguro de que una dependencia no se vea afectada en algún momento por un fallo grave de seguridad conviene estar suscrito a los boletines de seguridad y analizar las dependencias, automatizar el análisis de las dependencias es la mejor opción para que la mayor parte del trabajo lo hagan las computadoras en vez de personas y detectar los fallos de seguridad en cuanto sean publicados.</p>
 <p>La misma organización OWASP proporciona una herramienta automatizada para comprobar la seguridad de las dependencias de un proyecto. La herramienta se usa como un complemento en las herramientas de construcción <a href="https://gradle.org/">Gradle</a> o <a href="https://maven.apache.org/">Maven</a> y al ejecutar las tareas que añaden analizan las dependencias y versiones del proyecto y las compara con las bases de datos de errores conocidos. El resultado es un informe con una lista de las vulnerabilidades de cada librería del proyecto si es que tienen alguna. El <em>plugin</em> de OWASP también detecta los fallos de seguridad en las dependencias de forma transitiva a las que se declaren en el archivo de construcción de forma explícita.</p>
 <p>En el siguiente ejemplo de proyecto con Gradle se incluye como dependencia una versión de Log4j 2 vulnerable, con el <em>plugin</em> de OWASP para detectar vulnerabilidades y la tarea <em>dependencyCheckAnalyze</em> se identifican los CVE a los que es vulnerable cada una de las dependencias en este caso la de Log4j 2. En cada uno de los CVE y en las referencias asociadas se detalla el fallo de seguridad.</p>
@@ -358,7 +358,7 @@
         <span>mvn.sh</span>
     </div>
 </div>
-<h4 id="analizar-repositorios-de-git">Analizar repositorios de Git</h4>
+<h3 id="analizar-repositorios-de-git">Analizar repositorios de Git</h3>
 <p>En una organización con gran cantidad de repositorios de Git un error como este supone analizar cada uno de los proyectos, para automatizar la tarea el siguiente <em>script</em> clona los repositorios a analizar, detecta si es un repositorio Gradle o Maven y ejecuta la tarea de análisis de las dependencias.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="n">initscript</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">repositories</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">dependencies</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">classpath</span> <span class="s1">&#39;org.owasp:dependency-check-gradle:6.5.2.1&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">allprojects</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">apply</span> <span class="nl">plugin:</span> <span class="n">org</span><span class="o">.</span><span class="na">owasp</span><span class="o">.</span><span class="na">dependencycheck</span><span class="o">.</span><span class="na">gradle</span><span class="o">.</span><span class="na">DependencyCheckPlugin</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>

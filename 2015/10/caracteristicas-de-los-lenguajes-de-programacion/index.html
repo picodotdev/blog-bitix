@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -264,19 +264,19 @@
       
       <p>Hay cantidad de lenguajes de programación, algunas diferencias entre ellos se encuentran en su propósito (general o específico para cierto tipo de tareas), en la sintaxis, el sistema de tipos, por los paradigmas de programación que soporta (<abbr title="Programación orientada a objetos">POO</abbr>, imperativo, declarativo, orientado a objetos, funcional, &hellip;), otras diferencias están en la librerías disponibles, <em>frameworks</em> o comunidad, sin embargo, la mayoría comparten algunas características por las que se pueden catalogar los lenguajes. En este artículo comentaré algunas de estas características por las que podemos catalogar y agrupar los lenguajes de programación.</p>
 <p>Describiré brevemente cada una de las características ya que están muy bien explicadas en cada una de sus páginas de la wikipedia.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#principales-características-de-un-lenguaje-de-programación">Principales características de un lenguaje de programación</a>
-      <ul>
+      <ol>
         <li><a href="#compilado">Compilado</a></li>
         <li><a href="#interpretado">Interpretado</a></li>
         <li><a href="#paradigma">Paradigma</a></li>
         <li><a href="#tipado-estático-y-tipado-dinámico">Tipado estático y tipado dinámico</a></li>
         <li><a href="#fuertemente-y-débilmente-tipado">Fuertemente y débilmente tipado</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#otras-características">Otras características</a>
-      <ul>
+      <ol>
         <li><a href="#inferencia-de-tipos">Inferencia de tipos</a></li>
         <li><a href="#closures-y-lambdas">Closures y lambdas</a></li>
         <li><a href="#defaults-methods-y-traits">Defaults methods y traits</a></li>
@@ -287,18 +287,18 @@
         <li><a href="#named-arguments">Named arguments</a></li>
         <li><a href="#destructuring-assignment">Destructuring assignment</a></li>
         <li><a href="#tuples">Tuples</a></li>
-      </ul>
+      </ol>
     </li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="principales-características-de-un-lenguaje-de-programación">Principales características de un lenguaje de programación</h3>
-<h4 id="compilado">Compilado</h4>
+<h2 id="principales-características-de-un-lenguaje-de-programación">Principales características de un lenguaje de programación</h2>
+<h3 id="compilado">Compilado</h3>
 <p>En un lenguaje compilado el código fuente fuente antes de ser ejecutado es convertido a lenguaje máquina (C, C++) aunque también puede ser convertido a representación intermedia que posteriormente es interpretada y convertida a lenguaje máquina <abbr title="Just in Time">JIT</abbr> (Java, C#). El compilador puede detectar una gran cantidad de errores que en un lenguaje interpretado o de tipado dinámico se descubrirían en tiempo de ejecución. <a href="https://es.wikipedia.org/wiki/Lenguaje_de_programaci%C3%B3n_compilado">Wikipedia</a>.</p>
-<h4 id="interpretado">Interpretado</h4>
+<h3 id="interpretado">Interpretado</h3>
 <p>En un lenguaje interpretado el código fuente es compilado a código máquina en el momento de su ejecución. Ejemplos de lenguajes interpretados son <a href="https://www.python.org/">Python</a>, <a href="https://www.ruby-lang.org/es/">Ruby</a>, <a href="https://secure.php.net/">PHP</a>, JavaScript. <a href="https://es.wikipedia.org/wiki/Lenguaje_de_programaci%C3%B3n_interpretado">Wikipedia</a>.</p>
-<h4 id="paradigma">Paradigma</h4>
+<h3 id="paradigma">Paradigma</h3>
 <p>El paradigma de programación es como se estructuran los programas para realizar las tareas de computación. Los principales paragidmas de programación son:</p>
 <ul>
 <li>Imperativos: los programas se codifican como una secuencia de operaciones que definen explícitamente las operaciones que se realizan. Un ejemplo de lenguaje imperativo es C.</li>
@@ -308,7 +308,7 @@
 </ul>
 <p>La mayoría de los lenguajes no se basan solo en un paradigma de programación sino que permiten usar varios al mismo tiempo. Por ejemplo, un lenguaje orientado a objetos como Java emplea el paradigma imperativo en el código dentro de los métodos y con el añadido de las <em>lambdas</em> en las <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">novedades de Java 8</a> permite la programación funcional.</p>
 <p>Parte del éxito de los <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos">lenguajes orientado a objetos</a> se debe a conceptos como la <a href="https://es.wikipedia.org/wiki/Herencia_%28inform%C3%A1tica%29">herencia</a> que es una forma de reutilizar el código de la clase de la que se hereda, el <a href="https://es.wikipedia.org/wiki/Polimorfismo_%28inform%C3%A1tica%29">polimorfismo</a> con la que un mismo método puede estar implementado de diferente forma en función de la clase que lo implementa en la jerarquía de clases construida con la herencia, la <a href="https://es.wikipedia.org/wiki/Sobrecarga_%28inform%C3%A1tica%29">sobrecarga</a> usar un mismo método con diferentes parámetros y también igual o más importante la <a href="https://es.wikipedia.org/wiki/Encapsulamiento_%28inform%C3%A1tica%29">encapsulación</a> con la que se ocultan los detalles internos del funcionamiento de la clase siendo únicamente posible manejar la clase a través de la interfaz (métodos) que ofrece.</p>
-<h4 id="tipado-estático-y-tipado-dinámico">Tipado estático y tipado dinámico</h4>
+<h3 id="tipado-estático-y-tipado-dinámico">Tipado estático y tipado dinámico</h3>
 <p>En un lenguaje de tipado estático las comprobaciones de tipos se realizan en tiempo de compilación (C, C++, Java). Los tipos pueden ser declarados de forma explícita o de forma inferida según el análisis del código fuente que realiza el compilador. <a href="https://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_est.C3.A1tico">Wikipedia</a>.</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Programming_language#Static_versus_dynamic_typing">Static versus Dynamic typing</a></li>
@@ -317,30 +317,30 @@
 <ul>
 <li><a href="https://blog.jooq.org/2014/12/11/the-inconvenient-truth-about-dynamic-vs-static-typing/">The Inconvenient Truth About Dynamic vs. Static Typing</a></li>
 </ul>
-<h4 id="fuertemente-y-débilmente-tipado">Fuertemente y débilmente tipado</h4>
+<h3 id="fuertemente-y-débilmente-tipado">Fuertemente y débilmente tipado</h3>
 <p>En un lenguaje fuertemente tipado un dato con un tipo no puede ser usado como si fuese de otro. Aunque algunos lenguajes como Java se dicen que son fuertemente tipado tienen algunas laxitudes. Por ejemplo, en Java un <em>float</em> puede usarse como si fuese un <em>double</em> y en otros lenguajes con menor grado de tipificación como PHP un <em>string</em> puede ser usado como un dato numérico. <a href="https://es.wikipedia.org/wiki/Tipado_fuerte">Wikipedia</a></p>
-<h3 id="otras-características">Otras características</h3>
+<h2 id="otras-características">Otras características</h2>
 <p>Otras características que se suelen mencionar al hablar de lenguajes de programación es si soportan algunas facilidades como las siguientes y sintáxis específica.</p>
-<h4 id="inferencia-de-tipos">Inferencia de tipos</h4>
+<h3 id="inferencia-de-tipos">Inferencia de tipos</h3>
 <p>En base al análisis del código fuente se puede inferir el tipo de las variables evitando que el programador los declare explícitamente continuamente. <a href="https://es.wikipedia.org/wiki/Inferencia_de_tipos">Wikipedia</a>.</p>
-<h4 id="closures-y-lambdas">Closures y lambdas</h4>
+<h3 id="closures-y-lambdas">Closures y lambdas</h3>
 <p>Un <em>closure</em> es una referencia a una función que puede referenciar las variables del contexto en el que está definida. Una <em>lambda</em> es simplemente una referencia a una función anónima. En Java las <em>lambdas</em> puede referenciar variables declaradas como <em>final</em>, esto es, sean constantes. <a href="https://en.wikipedia.org/wiki/Closure_%28computer_programming%29">Wikipedia</a>.</p>
-<h4 id="defaults-methods-y-traits">Defaults methods y traits</h4>
+<h3 id="defaults-methods-y-traits">Defaults methods y traits</h3>
 <p>Un <em>trait</em> define una colección de métodos posiblemente incluyendo también su implementación, además, pueden definir propiedades. Los <em>defaults methods</em> de Java pueden definir implementaciones en algunos métodos de interfaces. <a href="https://en.wikipedia.org/wiki/Trait_%28computer_programming%29">Wikipedia</a>.</p>
-<h4 id="high-order-functions">High order functions</h4>
+<h3 id="high-order-functions">High order functions</h3>
 <p>Las funciones de orden superior son funciones que toman como argumentos una o más funciones o devuelven como resultado otra función. <a href="https://en.wikipedia.org/wiki/Higher-order_function">Wikipedia</a>.</p>
-<h4 id="currying">Currying</h4>
+<h3 id="currying">Currying</h3>
 <p>La currificación consiste en transformar una función con al menos dos argumentos en una función con al menos un argumento menos. <a href="https://en.wikipedia.org/wiki/Currying">Wikipedia</a>.</p>
-<h4 id="duck-typing">Duck typing</h4>
+<h3 id="duck-typing">Duck typing</h3>
 <p>Este concepto es usado en los lenguajes de tipado dinámico tratando a las variables no por su tipo o herencia sino en base a las propiedades y métodos que soporta (Python, PHP, Groovy, JavaScript). <a href="https://es.wikipedia.org/wiki/Duck_typing">Wikipedia</a>.</p>
-<h4 id="intersection-types-y-union-types">Intersection types y Union types</h4>
+<h3 id="intersection-types-y-union-types">Intersection types y Union types</h3>
 <p><a href="https://ceylon-lang.org/">Ceylon</a> tiene un sistema de tipos más avanzado (y complejo) que Java, una expresión es asignable a un <em>intersection types</em> <em>X &amp; Y</em> si esa expresión es asignable a <em>X</em> e <em>Y</em> individualmente. Una expresión es asignable a un <em>union type</em> <em>X | Y</em> si es asignable a <em>X</em> o <em>Y</em>.</p>
 <p><a href="http://ceylon-lang.org/documentation/1.2/tour/types/">Union, intersection, and enumerated types</a></p>
-<h4 id="named-arguments">Named arguments</h4>
+<h3 id="named-arguments">Named arguments</h3>
 <p>Cuando invocamos un método con argumentos, los argumentos se asignan a los parámetros de la función según el orden en que son declarados. Los <em>named arguments</em> permiten asignar los argumentos a los parámetros de la función por sus nombres. <a href="https://en.wikipedia.org/wiki/Named_parameter">Wikipedia</a>.</p>
-<h4 id="destructuring-assignment">Destructuring assignment</h4>
+<h3 id="destructuring-assignment">Destructuring assignment</h3>
 <p>La asignación desestructurada permite extraer datos de <em>arrays</em> y objetos usando una sintaxis réplica de la construcción de <em>arrays</em> y literales de objetos. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">MDN</a>.</p>
-<h4 id="tuples">Tuples</h4>
+<h3 id="tuples">Tuples</h3>
 <p>Las tuplas son una estructura de datos formada por varios tipos, en Java 8 puede usarse la librería <a href="https://www.vavr.io/">vavr</a> que añade esto y otras funcionalidades interesantes. En algunos lenguajes puede combinarse con la asignación desestructurada. <a href="http://ceylon-lang.org/documentation/1.2/tour/sequences/#tuples">Ceylon Tuples</a>.</p>
 <div class="reference">
     Referencia:<br>

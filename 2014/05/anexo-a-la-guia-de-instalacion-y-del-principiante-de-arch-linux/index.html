@@ -61,7 +61,7 @@
     "dateModified": "2015-05-25T23:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1980",
+    "wordCount": "1957",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -275,40 +275,40 @@
 <p>Dado que Arch Linux es una distribución <a href="https://en.wikipedia.org/wiki/Rolling_release">«rolling release»</a> hacer una guía de instalación detallada para ella haría que se quedase obsoleta en ciertos aparatados al cabo de un tiempo. Por ello y aunque a continuación escribiré una guía de instalación es muy recomendable leer la <a href="https://wiki.archlinux.org/index.php/Beginners%27_Guide">guía oficial de Arch Linux</a> y la <a href="https://wiki.archlinux.org/index.php/Beginners%27_Guide">guía de principiante</a> más detallada y en cualquier caso entendamos las acciones que estamos haciendo con cada comando.</p>
 <p>Arch Linux no tiene un asistente de instalación y la misma se hace desde la terminal introduciendo comandos, además no hay una guía oficial única que sirva para todos los sistemas ya que algunas cosas cambian dependiendo de las características de nuestro sistema o preferencias, deberemos dedicar algo de tiempo a leer las guías oficiales y alguna otra guía en alguna bitácora como esta, quizá también alguna sección de la wiki. A cambio de este tiempo tendremos un sistema tal y como nosotros queremos y no como los desarrolladores del instalador quisieron. Una vez sabemos que pasos hay que realizar y que comandos hay que introducir y en que orden la instalación no es complicada, lo difícil está en que comandos son dependiendo de nuestro sistema, si tiene BIOS o EFI, si tiene una gráfica AMD, Intel o NVIDIA, si tiene un disco mecánico o SSD, y de nuestras preferencias si queremos una partición swap, el formato de las particiones (ext4, btrfs, &hellip;) y tamaño para cada una.</p>
 <p>A pesar de que la guía oficial de Arch Linux está muy bien hay que leer varias páginas de la wiki y hay algunas cosas importantes que hay que tener en cuenta. Lo que aportará esta guía sobre la oficial son esos pequeños detalles a tener en cuenta y mi experiencia con la instalación en mi ordenador.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
-    <li><a href="#1-instalación-base">1. Instalación base</a>
-      <ul>
-        <li><a href="#11-particionar-el-disco">1.1 Particionar el disco</a></li>
-        <li><a href="#12-formatear-las-particiones">1.2 Formatear las particiones</a></li>
-        <li><a href="#13-montar-las-particiones">1.3 Montar las particiones</a></li>
-        <li><a href="#14-establecer-el-mirror">1.4 Establecer el mirror</a></li>
-        <li><a href="#15-instalar-paquetes-del-sistema-base">1.5 Instalar paquetes del sistema base</a></li>
-        <li><a href="#16-generar-de-fstab">1.6 Generar de fstab</a></li>
-        <li><a href="#17-chroot-y-configuración-de-sistema-base">1.7 Chroot y configuración de sistema base</a></li>
-        <li><a href="#18-establecer-la-zona-horaria">1.8 Establecer la zona horaria</a></li>
-        <li><a href="#19-modificar-el-nombre-de-nuesta-máquina">1.9 Modificar el nombre de nuesta máquina</a></li>
-        <li><a href="#110-instalar-el-gestor-de-redes">1.10 Instalar el gestor de redes</a></li>
-        <li><a href="#111-cambiar-la-contraseña-de-root">1.11 Cambiar la contraseña de root</a></li>
-        <li><a href="#112-instalar-el-gestor-de-arranque">1.12 Instalar el gestor de arranque</a></li>
-        <li><a href="#113-finalizar-la-instalación">1.13 Finalizar la instalación</a></li>
-      </ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
+    <li><a href="#instalación-base">Instalación base</a>
+      <ol>
+        <li><a href="#particionar-el-disco">Particionar el disco</a></li>
+        <li><a href="#formatear-las-particiones">Formatear las particiones</a></li>
+        <li><a href="#montar-las-particiones">Montar las particiones</a></li>
+        <li><a href="#establecer-el-mirror">Establecer el mirror</a></li>
+        <li><a href="#instalar-paquetes-del-sistema-base">Instalar paquetes del sistema base</a></li>
+        <li><a href="#generar-de-fstab">Generar de fstab</a></li>
+        <li><a href="#chroot-y-configuración-de-sistema-base">Chroot y configuración de sistema base</a></li>
+        <li><a href="#establecer-la-zona-horaria">Establecer la zona horaria</a></li>
+        <li><a href="#modificar-el-nombre-de-nuesta-máquina">Modificar el nombre de nuesta máquina</a></li>
+        <li><a href="#instalar-el-gestor-de-redes">Instalar el gestor de redes</a></li>
+        <li><a href="#cambiar-la-contraseña-de-root">Cambiar la contraseña de root</a></li>
+        <li><a href="#instalar-el-gestor-de-arranque">Instalar el gestor de arranque</a></li>
+        <li><a href="#finalizar-la-instalación">Finalizar la instalación</a></li>
+      </ol>
     </li>
-    <li><a href="#2-post-instalación-base">2. Post instalación base</a>
-      <ul>
-        <li><a href="#21-creación-de-usuario">2.1 Creación de usuario</a></li>
-        <li><a href="#22-instalar-el-entorno-gráfico">2.2 Instalar el entorno gráfico</a></li>
-        <li><a href="#23-instalar-el-entorno-de-escritorio">2.3 Instalar el entorno de escritorio</a></li>
-        <li><a href="#24-instalación-de-yaourt">2.4 Instalación de yaourt</a></li>
-        <li><a href="#25-instalar-de-programas">2.5 Instalar de programas</a></li>
-        <li><a href="#26-activar-el-servicio-de-sincronización-de-hora">2.6 Activar el servicio de sincronización de hora</a></li>
-      </ul>
+    <li><a href="#post-instalación-base">Post instalación base</a>
+      <ol>
+        <li><a href="#creación-de-usuario">Creación de usuario</a></li>
+        <li><a href="#instalar-el-entorno-gráfico">Instalar el entorno gráfico</a></li>
+        <li><a href="#instalar-el-entorno-de-escritorio">Instalar el entorno de escritorio</a></li>
+        <li><a href="#instalación-de-yaourt">Instalación de yaourt</a></li>
+        <li><a href="#instalar-de-programas">Instalar de programas</a></li>
+        <li><a href="#activar-el-servicio-de-sincronización-de-hora">Activar el servicio de sincronización de hora</a></li>
+      </ol>
     </li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="1-instalación-base">1. Instalación base</h3>
+<h2 id="instalación-base">Instalación base</h2>
 <p>Sin más, comencemos con la guía. Lo primero que deberemos hacer es <a href="https://www.archlinux.org/download/">descargar el medio de instalación</a> de algún espejo de la red. Los medios con la coletilla -dual nos servirán tanto para sistemas de x86 (32 bits) como para sistemas x86_64 (64 bits). Una vez descargado deberemos grabarlo en un CD o más recomendable en una memoria USB.</p>
 <p>Para grabarlo en una memoria USB deberemos usar el comando dd reemplazando /dev/sdx por el dispositivo de la memoria USB en la que queramos grabar el medio cosa que en linux podemos conocer usando el comando lsblk:</p>
 <div class="code">
@@ -338,7 +338,7 @@
         <span>script-2.sh</span>
     </div>
 </div>
-<h4 id="11-particionar-el-disco">1.1 Particionar el disco</h4>
+<h3 id="particionar-el-disco">Particionar el disco</h3>
 <p>El siguiente paso es particionar el disco duro y antes de hacerlo deberemos asegurarnos de que hemos hecho una copia de seguridad de los datos ya que en el siguiente paso se perderá el contenido del disco duro o SSD. Usaremos el siguiente comando para hacer el <a href="https://wiki.archlinux.org/index.php/GUID_Partition_Table">particionado usando GPT</a>. En función de si nuestro sistema tiene BIOS o EFI las particiones son distintas, si es un ordenador de unos dos años o menos o venía con Windows 8 preinstalador probablemente tenga EFI.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># cgdisk /dev/sda</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -346,7 +346,7 @@
         <span>script-3.sh</span>
     </div>
 </div>
-<h5 id="111-para-un-sistema-con-bios">1.1.1 Para un sistema con BIOS</h5>
+<h4 id="para-un-sistema-con-bios">Para un sistema con BIOS</h4>
 <p>En un sistema BIOS usando GPT el esquema de particiones será el siguiente:</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Tamaño&nbsp;&nbsp;&nbsp;&nbsp; Tipo&#10;</span></span><span class="line"><span class="cl">10 MiB&nbsp;&nbsp;&nbsp;&nbsp; BIOS Boot Partition (ef02)&#10;</span></span><span class="line"><span class="cl">resto&nbsp;&nbsp;&nbsp;&nbsp;  Linux filesystem (8300)</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -354,7 +354,7 @@
         <span>script-42.txt</span>
     </div>
 </div>
-<h5 id="112-para-un-sistema-con-efi">1.1.2 Para un sistema con EFI</h5>
+<h4 id="para-un-sistema-con-efi">Para un sistema con EFI</h4>
 <p>En un sistema EFI las particiones deberán ser las siguientes:</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Tamaño&nbsp;&nbsp;&nbsp;&nbsp; Tipo&#10;</span></span><span class="line"><span class="cl">512 MiB&nbsp;&nbsp;&nbsp;&nbsp;EFI System Partition (ef00)&#10;</span></span><span class="line"><span class="cl">resto&nbsp;&nbsp;&nbsp;&nbsp;  Linux filesystem (8300)</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -369,7 +369,7 @@
         <span>script-44.txt</span>
     </div>
 </div>
-<h4 id="12-formatear-las-particiones">1.2 Formatear las particiones</h4>
+<h3 id="formatear-las-particiones">Formatear las particiones</h3>
 <p>Una vez tenemos las particiones creados deberemos formatearlas, sustituimos sdaX por lo que corresponda según el orden en que hemos creado las particiones:</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># mkfs.fat -F32 /dev/sda1</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># mkfs.ext4 /dev/sda2</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -384,7 +384,7 @@
         <span>script-5.sh</span>
     </div>
 </div>
-<h4 id="13-montar-las-particiones">1.3 Montar las particiones</h4>
+<h3 id="montar-las-particiones">Montar las particiones</h3>
 <p>Lo siguiente que haremos es montar las particiones para empezar a usarlas, primero la partición root (/), que en esta guía es sda2 y luego la partición boot (/boot):</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># mount /dev/sda2 /mnt</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># mkdir -p /mnt/boot</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># mount /dev/sda1 /mnt/boot</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -406,7 +406,7 @@
         <span>script-8.sh</span>
     </div>
 </div>
-<h4 id="14-establecer-el-mirror">1.4 Establecer el mirror</h4>
+<h3 id="establecer-el-mirror">Establecer el mirror</h3>
 <p>Debemos seleccionar un espejo del que se descargarán los paquetes del sistema base, modificamos el archivo /etc/pacman.d/mirrrorlist y ponemos el primero el que deseemos, yo suelo usar:</p>
 <p>Server = http://mirrors.kernel.org/archlinux/$repo/os/$arch</p>
 <div class="code">
@@ -415,7 +415,7 @@
         <span>script-9.sh</span>
     </div>
 </div>
-<h4 id="15-instalar-paquetes-del-sistema-base">1.5 Instalar paquetes del sistema base</h4>
+<h3 id="instalar-paquetes-del-sistema-base">Instalar paquetes del sistema base</h3>
 <p>Lo siguiente será instalar los archivos del sistema base el siguiente comando que descargará del espejo de paquetes que hayamos elegido los paquetes del sistema base:</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pacstrap /mnt base base-devel</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -423,7 +423,7 @@
         <span>script-10.sh</span>
     </div>
 </div>
-<h4 id="16-generar-de-fstab">1.6 Generar de fstab</h4>
+<h3 id="generar-de-fstab">Generar de fstab</h3>
 <p>Generamos el archivo fstab que contendrá las características de nuestras particiones y opciones de montaje:</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -432,7 +432,7 @@
     </div>
 </div>
 <p>Si usamos un disco SSD revisaremos el archivo asegurándonos que contiene las opciones noatime y discard.</p>
-<h4 id="17-chroot-y-configuración-de-sistema-base">1.7 Chroot y configuración de sistema base</h4>
+<h3 id="chroot-y-configuración-de-sistema-base">Chroot y configuración de sistema base</h3>
 <p>Hacemos un chroot para cambiar el directorio root que estamos usando para configurar nuestro sistema.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># arch-chroot /mnt /bin/bash</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -461,7 +461,7 @@
         <span>script-15.txt</span>
     </div>
 </div>
-<h4 id="18-establecer-la-zona-horaria">1.8 Establecer la zona horaria</h4>
+<h3 id="establecer-la-zona-horaria">Establecer la zona horaria</h3>
 <p>Establecemos la zona horaria de nuestro sistema:</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># ln -s /usr/share/zoneinfo/Europe/Madrid /etc/localtime</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -469,14 +469,14 @@
         <span>script-16.sh</span>
     </div>
 </div>
-<h4 id="19-modificar-el-nombre-de-nuesta-máquina">1.9 Modificar el nombre de nuesta máquina</h4>
+<h3 id="modificar-el-nombre-de-nuesta-máquina">Modificar el nombre de nuesta máquina</h3>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># echo archlinux &gt; /etc/hostname</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-17.sh</span>
     </div>
 </div>
-<h4 id="110-instalar-el-gestor-de-redes">1.10 Instalar el gestor de redes</h4>
+<h3 id="instalar-el-gestor-de-redes">Instalar el gestor de redes</h3>
 <p>NetworkManager puede servirnos, lo instalamos con el gestor de paquetes de arch pacman y activamos el servicio:</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pacman -S networkmanager</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># systemctl enable NetworkManager.service</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -484,14 +484,14 @@
         <span>script-18.sh</span>
     </div>
 </div>
-<h4 id="111-cambiar-la-contraseña-de-root">1.11 Cambiar la contraseña de root</h4>
+<h3 id="cambiar-la-contraseña-de-root">Cambiar la contraseña de root</h3>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># passwd</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-19.sh</span>
     </div>
 </div>
-<h4 id="112-instalar-el-gestor-de-arranque">1.12 Instalar el gestor de arranque</h4>
+<h3 id="instalar-el-gestor-de-arranque">Instalar el gestor de arranque</h3>
 <p>Este es el punto más delicado y que más problemas puede dar, ya que si no lo hacemos bien probablemente nuestro sistema no arrancará y por desgracia está al final de todo el proceso.</p>
 <p>Para un sistema con BIOS:</p>
 <div class="code">
@@ -557,7 +557,7 @@
         <span>script-28.sh</span>
     </div>
 </div>
-<h4 id="113-finalizar-la-instalación">1.13 Finalizar la instalación</h4>
+<h3 id="finalizar-la-instalación">Finalizar la instalación</h3>
 <p>Finalmente, salimos del entorno enjaulado, desmontamos las particiones y reiniciamos el sistema:</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># exit</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># umount -R /mnt</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># reboot</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -565,9 +565,9 @@
         <span>script-29.sh</span>
     </div>
 </div>
-<h3 id="2-post-instalación-base">2. Post instalación base</h3>
+<h2 id="post-instalación-base">Post instalación base</h2>
 <p>Ya tenemos el sistema base pero para usarlo seguramente queramos un entorno gráfico, un usuario propio para no usar el usuario root y los programas que solemos usar habitualmente. Para ellos continuaremos en la postinstalación.</p>
-<h4 id="21-creación-de-usuario">2.1 Creación de usuario</h4>
+<h3 id="creación-de-usuario">Creación de usuario</h3>
 <p>Creamos un usuario para no usar el usuario root, sustituimos picodotdev por el nuestro:</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># useradd -m -G wheel -s /bin/bash picodotdev</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># passwd picodotdev</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -596,7 +596,7 @@
         <span>script-33.sh</span>
     </div>
 </div>
-<h4 id="22-instalar-el-entorno-gráfico">2.2 Instalar el entorno gráfico</h4>
+<h3 id="instalar-el-entorno-gráfico">Instalar el entorno gráfico</h3>
 <p>Instalamos los paquetes básicos del entorno gráfico, en este caso los controladores para una tarjeta gráfica intel:</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S xorg-server xorg-xinit xorg-server-utils mesa xf86-video-intel&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -604,7 +604,7 @@
         <span>script-34.sh</span>
     </div>
 </div>
-<h4 id="23-instalar-el-entorno-de-escritorio">2.3 Instalar el entorno de escritorio</h4>
+<h3 id="instalar-el-entorno-de-escritorio">Instalar el entorno de escritorio</h3>
 <p>Instalamos el entorno de escritorio según nuestras preferencias, en mi caso GNOME:</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S gnome gnome-extra gnome-tweak-tool&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -619,7 +619,7 @@
         <span>script-36.sh</span>
     </div>
 </div>
-<h4 id="24-instalación-de-yaourt">2.4 Instalación de yaourt</h4>
+<h3 id="instalación-de-yaourt">Instalación de yaourt</h3>
 <p>Si pretendemos usar algún paquete de <a href="https://wiki.archlinux.org/index.php/Arch_User_Repository">AUR</a> deberemos instalar la herramienta <em>yaourt</em>:</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># nano /etc/pacman.conf</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -642,7 +642,7 @@
     </div>
 </div>
 <p>A partir de este momento podemos usar el comando <em>yaourt</em> en vez de pacman.</p>
-<h4 id="25-instalar-de-programas">2.5 Instalar de programas</h4>
+<h3 id="instalar-de-programas">Instalar de programas</h3>
 <p>Los programas que instalaremos cambiarán según nuestras preferencias, estos son casi todos los que suelo utilizar:</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ yaourt -S vim vim-spell-es chromium firefox firefox-i18n-es-es ntfs-3g faenza-icon-theme gimp filezilla imagemagick gparted ufw shotwell libreoffice vlc gstreamer0.10-plugins calibre ntp flashplugin tomcat-native rsync jdk7-openjdk mariadb redis wget git subversion openssh unrar base-devel&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -650,7 +650,7 @@
         <span>script-40.sh</span>
     </div>
 </div>
-<h4 id="26-activar-el-servicio-de-sincronización-de-hora">2.6 Activar el servicio de sincronización de hora</h4>
+<h3 id="activar-el-servicio-de-sincronización-de-hora">Activar el servicio de sincronización de hora</h3>
 <p>Para mantener la hora de nuestro sistema correctamente podemos usar un servicio que se encargue de mantenerla con un servicio a través de la red.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo systemctl <span class="nb">enable</span> ntpd.service&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>

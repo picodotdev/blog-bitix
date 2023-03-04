@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -271,27 +271,27 @@
 <p>Las empresas y organizaciones con cierta cantidad de años de vida con mucha probabilidad tiene una gran cantidad de servicios y sistemas con diferentes tecnologías, protocolos de comunicación y formatos de datos. Algunos de esos servicios y sistemas también tendrán varios años de vida, de entre ellos habrá alguno que ya puede ser considerado como obsoleto por la tecnología que utiliza, que ya no recibe soporte de nuevas características y solo es modificado en caso tareas de mantenimiento o en caso de un problema grave de seguridad. Estos servicios heredados aún con su antigüedad siguen siendo importantes por el servicio que prestan.</p>
 <p>Sustituir esos servicios o sistemas heredados por otros nuevos a veces no es lo más adecuado ya que intervienen otros factores como el coste de tiempo requerido para desarrollar los nuevos sistemas que reemplacen a los antiguos, el coste económico, la disponibilidad de trabajadores que lo hagan y también por fiabilidad, cambiar un sistema con sus defectos y limitaciones pero que funciona por uno nuevo que no estará exento de sus propios problemas y defectos es un riesgo para el servicio prestado.</p>
 <p>En vez de sustituir servicios y sistemas por unos nuevos una opción que se suele utilizar es proporcionar una integración. <a href="https://camel.apache.org/">Apache Camel</a> es una herramienta específica para realizar tareas de integración, que también se puede utilizar aún cuando no sea para un servicio o sistema heredado.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#la-librería-apache-camel">La librería Apache Camel</a>
-      <ul>
+      <ol>
         <li><a href="#conceptos-de-apache-camel">Conceptos de Apache Camel</a></li>
         <li><a href="#patrones-de-integración">Patrones de integración</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#ejemplo-básico-con-apache-camel">Ejemplo básico con Apache Camel</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="la-librería-apache-camel">La librería Apache Camel</h3>
+<h2 id="la-librería-apache-camel">La librería Apache Camel</h2>
 <p>Apache Camel es una librería ligera destinada a realizar tareas de integración entre servicios y sistemas. La de utilizar esta librería sobre realizar una integración con código propio específico para cada integración es que Apache Camel ya proporciona una buena cantidad de funcionalidades sin necesidad de tener que implementarlas.</p>
 <p>A diferencia de las herramientas <em>Enterprise Service Bus</em> o ESB que también sin utilizadas para realizar tareas de integración entre sistemas heterogéneos y que suelen ser herramientas grandes y pesadas, Apache Camel es simplemente una librería muy ligera que es posible utilizarla embebida dentro de otras aplicaciones, por ejemplo dentro de una aplicación de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a>.</p>
 <p>Apache Camel soporta multitud de protocolos de comunicación como HTTP, FTP o JMS, formatos de datos como JSON, XML o CSV e  integración con servicios como AWS, <a href="https://www.consul.io/">Consul</a> o Twitter entre muchos otros. También ya tiene implementados multitud de patrones de integración como <em>choice</em>, <em>filter</em>, <em>muticast</em>, <em>circuit breaker</em> o <em>bulkhead</em>. Otra de sus funcionalidades es que soporta realizar pruebas unitarias.</p>
 <div class="media media-amazon">
   <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1617292931&amp;linkId=cb1717df1c060bb1b5abc52dbef1eca4" title="Amazon" class="lozad"></iframe>
 </div>
-<h4 id="conceptos-de-apache-camel">Conceptos de Apache Camel</h4>
+<h3 id="conceptos-de-apache-camel">Conceptos de Apache Camel</h3>
 <p>Apache Camel utiliza varios conceptos. La integración o funcionalidades desarrolladas se modelan como un flujo, ruta o <em>route</em> que comienza a partir de un origen o <em>consumer</em> y se envía a un destino o <em>producer</em>. En este flujo se tratan mensajes o <em>Exchange</em> que contiene además de los datos del mensaje o <em>payload</em> metadatos como cabeceras asociadas. En los diferentes pasos del flujo el <em>Exchange</em> puede sufrir transformaciones con los procesadores o <em>processor</em> y en el que se aplican los diferentes patrones de integración o <em>integration patterns</em>.</p>
 <p>Una parte importante de Apache Camel que lo hacen fácil de utilizar son los <em>endpoints</em> que son URLs compuestas de un esquema, contexto y opciones. Un ejemplo de endpoint es el siguiente del <a href="https://camel.apache.org/components/latest/rabbitmq-component.html">componente RabbitMQ</a> <em>rabbitmq:exchange</em>  para tomar como fuente o destino colas de mensajes o del <a href="https://camel.apache.org/components/latest/file-component.html">componente File</a> <em>file:misc/</em> para el sistema de archivos.</p>
 <p>Los flujos se modelan con un lenguaje de dominio específico o DSL ya sea definiéndolo con código Java o en un archivo con formato XML. Al utilizar código Java se gana el soporte del entorno integrado de desarrollo, asistencia de código y detección de errores de compilación.</p>
@@ -313,7 +313,7 @@
 <div class="media media-amazon">
   <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=0321127420&amp;linkId=69d583b77830660c9d50944e53b68bba" title="Amazon" class="lozad"></iframe>
 </div>
-<h4 id="patrones-de-integración">Patrones de integración</h4>
+<h3 id="patrones-de-integración">Patrones de integración</h3>
 <p>Algunos de los patrones básicos que soporta Apache Camel son <em>choice</em> para elegir rutas alternativas a las que dirigir los mensajes, <em>filter</em> para descartar los mensajes que no cumplan alguna condición, <em>multicast</em> para enviar un mensaje a varios destinos, <em>recipient list</em> para enviar a varios destinos de forma dinámica o <em>wire tap</em> para inspeccionar los mensajes sin alterar su flujo normal. Esos son solo unos pocos patrones de integración soportados.</p>
 <div class="media">
 <figure>
@@ -328,7 +328,7 @@
 <figcaption>Diferentes patrones de integración</figcaption>
 </figure>
 </div>
-<h3 id="ejemplo-básico-con-apache-camel">Ejemplo básico con Apache Camel</h3>
+<h2 id="ejemplo-básico-con-apache-camel">Ejemplo básico con Apache Camel</h2>
 <p>Apache Camel al ser una librería es muy fácil de integrarlo en cualquier tipo de aplicación, en este ejemplo se utiliza Spring Boot. El ejemplo consiste en dos rutas, una que simplemente muestra en la salida los mensajes que se envía, la otra ruta lee los archivos CSV de un directorio que contienen listas de productos en diferentes columnas, filtra los productos que no tienen un importe superior a una cantidad, los transforma y les añade el IVA y finalmente los muestra en la salida, cada vez que en el directorio se añade un CSV se procesa.</p>
 <p>Esta es la definición de varias rutas con su DSL en código Java que se definen en las clases que implementan la interfaz <em>RouteBuilder</em>, utilizando Spring definiéndose como un componente son añadidos de forma automática al contexto de Apache Camel. En la ruta <em>HelloWorldRoute</em> simplemente tomo como fuente lo que llega al <em>endpoint</em> de nombre <em>direct:helloworld</em> y lo dirige a la salida del sistema con <em>stream:out</em> sin ningún procesamiento adicional entre el origen y el destino.</p>
 <div class="code">

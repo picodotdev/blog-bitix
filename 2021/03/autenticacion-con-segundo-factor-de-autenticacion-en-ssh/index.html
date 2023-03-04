@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -274,17 +274,17 @@
 <p>SSH es un protocolo seguro y cifrado que utiliza como método de autenticación un usuario y contraseña o para mayor seguridad una clave SSH, también se puede configurar para añadir adicionalmente un segundo factor de autenticación o 2FA para mayor seguridad.</p>
 <p>En el artículo específico comento como <a href="https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/">configurar SSH con autenticación mediante clave pública y privada</a>, en otro artículo comento como tener <a href="https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/">acceso simple y seguro a sistemas remotos con Boundary</a>.</p>
 <p>Es recomendable <a href="https://picodotdev.github.io/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/">usar segundo factor de autenticación en servicios como Google, Amazon y Paypal</a> y otros relevantes que lo ofrezcan. También es recomendable utilizar un <a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">gestor de contraseñas como KeePassXC</a> para guardar las contraseñas únicas y como aplicación para generar los <em>tokens</em> de 2FA.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#instalar-el-módulo-ssh-de-google-2fa">Instalar el módulo SSH de Google 2FA</a></li>
     <li><a href="#configurar-el-módulo-ssh-de-google-2fa">Configurar el módulo SSH de Google 2FA</a></li>
     <li><a href="#usar-autenticación-2fa-con-claves-ssh">Usar autenticación 2FA con claves SSH</a></li>
     <li><a href="#probar-la-autenticación-ssh">Probar la autenticación SSH</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="instalar-el-módulo-ssh-de-google-2fa">Instalar el módulo SSH de Google 2FA</h3>
+<h2 id="instalar-el-módulo-ssh-de-google-2fa">Instalar el módulo SSH de Google 2FA</h2>
 <p>Usar 2FA con SSH requiere instalar un módulo de autenticación que valide el proceso de autenticación. El módulo permite usar los <em>tokens</em> de un solo uso en el proceso de autenticación adicionalmente a la contraseña o clave SSH.</p>
 <p>En los sistemas basados en <a href="https://www.debian.org/">Debian</a> como <a href="https://www.ubuntu.com/">Ubuntu</a> hay que instalar el siguiente paquete que añade un nuevo módulo de PAM para 2FA.</p>
 <div class="code">
@@ -319,7 +319,7 @@
         <span>sshd_config-1</span>
     </div>
 </div>
-<h3 id="configurar-el-módulo-ssh-de-google-2fa">Configurar el módulo SSH de Google 2FA</h3>
+<h2 id="configurar-el-módulo-ssh-de-google-2fa">Configurar el módulo SSH de Google 2FA</h2>
 <p>La autenticación con 2FA es una segunda contraseña o código a introducir al iniciar sesión en el sistema remoto. Para utilizar 2FA hay que configurar previamente una aplicación que proporcione los códigos temporales.</p>
 <p>El siguiente comando ejecutado con el usuario permite generar un código QR y la información para generar los <em>tokens</em> o configurar una aplicación como <a href="https://keepassxc.org/">KeePassXC</a> para generarlos. El comando realiza varias preguntas a las que se puede contestar con los siguientes valores.</p>
 <ul>
@@ -351,7 +351,7 @@
         <span>sshd-restart.sh</span>
     </div>
 </div>
-<h3 id="usar-autenticación-2fa-con-claves-ssh">Usar autenticación 2FA con claves SSH</h3>
+<h2 id="usar-autenticación-2fa-con-claves-ssh">Usar autenticación 2FA con claves SSH</h2>
 <p>Al utilizar la autenticación mediante claves públicas y privadas con la configuración por defecto es suficiente para otorgar acceso al sistema remoto, con lo que no se solicitará el segundo factor de autenticación.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>picodotdev@archlinux ~<span class="o">]</span>$ ssh-copy-id -i <span class="s2">&#34;/home/picodotdev/pico.dev@gmail.com&#34;</span> pi@192.168.1.101&#10;</span></span><span class="line"><span class="cl">/usr/bin/ssh-copy-id: INFO: Source of key<span class="o">(</span>s<span class="o">)</span> to be installed: <span class="s2">&#34;/home/picodotdev/pico.dev@gmail.com.pub&#34;</span>&#10;</span></span><span class="line"><span class="cl">/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key<span class="o">(</span>s<span class="o">)</span>, to filter out any that are already installed&#10;</span></span><span class="line"><span class="cl">/usr/bin/ssh-copy-id: INFO: <span class="m">1</span> key<span class="o">(</span>s<span class="o">)</span> remain to be installed -- <span class="k">if</span> you are prompted now it is to install the new keys&#10;</span></span><span class="line"><span class="cl"><span class="o">(</span>pi@192.168.1.101<span class="o">)</span> Password: &#10;</span></span><span class="line"><span class="cl"><span class="o">(</span>pi@192.168.1.101<span class="o">)</span> Verification code: &#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">Number of key<span class="o">(</span>s<span class="o">)</span> added: <span class="m">1</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">Now try logging into the machine, with:   <span class="s2">&#34;ssh &#39;pi@192.168.1.101&#39;&#34;</span>&#10;</span></span><span class="line"><span class="cl">and check to make sure that only the key<span class="o">(</span>s<span class="o">)</span> you wanted were added.&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">[</span>picodotdev@archlinux ~<span class="o">]</span>$ </span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -381,7 +381,7 @@
         <span>sshd-restart.sh</span>
     </div>
 </div>
-<h3 id="probar-la-autenticación-ssh">Probar la autenticación SSH</h3>
+<h2 id="probar-la-autenticación-ssh">Probar la autenticación SSH</h2>
 <p>Una vez realizada la configuración es recomendable probar que la autenticación se realiza de forma correcta tanto con usuario y contraseña como en el caso de claves. Una vez proporcionado el usuario y la contraseña se solicita el <em>token</em> del segundo factor de autenticación que es generado por la aplicación Google Authenticator, KeePassXC u otra aplicación configurada para generarlos.</p>
 <p>En este caso realizando la autenticación con usuario y contraseña se solicita el <em>token</em> 2FA.</p>
 <div class="code">

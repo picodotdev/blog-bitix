@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -268,30 +268,30 @@
         
         
       
-      <div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+      <div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#qué-es-arquitectura-en-una-aplicación-de-software">¿Qué es arquitectura en una aplicación de software?</a></li>
     <li><a href="#tipos-de-arquitecturas">Tipos de arquitecturas</a>
-      <ul>
+      <ol>
         <li><a href="#arquitectura-spaghetti">Arquitectura Spaghetti</a></li>
         <li><a href="#arquitectura-por-capas">Arquitectura por capas</a></li>
         <li><a href="#arquitectura-hexagonal">Arquitectura hexagonal</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#metodologías-relacionadas">Metodologías relacionadas</a>
-      <ul>
+      <ol>
         <li><a href="#_domain-driven-design_"><em>Domain Driven Design</em></a></li>
         <li><a href="#apis-rest-o-graphql">APIs, REST o GraphQL</a></li>
         <li><a href="#cqrs">CQRS</a></li>
         <li><a href="#_event-driven_"><em>Event-Driven</em></a></li>
         <li><a href="#_event-sourcing_"><em>Event Sourcing</em></a></li>
-      </ul>
+      </ol>
     </li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="qué-es-arquitectura-en-una-aplicación-de-software">¿Qué es arquitectura en una aplicación de software?</h3>
+<h2 id="qué-es-arquitectura-en-una-aplicación-de-software">¿Qué es arquitectura en una aplicación de software?</h2>
 <p>La arquitectura en una aplicación de software son los aspectos comunes a las diferentes implementaciones concretas. La arquitectura de software define la estructura y comportamiento de los elementos relevantes, balanceando las necesidades de sus interesados, aplica decisiones de forma racional, definiendo estilos de arquitectura aplicables a múltiples aplicaciones con necesidades similares, está influenciada por su entorno de aplicación, influencia la estructura de los equipos, está presente en cada sistema y tiene un ámbito particular.</p>
 <ul>
 <li><a href="https://www.ibm.com/developerworks/rational/library/feb06/eeles/index.html">What is a software architecture?</a></li>
@@ -313,8 +313,8 @@
 <blockquote>
 <p>A <strong>stakeholder</strong> is an individual, team, or organization (or classes thereof) with interests in, or concerns relative to, a system.</p>
 </blockquote>
-<h3 id="tipos-de-arquitecturas">Tipos de arquitecturas</h3>
-<h4 id="arquitectura-spaghetti">Arquitectura Spaghetti</h4>
+<h2 id="tipos-de-arquitecturas">Tipos de arquitecturas</h2>
+<h3 id="arquitectura-spaghetti">Arquitectura Spaghetti</h3>
 <p>En los inicios de las aplicaciones web con la aparición de las páginas programadas en en lado del servidor con <em>servlets</em> y JSP en Java, ASP de <a href="https://www.microsoft.com/">Microsoft</a> y <a href="https://secure.php.net/">PHP</a> la arquitectura de las mismas se caracterizaba por que no había arquitectura. En el mismo <em>servlet</em> o JSP, ASP o PHP el mismo código tenía diferentes responsabilidades sin ninguna separación entre ellas.</p>
 <p>En el mismo archivo se codificaba desde el acceso a la base de datos como a la generación del resultado, la lógica para obtener los parámetros de una petición y la lógica de negocio.</p>
 <p>Esta no arquitectura de las aplicaciones <em>spaghetti</em> se denomina así porque  mezcla todo tipo de funcionalidades que genera dificultades en la programación, legibilidad y mantenimiento cuando las aplicaciones empiezan a tener un tamaño mediano.</p>
@@ -324,7 +324,7 @@
         <span>spaghetti.jsp</span>
     </div>
 </div>
-<h4 id="arquitectura-por-capas">Arquitectura por capas</h4>
+<h3 id="arquitectura-por-capas">Arquitectura por capas</h3>
 <p>Para suplir las carencias de la arquitectura <em>spaghetti</em> surge la arquitectura por capas. En la arquitectura por capas cada capa tiene una responsabilidad definida, una capa se encarga de la visualización de los datos y la interacción con el usuario, otra capa se encarga de la lógica de negocio y otra capa del acceso a la base de datos. Esta distribución de responsabilidades pone cierto orden a la organización del código y estructura de las aplicaciones. Las capas superiores dependen de las capas inferiores, ya sea en un modelo estricto donde la superior depende únicamente de la inmediatamente inferior o en un modelo más permisivo donde una capa superior puede depender de cualquiera de las inferiores.</p>
 <p>La aparición de los <em>frameworks</em> de desarrollo facilitan la creación de los componentes que constituyen la aplicación utilizando el patrón modelo-vista-controlador o MVC basados en acciones como <a href="https://struts.apache.org/">Struts</a>, de componentes como JSF y <a href="https://tapestry.apache.org/">Apache Tapestry</a> u otros similares en otros lenguajes.</p>
 <div class="media">
@@ -333,7 +333,7 @@
 <figcaption>Arquitectura por capas</figcaption>
 </figure>
 </div>
-<h4 id="arquitectura-hexagonal">Arquitectura hexagonal</h4>
+<h3 id="arquitectura-hexagonal">Arquitectura hexagonal</h3>
 <p>En la arquitectura hexagonal o también conocida como puertos-adaptadores aísla las entradas y salidas de la aplicación de la lógica interna de la aplicación. Este aislamiento de las partes exteriores hace que la aplicación no requiera prácticamente ningún cambio que esté influenciado por cambios externos ya sea una nueva base de datos para persistir los datos o un nuevo tipo de cliente como un dispositivo móvil.</p>
 <p>Cada entrada ya sea desde una petición REST o desde la linea de comandos o salida ya sea a una base de datos o un sistema de mensajería es un tipo diferente de puerto para su interacción. Una gran ventaja de la arquitectura hexagonal es que los puertos y adaptadores son fácilmente desarrollables para un entorno de pruebas hasta tener los definitivos, la aplicación se puede desarrollar y probar antes de que los clientes y los sistemas de persistencia existan.</p>
 <p>Una de las tecnologías que habilitan la arquitectura hexagonal es la inversión de dependencias o IoC mediante la cual se consigue que al contrario que en la arquitectura por capas donde una capa superior depende de la interior la capa inferior dependa de la superior. Si en una aplicación se está utilizando inversión de dependencias es probable que se esté utilizando una arquitectura hexagonal más que una por capas.</p>
@@ -346,26 +346,26 @@
 <figcaption>Arquitectura hexagonal e inversión de dependencias <br>Fuente: herbertograca.com</figcaption>
 </figure>
 </div>
-<h3 id="metodologías-relacionadas">Metodologías relacionadas</h3>
-<h4 id="_domain-driven-design_"><em>Domain Driven Design</em></h4>
+<h2 id="metodologías-relacionadas">Metodologías relacionadas</h2>
+<h3 id="_domain-driven-design_"><em>Domain Driven Design</em></h3>
 <p>La metodología <em>domain-driven-design</em> o DDD promueve que la aplicación ha de estar desarrollada basándose en los aspectos del negocio y del dominio de la aplicación, esto afecta tanto al lenguaje compartido denominado lenguaje ubicuo tanto en la aplicación como por todos <em>stakeholders</em> de cada contexto de la aplicación, también afecta a como se modulariza en subdominios la aplicación con las diferentes funcionalidades. El diseño estratégico define los aspectos de análisis de la aplicación el diseño estratégico los de implementación con los agregados, entidades, <em>value objects</em>, repositorios o eventos de dominio.</p>
 <p>La arquitectura hexagonal se complementa perfectamente con la metodología y principios de DDD ya que ambos casos tienen interés en aislar la lógica de negocio de las partes exteriores de la aplicación de modo que un cambio en el exterior no suponga cambios importantes en la lógica de negocio.</p>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2021/02/introduccion-a-ddd-y-arquitectura-hexagonal-con-un-ejemplo-de-aplicacion-en-java/">Introducción a DDD y arquitectura hexagonal con un ejemplo de aplicación en Java</a></li>
 </ul>
-<h4 id="apis-rest-o-graphql">APIs, REST o GraphQL</h4>
+<h3 id="apis-rest-o-graphql">APIs, REST o GraphQL</h3>
 <p>Con la aparición de múltiples dispositivos ya sean navegadores, teléfonos inteligentes, aplicaciones nativas de teléfonos inteligentes, tabletas o incluso otras aplicaciones, para dar soporte a todos estos clientes las aplicaciones se desarrollan desde el primer momento con el objetivo de ofrecer una API que todos los dispositivos comparten y posteriormente cada dispositivo adapta su interfaz gráfica a sus necesidades.</p>
 <p>Muchas aplicaciones utilizan una API denominada REST basada en los principios de la web y la semántica del protocolo HTTP y como formato de intercambio de datos se suele utilizar JSON. Las aplicaciones basadas en REST que siguen los principios de HATEOAS permiten a los clientes obtener en los los datos devueltos las ubicaciones de los recursos relacionados.</p>
 <p>Otra forma de implementación de un API es mediante <a href="https://graphql.org/">GraphQL</a> que a diferencia de REST no se basa en los principios del protocolo HTTP y la semántica de la web aunque lo utiliza. A diferencia de REST que siempre se devuelven los mismos datos GrapqhQL permite realizar consultas indicando únicamente los datos deseados como respuesta.</p>
-<h4 id="cqrs">CQRS</h4>
+<h3 id="cqrs">CQRS</h3>
 <p>La metodología CQRS separa las operaciones de consulta que solicitan datos de las operaciones que modifican datos o comandos incluso utilizando diferentes bases de datos. El modelo necesario para la consulta puede ser distinto del necesario para la modificación y variar en diferentes casos de uso, por eso la necesidad o ventaja de separar el modelo de consulta del modelo de modificación. El modelo de consulta puede estar desnormalizado para ser más sencillo o eficiente a las necesidades de consulta que utilizando un único modelo para ambas operaciones.</p>
 <p>El modelo de consulta se actualiza de forma asíncrona con el modelo de modificación utilizando consistencia eventual. Para manejar esta consistencia eventual en la interfaz del usuario hay varias opciones, una de ellas mostrar los datos en la interfaz como si se hubieran modificado inmediatamente aún estándo pendientes de modificarse. Otra posibilidad es mostrar la fecha y hora de la última actualización de los datos o simplemente indicar al usuario que su petición ha sido aceptada y su procesamiento requiere algo de tiempo en procesarse.</p>
-<h4 id="_event-driven_"><em>Event-Driven</em></h4>
+<h3 id="_event-driven_"><em>Event-Driven</em></h3>
 <p>En las aplicaciones dirigidas por eventos o <em>event-driven</em> las aplicaciones reaccionan a los eventos que se producen en el sistema. El procesamiento de un evento devuelve una respuesta o genera nuevos eventos en el sistema.</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Event-driven_architecture">Event-driven architecture</a></li>
 </ul>
-<h4 id="_event-sourcing_"><em>Event Sourcing</em></h4>
+<h3 id="_event-sourcing_"><em>Event Sourcing</em></h3>
 <p>En vez de realizar modificaciones sobre los datos existentes simplemente se añaden nuevos eventos en el sistema, el estado actual del sistema se obtiene al procesar todos los eventos.</p>
 <ul>
 <li><a href="https://martinfowler.com/eaaDev/EventSourcing.html">Event Sourcing</a></li>

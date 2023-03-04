@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -266,7 +266,7 @@
 </div>
 <p>Una herramienta de control de versiones para el código fuente de las aplicaciones es esencial, para guardar todos los cambios realizados en el código y permitir compartir código entre los desarrolladores aparte de otras funcionalidades proporcionadas. Una de las herramientas de control de versiones más populares es <a href="https://git-scm.com/">Git</a>, desarrollado por <a href="https://en.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a> también autor original de núcleo <a href="https://www.linux.com/">Linux</a> entre otros colaboradores.</p>
 <p>Una situación habitual al realizar cambios en el código fuente de un programa es pasado un tiempo descubrir un error y no conocer en que cambio lo ha producido y en que <em>commit</em>. Si no se tiene una pista de cual es el cambio que ha introducido error una solución es probar cada <em>commit</em> y para ver si esa versión de la aplicación tiene el error o no. Una vez probados varios <em>commit</em> al final se descubre que <em>commit</em> es el que ha introducido el error. Conociendo el <em>commit</em> que introduce el error hay que revisar los cambios de ese <em>commit</em> para conocer y cambiar las líneas de código erróneas.</p>
-<h3 id="el-comando-_git-bisect_">El comando <em>git bisect</em></h3>
+<h2 id="el-comando-_git-bisect_">El comando <em>git bisect</em></h2>
 <p>Una de las funcionalidades que proporciona la herramienta de control de versiones Git es el subcomando <em>bisect</em>. <a href="https://git-scm.com/docs/git-bisect">El comando <em>git bisect</em></a> automatiza encontrar que <em>commit</em> ha introducido un error dado un rango de <em>commits</em> en el que se sospecha está el <em>commit</em> con el error.</p>
 <p>El comando <em>git bisect</em> aplica un algoritmo de búsqueda al rango de <em>commits</em>, en función de la indicación que se le proporcione de si el commit tiene o no el error al final del número de comprobaciones que sean necesarias proporciona el primer <em>commit</em> con el error en el rango analizado.</p>
 <p>El comando <em>git bisect</em> no se utiliza tan habitualmente como <em>git stash</em> o <em>git commit</em> pero cuando cuando es necesario es muy útil conocer como se usa y usarlo.</p>

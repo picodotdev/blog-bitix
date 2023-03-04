@@ -140,7 +140,7 @@ Con el advenimiento de los microservicios, contenedores, la nube y aplicaciones 
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -287,7 +287,7 @@ Con el advenimiento de los microservicios, contenedores, la nube y aplicaciones 
 <li><em>Timer</em>: mide periodos de tiempo. Puede ser el tiempo de respuesta empleado para atender una petición de un servicio.</li>
 <li><em>Distribution summaries</em>: recolecta la distribución de una serie de datos con los que se pueden obtener percentiles.</li>
 </ul>
-<h3 id="ejemplo-de-microservicio-con-spring-boot-micrometer-prometheus-y-grafana">Ejemplo de microservicio con Spring Boot, Micrometer, Prometheus y Grafana</h3>
+<h2 id="ejemplo-de-microservicio-con-spring-boot-micrometer-prometheus-y-grafana">Ejemplo de microservicio con Spring Boot, Micrometer, Prometheus y Grafana</h2>
 <p>Utilizando el ejemplo que hice para la <a href="https://picodotdev.github.io/blog-bitix/series/spring-cloud/">serie de artículos sobre Spring Cloud</a> he añadido al micro servicio <em>service</em> un contador con el número de invocaciones que se le ha realizado. Este dato se expone en el <em>endpoint</em> con la clave <em>service.invocations</em> como se ha definido al registrar el contador en Micrometer con la clase <em>MeterRegistry</em>. Además de esta métrica propia del servicio Spring Boot Actuator añade otras muchas más del uso de la CPU, memoria, &hellip;</p>
 <p>Una clase de una aplicación de Spring Boot que utiliza un <em>Counter</em>.</p>
 <div class="code">

@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -282,17 +282,17 @@
 <img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="200" height="150" alt="Arch Linux" title="Arch Linux" class="&#34; " loading="lazy"></p>
 </figure>
 </div>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#actualizar-los-paquetes-instalados-del-sistema">Actualizar los paquetes instalados del sistema</a></li>
     <li><a href="#instalar-y-desinstalar-nuevos-paquetes-y-programas">Instalar y desinstalar nuevos paquetes y programas</a></li>
     <li><a href="#uso-básico-de-la-terminal">Uso básico de la terminal</a></li>
     <li><a href="#que-no-hacer">Que no hacer</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="actualizar-los-paquetes-instalados-del-sistema">Actualizar los paquetes instalados del sistema</h3>
+<h2 id="actualizar-los-paquetes-instalados-del-sistema">Actualizar los paquetes instalados del sistema</h2>
 <p>En todas las distribuciones hay un gestor de paquetes que se encarga de forma automatizada de descargar desde los repositorios las nuevas versiones y actualizar los paquetes. Cada paquete tiene unas dependencias que el gestor de paquetes también se encarga de descargar, instalar y actualizar. Es importante realizar la actualización regularmente, todas las semanas o cada dos semanas, dado que estos incluyen importantes correcciones de seguridad, correcciones de errores o mejoras con nuevas opciones.</p>
 <p>En Ubuntu el gestor de paquetes es <em>apt</em>, la actualización de los paquetes instalados a la última versión disponible en los repositorios con las correcciones de seguridad y de errores se realiza con el siguiente comando. Arch Linux también tiene su comando para realizar la actualización de todos los paquetes del sistema.</p>
 <div class="code">
@@ -316,7 +316,7 @@
     </div>
 </div>
 <p>En el raro caso de que al actualizar un paquete en Arch Linux haya algún error se puede <a href="https://picodotdev.github.io/blog-bitix/2015/02/como-hacer-un-downgrade-de-un-paquete-en-arch-linux/">desactualizar a la versión anterior o hacer un <em>downgrade</em></a>.</p>
-<h3 id="instalar-y-desinstalar-nuevos-paquetes-y-programas">Instalar y desinstalar nuevos paquetes y programas</h3>
+<h2 id="instalar-y-desinstalar-nuevos-paquetes-y-programas">Instalar y desinstalar nuevos paquetes y programas</h2>
 <p>Los programas y comandos permiten realizar las tareas de productividad que se deseen realizar. Para instalar nuevos programas también se utiliza el gestor de paquetes. Se puede realizar desde la linea de comandos o de forma gráfica usando el centro de software de GNOME. Basta con buscar el programa deseado y pulsar el botón instalar, la desinstalación se realiza también desde el centro de Software de GNOME con el botón desinstalar.</p>
 <div class="media">
 <figure>
@@ -363,7 +363,7 @@
     </div>
 </div>
 <p>El centro de software de GNOME instala los <a href="https://picodotdev.github.io/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">programas empaquetados con Flatpak</a> en vez de usando los paquetes de la distribución.</p>
-<h3 id="uso-básico-de-la-terminal">Uso básico de la terminal</h3>
+<h2 id="uso-básico-de-la-terminal">Uso básico de la terminal</h2>
 <p>La línea de comandos de GNU/Linux al principio es difícil de utilizar dado que no es muy amigable al tener que conocer los comandos y sus parámetros para realizar la acción, las interfaces gráficas son más simples de utilizar dado que ofrecen una guía al usuario sin necesidad de que tenga un conocimiento previo de cómo utilizarlo.</p>
 <p>Sin embargo, para tareas repetitivas o masivas es mas rápido y sencillo utilizar la linea de comandos conociendo el comando y los parámetros a utilizar. Un ejemplo de tarea para que se puede utilizar la línea de comandos es para <a href="https://picodotdev.github.io/blog-bitix/2019/12/comando-para-convertir-imagenes-jpeg-y-png-a-webp/">convertir de forma masiva el formato de imágenes de JPEG y PNG a WebP</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/">música</a> o <a href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/">vídeos</a>.</p>
 <div class="code">
@@ -414,7 +414,7 @@
 </figure>
 </div>
 <p>El intérprete de comandos es el encargado de entender las sintaxis de los comandos además de interpretar los <em>scripts</em> para automatizar las tareas con pequeños programas de <em>script</em> en vez de tener que introducir los comandos manualmente en la terminal. <a href="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/">El intérprete de comandos Bash</a> es un intérprete que es instalado por defecto en la mayoría de distribuciones GNU/Linux.</p>
-<h3 id="que-no-hacer">Que no hacer</h3>
+<h2 id="que-no-hacer">Que no hacer</h2>
 <p>Por muchas medidas de seguridad que implemente un sistema no son suficientes si el usuario no es consciente de algunos peligros y cosas que no se deben hacer sin saber que se está haciendo.</p>
 <p>Lo primero es no ejecutar cualquier comando que se encuentre en internet sin saber que hace por muy curioso que sea. Un ejemplo es <a href="https://picodotdev.github.io/blog-bitix/2018/09/el-comando-fork-bomb-explicado/">el comando <em>fork bomb</em></a>, este hace que pasados unos pocos segundos el sistema agote todos sus recursos, lo hace inusable y obliga ha hacer un reinicio. Y este comando no es un comando de las peores maldades que se pueden hacer.</p>
 <blockquote>

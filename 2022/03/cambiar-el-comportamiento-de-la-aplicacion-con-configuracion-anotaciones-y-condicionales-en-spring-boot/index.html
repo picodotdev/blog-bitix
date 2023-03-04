@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -275,15 +275,15 @@
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2021/12/configuracion-de-una-aplicacion-con-spring-boot-y-configuracion-centralizada-con-spring-cloud-config/">Configuración de una aplicación con Spring Boot y configuración centralizada con Spring Cloud Config</a></li>
 </ul>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#anotaciones-y-condicionales-para-crear-_beans_">Anotaciones y condicionales para crear <em>beans</em></a></li>
     <li><a href="#ejemplo-de-_beans_-condicionales-de-con-spring-boot">Ejemplo de <em>beans</em> condicionales de con Spring Boot</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="anotaciones-y-condicionales-para-crear-_beans_">Anotaciones y condicionales para crear <em>beans</em></h3>
+<h2 id="anotaciones-y-condicionales-para-crear-_beans_">Anotaciones y condicionales para crear <em>beans</em></h2>
 <p>Una de las funcionalidades proporcionadas por Spring es el contenedor de <em>beans</em> que realiza la construcción de las instancias mediante la inyección de dependencias. Mediante la inyección de dependencias la aplicación ya no es responsable de realizar la creación de la instancias sino que esta tarea es delegada al contenedor de <em>beans</em> que es capaz de elegir las implementaciones según diferentes condiciones y valores. A través del los perfiles de inicio de la aplicación, valores de configuración, de anotaciones y mediante un lenguaje de expresiones el contenedor de <em>beans</em> crea las instancias de las implementaciones de las interfaces deseadas según la configuración proporcionada a la aplicación en tiempo de ejecución.</p>
 <p>En Spring los <em>beans</em> se definen con las siguientes anotaciones:</p>
 <ul>
@@ -321,7 +321,7 @@
         <span>OperatingSystem.java</span>
     </div>
 </div>
-<h3 id="ejemplo-de-_beans_-condicionales-de-con-spring-boot">Ejemplo de <em>beans</em> condicionales de con Spring Boot</h3>
+<h2 id="ejemplo-de-_beans_-condicionales-de-con-spring-boot">Ejemplo de <em>beans</em> condicionales de con Spring Boot</h2>
 <p>En este pequeño ejemplo de aplicación se definen dos implementaciones de una interfaz. En base al valor de una propiedad de configuración proporcionada por configuración y con la posibilidad de cambiar su valor en tiempo de ejecución con una variable de entorno se selecciona la implementación deseada utilizando las anotaciones condicionales.</p>
 <p>La interfaz del ejemplo simplemente tiene un método que devuelve un mensaje según el idioma que le corresponde.</p>
 <div class="code">

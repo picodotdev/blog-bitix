@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -267,21 +267,21 @@
 </div>
 <p>La analítica web es una funcionalidad imprescindible en la mayoría de sitios públicos accesibles desde internet web incluso en aquellos privados. La analítica web es una funcionalidad que proporciona valiosa información acerca del sitio web, desde número de visitas en determinados periodos de tiempo así como información de los usuarios y la interacción de estos con el sitio web.</p>
 <p>La información proporcionada por la analítica web ayuda a la toma de decisiones basadas en datos observando el comportamiento de los usuarios en el sitio web con métricas que permiten conocer cuales son las páginas más visitas, en cuales permanecen más tiempo, que versión de navegador web usan, cuales son los países de los usuarios, cuál es el tráfico por hora del día, las fuentes del tráfico, sitios web de referencia, tráfico según días de la semana, ciertas fechas señaladas, periodos de vacaciones u cualesquiera otras formas de conocimiento interesantes para el negocio.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#google-analytics-la-herramienta-más-utilizada-para-hace-analítica-web">Google Analytics, la herramienta más utilizada para hace analítica web</a></li>
     <li><a href="#goaccess-una-alternativa-de-analítica">GoAccess, una alternativa de analítica</a></li>
     <li><a href="#analítica-de-sitio-web-con-goaccess-en-un-servidor-web-nginx">Analítica de sitio web con GoAccess en un servidor web Nginx</a>
-      <ul>
+      <ol>
         <li><a href="#interfaz-de-terminal">Interfaz de terminal</a></li>
         <li><a href="#interfaz-de-navegador-web">Interfaz de navegador web</a></li>
-      </ul>
+      </ol>
     </li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="google-analytics-la-herramienta-más-utilizada-para-hace-analítica-web">Google Analytics, la herramienta más utilizada para hace analítica web</h3>
+<h2 id="google-analytics-la-herramienta-más-utilizada-para-hace-analítica-web">Google Analytics, la herramienta más utilizada para hace analítica web</h2>
 <p>La herramienta más utilizada para hacer analítica web es <a href="https://www.google.es/intl/es/analytics/">Google Analytics</a>, es gratuita, fácil de instalar en un sitio web y tiene gran cantidad de funcionalidades básicas y avanzadas que cubren las necesidades de cualesquiera usuarios. Almacena la información recogida a lo largo del tiempo que es consultable con posterioridad incluso pasados varios años de forma muy flexible con diferentes criterios de búsqueda y filtros, también ofrece varios paneles para observar el tráfico en tiempo real.</p>
 <div class="media">
 <figure>
@@ -299,11 +299,11 @@
 <p>El principal inconveniente de Google Analytics es introducir una tercera parte en la relación entre el sitio web y el usuario, una tercera parte que recoge métricas del sitio web e información de los usuarios. Los sitios web han de tener en cuenta que han de cumplir con las regulaciones y leyes como la <a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">GDPR</a> en Europa en el tratamiento de la información de los usuarios para para proteger la privacidad de los usuarios que algunas empresas ponen en riesgo si no fuera por esas leyes que impiden o ponen límites a la recopilación de datos bajo penas de importantes multas, utilizar <em>cookies</em> de seguimiento que permiten identificar a los usuarios de forma inequívoca o el tratamiento de información personal. Leyes que afectan también a la propia Google junto a otras empresas como Amazon, Facebook o Twitter de EEUU con unas regulaciones más permisivas, las leyes les afecta por ejemplo impidiendo transferir los datos de los usuarios europeos fuera de Europa.</p>
 <p>La privacidad del los usuarios ya es un buen motivo para utilizar una alternativa a Google Analytics. Otro motivo es que el <em>script</em> de Google Analytics se ejecuta en el navegador del usuario y afecta en una pequeña medida al rendimiento en la carga de la página web.</p>
 <p>Otros sitios web privados de una intranet u aquellos que tienen interés en proteger la privacidad de sus usuarios prefieren utilizar otras herramientas para realizar analítica del sitio web que no involucren terceras partes.</p>
-<h3 id="goaccess-una-alternativa-de-analítica">GoAccess, una alternativa de analítica</h3>
+<h2 id="goaccess-una-alternativa-de-analítica">GoAccess, una alternativa de analítica</h2>
 <p><a href="https://goaccess.io/">GoAccess</a> es una pequeña utilidad que cubre una pequeña parte de la funcionalidad de analítica de un sitio web, en concreto ofrece la analítica en tiempo real de uno o múltiples sitios web, <a href="https://matomo.org/">Matomo</a> es una <a href="https://picodotdev.github.io/blog-bitix/2021/01/analitica-web-con-matomo-como-alternativa-a-google-analytics/">alternativa equivalente a Google Analytics</a> que ofrece las funcionalidades de <em>tracking</em> de eventos y <em>tag manager</em>. Sus características principales son que es una herramienta sencilla y pequeña, no requiere insertar ningún <em>script</em> en las páginas del sitio web, no involucra terceras partes y es software libre.</p>
 <p>Para realizar la analítica web no requiere insertar ningún <em>script</em> de JavaScript en el cliente lo que mejora el tiempo de carga de las páginas. La analítica la hace completamente en el lado del servidor analizando los archivos de <em>log</em> de acceso y errores del servidor web. Soporta los servidores web más utilizados como <a href="https://nginx.org/">Nginx</a> y <a href="https://httpd.apache.org/">Apache HTTPD</a>.</p>
 <p>GoAccess permite obtener información de analítica en tiempo real del número de usuarios, que navegadores utilizan, URLs solicitadas, distribución de las peticiones en el tiempo, navegadores y sistemas operativos de los usuarios, sitios y URLs de referencia, palabras clave de búsqueda, códigos de estado HTTP, geolocalización, &hellip; Ofrece dos interfaces distintas, una basada en una interfaz de terminal y otra basada en una interfaz web.</p>
-<h3 id="analítica-de-sitio-web-con-goaccess-en-un-servidor-web-nginx">Analítica de sitio web con GoAccess en un servidor web Nginx</h3>
+<h2 id="analítica-de-sitio-web-con-goaccess-en-un-servidor-web-nginx">Analítica de sitio web con GoAccess en un servidor web Nginx</h2>
 <p>En el ejemplo de uso de GoAccess para realizar analítica web de un servidor web y acceder a las dos interfaces que ofrece utilizo la herramienta <a href="https://www.docker.com/">Docker</a> que evita tener que instalar estas herramientas de forma directa en la computadora, hace fácil su instalación, prueba, uso y eliminación de la computadora local una vez evaluada la herramienta. En el ejemplo el servidor web que he utilizado ha sido Nginx para Apache HTTPD se sigue el mismo principio de proporcionar a GoAccess los archivos de <em>log</em> de acceso al servidor web.</p>
 <p>Para realizar el ejemplo son de utilidad los siguientes otros artículos en los que me he apoyado para crear este.</p>
 <ul>
@@ -381,7 +381,7 @@
         <span>docker-ps.sh</span>
     </div>
 </div>
-<h4 id="interfaz-de-terminal">Interfaz de terminal</h4>
+<h3 id="interfaz-de-terminal">Interfaz de terminal</h3>
 <p>La interfaz de terminal o consola no requiere herramientas adicionales, desde la propia terminal es posible acceder a la información de analítica. Hay que ejecutar el comando de GoAccess, al usar Docker desde dentro de su contenedor. GoAccess se puede iniciar individualmente para acceder a su interfaz basada en la terminal.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker run -it --rm <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;-v <span class="s2">&#34;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">/nginx/log:/var/log/nginx&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;picodotdev/goaccess:1.0 goaccess --no-global-config --log-format<span class="o">=</span>VCOMBINED /var/log/nginx/nginx-access.log /var/log/nginx/goaccess-access.log&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -396,7 +396,7 @@
 <figcaption>Interfaz consola de analítica GoAccess</figcaption>
 </figure>
 </div>
-<h4 id="interfaz-de-navegador-web">Interfaz de navegador web</h4>
+<h3 id="interfaz-de-navegador-web">Interfaz de navegador web</h3>
 <p>La interfaz de terminal no es la más cómoda de usar ni más accesible de forma remota, por ello GoAccess también proporciona una interfaz web accesible con un navegador web.</p>
 <p>Para ello genera un archivo html de informe con los datos que se ha de servir desde un servidor web y ofrece un servidor con <em>WebSockets</em> para las métricas en tiempo real. En el ejemplo su dirección de acceso con el navegador <em>http://goaccess.127.0.0.1.xip.io/report.html</em>, la interfaz se actualiza con analítica de acceso del servidor web Nginx del sitio web <em>http://www.127.0.0.1.xip.io/</em>.</p>
 <div class="media">

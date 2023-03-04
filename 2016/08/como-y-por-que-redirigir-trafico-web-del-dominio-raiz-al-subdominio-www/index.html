@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -270,7 +270,7 @@
 <p>En el caso del tráfico web debemos evitar que el servidor y la página o aplicación sea accedida por <em>empresa.com</em> y <em>www.empresa.com</em> ya que los buscadores tratarán a la página como dos diferentes y posiblemente detectando contenido duplicado que afectará negativamente o penalizando al SEO de la web. Lo que se suele hacer es hacer una <a href="https://es.wikipedia.org/wiki/HTTP_301">redirección permanente</a> (cuyo código de estado HTTP para la respuesta es 301) a nivel de servidor que redirija el tráfico de <em>empresa.com</em> a <em>www.empresa.com</em> cuando el usuario acceda con su navegador con la primera.</p>
 <p>Esta es una de las cosas básicas que debemos realizar cuando instalemos un servidor web, otras cosas recomendadas para mejorar el SEO y la seguridad de los usuarios es <a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/">configurar el servidor web para usar el protocolo seguro HTTPS</a> y <a href="https://picodotdev.github.io/blog-bitix/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/">configurar el servidor web para forzar el uso de HTTPS</a> también haciendo una redirección cuando la petición use el protocolo no cifrado HTTP entre otras cosas que indico en la <a href="https://picodotdev.github.io/blog-bitix/series/web/">serie web</a>.</p>
 <p>Dependiendo del servidor web que utilicemos la configuración a añadir para hacer la redirección será distinta, a continuación indicaré como hacerlo en dos de los servidores web más populares como son <a href="https://nginx.org/">Nginx</a> y <a href="https://httpd.apache.org/">Apache HTTPD</a>.</p>
-<h3 id="nginx">Nginx</h3>
+<h2 id="nginx">Nginx</h2>
 <p>Usando Docker y el archivo de configuración completo podemos probar que funciona en local sin necesidad de instalar o cambiar la configuración de Nginx si tenemos instalado su paquete.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker run --rm -p 80:80 -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/nginx.conf:/etc/nginx/conf.d/default.conf:ro nginx:alpine&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -291,7 +291,7 @@
 <figcaption>Dominio antes y después de acceder al sitio con Nginx</figcaption>
 </figure>
 </div>
-<h3 id="apache">Apache</h3>
+<h2 id="apache">Apache</h2>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker run --rm -p 80:80 -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro httpd:alpine&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">

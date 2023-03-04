@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -279,18 +279,18 @@
 </ul>
 <p>Es muy útil poder ejecutar procesos de forma uniforme independientemente del lenguaje y de forma aislada con todas las dependencias del entorno dentro de la imagen lo que permite ejecutar tantos servicios como se deseen sin que las dependencias de estos entre en conflicto.</p>
 <p>La misma utilidad y propiedades de los contenedores en tiempo de ejecución es deseable en el momento de construcción de las imágenes de los servicios.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#la-herramienta-buildpacks">La herramienta Buildpacks</a></li>
     <li><a href="#el-proyecto-paketo">El proyecto Paketo</a></li>
     <li><a href="#instalación-de-buildpacks">Instalación de Buildpacks</a></li>
     <li><a href="#construcción-de-la-imagen-del-contenedor">Construcción de la imagen del contenedor</a></li>
     <li><a href="#ejecución-del-contenedor-con-docker">Ejecución del contenedor con Docker</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="la-herramienta-buildpacks">La herramienta Buildpacks</h3>
+<h2 id="la-herramienta-buildpacks">La herramienta Buildpacks</h2>
 <p>La herramienta <a href="https://buildpacks.io/">Buildpacks</a> analiza el código fuente y permite construir imágenes de contenedores compatible con OCI con la misma herramienta independientemente del lenguaje o plataforma que utilice y sin utilizar archivos Dockerfile. Además, permite reutilizar las instrucciones de construcción sin tener que implementarlas.</p>
 <p>Los <em>buildpacks</em> son los módulos que añaden el soporte e implementan las instrucciones para construir las imágenes. Hay un <em>buildpack</em> específico según una necesidad de construcción, una aplicación puede necesitar varios <em>buildpacks</em> al mismo tiempo.</p>
 <p>Por ejemplo, una aplicación Java necesita una versión de la JVM para ejecutarse que es proporcionado por un <em>buildpack</em>, si la aplicación utiliza <a href="https://gradle.org/">Gradle</a> como herramienta de construcción hay un <em>nuildpack</em> para construir aplicaciones Gradle. Y hay <em>buildpacks</em> para Java, <a href="https://nodejs.org/en/">Node</a>, <a href="https://www.python.org/">Python</a> y otros lenguajes.</p>
@@ -309,13 +309,13 @@
 <figcaption>Buildpack</figcaption>
 </figure>
 </div>
-<h3 id="el-proyecto-paketo">El proyecto Paketo</h3>
+<h2 id="el-proyecto-paketo">El proyecto Paketo</h2>
 <p><a href="https://paketo.io/">Paketo</a> es un proyecto de código abierto que proporciona numerosos <em>buildpacks</em> para diferentes lenguajes de las aplicaciones más populares entre los que por supuesto están Java, Node, Python y Go entre otros.</p>
 <p>En el <a href="https://github.com/paketo-buildpacks">proyecto de GitHub de Paketo</a> están los diferentes repositorios de los <em>buildpacks</em> junto con sus opciones de configuración y código fuente, además proporciona varios <em>builder</em> basados en diferentes versiones de <a href="https://www.ubuntu.com/">Ubuntu</a>.</p>
 <ul>
 <li><a href="https://paketo.io/docs/reference/builders-reference/">Paketo Builders Reference</a></li>
 </ul>
-<h3 id="instalación-de-buildpacks">Instalación de Buildpacks</h3>
+<h2 id="instalación-de-buildpacks">Instalación de Buildpacks</h2>
 <p>Hay <a href="https://buildpacks.io/docs/tools/pack/">varias formas de instalación de Buildpacks</a> según el sistema operativo que se use, junto a varias formas de instalación usando el gestor de paquetes nativo del sistema operativo o una instalación manual en el sistema.</p>
 <p>Builpacks es una herramienta programada en el lenguaje Go que una de sus ventajas es que generan un único binario que incluye todas las dependencias con lo que su instalación manual es muy sencilla, basta con descargar y copiar un único archivo.</p>
 <p>En <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> basta descargar el paquete de distribución para este sistema operativo, descomprimirlo e instalar el binario en el <em>path</em> del sistema de modo que al ejecutar el comando el intérprete del <em>shell</em> lo encuentre. En GNU/Linux el directorio <em>/usr/local/bin</em> permite añadir al sistema comandos adicionales sin que entren en conflicto con los que se instalan a través de paquetes de la distribución.</p>
@@ -325,7 +325,7 @@
         <span>ls-bin.sh</span>
     </div>
 </div>
-<h3 id="construcción-de-la-imagen-del-contenedor">Construcción de la imagen del contenedor</h3>
+<h2 id="construcción-de-la-imagen-del-contenedor">Construcción de la imagen del contenedor</h2>
 <p>Utilizando una aplicación escrita con Java con Gradle como herramienta de construcción y que usa <a href="https://projects.spring.io/spring-boot/">Spring Boot</a>, el comando para construir la imagen OCI del contenedor es el siguiente.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ pack build spring-injection-point <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--env <span class="s2">&#34;BP_JVM_TYPE=JDK&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--env <span class="s2">&#34;BP_JVM_VERSION=11&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--env <span class="s2">&#34;BP_GRADLE_BUILT_ARTIFACT=app/build/distributions/app.zip&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--builder paketobuildpacks/builder-jammy-base <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/ca-certificates <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/syft <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/procfile <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/adoptium <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/gradle <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/executable-jar <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/spring-boot <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--default-process app <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--path .</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -340,7 +340,7 @@
 </ul>
 <p>El comando especifica los <em>buildpacks</em> ya que el <em>builder</em> utilizado no incluye ninguno. En el parámetro <em>path</em> se indica la ruta al código fuente de la aplicación.</p>
 <p>El <em>buildpack</em> <em>paketo-buildpacks/procfile</em> permite especificar diferentes comandos de ejecución en un archivo. El <em>entrypoint</em> que añade el <em>builder</em> en la imagen permite especificar el proceso a iniciar en el comando de ejecución del contenedor.</p>
-<h3 id="ejecución-del-contenedor-con-docker">Ejecución del contenedor con Docker</h3>
+<h2 id="ejecución-del-contenedor-con-docker">Ejecución del contenedor con Docker</h2>
 <p>Docker permite almacenar en local y ejecutar las imágenes construidas con Buildpacks como un contenedor normal. El comando para iniciar la aplicación es el siguiente que inicia el proceso por defecto de la imagen.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker run -it --rm -p 8080:8080 spring-injection-point&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>

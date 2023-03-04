@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -259,7 +259,7 @@
 <p>Las páginas web están formadas por varios elementos separados, por un lado está el código HTML que forma el contenido de la página con las referencias a elementos externos que use como hojas de estilo CSS, imágenes o archivos JavaScript. Las imágenes son recursos gráficos soportando todos los navegadores los formatos <em>png</em>, <em>jpg</em> para fotos e imágenes vectoriales como <em>svg</em>. Los archivos JavaScript permite incorporar a la página código ejecutable con el propósito de añadir ciertos comportamientos mediante programación. Finalmente, están las hojas de estilo CSS que proporcionan los estilos y cambian el aspecto visual y maquetación de los elementos, el contenido HTML puede ser el mismo pero con una hoja de estilos diferente la visualización muy diferente.</p>
 <p>Las hojas de estilos cambian propiedades de visualización de diferentes elementos como tipo de letra, tamaño de texto, formato, color, alineación, bordes, etc&hellip; La etiqueta <em>h1</em> representa el título principal de la página, con el siguiente código se establecen varias propiedades a cada una de las etiquetas.</p>
 <p>Siendo las páginas web cada vez más complejas, en gran medida las hojas de estilo también se convierten en más complejas con la aparición de los dispositivos móviles un poco más dado que hay que adaptar la página al tamaño de cada uno de los dispositivos. Por esto se suelen usar <em>toolkits</em> o librerías como <a href="https://getbootstrap.com/">Bootstrap</a> con unos estilos elegantes listos para usar sin tener que crearlos desde cero en cada proyecto,  proporciona diferentes componentes como <em>layouts</em>, botones, formularios, modales, <em>popovers</em>, barras de progreso, desplegables y algunos más. Sin embargo, aún con Bootstrap suelen ser necesarios escribir algunos estilos adicionales propios de la página.</p>
-<h3 id="el-preprocesador-de-estilos-css">El preprocesador de estilos CSS</h3>
+<h2 id="el-preprocesador-de-estilos-css">El preprocesador de estilos CSS</h2>
 <p>Para facilitar la escritura de hojas de estilos complejas con menor código y más legibles han aparecido preprocesadores de hojas de estilos o <em>css preprocessors</em> con funcionalidades adicionales y una nueva forma de escribir hojas de estilo menos tediosa que el CSS.</p>
 <p>Un preprocesador de CSS es un programa que lee un archivo de código fuente en el formato pseudo-código CSS que espera el preprocesador y genera un archivo hoja de estilos en formato CSS que los navegadores entienden, es un compilador que transforma el lenguaje de un archivo a otro en este caso de un código que suele ser similar a CSS a CSS estándar. Uno de los preprocesadores más populares por su simplicidad pero con muchas funciones útiles es <a href="https://lesscss.org/">less</a>, otro es <a href="https://sass-lang.com/">Sass</a>.</p>
 <p>Las ventajas de un preprocesador CSS es que se pueden usar variables que pueden ser utilizadas por ejemplo para aplicar el mismo color a varios elementos sin tener que repetir el color RGB en cada uno de los elementos lo que facilita el mantenimiento de las hojas de estilo. Anidar estilos relativos a un elemento y selectores, realizar operaciones, utilizar funciones, <em>namespaces</em> para agrupar contextos de estilos y <em>mixins</em> para estilos aplicables a varios elementos algunas cosas más pero estas ya mejoran y simplifican significativamente el trabajo con hojas de estilo.</p>
@@ -271,7 +271,7 @@
         <span>example.less</span>
     </div>
 </div>
-<h3 id="cómo-transformar-el-pseudo-codigo-css-a-css-con-un-preprocesador">Cómo transformar el pseudo-codigo CSS a CSS con un preprocesador</h3>
+<h2 id="cómo-transformar-el-pseudo-codigo-css-a-css-con-un-preprocesador">Cómo transformar el pseudo-codigo CSS a CSS con un preprocesador</h2>
 <p>El archivo CSS en formato <em>less</em> hay que compilarlo para producir el archivo CSS que los navegadores entienden. La herramienta para compilar el archivo de estilos en formato <em>less</em> es <em>lessc</em>. Se puede usar directamente en un <em>script</em> Bash o con una herramienta de construcción como <a href="https://www.npmjs.com/">npm</a> o a través de <a href="https://webpack.js.org/">webpack</a>.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ npm install --save-dev less&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>

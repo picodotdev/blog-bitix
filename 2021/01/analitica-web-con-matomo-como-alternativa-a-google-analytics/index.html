@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -265,7 +265,7 @@
 <p>La analítica web permite obtener valiosa información y datos de un sitio web, de los usuarios y de su comportamiento. Estos datos e información sirven para tomar decisiones basadas en parte datos en vez de únicamente en opiniones e intuiciones. Cuantas son las visitas de un sitio web, qué páginas son las más visitadas, cuánto tiempo permanecen los usuarios en una página, que días de la semana y a que horas hay más visitas, que navegador, sistema operativo y dispositivo usan los usuarios, un ordenador o dispositivo móvil, cuáles son los sitios de referencia y mucha otra información.</p>
 <p>La herramienta de analítica web más utilizada es <a href="https://www.google.es/intl/es/analytics/">Google Analytics</a>. En el artículo <a href="https://picodotdev.github.io/blog-bitix/2021/01/analitica-web-en-el-servidor-sin-javascript-en-el-cliente-con-goaccess/">Analítica web en el servidor sin JavaScript en el cliente con GoAccess</a> comentaba algunos motivos para usar o no usar <a href="https://www.google.es/intl/es/analytics/">Google Analytics</a>.</p>
 <p>Los motivos para usar Google Analytics están en que es gratuita, fácil de instalar en un sitio web, tiene gran cantidad de funcionalidades básicas y avanzadas que cubren las necesidades de cualesquiera usuarios y no requiere mantener infraestructura propia. Los motivos en contra de usar Google Analytics están en que los datos de un sitio web y de los usuarios es recogido por una tercera parte que establece su propia licencia al servicio y los datos, lo que afecta a la privacidad de los usuarios.</p>
-<h3 id="matomo-una-alternativa-a-google-analytics">Matomo, una alternativa a Google Analytics</h3>
+<h2 id="matomo-una-alternativa-a-google-analytics">Matomo, una alternativa a Google Analytics</h2>
 <p><a href="https://matomo.org/">Matomo</a> es una de las herramientas como alternativa a Google Analytics. Tiene funciones equivalentes a las de Google Analytics, tiene una licencia software libre y es posible instalarlo en infraestructura propia para controlar los datos de los sitios web sin depender de una tercera parte. Matomo también ofrece la posibilidad de usarlo hospedado y administrado en su modelo <em>cloud</em> ofrecido por Matomo.</p>
 <p>Algunas <a href="https://matomo.org/features/">funciones de Matomo</a> son métricas en tiempo real, seguimiento con eventos y de contenido, informes personalizados, dimensiones y variables personalizadas, geolocalización, segmentación de usuarios, transiciones de páginas y estadísticas sobre la página, velocidad el sitio web y páginas, seguimiento de campañas, <em>tracking</em> de eventos y <em>tag manager</em> entre otras</p>
 <p>Aunque Matomo es software libre con las funciones anteriores incorporadas para tener acceso a otras funciones requieren una suscripción para usu uso. Algunas de las funciones <em>premium</em> son mapas de calor o <em>heatmaps</em> en la interacción en una página, pruebas A/B, informes personalizados, analítica de formularios y medios, <em>funnels</em>, flujo de usuarios o autenticación con SAML. Al igual que Google Analytics para realizar la analítica web Matomo requiere insertar un pequeño <em>script</em> de JavaScript en el HTML de todas las páginas de los sitios sitio web. El <em>script</em> es proporcionado por Matomo al crear el sitio web.</p>
@@ -274,7 +274,7 @@
 <li><a href="https://matomo.org/docs/matomo-tour/">A Tour of Matomo</a></li>
 <li><a href="https://matomo.org/pricing/">Precios de Matomo</a></li>
 </ul>
-<h3 id="ejemplo-de-sitio-web-con-matomo">Ejemplo de sitio web con Matomo</h3>
+<h2 id="ejemplo-de-sitio-web-con-matomo">Ejemplo de sitio web con Matomo</h2>
 <p>Matomo requiere una base de datos <a href="https://www.mysql.com/">MySQL</a> o <a href="https://mariadb.org/">MariaDB</a> para persistir los datos de analítica. En este ejemplo uso <a href="https://www.docker.com/">Docker</a> con un archivo de <a href="https://docs.docker.com/compose/">Docker Compose</a> para iniciar los contenedores de una base de datos MySQL, el servidor de Matomo y un servidor <em>proxy</em> con <a href="https://nginx.org/">Nginx</a>. La versión de MySQL con la que es compatible Matomo es la 5.7 o superior.</p>
 <p>En el archivo de Docker Compose se define los tres servicios, se configuran unos volúmenes de datos compartidos entre el servidor web y el servidor de Matomo y dos archivos donde se definen algunas variables de entorno tanto para la base de datos MySQL como para la configuración de Matomo.</p>
 <div class="code">

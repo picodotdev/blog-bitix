@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -279,20 +279,20 @@
 </div>
 <p>Hay algunas aplicaciones para generar códigos de barras y códigos QR, dos aplicaciones disponibles en GNU/Linux en formato <a href="https://flatpak.org/">Flatpak</a> son <a href="https://flathub.org/apps/details/uk.org.zint.zint-qt">Zint Barcode Studio</a> que soporta multitud de estándares y <a href="https://flathub.org/apps/details/com.belmoussaoui.Decoder">Decoder</a> solo sirve para códigos QR pero que permite el reconocimiento dada una imagen o una captura de pantalla.</p>
 <p>Los códigos de barras y códigos QR se pueden generar desde un programa e incluir la imagen del código.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#librerías-para-generar-códigos-de-barras-y-códigos-qr-en-java">Librerías para generar códigos de barras y códigos QR en Java</a></li>
     <li><a href="#ejemplos-de-código">Ejemplos de código</a>
-      <ul>
+      <ol>
         <li><a href="#generar-un-código-de-barras-con-java">Generar un código de barras con Java</a></li>
         <li><a href="#generar-un-código-qr-con-java">Generar un código QR con Java</a></li>
-      </ul>
+      </ol>
     </li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="librerías-para-generar-códigos-de-barras-y-códigos-qr-en-java">Librerías para generar códigos de barras y códigos QR en Java</h3>
+<h2 id="librerías-para-generar-códigos-de-barras-y-códigos-qr-en-java">Librerías para generar códigos de barras y códigos QR en Java</h2>
 <p>En el caso del lenguaje de programación Java hay varias librerías que permiten generar códigos de barras y códigos QR. Cada librería implementa un subconjunto de todos los estándares de códigos lineales o matriciales y ofrecen una API para el lenguaje de programación.</p>
 <p>Como hay varias opciones hay que determinar por algún criterio cuál de ellas utilizar, teniendo en cuenta que varias de estas librerías son de código abierto hechos como un proyecto de una persona. Algunos criterios para elegir una son por supuesto los estándares que soporta este simple hecho ya puede descartar alguna opción si no soporta el estándar que se necesita o hay alguna librería que soporta más estándares o mejor, otro criterio es su popularidad, si tiene actualizaciones recientes de corrección de errores o nuevas características y su antigüedad.</p>
 <p>En Java algunas de las librerías de código abierto son las siguientes pero que por su estado de mantenimiento es mejor otra opción:</p>
@@ -312,9 +312,9 @@
 <ul>
 <li><a href="https://github.com/woo-j/OkapiBarcode">OkapiBarcode</a></li>
 </ul>
-<h3 id="ejemplos-de-código">Ejemplos de código</h3>
+<h2 id="ejemplos-de-código">Ejemplos de código</h2>
 <p>Los siguiente ejemplos de código son utilizando la librería OkapiBarcode que en esencia generan una imagen utilizando las clases que incluye el JDK de Java, esta imagen se puede exportar en diferentes formatos como <em>png</em> y <em>jpg</em>.</p>
-<h4 id="generar-un-código-de-barras-con-java">Generar un código de barras con Java</h4>
+<h3 id="generar-un-código-de-barras-con-java">Generar un código de barras con Java</h3>
 <p>La librería ofrece una clase con el mismo nombre por cada estándar que implementa. En los códigos lineales se ofrece la posibilidad de mostrar el código del texto que codifica la imagen, lo que es útil en caso de que el lector hardware no funcione y haya que introducir manualmente el código en el ordenador. Se puede especificar el tamaño vertical de las barras, la fuente y posición del texto y es recomendable utilizar el <em>RenderingHints.VALUE_TEXT_ANTIALIAS_ON</em> para que el texto tenga mejor aspecto aplicando <em>antialias</em> a la fuente al generar la imagen.</p>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/">Obtener el ancho y alto, escalar y convertir a otro formato imágenes con Java</a></li>
@@ -340,7 +340,7 @@
         <span>build.gradle</span>
     </div>
 </div>
-<h4 id="generar-un-código-qr-con-java">Generar un código QR con Java</h4>
+<h3 id="generar-un-código-qr-con-java">Generar un código QR con Java</h3>
 <p>Otro formato de códigos son los que tienen dos dimensiones entre los que está el popular código QR que muchos <em>smartphones</em> reconocen con la cámara.</p>
 <p>En este caso basta instancia la clase que representa el código QR y proporcionarle el contenido que se desea codificar, el proceso de generación de la imagen es igual que en el caso de los códigos de barras.</p>
 <div class="media">

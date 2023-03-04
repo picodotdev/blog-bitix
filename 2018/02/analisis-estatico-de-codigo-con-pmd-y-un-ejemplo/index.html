@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -267,14 +267,14 @@
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/">Analizar y detectar fallos de seguridad en las dependencias de Java</a></li>
 </ul>
-<h3 id="qué-es-pmd-y-para-qué-sirve">Qué es PMD y para qué sirve</h3>
+<h2 id="qué-es-pmd-y-para-qué-sirve">Qué es PMD y para qué sirve</h2>
 <p>Si la base de código del software es grande será tedioso y costoso revisarlo manualmente sin embargo hay herramientas como <a href="https://pmd.github.io/">PMD</a> que nos permite automatizar la tarea de análisis. PMD es una herramienta de análisis estático de código que sirve para  comprobar que el código sigue las normas de estilo definidas para el proyecto o en una organización además de esos otros aspectos que afectan a la facilidad de mantenimiento del software también útil cuando se incorpora una nueva persona a un proyecto para que siga las normas ya establecidas. Al igual que se deben tener teses unitarios y de integración para comprobar el correcto funcionamiento del software con PMD se obtiene un informe con las violaciones de las reglas que quieran aplicar al analizar el código.</p>
 <p>En la documentación del proyecto PMD en la sección <em>Rule Reference</em> están la reglas que se puede aplicar y configurar en el análisis, hay una buena cantidad de ellas que en algunos casos permiten modificar los umbrales u otras propiedades para adaptar la validación a lo deseado. Desde convenciones al formatear el código, uso de llaves, tamaño de código, comentarios, de diseño, bloques de código vacíos en sentencias <em>try-catch</em>, <em>if</em>, &hellip;, <em>imports</em> duplicados, no usados o del mismo paquete y por tanto innecesarios, usos innecesarios de nombres completamente cualificados, de nomenclatura de variables por ejemplo si son demasiado cortas o largas, optimizaciones, código innecesario o no usado que se puede eliminar.</p>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-convenciones-y-guia-de-estilos-para-el-codigo-fuente-de-java/">Las convenciones y guía de estilos para el código fuente de Java</a></li>
 </ul>
 <p>Al heredar un nuevo proyecto cuyo mantenimiento es complicado y grande por no cumplir varias de las reglas anteriores no es posible revisar todo el código completamente manualmente, se puede intuir cuales son algunos de los problemas haciendo una revisión a algunas partes y suponer que en el resto también están. Un buen paso es utilizar PMD para detectar de forma precisa una buena cantidad e ir corrigiéndolas a medida que se van haciendo cambios al código, con el paso del tiempo el mantenimiento si sigue siendo difícil no será por que hay código innecesario, no usado bloques de código vacíos o <em>imports</em> no usados que son completamente innecesarios y eliminables sin riesgo.</p>
-<h3 id="ejemplo-de-análisis-con-pmd">Ejemplo de análisis con PMD</h3>
+<h2 id="ejemplo-de-análisis-con-pmd">Ejemplo de análisis con PMD</h2>
 <p>Usando la <a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.html">herramienta de construcción Gradle</a> y su <a href="https://docs.gradle.org/current/userguide/pmd_plugin.html"><em>plugin</em> de PMD</a> es posible realizar el análisis automatizado del código. Hay una serie de reglas predefinidas que se pueden aplicar con valores generalmente aceptados pero que es posible personalizar.</p>
 <p>Suponiendo que con la intención de hacer el software más mantenible se define que el código debe seguir las normas de estilo de Java, en el caso del ejemplo que los métodos no tengan más de 50 líneas, en un informe en formato HTML o XML PMD genera las violaciones a las reglas que encuentre y posteriormente corregirlas si se considera adecuado. Este es un ejemplo de archivo de Gradle del que solo pongo la parte relevante para el ejemplo de cómo usar PMD aplicando unas pocas reglas ya incorporadas en PMD y la de la longitud de los métodos personalizada a una valor de 50 líneas:</p>
 <div class="code">

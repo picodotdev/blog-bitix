@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -301,23 +301,23 @@
 <figcaption>Fedora Silverblue</figcaption>
 </figure>
 </div>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#la-distribución-fedora-silverblue">La distribución Fedora Silverblue</a>
-      <ul>
+      <ol>
         <li><a href="#instalación">Instalación</a></li>
         <li><a href="#primer-inicio">Primer inicio</a></li>
         <li><a href="#administración-del-sistema-actualización">Administración del sistema, actualización</a></li>
         <li><a href="#instalación-de-programas-gráficos">Instalación de programas gráficos</a></li>
         <li><a href="#uso-de-toolbox-programas-de-línea-de-comandos-en-contenedores">Uso de Toolbox, programas de línea de comandos en contenedores</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#conclusión">Conclusión</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="la-distribución-fedora-silverblue">La distribución Fedora Silverblue</h3>
+<h2 id="la-distribución-fedora-silverblue">La distribución Fedora Silverblue</h2>
 <p>Una de las mayores fuentes de problemas de las distribuciones y de los sistemas operativos son las actualizaciones que por los cambios que introducen con nuevas versiones del software en ocasiones hace que algunas partes dejen de funcionar. Son solucionables desactualizando un paquete o en los casos más graves hace que el sistema ni siquiera se inicie correctamente llegando incluso a tener que reinstalar el sistema o peor aún provocando pédida de datos.</p>
 <p>Otro problema es que algunas distribuciones tienen como principio la estabilidad del software y dado que las nuevas versiones de los programas son una fuente de inestabilidades optan por únicamente proporciona actualizaciones para errores de seguridad. Esto proporciona una mayor estabilidad pero hace que los programas no estén actualizados a las últimas versiones con lo que no se benefician de mejoras en nuevas características, mejoras de soporte de hardware, de rendimiento o incluso de seguridad.</p>
 <p>Fedora Silverblue adopta varios principios para solucionar esos problemas. Uno es utilizar una base inmutable igual para todos los sistemas en los que se instala de modo que no haya diferencias ni errores por variaciones en el software del sistema. Es posible volver a una versión anterior en caso de algún error de modo que el sistema nunca quede completamente roto. Las aplicaciones de usuario y paquetes se instalan independientemente del sistema base inmutable lo que hace que no afecten a la estabilidad del sistema.</p>
@@ -339,7 +339,7 @@
 <li><a href="https://docs.fedoraproject.org/en-US/fedora-silverblue/toolbox/">Toolbox</a></li>
 <li><a href="https://docs.fedoraproject.org/en-US/fedora-silverblue/faq/">Frequently Asked Questions (FAQ)</a></li>
 </ul>
-<h4 id="instalación">Instalación</h4>
+<h3 id="instalación">Instalación</h3>
 <p>La instalación se realiza con un asistente gráfico después de haber descargado el medio de instalación y haberlo grabado en una memoria USB para iniciar el sistema con él. Es necesario poco más que seleccionar la distribución del teclado, el particionado y la clave del superusuario <em>root</em> para realizar la instalación.</p>
 <div class="media">
 <figure>
@@ -361,7 +361,7 @@
 <figcaption>Instalación de Fedora Silverblue</figcaption>
 </figure>
 </div>
-<h4 id="primer-inicio">Primer inicio</h4>
+<h3 id="primer-inicio">Primer inicio</h3>
 <p>Al iniciar el sistema por primera vez un nuevo asistente permite crear la cuenta de usuario compuesto de nombre y contraseña con la que iniciar sesión en el sistema.</p>
 <div class="media">
 <figure>
@@ -387,7 +387,7 @@
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/">Las aplicaciones integradas del entorno de escritorio GNOME</a></li>
 </ul>
-<h4 id="administración-del-sistema-actualización">Administración del sistema, actualización</h4>
+<h3 id="administración-del-sistema-actualización">Administración del sistema, actualización</h3>
 <p>El software que compone el sistema base se puede actualizar, los siguientes comandos permiten conocer cuales son las actualizaciones disponibles. Las actualizaciones están integradas con el programa Software de GNOME que muestra notificaciones cuando hay alguna actualización disponible.</p>
 <p>Pero también puede realizarse desde la línea de comandos. El siguiente comando realiza la operación de actualización.</p>
 <div class="code">
@@ -432,7 +432,7 @@
         <span>rpm-ostree-rollback.sh</span>
     </div>
 </div>
-<h4 id="instalación-de-programas-gráficos">Instalación de programas gráficos</h4>
+<h3 id="instalación-de-programas-gráficos">Instalación de programas gráficos</h3>
 <p>Las aplicaciones de usuario gráficas se instalan con Flatpak y en el caso de GNOME con la aplicación Software. A medida que pasa el tiempo hay más programas disponibles en esta forma de distribuir software y muchos de los programas más comunes está disponibles como la colección ofimática <a href="https://www.libreoffice.org/">LibreOffice</a>, el reproductor multimedia <a href="https://www.videolan.org/vlc/">VLC</a>, el editor de texto avanzado <a href="https://code.visualstudio.com/">Visual Studio Code</a> o el entorno de desarrollo integrado <a href="https://www.jetbrains.com/idea/">IntelliJ</a>.</p>
 <p>Con la aplicación de software es posible encontrar todo este software, instalarlo y desinstalarlo con un clic en un botón. Lo único necesario es añadir el repositorio <a href="https://flathub.org/">Flathub</a> como fuente de programas.</p>
 <div class="media">
@@ -464,7 +464,7 @@
 </figure>
 </div>
 <p>También es posible instalar el paquetes Flatpak desde la linea de comandos.</p>
-<h4 id="uso-de-toolbox-programas-de-línea-de-comandos-en-contenedores">Uso de Toolbox, programas de línea de comandos en contenedores</h4>
+<h3 id="uso-de-toolbox-programas-de-línea-de-comandos-en-contenedores">Uso de Toolbox, programas de línea de comandos en contenedores</h3>
 <p>El resto de paquetes de línea de comandos se pueden instalar en contenedores con <a href="#ZgotmplZ">Toolbox</a> basados en <a href="https://podman.io/">podman</a> que es una alternativa compatible de <a href="https://www.docker.com/">Docker</a>. Lo especial de estos contenedores es que tiene acceso a la carpeta personal o directorio <em>home</em> del usuario de modo que pueden crear archivos o modificar los existentes en esta ubicación.</p>
 <p>Destro de estos componentes se instalan los paquetes con el gestor de paquetes <em>dnf</em>.</p>
 <div class="code">
@@ -488,7 +488,7 @@
         <span>sdk-usage.sh</span>
     </div>
 </div>
-<h3 id="conclusión">Conclusión</h3>
+<h2 id="conclusión">Conclusión</h2>
 <p>Si tuviese que probar o usar otra distribución diferente Arch Linux probablemente la que elegiría sería Fedora Silverblue por los principios innovadores en las que está basada que proporcionan varias mejoras en puntos importantes sobre las distribuciones como las hemos conocido tradicionalmente. Igualmente permite tener el software actualizado, es también <em>rolling-release</em> y mejora la fiabilidad de las actualizaciones.</p>
 <p>En estos vídeos se proporciona una introducción sobre esta distribución que quizá marque el camino de aquí en adelante para otras.</p>
 <div class="media media-video">

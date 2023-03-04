@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -267,18 +267,18 @@
 </div>
 <p>Para <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">usar el protocolo seguro HTTPS en un servidor web</a> es necesario al menos <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">generar un certificado autofirmado</a> que incluya el dominio del sitio web. El certificado autofirmado proporciona comunicaciones seguras entre el servidor y cliente pero los clientes no lo consideran de confianza de modo que han de omitir la validación del certificado, un entorno de desarrollo o pruebas es suficiente pero en un escenario de producción para añadir más seguridad donde hay varios servidores que además requieren y validan también el certificado del cliente es necesario utilizar certificados generados por una entidad en la que se confíe, esta es la autoridad de certificación. La autoridad de certificación o CA es una entidad en la que se confía, si una CA ha firmado digitalmente un certificado esta asegura que el certificado pertenece a quien dice pertenecer. Las funciones de una CA son firmar los certificados que se le envían, de revocar los certificados cuando han sido comprometidos o de renovarlos cuando su validez expira.</p>
 <p><a href="https://aws.amazon.com/es/">AWS</a> en su oferta de productos tiene <a href="https://aws.amazon.com/es/certificate-manager/">AWS Certificate Manager</a> que hace las funciones de autoridad de certificados, delega la complejidad de hacer las funciones de autoridad de certificados pero su inconveniente es que tiene el significativo precio de $400 mensuales más un pequeño coste por certificado emitido. La herramienta <a href="https://www.openssl.org/">OpenSSL</a> permite hacer las funciones de una autoridad de certificación con un conjunto de comandos.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#crear-la-clave-y-certificado-de-la-autoridad-de-certificación-raíz">Crear la clave y certificado de la autoridad de certificación raíz</a></li>
     <li><a href="#crear-la-clave-y-certificado-de-la-autoridad-de-certificación-intermedia">Crear la clave y certificado de la autoridad de certificación intermedia</a></li>
     <li><a href="#crear-y-firmar-el-certificado-del-servidor-clientes-o-usuarios">Crear y firmar el certificado del servidor, clientes o usuarios</a></li>
     <li><a href="#añadir-el-certificado-de-la-ca-en-el-navegador-firefox">Añadir el certificado de la CA en el navegador Firefox</a></li>
     <li><a href="#revocar-y-renovar-un-certificado">Revocar y renovar un certificado</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="crear-la-clave-y-certificado-de-la-autoridad-de-certificación-raíz">Crear la clave y certificado de la autoridad de certificación raíz</h3>
+<h2 id="crear-la-clave-y-certificado-de-la-autoridad-de-certificación-raíz">Crear la clave y certificado de la autoridad de certificación raíz</h2>
 <p>El certificado de una autoridad de certificación es un certificado autofirmado que se utilizar para comprobar que la firma de los certificados que emite la entidad es válida. Es necesario crear un par de claves asimétricas privada y pública y posteriormente generar su certificado.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">set</span> -e&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nv">CA_PATH</span><span class="o">=</span>ca&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">CA_DIR</span><span class="o">=</span>.&#10;</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">INTERMEDIATE_DIR</span><span class="o">=</span>./intermediate&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">mkdir -p <span class="nv">$CA_PATH</span>/certs <span class="nv">$CA_PATH</span>/crl <span class="nv">$CA_PATH</span>/newcerts <span class="nv">$CA_PATH</span>/private <span class="nv">$CA_PATH</span>/intermediate/&#10;</span></span><span class="line"><span class="cl">cp openssl/ca/openssl*.conf <span class="nv">$CA_PATH</span>/&#10;</span></span><span class="line"><span class="cl">cp openssl/intermediate/openssl*.conf <span class="nv">$CA_PATH</span>/intermediate/&#10;</span></span><span class="line"><span class="cl"><span class="nb">cd</span> <span class="nv">$CA_PATH</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">chmod <span class="m">700</span> private&#10;</span></span><span class="line"><span class="cl">touch index.txt&#10;</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="m">1000</span> &gt; serial&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1"># CA</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">openssl genrsa -out private/ca.key.pem <span class="m">8192</span>&#10;</span></span><span class="line"><span class="cl">chmod <span class="m">400</span> private/ca.key.pem</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -306,7 +306,7 @@
         <span>ca/openssl.conf</span>
     </div>
 </div>
-<h3 id="crear-la-clave-y-certificado-de-la-autoridad-de-certificación-intermedia">Crear la clave y certificado de la autoridad de certificación intermedia</h3>
+<h2 id="crear-la-clave-y-certificado-de-la-autoridad-de-certificación-intermedia">Crear la clave y certificado de la autoridad de certificación intermedia</h2>
 <p>De la confianza en la CA raíz depende toda la seguridad de los certificados que emite, que su clave privada y pública o certificado sean comprometidos es posiblemente lo peor que le puede ocurrir a una CA. Para minimizar el riesgo se intenta hacer el menor uso posible de la clave privada y pública de la autoridad de certificación raíz, para esto se suele crear una autoridad de certificación intermedia que es la que realmente firma, revoca y renueva los certificados para el servidor, clientes o usuarios. Si la CA intermedia es comprometida aún siendo también un problema grave de seguridad al menos la CA raíz puede crear una nueva CA intermedia en la que se pueda confiar.</p>
 <p>La CA intermedia tiene su propio par de claves asimétricas privada y pública, también tiene su certificado que en este caso está firmado por la CA raíz.</p>
 <div class="code">
@@ -350,7 +350,7 @@
         <span>intermediate/openssl.conf</span>
     </div>
 </div>
-<h3 id="crear-y-firmar-el-certificado-del-servidor-clientes-o-usuarios">Crear y firmar el certificado del servidor, clientes o usuarios</h3>
+<h2 id="crear-y-firmar-el-certificado-del-servidor-clientes-o-usuarios">Crear y firmar el certificado del servidor, clientes o usuarios</h2>
 <p>Para cada servidor, cliente de servidor o usuario hay que crear nuevamente su clave privada y pública, crear la solicitud de firma o <em>Certificate Sign Request</em> (CSR) que se envía a la autoridad de certificación intermedia para que lo firme y esta devuelva un certificado firmado. En el caso de un certificado para un servidor se incluye en el campo <em>Common Name</em> o <em>CN</em> el nombre del dominio del servidor, un certificado multidominio contiene varios nombres de dominio para los que es válido en el campo <em>Subject Alternative Names</em> o <em>SAN</em>, los certificados también se pueden asociar a una dirección IP concreta pero lo habitual es utilizar nombres de dominio.</p>
 <p>Para crear el certificado firmado por la CA intermedia nuevamente el primer paso es generar la clave privada y pública y la solicitud de firma de certificado.</p>
 <div class="code">
@@ -381,7 +381,7 @@
         <span>server-certs-3.sh</span>
     </div>
 </div>
-<h3 id="añadir-el-certificado-de-la-ca-en-el-navegador-firefox">Añadir el certificado de la CA en el navegador Firefox</h3>
+<h2 id="añadir-el-certificado-de-la-ca-en-el-navegador-firefox">Añadir el certificado de la CA en el navegador Firefox</h2>
 <p>Los navegadores incluyen los certificados de algunas autoridades de certificados en las que se confía. En el caso de crear una CA propia como lo mostrado en este artículo y un certificado para un servidor firmado por esta autoridad de certificados el navegador mostrará una advertencia indicando que el certificado presentado no es de confianza antes de permitir entrar al sitio web, con este mensaje el usuario es consciente de que el certificado del servidor no es de confianza y si el usuario lo desea se permite el acceso al sitio web. Aún así el navegador muestra una advertencia en el icono de seguridad del sitio web de que hay un problema con el certificado.</p>
 <div class="media">
 <figure>
@@ -404,7 +404,7 @@
 <figcaption>Certificado de confianza y conexión segura en Firefox</figcaption>
 </figure>
 </div>
-<h3 id="revocar-y-renovar-un-certificado">Revocar y renovar un certificado</h3>
+<h2 id="revocar-y-renovar-un-certificado">Revocar y renovar un certificado</h2>
 <p>Además de firmar y generar de certificados las funciones de una CA es revocar un certificado cuando se ha comprometido y ya no es de confianza por un problema de seguridad y renovar de los certificados cuando se fecha de validez expira.</p>
 <p>Una vez se revoca un certificado hay dos formas en la que la CA permite conocer si un certificado ha sido revocado, con <em>Certificate Revocation List</em> (CRL) o <em>Online_Certificate_Status_Protocol</em> (OCSP) aunque CRL ha quedado en desuso y se prefiere OCSP. El problema del método CRL es que hay una latencia entre el momento en que se realiza la revocación esta ventana de tiempo no es deseable para evitar problemas de seguridad con la mayor inmediatez, la revocación se publica en el registro de CRL, su segundo problema es que en una CA grande con un número grande de certificados revocados el registro de CRL será también grande. OCSP también permite conocer si un certificado ha sido revocado, evita la latencia de CRL ya que no depende de un registro y requiere menos tráfico para realizar la comprobación ya que no requiere la descargar del registro CRL, pero introduce otros problemas como que debe soportar una número enorme de peticiones de comprobación de certificado ya que se hace una petición por cada visita a un sitio web, en el caso de una CA importante que tiene un número de certificados emitidos que usan sitios con mucho tráfico de internet es un problema. El segundo problema es una pérdida de privacidad para los usuarios ya que la CA al recibir una solicitud de comprobación de certificado por cada visita podría rastrear a los usuarios. Para evitar o al menos mitigar en gran medida los problemas de OCSP se ha desarrollado <a href="https://en.wikipedia.org/wiki/OCSP_stapling">OCSP Stapling</a>.</p>
 <p>La CA guarda los certificados que emite, con OpenSSL en la carpeta <em>newcerts</em> con un número de serie, en el archivo a modo base de datos <em>index.txt</em> almacena entre otras cosas el número de serie y el <em>Subject</em> del certificado emitido. El comando para revocar un certificado incluye como argumento el certificado a revocar y opcionalmente el motivo de la revocación. El archivo <em>index.txt</em> se actualiza y en la entrada asociada al certificado se indica una <em>R</em> para indicar que ha sido revocado.</p>

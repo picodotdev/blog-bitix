@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -312,36 +312,36 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">Generar credenciales de conexión a base de datos bajo demanda con Vault</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/">Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring</a></li>
 </ul>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#servicios-de-hashicorp">Servicios de HashiCorp</a>
-      <ul>
+      <ol>
         <li><a href="#consul">Consul</a></li>
         <li><a href="#vault">Vault</a></li>
         <li><a href="#nomad">Nomad</a></li>
         <li><a href="#vagrant-y-terraform">Vagrant y Terraform</a></li>
         <li><a href="#packer">Packer</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#comparación-con-kubernetes">Comparación con Kubernetes</a></li>
     <li><a href="#arquitectura-de-referencia">Arquitectura de referencia</a>
-      <ul>
+      <ol>
         <li><a href="#precio">Precio</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#ejemplo-de-la-arquitectura-de-referencia-con-vagrant">Ejemplo de la arquitectura de referencia con Vagrant</a>
-      <ul>
+      <ol>
         <li><a href="#interfaz-web-para-consul-vault-y-nomad">Interfaz web para Consul, Vault y Nomad</a></li>
         <li><a href="#interfaz-de-línea-de-comandos-para-consul-vault-y-nomad">Interfaz de línea de comandos para Consul, Vault y Nomad</a></li>
         <li><a href="#ejecución-de-un-servicio">Ejecución de un servicio</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#requerimientos-de-operaciones">Requerimientos de operaciones</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="servicios-de-hashicorp">Servicios de HashiCorp</h3>
+<h2 id="servicios-de-hashicorp">Servicios de HashiCorp</h2>
 <div class="media">
 <figure>
 <p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-1_hucb41f3f4a0c4e341c8fa5add26daf72f_433163_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Productos de HashiCorp"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-1_hucb41f3f4a0c4e341c8fa5add26daf72f_433163_200x150_fit_q90_h2_box_3.webp" width="200" height="103" alt="Productos de HashiCorp" title="Productos de HashiCorp" class="&#34; " loading="lazy"></a>
@@ -364,22 +364,22 @@
 <figcaption>Ecosistema con Nomad</figcaption>
 </figure>
 </div>
-<h4 id="consul">Consul</h4>
+<h3 id="consul">Consul</h3>
 <p>En una aplicación basada en servicios a lo largo del tiempo estos se añaden y se eliminan, varía el número de instancias, cambian de ubicación, pueden dejar de estar accesibles de forma inesperada y los servicios necesitan comunicarse de forma segura.</p>
 <p>La herramienta Consul proporciona proporcionan funcionalidades para todas estas necesidades con un registro de registro y descubrimiento que mantiene el catálogo de servicios e instancias con su ubicación, proporciona comprobaciones de estado o <em>health checks</em> para conocer en todo momento que las instancias están funcionado correctamente, proporciona comunicaciones seguras entre los servicios con <a href="https://www.consul.io/docs/connect">Consul Connect</a> y permite o deniega la comunicación con intenciones y basándose en la identidad de los servicios.</p>
 <p>El catálogo de servicios es accesible mediante una API REST, también ofrece su catálogo de servicios a través de una interfaz DNS ya que incorpora la funcionalidad de servidor DNS. Consul además proporciona un almacén de clave/valor que los servicios pueden utilizar como valores de configuración que cambian de forma dinámica sin necesidad de reiniciar las instancias del servicio para que los nuevos valores surtan efecto.</p>
-<h4 id="vault">Vault</h4>
+<h3 id="vault">Vault</h3>
 <p>Vault proporciona servicios de seguridad. En vez de implementar las necesidades de seguridad en cada aplicación con el lenguaje de programación en el que esté desarrollado Vault permite delegar y centralizar en él los requerimientos y políticas de seguridad.</p>
 <p>Proporciona funcionalidades de cifrado y descifrado, cifrado y descifrado conservando el formato y enmascaramiento basado en políticas. También permite generar certificados con un tiempo de expiración pequeño y generación de credenciales dinámicas, esto es, en vez de generar unas credenciales de conexión para cada aplicación a una base de datos la aplicación puede solicitar a Vault unas credenciales de conexión para la base de datos que únicamente son válidas mientras la aplicación necesita la conexión. Las credenciales dinámicas permiten aumentar la seguridad.</p>
-<h4 id="nomad">Nomad</h4>
+<h3 id="nomad">Nomad</h3>
 <p>Los servicios necesitan ejecutarse y crear instancias para proporcionar sus funcionalidades, Nomad hace las funciones de orquestador de servicios. Se encarga de planificar el nodo de entre los disponibles en los que se ejecutara cada instancia del servicio, de mantener el número de instancias indicadas en la descripción de cada servicio y de aplicar la estrategia de despliegue según la política definida para cada servicio, como <em>blue/green</em> o <em>canary</em>.</p>
 <p>Nomad se integra con Consul y permite que al iniciar la instancia de un servicio se registre en Consul y configurar un <em>health check</em> para que Consul monitorice el estado de la instancia del servicio.</p>
-<h4 id="vagrant-y-terraform">Vagrant y Terraform</h4>
+<h3 id="vagrant-y-terraform">Vagrant y Terraform</h3>
 <p>Para automatizar la creación de los entornos, crear los entornos como código y que estos queden descritos en archivos se utilizan herramientas de aprovisionamiento. HashiCorp proporciona dos, una es Vagrant para crear máquinas virtuales en local con VirtualBox para un entorno de desarrollo. Para un entorno de producción se usará un proveedor de computación en la nube como <a href="https://aws.amazon.com/es/">Amazon Web Services</a>, <a href="https://cloud.google.com/">Google Cloud Platform</a>, <a href="https://azure.microsoft.com/es-es/">Microsoft Azure</a> u otros como <a href="https://www.digitalocean.com/">Digital Ocean</a> o <a href="https://www.linode.com/">Linode</a>.</p>
 <p>Cada uno de estos entornos de computación tiene sus peculiaridades, Terraform permite describir las necesidades de sistemas en cuanto a infraestructura del entorno de ejecución de forma independiente a cada uno de estos proveedores, automatizar el aprovisionamiento y definir la infraestructura como código lo que permite guardar en un repositorio de control de versiones los cambios que se realizan a la infraestructura.</p>
-<h4 id="packer">Packer</h4>
+<h3 id="packer">Packer</h3>
 <p>La herramienta Packer permite construir las imágenes base para los sistemas en la nube y de los contenedores. Es agnóstica de los diferentes sistemas en la nube permitiendo construir imágenes para cada una de ellas, esto permite no estar encadenado a un proveedor determinado.</p>
-<h3 id="comparación-con-kubernetes">Comparación con Kubernetes</h3>
+<h2 id="comparación-con-kubernetes">Comparación con Kubernetes</h2>
 <p><a href="https://kubernetes.io/">Kubernetes</a> es otro sistema con la funcionalidad de orquestador de contenedores desarrollado originalmente por Google y al que ahora contribuyen numerosas empresas como  <a href="https://www.redhat.com/es">Red Hat</a>. Proporciona todas las características que necesitan las aplicaciones basadas en contenedores incluyendo gestión del clúster, planificación, descubrimiento de servicios, monitorización, gestión de secretos y otros más.</p>
 <p>HashiCorp proporciona la mayoría de las funcionalidades de Kubernetes en cada una de las diferentes herramientas que tiene siguiendo la filosofía Unix de herramientas con un ámbito reducido y agregables, por ejemplo, Consul proporciona descubrimiento de servicios, Vault seguridad y Nomad está diseñado específicamente para proporcionar gestión del cluster y planificación.</p>
 <p>Kubernetes se centra en Docker mientras que Nomad soporta aplicaciones de propósito general como pueden ser comandos del sistema, aplicaciones Java, Docker o <a href="https://podman.io/">Podman</a>. Kubernetes está diseñado como una colección de más de media docena de servicios que interoperan para proporcionar la funcionalidad completa. Soporta alta disponibilidad pero operacionalmente es complejo de configurar.</p>
@@ -388,7 +388,7 @@
 <li><a href="https://www.nomadproject.io/intro/vs/kubernetes.html">Nomad vs Kubernetes</a></li>
 <li><a href="https://www.consul.io/intro/vs">Consul vs. Other Software</a></li>
 </ul>
-<h3 id="arquitectura-de-referencia">Arquitectura de referencia</h3>
+<h2 id="arquitectura-de-referencia">Arquitectura de referencia</h2>
 <p>En una arquitectura de referencia para proporcionar alta disponibilidad y tolerancia a fallos es necesario crear varias instancias de cada servicio. Las diferentes instancias de Consul, Vault y Nomad forman un clúster algunas funcionando en modo servidor y otras funcionando en modo cliente. Para los servidores de Consul, Vault y Nomad se recomiendan al menos 3 instancias de cada uno de ellos, en total 9 instancias. En cada instancia de Vault y Nomad se crea un agente de Consul que actúa en modo cliente que atiende a las peticiones de forma local y realiza las comunicaciones con los servidores de Consul. De Nomad habrá varias instancias adicionales más actuando en modo cliente que serán donde se ejecuten las instancias de los servicios de aplicación como un un contenedor Docker con Nginx, una base de datos <a href="https://www.postgresql.org/">PostgresQL</a> o una aplicación Java con <a href="https://projects.spring.io/spring-boot/">Spring Boot</a>.</p>
 <p>En total un centro de datos para un entorno puede estar compuesto como mínimo entre 9, 15 o 21 para el clúster con 3, 5, 7 servidores de Consul, Vault y Nomad según las necesidades de computación del centro de datos. De Nomad en modo cliente donde se ejecutan los servicios el número de instancias variará según las necesidades de computación y número de servicios que necesitan las aplicaciones, también puede ser un número significativo de entre 10 a 100 o más instancias. El número de máquinas e instancias es elevado por eso hay que tratarlas como ganado y no como animales de compañía que requieran administrarlas de forma individual.</p>
 <ul>
@@ -405,7 +405,7 @@
 <figcaption>Arquitecturas de referencia de Consul, Vault y Nomad</figcaption>
 </figure>
 </div>
-<h4 id="precio">Precio</h4>
+<h3 id="precio">Precio</h3>
 <p>Dependiendo del tamaño de las máquinas de cómputo elegidas para cada instancia el coste de la infraestructura varia. En AWS una instancia <em>t3a.medium</em>, <em>t3a.large</em> y <em>t3a.xlarge</em> con 4, 8 y 16 GiB tienen un coste aproximado de $125, $250 y $400 al año si se paga por adelantado una reserva de 3 años. Multiplicado esto por el número de instancias el coste no es despreciable pero asequible para una empresa que llega a necesitar 100 instancias para sus servicios. La ventaja de la computación en la nube y estas herramientas de HashiCorp es que permiten adaptar el entorno del centro de datos a las necesidades suficientes para cada momento, si se necesitan más máquinas e instancias se añaden si dejan de necesitar se eliminan, esta la elasticidad ofrecida por la computación en la nube que los costes sean únicamente los necesarios.</p>
 <p>Es difícil calcular el coste exacto de un centro de datos ya que tendrá una mezcla de diferentes tipos de instancias, instancias reservadas y bajo demanda aprovechando la elasticidad de la computación en la nube, también hay que tener en cuanta que una organización necesitará entornos de pruebas aún siendo de menor tamaño y número que el de producción. El mayor coste lo determina el número de nodos de Nomad, para 50 nodos estarán sobre los $20K y para 1000 los $400K anuales teniendo en cuenta que una empresa que necesita esas cantidades de nodos ya son muy grandes seguramente sean del tamaño multinacionales con facturaciones de varios cientos o miles de millones.</p>
 <table class="table">
@@ -510,7 +510,7 @@
        </tr>
    </tbody>
 </table>
-<h3 id="ejemplo-de-la-arquitectura-de-referencia-con-vagrant">Ejemplo de la arquitectura de referencia con Vagrant</h3>
+<h2 id="ejemplo-de-la-arquitectura-de-referencia-con-vagrant">Ejemplo de la arquitectura de referencia con Vagrant</h2>
 <p>Para ejecutar la arquitectura de referencia en vez de crear 3 o 5 instancias de Consul, Vault y Nomad en el siguiente ejemplo se utiliza solo 1 instancia de cada uno de ellos. Para ejecutarlos en local se usa Vagrant para crear y aprovisionar las máquinas virtuales de VirtualBox.</p>
 <p>Vault se comunica con Consul para utilizar el almacén de clave-valor o KV en el que Vault almacena los datos cifrados, Nomad se comunica con Vault para proporcionar a las aplicaciones algunos requerimientos de seguridad y con Consul para obtener datos de su KV y proporcionarlos a las instancias de los servicios, también para registrar en Consul las instancias de los servicios y si lo utilizan proporcionales sus necesidades de comunicación con <em>Consul Connect</em>.</p>
 <div class="media">
@@ -624,7 +624,7 @@
         <span>vault-server/consul-agent.hcl</span>
     </div>
 </div>
-<h4 id="interfaz-web-para-consul-vault-y-nomad">Interfaz web para Consul, Vault y Nomad</h4>
+<h3 id="interfaz-web-para-consul-vault-y-nomad">Interfaz web para Consul, Vault y Nomad</h3>
 <p>Las consolas de administración web de Consul, Vault y Nomad están accesibles en estas direcciones URL que están protegidas por una autenticación básica, dado que el certificado de la CA no es de confianza para el navegador se muestra previamente un mensaje de advertencia. En la consola web de Consul se observan los servicios y nodos registrados registrados y su estado de salud.</p>
 <ul>
 <li>Dirección, usuario y contraseña de consola web Consul: <em>https://consul.192.168.33.50.xip.io</em>, <em>consul</em> y <em>consul</em>.</li>
@@ -652,7 +652,7 @@
 <figcaption>Consolas web de Consul, Vault y Nomad y estados de salud de los servicios y nodos</figcaption>
 </figure>
 </div>
-<h4 id="interfaz-de-línea-de-comandos-para-consul-vault-y-nomad">Interfaz de línea de comandos para Consul, Vault y Nomad</h4>
+<h3 id="interfaz-de-línea-de-comandos-para-consul-vault-y-nomad">Interfaz de línea de comandos para Consul, Vault y Nomad</h3>
 <p>Los mismos binarios de Consul, Vault y Nomad que tienen las funciones de servidor y cliente permiten utilizar su línea de comandos para realizar y automatizar con <em>scripts</em> las mismas acciones que se pueden hacer desde las consolas web pero la línea de comandos.</p>
 <p>Dado que en el ejemplo los servidores requieren identificar al cliente es necesario configurar variables de entorno que indiquen la dirección IP del servidor y los certificados para el cifrado y autenticación. Una vez configuradas las variables de entorno se pueden lanzar comandos que permiten realizar tareas de administración para obtener información y para enviar <em>jobs</em> a Nomad.</p>
 <div class="code">
@@ -667,7 +667,7 @@
         <span>environment-status.sh</span>
     </div>
 </div>
-<h4 id="ejecución-de-un-servicio">Ejecución de un servicio</h4>
+<h3 id="ejecución-de-un-servicio">Ejecución de un servicio</h3>
 <p>El siguiente es la definición de un servicio o <em>job</em> para Nomad que define un servidor Nginx ejecutado en un contenedor de Docker. Una vez Nomad lo pone en ejecución se registra en Consul de forma automática de forma que pudiera ser encontrado por otros servicios que consulten el catálogo de servicios de Consul.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-hcl" data-lang="hcl"><span class="line"><span class="cl"><span class="k">job</span> <span class="s2">&#34;nginx&#34;</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">  datacenters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;dc1&#34;</span><span class="p">]</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  <span class="k">group</span> <span class="s2">&#34;services&#34;</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;count</span> <span class="o">=</span> <span class="m">1</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">task</span> <span class="s2">&#34;nginx&#34;</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  driver</span> <span class="o">=</span> <span class="s2">&#34;docker&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">config</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image</span> <span class="o">=</span> <span class="s2">&#34;nginx:alpine&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; network_mode</span> <span class="o">=</span> <span class="s2">&#34;bridge&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">port_map</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   http</span> <span class="o">=</span> <span class="m">80</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">resources</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memory</span> <span class="o">=</span> <span class="m">512</span><span class="c1"> # MB&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">network</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">port</span> <span class="s2">&#34;http&#34;</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static</span> <span class="o">=</span> <span class="m">8080</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">service</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</span> <span class="o">=</span> <span class="s2">&#34;nginx&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;port</span> <span class="o">=</span> <span class="s2">&#34;http&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">check</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  name</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="o">=</span> <span class="s2">&#34;nginx-check&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  type</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="o">=</span> <span class="s2">&#34;tcp&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  interval</span> <span class="o">=</span> <span class="s2">&#34;10s&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  timeout</span>  <span class="o">=</span> <span class="s2">&#34;2s&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">  }&#10;</span></span><span class="line"><span class="cl">}</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -695,7 +695,7 @@
 <figcaption>Servicios en consul con el servicio de Nginx registrado por Nomad e información de estado del centro de datos obtenido desde la línea de comandos</figcaption>
 </figure>
 </div>
-<h3 id="requerimientos-de-operaciones">Requerimientos de operaciones</h3>
+<h2 id="requerimientos-de-operaciones">Requerimientos de operaciones</h2>
 <p>Este artículo solo tiene un ejemplo básico pero que sirve como base para crear un entorno de producción real basado en las herramientas de HashiCorp.</p>
 <p>Hay otras funcionalidades que un entorno real de producción requeriría, como telemetría y monitorización, cual sería el proceso para actualizar el centro de datos a nuevas versiones, aprovisionamiento con Terraform para un centro de computación proporcionado por un proveedor en la nube, utilizar un sistema de autenticación como OAuth en vez autenticación básica en la consolas de administración, quizá <a href="https://github.com/hashicorp/consul-template">consul-template</a> en algunos servicios para actualizar de forma dinámica configuraciones que tomen datos de Vault o Consul o utilizar <a href="https://traefik.io/">Traefik</a> para que haga de <em>proxy</em> de los servicios que utilicen el protocolo HTTP.</p>
 <div class="alert alert-secondary sourcecode fs-6">

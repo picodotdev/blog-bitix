@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -256,7 +256,7 @@
 <p>En el lenguaje de programación Java los punteros no existen de la misma forma que en otros lenguajes como C o C++. En Java existen los punteros o referencias pero no son libres de apuntar a cualquier dirección de memoria del programa, en C y C++ lenguajes más destinados a la programación de sistemas y cercanos al lenguaje de la máquina ofrecen manipulación de punteros pudiendo obtener un puntero con la dirección de memoria de una variable.</p>
 <p>En el lenguaje Java los punteros realmente son vistos simplemente como variables, no es posible obtener un puntero a la dirección de memoria de una variable, únicamente permite copiar o duplicar el valor de una variable en otra variable. Otra diferencia está en que en Java los argumentos de los métodos siempre se pasan por valor, en C y C++ los argumentos se pueden pasar por valor o por referencia.</p>
 <p>Estas diferencias de Java con los lenguajes C y C++, hacen de Java un lenguaje más sencillo en la sintaxis, seguro y menos propenso a errores, por otro lado, la manipulación de punteros en C y C++ es útil en la programación de sistemas por ser un modelo similar al empleado por la CPU en su funcionamiento.</p>
-<h3 id="el-paso-por-valor-de-los-argumentos-en-java">El paso por valor de los argumentos en Java</h3>
+<h2 id="el-paso-por-valor-de-los-argumentos-en-java">El paso por valor de los argumentos en Java</h2>
 <p>En Java todos los argumentos se pasan por valor. El paso por valor de los argumentos de un método en Java tiene varias consecuencias. El paso por valor significa que al método en la variable del argumento le llega una copia del valor en el caso de un tipo primitivo de datos o una copia del puntero a la dirección de memoria del objeto. En el paso por referencia el argumento contiene un puntero con la dirección de memoria de la variable. En el paso por valor al asignar un valor a la variable del argumento no modifica el valor de la variable usada para invocar al método, esto ocurre tanto para argumentos de tipo primitivo y para objetos.</p>
 <div class="media">
 <figure>
@@ -266,7 +266,7 @@
 </div>
 <p><a href="https://picodotdev.github.io/blog-bitix/2020/12/para-que-sirve-la-palabra-clave-final-en-el-codigo-fuente-java/">La palabra reservada <em>final</em> en los argumentos</a> sirve para impedir asignar un nuevo valor a una variable, una variable <em>final</em> es una variable cuyo valor es una constante ya que en caso de intentar asignar a la variable un nuevo valor el compilador produce un error de compilación. La variable no pude cambiar de valor, sin embargo, si la variable es una referencia a un objeto el objeto si puede cambiar de estado, para que un objeto no pueda cambiar ha de ser inmutable.</p>
 <p>Algunas clases como la clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> en Java son inmutables, esto significa que al manipular el objeto se devuelve una nueva instancia de la clase en vez de modificar la original. En Java para manipular un <em>String</em> y obtener la misma referencia en vez de una nueva instancia hay que utilizar la clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java/lang/StringBuffer.html">StringBufffer</a> o <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java/lang/StringBuilder.html">StringBuilder</a>. Algunas instancias de listas obtenidas con la API de colecciones son inmutables como <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List.of</a>, y sus métodos <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html#add%28E%29">add</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html#remove%28java.lang.Object%29">remove</a> lanzan la excepción en caso de ser invocados.</p>
-<h3 id="ejemplo-práctico-del-paso-por-valor">Ejemplo práctico del paso por valor</h3>
+<h2 id="ejemplo-práctico-del-paso-por-valor">Ejemplo práctico del paso por valor</h2>
 <p>En este programa aunque a las variables de los argumentos <em>x</em>, <em>y</em> y <em>w</em> se les asigne un nuevo valor las variables <em>a</em>, <em>b</em> y <em>c</em> usadas en la invocación del método continúan teniendo el mismo valor. Las variables de los argumentos se pasan por valor, sin embargo, los objetos a los que apuntan esas variables si son mutables y son modificados en el método los cambios son visibles en el ámbito de invocación con la variable utilizada como argumento.</p>
 <p>La lista de la variable <em>d</em> es modificada por el método, se corresponde con la variable <em>z</em>, y esos cambios son visibles en el ámbito de <em>d</em>, al contrario de las otras variables que aunque se les asigna un nuevo valor en el método fuera de él conservan su valor original aún después de la invocación del método. Esto ocurre porque en el caso de <em>d</em> se ha modificado el objeto mutable al cual tanto <em>d</em> y <em>z</em> apuntan.</p>
 <div class="code">

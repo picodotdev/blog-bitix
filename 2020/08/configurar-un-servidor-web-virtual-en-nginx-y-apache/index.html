@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -272,15 +272,15 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">Introducción y características de Docker</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">Cómo instalar y guía de inicio básica de Docker</a></li>
 </ul>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#configurar-un-servidor-web-virtual-en-nginx">Configurar un servidor web virtual en Nginx</a></li>
     <li><a href="#configurar-un-servidor-web-virtual-en-apache-httpd">Configurar un servidor web virtual en Apache HTTPD</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="configurar-un-servidor-web-virtual-en-nginx">Configurar un servidor web virtual en Nginx</h3>
+<h2 id="configurar-un-servidor-web-virtual-en-nginx">Configurar un servidor web virtual en Nginx</h2>
 <p>En el servidor web <a href="https://nginx.org/">Nginx</a> añadir un servidor web virtual consiste en añadir la configuración del sitio web en el directorio <em>/etc/nginx/conf.d</em>. La directiva relevante es <em>server_name</em> que asocia el servidor web virtual con el nombre del dominio. En base al nombre del dominio por el que se accede al servidor web se utiliza su configuración.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">server_name</span> <span class="s">www.127.0.0.1.xip.io</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">root</span>   <span class="s">/usr/share/nginx/html</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">index</span>  <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -303,7 +303,7 @@
 <figcaption>Servidor web virtual en Nginx</figcaption>
 </figure>
 </div>
-<h3 id="configurar-un-servidor-web-virtual-en-apache-httpd">Configurar un servidor web virtual en Apache HTTPD</h3>
+<h2 id="configurar-un-servidor-web-virtual-en-apache-httpd">Configurar un servidor web virtual en Apache HTTPD</h2>
 <p>En el servidor web <a href="https://httpd.apache.org/">Apache HTTPD</a> un servidor web virtual se configura con sus propias directivas que igualmente indican el nombre del dominio asociado al servidor web y la ruta raíz de los recursos estáticos. Dependiendo del nombre del dominio por el que se accede al servidor web, se utiliza su configuración.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">&lt;VirtualHost *:80&gt;&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;ServerName wwww.127.0.0.1.xip.io&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;DocumentRoot &#34;/usr/local/apache2/htdocs&#34;&#10;</span></span><span class="line"><span class="cl"> &#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Directory /usr/local/apache2/htdocs&gt;&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Options -Indexes +FollowSymLinks&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AllowOverride All&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Directory&gt;&#10;</span></span><span class="line"><span class="cl">&lt;/VirtualHost&gt;&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>

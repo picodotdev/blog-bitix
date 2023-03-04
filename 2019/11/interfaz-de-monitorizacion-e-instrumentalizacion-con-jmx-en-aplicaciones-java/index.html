@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -273,7 +273,7 @@
 <li>Una autodescripción.</li>
 </ul>
 <p>Además de propiedades y operaciones los <em>MBean</em> también pueden emitir notificaciones cuando ocurren ciertos eventos. Una aplicación práctica de JMX es <a href="https://picodotdev.github.io/blog-bitix/2020/02/cambiar-los-niveles-de-log-de-forma-dinamica-sin-reiniciar-la-aplicacion-con-log4j/">cambiar de forma dinámica los niveles de log</a> para obtener más información de una funcionalidad o en caso de un error sin necesidad de reiniciar el servidor ni necesidad de hacer cambios en el repositorio de código de la aplicación para simplemente obtener mayor detalle de trazas.</p>
-<h3 id="ejemplo-de-jmx-en-una-aplicación-java">Ejemplo de JMX en una aplicación Java</h3>
+<h2 id="ejemplo-de-jmx-en-una-aplicación-java">Ejemplo de JMX en una aplicación Java</h2>
 <p>Un <em>MBean</em> no es más que una interfaz que una clase Java implementa.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.jmx.mbean</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">HelloMBean</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">void</span> <span class="nf">sayHello</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="nf">add</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="nf">getName</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -316,7 +316,7 @@
 </figure>
 </div>
 <p>En el caso de que la aplicación esté contenida dentro de una aplicación web y desplegada en un servidor de aplicaciones como <a href="https://tomcat.apache.org/">Tomcat</a> o <a href="https://wildfly.org/">WildFly</a> registrar un <em>MBean</em> es similar al caso del ejemplo de la aplicación Java y posteriormente administrados con la herramienta JConsole.</p>
-<h3 id="ejemplo-de-jmx-con-spring-boot">Ejemplo de JMX con Spring Boot</h3>
+<h2 id="ejemplo-de-jmx-con-spring-boot">Ejemplo de JMX con Spring Boot</h2>
 <p>El ejemplo anterior muestra como usar JMX en una aplicación Java, Spring ofrece soporte para implementar JMX en aplicaciones que usen este <em>framework</em> con las anotaciones <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jmx/export/annotation/ManagedResource.html">@ManagedResource</a>, <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jmx/export/metadata/ManagedAttribute.html">@ManagedAttribute</a>, <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jmx/export/annotation/ManagedOperation.html">@ManagedOperation</a>, <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jmx/export/annotation/ManagedOperationParameters.html">@ManagedOperationParameters</a>, (<a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jmx/export/annotation/ManagedOperationParameter.html">@ManagedOperationParameter</a>) y <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/EnableMBeanExport.html">@EnableMBeanExport</a>.</p>
 <p>El mismo <em>MBean</em> de la aplicación Java implementado con spring es el siguiente, lo único que cambia son las anotaciones proporcionadas para que Spring descubra de forma automática los <em>MBean</em> disponibles y los registre sin necesidad de hacerlo de forma explícita.</p>
 <div class="code">
@@ -345,7 +345,7 @@
         <span>jmxremote-1.properties</span>
     </div>
 </div>
-<h3 id="cómo-añadir-acceso-remoto-y-añadir-seguridad-securizad-a-jmx">Cómo añadir acceso remoto y añadir seguridad securizad a JMX</h3>
+<h2 id="cómo-añadir-acceso-remoto-y-añadir-seguridad-securizad-a-jmx">Cómo añadir acceso remoto y añadir seguridad securizad a JMX</h2>
 <p>Por defecto JMX solo es accesible desde la maquina local, esto en producción no es muy útil pero activar el acceso remoto requiere añadir nuevas propiedades de configuración para proporcionar seguridad realizando autenticación y usando una comunicación segura con SSL. Para la comunicación segura se requiere crear un <em>keystore</em>.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ keytool -genkey -keyalg RSA -keystore keystore.jks -keysize <span class="m">8192</span>&#10;</span></span><span class="line"><span class="cl">$ keytool -export -keystore keystore.jks -file certificate.cer -storepass password&#10;</span></span><span class="line"><span class="cl">$ keytool -import -file certificate.cer -keystore trustore.jks -storepass password -noprompt</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>

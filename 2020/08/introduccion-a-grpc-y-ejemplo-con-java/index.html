@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -275,10 +275,10 @@
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/03/introduccion-y-ejemplo-de-api-rpc-con-apache-thrift/">Introducción y ejemplo de API RPC con Apache Thrift</a></li>
 </ul>
-<h3 id="qué-es-grpc">Qué es gRPC</h3>
+<h2 id="qué-es-grpc">Qué es gRPC</h2>
 <p><a href="https://grpc.io/">gRPC</a> es una implementación de llamada a procedimiento remoto o <em>Remote Procedure Call</em> (RPC) de alto rendimiento. Las invocaciones RPC permiten hacer llamadas a funciones remotas como si se tratase de llamadas a funciones locales ocultando en gran parte la dificultad en la comunicación por la red subyacente. Los servicios remotos se define en archivos descriptores o <em>Interface Description Language</em> (IDL) en los que se incluyen las operaciones que ofrece el servicio así como las propiedades de los argumentos que recibe y devuelve como respuesta esta descripción basándose en <a href="https://developers.google.com/protocol-buffers">Protocol Buffers</a>. Los <a href="https://developers.google.com/protocol-buffers/docs/proto3#scalar">tipos soportados</a> para las propiedades incluyen varios numéricos, de coma flotante, boleano, <em>string</em> y byte.</p>
 <p>gRPC al contrario que RMI que era específico de Java es agnóstico del lenguaje de programación en el que se implemente el servicio, a partir del archivo descriptor del servicio se genera unos archivos que sirven como base tanto para realizar la implementación en el lenguaje para la parte servidor como de la parte cliente del servicio pudiendo el servidor y cliente estar implementado en diferentes lenguajes. Los lenguajes soportados por gRPC están los más populares como Java, C#, C++, Dart, Go, Kotlin, Node/JavaScript, PHP, Python o Ruby.</p>
-<h4 id="características-de-grpc">Características de gRPC</h4>
+<h3 id="características-de-grpc">Características de gRPC</h3>
 <ul>
 <li>Alto rendimiento con seguridad: gRPC tiene alto rendimiento al usar <em>protobuf</em> y HTTP/2 que son multiplexados, requieren una única conexión TCP, utilizan un formato de datos binario y posibilitan la comunicación bidireccional. Los mensajes al tener un esquema son más seguros de procesar.</li>
 <li>Comunicación bidireccional: esto permite a la parte cliente y servidor enviar datos simultáneamente en ambas direcciones.</li>
@@ -286,7 +286,7 @@
 <li>Compresión selectiva: si se envían datos en formato texto e imagen se puede deshabilitar la compresión para las imágenes.</li>
 <li>Generación de código servidor y cliente: a partir del esquema se generan artefactos en cualquiera de los lenguajes soportado con los cuales crear la implementación del servidor y cliente rápidamente.</li>
 </ul>
-<h4 id="las-diferencias-entre-grpc-y-rest">Las diferencias entre gRPC y REST</h4>
+<h3 id="las-diferencias-entre-grpc-y-rest">Las diferencias entre gRPC y REST</h3>
 <ul>
 <li>Formato de intercambio de dato (Protobuf contra JSON): esa es una de las diferencias principales entre REST y gRPC, los mensajes REST contiene datos en formato JSON habitualmente mientras gRPC hace uso de Protobuf. Protobuf es una mejor forma de codificar datos estructurados, tiene mejor compresión y es más eficiente que JSON.</li>
 <li>Tipado fuerte contra serialización: en REST que normalmente se usa JSON no hay ningún mecanismo pra coordinar el formato de los datos intercambiados en las peticiones y respuestas que hay que tener en cuenta especialmente cuando se hacen cambios en la API para mantener la compatibilidad con los clientes o requiere actualizar los clientes de forma coordinada a la nueva versión lo que suele ser muy difícil. Por otro lado el formato JSON ha de ser convertir tanto en el servidor como en el cliente a estructuras de datos del lenguaje en el que estén implementados, la serialización es otro paso que añade la posibilidad de errores así como sobrecarga en el rendimiento.</li>
@@ -294,7 +294,7 @@
 <li><em>Streaming</em> contra Petición-Respuesta: REST solo soporta el único modelo petición-respuesta disponible en HTTP/1. gRPC hace uso de las capacidades de HTTP/2 y permite enviar y recibir información de forma constante tanto en el servidor como en el cliente.</li>
 <li>gRPC se basa en HTTP/2: HTTP/2 es un protocolo binario más eficiente y seguro de procesar, REST puede usarse con HTTP/1 pero si se usa junto a HTTP/2 obtiene algunos de sus beneficios.</li>
 </ul>
-<h4 id="desventajas-de-grpc">Desventajas de gRPC</h4>
+<h3 id="desventajas-de-grpc">Desventajas de gRPC</h3>
 <ul>
 <li>No hay soporte para los navegadores web de modo que no puede ser usado en ellos como servicios expuestos al exterior. Para no imponer su uso su aplicación son para servicios que sean consumidos de forma interna y ofrecer una API basada en REST o GraphQL de forma externa.</li>
 <li>No hay <em>endpoints</em> basados en URLs de modo que las peticiones y respuestas no pueden ser probadas con las herramientas <a href="https://www.postman.com/">Postman</a> o el comando <em>curl</em>.</li>
@@ -308,7 +308,7 @@
 <div class="media media-video">
   <iframe width="640" height="360" data-src="https://www.youtube.com/embed/S7WIYLcPS1Y" frameborder="0" class="lozad" allowfullscreen></iframe>
 </div>
-<h3 id="ejemplo-de-servicio-grpc-con-java">Ejemplo de servicio gRPC con Java</h3>
+<h2 id="ejemplo-de-servicio-grpc-con-java">Ejemplo de servicio gRPC con Java</h2>
 <p>La construcción de un servicio o API basada en gRPC comienza con la definición del servicio en un archivo descriptor que incluye tanto las operaciones disponibles así como las estructuras de datos que incluye los nombres de los campos y tipos que reciben y devuelven como respuestas las llamadas a funciones remotas. El archivo descriptor del servicio sigue el <a href="https://developers.google.com/protocol-buffers/docs/proto3">formato de Protocol Buffers</a>.</p>
 <p>En este ejemplo el servicio <em>HelloWorld</em> tiene dos operaciones <em>HelloMessage</em> y <em>HelloStream</em> que reciben y devuelven dos estructuras de datos <em>HelloRequest</em> y <em>HelloResponse</em>. La operación <em>HelloStream</em> muestra como enviar el cliente un número indeterminado de mensajes al cliente que los va procesando según los envía el servidor. El esquema también contiene algunas opciones utilizadas por gRPC para personalizar la generación de las clases que sirven como base para realizar la implementación.</p>
 <div class="code">

@@ -136,7 +136,7 @@
   
   <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
 </head>
-<body>  
+<body>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -279,24 +279,24 @@
 <figcaption>Mascotas de Linux, BSD y GNU</figcaption>
 </figure>
 </div>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="title">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
     <li><a href="#diferencias-en-el-modelo-de-desarrollo">Diferencias en el modelo de desarrollo</a></li>
     <li><a href="#diferencias-en-la-licencia">Diferencias en la licencia</a></li>
     <li><a href="#distribuciones-más-importantes-bsd">Distribuciones más importantes BSD</a></li>
     <li><a href="#razones-por-las-que-usar-y-no-usar-una-distribución-bsd">Razones por las que usar y no usar una distribución BSD</a></li>
     <li><a href="#distribuciones-más-importantes-de-gnulinux">Distribuciones más importantes de GNU/Linux</a></li>
-  </ul>
+  </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h3 id="diferencias-en-el-modelo-de-desarrollo">Diferencias en el modelo de desarrollo</h3>
+<h2 id="diferencias-en-el-modelo-de-desarrollo">Diferencias en el modelo de desarrollo</h2>
 <p>Lo que conocemos como Linux es simplemente el núcleo del sistema operativo de las distribuciones GNU/Linux. Las distribuciones GNU/Linux están compuestas por otra multitud de programas de usuario que forman el sistema operativo completo y lo hacen usable, estos programas son muchos de los programados bajo los proyectos de la fundación GNU. Este es el motivo de que las distribuciones GNU/Linux incluyan los términos de ambos proyectos. Las distribuciones GNU/Linux son una recopilación de programas de terceras partes, todos estos programas GNU y no GNU incluidos en los sistemas GNU/Linux están desarrollados por diferentes programadores ajenos a Linux y los creadores de la distribución. Los creadores de las distribuciones GNU/Linux son los encargados de juntar los diferentes programas de cada fuente y empaquetarlas como un sistema usable, estable y libre de errores.</p>
 <p>Las distribuciones BSD son muy diferentes en este aspecto ya que los desarrolladores del núcleo son los mismos que desarrollan los programas de usuario que hacen el sistema operativo completo.</p>
 <p>Por otro lado, la arquitectura del sistema base y las aplicaciones de usuario tienen diferentes enfoques. En GNU/Linux hay dos variaciones usar una colección fija de paquetes donde solo se incorporan modificaciones de seguridad o un modelo en constante actualización o <em>rolling release</em>. Ubuntu y Debian son ejemplos de distribuciones de colecciones fijas en los ciclos de vida de las versiones y Arch Linux y <a href="https://voidlinux.org/">Void Linux</a> son ejemplos que están en constante actualización.</p>
 <p>Las distribuciones BSD siguen un enfoque en el que el sistema base es fijo pero las aplicaciones de usuario se actualizan con nuevas versiones. El sistema base es pequeño, estable y solo incorpora cambios siguiendo un calendario de publicaciones. Los programas de usuario como <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a>, <a href="https://www.libreoffice.org/">LibreOffice</a> o el entorno de escritorio utilizan la última versión disponible de cada proyecto. Esto permite a las distribuciones BSD usar las últimas versiones sin comprometer la estabilidad del sistema al haber errores en el núcleo del sistema. Algunas distribuciones GNU/Linux proporcionan un modelo similar a las BSD como <a href="https://silverblue.fedoraproject.org/">Fedora Silverblue</a> con una base estable y aplicaciones de usuario actualizadas.</p>
 <p>Esta diferencia en el modelo de desarrollo del sistema base e independiente de las aplicaciones hace que en BSD las aplicaciones se instalen de forma independiente a los paquetes del sistema. Los <em>ports</em> son la colección de paquetes con las aplicaciones instalables en los sistemas BSD.</p>
-<h3 id="diferencias-en-la-licencia">Diferencias en la licencia</h3>
+<h2 id="diferencias-en-la-licencia">Diferencias en la licencia</h2>
 <p>Otro aspecto importante con diferencias está en la licencia del código fuente. Mientras que Linux usa una <a href="https://www.gnu.org/licenses/gpl-3.0.html">licencia <em>GNU General Public License</em> o GPL</a> los sistemas BSD usan una de las diferentes <a href="https://en.wikipedia.org/wiki/BSD_licenses">licencias BSD</a> que tiene diferentes versiones según su número de clausulas de cuatro a cero en cuyo caso es considerado software de dominio público. Ambas son licencias consideradas como software libre.</p>
 <p>La diferencia entre la licencia GPL y BSD está en que la BSD es más permisiva, la licencia GPL impone restricciones a los programas distribuidos requiriendo que el código fuente del software también sea entregado y obliga a que el código sea compartido. Por el contrario, la licencia BSD no impone el requerimiento a los programas de que el código fuente sea entregado en su forma original del programa compilado en formato binario. En algunos casos la licencia BSD es más atractiva para algunas empresas que pueden usar su software sin necesidad de tener que distribuir el código fuente del software en el que se basan ni sus modificaciones si han hecho alguna lo que les permite mantener su propiedad intelectual oculta a sus competidores.</p>
 <p>Las licencias BSD no imponen unos requerimientos éticos y morales, la licencia GPL usada por Linux tiene un mayor activismo para promover y proteger el software libre. En BSD se centran más en el desarrollo que en el activismo del software libre y de código abierto.</p>
@@ -304,7 +304,7 @@
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2021/02/licencias-de-software-libre-y-diferencias-con-software-privativo-y-de-codigo-abierto/">Licencias de software libre y diferencias con software privativo y de código abierto</a></li>
 </ul>
-<h3 id="distribuciones-más-importantes-bsd">Distribuciones más importantes BSD</h3>
+<h2 id="distribuciones-más-importantes-bsd">Distribuciones más importantes BSD</h2>
 <p>Al igual que en GNU/Linux ha varias distribuciones BSD con algunos propósitos más prioritarios en cada una de ellas. Soportan múltiples arquitecturas de procesadores incluyendo x86, ARM, MIPS, PowerPC y UltraSPARC. Estas son algunas de las distribuciones BSD más conocidas:</p>
 <ul>
 <li><a href="https://www.freebsd.org/es/">FreeBSD</a>: es el BSD más popular, con el objetivo de proporcionar alto rendimiento y facilidad de uso. Soporta múltiples <a href="https://www.freebsd.org/platforms/">plataformas de 32 y 64 bits</a>.</li>
@@ -341,7 +341,7 @@
 <li><a href="https://en.wikipedia.org/wiki/DragonFly_BSD">Wikipedia DragonFly BSD</a></li>
 <li><a href="https://en.wikipedia.org/wiki/MacOS">Wikipedia macOS</a></li>
 </ul>
-<h3 id="razones-por-las-que-usar-y-no-usar-una-distribución-bsd">Razones por las que usar y no usar una distribución BSD</h3>
+<h2 id="razones-por-las-que-usar-y-no-usar-una-distribución-bsd">Razones por las que usar y no usar una distribución BSD</h2>
 <p>Entre las razones para usar BSD están:</p>
 <ul>
 <li>Posibilidad de usar características de Solaris como el avanzado sistema de archivos <a href="https://en.wikipedia.org/wiki/OpenZFS">ZFS</a> o <a href="https://en.wikipedia.org/wiki/DTrace">DTrace</a>.</li>
@@ -361,7 +361,7 @@
 <li><em>ports</em> rotos.</li>
 <li>Menos información y ayuda en internet que de GNU/Linux.</li>
 </ul>
-<h3 id="distribuciones-más-importantes-de-gnulinux">Distribuciones más importantes de GNU/Linux</h3>
+<h2 id="distribuciones-más-importantes-de-gnulinux">Distribuciones más importantes de GNU/Linux</h2>
 <p>Las distribuciones GNU/Linux son más numerosas si bien es cierto que muchas de ellas no tienen un objetivo que las diferencie claramente de otras. Algunas importantes son:</p>
 <ul>
 <li><a href="https://fedoraproject.org/">Fedora</a>, <a href="https://www.centos.org/">CentOS</a>, RHEL.</li>
