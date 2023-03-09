@@ -67,7 +67,7 @@ IDEA (_International Data Encryption Algorithm_) es un algoritmo de cifrado de c
 
 ## Ejemplos de código de cifrado y descifrado con Java
 
-### Listar algoritmos de cifrado soportados con Java
+### Listar algoritmos de cifrado soportados por Java
 
 Java soporta varios algoritmos de cifrado simétrico dependiendo de la versión de Java que se pueden listar utilizando la API que ofrece el JDK.
 
@@ -105,7 +105,7 @@ A veces se desea cifrar un flujo de datos de tamaño no conocido de antemano, la
 
 {{< code file="Main-7.java" language="java" options="" >}}
 
-### Calcular el _hash_ HMAC
+### Calcular um _hash_ HMAC
 
 Los algoritmos criptográficos de _hashing_ proporcionan una huella digital de los datos que tienen ciertas propiedades de seguridad. Estos utilizan como entrada los datos y un algoritmo de _hashing_.
 

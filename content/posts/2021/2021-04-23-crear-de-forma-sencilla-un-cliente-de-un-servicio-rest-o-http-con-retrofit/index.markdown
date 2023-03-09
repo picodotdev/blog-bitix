@@ -19,7 +19,10 @@ summary: "La implementación de un servicio REST o HTTP es solo una parte, el ot
 
 {{< logotype image1="java.svg" >}}
 
-En el lenguaje de programación Java hay varias librerías que permiten hacer peticiones a un servicio que utilice el protocolo HTTP. Varias de las librerías más conocidas son [OkHttp][okhttp], [Apache HttpComponents][apache-httpcomponents] e incluso [en el JDK en la versión 11 se ha incorporado un cliente HTTP que soporta HTTP/2][blogbitix-350].
+En el lenguaje de programación Java hay varias librerías que permiten hacer peticiones a un servicio que utilice el protocolo HTTP. Varias de las librerías más conocidas son [OkHttp][okhttp], [Apache HttpComponents][apache-httpcomponents] e incluso en el JDK en la versión 11 se ha incorporado un cliente HTTP que soporta HTTP/2 y [Spring][spring] ofrece 3 clientes REST.
+
+* [Novedades y nuevas características de Java 11][blogbitix-350]
+* [Los 3 clientes de Spring para hacer peticiones REST][blogbitix-678]
 
 Estas librerías cumplen su función y ofrecen total flexibilidad en su uso, sin embargo, requieren hacer las peticiones HTTP de forma explícita lo que supone un código repetitivo y tedioso incluyendo hacer las [conversiones de objetos a JSON y de JSON a objetos Java][blogbitix-378] en las peticiones y respuestas.
 
