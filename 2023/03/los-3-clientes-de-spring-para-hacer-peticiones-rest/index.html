@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="El proyecto Spring ofrece hasta 3 clientes o formas diferentes para realizar peticiones a servicios REST. La ventaja de estos clientes es que no requieren de dependencias adicionales si se usa Spring y están integradas con el ecosistema de Spring y Spring Boot. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Los 3 clientes de Spring para hacer peticiones REST</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2023/03/los-3-clientes-de-spring-para-hacer-peticiones-rest/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2023/03/los-3-clientes-de-spring-para-hacer-peticiones-rest/" hreflang="es" title="Los 3 clientes de Spring para hacer peticiones REST">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Los 3 clientes de Spring para hacer peticiones REST">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2023/03/los-3-clientes-de-spring-para-hacer-peticiones-rest/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.webp">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="El proyecto Spring ofrece hasta 3 clientes o formas diferentes para realizar peticiones a servicios REST. La ventaja de estos clientes es que no requieren de dependencias adicionales si se usa Spring y están integradas con el ecosistema de Spring y Spring Boot. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.webp">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Los 3 clientes de Spring para hacer peticiones REST">
+<meta name="twitter:description" content="El proyecto Spring ofrece hasta 3 clientes o formas diferentes para realizar peticiones a servicios REST. La ventaja de estos clientes es que no requieren de dependencias adicionales si se usa Spring y están integradas con el ecosistema de Spring y Spring Boot. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2023/03/los-3-clientes-de-spring-para-hacer-peticiones-rest/"
+    },
+    "headline": "Los 3 clientes de Spring para hacer peticiones REST",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.webp"
+        
+      },
+    "datePublished": "2023-03-09T20:00:00+02:00",
+    "dateModified": "2023-03-09T20:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "989",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "El proyecto Spring ofrece hasta 3 clientes o formas diferentes para realizar peticiones a servicios REST. La ventaja de estos clientes es que no requieren de dependencias adicionales si se usa Spring y están integradas con el ecosistema de Spring y Spring Boot."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9R8XCRGSMY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:600px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="7450235768"></ins>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Los 3 clientes de Spring para hacer peticiones REST</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>09/03/2023</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2023/03/los-3-clientes-de-spring-para-hacer-peticiones-rest/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2023/03/los-3-clientes-de-spring-para-hacer-peticiones-rest/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">El proyecto Spring ofrece hasta 3 clientes o formas diferentes para realizar peticiones a servicios REST. La ventaja de estos clientes es que no requieren de dependencias adicionales si se usa Spring y están integradas con el ecosistema de Spring y Spring Boot.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:90px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="8238629013"></ins>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+</div>
+<p>El proyecto de <a href="https://spring.io/">Spring</a> ofrece un ecosistema de proyectos y librerías que cubren con casi seguridad cualquier necesidad de una aplicación, y en caso de necesidad siempre es posible recurrir a librerías de terceros. Este es el caso de las librerías <a href="https://square.github.io/okhttp/">OkHttp</a> y <a href="https://square.github.io/retrofit/">Retrofit</a> que son una alternativa a las funcionalidades que ofrece Spring.</p>
+<p>Spring es un proyecto que ofrece una enorme cantidad de funcionalidades, prácticamente cualquier cosa que necesite una aplicación Java lo proporciona de alguna. Esto tiene la ventaja de que eligiendo Spring como <em>framework</em> en caso de necesitar en un futuro una nueva funcionalidad es posible elegir la que ofrezca con la ventaja de estar integrada con el ecosistema del <em>framework</em>.</p>
+<p>En los microservicios o servicios web que hacen uso de peticiones REST es necesario un cliente <em>http</em> para hacer peticiones a los <em>endpoints</em> de los servicios. aunque desde la versión 11 de Java en el JDK se ofrece un cliente <em>http</em> que puede ser suficiente para muchos casos de uso sin necesidad de librerías adicionales, soporta HTTP/2 y comunicación asíncrona, el cliente del JDK aunque suficiente para muchos casos es algo más básico que otras opciones.</p>
+<p>En Java hay varios clientes <em>http</em>, desde el mencionado HttpClient incorporado en Java hasta de terceros como el también conocido <a href="https://commons.apache.org/">Apache HttpCommons</a> y OkHttp. Spring ofrece tres clientes REST.</p>
+<p>Independientemente del cliente que se use es deseable poder configurar algunas propiedades del cliente como <em>timeouts</em> de las peticiones, <em>logging</em>, métricas, autenticación y filtros o interceptores para funcionalidades comunes a todas las peticiones.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/">Funcionalidades que necesitan las aplicaciones basadas en microservicios y herramientas que las proporcionan</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2021/04/crear-de-forma-sencilla-un-cliente-de-un-servicio-rest-o-http-con-retrofit/">Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/08/implementar-tolerancia-a-fallos-con-resilience4j/">Implementar tolerancia a fallos con Resilience4j</a></li>
+</ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
+    <li><a href="#clientes-rest-de-spring">Clientes REST de Spring</a>
+      <ol>
+        <li><a href="#resttemplate">RestTemplate</a></li>
+        <li><a href="#webclient">WebClient</a></li>
+        <li><a href="#http-interface">Http Interface</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
+<h2 id="clientes-rest-de-spring">Clientes REST de Spring</h2>
+<p>El cliente REST más antiguo que ha ofrecido Spring ha sido <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html">RestTemplate</a> siendo superado por <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/reactive/function/client/WebClient.html">WebClient</a> y otra forma de obtener un cliente REST usando una simple interfaz de Java.</p>
+<p>Una alternativa de los clientes REST de WebClient y Http Interface con librerías de terceros son OkHttp y Retrofit dependiendo si se quieren añadir dependencias adicionales y si las funcionalidades ofrecidas por los clientes de Spring son suficientes.</p>
+<p>Los ejemplos de código hacen peticiones al <em>endpoint</em> del siguiente sencillo servicio que únicamente devuelve un mensaje recibiendo un parámetro en la ruta de la URL de forma opcional.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picdodotdev.blogbitix.springrestclients</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nd">@RestController</span>&#10;</span></span><span class="line"><span class="cl"><span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">&#34;/message&#34;</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DefaultController</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@GetMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="o">{</span><span class="s">&#34;&#34;</span><span class="o">,</span> <span class="s">&#34;/&#34;</span><span class="o">,</span> <span class="s">&#34;/{name}&#34;</span><span class="o">})</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">message</span><span class="o">(</span><span class="nd">@PathVariable</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;name&#34;</span><span class="o">,</span> <span class="n">required</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span> <span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="o">(</span><span class="n">name</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">name</span><span class="o">.</span><span class="na">isBlank</span><span class="o">())</span> <span class="o">?</span> <span class="s">&#34;Hello World!&#34;</span> <span class="o">:</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Hello %s!&#34;</span><span class="o">,</span> <span class="n">name</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>DefaultController.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="n">plugins</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">	<span class="n">id</span> <span class="s1">&#39;java&#39;</span>&#10;</span></span><span class="line"><span class="cl">	<span class="n">id</span> <span class="s1">&#39;application&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">application</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">	<span class="n">group</span> <span class="o">=</span> <span class="s1">&#39;io.github.picdodotdev.blogbitix&#39;</span>&#10;</span></span><span class="line"><span class="cl">	<span class="n">sourceCompatibility</span> <span class="o">=</span> <span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_17</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">	<span class="n">mainClassName</span> <span class="o">=</span> <span class="s1">&#39;io.github.picdodotdev.blogbitix.springrestclients.Main&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">repositories</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">	<span class="n">mavenCentral</span><span class="o">()</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">dependencies</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">	<span class="n">implementation</span> <span class="nf">platform</span><span class="o">(</span><span class="s1">&#39;org.springframework.boot:spring-boot-dependencies:3.0.4&#39;</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">	<span class="n">implementation</span> <span class="s1">&#39;org.springframework.boot:spring-boot-starter&#39;</span>&#10;</span></span><span class="line"><span class="cl">	<span class="n">implementation</span> <span class="s1">&#39;org.springframework.boot:spring-boot-starter-web&#39;</span>&#10;</span></span><span class="line"><span class="cl">	<span class="n">implementation</span> <span class="s1">&#39;org.springframework.boot:spring-boot-starter-webflux&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<h3 id="resttemplate">RestTemplate</h3>
+<p>RestTemplate sigue siendo una forma sencilla de hacer peticiones REST que aún existe por mantener la compatibilidad con el código existente y que aún no se ha actualizado a otros clientes. Está en modo mantenimiento y tiene algunas limitaciones como ser un cliente síncrono y no soportar <em>streaming</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picdodotdev.blogbitix.springrestclients</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nd">@SpringBootApplication</span>&#10;</span></span><span class="line"><span class="cl"><span class="nd">@EnableWebMvc</span>&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="kd">implements</span> <span class="n">CommandLineRunner</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">	<span class="nd">@Override</span>&#10;</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">		<span class="n">restTemplate</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">		<span class="n">webClient</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">		<span class="n">httpInterface</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">	<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">restTemplate</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">		<span class="n">RestTemplate</span> <span class="n">restTemplate</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RestTemplate</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">		<span class="n">String</span> <span class="n">message1</span> <span class="o">=</span> <span class="n">restTemplate</span><span class="o">.</span><span class="na">getForObject</span><span class="o">(</span><span class="s">&#34;http://localhost:8080/message/&#34;</span><span class="o">,</span> <span class="n">String</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">		<span class="n">String</span> <span class="n">message2</span> <span class="o">=</span> <span class="n">restTemplate</span><span class="o">.</span><span class="na">getForObject</span><span class="o">(</span><span class="s">&#34;http://localhost:8080/message/{name}&#34;</span><span class="o">,</span> <span class="n">String</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="s">&#34;picodotdev&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;RestTemplate (message1): &#34;</span> <span class="o">+</span> <span class="n">message1</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;RestTemplate (message2): &#34;</span> <span class="o">+</span> <span class="n">message2</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">	<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">		<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">Main</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">	<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-1.java</span>
+    </div>
+</div>
+<h3 id="webclient">WebClient</h3>
+<p>WebClient es el sustituto moderno de RestTemplate que ofrece Spring incorporando varias mejoras. Soporta comunicación E/S no bloqueante, comunicación asíncrona y <em>streaming</em>, una API con un estilo funcional fluído. Para el código nuevo lo aconsejable es utilizar este cliente.</p>
+<p>Este cliente necesita de un cliente <em>http</em> que es el que realiza realmente las peticiones <em>http</em>, entre los soportados está el cliente <em>http</em> de Java. El cliente soporta filtros con los que implementar interceptores para funcionalidades comunes independientemente de la petición.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picdodotdev.blogbitix.springrestclients</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nd">@SpringBootApplication</span>&#10;</span></span><span class="line"><span class="cl"><span class="nd">@EnableWebMvc</span>&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="kd">implements</span> <span class="n">CommandLineRunner</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">	<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">webClient</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">		<span class="n">ExchangeFilterFunction</span> <span class="n">filter</span> <span class="o">=</span> <span class="o">(</span><span class="n">ClientRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">ExchangeFunction</span> <span class="n">next</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Filter &#34;</span> <span class="o">+</span> <span class="n">request</span><span class="o">.</span><span class="na">url</span><span class="o">().</span><span class="na">getPath</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="n">next</span><span class="o">.</span><span class="na">exchange</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">		<span class="o">};</span>&#10;</span></span><span class="line"><span class="cl">		<span class="n">WebClient</span> <span class="n">webClient</span> <span class="o">=</span> <span class="n">WebClient</span><span class="o">.</span><span class="na">builder</span><span class="o">().</span><span class="na">clientConnector</span><span class="o">(</span><span class="k">new</span> <span class="n">JdkClientHttpConnector</span><span class="o">()).</span><span class="na">filter</span><span class="o">(</span><span class="n">filter</span><span class="o">).</span><span class="na">baseUrl</span><span class="o">(</span><span class="s">&#34;http://localhost:8080&#34;</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">		<span class="n">String</span> <span class="n">message1</span> <span class="o">=</span> <span class="n">webClient</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">uri</span><span class="o">(</span><span class="s">&#34;/message/&#34;</span><span class="o">).</span><span class="na">retrieve</span><span class="o">().</span><span class="na">bodyToMono</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">block</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">		<span class="n">String</span> <span class="n">message2</span> <span class="o">=</span> <span class="n">webClient</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">uri</span><span class="o">(</span><span class="s">&#34;/message/{name}&#34;</span><span class="o">,</span>  <span class="s">&#34;picodotdev&#34;</span><span class="o">).</span><span class="na">retrieve</span><span class="o">().</span><span class="na">bodyToMono</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">block</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;WebClient (message1): &#34;</span> <span class="o">+</span> <span class="n">message1</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;WebClient (message2): &#34;</span> <span class="o">+</span> <span class="n">message2</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">	<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">	<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">		<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">Main</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">	<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-2.java</span>
+    </div>
+</div>
+<h3 id="http-interface">Http Interface</h3>
+<p>Retrofit es una librería que permite invocar un servicio REST definiendo el servicio mediante una interfaz de Java, se ha añadido en Spring 6 y Spring Boot 3 para lo que antes había que recurrir al <a href="https://docs.spring.io/spring-cloud-openfeign/docs/current/reference/html/">cliente Feign</a> o como una librería de terceros a Retrofit.</p>
+<p>En esencia <em>Http Interface</em> permite invocar un servicio REST igual que invocar un método de una interfaz. El desarrollador crea la interfaz que representa el servicio REST y añaden a los métodos anotaciones que permite a la librería construir una implementación que invocada realiza las peticiones al servicio REST. La implementación de la interfaz se crea a través de la clase <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/service/invoker/HttpServiceProxyFactory.html">HttpServiceProxyFactory</a></p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picdodotdev.blogbitix.springrestclients</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nd">@SpringBootApplication</span>&#10;</span></span><span class="line"><span class="cl"><span class="nd">@EnableWebMvc</span>&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="kd">implements</span> <span class="n">CommandLineRunner</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">	<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">httpInterface</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">		<span class="n">WebClient</span> <span class="n">client</span> <span class="o">=</span> <span class="n">WebClient</span><span class="o">.</span><span class="na">builder</span><span class="o">().</span><span class="na">clientConnector</span><span class="o">(</span><span class="k">new</span> <span class="n">JdkClientHttpConnector</span><span class="o">()).</span><span class="na">baseUrl</span><span class="o">(</span><span class="s">&#34;http://localhost:8080&#34;</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">		<span class="n">HttpServiceProxyFactory</span> <span class="n">factory</span> <span class="o">=</span> <span class="n">HttpServiceProxyFactory</span><span class="o">.</span><span class="na">builder</span><span class="o">(</span><span class="n">WebClientAdapter</span><span class="o">.</span><span class="na">forClient</span><span class="o">(</span><span class="n">client</span><span class="o">)).</span><span class="na">build</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">		<span class="n">MessageService</span> <span class="n">messageService</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="na">createClient</span><span class="o">(</span><span class="n">MessageService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">		<span class="n">String</span> <span class="n">message1</span> <span class="o">=</span> <span class="n">messageService</span><span class="o">.</span><span class="na">message</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">		<span class="n">String</span> <span class="n">message2</span> <span class="o">=</span> <span class="n">messageService</span><span class="o">.</span><span class="na">message</span><span class="o">(</span><span class="s">&#34;picodotdev&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;RestTemplate (message1): &#34;</span> <span class="o">+</span> <span class="n">message1</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;RestTemplate (message2): &#34;</span> <span class="o">+</span> <span class="n">message2</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">	<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">	<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-3.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picdodotdev.blogbitix.springrestclients</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.PathVariable</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.web.service.annotation.GetExchange</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">MessageService</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@GetExchange</span><span class="o">(</span><span class="s">&#34;/message/&#34;</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="nf">message</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@GetExchange</span><span class="o">(</span><span class="s">&#34;/message/{name}&#34;</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="nf">message</span><span class="o">(</span><span class="nd">@PathVariable</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">)</span> <span class="n">String</span> <span class="n">name</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>MessageService.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">RestTemplate (message1): Hello World!&#10;</span></span><span class="line"><span class="cl">RestTemplate (message2): Hello picodotdev!&#10;</span></span><span class="line"><span class="cl">Filter /message/&#10;</span></span><span class="line"><span class="cl">Filter /message/picodotdev&#10;</span></span><span class="line"><span class="cl">WebClient (message1): Hello World!&#10;</span></span><span class="line"><span class="cl">WebClient (message2): Hello picodotdev!&#10;</span></span><span class="line"><span class="cl">HttpInterface (message1): Hello World!&#10;</span></span><span class="line"><span class="cl">HttpInterface (message2): Hello picodotdev!</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode fs-6">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringRestClients">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html#webflux-client">Spring WebClient</a></li>
+<li><a href="https://docs.spring.io/spring-framework/docs/current/reference/html/integration.html#rest-client-access">REST Clients</a></li>
+<li><a href="https://www.baeldung.com/spring-6-http-interface">HTTP Interface in Spring 6</a></li>
+<li><a href="https://www.baeldung.com/spring-5-webclient">Spring 5 WebClient</a></li>
+<li><a href="https://www.baeldung.com/spring-webclient-filters">Spring WebClient Filters</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/03/cifrar-y-descifrar-datos-usando-algoritmos-de-clave-simetrica-con-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cifrar y descifrar datos usando algoritmos de clave simétrica con Java" title="Cifrar y descifrar datos usando algoritmos de clave simétrica con Java" class="" loading="lazy">
+                <h3>Cifrar y descifrar datos usando algoritmos de clave simétrica con Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/02/los-algoritmos-de-hashing-criptograficos-calculo-de-hashes-con-comandos-de-gnu-linux-y-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Los algoritmos de hashing criptográficos, cálculo de hashes con comandos de GNU/Linux y Java" title="Los algoritmos de hashing criptográficos, cálculo de hashes con comandos de GNU/Linux y Java" class="" loading="lazy">
+                <h3>Los algoritmos de hashing criptográficos, cálculo de hashes con comandos de GNU/Linux y Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/">
+                <img src="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/qr-code_hu8f8fcfe52013a3436c02f7debd82eb59_1651_2560x1440_fit_q90_h2_box_3.webp" width="326" height="125" alt="Generar códigos de barras y códigos QR con Java" title="Generar códigos de barras y códigos QR con Java" class="" loading="lazy">
+                <h3>Generar códigos de barras y códigos QR con Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/02/introduccion-conceptos-y-uso-basico-del-broker-de-mensajes-apache-kafka/">
+                <img src="/blog-bitix/assets/images/logotypes/apache-kafka.svg" width="326" height="125" alt="Introducción, conceptos y uso básico del broker de mensajes Apache Kafka" title="Introducción, conceptos y uso básico del broker de mensajes Apache Kafka" class="" loading="lazy">
+                <h3>Introducción, conceptos y uso básico del broker de mensajes Apache Kafka</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/01/construir-la-imagen-del-contenedor-de-la-aplicacion-usando-buildpacks/">
+                <img src="/blog-bitix/assets/images/logotypes/buildpacksio.svg" width="326" height="125" alt="Construir la imagen del contenedor de la aplicación usando Buildpacks" title="Construir la imagen del contenedor de la aplicación usando Buildpacks" class="" loading="lazy">
+                <h3>Construir la imagen del contenedor de la aplicación usando Buildpacks</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/01/obtener-valores-de-configuracion-antes-iniciar-una-aplicacion-con-spring-boot/">
+                <img src="/blog-bitix/assets/images/logotypes/spring.svg" width="326" height="125" alt="Obtener valores de configuración antes iniciar una aplicación con Spring Boot" title="Obtener valores de configuración antes iniciar una aplicación con Spring Boot" class="" loading="lazy">
+                <h3>Obtener valores de configuración antes iniciar una aplicación con Spring Boot</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-678';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2023\/03\/los-3-clientes-de-spring-para-hacer-peticiones-rest\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2023 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>
