@@ -7,12 +7,12 @@ public class Main {
     public static void main(String[] args) throws Exception {
         ...
 
-        symetricEncrypt();
+        symmetricEncrypt();
     }
 
     ...
 
-    private static void symetricEncrypt() throws Exception {
+    private static void symmetricEncrypt() throws Exception {
         Set<String> keyGenerators = Security.getAlgorithms("KeyGenerator");
         System.out.println("Supported key generators: " + keyGenerators.stream().sorted().collect(Collectors.joining(",")));
 

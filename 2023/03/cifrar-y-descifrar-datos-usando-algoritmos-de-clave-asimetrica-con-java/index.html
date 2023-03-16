@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="El lenguaje de programación Java ofrece clases e implementa varios algoritmos relacionados con la criptografía y seguridad. Con unas pocas líneas de código es posible listar los algoritmos soportados, generar claves, cifrar datos y descifrar datos. Soporta tanto criptografía de clave simétrica donde se usa la misma clave tanto para cifrar como para descifrar y como en este artículo se muestra criptografía asimétrica en la que se utiliza dos claves una la clave pública para cifrar datos y la clave privada para descifrar los datos. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Cifrar y descifrar datos usando algoritmos de clave asimétrica con Java</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2023/03/cifrar-y-descifrar-datos-usando-algoritmos-de-clave-asimetrica-con-java/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2023/03/cifrar-y-descifrar-datos-usando-algoritmos-de-clave-asimetrica-con-java/" hreflang="es" title="Cifrar y descifrar datos usando algoritmos de clave asimétrica con Java">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Cifrar y descifrar datos usando algoritmos de clave asimétrica con Java">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2023/03/cifrar-y-descifrar-datos-usando-algoritmos-de-clave-asimetrica-con-java/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="El lenguaje de programación Java ofrece clases e implementa varios algoritmos relacionados con la criptografía y seguridad. Con unas pocas líneas de código es posible listar los algoritmos soportados, generar claves, cifrar datos y descifrar datos. Soporta tanto criptografía de clave simétrica donde se usa la misma clave tanto para cifrar como para descifrar y como en este artículo se muestra criptografía asimétrica en la que se utiliza dos claves una la clave pública para cifrar datos y la clave privada para descifrar los datos. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Cifrar y descifrar datos usando algoritmos de clave asimétrica con Java">
+<meta name="twitter:description" content="El lenguaje de programación Java ofrece clases e implementa varios algoritmos relacionados con la criptografía y seguridad. Con unas pocas líneas de código es posible listar los algoritmos soportados, generar claves, cifrar datos y descifrar datos. Soporta tanto criptografía de clave simétrica donde se usa la misma clave tanto para cifrar como para descifrar y como en este artículo se muestra criptografía asimétrica en la que se utiliza dos claves una la clave pública para cifrar datos y la clave privada para descifrar los datos. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2023/03/cifrar-y-descifrar-datos-usando-algoritmos-de-clave-asimetrica-con-java/"
+    },
+    "headline": "Cifrar y descifrar datos usando algoritmos de clave asimétrica con Java",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp"
+        
+      },
+    "datePublished": "2023-03-16T20:30:00+02:00",
+    "dateModified": "2023-03-16T20:30:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1197",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "El lenguaje de programación Java ofrece clases e implementa varios algoritmos relacionados con la criptografía y seguridad. Con unas pocas líneas de código es posible listar los algoritmos soportados, generar claves, cifrar datos y descifrar datos. Soporta tanto criptografía de clave simétrica donde se usa la misma clave tanto para cifrar como para descifrar y como en este artículo se muestra criptografía asimétrica en la que se utiliza dos claves una la clave pública para cifrar datos y la clave privada para descifrar los datos."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9R8XCRGSMY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:600px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="7450235768"></ins>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Cifrar y descifrar datos usando algoritmos de clave asimétrica con Java</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>16/03/2023</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2023/03/cifrar-y-descifrar-datos-usando-algoritmos-de-clave-asimetrica-con-java/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2023/03/cifrar-y-descifrar-datos-usando-algoritmos-de-clave-asimetrica-con-java/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">El lenguaje de programación Java ofrece clases e implementa varios algoritmos relacionados con la criptografía y seguridad. Con unas pocas líneas de código es posible listar los algoritmos soportados, generar claves, cifrar datos y descifrar datos. Soporta tanto criptografía de clave simétrica donde se usa la misma clave tanto para cifrar como para descifrar y como en este artículo se muestra criptografía asimétrica en la que se utiliza dos claves una la clave pública para cifrar datos y la clave privada para descifrar los datos.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:90px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="8238629013"></ins>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>Los algoritmos de clave simétrica que utilizan la misma clave para cifrar como para descifrar adolecen del problema conocido como <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">man-in-the-middle</a>, el problema consiste en que no es posible compartir la clave privada entre el emisor y receptor del mensaje con garantía de que un intermediario no la haya alterado.</p>
+<p>Aún con este problema los algoritmos de clave simétrica siguen siendo utilizados ya que tienen otras ventajas. Los algoritmos de clave asimétrica no tienen el problema de <em>man-in-the-middle</em> aunque tienen otros defectos.</p>
+<p>En el lenguaje de programación Java es posible generar un par de claves asimétricas, cifrar datos con la clave pública y descifrar los datos con la clave privada.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2023/03/cifrar-y-descifrar-datos-usando-algoritmos-de-clave-simetrica-con-java/">Cifrar y descifrar datos usando algoritmos de clave simétrica con Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">Generar y convertir claves y certificados con OpenSSL</a></li>
+</ul>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
+    <li><a href="#los-algoritmos-de-clave-asimétrica">Los algoritmos de clave asimétrica</a>
+      <ol>
+        <li><a href="#longitud-de-las-claves">Longitud de las claves</a></li>
+      </ol>
+    </li>
+    <li><a href="#utilizar-algoritmos-de-clave-asimétrica-con-java">Utilizar algoritmos de clave asimétrica con Java</a>
+      <ol>
+        <li><a href="#listar-algoritmos-de-clave-asimétrica">Listar algoritmos de clave asimétrica</a></li>
+        <li><a href="#generar-un-par-de-claves-privada-y-pública">Generar un par de claves privada y pública</a></li>
+        <li><a href="#codificar-la-clave-privada-y-pública-en-formato-pem">Codificar la clave privada y pública en formato PEM</a></li>
+        <li><a href="#cifrar-datos-con-la-clave-pública">Cifrar datos con la clave pública</a></li>
+        <li><a href="#descifrar-datos-con-la-clave-privada">Descifrar datos con la clave privada</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
+<h2 id="los-algoritmos-de-clave-asimétrica">Los algoritmos de clave asimétrica</h2>
+<p>Los algoritmos de clave asimétrica utilizan una clave para cifrar los datos y otra clave para descifrar los datos. Ambas claves están relacionadas matemáticamente de tal forma que los datos cifrados con una clave solo son descifrables por su clave asociada.</p>
+<p>A una de las claves se le denomina clave pública porque esta puede ser compartida, es la que se utiliza para cifrar los datos que solo pueden ser descifrados por la clave privada. La clave privada se denomina así porque ha de mantenerse en secreto.</p>
+<p>Varios algoritmos conocidos de clave asimétrica son los siguientes:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29">RSA</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Digital_Signature_Algorithm">DSA</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm">ECDSA</a></li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/03/cifrar-y-descifrar-datos-usando-algoritmos-de-clave-asimetrica-con-java/images/asymmetric-encryption-keys.svg" data-gallery="" title="Asymetric encryption keys"><img src="/blog-bitix/2023/03/cifrar-y-descifrar-datos-usando-algoritmos-de-clave-asimetrica-con-java/images/asymmetric-encryption-keys.svg" width="300" height="200" alt="Asymetric encryption keys" title="Asymetric encryption keys" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/03/cifrar-y-descifrar-datos-usando-algoritmos-de-clave-asimetrica-con-java/images/public-key-encryption.svg" data-gallery="" title="Pulbic key encryption"><img src="/blog-bitix/2023/03/cifrar-y-descifrar-datos-usando-algoritmos-de-clave-asimetrica-con-java/images/public-key-encryption.svg" width="300" height="200" alt="Pulbic key encryption" title="Pulbic key encryption" class="&#34; " loading="lazy"></a></p>
+<figcaption>Asymmetric encryption keys and public key encryption</figcaption>
+</figure>
+</div>
+<h3 id="longitud-de-las-claves">Longitud de las claves</h3>
+<p>Los algoritmos de clave asimétrica necesitan claves más largas, de mayor número de bits, que las de los algoritmos de clave simétrica para ofrecer el mismo nivel de seguridad.</p>
+<p>Algunos algoritmos de clave asimétrica permiten claves de 8192 bits de longitud aunque ya longitudes de 2048 bits se consideran seguros. Por el contrario los algoritmos de clave simétrica ofrecen con longitudes de 256 bits una seguridad equivalente.</p>
+<h2 id="utilizar-algoritmos-de-clave-asimétrica-con-java">Utilizar algoritmos de clave asimétrica con Java</h2>
+<p>El lenguaje de programación Java soporta varios algoritmos de clave asimétrica, la generación de claves privada y pública, cifrado y descifrado de datos con las claves. Proporciona varias clases en el JDK disponibles para cualquier aplicación sin necesidad de librerías de terceros.</p>
+<p>Para casos avanzados o tareas específicas en el ecosistema Java hay librerías en el ámbito de la seguridad y criptografía que se pueden añadir como una dependencia en un proyecto, una de ellas es <a href="https://bouncycastle.org/">Bouncy Castle</a>.</p>
+<p>Esta es la salida del programa en la que se muestra el texto de datos, el texto cifrado y el texto original descifrado y la clave privada y pública representada en formato PEM.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">  1&#10;</span><span class="lnt">  2&#10;</span><span class="lnt">  3&#10;</span><span class="lnt">  4&#10;</span><span class="lnt">  5&#10;</span><span class="lnt">  6&#10;</span><span class="lnt">  7&#10;</span><span class="lnt">  8&#10;</span><span class="lnt">  9&#10;</span><span class="lnt"> 10&#10;</span><span class="lnt"> 11&#10;</span><span class="lnt"> 12&#10;</span><span class="lnt"> 13&#10;</span><span class="lnt"> 14&#10;</span><span class="lnt"> 15&#10;</span><span class="lnt"> 16&#10;</span><span class="lnt"> 17&#10;</span><span class="lnt"> 18&#10;</span><span class="lnt"> 19&#10;</span><span class="lnt"> 20&#10;</span><span class="lnt"> 21&#10;</span><span class="lnt"> 22&#10;</span><span class="lnt"> 23&#10;</span><span class="lnt"> 24&#10;</span><span class="lnt"> 25&#10;</span><span class="lnt"> 26&#10;</span><span class="lnt"> 27&#10;</span><span class="lnt"> 28&#10;</span><span class="lnt"> 29&#10;</span><span class="lnt"> 30&#10;</span><span class="lnt"> 31&#10;</span><span class="lnt"> 32&#10;</span><span class="lnt"> 33&#10;</span><span class="lnt"> 34&#10;</span><span class="lnt"> 35&#10;</span><span class="lnt"> 36&#10;</span><span class="lnt"> 37&#10;</span><span class="lnt"> 38&#10;</span><span class="lnt"> 39&#10;</span><span class="lnt"> 40&#10;</span><span class="lnt"> 41&#10;</span><span class="lnt"> 42&#10;</span><span class="lnt"> 43&#10;</span><span class="lnt"> 44&#10;</span><span class="lnt"> 45&#10;</span><span class="lnt"> 46&#10;</span><span class="lnt"> 47&#10;</span><span class="lnt"> 48&#10;</span><span class="lnt"> 49&#10;</span><span class="lnt"> 50&#10;</span><span class="lnt"> 51&#10;</span><span class="lnt"> 52&#10;</span><span class="lnt"> 53&#10;</span><span class="lnt"> 54&#10;</span><span class="lnt"> 55&#10;</span><span class="lnt"> 56&#10;</span><span class="lnt"> 57&#10;</span><span class="lnt"> 58&#10;</span><span class="lnt"> 59&#10;</span><span class="lnt"> 60&#10;</span><span class="lnt"> 61&#10;</span><span class="lnt"> 62&#10;</span><span class="lnt"> 63&#10;</span><span class="lnt"> 64&#10;</span><span class="lnt"> 65&#10;</span><span class="lnt"> 66&#10;</span><span class="lnt"> 67&#10;</span><span class="lnt"> 68&#10;</span><span class="lnt"> 69&#10;</span><span class="lnt"> 70&#10;</span><span class="lnt"> 71&#10;</span><span class="lnt"> 72&#10;</span><span class="lnt"> 73&#10;</span><span class="lnt"> 74&#10;</span><span class="lnt"> 75&#10;</span><span class="lnt"> 76&#10;</span><span class="lnt"> 77&#10;</span><span class="lnt"> 78&#10;</span><span class="lnt"> 79&#10;</span><span class="lnt"> 80&#10;</span><span class="lnt"> 81&#10;</span><span class="lnt"> 82&#10;</span><span class="lnt"> 83&#10;</span><span class="lnt"> 84&#10;</span><span class="lnt"> 85&#10;</span><span class="lnt"> 86&#10;</span><span class="lnt"> 87&#10;</span><span class="lnt"> 88&#10;</span><span class="lnt"> 89&#10;</span><span class="lnt"> 90&#10;</span><span class="lnt"> 91&#10;</span><span class="lnt"> 92&#10;</span><span class="lnt"> 93&#10;</span><span class="lnt"> 94&#10;</span><span class="lnt"> 95&#10;</span><span class="lnt"> 96&#10;</span><span class="lnt"> 97&#10;</span><span class="lnt"> 98&#10;</span><span class="lnt"> 99&#10;</span><span class="lnt">100&#10;</span><span class="lnt">101&#10;</span><span class="lnt">102&#10;</span><span class="lnt">103&#10;</span><span class="lnt">104&#10;</span><span class="lnt">105&#10;</span><span class="lnt">106&#10;</span><span class="lnt">107&#10;</span><span class="lnt">108&#10;</span><span class="lnt">109&#10;</span><span class="lnt">110&#10;</span><span class="lnt">111&#10;</span><span class="lnt">112&#10;</span><span class="lnt">113&#10;</span><span class="lnt">114&#10;</span><span class="lnt">115&#10;</span><span class="lnt">116&#10;</span><span class="lnt">117&#10;</span><span class="lnt">118&#10;</span><span class="lnt">119&#10;</span><span class="lnt">120&#10;</span><span class="lnt">121&#10;</span><span class="lnt">122&#10;</span><span class="lnt">123&#10;</span><span class="lnt">124&#10;</span><span class="lnt">125&#10;</span><span class="lnt">126&#10;</span><span class="lnt">127&#10;</span><span class="lnt">128&#10;</span><span class="lnt">129&#10;</span><span class="lnt">130&#10;</span><span class="lnt">131&#10;</span><span class="lnt">132&#10;</span><span class="lnt">133&#10;</span><span class="lnt">134&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Asymetric encryption&#10;</span></span><span class="line"><span class="cl">Supported key generators: DIFFIEHELLMAN,DSA,EC,ED25519,ED448,EDDSA,RSA,RSASSA-PSS,X25519,X448,XDH&#10;</span></span><span class="line"><span class="cl">Private key: &#10;</span></span><span class="line"><span class="cl">-----BEGIN RSA PRIVATE KEY-----&#10;</span></span><span class="line"><span class="cl">MIISQgIBADANBgkqhkiG9w0BAQEFAASCEiwwghIoAgEAAoIEAQClgguGhL1j2O4e&#10;</span></span><span class="line"><span class="cl">lKBoeHFKFI6BChB/JgRfP2WRI6RVPRyqRfgL0txMz1UN9gkPsljFYhiZYqBeIJP6&#10;</span></span><span class="line"><span class="cl">yMslHvUBZr7fM3k5f4evGyOGvzXVDJGYxs6VxRHKC9/MZyTmuHS/rlGY8gXOvV9r&#10;</span></span><span class="line"><span class="cl">o0K6k/uFu59ZUOkTRUCLtv376tbXI9HXhYPKKP/nLGaHdNkyqHMETTLWlpNltsET&#10;</span></span><span class="line"><span class="cl">p0HWLeSMytjqf9xFBvzUo775hqe/q8tgEIb6ffyzrYFUfmjUxm4qhAI4azrOGYh1&#10;</span></span><span class="line"><span class="cl">SPma6nLWu/YuZ94j4V9g9+5CV6Mq7LATqU4cYDU4sfWpkDA0zbXnQT0KDcwg/QHQ&#10;</span></span><span class="line"><span class="cl">12f2gytvaNH2G8SF5WwFRQqLcpRtDpnkxfETPpcxljy1slZTel0jN7f/i/CDutv/&#10;</span></span><span class="line"><span class="cl">SJ8++Ins2tWPe/jYMu0WRrvRlfE0OBxDBtIq29UyoOI/l+XSIFma8NiH58zsHxAU&#10;</span></span><span class="line"><span class="cl">EhXqLR8mdB++UeNzpLfctIYqgbLz4sIZkFgnMXChpZEMtoijJBF/2FkGXclwcreA&#10;</span></span><span class="line"><span class="cl">6yEybesugikvaaniMCEvUfSq7aF1t2VdMdqjNBdG3PIGzgltyitU8rcQo1TB34ga&#10;</span></span><span class="line"><span class="cl">oMDmX6yjv63AKPnhpQXuZfg/JhTuOuo2WLPiAj3S+66CGHZLctjqsLQjKY8kSs6/&#10;</span></span><span class="line"><span class="cl">lNaHpseejwx1kXl6Q4gQ5OmKmTctS7rxIJJ0YKsCMlf7IKqCGQjG9u4NmRQ2sQ9h&#10;</span></span><span class="line"><span class="cl">S46tWCQBLoZ74Qu8Pp/MTcki7ELxKbCgzKVbcW/xW/4OTtK47B5ys0Mvyt/nHGK7&#10;</span></span><span class="line"><span class="cl">RvWcCXMAn4F3CHPBOQ3pS85zMy8pkPsSj9kOOve84tbgYLdvqLzL9ZTuZAtZisXY&#10;</span></span><span class="line"><span class="cl">JaXwHFCB4NfIcRe4wwEXjsJcixKBlNNhmxuz7Dtbug0e5oEFaZX8xfWnYCGNZuL+&#10;</span></span><span class="line"><span class="cl">/kS7AODpdZuwoLLW/E9FGr5Gz1riQYNo5n7YxRJktNfsQCXWf833iwXEeoTnSvf8&#10;</span></span><span class="line"><span class="cl">dKC+MQHh9vGy4+c0s7aHjPidA//JrevL3eiHsg8iFkfy6zIlViX5uynGiwQZo4oV&#10;</span></span><span class="line"><span class="cl">0gXwcnJBXvszY6plcXmJ5u8UFAiZvOSsG8a6kdoOp1CoM9zt8ceyiu9I/QHtnL/a&#10;</span></span><span class="line"><span class="cl">uBpJVmkqxtT03qyohLH42HjN62nECUGQu6OYvjyN79wSKWa6m3vovlfu44DLada2&#10;</span></span><span class="line"><span class="cl">32EcNwqEqCjpdhRDLidS23JERcKl5DaH6Ya9ufmmwxSLwGM9nNi78nJg8weoylj3&#10;</span></span><span class="line"><span class="cl">4yMCYTzMGC+GrQXbyGFSFY2+Bux9YmrkM/wMrD9+sD5VcQ756IqIjMuy86cxnChp&#10;</span></span><span class="line"><span class="cl">O/HUfK7UG5l6HlkfHQyUMINouBP4U/PQn7bZxJNeCjc4kq/cSrEYRbDwEbABOfyI&#10;</span></span><span class="line"><span class="cl">bIiKDuvJAgMBAAECggQAE6jwceCyVzoiraBDCQCG7eFQ537Iud8hYCe5irWR+jbB&#10;</span></span><span class="line"><span class="cl">q8TsSN9EdZ1KlwIgTmyFg0t6l5HHHJdAbLxNoTxdpyEg0DD0Qpe7CC+wQdEpywPC&#10;</span></span><span class="line"><span class="cl">Bxn/2nuSeDkpMvBs9OPOqSGYUL4ttsKjozdn9Z4eymJ19G1E2m9R/PwA4dv3UY6l&#10;</span></span><span class="line"><span class="cl">iQqI6UqDJ183U0+BKLV+FXHkID26XDfgFH5m4X20azhXRE0UNGDhnJKnh0rEV2Ny&#10;</span></span><span class="line"><span class="cl">oO0lqNCuuVswBII63/eC3kBYZoJE9cwY+7GY8MV5Bw1Eb3u9aplas+aPjJ2OD3XB&#10;</span></span><span class="line"><span class="cl">GVIgVK+QSDVKH1kLg4ziAYqBfoBoEeJr76D+w6IOK/Q8E0DLezTm5siuOXqkAJZe&#10;</span></span><span class="line"><span class="cl">QnYe2QXeKNuV8jwGaXEcv30JZBd9O5tGhxBbK5GTX1QZT9Yj7O6TtMnfL+9gkQQ5&#10;</span></span><span class="line"><span class="cl">8Ij5Yxzs5NAxP+jtDvpHxTy8bocNk7NsPK4Z9ftj0AoK5pfMmGU7GpeZDlM3bNAF&#10;</span></span><span class="line"><span class="cl">SssXeu8HrYlAwyKq9WdolWf0yemkbtvkSgc5e3I3dbVWwL/g7bIrkaGUb3oTFqwb&#10;</span></span><span class="line"><span class="cl">ztJdYcs4w/KlOe4J4bBFAxi3v91e8+P3w2NQDALWZjceeQ0vrZWQME2Ni6wcNWDr&#10;</span></span><span class="line"><span class="cl">MbHKCwaazcVBaUkQQuMYEDzAO82z0qr43HoIx7alz1hiXFQqUBMrMQfivqjM4e+E&#10;</span></span><span class="line"><span class="cl">PZTXjBmF71fBoTXWoysXh24se9+JrK8aYp+r5kV+SQZJETRknbUaBtxYtrN4EE9t&#10;</span></span><span class="line"><span class="cl">Pf6mPEj2S2rb9RdiuZ0TuY90OBTf89Sargc8wALBEqPC5ssolb4PF/oKKrvQ6wq9&#10;</span></span><span class="line"><span class="cl">fkzbWf0/aE2b4mW6DRLb1KwkeAhXNCNEJST80GwfnKocURTD5J650PI9QCM8r2U8&#10;</span></span><span class="line"><span class="cl">rWXinS6NN08quRZcn30o9H9z5SLTuVj2+YyNSQj5Wpgs6a59+33mVZth53gztDh7&#10;</span></span><span class="line"><span class="cl">hJpH2ZhW3lTXD0a90LiZNDVVwThqbZ5AtfzH7i7oSaL1obsstTg2pnoOq9Qe1/rT&#10;</span></span><span class="line"><span class="cl">l1E5EXxjYaMaHyKz8iIjdaCGIuP6BnIIJoYDDrz/ZdcVN+Gz4RizLxtaHbmkJkMO&#10;</span></span><span class="line"><span class="cl">fipKAWbfGQ/RwpGKgd2X8SdvEpGxXv/MZYmiK4OuTpFoEe1R6JJwF6kxujqT6QBD&#10;</span></span><span class="line"><span class="cl">qObnxNCeVKKLDMs/FqUS1IVTO2k8WI/bREFfyXNKpZyDl5AJpzagm4PtGscerL89&#10;</span></span><span class="line"><span class="cl">qIH8dRxMdGT8AyBmLivIkXNfa18niLXs1B9oJGY0Qn3de6OfauqkqGBJoaLJGAQo&#10;</span></span><span class="line"><span class="cl">NAGLBahF4TCIHf78n6XbOr1co4ygXMQNlHomhylRSzWojN/lCEZOul6lNZwkQBen&#10;</span></span><span class="line"><span class="cl">vT3gV+2iXq1xP851YahB3kFS1J5KsunNYicTpPWQxwKCAgEA0XXr1bU9Qk6pX5UD&#10;</span></span><span class="line"><span class="cl">XjGcZRQuy3zBagOxFKArS/WNpJFqczTXQUxli240G645YzJgz4FV1Yhd+hDPJivI&#10;</span></span><span class="line"><span class="cl">jStfiyNCZ3DLNafMcFlZizSmx6xTLPPWisVBNscv0G7qgYFmYHmFMEOnQ9N6ps9j&#10;</span></span><span class="line"><span class="cl">xySi0WqMYoY0IpFReDcHf7Tqf9QlQtASYdppQPzLj0NxyAlIXRV6zd97u3fJTwfJ&#10;</span></span><span class="line"><span class="cl">AP3/PR3I3v3JLhsANL8wTD9couTb5eIg0mdnrcAb4dDRT6g6DkFQhou7l//1+6ao&#10;</span></span><span class="line"><span class="cl">5QAuWDQ3CR3c4JUnyM5HKojudTYPI1rweBzXFtsAbeUHPPR93pWBKjoWamRQIFLg&#10;</span></span><span class="line"><span class="cl">gIh2mHag7L9pghYBHggnctLJSZp+JbrjxTC+CdWO33svWXrauIUN8idy1oO1QZcn&#10;</span></span><span class="line"><span class="cl">C+2Lf/EaG1ggE9ydOYBX0U0am+XvhNiWC1naSNpt/niwVElACPDryi6qfb1A+VSc&#10;</span></span><span class="line"><span class="cl">HkXdmC70p7Ci1f7IKbNFKi1hX7JPw47UeqJp3QQ2GtGHlumKDi93HNndmDth6KaU&#10;</span></span><span class="line"><span class="cl">evJqosyARO2RhxflnZ2uhfJ4drV7s4gWOM7JA25Gou9w9y+U2GHqzy3gknRV2tuV&#10;</span></span><span class="line"><span class="cl">AlzuNYOvr6C9HeCeR5S/gOy7VHEwgnqpKnZJiY6pQ1SzOptz+psMdLnB/i7tmY3C&#10;</span></span><span class="line"><span class="cl">TuYYSS1BsFXtFJMCtr2Ca7uuQHcCggIBAMpIGzhfRx7QePkRkc6oPhH9+fPKpamW&#10;</span></span><span class="line"><span class="cl">y4xnNQPy6On/gcyU68BQ71Wql/1irAqxsm2032pI8wc9yfrISbGP24flF5WXZxiz&#10;</span></span><span class="line"><span class="cl">DugQO/N1RgNgG/B1sD1eeAHnXirg6s9mqS40LzjMIr4asHTF0kzXipbmOgT+Ry8I&#10;</span></span><span class="line"><span class="cl">9Te2/haemzmi6Aw8Xek847VReZTOqkz8mGw8WyUW2ula/Gj0fZewUpWhf2sqx6bn&#10;</span></span><span class="line"><span class="cl">DtdWgUMbHJeQyTCKpqtjZpkxrPexsMrlcbXeUgVv1shNWjRnYXOHoOflFSr45eaM&#10;</span></span><span class="line"><span class="cl">jPwUvHqcOf1SPOb078v3xk930qnBIW66O7knq0Z0UeS+nPbHSL/j2JmjQ5fH4ogL&#10;</span></span><span class="line"><span class="cl">qtfDvJkhh0LrwWDCa8RWxw8j4DvNaCNoovRmj6LaQ+Y034owj1Z6JqIelD4TSi9e&#10;</span></span><span class="line"><span class="cl">XTzsBTc6cecTNLd4x8ROLW2HDkjT8kzxMRTZ+hVwDKM2F40EGelrBOHnLJuHdyX1&#10;</span></span><span class="line"><span class="cl">UcRK5viSxwqcniXq2kv5W/WR+y1SbpYne0Z+C6ls1o7PYhnMs/IeT18PhAm/ILZD&#10;</span></span><span class="line"><span class="cl">6CaJpQJlgGjkkAADtGDxHAi5VvzDr/OI4I5Mwh+VeFLW8O86gn1w2Pr3nR7Y6gL+&#10;</span></span><span class="line"><span class="cl">De5RL/UE8Jk6SoitqNMrWvlHe3VojD/7ZFxhl76Fu8Az/Yaq1wxRnHJNunyAby28&#10;</span></span><span class="line"><span class="cl">2Rv0Qc47qYW/AoICAGnbX6mso9375StyIraa+gA3eALM9O7AGOFkpR0JZ2ExQIwi&#10;</span></span><span class="line"><span class="cl">u1q74mHZ+ym2HjicwEJ+icOV3HDBx/7xh7SYo/usgSXH4lsmh3KMJW3t2Q/2bj68&#10;</span></span><span class="line"><span class="cl">qMOPNwsZFXgQZiG3JOdC4uXmewUTPtxI2ZNOV57gazxruLNzn6nSnc6TvyOFMqOW&#10;</span></span><span class="line"><span class="cl">hoO/nwwB9lpb6of+8PxiG6Mp+91dh3aSZ6pBs5nOkLLprZ/Ic400xpLyPr3wTZXb&#10;</span></span><span class="line"><span class="cl">d1z+d25fNXglUXMhgN2tcqXcvpzt9gINUzQQqFtZYCsSVYuGtgmM/nhnpaPFA1eJ&#10;</span></span><span class="line"><span class="cl">4RfC840QdyIS6lqK8YXpJtMRcjyon7oGSIGM9erNoTyk7AybVEs6Mb2c+69gDbrB&#10;</span></span><span class="line"><span class="cl">vdTtck2ECWW2WtKs/Rbd35NvDmGNRLB2VHx5u9OYJOqG2gdPqoHh8//KKNV7GlaY&#10;</span></span><span class="line"><span class="cl">IxRvf5rsEUTW975RGrSqFXAjr3RGjiyz7wZ5pqj/qhOJeHIQBlbUy/Kp5pk3g4pA&#10;</span></span><span class="line"><span class="cl">h+/GXxwcwb9B/3VsZ6INqPQCwzPpZuzuKwILu4q1MWokajTNBfVnOElnpivQQkkU&#10;</span></span><span class="line"><span class="cl">UK67CunZ9Ibp3bx+5omIyuOTuvgpJS6rZJ5CGv0epU5sPMd5umRQr4vXmEDvx2VZ&#10;</span></span><span class="line"><span class="cl">2l6kUzvaxn5Jsx6+a5nOfDgNnRX534iIFRhMvx9UaOtWMbABMBDsq5oIyuK3AoIC&#10;</span></span><span class="line"><span class="cl">AQCz7dXAnAeQIlIpAnbXAxJLQMXwFAatxkOCvV8MBysk0bDsgF7/rz5kzhzqN7Xe&#10;</span></span><span class="line"><span class="cl">wVd8fFHqob8DZvPdzgC3H8Zfp+kFmCoNb2DIDYC2O0+uuvO/PYAp5nkLAHnj3DMh&#10;</span></span><span class="line"><span class="cl">jyjXv3VtqS8SOH1TMY+x6FwPg/SB8ojxDp/JEk4LYsOiTgTotV23lQDbjQB/3CDh&#10;</span></span><span class="line"><span class="cl">4CHYzQsp/51zywoQdcGthxq+nGvRsLjs/kRWSU0rmtcg/pnnQr2kYAOoKua3YOho&#10;</span></span><span class="line"><span class="cl">YhV2d64vxd6gRyYAzSCC+lanTz83/TPKkqTpqaxJx+NRMLCZo7AVl21fzK6nbvJF&#10;</span></span><span class="line"><span class="cl">IwTy2pVgUyFxPhgy7usIPSyy5OXAAf2/k9lAmYyODaPaZAib//SKLcJc9kWEDF8g&#10;</span></span><span class="line"><span class="cl">d/fTO9NyQYH6KHfa3PzzKC5rMJYebVwkrGR1R2AQUz10FMJknNvdAsknzuVm5Jh3&#10;</span></span><span class="line"><span class="cl">1mcZLBdmsEedegUS214NIbOzGcW1Bpd2PTOhThsLasv/5XZLNg89Wy5wTozFMLjL&#10;</span></span><span class="line"><span class="cl">eY0PFBldeEGVwGR7nHlH2awyW4PQg6EeX2MFvJP5gL3rD7wDN0hgnreYDvyQU6SU&#10;</span></span><span class="line"><span class="cl">FOHh0ecu3u6riSPBOCNQX2uyOUUaZkoppUBRBwiIgv9c3Nvlncs5IyyF5g6sTfXL&#10;</span></span><span class="line"><span class="cl">B9uqzOiEgUKTYeuWuSoWfBWUGw3RpxC992iLlAZg4vMU0wKCAgA1FKDNJVFaDjBN&#10;</span></span><span class="line"><span class="cl">xM8ANGnYn5urlAn22IIyihf6ToF9ytr7WRhLu8npQ0WVjRvY1JPstPHks8W5FRZk&#10;</span></span><span class="line"><span class="cl">whX7oTxvpifgld4ka4kP8UNGU9/vTDmO0aP0ZgbTOw473epkYzp8lgIHF6EUHklR&#10;</span></span><span class="line"><span class="cl">Gy6SIORRFWirImLRJTpD+J4scbfXdDBnaAwHUFpf7l0VB7DDdM7WwvO0yqumbBwA&#10;</span></span><span class="line"><span class="cl">VQCcISULfwe9OvX6F/FhRlSab+Ga3+5hTc3HXY2XnJ8SU867gibKjZGg3F5VmlY5&#10;</span></span><span class="line"><span class="cl">5DeK1tL3cGYoR+rFHAq2aMQvyaV6fFQ4KjvI6xNQ3/IAXF9pSWWAlWHeZilE1/CT&#10;</span></span><span class="line"><span class="cl">ABhQJI/GNZhLmkkrf31uccoloj2+UPlXvDrncAEzG7KkUV8HGyLlZyb9EbX4102l&#10;</span></span><span class="line"><span class="cl">CVVIDSpS1y8aaw9YaXvfyyMFza53qSgeuWolUAYpJHnydc30lh22mqWYOmBk7GlV&#10;</span></span><span class="line"><span class="cl">VEO2wnQgNcEqfMh5AodWvm9F8w8wVmXyjRzoqYpcxf0miWhEeuJHWBGABLsLKk1g&#10;</span></span><span class="line"><span class="cl">XOQmtoTamdhX6xlYx3RASuNde4hZQr0/OYSrCEzqArbXdaa3Lbz493AbAm3+Xdql&#10;</span></span><span class="line"><span class="cl">LBQHOZ8RXhnG2GDQBwMoz8sRssv29kD1ubTruYOc6us7y3oHiHTLvl5z939YP80r&#10;</span></span><span class="line"><span class="cl">tmhlurTe5g/lsgLGrHqj3gW8S4rTQQ==&#10;</span></span><span class="line"><span class="cl">-----END RSA PRIVATE KEY-----&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">Public key: &#10;</span></span><span class="line"><span class="cl">-----BEGIN RSA PUBLIC KEY-----&#10;</span></span><span class="line"><span class="cl">MIIEIjANBgkqhkiG9w0BAQEFAAOCBA8AMIIECgKCBAEApYILhoS9Y9juHpSgaHhx&#10;</span></span><span class="line"><span class="cl">ShSOgQoQfyYEXz9lkSOkVT0cqkX4C9LcTM9VDfYJD7JYxWIYmWKgXiCT+sjLJR71&#10;</span></span><span class="line"><span class="cl">AWa+3zN5OX+Hrxsjhr811QyRmMbOlcURygvfzGck5rh0v65RmPIFzr1fa6NCupP7&#10;</span></span><span class="line"><span class="cl">hbufWVDpE0VAi7b9++rW1yPR14WDyij/5yxmh3TZMqhzBE0y1paTZbbBE6dB1i3k&#10;</span></span><span class="line"><span class="cl">jMrY6n/cRQb81KO++Yanv6vLYBCG+n38s62BVH5o1MZuKoQCOGs6zhmIdUj5mupy&#10;</span></span><span class="line"><span class="cl">1rv2LmfeI+FfYPfuQlejKuywE6lOHGA1OLH1qZAwNM2150E9Cg3MIP0B0Ndn9oMr&#10;</span></span><span class="line"><span class="cl">b2jR9hvEheVsBUUKi3KUbQ6Z5MXxEz6XMZY8tbJWU3pdIze3/4vwg7rb/0ifPviJ&#10;</span></span><span class="line"><span class="cl">7NrVj3v42DLtFka70ZXxNDgcQwbSKtvVMqDiP5fl0iBZmvDYh+fM7B8QFBIV6i0f&#10;</span></span><span class="line"><span class="cl">JnQfvlHjc6S33LSGKoGy8+LCGZBYJzFwoaWRDLaIoyQRf9hZBl3JcHK3gOshMm3r&#10;</span></span><span class="line"><span class="cl">LoIpL2mp4jAhL1H0qu2hdbdlXTHaozQXRtzyBs4JbcorVPK3EKNUwd+IGqDA5l+s&#10;</span></span><span class="line"><span class="cl">o7+twCj54aUF7mX4PyYU7jrqNliz4gI90vuughh2S3LY6rC0IymPJErOv5TWh6bH&#10;</span></span><span class="line"><span class="cl">no8MdZF5ekOIEOTpipk3LUu68SCSdGCrAjJX+yCqghkIxvbuDZkUNrEPYUuOrVgk&#10;</span></span><span class="line"><span class="cl">AS6Ge+ELvD6fzE3JIuxC8SmwoMylW3Fv8Vv+Dk7SuOwecrNDL8rf5xxiu0b1nAlz&#10;</span></span><span class="line"><span class="cl">AJ+BdwhzwTkN6UvOczMvKZD7Eo/ZDjr3vOLW4GC3b6i8y/WU7mQLWYrF2CWl8BxQ&#10;</span></span><span class="line"><span class="cl">geDXyHEXuMMBF47CXIsSgZTTYZsbs+w7W7oNHuaBBWmV/MX1p2AhjWbi/v5EuwDg&#10;</span></span><span class="line"><span class="cl">6XWbsKCy1vxPRRq+Rs9a4kGDaOZ+2MUSZLTX7EAl1n/N94sFxHqE50r3/HSgvjEB&#10;</span></span><span class="line"><span class="cl">4fbxsuPnNLO2h4z4nQP/ya3ry93oh7IPIhZH8usyJVYl+bspxosEGaOKFdIF8HJy&#10;</span></span><span class="line"><span class="cl">QV77M2OqZXF5iebvFBQImbzkrBvGupHaDqdQqDPc7fHHsorvSP0B7Zy/2rgaSVZp&#10;</span></span><span class="line"><span class="cl">KsbU9N6sqISx+Nh4zetpxAlBkLujmL48je/cEilmupt76L5X7uOAy2nWtt9hHDcK&#10;</span></span><span class="line"><span class="cl">hKgo6XYUQy4nUttyREXCpeQ2h+mGvbn5psMUi8BjPZzYu/JyYPMHqMpY9+MjAmE8&#10;</span></span><span class="line"><span class="cl">zBgvhq0F28hhUhWNvgbsfWJq5DP8DKw/frA+VXEO+eiKiIzLsvOnMZwoaTvx1Hyu&#10;</span></span><span class="line"><span class="cl">1BuZeh5ZHx0MlDCDaLgT+FPz0J+22cSTXgo3OJKv3EqxGEWw8BGwATn8iGyIig7r&#10;</span></span><span class="line"><span class="cl">yQIDAQAB&#10;</span></span><span class="line"><span class="cl">-----END RSA PUBLIC KEY-----&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">Plain text: rw@wbnaq2R@DS#u3o7hxWckqhfkzbT&#10;</span></span><span class="line"><span class="cl">Public key encrypted: 2a23a9a4333fa3938430db718f8e7162d312db0754a7cc0ac138c6940ea5cb10e6347d56f72a8dca950df89cd05d60493c4e9d7eff7fdb52fdadda23b707082c25a2eaa1ab8c7d19dbedb0549430320271b33576923e389ad56087a381aa1969b0c8f19355b70ae169d17f391853e1686dfc09b46e410b635c027ab8b3cec67bb33c52db2a2decd11c52bc7cb77aad336992207c0a9cd02b4ffda70ac398529312961c1b60153cd3c38dd6f9a10f048c73b725e13061b424dbd856e6f39eaa5550e7970568048cb02ca4f02c2f976f2bfbde43f5fd55f256bee4f71fde0171174132fa62052905850343f8cf90a01362b7e7a564b8f0616d9bb1ed42901959a060206d0154f3563836d2ba052bb47b399c3f33d7cd9f341f18e7d76c113af543be3f2332dcdddfe0596708f315b77643b61826865b4c19d2495220fc8174334c6048459be46fa39c455b30b0920361828a14fa9bc0f17e2b8b8386951c528e147ed2a10f0dda2a2c6ebaf850006a97a59e4eff4e558807318514e72e14e2315275bf9c6d27c5d63c300f23750b1dba8e3bfa2b8db9981dbe2075877b3b6c300baeca37640cef0af4c23db6680e90e12e657ed2d278613b76360549dbaf6ab800a508d3a3fd7086d91182f08c9eb5683c3f380f3a0f0352a539160e4034af26849317e789b0506ff17d8abed6fcb1dbf065b75303a00b50681bcfccbf2bf075d3664f5397ab580235a3345534c3fc4fd9649572c6e8911f4abfcfa489de8c0b97d2a399dd11541b4318dcc8a821fa89701339c391c777476e2db0e9758cccf38bbea8eb6ee199166fe92f93c73c9a75806172021da60d3bb7fb8569124bfa8cde3e97421ad81692bbd53fbf68189b472c78198d396f51618c4ca7eed7dc8cfaa5c62e32f9ffdb9139b9cd8226f54584d06cdc85c211cf78f5e2870e666c6ed75ad50eb2adc706c4b37aa897367b7d77fe1c5bad994817fced3d59cd0d79303075f732a912ee990e642bc0e963912c8f6724dc4453a73e2a5e3d6c229427ec9a85b50d31513cefb46dc207383cf7af294d2fa8f7d9b83887a8ecd9628ff825b6060e20b4194b1c55d53a605ad456600dca14796fabb031497358f93d639504e8897845ff83f359752fa729d624339a2ba57dfdb4c1ce5330048c2d956a8c379fae84756be6ee4bc30ad248e08147573f9bc945caff686904df9d73be328e04705bc1e8f208fa5279435c16fed6a7b0b6ecc863550759cda0cd6fea3780078286d66d051e800635b9f5ea5b7b1f40d1d9982476fb60c7a652f857f154855a85955cfc61a5758dc0c9e43da873a4e18eda0f0bf32b33e21c4942df73857f64aa1622117ad1a8aabe8ff2ea614f00c68db364e24e5452aeb9fcc83596a4afa785fda58314f0c0d4753201e9a9358d7c359f5627bae0601fca5eabb9cca69b8a6c3f61&#10;</span></span><span class="line"><span class="cl">Private key decrypted: rw@wbnaq2R@DS#u3o7hxWckqhfkzbT</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.out</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="n">plugins</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;application&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">repositories</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">dependencies</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s1">&#39;org.bouncycastle:bcprov-jdk18on:1.72&#39;</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;org.bouncycastle:bcpkix-jdk18on:1.72&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">application</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mainClass</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.javahashingencrypt.Main&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<h3 id="listar-algoritmos-de-clave-asimétrica">Listar algoritmos de clave asimétrica</h3>
+<p>El siguiente código permite obtener que algoritmos soporta un determinado servicio de seguridad proporcionado por Java, en este caso el servicio para generar claves asimétricas. En el caso de Java 17 se soportan los algoritmos DSA y RSA.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javahashingencrypt</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Asymmetric encryption&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">asymmetricEncrypt</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">asymmetricEncrypt</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">keypairGenerators</span> <span class="o">=</span> <span class="n">Security</span><span class="o">.</span><span class="na">getAlgorithms</span><span class="o">(</span><span class="s">&#34;KeyPairGenerator&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Supported key generators: &#34;</span> <span class="o">+</span> <span class="n">keypairGenerators</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">sorted</span><span class="o">().</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">joining</span><span class="o">(</span><span class="s">&#34;,&#34;</span><span class="o">)));</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-1.java</span>
+    </div>
+</div>
+<h3 id="generar-un-par-de-claves-privada-y-pública">Generar un par de claves privada y pública</h3>
+<p>Antes de poder cifrar y descifrar datos con clave asimétrica hay que generar las claves privada y pública, son dos claves diferentes pero que están relacionadas matemáticamente y se generan al mismo tiempo.</p>
+<p>Uno de los parámetros de configuración al generar las claves es la longitud de bits de las claves, a mayor longitud mayor seguridad con una mayor capacidad de cálculo requerido para el cifrado y descifrado. En el ejemplo se generan las claves con una longitud de 8192 bits que es un tamaño muy superior al necesario para la clave en los algoritmos de clave simétrica.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javahashingencrypt</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">asymmetricEncrypt</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">KeyPairGenerator</span> <span class="n">keyPairGenerator</span> <span class="o">=</span> <span class="n">KeyPairGenerator</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&#34;RSA&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">keyPairGenerator</span><span class="o">.</span><span class="na">initialize</span><span class="o">(</span><span class="mi">8192</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">KeyPair</span> <span class="n">keyPair</span> <span class="o">=</span> <span class="n">keyPairGenerator</span><span class="o">.</span><span class="na">generateKeyPair</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">PrivateKey</span> <span class="n">privateKey</span> <span class="o">=</span> <span class="n">keyPair</span><span class="o">.</span><span class="na">getPrivate</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">PublicKey</span> <span class="n">publicKey</span> <span class="o">=</span> <span class="n">keyPair</span><span class="o">.</span><span class="na">getPublic</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Private key: \n&#34;</span> <span class="o">+</span> <span class="n">encodePem</span><span class="o">(</span><span class="n">privateKey</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Public key: \n&#34;</span> <span class="o">+</span> <span class="n">encodePem</span><span class="o">(</span><span class="n">publicKey</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-2.java</span>
+    </div>
+</div>
+<h3 id="codificar-la-clave-privada-y-pública-en-formato-pem">Codificar la clave privada y pública en formato PEM</h3>
+<p>Las claves se suelen codificar en formato PEM y guardar en un archivo de texto. Java no ofrece una clase para realizar la codificación en un archivo PEM por lo que en este ejemplo se utilizan las clases <em>PemObject</em> y <em>JcaPEMWriter</em> de la librería Bouncy Castle.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javahashingencrypt</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">asymmetricEncrypt</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">PrivateKey</span> <span class="n">privateKey</span> <span class="o">=</span> <span class="n">keyPair</span><span class="o">.</span><span class="na">getPrivate</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">PublicKey</span> <span class="n">publicKey</span> <span class="o">=</span> <span class="n">keyPair</span><span class="o">.</span><span class="na">getPublic</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Private key: \n&#34;</span> <span class="o">+</span> <span class="n">encodePem</span><span class="o">(</span><span class="n">privateKey</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Public key: \n&#34;</span> <span class="o">+</span> <span class="n">encodePem</span><span class="o">(</span><span class="n">publicKey</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">byte</span><span class="o">[]</span> <span class="n">encrypted</span> <span class="o">=</span> <span class="n">encrypt</span><span class="o">(</span><span class="n">publicKey</span><span class="o">,</span> <span class="n">text</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">decrypted</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">decrypt</span><span class="o">(</span><span class="n">privateKey</span><span class="o">,</span> <span class="n">encrypted</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Plain text: &#34;</span> <span class="o">+</span> <span class="n">text</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Public key encrypted: &#34;</span> <span class="o">+</span> <span class="n">HexFormat</span><span class="o">.</span><span class="na">of</span><span class="o">().</span><span class="na">formatHex</span><span class="o">(</span><span class="n">encrypted</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Private key decrypted: &#34;</span> <span class="o">+</span> <span class="n">decrypted</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">encodePem</span><span class="o">(</span><span class="n">PrivateKey</span> <span class="n">privateKey</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">PemObject</span> <span class="n">privateKeyPemObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PemObject</span><span class="o">(</span><span class="s">&#34;RSA PRIVATE KEY&#34;</span><span class="o">,</span> <span class="n">privateKey</span><span class="o">.</span><span class="na">getEncoded</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">StringWriter</span> <span class="n">stringWriter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringWriter</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">JcaPEMWriter</span> <span class="n">pemWriter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JcaPEMWriter</span><span class="o">(</span><span class="n">stringWriter</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">pemWriter</span><span class="o">.</span><span class="na">writeObject</span><span class="o">(</span><span class="n">privateKeyPemObject</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">pemWriter</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">stringWriter</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">encodePem</span><span class="o">(</span><span class="n">PublicKey</span> <span class="n">publicKey</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">PemObject</span> <span class="n">privateKeyPemObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PemObject</span><span class="o">(</span><span class="s">&#34;RSA PUBLIC KEY&#34;</span><span class="o">,</span> <span class="n">publicKey</span><span class="o">.</span><span class="na">getEncoded</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">StringWriter</span> <span class="n">stringWriter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringWriter</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">JcaPEMWriter</span> <span class="n">pemWriter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JcaPEMWriter</span><span class="o">(</span><span class="n">stringWriter</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">pemWriter</span><span class="o">.</span><span class="na">writeObject</span><span class="o">(</span><span class="n">privateKeyPemObject</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">pemWriter</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">stringWriter</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-3.java</span>
+    </div>
+</div>
+<h3 id="cifrar-datos-con-la-clave-pública">Cifrar datos con la clave pública</h3>
+<p>El proceso de cifrado de datos en un algoritmo de clave asimétrica se realiza con la clave pública. El proceso de cifrado con la clave pública es similar a como se hace con un algoritmo de clave simétrica.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javahashingencrypt</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">asymmetricEncrypt</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="s">&#34;rw@wbnaq2R@DS#u3o7hxWckqhfkzbT&#34;</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">byte</span><span class="o">[]</span> <span class="n">encrypted</span> <span class="o">=</span> <span class="n">encrypt</span><span class="o">(</span><span class="n">publicKey</span><span class="o">,</span> <span class="n">text</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">decrypted</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">decrypt</span><span class="o">(</span><span class="n">privateKey</span><span class="o">,</span> <span class="n">encrypted</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Plain text: &#34;</span> <span class="o">+</span> <span class="n">text</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Public key encrypted: &#34;</span> <span class="o">+</span> <span class="n">HexFormat</span><span class="o">.</span><span class="na">of</span><span class="o">().</span><span class="na">formatHex</span><span class="o">(</span><span class="n">encrypted</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Private key decrypted: &#34;</span> <span class="o">+</span> <span class="n">decrypted</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">static</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">encrypt</span><span class="o">(</span><span class="n">PublicKey</span> <span class="n">publicKey</span><span class="o">,</span> <span class="n">String</span> <span class="n">text</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Cipher</span> <span class="n">cipher</span> <span class="o">=</span> <span class="n">Cipher</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&#34;RSA&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">cipher</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="n">Cipher</span><span class="o">.</span><span class="na">ENCRYPT_MODE</span><span class="o">,</span> <span class="n">publicKey</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">cipher</span><span class="o">.</span><span class="na">doFinal</span><span class="o">(</span><span class="n">text</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-4.java</span>
+    </div>
+</div>
+<h3 id="descifrar-datos-con-la-clave-privada">Descifrar datos con la clave privada</h3>
+<p>Los datos cifrados con la clave pública sólo es posible con la clave privada. El proceso de descifrado también es muy similar al descifrado con una clave simétrica.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javahashingencrypt</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">asymmetricEncrypt</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="s">&#34;rw@wbnaq2R@DS#u3o7hxWckqhfkzbT&#34;</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">byte</span><span class="o">[]</span> <span class="n">encrypted</span> <span class="o">=</span> <span class="n">encrypt</span><span class="o">(</span><span class="n">publicKey</span><span class="o">,</span> <span class="n">text</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">decrypted</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">decrypt</span><span class="o">(</span><span class="n">privateKey</span><span class="o">,</span> <span class="n">encrypted</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Plain text: &#34;</span> <span class="o">+</span> <span class="n">text</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Public key encrypted: &#34;</span> <span class="o">+</span> <span class="n">HexFormat</span><span class="o">.</span><span class="na">of</span><span class="o">().</span><span class="na">formatHex</span><span class="o">(</span><span class="n">encrypted</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Private key decrypted: &#34;</span> <span class="o">+</span> <span class="n">decrypted</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">static</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">decrypt</span><span class="o">(</span><span class="n">PrivateKey</span> <span class="n">key</span><span class="o">,</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">encrypted</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Cipher</span> <span class="n">cipher</span> <span class="o">=</span> <span class="n">Cipher</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&#34;RSA&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">cipher</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="n">Cipher</span><span class="o">.</span><span class="na">DECRYPT_MODE</span><span class="o">,</span> <span class="n">key</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">cipher</span><span class="o">.</span><span class="na">doFinal</span><span class="o">(</span><span class="n">encrypted</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-5.java</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode fs-6">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaHashingEncrypt">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.baeldung.com/java-rsa">RSA in Java</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/03/los-3-clientes-de-spring-para-hacer-peticiones-rest/">
+                <img src="/blog-bitix/assets/images/logotypes/spring.svg" width="326" height="125" alt="Los 3 clientes de Spring para hacer peticiones REST" title="Los 3 clientes de Spring para hacer peticiones REST" class="" loading="lazy">
+                <h3>Los 3 clientes de Spring para hacer peticiones REST</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/03/cifrar-y-descifrar-datos-usando-algoritmos-de-clave-simetrica-con-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cifrar y descifrar datos usando algoritmos de clave simétrica con Java" title="Cifrar y descifrar datos usando algoritmos de clave simétrica con Java" class="" loading="lazy">
+                <h3>Cifrar y descifrar datos usando algoritmos de clave simétrica con Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/02/los-algoritmos-de-hashing-criptograficos-calculo-de-hashes-con-comandos-de-gnu-linux-y-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Los algoritmos de hashing criptográficos, cálculo de hashes con comandos de GNU/Linux y Java" title="Los algoritmos de hashing criptográficos, cálculo de hashes con comandos de GNU/Linux y Java" class="" loading="lazy">
+                <h3>Los algoritmos de hashing criptográficos, cálculo de hashes con comandos de GNU/Linux y Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/">
+                <img src="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/qr-code_hu8f8fcfe52013a3436c02f7debd82eb59_1651_2560x1440_fit_q90_h2_box_3.webp" width="326" height="125" alt="Generar códigos de barras y códigos QR con Java" title="Generar códigos de barras y códigos QR con Java" class="" loading="lazy">
+                <h3>Generar códigos de barras y códigos QR con Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/02/introduccion-conceptos-y-uso-basico-del-broker-de-mensajes-apache-kafka/">
+                <img src="/blog-bitix/assets/images/logotypes/apache-kafka.svg" width="326" height="125" alt="Introducción, conceptos y uso básico del broker de mensajes Apache Kafka" title="Introducción, conceptos y uso básico del broker de mensajes Apache Kafka" class="" loading="lazy">
+                <h3>Introducción, conceptos y uso básico del broker de mensajes Apache Kafka</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/01/construir-la-imagen-del-contenedor-de-la-aplicacion-usando-buildpacks/">
+                <img src="/blog-bitix/assets/images/logotypes/buildpacksio.svg" width="326" height="125" alt="Construir la imagen del contenedor de la aplicación usando Buildpacks" title="Construir la imagen del contenedor de la aplicación usando Buildpacks" class="" loading="lazy">
+                <h3>Construir la imagen del contenedor de la aplicación usando Buildpacks</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-679';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2023\/03\/cifrar-y-descifrar-datos-usando-algoritmos-de-clave-asimetrica-con-java\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2023 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

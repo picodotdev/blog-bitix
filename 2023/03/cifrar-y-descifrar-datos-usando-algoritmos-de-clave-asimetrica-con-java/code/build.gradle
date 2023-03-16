@@ -1,0 +1,16 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation('org.bouncycastle:bcprov-jdk18on:1.72')
+    implementation 'org.bouncycastle:bcpkix-jdk18on:1.72'
+}
+
+application {
+    mainClass = 'io.github.picodotdev.blogbitix.javahashingencrypt.Main'
+}
