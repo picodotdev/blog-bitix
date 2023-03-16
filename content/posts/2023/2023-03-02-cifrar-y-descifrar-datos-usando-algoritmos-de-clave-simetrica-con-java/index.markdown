@@ -36,6 +36,8 @@ El cifrado de datos es una parte esencial e importante en algunas aplicaciones y
 El producto de software [Vault][vault] de [Hashicorp][hashicorp] ofrece como servicio las operaciones de cifrado y descifrado, en vez de que cada aplicación implementa el cifrado y descifrado las aplicaciones pueden delegar en Vault utilizando la API que ofrece como un servicio.
 
 * [Administrar secretos y proteger datos sensibles con Vault][blogbitix-424]
+* [Cifrar y descifrar datos usando algoritmos de clave asimétrica con Java][blogbitix-679]
+* [Generar y convertir claves y certificados con OpenSSL][blogbitix-13]
 
 {{< tableofcontents >}}
 
@@ -44,6 +46,11 @@ El producto de software [Vault][vault] de [Hashicorp][hashicorp] ofrece como ser
 En los algoritmos simétricos se utiliza la misma clave tanto para cifrar como para descifrar los datos. Las claves de los algoritmos simétricos son más pequeñas, proporcionan mayor seguridad y se siguen utilizando ya que son más rápidos en el cifrado y descifrado. El inconveniente de estos algoritmos es que es necesario compartir la clave secreta de alguna forma para evitar el [ataque _man-in-the-middle_][wikipedia-man-in-the-middle-attack] para lo que se utiliza un algoritmo de clave asimétrica.
 
 En general, un algoritmo con claves de mayor cantidad de bits para el tamaño de la clave proporciona una mayor seguridad. De esta forma AES con una clave de 256 bits es más seguro que AES con una clave de 128 bits.  Los algoritmos de clave simétrica cifran los datos en bloques, algunos algoritmos utilizan bloques de 64 bits y otros de 128 bits. Entre los algoritmos de cifrado simétricos están los siguientes algunos han sido reemplazados por AES.
+
+{{< image
+    gallery="true"
+    image1="image:symmetric-encryption.webp" optionsthumb1="300x200" title1="Symetric encryption"
+    caption="Symetric encryption" >}}
 
 ### AES
 

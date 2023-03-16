@@ -6,7 +6,7 @@ public class Main {
 
     ...
 
-    private static void symetricEncrypt() throws Exception {
+    private static void symmetricEncrypt() throws Exception {
         String text = "rw@wbnaq2R@DS#u3o7hxWckqhfkzbT";
         String password = "rw@wbnaq2R@DS#u3o7hxWckqhfkzbT";
         String salt = "%@&LN4CLT95yMEHNSettCAaQAcHZbh";
