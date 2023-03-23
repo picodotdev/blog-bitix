@@ -10,14 +10,14 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:linux.svg"
+imagePost: "logotype:archlinux.svg"
 tags: ["gnu-linux", "planeta-codigo"]
 summary: "En este artículo rescato, actualizo y comparto de nuevo unos elementos de papiroflexia que ofrecen información y son decorativos. Unos calendarios con la temática de Arch Linux uno de pared, de mesa y otro con forma de cubo de doce caras, un cubo con comandos de Arch Linux y el Tux en papel. Son relativamente simples de montar con un poco de tiempo y además de ofrecer información decoran."
 ---
 
 {{% post %}}
 
-{{< logotype image1="linux.svg" >}}
+{{< logotype image1="archlinux.svg" >}}
 
 Hace ya muchos años publiqué un artículo en [El bog de pico.dev](http://pico.dev/) con varios elementos decorativos hechos en papel. En su momento al usar [Blogger][blogger] tuve que compartirlos a través de un enlace a documentos de [Google Docs][google-docs], para cualquiera que tuviera el enlace. He dejado de publicar en _El bog de pico.dev_ y los enlaces a los documentos ya los he dejado rotos porque eliminé los permisos a los archivos.
 
