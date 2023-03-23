@@ -52,14 +52,14 @@ En vez de en forma de dodecaedro hay otra forma de calendario que su montaje sim
 {{< image
     gallery="true"
     image1="image:arch-linux-calendar-2023-table.svg" optionsthumb1="650x450" title1="Calendario de mesa de Arch Linux"
-    caption="Calendario de mesa de mesa de Arch Linux" >}}
+    caption="Calendario de mesa de Arch Linux" >}}
 
 Si no se quiere un elemento que ocupe espacio en la mesa ni se quiere pasar un tiempo en el montaje el calendario de papel es la opción más simple, imprimir y con un poco de celo colocar en algún elemento vertical.
 
 {{< image
     gallery="true"
     image1="image:arch-linux-calendar-2023-wall.svg" optionsthumb1="650x450" title1="Calendario de pared Arch Linux"
-    caption="Calendario de mesa de pared de Arch Linux" >}}
+    caption="Calendario de pared de Arch Linux" >}}
 
 ## Cubo con comandos de Arch Linux
 
