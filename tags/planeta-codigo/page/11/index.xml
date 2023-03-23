@@ -5,12 +5,36 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2023-03-16T20:30:00+02:00</updated>
+    <updated>2023-03-23T20:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/06/generar-en-el-dominio-los-identificativos-de-las-entidades-aplicando-ddd-antes-de-persistirlas-en-la-base-de-datos/</id>
+        <title>Generar en el dominio los identificativos de las entidades aplicando DDD antes de persistirlas en la base de datos</title>
+        <updated>2020-06-19T17:00:00+02:00</updated>
+        <published>2020-06-19T17:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/06/generar-en-el-dominio-los-identificativos-de-las-entidades-aplicando-ddd-antes-de-persistirlas-en-la-base-de-datos/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>Las bases de datos tiene la capacidad de generar identificativos para los datos que se insertan. En el caso de las bases de datos relacionales con secuencias que generan en el momento de inserción la clave primaria de la fila en una tabla, normalmente es un número y utilizando Java con JPA con las anotaciones <em>Id</em>, <em>GeneratedValue</em> y <em>SequenceGenerator</em> en la clase Java que representa a la entidad. Para Domain Driven Design delegar en el momento de inserción la generación del identificativo de la entidad es un problema ya que hace que la entidad sea inválida al no tener identidad hasta persistirla y la base de datos es un elemento externo que debe ser independizado del dominio de la aplicación. En este artículo comento una implementación siguiendo los principios de DDD para dar solución a estos dos problemas.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/06/generar-en-el-dominio-los-identificativos-de-las-entidades-aplicando-ddd-antes-de-persistirlas-en-la-base-de-datos/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/</id>
         <title>Comando para convertir una imagen SVG a PNG y JPG con diferentes tamaños y color de fondo con Inkskape</title>
@@ -354,30 +378,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="tapestry"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2020/04/50-plus-comandos-basicos-y-utiles-de-gnu-linux/</id>
-        <title>50&#43; comandos básicos y útiles de GNU/Linux</title>
-        <updated>2020-04-24T16:00:00+02:00</updated>
-        <published>2020-04-24T16:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/04/50-plus-comandos-basicos-y-utiles-de-gnu-linux/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[
-
-        <p><strong>Desde la línea de comandos hay disponibles una colección de comandos útiles para realizar ciertas tareas de forma rápida y sencilla. Los comandos se pueden incluir en <em>scripts</em> de bash o pequeños programas para el intérprete de comandos y componer la entrada de unos comandos con la salida de otros a través de tuberías dándoles más versatilidad.</strong></p>
-        
-        <p><a href="https://picodotdev.github.io/blog-bitix/2020/04/50-plus-comandos-basicos-y-utiles-de-gnu-linux/">Continuar leyendo en Blog Bitix</a></p>
-
-        ]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
             
         
     </entry>
