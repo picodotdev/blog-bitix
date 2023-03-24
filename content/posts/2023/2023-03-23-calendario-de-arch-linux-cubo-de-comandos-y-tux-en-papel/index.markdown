@@ -69,6 +69,8 @@ Cada cara tiene una lista de comandos comunes sobre un tema como red, permisos, 
 
 Son comandos muy básicos y la lista de comandos de [GNU][gnu]/[Linux][linux] es muy amplia, el cubo se puede editar y personalizar si se quieren incluir otros comandos más avanzados o alguno que no sea especialmente fácil de recordar para tenerlo a mano el papel.
 
+* [50+ comandos básicos y útiles de GNU/Linux][blogbitix-477]
+
 Ver el cubo encima de la mesa y el comando varias veces es una buena forma de finalmente recordar el comando sin tener que consultar el cubo.
 
 {{< image
