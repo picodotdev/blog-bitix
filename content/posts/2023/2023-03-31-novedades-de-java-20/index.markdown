@@ -63,6 +63,9 @@ Con cada nueva versión los medios publican artículos que detallan cada una de 
 
 No incluyo ejemplos de código ya que todas estas novedades ya las he mencionado en versiones anteriores de novedades de Java y en los artículos de esta lista se muestran de forma detallada.
 
+{{< youtube
+    video="_NEx1f7cqZM" >}}
+
 ## Otros cambios
 
 Entre la lista de cambios adicionales en el JDK está el soporte para unicode 15.
