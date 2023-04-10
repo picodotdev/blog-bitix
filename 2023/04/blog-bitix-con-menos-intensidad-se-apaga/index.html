@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Llevo publicando artículos todas las semanas desde hace algo más de doce años, últimamente un solo articulo a la semana pero ha habido años en los que he estado periodos de tiempo amplios escribiendo dos artículos a la semana. Ya he comentado en las últimas hemerotecas que publico cada seis meses que cada artículo me requiere una gran cantidad de tiempo, tiempo que consume gran parte de mi tiempo libre, más o menos el lunes para hacer un índice y quizá un esbozo de ideas, el martes escribir varias secciones, el miércoles terminar de escribir el artículo y en los artículos que son de código suelo proporcionar un ejemplo funcionar que alojo en GitHub, finalmente el jueves realizar la corrección ortográfica, la edición para publicarlo, releerlo y los últimos retoques para que algunas frases sintácticamente estén bien escritas para una lectura con sentido y fácil, y por supuesto ir anotando ideas para artículos y tomar algunas notas en ellos. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Blog Bitix con menos intensidad se apaga</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/" hreflang="es" title="Blog Bitix con menos intensidad se apaga">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Blog Bitix con menos intensidad se apaga">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/4_hu6c942aa500862ca9ee3073ae40969661_1741097_750x750_fit_q90_box.jpg">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Llevo publicando artículos todas las semanas desde hace algo más de doce años, últimamente un solo articulo a la semana pero ha habido años en los que he estado periodos de tiempo amplios escribiendo dos artículos a la semana. Ya he comentado en las últimas hemerotecas que publico cada seis meses que cada artículo me requiere una gran cantidad de tiempo, tiempo que consume gran parte de mi tiempo libre, más o menos el lunes para hacer un índice y quizá un esbozo de ideas, el martes escribir varias secciones, el miércoles terminar de escribir el artículo y en los artículos que son de código suelo proporcionar un ejemplo funcionar que alojo en GitHub, finalmente el jueves realizar la corrección ortográfica, la edición para publicarlo, releerlo y los últimos retoques para que algunas frases sintácticamente estén bien escritas para una lectura con sentido y fácil, y por supuesto ir anotando ideas para artículos y tomar algunas notas en ellos. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/4_hu6c942aa500862ca9ee3073ae40969661_1741097_750x750_fit_q90_box.jpg">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Blog Bitix con menos intensidad se apaga">
+<meta name="twitter:description" content="Llevo publicando artículos todas las semanas desde hace algo más de doce años, últimamente un solo articulo a la semana pero ha habido años en los que he estado periodos de tiempo amplios escribiendo dos artículos a la semana. Ya he comentado en las últimas hemerotecas que publico cada seis meses que cada artículo me requiere una gran cantidad de tiempo, tiempo que consume gran parte de mi tiempo libre, más o menos el lunes para hacer un índice y quizá un esbozo de ideas, el martes escribir varias secciones, el miércoles terminar de escribir el artículo y en los artículos que son de código suelo proporcionar un ejemplo funcionar que alojo en GitHub, finalmente el jueves realizar la corrección ortográfica, la edición para publicarlo, releerlo y los últimos retoques para que algunas frases sintácticamente estén bien escritas para una lectura con sentido y fácil, y por supuesto ir anotando ideas para artículos y tomar algunas notas en ellos. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/"
+    },
+    "headline": "Blog Bitix con menos intensidad se apaga",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/4_hu6c942aa500862ca9ee3073ae40969661_1741097_750x750_fit_q90_box.jpg"
+        
+      },
+    "datePublished": "2023-04-09T22:30:00+02:00",
+    "dateModified": "2023-04-09T22:30:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1052",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Llevo publicando artículos todas las semanas desde hace algo más de doce años, últimamente un solo articulo a la semana pero ha habido años en los que he estado periodos de tiempo amplios escribiendo dos artículos a la semana. Ya he comentado en las últimas hemerotecas que publico cada seis meses que cada artículo me requiere una gran cantidad de tiempo, tiempo que consume gran parte de mi tiempo libre, más o menos el lunes para hacer un índice y quizá un esbozo de ideas, el martes escribir varias secciones, el miércoles terminar de escribir el artículo y en los artículos que son de código suelo proporcionar un ejemplo funcionar que alojo en GitHub, finalmente el jueves realizar la corrección ortográfica, la edición para publicarlo, releerlo y los últimos retoques para que algunas frases sintácticamente estén bien escritas para una lectura con sentido y fácil, y por supuesto ir anotando ideas para artículos y tomar algunas notas en ellos."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9R8XCRGSMY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/4_hu6c942aa500862ca9ee3073ae40969661_1741097_2560x1440_fit_q90_h2_box.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:600px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="7450235768"></ins>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Blog Bitix con menos intensidad se apaga</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>09/04/2023</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/blog/">blog</a>
+        
+          <a href="/blog-bitix/tags/opinion/">opinion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix" class="" loading="false&#34;"></p>
+</div>
+<p>Llevo publicando artículos todas las semanas desde hace algo más de doce años, últimamente un solo articulo a la semana pero ha habido años en los que he estado periodos de tiempo amplios escribiendo dos artículos a la semana. Ya he comentado en las últimas hemerotecas que publico cada seis meses que cada artículo me requiere una gran cantidad de tiempo, tiempo que consume gran parte de mi tiempo libre, más o menos el lunes para hacer un índice y quizá un esbozo de ideas, el martes escribir varias secciones, el miércoles terminar de escribir el artículo y en los artículos que son de código suelo proporcionar un ejemplo funcionar que alojo en GitHub, finalmente el jueves realizar la corrección ortográfica, la edición para publicarlo, releerlo y los últimos retoques para que algunas frases sintácticamente estén bien escritas para una lectura con sentido y fácil, y por supuesto ir anotando ideas para artículos y tomar algunas notas en ellos. El segundo trabajo del blog me ha mantenido ocupado sin pensar siguiendo una inercia que he mantenido porque he querido y he hecho disfrutando por el resultado de compartir contenido que espero haya resultado interesante y útil. 684 artículos de este <em>Blog Bitix</em> y otros 187 de <em>El blog de pico.dev</em>, después.</p>
+<p>Lo que realmente es mi trabajo, el que paga las facturas, cualquier cosa que necesite y me permite tener independencia y seguridad económica que como a todo obrero que recibe una nómina a final de mes consume una gran cantidad de tiempo, 8 horas, 5 días a la semana ya es suficiente para que entre semana los pensamientos sean casi en gran parte el trabajo. En mi caso he sumado a esto el segundo trabajo, por el tiempo y dedicación que me consume, de este blog que he comentado que he intentado contener entre semana para tener tiempo libre el fin de semana para hacer otras cosas que no tengan que ver de alguna forma con el trabajo. Pero las semanas con esta rutina hace que se me pasen muy rápido y me es muy exigente.</p>
+<p>Ya publiqué con motivo del aniversario de <a href="https://picodotdev.github.io/blog-bitix/2020/09/1-decada-en-la-misma-empresa-20-anos-trabajando/">1 década en la misma empresa, 20 años trabajando</a> a grandes rasgos mi evolución profesional. 20 años trabajando en ciertos sitios hacen que un día te des cuenta de que cuando antes eras el junior en la empresa ahora eres uno de los más viejos del lugar, ahora eres esa persona más mayor cuando un día eras junior, una vez pasado parece que ha sido rápido en cualquier caso ha sido casi sin darme cuenta por lo gradual.</p>
+<p>Tener vacaciones como en estas de semana santa no por ser semana santa sino por estar macadas en el estatuto de los trabajadores como días festivos hace que me agite esta rutina con algo de tiempo libre para pensar en el universo, la vida y todo lo demás, quizá sea la crisis de los 40 y algunos. A pesar de que quisiera seguir escribiendo en el blog y algo lo seguiré haciendo voy a cambiar algo, no tengo tiempo para todo asi que he de elegir a que dedicarlo. En esas mismas hemerotecas ya comentaba que si no pudiese escribir un artículo a la semana sería al mes o trimestre o con un ritmo sostenible.</p>
+<p>Un día lo he hecho andando esta vacaciones, hacía tiempo que no desde antes del COVID pero una vez hace varios años dije que haría el recorrido hasta Sopelana y el paseo de Aixerrota en bicibleta e intento tener por costumbre que lo que digo hacerlo, estas vacaciones ha sido la oportunidad en el que lo he hecho pero como digo entre decirlo y hacerlo han pasado unos años. Es el tipo de cosas que escribir en el blog me quita tiempo, cosas sencillas me bastan.</p>
+<p>Hay quien tiene costumbres curiosas como sacarse fotos en los espejos de los baños o ascensores, yo por privacidad soy más de mi sobra y el suelo que piso al menos las que publico en internet.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/1_hu682f1b375c6ba4fb31484025e032e088_1767544_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Pequeñas cosas sencillas"><img src="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/1_hu682f1b375c6ba4fb31484025e032e088_1767544_300x200_fit_q90_h2_box.webp" width="267" height="200" alt="Pequeñas cosas sencillas" title="Pequeñas cosas sencillas" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/2_hu922d1d46f11c340200e2da361d541ef4_1057015_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Pequeñas cosas sencillas"><img src="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/2_hu922d1d46f11c340200e2da361d541ef4_1057015_300x200_fit_q90_h2_box.webp" width="150" height="200" alt="Pequeñas cosas sencillas" title="Pequeñas cosas sencillas" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/3_hubcb0ee7d6c70b869548388783acf14a7_1878076_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Pequeñas cosas sencillas"><img src="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/3_hubcb0ee7d6c70b869548388783acf14a7_1878076_300x200_fit_q90_h2_box.webp" width="267" height="200" alt="Pequeñas cosas sencillas" title="Pequeñas cosas sencillas" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/4_hu6c942aa500862ca9ee3073ae40969661_1741097_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Pequeñas cosas sencillas"><img src="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/4_hu6c942aa500862ca9ee3073ae40969661_1741097_300x200_fit_q90_h2_box.webp" width="267" height="200" alt="Pequeñas cosas sencillas" title="Pequeñas cosas sencillas" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/5_hu3162036df73301ba189e77ed41dba794_889260_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Pequeñas cosas sencillas"><img src="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/5_hu3162036df73301ba189e77ed41dba794_889260_300x200_fit_q90_h2_box.webp" width="267" height="200" alt="Pequeñas cosas sencillas" title="Pequeñas cosas sencillas" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/6_hucbeb83c22934a6cd61235dba644ab252_871884_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Pequeñas cosas sencillas"><img src="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/6_hucbeb83c22934a6cd61235dba644ab252_871884_300x200_fit_q90_h2_box.webp" width="267" height="200" alt="Pequeñas cosas sencillas" title="Pequeñas cosas sencillas" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/7_hu6475de030e4f62168cc4f8861117a149_1655636_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Pequeñas cosas sencillas"><img src="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/7_hu6475de030e4f62168cc4f8861117a149_1655636_300x200_fit_q90_h2_box.webp" width="267" height="200" alt="Pequeñas cosas sencillas" title="Pequeñas cosas sencillas" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/8_hua352826b2048f31426b04747030916a0_1087548_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Pequeñas cosas sencillas"><img src="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/8_hua352826b2048f31426b04747030916a0_1087548_300x200_fit_q90_h2_box.webp" width="267" height="200" alt="Pequeñas cosas sencillas" title="Pequeñas cosas sencillas" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/9_hu1e36822cde5a509aff34a5fa7a8b0ad9_1166498_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Pequeñas cosas sencillas"><img src="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/9_hu1e36822cde5a509aff34a5fa7a8b0ad9_1166498_300x200_fit_q90_h2_box.webp" width="267" height="200" alt="Pequeñas cosas sencillas" title="Pequeñas cosas sencillas" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/10_hu9036de16ae6691448e271c4019b054c4_670550_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Pequeñas cosas sencillas"><img src="/blog-bitix/2023/04/blog-bitix-con-menos-intensidad-se-apaga/images/10_hu9036de16ae6691448e271c4019b054c4_670550_300x200_fit_q90_h2_box.webp" width="267" height="200" alt="Pequeñas cosas sencillas" title="Pequeñas cosas sencillas" class="&#34; " loading="lazy"></a></p>
+<figcaption>Pequeñas cosas sencillas</figcaption>
+</figure>
+</div>
+<p>Ese artículo <em>1 década en la misma empresa, 20 años trabajando</em> posiblemente tenga una segunda parte, anexo o lo edite con algunos aspectos de los que me estoy dando cuenta y que me gustará añadir, lo suyo sería esperar a la efeméride de los 15 años, quizá no espere tanto como esos casi 3 años que faltan pero no quiero hacerlo ahora con unos días y semana que he pasado sensible.</p>
+<p>Después de todo este contexto, en el que todo lo que está es pero no todo lo que es está, pues por privacidad no voy a confesar todo en un medio público como internet, en esencia este artículo es para decir que a partir de ahora no escribiré un artículo a la semana, tampoco me gusta dejar las cosas a la mitad ni abandonar fácil pero el blog no es algo que pueda terminar. Quizá escriba esos artículos de desempaquetado, de análisis de juegos pero seguro que menos artículos técnicos por el simple hecho de escribir y publicar algo todas las semanas. La frecuencia ya no será con un calendario fijo como <a href="https://www.ubuntu.com/">Ubuntu</a> sino como <a href="https://www.archlinux.org/">Arch Linux</a> cuando haya actualizaciones (y no serán tan frecuentes como uno a la semana) o <a href="https://www.debian.org/">Debian</a> cuando un nuevo artículo esté listo. Quizá simplemente sea un paréntesis para que en un futuro recupere algo más de interés o quizá este sea el primer paso para que este blog empiece a apagarse y finalmente sea uno más que se una a la larga lista de blogs que desaparecen como lágrimas en la lluvia.</p>
+<p>La segunda cosa que quiero comentar en este artículo es para mi mismo y para quien lo lea, es una frase atribuida a Sócrates que ya sería listo este tipo que ya sobre el 407 a. C. decía cosas como esta.</p>
+<blockquote>
+<p>Sé amable con todo el mundo, pues cada persona libra algún tipo de batalla</p>
+<p>-  Sócrates 470 a. C.-399 a. C.</p>
+</blockquote>
+<p>A lo que añadiré si en algún momento uno conoce esa batalla da el contexto y una nueva perspectiva al tiempo pasado.</p>
+<p>Finalmente, si este blog es uno de los que estabas suscrito y leías los artículos que te interesaban ya sea por Java, GNU/Linux o ambos puedes dejar abajo tu comentario con cualquier cosa que quieras comentar 🗨️🤗.</p>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+          <div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div>
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/12/hemeroteca-22/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #22" title="Hemeroteca #22" class="" loading="lazy">
+                <h3>Hemeroteca #22</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/10/funcionamiento-y-precauciones-a-seguir-en-los-servicios-de-compraventa-de-productos-de-segunda-mano-como-wallapop/">
+                <img src="/blog-bitix/assets/images/logotypes/wallapop.svg" width="326" height="125" alt="Funcionamiento y precauciones a seguir en los servicios de compraventa de productos de segunda mano como Wallapop" title="Funcionamiento y precauciones a seguir en los servicios de compraventa de productos de segunda mano como Wallapop" class="" loading="lazy">
+                <h3>Funcionamiento y precauciones a seguir en los servicios de compraventa de productos de segunda mano como Wallapop</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/10/formas-de-monetizar-una-pagina-web-o-blog-y-alternativas-a-adsense/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Formas de monetizar una página web o blog y alternativas a AdSense" title="Formas de monetizar una página web o blog y alternativas a AdSense" class="" loading="lazy">
+                <h3>Formas de monetizar una página web o blog y alternativas a AdSense</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/06/hemeroteca-21/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #21" title="Hemeroteca #21" class="" loading="lazy">
+                <h3>Hemeroteca #21</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/12/hemeroteca-20/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #20" title="Hemeroteca #20" class="" loading="lazy">
+                <h3>Hemeroteca #20</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/02/9-aniversario-del-blog/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="9º aniversario del blog" title="9º aniversario del blog" class="" loading="lazy">
+                <h3>9º aniversario del blog</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-683';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2023\/04\/blog-bitix-con-menos-intensidad-se-apaga\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2023 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>
