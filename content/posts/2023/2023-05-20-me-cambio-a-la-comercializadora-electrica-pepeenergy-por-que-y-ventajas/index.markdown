@@ -1,8 +1,9 @@
 ---
 pid: 684
 type: "post"
-title: "Me cambio a Pepeenergy, por qué y ventajas"
-url: "/2023/05/me-cambio-a-pepeenergy-por-que-y-ventajas/"
+title: "Me cambio a la comercializadora eléctrica Pepeenergy, por qué y ventajas"
+url: "/2023/05/me-cambio-a-la-comercializadora-electrica-pepeenergy-por-que-y-ventajas/"
+aliases: ["/2023/05/me-cambio-a-pepeenergy-por-que-y-ventajas/"]
 date: 2023-05-20T01:00:00+02:00
 language: "es"
 index: true
