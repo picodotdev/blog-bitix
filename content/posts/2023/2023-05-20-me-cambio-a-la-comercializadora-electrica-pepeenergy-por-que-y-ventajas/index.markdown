@@ -93,7 +93,7 @@ Llevo algo más de 6 años con Pepephone primero con ADSL y móvil sin datos, lu
     image3="image:pepephone-3.webp" optionsthumb3="200x150" title3="Pepephone"
     caption="Pepephone" >}}
 
-Tienen una excelente atención al cliente y mientras sigan así seguiré siendo cliente suyo, ¿para cuando un pepebank?.
+Tienen una excelente atención al cliente y mientras sigan así seguiré siendo cliente suyo, ¿para cuando un Pepebank?.
 
 {{% /post %}}
 
