@@ -48,7 +48,15 @@ Hay tres horarios valle (de 0h a 8h), llano (de 8h a 10h, de 14h a 18h, de 22h a
 
 En Holaluz el precio utilizado para calcular la cuota fija era de unos 0,25 €/kWh, en Pepeenergy el precio de la energía en el horario punta es de 0,2461 €/kWh en el llano de 0,1820 €/kWh y en el periodo valle de 0,1589 €/kWh. Este periodo valle era parecido al precio que pagaba con Holaluz cuando empecé con ellos. En la página de Pepeenergy ofrecen actualizados los precios de una forma clara y transparente.
 
-El precio en horario punta en Pepeenergy es más barato que el de Holaluz sin discrimiación horaria como en los fines de semana y festivos. Los fines de semana el coste se cobra a precio valle, diferencia con Holaluz que me lo calcula todo al mismo precio y más caro que la punta de Pepeenergy. Compara los precios de los horarios con los que pagas tú y es posible obtener un precio calculado en su página web con el CUPS presente en las facturas. Otra cosa interesante de Pepeenergy que ofrecen es ver el consumo diario en cada uno de los periodos así como varios artículos de consejos para optimizar el consumo.
+El precio en horario punta en Pepeenergy es más barato que el de Holaluz sin discrimiación horaria como en los fines de semana y festivos. Los fines de semana el coste se cobra a precio valle, diferencia con Holaluz que me lo calcula todo al mismo precio y más caro que la punta de Pepeenergy. Compara los precios de los horarios con los que pagas tú y es posible obtener un precio calculado en su página web con el CUPS presente en las facturas.
+
+{{< image
+    gallery="true"
+    image1="image:pepeenergy-cuota-1.webp" optionsthumb1="300x200" title1="Cálculo cuota Pepeenergy"
+    image2="image:pepeenergy-cuota-2.webp" optionsthumb2="300x200" title2="Cálculo cuota Pepeenergy"
+    caption="Cálculo cuota Pepeenergy" >}}
+
+Otra cosa interesante de Pepeenergy que ofrecen es ver el consumo diario en cada uno de los periodos así como varios artículos de consejos para optimizar el consumo.
 
 * [Tarifas luz](https://www.pepeenergy.com/tarifas-luz)
 * [Principios de Pepeenergy](https://www.pepeenergy.com/principios-de-pepeenergy)
