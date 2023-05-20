@@ -37,7 +37,7 @@ Tengo todo eléctrico, no tengo gas ni los costes de su disponibilidad, ni de ca
 
 Los motivos con los que no he estado últimamente contento con Holaluz han sido los mismos por los que me cambié de mi anterior compañía. Estos motivos son cambios unilaterales que han sido principalmente dos, un incremento de precios considerable que en este aspecto dejaba de ser tan atractiva y sobre todo el paso a un pago con cuota fija calculada en base a un consumo anual y un precio de energía sin consideraciones de horarios más caro que el precio punta de otras opciones.
 
-En el 2018 con la tarifa sin sorpresas (sin discriminación horaria) pagaba la electricidad a 0,123000 €/kWh, en el 2020 a 0,133000 €/kWh, en el 20202 a 0,169000 €/kWh, en marzo de 2022 a 0,320000 €/kWh, lo que supone casi doblar el precio de la energía consumida, y en abril de 2023 paso a la tarifa justa con cuota fija calculada en base a un precio de energía consumida de 0,253882 €/kWh.
+En el 2018 con la tarifa sin sorpresas (sin discriminación horaria) pagaba la electricidad a 0,123000 €/kWh, en el 2020 a 0,133000 €/kWh, en el 2022 a 0,169000 €/kWh, en marzo de 2022 a 0,320000 €/kWh, lo que supone casi doblar el precio de la energía consumida, y en abril de 2023 paso a la tarifa justa con cuota fija calculada en base a un precio de energía consumida de 0,253882 €/kWh.
 
 Aún así si tuviera que volver a cambiar de compañía seguiré considerando Holaluz pero en este momento y en mi caso me es más beneficiosa cambiar a otra opción.
 
