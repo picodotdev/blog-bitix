@@ -62,7 +62,7 @@ Otra cosa interesante de Pepeenergy que ofrecen es ver el consumo diario en cada
 * [Tarifas luz](https://www.pepeenergy.com/tarifas-luz)
 * [Principios de Pepeenergy](https://www.pepeenergy.com/principios-de-pepeenergy)
 * [Preguntas frecuentes](https://www.pepeenergy.com/ayuda/las-mas-frecuentes#pp-section--faq)
-* [atención al cliente](https://www.pepeenergy.com/atencion-al-cliente)
+* [Atención al cliente](https://www.pepeenergy.com/atencion-al-cliente)
 
 {{< image
     gallery="true"
@@ -76,11 +76,11 @@ Aún me tiene que llegar una factura de un mes completo con Pepeenergy pero espe
 
 Mucha gente se queja de que sus compañías les cobran mucho y les hacen cambios de forma unilateral que empeoran sus condiciones, pero luego no se cambia de compañía, quizá cuesta cambiar, yo solo he buscado la mejor oferta para mis intereses, en general por muy contento y siguiendo considerando una opción mejor que las grandes tampoco le debo nada como cliente a Holaluz lo mismo me ocurre con Pepephone y Pepeenergy, simplemente mientras sus principios estén acorde a los míos y la oferta se mantenga atractiva seguiré como cliente sino buscaré lo mejor para mis intereses.
 
-El cambio a Pepeenergy es realmente simple, no tarde más de 5 minutos en rellenar los formularios del proceso de contratación y en menos de una semana ya estaba formalizado el cambio como cliente de compañía.
+El cambio a Pepeenergy es realmente simple, no tardé más de 5 minutos en rellenar los formularios del proceso de contratación y en menos de una semana ya estaba formalizado el cambio como cliente de compañía.
 
 ## Sobre Pepephone
 
-Llevo algo más de 6 años con Pepephone primero con ADSL y móvil sin datos, luego con fibra y ahora fibra y móvil con datos, y estoy muy contento en el servicio, precios y atención al cliente. Ofrecen también [Netflix][netflix] pero no es mi opción ya que me pensaré antes [Amazon Prime][amazon-prime] que me ofrece ya las ventajas en los envíos, [Amazon Video][amazon-video], [Amazon Music][amazon-music] que uso en el altavoz Alexa que tengo y lo uso para escuchar música. Por un precio de 50€ al año por todo esto no es un precio demasiado elevado aún habiendo subido de precio hace algún tiempo.
+Llevo algo más de 6 años con Pepephone primero con ADSL y móvil sin datos, luego con fibra y ahora fibra y móvil con datos, y estoy muy contento en el servicio, precios y atención al cliente. Ofrecen también [Netflix][netflix] pero no es mi opción ya que me pensaré antes [Amazon Prime][amazon-prime] que me ofrece ya las ventajas en los envíos, [Amazon Video][amazon-video], [Amazon Music][amazon-music] que uso en el altavoz Alexa que tengo y lo uso para escuchar música. Por un precio de 50 € al año por todo esto me parece un precio razonable aún habiendo subido de precio hace algún tiempo.
 
 * [Eligiendo proveedor de internet, finalmente Pepephone][blogbitix-169]
 * [Me cambio del ADSL a la fibra de Pepephone][blogbitix-581]
