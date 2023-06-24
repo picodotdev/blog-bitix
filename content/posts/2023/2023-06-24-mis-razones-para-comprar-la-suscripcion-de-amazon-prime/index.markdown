@@ -36,7 +36,6 @@ Ofrece envíos más rápidos con lo que compras habitualmente el tiempo de esper
 
 Música, en altavoz Alexa, móvil ahora que tengo datos tras pasarme a pepeenegy y aprovecharme de las ofertas con pepephone y a través del navegador web cuando estoy trabajando fuera de casa. Se puede escuchar música y radios en el Echo pero con publicidad cada ciertas canciones de un minuto de duración lo que es un poco molesto y no se pueden elegir exactamente qué artista y álbum escuchar solo radios de un género de música. Con Amazon Music ya no hay anuncios y se puede elegir un poco mejor que artista escuchar, aún así cuando se le pide un artista no solo reproduce canciones de ese artista sino de relacionados con música parecida. Escuchar un artista en concreto, álbum requiere la suscripción Music Unlimited. Es una alternativa a Spotify.
 
-* 
 * [Desempaquetado y análisis de altavoz inteligente Amazon Echo con asistente Alexa][blogbitix-495]
 
 {{< amazon
