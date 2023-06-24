@@ -45,7 +45,7 @@ Música, en altavoz Alexa, móvil ahora que tengo datos tras pasarme a pepeenegy
 {{< amazon
     tags="amazon-kindle" >}}
 
-[Amazon Prime Video][amazon-prime-video], un amplio catálogo de películas que se va ampliando por ejemplo en el momento de escribir el artículo se ha añadido [John Wick 4](https://www.primevideo.com/detail/0NHQ5PPD998JTWPYN68KL3X7IE/), no tienen todas pero si muchas de diferentes géneros y conocidas entre las que están las del mundo del El Señor de los Anillos y la serie exclusiva de Amazon sobre el anillo único. Otras películas no están incluidas en el Prime y requieren pagar por alquilarlas o comprarlas. No tienen el mismo catálogo pero sí una alternativa a Netflix.
+[Amazon Prime Video][amazon-prime-video], un amplio catálogo de películas que se va ampliando por ejemplo en el momento de escribir el artículo se ha añadido [John Wick 4](https://www.primevideo.com/detail/0NHQ5PPD998JTWPYN68KL3X7IE/), no tienen todas pero si muchas de diferentes géneros y conocidas entre las que están las del mundo del El Señor de los Anillos y la [serie exclusiva de Amazon sobre los anillos de poder](https://www.primevideo.com/detail/0TUVXIO58IUNEPNBF8363Z7YGL/). Otras películas no están incluidas en el Prime y requieren pagar por alquilarlas o comprarlas. No tienen el mismo catálogo pero sí una alternativa a Netflix.
 
 Otra de sus ventajas es Amazon Prime Reading que ofrece miles de libros electrónicos que se complementa muy bien con sus lectores Kindle. También ofrece fotos y almacenamiento en la nube pero estas opciones son algo que en mi caso ya no doy uso teniendo una cuenta de Google.
 
