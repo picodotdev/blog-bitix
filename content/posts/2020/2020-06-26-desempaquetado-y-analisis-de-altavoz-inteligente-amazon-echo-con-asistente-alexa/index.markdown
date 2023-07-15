@@ -11,8 +11,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:caja-amazon-echo-1.webp"
-imagePost: "image:caja-amazon-echo-1.webp"
+imageHead: "image:caja-amazon-echo.webp"
+imagePost: "image:caja-amazon-echo.webp"
 tags: []
 series: ["desempaquetado-tecnologia"]
 summary: "El altavoz es un dispositivo que también ha añadido funciones de dispositivo inteligente, al igual que ha ocurrido con los teléfonos móviles y televisores. Son controlados  por voz y con la aplicación para _smartphone_ capaces de leer noticias, el tiempo, el tráfico, música, radios o de servicios en _streaming_, el centro para controlar dispositivos del hogar y muchas otras funcionalidades agregables mediante _skills_. Amazon, Goolge y Apple tiene su versión de altavoz inteligente, pequeños con buena calidad de sonido y diferentes modelos entre los que elegir."
@@ -316,8 +316,8 @@ La familia de altavoces Echo con el asistente Alexa tiene varios miembros.
 * Echo Studio: el dispositivo con el mejor sonido que ofrecen los Echo pero también ocupa más y es más caro, puede sustituir a las barras de sonido para una televisión.
 
 {{< amazon
-    linkids="2e34330d54557497f7719413fa93cbf6,f0af1545b79856b50e9323460666b75f,496c57a568de805e3887b7e5bbda0dc5,b223da848a7966b52f16be6baf77f696,a84245cd09eca34bc1ecb8e6b3f6cc86"
-    asins="B07PFG54H7,B084DWG2VQ,B085M6N2XM,B085FXHR38,B07NQDHC7S" >}}
+    linkids="9f70af9442c978827e9cda1bed971a59,9e40111b1ef2247e65030244ffb3d055,b223da848a7966b52f16be6baf77f696,a84245cd09eca34bc1ecb8e6b3f6cc86"
+    asins="B09B8X9RGM,B09B8RVKGW,B085FXHR38,B07NQDHC7S" >}}
 
 Los Echo Show incluyen una pantalla con la posibilidad de realizar videoconferencias.
 
