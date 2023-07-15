@@ -184,6 +184,30 @@
 <ul class="list-unstyled">
     <li>
       <article>
+        <h1><a href="/blog-bitix/2022/07/opciones-de-arquitectura-para-emitir-trazas-en-una-aplicacion-java/">Opciones de arquitectura para emitir trazas en una aplicación Java</a></h1>
+        <span class="information">
+          <time>28/07/2022</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Incluso para emitir trazas que en principio es algo sencillo y que se da por hecho surgen varias opciones de arquitectura o diseño. Dos de esas decisiones son acoplarse o no a la librería de <em>logging</em> que se use e inyectar de forma estática o por el constructor la instancia de la clase con la que se emiten trazas. Estas decisiones conviene recogerlas en un documento de <em>Architecture Decision Record</em> por si en un futuro hay que revisar las decisiones tomadas con anterioridad o para que una persona en un futuro tenga el contexto y un registro de las decisiones que se han tomado, el contexto, opciones evaluadas, argumentos y decisiones tomadas.
+          
+          <br>
+          <a href="/blog-bitix/2022/07/opciones-de-arquitectura-para-emitir-trazas-en-una-aplicacion-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/">Interfaz web para JMX con Hawtio</a></h1>
         <span class="information">
           <time>14/07/2022</time>
@@ -491,28 +515,6 @@
           
           <br>
           <a href="/blog-bitix/2022/02/que-son-los-archivos-dotfiles-y-como-gestionarlos-con-chezmoi/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2022/02/validar-las-propiedades-de-configuracion-de-spring-boot-al-iniciar-la-aplicacion/">Validar las propiedades de configuración de Spring Boot al iniciar la aplicación</a></h1>
-        <span class="information">
-          <time>03/02/2022</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            Spring permite realizar validaciones sobre las propiedades de configuración antes de iniciar la aplicación, esto permite evitar errores en tiempo de ejecución más difíciles de depurar ya que la excepción que se origine quizá sea difícil de asociar a que el valor una variable de configuración es incorrecta, por ejemplo, que una variable de configuración no tiene valor y si fuese una contraseña de base de datos originar un fallo de conexión a la base de datos o que un servicio REST devolviese un error 403 por no proporcionar la credencial. Con las mismas anotaciones de validación sobre las propiedades de configuración del paquete <em>javax.validation</em> que se utilizan para validar <em>beans</em> de Java se pueden utilizar para validar los valores de configuración de Spring.
-          
-          <br>
-          <a href="/blog-bitix/2022/02/validar-las-propiedades-de-configuracion-de-spring-boot-al-iniciar-la-aplicacion/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
