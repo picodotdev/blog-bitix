@@ -83,11 +83,11 @@ Una de las cosas destacables de la serie de ratones inalámbricos Logitech Signa
 
 En concreto el Logitech Signature M750 muy similar al [Logitech Signature M650](https://www.logitech.com/es-es/products/mice/m650-signature-wireless-mouse.910-006253.html) con un diseño cuidado y ergonómico. Otra cosa destacable con respecto a otras marcas y modelos es que los clics del ratón son mucho más silenciosos y no tienen mucho recorrido con lo que hay que acostumbrarse a ellos para no hacer dobles clics, tiene un par de botones configurables con la aplicación para [Windows][windows] en el lateral que si hacen clic y la rueda de desplazamiento vertical es muy suave con la posibilidad de un deslizamiento grande.
 
-Es inalámbrico por adaptador propietario logi bolt que ocupa un puerto USB tipo A y también por Bluetooth sin necesidad de adaptador en un puerto USB, en el compartimento de la pila tiene un hueco para guardar el adaptador muy útil si no se usa y que no se pierda o en el caso de transportarlo.
+Es inalámbrico por adaptador propietario _logi bolt_ que ocupa un puerto USB tipo A y también por Bluetooth sin necesidad de adaptador en un puerto USB, en el compartimento de la pila tiene un hueco para guardar el adaptador muy útil si no se usa y que no se pierda o en el caso de transportarlo.
 
 No usa batería recargable y usa únicamente una pila AA, Logitech dice que dura hasta dos años pero personalmente me parece mucho y lo veré cuando lo pruebe varios meses seguidos en un trabajo constante que en mi caso será bastante intenso. La pila le añade algo de peso a cambio de no tener cable, su peso aún con una pila AA dentro no me parece molesto ni pesado.
 
-El M750 en el momento que lo he comprado no se está comercializando en Europa todavía, se puede comprar a través de [AliExpress][aliexpress] ya que en Asia si se está a la venta, es algo más caro que el M650 pero a cambio soporta la configuración de conexión de hasta tres dispositivos.
+El M750 en el momento que lo he comprado no se está comercializando en Europa todavía, se puede comprar a través de [AliExpress][aliexpress] ya que en Asia si se está a la venta, es algo más caro que el M650 pero a cambio soporta la configuración de conexión de hasta tres dispositivos, el precio de cada modelo es de unos 60 € para el M750 y de unos 35 para el M650.
 
 Tiene 5 botones con clic izquierdo/derecho, retroceso/avance con los botones laterales en un navegador, botón rueda con clic de botón central. También tiene la función de desplazamiento horizontal pulsado un botón de retroceso/avance y la rueda del ratón.
 
@@ -113,7 +113,7 @@ Durante los varios días que lo he probado hasta el momento la configuración ha
 
 Windows es el sistema que generalmente soportan todos los dispositivos ya que es el sistema que más usuarios tiene. El ratón funciona es compatible con los tres sistemas operativos mayoritarios Windows, macOS y GNU/Linux.
 
-En GNU/Linux no es necesario instalar ningún controlador adicional con lo que su uso es igual de sencillo que en Windows y macOS. Basta con configurar la conectividad por Bluetooth o con el logi bolt en un puerto USB.
+En GNU/Linux no es necesario instalar ningún controlador adicional con lo que su uso es igual de sencillo que en Windows y macOS. Basta con configurar la conectividad por Bluetooth o con el _logi bolt_ en un puerto USB.
 
 No he tenido ningún problema en la conectividad y configuración y el soporte en GNU/Linux de todos los botones es correcto.
 
@@ -143,7 +143,7 @@ En cuanto a la pila cuanta más capacidad tenga mejor, hay pilas recargables que
 
 ### Diferencia con el Logitech Signature M650 y comparación con el Lift
 
-El modelo anterior que se comercializa en Europa es el M650, es muy similar en su aspecto estético al M750 pero tiene una diferencia fundamental en la conectividad. El M750 soporta la configuración de hasta tres dispositivos al igual que el Lift cuando el M650 solo soporta uno o requiere estar cambiando de equipo adaptador logi bolt.
+El modelo anterior que se comercializa en Europa es el M650, es muy similar en su aspecto estético al M750 pero tiene una diferencia fundamental en la conectividad. El M750 soporta la configuración de hasta tres dispositivos al igual que el Lift cuando el M650 solo soporta uno o requiere estar cambiando de equipo adaptador _logi bolt_.
 
 El hecho de que el M750 no se comercialice en Europa hace que haya tenido que pedirlo a China mediante AliExpress. No hay problemas de aduanas ya que AliExpress se encarga de aplicar el IVA en el momento de la compra. La desventaja es que hay que esperar unas dos semanas hasta que el ratón llega al domicilio, a mi me ha llegado en menos de una semana.
 
