@@ -16,7 +16,7 @@ Para cumplir con la legislación me obligan a mostrar una solicitud de consentim
 
 Este blog te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.
 
-**Los anuncios de este blog no son intrusivos** y compensan el trabajo y tiempo de crear el contenido único y original.
+**Los anuncios de este blog no son intrusivos** y compensan el trabajo y tiempo de crear un contenido único y original.
 Si no es por privacidad **considera desactivar el bloqueador de anuncios** en **Blog Bitix**.
 
 {{% /post %}}
