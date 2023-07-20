@@ -3,10 +3,10 @@ pid: p3
 title: "Publicidad"
 url: "/pages/advertising/"
 date: 2022-01-26T21:00:00+01:00
-index: true
-rss: true
-sharing: true
-comments: true
+index: false
+rss: false
+sharing: false
+comments: false
 footer: true
 ---
 

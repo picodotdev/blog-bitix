@@ -1,4 +1,4 @@
-require(['jquery', 'lozad', 'cookieconsent'], function($, lozad, cookieconsent) {
+require(['jquery', 'lozad'], function($, lozad) {
     function initAnalytics() {
         //ga('send', 'event', 'client', 'protocol', window.location.protocol.replace(new RegExp(':|/', 'gi'), ''), {'nonInteraction': 1});
 
@@ -80,7 +80,7 @@ require(['jquery', 'lozad', 'cookieconsent'], function($, lozad, cookieconsent) 
                     '<div class="adblock-container">',
                     ' <div class="adblock">',
                     '  <p class="text-center"><strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Parece que tienes activado un bloqueador de anuncios</strong></p>',
-                    '  <p>Los anuncios de este blog <strong>no son intrusivos</strong> y con ellos hago <a href="https://picodotdev.github.io/blog-bitix/2015/12/yo-apoyo-al-software-libre-tu-tambien/">pequeñas donaciones al software libre</a>.</p>',
+                    '  <p>Los anuncios de este blog <strong>no son intrusivos</strong> y con ellos hago <a href="https://picodotdev.github.io/blog-bitix/2015/12/yo-apoyo-al-software-libre-tu-tambien/">pequeñas donaciones al software libre</a> y compensa el trabajo y tiempo de crear el contenido único y original.</p>',
                     '  <p>Si no es por privacidad considera <a href="https://adblockplus.org/es/faq_basics#disable" target="_blank">desactivar el bloqueador de anuncios</a> en <strong>Blog Bitix</strong>.</p>',
                     ' </div>',
                     '</div>'
@@ -91,29 +91,6 @@ require(['jquery', 'lozad', 'cookieconsent'], function($, lozad, cookieconsent) 
         }, 3000);
     }
 
-    function initCookieConsent() {
-        cookieconsent.initialise({
-            "palette": {
-                "popup": {
-                    "background": "#000000",
-                    "text": "#ffffff"
-                },
-                "button": {
-                    "background": "#61b135",
-                    "text": "#000000"
-                }
-            },
-            "theme": "classic",
-            "content": {
-                "message": "Esta bitácora te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.",
-                "dismiss": "Aceptar",
-                "allow": "Aceptar",
-                "link": "Política de cookies"
-            }
-        });
-    }
-
     initAnalytics();
     initAdsense();
-    initCookieConsent();
 });

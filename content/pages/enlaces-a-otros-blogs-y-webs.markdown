@@ -5,8 +5,8 @@ url: "/pages/links/"
 aliases: ["/pages/enlaces-a-otros-blogs-y-webs/"]
 date: 2013-12-02T13:00:00+01:00
 updated: 2022-06-15T19:00:00+01:00
-index: true
-rss: true
+index: false
+rss: false
 sharing: true
 comments: true
 footer: true

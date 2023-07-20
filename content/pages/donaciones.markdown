@@ -3,8 +3,8 @@ pid: p4
 title: "Donaciones"
 url: "/pages/donate/"
 date: 2016-10-24T09:00:00+10:00
-index: true
-rss: true
+index: false
+rss: false
 sharing: true
 comments: true
 footer: true
