@@ -4,6 +4,7 @@ type: "post"
 title: "Desempaquetado y análisis de televisión smart tv Samsung 43QN90B"
 url: "/2023/07/desempaquetado-y-analisis-de-television-smart-tv-samsung-43qn90b/"
 date: 2023-07-22T11:00:00+02:00
+date: 2023-08-30T16:30:00+02:00
 language: "es"
 index: true
 rss: true
@@ -109,7 +110,7 @@ Quería una televisión de buena calidad para ver películas y por esto no me im
 
 Una televisión de 43" es lo mínimo ya, esta es una buena televisión de calidad pero en menor tamaño la calidad baja bastante, aún precio menor eso sí.
 
-En un momento de oferta en Amazon que suele tener variaciones importantes y constantes la ha he comprado a un buen precio no barato pero con el que he quedado satisfecho de una compra aceptable, finalmente han sido unos 840 € aunque ha estado en algún momento muy puntual a 700, no es barata pero la calidad es muy buena pasados unos días de uso.
+En un momento de oferta en Amazon que suele tener variaciones importantes y constantes la ha he comprado a un buen precio no barato pero con el que he quedado satisfecho de una compra aceptable, finalmente han sido unos 840 € de la Samsung 43QN90B aunque ha estado en algún momento muy puntual a 700, no es barata pero la calidad es muy buena pasados unos días de uso.
 
 * [Historial y evolución de los precios en Amazon con CamelCamelCamel][blogbitix-414]
 
@@ -193,7 +194,13 @@ La calidad de Amazon Prime en la tele es mucho mayor que la que veo con el repro
 
 La televisión únicamente tiene físicamente el botón de encendido, nada más, se ha de controlar a través del pequeño mando. Es fácil de utilizar con los botones para subir y bajar el volumen y cambiar de canales. Tener los canales más vistos agrupados es útil porque el mando no ofrece botonera numérica con lo que cambiar de canales requiere pulsar varias veces los botones.
 
-El mando como característica destacable es que no usa pilas sino batería interna y tiene un panel solar que permite recargarlo. Los mandos con el uso o porque se golpean al caerse se terminan estropeando y al no tener la televisión botones físicos que se estropee el mando podría ser un problema que dejaría la televisión inservible.
+El mando como característica destacable es que no usa pilas sino batería interna y tiene un panel solar que permite recargarlo. Los mandos con el uso o porque se golpean al caerse se terminan estropeando y al no tener la televisión botones físicos que se estropee el mando podría ser un problema que dejaría la televisión inservible. Para protegerlos no está una opción simple es envolverlo en _film_ transparente, no lo protege de las caídas pero si de la suciedad de las manos al usarlo.
+
+{{< image
+    gallery="true"
+    image1="image:samsung-qn90ba-mando-6.jpg" optionsthumb1="300x250" title1="Mando físico de Samsung 43QN90B"
+    image2="image:samsung-qn90ba-mando-7.jpg" optionsthumb2="300x250" title2="Mando físico de Samsung 43QN90B"
+    caption="Mando físico de Samsung 43QN90B" >}}
 
 Por fortuna la televisión se puede controlar de dos formas adicionales al mando, con la [aplicación oficial SmartThings de Samsung](https://play.google.com/store/apps/details?id=com.samsung.android.oneconnect) y con un teclado Bluetooth. El mando ofrecido por la aplicación SmartThings ofrece las mismas funciones que el mando físico pudiendo incluso encender y apagar la televisión a través de la conexión WIFI. El teclado Bluetooth permite cambiar de canales y una forma incluso más cómoda de utilizar la televisión por ser más fácil realizar las pulsaciones o escribir texto que el mando físico o con la aplicación de SmartThings. Le voy a dar un buen uso al teclado Kemove DK61 que me envió la marca para que lo analizase. El único inconveniente que he encontrado hasta el momento es que en la aplicación de Amazon Prime las teclas de caracteres no funcionan.
 
@@ -221,7 +228,7 @@ La otra opción al Samsung 43QN90B que es el modelo del año 2022 por la que hub
 
 La diferencia más destacable entre el 43QN90B y el 43QN90C es que tiene aún más número de zonas de iluminación y quizá un mejor gama de colores, una versión de Tizen 7.0 más nueva que la 6.5 de fábrica de la QN90B y una mayor tasa de refresco de 120 Hz contra 100 Hz aunque ambas dicen soportar 144 Hz en algunos modos de funcionamiento.
 
-Más allá de lo anterior las diferencias son menores, en el pie de soporte, la otra diferencia está en el precio el 43QN90C no baja de los 1100 en una buena oferta y la 43QN90B finalmente la he comprado en 840 estando de oferta.
+Más allá de lo anterior las diferencias son menores, en el pie de soporte, la otra diferencia está en el precio el 43QN90C no baja de los 1000 o 1100 en una buena oferta y la 43QN90B finalmente en una oferta interesante de menos de 900 es el modelo por el que me decidí.
 
 Otros modelos que he evaluado son los de la marca [Sony][sony] que ofrecen [Google Tv][android-tv] como _Smart TV_, creo que los Samsung ofrecen algo más de calidad de imagen al mismo precio y un Sony quizá me obligaba a comprarlo en otra tienda como [El Corte Inglés][elcorteingles] o [Mediamarkt][mediamarkt].
 
@@ -240,7 +247,7 @@ Otros modelos en otros rangos de precios de Samsung que he mirado han sido el 43
 
 El modelo Samsung 43QN90C es ligeramente mejor pero en mi caso la diferencia de precio no era suficientemente atractivo sobre la 43QN90B. Aprovechando una buena oferta por debajo de los 850 € tampoco ha estado mal al precio que la he comprado. En un aparato que puede durar 7 o 10 años salvo ajustar el presupuesto ir a un modelo un poco mayor en precio a cambio de una mayor calidad durante todos esos años puede compensar.
 
-La calidad que ofrece la 43QN90B me parece que es muy alto y el precio algo más alto lo vale que modelos en una categoría menor. No es el modelo del último año pero sigue siendo una magnifica opción.
+La calidad que ofrece la 43QN90B me parece que es muy alto y el precio algo más alto lo vale que modelos en una categoría menor. No es el modelo del último año pero sigue siendo una magnífica opción.
 
 {{< reference >}}
 * [LED vs mini-LED vs micro-LED vs Full- Array Local Dimming: diferencias y similitudes](https://www.andytecnologia.com/2021/01/led-mini-led-micro-led-full-array-local-dimming.html)
