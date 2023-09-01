@@ -3,7 +3,7 @@ pid: 688
 type: "post"
 title: "Desempaquetado de altavoz inteligente Amazon Echo (4ª generación)"
 url: "/2023/08/desempaquetado-de-altavoz-inteligente-amazon-echo-4-generacion/"
-aliases: []"/2023/08/desempaquetado-altavoz-inteligente-amazon-echo-4-generacion/"]
+aliases: ["/2023/08/desempaquetado-altavoz-inteligente-amazon-echo-4-generacion/"]
 date: 2023-08-31T13:00:00+02:00
 language: "es"
 index: true
