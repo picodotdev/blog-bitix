@@ -130,7 +130,7 @@ Algunas opciones de inversión son las siguientes. En función de la situación 
 * [Finizens](https://finizens.com/): ofrece fondos indexados con la particularidad de que en este caso de que baja las comisiones cada año.
 * [InbestMe](https://www.inbestme.com/es/es/): ofrece varios fondos monetarios, fondos indexados con sesgo de sostenibilidad o sin él así como opciones de renta fija.
 * [MyInvestor](https://myinvestor.es/): es un banco en el sentido de que ofrece una cuenta corriente con la posibilidad de tener una tarjeta de débito o crédito sin comisiones. Está más dirigido a inversores y ofrece depósitos con unas rentabilidades interesantes y varios productos en una misma cuenta (depósitos, indexados, cartera ahorro/fondo monetario, construir una cartera de fondos a medida).
-* [Renta4](https://www.r4.com/): ofrece la compra de deuda pública en España si no se quiere hacerlo personalmente.
+* [Renta4](https://www.r4.com/): ofrece la compra de deuda pública en España si no se quiere hacer personalmente los tramites asociados.
 
 Algunos artículos con análisis y opinión de las opciones, también para conocer más en detalle que destacan y cuales son sus debilidades comparados con otras opciones.
 
