@@ -23,13 +23,13 @@ A lo largo de nuestra vida pasamos muchos años de formación y aprendiendo, a p
 
 Una de esas situaciones es la relativa a la materia de economía básica. Hay mucha ignorancia económica y en temas financieros incluso en personas con formación universitaria, yo me incluyo entre ellas. Hay varias cosas que ni siquiera conocemos que existen, que son fundamentales para evitar problemas, saber gestionar y gastar el dinero fruto del trabajo que tanto cuesta.
 
-En estos conceptos están las hipotecas, préstamos, cómo, dónde y qué conceptos tener en cuenta a la hora de invertir, temas fiscales y muchos otros. La falta de este conocimiento es aprovechado por los bancos cuyos intereses generalmente no son los de ofrecer productos financieros beneficiosos a sus clientes sino a los de sus propios bancos que para eso son sus empleados.
+En estos conceptos están las hipotecas, préstamos, cómo, dónde y qué conceptos tener en cuenta a la hora de gastar e invertir, temas fiscales y muchos otros. La falta de este conocimiento es aprovechado por los bancos cuyos intereses generalmente no son los de ofrecer productos financieros beneficiosos a sus clientes sino a los de sus propios bancos que para eso son sus empleados.
 
 {{< tableofcontents >}}
 
 ## Conceptos, libros y recursos para principiantes sobre inversión
 
-La única forma de acabar con esa falta de conocimiento financiero es adquirirlo. Hay varias opciones desde libros, fuentes oficiales, blogs de páginas de inversión y canales de YouTube especializados en inversión.
+La única forma de acabar con esa falta de conocimiento financiero es adquirirlo. Hay varias opciones desde libros, fuentes oficiales, blogs de páginas de inversión, canales de YouTube especializados en inversión o hablando con personas que tengan más conocimiento.
 
 Cualquiera de estas opciones permiten descubrir cosas que desconocemos como por ejemplo ¿sabes que es un fondo monetario? ¿sabes que es un fondo indexado? ¿y donde puedes invertir en ellos?.
 
@@ -39,11 +39,11 @@ Pero antes de nada es conveniente conocer una serie de conceptos fundamentales r
 
 Tres libros que me han ayudado a adquirir unos conceptos básicos sobre economía doméstica e inversión son los siguientes, que recomiendo.
 
-Son libros cortos que se leen en un par de semanas teniendo un poco de tiempo todos los días. Simplemente con estos tres libros uno está mucho más preparado. Estos tres libros complementados con los otros recursos a continuación, uno se da cuenta de hasta que punto los bancos abusan de sus clientes por mucha CNMV y requisitos que se establezcan, si hasta la encuesta de perfilado del cliente es casi rellenada por el empleado del banco.
+Son libros cortos que se leen en un par de semanas teniendo un poco de tiempo todos los días, con la posibilidad de leerlos desde el móvil, ordenador con un navegador o un lector de libros electrónicos [Amazon Kindle][amazon-kindle]. Simplemente con estos tres libros uno está mucho más preparado. Estos tres libros complementados con los otros recursos a continuación, uno se da cuenta de hasta que punto los bancos abusan de sus clientes por mucha CNMV y requisitos que se establezcan, si hasta la encuesta de perfilado del cliente es casi rellenada por el empleado del banco.
 
 * [Invierte en ti](https://amzn.to/3RowLYU).
 * [Invierte con poco](https://amzn.to/3Rpi5sF).
-* [Más rentabilidad, menos costes](https://amzn.to/45VNyHg). Un libro de uno de los fundadores de Indexa Capital pero bastante didáctico.
+* [Más rentabilidad, menos costes](https://amzn.to/45VNyHg). Un libro de uno de los fundadores de Indexa Capital pero bastante didáctico y documentado de la gestión indexada.
 
 {{< amazon
     linkids="13d437efafe7261fe050dae8c228f3b4,18a2039d9c64ead7bfd90301e0704c82,86ca0e56b980aa578da9a2f4b428371b"
@@ -74,7 +74,7 @@ Otras buenas fuentes de información son la página de la [CNMV](https://www.cnm
 
 * [Inversores y Educación Financiera > Recursos educativos, CNMV](https://www.cnmv.es/portal/inversor/Multimedia.aspx)
 
-También hay que tener cuidado con los chiringuitos, sitios que no están bajo la supervisión de la CNMV que vela por los intereses de los inversores.
+También hay que tener cuidado con los chiringuitos, sitios que no están bajo la supervisión de la CNMV que vela por los intereses de los inversores, la CNMV otorga unas garantías de supervisión.
 
 Otras fuentes de información no fiables, en canales de YouTube dudosos, redes sociales y grupos de Telegram y Whatsapp. Hay que tener criterio propio y conocimiento de lo que se está hablando.
 
@@ -86,7 +86,7 @@ Toda inversión tiene un riesgo por eso se proporciona una rentabilidad, pero in
 
 Algunos conceptos son los siguientes que no definiré aquí mejor de lo que están en los libros anteriores: contabilidad personal, balance, horizonte temporal, perfil de riesgo, testamento y lista de inversiones para herederos. Tiempo, valor, precio, rentabilidad, riesgo, liquidez, comisiones, gestión activa, gestión pasiva, comisión de gestión, comisión del fondo, comisión de depositario, fiscalidad, entidad depositaria o custodio.
 
-Las formas de inversión son variadas con diferentes propiedades según varios de los conceptos anteriores. Renta fija, deuda pública, deuda privada, renta variable, acciones, depósitos, fondos monetarios, cuenta remunerada, plan de pensiones, inmuebles, fondos indexados, robo advisor, real estate (inmuebles), materias primas (oro), criptomonedas y criptoactivos.
+Las formas de inversión son variadas con diferentes propiedades según varios de los conceptos anteriores. Renta fija, deuda pública, deuda privada, renta variable, acciones, depósitos, fondos monetarios, cuenta remunerada, plan de pensiones, fondos indexados, _robo advisor_, real estate (inmuebles), materias primas (oro), criptomonedas y criptoactivos.
 
 Algunas siglas recurrentes son las siguientes DFI, TIR, TER, TAE, TIN.
 
@@ -103,11 +103,11 @@ Con los intereses del [Banco Cental Europeo](https://www.ecb.europa.eu/ecb/html/
 
 En sus productos financieros que comercializan a sus clientes tienen unas comisiones altas, con conflictos de intereses, en algunos casos con un servicio de banca digital pobre y una sonora ausencia de productos financieros de inversión que no les interesa comercializar por no serles tan rentables.
 
-Es habitual que para cada cliente el banco tenga un gestor asignado, no te han visto por la oficina nunca y el primer día que vas desde hace años es como si te conociesen tratandole a uno con una familiaridad sorprendente después de hacer que vayas a raíz una llamada suya para ofrecerte un producto financiero, estos gestores en su mayoría no son más que comerciales que miran por los intereses del banco independientemente del producto financiero que te vayan a ofrecen que incluso tendrán incentivos y objetivos que cumplir. También es curioso que un día que vas por una llamada ves a todos los comerciales haciendo llamadas sin descanso para contactar a sus clientes.
+Es habitual que para cada cliente el banco tenga un gestor asignado, no te han visto por la oficina nunca y el primer día que vas desde hace años es como si te conociesen tratandole a uno con una familiaridad sorprendente después de hacer que vayas a raíz una llamada suya para ofrecerte un producto financiero, estos gestores hacen más que comerciales mirando más por los intereses del banco independientemente del producto financiero que te vayan a ofrecer que incluso tendrán incentivos y objetivos que cumplir. También es curioso que un día que vas por una llamada ves a todos los otros gestores haciendo llamadas sin descanso para contactar a sus clientes.
 
 Se aprovechan de la confianza de sus clientes, a veces incluso de cierto arraigo de geografía. Cuando se dicen que los ladrones ya están dentro no les falta razón. Si a algunas personas ya les cuesta cambiarse de compañía eléctrica es más complicado aún cambiar de banco en el que hay que cambiar la domiciliación de varios recibos e ingresos.
 
-Cualquier de los productos que ofrezcan un banco tradicional ya sea depósito, fondo de inversión o plan de pensiones es probable que tenga unas altas comisiones y una baja rentabilidad. Por ello hay mucho mejores opciones de inversión.
+Cualquier de los productos que ofrezcan un banco tradicional ya sea depósito, fondo de inversión o plan de pensiones es probable que tenga unas altas comisiones y una baja rentabilidad. Hay otras opciones de inversión que no suelen comercializarse en la banca tradicional.
 
 ## Opciones de inversión
 
@@ -150,11 +150,11 @@ Algunos artículos con análisis y opinión de las opciones, también para conoc
 
 El alta en estas opciones se hace completamente a través de internet, no hay que desplazarse a ninguna oficina y el proceso de creación de la cuenta se realiza en menos de 10 minutos. La activación de la cuenta tarda algunos días hábiles por algunas comprobaciones de seguridad bancaria legalmente requeridas, no más de una semana.
 
-Requieren proporcionar algunos datos personales DNI, domicilio y cuenta bancaria existente para las transferencias de origen que también sirve para realizar la validación de las cuentas en el proceso de alta.
+Requieren proporcionar algunos datos personales DNI, domicilio, asi como unos datos de la situación financiera personal y cuenta bancaria existente para las transferencias de origen que también sirve para realizar la validación de las cuentas en el proceso de alta.
 
 En el registro es necesario contestar una serie de preguntas que determinan el perfil de riesgo y tolerancia a posibles pérdidas puntuales máximas del cliente, generalmente determina la proporción de renta fija y variable de la cartera de fondos al aportar el capital.
 
-Una vez abierta y activa la cuenta se proporciona el código IBAN para realizar la aportación del capital mediante una transferencia. La retirada de fondos también se realiza con una transferencia. Con el usuario y contraseña se accede a su administración a través de internet con un navegador o través de sus aplicaciones para [Android][android] o [iPhone][apple-iphone] en el que ver en todo momento actualizado diariamente el capital aportado, el valor de la inversión y realizar toda la operativa de aportaciones, retirada y cambio en el perfil de riesgo, contratación de nuevos productos y documentos proporcionados.
+Una vez abierta y activa la cuenta se proporciona el código IBAN que identifica la cuenta para realizar la aportación del capital mediante una transferencia. La retirada de fondos también se realiza con una transferencia. Con el usuario y contraseña se accede a su administración a través de internet con un navegador o través de sus aplicaciones para [Android][android] o [iPhone][apple-iphone] en el que ver en todo momento actualizado diariamente el capital aportado, el valor de la inversión y realizar toda la operativa de aportaciones, retirada y cambio en el perfil de riesgo, contratación de nuevos productos y documentos proporcionados.
 
 {{% warning %}}
 
