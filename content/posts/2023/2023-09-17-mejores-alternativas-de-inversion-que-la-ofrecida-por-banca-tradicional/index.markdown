@@ -1,8 +1,9 @@
 ---
 pid: 689
 type: "post"
-title: "Mejores alternativas de inversión que la ofrecida por banca tradicional"
-url: "/2023/09/mejores-alternativas-de-inversion-que-la-ofrecida-por-banca-tradicional/"
+title: "Mejores alternativas de inversión que la ofrecida por la banca tradicional"
+url: "/2023/09/mejores-alternativas-de-inversion-que-la-ofrecida-por-la-banca-tradicional/"
+aliases: ["/2023/09/mejores-alternativas-de-inversion-que-la-ofrecida-por-banca-tradicional/"]
 date: 2023-09-17T02:00:00+02:00
 language: "es"
 index: true
