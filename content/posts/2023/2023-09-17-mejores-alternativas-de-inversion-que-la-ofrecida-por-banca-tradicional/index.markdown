@@ -99,7 +99,7 @@ En el sistema bancario español las cuentas corrientes tienen una cobertura de h
 
 En España los bancos más grandes por volumen de clientes y capital son el [Banco Santander](https://www.bancosantander.es/), [BBVA](https://www.bbva.es/) y la [CaixaBank](https://www.caixabank.es/), luego están algunos más en segunda fila con fuerte presencia en regiones como [Sabadell](https://www.bancsabadell.com/), [Kutxabank](https://portal.kutxabank.es/), [Bankinter](https://www.bankinter.com/), [Unicaja](https://www.unicajabanco.es/) o [Abanca](https://www.abanca.com/) entre otros. Más que menos actúan en forma de oligopolio con poca competencia entre ellos.
 
-Con los intereses del [Banco Cental Europeo](https://www.ecb.europa.eu/ecb/html/index.es.html) en un nivel elevado no visto desde hace mucho tiempo y la banca tradicional sin ofrecer depósitos ni cuentas remuneradas y redirigiendo los ahorros de los clientes a fondos de inversión que les dejan más comisiones que los depósitos.
+Con los intereses del [Banco Central Europeo](https://www.ecb.europa.eu/ecb/html/index.es.html) en un nivel elevado no visto desde hace mucho tiempo y la banca tradicional sin ofrecer depósitos ni cuentas remuneradas y redirigiendo los ahorros de los clientes a fondos de inversión que les dejan más comisiones que los depósitos.
 
 En sus productos financieros que comercializan a sus clientes tienen unas comisiones altas, con conflictos de intereses, en algunos casos con un servicio de banca digital pobre y una sonora ausencia de productos financieros de inversión que no les interesa comercializar por no serles tan rentables.
 
