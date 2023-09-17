@@ -13,7 +13,7 @@ promoted: false
 imageHead: "image:header.webp"
 imagePost: "image:header.webp"
 tags: ["fuera-de-tema"]
-summary: "No serán pocas las personas con poco conocimiento de inversión que se dejan aconsejar por su gestor del banco de toda la vida. En general muchas personas tienen unos mínimos de cultura básica de economía y financiera que a todos nos afecta pero si no es por iniciativa propia uno no tiene formación y mira que pasamos años estudiando incluso con formación universitaria. Los bancos tradicionales a través de sus gestores que poco más son comerciales se aprovechan y abusan de la confianza de sus clientes, porque se supone que de un banco tienes que fiar. Hay varias opciones y productos financieros mucho mejores que los que ofrecen los bancos tradicionales y grandes, en este artículo comento algunas de ellas así como ciertos recursos para empezar a tener una mínima base de conocimiento financiero."
+summary: "No serán pocas las personas con poco conocimiento de inversión que se dejan aconsejar por su gestor del banco de toda la vida. En general muchas personas tienen unos mínimos de educación básica de economía y financiera que a todos nos afecta pero si no es por iniciativa propia uno no tiene formación y mira que pasamos años estudiando incluso con formación universitaria. Los bancos tradicionales a través de sus gestores que poco más son comerciales se aprovechan y abusan de la confianza de sus clientes, porque se supone que de un banco tienes que fiar. Hay varias opciones y productos financieros mucho mejores que los que ofrecen los bancos tradicionales y grandes, en este artículo comento algunas de ellas así como ciertos recursos para empezar a tener una mínima base de conocimiento financiero."
 ---
 
 {{% post %}}
@@ -177,5 +177,7 @@ Estos son solo algunos vídeos de un par de canales que me han parecido sensatos
     video="Q5_yGOuBUsg" >}}
 {{< youtube
     video="XUIbuglXk9U" >}}
+{{< youtube
+    video="gvlUSOKUP4w" >}}
 
 {{% /post %}}
