@@ -128,7 +128,7 @@ Algunas opciones de inversión son las siguientes. En función de la situación 
 
 * [Indexa Capital](https://indexacapital.com/es/esp/): ofrece un fondo indexado con diferentes perfiles de riesgo. Diversificado y con unas comisiones más bajas que la gestión activa pero comparativamente con mejores rentabilidades. Tiene también lo que denominan un colchón de seguridad que no es más que un fondo monetario.
 * [Finizens](https://finizens.com/): ofrece fondos indexados con la particularidad de que en este caso de que baja las comisiones cada año.
-* [InbestMe](https://www.inbestme.com/es/es/): ofrece varios fondos monetarios, fondos indexados con sesgo de sostenibilidad o sin él así como opciones de renta fija.
+* [inbestMe](https://www.inbestme.com/es/es/): ofrece varios fondos monetarios, fondos indexados con sesgo de sostenibilidad o sin él así como opciones de renta fija.
 * [MyInvestor](https://myinvestor.es/): es un banco en el sentido de que ofrece una cuenta corriente con la posibilidad de tener una tarjeta de débito o crédito sin comisiones. Está más dirigido a inversores y ofrece depósitos con unas rentabilidades interesantes y varios productos en una misma cuenta (depósitos, indexados, cartera ahorro/fondo monetario, construir una cartera de fondos a medida).
 * [Renta4](https://www.r4.com/): ofrece la compra de deuda pública en España si no se quiere hacer personalmente los tramites asociados.
 
@@ -138,7 +138,7 @@ Algunos artículos con análisis y opinión de las opciones, también para conoc
 * [inbestMe: análisis y opinión](https://dineroxdinero.com/inbestme-analisis-y-opinion-2023/)
 * [Indexa Capital: opiniones y análisis](https://holainversion.com/indexa-capital-opiniones/)
 * [Finizens: opiniones y análisis](https://holainversion.com/finizens-opiniones/)
-* [InbestMe: opiniones y análisis](https://holainversion.com/inbestme-opiniones/)
+* [inbestMe: opiniones y análisis](https://holainversion.com/inbestme-opiniones/)
 * [MyInvestor: opiniones y análisis](https://holainversion.com/opiniones-myinvestor-andbank/)
 
 ### Otros bancos

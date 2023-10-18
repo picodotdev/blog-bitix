@@ -32,7 +32,7 @@ Dado que ahora las versiones de Java son mucho más numerosas y frecuentes se ha
 ## Introducción
 
 * [Características de Java 15](https://openjdk.java.net/projects/jdk/15/)
-* [Notas de publicación de Java 15](https://www.oracle.com/java/technologies/javase/15-relnote-issues.html)
+* [Notas de publicación de Java 15](https://www.oracle.com/java/technologies/javase/15u-relnotes.html)
 * [Documentación de Java 15](https://docs.oracle.com/en/java/javase/15/)
 * [Documentación Javadoc de Java 15](javadoc15:index.html)
 * [JavaMagazine: Inside Java 15: Fourteen JEPs in five buckets](https://blogs.oracle.com/javamagazine/inside-java-15-fourteen-jeps-in-five-buckets)

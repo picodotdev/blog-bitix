@@ -32,7 +32,7 @@ No hay cambios importantes en el lenguaje, el más destacado es la inclusión de
 En los cambios que entran en modo vista previa destacan la Vector API que permite la computación en paralelo aprovechando las instrucciones vectoriales en los procesadores como AVX en x86 y Neon en ARM para acelerar las operaciones de una instrucción múltiples datos o SIMD. Aparte de los destacados hay números cambios más realizados en las APIs de las clases y el añadido de algunas funcionalidades menores, que en las notas de publicación están documentados.
 
 * [Características de Java 16](https://openjdk.java.net/projects/jdk/16/)
-* [Notas de publicación de Java 16](https://www.oracle.com/java/technologies/javase/16-all-relnotes.html)
+* [Notas de publicación de Java 16](hhttps://www.oracle.com/java/technologies/javase/16u-relnotes.html)
 * [Documentación de Java 16](https://docs.oracle.com/en/java/javase/16/)
 * [Documentación Javadoc de Java 16](javadoc16:index.html)
 * [JavaMagazine: From the vector API to records to elastic metaspace, there’s a lot packed into Java 16](https://blogs.oracle.com/javamagazine/java-champion-favorite-java16-records-vector-arm64-github)

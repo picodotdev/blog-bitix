@@ -30,7 +30,7 @@ Continuando las mejoras incrementales cada seis meses el 17 de septiembre se pub
 Casi coincidiendo con la publicación de Java 13 se publicado [Jakarta EE][jakartaee] 8 que únicamente tiene como novedad que su propiedad ha pasado a estar baja la fundación Eclipse, es totalmente compatible con [Java EE 8 y sus últimas mejoras][blogbitix-360], las novedades vendrán en versiones posteriores de Jakarta EE en las que se dará importancia a la tendencia de las aplicaciones para su funcionamiento en entornos orientados a la nube. Casi al mismo tiempo se ha publicado [JavaFX](https://openjfx.io/) 13 ya fuera del JDK en onde puede seguir su propio ciclo de publicaciones independiente del JDK.
 
 * [Características de Java 13](https://openjdk.java.net/projects/jdk/13/)
-* [Notas de publicación de Java 13](https://www.oracle.com/java/technologies/javase/13-relnote-issues.html)
+* [Notas de publicación de Java 13](https://www.oracle.com/java/technologies/javase/13u-relnotes.html)
 * [Documentación de Java 13](https://docs.oracle.com/en/java/javase/13/)
 * [Documentación Javadoc de Java 13](javadoc13:index.html)
 * [JavaMagazine: Inside Java 13](https://blogs.oracle.com/javamagazine/october-2019-v2)

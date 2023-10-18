@@ -38,7 +38,7 @@ Como complemento a los _threads_ virtuales hay otra ayuda con la concurrencia es
 Otras novedades en vista previa son actualizaciones a características en vistas previas anteriores como los _Record Patterns_, _Foreign Function & Memory API_ para integración de código nativo, el _Vector API_ para aprovechar las instrucciones vectoriales de los procesadores, _Pattern Matching for switch_ y _Structured Concurrency_ que está relacionado con los *threads virtuales* y lo complementa.
 
 * [Características de Java 19](https://openjdk.java.net/projects/jdk/19/)
-* [Notas de publicación de Java 19](https://jdk.java.net/19/release-notes)
+* [Notas de publicación de Java 19](https://www.oracle.com/java/technologies/javase/19u-relnotes.html)
 * [Documentación de Java 19](https://docs.oracle.com/en/java/javase/19/)
 * [Documentación Javadoc de Java 19](https://docs.oracle.com/en/java/javase/19/docs/api/index.html)
 

@@ -28,7 +28,7 @@ El 19 de marzo del 2019 se publicaba la versión Java 12 siguiendo el calendario
 Las características destacadas de Java 12 son la incorporación de forma experimental las expresiones _switch_ y mejoras en el recolector de basura para mayor rendimiento.
 
 * [Características de Java 12](https://openjdk.java.net/projects/jdk/12/)
-* [Notas de publicación de Java 12](https://www.oracle.com/java/technologies/javase/12-relnote-issues.html)
+* [Notas de publicación de Java 12](https://www.oracle.com/java/technologies/javase/12u-relnotes.html)
 * [Documentación de Java 12](https://docs.oracle.com/en/java/javase/12/)
 * [Documentación Javadoc de Java 12](javadoc12:overview-summary.html)
 

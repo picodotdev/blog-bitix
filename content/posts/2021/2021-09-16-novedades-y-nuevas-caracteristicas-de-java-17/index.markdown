@@ -36,7 +36,7 @@ Este calendario de soporte claro y simple permite planificar la estrategia de ac
 En el caso de pasar de la versión 11, anterior LTS, o previas, la versión 17 incluye las numerosas novedades de las versiones no LTS y previa LTS a esta, de la 12 a la 16.
 
 * [Características de Java 17](https://openjdk.java.net/projects/jdk/17/)
-* [Notas de publicación de Java 17](https://www.oracle.com/java/technologies/javase/17-all-relnotes.html)
+* [Notas de publicación de Java 17](https://www.oracle.com/java/technologies/javase/17u-relnotes.html)
 * [Documentación de Java 17](https://docs.oracle.com/en/java/javase/17/)
 * [Documentación Javadoc de Java 17](javadoc17:index.html)
 * [JavaMagazine: Java 17 is here: 14 JEPs with exciting new language and JVM features](https://blogs.oracle.com/javamagazine/java-jdk-17-generally-available)

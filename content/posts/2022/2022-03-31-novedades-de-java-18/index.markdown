@@ -32,7 +32,7 @@ La lista de características de Java 18 no es muy amplia pero hay algunas destac
 Con el paso de los meses muchas librerías y entornos de desarrollo irán publicando nuevas versiones compatibles con Java 18 y añadiendo soporte. Cuatro de las características más destacada son la utilización de la codificación de caracteres UTF-8 por defecto, la inclusión de un pequeño servidor web, soporte para añadir fragmentos de código en la documentación Javadoc y finalmente marcar para ser eliminada en una siguiente versión la finalización de objetos. Otras mejoras son nuevas vistas previas de características que están disponibles para obtener comentarios pero que en una siguiente versión podrían cambiar.
 
 * [Características de Java 18](https://openjdk.java.net/projects/jdk/18/)
-* [Notas de publicación de Java 18](https://jdk.java.net/18/release-notes)
+* [Notas de publicación de Java 18](https://www.oracle.com/java/technologies/javase/18u-relnotes.html)
 * [Documentación de Java 18](https://docs.oracle.com/en/java/javase/18/)
 * [Documentación Javadoc de Java 18](javadoc18:index.html)
 * [JavaMagazine: Java 18 is here: 9 JEPs with core library improvements and updates](https://blogs.oracle.com/javamagazine/post/java-jdk-18-generally-available)

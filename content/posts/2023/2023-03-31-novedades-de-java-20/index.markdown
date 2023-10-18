@@ -36,7 +36,7 @@ Entre las novedades de Java 20 aunque son todo vistas previas cada una de estas 
 Más allá de los JEPs el JDK 20 incorpora otro conjunto de novedades destacadas y cambios relativos a la seguridad, marcar como _deprecated_ varios métodos no tan destacados como los cambios en el lenguaje tienen relevancia en los casos que apliquen.
 
 * [Características de Java 20](https://openjdk.org/projects/jdk/20/)
-* [Notas de publicación de Java 20](https://jdk.java.net/20/release-notes)
+* [Notas de publicación de Java 20](https://www.oracle.com/java/technologies/javase/20u-relnotes.html)
 * [Documentación de Java 20](https://docs.oracle.com/en/java/javase/20/)
 * [Documentación Javadoc de Java 20](https://docs.oracle.com/en/java/javase/20/docs/api/index.html)
 * [JavaMagazine: Java 20 is here: Strengthening Java’s foundation for the future](https://blogs.oracle.com/javamagazine/post/java-20-now-available)
