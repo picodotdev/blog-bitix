@@ -5,12 +5,36 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2023-08-31T13:00:00+02:00</updated>
+    <updated>2023-10-19T18:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2022/09/como-refrescar-el-access-token-de-un-cliente-oauth-cuando-caduca/</id>
+        <title>Cómo refrescar el access token de un cliente OAuth cuando caduca</title>
+        <updated>2022-09-15T21:00:00+02:00</updated>
+        <published>2022-09-15T21:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/09/como-refrescar-el-access-token-de-un-cliente-oauth-cuando-caduca/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>Dado que el protocolo HTTP es un protocolo sin estado los <em>access token</em> se envían en cada petición que se hace al <em>endpoint</em> de un recurso ofrecido por una aplicación mediante una interfaz REST. Para limitar el periodo de que un <em>access tokens</em> sea utilizable en caso de ser filtrado estos se crean con un tiempo de vida corto, los clientes para seguir realizando peticiones han de solicitar al servidor de autorización un nuevo <em>access token</em>. La librería OkHttp permite realizar la renovación de forma transparente para el cliente y en el código donde se usa.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2022/09/como-refrescar-el-access-token-de-un-cliente-oauth-cuando-caduca/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2022/09/introduccion-al-protocolo-oauth-2-para-delegar-la-autorizacion/</id>
         <title>Introducción al protocolo OAuth 2 para delegar la autorización</title>
@@ -348,30 +372,6 @@
         
             
                 <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2022/03/detectar-errores-y-comprobar-la-sintaxis-de-los-scripts-de-bash/</id>
-        <title>Detectar errores y comprobar la sintaxis de los scripts de Bash</title>
-        <updated>2022-03-24T22:00:00+01:00</updated>
-        <published>2022-03-24T22:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/03/detectar-errores-y-comprobar-la-sintaxis-de-los-scripts-de-bash/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[
-
-        <p><strong>El lenguaje de <em>scripting</em> Bash permite crear sencillos y no tan sencillos <em>scripts</em> para automatizar tareas del sistema o funciones. Dado que un <em>script</em> de Bash se interpreta no se compila un error no se detecta hasta llegar a la línea con el error que puede ser en la mitad del <em>script</em> dejando la tarea sin finalizar correctamente. Para evitar errores antes de la ejecución del <em>script</em> Bash ofrece varias opciones.</strong></p>
-        
-        <p><a href="https://picodotdev.github.io/blog-bitix/2022/03/detectar-errores-y-comprobar-la-sintaxis-de-los-scripts-de-bash/">Continuar leyendo en Blog Bitix</a></p>
-
-        ]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
             
                 <category term="planeta-codigo"/>
             
