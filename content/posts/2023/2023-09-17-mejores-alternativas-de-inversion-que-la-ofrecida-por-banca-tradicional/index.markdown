@@ -65,6 +65,7 @@ Canales de YouTube hay de muchas temáticas, una de ellas por supuesto es la mat
 
 * [Dinero Currante](https://www.youtube.com/@Dinerocurrante)
 * [Invertir para Conseguir](https://www.youtube.com/@invertirparaconseguir)
+* [Javi Linares](https://www.youtube.com/@Javierlinares)
 
 En cualquier caso conviene tener fuentes fiables y sensatas porque no es nada bueno seguir consejos de otros sin saber lo que se está haciendo.
 
@@ -121,6 +122,9 @@ Hay varias opciones que no ofrecen los bancos tradicionales algunos de ellos son
 ## Alternativa a la banca tradicional para la inversión
 
 Cualquiera de las siguientes opciones es mucho mejor en cuanto a producto financieros que un banco de los grandes en España. Son mucho más transparentes que un banco, ofrecen más información y un servicio completamente digital contratables completamente por internet. Conviene leer sus completas secciones de preguntas frecuentes y ayuda para despejar dudas y de las que se aprende bastante.
+
+{{< youtube
+    video="Yv_Mmf3QzkU&t=110s" >}}
 
 ### Opciones de inversión
 
@@ -180,5 +184,7 @@ Estos son solo algunos vídeos de un par de canales que me han parecido sensatos
     video="XUIbuglXk9U" >}}
 {{< youtube
     video="gvlUSOKUP4w" >}}
+{{< youtube
+    video="4zhHxyH5yr8&t=0s" >}}
 
 {{% /post %}}
