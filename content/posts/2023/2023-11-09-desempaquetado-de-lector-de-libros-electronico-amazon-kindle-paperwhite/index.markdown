@@ -1,8 +1,9 @@
 ---
 pid: 691
 type: "post"
-title: "Desempaquetado de lector de libros electrónico Amazon Kindle Paperwhite"
-url: "/2023/11/desempaquetado-de-lector-de-libros-electronico-amazon-kindle-paperwhite/"
+title: "Desempaquetado de lector de libros electrónico Amazon Kindle Paperwhite (11ª generación)"
+url: "/2023/11/desempaquetado-de-lector-de-libros-electronico-amazon-kindle-paperwhite-11-generacion/"
+aliases: ["/2023/11/desempaquetado-de-lector-de-libros-electronico-amazon-kindle-paperwhite/"]
 date: 2023-11-09T21:00:00+01:00
 language: "es"
 index: true
