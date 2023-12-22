@@ -5,12 +5,36 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2023-11-09T21:00:00+01:00</updated>
+    <updated>2023-12-22T19:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/</id>
+        <title>Centralizar y consultar las trazas de las aplicaciones con Elasticsearch, Logstash y Kibana</title>
+        <updated>2020-09-25T16:00:00+02:00</updated>
+        <published>2020-09-25T16:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>Las aplicaciones monolíticas solo generan un archivo de trazas, es fácil de monitorizar, basta con conectarse por SSH a la máquina de su entorno de ejecución y utilizar los comandos <em>grep</em> o <em>tail</em> o descargarlo para examinarlo con otra herramienta de forma local. Pero aún siendo una aplicación monolítica es raro que una organización tenga solo una aplicación sino varias diferentes y las aplicaciones complejas se dividen en varias aún siendo parte de la misma aplicación. Esto hace que haya múltiples aplicaciones en cuyo caso acceder por SSH a una máquina diferente en cada caso no es cómodo. En el caso de múltiples aplicaciones o aplicaciones basadas en microservicios se opta por centralizar las trazas provenientes de múltiples fuentes en una única herramienta, una de las herramientas es la combinación de Elasticsearch, Logstash y Kibana que forma la pila ELK.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/</id>
         <title>Funcionalidades que necesitan las aplicaciones basadas en microservicios y herramientas que las proporcionan</title>
@@ -338,30 +362,6 @@
         <p><strong>La configuración de seguridad estática y basada en direcciones IP no es adecuada en un entorno en el que los recursos de computación está compartidos y no son confiables, ni para aplicaciones basadas en microservicios cuyo número de servicios e instancias cambia a lo largo del tiempo. Consul y Consul Connect ofrecen un mecanismo de comunicación segura adaptados a la computación en la nube y adecuado para aplicaciones basadas en microservicios.</strong></p>
         
         <p><a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/">Continuar leyendo en Blog Bitix</a></p>
-
-        ]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2020/07/un-comando-y-aplicaciones-graficas-para-descargar-todo-el-contenido-de-un-sitio-web/</id>
-        <title>Un comando y aplicaciones gráficas para descargar todo el contenido de un sitio web</title>
-        <updated>2020-07-19T10:00:00+02:00</updated>
-        <published>2020-07-19T10:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/07/un-comando-y-aplicaciones-graficas-para-descargar-todo-el-contenido-de-un-sitio-web/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[
-
-        
-        
-        <p><a href="https://picodotdev.github.io/blog-bitix/2020/07/un-comando-y-aplicaciones-graficas-para-descargar-todo-el-contenido-de-un-sitio-web/">Continuar leyendo en Blog Bitix</a></p>
 
         ]]>
         </content>
