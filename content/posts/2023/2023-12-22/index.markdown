@@ -79,7 +79,7 @@ He seguido manteniendo las traducciones al español de [VLC][vlc], [KeePassXC][k
 
 Con la situación expuesta anteriormente el número de artículos que he publicado este año ha sido de 24 cuando años anteriores he publicado unos 50, y eso que los primeros meses seguía con mi calendario de publicación semanal, el siguiente año puede que aún sean menos.
 
-Si estás leyendo esto es que quizá aún estás suscrito a mi blog, así que muchas gracias por seguir suscrito y pasar aún a leer lo que escribo, ¡feliz navidad, felices fiestas y que el año 2024 sea un buen año!.
+Si estás leyendo esto es que quizá aún estás suscrito a mi blog, así que muchas gracias por seguir suscrito o de cualquier otra forma que hayas llegado hasta aquí y pasar aún a leer lo que escribo, ¡feliz navidad, felices fiestas y que el año 2024 sea un buen año!.
 
 * [Obtener valores de configuración antes iniciar una aplicación con Spring Boot][blogbitix-668]
 * [Construir la imagen del contenedor de la aplicación usando Buildpacks][blogbitix-669]
