@@ -24,7 +24,7 @@ summary: "Este complicado año 2023 termina con varios cambios en el blog y a ni
 
 En este habitual artículo de final de año hago un repaso de la situación del blog en visitas, ingresos, que he hecho durante el año y todos los artículos que he publicado. Un año este 2023 en el que Blog Bitix al igual que seguramente muchos blogs antes se ha apagado un poco. Sigo publicando artículos, aún me agrada seguir escribiendo cuando tengo ese momento que me apetece, pero ya a un ritmo menor de uno al mes.
 
-Ahora los artículos que publico son para los desempaquetados de productos tecnológicos que compro para mi uso, los análisis de videojuegos de la PlayStation que termino y los artículos de novedades de Java. Esos artículos técnicos de programación explicando como realizar alguna cosa en Java o GNU/Linux que me permitía aprender sobre ello son los artículos que he dejado de publicar no porque no quiera publicarlos sino por el tiempo que me requieren quitar a otras cosas, normalmente poco de esos artículos era nada nuevo que no estuviese ya publicado por otra persona en internet.
+Ahora los artículos que publico son para los desempaquetados de productos tecnológicos que compro para mi uso, los análisis de videojuegos de la PlayStation que termino y los artículos de novedades de Java. Esos artículos técnicos de programación explicando como realizar alguna cosa en Java o GNU/Linux que me permitía aprender sobre ello son los artículos que he dejado de publicar no porque no quiera publicarlos sino por el tiempo que me requieren quitárselo a otras cosas, normalmente poco de esos artículos era nada nuevo que no estuviese ya publicado por otra persona en internet.
 
 {{< tableofcontents >}}
 
