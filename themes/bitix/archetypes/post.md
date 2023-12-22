@@ -3,9 +3,9 @@ pid: 0
 type: "post"
 title: ""
 author: ""
-url: "/2023/01/xxx/"
+url: "/2024/01/xxx/"
 aliases: [""]
-date: 2023-01-01T00:00:00+02:00
+date: 2024-01-01T00:00:00+02:00
 language: "es"
 index: true
 rss: true
