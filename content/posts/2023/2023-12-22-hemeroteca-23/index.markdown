@@ -24,7 +24,7 @@ summary: "Este complicado año 2023 termina con varios cambios en el blog y a ni
 
 En este habitual artículo de final de año hago un repaso de la situación del blog en visitas, ingresos, que he hecho durante el año y todos los artículos que he publicado. Un año este 2023 en el que Blog Bitix al igual que seguramente muchos blogs antes se ha apagado un poco. Sigo publicando artículos, aún me agrada seguir escribiendo cuando tengo ese momento que me apetece, pero ya a un ritmo menor de uno al mes.
 
-Ahora los artículos que publico son para los desempaquetados de productos tecnológicos que compro para mi uso, los análisis de videojuegos de la PlayStation que termino y los artículos de novedades de Java. Esos artículos técnicos de programación explicando como realizar alguna cosa en Java que me permitía aprender sobre ello son los artículos que he dejado de publicar, normalmente poco de esos artículos era nada nuevo que no estuviese ya publicado por otra persona.
+Ahora los artículos que publico son para los desempaquetados de productos tecnológicos que compro para mi uso, los análisis de videojuegos de la PlayStation que termino y los artículos de novedades de Java. Esos artículos técnicos de programación explicando como realizar alguna cosa en Java o GNU/Linux que me permitía aprender sobre ello son los artículos que he dejado de publicar no porque no quiera publicarlos sino por el tiempo que me requieren quitar a otras cosas, normalmente poco de esos artículos era nada nuevo que no estuviese ya publicado por otra persona en internet.
 
 {{< tableofcontents >}}
 
@@ -39,7 +39,7 @@ Antes de que dejase de publicar semanalmente las visitas del blog ya habían baj
 
 ## Evolución ingresos
 
-Al igual que las visitas los ingresos se han reducido notablemente ya que ambos en parte están relacionados. Tanto los ingresos de AdSense, [Videoo][videoo] y Amazon así como de artículos patrocinados se ha reducido notablemente respecto a años anteriores. En los mejores años por AdSense este blog ha generado unos 450 € y ahora no llega a 90 €, eso sí ahora escribiendo y dedicándole mucho menos tiempo.
+Al igual que las visitas los ingresos se han reducido notablemente ya que ambos en parte están relacionados. Tanto los ingresos de AdSense, [Videoo][videoo] y Amazon así como de artículos patrocinados se han caído respecto a años anteriores. En los mejores años por AdSense este blog ha generado unos 450 € y ahora no llega a 90 €, eso sí ahora escribiendo y dedicándole mucho menos tiempo.
 
 {{< image
     gallery="true"
@@ -51,13 +51,13 @@ Al igual que las visitas los ingresos se han reducido notablemente ya que ambos 
 
 ## Sobre Blog Bitix
 
-En abril ya escribí que dejaba de publicar artículos semanalmente. Cada artículo me requiere unas buenas horas y es un tiempo que no me lo dedico a mi, a otras cosas y tareas que también tengo que dedicarle.
+En abril ya escribí que dejaba de publicar artículos semanalmente. Cada artículo me requiere unas buenas horas y es un tiempo que no me lo dedico a mi, a otras cosas y tareas que también requiere dedicarselo.
 
 A pesar de haber decidido de dejar de publicar artículos semanalmente he intentado publicar uno al menos mensualmente pero tampoco sin proponerme un calendario fijo. Ahora público artículo cuando me apetece pasar un tiempo escribiendo un artículo y sigo disfrutando mucho de ello, ahora más porque quiero que por obligación con un calendario fijo. Estar dedicando varias horas a la semana sin ver una compensación de alguna forma en visitas, comentarios o ingresos hace que al final pierda un poco de motivación.
 
 Llevo un tiempo con la intención de grabar uno o dos vídeos para YouTube explicando el script [alis][alis] para instalar [Arch Linux][archlinux] que aún sigo manteniendo y de vez en cuando le aplico alguna mejora. Sin embargo, me siento más torpe hablando y grabando un vídeo que escribiendo un artículo, me lo tomaría como un experimento de a ver cuanto de difícil me resulta, cuanto tiempo me lleva y si estoy contento con el resultado.
 
-Al mismo tiempo ha sido un año que mentalmente y emocionalmente ha hecho replantearme mis prioridades en varios momentos del año, me ha sido un año complicado emocionalmente y de realidad a nivel personal y profesionalmente. Aún con todo lo complicado que haya sido este año, es un año que me hubiera gustado tener hace muchos años antes, muchos. En ese cambio de prioridades aún no tengo claro como va a ser el 2024 y qué más va a cambiar o haré que cambie.
+Al mismo tiempo ha sido un año que mentalmente y emocionalmente ha hecho replantearme mis prioridades en varios momentos del año, a nivel personal y profesionalmente. Aún con todo lo complicado que haya sido este año, es un año que me hubiera gustado tener hace muchos años antes, muchos. En ese cambio de prioridades me planteo como va a ser el 2024 y qué más va a cambiar o haré que cambie según lo que piense, sienta, me motive o quiera hacer.
 
 ## Otras contribuciones
 
