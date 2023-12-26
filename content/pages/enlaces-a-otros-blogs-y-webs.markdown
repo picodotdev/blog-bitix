@@ -141,6 +141,14 @@ Sobre informática.
 
 * [Dot CSV](https://www.youtube.com/channel/UCy5znSnfMsDwaLlROnZ7Qbg)
 
+## Economía, finanzas e inversiones
+
+Una vez que se tienen unos ingresos y acumulan ahorros saber como invertir esos ahorros hace que el propio dinero ahorrado se ponga a trabajar. Las fiannzas, ahorros e inversiones es uno de los temas como algunos otros que no nos forman para la vida y siendo asi conviene por uno mismo tener unas nociones básicas.
+
+* [La hormiga capitalista](https://lahormigacapitalista.com/): grandisimo blog para aprender sobre como invertir, explicado de forma sencilla y para empezar desde un nivel muy básico que permite aprender esas nociones básicas para invertir.
+* [El Blog Salmón](https://www.elblogsalmon.com/): en blog sobre asuntos de la economía con algunos artículos interesantes de leer.
+* [El economista](https://www.eleconomista.es/): diario y noticias sobre economía.
+
 ## Política
 
 * [David Saavedra](https://www.youtube.com/c/DavidSaavedra): el canal de YouTube de un antiguo radicalizado neonazi que al contrario del esteriotipo que podemos tener de los nazis de incultos, paletos y poco ilusrados demuestra en su canal con solo ver unos pocos vídeos de su canal que este en concreto ha leído bastante y seguramente mucho más que muchas personas. El problema es que aún ilustrado debido sus sesgos está ilutrado en propaganda nazi y argumentos nacionalistas muy tóxicos. Por fortuna pora él finalmente se ha dado cuenta de su propio radicalismoa y ahora en su canal da importantes y valiasas lecciones sobre como funciona el fanatistmo y radcalismo que quizá ayuden a alguien a no caer en el radicalismo, radicalismo que incluso hace pensar a personas y actuar de tal forma que va en contra de sus propios intereses, por ejemplo al votar en unas elecciones.
@@ -155,7 +163,6 @@ Otros blog aunque un fuera de tema de los anteriores también muy interesantes.
 * [Blog Talento IT](http://blog.talentoit.org/): un blog desde el punto de vista del _recruiter_, con información relacionada con la retención de talento y consejos para los profesionales de la tecnología.
 * [Justifica tu respuesta](https://justificaturespuesta.com/): es la bitácora de un docente en parte destinado a otros docentes pero que contiene artículos muy interesantes para cualquiera sobre el aprendizaje aplicables en areas distintas a la docencia.
 * [Betabeers](https://betabeers.com/): un gran comunidad de desarrolladores en la que podrás encontrar charlas a las que asistir para aprender temas técnicos sobre programación, desarrollo o tecnología. Consulta su [agenda](https://betabeers.com/event/) y no te pierdas ningún evento cercano a tí, también inspecciona su [sección de empleo](https://betabeers.com/post/) con ofertas de trabajo de empresas muy interesantes, un gran porcentaje son en las grandes ciudades pero también hay varias en otras ciudades importantes.
-* [El Blog Salmón](https://www.elblogsalmon.com/): en blog sobre asuntos de la economía con algunos artículos interesantes de leer.
 * [Bricocrack](https://www.bricocrack.tv/): en su sitio web y en su [canal de YouTube](https://www.youtube.com/c/BricocrackTV) ofrecen información, guías y tutoriales sobre tareas de bricolage muy útiles y bien explicadas que en muchas ocasiones son necesarias para realizar algunas tareas domésticas sin necesidad de un profesional de pequeñas tareas, arreglos o como _hobby_. Un sitio de consulta tanto para personas que necesitan obtener información y resolver dudas así como para usuarios con ya algunos conocimientos que también pueden aprender cosas nueva.
 
 Si tienes un blog personal con una temática similar a las anteriores páginas y blogs en el que se publica con cierta regularidad (semanal, mensual, cada dos meses... pero que sigue vivo) puedes dejar un comentario en esta página o ponerte en contacto conmigo (mi dirección de correo electrónico está en la página [Acerca de...][blogbitix-page-p2]) para hacérmelo llegar. También si conoces un blog que sigues habitualmente en tu lector de _feeds_ del que no te pierdes ninguna de sus entradas y que publica información interesante compártelo ¡yo también quiero conocerlo y leerlo!. Seguro que ahí fuera hay muchos blogs interesantes esperando a ser descubiertos.

@@ -59,6 +59,7 @@ Son varias las opciones de inversión que tiene un blog al que suscribirse y pub
 
 También hay páginas especializadas en materia económica en la que seguir información que afecta a las inversiones.
 
+* [La hormiga capitalista](https://lahormigacapitalista.com/)
 * [elEconomista](https://www.eleconomista.es/)
 
 Canales de YouTube hay de muchas temáticas, una de ellas por supuesto es la materia de economía e inversión. Personas algo más versadas e interesadas en el tema que comparten lo que conocen y su opinión.
