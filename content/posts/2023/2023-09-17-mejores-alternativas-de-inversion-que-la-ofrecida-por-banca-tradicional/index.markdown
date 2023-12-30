@@ -186,6 +186,6 @@ Estos son solo algunos vídeos de un par de canales que me han parecido sensatos
 {{< youtube
     video="gvlUSOKUP4w" >}}
 {{< youtube
-    video="4zhHxyH5yr8&t=0s" >}}
+    video="4zhHxyH5yr8" >}}
 
 {{% /post %}}
