@@ -136,7 +136,7 @@ Al ir al menú cada capítulo indica que cantidad coleccionables tiene y cuantos
     gallery="true"
     image1="image:the-last-of-us-parte-2-capitulos.webp" optionsthumb1="300x200" title1="Capítulos"
     image2="image:the-last-of-us-parte-2-coleccionables.webp" optionsthumb2="300x200" title2="Coleccionables"
-    image3="image:the-last-of-us-parte-2-monedas.jpg" optionsthumb3="300x200" title3="Monedas" >}}
+    image3="image:the-last-of-us-parte-2-monedas.webp" optionsthumb3="300x200" title3="Monedas" >}}
 {{< image
     gallery="true"
     image1="image:the-last-of-us-parte-2-cartas-1.webp" optionsthumb1="300x200" title1="Cartas"
