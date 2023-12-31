@@ -67,6 +67,7 @@ draft: true
 http://thecoverproject.net
 https://www.igdb.com
 https://www.ign.com/wikis/
+https://www.youtube.com/@Kratosworld
 
 {{< comment >}}Sponsored link: Smallpdf{{< /comment >}}
 

@@ -23,6 +23,7 @@ Aún no he jugado a muchos juegos de [la PlayStation 4 que compré][blogbitix-41
 
 Naughty Dog es la misma desarrolladora de otra de las sagas de juegos para PlayStation, la saga de Uncharted también juegos de historia lineal para un jugador del aventurero y cazatestoros Nathan Drake y su compañero Sully.
 
+* [Análisis del juego continuación de la historia The Last of Us Parte II][blogbitix-693]
 * [Análisis de los juegos de aventuras Uncharted The Nathan Drake Collection][blogbitix-622]
 
 Es un juego con muy buenas críticas que ya sabía antes de jugarlo que me iba a gustar y me apetecía jugar por su estilo de juego de historia lineal para descansar de juegos largos y de mundo abierto. A veces un juego tiene buenas críticas pero por diferentes circunstancias no siempre a uno le gusta lo que a la mayoría y a veces uno está deseando un juego y también por lo que sea al final no le resulta tan interesante o entretenido como deseaba.
