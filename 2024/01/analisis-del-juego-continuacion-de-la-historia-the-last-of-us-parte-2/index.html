@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Hace ya algún mes terminé la historia de The Last of Us II, un juego que continúa la historia del primero que era un juego con una historia que tocaba las emociones este segundo no es menos y continua la historia de Joel y Ellie junto a otros personajes que se incorporan. Si la Parte I te gustó, esta Parte II es un imprescindible de las consolas de PlayStation. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Análisis del juego continuación de la historia The Last of Us Parte 2</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/" hreflang="es" title="Análisis del juego continuación de la historia The Last of Us Parte 2">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Análisis del juego continuación de la historia The Last of Us Parte 2">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2_hu6db2c57c02c55a377e8fe15158f5dd9f_210867_750x750_fit_q90_box.jpg">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Hace ya algún mes terminé la historia de The Last of Us II, un juego que continúa la historia del primero que era un juego con una historia que tocaba las emociones este segundo no es menos y continua la historia de Joel y Ellie junto a otros personajes que se incorporan. Si la Parte I te gustó, esta Parte II es un imprescindible de las consolas de PlayStation. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2_hu6db2c57c02c55a377e8fe15158f5dd9f_210867_750x750_fit_q90_box.jpg">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Análisis del juego continuación de la historia The Last of Us Parte 2">
+<meta name="twitter:description" content="Hace ya algún mes terminé la historia de The Last of Us II, un juego que continúa la historia del primero que era un juego con una historia que tocaba las emociones este segundo no es menos y continua la historia de Joel y Ellie junto a otros personajes que se incorporan. Si la Parte I te gustó, esta Parte II es un imprescindible de las consolas de PlayStation. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/"
+    },
+    "headline": "Análisis del juego continuación de la historia The Last of Us Parte 2",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2_hu6db2c57c02c55a377e8fe15158f5dd9f_210867_750x750_fit_q90_box.jpg"
+        
+      },
+    "datePublished": "2023-12-31T10:00:00+02:00",
+    "dateModified": "2023-12-31T10:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1070",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Hace ya algún mes terminé la historia de The Last of Us II, un juego que continúa la historia del primero que era un juego con una historia que tocaba las emociones este segundo no es menos y continua la historia de Joel y Ellie junto a otros personajes que se incorporan. Si la Parte I te gustó, esta Parte II es un imprescindible de las consolas de PlayStation."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9R8XCRGSMY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script async src="https://fundingchoicesmessages.google.com/i/pub-3533636310991304?ers=1" nonce="YREjXyasY5oZO87T8MGIBg"></script><script nonce="YREjXyasY5oZO87T8MGIBg">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"
+    data-type="billboard"></ins>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2_hu6db2c57c02c55a377e8fe15158f5dd9f_210867_2560x1440_fit_q90_h2_box.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:600px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="7450235768"></ins>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Análisis del juego continuación de la historia The Last of Us Parte 2</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>31/12/2023</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/juegos/">juegos</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Hace ya algún mes terminé la historia de The Last of Us II, un juego que continúa la historia del primero que era un juego con una historia que tocaba las emociones este segundo no es menos y continua la historia de Joel y Ellie junto a otros personajes que se incorporan. Si la Parte I te gustó, esta Parte II es un imprescindible de las consolas de PlayStation.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:90px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="8238629013"
+    data-type="leaderboard"></ins>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <p>La saga <a href="https://www.igdb.com/games/the-last-of-us">The Last of Us</a> es uno de los juegos más exitosos de la consola PlayStation, una saga que por sí solos contribuyen al éxito de ventas de las consolas de Sony. Unos juegos que tienen un apartado gráfico impresionante, unas mecánicas de juego de sigilo, supervivencia, sin continuos combates y muchos momentos de exploración y tranquilidad aunque también con momentos de acción y tensión. <a href="https://www.igdb.com/games/the-last-of-us-part-ii">The Last of Us Parte II</a> de <a href="https://www.igdb.com/companies/naughty-dog">Naughty Dog</a> desarrollado para la PS4 en el año 2020.</p>
+<p>Una historia lineal de unas 50-70 horas de juego y ambos The Last of Us imprescindibles en las consolas de PlayStation ya sea en la 4 o en la 5, pero que también estarán disponibles en PC.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2021/10/analisis-del-maravilloso-juego-horrible-the-last-of-us/">Análisis del maravilloso juego horrible The Last of Us</a></li>
+</ul>
+<p>Alguna gente con otro tipo de gusto de juegos se atreve a llamar a este y este tipo de juegos… ¿pelijuegos y pasilleros?, no ha entendido nada del juego.</p>
+<p>En realidad hay muchas cosas que puedes comprar que te hacen más rico. Un libro, una película, una canción, un poema, unas palabras, una entrada para un evento e incluso hay cosas que no cuestan nada como un gracias, un perdón, un tenías razón, un te admiro, un ¿qué tal estás? haces rico a otros. Un videojuego es una de esas cosas que puedes comprar que también te pueden hacer más rico.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2_hu6db2c57c02c55a377e8fe15158f5dd9f_210867_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Pantalla inicial"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2_hu6db2c57c02c55a377e8fe15158f5dd9f_210867_650x450_fit_q90_h2_box.webp" width="650" height="366" alt="Pantalla inicial" title="Pantalla inicial" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-menu_hu95f604d766ed8411cfb1877a99ff5aaa_236394_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Menú"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-menu_hu95f604d766ed8411cfb1877a99ff5aaa_236394_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Menú" title="Menú" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-sony_hu98955363ac52db3c7f5f98a7038f9de3_54657_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Sony"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-sony_hu98955363ac52db3c7f5f98a7038f9de3_54657_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Sony" title="Sony" class="&#34; " loading="lazy"></a></p>
+<figcaption>Pantalla inicial y menú del juego The Last of Us Parte II</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-portada-1_hu91961aad5e619dbe5aa2526b7af36414_82828_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Portada"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-portada-1_hu91961aad5e619dbe5aa2526b7af36414_82828_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Portada" title="Portada" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-portada-2_hu9870cdefefd936c02bd75431a40458c1_5710512_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Portada"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-portada-2_hu9870cdefefd936c02bd75431a40458c1_5710512_200x150_fit_q90_h2_box.webp" width="200" height="111" alt="Portada" title="Portada" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/naughty-dog_hu735285bd8a81d0ce6511ea42a8f9a67b_64002_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Portada"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/naughty-dog_hu735285bd8a81d0ce6511ea42a8f9a67b_64002_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Portada" title="Portada" class="&#34; " loading="lazy"></a></p>
+<figcaption>Portada</figcaption>
+</figure>
+</div>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07LFY8WBX&amp;linkId=04b657cb040b89e785f3200732e19770" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08KJF2D25&amp;linkId=c163f4b3d3b51d2fe8ccccb302d7425d" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08KKJ37F7&amp;linkId=67903dffe174c7dfe0db72fc8dc4e60a" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B087VM5XC6&amp;linkId=a5f2c3f9344d1e0c053b3107c9206429" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08H93ZRLL&amp;linkId=5e23b04975fd43bca64f34932a56b4f6" title="Amazon" class="lozad"></iframe>
+</div>
+<div class="alert alert-warning fs-6">
+    <p class="fs-5 fw-bold">Anticipación del juego</p>
+    <p>Este artículo contiene información del juego y estrategias para completar más fácilmente, parte de la diversión de un juego es descubrir y superar los retos que se plantean por uno mismo. Sin embargo, algunos juegos son difíciles sin una pequeña ayuda que obliga a tener que dedicarles mucho más tiempo o a recomenzarlos.</p>
+    <p>En algunos juegos el argumento es una de las partes más importantes. El texto del artículo no contiene información acerca del argumento del juego, de la mitad o del final, ni hace ningún <i>spoiler</i> por lo que lo puedes leer sin riesgo de conocer alguna parte del argumento de forma anticipada. Sin embargo, algunos enlaces del artículo a otras páginas y vídeos sí pueden contener información del argumento de modo que recomiendo consultar solo las partes del juego una vez superadas.</p>
+</div>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
+    <li><a href="#el-juego">El juego</a>
+      <ol>
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#mecánicas">Mecánicas</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#coleccionables">Coleccionables</a></li>
+      </ol>
+    </li>
+    <li><a href="#banda-sonora-original">Banda sonora original</a></li>
+    <li><a href="#película">Película</a></li>
+    <li><a href="#ubicación-de-los-coleccionables-y-artefactos">Ubicación de los coleccionables y artefactos</a></li>
+  </ol>
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
+<h2 id="el-juego">El juego</h2>
+<h3 id="historia">Historia</h3>
+<p>El juego The Last of Us II es una continuación de la historia en la que acaba el primero. Los personajes principales siguen siendo Joel y Ellie pero este segundo no es un juego exclusivamente de ellos hay varios personajes principales más.</p>
+<p>Por la carátula del juego se adivina cuál va a ser la trama del juego, es diferente a la del primero en cualquier caso sigue siendo un juego que explora las emociones de los personajes y al jugarlo permite experimentarlas, esa es lo que hace de los juegos The Last of Us unos juegos apreciados.</p>
+<p>En realidad en The Last of Us II hay dos historias paralelas y cuanta más detalles de lo que sucede en el primero que hacen que el guión del juego esté a la altura del primero aún siendo diferentes emociones las que se tratan.</p>
+<p>El juego también se desarrolla a través de un viaje entre diferentes zonas. Al igual que el primero los infectados probablemente no son los peores personajes del juego, el comportamiento de los humanos seguramente da más miedo.</p>
+<p>Ocurren hechos dramáticos fruto de la violencia en el juego y de un mundo en el que se está al filo del peligro constantemente y que sirve como base para las historias principales que se narran en el juego.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-1_hu279f32890724ec7dc18e5b373795ddf3_434406_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Juego"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-1_hu279f32890724ec7dc18e5b373795ddf3_434406_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Juego" title="Juego" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-2_hucf5865dd57ed7769ecf8e59aa3135a75_181210_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Juego"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-2_hucf5865dd57ed7769ecf8e59aa3135a75_181210_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Juego" title="Juego" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-3_hueff49ee824fe6a2bc95550bd4ff6eb3f_192669_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Juego"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-3_hueff49ee824fe6a2bc95550bd4ff6eb3f_192669_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Juego" title="Juego" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-4_hu5a7e154fd5509d3a25156b3a60f97152_319920_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Juego"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-4_hu5a7e154fd5509d3a25156b3a60f97152_319920_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Juego" title="Juego" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-5_hu4fca691b4d9ded4aa1552eaa6a0f8d54_525192_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Juego"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-5_hu4fca691b4d9ded4aa1552eaa6a0f8d54_525192_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Juego" title="Juego" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-6_hu8252ac260110f740f6a6439702153282_458328_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Juego"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-6_hu8252ac260110f740f6a6439702153282_458328_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Juego" title="Juego" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-7_hu438b3dba79fa9a176950b0721a64d373_263308_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Juego"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-7_hu438b3dba79fa9a176950b0721a64d373_263308_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Juego" title="Juego" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-8_hu164a620e4fbb23cddf6e846bd1da0f47_203007_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Juego"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-8_hu164a620e4fbb23cddf6e846bd1da0f47_203007_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Juego" title="Juego" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-9_hu285cf5e2b80284b0fac2e1a70f29bc13_245841_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Juego"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-9_hu285cf5e2b80284b0fac2e1a70f29bc13_245841_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Juego" title="Juego" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-10_hu54e35899f143c007ed81ad60bc01a606_469433_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Juego"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-10_hu54e35899f143c007ed81ad60bc01a606_469433_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Juego" title="Juego" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-11_hue74cf7373b1bf98c25d93c4d4b7be591_439546_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Juego"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-juego-11_hue74cf7373b1bf98c25d93c4d4b7be591_439546_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Juego" title="Juego" class="&#34; " loading="lazy"></a></p>
+<figcaption>Juego</figcaption>
+</figure>
+</div>
+<h3 id="mecánicas">Mecánicas</h3>
+<p>Las mecánicas del juego tienen la misma escasez de recursos del primero en el que hay que rebuscar entre los restos que quedan de ese mundo abandonado para encontrar lo que haya y reabastecerse.</p>
+<p>En algún momento tiene alguna zona de mucha más libertad de movimientos y un poco de más de mundo abierto aunque sigue siendo un juego principalmente lineal y con un escenario que dirige la historia de un punto.</p>
+<p>También hay algunas mecánicas nuevas como usar la cuerda o romper cristales que se usan en abundancia. También se usa en algunos momentos el arrancar un motor de gasolina, puzzles, contraseñas de cajas fuertes que habitualmente hay que obtener pistas, bancos de trabajo para mejorar las armas o mover contenedores.</p>
+<p>Las armás tienen sus propias mejoras. Hay algunas armas nuevas como el arco y armas explosivas, un arma para atacar a distancia de forma sigilosa. También hay nuevos tipos de enemigos entre los infectados y humanos que en algunos casos usan perros para rastrear lo que hace que uno no pueda estar esperando permanentemente en el mismo sitio sin hacer nada.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-armas_huf49c54c752700cf0da74135b2bac8bc6_235067_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Armas"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-armas_huf49c54c752700cf0da74135b2bac8bc6_235067_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Armas" title="Armas" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-bancos-de-trabajo_hu8313307e70a5be3a197d3187f426eb39_281904_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Bancos de trabajo"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-bancos-de-trabajo_hu8313307e70a5be3a197d3187f426eb39_281904_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Bancos de trabajo" title="Bancos de trabajo" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-cajas-fuertes_hu6de2a44a31382bea28ec52ea00be5035_210967_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Cajas fuertes"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-cajas-fuertes_hu6de2a44a31382bea28ec52ea00be5035_210967_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Cajas fuertes" title="Cajas fuertes" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-consejos_huefcd9ba91e5a3d41ffab51ea4f5c41c9_95207_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Consejos"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-consejos_huefcd9ba91e5a3d41ffab51ea4f5c41c9_95207_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Consejos" title="Consejos" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-cristales_hu5245a7894ccc6f320934f27589bad83e_296541_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Cristales"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-cristales_hu5245a7894ccc6f320934f27589bad83e_296541_200x150_fit_q90_h2_box.webp" width="200" height="113" alt="Cristales" title="Cristales" class="&#34; " loading="lazy"></a></p>
+<figcaption>Mecánicas</figcaption>
+</figure>
+</div>
+<h3 id="recursos">Recursos</h3>
+<p>Los recursos permiten fabricar diferentes componentes y armas, siguen siendo el agua, botellas, trapos, explosivos.</p>
+<p>Quizá los recursos más importantes que es recomendable no encontrar son los suplementos para mejorar las habilidades del personaje y los componentes que permiten mejorar las armas.</p>
+<p>También son importantes los manuales de entrenamiento que dan nuevas capacidades, estos suelen estar ubicados en sitios fáciles de encontrar a poco que se explore en lugares destacados y siguiendo la historia.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-componentes_hu3a0f851ed88f626b5b3ccd066a4c9cd5_364645_2560x1440_fit_q90_h2_box.webp" data-gallery=""><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-componentes_hu3a0f851ed88f626b5b3ccd066a4c9cd5_364645_300x200_fit_q90_h2_box.webp" width="300" height="169" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-fabricar_hu4e498d7f64b48ac81bed11ed90bdcbe8_366129_2560x1440_fit_q90_h2_box.webp" data-gallery=""><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-fabricar_hu4e498d7f64b48ac81bed11ed90bdcbe8_366129_300x200_fit_q90_h2_box.webp" width="300" height="169" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-habilidades_hu112016bbe6d73728bf99ca955ce662fe_350048_2560x1440_fit_q90_h2_box.webp" data-gallery=""><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-habilidades_hu112016bbe6d73728bf99ca955ce662fe_350048_300x200_fit_q90_h2_box.webp" width="300" height="169" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-manules-de-entrenamiento_huccdb36c600c8ad4bff1454a46394dbff_248615_2560x1440_fit_q90_h2_box.webp" data-gallery=""><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-manules-de-entrenamiento_huccdb36c600c8ad4bff1454a46394dbff_248615_300x200_fit_q90_h2_box.webp" width="300" height="169" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<h3 id="coleccionables">Coleccionables</h3>
+<p>Al ser un juego de exploración y como mecánica de juego están los coleccionables como una forma de recompensa y atrae. Es en los momentos de tranquilidad, exploración de escenario y viaje se encuentran los artefactos y coleccionables.</p>
+<p>Si en el primero los coleccionables eran cómics, en este segundo los coleccionables son cartas de superhéroes y monedas.</p>
+<p>Al ir al menú cada capítulo indica que cantidad coleccionables tiene y cuantos quedan por recoger que da una medida del éxito en la exploración.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-capitulos_hu1fb17f28b207ce7f546be242e06486e2_140940_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Capítulos"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-capitulos_hu1fb17f28b207ce7f546be242e06486e2_140940_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Capítulos" title="Capítulos" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-coleccionables_hu5e2b7387d47b0170d81cae9084d2d3f7_170414_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Coleccionables"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-coleccionables_hu5e2b7387d47b0170d81cae9084d2d3f7_170414_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Coleccionables" title="Coleccionables" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-monedas_hu818d9f38754d5449055044d420ff7767_284029_2560x1440_fit_q90_box.jpg" data-gallery="" title="Monedas"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-monedas_hu818d9f38754d5449055044d420ff7767_284029_300x200_fit_q90_box.jpg" width="300" height="169" alt="Monedas" title="Monedas" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-cartas-1_huc5eb9b9b86513f01b9a5e73a1721c0ae_222527_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Cartas"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-cartas-1_huc5eb9b9b86513f01b9a5e73a1721c0ae_222527_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Cartas" title="Cartas" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-cartas-2_hu0f382224b963d043eedbc8f9e708b52b_192242_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Cartas"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-cartas-2_hu0f382224b963d043eedbc8f9e708b52b_192242_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Cartas" title="Cartas" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-cartas-3_huf27b3358cb6fae5d910d635c4acb6af9_202647_2560x1440_fit_q90_h2_box.webp" data-gallery="" title="Cartas"><img src="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/images/the-last-of-us-parte-2-cartas-3_huf27b3358cb6fae5d910d635c4acb6af9_202647_300x200_fit_q90_h2_box.webp" width="300" height="169" alt="Cartas" title="Cartas" class="&#34; " loading="lazy"></a></p>
+<figcaption>Coleccionables</figcaption>
+</figure>
+</div>
+<h2 id="banda-sonora-original">Banda sonora original</h2>
+<p>La banda sonora es un aspecto que acompaña al juego, una banda sonora melancólica y triste acorde con la historia del juego.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/X-swJqjzjCI" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h2 id="película">Película</h2>
+<p>Hay personas que recopilan las escenas de la historia y las publican como si el juego de una película se tratase. También permite revisitar algún momento que hemos tenido durante el juego para recordarlo.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/psrEOTLsyGQ" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h2 id="ubicación-de-los-coleccionables-y-artefactos">Ubicación de los coleccionables y artefactos</h2>
+<p>Algunos coleccionables son difíciles de encontrar, para conocer donde está el que nos falta hay también vídeos que los recopilan y muestran su ubicación. Conseguir todos los coleccionables suele ser parte de conseguir el trofeo platino.</p>
+<p>Usar este método es un poco hacer trampas pero para no invertir mucho tiempo es la opción de último recurso.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/Grk9AqPZYr4" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>analisis-juegos</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/">El juego XCOM 2 y guía de estrategia</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/04/introduccion-al-juego-de-batallas-navales-world-of-warships-legends-para-consola/">Introducción al juego de batallas navales World of Warships Legends para consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/">Análisis y guía del juego de estrategia Frostpunk</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/10/analisis-y-guia-completa-del-juego-horizon-zero-dawn/">Análisis y guía completa del juego Horizon Zero Dawn</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/">Análisis y guía del juego de rol For the King</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/">Análisis de la serie de juegos de plataformas Trine</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/07/analisis-guia-y-consejos-del-juego-roguelike-darkest-dungeon/">Análisis, guía y consejos del juego roguelike Darkest Dungeon</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/10/analisis-del-maravilloso-juego-horrible-the-last-of-us/">Análisis del maravilloso juego horrible The Last of Us</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/02/analisis-de-los-juegos-de-aventuras-uncharted-the-nathan-drake-collection/">Análisis de los juegos de aventuras Uncharted The Nathan Drake Collection</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/05/analisis-del-juego-de-aventuras-uncharted-4/">Análisis del juego de aventuras Uncharted 4</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/08/analisis-del-juego-con-combates-epicos-god-of-war/">Análisis del juego con combates épicos God of War</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/08/analisis-del-juego-de-la-aventura-galactica-ratchet-y-clank/">Análisis del juego de la aventura galáctica Ratchet &amp; Clank</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/">Análisis del juego espacial de combates por turnos Spaceland</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/">Análisis del juego de sigilo e infiltración táctica Metal Gear Solid V</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/">Análisis del juego continuación de la historia The Last of Us Parte 2</a>
+            </li>
+          
+        </ol>
+      <h3>Este artículo forma parte de la serie <strong>juegos</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/">Jugar al ajedrez en GNU/Linux con GNOME</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-clasico-de-estrategia-de-tablero-go-en-gnu-linux/">Jugar al clásico de estrategia de tablero Go en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/juegos-incluidos-en-el-entorno-de-escritorio-gnome/">Juegos incluidos en el entorno de escritorio GNOME</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/jugar-a-videojuegos-clasicos-y-miticos-de-arcade-con-mame-en-gnu-linux/">Jugar a videojuegos clásicos y míticos de arcade con Mame en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/22-plus-buenos-juegos-en-gnu-linux/">22&#43; buenos juegos en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/varios-juegos-de-culto-con-scummvm-en-gnu-linux/">Varios juegos de culto con ScummVM en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/">Consola de juegos retro con Lakka y una Raspberry Pi</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/12/como-usar-wine-para-jugar-en-gnu-linux-a-juegos-de-windows/">Cómo usar Wine para jugar en GNU/Linux a juegos de Windows</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/">La aplicación cliente de Steam en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/09/desempaquetado-de-playstation-4-slim-de-1-tb/">Desempaquetado de PlayStation 4 Slim de 1 TB</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/">El juego XCOM 2 y guía de estrategia</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/03/que-es-mejor-para-jugar-y-10-variables-para-elegir-entre-pc-o-consola/">Qué es mejor para jugar y 10&#43; variables para elegir entre PC o consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/04/introduccion-al-juego-de-batallas-navales-world-of-warships-legends-para-consola/">Introducción al juego de batallas navales World of Warships Legends para consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/">Análisis y guía del juego de estrategia Frostpunk</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/">Análisis y guía del juego de rol For the King</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/">Estrategia de batalla básica en el juego World of Warships Legends</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/07/analisis-guia-y-consejos-del-juego-roguelike-darkest-dungeon/">Análisis, guía y consejos del juego roguelike Darkest Dungeon</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/10/analisis-del-maravilloso-juego-horrible-the-last-of-us/">Análisis del maravilloso juego horrible The Last of Us</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/02/analisis-de-los-juegos-de-aventuras-uncharted-the-nathan-drake-collection/">Análisis de los juegos de aventuras Uncharted The Nathan Drake Collection</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/05/analisis-del-juego-de-aventuras-uncharted-4/">Análisis del juego de aventuras Uncharted 4</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/08/analisis-del-juego-con-combates-epicos-god-of-war/">Análisis del juego con combates épicos God of War</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/08/analisis-del-juego-de-la-aventura-galactica-ratchet-y-clank/">Análisis del juego de la aventura galáctica Ratchet &amp; Clank</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/">Análisis del juego espacial de combates por turnos Spaceland</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/">Los juegos de Epic Games y GOG en GNU/Linux con el lanzador Heroic Games Laucher</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/">Análisis del juego de sigilo e infiltración táctica Metal Gear Solid V</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/">Análisis del juego continuación de la historia The Last of Us Parte 2</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"
+    data-type="billboard"></ins>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-693';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2024\/01\/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/privacy/">Política de privacidad</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2023 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>
