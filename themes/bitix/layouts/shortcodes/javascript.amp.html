@@ -1,7 +1,0 @@
-{{- $size := .Params.size -}}
-{{- $width := default 650 (index (split $size "x") 0) -}}
-{{- $height := default 563 (index (split $size "x") 1) -}}
-
-<div class="media">
-<a href="https://asciinema.org/a/{{ .Params.id }}" target="_blank"><amp-img src="https://asciinema.org/a/{{ .Params.id }}.png"{{ with $width }} width="{{ . }}"{{ end }}{{ with $height }} height="{{ . }}"{{ end }} class="lozad"></amp-img></a>
-</div>

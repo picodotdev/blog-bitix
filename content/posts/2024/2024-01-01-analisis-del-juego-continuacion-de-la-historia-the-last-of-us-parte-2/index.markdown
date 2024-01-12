@@ -3,7 +3,7 @@ pid: 693
 type: "post"
 title: "Análisis del juego continuación de la historia The Last of Us Parte 2"
 url: "/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/"
-date: 2023-12-31T10:00:00+02:00
+date: 2024-01-01T15:00:00+02:00
 language: "es"
 index: true
 rss: true
