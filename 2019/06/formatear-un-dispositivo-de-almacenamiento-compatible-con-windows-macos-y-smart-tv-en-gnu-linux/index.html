@@ -65,8 +65,8 @@
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
-        "name": "picodotdev",
-        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "name": "",
+        "description": "",
         "url": "https://twitter.com/picodotdev/"
     },
     "publisher": {
@@ -96,11 +96,11 @@
   </script>
 
   <!-- css -->
-  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
-  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" as="style">
   <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" media="all">
   <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
   <!-- theme -->
   <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
@@ -205,7 +205,7 @@
       
         Escrito por
        
-      <span>picodotdev</span> el <time>21/06/2019</time>.
+      <span></span> el <time>21/06/2019</time>.
       
         <br>
         
@@ -250,7 +250,7 @@
 <p>Los sistemas de archivos más compatibles son los que tradicionalmente se han utilizado por <a href="https://www.microsoft.com/">Microsoft</a> dada su amplia cuota de mercado en los sistemas de escritorio, estos son FAT y FAT32. Sin embargo, estos poseen unas limitaciones que no los hacen adecuados si el tamaño de los archivos superan los 4 GiB o la capacidad del sistemas de almacenamiento supera los 2 TiB, que son precisamente los límites máximos de FAT32. Para superar estas limitaciones Microsoft ha desarrollado exFAT como nuevo sistema de archivos para los medios extraíbles con unos límites de 16 EiB (16 x 1024 PiB x 1024 TiB, 16.6M TiB) para los tamaños de archivo y 64 ZiB (64 x 1024 EiB, 65536 EiB) para el sistema de almacenamiento son unos límites varios órdenes de magnitud más grandes (y considerarse infinitos) que las capacidades de la tecnología actual (aunque al ritmo del avance de la tecnología puede que se llegue a ellos dentro de unas décadas).</p>
 <p>En GNU/Linux puede utilizarse FAT32, NTFS y exFAT tanto en modo lectura como escritura, pero Windows solo permite sus propios formatos nativos y ha de utilizarse alguno de los anteriores, macOS soporta FAT en modo lectura y escritura, NTFS en modo lectura y para exFAT soporta también lectura y escritura. Otros dispositivos como <em>Smart TV</em> suelen soportar alguno de los sistemas de archivos de Microsoft ya sea FAT32, NTFS y exFAT. Salvo que se quiera la máxima compatibilidad con FAT32 para con versiones antiguas de Windows o dispositivos con algunos años la opción más recomendable a usar es exFAT.</p>
 <div class="media media-video">
-  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/_h30HBYxtws" frameborder="0" class="lozad" allowfullscreen></iframe>
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/_h30HBYxtws" frameborder="0" title="Vídeo de YouTube" class="lozad" allowfullscreen></iframe>
 </div>
 <p>En GNU/Linux para formatear y utilizar particiones en NTFS hay que instalar el paquete <a href="https://www.archlinux.org/packages/extra/x86_64/ntfs-3g/">ntfs-3g</a> y para exFAT el paquete <a href="https://www.archlinux.org/packages/community/x86_64/exfat-utils/">exfat-utils</a>, estos son los paquetes para <a href="https://www.archlinux.org/">Arch Linux</a> otras distribuciones tienen un paquete equivalente.</p>
 <p>Para formatear una unidad ya sea una memoria USB o disco duro externo con formato exFAT en GNU/Linux con el entorno de escritorio <a href="https://www.gnome.org/">GNOME</a> se realiza con el programa <em>Discos</em>, aunque también es posible realizarlo desde la linea de comandos.</p>
