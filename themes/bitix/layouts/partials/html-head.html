@@ -56,14 +56,13 @@
   <link rel="stylesheet" type="text/css" href="{{ "assets/css/main.css" | relURL }}" media="all">
 
   {{ "<!-- javascript -->" | safeHTML }}
-  <link rel="preload" href="{{ "assets/js/require-config.js" | relURL }}" as="script">
-  <link rel="preload" href="{{ "assets/libs/require.js" | relURL }}" as="script">
   <link rel="preload" href="{{ "assets/js/main.js" | relURL }}" as="script">
   <script type="text/javascript" src="{{ "assets/js/require-config.js" | relURL }}" defer></script>
   <script type="text/javascript" src="{{ "assets/libs/require.js" | relURL }}" data-main="{{ "assets/js/main" | relURL }}" defer></script>
 
-  {{ partial "html-head-analytics.html" . }}
-  {{ partial "html-head-adsense.html" . }}
+  {{/* partial "html-head-analytics.html" . */}}
+  {{/* partial "html-head-adsense.html" . */}}
+  {{ partial "html-head-ad-manager.html" . }}
 
   {{ partial "html-head-custom-css.html" . }}
   {{ partial "html-head-custom-js.html" . }}
