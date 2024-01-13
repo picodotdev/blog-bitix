@@ -1,4 +1,4 @@
-require(['jquery', 'lozad', 'jquery-blueimp-gallery'], function ($, lozad, blueimp) {
+require(['jquery', 'lozad', 'jquery-blueimp-gallery'], function ($, lozad, blueimp) {webp
     function relUrl(path) {
         return $('meta[name="base"]').attr('href') + path;
     }
@@ -11,39 +11,39 @@ require(['jquery', 'lozad', 'jquery-blueimp-gallery'], function ($, lozad, bluei
 
         var spec = {
             backgrounds: [
-                'asanoha.png',
-                'back.png',
-                'circles-and-roundabouts.png',
-                'confectionary.png',
-                'contemporary_china_2.png',
-                'corrugation.png',
-                'contemporary_china.png',
-                'diamond_upholstery.png',
-                'dimension.png',
-                'doodles.png',
-                'eight_horns.png',
-                'escheresque.png',
-                'geometry2.png',
-                'geometry.png',
-                'gplay.png',
-                'grey.png',
-                'lyonnette.png',
-                'memphis-colorful.png',
-                'paisley.png',
-                'photography.png',
-                'playstation.png',
-                'pow-star.png',
-                'psychedelic.png',
-                'pyramid.png',
-                'reticular_tissue.png',
-                'sayagata.png',
-                'skulls.png',
-                'swirl.png',
-                'symphony.png',
-                'tiny_grid.png',
-                'topography.png',
-                'tree_bark.png',
-                'upfeathers.png'
+                'asanoha.webp',
+                'back.webp',
+                'circles-and-roundabouts.webp',
+                'confectionary.webp',
+                'contemporary_china_2.webp',
+                'corrugation.webp',
+                'contemporary_china.webp',
+                'diamond_upholstery.webp',
+                'dimension.webp',
+                'doodles.webp',
+                'eight_horns.webp',
+                'escheresque.webp',
+                'geometry2.webp',
+                'geometry.webp',
+                'gplay.webp',
+                'grey.webp',
+                'lyonnette.webp',
+                'memphis-colorful.webp',
+                'paisley.webp',
+                'photography.webp',
+                'playstation.webp',
+                'pow-star.webp',
+                'psychedelic.webp',
+                'pyramid.webp',
+                'reticular_tissue.webp',
+                'sayagata.webp',
+                'skulls.webp',
+                'swirl.webp',
+                'symphony.webp',
+                'tiny_grid.webp',
+                'topography.webp',
+                'tree_bark.webp',
+                'upfeathers.webp'
             ]
         };
 

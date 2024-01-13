@@ -1,7 +1,7 @@
 @background: white;
 @background-page: #F8F8F8;
 @color: #222;
-@link: rgb(52, 92, 31);
+@link: #198754;
 @border: @background-page;
 
 html {
@@ -34,11 +34,11 @@ a {
 }
 
 a:visited {
-  color: lighten(@link, 15);
+  color: lighten(@link, 10);
 }
 
 a:hover {
-  color: darken(@link, 5);
+  color: darken(@link, 10);
   text-decoration: underline;
 }
 
@@ -145,12 +145,10 @@ header {
 
   nav.nav-pills a:hover {
     color: @link;
-    background-color: lighten(@link, 50);
   }
 
   nav.nav-pills a.active, nav.nav-pills a.active:hover {
     color: @background;
-    background-color: @link;
   }
 
   form.search {
