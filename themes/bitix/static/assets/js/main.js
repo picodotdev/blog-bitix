@@ -1,4 +1,4 @@
-require(['jquery', 'lozad', 'jquery-blueimp-gallery'], function ($, lozad, blueimp) {webp
+require(['jquery', 'lozad', 'jquery-blueimp-gallery'], function ($, lozad, blueimp) {
     function relUrl(path) {
         return $('meta[name="base"]').attr('href') + path;
     }
