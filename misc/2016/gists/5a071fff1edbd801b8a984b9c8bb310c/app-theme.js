@@ -6,17 +6,17 @@ define(['jquery'], function($) {
 
     var spec = {
         backgrounds: [
-           'confectionary.png',
-           'dimension.png',
-           'skulls.png',
-           'tree_bark.png',
-           'contemporary_china_2.png',
-           'eight_horns.png',
-           'swirl_pattern.png',
+           'confectionary.webp',
+           'dimension.webp',
+           'skulls.webp',
+           'tree_bark.webp',
+           'contemporary_china_2.webp',
+           'eight_horns.webp',
+           'swirl_pattern.webp',
            'upfeathers.png',
-           'contemporary_china.png',
-           'paisley.png',
-           'symphony.png'
+           'contemporary_china.webp',
+           'paisley.webp',
+           'symphony.webp'
         ]
     };
 

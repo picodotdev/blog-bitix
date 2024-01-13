@@ -116,13 +116,13 @@ También son importantes los manuales de entrenamiento que dan nuevas capacidade
 
 {{< image
     gallery="true"
-    image1="image:the-last-of-us-parte-2-componentes.webp" optionsthumb1="300x200" title1=""
-    image2="image:the-last-of-us-parte-2-fabricar.webp" optionsthumb2="300x200" title2=""
-    image3="image:the-last-of-us-parte-2-habilidades.webp" optionsthumb3="300x200" title3="" >}}
+    image1="image:the-last-of-us-parte-2-componentes.webp" optionsthumb1="300x200" title1="Componentes"
+    image2="image:the-last-of-us-parte-2-fabricar.webp" optionsthumb2="300x200" title2="Fabricar"
+    image3="image:the-last-of-us-parte-2-habilidades.webp" optionsthumb3="300x200" title3="Habilidades" >}}
 {{< image
     gallery="true"
-    image1="image:the-last-of-us-parte-2-manules-de-entrenamiento.webp" optionsthumb1="300x200" title1=""
-    caption="" >}}
+    image1="image:the-last-of-us-parte-2-manules-de-entrenamiento.webp" optionsthumb1="300x200" title1="Manuales de entrenamiento"
+    caption="Recursos" >}}
 
 ### Coleccionables
 

@@ -28,6 +28,7 @@
 {{- $optionsthumb := default "300x200" (index $attributes "optionsthumb") -}}
 {{- $optionsthumb := replace $optionsthumb "___" " " -}}
 {{- $gallery := eq "true" (index $attributes "gallery") -}}
+{{- $hasthumb := default "false" (index $attributes "commandthumb") -}}
 {{- $class := index $attributes "class" -}}
 {{- $class := replace $class "." " " -}}
 {{- $layout := index $attributes "layout" -}}
@@ -115,8 +116,14 @@
 
       {{- $src = $scaled.RelPermalink -}}
       {{- $srcthumb = $scaledthumb.RelPermalink -}}
-      {{- $width = $scaledthumb.Width -}}
-      {{- $height = $scaledthumb.Height -}}
+
+      {{- if eq $hasthumb "true" -}}
+        {{- $width = $scaledthumb.Width -}}
+        {{- $height = $scaledthumb.Height -}}
+      {{- else -}}
+        {{- $width = $scaled.Width -}}
+        {{- $height = $scaled.Height -}}
+      {{- end -}}
 
       {{- if eq $layout "fixed-height" -}}
         {{- $width = $nil -}}
