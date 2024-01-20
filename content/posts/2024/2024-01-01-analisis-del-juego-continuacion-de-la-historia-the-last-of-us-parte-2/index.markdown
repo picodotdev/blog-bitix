@@ -29,6 +29,9 @@ Alguna gente con otro tipo de gusto de juegos se atreve a llamar a este y este t
 
 En realidad hay muchas cosas que puedes comprar que te hacen más rico. Un libro, una película, una canción, un poema, unas palabras, una entrada para un evento e incluso hay cosas que no cuestan nada como un gracias, un perdón, un tenías razón, un te admiro, un ¿qué tal estás? haces rico a otros. Un videojuego es una de esas cosas que puedes comprar que también te pueden hacer más rico.
 
+{{< amazon
+    tags="game-console" >}}
+
 {{< image
     gallery="true"
     image1="image:the-last-of-us-parte-2.webp" optionsthumb1="650x450" title1="Pantalla inicial" >}}
@@ -43,9 +46,6 @@ En realidad hay muchas cosas que puedes comprar que te hacen más rico. Un libro
     image2="image:the-last-of-us-parte-2-portada-2.webp" optionsthumb2="200x150" title2="Portada"
     image3="image:naughty-dog.webp" optionsthumb3="200x150" title3="Portada"
     caption="Portada" >}}
-
-{{< amazon
-    tags="game-console" >}}
 
 {{< game-spoiler >}}
 {{< tableofcontents >}}

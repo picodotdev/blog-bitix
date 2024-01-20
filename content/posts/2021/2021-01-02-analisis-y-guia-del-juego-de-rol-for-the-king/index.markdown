@@ -33,6 +33,9 @@ For the King me ha parecido un juego muy entretenido, sencillo pero con todos lo
 
 Si For the King es sencillo y no muy difícil [el juego Darkest Dungeon][blogbitix-585] es otro tema diferente, es más complejo y difícil. Darkest Dungeon tiene aspectos similares de exploración de mazmorras, combates por turnos, equipamiento y habilidades, rasgos, enfermedades, muchas clases del héroe, diferentes enemigos y jefes. Si a uno le gusta un juego de los dos seguramente le guste el otro.
 
+{{< amazon
+    tags="game-console" >}}
+
 {{< image
     gallery="true"
     image1="image:for-the-king.webp" optionsthumb1="650x550" title1="Pantalla inicial" >}}
@@ -44,9 +47,6 @@ Si For the King es sencillo y no muy difícil [el juego Darkest Dungeon][blogbit
     gallery="true"
     image1="image:for-the-king-cover.webp" optionsthumb1="200x150" title1="Portada del juego For The King"
     caption="Portada del juego For The King" >}}
-
-{{< amazon
-    tags="game-console" >}}
 
 {{< game-spoiler >}}
 {{< tableofcontents >}}

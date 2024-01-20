@@ -25,6 +25,9 @@ Un juego más sencillo de la escena indie pero que tiene muchos de los component
 
 Es similar a XCOM 2 pero a pesar de ser maś simple y más indie este me ha gustado más en la mecánica de combate que en el XCOM 2 que penaliza mucho los errores y una vez alertados los enemigos se acabó la estrategia que en gran medida consistía en utilizar un granadero para eliminar coberturas y lo que quedase en pie aniquilarlo con los francotiradores y si todavía algo sobrevivía con el resto de personajes.
 
+{{< amazon
+    tags="game-console" >}}
+
 {{< image
     gallery="true"
     image1="image:spaceland.webp" optionsthumb1="650x450" title1="Pantalla inicial" >}}
@@ -33,9 +36,6 @@ Es similar a XCOM 2 pero a pesar de ser maś simple y más indie este me ha gust
     image1="image:spaceland-menu-1.webp" optionsthumb1="300x200" title1="Menú"
     image2="image:spaceland-menu-2.webp" optionsthumb2="300x200" title2="Menú"
     caption="Pantalla incial y menú" >}}
-
-{{< amazon
-    tags="game-console" >}}
 
 {{< game-spoiler >}}
 {{< tableofcontents >}}

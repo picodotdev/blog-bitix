@@ -23,6 +23,9 @@ Hace ya tiempo PlayStation regaló a aquellos usuarios que lo reclamasen varios 
 
 Esta es otra ventaja de llegar tarde a la generación de las consolas, que están todos los juegos de la colección y se pueden jugar seguidos y que además están es posible comprarlos a un buen precio en los momentos que están rebajados.
 
+{{< amazon
+    tags="game-console" >}}
+
 {{< image
     gallery="true"
     image1="image:uncharted-the-nathan-drake-collection.webp" optionsthumb1="650x450" title1="Pantalla inicial" >}}
@@ -42,9 +45,6 @@ Esta es otra ventaja de llegar tarde a la generación de las consolas, que está
     image2="image:uncharted-the-nathan-drake-collection-menu-8.webp" optionsthumb2="200x150" title2="Menú"
     image3="image:uncharted-the-nathan-drake-collection-menu-9.webp" optionsthumb3="200x150" title3="Menú"
     caption="Pantalla inicial y menú" >}}
-
-{{< amazon
-    tags="game-console" >}}
 
 {{< game-spoiler >}}
 {{< tableofcontents >}}

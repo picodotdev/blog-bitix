@@ -110,7 +110,7 @@ Los altavoces que tenía para el ordenador desde hace más de 15 años me empeza
 Aunque las televisiones ya tiene funciones de reproducir contenido por internet en caso de que pasados unos años quizá queden antiguas, los dispositivos Fire TV permiten acceder a contenido multimedia, películas y series a través de los servicios de suscripción en cualquier pantalla de televisión o monitor. También es utilizable en monitores que no tienen esa función reproducción de contenido por internet pero con este dispositivo permite añadirsela.
 
 {{< amazon
-    tags="amazon-fire-stick" >}}
+    tags="amazon-fire-tv" >}}
 
 ## Consola
 

@@ -32,6 +32,9 @@ Antes de empezar el juego God of War sabía que iba a ser un buen juego sin emba
 
 El juego hace varias menciones al Ragnarok que es la segunda parte de God of War ya anunciada. Ya en este primero está diseñado claramente para la segunda parte e incluso en algún momento se indica lo que puede pasar y algunos reinos que en este juego quedan como bloqueados seguramente sean visitables en el [God of War Ragnarok](https://www.igdb.com/games/god-of-war-ragnarok).
 
+{{< amazon
+    tags="game-console" >}}
+
 {{< image
     gallery="true"
     image1="image:god-of-war.webp" optionsthumb1="650x450" title1="Pantalla inicial" >}}
@@ -44,9 +47,6 @@ El juego hace varias menciones al Ragnarok que es la segunda parte de God of War
     gallery="true"
     image1="image:god-of-war-santa-monica-studio.webp" optionsthumb1="200x150" title1="Menú"
     image2="image:god-of-war-cubierta-caja-fisica.webp" optionsthumb2="200x150" title2="Caja física del God of War" >}}
-
-{{< amazon
-    tags="game-console" >}}
 
 {{< game-spoiler >}}
 {{< tableofcontents >}}
