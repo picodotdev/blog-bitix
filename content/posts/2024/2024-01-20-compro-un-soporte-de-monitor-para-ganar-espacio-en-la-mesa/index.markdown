@@ -85,6 +85,9 @@ Si finalmente necesito un segundo monitor que es algo que estoy valorando como n
 
 No seleccioné mucho el soporte que finalmente he comprado, pasados unos días ahora viendo como queda elegiría este otro [soporte de PUTORSEN](https://amzn.to/426axhH) del que me gusta más su abrazadera y diseño mecánico, tiene un precio no demasiado elevado mucho más contenido que los de Ergotron LX. También si volviera a elegir otra vez elegiría una mesa de 160 cm en vez de 140. Otra buena opción de brazo es [Amazon Basic Premium](https://amzn.to/48FPJ3f) pero que no suele estar disponible, es una copia del [Ergotron LX](https://amzn.to/495u2cN).
 
+{{< amazon
+    tags="monitor-arms" >}}
+
 {{< image
     gallery="true"
     image1="image:desempaquetado-soporte-monitor-1.webp" optionsthumb1="300x200" title1="Mesa (antes)"
