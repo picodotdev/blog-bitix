@@ -94,9 +94,6 @@ Entre la cantidad de modelos y marcas que hay en tabletas y libros electrónicos
 
 El [Kindle Fire 8 HD](https://amzn.to/3D6Vab7) tiene un precio para las características que tiene muy ajustado y es difícil encontrar algo mejor por ese precio, pantalla de 8 pulgadas de 1280x800 de resolución con 32 GiB de almacenamiento y procesador de cuatro núcleos. El [Kindle Fire HD 10](https://amzn.to/2WzPkiT) tiene una pantalla algo más grande, de mayor resolución y algo más de almacenamiento, pantalla de 10 pulgadas FHD con 1920x1200 píxeles y entre 32 y 64 GiB.
 
-{{< amazon
-    tags="amazon-fire" >}}
-
 El [Amazon Kindle][amazon-kindle] ya es suficiente para cualquier lector con su capacidad de almacenamiento de 4 GiB (los libros más largos no ocupan ni un _mega_) y tiene pantalla táctil de 6 pulgadas, la diferencia con el [Amazon Kindle Paperwhite][amazon-kindle-paperwhite] es que este último tiene pantalla retroiluminada y algo más resolución junto con una pantalla más grande de 6.8". La diferencia de precio entre ellos no es mucha por lo que salvo que se quiera el precio más barato el Paperwhite es buena opción. El [Kindle Osais][amazon-kindle-oasis] es el modelo más caro pero ofrece una mejor, mayor tamaño pantalla de 7 pulgadas y algo más de capacidad para almacenar contenido.
 
 {{< amazon
@@ -119,7 +116,7 @@ Las consolas son otro de los regalos más populares, entre ellas están la [Sony
 {{< amazon
     tags="playstation-5,xbox-seriesx" >}}
 {{< amazon
-    tags="playstation-4,nintendo-switch" >}}
+    tags="nintendo-switch" >}}
 
 Yo acabé comprando una PlayStation 4, aún estando en su fase final de vida tiene un gran catálogo de juegos y aún saliendo la PlayStation 5 a finales del 2020 durante varios años de transición se seguirán viendo juegos físicos en las tiendas o digitales en la propia PlayStation Store, además en los primeros años la PS5 será mas cara y están las dudas si las primeras versiones estarán libres de fallos además de su limitado catálogo de juegos inicial hechos de forma especifica para aprovechar completamente sus capacidades.
 

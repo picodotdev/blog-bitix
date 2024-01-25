@@ -180,7 +180,7 @@ Las [especificaciones ténicas de la PlayStation 4 Slim](https://www.playstation
 * Salida vídeo: puerto HDMI™ (con soporte para HDR)
 
 {{< amazon
-    tags="playstation-4,playstation-4-controller" >}}
+    tags="game-console,playstation-4-controller" >}}
 
 Estos es lo que incluye la caja del _pack_ que he comprado:
 

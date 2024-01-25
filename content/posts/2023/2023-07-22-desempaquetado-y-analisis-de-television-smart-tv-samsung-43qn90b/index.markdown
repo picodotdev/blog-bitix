@@ -241,7 +241,8 @@ Otros modelos en otros rangos de precios de Samsung que he mirado han sido el 43
 
 {{< amazon
     linkids="b7764113469e36b589f11483d2940f32,fcc2aec0aa65b2022c4d75b3caf993ad"
-    asins="B0BQC4ZMB8,B0BPYYY69J" >}}
+    asins="B0BQC4ZMB8,B0BPYYY69J"
+    titles="Samsung TV Neo QLED 4K 2023 43QN90C,Samsung TV QLED 2023 43Q60C" >}}
 
 ## Conclusión
 

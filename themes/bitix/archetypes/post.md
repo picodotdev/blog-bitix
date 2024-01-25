@@ -28,6 +28,8 @@ draft: true
 {{< amazon
     tags="game-console" >}}
 
+{{< amazon-link product="bandeja-cables-mes" >}}
+
 {{< game-spoiler >}}
 {{< tableofcontents >}}
 

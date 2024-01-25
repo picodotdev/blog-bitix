@@ -96,7 +96,6 @@ MAONO dispone de varios modelos de interfaz de audio, la [Maonocaster Lite AM200
 El precio de la Maonocaster E2 está entorno a los 120 € y la AM200 alrededor de los 90 €. En Amazon solo están las versiones que incluyen un modelo de micrófono, si se quiere otro conviene comprarlas directamente en la página de MAONO, el envío me llegó con origen en China pero en menos de 10 días y sin ningún problema con el código de seguimiento del paquete.
 
 {{< amazon
-    tags=""
     linkids="a87f56c4cbc3f06f1eca105c96646ccf,6459782529c86b25c7f31da3bc6b21d1"
     asins="B09WVMVZK8,B08NPCY5P3" >}}
 

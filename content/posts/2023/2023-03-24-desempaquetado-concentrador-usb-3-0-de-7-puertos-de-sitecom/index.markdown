@@ -71,7 +71,6 @@ El USB 3.0 tiene 5 Gbps teóricos que da entre unos 550 y 600 MB/s de transferen
     caption="Concentrador USB 3.0 de 7+2 y 7 puertos de TP-Link" >}}
 
 {{< amazon
-    tags=""
     linkids="57e06e8bcec14600a692ad74703c8394,e8f3a632ac5945f61d3fd9e7f62988fd"
     asins="B00LI4O9EA,B00LI3Y6TE" >}}
 

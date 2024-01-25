@@ -1,48 +1,43 @@
-{{ $amazontags := $.Site.Data.affiliates.amazon }}
-{{ if eq $amazontags nil }}{{ errorf "Missing affiliates amazon tags info: %s" .Position }}{{ end }}
 
-{{ $ttags := split (default "" .Params.tags) "," }}
-{{ $tlinkids := slice }}
-{{ $tasins := slice }}
-{{ $ttitles := slice }}
-
-{{ range $ttag := $ttags }}
-  {{ if and (ne $ttag nil) (ne $ttag "") }}
-    {{ $t := index $amazontags $ttag }}
-    {{ if eq $t nil }}{{ errorf "Missing affiliates amazon tag %s info" $ttag }}{{ end }}
-    {{ if or (eq (index $t "linkids") "") (eq (index $t "asins") "") }}{{ errorf "Empty amazon tag linkids or asins %s info" $ttag }}{{ end }}
-
-    {{ $tlinkids = $tlinkids | append (split (index $t "linkids") ",") }}
-    {{ $tasins = $tasins | append (split (index $t "asins") ",") }}
-    {{ $ttitles = $ttitles | append (split (index $t "titles") ",") }}
-  {{ end }}
-{{ end }}
-
-{{ $linkids := $tlinkids }}
-{{ $asins := $tasins }}
-{{ $titles := $ttitles }}
-{{ if isset .Params "linkids" }}
-  {{ $linkids = $linkids | append (split .Params.linkids ",") }}
-{{ end }}
-{{ if isset .Params "asins" }}
-  {{ $asins = $asins | append (split .Params.asins ",") }}
-{{ end }}
-{{ if isset .Params "titles" }}
-  {{ $titles = $titles | append (split .Params.titles ",") }}
-{{ end }}
-
-{{ if or (gt (len $linkids) 0) (gt (len $asins) 0) }}
-{{ if ne (len $linkids) (len $asins) }}
-  {{ errorf "Invalid number linkids (%d) and asins (%d) (%s, %s): %s" (len $linkids) (len $asins) (delimit $linkids ",") (delimit $asins ",") .Position }}
-{{ end }}
 <div class="media media-amazon">
   <ul>
-  {{- range $index, $linkid := $linkids -}}
-    {{- $asin := index $asins $index -}}
-    {{- $title := index $titles $index -}}
-    {{- $link := print "https://www.amazon.es/dp/" $asin "?psc=1&linkCode=ll1&tag=" $.Site.Params.amazon.tag "&linkId=" $linkid "&language=es_ES" }}
-    <li><a href="{{ $link }}" title="{{ $title }}">{{ $title }}</a></li>
-  {{- end }}
+    {{ if and (isset .Params "linkids") (isset .Params "asins") }}
+      {{- $linkids := split .Params.linkids "," -}}
+      {{- $asins := split .Params.asins "," -}}
+      {{- $titles := split .Params.titles "," -}}
+      {{- if ne (len $linkids) (len $asins) -}}
+        {{- errorf "Invalid number linkids (%d), asins (%d) and titles (%d) (%s, %s, %s): %s" (len $linkids) (len $asins) (len $titles) (delimit $linkids ",") (delimit $asins ",") (delimit $titles ",") .Position -}}
+      {{- end -}}
+      {{- range $index, $linkid := $linkids -}}
+        {{- $asin := index $asins $index -}}
+        {{- $title := index $titles $index -}}
+        {{- $link := print "https://www.amazon.es/dp/" $asin "?psc=1&linkCode=ll1&tag=" $.Site.Params.amazon.tag "&linkId=" $linkid "&language=es_ES" -}}
+        <li><a href="{{ $link }}" title="{{ $title }}">{{ $title }}</a></li>
+      {{- end -}}
+    {{- end -}}
+    {{- if and (isset .Params "tags") -}}
+      {{- $tags := split .Params.tags "," -}}
+      {{- range $index, $tag := $tags -}}
+          {{- $products := index (index $.Site.Data.affiliates.amazon "tags") $tag -}}
+          {{- if eq $products nil }}{{ errorf "Missing affiliates amazon tag %s information" $tag }}{{ end -}}
+
+          {{- $links := split $products.links "," -}}
+          {{- $asins := split $products.asins "," -}}
+          {{- $titles := split $products.titles "," -}}
+
+          {{- if ne (len $links) (len $asins) -}}
+            {{- warnf "Invalid tag (%s) number links (%d) and asins (%d) (%s, %s)" $tag (len $links) (len $asins) (delimit $links ",") (delimit $asins ",") -}}
+          {{- end -}}
+          {{- if ne (len $links) (len $titles) -}}
+            {{- warnf "Invalid tag (%s) number links (%d) and titles (%d) (%s, %s)" $tag (len $links) (len $titles) (delimit $links ",") (delimit $titles ",") -}}
+          {{- end -}}
+
+          {{- range $index, $link := $links -}}
+            {{- $title := index $titles $index -}}
+            <li><a href="{{ $link }}" title="{{ $title }}">{{ $title }}</a></li>
+          {{- end -}}
+      {{- end -}}
+    {{- end -}}
   </ul>
 </div>
-{{ end }}
+

@@ -1,0 +1,19 @@
+{{- if eq .Params.groups nil }}{{ errorf "Missing groups parameter" }}{{ end -}}
+{{- $groups := split .Params.groups "," -}}
+
+<div class="media media-amazon">
+  <ul>
+    {{ range $index, $group := $groups -}}
+        {{- $products := index (index $.Site.Data.affiliates.amazon "groupProducts") $group -}}
+        {{- if eq $products nil }}{{ errorf "Missing affiliates amazon group %s information1" $group }}{{ end -}}
+        {{- $products := split $products "," -}}
+        {{- range $index, $product := $products -}}
+            {{- $product := index (index $.Site.Data.affiliates.amazon "products") $product -}}
+            {{- if eq $product nil }}{{ errorf "Missing affiliates amazon product %s information1" $product }}{{ end -}}
+            {{- $link := index $product "link" -}}
+            {{- $title := index $product "title" -}}
+            <li><a href="{{ $link }}" title="{{ $title }}">{{ $title }}</a></li>
+        {{- end }}
+    {{- end }}
+  </ul>
+</div>
