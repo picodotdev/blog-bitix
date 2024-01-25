@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["blog", "planeta-codigo"]
 series: ["hemeroteca"]
 library: "true"
@@ -18,7 +18,7 @@ library: "true"
 
 {{% post %}}
 
-{{< logotype image1="blogbitix.svg" >}}
+{{< logotype image1="blog-bitix.svg" >}}
 
 Ya son casi 600 artículos los que he escrito en el blog, con este número de artículos en alguna ocasión al escribir un nuevo artículo a veces tengo que mirar si ya he escrito sobre ello o algo muy similar para no escribir lo mismo con otras palabras. Estos últimos meses muchas semanas solo he escrito un artículo en vez de dos, un poco por no dedicar tanto tiempo al blog pero más por falta de ideas que no me requieran mucho tiempo de investigación, ideas sobre cosas que me gustaría aprender y compartir tengo pero algunas de ellas para poder escribir me requerirían primero una buena cantidad de tiempo de investigación. Y algunos de esos temas sobre los que me gustaría aprender más son cosas muy específicas ni demasiado populares con lo que para el objetivo de seguir haciendo que el blog tenga más visitas no son los más adecuados.
 

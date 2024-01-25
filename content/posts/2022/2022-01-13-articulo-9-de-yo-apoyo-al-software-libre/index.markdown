@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["planeta-codigo", "software-libre"]
 series: ["donacion"]
 summary: "Con los ingresos por publicidad de AdSense, afiliado de Amazon y artículos patrocinados desde hace unos años hago una donación a los programas que utilizo habitualmente o me resultan interesantes. El gestor de contraseñas KeePassXC es uno de los programas que utilizo y me es muy útil para guardar de forma segura las credenciales de inicio de sesión en varios servicios."

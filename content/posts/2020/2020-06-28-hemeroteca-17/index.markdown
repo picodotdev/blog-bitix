@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["blog", "planeta-codigo"]
 series: ["hemeroteca"]
 library: "true"
@@ -18,7 +18,7 @@ library: "true"
 
 {{% post %}}
 
-{{< logotype image1="blogbitix.svg" >}}
+{{< logotype image1="blog-bitix.svg" >}}
 
 Que leáis este blog para mi es mucho aparte de para compartir conocimiento que voy aprendiendo me permite canalizar la frustración de no poder usar en el trabajo mucho de lo que escribo, demasiados años ya. Los pocos comentarios, _retweets_ y favoritos en twitter que recibo me hacen no perder la esperanza y en cierta medida me anima a seguir escribiendo. Aunque se que mi motivación no debería depender de esto si encima no recibiese vistas sería algo que me desmotivaría.
 

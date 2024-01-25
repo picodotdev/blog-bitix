@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["opinion"]
 ---
 

@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["planeta-codigo", "software-libre"]
 series: ["donacion"]
 summary: "Con este artículo continúo haciendo de vez en cuando una pequeña donación a algunos programas que utilizo habitualmente y proyectos que me parecen importántes e útiles con la intención de apoyar su desarrollo aunque sean cantidades pequeñas. Este es ya el octavo artículo de donación que escribo y poco a poco las cantidades que he donado ya empiezan a ser respetables."

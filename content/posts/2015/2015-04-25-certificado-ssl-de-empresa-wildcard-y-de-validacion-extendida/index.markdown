@@ -9,7 +9,7 @@ index: true
 rss: true
 sharing: true
 comments: true
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["programacion", "seguridad", "planeta-codigo", "web"]
 ---
 

@@ -11,7 +11,7 @@ sharing: true
 comments: true
 promoted: false
 imageHead: ""
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["blog", "planeta-codigo"]
 series: ["hemeroteca"]
 library: "true"
@@ -20,7 +20,7 @@ summary: "Este complicado año 2023 termina con varios cambios en el blog y a ni
 
 {{% post %}}
 
-{{< logotype image1="blogbitix.svg" >}}
+{{< logotype image1="blog-bitix.svg" >}}
 
 En este habitual artículo de final de año hago un repaso de la situación del blog en visitas, ingresos, que he hecho durante el año y todos los artículos que he publicado. Un año este 2023 en el que Blog Bitix al igual que seguramente muchos blogs antes se ha apagado un poco. Sigo publicando artículos, aún me agrada seguir escribiendo cuando tengo ese momento que me apetece, pero ya a un ritmo menor de uno al mes.
 

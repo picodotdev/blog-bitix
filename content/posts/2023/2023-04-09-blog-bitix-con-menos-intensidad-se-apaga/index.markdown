@@ -17,7 +17,7 @@ tags: ["blog", "opinion"]
 
 {{% post %}}
 
-{{< logotype image1="blogbitix.svg" >}}
+{{< logotype image1="blog-bitix.svg" >}}
 
 Llevo publicando artículos todas las semanas desde hace algo más de doce años, últimamente un solo articulo a la semana pero ha habido años en los que he estado periodos de tiempo amplios escribiendo dos artículos a la semana. Ya he comentado en las últimas hemerotecas que publico cada seis meses que cada artículo me requiere una gran cantidad de tiempo, tiempo que consume gran parte de mi tiempo libre, más o menos el lunes para hacer un índice y quizá un esbozo de ideas, el martes escribir varias secciones, el miércoles terminar de escribir el artículo y en los artículos que son de código suelo proporcionar un ejemplo funcionar que alojo en GitHub, finalmente el jueves realizar la corrección ortográfica, la edición para publicarlo, releerlo y los últimos retoques para que algunas frases sintácticamente estén bien escritas para una lectura con sentido y fácil, y por supuesto ir anotando ideas para artículos y tomar algunas notas en ellos. El segundo trabajo del blog me ha mantenido ocupado sin pensar siguiendo una inercia que he mantenido porque he querido y he hecho disfrutando por el resultado de compartir contenido que espero haya resultado interesante y útil. 684 artículos de este _Blog Bitix_ y otros 187 de _El blog de pico.dev_, después.
 

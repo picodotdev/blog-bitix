@@ -12,14 +12,14 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["blog", "planeta-codigo"]
 series: ["aniversario"]
 ---
 
 {{% post %}}
 
-{{< logotype image1="blogbitix.svg" >}}
+{{< logotype image1="blog-bitix.svg" >}}
 
 Hoy se cumplen 8 años desde que creé y empecé a escribir en un blog, primeramente [El blog de pico.dev][elblogdepicodev] y más tarde en Blog Bitix. Durante este tiempo he escrito 485 artículos entre ambos blogs, en Blog Bitix ya tengo más artículos escritos y publicados de los que he tenido en El blog de pico.dev. Ocho años ya son una cifra considerable y requiere gran constancia, dedicación, motivación, perseverancia y gran cantidad de tiempo. Muchos blogs no llegan a esta cifra.
 

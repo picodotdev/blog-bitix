@@ -10,7 +10,7 @@ index: true
 rss: true
 sharing: true
 comments: true
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["planeta-codigo", "software-libre"]
 series: ["donacion"]
 ---

@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["blog", "planeta-codigo"]
 series: ["hemeroteca"]
 library: "true"
@@ -19,7 +19,7 @@ summary: "El número de visitas aunque crece muy ligeramente ya no lo hace al ri
 
 {{% post %}}
 
-{{< logotype image1="blogbitix.svg" >}}
+{{< logotype image1="blog-bitix.svg" >}}
 
 Los blogs quizá han perdido relevancia con la aparición [YouTube][youtube], [Twitch][twitch] y las redes sociales como nueva forma de compartir contenido, los vídeos tiene sus ventajas pero también algunas desventajas, una de sus ventajas es que es un contenido más fácil de consumir, leer requiere algo más de esfuerzo y comprender el contenido escrito requiere más atención. La desventaja es que en muchos vídeos los _youtubers_ para decir una única idea la repiten varias veces de diferentes formas resultando en un vídeo de un cuarto de hora cuando en un blog la misma idea se lee en un par de minutos.
 

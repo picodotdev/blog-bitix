@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["blog", "gnu-linux", "java", "planeta-codigo"]
 series: ["hemeroteca"]
 library: "true"
@@ -18,7 +18,7 @@ library: "true"
 
 {{% post %}}
 
-{{< logotype image1="blogbitix.svg" >}}
+{{< logotype image1="blog-bitix.svg" >}}
 
 Estos seis primeros meses del 2019 han transcurrido como todos los años anteriores, sigo manteniendo la constancia de publicar dos artículos nuevos y únicos, algunas semanas sólo uno las menos tres.
 

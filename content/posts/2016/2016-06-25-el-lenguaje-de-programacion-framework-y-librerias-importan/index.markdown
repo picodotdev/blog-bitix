@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["opinion", "planeta-codigo", "programacion", "software"]
 ---
 

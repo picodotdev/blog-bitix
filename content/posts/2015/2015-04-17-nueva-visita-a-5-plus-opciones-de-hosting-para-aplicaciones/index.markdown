@@ -9,7 +9,7 @@ index: true
 rss: true
 sharing: true
 comments: true
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["programacion", "planeta-codigo"]
 summary: "En esta nueva revisión de las opciones de alojamiento que disponemos incluyo algunas nuevas que en su momento no conocía. Dependiendo de las necesidades y del presupuesto que tengamos podemos optar por un servidor propio, un proveedor de _hosting_, usar alguna de las nubes más utilizadas o algún otro PaaS o IaaS."
 ---

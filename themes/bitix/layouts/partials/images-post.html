@@ -1,6 +1,6 @@
 {{ $expression := split .Params.imagePost ":" }}
 {{ $binding := default "logotype" (index $expression 0) }}
-{{ $value := default "blogbitix.svg" (index $expression 1) }}
+{{ $value := default "blog-bitix.svg" (index $expression 1) }}
 {{- $nil := default nil nil -}}
 
 {{ if (eq $binding "image") }}

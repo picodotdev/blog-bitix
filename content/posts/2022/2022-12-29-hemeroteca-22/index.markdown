@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["blog", "planeta-codigo"]
 series: ["hemeroteca"]
 library: "true"
@@ -19,7 +19,7 @@ summary: "Este 2023 he escrito menos artículos que años anteriores, «solo» 5
 
 {{% post %}}
 
-{{< logotype image1="blogbitix.svg" >}}
+{{< logotype image1="blog-bitix.svg" >}}
 
 Aprender cada semana algo sobre programación o tecnología me hace sentir bien y como valoro lo que aprendo me gusta compartirlo en el blog para que otras personas aprendan, que también me hace sentir bien. Si dejase de escribir en el blog no sería porque no quisiera continuar, hay dos motivos por los que probablemente dejaría de escribir. Uno sería por la cantidad de tiempo que requiere escribir cada artículo y el segundo por la falta de ideas que no me requieran gran cantidad de horas de investigación para escribir el artículo. En ambos casos es falta del preciado tiempo o recuperar el tiempo para dedicarlo a otras cosas.
 

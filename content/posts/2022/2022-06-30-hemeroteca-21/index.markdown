@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["blog", "planeta-codigo"]
 series: ["hemeroteca"]
 library: "true"
@@ -19,7 +19,7 @@ summary: "En el resumen de este semestre en Blog Bitix está el haber colaborado
 
 {{% post %}}
 
-{{< logotype image1="blogbitix.svg" >}}
+{{< logotype image1="blog-bitix.svg" >}}
 
 Hay algunos medios que hacen cosas horribles como hablar de algo y no poner ni siquiera un enlace a la página de lo que se habla, quizá por falta de tiempo, no tener que mantener esos enlaces en el futuro o quizá pensando que así no sales de su web. En mis artículos siempre trato de incluir un enlace en la primera referencia de algo.
 

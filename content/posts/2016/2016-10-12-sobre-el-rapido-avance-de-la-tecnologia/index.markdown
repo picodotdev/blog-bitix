@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["opinion","planeta-codigo"]
 summary: "La tecnología en un periodo tan corto como un año avanza significativamente, una buena decisión es comprar un producto cuando realmente lo necesitemos o suponga una mejora notable en las posibilidades que nos ofrece respecto a lo que ya poseemos."
 ---

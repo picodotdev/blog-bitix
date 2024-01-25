@@ -10,14 +10,14 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["blog", "planeta-codigo"]
 series: ["aniversario"]
 ---
 
 {{% post %}}
 
-{{< logotype image1="blogbitix.svg" >}}
+{{< logotype image1="blog-bitix.svg" >}}
 
 _"Bueno, ¡pues ya está!, ya tengo mi propio blog, todavía está en fase de construcción así que según vaya teniendo tiempo iré haciendo pequeños cambios en los gadgets y en su disposición. Por ahora me conformo con tenerlo visible [...].  Pero lo principal, escribir entradas en el blog, es algo que ya puedo realizar. Tratarán sobre temas relacionados con el software libre, incluyendo las dos distribuciones GNU/Linux que en este momento uso más habitualmente que son Ubuntu y Arch Linux, temas de tecnología, quizá temas de programación, experiencias personales sobre los mismos y otras cosas que se me vayan ocurriendo. [...]"_.
 

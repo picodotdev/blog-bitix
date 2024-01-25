@@ -11,14 +11,14 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["blog", "planeta-codigo"]
 summary: "Si tenemos un blog o una página web probablemente requiera algún gasto como el dominio o el _hosting_. Pasado un tiempo si los artículos del blog son interesantes empezaremos a tener visitas que podemos monetizar para costear los gastos y seguramente algo más. En este artículo comento varias formas sencillas de monetizar una página web o blog que algunas no requieren mucho trabajo."
 ---
 
 {{% post %}}
 
-{{< logotype image1="blogbitix.svg" >}}
+{{< logotype image1="blog-bitix.svg" >}}
 
 Lo que más cuesta de tener una página web o blog es el tiempo que requiere escribir los artículos, editarlos, hacer un ejemplo de código si es el caso de un blog técnico como este y obtener las imágenes a incluir. Teniendo en cuenta todas las tareas que requiere cada artículo supone fácilmente un trabajo de entre 3 y 10 horas según mi experiencia. A pesar de todo solo es nuestro tiempo y muchos si seguimos escribiendo en un blog lo hacemos de buen gusto y nuestra propia motivación. Con las vistas que tengo en mi blog, otros blogs con mayor número de visitas los ingresos serán notablemente mayores, suficientes para costear los gastos del blog y algunos pequeños caprichos.
 

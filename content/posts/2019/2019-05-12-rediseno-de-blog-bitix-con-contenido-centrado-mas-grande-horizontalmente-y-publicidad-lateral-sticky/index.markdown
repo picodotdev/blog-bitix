@@ -11,14 +11,14 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["blog", "planeta-codigo"]
 summary: "He cambiado ligeramente el diseño del blog con la intención de mejorar la experiencia de usuario haciendo que el contenido quede centrado en la pantalla en vez de estar desplazado un poco a la izquierda por un panel lateral. Pero más espacio horizontal para el contenido podría afectar negativamente al rendimiento de los _banners_ de publicidad laterales si tenía que quitarlos con lo que he tenido que buscar una solución para ambos requerimientos. También he experimentado con la disposición de la publicidad, incluido un _billboard_ y publicidad lateral _sticky_ para que permanezca más tiempo visible y quizá mejorar su rendimiento."
 ---
 
 {{% post %}}
 
-{{< logotype image1="blogbitix.svg" >}}
+{{< logotype image1="blog-bitix.svg" >}}
 
 En el último [diseño significativo que hice en el 2015][blogbitix-80] cambié a un tema más claro, la posición de varios _banners_ de publicidad además de quitar algunas secciones, otros cambios de menor importancia han sido quitar el justificado del texto o la posición del título en la cabecera, además de generar de forma estática el contenido del blog con [Hugo][hugo] en vez de [Octopress][octopress].
 

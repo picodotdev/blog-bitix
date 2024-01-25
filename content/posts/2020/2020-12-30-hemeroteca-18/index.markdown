@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["blog", "planeta-codigo"]
 series: ["hemeroteca"]
 library: "true"
@@ -18,7 +18,7 @@ library: "true"
 
 {{% post %}}
 
-{{< logotype image1="blogbitix.svg" >}}
+{{< logotype image1="blog-bitix.svg" >}}
 
 Una cosa es escribir artículos de ejemplo y otra usarlos en una empresa que factura unos cuantos cientos de millones de euros cuyo servicio es considerado crítico en producción. Por ejemplo por citar algunos artículos de este año, algo como la autenticación de los usuarios con [Keycloak][keycloak] no es sencillo implementarlo e integrarlo en una organización con numerosos sistemas ya funcionando, o implementar un segundo factor de autenticación, o un sistema para realizar las traducciones, o trazabilidad con [Sleuth][spring-cloud-sleuth] y [Zipkin][zipkin], o tener una herramienta para consultas SQL en producción con [SQLPad][sqlpad], o definir una autoridad de certificación, o disponer de una arquitectura de referencia en grado de producción de las aplicaciones [Consul][consul], [Vault][vault] y [Nomad][nomad] de [HashiCorp][hashicorp]. No solo es usarlo hay que mantenerlo, definir un plan para intervenciones comunes como realizar copias de seguridad de las bases de datos o actualizaciones a nuevas versiones sin que afecte al servicio. Así que los artículos quizá estén muy bien pero hay algunas cosas más a tener en cuenta para aplicarlos en un caso de producción en un organización.
 

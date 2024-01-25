@@ -11,14 +11,14 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:blogbitix.svg"
+imagePost: "logotype:blog-bitix.svg"
 tags: ["blog", "planeta-codigo"]
 summary: "Hugo es un de las mejores herramientas en la categoría de generadores de páginas web estáticas, también puede utilizarse para generar bitácoras. Su fácil instalación, rapidez, personalización o su gran sistema de plantillas y taxonomía son varias de sus características destacadas. Con Hugo conseguí resolver varias de las necesidades que tenía para Blog Bitix, la gestión de enlaces internos y externos, personalización de diseño y procesado de imágenes."
 ---
 
 {{% post %}}
 
-{{< logotype image1="blogbitix.svg" >}}
+{{< logotype image1="blog-bitix.svg" >}}
 
 En diciembre del 2013 pase de usar [Blogger][blogger] a usar [Ocotpress][octopress] junto con [GitHub Pages][github-pages] para el hospedaje. En mayo del 2015 modifiqué mi bitácora para usar en vez de [Octopress][octopress] la herramienta equivalente [Hugo][hugo], ambas sirven para generar sitios web estáticos formados únicamente por HTML, CSS, imágenes, documentos y JavaScript. Tanto Octopress, [Jekyll][jekyll] como Hugo y otros como [Pelican][pelican] son similares, a partir de archivos normalmente en formato _markdown_ genera el HTML de la página web o bitácora junto con los recursos estáticos que necesite. Cada una de estas opciones son adecuadas para páginas de presencia en internet y bitácoras.
 
