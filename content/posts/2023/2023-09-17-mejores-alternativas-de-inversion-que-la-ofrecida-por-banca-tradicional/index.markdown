@@ -41,13 +41,10 @@ Tres libros que me han ayudado a adquirir unos conceptos básicos sobre economí
 
 Son libros cortos que se leen en un par de semanas teniendo un poco de tiempo todos los días, con la posibilidad de leerlos desde el móvil, ordenador con un navegador o un lector de libros electrónicos [Amazon Kindle][amazon-kindle]. Simplemente con estos tres libros uno está mucho más preparado. Estos tres libros complementados con los otros recursos a continuación, uno se da cuenta de hasta que punto los bancos abusan de sus clientes por mucha CNMV y requisitos que se establezcan, si hasta la encuesta de perfilado del cliente es casi rellenada por el empleado del banco.
 
-* [Invierte en ti](https://amzn.to/3RowLYU).
-* [Invierte con poco](https://amzn.to/3Rpi5sF).
-* [Más rentabilidad, menos costes](https://amzn.to/45VNyHg). Un libro de uno de los fundadores de Indexa Capital pero bastante didáctico y documentado de la gestión indexada.
-
 {{< amazon
-    linkids="13d437efafe7261fe050dae8c228f3b4,18a2039d9c64ead7bfd90301e0704c82,86ca0e56b980aa578da9a2f4b428371b"
-    asins="B08NTY588N,B09VQ1PPKF,B08NZTZDHN" >}}
+    linkids="https://amzn.to/3SkNk6W,https://amzn.to/49dkoER,https://amzn.to/3Si4nXl"
+    asins="B09VQ1PPKF,B08NTY588N,B08NZTZDHN"
+    titles="Invierte con poco,Invierte en ti,Menos costes más rentabilidad" >}}
 
 ### Recursos
 

@@ -30,8 +30,9 @@ Hay diferentes estándares de códigos de barras lineales como los de los produc
 Los lectores son un dispositivo hardware que permiten reconocer los códigos, se conectan al ordenador mediante cable USB o de forma inalámbrica y no necesitan de instalar controladores y son compatibles con cualquier sistema operativo ya sea [Windows][windows], [GNU][gnu]/[Linux][linux] o [macOS][macos]. Los lectores de códigos hardware son en esencia un teclado y el código que reconocen es como si se teclea manualmente con un teclado, teclear el código y son compatibles con cualquier programa.
 
 {{< amazon
-    linkids="48b106fcede17cd5010e264dde0c0821"
-    asins="B07CBS52KJ" >}}
+    linkids="https://amzn.to/48TbgFx"
+    asins="B07CBS52KJ"
+    titles="Netum escáner de código de barras" >}}
 
 Hay algunas aplicaciones para generar códigos de barras y códigos QR, dos aplicaciones disponibles en GNU/Linux en formato [Flatpak][flatpak] son [Zint Barcode Studio](https://flathub.org/apps/details/uk.org.zint.zint-qt) que soporta multitud de estándares y [Decoder](https://flathub.org/apps/details/com.belmoussaoui.Decoder) solo sirve para códigos QR pero que permite el reconocimiento dada una imagen o una captura de pantalla.
 

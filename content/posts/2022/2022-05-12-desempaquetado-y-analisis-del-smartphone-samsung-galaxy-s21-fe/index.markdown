@@ -66,8 +66,9 @@ Los móviles Android suelen bajar de precio o a aparecer momentos de oferta al d
 {{< amazon
     tags="smartphone-apple-phone" >}}
 {{< amazon
-    linkids="199b100e5abee25c505b22d230e55b08,6d783bd14c5ec563eb9992141778e26b,d125d3cbcb2b64ae1124dbbd2c07ca77"
-    asins="B09BVKZGHL,B09BK5PSPH,B092ZTDBG3" >}}
+    linkids="https://amzn.to/48SbX1Q,https://amzn.to/3Sa9712,https://amzn.to/3UeQoEr"
+    asins="B09BVKZGHL,B09BK5PSPH,B092ZTDBG3"
+    titles="Motorola Edge 20 Pro,Xiaomi 11T Pro 5G,ONEPLUS 9 Pro 5G" >}}
 
 ## Especificaciones técnicas del Samsung Galaxy S21 FE
 

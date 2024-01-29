@@ -280,8 +280,9 @@ El grupo de usuario de FreeBSD es más reducido y por tanto encontrar respuestas
 También hay algunos libros dedicados en exclusiva a FreeBSD como [Absolute Freebsd: The Complete Guide To FreeBSD](https://amzn.to/3nLLi0h), [Design and Implementation of the FreeBSD Operating System](https://amzn.to/3nCspgc), [FreeBSD Device Drivers: A Guide for the Intrepid](https://amzn.to/3e3an3p), [FreeBSD Mastery: ZFS](https://amzn.to/3e4mU6t) y [FreeBSD Mastery: Advanced ZFS](https://amzn.to/2RaJ26j).
 
 {{< amazon
-    linkids="216b756ebdf87a0f408fad2b0afff135,50dcb39bc5e8af2cab746da01ed6e334,aaf4e00ebd5d4bc04741808aa8ce37e3,0b5660627ebcf9e436d57e63a3329bcf,c56abbe62b62e123f679e7cb762e6f34"
-    asins="1593278926,0321968972,1593272049,1642350001,164235001X" >}}
+    linkids="https://amzn.to/3SgFyeu,https://amzn.to/3SghSH5,https://amzn.to/3HAVhQH,https://amzn.to/3vYlLsU,https://amzn.to/3SkyzRC"
+    asins="1593278926,0321968972,1593272049,1642350001,164235001X" 
+    titles="Absolute FreeBSD,Design and Implementation of the FreeBSD Operating System,FreeBSD Device Drivers: A Guide for the Intrepid,FreeBSD Mastery: ZFS: 7,FreeBSD Mastery: Advanced ZFS: 9" >}}
 
 Eso es todo lo básico para empezar a usar FreeBSD, si alguién lee este artículo y usa FreeBSD u otra distribución BSD como sistema principal o en el trabajo me encantaría conocer más detalles así que si quieres puedes dejar un comentario, también si a alguien que acceda al artículo y lo lea seguro que le resulta interesante como forma de animarse a probar este sistemas operativo de la familia UNIX.
 

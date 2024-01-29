@@ -41,8 +41,9 @@ Apache Kafka es un _broker_ de mensajes altamente escalable al mismo tiempo que 
 La [documentación de Apache Kafka](https://kafka.apache.org/documentation/) para conocer y entender los conceptos básicos es un buen sitio por donde empezar a aprender. Si se quiere algo más guiado y estructurado en el libro [Apache Kafka: The Definitive Guide](https://amzn.to/3HQfnay) se explica de forma detallada todos los principales conceptos de forma detallada incluyendo los parámetros más importantes de configuración, un libro que me ha parecido muy detallado y recomiendo.
 
 {{< amazon
-    linkids="e9a76136c36140e0db4a6d1ecc6e180e"
-    asins="1492043087" >}}
+    linkids="https://amzn.to/3u8VqaV"
+    asins="1492043087"
+    titles="Kafka The Definitive Guide" >}}
 
 ### Por qué Apache Kafka
 

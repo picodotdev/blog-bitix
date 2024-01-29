@@ -96,8 +96,9 @@ Funcionan con conexión por cable USB y algunos son inalámbricos por Bluetooth,
 No son muy caros y hay [multitud de modelos de códigos de barras en Amazon](https://amzn.to/3YCd1S3), hay que fijarse en los estándares de códigos que soporta y si funciona mediante cable o también es inalámbrico y si es por Bluetooth o radiofrecuencia con un adaptador, algunos solo soportan códigos lineales, otros más capaces soportan ambos lineales y matriciales.
 
 {{< amazon
-    linkids="48b106fcede17cd5010e264dde0c0821"
-    asins="B07CBS52KJ" >}}
+    linkids="https://amzn.to/48TbgFx"
+    asins="B07CBS52KJ"
+    titles="Netum escáner de código de barras" >}}
 
 Hay aplicaciones para _smartphones_ que combinado con la cámara y reconocimiento de imagen permite actuar como un lector de códigos. En la tienda de aplicaciones [Google Play][google-play-apps] para [Android][android] hay varias, algunas gratuitas simplemente hay que elegir una de confianza por los comentarios de los usuarios.
 

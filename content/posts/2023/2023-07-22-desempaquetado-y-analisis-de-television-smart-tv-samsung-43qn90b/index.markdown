@@ -60,8 +60,9 @@ La televisión me llega a casa en menos de tres días, con un pequeño golpe en 
 Pesa bastante y cogerla de los bordes una sola persona puede hacer que se doble con algún posible desperfecto. También es muy recomendable evitar presionar la superficie de la pantalla. Por eso es recomendable hacerlo entre dos personas. La superficie de la pantalla refleja bastante casi como un espejo, encendida no hay ningún problema de reflejos.
 
 {{< amazon
-    linkids="bd8f737a5c2797ad8132d8ededa7ceff"
-    asins="B09MW4VZWG" >}}
+    linkids="https://amzn.to/42kkBnj"
+    asins="B09MW4VZWG"
+    titles="Samsung Smart TV Neo QLED 4K 2022 43QN90B" >}}
 
 La caja incluye la pantalla, el pie y un soporte para unir el pie y la pantalla, el mando controlador, cable de alimentación, una guía de montaje y el manual de usuario.
 
@@ -240,7 +241,7 @@ Otros modelos en otros rangos de precios de Samsung que he mirado han sido el 43
 * [DisplaySpecifications de Samsung 43Q60C](https://www.displayspecifications.com/en/model/ee443242)
 
 {{< amazon
-    linkids="b7764113469e36b589f11483d2940f32,fcc2aec0aa65b2022c4d75b3caf993ad"
+    linkids="https://amzn.to/3OmbPQi,https://amzn.to/3OomFFb"
     asins="B0BQC4ZMB8,B0BPYYY69J"
     titles="Samsung TV Neo QLED 4K 2023 43QN90C,Samsung TV QLED 2023 43Q60C" >}}
 

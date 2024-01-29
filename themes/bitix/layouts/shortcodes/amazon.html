@@ -11,8 +11,7 @@
       {{- range $index, $linkid := $linkids -}}
         {{- $asin := index $asins $index -}}
         {{- $title := index $titles $index -}}
-        {{- $link := print "https://www.amazon.es/dp/" $asin "?psc=1&linkCode=ll1&tag=" $.Site.Params.amazon.tag "&linkId=" $linkid "&language=es_ES" -}}
-        <li><a href="{{ $link }}" title="{{ $title }}">{{ $title }}</a></li>
+        <li><a href="{{ $linkid }}" title="{{ $title }}">{{ $title }}</a></li>
       {{- end -}}
     {{- end -}}
     {{- if and (isset .Params "tags") -}}

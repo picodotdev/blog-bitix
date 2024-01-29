@@ -227,8 +227,9 @@ Con el control de tráfico es posible distribuir el número de peticiones que va
 Este artículo es prácticamente un resumen del libro [Consul: Up & Running](https://amzn.to/3F0SmjY) que muestra y explica todo esto de forma más detallada y extensa además de mostrarlo usando Kubernetes. Está bien explicado y su ejemplo es muy fácil de seguir y probar además de muy didáctico para experimentar con los conceptos y funcionalidades comentadas de Consul. Otros libros sobre Consul y _service mesh_ son [Simplifying Service Management with Consul](https://amzn.to/3seULzU) y [Mastering Service Mesh](https://amzn.to/3DiIiS6).
 
 {{< amazon
-    linkids="e909576440e5503d3c2fd4009a91dc61,0d74c8c655bfda8294f77b83a43ea5eb,bfdecdefc368de25311d26426c4f7bdd"
-    asins="1098106148,1800202628,1789615798" >}}
+    linkids="https://amzn.to/3SAIGD8,https://amzn.to/3SFxSUE,https://amzn.to/499LH2U"
+    asins="1098106148,1800202628,1789615798"
+    titles="Consul: Up and Running,Simplifying Service Management with Consul,Mastering Service Mesh" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/ConsulServiceMesh" %}}
 

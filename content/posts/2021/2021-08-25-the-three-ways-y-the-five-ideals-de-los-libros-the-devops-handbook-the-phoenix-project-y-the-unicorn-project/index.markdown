@@ -39,8 +39,9 @@ En mi experiencia profesional de típica consultoría informática no hice prác
 Son libros muy recomendables de leer en los que se mencionan muchos otros bastante populares como [Release it!](https://amzn.to/2WhI4bx), [The Mythical Man Month](https://amzn.to/3Dh6IJI), [Continuous Delivery](https://amzn.to/2XLNtHZ), [The Pragmatic Programmer](https://amzn.to/38c7mtE), [Extreme Programming Explained](https://amzn.to/3sKn4WB).
 
 {{< amazon
-    linkids="9bde9b606b1e5d657881bee89a764d08,12422320bbd79294d7fd0b73ab29b714,2e0e926c66741529fa1963ab16f581d9"
-    asins="1942788002,1942788290,1492091774" >}}
+    linkids="https://amzn.to/3w1EaVn,https://amzn.to/42gMqwW,https://amzn.to/3um8l9n"
+    asins="1942788002,1942788290,1492091774"
+    titles="The DevOPS Handbook,The Phoenix Project,Lean Enterprise" >}}
 
 ### _The first way: The technical practices of flow_
 
@@ -98,8 +99,9 @@ De los mismos autores que los libros anteriores es el libro [The Unicorn Project
 El libro _The Unicorn Project_ explica _The five ideals_ con varios principios que en global _The three ways_ añadiendo el objetivo del éxito desde el punto vista de negocio y de la organización.
 
 {{< amazon
-    linkids="81db509fbd9848a1d9c5e7e0c9454703"
-    asins="1942788762" >}}
+    linkids="https://amzn.to/3Szdc0m"
+    asins="1942788762"
+    titles="The Unicorn Project: A Novel about Developers, Digital Disruption, and Thriving in the Age of Data" >}}
 
 ### _The first ideal: locality and simplicity_
 

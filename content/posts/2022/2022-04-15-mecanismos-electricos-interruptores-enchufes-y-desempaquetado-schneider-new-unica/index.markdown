@@ -484,7 +484,8 @@ Además de los elementos eléctricos puede que sea necesario comprar otros produ
 Otro productos puede ser algo de escayola para arreglar algún desperfecto en la pared o la caja del registro eléctrico. Unas tapas de enchufes _schuko_ para que no se les acumule polvo mientras no se usan, cable eléctrico en caso de tener que sustituir alguno que puentea mecanismos, pintura, pinceles o brochas junto con disolvente. De todo estos productos están disponibles en tiendas especializadas y en [Amazon][amazon-affiliate] también se ofrecen.
 
 {{< amazon
-    linkids="a05d0c46633e11763f7469cae7233d58,e850741c97401d8aabd8db8659b4d6a4,51c758860d6a37e07f1ff4e639208040"
-    asins="B084KZ39J7,B08R1KPR18,B0758C32Y9" >}}
+    linkids="https://amzn.to/48Y9vHu,https://amzn.to/3HCUK0x,https://amzn.to/3SCdun6"
+    asins="B084KZ39J7,B08R1KPR18,B0758C32Y9"
+    titles="9 unidades negro STECKEL tapa echufe schuko,Bruguer Tester Colores del Mundo pintura,Exerz JH024 artist set de Pinceles 10 pinceles profesionales" >}}
 
 {{% /post %}}

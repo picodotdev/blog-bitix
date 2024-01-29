@@ -36,8 +36,9 @@ A diferencia de las herramientas _Enterprise Service Bus_ o ESB que también sin
 Apache Camel soporta multitud de protocolos de comunicación como HTTP, FTP o JMS, formatos de datos como JSON, XML o CSV e  integración con servicios como AWS, [Consul][consul] o Twitter entre muchos otros. También ya tiene implementados multitud de patrones de integración como _choice_, _filter_, _muticast_, _circuit breaker_ o _bulkhead_. Otra de sus funcionalidades es que soporta realizar pruebas unitarias.
 
 {{< amazon
-    linkids="cb1717df1c060bb1b5abc52dbef1eca4"
-    asins="1617292931" >}}
+    linkids="https://amzn.to/49caCmt"
+    asins="1617292931"
+    titles="Camel in Action" >}}
 
 ### Conceptos de Apache Camel
 
@@ -64,8 +65,9 @@ También soporta los patrones de integración identificados en el libro [Enterpr
 * [Patrones de integración de Apache Camel](https://camel.apache.org/components/latest/eips/enterprise-integration-patterns.html)
 
 {{< amazon
-    linkids="69d583b77830660c9d50944e53b68bba"
-    asins="0321127420" >}}
+    linkids="https://amzn.to/47SG48b"
+    asins="0321127420"
+    titles="Patterns of Enterprise Application Architecture" >}}
 
 ### Patrones de integración
 

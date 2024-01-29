@@ -232,7 +232,8 @@ Aún así, los libros explican de otra forma más guiada y paso a paso el funcio
 * [Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring][blogbitix-382]
 
 {{< amazon
-    linkids="38b33d0ec3ca9855c0a981d1e2154b63,eb189e8a81b21d362b31f7b08f4b9f4e"
-    asins="161729327X,1800562497" >}}
+    linkids="https://amzn.to/42k2e22,https://amzn.to/3vWArbW"
+    asins="161729327X,1800562497"
+    titles="OAuth 2 in Action,Keycloak Identity and Access Management for Modern Applications" >}}
 
 {{% /post %}}

@@ -454,8 +454,9 @@ Otro complemento es un cable USB mallado que son de algo más calidad que los de
 {{< amazon
     tags="storage-usb-hub" >}}
 {{< amazon
-    linkids="2a5404595a900d2350f559a44dfc7661"
-    asins="B07D7S93DD" >}}
+    linkids="https://amzn.to/3SASZHl"
+    asins="B07D7S93DD"
+    titles="Amazon Basics Cable USB tipo C a tipo A 3.1 Gen 2" >}}
 
 {{< reference >}}
 * [GMMK International ISO for Full / TKL / Compact. Coming February 2019](https://www.pcgamingrace.com/blogs/news/gmmk-iso-layouts-coming-february-2019)

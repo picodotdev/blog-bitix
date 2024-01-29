@@ -88,8 +88,9 @@ La conectividad de los Kindle se realiza mediante red WIFI o cable USB aceptando
 También [hay fundas para los modelos de Kobo en Amazon](https://amzn.to/3xQI8ge).
 
 {{< amazon
-    linkids="a6f6540fecd4cab154d620198a42b03e,c7e56d247fc06743c49be23705acb7a9"
-    asins="B0BCXLQNCC,B07Y34KS9F" >}}
+    linkids="https://amzn.to/3OlQ42U,https://amzn.to/3SlkMKC"
+    asins="B0BCXLQNCC,B07Y34KS9F"
+    titles="Kobo Clara 2E,Rakuten Kobo Libra" >}}
 
 ### Otras opciones
 
@@ -101,9 +102,9 @@ Otras tiendas como [El Corte Ingles][elcorteingles] o [PcComponentes][pccomponen
 El modelo [PocketBook InkPad Color](https://amzn.to/2PXyLu4) destaca por ser de los pocos que utilizan tinta electrónica a color, para la lectura de novelas el color es prescindible pero es muy interesante para la lectura de _comics_, manga o libros con ilustraciones.
 
 {{< amazon
-    linkids="8081b2d87cde8ad66ace87d164bb385f,7e02ac2d9f0966700fbcde00f3a72342"
-    asins="B08VJK1Y1Q,B08DRTQHF7" >}}
-
+    linkids="https://amzn.to/3UjF4a1,https://amzn.to/3HB8oBi"
+    asins="B08VJK1Y1Q,B08DRTQHF7"
+    titles="PocketBook InkPad Color lector de libros electrónicos pantalla a color,POCKETBOOK Touch Lux 5 Ink Black" >}}
 
 ## Dónde comprar libros electrónicos
 
@@ -116,14 +117,17 @@ Estos son algunos ejemplos de libros electrónicos que Amazon vende en su tienda
 Si el libro deseado a leer no se encuentra en una de estas tiendas porque ya tiene varios años de publicación ni son las últimas novedades o está descatalogado hay algunas páginas de descargas de libros electrónicos al igual que hay páginas de descargas de películas y series que permiten obtener los libros en formato digital.
 
 {{< amazon
-    linkids="277e13215c4352621f714f9b08746d20,0ee872ef22c2a8231ad75e96331521d7,3fa41e17f1872f7d3086b07fe547bbdf"
-    asins="B07J1GFTBJ,B07X6JD96W,B08C35GM6B" >}}
+    linkids="https://amzn.to/3SgGAqW,https://amzn.to/3HC2hN3,https://amzn.to/3HBr97x"
+    asins="B07J1GFTBJ,B07X6JD96W,B08C35GM6B"
+    titles="Reina roja,Loba negra,Rey blanco" >}}
 {{< amazon
-    linkids="92c01a5529b4fb275b3bb76acd654e59,65a421247eab757b7829411228c38740,9942f4afa59d1a6ece826d31a7ff417a"
-    asins="B0062XCJ4O,B006BD4C2W,B006BD49ZC" >}}
+    linkids="https://amzn.to/3Ooph5X,https://amzn.to/499o62j,https://amzn.to/3OhI7fe"
+    asins="B0062XCJ4O,B006BD4C2W,B006BD49ZC"
+    titles="¡Guardias! ¡Guardias!,El nombre del viento,El temor de un hombre sabio" >}}
 {{< amazon
-    linkids="9cb921cc59e0bcba29beccbd0496bed3,c352602ae4971e34279221e21dd001eb,076059e35e486ef95640d590bf054f6e,67f13fead95935374d21ee9e01b26cac"
-    asins="B00MBFNOF0,B00MBFNOEG,B00PJ3MPVA,B00UNZPP84" >}}
+    linkids="https://amzn.to/42pa6zq,https://amzn.to/3OmdMfA,https://amzn.to/3OkZpbf,https://amzn.to/3SB9vah"
+    asins="B00MBFNOF0,B00MBFNOEG,B00PJ3MPVA,B00UNZPP84"
+    titles="Juego de tronos nº 01/04,Juego de tronos nº 02/04,Juego de tronos nº 03/04,Juego de tronos nº 04/04" >}}
 
 ## Cómo añadir libros electrónicos al lector
 

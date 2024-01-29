@@ -45,8 +45,9 @@ Tras no evaluar muchas opciones me que quedado con uno de la reconocida marca de
     caption="Ratones V7 CKW200, Logitech B100 y Apple Magic Mouse" >}}
 
 {{< amazon
-    linkids="d63f97fa9c4bb880893e239466c5cbe5"
-    asins="B07W8LZB2L" >}}
+    linkids="https://amzn.to/42gr6aK"
+    asins="B07W8LZB2L"
+    titles="Logitech M100 Ratón con Cable" >}}
 
 ## Desempaquetado del Logitech Signature M750
 
@@ -152,8 +153,9 @@ La diferencia con el M650 es que el M750 soporta hasta tres dispositivos, el M65
 Entre el M650/M750 y el Lift la diferencia está en que el Lift es un ratón vertical, en teoría más ergonómico que para aquellos que acaben con molestias en las muñecas es su opción. El hecho de que sea vertical tiene el inconveniente de que hay que acostumbrarse a pasar la mano por encima del ratón cuando se mueve del teclado al ratón ya que al tener más altura hay que levantar más la mano y brazo.
 
 {{< amazon
-    linkids="be745aa190442d56a9338e5ccf595863,7ea15bebc537e9c55b30d24d6d53588d"
-    asins="B07W4DGC27,B07W6G822T" >}}
+    linkids="https://amzn.to/3OoflcO,https://amzn.to/3u8BzIX"
+    asins="B07W4DGC27,B07W6G822T"
+    titles="Logitech Lift ratón ergonómico vertical,Logitech Signature M650 ratón inalámbrico" >}}
 
 ## Otras opciones de ratón inalámbrico
 
@@ -162,8 +164,9 @@ El [Logitech Lift](https://www.logitech.com/es-es/products/mice/lift-vertical-er
 El [Logitech MX Anywhere 3S](https://www.logitech.com/es-es/products/mice/mx-anywhere-3s.910-006929.html) se diferencia un poco en el diseño del M750, soporta la configuración de hasta tres dispositivos y su característica diferenciadora principal es que funciona con batería recargable por puerto USB-C y que su precio es más elevado.
 
 {{< amazon
-    linkids="a683f250091b879657df2914f4b178ac"
-    asins="B07W4DGLY6" >}}
+    linkids="https://amzn.to/3SkwsNG"
+    asins="B07W4DGLY6"
+    titles="Logitech MX Anywhere 3S ratón inalámbrico compacto" >}}
 
 ## Análisis en vídeos
 

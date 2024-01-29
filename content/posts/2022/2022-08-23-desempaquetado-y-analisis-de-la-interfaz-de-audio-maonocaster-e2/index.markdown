@@ -96,8 +96,9 @@ MAONO dispone de varios modelos de interfaz de audio, la [Maonocaster Lite AM200
 El precio de la Maonocaster E2 está entorno a los 120 € y la AM200 alrededor de los 90 €. En Amazon solo están las versiones que incluyen un modelo de micrófono, si se quiere otro conviene comprarlas directamente en la página de MAONO, el envío me llegó con origen en China pero en menos de 10 días y sin ningún problema con el código de seguimiento del paquete.
 
 {{< amazon
-    linkids="a87f56c4cbc3f06f1eca105c96646ccf,6459782529c86b25c7f31da3bc6b21d1"
-    asins="B09WVMVZK8,B08NPCY5P3" >}}
+    linkids="https://amzn.to/3Hz52il,https://amzn.to/3HEyt2i"
+    asins="B09WVMVZK8,B08NPCY5P3"
+    titles="MAONOCASTER interfaz de audio con mezclador DJ y tarjeta de sonido,MAONO mesa de mezclas Dj y tarjeta de sonido" >}}
 
 ## Desempaquetado de la interfaz de audio Maonocaster E2
 
@@ -263,8 +264,9 @@ La interfaz de MAONO dispone de batería que permite realizar grabaciones sin un
 * [Desempaquetado y análisis del micrófono MAONO HD300T][blogbitix-644]
 
 {{< amazon
-    linkids="8a22822b7a2b8773353cf7a504a58560,6ed2315c9a05ed8f4f5dd2a5cf93db1f,431ee1436d90139b6ef311f06790dff2,4ece93a4493313ff15aeb319f5bf7d94,966f9b4d697e23918b8680d5fc29db3f,4417aacbe6fa260739ee969dde401776"
-    asins="B085XRGSWV,B097TRJCGJ,B0973DV11T,B09V1KJ3J4,B086R61LN9,B00IZEJFPE" >}}
+    linkids="https://amzn.to/3Sljq2u,https://amzn.to/4bhZB4G,https://amzn.to/49fnAj9,https://amzn.to/49d2YrT,https://amzn.to/49vKMdt"
+    asins="B085XRGSWV,B097TRJCGJ,B0973DV11T,B09V1KJ3J4,B00IZEJFPE"
+    titles="Maono auriculares de estudio,Maono AM200 Maonocaster Lite con micrófono,Elgato Facecam Webcam Full HD 1080p60,Elgato HD60 X capturadora,Sony ICD-PX240 grabadora digital" >}}
 {{< amazon
     tags="monitor-benq" >}}
 

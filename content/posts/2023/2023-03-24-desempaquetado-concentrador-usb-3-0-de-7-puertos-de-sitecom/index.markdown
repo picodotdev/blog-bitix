@@ -71,8 +71,9 @@ El USB 3.0 tiene 5 Gbps teóricos que da entre unos 550 y 600 MB/s de transferen
     caption="Concentrador USB 3.0 de 7+2 y 7 puertos de TP-Link" >}}
 
 {{< amazon
-    linkids="57e06e8bcec14600a692ad74703c8394,e8f3a632ac5945f61d3fd9e7f62988fd"
-    asins="B00LI4O9EA,B00LI3Y6TE" >}}
+    linkids="https://amzn.to/42k1Wbs,https://amzn.to/3OiIDtl"
+    asins="B00LI4O9EA,B00LI3Y6TE"
+    titles="TP-Link UH700 Hub USB de 7 Puertos con adaptador de corriente,TP-Link UH720 Hub USB de 7 Puertos 2 puertos de carga" >}}
 
 ## Concentrador USB 3.0 de Sitecom
 
@@ -101,8 +102,9 @@ Este Sitecom tiene la disposición de puertos que más se ajusta a mi uso, con 7
     caption="Concentrador USB 3.0 de 7 puertos de Sitecom" >}}
 
 {{< amazon
-    linkids="0084766df93bfefb33a782f3453b4708"
-    asins="B019BW4RTM" >}}
+    linkids="https://amzn.to/3Si5OFd"
+    asins="B019BW4RTM"
+    titles="Sitecom Hub USB de 7 puertos" >}}
 
 ### Prueba de velocidad de transferencia
 
@@ -120,15 +122,17 @@ Probando el rendimiento de velocidad de un disco duro USB 2.0 usando el concentr
 Los _hub_ USB de 7 puertos que he visto todos son alimentados, si se prefiere un concentrador no alimentando hay versiones de los anteriores de 4 puertos USB también 3.0. Por supuesto en [Amazon][amazon-affiliate] hay muchos otros modelos de otras marcas en algunos casos más económicos.
 
 {{< amazon
-    linkids="efca2039608fa988bdaf5abd2c2d2659,386eaa7a1a25973f7563b298302af51f"
-    asins="B019BW4RT2,B00V4BGD00" >}}
+    linkids="https://amzn.to/42lN8cu,https://amzn.to/3HB6DUI"
+    asins="B019BW4RT2,B00V4BGD00"
+    titles="Sitecom Hub USB de 4 puertos,TP-Link UH400 Hub USB de 4 puertos" >}}
 
 ## Cable USB a interfaz SATA
 
 Es posible usar las unidades de almacenamiento con interfaz SATA como dispositivos extraibles con un cable adaptador USB a SATA.
 
 {{< amazon
-    linkids="2d2ac037e4401a2139732ad111006255"
-    asins="B017NIDXF0" >}}
+    linkids="https://amzn.to/3HDeaCr"
+    asins="B017NIDXF0"
+    titles="Sabrent adaptador SATA a USB 3.1 para disco duro" >}}
 
 {{% /post %}}

@@ -50,8 +50,9 @@ Patrones tácticos:
 Hay varios libros de referencia sobre DDD, dos de ellos son [Domain-Driven Design: Tackling Complexity in the Heart of Software](https://amzn.to/3cOp5en) y [Domain-Driven Design Distilled](https://amzn.to/2YUbR7y) que explican más en detalle los patrones estratégicos. El libro [Implementing Domain-Driven Design](https://amzn.to/3oPD8Tm) explica más en detalle los patrones tácticos.
 
 {{< amazon
-    linkids="c544ebe228faa80db01bf2fc99ae9078,680dc168e873e6558051b99d115cca0b,0c0434c4b1c647c9aad0334f51990282"
-    asins="0321125215,0134434420,0321834577" >}}
+    linkids="https://amzn.to/47YNJSm,https://amzn.to/47PTxxr,https://amzn.to/3UcKMum"
+    asins="0321125215,0134434420,0321834577"
+    titles="Domain-Driven Design: Tackling Complexity in the Heart of Software,Domain-Driven Design Distilled,Implementing Domain-Driven Design" >}}
 
 ## Arquitectura hexagonal
 
