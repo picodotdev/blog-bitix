@@ -445,7 +445,7 @@
 </ul>
 <div class="media media-amazon">
   <ul>
-    <li><a href="https://www.amazon.es/dp/0596527756?psc=1&amp;linkCode=ll1&amp;tag=blobit-21&amp;linkId=77088bd1b29706cdb837eebce10d8b88&amp;language=es_ES" title=""></a></li><li><a href="https://www.amazon.es/dp/0321356683?psc=1&amp;linkCode=ll1&amp;tag=blobit-21&amp;linkId=cf908dff78cd2b9cd608d868b4de0fa3&amp;language=es_ES" title=""></a></li></ul>
+    <li><a href="77088bd1b29706cdb837eebce10d8b88" title=""></a></li><li><a href="cf908dff78cd2b9cd608d868b4de0fa3" title=""></a></li></ul>
 </div>
 <p>A pesar de los <em>generics</em> y el compilador es posible poner en un <em>String</em> en un <em>HashSet&lt;Integer&gt;</em> usando el tipo <em>raw</em> de <em>HashSet</em>, cosa que se denomina <a href="https://picodotdev.github.io/blog-bitix/2016/05/que-es-el-concepto-de-heap-pollution-en-java/">Heap Pollution</a> y que provoca excepciones <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/ClassCastException.html">ClassCastException</a> en tiempo de ejecución. Usando colecciones envueltas por los métodos <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedSet-java.util.Set-java.lang.Class-">Collections.checkedSet</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedList-java.util.List-java.lang.Class-">checkedList</a> y <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedMap-java.util.Map-java.lang.Class-java.lang.Class-">checkedMap</a> evitaremos el <em>Heap Pollution</em> produciendo una excepción no en el momento de extraer el objeto de la colección sino en el momento de insertarlo.</p>
 <div class="code">
