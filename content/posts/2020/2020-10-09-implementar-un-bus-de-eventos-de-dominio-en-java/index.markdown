@@ -114,8 +114,7 @@ Dependiendo de la lógica de negocio los problemas con mensajes pueden ser difí
 De _Domain Driven Design_ hay varios libros, el libro de referencia sobre la teoría de DDD son [Domain-Driven Design: Tackling Complexity in the Heart of Software](https://amzn.to/33JmDkv), [Domain-Driven Design Distilled](https://amzn.to/34HkDbA), otros más prácticos son [Implementing Domain-Driven Design](https://amzn.to/34yeDSk) y [Domain-Driven Design in PHP: A Highly Practical Guide](https://amzn.to/2SJe2HW).
 
 {{< amazon
-    linkids="5df04454342df14dfcc78687544c9d67,fc00596717d15f5b160a896fa5ce565a,1103b1d87d34d4da91354c2b3d680aba,00c494ddc45b9304145ac8e2733eb072,82d6a16b683b54c2ab34c1e51f63acfb"
-    asins="0321125215,0134434420,1118714709,0321834577,1787284948" >}}
+    tags="books-ddd" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/EventBus" command="./gradlew run" %}}
 

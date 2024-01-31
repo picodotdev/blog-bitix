@@ -39,8 +39,9 @@ Una buena forma de aprender a programar en un lenguaje es utilizando un libro es
 De Java hay mucha documetación y libros con los que aprender a programar, desde básicos hasta más avanzados o temas específicos como la concurrencia. Tres de los mejores libros sobre Java son [Thinking in Java](https://amzn.to/2sNCizu), [Effective Java](https://amzn.to/31GZwFF) y [Java 8 in Action](https://amzn.to/2MXMTi3) sin olvidar otros [buenos libros para mejorar como programadores][blogbitix-55].
 
 {{< amazon
-    linkids="2a437ba4126a093af22af88c893ac407,3a13c135d5cd40ca21d3f1dd853ab2a3,2256857b147eea05bc79aef83d2548fe"
-    asins="0131872486,0134685997,1617291994" >}}
+    linkids="https://amzn.to/47SI9kF,https://amzn.to/497tS4y,https://amzn.to/3vVK0Yy"
+    asins="0131872486,0134685997,1617291994"
+    titles="Thinking in Java,Effective Java,Java 8 in Action" >}}
 
 ## El programa Hola Mundo en Java
 

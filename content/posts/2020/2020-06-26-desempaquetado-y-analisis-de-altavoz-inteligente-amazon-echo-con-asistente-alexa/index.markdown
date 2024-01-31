@@ -47,14 +47,16 @@ Con estas opciones he buscado las primeras opciones que ofrece [Amazon al buscar
 Los básicos.
 
 {{< amazon
-    linkids="d6e5b0f6c78bde2069d2e8821e095c63,9800857d36f4000427c267e498472bcc,8c04ddc7509093793947ae52029e83a2,c076445e432f6790037fac24032b806a"
-    asins="B07D924NF5,B07DKG7K9Y,B018G4AZ7O,B07ZKSKWCS" >}}
+    linkids="https://amzn.to/4bfXmip,https://amzn.to/42o8AgF"
+    asins="B07D924NF5,B07DKG7K9Y"
+    titles="Amazon Basics altavoces para ordenador de sobremesa o portátil,Amazon Basics altavoces multimedia, con cable" >}}
 
 Los similares a los que tenía.
 
 {{< amazon
-    linkids="f29c42af9d24204f63204729c16e36e6,ebdd422effdacdd847cd5bf7111ce06f,6a1d0c9f5e5c02821cf8a6b227632d0f"
-    asins="B00PA99NSG,B00YR92T90,B00S9P0II2" >}}
+    linkids=""
+    asins=""
+    titles="" >}}
 
 En el momento de buscar estas opciones y un poco lo que me ha decidido a comprarlos es que los altavoces inteligentes de Amazon estaban de oferta, entre los varios que tiene está [los altavoces inteligentes Echo con asistente Alexa](https://amzn.to/2G75Qyj), bastante pequeño y compacto, con pocos cables y con buena calidad de sonido al tener altavoz de graves, mucho mejor que la de los propios altavoces del monitor o de un portátil, al menos la suficiente para mi.
 
@@ -258,8 +260,9 @@ Las _skills_ son nuevas funcionalidades, habilidades y comandos que Alexa es cap
 Además de los dispositivos inteligentes como enchufes y bombillas el Echo es capaz de controlar cualquier aparato que tenga un mando por infrarrojos o radiofrecuencia incluyendo televisores, reproductores de vídeo o aires acondicionados. Con un emisor compatible con Alexa es capaz de emitir las señal infrarrojo y radiofrecuencia que el mando del aparato electrónico original y controlarlo. Otros dispositivos controlables son enchufes para encender y apagar aparatos o bombillas regulables en color e intensidad para crear ambientes cómodas para bajar la luminosidad al ver una película.
 
 {{< amazon
-    linkids="7a7cea572346dacf8ef2141263ab837a,93d88d8597b0da6936925ad0d6070c24,7284dbe8a31b1691523fb74bd6183c14"
-    asins="B07ZSG9Y67,B07SPYB4TQ,B07MSCBGZP" >}}
+    linkids="https://amzn.to/3SjWIb5,https://amzn.to/3UglGuC,https://amzn.to/3u7wW1R"
+    asins="B07ZSG9Y67,B07SPYB4TQ,B07MSCBGZP"
+    titles="Mando a distancia universal de audio y vídeo por infrarrojos,Bombilla LED inteligente WiFi regulable,Bombilla Inteligente Bombillas LED WiFi" >}}
 
 ## Problemas, algunos que he resuelto y cosas que me gustaría que tuviese
 
@@ -316,14 +319,16 @@ La familia de altavoces Echo con el asistente Alexa tiene varios miembros.
 * Echo Studio: el dispositivo con el mejor sonido que ofrecen los Echo pero también ocupa más y es más caro, puede sustituir a las barras de sonido para una televisión.
 
 {{< amazon
-    linkids="9f70af9442c978827e9cda1bed971a59,9e40111b1ef2247e65030244ffb3d055,b223da848a7966b52f16be6baf77f696,a84245cd09eca34bc1ecb8e6b3f6cc86"
-    asins="B09B8X9RGM,B09B8RVKGW,B085FXHR38,B07NQDHC7S" >}}
+    linkids="https://amzn.to/48VGaNK,https://amzn.to/3vVKo9s,https://amzn.to/48dRJPj,https://amzn.to/48XxqGK"
+    asins="B09B8X9RGM,B09B8RVKGW,B085FXHR38,B07NQDHC7S"
+    titles="Echo Dot,Echo Dot con reloj,Echo,Echo Studio" >}}
 
 Los Echo Show incluyen una pantalla con la posibilidad de realizar videoconferencias.
 
 {{< amazon
-    linkids="82be0d323ecc21e171b231d2ef2fb30a,30c07c1580452fc59a07b1f7d1de33b4"
-    asins="B08KH2MTSS,B084TNNGPG" >}}
+    linkids="https://amzn.to/49g316p,https://amzn.to/49hyNA0"
+    asins="B08KH2MTSS,B084TNNGPG"
+    titles="Echo Show 5,Echo Show 8" >}}
 
 Tanto Apple como Google ofrecen sus versiones de altavoces inteligentes, Apple el [HomePod](https://www.apple.com/es/homepod/) y Google los [Home](https://store.google.com/product/google_home_speaker) y [Nest Mini](https://store.google.com/product/google_nest_mini).
 

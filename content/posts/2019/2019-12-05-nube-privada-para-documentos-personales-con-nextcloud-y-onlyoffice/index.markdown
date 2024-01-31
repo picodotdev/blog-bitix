@@ -29,8 +29,9 @@ Los servicios en la nube permiten guardar los documentos e información fuera de
 Una [Raspberry Pi 4][raspberrypi] o una de sus [7 computadoras alternativas][blogbitix-304] similares es una buena opción como servidor por su pequeño tamaño, bajo consumo, totalmente silencioso con un recomendable disipador pasivo y suficiente para ejecutar con normalidad Nextcloud con los 4 GiB de memoria del modelo con más capacidad. Hay [otras placas similares][blogbitix-304] o incluso se puede utilizar un [Intel NUC][blogbitix-363] que permiten más cantidad de memoria y sus procesadores son más capaces. Para una nube privada una Raspberry Pi es interesante por su pequeño tamaño y bajo consumo eléctrico dado que su funcionamiento sería constante.
 
 {{< amazon
-    linkids="6e87726b77e92056e7ac168add1bc747,bef0fad42b2cc046799c66f7fa220c0f,d64d66fda7d25defd2018c4119aa7e46,df5c52be4ca21b9991d26145edb0b642,39ee0802cdc202ce8259d463b59224ed"
-    asins="B07TC2BK1X,B07XNVPK8X,B073JWXGNT,B014I8U33I,B07VMXHJ4Q" >}}
+    linkids="https://amzn.to/3HHqHF2,https://amzn.to/3upRAdr,https://amzn.to/3SnDf9h,https://amzn.to/3SDsAJc,https://amzn.to/42pxgpo"
+    asins="B07TC2BK1X,B07XNVPK8X,B073JWXGNT,B014I8U33I,B07VMXHJ4Q"
+    titles="Raspberry Pi 4 4G,ZkeeShop Caja de Aluminio,SanDisk Ultra 32 GB microSDHC,Amazon Basics cable micro HDMI a HDMI,Aukru 5V 3A cargador fuente de alimentación" >}}
 
 Usando [Docker][docker] y el [repositorio de GitHub](https://github.com/ONLYOFFICE/docker-onlyoffice-nextcloud) es sencillo iniciar el servidor de Nextcloud realizando los siguientes pasos.
 

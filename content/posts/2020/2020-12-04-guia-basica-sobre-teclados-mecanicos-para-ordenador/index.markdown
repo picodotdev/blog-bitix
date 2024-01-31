@@ -118,8 +118,9 @@ El probador incluye un extractor de _keycaps_ y aros de goma para probar la dife
     caption="Probador de switches Cherry MX" >}}
 
 {{< amazon
-    linkids="0805e80584facbae53611545e724ca20"
-    asins="B01GZHU1EG" >}}
+    linkids="https://amzn.to/3SEqY1A"
+    asins="B01GZHU1EG"
+    titles="AKWOX 9-Key Cherry MX Switch Tester" >}}
 
 En este vídeo se muestran los diferentes tipos de _switches_ y el sonido característico de los _clicky_, de los táctiles y lineales.
 
@@ -279,8 +280,9 @@ El teclado [DREVO Calibur V2 TE][amazon-drevo-calibur-v2-te] ofrece un interedio
 * [Página del fabricante del teclado DREVO Calibur V2 TE](https://www.drevo.net/product/keyboard/calibur-v2-te)
 
 {{< amazon
-    linkids="bd7e81798a9d04ab4943e6f9754d0072,aaa5f003821ff164674045386933a0a9"
-    asins="B07TLMYKWK,B07TKM6DZ4" >}}
+    linkids="https://amzn.to/3UmCC2o"
+    asins="B07TLMYKWK"
+    titles="DREVO Calibur V2 TE RGB" >}}
 
 {{< youtube
     video="nD42ZkgvhTs" >}}

@@ -32,7 +32,8 @@ Para mantener la compatibilidad hacia atrás y hacer más sencillo la transició
 Ya se han publicado varios libros que explican detalladamente la modularidad introducida en Java 9. Cualquiera de ellos es una guía completa de la modularidad de Java.
 
 {{< amazon
-    linkids="9c7874501bb32fa3318e285022e0207a,59d96101c25f9c16c4427b8ee9daef1a"
-    asins="1484225910,1484227123" >}}
+    linkids="https://amzn.to/3SoCcWZ,https://amzn.to/3Omskf5"
+    asins="1484225910,1484227123"
+    titles="Java 9 Revealed: For Early Adoption and Migration,Java 9 Modularity Revealed: Project Jigsaw and Scalable Java Applications" >}}
 
 {{% /post %}}

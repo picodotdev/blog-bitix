@@ -55,14 +55,16 @@ También hay que tener el cuenta el diámetro de la olla y de los fuegos de la v
 Mis opciones preferentes han estado entre las marcas [Fissler](http://www.fissler.es/), [WMF](https://www.wmf.com/es/) y [Kuhn Rikon](https://es.kuhnrikon.com/), son modelos considerados de la gama alta, todos con precios de venta similares.
 
 {{< amazon
-    linkids="f02b378b375a10d65969c03cb1b619a7,bce2e73751768314b276ffb4bb1a6079,28661e433ac015da563eeec8435bea44,aa901c01377a395d42eb8c8d9ccece97,edab63327e2687be0f27ea8d26e512d2"
-    asins="B0026P386U,B000XG6PCS,B004TNOL9K,B003JQLMEA,B0017TJDK6" >}}
+    linkids="https://amzn.to/3SEyHwF"
+    asins="B000XG6PCS"
+    titles="WMF Perfect Plus olla rápida (22 cm 3 litros)" >}}
 
 He visto algún modelo más económico como [Elo Praktika Xs](https://amzn.to/37qtcI7), [Alza Space](https://amzn.to/36svR2p) y [Bra Vitesse](https://amzn.to/38CN5f0).
 
 {{< amazon
-    linkids="50e3609e2742c6353739313b40f48f29,5e410f76cb11bcf3a2ab574735000309,a802ef3b41734abd1e6db4ac63444067"
-    asins="B000LCLWMC,B009W4DYQC,B006FXAFF6" >}}
+    linkids="https://amzn.to/3w6S4ph,https://amzn.to/3vYfm0C"
+    asins="B000LCLWMC,B006FXAFF6"
+    titles="Elo Praktika XS olla a presión pequeña (2.7 litros),BRA Vitesse olla a presión (4 litros)" >}}
 
 Mi madre tenía una Fissler y le ha durado mucho tiempo aunque permite elegir la presión que no tiene otros modelos finalmente la he descartado porque el modelo nuevo [Fissler Vitavit Comfort](https://amzn.to/36p4d6o) para la válvula tiene una membrana de silicona en vez de ser completamente de metal como el anterior, esto hace que tenga otro elemento que posiblemente necesita repuesto y puede que frágil, además la válvula es algo más difícil de limpiar por la pieza de metal que tiene en ella.
 
@@ -94,7 +96,8 @@ El sistema de cierre es automático, el bulón de la tapa se retrae cuando la ta
 
 {{< amazon
     linkids="28661e433ac015da563eeec8435bea44"
-    asins="B004TNOL9K" >}}
+    asins="B004TNOL9K"
+    titles="" >}}
 
 Su sistema de liberación de presión no es el habitual que está en el mango sino que hay que presionar la válvula indicadora de la presión hacia abajo, el embellecedor de la válvula hace que el vapor se libere de forma segura sin riesgo de quemarse. Este embellecedor o tapa de plástico no es imprescindible para su funcionamiento pero si para liberar la presión que hace que se expulse el vapor con más seguridad. Algunos usuarios comentan algo de fragilidad de esta tapa con lo que la quitarla y ponerla es conveniente hacerlo con cuidado para evitar romper alguna de las patas de plástico que le permiten ajustarse a la válvula.
 
@@ -168,7 +171,8 @@ Encontrar repuestos hace que no sea necesario comprar una nueva olla que salvo l
 
 {{< amazon
     linkids="d8dcfee2893422f4b8b1c15ce2d3aa9c,034dfff978a06245f548eeb4bdeb9715,ae9611cd66ce6971c2d65bd25dbbd6a6,fde1e977858635e14a86442d343bead0,eb4d7ed033e0d21454f46297749b1f09"
-    asins="B00009A9Y1,B07QXTBSJB,B07QXTBSJC,B000P152I4,B000P1AIV0" >}}
+    asins="B00009A9Y1,B07QXTBSJB,B07QXTBSJC,B000P152I4,B000P1AIV0"
+    titles="" >}}
 
 ## Primer uso
 
@@ -206,21 +210,24 @@ Los _tuppers_ de 840 ml tiene unas dimensiones de 18,5 cm de largo, 12 cm de anc
 
 {{< amazon
     linkids="c06f642ccc95b7397a03c9ec47623f59,6c27a616445315e7445ed7ef5c0792f8"
-    asins="B07XJDRDDM,B07RRK38K1" >}}
+    asins="B07XJDRDDM,B07RRK38K1"
+    titles="" >}}
 
 ## Otros complementos
 
 Un complemento a una olla exprés son los robots de cocina que permiten realizar algunas recetas y elaboraciones adicionales como salsas, cremas y sofritos, la diferencia está en que suelen tener una capacidad de mayor de 5 litros y ser sensiblemente más caros al menos los modelos de gama alta. Son un complemento porque hasta donde he visto estos aparatos no hacen la función de una olla rápida, no trabajan con presión.
 
 {{< amazon
-    linkids="c3b40ef1da3c973bb5f496bad81aa984,3a93fb30dcd5dfaba42f9a7b5dcfba74,4ae428ee41b2d2917d0213814a02f1c0,2a3f10222256601ee5c16268bf2475e2"
-    asins="B015993ZGW,B09738LQ6M,B08HM6FC2X,B07RYKMWXD" >}}
+    linkids="https://amzn.to/486rpXi,https://amzn.to/3uhSc4W,https://amzn.to/49kGNQN"
+    asins="B015993ZGW,B09738LQ6M,B08HM6FC2X"
+    titles="Moulinex Maxichef Advance MK8121 robot de cocina,Moulinex ClickChef HF4SPRBL robot de cocina multifunción,Cecotec Robot de cocina multifunción" >}}
 
 Por supuesto otros elementos indispensables son las típicas sartenes de diferentes tamaños. Hace ya tiempo compre un [conjunto de sartenes de la marca BRA](https://amzn.to/37q4g3q) con las que estoy muy contento con su calidad.
 
 {{< amazon
-    linkids="cd5fd58b369e8846a5bf5b27902d9380"
-    asins="B00BLMLIAC" >}}
+    linkids="https://amzn.to/4blhwYA"
+    asins="B00BLMLIAC"
+    titles="Set de 3 sartenes de aluminio forjado con antiadherente" >}}
 
 Por el momento creo que para las comidas que suelo hacer con la olla y las sartenes además de las típicas cacerolas bajas tengo más que suficiente.
 
