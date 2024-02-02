@@ -46,8 +46,9 @@ Los elementos necesarios para tener tener una consola retro son los siguientes: 
     tags="raspberrypi" >}}
 
 {{< amazon
-    linkids="0bcc896ec870ce504e2c4c0acfaa8870,2264c2741c0914e881d4e70b36b927da"
-    asins="B01N59IUV5,B00564GWEI" >}}
+    linkids="https://amzn.to/49eMJLD,https://amzn.to/3OoHvUP,https://amzn.to/3SGOvza"
+    asins="B01EA7MVTQ,B00564GWEI,B07W7J6RBB"
+    titles="Controlador USB de juegos SNES,Logitech MK120 Combo teclado y ratón óptico con cable,Logitech Desk Mat alfombrilla de ratón grande" >}}
 
 El software para usar la Raspberry Pi como consola retro que he utilizado es Lakka que es una distribución [GNU][gnu]/[Linux][linux] especifica para convertir un ordenador en una consola de juegos retro. Para instalarlo en la tarjeta microSD hay que [descargar la imagen de Lakka](http://www.lakka.tv/get/) y una forma simple de grabarla en la tarjeta microSD es utilizando [Etcher][etcher], basta instalarlo, iniciarlo, seleccionar la imagen de Lakka una vez descomprimido su archivo zip, seleccionar la unidad de la tarjeta SD (si es necesario ya que Etcher puede seleccionarla automáticamente) y pulsar el botón _Flash!_, después de unos pocos minutos la imagen está grabada y la tarjeta microSD lista para usarla en la Raspberry Pi y efectuar el primer inicio.
 

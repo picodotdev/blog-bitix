@@ -358,26 +358,30 @@ Si el monitor es compartido tanto por el ordenador como por [una consola como la
 
 {{< amazon
     tags="hdmi-switch,hdmi-cable"
-    linkids="f5c9c155adf728e8d3217ab7e723d14c,87c2e46fa9d13984b35d29ce7d5761ae"
-    asins="B07RY2X9LF,B01J8S6X2I" >}}
+    linkids="https://amzn.to/3SnEJAr,https://amzn.to/3vTxrNh"
+    asins="B0CFFFSFFN,B088GQM9CV"
+    titles="UGREEN Cable HDMI 2.1,UGREEN Cable DisplayPort 1.4" >}}
 
 Otro accesorio de utilidad es un [teclado pequeño con soporte dual para bluetooth y comunicación inalámbrica 2.4 Ghz](https://amzn.to/36SUMMN) que es compatible tanto con el ordenador como una _smart tv_, teléfono Android o una PlayStation 4. En mi caso un uso sería tener el teclado pequeño con soporte de ratón para ver películas desde la cama y poder controlar el PC a distancia, incluye teclas multimedia y una rueda específica para hacer desplazamiento vertical muy cómoda al visualizar páginas web, además es retroiluminado perfecto para utilizarlo a oscuras si se está viendo una película. Funciona con una batería recargable.
 
 {{< amazon
-    linkids="ac037d001d51556cbf14f680b30146c2"
-    asins="B07RQBRRR7" >}}
+    linkids="https://amzn.to/3UlzJz2"
+    asins="B07RQBRRR7"
+    titles="Rii i4 Mini Bluetooth Teclado inalámbrico retroiluminado" >}}
 
 ## Nuevo escritorio
 
 Este es la disposición que tenía antes con el Sony VAIO y la que tengo ahora con el NUC, la pantalla externa una [BenQ PD2700Q](https://amzn.to/2Qjs7MT) de 27" y resolución QHD (2560x1440), teclado y ratón inalámbrico [V7 CKW200](https://amzn.to/2TKzmMT) a los que añadí un ratón [Logitech M90](https://amzn.to/2S9Bex2) con cable básico de tres botones ya que el ratón inalámbrico en algunos momentos funciona con problemas, el teclado sin embargo funciona perfectamente, y [alfombrilla](https://amzn.to/2P5jocE) para ellos junto con un [concentrador USB 2.0 de Amazon Basics](https://amzn.to/2BwubZJ). He ganado mucho espacio en la mesa si en algún momento quiero trabajar en ella para otras cosas, la pantalla la tengo ahora al final de la mesa y el NUC me ocupa menos espacio que el portátil además de que puedo colocarlo en cualquier sitio.
 
 {{< amazon
-    linkids="757f02716b01871e45865d4a9f1b75c6,49e0edf2268751aed306f89bf5a657f6,fbe6dbb7cf4d1a724de6c75d49946d10"
-    asins="B01K2210GS,B0758DMHZG,B003D8ZT0C" >}}
+    linkids="https://amzn.to/3SxaKq6,https://amzn.to/484qF4N,https://amzn.to/3UjQuuu"
+    asins="B088HSJP47,B07L31V1K4,B07W5JHM12"
+    titles="BenQ PD2705Q,Glorious Gaming GMMK TKL 85%,Logitech Signature M650 L ratón inalámbrico" >}}
 
 {{< amazon
-    linkids="0aaffd200da53423d2078de9209797e6,15cb29717d9441d0d13f0720d9731a0d"
-    asins="B01KC4DR1C,B00E0NHMNQ" >}}
+    linkids="https://amzn.to/3SGOvza,https://amzn.to/42nM3AS"
+    asins="B07W7J6RBB,B019BW4RT2"
+    titles="Logitech Desk Mat alfombrilla de ratón grande,Sitecom Hub de 4 puertos USB 3.0" >}}
 
 He tenido que esperar muchos meses a tener esta configuración, entre elegir que quería y aguantar a que lo que quería saliese al mercado. No se si la siguiente vez esperaré tanto ya que en algunos momento se me ha hecho un tanto difícil sobre todo los fines de semana y algunos días de vacaciones. Pero bueno ya lo tengo y ahora solo me queda sacarle provecho, no tener GNU/Linux durante un tiempo ha hecho que no haya escrito artículos sobre él, en cuanto lo pruebe más a fondo muy posiblemente escriba algunos artículos, empezando por esos que comento de como poder jugar a juegos con Wine, PlayOnLinux/Phoenicis, Winepak además de Steam y GOG en algún momento más tarde.
 

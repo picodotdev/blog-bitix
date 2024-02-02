@@ -50,11 +50,12 @@ Los comandos para eliminar un servicio del _cluster_ y eliminar completamente el
 {{< code file="nginx-remove.sh" language="bash" options="" >}}
 {{< code file="cluster-remove.sh" language="bash" options="" >}}
 
-Un libro que me ha gustado mucho y que recomiendo leer sobre Docker Swarm es [The Devops 2.1 Toolkit](https://amzn.to/2mIirti) que lo explica detalladamente y todo el libro está orientado a como usarlo en un entorno de producción. Un libro más introductorio que también he leído y que está bastante bien es [Docker in Action](https://amzn.to/2mF3Xtj).
+Un libro que me ha gustado mucho y que recomiendo leer sobre Docker Swarm es [The Devops 2.1 Toolkit](https://amzn.to/4bomlQH) que lo explica detalladamente y todo el libro está orientado a como usarlo en un entorno de producción. Un libro más introductorio que también he leído y que está bastante bien es [Docker in Action](https://amzn.to/48XmJ7i).
 
 {{< amazon
-    linkids="666d0aff3a2629cd87c205370bc5ae87,9d344246cd59cd65a952305379c2556a,2101ae950cfcfe9e69b6cc1210e4bf2c"
-    asins="1492036730,1633430235,1542468914" >}}
+    linkids="https://amzn.to/48XTJvT,https://amzn.to/48XmJ7i,https://amzn.to/4bomlQH"
+    asins="1492036730,1633430235,1542468914"
+    titles="Docker: Up & Running: Shipping Reliable Containers in Production,Docker in Action,The DevOps 2.1 Toolkit: Docker Swarm: building testing deploying and monitoring services inside Docker Swarm clusters" >}}
 
 Finalmente, quizás si estás usando GNU/Linux y VirtualBox como yo al crear los nodos con el comando `docker-machine` te produzca el siguiente error (quizá se corrija en futuras versiones de Docker o VirtualBox).
 

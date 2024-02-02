@@ -75,8 +75,9 @@ Insertado el _portlet_ en una página y accediendo a ella el _portlet_ muestra e
 Para conocer más sobre los _portlets_ el libro [Portlets in Action](https://amzn.to/2tzpbjL) es una buena fuente de documentación.
 
 {{< amazon
-    linkids="6d736075105602e7c318919a1c81609d"
-    asins="1935182544" >}}
+    linkids="https://amzn.to/3w3lMf7"
+    asins="1935182544"
+    titles="Portlets in Action" >}}
 
 Descargado y descomprimido el [binario de Apache Pluto](https://portals.apache.org/pluto/download.html) para inicia con el comando `startup.sh`. Apache Pluto es en realidad un servidor [Apache Tomcat][tomcat] con las adiciones para proporcionarle la funcionalidad de portal en la dirección _http\://localhost:8080/pluto_.
 

@@ -189,8 +189,9 @@ Otros elementos que soporta la base de datos PostgreSQL en el lenguaje SQL son _
 Por todas estas características se considera a PostgreSQL una de las bases de datos relacionales más avanzadas existentes. Hay mucha literatura sobre las bases de datos relacionales desde el lenguaje SQL en general, libros específicos sobre PostgreSQL o como evitar errores diseño al estructurar la información en tablas y columnas.
 
 {{< amazon
-    linkids="e91efc7d7df2c1cbbccc2793a1e9d0be,debb8456d091330663a1c10f654fd5b8,2f3d39f7290758074e90a66beda9e253"
-    asins="1800567499,1783989181,1934356557" >}}
+    linkids="https://amzn.to/3OwdLWq,https://amzn.to/3SnZU5A,https://amzn.to/3uhZkhK"
+    asins="1803248343,1783989181,1934356557"
+    titles="Mastering PostgreSQL 15,Learning PostgreSQL,SQL Antipatterns: Avoiding the Pitfalls of Database Programming" >}}
 
 En caso de optar por una base de datos NoSQL para persistir la información [la base de datos NoSQL MongoDB][blogbitix-237] permite guardar los datos en forma de documentos y conseguir la escalabilidad que las bases de datos relacionales con sus propiedades ACID es difícil.
 

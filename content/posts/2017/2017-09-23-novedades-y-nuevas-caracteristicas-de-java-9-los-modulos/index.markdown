@@ -116,8 +116,9 @@ El comando _jdeps_ muestra las dependencias de los módulos muy útil para tarea
 Con el objetivo de mantener la compatibilidad en la mayor medida posible con las librerías existentes y una transición progresiva de un sistema sin módulos a uno con módulos [la plataforma de módulos de Java define varios tipos de módulos][blogbitix-420], los módulos con nombre, los automáticos y el módulo anónimo. Para profundizar más en los detalles de la modularidad y el resto de novedades de Java 9 están los libros [Java 9 Revealed](http://amzn.to/2g0qu6t) y [Java 9 Modularity Revealed](http://amzn.to/2fY3wwT).
 
 {{< amazon
-    linkids="9c7874501bb32fa3318e285022e0207a,59d96101c25f9c16c4427b8ee9daef1a"
-    asins="1484225910,1484227123" >}}
+    linkids="https://amzn.to/490jLyJ,https://amzn.to/3UqNOLz"
+    asins="1484225910,1484227123"
+    titles="Java 9 Revealed: For Early Adoption and Migration,Java 9 Modularity Revealed: Project Jigsaw and Scalable Java Applications" >}}
 
 Para finalizar este artículo incluyo un vídeo sobre los módulos que comenta los aspectos más destacados. Hay [otros vídeos sobre las novedades de Java 9](https://www.oracle.com/java/java9-screencasts.html) de no más de 15 minutos cada uno.
 

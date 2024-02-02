@@ -90,8 +90,9 @@ El contenido del _kit_ es el siguiente que viene en una estupenda caja de plást
     caption="Adaptador breadboard, diodos, botones, resistencias y fotorresistores" >}}
 
 {{< amazon
-    linkids="415695f2e7f3ef590a8f4c93b8bda126,37e721eaa0be8ec062eef5ee18a5eae8"
-    asins="B06VTH7L28,B06W54L7B5" >}}
+    linkids="https://amzn.to/3UIL7p1,https://amzn.to/3uiWPM0"
+    asins="B06VTH7L28,B06W54L7B5"
+    titles="Freenove starter kit para Raspberry Pi,Freenove ultimate ultimate starter ki para Raspberry Pi" >}}
 
 La matriz de conexiones o _breadboard_ es una forma cómoda de hacer pruebas sin tener que hacer soldaduras, los puntos en vertical de la mitad superior e inferior están conectados entre si de modo que con los cables macho-macho podamos poner y quitar conexiones. La matriz está numerada horizontalmente con números y verticalmente con letras de forma que cada punto sea identificable individualmente. Las dos filas de puntos superiores suelen usarse para proporcionar un voltaje de 5V y la conexión de tierra, las dos filas de puntos inferiores para proporcionar un voltaje de 3.3V y tierra. La placa está dividida en dos mitades verticalmente de las letras A-D y E-F formando columnas verticales de puntos conectadas en grupos de 5.
 

@@ -48,11 +48,12 @@ Estas son las [operaciones CRUD][crud] ejecutadas desde la _shell_ de MongoDB en
 
 MongoDB proporciona controladores para acceder a la base de datos desde los lenguajes de programación más populares como muestro en el artículo [Usar la base de datos NoSQL MongoDB con Java][blogbitix-239].
 
-El libro [MongoDB in Action](https://amzn.to/2qvYqqU) es un buen material de referencia para dominar esta base de datos NoSQL con consejos prácticos de como guardar la información y como administrar la base de datos para replicar los datos en un _cluster_, escalar y otros temas administrativos como crear copias de seguridad, rendimiento, seguridad o monitorización.
+El libro [MongoDB in Action](https://amzn.to/3UmtZVP) es un buen material de referencia para dominar esta base de datos NoSQL con consejos prácticos de como guardar la información y como administrar la base de datos para replicar los datos en un _cluster_, escalar y otros temas administrativos como crear copias de seguridad, rendimiento, seguridad o monitorización.
 
 {{< amazon
-    linkids="53e36564344401d0a3e0f29a4cef1968"
-    asins="1617291609" >}}
+    linkids="https://amzn.to/3UmtZVP"
+    asins="1617291609"
+    titles="MongoDB in Action" >}}
 
 [La base de datos PostgreSQL][blogbitix-236] es una de las mejores opciones en el ámbito de las bases de datos relacionales y el potente lenguaje SQL, las propiedades ACID o el PL/pgSQL entre otras funcionalidades hará que siga siendo una de las mejores opciones para almacenar de forma persistente la preciosa información. En los casos que la escalabilidad o la estructuración de la información en documentos se un factor determinante MongoDB es una buena opción. Ambas opciones no son excluyentes, según el caso estos dos sistemas de información se podrán combinar para obtener lo mejor de cada uno de ellos.
 

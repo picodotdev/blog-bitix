@@ -77,8 +77,9 @@ Entre otras cosas están el teclado y ratón que me conformo con un modelo bási
 {{< amazon
     tags="monitor-benq" >}}
 {{< amazon
-    linkids="e51cd8d969848df3bb23c36529afdc8e,c97c6afa54ed38606236e18afb2f55e7"
-    asins="B00564GWEI,B072PR4FWY" >}}
+    linkids="https://amzn.to/3OoHvUP,https://amzn.to/3SGOvza"
+    asins="B00564GWEI,B07W7J6RBB"
+    titles="Logitech MK120 Combo teclado y ratón óptico con cable,Logitech Desk Mat alfombrilla de ratón grande" >}}
 
 Otras personas no se lo piensan tanto pero en un área del que más o menos entiendo algo me gusta saber con mucho detalle lo que estoy comprando. Una vez que uno comprende las especificaciones técnicas de los productos, que diferencias hay entre cada una de ellas, se entiende las diferencias de precios y se compra con criterio.
 

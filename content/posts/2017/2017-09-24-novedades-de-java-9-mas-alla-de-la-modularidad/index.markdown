@@ -181,8 +181,9 @@ Se ha optado por producir una nueva versión cada seis meses con el [OpenJDK][op
 Para finalizar un par de libros, [Java 9 Revealed](http://amzn.to/2g0qu6t) y [Java 9 Modularity Revealed](http://amzn.to/2fY3wwT) que explican detalladamente las novedades de la modularidad, las novedades incluídas en este artículo y algunas otras más.
 
 {{< amazon
-    linkids="9c7874501bb32fa3318e285022e0207a,59d96101c25f9c16c4427b8ee9daef1a"
-    asins="1484225910,1484227123" >}}
+    linkids="https://amzn.to/490jLyJ,https://amzn.to/3UqNOLz"
+    asins="1484225910,1484227123"
+    titles="Java 9 Revealed: For Early Adoption and Migration,Java 9 Modularity Revealed: Project Jigsaw and Scalable Java Applications" >}}
 
 Y unos buenos vídeos sobre las nuevas características de Java 9, uno en español y otro en inglés.
 

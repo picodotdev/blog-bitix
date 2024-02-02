@@ -53,14 +53,16 @@ Por ello, finalmente me decidí por el siguiente modelo de [reloj de manecillas 
     image1="image:reloj-3.webp" optionsthumb1="300x200" >}}
 
 {{< amazon
-    linkids="b4520ee6411fb18af5d5eeecf755ca44,ed6aa74ec469d9de2ae7e841c441410d,88427cb384e155bfece40c7d66133ea9"
-    asins="B01CZPVR2C,B08YCRZFZF,B09HS3Q29T" >}}
+    linkids="https://amzn.to/42qIEBh,https://amzn.to/3SJITnS"
+    asins="B08YCRZFZF,B09HS3Q29T"
+    titles="Reloj despertador de madera,Reloj despertador analógico despertador silencioso" >}}
 
 Otros modelos de relojes digitales de pared y mesa que ví son los siguientes, casi todos tienen como función adicional indicar la temperatura interior y la fecha.
 
 {{< amazon
-    linkids="bd6a22abb84218e18458f0f33b5c6354,fc9f4b5c9696b82aa015faf870993e91,ab0420b22a221629ea512e5d00dca56f,e4c59a48332124cead194f867605cde6"
-    asins="B00J8Q59R6,B00D8ZMNH2,B00I023BB0,B00D2PIA7U" >}}
+    linkids="https://amzn.to/49i0rg1,https://amzn.to/3Urmkp8"
+    asins="B00I023BB0,B00D2PIA7U"
+    titles="Reloj digital mural con termómetro,Technoline WS 8007 reloj digital con pantalla LCD " >}}
 
 ## Pilas recargables AA
 
@@ -78,7 +80,8 @@ Para completar el pedido compré unas [pilas AA recargables de AmazonBasics](htt
 Pilas AA y AAA en Amazon.
 
 {{< amazon
-    linkids="452a2e62d3e787a6b63d8af73e5f278e,175ef0a2dea4d5a15c8c231fd006c67d"
-    asins="B00CWNMR5Y,B00CWNMXQW" >}}
+    linkids="https://amzn.to/47Wm0lq,https://amzn.to/3Oqlbu8"
+    asins="B00CWNMR5Y,B00CWNMXQW"
+    titles="Amazon Basics pilas AA recargables,Amazon Basics pilas AAA recargables" >}}
 
 {{% /post %}}

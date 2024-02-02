@@ -113,11 +113,12 @@ Usando como herramienta de construcción del proyecto [Gradle][gradle] el archiv
 
 Desarrollar un _portlet_ con su API directamente es una tarea costosa si la funcionalidad o complejidad del _portlet_ es mucha. Al igual que en Java no se suele utilizar la API de los _servlets_ directamente, aunque es la API subyacente, y se suele utilizar alguno de los muchos _frameworks_ disponibles para los _portlets_ también hay varios _frameworks_ entre los que elegir. En el artículo [_Portlets_ con el framework Apache Tapestry y Apache Pluto][blogbitix-244] muestro un ejemplo usando un _framework_ de alto nivel, orientado a componentes y altamente productivo.
 
-Aunque el libro [Liferay in Action](https://amzn.to/2sc1tWN) o [Portlets in Action](https://amzn.to/2tzpbjL) no están actualizados a la última versión sirven para conocer los conceptos básicos de su funcionamiento, explican la teoría e incluyen ejemplos de código de como crear un _portlet_.
+Aunque el libro [Liferay in Action](https://amzn.to/3UrpaKP) o [Portlets in Action](https://amzn.to/3OvMnHT) no están actualizados a la última versión sirven para conocer los conceptos básicos de su funcionamiento, explican la teoría e incluyen ejemplos de código de como crear un _portlet_.
 
 {{< amazon
-    linkids="6d736075105602e7c318919a1c81609d,a4fdbe9a2a0c68685cfc8119f253125b"
-    asins="1935182544,193518282X" >}}
+    linkids="https://amzn.to/3OvMnHT,https://amzn.to/3UrpaKP"
+    asins="1935182544,193518282X"
+    titles="Portlets in Action,Liferay in Action" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoPortlet" command="./gradlew build" >}}
 

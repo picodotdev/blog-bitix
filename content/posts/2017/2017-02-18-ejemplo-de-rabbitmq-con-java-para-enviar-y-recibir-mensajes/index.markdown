@@ -64,11 +64,12 @@ RabbitMQ posee un [_plugin_ para la administración](https://www.rabbitmq.com/ma
     image1="image:rabbitmq-management.webp" optionsthumb1="300x200" title1="Aplicación web de administración de RabbitMQ"
     image2="image:rabbitmq-queue.webp" optionsthumb2="300x200" title2="Información de estado de una cola" >}}
 
-Para profundizar más en las aplicaciones basadas en mensajes con RabbitMQ dos buenos libros son [Learning RabbitMQ](https://amzn.to/2lTGMQc) y [Matering RabbitMQ](https://amzn.to/2lW9qwF) cubriendo temas más avanzados como _clustering_, alta disponibilidad, arquitectura, patrones de diseño, seguridad y rendimiento.
+Para profundizar más en las aplicaciones basadas en mensajes con RabbitMQ dos buenos libros son [Learning RabbitMQ](https://amzn.to/4bpjgQe) y [Matering RabbitMQ](https://amzn.to/3OsxVjU) cubriendo temas más avanzados como _clustering_, alta disponibilidad, arquitectura, patrones de diseño, seguridad y rendimiento.
 
 {{< amazon
-    linkids="9bb0705e8a34f246d5530b141b0a690e,e87eebb622314cdf0c2c14fc32940264"
-    asins="1783984562,1783981520" >}}
+    linkids="https://amzn.to/4bpjgQe,https://amzn.to/3OsxVjU"
+    asins="1783984562,1783981520"
+    titles="Learning RabbitMQ,Mastering RabbitMQ" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoRabbitMQ" command="docker-compose up, ./gradlew receive, ./gradle send" >}}
 

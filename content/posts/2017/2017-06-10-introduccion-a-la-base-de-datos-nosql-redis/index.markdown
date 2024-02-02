@@ -48,8 +48,9 @@ Cada comando de Redis tiene una complejidad de tiempo ejecución, para obtener e
 Para un conocimiento mucho más detallado de las posibilidades de esta base de datos el libro [Mastering Redis](https://amzn.to/2s9CYfJ) o [Redis in Action](https://amzn.to/2rio3vH) son un buen inicio.
 
 {{< amazon
-    linkids="8459459236559fee49442452db7fb5b2,3d85e30c0781f28d90d25591d5183d0d"
-    asins="1783988185,1617290858" >}}
+    linkids="https://amzn.to/3w243ob,https://amzn.to/3w1mEkl"
+    asins="1783988185,1617290858"
+    titles="Mastering Redis,Redis in Action" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoRedis" command="docker-compose up, ./gradlew run" >}}
 

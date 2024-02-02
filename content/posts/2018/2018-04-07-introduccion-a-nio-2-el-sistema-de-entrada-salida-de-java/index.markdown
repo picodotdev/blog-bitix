@@ -62,8 +62,9 @@ En cuanto a la programación de entrada/salida asíncrona se ofrecen dos paradig
 Si se desea profundizar más en NIO y NIO.2 el libro [The Well-Grounded Java Developer](https://amzn.to/2JsEIao) dedica un capítulo introductorio en el que me he basado para realizar este artículo, el libro [Java I/O, NIO and NIO.2](https://amzn.to/2q7qMdN) está completamente dedicado al nuevo sistema de entrada/salida de Java y el tutorial [Java Basic I/O](https://docs.oracle.com/javase/tutorial/essential/io/index.html) también está muy bien como introducción.
 
 {{< amazon
-    linkids="61507308185711a0af4b5ed5ab70b62b,d748ea086bd02aa68dd0b27945514558"
-    asins="1617290068,1484215664" >}}
+    linkids="https://amzn.to/3SGU9kS,https://amzn.to/3w1YeY5"
+    asins="1617290068,1484215664"
+    titles="The Well-Grounded Java Developer java 7 and Polyglot Programming on the JVM,Java I/O, NIO and NIO.2" >}}
 
 En el artículo [monitorizar archivos con Java][blogbitix-43] muestro como recibir eventos cuando se añade, elimina o modifica algún archivo de los observados usando la clase [WatchService](javadoc10:java/nio/file/WatchService.html).
 

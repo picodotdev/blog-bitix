@@ -161,8 +161,9 @@ Un sistema ágil es una aproximación a la incertidumbre. Incertidumbre que siem
 > This booklet tells the story of Justin - a project manager who achieved remarkable results with his team by doing very simple things! This guide covers the core concepts of Kanban for knowledge work, and shows how limiting your amount of work-in-progress can lead to getting things done better and faster.
 
 {{< amazon
-    linkids="3fb69c8c67a77d17456e3a5fca1ce831"
-    asins="0985305169" >}}
+    linkids="https://amzn.to/3SnJD0j"
+    asins="0985305169"
+    titles="Stop Starting, Start Finishing!" >}}
 
 La combinación de un WIP pequeño junto con un sistema _pull_ en el que no se construye lo no necesario, no se prueba lo que no se puede entregar, no se desarrolla lo que no se puede probar y no se especifica lo no se puede desarrollar produce una reducción de tiempos de entrega, hay mayor predictibilidad y elimina rehacer trabajo.
 

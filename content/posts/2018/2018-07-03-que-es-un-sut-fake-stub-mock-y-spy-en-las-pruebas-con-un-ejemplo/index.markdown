@@ -49,8 +49,9 @@ En el libro [Java Testing with Spock](https://amzn.to/2MMSV2J) explican toda est
 Los dobles permiten susituir dependencias y programar su comportamiento, en algunos casos no es posible o no es deseable. Si se quiere probar un componente que accede a una base de datos el doble puede tener diferencias con la base de datos real. Para estos casos se usan pruebas de integración, la dificultad está disponer de estas dependencias en el entorno de prueba. La herramienta [Testcontainers sirve para realizar pruebas de integración en Java usando contenedores Docker][blogbitix-490].
 
 {{< amazon
-    linkids="b57d8e90599c681fc8e794027e17bea3"
-    asins="1617292532" >}}
+    linkids="https://amzn.to/3OsMmEP"
+    asins="1617292532"
+    titles="Java Testing with Spock" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/TestingStubMock" command="./gradlew test" >}}
 

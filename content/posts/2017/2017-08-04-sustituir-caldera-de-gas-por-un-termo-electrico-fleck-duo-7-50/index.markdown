@@ -65,8 +65,9 @@ Pasando a elegir entre los muchos de modelos de termos que hay me fije entre tre
 Todos estos termos poseen un tamaño similar al de una caldera por lo que en cuanto a espacio no requieren tener nada en cuenta. El Fagor y Fleck tiene unas medidas diferentes en cuanto a anchura, altura y profundidad , el Fagor es más alto y con más profundidad y el Fleck es el termo con menos profundidad pero es un poco más ancho que el Fagor. El Fagor y Fleck poseen un _display_ digital con el que seleccionar la temperatura del agua, el _display_ del Fleck bastante más avanzado indicando el tiempo restante hasta alcanzar la temperatura deseada, una estimación del número de duchas que restantes y si hay agua caliente para una ducha. Una cosa que no muestra el _display_ es cuando las resistencias están encendidas al mantener la temperatura a los grados deseados.
 
 {{< amazon
-    linkids="4b5320be60b4df3802da30306b8e3f7b,9c8849411b404178b7b4abcc7cd1ef33"
-    asins="B01MTL02S4,B01EMZWDTY" >}}
+    linkids="https://amzn.to/3SJjXwC,https://amzn.to/4829ktj"
+    asins="B01MTL02S4,B01EMZWDTY"
+    titles="Fleck Duo 7,Fleck Duo 5" >}}
 
 Finalmente me decidí por el termo Fleck Duo 7 50 es un termo de gama alta y su precio es de los más altos entre los modelos de termos con la misma capacidad pero su precio como comentaba anteriormente es muy inferior a cualquier modelo de caldera. Donde vivo el agua es de buena calidad y blanda con lo que las resistencias no lo he considerado muy importante que estuviesen envainadas. El _display_ es bastante bueno pudiendo elegir la temperatura del agua, informa del tiempo restante hasta alcanzarla y la temperatura del agua actual. Este modelo de termo eléctrico una de las varias cosas buenas que tiene es que es muy plano tiendo únicamente 27 centímetros de fondo con lo que es posible ganar un espacio que antes estaba ocupado por la caldera como ha sido en mi caso. Se puede colocar tanto en posición vertical como horizontal. Posee ánodo electrónico así como también ánodos de magnesio, función antilegionela, antihelada, un _display_ digital que indica el tiempo restante hasta alcanzar la temperatura programada y la temperatura actual, función de ahorro de energía según hábitos de uso y dos depósitos independientes para mayor eficiencia calificada como B. Los controles son táctiles, intuitivos y con la rueda circular se controla la temperatura.
 
@@ -153,7 +154,8 @@ Me he duchado con el agua en el termo a 55, 50 y 45 grados (manteniendo a 45 gra
     caption="Grifo monomando" >}}
 
 {{< amazon
-    linkids="baa76cf96f2ebb3cb7d15d6baa53c816"
-    asins="B00RTG1HSC" >}}
+    linkids="https://amzn.to/3OR1jRl"
+    asins="B00RTG1HSC"
+    titles="Grohe Grohtherm 800 termostato de ducha" >}}
 
 {{% /post %}}

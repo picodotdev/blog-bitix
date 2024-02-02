@@ -64,8 +64,9 @@ Las puntas para atornillar se usan con un adaptador y las llaves de vaso se pued
     caption="Acoplador, puntas para el acoplador, nivel, metro y llave de carraca" >}}
 
 {{< amazon
-    linkids="5aae4dd4d341b91eae824bc8ba069fd2"
-    asins="B0051E16LW" >}}
+    linkids="https://amzn.to/3w1ZXfO"
+    asins="B0051E16LW"
+    titles="Brueder MannesmannM29085 juego de herramienta universal en maletín" >}}
 
 ## Bandejas melamina Balvi
 
@@ -81,7 +82,8 @@ También necesitaba unas bandejas para llevar platos, cubiertos, vaso, pan o el 
 En algún comentario de Amazon un usuario le ponía a estas bandejas una sola estrella porque decía que las cosas resbalaban, la superficie es muy pulida y no tiene rugosidades pero de ahí que las cosas resbalen creo que no salvo que en algún momento no mantengas la horizontalidad de la bandeja al transportar las cosas.
 
 {{< amazon
-    linkids="4afc8997f60c2f79ebd49a4ab268f301,08548a86ec994f108ffa1108ec5632c9,a9e59ba31aaf4854ac779956b8aa2f28,5877bec7584091c64a726cbd51754f92"
-    asins="B00SYWANB2,B00SYWAJSE,B00KISSXY4,B081SC9YX3" >}}
+    linkids="https://amzn.to/481eOUX,https://amzn.to/3SlFmL3,https://amzn.to/3HKws4U"
+    asins="B00SYWAJSE,B081SC9YX3,B07HJL2G6S"
+    titles="Bandeja para comida,Bandejas para comida,Salvamanteles" >}}
 
 {{% /post %}}

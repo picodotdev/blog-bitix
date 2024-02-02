@@ -41,11 +41,12 @@ El resultado en la terminal de ejecutar el ejemplo con el comando `gradlew run` 
 
 Spring ofrece en su API mediante el proyecto [Spring Data MongoDB](https://projects.spring.io/spring-data-mongodb/) algunas clases adicionales para facilitar el acceso y obtención de datos de MongoDB. Entre estas clases están [MongoTemplate](https://docs.spring.io/spring-data/data-mongo/docs/current/api/org/springframework/data/mongodb/core/MongoTemplate.html), [MongoOperations](https://docs.spring.io/spring-data/data-mongo/docs/current/api/org/springframework/data/mongodb/core/MongoOperations.html) y [MongoRepository](https://docs.spring.io/spring-data/data-mongo/docs/current/api/org/springframework/data/mongodb/repository/MongoRepository.html) cuyo uso puede consultarse en su [manual de referencia](https://docs.spring.io/spring-data/data-mongo/docs/current/reference/html/).
 
-En el libro [MongDB in Action](https://amzn.to/2qvYqqU) comentan más detalladamente y de forma más completa las opciones que se pueden utilizar en el lenguaje de consulta, muchas de las opciones son equivalentes a las que son conocidas del lenguaje SQL de las bases de datos relacionales.
+En el libro [MongDB in Action](https://amzn.to/3w2fKLI) comentan más detalladamente y de forma más completa las opciones que se pueden utilizar en el lenguaje de consulta, muchas de las opciones son equivalentes a las que son conocidas del lenguaje SQL de las bases de datos relacionales.
 
 {{< amazon
-    linkids="53e36564344401d0a3e0f29a4cef1968"
-    asins="1617291609" >}}
+    linkids="https://amzn.to/3w2fKLI"
+    asins="1617291609"
+    titles="MongoDB in Action" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoMongoDB" command="docker-compose up, ./gradlew run" >}}
 

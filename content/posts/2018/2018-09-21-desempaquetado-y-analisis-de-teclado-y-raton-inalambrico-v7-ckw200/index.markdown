@@ -58,11 +58,6 @@ Las teclas no son en forma de isla sino que son como en la generación anterior 
 
 Dado el precio de este teclado los caracteres y símbolos de las teclas está impresos con el método más barato, mediante pegatinas que con el paso del tiempo y uso puede hacer que algunas teclas pierdan su caracter, pasados dos años de uso a una tecla se le borrado parte del caracter. La pérdida del caracter en la tecla no afecta al funcionamiento pero sin pasa en varias teclas y de forma completa dificulta puede dificultar la escritura ya que no me se la posición de todos los caracteres. El teclado posee un indicador de batería entre los LED indicadores de estado, se enciende al conectar las pilas no se si indicará también el nivel bajo de las dos pilas AAA que usa. Las pilas del teclado duran muchísimo tiempo, mucho más del que pensaba, las dos pilas AAA recargables que uso le duran más de un año y medio.
 
-{{< amazon
-    tags="keyboard-basic"
-    linkids="22f1206a79c0eb63d39b94ca6b26ee80"
-    asins="B0758DMHZG" >}}
-
 ## El ratón CKW200
 
 El ratón posee tres botones, izquierdo, derecho y el de la rueda de desplazamiento pero no posee botones de desplazamiento lateral. Es de tamaño normal no reducido, ergonómico con la palma de la mano y simétrico apto para diestros y zurdos. Dado que V7 es una empresa nueva en el mercado su modelo de teclado es del 2017 más reciente que otros muchos modelos que pueden ser incluso tan viejos como del 2013, 2015 o 2016.
@@ -130,8 +125,9 @@ Modelos de teclados y ratones hay muchos, hay paquetes que incluyen ambos o se v
 De entre todos estos y otros de la lista de más vendidos por una cosa u otra al final elegí el Videoseven CKW200 de este artículo, ya sea por los comentarios de los clientes de Amazon o por su diseño y estética.
 
 {{< amazon
-    linkids="d83fcfb5b254583b4923a15aee46b182,96032d684a9a1e19798dbac1b6dd7200,462e180975e635483e5ef4deb5cfc240"
-    asins="B006LNTSP8,B01C4HCV58,B00D2PX8C2" >}}
+    linkids="https://amzn.to/484qF4N,https://amzn.to/3OuMaoj"
+    asins="B07L31V1K4,B00D2PX8C2"
+    titles="Glorious Gaming GMMK TKL 85%,Logitech MK270 Combo Teclado y Ratón Inalámbrico" >}}
 
 Después de dos años de uso intensivo el teclado V7 CKW200 pierde parte de la impresión de una tecla.
 
@@ -180,8 +176,9 @@ Al mismo tiempo que he comprado el teclado y ratón he comprado una [alfombrilla
     caption="Alfombrilla, teclado y ratón" >}}
 
 {{< amazon
-    linkids="a9e97138ccb3a59af838861eb2156d10"
-    asins="B01KC4DR1C" >}}
+    linkids="https://amzn.to/3SGOvza"
+    asins="B07W7J6RBB"
+    titles="Logitech Desk Mat alfombrilla de ratón grande" >}}
 
 ## Pilas recargables y cargador
 

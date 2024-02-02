@@ -55,12 +55,14 @@ Si quieres conocer más en detalle los procesadores tanto de su historia, evoluc
 * [El mundo de Bitman Volumen VII: En busca del valle de la sabiduría](https://amzn.to/2vtMxX0)
 
 {{< amazon
-    linkids="68de3e78830192ba75c0512a8b048e63,769694edd9c03d5e1a74b03b7eade17c,b1f514ab8a8cae2115f747df36ac6f50,746131c517ce1fcff5123b245b7b14e3"
-    asins="B07D696XBB,B07D6BF6CW,B07D69FJZ6,B07D6CNWXY" >}}
+    linkids="https://amzn.to/48PZJa9,https://amzn.to/3un0sAD,https://amzn.to/4bnXkoF,https://amzn.to/3ufUTnF"
+    asins="B07D696XBB,B07D6BF6CW,B07D69FJZ6,B07D6CNWXY"
+    titles="El mundo de Bitman Volumen I: Regreso al futuro de la computación,El mundo de Bitman Volumen II: Caminando entre bits,El mundo de Bitman Volumen III: Los pilares del microprocesador,El mundo de Bitman Volumen IV: Mr. C y la fábrica de chips" >}}
 
 {{< amazon
-    linkids="d1f99426a5b8f832bed37cfe2dc523ce,a815ffc4213a965f1e5c563d251ebf70,f8912ba1ea6fef10df26ccbcdd518fea,c198603a8ed771769efbefe232468ecb"
-    asins="B07D6DKR6M,B07D6DJY7S,1983184802,B07D6C48R2" >}}
+    linkids="https://amzn.to/3SnXeVE,https://amzn.to/3ua8ehj,https://amzn.to/47VLzD6,https://amzn.to/49f7u9k"
+    asins="B07D6DKR6M,B07D6DJY7S,1983184802,B07D6C48R2"
+    titles="El mundo de Bitman Volumen V: El enigma de la microelectrónica,El mundo de Bitman Volumen VI (1): Viaje al centro de la CPU,El mundo de Bitman Volumen VI (2): Viaje al centro de la CPU,El mundo de Bitman Volumen VII: En busca del valle de la sabiduría" >}}
 
 Dentro de unos años, lustros o alguna década revisaré estos artículos de predicción a ver cuanto hay de acierto en la evolución de la tecnología que se produzca finalmente.
 

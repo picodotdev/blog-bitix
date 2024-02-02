@@ -288,8 +288,9 @@ En todos los modelos he buscado que sea compatible con la norma VESA 100x100 por
 Algunos soportes compatibles con VESA que he mirado son los siguientes.
 
 {{< amazon
-    linkids="de98aa0a1a642d8b7b8bd36c4ca7ca4f,d21eaafcd8bdff06c18668e60d08e71a"
-    asins="B079YQQDT2,B079YSGQKW" >}}
+    linkids="https://amzn.to/4bkCRkK,https://amzn.to/3HKxmOE"
+    asins="B085CCVMSQ,B0855ZBPXD"
+    titles="HUANUO soporte para 1 monitor,HUANUO soporte para 2 monitores" >}}
 
 ## _Hub_ de puertos USB
 
