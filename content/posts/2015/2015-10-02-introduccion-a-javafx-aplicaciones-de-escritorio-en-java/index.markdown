@@ -73,11 +73,12 @@ En las [demostraciones y ejemplos de Java 8](https://www.oracle.com/technetwork/
     image2="image:modena.webp" optionsthumb2="300x200" title2="Aplicación Modena"
     caption="Aplicaciones demostración Ensemble y Modena" >}}
 
-El ejemplo de este artículo es muy sencillo y solo sirve para disponer de un entorno de desarrollo. Aunque no lo leído en el libro [JavaFX For Dummies](https://amzn.to/2SWtXnM) explican bastante detalladamente y de forma didáctica muchas posibilidades de JavaFX y como en el resto de libros de la serie _for dummies_ paso a paso y de forma simple sin suponer mucho conocimiento del lector.
+El ejemplo de este artículo es muy sencillo y solo sirve para disponer de un entorno de desarrollo. Aunque no lo leído en el libro [JavaFX For Dummies](https://amzn.to/3HL4Kov) explican bastante detalladamente y de forma didáctica muchas posibilidades de JavaFX y como en el resto de libros de la serie _for dummies_ paso a paso y de forma simple sin suponer mucho conocimiento del lector.
 
 {{< amazon
-    linkids="d9e6cf1087da9526070be8f727f0d88e"
-    asins="1118385349" >}}
+    linkids="https://amzn.to/3HL4Kov"
+    asins="1118385349"
+    titles="JavaFX For Dummies" >}}
 
 Hace ya mucho tiempo cuando programaba alguna aplicación de escritorio con Swing una de las cosas más complicadas era construir la interfaz usando código, el código resultante era extenso, poco legible y bastante complicado por tener que construir cada elemento gráfico, posicionarlo y establecerle sus estilos. En JavaFX y al igual que en las plataformas de [Microsoft][microsoft] y [GNOME][gnome] los elementos gráficos de una ventana se puede definir en un documento y este documento se puede generar usando una aplicación con una interfaz gráfica arrastrando y soltando componentes, estableciendo valores de propiedades. En el siguiente artículo comentaré [cómo crear un documento FXML con la aplicación JavaFX Scene Builder y como usarlo en una aplicación][blogbitix-102].
 

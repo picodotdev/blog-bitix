@@ -22,8 +22,9 @@ summary: "Este artículo es un poco fuera de tema de lo que suelo escribir en el
 Desde hace un tiempo quería comprar unos estores tanto para la habitación como para el salón. Empecé a mirar que opciones había navegando por internet. Lógicamente miré en varias tiendas empezando por [Ikea](http://www.ikea.com/es/es/), [El Corte Inglés][elcorteingles] e incluso en [Amazon][amazon-affiliate]. Una de las primeras cosas que me dí cuenta es que en estas tres tiendas ofrecían estores en ciertas medidas concretas que podrían no quedar bien ajustados a la ventana en la que sería colocado. Otra de las cosas que me interesaba era no tener que taladrar las ventanas para colocarlos, en Amazon a través de un vendedor externo compré unos [soportes para colocar los estores sin taladrar la ventana](https://amzn.to/2MUqmmw) que se enganchan a la parte superior del marco y a los cuales se atornillan los estores, además parecían compatibles con los soportes, con ellos la instalación era más sencilla y que a «manzanas» como yo en temas de bricolaje permite ajustar la colocación sin peligro de hacer un estropicio en las ventanas. Compré uno por cada estor, cada uno son dos unidades.
 
 {{< amazon
-    linkids="51267c7e3516e2eba1ae3b7334c9978d"
-    asins="B00G32WWTQ" >}}
+    linkids="https://amzn.to/3HJotov"
+    asins="B00G32WWTQ"
+    titles="Soporte de sujeción universal" >}}
 
 {{< image
     gallery="true"
@@ -63,11 +64,12 @@ Quedo contento con los estores pero hay algunas cosas mejorables. En mi caso bá
     image1="image:detelle-logotipo.webp" optionsthumb1="650x450" title1="Detalle logotipo"
     caption="Detalle logotipo" >}}
 
-La calidad del producto, igual de importante el buen servicio de atención al cliente, las opciones de personalización y amplia gama de tejidos y colores hace que recomiende _Cortinadecor_ aún con las cosas mejorables que comentaba. He quedado satisfecho con el producto y la experiencia de compra por internet con esta tienda me ha resultado satisfactoria. También compré un vinilo adhesivo translúcido, [Película adhesiva para ventanas (67,5 x 200 cm)](https://amzn.to/3F7l0g4), para los cristales inferiores del salón ya que los estores para salvar las manillas no cubrirían totalmente esos cristales. Además de dar más privacidad dejan pasar una buena cantidad de luz.
+La calidad del producto, igual de importante el buen servicio de atención al cliente, las opciones de personalización y amplia gama de tejidos y colores hace que recomiende _Cortinadecor_ aún con las cosas mejorables que comentaba. He quedado satisfecho con el producto y la experiencia de compra por internet con esta tienda me ha resultado satisfactoria. También compré un vinilo adhesivo translúcido, [Película adhesiva para ventanas (67,5 x 200 cm)](https://amzn.to/3St3ong), para los cristales inferiores del salón ya que los estores para salvar las manillas no cubrirían totalmente esos cristales. Además de dar más privacidad dejan pasar una buena cantidad de luz.
 
 {{< amazon
-    linkids="9c092a38bec9dc606ec4ce209c4f6adf"
-    asins="B07L3WHXKH" >}}
+    linkids="https://amzn.to/3St3ong"
+    asins="B07L3WHXKH"
+    titles="Vinilo opaco para ventanas con anti-uv autoadhesivo" >}}
 
 {{< image
     gallery="true"

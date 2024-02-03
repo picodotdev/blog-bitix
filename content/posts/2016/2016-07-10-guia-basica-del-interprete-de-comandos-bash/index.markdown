@@ -179,8 +179,9 @@ Esta guía es parte de un tema de los explicados en el completo libro sobre la a
 el siguiente [manual de Bash](http://bash.cyberciti.biz/guide/Main_Page).
 
 {{< amazon
-    linkids="28302f39b86c5d07ee3db2bc5752c2ed&internal=1"
-    asins="0131480057" >}}
+    linkids="https://amzn.to/3HGWPIW"
+    asins="0131480057"
+    titles="UNIX and Linux System Administration Handbook" >}}
 
 {{< reference >}}
 * [How To Use Bash History to Improve Your Command-Line Productivity](http://www.howtogeek.com/howto/44997/how-to-use-bash-history-to-improve-your-command-line-productivity/)

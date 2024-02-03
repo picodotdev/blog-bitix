@@ -141,8 +141,9 @@ Aunque las distribuciones GNU/Linux son en su mayoría software libre hay alguna
 Estas son solo algunas de las distribuciones más populares y usadas de GNU/Linux y las que recomiendo pero en [DistroWatch][distrowatch] hay un listado más completo. En el libro [Introduction Linux Distros](https://amzn.to/2fol03B) encontraremos una introducción más detallada a GNU/Linux y sus distribuciones.
 
 {{< amazon
-    linkids="f78ab092f9be61313e9c686e15cc3441"
-    asins="1484213939" >}}
+    linkids="https://amzn.to/42oBVYu"
+    asins="1484213939"
+    titles="Introducing Linux Distros" >}}
 
 [Windows es fácil usarlo sin licencia][blogbitix-119] y es muy común con el consentimiento de la compañía estadounidense, [a Microsoft no le importa que Windows sea usado sin licencia][blogbitix-92], pero como muestro en este artículo hay opciones que en muchos casos no tienen nada que envidiar a los sistemas operativos privativos y en otros aspectos son mucho mejores ya que son software libre generalmente gratuito, no incluyen _bloatware_, software espía y con un soporte durante mayor tiempo que el que ofrecen [Microsoft][microsoft] o [Apple][apple] en sus equipos.
 

@@ -70,11 +70,12 @@ La aplicación está dividida en varios módulos construidos con la [herramienta
 
 El conjunto de especificaciones de Java EE proporciona una solución para la mayoría de funcionalidades que necesita una aplicación pero también podemos sustituir alguna y combinarlas con otras de las muchas librerías o _frameworks_ disponibles en la plataforma Java. Por ejemplo, como _framework_ en vez de usar Servlet y JSP o JSF podemos usar [Apache Tapestry][blogbitix-12], [Vert.x][blogbitix-120], [Spark][blogbitix-121], [Struts][struts], [Grails][grails], ... dependiendo de las necesidades de la aplicación, su complejidad y nuestras preferencias. Como [alternativa al ORM de JPA o JDBC se puede usar jOOQ][blogbitix-82]. [RabbitMQ][rabbitmq] en vez de JMS o [Spring][spring] en vez de CDI, EJB y JTA.
 
-Algunos libros sobre Java EE que he leído y que me han gustado han sido los siguientes, [Java EE 7 Essentials](https://amzn.to/2SW6cw2) hace un repaso detallado pero no muy profundo para hacerse una idea bastante buena del conjunto de especificaciones de Java EE. Otro buen libro es [Java EE 7 Development with WildFly](https://amzn.to/2T0MlvA) que entra más en detalle en cada una de las especificaciones. El [tutorial oficial de Java EE 7](https://docs.oracle.com/javaee/7/tutorial/) también es un buen punto de partida. <a target="_blank" href="https://amzn.to/2QLs7TX">Libros sobre Java EE 7</a> hay muchos por la cantidad de tiempo que ya tiene, es recomendable leer alguno que esté actualizado a las últimas versiones.
+Algunos libros sobre Java EE que he leído y que me han gustado han sido los siguientes, [Java EE 7 Essentials](https://amzn.to/4bl5Vsl) hace un repaso detallado pero no muy profundo para hacerse una idea bastante buena del conjunto de especificaciones de Java EE. Otro buen libro es [Java EE 7 Development with WildFly](https://amzn.to/49jczxA) que entra más en detalle en cada una de las especificaciones. El [tutorial oficial de Java EE 7](https://docs.oracle.com/javaee/7/tutorial/) también es un buen punto de partida. <a target="_blank" href="https://amzn.to/2QLs7TX">Libros sobre Java EE 7</a> hay muchos por la cantidad de tiempo que ya tiene, es recomendable leer alguno que esté actualizado a las últimas versiones.
 
 {{< amazon
-    linkids="c616c3f3eef393473f0af785d1eb8309,3708b1d14af899f26e43d0bade797dd7"
-    asins="B00EJX7WEQ,B00RP13D9M" >}}
+    linkids="https://amzn.to/4bl5Vsl,https://amzn.to/49jczxA"
+    asins="B00EJX7WEQ,B00RP13D9M"
+    titles="Java EE 7 Essentials: Enterprise Developer Handbook,Java EE 7 Development with WildFly" >}}
   
 Con Java EE 6 y 7 ciertas partes de configuración se pueden realizar con anotaciones en vez de con XML sin embargo aún no ha desaparecido completamente aunque si reducido considerablemente.
 

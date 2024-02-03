@@ -351,7 +351,7 @@ Aun es la [edición del 2015](https://dzone.com/guides/the-java-ecosystem-2015-e
 {{< amazon
     linkids="https://amzn.to/3SlCMVn"
     asins="097903423X"
-    titles="The Daemon, the Gnu, and the Penguin" >}}
+    titles="The Daemon the Gnu and the Penguin" >}}
 
 [The daemon, the GNU and the penguin](https://amzn.to/3SlCMVn) es un documento que repasa el origen, inicios y evolución del software libre y de código abierto desde el año 1968 con referencias a Unix, BSD, Minix, Sun, GPL, Hurd, la web, Tanenbaum, Torvalds, Linux, ... Este documento y el siguiente son unos clásicos en internet.
 

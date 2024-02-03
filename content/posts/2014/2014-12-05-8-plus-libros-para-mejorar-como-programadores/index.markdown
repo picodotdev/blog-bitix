@@ -54,8 +54,9 @@ Quizá ya conocieses Clean Code pero conocías ¿[The Clean Coder](https://amzn.
 Comenzar un proyecto desde el inicio no es lo habitual y aún así pasado un tiempo no muy grande el código se convierte en heredado, lo habitual es que tengamos que modificar código que ya están escrito. El libro [Refactoring](https://amzn.to/39CyVMm) nos explica como modificar el código para que tenga mejor diseño y sea más legible o fácil de modificar en un futuro y ante los posibles cambios que se vayan introduciendo. Algunas de las acciones están relacionadas con aplicar algunos principios de los patrones de diseño explicados en Head First - Design Patterns o algunos principios comentados en Clean Code.
 
 {{< amazon
-    linkids="dae8597bb6dc4beae956320ef09df513,70189a833eb781236f9c1b63064c8b27,468caab01af35306c48d99ca564ebf23,3fa600b62ab3a48a0c6a5dfc6b9c9651,2d6122afa07f905f4c3f2a9bcc62ff23,41b8842029752ed268fefa4ec10f03a7,caad6be50f3166c9e6c0c6cb8f8ba3ec,8ce01379ebca38f4fb82221abb3b0a81,2fb79f1801f1d0a448b7aa533cd1af8e,7c8b407a597aff8be999138b9159d305"
-    asins="0131872486,1617291994,0321356683,0596007124,0201633612,0132350882,0735619670,020161622X,0137081073,0201485672" >}}
+    linkids="https://amzn.to/3UmmBtx,https://amzn.to/3SHnawM,https://amzn.to/3SJpJ1i,https://amzn.to/3uitFg8,https://amzn.to/3SGUUdF,https://amzn.to/3SHnnA4,https://amzn.to/3SJWStF,https://amzn.to/48avlq0,https://amzn.to/3SJ3QPF,https://amzn.to/481iHtc"
+    asins="0131872486,1617291994,0321356683,149207800X,0201633612,0132350882,0735619670,020161622X,0137081073,0201485672"
+    titles="Thinking in Java,Java 8 in Action: Lambdas Streams and functional-style programming,Effective Java,Head First Design Patterns: Building Extensible and Maintainable Object-Oriented Software,Design Patterns: Elements of Reusable Object-Oriented Software,Clean Code: A Handbook of Agile Software Craftsmanship,Code Complete: A Practical Handbook of Software Construction,Pragmatic Programmer, The: From Journeyman to Master,The Clean Coder: A Code of Conduct for Professional Programmers,Refactoring: Improving the Design of Existing Code" >}}
 
 En una [pregunta y respuesta de stackoveflow](https://stackoverflow.com/questions/1711/what-is-the-single-most-influential-book-every-programmer-should-read) sobre los libros a leer por un programador, están recogidos una buena colección de los mejores de ellos.
 

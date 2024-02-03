@@ -77,8 +77,9 @@ docker-compose inicia los contenedores en el orden que hemos indicado en el arch
 {{< asciinema id="23602" caption="Comandos básicos de Docker Compose" >}}
 
 {{< amazon
-    linkids="666d0aff3a2629cd87c205370bc5ae87,9d344246cd59cd65a952305379c2556a"
-    asins="1492036730,1633430235" >}}
+    linkids="https://amzn.to/49lAc8M,https://amzn.to/49oHWa1"
+    asins="1492036730,1633430235"
+    titles="Docker: Up & Running: Shipping Reliable Containers in Production,Docker in Action" >}}
 
 En las siguientes semanas publicaré más artículos sobre esta serie de Docker comentando [Docker Hub][docker-hub], [Docker Machine][docker-machine] y explicaré de qué forma nos pueden ser útiles estas otras herramientas.
 

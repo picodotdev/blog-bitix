@@ -46,8 +46,9 @@ Si nos encontramos con una de estas excepciones con los genéricos en una colecc
 Relacionados con casos de combinar genéricos y arrays y _ClassCastException_ en el libro [Java Generics and Collections](https://amzn.to/3D93nvU) se definen dos principios a seguir para evitar excepciones: _The Principle of Truth in Advertising_ y _The Principle of Indecent Exposure_.
 
 {{< amazon
-    linkids="befd554d504892ac130d115bfc8619b5"
-    asins="0596527756" >}}
+    linkids="https://amzn.to/48auLIQ"
+    asins="0596527756"
+    titles="Java Generics and Collections" >}}
     
 Salvo que hagamos operaciones complicadas entre genéricos de diferentes tipos no será muy habitual que nos encontremos _ClassCastException_ por _Heap Pollution_, pero es un concepto interesante conocer, en cualquier caso el compilador nos informará con los _unchecked warnings_.
 

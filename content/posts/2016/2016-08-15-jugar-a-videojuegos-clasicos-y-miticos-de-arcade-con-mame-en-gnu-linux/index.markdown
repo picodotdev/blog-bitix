@@ -128,8 +128,9 @@ Incluso con una [Raspberry Pi][amazon-raspberrypi] podremos jugar usando como pa
 
 {{< amazon
     tags="raspberrypi"
-    linkids="c11c054c837d2f902b2abce603f514e1"
-    asins="B01N59IUV5" >}}
+    linkids="https://amzn.to/3UrRkW2"
+    asins="B01EA7MVTQ"
+    titles="Controlador USB de juegos SNES" >}}
 
 Ya solo nos queda disfrutar y pasar un buen rato con nuestros juegos preferidos, nada que envidiar en cuanto a diversión a una PlayStation 4 ;), ah y no ocupan 20 GiB sino menos de 1 MiB.
 

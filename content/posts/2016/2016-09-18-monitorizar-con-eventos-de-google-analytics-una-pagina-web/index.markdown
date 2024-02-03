@@ -38,7 +38,8 @@ En la sección [Seguimiento de eventos](https://developers.google.com/analytics/
 Como para cualquier otra cosa en la que queramos profundizar una buena forma es con algunos libros específicos dedicados al tema. Los siguientes son dos libros de los [muchos libros sobre Google Analytics](https://amzn.to/2cH8SXR) disponibles en [Amazon][amazon-affiliate].
 
 {{< amazon
-    linkids="4babfb60d80236251c0ef398bc3ab757&internal=1,c179f357fbd31e18d25e93fd13c9729e&internal=1"
-    asins="0596158009,148420266X" >}}
+    linkids="https://amzn.to/3vZq5YS,https://amzn.to/3OvYRiS"
+    asins="8441544115,8441539154"
+    titles="Google Analytics 4: mide y vencerás,Google Tag Manager: mide y vencerás" >}}
 
 {{% /post %}}

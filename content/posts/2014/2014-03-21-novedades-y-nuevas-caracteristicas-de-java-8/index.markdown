@@ -50,8 +50,9 @@ será dinámico pero no evitará fugas de memoria.
 * [Otras novedades](http://openjdk.java.net/projects/jdk8/features).
 
 {{< amazon
-    linkids="13cd447a466645c3dd9162d935caf076,8bb841ba7a877bb075e20d754e9df4fd,51d39d999467395851bae9f3931e788c"
-    asins="0131872486,B00B8V09HY,1617291994" >}}
+    linkids="https://amzn.to/42rQNWf,https://amzn.to/3w0yVWj,https://amzn.to/3OwfsTz"
+    asins="0131872486,0134685997,1617291994"
+    titles="Thinking in Java,Effective Java,Java 8 in Action: Lambdas Streams and functional-style programming" >}}
 
 ## Nuevas características
 

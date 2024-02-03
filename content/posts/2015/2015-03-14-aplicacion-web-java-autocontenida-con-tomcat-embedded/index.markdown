@@ -43,11 +43,12 @@ Generamos el war de la aplicación que queremos desplegar embebida, e iniciamos 
     gallery="true"
     image1="image:app.webp" optionsthumb1="300x200" title1="Aplicación web en TomcatEmbedded" >}}
 
-La tendencia actual es que las aplicaciones evolucionen hacia microservicios por varias características deseables que ofrecen como al ser más pequeñas las funcionalidades sean más manejables, sean reemplazables, posibilidad de usar la tecnología más adecuada según el servicio desde lenguaje de programación al sistema de persistencia (relacional o noSQL), facilidad de despliegue, .... Si te interesan los microservicios un libro muy interesante y recomendable es [Building Microservices](https://amzn.to/2MTStSv). Proporciona una visión detallada de los diferentes aspectos que deben tratar las aplicaciones construidas según esta arquitectura.
+La tendencia actual es que las aplicaciones evolucionen hacia microservicios por varias características deseables que ofrecen como al ser más pequeñas las funcionalidades sean más manejables, sean reemplazables, posibilidad de usar la tecnología más adecuada según el servicio desde lenguaje de programación al sistema de persistencia (relacional o noSQL), facilidad de despliegue, .... Si te interesan los microservicios un libro muy interesante y recomendable es [Building Microservices](https://amzn.to/3SoxDMi). Proporciona una visión detallada de los diferentes aspectos que deben tratar las aplicaciones construidas según esta arquitectura.
 
 {{< amazon
-    linkids="ba7a81c43f55a67e1268c7b9969806b1"
-    asins="1491950358" >}}
+    linkids="https://amzn.to/3SoxDMi"
+    asins="1492034029"
+    titles="Building Microservices: Designing Fine-Grained Systems" >}}
 
 El [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/TomcatEmbedded) y el [código fuente de la aplicación web](https://github.com/picodotdev/elblogdepicodev/tree/master/PlugInTapestry) usada los puedes encontrar en mi repositorio de GitHub. Finalmente he de decir que la aplicación usada aunque es un ejemplo no es simple (usa [Tapestry][tapestry], [Spring][spring], [Hibernate][hibernate], [Shiro][shiro], [H2][h2]) y a pesar de ello no he tenido ninguna excepción extraña que haya tenido que resolver, con esto quiero decir que usar Tomcat Embedded me ha resultado totalmente fiable.
 

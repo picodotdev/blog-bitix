@@ -66,11 +66,12 @@ Ejecutando el cliente y llamando a los métodos de la interfaz del servicio vere
     image1="image:cliente.webp" optionsthumb1="300x200" title1="Salida de consola del cliente"
     image2="image:servidor.webp" optionsthumb2="300x200" title2="Salida de consola del servidor" >}}
 
-Si te interesan las arquitecturas de aplicaciones con microservicios ya sea con API RPC o REST un libro muy interesante y recomendable es [Building Microservices](https://amzn.to/2Fm8ywj). Proporciona una visión detallada de los diferentes aspectos que deben tratar este tipo de aplicaciones.
+Si te interesan las arquitecturas de aplicaciones con microservicios ya sea con API RPC o REST un libro muy interesante y recomendable es [Building Microservices](https://amzn.to/3SoxDMi). Proporciona una visión detallada de los diferentes aspectos que deben tratar este tipo de aplicaciones.
 
 {{< amazon
-    linkids="231228ef7b66c3a75e0547307191c3db"
-    asins="1491950358" >}}
+    linkids="https://amzn.to/3SoxDMi"
+    asins="1492034029"
+    titles="Building Microservices: Designing Fine-Grained Systems" >}}
 
 Apache Thrift no es la única herramienta para hacer llamadas RPC, una muy similar es [gRPC][grpc] de [Google][google] e igualmente interesante al hacer uso de HTTP/2 y Protocol Buffers.
 

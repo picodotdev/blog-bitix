@@ -26,11 +26,12 @@ Los microservicios proponen una aproximación diferente al despliegue de las apl
 
 Otra forma de poder hacer la aplicación autocontenida es con [Spring Boot][spring-boot], internamente usa una versión embebible del servidor de aplicaciones de la misma forma que lo podemos usar directamente, la ventaja al usar Spring Boot es que soporta Tomcat, Jetty o [Undertow][undertow] y pasar de usar uno a otro es muy sencillo y prácticamente transparente para la aplicación, además proporciona algunas características adicionales como inicializar el contenedor <abbr title="Inversion of Control">IoC</abbr> de [Spring][spring], configuración, perfiles para diferentes entornos (desarrollo, pruebas, producción), monitorización y métricas del servidor de aplicaciones y soporte para [la herramienta de automatización Gradle][elblogdepicodev-98] entre algunas más. En el siguiente ejemplo mostraré como ejecutar una aplicación Java y una aplicación web Java con Spring Boot que usa [jOOQ como alternativa a Hibernate][blogbitix-82], [Apache Tapestry como _framework_ web][blogbitix-12], [Liquibase para crear el esquema y tablas de la base de datos][elblogdepicodev-155] y por simplicidad [H2][h2] como base de datos.
 
-Los mostrado en este artículo es solo una pequeña parte de lo que ofrece Sring Boot, en el libro [Spring Boot in Action](https://amzn.to/39GvW5x) se comenta en mucho más detalle y de forma didáctica, un libro muy recomendable para adentrarse rápidamente en ste nuevo mundo de posibilidades, [Spring Boot: Up and Running](https://amzn.to/3kxG3kh) está orientado a aplicar Spring Bot en el contexto de microservicios aunque muchos conceptos aplicables en una aplicación de monolito modular.
+Los mostrado en este artículo es solo una pequeña parte de lo que ofrece Sring Boot, en el libro [Spring Boot in Action](https://amzn.to/3SsHErO) se comenta en mucho más detalle y de forma didáctica, un libro muy recomendable para adentrarse rápidamente en ste nuevo mundo de posibilidades, [Java Spring Boot: A Pro-Level Guide to Java Spring Boot: Advanced Patterns and Best Practices](https://amzn.to/3SrEZ1h) está orientado a aplicar Spring Bot en el contexto de microservicios aunque muchos conceptos aplicables en una aplicación de monolito modular.
 
 {{< amazon
-    linkids="09aa02ea0fe2a0a34dfd52a894557d39,61b49fc8ef6bdf7c80975908df76d4af"
-    asins="1492076988,1617292540" >}}
+    linkids="https://amzn.to/3SsHErO,https://amzn.to/3SrEZ1h"
+    asins="1492076988,B0CRBLFYVK"
+    titles="Spring Boot: Up and Running: Building Cloud Native Java and Kotlin Applications,Java Spring Boot: A Pro-Level Guide to Java Spring Boot: Advanced Patterns and Best Practices" >}}
 
 Spring Boot proporciona un _plugin_, _spring-boot_, para [Gradle][gradle] que deberemos añadir al archivo _build.gradle_, a partir de este momento dispondremos algunas tareas adicionales en el proyecto como _bootRun_ para ejecutar la aplicación desde Gradle (similar a la opción _run_ y el parámetro _mainClassName_ que añade el _plugin application_) y _bootRepackage_ para poder ejecutar la aplicación con el comando `java -jar`.
 

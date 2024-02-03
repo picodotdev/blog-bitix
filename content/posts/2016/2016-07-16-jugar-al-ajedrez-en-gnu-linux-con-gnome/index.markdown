@@ -49,7 +49,8 @@ También podemos guardar la partida para continuarla con posterioridad. Solo nos
 En Amazon hay varios libros que serán más didácticos sobre estrategia para el juego del ajedrez como [Ajedrez para niños](https://amzn.to/29Cj30T) o [El ajedrez de torneo](https://amzn.to/29CiOTD) y en la biblioteca libre [OpenLibra][openlibra] hay algunos de libre acceso como [Ajedrez y su Enseñanza: Libro de Aperturas](https://openlibra.com/es/book/ajedrez-y-su-ensenanza-libro-de-aperturas). Leyendo alguno de estos libros obtendremos pautas y tácticas que podemos emplear para mejorar nuestras jugadas.
 
 {{< amazon
-    linkids="c1e1fc606e2606fec91e2db08cadcfa7&internal=1,b78575ac7587361ca5bb1405a9a2de99&internal=1"
-    asins="8425517893,842450397X" >}}
+    linkids="https://amzn.to/3uaDXip,https://amzn.to/3SGvY5U"
+    asins="8425517893,842450397X"
+    titles="Ajedrez para niños,El ajedrez de torneo" >}}
 
 {{% /post %}}

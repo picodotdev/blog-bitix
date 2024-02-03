@@ -43,8 +43,9 @@ En este caso el artefacto que he usado ha sido un archivo _jar_ si se tratase de
 El libro [Gradle in Action](https://amzn.to/2tzDFla) proporciona una aplicación más detallada de muchos conceptos de Gradle, otro buen punto de partida es la propia [documentación de Gradle](https://docs.gradle.org/current/userguide/userguide.html).
 
 {{< amazon
-    linkids="47801f62b1166dbad13b7f366c836d35"
-    asins="1617291307" >}}
+    linkids="https://amzn.to/3UkrbIK"
+    asins="1617291307"
+    titles="Gradle in Action" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/GradleVersion/" command="export BUILD_NUMBER=42 && ./gradlew build" >}}
 

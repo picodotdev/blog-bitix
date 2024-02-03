@@ -45,8 +45,9 @@ Iniciada la aplicación con `./gradlew run` y con la siguiente comando de `curl`
 Al diseñar APIs REST más complejas que este sencillo ejemplo conviene conocer el término [HATEOAS][hateoas]. Deberemos definir como organizar la información devuelta por los diferentes que los libros [RESTful Web APIs](https://amzn.to/2cxWMRo) y [REST in Practice](https://amzn.to/2cEzQz5) además de [artículos con consejos sobre como diseñar APIs RESTful](https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api).
 
 {{< amazon
-    linkids="e0cd589f357dfc1c77cfb004e6668fa5&internal=1,3b1ee2b6ff595b6b3c2fd7c70eb35cc7&internal=1"
-    asins="1449358063,0596805829" >}}
+    linkids="https://amzn.to/3OsDOO9,https://amzn.to/3Ut5qGQ"
+    asins="1449358063,0596805829"
+    titles="RESTful Web APIs: Services for a Changing World,REST in Practise: Hypermedia and Systems Architecture" >}}
 
 Una vez que disponemos del servicio REST podemos [añadir autenticación y autorización con Keycloak como proveedor de OAuth][blogbitix-180]. 
 

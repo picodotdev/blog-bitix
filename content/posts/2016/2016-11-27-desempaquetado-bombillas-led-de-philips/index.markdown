@@ -33,11 +33,12 @@ Haciendo un cálculo rápido podemos estimar el ahorro que podemos conseguir sus
 
 En la siguiente [calculadora de ahorro con bombillas LED](http://www.bombillasled.net/content/11-calculadora-de-ahorro) si no queremos hacerlo nosotros podemos calcular el retorno que obtenemos al hacer la sustitución, probablemente en el segundo año usar bombillas LED ya nos suponga un ahorro.
 
-En [Amazon][amazon-affiliate] hay una amplia gama de bombillas LED variando en tipo de casquillo, temperatura de la luz, formas y tamaños. Yo compré [6 bombillas LED E27 de 13.5 W equivalente a 100 W con 1521 lúmenes en luz cálida](https://amzn.to/2fDevZv) de la marca PHILIPS algo más caras de lo que están ahora aunque Amazon ha sacado un modelo similar de su marca blanca AmazonBasics. Encontraremos [más modelos de bombillas](https://amzn.to/2fQIpr9) que también deberemos elegir según la lámpara donde vaya ser colocadas. Yo las puse en varias del siguiente modelo de [lámpara de 3 focos Brilliant](https://amzn.to/2fQKYJJ) y estoy contento tanto con las bombillas como con las lámparas.
+En [Amazon][amazon-affiliate] hay una amplia gama de bombillas LED variando en tipo de casquillo, temperatura de la luz, formas y tamaños. Yo compré [6 bombillas LED E27 de 13.5 W equivalente a 100 W con 1521 lúmenes en luz cálida](https://amzn.to/2fDevZv) de la marca PHILIPS algo más caras de lo que están ahora aunque Amazon ha sacado un modelo similar de su marca blanca AmazonBasics. Encontraremos más modelos de bombillas que también deberemos elegir según la lámpara donde vaya ser colocadas. Yo las puse en varias del siguiente modelo de [lámpara de 3 focos Brilliant](https://amzn.to/2fQKYJJ) y estoy contento tanto con las bombillas como con las lámparas.
 
 {{< amazon
-    linkids="dbc535a3b566935601a1587c65410d8e,be84f17ab1428e9b8da4fd80f249847d,a35b7a1682f1f28f137f770d01fc5318&internal="
-    asins="B0716CJ7YX,B01J1NTGVA,B001BB1SSA" >}}
+    linkids="https://amzn.to/3SnHqSQ"
+    asins="B0716CJ7YX"
+    titles="Amazon Basics bombilla LED (E27 13W)" >}}
 
 {{< image
     gallery="true"

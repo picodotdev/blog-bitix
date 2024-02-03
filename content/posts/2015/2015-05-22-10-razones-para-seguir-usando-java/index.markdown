@@ -112,11 +112,12 @@ Aunque no lo he puesto el divertirse y programar a gusto con un lenguaje tambié
 
 Estas son otras listas de [10 razones por las que Java mola más que nunca](http://zeroturnaround.com/rebellabs/10-reasons-why-java-now-rocks-more-than-ever-part-1-the-java-compiler/) y otras [10 razones para querer a Java y la JVM](https://www.voxxed.com/blog/2015/02/10-reasons-to-love-java-and-the-jvm-reconnecting-with-your-warm-and-fuzzies/).
 
-Para aprender Java en profundidad son varios libros de los que he leído que me han gustado empezando por [Thinking in Java](https://amzn.to/2sNCizu), [Effective Java](https://amzn.to/31GZwFF) y [Java 8 in Action](https://amzn.to/2MXMTi3) además de otros [buenos libros para mejorar como programadores][blogbitix-55] que son interesantes de leer.
+Para aprender Java en profundidad son varios libros de los que he leído que me han gustado empezando por [Thinking in Java](https://amzn.to/42rQNWf), [Effective Java](https://amzn.to/3w0yVWj) y [Java 8 in Action](https://amzn.to/3OwfsTz) además de otros [buenos libros para mejorar como programadores][blogbitix-55] que son interesantes de leer.
 
 {{< amazon
-    linkids="2a437ba4126a093af22af88c893ac407,3a13c135d5cd40ca21d3f1dd853ab2a3,2256857b147eea05bc79aef83d2548fe"
-    asins="0131872486,0134685997,1617291994" >}}
+    linkids="https://amzn.to/42rQNWf,https://amzn.to/3w0yVWj,https://amzn.to/3OwfsTz"
+    asins="0131872486,0134685997,1617291994"
+    titles="Thinking in Java,Effective Java,Java 8 in Action: Lambdas Streams and functional-style programming" >}}
 
 En Junio de 1997 James Gosling formando parte de Sun Microsystems Inc. escribía el artículo de título [The Feel of Java](http://www.win.tue.nl/~evink/education/avp/pdf/feel-of-java.pdf) detallando varias propiedades del lenguaje que hacen del él lo que es y que aún siguen estando vigentes. Y en 1996 junto con Henry McGilton [The Java Language Environment: A White Paper](http://www.stroustrup.com/1995_Java_whitepaper.pdf) donde describen los objetivos del lenguaje. Finalmente escrito más recientemente [Java The Legend](http://www.oreilly.com/programming/free/java-the-legend.csp) analiza Java, su pasado, aciertos y fallos, comunidad, ecosistema y futuro. Estos tres documentos son piezas valiosas de información.
 

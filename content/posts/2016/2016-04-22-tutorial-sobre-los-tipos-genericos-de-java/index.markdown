@@ -141,14 +141,15 @@ Los _generics_ tiene algunas restricciones:
 
 Este artículo es gran medida una traducción del [tutorial de Java sobre Generics](https://docs.oracle.com/javase/tutorial/java/generics/index.html), que también es recomendable echarle un vistazo incluso leerlo varias veces por la cantidad de información que contiene, en algunos puntos todo lo comentado en este artículo está explicado de forma más extensa.
 
-Para profundizar más en este importante tema de genéricos de Java tenemos a nuestra disposición varios libros, alguno como  [Java Generics and Collections](https://amzn.to/2SXyqXh) dedicado en gran parte a él, no importa que se un libro del 2006 ya que desde entonces los genéricos no han tenido grandes cambios y su contenido sigue siendo válido. Los _generics_ de Java no son perfectos, por el _type erasure_ y ser _non reifiables_, pero tampoco débiles y hay buenos motivos para que sean así como se dice en el libro.
+Para profundizar más en este importante tema de genéricos de Java tenemos a nuestra disposición varios libros, alguno como  [Java Generics and Collections](https://amzn.to/48auLIQ) dedicado en gran parte a él, no importa que se un libro del 2006 ya que desde entonces los genéricos no han tenido grandes cambios y su contenido sigue siendo válido. Los _generics_ de Java no son perfectos, por el _type erasure_ y ser _non reifiables_, pero tampoco débiles y hay buenos motivos para que sean así como se dice en el libro.
 
-* [Java Generics and Collections](https://amzn.to/2MXNErp)
-* [Effective Java (2nd Edition): A Programming Language Guide](https://amzn.to/39HVI9u)
+* [Java Generics and Collections](https://amzn.to/48auLIQ)
+* [Effective Java (2nd Edition): A Programming Language Guide](https://amzn.to/482DFbb)
 
 {{< amazon
-    linkids="77088bd1b29706cdb837eebce10d8b88,cf908dff78cd2b9cd608d868b4de0fa3"
-    asins="0596527756,0321356683" >}}
+    linkids="https://amzn.to/48auLIQ,https://amzn.to/482DFbb"
+    asins="0596527756,0321356683"
+    titles="Java Generics and Collections,Effective Java" >}}
 
 A pesar de los _generics_ y el compilador es posible poner en un _String_ en un _HashSet\<Integer\>_ usando el tipo _raw_ de _HashSet_, cosa que se denomina [Heap Pollution][blogbitix-141] y que provoca excepciones [ClassCastException](javadoc8:java/lang/ClassCastException.html) en tiempo de ejecución. Usando colecciones envueltas por los métodos [Collections.checkedSet](javadoc8:java/util/Collections.html#checkedSet-java.util.Set-java.lang.Class-), [checkedList](javadoc8:java/util/Collections.html#checkedList-java.util.List-java.lang.Class-) y [checkedMap](javadoc8:java/util/Collections.html#checkedMap-java.util.Map-java.lang.Class-java.lang.Class-) evitaremos el _Heap Pollution_ produciendo una excepción no en el momento de extraer el objeto de la colección sino en el momento de insertarlo.
 

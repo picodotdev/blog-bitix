@@ -56,8 +56,9 @@ En la aplicación Spring Boot incluyendo la dependencia de Spring Boot Actuator 
 Spring Boot Actuator es otro de los varios módulos disponibles en Spring Boot. Para conocer más en detalle cuales son sus posibilidades el libro [Spring Boot in Action](https://amzn.to/2SVtJNU) lo explica bastante bien, otro libro sobre Spring Boot es [Spring Boot: Up and Running](https://amzn.to/3kxG3kh).
 
 {{< amazon
-    linkids="09aa02ea0fe2a0a34dfd52a894557d39,61b49fc8ef6bdf7c80975908df76d4af"
-    asins="1492076988,1617292540" >}}
+    linkids="https://amzn.to/3SsHErO,https://amzn.to/3SrEZ1h"
+    asins="1492076988,B0CRBLFYVK"
+    titles="Spring Boot: Up and Running: Building Cloud Native Java and Kotlin Applications,Java Spring Boot: A Pro-Level Guide to Java Spring Boot: Advanced Patterns and Best Practices" >}}
 
 De cualquier modo conviene también tener automatizada la monitorización de las métricas. Con estos _endpoints_ y una herramienta como [Prometheus][prometheus] podemos visualizar gráficas generadas con los datos a lo largo del tiempo, con los datos visualizados de forma gráfica podremos ver rápidamente picos, cambios bruscos y tendencias en alguno de ellos o compararlos con tiempos pasados. Esta misma herramienta nos puede servir para enviar alertas y notificaciones o hacer consultas sobre los datos recolectados.
 

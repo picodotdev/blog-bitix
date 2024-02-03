@@ -61,11 +61,12 @@ Su uso sería de la siguiente manera algo más autoexplicativa y legible que la 
 
 La instancia de la clase _UsuarioBuilder_ en su uso recoge los datos usando una API fluida, el método _build_ es el que construye la instancia del usuario mediante el constructor con visibilidad de paquete en el que se valida que los datos al construir el objeto _Usuario_ sean válidos, en este caso que el _email_ es requerido.
 
-En el libro [Effective Java](https://amzn.to/2FngVHS) en el _Item #2_ se comenta más detalladamente este patrón junto a otra buena colección de cosas sobre los constructores y más cosas sobre Java, es uno en mi lista de [8+ libros recomendables para mejorar como programadores][blogbitix-55].
+En el libro [Effective Java](https://amzn.to/42n0Hs1) en el _Item #2_ se comenta más detalladamente este patrón junto a otra buena colección de cosas sobre los constructores y más cosas sobre Java, es uno en mi lista de [8+ libros recomendables para mejorar como programadores][blogbitix-55].
 
 {{< amazon
-    linkids="b669e63080013f19e959a9d5b80e3f77,3fa600b62ab3a48a0c6a5dfc6b9c9651,2d6122afa07f905f4c3f2a9bcc62ff23"
-    asins="0321356683,0596007124,0201633612" >}}
+    linkids="https://amzn.to/42n0Hs1,https://amzn.to/3OwfniJ,https://amzn.to/3UmmrlV"
+    asins="0321356683,149207800X,0201633612"
+    titles="Effective Java,Head First Design Patterns: A Brain-friendly Guide,Design Patterns: Elements of Reusable Object-Oriented Software" >}}
 
 En el apartado de referencia puedes encontrar más artículos que he escrito sobre otros patrones de diseño.
 

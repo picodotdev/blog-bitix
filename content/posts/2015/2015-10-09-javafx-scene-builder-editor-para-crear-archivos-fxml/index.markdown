@@ -72,11 +72,12 @@ Entre las [demostraciones y ejemplos de Java 8](https://www.oracle.com/technetwo
     image1="image:ensemble.webp" optionsthumb1="300x200" title1="Aplicación Ensemble"
     caption="Aplicación Ensemble" >}}
 
-En la propia página web de JavaFX, en el libro [JavaFX For Dummies](https://amzn.to/2ZQN8kp) y otra documentación se puede encontrar explicado de forma más detallada JavaFX.
+En la propia página web de JavaFX, en el libro [JavaFX For Dummies](https://amzn.to/3HL4Kov) y otra documentación se puede encontrar explicado de forma más detallada JavaFX.
 
 {{< amazon
-    linkids="86e39a50525b1973ff3f39ad53d4dff6"
-    asins="1118385349" >}}
+    linkids="https://amzn.to/3HL4Kov"
+    asins="1118385349"
+    titles="JavaFX For Dummies" >}}
 
 En definitiva con la aplicación JavaFX Scene Builder y los archivos FXML construir la interfaces gráficas de una aplicación de escritorio Java es bastante más simple que lo era antiguamente. JavaFX además ofrece posibilidades que antes no eran posibles en Swing y AWT como rotar componentes, un componente visualizador de HTML, soporte para aceleración gráfica por hardware y más cosas. Después de haber conocido en algo más detalle JavaFX me quedo con una buena sensación. Como muestra de la flexibilidad de cambio de los estilos de los controles el proyecto [JFoenix](http://www.jfoenix.com/) les aplica el _Material Desing_ de las aplicaciones [Android][android] de Google.
 

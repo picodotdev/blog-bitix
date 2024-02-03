@@ -61,11 +61,12 @@ Si queremos probar los ejemplos deberemos disponer del servidor de aplicaciones 
 {{< code file="standalone.sh" language="bash" options="" >}}
 {{< code file="standalone-full.xml" language="XML" options="" >}}
 
-Para terminar y conocer más sobre JMS un buen libro es [Java Message Service](https://amzn.to/3qxq7SK) de O'Reilly, que explica de forma mucho más extensa y completa este tema.
+Para terminar y conocer más sobre JMS un buen libro es [Java Message Service](https://amzn.to/42rNZrX) de O'Reilly, que explica de forma mucho más extensa y completa este tema.
 
 {{< amazon
-    linkids="70a9c20200ad5af74dc72b63f355aa27"
-    asins="0596000685" >}}
+    linkids="https://amzn.to/42rNZrX"
+    asins="0596000685"
+    titles="Java Message Service" >}}
     
 El [código fuente completo de estos ejemplos](https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoJMS) los puedes descargar de [mi repositorio de GitHub](https://github.com/picodotdev/blog-ejemplos).
 

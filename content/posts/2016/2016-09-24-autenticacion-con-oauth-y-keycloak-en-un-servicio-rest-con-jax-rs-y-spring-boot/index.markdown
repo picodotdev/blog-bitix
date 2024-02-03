@@ -72,8 +72,9 @@ Para usar Keycloak en una aplicación Java con Spring Boot deberemos añadir alg
 Dos buenos libros sobre OAuth que he leído son los siguientes uno explica detalladamente el protocolo OAuth incluidas las varias formas de obtener un _token_ además del mostrado en este artículo usando las credenciales del cliente. El otro libro es sobre el proveedor de identidad [Keycloak] que implementa autenticación con [OpenID Connect][openid-connect].
 
 {{< amazon
-    linkids="38b33d0ec3ca9855c0a981d1e2154b63,eb189e8a81b21d362b31f7b08f4b9f4e"
-    asins="161729327X,1800562497" >}}
+    linkids="https://amzn.to/42rQtXx,https://amzn.to/42rNmi5"
+    asins="161729327X,1800562497"
+    titles="OAuth 2 in Action,Keycloak Identity and Access Management for Modern Applications" >}}
 
 En el siguiente artículo mostraré un [cliente del servicio REST autenticado con OAuth en Java][blogbitix-183] que haga las mismas llamadas que con _curl_ pero usando código Java mediante la librería [OkHttp][okhttp].
 

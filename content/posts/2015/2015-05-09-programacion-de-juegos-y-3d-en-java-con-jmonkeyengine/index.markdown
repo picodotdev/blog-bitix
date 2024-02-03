@@ -119,11 +119,12 @@ jMonkeyEngine ofrece un entorno de desarrollo (IDE) basado [NetBeans][netbeans].
 
 Para instalar jMonkeyEngine debemos [descargar el SDK](http://jmonkeyengine.org/downloads/) adecuado para la plataforma que usemos ya sea Windows, Linux o Macintosh. En el caso de Linux es un archivo .sh que deberemos ejecutar (dando permisos de ejecución si es necesario), seguimos las instrucciones y seleccionamos el directorio de instalación del SDK. En _jmonkeyplatform/libs_ de la carpeta de instalación encontramos los archivos .jar que deberemos usar en el IDE o en los programas de los ejemplos.
 
-El [libro jMonkeyEngine 3.0 Beginners Guide](https://amzn.to/2ZRNc38) me ha resultado muy interesante como punto de introducción a la programación gráfica 3D con Java, pero también si realmente nos interesa la programación de videojuegos es muy recomendable leer el material ofrecido en el [Curso de Experto en Desarrollo de Videojuegos](http://www.cedv.es/), un libro de una extensión de más de 1100 páginas de muy buena calidad, en español y descargables gratuitamente. En la [_wiki_ de jMonkeyEngine](http://wiki.jmonkeyengine.org/doku.php) se pueden encontrar [numerosos tutoriales para principiantes](http://wiki.jmonkeyengine.org/doku.php/jme3#tutorials_for_beginners), también numerosos artículos de nivel más avanzado y el [javadoc de la API](https://javadoc.jmonkeyengine.org/).
+El [libro jMonkeyEngine 3.0 Beginners Guide](https://amzn.to/3w8YAvK) me ha resultado muy interesante como punto de introducción a la programación gráfica 3D con Java, pero también si realmente nos interesa la programación de videojuegos es muy recomendable leer el material ofrecido en el [Curso de Experto en Desarrollo de Videojuegos](http://www.cedv.es/), un libro de una extensión de más de 1100 páginas de muy buena calidad, en español y descargables gratuitamente. En la [_wiki_ de jMonkeyEngine](http://wiki.jmonkeyengine.org/doku.php) se pueden encontrar [numerosos tutoriales para principiantes](http://wiki.jmonkeyengine.org/doku.php/jme3#tutorials_for_beginners), también numerosos artículos de nivel más avanzado y el [javadoc de la API](https://javadoc.jmonkeyengine.org/).
 
 {{< amazon
-    linkids="56dfb3e4672ccdf48e706b39693b3b55"
-    asins="1849516464" >}}
+    linkids="https://amzn.to/3w8YAvK"
+    asins="1849516464"
+    titles="jMonkeyEngine 3.0 Beginner's Guide" >}}
 
 Otras librerías como [Slick2D][slick2d] permiten hacer videojuegos en 2D como serían los juegos de plataformas, más o menos lo que permite jMonkeyEngine en el 3D aplicado a 2D también usando como lenguaje Java. Sin duda los videojuegos han sido el motivo en parte de que muchos hoy seamos programadores e informáticos aunque en nuestro trabajo nos dediquemos a otro tipo de aplicaciones y entornos.
 

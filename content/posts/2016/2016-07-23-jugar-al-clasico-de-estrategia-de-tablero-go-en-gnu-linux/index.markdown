@@ -48,8 +48,9 @@ Con el comando `help` obtendremos una lista completa de los comandos a nuestra d
 En Amazon hay algunos libros como [El Go, un juego oriental milenario](https://amzn.to/2anENOU) y [GO para principiantes](https://amzn.to/29ULTWQ), en la librería libre también hay algunos como [Manual del Juego del Go](https://openlibra.com/es/book/manual-del-juego-del-go) y [GO: Utilizando las 36 estrategias chinas](https://openlibra.com/es/book/go-utilizando-las-36-estrategias-chinas).
 
 {{< amazon
-    linkids="210d272021d815869d2c44e1503b904e&internal=1,f7342910d70bf91cda078a1ce3abbbc0&internal=1"
-    asins="B015ENSU18,8415211945" >}}
+    linkids="https://amzn.to/3ujpnoE,https://amzn.to/3SHmszC"
+    asins="B015ENSU18,8415211945"
+    titles="El Go un juego oriental milenario,GO para principiantes" >}}
 
 {{< reference >}}
 * [Juego Go](https://en.wikipedia.org/wiki/Go_(game))

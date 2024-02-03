@@ -80,11 +80,12 @@ Finalmente, otra cosa que nos puede interesar es que ES nos resalte las palabras
 
 {{< code file="script-11.sh" language="bash" options="" >}}
 
-Estos son solo unos pocos ejemplos, ES seguro que puede ofrecer muchas cosas más que leyendo solo la documentación de referencia es difícil descubrir. Unos buenos libros que explican muchas de las posibilidades y opciones de forma más didáctica son [Elasticsearch: The Definitive Guide](https://amzn.to/2sChYkF) y/o [Elasticsearch Server](https://amzn.to/37GgF31), en algunos casos la documentación propia del proyecto es suficiente pero en el caso de Elasticsearch algunos libros como estos son casi necesarios para dominarlo.
+Estos son solo unos pocos ejemplos, ES seguro que puede ofrecer muchas cosas más que leyendo solo la documentación de referencia es difícil descubrir. Unos buenos libros que explican muchas de las posibilidades y opciones de forma más didáctica son [Elasticsearch: The Definitive Guide](https://amzn.to/3w3Rx7P) y/o [Elasticsearch Server](https://amzn.to/42m6DBH), en algunos casos la documentación propia del proyecto es suficiente pero en el caso de Elasticsearch algunos libros como estos son casi necesarios para dominarlo.
 
 {{< amazon
-    linkids="f844862e917834820c94b2dbae241b1c,b790502cf2724f0007de5bc473e81c9e"
-    asins="1449358543,B00JXLF7AK" >}}
+    linkids="https://amzn.to/3w3Rx7P,https://amzn.to/42m6DBH"
+    asins="1449358543,B00JXLF7AK"
+    titles="Elasticsearch The Definitive Guide: A Distributed Real-Time Search and Analytics Engine,Elasticsearch Server" >}}
 
 {{< reference >}}
 * [Búsquedas de texto completo en objetos de dominio](https://elblogdepicodev.blogspot.com.es/2013/08/busquedas-de-texto-completo-en-objetos-de-dominio.html)

@@ -76,8 +76,9 @@ Implementar este método en cada clase de una aplicación es tedioso, repetitivo
 En el libro [Effective Java](https://amzn.to/2g9N1bi) se explican con un poco más detalle estas dos cosas y muchas otras otras sobre Java que son muy interesantes conocer, el libro es una buena y recomendada lectura para todo programador Java que está entre los [8+ libros para mejorar como programadores](https://picodotdev.github.io/blog-bitix/2014/12/8-plus-libros-para-mejorar-como-programadores/) que recomiendo.
 
 {{< amazon
-    linkids="9145a271e7886cea526d9fcbe9edb707&internal=1"
-    asins="0321356683" >}}
+    linkids="https://amzn.to/49ilz63&internal=1"
+    asins="0321356683"
+    titles="Effective Java" >}}
 
 {{< reference >}}
 * [Las colecciones de Java, estructuras de datos para guardar referencias a objetos][blogbitix-386]
