@@ -61,7 +61,7 @@
     "dateModified": "2016-04-24T13:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1913",
+    "wordCount": "1918",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -438,14 +438,14 @@
 <li>No se puede sobrecargar un método que tengan la misma firma que otro después del <em>type erasure</em>.</li>
 </ul>
 <p>Este artículo es gran medida una traducción del <a href="https://docs.oracle.com/javase/tutorial/java/generics/index.html">tutorial de Java sobre Generics</a>, que también es recomendable echarle un vistazo incluso leerlo varias veces por la cantidad de información que contiene, en algunos puntos todo lo comentado en este artículo está explicado de forma más extensa.</p>
-<p>Para profundizar más en este importante tema de genéricos de Java tenemos a nuestra disposición varios libros, alguno como  <a href="https://amzn.to/2SXyqXh" rel="sponsored">Java Generics and Collections</a> dedicado en gran parte a él, no importa que se un libro del 2006 ya que desde entonces los genéricos no han tenido grandes cambios y su contenido sigue siendo válido. Los <em>generics</em> de Java no son perfectos, por el <em>type erasure</em> y ser <em>non reifiables</em>, pero tampoco débiles y hay buenos motivos para que sean así como se dice en el libro.</p>
+<p>Para profundizar más en este importante tema de genéricos de Java tenemos a nuestra disposición varios libros, alguno como  <a href="https://amzn.to/48auLIQ" rel="sponsored">Java Generics and Collections</a> dedicado en gran parte a él, no importa que se un libro del 2006 ya que desde entonces los genéricos no han tenido grandes cambios y su contenido sigue siendo válido. Los <em>generics</em> de Java no son perfectos, por el <em>type erasure</em> y ser <em>non reifiables</em>, pero tampoco débiles y hay buenos motivos para que sean así como se dice en el libro.</p>
 <ul>
-<li><a href="https://amzn.to/2MXNErp" rel="sponsored">Java Generics and Collections</a></li>
-<li><a href="https://amzn.to/39HVI9u" rel="sponsored">Effective Java (2nd Edition): A Programming Language Guide</a></li>
+<li><a href="https://amzn.to/48auLIQ" rel="sponsored">Java Generics and Collections</a></li>
+<li><a href="https://amzn.to/482DFbb" rel="sponsored">Effective Java (2nd Edition): A Programming Language Guide</a></li>
 </ul>
 <div class="media media-amazon">
   <ul>
-    <li><a href="77088bd1b29706cdb837eebce10d8b88" title=""></a></li><li><a href="cf908dff78cd2b9cd608d868b4de0fa3" title=""></a></li></ul>
+    <li><a href="https://amzn.to/48auLIQ" title="Java Generics and Collections">Java Generics and Collections</a></li><li><a href="https://amzn.to/482DFbb" title="Effective Java">Effective Java</a></li></ul>
 </div>
 <p>A pesar de los <em>generics</em> y el compilador es posible poner en un <em>String</em> en un <em>HashSet&lt;Integer&gt;</em> usando el tipo <em>raw</em> de <em>HashSet</em>, cosa que se denomina <a href="https://picodotdev.github.io/blog-bitix/2016/05/que-es-el-concepto-de-heap-pollution-en-java/">Heap Pollution</a> y que provoca excepciones <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/ClassCastException.html">ClassCastException</a> en tiempo de ejecución. Usando colecciones envueltas por los métodos <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedSet-java.util.Set-java.lang.Class-">Collections.checkedSet</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedList-java.util.List-java.lang.Class-">checkedList</a> y <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedMap-java.util.Map-java.lang.Class-java.lang.Class-">checkedMap</a> evitaremos el <em>Heap Pollution</em> produciendo una excepción no en el momento de extraer el objeto de la colección sino en el momento de insertarlo.</p>
 <div class="code">
