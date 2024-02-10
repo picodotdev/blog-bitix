@@ -68,7 +68,7 @@ Hay muchos complementos que añade funcionalidades adicionales. Obsidian tiene u
     image3="image:obsidian-4.webp" optionsthumb3="200x150" title3="Obsidian"
     caption="Obsidian" >}}
 
-### Instalación e inicio con Obsidian
+### Instalación e inicio de Obsidian
 
 La instalación de obsidian es muy sencilla en los sistemas [GNU][gnu]/[Linux][linux] con [Flatpak][flatpak] es independiente de la distribución, también está el paquete de la distribución y otros formatos como [AppImage][appimage] o Snap. En [macOS][macos] y [Windows][windows] es posible descargar el binario de instalación propios de estos sistemas operativos que se obtienen desde su [página de descargas](https://obsidian.md/download).
 
