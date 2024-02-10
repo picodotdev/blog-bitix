@@ -192,6 +192,28 @@
 <ul class="list-unstyled">
     <li>
       <article>
+        <h1><a href="/blog-bitix/2022/12/crear-un-bean-segun-el-contexto-donde-se-inyecte-con-spring/">Crear un bean según el contexto donde se inyecte con Spring</a></h1>
+        <span class="information">
+          <time>22/12/2022</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Spring permite inyectar un <em>bean</em> construido utilizando información del contexto o clase donde se inyecte. Una caso de uso para esta funcionalidad es eliminar la habitual forma estática de inyectar las referencias a un Logger de una librería de <em>logging</em>, la inyección según el contexto permite proporciona el colaborador del Logger no como una variable estática sino en el constructor igual que otros colaboradores. Los beneficios son dos, se elimina una referencia estática que facilita los teses unitarios y se elimina un poco de código repetido en cada clase donde se use un Logger.
+          
+          <br>
+          <a href="/blog-bitix/2022/12/crear-un-bean-segun-el-contexto-donde-se-inyecte-con-spring/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2022/12/radar-tecnologico-y-otras-fuentes-de-informacion-sobre-programacion/">Radar tecnológico y otras fuentes de información sobre programación</a></h1>
         <span class="information">
           <time>15/12/2022</time>
@@ -493,28 +515,6 @@
           
           <br>
           <a href="/blog-bitix/2022/09/como-refrescar-el-access-token-de-un-cliente-oauth-cuando-caduca/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2022/09/introduccion-al-protocolo-oauth-2-para-delegar-la-autorizacion/">Introducción al protocolo OAuth 2 para delegar la autorización</a></h1>
-        <span class="information">
-          <time>08/09/2022</time>
-          
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-          
-        </span>
-        <p>
-          
-            El protocolo OAuth es un protocolo en el ámbito de la seguridad que permite que el dueño de los recursos conceda permisos a un cliente sin necesidad de compartir las credenciales, el servidor de recursos unicamente necesita un <em>token</em> que certifique el cliente tiene permisos para acceder a los recursos, el <em>token</em> es emitido por el servidor de autorización en el que el usuario se autentica y en el que servidor de recursos confía en los <em>tokens</em> de autorización que emite. Gracias a la flexibilidad del protocolo OAuth y estar basado en la ubicuidad del protocolo HTTP este es el mecanismo de autorización adoptado predominantemente en la web por los diferentes servicios que ofrecen sus APIs mediante REST sin limitarse a este tipo de APIs. OAuth se compone de varias especificaciones que permiten delegar la autorización, OpenID Connect construido sobre OAuth proporciona otro aspecto de la seguridad, la autenticación.
-          
-          <br>
-          <a href="/blog-bitix/2022/09/introduccion-al-protocolo-oauth-2-para-delegar-la-autorizacion/">Continuar leyendo...</a>
         </p>
       </article>
     </li>

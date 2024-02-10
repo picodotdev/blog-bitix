@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Hace ya unos meses desde que estoy usando Obsidian, pasado este tiempo considero que es un salto a los anteriores editores y aplicaciones de notas que he estado usando. A nivel personal como diario y otros asuntos ofrece varias funcionalidades que facilitan el gestionar el conocimiento y que no he visto en los anteriores editores que he usado. Es más que un editor de texto es una herramienta para almacenar conocimiento. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Obsidian, una herramienta para almacenar conocimiento</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2024/02/obsidian-una-herramienta-para-almacenar-conocimiento/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2024/02/obsidian-una-herramienta-para-almacenar-conocimiento/" hreflang="es" title="Obsidian, una herramienta para almacenar conocimiento">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Obsidian, una herramienta para almacenar conocimiento">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2024/02/obsidian-una-herramienta-para-almacenar-conocimiento/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/obsidian-750.webp">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Hace ya unos meses desde que estoy usando Obsidian, pasado este tiempo considero que es un salto a los anteriores editores y aplicaciones de notas que he estado usando. A nivel personal como diario y otros asuntos ofrece varias funcionalidades que facilitan el gestionar el conocimiento y que no he visto en los anteriores editores que he usado. Es más que un editor de texto es una herramienta para almacenar conocimiento. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/obsidian-750.webp">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Obsidian, una herramienta para almacenar conocimiento">
+<meta name="twitter:description" content="Hace ya unos meses desde que estoy usando Obsidian, pasado este tiempo considero que es un salto a los anteriores editores y aplicaciones de notas que he estado usando. A nivel personal como diario y otros asuntos ofrece varias funcionalidades que facilitan el gestionar el conocimiento y que no he visto en los anteriores editores que he usado. Es más que un editor de texto es una herramienta para almacenar conocimiento. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2024/02/obsidian-una-herramienta-para-almacenar-conocimiento/"
+    },
+    "headline": "Obsidian, una herramienta para almacenar conocimiento",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/obsidian-750.webp"
+        
+      },
+    "datePublished": "2024-02-10T20:00:00+02:00",
+    "dateModified": "2024-02-10T20:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "781",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "description": "",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Hace ya unos meses desde que estoy usando Obsidian, pasado este tiempo considero que es un salto a los anteriores editores y aplicaciones de notas que he estado usando. A nivel personal como diario y otros asuntos ofrece varias funcionalidades que facilitan el gestionar el conocimiento y que no he visto en los anteriores editores que he usado. Es más que un editor de texto es una herramienta para almacenar conocimiento."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+  
+  <script type="text/javascript" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async></script>
+<script>
+    window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() {
+      googletag.defineSlot('/23054707577/ZH9HsBYd', [980, 280], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      googletag.defineSlot('/23054707577/etaEP84a', [728, 90], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      googletag.defineSlot('/23054707577/s42YszNi', [300, 600], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      googletag.defineSlot('/23054707577/GrHBPdvN', [300, 600], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+    });
+</script>
+
+  
+  <script defer id="videoowall" data-id="videoowall_bfd88eba13cf727a36cf22ed1d89f7838287bb68d8331d7b190920bc4530adc5" data-cfasync="false" src="https://static.videoo.tv/videoowall_bfd88eba13cf727a36cf22ed1d89f7838287bb68d8331d7b190920bc4530adc5.js"></script>
+<script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 980px; min-height: 280px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/assets/images/logotypes/obsidian.svg" width="300" height="200" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            
+<div id='div-gpt-ad-1705155070019-0' style='min-width: 300px; min-height: 600px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705155070019-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Obsidian, una herramienta para almacenar conocimiento</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span></span> el <time>10/02/2024</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2024/02/obsidian-una-herramienta-para-almacenar-conocimiento/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2024/02/obsidian-una-herramienta-para-almacenar-conocimiento/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Hace ya unos meses desde que estoy usando Obsidian, pasado este tiempo considero que es un salto a los anteriores editores y aplicaciones de notas que he estado usando. A nivel personal como diario y otros asuntos ofrece varias funcionalidades que facilitan el gestionar el conocimiento y que no he visto en los anteriores editores que he usado. Es más que un editor de texto es una herramienta para almacenar conocimiento.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      
+<div id='div-gpt-ad-1705154918797-0' style='min-width: 728px; min-height: 90px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154918797-0'); });
+  </script>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/obsidian.svg" width="200" height="200" alt="Obsidian" title="Obsidian" class="" loading="false&#34;"></p>
+</div>
+<p>Las aplicaciones son las que proporcionan las funcionalidades que como usuarios de escritorio necesitamos para facilitar nuestro trabajo y necesidades. Hay herramientas para multitud de propósitos, las que proporciona el sistema operativo o entorno de escritorio.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2022/11/el-entorno-de-escritorio-gnome-simple-elegante-y-completo/">El entorno de escritorio GNOME, simple, elegante y completo</a></li>
+</ul>
+<p>Nuestras necesidades y conocimientos cambian y por ello dejamos de usar algunas aplicaciones o cambiamos a otras aplicaciones equivalentes con alguna característica que permite o simplifica nuestra necesidad, a veces que una aplicación tenga una característica que deseamos es el motivo por el cambiar de una aplicación a otra, a estas características se les conoce como <em>killer features</em>.</p>
+<p>En la categoría de aplicaciones para tomar notas hay una buena cantidad de ellas, desde editores de texto simples, editores avanzados para desarrolladores, paquetes ofimáticos para documentos y herramientas para gestionar conocimiento como <a href="https://obsidian.md/">Obsidian</a> que es de la que hablaré en este artículo.</p>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
+    <li><a href="#mis-anteriores-alternativas">Mis anteriores alternativas</a></li>
+    <li><a href="#uso-y-características">Uso y características</a>
+      <ol>
+        <li><a href="#instalación-e-inicio-con-obsidian">Instalación e inicio con Obsidian</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
+<h2 id="mis-anteriores-alternativas">Mis anteriores alternativas</h2>
+<p>A lo largo de muchos años he pasado por muchas aplicaciones he ido cambiado de unas a otras según mis necesidades y el ir descubriendolas. Si originalmente guardaba todas mis contraseñas en un simple archivo de texto, una mala recomendación por no estar cifrado, ahora utilizo <a href="https://keepassxc.org/">KeePassXC</a> para guardar cifradas las contraseñas, utilizar contraseñas fuertes y únicas para cada servicio.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">Guardar contraseñas de forma segura con KeePassXC</a></li>
+</ul>
+<p>En los editores de texto también he pasado por varios desde el editor de texto del sistema operativo o entorno de escritorio a <a href="https://www.google.es/intl/es/docs/about/">Google Docs</a>, <a href="https://evernote.com/es-es">Evernote</a> y <a href="https://www.notion.so/product">Notion</a> por sus características de guardar los archivos en la nube y poder compartirlos entre varios ordenadores.</p>
+<p>Para los artículos del blog utilizo varias de estas, dejé de usar Evernote y cambié a Notion y sigo usando Google Docs para realizar las comprobaciones léxicas y sintácticas. Pero para gestionar conocimiento he empezado a usar Obsidian.</p>
+<h2 id="uso-y-características">Uso y características</h2>
+<p>Obsidian ofrece recopilar y gestionar cualquier tipo de conocimiento de cualquier tema en el que estemos interesados desde un diario, recetas de cocina, tareas que nos planifiquemos, viajes, conocimiento técnico. Es posible utilizar Obsidian para volcar en la aplicación mucha parte de la información que acumulamos en nuestro cerebro.</p>
+<p>Como diario requiere dedicarle un tiempo a la semana pudiendo recoger qué cosas destacadas han pasado en el día, pensamientos y emociones, pasado un tiempo releerlo y retocar algún aspecto o añadir algún detalle más a una determinada nota, y de recordar detalles que tal vez ya no teníamos tan presentes.</p>
+<p>Obsidian no es simplemente un editor de texto, es una aplicación para organizar el conocimiento con características específicas para facilitar la tarea. Entre las características que ofrece están las siguientes:</p>
+<ul>
+<li>Carpetas: replica la estructura jerárquica en el sistema de archivos. El inconveniente de las carpetas es que las notas se relacionan entre ellas y las carpetas son una estructura que no permite crear esas relaciones. Para solventar las limitaciones de las carpetas están las etiquetas y los enlaces entre notas o <em>backlinks</em> que para mi son las verdaderas <em>killer features</em> de Obsidian.</li>
+<li>Etiquetas: es posible convertir cualquier palabra o conjunto de palabras en una etiqueta, la potencia de las etiquetas es que estas se pueden incluir en cualesquiera notas y encontrar rápidamente todas las ocurrencias de esa etiqueta en todas las notas. Otra de sus potentes características es que las etiquetas se pueden anidar en una estructura jerárquica.</li>
+<li>Enlaces entre notas o <em>backlinks</em>: los <em>backlinks</em> son otra forma de relacionar las notas entre ellas son enlaces que permiten formar una red entre las notas y navegar por el conocimiento.</li>
+<li>Marcadores: los marcadores permiten añadir un recordatorio a una nota o a una sección de la nota como otra forma de organización y para volver sobre esas notas con posterioridad y rapidez.</li>
+<li>Archivos adjuntos: es posible guardar documentos en otros formatos como imágenes y añadir enlaces en las notas.</li>
+</ul>
+<p>PAra las notas de texto utiliza un formato siminar a <a href="https://es.wikipedia.org/wiki/Markdown">Markdown</a>. Todas estas características son proporcionadas por la aplicación de Obsidian de escritorio, que tiene una estética muy simple y fácil de acceder a las carpetas, etiquetas, enlaces entre notas o <em>backlinks</em> y los marcadores a través de las opciones de menú y paneles situados en los laterales del editor.</p>
+<p>Hay muchos complementos que añade funcionalidades adicionales. Obsidian tiene una versión gratuita y la opción de pago para sincronizar las bóvedas de conocimiento entre diferentes equipos.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/02/obsidian-una-herramienta-para-almacenar-conocimiento/images/obsidian-1_huae6e736e52d715a94eb3c884d52b0404_58532_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Obsidian"><img src="/blog-bitix/2024/02/obsidian-una-herramienta-para-almacenar-conocimiento/images/obsidian-1_huae6e736e52d715a94eb3c884d52b0404_58532_650x450_fit_q90_h2_box_3.webp" width="630" height="450" alt="Obsidian" title="Obsidian" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/02/obsidian-una-herramienta-para-almacenar-conocimiento/images/obsidian-2_hu85b54c3e97e08a256d28f294ff3dd549_50170_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Obsidian"><img src="/blog-bitix/2024/02/obsidian-una-herramienta-para-almacenar-conocimiento/images/obsidian-2_hu85b54c3e97e08a256d28f294ff3dd549_50170_200x150_fit_q90_h2_box_3.webp" width="185" height="150" alt="Obsidian" title="Obsidian" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/02/obsidian-una-herramienta-para-almacenar-conocimiento/images/obsidian-3_hu38f9490499a6ffc82f737c42fe8beabc_147288_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Obsidian"><img src="/blog-bitix/2024/02/obsidian-una-herramienta-para-almacenar-conocimiento/images/obsidian-3_hu38f9490499a6ffc82f737c42fe8beabc_147288_200x150_fit_q90_h2_box_3.webp" width="200" height="143" alt="Obsidian" title="Obsidian" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/02/obsidian-una-herramienta-para-almacenar-conocimiento/images/obsidian-4_hu181a70c7f5306da2c1dd7a1d71bcd1d6_203443_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Obsidian"><img src="/blog-bitix/2024/02/obsidian-una-herramienta-para-almacenar-conocimiento/images/obsidian-4_hu181a70c7f5306da2c1dd7a1d71bcd1d6_203443_200x150_fit_q90_h2_box_3.webp" width="200" height="143" alt="Obsidian" title="Obsidian" class="&#34; " loading="lazy"></a></p>
+<figcaption>Obsidian</figcaption>
+</figure>
+</div>
+<h3 id="instalación-e-inicio-con-obsidian">Instalación e inicio con Obsidian</h3>
+<p>La instalación de obsidian es muy sencilla en los sistemas <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> con <a href="https://flatpak.org/">Flatpak</a> es independiente de la distribución, también está el paquete de la distribución y otros formatos como <a href="https://appimage.org/">AppImage</a> o Snap. En <a href="https://www.apple.com/macos/">macOS</a> y <a href="https://www.microsoft.com/es-es/windows/">Windows</a> es posible descargar el binario de instalación propios de estos sistemas operativos que se pueen obtener desde su <a href="https://obsidian.md/download">página de descargas</a>.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/mqpXEjRhZz0" frameborder="0" title="Vídeo de YouTube" class="lozad" allowfullscreen></iframe>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/03/calendario-de-arch-linux-cubo-de-comandos-y-tux-en-papel/">
+                <img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="326" height="125" alt="Calendario de Arch Linux, cubo de comandos y Tux en papel" title="Calendario de Arch Linux, cubo de comandos y Tux en papel" class="" loading="lazy">
+                <h3>Calendario de Arch Linux, cubo de comandos y Tux en papel</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/">
+                <img src="/blog-bitix/2023/01/los-juegos-de-epic-games-y-gog-en-gnu-linux-con-el-lanzador-heroic-games-laucher/images/heroic-games-launcher-1_hu5a686bdd85c68762ae5ca3e77acf67f3_569384_2560x1440_fit_q90_h2_box.webp" width="326" height="125" alt="Los juegos de Epic Games y GOG en GNU/Linux con el lanzador Heroic Games Laucher" title="Los juegos de Epic Games y GOG en GNU/Linux con el lanzador Heroic Games Laucher" class="" loading="lazy">
+                <h3>Los juegos de Epic Games y GOG en GNU/Linux con el lanzador Heroic Games Laucher</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-waypoint.svg" width="326" height="125" alt="Construir, desplegar y observar aplicaciones de forma uniforme con Waypoint" title="Construir, desplegar y observar aplicaciones de forma uniforme con Waypoint" class="" loading="lazy">
+                <h3>Construir, desplegar y observar aplicaciones de forma uniforme con Waypoint</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/">
+                <img src="/blog-bitix/2022/11/programas-para-crear-maquinas-virtuales-y-virtualizar-sistemas/images/cajas-1_hu4131a07a262b6e0097a84a6d3049446a_44755_2560x1440_fit_q90_h2_box_3.webp" width="326" height="125" alt="Programas para crear máquinas virtuales y virtualizar sistemas" title="Programas para crear máquinas virtuales y virtualizar sistemas" class="" loading="lazy">
+                <h3>Programas para crear máquinas virtuales y virtualizar sistemas</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/11/el-entorno-de-escritorio-gnome-simple-elegante-y-completo/">
+                <img src="/blog-bitix/2022/11/el-entorno-de-escritorio-gnome-simple-elegante-y-completo/images/gnome_hu3a6e1478b822fd709bb76aac663fdf76_201835_2560x1440_fit_q90_h2_box.webp" width="326" height="125" alt="El entorno de escritorio GNOME, simple, elegante y completo" title="El entorno de escritorio GNOME, simple, elegante y completo" class="" loading="lazy">
+                <h3>El entorno de escritorio GNOME, simple, elegante y completo</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/">
+                <img src="/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-1_hu6bfdba881ddb1d0d6e7ab73029e91741_18565_2560x1440_fit_q90_h2_box_3.webp" width="326" height="125" alt="Personalizar el símbolo del sistema de la línea de comandos con Starship" title="Personalizar el símbolo del sistema de la línea de comandos con Starship" class="" loading="lazy">
+                <h3>Personalizar el símbolo del sistema de la línea de comandos con Starship</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 980px; min-height: 280px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-695';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2024\/02\/obsidian-una-herramienta-para-almacenar-conocimiento\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/privacy/">Política de privacidad</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2024 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>
