@@ -110,7 +110,7 @@ Otras opciones alternativas para la gestión de tareas y edición de documentos 
 
 * [Todoist](https://todoist.com/es)
 * [Evernote](https://evernote.com/intl/es/)
-* [Obsidian](https://obsidian.md/)
+* [Obsidian, una herramienta para almacenar conocimiento][blogbitix-695]
 * [OneNote][microsoft-onenote]
 * [Google Docs][google-docs]
 * [Google Tasks][google-tasks]
