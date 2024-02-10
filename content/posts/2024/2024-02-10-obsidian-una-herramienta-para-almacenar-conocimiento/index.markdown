@@ -54,7 +54,7 @@ Obsidian no es simplemente un editor de texto, es una aplicación para organizar
 * Marcadores: los marcadores permiten añadir un recordatorio a una nota o a una sección de la nota como otra forma de organización y para volver sobre esas notas con posterioridad y rapidez.
 * Archivos adjuntos: es posible guardar documentos en otros formatos como imágenes y añadir enlaces en las notas.
 
-PAra las notas de texto utiliza un formato siminar a [Markdown][markdown]. Todas estas características son proporcionadas por la aplicación de Obsidian de escritorio, que tiene una estética muy simple y fácil de acceder a las carpetas, etiquetas, enlaces entre notas o _backlinks_ y los marcadores a través de las opciones de menú y paneles situados en los laterales del editor.
+Para las notas de texto utiliza un formato similar a [Markdown][markdown]. Todas estas características son proporcionadas por la aplicación de Obsidian de escritorio, que tiene una estética muy simple y fácil de acceder a las carpetas, etiquetas, enlaces entre notas o _backlinks_ y los marcadores a través de las opciones de menú y paneles situados en los laterales del editor.
 
 Hay muchos complementos que añade funcionalidades adicionales. Obsidian tiene una versión gratuita y la opción de pago para sincronizar las bóvedas de conocimiento entre diferentes equipos.
 
