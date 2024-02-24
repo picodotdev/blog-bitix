@@ -5,14 +5,16 @@
       <div class="col-12">
         {{ partial "head.html" . }}
         <div class="row">
-          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
-            {{ partial "ad-manager/billboard.html" . }}
+          <div class="col-12">
+            <div class="adblock-container-billboard mt-3 mb-3 p-0">
+              {{ partial "ad-manager/billboard.html" . }}
+            </div>
           </div>
         </div>
         <div class="row">
           <div class="col-12">
             <div class="adblock-container-sidebar">
-              <div class="adblock-container-sidebard-left">
+              <div class="adblock-container-sidebar-left">
                 {{ partial "ad-manager/vertical-left.html" . }}
               </div>
               <div class="adblock-container-sidebar-right">
@@ -38,9 +40,11 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+          <div class="col-12">
             <span id="pageBottom"></span>
-            {{ partial "ad-manager/billboard.html" . }}
+            <div class="adblock-container-billboard mt-3 mb-3 p-0">
+              {{ partial "ad-manager/billboard.html" . }}
+            </div>
           </div>
         </div>
         <div class="row">
