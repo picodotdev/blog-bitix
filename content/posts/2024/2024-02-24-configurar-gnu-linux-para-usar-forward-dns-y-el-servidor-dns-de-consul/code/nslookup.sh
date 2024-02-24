@@ -1,0 +1,1 @@
+$ nslookup consul.service.consul
