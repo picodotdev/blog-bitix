@@ -283,7 +283,7 @@
 <p>Consul es una herramienta desarrollada por <a href="https://www.hashicorp.com/">Hashicorp</a> centrada en la conectividad entre los servicios. Ofrece varias funcionalidades específicas para las aplicaciones compuestas de múltiples servicios. Consul proporciona una catálogo de servicios actualizado y con información del estado de los servicios, conectividad entre los servicios con el <em>service mesh</em> y almacenamiento clave-valor para la configuración de aplicaciones.</p>
 <p>Algo ya he comentado en varios artículos sobre Consul y otros productos de Hashicorp como <a href="https://www.vaultproject.io/">Vault</a> y <a href="https://www.nomadproject.io/">Nomad</a>.</p>
 <ul>
-<li><a href="[blogbitix-serie-hashicorp]">Serie de artículos sobre Hashicorp</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/series/hashicorp/">Serie de artículos sobre Hashicorp</a></li>
 </ul>
 <p>Consul además a través de su API el catálogo de los servicios lo ofrece mediante un servidor DNS propio. Los servicios del catálogo se añaden a su servidor DNS con el sufijo <em>consul</em>, los servicios registrados en Consul tienen un nombre de dominio con la siguiente estructura. Consul se encarga de que en una consulta solo se devuelvan los servicios que han respondido correctamente al <em>healthcheck</em> y devolver todas las instancias de un mismo servicio si hay varias en varios nodos.</p>
 <ul>
