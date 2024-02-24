@@ -7,7 +7,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.122.0
+      HUGO_VERSION: 0.123.3
     steps:
       - uses: actions/checkout@v4
         with:
@@ -16,9 +16,9 @@ jobs:
         with:
           path: deploy/
           ref: gh-pages
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
       - name: Environment information
         run: |
           uname -a
