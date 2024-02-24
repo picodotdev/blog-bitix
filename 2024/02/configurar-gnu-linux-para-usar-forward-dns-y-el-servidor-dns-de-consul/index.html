@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Una de las cuestiones que tenía pendiente de mirar sobre Consul es como hacer que un nodo con GNU/Linux pueda acceder al catálogo de servicios mediante la interfaz DNS que ofrece Consul. Para esto es necesario configurar el forward DNS. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Configurar GNU/Linux para usar forward DNS y el servidor DNS de Consul</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2024/02/configurar-gnu-linux-para-usar-forward-dns-y-el-servidor-dns-de-consul/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2024/02/configurar-gnu-linux-para-usar-forward-dns-y-el-servidor-dns-de-consul/" hreflang="es" title="Configurar GNU/Linux para usar forward DNS y el servidor DNS de Consul">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Configurar GNU/Linux para usar forward DNS y el servidor DNS de Consul">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2024/02/configurar-gnu-linux-para-usar-forward-dns-y-el-servidor-dns-de-consul/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hashicorp-consul-750.webp">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Una de las cuestiones que tenía pendiente de mirar sobre Consul es como hacer que un nodo con GNU/Linux pueda acceder al catálogo de servicios mediante la interfaz DNS que ofrece Consul. Para esto es necesario configurar el forward DNS. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hashicorp-consul-750.webp">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Configurar GNU/Linux para usar forward DNS y el servidor DNS de Consul">
+<meta name="twitter:description" content="Una de las cuestiones que tenía pendiente de mirar sobre Consul es como hacer que un nodo con GNU/Linux pueda acceder al catálogo de servicios mediante la interfaz DNS que ofrece Consul. Para esto es necesario configurar el forward DNS. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2024/02/configurar-gnu-linux-para-usar-forward-dns-y-el-servidor-dns-de-consul/"
+    },
+    "headline": "Configurar GNU/Linux para usar forward DNS y el servidor DNS de Consul",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hashicorp-consul-750.webp"
+        
+      },
+    "datePublished": "2024-02-24T18:00:00+02:00",
+    "dateModified": "2024-02-24T18:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "721",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "description": "",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Una de las cuestiones que tenía pendiente de mirar sobre Consul es como hacer que un nodo con GNU/Linux pueda acceder al catálogo de servicios mediante la interfaz DNS que ofrece Consul. Para esto es necesario configurar el forward DNS."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+  
+  <script type="text/javascript" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async></script>
+<script>
+    window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() {
+      googletag.defineSlot('/23054707577/ZH9HsBYd', [980, 280], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      googletag.defineSlot('/23054707577/etaEP84a', [728, 90], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      googletag.defineSlot('/23054707577/s42YszNi', [300, 600], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      googletag.defineSlot('/23054707577/GrHBPdvN', [300, 600], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+    });
+</script>
+
+  
+  <script defer id="videoowall" data-id="videoowall_bfd88eba13cf727a36cf22ed1d89f7838287bb68d8331d7b190920bc4530adc5" data-cfasync="false" src="https://static.videoo.tv/videoowall_bfd88eba13cf727a36cf22ed1d89f7838287bb68d8331d7b190920bc4530adc5.js"></script>
+<script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 980px; min-height: 280px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            
+<div id='div-gpt-ad-1705155070019-0' style='min-width: 300px; min-height: 600px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705155070019-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Configurar GNU/Linux para usar forward DNS y el servidor DNS de Consul</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span></span> el <time>24/02/2024</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2024/02/configurar-gnu-linux-para-usar-forward-dns-y-el-servidor-dns-de-consul/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2024/02/configurar-gnu-linux-para-usar-forward-dns-y-el-servidor-dns-de-consul/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Una de las cuestiones que tenía pendiente de mirar sobre Consul es como hacer que un nodo con GNU/Linux pueda acceder al catálogo de servicios mediante la interfaz DNS que ofrece Consul. Para esto es necesario configurar el forward DNS.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      
+<div id='div-gpt-ad-1705154918797-0' style='min-width: 728px; min-height: 90px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154918797-0'); });
+  </script>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="200" height="278" alt="HashiCorp Consul" title="HashiCorp Consul" class="" loading="false&#34;"></p>
+</div>
+<p>Quizá las aplicaciones no se pueden modificar para integrarse directamente con <a href="https://www.consul.io/">Consul</a> por su antigüedad o no hay tiempo ni personas para hacerle esos grandes cambios, una forma sencilla que no requiere grandes cambios en las aplicaciones y que les da acceso a algunas de las funcionalidades que proporciona Consul es utilizar su servicio DNS.</p>
+<p>Configurar que el nodo donde se ejecuta un servicio pueda acceder al catálogo de servicios de Consul mediante la interfaz DNS requiere configurar el <em>forward</em> DNS en la configuración de red.</p>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
+    <li><a href="#el-servidor-consul">El servidor Consul</a></li>
+    <li><a href="#configurar-en-gnulinux-el-_forward_-dns-al-servicio-dns-de-consul">Configurar en GNU/Linux el <em>forward</em> DNS al servicio DNS de Consul</a></li>
+    <li><a href="#redirigir-peticiones-dns-de-los-dominios-a-consul">Redirigir peticiones DNS de los dominios a Consul</a></li>
+  </ol>
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
+<h2 id="el-servidor-consul">El servidor Consul</h2>
+<p>Consul es una herramienta desarrollada por <a href="https://www.hashicorp.com/">Hashicorp</a> centrada en la conectividad entre los servicios. Ofrece varias funcionalidades específicas para las aplicaciones compuestas de múltiples servicios. Consul proporciona una catálogo de servicios actualizado y con información del estado de los servicios, conectividad entre los servicios con el <em>service mesh</em> y almacenamiento clave-valor para la configuración de aplicaciones.</p>
+<p>Algo ya he comentado en varios artículos sobre Consul y otros productos de Hashicorp como <a href="https://www.vaultproject.io/">Vault</a> y <a href="https://www.nomadproject.io/">Nomad</a>.</p>
+<ul>
+<li><a href="[blogbitix-serie-hashicorp]">Serie de artículos sobre Hashicorp</a></li>
+</ul>
+<p>Consul además a través de su API el catálogo de los servicios lo ofrece mediante un servidor DNS propio. Los servicios del catálogo se añaden a su servidor DNS con el sufijo <em>consul</em>, los servicios registrados en Consul tienen un nombre de dominio con la siguiente estructura. Consul se encarga de que en una consulta solo se devuelvan los servicios que han respondido correctamente al <em>healthcheck</em> y devolver todas las instancias de un mismo servicio si hay varias en varios nodos.</p>
+<ul>
+<li><em>web.service.consul</em> para los servicios.</li>
+<li><em>web.query.consul</em> para las consultas.</li>
+</ul>
+<p>Con las consultas o <em>queries</em> es posible crear filtros específicos por varios criterios y obtener los servicios que coincidan con la consulta, pero las consultas dan para otro artículo. En este artículo con el servidor DNS que ofrece Consul la cuestión es cómo hacer que en GNU/Linux uno de esos dominios sea resuelto para lo que hay que configurar el <em>forward</em> DNS.</p>
+<h2 id="configurar-en-gnulinux-el-_forward_-dns-al-servicio-dns-de-consul">Configurar en GNU/Linux el <em>forward</em> DNS al servicio DNS de Consul</h2>
+<p>El número puerto estándar del servicio DNS es el 53, en GNU/Linux los servicios en el número de puerto menor de 1024 requiere permisos de <em>root</em> que por seguridad es algo que no se desea ejecutar Consul.</p>
+<p>Consul ofrece el servicio de DNS en el puerto 8600 con lo que para ejecutar consul sin permisos de <em>root</em> es necesario redirigir las consultas de DNS al puerto 8600. Esta redirección en GNU/Linux se puede hacer de dos formas con <em>systemd-resolver</em> o con <em>dnsmasq</em>. A continuación muestro la configuración para la opción con <em>systemd-resolver</em> y <em>NetworkManager</em>.</p>
+<h2 id="redirigir-peticiones-dns-de-los-dominios-a-consul">Redirigir peticiones DNS de los dominios a Consul</h2>
+<p>En Arch Linux el gestor de red que utilizo es <em>NetworkManager</em>, el primer paso para la configuración es hacer que <em>NetworkManager</em> también utilice <em>systemd-resolved</em> para la resolución de las consultas DNS. Hay que crear el siguiente archivo de configuración <em>/etc/NetworkManager/conf.d/dns.conf</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">[main]&#10;</span></span><span class="line"><span class="cl">dns=systemd-resolved&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>dns.conf</span>
+    </div>
+</div>
+<p>El segundo paso es configurar <em>systemd-resolved</em> para que redirigir las consultas de DNS de los dominios con el sufijo <em>consul</em> al servidor DNS de Consul, en esta configuración se especifica la dirección IP del servidor de Consul que será la local y el puerto. Hay que editar el archivo <em>/etc/systemd/resolved.conf</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">[Resolve]&#10;</span></span><span class="line"><span class="cl">DNS=127.0.0.1:8600&#10;</span></span><span class="line"><span class="cl">Domains=consul</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>resolved.conf</span>
+    </div>
+</div>
+<p>Con la configuración realizada hay que iniciar y habilitar el servicio <em>systemd-resolved</em> y recargar la configuración de <em>NetworkManager</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo systemctl start systemd-resolved.service&#10;</span></span><span class="line"><span class="cl">$ nmcli general reload&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>systemctl.sh</span>
+    </div>
+</div>
+<p>Ahora es posible acceder a la interfaz de la consola web de Consul con el dominio en vez de con la dirección IP.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/02/configurar-gnu-linux-para-usar-forward-dns-y-el-servidor-dns-de-consul/images/consul_hu88aa5ba0bcde699968fbe93dbd45a462_59055_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Consola web de Consul con dominio del servicio"><img src="/blog-bitix/2024/02/configurar-gnu-linux-para-usar-forward-dns-y-el-servidor-dns-de-consul/images/consul_hu88aa5ba0bcde699968fbe93dbd45a462_59055_650x450_fit_q90_h2_box_3.webp" width="650" height="375" alt="Consola web de Consul con dominio del servicio" title="Consola web de Consul con dominio del servicio" class="&#34; " loading="lazy"></a></p>
+<figcaption>Consola web de Consul con dominio del servicio</figcaption>
+</figure>
+</div>
+<p>También es posible hacer un <em>ping</em> y el dominio se resolverá a la dirección IP. Y obtener información del dominio con los comandos <em>dig</em> y <em>nslookup</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ dig consul.service.consul&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>dig.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">; &lt;&lt;&gt;&gt; DiG 9.18.24 &lt;&lt;&gt;&gt; consul.service.consul&#10;</span></span><span class="line"><span class="cl">;; global options: +cmd&#10;</span></span><span class="line"><span class="cl">;; Got answer:&#10;</span></span><span class="line"><span class="cl">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 16847&#10;</span></span><span class="line"><span class="cl">;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">;; OPT PSEUDOSECTION:&#10;</span></span><span class="line"><span class="cl">; EDNS: version: 0, flags:; udp: 65494&#10;</span></span><span class="line"><span class="cl">;; QUESTION SECTION:&#10;</span></span><span class="line"><span class="cl">;consul.service.consul.		IN	A&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">;; ANSWER SECTION:&#10;</span></span><span class="line"><span class="cl">consul.service.consul.	0	IN	A	127.0.0.1&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">;; Query time: 0 msec&#10;</span></span><span class="line"><span class="cl">;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)&#10;</span></span><span class="line"><span class="cl">;; WHEN: Sat Feb 24 17:57:02 CET 2024&#10;</span></span><span class="line"><span class="cl">;; MSG SIZE  rcvd: 66&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>dig.out</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ nslookup consul.service.consul&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>nslookup.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Server:		127.0.0.53&#10;</span></span><span class="line"><span class="cl">Address:	127.0.0.53#53&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">Non-authoritative answer:&#10;</span></span><span class="line"><span class="cl">Name:	consul.service.consul&#10;</span></span><span class="line"><span class="cl">Address: 127.0.0.1&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>nslookup.out</span>
+    </div>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://wiki.archlinux.org/title/Systemd-resolved">systemd-resolved</a></li>
+<li><a href="https://wiki.archlinux.org/title/NetworkManager#Configuration">NetworkManager#Configuration</a></li>
+<li><a href="https://wiki.archlinux.org/title/Dnsmasq">dnsmasq</a></li>
+<li><a href="https://man.archlinux.org/man/resolved.conf.5">resolved.conf.5</a></li>
+<li><a href="https://gist.github.com/brasey/fa2277a6d7242cdf4e4b7c720d42b567">Configure systemd-resolved to use a specific DNS nameserver for a given domain</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>hashicorp</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/">Introducción a Nomad para gestionar aplicaciones y microservicios</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/">Estrategias de despliegue para microservicios con Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/04/servicios-con-persistencia-en-el-orquestador-de-microservicios-nomad/">Servicios con persistencia en el orquestador de microservicios Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/">Crear de forma sencilla y rápida máquinas virtuales de VirtualBox con Vagrant</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/">Administrar secretos y proteger datos sensibles con Vault</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">Generar credenciales de conexión a base de datos bajo demanda con Vault</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/">Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/">Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/">Revertir un servicio a una versión anterior con Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/">Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/">Cifrado y descifrado como servicio con Vault</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/">Acceso simple y seguro a sistemas remotos con Boundary</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/">Planificar procesos periódicos y scripts con Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/">Las funcionalidades de un service mesh en una arquitectura de microservicios</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/">Construir, desplegar y observar aplicaciones de forma uniforme con Waypoint</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2024/02/configurar-gnu-linux-para-usar-forward-dns-y-el-servidor-dns-de-consul/">Configurar GNU/Linux para usar forward DNS y el servidor DNS de Consul</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 980px; min-height: 280px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-696';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2024\/02\/configurar-gnu-linux-para-usar-forward-dns-y-el-servidor-dns-de-consul\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/privacy/">Política de privacidad</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2024 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

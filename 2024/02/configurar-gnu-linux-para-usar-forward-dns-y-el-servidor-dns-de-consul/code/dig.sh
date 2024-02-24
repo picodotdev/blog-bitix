@@ -1,0 +1,1 @@
+$ dig consul.service.consul
