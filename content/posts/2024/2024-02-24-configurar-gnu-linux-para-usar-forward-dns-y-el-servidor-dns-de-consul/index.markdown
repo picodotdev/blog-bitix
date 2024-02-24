@@ -32,7 +32,7 @@ Consul es una herramienta desarrollada por [Hashicorp][hashicorp] centrada en la
 
 Algo ya he comentado en varios artículos sobre Consul y otros productos de Hashicorp como [Vault][vault] y [Nomad][nomad].
 
-* [Serie de artículos sobre Hashicorp]([blogbitix-serie-hashicorp])
+* [Serie de artículos sobre Hashicorp][blogbitix-serie-hashicorp]
 
 Consul además a través de su API el catálogo de los servicios lo ofrece mediante un servidor DNS propio. Los servicios del catálogo se añaden a su servidor DNS con el sufijo _consul_, los servicios registrados en Consul tienen un nombre de dominio con la siguiente estructura. Consul se encarga de que en una consulta solo se devuelvan los servicios que han respondido correctamente al _healthcheck_ y devolver todas las instancias de un mismo servicio si hay varias en varios nodos.
 
