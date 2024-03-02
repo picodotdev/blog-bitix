@@ -1,0 +1,132 @@
+name: slack-notification-deploy
+description: 'Slack notification deploy'
+
+inputs:
+  ref:
+    description: Reference to checkout
+    type: string
+    required: false
+  slack-webhook-url:
+    description: Reference to slack webhook url
+    type: string
+    required: true
+  environment:
+    description: Environment to deploy
+    type: string
+    required: true
+  runtime:
+    description: Runtime to deploy
+    type: string
+    required: true
+  version:
+    description: Version to deploy
+    type: string
+    required: true
+  sha:
+    description: Commit SHA to deploy
+    type: string
+    required: true
+  branch:
+    description: Branch to deploy
+    type: string
+    required: true
+  build-number:
+    description: Build number
+    type: string
+    required: true
+  build-date:
+    description: Build date
+    type: string
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Get information
+      id: info
+      shell: bash
+      run: |-
+        REPOSITORY=$(echo "${{ github.repository }}" | sed -e 's/organization\///g')
+        if [ -n "${{ github.event.pull_request.number }}" ]; then
+          PR="${{ github.event.pull_request.number }}"
+        else
+          PR=$(echo "${{ github.event.head_commit.message }}" | head -1 | sed -r 's/^Merge pull request \#([0-9]+) from ([a-z]+)\/([A-Z0-9\-]+)$|^(.*)()()$/\1/')
+        fi
+        echo "repository=${REPOSITORY}" >> $GITHUB_OUTPUT
+        echo "pr=${PR}" >> $GITHUB_OUTPUT
+        echo "status_emoji=$(case "${{ job.status }}" in success) echo ":large_green_circle:" ;; failure) echo ":red_circle:" ;; *) echo ":large_yellow_circle:" ;; esac)" >> $GITHUB_OUTPUT
+    - name: Send job notification to Slack
+      id: slack
+      uses: slackapi/slack-github-action@v1.25.0
+      env:
+        SLACK_WEBHOOK_URL: ${{ inputs.slack-webhook-url }}
+        SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+      with:
+        payload: |
+          {
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "${{ steps.info.outputs.status_emoji  }} Deploy for *${{ steps.info.outputs.repository }}* in *${{ inputs.environment }}*"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":github: Repository: <https://github.com/${{ github.repository }}|${{ steps.info.outputs.repository }}>"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":github: Pull request: <https://github.com/${{ github.repository }}/pull/${{ steps.info.outputs.pr }}|${{ steps.info.outputs.pr }}>"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":hammer_and_wrench: Environment: ${{ inputs.environment }}"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":gear: Runtime: ${{ inputs.runtime }}"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":git: Branch: <https://github.com/${{ github.repository }}/tree/${{ inputs.branch || inputs.ref }}|${{ inputs.branch || inputs.ref }}>"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":git: Commit: <https://github.com/${{ github.repository }}/commit/${{ inputs.sha }}|${{ inputs.sha }}>"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":package: Version: ${{ inputs.version }}"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":dart: Build: <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|${{ github.run_number }}>"
+                }
+              }
+            ]
+          }

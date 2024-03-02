@@ -1,0 +1,75 @@
+name: main
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    types: ['opened', 'synchronize']
+  merge_group:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Reference to checkout'
+        required: true
+        type: string
+
+jobs:
+  build:
+    name: build
+    uses: organization/platform-github-actions-workflows/.github/workflows/build.yml@INTLSH-17160
+    with:
+      ref: ${{ inputs.ref || github.head_ref || github.ref_name }}
+      java-version: '21'
+      node-version: '20'
+      setup-gradle: true
+      check-tasks: "['build:test', 'build:pmd', 'build:checkstyle', 'build:spotbugs']"
+      artifact: dummy
+      artifact-name: platform-github-actions-workflows
+      artifact-context: miscellaneous/docker/
+      repository: google-artifact-registry
+    secrets:
+      GITHUB_PACKAGES_REPOSITORY_DOWNLOAD_USERNAME: ${{ secrets.GH_USER_NAME }}
+      GITHUB_PACKAGES_REPOSITORY_DOWNLOAD_PASSWORD: ${{ secrets.GH_PACKAGES_DOWNLOAD_TOKEN }}
+  deploy-development:
+    name: deploy-development
+    needs: [build]
+    uses: organization/platform-github-actions-workflows/.github/workflows/deploy.yml@INTLSH-17160
+    with:
+      ref: ${{ inputs.ref || github.head_ref || github.ref_name }}
+      dry-run: true
+      environment: development
+      runtime: gke
+      gke-directory: miscellaneous/gke/development
+      gke-docker-image-name: platform-github-actions-workflows
+      version: ${{ needs.build.outputs.version }}
+      sha: ${{ needs.build.outputs.sha }}
+      branch: ${{ needs.build.outputs.branch }}
+      build-number: ${{ needs.build.outputs.build-number }}
+      build-date: ${{ needs.build.outputs.build-date }}
+    secrets:
+      slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+  deploy-production:
+    name: deploy-production
+    if: contains('["main", "master"]', github.ref_name) && github.event_name == 'push'
+    needs: [build, deploy-development]
+    uses: organization/platform-github-actions-workflows/.github/workflows/deploy.yml@INTLSH-17160
+    with:
+      ref: ${{ inputs.ref || github.head_ref || github.ref_name }}
+      dry-run: true
+      environment: production
+      runtime: gke
+      gke-directory: miscellaneous/gke/production
+      gke-docker-image-name: platform-github-actions-workflows
+      version: ${{ needs.build.outputs.version }}
+      sha: ${{ needs.build.outputs.sha }}
+      branch: ${{ needs.build.outputs.branch }}
+      build-number: ${{ needs.build.outputs.build-number }}
+      build-date: ${{ needs.build.outputs.build-date }}
+    secrets:
+      slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+
+
+

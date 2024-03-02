@@ -1,0 +1,20 @@
+name: setup-gke-credentials
+description: 'Setup GKE credentials'
+
+inputs:
+  gke-cluster:
+    default: 'cluster-01'
+  gke-zone:
+    default: 'us-east4'
+  gke-project:
+    default: 'infrastructure-development-1234'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup gke credentials
+      uses: google-github-actions/get-gke-credentials@v2
+      with:
+        cluster_name: ${{ inputs.gke-cluster }}
+        location: ${{ inputs.gke-zone }}
+        project_id: ${{ inputs.gke-project }}

@@ -1,0 +1,20 @@
+name: setup-gradle
+description: 'Setup Node'
+
+inputs:
+  node-version:
+    type: string
+    default: '20'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Node ${{ inputs.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: npm
+    - name: Install npm packages
+      shell: bash
+      run: |-
+        npm install
