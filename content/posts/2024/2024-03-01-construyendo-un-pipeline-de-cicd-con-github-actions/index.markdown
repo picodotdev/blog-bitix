@@ -25,7 +25,7 @@ Para algunas empresas fundamentalmente tecnológicas es un problema ya que su va
 
 No poseer una buena tecnología con la que ofrecer sus servicios puede significar no generar beneficios y no ser competitiva que mantenido en el tiempo de una forma u otra el fracaso como compañía seguramente después de momentos dolorosos con varios procesos de despidos. También puede significar la pérdida de personas y su talento o ser incapaz de atraerlo, profesionalmente es más difícil que alguien esté interesado en una empresa si no la considera un ámbito atractivo profesionalmente en la que pueda aprender y crecer, para muchas personas trabajar con herramientas actuales es un requisito. Trabajar con código heredado puede tener su atractivo siempre y cuando haya oportunidades y voluntad de modernizarlo.
 
-Y dicho esto una de las oportunidades en las que he podido cambiar en un contexto de mucho código heredado ha sido el pipeline de CI/CD, al menos para los proyectos modernos o en los que los cambios son posibles. Y después de leer el artículo si quieres comentar, ¿como es el el _pipeline_ de CI/CD que esas en el trabajo? ¿que herramientas usa? ¿está completamente automatizado o hay pasos manuales? ¿hacéis teses funcionales una vez desplegado?.
+Y dicho esto una de las oportunidades en las que he podido cambiar en un contexto de mucho código heredado ha sido el pipeline de CI/CD, al menos para los proyectos modernos o en los que los cambios son posibles. Y después de leer el artículo si quieres comentar, ¿como es el el _pipeline_ de CI/CD que usas en el trabajo? ¿que herramientas usas? ¿está completamente automatizado o hay pasos manuales? ¿hacéis teses funcionales una vez desplegado? ¿si haces algo diferente en tu empresa, que podría mejorar en este?.
 
 {{< tableofcontents >}}
 
@@ -73,7 +73,7 @@ Para soportar esta diversidad de lenguajes y versiones el _pipeline_ ha de indep
 
 Otra de la necesidades es de realizar versionado semántico y crear tags en el repositorio de git con cada nueva versión, para los proyectos Java estábamos usando el plugin de [Gradle Axion][gradle-axion] pero ahora necesitando soportar varios lenguajes para resolver este problema está [semantic-release][semantic-release] que además genera la nueva versión en función de los mensajes de _commit_.
 
-También me ha sido necesario buscar algo de información de buenas prácticas en un _pipeline_. Que sea sencillo y que sea rápido por ejemplo en el paso de integración continua, en los siguientes artículos y libros hay más información.
+También me ha sido necesario buscar algo de información de buenas prácticas en un _pipeline_. Que sea sencillo y que sea rápido por ejemplo en el paso de integración continua, en los siguientes artículos y libros hay más información. Para las fases de este _pipeline_ me he basado en [Hashicorp Waypoint][waypoint] que define tres _build_, _deploy_ y _release_, separando el _deploy_ del _release_ con el cambio de tráfico a la nueva versión y ahí entrarían diferentes estrategias de _release_ con _canary_ o _blue-green_ además de como realizar las actualizaciones de las instancias o el _rollout_.
 
 Semantic release.
 
@@ -153,8 +153,9 @@ Este es el aspecto de la notificación en Slack.
 
 {{< image
     gallery="true"
-    image1="image:slack-notification.webp" optionsthumb1="650x450" title1="Notificación en Slack de un deploy"
-    caption="Notificación en Slack de un deploy" >}}
+    image1="image:github-actions-pipeline.webp" optionsthumb1="650x450" title1="Pipeline de Github Actions"
+    image2="image:slack-notification.webp" optionsthumb1="650x450" title2="Notificación en Slack"
+    caption="Pipeline de Github Actions y Notificación en Slack" >}}
 
 ### Cambios a futuro
 
