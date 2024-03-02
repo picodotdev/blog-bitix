@@ -1,0 +1,19 @@
+name: setup-gradle
+description: 'Setup Gradle'
+
+inputs:
+  java-version:
+    type: string
+    default: '21'
+  java-distribution:
+    type: string
+    default: 'temurin'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup JDK ${{ inputs.java-version }}-${{ inputs.java-distribution }}
+      uses: actions/setup-java@v4
+      with:
+        java-version: ${{ inputs.java-version }}
+        distribution: ${{ inputs.java-distribution }}

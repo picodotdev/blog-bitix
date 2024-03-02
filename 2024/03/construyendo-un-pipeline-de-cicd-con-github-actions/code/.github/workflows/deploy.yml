@@ -1,0 +1,154 @@
+name: deploy
+
+on:
+  workflow_call:
+    inputs:
+      ref:
+        description: Reference to checkout
+        type: string
+        required: true
+        default: 'main'
+      dry-run:
+        description: Dry run (no deploy)
+        type: boolean
+        required: true
+        default: false
+      environment:
+        description: Environment to deploy
+        type: string
+        required: true
+        default: 'development'
+      runtime:
+        description: Runtime type
+        type: string
+        required: true
+      gke-directory:
+        description: GKE deployment directory
+        type: string
+        required: false
+      gke-docker-image-name:
+        description: Docker image name to deploy
+        type: string
+        required: false
+      gae-deliverables:
+        description: Google App Engine deliverables
+        type: string
+        required: false
+      gae-project-id:
+        description: Google App Engine project id
+        type: string
+        required: false
+      gae-image-id:
+        description: Google App Engine image id
+        type: string
+        required: false
+      version:
+        description: Version to deploy
+        type: string
+        required: true
+      sha:
+        description: Sha to deploy
+        type: string
+        required: true
+      branch:
+        description: Branch to deploy
+        type: string
+        required: true
+      build-number:
+        description: Build number
+        type: string
+        required: true
+      build-date:
+        description: Build date
+        type: string
+        required: true
+    secrets:
+      slack-webhook-url:
+        required: true
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+env:
+  GOOGLE_CLOUD_WORKLOAD_IDENTITY_PROVIDER: projects/118532964247/locations/global/workloadIdentityPools/runners/providers/github
+  GOOGLE_CLOUD_SERVICE_ACCOUNT: gar-mgm-repository@common-1234.iam.gserviceaccount.com
+  GOOGLE_ARTIFACT_REGISTRY_HOST: us-east4-docker.pkg.dev
+  GOOGLE_ARTIFACT_REGISTRY_PROJECT: common-1234
+  GOOGLE_ARTIFACT_REGISTRY_REPOSITORY: repository
+  GKE_PROJECT_DEVELOPMENT: infrastructure-devevelopment-1234
+  GKE_PROJECT_PRODUCTION: infrastructure-production-1234
+
+jobs:
+  deployment:
+    runs-on: ubuntu-22.04-4core
+    environment: ${{ inputs.environment }}
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+          fetch-depth: 0
+      - name: Set deployment variables
+        shell: bash
+        run: |-
+          echo "DEPLOYMENT_DIRECTORY=${{ inputs.gke-directory }}" >> $GITHUB_ENV
+          if [ '${{ inputs.environment }}' == 'development' ]; then
+            echo "GKE_PROJECT=${{ env.GKE_PROJECT_DEVELOPMENT }}" >> $GITHUB_ENV
+          fi
+          if [ '${{ inputs.environment }}' == 'production' ]; then
+            echo "GKE_PROJECT=${{ env.GKE_PROJECT_PRODUCTION }}" >> $GITHUB_ENV
+          fi
+      - name: Authenticate to Google Cloud
+        id: google-cloud-auth
+        uses: google-github-actions/auth@v2
+        if: ${{ !inputs.dry-run && inputs.runtime == 'gke' }}
+        with:
+          token_format: access_token
+          workload_identity_provider: ${{ env.GOOGLE_CLOUD_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ env.GOOGLE_CLOUD_SERVICE_ACCOUNT }}
+      - name: Setup GKE credentials
+        uses: ./.github/actions/setup-gke-credentials
+        if: ${{ !inputs.dry-run && inputs.runtime == 'gke' }}
+        with:
+          gke-project: ${{ env.GKE_PROJECT }}
+      - name: Setup Kustomize
+        shell: bash
+        if: ${{ !inputs.dry-run && inputs.runtime == 'gke' }}
+        run: |-
+          cd ${{ env.DEPLOYMENT_DIRECTORY }}
+          curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
+          chmod u+x ./kustomize
+      - name: Deploy to GKE
+        shell: bash
+        if: ${{ !inputs.dry-run && inputs.runtime == 'gke' }}
+        env:
+          GOOGLE_ARTIFACT_REGISTRY_HOST: ${{ env.GOOGLE_ARTIFACT_REGISTRY_HOST }}
+          GOOGLE_ARTIFACT_REGISTRY_PROJECT: ${{ env.GOOGLE_ARTIFACT_REGISTRY_PROJECT }}
+          GOOGLE_ARTIFACT_REGISTRY_REPOSITORY: ${{ env.GOOGLE_ARTIFACT_REGISTRY_REPOSITORY }}
+          DOCKER_IMAGE_NAME: ${{ inputs.gke-docker-image-name }}
+        run: |-
+          cd ${{ env.DEPLOYMENT_DIRECTORY }}
+          ./kustomize edit set image ${GOOGLE_ARTIFACT_REGISTRY_HOST}/${GOOGLE_ARTIFACT_REGISTRY_PROJECT}/${GOOGLE_ARTIFACT_REGISTRY_REPOSITORY}/${DOCKER_IMAGE_NAME}:latest=${GOOGLE_ARTIFACT_REGISTRY_HOST}/${GOOGLE_ARTIFACT_REGISTRY_PROJECT}/${GOOGLE_ARTIFACT_REGISTRY_REPOSITORY}/${DOCKER_IMAGE_NAME}:${{ inputs.version }}
+          ./kustomize build . | kubectl apply -f -
+      - name: Deploy to GAE
+        uses: google-github-actions/deploy-appengine@v2
+        if: ${{ !inputs.dry-run && inputs.runtime == 'gae' }}
+        with:
+          project_id: ${{ inputs.gae-project-id }}
+          deliverables: ${{ inputs.gae-deliverables }}
+          image_url: ${{ env.GOOGLE_ARTIFACT_REGISTRY_HOST }}/${{ env.GOOGLE_ARTIFACT_REGISTRY_PROJECT }}/${{ env.GOOGLE_ARTIFACT_REGISTRY_REPOSITORY }}/${{ inputs.gke-docker-image-name }}:${{ inputs.version }}
+      - name: Slack notification deploy
+        uses: ./.github/actions/slack-notification-deploy
+        with:
+          ref: ${{ inputs.ref }}
+          slack-webhook-url: ${{ secrets.slack-webhook-url }}
+          environment: ${{ inputs.environment }}
+          runtime: ${{ inputs.runtime }}
+          version: ${{ inputs.version }}
+          sha: ${{ inputs.sha }}
+          branch: ${{ inputs.branch }}
+          build-number: ${{ inputs.build-number }}

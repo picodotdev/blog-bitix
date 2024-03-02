@@ -1,0 +1,44 @@
+version: '3'
+
+dotenv: ['.env']
+
+tasks:
+  build:
+    cmds:
+      - ./gradlew $GRADLE_OPTIONS build
+
+  build:check:
+    deps:
+      - task: build:test
+      - task: build:pmd
+      - task: build:checkstyle
+      - task: build:spotbugs
+
+  build:test:
+    cmds:
+      - ./gradlew $GRADLE_OPTIONS test
+
+  build:pmd:
+    cmds:
+      - ./gradlew $GRADLE_OPTIONS pmdMain pmdTest
+
+  build:checkstyle:
+    cmds:
+      - ./gradlew $GRADLE_OPTIONS checkstyleMain checkstyleTest
+
+  build:spotbugs:
+    cmds:
+      - ./gradlew $GRADLE_OPTIONS spotBugMain spotBugTest
+
+  build:release:
+    - npx semantic-release --no-ci --dry-run
+
+  build:publish:
+    - echo "publish"
+
+  run:
+    cmds:
+      - ./gradlew $GRADLE_OPTIONS run
+
+  noop:
+    - echo "noop"
