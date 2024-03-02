@@ -18,7 +18,7 @@ on:
 jobs:
   build:
     name: build
-    uses: stubhubint/platform-github-actions-workflows/.github/workflows/build.yml@INTLSH-17160
+    uses: organization/platform-github-actions-workflows/.github/workflows/build.yml@INTLSH-17160
     with:
       ref: ${{ inputs.ref || github.head_ref || github.ref_name }}
       java-version: '21'
@@ -35,7 +35,7 @@ jobs:
   deploy-development:
     name: deploy-development
     needs: [build]
-    uses: stubhubint/platform-github-actions-workflows/.github/workflows/deploy.yml@INTLSH-17160
+    uses: organization/platform-github-actions-workflows/.github/workflows/deploy.yml@INTLSH-17160
     with:
       ref: ${{ inputs.ref || github.head_ref || github.ref_name }}
       dry-run: true
@@ -54,7 +54,7 @@ jobs:
     name: deploy-production
     if: contains('["main", "master"]', github.ref_name) && github.event_name == 'push'
     needs: [build, deploy-development]
-    uses: stubhubint/platform-github-actions-workflows/.github/workflows/deploy.yml@INTLSH-17160
+    uses: organization/platform-github-actions-workflows/.github/workflows/deploy.yml@INTLSH-17160
     with:
       ref: ${{ inputs.ref || github.head_ref || github.ref_name }}
       dry-run: true

@@ -46,7 +46,7 @@ runs:
       id: info
       shell: bash
       run: |-
-        REPOSITORY=$(echo "${{ github.repository }}" | sed -e 's/stubhubint\///g')
+        REPOSITORY=$(echo "${{ github.repository }}" | sed -e 's/organization\///g')
         if [ -n "${{ github.event.pull_request.number }}" ]; then
           PR="${{ github.event.pull_request.number }}"
         else
