@@ -61,7 +61,7 @@
     "dateModified": "2024-03-01T20:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "4176",
+    "wordCount": "4246",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -269,7 +269,7 @@
 <p>A lo largo del tiempo las empresas generan inevitablemente software heredado (o cantidades ingentes de software heredado) u obsoleto que por falta de tiempo para el mantenimiento, conocimiento o personas que ya no están en la empresa.</p>
 <p>Para algunas empresas fundamentalmente tecnológicas es un problema ya que su valor y competitividad se asienta en la tecnología, a día de hoy la totalidad de las empresas son en gran medida empresas de tecnología y dependen de ella.</p>
 <p>No poseer una buena tecnología con la que ofrecer sus servicios puede significar no generar beneficios y no ser competitiva que mantenido en el tiempo de una forma u otra el fracaso como compañía seguramente después de momentos dolorosos con varios procesos de despidos. También puede significar la pérdida de personas y su talento o ser incapaz de atraerlo, profesionalmente es más difícil que alguien esté interesado en una empresa si no la considera un ámbito atractivo profesionalmente en la que pueda aprender y crecer, para muchas personas trabajar con herramientas actuales es un requisito. Trabajar con código heredado puede tener su atractivo siempre y cuando haya oportunidades y voluntad de modernizarlo.</p>
-<p>Y dicho esto una de las oportunidades en las que he podido cambiar en un contexto de mucho código heredado ha sido el pipeline de CI/CD, al menos para los proyectos modernos o en los que los cambios son posibles. Y después de leer el artículo si quieres comentar, ¿como es el el <em>pipeline</em> de CI/CD que esas en el trabajo? ¿que herramientas usa? ¿está completamente automatizado o hay pasos manuales? ¿hacéis teses funcionales una vez desplegado?.</p>
+<p>Y dicho esto una de las oportunidades en las que he podido cambiar en un contexto de mucho código heredado ha sido el pipeline de CI/CD, al menos para los proyectos modernos o en los que los cambios son posibles. Y después de leer el artículo si quieres comentar, ¿como es el el <em>pipeline</em> de CI/CD que usas en el trabajo? ¿que herramientas usas? ¿está completamente automatizado o hay pasos manuales? ¿hacéis teses funcionales una vez desplegado? ¿si haces algo diferente en tu empresa, que podría mejorar en este?.</p>
 <div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
     <li><a href="#el-pipeline-de-integración-continua-y-despliegue-continuo">El pipeline de integración continua y despliegue continuo</a></li>
@@ -311,7 +311,7 @@
 <p>Además de tener que construir diferentes artefactos, de poder desplegar en diferentes <em>runtimes</em> ha de soportar repositorios en diferentes lenguajes como Javascript, <a href="https://www.typescriptlang.org/">Typescript</a>, <a href="https://nodejs.org/en/">Node</a> y Java en diferentes versiones cada uno.</p>
 <p>Para soportar esta diversidad de lenguajes y versiones el <em>pipeline</em> ha de independizarse y no acoplarse a cada lenguaje actual y los hipotéticos futuros, por ejemplo el comando de las tareas para los teses unitarios y análisis estático de código son diferentes para un proyecto de Node y otro de Java, <a href="https://www.gnu.org/software/make/">GNU Make</a> es una herramienta que proporciona esa abstracción pero finalmente opto por <a href="https://taskfile.dev/">Task</a> que es una equivalente que se define más simple y fácil de usar.</p>
 <p>Otra de la necesidades es de realizar versionado semántico y crear tags en el repositorio de git con cada nueva versión, para los proyectos Java estábamos usando el plugin de <a href="https://github.com/allegro/axion-release-plugin">Gradle Axion</a> pero ahora necesitando soportar varios lenguajes para resolver este problema está <a href="https://semantic-release.gitbook.io/semantic-release/">semantic-release</a> que además genera la nueva versión en función de los mensajes de <em>commit</em>.</p>
-<p>También me ha sido necesario buscar algo de información de buenas prácticas en un <em>pipeline</em>. Que sea sencillo y que sea rápido por ejemplo en el paso de integración continua, en los siguientes artículos y libros hay más información.</p>
+<p>También me ha sido necesario buscar algo de información de buenas prácticas en un <em>pipeline</em>. Que sea sencillo y que sea rápido por ejemplo en el paso de integración continua, en los siguientes artículos y libros hay más información. Para las fases de este <em>pipeline</em> me he basado en <a href="https://www.waypointproject.io/">Hashicorp Waypoint</a> que define tres <em>build</em>, <em>deploy</em> y <em>release</em>, separando el <em>deploy</em> del <em>release</em> con el cambio de tráfico a la nueva versión y ahí entrarían diferentes estrategias de <em>release</em> con <em>canary</em> o <em>blue-green</em> además de como realizar las actualizaciones de las instancias o el <em>rollout</em>.</p>
 <p>Semantic release.</p>
 <ul>
 <li><a href="https://semantic-release.gitbook.io/semantic-release/">Commit message format</a></li>
@@ -433,8 +433,9 @@
 <p>Este es el aspecto de la notificación en Slack.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2024/03/construyendo-un-pipeline-de-cicd-con-github-actions/images/slack-notification_hu76816433503104b1006e861d1402f6fb_50250_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Notificación en Slack de un deploy"><img src="/blog-bitix/2024/03/construyendo-un-pipeline-de-cicd-con-github-actions/images/slack-notification_hu76816433503104b1006e861d1402f6fb_50250_650x450_fit_q90_h2_box_3.webp" width="523" height="329" alt="Notificación en Slack de un deploy" title="Notificación en Slack de un deploy" class="&#34; " loading="lazy"></a></p>
-<figcaption>Notificación en Slack de un deploy</figcaption>
+<p><a href="/blog-bitix/2024/03/construyendo-un-pipeline-de-cicd-con-github-actions/images/github-actions-pipeline_hu7be0a54550cc2972f4075f11e08701ff_833964_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Pipeline de Github Actions"><img src="/blog-bitix/2024/03/construyendo-un-pipeline-de-cicd-con-github-actions/images/github-actions-pipeline_hu7be0a54550cc2972f4075f11e08701ff_833964_650x450_fit_q90_h2_box_3.webp" width="340" height="450" alt="Pipeline de Github Actions" title="Pipeline de Github Actions" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/03/construyendo-un-pipeline-de-cicd-con-github-actions/images/slack-notification_hu76816433503104b1006e861d1402f6fb_50250_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Notificación en Slack"><img src="/blog-bitix/2024/03/construyendo-un-pipeline-de-cicd-con-github-actions/images/slack-notification_hu76816433503104b1006e861d1402f6fb_50250_300x200_fit_q90_h2_box_3.webp" width="300" height="189" alt="Notificación en Slack" title="Notificación en Slack" class="&#34; " loading="lazy"></a></p>
+<figcaption>Pipeline de Github Actions y Notificación en Slack</figcaption>
 </figure>
 </div>
 <h3 id="cambios-a-futuro">Cambios a futuro</h3>
