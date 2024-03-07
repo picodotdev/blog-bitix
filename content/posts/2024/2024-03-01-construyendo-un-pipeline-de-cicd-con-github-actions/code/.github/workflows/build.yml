@@ -194,9 +194,9 @@ jobs:
           context: ${{ inputs.artifact-context }}
           tags: |
             ${{ env.GOOGLE_ARTIFACT_REGISTRY_HOST }}/${{ env.GOOGLE_ARTIFACT_REGISTRY_PROJECT }}/${{ env.GOOGLE_ARTIFACT_REGISTRY_REPOSITORY }}/${{ inputs.artifact-name }}:latest
-            ${{ env.GOOGLE_ARTIFACT_REGISTRY_HOST }}/${{ env.GOOGLE_ARTIFACT_REGISTRY_PROJECT }}/${{ env.GOOGLE_ARTIFACT_REGISTRY_REPOSITORY }}/${{ inputs.artifact-name }}:${{ needs.build-information.outputs.sha }}
-            ${{ env.GOOGLE_ARTIFACT_REGISTRY_HOST }}/${{ env.GOOGLE_ARTIFACT_REGISTRY_PROJECT }}/${{ env.GOOGLE_ARTIFACT_REGISTRY_REPOSITORY }}/${{ inputs.artifact-name }}:${{ needs.build-information.outputs.branch }}
-            ${{ env.GOOGLE_ARTIFACT_REGISTRY_HOST }}/${{ env.GOOGLE_ARTIFACT_REGISTRY_PROJECT }}/${{ env.GOOGLE_ARTIFACT_REGISTRY_REPOSITORY }}/${{ inputs.artifact-name }}:${{ needs.build-information.outputs.version }}
+            ${{ env.GOOGLE_ARTIFACT_REGISTRY_HOST }}/${{ env.GOOGLE_ARTIFACT_REGISTRY_PROJECT }}/${{ env.GOOGLE_ARTIFACT_REGISTRY_REPOSITORY }}/${{ inputs.artifact-name }}:${{ steps.build-information.outputs.sha }}
+            ${{ env.GOOGLE_ARTIFACT_REGISTRY_HOST }}/${{ env.GOOGLE_ARTIFACT_REGISTRY_PROJECT }}/${{ env.GOOGLE_ARTIFACT_REGISTRY_REPOSITORY }}/${{ inputs.artifact-name }}:${{ steps.build-information.outputs.branch }}
+            ${{ env.GOOGLE_ARTIFACT_REGISTRY_HOST }}/${{ env.GOOGLE_ARTIFACT_REGISTRY_PROJECT }}/${{ env.GOOGLE_ARTIFACT_REGISTRY_REPOSITORY }}/${{ inputs.artifact-name }}:${{ steps.build-information.outputs.version }}
           build-args: |
             ARTIFACT_NAME=${{ inputs.artifact-name }}
             GITHUB_PACKAGES_REPOSITORY_DOWNLOAD_USERNAME=${{ secrets.GITHUB_PACKAGES_REPOSITORY_DOWNLOAD_USERNAME }}
