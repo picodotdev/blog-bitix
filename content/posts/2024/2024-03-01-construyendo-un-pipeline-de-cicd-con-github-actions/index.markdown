@@ -25,7 +25,7 @@ Para algunas empresas fundamentalmente tecnológicas es un problema ya que su va
 
 No poseer una buena tecnología con la que ofrecer sus servicios puede significar no generar beneficios y no ser competitiva que mantenido en el tiempo de una forma u otra el fracaso como compañía seguramente después de momentos dolorosos con varios procesos de despidos. También puede significar la pérdida de personas y su talento o ser incapaz de atraerlo, profesionalmente es más difícil que alguien esté interesado en una empresa si no la considera un ámbito atractivo profesionalmente en la que pueda aprender y crecer, para muchas personas trabajar con herramientas actuales es un requisito. Trabajar con código heredado puede tener su atractivo siempre y cuando haya oportunidades y voluntad de modernizarlo.
 
-Y dicho esto una de las oportunidades en las que he podido cambiar en un contexto de mucho código heredado ha sido el pipeline de CI/CD, al menos para los proyectos modernos o en los que los cambios son posibles. Y después de leer el artículo si quieres comentar, ¿como es el el _pipeline_ de CI/CD que usas en el trabajo? ¿que herramientas usas? ¿está completamente automatizado o hay pasos manuales? ¿hacéis teses funcionales una vez desplegado? ¿si haces algo diferente en tu empresa, que podría mejorar en este? Deja un comentario estaré encantado de leerlo y de aprender.
+Y dicho esto una de las oportunidades en las que he podido cambiar en un contexto de mucho código heredado ha sido el _pipeline_ de CI/CD, al menos para los proyectos modernos o en los que los cambios son posibles. Y después de leer el artículo si quieres comentar, ¿como es el el _pipeline_ de CI/CD que usas en el trabajo? ¿que herramientas usas? ¿está completamente automatizado o hay pasos manuales? ¿hacéis teses funcionales una vez desplegado? ¿si haces algo diferente en tu empresa, que podría mejorar en este? Deja un comentario estaré encantado de leerlo y de aprender.
 
 {{< tableofcontents >}}
 
@@ -35,17 +35,17 @@ A día de hoy un _pipeline_ de integración continua es indispensable, su funci�
 
 El siguiente paso en la automatización es el despliegue continuo con el que el despliegue en el entorno de producción queda también automatizado. Automatizar el despliegue permite reducir el tiempo en introducir cambios, de forma más eficiente con menos esfuerzo y más fiable con menos errores. Quizá requiera una aprobación o despliegue en el momento deseado pero mayormente el despliegue está automatizado.
 
-El último paso es la entrega continua con la que los cambios se despliegan en producción si todas las pruebas automatizadas validan el software correctamente, el software se despliega en producción totalmente automatizada sin aprobaciones. Esto puede requiere de pruebas automatizadas adicionales como teses de aceptación, funcionales, de seguridad, rendimiento.
+El último paso es la entrega continua con la que los cambios se despliegan en producción si todas las pruebas automatizadas validan el software correctamente, el software se despliega en producción totalmente automatizada sin aprobaciones. Esto requiere de pruebas automatizadas adicionales como teses de aceptación, funcionales, de seguridad, rendimiento.
 
 Con todas las ventajas de la integración continua y el despliegue continuo el desarrollo de software actual se hace empleando estas técnicas de ingeniería de software.
 
 ## Contexto
 
-Uno de los puntos en el que había mucho _legacy_ en la empresa en la que trabajo era el CI/CD, más que él es los varios que había, bueno ahora hay uno más pero este más moderno.
+Uno de los puntos en el que había mucho _legacy_ en la empresa en la que trabajo era el CI/CD, más que él es los varios que había, bueno ahora hay uno más pero este más moderno que dedicando tiempo tal vez podría reemplazar alguno de los antiguos.
 
 El inicial era un [Jenkins][jenkins] y luego algunos proyecto más modernizados pasaron a [Concourse][concourse-ci] con ambos _pipelines_ de integración continua funcionando. Los despliegues con Jenkins requería de varios pasos manuales con mucho margen de mejora en la automatización, toma una o dos horas hacer un despliegue. Esos Jenkins no eran un servicio administrado que había que mantener y dedicar tiempo a que sus instancias de computación funcionasen correctamente, además los _pipelines_ no están bajo el control de los servicios que los hace poco flexibles, impone limitaciones en los nuevos servicio o requiere seguir las convenciones. Su coste era fijo independientemente de si se usaba o no.
 
-Con Concorse las cosas son un poco mejores pero no usa algunas buenas prácticas, los _pipelines_ de despliegue están separados de los proyectos y cada grupo de aplicaciones tiene su propio repositorio de _pipeline_ de CI/CD, que se ha convertido en código heredado difícil de mantener o que requiere una buena cantidad de tiempo para conocerlos que habiendo alternativas es preferible esas alternativas. Es un servicio administrado pero las alternativas son mejores ya no solo porque otras están mejor documentadas.
+Con Concourse las cosas son un poco mejores pero no usa algunas buenas prácticas, los _pipelines_ de despliegue están separados de los proyectos y cada grupo de aplicaciones tiene su propio repositorio de _pipeline_ de CI/CD, que se ha convertido en código heredado difícil de mantener o que requiere una buena cantidad de tiempo para conocerlos que habiendo alternativas es preferible esas alternativas. Es un servicio administrado pero las alternativas son mejores ya no solo porque otras están mejor documentadas.
 
 ## Primera solución con Github Actions
 
@@ -59,9 +59,9 @@ En un primer momento el uso que le dábamos era para pasar los teses unitarios c
 
 Usar Github Actions para la integración continua con teses unitarios y ser un servicio administrado ya era una mejora pero con una base de cientos de repositorios no es escalable ir replicando en cada repositorio el _pipeline_ de CI/CD. De forma que ahora surge la necesidad de construir un _pipeline_ reusable y suficientemente genérico para que cubra la necesidad como _pipeline_ de los servicios.
 
-Esto significa separar los repositorios del código de los _pipeline_ nuevamente pero es una contrapartida opcional y preferible que copiar y pegar en la multitud de repositorios de código. Quizá con un monorepo sería otra la herramienta a utilizar pero en el contexto actual de multitud de repositorios es la opción viable.
+Esto significa separar los repositorios del código de los _pipeline_ nuevamente pero es una contrapartida opcional y preferible que copiar y pegar en la multitud de repositorios de código. Quizá con un monorepo sería otra la herramienta a utilizar pero en el contexto actual de multitud de repositorios es la opción viable, por tiempo, garantía de éxito y esfuerzo.
 
-Utilizando [Google Cloud][google-cloud] el nuevo _pipeline_ ha de soportar varios artefactos de construcción como Dockerfiles, librerías java y desplegar en GCP, Google App Engine (GAE), Google Functions o publicar las librerías en repositorios de Maven, de tal forma que el _pipeline_ lo permita y suficientemente flexible para que el código no sea demasiado complicado además se ser escalable y permitir en el futuro añadir nuevos lenguajes, artefactos y entornos de ejecución.
+Utilizando [Google Cloud][google-cloud] el nuevo _pipeline_ ha de soportar varios artefactos de construcción como Dockerfiles, librerías java y desplegar en GCP, Google App Engine (GAE), Google Cloud Functions o publicar las librerías en repositorios de Maven, de tal forma que el _pipeline_ lo permita y suficientemente flexible para que el código no sea demasiado complicado además se ser escalable y permitir en el futuro añadir nuevos lenguajes, artefactos y entornos de ejecución.
 
 ## Nueva solución con GitHub Actions
 
