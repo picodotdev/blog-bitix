@@ -1,5 +1,5 @@
 {{ $file := print "code/" .Params.file }}
-{{ $resource := .Page.Resources.Get $file }}
+{{ $resource := .Page.Resources.Get (strings.Replace $file "/." "/") }}
 {{- if eq $resource nil -}}{{- errorf "Resource not found '%s'" $file -}}{{- end -}}
 {{ $content := $resource.Content }}
 {{ $lines := len (findRE "\n" $content) }}

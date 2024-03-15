@@ -34,6 +34,10 @@ Nuevas ya solo se puede elegir el modelo _Slim_ que reduce el consumo de energí
 
 * [Modelos de PlayStation](https://en.wikipedia.org/wiki/PlayStation_4_models)
 
+Pasados unos años al final compré la PlayStation 5.
+
+* [Desempaquetado de consola PlayStation 5 slim digital][blogbitix-698]
+
 {{< image
     gallery="true"
     image1="image:playstation-4-models.webp" optionsthumb1="300x200" title1="Modelos de PlayStation 4"
