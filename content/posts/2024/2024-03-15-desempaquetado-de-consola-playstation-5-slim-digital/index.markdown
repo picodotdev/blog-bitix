@@ -108,7 +108,7 @@ Por el diseño curvo de la PS5 hace más complicado ponerla en horizontal que re
 
 Las cubiertas de la slim digital son fácilmente desmontables para hacer una limpieza del ventilador o acceder al compartimento para instalar el almacenamiento adicional. Algo más fácil que en la PS4 slim.
 
-El cambio del mando del DualShock al DualSense aporta los gatillos adaptativos que en algunos juegos es otra forma de respuesta háptica que mejora la experiencia de juego.
+El cambio del mando del DualShock al DualSense aporta los gatillos adaptativos que en algunos juegos es otra forma de respuesta háptica que mejora la experiencia de juego. Tras completar la configuración inicial del 1 TB de espacio de almacenamiento quedan uno 820 GB de espacio libre para juegos.
 
 Las siguientes imágenes muestran el desempaquetado de una PlayStation 5 slim digital.
 
