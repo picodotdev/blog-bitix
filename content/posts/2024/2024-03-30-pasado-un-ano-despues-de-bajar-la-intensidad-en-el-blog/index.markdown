@@ -130,9 +130,9 @@ Más adelante volveré a leer libros sobre ciencia ficción y fantasía.
 
 ### Decisiones grises
 
-El 2023 di un cambio al dejar de escribir en el blog, mucho de ese año no estuve centrado totalmente en mi. A principios de este año tenía que tomar un decisión laboral que podía ser otro punto de inflexión importante, una decisión gris con sus aspectos positivos y otro en el que salía perdiendo, dos opciones a considerar que no me resultaban ninguna netamente mejor como me lo fueron en anteriores ocasiones, una decisión gris ganando en algunos aspectos y perdiendo en algún otro. Si el 2023 empecé un cambio, el 2024 lo intentaré centrar en mi en la medida que pueda. Desde ese punto de vista la decisión es diferente o puede que sea un falso dilema.
+El 2023 di un cambio al dejar de escribir en el blog, mucho de ese año no estuve centrado totalmente en mi. A principios de este año tenía que tomar un decisión que podía ser otro punto de inflexión importante, una decisión gris con sus aspectos positivos y otro en el que salía perdiendo, dos opciones a considerar que no me resultaban ninguna netamente mejor como me lo fueron en anteriores ocasiones, una decisión gris ganando en algunos aspectos y perdiendo en algún otro. Si el 2023 empecé un cambio, el 2024 lo intentaré centrar en mi en la medida que pueda. Desde ese punto de vista la decisión es diferente o puede que sea un falso dilema.
 
-Más adelante quién sabe, quizá la decisión me resulte más arcoiris, mientras tanto seguiré tratando de en la medida de mis posibilidades seguir mis intereses, hacerlo lo mejor que pueda y está a gusto con el trabajo que hago.
+Más adelante quién sabe, quizá la decisión me resulte más arcoiris, mientras tanto seguiré tratando de en la medida de mis posibilidades seguir mis intereses y motivaciones, hacerlo lo mejor que pueda y está a gusto con lo que hago.
 
 {{< image
     gallery="true"
@@ -143,7 +143,7 @@ Más adelante quién sabe, quizá la decisión me resulte más arcoiris, mientra
 
 En otro orden de importancia me he hecho un calendario de limpieza para la casa de forma más metódica y mantener el caos y la entropía en un nivel positivo.
 
-Aunque esté en el último punto sigue siendo uno de los más importantes. He aprendido un tipo de relaciones que quiero con otras personas y cuales son las que verdaderamente tienen mucho valor.
+Aunque esté en el último párrafo sigue siendo uno de los más importantes. He aprendido un tipo de relaciones que quiero con otras personas y cuales son las que verdaderamente tienen mucho valor.
 
 {{< image
     gallery="true"
