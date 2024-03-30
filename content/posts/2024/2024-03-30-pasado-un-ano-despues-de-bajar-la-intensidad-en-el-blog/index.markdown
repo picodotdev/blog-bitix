@@ -109,11 +109,19 @@ Aún solo conozco lo básico y he optado por las opciones de inversión más sen
 
 * [Mejores alternativas de inversión que la ofrecida por la banca tradicional][blogbitix-689]
 
+Y he leído un par de libros sobre los conceptos más básicos de inversión y economía.
+
+{{< amazon
+    tags="books-investment" >}}
+
 ### Leer libros sobre psicología
 
 Me compré un nuevo Kindle y con el tiempo que he recuperado del blog he empezado a leer de nuevo y junto con un segundo Echo para el salón escucho música al mismo tiempo.
 
 De momento los libros que estoy leyendo son sobre psicología que me está resultando muy interesantes para conocer el mundo emocional, pensamientos, sentimientos y cómo funciona el cerebro en esos aspectos, como llevar mejor las emociones y herramientas para ello. No es lo mismo leer que ponerlo en práctica pero estos libros dan algunas herramientas e ideas muy interesantes para llevar mejor las emociones y tratar de estar más en paz con uno mismo.
+
+{{< amazon
+    tags="books-psicology" >}}
 
 Más adelante volveré a leer libros sobre ciencia ficción y fantasía.
 
