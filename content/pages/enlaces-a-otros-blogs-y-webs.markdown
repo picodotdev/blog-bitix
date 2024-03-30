@@ -149,6 +149,14 @@ Una vez que se tienen unos ingresos y acumulan ahorros saber como invertir esos 
 * [El Blog Salmón](https://www.elblogsalmon.com/): en blog sobre asuntos de la economía con algunos artículos interesantes de leer.
 * [El economista](https://www.eleconomista.es/): diario y noticias sobre economía.
 
+Varios canales de YouTube muy útiles para empezar a aprender sobre como invertir para rentabilizar los ahorros.
+
+* [Dinero currante](https://www.youtube.com/@Dinerocurrante)
+* [Josean Paunero Republica Economica](https://www.youtube.com/@Paunero-RE)
+* [Javi Linares](https://www.youtube.com/@Javierlinares)
+* [Sergi Torrens](https://www.youtube.com/@sergitorrens)
+* [Invertir para Conseguir](https://www.youtube.com/@invertirparaconseguir)
+
 ## Política
 
 * [David Saavedra](https://www.youtube.com/c/DavidSaavedra): el canal de YouTube de un antiguo radicalizado neonazi que al contrario del esteriotipo que podemos tener de los nazis de incultos, paletos y poco ilusrados demuestra en su canal con solo ver unos pocos vídeos de su canal que este en concreto ha leído bastante y seguramente mucho más que muchas personas. El problema es que aún ilustrado debido sus sesgos está ilutrado en propaganda nazi y argumentos nacionalistas muy tóxicos. Por fortuna pora él finalmente se ha dado cuenta de su propio radicalismoa y ahora en su canal da importantes y valiasas lecciones sobre como funciona el fanatistmo y radcalismo que quizá ayuden a alguien a no caer en el radicalismo, radicalismo que incluso hace pensar a personas y actuar de tal forma que va en contra de sus propios intereses, por ejemplo al votar en unas elecciones.
