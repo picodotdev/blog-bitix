@@ -22,6 +22,8 @@ summary: "El año por estas fechas dejé de publicar artículos con tanta frecue
 
 Hace un año tras más de trece publicando un artículos cada semana y algunos artículos escribía que dejaba de publicar artículos con tanta frecuencia para recuperar para mi esa gran cantidad de tiempo que dedicaba al blog y que me estaba quitando tiempo para otras cosas y para mi. He seguido publicando algunos pero no tantos ni tan frecuentemente, y desde entonces porque quiero dedicarle tiempo y no por obligación del calendario. Y seguiré escribiendo y publicando en el blog porque realmente es una de las cosas cosas con las que disfruto.
 
+* [Blog Bitix con menos intensidad se apaga][blogbitix-683]
+
 En este año, con todo el tiempo que he recuperado de lo que le dedicaba al blog veo que hay algunas cosas que he cambiado.
 
 {{< tableofcontents >}}
@@ -30,7 +32,7 @@ En este año, con todo el tiempo que he recuperado de lo que le dedicaba al blog
 
 ### Empezar a escribir un diario
 
-He empezado a escribir un diario con Obsidian para escribir todas las cosas que me resultan relevantes de hechos, emociones y comportamientos míos o ajenos. No lo escribo todos los días en él pero si trato de apuntar un boceto de lo que quiero añadir y luego ya el fin de semana con un poco más de tiempo terminar de darle la forma.
+He empezado a escribir un diario con [Obsidian][obsidian] para escribir todas las cosas que me resultan relevantes de hechos, emociones y comportamientos míos o ajenos. No lo escribo todos los días en él pero si trato de apuntar un boceto de lo que quiero añadir y luego ya el fin de semana con un poco más de tiempo terminar de darle la forma.
 
 El diario me resulta una buena herramienta para ver en retrospectiva esas cosas apuntadas. Me gustaría haber empezado a escribir ese diario mucho antes, ahora podría revisitar esas muchas cosas de lo que pensaba o sentía en ese momento y verlo desde el punto de vista actual.
 
