@@ -62,8 +62,8 @@ También hay páginas especializadas en materia económica en la que seguir info
 Canales de YouTube hay de muchas temáticas, una de ellas por supuesto es la materia de economía e inversión. Personas algo más versadas e interesadas en el tema que comparten lo que conocen y su opinión.
 
 * [Dinero Currante](https://www.youtube.com/@Dinerocurrante)
-* [Invertir para Conseguir](https://www.youtube.com/@invertirparaconseguir)
 * [Javi Linares](https://www.youtube.com/@Javierlinares)
+* [Josean Paunero Republica Economica](https://www.youtube.com/@Paunero-RE)
 
 En cualquier caso conviene tener fuentes fiables y sensatas porque no es nada bueno seguir consejos de otros sin saber lo que se está haciendo.
 

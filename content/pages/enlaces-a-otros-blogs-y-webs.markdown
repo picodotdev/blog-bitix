@@ -155,7 +155,6 @@ Varios canales de YouTube muy útiles para empezar a aprender sobre como inverti
 * [Josean Paunero Republica Economica](https://www.youtube.com/@Paunero-RE)
 * [Javi Linares](https://www.youtube.com/@Javierlinares)
 * [Sergi Torrens](https://www.youtube.com/@sergitorrens)
-* [Invertir para Conseguir](https://www.youtube.com/@invertirparaconseguir)
 
 ## Psicología
 
