@@ -151,8 +151,9 @@ Una vez que se tienen unos ingresos y acumulan ahorros saber como invertir esos 
 
 Varios canales de YouTube muy útiles para empezar a aprender sobre como invertir para rentabilizar los ahorros.
 
-* [Dinero currante](https://www.youtube.com/@Dinerocurrante)
 * [Josean Paunero Republica Economica](https://www.youtube.com/@Paunero-RE)
+* [El Banquero del Pueblo](https://www.youtube.com/@elbanquerodelpueblo)
+* [Dinero currante](https://www.youtube.com/@Dinerocurrante)
 * [Javi Linares](https://www.youtube.com/@Javierlinares)
 * [Sergi Torrens](https://www.youtube.com/@sergitorrens)
 

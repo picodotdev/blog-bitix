@@ -61,9 +61,11 @@ También hay páginas especializadas en materia económica en la que seguir info
 
 Canales de YouTube hay de muchas temáticas, una de ellas por supuesto es la materia de economía e inversión. Personas algo más versadas e interesadas en el tema que comparten lo que conocen y su opinión.
 
-* [Dinero Currante](https://www.youtube.com/@Dinerocurrante)
-* [Javi Linares](https://www.youtube.com/@Javierlinares)
 * [Josean Paunero Republica Economica](https://www.youtube.com/@Paunero-RE)
+* [El Banquero del Pueblo](https://www.youtube.com/@elbanquerodelpueblo)
+* [Dinero currante](https://www.youtube.com/@Dinerocurrante)
+* [Javi Linares](https://www.youtube.com/@Javierlinares)
+* [Sergi Torrens](https://www.youtube.com/@sergitorrens)
 
 En cualquier caso conviene tener fuentes fiables y sensatas porque no es nada bueno seguir consejos de otros sin saber lo que se está haciendo.
 
@@ -142,6 +144,14 @@ Algunos artículos con análisis y opinión de las opciones, también para conoc
 * [Finizens: opiniones y análisis](https://holainversion.com/finizens-opiniones/)
 * [inbestMe: opiniones y análisis](https://holainversion.com/inbestme-opiniones/)
 * [MyInvestor: opiniones y análisis](https://holainversion.com/opiniones-myinvestor-andbank/)
+
+En algunas páginas se puede obtener información de cualquier fondo conociendo su ISIN o su nombre incluidos los fondos de los bancos. Es muy interesante para conocer las comisiones, evolución en una gráfica, rentabilidades a 3, 5 o 10 años, comparación con fondos de la misma categoría, principales posiciones. Otras páginas de información son medios especializados en noticias de economía, finanzas, inversión y cotizaciones de los índices.
+
+* [Morningstar][morningstar]
+* [Yahoo Finanzas][yahoo-finanzas]
+* [Google Finance][google-finanze]
+* [elEconomista][eleconomista]
+* [Expansión][expansion]
 
 ### Otros bancos
 
