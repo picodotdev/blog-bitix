@@ -39,6 +39,9 @@ El juego Transport Tycoon Deluxe de los 90 era un juego de estrategia en tiempo 
 
 Como jugador creabas las rutas de transporte como las vías de tren, carreteras, aeropuertos y puertos con el objetivo de transportar mercancías y amasar la mayor fortuna posible.
 
+{{< youtube
+    video="L6fyS4LgtQw" >}}
+
 ### Vehículos
 
 Como decía había varios medios de transporte, a mi los que más me gustaban eran los trenes y los aviones porque recuerdo que eran los mejores para producir los mayores ingresos y beneficios. Los camiones y autobuses era microgestionar la flota de vehículos, tenían menos capacidad y por cada parada generaban menos ingresos.
