@@ -35,7 +35,7 @@ Pero, ¿cómo era el Transport Tycoon Deluxe?
 
 ## El juego de estrategia de transportes Transport Tycoon Deluxe
 
-El juego Transport Tycoon Deluxe de los 90 era un juego de estrategia en tiempo real en el que como jugador eres el propietario de una compañía de transportes. Había varios vehículos como trenes, aviones, autobuses, correo, camiones, barcos que transportaban de un sitio a otro pasajeros, mercancías, materias primas como carbón, hierro, cereales y ganado y petróleo.
+El juego Transport Tycoon Deluxe de los 90 era un juego de estrategia en tiempo real en el que como jugador eres el propietario de una compañía de transportes. Había varios vehículos como trenes, aviones, autobuses, correo, camiones, barcos que transportaban de un sitio a otro pasajeros, mercancías, materias primas como carbón, hierro, cereales y ganado y petróleo. Era un juego de pensar y planificar, ir mejorando y haciendo más eficiente la red de transporte y de ir haciéndola cada vez más grande, un juego relativamente pausado, no era un juego de habilidad, reflejos o de actividad frenética como un Doom.
 
 Como jugador creabas las rutas de transporte como las vías de tren, carreteras, aeropuertos y puertos con el objetivo de transportar mercancías y amasar la mayor fortuna posible.
 
@@ -97,7 +97,7 @@ Además de la fiabilidad de los vehículos podía haber accidentes con OVNIS que
 
 ## El juego OpenTTD una alternativa al Transport Tycoon Deluxe
 
-Por lo visto no soy el la única persona que guarda un grato recuerdo de este juego y [OpenTTD][openttd] es una reescritura del juego Transport Tycoon Deluxe con varias mejoras sbre las limitaciones que imponía el original en la construcción y el terreno, por otro lado permite construir trenes de hasta catorce cuadrados cuando en original solo eran posible de 7 y estaciones de tren de hasta 7 vías cuando en el original creo que solo eran posible de 5. Se puede descargar y jugar en GNU/Linux en formato [Flatpak][flatpak] y también tiene versiones para [Windows][windows] y [macOS][macos], también está disponible en las tiendas de juegos.
+Por lo visto no soy el la única persona que guarda un grato recuerdo de este juego y [OpenTTD][openttd] es una rescritura del juego Transport Tycoon Deluxe con varias mejoras sobre las limitaciones que imponía el original en la construcción y el terreno, por otro lado permite construir trenes de hasta catorce cuadrados cuando en original solo eran posible de 7 y estaciones de tren de hasta 7 vías cuando en el original creo que solo eran posible de 5. Se puede descargar y jugar en GNU/Linux en formato [Flatpak][flatpak] y también tiene versiones para [Windows][windows] y [macOS][macos], también está disponible en las tiendas de juegos.
 
 En OpenTTD los trenes pueden ser mucho más largos de lo que lo eran en TTD que cambia en buena medida el juego original, para maximizar la eficiencia hay que evitar los cruces para que los trenes no tengan que esperar en los semáforos, para maximizar los beneficios hay que buscar una forma para que el flujo de los trenes sea lo más rápido posible.
 
