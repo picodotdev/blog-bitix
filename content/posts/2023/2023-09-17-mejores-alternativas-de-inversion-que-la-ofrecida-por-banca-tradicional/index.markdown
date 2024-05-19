@@ -70,8 +70,11 @@ Canales de YouTube hay de muchas temáticas, una de ellas por supuesto es la mat
 
 ### Fuentes oficiales y otras fuentes
 
-Otras buenas fuentes de información son la página de la [CNMV](https://www.cnmv.es/portal/home.aspx) que tiene varias secciones con abundante material pedagógico. Es una fuente oficial que además recopila información sobre productos financieros. El Banco de España y Banco Central Europeo también ofrecen información oficial.
+Otras buenas fuentes de información son la página de la [CNMV](https://www.cnmv.es/portal/home.aspx) que tiene varias secciones con abundante material pedagógico. Es una fuente oficial que además recopila información sobre productos financieros. El [Banco de España](https://www.bde.es/) y [Banco Central Europeo](https://www.ecb.europa.eu/ecb/html/index.es.html) también ofrecen información oficial de estadísticas de datos económicos, intereses e inflación que son importantes para las inversiones.
 
+* [Banco de España](https://www.bde.es/)
+* [Banco de España (estadísticas)](https://www.bde.es/wbe/es/estadisticas/)
+* [Banco Central Europeo](https://www.ecb.europa.eu/ecb/html/index.es.html)
 * [Inversores y Educación Financiera > Recursos educativos, CNMV](https://www.cnmv.es/portal/inversor/Multimedia.aspx)
 
 También hay que tener cuidado con los chiringuitos, sitios que no están bajo la supervisión de la CNMV que vela por los intereses de los inversores, la CNMV otorga unas garantías de supervisión.
@@ -147,6 +150,7 @@ Algunos artículos con análisis y opinión de las opciones, también para conoc
 En algunas páginas se puede obtener información de cualquier fondo conociendo su ISIN o su nombre incluidos los fondos de los bancos. Es muy interesante para conocer las comisiones, evolución en una gráfica, rentabilidades a 3, 5 o 10 años, comparación con fondos de la misma categoría, principales posiciones. Otras páginas de información son medios especializados en noticias de economía, finanzas, inversión y cotizaciones de los índices.
 
 * [Morningstar][morningstar]
+* [Investing][investing]
 * [Google Finance][google-finanze]
 * [Yahoo Finanzas][yahoo-finanzas]
 * [elEconomista][eleconomista]
