@@ -37,7 +37,7 @@ Pero, ¿cómo era el Transport Tycoon Deluxe?
 
 El juego Transport Tycoon Deluxe de los 90 era un juego de estrategia en tiempo real en el que como jugador eres el propietario de una compañía de transportes. Había varios vehículos como trenes, aviones, autobuses, correo, camiones, barcos que transportaban de un sitio a otro pasajeros, mercancías, materias primas como carbón, hierro, cereales y ganado y petróleo. Era un juego de pensar y planificar, ir mejorando y haciendo más eficiente la red de transporte y de ir haciéndola cada vez más grande, un juego relativamente pausado, no era un juego de habilidad, reflejos o de actividad frenética como un Doom.
 
-Como jugador creabas las rutas de transporte como las vías de tren, carreteras, aeropuertos y puertos con el objetivo de transportar mercancías y amasar la mayor fortuna posible.
+Para la época los gráficos _pixel art_ eran bastantes atractivos con una música y sonido que acompañaban. Como jugador creabas las rutas de transporte como las vías de tren, carreteras, aeropuertos y puertos con el objetivo de transportar mercancías y amasar la mayor fortuna posible.
 
 {{< youtube
     video="L6fyS4LgtQw" >}}
@@ -106,7 +106,7 @@ En OpenTTD los trenes pueden ser mucho más largos de lo que lo eran en TTD que 
 
 Se puede jugar a través de internet y en lo que he visto hacen estaciones de tren desde una punta del mapa hasta la otra en una ruta de ida y vuelta con doble vía lo que requiere hacer casi una obra importante en la la ciudad, sin embargo, creo que la forma más eficiente es una ruta circular esto hace que solo haya que construir vías de un solo sentido y simplifica la construcción de las vías en la ciudad.
 
-En otro artículo comentaré otros juegos de PC a los que también dediqué una buena cantidad de tiempo, pero para el TTD quería hacer su propio artículo como homenaje a toda esa cantidad e tiempo en la que me divertí jugándolo.
+En otro artículo comentaré otros juegos de PC a los que también dediqué una buena cantidad de tiempo, pero para el TTD quería hacer su propio artículo como homenaje a toda esa cantidad de tiempo en la que me divertí jugándolo.
 
 {{< image
     gallery="true"
