@@ -12,7 +12,7 @@ comments: true
 promoted: false
 imageHead: "image:comida-12.webp"
 imagePost: "image:comida-12.webp"
-tags: ["blog", "fuera-de-teama"]
+tags: ["blog", "fuera-de-tema"]
 summary: "El año por estas fechas dejé de publicar artículos con tanta frecuencia y desprioricé el tiempo que dedicaba al blog en mi tiempo disponible. Ese tiempo que he recuperado lo he dedicado a otras cosas y tras un año hago un repaso de este cambio en esta semana que con varios días de vacaciones uno tiene algo más de tiempo para pensar."
 ---
 

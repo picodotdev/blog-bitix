@@ -104,6 +104,11 @@ En español también hay algunos blogs personales con artículos desde la progra
 * [Félix López](https://flopezluis.medium.com/) en Medium y [en Substack](https://flopezluis.substack.com/): más centrado en los aspectos de _manager_ los artículos los artículos están más centrados en los aspectos organizativos, desde aspectos de modelos y cultura de organización, gestión de personas hasta reclutamiento todos esos aspectos no relacionados directamente con la programación pero también importantes para una empresa tecnológica.
 * [Koalite](http://blog.koalite.com/): un blog sobre programación con una buena cantidad de artículos interesantes. Muy recomendable.
 
+De canales de YouTube también recomiendo los siguientes.
+
+* [Continuous Delivery](https://www.youtube.com/@ContinuousDelivery): un gran canal explicando los principios, buenas prácticas y fundamentos de la programación y desarrollo de sistemas. Su principal autor es David Farley escritor del libro [Continuous Delivery](https://amzn.to/3RnN083).
+* [Pelado Nerd](https://www.youtube.com/@PeladoNerd): muchos aspectos de la programación y sistemas de alguien con experiencia que trabaja de lo que habla.
+
 ## Juegos
 
 A modo de entretenimiento los juegos son una buena opción. Hay múltiples páginas y foros, entre los siguientes enlaces destaco varios canales de YouTube personales muy alejados de la estridente, forzada y poco natural forma de hablar de algunos famosos _youtubers_ que puede tengan más suscriptores pero que en mi caso aborrezco su forma de publicar contenido, me gusta mas el tono de los siguientes enlaces.
