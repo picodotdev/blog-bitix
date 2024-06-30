@@ -26,6 +26,8 @@ Algunos de esos _post_ para publicar en [X][x] los artículos del propio blog. E
 
 * [Obsidian, una herramienta para almacenar conocimiento][blogbitix-695]
 
+{{< tableofcontents >}}
+
 ## Sobre X
 
 En ciertos momentos sí que encuentro contenido que me resulta interesante en X, aún así creo que es el menos y para ese contenido que me resulta interesante he de descartar la mayoría del otro contenido que X muestra en mi linea de tiempo incluso para el contenido que sigo.
