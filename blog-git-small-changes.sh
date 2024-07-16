@@ -3,4 +3,5 @@ set -e
 
 git add .
 git commit -m "Pequeños retoques"
-git push origin master
+git push origin main
+
