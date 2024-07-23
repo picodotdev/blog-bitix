@@ -4,6 +4,7 @@ type: "post"
 title: "Desempaquetado del ratón inalámbrico Logitech Signature M750"
 url: "/2023/07/desempaquetado-de-raton-inalambrico-logitech-signature-m750/"
 date: 2023-07-15T03:00:00+02:00
+updated: 2024-07-23T23:00:00+02:00
 language: "es"
 index: true
 rss: true
@@ -134,6 +135,8 @@ La aplicación permite configurar las acciones de los botones laterales pudiendo
 Un aspecto en los ratones inalámbricos es la duración de la batería y de si la batería es mediante pilas o recargable. En el caso del M750 al igual que el M650 su funcionamiento es mediante una única pila AA. Utilizar una pila en vez de batería hace que sea más económico en precio pero requiere estar cambiando de pila o utilizar recargables.
 
 Según Logitech la pila tiene una extraordinaria duración de hasta 24 meses y 20 con conectividad por Bluetooth, según indica la caja con un uso de ocho horas diarias, no indica si se apaga con el interruptor completamente cuando no se usa. Realmente no me acabo de creer esa duración y bajo que condiciones de uso tiene esa duración, el Magic Mouse con batería recargable no dura más de dos meses como mucho. La duración de la pila es algo que comprobaré con el tiempo, al igual que su funcionamiento con pilas recargables.
+
+Tras más de una año usando el raton con la pila original con la que venía sigue funcionando, y eso que cuando dejo de usarlo no lo apago simplemente lo dejo quieto y el mismo se pondrá en reposo, lo uso mediante Bluetooth y le doy un uso de algunas horas muchos días. Que el ratón M750 tenga semejante duración de la pila me parece asombroso y me parece que deja en muy mal lugar al Apple Magic Mouse que es algo más caro, al tener que recargarlo con el cable no se puede usar durante algunas horas y la batería aunque le dura unas semanas no es comparable con los 20 meses de duración de batería que me empiezo a creer del Logitech M750.
 
 El ratón tiene un indicador que se enciende en color verde cuando la carga de la pila es superior al 5% y cambia a color rojo cuando la pila empieza a tener poca carga, este indicador es útil para cambiarla o recargarla. En mi caso prefiero utilizar pilas recargables para no estar comprando continuamente y utilizar un cargador que permite descargar las pilas completamente antes de volver a cargarlas para conservar mejor las pilas ya que estas tienen efecto memoria.
 
