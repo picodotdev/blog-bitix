@@ -1,7 +1,7 @@
 ---
 pid: 702
 type: "post"
-title: "Desempaquetado teclado inalámbrico, compacto, portátil y multidispositivo Logitech Pebble Keys 2 K380S"
+title: "Desempaquetado teclado inalámbrico, compacto, portátil y multidispositivo Logitech Pebble Keys 2 K380s"
 url: "/2024/08/desempaquetado-teclado-inalambrico-compacto-portatil-y-multidispositivo-logitech-pebble-keys-2-k380s/"
 date: 2024-08-02T22:00:00+02:00
 language: "es"
@@ -14,7 +14,7 @@ imageHead: "image:logitech-pebble-keys-2-k380s-1.webp"
 imagePost: "image:logitech-pebble-keys-2-k380s-1.webp"
 tags: ["hardware"]
 series: ["desempaquetado-tecnologia"]
-summary: "Por comodidad en todo momento la televisión la he usado a través de un teclado de ordenador como mando a distancia. Aproveché el Kemove DK61 que disponía para este propósito aunque compacto e inalámbrico las teclas de desplazamiento y de volumen requería usarlo con una combinación de teclas lo que me era algo incómodo. Así que he buscado una opción más adaptada siendo el Logitech Pebble Keys 2 K380S el que he elegido."
+summary: "Por comodidad en todo momento la televisión la he usado a través de un teclado de ordenador como mando a distancia. Aproveché el Kemove DK61 que disponía para este propósito aunque compacto e inalámbrico las teclas de desplazamiento y de volumen requería usarlo con una combinación de teclas lo que me era algo incómodo. Así que he buscado una opción más adaptada siendo el Logitech Pebble Keys 2 K380s el que he elegido."
 ---
 
 {{% post %}}
@@ -46,7 +46,7 @@ Por estos motivos desde el primer momento que compré la Samsung 43QN90B la he u
 
 Hasta el momento he estado usando un teclado Kemove DK61 como mando para la televisión salvo para encenderla y apagarla. El problema que tengo con este teclado es que una de las funciones más necesarias en una _smart tv_ son las teclas de desplazamiento y las de subir y baja el volumen. Y justo para estas teclas en el Kemove DK61 hay que usar la combinación de teclas _FN + tecla_ lo que me resulta un poco incómodo.
 
-Simplemente por este motivo de tener que usar combinaciones de teclas he buscado una alternativa, y al final he optado por el Logitech Pebble Keys 2 K380S.
+Simplemente por este motivo de tener que usar combinaciones de teclas he buscado una alternativa, y al final he optado por el Logitech Pebble Keys 2 K380s.
 
 ## Opciones de teclados inalámbricos y compactos
 
@@ -61,11 +61,11 @@ Con estos requisitos las opciones que he evaluado son las siguientes:
 {{< amazon
     tags="keyboard-compact" >}}
 
-Al final me decidí por un modelo de Logitech porque estoy muy contento con esta marca gracias al ratón Logitech M750 que me está funcionando perfectamente, me decidí por el K380S por duración de batería con pilas y por el precio siendo la mitad o más que el MX Keys.
+Al final me decidí por un modelo de Logitech porque estoy muy contento con esta marca gracias al ratón Logitech M750 que me está funcionando perfectamente, me decidí por el K380s por duración de batería con pilas y por el precio siendo la mitad o más que el MX Keys.
 
-## Desempaquetado de teclado Logitech Pebble Keys 2 K380S
+## Desempaquetado de teclado Logitech Pebble Keys 2 K380s
 
-El teclado Logitech Pebble Keys 2 K380S es un teclado compacto en formato 60% pero con teclas dedicadas de desplazamiento y teclas multimedia. Es un teclado en plástico pero de buena construcción y calidad de una marca reconocida de periféricos.
+El teclado [Logitech Pebble Keys 2 K380s](https://www.logitech.com/es-es/products/keyboards/pebble-keys-2.html) es un teclado compacto en formato 60% pero con teclas dedicadas de desplazamiento y teclas multimedia. Es un teclado en plástico pero de buena construcción y calidad de una marca reconocida de periféricos.
 
 {{< amazon
     tags="keyboard-logitech-k380s" >}}
@@ -82,36 +82,36 @@ En el aspecto que me tengo que acostumbrar en el aspecto estético y funcional e
 
 {{< image
     gallery="true"
-    image1="image:logitech-pebble-keys-2-k380s-1.webp" optionsthumb1="200x150" title1="Logitech Pebble Keys 2 K380S"
-    image2="image:logitech-pebble-keys-2-k380s-2.webp" optionsthumb2="200x150" title2="Logitech Pebble Keys 2 K380S" >}}
+    image1="image:logitech-pebble-keys-2-k380s-1.webp" optionsthumb1="200x150" title1="Logitech Pebble Keys 2 K380s"
+    image2="image:logitech-pebble-keys-2-k380s-2.webp" optionsthumb2="200x150" title2="Logitech Pebble Keys 2 K380s" >}}
 {{< image
     gallery="true"
-    image1="image:logitech-pebble-keys-2-k380s-3.webp" optionsthumb1="200x150" title1="Logitech Pebble Keys 2 K380S"
-    image2="image:logitech-pebble-keys-2-k380s-4.webp" optionsthumb2="200x150" title2="Logitech Pebble Keys 2 K380S"
-    image3="image:logitech-pebble-keys-2-k380s-5.webp" optionsthumb3="200x150" title3="Logitech Pebble Keys 2 K380S" >}}
+    image1="image:logitech-pebble-keys-2-k380s-3.webp" optionsthumb1="200x150" title1="Logitech Pebble Keys 2 K380s"
+    image2="image:logitech-pebble-keys-2-k380s-4.webp" optionsthumb2="200x150" title2="Logitech Pebble Keys 2 K380s"
+    image3="image:logitech-pebble-keys-2-k380s-5.webp" optionsthumb3="200x150" title3="Logitech Pebble Keys 2 K380s" >}}
 {{< image
     gallery="true"
-    image1="image:logitech-pebble-keys-2-k380s-6.webp" optionsthumb1="200x150" title1="Logitech Pebble Keys 2 K380S"
-    image2="image:logitech-pebble-keys-2-k380s-7.webp" optionsthumb2="200x150" title2="Logitech Pebble Keys 2 K380S"
-    image3="image:logitech-pebble-keys-2-k380s-8.webp" optionsthumb3="200x150" title3="Logitech Pebble Keys 2 K380S" >}}
+    image1="image:logitech-pebble-keys-2-k380s-6.webp" optionsthumb1="200x150" title1="Logitech Pebble Keys 2 K380s"
+    image2="image:logitech-pebble-keys-2-k380s-7.webp" optionsthumb2="200x150" title2="Logitech Pebble Keys 2 K380s"
+    image3="image:logitech-pebble-keys-2-k380s-8.webp" optionsthumb3="200x150" title3="Logitech Pebble Keys 2 K380s" >}}
 {{< image
     gallery="true"
-    image1="image:logitech-pebble-keys-2-k380s-9.webp" optionsthumb1="200x150" title1="Logitech Pebble Keys 2 K380S"
-    image2="image:logitech-pebble-keys-2-k380s-10.webp" optionsthumb2="200x150" title2="Logitech Pebble Keys 2 K380S" >}}
+    image1="image:logitech-pebble-keys-2-k380s-9.webp" optionsthumb1="200x150" title1="Logitech Pebble Keys 2 K380s"
+    image2="image:logitech-pebble-keys-2-k380s-10.webp" optionsthumb2="200x150" title2="Logitech Pebble Keys 2 K380s" >}}
 {{< image
     gallery="true"
-    image1="image:logitech-pebble-keys-2-k380s-11.webp" optionsthumb1="200x150" title1="Logitech Pebble Keys 2 K380S"
-    image2="image:logitech-pebble-keys-2-k380s-12.webp" optionsthumb2="200x150" title2="Logitech Pebble Keys 2 K380S"
-    caption="Logitech Pebble Keys 2 K380S" >}}
+    image1="image:logitech-pebble-keys-2-k380s-11.webp" optionsthumb1="200x150" title1="Logitech Pebble Keys 2 K380s"
+    image2="image:logitech-pebble-keys-2-k380s-12.webp" optionsthumb2="200x150" title2="Logitech Pebble Keys 2 K380s"
+    caption="Logitech Pebble Keys 2 K380s" >}}
 
 Es fácil emparejar en cualquier dispositivo que admita Bluetooth, basta con mantener pulsada unos segundos una de las teclas de dispositivo F1, F2 o F3 hasta que empiece a parpadear rápidamente y entra en modo emparejamiento con lo que se hará visible en la lista de dispositivos donde se quiera usar. Tanto en la televisión como en la computadora solicita teclear un código que aparece en pantalla y pulsar la tecla _enter_. Una vez emparejado a varios dispositivos para cambiar de uno a otro basta una pulsación en una de las teclas de dispositivo que anteriormente se ha memorizado.
 
 {{< image
     gallery="true"
-    image1="image:logitech-pebble-keys-2-k380s-13.webp" optionsthumb1="200x150" title1="Logitech Pebble Keys 2 K380S"
-    image2="image:logitech-pebble-keys-2-k380s-14.webp" optionsthumb2="200x150" title2="Logitech Pebble Keys 2 K380S"
-    image3="image:logitech-pebble-keys-2-k380s-15.webp" optionsthumb3="200x150" title3="Logitech Pebble Keys 2 K380S"
-    caption="Logitech Pebble Keys 2 K380S" >}}
+    image1="image:logitech-pebble-keys-2-k380s-13.webp" optionsthumb1="200x150" title1="Logitech Pebble Keys 2 K380s"
+    image2="image:logitech-pebble-keys-2-k380s-14.webp" optionsthumb2="200x150" title2="Logitech Pebble Keys 2 K380s"
+    image3="image:logitech-pebble-keys-2-k380s-15.webp" optionsthumb3="200x150" title3="Logitech Pebble Keys 2 K380s"
+    caption="Logitech Pebble Keys 2 K380s" >}}
 
 ## Vídeos de análisis
 
