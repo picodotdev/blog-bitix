@@ -1,8 +1,9 @@
 ---
 pid: 702
 type: "post"
-title: "Desempaquetado teclado inalámbrico, compacto, portátil y multidispositivo Logitech Pebble Keys 2 K380s"
-url: "/2024/08/desempaquetado-teclado-inalambrico-compacto-portatil-y-multidispositivo-logitech-pebble-keys-2-k380s/"
+title: "Desempaquetado de teclado inalámbrico, compacto, portátil y multidispositivo Logitech Pebble Keys 2 K380s"
+url: "/2024/08/desempaquetado-de-teclado-inalambrico-compacto-portatil-y-multidispositivo-logitech-pebble-keys-2-k380s/"
+aliases: ["/2024/08/desempaquetado-teclado-inalambrico-compacto-portatil-y-multidispositivo-logitech-pebble-keys-2-k380s/"]
 date: 2024-08-02T22:00:00+02:00
 language: "es"
 index: true
