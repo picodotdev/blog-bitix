@@ -30,6 +30,11 @@ draft: true
 
 {{< amazon-link product="bandeja-cables-mes" >}}
 
+{{< amazon
+    linkids=""
+    asins=""
+    titles="" >}}
+
 {{< game-spoiler >}}
 {{< tableofcontents >}}
 
@@ -39,11 +44,6 @@ draft: true
     image2="image:" optionsthumb2="300x200" title2=""
     image3="image:" optionsthumb3="300x200" title3=""
     caption="" >}}
-
-{{< amazon
-    tags=""
-    linkids=""
-    asins="" >}}
 
 {{< youtube
     video="" >}}
@@ -82,6 +82,11 @@ https://www.youtube.com/@Kratosworld
     link2=""
     link3=""
     link4="" }}
+
+{{< amazon
+    tags=""
+    linkids=""
+    asins="" >}}
 
 {{< figure
     link1=""

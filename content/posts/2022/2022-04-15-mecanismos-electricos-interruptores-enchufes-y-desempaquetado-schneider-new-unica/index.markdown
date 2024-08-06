@@ -12,7 +12,7 @@ comments: true
 promoted: false
 imageHead: "image:schneider-new-unica.webp"
 imagePost: "image:schneider-750.webp"
-tags: []
+tags: ["fuera-de-tema"]
 series: ["desempaquetado-otros"]
 summary: "Los mecanismos de la instalación eléctrica que tenía de mi vivienda ya tienen alguno más de 20 años, con el uso y paso del tiempo algunos interruptores estaban sucios y ni aún intentando limpiarlos quedaban completamente limpios, por otro lado un par de interruptores me estaban haciendo ruido y arco eléctrico con la consecuencia de que alguna bombilla se me estaban fundiendo no cada más de tres o más años que duran las bombillas LED sino en menos de un año. Por estos motivos y también por el motivo estético he reemplazado tanto los interruptores como los enchufes. Reemplazar los mecanismos eléctricos no es difícil con uno mínimos conocimientos pero por seguridad al manipular elementos eléctricos hay que conocerlos y no tener ninguna duda ni cometer ningún error para no tener un accidente."
 ---
@@ -26,6 +26,8 @@ Por este motivo he decidido cambiar los elementos eléctricos y aunque solo sean
 La sustitución de los mecanismos eléctricos es una tarea doméstica no complicada que no requiere un profesional, siempre y cuando se tomen ciertas precauciones y se tengan unas nociones básicas de electricidad para hacer la tarea con seguridad, sin peligro y correctamente.
 
 En este artículo contiene los conceptos básicos de electricidad para hacer la sustitución, los mecanismos que he elegido, cómo colocarlos y donde comprar entre otras cosas.
+
+* [Teoría eléctrica y cómo sustituir tubos fluorescentes por tubos led][blogbitix-703]
 
 {{< image
     gallery="true"
