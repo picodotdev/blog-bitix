@@ -29,7 +29,7 @@ El cambio no es complicado... teniendo unos mínimos conocimientos, sin conocimi
 
 ## Advertencia de seguridad antes de manipular elementos eléctricos
 
-Hay muchas fuentes vídeos y artículos que muestran cómo realizar ciertas manipulaciones eléctricas pero sin enseñar la teoría en la que se basa esos ejemplos prácticos en vídeos y artículos, y algunos empleando malas prácticas de seguridad.
+Hay muchas fuentes vídeos y artículos que muestran cómo realizar ciertas manipulaciones eléctricas pero sin enseñar la teoría en la que se basa esos ejemplos prácticos en vídeos y artículos, y algunos empleando malas prácticas de seguridad. En algunos vídeos he visto auténticas ñapuzas odas para el desastre que asustarían a cualquier electricistas profesional, bombero o aseguradora. Como sugerir hacer empalmes de cables con cable rígido y luego ponerles cinta aislante o reutilizar un cebador de fluorescente y crearle un puente en sus patitas con cable pelado para simular un cebador led. Por favor, los empalmes de cables se hacen con clemas que son baratas comparadas con un problema eléctrico y las luces led solo con cebador led que también los venden sueltos.
 
 Es importante conocer la teoría básica de electricidad porque es muy posible que en tu caso no sea exactamente igual a como se muestra en un vídeo en concreto. La teoría sobre electricidad es la base que permite comprender que se está haciendo realmente y asegurarse de que lo que se está haciendo es correcto y no va a generar ningún problema.
 
@@ -179,9 +179,9 @@ Esta primera forma de reemplazar las fluorescentes por led ya es usable y me ha 
 
 Finalmente desmontaré los balastros y los llevaré a un punto de recogida de residuos junto con los tubos fluorescentes y los cebadores fluorescentes. Realmente en mano de obra de hacer el reemplazo han sido no más de 30 minutos y a un profesional no le habría costado más de 10, la mayor parte del tiempo que he empleado en esto ha estado en documentarme unos días.
 
-Y ya solo me resta volver a colocar la tulipa y fijar un poco mejor los cables. A partir de aquí es disfrutar de un encendido de la lud instantáneo, sin parpadeo y sin zumbido, no creo que el ahorro en luz sea mucho no para notar algo en la factura, ganar en tranquilidad por quitar un elemento con mercurio y no menos importante sentirme satisfecho por haber aprendido sobre todo esto y hacerlo bien.
+Y ya solo me resta volver a colocar la tulipa y fijar un poco mejor los cables. A partir de aquí es disfrutar de un encendido de la lud instantáneo, sin parpadeo inicial y sin zumbido, no creo que el ahorro en luz sea mucho no para notar algo en la factura, ganar en tranquilidad por quitar un elemento con mercurio y no menos importante sentirme satisfecho por haber aprendido sobre todo esto y hacerlo bien que me hadado un buen rato de entretenimiento.
 
-Esperando que todo esto sea útil para quien lo lea, en este tema me ha costado encontrar buenos artículos ahora que priman los vídeos de YouTube, y en los que hay mucha morralla, sobre el contenido escrito de los blogs como este.
+Esperando que todo esto sea útil para quien lo lea, en este tema me ha costado encontrar buenos artículos ahora que priman los vídeos de YouTube sobre el contenido escrito de los blogs como este, los vídeos que adjunto en el artículo los mejores entre mucha de la morralla que he visto con la que hay que tener cuidado de hacer algo inapropiado siguiendo las indicaciones de algunos.
 
 Aquí una pequeña galería de la sustitución. Primero sustituyendo y poniendo solo los cebadores led y tubos led, luego anulando el balastro izquierdo con las clemas y luego el balastro derecho. Lo dicho ya solo me queda desmontar los balastros inutilizados que ya no tienen ninguna utilidad y volver a poner la tulipa, finalmente llevar a un punto de recogida de residuos los tubos fluorescentes, cebadores y balastros.
 
