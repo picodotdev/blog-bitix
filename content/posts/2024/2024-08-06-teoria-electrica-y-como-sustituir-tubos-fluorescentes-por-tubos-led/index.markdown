@@ -134,7 +134,7 @@ Por normativa ya no se venden más tubos fluorescentes con lo que en el momento 
 
 * Tienen menos consumo y permiten ahorrar en luz con lo que el coste de realizar el reemplazo se compensa con el tiempo.
 * Los led se iluminan inmediatamente y no tienen el problema de parpadeos de las fluorescentes.
-* Los led no tienen un elemento tan tóxico como el mercurio. Como los tubos fluorescentes son de vídeo podría ser que uno se rompiese. Algunos tubos led son de plástico menos frágil que el vídrio.
+* Los led no tienen un elemento tan tóxico como el mercurio. Como los tubos fluorescentes son de vídeo podría ser que uno se rompiese. Algunos tubos led son de plástico menos frágil que el vidrio.
 * Los led tienen más duración y necesitan menos mantenimiento y sustituciones de los tubos en el largo plazo, lo que compensa su coste.
 * No necesitan cebador ni balastro, por tanto no tienen problemas derivados de un mal funcionamiento de estos.
 * Las led permiten diferentes tonalidades de luz como cálida, neutra o fría. Aunque en la cocina se suele utilizar una luz fría de 6500K que es la luz de las fluorescentes.
@@ -179,7 +179,7 @@ Esta primera forma de reemplazar las fluorescentes por led ya es usable y me ha 
 
 Finalmente desmontaré los balastros y los llevaré a un punto de recogida de residuos junto con los tubos fluorescentes y los cebadores fluorescentes. Realmente en mano de obra de hacer el reemplazo han sido no más de 30 minutos y a un profesional no le habría costado más de 10, la mayor parte del tiempo que he empleado en esto ha estado en documentarme unos días.
 
-Y ya solo me resta volver a colocar la tulipa y fijar un poco mejor los cables. A partir de aquí es disfrutar de un encendido de la lud instantáneo, sin parpadeo inicial y sin zumbido, no creo que el ahorro en luz sea mucho no para notar algo en la factura, ganar en tranquilidad por quitar un elemento con mercurio y no menos importante sentirme satisfecho por haber aprendido sobre todo esto y hacerlo bien que me hadado un buen rato de entretenimiento.
+Y ya solo me resta volver a colocar la tulipa y fijar un poco mejor los cables. A partir de aquí es disfrutar de un encendido de la lud instantáneo, sin parpadeo inicial y sin zumbido, no creo que el ahorro en luz sea mucho no para notar algo en la factura, es pasa de dos tubos fluorescentes de 18W cada uno con sus dos balastros a dos tubos de 6.6W cada uno y sin balastros en ambos casos con unos 900 lúmenes por tubo, ganar en tranquilidad por quitar un elemento con mercurio y no menos importante sentirme satisfecho por haber aprendido sobre todo esto y hacerlo bien que me hadado un buen rato de entretenimiento.
 
 Esperando que todo esto sea útil para quien lo lea, en este tema me ha costado encontrar buenos artículos ahora que priman los vídeos de YouTube sobre el contenido escrito de los blogs como este, los vídeos que adjunto en el artículo los mejores entre mucha de la morralla que he visto con la que hay que tener cuidado de hacer algo inapropiado siguiendo las indicaciones de algunos.
 
