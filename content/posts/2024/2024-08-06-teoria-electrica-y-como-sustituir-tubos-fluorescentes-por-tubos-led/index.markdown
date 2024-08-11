@@ -134,10 +134,11 @@ Por normativa ya no se venden más tubos fluorescentes con lo que en el momento 
 
 * Tienen menos consumo y permiten ahorrar en luz con lo que el coste de realizar el reemplazo se compensa con el tiempo.
 * Los led se iluminan inmediatamente y no tienen el problema de parpadeos de las fluorescentes.
-* Los led no tienen un elemento tan tóxico como el mercurio. Como los tubos fluorescentes son de vídeo podría ser que uno se rompiese. Algunos tubos led son de plástico menos frágil que el vidrio.
+* Los led no tienen un elemento tan tóxico como el mercurio. Como los tubos fluorescentes son de vidrio podría ser que uno se rompiese. Algunos tubos led son de plástico menos frágil que el vidrio.
 * Los led tienen más duración y necesitan menos mantenimiento y sustituciones de los tubos en el largo plazo, lo que compensa su coste.
 * No necesitan cebador ni balastro, por tanto no tienen problemas derivados de un mal funcionamiento de estos.
 * Las led permiten diferentes tonalidades de luz como cálida, neutra o fría. Aunque en la cocina se suele utilizar una luz fría de 6500K que es la luz de las fluorescentes.
+* Esta es una suposición mía pero dado el funcionamiento de los fluorescentes con esos parpadeos provocados por el cebador e inicio de la fluorescente debe causar un pequeño «terremoto» eléctrico que quizá sientan para mal los demás aparatos eléctricos.
 
 ## Cambio de luces fluorescentes a led
 

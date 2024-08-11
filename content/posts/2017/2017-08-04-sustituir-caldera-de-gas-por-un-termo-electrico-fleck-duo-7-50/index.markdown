@@ -53,6 +53,8 @@ Dependiendo de la zona de residencia el agua llevará más cal o menos o será m
 
 También hay que elegir la capacidad del depósito del termo, los hay de 15 litros, de 30, de 50, de 80, de 100, de 150 y más. Para una vivienda para el uso de agua sanitaria para ducharse 30 litros son suficientes para una persona, o 50 litros para una ducha más larga o más personas. También hay que tener en cuenta las medidas para que encaje en el hueco que deja la caldera, tanto en altura, anchura y profundidad.
 
+Una cosa importante para la buen conservación del termo eléctrico es que no le entre agua sucia con tierra o demasiado clorada o dura, esto suele ocurrir tras una reparación en las tuberías de la calle, en estos casos es mejor cortar la entrada de agua al termo, no usarlo y dejar fluir el agua en otro grifo hasta que el agua vuelva a salir limpia y clara.
+
 {{< image
     gallery="true"
     image1="image:mapa-dureza-agua.webp" optionsthumb1="300x200" title1="Mapa de dureza del agua"
