@@ -1,8 +1,9 @@
 ---
 pid: 703
 type: "post"
-title: "Teoría eléctrica y cómo sustituir tubos fluorescentes por tubos led"
-url: "/2024/08/teoria-electrica-y-como-sustituir-tubos-fluorescentes-por-tubos-led/"
+title: "Teoría de electricidad y cómo sustituir tubos fluorescentes por tubos led"
+url: "/2024/08/teoria-sobre-electricidad-y-como-sustituir-tubos-fluorescentes-por-tubos-led/"
+aliases: ["/2024/08/teoria-electrica-y-como-sustituir-tubos-fluorescentes-por-tubos-led/"]
 date: 2024-08-06T20:00:00+02:00
 language: "es"
 index: true
