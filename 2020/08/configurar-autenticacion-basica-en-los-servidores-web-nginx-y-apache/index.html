@@ -29,7 +29,7 @@ La autenticación básica por seguridad requiere utilizar en el servidor web el 
   <!-- Social -->
 <meta property="og:title" content="Configurar autenticación básica en los servidores web Nginx y Apache">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hufeb88d6ffa3015c5aa9875e01d09f1d9_52216_750x750_fit_box_3.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hu7392238817767717790.png">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="La autenticación básica o basic auth es un mecanismo de autenticación sencillo que permite proteger los recursos solicitados de un sitio o aplicación web. Es fácil de configurar en el servidor web y está implementado en los propios navegadores, otra ventaja es que se puede añadir a un sitio o aplicación web sin necesidad de realizar modificaciones en su código.
@@ -37,7 +37,7 @@ La autenticación básica por seguridad requiere utilizar en el servidor web el 
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hufeb88d6ffa3015c5aa9875e01d09f1d9_52216_750x750_fit_box_3.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hu7392238817767717790.png">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Configurar autenticación básica en los servidores web Nginx y Apache">
@@ -57,7 +57,7 @@ La autenticación básica por seguridad requiere utilizar en el servidor web el 
     "headline": "Configurar autenticación básica en los servidores web Nginx y Apache",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hufeb88d6ffa3015c5aa9875e01d09f1d9_52216_750x750_fit_box_3.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hu7392238817767717790.png"
         
       },
     "datePublished": "2020-08-02T10:00:00+02:00",
@@ -269,7 +269,7 @@ La autenticación básica por seguridad requiere utilizar en el servidor web el 
 <p>Cuando un servidor para el acceso a un recurso requiere autenticación básica el navegador muestra una ventana emergente en la que se solicita un usuario y contraseña.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hufeb88d6ffa3015c5aa9875e01d09f1d9_52216_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Solicitud de credenciales por el navegador con autenticación básica"><img src="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hufeb88d6ffa3015c5aa9875e01d09f1d9_52216_300x200_fit_q90_h2_box_3.webp" width="300" height="193" alt="Solicitud de credenciales por el navegador con autenticación básica" title="Solicitud de credenciales por el navegador con autenticación básica" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hu10298965831788470712.webp" data-gallery="" title="Solicitud de credenciales por el navegador con autenticación básica"><img src="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hu12710568488720273840.webp" width="300" height="193" alt="Solicitud de credenciales por el navegador con autenticación básica" title="Solicitud de credenciales por el navegador con autenticación básica" class="&#34; " loading="lazy"></a></p>
 <figcaption>Solicitud de credenciales por el navegador con autenticación básica</figcaption>
 </figure>
 </div>
@@ -302,8 +302,8 @@ La autenticación básica por seguridad requiere utilizar en el servidor web el 
 <p>Si los datos proporcionados no son correctos se devuelve el código de estado <em>401</em> que indica que el acceso no se ha autorizado y se requiere autorización. Si las credenciales son válidas se muestra el recurso solicitado.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hufeb88d6ffa3015c5aa9875e01d09f1d9_52216_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Solicitud de credenciales"><img src="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hufeb88d6ffa3015c5aa9875e01d09f1d9_52216_300x200_fit_q90_h2_box_3.webp" width="300" height="193" alt="Solicitud de credenciales" title="Solicitud de credenciales" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-web_huf1d50a05a82b362bea6942c07bacda72_50623_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Acceso al recurso solicitado"><img src="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-web_huf1d50a05a82b362bea6942c07bacda72_50623_300x200_fit_q90_h2_box_3.webp" width="300" height="193" alt="Acceso al recurso solicitado" title="Acceso al recurso solicitado" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hu10298965831788470712.webp" data-gallery="" title="Solicitud de credenciales"><img src="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hu12710568488720273840.webp" width="300" height="193" alt="Solicitud de credenciales" title="Solicitud de credenciales" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-web_hu1365813053342513643.webp" data-gallery="" title="Acceso al recurso solicitado"><img src="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-web_hu12069200488504904881.webp" width="300" height="193" alt="Acceso al recurso solicitado" title="Acceso al recurso solicitado" class="&#34; " loading="lazy"></a></p>
 <figcaption>Solicitud de credenciales y acceso al recurso solicitado</figcaption>
 </figure>
 </div>
@@ -324,8 +324,8 @@ La autenticación básica por seguridad requiere utilizar en el servidor web el 
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/apache-401_hud0a32989a4341b498270d1870adf55e2_67820_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Solicitud de credenciales"><img src="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/apache-401_hud0a32989a4341b498270d1870adf55e2_67820_300x200_fit_q90_h2_box_3.webp" width="300" height="193" alt="Solicitud de credenciales" title="Solicitud de credenciales" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/apache-web_hued13048bcd845fcaf0d503bdfab6e3a3_19802_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Acceso al recurso solicitado"><img src="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/apache-web_hued13048bcd845fcaf0d503bdfab6e3a3_19802_300x200_fit_q90_h2_box_3.webp" width="300" height="193" alt="Acceso al recurso solicitado" title="Acceso al recurso solicitado" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/apache-401_hu11857831190485466384.webp" data-gallery="" title="Solicitud de credenciales"><img src="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/apache-401_hu12751413137805956628.webp" width="300" height="193" alt="Solicitud de credenciales" title="Solicitud de credenciales" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/apache-web_hu10185135312325285418.webp" data-gallery="" title="Acceso al recurso solicitado"><img src="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/apache-web_hu6669490037716705132.webp" width="300" height="193" alt="Acceso al recurso solicitado" title="Acceso al recurso solicitado" class="&#34; " loading="lazy"></a></p>
 <figcaption>Solicitud de credeciales y acceso al recurso solicitado</figcaption>
 </figure>
 </div>
@@ -349,7 +349,7 @@ La autenticación básica por seguridad requiere utilizar en el servidor web el 
 <p>El formulario de autenticación solo se presenta una vez una vez introducidas unas credenciales correctas, dado que el protocolo HTTP es un protocolo sin estado el navegador en cada solicitud de cada página y recurso envía la cabecera <em>Authorization</em> que contiene el usuario y contraseña codificadas en base64. Esta cabecera y su valor aunque codificadas no tienen un mecanismo adicional de seguridad por eso es necesario utilizar el protocolo seguro HTTPS cuando se utiliza autenticación básica de modo que los datos incluidos en las cabeceras se transmitan cifrados.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-header_huf645b6c66ae16ba7b954e7e373c4f2fa_132903_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Cabecera enviada en la petición con las credenciales de acceso al recurso"><img src="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-header_huf645b6c66ae16ba7b954e7e373c4f2fa_132903_300x200_fit_q90_h2_box_3.webp" width="300" height="193" alt="Cabecera enviada en la petición con las credenciales de acceso al recurso" title="Cabecera enviada en la petición con las credenciales de acceso al recurso" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-header_hu476108633597968428.webp" data-gallery="" title="Cabecera enviada en la petición con las credenciales de acceso al recurso"><img src="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-header_hu13844795430715392221.webp" width="300" height="193" alt="Cabecera enviada en la petición con las credenciales de acceso al recurso" title="Cabecera enviada en la petición con las credenciales de acceso al recurso" class="&#34; " loading="lazy"></a></p>
 <figcaption>Cabecera enviada en la petición con las credenciales de acceso al recurso</figcaption>
 </figure>
 </div>
@@ -370,7 +370,7 @@ La autenticación básica por seguridad requiere utilizar en el servidor web el 
 <p>El servidor web indica al navegador que el recurso solicitado requiere autenticación básica devolviendo en la respuesta el <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Status/401">código de estado 401 Unauthorized</a> y la cabecera <em>www-authenticate</em>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/http-auth_hu96ac9785f0db24b400db7522627a28f3_36023_2560x1440_fit_q90_h2_box_3.webp" data-gallery="" title="Esquema de peticiones, cabeceras y respuestas del protocolo de autenticación básica"><img src="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/http-auth_hu96ac9785f0db24b400db7522627a28f3_36023_650x450_fit_q90_h2_box_3.webp" width="650" height="307" alt="Esquema de peticiones, cabeceras y respuestas del protocolo de autenticación básica" title="Esquema de peticiones, cabeceras y respuestas del protocolo de autenticación básica" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/http-auth_hu8471509114199357058.webp" data-gallery="" title="Esquema de peticiones, cabeceras y respuestas del protocolo de autenticación básica"><img src="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/http-auth_hu9524642966674677278.webp" width="650" height="307" alt="Esquema de peticiones, cabeceras y respuestas del protocolo de autenticación básica" title="Esquema de peticiones, cabeceras y respuestas del protocolo de autenticación básica" class="&#34; " loading="lazy"></a></p>
 <figcaption>Esquema de peticiones, cabeceras y respuestas del protocolo de autenticación básica</figcaption>
 </figure>
 </div>
@@ -452,7 +452,7 @@ La autenticación básica por seguridad requiere utilizar en el servidor web el 
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/04/animaciones-y-transformaciones-2d-y-3d-con-css/">
-                <img src="/blog-bitix/2020/04/animaciones-y-transformaciones-2d-y-3d-con-css/images/css-animations-transformations_hu3448c95c1e89a037628691b9ee56ae5d_454367_2560x1440_fit_q90_h2_box_3.webp" width="326" height="125" alt="Animaciones y transformaciones 2D y 3D con CSS" title="Animaciones y transformaciones 2D y 3D con CSS" class="" loading="lazy">
+                <img src="/blog-bitix/2020/04/animaciones-y-transformaciones-2d-y-3d-con-css/images/css-animations-transformations_hu11829643386128084131.webp" width="326" height="125" alt="Animaciones y transformaciones 2D y 3D con CSS" title="Animaciones y transformaciones 2D y 3D con CSS" class="" loading="lazy">
                 <h3>Animaciones y transformaciones 2D y 3D con CSS</h3>
                 </a>
                 
@@ -466,7 +466,7 @@ La autenticación básica por seguridad requiere utilizar en el servidor web el 
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/03/usar-un-paquete-npm-con-webpack-creado-con-storybook-react-y-typescript/">
-                <img src="/blog-bitix/2020/03/usar-un-paquete-npm-con-webpack-creado-con-storybook-react-y-typescript/images/hello-world-page_hu1ad16cbf06b99a95d71184aff0c8acbd_15397_2560x1440_fit_q90_h2_box_3.webp" width="326" height="125" alt="Usar un paquete npm con Webpack creado con Storybook, React y TypeScript" title="Usar un paquete npm con Webpack creado con Storybook, React y TypeScript" class="" loading="lazy">
+                <img src="/blog-bitix/2020/03/usar-un-paquete-npm-con-webpack-creado-con-storybook-react-y-typescript/images/hello-world-page_hu7869099491050988956.webp" width="326" height="125" alt="Usar un paquete npm con Webpack creado con Storybook, React y TypeScript" title="Usar un paquete npm con Webpack creado con Storybook, React y TypeScript" class="" loading="lazy">
                 <h3>Usar un paquete npm con Webpack creado con Storybook, React y TypeScript</h3>
                 </a>
                 
@@ -480,7 +480,7 @@ La autenticación básica por seguridad requiere utilizar en el servidor web el 
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/03/desarrollar-componentes-react-con-typescript-y-sistemas-de-diseno-con-storybook/">
-                <img src="/blog-bitix/2020/03/desarrollar-componentes-react-con-typescript-y-sistemas-de-diseno-con-storybook/images/storybook-helloworld_hub7bcf5008d7c8d3c96ea32d079f41ce8_51971_2560x1440_fit_q90_h2_box_3.webp" width="326" height="125" alt="Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook" title="Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook" class="" loading="lazy">
+                <img src="/blog-bitix/2020/03/desarrollar-componentes-react-con-typescript-y-sistemas-de-diseno-con-storybook/images/storybook-helloworld_hu14581220785653388435.webp" width="326" height="125" alt="Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook" title="Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook" class="" loading="lazy">
                 <h3>Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook</h3>
                 </a>
                 
@@ -508,7 +508,7 @@ La autenticación básica por seguridad requiere utilizar en el servidor web el 
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/">
-                <img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-playstation-despues_hub973e372c1d61b2c7366348e15d773e2_317580_2560x1440_fit_q90_h2_box_3.webp" width="326" height="125" alt="Mejorar el tiempo de carga de una página web usando lazy load" title="Mejorar el tiempo de carga de una página web usando lazy load" class="" loading="lazy">
+                <img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-playstation-despues_hu18118860278696255888.webp" width="326" height="125" alt="Mejorar el tiempo de carga de una página web usando lazy load" title="Mejorar el tiempo de carga de una página web usando lazy load" class="" loading="lazy">
                 <h3>Mejorar el tiempo de carga de una página web usando lazy load</h3>
                 </a>
                 
