@@ -3,7 +3,7 @@ pid: 704
 type: "post"
 title: "Desempaquetado de smartwatch deportivo Garmin Forerunner 165"
 url: "/2024/08/desempaquetado-de-smartwatch-deportivo-garmin-forerunner-165/"
-date: 2024-08-28T00:00:00+02:00
+date: 2024-08-29T22:00:00+02:00
 language: "es"
 index: true
 rss: true
@@ -15,7 +15,6 @@ imagePost: "image:garmin-forerunner-165.webp"
 tags: ["hardware"]
 series: ["desempaquetado-tecnologia", "desempaquetado-otros"]
 summary: "No me era algo imprescindible para salir a correr aunque un pulsómetro si me proporcionará algunos datos útiles. Tenía un Suunto t3c que dejé de usar hace tiempo y con el que quedé muy descontento con esa marca. He echado un vistazo a los pulsómetros pasados casi 15 años y han mejorado mucho principalmente al incorporar pulsómetro y sensor en el propio reloj junto con un GPS. Como habitualmente miro que opciones que cubran mis necesidades por el rango de precio que considero aceptable, también por conocer más que estoy comprando para quedar convencido con la que para mi es la opción más adecuada y suficiente."
-draft: true
 ---
 
 {{% post %}}
