@@ -9,8 +9,7 @@ index: true
 rss: true
 sharing: true
 comments: true
-promoted: false
-promoted-hidden: true
+promoted: true
 imageHead: "image:head.webp"
 imagePost: "image:head.webp"
 tags: []
