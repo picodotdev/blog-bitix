@@ -6,10 +6,10 @@ author: "Express VPM"
 url: "/2019/02/proyecto-de-mejora-de-smart-tv-usando-una-vpn-para-acceder-a-contenido-restringido-por-ip/"
 date: 2019-02-08T16:50:00+01:00
 language: "es"
-index: true
-rss: true
+index: false
+rss: false
 sharing: true
-comments: true
+comments: false
 promoted: "external"
 tags: ["patrocinado", "software"]
 ---

@@ -6,10 +6,10 @@ author: "Hostinger"
 url: "/2022/05/por-que-es-importante-escoger-un-buen-servicio-de-hosting-para-tu-negocio-en-linea/"
 date: 2022-05-06T00:00:00+02:00
 language: "es"
-index: true
+index: false
 rss: false
 sharing: true
-comments: true
+comments: false
 promoted: "external"
 imageHead: "image:header.webp"
 imagePost: "image:header.webp"

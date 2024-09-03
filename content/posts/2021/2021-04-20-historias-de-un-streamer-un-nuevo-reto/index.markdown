@@ -6,10 +6,10 @@ author: "Mercado Actual"
 url: "/2021/04/historias-de-un-streamer-un-nuevo-reto/"
 date: 2021-04-20T19:00:00+02:00
 language: "es"
-index: true
-rss: true
+index: false
+rss: false
 sharing: true
-comments: true
+comments: false
 promoted: "external"
 imagePost: "image:seagate-game-drive-2tb-verde.webp"
 tags: ["juegos", "patrocinado"]

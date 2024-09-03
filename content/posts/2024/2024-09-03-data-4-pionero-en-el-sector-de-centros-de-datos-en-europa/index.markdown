@@ -6,10 +6,10 @@ author: "Data 4"
 url: "/2024/09/data-4-pionero-en-el-sector-de-centros-de-datos-en-europa/"
 date: 2024-09-03T20:00:00+02:00
 language: "es"
-index: true
-rss: true
+index: false
+rss: false
 sharing: true
-comments: true
+comments: false
 promoted: "external"
 imageHead: "image:head.webp"
 imagePost: "image:head.webp"
