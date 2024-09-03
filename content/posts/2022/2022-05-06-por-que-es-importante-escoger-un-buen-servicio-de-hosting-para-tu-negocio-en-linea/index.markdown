@@ -2,6 +2,7 @@
 pid: 632
 type: "post"
 title: "¿Por qué es importante escoger un buen servicio de hosting para tu negocio en línea?"
+author: "Hostinger"
 url: "/2022/05/por-que-es-importante-escoger-un-buen-servicio-de-hosting-para-tu-negocio-en-linea/"
 date: 2022-05-06T00:00:00+02:00
 language: "es"

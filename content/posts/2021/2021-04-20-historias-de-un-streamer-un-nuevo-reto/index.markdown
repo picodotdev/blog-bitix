@@ -2,6 +2,7 @@
 pid: 568
 type: "post"
 title: "Historias de un streamer, «Un nuevo reto»"
+author: "Mercado Actual"
 url: "/2021/04/historias-de-un-streamer-un-nuevo-reto/"
 date: 2021-04-20T19:00:00+02:00
 language: "es"
