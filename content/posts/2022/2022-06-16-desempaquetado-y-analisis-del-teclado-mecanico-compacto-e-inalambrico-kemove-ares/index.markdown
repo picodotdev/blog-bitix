@@ -23,7 +23,7 @@ summary: "El teclado mecánico KEMOVE ARES está en la gama alta de teclados par
 
 Las marcas lanzan productos que cubren un amplio rango de precios según el presupuesto de los compradores. Lógicamente los productos más caros en principio son mejores por tener mayor durabilidad, materiales y en el caso de los productos tecnológicos mejores especificaciones.
 
-Sin embargo, hay algunos productos que tienen un precio muy interesante y por debajo de lo que suele ser habitual este es el caso del teclado mecánico [KEMOVE DK61](https://www.kemove.com/product/dk61-snowfox-shadow/?wpam_id=17) que tiene un precio muy ajustado para todo lo que ofrece.
+Sin embargo, hay algunos productos que tienen un precio muy interesante y por debajo de lo que suele ser habitual este es el caso del teclado mecánico [KEMOVE DK61](https://www.kemove.com/product/dk61-snowfox-shadow/) que tiene un precio muy ajustado para todo lo que ofrece.
 
 Otros productos y usuarios buscan tener lo mejor que haya en el mercado sin importar tanto el precio. El teclado mecánico KEMOVE ARES es idéntico o muy similar en cuanto a funcionalidades que el KEMOVE DK61 pero que usa mejores materiales, lógicamente el precio del ARES es mayor.
 
@@ -31,7 +31,7 @@ Otros productos y usuarios buscan tener lo mejor que haya en el mercado sin impo
 
 ## Características técnicas del teclado KEMOVE ARES
 
-El teclado mecánico [KEMOVE ARES](https://www.kemove.com/product/k64-ares/?wpam_id=17) es un teclado de gama alta cuya principal característica es que emplea los mejores materiales y una mayor calidad de construcción, tiene un cuerpo de metal de aluminio y los _keycaps_ son de mejor construcción respecto al teclado KEMOVE DK61 que siendo también un buen teclado emplea otros materiales más económicos principalmente en el cuerpo de plástico. El teclado se vende nuevo por unos 150€ que sin ser de los más caros es mayor que el propio KEMOVE DK61 que salvo el cuerpo de metal ofrece lo mismo.
+El teclado mecánico [KEMOVE ARES](https://www.kemove.com/product/k64-ares/) es un teclado de gama alta cuya principal característica es que emplea los mejores materiales y una mayor calidad de construcción, tiene un cuerpo de metal de aluminio y los _keycaps_ son de mejor construcción respecto al teclado KEMOVE DK61 que siendo también un buen teclado emplea otros materiales más económicos principalmente en el cuerpo de plástico. El teclado se vende nuevo por unos 150€ que sin ser de los más caros es mayor que el propio KEMOVE DK61 que salvo el cuerpo de metal ofrece lo mismo.
 
 Las características completas del teclado son las siguientes:
 
@@ -68,8 +68,8 @@ En el momento de publicar el artículo el KEMOVE ARES solo está disponible para
 
 El envío desde China es rápido y en la página de KEMOVE se puede pagar con [PayPal][paypal] pero es un poco más inconveniente que usar la página de Amazon de España. El envío a España peninsular no tardará más de dos semanas que sigue siendo un tiempo aceptable para el envío.
 
-* [Página del fabricante del teclado KEMOVE ARES](https://www.kemove.com/product/k64-ares/?wpam_id=17)
-* [Página del fabricante del teclado KEMOVE DK61](https://www.kemove.com/product/dk61-snowfox-shadow/?wpam_id=17)
+* [Página del fabricante del teclado KEMOVE ARES](https://www.kemove.com/product/k64-ares/)
+* [Página del fabricante del teclado KEMOVE DK61](https://www.kemove.com/product/dk61-snowfox-shadow/)
 * [Página del fabricante del teclado DIERYA DK63](https://www.dieryatech.com/item/dk63-wireless-wired-mechanical-keyboard)
 * [Página del fabricante del teclado DIERYA DK61E](https://www.dieryatech.com/item/dk61e-wired-mechanical-keyboard)
 * [Página del fabricante del teclado DIERYA DK61 Pro](https://www.dieryatech.com/item/dk61-pro-wireless-wired-mechanical-keyboard)
@@ -235,7 +235,7 @@ En páginas como [AliExpreses][aliexpress] hay multitud de vendedores que venden
 
 Otro producto interesante es una alfombrilla de gran tamaño que permite colocar tanto el teclado como el ratón, permite evitar el desgaste de la mesa o ensuciarla. Algunas [alfombrillas incluso con iluminación RGB](https://amzn.to/3Aztewq) que aparte de su efecto estético puede resultar también útil en condiciones de baja iluminación.
 
-Finalmente, en caso de querer transportar el teclado es aconsejable comprar una [funda para protegerlo en el transporte](https://www.kemove.com/product/keyboard-case/?wpam_id=17) que KEMOVE vende en su página web o en algún momento también está disponible en Amazon y evitar que sufra algún deterioro en el transporte principalmente para proteger los _keycaps_.
+Finalmente, en caso de querer transportar el teclado es aconsejable comprar una [funda para protegerlo en el transporte](https://www.kemove.com/product/keyboard-case/) que KEMOVE vende en su página web o en algún momento también está disponible en Amazon y evitar que sufra algún deterioro en el transporte principalmente para proteger los _keycaps_.
 
 {{< amazon
     tags="storage-usb-hub" >}}

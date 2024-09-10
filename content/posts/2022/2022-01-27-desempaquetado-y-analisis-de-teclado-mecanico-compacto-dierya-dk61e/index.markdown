@@ -65,8 +65,8 @@ Si después de leer el artículo decides comprar uno de estos teclados y en el m
 * [Página del fabricante del teclado DIERYA DK61E](https://www.dieryatech.com/item/dk61e-wired-mechanical-keyboard)
 * [Página del fabricante del teclado DIERYA DK61 Pro](https://www.dieryatech.com/item/dk61-pro-wireless-wired-mechanical-keyboard)
 * [Página del fabricante del teclado DIERYA DK63](https://www.dieryatech.com/item/dk63-wireless-wired-mechanical-keyboard)
-* [Página del fabricante del teclado KEMOVE DK61](https://www.kemove.com/product/dk61-snowfox-shadow/?wpam_id=17)
-* [Página del fabricante del teclado KEMOVE ARES](https://www.kemove.com/product/k64-ares/?wpam_id=17)
+* [Página del fabricante del teclado KEMOVE DK61](https://www.kemove.com/product/dk61-snowfox-shadow/)
+* [Página del fabricante del teclado KEMOVE ARES](https://www.kemove.com/product/k64-ares/)
 * [Manual de usuario del teclado DIERYA DK61](https://www.kemovebbs.com/usermanuel/DIERYADK61.pdf)
 
 {{< amazon
@@ -289,7 +289,7 @@ Si al cabo de un tiempo se quieren probar otros _switches_ a los originales del 
 
 Otro producto interesante es una alfombrilla de gran tamaño que permite colocar tanto el teclado como el ratón, permite evitar el desgaste de la mesa o ensuciarla. Algunas [alfombrillas incluso con iluminación RGB](https://amzn.to/3Aztewq) que aparte de su efecto estético puede resultar también útil en condiciones de baja iluminación.
 
-Finalmente, en caso de querer transportar el teclado es aconsejable comprar una [funda para protegerlo en el transporte](https://www.kemove.com/product/keyboard-case/?wpam_id=17) y evitar que sufra algún deterioro en el transporte principalmente para proteger los _keycaps_, la marca de KEMOVE vende una funda para los teclados de tamaño 60%.
+Finalmente, en caso de querer transportar el teclado es aconsejable comprar una [funda para protegerlo en el transporte](https://www.kemove.com/product/keyboard-case/) y evitar que sufra algún deterioro en el transporte principalmente para proteger los _keycaps_, la marca de KEMOVE vende una funda para los teclados de tamaño 60%.
 
 {{< amazon
     tags="storage-usb-hub" >}}
