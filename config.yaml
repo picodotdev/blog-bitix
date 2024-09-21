@@ -1,6 +1,5 @@
 title: "Blog Bitix"
 baseURL: "https://picodotdev.github.io/blog-bitix/"
-paginate: 15
 metadataformat: "yaml"
 timeout: 360000
 
@@ -41,6 +40,9 @@ outputs:
   taxonomy:
   - HTML
   - RSS
+
+pagination:
+  pagerSize: 15
 
 markup:
   defaultMarkdownHandler: goldmark

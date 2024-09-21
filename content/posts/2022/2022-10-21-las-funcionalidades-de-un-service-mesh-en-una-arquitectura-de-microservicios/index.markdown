@@ -38,7 +38,7 @@ Los microservicios se comunican entre ellos formado una red distribuida, un _ser
 
 En gran medida la solución a los problemas de los microservicios en un _service mesh_ es implementada estableciendo un intermediario _proxy_ en la comunicación entre los servicios siendo en este intermediario denominado _sidecar proxy_ el que implementa la solución. Se denomina _sidecar proxy_ ya que al mismo tiempo que se despliega el servicio se despliega el intermediario adicionalmente para la comunicación entre los diferentes servicios que usa y los servicios en vez de comunicarse entre ellos directamente se comunican con el _sidecar proxy_.
 
-El _service mesh_ a través de los _proxy sidecar_ permiten delegar en la infraestructura y no en las aplicaciones varios aspectos que son necesarios resolver en un sistema basado en microservicios y todo ello de forma trasnparente y sin tener que hacer modificaciones en los microservicios más a llá de configuración de puertos.
+El _service mesh_ a través de los _proxy sidecar_ permiten delegar en la infraestructura y no en las aplicaciones varios aspectos que son necesarios resolver en un sistema basado en microservicios y todo ello de forma transparente y sin tener que hacer modificaciones en los microservicios más allá de configuración de puertos.
 
 ### Seguridad
 
@@ -82,7 +82,7 @@ Consul proporciona tres conceptos para controlar el enrutamiento entre los servi
 
 ## Ejemplo práctico del _service mesh_ de Consul
 
-En el libro Consul: Up & Running se explica más detalladamente los puntos anteriores junto con un ejemplo con los necesarias configuraciones para Consul de cada uno de ellos utilizando [Kubernetes][kubernetes] y máquinas virtuales.
+En el libro Consul: Up & Running se explica más detalladamente los puntos anteriores junto con un ejemplo con las necesarias configuraciones para Consul de cada uno de ellos utilizando [Kubernetes][kubernetes] y máquinas virtuales.
 
 En el libro se usa simplemente Consul, en este artículo muestro la misma configuración y práctica de los conceptos comentados pero usando [Nomad][nomad] el orquestador de procesos de HashiCorp equivalente a Kubernetes pero más simple de usar aunque no tan nombrado como Kuberntes. Lo ejecuto dentro de una máquina virtual de [VirtualBox][virtualbox] aprovisionada y creada con [Vagrant][vagrant] otro producto de HashiCorp.
 
