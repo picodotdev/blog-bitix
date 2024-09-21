@@ -6,8 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="En ocasiones es necesario usar una cache que contenga un número de elementos hasta un límite y que cuando se vayan añadiendo más se vayan borrando otros según algún criterio. En Java si no queremos añadir una nueva dependencia al proyecto con una librería especializada como Ehcache la clase LinkedHashMap sirve para aquellos casos de uso simples sin necesidad de dependencias adicionales.
-Si el coste de obtener algunos datos es costoso ya sean porque hay que obtenerlos de una base de datos, mediante una operación de disco o red o hay que hacer algún cálculo sobre ellos en estos casos guardar los datos en una cache supondrá un aumento notable de rendimiento de mayor o menor medida según el coste de la operación que evita la cache. &hellip;">
+  <meta name="description" content="
+
+
+En ocasiones es necesario usar una cache que contenga un número de elementos hasta un límite y que cuando se vayan añadiendo más se vayan borrando otros según algún criterio. En Java si no queremos añadir una nueva dependencia al proyecto con una librería especializada como Ehcache la clase LinkedHashMap sirve para aquellos casos de uso simples sin necesidad de dependencias adicionales.
+Si el coste de obtener algunos datos es costoso ya sean porque hay que obtenerlos de una base de datos, mediante una operación de disco o red o hay que hacer algún cálculo sobre ellos en estos casos guardar los datos en una cache supondrá un aumento notable de rendimiento de mayor o menor medida según el coste de la operación que evita la cache. Usar una cache es viable si es posible usar datos no completamente actualizados y dedicar algo de espacio en memoria para la cache. Si en la mayor parte de las búsquedas que se hacen en la cache el elemento buscado está ya presente se considera un acierto o hit y si no está presente un fallo o miss, cuando mayor sea el número de aciertos en la cache mayor será el aumento rendimiento percibido. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Cache simple de datos y con Ehcache en Java</title>
@@ -32,8 +35,11 @@ Si el coste de obtener algunos datos es costoso ya sean porque hay que obtenerlo
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="En ocasiones es necesario usar una cache que contenga un número de elementos hasta un límite y que cuando se vayan añadiendo más se vayan borrando otros según algún criterio. En Java si no queremos añadir una nueva dependencia al proyecto con una librería especializada como Ehcache la clase LinkedHashMap sirve para aquellos casos de uso simples sin necesidad de dependencias adicionales.
-Si el coste de obtener algunos datos es costoso ya sean porque hay que obtenerlos de una base de datos, mediante una operación de disco o red o hay que hacer algún cálculo sobre ellos en estos casos guardar los datos en una cache supondrá un aumento notable de rendimiento de mayor o menor medida según el coste de la operación que evita la cache. &hellip;">
+<meta property="og:description" content="
+
+
+En ocasiones es necesario usar una cache que contenga un número de elementos hasta un límite y que cuando se vayan añadiendo más se vayan borrando otros según algún criterio. En Java si no queremos añadir una nueva dependencia al proyecto con una librería especializada como Ehcache la clase LinkedHashMap sirve para aquellos casos de uso simples sin necesidad de dependencias adicionales.
+Si el coste de obtener algunos datos es costoso ya sean porque hay que obtenerlos de una base de datos, mediante una operación de disco o red o hay que hacer algún cálculo sobre ellos en estos casos guardar los datos en una cache supondrá un aumento notable de rendimiento de mayor o menor medida según el coste de la operación que evita la cache. Usar una cache es viable si es posible usar datos no completamente actualizados y dedicar algo de espacio en memoria para la cache. Si en la mayor parte de las búsquedas que se hacen en la cache el elemento buscado está ya presente se considera un acierto o hit y si no está presente un fallo o miss, cuando mayor sea el número de aciertos en la cache mayor será el aumento rendimiento percibido. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -41,8 +47,11 @@ Si el coste de obtener algunos datos es costoso ya sean porque hay que obtenerlo
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Cache simple de datos y con Ehcache en Java">
-<meta name="twitter:description" content="En ocasiones es necesario usar una cache que contenga un número de elementos hasta un límite y que cuando se vayan añadiendo más se vayan borrando otros según algún criterio. En Java si no queremos añadir una nueva dependencia al proyecto con una librería especializada como Ehcache la clase LinkedHashMap sirve para aquellos casos de uso simples sin necesidad de dependencias adicionales.
-Si el coste de obtener algunos datos es costoso ya sean porque hay que obtenerlos de una base de datos, mediante una operación de disco o red o hay que hacer algún cálculo sobre ellos en estos casos guardar los datos en una cache supondrá un aumento notable de rendimiento de mayor o menor medida según el coste de la operación que evita la cache. &hellip;">
+<meta name="twitter:description" content="
+
+
+En ocasiones es necesario usar una cache que contenga un número de elementos hasta un límite y que cuando se vayan añadiendo más se vayan borrando otros según algún criterio. En Java si no queremos añadir una nueva dependencia al proyecto con una librería especializada como Ehcache la clase LinkedHashMap sirve para aquellos casos de uso simples sin necesidad de dependencias adicionales.
+Si el coste de obtener algunos datos es costoso ya sean porque hay que obtenerlos de una base de datos, mediante una operación de disco o red o hay que hacer algún cálculo sobre ellos en estos casos guardar los datos en una cache supondrá un aumento notable de rendimiento de mayor o menor medida según el coste de la operación que evita la cache. Usar una cache es viable si es posible usar datos no completamente actualizados y dedicar algo de espacio en memoria para la cache. Si en la mayor parte de las búsquedas que se hacen en la cache el elemento buscado está ya presente se considera un acierto o hit y si no está presente un fallo o miss, cuando mayor sea el número de aciertos en la cache mayor será el aumento rendimiento percibido. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -80,8 +89,11 @@ Si el coste de obtener algunos datos es costoso ya sean porque hay que obtenerlo
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "En ocasiones es necesario usar una cache que contenga un número de elementos hasta un límite y que cuando se vayan añadiendo más se vayan borrando otros según algún criterio. En Java si no queremos añadir una nueva dependencia al proyecto con una librería especializada como Ehcache la clase LinkedHashMap sirve para aquellos casos de uso simples sin necesidad de dependencias adicionales.
-Si el coste de obtener algunos datos es costoso ya sean porque hay que obtenerlos de una base de datos, mediante una operación de disco o red o hay que hacer algún cálculo sobre ellos en estos casos guardar los datos en una cache supondrá un aumento notable de rendimiento de mayor o menor medida según el coste de la operación que evita la cache."
+    "description": "<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>En ocasiones es necesario usar una cache que contenga un número de elementos hasta un límite y que cuando se vayan añadiendo más se vayan borrando otros según algún criterio. En Java si no queremos añadir una nueva dependencia al proyecto con una librería especializada como <a href="https://www.ehcache.org/">Ehcache</a> la clase <a href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html">LinkedHashMap</a> sirve para aquellos casos de uso simples sin necesidad de dependencias adicionales.</p>
+<p>Si el coste de obtener algunos datos es costoso ya sean porque hay que obtenerlos de una base de datos, mediante una operación de disco o red o hay que hacer algún cálculo sobre ellos en estos casos guardar los datos en una cache supondrá un aumento notable de rendimiento de mayor o menor medida según el coste de la operación que evita la cache. Usar una cache es viable si es posible usar datos no completamente actualizados y dedicar algo de espacio en memoria para la cache. Si en la mayor parte de las búsquedas que se hacen en la cache el elemento buscado está ya presente se considera un acierto o <em>hit</em> y si no está presente un fallo o <em>miss</em>, cuando mayor sea el número de aciertos en la cache mayor será el aumento rendimiento percibido.</p>"
 }
   </script>
   

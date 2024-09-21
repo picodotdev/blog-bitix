@@ -6,8 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="Para cada servicio deberíamos emplear una contraseña de una longitud de al menos 8 caracteres que incluya letras en minúscula, mayúscula, números y símbolos, una herramienta que podemos utilizar para generar contraseñas más seguras con los criterios que indiquemos es Strong Password Generator o Password Generator.
-Sin embargo, recordar cada una de estas contraseñas es muy difícil de modo que es habitual que utilicemos la misma contraseña para varios o todos los servicios y no empleando todos los criterios anteriores o usar una herramienta con la que Guardar contraseñas de forma segura con KeePassXC. &hellip;">
+  <meta name="description" content="
+
+
+Para cada servicio deberíamos emplear una contraseña de una longitud de al menos 8 caracteres que incluya letras en minúscula, mayúscula, números y símbolos, una herramienta que podemos utilizar para generar contraseñas más seguras con los criterios que indiquemos es Strong Password Generator o Password Generator.
+Sin embargo, recordar cada una de estas contraseñas es muy difícil de modo que es habitual que utilicemos la misma contraseña para varios o todos los servicios y no empleando todos los criterios anteriores o usar una herramienta con la que Guardar contraseñas de forma segura con KeePassXC. Por otro lado, los desarrolladores no deberíamos guardar en la base de datos las contraseñas que nos entregan los usuarios en texto plano, para evitar guardalas en texto plano hace un tiempo se utilizaba únicamente una función de hashing unidireccional como MD5 o SHA, de este modo si la base de datos fuese comprometida en teoría no podrían conocer la contraseña original. En este artículo comentaré que aún guardando las contraseñas con una función de hashing no es suficiente para hacerlas seguras y comentaré una implementación con Apache Shiro de una de las ideas propuestas, también con Spring Security es posible. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas</title>
@@ -32,8 +35,11 @@ Sin embargo, recordar cada una de estas contraseñas es muy difícil de modo que
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-shiro.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="Para cada servicio deberíamos emplear una contraseña de una longitud de al menos 8 caracteres que incluya letras en minúscula, mayúscula, números y símbolos, una herramienta que podemos utilizar para generar contraseñas más seguras con los criterios que indiquemos es Strong Password Generator o Password Generator.
-Sin embargo, recordar cada una de estas contraseñas es muy difícil de modo que es habitual que utilicemos la misma contraseña para varios o todos los servicios y no empleando todos los criterios anteriores o usar una herramienta con la que Guardar contraseñas de forma segura con KeePassXC. &hellip;">
+<meta property="og:description" content="
+
+
+Para cada servicio deberíamos emplear una contraseña de una longitud de al menos 8 caracteres que incluya letras en minúscula, mayúscula, números y símbolos, una herramienta que podemos utilizar para generar contraseñas más seguras con los criterios que indiquemos es Strong Password Generator o Password Generator.
+Sin embargo, recordar cada una de estas contraseñas es muy difícil de modo que es habitual que utilicemos la misma contraseña para varios o todos los servicios y no empleando todos los criterios anteriores o usar una herramienta con la que Guardar contraseñas de forma segura con KeePassXC. Por otro lado, los desarrolladores no deberíamos guardar en la base de datos las contraseñas que nos entregan los usuarios en texto plano, para evitar guardalas en texto plano hace un tiempo se utilizaba únicamente una función de hashing unidireccional como MD5 o SHA, de este modo si la base de datos fuese comprometida en teoría no podrían conocer la contraseña original. En este artículo comentaré que aún guardando las contraseñas con una función de hashing no es suficiente para hacerlas seguras y comentaré una implementación con Apache Shiro de una de las ideas propuestas, también con Spring Security es posible. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -41,8 +47,11 @@ Sin embargo, recordar cada una de estas contraseñas es muy difícil de modo que
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas">
-<meta name="twitter:description" content="Para cada servicio deberíamos emplear una contraseña de una longitud de al menos 8 caracteres que incluya letras en minúscula, mayúscula, números y símbolos, una herramienta que podemos utilizar para generar contraseñas más seguras con los criterios que indiquemos es Strong Password Generator o Password Generator.
-Sin embargo, recordar cada una de estas contraseñas es muy difícil de modo que es habitual que utilicemos la misma contraseña para varios o todos los servicios y no empleando todos los criterios anteriores o usar una herramienta con la que Guardar contraseñas de forma segura con KeePassXC. &hellip;">
+<meta name="twitter:description" content="
+
+
+Para cada servicio deberíamos emplear una contraseña de una longitud de al menos 8 caracteres que incluya letras en minúscula, mayúscula, números y símbolos, una herramienta que podemos utilizar para generar contraseñas más seguras con los criterios que indiquemos es Strong Password Generator o Password Generator.
+Sin embargo, recordar cada una de estas contraseñas es muy difícil de modo que es habitual que utilicemos la misma contraseña para varios o todos los servicios y no empleando todos los criterios anteriores o usar una herramienta con la que Guardar contraseñas de forma segura con KeePassXC. Por otro lado, los desarrolladores no deberíamos guardar en la base de datos las contraseñas que nos entregan los usuarios en texto plano, para evitar guardalas en texto plano hace un tiempo se utilizaba únicamente una función de hashing unidireccional como MD5 o SHA, de este modo si la base de datos fuese comprometida en teoría no podrían conocer la contraseña original. En este artículo comentaré que aún guardando las contraseñas con una función de hashing no es suficiente para hacerlas seguras y comentaré una implementación con Apache Shiro de una de las ideas propuestas, también con Spring Security es posible. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -80,8 +89,11 @@ Sin embargo, recordar cada una de estas contraseñas es muy difícil de modo que
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "Para cada servicio deberíamos emplear una contraseña de una longitud de al menos 8 caracteres que incluya letras en minúscula, mayúscula, números y símbolos, una herramienta que podemos utilizar para generar contraseñas más seguras con los criterios que indiquemos es Strong Password Generator o Password Generator.
-Sin embargo, recordar cada una de estas contraseñas es muy difícil de modo que es habitual que utilicemos la misma contraseña para varios o todos los servicios y no empleando todos los criterios anteriores o usar una herramienta con la que Guardar contraseñas de forma segura con KeePassXC."
+    "description": "<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/apache-shiro.webp" width="300" height="106" alt="Apache Shiro" title="Apache Shiro" class="" loading="false&#34;"></p>
+</div>
+<p>Para cada servicio deberíamos emplear una contraseña de una longitud de al menos 8 caracteres que incluya letras en minúscula, mayúscula, números y símbolos, una herramienta que podemos utilizar para generar contraseñas más seguras con los criterios que indiquemos es <a href="https://privacycanada.net/strong-password-generator/">Strong Password Generator</a> o <a href="https://passwords-generator.org/">Password Generator</a>.</p>
+<p>Sin embargo, recordar cada una de estas contraseñas es muy difícil de modo que es habitual que utilicemos la misma contraseña para varios o todos los servicios y no empleando todos los criterios anteriores o usar una herramienta con la que <a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">Guardar contraseñas de forma segura con KeePassXC</a>. Por otro lado, los desarrolladores no deberíamos guardar en la base de datos las contraseñas que nos entregan los usuarios en texto plano, para evitar guardalas en texto plano hace un tiempo se utilizaba únicamente una función de <em>hashing</em> unidireccional como MD5 o SHA, de este modo si la base de datos fuese comprometida en teoría no podrían conocer la contraseña original. En este artículo comentaré que aún guardando las contraseñas con una función de <em>hashing</em> no es suficiente para hacerlas seguras y comentaré una implementación con <a href="https://shiro.apache.org/">Apache Shiro</a> de una de las ideas propuestas, también con <a href="https://spring.io/projects/spring-security">Spring Security</a> es posible.</p>"
 }
   </script>
   

@@ -6,7 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="La función básica de un servidor web es devolver al navegador los recursos estáticos de un sitio web como son las páginas HTML, hojas de estilo CSS, imágenes o archivos de JavaScript. Pero también pueden hacer otras funciones muy útiles como son la de proxy entre en navegador y la aplicación de backend que genera el contenido dinámico, terminación de protocolo de seguridad con la que el navegador se comunica con el servidor web usando el protocolo seguro HTTPS pero el servidor web se comunica con la aplicación backend usando el protocolo HTTP, añadir autenticación básica a ciertas rutas o utilizar el protocolo HTTP/2. &hellip;">
+  <meta name="description" content="
+
+
+
+
+
+La función básica de un servidor web es devolver al navegador los recursos estáticos de un sitio web como son las páginas HTML, hojas de estilo CSS, imágenes o archivos de JavaScript. Pero también pueden hacer otras funciones muy útiles como son la de proxy entre en navegador y la aplicación de backend que genera el contenido dinámico, terminación de protocolo de seguridad con la que el navegador se comunica con el servidor web usando el protocolo seguro HTTPS pero el servidor web se comunica con la aplicación backend usando el protocolo HTTP, añadir autenticación básica a ciertas rutas o utilizar el protocolo HTTP/2. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Configurar un servidor web virtual en Nginx y Apache</title>
@@ -31,7 +37,13 @@
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu14839598189342323001.png">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="La función básica de un servidor web es devolver al navegador los recursos estáticos de un sitio web como son las páginas HTML, hojas de estilo CSS, imágenes o archivos de JavaScript. Pero también pueden hacer otras funciones muy útiles como son la de proxy entre en navegador y la aplicación de backend que genera el contenido dinámico, terminación de protocolo de seguridad con la que el navegador se comunica con el servidor web usando el protocolo seguro HTTPS pero el servidor web se comunica con la aplicación backend usando el protocolo HTTP, añadir autenticación básica a ciertas rutas o utilizar el protocolo HTTP/2. &hellip;">
+<meta property="og:description" content="
+
+
+
+
+
+La función básica de un servidor web es devolver al navegador los recursos estáticos de un sitio web como son las páginas HTML, hojas de estilo CSS, imágenes o archivos de JavaScript. Pero también pueden hacer otras funciones muy útiles como son la de proxy entre en navegador y la aplicación de backend que genera el contenido dinámico, terminación de protocolo de seguridad con la que el navegador se comunica con el servidor web usando el protocolo seguro HTTPS pero el servidor web se comunica con la aplicación backend usando el protocolo HTTP, añadir autenticación básica a ciertas rutas o utilizar el protocolo HTTP/2. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -39,7 +51,13 @@
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Configurar un servidor web virtual en Nginx y Apache">
-<meta name="twitter:description" content="La función básica de un servidor web es devolver al navegador los recursos estáticos de un sitio web como son las páginas HTML, hojas de estilo CSS, imágenes o archivos de JavaScript. Pero también pueden hacer otras funciones muy útiles como son la de proxy entre en navegador y la aplicación de backend que genera el contenido dinámico, terminación de protocolo de seguridad con la que el navegador se comunica con el servidor web usando el protocolo seguro HTTPS pero el servidor web se comunica con la aplicación backend usando el protocolo HTTP, añadir autenticación básica a ciertas rutas o utilizar el protocolo HTTP/2. &hellip;">
+<meta name="twitter:description" content="
+
+
+
+
+
+La función básica de un servidor web es devolver al navegador los recursos estáticos de un sitio web como son las páginas HTML, hojas de estilo CSS, imágenes o archivos de JavaScript. Pero también pueden hacer otras funciones muy útiles como son la de proxy entre en navegador y la aplicación de backend que genera el contenido dinámico, terminación de protocolo de seguridad con la que el navegador se comunica con el servidor web usando el protocolo seguro HTTPS pero el servidor web se comunica con la aplicación backend usando el protocolo HTTP, añadir autenticación básica a ciertas rutas o utilizar el protocolo HTTP/2. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -77,7 +95,13 @@
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "La función básica de un servidor web es devolver al navegador los recursos estáticos de un sitio web como son las páginas HTML, hojas de estilo CSS, imágenes o archivos de JavaScript. Pero también pueden hacer otras funciones muy útiles como son la de proxy entre en navegador y la aplicación de backend que genera el contenido dinámico, terminación de protocolo de seguridad con la que el navegador se comunica con el servidor web usando el protocolo seguro HTTPS pero el servidor web se comunica con la aplicación backend usando el protocolo HTTP, añadir autenticación básica a ciertas rutas o utilizar el protocolo HTTP/2."
+    "description": "<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/apache.svg" width="150" height="264" alt="Apache HTTPD" title="Apache HTTPD" class="" loading="false&#34;"></p>
+</div>
+<p>La función básica de un servidor web es devolver al navegador los recursos estáticos de un sitio web como son las páginas HTML, hojas de estilo CSS, imágenes o archivos de JavaScript. Pero también pueden hacer otras funciones muy útiles como son la de <a href="https://picodotdev.github.io/blog-bitix/2016/07/como-crear-un-proxy-inverso-entre-el-servidor-web-nginx-y-un-servidor-de-aplicaciones-java/"><em>proxy</em> entre en navegador y la aplicación de <em>backend</em></a> que genera el contenido dinámico, terminación de protocolo de seguridad con la que el navegador se comunica con el servidor web usando el protocolo seguro HTTPS pero el servidor web se comunica con la aplicación <em>backend</em> usando el protocolo HTTP, <a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/">añadir autenticación básica a ciertas rutas</a> o utilizar <a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/">el protocolo HTTP/2</a>.</p>"
 }
   </script>
   

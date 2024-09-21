@@ -6,8 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="La autenticación básica o basic auth es un mecanismo de autenticación sencillo que permite proteger los recursos solicitados de un sitio o aplicación web. Es fácil de configurar en el servidor web y está implementado en los propios navegadores, otra ventaja es que se puede añadir a un sitio o aplicación web sin necesidad de realizar modificaciones en su código.
-La autenticación básica por seguridad requiere utilizar en el servidor web el protocolo seguro HTTPS y obtener un certificado para el nombre del dominio del servidor web ya que el navegador cuando envía al servidor el usuario y contraseña no los protege de forma especial y utiliza el mecanismo de comunicación de la conexión, es usual también configurar un servidor web virtual para aplicar esta configuración únicamente al sitio web deseado. &hellip;">
+  <meta name="description" content="
+
+
+
+
+
+La autenticación básica o basic auth es un mecanismo de autenticación sencillo que permite proteger los recursos solicitados de un sitio o aplicación web. Es fácil de configurar en el servidor web y está implementado en los propios navegadores, otra ventaja es que se puede añadir a un sitio o aplicación web sin necesidad de realizar modificaciones en su código.
+La autenticación básica por seguridad requiere utilizar en el servidor web el protocolo seguro HTTPS y obtener un certificado para el nombre del dominio del servidor web ya que el navegador cuando envía al servidor el usuario y contraseña no los protege de forma especial y utiliza el mecanismo de comunicación de la conexión, es usual también configurar un servidor web virtual para aplicar esta configuración únicamente al sitio web deseado. Con el protocolo HTTPS el usuario y contraseña se transmite cifrada por la propia conexión segura. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Configurar autenticación básica en los servidores web Nginx y Apache</title>
@@ -32,8 +38,14 @@ La autenticación básica por seguridad requiere utilizar en el servidor web el 
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hu7392238817767717790.png">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="La autenticación básica o basic auth es un mecanismo de autenticación sencillo que permite proteger los recursos solicitados de un sitio o aplicación web. Es fácil de configurar en el servidor web y está implementado en los propios navegadores, otra ventaja es que se puede añadir a un sitio o aplicación web sin necesidad de realizar modificaciones en su código.
-La autenticación básica por seguridad requiere utilizar en el servidor web el protocolo seguro HTTPS y obtener un certificado para el nombre del dominio del servidor web ya que el navegador cuando envía al servidor el usuario y contraseña no los protege de forma especial y utiliza el mecanismo de comunicación de la conexión, es usual también configurar un servidor web virtual para aplicar esta configuración únicamente al sitio web deseado. &hellip;">
+<meta property="og:description" content="
+
+
+
+
+
+La autenticación básica o basic auth es un mecanismo de autenticación sencillo que permite proteger los recursos solicitados de un sitio o aplicación web. Es fácil de configurar en el servidor web y está implementado en los propios navegadores, otra ventaja es que se puede añadir a un sitio o aplicación web sin necesidad de realizar modificaciones en su código.
+La autenticación básica por seguridad requiere utilizar en el servidor web el protocolo seguro HTTPS y obtener un certificado para el nombre del dominio del servidor web ya que el navegador cuando envía al servidor el usuario y contraseña no los protege de forma especial y utiliza el mecanismo de comunicación de la conexión, es usual también configurar un servidor web virtual para aplicar esta configuración únicamente al sitio web deseado. Con el protocolo HTTPS el usuario y contraseña se transmite cifrada por la propia conexión segura. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -41,8 +53,14 @@ La autenticación básica por seguridad requiere utilizar en el servidor web el 
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Configurar autenticación básica en los servidores web Nginx y Apache">
-<meta name="twitter:description" content="La autenticación básica o basic auth es un mecanismo de autenticación sencillo que permite proteger los recursos solicitados de un sitio o aplicación web. Es fácil de configurar en el servidor web y está implementado en los propios navegadores, otra ventaja es que se puede añadir a un sitio o aplicación web sin necesidad de realizar modificaciones en su código.
-La autenticación básica por seguridad requiere utilizar en el servidor web el protocolo seguro HTTPS y obtener un certificado para el nombre del dominio del servidor web ya que el navegador cuando envía al servidor el usuario y contraseña no los protege de forma especial y utiliza el mecanismo de comunicación de la conexión, es usual también configurar un servidor web virtual para aplicar esta configuración únicamente al sitio web deseado. &hellip;">
+<meta name="twitter:description" content="
+
+
+
+
+
+La autenticación básica o basic auth es un mecanismo de autenticación sencillo que permite proteger los recursos solicitados de un sitio o aplicación web. Es fácil de configurar en el servidor web y está implementado en los propios navegadores, otra ventaja es que se puede añadir a un sitio o aplicación web sin necesidad de realizar modificaciones en su código.
+La autenticación básica por seguridad requiere utilizar en el servidor web el protocolo seguro HTTPS y obtener un certificado para el nombre del dominio del servidor web ya que el navegador cuando envía al servidor el usuario y contraseña no los protege de forma especial y utiliza el mecanismo de comunicación de la conexión, es usual también configurar un servidor web virtual para aplicar esta configuración únicamente al sitio web deseado. Con el protocolo HTTPS el usuario y contraseña se transmite cifrada por la propia conexión segura. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -80,8 +98,14 @@ La autenticación básica por seguridad requiere utilizar en el servidor web el 
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "La autenticación básica o basic auth es un mecanismo de autenticación sencillo que permite proteger los recursos solicitados de un sitio o aplicación web. Es fácil de configurar en el servidor web y está implementado en los propios navegadores, otra ventaja es que se puede añadir a un sitio o aplicación web sin necesidad de realizar modificaciones en su código.
-La autenticación básica por seguridad requiere utilizar en el servidor web el protocolo seguro HTTPS y obtener un certificado para el nombre del dominio del servidor web ya que el navegador cuando envía al servidor el usuario y contraseña no los protege de forma especial y utiliza el mecanismo de comunicación de la conexión, es usual también configurar un servidor web virtual para aplicar esta configuración únicamente al sitio web deseado."
+    "description": "<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/apache.svg" width="150" height="264" alt="Apache HTTPD" title="Apache HTTPD" class="" loading="false&#34;"></p>
+</div>
+<p>La autenticación básica o <em>basic auth</em> es un mecanismo de autenticación sencillo que permite proteger los recursos solicitados de un sitio o aplicación web. Es fácil de configurar en el servidor web y está implementado en los propios navegadores, otra ventaja es que se puede añadir a un sitio o aplicación web sin necesidad de realizar modificaciones en su código.</p>
+<p>La autenticación básica por seguridad requiere <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">utilizar en el servidor web el protocolo seguro HTTPS</a> y <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">obtener un certificado para el nombre del dominio del servidor web</a> ya que el navegador cuando envía al servidor el usuario y contraseña no los protege de forma especial y utiliza el mecanismo de comunicación de la conexión, es usual también <a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/">configurar un servidor web virtual</a> para aplicar esta configuración únicamente al sitio web deseado. Con el protocolo HTTPS el usuario y contraseña se transmite cifrada por la propia conexión segura.</p>"
 }
   </script>
   

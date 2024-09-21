@@ -6,8 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="Una de las partes esenciales de una aplicación web es generar enlaces a otras páginas, enlaces a los manejadores de los formularios que procesan los datos enviados, enlaces a manejadores de solicitudes AJAX. Generar enlaces no solo es necesario para ser usados dentro de la misma aplicación web sino también para ser usados en el código JavaScript, en correos electrónicos u informes.
-La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el caso de generar enlaces suelen incluir soporte. &hellip;">
+  <meta name="description" content="
+
+
+Una de las partes esenciales de una aplicación web es generar enlaces a otras páginas, enlaces a los manejadores de los formularios que procesan los datos enviados, enlaces a manejadores de solicitudes AJAX. Generar enlaces no solo es necesario para ser usados dentro de la misma aplicación web sino también para ser usados en el código JavaScript, en correos electrónicos u informes.
+La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el caso de generar enlaces suelen incluir soporte. Pero también es importante que la facilidad que proporcionan los frameworks para generarlos no sea concatenando y hardcodeado cadenas. Si es así en el momento de querer renombrar una página o manejador de evento se convierte en un problema por la inseguridad que plantea para realizar el refactor, más en una aplicación grande. Y esto puede dar el caso de que algunos refactors no se aborden por miedo a romper cosas, a la larga es un problema para el desarrollo futuro y el mantenimiento de la aplicación. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Generar enlaces a páginas y de eventos en Apache Tapestry</title>
@@ -32,8 +35,11 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="Una de las partes esenciales de una aplicación web es generar enlaces a otras páginas, enlaces a los manejadores de los formularios que procesan los datos enviados, enlaces a manejadores de solicitudes AJAX. Generar enlaces no solo es necesario para ser usados dentro de la misma aplicación web sino también para ser usados en el código JavaScript, en correos electrónicos u informes.
-La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el caso de generar enlaces suelen incluir soporte. &hellip;">
+<meta property="og:description" content="
+
+
+Una de las partes esenciales de una aplicación web es generar enlaces a otras páginas, enlaces a los manejadores de los formularios que procesan los datos enviados, enlaces a manejadores de solicitudes AJAX. Generar enlaces no solo es necesario para ser usados dentro de la misma aplicación web sino también para ser usados en el código JavaScript, en correos electrónicos u informes.
+La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el caso de generar enlaces suelen incluir soporte. Pero también es importante que la facilidad que proporcionan los frameworks para generarlos no sea concatenando y hardcodeado cadenas. Si es así en el momento de querer renombrar una página o manejador de evento se convierte en un problema por la inseguridad que plantea para realizar el refactor, más en una aplicación grande. Y esto puede dar el caso de que algunos refactors no se aborden por miedo a romper cosas, a la larga es un problema para el desarrollo futuro y el mantenimiento de la aplicación. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -41,8 +47,11 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Generar enlaces a páginas y de eventos en Apache Tapestry">
-<meta name="twitter:description" content="Una de las partes esenciales de una aplicación web es generar enlaces a otras páginas, enlaces a los manejadores de los formularios que procesan los datos enviados, enlaces a manejadores de solicitudes AJAX. Generar enlaces no solo es necesario para ser usados dentro de la misma aplicación web sino también para ser usados en el código JavaScript, en correos electrónicos u informes.
-La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el caso de generar enlaces suelen incluir soporte. &hellip;">
+<meta name="twitter:description" content="
+
+
+Una de las partes esenciales de una aplicación web es generar enlaces a otras páginas, enlaces a los manejadores de los formularios que procesan los datos enviados, enlaces a manejadores de solicitudes AJAX. Generar enlaces no solo es necesario para ser usados dentro de la misma aplicación web sino también para ser usados en el código JavaScript, en correos electrónicos u informes.
+La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el caso de generar enlaces suelen incluir soporte. Pero también es importante que la facilidad que proporcionan los frameworks para generarlos no sea concatenando y hardcodeado cadenas. Si es así en el momento de querer renombrar una página o manejador de evento se convierte en un problema por la inseguridad que plantea para realizar el refactor, más en una aplicación grande. Y esto puede dar el caso de que algunos refactors no se aborden por miedo a romper cosas, a la larga es un problema para el desarrollo futuro y el mantenimiento de la aplicación. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -80,8 +89,11 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "Una de las partes esenciales de una aplicación web es generar enlaces a otras páginas, enlaces a los manejadores de los formularios que procesan los datos enviados, enlaces a manejadores de solicitudes AJAX. Generar enlaces no solo es necesario para ser usados dentro de la misma aplicación web sino también para ser usados en el código JavaScript, en correos electrónicos u informes.
-La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el caso de generar enlaces suelen incluir soporte."
+    "description": "<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false&#34;"></p>
+</div>
+<p>Una de las partes esenciales de una aplicación web es generar enlaces a otras páginas, enlaces a los manejadores de los formularios que procesan los datos enviados, enlaces a manejadores de solicitudes AJAX. Generar enlaces no solo es necesario para ser usados dentro de la misma aplicación web sino también para ser usados en el código JavaScript, en correos electrónicos u informes.</p>
+<p>La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el caso de generar enlaces suelen incluir soporte. Pero también es importante que la facilidad que proporcionan los frameworks para generarlos no sea concatenando y hardcodeado cadenas. Si es así en el momento de querer renombrar una página o manejador de evento se convierte en un problema por la inseguridad que plantea para realizar el <em>refactor</em>, más en una aplicación grande. Y esto puede dar el caso de que algunos <em>refactors</em> no se aborden por miedo a romper cosas, a la larga es un problema para el desarrollo futuro y el mantenimiento de la aplicación.</p>"
 }
   </script>
   

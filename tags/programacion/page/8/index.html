@@ -204,7 +204,10 @@
         </span>
         <p>
           
-            Los fragmentos en el contexto de GraphQL pueden ser de dos tipos, definidos previamente o definidos en linea. Los primeros permiten simplificar las consultas definiendo en un bloque una colección de datos a recuperar si tener que indicarlos explícitamente individualmente, lo que resulta útil para no repetir el mimo grupo de datos si se utiliza en varias consultas diferentes. Los fragmentos en línea permiten recuperar unos datos u otros en función del tipo de la instancia de la cual se quieren recuperar.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+</div>
+<p>Los fragmentos en el contexto de <a href="https://graphql.org/">GraphQL</a> pueden ser de dos tipos, definidos previamente o definidos en linea. Los primeros permiten simplificar las consultas definiendo en un bloque una colección de datos a recuperar si tener que indicarlos explícitamente individualmente, lo que resulta útil para no repetir el mimo grupo de datos si se utiliza en varias consultas diferentes. Los fragmentos en línea permiten recuperar unos datos u otros en función del tipo de la instancia de la cual se quieren recuperar.</p>
           
           <br>
           <a href="/blog-bitix/2018/08/los-fragmentos-en-graphql/">Continuar leyendo...</a>
@@ -228,9 +231,18 @@
         </span>
         <p>
           
-            En GraphQL construyendo la consulta adecuada se recuperan exclusivamente los datos solicitados.
-Por ejemplo, si de un libro solo se requieren las propiedades el id, title y date de entre todas las que tienen la consulta sería en este caso la siguiente para una consulta que devuelve los datos de un conjunto de libros.
-&#10;&#10;1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;&#10;&#10;query Books {&#10; books {&#10;&nbsp;&nbsp;&nbsp;&nbsp;id&#10;&nbsp;&nbsp;&nbsp;&nbsp;title&#10;&nbsp;&nbsp;&nbsp;&nbsp;date&#10; }&#10;}&#10;&#10; query-1.graphql Si se desea recuperar solo el id y title sin el date la consulta debe ser diferente.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+</div>
+<p>En <a href="https://graphql.org/">GraphQL</a> construyendo la consulta adecuada se recuperan exclusivamente los datos solicitados.</p>
+<p>Por ejemplo, si de un libro solo se requieren las propiedades el <em>id</em>, <em>title</em> y <em>date</em> de entre todas las que tienen la consulta sería en este caso la siguiente para una consulta que devuelve los datos de un conjunto de libros.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-graphql" data-lang="graphql"><span class="line"><span class="cl"><span class="kd">query</span><span class="w"> </span><span class="nc">Books</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="py">books</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">id</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">title</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">date</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>query-1.graphql</span>
+    </div>
+</div>
+<p>Si se desea recuperar solo el <em>id</em> y <em>title</em> sin el <em>date</em> la consulta debe ser diferente.</p>
           
           <br>
           <a href="/blog-bitix/2018/08/usando-directivas-en-graphql/">Continuar leyendo...</a>
@@ -254,8 +266,11 @@ Por ejemplo, si de un libro solo se requieren las propiedades el id, title y dat
         </span>
         <p>
           
-            Hace ya un tiempo escribí una serie de artículos sobre GraphQL para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con GraphQL usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.
-Uno de esas posibilidades de GraphQL es la herramienta GraphiQL que es un editor interactivo para construir consultas y explorar la API.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+</div>
+<p>Hace ya un tiempo escribí una <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">serie de artículos sobre GraphQL</a> para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con <a href="https://graphql.org/">GraphQL</a> usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.</p>
+<p>Uno de esas posibilidades de GraphQL es la herramienta <a href="https://github.com/graphql/graphiql">GraphiQL</a> que es un editor interactivo para construir consultas y explorar la API. Una de sus mayores ventajas es que ofrece asistencia contextual y proporciona mensajes de error en caso de que la sintaxis de la consulta sea errónea. En los artículos que escribí con anterioridad los ejemplos los hice usando el comando <em>curl</em>. Ahora que he visto y aprendido algunas pocas cosas más de GraphQL en este artículo explico como usar la herramienta GraphiQL como alternativa a <em>curl</em>.</p>
           
           <br>
           <a href="/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/">Continuar leyendo...</a>
@@ -279,8 +294,11 @@ Uno de esas posibilidades de GraphQL es la herramienta GraphiQL que es un editor
         </span>
         <p>
           
-            Usar una librería como Log4j es probablemente indispensable en una aplicación para obtener información de su funcionamiento, mensajes informativos, advertencias, errores o excepciones que se están produciendo o se han producido. Los mensajes que se emiten contienen información útil para monitorización en tiempo real o su inspección pasado un tiempo.
-En cada punto de la aplicación en la que se desea emitir una traza es necesario proporcionar el formato del mensaje y sus parámetros extraídos de las propiedades de los objetos con la intención obtener una traza con los valores de determinadas propiedades.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>Usar una librería como <a href="https://logging.apache.org/log4j/2.x/">Log4j</a> es probablemente indispensable en una aplicación para obtener información de su funcionamiento, mensajes informativos, advertencias, errores o excepciones que se están produciendo o se han producido. Los mensajes que se emiten contienen información útil para monitorización en tiempo real o su inspección pasado un tiempo.</p>
+<p>En cada punto de la aplicación en la que se desea emitir una traza es necesario proporcionar el formato del mensaje y sus parámetros extraídos de las propiedades de los objetos con la intención obtener una traza con los valores de determinadas propiedades. Si es habitual emitir una traza de ciertas clases para evitar poner la misma traza en diferentes puntos de la aplicación Log4j posee una funcionalidad para transformar en objeto en un mensaje personalizado como se comenta en su <a href="https://logging.apache.org/log4j/2.x/manual/messages.html">documentación para mensajes</a>.</p>
           
           <br>
           <a href="/blog-bitix/2018/08/personalizar-el-mensaje-emitido-de-un-objeto-en-log4j/">Continuar leyendo...</a>
@@ -304,7 +322,10 @@ En cada punto de la aplicación en la que se desea emitir una traza es necesario
         </span>
         <p>
           
-            En una aplicación web hay múltiples usuarios realizando peticiones al servidor de modo que al usar una librería de logging como Log4j las trazas de información de los diferentes usuarios aparecerán intercaladas. En esta maraña de trazas resulta difícil obtener la secuencia de trazas de una petición siendo la diferencia entre descubrir la causa de un error o pasar varias horas revisando trazas sin encontrar nada significativo en la inmensa cantidad de ellas relativas a otras peticiones.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>En una aplicación web hay múltiples usuarios realizando peticiones al servidor de modo que al usar una librería de <em>logging</em> como <a href="https://logging.apache.org/log4j/2.x/">Log4j</a> las trazas de información de los diferentes usuarios aparecerán intercaladas. En esta maraña de trazas resulta difícil obtener la secuencia de trazas de una petición siendo la diferencia entre descubrir la causa de un error o pasar varias horas revisando trazas sin encontrar nada significativo en la inmensa cantidad de ellas relativas a otras peticiones. La librería Log4j proporciona un mecanismo para seguir la secuencia completa de trazas de una petición con el <a href="https://logging.apache.org/log4j/2.x/manual/thread-context.html">concepto denominado <em>fish tagging</em></a>.</p>
           
           <br>
           <a href="/blog-bitix/2018/07/identificar-todas-las-trazas-de-una-peticion-en-una-aplicacion-web-java-con-log4j/">Continuar leyendo...</a>
@@ -328,9 +349,24 @@ En cada punto de la aplicación en la que se desea emitir una traza es necesario
         </span>
         <p>
           
-            La librería Log4j es una librería para emitir las trazas de depuración e información indispensables cuando son requeridas en una aplicación Java. Es la librería sucesora de logback y aunque no es imprescindible suele usarse en combinación con slf4j ya que esta permite cambiar de librería de logging subyacente sin hacer ningún cambio en la aplicación.
-Algunas de las nuevas características de log4j son:
-Rendimiento mejorado usando funcionalidades asíncronas en los loggers.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>La librería <a href="https://logging.apache.org/log4j/2.x/">Log4j</a> es una librería para emitir las trazas de depuración e información indispensables cuando son requeridas en una aplicación Java. Es la librería sucesora de <a href="https://logback.qos.ch/">logback</a> y aunque no es imprescindible suele usarse en combinación con <a href="https://www.slf4j.org/">slf4j</a> ya que esta permite cambiar de librería de <em>logging</em> subyacente sin hacer ningún cambio en la aplicación.</p>
+<p>Algunas de las nuevas características de log4j son:</p>
+<ul>
+<li>Rendimiento mejorado usando funcionalidades asíncronas en los <em>loggers</em>.</li>
+<li>Soporte para múltiples APIs como SL4J, Commons Logging y <em>java.util.logging</em> (JUL).</li>
+<li>Sin encadenamientos a la librería al poder en cualquier momento usar cualquier librería compatible con SLF4J.</li>
+<li>Recarga automática de la configuración sin perder ninguna traza.</li>
+<li>Filtrado avanzado basado en datos de contexto, marcadores, expresiones regulares y otros componentes.</li>
+<li>Arquitectura basada en <em>plugins</em>.</li>
+<li>Soporte de propiedades definidas en archivos de configuración, propiedades del sistema, variables de entorno, el mapa <a href="https://logging.apache.org/log4j/2.0/log4j-api/apidocs/org/apache/logging/log4j/ThreadContext.html">ThreadContext</a> y datos del evento.</li>
+<li>Soporte de <em>lambdas</em> de Java 8. Las expresiones lambdas no se evalúan si no está activado el nivel de log consiguiendo el mismo efecto que con una sentencia <em>if</em> pero en menos código.</li>
+<li>Niveles de <em>log</em> personalizados fácilmente definibles sin necesidad de realizar subclases.</li>
+<li>Recolección de basura reducida lo que evita presión al recolector de basura y mejora el rendimiento de las aplicaciones.</li>
+</ul>
+<p>Por defecto, la <a href="https://logging.apache.org/log4j/2.x/manual/configuration.html">configuración de Log4j</a> se describe en un archivo <em>xml</em> aunque también soporta definirlo en un formato menos verboso como <em>yaml</em>. La siguiente aplicación de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> al iniciarse emite en la consola varios mensajes usando log4j2.</p>
           
           <br>
           <a href="/blog-bitix/2018/07/la-libreria-log4j-para-emitir-trazas-en-aplicaciones-java/">Continuar leyendo...</a>
@@ -354,7 +390,13 @@ Rendimiento mejorado usando funcionalidades asíncronas en los loggers.
         </span>
         <p>
           
-            Las pruebas automatizados permiten comprobar que una aplicación se comporta de la manera esperada en los casos probados, creando pruebas automatizadas se evita hacer las aburridas y repetitivas pruebas manuales que consumen gran cantidad de tiempo. Hay diferentes categorías de pruebas: unitarias, de integración y las funcionales. Para las pruebas unitarias y de integración en la plataforma Java unas de las más populares herramientas son JUnit y Spock, para las pruebas funcionales están Selenium y la herramienta que explicaré en este artículo Geb que puede usarse junto con Spock haciendo que el código de los teses sea muy descriptivo.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/geb.webp" width="350" height="119" alt="Geb" title="Geb" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>Las pruebas automatizados permiten comprobar que una aplicación se comporta de la manera esperada en los casos probados, creando pruebas automatizadas se evita hacer las aburridas y repetitivas pruebas manuales que consumen gran cantidad de tiempo. Hay diferentes categorías de pruebas: unitarias, de integración y las funcionales. Para las pruebas unitarias y de integración en la plataforma Java unas de las más populares herramientas son <a href="https://junit.org/junit5/">JUnit</a> y <a href="https://code.google.com/p/spock/">Spock</a>, para las pruebas funcionales están <a href="https://docs.seleniumhq.org/">Selenium</a> y la herramienta que explicaré en este artículo <a href="https://gebish.org/">Geb</a> que puede usarse junto con Spock haciendo que el código de los teses sea muy descriptivo.</p>
           
           <br>
           <a href="/blog-bitix/2018/07/pruebas-funcionales-con-geb-en-una-aplicacion-web-java/">Continuar leyendo...</a>
@@ -412,7 +454,7 @@ Rendimiento mejorado usando funcionalidades asíncronas en los loggers.
         </span>
         <p>
           
-            El primer semestre del 2018 ya ha pasado. Estos primeros meses he publicado 38 artículos sobre la temática habitual de esta bitácora como programación, software libre, GNU/Linux algunos de opinión relacionados con la tecnología. Las visitas e ingresos de AdSense no han crecido tanto como en ocasiones anteriores pero se han mantenido a un nivel similar sobre los 30K páginas vistas y los 30 € de ingresos en AdSense que no están nada mal.
+            <p>El primer semestre del 2018 ya ha pasado. Estos primeros meses he publicado 38 artículos sobre la temática habitual de esta bitácora como programación, software libre, <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> algunos de opinión relacionados con la tecnología. Las visitas e ingresos de AdSense no han crecido tanto como en ocasiones anteriores pero se han mantenido a un nivel similar sobre los 30K páginas vistas y los 30 € de ingresos en AdSense que no están nada mal.</p>
           
           <br>
           <a href="/blog-bitix/2018/06/hemeroteca-13/">Continuar leyendo...</a>
@@ -436,7 +478,10 @@ Rendimiento mejorado usando funcionalidades asíncronas en los loggers.
         </span>
         <p>
           
-            La revista Java Magazine es una publicación bimensual gratuita que contiene artículos técnicos sobre temas muy variados relacionados con Java. Las revistas pueden consultarse directamente en la web o de forma más cómoda descargándola a nuestro ordenador en formato de archivo PDF. También es posible suscribirse a una lista de distribución para recibir mediante un correo electrónico una notificación cuando se publique un nuevo número de la revista o estar atento y seguir al twitter de la revista @Oraclejavamag.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>La revista <a href="https://blogs.oracle.com/javamagazine/">Java Magazine</a> es una publicación bimensual gratuita que contiene artículos técnicos sobre temas muy variados relacionados con Java. Las revistas pueden consultarse directamente en la web o de forma más cómoda descargándola a nuestro ordenador en formato de archivo PDF. También es posible suscribirse a una lista de distribución para recibir mediante un correo electrónico una notificación cuando se publique un nuevo número de la revista o estar atento y seguir al twitter de la revista <a href="https://twitter.com/Oraclejavamag">@Oraclejavamag</a>. Su longitud ronda algo menos de 100 páginas por número.</p>
           
           <br>
           <a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/">Continuar leyendo...</a>
@@ -464,7 +509,13 @@ Rendimiento mejorado usando funcionalidades asíncronas en los loggers.
         </span>
         <p>
           
-            Para desarrollar aplicaciones web con el lenguaje de programación Java hay gran cantidad de frameworks que proponen un marco de trabajo para proporcionar la mayor parte de la funcionalidad de infraestructura necesaria para una aplicación. La mayoría basados en acciones y unos pocos basados en componentes. Una aplicación web no solo consta de la parte del servidor y desde hace tiempo la parte de cliente ha cobrado gran importancia.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>Para desarrollar aplicaciones web con el lenguaje de programación Java hay gran cantidad de <em>frameworks</em> que proponen un marco de trabajo para proporcionar la mayor parte de la funcionalidad de infraestructura necesaria para una aplicación. La mayoría basados en acciones y unos pocos basados en componentes. Una aplicación web no solo consta de la parte del servidor y desde hace tiempo la parte de cliente ha cobrado gran importancia.</p>
           
           <br>
           <a href="/blog-bitix/2018/06/soporte-para-lanzar-eventos-desde-javascript-con-ajax-en-un-componente-de-apache-tapestry/">Continuar leyendo...</a>
@@ -490,7 +541,13 @@ Rendimiento mejorado usando funcionalidades asíncronas en los loggers.
         </span>
         <p>
           
-            El framework Apache Tapestry para el desarrollo de aplicaciones web Java basado en componentes aparte de ser un framework para el desarrollo de la capa de presentación del lado del servidor y lógica de negocio también ofrece soporte para el desarrollo de funcionalidad del lado del cliente. Incorpora de serie las librerías RequireJS para la gestión de módulos y dependencias de JavaScript, la popular jQuery para la manipulación de elementos del HTML y Underscore que añade algunas utilidades que no tiene el lenguaje JavaScript y Bootstrap para los estilos además de alguna otra librería JavaScript de menor relevancia que estas.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>El <em>framework</em> <a href="https://tapestry.apache.org/">Apache Tapestry</a> para el desarrollo de aplicaciones web Java basado en componentes aparte de ser un <em>framework</em> para el desarrollo de la capa de presentación del lado del servidor y lógica de negocio también ofrece soporte para el desarrollo de funcionalidad del lado del cliente. Incorpora de serie las librerías <a href="https://requirejs.org/">RequireJS</a> para la gestión de módulos y dependencias de JavaScript, la popular <a href="https://jquery.com/">jQuery</a> para la manipulación de elementos del HTML y <a href="https://underscorejs.org/">Underscore</a> que añade algunas utilidades que no tiene el lenguaje JavaScript y <a href="https://getbootstrap.com/">Bootstrap</a> para los estilos además de alguna otra librería JavaScript de menor relevancia que estas.</p>
           
           <br>
           <a href="/blog-bitix/2018/06/actualizar-las-versiones-de-las-librerias-javascript-built-in-de-apache-tapestry/">Continuar leyendo...</a>
@@ -516,7 +573,13 @@ Rendimiento mejorado usando funcionalidades asíncronas en los loggers.
         </span>
         <p>
           
-            Una aplicación web se compone de código de lado de servidor, en el caso de utilizar el lenguaje de programación Java de código Java normalmente utilizando algún de los muchos framework web, por otra parte se compone de código de lado de cliente con una gran variedad de librerías de JavaScript como jQuery, React, Underscore o Bootstrap para los estilos. En las aplicaciones Java las librerías de lado de servidor se gestionan como dependencias del proyecto y con herramientas como Gradle se puede automatizar el descargar la librería de repositorios como Maven Central y la versión que se necesite así como hacer sencillo actualizar a una nueva.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/webjars.webp" width="250" height="250" alt="Webjars" title="Webjars" class="" loading="false&#34;"></p>
+</div>
+<p>Una aplicación web se compone de código de lado de servidor, en el caso de utilizar el lenguaje de programación Java de código Java normalmente utilizando algún de los muchos <em>framework</em> web, por otra parte se compone de código de lado de cliente con una gran variedad de librerías de JavaScript como <a href="https://jquery.com/">jQuery</a>, <a href="https://reactjs.org/">React</a>, <a href="https://underscorejs.org/">Underscore</a> o <a href="https://getbootstrap.com/">Bootstrap</a> para los estilos. En las aplicaciones Java las librerías de lado de servidor se gestionan como dependencias del proyecto y con herramientas como <a href="https://gradle.org/">Gradle</a> se puede automatizar el descargar la librería de repositorios como <a href="https://search.maven.org/">Maven Central</a> y la versión que se necesite así como hacer sencillo actualizar a una nueva. En el caso de las librerías de lado del cliente con <a href="https://www.webjars.org/">Webjars</a> se consiguen los mismos beneficios.</p>
           
           <br>
           <a href="/blog-bitix/2018/06/dependencias-sobre-librerias-de-lado-de-cliente-con-webjars-en-una-aplicacion-web-java/">Continuar leyendo...</a>
@@ -564,8 +627,11 @@ Rendimiento mejorado usando funcionalidades asíncronas en los loggers.
         </span>
         <p>
           
-            Dada una consulta con los datos a recuperar GraphQL hace una llamada al correspondiente resolver o data fecher para obtener el valor de cada propiedad. Cuando se tratan de propiedades en un java bean esto no supone ningún problema en cuanto a rendimiento pero cuando obtener el valor de una propiedad es costoso la consulta resulta ineficiente.
-Por ejemplo, siguiendo el ejemplo que he utilizado en anteriores artículos sobre GraphQL de una librería en la que hay un tipo para representar un libro con una propiedad con sus comentarios, con una consulta que permite recuperar los libros para cada uno de ellos se llama al resolver que recupera los comentarios.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+</div>
+<p>Dada una consulta con los datos a recuperar <a href="https://graphql.org/">GraphQL</a> hace una llamada al correspondiente <em>resolver</em> o <em>data fecher</em> para obtener el valor de cada propiedad. Cuando se tratan de propiedades en un <em>java bean</em> esto no supone ningún problema en cuanto a rendimiento pero cuando obtener el valor de una propiedad es costoso la consulta resulta ineficiente.</p>
+<p>Por ejemplo, siguiendo el ejemplo que he utilizado en anteriores <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">artículos sobre GraphQL</a> de una librería en la que hay un tipo para representar un libro con una propiedad con sus comentarios, con una consulta que permite recuperar los libros para cada uno de ellos se llama al <em>resolver</em> que recupera los comentarios. En este ejemplo no ya que están los datos en memoria y no se usa una base de datos pero si recuperar los comentarios de cada libro supusiera una consulta SQL en una base de datos relacional (o tráfico de red en una base de datos NoSQL u otro servicio) y la lista de libros devuelta fuese grande cada vez que se realizará esta consulta el número de sentencias SQL a ejecutar sería grande y el tiempo de respuesta pobre y con una carga mayor para el servidor de base de datos.</p>
           
           <br>
           <a href="/blog-bitix/2018/05/recuperar-datos-eficientemente-en-graphql-usando-batching/">Continuar leyendo...</a>

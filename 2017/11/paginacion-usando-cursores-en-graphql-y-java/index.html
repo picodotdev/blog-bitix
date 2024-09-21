@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="El conjunto de datos de una entidad en algunos casos será grande, miles o cientos de miles de registros, y por tanto no es viable devolverlos todos en una misma consulta por lo que es necesario realizar paginación devolviéndolos en pequeños grupos. La paginación se puede implementar de varias formas, habitualmente con un parámetro que limite el número de elementos a incluir en la página y otro parámetro offset que deseche los primeros elementos hasta el primero deseado. &hellip;">
+  <meta name="description" content="
+
+
+El conjunto de datos de una entidad en algunos casos será grande, miles o cientos de miles de registros, y por tanto no es viable devolverlos todos en una misma consulta por lo que es necesario realizar paginación devolviéndolos en pequeños grupos. La paginación se puede implementar de varias formas, habitualmente con un parámetro que limite el número de elementos a incluir en la página y otro parámetro offset que deseche los primeros elementos hasta el primero deseado. Sin embargo, utilizar los parámetros limit y offset puede producir resultados inesperados si mientras la obtención de una página y la siguiente se insertan nuevos elementos anteriores al offset ocasionando que lo que sería por ejemplo el décimo elemento pase a ser el undécimo. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Paginación usando cursores en GraphQL y Java</title>
@@ -31,7 +34,10 @@
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="El conjunto de datos de una entidad en algunos casos será grande, miles o cientos de miles de registros, y por tanto no es viable devolverlos todos en una misma consulta por lo que es necesario realizar paginación devolviéndolos en pequeños grupos. La paginación se puede implementar de varias formas, habitualmente con un parámetro que limite el número de elementos a incluir en la página y otro parámetro offset que deseche los primeros elementos hasta el primero deseado. &hellip;">
+<meta property="og:description" content="
+
+
+El conjunto de datos de una entidad en algunos casos será grande, miles o cientos de miles de registros, y por tanto no es viable devolverlos todos en una misma consulta por lo que es necesario realizar paginación devolviéndolos en pequeños grupos. La paginación se puede implementar de varias formas, habitualmente con un parámetro que limite el número de elementos a incluir en la página y otro parámetro offset que deseche los primeros elementos hasta el primero deseado. Sin embargo, utilizar los parámetros limit y offset puede producir resultados inesperados si mientras la obtención de una página y la siguiente se insertan nuevos elementos anteriores al offset ocasionando que lo que sería por ejemplo el décimo elemento pase a ser el undécimo. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -39,7 +45,10 @@
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Paginación usando cursores en GraphQL y Java">
-<meta name="twitter:description" content="El conjunto de datos de una entidad en algunos casos será grande, miles o cientos de miles de registros, y por tanto no es viable devolverlos todos en una misma consulta por lo que es necesario realizar paginación devolviéndolos en pequeños grupos. La paginación se puede implementar de varias formas, habitualmente con un parámetro que limite el número de elementos a incluir en la página y otro parámetro offset que deseche los primeros elementos hasta el primero deseado. &hellip;">
+<meta name="twitter:description" content="
+
+
+El conjunto de datos de una entidad en algunos casos será grande, miles o cientos de miles de registros, y por tanto no es viable devolverlos todos en una misma consulta por lo que es necesario realizar paginación devolviéndolos en pequeños grupos. La paginación se puede implementar de varias formas, habitualmente con un parámetro que limite el número de elementos a incluir en la página y otro parámetro offset que deseche los primeros elementos hasta el primero deseado. Sin embargo, utilizar los parámetros limit y offset puede producir resultados inesperados si mientras la obtención de una página y la siguiente se insertan nuevos elementos anteriores al offset ocasionando que lo que sería por ejemplo el décimo elemento pase a ser el undécimo. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -77,7 +86,10 @@
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "El conjunto de datos de una entidad en algunos casos será grande, miles o cientos de miles de registros, y por tanto no es viable devolverlos todos en una misma consulta por lo que es necesario realizar paginación devolviéndolos en pequeños grupos. La paginación se puede implementar de varias formas, habitualmente con un parámetro que limite el número de elementos a incluir en la página y otro parámetro offset que deseche los primeros elementos hasta el primero deseado."
+    "description": "<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+</div>
+<p>El conjunto de datos de una entidad en algunos casos será grande, miles o cientos de miles de registros, y por tanto no es viable devolverlos todos en una misma consulta por lo que es necesario realizar paginación devolviéndolos en pequeños grupos. La paginación se puede implementar de varias formas, habitualmente con un parámetro que limite el número de elementos a incluir en la página y otro parámetro <em>offset</em> que deseche los primeros elementos hasta el primero deseado. Sin embargo, utilizar los parámetros <em>limit</em> y <em>offset</em> puede producir resultados inesperados si mientras la obtención de una página y la siguiente se insertan nuevos elementos anteriores al <em>offset</em> ocasionando que lo que sería por ejemplo el décimo elemento pase a ser el undécimo.</p>"
 }
   </script>
   

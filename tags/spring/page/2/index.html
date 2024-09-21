@@ -206,7 +206,13 @@
         </span>
         <p>
           
-            En Java a través de JAX-RS, una de entre las varias especificaciones de JavaEE, podemos desarrollar servicios web basados en REST y JSON. Estos servicios web al usar la infraestructura de la web y el protocolo HTTP podemos hacer uso de facilidades que proporciona como cacheo, protocolo seguro, HTTP/2, compresión o autenticación. Usando Spring Boot podemos desarrollar servicios web autocontenidos al igual que podemos hacer con las aplicaciones web tradicionales.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring Framework" title="Spring Framework" class="" loading="false&#34;"></p>
+</div>
+<p>En Java a través de JAX-RS, una de entre las varias <a href="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/">especificaciones de JavaEE</a>, podemos desarrollar servicios web basados en <a href="https://es.wikipedia.org/wiki/Representational_State_Transfer"><abbr title="Representational State Transfer">REST</abbr></a> y <a href="https://json.org/"><abbr title="JavaScript Object Notation">JSON</abbr></a>. Estos servicios web al usar la infraestructura de la web y el protocolo HTTP podemos hacer uso de facilidades que proporciona como <a href="https://picodotdev.github.io/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/">cacheo</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/">protocolo seguro</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/02/introduccion-al-protocolo-http-2/">HTTP/2</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/">compresión</a> o autenticación. Usando <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> podemos desarrollar servicios web autocontenidos al igual que podemos hacer con las aplicaciones web tradicionales.</p>
           
           <br>
           <a href="/blog-bitix/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/">Continuar leyendo...</a>
@@ -310,7 +316,10 @@
         </span>
         <p>
           
-            Por defecto los datos de la sesión de una aplicación web Java se guardan en el servidor de aplicaciones y en memoria, esto produce que al reiniciar el servidor por un despliegue los datos de la sesión se pierdan y provoque en los usuarios alguna molestia como tener que volver a iniciar sesión. En Tomcat existe la posibilidad de que los datos de las sesiones sean persistidas en disco con la opción saveOnRestart del elemento de configuración Manager que evita que los datos de las sesiones se pierdan en los reinicios, al menos para los servicios formados por una única instancia.
+            <div class="logotypes"> 
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>Por defecto los datos de la sesión de una aplicación web Java se guardan en el servidor de aplicaciones y en memoria, esto produce que al reiniciar el servidor por un despliegue los datos de la sesión se pierdan y provoque en los usuarios alguna molestia como tener que volver a iniciar sesión. En <a href="https://tomcat.apache.org/">Tomcat</a> existe la posibilidad de que los datos de las sesiones sean persistidas en disco con la opción <em>saveOnRestart</em> del <a href="https://tomcat.apache.org/tomcat-8.0-doc/config/manager.html">elemento de configuración <em>Manager</em></a> que evita que los datos de las sesiones se pierdan en los reinicios, al menos para los servicios formados por una única instancia. Para evitar que los usuarios perciban los reinicios o caídas del servidor hay varias soluciones algunas tratando de diferentes formas externalizar las sesiones del servidor de aplicaciones. Con estas soluciones se pueden hacer despliegues sin caídas, sin que las perciban los usuarios, siendo útil para hacer actualizaciones frecuentemente, continuos, y en cualquier momento cuando tengamos una nueva versión de la aplicación.</p>
           
           <br>
           <a href="/blog-bitix/2015/03/datos-de-sesion-externalizados-con-spring-session/">Continuar leyendo...</a>

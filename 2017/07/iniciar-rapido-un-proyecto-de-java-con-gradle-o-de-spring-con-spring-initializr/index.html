@@ -6,8 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="Cuando se empieza un proyecto nuevo desde cero se debe disponer de una herramienta de construcción, una estructura de directorios que siga las convenciones de la herramienta de construcción, añadir las dependencias que vayamos a utilizar y alguna clase que muestre algo al ejecutarlo para comprobar que disponemos de la infraestructura básica de compilación, teses, generación de artefactos e inicio de proyecto.
-Dado que las clases Java hay que compilarlas para facilitar la tarea están las herramientas de construcción y estas siguen una serie de convenciones en la estructura de directorios además de requerir algunos archivos. &hellip;">
+  <meta name="description" content="
+
+
+
+
+
+
+
+
+Cuando se empieza un proyecto nuevo desde cero se debe disponer de una herramienta de construcción, una estructura de directorios que siga las convenciones de la herramienta de construcción, añadir las dependencias que vayamos a utilizar y alguna clase que muestre algo al ejecutarlo para comprobar que disponemos de la infraestructura básica de compilación, teses, generación de artefactos e inicio de proyecto.
+Dado que las clases Java hay que compilarlas para facilitar la tarea están las herramientas de construcción y estas siguen una serie de convenciones en la estructura de directorios además de requerir algunos archivos. En un proyecto de duración de varios meses o años el tiempo dedicado a crear esta infraestructura básica es despreciable y no complicado si nos basamos en un proyecto similar del que copiar, sin embargo, para hacer alguna prueba rápida es costoso. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Iniciar rápido un proyecto de Java con Gradle o de Spring con Spring Initializr</title>
@@ -32,8 +41,17 @@ Dado que las clases Java hay que compilarlas para facilitar la tarea están las 
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gradle-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="Cuando se empieza un proyecto nuevo desde cero se debe disponer de una herramienta de construcción, una estructura de directorios que siga las convenciones de la herramienta de construcción, añadir las dependencias que vayamos a utilizar y alguna clase que muestre algo al ejecutarlo para comprobar que disponemos de la infraestructura básica de compilación, teses, generación de artefactos e inicio de proyecto.
-Dado que las clases Java hay que compilarlas para facilitar la tarea están las herramientas de construcción y estas siguen una serie de convenciones en la estructura de directorios además de requerir algunos archivos. &hellip;">
+<meta property="og:description" content="
+
+
+
+
+
+
+
+
+Cuando se empieza un proyecto nuevo desde cero se debe disponer de una herramienta de construcción, una estructura de directorios que siga las convenciones de la herramienta de construcción, añadir las dependencias que vayamos a utilizar y alguna clase que muestre algo al ejecutarlo para comprobar que disponemos de la infraestructura básica de compilación, teses, generación de artefactos e inicio de proyecto.
+Dado que las clases Java hay que compilarlas para facilitar la tarea están las herramientas de construcción y estas siguen una serie de convenciones en la estructura de directorios además de requerir algunos archivos. En un proyecto de duración de varios meses o años el tiempo dedicado a crear esta infraestructura básica es despreciable y no complicado si nos basamos en un proyecto similar del que copiar, sin embargo, para hacer alguna prueba rápida es costoso. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -41,8 +59,17 @@ Dado que las clases Java hay que compilarlas para facilitar la tarea están las 
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Iniciar rápido un proyecto de Java con Gradle o de Spring con Spring Initializr">
-<meta name="twitter:description" content="Cuando se empieza un proyecto nuevo desde cero se debe disponer de una herramienta de construcción, una estructura de directorios que siga las convenciones de la herramienta de construcción, añadir las dependencias que vayamos a utilizar y alguna clase que muestre algo al ejecutarlo para comprobar que disponemos de la infraestructura básica de compilación, teses, generación de artefactos e inicio de proyecto.
-Dado que las clases Java hay que compilarlas para facilitar la tarea están las herramientas de construcción y estas siguen una serie de convenciones en la estructura de directorios además de requerir algunos archivos. &hellip;">
+<meta name="twitter:description" content="
+
+
+
+
+
+
+
+
+Cuando se empieza un proyecto nuevo desde cero se debe disponer de una herramienta de construcción, una estructura de directorios que siga las convenciones de la herramienta de construcción, añadir las dependencias que vayamos a utilizar y alguna clase que muestre algo al ejecutarlo para comprobar que disponemos de la infraestructura básica de compilación, teses, generación de artefactos e inicio de proyecto.
+Dado que las clases Java hay que compilarlas para facilitar la tarea están las herramientas de construcción y estas siguen una serie de convenciones en la estructura de directorios además de requerir algunos archivos. En un proyecto de duración de varios meses o años el tiempo dedicado a crear esta infraestructura básica es despreciable y no complicado si nos basamos en un proyecto similar del que copiar, sin embargo, para hacer alguna prueba rápida es costoso. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -80,8 +107,17 @@ Dado que las clases Java hay que compilarlas para facilitar la tarea están las 
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "Cuando se empieza un proyecto nuevo desde cero se debe disponer de una herramienta de construcción, una estructura de directorios que siga las convenciones de la herramienta de construcción, añadir las dependencias que vayamos a utilizar y alguna clase que muestre algo al ejecutarlo para comprobar que disponemos de la infraestructura básica de compilación, teses, generación de artefactos e inicio de proyecto.
-Dado que las clases Java hay que compilarlas para facilitar la tarea están las herramientas de construcción y estas siguen una serie de convenciones en la estructura de directorios además de requerir algunos archivos."
+    "description": "<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/gradle.svg" width="200" height="165" alt="Gradle" title="Gradle" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>Cuando se empieza un proyecto nuevo desde cero se debe disponer de una herramienta de construcción, una estructura de directorios que siga las convenciones de la herramienta de construcción, añadir las dependencias que vayamos a utilizar y alguna clase que muestre algo al ejecutarlo para comprobar que disponemos de la infraestructura básica de compilación, teses, generación de artefactos e inicio de proyecto.</p>
+<p>Dado que las clases Java hay que compilarlas para facilitar la tarea están las herramientas de construcción y estas siguen una serie de convenciones en la estructura de directorios además de requerir algunos archivos. En un proyecto de duración de varios meses o años el tiempo dedicado a crear esta infraestructura básica es despreciable y no complicado si nos basamos en un proyecto similar del que copiar, sin embargo, para hacer alguna prueba rápida es costoso.</p>"
 }
   </script>
   

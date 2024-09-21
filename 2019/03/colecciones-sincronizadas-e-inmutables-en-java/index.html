@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="En la API de Java hay un conjunto amplio de estructuras de datos de diferentes tipos para guardar información de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la API de colecciones. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios threads hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes. &hellip;">
+  <meta name="description" content="
+
+
+En la API de Java hay un conjunto amplio de estructuras de datos de diferentes tipos para guardar información de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la API de colecciones. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios threads hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Colecciones sincronizadas e inmutables en Java</title>
@@ -31,7 +34,10 @@
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="En la API de Java hay un conjunto amplio de estructuras de datos de diferentes tipos para guardar información de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la API de colecciones. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios threads hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes. &hellip;">
+<meta property="og:description" content="
+
+
+En la API de Java hay un conjunto amplio de estructuras de datos de diferentes tipos para guardar información de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la API de colecciones. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios threads hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -39,7 +45,10 @@
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Colecciones sincronizadas e inmutables en Java">
-<meta name="twitter:description" content="En la API de Java hay un conjunto amplio de estructuras de datos de diferentes tipos para guardar información de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la API de colecciones. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios threads hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes. &hellip;">
+<meta name="twitter:description" content="
+
+
+En la API de Java hay un conjunto amplio de estructuras de datos de diferentes tipos para guardar información de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la API de colecciones. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios threads hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -77,7 +86,10 @@
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "En la API de Java hay un conjunto amplio de estructuras de datos de diferentes tipos para guardar información de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la API de colecciones. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios threads hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes."
+    "description": "<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>En la <a href="https://docs.oracle.com/en/java/javase/11/docs/api/index.html">API de Java</a> hay un conjunto amplio de <a href="https://picodotdev.github.io/blog-bitix/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/">estructuras de datos de diferentes tipos para guardar información</a> de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html">API de colecciones</a>. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios <em>threads</em> hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes.</p>"
 }
   </script>
   

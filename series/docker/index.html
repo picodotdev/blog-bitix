@@ -250,7 +250,13 @@
         </span>
         <p>
           
-            En el repositorio de imágenes Docker Hub de Docker hay múltiples versiones de cada software contenirizado, alguna de las versiones están etiquetadas con la palabra alpine. Las imágenes de Docker etiquetadas con alpine hacen referencia a que usan como base la distribución Alpine Linux y la razón de usar Alpine Linux es que al ser una distribución minimalista basada en busybox y musl-libc hace que las imágenes ocupen bastante menos que una imagen equivalente por ejemplo basada en Ubuntu o Debian, seguramente porque no contienen una buena cantidad de cosas innecesarias.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/alpinelinux.svg" width="350" height="85" alt="Alpine Linux" title="Alpine Linux" class="" loading="false&#34;"></p>
+</div>
+<p>En el repositorio de imágenes <a href="https://registry.hub.docker.com/">Docker Hub</a> de <a href="https://www.docker.com/">Docker</a> hay múltiples versiones de cada software <em>contenirizado</em>, alguna de las versiones están etiquetadas con la palabra <em>alpine</em>. Las imágenes de Docker etiquetadas con <em>alpine</em> hacen referencia a que usan como base la distribución <a href="https://www.alpinelinux.org/">Alpine Linux</a> y la razón de usar Alpine Linux es que al ser una distribución minimalista basada en <a href="https://www.busybox.net/">busybox</a> y <a href="https://www.musl-libc.org/">musl-libc</a> hace que las imágenes ocupen bastante menos que una imagen equivalente por ejemplo basada en <a href="https://www.ubuntu.com/">Ubuntu</a> o <a href="https://www.debian.org/">Debian</a>, seguramente porque no contienen una buena cantidad de cosas innecesarias.</p>
           
           <br>
           <a href="/blog-bitix/2017/04/imagenes-de-docker-con-alpine-linux/">Continuar leyendo...</a>
@@ -470,7 +476,14 @@
         </span>
         <p>
           
-            En la introducción de Docker y inicio básico de docker explicaba como usar Docker y en la introducción a Ansible explicaba las características de Ansible y como usarlo. Podemos usar Docker y Ansible de forma separada pero también podemos combinarlas para beneficiarnos de las propiedades de cada una. En Ansible disponemos de dos módulos que nos permite manejar las imágenes y los contenedores de Docker, estos son docker y docker_image.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/ansible.svg" width="200" height="246" alt="Ansible" title="Ansible" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false&#34;"></p>
+</div>
+<p>En la <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">introducción de Docker</a> y <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">inicio básico de docker</a> explicaba como usar Docker y en la <a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/">introducción a Ansible</a> explicaba las características de Ansible y como usarlo. Podemos usar <a href="https://www.docker.com/">Docker</a> y <a href="https://www.ansible.com/">Ansible</a> de forma separada pero también podemos combinarlas para beneficiarnos de las propiedades de cada una. En Ansible disponemos de dos módulos que nos permite manejar las imágenes y los contenedores de Docker, estos son <a href="http://docs.ansible.com/docker_module.html">docker</a> y <a href="http://docs.ansible.com/docker_image_module.html">docker_image</a>.</p>
+<p>Usando tareas de ansible podemos automatizar el arranque del servicio de docker, la construcción de las imágenes con los Dokerfile y el inicio o parada de los contenedores de docker. En el ejemplo se construye una imagen base en la que se basarán el resto de imágenes, se crea una imagen con mysql, otra de redis y finalmente la imagen apps donde se ejecutarán las aplicaciones que usarán los servicios de mysql y redis.</p>
           
           <br>
           <a href="/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Continuar leyendo...</a>

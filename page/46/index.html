@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta name="generator" content="Hugo 0.133.1">
+	<meta name="generator" content="Hugo 0.134.3">
   <meta name="base" href="/blog-bitix/">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -192,6 +192,40 @@
 <ul class="list-unstyled">
     <li>
       <article>
+        <h1><a href="/blog-bitix/2014/06/ejecutar-apache-tapestry-en-el-servidor-de-aplicaciones-wildfly/">Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly</a></h1>
+        <span class="information">
+          <time>06/06/2014</time>
+          
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/tapestry/">tapestry</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/wildfly.svg" width="200" height="200" alt="WildFly" title="WildFly" class="" loading="false&#34;"></p>
+</div>
+<p>Los class loaders del <a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/">servidor de aplicaciones JBoss/WildFly</a> habitualmente han dado algún problema en la ejecución de las aplicaciones y la carga de clases. En versiones antiguas como la 4 se podían producir conflictos entre las librerías de las aplicaciones y las librerías instaladas en el servidor ya que en <a href="http://jbossas.jboss.org/">JBoss</a> se buscaba las clases por defecto y primero en el class loader del servidor en vez de en el <em>classloader</em> de la aplicación (war). Ya en las últimas versiones como JBoss 7 y <a href="http://wildfly.org/">WildFly</a> la forma de cargar las clases es más parecido al modelo habitual que se sigue en las aplicaciones Java EE y en servidores como Tomcat buscando primero en el directorio classes WEB-INF/classes y entre las librerías de la carpeta WEB-INF/lib del archivo war. Además, con la inclusión de JBoss Modules se puede seguir un esquema OSGi con lo que incluso podríamos usar simultáneamente en el servidor diferentes versiones de la misma librería.</p>
+          
+          <br>
+          <a href="/blog-bitix/2014/06/ejecutar-apache-tapestry-en-el-servidor-de-aplicaciones-wildfly/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/">Detectar problema N&#43;1 y obtener estadísticas de Hibernate con Grails</a></h1>
         <span class="information">
           <time>30/05/2014</time>
@@ -207,7 +241,10 @@
         </span>
         <p>
           
-            Una base de datos relacional guarda los datos de forma diferente al modelo orientado a objetos que utilizamos en lenguajes como Java, C# o Python. Los ORM (Object-relational mapping) tratan de hacer una correspondencia entre los dos modelos, el relacional de las bases de datos y el orientado a objetos de los lenguajes. Una de las ventajas de usar en una aplicación un ORM para acceder a la base de datos es que podemos hacer una correspondencia entre los datos de una base de datos relacional y trabajar con esos datos utilizando el modelo orientado a objetos del lenguaje de programación que usemos.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/grails.svg" width="200" height="200" alt="Grails" title="Grails" class="" loading="false&#34;"></p>
+</div>
+<p>Una base de datos relacional guarda los datos de forma diferente al modelo orientado a objetos que utilizamos en lenguajes como <a href="https://www.oracle.com/us/technologies/java/overview/index.html">Java</a>, <a href="https://dotnet.microsoft.com/">C#</a> o <a href="https://www.python.org/">Python</a>. Los <a href="https://en.wikipedia.org/wiki/Object-relational_mapping">ORM (Object-relational mapping)</a> tratan de hacer una correspondencia entre los dos modelos, el relacional de las bases de datos y el orientado a objetos de los lenguajes. Una de las ventajas de usar en una aplicación un ORM para acceder a la base de datos es que podemos hacer una correspondencia entre los datos de una base de datos relacional y trabajar con esos datos utilizando el modelo orientado a objetos del lenguaje de programación que usemos.</p>
           
           <br>
           <a href="/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/">Continuar leyendo...</a>
@@ -231,7 +268,10 @@
         </span>
         <p>
           
-            No es la primera vez que comento algo similar (I, II) disponer de la mayor cantidad de información cuando se produce una excepción o un error en la aplicación es vital para determinar rápidamente la causa del error y para solucionarlo correctamente. Para disponer de esta información podemos generar un archivo de log que nos permita revisar lo que pasó en la aplicación en un determinado momento. En el momento de desarrollo también nos puede interesar tener una página de excepción informativa.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/grails.svg" width="300" height="300" alt="Grails" title="Grails" class="" loading="false&#34;"></p>
+</div>
+<p>No es la primera vez que comento algo similar (<a href="https://elblogdepicodev.blogspot.com.es/2012/08/paginas-pagecatalog-servicestatus-e.html">I</a>, <a href="https://elblogdepicodev.blogspot.com.es/2011/08/motivos-para-elegir-apache-tapestry.html">II</a>) disponer de la mayor cantidad de información cuando se produce una excepción o un error en la aplicación es vital para determinar rápidamente la causa del error y para solucionarlo correctamente. Para disponer de esta información podemos generar un archivo de log que nos permita revisar lo que pasó en la aplicación en un determinado momento. En el momento de desarrollo también nos puede interesar tener una página de excepción informativa.</p>
           
           <br>
           <a href="/blog-bitix/2014/05/pagina-de-excepcion-de-grails/">Continuar leyendo...</a>
@@ -259,7 +299,10 @@
         </span>
         <p>
           
-            Normalmente en esta bitácora suelo poner ejemplos para explicar como funciona una determinada herramienta, son ejemplos que podrían aprovecharse para algo productivo pero para mantenerlos simples por si mismos no suelen serlo. En esta entrada voy a comentar cual es la arquitectura y como está alojado Blog Stack, que es un ejemplo de algo práctico y real por si la experiencia de este ejemplo le sirve de ayuda o de inspiración a alguien.
+            <div class="logotypes"> 
+<p><img src="/blog-bitix/assets/images/logotypes/blogstack.webp" width="300" height="65" alt="Blog Stack" title="Blog Stack" class="" loading="false&#34;"></p>
+</div>
+<p>Normalmente en esta bitácora suelo poner ejemplos para explicar como funciona una determinada herramienta, son ejemplos que podrían aprovecharse para algo productivo pero para mantenerlos simples por si mismos no suelen serlo. En esta entrada voy a comentar cual es la arquitectura y como está alojado <a href="http://www.blogstack.info/">Blog Stack</a>, que es un ejemplo de algo práctico y real por si la experiencia de este ejemplo le sirve de ayuda o de inspiración a alguien. En la red he encontrado comentada la experiencia de <del>Planeta Linux</del> y <a href="http://gallir.wordpress.com/2009/12/30/como-montamos-meneame-en-amazon-ec2/">Meneame</a>, otros proyectos web.</p>
           
           <br>
           <a href="/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/">Continuar leyendo...</a>
@@ -287,8 +330,16 @@
         </span>
         <p>
           
-            Con este artículo quiero presentar un nuevo proyecto, Blog Stack. Blog Stack (BS) es una agregador, planeta, o fuente de información de bitácoras sobre programación, desarrollo, desarrollo ágil, software, software libre, hardware, gnu/linux o en general temas relacionados con la tecnología.
-Otro agregador o planeta no es ninguna idea nueva pero BS incorpora alguna cosa adicional como poder suscribirse a únicamente el contenido etiquetado en que cada uno esté interesando (programación, desarrollo-ágil, java, python, linux, ubuntu, &hellip;) o recibir el contenido publicado en todas las bitácoras agregadas sin tener que suscribirse individualmente a cada una de ellas.
+            <div class="logotypes"> 
+<p><img src="/blog-bitix/assets/images/logotypes/blogstack.webp" width="300" height="65" alt="Blog Stack" title="Blog Stack" class="" loading="false&#34;"></p>
+</div>
+<p>Con este artículo quiero presentar un nuevo proyecto, Blog Stack. <a href="http://www.blogstack.info/">Blog Stack</a> (BS) es una agregador, planeta, o fuente de información de bitácoras sobre programación, desarrollo, desarrollo ágil, software, software libre, hardware, gnu/linux o en general temas relacionados con la tecnología.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2014/05/presentacion-blog-stack/images/blogstack-portada_hu5407602845691439170.webp" data-gallery="" title="Portada de Blog Stack"><img src="/blog-bitix/2014/05/presentacion-blog-stack/images/blogstack-portada_hu3657006541828033261.webp" width="216" height="200" alt="Portada de Blog Stack" title="Portada de Blog Stack" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<p>Otro agregador o planeta no es ninguna idea nueva pero BS incorpora alguna cosa adicional como poder suscribirse a únicamente el contenido etiquetado en que cada uno esté interesando (programación, desarrollo-ágil, java, python, linux, ubuntu, &hellip;) o recibir el contenido publicado en todas las bitácoras agregadas sin tener que suscribirse individualmente a cada una de ellas. BS aún está en desarrollo y posiblemente vaya incorporando nuevas ideas que me surjan o se me propongan pero en el estado actual ya cumple con la función básica de agregador.</p>
           
           <br>
           <a href="/blog-bitix/2014/05/presentacion-blog-stack/">Continuar leyendo...</a>
@@ -390,7 +441,10 @@ Otro agregador o planeta no es ninguna idea nueva pero BS incorpora alguna cosa 
         </span>
         <p>
           
-            En la serie de artículos que escribí sobre javascript hice un ejemplo más o menos complejo y parecido a lo que podría ser una aplicación real usando muchas de las herramientas que ahora se consideran una buena opción para desarrollar aplicaciones javascript como RequireJS, Backbone, Marionette, Jasmine y Sinon. En el ejemplo de la lista de tareas con estas herramientas hice unas cuantas pruebas unitarias para mostrar en un ejemplo como son y la forma de usar Jasmine.
+            <div class="logotypes"> 
+<p><img src="/blog-bitix/assets/images/logotypes/grunt.webp" width="200" height="236" alt="Grunt" title="Grunt" class="" loading="false&#34;"></p>
+</div>
+<p>En la <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html">serie de artículos que escribí sobre javascript</a> hice un ejemplo más o menos complejo y parecido a lo que podría ser una aplicación real usando muchas de las herramientas que ahora se consideran una buena opción para desarrollar aplicaciones javascript como <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html">RequireJS</a>, <a href="http://www.genbetadev.com/desarrollo-web/patron-de-diseno-mvc-del-lado-cliente-con-backbonejs">Backbone</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html">Marionette</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.html">Jasmine y Sinon</a>. En el <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html">ejemplo de la lista de tareas con estas herramientas</a> hice unas cuantas pruebas unitarias para mostrar en un ejemplo como son y la forma de usar <a href="http://jasmine.github.io/">Jasmine</a>.</p>
           
           <br>
           <a href="/blog-bitix/2014/04/usar-grunt-para-ejecutar-teses-unitarios-de-codigo-javascript/">Continuar leyendo...</a>
@@ -412,7 +466,7 @@ Otro agregador o planeta no es ninguna idea nueva pero BS incorpora alguna cosa 
         </span>
         <p>
           
-            En estos momentos sin lugar a dudas la actualización más provechosa para mejorar el rendimiento de un equipo es una unidad de estado sólido o SSD una vez tengamos memoria RAM suficiente, unos 2 GiB suelen ser suficientes para tareas ofimáticas y acceder a internet y los equipos que se están vendiendo ahora ya suelen venir con 4 GiB e incluso 8 GiB. El tiempo de acceso a un disco duro mecánico es grande y la velocidad de transferencia es pequeña, en los momentos que se require un uso intensivo del disco se nota que son el cuello de botella del sistema.
+            <p>En estos momentos sin lugar a dudas la actualización más provechosa para mejorar el rendimiento de un equipo es una unidad de estado sólido o <a href="https://es.wikipedia.org/wiki/Unidad_de_estado_s%C3%B3lido"><abbr title="Solid State Drive">SSD</abbr></a> una vez tengamos memoria RAM suficiente, unos 2 GiB suelen ser suficientes para tareas ofimáticas y acceder a internet y los equipos que se están vendiendo ahora ya suelen venir con 4 GiB e incluso 8 GiB. El tiempo de acceso a un disco duro mecánico es grande y la velocidad de transferencia es pequeña, en los momentos que se require un uso intensivo del disco se nota que son el cuello de botella del sistema. A veces una mejora en el software puede producir una notable aumento de rendimiento con el mismo hardware pero cuando ya no hay margen de mejora en el software con una mejora en el hardware podemos conseguir el aumento de rendimiento buscado, este es el caso de los SSD.</p>
           
           <br>
           <a href="/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/">Continuar leyendo...</a>
@@ -462,7 +516,10 @@ Otro agregador o planeta no es ninguna idea nueva pero BS incorpora alguna cosa 
         </span>
         <p>
           
-            En la primera entrada de este blog usando Octopress ya comentaba las razones por las que he pasado de usar Blogger a usar Octopress. Entre las razones del cambio estaban la posibilidad en Octopress de escribir en markdown, edición desconectado (para textos e imágenes), diseño adaptable y más personalizable, git y control de versiones, alojamiento en cualquier servidor web. Aún sin ser Octpress también tiene cosas mejorables pero desde luego me está resultando mucho mejor que blogger.
+            <div class="logotypes"> 
+<p><img src="/blog-bitix/assets/images/logotypes/octopress.webp" width="300" height="300" alt="Octopress" title="Octopress" class="" loading="false&#34;"></p>
+</div>
+<p>En la <a href="https://picodotdev.github.io/blog-bitix/2013/12/hola-nuevo-mundo/">primera entrada de este blog usando Octopress</a> ya comentaba las razones por las que he pasado de usar <a href="http://www.blogger.com">Blogger</a> a usar <a href="http://octopress.org/">Octopress</a>. Entre las razones del cambio estaban la posibilidad en Octopress de escribir en markdown, edición desconectado (para textos e imágenes), diseño adaptable y más personalizable, git y control de versiones, alojamiento en cualquier servidor web. Aún sin ser Octpress también tiene cosas mejorables pero desde luego me está resultando mucho mejor que blogger.</p>
           
           <br>
           <a href="/blog-bitix/2014/03/guia-para-la-creacion-de-un-blog-con-octopress/">Continuar leyendo...</a>
@@ -546,33 +603,6 @@ Otro agregador o planeta no es ninguna idea nueva pero BS incorpora alguna cosa 
           
           <br>
           <a href="/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">Libro sobre desarrollo de aplicaciones con Apache Tapestry</a></h1>
-        <span class="information">
-          <time>14/02/2014</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-              <a href="/blog-bitix/tags/tapestry/">tapestry</a>
-            
-          
-        </span>
-        <p>
-          
-            Hace unos meses publiqué el libro PlugIn Tapestry, un libro acerca del desarrollo de aplicaciones y páginas web en el lenguaje Java y con el framework Apache Tapestry.
-PlugIn Tapestry Apache Tapestry es un framework orientado a componentes para crear aplicaciones web rápidas, dinámicas, robustas y altamente escalables en la plataforma Java. Al basarse en componentes es distinto de los muchos basados en acciones similares en esencia a Struts que podemos encontrar en la plataforma Java como Spring, Grails y Play!
-          
-          <br>
-          <a href="/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">Continuar leyendo...</a>
         </p>
       </article>
     </li>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta name="generator" content="Hugo 0.133.1">
+	<meta name="generator" content="Hugo 0.134.3">
   <meta name="base" href="/blog-bitix/">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -192,6 +192,34 @@
 <ul class="list-unstyled">
     <li>
       <article>
+        <h1><a href="/blog-bitix/2017/08/cache-simple-de-datos-y-con-ehcache-en-java/">Cache simple de datos y con Ehcache en Java</a></h1>
+        <span class="information">
+          <time>25/08/2017</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>En ocasiones es necesario usar una cache que contenga un número de elementos hasta un límite y que cuando se vayan añadiendo más se vayan borrando otros según algún criterio. En Java si no queremos añadir una nueva dependencia al proyecto con una librería especializada como <a href="https://www.ehcache.org/">Ehcache</a> la clase <a href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html">LinkedHashMap</a> sirve para aquellos casos de uso simples sin necesidad de dependencias adicionales.</p>
+<p>Si el coste de obtener algunos datos es costoso ya sean porque hay que obtenerlos de una base de datos, mediante una operación de disco o red o hay que hacer algún cálculo sobre ellos en estos casos guardar los datos en una cache supondrá un aumento notable de rendimiento de mayor o menor medida según el coste de la operación que evita la cache. Usar una cache es viable si es posible usar datos no completamente actualizados y dedicar algo de espacio en memoria para la cache. Si en la mayor parte de las búsquedas que se hacen en la cache el elemento buscado está ya presente se considera un acierto o <em>hit</em> y si no está presente un fallo o <em>miss</em>, cuando mayor sea el número de aciertos en la cache mayor será el aumento rendimiento percibido.</p>
+          
+          <br>
+          <a href="/blog-bitix/2017/08/cache-simple-de-datos-y-con-ehcache-en-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2017/08/37-buenos-libros-sobre-sobre-java-linux-devops-y-desarrollo-que-he-leido/">37 buenos libros sobre sobre Java, Linux, DevOps y desarrollo que he leído</a></h1>
         <span class="information">
           <time>18/08/2017</time>
@@ -235,7 +263,10 @@
         </span>
         <p>
           
-            Java es un lenguaje más verboso y con menos azúcar sintáctico (o veneno para ratas, según se mire) que otros lenguajes. Esto hace que por ejemplo para declarar e inicializar objetos tan comunes en un programa de tipo Map, List o Set que contengan un número fijo de elementos haya que escribir varias líneas de código. Estas clases de estructuras de datos del grupo de colecciones son de las más usadas en una aplicación Java.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>Java es un lenguaje más verboso y con menos azúcar sintáctico (o veneno para ratas, según se mire) que otros lenguajes. Esto hace que por ejemplo para declarar e inicializar objetos tan comunes en un programa de tipo <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html">Map</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a> o <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html">Set</a> que contengan un número fijo de elementos haya que escribir varias líneas de código. Estas clases de estructuras de datos del grupo de colecciones son de las más usadas en una aplicación Java. A la fecha de escribir este artículo Java no soporta literales para las colecciones que reduzca las lineas de código para inicializarlas y mejore la legibilidad del código aunque en versiones recientes si se han incorporado métodos de utilidad que cubren el requerimiento.</p>
           
           <br>
           <a href="/blog-bitix/2017/08/el-antipatron-de-inicializacion-de-variables-con-dobles-llaves-en-java/">Continuar leyendo...</a>
@@ -301,7 +332,10 @@
         </span>
         <p>
           
-            Hace ya mucho tiempo de pequeño planté alguna semilla de manzana por curiosidad para ver si germinaba, y sí germinó, pero al cabo de unos meses por desconocimiento de la forma de como cuidar una planta, excesivo riego o tierra no adecuada el retoño de manzano pereció. También planté alguna bellota de algún tipo de roble que alguno de mis hermanos trajo a casa, y sí germinó, y al igual que el manzano duró unos cuantos meses pero sucumbió de la misma forma.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/quercus-robur.webp" width="175" height="265" alt="Quercus Robur" title="Quercus Robur" class="" loading="false&#34;"></p>
+</div>
+<p>Hace ya mucho tiempo de pequeño planté alguna semilla de manzana por curiosidad para ver si germinaba, y sí germinó, pero al cabo de unos meses por desconocimiento de la forma de como cuidar una planta, excesivo riego o tierra no adecuada el retoño de manzano pereció. También planté alguna bellota de algún tipo de roble que alguno de mis hermanos trajo a casa, y sí germinó, y al igual que el manzano duró unos cuantos meses pero sucumbió de la misma forma.</p>
           
           <br>
           <a href="/blog-bitix/2017/07/la-busqueda-de-ejemplares-de-roble-comun/">Continuar leyendo...</a>
@@ -319,7 +353,7 @@
         </span>
         <p>
           
-            Tener en casa un pequeño conjunto de herramientas es necesario para realizar pequeñas tareas domésticas, desde quitar un grifo a atornillar algún elemento. Buscando en el gran catálogo del que dispone Amazon en su web quería uno que fuese bastante completo sin ser muy caro y aunque no fuese de calidad profesional cumpliese con las tarea. Hay muchos modelos pero me fijé en uno de Mannesmann modelo M29085. También necesitaba unas bandejas para la cocina y salón.
+            <p>Tener en casa un pequeño conjunto de herramientas es necesario para realizar pequeñas tareas domésticas, desde quitar un grifo a atornillar algún elemento. Buscando en el gran catálogo del que dispone <a href="https://amzn.to/2flFhHA" rel="sponsored">Amazon</a> en su web quería uno que fuese bastante completo sin ser muy caro y aunque no fuese de calidad profesional cumpliese con las tarea. Hay muchos modelos pero me fijé en uno de <a href="https://amzn.to/2w6YVem" rel="sponsored">Mannesmann modelo M29085</a>. También necesitaba unas bandejas para la cocina y salón.</p>
           
           <br>
           <a href="/blog-bitix/2017/07/desempaquetado-maletin-herramientas-mannesmann-y-bandejas-melamina-balvi/">Continuar leyendo...</a>
@@ -343,7 +377,11 @@
         </span>
         <p>
           
-            En el artículo de iniciación a la programación concurrente en Java explicaba las facilidades que proporciona este lenguaje para la programación de tareas con varios hilos que implica la sincronización y bloqueo mediante varias primitivas como semáforos o locks, ponía el ejemplo y su código de dos de los típicos ejemplos que suelen usarse en las asignaturas de sistemas operativos, el problema de los filósofos y el del barbero.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>En el artículo de <a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciacion-a-la-programacion-concurrente-en-java/">iniciación a la programación concurrente en Java</a> explicaba las facilidades que proporciona este lenguaje para la programación de tareas con varios hilos que implica la sincronización y bloqueo mediante varias primitivas como semáforos o <em>locks</em>, ponía el ejemplo y su código de dos de los típicos ejemplos que suelen usarse en las asignaturas de sistemas operativos, el problema de los filósofos y el del barbero.</p>
+<p>En el caso de tener varias tareas que tardan unos segundos si las ejecutamos de forma secuencial el tiempo que tardarán será la suma de todas las tareas. Si las tareas no son dependientes, no hace falta esperar a que termine una anterior para comenzar otra, o el problema se puede descomponer en varias partes ejecutándolas de forma concurrente y simultáneamente el tiempo total que tardarán aproximadamente será el tiempo de la tarea más lenta.</p>
           
           <br>
           <a href="/blog-bitix/2017/07/ejecutar-varias-tareas-de-forma-concurrente-en-java/">Continuar leyendo...</a>
@@ -415,8 +453,17 @@
         </span>
         <p>
           
-            Cuando se empieza un proyecto nuevo desde cero se debe disponer de una herramienta de construcción, una estructura de directorios que siga las convenciones de la herramienta de construcción, añadir las dependencias que vayamos a utilizar y alguna clase que muestre algo al ejecutarlo para comprobar que disponemos de la infraestructura básica de compilación, teses, generación de artefactos e inicio de proyecto.
-Dado que las clases Java hay que compilarlas para facilitar la tarea están las herramientas de construcción y estas siguen una serie de convenciones en la estructura de directorios además de requerir algunos archivos.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/gradle.svg" width="200" height="165" alt="Gradle" title="Gradle" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>Cuando se empieza un proyecto nuevo desde cero se debe disponer de una herramienta de construcción, una estructura de directorios que siga las convenciones de la herramienta de construcción, añadir las dependencias que vayamos a utilizar y alguna clase que muestre algo al ejecutarlo para comprobar que disponemos de la infraestructura básica de compilación, teses, generación de artefactos e inicio de proyecto.</p>
+<p>Dado que las clases Java hay que compilarlas para facilitar la tarea están las herramientas de construcción y estas siguen una serie de convenciones en la estructura de directorios además de requerir algunos archivos. En un proyecto de duración de varios meses o años el tiempo dedicado a crear esta infraestructura básica es despreciable y no complicado si nos basamos en un proyecto similar del que copiar, sin embargo, para hacer alguna prueba rápida es costoso.</p>
           
           <br>
           <a href="/blog-bitix/2017/07/iniciar-rapido-un-proyecto-de-java-con-gradle-o-de-spring-con-spring-initializr/">Continuar leyendo...</a>
@@ -500,7 +547,7 @@ Dado que las clases Java hay que compilarlas para facilitar la tarea están las 
         </span>
         <p>
           
-            Desde hace ya tiempo escribir y publicar en el blog es una de las cosas que realmente me gustan y me motivan a pesar de que el blog me requiere mucho tiempo de mi tiempo personal, cada artículo me exige entre 5 y 10 horas de dedicación durante el fin de semana y en mi tiempo libre. Es satisfactorio ver que cada semana y cada mes el número de visitas aumentan a un ritmo rozando los dos dígitos y que también se nota en los ingresos por publicidad de AdSense que en parte dono a alguno de los proyectos de software libre que usó o me parecen interesante apoyarles económicamente aunque sea de forma pequeña.
+            <p>Desde hace ya tiempo escribir y publicar en el blog es una de las cosas que realmente me gustan y me motivan a pesar de que el blog me requiere mucho tiempo de mi tiempo personal, cada artículo me exige entre 5 y 10 horas de dedicación durante el fin de semana y en mi tiempo libre. Es satisfactorio ver que cada semana y cada mes el número de visitas aumentan a un ritmo rozando los dos dígitos y que también se nota en los <a href="https://picodotdev.github.io/blog-bitix/series/donacion/">ingresos por publicidad de AdSense que en parte dono</a> a alguno de los proyectos de software libre que usó o me parecen interesante apoyarles económicamente aunque sea de forma pequeña.</p>
           
           <br>
           <a href="/blog-bitix/2017/06/hemeroteca-11/">Continuar leyendo...</a>
@@ -528,34 +575,13 @@ Dado que las clases Java hay que compilarlas para facilitar la tarea están las 
         </span>
         <p>
           
-            Los certificados no solo sirven para autenticar a un servidor o acceder solo a aquellos en los que confiamos. El servidor también puede autenticar a los clientes mediante un certificado como alternativa a usar un usuario y contraseña ya sea una autenticación BASIC o un formulario personalizado. Al igual que en el cliente usa el certificado de la autoridad de certificación en la que confía para validar el que presenta el servidor, el servidor puede requerir que el cliente también proporcione un certificado que el servidor valida según las autoridades de certificación en las que confía, en ambos casos el servidor o cliente usan su clave privada para iniciar la conexión segura con el handshake del protocolo TLS.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL" class="" loading="false&#34;"></p>
+</div>
+<p>Los certificados no solo sirven para autenticar a un servidor o acceder solo a aquellos en los que confiamos. El servidor también puede autenticar a los clientes mediante un certificado como alternativa a usar un usuario y contraseña ya sea una autenticación <em>BASIC</em> o un formulario personalizado. Al igual que en el cliente usa el certificado de la autoridad de certificación en la que confía para validar el que presenta el servidor, el servidor puede requerir que el cliente también proporcione un certificado que el servidor valida según las autoridades de certificación en las que confía, en ambos casos el servidor o cliente usan su clave privada para iniciar la conexión segura con el <em>handshake</em> del <a href="https://es.wikipedia.org/wiki/Transport_Layer_Security">protocolo TLS</a>.</p>
           
           <br>
           <a href="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2017/06/introduccion-a-la-base-de-datos-nosql-redis/">Introducción a la base de datos NoSQL Redis</a></h1>
-        <span class="information">
-          <time>11/06/2017</time>
-          
-            
-              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-          
-        </span>
-        <p>
-          
-            Redis es una de las bases de datos NoSQL en este caso de tipo clave-valor. Los valores pueden ser de diferentes tipos y tiene una amplia colección de operaciones disponibles para usar según el tipo de datos asociado a la clave.
-          
-          <br>
-          <a href="/blog-bitix/2017/06/introduccion-a-la-base-de-datos-nosql-redis/">Continuar leyendo...</a>
         </p>
       </article>
     </li>

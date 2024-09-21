@@ -6,7 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="Hasta el momento ya he escrito alguna entrada sobre los patrones de diseño en general, sobre algunos casos particulares como el patrón de diseño Command relacionado con la programación concurrente y sobre el patrón de diseño State para hacer máquinas de estados. En esta entrada hablaré sobre otro patrón de diseño, el patrón No Operation y de que forma podemos aprovecharlo para resolver algún problema y hacer nuestro código más simple. &hellip;">
+  <meta name="description" content=" 
+
+
+Hasta el momento ya he escrito alguna entrada sobre los patrones de diseño en general, sobre algunos casos particulares como el patrón de diseño Command relacionado con la programación concurrente y sobre el patrón de diseño State para hacer máquinas de estados. En esta entrada hablaré sobre otro patrón de diseño, el patrón No Operation y de que forma podemos aprovecharlo para resolver algún problema y hacer nuestro código más simple.
+En un programa que emplea un lenguaje de programación orientado a objetos estos están constantemente relacionándose entre si a través de llamadas a métodos y a través de las referencias que un objeto posee de otros. Sin embargo, es habitual que un determinado método devuelva un null en vez de una referencia a un objeto. Esta referencia null puede ser un problema ya que nos obliga en el código hacer una comprobación antes de poder llamarlo. Si un método devuelve un null puede dar como resultado un NullPointerException en otra parte de la aplicación en donde se intente usar esa referencia y no se haga la comprobación. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Ejemplo del patrón de diseño No Operation</title>
@@ -31,7 +35,11 @@
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="Hasta el momento ya he escrito alguna entrada sobre los patrones de diseño en general, sobre algunos casos particulares como el patrón de diseño Command relacionado con la programación concurrente y sobre el patrón de diseño State para hacer máquinas de estados. En esta entrada hablaré sobre otro patrón de diseño, el patrón No Operation y de que forma podemos aprovecharlo para resolver algún problema y hacer nuestro código más simple. &hellip;">
+<meta property="og:description" content=" 
+
+
+Hasta el momento ya he escrito alguna entrada sobre los patrones de diseño en general, sobre algunos casos particulares como el patrón de diseño Command relacionado con la programación concurrente y sobre el patrón de diseño State para hacer máquinas de estados. En esta entrada hablaré sobre otro patrón de diseño, el patrón No Operation y de que forma podemos aprovecharlo para resolver algún problema y hacer nuestro código más simple.
+En un programa que emplea un lenguaje de programación orientado a objetos estos están constantemente relacionándose entre si a través de llamadas a métodos y a través de las referencias que un objeto posee de otros. Sin embargo, es habitual que un determinado método devuelva un null en vez de una referencia a un objeto. Esta referencia null puede ser un problema ya que nos obliga en el código hacer una comprobación antes de poder llamarlo. Si un método devuelve un null puede dar como resultado un NullPointerException en otra parte de la aplicación en donde se intente usar esa referencia y no se haga la comprobación. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -39,7 +47,11 @@
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Ejemplo del patrón de diseño No Operation">
-<meta name="twitter:description" content="Hasta el momento ya he escrito alguna entrada sobre los patrones de diseño en general, sobre algunos casos particulares como el patrón de diseño Command relacionado con la programación concurrente y sobre el patrón de diseño State para hacer máquinas de estados. En esta entrada hablaré sobre otro patrón de diseño, el patrón No Operation y de que forma podemos aprovecharlo para resolver algún problema y hacer nuestro código más simple. &hellip;">
+<meta name="twitter:description" content=" 
+
+
+Hasta el momento ya he escrito alguna entrada sobre los patrones de diseño en general, sobre algunos casos particulares como el patrón de diseño Command relacionado con la programación concurrente y sobre el patrón de diseño State para hacer máquinas de estados. En esta entrada hablaré sobre otro patrón de diseño, el patrón No Operation y de que forma podemos aprovecharlo para resolver algún problema y hacer nuestro código más simple.
+En un programa que emplea un lenguaje de programación orientado a objetos estos están constantemente relacionándose entre si a través de llamadas a métodos y a través de las referencias que un objeto posee de otros. Sin embargo, es habitual que un determinado método devuelva un null en vez de una referencia a un objeto. Esta referencia null puede ser un problema ya que nos obliga en el código hacer una comprobación antes de poder llamarlo. Si un método devuelve un null puede dar como resultado un NullPointerException en otra parte de la aplicación en donde se intente usar esa referencia y no se haga la comprobación. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -77,7 +89,11 @@
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "Hasta el momento ya he escrito alguna entrada sobre los patrones de diseño en general, sobre algunos casos particulares como el patrón de diseño Command relacionado con la programación concurrente y sobre el patrón de diseño State para hacer máquinas de estados. En esta entrada hablaré sobre otro patrón de diseño, el patrón No Operation y de que forma podemos aprovecharlo para resolver algún problema y hacer nuestro código más simple."
+    "description": "<div class="logotypes"> 
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>Hasta el momento ya he escrito alguna entrada sobre los <a href="https://elblogdepicodev.blogspot.com.es/2012/03/patrones-de-diseno-en-la-programacion.html">patrones de diseño</a> en general, sobre algunos casos particulares como el <a href="https://elblogdepicodev.blogspot.com.es/2012/04/ejemplo-del-patron-de-diseno-command-y.html">patrón de diseño Command</a> relacionado con la programación concurrente y sobre el <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-del-patron-de-diseno-state.html">patrón de diseño State</a> para hacer máquinas de estados. En esta entrada hablaré sobre otro patrón de diseño, el patrón No Operation y de que forma podemos aprovecharlo para resolver algún problema y hacer nuestro código más simple.</p>
+<p>En un programa que emplea un lenguaje de programación orientado a objetos estos están constantemente relacionándose entre si a través de llamadas a métodos y a través de las referencias que un objeto posee de otros. Sin embargo, es habitual que un determinado método devuelva un null en vez de una referencia a un objeto. Esta referencia null puede ser un problema ya que nos obliga en el código hacer una comprobación antes de poder llamarlo. Si un método devuelve un null puede dar como resultado un <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/NullPointerException.html">NullPointerException</a> en otra parte de la aplicación en donde se intente usar esa referencia y no se haga la comprobación.</p>"
 }
   </script>
   

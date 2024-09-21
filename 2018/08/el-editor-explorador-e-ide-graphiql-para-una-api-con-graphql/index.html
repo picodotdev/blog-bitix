@@ -6,8 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="Hace ya un tiempo escribí una serie de artículos sobre GraphQL para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con GraphQL usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.
-Uno de esas posibilidades de GraphQL es la herramienta GraphiQL que es un editor interactivo para construir consultas y explorar la API. &hellip;">
+  <meta name="description" content="
+
+
+Hace ya un tiempo escribí una serie de artículos sobre GraphQL para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con GraphQL usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.
+Uno de esas posibilidades de GraphQL es la herramienta GraphiQL que es un editor interactivo para construir consultas y explorar la API. Una de sus mayores ventajas es que ofrece asistencia contextual y proporciona mensajes de error en caso de que la sintaxis de la consulta sea errónea. En los artículos que escribí con anterioridad los ejemplos los hice usando el comando curl. Ahora que he visto y aprendido algunas pocas cosas más de GraphQL en este artículo explico como usar la herramienta GraphiQL como alternativa a curl. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>El editor, explorador e IDE GraphiQL para una API con GraphQL</title>
@@ -32,8 +35,11 @@ Uno de esas posibilidades de GraphQL es la herramienta GraphiQL que es un editor
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="Hace ya un tiempo escribí una serie de artículos sobre GraphQL para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con GraphQL usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.
-Uno de esas posibilidades de GraphQL es la herramienta GraphiQL que es un editor interactivo para construir consultas y explorar la API. &hellip;">
+<meta property="og:description" content="
+
+
+Hace ya un tiempo escribí una serie de artículos sobre GraphQL para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con GraphQL usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.
+Uno de esas posibilidades de GraphQL es la herramienta GraphiQL que es un editor interactivo para construir consultas y explorar la API. Una de sus mayores ventajas es que ofrece asistencia contextual y proporciona mensajes de error en caso de que la sintaxis de la consulta sea errónea. En los artículos que escribí con anterioridad los ejemplos los hice usando el comando curl. Ahora que he visto y aprendido algunas pocas cosas más de GraphQL en este artículo explico como usar la herramienta GraphiQL como alternativa a curl. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -41,8 +47,11 @@ Uno de esas posibilidades de GraphQL es la herramienta GraphiQL que es un editor
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="El editor, explorador e IDE GraphiQL para una API con GraphQL">
-<meta name="twitter:description" content="Hace ya un tiempo escribí una serie de artículos sobre GraphQL para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con GraphQL usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.
-Uno de esas posibilidades de GraphQL es la herramienta GraphiQL que es un editor interactivo para construir consultas y explorar la API. &hellip;">
+<meta name="twitter:description" content="
+
+
+Hace ya un tiempo escribí una serie de artículos sobre GraphQL para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con GraphQL usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.
+Uno de esas posibilidades de GraphQL es la herramienta GraphiQL que es un editor interactivo para construir consultas y explorar la API. Una de sus mayores ventajas es que ofrece asistencia contextual y proporciona mensajes de error en caso de que la sintaxis de la consulta sea errónea. En los artículos que escribí con anterioridad los ejemplos los hice usando el comando curl. Ahora que he visto y aprendido algunas pocas cosas más de GraphQL en este artículo explico como usar la herramienta GraphiQL como alternativa a curl. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -80,8 +89,11 @@ Uno de esas posibilidades de GraphQL es la herramienta GraphiQL que es un editor
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "Hace ya un tiempo escribí una serie de artículos sobre GraphQL para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con GraphQL usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.
-Uno de esas posibilidades de GraphQL es la herramienta GraphiQL que es un editor interactivo para construir consultas y explorar la API."
+    "description": "<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+</div>
+<p>Hace ya un tiempo escribí una <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">serie de artículos sobre GraphQL</a> para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con <a href="https://graphql.org/">GraphQL</a> usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.</p>
+<p>Uno de esas posibilidades de GraphQL es la herramienta <a href="https://github.com/graphql/graphiql">GraphiQL</a> que es un editor interactivo para construir consultas y explorar la API. Una de sus mayores ventajas es que ofrece asistencia contextual y proporciona mensajes de error en caso de que la sintaxis de la consulta sea errónea. En los artículos que escribí con anterioridad los ejemplos los hice usando el comando <em>curl</em>. Ahora que he visto y aprendido algunas pocas cosas más de GraphQL en este artículo explico como usar la herramienta GraphiQL como alternativa a <em>curl</em>.</p>"
 }
   </script>
   

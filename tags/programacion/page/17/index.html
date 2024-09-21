@@ -486,7 +486,13 @@
         </span>
         <p>
           
-            Erróneamente se sigue pensado que Java es un lenguaje lento en ejecución, en las primeras versiones era cierto pero hoy la realidad es que con las mejoras introducidas en cada versión de Java y la máquina virtual el rendimiento actual es comparable a C y C++. En la programación de juegos y 3D gran parte del proceso de representación gráfica se ha descargado de la CPU a las cada vez más potentes tarjetas gráficas, la potencia de estas GPU son las que determinan la capacidad de proceso gráfico y la calidad gráfica de los juegos.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/jmonkeyengine.webp" width="200" height="160" alt="jMonkeyEngine" title="jMonkeyEngine" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>Erróneamente se sigue pensado que Java es un lenguaje lento en ejecución, en las primeras versiones era cierto pero hoy la realidad es que con las mejoras introducidas en cada versión de Java y la máquina virtual el rendimiento actual es comparable a C y C++. En la programación de juegos y 3D gran parte del proceso de representación gráfica se ha descargado de la CPU a las cada vez más potentes tarjetas gráficas, la potencia de estas GPU son las que determinan la capacidad de proceso gráfico y la calidad gráfica de los juegos.</p>
           
           <br>
           <a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/">Continuar leyendo...</a>
@@ -510,7 +516,10 @@
         </span>
         <p>
           
-            Hace un tiempo tuve necesidad de generar cierto contenido sobre varios writers, la necesidad en concreto era generar un archivo xml en disco y al mismo tiempo el mismo contenido para un correo electrónico. Para no escribir lo mismo en dos Writer diferentes la solución fue crear un writer y este fuese el que escribiese el contenido que se le enviaba sobre varios writers. En la API de Java no hay una clase específica que haga esto pero es muy sencillo hacer una implementación que lo haga, esto va a ser lo que explicaré en el siguiente artículo.
+            <div class="logotypes"> 
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>Hace un tiempo tuve necesidad de generar cierto contenido sobre varios writers, la necesidad en concreto era generar un archivo xml en disco y al mismo tiempo el mismo contenido para un correo electrónico. Para no escribir lo mismo en dos <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html">Writer</a> diferentes la solución fue crear un writer y este fuese el que escribiese el contenido que se le enviaba sobre varios writers. En la API de Java no hay una clase específica que haga esto pero es muy sencillo hacer una implementación que lo haga, esto va a ser lo que explicaré en el siguiente artículo.</p>
           
           <br>
           <a href="/blog-bitix/2015/04/escribir-en-varios-writer-a-la-vez/">Continuar leyendo...</a>
@@ -536,7 +545,7 @@
         </span>
         <p>
           
-            Usar un protocolo seguro garantiza de que los datos intercambiados entre el cliente y el servidor no son leídos ni modificados por una tercera parte además de verificar que la comunicación se está realizando entre las partes que dicen ser. Para usar un protocolo seguro como SSL/TLS debemos disponer de con certificado, con OpenSSL podemos generar y convertirlo al formato que deseemos, sin embargo, para que el usuario tenga garantía de que el certificado es válido este se debe estar firmado por una autoridad de certificación (CA) en la que confíe, generalmente con una de las autoridades de certificación cuyos certificados están preinstalados en el navegador web (en Firefox podemos verlos en Preferencias&gt; Avanzado&gt; Certificados&gt; Ver certificados), los certificados autofirmados son útiles para hacer pruebas pero no son válidos para los usuarios.
+            <p>Usar un protocolo seguro garantiza de que los datos intercambiados entre el cliente y el servidor no son leídos ni modificados por una tercera parte además de verificar que la comunicación se está realizando entre las partes que dicen ser. Para usar un <a href="https://es.wikipedia.org/wiki/Transport_Layer_Security">protocolo seguro como SSL/TLS</a> debemos disponer de con certificado, <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">con OpenSSL podemos generar y convertirlo al formato que deseemos</a>, sin embargo, para que el usuario tenga garantía de que el certificado es válido este se debe estar firmado por una <a href="https://es.wikipedia.org/wiki/Autoridad_de_certificaci%C3%B3n">autoridad de certificación</a> (CA) en la que confíe, generalmente con una de las autoridades de certificación cuyos certificados están preinstalados en el navegador web (en Firefox podemos verlos en <em>Preferencias&gt; Avanzado&gt; Certificados&gt; Ver certificados</em>), los certificados autofirmados son útiles para hacer pruebas pero no son válidos para los usuarios. En este artículo comentaré que tipos de certificados hay y donde podemos obtener o comprar un certificado digital firmado por una CA que sea de confianza para el usuario.</p>
           
           <br>
           <a href="/blog-bitix/2015/04/certificado-ssl-de-empresa-wildcard-y-de-validacion-extendida/">Continuar leyendo...</a>

@@ -6,8 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="El framework basado en componentes Apache Tapestry incorpora una amplia colección de componentes que nos bastarán en la mayoría de casos que necesitemos. Para los casos en que deseemos un componente con un comportamiento específico podemos construir uno completamente nuevo basado en otros existentes incluyendo los propios nuestros, de una librería o incluidos en Tapestry.
-En Tapestry hay múltiples componentes con los que construir formularios para que el usuario pueda introducir datos, ser enviados por el navegador y procesados en el servidor. &hellip;">
+  <meta name="description" content="
+
+
+
+
+
+El framework basado en componentes Apache Tapestry incorpora una amplia colección de componentes que nos bastarán en la mayoría de casos que necesitemos. Para los casos en que deseemos un componente con un comportamiento específico podemos construir uno completamente nuevo basado en otros existentes incluyendo los propios nuestros, de una librería o incluidos en Tapestry.
+En Tapestry hay múltiples componentes con los que construir formularios para que el usuario pueda introducir datos, ser enviados por el navegador y procesados en el servidor. Hay componentes de formulario desde checkboxes, radios, select, inputs, &hellip; con soporte para HTML 5. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Componente select múltiple en Apache Tapestry</title>
@@ -32,8 +38,14 @@ En Tapestry hay múltiples componentes con los que construir formularios para qu
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-tapestry-icon-light-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="El framework basado en componentes Apache Tapestry incorpora una amplia colección de componentes que nos bastarán en la mayoría de casos que necesitemos. Para los casos en que deseemos un componente con un comportamiento específico podemos construir uno completamente nuevo basado en otros existentes incluyendo los propios nuestros, de una librería o incluidos en Tapestry.
-En Tapestry hay múltiples componentes con los que construir formularios para que el usuario pueda introducir datos, ser enviados por el navegador y procesados en el servidor. &hellip;">
+<meta property="og:description" content="
+
+
+
+
+
+El framework basado en componentes Apache Tapestry incorpora una amplia colección de componentes que nos bastarán en la mayoría de casos que necesitemos. Para los casos en que deseemos un componente con un comportamiento específico podemos construir uno completamente nuevo basado en otros existentes incluyendo los propios nuestros, de una librería o incluidos en Tapestry.
+En Tapestry hay múltiples componentes con los que construir formularios para que el usuario pueda introducir datos, ser enviados por el navegador y procesados en el servidor. Hay componentes de formulario desde checkboxes, radios, select, inputs, &hellip; con soporte para HTML 5. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -41,8 +53,14 @@ En Tapestry hay múltiples componentes con los que construir formularios para qu
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Componente select múltiple en Apache Tapestry">
-<meta name="twitter:description" content="El framework basado en componentes Apache Tapestry incorpora una amplia colección de componentes que nos bastarán en la mayoría de casos que necesitemos. Para los casos en que deseemos un componente con un comportamiento específico podemos construir uno completamente nuevo basado en otros existentes incluyendo los propios nuestros, de una librería o incluidos en Tapestry.
-En Tapestry hay múltiples componentes con los que construir formularios para que el usuario pueda introducir datos, ser enviados por el navegador y procesados en el servidor. &hellip;">
+<meta name="twitter:description" content="
+
+
+
+
+
+El framework basado en componentes Apache Tapestry incorpora una amplia colección de componentes que nos bastarán en la mayoría de casos que necesitemos. Para los casos en que deseemos un componente con un comportamiento específico podemos construir uno completamente nuevo basado en otros existentes incluyendo los propios nuestros, de una librería o incluidos en Tapestry.
+En Tapestry hay múltiples componentes con los que construir formularios para que el usuario pueda introducir datos, ser enviados por el navegador y procesados en el servidor. Hay componentes de formulario desde checkboxes, radios, select, inputs, &hellip; con soporte para HTML 5. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -80,8 +98,14 @@ En Tapestry hay múltiples componentes con los que construir formularios para qu
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "El framework basado en componentes Apache Tapestry incorpora una amplia colección de componentes que nos bastarán en la mayoría de casos que necesitemos. Para los casos en que deseemos un componente con un comportamiento específico podemos construir uno completamente nuevo basado en otros existentes incluyendo los propios nuestros, de una librería o incluidos en Tapestry.
-En Tapestry hay múltiples componentes con los que construir formularios para que el usuario pueda introducir datos, ser enviados por el navegador y procesados en el servidor."
+    "description": "<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>El <em>framework</em> basado en componentes Apache Tapestry incorpora una amplia <a href="http://tapestry.apache.org/component-reference.html">colección de componentes</a> que nos bastarán en la mayoría de casos que necesitemos. Para los casos en que deseemos un componente con un comportamiento específico podemos construir uno completamente nuevo basado en otros existentes incluyendo los propios nuestros, de una librería o incluidos en Tapestry.</p>
+<p>En Tapestry hay múltiples componentes con los que construir formularios para que el usuario pueda introducir datos, ser enviados por el navegador y procesados en el servidor. Hay componentes de formulario desde <em>checkboxes</em>, <em>radios</em>, <em>select</em>, <em>inputs</em>, &hellip; con soporte para <abbr title="HyperText Markup Language">HTML</abbr> 5.</p>"
 }
   </script>
   

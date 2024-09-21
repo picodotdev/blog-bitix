@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta name="generator" content="Hugo 0.133.1">
+	<meta name="generator" content="Hugo 0.134.3">
   <meta name="base" href="/blog-bitix/">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -192,6 +192,34 @@
 <ul class="list-unstyled">
     <li>
       <article>
+        <h1><a href="/blog-bitix/2018/09/el-comando-fork-bomb-explicado/">El comando fork bomb explicado</a></h1>
+        <span class="information">
+          <time>16/09/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false&#34;"></p>
+</div>
+<p>El siguiente aparente, gracioso e inocente conjunto de caracteres que parecen una colección de varios extraños <em>emojis</em> es un comando que si se ejecuta en una terminal de GNU/Linux crea gran cantidad de procesos de forma continua hasta que los recursos del sistema se agotan causando que sea inusable haya que reiniciarlo generando los problemas que de ello se deriven si el reinicio es forzado, este comando es el comando <a href="https://en.wikipedia.org/wiki/Fork_bomb">fork bomb</a> para el intérprete de comandos <a href="https://es.wikipedia.org/wiki/Bash">bash</a>.</p>
+          
+          <br>
+          <a href="/blog-bitix/2018/09/el-comando-fork-bomb-explicado/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2018/09/el-editor-de-archivos-e-ide-minimalista-visual-studio-code/">El editor de archivos e IDE minimalista Visual Studio Code</a></h1>
         <span class="information">
           <time>09/09/2018</time>
@@ -207,7 +235,10 @@
         </span>
         <p>
           
-            Para trabajar y desde que empecé a usar un generador estático para el blog primero con Octopress y luego con Hugo he necesitado un editor de archivos de texto y de código fuente. Uno de los más conocidos es Sublime Text con numerosas funcionalidades y atajos de teclado para realizar muchas acciones únicamente pulsado unas pocas teclas y sin necesidad de ratón en gran medida. Sublime Text está muy bien pero no es gratuito por lo que después de un tiempo empecé a usar Atom, sin embargo, al estar este basado en Electron que en realidad es un navegador Chrome y JavaScript con Node su rendimiento se nota pobre.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/visual-studio-code.svg" width="200" height="199" alt="Visual Studio Code" title="Visual Studio Code" class="" loading="false&#34;"></p>
+</div>
+<p>Para trabajar y desde que empecé a usar un generador estático para el blog primero con <a href="http://octopress.org/">Octopress</a> y luego con <a href="https://gohugo.io/">Hugo</a> he necesitado un editor de archivos de texto y de código fuente. Uno de los más conocidos es <a href="https://www.sublimetext.com/">Sublime Text</a> con numerosas funcionalidades y atajos de teclado para realizar muchas acciones únicamente pulsado unas pocas teclas y sin necesidad de ratón en gran medida. Sublime Text está muy bien pero no es gratuito por lo que después de un tiempo empecé a usar <a href="https://atom.io/">Atom</a>, sin embargo, al estar este basado en <a href="https://electronjs.org/">Electron</a> que en realidad es un navegador <a href="https://www.google.es/chrome/browser/desktop/">Chrome</a> y <a href="https://es.wikipedia.org/wiki/JavaScript">JavaScript</a> con <a href="https://nodejs.org/en/">Node</a> su rendimiento se nota pobre. Buscando más alternativas la gente mencionaba bastante a menudo <a href="https://code.visualstudio.com/">Visual Studio Code</a>, lo probé, es el que más me ha gustado de todos y el que uso ahora.</p>
           
           <br>
           <a href="/blog-bitix/2018/09/el-editor-de-archivos-e-ide-minimalista-visual-studio-code/">Continuar leyendo...</a>
@@ -233,7 +264,13 @@
         </span>
         <p>
           
-            Los microservicios en una aplicación con una arquitectura de microservicios son efímeros, se crean, se escalan para atender picos de mayor demanda, pueden desaparecer por problemas de la red de comunicaciones que no es fiable y volverse a crear en una ubicación diferente. Por esta naturaleza efímera es necesario un servicio con el cual los clientes de los microservicios puedan encontrarlos y que los microservicios utilizan para registrarse cuando se inician.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>Los microservicios en una aplicación con una arquitectura de microservicios son efímeros, se crean, se escalan para atender picos de mayor demanda, pueden desaparecer por problemas de la red de comunicaciones que no es fiable y volverse a crear en una ubicación diferente. Por esta naturaleza efímera es necesario un servicio con el cual los clientes de los microservicios puedan encontrarlos y que los microservicios utilizan para registrarse cuando se inician.</p>
           
           <br>
           <a href="/blog-bitix/2018/09/registro-y-descubrimiento-de-servicios-con-spring-cloud-netflix/">Continuar leyendo...</a>
@@ -257,8 +294,14 @@
         </span>
         <p>
           
-            La arquitectura de las aplicaciones está cambiando en lo que era lo habitual hace no tanto. Con el desarrollo de las redes de comunicación entre computadoras tanto en una red local con ethernet como en internet con el protocolo TCP/IP se desarrollaron las primeras aplicaciones cliente/servidor como es un servidor web y un navegador o una base de datos y una aplicación.
-A las páginas HTML de los servidores web, estáticas hasta entonces, se les añadió lógica de servidor para procesar datos y generar el contenido dinámicamente, se crearon las aplicaciones web ejecutadas en el servidor en un principio en lo que ahora denominamos monolitos en forma de código espagueti o más estructurado con los denominados frameworks del lenguaje de programación de turno empleando el modelo de tres capas formadas por la presentación, lógica y base de datos.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>La arquitectura de las aplicaciones está cambiando en lo que era lo habitual hace no tanto. Con el desarrollo de las redes de comunicación entre computadoras tanto en una red local con ethernet como en internet con el protocolo TCP/IP se desarrollaron las primeras aplicaciones cliente/servidor como es un servidor web y un navegador o una base de datos y una aplicación.</p>
+<p>A las páginas HTML de los servidores web, estáticas hasta entonces, se les añadió lógica de servidor para procesar datos y generar el contenido dinámicamente, se crearon las aplicaciones web ejecutadas en el servidor en un principio en lo que ahora denominamos monolitos en forma de <a href="https://es.wikipedia.org/wiki/C%C3%B3digo_espagueti">código espagueti</a> o más estructurado con los denominados <em>frameworks</em> del lenguaje de programación de turno empleando el <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_por_capas">modelo de tres capas</a> formadas por la presentación, lógica y base de datos.</p>
           
           <br>
           <a href="/blog-bitix/2018/08/aplicaciones-basadas-en-microservicios/">Continuar leyendo...</a>
@@ -282,7 +325,10 @@ A las páginas HTML de los servidores web, estáticas hasta entonces, se les añ
         </span>
         <p>
           
-            Los fragmentos en el contexto de GraphQL pueden ser de dos tipos, definidos previamente o definidos en linea. Los primeros permiten simplificar las consultas definiendo en un bloque una colección de datos a recuperar si tener que indicarlos explícitamente individualmente, lo que resulta útil para no repetir el mimo grupo de datos si se utiliza en varias consultas diferentes. Los fragmentos en línea permiten recuperar unos datos u otros en función del tipo de la instancia de la cual se quieren recuperar.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+</div>
+<p>Los fragmentos en el contexto de <a href="https://graphql.org/">GraphQL</a> pueden ser de dos tipos, definidos previamente o definidos en linea. Los primeros permiten simplificar las consultas definiendo en un bloque una colección de datos a recuperar si tener que indicarlos explícitamente individualmente, lo que resulta útil para no repetir el mimo grupo de datos si se utiliza en varias consultas diferentes. Los fragmentos en línea permiten recuperar unos datos u otros en función del tipo de la instancia de la cual se quieren recuperar.</p>
           
           <br>
           <a href="/blog-bitix/2018/08/los-fragmentos-en-graphql/">Continuar leyendo...</a>
@@ -306,9 +352,18 @@ A las páginas HTML de los servidores web, estáticas hasta entonces, se les añ
         </span>
         <p>
           
-            En GraphQL construyendo la consulta adecuada se recuperan exclusivamente los datos solicitados.
-Por ejemplo, si de un libro solo se requieren las propiedades el id, title y date de entre todas las que tienen la consulta sería en este caso la siguiente para una consulta que devuelve los datos de un conjunto de libros.
-&#10;&#10;1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;&#10;&#10;query Books {&#10; books {&#10;&nbsp;&nbsp;&nbsp;&nbsp;id&#10;&nbsp;&nbsp;&nbsp;&nbsp;title&#10;&nbsp;&nbsp;&nbsp;&nbsp;date&#10; }&#10;}&#10;&#10; query-1.graphql Si se desea recuperar solo el id y title sin el date la consulta debe ser diferente.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+</div>
+<p>En <a href="https://graphql.org/">GraphQL</a> construyendo la consulta adecuada se recuperan exclusivamente los datos solicitados.</p>
+<p>Por ejemplo, si de un libro solo se requieren las propiedades el <em>id</em>, <em>title</em> y <em>date</em> de entre todas las que tienen la consulta sería en este caso la siguiente para una consulta que devuelve los datos de un conjunto de libros.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-graphql" data-lang="graphql"><span class="line"><span class="cl"><span class="kd">query</span><span class="w"> </span><span class="nc">Books</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="py">books</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">id</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">title</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">date</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>query-1.graphql</span>
+    </div>
+</div>
+<p>Si se desea recuperar solo el <em>id</em> y <em>title</em> sin el <em>date</em> la consulta debe ser diferente.</p>
           
           <br>
           <a href="/blog-bitix/2018/08/usando-directivas-en-graphql/">Continuar leyendo...</a>
@@ -332,8 +387,11 @@ Por ejemplo, si de un libro solo se requieren las propiedades el id, title y dat
         </span>
         <p>
           
-            Hace ya un tiempo escribí una serie de artículos sobre GraphQL para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con GraphQL usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.
-Uno de esas posibilidades de GraphQL es la herramienta GraphiQL que es un editor interactivo para construir consultas y explorar la API.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+</div>
+<p>Hace ya un tiempo escribí una <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">serie de artículos sobre GraphQL</a> para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con <a href="https://graphql.org/">GraphQL</a> usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.</p>
+<p>Uno de esas posibilidades de GraphQL es la herramienta <a href="https://github.com/graphql/graphiql">GraphiQL</a> que es un editor interactivo para construir consultas y explorar la API. Una de sus mayores ventajas es que ofrece asistencia contextual y proporciona mensajes de error en caso de que la sintaxis de la consulta sea errónea. En los artículos que escribí con anterioridad los ejemplos los hice usando el comando <em>curl</em>. Ahora que he visto y aprendido algunas pocas cosas más de GraphQL en este artículo explico como usar la herramienta GraphiQL como alternativa a <em>curl</em>.</p>
           
           <br>
           <a href="/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/">Continuar leyendo...</a>
@@ -355,7 +413,7 @@ Uno de esas posibilidades de GraphQL es la herramienta GraphiQL que es un editor
         </span>
         <p>
           
-            El sector de los videojuegos es una industria que mueve miles de millones de euros en todo el mundo mayor que sectores con más historia como la industria del cine, los juegos triple A poseen inversiones y desarrollos cinematográficos. Los computadores y aparatos electrónicos están muy relacionados con los videojuegos ya desde hace mucho tiempo desde que aparecieran en 1947 el primer videojuego. En la actualidad los videojuegos son unos programas informáticos de los que en la computación personal más de cómputo requieren a los ordenadores, una buena parte de la presión para mejorar los computadores proviene de los videojuegos con tarjetas gráficas muy potentes, cantidades de memoria consideradas enormes hasta hace una década, procesadores más potentes en la guerra actual por añadir más núcleos a las CPU.
+            <p>El sector de los videojuegos es una industria que mueve miles de millones de euros en todo el mundo mayor que sectores con más historia como la industria del cine, los juegos triple A poseen inversiones y desarrollos cinematográficos. Los computadores y aparatos electrónicos están muy relacionados con los videojuegos ya desde hace mucho tiempo desde que aparecieran en 1947 el <a href="https://es.wikipedia.org/wiki/Primer_videojuego#1947:_Dispositivo_de_Entretenimiento_de_Tubos_de_Rayos_Cat%C3%B3dicos">primer videojuego</a>. En la actualidad los videojuegos son unos programas informáticos de los que en la computación personal más de cómputo requieren a los ordenadores, una buena parte de la presión para mejorar los computadores proviene de los videojuegos con tarjetas gráficas muy potentes, cantidades de memoria consideradas enormes hasta hace una década, procesadores más potentes en <a href="https://picodotdev.github.io/blog-bitix/2018/08/despues-de-la-guerra-del-numero-de-nucleos-en-los-procesadores-vendra-la-guerra-de-la-computacion-heterogenea-o-manycores/">la guerra actual por añadir más núcleos a las CPU</a>. Recientemente los sistemas operativos y entornos de escritorio han empezado a aprovechar de las capacidades de las tarjetas gráficas o GPU para proporcionar efectos visuales y acelerar algunas operaciones de cálculo más eficientemente que en la CPU.</p>
           
           <br>
           <a href="/blog-bitix/2018/08/sobre-las-competiciones-deportivas-de-videojuegos-o-esports/">Continuar leyendo...</a>
@@ -379,8 +437,11 @@ Uno de esas posibilidades de GraphQL es la herramienta GraphiQL que es un editor
         </span>
         <p>
           
-            Usar una librería como Log4j es probablemente indispensable en una aplicación para obtener información de su funcionamiento, mensajes informativos, advertencias, errores o excepciones que se están produciendo o se han producido. Los mensajes que se emiten contienen información útil para monitorización en tiempo real o su inspección pasado un tiempo.
-En cada punto de la aplicación en la que se desea emitir una traza es necesario proporcionar el formato del mensaje y sus parámetros extraídos de las propiedades de los objetos con la intención obtener una traza con los valores de determinadas propiedades.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>Usar una librería como <a href="https://logging.apache.org/log4j/2.x/">Log4j</a> es probablemente indispensable en una aplicación para obtener información de su funcionamiento, mensajes informativos, advertencias, errores o excepciones que se están produciendo o se han producido. Los mensajes que se emiten contienen información útil para monitorización en tiempo real o su inspección pasado un tiempo.</p>
+<p>En cada punto de la aplicación en la que se desea emitir una traza es necesario proporcionar el formato del mensaje y sus parámetros extraídos de las propiedades de los objetos con la intención obtener una traza con los valores de determinadas propiedades. Si es habitual emitir una traza de ciertas clases para evitar poner la misma traza en diferentes puntos de la aplicación Log4j posee una funcionalidad para transformar en objeto en un mensaje personalizado como se comenta en su <a href="https://logging.apache.org/log4j/2.x/manual/messages.html">documentación para mensajes</a>.</p>
           
           <br>
           <a href="/blog-bitix/2018/08/personalizar-el-mensaje-emitido-de-un-objeto-en-log4j/">Continuar leyendo...</a>
@@ -404,8 +465,14 @@ En cada punto de la aplicación en la que se desea emitir una traza es necesario
         </span>
         <p>
           
-            Hace alguna década los procesadores eran de un solo núcleo y hasta la aparición de Windows NT y GNU/Linux los sistemas operativos no se aprovechaban plenamente las capacidades de multiprogramación de los procesadores que ya se incluían desde los Intel 386.
-La mejora de rendimiento en los procesadores se conseguía a base de mejores diseños en los procesadores como la segmentación, superescalaridad, caches de datos e caches de instrucciones más grandes que era posible debido también en parte al mayor número de transistores que permitían incluir los procesos de litografía de tamaño más reducidos para los transistores, también por la adición de nuevas instrucciones en el conjunto de la arquitectura o ISA, o mayor número de registros y de mayor tamaño entre otras cosas.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/intel.svg" width="300" height="199" alt="Intel" title="Intel" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/amd.svg" width="300" height="71" alt="AMD" title="AMD" class="" loading="false&#34;"></p>
+</div>
+<p>Hace alguna década los procesadores eran de un solo núcleo y hasta la aparición de Windows NT y GNU/Linux los sistemas operativos no se aprovechaban plenamente las capacidades de multiprogramación de los procesadores que ya se incluían desde los <a href="https://es.wikipedia.org/wiki/Intel_80386">Intel 386</a>.</p>
+<p>La mejora de rendimiento en los procesadores se conseguía a base de mejores diseños en los procesadores como la segmentación, superescalaridad, caches de datos e caches de instrucciones más grandes que era posible debido también en parte al mayor número de transistores que permitían incluir los procesos de litografía de tamaño más reducidos para los transistores, también por la adición de nuevas <a href="https://en.wikipedia.org/wiki/Instruction_set_architecture">instrucciones en el conjunto de la arquitectura</a> o ISA, o mayor número de registros y de mayor tamaño entre otras cosas.</p>
           
           <br>
           <a href="/blog-bitix/2018/08/despues-de-la-guerra-del-numero-de-nucleos-en-los-procesadores-vendra-la-guerra-de-la-computacion-heterogenea-o-manycores/">Continuar leyendo...</a>
@@ -429,7 +496,10 @@ La mejora de rendimiento en los procesadores se conseguía a base de mejores dis
         </span>
         <p>
           
-            En una aplicación web hay múltiples usuarios realizando peticiones al servidor de modo que al usar una librería de logging como Log4j las trazas de información de los diferentes usuarios aparecerán intercaladas. En esta maraña de trazas resulta difícil obtener la secuencia de trazas de una petición siendo la diferencia entre descubrir la causa de un error o pasar varias horas revisando trazas sin encontrar nada significativo en la inmensa cantidad de ellas relativas a otras peticiones.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>En una aplicación web hay múltiples usuarios realizando peticiones al servidor de modo que al usar una librería de <em>logging</em> como <a href="https://logging.apache.org/log4j/2.x/">Log4j</a> las trazas de información de los diferentes usuarios aparecerán intercaladas. En esta maraña de trazas resulta difícil obtener la secuencia de trazas de una petición siendo la diferencia entre descubrir la causa de un error o pasar varias horas revisando trazas sin encontrar nada significativo en la inmensa cantidad de ellas relativas a otras peticiones. La librería Log4j proporciona un mecanismo para seguir la secuencia completa de trazas de una petición con el <a href="https://logging.apache.org/log4j/2.x/manual/thread-context.html">concepto denominado <em>fish tagging</em></a>.</p>
           
           <br>
           <a href="/blog-bitix/2018/07/identificar-todas-las-trazas-de-una-peticion-en-una-aplicacion-web-java-con-log4j/">Continuar leyendo...</a>
@@ -477,9 +547,24 @@ La mejora de rendimiento en los procesadores se conseguía a base de mejores dis
         </span>
         <p>
           
-            La librería Log4j es una librería para emitir las trazas de depuración e información indispensables cuando son requeridas en una aplicación Java. Es la librería sucesora de logback y aunque no es imprescindible suele usarse en combinación con slf4j ya que esta permite cambiar de librería de logging subyacente sin hacer ningún cambio en la aplicación.
-Algunas de las nuevas características de log4j son:
-Rendimiento mejorado usando funcionalidades asíncronas en los loggers.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>La librería <a href="https://logging.apache.org/log4j/2.x/">Log4j</a> es una librería para emitir las trazas de depuración e información indispensables cuando son requeridas en una aplicación Java. Es la librería sucesora de <a href="https://logback.qos.ch/">logback</a> y aunque no es imprescindible suele usarse en combinación con <a href="https://www.slf4j.org/">slf4j</a> ya que esta permite cambiar de librería de <em>logging</em> subyacente sin hacer ningún cambio en la aplicación.</p>
+<p>Algunas de las nuevas características de log4j son:</p>
+<ul>
+<li>Rendimiento mejorado usando funcionalidades asíncronas en los <em>loggers</em>.</li>
+<li>Soporte para múltiples APIs como SL4J, Commons Logging y <em>java.util.logging</em> (JUL).</li>
+<li>Sin encadenamientos a la librería al poder en cualquier momento usar cualquier librería compatible con SLF4J.</li>
+<li>Recarga automática de la configuración sin perder ninguna traza.</li>
+<li>Filtrado avanzado basado en datos de contexto, marcadores, expresiones regulares y otros componentes.</li>
+<li>Arquitectura basada en <em>plugins</em>.</li>
+<li>Soporte de propiedades definidas en archivos de configuración, propiedades del sistema, variables de entorno, el mapa <a href="https://logging.apache.org/log4j/2.0/log4j-api/apidocs/org/apache/logging/log4j/ThreadContext.html">ThreadContext</a> y datos del evento.</li>
+<li>Soporte de <em>lambdas</em> de Java 8. Las expresiones lambdas no se evalúan si no está activado el nivel de log consiguiendo el mismo efecto que con una sentencia <em>if</em> pero en menos código.</li>
+<li>Niveles de <em>log</em> personalizados fácilmente definibles sin necesidad de realizar subclases.</li>
+<li>Recolección de basura reducida lo que evita presión al recolector de basura y mejora el rendimiento de las aplicaciones.</li>
+</ul>
+<p>Por defecto, la <a href="https://logging.apache.org/log4j/2.x/manual/configuration.html">configuración de Log4j</a> se describe en un archivo <em>xml</em> aunque también soporta definirlo en un formato menos verboso como <em>yaml</em>. La siguiente aplicación de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> al iniciarse emite en la consola varios mensajes usando log4j2.</p>
           
           <br>
           <a href="/blog-bitix/2018/07/la-libreria-log4j-para-emitir-trazas-en-aplicaciones-java/">Continuar leyendo...</a>
@@ -499,7 +584,7 @@ Rendimiento mejorado usando funcionalidades asíncronas en los loggers.
         </span>
         <p>
           
-            Ya he escrito en un varios artículos relacionados comentando que estoy interesando en comprar un Intel NUC pero como lo que quiero aún no se comercializa la espera ya se me está haciendo muy larga, me estoy aburriendo un poco de impaciencia y para entretenerme mientras me ha dado por buscar NUCs en las principales páginas de venta entre particulares y de segunda mano como eBay, milanuncios y Wallapop. Por curiosidad a ver que precio tienen y si me resultaría atractivo comprar un NUC de una generación anterior en vez de la última que saldrá ya no a mucho tardar.
+            <p>Ya he escrito en un varios artículos relacionados comentando que estoy <a href="https://picodotdev.github.io/blog-bitix/2018/06/decidido-a-comprar-un-intel-nuc-entre-las-opciones-que-he-evaluado/">interesando en comprar un Intel NUC</a> pero como lo que quiero aún no se comercializa la espera ya se me está haciendo muy larga, me estoy aburriendo un poco de impaciencia y para entretenerme mientras me ha dado por buscar NUCs en las principales páginas de venta entre particulares y de segunda mano como <a href="https://www.ebay.es/">eBay</a>, <a href="https://www.milanuncios.com">milanuncios</a> y <a href="https://es.wallapop.com/">Wallapop</a>. Por curiosidad a ver que precio tienen y si me resultaría atractivo comprar un NUC de una generación anterior en vez de la última que saldrá ya no a mucho tardar.</p>
           
           <br>
           <a href="/blog-bitix/2018/07/sobre-la-venta-entre-particulares-de-ebay-milanuncios-y-wallapop/">Continuar leyendo...</a>
@@ -523,34 +608,16 @@ Rendimiento mejorado usando funcionalidades asíncronas en los loggers.
         </span>
         <p>
           
-            Las pruebas automatizados permiten comprobar que una aplicación se comporta de la manera esperada en los casos probados, creando pruebas automatizadas se evita hacer las aburridas y repetitivas pruebas manuales que consumen gran cantidad de tiempo. Hay diferentes categorías de pruebas: unitarias, de integración y las funcionales. Para las pruebas unitarias y de integración en la plataforma Java unas de las más populares herramientas son JUnit y Spock, para las pruebas funcionales están Selenium y la herramienta que explicaré en este artículo Geb que puede usarse junto con Spock haciendo que el código de los teses sea muy descriptivo.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/geb.webp" width="350" height="119" alt="Geb" title="Geb" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>Las pruebas automatizados permiten comprobar que una aplicación se comporta de la manera esperada en los casos probados, creando pruebas automatizadas se evita hacer las aburridas y repetitivas pruebas manuales que consumen gran cantidad de tiempo. Hay diferentes categorías de pruebas: unitarias, de integración y las funcionales. Para las pruebas unitarias y de integración en la plataforma Java unas de las más populares herramientas son <a href="https://junit.org/junit5/">JUnit</a> y <a href="https://code.google.com/p/spock/">Spock</a>, para las pruebas funcionales están <a href="https://docs.seleniumhq.org/">Selenium</a> y la herramienta que explicaré en este artículo <a href="https://gebish.org/">Geb</a> que puede usarse junto con Spock haciendo que el código de los teses sea muy descriptivo.</p>
           
           <br>
           <a href="/blog-bitix/2018/07/pruebas-funcionales-con-geb-en-una-aplicacion-web-java/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2018/07/que-es-un-sut-fake-stub-mock-y-spy-en-las-pruebas-con-un-ejemplo/">Qué es un SUT, fake, stub, mock y spy en las pruebas con un ejemplo</a></h1>
-        <span class="information">
-          <time>04/07/2018</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-          
-        </span>
-        <p>
-          
-            Las pruebas unitarias y de integración tratan de probar que el comportamiento del sujeto bajo prueba es el esperado. Este sujeto bajo prueba usará colaboradores que en las pruebas deben ser reemplazados por <em>fakes</em> para probar las condiciones deseadas del de sujeto bajo prueba. Dependiendo del comportamiento asignado al colaborador tenemos varios tipos: <em>stub</em>, <em>mock</em> o <em>spy</em>.
-          
-          <br>
-          <a href="/blog-bitix/2018/07/que-es-un-sut-fake-stub-mock-y-spy-en-las-pruebas-con-un-ejemplo/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
