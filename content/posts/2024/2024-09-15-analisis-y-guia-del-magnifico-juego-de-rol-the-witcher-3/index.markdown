@@ -102,7 +102,7 @@ Los personajes femeninos principales están empoderadas aunque en los NPCs tambi
     image3="image:the-witcher-3-personajes-3.webp" optionsthumb3="300x200" title3="Personajes"
     caption="Personajes" >}}
 
-### Expansiones Hearts of Store y Blood and Wine
+### Expansiones Hearts of Stone y Blood and Wine
 
 Cada una de las expansiones añaden unas 20 o 30 hora más de juego con nuevas historias no tan largas como la del juego principal pero que en mi caso he disfrutado incluso más que la del juego principal por estar más centrado en las misiones principales y secundarias que en contratos, tesoros e ir a localizaciones distralléndome.
 
@@ -110,7 +110,7 @@ Cada una de las expansiones añaden unas 20 o 30 hora más de juego con nuevas h
     gallery="true"
     image1="image:the-witcher-3-hearts-of-stone.webp" optionsthumb1="300x200" title1="Hearts of Stone"
     image2="image:the-witcher-3-blood-and-wine.webp" optionsthumb2="300x200" title2="Blood and Wine"
-    caption="Expansiones Hearts of Store y Blood and Wine" >}}
+    caption="Expansiones Hearts of Stone y Blood and Wine" >}}
 
 ### Diferentes finales del juego principal y expansiones
 
