@@ -175,7 +175,7 @@ Una vez abierta y activa la cuenta se proporciona el código IBAN que identifica
 
 {{% warning %}}
 
-Si este artículo te ha resultado interesante y te ha aclarado algunas dudas o descubierto algo nuevo para decidirme a abrir una cuenta en alguna de estas opciones te proporciono un enlace para beneficiarte de una ventaja en reducción de comisiones o económico de algunas de ellas.
+Si este artículo te ha resultado interesante y te ha aclarado algunas dudas o descubierto algo nuevo para decidirte a abrir una cuenta en alguna de estas opciones te proporciono un enlace para beneficiarte de una ventaja en reducción de comisiones o económico de algunas de ellas.
 
 * [Enlace de afiliado de Indexa Capital](https://indexacapital.com/t/yuzEjx) que proporciona 15000 € sin comisiones de gestión durante un año, que son unos 51 € de ahorro o más rentabilidad, a cada uno.
 * [Enlace de afiliado de MyInvestor](https://myinvestor.page.link/LqjiDGXnKYVRaRfd8) con el que iniciar la creación de la cuenta o el código de afiliado o plan amigo **4MV0S** con el que obtener 20 € en la cuenta, a cada uno.

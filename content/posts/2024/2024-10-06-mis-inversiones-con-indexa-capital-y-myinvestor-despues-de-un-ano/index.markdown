@@ -96,7 +96,7 @@ Fijándome ahora en la información de mi banco en el concepto «rentabilidad an
 
 En definitiva estoy muy descontento con mi banco tradicional por varios motivos, por su política comercial, productos de inversión que ofrecen, información que ofrecen de esos productos tanto previamente a la contratación de forma presencial con el gestor o comercial del banco como posteriormente a la contratación así como las comisiones cobradas e información expuesta reducida ni orientada a informar claramente a través de su web.
 
-A cualquier persona le recomendaría los libros anteriores, se informe mínimamente no solo en materia de inversión sino también fiscal, y con unos cuantos lustros laborales por delante empezar cuanto antes idealmente al mismo tiempo que se inicia la etapa laboral a invertir. Teniendo ahorros buscar opciones donde invertir fuera de su banco tradicional, hay varias opciones desde hace algunos años estas son solo algunas.
+A cualquier persona le recomendaría los libros anteriores, se informe mínimamente no solo en materia de inversión sino también fiscal, y con unos cuantos lustros laborales por delante empezar cuanto antes a invertir, idealmente al mismo tiempo que se inicia la etapa laboral. Teniendo ahorros buscar opciones donde invertir fuera de su banco tradicional, hay varias opciones desde hace varios años estas son solo algunas que permiten tener una alternativa a la banca tradicional.
 
 * [Indexa Capital][indexa-capital]: ofrece un fondo indexado con diferentes perfiles de riesgo. Diversificado y con unas comisiones más bajas que la gestión activa pero comparativamente con mejores rentabilidades. Tiene también lo que denominan un colchón de seguridad que no es más que un fondo monetario.
 * [MyInvestor][myinvestor]: es un banco en el sentido de que ofrece una cuenta corriente con la posibilidad de tener una tarjeta de débito o crédito sin comisiones. Está más dirigido a inversores y ofrece depósitos con unas rentabilidades interesantes y varios productos en una misma cuenta (depósitos, indexados, cartera ahorro/fondo monetario, construir una cartera de fondos a medida).
@@ -108,7 +108,7 @@ Y por estos motivos casi con total seguridad deshaga las inversiones de mi banco
 
 {{% warning %}}
 
-Si este artículo te ha resultado interesante y te ha aclarado algunas dudas o descubierto algo nuevo para decidirme a abrir una cuenta en alguna de estas opciones te proporciono un enlace para beneficiarte de una ventaja en reducción de comisiones o económico de algunas de ellas.
+Si este artículo te ha resultado interesante y te ha aclarado algunas dudas o descubierto algo nuevo para decidirte a abrir una cuenta en alguna de estas opciones te proporciono un enlace para beneficiarte de una ventaja en reducción de comisiones o económico de algunas de ellas.
 
 * [Enlace de afiliado de Indexa Capital](https://indexacapital.com/t/yuzEjx) que proporciona 15000 € sin comisiones de gestión durante un año, que son unos 51 € de ahorro o más rentabilidad, a cada uno.
 * [Enlace de afiliado de MyInvestor](https://myinvestor.page.link/LqjiDGXnKYVRaRfd8) con el que iniciar la creación de la cuenta o el código de afiliado o plan amigo **4MV0S** con el que obtener 20 € en la cuenta, a cada uno.
