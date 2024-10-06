@@ -20,18 +20,19 @@ summary: "En el año 2023 empecé a conocer los conceptos básicos de inversión
 
 En mi banco tradicional estoy muy descontento con las proposiciones de inversión que me han estado haciendo y con un trato tras una apariencia muy amable ofreciendo opciones de inversión pésimas, con costes altos y bajos rendimientos.
 
-Hace un año después de leer un par de libros muy básicos sobre finanzas personales e inversión decidí abrirme cuentas en [Index Capital][indexa-capital] y [MyInvestor][myinvestor]. La inversión es un tema que desconocía por completo hasta que alguien me proporcionó las referencias básicas de los siguiente libros con los que empezar a conocer los conceptos básicos sobre inversión, así como algunas entidades donde acceder a esas inversiones.
-
-* [Mejores alternativas de inversión que la ofrecida por la banca tradicional][blogbitix-689]
-
-Otra fuente de información han sido varios canales de YouTube dedicados a la inversión. Con esta información y según la situación personal, objetivos y psicología financiera en cuanto a la aversión al riesgo cada uno ha decidir qué opciones de inversión son las más adecuadas. Casi completamente seguro entre esas opciones de inversión las de la banca tradicional no ofrecen los mejores productos de los más grandes como [Banco Santander](https://www.bancosantander.es/), [BBVA](https://www.bbva.es/) y la [CaixaBank](https://www.caixabank.es/) a los más pequeños con fuerte presencia en regiones como [Sabadell](https://www.bancsabadell.com/), [Kutxabank](https://portal.kutxabank.es/), [Bankinter](https://www.bankinter.com/), [Unicaja](https://www.unicajabanco.es/) o [Abanca](https://www.abanca.com/) entre otros..
-
-Tras un año con Indexa Capital y MyInvestor hago una evaluación en varios aspectos ya con algo más de conocimiento.
+Hace un año después de leer un par de libros muy básicos sobre finanzas personales e inversión decidí abrirme cuentas en [Index Capital][indexa-capital] y [MyInvestor][myinvestor]. La inversión es un tema que desconocía por completo hasta que alguien me proporcionó las referencias básicas de los siguiente libros con los que empezar a conocer los conceptos básicos sobre inversión, así como algunas entidades donde acceder a esas inversiones. Otra fuente de información han sido varios canales de YouTube dedicados a la inversión.
 
 {{< amazon
     linkids="https://amzn.to/3SkNk6W,https://amzn.to/49dkoER,https://amzn.to/3Si4nXl"
     asins="B09VQ1PPKF,B08NTY588N,B08NZTZDHN"
     titles="Invierte con poco,Invierte en ti,Menos costes más rentabilidad" >}}
+
+
+Con esta información y según la situación personal, objetivos y psicología financiera en cuanto a la aversión al riesgo cada uno ha decidir qué opciones de inversión son las más adecuadas. Casi completamente seguro entre esas opciones de inversión las de la banca tradicional no ofrecen los mejores productos de los más grandes como [Banco Santander](https://www.bancosantander.es/), [BBVA](https://www.bbva.es/) y la [CaixaBank](https://www.caixabank.es/) a los más pequeños con fuerte presencia en regiones como [Sabadell](https://www.bancsabadell.com/), [Kutxabank](https://portal.kutxabank.es/), [Bankinter](https://www.bankinter.com/), [Unicaja](https://www.unicajabanco.es/) o [Abanca](https://www.abanca.com/) entre otros.
+
+Tras un año con Indexa Capital y MyInvestor hago una evaluación en varios aspectos ya con algo más de conocimiento.
+
+* [Mejores alternativas de inversión que la ofrecida por la banca tradicional][blogbitix-689]
 
 {{< tableofcontents >}}
 
