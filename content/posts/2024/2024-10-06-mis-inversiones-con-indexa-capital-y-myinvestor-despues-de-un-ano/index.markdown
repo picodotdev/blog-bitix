@@ -66,9 +66,9 @@ Indexa Capital ofrece una página de estadísticas muy detallada en la que eligi
     caption="Rentabilidad carteras del banco" >}}
 {{< image
     gallery="true"
-    image1="image:retabilidad-indexa-capital-cartera-1.png" optionsthumb1="300x200" title1="Rentabilidad acumulada Indexa Capital"
-    image2="image:retabilidad-indexa-capital-cartera-2.png" optionsthumb2="300x200" title2="Rentabilidad misma fecha de inicio que carteras del banco"
-    caption="Rentabilidad acumulada y misma fecha de inicio que en el banco de la cartera de Indexa Capital" >}}
+    image1="image:retabilidad-indexa-capital-cartera-1.webp" optionsthumb1="300x200" title1="Rentabilidad acumulada Indexa Capital"
+    image2="image:retabilidad-indexa-capital-cartera-2.webp" optionsthumb2="300x200" title2="Rentabilidad misma fecha de inicio que carteras del banco"
+    caption="Rentabilidad acumulada de Indexa Capital y simulando la misma fecha de inicio que la cartera del banco" >}}
 
 La rentabilidad de Indexa Capital en la que no solo tengo una cartera modelo conservadora con renta fija y variable junto a una parte en su fondo monetario ha generado una rentabilidad acumulada desde la fecha que la contraté del 6,8%, anualizada del 6.1% incluyendo la parte del fondo monetario y en lo que va desde el inicio del 2024 del 8,2% excluyendo el fondo monetario.
 
