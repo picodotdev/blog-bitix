@@ -27,7 +27,6 @@ Hace un año después de leer un par de libros muy básicos sobre finanzas perso
     asins="B09VQ1PPKF,B08NTY588N,B08NZTZDHN"
     titles="Invierte con poco,Invierte en ti,Menos costes más rentabilidad" >}}
 
-
 Con esta información y según la situación personal, objetivos y psicología financiera en cuanto a la aversión al riesgo cada uno ha decidir qué opciones de inversión son las más adecuadas. Casi completamente seguro entre esas opciones de inversión las de la banca tradicional no ofrecen los mejores productos de los más grandes como [Banco Santander](https://www.bancosantander.es/), [BBVA](https://www.bbva.es/) y la [CaixaBank](https://www.caixabank.es/) a los más pequeños con fuerte presencia en regiones como [Sabadell](https://www.bancsabadell.com/), [Kutxabank](https://portal.kutxabank.es/), [Bankinter](https://www.bankinter.com/), [Unicaja](https://www.unicajabanco.es/) o [Abanca](https://www.abanca.com/) entre otros.
 
 Tras un año con Indexa Capital y MyInvestor hago una evaluación en varios aspectos ya con algo más de conocimiento.
@@ -95,7 +94,7 @@ Fijándome ahora en la información de mi banco en el concepto «rentabilidad an
 
 ## Mis conclusiones
 
-En definitiva estoy muy descontento con mi banco tradicional por varios motivos, por su política comercial, productos de inversión que ofrecen, información que ofrecen de esos productos tanto previamente a la contratación de forma presencial con el gestor o comercial del banco como posteriormente a la contratación así como las comisiones cobradas e información nula a través de su web.
+En definitiva estoy muy descontento con mi banco tradicional por varios motivos, por su política comercial, productos de inversión que ofrecen, información que ofrecen de esos productos tanto previamente a la contratación de forma presencial con el gestor o comercial del banco como posteriormente a la contratación así como las comisiones cobradas e información expuesta reducida ni orientada a informar claramente a través de su web.
 
 A cualquier persona le recomendaría los libros anteriores, se informe mínimamente no solo en materia de inversión sino también fiscal, y con unos cuantos lustros laborales por delante empezar cuanto antes idealmente al mismo tiempo que se inicia la etapa laboral a invertir. Teniendo ahorros buscar opciones donde invertir fuera de su banco tradicional, hay varias opciones desde hace algunos años estas son solo algunas.
 
