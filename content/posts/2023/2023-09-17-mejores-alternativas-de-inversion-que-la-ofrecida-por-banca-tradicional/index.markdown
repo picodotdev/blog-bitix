@@ -26,6 +26,8 @@ Una de esas situaciones es la relativa a la materia de economía básica. Hay mu
 
 En estos conceptos están las hipotecas, préstamos, cómo, dónde y qué conceptos tener en cuenta a la hora de gastar e invertir, temas fiscales y muchos otros. La falta de este conocimiento es aprovechado por los bancos cuyos intereses generalmente no son los de ofrecer productos financieros beneficiosos a sus clientes sino a los de sus propios bancos que para eso los gestores del banco son sus empleados.
 
+* [Mis inversiones con Indexa Capital y MyInvestor después de un año][blogbitix-707]
+
 {{< tableofcontents >}}
 
 ## Conceptos, libros y recursos para principiantes sobre inversión
@@ -132,11 +134,11 @@ Cualquiera de las siguientes opciones es mucho mejor en cuanto a producto financ
 
 Algunas opciones de inversión son las siguientes. En función de la situación de cada uno y de las inversiones que desee realizar preferirá una u otra, pero cualquiera de ellas ofrece unos productos mucho más interesantes que la banca tradicional.
 
-* [Indexa Capital](https://indexacapital.com/es/esp/): ofrece un fondo indexado con diferentes perfiles de riesgo. Diversificado y con unas comisiones más bajas que la gestión activa pero comparativamente con mejores rentabilidades. Tiene también lo que denominan un colchón de seguridad que no es más que un fondo monetario.
-* [MyInvestor](https://myinvestor.es/): es un banco en el sentido de que ofrece una cuenta corriente con la posibilidad de tener una tarjeta de débito o crédito sin comisiones. Está más dirigido a inversores y ofrece depósitos con unas rentabilidades interesantes y varios productos en una misma cuenta (depósitos, indexados, cartera ahorro/fondo monetario, construir una cartera de fondos a medida).
-* [Finizens](https://finizens.com/): ofrece fondos indexados con la particularidad de que en este caso de que baja las comisiones cada año.
-* [inbestMe](https://www.inbestme.com/es/es/): ofrece varios fondos monetarios, fondos indexados con sesgo de sostenibilidad o sin él así como opciones de renta fija.
-* [Renta4](https://www.r4.com/): ofrece la compra de deuda pública en España si no se quiere hacer personalmente los tramites asociados.
+* [Indexa Capital][indexa-capital]: ofrece un fondo indexado con diferentes perfiles de riesgo. Diversificado y con unas comisiones más bajas que la gestión activa pero comparativamente con mejores rentabilidades. Tiene también lo que denominan un colchón de seguridad que no es más que un fondo monetario.
+* [MyInvestor][myinvestor]: es un banco en el sentido de que ofrece una cuenta corriente con la posibilidad de tener una tarjeta de débito o crédito sin comisiones. Está más dirigido a inversores y ofrece depósitos con unas rentabilidades interesantes y varios productos en una misma cuenta (depósitos, indexados, cartera ahorro/fondo monetario, construir una cartera de fondos a medida).
+* [Finizens][finizens]: ofrece fondos indexados con la particularidad de que en este caso de que baja las comisiones cada año.
+* [inbestMe][inbestme]: ofrece varios fondos monetarios, fondos indexados con sesgo de sostenibilidad o sin él así como opciones de renta fija.
+* [Renta4][r4]: ofrece la compra de deuda pública en España si no se quiere hacer personalmente los tramites asociados.
 
 Algunos artículos con análisis y opinión de las opciones, también para conocer más en detalle que destacan y cuales son sus debilidades comparados con otras opciones.
 
@@ -165,9 +167,9 @@ En algunas páginas se puede obtener información de cualquier fondo conociendo 
 
 El alta en estas opciones se hace completamente a través de internet, no hay que desplazarse a ninguna oficina y el proceso de creación de la cuenta se realiza en menos de 10 minutos. La activación de la cuenta tarda algunos días hábiles por algunas comprobaciones de seguridad bancaria legalmente requeridas, no más de una semana.
 
-Requieren proporcionar algunos datos personales DNI, domicilio, asi como unos datos de la situación financiera personal y cuenta bancaria existente para las transferencias de origen que también sirve para realizar la validación de las cuentas en el proceso de alta.
+Requieren proporcionar algunos datos personales de nombre y domicilio, DNI proporcionando su foto que puede tomarse con el móvil y cuenta bancaria existente en otra entidad para las transferencias de origen que también sirve para realizar la validación de las cuentas en el proceso de alta.
 
-En el registro es necesario contestar una serie de preguntas que determinan el perfil de riesgo y tolerancia a posibles pérdidas puntuales máximas del cliente, generalmente determina la proporción de renta fija y variable de la cartera de fondos al aportar el capital.
+En el registro es necesario contestar una serie de preguntas de situación financiera y aversión al riesgo que determinan el perfil de riesgo y tolerancia a posibles pérdidas puntuales máximas del cliente, generalmente determina la proporción de renta fija y variable de la cartera de fondos al aportar el capital.
 
 Una vez abierta y activa la cuenta se proporciona el código IBAN que identifica la cuenta para realizar la aportación del capital mediante una transferencia. La retirada de fondos también se realiza con una transferencia. Con el usuario y contraseña se accede a su administración a través de internet con un navegador o través de sus aplicaciones para [Android][android] o [iPhone][apple-iphone] en el que ver en todo momento actualizado diariamente el capital aportado, el valor de la inversión y realizar toda la operativa de aportaciones, retirada y cambio en el perfil de riesgo, contratación de nuevos productos y documentos proporcionados.
 
@@ -175,7 +177,7 @@ Una vez abierta y activa la cuenta se proporciona el código IBAN que identifica
 
 Si este artículo te ha resultado interesante y te ha aclarado algunas dudas o descubierto algo nuevo para decidirme a abrir una cuenta en alguna de estas opciones te proporciono un enlace para beneficiarte de una ventaja en reducción de comisiones o económico de algunas de ellas.
 
-* [Enlace de afiliado de Indexa Capital](https://indexacapital.com/t/yuzEjx) que proporciona 10K sin comisiones de gestión durante un año, que son unos 40 € de ahorro o más rentabilidad, a cada uno.
+* [Enlace de afiliado de Indexa Capital](https://indexacapital.com/t/yuzEjx) que proporciona 15000 € sin comisiones de gestión durante un año, que son unos 51 € de ahorro o más rentabilidad, a cada uno.
 * [Enlace de afiliado de MyInvestor](https://myinvestor.page.link/LqjiDGXnKYVRaRfd8) con el que iniciar la creación de la cuenta o el código de afiliado o plan amigo **4MV0S** con el que obtener 20 € en la cuenta, a cada uno.
 {{% /warning %}}
 

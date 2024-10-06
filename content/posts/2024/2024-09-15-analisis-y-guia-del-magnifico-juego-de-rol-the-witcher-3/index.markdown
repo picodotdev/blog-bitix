@@ -104,7 +104,7 @@ Los personajes femeninos principales están empoderadas aunque en los NPCs tambi
 
 ### Expansiones Hearts of Stone y Blood and Wine
 
-Cada una de las expansiones añaden unas 20 o 30 hora más de juego con nuevas historias no tan largas como la del juego principal pero que en mi caso he disfrutado incluso más que la del juego principal por estar más centrado en las misiones principales y secundarias que en contratos, tesoros e ir a localizaciones distralléndome.
+Cada una de las expansiones añaden unas 20 o 30 hora más de juego con nuevas historias no tan largas como la del juego principal pero que en mi caso he disfrutado incluso más que la del juego principal por estar más centrado en las misiones principales y secundarias que en contratos, tesoros e ir a localizaciones distrayéndome.
 
 {{< image
     gallery="true"
@@ -218,7 +218,7 @@ Dado lo extenso del juego hay guías completas de las misiones, así como encont
 * [The Witcher 3 Guide: Quests](https://www.ign.com/wikis/the-witcher-3-wild-hunt/Wild_Hunt_Quests)
 * [The Witcher 3 Guide: Hearts of Stone Quests](https://www.ign.com/wikis/the-witcher-3-wild-hunt/Hearts_of_Stone_Quests)
 * [The Witcher 3 Guide: Blood and Wine Quests](https://www.ign.com/wikis/the-witcher-3-wild-hunt/Blood_and_Wine_Quests)
-* [The Witcher 3 Guide:: Endings](https://www.ign.com/wikis/the-witcher-3-wild-hunt/Endings)
+* [The Witcher 3 Guide: Endings](https://www.ign.com/wikis/the-witcher-3-wild-hunt/Endings)
 * [The Witcher 3: How To Get The Best Ending For Hearts Of Stone](https://www.thegamer.com/the-witcher-3-best-ending-hearts-of-stone/)
 * [The Witcher 3: How To Unlock Every Ending In Blood & Wine](https://www.thegamer.com/witcher-3-blood-wine-best-ending/)
 * [ Guía definitiva The Witcher 3: Wild Hunt - Trucos y Consejos](https://vandal.elespanol.com/guias/the-witcher-3-wild-hunt)
