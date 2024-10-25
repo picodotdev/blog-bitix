@@ -220,11 +220,13 @@ La Raspberry Pi es un computador del tamaño de una tarjeta de crédito que se p
         .build();
       var sidebarLeftMapping = googletag.sizeMapping()
         .addSize([1750, 0], [[300, 600]])
+        .addSize([0, 0], [])
         .build();
       var sidebarRightMapping = googletag.sizeMapping()
         .addSize([1440, 0], [[300, 600]])
         .addSize([1366, 0], [[250, 600]])
         .addSize([1280, 0], [[160, 600]])
+        .addSize([0, 0], [])
         .build();
 
       headerSlot.defineSizeMapping(headerMapping);
