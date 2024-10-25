@@ -61,7 +61,7 @@
     "dateModified": "2016-06-18T13:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "870",
+    "wordCount": "846",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -311,19 +311,7 @@
         
         
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+      <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -343,7 +331,7 @@
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
 <h2 id="redirigir-de-http-a-https-en-nginx">Redirigir de HTTP a HTTPS en Nginx</h2>
-<p>Usando <a href="https://www.docker.com/">Docker</a> nos resultará más sencillo hacer la prueba que teniendo que instalar el paquete de Nginx en nuestra distribución. Puedes consultar [varios artículos sobre Docker][blogbitix-serie-docker] que he escrito a modo introducción y para empezar a usarlo.</p>
+<p>Usando <a href="https://www.docker.com/">Docker</a> nos resultará más sencillo hacer la prueba que teniendo que instalar el paquete de Nginx en nuestra distribución. Puedes consultar <a href="https://picodotdev.github.io/blog-bitix/series/docker/">varios artículos sobre Docker</a> que he escrito a modo introducción y para empezar a usarlo.</p>
 <p>En la sección del servidor que escucha en el puerto HTTP (80) realizamos la redirección permanente con el código de estado 301 hacia el protocolo HTTPS. En la sección del servidor que escucha en el puerto HTTPS (443) activa el uso de TLS/SSL usando varias directivas y sirve los documentos de <em>/usr/share/nginx/html</em> en la ruta <em>/</em>.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">listen</span>&nbsp;&nbsp;&nbsp;&nbsp;   <span class="mi">80</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">server_name</span>  <span class="s">localhost</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">return</span> <span class="mi">301</span> <span class="s">https://</span><span class="nv">$host$request_uri</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">listen</span>&nbsp;&nbsp;&nbsp;&nbsp;   <span class="mi">443</span> <span class="s">ssl</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">server_name</span>  <span class="s">localhost</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">ssl_certificate</span>&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">localhost.pem</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">ssl_certificate_key</span>  <span class="s">localhost.key</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">ssl_session_timeout</span>  <span class="mi">5m</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">ssl_protocols</span>  <span class="s">SSLv2</span> <span class="s">SSLv3</span> <span class="s">TLSv1</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">ssl_ciphers</span>  <span class="s">HIGH:!aNULL:!MD5</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">ssl_prefer_server_ciphers</span>   <span class="no">on</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">root</span>   <span class="s">/usr/share/nginx/html</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">index</span>  <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>

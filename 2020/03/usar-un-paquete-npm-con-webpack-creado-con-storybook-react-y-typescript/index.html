@@ -6,25 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+  <meta name="description" content="
 
 
 
 
 
-
-En el ejemplo Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook mostraba cómo desarrollar componentes React con TypeScript y de forma aislada con Storybook junto con sus pruebas unitarias y visuales con Jest. El resultado de ese proyecto es un paquete npm a instalar y usar en otros proyectos como este. &hellip;">
+En el ejemplo Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook mostraba cómo desarrollar componentes React con TypeScript y de forma aislada con Storybook junto con sus pruebas unitarias y visuales con Jest. El resultado de ese proyecto es un paquete npm a instalar y usar en otros proyectos como este.
+Un paquete npm es un archivo comprimido que se instala como dependencia en un proyecto. En este ejemplo se usa el paquete directamente, utilizar un repositorio de paquetes facilita el uso y distribución de los paquetes a los proyectos que los usen y esta es la forma que se debe utilizar en un proyecto real. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Usar un paquete npm con Webpack creado con Storybook, React y TypeScript</title>
@@ -49,25 +38,14 @@ En el ejemplo Desarrollar componentes React con TypeScript y sistemas de diseño
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/03/usar-un-paquete-npm-con-webpack-creado-con-storybook-react-y-typescript/images/hello-world-page_hu4639001484886322907.png">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+<meta property="og:description" content="
 
 
 
 
 
-
-En el ejemplo Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook mostraba cómo desarrollar componentes React con TypeScript y de forma aislada con Storybook junto con sus pruebas unitarias y visuales con Jest. El resultado de ese proyecto es un paquete npm a instalar y usar en otros proyectos como este. &hellip;">
+En el ejemplo Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook mostraba cómo desarrollar componentes React con TypeScript y de forma aislada con Storybook junto con sus pruebas unitarias y visuales con Jest. El resultado de ese proyecto es un paquete npm a instalar y usar en otros proyectos como este.
+Un paquete npm es un archivo comprimido que se instala como dependencia en un proyecto. En este ejemplo se usa el paquete directamente, utilizar un repositorio de paquetes facilita el uso y distribución de los paquetes a los proyectos que los usen y esta es la forma que se debe utilizar en un proyecto real. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -75,25 +53,14 @@ En el ejemplo Desarrollar componentes React con TypeScript y sistemas de diseño
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Usar un paquete npm con Webpack creado con Storybook, React y TypeScript">
-<meta name="twitter:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+<meta name="twitter:description" content="
 
 
 
 
 
-
-En el ejemplo Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook mostraba cómo desarrollar componentes React con TypeScript y de forma aislada con Storybook junto con sus pruebas unitarias y visuales con Jest. El resultado de ese proyecto es un paquete npm a instalar y usar en otros proyectos como este. &hellip;">
+En el ejemplo Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook mostraba cómo desarrollar componentes React con TypeScript y de forma aislada con Storybook junto con sus pruebas unitarias y visuales con Jest. El resultado de ese proyecto es un paquete npm a instalar y usar en otros proyectos como este.
+Un paquete npm es un archivo comprimido que se instala como dependencia en un proyecto. En este ejemplo se usa el paquete directamente, utilizar un repositorio de paquetes facilita el uso y distribución de los paquetes a los proyectos que los usen y esta es la forma que se debe utilizar en un proyecto real. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -115,7 +82,7 @@ En el ejemplo Desarrollar componentes React con TypeScript y sistemas de diseño
     "dateModified": "2020-03-29T14:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "782",
+    "wordCount": "758",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -131,25 +98,14 @@ En el ejemplo Desarrollar componentes React con TypeScript y sistemas de diseño
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "<p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+    "description": "<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/typescript.svg" width="200" height="200" alt="TypeScript" title="TypeScript" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/react.svg" width="200" height="200" alt="html.svg" title="html.svg" class="" loading="false&#34;"></p>
 </div>
-<p>En el ejemplo <a href="https://picodotdev.github.io/blog-bitix/2020/03/desarrollar-componentes-react-con-typescript-y-sistemas-de-diseno-con-storybook/">Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook</a> mostraba cómo desarrollar componentes <a href="https://reactjs.org/">React</a> con <a href="https://www.typescriptlang.org/">TypeScript</a> y de forma aislada con <a href="https://storybook.js.org/">Storybook</a> junto con sus pruebas unitarias y visuales con <a href="https://jestjs.io/">Jest</a>. El resultado de ese proyecto es un paquete npm a instalar y usar en otros proyectos como este.</p>"
+<p>En el ejemplo <a href="https://picodotdev.github.io/blog-bitix/2020/03/desarrollar-componentes-react-con-typescript-y-sistemas-de-diseno-con-storybook/">Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook</a> mostraba cómo desarrollar componentes <a href="https://reactjs.org/">React</a> con <a href="https://www.typescriptlang.org/">TypeScript</a> y de forma aislada con <a href="https://storybook.js.org/">Storybook</a> junto con sus pruebas unitarias y visuales con <a href="https://jestjs.io/">Jest</a>. El resultado de ese proyecto es un paquete npm a instalar y usar en otros proyectos como este.</p>
+<p>Un paquete npm es un archivo comprimido que se instala como dependencia en un proyecto. En este ejemplo se usa el paquete directamente, utilizar un repositorio de paquetes facilita el uso y distribución de los paquetes a los proyectos que los usen y esta es la forma que se debe utilizar en un proyecto real.</p>"
 }
   </script>
   
@@ -365,19 +321,7 @@ En el ejemplo Desarrollar componentes React con TypeScript y sistemas de diseño
 
 
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+      <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/typescript.svg" width="200" height="200" alt="TypeScript" title="TypeScript" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">

@@ -61,7 +61,7 @@
     "dateModified": "2016-05-14T13:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "800",
+    "wordCount": "776",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -304,19 +304,7 @@
 
 
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+      <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>En algunos casos nos encontramos con que un determinado dato lo pasamos como parámetro en sucesivas llamadas a métodos, obligándonos a declararlo en cada uno de ellos. En una aplicación web el dato podría ser el usuario autenticado, el dominio por el que se ha accedido a la aplicación, el dispositivo móvil, el idioma del usuario, su preferencia de divisa o cualquier otra información no relativa al usuario pero que igualmente la aplicación necesita en muchos sitios y usa esta información contextual para variar su funcionalidad. En una aplicación web podemos obtener el dominio por el que es accedido la aplicación con la clase <a href="https://docs.oracle.com/javaee/7/api/javax/servlet/ServletRequest.html">Request</a>, asociando el dato como un atributo de la petición lo tendremos disponible de forma global en la capa de presentación. Sin embargo, este objeto <em>request</em> solo estará disponible en la capa de presentación de la aplicación con la intención de que la capa de lógica de negocio sea independiente de la tecnología o <em>framework</em> web. Para hacer que algún dato global también esté disponible en la capa de lógica de negocio podemos usar la clase <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/ThreadLocal.html">ThreadLocal</a>.</p>

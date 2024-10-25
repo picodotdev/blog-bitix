@@ -61,7 +61,7 @@
     "dateModified": "2017-02-18T10:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1013",
+    "wordCount": "989",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -304,19 +304,7 @@
 
 
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+      <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/rabbitmq.svg" width="200" height="211" alt="RabbitMQ" title="RabbitMQ" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -355,7 +343,7 @@
         <span>build.gradle</span>
     </div>
 </div>
-<p>Para ejecutar el ejemplo usaré el <a href="https://hub.docker.com/_/rabbitmq/">contenedor de Docker para RabbitMQ</a> iniciándolo con <a href="https://docs.docker.com/compose/">Docker Compose</a> y el siguiente archivo descriptor. Puedes consultar la [serie de artículos sobre Docker][blogbitix-serie-docker] que escribí para conocer cómo usarlo.</p>
+<p>Para ejecutar el ejemplo usaré el <a href="https://hub.docker.com/_/rabbitmq/">contenedor de Docker para RabbitMQ</a> iniciándolo con <a href="https://docs.docker.com/compose/">Docker Compose</a> y el siguiente archivo descriptor. Puedes consultar la <a href="https://picodotdev.github.io/blog-bitix/series/docker/">serie de artículos sobre Docker</a> que escribí para conocer cómo usarlo.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;3&#34;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">rabbitmq</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">rabbitmq:management-alpine</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">data:/var/lib/rabbitmq</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;5672:5672&#34;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;15672:15672&#34;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">environment</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">RABBITMQ_NODENAME=rabbitmq</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">data</span><span class="p">:</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
@@ -398,7 +386,7 @@
 <ul>
 <li><a href="https://www.rabbitmq.com/">RabbitMQ</a></li>
 <li><a href="http://www.rabbitmq.com/documentation.html">Documentación RabbitMQ</a></li>
-<li>[Serie de artículos sobre Docker][blogbitix-serie-docker]</li>
+<li><a href="https://picodotdev.github.io/blog-bitix/series/docker/">Serie de artículos sobre Docker</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/">Introducción y ejemplo sencillo de Java Message Service (JMS)</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/07/publicacion-y-suscripcion-de-eventos-con-guava-eventbus-en-una-aplicacion-java/">Publicación y suscripción de eventos con Guava EventBus en una aplicación Java</a></li>
 </ul>

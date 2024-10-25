@@ -61,7 +61,7 @@
     "dateModified": "2015-07-18T21:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1093",
+    "wordCount": "1069",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -302,19 +302,7 @@
 
 
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+      <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false&#34;"></p>
 </div>
 <p>Una vez que ya sabemos que nos puede proporcionar una de las herramientas de la que más se está hablando con la <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">introducción a Docker</a>, conocemos <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">como empezar a usar Docker</a> y sabemos <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">cómo crear nuestras propias imágenes de Docker</a> para los propósitos específicos que necesitemos nos resultará interesante algunas de las nuevas herramientas que proporciona Docker. El ecosistema de docker ya no solo se compone del entorno de ejecución de los contenedores, explicadas de forma básica son:</p>
@@ -325,7 +313,7 @@
 <li><a href="https://docs.docker.com/machine/">Docker Machine</a>: permite construir máquinas virtuales para alojar contenedores. Similar a lo que hace <a href="https://www.vagrantup.com/">Vagrant</a>, al igual que el anterior también permite construir máquinas que ejecuten contenedores con <a href="https://www.virtualbox.org/">VirtualBox</a> o diferentes sistemas de computación en en la nube como <a href="https://aws.amazon.com/es/ec2/">Amazon EC2</a>, <a href="https://www.digitalocean.com/">Digital Ocean</a> u otros. Docker Machine puede ser la forma de usar Docker en Windows o Mac OS hasta que funcione de forma nativa como en GNU/Linux.</li>
 <li><a href="https://docs.docker.com/swarm/">Docker Swarm</a>: permite construir un <em>cluster</em> de máquinas al que se puede enviar contenedores Docker para su ejecución.</li>
 </ul>
-<p>Continuando la [serie de artículos sobre Docker][blogbitix-serie-docker] que escribí hace unos meses escribiré sobre cada una de estas nuevas herramientas, empezando en este artículo con Docker Compose en el que explicaré de qué forma nos puede servir, como instalarlo y el descriptor de contenedores con un ejemplo.</p>
+<p>Continuando la <a href="https://picodotdev.github.io/blog-bitix/series/docker/">serie de artículos sobre Docker</a> que escribí hace unos meses escribiré sobre cada una de estas nuevas herramientas, empezando en este artículo con Docker Compose en el que explicaré de qué forma nos puede servir, como instalarlo y el descriptor de contenedores con un ejemplo.</p>
 <h2 id="introducción-a-docker-compose">Introducción a Docker Compose</h2>
 <p>Las aplicaciones basadas en microservicios se prestan a usar múltiples contenedores cada uno con un servicio, uno puede contener la base de datos <a href="https://www.postgresql.org/">postgresql</a>, otro una base de datos clave/valor <a href="https://redis.io/">redis</a> o de documentos como <a href="https://www.elastic.co/es/elasticsearch/">elasticsearch</a> para hacer búsquedas, otro un sistema de mensajería como <a href="https://www.rabbitmq.com/">rabbitmq</a>, otro <a href="https://tomcat.apache.org/">tomcat</a> o <a href="https://wildfly.org/">wildfly</a> que use los anteriores y un servidor web como <a href="https://nginx.org/">Nginx</a>. Teniendo múltiples contenedores usar el comando <code>docker run</code> para cada uno de ellos nos resultará incómodo.</p>
 <p>En este punto entra Docker Compose que es una herramienta que sirve para definir nuestra aplicación multicontenedor en un archivo de texto con las mismas propiedades que indicaríamos con el comando <code>docker run</code> individualmente, así como las dependencias entre los contenedores. Una vez definidos los múltiples contenedores del servicio en el archivo Docker Compose permite iniciar con un único comando todos los contenedores y en el orden especificado según sus dependencias.</p>

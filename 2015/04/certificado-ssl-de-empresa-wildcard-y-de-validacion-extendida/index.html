@@ -6,19 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
-Usar un protocolo seguro garantiza de que los datos intercambiados entre el cliente y el servidor no son leídos ni modificados por una tercera parte además de verificar que la comunicación se está realizando entre las partes que dicen ser. Para usar un protocolo seguro como SSL/TLS debemos disponer de con certificado, con OpenSSL podemos generar y convertirlo al formato que deseemos, sin embargo, para que el usuario tenga garantía de que el certificado es válido este se debe estar firmado por una autoridad de certificación (CA) en la que confíe, generalmente con una de las autoridades de certificación cuyos certificados están preinstalados en el navegador web (en Firefox podemos verlos en Preferencias&gt; Avanzado&gt; Certificados&gt; Ver certificados), los certificados autofirmados son útiles para hacer pruebas pero no son válidos para los usuarios. En este artículo comentaré que tipos de certificados hay y donde podemos obtener o comprar un certificado digital firmado por una CA que sea de confianza para el usuario. &hellip;">
+  <meta name="description" content="Usar un protocolo seguro garantiza de que los datos intercambiados entre el cliente y el servidor no son leídos ni modificados por una tercera parte además de verificar que la comunicación se está realizando entre las partes que dicen ser. Para usar un protocolo seguro como SSL/TLS debemos disponer de con certificado, con OpenSSL podemos generar y convertirlo al formato que deseemos, sin embargo, para que el usuario tenga garantía de que el certificado es válido este se debe estar firmado por una autoridad de certificación (CA) en la que confíe, generalmente con una de las autoridades de certificación cuyos certificados están preinstalados en el navegador web (en Firefox podemos verlos en Preferencias&gt; Avanzado&gt; Certificados&gt; Ver certificados), los certificados autofirmados son útiles para hacer pruebas pero no son válidos para los usuarios. En este artículo comentaré que tipos de certificados hay y donde podemos obtener o comprar un certificado digital firmado por una CA que sea de confianza para el usuario. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Certificado SSL, de empresa, «wildcard» y de validación extendida</title>
@@ -43,19 +31,7 @@ Usar un protocolo seguro garantiza de que los datos intercambiados entre el clie
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blog-bitix-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
-Usar un protocolo seguro garantiza de que los datos intercambiados entre el cliente y el servidor no son leídos ni modificados por una tercera parte además de verificar que la comunicación se está realizando entre las partes que dicen ser. Para usar un protocolo seguro como SSL/TLS debemos disponer de con certificado, con OpenSSL podemos generar y convertirlo al formato que deseemos, sin embargo, para que el usuario tenga garantía de que el certificado es válido este se debe estar firmado por una autoridad de certificación (CA) en la que confíe, generalmente con una de las autoridades de certificación cuyos certificados están preinstalados en el navegador web (en Firefox podemos verlos en Preferencias&gt; Avanzado&gt; Certificados&gt; Ver certificados), los certificados autofirmados son útiles para hacer pruebas pero no son válidos para los usuarios. En este artículo comentaré que tipos de certificados hay y donde podemos obtener o comprar un certificado digital firmado por una CA que sea de confianza para el usuario. &hellip;">
+<meta property="og:description" content="Usar un protocolo seguro garantiza de que los datos intercambiados entre el cliente y el servidor no son leídos ni modificados por una tercera parte además de verificar que la comunicación se está realizando entre las partes que dicen ser. Para usar un protocolo seguro como SSL/TLS debemos disponer de con certificado, con OpenSSL podemos generar y convertirlo al formato que deseemos, sin embargo, para que el usuario tenga garantía de que el certificado es válido este se debe estar firmado por una autoridad de certificación (CA) en la que confíe, generalmente con una de las autoridades de certificación cuyos certificados están preinstalados en el navegador web (en Firefox podemos verlos en Preferencias&gt; Avanzado&gt; Certificados&gt; Ver certificados), los certificados autofirmados son útiles para hacer pruebas pero no son válidos para los usuarios. En este artículo comentaré que tipos de certificados hay y donde podemos obtener o comprar un certificado digital firmado por una CA que sea de confianza para el usuario. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -63,19 +39,7 @@ Usar un protocolo seguro garantiza de que los datos intercambiados entre el clie
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Certificado SSL, de empresa, «wildcard» y de validación extendida">
-<meta name="twitter:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
-Usar un protocolo seguro garantiza de que los datos intercambiados entre el cliente y el servidor no son leídos ni modificados por una tercera parte además de verificar que la comunicación se está realizando entre las partes que dicen ser. Para usar un protocolo seguro como SSL/TLS debemos disponer de con certificado, con OpenSSL podemos generar y convertirlo al formato que deseemos, sin embargo, para que el usuario tenga garantía de que el certificado es válido este se debe estar firmado por una autoridad de certificación (CA) en la que confíe, generalmente con una de las autoridades de certificación cuyos certificados están preinstalados en el navegador web (en Firefox podemos verlos en Preferencias&gt; Avanzado&gt; Certificados&gt; Ver certificados), los certificados autofirmados son útiles para hacer pruebas pero no son válidos para los usuarios. En este artículo comentaré que tipos de certificados hay y donde podemos obtener o comprar un certificado digital firmado por una CA que sea de confianza para el usuario. &hellip;">
+<meta name="twitter:description" content="Usar un protocolo seguro garantiza de que los datos intercambiados entre el cliente y el servidor no son leídos ni modificados por una tercera parte además de verificar que la comunicación se está realizando entre las partes que dicen ser. Para usar un protocolo seguro como SSL/TLS debemos disponer de con certificado, con OpenSSL podemos generar y convertirlo al formato que deseemos, sin embargo, para que el usuario tenga garantía de que el certificado es válido este se debe estar firmado por una autoridad de certificación (CA) en la que confíe, generalmente con una de las autoridades de certificación cuyos certificados están preinstalados en el navegador web (en Firefox podemos verlos en Preferencias&gt; Avanzado&gt; Certificados&gt; Ver certificados), los certificados autofirmados son útiles para hacer pruebas pero no son válidos para los usuarios. En este artículo comentaré que tipos de certificados hay y donde podemos obtener o comprar un certificado digital firmado por una CA que sea de confianza para el usuario. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -97,7 +61,7 @@ Usar un protocolo seguro garantiza de que los datos intercambiados entre el clie
     "dateModified": "2015-04-25T12:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "783",
+    "wordCount": "759",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -113,19 +77,7 @@ Usar un protocolo seguro garantiza de que los datos intercambiados entre el clie
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "<p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<p>Usar un protocolo seguro garantiza de que los datos intercambiados entre el cliente y el servidor no son leídos ni modificados por una tercera parte además de verificar que la comunicación se está realizando entre las partes que dicen ser. Para usar un <a href="https://es.wikipedia.org/wiki/Transport_Layer_Security">protocolo seguro como SSL/TLS</a> debemos disponer de con certificado, <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">con OpenSSL podemos generar y convertirlo al formato que deseemos</a>, sin embargo, para que el usuario tenga garantía de que el certificado es válido este se debe estar firmado por una <a href="https://es.wikipedia.org/wiki/Autoridad_de_certificaci%C3%B3n">autoridad de certificación</a> (CA) en la que confíe, generalmente con una de las autoridades de certificación cuyos certificados están preinstalados en el navegador web (en Firefox podemos verlos en <em>Preferencias&gt; Avanzado&gt; Certificados&gt; Ver certificados</em>), los certificados autofirmados son útiles para hacer pruebas pero no son válidos para los usuarios. En este artículo comentaré que tipos de certificados hay y donde podemos obtener o comprar un certificado digital firmado por una CA que sea de confianza para el usuario.</p>"
+    "description": "<p>Usar un protocolo seguro garantiza de que los datos intercambiados entre el cliente y el servidor no son leídos ni modificados por una tercera parte además de verificar que la comunicación se está realizando entre las partes que dicen ser. Para usar un <a href="https://es.wikipedia.org/wiki/Transport_Layer_Security">protocolo seguro como SSL/TLS</a> debemos disponer de con certificado, <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">con OpenSSL podemos generar y convertirlo al formato que deseemos</a>, sin embargo, para que el usuario tenga garantía de que el certificado es válido este se debe estar firmado por una <a href="https://es.wikipedia.org/wiki/Autoridad_de_certificaci%C3%B3n">autoridad de certificación</a> (CA) en la que confíe, generalmente con una de las autoridades de certificación cuyos certificados están preinstalados en el navegador web (en Firefox podemos verlos en <em>Preferencias&gt; Avanzado&gt; Certificados&gt; Ver certificados</em>), los certificados autofirmados son útiles para hacer pruebas pero no son válidos para los usuarios. En este artículo comentaré que tipos de certificados hay y donde podemos obtener o comprar un certificado digital firmado por una CA que sea de confianza para el usuario.</p>"
 }
   </script>
   
@@ -343,19 +295,7 @@ Usar un protocolo seguro garantiza de que los datos intercambiados entre el clie
 
 
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<p>Usar un protocolo seguro garantiza de que los datos intercambiados entre el cliente y el servidor no son leídos ni modificados por una tercera parte además de verificar que la comunicación se está realizando entre las partes que dicen ser. Para usar un <a href="https://es.wikipedia.org/wiki/Transport_Layer_Security">protocolo seguro como SSL/TLS</a> debemos disponer de con certificado, <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">con OpenSSL podemos generar y convertirlo al formato que deseemos</a>, sin embargo, para que el usuario tenga garantía de que el certificado es válido este se debe estar firmado por una <a href="https://es.wikipedia.org/wiki/Autoridad_de_certificaci%C3%B3n">autoridad de certificación</a> (CA) en la que confíe, generalmente con una de las autoridades de certificación cuyos certificados están preinstalados en el navegador web (en Firefox podemos verlos en <em>Preferencias&gt; Avanzado&gt; Certificados&gt; Ver certificados</em>), los certificados autofirmados son útiles para hacer pruebas pero no son válidos para los usuarios. En este artículo comentaré que tipos de certificados hay y donde podemos obtener o comprar un certificado digital firmado por una CA que sea de confianza para el usuario.</p>
+      <p>Usar un protocolo seguro garantiza de que los datos intercambiados entre el cliente y el servidor no son leídos ni modificados por una tercera parte además de verificar que la comunicación se está realizando entre las partes que dicen ser. Para usar un <a href="https://es.wikipedia.org/wiki/Transport_Layer_Security">protocolo seguro como SSL/TLS</a> debemos disponer de con certificado, <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">con OpenSSL podemos generar y convertirlo al formato que deseemos</a>, sin embargo, para que el usuario tenga garantía de que el certificado es válido este se debe estar firmado por una <a href="https://es.wikipedia.org/wiki/Autoridad_de_certificaci%C3%B3n">autoridad de certificación</a> (CA) en la que confíe, generalmente con una de las autoridades de certificación cuyos certificados están preinstalados en el navegador web (en Firefox podemos verlos en <em>Preferencias&gt; Avanzado&gt; Certificados&gt; Ver certificados</em>), los certificados autofirmados son útiles para hacer pruebas pero no son válidos para los usuarios. En este artículo comentaré que tipos de certificados hay y donde podemos obtener o comprar un certificado digital firmado por una CA que sea de confianza para el usuario.</p>
 <p>Los navegadores suelen indicar que se está usando una comunicación segura cuando en la barra de direcciones se muestra un candado y se está usando el protocolo https. Además, haciendo clic en el candado se pueden ver los detalles del certificado usado por el servidor para la comunicación cifrada.</p>
 <div class="media">
 <figure>

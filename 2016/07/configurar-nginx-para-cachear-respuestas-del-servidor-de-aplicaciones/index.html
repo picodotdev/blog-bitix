@@ -61,7 +61,7 @@
     "dateModified": "2016-07-31T01:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "942",
+    "wordCount": "918",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -306,19 +306,7 @@
 
 
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+      <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx" class="" loading="false&#34;"></p>
 </div>
 <p>Los servidores web son muy eficientes devolviendo al cliente archivos estáticos. Tradicionalmente el contenido estático formado por hojas de estilo, archivos JavaScript, imágenes o vídeos de una página o aplicación web han sido devueltos por un servidor web evitando que el servidor de aplicaciones tenga que procesar una gran cantidad de peticiones, aún hoy se sigue haciendo. En caso de que los recursos estáticos estén alojados en el servidor de aplicaciones en vez de en el servidor web, porque los recursos estáticos se empaquetan con la aplicación, el servidor web puede cachearlos evitando que peticiones lleguen al servidor de aplicaciones. En este artículo comentaré cual es la configuración necesaria a añadir en el servidor web <a href="https://nginx.org/">Nginx</a> que hace de <em>proxy</em> para que cachee el resultado de las peticiones así indicadas del servidor de aplicaciones, la aplicación genera el contenido y establece las cabeceras de cache indicando como quiere que se cachee el contenido devuelto.</p>

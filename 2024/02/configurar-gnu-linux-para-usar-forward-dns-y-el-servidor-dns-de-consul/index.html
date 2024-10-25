@@ -61,7 +61,7 @@
     "dateModified": "2024-02-24T18:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "745",
+    "wordCount": "721",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -305,19 +305,7 @@
         
         
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+      <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="200" height="278" alt="HashiCorp Consul" title="HashiCorp Consul" class="" loading="false&#34;"></p>
 </div>
 <p>Quizá las aplicaciones no se pueden modificar para integrarse directamente con <a href="https://www.consul.io/">Consul</a> por su antigüedad o no hay tiempo ni personas para hacerle esos grandes cambios, una forma sencilla que no requiere grandes cambios en las aplicaciones y que les da acceso a algunas de las funcionalidades que proporciona Consul es utilizar su servicio DNS.</p>
@@ -335,7 +323,7 @@
 <p>Consul es una herramienta desarrollada por <a href="https://www.hashicorp.com/">Hashicorp</a> centrada en la conectividad entre los servicios. Ofrece varias funcionalidades específicas para las aplicaciones compuestas de múltiples servicios. Consul proporciona una catálogo de servicios actualizado y con información del estado de los servicios, conectividad entre los servicios con el <em>service mesh</em> y almacenamiento clave-valor para la configuración de aplicaciones.</p>
 <p>Algo ya he comentado en varios artículos sobre Consul y otros productos de Hashicorp como <a href="https://www.vaultproject.io/">Vault</a> y <a href="https://www.nomadproject.io/">Nomad</a>.</p>
 <ul>
-<li>[Serie de artículos sobre Hashicorp][blogbitix-serie-hashicorp]</li>
+<li><a href="https://picodotdev.github.io/blog-bitix/series/hashicorp/">Serie de artículos sobre Hashicorp</a></li>
 </ul>
 <p>Consul además a través de su API el catálogo de los servicios lo ofrece mediante un servidor DNS propio. Los servicios del catálogo se añaden a su servidor DNS con el sufijo <em>consul</em>, los servicios registrados en Consul tienen un nombre de dominio con la siguiente estructura. Consul se encarga de que en una consulta solo se devuelvan los servicios que han respondido correctamente al <em>healthcheck</em> y devolver todas las instancias de un mismo servicio si hay varias en varios nodos.</p>
 <ul>

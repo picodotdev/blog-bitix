@@ -61,7 +61,7 @@
     "dateModified": "2017-03-19T12:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1462",
+    "wordCount": "1438",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -302,22 +302,10 @@
 
 
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+      <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false&#34;"></p>
 </div>
-<p>En [artículos anteriores de la serie sobre Docker][blogbitix-serie-docker] comentaba varias de las herramientas de <a href="https://www.docker.com/">Docker</a> como <a href="https://docs.docker.com/compose/">Docker Compose</a>, Dockerfile o <a href="https://docs.docker.com/machine/">Docker Machine</a> con ejemplos de como usarlo en local. Una de las herramientas que me quedaba por investigar era <a href="https://docs.docker.com/swarm/">Docker Swarm</a> para crear <em>clusters</em> de nodos para contenedores Docker en un entorno de producción. A partir de la versión 1.12 de Docker se han incorporado varias características a Docker para usar contenedores de forma distribuida y que a pesar de la complejidad subyacente que debe haber es realmente simple usarlo.</p>
+<p>En <a href="https://picodotdev.github.io/blog-bitix/series/docker/">artículos anteriores de la serie sobre Docker</a> comentaba varias de las herramientas de <a href="https://www.docker.com/">Docker</a> como <a href="https://docs.docker.com/compose/">Docker Compose</a>, Dockerfile o <a href="https://docs.docker.com/machine/">Docker Machine</a> con ejemplos de como usarlo en local. Una de las herramientas que me quedaba por investigar era <a href="https://docs.docker.com/swarm/">Docker Swarm</a> para crear <em>clusters</em> de nodos para contenedores Docker en un entorno de producción. A partir de la versión 1.12 de Docker se han incorporado varias características a Docker para usar contenedores de forma distribuida y que a pesar de la complejidad subyacente que debe haber es realmente simple usarlo.</p>
 <p>Una de las características es el <em>networking</em> que hace transparente la comunicación en red distribuida que se hace entre los nodos y los contenedores de esos nodos. Además permite crear redes por software para que los contenedores conectados a esas redes se comuniquen de forma privada. Otra característica interesante de Docker Swarm es que se encarga de monitorizar el estado de los servicios recreando contenedores si alguno deja de funcionar. También a través del denominado <em>routing mesh</em> da igual al nodo del <em>cluster</em> por el que se acceda y da igual en que nodo esté el contenedor que Docker Swarm con esta propiedad se encargará de hacer llegar la petición al contenedor. Además, a lo que en Docker Swarm se denomina servicio se realiza balanceo de carga entre la instancias del mismo que haya en el <em>cluster</em> y al servicio se le asigna un DNS y dirección IP por el que puede ser accedido por otros servicios.</p>
 <p>En el siguiente ejemplo para crear el <em>cluster</em> de nodos Docker usaré Docker Machine para crear las máquinas de los nodos en máquinas virtuales de <a href="https://www.virtualbox.org/">VirtualBox</a> aunque su funcionamiento es similar si usásemos la nube de <a href="https://aws.amazon.com/es/ec2/">Amazon EC2</a>, <a href="https://www.digitalocean.com/">Digital Ocean</a> u otros.</p>
 <p>El siguiente <em>script</em> crea primeramente varios nodos cada uno en una máquina virtual, luego establece el nodo 01 como <em>manager</em> y los nodos 02 y 03 como <em>workers</em> usando un <em>token</em> para unirlos al <em>cluster</em> según su rol. Los nodos <em>manager</em> se encargan de mantener el estado del <em>cluster</em> y los que a través de ellos los comandos de los servicios deben ser lanzados, en un entorno de producción posiblemente tendríamos 3 nodos <em>manager</em> para soportar tolerancia a fallos. Finalmente, se obtiene lista los nodos del <em>cluster</em>. El comando <code>docker-machine env node-01</code> permite establecer el entorno contra el que el comando <code>docker</code> lanzará las operaciones como si de la máquina local se tratase.</p>

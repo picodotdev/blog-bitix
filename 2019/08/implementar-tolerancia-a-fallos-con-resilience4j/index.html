@@ -6,25 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+  <meta name="description" content="
 
 
 
 
 
-
-Hystrix ha sido una de las primeras librerías en Java disponibles para implementar varios patrones de tolerancia a fallos en los microservicios. Desde hace un tiempo ha pasado a modo mantenimiento en el que ya no se incluyen nuevas características, una de las librerías recomendadas como sustituta es Resilience4j. Resilience4j proporciona las características similares con algunas ventajas adicionales. &hellip;">
+Hystrix ha sido una de las primeras librerías en Java disponibles para implementar varios patrones de tolerancia a fallos en los microservicios. Desde hace un tiempo ha pasado a modo mantenimiento en el que ya no se incluyen nuevas características, una de las librerías recomendadas como sustituta es Resilience4j. Resilience4j proporciona las características similares con algunas ventajas adicionales.
+Los patrones útiles para aumentar la tolerancia a fallos debido a problemas de red o fallo de alguno de los múltiples servicios son: &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Implementar tolerancia a fallos con Resilience4j</title>
@@ -49,25 +38,14 @@ Hystrix ha sido una de las primeras librerías en Java disponibles para implemen
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/resilience4j.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+<meta property="og:description" content="
 
 
 
 
 
-
-Hystrix ha sido una de las primeras librerías en Java disponibles para implementar varios patrones de tolerancia a fallos en los microservicios. Desde hace un tiempo ha pasado a modo mantenimiento en el que ya no se incluyen nuevas características, una de las librerías recomendadas como sustituta es Resilience4j. Resilience4j proporciona las características similares con algunas ventajas adicionales. &hellip;">
+Hystrix ha sido una de las primeras librerías en Java disponibles para implementar varios patrones de tolerancia a fallos en los microservicios. Desde hace un tiempo ha pasado a modo mantenimiento en el que ya no se incluyen nuevas características, una de las librerías recomendadas como sustituta es Resilience4j. Resilience4j proporciona las características similares con algunas ventajas adicionales.
+Los patrones útiles para aumentar la tolerancia a fallos debido a problemas de red o fallo de alguno de los múltiples servicios son: &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -75,25 +53,14 @@ Hystrix ha sido una de las primeras librerías en Java disponibles para implemen
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Implementar tolerancia a fallos con Resilience4j">
-<meta name="twitter:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+<meta name="twitter:description" content="
 
 
 
 
 
-
-Hystrix ha sido una de las primeras librerías en Java disponibles para implementar varios patrones de tolerancia a fallos en los microservicios. Desde hace un tiempo ha pasado a modo mantenimiento en el que ya no se incluyen nuevas características, una de las librerías recomendadas como sustituta es Resilience4j. Resilience4j proporciona las características similares con algunas ventajas adicionales. &hellip;">
+Hystrix ha sido una de las primeras librerías en Java disponibles para implementar varios patrones de tolerancia a fallos en los microservicios. Desde hace un tiempo ha pasado a modo mantenimiento en el que ya no se incluyen nuevas características, una de las librerías recomendadas como sustituta es Resilience4j. Resilience4j proporciona las características similares con algunas ventajas adicionales.
+Los patrones útiles para aumentar la tolerancia a fallos debido a problemas de red o fallo de alguno de los múltiples servicios son: &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -115,7 +82,7 @@ Hystrix ha sido una de las primeras librerías en Java disponibles para implemen
     "dateModified": "2019-08-02T17:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "630",
+    "wordCount": "606",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -131,25 +98,14 @@ Hystrix ha sido una de las primeras librerías en Java disponibles para implemen
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "<p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+    "description": "<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/resilience4j.webp" width="200" height="200" alt="Resilience4j" title="Resilience4j" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
-<p><a href="https://github.com/Netflix/Hystrix">Hystrix</a> ha sido una de las primeras librerías en Java disponibles para implementar varios patrones de tolerancia a fallos en los microservicios. Desde hace un tiempo ha pasado a modo mantenimiento en el que ya no se incluyen nuevas características, una de las librerías recomendadas como sustituta es <a href="https://github.com/resilience4j/resilience4j">Resilience4j</a>. Resilience4j proporciona las características similares con algunas ventajas adicionales.</p>"
+<p><a href="https://github.com/Netflix/Hystrix">Hystrix</a> ha sido una de las primeras librerías en Java disponibles para implementar varios patrones de tolerancia a fallos en los microservicios. Desde hace un tiempo ha pasado a modo mantenimiento en el que ya no se incluyen nuevas características, una de las librerías recomendadas como sustituta es <a href="https://github.com/resilience4j/resilience4j">Resilience4j</a>. Resilience4j proporciona las características similares con algunas ventajas adicionales.</p>
+<p>Los patrones útiles para aumentar la tolerancia a fallos debido a problemas de red o fallo de alguno de los múltiples servicios son:</p>"
 }
   </script>
   
@@ -363,19 +319,7 @@ Hystrix ha sido una de las primeras librerías en Java disponibles para implemen
 
 
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+      <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/resilience4j.webp" width="200" height="200" alt="Resilience4j" title="Resilience4j" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -393,7 +337,7 @@ Hystrix ha sido una de las primeras librerías en Java disponibles para implemen
 <li>Además de la funcionalidad de métricas.</li>
 </ul>
 <p>La ventaja de Resilience4j es que todos estos patrones para los microservicios se ejecutan en el mismo hilo que el principal y no en un aparte como en Hystrix. Su uso además no requiere de crear clases específicas para hacer uso de los patrones y pueden emplearse las <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">funciones <em>lambda</em> incorporadas en Java 8</a>.</p>
-<p>Este artículo actualiza el ejemplo que usaba <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> y <a href="https://projects.spring.io/spring-cloud/">Spring Cloud</a> que implementé en su momento para la [serie de artículos sobre Spring Cloud][blogbitix-serie-spring-cloud] añadiendo una implementación del cliente de un microservicio con Resilience4j.</p>
+<p>Este artículo actualiza el ejemplo que usaba <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> y <a href="https://projects.spring.io/spring-cloud/">Spring Cloud</a> que implementé en su momento para la <a href="https://picodotdev.github.io/blog-bitix/series/spring-cloud/">serie de artículos sobre Spring Cloud</a> añadiendo una implementación del cliente de un microservicio con Resilience4j.</p>
 <p>La configuración de Resilience4j se puede proporcionar mediante código Java, con anotaciones y con la <a href="https://resilience4j.readme.io/docs/getting-started-3">integración para Spring Boot</a> con parámetros en el archivo de configuración de la aplicación. La aplicación además de varias cosas de Spring Cloud para otros artículos de la serie consiste para el de este artículo en un servicio cliente y un servicio servidor que para ser tolerantes a fallos hacen uso de los patrones <em>circuit breaker</em> y <em>time limiter</em> para demostrar su uso.</p>
 <p>Resilience4j para implementar los patrones lo que hace es decorar la función objetivo que hace la invocación del servicio. Si se quieren aplicar varios patrones hay que encadenar las decoraciones, por ejemplo, si se quiere limitar el número de llamadas salientes con <em>bulkhead</em> y el patrón <em>circuit breaker</em> hay que aplicar una decoración sobre la otra. En este ejemplo se aplica un <em>time limiter</em> y un <em>circuit breaker</em> usando código Java. La variable <em>get</em> es la que realmente contiene la llamada al servicio.</p>
 <div class="code">

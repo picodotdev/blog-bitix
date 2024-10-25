@@ -6,25 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+  <meta name="description" content="
 
 
 
 
 
-
-En el artículo anterior comentaba como cambiar el formato de archivos de música o audio, por ejemplo de wav a mp3, de wav a ogg o de mp3 a _ogg de archivos individuales, de forma masiva los de un directorio o de forma recursiva de toda una biblioteca de música organizada en múltiples directorios. &hellip;">
+En el artículo anterior comentaba como cambiar el formato de archivos de música o audio, por ejemplo de wav a mp3, de wav a ogg o de mp3 a _ogg de archivos individuales, de forma masiva los de un directorio o de forma recursiva de toda una biblioteca de música organizada en múltiples directorios.
+Para hacer la conversión usaba la herramienta FFmpeg, esta misma herramienta sirve también para hacer conversiones en el formato de archivos de vídeo o películas. Las conversiones de los archivos de música nos puede interesar para reducir su tamaño, un mp3 ocupa mucho menos que un wav y un archivo ogg es un formato libre de patentes no así el formato mp3. En el caso de los vídeos también nos puede interesar hacer una conversión, reducir su tamaño, extraer solo el audio, extraer solo el vídeo u obtener un trozo del vídeo entre varias cosas más que podemos realizar con FFmpeg. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Cambiar el formato de archivos de vídeo o películas en GNU/Linux</title>
@@ -49,25 +38,14 @@ En el artículo anterior comentaba como cambiar el formato de archivos de músic
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/ffmpeg-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+<meta property="og:description" content="
 
 
 
 
 
-
-En el artículo anterior comentaba como cambiar el formato de archivos de música o audio, por ejemplo de wav a mp3, de wav a ogg o de mp3 a _ogg de archivos individuales, de forma masiva los de un directorio o de forma recursiva de toda una biblioteca de música organizada en múltiples directorios. &hellip;">
+En el artículo anterior comentaba como cambiar el formato de archivos de música o audio, por ejemplo de wav a mp3, de wav a ogg o de mp3 a _ogg de archivos individuales, de forma masiva los de un directorio o de forma recursiva de toda una biblioteca de música organizada en múltiples directorios.
+Para hacer la conversión usaba la herramienta FFmpeg, esta misma herramienta sirve también para hacer conversiones en el formato de archivos de vídeo o películas. Las conversiones de los archivos de música nos puede interesar para reducir su tamaño, un mp3 ocupa mucho menos que un wav y un archivo ogg es un formato libre de patentes no así el formato mp3. En el caso de los vídeos también nos puede interesar hacer una conversión, reducir su tamaño, extraer solo el audio, extraer solo el vídeo u obtener un trozo del vídeo entre varias cosas más que podemos realizar con FFmpeg. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -75,25 +53,14 @@ En el artículo anterior comentaba como cambiar el formato de archivos de músic
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Cambiar el formato de archivos de vídeo o películas en GNU/Linux">
-<meta name="twitter:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+<meta name="twitter:description" content="
 
 
 
 
 
-
-En el artículo anterior comentaba como cambiar el formato de archivos de música o audio, por ejemplo de wav a mp3, de wav a ogg o de mp3 a _ogg de archivos individuales, de forma masiva los de un directorio o de forma recursiva de toda una biblioteca de música organizada en múltiples directorios. &hellip;">
+En el artículo anterior comentaba como cambiar el formato de archivos de música o audio, por ejemplo de wav a mp3, de wav a ogg o de mp3 a _ogg de archivos individuales, de forma masiva los de un directorio o de forma recursiva de toda una biblioteca de música organizada en múltiples directorios.
+Para hacer la conversión usaba la herramienta FFmpeg, esta misma herramienta sirve también para hacer conversiones en el formato de archivos de vídeo o películas. Las conversiones de los archivos de música nos puede interesar para reducir su tamaño, un mp3 ocupa mucho menos que un wav y un archivo ogg es un formato libre de patentes no así el formato mp3. En el caso de los vídeos también nos puede interesar hacer una conversión, reducir su tamaño, extraer solo el audio, extraer solo el vídeo u obtener un trozo del vídeo entre varias cosas más que podemos realizar con FFmpeg. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -115,7 +82,7 @@ En el artículo anterior comentaba como cambiar el formato de archivos de músic
     "dateModified": "2021-03-21T00:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1828",
+    "wordCount": "1804",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -131,25 +98,14 @@ En el artículo anterior comentaba como cambiar el formato de archivos de músic
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "<p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+    "description": "<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/ffmpeg.svg" width="400" height="98" alt="FFmpeg" title="FFmpeg" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false&#34;"></p>
 </div>
-<p>En el artículo anterior comentaba <a href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/">como cambiar el formato de archivos de música o audio</a>, por ejemplo de <em>wav</em> a <em>mp3</em>, de <em>wav</em> a <em>ogg</em> o de <em>mp3</em> a _ogg de archivos individuales, de forma masiva los de un directorio o de forma recursiva de toda una biblioteca de música organizada en múltiples directorios.</p>"
+<p>En el artículo anterior comentaba <a href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/">como cambiar el formato de archivos de música o audio</a>, por ejemplo de <em>wav</em> a <em>mp3</em>, de <em>wav</em> a <em>ogg</em> o de <em>mp3</em> a _ogg de archivos individuales, de forma masiva los de un directorio o de forma recursiva de toda una biblioteca de música organizada en múltiples directorios.</p>
+<p>Para hacer la conversión usaba la herramienta <a href="https://www.ffmpeg.org/">FFmpeg</a>, esta misma herramienta sirve también para hacer conversiones en el formato de archivos de vídeo o películas. Las conversiones de los archivos de música nos puede interesar para reducir su tamaño, un <em>mp3</em> ocupa mucho menos que un wav y un archivo <em>ogg</em> es un formato libre de patentes no así el formato <em>mp3</em>. En el caso de los vídeos también nos puede interesar hacer una conversión, reducir su tamaño, extraer solo el audio, extraer solo el vídeo u obtener un trozo del vídeo entre varias cosas más que podemos realizar con FFmpeg.</p>"
 }
   </script>
   
@@ -366,19 +322,7 @@ En el artículo anterior comentaba como cambiar el formato de archivos de músic
         
         
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+      <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/ffmpeg.svg" width="400" height="98" alt="FFmpeg" title="FFmpeg" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">

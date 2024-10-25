@@ -61,7 +61,7 @@
     "dateModified": "2015-11-10T19:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "840",
+    "wordCount": "816",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -304,19 +304,7 @@
 
 
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes"> 
+      <div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>En Java este patrón podemos implementarlo usando una clase, la <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Observable.html">clase Observable</a>, y una interfaz, la <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Observer.html">interfaz Observer</a> proporcionadas en el propio <abbr title="Java Development Kit">JDK</abbr>. La clase que queremos que reciba los eventos deberá implementar la interfaz <em>Observer</em> y el objeto que queremos que produzca los eventos debe extender o contener una propiedad de tipo <em>Observable</em>. La interfaz <em>Observer</em> contiene un único método de nombre <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Observer.html#update-java.util.Observable-java.lang.Object-"><em>update</em></a>, que recibe dos parámetros que son la instancia del objeto observable sobre la que se ha producido el evento y un <em>Object</em> a modo de argumento que el objeto observable envía. La clase <em>Observable</em> contiene métodos para añadir y eliminar observadores que queremos que sean notificados, obtener un contador con el número de observadores y unos métodos para conocer y establecer si un objeto ha cambiado con el método <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Observable.html#hasChanged--"><em>hasChanged</em></a>.</p>

@@ -6,25 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+  <meta name="description" content="
 
 
 
 
 
-
-En un artículo anterior hacía una pequeña introducción a la base de datos NoSQL MongoDB comentando sus características, como empezar a usarla con Docker y como lanzar algunos comandos para crear bases de datos y colecciones junto las operaciones básicas de inserción, actualización, eliminación y búsquedas con consultas desde la shell que ofrece MongoDB para esta base de datos que guarda documentos. &hellip;">
+En un artículo anterior hacía una pequeña introducción a la base de datos NoSQL MongoDB comentando sus características, como empezar a usarla con Docker y como lanzar algunos comandos para crear bases de datos y colecciones junto las operaciones básicas de inserción, actualización, eliminación y búsquedas con consultas desde la shell que ofrece MongoDB para esta base de datos que guarda documentos.
+La shell sirve para hacer estas consultas pero el caso de uso principal es usarlo desde una aplicación con alguno de los lenguajes de programación para los que se proporciona un controlador. MongoDB se puede usar desde cualquiera de los lenguajes de programación más populares entre ellos Java. En este artículo muestro con un ejemplo como realizar las operaciones que utilizaba desde la shell de MongoDB pero desde una aplicación Java. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Usar la base de datos NoSQL MongoDB con Java</title>
@@ -49,25 +38,14 @@ En un artículo anterior hacía una pequeña introducción a la base de datos No
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/mongodb-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+<meta property="og:description" content="
 
 
 
 
 
-
-En un artículo anterior hacía una pequeña introducción a la base de datos NoSQL MongoDB comentando sus características, como empezar a usarla con Docker y como lanzar algunos comandos para crear bases de datos y colecciones junto las operaciones básicas de inserción, actualización, eliminación y búsquedas con consultas desde la shell que ofrece MongoDB para esta base de datos que guarda documentos. &hellip;">
+En un artículo anterior hacía una pequeña introducción a la base de datos NoSQL MongoDB comentando sus características, como empezar a usarla con Docker y como lanzar algunos comandos para crear bases de datos y colecciones junto las operaciones básicas de inserción, actualización, eliminación y búsquedas con consultas desde la shell que ofrece MongoDB para esta base de datos que guarda documentos.
+La shell sirve para hacer estas consultas pero el caso de uso principal es usarlo desde una aplicación con alguno de los lenguajes de programación para los que se proporciona un controlador. MongoDB se puede usar desde cualquiera de los lenguajes de programación más populares entre ellos Java. En este artículo muestro con un ejemplo como realizar las operaciones que utilizaba desde la shell de MongoDB pero desde una aplicación Java. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -75,25 +53,14 @@ En un artículo anterior hacía una pequeña introducción a la base de datos No
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Usar la base de datos NoSQL MongoDB con Java">
-<meta name="twitter:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+<meta name="twitter:description" content="
 
 
 
 
 
-
-En un artículo anterior hacía una pequeña introducción a la base de datos NoSQL MongoDB comentando sus características, como empezar a usarla con Docker y como lanzar algunos comandos para crear bases de datos y colecciones junto las operaciones básicas de inserción, actualización, eliminación y búsquedas con consultas desde la shell que ofrece MongoDB para esta base de datos que guarda documentos. &hellip;">
+En un artículo anterior hacía una pequeña introducción a la base de datos NoSQL MongoDB comentando sus características, como empezar a usarla con Docker y como lanzar algunos comandos para crear bases de datos y colecciones junto las operaciones básicas de inserción, actualización, eliminación y búsquedas con consultas desde la shell que ofrece MongoDB para esta base de datos que guarda documentos.
+La shell sirve para hacer estas consultas pero el caso de uso principal es usarlo desde una aplicación con alguno de los lenguajes de programación para los que se proporciona un controlador. MongoDB se puede usar desde cualquiera de los lenguajes de programación más populares entre ellos Java. En este artículo muestro con un ejemplo como realizar las operaciones que utilizaba desde la shell de MongoDB pero desde una aplicación Java. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -115,7 +82,7 @@ En un artículo anterior hacía una pequeña introducción a la base de datos No
     "dateModified": "2017-06-04T13:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "944",
+    "wordCount": "920",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -131,25 +98,14 @@ En un artículo anterior hacía una pequeña introducción a la base de datos No
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "<p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+    "description": "<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/mongodb.svg" width="400" height="114" alt="MongoDB" title="MongoDB" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
-<p>En un artículo anterior hacía una pequeña <a href="https://picodotdev.github.io/blog-bitix/2017/05/introduccion-a-la-base-de-datos-nosql-mongodb/">introducción a la base de datos NoSQL MongoDB</a> comentando sus características, como empezar a usarla con <a href="https://www.docker.com/">Docker</a> y como lanzar algunos comandos para crear bases de datos y colecciones junto las operaciones básicas de inserción, actualización, eliminación y búsquedas con consultas desde la <em>shell</em> que ofrece <a href="https://www.mongodb.com/">MongoDB</a> para esta base de datos que guarda documentos.</p>"
+<p>En un artículo anterior hacía una pequeña <a href="https://picodotdev.github.io/blog-bitix/2017/05/introduccion-a-la-base-de-datos-nosql-mongodb/">introducción a la base de datos NoSQL MongoDB</a> comentando sus características, como empezar a usarla con <a href="https://www.docker.com/">Docker</a> y como lanzar algunos comandos para crear bases de datos y colecciones junto las operaciones básicas de inserción, actualización, eliminación y búsquedas con consultas desde la <em>shell</em> que ofrece <a href="https://www.mongodb.com/">MongoDB</a> para esta base de datos que guarda documentos.</p>
+<p>La <em>shell</em> sirve para hacer estas consultas pero el caso de uso principal es usarlo desde una aplicación con alguno de los <a href="https://docs.mongodb.com/ecosystem/drivers/">lenguajes de programación para los que se proporciona un controlador</a>. MongoDB se puede usar desde cualquiera de los lenguajes de programación más populares entre ellos Java. En este artículo muestro con un ejemplo como realizar las operaciones que utilizaba desde la <em>shell</em> de MongoDB pero desde una aplicación Java.</p>"
 }
   </script>
   
@@ -365,19 +321,7 @@ En un artículo anterior hacía una pequeña introducción a la base de datos No
 
 
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+      <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/mongodb.svg" width="400" height="114" alt="MongoDB" title="MongoDB" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -400,7 +344,7 @@ En un artículo anterior hacía una pequeña introducción a la base de datos No
         <span>build.gradle</span>
     </div>
 </div>
-<p>La instancia del servidor de MongDB la inicio usando Docker con un archivo de <a href="https://docs.docker.com/compose/">Docker Compose</a> y el comando <code>docker-compose up</code>. En la  [serie de artículos sobre Docker][blogbitix-serie-docker] que escribí puedes aprender como empezar a usar Docker y adquirir un conocimiento hasta un nivel intermedio.</p>
+<p>La instancia del servidor de MongDB la inicio usando Docker con un archivo de <a href="https://docs.docker.com/compose/">Docker Compose</a> y el comando <code>docker-compose up</code>. En la  <a href="https://picodotdev.github.io/blog-bitix/series/docker/">serie de artículos sobre Docker</a> que escribí puedes aprender como empezar a usar Docker y adquirir un conocimiento hasta un nivel intermedio.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">mongo</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">mongo:latest</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="m">27017</span><span class="p">:</span><span class="m">27017</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
@@ -432,7 +376,7 @@ En un artículo anterior hacía una pequeña introducción a la base de datos No
 <li><a href="https://picodotdev.github.io/blog-bitix/2017/05/introduccion-a-la-base-de-datos-relacional-postgresql/">Introducción a la base de datos relacional PostgreSQL</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2017/05/introduccion-a-la-base-de-datos-nosql-mongodb/">Introducción a la base de datos NoSQL MongoDB</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2017/06/introduccion-a-la-base-de-datos-nosql-redis/">Introducción a la base de datos NoSQL Redis</a></li>
-<li>[Serie de artículos sobre Docker][blogbitix-serie-docker]</li>
+<li><a href="https://picodotdev.github.io/blog-bitix/series/docker/">Serie de artículos sobre Docker</a></li>
 </ul>
 </div>
 

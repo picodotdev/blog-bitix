@@ -6,22 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+  <meta name="description" content="
 
 
-
-En el artículo de iniciación a la programación concurrente en Java explicaba las facilidades que proporciona este lenguaje para la programación de tareas con varios hilos que implica la sincronización y bloqueo mediante varias primitivas como semáforos o locks, ponía el ejemplo y su código de dos de los típicos ejemplos que suelen usarse en las asignaturas de sistemas operativos, el problema de los filósofos y el del barbero. &hellip;">
+En el artículo de iniciación a la programación concurrente en Java explicaba las facilidades que proporciona este lenguaje para la programación de tareas con varios hilos que implica la sincronización y bloqueo mediante varias primitivas como semáforos o locks, ponía el ejemplo y su código de dos de los típicos ejemplos que suelen usarse en las asignaturas de sistemas operativos, el problema de los filósofos y el del barbero.
+En el caso de tener varias tareas que tardan unos segundos si las ejecutamos de forma secuencial el tiempo que tardarán será la suma de todas las tareas. Si las tareas no son dependientes, no hace falta esperar a que termine una anterior para comenzar otra, o el problema se puede descomponer en varias partes ejecutándolas de forma concurrente y simultáneamente el tiempo total que tardarán aproximadamente será el tiempo de la tarea más lenta. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Ejecutar varias tareas de forma concurrente en Java</title>
@@ -46,22 +35,11 @@ En el artículo de iniciación a la programación concurrente en Java explicaba 
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+<meta property="og:description" content="
 
 
-
-En el artículo de iniciación a la programación concurrente en Java explicaba las facilidades que proporciona este lenguaje para la programación de tareas con varios hilos que implica la sincronización y bloqueo mediante varias primitivas como semáforos o locks, ponía el ejemplo y su código de dos de los típicos ejemplos que suelen usarse en las asignaturas de sistemas operativos, el problema de los filósofos y el del barbero. &hellip;">
+En el artículo de iniciación a la programación concurrente en Java explicaba las facilidades que proporciona este lenguaje para la programación de tareas con varios hilos que implica la sincronización y bloqueo mediante varias primitivas como semáforos o locks, ponía el ejemplo y su código de dos de los típicos ejemplos que suelen usarse en las asignaturas de sistemas operativos, el problema de los filósofos y el del barbero.
+En el caso de tener varias tareas que tardan unos segundos si las ejecutamos de forma secuencial el tiempo que tardarán será la suma de todas las tareas. Si las tareas no son dependientes, no hace falta esperar a que termine una anterior para comenzar otra, o el problema se puede descomponer en varias partes ejecutándolas de forma concurrente y simultáneamente el tiempo total que tardarán aproximadamente será el tiempo de la tarea más lenta. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -69,22 +47,11 @@ En el artículo de iniciación a la programación concurrente en Java explicaba 
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Ejecutar varias tareas de forma concurrente en Java">
-<meta name="twitter:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+<meta name="twitter:description" content="
 
 
-
-En el artículo de iniciación a la programación concurrente en Java explicaba las facilidades que proporciona este lenguaje para la programación de tareas con varios hilos que implica la sincronización y bloqueo mediante varias primitivas como semáforos o locks, ponía el ejemplo y su código de dos de los típicos ejemplos que suelen usarse en las asignaturas de sistemas operativos, el problema de los filósofos y el del barbero. &hellip;">
+En el artículo de iniciación a la programación concurrente en Java explicaba las facilidades que proporciona este lenguaje para la programación de tareas con varios hilos que implica la sincronización y bloqueo mediante varias primitivas como semáforos o locks, ponía el ejemplo y su código de dos de los típicos ejemplos que suelen usarse en las asignaturas de sistemas operativos, el problema de los filósofos y el del barbero.
+En el caso de tener varias tareas que tardan unos segundos si las ejecutamos de forma secuencial el tiempo que tardarán será la suma de todas las tareas. Si las tareas no son dependientes, no hace falta esperar a que termine una anterior para comenzar otra, o el problema se puede descomponer en varias partes ejecutándolas de forma concurrente y simultáneamente el tiempo total que tardarán aproximadamente será el tiempo de la tarea más lenta. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -106,7 +73,7 @@ En el artículo de iniciación a la programación concurrente en Java explicaba 
     "dateModified": "2017-07-23T13:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "754",
+    "wordCount": "730",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -122,22 +89,11 @@ En el artículo de iniciación a la programación concurrente en Java explicaba 
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "<p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+    "description": "<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
-<p>En el artículo de <a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciacion-a-la-programacion-concurrente-en-java/">iniciación a la programación concurrente en Java</a> explicaba las facilidades que proporciona este lenguaje para la programación de tareas con varios hilos que implica la sincronización y bloqueo mediante varias primitivas como semáforos o <em>locks</em>, ponía el ejemplo y su código de dos de los típicos ejemplos que suelen usarse en las asignaturas de sistemas operativos, el problema de los filósofos y el del barbero.</p>"
+<p>En el artículo de <a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciacion-a-la-programacion-concurrente-en-java/">iniciación a la programación concurrente en Java</a> explicaba las facilidades que proporciona este lenguaje para la programación de tareas con varios hilos que implica la sincronización y bloqueo mediante varias primitivas como semáforos o <em>locks</em>, ponía el ejemplo y su código de dos de los típicos ejemplos que suelen usarse en las asignaturas de sistemas operativos, el problema de los filósofos y el del barbero.</p>
+<p>En el caso de tener varias tareas que tardan unos segundos si las ejecutamos de forma secuencial el tiempo que tardarán será la suma de todas las tareas. Si las tareas no son dependientes, no hace falta esperar a que termine una anterior para comenzar otra, o el problema se puede descomponer en varias partes ejecutándolas de forma concurrente y simultáneamente el tiempo total que tardarán aproximadamente será el tiempo de la tarea más lenta.</p>"
 }
   </script>
   
@@ -353,19 +309,7 @@ En el artículo de iniciación a la programación concurrente en Java explicaba 
 
 
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+      <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>En el artículo de <a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciacion-a-la-programacion-concurrente-en-java/">iniciación a la programación concurrente en Java</a> explicaba las facilidades que proporciona este lenguaje para la programación de tareas con varios hilos que implica la sincronización y bloqueo mediante varias primitivas como semáforos o <em>locks</em>, ponía el ejemplo y su código de dos de los típicos ejemplos que suelen usarse en las asignaturas de sistemas operativos, el problema de los filósofos y el del barbero.</p>

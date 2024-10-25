@@ -244,23 +244,18 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+            <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
 </div>
 <p>En <a href="https://graphql.org/">GraphQL</a> construyendo la consulta adecuada se recuperan exclusivamente los datos solicitados.</p>
 <p>Por ejemplo, si de un libro solo se requieren las propiedades el <em>id</em>, <em>title</em> y <em>date</em> de entre todas las que tienen la consulta sería en este caso la siguiente para una consulta que devuelve los datos de un conjunto de libros.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-graphql" data-lang="graphql"><span class="line"><span class="cl"><span class="kd">query</span><span class="w"> </span><span class="nc">Books</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="py">books</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">id</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">title</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">date</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>query-1.graphql</span>
+    </div>
+</div>
+<p>Si se desea recuperar solo el <em>id</em> y <em>title</em> sin el <em>date</em> la consulta debe ser diferente.</p>
           
           <br>
           <a href="/blog-bitix/2018/08/usando-directivas-en-graphql/">Continuar leyendo...</a>
@@ -284,22 +279,11 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+            <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
 </div>
-<p>Hace ya un tiempo escribí una [serie de artículos sobre GraphQL][blogbitix-serie-graphql] para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con <a href="https://graphql.org/">GraphQL</a> usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.</p>
+<p>Hace ya un tiempo escribí una <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">serie de artículos sobre GraphQL</a> para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con <a href="https://graphql.org/">GraphQL</a> usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.</p>
+<p>Uno de esas posibilidades de GraphQL es la herramienta <a href="https://github.com/graphql/graphiql">GraphiQL</a> que es un editor interactivo para construir consultas y explorar la API. Una de sus mayores ventajas es que ofrece asistencia contextual y proporciona mensajes de error en caso de que la sintaxis de la consulta sea errónea. En los artículos que escribí con anterioridad los ejemplos los hice usando el comando <em>curl</em>. Ahora que he visto y aprendido algunas pocas cosas más de GraphQL en este artículo explico como usar la herramienta GraphiQL como alternativa a <em>curl</em>.</p>
           
           <br>
           <a href="/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/">Continuar leyendo...</a>
@@ -321,19 +305,7 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<p>El sector de los videojuegos es una industria que mueve miles de millones de euros en todo el mundo mayor que sectores con más historia como la industria del cine, los juegos triple A poseen inversiones y desarrollos cinematográficos. Los computadores y aparatos electrónicos están muy relacionados con los videojuegos ya desde hace mucho tiempo desde que aparecieran en 1947 el <a href="https://es.wikipedia.org/wiki/Primer_videojuego#1947:_Dispositivo_de_Entretenimiento_de_Tubos_de_Rayos_Cat%C3%B3dicos">primer videojuego</a>. En la actualidad los videojuegos son unos programas informáticos de los que en la computación personal más de cómputo requieren a los ordenadores, una buena parte de la presión para mejorar los computadores proviene de los videojuegos con tarjetas gráficas muy potentes, cantidades de memoria consideradas enormes hasta hace una década, procesadores más potentes en <a href="https://picodotdev.github.io/blog-bitix/2018/08/despues-de-la-guerra-del-numero-de-nucleos-en-los-procesadores-vendra-la-guerra-de-la-computacion-heterogenea-o-manycores/">la guerra actual por añadir más núcleos a las CPU</a>. Recientemente los sistemas operativos y entornos de escritorio han empezado a aprovechar de las capacidades de las tarjetas gráficas o GPU para proporcionar efectos visuales y acelerar algunas operaciones de cálculo más eficientemente que en la CPU.</p>
+            <p>El sector de los videojuegos es una industria que mueve miles de millones de euros en todo el mundo mayor que sectores con más historia como la industria del cine, los juegos triple A poseen inversiones y desarrollos cinematográficos. Los computadores y aparatos electrónicos están muy relacionados con los videojuegos ya desde hace mucho tiempo desde que aparecieran en 1947 el <a href="https://es.wikipedia.org/wiki/Primer_videojuego#1947:_Dispositivo_de_Entretenimiento_de_Tubos_de_Rayos_Cat%C3%B3dicos">primer videojuego</a>. En la actualidad los videojuegos son unos programas informáticos de los que en la computación personal más de cómputo requieren a los ordenadores, una buena parte de la presión para mejorar los computadores proviene de los videojuegos con tarjetas gráficas muy potentes, cantidades de memoria consideradas enormes hasta hace una década, procesadores más potentes en <a href="https://picodotdev.github.io/blog-bitix/2018/08/despues-de-la-guerra-del-numero-de-nucleos-en-los-procesadores-vendra-la-guerra-de-la-computacion-heterogenea-o-manycores/">la guerra actual por añadir más núcleos a las CPU</a>. Recientemente los sistemas operativos y entornos de escritorio han empezado a aprovechar de las capacidades de las tarjetas gráficas o GPU para proporcionar efectos visuales y acelerar algunas operaciones de cálculo más eficientemente que en la CPU.</p>
           
           <br>
           <a href="/blog-bitix/2018/08/sobre-las-competiciones-deportivas-de-videojuegos-o-esports/">Continuar leyendo...</a>
@@ -357,22 +329,11 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+            <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Usar una librería como <a href="https://logging.apache.org/log4j/2.x/">Log4j</a> es probablemente indispensable en una aplicación para obtener información de su funcionamiento, mensajes informativos, advertencias, errores o excepciones que se están produciendo o se han producido. Los mensajes que se emiten contienen información útil para monitorización en tiempo real o su inspección pasado un tiempo.</p>
+<p>En cada punto de la aplicación en la que se desea emitir una traza es necesario proporcionar el formato del mensaje y sus parámetros extraídos de las propiedades de los objetos con la intención obtener una traza con los valores de determinadas propiedades. Si es habitual emitir una traza de ciertas clases para evitar poner la misma traza en diferentes puntos de la aplicación Log4j posee una funcionalidad para transformar en objeto en un mensaje personalizado como se comenta en su <a href="https://logging.apache.org/log4j/2.x/manual/messages.html">documentación para mensajes</a>.</p>
           
           <br>
           <a href="/blog-bitix/2018/08/personalizar-el-mensaje-emitido-de-un-objeto-en-log4j/">Continuar leyendo...</a>
@@ -396,19 +357,7 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+            <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/intel.svg" width="300" height="199" alt="Intel" title="Intel" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -439,19 +388,7 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+            <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>En una aplicación web hay múltiples usuarios realizando peticiones al servidor de modo que al usar una librería de <em>logging</em> como <a href="https://logging.apache.org/log4j/2.x/">Log4j</a> las trazas de información de los diferentes usuarios aparecerán intercaladas. En esta maraña de trazas resulta difícil obtener la secuencia de trazas de una petición siendo la diferencia entre descubrir la causa de un error o pasar varias horas revisando trazas sin encontrar nada significativo en la inmensa cantidad de ellas relativas a otras peticiones. La librería Log4j proporciona un mecanismo para seguir la secuencia completa de trazas de una petición con el <a href="https://logging.apache.org/log4j/2.x/manual/thread-context.html">concepto denominado <em>fish tagging</em></a>.</p>
@@ -502,22 +439,24 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+            <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>La librería <a href="https://logging.apache.org/log4j/2.x/">Log4j</a> es una librería para emitir las trazas de depuración e información indispensables cuando son requeridas en una aplicación Java. Es la librería sucesora de <a href="https://logback.qos.ch/">logback</a> y aunque no es imprescindible suele usarse en combinación con <a href="https://www.slf4j.org/">slf4j</a> ya que esta permite cambiar de librería de <em>logging</em> subyacente sin hacer ningún cambio en la aplicación.</p>
+<p>Algunas de las nuevas características de log4j son:</p>
+<ul>
+<li>Rendimiento mejorado usando funcionalidades asíncronas en los <em>loggers</em>.</li>
+<li>Soporte para múltiples APIs como SL4J, Commons Logging y <em>java.util.logging</em> (JUL).</li>
+<li>Sin encadenamientos a la librería al poder en cualquier momento usar cualquier librería compatible con SLF4J.</li>
+<li>Recarga automática de la configuración sin perder ninguna traza.</li>
+<li>Filtrado avanzado basado en datos de contexto, marcadores, expresiones regulares y otros componentes.</li>
+<li>Arquitectura basada en <em>plugins</em>.</li>
+<li>Soporte de propiedades definidas en archivos de configuración, propiedades del sistema, variables de entorno, el mapa <a href="https://logging.apache.org/log4j/2.0/log4j-api/apidocs/org/apache/logging/log4j/ThreadContext.html">ThreadContext</a> y datos del evento.</li>
+<li>Soporte de <em>lambdas</em> de Java 8. Las expresiones lambdas no se evalúan si no está activado el nivel de log consiguiendo el mismo efecto que con una sentencia <em>if</em> pero en menos código.</li>
+<li>Niveles de <em>log</em> personalizados fácilmente definibles sin necesidad de realizar subclases.</li>
+<li>Recolección de basura reducida lo que evita presión al recolector de basura y mejora el rendimiento de las aplicaciones.</li>
+</ul>
+<p>Por defecto, la <a href="https://logging.apache.org/log4j/2.x/manual/configuration.html">configuración de Log4j</a> se describe en un archivo <em>xml</em> aunque también soporta definirlo en un formato menos verboso como <em>yaml</em>. La siguiente aplicación de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> al iniciarse emite en la consola varios mensajes usando log4j2.</p>
           
           <br>
           <a href="/blog-bitix/2018/07/la-libreria-log4j-para-emitir-trazas-en-aplicaciones-java/">Continuar leyendo...</a>
@@ -541,19 +480,7 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+            <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/geb.webp" width="350" height="119" alt="Geb" title="Geb" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -617,19 +544,7 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<p>El primer semestre del 2018 ya ha pasado. Estos primeros meses he publicado 38 artículos sobre la temática habitual de esta bitácora como programación, software libre, <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> algunos de opinión relacionados con la tecnología. Las visitas e ingresos de AdSense no han crecido tanto como en ocasiones anteriores pero se han mantenido a un nivel similar sobre los 30K páginas vistas y los 30 € de ingresos en AdSense que no están nada mal.</p>
+            <p>El primer semestre del 2018 ya ha pasado. Estos primeros meses he publicado 38 artículos sobre la temática habitual de esta bitácora como programación, software libre, <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> algunos de opinión relacionados con la tecnología. Las visitas e ingresos de AdSense no han crecido tanto como en ocasiones anteriores pero se han mantenido a un nivel similar sobre los 30K páginas vistas y los 30 € de ingresos en AdSense que no están nada mal.</p>
           
           <br>
           <a href="/blog-bitix/2018/06/hemeroteca-13/">Continuar leyendo...</a>
@@ -653,22 +568,11 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+            <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/intel.svg" width="300" height="199" alt="Intel" title="Intel" class="" loading="false&#34;"></p>
 </div>
 <p>El ordenador portátil que tenía sigue siendo perfectamente útil, sin embargo, en algunos casos concretos de mi uso la cantidad de memoria que tenía se me estaba quedando corta y cuando me pasa esto suelo aprovechar si alguien de mi entorno necesita ordenador traspasarlo y yo comprarme otro nuevo.</p>
+<p>El ordenador que tenía era un <a href="https://elblogdepicodev.blogspot.com.es/2012/12/desempaquetado-sony-vaio-e-14p.html">Sony VAIO de finales del 2012</a> con un procesador <a href="https://ark.intel.com/es-es/products/67355/Intel-Core-i5-3210M-Processor-3M-Cache-up-to-3_10-GHz-rPGA">Intel i5-3210M</a> con gráfica integrada <a href="https://en.wikipedia.org/wiki/Intel_Graphics_Technology#Ivy_Bridge">HD 4000</a>, 8 GiB de memoria, almacenamiento de estado sólido Samsung 840 EVO de 256 GiB con interfaz SATA y una pantalla de resolución 1600x900. Durante todo este tiempo me ha funcionado a la perfección, incluso con su gráfica me fue suficiente para un entorno de escritorio <a href="https://www.gnome.org/">GNOME</a> con <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> y he acabado muy contento con la marca <a href="https://www.sony.es/">Sony</a> al contrario de mi anterior portátil <a href="https://www.dell.com/">Dell</a> XPS 1530 de la que no pienso comprar nunca nada de esta marca, quizá tuve mala suerte pero el portátil Dell no fue barato, no acabé contento con la calidad del producto pasado el encantamiento inicial y al final acabó totalmente muerto sin ni siquiera encenderse.</p>
           
           <br>
           <a href="/blog-bitix/2018/06/decidido-a-comprar-un-intel-nuc-entre-las-opciones-que-he-evaluado/">Continuar leyendo...</a>
@@ -692,19 +596,7 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+            <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>La revista <a href="https://blogs.oracle.com/javamagazine/">Java Magazine</a> es una publicación bimensual gratuita que contiene artículos técnicos sobre temas muy variados relacionados con Java. Las revistas pueden consultarse directamente en la web o de forma más cómoda descargándola a nuestro ordenador en formato de archivo PDF. También es posible suscribirse a una lista de distribución para recibir mediante un correo electrónico una notificación cuando se publique un nuevo número de la revista o estar atento y seguir al twitter de la revista <a href="https://twitter.com/Oraclejavamag">@Oraclejavamag</a>. Su longitud ronda algo menos de 100 páginas por número.</p>
@@ -735,19 +627,7 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+            <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -779,19 +659,7 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+            <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">

@@ -244,22 +244,11 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes"> 
+            <div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Hasta el momento ya he escrito alguna entrada sobre los <a href="https://elblogdepicodev.blogspot.com.es/2012/03/patrones-de-diseno-en-la-programacion.html">patrones de diseño</a> en general, sobre algunos casos particulares como el <a href="https://elblogdepicodev.blogspot.com.es/2012/04/ejemplo-del-patron-de-diseno-command-y.html">patrón de diseño Command</a> relacionado con la programación concurrente y sobre el <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-del-patron-de-diseno-state.html">patrón de diseño State</a> para hacer máquinas de estados. En esta entrada hablaré sobre otro patrón de diseño, el patrón No Operation y de que forma podemos aprovecharlo para resolver algún problema y hacer nuestro código más simple.</p>
+<p>En un programa que emplea un lenguaje de programación orientado a objetos estos están constantemente relacionándose entre si a través de llamadas a métodos y a través de las referencias que un objeto posee de otros. Sin embargo, es habitual que un determinado método devuelva un null en vez de una referencia a un objeto. Esta referencia null puede ser un problema ya que nos obliga en el código hacer una comprobación antes de poder llamarlo. Si un método devuelve un null puede dar como resultado un <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/NullPointerException.html">NullPointerException</a> en otra parte de la aplicación en donde se intente usar esa referencia y no se haga la comprobación.</p>
           
           <br>
           <a href="/blog-bitix/2014/01/ejemplo-del-patron-de-diseno-no-operation/">Continuar leyendo...</a>

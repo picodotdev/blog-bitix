@@ -61,7 +61,7 @@
     "dateModified": "2020-10-02T17:30:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1538",
+    "wordCount": "1514",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -302,19 +302,7 @@
 
 
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+      <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -345,7 +333,7 @@
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/">Registro y descubrimiento de servicios con Spring Cloud y Consul</a></li>
-<li>[Guía sobre Docker][blogbitix-serie-docker]</li>
+<li><a href="https://picodotdev.github.io/blog-bitix/series/docker/">Guía sobre Docker</a></li>
 </ul>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl"><span class="cp"></span>docker network create --subnet 172.30.0.0/16 nomad&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">consul agent -dev -ui -client<span class="o">=</span>0.0.0.0&#10;</span></span><span class="line"><span class="cl">nomad agent -dev -config<span class="o">=</span>nomad/nomad.conf&#10;</span></span><span class="line"><span class="cl"><span class="c1"># http://127.0.0.1:8500</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># http://127.0.0.1:4646</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>

@@ -6,22 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+  <meta name="description" content="
 
 
+La librería Log4j es una librería para emitir las trazas de depuración e información indispensables cuando son requeridas en una aplicación Java. Es la librería sucesora de logback y aunque no es imprescindible suele usarse en combinación con slf4j ya que esta permite cambiar de librería de logging subyacente sin hacer ningún cambio en la aplicación.
+Algunas de las nuevas características de log4j son:
 
-La librería Log4j es una librería para emitir las trazas de depuración e información indispensables cuando son requeridas en una aplicación Java. Es la librería sucesora de logback y aunque no es imprescindible suele usarse en combinación con slf4j ya que esta permite cambiar de librería de logging subyacente sin hacer ningún cambio en la aplicación. &hellip;">
+Rendimiento mejorado usando funcionalidades asíncronas en los loggers.
+Soporte para múltiples APIs como SL4J, Commons Logging y java.util.logging (JUL).
+Sin encadenamientos a la librería al poder en cualquier momento usar cualquier librería compatible con SLF4J.
+Recarga automática de la configuración sin perder ninguna traza.
+Filtrado avanzado basado en datos de contexto, marcadores, expresiones regulares y otros componentes.
+Arquitectura basada en plugins.
+Soporte de propiedades definidas en archivos de configuración, propiedades del sistema, variables de entorno, el mapa ThreadContext y datos del evento.
+Soporte de lambdas de Java 8. Las expresiones lambdas no se evalúan si no está activado el nivel de log consiguiendo el mismo efecto que con una sentencia if pero en menos código.
+Niveles de log personalizados fácilmente definibles sin necesidad de realizar subclases.
+Recolección de basura reducida lo que evita presión al recolector de basura y mejora el rendimiento de las aplicaciones.
+
+Por defecto, la configuración de Log4j se describe en un archivo xml aunque también soporta definirlo en un formato menos verboso como yaml. La siguiente aplicación de Spring Boot al iniciarse emite en la consola varios mensajes usando log4j2. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>La librería Log4j para emitir trazas en aplicaciones Java</title>
@@ -46,22 +48,24 @@ La librería Log4j es una librería para emitir las trazas de depuración e info
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+<meta property="og:description" content="
 
 
+La librería Log4j es una librería para emitir las trazas de depuración e información indispensables cuando son requeridas en una aplicación Java. Es la librería sucesora de logback y aunque no es imprescindible suele usarse en combinación con slf4j ya que esta permite cambiar de librería de logging subyacente sin hacer ningún cambio en la aplicación.
+Algunas de las nuevas características de log4j son:
 
-La librería Log4j es una librería para emitir las trazas de depuración e información indispensables cuando son requeridas en una aplicación Java. Es la librería sucesora de logback y aunque no es imprescindible suele usarse en combinación con slf4j ya que esta permite cambiar de librería de logging subyacente sin hacer ningún cambio en la aplicación. &hellip;">
+Rendimiento mejorado usando funcionalidades asíncronas en los loggers.
+Soporte para múltiples APIs como SL4J, Commons Logging y java.util.logging (JUL).
+Sin encadenamientos a la librería al poder en cualquier momento usar cualquier librería compatible con SLF4J.
+Recarga automática de la configuración sin perder ninguna traza.
+Filtrado avanzado basado en datos de contexto, marcadores, expresiones regulares y otros componentes.
+Arquitectura basada en plugins.
+Soporte de propiedades definidas en archivos de configuración, propiedades del sistema, variables de entorno, el mapa ThreadContext y datos del evento.
+Soporte de lambdas de Java 8. Las expresiones lambdas no se evalúan si no está activado el nivel de log consiguiendo el mismo efecto que con una sentencia if pero en menos código.
+Niveles de log personalizados fácilmente definibles sin necesidad de realizar subclases.
+Recolección de basura reducida lo que evita presión al recolector de basura y mejora el rendimiento de las aplicaciones.
+
+Por defecto, la configuración de Log4j se describe en un archivo xml aunque también soporta definirlo en un formato menos verboso como yaml. La siguiente aplicación de Spring Boot al iniciarse emite en la consola varios mensajes usando log4j2. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -69,22 +73,24 @@ La librería Log4j es una librería para emitir las trazas de depuración e info
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="La librería Log4j para emitir trazas en aplicaciones Java">
-<meta name="twitter:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+<meta name="twitter:description" content="
 
 
+La librería Log4j es una librería para emitir las trazas de depuración e información indispensables cuando son requeridas en una aplicación Java. Es la librería sucesora de logback y aunque no es imprescindible suele usarse en combinación con slf4j ya que esta permite cambiar de librería de logging subyacente sin hacer ningún cambio en la aplicación.
+Algunas de las nuevas características de log4j son:
 
-La librería Log4j es una librería para emitir las trazas de depuración e información indispensables cuando son requeridas en una aplicación Java. Es la librería sucesora de logback y aunque no es imprescindible suele usarse en combinación con slf4j ya que esta permite cambiar de librería de logging subyacente sin hacer ningún cambio en la aplicación. &hellip;">
+Rendimiento mejorado usando funcionalidades asíncronas en los loggers.
+Soporte para múltiples APIs como SL4J, Commons Logging y java.util.logging (JUL).
+Sin encadenamientos a la librería al poder en cualquier momento usar cualquier librería compatible con SLF4J.
+Recarga automática de la configuración sin perder ninguna traza.
+Filtrado avanzado basado en datos de contexto, marcadores, expresiones regulares y otros componentes.
+Arquitectura basada en plugins.
+Soporte de propiedades definidas en archivos de configuración, propiedades del sistema, variables de entorno, el mapa ThreadContext y datos del evento.
+Soporte de lambdas de Java 8. Las expresiones lambdas no se evalúan si no está activado el nivel de log consiguiendo el mismo efecto que con una sentencia if pero en menos código.
+Niveles de log personalizados fácilmente definibles sin necesidad de realizar subclases.
+Recolección de basura reducida lo que evita presión al recolector de basura y mejora el rendimiento de las aplicaciones.
+
+Por defecto, la configuración de Log4j se describe en un archivo xml aunque también soporta definirlo en un formato menos verboso como yaml. La siguiente aplicación de Spring Boot al iniciarse emite en la consola varios mensajes usando log4j2. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -106,7 +112,7 @@ La librería Log4j es una librería para emitir las trazas de depuración e info
     "dateModified": "2018-07-15T01:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "940",
+    "wordCount": "916",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -122,22 +128,24 @@ La librería Log4j es una librería para emitir las trazas de depuración e info
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "<p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+    "description": "<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
-<p>La librería <a href="https://logging.apache.org/log4j/2.x/">Log4j</a> es una librería para emitir las trazas de depuración e información indispensables cuando son requeridas en una aplicación Java. Es la librería sucesora de <a href="https://logback.qos.ch/">logback</a> y aunque no es imprescindible suele usarse en combinación con <a href="https://www.slf4j.org/">slf4j</a> ya que esta permite cambiar de librería de <em>logging</em> subyacente sin hacer ningún cambio en la aplicación.</p>"
+<p>La librería <a href="https://logging.apache.org/log4j/2.x/">Log4j</a> es una librería para emitir las trazas de depuración e información indispensables cuando son requeridas en una aplicación Java. Es la librería sucesora de <a href="https://logback.qos.ch/">logback</a> y aunque no es imprescindible suele usarse en combinación con <a href="https://www.slf4j.org/">slf4j</a> ya que esta permite cambiar de librería de <em>logging</em> subyacente sin hacer ningún cambio en la aplicación.</p>
+<p>Algunas de las nuevas características de log4j son:</p>
+<ul>
+<li>Rendimiento mejorado usando funcionalidades asíncronas en los <em>loggers</em>.</li>
+<li>Soporte para múltiples APIs como SL4J, Commons Logging y <em>java.util.logging</em> (JUL).</li>
+<li>Sin encadenamientos a la librería al poder en cualquier momento usar cualquier librería compatible con SLF4J.</li>
+<li>Recarga automática de la configuración sin perder ninguna traza.</li>
+<li>Filtrado avanzado basado en datos de contexto, marcadores, expresiones regulares y otros componentes.</li>
+<li>Arquitectura basada en <em>plugins</em>.</li>
+<li>Soporte de propiedades definidas en archivos de configuración, propiedades del sistema, variables de entorno, el mapa <a href="https://logging.apache.org/log4j/2.0/log4j-api/apidocs/org/apache/logging/log4j/ThreadContext.html">ThreadContext</a> y datos del evento.</li>
+<li>Soporte de <em>lambdas</em> de Java 8. Las expresiones lambdas no se evalúan si no está activado el nivel de log consiguiendo el mismo efecto que con una sentencia <em>if</em> pero en menos código.</li>
+<li>Niveles de <em>log</em> personalizados fácilmente definibles sin necesidad de realizar subclases.</li>
+<li>Recolección de basura reducida lo que evita presión al recolector de basura y mejora el rendimiento de las aplicaciones.</li>
+</ul>
+<p>Por defecto, la <a href="https://logging.apache.org/log4j/2.x/manual/configuration.html">configuración de Log4j</a> se describe en un archivo <em>xml</em> aunque también soporta definirlo en un formato menos verboso como <em>yaml</em>. La siguiente aplicación de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> al iniciarse emite en la consola varios mensajes usando log4j2.</p>"
 }
   </script>
   
@@ -353,19 +361,7 @@ La librería Log4j es una librería para emitir las trazas de depuración e info
 
 
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+      <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>La librería <a href="https://logging.apache.org/log4j/2.x/">Log4j</a> es una librería para emitir las trazas de depuración e información indispensables cuando son requeridas en una aplicación Java. Es la librería sucesora de <a href="https://logback.qos.ch/">logback</a> y aunque no es imprescindible suele usarse en combinación con <a href="https://www.slf4j.org/">slf4j</a> ya que esta permite cambiar de librería de <em>logging</em> subyacente sin hacer ningún cambio en la aplicación.</p>

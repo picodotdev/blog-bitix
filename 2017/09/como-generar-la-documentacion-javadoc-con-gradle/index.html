@@ -6,19 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
-
+  <meta name="description" content="
 
 
 Habiendo explicado qué es la herramienta Javadoc, y en otros artículos como crear taglets para incluirlos en los comentarios y generar contenido con los mecanismos de extensión que ofrece y explicado como cambiar los estilos que se usan por defecto en el Javadoc para por ejemplo cambiar los colores según la organización o incluir un texto de derechos de autor en el pie de página, hay que generar la documentación javadoc usando la herramienta de construcción que usemos. En este artículo muestro como generar la documentación javadoc con Gradle. &hellip;">
@@ -46,19 +34,7 @@ Habiendo explicado qué es la herramienta Javadoc, y en otros artículos como cr
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
-
+<meta property="og:description" content="
 
 
 Habiendo explicado qué es la herramienta Javadoc, y en otros artículos como crear taglets para incluirlos en los comentarios y generar contenido con los mecanismos de extensión que ofrece y explicado como cambiar los estilos que se usan por defecto en el Javadoc para por ejemplo cambiar los colores según la organización o incluir un texto de derechos de autor en el pie de página, hay que generar la documentación javadoc usando la herramienta de construcción que usemos. En este artículo muestro como generar la documentación javadoc con Gradle. &hellip;">
@@ -69,19 +45,7 @@ Habiendo explicado qué es la herramienta Javadoc, y en otros artículos como cr
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Cómo generar la documentación Javadoc con Gradle">
-<meta name="twitter:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
-
+<meta name="twitter:description" content="
 
 
 Habiendo explicado qué es la herramienta Javadoc, y en otros artículos como crear taglets para incluirlos en los comentarios y generar contenido con los mecanismos de extensión que ofrece y explicado como cambiar los estilos que se usan por defecto en el Javadoc para por ejemplo cambiar los colores según la organización o incluir un texto de derechos de autor en el pie de página, hay que generar la documentación javadoc usando la herramienta de construcción que usemos. En este artículo muestro como generar la documentación javadoc con Gradle. &hellip;">
@@ -106,7 +70,7 @@ Habiendo explicado qué es la herramienta Javadoc, y en otros artículos como cr
     "dateModified": "2017-09-14T10:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "340",
+    "wordCount": "316",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -122,19 +86,7 @@ Habiendo explicado qué es la herramienta Javadoc, y en otros artículos como cr
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "<p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+    "description": "<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Habiendo explicado <a href="https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/">qué es la herramienta Javadoc</a>, y en otros artículos <a href="https://picodotdev.github.io/blog-bitix/2017/09/crear-anotaciones-de-javadoc-personalizadas-con-taglets/">como crear taglets</a> para incluirlos en los comentarios y generar contenido con los mecanismos de extensión que ofrece y explicado <a href="https://picodotdev.github.io/blog-bitix/2017/09/cambiar-y-personalizar-los-estilos-de-la-documentacion-javadoc/">como cambiar los estilos que se usan por defecto en el Javadoc</a> para por ejemplo cambiar los colores según la organización o incluir un texto de derechos de autor en el pie de página, hay que generar la documentación <em>javadoc</em> usando la herramienta de construcción que usemos. En este artículo muestro como generar la documentación <em>javadoc</em> con <a href="https://gradle.org/">Gradle</a>.</p>"
@@ -353,19 +305,7 @@ Habiendo explicado qué es la herramienta Javadoc, y en otros artículos como cr
 
 
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+      <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Habiendo explicado <a href="https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/">qué es la herramienta Javadoc</a>, y en otros artículos <a href="https://picodotdev.github.io/blog-bitix/2017/09/crear-anotaciones-de-javadoc-personalizadas-con-taglets/">como crear taglets</a> para incluirlos en los comentarios y generar contenido con los mecanismos de extensión que ofrece y explicado <a href="https://picodotdev.github.io/blog-bitix/2017/09/cambiar-y-personalizar-los-estilos-de-la-documentacion-javadoc/">como cambiar los estilos que se usan por defecto en el Javadoc</a> para por ejemplo cambiar los colores según la organización o incluir un texto de derechos de autor en el pie de página, hay que generar la documentación <em>javadoc</em> usando la herramienta de construcción que usemos. En este artículo muestro como generar la documentación <em>javadoc</em> con <a href="https://gradle.org/">Gradle</a>.</p>

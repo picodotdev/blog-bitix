@@ -247,19 +247,17 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<p>En el mundo de las expresiones regulares hay tres tipos de cuantificadores que varían el comportamiento según el número caracteres que toman para encontrar ocurrencias. Son <em>greedy</em> o avaricioso, <em>reluctant</em> o reacio y <em>possessive</em> o posesivo. Cada cuantificador tiene una expresión en una expresión regular. La opción más habitual es el cuantificador <em>greedy</em>, añadiendo una <em>?</em> se convierte en <em>reluctant</em> y añadiendo un <em>+</em> se convierte en <em>possessive</em>.</p>
+            <p>En el mundo de las expresiones regulares hay tres tipos de cuantificadores que varían el comportamiento según el número caracteres que toman para encontrar ocurrencias. Son <em>greedy</em> o avaricioso, <em>reluctant</em> o reacio y <em>possessive</em> o posesivo. Cada cuantificador tiene una expresión en una expresión regular. La opción más habitual es el cuantificador <em>greedy</em>, añadiendo una <em>?</em> se convierte en <em>reluctant</em> y añadiendo un <em>+</em> se convierte en <em>possessive</em>.</p>
+<pre>
+Greedy  Reluctant  Possessive  Significado
+X?      X??        X?+         X, uno o ninguno
+X*      X*?        X*+         X, cero o mas
+X+      X+?        X++         X, uno o más
+X{n}    X{n}?      X{n}+       X, exactamente n veces
+X{n,}   X{n,}?     X{n,}+      X, al menos n veces
+X{n,m}  X{n,m}?    X{n,m}+     X, al menos n veces pero no mas de m
+</pre>
+<p>Aparentemente cada uno de los cuantificadores realiza lo mismo, sin embargo, hay diferencias en su comportamiento al hacer emparejamientos entre los elementos de la expresión regular y la cadena en la que se está aplicando.</p>
           
           <br>
           <a href="/blog-bitix/2017/09/los-cuantificadores-greedy-reluctant-y-possessive-en-expresiones-regulares/">Continuar leyendo...</a>
@@ -303,22 +301,11 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+            <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>En ocasiones es necesario usar una cache que contenga un número de elementos hasta un límite y que cuando se vayan añadiendo más se vayan borrando otros según algún criterio. En Java si no queremos añadir una nueva dependencia al proyecto con una librería especializada como <a href="https://www.ehcache.org/">Ehcache</a> la clase <a href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html">LinkedHashMap</a> sirve para aquellos casos de uso simples sin necesidad de dependencias adicionales.</p>
+<p>Si el coste de obtener algunos datos es costoso ya sean porque hay que obtenerlos de una base de datos, mediante una operación de disco o red o hay que hacer algún cálculo sobre ellos en estos casos guardar los datos en una cache supondrá un aumento notable de rendimiento de mayor o menor medida según el coste de la operación que evita la cache. Usar una cache es viable si es posible usar datos no completamente actualizados y dedicar algo de espacio en memoria para la cache. Si en la mayor parte de las búsquedas que se hacen en la cache el elemento buscado está ya presente se considera un acierto o <em>hit</em> y si no está presente un fallo o <em>miss</em>, cuando mayor sea el número de aciertos en la cache mayor será el aumento rendimiento percibido.</p>
           
           <br>
           <a href="/blog-bitix/2017/08/cache-simple-de-datos-y-con-ehcache-en-java/">Continuar leyendo...</a>
@@ -370,19 +357,7 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+            <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Java es un lenguaje más verboso y con menos azúcar sintáctico (o veneno para ratas, según se mire) que otros lenguajes. Esto hace que por ejemplo para declarar e inicializar objetos tan comunes en un programa de tipo <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html">Map</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a> o <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html">Set</a> que contengan un número fijo de elementos haya que escribir varias líneas de código. Estas clases de estructuras de datos del grupo de colecciones son de las más usadas en una aplicación Java. A la fecha de escribir este artículo Java no soporta literales para las colecciones que reduzca las lineas de código para inicializarlas y mejore la legibilidad del código aunque en versiones recientes si se han incorporado métodos de utilidad que cubren el requerimiento.</p>
@@ -451,19 +426,7 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+            <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/quercus-robur.webp" width="175" height="265" alt="Quercus Robur" title="Quercus Robur" class="" loading="false&#34;"></p>
 </div>
 <p>Hace ya mucho tiempo de pequeño planté alguna semilla de manzana por curiosidad para ver si germinaba, y sí germinó, pero al cabo de unos meses por desconocimiento de la forma de como cuidar una planta, excesivo riego o tierra no adecuada el retoño de manzano pereció. También planté alguna bellota de algún tipo de roble que alguno de mis hermanos trajo a casa, y sí germinó, y al igual que el manzano duró unos cuantos meses pero sucumbió de la misma forma.</p>
@@ -484,19 +447,7 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<p>Tener en casa un pequeño conjunto de herramientas es necesario para realizar pequeñas tareas domésticas, desde quitar un grifo a atornillar algún elemento. Buscando en el gran catálogo del que dispone <a href="https://amzn.to/2flFhHA" rel="sponsored">Amazon</a> en su web quería uno que fuese bastante completo sin ser muy caro y aunque no fuese de calidad profesional cumpliese con las tarea. Hay muchos modelos pero me fijé en uno de <a href="https://amzn.to/2w6YVem" rel="sponsored">Mannesmann modelo M29085</a>. También necesitaba unas bandejas para la cocina y salón.</p>
+            <p>Tener en casa un pequeño conjunto de herramientas es necesario para realizar pequeñas tareas domésticas, desde quitar un grifo a atornillar algún elemento. Buscando en el gran catálogo del que dispone <a href="https://amzn.to/2flFhHA" rel="sponsored">Amazon</a> en su web quería uno que fuese bastante completo sin ser muy caro y aunque no fuese de calidad profesional cumpliese con las tarea. Hay muchos modelos pero me fijé en uno de <a href="https://amzn.to/2w6YVem" rel="sponsored">Mannesmann modelo M29085</a>. También necesitaba unas bandejas para la cocina y salón.</p>
           
           <br>
           <a href="/blog-bitix/2017/07/desempaquetado-maletin-herramientas-mannesmann-y-bandejas-melamina-balvi/">Continuar leyendo...</a>
@@ -520,22 +471,11 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+            <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>En el artículo de <a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciacion-a-la-programacion-concurrente-en-java/">iniciación a la programación concurrente en Java</a> explicaba las facilidades que proporciona este lenguaje para la programación de tareas con varios hilos que implica la sincronización y bloqueo mediante varias primitivas como semáforos o <em>locks</em>, ponía el ejemplo y su código de dos de los típicos ejemplos que suelen usarse en las asignaturas de sistemas operativos, el problema de los filósofos y el del barbero.</p>
+<p>En el caso de tener varias tareas que tardan unos segundos si las ejecutamos de forma secuencial el tiempo que tardarán será la suma de todas las tareas. Si las tareas no son dependientes, no hace falta esperar a que termine una anterior para comenzar otra, o el problema se puede descomponer en varias partes ejecutándolas de forma concurrente y simultáneamente el tiempo total que tardarán aproximadamente será el tiempo de la tarea más lenta.</p>
           
           <br>
           <a href="/blog-bitix/2017/07/ejecutar-varias-tareas-de-forma-concurrente-en-java/">Continuar leyendo...</a>
@@ -607,19 +547,7 @@
         </span>
         <p>
           
-            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+            <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/gradle.svg" width="200" height="165" alt="Gradle" title="Gradle" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -629,6 +557,7 @@
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Cuando se empieza un proyecto nuevo desde cero se debe disponer de una herramienta de construcción, una estructura de directorios que siga las convenciones de la herramienta de construcción, añadir las dependencias que vayamos a utilizar y alguna clase que muestre algo al ejecutarlo para comprobar que disponemos de la infraestructura básica de compilación, teses, generación de artefactos e inicio de proyecto.</p>
+<p>Dado que las clases Java hay que compilarlas para facilitar la tarea están las herramientas de construcción y estas siguen una serie de convenciones en la estructura de directorios además de requerir algunos archivos. En un proyecto de duración de varios meses o años el tiempo dedicado a crear esta infraestructura básica es despreciable y no complicado si nos basamos en un proyecto similar del que copiar, sin embargo, para hacer alguna prueba rápida es costoso.</p>
           
           <br>
           <a href="/blog-bitix/2017/07/iniciar-rapido-un-proyecto-de-java-con-gradle-o-de-spring-con-spring-initializr/">Continuar leyendo...</a>

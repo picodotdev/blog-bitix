@@ -6,25 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+  <meta name="description" content="
 
 
 
 
 
-
-La información generalmente y en la mayoría de los casos es de las cosas más importantes de una aplicación. Para guardarla se suelen emplear bases de datos relacionales por sus propiedades de consistencia, transaccionalidad y propiedades ACID aunque más recientemente se ha popularizado otros sistemas no SQL como Redis o Mongo para diferentes casos de uso. &hellip;">
+La información generalmente y en la mayoría de los casos es de las cosas más importantes de una aplicación. Para guardarla se suelen emplear bases de datos relacionales por sus propiedades de consistencia, transaccionalidad y propiedades ACID aunque más recientemente se ha popularizado otros sistemas no SQL como Redis o Mongo para diferentes casos de uso.
+Dos de las bases de datos relacionales más usadas son PostgreSQL y MySQL. El rendimiento de una aplicación en buena parte depende del acceso a la base de datos relacional. Por ello conviene saber cuáles, cuántas consultas se están lanzando al servidor y el tiempo tardan, además suele ser útil monitorizar especialmente las consultas que consideramos lentas al superar cierto umbral de tiempo. Con la información de que consultas, cuantas y las lentas se toman tomar acciones  asegurar el buen funcionamiento del sistema, para mejorar el rendimiento de la aplicación optimizando las consultas lentas u optimizando la aplicación para que realice menos consultas al servidor de base de datos si es que hay un problema de 1&#43;N típico en las librerías ORM como Hibernate. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Log de SQLs y de SQLs lentas en MySQL y PostgreSQL</title>
@@ -49,25 +38,14 @@ La información generalmente y en la mayoría de los casos es de las cosas más 
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/mysql-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+<meta property="og:description" content="
 
 
 
 
 
-
-La información generalmente y en la mayoría de los casos es de las cosas más importantes de una aplicación. Para guardarla se suelen emplear bases de datos relacionales por sus propiedades de consistencia, transaccionalidad y propiedades ACID aunque más recientemente se ha popularizado otros sistemas no SQL como Redis o Mongo para diferentes casos de uso. &hellip;">
+La información generalmente y en la mayoría de los casos es de las cosas más importantes de una aplicación. Para guardarla se suelen emplear bases de datos relacionales por sus propiedades de consistencia, transaccionalidad y propiedades ACID aunque más recientemente se ha popularizado otros sistemas no SQL como Redis o Mongo para diferentes casos de uso.
+Dos de las bases de datos relacionales más usadas son PostgreSQL y MySQL. El rendimiento de una aplicación en buena parte depende del acceso a la base de datos relacional. Por ello conviene saber cuáles, cuántas consultas se están lanzando al servidor y el tiempo tardan, además suele ser útil monitorizar especialmente las consultas que consideramos lentas al superar cierto umbral de tiempo. Con la información de que consultas, cuantas y las lentas se toman tomar acciones  asegurar el buen funcionamiento del sistema, para mejorar el rendimiento de la aplicación optimizando las consultas lentas u optimizando la aplicación para que realice menos consultas al servidor de base de datos si es que hay un problema de 1&#43;N típico en las librerías ORM como Hibernate. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -75,25 +53,14 @@ La información generalmente y en la mayoría de los casos es de las cosas más 
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Log de SQLs y de SQLs lentas en MySQL y PostgreSQL">
-<meta name="twitter:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+<meta name="twitter:description" content="
 
 
 
 
 
-
-La información generalmente y en la mayoría de los casos es de las cosas más importantes de una aplicación. Para guardarla se suelen emplear bases de datos relacionales por sus propiedades de consistencia, transaccionalidad y propiedades ACID aunque más recientemente se ha popularizado otros sistemas no SQL como Redis o Mongo para diferentes casos de uso. &hellip;">
+La información generalmente y en la mayoría de los casos es de las cosas más importantes de una aplicación. Para guardarla se suelen emplear bases de datos relacionales por sus propiedades de consistencia, transaccionalidad y propiedades ACID aunque más recientemente se ha popularizado otros sistemas no SQL como Redis o Mongo para diferentes casos de uso.
+Dos de las bases de datos relacionales más usadas son PostgreSQL y MySQL. El rendimiento de una aplicación en buena parte depende del acceso a la base de datos relacional. Por ello conviene saber cuáles, cuántas consultas se están lanzando al servidor y el tiempo tardan, además suele ser útil monitorizar especialmente las consultas que consideramos lentas al superar cierto umbral de tiempo. Con la información de que consultas, cuantas y las lentas se toman tomar acciones  asegurar el buen funcionamiento del sistema, para mejorar el rendimiento de la aplicación optimizando las consultas lentas u optimizando la aplicación para que realice menos consultas al servidor de base de datos si es que hay un problema de 1&#43;N típico en las librerías ORM como Hibernate. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -115,7 +82,7 @@ La información generalmente y en la mayoría de los casos es de las cosas más 
     "dateModified": "2019-02-04T13:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1376",
+    "wordCount": "1352",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -131,25 +98,14 @@ La información generalmente y en la mayoría de los casos es de las cosas más 
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "<p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+    "description": "<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/mysql.svg" width="300" height="204" alt="MySQL" title="MySQL" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/postgresql.svg" width="200" height="206" alt="PostgreSQL" title="PostgreSQL" class="" loading="false&#34;"></p>
 </div>
-<p>La información generalmente y en la mayoría de los casos es de las cosas más importantes de una aplicación. Para guardarla se suelen emplear bases de datos relacionales por sus propiedades de consistencia, transaccionalidad y propiedades ACID aunque más recientemente se ha popularizado otros sistemas no SQL como <a href="https://redis.io/">Redis</a> o <a href="https://www.mongodb.com/">Mongo</a> para diferentes casos de uso.</p>"
+<p>La información generalmente y en la mayoría de los casos es de las cosas más importantes de una aplicación. Para guardarla se suelen emplear bases de datos relacionales por sus propiedades de consistencia, transaccionalidad y propiedades ACID aunque más recientemente se ha popularizado otros sistemas no SQL como <a href="https://redis.io/">Redis</a> o <a href="https://www.mongodb.com/">Mongo</a> para diferentes casos de uso.</p>
+<p>Dos de las bases de datos relacionales más usadas son <a href="https://www.postgresql.org/">PostgreSQL</a> y <a href="https://www.mysql.com/">MySQL</a>. El rendimiento de una aplicación en buena parte depende del acceso a la base de datos relacional. Por ello conviene saber cuáles, cuántas consultas se están lanzando al servidor y el tiempo tardan, además suele ser útil monitorizar especialmente las consultas que consideramos lentas al superar cierto umbral de tiempo. Con la información de que consultas, cuantas y las lentas se toman tomar acciones  asegurar el buen funcionamiento del sistema, para mejorar el rendimiento de la aplicación optimizando las consultas lentas u optimizando la aplicación para que realice menos consultas al servidor de base de datos si es que hay un <a href="https://picodotdev.github.io/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/">problema de 1+N típico en las librerías ORM como Hibernate</a>.</p>"
 }
   </script>
   
@@ -363,19 +319,7 @@ La información generalmente y en la mayoría de los casos es de las cosas más 
 
 
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+      <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/mysql.svg" width="300" height="204" alt="MySQL" title="MySQL" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">

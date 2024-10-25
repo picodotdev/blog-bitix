@@ -61,7 +61,7 @@
     "dateModified": "2019-04-07T12:45:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1093",
+    "wordCount": "1069",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -302,19 +302,7 @@
 
 
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+      <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -348,7 +336,7 @@
         <span>DefaultController.java</span>
     </div>
 </div>
-<p>He utilizado el ejemplo de la [serie de artículos sobre Spring Cloud][blogbitix-serie-spring-cloud] añadiendo el soporte para Spring Cloud Sleuth. La aplicación se compone de un microservicio de configuración (con <a href="https://cloud.spring.io/spring-cloud-config/">Spring Cloud Config</a>), otro de registro y descubrimiento (con Eureka), un servicio de API <em>gateway</em> (con Zuul), el servicio de aplicación y un cliente del servicio que envía las peticiones al <em>gateway</em> y este las redirige al servicio de aplicación.</p>
+<p>He utilizado el ejemplo de la <a href="https://picodotdev.github.io/blog-bitix/series/spring-cloud/">serie de artículos sobre Spring Cloud</a> añadiendo el soporte para Spring Cloud Sleuth. La aplicación se compone de un microservicio de configuración (con <a href="https://cloud.spring.io/spring-cloud-config/">Spring Cloud Config</a>), otro de registro y descubrimiento (con Eureka), un servicio de API <em>gateway</em> (con Zuul), el servicio de aplicación y un cliente del servicio que envía las peticiones al <em>gateway</em> y este las redirige al servicio de aplicación.</p>
 <p>El cliente inicia un <em>span</em> que es enviado al servidor y el servidor obtiene las cabeceras enviadas. El cliente y el servidor son dos procesos distintos del sistema pero se observa que el identificativo global de la transacción <em>traceId</em> se mantiene en ambos y el identificativo de <em>spanId</em> cambia entre el cliente y el servidor.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Client Span (traceId: 94fcd131178298fd, spanId: 94fcd131178298fd)&#10;</span></span><span class="line"><span class="cl">...&#10;</span></span><span class="line"><span class="cl">Service Span (traceId: 94fcd131178298fd, spanId: 6e6380e239f30917)&#10;</span></span><span class="line"><span class="cl">...&#10;</span></span><span class="line"><span class="cl">Service response: Hello world (http://archlinux:8080/, value)</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>

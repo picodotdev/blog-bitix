@@ -6,19 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
- 
+  <meta name="description" content=" 
 
 
 Las aplicaciones están pasando de ser elementos aislados, grandes y monolíticos a ser desarrolladas como varios microservicios que colaboran entre si para en conjunto ofrecer la funcionalidad deseada. Aunque los microservicios presentan sus propias problemáticas resuelven algunas que poseen los sistemas monolíticos, entre algunas de sus características deseables están: mayor cohesión, menor acoplamiento, menor tamaño, mayor independencia de la tecnología usando la más adecuada en cada situación, más fácilmente reemplazables y despliegues más sencillos. También, la funcionalidad ofrecida por una aplicación puede quererse consumirse desde otra aplicación surgiendo de esta forma una API. Para ofrecer una API de una aplicación que pueda consumirse internamente, desde diferentes dispositivos o por terceras partes podemos usar SOAP o REST pero también han surgido algunas alternativas como Apache Thrift supliendo algunas carencias de las anteriores aún basándose en el mismo concepto de llamada a código en una máquina remota (Remote Procedure Call, RPC) ya visto en algunas opciones más antiguas como la misma SOAP, RMI o CORBA. En este artículo explicaré algunas diferencias entre SOAP, REST y Apache Thrift y mostraré un ejemplo sencillo con código de cómo empezar a usar Apache Thrift. &hellip;">
@@ -46,19 +34,7 @@ Las aplicaciones están pasando de ser elementos aislados, grandes y monolítico
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
- 
+<meta property="og:description" content=" 
 
 
 Las aplicaciones están pasando de ser elementos aislados, grandes y monolíticos a ser desarrolladas como varios microservicios que colaboran entre si para en conjunto ofrecer la funcionalidad deseada. Aunque los microservicios presentan sus propias problemáticas resuelven algunas que poseen los sistemas monolíticos, entre algunas de sus características deseables están: mayor cohesión, menor acoplamiento, menor tamaño, mayor independencia de la tecnología usando la más adecuada en cada situación, más fácilmente reemplazables y despliegues más sencillos. También, la funcionalidad ofrecida por una aplicación puede quererse consumirse desde otra aplicación surgiendo de esta forma una API. Para ofrecer una API de una aplicación que pueda consumirse internamente, desde diferentes dispositivos o por terceras partes podemos usar SOAP o REST pero también han surgido algunas alternativas como Apache Thrift supliendo algunas carencias de las anteriores aún basándose en el mismo concepto de llamada a código en una máquina remota (Remote Procedure Call, RPC) ya visto en algunas opciones más antiguas como la misma SOAP, RMI o CORBA. En este artículo explicaré algunas diferencias entre SOAP, REST y Apache Thrift y mostraré un ejemplo sencillo con código de cómo empezar a usar Apache Thrift. &hellip;">
@@ -69,19 +45,7 @@ Las aplicaciones están pasando de ser elementos aislados, grandes y monolítico
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Introducción y ejemplo de API RPC con Apache Thrift">
-<meta name="twitter:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
- 
+<meta name="twitter:description" content=" 
 
 
 Las aplicaciones están pasando de ser elementos aislados, grandes y monolíticos a ser desarrolladas como varios microservicios que colaboran entre si para en conjunto ofrecer la funcionalidad deseada. Aunque los microservicios presentan sus propias problemáticas resuelven algunas que poseen los sistemas monolíticos, entre algunas de sus características deseables están: mayor cohesión, menor acoplamiento, menor tamaño, mayor independencia de la tecnología usando la más adecuada en cada situación, más fácilmente reemplazables y despliegues más sencillos. También, la funcionalidad ofrecida por una aplicación puede quererse consumirse desde otra aplicación surgiendo de esta forma una API. Para ofrecer una API de una aplicación que pueda consumirse internamente, desde diferentes dispositivos o por terceras partes podemos usar SOAP o REST pero también han surgido algunas alternativas como Apache Thrift supliendo algunas carencias de las anteriores aún basándose en el mismo concepto de llamada a código en una máquina remota (Remote Procedure Call, RPC) ya visto en algunas opciones más antiguas como la misma SOAP, RMI o CORBA. En este artículo explicaré algunas diferencias entre SOAP, REST y Apache Thrift y mostraré un ejemplo sencillo con código de cómo empezar a usar Apache Thrift. &hellip;">
@@ -106,7 +70,7 @@ Las aplicaciones están pasando de ser elementos aislados, grandes y monolítico
     "dateModified": "2015-11-10T19:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1483",
+    "wordCount": "1459",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -122,19 +86,7 @@ Las aplicaciones están pasando de ser elementos aislados, grandes y monolítico
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "<p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes"> 
+    "description": "<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Las aplicaciones están pasando de ser elementos aislados, grandes y monolíticos a ser desarrolladas como varios microservicios que colaboran entre si para en conjunto ofrecer la funcionalidad deseada. Aunque los microservicios presentan sus propias problemáticas resuelven algunas que poseen los sistemas monolíticos, entre algunas de sus características deseables están: mayor cohesión, menor acoplamiento, menor tamaño, mayor independencia de la tecnología usando la más adecuada en cada situación, más fácilmente reemplazables y despliegues más sencillos. También, la funcionalidad ofrecida por una aplicación puede quererse consumirse desde otra aplicación surgiendo de esta forma una API. Para ofrecer una API de una aplicación que pueda consumirse internamente, desde diferentes dispositivos o por terceras partes podemos usar <a href="https://es.wikipedia.org/wiki/Simple_Object_Access_Protocol">SOAP</a> o <a href="https://es.wikipedia.org/wiki/Representational_State_Transfer">REST</a> pero también han surgido algunas alternativas como <a href="https://thrift.apache.org/">Apache Thrift</a> supliendo algunas carencias de las anteriores aún basándose en el mismo concepto de llamada a código en una máquina remota (<em>Remote Procedure Call</em>, <a href="https://es.wikipedia.org/wiki/Remote_Procedure_Call">RPC</a>) ya visto en algunas opciones más antiguas como la misma SOAP, <a href="https://en.wikipedia.org/wiki/Java_remote_method_invocation">RMI</a> o <a href="https://es.wikipedia.org/wiki/CORBA">CORBA</a>. En este artículo explicaré algunas diferencias entre SOAP, REST y Apache Thrift y mostraré un ejemplo sencillo con código de cómo empezar a usar Apache Thrift.</p>"
@@ -353,19 +305,7 @@ Las aplicaciones están pasando de ser elementos aislados, grandes y monolítico
 
 
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes"> 
+      <div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Las aplicaciones están pasando de ser elementos aislados, grandes y monolíticos a ser desarrolladas como varios microservicios que colaboran entre si para en conjunto ofrecer la funcionalidad deseada. Aunque los microservicios presentan sus propias problemáticas resuelven algunas que poseen los sistemas monolíticos, entre algunas de sus características deseables están: mayor cohesión, menor acoplamiento, menor tamaño, mayor independencia de la tecnología usando la más adecuada en cada situación, más fácilmente reemplazables y despliegues más sencillos. También, la funcionalidad ofrecida por una aplicación puede quererse consumirse desde otra aplicación surgiendo de esta forma una API. Para ofrecer una API de una aplicación que pueda consumirse internamente, desde diferentes dispositivos o por terceras partes podemos usar <a href="https://es.wikipedia.org/wiki/Simple_Object_Access_Protocol">SOAP</a> o <a href="https://es.wikipedia.org/wiki/Representational_State_Transfer">REST</a> pero también han surgido algunas alternativas como <a href="https://thrift.apache.org/">Apache Thrift</a> supliendo algunas carencias de las anteriores aún basándose en el mismo concepto de llamada a código en una máquina remota (<em>Remote Procedure Call</em>, <a href="https://es.wikipedia.org/wiki/Remote_Procedure_Call">RPC</a>) ya visto en algunas opciones más antiguas como la misma SOAP, <a href="https://en.wikipedia.org/wiki/Java_remote_method_invocation">RMI</a> o <a href="https://es.wikipedia.org/wiki/CORBA">CORBA</a>. En este artículo explicaré algunas diferencias entre SOAP, REST y Apache Thrift y mostraré un ejemplo sencillo con código de cómo empezar a usar Apache Thrift.</p>

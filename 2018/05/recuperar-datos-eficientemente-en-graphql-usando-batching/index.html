@@ -6,22 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+  <meta name="description" content="
 
 
-
-Dada una consulta con los datos a recuperar GraphQL hace una llamada al correspondiente resolver o data fecher para obtener el valor de cada propiedad. Cuando se tratan de propiedades en un java bean esto no supone ningún problema en cuanto a rendimiento pero cuando obtener el valor de una propiedad es costoso la consulta resulta ineficiente. &hellip;">
+Dada una consulta con los datos a recuperar GraphQL hace una llamada al correspondiente resolver o data fecher para obtener el valor de cada propiedad. Cuando se tratan de propiedades en un java bean esto no supone ningún problema en cuanto a rendimiento pero cuando obtener el valor de una propiedad es costoso la consulta resulta ineficiente.
+Por ejemplo, siguiendo el ejemplo que he utilizado en anteriores artículos sobre GraphQL de una librería en la que hay un tipo para representar un libro con una propiedad con sus comentarios, con una consulta que permite recuperar los libros para cada uno de ellos se llama al resolver que recupera los comentarios. En este ejemplo no ya que están los datos en memoria y no se usa una base de datos pero si recuperar los comentarios de cada libro supusiera una consulta SQL en una base de datos relacional (o tráfico de red en una base de datos NoSQL u otro servicio) y la lista de libros devuelta fuese grande cada vez que se realizará esta consulta el número de sentencias SQL a ejecutar sería grande y el tiempo de respuesta pobre y con una carga mayor para el servidor de base de datos. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Recuperar datos eficientemente en GraphQL usando batching</title>
@@ -46,22 +35,11 @@ Dada una consulta con los datos a recuperar GraphQL hace una llamada al correspo
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+<meta property="og:description" content="
 
 
-
-Dada una consulta con los datos a recuperar GraphQL hace una llamada al correspondiente resolver o data fecher para obtener el valor de cada propiedad. Cuando se tratan de propiedades en un java bean esto no supone ningún problema en cuanto a rendimiento pero cuando obtener el valor de una propiedad es costoso la consulta resulta ineficiente. &hellip;">
+Dada una consulta con los datos a recuperar GraphQL hace una llamada al correspondiente resolver o data fecher para obtener el valor de cada propiedad. Cuando se tratan de propiedades en un java bean esto no supone ningún problema en cuanto a rendimiento pero cuando obtener el valor de una propiedad es costoso la consulta resulta ineficiente.
+Por ejemplo, siguiendo el ejemplo que he utilizado en anteriores artículos sobre GraphQL de una librería en la que hay un tipo para representar un libro con una propiedad con sus comentarios, con una consulta que permite recuperar los libros para cada uno de ellos se llama al resolver que recupera los comentarios. En este ejemplo no ya que están los datos en memoria y no se usa una base de datos pero si recuperar los comentarios de cada libro supusiera una consulta SQL en una base de datos relacional (o tráfico de red en una base de datos NoSQL u otro servicio) y la lista de libros devuelta fuese grande cada vez que se realizará esta consulta el número de sentencias SQL a ejecutar sería grande y el tiempo de respuesta pobre y con una carga mayor para el servidor de base de datos. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -69,22 +47,11 @@ Dada una consulta con los datos a recuperar GraphQL hace una llamada al correspo
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Recuperar datos eficientemente en GraphQL usando batching">
-<meta name="twitter:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
+<meta name="twitter:description" content="
 
 
-
-Dada una consulta con los datos a recuperar GraphQL hace una llamada al correspondiente resolver o data fecher para obtener el valor de cada propiedad. Cuando se tratan de propiedades en un java bean esto no supone ningún problema en cuanto a rendimiento pero cuando obtener el valor de una propiedad es costoso la consulta resulta ineficiente. &hellip;">
+Dada una consulta con los datos a recuperar GraphQL hace una llamada al correspondiente resolver o data fecher para obtener el valor de cada propiedad. Cuando se tratan de propiedades en un java bean esto no supone ningún problema en cuanto a rendimiento pero cuando obtener el valor de una propiedad es costoso la consulta resulta ineficiente.
+Por ejemplo, siguiendo el ejemplo que he utilizado en anteriores artículos sobre GraphQL de una librería en la que hay un tipo para representar un libro con una propiedad con sus comentarios, con una consulta que permite recuperar los libros para cada uno de ellos se llama al resolver que recupera los comentarios. En este ejemplo no ya que están los datos en memoria y no se usa una base de datos pero si recuperar los comentarios de cada libro supusiera una consulta SQL en una base de datos relacional (o tráfico de red en una base de datos NoSQL u otro servicio) y la lista de libros devuelta fuese grande cada vez que se realizará esta consulta el número de sentencias SQL a ejecutar sería grande y el tiempo de respuesta pobre y con una carga mayor para el servidor de base de datos. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -106,7 +73,7 @@ Dada una consulta con los datos a recuperar GraphQL hace una llamada al correspo
     "dateModified": "2020-08-22T21:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1243",
+    "wordCount": "1219",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -122,22 +89,11 @@ Dada una consulta con los datos a recuperar GraphQL hace una llamada al correspo
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "<p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+    "description": "<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
 </div>
-<p>Dada una consulta con los datos a recuperar <a href="https://graphql.org/">GraphQL</a> hace una llamada al correspondiente <em>resolver</em> o <em>data fecher</em> para obtener el valor de cada propiedad. Cuando se tratan de propiedades en un <em>java bean</em> esto no supone ningún problema en cuanto a rendimiento pero cuando obtener el valor de una propiedad es costoso la consulta resulta ineficiente.</p>"
+<p>Dada una consulta con los datos a recuperar <a href="https://graphql.org/">GraphQL</a> hace una llamada al correspondiente <em>resolver</em> o <em>data fecher</em> para obtener el valor de cada propiedad. Cuando se tratan de propiedades en un <em>java bean</em> esto no supone ningún problema en cuanto a rendimiento pero cuando obtener el valor de una propiedad es costoso la consulta resulta ineficiente.</p>
+<p>Por ejemplo, siguiendo el ejemplo que he utilizado en anteriores <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">artículos sobre GraphQL</a> de una librería en la que hay un tipo para representar un libro con una propiedad con sus comentarios, con una consulta que permite recuperar los libros para cada uno de ellos se llama al <em>resolver</em> que recupera los comentarios. En este ejemplo no ya que están los datos en memoria y no se usa una base de datos pero si recuperar los comentarios de cada libro supusiera una consulta SQL en una base de datos relacional (o tráfico de red en una base de datos NoSQL u otro servicio) y la lista de libros devuelta fuese grande cada vez que se realizará esta consulta el número de sentencias SQL a ejecutar sería grande y el tiempo de respuesta pobre y con una carga mayor para el servidor de base de datos.</p>"
 }
   </script>
   
@@ -353,23 +309,11 @@ Dada una consulta con los datos a recuperar GraphQL hace una llamada al correspo
 
 
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes">
+      <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
 </div>
 <p>Dada una consulta con los datos a recuperar <a href="https://graphql.org/">GraphQL</a> hace una llamada al correspondiente <em>resolver</em> o <em>data fecher</em> para obtener el valor de cada propiedad. Cuando se tratan de propiedades en un <em>java bean</em> esto no supone ningún problema en cuanto a rendimiento pero cuando obtener el valor de una propiedad es costoso la consulta resulta ineficiente.</p>
-<p>Por ejemplo, siguiendo el ejemplo que he utilizado en anteriores [artículos sobre GraphQL][blogbitix-serie-graphql] de una librería en la que hay un tipo para representar un libro con una propiedad con sus comentarios, con una consulta que permite recuperar los libros para cada uno de ellos se llama al <em>resolver</em> que recupera los comentarios. En este ejemplo no ya que están los datos en memoria y no se usa una base de datos pero si recuperar los comentarios de cada libro supusiera una consulta SQL en una base de datos relacional (o tráfico de red en una base de datos NoSQL u otro servicio) y la lista de libros devuelta fuese grande cada vez que se realizará esta consulta el número de sentencias SQL a ejecutar sería grande y el tiempo de respuesta pobre y con una carga mayor para el servidor de base de datos.</p>
+<p>Por ejemplo, siguiendo el ejemplo que he utilizado en anteriores <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">artículos sobre GraphQL</a> de una librería en la que hay un tipo para representar un libro con una propiedad con sus comentarios, con una consulta que permite recuperar los libros para cada uno de ellos se llama al <em>resolver</em> que recupera los comentarios. En este ejemplo no ya que están los datos en memoria y no se usa una base de datos pero si recuperar los comentarios de cada libro supusiera una consulta SQL en una base de datos relacional (o tráfico de red en una base de datos NoSQL u otro servicio) y la lista de libros devuelta fuese grande cada vez que se realizará esta consulta el número de sentencias SQL a ejecutar sería grande y el tiempo de respuesta pobre y con una carga mayor para el servidor de base de datos.</p>
 <p>Para hacer eficientemente este caso en GraphQL existe la funcionalidad de <em>batching</em> con la que un <em>resolver</em> o <em>data fecher</em> puede recuperar los comentarios de todos los libros en una misma petición. Para esto el <em>resolver</em> en vez de recuperar la propiedad de cada libro individualmente se obtienen todas las propiedades en una única peticione de todos los libros para los cuales hay recuperar los comentarios.</p>
 <p>Esta es la teoría ya que en el momento de escribir este artículo en la <a href="https://github.com/graphql-java/graphql-java-tools">librería de utilidades que hace más sencillo usar GraphQL en Java</a> se implementó una <a href="https://github.com/graphql-java/graphql-java-tools/issues/12">petición de mejora para añadir <em>batching</em></a> a los <em>resolvers</em>, en su momento se añadió la funcionalidad pero no de forma correcta como me di cuenta a escribir y probar el ejemplo de esta serie de artículos de modo que les creé esta <a href="https://github.com/graphql-java/graphql-java-tools/issues/93">petición para corregir el soporte de <em>batching</em></a>. Tres días después de haber creado la petición en GitHub alguien envío un <em>pull request</em> pero no ha sido hasta después de casi seis meses que finalmente se ha aceptado, fusionado y publicado en la versión 5.1.0.</p>
 <p>Se implementaba con la anotación <em>@Batched</em> en el método del resolver pero esta anotación ha quedado obsoleta. Como alternativa y mejor forma el resolver que recupera los libros, <em>Query</em> se encarga de recuperar la propiedad de todos los libros devueltos en la consulta y se proporciona al resolver de la propiedad del libro, <em>BookResolver</em>, a traves del contexto. A destacar que las propiedades <em>batched</em> solo son recuperadas si en la consulta de GraphQL se solicitan.</p>

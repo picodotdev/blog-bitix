@@ -6,19 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
- 
+  <meta name="description" content=" 
 
 
 Normalmente en esta bitácora suelo poner ejemplos para explicar como funciona una determinada herramienta, son ejemplos que podrían aprovecharse para algo productivo pero para mantenerlos simples por si mismos no suelen serlo. En esta entrada voy a comentar cual es la arquitectura y como está alojado Blog Stack, que es un ejemplo de algo práctico y real por si la experiencia de este ejemplo le sirve de ayuda o de inspiración a alguien. En la red he encontrado comentada la experiencia de Planeta Linux y Meneame, otros proyectos web. &hellip;">
@@ -46,19 +34,7 @@ Normalmente en esta bitácora suelo poner ejemplos para explicar como funciona u
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogstack.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
- 
+<meta property="og:description" content=" 
 
 
 Normalmente en esta bitácora suelo poner ejemplos para explicar como funciona una determinada herramienta, son ejemplos que podrían aprovecharse para algo productivo pero para mantenerlos simples por si mismos no suelen serlo. En esta entrada voy a comentar cual es la arquitectura y como está alojado Blog Stack, que es un ejemplo de algo práctico y real por si la experiencia de este ejemplo le sirve de ayuda o de inspiración a alguien. En la red he encontrado comentada la experiencia de Planeta Linux y Meneame, otros proyectos web. &hellip;">
@@ -69,19 +45,7 @@ Normalmente en esta bitácora suelo poner ejemplos para explicar como funciona u
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Arquitectura y hospedaje de Blog Stack">
-<meta name="twitter:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
- 
+<meta name="twitter:description" content=" 
 
 
 Normalmente en esta bitácora suelo poner ejemplos para explicar como funciona una determinada herramienta, son ejemplos que podrían aprovecharse para algo productivo pero para mantenerlos simples por si mismos no suelen serlo. En esta entrada voy a comentar cual es la arquitectura y como está alojado Blog Stack, que es un ejemplo de algo práctico y real por si la experiencia de este ejemplo le sirve de ayuda o de inspiración a alguien. En la red he encontrado comentada la experiencia de Planeta Linux y Meneame, otros proyectos web. &hellip;">
@@ -106,7 +70,7 @@ Normalmente en esta bitácora suelo poner ejemplos para explicar como funciona u
     "dateModified": "2015-11-10T19:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1996",
+    "wordCount": "1972",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -122,19 +86,7 @@ Normalmente en esta bitácora suelo poner ejemplos para explicar como funciona u
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "<p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes"> 
+    "description": "<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/blogstack.webp" width="300" height="65" alt="Blog Stack" title="Blog Stack" class="" loading="false&#34;"></p>
 </div>
 <p>Normalmente en esta bitácora suelo poner ejemplos para explicar como funciona una determinada herramienta, son ejemplos que podrían aprovecharse para algo productivo pero para mantenerlos simples por si mismos no suelen serlo. En esta entrada voy a comentar cual es la arquitectura y como está alojado <a href="http://www.blogstack.info/">Blog Stack</a>, que es un ejemplo de algo práctico y real por si la experiencia de este ejemplo le sirve de ayuda o de inspiración a alguien. En la red he encontrado comentada la experiencia de <del>Planeta Linux</del> y <a href="http://gallir.wordpress.com/2009/12/30/como-montamos-meneame-en-amazon-ec2/">Meneame</a>, otros proyectos web.</p>"
@@ -357,19 +309,7 @@ Normalmente en esta bitácora suelo poner ejemplos para explicar como funciona u
 
 
       
-      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
-[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
-[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
-[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
-[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
-[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
-[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
-[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
-[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
-[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
-[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
-[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
-<div class="logotypes"> 
+      <div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/blogstack.webp" width="300" height="65" alt="Blog Stack" title="Blog Stack" class="" loading="false&#34;"></p>
 </div>
 <p>Normalmente en esta bitácora suelo poner ejemplos para explicar como funciona una determinada herramienta, son ejemplos que podrían aprovecharse para algo productivo pero para mantenerlos simples por si mismos no suelen serlo. En esta entrada voy a comentar cual es la arquitectura y como está alojado <a href="http://www.blogstack.info/">Blog Stack</a>, que es un ejemplo de algo práctico y real por si la experiencia de este ejemplo le sirve de ayuda o de inspiración a alguien. En la red he encontrado comentada la experiencia de <del>Planeta Linux</del> y <a href="http://gallir.wordpress.com/2009/12/30/como-montamos-meneame-en-amazon-ec2/">Meneame</a>, otros proyectos web.</p>
