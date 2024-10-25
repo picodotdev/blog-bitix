@@ -519,7 +519,8 @@ div.adblock-container-sidebar {
   position: -webkit-sticky;
   top: 15px;
   height: 0px;
-  display: none;
+  display: flex;
+  justify-content: space-between;
   overflow: visible;
 }
 
@@ -528,7 +529,7 @@ div.adblock-container-sidebar-left {
   max-width: 300px;
   min-height: 600px;
   min-width: 300px;
-  display: block;
+  display: none;
   text-align: right;
   overflow: hidden;
 }
@@ -538,7 +539,7 @@ div.adblock-container-sidebar-right {
   max-width: 300px;
   min-height: 600px;
   min-width: 300px;
-  display: block;
+  display: none;
   text-align: left;
   overflow: hidden;
 }
@@ -626,10 +627,29 @@ i.archive-icon {
   }
 }
 
-@media(min-width: 1366px) {
-  div.adblock-container-sidebar {
+@media(min-width: 1280px) {
+  div.adblock-container-sidebar-left {
     display: flex;
-    justify-content: space-between;
+
+    transform: translateX(-195px);
+    max-width: 160px;
+    min-width: 160px;
+  }
+
+  div.adblock-container-sidebar-right {
+    display: flex;
+
+    transform: translateX(195px);
+    max-width: 160px;
+    min-width: 160px;
+  }
+}
+
+@media(min-width: 1366px) {
+  div.adblock-container-sidebar-left {
+    transform: translateX(-285px);
+    max-width: 250px;
+    min-width: 250px;
   }
 
   div.adblock-container-sidebar-right {
@@ -640,6 +660,10 @@ i.archive-icon {
 }
 
 @media(min-width: 1440px) {
+  div.adblock-container-sidebar-left {
+    transform: translateX(-335px);
+  }
+
   div.adblock-container-sidebar-right {
     transform: translateX(335px);
     max-width: 300px;
