@@ -82,10 +82,48 @@
 <script>
     window.googletag = window.googletag || {cmd: []};
     googletag.cmd.push(function() {
-      googletag.defineSlot('/23054707577/ZH9HsBYd', [980, 280], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/etaEP84a', [728, 90], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/s42YszNi', [300, 600], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/GrHBPdvN', [300, 600], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
@@ -228,7 +266,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/blog-bitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix" class="" loading="false&#34;"></p>
 </div>
 <p>En diciembre de 2013 pasé de utilizar <a href="https://www.blogger.com/">Blogger</a> a usar <a href="http://octopress.org/">Octopress</a> creando la bitácora Blog Bitix. Octopress fue una gran mejora a la hora de editar el contenido y gestionar las imágenes o trozos de código con <em>gist</em>. Hace relativamente poco que he pasado a utilizar Octopress pero desde hace un tiempo quería personalizar mucho más el diseño de la bitácora. Estaba esperando a ver como avanzaba el desarrollo de la siguiente versión sin embargo va lentamente por mucho que hayan dicho ya en el 15 de enero que <a href="http://octopress.org/2015/01/15/octopress-3.0-is-coming/">Octopress 3 de está en camino</a>, aún en mayo no hay ninguna nueva noticia desde entonces.</p>
@@ -255,7 +305,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/jmonkeyengine.webp" width="200" height="160" alt="jMonkeyEngine" title="jMonkeyEngine" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -285,7 +347,19 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Hace un tiempo tuve necesidad de generar cierto contenido sobre varios writers, la necesidad en concreto era generar un archivo xml en disco y al mismo tiempo el mismo contenido para un correo electrónico. Para no escribir lo mismo en dos <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html">Writer</a> diferentes la solución fue crear un writer y este fuese el que escribiese el contenido que se le enviaba sobre varios writers. En la API de Java no hay una clase específica que haga esto pero es muy sencillo hacer una implementación que lo haga, esto va a ser lo que explicaré en el siguiente artículo.</p>
@@ -314,7 +388,19 @@
         </span>
         <p>
           
-            <p>Usar un protocolo seguro garantiza de que los datos intercambiados entre el cliente y el servidor no son leídos ni modificados por una tercera parte además de verificar que la comunicación se está realizando entre las partes que dicen ser. Para usar un <a href="https://es.wikipedia.org/wiki/Transport_Layer_Security">protocolo seguro como SSL/TLS</a> debemos disponer de con certificado, <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">con OpenSSL podemos generar y convertirlo al formato que deseemos</a>, sin embargo, para que el usuario tenga garantía de que el certificado es válido este se debe estar firmado por una <a href="https://es.wikipedia.org/wiki/Autoridad_de_certificaci%C3%B3n">autoridad de certificación</a> (CA) en la que confíe, generalmente con una de las autoridades de certificación cuyos certificados están preinstalados en el navegador web (en Firefox podemos verlos en <em>Preferencias&gt; Avanzado&gt; Certificados&gt; Ver certificados</em>), los certificados autofirmados son útiles para hacer pruebas pero no son válidos para los usuarios. En este artículo comentaré que tipos de certificados hay y donde podemos obtener o comprar un certificado digital firmado por una CA que sea de confianza para el usuario.</p>
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<p>Usar un protocolo seguro garantiza de que los datos intercambiados entre el cliente y el servidor no son leídos ni modificados por una tercera parte además de verificar que la comunicación se está realizando entre las partes que dicen ser. Para usar un <a href="https://es.wikipedia.org/wiki/Transport_Layer_Security">protocolo seguro como SSL/TLS</a> debemos disponer de con certificado, <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">con OpenSSL podemos generar y convertirlo al formato que deseemos</a>, sin embargo, para que el usuario tenga garantía de que el certificado es válido este se debe estar firmado por una <a href="https://es.wikipedia.org/wiki/Autoridad_de_certificaci%C3%B3n">autoridad de certificación</a> (CA) en la que confíe, generalmente con una de las autoridades de certificación cuyos certificados están preinstalados en el navegador web (en Firefox podemos verlos en <em>Preferencias&gt; Avanzado&gt; Certificados&gt; Ver certificados</em>), los certificados autofirmados son útiles para hacer pruebas pero no son válidos para los usuarios. En este artículo comentaré que tipos de certificados hay y donde podemos obtener o comprar un certificado digital firmado por una CA que sea de confianza para el usuario.</p>
           
           <br>
           <a href="/blog-bitix/2015/04/certificado-ssl-de-empresa-wildcard-y-de-validacion-extendida/">Continuar leyendo...</a>
@@ -364,11 +450,22 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/apache-shiro.webp" width="300" height="106" alt="Apache Shiro" title="Apache Shiro" class="" loading="false&#34;"></p>
 </div>
 <p>Para cada servicio deberíamos emplear una contraseña de una longitud de al menos 8 caracteres que incluya letras en minúscula, mayúscula, números y símbolos, una herramienta que podemos utilizar para generar contraseñas más seguras con los criterios que indiquemos es <a href="https://privacycanada.net/strong-password-generator/">Strong Password Generator</a> o <a href="https://passwords-generator.org/">Password Generator</a>.</p>
-<p>Sin embargo, recordar cada una de estas contraseñas es muy difícil de modo que es habitual que utilicemos la misma contraseña para varios o todos los servicios y no empleando todos los criterios anteriores o usar una herramienta con la que <a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">Guardar contraseñas de forma segura con KeePassXC</a>. Por otro lado, los desarrolladores no deberíamos guardar en la base de datos las contraseñas que nos entregan los usuarios en texto plano, para evitar guardalas en texto plano hace un tiempo se utilizaba únicamente una función de <em>hashing</em> unidireccional como MD5 o SHA, de este modo si la base de datos fuese comprometida en teoría no podrían conocer la contraseña original. En este artículo comentaré que aún guardando las contraseñas con una función de <em>hashing</em> no es suficiente para hacerlas seguras y comentaré una implementación con <a href="https://shiro.apache.org/">Apache Shiro</a> de una de las ideas propuestas, también con <a href="https://spring.io/projects/spring-security">Spring Security</a> es posible.</p>
           
           <br>
           <a href="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">Continuar leyendo...</a>
@@ -392,7 +489,19 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Si en una aplicación o proyecto tenemos necesidad de ejecutar uno o varios procesos múltiples veces donde únicamente cambian los parámetros, de forma seguida y el tiempo de ejecución de esos procesos es corto probablemente quizá veamos que la mayor parte del tiempo empleado de los procesos sea empleado en iniciar la máquina virtual Java (JVM). Digo quizá porque usando <a href="https://www.ubuntu.com/">Ubuntu</a> en la <a href="https://aws.amazon.com/es/ec2/">nube de Amazon EC2</a> el tiempo de inicio era de varios segundos, sin embargo, en mi ordenador personal usando <a href="https://www.archlinux.org/">Arch Linux</a> y con un <a href="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/">disco SSD de Samsung</a> los tiempos que obtengo son de unos pocos milisegundos, quizá la larga <a href="http://packages.ubuntu.com/trusty/openjdk-7-jdk">lista de dependencias del paquete de Java 7 en Ubuntu</a> (probablemente del paquete <a href="http://packages.ubuntu.com/trusty/openjdk-7-jre">openjdk-7-jre</a>) y ocupando considerablemente más megas en disco tenga algo que ver:</p>
@@ -421,7 +530,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -451,7 +572,19 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Las aplicaciones están pasando de ser elementos aislados, grandes y monolíticos a ser desarrolladas como varios microservicios que colaboran entre si para en conjunto ofrecer la funcionalidad deseada. Aunque los microservicios presentan sus propias problemáticas resuelven algunas que poseen los sistemas monolíticos, entre algunas de sus características deseables están: mayor cohesión, menor acoplamiento, menor tamaño, mayor independencia de la tecnología usando la más adecuada en cada situación, más fácilmente reemplazables y despliegues más sencillos. También, la funcionalidad ofrecida por una aplicación puede quererse consumirse desde otra aplicación surgiendo de esta forma una API. Para ofrecer una API de una aplicación que pueda consumirse internamente, desde diferentes dispositivos o por terceras partes podemos usar <a href="https://es.wikipedia.org/wiki/Simple_Object_Access_Protocol">SOAP</a> o <a href="https://es.wikipedia.org/wiki/Representational_State_Transfer">REST</a> pero también han surgido algunas alternativas como <a href="https://thrift.apache.org/">Apache Thrift</a> supliendo algunas carencias de las anteriores aún basándose en el mismo concepto de llamada a código en una máquina remota (<em>Remote Procedure Call</em>, <a href="https://es.wikipedia.org/wiki/Remote_Procedure_Call">RPC</a>) ya visto en algunas opciones más antiguas como la misma SOAP, <a href="https://en.wikipedia.org/wiki/Java_remote_method_invocation">RMI</a> o <a href="https://es.wikipedia.org/wiki/CORBA">CORBA</a>. En este artículo explicaré algunas diferencias entre SOAP, REST y Apache Thrift y mostraré un ejemplo sencillo con código de cómo empezar a usar Apache Thrift.</p>
@@ -478,7 +611,19 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>La tendencia de las aplicaciones es que sean construidas como múltiples servicios pequeños que colaboran entre si en vez de consistir en una aplicación grande desplegada en un servidor de aplicaciones. La aparición de <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">nuevas tecnologías como Docker</a> facilitan la construcción y despliegue de los microservicios. Los microservicios con su máxima de bajo acoplamiento y alta cohesión tratan de incluir todo lo necesario para funcionar evitando las dependencias de cualquier tipo de elemento fuera de su ámbito no incluyendo el uso de otros servicios. Con <a href="https://www.docker.com/">Docker</a> es posible desplegarlos en cualquier máquina que disponga del servicio, esto evita problemas de configuración al pasar la aplicación de un entorno de desarrollo a uno de producción ya que las características del entorno de desarrollo y el de producción pueden ser idénticos.</p>
@@ -507,7 +652,19 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Por defecto los datos de la sesión de una aplicación web Java se guardan en el servidor de aplicaciones y en memoria, esto produce que al reiniciar el servidor por un despliegue los datos de la sesión se pierdan y provoque en los usuarios alguna molestia como tener que volver a iniciar sesión. En <a href="https://tomcat.apache.org/">Tomcat</a> existe la posibilidad de que los datos de las sesiones sean persistidas en disco con la opción <em>saveOnRestart</em> del <a href="https://tomcat.apache.org/tomcat-8.0-doc/config/manager.html">elemento de configuración <em>Manager</em></a> que evita que los datos de las sesiones se pierdan en los reinicios, al menos para los servicios formados por una única instancia. Para evitar que los usuarios perciban los reinicios o caídas del servidor hay varias soluciones algunas tratando de diferentes formas externalizar las sesiones del servidor de aplicaciones. Con estas soluciones se pueden hacer despliegues sin caídas, sin que las perciban los usuarios, siendo útil para hacer actualizaciones frecuentemente, continuos, y en cualquier momento cuando tengamos una nueva versión de la aplicación.</p>
@@ -534,7 +691,19 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>En el anterior artículo explicaba como <a href="https://picodotdev.github.io/blog-bitix/2015/02/ejemplo-de-listener-de-eventos-de-hibernate/">crear un <em>listener</em> que reciba eventos de Hibernate</a> pero quizá necesitemos en el <em>listener</em> hacer uso de un servicio de <a href="https://spring.io/">Spring</a> si el proceso de la acción necesita aprovecharse de la funcionalidad proporcionada en los servicios. En este artículo mostraré como crear un <em>listener</em> de <a href="https://hibernate.org/">Hibernate</a> que use un servicio de Spring, es decir, un <em>listener</em> de Hibernate con la posibilidad de inyectar servicios de Spring.</p>
@@ -561,7 +730,19 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>En alguna ocasión puede que tengamos la necesidad de realizar alguna acción cuando una entidad es guardada en base de datos, actualizada, eliminada, cargada, &hellip; . Algunos casos de uso pueden ser:</p>
@@ -674,7 +855,7 @@
     <div class="col-12 col-sm-4">
       <p><strong>Blog Bitix</strong></p>
       <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
-      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
     </div>
     <div class="col-12 col-sm-4 text-center menu">
       <ul class="list-unstyled">

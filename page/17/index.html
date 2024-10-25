@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta name="generator" content="Hugo 0.135.0">
+	<meta name="generator" content="Hugo 0.136.5">
   <meta name="base" href="/blog-bitix/">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -85,10 +85,48 @@
 <script>
     window.googletag = window.googletag || {cmd: []};
     googletag.cmd.push(function() {
-      googletag.defineSlot('/23054707577/ZH9HsBYd', [980, 280], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/etaEP84a', [728, 90], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/s42YszNi', [300, 600], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/GrHBPdvN', [300, 600], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
@@ -192,6 +230,30 @@
 <ul class="list-unstyled">
     <li>
       <article>
+        <h1><a href="/blog-bitix/2020/03/listado-de-programas-esenciales-segun-categoria-para-gnu-linux/">Listado de programas esenciales según categoría para GNU/Linux</a></h1>
+        <span class="information">
+          <time>13/03/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+            
+          
+        </span>
+        <p>
+          
+            El sistema operativo solo proporciona la abstracción del hardware a los programas de usuario. Son los programas los que permiten al usuario realizar las tareas productivas. Según su categoría hay varios programas según los tipos de archivos que soportan o funcionalidad que proporcionan. Ofimática, internet y comunicaciones, fotos y gráficos, multimedia, juegos, programación y desarrollo seguridad y privacidad, &hellip;
+          
+          <br>
+          <a href="/blog-bitix/2020/03/listado-de-programas-esenciales-segun-categoria-para-gnu-linux/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2020/03/desarrollar-componentes-react-con-typescript-y-sistemas-de-diseno-con-storybook/">Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook</a></h1>
         <span class="information">
           <time>06/03/2020</time>
@@ -251,7 +313,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -389,7 +463,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/blog-bitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix" class="" loading="false&#34;"></p>
 </div>
 <p><em>&ldquo;Bueno, ¡pues ya está!, ya tengo mi propio blog, todavía está en fase de construcción así que según vaya teniendo tiempo iré haciendo pequeños cambios en los gadgets y en su disposición. Por ahora me conformo con tenerlo visible [&hellip;].  Pero lo principal, escribir entradas en el blog, es algo que ya puedo realizar. Tratarán sobre temas relacionados con el software libre, incluyendo las dos distribuciones GNU/Linux que en este momento uso más habitualmente que son Ubuntu y Arch Linux, temas de tecnología, quizá temas de programación, experiencias personales sobre los mismos y otras cosas que se me vayan ocurriendo. [&hellip;]&rdquo;</em>.</p>
@@ -436,11 +522,22 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Uno de los principios básicos de los lenguajes orientados a objetos es la encapsulación, mediante la cual se garantiza que los datos de una clase solo son modificados por las operaciones apropiadas implementadas en los métodos de sus clases para preservar su invariante, las reglas que define la clase y el estado consistente de su estado.</p>
-<p>El acceso a las propiedades y métodos se determina mediante las palabras reservadas de los modificadores de acceso, en Java hay cuatro modificadores de acceso que definen ámbitos de visibilidad de más restrictivos a menos restrictivos:</p>
           
           <br>
           <a href="/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/">Continuar leyendo...</a>
@@ -462,7 +559,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/bilbostack-2020.webp" width="300" height="99" alt="BilboStack 2020" title="BilboStack 2020" class="" loading="false&#34;"></p>
 </div>
 <p>Se cumple la 9º edición de la conferencia del ámbito de proyectos de tecnología que una vez más ha sido hospeda en el palacio Euskalduna. Como anteriores ediciones en un formato de dos <em>tracks</em> simultáneos y cuatro presentaciones en cada uno, en una única mañana pero que se alarga durante la tarde con el <em>networking</em> y los pintxos, y da a tiempo a visitar la ciudad si se viene de viaje.</p>
@@ -507,28 +616,6 @@
           
           <br>
           <a href="/blog-bitix/2020/01/los-permisos-del-sistema-de-archivos-de-gnu-linux/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/">Tomar capturas de pantalla de páginas web desde la línea de comandos o desde la interfaz gráfica con Firefox</a></h1>
-        <span class="information">
-          <time>10/01/2020</time>
-          
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-          
-        </span>
-        <p>
-          
-            El navegador web Firefox tiene una opción con la que poder tomar una captura de pantalla de una página web desde la línea de comandos, que es útil como parte de un proceso automatizado. Firefox también permite tomar capturas de pantalla de una página web desde su interfaz gráfica o desde la consola web.
-          
-          <br>
-          <a href="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
@@ -603,7 +690,7 @@
     <div class="col-12 col-sm-4">
       <p><strong>Blog Bitix</strong></p>
       <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
-      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
     </div>
     <div class="col-12 col-sm-4 text-center menu">
       <ul class="list-unstyled">

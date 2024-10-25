@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta name="generator" content="Hugo 0.135.0">
+	<meta name="generator" content="Hugo 0.136.5">
   <meta name="base" href="/blog-bitix/">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -85,10 +85,48 @@
 <script>
     window.googletag = window.googletag || {cmd: []};
     googletag.cmd.push(function() {
-      googletag.defineSlot('/23054707577/ZH9HsBYd', [980, 280], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/etaEP84a', [728, 90], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/s42YszNi', [300, 600], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/GrHBPdvN', [300, 600], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
@@ -192,6 +230,46 @@
 <ul class="list-unstyled">
     <li>
       <article>
+        <h1><a href="/blog-bitix/2019/02/log-de-sqls-y-de-sqls-lentas-en-myql-y-postgresql/">Log de SQLs y de SQLs lentas en MySQL y PostgreSQL</a></h1>
+        <span class="information">
+          <time>04/02/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/mysql.svg" width="300" height="204" alt="MySQL" title="MySQL" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/postgresql.svg" width="200" height="206" alt="PostgreSQL" title="PostgreSQL" class="" loading="false&#34;"></p>
+</div>
+<p>La información generalmente y en la mayoría de los casos es de las cosas más importantes de una aplicación. Para guardarla se suelen emplear bases de datos relacionales por sus propiedades de consistencia, transaccionalidad y propiedades ACID aunque más recientemente se ha popularizado otros sistemas no SQL como <a href="https://redis.io/">Redis</a> o <a href="https://www.mongodb.com/">Mongo</a> para diferentes casos de uso.</p>
+          
+          <br>
+          <a href="/blog-bitix/2019/02/log-de-sqls-y-de-sqls-lentas-en-myql-y-postgresql/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2019/02/convertir-un-json-a-objetos-y-objetos-a-json-con-json-b-gson-y-jackson-en-java/">Convertir un JSON a objetos y objetos a JSON con JSON-B, Gson y Jackson en Java</a></h1>
         <span class="information">
           <time>01/02/2019</time>
@@ -207,7 +285,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Continuando la serie de pequeños artículos sobre cómo procesar JSON después de ver anteriormente otras dos formas, <a href="https://picodotdev.github.io/blog-bitix/2019/01/generar-procesar-y-modificar-documentos-json-con-json-p-en-java/">Generar, procesar y modificar documentos JSON con JSON-P en Java</a> y <a href="https://picodotdev.github.io/blog-bitix/2019/01/usar-expresiones-jsonpath-para-extraer-datos-de-un-json-en-java/">Usar expresiones JSONPath para extraer datos de un JSON en Java</a>, en este artículo hay una tercera.</p>
@@ -233,7 +323,19 @@
         </span>
         <p>
           
-            <p>La octava edición de la <a href="https://bilbostack.com/">BilboStack</a> sigue fiel a su cita en el calendario a finales de enero como en anteriores ocasiones. Tampoco cambia el formato de cuatro presentaciones en dos <em>tracks</em> simultáneos y de ser únicamente de media jornada a la mañana par disfrutar a la tarde del <em>networking</em>, comida y de Bilbao para aquellos que así quieran y aprovechar el viaje si se viene de fuera. Tampoco cambia el recinto como en la edición anterior de el Palacio Euskalduna, con un aforo bastante amplio aún así las entradas han llegado a agotarse y no han quedado prácticamente sitios libres en la sala A3.</p>
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<p>La octava edición de la <a href="https://bilbostack.com/">BilboStack</a> sigue fiel a su cita en el calendario a finales de enero como en anteriores ocasiones. Tampoco cambia el formato de cuatro presentaciones en dos <em>tracks</em> simultáneos y de ser únicamente de media jornada a la mañana par disfrutar a la tarde del <em>networking</em>, comida y de Bilbao para aquellos que así quieran y aprovechar el viaje si se viene de fuera. Tampoco cambia el recinto como en la edición anterior de el Palacio Euskalduna, con un aforo bastante amplio aún así las entradas han llegado a agotarse y no han quedado prácticamente sitios libres en la sala A3.</p>
           
           <br>
           <a href="/blog-bitix/2019/01/conferencia-bilbostack-2019/">Continuar leyendo...</a>
@@ -257,7 +359,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Para tratar JSON en Java hay varias alternativas una de ellas es <a href="https://picodotdev.github.io/blog-bitix/2019/01/generar-procesar-y-modificar-documentos-json-con-json-p-en-java/">utilizar la API de bajo nivel JSON-P</a>, otra es <a href="http://json-b.net/">JSON-B</a> que requiere construir una o varias clases de Java a las que hacer la correspondencia entre el JSON y los objetos Java. Otra alternativa es utilizar expresiones o selectores que seleccionen los datos de JSON de forma similar a como se puede hacer con <a href="https://www.w3.org/TR/xpath/all/">XPath</a> para el caso de XML o <a href="https://jquery.com/">jQuery</a> con los elementos de HTML.</p>
@@ -284,7 +398,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -314,7 +440,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Los servicios que ofrecen una API REST normalmente emplean JSON como formato para intercambiar datos tanto en las peticiones como en las respuestas. En Java hay varias formas de generar y procesar JSON para obtener los datos que contiene.</p>
@@ -342,7 +480,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Aún recuerdo cuando empecé a programar con el lenguaje Java sobre el año 1997 que la compilación y ejecución del código la hacía manualmente con los comandos <a href="https://docs.oracle.com/en/java/javase/11/tools/javac.html">javac</a> <a href="https://docs.oracle.com/en/java/javase/11/tools/java.html">java</a> y <a href="https://docs.oracle.com/en/java/javase/11/tools/jar.html">jar</a> en un máquina Intel Pentium a 120 Mhz con tan solo 8 MiB, más tarde 32 MiB, con Windows 95 y Java 1.2, momento en el que ni siquiera había un IDE ni las herramientas de construcción modernas como <a href="https://maven.apache.org/">Maven</a> y <a href="https://gradle.org/">Gradle</a>, había que descargar manualmente las librerías de dependencias en forma de archivos <em>jar</em> que se requiriesen. Luego con JBuilder como IDE este se encargaba de realizar la compilación y ejecución y no hacía falta utilizar estos comandos directamente.</p>
@@ -369,7 +519,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -406,7 +568,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>En Java el código fuente se compila a una representación en <em>bytecode</em> independiente de la arquitectura del procesador y sistema operativo donde posteriormente se ejecuta. Este <em>bytecode</em> es un formato binario pero que puede ser descompilado fácilmente con la herramienta <em>javap</em> incluida en el propio JDK o examinado su contenido simplemente con un editor de texto hexadecimal. Con estas herramientas es fácil ver las instrucciones del programa para la máquina virtual y los caracteres de las cadenas que fueron incluidas en el código fuente.</p>
@@ -441,7 +615,19 @@
         </span>
         <p>
           
-            <p>Casi 9 años publicando de forma constante un artículo a la semana, dos artículos algunas semanas. Durante casi está década creo que ha habido pocas semanas en las que no he publicado. Este último años no ha sido distinto, el siguiente espero&hellip; espero que sea parecido o mejor ahora que tengo mi propio equipo personal que he estado mucho tiempo esperando hasta que fuese comercializado, un <a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">Intel NUC Bean Canyon</a> del que en este semestre he publicado un artículo con de su desempaquetado junto con otros artículos del <a href="https://picodotdev.github.io/blog-bitix/2018/10/desempaquetado-y-analisis-de-monitor-benq-pd2700q-2k-qhd-ips-27-pulgadas/">monitor BenQ PD2700Q</a> y <a href="https://picodotdev.github.io/blog-bitix/2018/09/desempaquetado-y-analisis-de-teclado-y-raton-inalambrico-v7-ckw200/">teclado ratón</a> pero también comentando las opciones que he barajado.</p>
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<p>Casi 9 años publicando de forma constante un artículo a la semana, dos artículos algunas semanas. Durante casi está década creo que ha habido pocas semanas en las que no he publicado. Este último años no ha sido distinto, el siguiente espero&hellip; espero que sea parecido o mejor ahora que tengo mi propio equipo personal que he estado mucho tiempo esperando hasta que fuese comercializado, un <a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">Intel NUC Bean Canyon</a> del que en este semestre he publicado un artículo con de su desempaquetado junto con otros artículos del <a href="https://picodotdev.github.io/blog-bitix/2018/10/desempaquetado-y-analisis-de-monitor-benq-pd2700q-2k-qhd-ips-27-pulgadas/">monitor BenQ PD2700Q</a> y <a href="https://picodotdev.github.io/blog-bitix/2018/09/desempaquetado-y-analisis-de-teclado-y-raton-inalambrico-v7-ckw200/">teclado ratón</a> pero también comentando las opciones que he barajado.</p>
           
           <br>
           <a href="/blog-bitix/2018/12/hemeroteca-14/">Continuar leyendo...</a>
@@ -465,7 +651,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -499,7 +697,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -527,7 +737,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -564,7 +786,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -596,50 +830,25 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/wine.svg" width="200" height="321" alt="Wine" title="Wine" class="" loading="false&#34;"></p>
 </div>
 <p>La dedicación que me exige el blog para tratar de escribir, editar y publicar al menos un artículo a la semana de forma constante sin faltar ninguna semana, últimamente estoy publicando dos, se me está recompensando en forma de superar unas pocas visitas más cada mes. Y esto también se ve reflejado en los ingresos de <a href="https://www.google.com/adsense/">AdSense</a>, ya es raro el día que no me genera al menos dos euros al día salvo los fin de semanas que puede quedarse cerca. Un buen día según el número de clics y la fortuna de que en estos el coste por clic (CPC) sea generoso los ingresos pueden llegar a entre tres y cinco euros.</p>
           
           <br>
           <a href="/blog-bitix/2018/12/articulo-6-de-yo-apoyo-al-software-libre/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2018/12/como-usar-wine-para-jugar-en-gnu-linux-a-juegos-de-windows/">Cómo usar Wine para jugar en GNU/Linux a juegos de Windows</a></h1>
-        <span class="information">
-          <time>02/12/2018</time>
-          
-            
-              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
-            
-              <a href="/blog-bitix/tags/juegos/">juegos</a>
-            
-              <a href="/blog-bitix/tags/software/">software</a>
-            
-              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
-            
-              <a href="/blog-bitix/tags/windows/">windows</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/wine.svg" width="200" height="321" alt="Wine" title="Wine" class="" loading="false&#34;"></p>
-</div>
-<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/blizzard.svg" width="300" height="157" alt="Blizzard" title="Blizzard" class="" loading="false&#34;"></p>
-</div>
-<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false&#34;"></p>
-</div>
-<p>Desde el año 2008 que llevo utilizando <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> como único sistema operativo en mi equipo para todas las tareas que realizo nunca me he planteado jugar a juegos de primera linea o triple A. No por que no se pudiese sino porque GNU/Linux nunca ha sido considerado una opción para estos juegos, <a href="https://picodotdev.github.io/blog-bitix/series/juegos/">hay juegos sí y algunos buenos</a> pero la mayoría de los comerciales se desarrollan para ejecutarse en <a href="https://www.microsoft.com/es-es/windows/">Windows</a> o como mucho en <a href="https://www.apple.com/macos/">macOS</a> y yo ni siquiera me lo había planteado.</p>
-          
-          <br>
-          <a href="/blog-bitix/2018/12/como-usar-wine-para-jugar-en-gnu-linux-a-juegos-de-windows/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
@@ -714,7 +923,7 @@
     <div class="col-12 col-sm-4">
       <p><strong>Blog Bitix</strong></p>
       <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
-      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
     </div>
     <div class="col-12 col-sm-4 text-center menu">
       <ul class="list-unstyled">

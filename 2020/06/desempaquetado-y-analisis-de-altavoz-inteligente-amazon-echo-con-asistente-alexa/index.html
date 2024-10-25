@@ -61,7 +61,7 @@
     "dateModified": "2020-06-26T20:30:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "4681",
+    "wordCount": "4705",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -119,10 +119,48 @@
 <script>
     window.googletag = window.googletag || {cmd: []};
     googletag.cmd.push(function() {
-      googletag.defineSlot('/23054707577/ZH9HsBYd', [980, 280], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/etaEP84a', [728, 90], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/s42YszNi', [300, 600], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/GrHBPdvN', [300, 600], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
@@ -267,7 +305,19 @@
         
         
       
-      <div class="logotypes">
+      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/amazon.svg" width="350" height="70" alt="Amazon" title="Amazon" class="" loading="false&#34;"></p>
 </div>
 <p>Los altavoces que tengo los compré con el primer ordenador, el venerable AMD Athlon XP 1800+, pagado con el dinero de mi primer trabajo en el 2004, unos <a href="https://www.cnet.com/products/cambridge-soundworks-fourpointsurround-fps1600-speaker-system-for-pc/">Creative Fourpointsurround FPS 1600 4.1</a>. Unos altavoces con uno dedicado a los graves o <em>subwoofer</em> con a mi entender una muy buena calidad de sonido y potencia. Durante esta casi una década y media he estado muy contento con ellos, hasta ahora que he decidido buscar una alternativa por un problema que llevo arrastrando no desde hace días, semanas o meses sino ya algunos años.</p>
@@ -293,7 +343,7 @@
 <p>Seguramente los altavoces tengan arreglo pero no sé lo suficiente ni tengo las herramientas como para arreglarlos, para cambiar el potenciómetro necesitaría comprar un soldador, estaño, desoldador y un potenciómetro sustituto para el actual. Comprar el material para intentar arreglarlos sin ninguna garantía de repararlos viene siendo algo similar a comprar unos altavoces nuevos, y al final es lo que he hecho buscar unos sustitutos.</p>
 <p>Me dará pena tener que sustituirlos pero para escuchar música de forma cómoda no encuentro otra opción.</p>
 <h2 id="los-altavoces-sustitutos-candidatos">Los altavoces sustitutos candidatos</h2>
-<p>Cuando compro algo electrónico u algún otro producto que más o menos entiendo para saber las diferencias entre un producto y otro normalmente me informo lo mejor que puedo hasta decidirme por la opción que mejor considero evaluando el precio y características de cada opción. Los artículos de las series de <a href="https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/">desempaquetado de tecnología</a> y <a href="https://picodotdev.github.io/blog-bitix/series/desempaquetado-otros/">desempaquetado de productos no tecnológicos</a> tienen algunos ejemplos que incluyen un <a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">Intel NUC</a>, una <a href="https://picodotdev.github.io/blog-bitix/2019/09/desempaquetado-de-playstation-4-slim-de-1-tb/">PlayStation 4</a> o un <a href="https://picodotdev.github.io/blog-bitix/2017/08/sustituir-caldera-de-gas-por-un-termo-electrico-fleck-duo-7-50/">termo de agua sanitaria Fleck</a> o <a href="https://picodotdev.github.io/blog-bitix/2017/11/me-cambio-a-la-electrica-holaluz/">el contrato con la compañía eléctrica Holaluz</a>.</p>
+<p>Cuando compro algo electrónico u algún otro producto que más o menos entiendo para saber las diferencias entre un producto y otro normalmente me informo lo mejor que puedo hasta decidirme por la opción que mejor considero evaluando el precio y características de cada opción. Los artículos de las series de [desempaquetado de tecnología][blogbitix-serie-desempaquetado-tecnologia] y <a href="https://picodotdev.github.io/blog-bitix/series/desempaquetado-otros/">desempaquetado de productos no tecnológicos</a> tienen algunos ejemplos que incluyen un <a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">Intel NUC</a>, una <a href="https://picodotdev.github.io/blog-bitix/2019/09/desempaquetado-de-playstation-4-slim-de-1-tb/">PlayStation 4</a> o un <a href="https://picodotdev.github.io/blog-bitix/2017/08/sustituir-caldera-de-gas-por-un-termo-electrico-fleck-duo-7-50/">termo de agua sanitaria Fleck</a> o <a href="https://picodotdev.github.io/blog-bitix/2017/11/me-cambio-a-la-electrica-holaluz/">el contrato con la compañía eléctrica Holaluz</a>.</p>
 <p>En esta ocasión no he evaluado muchas opciones ni he analizado en detalle todas las opciones. Sé que quería unos altavoces con una calidad como los que tenía ya que unos de los principales uso que les doy es escuchar música, esto incluye casi por necesidad que tengan altavoz de graves. Otro requerimiento es que no fuesen muy grandes y no tuviesen muchos cables, los que tenía eran 4.1 pero siempre los he usado como 2.1 por imposibilidad en mi habitación de colocar los traseros como se debiera. Un número grande de altavoces requiere muchos cables que hay que ordenar.</p>
 <p>Con estas opciones he buscado las primeras opciones que ofrece <a href="https://amzn.to/2BG6lgI" rel="sponsored">Amazon al buscar por altavoces</a> y similares búsquedas (<em>altavoces subwoofer</em>, <em>altavoces 2.1</em>). Unos de la propia marca Amazon Basics, algunas otras opciones similares a los Creative en diferentes rangos de precio.</p>
 <p>Los básicos.</p>
@@ -693,6 +743,9 @@
           <li>
               <a href="https://picodotdev.github.io/blog-bitix/2024/08/desempaquetado-de-smartwatch-deportivo-garmin-forerunner-165/">Desempaquetado de smartwatch deportivo Garmin Forerunner 165</a>
             </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2024/10/desempaquetado-y-analisis-de-la-barra-de-luz-para-monitor-benq-screen-bar-pro/">Desempaquetado y análisis de la barra de luz para monitor BenQ Screen Bar Pro</a>
+            </li>
           
         </ol>
       
@@ -761,7 +814,7 @@
     <div class="col-12 col-sm-4">
       <p><strong>Blog Bitix</strong></p>
       <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
-      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
     </div>
     <div class="col-12 col-sm-4 text-center menu">
       <ul class="list-unstyled">

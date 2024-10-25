@@ -82,10 +82,48 @@
 <script>
     window.googletag = window.googletag || {cmd: []};
     googletag.cmd.push(function() {
-      googletag.defineSlot('/23054707577/ZH9HsBYd', [980, 280], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/etaEP84a', [728, 90], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/s42YszNi', [300, 600], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/GrHBPdvN', [300, 600], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
@@ -187,6 +225,26 @@
             </div>
             
 <ul class="list-unstyled">
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/">Desempaquetado y análisis del smartphone Samsung Galaxy S21 FE</a></h1>
+        <span class="information">
+          <time>12/05/2022</time>
+          
+            
+              <a href="/blog-bitix/tags/hardware/">hardware</a>
+            
+          
+        </span>
+        <p>
+          
+            He estado usando un Samsung Galaxy S6 lanzado en el 2015 durante unos tres años hasta el 2022 de segunda mano cuando ya alguien lo consideraba obsoleto. A día de hoy la cámara y la batería dan muestras de agotamiento y dejan que desear comparado con un móvil más reciente. Adicionalmente, aunque funcionase perfectamente ya no recibe actualizaciones de software ni de seguridad y la última versión de Android que ha recibido ha sido la 7, ni siquiera Lineage OS ofrece soporte para el S6. Aunque no uso el teléfono de forma intensa la cámara y la versión de Android si son dos cosas que he buscado mejorar al comprar y cambiar a un nuevo móvil que sin ser lo más avanzado del momento si es una mejora muy apreciable en muchos apartados. Después de evaluar no muchas pocas opciones el móvil al que he cambiado es al Samsung Galaxy S21 FE.
+          
+          <br>
+          <a href="/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
     <li>
       <article>
         <h1><a href="/blog-bitix/2022/05/desempaquetado-y-analisis-de-teclado-mecanico-compacto-e-inalambrico-kemove-dk61/">Desempaquetado y análisis de teclado mecánico compacto e inalámbrico KEMOVE DK61</a></h1>
@@ -448,7 +506,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi" class="" loading="false&#34;"></p>
 </div>
 <p>En el año 2012 compré una de las primeras Raspberry Pi que estuvieron disponibles a la venta, una placa modelo B de 256 MiB. La Raspberry Pi es un pequeño computador en una placa del tamaño de una tarjeta de crédito a un precio que aún se sigue manteniendo en las nuevas versiones de unos 40 € a los que hay que sumar algunos complementos necesarios como una tarjeta SD o microSD y un cargador con conector miniUSB. Las versiones iniciales que es la que tengo se componían de:</p>
@@ -480,28 +550,6 @@
         </p>
       </article>
     </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/">Desempaquetado y análisis Samsung SSD 840 EVO 250 GB</a></h1>
-        <span class="information">
-          <time>28/03/2014</time>
-          
-            
-              <a href="/blog-bitix/tags/hardware/">hardware</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            <p>En estos momentos sin lugar a dudas la actualización más provechosa para mejorar el rendimiento de un equipo es una unidad de estado sólido o <a href="https://es.wikipedia.org/wiki/Unidad_de_estado_s%C3%B3lido"><abbr title="Solid State Drive">SSD</abbr></a> una vez tengamos memoria RAM suficiente, unos 2 GiB suelen ser suficientes para tareas ofimáticas y acceder a internet y los equipos que se están vendiendo ahora ya suelen venir con 4 GiB e incluso 8 GiB. El tiempo de acceso a un disco duro mecánico es grande y la velocidad de transferencia es pequeña, en los momentos que se require un uso intensivo del disco se nota que son el cuello de botella del sistema. A veces una mejora en el software puede producir una notable aumento de rendimiento con el mismo hardware pero cuando ya no hay margen de mejora en el software con una mejora en el hardware podemos conseguir el aumento de rendimiento buscado, este es el caso de los SSD.</p>
-          
-          <br>
-          <a href="/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
     
   </ul>
           </div>
@@ -514,6 +562,8 @@
 <nav>
   <div class="row">
     <div class="col-md-4 text-left">
+    
+      <a href="/blog-bitix/series/desempaquetado-tecnologia/page/3/" aria-label="Next"><span aria-hidden="true">&laquo;</span> Más antiguo</a>
     
     </div>
     <div class="col-md-4 text-center">
@@ -571,7 +621,7 @@
     <div class="col-12 col-sm-4">
       <p><strong>Blog Bitix</strong></p>
       <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
-      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
     </div>
     <div class="col-12 col-sm-4 text-center menu">
       <ul class="list-unstyled">

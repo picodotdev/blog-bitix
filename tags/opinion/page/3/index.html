@@ -82,10 +82,48 @@
 <script>
     window.googletag = window.googletag || {cmd: []};
     googletag.cmd.push(function() {
-      googletag.defineSlot('/23054707577/ZH9HsBYd', [980, 280], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/etaEP84a', [728, 90], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/s42YszNi', [300, 600], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/GrHBPdvN', [300, 600], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
@@ -204,7 +242,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/ubuntu.svg" width="200" height="200" alt="Ubuntu" title="Ubuntu" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -282,7 +332,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/apple.svg" width="200" height="200" alt="Apple" title="Apple" class="" loading="false&#34;"></p>
 </div>
 <p>El 30 de agosto de 2016 la Comisión Europea anunciaba que <a href="https://www.apple.com/">Apple</a> debía devolver a Irlanda la cantidad correspondiente obtenida por las ventajas fiscales que considera irregulares, una cantidad astronómica de unos 13000 millones de euros mas los intereses desde 2003. Si ya Irlanda ofrece una fiscalidad ventajosa al tener un tipo impositivo del 12,5% de los beneficios, Apple con acuerdos conseguía pagar un 1% y un 0,005%. Acuerdos que la comisión Europea considera irregulares porque solo se aplica a algunas empresas como Apple siendo una desventaja y trato de favor respecto a otras empresas establecidas en Irlanda. Esta fiscalidad ventajosa es el motivo de que otras muchas empresas tecnológicas de EEUU tengan su sede europea en Irlanda, en España por ejemplo debería haber pagado un 25%.</p>
@@ -361,7 +423,19 @@
         </span>
         <p>
           
-            <p>Para programar hay una abundancia tremenda de lenguajes, librerías, <em>frameworks</em>, tecnologías, etc&hellip; disponibles para desarrollar un proyecto. Esto es muy bueno ya que podremos elegir la combinación de cualquiera de ellas que más se ajuste a las necesidades del proyecto, las que mejor conozcamos ya o según nuestras preferencias en base a sus características incluyendo su comunidad, documentación, si tiene un desarrollo activo, fecha de la última versión u otros motivos que consideremos. El lado malo de esta abundancia es que requiere analizar seguramente no todas pero al menos las más nombradas, más usadas, con mejor documentación o con un mantenimiento activo. Por la cantidad de opciones dicha tarea de análisis requiere tiempo y esfuerzo que no debe abrumarnos considerando que cualquiera de ellas vale.</p>
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<p>Para programar hay una abundancia tremenda de lenguajes, librerías, <em>frameworks</em>, tecnologías, etc&hellip; disponibles para desarrollar un proyecto. Esto es muy bueno ya que podremos elegir la combinación de cualquiera de ellas que más se ajuste a las necesidades del proyecto, las que mejor conozcamos ya o según nuestras preferencias en base a sus características incluyendo su comunidad, documentación, si tiene un desarrollo activo, fecha de la última versión u otros motivos que consideremos. El lado malo de esta abundancia es que requiere analizar seguramente no todas pero al menos las más nombradas, más usadas, con mejor documentación o con un mantenimiento activo. Por la cantidad de opciones dicha tarea de análisis requiere tiempo y esfuerzo que no debe abrumarnos considerando que cualquiera de ellas vale.</p>
           
           <br>
           <a href="/blog-bitix/2016/06/el-lenguaje-de-programacion-framework-y-librerias-importan/">Continuar leyendo...</a>
@@ -545,19 +619,22 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux" class="" loading="false&#34;"></p>
 </div>
 <p>Hace unos meses como suele ser habitual en los informáticos me pidieron que formatease e instalase los programas necesarios en un ordenador portátil, más concretamente en un ordenador que a la velocidad que evoluciona la tecnología podría considerarse obsoleto. El modelo exacto era un Acer Aspire 2000 diseñado para Windows XP con las siguientes características:</p>
-<ul>
-<li>CPU: Intel Pentium M (i686)</li>
-<li>Memoria: 1 GiB</li>
-<li>Pantalla: 15.4&quot;, 1280 x 800</li>
-<li>Tarjeta gráfica: ATI Radeon 9200 (64 MiB)</li>
-<li>WiFi: 802.11b</li>
-<li><a href="http://www.miniputer.com/Acer/Aspire_2000.html">Características Acer Aspire 2000 completas</a></li>
-</ul>
-<p>Como puede verse por las características no es un ordenador muy potente para los días de hoy pero que puede ser suficiente para navegar por internet, ver vídeos, escuchar música y realizar tareas ofimáticas.</p>
           
           <br>
           <a href="/blog-bitix/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/">Continuar leyendo...</a>
@@ -583,11 +660,22 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux" class="" loading="false&#34;"></p>
 </div>
 <p>Ya llevo usando algo más de 4 años <a href="https://www.archlinux.org/">Arch Linux</a> de forma continuada desde que definitivamente hice el paso desde Windows según comentaba en <a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.html">mi camino de Windows a Arch Linux</a> como sistema de mi ordenador personal. Pasé un poco de tiempo usando <a href="https://www.debian.org/">Debian</a> y evaluando <a href="https://www.ubuntu.com/">Ubuntu</a>, <a href="https://fedoraproject.org/">Fedora</a>, y <a href="https://www.opensuse.org/">openSUSE</a> pero al final la distribución que elegí fue Arch Linux.</p>
-<p>La razón de elegir Arch Linux fue que me dio muchos menos problemas configurar todos los dispositivos, por ser una <a href="https://en.wikipedia.org/wiki/Rolling_release">distribución rolling release</a> con lo que en todo momento tenía las últimas versiones de cada programa y disponía en poco tiempo las nuevas mejoras que se iban incorporando a ellos evitando a los pocos meses estar con la sensación de tener programas que han quedado superados con nuevas versiones y no tener que esperar al siguiente iteración de una nueva versión para disponer de ellas (o usar para cada programa un PPA), además tenía los programas que yo decidía y no los que los desarrolladores de la distribución preinstalaban por mi. Cualquier otra distribución linux de las que he mencionado son de gran calidad y son usadas por mucha gente, simplemente en mi caso Arch Linux se adaptaba mejor a lo que buscaba y no era yo el que me adaptaba a la distribución. También me gustaba <a href="https://wiki.archlinux.org/index.php/Arch_Linux">su filosofía</a> y su <a href="https://wiki.archlinux.org/index.php/The_Arch_Way">«Arch way»</a> de una configuración simple no oculta, los paquetes lo normal es que no lleven modificaciones sobre lo que proporcionan sus desarrolladores aparte de tenerla actualizada en el momento que decidiese.</p>
           
           <br>
           <a href="/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">Continuar leyendo...</a>
@@ -663,7 +751,7 @@
     <div class="col-12 col-sm-4">
       <p><strong>Blog Bitix</strong></p>
       <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
-      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
     </div>
     <div class="col-12 col-sm-4 text-center menu">
       <ul class="list-unstyled">

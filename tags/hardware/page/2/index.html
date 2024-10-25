@@ -82,10 +82,48 @@
 <script>
     window.googletag = window.googletag || {cmd: []};
     googletag.cmd.push(function() {
-      googletag.defineSlot('/23054707577/ZH9HsBYd', [980, 280], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/etaEP84a', [728, 90], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/s42YszNi', [300, 600], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/GrHBPdvN', [300, 600], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
@@ -187,6 +225,26 @@
             </div>
             
 <ul class="list-unstyled">
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2022/05/desempaquetado-de-la-funda-de-teclado-tamano-60-kemove/">Desempaquetado de la funda de teclado tamaño 60% KEMOVE</a></h1>
+        <span class="information">
+          <time>26/05/2022</time>
+          
+            
+              <a href="/blog-bitix/tags/hardware/">hardware</a>
+            
+          
+        </span>
+        <p>
+          
+            Una funda de teclado permite transportarlo en una mochila sin que los <em>keycaps</em> se estropeen, el teclado se raye y lo protege de la humedad y agua en un día de lluvia. La marca KEMOVE ofrece una funda que se ajusta a las dimensiones de los teclados de formato 60% de los que ofrece varios modelos. Los teclados mecánicos tiene un precio más elevado que los de membrana con lo que gastar algo más en una funda si se va a transportar o para guardarlos en periodos de tiempo que no se use el teclado es una buena recomendación.
+          
+          <br>
+          <a href="/blog-bitix/2022/05/desempaquetado-de-la-funda-de-teclado-tamano-60-kemove/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
     <li>
       <article>
         <h1><a href="/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/">Desempaquetado y análisis del smartphone Samsung Galaxy S21 FE</a></h1>
@@ -372,7 +430,19 @@
         </span>
         <p>
           
-            <p>En un mes se comenzará la comercialización de la siguiente generación de consolas tanto de la <a href="https://en.wikipedia.org/wiki/Xbox_Series_X_and_Series_S">Xbox Series X/S</a> de <a href="https://www.microsoft.com/">Microsoft</a> que sustituye a la <a href="https://es.wikipedia.org/wiki/Xbox_One">Xbox One</a> y una semana más tarde la <a href="https://en.wikipedia.org/wiki/PlayStation_5">PlayStation 5</a> de <a href="https://www.sony.es/">Sony</a> que sustituye a la <a href="https://en.wikipedia.org/wiki/PlayStation_4">PlayStation 4</a> poco antes de la época navideña. Ambas consolas prometen ofrecer una calidad de juegos mucho mayores que los que ya eran en la generación que sustituyen, empezando por un hardware mucho más actual que el que tuvieron sus predecesoras que cuando salieron casi salieron anticuadas con respecto al hardware de la época.</p>
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<p>En un mes se comenzará la comercialización de la siguiente generación de consolas tanto de la <a href="https://en.wikipedia.org/wiki/Xbox_Series_X_and_Series_S">Xbox Series X/S</a> de <a href="https://www.microsoft.com/">Microsoft</a> que sustituye a la <a href="https://es.wikipedia.org/wiki/Xbox_One">Xbox One</a> y una semana más tarde la <a href="https://en.wikipedia.org/wiki/PlayStation_5">PlayStation 5</a> de <a href="https://www.sony.es/">Sony</a> que sustituye a la <a href="https://en.wikipedia.org/wiki/PlayStation_4">PlayStation 4</a> poco antes de la época navideña. Ambas consolas prometen ofrecer una calidad de juegos mucho mayores que los que ya eran en la generación que sustituyen, empezando por un hardware mucho más actual que el que tuvieron sus predecesoras que cuando salieron casi salieron anticuadas con respecto al hardware de la época.</p>
           
           <br>
           <a href="/blog-bitix/2020/10/sobre-la-generacion-de-consolas-playstation-5-y-xbox-series-x-s-antes-de-que-se-comercialice-y-la-renovacion-del-hardware-de-pc/">Continuar leyendo...</a>
@@ -497,28 +567,6 @@
         </p>
       </article>
     </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2018/09/desempaquetado-y-analisis-de-teclado-y-raton-inalambrico-v7-ckw200/">Desempaquetado y análisis de teclado y ratón inalámbrico V7 CKW200</a></h1>
-        <span class="information">
-          <time>21/09/2018</time>
-          
-            
-              <a href="/blog-bitix/tags/hardware/">hardware</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            Los teclados básicos son más que suficientes para la mayoría de usuarios, incluso los inalámbricos solo cuestan unos pocos euros más. Buscaba un teclado inalámbrico y al final opté por el V7 CKW200 por ser barato, tener un diseño atractivo, ser teclado completo, inalámbrico y tener teclas multimedia para subir y bajar el volumen entre otras. Este modelo es un <em>combo</em> de teclado y ratón inalámbrico baratos pero básicos, el teclado funciona perfectamente durando las pilas casi un año y medio, el ratón del V7 CKW200 finalmente lo sustituí por uno con cable, un Logitech M90.
-          
-          <br>
-          <a href="/blog-bitix/2018/09/desempaquetado-y-analisis-de-teclado-y-raton-inalambrico-v7-ckw200/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
     
   </ul>
           </div>
@@ -590,7 +638,7 @@
     <div class="col-12 col-sm-4">
       <p><strong>Blog Bitix</strong></p>
       <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
-      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
     </div>
     <div class="col-12 col-sm-4 text-center menu">
       <ul class="list-unstyled">

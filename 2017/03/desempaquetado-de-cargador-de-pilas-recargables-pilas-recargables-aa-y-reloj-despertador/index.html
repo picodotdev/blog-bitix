@@ -61,7 +61,7 @@
     "dateModified": "2017-03-25T10:30:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "817",
+    "wordCount": "841",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -119,10 +119,48 @@
 <script>
     window.googletag = window.googletag || {cmd: []};
     googletag.cmd.push(function() {
-      googletag.defineSlot('/23054707577/ZH9HsBYd', [980, 280], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/etaEP84a', [728, 90], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/s42YszNi', [300, 600], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/GrHBPdvN', [300, 600], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
@@ -258,7 +296,19 @@
 
 
       
-      <p>Una de las ventajas de comprar en <a href="https://amzn.to/2flFhHA" rel="sponsored">Amazon</a> es que casi siempre hay una cantidad muy amplia de modelos de cada producto con algunas diferencias entre ellos además del precio, una cantidad de modelos mucho mayor que en las tiendas físicas o incluso grandes almacenes. Encontrar entre las muchas opciones que hay la mejor opción requiere dedicarle algo de tiempo y fijarse bien en las descripciones del producto y comentarios tanto positivos y casi más en los negativos.</p>
+      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<p>Una de las ventajas de comprar en <a href="https://amzn.to/2flFhHA" rel="sponsored">Amazon</a> es que casi siempre hay una cantidad muy amplia de modelos de cada producto con algunas diferencias entre ellos además del precio, una cantidad de modelos mucho mayor que en las tiendas físicas o incluso grandes almacenes. Encontrar entre las muchas opciones que hay la mejor opción requiere dedicarle algo de tiempo y fijarse bien en las descripciones del producto y comentarios tanto positivos y casi más en los negativos.</p>
 <h2 id="cargador-de-pilas-recargables">Cargador de pilas recargables</h2>
 <p>En cuanto al cargador lo que quería era que admitiese al menos pilas del tipo AA, que son las tradicionales, y AAA que son similares pero algo más pequeñas y con algo menos de capacidad. También quería que diese algo de información al menos para saber si estaba completamente cargada. Después de ver casi todos los modelos que hay disponibles en Amazon me decidí por el modelo HXK-H2 para dos pilas con capacidad para cargar dos pilas simultáneamente e independientemente. Me gustó que no es muy caro uno 20 €, cumple con las necesidades básicas que tenía y además de los tipos de pilas AA y AAA Ni-MH y Ni-CD admite otros tipos de pilas como Li-ion, LiFePO. También que admite pilas de diferentes tamaños ya que el cargador se ajusta al maño de la pila. También me gusto que se puede seleccionar si se quieren cargar las pilas con 1000mA o con 500mA que hace la carga más lenta pero hace que las pilas duren más. Tiene un <em>display</em> que muestra un indicador aproximado de la carga de la batería actual, el tipo de batería que detecta automáticamente, el voltaje de carga, el tiempo de carga y la intensidad de la carga seleccionada. La única función que no tiene es la de descargar las pilas antes de cargarlas pero para la mayoría de usuarios es más que suficiente. El material y construcción del cargador da una sensación de buena calidad.</p>
 <div class="media">
@@ -462,7 +512,7 @@
     <div class="col-12 col-sm-4">
       <p><strong>Blog Bitix</strong></p>
       <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
-      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
     </div>
     <div class="col-12 col-sm-4 text-center menu">
       <ul class="list-unstyled">

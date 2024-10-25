@@ -82,10 +82,48 @@
 <script>
     window.googletag = window.googletag || {cmd: []};
     googletag.cmd.push(function() {
-      googletag.defineSlot('/23054707577/ZH9HsBYd', [980, 280], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/etaEP84a', [728, 90], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/s42YszNi', [300, 600], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/GrHBPdvN', [300, 600], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
@@ -202,7 +240,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/bilbostack-2020.webp" width="300" height="99" alt="BilboStack 2020" title="BilboStack 2020" class="" loading="false&#34;"></p>
 </div>
 <p>Se cumple la 9º edición de la conferencia del ámbito de proyectos de tecnología que una vez más ha sido hospeda en el palacio Euskalduna. Como anteriores ediciones en un formato de dos <em>tracks</em> simultáneos y cuatro presentaciones en cada uno, en una única mañana pero que se alarga durante la tarde con el <em>networking</em> y los pintxos, y da a tiempo a visitar la ciudad si se viene de viaje.</p>
@@ -227,7 +277,19 @@
         </span>
         <p>
           
-            <p>La octava edición de la <a href="https://bilbostack.com/">BilboStack</a> sigue fiel a su cita en el calendario a finales de enero como en anteriores ocasiones. Tampoco cambia el formato de cuatro presentaciones en dos <em>tracks</em> simultáneos y de ser únicamente de media jornada a la mañana par disfrutar a la tarde del <em>networking</em>, comida y de Bilbao para aquellos que así quieran y aprovechar el viaje si se viene de fuera. Tampoco cambia el recinto como en la edición anterior de el Palacio Euskalduna, con un aforo bastante amplio aún así las entradas han llegado a agotarse y no han quedado prácticamente sitios libres en la sala A3.</p>
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<p>La octava edición de la <a href="https://bilbostack.com/">BilboStack</a> sigue fiel a su cita en el calendario a finales de enero como en anteriores ocasiones. Tampoco cambia el formato de cuatro presentaciones en dos <em>tracks</em> simultáneos y de ser únicamente de media jornada a la mañana par disfrutar a la tarde del <em>networking</em>, comida y de Bilbao para aquellos que así quieran y aprovechar el viaje si se viene de fuera. Tampoco cambia el recinto como en la edición anterior de el Palacio Euskalduna, con un aforo bastante amplio aún así las entradas han llegado a agotarse y no han quedado prácticamente sitios libres en la sala A3.</p>
           
           <br>
           <a href="/blog-bitix/2019/01/conferencia-bilbostack-2019/">Continuar leyendo...</a>
@@ -249,7 +311,19 @@
         </span>
         <p>
           
-            <p>A diferencia de los seis años anteriores este la <a href="https://bilbostack.com/">BilboStack</a> ha tenido lugar en el <a href="https://www.euskalduna.eus/">Palacio Euskalduna</a> en vez de la <a href="https://www.deusto.es">Universidad de Deusto</a> permitiendo un aforo aún mayor que el de la universidad y con unas salas más grandes y butacas más cómodas que las espartanas sillas de la uni en las que igualmente si se ponía atención y luego esfuerzo se aprendían cosas interesantes, muchos hemos pasado varios años en ellas.</p>
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<p>A diferencia de los seis años anteriores este la <a href="https://bilbostack.com/">BilboStack</a> ha tenido lugar en el <a href="https://www.euskalduna.eus/">Palacio Euskalduna</a> en vez de la <a href="https://www.deusto.es">Universidad de Deusto</a> permitiendo un aforo aún mayor que el de la universidad y con unas salas más grandes y butacas más cómodas que las espartanas sillas de la uni en las que igualmente si se ponía atención y luego esfuerzo se aprendían cosas interesantes, muchos hemos pasado varios años en ellas.</p>
           
           <br>
           <a href="/blog-bitix/2018/01/conferencia-bilbostack-2018/">Continuar leyendo...</a>
@@ -269,7 +343,19 @@
         </span>
         <p>
           
-            <p>Cuando me inscribí en la <a href="https://bilbostack.com/">BilboStack</a> para reservar entrada no me llamaron mucho la atención las presentaciones del programa pero ya a una semana de decidir a cuales iba a ir definitivamente he tenido dificultades para elegir y en varios casos me hubiese gustado ir a las de los dos <em>tracks</em>. Como años anteriores la BilboStack se ha celebrado en Bilbao en el mismo emplazamiento de la <a href="https://www.deusto.es">Universidad de Deusto</a> pero volviendo como en años precedentes al edificio de las ingenierías. Otro cambio ha sido que este año fueron cuatro presentaciones por <em>track</em> cuando en años anteriores fueron cinco.</p>
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<p>Cuando me inscribí en la <a href="https://bilbostack.com/">BilboStack</a> para reservar entrada no me llamaron mucho la atención las presentaciones del programa pero ya a una semana de decidir a cuales iba a ir definitivamente he tenido dificultades para elegir y en varios casos me hubiese gustado ir a las de los dos <em>tracks</em>. Como años anteriores la BilboStack se ha celebrado en Bilbao en el mismo emplazamiento de la <a href="https://www.deusto.es">Universidad de Deusto</a> pero volviendo como en años precedentes al edificio de las ingenierías. Otro cambio ha sido que este año fueron cuatro presentaciones por <em>track</em> cuando en años anteriores fueron cinco.</p>
           
           <br>
           <a href="/blog-bitix/2017/02/conferencia-bilbostack-2017/">Continuar leyendo...</a>
@@ -289,7 +375,19 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/bilbostack.webp" width="300" height="78" alt="BilboStack" title="BilboStack" class="" loading="false&#34;"></p>
 </div>
 <p>Esta ha sido la quinta <a href="https://bilbostack.com/">BilboStack</a> celebrada de forma anual en Bilbao en la localización de la <a href="http://www.deusto.es">Universidad de Deusto</a>, este año la edición del 2016. Con más asistentes que en años anteriores y unas aulas dispuestas por la universidad más grandes para dar cabida a todos. Sigue manteniéndose gratuita aunque hay que reservar entrada, todas las entradas se agotaron y ha habido lista de espera para conseguir las de aquellos que finalmente tuvieron la mala suerte de no poder asistir. Si el siguiente año no quieres perdértela no hagas planes desde ya para finales de enero de 2017 cuando esperemos sea la edición del 2017.</p>
@@ -312,7 +410,19 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/bilbostack.webp" width="300" height="78" alt="BilboStack" title="BilboStack" class="" loading="false&#34;"></p>
 </div>
 <p>Un año más una de las primeras conferencias del año se ha celebrado en Bilbao, la <a href="https://bilbostack.com/">BilboStack</a> 2015. Esta edición del 2015 ha sido la cuarta entrega donde varios profesionales del sector de las tecnologías han hablado de diversos temas, desde programación hasta metodologías de desarrollo y algunas otras cosas relacionadas con la tecnología y el desarrollo. Cada año la BilboStack acoge a más asistentes en la <a href="http://www.deusto.es">Universidad de Deusto</a> dando lugar este año a un cambio de ubicación dentro de la propia universidad para poder dar cabida a todos de forma más cómoda. Como en ediciones anteriores este año ha seguido manteniéndose gratuita, lo único necesario ha sido el registro para adquirir la entrada.</p>
@@ -375,7 +485,7 @@
     <div class="col-12 col-sm-4">
       <p><strong>Blog Bitix</strong></p>
       <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
-      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
     </div>
     <div class="col-12 col-sm-4 text-center menu">
       <ul class="list-unstyled">

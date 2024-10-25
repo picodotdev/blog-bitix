@@ -6,14 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="
+  <meta name="description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
 
 
 
 
 
-Ya he comentado que a mi los Mac ni macOS me convencen por varios motivos, por su precio, por el software libre y porque lo que he podido comprobar no me ha parecido que tenga nada de lo que GNU/Linux hoy en día tenga algo que envidiar, algunas cosas en macOS quizá sean algo mejor pero otras en GNU/Linux también en él lo son.
-Tras regalar mi antiguo portátil Sony VAIO ahora estoy buscando nuevo equipo y barajando opciones. El Sony era y es un buen equipo con el que he estado muy contento, tenía un Intel Core i5 3210M Ivy Bridge de 22 nanómetros con dos núcleos y 4 hilos con el bug Meltdown y Spectre, 8 GiB de memoria RAM, almacenamiento SSD de 256 GiB SATA de almacenamiento y una pantalla de resolución 1600x900, la gráfica era un integrada Intel HD 4000 básica pero más que suficiente para un entorno de escritorio y con buen soporte en GNU/Linux por sus controladores de código abierto. Sin embargo, aunque era un portátil lo usaba únicamente como equipo de escritorio sin moverlo en ningún momento y en cuanto a memoria los 8 GiB de memoria sigue siendo perfectamente útiles pero en mi uso en algunos casos se me quedaban cortos al virtualizar o usar varios contenedores Docker. &hellip;">
+
+Ya he comentado que a mi los Mac ni macOS me convencen por varios motivos, por su precio, por el software libre y porque lo que he podido comprobar no me ha parecido que tenga nada de lo que GNU/Linux hoy en día tenga algo que envidiar, algunas cosas en macOS quizá sean algo mejor pero otras en GNU/Linux también en él lo son. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Intentando elegir portátil, NUC o mini ITX para comprar nuevo equipo</title>
@@ -38,14 +49,25 @@ Tras regalar mi antiguo portátil Sony VAIO ahora estoy buscando nuevo equipo y 
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/intel-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="
+<meta property="og:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
 
 
 
 
 
-Ya he comentado que a mi los Mac ni macOS me convencen por varios motivos, por su precio, por el software libre y porque lo que he podido comprobar no me ha parecido que tenga nada de lo que GNU/Linux hoy en día tenga algo que envidiar, algunas cosas en macOS quizá sean algo mejor pero otras en GNU/Linux también en él lo son.
-Tras regalar mi antiguo portátil Sony VAIO ahora estoy buscando nuevo equipo y barajando opciones. El Sony era y es un buen equipo con el que he estado muy contento, tenía un Intel Core i5 3210M Ivy Bridge de 22 nanómetros con dos núcleos y 4 hilos con el bug Meltdown y Spectre, 8 GiB de memoria RAM, almacenamiento SSD de 256 GiB SATA de almacenamiento y una pantalla de resolución 1600x900, la gráfica era un integrada Intel HD 4000 básica pero más que suficiente para un entorno de escritorio y con buen soporte en GNU/Linux por sus controladores de código abierto. Sin embargo, aunque era un portátil lo usaba únicamente como equipo de escritorio sin moverlo en ningún momento y en cuanto a memoria los 8 GiB de memoria sigue siendo perfectamente útiles pero en mi uso en algunos casos se me quedaban cortos al virtualizar o usar varios contenedores Docker. &hellip;">
+
+Ya he comentado que a mi los Mac ni macOS me convencen por varios motivos, por su precio, por el software libre y porque lo que he podido comprobar no me ha parecido que tenga nada de lo que GNU/Linux hoy en día tenga algo que envidiar, algunas cosas en macOS quizá sean algo mejor pero otras en GNU/Linux también en él lo son. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -53,14 +75,25 @@ Tras regalar mi antiguo portátil Sony VAIO ahora estoy buscando nuevo equipo y 
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Intentando elegir portátil, NUC o mini ITX para comprar nuevo equipo">
-<meta name="twitter:description" content="
+<meta name="twitter:description" content="[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/
 
 
 
 
 
-Ya he comentado que a mi los Mac ni macOS me convencen por varios motivos, por su precio, por el software libre y porque lo que he podido comprobar no me ha parecido que tenga nada de lo que GNU/Linux hoy en día tenga algo que envidiar, algunas cosas en macOS quizá sean algo mejor pero otras en GNU/Linux también en él lo son.
-Tras regalar mi antiguo portátil Sony VAIO ahora estoy buscando nuevo equipo y barajando opciones. El Sony era y es un buen equipo con el que he estado muy contento, tenía un Intel Core i5 3210M Ivy Bridge de 22 nanómetros con dos núcleos y 4 hilos con el bug Meltdown y Spectre, 8 GiB de memoria RAM, almacenamiento SSD de 256 GiB SATA de almacenamiento y una pantalla de resolución 1600x900, la gráfica era un integrada Intel HD 4000 básica pero más que suficiente para un entorno de escritorio y con buen soporte en GNU/Linux por sus controladores de código abierto. Sin embargo, aunque era un portátil lo usaba únicamente como equipo de escritorio sin moverlo en ningún momento y en cuanto a memoria los 8 GiB de memoria sigue siendo perfectamente útiles pero en mi uso en algunos casos se me quedaban cortos al virtualizar o usar varios contenedores Docker. &hellip;">
+
+Ya he comentado que a mi los Mac ni macOS me convencen por varios motivos, por su precio, por el software libre y porque lo que he podido comprobar no me ha parecido que tenga nada de lo que GNU/Linux hoy en día tenga algo que envidiar, algunas cosas en macOS quizá sean algo mejor pero otras en GNU/Linux también en él lo son. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -82,7 +115,7 @@ Tras regalar mi antiguo portátil Sony VAIO ahora estoy buscando nuevo equipo y 
     "dateModified": "2018-04-01T10:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1338",
+    "wordCount": "1362",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -98,14 +131,25 @@ Tras regalar mi antiguo portátil Sony VAIO ahora estoy buscando nuevo equipo y 
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "<div class="logotypes">
+    "description": "<p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/intel.svg" width="300" height="199" alt="Intel" title="Intel" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/amd.svg" width="300" height="71" alt="AMD" title="AMD" class="" loading="false&#34;"></p>
 </div>
-<p>Ya he comentado que <a href="https://picodotdev.github.io/blog-bitix/2018/03/tu-con-mac-yo-con-mi-gnu-linux/">a mi los Mac ni macOS me convencen</a> por varios motivos, por su precio, por el software libre y porque lo que he podido comprobar no me ha parecido que tenga nada de lo que <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> hoy en día tenga algo que envidiar, algunas cosas en macOS quizá sean algo mejor pero otras en GNU/Linux también en él lo son.</p>
-<p>Tras regalar <a href="https://elblogdepicodev.blogspot.com.es/2012/12/desempaquetado-sony-vaio-e-14p.html">mi antiguo portátil Sony VAIO</a> ahora estoy buscando nuevo equipo y barajando opciones. El Sony era y es un buen equipo con el que he estado muy contento, tenía un <a href="https://www.intel.es">Intel</a> Core i5 3210M Ivy Bridge de 22 nanómetros con dos núcleos y 4 hilos con <a href="https://picodotdev.github.io/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/">el <em>bug</em> Meltdown y Spectre</a>, 8 GiB de memoria RAM, almacenamiento SSD de 256 GiB SATA de almacenamiento y una pantalla de resolución 1600x900, la gráfica era un integrada Intel HD 4000 básica pero más que suficiente para un entorno de escritorio y con buen soporte en GNU/Linux por sus controladores de código abierto. Sin embargo, aunque era un portátil lo usaba únicamente como equipo de escritorio sin moverlo en ningún momento y en cuanto a memoria los 8 GiB de memoria sigue siendo perfectamente útiles pero en mi uso en algunos casos se me quedaban cortos al virtualizar o usar varios contenedores Docker.</p>"
+<p>Ya he comentado que <a href="https://picodotdev.github.io/blog-bitix/2018/03/tu-con-mac-yo-con-mi-gnu-linux/">a mi los Mac ni macOS me convencen</a> por varios motivos, por su precio, por el software libre y porque lo que he podido comprobar no me ha parecido que tenga nada de lo que <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> hoy en día tenga algo que envidiar, algunas cosas en macOS quizá sean algo mejor pero otras en GNU/Linux también en él lo son.</p>"
 }
   </script>
   
@@ -147,10 +191,48 @@ Tras regalar mi antiguo portátil Sony VAIO ahora estoy buscando nuevo equipo y 
 <script>
     window.googletag = window.googletag || {cmd: []};
     googletag.cmd.push(function() {
-      googletag.defineSlot('/23054707577/ZH9HsBYd', [980, 280], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/etaEP84a', [728, 90], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/s42YszNi', [300, 600], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/GrHBPdvN', [300, 600], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
@@ -277,7 +359,19 @@ Tras regalar mi antiguo portátil Sony VAIO ahora estoy buscando nuevo equipo y 
 
 
       
-      <div class="logotypes">
+      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/intel.svg" width="300" height="199" alt="Intel" title="Intel" class="" loading="false&#34;"></p>
 </div>
 <div class="logotypes">
@@ -485,7 +579,7 @@ Tras regalar mi antiguo portátil Sony VAIO ahora estoy buscando nuevo equipo y 
     <div class="col-12 col-sm-4">
       <p><strong>Blog Bitix</strong></p>
       <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
-      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
     </div>
     <div class="col-12 col-sm-4 text-center menu">
       <ul class="list-unstyled">

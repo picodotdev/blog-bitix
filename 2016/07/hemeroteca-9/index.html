@@ -61,7 +61,7 @@
     "dateModified": "2016-07-02T12:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1178",
+    "wordCount": "1202",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -119,10 +119,48 @@
 <script>
     window.googletag = window.googletag || {cmd: []};
     googletag.cmd.push(function() {
-      googletag.defineSlot('/23054707577/ZH9HsBYd', [980, 280], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/etaEP84a', [728, 90], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/s42YszNi', [300, 600], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/GrHBPdvN', [300, 600], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
@@ -274,7 +312,19 @@
 
 
       
-      <p>Como cada seis meses en Blog Bitix hago una recopilación de los artículos que he publicado durante este tiempo, comento sobre que he escrito y comparto cómo ha evolucionado esta bitácora. Durante estas 26 primeras semanas del año he escrito 35 nuevos artículos siguiendo mi ritmo de publicación no muy prolífico pero muy constante al ritmo de uno por semana, algunas publicando dos artículos casi siempre durante el fin de semana.</p>
+      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<p>Como cada seis meses en Blog Bitix hago una recopilación de los artículos que he publicado durante este tiempo, comento sobre que he escrito y comparto cómo ha evolucionado esta bitácora. Durante estas 26 primeras semanas del año he escrito 35 nuevos artículos siguiendo mi ritmo de publicación no muy prolífico pero muy constante al ritmo de uno por semana, algunas publicando dos artículos casi siempre durante el fin de semana.</p>
 <p>Los temas de los artículos han sido los habituales programación, GNU/Linux, Java, JavaScript, unos pocos de opinión y algún desempaquetado de producto que he comprado y he usado.</p>
 <p>En la categoría de programación están los siguientes:</p>
 <ul>
@@ -322,7 +372,7 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2016/01/conferencia-bilbostack-2016/">Conferencia BilboStack 2016</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2016/02/6-aniversario-del-blog/">6º aniversario del blog</a></li>
 </ul>
-<p>Acabo de empezar dos series de artículos una <a href="https://picodotdev.github.io/blog-bitix/series/terminal/">serie sobre la terminal de GNU/Linux</a> y completando con otros cuantos artículos otra serie sobre varios temas de <a href="https://picodotdev.github.io/blog-bitix/series/web/">servidores y desarrollo web</a> que aún tengo pendiente de continuar con algunos más. Además y aunque no he escrito ningún artículo hablando sobre ellos publiqué una nueva actualización del <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro PlugIn Tapestry</a> con nuevo contenido y otro tanto revisado y actualizado.</p>
+<p>Acabo de empezar dos series de artículos una [serie sobre la terminal de GNU/Linux][blogbitix-serie-terminal] y completando con otros cuantos artículos otra serie sobre varios temas de [servidores y desarrollo web][blogbitix-serie-web] que aún tengo pendiente de continuar con algunos más. Además y aunque no he escrito ningún artículo hablando sobre ellos publiqué una nueva actualización del <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro PlugIn Tapestry</a> con nuevo contenido y otro tanto revisado y actualizado.</p>
 <p>Con algunos artículos he quedado bastante satisfecho como en los que he hablado de Microsoft Windows y Microsoft Office pero también varios sobre Java, Java EE y HTTP/2. Sin embargo, algo que no falla es escribir algo de JavaScript y recibir unos cuantos <em>retweets</em> y favoritos cuando lo publico en Twitter aunque tenga la sensación de no ser lo de lo mejor que haya escrito parece que es lo que más llama la atención posiblemente ya que la mayoría de la gente lo usa de una u otra forma. Por otro lado tengo la sensación de que escribo para Google ya que recibo pocos comentarios seguramente por la forma en la que escribo ya que no suelo personalizar los artículos poniendo información personal o intercalando algunos chistes, más bien me centro en el aspecto técnico del que estoy escribiendo pero tampoco pasa nada, compartir el poco o más conocimiento que tengo y otro que voy aprendiendo ya es suficiente recompensa para mi si además veo que cuanto más tiempo pasa el número de visitas crecen algo me mantiene con motivación para seguir escribiendo y publicando contenido.</p>
 <p>En cuanto a como han evolucionado las visitas siempre es motivante ver que con el nuevo contenido añadido y poco a poco las visitas y número de páginas vistas aumentan algo, en cualquier caso siguen siendo pocas con las que seguramente tengan otras bitácoras de temática similar pero también seguramente más que otros cuantas. De casi aproximadamente 7000 sesiones al mes que tenía en enero ahora en junio Analytics me contabiliza unas 11000, en el mismo periodo de tiempo he pasado de 9000 páginas vistas a casi 13500. La mayor parte de esta mejora ha sido por unos pocos artículos que se habrán posicionado bien en los primeros meses del año en el buscador Google fuente de la que provienen la mayor parte de las visitas.</p>
 <div class="media">
@@ -485,7 +535,7 @@
     <div class="col-12 col-sm-4">
       <p><strong>Blog Bitix</strong></p>
       <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
-      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
     </div>
     <div class="col-12 col-sm-4 text-center menu">
       <ul class="list-unstyled">

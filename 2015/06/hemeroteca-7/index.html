@@ -61,7 +61,7 @@
     "dateModified": "2015-06-27T22:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "689",
+    "wordCount": "713",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -119,10 +119,48 @@
 <script>
     window.googletag = window.googletag || {cmd: []};
     googletag.cmd.push(function() {
-      googletag.defineSlot('/23054707577/ZH9HsBYd', [980, 280], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/etaEP84a', [728, 90], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/s42YszNi', [300, 600], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/GrHBPdvN', [300, 600], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
@@ -274,7 +312,19 @@
 
 
       
-      <p>Otros seis meses que han pasado y estos especialmente para mi muy rápido. Como suelo hacer cada este periodo de tiempo recopilo en un artículo <em>Hemeroteca</em> los artículos que he publicado al ritmo que mantengo de uno por semana. Este ya es el séptimo contando los de <a href="https://elblogdepicodev.blogspot.com.es">El blog de pico.dev</a> y de <a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a>.</p>
+      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<p>Otros seis meses que han pasado y estos especialmente para mi muy rápido. Como suelo hacer cada este periodo de tiempo recopilo en un artículo <em>Hemeroteca</em> los artículos que he publicado al ritmo que mantengo de uno por semana. Este ya es el séptimo contando los de <a href="https://elblogdepicodev.blogspot.com.es">El blog de pico.dev</a> y de <a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a>.</p>
 <p>Como resumen de estas 26 semanas he publicado 27 artículos destacando que he cambiado de herramienta con la que mantengo la bitácora pasando de usar <a href="http://octopress.org/">Octopress</a> a <a href="https://gohugo.io/">Hugo</a> que me ha permitido cambiar el diseño completamente personalizándolo enteramente a mi gusto y agregar algunas nuevas funcionalidades como un mejor previsualizador de imágenes, resúmenes al inicio de los artículos, o un nuevo menú con las categorías principales de las que escribo. De lo que más he escrito ha sido sobre programación y como no pueden faltar en este <em>blog</em> algún artículo sobre <a href="https://tapestry.apache.org/">Apache Tapestry</a>.</p>
 <p>De los artículos que he escrito destacaré los siguientes, son con los que más a gusto he quedado después de escribirlos y me parece que merecen una lectura, por orden cronológico:</p>
 <ul>
@@ -316,7 +366,7 @@
 <figcaption>Evolución de sesiones semanales en Blog Bitix</figcaption>
 </figure>
 </div>
-<p>Sigo teniendo pendiente de publicar unos cuantos nuevos artículos que continúen la <a href="https://picodotdev.github.io/blog-bitix/series/docker/">serie sobre Docker</a> que ya publiqué, también tengo más artículos preparados sobre programación con Java y bastantes ideas ya listadas para seguir escribiendo. Pero si te interesa un determinado tema y quisieras que explicase o hablase de algo relacionado con lo que suelo escribir añade un comentario y trataré de ver si me es posible, ¡comenta, pregunta lo que quieras o hazme la recomendación que estés pensando!.</p>
+<p>Sigo teniendo pendiente de publicar unos cuantos nuevos artículos que continúen la [serie sobre Docker][blogbitix-serie-docker] que ya publiqué, también tengo más artículos preparados sobre programación con Java y bastantes ideas ya listadas para seguir escribiendo. Pero si te interesa un determinado tema y quisieras que explicase o hablase de algo relacionado con lo que suelo escribir añade un comentario y trataré de ver si me es posible, ¡comenta, pregunta lo que quieras o hazme la recomendación que estés pensando!.</p>
 <p>Para finalizar agradecer a varios usuarios de twitter que aunque no conozco suelen compartir muchos de los artículos que escribo y me ayudan enormemente a hacer que el contenido de Blog Bitix llegue a más personas. <a href="https://twitter.com/jbravo">Joaquin Bravo</a>, <a href="https://twitter.com/Statick_ds">Diego Saavedra</a>, <a href="https://twitter.com/Mr_Prometheus">Camilo Bernal</a>, <a href="https://twitter.com/pereyrada">A. Daniel Pereyra</a> y otros en la <a href="https://twitter.com/search?q=%22Blog%20Bitix%22&amp;src=typd">linea de tiempo de Blog Bitix</a>, ¡gracias!.</p>
 
     </div>
@@ -468,7 +518,7 @@
     <div class="col-12 col-sm-4">
       <p><strong>Blog Bitix</strong></p>
       <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
-      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
     </div>
     <div class="col-12 col-sm-4 text-center menu">
       <ul class="list-unstyled">

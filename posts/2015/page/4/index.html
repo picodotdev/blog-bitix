@@ -82,10 +82,48 @@
 <script>
     window.googletag = window.googletag || {cmd: []};
     googletag.cmd.push(function() {
-      googletag.defineSlot('/23054707577/ZH9HsBYd', [980, 280], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/etaEP84a', [728, 90], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/s42YszNi', [300, 600], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/GrHBPdvN', [300, 600], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
@@ -204,7 +242,19 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Las aplicaciones están pasando de ser elementos aislados, grandes y monolíticos a ser desarrolladas como varios microservicios que colaboran entre si para en conjunto ofrecer la funcionalidad deseada. Aunque los microservicios presentan sus propias problemáticas resuelven algunas que poseen los sistemas monolíticos, entre algunas de sus características deseables están: mayor cohesión, menor acoplamiento, menor tamaño, mayor independencia de la tecnología usando la más adecuada en cada situación, más fácilmente reemplazables y despliegues más sencillos. También, la funcionalidad ofrecida por una aplicación puede quererse consumirse desde otra aplicación surgiendo de esta forma una API. Para ofrecer una API de una aplicación que pueda consumirse internamente, desde diferentes dispositivos o por terceras partes podemos usar <a href="https://es.wikipedia.org/wiki/Simple_Object_Access_Protocol">SOAP</a> o <a href="https://es.wikipedia.org/wiki/Representational_State_Transfer">REST</a> pero también han surgido algunas alternativas como <a href="https://thrift.apache.org/">Apache Thrift</a> supliendo algunas carencias de las anteriores aún basándose en el mismo concepto de llamada a código en una máquina remota (<em>Remote Procedure Call</em>, <a href="https://es.wikipedia.org/wiki/Remote_Procedure_Call">RPC</a>) ya visto en algunas opciones más antiguas como la misma SOAP, <a href="https://en.wikipedia.org/wiki/Java_remote_method_invocation">RMI</a> o <a href="https://es.wikipedia.org/wiki/CORBA">CORBA</a>. En este artículo explicaré algunas diferencias entre SOAP, REST y Apache Thrift y mostraré un ejemplo sencillo con código de cómo empezar a usar Apache Thrift.</p>
@@ -231,7 +281,19 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>La tendencia de las aplicaciones es que sean construidas como múltiples servicios pequeños que colaboran entre si en vez de consistir en una aplicación grande desplegada en un servidor de aplicaciones. La aparición de <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">nuevas tecnologías como Docker</a> facilitan la construcción y despliegue de los microservicios. Los microservicios con su máxima de bajo acoplamiento y alta cohesión tratan de incluir todo lo necesario para funcionar evitando las dependencias de cualquier tipo de elemento fuera de su ámbito no incluyendo el uso de otros servicios. Con <a href="https://www.docker.com/">Docker</a> es posible desplegarlos en cualquier máquina que disponga del servicio, esto evita problemas de configuración al pasar la aplicación de un entorno de desarrollo a uno de producción ya que las características del entorno de desarrollo y el de producción pueden ser idénticos.</p>
@@ -260,7 +322,19 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Por defecto los datos de la sesión de una aplicación web Java se guardan en el servidor de aplicaciones y en memoria, esto produce que al reiniciar el servidor por un despliegue los datos de la sesión se pierdan y provoque en los usuarios alguna molestia como tener que volver a iniciar sesión. En <a href="https://tomcat.apache.org/">Tomcat</a> existe la posibilidad de que los datos de las sesiones sean persistidas en disco con la opción <em>saveOnRestart</em> del <a href="https://tomcat.apache.org/tomcat-8.0-doc/config/manager.html">elemento de configuración <em>Manager</em></a> que evita que los datos de las sesiones se pierdan en los reinicios, al menos para los servicios formados por una única instancia. Para evitar que los usuarios perciban los reinicios o caídas del servidor hay varias soluciones algunas tratando de diferentes formas externalizar las sesiones del servidor de aplicaciones. Con estas soluciones se pueden hacer despliegues sin caídas, sin que las perciban los usuarios, siendo útil para hacer actualizaciones frecuentemente, continuos, y en cualquier momento cuando tengamos una nueva versión de la aplicación.</p>
@@ -287,7 +361,19 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>En el anterior artículo explicaba como <a href="https://picodotdev.github.io/blog-bitix/2015/02/ejemplo-de-listener-de-eventos-de-hibernate/">crear un <em>listener</em> que reciba eventos de Hibernate</a> pero quizá necesitemos en el <em>listener</em> hacer uso de un servicio de <a href="https://spring.io/">Spring</a> si el proceso de la acción necesita aprovecharse de la funcionalidad proporcionada en los servicios. En este artículo mostraré como crear un <em>listener</em> de <a href="https://hibernate.org/">Hibernate</a> que use un servicio de Spring, es decir, un <em>listener</em> de Hibernate con la posibilidad de inyectar servicios de Spring.</p>
@@ -314,7 +400,19 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>En alguna ocasión puede que tengamos la necesidad de realizar alguna acción cuando una entidad es guardada en base de datos, actualizada, eliminada, cargada, &hellip; . Algunos casos de uso pueden ser:</p>
@@ -369,7 +467,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux" class="" loading="false&#34;"></p>
 </div>
 <p><a href="https://www.archlinux.org/">Arch Linux</a> es un distribución <a href="https://en.wikipedia.org/wiki/Rolling_release"><em>rolling release</em></a> en la que los paquetes son actualizados constantemente en cuanto sale una nueva versión. Esto tiene la ventaja de que siempre se tiene el sistema actualizado con las versiones más recientes de los programas, en los que se van añadiendo nuevas características y corrigiendo errores de seguridad y funcionales. Sin embargo, en algún momento puede ocurrir que una actualización de algún paquete nos introduzca algún error, en este caso podemos hacer una desactualización o <em>downgrade</em> de paquete y volver a la última versión estable.</p>
@@ -394,11 +504,22 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/octopress.webp" width="300" height="300" alt="Octopress" title="Octopress" class="" loading="false&#34;"></p>
 </div>
 <p>Este día 6 cumplo un lustro con las bitácoras <a href="https://elblogdepicodev.blogspot.com.es">El blog de pico.dev</a> y desde hace un año con <a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a>. 5 años como <em>blogger</em> en los que normalmente he escrito un artículo cada semana y he publicado los viernes o sábados. 5 años escribiendo artículos en los que comparto el conocimiento que tengo y voy aprendiendo tratando de que sirvan de alguna forma a alguien que los lea.</p>
-<p>Después de pasado todos estos años los motivos por los que lo empecé los sigo manteniendo y quizá aún con más ganas de seguir escribiendo para compartir el bueno o malo mucho o poco (trato de que sea bueno) pero tal como es el conocimiento que poseo. En mi caso tener un <em>blog</em> es una de las buenas cosas que me alegro de haber empezado, por el momento no me canso de seguir escribiendo y me permite aprender sobre cualquier cosa que me interese en cada momento. Los artículos que escribo no suelen tratar temas de actualidad salvo algunas ocasiones relevantes como con la <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">nueva versión de Java 8</a>, de vez en cuando hago algún análisis de los productos tecnológicos que pasan por mis manos como un <a href="https://elblogdepicodev.blogspot.com.es/2012/08/desempaquetado-unboxing-de-amazon.html">lector de libros electrónicos</a>, el <a href="https://elblogdepicodev.blogspot.com.es/2012/12/desempaquetado-sony-vaio-e-14p.html">portátil que compré hace unos años</a> o un <a href="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/">disco SSD</a>. Últimamente publico pocos artículos sobre linux o el software libre como <a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.html">De Windows a Arch Linux</a>, más tarde <a href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">De Arch Linux a Arch Linux</a> o <a href="https://picodotdev.github.io/blog-bitix/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/">instalando linux a un portátil viejo</a> y últimamente más <a href="https://picodotdev.github.io/blog-bitix/tags/java/">artículos sobre programación con java</a>, desarrollo web, html y <a href="https://picodotdev.github.io/blog-bitix/tags/javascript/">javscript</a>. Una amplia colección de artículos que he publicado me han dado incluso para reunirlos y, completándolos con un poco más de contenido, hacer con ellos un <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro sobre Apache Tapestry</a> publicado de forma totalmente gratis en varios formatos incluidos de libro electrónico.</p>
           
           <br>
           <a href="/blog-bitix/2015/02/5-aniversario-del-blog/">Continuar leyendo...</a>
@@ -422,7 +543,19 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Aunque en muchas aplicaciones no será necesario si desarrollamos una aplicación que trabaje con diferentes países y fechas probablemente deberemos tener en cuenta múltiples <a href="https://es.wikipedia.org/wiki/Huso_horario">husos horarios</a> o zonas horarias. Según estos husos horarios, por ejemplo, en el momento que son las 12:00 en Madrid hora local no son las 12:00 en Buenos Aires, si dos ciudades emplean diferente huso horario hay que tenerlo en cuenta para obtener la hora local en cada ciudad.</p>
@@ -449,7 +582,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/javascript.svg" width="200" height="200" alt="JavaScript" title="JavaScript" class="" loading="false&#34;"></p>
 </div>
 <p>Si desarrollamos una aplicación web, que es usada en múltiples idiomas y el lado del cliente tiene cierta complejidad quizá nos encontremos con la necesidad de proporcionar internacionalización (i18n) para los textos o mensajes mediante una librería javascript. Una de la que más me ha gustado de las que he encontrado ha sido <a href="https://www.i18next.com/">i18next</a> pero hay <a href="https://stackoverflow.com/questions/3084675/internationalization-in-javascript">varias opciones más</a>, incluidas dos que merecen ser nombradas que son <a href="http://airbnb.github.io/polyglot.js/">polyglot</a> y <a href="https://github.com/SlexAxton/messageformat.js">messageformat</a>, estas tres opciones son parecidas pero no tienen exactamente las mismas funcionalidades, deberemos evaluarlas para elegir una según lo que necesitemos.</p>
@@ -472,7 +617,19 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/bilbostack.webp" width="300" height="78" alt="BilboStack" title="BilboStack" class="" loading="false&#34;"></p>
 </div>
 <p>Un año más una de las primeras conferencias del año se ha celebrado en Bilbao, la <a href="https://bilbostack.com/">BilboStack</a> 2015. Esta edición del 2015 ha sido la cuarta entrega donde varios profesionales del sector de las tecnologías han hablado de diversos temas, desde programación hasta metodologías de desarrollo y algunas otras cosas relacionadas con la tecnología y el desarrollo. Cada año la BilboStack acoge a más asistentes en la <a href="http://www.deusto.es">Universidad de Deusto</a> dando lugar este año a un cambio de ubicación dentro de la propia universidad para poder dar cabida a todos de forma más cómoda. Como en ediciones anteriores este año ha seguido manteniéndose gratuita, lo único necesario ha sido el registro para adquirir la entrada.</p>
@@ -499,7 +656,19 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
 </div>
 <p>Una de las cosas que he tenido que resolver en <a href="https://twitter.com/blogstackinfo">Blog Stack</a> es como conseguir un extracto del contenido completo de una cadena que es HTML. Esto lo he usado en los diferentes feeds de Blog Stack donde solo se muestra el extracto de cada artículo y no el texto completo. A primera vista puede parecer fácil pero no lo es tanto, cortar una cadena que es html haciendo un substring puede ocasionar problemas si se hace en un mal punto de la cadena y luego esa cadena cortada se inserta como contenido de nuevo el una página web. Lo más probable que ocurra es una desmaquetación de la página o que los estilos aparezcan mal pero puede dejar estropeada la página completa.</p>
@@ -528,11 +697,22 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/drupal.svg" width="200" height="218" alt="Drupal" title="Drupal" class="" loading="false&#34;"></p>
 </div>
 <p>Para los proyectos web cuyo punto central es el contenido disponemos de algunas opciones que prácticamente nos dan la solución hecha o facilitan enormemente la tarea como desarrolladores y posteriormente a los administradores que no necesitarán un gran conocimiento para administrar la web. Estas aplicaciones se les suele conocer como <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">Sistemas de gestión de contenidos</a> (Content Management System, CMS) y como siempre disponemos de varias opciones, algunas similares.</p>
-<p>No soy un experto en CMS ni he usado uno en un proyecto real pero trataré en este artículo hacer una introducción a <a href="https://www.drupal.org/">Drupal</a>. Hay otras opciones como <a href="https://wordpress.org/">Wordpress</a> o <a href="https://www.joomla.org/">Joomla</a> también desarrolladas en <a href="https://secure.php.net/">PHP</a> y en el ámbito <a href="https://www.oracle.com/java/">Java</a> otras como <a href="https://www.alfresco.com/">Alfresco</a>, <a href="https://www.nuxeo.com/">Nuxeo</a>, <a href="https://dotcms.com/">dotCMS</a> y <a href="https://www.liferay.com/">Liferay</a> aunque estas en algunos puntos son diferentes ofreciendo gestión documental o <a href="https://es.wikipedia.org/wiki/Portal_%28Internet%29">portales de internet</a>. Wordpress es más simple que Drupal pero si tenemos conocimientos de desarrollo Drupal posiblemente se adapte más a nuestras preferencias. Alfresco y Nuxeo son más bien gestores de contenido y de documentos pero no permiten gestionar como se visualiza el contenido en la web final, Liferay es algo más parecido a lo que ofrece Drupal pero tengo la sensación que es algo más compleja o no exactamente con las mismas opciones y está más destinado a la creación de portales web.</p>
           
           <br>
           <a href="/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/">Continuar leyendo...</a>
@@ -558,11 +738,22 @@
         </span>
         <p>
           
-            <div class="logotypes"> 
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes"> 
 <p><img src="/blog-bitix/assets/images/logotypes/redmine.webp" width="300" height="89" alt="Redmine" title="Redmine" class="" loading="false&#34;"></p>
 </div>
 <p>Las metodologías ágiles para la gestión de proyectos son ya ampliamente usadas, como <a href="https://es.wikipedia.org/wiki/Scrum_%28desarrollo_de_software%29">scrum</a> o <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_extrema">programación extrema</a> (XP). Una diferencia entre las metodologías ágiles y las metodologías empleadas tradicionalmente como el modelo en cascada es que en las metodologías ágiles se tiene en cuenta que se pueden producir cambios en el desarrollo del proyecto y suelen ser más flexibles y adaptables ante estos cambios.</p>
-<p>En el modelo de metodología ágil podemos usar un panel kanban donde ver de un vistazo rápido las tareas terminadas, las que están en progreso y las próximas tareas planificadas reflejando la realidad del equipo de desarrollo. Reorganizándolas según prioridades que pueden cambiar de una semana a otra, en las metodologías ágiles no se realiza una planificación completa inicial sino que se va realizando a medida que el proyecto progresa.</p>
           
           <br>
           <a href="/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/">Continuar leyendo...</a>
@@ -638,7 +829,7 @@
     <div class="col-12 col-sm-4">
       <p><strong>Blog Bitix</strong></p>
       <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
-      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
     </div>
     <div class="col-12 col-sm-4 text-center menu">
       <ul class="list-unstyled">

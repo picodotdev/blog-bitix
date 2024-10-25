@@ -61,7 +61,7 @@
     "dateModified": "2021-08-29T23:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "9180",
+    "wordCount": "9204",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -119,10 +119,48 @@
 <script>
     window.googletag = window.googletag || {cmd: []};
     googletag.cmd.push(function() {
-      googletag.defineSlot('/23054707577/ZH9HsBYd', [980, 280], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/etaEP84a', [728, 90], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/s42YszNi', [300, 600], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/GrHBPdvN', [300, 600], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
@@ -269,7 +307,19 @@
         
         
       
-      <p><a href="https://www.igdb.com/games/darkest-dungeon">Darkest Dungeon</a> desarrollado por <a href="https://www.igdb.com/companies/red-hook-studios">Red Hook Studios</a> es uno de los mejores juegos en su categoría de rol y <em>roguelike</em>, destacando principalmente por sus mecánicas de juego que ofrecen gran cantidad de combinaciones y posibilidades. Es un juego difícil en el que los progresos se guardan de forma automática, de modo que las acciones realizadas no se pueden deshacer y si un héroe muere permanecerá muerto. En este juego el nivel de dificultad normal se puede considerar difícil, a lo largo del juego siempre se va al filo del desastre y en ocasiones hay tomar la decisión de que personaje es mejor que muera si es inevitable que uno lo haga, la mayoría de objetos que se encuentran y muchos <em>curio</em> tienen cosas negativas, aún con sus beneficios. Hay que exterminar el mal y es el precio a pagar.</p>
+      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<p><a href="https://www.igdb.com/games/darkest-dungeon">Darkest Dungeon</a> desarrollado por <a href="https://www.igdb.com/companies/red-hook-studios">Red Hook Studios</a> es uno de los mejores juegos en su categoría de rol y <em>roguelike</em>, destacando principalmente por sus mecánicas de juego que ofrecen gran cantidad de combinaciones y posibilidades. Es un juego difícil en el que los progresos se guardan de forma automática, de modo que las acciones realizadas no se pueden deshacer y si un héroe muere permanecerá muerto. En este juego el nivel de dificultad normal se puede considerar difícil, a lo largo del juego siempre se va al filo del desastre y en ocasiones hay tomar la decisión de que personaje es mejor que muera si es inevitable que uno lo haga, la mayoría de objetos que se encuentran y muchos <em>curio</em> tienen cosas negativas, aún con sus beneficios. Hay que exterminar el mal y es el precio a pagar.</p>
 <p>Aún con su dificultad a medida que se juega se van aprendiendo sus mecánicas y funcionamiento que hace del juego más sencillo y con menos riesgos dentro de su constante dificultad que roza el estar siempre al al borde del desastre, a veces se sufren derrotas aunque hace la victoria es más satisfactoria. Su gráficos no son en tres dimensiones pero destacan por su arte y son suficientes para el juego, la música tétrica ambiental al juego en su mundo decadente y peligroso. El juego está traducido al español pero no está doblado, es posible colocar subtítulos para entender los diálogos.</p>
 <p>Posee varias expansiones, <a href="https://www.igdb.com/games/darkest-dungeon-the-crimson-court">The Crimson Court</a>, <a href="https://www.igdb.com/games/darkest-dungeon-the-color-of-madness">The Colour of Madness</a> y <em>The Butcher&rsquo;s Circus</em> que añaden algunos héroes adicionales, nuevas localizaciones y algunas mecánicas de juego nuevas.</p>
 <p>Está disponible tanto en PC como para consultas y en las principales tiendas digitales de juegos, en la tienda de la <a href="https://www.epicgames.com/store/es-ES/">Epic Store</a> estuvo gratis. Aunque es posible jugarlo en consolas, con ratón es mucho más sencillo jugarlo, con el mando el manejo de la interfaz se hace complicado por la limitación de botones y la falta de puntero.</p>
@@ -1311,7 +1361,7 @@
     <div class="col-12 col-sm-4">
       <p><strong>Blog Bitix</strong></p>
       <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
-      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
     </div>
     <div class="col-12 col-sm-4 text-center menu">
       <ul class="list-unstyled">

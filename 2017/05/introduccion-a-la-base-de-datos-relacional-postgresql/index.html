@@ -61,7 +61,7 @@
     "dateModified": "2017-05-28T12:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "3364",
+    "wordCount": "3388",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -119,10 +119,48 @@
 <script>
     window.googletag = window.googletag || {cmd: []};
     googletag.cmd.push(function() {
-      googletag.defineSlot('/23054707577/ZH9HsBYd', [980, 280], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/etaEP84a', [728, 90], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/s42YszNi', [300, 600], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/GrHBPdvN', [300, 600], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
@@ -267,14 +305,26 @@
         
         
       
-      <div class="logotypes">
+      <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/postgresql.svg" width="200" height="206" alt="PostgreSQL" title="PostgreSQL" class="" loading="false&#34;"></p>
 </div>
 <p>Aún con el reciente auge de las bases de datos NoSQL las bases de datos relacionales siguen siendo la opción usada mayoritariamente para persistir los datos de una aplicación. El potente <a href="https://en.wikipedia.org/wiki/SQL">lenguaje SQL</a> permite obtener, modificar, insertar y eliminar datos de forma declarativa. Una característica deseada de las bases de datos relacionales es la de mantener con transacciones la integridad referencial y consistencia de los datos en todo momento que las bases de datos NoSQL no ofrecen aunque estas últimas a cambio ofrecen mejores opciones para escalar. Por otro lado los datos ya sean en una base de datos relacional o NoSQL seguirán un esquema aunque en este último caso no se exija, las bases de datos relacionales al exigir que los datos sigan un esquema evitará inconsistencias y los tipos de los datos serán los definidos en la tabla de datos en las que se guarden.</p>
 <p>De las bases de datos relacionales más utilizadas que tienen una licencia de software libre están <a href="https://www.mysql.com/">MySQL</a>, <a href="https://mariadb.org/">MariaDB</a> y <a href="https://www.postgresql.org/">PostgreSQL</a>, con licencia privativa y comerciales están <a href="https://www.microsoft.com/en-us/sql-server/sql-server-2016">Microsoft SQL Server</a>, <a href="https://www.oracle.com/database/">Oracle</a> y <a href="https://www.ibm.com/analytics/us/en/technology/db2/">DB2</a> siendo su coste significativo en algunos casos solo alcanzable por grandes organizaciones. PostgreSQL con su licencia de software libre es una de las bases de datos más avanzadas soportando muchas de las opciones definidas en el estándar del lenguaje SQL.</p>
 <p>Muchos desarrolladores conocemos las opciones básicas del lenguaje SQL, las sentencias <em>insert</em>, <em>update</em>, <em>delete</em> y <em>select</em>, sin embargo las últimas versiones del lenguaje SQL añade muchas posibilidades que quizá desconozcamos. PostgreSQL por ejemplo soporta inserciones de múltiples filas en una misma sentencia, actualización o inserción con la sentencia <em>upsert</em>, <em>window functions</em>, <em>common table expressions</em> o consultas recursivas. PostgreSQL además tiene un sistema de tipos avanzado pudiendo definir tipos de datos personalizados y funciones sobre esos tipos asi como herencia que son motivos por los cuales se autodenomina una base de datos <em>object-relational</em>.</p>
 <p>Veamos algunos ejemplos de estas características del lenguaje SQL y que PostgreSQL soporta siendo una de las bases de datos relacionales más <em>ANSI-SQL compliant</em>. Para los casos demostrativos de las sentencias SQL usaré una base de datos de ejemplo con unas pocas tablas y datos sobre ciudades, países, población y lenguajes obtenida de <a href="http://pgfoundry.org/projects/dbsamples/">PgFoundry Sample Databases</a>, hay varias en concreto usaré la base de datos <em>world</em>. En la página de <a href="https://wiki.postgresql.org/wiki/Sample_Databases">bases de datos ejemplo para PostgreSQL</a> hay otras.</p>
-<p>Para una fácil instalación de una instancia de la base de datos PostgreSQL usaré <a href="https://www.docker.com/">Docker</a> con la que una vez terminados los ejemplos se puede eliminar sin dejar ningún rastro. Si aún no has usado Docker puedes leer la <a href="https://picodotdev.github.io/blog-bitix/series/docker/">serie de artículos sobre Docker</a> que he escrito.</p>
+<p>Para una fácil instalación de una instancia de la base de datos PostgreSQL usaré <a href="https://www.docker.com/">Docker</a> con la que una vez terminados los ejemplos se puede eliminar sin dejar ningún rastro. Si aún no has usado Docker puedes leer la [serie de artículos sobre Docker][blogbitix-serie-docker] que he escrito.</p>
 <div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
     <li><a href="#instalación-postgresql-con-docker">Instalación PostgreSQL con Docker</a></li>
@@ -490,7 +540,7 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2017/05/introduccion-a-la-base-de-datos-nosql-mongodb/">Introducción a la base de datos NoSQL MongoDB</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2017/06/usar-la-base-de-datos-nosql-mongodb-con-java/">Usar la base de datos NoSQL MongoDB con Java</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2017/06/introduccion-a-la-base-de-datos-nosql-redis/">Introducción a la base de datos NoSQL Redis</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/series/docker/">Serie de artículos sobre Docker</a></li>
+<li>[Serie de artículos sobre Docker][blogbitix-serie-docker]</li>
 </ul>
 </div>
 
@@ -659,7 +709,7 @@
     <div class="col-12 col-sm-4">
       <p><strong>Blog Bitix</strong></p>
       <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
-      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
     </div>
     <div class="col-12 col-sm-4 text-center menu">
       <ul class="list-unstyled">

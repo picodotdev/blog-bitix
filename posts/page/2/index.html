@@ -84,10 +84,48 @@
 <script>
     window.googletag = window.googletag || {cmd: []};
     googletag.cmd.push(function() {
-      googletag.defineSlot('/23054707577/ZH9HsBYd', [980, 280], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/etaEP84a', [728, 90], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/s42YszNi', [300, 600], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
-      googletag.defineSlot('/23054707577/GrHBPdvN', [300, 600], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600], [160, 600]])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
@@ -189,6 +227,26 @@
             </div>
             
 <ul class="list-unstyled">
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/">Análisis del juego continuación de la historia The Last of Us Parte 2</a></h1>
+        <span class="information">
+          <time>01/01/2024</time>
+          
+            
+              <a href="/blog-bitix/tags/juegos/">juegos</a>
+            
+          
+        </span>
+        <p>
+          
+            Hace ya algún mes terminé la historia de The Last of Us II, un juego que continúa la historia del primero que era un juego con una historia que tocaba las emociones este segundo no es menos y continua la historia de Joel y Ellie junto a otros personajes que se incorporan. Si la Parte I te gustó, esta Parte II es un imprescindible de las consolas de PlayStation.
+          
+          <br>
+          <a href="/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
     <li>
       <article>
         <h1><a href="/blog-bitix/2023/12/hemeroteca-23/">Hemeroteca #23</a></h1>
@@ -396,7 +454,19 @@
         </span>
         <p>
           
-            <div class="logotypes">
+            <p>[[blogbitix-serie-desempaquetado-tecnologia]]: https://picodotdev.github.io/blog-bitix/series/desempaquetado-tecnologia/
+[blogbitix-serie-docker]: https://picodotdev.github.io/blog-bitix/series/docker/
+[blogbitix-serie-donacion]: https://picodotdev.github.io/blog-bitix/series/donacion/
+[blogbitix-serie-electronica]: https://picodotdev.github.io/blog-bitix/series/electronica/
+[blogbitix-serie-graphql]: https://picodotdev.github.io/blog-bitix/series/graphql/
+[blogbitix-serie-hashicorp]: https://picodotdev.github.io/blog-bitix/series/hashicorp/
+[blogbitix-serie-java-platform]: https://picodotdev.github.io/blog-bitix/series/java-platform/
+[blogbitix-serie-juegos]: https://picodotdev.github.io/blog-bitix/series/juegos/
+[blogbitix-serie-hemeroteca]: https://picodotdev.github.io/blog-bitix/series/hemeroteca/
+[blogbitix-serie-spring-cloud]: https://picodotdev.github.io/blog-bitix/series/spring-cloud/
+[blogbitix-serie-terminal]: https://picodotdev.github.io/blog-bitix/series/terminal/
+[blogbitix-serie-web]: https://picodotdev.github.io/blog-bitix/series/web/</p>
+<div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/blog-bitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix" class="" loading="false&#34;"></p>
 </div>
 <p>Llevo publicando artículos todas las semanas desde hace algo más de doce años, últimamente un solo articulo a la semana pero ha habido años en los que he estado periodos de tiempo amplios escribiendo dos artículos a la semana. Ya he comentado en las últimas hemerotecas que publico cada seis meses que cada artículo me requiere una gran cantidad de tiempo, tiempo que consume gran parte de mi tiempo libre, más o menos el lunes para hacer un índice y quizá un esbozo de ideas, el martes escribir varias secciones, el miércoles terminar de escribir el artículo y en los artículos que son de código suelo proporcionar un ejemplo funcionar que alojo en GitHub, finalmente el jueves realizar la corrección ortográfica, la edición para publicarlo, releerlo y los últimos retoques para que algunas frases sintácticamente estén bien escritas para una lectura con sentido y fácil, y por supuesto ir anotando ideas para artículos y tomar algunas notas en ellos. El segundo trabajo del blog me ha mantenido ocupado sin pensar siguiendo una inercia que he mantenido porque he querido y he hecho disfrutando por el resultado de compartir contenido que espero haya resultado interesante y útil. 684 artículos de este <em>Blog Bitix</em> y otros 187 de <em>El blog de pico.dev</em>, después.</p>
@@ -492,28 +562,6 @@
         </p>
       </article>
     </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2023/03/los-3-clientes-de-spring-para-hacer-peticiones-rest/">Los 3 clientes de Spring para hacer peticiones REST</a></h1>
-        <span class="information">
-          <time>09/03/2023</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            El proyecto Spring ofrece hasta 3 clientes o formas diferentes para realizar peticiones a servicios REST. La ventaja de estos clientes es que no requieren de dependencias adicionales si se usa Spring y están integradas con el ecosistema de Spring y Spring Boot.
-          
-          <br>
-          <a href="/blog-bitix/2023/03/los-3-clientes-de-spring-para-hacer-peticiones-rest/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
     
   </ul>
           </div>
@@ -585,7 +633,7 @@
     <div class="col-12 col-sm-4">
       <p><strong>Blog Bitix</strong></p>
       <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
-      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
     </div>
     <div class="col-12 col-sm-4 text-center menu">
       <ul class="list-unstyled">
