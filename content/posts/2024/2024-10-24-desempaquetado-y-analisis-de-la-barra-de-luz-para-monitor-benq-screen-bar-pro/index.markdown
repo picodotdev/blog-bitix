@@ -1,7 +1,7 @@
 ---
 pid: 708
 type: "post"
-title: "Desempaquetado y análisis de la barra de luz para monitor BenQ Screen Bar Pro"
+title: "Desempaquetado y análisis de la barra de luz para monitor BenQ ScreenBar Pro"
 url: "/2024/10/desempaquetado-y-analisis-de-la-barra-de-luz-para-monitor-benq-screenbar-pro/"
 aliases: ["/2024/10/desempaquetado-y-analisis-de-la-barra-de-luz-para-monitor-benq-screen-bar-pro/"]
 date: 2024-10-24T20:00:00+02:00
