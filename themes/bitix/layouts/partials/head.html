@@ -13,8 +13,8 @@
         {{ if .Site.Params.links.feed }}
           <a href="{{ .Site.Params.links.feed.url | absURL }}" title="{{ .Site.Params.links.feed.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/rss.svg" | relURL }}" width="50" height="50" class="icon" alt="rss">{{ $imgtagclose | safeHTML }}</a>
         {{ end }}
-        {{ if .Site.Params.links.twitter }}
-          <a href="{{ .Site.Params.links.twitter.url }}" title="{{ .Site.Params.links.twitter.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/twitter.svg" | relURL }}" width="50" height="50" class="icon" alt="twitter">{{ $imgtagclose | safeHTML }}</a>
+        {{ if .Site.Params.links.x }}
+          <a href="{{ .Site.Params.links.x.url }}" title="{{ .Site.Params.links.x.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/x.svg" | relURL }}" width="50" height="50" class="icon" alt="x">{{ $imgtagclose | safeHTML }}</a>
         {{ end }}
         {{ if .Site.Params.links.github }}
           <a href="{{ .Site.Params.links.github.url }}" title="{{ .Site.Params.links.github.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/github.svg" | relURL }}" width="50" height="50" class="icon" alt="github">{{ $imgtagclose | safeHTML }}</a>

@@ -2,7 +2,8 @@
 pid: 708
 type: "post"
 title: "Desempaquetado y análisis de la barra de luz para monitor BenQ Screen Bar Pro"
-url: "/2024/10/desempaquetado-y-analisis-de-la-barra-de-luz-para-monitor-benq-screen-bar-pro/"
+url: "/2024/10/desempaquetado-y-analisis-de-la-barra-de-luz-para-monitor-benq-screenbar-pro/"
+aliases: ["/2024/10/desempaquetado-y-analisis-de-la-barra-de-luz-para-monitor-benq-screen-bar-pro/"]
 date: 2024-10-24T20:00:00+02:00
 language: "es"
 index: true
@@ -14,7 +15,7 @@ imageHead: "image:benq-screen-bar-pro.webp"
 imagePost: "image:benq-screen-bar-pro.webp"
 tags: ["hardware"]
 series: ["desempaquetado-tecnologia"]
-summary: "La luz led que tenía para iluminar la mesa y pantalla de ordenador no era la más adecuada. No estaba adaptada para el trabajo con ordenador con lo que la vista se me resentía y me molestaba ya que en parte me daba en los ojos. Una barra de luz para monitor de ordenador proporciona una mejor iluminación tanto para el monitor y la mesa, de modo que para cuidar lo que pueda mi vista he comprado una barra de luz para monitor. Estando contento con la marca BenQ por el monitor BenQ PD2700 que tengo he adquirido la barra de luz BenQ Screen Bar Pro de la que en este artículo  hago su desempaquetado y análisis."
+summary: "La luz led que tenía para iluminar la mesa y pantalla de ordenador no era la más adecuada. No estaba adaptada para el trabajo con ordenador con lo que la vista se me resentía y me molestaba ya que en parte me daba en los ojos. Una barra de luz para monitor de ordenador proporciona una mejor iluminación tanto para el monitor y la mesa, de modo que para cuidar lo que pueda mi vista he comprado una barra de luz para monitor. Estando contento con la marca BenQ por el monitor BenQ PD2700 que tengo he adquirido la barra de luz BenQ ScreenBar Pro de la que en este artículo  hago su desempaquetado y análisis."
 ---
 
 {{% post %}}
@@ -77,15 +78,15 @@ Amazon no da un detalle exhaustivo de las características de las barras para el
 
 * [Página oficial BenQ Monitor Light Bar](https://www.benq.eu/es-es/lighting/monitor-light.html)
 * [Página oficial BenQ ScreenBar](https://www.benq.eu/es-es/lighting/monitor-light/screenbar.html)
-* [Página oficial BenQ  ScreenBar Plus](https://www.benq.eu/es-es/lighting/monitor-light/screenbar-plus.html)
+* [Página oficial BenQ ScreenBar Plus](https://www.benq.eu/es-es/lighting/monitor-light/screenbar-plus.html)
 * [Página oficial BenQ ScreenBar Pro](https://www.benq.eu/es-es/lighting/monitor-light/screenbar-pro.html)
 * [Página oficial BenQ ScreenBar Halo](https://www.benq.eu/es-es/lighting/monitor-light/screenbar-halo.html)
 * [Página oficial Quntis LED ScreenLinear Glow Series](https://www.quntis.com/collections/led-screenlinear-glow-series)
 * [Página oficial Quntis LED ScreenLinear Office Series](https://www.quntis.com/collections/led-screenlinear-office-series)
 
-## Desempaquetado de barra de luz BenQ Screen Bar Pro
+## Desempaquetado de barra de luz BenQ ScreenBar Pro
 
-La barra de luz BenQ Screen Bar Pro viene en una caja sin ningún detalle ni serigrafía y ningún plástico en los envoltorios. Es una barra de luz de gama alta y tiene un precio mayor que otras opciones pero que en cuanto a luz ofrece las mejores condiciones de todas las opciones disponibles. No tiene controlador inalámbrico que lo suple con unos botones táctiles, un sensor de presencia y un sensor que ajusta la luz automáticamente. Se ofrece en dos colores negro y plateada.
+La barra de luz BenQ ScreenBar Pro viene en una caja sin ningún detalle ni serigrafía y ningún plástico en los envoltorios. Es una barra de luz de gama alta y tiene un precio mayor que otras opciones pero que en cuanto a luz ofrece las mejores condiciones de todas las opciones disponibles. No tiene controlador inalámbrico que lo suple con unos botones táctiles, un sensor de presencia y un sensor que ajusta la luz automáticamente. Se ofrece en dos colores negro y plateada.
 
 El contenido se compone de la barra de luz, un adaptador de corriente y un par de hojas de instrucciones. El cable no es desconectable de la barra de luz, es plano y es bastante largo lo que es importante al ser no desconectable, su longitud es más que suficiente para llegar al enchufe en una mesa de oficina o a uno de los puertos del ordenador.
 
@@ -111,51 +112,51 @@ De izquierda a derecha los botones e indicadores táctiles son:
 
 {{< image
     gallery="true"
-    image1="image:benq-screen-bar-pro-caja-1.webp" optionsthumb1="200x150" title1="Caja BenQ Screen Bar Pro"
-    image2="image:benq-screen-bar-pro-caja-2.webp" optionsthumb2="200x150" title2="Caja BenQ Screen Bar Pro"
-    image3="image:benq-screen-bar-pro-caja-3.webp" optionsthumb3="200x150" title3="Caja BenQ Screen Bar Pro" >}}
+    image1="image:benq-screen-bar-pro-caja-1.webp" optionsthumb1="200x150" title1="Caja BenQ ScreenBar Pro"
+    image2="image:benq-screen-bar-pro-caja-2.webp" optionsthumb2="200x150" title2="Caja BenQ ScreenBar Pro"
+    image3="image:benq-screen-bar-pro-caja-3.webp" optionsthumb3="200x150" title3="Caja BenQ ScreenBar Pro" >}}
 {{< image
     gallery="true"
-    image1="image:benq-screen-bar-pro-caja-4.webp" optionsthumb1="200x150" title1="Caja BenQ Screen Bar Pro"
-    image2="image:benq-screen-bar-pro-caja-5.webp" optionsthumb2="200x150" title2="Caja BenQ Screen Bar Pro"
-    image3="image:benq-screen-bar-pro-caja-6.webp" optionsthumb3="200x150" title3="Caja BenQ Screen Bar Pro" >}}
+    image1="image:benq-screen-bar-pro-caja-4.webp" optionsthumb1="200x150" title1="Caja BenQ ScreenBar Pro"
+    image2="image:benq-screen-bar-pro-caja-5.webp" optionsthumb2="200x150" title2="Caja BenQ ScreenBar Pro"
+    image3="image:benq-screen-bar-pro-caja-6.webp" optionsthumb3="200x150" title3="Caja BenQ ScreenBar Pro" >}}
 {{< image
     gallery="true"
-    image1="image:benq-screen-bar-pro-caja-7.webp" optionsthumb1="200x150" title1="Caja BenQ Screen Bar Pro"
-    caption="Caja BenQ Screen Bar Pro" >}}
+    image1="image:benq-screen-bar-pro-caja-7.webp" optionsthumb1="200x150" title1="Caja BenQ ScreenBar Pro"
+    caption="Caja BenQ ScreenBar Pro" >}}
 {{< image
     gallery="true"
-    image1="image:benq-screen-bar-pro-barra-1.webp" optionsthumb1="200x150" title1="Barra de luz BenQ Screen Bar Pro"
-    image2="image:benq-screen-bar-pro-barra-2.webp" optionsthumb2="200x150" title2="Barra de luz BenQ Screen Bar Pro"
-    image3="image:benq-screen-bar-pro-barra-3.webp" optionsthumb3="200x150" title3="Barra de luz BenQ Screen Bar Pro" >}}
+    image1="image:benq-screen-bar-pro-barra-1.webp" optionsthumb1="200x150" title1="Barra de luz BenQ ScreenBar Pro"
+    image2="image:benq-screen-bar-pro-barra-2.webp" optionsthumb2="200x150" title2="Barra de luz BenQ ScreenBar Pro"
+    image3="image:benq-screen-bar-pro-barra-3.webp" optionsthumb3="200x150" title3="Barra de luz BenQ ScreenBar Pro" >}}
 {{< image
     gallery="true"
-    image1="image:benq-screen-bar-pro-barra-4.webp" optionsthumb1="200x150" title1="Barra de luz BenQ Screen Bar Pro"
-    caption="Barra de luz BenQ Screen Bar Pro" >}}
+    image1="image:benq-screen-bar-pro-barra-4.webp" optionsthumb1="200x150" title1="Barra de luz BenQ ScreenBar Pro"
+    caption="Barra de luz BenQ ScreenBar Pro" >}}
 {{< image
     gallery="true"
-    image1="image:benq-screen-bar-pro-adaptador-1.webp" optionsthumb1="200x150" title1="Adaptador de luz BenQ Screen Bar Pro"
-    image2="image:benq-screen-bar-pro-adaptador-2.webp" optionsthumb2="200x150" title2="Adaptador de luz BenQ Screen Bar Pro"
-    image3="image:benq-screen-bar-pro-adaptador-3.webp" optionsthumb3="200x150" title3="Adaptador de luz BenQ Screen Bar Pro"
-    caption="Adaptador BenQ Screen Bar Pro" >}}
+    image1="image:benq-screen-bar-pro-adaptador-1.webp" optionsthumb1="200x150" title1="Adaptador de luz BenQ ScreenBar Pro"
+    image2="image:benq-screen-bar-pro-adaptador-2.webp" optionsthumb2="200x150" title2="Adaptador de luz BenQ ScreenBar Pro"
+    image3="image:benq-screen-bar-pro-adaptador-3.webp" optionsthumb3="200x150" title3="Adaptador de luz BenQ ScreenBar Pro"
+    caption="Adaptador BenQ ScreenBar Pro" >}}
 {{< image
     gallery="true"
-    image1="image:benq-screen-bar-pro-instrucciones-1.webp" optionsthumb1="200x150" title1="Instrucciones de luz BenQ Screen Bar Pro"
-    image2="image:benq-screen-bar-pro-instrucciones-2.webp" optionsthumb2="200x150" title2="Instrucciones de luz BenQ Screen Bar Pro"
-    caption="Instrucciones BenQ Screen Bar Pro" >}}
+    image1="image:benq-screen-bar-pro-instrucciones-1.webp" optionsthumb1="200x150" title1="Instrucciones de luz BenQ ScreenBar Pro"
+    image2="image:benq-screen-bar-pro-instrucciones-2.webp" optionsthumb2="200x150" title2="Instrucciones de luz BenQ ScreenBar Pro"
+    caption="Instrucciones BenQ ScreenBar Pro" >}}
 {{< image
     gallery="true"
-    image1="image:benq-screen-bar-pro-monitor-1.webp" optionsthumb1="200x150" title1="Monitor de luz BenQ Screen Bar Pro"
-    image2="image:benq-screen-bar-pro-monitor-2.webp" optionsthumb2="200x150" title2="Monitor de luz BenQ Screen Bar Pro"
-    image3="image:benq-screen-bar-pro-monitor-3.webp" optionsthumb3="200x150" title3="Monitor de luz BenQ Screen Bar Pro"
-    caption="Monitor BenQ Screen Bar Pro" >}}
+    image1="image:benq-screen-bar-pro-monitor-1.webp" optionsthumb1="200x150" title1="Monitor de luz BenQ ScreenBar Pro"
+    image2="image:benq-screen-bar-pro-monitor-2.webp" optionsthumb2="200x150" title2="Monitor de luz BenQ ScreenBar Pro"
+    image3="image:benq-screen-bar-pro-monitor-3.webp" optionsthumb3="200x150" title3="Monitor de luz BenQ ScreenBar Pro"
+    caption="Monitor BenQ ScreenBar Pro" >}}
 
 ### Especificaciones y características
 
-La página de BenQ de la Screen Bar Pro ofrece una descripción del producto junto con las especificaciones técnicas de la barra.
+La página de BenQ de la ScreenBar Pro ofrece una descripción del producto junto con las especificaciones técnicas de la barra.
 
-* [Página oficial de BenQ Screen Bar Pro](https://www.benq.eu/es-es/lighting/monitor-light/screenbar-pro.html)
-* [Especificaciones de BenQ Screen Bar Pro](https://www.benq.eu/es-es/lighting/monitor-light/screenbar-pro/spec.html)
+* [Página oficial de BenQ ScreenBar Pro](https://www.benq.eu/es-es/lighting/monitor-light/screenbar-pro.html)
+* [Especificaciones de BenQ ScreenBar Pro](https://www.benq.eu/es-es/lighting/monitor-light/screenbar-pro/spec.html)
 
 Sus especificaciones son las siguientes:
 
@@ -183,7 +184,7 @@ Para tener el efecto de luz ambiente que da el modelo Halo se puede comprar como
 
 A veces comprar una marca de confianza con buena reputación aunque tenga un precio algo mayor compensa sabiendo que se va adquirir un buen producto sin tener que analizarlo en detalle.
 
-En general la BenQ Screen Bar Pro es una opción suficientemente buena para mi uso y necesidad, hay algunas características que me gustaría que tuviera en otros modelos pero esos otros modelos no tienen alguna de las características principales de la Screen Bar Pro.
+En general la BenQ ScreenBar Pro es una opción suficientemente buena para mi uso y necesidad, hay algunas características que me gustaría que tuviera en otros modelos pero esos otros modelos no tienen alguna de las características principales de la ScreenBar Pro.
 
 En los puntos positivos destaco:
 
