@@ -120,13 +120,13 @@ Construido el artefacto hay que generar la _release_ y publicarlo en el reposito
 Hay varios archivos de configuración importantes, el de las tareas de Task que proporcionará el repositorio que haga uso de los _workflows_ y el del propio _workflow_ de _build_.
 
 {{< code file="taskfile.yml" language="yml" options="" >}}
-{{< code file=".github/workflows/build.yml" language="yml" options="" >}}
+{{< code file=".github/workflows/build-check-task.yml" language="yml" options="" >}}
 
 ### El _workflow_ de la fase de _release_
 
 En realidad no hay un único _workflow_ de _release_ sino que hay varios para segregar en los aspectos principales y no incluir demasiados condicionales. Hay un workflow de _release_ que genera una imagen de contenedor, genera la release utilizando tareas de Task y genera como resultado un paquete de NPM. El artefacto generado es subido al repositorio de artefactos.
 
-{{< code file="release-dockerfile.yml" language="yml" options="" >}}
+{{< code file=".github/workflows/build-release-dockerfile.yml" language="yml" options="" >}}
 
 ### El _workflow_ de la fase de _deploy_
 
@@ -134,7 +134,7 @@ Al igual que el _workflow_ de _release_ no se compone de un único _workflow_ si
 
 Varios de los siguientes _steps_ del _workflow_ tienen _if_ condicionales en función de sus condiciones. Añadir un nuevo entorno de ejecución sería añadir un nuevo _workflow_ con sus _steps_ específicos para ese entorno y varios _steps_ iguales que el resto de entorno. Tanto el _workflow_ de _build_ como el de _deploy_ reciben una buena cantidad de parámetros con la que configurar el comportamiento del _workflow_.
 
-{{< code file=".github/workflows/deploy-gke.yml" language="yml" options="" >}}
+{{< code file="github/workflows/deploy-gke.yml" language="yml" options="" >}}
 
 ### El _workflow_ reutilizable del CI/CD
 
