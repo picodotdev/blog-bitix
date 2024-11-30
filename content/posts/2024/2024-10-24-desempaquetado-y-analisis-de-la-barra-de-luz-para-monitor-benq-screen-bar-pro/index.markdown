@@ -88,6 +88,9 @@ Amazon no da un detalle exhaustivo de las características de las barras para el
 
 La barra de luz BenQ ScreenBar Pro viene en una caja sin ningún detalle ni serigrafía y ningún plástico en los envoltorios. Es una barra de luz de gama alta y tiene un precio mayor que otras opciones pero que en cuanto a luz ofrece las mejores condiciones de todas las opciones disponibles. No tiene controlador inalámbrico que lo suple con unos botones táctiles, un sensor de presencia y un sensor que ajusta la luz automáticamente. Se ofrece en dos colores negro y plateada.
 
+{{< youtube
+    video="Bs2Lc7ytnjQ" >}}
+
 El contenido se compone de la barra de luz, un adaptador de corriente y un par de hojas de instrucciones. El cable no es desconectable de la barra de luz, es plano y es bastante largo lo que es importante al ser no desconectable, su longitud es más que suficiente para llegar al enchufe en una mesa de oficina o a uno de los puertos del ordenador.
 
 En las fotos se aprecia la tira de leds, la placa reflectante de luz de modo que alumbre la mesa sin incidir en los ojos sentado frente a ella. Al ser horizontal la luz ilumina toda la mesa con bastante intensidad y sin hacer reflejos en la pantalla de ordenador.
@@ -217,6 +220,8 @@ BenQ posiblemente podría tener menos modelos reuniendo las mejores característ
     video="U9g_YE_RSos" >}}
 {{< youtube
     video="nV0JFxERWxQ" >}}
+{{< youtube
+    video="gPDE5Wc_ImM" >}}
 
 ## Monitor
 
