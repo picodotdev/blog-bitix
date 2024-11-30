@@ -5,8 +5,6 @@ on:
     branches:
       - main
       - master
-  pull_request:
-    types: ['opened', 'synchronize']
   merge_group:
   workflow_dispatch:
     inputs:
@@ -18,58 +16,57 @@ on:
 jobs:
   build:
     name: build
-    uses: organization/platform-github-actions-workflows/.github/workflows/build.yml@main
+    uses: ./.github/workflows/build-check-task.yml
     with:
       ref: ${{ inputs.ref || github.head_ref || github.ref_name }}
-      java-version: '21'
-      node-version: '20'
+      context-directory: ./gradle-app
+      setup-java-version: ${{ vars.JAVA_VERSION }}
       setup-gradle: true
-      check-tasks: "['build:test', 'build:pmd', 'build:checkstyle', 'build:spotbugs']"
-      artifact: dummy
-      artifact-name: platform-github-actions-workflows
-      artifact-context: miscellaneous/docker/
-      repository: google-artifact-registry
+      setup-task: true
+      setup-docker: true
+      check-tasks: |
+        ["build:test", "build:pmd", "build:checkstyle", "build:spotbugs", "build:sonar"]
+      check-tasks-reports: |
+        {
+          "build:test": "./gradle-app/build/reports/tests",
+          "build:pmd": "./gradle-app/build/reports/pmd",
+          "build:checkstyle": "./gradle-app/build/reports/checkstyle",
+          "build:spotbugs": "./gradle-app/build/spotbugs"
+        }
     secrets:
-      GITHUB_PACKAGES_REPOSITORY_DOWNLOAD_USERNAME: ${{ secrets.GH_USER_NAME }}
-      GITHUB_PACKAGES_REPOSITORY_DOWNLOAD_PASSWORD: ${{ secrets.GH_PACKAGES_DOWNLOAD_TOKEN }}
-  deploy-development:
-    name: deploy-development
+      workflows-token: ${{ secrets.GH_CI_TOKEN }}
+      sonar-token: ${{ secrets.SONAR_TOKEN }}
+  release:
+    name: release
+    uses: ./.github/workflows/build-release-dockerfile.yml
     needs: [build]
-    uses: organization/platform-github-actions-workflows/.github/workflows/deploy.yml@main
     with:
       ref: ${{ inputs.ref || github.head_ref || github.ref_name }}
-      dry-run: true
-      environment: development
-      runtime: gke
-      gke-directory: miscellaneous/gke/development
-      gke-docker-image-name: platform-github-actions-workflows
-      version: ${{ needs.build.outputs.version }}
-      sha: ${{ needs.build.outputs.sha }}
-      branch: ${{ needs.build.outputs.branch }}
-      build-number: ${{ needs.build.outputs.build-number }}
-      build-date: ${{ needs.build.outputs.build-date }}
+      context-directory: ./gradle-app
+      builder: gradle
+      bump: patch
+      setup-java-version: ${{ vars.JAVA_VERSION }}
+      setup-gradle: true
+      setup-task: true
+      setup-docker: true
+      artifact: ./gradle-app/build/distributions/platform-github-actions-workflows-*.zip
+      artifact-name: platform-github-actions-workflows-gradle-app
+      container-image-name: platform-github-actions-workflows
+      artifact-dockerfile: ./gradle-app/miscellaneous/docker/Dockerfile
     secrets:
-      slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
-  deploy-production:
-    name: deploy-production
-    if: contains('["main", "master"]', github.ref_name) && github.event_name == 'push'
-    needs: [build, deploy-development]
-    uses: organization/platform-github-actions-workflows/.github/workflows/deploy.yml@main
+      workflows-token: ${{ secrets.GH_CI_TOKEN }}
+      jira-token: ${{ secrets.JIRA_TOKEN }}
+  deploy:
+    name: deploy
+    uses: ./.github/workflows/deploy-gke.yml
+    needs: [release]
     with:
       ref: ${{ inputs.ref || github.head_ref || github.ref_name }}
       dry-run: true
+      deployment-directory: ./gradle-app/miscellaneous/gke/development
+      container-image-name: platform-github-actions-workflows
       environment: production
-      runtime: gke
-      gke-directory: miscellaneous/gke/production
-      gke-docker-image-name: platform-github-actions-workflows
-      version: ${{ needs.build.outputs.version }}
-      sha: ${{ needs.build.outputs.sha }}
-      branch: ${{ needs.build.outputs.branch }}
-      build-number: ${{ needs.build.outputs.build-number }}
-      build-date: ${{ needs.build.outputs.build-date }}
+      release-outputs: ${{ toJSON(needs.release.outputs) }}
     secrets:
+      workflows-token: ${{ secrets.GH_CI_TOKEN }}
       slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
-
-
-
-

@@ -1,0 +1,243 @@
+name: build-release-dockerfile
+
+on:
+  workflow_call:
+    inputs:
+      ref:
+        type: string
+        default: 'main'
+      workflows-ref:
+        type: string
+        default: 'main'
+      context-directory:
+        type: string
+        default: '.'
+      builder:
+        type: string
+        required: true
+      bump:
+        type: string
+        default: 'patch'
+      setup-java-version:
+        type: string
+      setup-java-cache:
+        type: string
+      setup-node-version:
+        type: string
+      setup-pnpm-version:
+        type: string
+      setup-npmrc:
+        type: boolean
+        default: false
+      setup-gradle:
+        type: boolean
+        default: false
+      setup-maven:
+        type: boolean
+        default: false
+      setup-install:
+        type: boolean
+        default: false
+      setup-task:
+        type: boolean
+        default: false
+      setup-docker:
+        type: boolean
+        default: false
+      setup-google-cloud-sdk:
+        type: boolean
+        default: false
+      gcp-workload-identity-provider:
+        type: string
+      gcp-service-account-gar:
+        type: string
+      gar-host:
+        type: string
+      gar-project:
+        type: string
+      gar-docker-repository:
+        type: string
+      gar-npm-repository:
+        type: string
+      gar-npm-repository-location:
+        type: string
+      gar-npm-repository-scope:
+        type: string
+      artifact:
+        type: string
+        required: false
+      artifact-name:
+        type: string
+        required: false
+      container-image-name:
+        type: string
+        required: true
+      artifact-dockerfile:
+        type: string
+        required: true
+      setup-crowdin:
+        type: boolean
+        default: false
+      crowdin-project-id:
+        type: string
+    outputs:
+      issue-id:
+        value: ${{ jobs.release.outputs.issue-id }}
+      issue-summary:
+        value: ${{ jobs.release.outputs.issue-summary }}
+      repository:
+        value: ${{ jobs.release.outputs.repository }}
+      pull-request:
+        value: ${{ jobs.release.outputs.pull-request }}
+      pull-request-number:
+        value: ${{ jobs.release.outputs.pull-request-number }}
+      pull-request-branch:
+        value: ${{ jobs.release.outputs.pull-request-branch }}
+      last-version:
+        value: ${{ jobs.release.outputs.last-version }}
+      next-version:
+        value: ${{ jobs.release.outputs.next-version }}
+      version:
+        value: ${{ jobs.release.outputs.version }}
+      tag:
+        value: ${{ jobs.release.outputs.tag }}
+      bump:
+        value: ${{ jobs.release.outputs.bump }}
+      commit-hash:
+        value: ${{ jobs.release.outputs.commit-hash }}
+      branch:
+        value: ${{ jobs.release.outputs.branch }}
+      build-number:
+        value: ${{ jobs.release.outputs.build-number }}
+      build-date:
+        value: ${{ jobs.release.outputs.build-date }}
+      changes:
+        value: ${{ jobs.release.outputs.changes }}
+      image-id:
+        value: ${{ jobs.release.outputs.image-id }}
+    secrets:
+      workflows-token:
+        required: true
+      jira-token:
+        required: false
+      crowdin-personal-token:
+        required: false
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    outputs:
+      repository: ${{ steps.build-information.outputs.repository }}
+      issue-id: ${{ steps.build-information.outputs.issue-id }}
+      issue-summary: ${{ steps.build-information.outputs.issue-summary }}
+      pull-request: ${{ steps.build-information.outputs.pull-request }}
+      pull-request-number: ${{ steps.build-information.outputs.pull-request-number }}
+      pull-request-branch: ${{ steps.build-information.outputs.pull-request-branch }}
+      version: ${{ steps.build-information.outputs.version }}
+      tag: ${{ steps.build-information.outputs.tag }}
+      bump: ${{ steps.build-information.outputs.bump }}
+      commit-hash: ${{ steps.build-information.outputs.commit-hash }}
+      branch: ${{ steps.build-information.outputs.branch }}
+      build-number: ${{ steps.build-information.outputs.build-number }}
+      build-date: ${{ steps.build-information.outputs.build-date }}
+      changes: ${{ steps.build-release-github.outputs.changes }}
+      image-id: ${{ steps.release-dockerfile.outputs.image-id }}
+    permissions:
+      contents: 'write'
+      id-token: 'write'
+      pull-requests: 'read'
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.workflows-token }}
+          ref: ${{ inputs.ref }}
+          fetch-depth: 0
+      - name: Setup GitHub Actions workflows
+        id: setup-github-actions-workflows
+        uses: acmehub/platform-github-actions-workflows/.github/actions/setup-github-actions-workflows@main
+        if: ${{ github.repository != 'acmehub/platform-github-actions-workflows' }}
+        with:
+          ref: ${{ inputs.workflows-ref }}
+          token: ${{ secrets.workflows-token }}
+      - name: Setup meta
+        id: setup-meta
+        uses: ./.github/actions/setup-meta
+        with:
+          context-directory: ${{ inputs.context-directory }}
+          setup-java-version: ${{ inputs.setup-java-version }}
+          setup-java-cache: ${{ inputs.setup-java-cache }}
+          setup-node-version: ${{ inputs.setup-node-version }}
+          setup-pnpm-version: ${{ inputs.setup-pnpm-version }}
+          setup-gradle: ${{ inputs.setup-gradle }}
+          setup-maven: ${{ inputs.setup-maven }}
+          setup-task: ${{ inputs.setup-task }}
+          setup-docker: ${{ inputs.setup-docker }}
+          setup-install: ${{ inputs.setup-install }}
+          setup-npmrc: ${{ inputs.setup-npmrc }}
+          setup-google-cloud-sdk: ${{ inputs.setup-google-cloud-sdk }}
+          gar-project: ${{ inputs.gar-project || vars.GAR_PROJECT }}
+          gar-npm-repository: ${{ inputs.gar-npm-repository || vars.GAR_NPM_REPOSITORY }}
+          gar-npm-repository-location: ${{ inputs.gar-npm-repository-location || vars.GAR_NPM_REPOSITORY_LOCATION }}
+          gar-npm-repository-scope: ${{ inputs.gar-npm-repository-scope || vars.GAR_NPM_REPOSITORY_SCOPE }}
+          gcp-workload-identity-provider: ${{ inputs.gcp-workload-identity-provider || vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          gcp-service-account: ${{ inputs.gcp-service-account-gar || vars.GCP_SERVICE_ACCOUNT_GAR }}
+          gar-host: ${{ inputs.gar-host || vars.GAR_HOST }}
+      - name: Configure git
+        id: configure-git
+        uses: ./.github/actions/configure-git
+      - name: Build information
+        id: build-information
+        uses: ./.github/actions/build-information
+        with:
+          context-directory: ${{ inputs.context-directory }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          jira-token: ${{ secrets.jira-token }}
+          builder: ${{ inputs.builder }}
+          bump: ${{ inputs.bump }}
+      - name: Build release git
+        id: build-release-git
+        uses: ./.github/actions/build-release-git
+        if: ${{ contains(fromJSON('["main", "master"]'), github.ref_name) && github.event_name == 'push' }}
+        with:
+          context-directory: ${{ inputs.context-directory }}
+          builder: ${{ inputs.builder }}
+          bump: ${{ steps.build-information.outputs.bump }}
+          bump-default: ${{ inputs.bump }}
+          perform: true
+      - name: Build release github
+        id: build-release-github
+        uses: ./.github/actions/build-release-github
+        if: ${{ contains(fromJSON('["main", "master"]'), github.ref_name) && github.event_name == 'push' }}
+        with:
+          tag: ${{ steps.build-information.outputs.release-tag }}
+      - name: Build release artifact
+        id: build-release-artifact
+        uses: ./.github/actions/build-release-artifact
+        with:
+          context-directory: ${{ inputs.context-directory }}
+          is-release-branch: ${{ steps.build-information.outputs.is-release-branch }}
+          tag: ${{ steps.build-information.outputs.release-tag }}
+      - name: Build release dockerfile
+        id: release-dockerfile
+        uses: ./.github/actions/build-release-dockerfile
+        with:
+          artifact-dockerfile: ${{ inputs.artifact-dockerfile }}
+          gar-host: ${{ inputs.gar-host || vars.GAR_HOST }}
+          gar-project: ${{ inputs.gar-project || vars.GAR_PROJECT }}
+          gar-docker-repository: ${{ inputs.gar-docker-repository || vars.GAR_DOCKER_REPOSITORY }}
+          artifact: ${{ inputs.artifact }}
+          artifact-name: ${{ inputs.artifact-name }}
+          container-image-name: ${{ inputs.container-image-name }}
+          commit-hash: ${{ steps.build-information.outputs.commit-hash }}
+          branch: ${{ steps.build-information.outputs.branch }}
+          version: ${{ steps.build-information.outputs.version }}
+          builder: ${{ inputs.builder }}
+      - name: Crowdin upload
+        id: crowdin-upload
+        uses: ./.github/actions/crowdin-upload
+        if: ${{ contains(fromJSON('["main", "master"]'), github.ref_name) && github.event_name == 'push' && inputs.setup-crowdin == 'true' }}
+        with:
+          crowdin-project-id: ${{ inputs.crowdin-project-id }}
+          crowdin-personal-token: ${{ secrets.crowdin-personal-token }}

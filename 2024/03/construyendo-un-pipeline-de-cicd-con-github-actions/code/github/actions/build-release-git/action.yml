@@ -1,0 +1,110 @@
+name: build-release-git
+description: 'Build release git'
+
+inputs:
+  dry-run:
+    type: boolean
+    default: false
+  context-directory:
+    type: string
+    default: '.'
+  task-file:
+    type: string
+    required: false
+    default: './taskfile.yml'
+  builder:
+    type: string
+    required: true
+  bump:
+    type: string
+    default: 'patch'
+  bump-default:
+    type: string
+    default: 'patch'
+  perform:
+    type: boolean
+    default: false
+
+outputs:
+  snapshot-tag:
+    value: ${{ steps.build-release-git.outputs.snapshot-tag }}
+  branch:
+    value: ${{ steps.build-release-git.outputs.branch }}
+  is-release-branch:
+    value: ${{ steps.build-release-git.outputs.is-release-branch }}
+  version:
+    value: ${{ steps.build-release-git.outputs.version }}
+  tag:
+    value: ${{ steps.build-release-git.outputs.tag }}
+  current-version:
+    value: ${{ steps.build-release-git.outputs.current-version }}
+  release-version:
+    value: ${{ steps.build-release-git.outputs.release-version }}
+  release-tag:
+    value: ${{ steps.build-release-git.outputs.release-tag }}
+  next-version:
+    value: ${{ steps.build-release-git.outputs.next-version }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Build release git
+      id: build-release-git
+      shell: bash
+      working-directory: ./
+      run: |-
+        SCRIPT="${{ github.action_path }}/git-release.sh"
+        OPTIONS=""
+
+        TASK_FILE="${{ inputs.task-file }}"
+        if [ ! -f "${TASK_FILE}" ]; then
+          TASK_FILE="${{ inputs.context-directory }}/${{ inputs.task-file }}"
+        fi
+        if [ ! -f "${TASK_FILE}" ]; then
+          TASK_FILE=".github/actions/resources/taskfiles/${{ inputs.task-file }}"
+        fi
+
+        if [ "${{ inputs.dry-run }}" == "true" ]; then
+          OPTIONS="$OPTIONS -d"
+        fi
+        OPTIONS="$OPTIONS -c ${{ inputs.context-directory }}"
+        OPTIONS="$OPTIONS -b ${{ inputs.builder }}"
+        OPTIONS="$OPTIONS -u ${{ inputs.bump }}"
+        OPTIONS="$OPTIONS -w ${{ inputs.bump-default }}"
+        OPTIONS="$OPTIONS -t ${TASK_FILE}"
+
+        RELEASE_INFORMATION=$(${SCRIPT} ${OPTIONS} -i)
+
+        SNAPSHOT_TAG=$(echo "${RELEASE_INFORMATION}" | jq --raw-output '."snapshot-tag"')
+        BRANCH=$(echo "${RELEASE_INFORMATION}" | jq --raw-output '."branch"')
+        IS_RELEASE_BRANCH=$(echo "${RELEASE_INFORMATION}" | jq --raw-output '."is-release-branch"')
+        VERSION=$(echo "${RELEASE_INFORMATION}" | jq --raw-output '."version"')
+        TAG=$(echo "${RELEASE_INFORMATION}" | jq --raw-output '."tag"')
+        CURRENT_VERSION=$(echo "${RELEASE_INFORMATION}" | jq --raw-output '."current-version"')
+        RELEASE_VERSION=$(echo "${RELEASE_INFORMATION}" | jq --raw-output '."release-version"')
+        RELEASE_TAG=$(echo "${RELEASE_INFORMATION}" | jq --raw-output '."release-tag"')
+        NEXT_VERSION=$(echo "${RELEASE_INFORMATION}" | jq --raw-output '."next-version"')
+
+        if [ "${{ inputs.perform }}" == "true" ]; then
+          ${SCRIPT} ${OPTIONS} -p
+        fi
+
+        echo "Snapshot tag: ${SNAPSHOT_TAG}"
+        echo "Branch: ${BRANCH}"
+        echo "Is release branch: ${IS_RELEASE_BRANCH}"
+        echo "Version: ${VERSION}"
+        echo "Tag: ${TAG}"
+        echo "Current version: ${CURRENT_VERSION}"
+        echo "Release version: ${RELEASE_VERSION}"
+        echo "Release tag: ${RELEASE_TAG}"
+        echo "Next version: ${NEXT_VERSION}"
+
+        echo "snapshot-tag=${SNAPSHOT_TAG}" >> $GITHUB_OUTPUT
+        echo "branch=${BRANCH}" >> $GITHUB_OUTPUT
+        echo "is-release-branch=${IS_RELEASE_BRANCH}" >> $GITHUB_OUTPUT
+        echo "version=${VERSION}" >> $GITHUB_OUTPUT
+        echo "tag=${TAG}" >> $GITHUB_OUTPUT
+        echo "current-version=${CURRENT_VERSION}" >> $GITHUB_OUTPUT
+        echo "release-version=${RELEASE_VERSION}" >> $GITHUB_OUTPUT
+        echo "release-tag=${RELEASE_TAG}" >> $GITHUB_OUTPUT
+        echo "next-version=${NEXT_VERSION}" >> $GITHUB_OUTPUT

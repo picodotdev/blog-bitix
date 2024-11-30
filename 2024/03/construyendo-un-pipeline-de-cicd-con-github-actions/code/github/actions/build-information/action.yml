@@ -1,0 +1,239 @@
+name: build-information
+description: 'Build information'
+
+inputs:
+  context-directory:
+    type: string
+    required: false
+    default: '.'
+  github-token:
+    type: string
+    required: true
+  jira-token:
+    type: string
+    required: true
+  builder:
+    type: string
+    required: true
+  bump:
+    type: string
+    required: true
+
+outputs:
+  repository:
+    value: ${{ steps.build-information.outputs.repository }}
+  issue-id:
+    value: ${{ steps.build-information-issue-id.outputs.issue-id }}
+  issue-summary:
+    value: ${{ steps.build-information-issue-summary.outputs.issue-summary }}
+  pull-request:
+    value: ${{ steps.build-information-pull-request-outputs.outputs.pull-request-number }}
+  pull-request-number:
+    value: ${{ steps.build-information-pull-request-outputs.outputs.pull-request-number }}
+  pull-request-branch:
+    value: ${{ steps.build-information-pull-request-outputs.outputs.pull-request-branch }}
+  commit-hash:
+    value: ${{ steps.build-information.outputs.commit-hash }}
+  commit-hash-long:
+    value: ${{ steps.build-information.outputs.commit-hash-long }}
+  branch:
+    value: ${{ steps.build-information.outputs.branch }}
+  build-number:
+    value: ${{ steps.build-information.outputs.build-number }}
+  build-date:
+    value: ${{ steps.build-information.outputs.build-date }}
+  is-release-branch:
+    value: ${{ steps.build-information-release.outputs.is-release-branch }}
+  version:
+    value: ${{ steps.build-information-release.outputs.version }}
+  tag:
+    value: ${{ steps.build-information-release.outputs.tag }}
+  bump:
+    value: ${{ steps.build-information-bump.outputs.bump }}
+  current-version:
+    value: ${{ steps.build-information-release.outputs.current-version }}
+  release-version:
+    value: ${{ steps.build-information-release.outputs.release-version }}
+  release-tag:
+    value: ${{ steps.build-information-release.outputs.release-tag }}
+  next-version:
+    value: ${{ steps.build-information-release.outputs.next-version }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Build information
+      id: build-information
+      shell: bash
+      run: |-
+        OWNER="${{ github.repository_owner }}"
+        REPOSITORY=$(echo "${{ github.repository }}" | sed -e "s/${OWNER}\///g")
+        COMMIT_HASH="$(git rev-parse --short HEAD)"
+        COMMIT_HASH_LONG="$(git rev-parse HEAD)"
+        BRANCH="$(git branch --show-current)"
+        BUILD_NUMBER="${{ github.run_number }}"
+        BUILD_DATE="$(date +"%Y-%m-%dT%H-%M-%S")"
+
+        echo "Repository: ${REPOSITORY}"
+        echo "Commit HASH: ${COMMIT_HASH}"
+        echo "Commit HASH (long): ${COMMIT_HASH_LONG}"
+        echo "Branch: ${BRANCH}"
+        echo "Build number: ${BUILD_NUMBER}"
+        echo "Build date: ${BUILD_DATE}"
+
+        echo "repository=${REPOSITORY}" >> $GITHUB_OUTPUT
+        echo "commit-hash=${COMMIT_HASH}" >> $GITHUB_OUTPUT
+        echo "commit-hash-long=${COMMIT_HASH_LONG}" >> $GITHUB_OUTPUT
+        echo "branch=${BRANCH}" >> $GITHUB_OUTPUT
+        echo "build-number=${BUILD_NUMBER}" >> $GITHUB_OUTPUT
+        echo "build-date=${BUILD_DATE}" >> $GITHUB_OUTPUT
+    - name: Build information pull request
+      id: build-information-pull-request
+      uses: actions/github-script@v7
+      with:
+        result-encoding: string
+        github-token: ${{ inputs.github-token }}
+        script: |-
+          const owner = "${{ github.repository_owner }}";
+          const repository = "${{ steps.build-information.outputs.repository }}";
+          const commitHash = "${{ steps.build-information.outputs.commit-hash-long }}";
+
+          let pullRequestNumber = "${{ github.event.pull_request.number }}";
+          let pullRequestBranch = "";
+          let pullRequestLabels = [];
+          if (pullRequestNumber === "") {
+            const response = await github.rest.pulls.list({
+              "owner": owner,
+              "repo": repository,
+              "state": "closed",
+              "sort": "updated",
+              "direction": "desc",
+              "per_page": 100
+            });
+            //console.log("Response: " + JSON.stringify(response));
+            const pull = response.data.find(p => p.merge_commit_sha === commitHash);
+            pullRequestNumber = (!pull) ? 0 : pull.number;
+          }
+          if (pullRequestNumber) {
+            const response = await github.rest.pulls.get({
+              "owner": owner,
+              "repo": repository,
+              "pull_number": pullRequestNumber
+            });
+            //console.log("Response: " + JSON.stringify(response));
+            pullRequestBranch = response.data.head.ref;
+            pullRequestLabels = response.data.labels;
+          }
+
+          console.log(`Pull request number: ${pullRequestNumber}`);
+          console.log(`Pull request branch: ${pullRequestBranch}`);
+          console.log(`Pull request labels: ${pullRequestLabels}`);
+          return JSON.stringify({ "pull-request-number": pullRequestNumber, "pull-request-branch": pullRequestBranch, "pull-request-labels": pullRequestLabels });
+    - name: Build information pull request outputs
+      id: build-information-pull-request-outputs
+      shell: bash
+      run: |-
+        PULL_REQUEST_NUMBER="${{ fromJSON(steps.build-information-pull-request.outputs.result).pull-request-number }}"
+        PULL_REQUEST_BRANCH="${{ fromJSON(steps.build-information-pull-request.outputs.result).pull-request-branch }}"
+        echo "pull-request-number=${PULL_REQUEST_NUMBER}" >> $GITHUB_OUTPUT
+        echo "pull-request-branch=${PULL_REQUEST_BRANCH}" >> $GITHUB_OUTPUT
+    - name: Build information issue id
+      id: build-information-issue-id
+      shell: bash
+      run: |-
+        ISSUE_CANDIDATE_REGULAR_EXPRESSION="^\([A-Z]\+-[0-9]\+\)\(.*\)"
+        ISSUE_REGULAR_EXPRESSION="^[A-Z]+-[0-9]+$"
+
+        PULL_REQUEST_BRANCH="${{ fromJSON(steps.build-information-pull-request.outputs.result).pull-request-branch }}"
+        ISSUE_ID=""
+
+        ISSUE_CANDIDATE="${PULL_REQUEST_BRANCH}"
+        ISSUE_CANDIDATE=$(echo "${ISSUE_CANDIDATE}" | sed -e "s#^bug/##")
+        ISSUE_CANDIDATE=$(echo "${ISSUE_CANDIDATE}" | sed -e "s#^feat/##")
+        ISSUE_CANDIDATE=$(echo "${ISSUE_CANDIDATE}" | sed -e "s#^breaking/##")
+        ISSUE_CANDIDATE=$(echo "${ISSUE_CANDIDATE}" | sed -e "s#${ISSUE_CANDIDATE_REGULAR_EXPRESSION}#\1#")
+        if [[ "${ISSUE_CANDIDATE}" =~ ${ISSUE_REGULAR_EXPRESSION} ]]; then
+          ISSUE_ID="${ISSUE_CANDIDATE}"
+        fi
+
+        echo "Issue: ${ISSUE_ID}"
+        echo "issue-id=${ISSUE_ID}" >> $GITHUB_OUTPUT
+    - name: Build information issue summary
+      id: build-information-issue-summary
+      if: ${{ steps.build-information-issue-id.outputs.issue-id && inputs.jira-token }}
+      shell: bash
+      run: |-
+        ISSUE_ID="${{ steps.build-information-issue-id.outputs.issue-id }}"
+        RESPONSE=$(curl -X GET \
+          -H "Authorization: Basic ${{ inputs.jira-token }}" \
+          -H "Accept: application/json" \
+          "https://acmehub.atlassian.net/rest/agile/1.0/issue/${ISSUE_ID}")
+        ISSUE_SUMMARY=$(echo "${RESPONSE}" | jq --raw-output '.fields.summary')
+        echo "Issue summary: ${ISSUE_SUMMARY}"
+        echo "issue-summary=${ISSUE_SUMMARY}" >> $GITHUB_OUTPUT
+    - name: Build information bump branch
+      id: build-information-bump-branch
+      shell: bash
+      run: |-
+        BRANCH="${{ fromJSON(steps.build-information-pull-request.outputs.result).pull-request-branch }}"
+        BUMP=""
+        if [[ "${BRANCH}" =~ ^bug/.* ]]; then
+          BUMP="patch"
+        fi
+        if [[ "${BRANCH}" =~ ^feat/.* ]]; then
+          BUMP="minor"
+        fi
+        if [[ "${BRANCH}" =~ ^breaking/.* ]]; then
+          BUMP="major"
+        fi
+        echo "Branch bump: ${BUMP}"
+        echo "bump=${BUMP}" >> $GITHUB_OUTPUT
+    - name: Build information bump label
+      id: build-information-bump-label
+      uses: actions/github-script@v7
+      if: ${{ steps.build-information-bump-branch.outputs.bump == '' }}
+      with:
+        result-encoding: string
+        github-token: ${{ inputs.github-token }}
+        script: |-
+          const pullRequestLabels = JSON.parse(`${{ steps.build-information-pull-request.outputs.result }}`)["pull-request-labels"];
+          let bump = "";
+          let patch = pullRequestLabels.find(e => e.name === "bump-patch");
+          let minor = pullRequestLabels.find(e => e.name === "bump-minor");
+          let major = pullRequestLabels.find(e => e.name === "bump-major");
+          if (patch) {
+            bump = "patch";
+          }
+          if (minor) {
+            bump = "minor";
+          }
+          if (major) {
+            bump = "major";
+          }
+          console.log(`Label bump: ${bump}`);
+          return bump;
+    - name: Build information bump
+      id: build-information-bump
+      shell: bash
+      run: |-
+        BRANCH_BUMP="${{ steps.build-information-bump-branch.outputs.bump }}"
+        LABEL_BUMP="${{ steps.build-information-bump-label.outputs.result }}"
+        BUMP="${{ inputs.bump }}"
+        if [ -n "${BRANCH_BUMP}" ]; then
+          BUMP="${BRANCH_BUMP}"
+        elif [ -n "${LABEL_BUMP}" ]; then
+          BUMP="${LABEL_BUMP}"
+        fi
+        echo "Branch bump: ${BRANCH_BUMP}"
+        echo "Label bump: ${LABEL_BUMP}"
+        echo "Bump: ${BUMP}"
+        echo "bump=${BUMP}" >> $GITHUB_OUTPUT
+    - name: Build information release
+      id: build-information-release
+      uses: ./.github/actions/build-release-git
+      with:
+        context-directory: ${{ inputs.context-directory }}
+        builder: ${{ inputs.builder }}
+        bump: ${{ steps.build-information-bump.outputs.bump }}
+        bump-default: ${{ inputs.bump }}
+        perform: false

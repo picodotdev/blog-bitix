@@ -1,0 +1,47 @@
+name: deploy-gke
+description: 'Deploy GKE'
+
+inputs:
+  dry-run:
+    type: boolean
+    required: false
+    default: true
+  gar-host:
+    required: true
+    type: string
+  gar-project:
+    required: true
+    type: string
+  gar-docker-repository:
+    required: true
+    type: string
+  project-id:
+    required: true
+    type: string
+  deployment-directory:
+    required: true
+    type: string
+  container-image-name:
+    required: true
+    type: string
+  version:
+    required: true
+    type: string
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup GKE credentials
+      uses: ./.github/actions/setup-gke-credentials
+      if: ${{ !(inputs.dry-run == 'true' || inputs.dry-run == true) }}
+      with:
+        project-id: ${{ inputs.project-id }}
+    - name: Setup Kustomize
+      uses: ./.github/actions/setup-kustomize
+      if: ${{ !(inputs.dry-run == 'true' || inputs.dry-run == true) }}
+    - name: Deploy to GKE
+      uses: ./.github/actions/deploy-gke-kustomize
+      if: ${{ !(inputs.dry-run == 'true' || inputs.dry-run == true) }}
+      with:
+        deployment-directory: ${{ inputs.deployment-directory }}
+        image: ${{ inputs.gar-host }}/${{ inputs.gar-project }}/${{ inputs.gar-docker-repository }}/${{ inputs.container-image-name }}:latest=${{ inputs.gar-host }}/${{ inputs.gar-project }}/${{ inputs.gar-docker-repository }}/${{ inputs.container-image-name }}:${{ inputs.version }}

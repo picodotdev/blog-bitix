@@ -1,0 +1,132 @@
+name: build-check-task
+
+on:
+  workflow_call:
+    inputs:
+      ref:
+        type: string
+        default: 'main'
+      workflows-ref:
+        type: string
+        default: 'main'
+      context-directory:
+        type: string
+        default: '.'
+      setup-java-version:
+        type: string
+      setup-java-cache:
+        type: string
+      setup-node-version:
+        type: string
+      setup-pnpm-version:
+        type: string
+      setup-npmrc:
+        type: boolean
+        default: false
+      setup-gradle:
+        type: boolean
+        default: false
+      setup-maven:
+        type: boolean
+        default: false
+      setup-task:
+        type: boolean
+        default: false
+      setup-install:
+        type: boolean
+        default: false
+      setup-docker:
+        type: boolean
+        default: false
+      setup-google-cloud-sdk:
+        type: boolean
+        default: false
+      node-build-cache-path:
+        type: string
+      gar-npm-repository:
+        type: string
+      gar-npm-repository-location:
+        type: string
+      gar-npm-repository-scope:
+        type: string
+      gcp-workload-identity-provider:
+        type: string
+      gcp-service-account-gar:
+        type: string
+      gar-host:
+        type: string
+      check-tasks:
+        type: string
+        required: true
+      check-tasks-reports:
+        type: string
+        default: '{}'
+    secrets:
+      workflows-token:
+      sonar-token:
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    strategy:
+      matrix:
+        task: ${{ fromJSON(inputs.check-tasks) }}
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.workflows-token }}
+          ref: ${{ inputs.ref }}
+          fetch-depth: 0
+      - name: Setup GitHub Actions workflows
+        id: setup-github-actions-workflows
+        uses: acmehub/platform-github-actions-workflows/.github/actions/setup-github-actions-workflows@main
+        if: ${{ github.repository != 'acmehub/platform-github-actions-workflows' }}
+        with:
+          ref: ${{ inputs.workflows-ref }}
+          token: ${{ secrets.workflows-token }}
+      - name: Setup meta
+        id: setup-meta
+        uses: ./.github/actions/setup-meta
+        with:
+          context-directory: ${{ inputs.context-directory }}
+          setup-java-version: ${{ inputs.setup-java-version }}
+          setup-java-cache: ${{ inputs.setup-java-cache }}
+          setup-node-version: ${{ inputs.setup-node-version }}
+          setup-pnpm-version: ${{ inputs.setup-pnpm-version }}
+          setup-gradle: ${{ inputs.setup-gradle }}
+          setup-maven: ${{ inputs.setup-maven }}
+          setup-task: ${{ inputs.setup-task }}
+          setup-docker: ${{ inputs.setup-docker }}
+          setup-install: ${{ inputs.setup-install }}
+          setup-npmrc: ${{ inputs.setup-npmrc }}
+          setup-google-cloud-sdk: ${{ inputs.setup-google-cloud-sdk }}
+          node-build-cache-path: ${{ inputs.node-build-cache-path }}
+          gar-project: ${{ inputs.gar-project || vars.GAR_PROJECT }}
+          gar-npm-repository: ${{ inputs.gar-npm-repository || vars.GAR_NPM_REPOSITORY }}
+          gar-npm-repository-location: ${{ inputs.gar-npm-repository-location || vars.GAR_NPM_REPOSITORY_LOCATION }}
+          gar-npm-repository-scope: ${{ inputs.gar-npm-repository-scope || vars.GAR_NPM_REPOSITORY_SCOPE }}
+          gcp-workload-identity-provider: ${{ inputs.gcp-workload-identity-provider || vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          gcp-service-account: ${{ inputs.gcp-service-account-gar || vars.GCP_SERVICE_ACCOUNT_GAR }}
+          gar-host: ${{ inputs.gar-host || vars.GAR_HOST }}
+          token: ${{ secrets.workflows-token }}
+      - name: Task
+        id: task
+        uses: ./.github/actions/task
+        env:
+          SONAR_TOKEN: ${{ secrets.sonar-token }}
+          GITHUB_TOKEN: ${{ secrets.workflows-token }}
+        with:
+          context-directory: ${{ inputs.context-directory }}
+          task: ${{ matrix.task }}
+      - name: Upload reports
+        id: upload-reports
+        uses: ./.github/actions/upload-reports
+        with:
+          name: ${{ matrix.task }}
+          reports: ${{ fromJson(inputs.check-tasks-reports)[matrix.task] }}
+          reports-on-failure: true

@@ -1,0 +1,76 @@
+name: build-release-dockerfile
+description: 'Build release dockerfile'
+
+inputs:
+  artifact-dockerfile:
+    type: string
+    required: true
+  gar-host:
+    type: string
+    required: true
+  gar-project:
+    type: string
+    required: true
+  gar-docker-repository:
+    type: string
+    required: true
+  artifact:
+    type: string
+    required: false
+  artifact-name:
+    type: string
+    required: false
+  container-image-name:
+    type: string
+    required: true
+  commit-hash:
+    type: string
+    required: true
+  branch:
+    type: string
+    required: true
+  version:
+    type: string
+    required: true
+  builder:
+    type: string
+    required: false
+
+outputs:
+  image-id:
+    value: ${{ steps.docker-build-push.outputs.imageid }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Sanitize branch name
+      shell: bash
+      id: sanitize-branch
+      run: |
+        BRANCH="${{ inputs.branch }}"
+        SANITIZED_BRANCH="${BRANCH//\//-}"
+        echo "sanitized-branch=${SANITIZED_BRANCH}" >> $GITHUB_OUTPUT
+    - name: Docker tags
+      id: docker-image-tags
+      shell: bash
+      run: |-
+        TAGS_ARRAY=()
+        TAGS_ARRAY+=("${{ inputs.gar-host }}/${{ inputs.gar-project }}/${{ inputs.gar-docker-repository }}/${{ inputs.container-image-name }}:${{ inputs.commit-hash }}")
+        TAGS_ARRAY+=("${{ inputs.gar-host }}/${{ inputs.gar-project }}/${{ inputs.gar-docker-repository }}/${{ inputs.container-image-name }}:${{ steps.sanitize-branch.outputs.sanitized-branch }}")
+        TAGS_ARRAY+=("${{ inputs.gar-host }}/${{ inputs.gar-project }}/${{ inputs.gar-docker-repository }}/${{ inputs.container-image-name }}:${{ inputs.version }}")
+        if [ "${{ contains(fromJSON('["main", "master"]'), github.ref_name) && github.event_name == 'push' }}" == "true" ]; then
+          TAGS_ARRAY+=("${{ inputs.gar-host }}/${{ inputs.gar-project }}/${{ inputs.gar-docker-repository }}/${{ inputs.container-image-name }}:latest")
+        fi
+        TAGS=$(IFS=','; echo "${TAGS_ARRAY[*]}" )
+        echo "tags=$TAGS" >> $GITHUB_OUTPUT
+    - name: Build and push container image
+      id: docker-build-push
+      uses: docker/build-push-action@v5
+      with:
+        push: true
+        context: ./
+        file: ${{ inputs.artifact-dockerfile }}
+        tags: ${{ steps.docker-image-tags.outputs.tags }}
+        build-args: |
+          ARTIFACT=${{ inputs.artifact }}
+          ARTIFACT_NAME=${{ inputs.artifact-name }}
