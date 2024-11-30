@@ -1,20 +1,14 @@
 name: setup-gradle
 description: 'Setup Gradle'
 
-inputs:
-  github-packages-repository-download-username:
-    required: true
-  github-packages-repository-download-password:
-    required: true
-
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
+      with:
+        cache-read-only: false
     - name: Configure Task
       shell: bash
       run: |-
         echo "GRADLE_OPTIONS=-console plain" >> .env
-        echo "GITHUB_PACKAGES_REPOSITORY_DOWNLOAD_USERNAME=${{ inputs.github-packages-repository-download-username }}" >> .env
-        echo "GITHUB_PACKAGES_REPOSITORY_DOWNLOAD_PASSWORD=${{ inputs.github-packages-repository-download-password }}" >> .env

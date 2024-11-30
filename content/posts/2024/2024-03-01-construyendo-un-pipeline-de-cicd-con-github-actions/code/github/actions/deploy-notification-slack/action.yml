@@ -1,0 +1,222 @@
+name: deploy-notification-slack
+description: 'Deploy notification Slack'
+
+inputs:
+  dry-run:
+    type: string
+    required: false
+  ref:
+    type: string
+    required: false
+  slack-webhook-url:
+    type: string
+    required: true
+  job-steps:
+    type: string
+    required: true
+  environment:
+    type: string
+    required: true
+  runtime:
+    type: string
+    required: true
+  gcp-project:
+    type: string
+    required: true
+  gar-npm-repository-location:
+    type: string
+    required: false
+  gar-npm-repository:
+    type: string
+    required: false
+  issue-id:
+    type: string
+    required: true
+  issue-summary:
+    type: string
+    required: true
+  repository:
+    type: string
+    required: true
+  pull-request-number:
+    type: string
+    required: true
+  pull-request-branch:
+    type: string
+    required: true
+  version:
+    type: string
+    required: true
+  tag:
+    type: string
+    required: true
+  commit-hash:
+    type: string
+    required: true
+  branch:
+    type: string
+    required: true
+  build-number:
+    type: string
+  build-date:
+    type: string
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Get information
+      id: info
+      shell: bash
+      run: |-
+        STATUS_EMOJI=":large_yellow_circle:"
+        STATUS_LABEL=" (status?)"
+        if [ "${{ job.status }}" == "failure" ]; then
+          JOB_STEPS=$(cat << EOF
+            ${{ inputs.job-steps }}
+        EOF
+        )
+          echo "Steps: ${JOB_STEPS}"
+          STEP_FAILURE=$(echo "${JOB_STEPS}" | jq --raw-output 'to_entries[] | select(.value.outcome == "failure").key')
+          echo "Steps failure: ${STEP_FAILURE}"
+          STATUS_EMOJI=":red_circle:"
+          STATUS_LABEL=" (${STEP_FAILURE})"
+        elif [ "${{ job.status }}" == "cancelled" ]; then
+          STATUS_EMOJI=":red_circle:"
+          STATUS_LABEL=" (cancelled)"
+        elif [ "${{ inputs.dry-run }}" == "true" ]; then
+          STATUS_EMOJI=":large_purple_circle:"
+          STATUS_LABEL=" (dry-run)"
+        elif [ "${{ job.status }}" == "success" ]; then
+          STATUS_EMOJI=":large_green_circle:"
+          STATUS_LABEL=""
+        fi
+        if [ "${{ inputs.runtime }}" == "gke" ]; then
+          GCP_PROJECT_URL="https://console.cloud.google.com/kubernetes/workload/overview?project=${{ inputs.gcp-project }}"
+        elif [ "${{ inputs.runtime }}" == "gae" ]; then
+          GCP_PROJECT_URL="https://console.cloud.google.com/appengine/services?project=${{ inputs.gcp-project }}"
+        elif [ "${{ inputs.runtime }}" == "npm-repository" ]; then
+          GCP_PROJECT_URL="https://console.cloud.google.com/artifacts/npm/${{ inputs.gcp-project }}/${{ inputs.gar-npm-repository-location }}/${{ inputs.gar-npm-repository }}"
+        else
+          GCP_PROJECT_URL="https://console.cloud.google.com/welcome?project=${{ inputs.gcp-project }}"
+        fi
+        BRANCH="<https://github.com/${{ github.repository }}/tree/${{ inputs.branch || inputs.ref }}|${{ inputs.branch || inputs.ref }}>"
+        if [ -n "${{ inputs.pull-request-branch }}" ] && [ "${{ inputs.pull-request-branch }}" != "${{ inputs.branch }}" ]; then
+          BRANCH="<https://github.com/${{ github.repository }}/tree/${{ inputs.branch || inputs.ref }}|${{ inputs.branch || inputs.ref }}> from <https://github.com/${{ github.repository }}/tree/${{ inputs.pull-request-branch }}|${{ inputs.pull-request-branch }}>"
+        fi
+        RUN_ATTEMPT=""
+        if [ "${{ github.run_attempt }}" != "1" ]; then
+          RUN_ATTEMPT=" (${{ github.run_attempt }})"
+        fi
+        ACTOR="<https://github.com/${{ github.actor }}|${{ github.actor }}>"
+        if [ -n "${{ github.triggering_actor }}" ]  && [ "${{ github.actor }}" != "${{ github.triggering_actor }}" ]; then
+          ACTOR="<https://github.com/${{ github.triggering_actor }}|${{ github.triggering_actor }}> on behalf of <https://github.com/${{ github.actor }}|${{ github.actor }}>"
+        fi
+        echo "status-emoji=${STATUS_EMOJI}" >> $GITHUB_OUTPUT
+        echo "status-label=${STATUS_LABEL}" >> $GITHUB_OUTPUT
+        echo "gcp-project-url=${GCP_PROJECT_URL}" >> $GITHUB_OUTPUT
+        echo "branch=${BRANCH}" >> $GITHUB_OUTPUT
+        echo "run-attempt=${RUN_ATTEMPT}" >> $GITHUB_OUTPUT
+        echo "actor=${ACTOR}" >> $GITHUB_OUTPUT
+    - name: Send job notification to Slack
+      id: slack
+      uses: slackapi/slack-github-action@v1.25.0
+      env:
+        SLACK_WEBHOOK_URL: ${{ inputs.slack-webhook-url }}
+        SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+      with:
+        payload: |
+          {
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "${{ steps.info.outputs.status-emoji }}${{ steps.info.outputs.status-label }} Deployed *${{ inputs.repository }}* in *${{ inputs.environment }}* by *${{ github.actor }}*"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":jira: Issue: <https://acmehub.atlassian.net/browse/${{ inputs.issue-id || 'XXX-0000' }}|${{ inputs.issue-id || 'XXX-0000' }}>"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":jira: Summary: ${{ inputs.issue-summary || '' }}"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":github: Repository: <https://github.com/${{ github.repository }}|${{ inputs.repository }}>"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":github: Pull request: <https://github.com/${{ github.repository }}/pull/${{ inputs.pull-request-number || 0 }}|${{ inputs.pull-request-number || 0 }}>"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":hammer_and_wrench: Environment: ${{ inputs.environment }}"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":gear: Runtime: ${{ inputs.runtime }}"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":gcp: GCP project: <${{ steps.info.outputs.gcp-project-url }}|${{ inputs.gcp-project }}>"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":git: Branch: ${{ steps.info.outputs.branch }}"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":git: Commit: <https://github.com/${{ github.repository }}/commit/${{ inputs.commit-hash }}|${{ inputs.commit-hash }}>"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":package: Version: ${{ inputs.version }}"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":dart: Build: <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|${{ github.run_number }}>${{ steps.info.outputs.run-attempt }}"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":female-technologist: Actor: ${{ steps.info.outputs.actor }}"
+                }
+              }
+            ]
+          }

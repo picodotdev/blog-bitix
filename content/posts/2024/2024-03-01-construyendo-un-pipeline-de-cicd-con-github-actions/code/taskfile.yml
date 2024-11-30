@@ -5,7 +5,19 @@ dotenv: ['.env']
 tasks:
   build:
     cmds:
-      - ./gradlew $GRADLE_OPTIONS build
+      - ../gradlew ${GRADLE_OPTIONS} build
+
+  schedule:
+    deps:
+      - task: schedule:jacoco
+
+  run:
+    cmds:
+      - ../gradlew ${GRADLE_OPTIONS} run
+
+  setup:install:
+    cmds:
+      - echo "setup:install"
 
   build:check:
     deps:
@@ -16,29 +28,41 @@ tasks:
 
   build:test:
     cmds:
-      - ./gradlew $GRADLE_OPTIONS test
+      - ../gradlew ${GRADLE_OPTIONS} test
 
   build:pmd:
     cmds:
-      - ./gradlew $GRADLE_OPTIONS pmdMain pmdTest
+      - ../gradlew ${GRADLE_OPTIONS} pmdMain pmdTest
 
   build:checkstyle:
     cmds:
-      - ./gradlew $GRADLE_OPTIONS checkstyleMain checkstyleTest
+      - ../gradlew ${GRADLE_OPTIONS} checkstyleMain checkstyleTest
 
   build:spotbugs:
     cmds:
-      - ./gradlew $GRADLE_OPTIONS spotBugMain spotBugTest
+      - ../gradlew ${GRADLE_OPTIONS} spotBugMain spotBugTest
 
-  build:release:
-    - npx semantic-release --no-ci --dry-run
+  build:sonar:
+    cmds:
+      - ../gradlew ${GRADLE_OPTIONS} -Dorg.gradle.project.sonarToken="${SONAR_TOKEN}" build jacocoTestReport sonar
+
+  build:version:
+    cmds:
+      - ../gradlew -q version
+
+  build:assemble:
+    cmds:
+      - ../gradlew ${GRADLE_OPTIONS} clean assemble
 
   build:publish:
-    - echo "publish"
-
-  run:
     cmds:
-      - ./gradlew $GRADLE_OPTIONS run
+      - echo "build:publish"
 
-  noop:
-    - echo "noop"
+  build:assemble-image:
+    cmds:
+      - ../gradlew ${GRADLE_OPTIONS} bootBuildImage
+
+  schedule:jacoco:
+    cmds:
+      - ../gradlew ${GRADLE_OPTIONS} test jacocoTestReport
+

@@ -1,0 +1,149 @@
+name: deploy-gke
+
+on:
+  workflow_call:
+    inputs:
+      ref:
+        type: string
+        default: 'main'
+      workflows-ref:
+        type: string
+        default: 'main'
+      dry-run:
+        type: string
+      gcp-workload-identity-provider:
+        type: string
+      gcp-service-account-gke:
+        type: string
+      gar-host:
+        type: string
+      gar-project:
+        type: string
+      gar-docker-repository:
+        type: string
+      gke-project:
+        type: string
+      deployment-directory:
+        type: string
+      container-image-name:
+        type: string
+      slack-webhook-url:
+        type: string
+      environment:
+        type: string
+      release-outputs:
+        type: string
+        default: '{}'
+      build-issue-id:
+        type: string
+      build-issue-summary:
+        type: string
+      build-repository:
+        type: string
+      build-pull-request:
+        type: string
+      build-pull-request-number:
+        type: string
+      build-pull-request-branch:
+        type: string
+      build-version:
+        type: string
+      build-tag:
+        type: string
+      build-commit-hash:
+        type: string
+      build-branch:
+        type: string
+      build-number:
+        type: string
+      build-date:
+        type: string
+    secrets:
+      workflows-token:
+      slack-webhook-url:
+        required: true
+
+jobs:
+  deploy-gke:
+    runs-on: ubuntu-22.04-4core
+    name: gke (${{ inputs.environment }})
+    environment: ${{ inputs.environment }}
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.workflows-token }}
+          ref: ${{ inputs.ref || github.head_ref || github.ref_name }}
+          fetch-depth: 0
+      - name: Setup workflows
+        id: setup-workflows
+        uses: acmehub/platform-github-actions-workflows/.github/actions/setup-github-actions-workflows@main
+        if: ${{ github.repository != 'acmehub/platform-github-actions-workflows' }}
+        with:
+          ref: ${{ inputs.workflows-ref }}
+          token: ${{ secrets.workflows-token }}
+      - name: Summary deprecated inputs
+        id: summary-deprecated-inputs
+        uses: ./.github/actions/summary-deprecated-inputs
+        with:
+          inputs: ${{ toJSON(inputs) }}
+          validations: |
+            {
+              "build-issue-id": {"validation": "deprecated", "use": "release-outputs"},
+              "build-issue-summary": {"validation": "deprecated", "use": "release-outputs"},
+              "build-repository": {"validation": "deprecated", "use": "release-outputs"},
+              "build-pull-request": {"validation": "deprecated", "use": "release-outputs"},
+              "build-pull-request-number": {"validation": "deprecated", "use": "release-outputs"},
+              "build-pull-request-branch": {"validation": "deprecated", "use": "release-outputs"},
+              "build-version": {"validation": "deprecated", "use": "release-outputs"},
+              "build-tag": {"validation": "deprecated", "use": "release-outputs"},
+              "build-commit-hash": {"validation": "deprecated", "use": "release-outputs"},
+              "build-branch": {"validation": "deprecated", "use": "release-outputs"},
+              "build-number": {"validation": "deprecated", "use": "release-outputs"},
+              "build-date": {"validation": "deprecated", "use": "release-outputs"}
+            }
+      - name: Setup meta
+        id: setup-meta
+        uses: ./.github/actions/setup-meta
+        with:
+          gcp-workload-identity-provider: ${{ inputs.gcp-workload-identity-provider || vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          gcp-service-account: ${{ inputs.gcp-service-account-gke || vars.GCP_SERVICE_ACCOUNT_GKE }}
+      - name: Deploy GKE
+        id: deploy-gke
+        uses: ./.github/actions/deploy-gke
+        with:
+          dry-run: ${{ inputs.dry-run }}
+          gar-host: ${{ inputs.gar-host || vars.GAR_HOST }}
+          gar-project: ${{ inputs.gar-project || vars.GAR_PROJECT }}
+          gar-docker-repository: ${{ inputs.gar-docker-repository || vars.GAR_DOCKER_REPOSITORY }}
+          project-id: ${{ inputs.gke-project || vars.GKE_PROJECT }}
+          deployment-directory: ${{ inputs.deployment-directory }}
+          container-image-name: ${{ inputs.container-image-name }}
+          version: ${{ inputs.build-version || fromJSON(inputs.release-outputs).build-version}}
+      - name: Deploy notification Slack
+        id: deploy-notification-slack
+        uses: ./.github/actions/deploy-notification-slack
+        if: ${{ always() }}
+        with:
+          dry-run: ${{ inputs.dry-run }}
+          ref: ${{ inputs.ref }}
+          slack-webhook-url: ${{ secrets.slack-webhook-url }}
+          job-steps: ${{ toJSON(steps) }}
+          environment: ${{ inputs.environment }}
+          runtime: gke
+          gcp-project: ${{ inputs.gke-project || vars.GKE_PROJECT }}
+          issue-id: ${{ inputs.build-issue-id || fromJSON(inputs.release-outputs).issue-id }}
+          issue-summary: ${{ inputs.build-issue-summary || fromJSON(inputs.release-outputs).issue-summary }}
+          repository: ${{ inputs.build-repository || fromJSON(inputs.release-outputs).repository }}
+          pull-request-number: ${{ inputs.build-pull-request-number || inputs.build-pull-request || fromJSON(inputs.release-outputs).pull-request-number }}
+          pull-request-branch: ${{ inputs.build-pull-request-branch || fromJSON(inputs.release-outputs).pull-request-branch }}
+          version: ${{ inputs.build-version || fromJSON(inputs.release-outputs).version }}
+          tag: ${{ inputs.build-tag || fromJSON(inputs.release-outputs).tag || format('v{0}', inputs.build-version) }}
+          commit-hash: ${{ inputs.build-commit-hash || fromJSON(inputs.release-outputs).commit-hash }}
+          branch: ${{ inputs.build-branch || fromJSON(inputs.release-outputs).branch }}
+          build-number: ${{ inputs.build-number || fromJSON(inputs.release-outputs).build-number }}
+          build-date: ${{ inputs.build-date || fromJSON(inputs.release-outputs).build-date }}
