@@ -127,6 +127,7 @@ Hay varios archivos de configuración importantes, el de las tareas de Task que 
 En realidad no hay un único _workflow_ de _release_ sino que hay varios para segregar en los aspectos principales y no incluir demasiados condicionales. Hay un workflow de _release_ que genera una imagen de contenedor, genera la release utilizando tareas de Task y genera como resultado un paquete de NPM. El artefacto generado es subido al repositorio de artefactos.
 
 {{< code file=".github/workflows/build-release-dockerfile.yml" language="yml" options="" >}}
+{{< code file="miscellaneous/docker/Dockerfile" language="plain" options="" >}}
 
 ### El _workflow_ de la fase de _deploy_
 
