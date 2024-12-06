@@ -54,7 +54,7 @@ Lo que hace diferente a The Witcher 3 es que a diferencia de otros juegos de mun
     image1="image:the-witcher-3-menu.webp" optionsthumb1="200x150" title1="Menú"
     image2="image:the-witcher-3-cd-projekt-red-1.webp" optionsthumb2="200x150" title2="CD Projekt Red"
     image3="image:the-witcher-3-cd-projekt-red-2.webp" optionsthumb3="200x150" title3="CD Projekt Red"
-    caption="Pantalla inicial y menú del juego The Last of Us Parte II" >}}
+    caption="Pantalla inicial y menú del juego The Witcher 3" >}}
 {{< image
     gallery="true"
     image1="image:the-witcher-3-portada.webp" optionsthumb1="200x150" title1="Portada"
