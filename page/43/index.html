@@ -232,6 +232,38 @@
 <ul class="list-unstyled">
     <li>
       <article>
+        <h1><a href="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas</a></h1>
+        <span class="information">
+          <time>10/04/2015</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/seguridad/">seguridad</a>
+            
+              <a href="/blog-bitix/tags/tapestry/">tapestry</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/apache-shiro.webp" width="300" height="106" alt="Apache Shiro" title="Apache Shiro" class="" loading="false&#34;"></p>
+</div>
+<p>Para cada servicio deberíamos emplear una contraseña de una longitud de al menos 8 caracteres que incluya letras en minúscula, mayúscula, números y símbolos, una herramienta que podemos utilizar para generar contraseñas más seguras con los criterios que indiquemos es <a href="https://privacycanada.net/strong-password-generator/">Strong Password Generator</a> o <a href="https://passwords-generator.org/">Password Generator</a>.</p>
+<p>Sin embargo, recordar cada una de estas contraseñas es muy difícil de modo que es habitual que utilicemos la misma contraseña para varios o todos los servicios y no empleando todos los criterios anteriores o usar una herramienta con la que <a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">Guardar contraseñas de forma segura con KeePassXC</a>. Por otro lado, los desarrolladores no deberíamos guardar en la base de datos las contraseñas que nos entregan los usuarios en texto plano, para evitar guardalas en texto plano hace un tiempo se utilizaba únicamente una función de <em>hashing</em> unidireccional como MD5 o SHA, de este modo si la base de datos fuese comprometida en teoría no podrían conocer la contraseña original. En este artículo comentaré que aún guardando las contraseñas con una función de <em>hashing</em> no es suficiente para hacerlas seguras y comentaré una implementación con <a href="https://shiro.apache.org/">Apache Shiro</a> de una de las ideas propuestas, también con <a href="https://spring.io/projects/spring-security">Spring Security</a> es posible.</p>
+          
+          <br>
+          <a href="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2015/04/evitar-iniciar-varias-veces-la-maquina-virtual-java-para-procesos-cortos/">Evitar iniciar varias veces la máquina virtual Java para procesos cortos</a></h1>
         <span class="information">
           <time>03/04/2015</time>
@@ -608,36 +640,6 @@
           
           <br>
           <a href="/blog-bitix/2015/01/como-hacer-un-substring-de-una-cadena-html/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/">Introducción e inicio a Drupal</a></h1>
-        <span class="information">
-          <time>10/01/2015</time>
-          
-            
-              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/software/">software</a>
-            
-              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/drupal.svg" width="200" height="218" alt="Drupal" title="Drupal" class="" loading="false&#34;"></p>
-</div>
-<p>Para los proyectos web cuyo punto central es el contenido disponemos de algunas opciones que prácticamente nos dan la solución hecha o facilitan enormemente la tarea como desarrolladores y posteriormente a los administradores que no necesitarán un gran conocimiento para administrar la web. Estas aplicaciones se les suele conocer como <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">Sistemas de gestión de contenidos</a> (Content Management System, CMS) y como siempre disponemos de varias opciones, algunas similares.</p>
-<p>No soy un experto en CMS ni he usado uno en un proyecto real pero trataré en este artículo hacer una introducción a <a href="https://www.drupal.org/">Drupal</a>. Hay otras opciones como <a href="https://wordpress.org/">Wordpress</a> o <a href="https://www.joomla.org/">Joomla</a> también desarrolladas en <a href="https://secure.php.net/">PHP</a> y en el ámbito <a href="https://www.oracle.com/java/">Java</a> otras como <a href="https://www.alfresco.com/">Alfresco</a>, <a href="https://www.nuxeo.com/">Nuxeo</a>, <a href="https://dotcms.com/">dotCMS</a> y <a href="https://www.liferay.com/">Liferay</a> aunque estas en algunos puntos son diferentes ofreciendo gestión documental o <a href="https://es.wikipedia.org/wiki/Portal_%28Internet%29">portales de internet</a>. Wordpress es más simple que Drupal pero si tenemos conocimientos de desarrollo Drupal posiblemente se adapte más a nuestras preferencias. Alfresco y Nuxeo son más bien gestores de contenido y de documentos pero no permiten gestionar como se visualiza el contenido en la web final, Liferay es algo más parecido a lo que ofrece Drupal pero tengo la sensación que es algo más compleja o no exactamente con las mismas opciones y está más destinado a la creación de portales web.</p>
-          
-          <br>
-          <a href="/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/">Continuar leyendo...</a>
         </p>
       </article>
     </li>

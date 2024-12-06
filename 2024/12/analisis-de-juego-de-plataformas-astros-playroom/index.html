@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Como primer juego de PS5 que juego he pasado un buen rato con Astro&rsquo;s Playroom cargado de referencias a la consola PlayStation y toda su colección mítica de personajes que hace sacar una sonrisa y unos buenos recuerdos de haber jugado a muchos otros personajes de los juegos de Sony. Un juego que tiene como objetivo estar incluido en la PlayStation y ser una demostración de las capacidades de la consola y mando DualSense. Un juego corto y música divertida del robotito Astro con el que posteriomente se ha publicado ya si un juego completo con Astro Bot: Rescue Mission. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Análisis de juego de plataformas Astro’s Playroom</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/" hreflang="es" title="Análisis de juego de plataformas Astro’s Playroom">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Análisis de juego de plataformas Astro’s Playroom">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom_hu16372338242657796120.jpg">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Como primer juego de PS5 que juego he pasado un buen rato con Astro&rsquo;s Playroom cargado de referencias a la consola PlayStation y toda su colección mítica de personajes que hace sacar una sonrisa y unos buenos recuerdos de haber jugado a muchos otros personajes de los juegos de Sony. Un juego que tiene como objetivo estar incluido en la PlayStation y ser una demostración de las capacidades de la consola y mando DualSense. Un juego corto y música divertida del robotito Astro con el que posteriomente se ha publicado ya si un juego completo con Astro Bot: Rescue Mission. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom_hu16372338242657796120.jpg">
+
+<meta name="twitter:site" content="">
+<meta name="twitter:title" content="Análisis de juego de plataformas Astro’s Playroom">
+<meta name="twitter:description" content="Como primer juego de PS5 que juego he pasado un buen rato con Astro&rsquo;s Playroom cargado de referencias a la consola PlayStation y toda su colección mítica de personajes que hace sacar una sonrisa y unos buenos recuerdos de haber jugado a muchos otros personajes de los juegos de Sony. Un juego que tiene como objetivo estar incluido en la PlayStation y ser una demostración de las capacidades de la consola y mando DualSense. Un juego corto y música divertida del robotito Astro con el que posteriomente se ha publicado ya si un juego completo con Astro Bot: Rescue Mission. &hellip;">
+<meta name="twitter:creator" content="">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/"
+    },
+    "headline": "Análisis de juego de plataformas Astro’s Playroom",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom_hu16372338242657796120.jpg"
+        
+      },
+    "datePublished": "2024-12-05T18:00:00+02:00",
+    "dateModified": "2024-12-05T18:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1436",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "description": "",
+        "url": ""
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Como primer juego de PS5 que juego he pasado un buen rato con Astro&rsquo;s Playroom cargado de referencias a la consola PlayStation y toda su colección mítica de personajes que hace sacar una sonrisa y unos buenos recuerdos de haber jugado a muchos otros personajes de los juegos de Sony. Un juego que tiene como objetivo estar incluido en la PlayStation y ser una demostración de las capacidades de la consola y mando DualSense. Un juego corto y música divertida del robotito Astro con el que posteriomente se ha publicado ya si un juego completo con Astro Bot: Rescue Mission."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+  
+  <script type="text/javascript" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async></script>
+<script>
+    window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() {
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1750, 0], [[300, 600]])
+        .addSize([0, 0], [])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600]])
+        .addSize([1280, 0], [[160, 600]])
+        .addSize([0, 0], [])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+    });
+</script>
+
+  
+  <script defer id="videoowall" data-id="videoowall_bfd88eba13cf727a36cf22ed1d89f7838287bb68d8331d7b190920bc4530adc5" data-cfasync="false" src="https://static.videoo.tv/videoowall_bfd88eba13cf727a36cf22ed1d89f7838287bb68d8331d7b190920bc4530adc5.js"></script>
+<script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://x.com/picodotdev/" title="¡Sígueme en X!"><img src="/blog-bitix/assets/images/x.svg" width="50" height="50" class="icon" alt="x"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom_hu13766587139570921941.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            
+<div id='div-gpt-ad-1705155070019-0' style='min-width: 160px; min-height: 600px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705155070019-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Análisis de juego de plataformas Astro’s Playroom</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span></span> el <time>05/12/2024</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/juegos/">juegos</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Como primer juego de PS5 que juego he pasado un buen rato con Astro&rsquo;s Playroom cargado de referencias a la consola PlayStation y toda su colección mítica de personajes que hace sacar una sonrisa y unos buenos recuerdos de haber jugado a muchos otros personajes de los juegos de Sony. Un juego que tiene como objetivo estar incluido en la PlayStation y ser una demostración de las capacidades de la consola y mando DualSense. Un juego corto y música divertida del robotito Astro con el que posteriomente se ha publicado ya si un juego completo con Astro Bot: Rescue Mission.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      
+<div id='div-gpt-ad-1705154918797-0' style='min-width: 300px; min-height: 90px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154918797-0'); });
+  </script>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <p>Hace ya casi un años que compré la PlayStation 5 cambiando la 4, hasta el momento he estado jugando al The Witcher 3 que es un juego bastante largo junto con sus dos expansiones Hearts of Stone y Blood and Wine, la primera es más corta y la segunda casi otro juego. Lo terminé pero casi me ha llevado un año completarlo.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2024/09/analisis-y-guia-del-magnifico-juego-de-rol-the-witcher-3/">Análisis y guía del magnífico juego de rol The Witcher 3</a></li>
+</ul>
+<p>Una vez terminado The Witcher 3 he continuado juntado con Astro’s Playroom que viene incluído en la consola. Un juego con uno de los personajes reconocibles que identifican a la <em>play</em>. Ha sido el primer juego de la PlayStation que he jugado y sigo teniendo un montón de buenísimos juegos de la PlayStation 4 por jugar. Aunque sea para jugar a juegos de la play 4 casi merece la pena por los reducidos, en comparación, tiempos de carga que hace que no haya que esperar minutos y aprovechar mejor el tiempo jugando.</p>
+<p>En 4 años que me compré la PlayStation 4 y uno más con la play 5 he jugado a unos 20 juegos, no han sido muchos y de casi todos he escrito un artículo sobre él. En este artículo le toca el turno a Astro’s Playroom.</p>
+<p>Este 2024 Sony ha lanzado la PlayStation 5 Pro con una mejora en la capacidad gráfica y un aumento en el espacio de almacenamiento apsando de 1 a 2 TB. Unas buenas mejoras si no se posee ya la PlayStation 5 aunque a un precio de 800 € y simplemente para jugar a máxima calidad sin tener que elegir entre rendimiento o calidad. En oferta la PlayStation 5 Slim digital se puede encontrar por 370 €.</p>
+<p>El siguiente juego al que jugaré será <em>Hellblade: Senua&rsquo;s Sacrifice</em> uno de los juegos que está en mi lista de juegos.</p>
+<div class="media media-amazon">
+  <ul>
+    <li><a href="https://amzn.to/3U6RxxK" title="PlayStation 4 (1TB)">PlayStation 4 (1TB)</a></li><li><a href="https://amzn.to/3vMZcaj" title="PlayStation 5 (estándar slim)">PlayStation 5 (estándar slim)</a></li><li><a href="https://amzn.to/4b6Ucxu" title="PlayStation 5 (digital slim)">PlayStation 5 (digital slim)</a></li><li><a href="https://amzn.to/41mTtWC" title="PlayStation 5 Pro">PlayStation 5 Pro</a></li><li><a href="https://amzn.to/3vKcsfU" title="Xbox Series S">Xbox Series S</a></li><li><a href="https://amzn.to/3SrddTU" title="Xbox Series S (1TB)">Xbox Series S (1TB)</a></li><li><a href="https://amzn.to/3HvSXdy" title="Xbox Series X">Xbox Series X</a></li><li><a href="https://amzn.to/3vKtkDb" title="Nintendo Switch (OLED)">Nintendo Switch (OLED)</a></li></ul>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom_hu4537232379372458444.webp" data-gallery="" title="Pantalla inicial"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom_hu5886673342525161646.webp" width="650" height="366" alt="Pantalla inicial" title="Pantalla inicial" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-sony_hu153813007843843356.webp" data-gallery="" title="Pantalla inicial y menú del juego Astros Playroom"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-sony_hu17708869502971024105.webp" width="200" height="113" alt="Pantalla inicial y menú del juego Astros Playroom" title="Pantalla inicial y menú del juego Astros Playroom" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-asobi_hu4161998144164456696.webp" data-gallery="" title="Pantalla inicial y menú del juego Astros Playroom"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-asobi_hu5246956768639312428.webp" width="200" height="113" alt="Pantalla inicial y menú del juego Astros Playroom" title="Pantalla inicial y menú del juego Astros Playroom" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-menu_hu18107192876970401675.webp" data-gallery="" title="Pantalla inicial y menú del juego Astros Playroom"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-menu_hu16894364164940859927.webp" width="200" height="113" alt="Pantalla inicial y menú del juego Astros Playroom" title="Pantalla inicial y menú del juego Astros Playroom" class="&#34; " loading="lazy"></a></p>
+<figcaption>Pantalla inicial y menú del juego Astros Playroom</figcaption>
+</figure>
+</div>
+<div class="alert alert-warning fs-6">
+    <p class="fs-5 fw-bold">Anticipación del juego</p>
+    <p>Este artículo contiene información del juego y estrategias para completar más fácilmente, parte de la diversión de un juego es descubrir y superar los retos que se plantean por uno mismo. Sin embargo, algunos juegos son difíciles sin una pequeña ayuda que obliga a tener que dedicarles mucho más tiempo o a recomenzarlos.</p>
+    <p>En algunos juegos el argumento es una de las partes más importantes. El texto del artículo no contiene información acerca del argumento del juego, de la mitad o del final, ni hace ningún <i>spoiler</i> por lo que lo puedes leer sin riesgo de conocer alguna parte del argumento de forma anticipada. Sin embargo, algunos enlaces del artículo a otras páginas y vídeos sí pueden contener información del argumento de modo que recomiendo consultar solo las partes del juego una vez superadas.</p>
+</div>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
+    <li><a href="#el-juego">El juego</a>
+      <ol>
+        <li><a href="#probar-el-mando-dualsense">Probar el mando DualSense</a></li>
+      </ol>
+    </li>
+    <li><a href="#mecánicas-de-juego">Mecánicas de juego</a></li>
+    <li><a href="#coleccionables">Coleccionables</a></li>
+    <li><a href="#banda-sonora">Banda sonora</a></li>
+    <li><a href="#película-del-juego">Película del juego</a></li>
+  </ol>
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
+<h2 id="el-juego">El juego</h2>
+<p>Astro’s Playroom es un juego de finales del 2020 desarrollado por <a href="https://en.wikipedia.org/wiki/Team_Asobi">Asobi</a> e incluído en la PlayStation 5 como juego demostración. Es un juego corto que puede llevar terminarlo unas 5 horas junto con alguna sorpresa final. Con posterioridad se ha lanzado ya un juego completo basado en Astro.</p>
+<p>Es un juego de plataformas en tres dimensiones con uno de sus personajes encarnado por un pequeño robot. Es un personaje que es un clásico, como muchos otros, un nuevo personaje que se une a la colección de personajes reconocibles de PlayStation. Con muchos aspectos en común al personaje Mario de Nintendo, el mismo Ratchet &amp; Clank y seguro muchos otros.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Astro%27s_Playroom">Astro&rsquo;s Playroom</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Astro_Bot_Rescue_Mission">Astro Bot Rescue Mission</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Astro_Bot">Astro Bot</a></li>
+<li><a href="https://www.igdb.com/games/astros-playroom">IGDB: Astro&rsquo;s Playroom</a></li>
+</ul>
+<p>El juego es casi una demostración técnica de lo que ofrece la PlayStation 5, unos tiempos de carga muy reducidos, las nuevas funcionalidades del nuevo mando DualSense de la PlayStation 5 y que aporta una apreciable mejora en el aspecto gráfico sobre la PlayStation 4 consola que para su capacidad en algunos juegos la calidad gráfica muy buena.</p>
+<p>Se desarrolla en varios mundos en el que hay que ir recolectando monedas, artefactos y piezas de puzzle que representan a la PlayStation 5 y con muchas referencias a otros juegos míticos de la PlayStation desde la primera play de Sony.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-mundos-1_hu12702347563167512375.webp" data-gallery="" title="Mundos y juego"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-mundos-1_hu12603836263958773312.webp" width="200" height="113" alt="Mundos y juego" title="Mundos y juego" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-mundos-2_hu5101090091852352976.webp" data-gallery="" title="Mundos y juego"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-mundos-2_hu18222791887087981455.webp" width="200" height="113" alt="Mundos y juego" title="Mundos y juego" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-mundos-3_hu12730963254314940681.webp" data-gallery="" title="Mundos y juego"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-mundos-3_hu12408095527380633178.webp" width="200" height="113" alt="Mundos y juego" title="Mundos y juego" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-mundos-4_hu11544691586047521199.webp" data-gallery="" title="Mundos y juego"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-mundos-4_hu13546595830743560395.webp" width="200" height="113" alt="Mundos y juego" title="Mundos y juego" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-mundos-5_hu2839607167164727823.webp" data-gallery="" title="Mundos y juego"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-mundos-5_hu5657375675887536433.webp" width="200" height="113" alt="Mundos y juego" title="Mundos y juego" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-mundos-6_hu3789135922007599144.webp" data-gallery="" title="Mundos y juego"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-mundos-6_hu14684034870907258238.webp" width="200" height="113" alt="Mundos y juego" title="Mundos y juego" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-mundos-8_hu16557333695854664597.webp" data-gallery="" title="Mundos y juego"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-mundos-8_hu5540752644570360949.webp" width="200" height="113" alt="Mundos y juego" title="Mundos y juego" class="&#34; " loading="lazy"></a></p>
+<figcaption>Mundos y juego</figcaption>
+</figure>
+</div>
+<h3 id="probar-el-mando-dualsense">Probar el mando DualSense</h3>
+<p>Una de los objetivos de Playroom es mostrar lo que puede ofrecer el mando DualSense sobre el DualShock de la PlayStation 4 cosas que no son muchos juegos los que aprovechan al máximo sus posibilidades probablemente debido a que muchos de los juegos también han de ser compatibles con su edición para PC.</p>
+<p>En primer lugar está la vibración mucho más precisa y con grados más suaves de funcionamiento, supongo que la nueva vibración es lo que le da el nombre al DualSense. Un aspecto que creo mejora notablemente el mando DualShock que tenía un modo de vibración mucho más fuerte.</p>
+<p>Otro aspecto mejorado notablemente son los gatillos adaptativos que ahora en función de las mecánicas del juego pueden ofrecer una resistencia variable de presión. Esto permite una inmersión en le juego mucho mayor ya que táctilmente el mando se ajusta a lo que ocurre en el juego.</p>
+<p>El resto de características del mando como el giroscopio, altavoz y panel táctil son características que ya tenía el DualSock. Características que no muchos juegos aprovechan, en el juego Astro’s PlayRoom si se hace uso de varios de ellos que aportan un punto de diversión al juego en momentos como eran los controladores de la Nintendo Wii.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-inicio-1_hu11297125281231967627.webp" data-gallery="" title="Inicio"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-inicio-1_hu559954344653983944.webp" width="200" height="113" alt="Inicio" title="Inicio" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-inicio-2_hu18199720038554603048.webp" data-gallery="" title="Inicio"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-inicio-2_hu10853368670249518050.webp" width="200" height="113" alt="Inicio" title="Inicio" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-inicio-3_hu7498461325444937925.webp" data-gallery="" title="Inicio"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-inicio-3_hu6251353758268605700.webp" width="200" height="113" alt="Inicio" title="Inicio" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-inicio-4_hu9045672526225090541.webp" data-gallery="" title="Inicio"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-inicio-4_hu8390531388171819656.webp" width="200" height="113" alt="Inicio" title="Inicio" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-inicio-5_hu8149529341524231333.webp" data-gallery="" title="Inicio"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-inicio-5_hu13225190663687066725.webp" width="200" height="113" alt="Inicio" title="Inicio" class="&#34; " loading="lazy"></a></p>
+<figcaption>Inicio</figcaption>
+</figure>
+</div>
+<h2 id="mecánicas-de-juego">Mecánicas de juego</h2>
+<p>Es un juego de plataformas con el que se incluyen saltos, golpes, algunos monstruos, algún arma y varios trajes. La diversión consiste en explorar el mapa para encontrar las piezas de puzzle y artefactos, además de conseguir monedas para gastar en la máquina gatcha situada en el laboratorio en el que se consiguen más artilugios y piezas de puzzle.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-gatcha-1_hu14807936448783110511.webp" data-gallery="" title="Máquina gatcha"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-gatcha-1_hu12249602911299479819.webp" width="200" height="113" alt="Máquina gatcha" title="Máquina gatcha" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-gatcha-2_hu3477084088640211514.webp" data-gallery="" title="Máquina gatcha"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-gatcha-2_hu4904778031176713444.webp" width="200" height="113" alt="Máquina gatcha" title="Máquina gatcha" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-gatcha-3_hu8899349279153091686.webp" data-gallery="" title="Máquina gatcha"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-gatcha-3_hu13178299766000395032.webp" width="200" height="113" alt="Máquina gatcha" title="Máquina gatcha" class="&#34; " loading="lazy"></a></p>
+<figcaption>Máquina gatcha</figcaption>
+</figure>
+</div>
+<p>Hay 4 mundos divididos a su vez en cuatro niveles que explorar más el del laboratorio cada uno con una temática diferente basada en los componentes principales de la PlayStation. Cada nivel tiene diferentes tramos en los que en caso de caer desde una gran altura o ser víctima de un enemigo alien el juego se reinicia desde el último punto de guardado alcanzado.</p>
+<ul>
+<li>CPU</li>
+<li>GPU</li>
+<li>SSD</li>
+<li>Refrigeración</li>
+</ul>
+<p>Hay varias mecánicas de juego, con giroscopio y panel táctil al usar los trajes que adquiere como la bola rodante, el ala delta, el mono y la rana. Muy curiosa las mecánicas que hasta ahora no había empleado en el juego y que requieren de mover el mando adecuadamente.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-trajes-1_hu816479142767918991.webp" data-gallery="" title="Trajes"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-trajes-1_hu6368334096912446204.webp" width="200" height="113" alt="Trajes" title="Trajes" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-trajes-2_hu8774821203406643895.webp" data-gallery="" title="Trajes"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-trajes-2_hu8567009191608282900.webp" width="200" height="113" alt="Trajes" title="Trajes" class="&#34; " loading="lazy"></a></p>
+<figcaption>Trajes</figcaption>
+</figure>
+</div>
+<h2 id="coleccionables">Coleccionables</h2>
+<p>Al ir reuniendo los coleccionables y superando mundos las piezas de puzzle y artilugios se van ubicando a modo de exposición en el laboratorio, en un círculo dividido en cuartos uno para cada versión de la consola más un quinto para el de la PlayStation 5.</p>
+<p>Las piezas de puzzle se van colocando en las paredes y forman un mural. Los artefactos son elementos antiguos de componentes hardware de PlayStation desde la Play 1 a la 5. Al encontrar cada uno tienen un subtítulo con una frase graciosa acerca de él.</p>
+<p>Al recorrer los diferentes niveles y explorarlos no es difícil encontrar la mayoría de piezas de puzzle y los artilugios explorando con cierto detalle, cada nivel no es muy grande, además con la ayuda del mapa es fácil saber cuantos quedan por encontrar.</p>
+<p>Al igual que cualquier otro juegos tiene una gran cantidad de trofeos y conseguirlos todos para platinar requiere dedicar más tiempo. Como son muchos trofeos salvo revisar cuál es su requerimiento de cada uno requiere cierto propósito en conseguirlos. El God of War es el único juego en el que hice ese esfuerzo, en mi caso estoy más a completar y disfrutar del juego que en conseguir los trofeos, consigo muchos de ellos pero aún así me suele quedar un gran porcentaje de ellos por conseguir.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-coleccionables-1_hu1282734191020915329.webp" data-gallery="" title="Coleccionables"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-coleccionables-1_hu12194162950762787860.webp" width="200" height="113" alt="Coleccionables" title="Coleccionables" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-coleccionables-2_hu15516043596512628233.webp" data-gallery="" title="Coleccionables"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-coleccionables-2_hu1403259789226079086.webp" width="200" height="113" alt="Coleccionables" title="Coleccionables" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-coleccionables-3_hu529642997762632657.webp" data-gallery="" title="Coleccionables"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-coleccionables-3_hu16828392407280223788.webp" width="200" height="113" alt="Coleccionables" title="Coleccionables" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-coleccionables-4_hu3927775122241941707.webp" data-gallery="" title="Coleccionables"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-coleccionables-4_hu16567082613016900062.webp" width="200" height="113" alt="Coleccionables" title="Coleccionables" class="&#34; " loading="lazy"></a></p>
+<figcaption>Coleccionables</figcaption>
+</figure>
+</div>
+<p>En los mundos hay varios Astrobot reunidos disfrazados en representación de personajes de juegos míticos de la PlayStation, alguno se he reconocido pero no todos, he capturado algunas de ellas, ¿reconoces alguno?.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-juegos-1_hu16574045886315563355.webp" data-gallery="" title="Escenas de juegos"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-juegos-1_hu2153514241708979665.webp" width="200" height="113" alt="Escenas de juegos" title="Escenas de juegos" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-juegos-2_hu325492933354111934.webp" data-gallery="" title="Escenas de juegos"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-juegos-2_hu16527529789698447880.webp" width="200" height="113" alt="Escenas de juegos" title="Escenas de juegos" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-juegos-3_hu807774850755231666.webp" data-gallery="" title="Escenas de juegos"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-juegos-3_hu1070781051824836872.webp" width="200" height="113" alt="Escenas de juegos" title="Escenas de juegos" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-juegos-4_hu10604832273075241755.webp" data-gallery="" title="Escenas de juegos"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-juegos-4_hu11606280094902257635.webp" width="200" height="113" alt="Escenas de juegos" title="Escenas de juegos" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-juegos-5_hu6041055032333095455.webp" data-gallery="" title="Escenas de juegos"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-juegos-5_hu9995507494688227253.webp" width="200" height="113" alt="Escenas de juegos" title="Escenas de juegos" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-juegos-6_hu751533031125927780.webp" data-gallery="" title="Escenas de juegos"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-juegos-6_hu7370361541281377632.webp" width="200" height="113" alt="Escenas de juegos" title="Escenas de juegos" class="&#34; " loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-juegos-7_hu8572067708619976900.webp" data-gallery="" title="Escenas de juegos"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-juegos-7_hu10680235920722629018.webp" width="200" height="113" alt="Escenas de juegos" title="Escenas de juegos" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-juegos-8_hu12777572773544595226.webp" data-gallery="" title="Escenas de juegos"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-juegos-8_hu8009375989166992019.webp" width="200" height="113" alt="Escenas de juegos" title="Escenas de juegos" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-juegos-9_hu1580428914912840002.webp" data-gallery="" title="Escenas de juegos"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-juegos-9_hu9019395906452804177.webp" width="200" height="113" alt="Escenas de juegos" title="Escenas de juegos" class="&#34; " loading="lazy"></a></p>
+<figcaption>Escenas de juegos</figcaption>
+</figure>
+</div>
+<p>El juego tiene referencias al mundo Sony y PlayStation, si se ha vivido todo ello se recuerda con cierta nostalgia.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-sony-1_hu15916412188373684314.webp" data-gallery="" title="Detalle de Sony"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-sony-1_hu8172660825017692928.webp" width="200" height="113" alt="Detalle de Sony" title="Detalle de Sony" class="&#34; " loading="lazy"></a>
+<a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-sony-2_hu17705056364552532172.webp" data-gallery="" title="Detalle de Sony"><img src="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/images/astros-playroom-sony-2_hu12998895792778271318.webp" width="200" height="113" alt="Detalle de Sony" title="Detalle de Sony" class="&#34; " loading="lazy"></a></p>
+<figcaption>Detalle de Sony</figcaption>
+</figure>
+</div>
+<h2 id="banda-sonora">Banda sonora</h2>
+<p>Las bandas sonoras son algo muy reconocible de los juegos, en apenas unos segundos conociendo el juego se reconoce de que juego es la música. En el caso de Astro Playroom tiene una música pegadiza, alegre y electrónica que acompaña a este juego para divertirse.</p>
+<blockquote>
+<p>I do it for you. I’m your GPUuuu&hellip; pipi&hellip; ripi&hellip; 🎼🎵🎶</p>
+</blockquote>
+<blockquote>
+<p>Ssss-Ssss-Deee!&hellip; 🎼🎶🎵</p>
+</blockquote>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/U6pLZZG81fw" frameborder="0" title="Vídeo de YouTube" class="lozad" allowfullscreen></iframe>
+</div>
+<h2 id="película-del-juego">Película del juego</h2>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/lfDon34MpRU" frameborder="0" title="Vídeo de YouTube" class="lozad" allowfullscreen></iframe>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+      <div class="alert alert-info fs-6" role="alert">
+        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Este artículo incluye algunos enlaces de afiliado como Amazon que considero relevante en el contenido del artículo y para el lector. En caso de hacer una comprar a través de estos enlaces recibo una pequeña comisión, sin que afecte al precio del producto, que me ayuda a seguir publicando nuevos artículos y realizar <a href="https://picodotdev.github.io/blog-bitix/series/donacion/">pequeñas donaciones a proyectos de software libre</a>. En caso de que el artículo te haya resultado de interés y útil considera realizar la compra a través de alguno de los enlaces de afiliado del artículo, es correcto también ignorarlos.
+      </div>
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>analisis-juegos</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/">El juego XCOM 2 y guía de estrategia</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/04/introduccion-al-juego-de-batallas-navales-world-of-warships-legends-para-consola/">Introducción al juego de batallas navales World of Warships Legends para consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/">Análisis y guía del juego de estrategia Frostpunk</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/10/analisis-y-guia-completa-del-juego-horizon-zero-dawn/">Análisis y guía completa del juego Horizon Zero Dawn</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/">Análisis y guía del juego de rol For the King</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/">Análisis de la serie de juegos de plataformas Trine</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/07/analisis-guia-y-consejos-del-juego-roguelike-darkest-dungeon/">Análisis, guía y consejos del juego roguelike Darkest Dungeon</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/10/analisis-del-maravilloso-juego-horrible-the-last-of-us/">Análisis del maravilloso juego horrible The Last of Us</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/02/analisis-de-los-juegos-de-aventuras-uncharted-the-nathan-drake-collection/">Análisis de los juegos de aventuras Uncharted The Nathan Drake Collection</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/05/analisis-del-juego-de-aventuras-uncharted-4/">Análisis del juego de aventuras Uncharted 4</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/08/analisis-del-juego-con-combates-epicos-god-of-war/">Análisis del juego con combates épicos God of War</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/08/analisis-del-juego-de-la-aventura-galactica-ratchet-y-clank/">Análisis del juego de la aventura galáctica Ratchet &amp; Clank</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/09/analisis-del-juego-espacial-de-combates-por-turnos-spaceland/">Análisis del juego espacial de combates por turnos Spaceland</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2023/02/analisis-del-juego-de-sigilo-e-infiltracion-tactica-metal-gear-solid-v/">Análisis del juego de sigilo e infiltración táctica Metal Gear Solid V</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2024/01/analisis-del-juego-continuacion-de-la-historia-the-last-of-us-parte-2/">Análisis del juego continuación de la historia The Last of Us Parte 2</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2024/09/analisis-y-guia-del-magnifico-juego-de-rol-the-witcher-3/">Análisis y guía del magnífico juego de rol The Witcher 3</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/">Análisis de juego de plataformas Astro’s Playroom</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-709';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2024\/12\/analisis-de-juego-de-plataformas-astros-playroom\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/privacy/">Política de privacidad</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://x.com/picodotdev/" title="¡Sígueme en X!"><img src="/blog-bitix/assets/images/x.svg" width="50" height="50" class="icon" alt="x"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2024 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>
