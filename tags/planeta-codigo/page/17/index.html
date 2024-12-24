@@ -230,6 +230,32 @@
 <ul class="list-unstyled">
     <li>
       <article>
+        <h1><a href="/blog-bitix/2019/05/lanzar-excepciones-checked-como-si-fueran-unchecked-en-java/">Lanzar excepciones checked como si fueran unchecked en Java</a></h1>
+        <span class="information">
+          <time>17/05/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>No es una buena práctica al igual que al no recomendado <a href="https://picodotdev.github.io/blog-bitix/2017/08/el-antipatron-de-inicializacion-de-variables-con-dobles-llaves-en-java/">antipatrón de inicialización de variables con dobles llaves</a> pero en el uso de <em>streams</em> que aceptan <em>lambdas</em> es un rodeo a la limitación de no poder lanzar excepciones <em>checked</em> por no estar definida en su API.</p>
+<p>En Java existen dos tipos de excepciones las <em>checked</em> que son de obligada captura o ser lanzadas y las <em>unchecked</em> que no son de obligada captura ni ser declaradas. Al usar <em>streams</em> y algunas interfaces funcionales de Java como <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html">Consumer</a> que no lanzan excepciones el compilador generará un error de compilación si la implementación lanza una excepción.</p>
+          
+          <br>
+          <a href="/blog-bitix/2019/05/lanzar-excepciones-checked-como-si-fueran-unchecked-en-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/">Rediseño de Blog Bitix con contenido centrado, más grande horizontalmente y publicidad lateral sticky</a></h1>
         <span class="information">
           <time>12/05/2019</time>
@@ -593,31 +619,6 @@
           
           <br>
           <a href="/blog-bitix/2019/03/novedades-de-java-12/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2019/03/ejemplo-de-reactive-streams-en-java/">Ejemplo de Reactive Streams en Java</a></h1>
-        <span class="information">
-          <time>17/03/2019</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
-</div>
-<p>Los <em>streams</em> representan un flujo de elementos producidos por un productor y consumidos por uno o más consumidores. Para procesar los elementos del <em>stream</em> se pueden emplear dos modelos, el modelo <em>push</em> donde el productor produce elementos para el consumidor que es avisado cuando hay un nuevo elemento disponible y el modelo <em>pull</em> en el que es el consumidor el que solicita al productor nuevos elementos que los genera bajo demanda. Ambos modelos presentan problemas cuando el productor y el consumidor no funcionan a la misma velocidad de elementos producidos o procesados. La solución es proporcionar un <em>stream</em> que se adapta a la velocidad de ambos. Los <em>reactive streams</em> son empleados cuando los elementos son producidos y consumidos en tiempo real como en sistemas de mensajes o peticiones HTTP en vez de un flujo constante como un dispositivo de almacenamiento.</p>
-          
-          <br>
-          <a href="/blog-bitix/2019/03/ejemplo-de-reactive-streams-en-java/">Continuar leyendo...</a>
         </p>
       </article>
     </li>

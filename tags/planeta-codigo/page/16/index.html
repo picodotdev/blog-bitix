@@ -230,6 +230,30 @@
 <ul class="list-unstyled">
     <li>
       <article>
+        <h1><a href="/blog-bitix/2019/07/recuperar-datos-eficientemente-en-graphql-usando-batching-con-data-loaders/">Recuperar datos eficientemente en GraphQL usando batching con data loaders</a></h1>
+        <span class="information">
+          <time>12/07/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Al diferencia de una API REST donde cada recurso posee un <em>endpoint</em> propio en GraphQL los recursos están relacionados y forman un grafo. Por otro lado las propiedades devueltas en una consulta de GraphQL son las que se indiquen en la consulta en vez de prefijadas como en una API REST. Hay que tener en cuenta que GraphQL para recuperar las propiedades de las entidades usa un <em>resolver</em> y las recupera una a una, si se devuelve una lista de elementos y de cada uno de esos elementos otra propiedad para la que hay que generar una consulta adicional a la base de datos el rendimiento no será bueno. Los <em>data loaders</em> permiten recuperar las propiedades relacionadas de una colección de entidades eficientemente evitando el problema 1+N.
+          
+          <br>
+          <a href="/blog-bitix/2019/07/recuperar-datos-eficientemente-en-graphql-usando-batching-con-data-loaders/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2019/07/los-tipos-de-modulos-de-jmps-anadidos-a-partir-de-java-9/">Los tipos de módulos de JPMS añadidos a partir de Java 9</a></h1>
         <span class="information">
           <time>07/07/2019</time>
@@ -571,32 +595,6 @@
           
           <br>
           <a href="/blog-bitix/2019/05/combinaciones-de-teclado-en-html-javascript-y-paginas-web/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2019/05/lanzar-excepciones-checked-como-si-fueran-unchecked-en-java/">Lanzar excepciones checked como si fueran unchecked en Java</a></h1>
-        <span class="information">
-          <time>17/05/2019</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
-</div>
-<p>No es una buena práctica al igual que al no recomendado <a href="https://picodotdev.github.io/blog-bitix/2017/08/el-antipatron-de-inicializacion-de-variables-con-dobles-llaves-en-java/">antipatrón de inicialización de variables con dobles llaves</a> pero en el uso de <em>streams</em> que aceptan <em>lambdas</em> es un rodeo a la limitación de no poder lanzar excepciones <em>checked</em> por no estar definida en su API.</p>
-<p>En Java existen dos tipos de excepciones las <em>checked</em> que son de obligada captura o ser lanzadas y las <em>unchecked</em> que no son de obligada captura ni ser declaradas. Al usar <em>streams</em> y algunas interfaces funcionales de Java como <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html">Consumer</a> que no lanzan excepciones el compilador generará un error de compilación si la implementación lanza una excepción.</p>
-          
-          <br>
-          <a href="/blog-bitix/2019/05/lanzar-excepciones-checked-como-si-fueran-unchecked-en-java/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
