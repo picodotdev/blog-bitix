@@ -55,7 +55,7 @@ Ya no publico tantos artículos, aunque no solo por eso los ingresos de Google A
     image1="image:google-adsense.webp" optionsthumb1="650x450" title1="Evolución ingresos Google AdSense 2024"
     caption="Evolución ingresos Google AdSense 2024" >}}
 
-Los ingresos por publicidad de [videoo.tv](http://videoo.tv/) son algo mejores pero al tener menos visitas también no son algo que compense el trabajo que supone. La publicidad de [Videoo.tv](http://videoo.tv/), que al entrar al artículo, es más molesta pero no nada distinto a lo que hace YouTube al empezar a ver un vídeo con su publicidad _in-stream_. No suele llegar a 5€ al mes.
+Los ingresos por publicidad de [videoo.tv](http://videoo.tv/) son algo mejores pero al tener menos visitas también no son algo que compense el trabajo que supone. La publicidad de [Videoo.tv](http://videoo.tv/), que al entrar al artículo, es más molesta pero no nada distinto a lo que hace YouTube al empezar a ver un vídeo con su publicidad _in-stream_. Ofrece un muy buen CPM aunque en mi blog con las visitas que tiene los ingresos son simplemente de unos pocos céntimos al día. Al mes no suele llegar a más de 5€.
 
 {{< image
     gallery="true"
@@ -107,7 +107,7 @@ De VLC ya solo realizo las traducciones de la aplicación de escritorio ignorand
 
 En cuanto a el script de instalación de [Arch Linux][archlinux] que llamé [alis][alis] tengo ideas para hacer. Una de ellas es crear un instalador guiado basado en una interfaz de texto por si fuera el caso que editar un archivo de texto con vim fuera muy complicado. Una de las motivaciones que tengo para ello es servirme para aprender un poco de [Rust][rust] para el que tengo ya en gran medida el esqueleto de lo que será el instalador, lo que aún no se creo que me será fácil aprenderlo, como paso previo estoy leyendo el manual de Rust y su concepto de _ownership_ que una de sus principales diferencias con el recolector de basura que tiene Java y mejoras con respecto a C y C++ que nunca llegué a entender bien.
 
-Aunque instalar Arch Linux con alis es simplemente editar un archivo de texto con vim para cambiar unas pocas configuraciones a algunos usuarios les puede ser algo incómodo, aunque si para alguien usar vim y editar esas configuraciones le es incómodo o demasiado trabajo quizá realmente Arch Linux no sea una distribución para esa persona.
+Aunque instalar Arch Linux con alis es simplemente editar un archivo de texto con vim para cambiar unas pocas configuraciones a algunos usuarios les puede ser algo incómodo, aunque si para alguien usar vim y editar esas configuraciones le es incómodo o demasiado trabajo realmente Arch Linux no sea la distribución más adecuada para esa persona.
 
 {{< image
     gallery="true"
