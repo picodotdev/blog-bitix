@@ -105,14 +105,14 @@ Otras contribuciones que he seguido manteniendo son las traducciones al español
 
 De VLC ya solo realizo las traducciones de la aplicación de escritorio ignorando los cambios de Android e iOS, la que si mantengo de forma más activa es la traducción de KeePassXC ya que es una aplicación que uso todos los días.
 
-En cuanto a el script de instalación de [Arch Linux][archlinux] que llamé [alis][alis] tengo ideas para hacer. Una de ellas es crear un instalador guiado basado en una interfaz de texto por si fuera el caso que editar un archivo de texto con vim fuera muy complicado. Una de las motivaciones que tengo para ello es servirme para aprender un poco de [Rust][rust] para el que tengo ya en gran medida el esqueleto de lo que será el instalador, lo que aún no se creo que me será fácil aprenderlo, como paso previo estoy leyendo el manual de Rust y su concepto de _ownership_ que una de sus principales diferencias con el recolector de basura que tiene Java y mejoras con respecto a C y C++.
+En cuanto a el script de instalación de [Arch Linux][archlinux] que llamé [alis][alis] tengo ideas para hacer. Una de ellas es crear un instalador guiado basado en una interfaz de texto por si fuera el caso que editar un archivo de texto con vim fuera muy complicado. Una de las motivaciones que tengo para ello es servirme para aprender un poco de [Rust][rust] para el que tengo ya en gran medida el esqueleto de lo que será el instalador, lo que aún no se creo que me será fácil aprenderlo, como paso previo estoy leyendo el manual de Rust y su concepto de _ownership_ que una de sus principales diferencias con el recolector de basura que tiene Java y mejoras con respecto a C y C++ que nunca llegué a entender bien.
 
 Aunque instalar Arch Linux con alis es simplemente editar un archivo de texto con vim para cambiar unas pocas configuraciones a algunos usuarios les puede ser algo incómodo, aunque si para alguien usar vim y editar esas configuraciones le es incómodo o demasiado trabajo quizá realmente Arch Linux no sea una distribución para esa persona.
 
 {{< image
     gallery="true"
-    image1="image:alis-tui.webp" optionsthumb1="650x450" title1="Boceto de instalador guiado de Arch Linux para alis"
-    caption="Boceto de instalador guiado de Arch Linux para alis" >}}
+    image1="image:alis-tui.webp" optionsthumb1="650x450" title1="Boceto de instalador guiado de Arch Linux con alis"
+    caption="Boceto de instalador guiado de Arch Linux con alis" >}}
 
 ## Otros temas
 
@@ -121,7 +121,7 @@ Creo que cambiaré mi ordenador de escritorio y pantalla de ordenador que estaba
 * [Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)][blogbitix-363]
 * [Desempaquetado y análisis de monitor BenQ PD2700Q, 2K/QHD, IPS, 27 pulgadas][blogbitix-356]
 
-Realmente siguen siendo completamente válidos, esos 32 GB de RAM son más que suficientes en el 2024 y el con el monitor de BenQ estoy muy contento.
+Realmente siguen siendo completamente válidos, esos 32 GB de RAM son más que suficientes en el 2024, sigue cumpliendo para mis propósitos ofimáticos y de programación ocasional y con el monitor de BenQ estoy muy contento.
 
 El cambio es más por capricho que por necesidad, el nuevo equipo sería también un mini PC pero en este caso casi seguro un Ryzen 9 AI HX 370 o Ryzen 9 AI MAX 395+ y en cuanto a monitor un BenQ PD326G de 32” y 4K.
 
