@@ -123,7 +123,7 @@ Creo que cambiaré mi ordenador de escritorio y pantalla de ordenador que estaba
 
 Realmente siguen siendo completamente válidos, esos 32 GB de RAM son más que suficientes en el 2024, sigue cumpliendo para mis propósitos ofimáticos y de programación ocasional y con el monitor de BenQ estoy muy contento.
 
-El cambio es más por capricho que por necesidad, el nuevo equipo sería también un mini PC pero en este caso casi seguro un Ryzen 9 AI HX 370 o Ryzen 9 AI MAX 395+ y en cuanto a monitor un BenQ PD326G de 32” y 4K.
+El cambio es más por capricho que por necesidad, el nuevo equipo sería también un mini PC pero en este caso casi seguro un Ryzen 9 AI HX 370 o Ryzen 9 AI MAX 395+ y en cuanto a monitor un BenQ PD3226G de 32” y 4K.
 
 Posiblemente estos o lo que salga en cuanto me decida y estén disponibles ya que el monitor por ejemplo aún no se comercializa simplemente ha sido anunciado, además en el CES de 2025 se anunciarán los Strix Halo con lo que puede haber novedades en cuanto a algún mini PC que lo equipe, cuando haga el cambio publicaré sus respectivos artículos.
 
