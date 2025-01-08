@@ -167,7 +167,7 @@ Intel ya no está presente en el mercado de los mini pcs como marca propia y su 
 
 ### Kindle, Kobo y Remarkable
 
-Los lectores de tinta electrónica en color ya están apareciendo en el mercado. [Kindle][amazon-kindle] ha presentado el Colorsoft que permite mostrar las carátulas o hacer subrayados en color, además de incrementar un poco el tamaño pasando de 6.8" a 7", aunque el color es un hecho importante para leer novelas es irrelevante ni añade nada que un Paperwhite cumpla. El tener color añade a los Kindle una aumento de precio de los 150 a los 300 y con un tamaño de 7" puede que siga siendo demasiado pequeño para leer cómics.
+Los lectores de tinta electrónica en color ya están apareciendo en el mercado. [Kindle](https://www.amazon.es/dp/B07FQ4XCR1) ha presentado el Colorsoft que permite mostrar las carátulas o hacer subrayados en color, además de incrementar un poco el tamaño pasando de 6.8" a 7", aunque el color es un hecho importante para leer novelas es irrelevante ni añade nada que un Paperwhite cumpla. El tener color añade a los Kindle una aumento de precio de los 150 a los 300 y con un tamaño de 7" puede que siga siendo demasiado pequeño para leer cómics.
 
 Kobo también tiene algún modelo en color y Remarkable una papel digital con el que tomar apuntes para un nicho de mercado que no trata de competir con la lectura de libros.
 
