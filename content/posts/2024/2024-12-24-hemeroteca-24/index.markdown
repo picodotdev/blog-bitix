@@ -21,7 +21,7 @@ summary: "Aún con menos artículos publicados, menos incluso que el año pasado
 
 {{< logotype image1="blog-bitix.svg" >}}
 
-Una año más para el blog y ya serían 14 publicando artículos sobre programación, GNU/Linux y software libre principalmente junto con algunos de desempaquetados de artículos de tecnología que compro y en algún caso alguna marca me ha enviado además de los artículos de análisis de los juegos que completo en la PlayStation.
+Un año más para el blog y ya serían 14 publicando artículos sobre programación, GNU/Linux y software libre principalmente junto con algunos de desempaquetados de artículos de tecnología que compro y en algún caso alguna marca me ha enviado además de los artículos de análisis de los juegos que completo en la PlayStation.
 
 Aún sobrevive aunque con menos artículos, tan sólo 16 este año 2024. Por ganas seguiría escribiendo artículos y lo sigo haciendo simplemente menos que antes y sin ser tan exigente conmigo mismo, sigo teniendo ideas que voy apuntando para el día que me apetece pasar una mañana o tarde escribiendo un artículo.
 
@@ -35,7 +35,7 @@ El blog y general los medios escritos han perdido relevancia moviéndose a medio
 
 Esto no es algo que solo le pase a este blog sino que un sitio tan bueno [Phoronix][phoronix] también le ocurre, y sería una pena que un sitio como ese desapareciera, dejaría un gran vacío como medio especializado en noticias centradas en GNU/Linux y software libre de habla inglesa. Es el principal que utilizo para estar informado de las novedades.
 
-Con el cambio de [Google Analytics][google-analytics] a Universal Analytics no sabía como utilizarlo para conocer principalmente que artículos eran los más visitados y obtener una idea de las visitas mensuales. Además como también la cuenta de Google que utilizaba perdí los datos históricos que ya sólo permanecen en los archivos de hemerotecas anteriores.
+Con el cambio de [Google Analytics][google-analytics] a Universal Analytics no sabía como utilizarlo para conocer principalmente que artículos eran los más visitados y obtener una idea de las visitas mensuales. Además como cambié la cuenta de Google que utilizaba perdí los datos históricos que ya sólo permanecen en los archivos de hemerotecas anteriores.
 
 Como los datos que me proporcionaba Universal Analytics no me eran útiles o no sabía sacarle provecho al nuevo enfoque de ese producto de analítica decidí eliminarlo completamente del blog y ahora una aproximación a las visitas mensuales y su evolución la obtengo de simplemente [Google AdSense][google-adsense] y de AdManager.
 
@@ -55,7 +55,7 @@ Ya no publico tantos artículos, aunque no solo por eso los ingresos de Google A
     image1="image:google-adsense.webp" optionsthumb1="650x450" title1="Evolución ingresos Google AdSense 2024"
     caption="Evolución ingresos Google AdSense 2024" >}}
 
-Los ingresos por publicidad de [videoo.tv](http://videoo.tv/) son algo mejores pero al tener menos visitas también no son algo que compense el trabajo que supone. La publicidad de [Videoo.tv](http://videoo.tv/), que al entrar al artículo, es más molesta pero no nada distinto a lo que hace YouTube al empezar a ver un vídeo con su publicidad _in-stream_. Ofrece un muy buen CPM aunque en mi blog con las visitas que tiene los ingresos son simplemente de unos pocos céntimos al día. Al mes no suele llegar a más de 5€.
+Los ingresos por publicidad de [videoo.tv](http://videoo.tv/) son algo mejores pero al tener menos visitas también no son algo que compense el trabajo que supone. La publicidad de [Videoo.tv](http://videoo.tv/), que al entrar al artículo, es más molesta pero no nada distinto a lo que hace YouTube al empezar a ver un vídeo con su publicidad _in-stream_. Ofrece un muy buen CPM aunque en mi blog con las visitas que tiene los ingresos son simplemente de unos pocos céntimos al día. Al mes no suele llegar a más de 5 €.
 
 {{< image
     gallery="true"
@@ -134,7 +134,7 @@ Posiblemente estos o lo que salga en cuanto me decida y estén disponibles ya qu
 
 Los artículos publicados este año han sido 14 más este de hemeroteca. Y esta es la lista más corta de lo que solía ser.
 
-Y con esto es todo, ¡desearos buen año 2025 a los que seguís leyendo este blog! y simplemente sed buenas personas el siguiente año.
+Y con esto es todo, ¡desearos buen año 2025 a los que seguís leyendo este blog! y simplemente sed buenas personas el siguiente año, con las personas que se lo ganen.
 
 * [Análisis del juego continuación de la historia The Last of Us Parte 2][blogbitix-693]
 * [Compro un soporte de monitor para ganar espacio en la mesa][blogbitix-694]
