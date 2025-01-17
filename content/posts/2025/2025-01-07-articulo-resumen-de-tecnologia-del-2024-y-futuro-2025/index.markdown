@@ -1,5 +1,5 @@
 ---
-pid: 702
+pid: 711
 type: "post"
 title: "Artículo resumen de tecnología del 2024 y futuro 2025"
 url: "/2025/01/articulo-resumen-de-tecnologia-del-2024-y-futuro-2025/"
