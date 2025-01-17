@@ -20,7 +20,7 @@ summary: "Este juego es algo distinto empezando por que aunque está creado en f
 
 Poco de lo que sabía del juego de Hellblade: Senua Sacrifice es que trataba el tema de la enfermedad mental y de la psicosis. Aparte de eso no sabía qué mecánicas de juego tenía o de qué iba la historia. Ya desde que me compré la PlayStation 4 era uno de los juegos que quería jugar, al final lo he jugado en la PlayStation 5.
 
-Hellblade: Senua Sacrifice es un juego publicado en el año 2017 y desarrollado por Ninja Theory. Tiene una segunda parte Senua's Saga: Hellblade II publicada en el año 2024 disponible para ¿PS4 y PS5? desarrollado también por Ninja Theory.
+Hellblade: Senua Sacrifice es un juego publicado en el año 2017 y desarrollado por Ninja Theory. Tiene una segunda parte Senua's Saga: Hellblade II publicada en el año 2024 disponible para Xbox Series X/S desarrollado también por Ninja Theory.
 
 * [Hellblade: Senua's Sacrifice](https://www.igdb.com/games/hellblade-senuas-sacrifice)
 
