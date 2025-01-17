@@ -231,6 +231,37 @@
 <ul class="list-unstyled">
     <li>
       <article>
+        <h1><a href="/blog-bitix/2018/08/despues-de-la-guerra-del-numero-de-nucleos-en-los-procesadores-vendra-la-guerra-de-la-computacion-heterogenea-o-manycores/">Después de la guerra del número de núcleos en los procesadores, ¿vendrá la guerra de la computación heterogénea o manycores?</a></h1>
+        <span class="information">
+          <time>03/08/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/hardware/">hardware</a>
+            
+              <a href="/blog-bitix/tags/opinion/">opinion</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/intel.svg" width="300" height="199" alt="Intel" title="Intel" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/amd.svg" width="300" height="71" alt="AMD" title="AMD" class="" loading="false&#34;"></p>
+</div>
+<p>Hace alguna década los procesadores eran de un solo núcleo y hasta la aparición de Windows NT y GNU/Linux los sistemas operativos no se aprovechaban plenamente las capacidades de multiprogramación de los procesadores que ya se incluían desde los <a href="https://es.wikipedia.org/wiki/Intel_80386">Intel 386</a>.</p>
+<p>La mejora de rendimiento en los procesadores se conseguía a base de mejores diseños en los procesadores como la segmentación, superescalaridad, caches de datos e caches de instrucciones más grandes que era posible debido también en parte al mayor número de transistores que permitían incluir los procesos de litografía de tamaño más reducidos para los transistores, también por la adición de nuevas <a href="https://en.wikipedia.org/wiki/Instruction_set_architecture">instrucciones en el conjunto de la arquitectura</a> o ISA, o mayor número de registros y de mayor tamaño entre otras cosas.</p>
+          
+          <br>
+          <a href="/blog-bitix/2018/08/despues-de-la-guerra-del-numero-de-nucleos-en-los-procesadores-vendra-la-guerra-de-la-computacion-heterogenea-o-manycores/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2018/07/identificar-todas-las-trazas-de-una-peticion-en-una-aplicacion-web-java-con-log4j/">Identificar todas las trazas de una petición en una aplicación web Java con Log4j</a></h1>
         <span class="information">
           <time>30/07/2018</time>
@@ -625,34 +656,6 @@
           
           <br>
           <a href="/blog-bitix/2018/05/generador-de-paginas-web-estaticas-y-bitacoras-con-hugo/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2018/05/recuperar-datos-eficientemente-en-graphql-usando-batching/">Recuperar datos eficientemente en GraphQL usando batching</a></h1>
-        <span class="information">
-          <time>20/05/2018</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
-</div>
-<p>Dada una consulta con los datos a recuperar <a href="https://graphql.org/">GraphQL</a> hace una llamada al correspondiente <em>resolver</em> o <em>data fecher</em> para obtener el valor de cada propiedad. Cuando se tratan de propiedades en un <em>java bean</em> esto no supone ningún problema en cuanto a rendimiento pero cuando obtener el valor de una propiedad es costoso la consulta resulta ineficiente.</p>
-<p>Por ejemplo, siguiendo el ejemplo que he utilizado en anteriores <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">artículos sobre GraphQL</a> de una librería en la que hay un tipo para representar un libro con una propiedad con sus comentarios, con una consulta que permite recuperar los libros para cada uno de ellos se llama al <em>resolver</em> que recupera los comentarios. En este ejemplo no ya que están los datos en memoria y no se usa una base de datos pero si recuperar los comentarios de cada libro supusiera una consulta SQL en una base de datos relacional (o tráfico de red en una base de datos NoSQL u otro servicio) y la lista de libros devuelta fuese grande cada vez que se realizará esta consulta el número de sentencias SQL a ejecutar sería grande y el tiempo de respuesta pobre y con una carga mayor para el servidor de base de datos.</p>
-          
-          <br>
-          <a href="/blog-bitix/2018/05/recuperar-datos-eficientemente-en-graphql-usando-batching/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
