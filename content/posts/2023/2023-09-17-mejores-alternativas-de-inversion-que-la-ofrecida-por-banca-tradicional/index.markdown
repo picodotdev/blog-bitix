@@ -53,6 +53,7 @@ Son libros cortos que se leen en un par de semanas teniendo un poco de tiempo to
 
 Son varias las opciones de inversión que tiene un blog al que suscribirse y publican artículos regularmente con información muy interesante, a veces de sus productos y también con el objetivo de realizar una acción pedagógica sobre materia de inversión.
 
+* [Guía Bogleheads España](https://blogleheads.es/guia)
 * [Blog de Indexa Capital](https://blog.indexacapital.com/)
 * [Blog de inbestMe](https://www.inbestme.com/es/es/blog/)
 * [Blog de MyInvestor](https://myinvestor.es/blog/)
