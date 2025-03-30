@@ -231,6 +231,43 @@
 <ul class="list-unstyled">
     <li>
       <article>
+        <h1><a href="/blog-bitix/2014/07/servir-recursos-estaticos-desde-un-cdn-en-apache-tapestry/">Servir recursos estáticos desde un CDN en Apache Tapestry</a></h1>
+        <span class="information">
+          <time>26/07/2014</time>
+          
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/tapestry/">tapestry</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes"> 
+<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false&#34;"></p>
+</div>
+<p>Un <a href="https://en.wikipedia.org/wiki/Content_delivery_network">Content Delivery Network</a> (CDN) no es más que un servidor, servidores o servicio dedicado a servir el contenido estático o actuar de cache para los clientes. Alguno de los motivos por los que podríamos querer usar un CDN en una aplicación son:</p>
+<ul>
+<li>Algunos servicios CDN están repartidos geográficamente por el mundo de modo que el contenido sea servido de un lugar más cercano al usuario esto hace que el tiempo que tarda en cargar un página o servirse el contenido sea menor.</li>
+<li>Descargar la tarea de servir al menos parte del contenido de la aplicación al CDN hará que no nos tengamos que preocupar de tener la capacidad para servirlo. Cuando se cargar una página se hacen varias peticiones al servidor para obtener el contenido como el html, imágenes, estilos, &hellip; haciendo que los contenidos estáticos sean servidos por el CDN hará que el servidor tenga menos carga, dependiendo del número de usuarios de la aplicación o los picos de tráfico notaremos una mejoría.</li>
+<li>La alta fiabilidad de servicio que ofrecen.</li>
+</ul>
+<p><a href="http://aws.amazon.com/es/cloudfront/">Amazon ClodFront</a> es una de las opciones que podemos usar como CDN. En este artículo voy a comentar como tener un CDN para servir el contenido estático en una aplicación que emplee el <em>framework</em> de desarrollo de aplicaciones web en la plataforma Java <a href="http://tapestry.apache.org/">Apache Tapestry</a>.</p>
+          
+          <br>
+          <a href="/blog-bitix/2014/07/servir-recursos-estaticos-desde-un-cdn-en-apache-tapestry/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2014/07/anotacion-cached-de-apache-tapestry/">Anotación Cached de Apache Tapestry</a></h1>
         <span class="information">
           <time>18/07/2014</time>
@@ -640,35 +677,6 @@
           
           <br>
           <a href="/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2014/04/usar-grunt-para-ejecutar-teses-unitarios-de-codigo-javascript/">Usar Grunt para ejecutar teses unitarios de código JavaScript</a></h1>
-        <span class="information">
-          <time>04/04/2014</time>
-          
-            
-              <a href="/blog-bitix/tags/software/">software</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-              <a href="/blog-bitix/tags/javascript/">javascript</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/grunt.webp" width="200" height="236" alt="Grunt" title="Grunt" class="" loading="false&#34;"></p>
-</div>
-<p>En la <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html">serie de artículos que escribí sobre javascript</a> hice un ejemplo más o menos complejo y parecido a lo que podría ser una aplicación real usando muchas de las herramientas que ahora se consideran una buena opción para desarrollar aplicaciones javascript como <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html">RequireJS</a>, <a href="http://www.genbetadev.com/desarrollo-web/patron-de-diseno-mvc-del-lado-cliente-con-backbonejs">Backbone</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html">Marionette</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.html">Jasmine y Sinon</a>. En el <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html">ejemplo de la lista de tareas con estas herramientas</a> hice unas cuantas pruebas unitarias para mostrar en un ejemplo como son y la forma de usar <a href="http://jasmine.github.io/">Jasmine</a>.</p>
-          
-          <br>
-          <a href="/blog-bitix/2014/04/usar-grunt-para-ejecutar-teses-unitarios-de-codigo-javascript/">Continuar leyendo...</a>
         </p>
       </article>
     </li>

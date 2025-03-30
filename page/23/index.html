@@ -231,6 +231,34 @@
 <ul class="list-unstyled">
     <li>
       <article>
+        <h1><a href="/blog-bitix/2019/02/las-clases-anidadas-inner-anonimas-y-locales-en-java/">Las clases anidadas inner, anónimas y locales en Java</a></h1>
+        <span class="information">
+          <time>15/02/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+</div>
+<p>Por regla general en Java cada clase se define en su propio archivo de código fuente, pdor ejemplo, una clase de nombre <em>Order</em> se ha de definir en el archivo <em>Order.java</em>. Sin embargo, esta no es la única forma de definir clases, es posible definir clases <em>inner</em> y anónimas que evita tener que crear un nuevo archivo de código fuente.</p>
+<p>Las clases <em>inner</em> se definen dentro de otra clase cuando esa clase <em>inner</em> tiene alta cohesión (su lógica está muy relacionada con la clase que la contiene), en algunos casos se emplean para ocultar los tipos que implementan la lógica. Dependiendo de si la clase <em>inner</em> debe acceder a los datos de la clase que la contiene o no la clase <em>inner</em> se define como no estática o como estática con la palabra reservada <em>static</em>. Las clases <em>inner</em> estáticas no necesitan una referencia a la clase que la contiene y por ello son algo más eficientes y el método preferido de definirlas, si la clase <em>inner</em> debe acceder a los miembros de la clase contenedora hay que definirla como no estática. Para desambiguar la referencia <em>this</em> y miembros con el mismo nombre de la clase <em>inner</em> con la de la clase contenedora se puede utilizar en el ejemplo <em>Order.this.products</em> quitando los <em>static</em> de las clases.</p>
+          
+          <br>
+          <a href="/blog-bitix/2019/02/las-clases-anidadas-inner-anonimas-y-locales-en-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2019/02/ofuscar-datos-sensibles-en-las-trazas-con-log4j/">Ofuscar datos sensibles en las trazas con Log4j</a></h1>
         <span class="information">
           <time>10/02/2019</time>
@@ -599,36 +627,6 @@
           
           <br>
           <a href="/blog-bitix/2018/12/hemeroteca-14/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2018/12/permitir-o-denegar-trafico-de-red-con-el-firewall-ufw-en-gnu-linux/">Permitir o denegar tráfico de red con el firewall UFW en GNU/Linux</a></h1>
-        <span class="information">
-          <time>24/12/2018</time>
-          
-            
-              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false&#34;"></p>
-</div>
-<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false&#34;"></p>
-</div>
-<p>Un cortafuegos o <em>firewall</em> hace que un sistema sea más seguro analizando todo el tráfico de red que se recibe y envía impidiéndolo o permitiéndolo según las reglas que se hayan definido. Aunque los <em>routers</em> con los que nos conectamos a internet también hacen la función de <em>firewall</em> es aconsejable instalar un cortafuegos en cada sistema, sobre todo en sistemas portátiles que podemos conectar a redes WIFI ajenas a las que pueden conectarse al mismo tiempo otros muchos usuarios que desconocemos.</p>
-          
-          <br>
-          <a href="/blog-bitix/2018/12/permitir-o-denegar-trafico-de-red-con-el-firewall-ufw-en-gnu-linux/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
