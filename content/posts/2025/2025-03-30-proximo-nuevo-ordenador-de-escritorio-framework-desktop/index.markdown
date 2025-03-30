@@ -268,6 +268,8 @@ He recopilado varios vídeos sobre el Framework Desktop en el que lo presentan, 
 {{< youtube
     video="zI6ZQls54Ms" >}}
 {{< youtube
+    video="tqZU2hv1A2I" >}}
+{{< youtube
     video="5mGzEsRM3hs" >}}
 
 ## Vídeos de otros Mini PC
