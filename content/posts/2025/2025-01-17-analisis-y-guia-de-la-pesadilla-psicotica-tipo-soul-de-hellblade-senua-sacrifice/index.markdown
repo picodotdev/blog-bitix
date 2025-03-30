@@ -3,7 +3,7 @@ pid: 712
 type: "post"
 title: "Análisis y guía de la pesadilla psicótica tipo soul de Hellblade: Senua Sacrifice"
 url: "/2025/01/analisis-y-guia-de-la-pesadilla-psicotica-tipo-soul-de-hellblade-senua-sacrifice/"
-date: 2025-01-17T20:00:00+02:00
+date: 2025-01-17T20:00:00+01:00
 language: "es"
 index: true
 rss: true
