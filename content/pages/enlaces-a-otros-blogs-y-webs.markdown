@@ -53,6 +53,7 @@ uno nuevo según tus necesidades y restricciones de presupuesto.
 * [Coreteks](https://www.youtube.com/channel/UCX_t3BvnQtS5IHzto_y7tbw/videos): canal de YouTube en inglés con información avanzada y profunda sobre tecnología hardware de procesadores, gráficos y computación, también incluye información de actualidad.
 * [Hardware Unboxed](https://www.youtube.com/c/Hardwareunboxednow): canal de YouTube en inglés independiente con información orientada al consumidor sobre tecnología hardware de procesadores, gráficos y componentes de computadoras de consumo. Incluye análisis de productos, comparaciones, análisis de rendimiento, recomendaciones de compra.
 * [HighYield](https://www.youtube.com/@HighYield): canal de YouTube con una asombrosa, interesante, en profundidad y detalla al mismo tiempo que explicada de forma comprensible con unos mínimos conocimientos sobre desarrollo de chips y los procesadores en CPU, GPU y tecnologías de fabricación. Una canal que también da opinión pero al contrario que muchos otros sustentada por un profundo conocimiento y sólidos argumentos.
+* [AnastasiInTech](https://www.youtube.com/@AnastasiInTech:: otro canal de YouTube que explica conceptos muy interesantes sobre la fabricación de chips.
 * Barrapunto (actualmente discontinuada): era la web al estilo de [slashdot](https://slashdot.org/) en español donde tan importante como la noticia eran los comentarios de sus usuarios.
 
 ## Software libre y GNU/Linux

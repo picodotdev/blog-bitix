@@ -78,6 +78,7 @@ En su momento cuando compré el NUC aún no había opciones con procesador Ryzen
 * [Apple Mac Book Pro](https://www.apple.com/es/macbook-pro/). ARM, 10 núcleos. Desde 2000 € con ampliaciones hasta 3000 € y más.
 * [Slimbook](https://slimbook.com/one). One equivalente al Beelink SER 8, hasta 96 GB de memoria, no tienen aún la última generación de procesadores AMD.
 * [HP Z2 Mini G1a](https://www.hp.com/us-en/workstations/z2-mini.html). AMD Ryzen 395+, hasta 128 GB, Strix Halo, aún no está en preventa, simplemente que estará disponible pronto. Diseño y componentes personalizados. No se conoce su precio en su preanuncio.
+* [GMKtec EVO-X2](https://elchapuzasinformatico.com/2025/03/gmktec-evo-x2-precio-amd-ryzen-ai-max-395/), También con AMD Ryzen 395+, hasta 128 GB pero en un formato maś pequeño.
 * [Framework Desktop](https://frame.work/es/en/desktop). AMD Ryzen 395+, hasta 128 GB, Strix Halo, gráfica a la altura de una 4060 y 4070. Mini torre de 4,5 L con componentes estándar de ordenador. Desde los 1500 €.
 * [Tuxedo](https://www.tuxedocomputers.com/en/Linux-Hardware/Linux-Computer-/-PCs/Alle-Systeme.tuxedo#!%232422,2425). Tiene algunos ordenadores compactos.
 
@@ -175,6 +176,9 @@ Es un chip compuesto de dos CDD en los que están 8 núcleos en cada uno y otro 
 * [AMD Ryzen AI Max+ PRO 395](https://www.techpowerup.com/cpu-specs/ryzen-ai-max-pro-395.c3998)
 * [Intel Iris Plus Graphics 655 Mobile](https://www.techpowerup.com/gpu-specs/iris-plus-graphics-655-mobile.c3221)
 * [AMD Radeon 8060S](https://www.techpowerup.com/gpu-specs/radeon-8060s.c4270)
+* [AMD Ryzen AI Max+ "Strix Halo" Die Exposed and Annotated](https://www.techpowerup.com/332745/amd-ryzen-ai-max-strix-halo-die-exposed-and-annotated)
+* [Sony Playsation 5 Slim GPU](https://www.techpowerup.com/gpu-specs/sony-playsation-5-slim-cfi-1202-gpu.b11440)
+* [Zen 5](https://en.wikipedia.org/wiki/Zen_5)
 
 {{< image
     gallery="true"
@@ -223,7 +227,7 @@ El Framework Desktop compensa a día de hoy sí a día de hoy es una necesidad y
 
 La GPU integrada es una RDNA 3.5 que queda desactualizada respecto a las recientemente lanzadas tarjetas gráficas de AMD 9700XT con arquitectura RDNA 4. Salvo que AMD decida lo contrario y de el soporte a RDNA 3.5 para FSR 4 es una pérdida notable ya que en la comparación sobre FSR 3.1 es apreciable una significativa mejora de calidad gráfica.
 
-Los puertos traseros podrían tener mejor disposición con los dos USB 4 más juntos y la salida HDMI al lado de los puertos DisplayPort.
+Los puertos traseros podrían tener mejor disposición con los dos USB 4 más juntos y la salida HDMI al lado de los puertos DisplayPort. Preferiría que los SSD no tuvieran disipador premotnado en la placa, hay versiones de SSD que se venden con disipador, aunque tienen un precio algo. La pila de reloj requiere desmontar la placa, está en la parte trasera, podría tener una mejor disposición para que fuera más sencilla su sustitución. Los puertos delanteros podrían estar en en el centro y montados uno encima de otro u orientados verticalmente en vez uno al lado del otro, con esta disposición se podrían colocar más de dos puertos.
 
 ### Comparación con Mac Mini y Mac Studio
 
