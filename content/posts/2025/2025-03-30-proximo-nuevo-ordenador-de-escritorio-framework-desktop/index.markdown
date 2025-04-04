@@ -177,7 +177,7 @@ Es un chip compuesto de dos CDD en los que están 8 núcleos en cada uno y otro 
 * [Intel Iris Plus Graphics 655 Mobile](https://www.techpowerup.com/gpu-specs/iris-plus-graphics-655-mobile.c3221)
 * [AMD Radeon 8060S](https://www.techpowerup.com/gpu-specs/radeon-8060s.c4270)
 * [AMD Ryzen AI Max+ "Strix Halo" Die Exposed and Annotated](https://www.techpowerup.com/332745/amd-ryzen-ai-max-strix-halo-die-exposed-and-annotated)
-* [Sony Playsation 5 Slim GPU](https://www.techpowerup.com/gpu-specs/sony-playsation-5-slim-cfi-1202-gpu.b11440)
+* [Sony PlayStation 5 Slim GPU](https://www.techpowerup.com/gpu-specs/sony-playsation-5-slim-cfi-1202-gpu.b11440)
 * [Zen 5](https://en.wikipedia.org/wiki/Zen_5)
 
 {{< image
