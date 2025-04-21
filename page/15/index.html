@@ -231,6 +231,35 @@
 <ul class="list-unstyled">
     <li>
       <article>
+        <h1><a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/">Configurar autenticación básica en los servidores web Nginx y Apache</a></h1>
+        <span class="information">
+          <time>02/08/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/web/">web</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx" class="" loading="false&#34;"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/apache.svg" width="150" height="264" alt="Apache HTTPD" title="Apache HTTPD" class="" loading="false&#34;"></p>
+</div>
+<p>La autenticación básica o <em>basic auth</em> es un mecanismo de autenticación sencillo que permite proteger los recursos solicitados de un sitio o aplicación web. Es fácil de configurar en el servidor web y está implementado en los propios navegadores, otra ventaja es que se puede añadir a un sitio o aplicación web sin necesidad de realizar modificaciones en su código.</p>
+<p>La autenticación básica por seguridad requiere <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">utilizar en el servidor web el protocolo seguro HTTPS</a> y <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">obtener un certificado para el nombre del dominio del servidor web</a> ya que el navegador cuando envía al servidor el usuario y contraseña no los protege de forma especial y utiliza el mecanismo de comunicación de la conexión, es usual también <a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/">configurar un servidor web virtual</a> para aplicar esta configuración únicamente al sitio web deseado. Con el protocolo HTTPS el usuario y contraseña se transmite cifrada por la propia conexión segura.</p>
+          
+          <br>
+          <a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2020/07/obtener-un-nombre-de-dominio-para-una-direccion-ip-privada/">Obtener un nombre de dominio para una dirección IP privada</a></h1>
         <span class="information">
           <time>31/07/2020</time>
@@ -550,28 +579,6 @@
           
           <br>
           <a href="/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2020/06/pruebas-de-integracion-con-testcontainers-ejemplo-de-jpa-con-la-base-de-datos-postgresql/">Pruebas de integración con Testcontainers, ejemplo de JPA con la base de datos PostgreSQL</a></h1>
-        <span class="information">
-          <time>07/06/2020</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            Algunas partes del código no es posibles probarlas con teses unitarios ya que tienen dependencias como una base de datos. En estos casos es necesario realizar un test de integración, la dificultad reside en tener esta dependencia en el entorno de pruebas. La herramienta Testcontainers permite iniciar un contenedor Docker con la dependencia cuando el test se ejecuta.
-          
-          <br>
-          <a href="/blog-bitix/2020/06/pruebas-de-integracion-con-testcontainers-ejemplo-de-jpa-con-la-base-de-datos-postgresql/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
