@@ -50,8 +50,8 @@ Y hasta aquí todos los ordenadores que he tenido hasta principios del 2025.
 
 El uso que le doy al ordenador es mayormente ofimático principalmente navegar y utilizar internet. Ocasionalmente virtualización, contenedores y algo de desarrollo que tampoco pone el NUC al límite, con 32 GB de memoria sigue siendo una cantidad más que adecuada y suficiente en el 2025. Salvo los juegos es lo único que no puedo hacer con él y para juegos compré en su momento una PlayStation 4 Slim y más tarde la PlayStation 5 Slim.
 
-* [Desempaquetado de PlayStation 4 Slim de 1 TB][blogbitix-432]
-* [Desempaquetado de consola PlayStation 5 slim digital][blogbitix-698]
+* [Desempaquetado de PlayStation 4 Slim][blogbitix-432]
+* [Desempaquetado de consola PlayStation 5 Slim (digital)][blogbitix-698]
 
 ## Porque el cambio de un nuevo ordenador
 
