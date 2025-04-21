@@ -60,8 +60,8 @@ Storybook ofrece dos formas de desarrollar las _stories_, en formato _Component 
 * [Story en formato CSF](https://storybook.js.org/docs/formats/component-story-format/)
 * [Story en formato MDX](https://github.com/storybookjs/storybook/blob/next/addons/docs/docs/mdx.md)
 
-{{< code file="HelloWorld.stories.tsx" language="tsx" options="" >}}
-{{< code file="HelloWorld.stories.mdx" language="markdown" options="" >}}
+{{< code file="HelloWorld--stories.tsx" language="tsx" options="" >}}
+{{< code file="HelloWorld--stories.mdx" language="markdown" options="" >}}
 
 En la web se pueden consultar varios [ejemplos de Storybook](https://storybook.js.org/docs/examples/) que han desarrollado otras organizaciones y obtener una muestra de su utilidad.
 
@@ -109,23 +109,23 @@ Para analizar y validar el formato del código fuente se suelen emplear un _lint
 En los tiempos actuales desarrollar pruebas debería ser parte del desarrollo, Jest permite realizar pruebas unitarias y _jest-image-snapshot_ para realizar pruebas visuales. Hay instalar los paquetes de estas herramientas y añadir varios archivos de configuración, las pruebas también pueden desarrollarse con TypeScript, hay que añadir varios archivos de configuración.
 
 {{< code file="jest-install.sh" language="bash" options="" >}}
-{{< code file="jest.config.js" language="javascript" options="" >}}
+{{< code file="jest--config.js" language="javascript" options="" >}}
 
 Para el componente anterior la definición de la prueba unitaria es la siguiente.
 
-{{< code file="HelloWorld.test.tsx" language="tsx" options="" >}}
+{{< code file="HelloWorld--test.tsx" language="tsx" options="" >}}
 
 Algunos cambios que afectan a los componentes son simplemente visuales como color, tamaño de letra, espaciado, ... estos cambios son difíciles de probarlos con pruebas unitarias de código. Para validar estos cambios la estrategia que se emplea es generar una imagen inicial del componente, cuando hay cambios visuales se genera un error y hay que validar visualmente que el cambio es correcto. Esto permite que los cambios visuales no pasen desapercibidos. Para realiza la validación _jest-image-snapshot_ proporciona la imagen de la versión anterior, la imagen nueva y una imagen que muestra las diferencias entre ambas versiones.
 
 Estos son archivos de configuración para Jest.
 
-{{< code file="jest.setup.js" language="javascript" options="" >}}
-{{< code file="jest.config-visual.js" language="javascript" options="" >}}
+{{< code file="jest--setup.js" language="javascript" options="" >}}
+{{< code file="jest--config-visual.js" language="javascript" options="" >}}
 {{< code file="babel.config.js" language="javascript" options="" >}}
 
 El código de la prueba visual requiere incluir interactuar con el navegador donde está contenido el componente en la prueba y especificar el momento en el que tomar la imagen visual de componente.
 
-{{< code file="HelloWorld.test-visual.ts" language="typescript" options="" >}}
+{{< code file="HelloWorld--test-visual.ts" language="typescript" options="" >}}
 
 En la imagen a revisar se muestra a la izquierda la versión anterior válida, a la derecha la nueva imagen por cambios realizados y en el centro una imagen que resalta las diferencias entre ambas a nivel de pixel. Con estas tres imágenes la revisión es un proceso manual pero sin complicación.
 

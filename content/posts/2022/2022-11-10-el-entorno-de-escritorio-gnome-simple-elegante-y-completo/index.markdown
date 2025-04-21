@@ -29,11 +29,11 @@ Durante este tiempo he usado GNOME no solo a nivel personal sino en un entorno l
 {{< image
     gallery="true"
     image1="image:gnome-1.x.webp" optionsthumb1="200x150" title1="Versiones antiguas de GNOME, 1.x"
-    image2="image:gnome-2.6.webp" optionsthumb2="200x150" title2="Versiones antiguas de GNOME, 2.6"
-    image3="image:gnome-2.30.webp" optionsthumb3="200x150" title3="Versiones antiguas de GNOME, 2.30" >}}
+    image2="image:gnome-2--6.webp" optionsthumb2="200x150" title2="Versiones antiguas de GNOME, 2.6"
+    image3="image:gnome-2--30.webp" optionsthumb3="200x150" title3="Versiones antiguas de GNOME, 2.30" >}}
 {{< image
     gallery="true"
-    image1="image:gnome-3.0.webp" optionsthumb1="300x250" title1="Versiones antiguas de GNOME, 3.0"
+    image1="image:gnome-3--0.webp" optionsthumb1="300x250" title1="Versiones antiguas de GNOME, 3.0"
     caption="Versiones antiguas de GNOME" >}}
 
 No soy _distrohopper_ ni _desktophopper_, durante todo este tiempo Arch Linux y GNOME me han permitido realizar mis tareas de forma productiva y por tanto no he tenido necesidad de cambiar a otra distribución ni a otro entorno de escritorio. Si el modelo _rolling release_ de Arch Linux no fuese lo suficientemente estable para que continúe con mis tareas probablemente cambiaría a [la distribución Fedora Silverblue][blogbitix-483] y si GNOME no me permitiese realizar mis tareas de forma productiva seguro que evaluaría Plasma.

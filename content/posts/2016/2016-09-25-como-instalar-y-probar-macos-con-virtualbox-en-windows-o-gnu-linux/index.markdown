@@ -63,9 +63,9 @@ De macOS hay múltiples versiones que con el tiempo Apple ha publicado incorpora
 
 Los archivos _torrent_ permiten descargar las imágenes de instalación de macOS que ocupan entre 5 y 10 GiB mediante compartición de archivos entre usuarios _torrent_ con programas como [Transmission][transmissionbt] o [uTorrent][utorrent]. Dependiendo de la velocidad de conexión a internet la descarga tarda más o menos.
 
-* {{< resourcelink text="Archivo de descarga macOS-10.15-Catalina" name="macOS-10.15-Catalina.torrent" >}}
-* {{< resourcelink text="Archivo de descarga macOS-10.14-Mojave" name="macOS-10.14-Mojave.torrent" >}}
-* {{< resourcelink text="Archivo de descarga macOS-10.13-High-Sierra" name="macOS-10.13-High-Sierra.torrent" >}}
+* {{< resourcelink text="Archivo de descarga macOS-10.15-Catalina" name="macOS-10--15-Catalina.torrent" >}}
+* {{< resourcelink text="Archivo de descarga macOS-10.14-Mojave" name="macOS-10--14-Mojave.torrent" >}}
+* {{< resourcelink text="Archivo de descarga macOS-10.13-High-Sierra" name="macOS-10--13-High-Sierra.torrent" >}}
 
 Una vez descargados los archivos hay que descomprimirlos, **si al descomprimir el archivo _rar_ se solicita la contraseña es `Geekrar.com`**.
 

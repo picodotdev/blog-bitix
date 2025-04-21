@@ -41,7 +41,7 @@ Un esquema de JSON contiene a qué versión de la especificación se ajusta, el 
 
 En el siguiente esquema _$schema_ define la versión del esquema que implementa, _$id_ define el identificador del esquema. Las propiedades _title_, _description_ proporcionan una descripción del esquema y _type_ el tipo de objeto raíz. En la propiedad _properties_ se definen las propiedades del documento JSON y en la propiedad _required_ cuáles de esas propiedades son requeridas. En la propiedad _dimensions_ están las estructuras JSON anidadas. Y con la propiedad _$ref_ se referencia otro esquema JSON.
 
-{{< code file="product.schema.json" language="json" options="" >}}
+{{< code file="product--schema.json" language="json" options="" >}}
 {{< code file="geographical-location.schema.json" language="json" options="" >}}
 {{< code file="product.json" language="json" options="" >}}
 {{< code file="product-invalid.json" language="json" options="" >}}

@@ -1,2 +1,3 @@
-{{- $resource := .Page.Resources.GetMatch (print "resources/" .Params.name) -}}
+{{- $resource := .Page.Resources.Get (print "resources/" .Params.name) -}}
+{{- if eq $resource nil -}}{{- errorf "Resource not found '%s'" .Params.name -}}{{- end -}}
 <a href="{{ $resource.RelPermalink }}" title="{{ .Params.title }}">{{ .Params.text }}</a>
