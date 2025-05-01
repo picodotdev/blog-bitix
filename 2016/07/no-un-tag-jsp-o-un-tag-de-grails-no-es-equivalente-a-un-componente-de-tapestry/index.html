@@ -62,7 +62,7 @@
     "dateModified": "2016-07-25T12:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "2709",
+    "wordCount": "2711",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -308,10 +308,10 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Viendo el panel <a href="https://es.wikipedia.org/wiki/Kanban_%28desarrollo%29">Kanban</a> de la herramienta de peticiones <a href="https://www.atlassian.com/software/jira">JIRA</a> que usamos para registrar y priorizar las siguiente tareas en la empresa que trabajo hay unas cuantas que consisten en dado un listado de compras poder realizar operaciones sobre múltiples filas sin salir de la pantalla del listado. La necesidad es evitar que los usuarios de la aplicación hagan las acciones de forma individual de forma repetitiva, evitarles esto harán que sean más productivos y podrán desarrollar su trabajo mejor y más rápido. Así de sencillo, aparentemente.</p>
 <p>Esta necesidad que en la realidad será implementada con <a href="https://grails.org/">Grails</a> quería compararla con una implementación equivalente usando <a href="https://tapestry.apache.org/">Apache Tapestry</a> porque como en muchas otras necesidades intuyo que con Tapestry implementarlas es significativamente más sencillo y con un resultado de implementación como en este caso con el que quedo más a gusto.</p>
@@ -320,8 +320,8 @@
 <p>Esta sería una imagen del prototipo de los botones para hacer acciones múltiples, seleccionar compras y el diálogo modal para introducir información adicional.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/07/no-un-tag-jsp-o-un-tag-de-grails-no-es-equivalente-a-un-componente-de-tapestry/images/listado_hu16603482780826437844.webp" data-gallery="" title="Listado de productos"><img src="/blog-bitix/2016/07/no-un-tag-jsp-o-un-tag-de-grails-no-es-equivalente-a-un-componente-de-tapestry/images/listado_hu14689907981864315115.webp" width="300" height="162" alt="Listado de productos" title="Listado de productos" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2016/07/no-un-tag-jsp-o-un-tag-de-grails-no-es-equivalente-a-un-componente-de-tapestry/images/modal_hu11583190575050143970.webp" data-gallery="" title="Modal solicitando información adicional"><img src="/blog-bitix/2016/07/no-un-tag-jsp-o-un-tag-de-grails-no-es-equivalente-a-un-componente-de-tapestry/images/modal_hu4641405882099263314.webp" width="300" height="162" alt="Modal solicitando información adicional" title="Modal solicitando información adicional" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/07/no-un-tag-jsp-o-un-tag-de-grails-no-es-equivalente-a-un-componente-de-tapestry/images/listado_hu_35a03312dae4031b.webp" data-gallery="" title="Listado de productos"><img src="/blog-bitix/2016/07/no-un-tag-jsp-o-un-tag-de-grails-no-es-equivalente-a-un-componente-de-tapestry/images/listado_hu_92e14dad1c3f6ae2.webp" width="300" height="162" alt="Listado de productos" title="Listado de productos" class="" loading="lazy"></a>
+<a href="/blog-bitix/2016/07/no-un-tag-jsp-o-un-tag-de-grails-no-es-equivalente-a-un-componente-de-tapestry/images/modal_hu_1933421b7c001908.webp" data-gallery="" title="Modal solicitando información adicional"><img src="/blog-bitix/2016/07/no-un-tag-jsp-o-un-tag-de-grails-no-es-equivalente-a-un-componente-de-tapestry/images/modal_hu_8940e6af64645ee2.webp" width="300" height="162" alt="Modal solicitando información adicional" title="Modal solicitando información adicional" class="" loading="lazy"></a></p>
 <figcaption>Listado y modal de la necesidad expuesta</figcaption>
 </figure>
 </div>
@@ -382,9 +382,9 @@
     </div>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/TapestryMultipleActions">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/TapestryMultipleActions">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew run</code></p>
 </div>
 <h2 id="algunas-diferencias-con-servletsjsp-y-grails">Algunas diferencias con Servlets/JSP y Grails</h2>
 <p>La tecnología de presentación de páginas web Java con <em>Java Server Pages</em> o JSP permiten encapsular con un <em>tag</em> la generación de un trozo de HTML no en el propio JSP sino en ese <em>tag</em> que en código Java pudiendo incluir la llamada a un JSP. Los <em>tags</em> y librerías de <em>tags</em> son una forma de reutilizar esas partes de generación de código en el mismo proyecto y entre proyectos. Los <em>tags</em> además son una forma de abstraernos del funcionamiento interno del <em>tag</em> haciendo que solo necesitemos conocer sus parámetros.</p>
@@ -396,7 +396,7 @@
 <p>Para volver a la misma página en <a href="https://spring.io/">Spring MVC</a>, <a href="https://struts.apache.org/">Struts</a> o <a href="https://grails.org/">Grails</a> posiblemente deberíamos recibir además información para retornar a la misma página en la que estábamos cosa que es innecesaria en Tapestry por su <a href="http://tapestry.apache.org/page-navigation.html">concepto de contexto de activación de página</a> y el patrón <em>Redirect-After-Post</em> hará que al recargar la página por código con <code>window.localtion.reload();</code> después de una petición POST el navegador no muestre un diálogo modal informando al usuario de que se reenviarán datos.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/07/no-un-tag-jsp-o-un-tag-de-grails-no-es-equivalente-a-un-componente-de-tapestry/images/dialogo-recargar_hu18249377338541002682.webp" data-gallery="" title="Diálogo recargar después de petición POST en Firefox"><img src="/blog-bitix/2016/07/no-un-tag-jsp-o-un-tag-de-grails-no-es-equivalente-a-un-componente-de-tapestry/images/dialogo-recargar_hu9925406247281825347.webp" width="300" height="63" alt="Diálogo recargar después de petición POST en Firefox" title="Diálogo recargar después de petición POST en Firefox" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/07/no-un-tag-jsp-o-un-tag-de-grails-no-es-equivalente-a-un-componente-de-tapestry/images/dialogo-recargar_hu_2e86913a4240446e.webp" data-gallery="" title="Diálogo recargar después de petición POST en Firefox"><img src="/blog-bitix/2016/07/no-un-tag-jsp-o-un-tag-de-grails-no-es-equivalente-a-un-componente-de-tapestry/images/dialogo-recargar_hu_a095e95ea39b26e8.webp" width="300" height="63" alt="Diálogo recargar después de petición POST en Firefox" title="Diálogo recargar después de petición POST en Firefox" class="" loading="lazy"></a></p>
 <figcaption>Diálogo recargar después de petición POST en Firefox</figcaption>
 </figure>
 </div>

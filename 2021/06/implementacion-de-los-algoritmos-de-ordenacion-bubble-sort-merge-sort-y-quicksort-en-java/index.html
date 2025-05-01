@@ -62,7 +62,7 @@
     "dateModified": "2021-06-03T19:30:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1333",
+    "wordCount": "1335",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -305,17 +305,17 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
-<p>Por norma general no es necesario implementar ningún algoritmo de ordenación, estos ya están implementados en las bibliotecas y en el caso de Java en las clases de su JDK. Lo único que es necesario implementar es una clase que implemente la interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html">Comparable</a> o <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a>, esto es suficiente para <a href="https://picodotdev.github.io/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/">ordenar arrays y colecciones de objetos en Java</a>.</p>
+<p>Por norma general no es necesario implementar ningún algoritmo de ordenación, estos ya están implementados en las bibliotecas y en el caso de Java en las clases de su JDK. Lo único que es necesario implementar es una clase que implemente la interfaz <a href="#ZgotmplZ">Comparable</a> o <a href="#ZgotmplZ">Comparator</a>, esto es suficiente para <a href="https://picodotdev.github.io/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/">ordenar arrays y colecciones de objetos en Java</a>.</p>
 <p>Sin embargo, por temas didácticos los algoritmos de ordenación son utilizados como ejemplo para aprender a programar, no son complejos una vez entendido su funcionamiento.</p>
 <p>Entre los algoritmos más conocidos están el de ordenación burbuja o <em>bubble sort</em>, <em>merge sort</em>  y <em>quicksort</em>. Cada uno tiene diferentes propiedades.</p>
 <div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
     <li><a href="#propiedades-de-los-algoritmos-de-ordenación">Propiedades de los algoritmos de ordenación</a></li>
-    <li><a href="#algoritmo-_bubble-sort_">Algoritmo <em>bubble sort</em></a></li>
-    <li><a href="#algoritmo-de-ordenación-_merge-sort_">Algoritmo de ordenación <em>merge sort</em></a></li>
-    <li><a href="#algoritmo-de-ordenación-_quicksort_">Algoritmo de ordenación <em>quicksort</em></a></li>
+    <li><a href="#algoritmo-bubble-sort">Algoritmo <em>bubble sort</em></a></li>
+    <li><a href="#algoritmo-de-ordenación-merge-sort">Algoritmo de ordenación <em>merge sort</em></a></li>
+    <li><a href="#algoritmo-de-ordenación-quicksort">Algoritmo de ordenación <em>quicksort</em></a></li>
     <li><a href="#otros-algoritmo-de-ordenación">Otros algoritmo de ordenación</a></li>
   </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
@@ -336,7 +336,7 @@
 <li>Adaptabilidad: la ordenación de los elementos afecta al tiempo de ejecución, los algoritmos que tienen en cuenta esto son adaptativos.</li>
 <li><em>Online</em></li>
 </ul>
-<h2 id="algoritmo-_bubble-sort_">Algoritmo <em>bubble sort</em></h2>
+<h2 id="algoritmo-bubble-sort">Algoritmo <em>bubble sort</em></h2>
 <p>El <a href="https://en.wikipedia.org/wiki/Bubble_sort">algoritmo de burbuja</a> o <em>bubble sort</em> dada una colección de elementos compara los dos primeros elementos de la colección y los intercambia en función de su orden si es necesario.</p>
 <p>A continuación realiza la comparación para el segundo y tercer elemento de la colección y los intercambia en función de su orden.</p>
 <p>Este proceso se repite hasta llegar al último elemento de la colección, como resultado se tiene que en la última posición de la colección estará el elemento con mayor valor.</p>
@@ -358,7 +358,7 @@
 <p>Esta es la implementación del algoritmos de burbuja.</p>
 <div class="media">
 <figure>
-<p><img src="/blog-bitix/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/images/bubble-sort.gif" width="300" height="250" alt="Algoritmo bubble-sort" title="Algoritmo bubble-sort" class="&#34; " loading="lazy"></p>
+<p><img src="/blog-bitix/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/images/bubble-sort.gif" width="300" height="250" alt="Algoritmo bubble-sort" title="Algoritmo bubble-sort" class="" loading="lazy"></p>
 <figcaption>Algoritmo bubble-sort</figcaption>
 </figure>
 </div>
@@ -368,13 +368,13 @@
         <span>BubbleSort.java</span>
     </div>
 </div>
-<h2 id="algoritmo-de-ordenación-_merge-sort_">Algoritmo de ordenación <em>merge sort</em></h2>
+<h2 id="algoritmo-de-ordenación-merge-sort">Algoritmo de ordenación <em>merge sort</em></h2>
 <p>El <a href="https://en.wikipedia.org/wiki/Merge_sort">algoritmo <em>merge sort</em></a> comienza con una fase de dividir listas, se divide la colección en dos partes del mismo número de elementos o una parte con elemento más que la otra si el número de elementos es impar. La división se aplica recursivamente hasta que las listas sean de un único elemento.</p>
 <p>Una vez divididas las listas en elementos individuales comienza la fase de <em>merge</em> donde los elementos se juntan tomando de cada lista el elemento que sea menor hasta que las listas ya no tengan más elementos.</p>
 <p>La fase de <em>merge</em> termina cuando se tenga una única lista con los elementos ordenados.</p>
 <div class="media">
 <figure>
-<p><img src="/blog-bitix/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/images/merge-sort.gif" width="300" height="250" alt="Algoritmo merge-sort" title="Algoritmo merge-sort" class="&#34; " loading="lazy"></p>
+<p><img src="/blog-bitix/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/images/merge-sort.gif" width="300" height="250" alt="Algoritmo merge-sort" title="Algoritmo merge-sort" class="" loading="lazy"></p>
 <figcaption>Algoritmo merge-sort</figcaption>
 </figure>
 </div>
@@ -384,12 +384,12 @@
         <span>MergeSort.java</span>
     </div>
 </div>
-<h2 id="algoritmo-de-ordenación-_quicksort_">Algoritmo de ordenación <em>quicksort</em></h2>
+<h2 id="algoritmo-de-ordenación-quicksort">Algoritmo de ordenación <em>quicksort</em></h2>
 <p>El <a href="https://en.wikipedia.org/wiki/Quicksort">algoritmo <em>quicskort</em></a>  selecciona un elemento como pivote de la colección. A continuación divide la colección en dos listas de elementos, los que tienen un valor inferior al valor de pivote y los que tiene un valor superior al valor de pivote.</p>
 <p>A continuación se aplica la ordenación a cada una de las listas de forma recursiva, hasta que las listas no ordenadas tengan menos de dos elementos.</p>
 <div class="media">
 <figure>
-<p><img src="/blog-bitix/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/images/quicksort.gif" width="300" height="250" alt="Algoritmo quicksort" title="Algoritmo quicksort" class="&#34; " loading="lazy"></p>
+<p><img src="/blog-bitix/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/images/quicksort.gif" width="300" height="250" alt="Algoritmo quicksort" title="Algoritmo quicksort" class="" loading="lazy"></p>
 <figcaption>Algoritmo quicksort</figcaption>
 </figure>
 </div>
@@ -409,14 +409,14 @@
 <p>Los anteriores no son los únicos algoritmos conocidos para realizar ordenación, el la página de la wikipedia sobre <a href="https://en.wikipedia.org/wiki/Sorting_algorithm">algoritmos de ordenación</a> hay muchos otros con una tabla de información acerca de su complejidad en el mejor de los casos, promedio y en el peor de los casos, su consumo de memoria, si es estable y el método de ordenación empleado.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/images/comparison-sort-algorithms_hu7810699445096155342.webp" data-gallery="" title="Comparación de algunos algoritmos de ordenación"><img src="/blog-bitix/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/images/comparison-sort-algorithms_hu11748689592368230103.webp" width="650" height="366" alt="Comparación de algunos algoritmos de ordenación" title="Comparación de algunos algoritmos de ordenación" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/images/comparison-sort-algorithms_hu_4e7aaa9bab1dc116.webp" data-gallery="" title="Comparación de algunos algoritmos de ordenación"><img src="/blog-bitix/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/images/comparison-sort-algorithms_hu_9b83e2a8133a2ca8.webp" width="650" height="366" alt="Comparación de algunos algoritmos de ordenación" title="Comparación de algunos algoritmos de ordenación" class="" loading="lazy"></a></p>
 <figcaption>Comparación de algunos algoritmos de ordenación</figcaption>
 </figure>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaSort">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaSort">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew run</code></p>
 </div>
 
     </div>
@@ -499,7 +499,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/">
-                <img src="/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/image-2_hu1613968469516484712.webp" width="326" height="125" alt="Herramientas de reconocimiento de texto en imágenes con OCR" title="Herramientas de reconocimiento de texto en imágenes con OCR" class="" loading="lazy">
+                <img src="/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/image-2_hu_6c8e58cab561c260.webp" width="326" height="125" alt="Herramientas de reconocimiento de texto en imágenes con OCR" title="Herramientas de reconocimiento de texto en imágenes con OCR" class="" loading="lazy">
                 <h3>Herramientas de reconocimiento de texto en imágenes con OCR</h3>
                 </a>
                 
@@ -527,7 +527,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/04/programas-basados-en-consola-con-java-usando-lanterna/">
-                <img src="/blog-bitix/2021/04/programas-basados-en-consola-con-java-usando-lanterna/images/lanterna_hu16267025837584185893.webp" width="326" height="125" alt="Programas basados en consola con Java usando Lanterna" title="Programas basados en consola con Java usando Lanterna" class="" loading="lazy">
+                <img src="/blog-bitix/2021/04/programas-basados-en-consola-con-java-usando-lanterna/images/lanterna_hu_f317cf8e3be87131.webp" width="326" height="125" alt="Programas basados en consola con Java usando Lanterna" title="Programas basados en consola con Java usando Lanterna" class="" loading="lazy">
                 <h3>Programas basados en consola con Java usando Lanterna</h3>
                 </a>
                 

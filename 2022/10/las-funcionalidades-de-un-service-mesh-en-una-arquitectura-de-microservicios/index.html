@@ -62,7 +62,7 @@
     "dateModified": "2022-10-21T20:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "3968",
+    "wordCount": "3967",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -305,10 +305,10 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="200" height="278" alt="HashiCorp Consul" title="HashiCorp Consul" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="200" height="278" alt="HashiCorp Consul" title="HashiCorp Consul" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp" class="" loading="false"></p>
 </div>
 <p>Los sistemas basados en microservicios tienen sus ventajas como utilizar servicios independientes que pueden ser desarrollados y desplegados de forma independiente incluso por distintos equipos de desarrolladores al menos mientras solo se cambien sus detalles de implementación y mientras sus interfaces de comunicación no cambien. Otras ventajas son una mejor escalabilidad y mejor tolerancia a errores.</p>
 <p>Un monolito es más que suficiente en muchos casos y los microservicios solo son necesarios en sistemas grandes y complejos formados por varios equipos de desarrollo, escalabilidad y tolerancia a fallos. Cuando tiene sentido utilizar un sistema basado en los microservicios se resuelve algunos problemas de los monolitos pero surgen otros propios de los microservicios tan o más complicados que los de los monolitos.</p>
@@ -316,7 +316,7 @@
 <p>Para tener bajo control las complicaciones de los microservicios son necesarias herramientas que hagan del sistema más fácil de mantener y desarrollar. Una de las herramientas específicamente desarrollada para los microservicios es <a href="https://www.consul.io/">Consul</a> de <a href="https://www.hashicorp.com/">HashiCorp</a> que proporciona varias funcionalidades como descubrimiento de servicios y un almacén compartido de información. Otra de las funcionalidades que implementa y provee Consul es el concepto de <em>service mesh</em> que proporciona seguridad, observabilidad, resiliencia y control de tráfico.</p>
 <div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
-    <li><a href="#qué-es-un-_service-mesh_">Qué es un <em>service mesh</em></a>
+    <li><a href="#qué-es-un-service-mesh">Qué es un <em>service mesh</em></a>
       <ol>
         <li><a href="#seguridad">Seguridad</a></li>
         <li><a href="#observabilidad">Observabilidad</a></li>
@@ -324,13 +324,13 @@
         <li><a href="#control-de-tráfico">Control de tráfico</a></li>
       </ol>
     </li>
-    <li><a href="#ejemplo-práctico-del-_service-mesh_-de-consul">Ejemplo práctico del <em>service mesh</em> de Consul</a>
+    <li><a href="#ejemplo-práctico-del-service-mesh-de-consul">Ejemplo práctico del <em>service mesh</em> de Consul</a>
       <ol>
         <li><a href="#creación-de-la-máquina-virtual">Creación de la máquina virtual</a></li>
         <li><a href="#inicio-de-consul-y-nomad-y-microservicios-del-ejemplo">Inicio de Consul y Nomad y microservicios del ejemplo</a></li>
         <li><a href="#inicio-de-prometheus-y-jaeger">Inicio de Prometheus y Jaeger</a></li>
-        <li><a href="#inicio-de-los-servicios-_frontend_-y-_backend_">Inicio de los servicios <em>frontend</em> y <em>backend</em></a></li>
-        <li><a href="#demostraciones-de-las-funcionalidades-del-_service-mesh_">Demostraciones de las funcionalidades del <em>service mesh</em></a></li>
+        <li><a href="#inicio-de-los-servicios-frontend-y-backend">Inicio de los servicios <em>frontend</em> y <em>backend</em></a></li>
+        <li><a href="#demostraciones-de-las-funcionalidades-del-service-mesh">Demostraciones de las funcionalidades del <em>service mesh</em></a></li>
       </ol>
     </li>
     <li><a href="#libros-sobre-consul">Libros sobre Consul</a></li>
@@ -338,7 +338,7 @@
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h2 id="qué-es-un-_service-mesh_">Qué es un <em>service mesh</em></h2>
+<h2 id="qué-es-un-service-mesh">Qué es un <em>service mesh</em></h2>
 <p><a href="https://developer.hashicorp.com/consul/docs/concepts/service-mesh">La definición de Consul de un <em>service mesh</em></a> es una capa de red dedicada que proporciona seguridad en la comunicación de servicio a servicio dentro y a través de la infraestructura, incluyendo el sistemas propios y entornos en la nube. Un <em>service mesh</em> es utilizado habitualmente en arquitecturas basadas en microservicios pero son útiles en cualquier escenario en que hay una comunicación por red compleja.</p>
 <p>Los microservicios se comunican entre ellos formado una red distribuida, un <em>service mesh</em> es el nombre que se le da a este tipo de comunicación. En el aspecto de las herramientas de infraestructura para facilitar y dar solución a varios de los problemas de la comunicación por red un <em>service mesh</em> trata todos estos problemas y aporta soluciones.</p>
 <p>En gran medida la solución a los problemas de los microservicios en un <em>service mesh</em> es implementada estableciendo un intermediario <em>proxy</em> en la comunicación entre los servicios siendo en este intermediario denominado <em>sidecar proxy</em> el que implementa la solución. Se denomina <em>sidecar proxy</em> ya que al mismo tiempo que se despliega el servicio se despliega el intermediario adicionalmente para la comunicación entre los diferentes servicios que usa y los servicios en vez de comunicarse entre ellos directamente se comunican con el <em>sidecar proxy</em>.</p>
@@ -363,7 +363,7 @@
 <h3 id="control-de-tráfico">Control de tráfico</h3>
 <p>Al ser los microservicios independientes estos se despliegan de forma independiente mientras los cambios sean solo de implementación. Al desplegar una nueva versión de un microservicio es muy útil tener la capacidad del enrutamiento de las peticiones entre los microservicios para usar diferentes estrategias de despliegue como <em>rollout</em>, <em>canary</em>, <em>blue/green</em> y cambiar el enrutamiento.</p>
 <p>Consul proporciona tres conceptos para controlar el enrutamiento entre los servicios los <em>resolvers</em> que identifican las instancias de los servicios en grupos, <em>splitters</em> que permite establecer la cantidad de tráfico que es enviada a los grupos de servicios y finalmente los <em>routers</em> que permiten mediante reglas de la petición o de la instancia del servicio a que servicio se le envía el tráfico.</p>
-<h2 id="ejemplo-práctico-del-_service-mesh_-de-consul">Ejemplo práctico del <em>service mesh</em> de Consul</h2>
+<h2 id="ejemplo-práctico-del-service-mesh-de-consul">Ejemplo práctico del <em>service mesh</em> de Consul</h2>
 <p>En el libro Consul: Up &amp; Running se explica más detalladamente los puntos anteriores junto con un ejemplo con las necesarias configuraciones para Consul de cada uno de ellos utilizando <a href="https://kubernetes.io/">Kubernetes</a> y máquinas virtuales.</p>
 <p>En el libro se usa simplemente Consul, en este artículo muestro la misma configuración y práctica de los conceptos comentados pero usando <a href="https://www.nomadproject.io/">Nomad</a> el orquestador de procesos de HashiCorp equivalente a Kubernetes pero más simple de usar aunque no tan nombrado como Kuberntes. Lo ejecuto dentro de una máquina virtual de <a href="https://www.virtualbox.org/">VirtualBox</a> aprovisionada y creada con <a href="https://www.vagrantup.com/">Vagrant</a> otro producto de HashiCorp.</p>
 <p>El ejemplo consiste en dos procesos uno <em>frontend</em> que muestra la información de una guía de aves y un servicio de <em>backend</em> que devuelve los datos de las aves. Los procesos están empaquetados en sus imágenes de <a href="https://www.docker.com/">Docker</a>. Ambas aplicaciones se comunican mediante una API REST y permiten probar en la práctica todos los conceptos comentados.</p>
@@ -385,7 +385,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/virtualbox_hu12999109140270364018.webp" data-gallery="" title="VirtualBox"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/virtualbox_hu13581963838924380512.webp" width="582" height="450" alt="VirtualBox" title="VirtualBox" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/virtualbox_hu_d0272ebfbd69433e.webp" data-gallery="" title="VirtualBox"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/virtualbox_hu_5e255539c6f1ad83.webp" width="582" height="450" alt="VirtualBox" title="VirtualBox" class="" loading="lazy"></a></p>
 <figcaption>VirtualBox</figcaption>
 </figure>
 </div>
@@ -438,8 +438,8 @@
 <p>Tanto Consul como Nomad ofrecen una interfaz web para consultar el estado de los servicios y realizar tareas de forma más intuitiva que utilizando la línea de comandos. La interfaz de Consul se inicia en el puerto 8500 y la de Nomad en el puerto 4646 la dirección IP es la de la máquina virtual.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul_hu60900048760556321.webp" data-gallery="" title="Consul"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul_hu14030138219332338566.webp" width="246" height="200" alt="Consul" title="Consul" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/nomad_hu13762958053450126071.webp" data-gallery="" title="Nomad"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/nomad_hu14266436496700325656.webp" width="246" height="200" alt="Nomad" title="Nomad" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul_hu_cb38e4ef36aa2399.webp" data-gallery="" title="Consul"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul_hu_4a8d8fc2b7b23f18.webp" width="246" height="200" alt="Consul" title="Consul" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/nomad_hu_caf77ea0b29ae2b8.webp" data-gallery="" title="Nomad"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/nomad_hu_2f8d991ce0936b96.webp" width="246" height="200" alt="Nomad" title="Nomad" class="" loading="lazy"></a></p>
 <figcaption>Consul y Nomad</figcaption>
 </figure>
 </div>
@@ -468,11 +468,11 @@
 <p>Jaeger ofrece una interfaz web en el puerto 16686 para visualizar la trazabilidad de una petición y buscar una traza en concreto a través de su <em>traceId</em> y otros filtros.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/jaeger_hu14522234716807802348.webp" data-gallery="" title="Jaeger"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/jaeger_hu3940198626963935952.webp" width="553" height="450" alt="Jaeger" title="Jaeger" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/jaeger_hu_a77d42d5354b1dcd.webp" data-gallery="" title="Jaeger"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/jaeger_hu_30f9dd9972e09093.webp" width="553" height="450" alt="Jaeger" title="Jaeger" class="" loading="lazy"></a></p>
 <figcaption>Jaeger</figcaption>
 </figure>
 </div>
-<h3 id="inicio-de-los-servicios-_frontend_-y-_backend_">Inicio de los servicios <em>frontend</em> y <em>backend</em></h3>
+<h3 id="inicio-de-los-servicios-frontend-y-backend">Inicio de los servicios <em>frontend</em> y <em>backend</em></h3>
 <p>La aplicación de ejemplo que muestra información de aves está compuesta de dos microservicios el <em>frontend</em> que muestra la información mediante una interfaz web y el servicio de <em>backend</em> que proporciona la información al <em>frontend</em>.</p>
 <p>En el libro Consul: Up &amp; Running los servicios se inician utilizando únicamente Consul que es en lo que se centra el libro, pero en este ejemplo inicio estos servicios utilizando el orquestador Nomad, Nomad permite definir la misma configuración incluyendo la configuración para los <em>sidecar proxy</em> y se integra con Consul.</p>
 <p>La definición del job de Nomad que engloba ambos servicios es la siguiente. Con esta definición declarativa Nomad se encarga de iniciarlos según la descripción indicada, del servicio de <em>backend</em> se inician dos instancias una la de la versión <em>v1</em> y otra de la <em>v2</em>.</p>
@@ -490,15 +490,15 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/birds-v1-1_hu1955323525842011619.webp" data-gallery="" title="Frontend con datos de la versión v1 del backend"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/birds-v1-1_hu4214960024416097630.webp" width="553" height="450" alt="Frontend con datos de la versión v1 del backend" title="Frontend con datos de la versión v1 del backend" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/birds-v1-1_hu_4836ac1c1633df33.webp" data-gallery="" title="Frontend con datos de la versión v1 del backend"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/birds-v1-1_hu_eb062941d1c856a4.webp" width="553" height="450" alt="Frontend con datos de la versión v1 del backend" title="Frontend con datos de la versión v1 del backend" class="" loading="lazy"></a></p>
 <figcaption>Frontend con datos de la versión v1 del backend</figcaption>
 </figure>
 </div>
-<h3 id="demostraciones-de-las-funcionalidades-del-_service-mesh_">Demostraciones de las funcionalidades del <em>service mesh</em></h3>
+<h3 id="demostraciones-de-las-funcionalidades-del-service-mesh">Demostraciones de las funcionalidades del <em>service mesh</em></h3>
 <p>A la aplicación se accede a través del servicio de <em>ingress-gateway</em> en el puerto 8080 de la máquina virtual. El servicio de <em>ingress-gateway</em> simplemente redirige el tráfico a la aplicación de <em>frontend</em>. Esta es la topología de comunicación para el servicio de <em>frontend</em> proporcionada por Consul, recibe peticiones del <em>ingress-gateway</em> y a su vez realiza peticiones al servicio de <em>backend</em>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul-topology-1_hu8895216928080267060.webp" data-gallery="" title="Toppología de un servicio y métricas en Consul"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul-topology-1_hu11498328197004531364.webp" width="554" height="450" alt="Toppología de un servicio y métricas en Consul" title="Toppología de un servicio y métricas en Consul" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul-topology-1_hu_8f5f73b2db7718fc.webp" data-gallery="" title="Toppología de un servicio y métricas en Consul"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul-topology-1_hu_24ebe80aa2d3f919.webp" width="554" height="450" alt="Toppología de un servicio y métricas en Consul" title="Toppología de un servicio y métricas en Consul" class="" loading="lazy"></a></p>
 <figcaption>Toppología de un servicio y métricas en Consul</figcaption>
 </figure>
 </div>
@@ -507,28 +507,28 @@
 <p>El tráfico entre los servicios a través de los <em>sidecar proxy</em> realizan la comunicación cifrada y utilizando autenticación mutua.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul-intentions_hu6129577438683435132.webp" data-gallery="" title="Intenciones en Consul"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul-intentions_hu12048927000025518904.webp" width="553" height="450" alt="Intenciones en Consul" title="Intenciones en Consul" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul-intentions_hu_7db4a1ab175e1e1b.webp" data-gallery="" title="Intenciones en Consul"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul-intentions_hu_36f1340f16a246b3.webp" width="553" height="450" alt="Intenciones en Consul" title="Intenciones en Consul" class="" loading="lazy"></a></p>
 <figcaption>Intenciones en Consul</figcaption>
 </figure>
 </div>
 <p>Consul exporta métricas en formato Prometheus que el servidor de Prometheus recolecta de forma periódica, esta información puede ser visualizada con una herramienta como Grafana. También el propio Consul permite obtener una métricas básicas del servicio como el número de peticiones que se están realizando, tasa de errores y latencia agrupadas por percentiles. Esta información es muy valiosa ya que permite monitorizar el estado del servicio.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul-topology-2_hu8895216928080267060.webp" data-gallery="" title="Métricas de Prometheus en Consul"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul-topology-2_hu11498328197004531364.webp" width="554" height="450" alt="Métricas de Prometheus en Consul" title="Métricas de Prometheus en Consul" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul-topology-2_hu_8f5f73b2db7718fc.webp" data-gallery="" title="Métricas de Prometheus en Consul"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul-topology-2_hu_24ebe80aa2d3f919.webp" width="554" height="450" alt="Métricas de Prometheus en Consul" title="Métricas de Prometheus en Consul" class="" loading="lazy"></a></p>
 <figcaption>Métricas de Prometheus en Consul</figcaption>
 </figure>
 </div>
 <p>Consul y los <em>sidecar proxy</em> de Envoy ofrecen soporte para trazabilidad con Zipkin junto con cierto soporte de los propios servicios la trazabilidad es enviada a un servidor como Jaeger que permite visualizar y relacionar las llamadas entre los diferentes servicios. Desde que entra por el <em>ingress-gateway</em> hasta que llega al <em>backend</em> pasando por el servicio de <em>frontend</em> asi como el tiempo empleado en cada uno de ellos.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/jaeger_hu14522234716807802348.webp" data-gallery="" title="Trazabilidad en Jarger"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/jaeger_hu3940198626963935952.webp" width="553" height="450" alt="Trazabilidad en Jarger" title="Trazabilidad en Jarger" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/jaeger_hu_a77d42d5354b1dcd.webp" data-gallery="" title="Trazabilidad en Jarger"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/jaeger_hu_30f9dd9972e09093.webp" width="553" height="450" alt="Trazabilidad en Jarger" title="Trazabilidad en Jarger" class="" loading="lazy"></a></p>
 <figcaption>Trazabilidad en Jarger</figcaption>
 </figure>
 </div>
 <p>Consul conoce y monitoriza el estado de todos los servicios, a los servicios que presenten un mal funcionamiento no se les envía tráfico para evitar errores y tener resiliencia aún con fallos parciales. Consul realiza peticiones de estado de salud de forma activa de forma periódica generalmente cada pocos segundos, para comprobar el estado de cada servicio. En la consola de administración muestra el estado de cada uno de ellos que también es una valiosa información de observabilidad.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul_hu60900048760556321.webp" data-gallery="" title="Salud de los servicios en Consul"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul_hu10961607609094968012.webp" width="554" height="450" alt="Salud de los servicios en Consul" title="Salud de los servicios en Consul" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul_hu_cb38e4ef36aa2399.webp" data-gallery="" title="Salud de los servicios en Consul"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/consul_hu_f67f128098e33de8.webp" width="554" height="450" alt="Salud de los servicios en Consul" title="Salud de los servicios en Consul" class="" loading="lazy"></a></p>
 <figcaption>Salud de los servicios en Consul</figcaption>
 </figure>
 </div>
@@ -561,21 +561,21 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/birds-v1-2_hu1955323525842011619.webp" data-gallery="" title="Frontend con datos de la versión v1 del backend"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/birds-v1-2_hu16876145028559646172.webp" width="246" height="200" alt="Frontend con datos de la versión v1 del backend" title="Frontend con datos de la versión v1 del backend" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/birds-v2_hu2488466127516652442.webp" data-gallery="" title="Frontend con datos de la versión v2 del backend"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/birds-v2_hu9411257812150040799.webp" width="246" height="200" alt="Frontend con datos de la versión v2 del backend" title="Frontend con datos de la versión v2 del backend" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/birds-v1-2_hu_4836ac1c1633df33.webp" data-gallery="" title="Frontend con datos de la versión v1 del backend"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/birds-v1-2_hu_df22129ad9e23954.webp" width="246" height="200" alt="Frontend con datos de la versión v1 del backend" title="Frontend con datos de la versión v1 del backend" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/birds-v2_hu_23e95f096d6159ab.webp" data-gallery="" title="Frontend con datos de la versión v2 del backend"><img src="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/images/birds-v2_hu_742a34e06991f83a.webp" width="246" height="200" alt="Frontend con datos de la versión v2 del backend" title="Frontend con datos de la versión v2 del backend" class="" loading="lazy"></a></p>
 <figcaption>Frontend con datos de la versión v1 y v2 del backend</figcaption>
 </figure>
 </div>
 <h2 id="libros-sobre-consul">Libros sobre Consul</h2>
-<p>Este artículo es prácticamente un resumen del libro <a href="https://amzn.to/3F0SmjY" rel="sponsored">Consul: Up &amp; Running</a> que muestra y explica todo esto de forma más detallada y extensa además de mostrarlo usando Kubernetes. Está bien explicado y su ejemplo es muy fácil de seguir y probar además de muy didáctico para experimentar con los conceptos y funcionalidades comentadas de Consul. Otros libros sobre Consul y <em>service mesh</em> son <a href="https://amzn.to/3seULzU" rel="sponsored">Simplifying Service Management with Consul</a> y <a href="https://amzn.to/3DiIiS6" rel="sponsored">Mastering Service Mesh</a>.</p>
+<p>Este artículo es prácticamente un resumen del libro <a href="https://amzn.to/3F0SmjY">Consul: Up &amp; Running</a> que muestra y explica todo esto de forma más detallada y extensa además de mostrarlo usando Kubernetes. Está bien explicado y su ejemplo es muy fácil de seguir y probar además de muy didáctico para experimentar con los conceptos y funcionalidades comentadas de Consul. Otros libros sobre Consul y <em>service mesh</em> son <a href="https://amzn.to/3seULzU">Simplifying Service Management with Consul</a> y <a href="https://amzn.to/3DiIiS6">Mastering Service Mesh</a>.</p>
 <div class="media media-amazon">
   <ul>
     <li><a href="https://amzn.to/3SAIGD8" title="Consul: Up and Running">Consul: Up and Running</a></li><li><a href="https://amzn.to/3SFxSUE" title="Simplifying Service Management with Consul">Simplifying Service Management with Consul</a></li><li><a href="https://amzn.to/499LH2U" title="Mastering Service Mesh">Mastering Service Mesh</a></li></ul>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/ConsulServiceMesh">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub.</p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/ConsulServiceMesh">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub.</p>
 </div>
 
     </div>

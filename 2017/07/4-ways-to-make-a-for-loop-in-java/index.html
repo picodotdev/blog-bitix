@@ -309,7 +309,7 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Until Java 5 to make a loop from 0 to N elements you had to use a variable to keep a counter, do a comparison to check if the limit had been reached and increase the variable in the next execution. The code was quite verbose and since loops are a basic construction of any programming language it is used many times in any algorithm.</p>
 <p>Some of these examples of loops are usable from Java 5, in more recent versions many other new features have been added such as <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/"><em>lambdas</em>, <em>streams</em>, methods in interfaces and new API for dates</a> in Java 8, <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">the modularity, improved <em>try-with-resource</em>, jlink or a new publishing model</a> in Java 9, <a href="https://picodotdev.github.io/blog-bitix/2018/03/novedades-de-java-10/">type inference for local variables</a> in Java 10, <a href="https://picodotdev.github.io/blog-bitix/2018/09/novedades-y-nuevas-caracteristicas-de-java-11/">an HTTP client</a> in Java 11 and other <a href="https://picodotdev.github.io/blog-bitix/series/java-platform/">novelties in the Java language and platform</a>.</p>
@@ -340,7 +340,7 @@
     </div>
 </div>
 <h2 id="foreach-loop">foreach loop</h2>
-<p>In Java 5 the <em>for</em> loop was significantly enriched, the <em>foreach</em> loop is an improved <em>for</em> loop with which you can loop through a collection and any object that implements the <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html">Iterable</a> interface. This loop has the advantage that there is no need to maintain a variable that acts as a counter, nor does it require establishing a condition to check if the end of the iteration has been reached, this avoids the possibility of creating an infinite loop. With the <em>foreach</em> loop a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">Collection</a> is traversed as follows.</p>
+<p>In Java 5 the <em>for</em> loop was significantly enriched, the <em>foreach</em> loop is an improved <em>for</em> loop with which you can loop through a collection and any object that implements the <a href="#ZgotmplZ">Iterable</a> interface. This loop has the advantage that there is no need to maintain a variable that acts as a counter, nor does it require establishing a condition to check if the end of the iteration has been reached, this avoids the possibility of creating an infinite loop. With the <em>foreach</em> loop a <a href="#ZgotmplZ">Collection</a> is traversed as follows.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">1</span><span class="p">,</span><span class="w"> </span><span class="n">2</span><span class="p">,</span><span class="w"> </span><span class="n">3</span><span class="p">,</span><span class="w"> </span><span class="n">4</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
@@ -362,7 +362,7 @@
     </div>
 </div>
 <h2 id="loop-with-streams">Loop with streams</h2>
-<p>In Java 8 with the introduction of <a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html">Stream</a> and <a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html">IntStream</a> we can use the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#range-int-int-">range</a> and <a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#rangeClosed-int-int-">rangeClosed</a> to get a <em>Stream</em> of integers and make a loop with a behavior similar to the previous ones.</p>
+<p>In Java 8 with the introduction of <a href="#ZgotmplZ">Stream</a> and <a href="#ZgotmplZ">IntStream</a> we can use the <a href="#ZgotmplZ">range</a> and <a href="#ZgotmplZ">rangeClosed</a> to get a <em>Stream</em> of integers and make a loop with a behavior similar to the previous ones.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">IntStream</span><span class="p">.</span><span class="na">range</span><span class="p">(</span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">5</span><span class="p">).</span><span class="na">forEach</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">});</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
@@ -386,7 +386,7 @@
     </div>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
             You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaForeach">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew run</code></p>
 </div>
@@ -470,34 +470,6 @@
         <div class="col-12 col-sm-4">
             <div class="related-article">
                 
-                <a href="/blog-bitix/2016/05/4-free-office-suites-alternatives-to-microsoft-office/">
-                <img src="/blog-bitix/assets/images/logotypes/microsoft.svg" width="326" height="125" alt="4 free office suites alternatives to Microsoft Office" title="4 free office suites alternatives to Microsoft Office" class="" loading="lazy">
-                <h3>4 free office suites alternatives to Microsoft Office</h3>
-                </a>
-                
-            </div>
-        </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2016/01/windows-10-and-office-2016-as-easy-to-use-without-license-as-always/">
-                <img src="/blog-bitix/assets/images/logotypes/microsoft.svg" width="326" height="125" alt="Windows 10 and Office 2016 as easy to use without license as always" title="Windows 10 and Office 2016 as easy to use without license as always" class="" loading="lazy">
-                <h3>Windows 10 and Office 2016 as easy to use without license as always</h3>
-                </a>
-                
-            </div>
-        </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
                 <a href="/blog-bitix/2017/01/script-to-install-arch-linux-easy-fast-unattended-automated-and-customizable-way/">
                 <img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="326" height="125" alt="Script to install Arch Linux easy, fast, unattended, automated and customizable way" title="Script to install Arch Linux easy, fast, unattended, automated and customizable way" class="" loading="lazy">
                 <h3>Script to install Arch Linux easy, fast, unattended, automated and customizable way</h3>
@@ -505,7 +477,7 @@
                 
             </div>
         </div>
-    </div>
+    
     
 
         <div class="row">

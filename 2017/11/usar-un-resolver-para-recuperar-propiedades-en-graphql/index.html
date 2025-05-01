@@ -71,7 +71,7 @@ Cuando en una consulta de GraphQL se indican las propiedades a devolver GraphQL 
     "dateModified": "2020-08-22T21:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "561",
+    "wordCount": "563",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -88,7 +88,7 @@ Cuando en una consulta de GraphQL se indican las propiedades a devolver GraphQL 
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
 </div>
 <p>Cuando en una consulta de <a href="https://graphql.org/">GraphQL</a> se indican las propiedades a devolver GraphQL usa para cada una de ellas lo que en la implementación de Java se llama un <em>resolver</em> y en otras implementaciones <em>data fetcher</em>. En la mayoría de casos las propiedades serán propiedades de un objeto y en estos casos se usará un <em>PropertyDataFetcher</em> usando en Java la convención de los <em>java beans</em> o la clave de un mapa. En el caso de que cierto dato no esté almacenado en el objeto sino en un repositorio externo es necesario usar un <em>resolver</em> para devolver esa propiedad en la consulta.</p>"
 }
@@ -305,7 +305,7 @@ Cuando en una consulta de GraphQL se indican las propiedades a devolver GraphQL 
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
 </div>
 <p>Cuando en una consulta de <a href="https://graphql.org/">GraphQL</a> se indican las propiedades a devolver GraphQL usa para cada una de ellas lo que en la implementación de Java se llama un <em>resolver</em> y en otras implementaciones <em>data fetcher</em>. En la mayoría de casos las propiedades serán propiedades de un objeto y en estos casos se usará un <em>PropertyDataFetcher</em> usando en Java la convención de los <em>java beans</em> o la clave de un mapa. En el caso de que cierto dato no esté almacenado en el objeto sino en un repositorio externo es necesario usar un <em>resolver</em> para devolver esa propiedad en la consulta.</p>
 <p>Por ejemplo, supongamos que en el ejemplo de la librería en el caso de los libros le añadimos un nuevo dato para el ISBN que está almacenado en un sistema externo, en otro repositorio. La nueva definición del esquema quedaría de la siguiente forma, basta con añadir la nueva propiedad al tipo <em>Book</em> y su tipo que será <em>String</em>.</p>
@@ -337,9 +337,9 @@ Cuando en una consulta de GraphQL se indican las propiedades a devolver GraphQL 
 </div>
 <p>Los <em>resolvers</em> permiten almacenar la información en dos bases de datos distintas, una podría ser almacenar una información una base de datos relacional, otra información en una base de datos NoSQL, dos bases de datos relacionales distintas o incluso proporcionado por una API distinta. En cualquier caso para el usuario de la API y del servicio es transparente como esté almacenada la información.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/GraphQL">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/GraphQL">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew run</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

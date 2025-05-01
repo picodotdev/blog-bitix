@@ -62,7 +62,7 @@
     "dateModified": "2019-05-26T11:30:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "773",
+    "wordCount": "775",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -304,10 +304,10 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="200" height="278" alt="HashiCorp Consul" title="HashiCorp Consul" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="200" height="278" alt="HashiCorp Consul" title="HashiCorp Consul" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false"></p>
 </div>
 <p>El registro y descubrimiento de servicios permite a los servicios registrase y a los clientes descubrir la ubicación de otros servicios, la ubicación consiste en la dirección IP y el puerto en el que contactarles. Dado la naturaleza efímera de los servicios donde nuevas instancias de servicios se inician y se detienen en diferentes máquinas y puertos el servicio de descubrimiento es esencial.</p>
 <p>La funcionalidad de registro y descubrimiento consiste en dos partes, por un lado cuando se inicia una instancia de un servicio se registra su ubicación en el servicio de registro y descubrimiento y por otro lado los clientes cuando requieren una instancia de un servicio la buscan en el servicio de descubrimiento.</p>
@@ -334,7 +334,7 @@
 <p>Iniciados estos dos servicios en la interfaz de estado de Consul se observa que no hay ningún servicio pero cuando se inicie un nuevo contenedor será registrado en Consul por Registrator.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul_hu15878589658847777649.webp" data-gallery="" title="Dirección"><img src="/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul_hu11856318499145768390.webp" width="287" height="200" alt="Dirección" title="Dirección" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul_hu_c639bf8da656f225.webp" data-gallery="" title="Dirección"><img src="/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul_hu_b46319cd5cfab1b5.webp" width="287" height="200" alt="Dirección" title="Dirección" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <p>En este caso se utiliza como servicio una base de datos <a href="https://www.postgresql.org/">PostgreSQL</a>. Dado que el puerto en el que esté disponible el servicio de PostgreSQL es indiferente al utilizar un servicio de registro y descubrimiento se indica el <em>-p</em> sin indicar el puerto del <em>host</em>, de este modo Docker le asigna un puerto público aleatorio.</p>
@@ -360,8 +360,8 @@
 <p>Una vez iniciado el servicio de postgres en la consola de Consul se muestra con su dirección y puerto en el que se encuentra, en el contenedor utiliza su puerto por defecto <em>5432</em> pero hacia el exterior en este caso al no haber especificado uno Docker le asigna un puerto aleatorio en este caso el <em>32777</em>. Este puerto aleatorio es con el que los clientes acceden a la base de datos.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-1_hu4309946721885102779.webp" data-gallery="" title="Servicio de PostgreSQL registrado en Consul"><img src="/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-1_hu3002819836565220487.webp" width="300" height="165" alt="Servicio de PostgreSQL registrado en Consul" title="Servicio de PostgreSQL registrado en Consul" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-2_hu9948316264744169742.webp" data-gallery="" title="Servicio de PostgreSQL registrado en Consul"><img src="/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-2_hu9242606324351858146.webp" width="300" height="165" alt="Servicio de PostgreSQL registrado en Consul" title="Servicio de PostgreSQL registrado en Consul" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-1_hu_9faedd42ad15eb9f.webp" data-gallery="" title="Servicio de PostgreSQL registrado en Consul"><img src="/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-1_hu_e4cff6eb187e1d7e.webp" width="300" height="165" alt="Servicio de PostgreSQL registrado en Consul" title="Servicio de PostgreSQL registrado en Consul" class="" loading="lazy"></a>
+<a href="/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-2_hu_ce26903c2036865f.webp" data-gallery="" title="Servicio de PostgreSQL registrado en Consul"><img src="/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-2_hu_48afd4337118f2ff.webp" width="300" height="165" alt="Servicio de PostgreSQL registrado en Consul" title="Servicio de PostgreSQL registrado en Consul" class="" loading="lazy"></a></p>
 <figcaption>Servicio de postgres registrado en Consul por Registrator</figcaption>
 </figure>
 </div>
@@ -380,9 +380,9 @@
 </div>
 <p>El proyecto de <a href="https://projects.spring.io/spring-cloud/">Spring Cloud</a> ofrece soporte para ambas tareas de registrar y descubrir servicios, aunque perfectamente la tarea de registro se puede delegar como en este caso a Registrator y utilizar en los servicios de Spring Boot únicamente la parte de descubrimiento.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/Registrator">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./docker-compose-up.sh</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/Registrator">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./docker-compose-up.sh</code></p>
 </div>
 
     </div>

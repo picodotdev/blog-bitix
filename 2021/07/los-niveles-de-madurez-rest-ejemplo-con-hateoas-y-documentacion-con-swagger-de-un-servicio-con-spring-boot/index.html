@@ -305,10 +305,10 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <p>Utilizar REST para implementar un servicio es muy común por ser fácil de construir y consumir, se ha convertido en un estándar para los servicios web. REST proporciona acciones para las operaciones, cacheo, redirecciones y delegación, seguridad tanto para cifrado como para autenticación, compatibilidad hacia atrás y evolución de las APIs, escalabilidad y servicios sin estado. A pesar de su amplio uso en realidad no define ninguna especificación, es simplemente una aproximación, estilo y restricciones para construir servicios escalables basados en la web.</p>
 <p>Cómo alternativa a los servicios REST están gRPC y GraphQL que también son capaces de utilizar como medio de transporte el protocolo HTTP pero se basan en aproximaciones diferentes.</p>
@@ -324,7 +324,7 @@
         <li><a href="#nivel-0-transporte-http">Nivel 0, transporte HTTP</a></li>
         <li><a href="#nivel-1-recursos">Nivel 1, recursos</a></li>
         <li><a href="#nivel-2-verbos">Nivel 2, verbos</a></li>
-        <li><a href="#nivel-3-controles-_hypermedia_">Nivel 3, controles <em>hypermedia</em></a></li>
+        <li><a href="#nivel-3-controles-hypermedia">Nivel 3, controles <em>hypermedia</em></a></li>
       </ol>
     </li>
     <li><a href="#ventajas-y-problemas-de-hateoas">Ventajas y problemas de HATEOAS</a></li>
@@ -382,7 +382,7 @@
 </ul>
 <p>Tanto para enviar datos como obtener datos el formato utilizado es JSON por ser un formato de texto plano y manipulable desde JavaScript en un navegador web.</p>
 <p>Aunque hasta este nivel puede ser suficiente para implementar un servicio y proporcionar la funcionalidad, no es suficiente para considerarlo RESTful, es necesario el siguiente nivel de madurez con los controles <em>hypermedia</em>.</p>
-<h3 id="nivel-3-controles-_hypermedia_">Nivel 3, controles <em>hypermedia</em></h3>
+<h3 id="nivel-3-controles-hypermedia">Nivel 3, controles <em>hypermedia</em></h3>
 <p>Este nivel se divide en dos aspectos, negociación de contenido y descubrimiento de enlaces del recurso. Este es el nivel al que muchas implementaciones de servicios REST no implementan por mayor sencillez aún sin las ventajas que proporcionan los controles <em>hypermedia</em> o por los problemas de los controles <em>hypermedia</em> que si son ignorados ni utilizados no proporcionan ninguna de sus ventajas.</p>
 <p>La negociación del contenido permite al cliente especificar el formato de los datos en los que quiere el resultado. Se solicita con la cabecera <em>Accept</em> en la petición. Por ejemplo, un cliente del servicio REST que desee los datos en formato JSON debe proporcionar una cabecera <em>Accept: application/json</em> y si los desea en formato XML una cabecera <em>Accept: application/xml</em>. En caso de enviar datos en el cuerpo de la petición el formato de los datos proporcionados se especifica con la cabecera <em>Content-Type</em>. En caso de que el servicio no soporte el tipo de datos proporcionado o no sea capaz de proporcionar en el formato solicitado devuelve el código de estado 415 que indica formato de tipo de datos no soportado.</p>
 <p>La web es una colección de páginas web relacionadas a través de enlaces. HATEOAS es el principio que aplica enlaces en los datos de las entidades que permite navegar entre ellas y descubrir las acciones disponibles, un cliente de un servicio REST que implemente HATEOAS no necesita conocer las URLs para interaccionar con las diferentes acciones, estas son devueltas en los datos de la respuesta como metadatos.</p>
@@ -489,12 +489,12 @@
 <p>Esta es la documentación de Swagger.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2021/07/los-niveles-de-madurez-rest-ejemplo-con-hateoas-y-documentacion-con-swagger-de-un-servicio-con-spring-boot/images/swagger-ui-1_hu15994721599474308569.webp" data-gallery="" title="Documentación de servicio REST con Swagger UI"><img src="/blog-bitix/2021/07/los-niveles-de-madurez-rest-ejemplo-con-hateoas-y-documentacion-con-swagger-de-un-servicio-con-spring-boot/images/swagger-ui-1_hu7547625038072286153.webp" width="512" height="450" alt="Documentación de servicio REST con Swagger UI" title="Documentación de servicio REST con Swagger UI" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2021/07/los-niveles-de-madurez-rest-ejemplo-con-hateoas-y-documentacion-con-swagger-de-un-servicio-con-spring-boot/images/swagger-ui-1_hu_830ee78e3627e427.webp" data-gallery="" title="Documentación de servicio REST con Swagger UI"><img src="/blog-bitix/2021/07/los-niveles-de-madurez-rest-ejemplo-con-hateoas-y-documentacion-con-swagger-de-un-servicio-con-spring-boot/images/swagger-ui-1_hu_80eda511ada07316.webp" width="512" height="450" alt="Documentación de servicio REST con Swagger UI" title="Documentación de servicio REST con Swagger UI" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2021/07/los-niveles-de-madurez-rest-ejemplo-con-hateoas-y-documentacion-con-swagger-de-un-servicio-con-spring-boot/images/swagger-ui-2_hu5251801313196554638.webp" data-gallery="" title="Documentación de servicio REST con Swagger UI"><img src="/blog-bitix/2021/07/los-niveles-de-madurez-rest-ejemplo-con-hateoas-y-documentacion-con-swagger-de-un-servicio-con-spring-boot/images/swagger-ui-2_hu5092326689760873258.webp" width="190" height="200" alt="Documentación de servicio REST con Swagger UI" title="Documentación de servicio REST con Swagger UI" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2021/07/los-niveles-de-madurez-rest-ejemplo-con-hateoas-y-documentacion-con-swagger-de-un-servicio-con-spring-boot/images/swagger-ui-2_hu_7d678960d2679b61.webp" data-gallery="" title="Documentación de servicio REST con Swagger UI"><img src="/blog-bitix/2021/07/los-niveles-de-madurez-rest-ejemplo-con-hateoas-y-documentacion-con-swagger-de-un-servicio-con-spring-boot/images/swagger-ui-2_hu_b3fecdac137598e6.webp" width="190" height="200" alt="Documentación de servicio REST con Swagger UI" title="Documentación de servicio REST con Swagger UI" class="" loading="lazy"></a></p>
 <figcaption>Documentación de servicio REST con Swagger UI</figcaption>
 </figure>
 </div>
@@ -562,7 +562,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/">
-                <img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu15762454492934130705.webp" width="326" height="125" alt="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" title="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" class="" loading="lazy">
+                <img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu_c1681c9a144c6877.webp" width="326" height="125" alt="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" title="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" class="" loading="lazy">
                 <h3>Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java</h3>
                 </a>
                 

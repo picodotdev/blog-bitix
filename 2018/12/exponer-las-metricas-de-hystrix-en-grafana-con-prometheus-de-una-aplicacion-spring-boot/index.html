@@ -80,7 +80,7 @@ Hystrix es una implementación del patrón circuit breaker para hacer que un ser
     "dateModified": "2018-12-21T11:30:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "704",
+    "wordCount": "706",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -97,10 +97,10 @@ Hystrix es una implementación del patrón circuit breaker para hacer que un ser
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <p><a href="https://github.com/Netflix/Hystrix">Hystrix</a> es una implementación del patrón <em>circuit breaker</em> para hacer que un servicio sea tolerante fallos cuando aquellos que utiliza fallan. Es conveniente tener una herramienta de monitorización para conocer el estado del sistema y actuar pronto o conocer si el comportamiento del sistema es diferente al hacer algún cambio. Hystrix proporciona varios datos como el número de peticiones realizadas, cuantas han fallado o cual es el estado del patrón <em>circuit breaker</em>. <a href="https://prometheus.io/">Prometheus</a> es una herramienta de monitorización que recoge las métricas de los servicios de forma periódica y las almacena para una consulta posterior, <a href="https://grafana.com/">Grafana</a> es otra herramienta de monitorización que permite visualizar en gráficas las métricas almacenadas en Prometheus y observar los valores a lo largo del tiempo.</p>"
 }
@@ -321,10 +321,10 @@ Hystrix es una implementación del patrón circuit breaker para hacer que un ser
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <p><a href="https://github.com/Netflix/Hystrix">Hystrix</a> es una implementación del patrón <em>circuit breaker</em> para hacer que un servicio sea tolerante fallos cuando aquellos que utiliza fallan. Es conveniente tener una herramienta de monitorización para conocer el estado del sistema y actuar pronto o conocer si el comportamiento del sistema es diferente al hacer algún cambio. Hystrix proporciona varios datos como el número de peticiones realizadas, cuantas han fallado o cual es el estado del patrón <em>circuit breaker</em>. <a href="https://prometheus.io/">Prometheus</a> es una herramienta de monitorización que recoge las métricas de los servicios de forma periódica y las almacena para una consulta posterior, <a href="https://grafana.com/">Grafana</a> es otra herramienta de monitorización que permite visualizar en gráficas las métricas almacenadas en Prometheus y observar los valores a lo largo del tiempo.</p>
 <p>En el artículo <a href="https://picodotdev.github.io/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/">Tolerancia a fallos en un cliente de microservicio con Spring Cloud Netflix y Hystrix</a> explicaba como crear un servicio de <a href="https://spring.io/">Spring</a> que implementa el patrón <em>circuit breaker</em> con Hystrix y en el artículo <a href="https://picodotdev.github.io/blog-bitix/2018/12/monitorizar-una-aplicacion-java-de-spring-boot-con-micrometer-prometheus-y-grafana/">Monitorizar una aplicación Java con Spring Boot, Micrometer, Prometheus y Grafana</a> explicaba como exportar las métricas de <a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready">Spring Boot Actuator</a> a Prometheus y como crear gráficas en Grafana.</p>
@@ -363,7 +363,7 @@ Hystrix es una implementación del patrón circuit breaker para hacer que un ser
 <p>Con estas métricas recolectadas por Prometheus se pueden visualizar en gráficas por Grafana. Hay algunos <a href="https://grafana.com/dashboards?search=hystrix">paneles de Grafana para Hystrix</a> como el <a href="https://grafana.com/dashboards/7145">7145</a> pero que necesitan ser adaptados según la nomenclatura de las propiedades expuestas por Spring Boot. En este caso se monitoriza el número de peticiones realizadas, el tiempo de latencia, si los circuitos están abiertos, los fallos, éxitos y <em>tiemouts</em> así como el estado de los <em>thread pools</em> que utiliza Hystrix para realizar las peticiones de un cliente a un servicio.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2018/12/exponer-las-metricas-de-hystrix-en-grafana-con-prometheus-de-una-aplicacion-spring-boot/images/grafana-hystrix-dashboard_hu3984053228274192266.webp" data-gallery="" title="Panel de Grafana pàra métricas de Hystrix"><img src="/blog-bitix/2018/12/exponer-las-metricas-de-hystrix-en-grafana-con-prometheus-de-una-aplicacion-spring-boot/images/grafana-hystrix-dashboard_hu2912320478004824077.webp" width="600" height="358" alt="Panel de Grafana pàra métricas de Hystrix" title="Panel de Grafana pàra métricas de Hystrix" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2018/12/exponer-las-metricas-de-hystrix-en-grafana-con-prometheus-de-una-aplicacion-spring-boot/images/grafana-hystrix-dashboard_hu_ac139a531ac63674.webp" data-gallery="" title="Panel de Grafana pàra métricas de Hystrix"><img src="/blog-bitix/2018/12/exponer-las-metricas-de-hystrix-en-grafana-con-prometheus-de-una-aplicacion-spring-boot/images/grafana-hystrix-dashboard_hu_c0ff3b86306fe2d9.webp" width="600" height="358" alt="Panel de Grafana pàra métricas de Hystrix" title="Panel de Grafana pàra métricas de Hystrix" class="" loading="lazy"></a></p>
 <figcaption>Panel de Grafana para métricas de Hystrix</figcaption>
 </figure>
 </div>
@@ -375,9 +375,9 @@ Hystrix es una implementación del patrón circuit breaker para hacer que un ser
     </div>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloud">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradle-run.sh</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloud">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradle-run.sh</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

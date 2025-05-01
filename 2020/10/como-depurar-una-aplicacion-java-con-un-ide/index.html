@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="Cómo depurar una aplicación Java con un IDE">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu15447604331107014570.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu_721a0f16ffa35da8.png">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="La depuración de un programa o debug permite ejecutar un programa de forma interactiva, paso a paso y examinar los valores de las variables. Esto proporciona valiosa información que permite comprobar el correcto funcionamiento de un programa o descubrir la causa de un error del que las trazas no proporcionan información suficiente. Los depuradores o debuggers son las aplicaciones que ejecutan el programa en modo depuración, permiten establecer puntos de ruptura, continuar la ejecución paso a paso o hasta el siguiente punto de ruptura e inspeccionar los valores de las variables. Los entornos integrados de desarrollo o IDE de Java como IntelliJ IDEA y eclipse ofrecen soporte para hacer depuración. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu15447604331107014570.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu_721a0f16ffa35da8.png">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Cómo depurar una aplicación Java con un IDE">
@@ -55,14 +55,14 @@
     "headline": "Cómo depurar una aplicación Java con un IDE",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu15447604331107014570.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu_721a0f16ffa35da8.png"
         
       },
     "datePublished": "2020-10-30T14:30:00+01:00",
     "dateModified": "2020-10-30T14:30:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1241",
+    "wordCount": "1243",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -305,7 +305,7 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Pocos programas están libres de errores, algunos errores se producen cuando se cumplen ciertas condiciones en los datos que maneja una aplicación. En ocasiones descubrir la causa de un error es suficiente si la aplicación emite trazas pero en los errores más complicados o con poca información se requiere depurar el programa.</p>
 <ul>
@@ -316,7 +316,7 @@
 <div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
     <li><a href="#qué-es-la-depuración-de-un-programa">Qué es la depuración de un programa</a></li>
-    <li><a href="#configurar-la-máquina-virtual-java-para-hacer-_debug_">Configurar la máquina virtual Java para hacer <em>debug</em></a>
+    <li><a href="#configurar-la-máquina-virtual-java-para-hacer-debug">Configurar la máquina virtual Java para hacer <em>debug</em></a>
       <ol>
         <li><a href="#debug-con-el-comando-java">Debug con el comando java</a></li>
         <li><a href="#debug-con-gradle">Debug con Gradle</a></li>
@@ -334,7 +334,7 @@
 </div></div></div>
 <h2 id="qué-es-la-depuración-de-un-programa">Qué es la depuración de un programa</h2>
 <p>La depuración o <em>debug</em> es una forma de ejecución de un programa con la que el programador puede observar de forma interactiva la ejecución línea a línea del código fuente con el objetivo de eliminar algún error. El depurador o <em>debugger</em> es una aplicación que permite añadir puntos de ruptura o <em>breakpoints</em> donde el depurador para la ejecución, inspeccionar los valores de las variables, continuar la ejecución hasta la siguiente línea o hasta el siguiente punto de ruptura, continuar la ejecución entrando en una función o sin entrar en la función.</p>
-<h2 id="configurar-la-máquina-virtual-java-para-hacer-_debug_">Configurar la máquina virtual Java para hacer <em>debug</em></h2>
+<h2 id="configurar-la-máquina-virtual-java-para-hacer-debug">Configurar la máquina virtual Java para hacer <em>debug</em></h2>
 <p>Para depurar un programa Java es necesario configurar la máquina virtual Java o JVM en modo <em>debug</em>. Esta configuración de la JVM se realiza añadiendo ciertos argumentos al comando que inicia la aplicación.</p>
 <p>Un ejemplo de programa para practicar cómo depurar es el siguiente.</p>
 <div class="code">
@@ -386,7 +386,7 @@
 <p>Arrancada la máquina virtual en modo depuración hay que configurar <a href="https://www.jetbrains.com/idea/">IntelliJ</a> para que se conecte a la máquina virtual ya sea con una configuración de inicio de la aplicación o uniendo el IDE a un proceso local de la máquina virtual en modo depuración desde el menú <em>Run &gt; Attach to Process</em>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug-configurations_hu14806848454013222605.webp" data-gallery="" title="Configuración de depuración remota"><img src="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug-configurations_hu1514975186386897293.webp" width="300" height="190" alt="Configuración de depuración remota" title="Configuración de depuración remota" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug-configurations_hu_437c8be15eef0372.webp" data-gallery="" title="Configuración de depuración remota"><img src="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug-configurations_hu_91b47c070909c059.webp" width="300" height="190" alt="Configuración de depuración remota" title="Configuración de depuración remota" class="" loading="lazy"></a></p>
 <figcaption>Configuración de depuración remota</figcaption>
 </figure>
 </div>
@@ -407,7 +407,7 @@
 <p>El programa se detiene en el punto de ruptura, los valores de las variables en el contexto donde se ha detenido la ejecución se pueden inspeccionar, en este caso el valor del <em>array</em> con los argumentos del programa.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu6416305202514833929.webp" data-gallery="" title="Depuración de un programa en IntelliJ IDEA"><img src="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu9086625512988458813.webp" width="246" height="200" alt="Depuración de un programa en IntelliJ IDEA" title="Depuración de un programa en IntelliJ IDEA" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu_ebec10e987a754f6.webp" data-gallery="" title="Depuración de un programa en IntelliJ IDEA"><img src="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu_5a228f931b001718.webp" width="246" height="200" alt="Depuración de un programa en IntelliJ IDEA" title="Depuración de un programa en IntelliJ IDEA" class="" loading="lazy"></a></p>
 <figcaption>Depuración de un programa en IntelliJ IDEA</figcaption>
 </figure>
 </div>
@@ -415,7 +415,7 @@
 <p>El entorno de desarrollo integrado <a href="https://eclipse.org">eclipse</a> también ofrece un depurador para aplicaciones Java. Permite iniciar una aplicación en modo depuración, conectarse a una máquina virtual externa configurada con soporte para depuración, establecer puntos de ruptura con la combinación de teclas <kbd>Ctrl+Shift+B</kbd>, continuar la ejecución cuando se ha suspendido e inspeccionar los valores de las variables.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug-configurations_hu15537760386633545916.webp" data-gallery="" title="Configuración de depuración remota"><img src="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug-configurations_hu4335650414572782273.webp" width="273" height="200" alt="Configuración de depuración remota" title="Configuración de depuración remota" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug-configurations_hu_94ebbc567ae18b7d.webp" data-gallery="" title="Configuración de depuración remota"><img src="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug-configurations_hu_5e274f4c535c8e40.webp" width="273" height="200" alt="Configuración de depuración remota" title="Configuración de depuración remota" class="" loading="lazy"></a></p>
 <figcaption>Configuración de depuración remota</figcaption>
 </figure>
 </div>
@@ -429,7 +429,7 @@
 <p>Los puntos de ruptura se crean con la tecla Ctrl+Shift+B o con el botón derecho desde el espacio vertical del editor del código fuente al inicio de cada línea.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug_hu2733390572370053405.webp" data-gallery="" title="Depuración de un programa en eclipse"><img src="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug_hu1866228442757396914.webp" width="300" height="187" alt="Depuración de un programa en eclipse" title="Depuración de un programa en eclipse" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug_hu_5b42d26352cb1fdf.webp" data-gallery="" title="Depuración de un programa en eclipse"><img src="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug_hu_d40934bd7cd4f879.webp" width="300" height="187" alt="Depuración de un programa en eclipse" title="Depuración de un programa en eclipse" class="" loading="lazy"></a></p>
 <figcaption>Depuración de un programa en eclipse</figcaption>
 </figure>
 </div>
@@ -445,9 +445,9 @@
 </ul>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoJava8">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoJava8">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew run</code></p>
 </div>
 
     </div>
@@ -530,7 +530,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/">
-                <img src="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu2749329557846858044.webp" width="326" height="125" alt="Implementar un bus de eventos de dominio en Java" title="Implementar un bus de eventos de dominio en Java" class="" loading="lazy">
+                <img src="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu_5512f2827cded5aa.webp" width="326" height="125" alt="Implementar un bus de eventos de dominio en Java" title="Implementar un bus de eventos de dominio en Java" class="" loading="lazy">
                 <h3>Implementar un bus de eventos de dominio en Java</h3>
                 </a>
                 

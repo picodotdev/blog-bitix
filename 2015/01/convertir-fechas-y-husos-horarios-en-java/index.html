@@ -88,7 +88,7 @@ Aunque en muchas aplicaciones no será necesario si desarrollamos una aplicació
         }
     },
     "description": "<div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Aunque en muchas aplicaciones no será necesario si desarrollamos una aplicación que trabaje con diferentes países y fechas probablemente deberemos tener en cuenta múltiples <a href="https://es.wikipedia.org/wiki/Huso_horario">husos horarios</a> o zonas horarias. Según estos husos horarios, por ejemplo, en el momento que son las 12:00 en Madrid hora local no son las 12:00 en Buenos Aires, si dos ciudades emplean diferente huso horario hay que tenerlo en cuenta para obtener la hora local en cada ciudad.</p>"
 }
@@ -305,10 +305,10 @@ Aunque en muchas aplicaciones no será necesario si desarrollamos una aplicació
 
       
       <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Aunque en muchas aplicaciones no será necesario si desarrollamos una aplicación que trabaje con diferentes países y fechas probablemente deberemos tener en cuenta múltiples <a href="https://es.wikipedia.org/wiki/Huso_horario">husos horarios</a> o zonas horarias. Según estos husos horarios, por ejemplo, en el momento que son las 12:00 en Madrid hora local no son las 12:00 en Buenos Aires, si dos ciudades emplean diferente huso horario hay que tenerlo en cuenta para obtener la hora local en cada ciudad.</p>
-<p>Hasta la versión 7 de Java el trabajo con fechas era complicado con las clases proporcionadas <a href="https://docs.oracle.com/javase/7/docs/api/java/util/GregorianCalendar.html">GregorianCalendar</a> y <a href="https://docs.oracle.com/javase/7/docs/api/java/sql/Date.html">Date</a>, una alternativa a la API de Java para el manejo de fechas hasta esta versión era emplear la librería <a href="https://www.joda.org/joda-time/">JodaTime</a>. JodaTime ofrece una API mejor y más completa para el manejo de fechas hasta la versión de Java 7. Con la <a href="https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html">nueva API para fechas de Java 8</a>, <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">entre otras novedades incluídas</a>, la situación ha mejorado pero hasta que tengamos oportunidad de usar esta versión puede que pase bastante tiempo y sigamos obligados a usar JodaTime si tenemos posibilidad de usar esta librería o usar directamente la API de Java 7 si no podemos.</p>
+<p>Hasta la versión 7 de Java el trabajo con fechas era complicado con las clases proporcionadas <a href="https://docs.oracle.com/javase/7/docs/api/java/util/GregorianCalendar.html">GregorianCalendar</a> y <a href="https://docs.oracle.com/javase/7/docs/api/java/sql/Date.html">Date</a>, una alternativa a la API de Java para el manejo de fechas hasta esta versión era emplear la librería <a href="https://www.joda.org/joda-time/">JodaTime</a>. JodaTime ofrece una API mejor y más completa para el manejo de fechas hasta la versión de Java 7. Con la <a href="#ZgotmplZ">nueva API para fechas de Java 8</a>, <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">entre otras novedades incluídas</a>, la situación ha mejorado pero hasta que tengamos oportunidad de usar esta versión puede que pase bastante tiempo y sigamos obligados a usar JodaTime si tenemos posibilidad de usar esta librería o usar directamente la API de Java 7 si no podemos.</p>
 <p>Otro aspecto que debemos tener en cuenta en una aplicación es en que huso horario vamos a guardar las fechas en la base de datos, para simplificar lo recomendable es guardar siempre las fechas en el mismo huso horario. Podemos elegir cualquier huso horario quizá la local del lugar donde estamos o una mas genérica como UTC.</p>
 <p>Podemos convertir la fecha de un huso horario a otro ya sea usando JodaTime, Java 7 o Java 8, por ejemplo ¿si en Madrid (España) son las 12:00 que hora sería en ese momento en Buenos Aires (Argentina)? El código que podemos emplear en Java para cambiar de zona horaria y averiguarlo es el siguiente:</p>
 <div class="code">
@@ -330,7 +330,7 @@ Aunque en muchas aplicaciones no será necesario si desarrollamos una aplicació
     Referencia:<br>
 <ul>
 <li><a href="https://docs.oracle.com/javase/7/docs/api/java/util/Date.html">Java 7 Date API</a></li>
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html">Java 8 Time API</a></li>
+<li><a href="#ZgotmplZ">Java 8 Time API</a></li>
 <li><a href="https://www.joda.org/joda-time/">JodaTime</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">Novedades y nuevas características de Java 8</a></li>
 </ul>

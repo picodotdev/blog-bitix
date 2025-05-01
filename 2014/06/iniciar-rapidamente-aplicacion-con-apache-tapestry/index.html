@@ -88,7 +88,7 @@ Un proyecto web en Java requiere de unos cuantos archivos con cierta estructura 
         }
     },
     "description": "<div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false"></p>
 </div>
 <p>Un proyecto web en Java requiere de unos cuantos archivos con cierta estructura que nos puede llevar un tiempo en crearlos. Normalmente cuando empezamos un nuevo proyecto solemos basarnos en otro existente  copiando y pegando contenido de él. Pero ademas de tiempo podemos cometer errores o no seguir algunas convenciones propias de Java o del <em>framework</em> web que usemos. Para un proyecto grande esa dedicación al inicio del proyecto no nos importará pero para un proyecto pequeño o para hacer una prueba puede que queramos tener algo más rápido y con menos esfuerzo para estar en disposición de empezar a desarrollar en muy poco tiempo.</p>"
 }
@@ -307,7 +307,7 @@ Un proyecto web en Java requiere de unos cuantos archivos con cierta estructura 
 
       
       <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false"></p>
 </div>
 <p>Un proyecto web en Java requiere de unos cuantos archivos con cierta estructura que nos puede llevar un tiempo en crearlos. Normalmente cuando empezamos un nuevo proyecto solemos basarnos en otro existente  copiando y pegando contenido de él. Pero ademas de tiempo podemos cometer errores o no seguir algunas convenciones propias de Java o del <em>framework</em> web que usemos. Para un proyecto grande esa dedicación al inicio del proyecto no nos importará pero para un proyecto pequeño o para hacer una prueba puede que queramos tener algo más rápido y con menos esfuerzo para estar en disposición de empezar a desarrollar en muy poco tiempo.</p>
 <p>Para crear el esqueleto de una aplicación rápidamente en <a href="http://tapestry.apache.org/">Apache Tapestry</a> hay disponible un arquetipo de <a href="http://maven.apache.org/">Maven</a> que puede generar una aplicación en unos pocos minutos. Para usarlo deberemos instalar maven previamente. Una vez instalado Maven basta con que usemos el siguiente comando.</p>
@@ -320,19 +320,19 @@ Un proyecto web en Java requiere de unos cuantos archivos con cierta estructura 
 <p>El comando nos presentará un montón de arquetipos, el propio de Tapestry se corresponde con una opción que deberemos buscar, <em>org.apache.tapestry:quickstart</em>. Además, del arquetipo a usar se nos pedirá el grupo de la aplicación y nombre de artefacto, para el ejemplo usaré como grupo <em>io.github.picodotdev.bitix</em> y como nombre de artefacto inicio rápido. También nos pedirá la versión y finalmente el paquete de las clases, podemos dejar las opciones por defecto.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-maven_hu12657467240643455209.webp" data-gallery=""><img src="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-maven_hu2233105583709160090.webp" width="300" height="164" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-tapestry_hu3779184379992850231.webp" data-gallery=""><img src="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-tapestry_hu11600817735897657781.webp" width="300" height="164" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-maven_hu_d9a910add97990a6.webp" data-gallery=""><img src="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-maven_hu_363e28463ae33ca.webp" width="300" height="164" class="" loading="lazy"></a>
+<a href="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-tapestry_hu_9e743c95d7e176ea.webp" data-gallery=""><img src="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-tapestry_hu_b47e75206b98b419.webp" width="300" height="164" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipo-tapestry_hu9668634661751227676.webp" data-gallery=""><img src="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipo-tapestry_hu11653019498344817062.webp" width="300" height="164" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipo-tapestry_hu_46a265c88505d928.webp" data-gallery=""><img src="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipo-tapestry_hu_8602c6ac72572cd.webp" width="300" height="164" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <p>Aunque el arquetipo lo realizamos con Maven los archivos que genera son válidos tanto para trabajar con Maven como con <a href="http://www.gradle.org/">Gradle</a>, una vez que tenemos la aplicación generada podemos usar el que prefiramos, probablemente mejor Gradle. Los archivos generados son los siguientes:</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/archivos-generados_hu2302282387659833235.webp" data-gallery="" title="Terminal al iniciar la aplicación"><img src="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/archivos-generados_hu5204120907486904186.webp" width="300" height="199" alt="Terminal al iniciar la aplicación" title="Terminal al iniciar la aplicación" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/archivos-generados_hu_a5c106db510e25.webp" data-gallery="" title="Terminal al iniciar la aplicación"><img src="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/archivos-generados_hu_481d649df9e1ef7b.webp" width="300" height="199" alt="Terminal al iniciar la aplicación" title="Terminal al iniciar la aplicación" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <p>Una vez generada la aplicación podemos iniciarla con un servidor embebido <a href="http://www.eclipse.org/jetty/">Jetty</a> con la aplicación desplegada en él ya usando <a href="http://www.gradle.org/">Gradle</a>:</p>
@@ -345,8 +345,8 @@ Un proyecto web en Java requiere de unos cuantos archivos con cierta estructura 
 <p>Y accediendo con el navegador a la URL que nos indica Tapestry al final de las trazas veremos la aplicación en funcionamiento.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-terminal_hu4640527446129132539.webp" data-gallery="" title="Terminal al iniciar la aplicación"><img src="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-terminal_hu14663758620807832322.webp" width="294" height="200" alt="Terminal al iniciar la aplicación" title="Terminal al iniciar la aplicación" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-navegador_hu2275983783765598307.webp" data-gallery="" title="Aplicación en el navegador"><img src="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-navegador_hu616303664032120393.webp" width="255" height="200" alt="Aplicación en el navegador" title="Aplicación en el navegador" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-terminal_hu_10661da8d3304871.webp" data-gallery="" title="Terminal al iniciar la aplicación"><img src="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-terminal_hu_8a44c144c80d8dae.webp" width="294" height="200" alt="Terminal al iniciar la aplicación" title="Terminal al iniciar la aplicación" class="" loading="lazy"></a>
+<a href="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-navegador_hu_b28fa58821a098a2.webp" data-gallery="" title="Aplicación en el navegador"><img src="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-navegador_hu_5b25f3b647b42400.webp" width="255" height="200" alt="Aplicación en el navegador" title="Aplicación en el navegador" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <p>Probablemente necesitaremos configurar muchas cosas adicionales como usar <a href="https://github.com/bmuschko/gradle-tomcat-plugin">Tomcat como servidor embebido</a> en vez de Jetty o añadir la <a href="https://elblogdepicodev.blogspot.com.es/2013/06/pruebas-unitarias-y-de-integracion-en-apache-tapestry.html">configuración necesaria para ejecutar los teses unitarios y de integración</a>, Tapestry no es un <em>framework</em> <em>fullstack</em> y será responsabilidad nuestra disponer de esas características si necesitamos. En definitiva, con este arquetipo de Maven en unos pocos minutos y con poco esfuerzo podemos disponer de una aplicación Apache Tapestry a partir de la que empezar a desarrollar.</p>

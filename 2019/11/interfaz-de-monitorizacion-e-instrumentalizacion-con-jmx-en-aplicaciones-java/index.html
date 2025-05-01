@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole_hu1721576987106007462.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole_hu_d82343536cd08625.png">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="JMX es una forma sencilla e integrada en la plataforma Java de monitorizar e instrumentalizar ciertas operaciones de funcionamiento interno de la aplicación que no tenga que ver con el ámbito de negocio que resuelve sino en el aspecto técnico. Unos casos de uso son activar una característica de la aplicación mientras la aplicación está funcionando o limpiar una cache de modo que los datos que almacena se actualicen de nuevo de la fuente origen en tiempo real y sin necesidad de reniciarla, cualquier otro realizable con código Java es posible. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole_hu1721576987106007462.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole_hu_d82343536cd08625.png">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java">
@@ -55,14 +55,14 @@
     "headline": "Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole_hu1721576987106007462.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole_hu_d82343536cd08625.png"
         
       },
     "datePublished": "2019-11-08T17:00:00+01:00",
     "dateModified": "2019-11-08T17:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1149",
+    "wordCount": "1151",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -304,7 +304,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Las aplicaciones Java tienen a su disposición integradas en la propia plataforma Java una interfaz para monitorizar su estado y realizar acciones de instrumentalización para modificar algún comportamiento o cambiar alguna configuración en tiempo real mientras la aplicación está funcionando sin necesidad de reiniciarla. La especificación que proporciona esta interfaz es <em>Java Management Extensions</em> (JMX).</p>
 <p>JMX define una serie de recursos a ser administrados, estos ha de instrumentalizarse con el lenguaje Java definiendo unos objetos <em>MBeans</em> que accedan a los recursos. Una vez el recurso ha sido instrumentalizado es gestionado por una agente JMX. El agente JMX controla los recursos y los hace disponibles a las aplicaciones de gestión, el objeto principal del agente es el <em>MBean server</em> donde los <em>MBean</em> son registrados. Los recursos puede ser accedidos a través de diferentes protocolos mediante adaptadores y conectores. Un adaptador HTML muestra un <em>MBean</em> en el navegador y un conector se encarga de la comunicación entre la la aplicación de gestión y el agente JMX.</p>
@@ -345,21 +345,21 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole_hu12306730704600684612.webp" data-gallery="" title="Herramienta de monitorización e instrumentalización JConsole"><img src="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole_hu8272368107554294181.webp" width="564" height="450" alt="Herramienta de monitorización e instrumentalización JConsole" title="Herramienta de monitorización e instrumentalización JConsole" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole_hu_d9d40ac9775af82e.webp" data-gallery="" title="Herramienta de monitorización e instrumentalización JConsole"><img src="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole_hu_7f3136656265b454.webp" width="564" height="450" alt="Herramienta de monitorización e instrumentalización JConsole" title="Herramienta de monitorización e instrumentalización JConsole" class="" loading="lazy"></a></p>
 <figcaption>Herramienta de monitorización e instrumentalización JConsole</figcaption>
 </figure>
 </div>
 <p>Realizada la conexión al agente se muestran las propiedades y operaciones de los MBean registrados con la posibilidad de cambiar sus valores, invocar las operaciones y obtener sus resultados. La propia plataforma Java proporciona numerosos <em>MBean</em> como se muestra en el árbol lateral de la imagen.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole-mbean_hu1649066233070233720.webp" data-gallery="" title="Instrumentalización de un MBean en JConsole"><img src="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole-mbean_hu5529045767328544790.webp" width="300" height="239" alt="Instrumentalización de un MBean en JConsole" title="Instrumentalización de un MBean en JConsole" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/visualvm-mbean_hu4691295266785757713.webp" data-gallery="" title="Instrumentalización de un MBean en VisualVM"><img src="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/visualvm-mbean_hu6270527902165992199.webp" width="300" height="179" alt="Instrumentalización de un MBean en VisualVM" title="Instrumentalización de un MBean en VisualVM" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole-mbean_hu_3d838f6eb3302787.webp" data-gallery="" title="Instrumentalización de un MBean en JConsole"><img src="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole-mbean_hu_3b38129d972897b6.webp" width="300" height="239" alt="Instrumentalización de un MBean en JConsole" title="Instrumentalización de un MBean en JConsole" class="" loading="lazy"></a>
+<a href="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/visualvm-mbean_hu_ac141b0bf19d4365.webp" data-gallery="" title="Instrumentalización de un MBean en VisualVM"><img src="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/visualvm-mbean_hu_6259bcaee70615fe.webp" width="300" height="179" alt="Instrumentalización de un MBean en VisualVM" title="Instrumentalización de un MBean en VisualVM" class="" loading="lazy"></a></p>
 <figcaption>Instrumentalización de un MBean en JConsole y VisualVM</figcaption>
 </figure>
 </div>
 <p>En el caso de que la aplicación esté contenida dentro de una aplicación web y desplegada en un servidor de aplicaciones como <a href="https://tomcat.apache.org/">Tomcat</a> o <a href="https://wildfly.org/">WildFly</a> registrar un <em>MBean</em> es similar al caso del ejemplo de la aplicación Java y posteriormente administrados con la herramienta JConsole.</p>
 <h2 id="ejemplo-de-jmx-con-spring-boot">Ejemplo de JMX con Spring Boot</h2>
-<p>El ejemplo anterior muestra como usar JMX en una aplicación Java, Spring ofrece soporte para implementar JMX en aplicaciones que usen este <em>framework</em> con las anotaciones <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jmx/export/annotation/ManagedResource.html">@ManagedResource</a>, <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jmx/export/metadata/ManagedAttribute.html">@ManagedAttribute</a>, <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jmx/export/annotation/ManagedOperation.html">@ManagedOperation</a>, <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jmx/export/annotation/ManagedOperationParameters.html">@ManagedOperationParameters</a>, (<a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jmx/export/annotation/ManagedOperationParameter.html">@ManagedOperationParameter</a>) y <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/EnableMBeanExport.html">@EnableMBeanExport</a>.</p>
+<p>El ejemplo anterior muestra como usar JMX en una aplicación Java, Spring ofrece soporte para implementar JMX en aplicaciones que usen este <em>framework</em> con las anotaciones <a href="#ZgotmplZ">@ManagedResource</a>, <a href="#ZgotmplZ">@ManagedAttribute</a>, <a href="#ZgotmplZ">@ManagedOperation</a>, <a href="#ZgotmplZ">@ManagedOperationParameters</a>, (<a href="#ZgotmplZ">@ManagedOperationParameter</a>) y <a href="#ZgotmplZ">@EnableMBeanExport</a>.</p>
 <p>El mismo <em>MBean</em> de la aplicación Java implementado con spring es el siguiente, lo único que cambia son las anotaciones proporcionadas para que Spring descubra de forma automática los <em>MBean</em> disponibles y los registre sin necesidad de hacerlo de forma explícita.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.jmx.mbean</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">HelloMBean</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">void</span><span class="w"> </span><span class="nf">sayHello</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">String</span><span class="w"> </span><span class="nf">getName</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -434,15 +434,15 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole-remote_hu5574959656019938538.webp" data-gallery="" title="Acceso remoto a la herramienta de monitorización e instrumentalización JConsole"><img src="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole-remote_hu832350066454939049.webp" width="536" height="450" alt="Acceso remoto a la herramienta de monitorización e instrumentalización JConsole" title="Acceso remoto a la herramienta de monitorización e instrumentalización JConsole" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole-remote_hu_4bed6c327016959b.webp" data-gallery="" title="Acceso remoto a la herramienta de monitorización e instrumentalización JConsole"><img src="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole-remote_hu_5b42f1d90960085d.webp" width="536" height="450" alt="Acceso remoto a la herramienta de monitorización e instrumentalización JConsole" title="Acceso remoto a la herramienta de monitorización e instrumentalización JConsole" class="" loading="lazy"></a></p>
 <figcaption>Acceso remoto a la herramienta de monitorización e instrumentalización JConsole</figcaption>
 </figure>
 </div>
 <p>El acceso remoto también es posible mediante una <a href="https://docs.oracle.com/javase/tutorial/jmx/remote/custom.html">aplicación Java que actúe como cliente del servidor <em>MBean</em></a>.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaJMX">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaJMX">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew run</code></p>
 </div>
 <div class="reference">
     Referencia:<br>
@@ -541,7 +541,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/09/novedades-de-java-13/">
-                <img src="/blog-bitix/2019/09/novedades-de-java-13/images/java-13_hu12208564887272785554.webp" width="326" height="125" alt="Novedades de Java 13" title="Novedades de Java 13" class="" loading="lazy">
+                <img src="/blog-bitix/2019/09/novedades-de-java-13/images/java-13_hu_d03bd780fc5bfcb8.webp" width="326" height="125" alt="Novedades de Java 13" title="Novedades de Java 13" class="" loading="lazy">
                 <h3>Novedades de Java 13</h3>
                 </a>
                 
@@ -555,7 +555,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/09/libreria-editor-de-markdown-javascript-y-procesador-de-markdown-para-generar-html-con-java/">
-                <img src="/blog-bitix/2019/09/libreria-editor-de-markdown-javascript-y-procesador-de-markdown-para-generar-html-con-java/images/editor-md_hu10051649768357703712.webp" width="326" height="125" alt="Librería editor de markdown JavaScript y procesador de markdown para generar HTML con Java" title="Librería editor de markdown JavaScript y procesador de markdown para generar HTML con Java" class="" loading="lazy">
+                <img src="/blog-bitix/2019/09/libreria-editor-de-markdown-javascript-y-procesador-de-markdown-para-generar-html-con-java/images/editor-md_hu_f671074decbef89b.webp" width="326" height="125" alt="Librería editor de markdown JavaScript y procesador de markdown para generar HTML con Java" title="Librería editor de markdown JavaScript y procesador de markdown para generar HTML con Java" class="" loading="lazy">
                 <h3>Librería editor de markdown JavaScript y procesador de markdown para generar HTML con Java</h3>
                 </a>
                 

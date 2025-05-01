@@ -80,7 +80,7 @@ Es rara la aplicación que trabajado con bases de datos no maneje fechas, quizá
     "dateModified": "2016-08-14T02:30:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "834",
+    "wordCount": "836",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -97,10 +97,10 @@ Es rara la aplicación que trabajado con bases de datos no maneje fechas, quizá
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/postgresql.svg" width="200" height="206" alt="PostgreSQL" title="PostgreSQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/postgresql.svg" width="200" height="206" alt="PostgreSQL" title="PostgreSQL" class="" loading="false"></p>
 </div>
 <p>Es rara la aplicación que trabajado con bases de datos no maneje fechas, quizá es menos habitual aplicaciones que trabajan con fechas y diferentes horarias, esto es haciendo alguna conversión entre zonas horarias. Si se nos presenta el caso de trabajar con fechas y diferentes zonas horarias haremos bien en hacer que las fechas que guardemos en la base de datos estén en la misma zona horaria al menos y convertirla posteriormente a la zona horaria que necesite la aplicación. <abbr title="Coordinated Universal Time">UTC</abbr> además de ser una zona horaria neutra evita el problema de que algunas bases de datos o lenguajes de programación para los campos fecha no guarda las zonas horarias con lo que puede ocurrirnos que guardemos la fecha en una zona horaria y la recuperemos en otra produciendo posiblemente incoherencias en las fechas por una hora.</p>"
 }
@@ -317,10 +317,10 @@ Es rara la aplicación que trabajado con bases de datos no maneje fechas, quizá
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/postgresql.svg" width="200" height="206" alt="PostgreSQL" title="PostgreSQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/postgresql.svg" width="200" height="206" alt="PostgreSQL" title="PostgreSQL" class="" loading="false"></p>
 </div>
 <p>Es rara la aplicación que trabajado con bases de datos no maneje fechas, quizá es menos habitual aplicaciones que trabajan con fechas y diferentes horarias, esto es haciendo alguna conversión entre zonas horarias. Si se nos presenta el caso de trabajar con fechas y diferentes zonas horarias haremos bien en hacer que las fechas que guardemos en la base de datos estén en la misma zona horaria al menos y convertirla posteriormente a la zona horaria que necesite la aplicación. <abbr title="Coordinated Universal Time">UTC</abbr> además de ser una zona horaria neutra evita el problema de que algunas bases de datos o lenguajes de programación para los campos fecha no guarda las zonas horarias con lo que puede ocurrirnos que guardemos la fecha en una zona horaria y la recuperemos en otra produciendo posiblemente incoherencias en las fechas por una hora.</p>
 <h2 id="por-qué-elegir-utc">¿Por qué elegir UTC?</h2>
@@ -358,9 +358,9 @@ Es rara la aplicación que trabajado con bases de datos no maneje fechas, quizá
 </div>
 <p>Trabajar con fechas no es simple, es muy curioso y no debemos hacer <a href="http://infiniteundo.com/post/25509354022/more-falsehoods-programmers-believe-about-time">suposiciones sobre las fechas que son incorrectas</a> en las aplicaciones.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/DateTimeDatabase">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>cd misc/docker/postgresql/, docker-compose up, ./gradlew run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/DateTimeDatabase">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>cd misc/docker/postgresql/, docker-compose up, ./gradlew run</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

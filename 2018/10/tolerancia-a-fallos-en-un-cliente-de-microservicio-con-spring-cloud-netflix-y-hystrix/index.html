@@ -83,7 +83,7 @@ Un patrón o técnica que se suele emplear es el de Circuit Breaker, en Java y c
     "dateModified": "2019-10-10T19:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1296",
+    "wordCount": "1298",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -100,10 +100,10 @@ Un patrón o técnica que se suele emplear es el de Circuit Breaker, en Java y c
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Los microservicios son independientes unos de otros y se comunican mediante operaciones de red. Dado que las operaciones se realizan a través de un medio no confiable como la red, dada su naturaleza efímera y a que pueden fallar en los microservicios es importante que los clientes estén preparados ante posibles fallos.</p>
 <p>Un patrón o técnica que se suele emplear es el de <a href="https://www.martinfowler.com/bliki/CircuitBreaker.html">Circuit Breaker</a>, en Java y con <a href="https://spring.io/">Spring</a> se ofrece en el proyecto <a href="https://cloud.spring.io/spring-cloud-netflix/">Spring Cloud Netflix</a> mediante <a href="https://github.com/Netflix/Hystrix">Hystrix</a> y <a href="https://github.com/Netflix/Hystrix/tree/master/hystrix-contrib/hystrix-javanica">Javanica</a>. Este patrón soluciona dos problemas cuando un microservicio del que se depende falla y hace al microservicio que lo usa tolerante a fallos.</p>"
@@ -323,10 +323,10 @@ Un patrón o técnica que se suele emplear es el de Circuit Breaker, en Java y c
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Los microservicios son independientes unos de otros y se comunican mediante operaciones de red. Dado que las operaciones se realizan a través de un medio no confiable como la red, dada su naturaleza efímera y a que pueden fallar en los microservicios es importante que los clientes estén preparados ante posibles fallos.</p>
 <p>Un patrón o técnica que se suele emplear es el de <a href="https://www.martinfowler.com/bliki/CircuitBreaker.html">Circuit Breaker</a>, en Java y con <a href="https://spring.io/">Spring</a> se ofrece en el proyecto <a href="https://cloud.spring.io/spring-cloud-netflix/">Spring Cloud Netflix</a> mediante <a href="https://github.com/Netflix/Hystrix">Hystrix</a> y <a href="https://github.com/Netflix/Hystrix/tree/master/hystrix-contrib/hystrix-javanica">Javanica</a>. Este patrón soluciona dos problemas cuando un microservicio del que se depende falla y hace al microservicio que lo usa tolerante a fallos.</p>
@@ -337,15 +337,15 @@ Un patrón o técnica que se suele emplear es el de Circuit Breaker, en Java y c
 <p>En ambos casos se evita que la cadena de microservicios empiece a fallar y con ello sistema completo. El proyecto <a href="https://dzone.com/articles/resilience4j-and-sentinel-two-open-source-alternat">Hystrix ha dejado de desarrollarse de forma activa</a> tal como aparece en el propio <a href="https://github.com/Netflix/Hystrix/blob/master/README.md">README.md</a> y como alternativa se recomienda usar <a href="https://github.com/resilience4j/resilience4j">Resilience4j</a> que además está diseñado para Java 8 y la programación funcional, en el artículo <a href="https://picodotdev.github.io/blog-bitix/2019/08/implementar-tolerancia-a-fallos-con-resilience4j/">Implementar tolerancia a fallos con Resilience4j</a> muestro su implementación.</p>
 <div class="media">
 <figure>
-<p><img src="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/hystrix_hu15059213826326458292.webp" width="640" height="225" alt="Hystrix" title="Hystrix" class="&#34; " loading="lazy"></p>
+<p><img src="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/hystrix_hu_3dbd10dcb8e95552.webp" width="640" height="225" alt="Hystrix" title="Hystrix" class="" loading="lazy"></p>
 </figure>
 </div>
 <p>El patrón <em>circuit breaker</em> se denomina así ya que implementa una lógica similar a un circuito eléctrico. El circuito en su estado normal está cerrado y se realizan las llamadas al microservicio servidor. Si el microservicio servidor empieza a fallar se llama a la acción alternativa con su valor, si se supera un umbral de errores el circuito pasa a estado abierto y se dejan de hacer llamadas al microservicio servidor. Cada cierto tiempo definido se realiza una llamada al servicio servidor para comprobar su estado de forma que si responde correctamente el circuito pasa a estado cerrado nuevamente y las siguientes llamadas se realizan al microservicio servidor dejándose de utilizar la acción alternativa.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/circuit-breaker-diagram_hu14166553453451218516.webp" data-gallery="" title="Diagrama del patrón circuit breaker"><img src="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/circuit-breaker-diagram_hu2493330015521099053.webp" width="127" height="200" alt="Diagrama del patrón circuit breaker" title="Diagrama del patrón circuit breaker" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/circuit-breaker-states_hu12962881876147457275.webp" data-gallery="" title="Diagrama de estados"><img src="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/circuit-breaker-states_hu6420333351595100705.webp" width="222" height="200" alt="Diagrama de estados" title="Diagrama de estados" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/hystrix-fallback_hu10464048414273650970.webp" data-gallery="" title="Fallback del patrón circuit breaker"><img src="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/hystrix-fallback_hu17051195418804481033.webp" width="300" height="197" alt="Fallback del patrón circuit breaker" title="Fallback del patrón circuit breaker" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/circuit-breaker-diagram_hu_23f0687d164ba1c4.webp" data-gallery="" title="Diagrama del patrón circuit breaker"><img src="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/circuit-breaker-diagram_hu_471f751e654c285f.webp" width="127" height="200" alt="Diagrama del patrón circuit breaker" title="Diagrama del patrón circuit breaker" class="" loading="lazy"></a>
+<a href="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/circuit-breaker-states_hu_7ca8f2fce375eee0.webp" data-gallery="" title="Diagrama de estados"><img src="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/circuit-breaker-states_hu_d3e163b806345412.webp" width="222" height="200" alt="Diagrama de estados" title="Diagrama de estados" class="" loading="lazy"></a>
+<a href="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/hystrix-fallback_hu_176abff92b248ccd.webp" data-gallery="" title="Fallback del patrón circuit breaker"><img src="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/hystrix-fallback_hu_597d8986caf23102.webp" width="300" height="197" alt="Fallback del patrón circuit breaker" title="Fallback del patrón circuit breaker" class="" loading="lazy"></a></p>
 <figcaption>Diagrama del patrón circuit breaker, de estados y método fallback</figcaption>
 </figure>
 </div>
@@ -386,8 +386,8 @@ Un patrón o técnica que se suele emplear es el de Circuit Breaker, en Java y c
 <p>Para monitorizar en tiempo real el estado del sistema y de los circuitos se ofrece un <em>dashboard</em> en el que visualizan el número de peticiones que se están realizando, las fallidas, el estado de los circuitos, las que fallan por <em>timeout</em> o las que fallan con error. Para tener acceso a esta página hay que incluir la dependencia <em>org.springframework.cloud:spring-cloud-starter-netflix-hystrix-dashboard</em>. La página <em>dashboard</em> está disponible en la dirección <em>http://localhost:8085/hystrix</em>. Este <em>dashboard</em> que ofrece Hystrix es muy básico y con un diseño mejorable, se pueden <a href="https://picodotdev.github.io/blog-bitix/2018/12/exponer-las-metricas-de-hystrix-en-grafana-con-prometheus-de-una-aplicacion-spring-boot/">exponer las métricas de Hystrix en Grafana con Prometheus</a> para tener un panel con exactamente la información que se desee en una gráficas mucho más vistosas además de observar los datos exactamente en el periodo de tiempo deseado.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/circuit-breaker-closed_hu8228900220447870936.webp" data-gallery="" title="Circuit breaker cerrado"><img src="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/circuit-breaker-closed_hu294064745306288842.webp" width="300" height="183" alt="Circuit breaker cerrado" title="Circuit breaker cerrado" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/circuit-breaker-open_hu5524959842563985203.webp" data-gallery="" title="Circuit breaker abierto"><img src="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/circuit-breaker-open_hu549646170805653334.webp" width="300" height="183" alt="Circuit breaker abierto" title="Circuit breaker abierto" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/circuit-breaker-closed_hu_ffc17085d05ab39e.webp" data-gallery="" title="Circuit breaker cerrado"><img src="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/circuit-breaker-closed_hu_20f361fcec4e9ca6.webp" width="300" height="183" alt="Circuit breaker cerrado" title="Circuit breaker cerrado" class="" loading="lazy"></a>
+<a href="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/circuit-breaker-open_hu_c4f35f8e0080e521.webp" data-gallery="" title="Circuit breaker abierto"><img src="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/images/circuit-breaker-open_hu_14b287df48f9ddb4.webp" width="300" height="183" alt="Circuit breaker abierto" title="Circuit breaker abierto" class="" loading="lazy"></a></p>
 <figcaption>Estados del circuit breaker</figcaption>
 </figure>
 </div>
@@ -398,9 +398,9 @@ Un patrón o técnica que se suele emplear es el de Circuit Breaker, en Java y c
     </div>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloud">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradle-run.sh</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloud">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradle-run.sh</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

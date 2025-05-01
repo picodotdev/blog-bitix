@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="Novedades y nuevas características de Java 17">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/images/java-17_hu8065823155765499909.jpg">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/images/java-17_hu_72bf1836a6f1c238.jpg">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="La versión Java 17 sucede a Java 11 como versión LTS, por ello es una versión más importante que las no LTS anteriores. Incorpora todas las mejoras incluidas en todas las no LTS previas más otras adicionales dede Java 16 publicada seis meses antes. Como versión LTS ofrece un soporte de correcciones de errores, fallos y alertas de seguridad  por un periodo de cinco años hasta septiembre de 2026 más un periodo adicional de tres años hasta 2029. La versión 6 del framework de Spring y Spring Boot 3 se tendrán como requisito mínimo Java 17 y Jakarta 9. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/images/java-17_hu8065823155765499909.jpg">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/images/java-17_hu_72bf1836a6f1c238.jpg">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Novedades y nuevas características de Java 17">
@@ -55,7 +55,7 @@
     "headline": "Novedades y nuevas características de Java 17",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/images/java-17_hu8065823155765499909.jpg"
+        "url": "https://picodotdev.github.io/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/images/java-17_hu_72bf1836a6f1c238.jpg"
         
       },
     "datePublished": "2021-09-16T20:00:00+02:00",
@@ -244,7 +244,7 @@
     
     <div class="row page-header">
       <div class="col-12">
-        <img src="/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/images/java-17_hu13224158759156490442.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+        <img src="/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/images/java-17_hu_329b6a9fa24ed8f5.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
       </div>
     </div>
     
@@ -311,7 +311,7 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>El ciclo de publicación de una nueva versión de Java cada seis meses está siendo un éxito en la evolución del lenguaje, algunas características no tienen un gran impacto en la plataforma o el lenguaje pero otras sí suponen un gran mejora como las  lambdas de Java 8, los módulos de Java 9, inferencia de tipos de Java 10, Java 11 como primera versión LTS con soporte a largo plazo, expresiones <em>switch</em> de Java 12 en vista previa, bloques de texto de Java 13 en vista previa, excepciones <em>NullPointerException</em> más útiles y <em>Records</em> de Java 14, <em>Sealed Classes</em>  de Java 15 y encapsulación más fuerte de clases internas del JDK en Java 16 por mencionar simplemente una característica destacada de cada una de ellas.</p>
 <p>Java 17 al ser una versión LTS es más importante que las versiones no LTS anteriores. Las versiones LTS son más atractivas para ciertas organizaciones por sus periodos de soporte extendidos.</p>
@@ -322,21 +322,21 @@
       <ol>
         <li><a href="#restaurar-la-semántica-estricta-de-coma-flotante">Restaurar la semántica estricta de coma flotante</a></li>
         <li><a href="#generadores-de-números-pseudo-aleatorios-mejorado">Generadores de números pseudo-aleatorios mejorado</a></li>
-        <li><a href="#nuevo-_pipeline_-de-_renderizado_-para-macos">Nuevo <em>pipeline</em> de <em>renderizado</em> para macOS</a></li>
+        <li><a href="#nuevo-pipeline-de-renderizado-para-macos">Nuevo <em>pipeline</em> de <em>renderizado</em> para macOS</a></li>
         <li><a href="#portado-a-macosaarch64">Portado a macOS/AArch64</a></li>
         <li><a href="#marcado-como-obsoleto-para-eliminación-la-applet-api">Marcado como obsoleto para eliminación la Applet API</a></li>
         <li><a href="#encapsulación-fuerte-de-las-clases-internas-del-jdk">Encapsulación fuerte de las clases internas del JDK</a></li>
         <li><a href="#eliminación-de-rmi-activation">Eliminación de RMI Activation</a></li>
-        <li><a href="#clases-_sealed_">Clases <em>sealed</em></a></li>
+        <li><a href="#clases-sealed">Clases <em>sealed</em></a></li>
         <li><a href="#eliminar-el-compilador-experimental-aot-y-jit">Eliminar el compilador experimental AOT y JIT</a></li>
-        <li><a href="#marcado-como-obsoleto-para-eliminación-el-_security-manager_">Marcado como obsoleto para eliminación el <em>Security Manager</em></a></li>
+        <li><a href="#marcado-como-obsoleto-para-eliminación-el-security-manager">Marcado como obsoleto para eliminación el <em>Security Manager</em></a></li>
         <li><a href="#filtros-de-deserialización-específicos-para-cada-contexto">Filtros de deserialización específicos para cada contexto</a></li>
       </ol>
     </li>
     <li><a href="#nuevas-características-en-vista-previa">Nuevas características en vista previa</a>
       <ol>
-        <li><a href="#_pattern-matching_-para-los-_switch_"><em>Pattern Matching</em> para los <em>switch</em></a></li>
-        <li><a href="#_foreign-function_--_memory_-api"><em>Foreign Function</em> &amp; <em>Memory</em> API</a></li>
+        <li><a href="#pattern-matching-para-los-switch"><em>Pattern Matching</em> para los <em>switch</em></a></li>
+        <li><a href="#foreign-function--memory-api"><em>Foreign Function</em> &amp; <em>Memory</em> API</a></li>
         <li><a href="#vector-api">Vector API</a></li>
         <li><a href="#adelante-más-rápido">Adelante más rápido</a></li>
       </ol>
@@ -353,7 +353,7 @@
 <li><a href="https://openjdk.java.net/projects/jdk/17/">Características de Java 17</a></li>
 <li><a href="https://www.oracle.com/java/technologies/javase/17u-relnotes.html">Notas de publicación de Java 17</a></li>
 <li><a href="https://docs.oracle.com/en/java/javase/17/">Documentación de Java 17</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/index.html">Documentación Javadoc de Java 17</a></li>
+<li><a href="#ZgotmplZ">Documentación Javadoc de Java 17</a></li>
 <li><a href="https://blogs.oracle.com/javamagazine/java-jdk-17-generally-available">JavaMagazine: Java 17 is here: 14 JEPs with exciting new language and JVM features</a></li>
 </ul>
 <p><a href="https://spring.io/">Spring</a> ha anunciado que la versión 6 de este <em>framework</em> junto a <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> 3 ampliamente usados se basarán en Java 17 y <a href="https://jakarta.ee/">Jakarta EE</a> 9. Estas versiones serán la base mínima requerida de la siguiente generación de aplicaciones Java.</p>
@@ -400,14 +400,14 @@
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2021/07/formas-de-generar-un-numero-aleatorio-en-un-rango-con-java/">Formas de generar un número aleatorio en un rango con Java</a></li>
 </ul>
-<p>Se proporciona una nueva interfaz <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/random/RandomGenerator.html">RandomGenerator</a> que proporciona una API uniforme para los generadores de números aleatorios existentes. <em>RandomGenerator</em> proporciona métodos para <em>ints</em>, <em>longs</em>, y <em>doubles</em> con sus variaciones de parámetros. También se proporciona la factoría <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/random/RandomGeneratorFactory.html">RandomGeneratorFactory</a> para localizar y construir instancias que implementan la interfaz <em>RandomGenerator</em> usando <a href="https://picodotdev.github.io/blog-bitix/2015/09/aplicacion-java-extensible-con-la-clase-serviceloader/">la API de ServiceLoader.Provider</a> para registrar las implementaciones.</p>
+<p>Se proporciona una nueva interfaz <a href="#ZgotmplZ">RandomGenerator</a> que proporciona una API uniforme para los generadores de números aleatorios existentes. <em>RandomGenerator</em> proporciona métodos para <em>ints</em>, <em>longs</em>, y <em>doubles</em> con sus variaciones de parámetros. También se proporciona la factoría <a href="#ZgotmplZ">RandomGeneratorFactory</a> para localizar y construir instancias que implementan la interfaz <em>RandomGenerator</em> usando <a href="https://picodotdev.github.io/blog-bitix/2015/09/aplicacion-java-extensible-con-la-clase-serviceloader/">la API de ServiceLoader.Provider</a> para registrar las implementaciones.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.random.RandomGeneratorFactory</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">RandomGeneratorFactory</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&#34;Random&#34;</span><span class="p">).</span><span class="na">create</span><span class="p">().</span><span class="na">nextInt</span><span class="p">(</span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">11</span><span class="p">);</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>RandomGeneratorFactory.java</span>
     </div>
 </div>
-<h3 id="nuevo-_pipeline_-de-_renderizado_-para-macos">Nuevo <em>pipeline</em> de <em>renderizado</em> para macOS</h3>
+<h3 id="nuevo-pipeline-de-renderizado-para-macos">Nuevo <em>pipeline</em> de <em>renderizado</em> para macOS</h3>
 <p>Se implementa un <em>pipeline</em> de renderizado interno de Java 2D para macOS usando <a href="https://developer.apple.com/metal/">Apple Metal</a> como alternativa al <em>pipeline</em> existente que usa el obsoleto Apple OpenGL API estando preparado para cuando <a href="https://www.apple.com/">Apple</a> lo elimine.</p>
 <p>Las funcionalidades proporcionadas en el <em>pipeline</em> usando Apple Metal API son equivalentes a las existentes en OpenGL con un rendimiento tan bueno o mejor. Ambos <em>pipelines</em> coexistirán hasta que el <em>pipeline</em> OpenGL se considere obsoleto.</p>
 <h3 id="portado-a-macosaarch64">Portado a macOS/AArch64</h3>
@@ -428,7 +428,7 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/">Ejemplo de API REST en Java con JAX-RS y Spring Boot</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2020/08/introduccion-a-grpc-y-ejemplo-con-java/">Introducción a gRPC y ejemplo con Java</a></li>
 </ul>
-<h3 id="clases-_sealed_">Clases <em>sealed</em></h3>
+<h3 id="clases-sealed">Clases <em>sealed</em></h3>
 <p>Las clases <em>sealed</em> fueron propuestas en Java 15 en modo vista previa, en Java 16 fueron propuestas de nuevo con algunos cambios. Las clases <em>sealed</em> son incorporadas de forma final sin cambios respecto a Java 16. Las clases <em>sealed</em> permite limitar que que clases tienen permitido heredar de una clase definida como <em>sealed</em>.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">sealed</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Shape</span><span class="w"> </span><span class="n">permits</span><span class="w"> </span><span class="n">Circle</span><span class="p">,</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">,</span><span class="w"> </span><span class="n">Square</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Circle</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Shape</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Rectangle</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Shape</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Square</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Shape</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -439,7 +439,7 @@
 <h3 id="eliminar-el-compilador-experimental-aot-y-jit">Eliminar el compilador experimental AOT y JIT</h3>
 <p>Se elimina el soporte experimental de compilación <em>ahead-of-time</em> o <em>AOT</em> y el compilador <em>just-in-time</em> o JIT implementados en Java. Este compilador ha sido usado poco desde su introducción suponiendo un esfuerzo de mantenimiento significativo. Se mantiene la interfaz experimental de compilador JVM basado en Java o JVMCI para que los desarrolladores continúen construyendo externamente versiones del compilador para la compilación JIT.</p>
 <p>La herramienta <em>jaotc</em> fue incorporada en el JDK 9 de forma experimental, usa el compilador Graal que está escrito a su vez en Java. El compilador Graal fue incorporado como compilador JIT experimental en el JDK 10. Los desarrolladores que deseen usar el compilador Graal para realizar compilación AOT o JIT pueden usar <a href="https://www.graalvm.org/">GraalVM</a>.</p>
-<h3 id="marcado-como-obsoleto-para-eliminación-el-_security-manager_">Marcado como obsoleto para eliminación el <em>Security Manager</em></h3>
+<h3 id="marcado-como-obsoleto-para-eliminación-el-security-manager">Marcado como obsoleto para eliminación el <em>Security Manager</em></h3>
 <p>El <em>Security Manager</em> está presente desde la versión de Java 1.0. No ha sido la forma de añadir seguridad en el código Java en el lado cliente  desde hace muchos años y ha sido raramente usado para añadir seguridad en el código de lado del servidor. Se marca como obsoleto el <em>Security Manager</em> en consonancia con la Applet API heredada.</p>
 <p>El control de acceso se basa en el principio de menor privilegio que era viable en la reducida librería de clases de Java 1.0 pero con el rápido crecimiento de los paquetes <em>java.*</em> y <em>javax.*</em> ha originado docenas de permisos y cientos de comprobaciones de permisos en todo el JDK. Esto supone un área grande a mantener seguro.</p>
 <p>Ahora se considera que la seguridad es mejor implementarla proporcionando integridad a bajo nivel en la plataforma Java, por ejemplo fortaleciendo los límites de los módulos para prevenir acceso a detalles del JDK, y aislando el entorno de ejecución de Java completo de recursos sensibles mediante mecanismos ajenos al proceso o <em>out-of-process</em> como los contenedores y virtualización.</p>
@@ -449,7 +449,7 @@
 <p>Esto permite a las aplicaciones configurar un filtro de deserialización específico según el contexto y seleccionado dinámicamente mediante una factoría de filtros de la JVM para cada operación de deserialización.</p>
 <h2 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h2>
 <p>Además de las características anteriores se incorporan otras en modo experimental que también se pueden usar pero que podrían cambiar en el futuro.</p>
-<h3 id="_pattern-matching_-para-los-_switch_"><em>Pattern Matching</em> para los <em>switch</em></h3>
+<h3 id="pattern-matching-para-los-switch"><em>Pattern Matching</em> para los <em>switch</em></h3>
 <p>Se mejoran las sentencias y expresiones <em>switch</em> de dos formas:</p>
 <ul>
 <li>Se extienden las etiquetas <em>case</em> para incluir patrones adicionalmente a constantes.</li>
@@ -485,13 +485,13 @@
 </div>
 <p>Un patrón de protección tiene la forma <em>p &amp;&amp; (e)</em> donde <em>p</em> es un patrón y <em>e</em> es una expresión booleana, este patrón incluye la unión de todas las variables definidas en el patrón <em>p</em> y la expresión <em>e</em>. Una valor cumple con un patrón de protección si primero cumple el patrón <em>p</em> y segundo la expresión <em>e</em> se evalúa como verdadero, si el valor no cumple <em>p</em> no se evalúa la expresión <em>e</em>.</p>
 <p>Una patrón con paréntesis tiene la forma <em>(p)</em>, donde <em>p</em> es un patrón. Una patrón con paréntesis introduce las variables de patrón  que son introducidas por el subatrón <em>p</em>. Un valor cumple el patrón parametrizado <em>(p)</em> su cumple el patrón <em>p</em>.</p>
-<h3 id="_foreign-function_--_memory_-api"><em>Foreign Function</em> &amp; <em>Memory</em> API</h3>
+<h3 id="foreign-function--memory-api"><em>Foreign Function</em> &amp; <em>Memory</em> API</h3>
 <p>La <em>Foreign Function &amp; Memory API</em> o FFM API permite que los programas Java puedan interoperar con código y datos fuera del entorno de ejecución de Java, invocar eficientemente funciones externas (fuera de la JVM) y acceder de forma segura memoria externa (no gestionada por la JVM).</p>
 <p>La FFM API permite a los programa Java llamar a librerías nativas y procesar datos nativos sin la fragilidad y peligro de JNI. Esta es una revisión introducida inicialmente en Java 14 y revisada en Java 15 y 16.</p>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-de-jni-usar-codigo-en-c-desde-java/">Ejemplo de JNI, usar código en C desde Java</a></li>
 </ul>
-<p>La API en el módulo <a href="https://docs.oracle.com/en/java/javase/17/docs/api/jdk.incubator.foreign/module-summary.html">jdk.incubator.foreign</a> define varias clases e interfaces para que el código cliente en librerías puedan:</p>
+<p>La API en el módulo <a href="#ZgotmplZ">jdk.incubator.foreign</a> define varias clases e interfaces para que el código cliente en librerías puedan:</p>
 <ul>
 <li>Solicitar memoria externa.</li>
 <li>Manipular y acceder a estructuras de memoria externas.</li>

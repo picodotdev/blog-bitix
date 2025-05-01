@@ -62,7 +62,7 @@
     "dateModified": "2017-03-19T12:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1438",
+    "wordCount": "1437",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -302,7 +302,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false"></p>
 </div>
 <p>En <a href="https://picodotdev.github.io/blog-bitix/series/docker/">artículos anteriores de la serie sobre Docker</a> comentaba varias de las herramientas de <a href="https://www.docker.com/">Docker</a> como <a href="https://docs.docker.com/compose/">Docker Compose</a>, Dockerfile o <a href="https://docs.docker.com/machine/">Docker Machine</a> con ejemplos de como usarlo en local. Una de las herramientas que me quedaba por investigar era <a href="https://docs.docker.com/swarm/">Docker Swarm</a> para crear <em>clusters</em> de nodos para contenedores Docker en un entorno de producción. A partir de la versión 1.12 de Docker se han incorporado varias características a Docker para usar contenedores de forma distribuida y que a pesar de la complejidad subyacente que debe haber es realmente simple usarlo.</p>
 <p>Una de las características es el <em>networking</em> que hace transparente la comunicación en red distribuida que se hace entre los nodos y los contenedores de esos nodos. Además permite crear redes por software para que los contenedores conectados a esas redes se comuniquen de forma privada. Otra característica interesante de Docker Swarm es que se encarga de monitorizar el estado de los servicios recreando contenedores si alguno deja de funcionar. También a través del denominado <em>routing mesh</em> da igual al nodo del <em>cluster</em> por el que se acceda y da igual en que nodo esté el contenedor que Docker Swarm con esta propiedad se encargará de hacer llegar la petición al contenedor. Además, a lo que en Docker Swarm se denomina servicio se realiza balanceo de carga entre la instancias del mismo que haya en el <em>cluster</em> y al servicio se le asigna un DNS y dirección IP por el que puede ser accedido por otros servicios.</p>
@@ -329,7 +329,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/03/introduccion-y-ejemplo-de-cluster-de-contenedores-con-docker-swarm/images/maquinas-virtuales-cluster_hu9593860610646081727.webp" data-gallery="" title="Máquinas virtuales de los nodos del _cluster_ de Docker Swarm"><img src="/blog-bitix/2017/03/introduccion-y-ejemplo-de-cluster-de-contenedores-con-docker-swarm/images/maquinas-virtuales-cluster_hu3933819713487849365.webp" width="288" height="200" alt="Máquinas virtuales de los nodos del _cluster_ de Docker Swarm" title="Máquinas virtuales de los nodos del _cluster_ de Docker Swarm" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/03/introduccion-y-ejemplo-de-cluster-de-contenedores-con-docker-swarm/images/maquinas-virtuales-cluster_hu_3ea03a1bb175ed07.webp" data-gallery="" title="Máquinas virtuales de los nodos del _cluster_ de Docker Swarm"><img src="/blog-bitix/2017/03/introduccion-y-ejemplo-de-cluster-de-contenedores-con-docker-swarm/images/maquinas-virtuales-cluster_hu_bdc373bc81bb7e2d.webp" width="288" height="200" alt="Máquinas virtuales de los nodos del _cluster_ de Docker Swarm" title="Máquinas virtuales de los nodos del _cluster_ de Docker Swarm" class="" loading="lazy"></a></p>
 <figcaption>Máquinas virtuales de los nodos del cluster de Docker Swarm</figcaption>
 </figure>
 </div>
@@ -346,7 +346,7 @@
         <span>cluster-remove.sh</span>
     </div>
 </div>
-<p>Un libro que me ha gustado mucho y que recomiendo leer sobre Docker Swarm es <a href="https://amzn.to/4bomlQH" rel="sponsored">The Devops 2.1 Toolkit</a> que lo explica detalladamente y todo el libro está orientado a como usarlo en un entorno de producción. Un libro más introductorio que también he leído y que está bastante bien es <a href="https://amzn.to/48XmJ7i" rel="sponsored">Docker in Action</a>.</p>
+<p>Un libro que me ha gustado mucho y que recomiendo leer sobre Docker Swarm es <a href="https://amzn.to/4bomlQH">The Devops 2.1 Toolkit</a> que lo explica detalladamente y todo el libro está orientado a como usarlo en un entorno de producción. Un libro más introductorio que también he leído y que está bastante bien es <a href="https://amzn.to/48XmJ7i">Docker in Action</a>.</p>
 <div class="media media-amazon">
   <ul>
     <li><a href="https://amzn.to/48XTJvT" title="Docker: Up &amp; Running: Shipping Reliable Containers in Production">Docker: Up &amp; Running: Shipping Reliable Containers in Production</a></li><li><a href="https://amzn.to/48XmJ7i" title="Docker in Action">Docker in Action</a></li><li><a href="https://amzn.to/4bomlQH" title="The DevOps 2.1 Toolkit: Docker Swarm: building testing deploying and monitoring services inside Docker Swarm clusters">The DevOps 2.1 Toolkit: Docker Swarm: building testing deploying and monitoring services inside Docker Swarm clusters</a></li></ul>
@@ -367,9 +367,9 @@
 </div>
 <p>Se puede definir un conjunto de servicios como una unidad en un archivo en <em>stacks</em> de forma similar a como es posible hacer con Docker Compose cosa que mostraré en otro artículo.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/DockerSwarm">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub.</p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/DockerSwarm">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub.</p>
 </div>
 
     </div>

@@ -62,7 +62,7 @@
     "dateModified": "2016-07-02T12:30:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "894",
+    "wordCount": "896",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -306,10 +306,10 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/apache.svg" width="150" height="264" alt="Apache HTTPD" title="Apache HTTPD" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/apache.svg" width="150" height="264" alt="Apache HTTPD" title="Apache HTTPD" class="" loading="false"></p>
 </div>
 <p>Con las velocidades de transferencia que proporciona la fibra, el ADSL incluso el 4G o 3G de los móviles transmitir el contenido de una web desde el servidor al cliente ya no es el factor más determinante en el tiempo de carga de una página, lo es más la latencia de la red y el establecimiento de múltiples conexiones. Aún así hay usuarios que por una red de baja calidad o que esté saturada pueden tener tasas de transferencia bajas o puede que al usuario se le facture por la cantidad de datos que transmite. Por estos motivos aún hoy es buena idea activar en el servidor la compresión GZIP para que los datos transmitidos se compriman y reduzcan de forma significativa. La compresión GZIP es una optimización que podemos realizar para cualquier página web. Para mejorar la latencia en el establecimiento de conexiones es aconsejable <a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/">configurar HTTP/2 en el servidor web</a> para mejorar la velocidad de carga de la página.</p>
 <p>Dependiendo del servidor web la configuración que deberemos añadir será diferente, en este artículo mostraré la configuración a usar para dos de los servidores web más populares en internet, que son <a href="https://nginx.org/">Nginx</a> y <a href="https://httpd.apache.org/">Apache HTTPD</a>.</p>
@@ -332,8 +332,8 @@
 <p>Unos pocos kilobytes no son mucho para un único recurso pero si tenemos en cuenta que una página tiene varias docenas y hacemos una multiplicación por cada acceso a una página la cantidad de datos ahorrados en la transferencia es notable.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/nginx-no-gzip_hu9856770017186946159.webp" data-gallery="" title="Nginx configurado sin compresión GZIP"><img src="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/nginx-no-gzip_hu3426522845725906819.webp" width="300" height="148" alt="Nginx configurado sin compresión GZIP" title="Nginx configurado sin compresión GZIP" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/nginx-gzip_hu7069728107865253811.webp" data-gallery="" title="Nginx configurado con compresión GZIP"><img src="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/nginx-gzip_hu9890925582758710368.webp" width="300" height="148" alt="Nginx configurado con compresión GZIP" title="Nginx configurado con compresión GZIP" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/nginx-no-gzip_hu_be05b0b0f7b93f31.webp" data-gallery="" title="Nginx configurado sin compresión GZIP"><img src="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/nginx-no-gzip_hu_1d912d4d546e66b1.webp" width="300" height="148" alt="Nginx configurado sin compresión GZIP" title="Nginx configurado sin compresión GZIP" class="" loading="lazy"></a>
+<a href="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/nginx-gzip_hu_83733b9368ffd940.webp" data-gallery="" title="Nginx configurado con compresión GZIP"><img src="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/nginx-gzip_hu_6c0b101bfa03ed7.webp" width="300" height="148" alt="Nginx configurado con compresión GZIP" title="Nginx configurado con compresión GZIP" class="" loading="lazy"></a></p>
 <figcaption>Nginx configurado sin y con compresión GZIP</figcaption>
 </figure>
 </div>
@@ -354,8 +354,8 @@
 <p>Vemos una reducción en la transferencia similar a la conseguida en Nginx. En Apache el recurso a servir ha de tener cierto tamaño siendo de unos pocos bytes opta por servirlo sin comprimir ya que considerará que no producirá un ahorro significativo.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/apache-httpd-no-gzip_hu5778401316286824672.webp" data-gallery="" title="Apache HTTPD configurado sin compresión GZIP"><img src="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/apache-httpd-no-gzip_hu11191213210463276363.webp" width="300" height="156" alt="Apache HTTPD configurado sin compresión GZIP" title="Apache HTTPD configurado sin compresión GZIP" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/apache-httpd-gzip_hu11192103387725748837.webp" data-gallery="" title="Apache HTTPD configurado con compresión GZIP"><img src="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/apache-httpd-gzip_hu9318039380966768064.webp" width="300" height="156" alt="Apache HTTPD configurado con compresión GZIP" title="Apache HTTPD configurado con compresión GZIP" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/apache-httpd-no-gzip_hu_dcca2e928b3c7806.webp" data-gallery="" title="Apache HTTPD configurado sin compresión GZIP"><img src="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/apache-httpd-no-gzip_hu_1ef3c751feca60e3.webp" width="300" height="156" alt="Apache HTTPD configurado sin compresión GZIP" title="Apache HTTPD configurado sin compresión GZIP" class="" loading="lazy"></a>
+<a href="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/apache-httpd-gzip_hu_b484d6f6af277dad.webp" data-gallery="" title="Apache HTTPD configurado con compresión GZIP"><img src="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/apache-httpd-gzip_hu_19b4842cc3fa68c2.webp" width="300" height="156" alt="Apache HTTPD configurado con compresión GZIP" title="Apache HTTPD configurado con compresión GZIP" class="" loading="lazy"></a></p>
 <figcaption>Apache HTTPD configurado sin y con compresión GZIP</figcaption>
 </figure>
 </div>
@@ -369,9 +369,9 @@
 </ul>
 <p>Estas funcionalidades las puedes consultar en el resto de artículos de la <a href="https://picodotdev.github.io/blog-bitix/series/web/">serie web</a>.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/WebServerCompresionGzip">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./docker-nginx.sh o ./docker-httpd.sh</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/WebServerCompresionGzip">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./docker-nginx.sh o ./docker-httpd.sh</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

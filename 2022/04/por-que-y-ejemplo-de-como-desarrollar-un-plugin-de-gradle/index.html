@@ -62,7 +62,7 @@
     "dateModified": "2022-04-07T19:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "2676",
+    "wordCount": "2678",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -305,29 +305,29 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/gradle.svg" width="200" height="165" alt="Gradle" title="Gradle" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/gradle.svg" width="200" height="165" alt="Gradle" title="Gradle" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p><a href="https://gradle.org/">Gradle</a> es una herramienta de construcción y gestión del ciclo de vida de un proyecto principalmente usando en proyectos Java. Realiza importantes tareas como la descarga y gestión de las dependencias y resolución de conflictos entre las diferentes versiones que necesite una aplicación, tareas importantes que ni <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">el sistema de módulos de Java</a> proporciona. Permite ejecutar de forma sencilla la aplicación o las pruebas unitarias de código entre otras muchas tareas que pueden ser automatizadas como pruebas estáticas de código y generación de artefactos además de ser suficientemente flexible para adaptarse a las necesidades que haya en un proyecto.</p>
 <p>Por todas estas importantes tareas que realiza Gradle es una herramienta imprescindible en cualquier cualquier proyecto Java. Su alternativa más usada es <a href="https://maven.apache.org/">Maven</a> que tiene un modelo declarativo y basado en XML con unos archivos más verbosos. Ambas herramientas se consideran ya maduras generalmente equivalentes para la mayoría de funcionalidades más comunes. Dado que los archivos de configuración de Gradle son menos verbosos, más legibles y fáciles de editar que el XML es la herramienta elegida como herramienta de construcción para muchos proyectos.</p>
 <p>Cuando la funcionalidad ofrecida por Gradle no es suficiente, no existe un <em>plugin</em> de un tercero o no está adaptado a las necesidades de un proyecto u organización al igual que otros han desarrollado sus propios <em>plugins</em> cualquiera puede desarrolalr <em>plugins</em> con la interfaz que ofrece Gradle para su desarrollo y extender su funcionalidad.</p>
 <div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
-    <li><a href="#por-qué-desarrollar-un-_plugin_-propio-de-gradle">Por qué desarrollar un <em>plugin</em> propio de Gradle</a></li>
+    <li><a href="#por-qué-desarrollar-un-plugin-propio-de-gradle">Por qué desarrollar un <em>plugin</em> propio de Gradle</a></li>
     <li><a href="#conceptos-de-gradle">Conceptos de Gradle</a></li>
-    <li><a href="#ejemplo-de-_plugin_-para-gradle">Ejemplo de <em>plugin</em> para Gradle</a>
+    <li><a href="#ejemplo-de-plugin-para-gradle">Ejemplo de <em>plugin</em> para Gradle</a>
       <ol>
-        <li><a href="#crear-un-_plugin_-de-gradle">Crear un <em>plugin</em> de Gradle</a></li>
-        <li><a href="#aplicar-el-_plugin_-de-gradle-a-un-proyecto">Aplicar el <em>plugin</em> de Gradle a un proyecto</a></li>
+        <li><a href="#crear-un-plugin-de-gradle">Crear un <em>plugin</em> de Gradle</a></li>
+        <li><a href="#aplicar-el-plugin-de-gradle-a-un-proyecto">Aplicar el <em>plugin</em> de Gradle a un proyecto</a></li>
       </ol>
     </li>
   </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h2 id="por-qué-desarrollar-un-_plugin_-propio-de-gradle">Por qué desarrollar un <em>plugin</em> propio de Gradle</h2>
+<h2 id="por-qué-desarrollar-un-plugin-propio-de-gradle">Por qué desarrollar un <em>plugin</em> propio de Gradle</h2>
 <p>Es seguro que en una empresa a lo largo del tiempo esta desarrolle varios proyectos, siendo varios una cantidad de unas pocas decenas a cientos dependiendo del tamaño de la organización. Con múltiples proyectos por motivos de mantenimiento el copiar y pegar código entre proyectos no es una opción viable con lo que también seguro que surge la necesidad de reutilizar código propio de la organización entre los diferentes proyectos tal y como se reutiliza código de otras librerías como <a href="https://spring.io/">Spring</a>, <a href="https://hibernate.org/">Hibernate</a> y otra multitud de librerías desarrolladas por terceros. La forma de reutilizar código en Java es a través de librerías que se publican en un repositorio de Maven igual que cualquier otra librería de terceros.</p>
 <p>También es seguro que con múltiples proyectos surge la necesidad de reutilizar código entre múltiples proyectos incluso en la herramienta de construcción. La forma que ofrece Grade de reutilizar código es a través de <em>plugins</em>. En el caso de la herramienta de construcción un <em>plugin</em> permite aplicar a todos los proyectos de forma sencilla, homogénea, mantenible y sin copiar y pegar elementos comunes considerados un estándar en la organización como comprobaciones estáticas de código con <a href="https://pmd.github.io/">PMD</a>, <a href="https://checkstyle.sourceforge.net/">Checkstyle</a> y <a href="https://spotbugs.github.io/">SpotBugs</a> entre otras muchas cosas propias de una organización. Muchos terceros publican <em>plugins</em> que cualquiera puede aplicar a un proyecto si este <em>plugin</em> ofrece la funcionalidad que necesita y si no existe ninguno también es posible desarrollar uno propio ajustado a las necesidades propias.</p>
 <p>Gradle ofrece un sistema muy flexible y extensible para desarrollar, publicar y reutilizar <em>plugins</em>. En su documentación hay varias páginas que explican cómo desarrollar un <em>plugin</em>, y otros muchos artículos incluido el presente.</p>
@@ -344,11 +344,11 @@
 <p>Gradle define varios conceptos propios para la configuración y ejecución. La configuración permite cambiar el comportamiento o adaptarlo a las necesidades propias. La configuración se definen en lo que Gradle denomina extensiones que son simplemente objetos de datos en los que Gradle permite al usuario introducir datos y que en el archivo de construcción se manifiestan como bloques de configuración con propiedades, las tareas al ejecutarse obtienen las extensiones y los datos configurados en ellas, en función de los datos las tareas varían su comportamiento.</p>
 <p>Los <em>plugins</em> a través de la API que ofrece Gradle pueden realizar cualquier acción que permita la API como por ejemplo aplicar nuevos <em>plugins</em> al proyecto, definir objetos de extensiones, definir nuevas tareas o cambiar el comportamiento de tareas existentes. Con estas funcionalidades a disposición de cualquiera es posible crear un <em>plugin</em> de Gradle en el que encapsular cualquier funcionalidad relativa al ciclo de vida del proyecto, aplicarla y utilizarla en cualesquiera proyectos.</p>
 <p>Una vez creado el <em>plugin</em> este se publica y comparte en un repositorio de Maven del que los proyectos que lo quieran usar simplemente han de incluir la URL del repositorio y la referencia al <em>plugin</em>.</p>
-<h2 id="ejemplo-de-_plugin_-para-gradle">Ejemplo de <em>plugin</em> para Gradle</h2>
+<h2 id="ejemplo-de-plugin-para-gradle">Ejemplo de <em>plugin</em> para Gradle</h2>
 <p>Lo que hace este ejemplo es mediante código aplicar cambios a través de la clase <em>Project</em> que representa al proyecto de Gradle. A través de esta clase se añaden nuevos <em>plugins</em>, se configuran las extensiones y las tareas para aplicar la funcionalidad deseada en el <em>plugin</em>.</p>
 <p>El ejemplo añade los <em>plugins</em> y configura sus extensiones para realizar comprobaciones estáticas de código a través de las herramientas PMD, Checkstyle, SpotBugs y sus <em>plugins</em> para Gradle. Además, la funcionalidad del <em>plugin</em> es generar un archivo con información de la versión del artefacto incluyendo su versión, fecha de construcción, <em>hash</em> del <em>commit</em> y número de <em>build</em> para conocer esta información del artefacto.</p>
 <p>Incluir información variable en el artefacto que es diferente en función de la fecha de ejecución hace que la generación no sea reproducible, esto es, no genere exactamente el mismo binario dado que su contenido es diferente con cada <em>build</em> aunque el código no haya cambiado y solo lo haya hecho un archivo de configuración y únicamente ligeramente su contenido. Que la generación de los artefactos sean reproducibles tiene el beneficio de que el artefacto generado sea auditable por motivos de seguridad y es posible que esté libre de modificaciones diferentes del código empleado para la construcción.</p>
-<h3 id="crear-un-_plugin_-de-gradle">Crear un <em>plugin</em> de Gradle</h3>
+<h3 id="crear-un-plugin-de-gradle">Crear un <em>plugin</em> de Gradle</h3>
 <p>Hay varias formas de desarrollar un <em>plugin</em> de Gradle, se puede desarrollar dentro de un proyecto existente o como un proyecto independiente, Gradle ofrece un comando para disponer de la estructura básica de un proyecto para el <em>plugin</em> rápidamente y de forma sencilla al igual que se realiza para disponer de una aplicación normal. En el archivo de construcción del <em>plugin</em> que genera Gradle incluye un <em>plugin</em> propio de Gradle necesario para desarrollar <em>plugins</em> de Gradle, <em>java-gradle-plugin</em>.</p>
 <p>Los <em>plugins</em> de Gradle se crean proporcionando una implementación de la interfaz <a href="https://docs.gradle.org/current/javadoc/org/gradle/api/Plugin.html">Plugin</a>, esta clase ofrece el método <em>apply</em> que Gradle invoca para que el <em>plugin</em> modifique el proyecto a través de la instancia de <a href="https://docs.gradle.org/current/javadoc/org/gradle/api/Project.html">Project</a> que lo representa y se proporciona como argumento del método. La clase <em>Project</em> ofrece métodos para añadir nuevos <em>plugins</em> al proyecto, obtener los objetos que contienen los datos de las extensiones, permite añadir o modificar tareas existentes y crear dependencias entre las tareas. En el siguiente código se observan estas modificaciones en el proyecto en el <em>plugin</em> del ejemplo.</p>
 <p>Dado que el <em>plugin</em> de ejemplo configura otros <em>plugins</em> existentes necesita de las clases de los <em>plugins</em> y de sus extensiones de modo que han de incluirse como una dependencia del <em>plugin</em> desarrollado en el archivo de construcción del <em>plugin</em>. El <em>plugin</em> también puede proporcionar sus propias clases de extensiones.</p>
@@ -384,7 +384,7 @@
     </div>
 </div>
 <p>También es posible realizar teses unitarios y funcionales sobre el <em>plugin</em>, al utilizar la tarea de creación del proyecto del <em>plugin</em> Gradle crea unos ejemplos en los basarse para crear más.</p>
-<h3 id="aplicar-el-_plugin_-de-gradle-a-un-proyecto">Aplicar el <em>plugin</em> de Gradle a un proyecto</h3>
+<h3 id="aplicar-el-plugin-de-gradle-a-un-proyecto">Aplicar el <em>plugin</em> de Gradle a un proyecto</h3>
 <p>Una vez el <em>plugin</em> está en el repositorio de Maven usar el <em>plugin</em> y aplicarlo a un proyecto es exactamente igual que cualquier otro <em>plugin</em> de Gradle, basta incluirlo en la sección <em>plugins</em> con su identificador y su versión. Una vez aplicado el <em>plugin</em> como este añade otros <em>plugins</em> al ejecutar la tareas <em>tasks</em> que muestra las tareas existentes en el proyecto se observa que aunque los <em>plugins</em> de PMD, Checkstyle, SpotBugs han incluido sus tareas en el proyecto aunque no se hayan aplicado de forma explícita sino de forma transitiva a través del <em>plugin</em> propio.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ./gradlew tasks&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -437,9 +437,9 @@
     </div>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/GradlePlugin">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew build</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/GradlePlugin">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew build</code></p>
 </div>
 
     </div>
@@ -536,7 +536,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/">
-                <img src="/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu4366793428421493849.webp" width="326" height="125" alt="Analizar y detectar fallos de seguridad en las dependencias de Java" title="Analizar y detectar fallos de seguridad en las dependencias de Java" class="" loading="lazy">
+                <img src="/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu_4ada8614feda817b.webp" width="326" height="125" alt="Analizar y detectar fallos de seguridad en las dependencias de Java" title="Analizar y detectar fallos de seguridad en las dependencias de Java" class="" loading="lazy">
                 <h3>Analizar y detectar fallos de seguridad en las dependencias de Java</h3>
                 </a>
                 

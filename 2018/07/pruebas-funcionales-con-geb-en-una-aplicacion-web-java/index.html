@@ -80,7 +80,7 @@ Las pruebas automatizados permiten comprobar que una aplicación se comporta de 
     "dateModified": "2018-07-06T12:30:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "863",
+    "wordCount": "865",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -97,10 +97,10 @@ Las pruebas automatizados permiten comprobar que una aplicación se comporta de 
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/geb.webp" width="350" height="119" alt="Geb" title="Geb" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/geb.webp" width="350" height="119" alt="Geb" title="Geb" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Las pruebas automatizados permiten comprobar que una aplicación se comporta de la manera esperada en los casos probados, creando pruebas automatizadas se evita hacer las aburridas y repetitivas pruebas manuales que consumen gran cantidad de tiempo. Hay diferentes categorías de pruebas: unitarias, de integración y las funcionales. Para las pruebas unitarias y de integración en la plataforma Java unas de las más populares herramientas son <a href="https://junit.org/junit5/">JUnit</a> y <a href="https://code.google.com/p/spock/">Spock</a>, para las pruebas funcionales están <a href="https://docs.seleniumhq.org/">Selenium</a> y la herramienta que explicaré en este artículo <a href="https://gebish.org/">Geb</a> que puede usarse junto con Spock haciendo que el código de los teses sea muy descriptivo.</p>"
 }
@@ -317,10 +317,10 @@ Las pruebas automatizados permiten comprobar que una aplicación se comporta de 
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/geb.webp" width="350" height="119" alt="Geb" title="Geb" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/geb.webp" width="350" height="119" alt="Geb" title="Geb" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Las pruebas automatizados permiten comprobar que una aplicación se comporta de la manera esperada en los casos probados, creando pruebas automatizadas se evita hacer las aburridas y repetitivas pruebas manuales que consumen gran cantidad de tiempo. Hay diferentes categorías de pruebas: unitarias, de integración y las funcionales. Para las pruebas unitarias y de integración en la plataforma Java unas de las más populares herramientas son <a href="https://junit.org/junit5/">JUnit</a> y <a href="https://code.google.com/p/spock/">Spock</a>, para las pruebas funcionales están <a href="https://docs.seleniumhq.org/">Selenium</a> y la herramienta que explicaré en este artículo <a href="https://gebish.org/">Geb</a> que puede usarse junto con Spock haciendo que el código de los teses sea muy descriptivo.</p>
 <p>Geb soporta una APi similar a la que emplea <a href="https://jquery.com/">jQuery</a> para la interacción con los elementos de la página bajo pruebas. Este ejemplo prueba a ir a la página del buscador Google y que el resultado es el esperado usando alguna de las múltiples formas de <a href="http://www.gebish.org/manual/current/#navigator">interacción con el contenido de la página</a>.</p>
@@ -362,15 +362,15 @@ Las pruebas automatizados permiten comprobar que una aplicación se comporta de 
 <p>Con Gradle el informe de resultados de las pruebas se genera en <em>build/reports/tests/integrationTest</em> en una colección de páginas HTML con el siguiente aspecto. Si hubiese algún error se mostraría un mensaje descriptivo del fallo ocurrido. La prueba <em>IndexSpec</em> tarda medio minuto ya que previamente ha de iniciar el servidor de aplicaciones con la aplicación, en este caso usando <a href="https://projects.spring.io/spring-boot/">Spring Boot</a>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2018/07/pruebas-funcionales-con-geb-en-una-aplicacion-web-java/images/geb-test-results_hu4208060577869118727.webp" data-gallery="" title="Informe de pruebas de integración"><img src="/blog-bitix/2018/07/pruebas-funcionales-con-geb-en-una-aplicacion-web-java/images/geb-test-results_hu6956902672799433306.webp" width="650" height="352" alt="Informe de pruebas de integración" title="Informe de pruebas de integración" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2018/07/pruebas-funcionales-con-geb-en-una-aplicacion-web-java/images/geb-test-results_hu_fbbcc1dc4cbc2752.webp" data-gallery="" title="Informe de pruebas de integración"><img src="/blog-bitix/2018/07/pruebas-funcionales-con-geb-en-una-aplicacion-web-java/images/geb-test-results_hu_6d2bf4933d53d8b3.webp" width="650" height="352" alt="Informe de pruebas de integración" title="Informe de pruebas de integración" class="" loading="lazy"></a></p>
 <figcaption>Informe de las pruebas funcionales</figcaption>
 </figure>
 </div>
 <p>Algunas otras herramientas que son ampliamente usadas en proyectos Java son las que comentaba en el artículo <a href="https://picodotdev.github.io/blog-bitix/2015/06/nueva-visita-a-herramientas-para-un-proyecto-java/">Nueva visita a herramientas para un proyecto Java</a>.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PlugInTapestry">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew integrationTest</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PlugInTapestry">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew integrationTest</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

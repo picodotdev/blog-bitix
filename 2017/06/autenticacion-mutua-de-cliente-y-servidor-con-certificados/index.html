@@ -71,7 +71,7 @@ Los certificados no solo sirven para autenticar a un servidor o acceder solo a a
     "dateModified": "2017-06-18T23:30:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "2704",
+    "wordCount": "2706",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -88,7 +88,7 @@ Los certificados no solo sirven para autenticar a un servidor o acceder solo a a
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL" class="" loading="false"></p>
 </div>
 <p>Los certificados no solo sirven para autenticar a un servidor o acceder solo a aquellos en los que confiamos. El servidor también puede autenticar a los clientes mediante un certificado como alternativa a usar un usuario y contraseña ya sea una autenticación <em>BASIC</em> o un formulario personalizado. Al igual que en el cliente usa el certificado de la autoridad de certificación en la que confía para validar el que presenta el servidor, el servidor puede requerir que el cliente también proporcione un certificado que el servidor valida según las autoridades de certificación en las que confía, en ambos casos el servidor o cliente usan su clave privada para iniciar la conexión segura con el <em>handshake</em> del <a href="https://es.wikipedia.org/wiki/Transport_Layer_Security">protocolo TLS</a>.</p>"
 }
@@ -309,7 +309,7 @@ Los certificados no solo sirven para autenticar a un servidor o acceder solo a a
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL" class="" loading="false"></p>
 </div>
 <p>Los certificados no solo sirven para autenticar a un servidor o acceder solo a aquellos en los que confiamos. El servidor también puede autenticar a los clientes mediante un certificado como alternativa a usar un usuario y contraseña ya sea una autenticación <em>BASIC</em> o un formulario personalizado. Al igual que en el cliente usa el certificado de la autoridad de certificación en la que confía para validar el que presenta el servidor, el servidor puede requerir que el cliente también proporcione un certificado que el servidor valida según las autoridades de certificación en las que confía, en ambos casos el servidor o cliente usan su clave privada para iniciar la conexión segura con el <em>handshake</em> del <a href="https://es.wikipedia.org/wiki/Transport_Layer_Security">protocolo TLS</a>.</p>
 <p>Para el ejemplo usaré un servidor web <a href="https://nginx.org/">nginx</a> ejecutado como un contenedor de <a href="https://www.docker.com/">Docker</a> configurado de tal manera que requiere autenticación para el cliente con certificados.</p>
@@ -433,28 +433,28 @@ Los certificados no solo sirven para autenticar a un servidor o acceder solo a a
 <p>Lo anterior es usando la herramienta <em>curl</em> o un un programa en la plataforma Java, en el caso de querer realizar autenticación mutua con un navegador web como <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a> hay que instalar el certificado del cliente y si es necesario el certificado de la autoridad de certificación para que el candado indicativo de la seguridad del protocolo HTTPS se muestre en verde y no indique ningún problema de seguridad en la autenticación del servidor. En Firefox los certificados se añaden en el menú <em>Preferencias &gt; Avanzado &gt; Ver certificados</em>. En la pestaña <em>Sus certificados</em> hay que importar el certificado del cliente en formato <em>PKCS12</em> y en la pestaña <em>Autoridades</em> el certificado de la autoridad que haya firmado el certificado del servidor, con el botón <em>Importar</em> se selecciona el archivo <em>crt</em> de la autoridad. Al introducir la URL y realizar la petición Firefox solicita mediante un diálogo seleccionar el certificado a usar para realizar la autenticación en el servidor.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-bad-request_hu5192568496574608377.webp" data-gallery="" title="Autenticación mutua fallida"><img src="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-bad-request_hu7522991283786498135.webp" width="300" height="204" alt="Autenticación mutua fallida" title="Autenticación mutua fallida" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-mutual-authorized_hu13237622203243009455.webp" data-gallery="" title="Autenticación mutua correcta"><img src="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-mutual-authorized_hu18315792758353428680.webp" width="300" height="204" alt="Autenticación mutua correcta" title="Autenticación mutua correcta" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-server-cert_hu3633255622523927367.webp" data-gallery="" title="Certificado del servidor validado por la CA"><img src="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-server-cert_hu4587699596638720069.webp" width="300" height="204" alt="Certificado del servidor validado por la CA" title="Certificado del servidor validado por la CA" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-bad-request_hu_9d099b8e4aa52a2a.webp" data-gallery="" title="Autenticación mutua fallida"><img src="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-bad-request_hu_4d87fa0961c09832.webp" width="300" height="204" alt="Autenticación mutua fallida" title="Autenticación mutua fallida" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-mutual-authorized_hu_b2d23fa5de96a628.webp" data-gallery="" title="Autenticación mutua correcta"><img src="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-mutual-authorized_hu_71111ade7416b297.webp" width="300" height="204" alt="Autenticación mutua correcta" title="Autenticación mutua correcta" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-server-cert_hu_b45a8d2b312c18e4.webp" data-gallery="" title="Certificado del servidor validado por la CA"><img src="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-server-cert_hu_1214ba74558f866a.webp" width="300" height="204" alt="Certificado del servidor validado por la CA" title="Certificado del servidor validado por la CA" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-certs_hu17598472342618322496.webp" data-gallery="" title="Certificados de cliente"><img src="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-certs_hu5079366356825193461.webp" width="300" height="169" alt="Certificados de cliente" title="Certificados de cliente" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-cas_hu14508435848133277779.webp" data-gallery="" title="Certificados de la autoridades de certificación"><img src="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-cas_hu2380214594447600607.webp" width="300" height="169" alt="Certificados de la autoridades de certificación" title="Certificados de la autoridades de certificación" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-ca_hu16614654271914828673.webp" data-gallery="" title="Añadir certificado de CA"><img src="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-ca_hu15841030468204535727.webp" width="300" height="165" alt="Añadir certificado de CA" title="Añadir certificado de CA" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-certs_hu_719eb65bb60914a2.webp" data-gallery="" title="Certificados de cliente"><img src="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-certs_hu_34523a14c15a63cf.webp" width="300" height="169" alt="Certificados de cliente" title="Certificados de cliente" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-cas_hu_cf902a34c61df047.webp" data-gallery="" title="Certificados de la autoridades de certificación"><img src="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-cas_hu_503f353745b34775.webp" width="300" height="169" alt="Certificados de la autoridades de certificación" title="Certificados de la autoridades de certificación" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-ca_hu_387ad8c54b03967.webp" data-gallery="" title="Añadir certificado de CA"><img src="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-ca_hu_720633742a47078c.webp" width="300" height="165" alt="Añadir certificado de CA" title="Añadir certificado de CA" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-select-cert_hu13993049872160038960.webp" data-gallery="" title="Selección de certificado de cliente"><img src="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-select-cert_hu10579448108969322348.webp" width="265" height="250" alt="Selección de certificado de cliente" title="Selección de certificado de cliente" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-select-cert_hu_374c7a970e68345b.webp" data-gallery="" title="Selección de certificado de cliente"><img src="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/images/firefox-select-cert_hu_674ea04d72612e8c.webp" width="265" height="250" alt="Selección de certificado de cliente" title="Selección de certificado de cliente" class="" loading="lazy"></a></p>
 <figcaption>Autenticación mutua de cliente y servidor con el navegador web Firefox</figcaption>
 </figure>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/WebServerMutualCertAuth">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>docker-compose up, groovy MutualCertAuth.groovy</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/WebServerMutualCertAuth">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>docker-compose up, groovy MutualCertAuth.groovy</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

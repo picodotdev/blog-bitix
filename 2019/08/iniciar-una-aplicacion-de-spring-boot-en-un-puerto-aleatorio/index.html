@@ -62,7 +62,7 @@
     "dateModified": "2019-08-09T18:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "314",
+    "wordCount": "316",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -304,10 +304,10 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Mediante configuración se puede especificar el puerto en el que se desea iniciar una aplicación de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> que ofrece un servicio de red. El puerto por convención suele ser el <em>8080</em> y la propiedad de configuración de Spring Boot para modificarlo es <em>server.port</em>.</p>
 <div class="code">
@@ -339,9 +339,9 @@
 <p>Usando un <a href="https://picodotdev.github.io/blog-bitix/2018/09/registro-y-descubrimiento-de-servicios-con-spring-cloud-netflix/">servicio de registro y descubrimiento como Eureka</a> el servicio registra su ubicación y los servicios que quieran acceder a él obtendrán del mismo servicio de registro y descubrimiento su ubicación, de forma que para los clientes es transparente en qué puerto se inicie.</p>
 <p>Sin embargo, por algún motivo con Eureka los servicios no se registran en el puerto aleatorio en el que realmente se inician sino que se registran incorrectamente en el puerto <em>0</em>, quizá utilizando <a href="https://www.consul.io/">Consul</a> el servicio de Spring Boot si se inicie en un puerto aleatorio.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloud">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradle-run.sh</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloud">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradle-run.sh</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

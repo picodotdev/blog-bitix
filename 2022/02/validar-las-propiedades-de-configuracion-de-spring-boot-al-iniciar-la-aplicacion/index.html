@@ -62,7 +62,7 @@
     "dateModified": "2022-02-03T18:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1231",
+    "wordCount": "1233",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -305,10 +305,10 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <p>Al recibir datos los programas tienen varias opciones. Una es ser estricto, validar los datos y en caso de que no sean válidos emitir un mensaje y devolver un error impidiendo continuar. Otra opción es ser flexible para validar los datos y en caso de que sean incorrectos tomar valores por defecto para al menos realizar la tarea aunque sea en un modo degradado. La opción final es no validar los datos y dar por supuesto que son correctos.</p>
 <p>No validar los datos tiene varios problemas que se pueden manifestar en la aplicación de diferentes formas, fallando en el procesado de los datos quizá habiendo realizado parte de la tarea, ocasionando algún fallo de seguridad o generando resultados incorrectos o inconsistencias en otros datos. Cualquiera de estas formas de errores son manifestaciones que pueden tener como causa unos datos no válidos de entrada, errores cuya causa raíz pueden no ser fácilmente identificable al intentar depurar el programa y que suelen requerir muchas horas de investigación. Por ello validar los datos es una buena práctica al crear aplicaciones, sobre todo validar datos que provienen de fuentes no confiables como información introducida por el usuario o programas externos.</p>
@@ -343,7 +343,7 @@
         <span>AppConfiguration.java</span>
     </div>
 </div>
-<p>La clase al estar anotada con la anotación <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html">@Configuration</a> de Spring la identifica como una clase de configuración y con el atributo <em>prefix</em> Spring carga los valores de las variables de configuración cuyos nombres coinciden con los nombres de las propiedades. La clase incluye también la anotación <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/validation/annotation/Validated.html">@Validated</a> que indica que debe ser validada con las anotaciones de validación que incluya. Finalmente, las propiedades que necesitan validaciones se anotan con la anotación correspondiente para hacer la propiedad requerida u otro tipo de validación sobre su valor.</p>
+<p>La clase al estar anotada con la anotación <a href="#ZgotmplZ">@Configuration</a> de Spring la identifica como una clase de configuración y con el atributo <em>prefix</em> Spring carga los valores de las variables de configuración cuyos nombres coinciden con los nombres de las propiedades. La clase incluye también la anotación <a href="#ZgotmplZ">@Validated</a> que indica que debe ser validada con las anotaciones de validación que incluya. Finalmente, las propiedades que necesitan validaciones se anotan con la anotación correspondiente para hacer la propiedad requerida u otro tipo de validación sobre su valor.</p>
 <p>Realizando validaciones sobre los valores de las propiedades de configuración si la aplicación se inicia y una o varias propiedades no cumplen una validación, la aplicación en vez de continuar finaliza inmediatamente con un mensaje de error que indica que una propiedad no cumple las validaciones.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">spring</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">profiles</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;local&#34;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">app</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">numeric</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">regexp</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;0000&#34;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="l">password:</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -383,9 +383,9 @@
     </div>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBootConfigValidated">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBootConfigValidated">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew run</code></p>
 </div>
 
     </div>
@@ -440,7 +440,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/">
-                <img src="/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu4366793428421493849.webp" width="326" height="125" alt="Analizar y detectar fallos de seguridad en las dependencias de Java" title="Analizar y detectar fallos de seguridad en las dependencias de Java" class="" loading="lazy">
+                <img src="/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu_4ada8614feda817b.webp" width="326" height="125" alt="Analizar y detectar fallos de seguridad en las dependencias de Java" title="Analizar y detectar fallos de seguridad en las dependencias de Java" class="" loading="lazy">
                 <h3>Analizar y detectar fallos de seguridad en las dependencias de Java</h3>
                 </a>
                 

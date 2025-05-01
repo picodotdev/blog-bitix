@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="El proxy inverso Traefik, características y funcionalidades que ofrece">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu5743753499890336844.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu_613ce967a230192e.png">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Un proxy inverso oculta la complejidad de los servicios para los que hace de intermediario. Al situarse como intermediario el proxy inverso es capaz de proporcionar funcionalidades adicionales como balanceo de carga, limitar el número de peticiones por unidad de tiempo, duplicar peticiones o realizar la autenticación entre otras funciones. Traefik es un proxy inverso diseñado para los entornos cloud dinámicos soportando autoconfigurarción a partir de varios proveedores de registro y descubrimiento de servicios como Consul o Docker, también se integra con herramientas para la observabilidad como Prometheus para métricas y Zipkin y Elastic para trazabilidad y registro de trazas. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu5743753499890336844.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu_613ce967a230192e.png">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="El proxy inverso Traefik, características y funcionalidades que ofrece">
@@ -55,14 +55,14 @@
     "headline": "El proxy inverso Traefik, características y funcionalidades que ofrece",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu5743753499890336844.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu_613ce967a230192e.png"
         
       },
     "datePublished": "2021-09-19T13:00:00+02:00",
     "dateModified": "2021-09-19T13:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "2084",
+    "wordCount": "2086",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -244,7 +244,7 @@
     
     <div class="row page-header">
       <div class="col-12">
-        <img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu5710883118880705986.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+        <img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu_79e245f16d2efb44.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
       </div>
     </div>
     
@@ -313,13 +313,13 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/traefik.svg" width="200" height="200" alt="Traefik" title="Traefik" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/traefik.svg" width="200" height="200" alt="Traefik" title="Traefik" class="" loading="false"></p>
 </div>
 <p>La tendencia de desarrollo es utilizar microservicios, contenedores y computación en la nube. Una característica de este tipo de aplicaciones es que se componen de múltiples elementos muy dinámicos que se crean, eliminan o cambia el número de instancias. La configuración de las herramientas nativas para la nube ha de ser dinámica en vez de estática.</p>
 <p>Una herramienta específica para hacer de <em>proxy</em> inverso adaptada a la nube es Traefik.</p>
 <div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
-    <li><a href="#el-_proxy_-inverso-traefik">El <em>proxy</em> inverso Traefik</a></li>
+    <li><a href="#el-proxy-inverso-traefik">El <em>proxy</em> inverso Traefik</a></li>
     <li><a href="#casos-de-uso-y-características">Casos de uso y características</a></li>
     <li><a href="#conceptos">Conceptos</a></li>
     <li><a href="#ejemplos-de-funcionalidades">Ejemplos de funcionalidades</a>
@@ -327,7 +327,7 @@
         <li><a href="#balanceador-de-carga">Balanceador de carga</a></li>
         <li><a href="#balanceador-de-carga-con-peso">Balanceador de carga con peso</a></li>
         <li><a href="#limitar-número-de-peticiones">Limitar número de peticiones</a></li>
-        <li><a href="#duplicar-peticiones-o-_mirroring_">Duplicar peticiones o <em>mirroring</em></a></li>
+        <li><a href="#duplicar-peticiones-o-mirroring">Duplicar peticiones o <em>mirroring</em></a></li>
       </ol>
     </li>
     <li><a href="#otras-funcionalidades">Otras funcionalidades</a></li>
@@ -335,13 +335,13 @@
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h2 id="el-_proxy_-inverso-traefik">El <em>proxy</em> inverso Traefik</h2>
+<h2 id="el-proxy-inverso-traefik">El <em>proxy</em> inverso Traefik</h2>
 <p><a href="https://traefik.io/">Traefik</a> es un <em>proxy</em> inverso y balanceador de carga adaptado a la computación en la nube mediante microservicios. Traefik se integra con los principales componentes de infraestructura configurándose a sí mismo automáticamente y de forma dinámica. Traefik es simple de operar pero capaz de manejar sistemas complejos y grandes en entornos diversos y diferentes capas de la pila de red como HTTP, TCP o UDP. Proporciona funcionalidades de intermediario que aumenta sus capacidades para realizar balanceo de carga o servir como <em>gateway</em> API.</p>
 <p>Como <em>proxy</em> inverso intercepta las peticiones entrantes y las redirige a los servicios adecuados. A diferencia de <em>proxys</em> inversos configurados de forma estática, Traefik usa descubrimiento de servicios para configurarse a sí mismo según los servicios en ejecución. Puede hacer de <em>proxy</em> en diferentes capas de la pila de red proporcionando funcionalidades como balanceo de carga, limitación de peticiones, <em>circuit breaker</em>, duplicación o <em>mirroring</em>, autenticación y más. También soporta terminación de SSL y puede usar un proveedor ACME como <a href="https://letsencrypt.org/">Let’s Encrypt</a> para la generación automática de certificados.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik_hu16905933747866054938.webp" data-gallery="" title="El proxy inverso Traefik"><img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik_hu15220581279632672063.webp" width="300" height="207" alt="El proxy inverso Traefik" title="El proxy inverso Traefik" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu16681430558755486710.webp" data-gallery="" title="Arquitectura del proxy inverso Traefik"><img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu5350431529194038448.webp" width="300" height="157" alt="Arquitectura del proxy inverso Traefik" title="Arquitectura del proxy inverso Traefik" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik_hu_6bb149cf331d0f45.webp" data-gallery="" title="El proxy inverso Traefik"><img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik_hu_a75dc5e9fa50aaaf.webp" width="300" height="207" alt="El proxy inverso Traefik" title="El proxy inverso Traefik" class="" loading="lazy"></a>
+<a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu_231fdcb2c081c082.webp" data-gallery="" title="Arquitectura del proxy inverso Traefik"><img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu_d4395e816d5036bb.webp" width="300" height="157" alt="Arquitectura del proxy inverso Traefik" title="Arquitectura del proxy inverso Traefik" class="" loading="lazy"></a></p>
 <figcaption>El proxy inverso Traefik y arquitectura</figcaption>
 </figure>
 </div>
@@ -355,14 +355,14 @@
 <p>Al iniciar Traefik se integra un panel de información o <em>dashboard</em> en el que observar las rutas, servicios y <em>middelwares</em> configurados, dado el entorno dinámico de la computación en la nube y microservicios permite ver el estado del sistema.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard_hu7698643030542970992.webp" data-gallery="" title="El panel de información o dashboard integrado de Traefik"><img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard_hu8354872129542795188.webp" width="399" height="450" alt="El panel de información o dashboard integrado de Traefik" title="El panel de información o dashboard integrado de Traefik" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard_hu_653f1fbbef2f57fd.webp" data-gallery="" title="El panel de información o dashboard integrado de Traefik"><img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard_hu_bcbf5d1bc864b9e0.webp" width="399" height="450" alt="El panel de información o dashboard integrado de Traefik" title="El panel de información o dashboard integrado de Traefik" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard-routes_hu1734376348562739435.webp" data-gallery="" title="El panel de información o dashboard integrado de Traefik"><img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard-routes_hu14407399503142143183.webp" width="133" height="150" alt="El panel de información o dashboard integrado de Traefik" title="El panel de información o dashboard integrado de Traefik" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard-services_hu7738718498218628149.webp" data-gallery="" title="El panel de información o dashboard integrado de Traefik"><img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard-services_hu13058230866820730863.webp" width="133" height="150" alt="El panel de información o dashboard integrado de Traefik" title="El panel de información o dashboard integrado de Traefik" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard-middlewares_hu16786923319903251988.webp" data-gallery="" title="El panel de información o dashboard integrado de Traefik"><img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard-middlewares_hu16903556089950890291.webp" width="133" height="150" alt="El panel de información o dashboard integrado de Traefik" title="El panel de información o dashboard integrado de Traefik" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard-routes_hu_47c8737f5a2d3c51.webp" data-gallery="" title="El panel de información o dashboard integrado de Traefik"><img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard-routes_hu_7cc31dbdf3668cc3.webp" width="133" height="150" alt="El panel de información o dashboard integrado de Traefik" title="El panel de información o dashboard integrado de Traefik" class="" loading="lazy"></a>
+<a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard-services_hu_80e73970cb2d87e1.webp" data-gallery="" title="El panel de información o dashboard integrado de Traefik"><img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard-services_hu_4fabfb20b11e9b61.webp" width="133" height="150" alt="El panel de información o dashboard integrado de Traefik" title="El panel de información o dashboard integrado de Traefik" class="" loading="lazy"></a>
+<a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard-middlewares_hu_3de9ad62b9db3d2.webp" data-gallery="" title="El panel de información o dashboard integrado de Traefik"><img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard-middlewares_hu_f90ab5cee016b444.webp" width="133" height="150" alt="El panel de información o dashboard integrado de Traefik" title="El panel de información o dashboard integrado de Traefik" class="" loading="lazy"></a></p>
 <figcaption>El panel de información o dashboard integrado de Traefik</figcaption>
 </figure>
 </div>
@@ -467,7 +467,7 @@
         <span>curl-rate-limit.sh</span>
     </div>
 </div>
-<h3 id="duplicar-peticiones-o-_mirroring_">Duplicar peticiones o <em>mirroring</em></h3>
+<h3 id="duplicar-peticiones-o-mirroring">Duplicar peticiones o <em>mirroring</em></h3>
 <p>Este <em>middleware</em> permite duplicar la petición que se envía a un servicio a otros servicios descartando el resultado devuelto por esos otros servicios.</p>
 <p>Esto puede ser útil en el caso de aplicar el patrón de estrangulación ya que permite probar las peticiones sin riesgos. El servicio heredado continúa recibiendo y procesando las peticiones a la vez que el nuevo servicio recibe las mismas peticiones, una vez que el nuevo servicio se comporta de la forma esperada las peticiones del servicio heredado se redirigen al nuevo servicio completando la estrangulación.</p>
 <div class="code">
@@ -495,9 +495,9 @@
 <p>Al aplicar <a href="https://picodotdev.github.io/blog-bitix/2021/08/el-patron-de-estrangulacion-para-reemplazar-aplicaciones-heredadas/">el patrón de estrangulación para reemplazar aplicaciones heredadas</a> la solución es añadir un intermediario como Traefik que permita redirigir las peticiones a la aplicación heredada o a su reemplazo cuando esté esté implementado. Este intermediario permite ir reemplazando de forma incremental la aplicación heredada.</p>
 <p>Traefik también permite delegar la autenticación en <a href="https://www.keycloak.org/">Keycloak</a> u otros servicios con los <em>middlewares</em> <a href="https://doc.traefik.io/traefik/middlewares/forwardauth/">Forward Auth</a>, <a href="https://doc.traefik.io/traefik/middlewares/digestauth/">Digest Auth</a> y <a href="https://doc.traefik.io/traefik/middlewares/basicauth/">Basic Auth</a>.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/Traefik">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>docker-compose up</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/Traefik">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>docker-compose up</code></p>
 </div>
 
     </div>
@@ -552,7 +552,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/">
-                <img src="/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/images/gnome-subtitles_hu6836488705300594050.webp" width="326" height="125" alt="Cómo crear y poner subtítulos a un vídeo" title="Cómo crear y poner subtítulos a un vídeo" class="" loading="lazy">
+                <img src="/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/images/gnome-subtitles_hu_500a5e01dfb7d921.webp" width="326" height="125" alt="Cómo crear y poner subtítulos a un vídeo" title="Cómo crear y poner subtítulos a un vídeo" class="" loading="lazy">
                 <h3>Cómo crear y poner subtítulos a un vídeo</h3>
                 </a>
                 

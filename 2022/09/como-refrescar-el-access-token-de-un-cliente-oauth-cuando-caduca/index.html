@@ -62,7 +62,7 @@
     "dateModified": "2022-09-15T21:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1487",
+    "wordCount": "1489",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -305,7 +305,7 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/oauth.svg" width="200" height="200" alt="OAuth" title="OAuth" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/oauth.svg" width="200" height="200" alt="OAuth" title="OAuth" class="" loading="false"></p>
 </div>
 <p>En <a href="https://oauth.net/">el protocolo OAuth</a> la autorización se concede o no en base a un <em>token</em> que para el cliente es simplemente una cadena de letras sin ningún sentido.</p>
 <ul>
@@ -315,7 +315,7 @@
 <div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
     <li><a href="#los-access-token-y-refresh-token-de-protocolo-oauth">Los access token y refresh token de protocolo OAuth</a></li>
-    <li><a href="#_authenticator_-de-okhttp"><em>Authenticator</em> de OkHttp</a></li>
+    <li><a href="#authenticator-de-okhttp"><em>Authenticator</em> de OkHttp</a></li>
     <li><a href="#implementar-un-autenticator-para-okhttp">Implementar un autenticator para OkHttp</a>
       <ol>
         <li><a href="#cliente-de-servicio-oauth">Cliente de servicio OAuth</a></li>
@@ -332,7 +332,7 @@
 <p>Dado que los <em>access token</em> se envían en cada petición que realiza el cliente al servidor hay numerosas oportunidades que los <em>access tokens</em> sean capturados, para minimizar el problema de seguridad se generan <em>access tokens</em> con un tiempo de vida corto, de unos pocos minutos o unas pocas horas. Sin embargo, los clientes han de tener una forma de obtener un nuevo <em>access token</em> cuando este expira para seguir haciendo invocaciones en el servidor, al mismo tiempo que se genera un <em>access token</em> al cliente se le proporciona un <em>refresh token</em> que le permite obtener un nuevo <em>access token</em> cuando por ejemplo caduca.</p>
 <p>Cuando un <em>access token</em> ya no es válido el servidor de recurso devuelve un código de estado que el cliente puede capturar para saber si el <em>access token</em> ha caducado y hay que obtener uno nuevo.</p>
 <p>El obtener un <em>access token</em> implica hacer una petición al servidor de autorización proporcionando entre otros datos el <em>refresh token</em>. Para que el cliente no sea consciente de la renovación del <em>access token</em> y que estos pueden caducar en cualquier momento algunas librerías como <a href="https://square.github.io/okhttp/">OkHttp</a> permiten a los clientes implementar el obtener un nuevo <em>access token</em> de forma transparente en las peticiones que se hagan.</p>
-<h2 id="_authenticator_-de-okhttp"><em>Authenticator</em> de OkHttp</h2>
+<h2 id="authenticator-de-okhttp"><em>Authenticator</em> de OkHttp</h2>
 <p>La clase <a href="https://square.github.io/okhttp/3.x/okhttp/okhttp3/Authenticator.html">Authenticator</a> permite realizar la autenticación antes de hacer la petición al servidor o cuando el servidor devuelva un determinado código de estado. Con una implementación de esta clase el código no necesita ser consciente de la autenticación que se necesita realizar en las peticiones al servidor.</p>
 <p>Esta interfaz incluye un único método que hay que implementar, en el caso de que el método sea invocado y el código de respuesta de la petición haya sido un 401 y la petición incluya una cabecera de autorización quiere decir que las credenciales proporcionadas no son válidas en el caso de usar OAuth que el <em>access token</em> proporcionado no es válido, un caso es que el <em>access token</em> haya caducado, caso en el que hay que realizar la renovación del <em>access token</em>.</p>
 <h2 id="implementar-un-autenticator-para-okhttp">Implementar un autenticator para OkHttp</h2>
@@ -400,14 +400,14 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/09/como-refrescar-el-access-token-de-un-cliente-oauth-cuando-caduca/images/keycloak-clients_hu1398297210732447756.webp" data-gallery="" title="Clientes en Keycloak"><img src="/blog-bitix/2022/09/como-refrescar-el-access-token-de-un-cliente-oauth-cuando-caduca/images/keycloak-clients_hu6179299240962635372.webp" width="650" height="373" alt="Clientes en Keycloak" title="Clientes en Keycloak" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/09/como-refrescar-el-access-token-de-un-cliente-oauth-cuando-caduca/images/keycloak-clients_hu_b804a42e94dbd2f9.webp" data-gallery="" title="Clientes en Keycloak"><img src="/blog-bitix/2022/09/como-refrescar-el-access-token-de-un-cliente-oauth-cuando-caduca/images/keycloak-clients_hu_4f1b1361cdf29a7c.webp" width="650" height="373" alt="Clientes en Keycloak" title="Clientes en Keycloak" class="" loading="lazy"></a></p>
 <figcaption>Clientes en Keycloak</figcaption>
 </figure>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBootOauthClientServer">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew client:run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBootOauthClientServer">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew client:run</code></p>
 </div>
 <div class="reference">
     Referencia:<br>
@@ -485,7 +485,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/">
-                <img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_hu11642716256535407620.webp" width="326" height="125" alt="Interfaz web para JMX con Hawtio" title="Interfaz web para JMX con Hawtio" class="" loading="lazy">
+                <img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_hu_bdc6007c0b8ce864.webp" width="326" height="125" alt="Interfaz web para JMX con Hawtio" title="Interfaz web para JMX con Hawtio" class="" loading="lazy">
                 <h3>Interfaz web para JMX con Hawtio</h3>
                 </a>
                 
@@ -513,7 +513,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/">
-                <img src="/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-packages-artifact_hu11245262572644857252.webp" width="326" height="125" alt="Publicar y utilizar una dependencia de Java en un repositorio de Git con GitHub Packages" title="Publicar y utilizar una dependencia de Java en un repositorio de Git con GitHub Packages" class="" loading="lazy">
+                <img src="/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-packages-artifact_hu_3e10b1c901070052.webp" width="326" height="125" alt="Publicar y utilizar una dependencia de Java en un repositorio de Git con GitHub Packages" title="Publicar y utilizar una dependencia de Java en un repositorio de Git con GitHub Packages" class="" loading="lazy">
                 <h3>Publicar y utilizar una dependencia de Java en un repositorio de Git con GitHub Packages</h3>
                 </a>
                 

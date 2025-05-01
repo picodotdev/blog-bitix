@@ -62,7 +62,7 @@
     "dateModified": "2016-06-18T13:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "846",
+    "wordCount": "848",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -311,10 +311,10 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/apache.svg" width="150" height="264" alt="Apache HTTPD" title="Apache HTTPD" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/apache.svg" width="150" height="264" alt="Apache HTTPD" title="Apache HTTPD" class="" loading="false"></p>
 </div>
 <p>Si tenemos una aplicación o una bitácora que hasta el momento era accedido por el protocolo no cifrado <abbr title="Hypertext Transfer Protocol">HTTP</abbr> ahora que Google tiene en cuenta para el <abbr title="Search engine optimization">SEO</abbr> que usar el protocolo seguro es un parámetro que tiene en cuenta el algoritmo de posicionamiento en el buscador quizá queramos redirigir todo el tráfico de HTTP al protocolo cifrado <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr>.</p>
 <p>Para usar HTTPS deberemos primero <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">configurar el protocolo TLS/SSL en el servidor web o de aplicaciones</a> usando un certificado SSL que podemos obtener ahora con <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a> de forma gratuita  o <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">generar un certificado</a> nosotros y que sea firmado por una autoridad de confianza. Una vez que el servidor es capaz de servir el tráfico por el protocolo HTTPS estamos en condiciones de realizar la redirección al protocolo cifrado HTTPS en el puerto 443 cuando sea accedido por el protocolo no cifrado HTTP en el puerto 80.</p>
@@ -346,7 +346,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/images/nginx-https_hu2216348196894970927.webp" data-gallery="" title="Redirección de HTTP a HTTPS en Nginx"><img src="/blog-bitix/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/images/nginx-https_hu5157887884629950249.webp" width="300" height="193" alt="Redirección de HTTP a HTTPS en Nginx" title="Redirección de HTTP a HTTPS en Nginx" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/images/nginx-https_hu_c95926c3373a70a8.webp" data-gallery="" title="Redirección de HTTP a HTTPS en Nginx"><img src="/blog-bitix/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/images/nginx-https_hu_8933424554dc74f4.webp" width="300" height="193" alt="Redirección de HTTP a HTTPS en Nginx" title="Redirección de HTTP a HTTPS en Nginx" class="" loading="lazy"></a></p>
 <figcaption>Redirección de HTTP a HTTPS en Nginx</figcaption>
 </figure>
 </div>
@@ -366,7 +366,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/images/apache-httpd-https_hu13902661822105752749.webp" data-gallery="" title="Redirección de HTTP a HTTPS en Apache HTTPD"><img src="/blog-bitix/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/images/apache-httpd-https_hu18009629190175702045.webp" width="300" height="193" alt="Redirección de HTTP a HTTPS en Apache HTTPD" title="Redirección de HTTP a HTTPS en Apache HTTPD" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/images/apache-httpd-https_hu_a955bed84c6bd841.webp" data-gallery="" title="Redirección de HTTP a HTTPS en Apache HTTPD"><img src="/blog-bitix/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/images/apache-httpd-https_hu_dd68ada493617a3b.webp" width="300" height="193" alt="Redirección de HTTP a HTTPS en Apache HTTPD" title="Redirección de HTTP a HTTPS en Apache HTTPD" class="" loading="lazy"></a></p>
 <figcaption>Redirección de HTTP a HTTPS en Apache HTTPD</figcaption>
 </figure>
 </div>
@@ -388,9 +388,9 @@
     </div>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/WebServerRedirectHTTPtoHTTPS">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./docker-nginx.sh o ./docker-httpd.sh</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/WebServerRedirectHTTPtoHTTPS">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./docker-nginx.sh o ./docker-httpd.sh</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

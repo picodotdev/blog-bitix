@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-reference-architecture_hu3815821072961653712.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-reference-architecture_hu_fe93ff81a8a96e66.png">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="HashiCorp proporciona una buena documentación de sus productos con tutoriales, documentación de las herramientas y vídeos de formación en su canal de Youtube. Aunque en la documentación está todo explicado para poner en práctica una arquitectura para un caso más real y con cierto grado de producción requiere leer múltiples artículos para aplicar y aglutinar todo lo descrito. En este artículo muestro una arquitectura de referencia de varios productos de HashiCorp como Consul, Vault y Nomad que forman un centro de datos o entorno de ejecución para servicios en un ejemplo aprovisionado con Vagrant en máquinas virtuales de VirtualBox. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-reference-architecture_hu3815821072961653712.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-reference-architecture_hu_fe93ff81a8a96e66.png">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos">
@@ -55,14 +55,14 @@
     "headline": "Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-reference-architecture_hu3815821072961653712.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-reference-architecture_hu_fe93ff81a8a96e66.png"
         
       },
     "datePublished": "2020-08-14T16:00:00+02:00",
     "dateModified": "2020-08-14T16:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "6241",
+    "wordCount": "6243",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -311,13 +311,13 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="200" height="278" alt="HashiCorp Consul" title="HashiCorp Consul" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="200" height="278" alt="HashiCorp Consul" title="HashiCorp Consul" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="200" height="286" alt="HashiCorp Vault" title="HashiCorp Vault" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="200" height="286" alt="HashiCorp Vault" title="HashiCorp Vault" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad" class="" loading="false"></p>
 </div>
 <p>La empresa <a href="https://www.hashicorp.com/">HashiCorp</a> cataloga las necesidades de las aplicaciones basadas en la computación en la nube u orientadas a microservicios en cuatro aspectos que necesitan: aprovisionamiento, registro y conexión, seguridad y ejecución. HashiCorp en base a estos cuatro aspectos de las aplicaciones ha desarrollado para cada una de ellas una aplicación específica integrable con las otras pero también con la posibilidad de usar cada una de forma individual e independiente que permiten disponer de un centro de datos y cubre varias de las necesidades computacionales de una empresa en entornos modernos basados en nube que son dinámicos y requieren elasticidad.</p>
 <p>En muchas organizaciones los desarrolladores solo se encargan del desarrollo de la aplicación o servicio, del despliegue y administración se encargan los administradores de sistemas. Los centros de datos se operan en base a peticiones entre los desarrolladores y los administradores de sistemas, este modelo organización es lento y propenso a ineficiencias, para evitarlo hay que tratar que los desarrolladores sean lo más autosuficientes posible para operar el entorno de ejecución de sus servicios haciendo que estos no solo desarrollen sus aplicaciones sino que también tengan capacidad de desplegarlas y monitorizarlas.</p>
@@ -333,7 +333,7 @@
 </ul>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-static-dynamic_hu11002154889799945065.webp" data-gallery="" title="Diferencias entre entornos estáticos anteriores y dinámicos nuevos"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-static-dynamic_hu8142293084856552878.webp" width="650" height="285" alt="Diferencias entre entornos estáticos anteriores y dinámicos nuevos" title="Diferencias entre entornos estáticos anteriores y dinámicos nuevos" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-static-dynamic_hu_702f5d376a4f9383.webp" data-gallery="" title="Diferencias entre entornos estáticos anteriores y dinámicos nuevos"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-static-dynamic_hu_894e90ca050f186e.webp" width="650" height="285" alt="Diferencias entre entornos estáticos anteriores y dinámicos nuevos" title="Diferencias entre entornos estáticos anteriores y dinámicos nuevos" class="" loading="lazy"></a></p>
 <figcaption>Diferencias entre entornos estáticos anteriores y dinámicos nuevos</figcaption>
 </figure>
 </div>
@@ -386,23 +386,23 @@
 <h2 id="servicios-de-hashicorp">Servicios de HashiCorp</h2>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-1_hu13776715209140722924.webp" data-gallery="" title="Productos de HashiCorp"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-1_hu11621872484018137375.webp" width="200" height="103" alt="Productos de HashiCorp" title="Productos de HashiCorp" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-2_hu17043342128498620625.webp" data-gallery="" title="Productos de HashiCorp"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-2_hu2614036046179482015.webp" width="200" height="117" alt="Productos de HashiCorp" title="Productos de HashiCorp" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-2_hu17043342128498620625.webp" data-gallery="" title="Productos de HashiCorp"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-2_hu2614036046179482015.webp" width="200" height="117" alt="Productos de HashiCorp" title="Productos de HashiCorp" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-1_hu_cbbfe6bfad19ff38.webp" data-gallery="" title="Productos de HashiCorp"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-1_hu_a3ecdbc68f3821f1.webp" width="200" height="103" alt="Productos de HashiCorp" title="Productos de HashiCorp" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-2_hu_1a634e39f37f2c4c.webp" data-gallery="" title="Productos de HashiCorp"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-2_hu_663193f35a0759a6.webp" width="200" height="117" alt="Productos de HashiCorp" title="Productos de HashiCorp" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-2_hu_1a634e39f37f2c4c.webp" data-gallery="" title="Productos de HashiCorp"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-2_hu_663193f35a0759a6.webp" width="200" height="117" alt="Productos de HashiCorp" title="Productos de HashiCorp" class="" loading="lazy"></a></p>
 <figcaption>Productos de HashiCorp</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-consul-before-after_hu15694042533440280989.webp" data-gallery="" title="Antes y después con Consul"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-consul-before-after_hu6317291835097970371.webp" width="200" height="135" alt="Antes y después con Consul" title="Antes y después con Consul" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-vault-before-after_hu15658059994165008893.webp" data-gallery="" title="Antes y después con Vault"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-vault-before-after_hu16197596162374857787.webp" width="200" height="140" alt="Antes y después con Vault" title="Antes y después con Vault" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-nomad-before-after_hu3272699342395553118.webp" data-gallery="" title="Antes y después con Nomad"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-nomad-before-after_hu11617072554917197392.webp" width="192" height="150" alt="Antes y después con Nomad" title="Antes y después con Nomad" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-consul-before-after_hu_58ca9d60f5180eec.webp" data-gallery="" title="Antes y después con Consul"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-consul-before-after_hu_ecba7fb1d86fa307.webp" width="200" height="135" alt="Antes y después con Consul" title="Antes y después con Consul" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-vault-before-after_hu_85e94ca41acd5a10.webp" data-gallery="" title="Antes y después con Vault"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-vault-before-after_hu_fb0759d2816fc59a.webp" width="200" height="140" alt="Antes y después con Vault" title="Antes y después con Vault" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-nomad-before-after_hu_be16fbf95a922a87.webp" data-gallery="" title="Antes y después con Nomad"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-nomad-before-after_hu_a12b2f757910695c.webp" width="192" height="150" alt="Antes y después con Nomad" title="Antes y después con Nomad" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-terraform-before-after_hu1102938720728904487.webp" data-gallery="" title="Antes y después con Terraform"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-terraform-before-after_hu16728260512859602446.webp" width="164" height="150" alt="Antes y después con Terraform" title="Antes y después con Terraform" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-terraform-before-after_hu1102938720728904487.webp" data-gallery="" title="Ecosistema con Nomad"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-terraform-before-after_hu16728260512859602446.webp" width="164" height="150" alt="Ecosistema con Nomad" title="Ecosistema con Nomad" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-terraform-before-after_hu_55425aaaef701351.webp" data-gallery="" title="Antes y después con Terraform"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-terraform-before-after_hu_5d311daef5599021.webp" width="164" height="150" alt="Antes y después con Terraform" title="Antes y después con Terraform" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-terraform-before-after_hu_55425aaaef701351.webp" data-gallery="" title="Ecosistema con Nomad"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-terraform-before-after_hu_5d311daef5599021.webp" width="164" height="150" alt="Ecosistema con Nomad" title="Ecosistema con Nomad" class="" loading="lazy"></a></p>
 <figcaption>Ecosistema con Nomad</figcaption>
 </figure>
 </div>
@@ -441,9 +441,9 @@
 <p>Estos son los esquemas de las arquitecturas de referencia de Consul, Vault y Nomad para configuraciones de producción formado por varios servidores, clientes y regiones o centros de datos.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-reference-architecture_hu2205196690028140612.webp" data-gallery="" title="Arquitectura de referencia de Consul"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-reference-architecture_hu12255180779169306979.webp" width="145" height="150" alt="Arquitectura de referencia de Consul" title="Arquitectura de referencia de Consul" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/vault-reference-architecture_hu15647216287347244130.webp" data-gallery="" title="Arquitectura de referencia de Vault"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/vault-reference-architecture_hu6063365916053049485.webp" width="200" height="148" alt="Arquitectura de referencia de Vault" title="Arquitectura de referencia de Vault" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-reference-architecture_hu9909688631598471660.webp" data-gallery="" title="Arquitectura de referencia de Nomad"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-reference-architecture_hu1000443910903773634.webp" width="200" height="141" alt="Arquitectura de referencia de Nomad" title="Arquitectura de referencia de Nomad" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-reference-architecture_hu_b0d27df5abdd0a3f.webp" data-gallery="" title="Arquitectura de referencia de Consul"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-reference-architecture_hu_18a649e51c7407ee.webp" width="145" height="150" alt="Arquitectura de referencia de Consul" title="Arquitectura de referencia de Consul" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/vault-reference-architecture_hu_9020268b4c93df62.webp" data-gallery="" title="Arquitectura de referencia de Vault"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/vault-reference-architecture_hu_63ce872d544b75c4.webp" width="200" height="148" alt="Arquitectura de referencia de Vault" title="Arquitectura de referencia de Vault" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-reference-architecture_hu_2554da6e62149e5a.webp" data-gallery="" title="Arquitectura de referencia de Nomad"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-reference-architecture_hu_cdcce8f268546ff4.webp" width="200" height="141" alt="Arquitectura de referencia de Nomad" title="Arquitectura de referencia de Nomad" class="" loading="lazy"></a></p>
 <figcaption>Arquitecturas de referencia de Consul, Vault y Nomad</figcaption>
 </figure>
 </div>
@@ -557,7 +557,7 @@
 <p>Vault se comunica con Consul para utilizar el almacén de clave-valor o KV en el que Vault almacena los datos cifrados, Nomad se comunica con Vault para proporcionar a las aplicaciones algunos requerimientos de seguridad y con Consul para obtener datos de su KV y proporcionarlos a las instancias de los servicios, también para registrar en Consul las instancias de los servicios y si lo utilizan proporcionales sus necesidades de comunicación con <em>Consul Connect</em>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/virtualbox_hu12721153711311029873.webp" data-gallery="" title="Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/virtualbox_hu5867723941007689796.webp" width="300" height="224" alt="Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant" title="Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/virtualbox_hu_965d584ac756dd82.webp" data-gallery="" title="Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/virtualbox_hu_ee4c536af7c3a185.webp" width="300" height="224" alt="Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant" title="Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant" class="" loading="lazy"></a></p>
 <figcaption>Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant</figcaption>
 </figure>
 </div>
@@ -594,7 +594,7 @@
 <p>Consul tiene la función de servidor DNS con el catálogo de servicios registrados. Para dar acceso a las máquinas virtuales al servidor de nombres DNS de Consul es necesario redirigir el tráfico del puerto 53 al puerto 8600 y modificar el archivo <em>resolv.conf</em>. Esto requiere un poco de configuración en Ubuntu modificando <em>iptables</em> y utilizar <em>iptables-persistent</em> para que los cambios sean permanentes entre reinicios.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-dns_hu6677845804073488439.webp" data-gallery="" title="Servicio DNS de Consul accedido desde el servidor de Nomad"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-dns_hu4723519535316271337.webp" width="300" height="216" alt="Servicio DNS de Consul accedido desde el servidor de Nomad" title="Servicio DNS de Consul accedido desde el servidor de Nomad" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-dns_hu_7209d607751f4491.webp" data-gallery="" title="Servicio DNS de Consul accedido desde el servidor de Nomad"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-dns_hu_77044b1d7082c7e5.webp" width="300" height="216" alt="Servicio DNS de Consul accedido desde el servidor de Nomad" title="Servicio DNS de Consul accedido desde el servidor de Nomad" class="" loading="lazy"></a></p>
 <figcaption>Servicio DNS de Consul que expone el catálogo de servicios accedido desde el servidor de Nomad</figcaption>
 </figure>
 </div>
@@ -683,14 +683,14 @@
 <p>Las consolas de administración muestran el estado de centro de datos y con todos los servicios está disponibles.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-console_hu7359898677966327025.webp" data-gallery="" title="Consola web de Consul con los servicios registrados y su estado de salud"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-console_hu3632421741184915752.webp" width="300" height="209" alt="Consola web de Consul con los servicios registrados y su estado de salud" title="Consola web de Consul con los servicios registrados y su estado de salud" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-console-nodes_hu17837575808857930702.webp" data-gallery="" title="Consola web de Consul con los nodos registrados y su estado de salud"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-console-nodes_hu18107603257823016945.webp" width="300" height="209" alt="Consola web de Consul con los nodos registrados y su estado de salud" title="Consola web de Consul con los nodos registrados y su estado de salud" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-console_hu_890d2af06ee3bfbf.webp" data-gallery="" title="Consola web de Consul con los servicios registrados y su estado de salud"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-console_hu_e3689b414a748065.webp" width="300" height="209" alt="Consola web de Consul con los servicios registrados y su estado de salud" title="Consola web de Consul con los servicios registrados y su estado de salud" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-console-nodes_hu_c00a1036d9ff593c.webp" data-gallery="" title="Consola web de Consul con los nodos registrados y su estado de salud"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-console-nodes_hu_3eecb07340bc61b8.webp" width="300" height="209" alt="Consola web de Consul con los nodos registrados y su estado de salud" title="Consola web de Consul con los nodos registrados y su estado de salud" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/vault-console_hu5720138582514132652.webp" data-gallery="" title="Consola web de Vault"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/vault-console_hu1165254558978173780.webp" width="300" height="209" alt="Consola web de Vault" title="Consola web de Vault" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-console_hu10401052346460551566.webp" data-gallery="" title="Consola web de Nomad"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-console_hu14196044883825384902.webp" width="300" height="209" alt="Consola web de Nomad" title="Consola web de Nomad" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/vault-console_hu_bf62465525fca6dd.webp" data-gallery="" title="Consola web de Vault"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/vault-console_hu_862899d7f0547685.webp" width="300" height="209" alt="Consola web de Vault" title="Consola web de Vault" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-console_hu_cf47c29ef687cd85.webp" data-gallery="" title="Consola web de Nomad"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-console_hu_9b369ac7d7dcd17b.webp" width="300" height="209" alt="Consola web de Nomad" title="Consola web de Nomad" class="" loading="lazy"></a></p>
 <figcaption>Consolas web de Consul, Vault y Nomad y estados de salud de los servicios y nodos</figcaption>
 </figure>
 </div>
@@ -725,15 +725,15 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-job-status_hu5686210451262333072.webp" data-gallery="" title="Estado de un job en la consola web de Nomad"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-job-status_hu6869125118960396846.webp" width="300" height="209" alt="Estado de un job en la consola web de Nomad" title="Estado de un job en la consola web de Nomad" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nginx_hu12594662013076258323.webp" data-gallery="" title="Servicio de Nginx ejecutado en Nomad como un contenedor de Docker"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nginx_hu13994919399406889254.webp" width="300" height="209" alt="Servicio de Nginx ejecutado en Nomad como un contenedor de Docker" title="Servicio de Nginx ejecutado en Nomad como un contenedor de Docker" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-job-status_hu_301900b681d909c6.webp" data-gallery="" title="Estado de un job en la consola web de Nomad"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-job-status_hu_e382c95ac8f5c3c7.webp" width="300" height="209" alt="Estado de un job en la consola web de Nomad" title="Estado de un job en la consola web de Nomad" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nginx_hu_c91d4f0230a3a68.webp" data-gallery="" title="Servicio de Nginx ejecutado en Nomad como un contenedor de Docker"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nginx_hu_f37fe9bf73e6838f.webp" width="300" height="209" alt="Servicio de Nginx ejecutado en Nomad como un contenedor de Docker" title="Servicio de Nginx ejecutado en Nomad como un contenedor de Docker" class="" loading="lazy"></a></p>
 <figcaption>Ejecución, estado de un job con un servicio de Nginx ejecutando en un contenedor de Docker en la consola web de Nomad</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-services-web_hu4436179334541876627.webp" data-gallery="" title="Servicios en consul con el servicio de Nginx registrado por Nomad"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-services-web_hu9911434947000742665.webp" width="300" height="209" alt="Servicios en consul con el servicio de Nginx registrado por Nomad" title="Servicios en consul con el servicio de Nginx registrado por Nomad" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/datacenter-commandline-information_hu6366924635651016823.webp" data-gallery="" title="Información de estado del centro de datos obtenido desde la línea de comandos"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/datacenter-commandline-information_hu5196848750467868659.webp" width="300" height="216" alt="Información de estado del centro de datos obtenido desde la línea de comandos" title="Información de estado del centro de datos obtenido desde la línea de comandos" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-services-web_hu_1741556d764e5f55.webp" data-gallery="" title="Servicios en consul con el servicio de Nginx registrado por Nomad"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-services-web_hu_d713cb3c2dff1e9.webp" width="300" height="209" alt="Servicios en consul con el servicio de Nginx registrado por Nomad" title="Servicios en consul con el servicio de Nginx registrado por Nomad" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/datacenter-commandline-information_hu_c3c492c719864eb4.webp" data-gallery="" title="Información de estado del centro de datos obtenido desde la línea de comandos"><img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/datacenter-commandline-information_hu_3ef4b2bba61a41b2.webp" width="300" height="216" alt="Información de estado del centro de datos obtenido desde la línea de comandos" title="Información de estado del centro de datos obtenido desde la línea de comandos" class="" loading="lazy"></a></p>
 <figcaption>Servicios en consul con el servicio de Nginx registrado por Nomad e información de estado del centro de datos obtenido desde la línea de comandos</figcaption>
 </figure>
 </div>
@@ -741,9 +741,9 @@
 <p>Este artículo solo tiene un ejemplo básico pero que sirve como base para crear un entorno de producción real basado en las herramientas de HashiCorp.</p>
 <p>Hay otras funcionalidades que un entorno real de producción requeriría, como telemetría y monitorización, cual sería el proceso para actualizar el centro de datos a nuevas versiones, aprovisionamiento con Terraform para un centro de computación proporcionado por un proveedor en la nube, utilizar un sistema de autenticación como OAuth en vez autenticación básica en la consolas de administración, quizá <a href="https://github.com/hashicorp/consul-template">consul-template</a> en algunos servicios para actualizar de forma dinámica configuraciones que tomen datos de Vault o Consul o utilizar <a href="https://traefik.io/">Traefik</a> para que haga de <em>proxy</em> de los servicios que utilicen el protocolo HTTP.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/ConsulVaultNomadDatacenter">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./vagrant-up.sh</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/ConsulVaultNomadDatacenter">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./vagrant-up.sh</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

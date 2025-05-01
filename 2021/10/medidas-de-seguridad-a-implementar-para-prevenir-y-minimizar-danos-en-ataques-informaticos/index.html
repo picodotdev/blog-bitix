@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="Medidas de seguridad a implementar para prevenir y minimizar daños en ataques informáticos">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/poster_hu3135466285640208601.jpg">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/poster_hu_e776610f15ba8272.jpg">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Los ataques informáticos dirigidos a los usuarios tienen el objetivo con una motivación económica del delincuente de robarles las credenciales de sus cuentas, datos de tarjetas de crédito y datos personales, otros ataques están dirigidos a los servicios que usan los usuarios. De los ataques dirigidos a los usuarios implementando las medidas de seguridad adecuadas en el servicio varios tipos de ataques son evitables como el phishing que es uno de los más comunes ofreciendo inicio de sesión con segundo factor de autenticación y con otras medidas los daños y riesgos son limitables. Otras medidas de seguridad implementadas en el servicio evita riesgos como usar salted pasword hashing. Como programadores los servicios deben hacer uso de buenas prácticas e implementar medidas adicionales para evitar riesgos y daños. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/poster_hu3135466285640208601.jpg">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/poster_hu_e776610f15ba8272.jpg">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Medidas de seguridad a implementar para prevenir y minimizar daños en ataques informáticos">
@@ -55,7 +55,7 @@
     "headline": "Medidas de seguridad a implementar para prevenir y minimizar daños en ataques informáticos",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/poster_hu3135466285640208601.jpg"
+        "url": "https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/poster_hu_e776610f15ba8272.jpg"
         
       },
     "datePublished": "2021-10-28T19:00:00+02:00",
@@ -313,8 +313,8 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
 <p>Sin embargo, me da miedo que un banco que debería ser un referente en medidas de seguridad incluyan en la página donde los usuarios introducen sus credenciales para el acceso a la banca online recursos JavaScript de <a href="https://www.facebook.com/">Facebook</a>, <a href="https://twitter.com/">Twitter</a> y de dominios ajenos al banco que no controlan para hacer analítica web de seguimiento de usuarios.</p>
 <div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
-    <li><a href="#inyección-de-sql-xss-_tabnabbing_-y-otras-vulnerabilidades-básicas">Inyección de SQL, XSS, <em>tabnabbing</em> y otras vulnerabilidades básicas</a></li>
-    <li><a href="#_salted-password-hashing_"><em>Salted Password Hashing</em></a></li>
+    <li><a href="#inyección-de-sql-xss-tabnabbing-y-otras-vulnerabilidades-básicas">Inyección de SQL, XSS, <em>tabnabbing</em> y otras vulnerabilidades básicas</a></li>
+    <li><a href="#salted-password-hashing"><em>Salted Password Hashing</em></a></li>
     <li><a href="#implementación-de-segundo-factor-de-autenticación">Implementación de segundo factor de autenticación</a></li>
     <li><a href="#notificación-de-acciones-relevantes">Notificación de acciones relevantes</a></li>
     <li><a href="#registro-de-actividad">Registro de actividad</a></li>
@@ -328,7 +328,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h2 id="inyección-de-sql-xss-_tabnabbing_-y-otras-vulnerabilidades-básicas">Inyección de SQL, XSS, <em>tabnabbing</em> y otras vulnerabilidades básicas</h2>
+<h2 id="inyección-de-sql-xss-tabnabbing-y-otras-vulnerabilidades-básicas">Inyección de SQL, XSS, <em>tabnabbing</em> y otras vulnerabilidades básicas</h2>
 <p>Hay errores de seguridad comunes identificados hace ya tiempo que aún no están obsoletos, no son errores de seguridad complejos de explotar y tampoco son errores complejos de evitar usando las técnicas adecuadas de programación o evitando utilizar ciertas operaciones en la manipulación de datos. Varios de los errores de seguridad son por usar datos provenientes de fuentes no confiables sin aplicar el tratamiento adecuado. Aún siendo errores simples son peligrosos en una aplicación vulnerable.</p>
 <p>La fundación OWASP mantiene un registro detallado de los diferentes tipos de seguridad, explicando el problema de seguridad y cómo evitarlos. También publicar cada ciertos años una lista de los 10 errores más comunes durante ese año.</p>
 <ul>
@@ -338,7 +338,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
 <li><a href="https://owasp.org/www-community/attacks/Reverse_Tabnabbing">Reverse Tabnabbing</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phishing-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/">El problema de seguridad tabnabbing y phishing en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo</a></li>
 </ul>
-<h2 id="_salted-password-hashing_"><em>Salted Password Hashing</em></h2>
+<h2 id="salted-password-hashing"><em>Salted Password Hashing</em></h2>
 <p>Una aplicación que guarda credenciales para autenticar a los usuarios habitualmente solicita dos datos, un identificador del usuario o de la cuenta y una contraseña que como solo conoce el legítimo usuario permite identificarle en el sistema al iniciar sesión. Los identificadores de los usuarios y las contraseñas la aplicación necesita guardarlas en una base de datos para que la aplicación las compare con las que proporciona un usuario al iniciar sesión.</p>
 <p>Guardar la contraseña en la base de datos el valor original que el usuario ha proporcionado es un peligro ya que cualquier persona con acceso a la base de datos es capaz de conocer el valor de la contraseña. Para no guardar el valor original es posible utilizar una función de <em>hash</em> de un solo sentido que permite transformar el valor original en otro derivador a partir del cual no es posible conocer el valor original pero permite conocer si es válido aplicando la función al dato proporcionado y comparándolo con el guardado en la base de datos. Sin embargo, usar una función <em>hash</em> no es suficiente ya que utilizando un ataque de diccionario con valores precalculados de <em>hashes</em> de  valores comunes de contraseñas permite identificar cuentas con contraseñas débiles.</p>
 <p>La forma correcta de guardar contraseñas es utilizando cifrado o sin cifrado utilizando una versión modificada de <em>hash</em> denominada <em>salted password hashing</em> que evita ataques de diccionario.</p>
@@ -358,8 +358,8 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
 <p>Estos son dos ejemplos de correos electrónicos que envía <a href="https://www.google.com/intl/es/gmail/about/">Gmail</a> y <a href="https://es.wallapop.com/">Wallapop</a> para notificar al usuario de un nuevo inicio de sesión en su cuenta.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-inicio-sesion_hu4786641516998754690.webp" data-gallery="" title="Notificación de Gmail de inicio de sesión"><img src="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-inicio-sesion_hu5729259614878866882.webp" width="161" height="200" alt="Notificación de Gmail de inicio de sesión" title="Notificación de Gmail de inicio de sesión" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/wallapop-inicio-sesion_hu3699266452487950127.webp" data-gallery="" title="Notificación de Wallapop de inicio de sesión"><img src="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/wallapop-inicio-sesion_hu10214787101081742790.webp" width="103" height="200" alt="Notificación de Wallapop de inicio de sesión" title="Notificación de Wallapop de inicio de sesión" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-inicio-sesion_hu_1793323bc10acc1f.webp" data-gallery="" title="Notificación de Gmail de inicio de sesión"><img src="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-inicio-sesion_hu_67456f5b11a9b1.webp" width="161" height="200" alt="Notificación de Gmail de inicio de sesión" title="Notificación de Gmail de inicio de sesión" class="" loading="lazy"></a>
+<a href="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/wallapop-inicio-sesion_hu_e8ceff7f83fd009b.webp" data-gallery="" title="Notificación de Wallapop de inicio de sesión"><img src="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/wallapop-inicio-sesion_hu_f809f7ff365e56d8.webp" width="103" height="200" alt="Notificación de Wallapop de inicio de sesión" title="Notificación de Wallapop de inicio de sesión" class="" loading="lazy"></a></p>
 <figcaption>Correos electrónicos de notificación de inicio de sesión</figcaption>
 </figure>
 </div>
@@ -368,7 +368,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
 <p>Además de proporcionar al usuario un registro de actividad al mismo tiempo este conviene guardarlo en los registros del propio servicio en caso de necesitar investigar actividad sospechosa.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-registro-actividad_hu9547522600457733563.webp" data-gallery="" title="Registro de actividad en una cuenta de Gmail"><img src="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-registro-actividad_hu9908882768857342656.webp" width="178" height="200" alt="Registro de actividad en una cuenta de Gmail" title="Registro de actividad en una cuenta de Gmail" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-registro-actividad_hu_9caf4d818a93b96d.webp" data-gallery="" title="Registro de actividad en una cuenta de Gmail"><img src="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-registro-actividad_hu_647405be6fcea628.webp" width="178" height="200" alt="Registro de actividad en una cuenta de Gmail" title="Registro de actividad en una cuenta de Gmail" class="" loading="lazy"></a></p>
 <figcaption>Registro de actividad en una cuenta de Gmail</figcaption>
 </figure>
 </div>
@@ -457,7 +457,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/">
-                <img src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu248334668893711718.webp" width="326" height="125" alt="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" title="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" class="" loading="lazy">
+                <img src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu_c415de9b81f47b65.webp" width="326" height="125" alt="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" title="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" class="" loading="lazy">
                 <h3>Implementar un segundo factor de autenticación en una aplicación web Java con Spring</h3>
                 </a>
                 

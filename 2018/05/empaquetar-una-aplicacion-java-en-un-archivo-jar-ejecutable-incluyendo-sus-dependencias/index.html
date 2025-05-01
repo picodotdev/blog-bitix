@@ -62,7 +62,7 @@
     "dateModified": "2019-10-10T19:10:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1052",
+    "wordCount": "1054",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -304,7 +304,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>La forma de distribuir el código compilado a <em>bytecode</em> en Java es a través de archivos de extensión <em>jar</em>. Los archivos <em>jar</em> no son más que archivos comprimidos den formato <em>zip</em>. Si se les cambia de extensión y se descomprimen se extrae su contenido seguramente con una buena cantidad de archivos de extensión <em>class</em> que es la extensión para los archivos Java compilados a <em>bytecode</em> y que la máquina virtual interpreta para su ejecución. Las librerías que use la aplicación también se deben distribuir junto a esta para que funcione, por lo que la aplicación se distribuirá en forma de una colección de archivos <em>jar</em>.</p>
 <p>Una aplicación distribuida en forma de múltiples archivos archivos <em>jar</em> se ejecuta con una línea de comandos como la siguiente en la que el parámetro <em>-cp</em> indica las ubicaciones donde se buscarán librerías <em>jar</em> y archivos <em>class</em> si se distribuyen de forma individual, el segundo parámetro indica la clase que contiene el método <em>main</em> que inicia la aplicación. Previamente hay que generar el artefacto del proyecto con <a href="https://gradle.org/">Gradle</a>.</p>
@@ -323,7 +323,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/images/java-classpath_hu11702721389182717209.webp" data-gallery="" title="Aplicación de ejemplo ejecutada con classpath"><img src="/blog-bitix/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/images/java-classpath_hu7656943607600361229.webp" width="650" height="211" alt="Aplicación de ejemplo ejecutada con classpath" title="Aplicación de ejemplo ejecutada con classpath" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/images/java-classpath_hu_99bae4959e39d080.webp" data-gallery="" title="Aplicación de ejemplo ejecutada con classpath"><img src="/blog-bitix/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/images/java-classpath_hu_6e2e1c2aec6f5475.webp" width="650" height="211" alt="Aplicación de ejemplo ejecutada con classpath" title="Aplicación de ejemplo ejecutada con classpath" class="" loading="lazy"></a></p>
 <figcaption>Aplicación de ejemplo ejecutada con classpath</figcaption>
 </figure>
 </div>
@@ -371,7 +371,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/images/java-jar-uberjar_hu8266388179933079984.webp" data-gallery="" title="Aplicación de ejemplo ejecutada con uberjar"><img src="/blog-bitix/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/images/java-jar-uberjar_hu1892269226319952502.webp" width="650" height="211" alt="Aplicación de ejemplo ejecutada con uberjar" title="Aplicación de ejemplo ejecutada con uberjar" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/images/java-jar-uberjar_hu_501b36d763fc0414.webp" data-gallery="" title="Aplicación de ejemplo ejecutada con uberjar"><img src="/blog-bitix/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/images/java-jar-uberjar_hu_fcb2009b7d6a4230.webp" width="650" height="211" alt="Aplicación de ejemplo ejecutada con uberjar" title="Aplicación de ejemplo ejecutada con uberjar" class="" loading="lazy"></a></p>
 <figcaption>Aplicación de ejemplo ejecutada con uberjar</figcaption>
 </figure>
 </div>
@@ -379,9 +379,9 @@
 <p>Que la aplicación sea un único <em>jar</em> tiene la ventaja que el distribuible es más sencillo y facilita desplegarlo en un entorno de producción, en el caso de usar <a href="https://www.docker.com/">Docker</a> también es más adecuado un único archivo.</p>
 <p>Entre la documentación hay unas muy buenas <a href="https://docs.oracle.com/javase/tutorial/index.html">guías prácticas sobre Java</a>, una de ellas sobre el <a href="https://docs.oracle.com/javase/tutorial/deployment/jar/index.html">empaqueado de aplicaciones en archivos <em>jar</em></a>. La información que se encuentra en estas guías y tutoriales es muy valiosa para cualquier programador que use el lenguaje Java.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaUberjar">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew assemble &amp;&amp; java -jar build/libs/JavaUberjar-uberjar.jar</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaUberjar">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew assemble &amp;&amp; java -jar build/libs/JavaUberjar-uberjar.jar</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

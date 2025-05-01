@@ -306,12 +306,12 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/gradle.svg" width="200" height="165" alt="Gradle" title="Gradle" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/gradle.svg" width="200" height="165" alt="Gradle" title="Gradle" class="" loading="false"></p>
 </div>
-<p>Cuando una aplicación o proyecto crece en algún momento podemos tener necesidad de partir el monolito en varios módulos más pequeños y más manejables. Las arquitecturas basadas en microservicios proponen en vez de tener una aplicación grande que contenga toda la funcionalidad dividirla en varios servicios manejables, pequeños y lo más independientes posible. En el libro <a href="https://amzn.to/2MZWW6u" rel="sponsored">Building Microservices</a> explican muy bien la idea y conceptos de los microservicios. La división de una aplicación implica tener un repositorio de código fuente para cada proyecto, probablemente algunos proyectos dependan de otros y haya alguno que sea utilizado por varios como uno de utilidades. Aunque diría que en los microservicios se prefiere en cierta medida duplicar código que compartir para que cada proyecto tenga un ciclo de vida independiente, esto permite desplegarlos individualmente, aún así podemos aceptar compartir cierto código de utilidades o componentes, necesitando que unos proyectos dependan de otros.</p>
+<p>Cuando una aplicación o proyecto crece en algún momento podemos tener necesidad de partir el monolito en varios módulos más pequeños y más manejables. Las arquitecturas basadas en microservicios proponen en vez de tener una aplicación grande que contenga toda la funcionalidad dividirla en varios servicios manejables, pequeños y lo más independientes posible. En el libro <a href="https://amzn.to/2MZWW6u">Building Microservices</a> explican muy bien la idea y conceptos de los microservicios. La división de una aplicación implica tener un repositorio de código fuente para cada proyecto, probablemente algunos proyectos dependan de otros y haya alguno que sea utilizado por varios como uno de utilidades. Aunque diría que en los microservicios se prefiere en cierta medida duplicar código que compartir para que cada proyecto tenga un ciclo de vida independiente, esto permite desplegarlos individualmente, aún así podemos aceptar compartir cierto código de utilidades o componentes, necesitando que unos proyectos dependan de otros.</p>
 <p>Tener varios proyectos con dependencias entre ellos exige de la herramienta de construcción que esto sea posible y sencillo. En este artículo comentaré como crear un proyecto compuesto de varios componentes con <a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.html">la herramienta de construcción Gradle</a>. El ejemplo consistirá en dos aplicaciones web basadas en el <em>framework</em> web <a href="https://tapestry.apache.org/">Apache Tapestry</a>, una será la que vea el público (<em>web</em>) y otra de administración (<em>back</em>), estas dos aplicaciones compartirán una librería de componentes de Tapestry comunes como un <em>layout</em> (<em>library</em>), la cabecera y pie de las páginas de cada proyecto web, finalmente existirá una librería con métodos o servicios de utilidad comunes y el modelo de datos a persistir en una base de datos relacional usada tanto en las aplicaciones web como por la librería de componentes (<em>core</em>).</p>
 <p>Necesitaremos 4 proyectos para los módulos y 5 proyectos Gradle, uno para cada módulo y otro que los englobe a todos. La estructura de directorios y archivos relativos a Gradle será la siguiente:</p>
 <div class="code">
@@ -398,7 +398,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/images/back_hu11545210278555843885.webp" data-gallery="" title="Backoffice"><img src="/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/images/back_hu5874919669602223974.webp" width="300" height="138" alt="Backoffice" title="Backoffice" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/images/back_hu_af63dff274cefbc0.webp" data-gallery="" title="Backoffice"><img src="/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/images/back_hu_da3f30f32d8c610.webp" width="300" height="138" alt="Backoffice" title="Backoffice" class="" loading="lazy"></a></p>
 <figcaption>Aplicación backoffice</figcaption>
 </figure>
 </div>

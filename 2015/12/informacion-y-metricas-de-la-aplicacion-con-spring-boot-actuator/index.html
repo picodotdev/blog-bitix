@@ -62,7 +62,7 @@
     "dateModified": "2015-12-11T23:25:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "929",
+    "wordCount": "931",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -306,10 +306,10 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Es conveniente tener monitorizado el estado de una aplicación para conocer si el servicio que ofrece está funcionando o en caso de que no conocerlo cuanto antes para restaurarlo además de conocer otra serie de métricas básicas como la cantidad de <abbr title="Central Processing Unit">CPU</abbr> que se está usando, la cantidad de memoria usada y libre, número de <em>threads</em> instanciados, espacio ocupado y libre en disco, actividad de entrada y salida ya sea de red o de disco, tiempo de inicio del sistema y de la aplicación. Otras métricas a nivel de aplicación que puede interesarnos conocer es número de usuarios conectados, número de sesiones, páginas vistas, sentencias SQL o transacciones ejecutadas, &hellip; que podemos obtener directamente desde la aplicación o combinándolo con otras herramientas como <a href="https://www.google.es/intl/es/analytics/">Google Analytics</a>.</p>
 <p>Monitorizar el estado de la aplicación nos permitirá conocer en poco tiempo si hay algo que va mal con la intención de restaurar el servicio con el menor tiempo de caída, también nos permitirá conociendo las métricas normales del servicio si hay algún parámetro fuera de los valores típicos como un consumo excesivo de CPU, memoria o disco, conociendo la normalidad podremos descubrir la anormalidad y después corregirla, cuanto antes sea descubierta más sencillo será determinar el cambio que la ha provocado.</p>
@@ -341,13 +341,13 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/images/spring-boot-actuator-health_hu17153199698731079809.webp" data-gallery="" title="Spring Boot Actuator endpoint Health"><img src="/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/images/spring-boot-actuator-health_hu14025862029437134806.webp" width="207" height="200" alt="Spring Boot Actuator endpoint Health" title="Spring Boot Actuator endpoint Health" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/images/spring-boot-actuator-env_hu7965764642599232525.webp" data-gallery="" title="Spring Boot Actuator endpoint Env"><img src="/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/images/spring-boot-actuator-env_hu1469927144993020576.webp" width="207" height="200" alt="Spring Boot Actuator endpoint Env" title="Spring Boot Actuator endpoint Env" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/images/spring-boot-actuator-metrics_hu15710575947006832459.webp" data-gallery="" title="Spring Boot Actuator endpoint Metrics"><img src="/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/images/spring-boot-actuator-metrics_hu11536631748715941123.webp" width="207" height="200" alt="Spring Boot Actuator endpoint Metrics" title="Spring Boot Actuator endpoint Metrics" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/images/spring-boot-actuator-health_hu_bee04cdc43e8b9cd.webp" data-gallery="" title="Spring Boot Actuator endpoint Health"><img src="/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/images/spring-boot-actuator-health_hu_4b9ca269d302f381.webp" width="207" height="200" alt="Spring Boot Actuator endpoint Health" title="Spring Boot Actuator endpoint Health" class="" loading="lazy"></a>
+<a href="/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/images/spring-boot-actuator-env_hu_f604602aaf2f96c.webp" data-gallery="" title="Spring Boot Actuator endpoint Env"><img src="/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/images/spring-boot-actuator-env_hu_a34729aef5336ebe.webp" width="207" height="200" alt="Spring Boot Actuator endpoint Env" title="Spring Boot Actuator endpoint Env" class="" loading="lazy"></a>
+<a href="/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/images/spring-boot-actuator-metrics_hu_d4c0a34e5abb90ee.webp" data-gallery="" title="Spring Boot Actuator endpoint Metrics"><img src="/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/images/spring-boot-actuator-metrics_hu_86a744db0a32a5b3.webp" width="207" height="200" alt="Spring Boot Actuator endpoint Metrics" title="Spring Boot Actuator endpoint Metrics" class="" loading="lazy"></a></p>
 <figcaption>Spring Boot Actuator endpoints health, env y metrics </figcaption>
 </figure>
 </div>
-<p>Spring Boot Actuator es otro de los varios módulos disponibles en Spring Boot. Para conocer más en detalle cuales son sus posibilidades el libro <a href="https://amzn.to/2SVtJNU" rel="sponsored">Spring Boot in Action</a> lo explica bastante bien, otro libro sobre Spring Boot es <a href="https://amzn.to/3kxG3kh" rel="sponsored">Spring Boot: Up and Running</a>.</p>
+<p>Spring Boot Actuator es otro de los varios módulos disponibles en Spring Boot. Para conocer más en detalle cuales son sus posibilidades el libro <a href="https://amzn.to/2SVtJNU">Spring Boot in Action</a> lo explica bastante bien, otro libro sobre Spring Boot es <a href="https://amzn.to/3kxG3kh">Spring Boot: Up and Running</a>.</p>
 <div class="media media-amazon">
   <ul>
     <li><a href="https://amzn.to/3SsHErO" title="Spring Boot: Up and Running: Building Cloud Native Java and Kotlin Applications">Spring Boot: Up and Running: Building Cloud Native Java and Kotlin Applications</a></li><li><a href="https://amzn.to/3SrEZ1h" title="Java Spring Boot: A Pro-Level Guide to Java Spring Boot: Advanced Patterns and Best Practices">Java Spring Boot: A Pro-Level Guide to Java Spring Boot: Advanced Patterns and Best Practices</a></li></ul>
@@ -355,9 +355,9 @@
 <p>De cualquier modo conviene también tener automatizada la monitorización de las métricas. Con estos <em>endpoints</em> y una herramienta como <a href="https://prometheus.io/">Prometheus</a> podemos visualizar gráficas generadas con los datos a lo largo del tiempo, con los datos visualizados de forma gráfica podremos ver rápidamente picos, cambios bruscos y tendencias en alguno de ellos o compararlos con tiempos pasados. Esta misma herramienta nos puede servir para enviar alertas y notificaciones o hacer consultas sobre los datos recolectados.</p>
 <p>Con Uptime Robot y el <em>endpoint</em> <em>health</em> podemos <a href="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/">monitorizar la aplicación y recibir notificaciones</a> si en algún momento la aplicación deja de responder.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBoot">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBoot">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew run</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

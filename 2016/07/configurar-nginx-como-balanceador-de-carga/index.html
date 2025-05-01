@@ -62,7 +62,7 @@
     "dateModified": "2016-07-09T11:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "878",
+    "wordCount": "880",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -306,7 +306,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx" class="" loading="false"></p>
 </div>
 <p>Un balanceador de carga distribuye las peticiones que llegan al servidor entre varios servidores para que las atiendan consiguiendo optimizar el uso de los recursos, aumentar el número de peticiones atendidas por unidad de tiempo, reducir la latencia y proporcionar tolerancia a fallos. Escalar un servidor que deba procesar un gran número de peticiones llegado un límite es más barato escalar horizontalmente añadiendo más servidores que escalar verticalmente usando servidores más potentes.</p>
 <p>Distribuir las peticiones ha de hacerse eficientemente para que un servidor no reciba todas las peticiones pesadas y se sature mientras hay servidores que tienen poca carga. Usando varios servidores para atender las peticiones evita que haya un único punto de fallo en la aplicación proporcionando tolerancia a fallos, si un servidor sufre un fallo el resto de servidores se encargarán de atender las peticiones. Una mejor tolerancia a fallos aumentará la disponibilidad del servicio sin que haya caídas de servicio.</p>
@@ -355,13 +355,13 @@
 <p>Si queremos que el cliente conozca que servidor atendió la petición podemos añadir la <a href="http://nginx.org/en/docs/http/ngx_http_headers_module.html#add_header">directiva <em>add_header</em></a> usando una de las <a href="http://nginx.org/en/docs/http/ngx_http_upstream_module.html#variables">variables añadidas por el módulo  <em>ngx_http_upstream</em></a>, nos servirá para depurar la aplicación en tiempo de desarrollo.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/07/configurar-nginx-como-balanceador-de-carga/images/nginx-load-balancer-1_hu5101205683398815868.webp" data-gallery="" title="Servidor balanceado 172.17.0.2:8080"><img src="/blog-bitix/2016/07/configurar-nginx-como-balanceador-de-carga/images/nginx-load-balancer-1_hu14427310044570547416.webp" width="224" height="200" alt="Servidor balanceado 172.17.0.2:8080" title="Servidor balanceado 172.17.0.2:8080" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2016/07/configurar-nginx-como-balanceador-de-carga/images/nginx-load-balancer-2_hu730947642590351360.webp" data-gallery="" title="Servidor balanceado 172.17.0.3:8080"><img src="/blog-bitix/2016/07/configurar-nginx-como-balanceador-de-carga/images/nginx-load-balancer-2_hu8700101813243307943.webp" width="224" height="200" alt="Servidor balanceado 172.17.0.3:8080" title="Servidor balanceado 172.17.0.3:8080" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/07/configurar-nginx-como-balanceador-de-carga/images/nginx-load-balancer-1_hu_8c2efd011df309c8.webp" data-gallery="" title="Servidor balanceado 172.17.0.2:8080"><img src="/blog-bitix/2016/07/configurar-nginx-como-balanceador-de-carga/images/nginx-load-balancer-1_hu_3486815b5dc2c657.webp" width="224" height="200" alt="Servidor balanceado 172.17.0.2:8080" title="Servidor balanceado 172.17.0.2:8080" class="" loading="lazy"></a>
+<a href="/blog-bitix/2016/07/configurar-nginx-como-balanceador-de-carga/images/nginx-load-balancer-2_hu_338ed3aa44a430b.webp" data-gallery="" title="Servidor balanceado 172.17.0.3:8080"><img src="/blog-bitix/2016/07/configurar-nginx-como-balanceador-de-carga/images/nginx-load-balancer-2_hu_b3466e002bde145.webp" width="224" height="200" alt="Servidor balanceado 172.17.0.3:8080" title="Servidor balanceado 172.17.0.3:8080" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/07/configurar-nginx-como-balanceador-de-carga/images/nginx-load-balancer-3_hu40044026525748388.webp" data-gallery="" title="Servidor balanceado 172.17.0.4:8080"><img src="/blog-bitix/2016/07/configurar-nginx-como-balanceador-de-carga/images/nginx-load-balancer-3_hu10282786348092864201.webp" width="224" height="200" alt="Servidor balanceado 172.17.0.4:8080" title="Servidor balanceado 172.17.0.4:8080" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/07/configurar-nginx-como-balanceador-de-carga/images/nginx-load-balancer-3_hu_5a52ce9d7b7da40e.webp" data-gallery="" title="Servidor balanceado 172.17.0.4:8080"><img src="/blog-bitix/2016/07/configurar-nginx-como-balanceador-de-carga/images/nginx-load-balancer-3_hu_4ee16f84d7f51846.webp" width="224" height="200" alt="Servidor balanceado 172.17.0.4:8080" title="Servidor balanceado 172.17.0.4:8080" class="" loading="lazy"></a></p>
 <figcaption>Nginx balanceando la carga entre 3 servidores de aplicaciones Tomcat</figcaption>
 </figure>
 </div>
@@ -373,9 +373,9 @@
     </div>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/NginxLoadBalancer">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>docker-compose up</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/NginxLoadBalancer">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>docker-compose up</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

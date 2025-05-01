@@ -71,7 +71,7 @@ En el lenguaje de programación Java los punteros no existen de la misma forma q
     "dateModified": "2021-01-22T16:30:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "793",
+    "wordCount": "795",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -88,7 +88,7 @@ En el lenguaje de programación Java los punteros no existen de la misma forma q
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>En el lenguaje de programación Java los punteros no existen de la misma forma que en otros lenguajes como C o C++. En Java existen los punteros o referencias pero no son libres de apuntar a cualquier dirección de memoria del programa, en C y C++ lenguajes más destinados a la programación de sistemas y cercanos al lenguaje de la máquina ofrecen manipulación de punteros pudiendo obtener un puntero con la dirección de memoria de una variable.</p>"
 }
@@ -303,7 +303,7 @@ En el lenguaje de programación Java los punteros no existen de la misma forma q
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>En el lenguaje de programación Java los punteros no existen de la misma forma que en otros lenguajes como C o C++. En Java existen los punteros o referencias pero no son libres de apuntar a cualquier dirección de memoria del programa, en C y C++ lenguajes más destinados a la programación de sistemas y cercanos al lenguaje de la máquina ofrecen manipulación de punteros pudiendo obtener un puntero con la dirección de memoria de una variable.</p>
 <p>En el lenguaje Java los punteros realmente son vistos simplemente como variables, no es posible obtener un puntero a la dirección de memoria de una variable, únicamente permite copiar o duplicar el valor de una variable en otra variable. Otra diferencia está en que en Java los argumentos de los métodos siempre se pasan por valor, en C y C++ los argumentos se pueden pasar por valor o por referencia.</p>
@@ -312,12 +312,12 @@ En el lenguaje de programación Java los punteros no existen de la misma forma q
 <p>En Java todos los argumentos se pasan por valor. El paso por valor de los argumentos de un método en Java tiene varias consecuencias. El paso por valor significa que al método en la variable del argumento le llega una copia del valor en el caso de un tipo primitivo de datos o una copia del puntero a la dirección de memoria del objeto. En el paso por referencia el argumento contiene un puntero con la dirección de memoria de la variable. En el paso por valor al asignar un valor a la variable del argumento no modifica el valor de la variable usada para invocar al método, esto ocurre tanto para argumentos de tipo primitivo y para objetos.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2021/01/en-java-los-argumentos-se-pasan-por-valor-o-por-referencia/images/java-reference-value.gif" data-gallery="" title="Paso de argumentos por referencia y paso por valor"><img src="/blog-bitix/2021/01/en-java-los-argumentos-se-pasan-por-valor-o-por-referencia/images/java-reference-value.gif" width="450" height="300" alt="Paso de argumentos por referencia y paso por valor" title="Paso de argumentos por referencia y paso por valor" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2021/01/en-java-los-argumentos-se-pasan-por-valor-o-por-referencia/images/java-reference-value.gif" data-gallery="" title="Paso de argumentos por referencia y paso por valor"><img src="/blog-bitix/2021/01/en-java-los-argumentos-se-pasan-por-valor-o-por-referencia/images/java-reference-value.gif" width="450" height="300" alt="Paso de argumentos por referencia y paso por valor" title="Paso de argumentos por referencia y paso por valor" class="" loading="lazy"></a></p>
 <figcaption>Paso de argumentos por referencia y paso por valor</figcaption>
 </figure>
 </div>
 <p><a href="https://picodotdev.github.io/blog-bitix/2020/12/para-que-sirve-la-palabra-clave-final-en-el-codigo-fuente-java/">La palabra reservada <em>final</em> en los argumentos</a> sirve para impedir asignar un nuevo valor a una variable, una variable <em>final</em> es una variable cuyo valor es una constante ya que en caso de intentar asignar a la variable un nuevo valor el compilador produce un error de compilación. La variable no pude cambiar de valor, sin embargo, si la variable es una referencia a un objeto el objeto si puede cambiar de estado, para que un objeto no pueda cambiar ha de ser inmutable.</p>
-<p>Algunas clases como la clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> en Java son inmutables, esto significa que al manipular el objeto se devuelve una nueva instancia de la clase en vez de modificar la original. En Java para manipular un <em>String</em> y obtener la misma referencia en vez de una nueva instancia hay que utilizar la clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java/lang/StringBuffer.html">StringBufffer</a> o <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java/lang/StringBuilder.html">StringBuilder</a>. Algunas instancias de listas obtenidas con la API de colecciones son inmutables como <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List.of</a>, y sus métodos <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html#add%28E%29">add</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html#remove%28java.lang.Object%29">remove</a> lanzan la excepción en caso de ser invocados.</p>
+<p>Algunas clases como la clase <a href="#ZgotmplZ">String</a> en Java son inmutables, esto significa que al manipular el objeto se devuelve una nueva instancia de la clase en vez de modificar la original. En Java para manipular un <em>String</em> y obtener la misma referencia en vez de una nueva instancia hay que utilizar la clase <a href="#ZgotmplZ">StringBufffer</a> o <a href="#ZgotmplZ">StringBuilder</a>. Algunas instancias de listas obtenidas con la API de colecciones son inmutables como <a href="#ZgotmplZ">List.of</a>, y sus métodos <a href="#ZgotmplZ">add</a> y <a href="#ZgotmplZ">remove</a> lanzan la excepción en caso de ser invocados.</p>
 <h2 id="ejemplo-práctico-del-paso-por-valor">Ejemplo práctico del paso por valor</h2>
 <p>En este programa aunque a las variables de los argumentos <em>x</em>, <em>y</em> y <em>w</em> se les asigne un nuevo valor las variables <em>a</em>, <em>b</em> y <em>c</em> usadas en la invocación del método continúan teniendo el mismo valor. Las variables de los argumentos se pasan por valor, sin embargo, los objetos a los que apuntan esas variables si son mutables y son modificados en el método los cambios son visibles en el ámbito de invocación con la variable utilizada como argumento.</p>
 <p>La lista de la variable <em>d</em> es modificada por el método, se corresponde con la variable <em>z</em>, y esos cambios son visibles en el ámbito de <em>d</em>, al contrario de las otras variables que aunque se les asigna un nuevo valor en el método fuera de él conservan su valor original aún después de la invocación del método. Esto ocurre porque en el caso de <em>d</em> se ha modificado el objeto mutable al cual tanto <em>d</em> y <em>z</em> apuntan.</p>
@@ -334,8 +334,8 @@ En el lenguaje de programación Java los punteros no existen de la misma forma q
     </div>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
-    <p> Puedes probar en tu equipo el ejemplo ejecutando el siguiente comando:<br><code>java Main.java</code></p>
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
+    <p> You can test the example on your computer by executing the following command:<br><code>java Main.java</code></p>
 </div>
 <div class="reference">
     Referencia:<br>
@@ -428,7 +428,7 @@ En el lenguaje de programación Java los punteros no existen de la misma forma q
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/">
-                <img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu14179314344348991071.webp" width="326" height="125" alt="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" title="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" class="" loading="lazy">
+                <img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu_c6c44a89c143a1e9.webp" width="326" height="125" alt="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" title="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" class="" loading="lazy">
                 <h3>Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot</h3>
                 </a>
                 

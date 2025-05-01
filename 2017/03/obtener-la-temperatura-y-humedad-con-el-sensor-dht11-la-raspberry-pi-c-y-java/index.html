@@ -62,7 +62,7 @@
     "dateModified": "2017-04-02T10:15:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1602",
+    "wordCount": "1604",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -306,18 +306,18 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Entre los varios sensores incluídos en el <a href="https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/">kit de iniciación para la Raspberry Pi</a> está el sensor de temperatura y humedad con el modelo DHT11. El DHT11 es un sensor muy básico pero suficiente y válido si el objetivo es trastear un poco con hardware.</p>
 <p>En la <a href="http://www.micropik.com/PDF/dht11.pdf">especificación del sensor DHT11</a> está descrita su funcionamiento y forma de comunicación. Utiliza 3 cables, uno para la corriente de 3.3V, otro para tierra y finalmente uno de datos que se conecta a cualquier <em>pin</em> <abbr title="General Purpose Input Output">GPIO</abbr> de la Raspberry Pi. Según la especificación el sensor proporciona sus datos en unos 4 ms cuando se le emite un pulso bajo durante unos pocos microsegundos y a continuación uno alto durante otros pocos microsegundos, momento a partir del cual el sensor emite 40 bits de información empezando por un pulso bajo de inicio y a continuación el propio bit con un pulso alto, según sea la duración del pulso alto el bit se considera un 0 si es menor de unos 27μs y un 1 si dura más de ese tiempo hasta unos 80μs momento en el que se emite el siguiente bit de información. Los primeros 8 bits corresponden a la parte entera de la humedad, los siguientes 8 bits a la parte decimal de la humedad, el tercer grupo de 8 bits a la parte entera de la temperatura y 8 bits más para la parte decimal. El último grupo de 8 bits hasta completar los 40 bits son de <em>checksum</em> para detectar errores en la transmisión. El porcentaje de errores en la transmisión significativo en este sensor y quizá haya que realizar varias lecturas del sensor para obtener una correcta.</p>
 <p>Dada las restricciones de tiempo que utiliza el sensor en el ejemplo usaré el lenguaje C para obtener los valores de temperatura y humedad y <abbr title="Java Native Interface">JNI</abbr> para acceder a ellos desde Java. Aún usando C se producen errores en la obtención de los valores ya que el método usado por el sensor y transmitir los datos basados en tiempo de microsegundos no es muy fiable. Usando Java la situación sería peor por las restricciones que impone la máquina virtual con sus paradas para la recolección de basura por ejemplo. Así que el ejemplo consistirá en una combinación de C y Java con JNI un poco más avanzado que el <a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-de-jni-usar-codigo-en-c-desde-java/">Ejemplo de JNI, usar código en C desde Java</a>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/dht11-1_hu1631248223419963727.webp" data-gallery="" title="Sensor DHT11"><img src="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/dht11-1_hu16202295587742239872.webp" width="300" height="118" alt="Sensor DHT11" title="Sensor DHT11" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/dht11-2_hu15451365530669580071.webp" data-gallery="" title="Sensor DHT11"><img src="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/dht11-2_hu11910566615604058244.webp" width="300" height="129" alt="Sensor DHT11" title="Sensor DHT11" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/dht11-1_hu_2a2af3355339c2ea.webp" data-gallery="" title="Sensor DHT11"><img src="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/dht11-1_hu_4b4ae86229d2100d.webp" width="300" height="118" alt="Sensor DHT11" title="Sensor DHT11" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/dht11-2_hu_1af6572c5024ea56.webp" data-gallery="" title="Sensor DHT11"><img src="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/dht11-2_hu_8978278d31f52d65.webp" width="300" height="129" alt="Sensor DHT11" title="Sensor DHT11" class="" loading="lazy"></a></p>
 <figcaption>Sensor DHT11</figcaption>
 </figure>
 </div>
@@ -366,15 +366,15 @@
 <p>Este es el esquema de conexiones que he utilizado para el ejemplo y una foto del cableado real, he usado del <em>pin</em> GPIO número 2 según la nomenclatura de wiringPi para el cable de datos del sensor DHT11 que se corresponde con pin número 13 según la nomenclatura del <em>header</em> de la Raspberry Pi. Para ver el cableado del <em>display</em> 1602 más detalladamente y la activación del bus de comunicación I2C que necesita consulta el artículo <a href="https://picodotdev.github.io/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/">Controlar un display LCD 1602 para mostrar texto con la Raspberry Pi y Java</a>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/cableado_hu8275731520502612410.webp" data-gallery="" title="Cableado sensor DHT11 y display 1602"><img src="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/cableado_hu17643798563451950991.webp" width="263" height="200" alt="Cableado sensor DHT11 y display 1602" title="Cableado sensor DHT11 y display 1602" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/cableado_hu_4956c21b5561c0c0.webp" data-gallery="" title="Cableado sensor DHT11 y display 1602"><img src="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/cableado_hu_edce48df259cbae3.webp" width="263" height="200" alt="Cableado sensor DHT11 y display 1602" title="Cableado sensor DHT11 y display 1602" class="" loading="lazy"></a></p>
 <figcaption>Cableado sensor DHT11 y display 1602</figcaption>
 </figure>
 </div>
 <p>Ejecutando el programa del ejemplo y usando el display 1602 (16 columnas y 2 filas) se muestra la temperatura y humedad obtenida del sensor.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/temperature-humidity_hu8325017389882468218.webp" data-gallery="" title="Cableado ejemplo y funcionando"><img src="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/temperature-humidity_hu16858380841162560640.webp" width="294" height="200" alt="Cableado ejemplo y funcionando" title="Cableado ejemplo y funcionando" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/display_hu17922207408258470066.webp" data-gallery="" title="Cableado ejemplo y funcionando"><img src="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/display_hu1552960867768128538.webp" width="300" height="162" alt="Cableado ejemplo y funcionando" title="Cableado ejemplo y funcionando" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/temperature-humidity_hu_4d2961651d6b2bb6.webp" data-gallery="" title="Cableado ejemplo y funcionando"><img src="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/temperature-humidity_hu_75778af9a915d7a2.webp" width="294" height="200" alt="Cableado ejemplo y funcionando" title="Cableado ejemplo y funcionando" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/display_hu_8f649f7b2e05c5d.webp" data-gallery="" title="Cableado ejemplo y funcionando"><img src="/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/images/display_hu_b727529c7321ac6b.webp" width="300" height="162" alt="Cableado ejemplo y funcionando" title="Cableado ejemplo y funcionando" class="" loading="lazy"></a></p>
 <figcaption>Cableado ejemplo y funcionando</figcaption>
 </figure>
 </div>
@@ -399,9 +399,9 @@
     </div>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaRaspberryPi">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew executeTemperatureHumidity</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaRaspberryPi">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew executeTemperatureHumidity</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

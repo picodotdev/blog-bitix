@@ -88,7 +88,7 @@ No es la primera vez que comento algo similar (I, II) disponer de la mayor canti
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/grails.svg" width="300" height="300" alt="Grails" title="Grails" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/grails.svg" width="300" height="300" alt="Grails" title="Grails" class="" loading="false"></p>
 </div>
 <p>No es la primera vez que comento algo similar (<a href="https://elblogdepicodev.blogspot.com.es/2012/08/paginas-pagecatalog-servicestatus-e.html">I</a>, <a href="https://elblogdepicodev.blogspot.com.es/2011/08/motivos-para-elegir-apache-tapestry.html">II</a>) disponer de la mayor cantidad de información cuando se produce una excepción o un error en la aplicación es vital para determinar rápidamente la causa del error y para solucionarlo correctamente. Para disponer de esta información podemos generar un archivo de log que nos permita revisar lo que pasó en la aplicación en un determinado momento. En el momento de desarrollo también nos puede interesar tener una página de excepción informativa.</p>"
 }
@@ -305,7 +305,7 @@ No es la primera vez que comento algo similar (I, II) disponer de la mayor canti
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/grails.svg" width="300" height="300" alt="Grails" title="Grails" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/grails.svg" width="300" height="300" alt="Grails" title="Grails" class="" loading="false"></p>
 </div>
 <p>No es la primera vez que comento algo similar (<a href="https://elblogdepicodev.blogspot.com.es/2012/08/paginas-pagecatalog-servicestatus-e.html">I</a>, <a href="https://elblogdepicodev.blogspot.com.es/2011/08/motivos-para-elegir-apache-tapestry.html">II</a>) disponer de la mayor cantidad de información cuando se produce una excepción o un error en la aplicación es vital para determinar rápidamente la causa del error y para solucionarlo correctamente. Para disponer de esta información podemos generar un archivo de log que nos permita revisar lo que pasó en la aplicación en un determinado momento. En el momento de desarrollo también nos puede interesar tener una página de excepción informativa.</p>
 <p>La página de error de <a href="https://grails.org/">Grails</a> por defecto da poca información, a poco más da la traza de la excepción y un extracto de los archivos relacionados donde se ha producido, podría ser mejor. Podría informar de los parámetros que se enviaron en la petición, las cabeceras http o las cookies además de los parámetros de sesión, a veces esta información nos puede servir para identificar la causa más rápidamente ya que la excepción puede estar produciéndose con el valor de un determinado parámetro o un determinado navegador, esta información no la tenemos en una simple traza de la excepción.</p>
@@ -326,8 +326,8 @@ No es la primera vez que comento algo similar (I, II) disponer de la mayor canti
 <p>El resultado se puede ver en la siguiente captura de pantalla.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-por-defecto_hu9272127236704790137.webp" data-gallery="" title="Página de error por defecto de Grails"><img src="/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-por-defecto_hu6454301147810701241.webp" width="300" height="166" alt="Página de error por defecto de Grails" title="Página de error por defecto de Grails" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-personalizada_hu15000192109504356779.webp" data-gallery="" title="Página de error personalizada de Grails"><img src="/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-personalizada_hu9898909695305945999.webp" width="211" height="200" alt="Página de error personalizada de Grails" title="Página de error personalizada de Grails" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-por-defecto_hu_324120131a68a9f1.webp" data-gallery="" title="Página de error por defecto de Grails"><img src="/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-por-defecto_hu_233a9e1c0695123.webp" width="300" height="166" alt="Página de error por defecto de Grails" title="Página de error por defecto de Grails" class="" loading="lazy"></a>
+<a href="/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-personalizada_hu_b793bed7ddf63d0b.webp" data-gallery="" title="Página de error personalizada de Grails"><img src="/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-personalizada_hu_b01aa75adb85f427.webp" width="211" height="200" alt="Página de error personalizada de Grails" title="Página de error personalizada de Grails" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <p>Los estilos mostrados en las capturas de pantalla podrían ser mejores pero la esencia está en la información que se muestra. En otro artículo publicaré como <a href="https://picodotdev.github.io/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/">obtener estadísticas de Hibernate para detectar problemas de N+1 u obtener las consultas sql que se están realizando en cada página de una aplicación Grails</a>, esta información nos puede ayudar bastante y no es excesivamente complicado hacerla. Con ambas conseguiremos que las aplicaciones que desarrollemos con Grails sean un poco más informativas.</p>

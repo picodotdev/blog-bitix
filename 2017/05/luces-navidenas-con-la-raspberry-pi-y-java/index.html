@@ -62,7 +62,7 @@
     "dateModified": "2017-05-14T11:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "541",
+    "wordCount": "543",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -306,29 +306,29 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Como muestra de lo que se puede hacer con la Raspberry Pi usando los <em>pines</em> GPIO haré un ejemplo que consistirá en múltiples diodos LED de diferentes colores enciendan y apaguen simulando una especie de luces navideñas. Como yo tengo la Raspbperry Pi 1 B con 26 <em>pines</em> de los cuales solo 17 son GPIO podré usar hasta 17 diodos LED, aunque solo usaré 15. En el <a href="https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/">kit de iniciación a la electrónica para la Raspberry Pi</a> viene incluidos 24 diodos LED de diferentes colores 6 blancos, 6 rojos, 6 amarillos y 6 verdes, también es necesario una resistencia por cada diodo de unos 200 ohmios de los cuales en el <em>kit</em> se incluyen 20 de este valor.</p>
 <p>Aunque con muchos más LED el ejemplo no es más complicado que el ejemplo que ya mostré de <a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-encender-y-apagar-diodo-led-con-la-raspberry-pi-en-java/">encender y apagar un diodo LED</a>. Usaré diodos de diferentes colores y dispuestos de forma aleatoria para darle un aspecto desordenado, para darle un aspecto más caótico los LEDs se encenderán y apagarán de forma aleatoria. Usaré el lenguaje de programación Java y la librería de alto nivel <a href="http://rtd.diozero.com/en/latest/">diozero</a> para controlar el encendido y apagado de los diodos.</p>
 <p>Esta es la foto del cableado usando múltiples cables macho-macho para conectar los <em>pines</em> con el polo positivo de los diodos pasando por la resistencia y también múltiples cables para conectar el polo negativo del diodo con tierra. Usando una placa <em>breadboard</em> para realizar las conexiones sin soldadura y una placa de extensión wiringPi para conectar la Raspberry Pi con la placa <em>breadboard</em> con un cable de 26 <em>pines</em> en mi caso por el modelo que tengo de RPi este es el aspecto de cableado.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-01_hu4924926351006469570.webp" data-gallery="" title="Cableado de las luces LED del árbol de navidad"><img src="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-01_hu8369365986671383552.webp" width="300" height="145" alt="Cableado de las luces LED del árbol de navidad" title="Cableado de las luces LED del árbol de navidad" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-02_hu7783133350446471001.webp" data-gallery="" title="Cableado de las luces LED del árbol de navidad"><img src="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-02_hu6663593585292451188.webp" width="300" height="151" alt="Cableado de las luces LED del árbol de navidad" title="Cableado de las luces LED del árbol de navidad" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-01_hu_ecc9fff2ec2d7db8.webp" data-gallery="" title="Cableado de las luces LED del árbol de navidad"><img src="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-01_hu_8ac458567d211870.webp" width="300" height="145" alt="Cableado de las luces LED del árbol de navidad" title="Cableado de las luces LED del árbol de navidad" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-02_hu_60d3878e433cb116.webp" data-gallery="" title="Cableado de las luces LED del árbol de navidad"><img src="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-02_hu_49a09b1f6d6ec6fa.webp" width="300" height="151" alt="Cableado de las luces LED del árbol de navidad" title="Cableado de las luces LED del árbol de navidad" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-03_hu12279466652384499746.webp" data-gallery="" title="Cableado de las luces LED del árbol de navidad"><img src="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-03_hu3385554575203372973.webp" width="300" height="148" alt="Cableado de las luces LED del árbol de navidad" title="Cableado de las luces LED del árbol de navidad" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-04_hu3412193233319410977.webp" data-gallery="" title="Cableado de las luces LED del árbol de navidad"><img src="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-04_hu15618882122485972983.webp" width="267" height="200" alt="Cableado de las luces LED del árbol de navidad" title="Cableado de las luces LED del árbol de navidad" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-03_hu_6bd113310dd66e2f.webp" data-gallery="" title="Cableado de las luces LED del árbol de navidad"><img src="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-03_hu_4fd9dd4403269d69.webp" width="300" height="148" alt="Cableado de las luces LED del árbol de navidad" title="Cableado de las luces LED del árbol de navidad" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-04_hu_ddc5908b261c768c.webp" data-gallery="" title="Cableado de las luces LED del árbol de navidad"><img src="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-04_hu_f9ba54e42ccb6b6e.webp" width="267" height="200" alt="Cableado de las luces LED del árbol de navidad" title="Cableado de las luces LED del árbol de navidad" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-05_hu2174394950954361689.webp" data-gallery="" title="Cableado de las luces LED del árbol de navidad"><img src="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-05_hu13634443170668369115.webp" width="267" height="200" alt="Cableado de las luces LED del árbol de navidad" title="Cableado de las luces LED del árbol de navidad" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-05_hu_c67da29161d52f23.webp" data-gallery="" title="Cableado de las luces LED del árbol de navidad"><img src="/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-05_hu_d42e1e2b71d00e7c.webp" width="267" height="200" alt="Cableado de las luces LED del árbol de navidad" title="Cableado de las luces LED del árbol de navidad" class="" loading="lazy"></a></p>
 <figcaption>Cableado de las luces LED del árbol de navidad</figcaption>
 </figure>
 </div>
@@ -356,9 +356,9 @@
   <iframe width="640" height="360" data-src="https://www.youtube.com/embed/F2BChbcyr5g" frameborder="0" title="Vídeo de YouTube" class="lozad" allowfullscreen></iframe>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaRasberriPi">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew executeChristmasTree</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaRasberriPi">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew executeChristmasTree</code></p>
 </div>
 
     </div>

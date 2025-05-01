@@ -264,7 +264,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
 </div>
 <p>Las APIs devuelven información habitualmente en formato JSON si es reciente y si la API es algo más antigua quizá en XML. En cualquiera de los formatos la información está estructurada en propiedades con un nombre del campo y su valor. El nombre del campo es el que le asignó el diseñador de la API en el momento de crearla. En el momento de consumir la API quizá por adaptarla a su uso, para añadirle más semántica al caso de uso específico o por mayor claridad interese cambiar el nombre de los campos.</p>
           
@@ -337,7 +337,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
 </div>
 <p>Los fragmentos en el contexto de <a href="https://graphql.org/">GraphQL</a> pueden ser de dos tipos, definidos previamente o definidos en linea. Los primeros permiten simplificar las consultas definiendo en un bloque una colección de datos a recuperar si tener que indicarlos explícitamente individualmente, lo que resulta útil para no repetir el mimo grupo de datos si se utiliza en varias consultas diferentes. Los fragmentos en línea permiten recuperar unos datos u otros en función del tipo de la instancia de la cual se quieren recuperar.</p>
           
@@ -364,7 +364,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
 </div>
 <p>En <a href="https://graphql.org/">GraphQL</a> construyendo la consulta adecuada se recuperan exclusivamente los datos solicitados.</p>
 <p>Por ejemplo, si de un libro solo se requieren las propiedades el <em>id</em>, <em>title</em> y <em>date</em> de entre todas las que tienen la consulta sería en este caso la siguiente para una consulta que devuelve los datos de un conjunto de libros.</p>
@@ -399,7 +399,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
 </div>
 <p>Hace ya un tiempo escribí una <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">serie de artículos sobre GraphQL</a> para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con <a href="https://graphql.org/">GraphQL</a> usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.</p>
 <p>Uno de esas posibilidades de GraphQL es la herramienta <a href="https://github.com/graphql/graphiql">GraphiQL</a> que es un editor interactivo para construir consultas y explorar la API. Una de sus mayores ventajas es que ofrece asistencia contextual y proporciona mensajes de error en caso de que la sintaxis de la consulta sea errónea. En los artículos que escribí con anterioridad los ejemplos los hice usando el comando <em>curl</em>. Ahora que he visto y aprendido algunas pocas cosas más de GraphQL en este artículo explico como usar la herramienta GraphiQL como alternativa a <em>curl</em>.</p>
@@ -427,7 +427,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
 </div>
 <p>Dada una consulta con los datos a recuperar <a href="https://graphql.org/">GraphQL</a> hace una llamada al correspondiente <em>resolver</em> o <em>data fecher</em> para obtener el valor de cada propiedad. Cuando se tratan de propiedades en un <em>java bean</em> esto no supone ningún problema en cuanto a rendimiento pero cuando obtener el valor de una propiedad es costoso la consulta resulta ineficiente.</p>
 <p>Por ejemplo, siguiendo el ejemplo que he utilizado en anteriores <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">artículos sobre GraphQL</a> de una librería en la que hay un tipo para representar un libro con una propiedad con sus comentarios, con una consulta que permite recuperar los libros para cada uno de ellos se llama al <em>resolver</em> que recupera los comentarios. En este ejemplo no ya que están los datos en memoria y no se usa una base de datos pero si recuperar los comentarios de cada libro supusiera una consulta SQL en una base de datos relacional (o tráfico de red en una base de datos NoSQL u otro servicio) y la lista de libros devuelta fuese grande cada vez que se realizará esta consulta el número de sentencias SQL a ejecutar sería grande y el tiempo de respuesta pobre y con una carga mayor para el servidor de base de datos.</p>
@@ -455,7 +455,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
 </div>
 <p><a href="https://picodotdev.github.io/blog-bitix/2017/11/que-es-graphql-y-ejemplo-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/">GraphQL es una alternativa a una interfaz REST</a> con las ventajas de permitir al consumidor obtener únicamente los datos que requiere y realizar varias consultas en una misma petición.</p>
 <p><a href="https://graphql.org/">GraphQL</a> por defecto soporta un conjunto de tipos escalares en los datos entre los que están varios numéricos, cadenas, booleanos, enumerados además de los tipos o estructuras de datos definidos en la interfaz del servicio. Sin embargo, si es necesario es posible definir nuevos tipos de datos escalares como podría ser el caso de un tipo de dato para representar una fecha y otro de importe monetario.</p>
@@ -483,7 +483,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
 </div>
 <p>El conjunto de datos de una entidad en algunos casos será grande, miles o cientos de miles de registros, y por tanto no es viable devolverlos todos en una misma consulta por lo que es necesario realizar paginación devolviéndolos en pequeños grupos. La paginación se puede implementar de varias formas, habitualmente con un parámetro que limite el número de elementos a incluir en la página y otro parámetro <em>offset</em> que deseche los primeros elementos hasta el primero deseado. Sin embargo, utilizar los parámetros <em>limit</em> y <em>offset</em> puede producir resultados inesperados si mientras la obtención de una página y la siguiente se insertan nuevos elementos anteriores al <em>offset</em> ocasionando que lo que sería por ejemplo el décimo elemento pase a ser el undécimo.</p>
           
@@ -510,7 +510,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
 </div>
 <p>No será extraño que en una API para obtener datos esté la necesidad de realizar algún tipo de filtrado para recuperar únicamente la colección de datos deseados de todos los existentes en un repositorio. A las consultas de <a href="https://graphql.org/">GraphQL</a> se les pueden pasar argumentos que son recibidos por los métodos que actúan como punto de entrada de las consultas. Con los argumentos es posible implementar cualquier funcionalidad que se necesite, entre ellas el filtrado. Los argumentos pueden ser datos escalares o más complejos que se definen con la palabra reservada <em>input</em> en el esquema.</p>
           
@@ -537,7 +537,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
 </div>
 <p>Cuando en una consulta de <a href="https://graphql.org/">GraphQL</a> se indican las propiedades a devolver GraphQL usa para cada una de ellas lo que en la implementación de Java se llama un <em>resolver</em> y en otras implementaciones <em>data fetcher</em>. En la mayoría de casos las propiedades serán propiedades de un objeto y en estos casos se usará un <em>PropertyDataFetcher</em> usando en Java la convención de los <em>java beans</em> o la clave de un mapa. En el caso de que cierto dato no esté almacenado en el objeto sino en un repositorio externo es necesario usar un <em>resolver</em> para devolver esa propiedad en la consulta.</p>
           
@@ -564,7 +564,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
 </div>
 <p>Por defecto <a href="https://graphql.org/">GraphQL</a> devuelve errores con mensajes descriptivos para los errores del cliente como son los errores de sintaxis en la sentencia de consulta o mutación, en el caso de que el campo solicitado no exista o no se ha indicado ninguno. En el caso de Java si se lanza una excepción en la clase repositorio que guarda los datos o en la lógica de negocio y no se captura GraphQL indicará que se ha producido un error interno en el servidor. Esto no es muy descriptivo y es mejor indicar errores más útiles para el usuario de la API como podría ser que no se tienen permisos para realizar la modificación o el error que se ha producido al validar los datos y por los que la operación no se ha completado.</p>
           

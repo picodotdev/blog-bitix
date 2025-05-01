@@ -71,7 +71,7 @@ No será extraño que en una API para obtener datos esté la necesidad de realiz
     "dateModified": "2019-06-15T01:10:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "851",
+    "wordCount": "853",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -88,7 +88,7 @@ No será extraño que en una API para obtener datos esté la necesidad de realiz
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
 </div>
 <p>No será extraño que en una API para obtener datos esté la necesidad de realizar algún tipo de filtrado para recuperar únicamente la colección de datos deseados de todos los existentes en un repositorio. A las consultas de <a href="https://graphql.org/">GraphQL</a> se les pueden pasar argumentos que son recibidos por los métodos que actúan como punto de entrada de las consultas. Con los argumentos es posible implementar cualquier funcionalidad que se necesite, entre ellas el filtrado. Los argumentos pueden ser datos escalares o más complejos que se definen con la palabra reservada <em>input</em> en el esquema.</p>"
 }
@@ -305,7 +305,7 @@ No será extraño que en una API para obtener datos esté la necesidad de realiz
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
 </div>
 <p>No será extraño que en una API para obtener datos esté la necesidad de realizar algún tipo de filtrado para recuperar únicamente la colección de datos deseados de todos los existentes en un repositorio. A las consultas de <a href="https://graphql.org/">GraphQL</a> se les pueden pasar argumentos que son recibidos por los métodos que actúan como punto de entrada de las consultas. Con los argumentos es posible implementar cualquier funcionalidad que se necesite, entre ellas el filtrado. Los argumentos pueden ser datos escalares o más complejos que se definen con la palabra reservada <em>input</em> en el esquema.</p>
 <p>Usando el mismo ejemplo que he utilizado en artículos anteriores ahora en este caso implemento la funcionalidad de poder filtrar los libros de una biblioteca utilizando una expresión regular que el título del libro debe cumplir para obtenerse como resultado. El esquema del <em>endpoint</em> de GraphQL queda de la siguiente forma para implementar el filtrado, usando el tipo definido con <em>input</em> es posible pasar como argumentos datos complejos o agrupaciones de datos escalares.</p>
@@ -345,9 +345,9 @@ No será extraño que en una API para obtener datos esté la necesidad de realiz
 </div>
 <p>Pero&hellip; ¿que ocurre si aún con el filtrado o en una consulta el número de coincidencias son unos cuantos miles? Seguramente sean demasiadas coincidencias para devolver en una única petición y por ello es habitual <a href="https://picodotdev.github.io/blog-bitix/2017/11/paginacion-usando-cursores-en-graphql-y-java/">realizar paginación en GraphQL</a>. Eso será tema para otro de los siguientes artículos de esta serie sobre GraphQL.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/GraphQL">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/GraphQL">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew run</code></p>
 </div>
 
     </div>

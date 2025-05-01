@@ -74,7 +74,7 @@ Las clases inner se definen dentro de otra clase cuando esa clase inner tiene al
     "dateModified": "2019-02-15T18:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "612",
+    "wordCount": "614",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -91,7 +91,7 @@ Las clases inner se definen dentro de otra clase cuando esa clase inner tiene al
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Por regla general en Java cada clase se define en su propio archivo de código fuente, pdor ejemplo, una clase de nombre <em>Order</em> se ha de definir en el archivo <em>Order.java</em>. Sin embargo, esta no es la única forma de definir clases, es posible definir clases <em>inner</em> y anónimas que evita tener que crear un nuevo archivo de código fuente.</p>
 <p>Las clases <em>inner</em> se definen dentro de otra clase cuando esa clase <em>inner</em> tiene alta cohesión (su lógica está muy relacionada con la clase que la contiene), en algunos casos se emplean para ocultar los tipos que implementan la lógica. Dependiendo de si la clase <em>inner</em> debe acceder a los datos de la clase que la contiene o no la clase <em>inner</em> se define como no estática o como estática con la palabra reservada <em>static</em>. Las clases <em>inner</em> estáticas no necesitan una referencia a la clase que la contiene y por ello son algo más eficientes y el método preferido de definirlas, si la clase <em>inner</em> debe acceder a los miembros de la clase contenedora hay que definirla como no estática. Para desambiguar la referencia <em>this</em> y miembros con el mismo nombre de la clase <em>inner</em> con la de la clase contenedora se puede utilizar en el ejemplo <em>Order.this.products</em> quitando los <em>static</em> de las clases.</p>"
@@ -309,7 +309,7 @@ Las clases inner se definen dentro de otra clase cuando esa clase inner tiene al
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Por regla general en Java cada clase se define en su propio archivo de código fuente, pdor ejemplo, una clase de nombre <em>Order</em> se ha de definir en el archivo <em>Order.java</em>. Sin embargo, esta no es la única forma de definir clases, es posible definir clases <em>inner</em> y anónimas que evita tener que crear un nuevo archivo de código fuente.</p>
 <p>Las clases <em>inner</em> se definen dentro de otra clase cuando esa clase <em>inner</em> tiene alta cohesión (su lógica está muy relacionada con la clase que la contiene), en algunos casos se emplean para ocultar los tipos que implementan la lógica. Dependiendo de si la clase <em>inner</em> debe acceder a los datos de la clase que la contiene o no la clase <em>inner</em> se define como no estática o como estática con la palabra reservada <em>static</em>. Las clases <em>inner</em> estáticas no necesitan una referencia a la clase que la contiene y por ello son algo más eficientes y el método preferido de definirlas, si la clase <em>inner</em> debe acceder a los miembros de la clase contenedora hay que definirla como no estática. Para desambiguar la referencia <em>this</em> y miembros con el mismo nombre de la clase <em>inner</em> con la de la clase contenedora se puede utilizar en el ejemplo <em>Order.this.products</em> quitando los <em>static</em> de las clases.</p>
@@ -341,9 +341,9 @@ Las clases inner se definen dentro de otra clase cuando esa clase inner tiene al
 <p>Para los programadores en Java seguramente esto de las clases <em>inner</em> y anónimas no es nada nuevo pero ¿conoces las clases locales? Dentro de un método también se puede definir una clase, llamada por ello local. Las clases locales no son habituales y para su uso su funcionalidad ha de estar altamente cohesionado con el método, un posible uso es para realizar validaciones o formateos que sean un poco complejos. El siguiente <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/localclasses.html">ejemplo de clase local</a> <em>PhoneNumber</em> muestra su uso.</p>
 <p>En la <a href="http://docs.oracle.com/javase/tutorial/java/javaOO/nested.html">sección de clases anidadas</a> o <em>nested classes</em> del <a href="http://docs.oracle.com/javase/tutorial/java/javaOO/index.html">tutorial sobre clases y objetos</a> se explica más detalladamente estas capacidades del lenguaje Java.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaInnerClasses">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaInnerClasses">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew run</code></p>
 </div>
 
     </div>

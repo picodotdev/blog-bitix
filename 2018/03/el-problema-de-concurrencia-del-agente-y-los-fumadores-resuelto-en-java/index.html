@@ -71,7 +71,7 @@ Junto con los ejemplos de la cena de los filósofos y la barbería el de los fum
     "dateModified": "2018-03-05T19:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1062",
+    "wordCount": "1064",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -88,7 +88,7 @@ Junto con los ejemplos de la cena de los filósofos y la barbería el de los fum
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Junto con los ejemplos de <a href="https://picodotdev.github.io/blog-bitix/2018/02/el-problema-de-concurrencia-de-la-cena-de-los-filosofos-resuelto-con-java/">la cena de los filósofos</a> y <a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciacion-a-la-programacion-concurrente-en-java/">la barbería</a> el de los fumadores es otro ejemplo clásico que se estudia en las asignaturas de sistemas operativos. Estos ejemplos necesitan de mecanismos de sincronización y concurrencia para su correcto funcionamiento al haber varios procesos y recursos compartidos que los procesos intentan utilizar de forma concurrente pero que no se debe permitir utilizando notificaciones entre procesos o <a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciacion-a-la-programacion-concurrente-en-java/">algunas primitivas de sincronización, concurrencia e hilos que posee Java</a> como <em>mutex</em>, <em>locks</em> o semáforos.</p>"
 }
@@ -305,7 +305,7 @@ Junto con los ejemplos de la cena de los filósofos y la barbería el de los fum
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Junto con los ejemplos de <a href="https://picodotdev.github.io/blog-bitix/2018/02/el-problema-de-concurrencia-de-la-cena-de-los-filosofos-resuelto-con-java/">la cena de los filósofos</a> y <a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciacion-a-la-programacion-concurrente-en-java/">la barbería</a> el de los fumadores es otro ejemplo clásico que se estudia en las asignaturas de sistemas operativos. Estos ejemplos necesitan de mecanismos de sincronización y concurrencia para su correcto funcionamiento al haber varios procesos y recursos compartidos que los procesos intentan utilizar de forma concurrente pero que no se debe permitir utilizando notificaciones entre procesos o <a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciacion-a-la-programacion-concurrente-en-java/">algunas primitivas de sincronización, concurrencia e hilos que posee Java</a> como <em>mutex</em>, <em>locks</em> o semáforos.</p>
 <p>El caso de los fumadores consiste en un grupo de fumadores que para fumar necesitan los ingredientes que les faltan para hacer un cigarrillo y fumárselo, poseen un ingrediente en cantidades ilimitadas pero les faltan otros dos. El agente posee cantidades ilimitadas de todos los ingredientes que son papel, tabaco y cerillas pero solo deja en una mesa dos de estos ingredientes a la vez. Cada fumador posee un ingrediente distinto de los tres necesarios y según los ingredientes que deje el agente uno de los fumadores podrá fumar con los dos ingredientes que el agente deja.</p>
@@ -317,7 +317,7 @@ Junto con los ejemplos de la cena de los filósofos y la barbería el de los fum
         <span>SmokersDeadlock.java</span>
     </div>
 </div>
-<p>Para la solución hay que optar por otra estrategia, en el ejemplo de código he creado tres clases que representa a cada una de las entidades, una clase <em>Agent</em>, una clase <em>Smoker</em> y una clase <em>Table</em>, adicionalmente una clase <em>Pusher</em> que se encargará de despertar al <em>Smoker</em> correcto según los ingredientes de la mesa. Todas las clases implementan la interfaz <a href="https://docs.oracle.com/javase/9/docs/api/java/lang/Runnable.html">Runnable</a> para convertir cada una de las instancias en un hilo de ejecución. Cuando un agente deja ingredientes en la mesa se notifica a todos los incitadores  o <em>pushers</em> para indicarles que hay ingredientes listos, el <em>pusher</em> adquiere el ingrediente que tiene asignado para tomar y comprueba cual es el único ingrediente que falta en la mesa, si no lo sabe porque falten varios ingredientes indica que en la mesa está su ingrediente y deja el trabajo de despertar al fumador al siguiente <em>pusher</em>. El <em>pusher</em> que sepa que dos ingredientes hay en la mesa despierta al fumador que puede fumar con el ingrediente que tiene y los dos que hay en la mesa. El fumador se pone a fumar y cuando termina se indica al agente que genere otros dos ingredientes.</p>
+<p>Para la solución hay que optar por otra estrategia, en el ejemplo de código he creado tres clases que representa a cada una de las entidades, una clase <em>Agent</em>, una clase <em>Smoker</em> y una clase <em>Table</em>, adicionalmente una clase <em>Pusher</em> que se encargará de despertar al <em>Smoker</em> correcto según los ingredientes de la mesa. Todas las clases implementan la interfaz <a href="#ZgotmplZ">Runnable</a> para convertir cada una de las instancias en un hilo de ejecución. Cuando un agente deja ingredientes en la mesa se notifica a todos los incitadores  o <em>pushers</em> para indicarles que hay ingredientes listos, el <em>pusher</em> adquiere el ingrediente que tiene asignado para tomar y comprueba cual es el único ingrediente que falta en la mesa, si no lo sabe porque falten varios ingredientes indica que en la mesa está su ingrediente y deja el trabajo de despertar al fumador al siguiente <em>pusher</em>. El <em>pusher</em> que sepa que dos ingredientes hay en la mesa despierta al fumador que puede fumar con el ingrediente que tiene y los dos que hay en la mesa. El fumador se pone a fumar y cuando termina se indica al agente que genere otros dos ingredientes.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.javaconcurrency.agent</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">Component</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="n">MATCH</span><span class="p">,</span><span class="w"> </span><span class="n">TOBACCO</span><span class="p">,</span><span class="w"> </span><span class="n">PAPER</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
@@ -360,9 +360,9 @@ Junto con los ejemplos de la cena de los filósofos y la barbería el de los fum
 </div>
 <p>En el siguiente <a href="https://cse.yeditepe.edu.tr/~kserdaroglu/spring2014/cse331/labnotes/WEEK%205%20-%20SEMAPHORES/mysemaphoreexamplesMOE.pdf">documento con varios de los problemas de concurrencia y sincronización</a> está muy bien explicado la solución a este problema de los fumadores y de los otros casos. En algunos otros sitios este caso lo convierten en un problema de sincronización en vez de uno de concurrencia.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaConcurrency">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaConcurrency">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew run</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

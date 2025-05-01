@@ -62,7 +62,7 @@
     "dateModified": "2021-05-11T00:19:30+02:00",
     "inLanguage": "es",
     
-    "wordCount": "779",
+    "wordCount": "781",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -307,7 +307,7 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Generar documentos e informes de salida en una una tarea básica de cualquier aplicación y una forma de exportar los datos a otros formatos. Con <a href="https://poi.apache.org/">Apache POI</a> se pueden generar hojas de cálculo excel para su procesamiento con <a href="https://www.libreoffice.org/">LibreOffice</a> o <a href="https://products.office.com/es-es/">Microsoft Office Excel</a>. En ocasiones también es necesario <a href="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/">generar gráficas para visualizar un conjunto grande de datos</a> para ser más fáciles de interpretar, descubrir tendencias, comparar, sacar conclusiones en base a las cuales tomar alguna acción. Los archivos PDF también son muy utilizados para imprimirlos en formato en papel o enviarlos adjuntos en correos electrónicos.</p>
 <p>Uno de estos casos podría ser la generación de una factura en base a una plantilla e incluir el el importe y consumo realizado por un cliente y que este pueda obtenerla en formato electrónico o le sea enviada por correo electrónico como un documento adjunto o <a href="https://elblogdepicodev.blogspot.com.es/2011/02/enviar-correos-mediante-java-mail.html">enviar un correo electrónico</a> para indicar que tiene la factura disponible en su área de cliente lista para su descarga. Este es el caso de muchas empresas que ofrecen servicios como compañías eléctricas, de telecomunicaciones, servicios municipales de agua y basura, bancos para su justificantes y comprobantes, comercios, etc&hellip;</p>
@@ -340,10 +340,10 @@
 </div>
 <h3 id="documento-pdf-generado">Documento PDF generado</h3>
 <p>El resultado es el siguiente <a href="/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/resources/document.pdf" title="">documento PDF</a> que puedes visualizar sin necesidad de instalar programas adicionales en tu ordenador usando el visor en línea de <a href="https://smallpdf.com/">Smallpdf</a> que permite la <a href="https://smallpdf.com/es/blog?type=tutoriales&amp;tool=insertar-pdf">incrustación de documentos PDF en varios tipos de páginas web</a>.</p>
-<p><a href="https://smallpdf.com/es/editar-pdf#open=https://picodotdev.github.io/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/resources/document.pdf" target="_blank"><img src="/assets/images/misc/open-with-smallpdf-es.svg" alt="Abrir con Smallpdf" title="Abrir con Smallpdf" class="" loading="lazy"></a></p>
+<p><a href="https://smallpdf.com/es/editar-pdf#open=https://picodotdev.github.io/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/resources/document.pdf,target=_blank"><img src="/assets/images/misc/open-with-smallpdf-es.svg" alt="Abrir con Smallpdf" title="Abrir con Smallpdf" class="" loading="lazy"></a></p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/images/document_hu6235674913488377873.webp" data-gallery="" title="Documento generado con PDFBox"><img src="/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/images/document_hu11190235619799253220.webp" width="391" height="450" alt="Documento generado con PDFBox" title="Documento generado con PDFBox" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/images/document_hu_3d1201d9766ffe27.webp" data-gallery="" title="Documento generado con PDFBox"><img src="/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/images/document_hu_3215c7261e63ab45.webp" width="391" height="450" alt="Documento generado con PDFBox" title="Documento generado con PDFBox" class="" loading="lazy"></a></p>
 <figcaption>Documento generado con PDFBox</figcaption>
 </figure>
 </div>
@@ -353,9 +353,9 @@
 <p>Pero en vez de crear un documento PDF desde cero desde Java si se trata de una factura es más sencillo partir de un documento PDF a modo de plantilla con el diseño deseado en el que solo haya que incluir la información que varía en la ubicación del documento apropiada. Este sería en caso de una factura o justificante. Y si el documento es un informe con muchos datos o el diseño se desea cambia independientemente de la información que incluye o es complejo en vez de insertar cada campo de texto e imágenes individualmente con código está la opción de utilizar el generador de documentos <a href="https://community.jaspersoft.com/project/jasperreports-library">JasperReports</a>.</p>
 <p>En el siguiente <a href="https://www.tutorialspoint.com/pdfbox/index.htm">tutorial de PDFBox</a> se incluyen más ejemplos de tareas básicas al procesar documentos PDF con esta librería. Con PDFBox el documento PDF se genera completamente mediante código, si el PDF requiere cambios hay que modificar el código que para documentos sencillos es aceptable. Para documentos PDF complejos y para separar el estilo, la información que contiene y que el código no requiera modificaciones también se pueden <a href="https://picodotdev.github.io/blog-bitix/2019/12/generar-documentos-informes-y-facturas-en-formato-pdf-con-jasperreports-y-java/">Generar documentos, informes y facturas en formato PDF con JasperReports</a>.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaPdf">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaPdf">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew run</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

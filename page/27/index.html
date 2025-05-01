@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta name="generator" content="Hugo 0.139.4">
+	<meta name="generator" content="Hugo 0.147.1">
   <meta name="base" href="/blog-bitix/">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -293,7 +293,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
 </div>
 <p>Dada una consulta con los datos a recuperar <a href="https://graphql.org/">GraphQL</a> hace una llamada al correspondiente <em>resolver</em> o <em>data fecher</em> para obtener el valor de cada propiedad. Cuando se tratan de propiedades en un <em>java bean</em> esto no supone ningún problema en cuanto a rendimiento pero cuando obtener el valor de una propiedad es costoso la consulta resulta ineficiente.</p>
 <p>Por ejemplo, siguiendo el ejemplo que he utilizado en anteriores <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">artículos sobre GraphQL</a> de una librería en la que hay un tipo para representar un libro con una propiedad con sus comentarios, con una consulta que permite recuperar los libros para cada uno de ellos se llama al <em>resolver</em> que recupera los comentarios. En este ejemplo no ya que están los datos en memoria y no se usa una base de datos pero si recuperar los comentarios de cada libro supusiera una consulta SQL en una base de datos relacional (o tráfico de red en una base de datos NoSQL u otro servicio) y la lista de libros devuelta fuese grande cada vez que se realizará esta consulta el número de sentencias SQL a ejecutar sería grande y el tiempo de respuesta pobre y con una carga mayor para el servidor de base de datos.</p>
@@ -321,7 +321,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/javascript.svg" width="200" height="200" alt="JavaScript" title="JavaScript" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/javascript.svg" width="200" height="200" alt="JavaScript" title="JavaScript" class="" loading="false"></p>
 </div>
 <p>Los navegadores web utilizan la palabra clave sentencia <em>debugger;</em> como punto de ruptura para iniciar el depurado de un código JavaScript. En vez de poner el punto de ruptura desde el navegador utilizando la herramienta de depuración para desarrolladores con esta instrucción se puede poner en el código fuente donde se desee, de esta forma se evita buscar entre los múltiples recursos que haya cargados en la página e ir a la línea en la que se desea iniciar la depuración poniendo un punto de ruptura.</p>
           
@@ -388,7 +388,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/quercus-robur.webp" width="175" height="265" alt="Quercus Robur" title="Quercus Robur" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/quercus-robur.webp" width="175" height="265" alt="Quercus Robur" title="Quercus Robur" class="" loading="false"></p>
 </div>
 <p>Ya han pasado varios meses desde que hice germinar en septiembre varias bellotas de roble, ha pasado el invierno, ha llegado la primavera y ahora tengo unos pequeños plantones de roble. Al germinar y crecer hasta la altura entre unos 10 o 15 centímetros en un primer momento desarrollaron unas siete hojas de un tamaño bastante grande. Con el invierno las hojas se les comenzaron a amarillear y aún en mayo todavía tienen varias aunque en algún momento se les caerán, cuando veo que la hoja ya está bastante amarilla pruebo a ver si la hora se desprende fácilmente sin hacer mucha fuerza.</p>
           
@@ -439,10 +439,10 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
 </div>
 <p>El <em>prompt</em> de la terminal es el símbolo del sistema que precede al comando que introducimos en la terminal y por defecto indica el directorio de trabajo que utilizarán los comandos y el directorio que utilizarán las rutas relativas. El <em>prompt</em> del intérprete de comandos <em>Bash</em> se puede personalizar para por ejemplo modificar el color de su texto y la información que incluye con las preferencias del usuario.</p>
           
@@ -493,10 +493,10 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
-<p>Una de las novedades que incorporó Java 7 es la sentencia <em>try-with-resources</em> con el objetivo de cerrar los recursos de forma automática en la sentencia <em>try-catch-finally</em> y hacer más simple el código. Aquellas variables cuyas clases implementan la interfaz <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/AutoCloseable.html">AutoCloseable</a> pueden declararse en el bloque de inicialización de la sentencia <em>try-with-resources</em> y sus métodos <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/AutoCloseable.html#close%28%29">close()</a> serán llamados después del bloque <em>finally</em> como si su código estuviese de forma explícita.</p>
-<p>Un ejemplo de código que lee una línea de un fichero usando la sentencia <em>try-with-resources</em> es la siguiente de Java 7. Como se observa no es necesario llamar de forma explícita al método <em>close</em> para liberar los recursos de la instancia de la clase <a href="https://docs.oracle.com/javase/10/docs/api/java/io/BufferedReader.html">BufferedReader</a>.</p>
+<p>Una de las novedades que incorporó Java 7 es la sentencia <em>try-with-resources</em> con el objetivo de cerrar los recursos de forma automática en la sentencia <em>try-catch-finally</em> y hacer más simple el código. Aquellas variables cuyas clases implementan la interfaz <a href="#ZgotmplZ">AutoCloseable</a> pueden declararse en el bloque de inicialización de la sentencia <em>try-with-resources</em> y sus métodos <a href="#ZgotmplZ">close()</a> serán llamados después del bloque <em>finally</em> como si su código estuviese de forma explícita.</p>
+<p>Un ejemplo de código que lee una línea de un fichero usando la sentencia <em>try-with-resources</em> es la siguiente de Java 7. Como se observa no es necesario llamar de forma explícita al método <em>close</em> para liberar los recursos de la instancia de la clase <a href="#ZgotmplZ">BufferedReader</a>.</p>
           
           <br>
           <a href="/blog-bitix/2018/04/la-sentencia-try-with-resources-de-java/">Continuar leyendo...</a>
@@ -521,10 +521,10 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Las excepciones son una forma de gestionar las condiciones de error que se dan en los programas. En el lenguaje C se utiliza el valor de retorno de la función para determinar la condición de error que se ha producido, el problema es que comprobar el valor de retorno puede ignorarse y la gestión de errores está mezclada con la tarea del programa.</p>
-<p>El lenguaje Java utiliza un <a href="https://picodotdev.github.io/blog-bitix/2017/10/las-excepciones-para-gestionar-errores-con-java/">mecanismo de excepciones</a>, las excepciones son objetos que se lanzan cuando se produce una condición de error. Todas las excepciones en Java heredan de <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/Throwable.html">Throwable</a> subdividiéndose en <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/Error.html">Error</a> y <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/Exception.html">Exception</a>, las primeras son condiciones de error del sistema y las segundas condiciones de error del programa. A su vez las <em>Exception</em> pueden ser <em>checked</em> si heredan de esta y son aquellas que el compilador fuerza a que sean capturadas no pudiendo ignorarse, han de capturarse en una construcción <em>try catch</em> o declarar que el método puede lanzar la excepción no capturada. Las excepciones <em>unchecked</em> heredan de <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/RuntimeException.html">RuntimeException</a> que heredan a su vez de <em>Exception</em> pero tienen la particularidad de que no es necesario capturarlas ni declararlas como que se pueden lanzar debido a que se consideran condiciones de error en la programación como un acceso a un <em>array</em> fuera de rango que produce un <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/ArrayIndexOutOfBoundsException.html">ArrayIndexOutOfBounds</a>, el conocido <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/NullPointerException.html">NullPointerException</a> cuando se utiliza una referencia nula, otro es <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/ArithmeticException.html">ArithmeticException</a> que se produce al dividir por 0.</p>
+<p>El lenguaje Java utiliza un <a href="https://picodotdev.github.io/blog-bitix/2017/10/las-excepciones-para-gestionar-errores-con-java/">mecanismo de excepciones</a>, las excepciones son objetos que se lanzan cuando se produce una condición de error. Todas las excepciones en Java heredan de <a href="#ZgotmplZ">Throwable</a> subdividiéndose en <a href="#ZgotmplZ">Error</a> y <a href="#ZgotmplZ">Exception</a>, las primeras son condiciones de error del sistema y las segundas condiciones de error del programa. A su vez las <em>Exception</em> pueden ser <em>checked</em> si heredan de esta y son aquellas que el compilador fuerza a que sean capturadas no pudiendo ignorarse, han de capturarse en una construcción <em>try catch</em> o declarar que el método puede lanzar la excepción no capturada. Las excepciones <em>unchecked</em> heredan de <a href="#ZgotmplZ">RuntimeException</a> que heredan a su vez de <em>Exception</em> pero tienen la particularidad de que no es necesario capturarlas ni declararlas como que se pueden lanzar debido a que se consideran condiciones de error en la programación como un acceso a un <em>array</em> fuera de rango que produce un <a href="#ZgotmplZ">ArrayIndexOutOfBounds</a>, el conocido <a href="#ZgotmplZ">NullPointerException</a> cuando se utiliza una referencia nula, otro es <a href="#ZgotmplZ">ArithmeticException</a> que se produce al dividir por 0.</p>
           
           <br>
           <a href="/blog-bitix/2018/04/la-controversia-sobre-las-excepciones-checked-y-unchecked/">Continuar leyendo...</a>
@@ -547,10 +547,10 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
 </div>
 <p>Uno de los sistemas de control de versiones más utilizado es <a href="https://git-scm.com/">Git</a>. <a href="https://es.wikipedia.org/wiki/Bash">Bash</a> es el intérprete de comandos por defecto en la mayoría de distribuciones <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>. A la hora de trabajar en la terminal y estando como directorio actual en un directorio que está bajo el control de versiones de git bash por defecto no muestra ninguna información del estado de los archivos en su repositorio en el símbolo del sistema o <em>prompt</em>.</p>
           
@@ -575,7 +575,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/slimbook.webp" width="200" height="86" alt="Slimbook" title="Slimbook" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/slimbook.webp" width="200" height="86" alt="Slimbook" title="Slimbook" class="" loading="false"></p>
 </div>
 <p>Hace unos días <a href="https://slimbook.es/">Slimbook</a> presentaba el nuevo equipo <a href="https://slimbook.es/aio-curve-el-all-in-one-curvo-de-gnu-linux">AIO Curve</a> con una pantalla de 24 pulgadas ampliando su catálogo de productos en una nueva categoría, un todo en uno, <em>all-in-one</em> o AIO. Como es el caso de estos modelos el equipo consta de un monitor en el que en parte trasera de la pantalla está integrada el procesador, memoria, almacenamiento SSD, todas las piezas como salida de red, wifi, audio y conexiones. La características de estos equipos es que no necesitan de mucho espacio, solo el que ocupe el monitor, son silenciosos y requiere de algún cable menos.</p>
           

@@ -62,7 +62,7 @@
     "dateModified": "2016-10-08T00:30:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1579",
+    "wordCount": "1581",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -304,10 +304,10 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/keycloak.svg" width="200" height="200" alt="Keycloak" title="Keycloak" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/keycloak.svg" width="200" height="200" alt="Keycloak" title="Keycloak" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>El protocolo <a href="https://oauth.net/">OAuth</a> permite a una aplicación cliente acceder a los recursos de un usuario almacenados en otra aplicación sin que el usuario proporcione a la aplicación cliente sus credenciales, además el usuario tiene la capacidad de revocar en caulquier momento los permisos concedidos a la aplicación cliente. El protocolo OAuth es ampliamente usado por empresas como <a href="https://www.google.es/">Google</a>, <a href="https://www.facebook.com/">Facebook</a>, <a href="https://twitter.com/">Twitter</a> en sus aplicaciones y servicios. También aplicando una arquitectura de microservicios, al dividir una aplicación en varios módulos o simplemente varias aplicaciones independientes pero que son usadas al mismo tiempo por el mismo usuario para evitar que el usuario se autentique en cada aplicación individualmente y que cada aplicación implemente la funcionalidad de autenticación podemos centralizarla usando OAuth a modo de autenticación única o <a href="https://es.wikipedia.org/wiki/Single_Sign-On"><abbr title="Single Sign-On">SSO</abbr></a>. Usando <a href="https://www.keycloak.org/">Keycloak</a> como servidor de OAuth podemos integrarlo en una aplicación Java que use <a href="https://shiro.apache.org/">Apache Shiro</a> para la autorización, <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> para iniciar la aplicación y <a href="https://tapestry.apache.org/">Apache Tapestry</a> como <em>framework</em> web.</p>
 <p>En el protocolo OAuth se diferencia las aplicaciones cliente que son capaces de mantener seguras sus credenciales como es el caso de una aplicación web ejecutada en el servidor o las aplicaciones que no son capaces de mantener sus credenciales seguras como es el caso de una aplicación cliente ejecutada en el navegador o en algunos casos nativa en el móvil. Independientemente de la aplicación cliente o de los <a href="https://tools.ietf.org/html/rfc6749#page-8">varios flujos de autenticación</a> el acceso a los recursos del usuario se hace mediante la obtención de un <em>token</em> que es una cadena de caracteres opaca de cierta longitud pero que descifrada contiene información del usuario autenticado también está firmada digitalmente por el servidor de OAuth para evitar alteraciones. El protocolo define varios flujos para obtener un <em>token</em>, obtenido el <em>token</em> con cualquiera de ellos el acceso a los recursos es indiferente del flujo que haya sido empleado.</p>
@@ -338,20 +338,20 @@
 <p>Para el ejemplo crearé un nuevo <em>realm</em> que contendrá los usuarios y en el que registraremos la aplicación cliente.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-realm_hu17941709133431862437.webp" data-gallery="" title="Keycloak realm"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-realm_hu12354322690182262625.webp" width="300" height="173" alt="Keycloak realm" title="Keycloak realm" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-client_hu6847236546071732672.webp" data-gallery="" title="Keycloak client"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-client_hu256413449741023301.webp" width="300" height="173" alt="Keycloak client" title="Keycloak client" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-realm_hu_fb9d1090be2f95a7.webp" data-gallery="" title="Keycloak realm"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-realm_hu_1ba7015a32f1588.webp" width="300" height="173" alt="Keycloak realm" title="Keycloak realm" class="" loading="lazy"></a>
+<a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-client_hu_e5cdc213c0b53a9a.webp" data-gallery="" title="Keycloak client"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-client_hu_40298335b79ceddd.webp" width="300" height="173" alt="Keycloak client" title="Keycloak client" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-client-roles_hu5327558770727474548.webp" data-gallery="" title="Keycloak client roles"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-client-roles_hu11077222695400805998.webp" width="300" height="173" alt="Keycloak client roles" title="Keycloak client roles" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-roles_hu11551872836081438198.webp" data-gallery="" title="Keycloak roles"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-roles_hu17526731381158663080.webp" width="300" height="173" alt="Keycloak roles" title="Keycloak roles" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-client-roles_hu_5a74717f19652062.webp" data-gallery="" title="Keycloak client roles"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-client-roles_hu_3aa328fa2c8b6e46.webp" width="300" height="173" alt="Keycloak client roles" title="Keycloak client roles" class="" loading="lazy"></a>
+<a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-roles_hu_4b5a0d17a43fe15f.webp" data-gallery="" title="Keycloak roles"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-roles_hu_61a52fe92ca4ff86.webp" width="300" height="173" alt="Keycloak roles" title="Keycloak roles" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-users_hu16150178410525313486.webp" data-gallery="" title="Keycloak users"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-users_hu15960233276314819026.webp" width="300" height="173" alt="Keycloak users" title="Keycloak users" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-users-role-mappings_hu12486927321223946444.webp" data-gallery="" title="Keycloak users role mappings"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-users-role-mappings_hu4123846011335461724.webp" width="300" height="173" alt="Keycloak users role mappings" title="Keycloak users role mappings" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-users_hu_53517ee6e4745536.webp" data-gallery="" title="Keycloak users"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-users_hu_bb4b640a4103c74.webp" width="300" height="173" alt="Keycloak users" title="Keycloak users" class="" loading="lazy"></a>
+<a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-users-role-mappings_hu_f23e39adcff1b1f.webp" data-gallery="" title="Keycloak users role mappings"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-users-role-mappings_hu_42f826c845bf3f97.webp" width="300" height="173" alt="Keycloak users role mappings" title="Keycloak users role mappings" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <p>Usando uno de los <a href="https://keycloak.gitbooks.io/securing-client-applications-guide/content/v/2.2/topics/overview/supported-platforms.html">adaptadores proporcionados por Keycloak</a> para la integración en servidores y aplicaciones su uso no es complicado, en este caso usaré el adaptador para Spring Boot. Usándolo básicamente deberemos proporcionar en la configuración las credenciales de la aplicación cliente que hemos registrado previamente en Keycloak. Además indicaremos que URLs de la aplicación requiere autenticación y que roles han de poseer los usuarios autenticados. Al acceder a estas URLs el adaptador de Keycloak redirigirá al servidor para que el usuario se autentique, una vez autenticado se redirigirá a la aplicación de nuevo.</p>
@@ -414,31 +414,31 @@
 <p>Como la página de inicio no requiere autenticación es accesible por cualquier usuario. Al navegar a la página de usuario o administrador se iniciará el proceso de autenticación primeramente redirigiéndonos al servidor Keycloak para que introduzcamos las credenciales.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-index_hu13145606396118195602.webp" data-gallery="" title="Index"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-index_hu16161752686210016515.webp" width="300" height="185" alt="Index" title="Index" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-keycloak-login_hu3530445972128202344.webp" data-gallery="" title="Login"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-keycloak-login_hu7570638810936898219.webp" width="300" height="185" alt="Login" title="Login" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-index_hu_2c2f613e9c226520.webp" data-gallery="" title="Index"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-index_hu_6bf258f1da8367fa.webp" width="300" height="185" alt="Index" title="Index" class="" loading="lazy"></a>
+<a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-keycloak-login_hu_114c8587a97e1a43.webp" data-gallery="" title="Login"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-keycloak-login_hu_82bae484348e1785.webp" width="300" height="185" alt="Login" title="Login" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-user_hu7354896565662009674.webp" data-gallery="" title="User"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-user_hu11924510671967610489.webp" width="300" height="169" alt="User" title="User" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-user_hu_a6ff3f59faf06c53.webp" data-gallery="" title="User"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-user_hu_b1dedb99b3a522c7.webp" width="300" height="169" alt="User" title="User" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <p>Si intentamos acceder a la página de usuario o administrador sin estar autenticados se nos mostrará la página de error 403 y al acceder a la página de administración con un usuario sin rol <em>admin</em> se nos mostrará la página de error 401.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-error403_hu18327664839960142835.webp" data-gallery="" title="Error 403"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-error403_hu7629402542075618706.webp" width="300" height="169" alt="Error 403" title="Error 403" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-error403_hu_862e6ecc951e72a0.webp" data-gallery="" title="Error 403"><img src="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-error403_hu_96f49a3021a94eea.webp" width="300" height="169" alt="Error 403" title="Error 403" class="" loading="lazy"></a></p>
 </figure>
 </div>
-<p>Un buen libro sobre OAuth que he leído es <a href="https://amzn.to/2cUkF9d" rel="sponsored">Mastering OAuth 2.0</a> que explica detalladamente el protocolo OAuth junto con el resto de formas de obtener un <em>token</em> además del mostrado en este artículo usando las credenciales del cliente.</p>
+<p>Un buen libro sobre OAuth que he leído es <a href="https://amzn.to/2cUkF9d">Mastering OAuth 2.0</a> que explica detalladamente el protocolo OAuth junto con el resto de formas de obtener un <em>token</em> además del mostrado en este artículo usando las credenciales del cliente.</p>
 <div class="media media-amazon">
   <ul>
     <li><a href="https://amzn.to/3OwGBpE&amp;internal=1" title="Mastering Oauth 2.0">Mastering Oauth 2.0</a></li></ul>
 </div>
 <p>Este artículo solo es introductorio a las posibilidades de OAuth y Keycloak, entre otras posibilidades que ofrece Keycloak creo que está permitir registrarse a los usuarios o personalizar los estilos y páginas de autenticación.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/Keycloak">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradle run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/Keycloak">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradle run</code></p>
 </div>
 <div class="alert alert-warning">
     <img src="/blog-bitix/assets/images/misc/PugInTapestry.png" alt="Portada libro: PlugIn Tapestry" title="Portada libro: PlugIn Tapestry" style="float: left; margin-right: 1.5em;" class="lozad">

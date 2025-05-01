@@ -62,7 +62,7 @@
     "dateModified": "2016-09-17T12:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "2508",
+    "wordCount": "2510",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -304,10 +304,10 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java-ee.webp" width="200" height="213" alt="Java EE" title="Java EE" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java-ee.webp" width="200" height="213" alt="Java EE" title="Java EE" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Comentaba las <a href="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/">novedades y nuevas características de Java EE 7</a> que en el 2013 trajo esta nueva versión para el desarrollo de aplicaciones empresariales con el lenguaje Java. Hacía una descripción y cuáles eran las especificaciones y versiones de las mismas que proporcionan la funcionalidades comunes a muchas aplicaciones. En este artículo mostraré un ejemplo con código con la implementación de una aplicación usando varias de las especificaciones de Java EE.</p>
 <p>El ejemplo consistirá en una supuesta aplicación sencilla para hacer la lista de la compra de un supermercado usando las siguientes especificaciones <abbr title="Java Server Faces">JSF</abbr>, <abbr title="Java Persistence API">JPA</abbr>, <abbr title="Java Transactions API">JTA</abbr>, Security, <abbr title="Contexts and Dependency Injection">CDI</abbr>, <abbr title="Enterprise Java Bean">EJB</abbr>, <abbr title="Representational State Transfer">REST</abbr>, <abbr title="Java API for RESTful Web Services">JAX-RS</abbr>, <abbr title="JavaScript Object Notation">JSON</abbr>, eventos CDI y WebSockets. El comprador irá seleccionando productos y la cantidad de los mismos de su compra, la aplicación le informará del precio de los productos seleccionados hasta el momento y finalmente para hacer la compra iniciará sesión. En el momento que se realice una compra el <em>stock</em> de productos se actualizará en todos los clientes conectados al supermercado.</p>
@@ -315,7 +315,7 @@
 <p>Para facilitar el desarrollo de la aplicación en el lado cliente usaré algunas librerías JavaScript de forma similar al ejemplo de la <a href="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">lista de tareas con Backbone y React junto con RequireJS</a>. Seleccionados los productos, la compra se realizará usando una API REST intercambiando los datos con formato JSON, se persistirá en la base de datos con JPA actualizándose en ese momento el <em>stock</em> de los productos de lo que se encargará un EJB para controlar esta pequeña lógica de negocio, si no hay <em>stock</em> suficiente de un producto se producirá una excepción y devolverá un código de estado adecuado en la petición HTTP, al realizar la compra se generará un mensaje evento CDI que desencadenará la actualización del <em>stock</em> de los usuarios conectados usando WebSockets. La página del listado de productos y el formulario de autenticación se generará usando la tecnología de presentación JSF.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/images/supermarket-java-ee-7_hu11098319913987222100.webp" data-gallery="" title="Supermarket con Java EE 7"><img src="/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/images/supermarket-java-ee-7_hu14181168784332005267.webp" width="300" height="200" alt="Supermarket con Java EE 7" title="Supermarket con Java EE 7" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/images/supermarket-java-ee-7_hu_1968b0d20dfe972.webp" data-gallery="" title="Supermarket con Java EE 7"><img src="/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/images/supermarket-java-ee-7_hu_3d86568672d1816b.webp" width="300" height="200" alt="Supermarket con Java EE 7" title="Supermarket con Java EE 7" class="" loading="lazy"></a></p>
 <figcaption>Supermarket con Java EE 7</figcaption>
 </figure>
 </div>
@@ -399,12 +399,12 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/images/aplicacion-cliente_hu12890768968198406814.webp" data-gallery="" title="Aplicación cliente Supermarket"><img src="/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/images/aplicacion-cliente_hu935571909416407694.webp" width="300" height="168" alt="Aplicación cliente Supermarket" title="Aplicación cliente Supermarket" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/images/aplicacion-cliente_hu_3b247df3552b38b2.webp" data-gallery="" title="Aplicación cliente Supermarket"><img src="/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/images/aplicacion-cliente_hu_8fc7f84ddbcaf41e.webp" width="300" height="168" alt="Aplicación cliente Supermarket" title="Aplicación cliente Supermarket" class="" loading="lazy"></a></p>
 <figcaption>Aplicación cliente Supermarket</figcaption>
 </figure>
 </div>
 <p>El conjunto de especificaciones de Java EE proporciona una solución para la mayoría de funcionalidades que necesita una aplicación pero también podemos sustituir alguna y combinarlas con otras de las muchas librerías o <em>frameworks</em> disponibles en la plataforma Java. Por ejemplo, como <em>framework</em> en vez de usar Servlet y JSP o JSF podemos usar <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">Apache Tapestry</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/01/introduccion-y-ejemplo-basico-sobre-vertx/">Vert.x</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/01/aplicacion-web-con-spark-framework-y-java/">Spark</a>, <a href="https://struts.apache.org/">Struts</a>, <a href="https://grails.org/">Grails</a>, &hellip; dependiendo de las necesidades de la aplicación, su complejidad y nuestras preferencias. Como <a href="https://picodotdev.github.io/blog-bitix/2015/05/alternativa-a-hibernate-u-orm-y-ejemplo-de-jooq/">alternativa al ORM de JPA o JDBC se puede usar jOOQ</a>. <a href="https://www.rabbitmq.com/">RabbitMQ</a> en vez de JMS o <a href="https://spring.io/">Spring</a> en vez de CDI, EJB y JTA.</p>
-<p>Algunos libros sobre Java EE que he leído y que me han gustado han sido los siguientes, <a href="https://amzn.to/4bl5Vsl" rel="sponsored">Java EE 7 Essentials</a> hace un repaso detallado pero no muy profundo para hacerse una idea bastante buena del conjunto de especificaciones de Java EE. Otro buen libro es <a href="https://amzn.to/49jczxA" rel="sponsored">Java EE 7 Development with WildFly</a> que entra más en detalle en cada una de las especificaciones. El <a href="https://docs.oracle.com/javaee/7/tutorial/">tutorial oficial de Java EE 7</a> también es un buen punto de partida. <a target="_blank" href="https://amzn.to/2QLs7TX">Libros sobre Java EE 7</a> hay muchos por la cantidad de tiempo que ya tiene, es recomendable leer alguno que esté actualizado a las últimas versiones.</p>
+<p>Algunos libros sobre Java EE que he leído y que me han gustado han sido los siguientes, <a href="https://amzn.to/4bl5Vsl">Java EE 7 Essentials</a> hace un repaso detallado pero no muy profundo para hacerse una idea bastante buena del conjunto de especificaciones de Java EE. Otro buen libro es <a href="https://amzn.to/49jczxA">Java EE 7 Development with WildFly</a> que entra más en detalle en cada una de las especificaciones. El <a href="https://docs.oracle.com/javaee/7/tutorial/">tutorial oficial de Java EE 7</a> también es un buen punto de partida. <a target="_blank" href="https://amzn.to/2QLs7TX">Libros sobre Java EE 7</a> hay muchos por la cantidad de tiempo que ya tiene, es recomendable leer alguno que esté actualizado a las últimas versiones.</p>
 <div class="media media-amazon">
   <ul>
     <li><a href="https://amzn.to/4bl5Vsl" title="Java EE 7 Essentials: Enterprise Developer Handbook">Java EE 7 Essentials: Enterprise Developer Handbook</a></li><li><a href="https://amzn.to/49jczxA" title="Java EE 7 Development with WildFly">Java EE 7 Development with WildFly</a></li></ul>
@@ -412,9 +412,9 @@
 <p>Con Java EE 6 y 7 ciertas partes de configuración se pueden realizar con anotaciones en vez de con XML sin embargo aún no ha desaparecido completamente aunque si reducido considerablemente.</p>
 <p>Ejecutar este ejemplo require instalar previamente el servidor de aplicaciones <a href="https://wildfly.org/">WildFly</a> e iniciarlo con <code>./standalone.sh -c standalone-full.xml</code>. Iniciado el servidor y desplegada la aplicación con el siguiente comando de Gradle se puede acceder a ella con el navegador en la dirección <em>https://localhost:8443/war/</em> teniendo el protocolo seguro configurado.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaEE7">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew build deploy</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaEE7">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew build deploy</code></p>
 </div>
 <p>En el futuro Java EE 8 está planificado un <em>framework</em> basado en acciones en vez de componentes como en JSF, también el soporte para <a href="https://picodotdev.github.io/blog-bitix/2016/02/introduccion-al-protocolo-http-2/">el protocolo HTTP/2</a>.</p>
 <div class="reference">

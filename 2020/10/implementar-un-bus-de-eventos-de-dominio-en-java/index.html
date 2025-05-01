@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="Implementar un bus de eventos de dominio en Java">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu17718725740222333958.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu_90646b13cf87aa69.png">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Un bus de eventos es el mecanismo por el que los eventos de dominio de DDD son publicados, son tratados y enviados a sus receptores de forma directa, mediante un middleware u de otra forma. El concepto bus de eventos para eventos de dominio se materializa de forma muy sencilla en código, simplemente una interfaz con un método. Cambiando la implementación de la interfaz un bus de eventos envía los eventos a un sistema de mensajería como RabbitMQ, persiste los eventos en base de datos como parte del outbox pattern o simplemente los imprime en la consola como en el ejemplo del artículo. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu17718725740222333958.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu_90646b13cf87aa69.png">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Implementar un bus de eventos de dominio en Java">
@@ -55,14 +55,14 @@
     "headline": "Implementar un bus de eventos de dominio en Java",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu17718725740222333958.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu_90646b13cf87aa69.png"
         
       },
     "datePublished": "2020-10-09T16:00:00+02:00",
     "dateModified": "2020-10-10T18:30:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "2415",
+    "wordCount": "2417",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -307,11 +307,11 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>En la teoría de <em>Domain Driven Design</em> o DDD se mencionan los eventos de dominio. Un evento de dominio es una notificación de algo que ha sucedido en el sistema en lo que algunas partes del mismo están interesadas en ser notificadas. Dado que un evento es algo que ha sucedido suelen tener un nombre con un verbo en pasado como <em>OrderCreated</em>, otra de sus propiedades es que no indican que acción se ha de realizar como sería el caso de un nombre con <em>SendBuyerOrderEmail</em>. Las mismas características de las aplicaciones que se comunican con mensajes se aplican a las aplicaciones que generan eventos de dominio, la comunicación en el sistema se realiza de forma desacoplada, el emisor y el receptor no se conocen y de forma desincronizada ni el emisor ni el receptor necesitan de la disponibilidad del otro si se realiza con un <em>middleware</em>.</p>
 <p>En la teoría de <em>Domain Driven Design</em> esta forma de comunicación es útil para comunicar diferentes <em>bounded context</em>. Un <em>bounded context</em> se encarga de una área funcional de la aplicación con alta cohesión y su propio lenguaje de dominio. El lenguaje de dominio son los conceptos que aplican en un <em>bounded context</em> y cuales son las propiedades relevantes dentro del mismo, el término usuario en un supuesto <em>bounded context</em> de registro y adminisitración de la cuenta es probable no sea el mismo que en el <em>bounded context</em> de órdenes de compra, en el primero el usuario puede tener varias direcciones y en el segundo solo interesa una, por otro lado en el <em>bounded context</em> de inventario ni siquiera exista el término usuario o signifique otra cosa totalmente diferente.</p>
-<p>Los <em>bounded context</em> y eventos de dominio se adaptan especialmente bien a las aplicaciones con arquitectura basada en microservicios. Cada microservicio puede ser uno o varios <em>bounded context</em> con un área funcional bien definida y estos comunicarse mediante eventos con eventos de dominio. La forma de emitir estos eventos de dominio es con un bus de eventos. La <a href="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-comandos-y-consultas-en-java/">implementación un bus de comandos y consultas</a> para <a href="https://en.wikipedia.org/wiki/Command%e2%80%93query_separation">CQRS</a> es muy similar a la implementación de un bus de eventos.</p>
+<p>Los <em>bounded context</em> y eventos de dominio se adaptan especialmente bien a las aplicaciones con arquitectura basada en microservicios. Cada microservicio puede ser uno o varios <em>bounded context</em> con un área funcional bien definida y estos comunicarse mediante eventos con eventos de dominio. La forma de emitir estos eventos de dominio es con un bus de eventos. La <a href="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-comandos-y-consultas-en-java/">implementación un bus de comandos y consultas</a> para <a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation">CQRS</a> es muy similar a la implementación de un bus de eventos.</p>
 <div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
     <li><a href="#transaccionalidad-y-eventos-de-dominio">Transaccionalidad y eventos de dominio</a></li>
@@ -330,7 +330,7 @@
 <p>Una solución es utilizar únicamente la base de datos. Los eventos se guardan en una tabla en la misma transacción que el resto de datos, de tal modo que si la transacción finaliza correctamente los eventos generados están almacenados y si la transacción falla no se guarda ninguno. Una vez los eventos están guardados otro proceso se encarga de emitirlos. Nuevamente este proceso que emite los eventos puede fallar y ocasionar que un evento sea lanzado dos veces pero al menos garantiza que si se ha generado un evento se emita al menos una vez en el sistema. Este es el patón <em>outbox pattern</em>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu2749329557846858044.webp" data-gallery="" title="Outbox Pattern"><img src="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu4588386278336093227.webp" width="650" height="405" alt="Outbox Pattern" title="Outbox Pattern" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu_5512f2827cded5aa.webp" data-gallery="" title="Outbox Pattern"><img src="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu_bba66ea687e9222e.webp" width="650" height="405" alt="Outbox Pattern" title="Outbox Pattern" class="" loading="lazy"></a></p>
 <figcaption>Outbox Pattern</figcaption>
 </figure>
 </div>
@@ -447,7 +447,7 @@
 <p>En este punto se llegan a otras preguntas:</p>
 <ul>
 <li>¿Qué eventos hay que lanzar? Esto requiere análisis, hay que descubrirlo con el experto de dominio.</li>
-<li>¿Cómo se deduplican los eventos? Asignando a cada evento un identificador único el receptor sabe si ha procesado ese eventos guardando los identificadores de eventos que ha procesado. Si un evento procesado se recibe de nuevo se descarta. Los identificadores de los eventos pueden ser un <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/UUID.html">UUID</a> y los consumidores pasado un tiempo eliminar o archivar los eventos procesados considerando que pasado ese tiempo de horas, días o semanas ya no va a llegar duplicado.</li>
+<li>¿Cómo se deduplican los eventos? Asignando a cada evento un identificador único el receptor sabe si ha procesado ese eventos guardando los identificadores de eventos que ha procesado. Si un evento procesado se recibe de nuevo se descarta. Los identificadores de los eventos pueden ser un <a href="#ZgotmplZ">UUID</a> y los consumidores pasado un tiempo eliminar o archivar los eventos procesados considerando que pasado ese tiempo de horas, días o semanas ya no va a llegar duplicado.</li>
 <li>¿Qué información han de incluir los eventos? Por lo menos las propiedades que permitan conocer las entidades de su causa.</li>
 <li>¿Qué ocurre con los eventos fuera de orden? Los <em>middleware</em> de mensajería como RabbitMQ ofrecen algún tipo de mecanismo para que los mensajes se procesen en orden que son recibidos aún con alguna limitación.</li>
 <li>¿Qué ocurre si la consistencia eventual no es posible?</li>
@@ -455,15 +455,15 @@
 <li>¿Qué ocurre si en el futuro se modifican los eventos existentes o se añaden nuevos?</li>
 </ul>
 <p>Dependiendo de la lógica de negocio los problemas con mensajes pueden ser difíciles de reproducir, analizar y corregir ya que al igual que en los casos de concurrencia intervienen factores como el orden de los hechos.</p>
-<p>De <em>Domain Driven Design</em> hay varios libros, el libro de referencia sobre la teoría de DDD son <a href="https://amzn.to/33JmDkv" rel="sponsored">Domain-Driven Design: Tackling Complexity in the Heart of Software</a>, <a href="https://amzn.to/34HkDbA" rel="sponsored">Domain-Driven Design Distilled</a>, otros más prácticos son <a href="https://amzn.to/34yeDSk" rel="sponsored">Implementing Domain-Driven Design</a> y <a href="https://amzn.to/2SJe2HW" rel="sponsored">Domain-Driven Design in PHP: A Highly Practical Guide</a>.</p>
+<p>De <em>Domain Driven Design</em> hay varios libros, el libro de referencia sobre la teoría de DDD son <a href="https://amzn.to/33JmDkv">Domain-Driven Design: Tackling Complexity in the Heart of Software</a>, <a href="https://amzn.to/34HkDbA">Domain-Driven Design Distilled</a>, otros más prácticos son <a href="https://amzn.to/34yeDSk">Implementing Domain-Driven Design</a> y <a href="https://amzn.to/2SJe2HW">Domain-Driven Design in PHP: A Highly Practical Guide</a>.</p>
 <div class="media media-amazon">
   <ul>
     <li><a href="" title="Domain-Driven Design: Tackling Complexity in the Heart of Software">Domain-Driven Design: Tackling Complexity in the Heart of Software</a></li></ul>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/EventBus">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/EventBus">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew run</code></p>
 </div>
 <div class="reference">
     Referencia:<br>
@@ -537,7 +537,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/">
-                <img src="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/images/exrpresion-cron_hu3809356456275561980.webp" width="326" height="125" alt="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" title="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" class="" loading="lazy">
+                <img src="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/images/exrpresion-cron_hu_ea504d3540855687.webp" width="326" height="125" alt="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" title="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" class="" loading="lazy">
                 <h3>Qué son, para qué sirven, formato y ejemplos de las expresiones cron</h3>
                 </a>
                 
@@ -551,7 +551,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/">
-                <img src="/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if-else_hu4171854708185839136.webp" width="326" height="125" alt="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" title="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" class="" loading="lazy">
+                <img src="/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if-else_hu_67ea2f830f17fff4.webp" width="326" height="125" alt="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" title="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" class="" loading="lazy">
                 <h3>Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)</h3>
                 </a>
                 
@@ -565,7 +565,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/">
-                <img src="/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/images/specification_hu824793664656984175.webp" width="326" height="125" alt="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data" title="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data" class="" loading="lazy">
+                <img src="/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/images/specification_hu_1f72d2f7349194b2.webp" width="326" height="125" alt="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data" title="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data" class="" loading="lazy">
                 <h3>El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data</h3>
                 </a>
                 
@@ -593,7 +593,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/">
-                <img src="/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu13563197333812880407.webp" width="326" height="125" alt="El patrón Open Session in View, qué es, ventajas, problemas y alternativas" title="El patrón Open Session in View, qué es, ventajas, problemas y alternativas" class="" loading="lazy">
+                <img src="/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu_8a522d5058b8ee5d.webp" width="326" height="125" alt="El patrón Open Session in View, qué es, ventajas, problemas y alternativas" title="El patrón Open Session in View, qué es, ventajas, problemas y alternativas" class="" loading="lazy">
                 <h3>El patrón Open Session in View, qué es, ventajas, problemas y alternativas</h3>
                 </a>
                 

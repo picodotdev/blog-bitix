@@ -62,7 +62,7 @@
     "dateModified": "2017-04-16T23:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1099",
+    "wordCount": "1098",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -302,7 +302,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false"></p>
 </div>
 <p>Los contenedores de datos son efímeros, se crean y se destruyen y con ellos los datos que tuviesen en su sistema de archivos de modo que cualquier dato que queramos que sobreviva a la vida del contenedor ha de almacenarse de forma externa, este es el caso de los datos de una base de datos como <a href="https://www.postgresql.org/">PostgreSQL</a> o <a href="https://www.mongodb.com/">MongoDB</a>. Además usando <a href="https://docs.docker.com/swarm/">Docker Swarm</a> se plantea el problema de que hay varios nodos formando un <em>cluster</em> por lo que los datos han de estar accesibles independientemente del nodo en el que sea iniciado el contenedor que los utilice y significa que los datos no pueden estar almacenados en el nodo ya que un contenedor podría ser iniciado en cualquiera de ellos.</p>
 <p>Así que los contenedores iniciados en un <em>cluster</em> de Docker Swarm que usen datos persistentes necesitan un sistema de almacenamiento en red externo a los contenedores y nodos. Una de las opciones disponibles es <a href="https://rexray.codedellemc.com/">REX-Ray</a> que ofrece una configuración sencilla y múltiples proveedores de computación entre las que están las más populares como <a href="https://aws.amazon.com/es/ec2/">Amazon EC2</a>, <a href="https://www.digitalocean.com/">Digital Ocean</a>, <a href="https://cloud.google.com/compute/">Google Compute Engine</a>, <a href="https://azure.microsoft.com/es-es/">microsoft-azure</a> e incluso <a href="https://www.virtualbox.org/">VirtualBox</a>.</p>
@@ -330,7 +330,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/images/instalacion-rex-ray_hu17475920302686668482.webp" data-gallery="" title="Instalación de REX-Ray en nodos de Docker Swarm con VirtualBox"><img src="/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/images/instalacion-rex-ray_hu12974462257191617200.webp" width="254" height="200" alt="Instalación de REX-Ray en nodos de Docker Swarm con VirtualBox" title="Instalación de REX-Ray en nodos de Docker Swarm con VirtualBox" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/images/instalacion-rex-ray_hu_b0e9a20b37c27cf5.webp" data-gallery="" title="Instalación de REX-Ray en nodos de Docker Swarm con VirtualBox"><img src="/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/images/instalacion-rex-ray_hu_59e8f2b1c10f4bc7.webp" width="254" height="200" alt="Instalación de REX-Ray en nodos de Docker Swarm con VirtualBox" title="Instalación de REX-Ray en nodos de Docker Swarm con VirtualBox" class="" loading="lazy"></a></p>
 <figcaption>Instalación de REX-Ray en nodos de Docker Swarm con VirtualBox</figcaption>
 </figure>
 </div>
@@ -350,7 +350,7 @@
 <p>En la siguiente captura de pantalla se observa en que nodo ha sido iniciado el contenedor de postgres y que identificativo se le ha asignado.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/images/stack-deploy-postgres_hu12633318469476781566.webp" data-gallery="" title="Deploy del stack de postgres"><img src="/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/images/stack-deploy-postgres_hu4381363270751615784.webp" width="300" height="150" alt="Deploy del stack de postgres" title="Deploy del stack de postgres" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/images/stack-deploy-postgres_hu_bc032ffa3b9de08b.webp" data-gallery="" title="Deploy del stack de postgres"><img src="/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/images/stack-deploy-postgres_hu_6a00476f90e116de.webp" width="300" height="150" alt="Deploy del stack de postgres" title="Deploy del stack de postgres" class="" loading="lazy"></a></p>
 <figcaption>Deploy del stack de postgres</figcaption>
 </figure>
 </div>
@@ -363,8 +363,8 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/images/volumes_hu5300915412557933571.webp" data-gallery="" title="Volúmenes de datos"><img src="/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/images/volumes_hu11543500288477544802.webp" width="300" height="193" alt="Volúmenes de datos" title="Volúmenes de datos" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/images/volumes-nautilus_hu8025171224950919571.webp" data-gallery="" title="Archivos de volúmenes en el sistema de archivos del host"><img src="/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/images/volumes-nautilus_hu10594662662289113229.webp" width="300" height="166" alt="Archivos de volúmenes en el sistema de archivos del host" title="Archivos de volúmenes en el sistema de archivos del host" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/images/volumes_hu_757769bd3d21db19.webp" data-gallery="" title="Volúmenes de datos"><img src="/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/images/volumes_hu_cedbf284d0aac164.webp" width="300" height="193" alt="Volúmenes de datos" title="Volúmenes de datos" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/images/volumes-nautilus_hu_6911a5b68a1ffa51.webp" data-gallery="" title="Archivos de volúmenes en el sistema de archivos del host"><img src="/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/images/volumes-nautilus_hu_8428995a0aa62ebb.webp" width="300" height="166" alt="Archivos de volúmenes en el sistema de archivos del host" title="Archivos de volúmenes en el sistema de archivos del host" class="" loading="lazy"></a></p>
 <figcaption>Volúmenes de datos</figcaption>
 </figure>
 </div>
@@ -383,9 +383,9 @@
     </div>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/DockerSwarm">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub.</p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/DockerSwarm">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub.</p>
 </div>
 <div class="reference">
     Referencia:<br>

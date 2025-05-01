@@ -62,7 +62,7 @@
     "dateModified": "2017-04-09T12:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "727",
+    "wordCount": "729",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -306,10 +306,10 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>En artículos anteriores ya he comentado <a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-encender-y-apagar-diodo-led-con-la-raspberry-pi-en-java/">como hacer parpadear un diodo LED</a>, <a href="https://picodotdev.github.io/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/">como usar un display LCD de 16 columnas y 2 filas</a> y <a href="https://picodotdev.github.io/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/">como obtener la temperatura y humedad de un sensor DHT11</a>, todo estos ejemplo usando varios elementos de <a href="https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/">kit de iniciación a la electrónica para la Raspberry Pi 3</a>. En este artículo en el que mostraré cómo usar un LED, un pulsador y un zumbador es mucho más sencillo que los casos del <em>display</em> LCD de 16 filas y 2 columnas y del sensor DHT11. Vistos los ejemplos de artículos anteriores lo más difícil de este es hacer el conexionado con los cables. Para controlar los <em>pines</em> usaré la librería <a href="http://rtd.diozero.com/en/latest/">diozero</a> que proporciona clases de alto nivel para cada uno de estos elementos para que desde código Java sea bastante sencillo controlarlos.</p>
 <p>El ejemplo consistirá en que cuando se presione el pulsador se encienda el diodo LED y el zumbador se active emitiendo un zumbido audible. Cada uno de estos elementos requiere usar un <em>pin</em> <abbr title="General Purpose Input Output">GPIO</abbr> de los 17 que hay disponibles en la Raspberry Pi 1 que es el modelo que tengo yo o de los 26 <em>pines</em> que poseen versiones posteriores de la Raspberry Pi como la B+, 2 y 3.</p>
@@ -317,23 +317,23 @@
 <p>Para el pulsador usaré el método <em>PULL UP</em> (el otro es <em>PULL DOWN</em>) donde conectaré una patita del pulsador a tierra y la adyacente al <em>pin</em> GPIO, en <a href="https://grantwinney.com/using-pullup-and-pulldown-resistors-on-the-raspberry-pi/">algunas páginas</a> se explica haciendo uso de resistencias, sin embargo, el uso de resistencias en la Raspberry Pi no es necesario ya que los <em>pines</em> ya <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/">las tienen incorporadas internamente</a>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/cableado_hu1212500969820626037.webp" data-gallery="" title="cableado en la breadboard"><img src="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/cableado_hu15377977999676412025.webp" width="300" height="131" alt="cableado en la breadboard" title="cableado en la breadboard" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/esquema-cableado_hu14521430158384234270.webp" data-gallery="" title="Esquema del cableado"><img src="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/esquema-cableado_hu8744477282588747588.webp" width="300" height="123" alt="Esquema del cableado" title="Esquema del cableado" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/cableado_hu_43b946a3fe8b1d20.webp" data-gallery="" title="cableado en la breadboard"><img src="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/cableado_hu_97e5fae2f9f02fbd.webp" width="300" height="131" alt="cableado en la breadboard" title="cableado en la breadboard" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/esquema-cableado_hu_f4e62caba3dc1486.webp" data-gallery="" title="Esquema del cableado"><img src="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/esquema-cableado_hu_11b351183ae3ef77.webp" width="300" height="123" alt="Esquema del cableado" title="Esquema del cableado" class="" loading="lazy"></a></p>
 <figcaption>Esquema del cableado</figcaption>
 </figure>
 </div>
 <p>La librería diozeo para identificar los <em>pines</em> usa la nomenclatura de Broadcom, otras son las nomenclaturas del <em>header</em> o de wiringPi. Hay que tener en cuenta la nomenclatura que se use ya que el número del <em>pin</em> variará en cada una de ellas, también hay que tener en cuenta la versión de la Raspberry Pi ya que hay pequeñas variaciones según la versión. Por ejemplo, según la tabla de referencia siguiente, para la Raspberry Pi 1 y según la nomenclatura de Broadcom el <em>pin</em> GPIO 18 corresponde al número 12 de <em>header</em>, el GPIO 21 al número 13 y el GPIO 22 al número 15. Según la nomenclatura de wiringPi el GPIO 1 corresponde al número 1, el GPIO 2 al número 2 y el GPIO 3 al número 3.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/raspberrypi1b-header-rev1_hu10443205953754203632.webp" data-gallery="" title="Header de pines Raspberry Pi 1 B"><img src="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/raspberrypi1b-header-rev1_hu10379830838904687933.webp" width="152" height="200" alt="Header de pines Raspberry Pi 1 B" title="Header de pines Raspberry Pi 1 B" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/raspberrypi3b-header_hu9312720158337473097.webp" data-gallery="" title="Header de pines Raspberry Pi 3 B"><img src="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/raspberrypi3b-header_hu2505393203534656810.webp" width="110" height="200" alt="Header de pines Raspberry Pi 3 B" title="Header de pines Raspberry Pi 3 B" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/raspberrypi1b-header-rev1_hu_61e1ec9ed05f3200.webp" data-gallery="" title="Header de pines Raspberry Pi 1 B"><img src="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/raspberrypi1b-header-rev1_hu_d10d1581f53cfe11.webp" width="152" height="200" alt="Header de pines Raspberry Pi 1 B" title="Header de pines Raspberry Pi 1 B" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/raspberrypi3b-header_hu_defa25573dfb4173.webp" data-gallery="" title="Header de pines Raspberry Pi 3 B"><img src="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/raspberrypi3b-header_hu_9f296eca8102cdc6.webp" width="110" height="200" alt="Header de pines Raspberry Pi 3 B" title="Header de pines Raspberry Pi 3 B" class="" loading="lazy"></a></p>
 <figcaption>Header de _pines_ Raspberry Pi 1 B y Raspberry Pi 3 B, nomenclatura wiringPi</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/raspberrypi1b-header-rev1-broadcom_hu917331817122218269.webp" data-gallery="" title="Header de pines Raspberry Pi 1 B"><img src="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/raspberrypi1b-header-rev1-broadcom_hu2027936471588760239.webp" width="94" height="200" alt="Header de pines Raspberry Pi 1 B" title="Header de pines Raspberry Pi 1 B" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/raspberrypi3b-header-broadcom_hu18996849409570078.webp" data-gallery="" title="Header de pines Raspberry Pi 3 B"><img src="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/raspberrypi3b-header-broadcom_hu7785620799194558042.webp" width="67" height="200" alt="Header de pines Raspberry Pi 3 B" title="Header de pines Raspberry Pi 3 B" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/raspberrypi1b-header-rev1-broadcom_hu_3a1275a8d30ef00c.webp" data-gallery="" title="Header de pines Raspberry Pi 1 B"><img src="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/raspberrypi1b-header-rev1-broadcom_hu_85733ff6301e3d18.webp" width="94" height="200" alt="Header de pines Raspberry Pi 1 B" title="Header de pines Raspberry Pi 1 B" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/raspberrypi3b-header-broadcom_hu_3ec6f6496694bbfd.webp" data-gallery="" title="Header de pines Raspberry Pi 3 B"><img src="/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/images/raspberrypi3b-header-broadcom_hu_167f9dcc26ad0b78.webp" width="67" height="200" alt="Header de pines Raspberry Pi 3 B" title="Header de pines Raspberry Pi 3 B" class="" loading="lazy"></a></p>
 <figcaption>Headers de _pines_ Raspberry Pi 1 B y Raspberry Pi 3 B, nomenclatura Broadcom</figcaption>
 </figure>
 </div>
@@ -349,9 +349,9 @@
   <iframe width="640" height="360" data-src="https://www.youtube.com/embed/jaqMi53pjf0" frameborder="0" title="Vídeo de YouTube" class="lozad" allowfullscreen></iframe>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaRaspberryPi">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew executeLedButtonBuzzer</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaRaspberryPi">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew executeLedButtonBuzzer</code></p>
 </div>
 
     </div>

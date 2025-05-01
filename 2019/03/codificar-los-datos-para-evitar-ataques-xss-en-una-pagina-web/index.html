@@ -97,10 +97,10 @@ Validar los datos es importante para una aplicación pero no es suficiente para 
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Validar los datos es importante para una aplicación pero no es suficiente para crear una aplicación, es más, para crear una aplicación segura es más importante codificar correctamente los datos emitidos por la aplicación. Los ataques XSS se producen precisamente por no codificar correctamente los datos emitidos provenientes de una fuente no confiable. Una fuente no confiable puede ser un parámetro en una aplicación web pero también puede ser cualquier otro dato que incluya una petición HTTP como una cabecera.</p>"
 }
@@ -315,10 +315,10 @@ Validar los datos es importante para una aplicación pero no es suficiente para 
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Validar los datos es importante para una aplicación pero no es suficiente para crear una aplicación, es más, para crear una aplicación segura es más importante codificar correctamente los datos emitidos por la aplicación. Los ataques XSS se producen precisamente por no codificar correctamente los datos emitidos provenientes de una fuente no confiable. Una fuente no confiable puede ser un parámetro en una aplicación web pero también puede ser cualquier otro dato que incluya una petición HTTP como una cabecera.</p>
 <p>El siguiente código de un archivo JSP que obtiene un parámetro de la petición y lo emite en la salida permite a un usuario malicioso insertar código en la página web, si el dato que se envía es el contenido de <em>xss.data</em> y las <em>cookies</em> no se crearon con las cabeceras <em>httponly</em> el usuario malicioso puede obtener acceso a la sesión del usuario en el sitio web y es un grave fallo de seguridad. En este caso solo se emplea un <em>alert</em> pero el código podría ser más elaborado y realizar una petición a una URL en la que el usuario malicioso reciba los datos de las <em>cookies</em> de sesión.</p>
@@ -344,8 +344,8 @@ Validar los datos es importante para una aplicación pero no es suficiente para 
 <p>En este caso al cargar la página en el navegador se muestra un mensaje <em>alert</em> con una ventana emergente pero si el usuario malicioso enviase los datos de las <em>cookies</em> a una URL suya el usuario ni siquiera sería consciente de que le han robado la sesión. Y este fallo de seguridad se produce simplemente por cargar una página de una aplicación insegura por XSS.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss_hu10595907512529297585.webp" data-gallery="" title="XSS"><img src="/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss_hu9054510721333402150.webp" width="300" height="186" alt="XSS" title="XSS" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss-user_hu3434850471959220640.webp" data-gallery="" title="XSS"><img src="/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss-user_hu8480901523357438102.webp" width="300" height="186" alt="XSS" title="XSS" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss_hu_2a69ef2a17c2adf0.webp" data-gallery="" title="XSS"><img src="/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss_hu_6e70fcf6be25fd33.webp" width="300" height="186" alt="XSS" title="XSS" class="" loading="lazy"></a>
+<a href="/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss-user_hu_aa41739965f08072.webp" data-gallery="" title="XSS"><img src="/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss-user_hu_7f168666c4a27f1f.webp" width="300" height="186" alt="XSS" title="XSS" class="" loading="lazy"></a></p>
 <figcaption>XSS</figcaption>
 </figure>
 </div>
@@ -367,7 +367,7 @@ Validar los datos es importante para una aplicación pero no es suficiente para 
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/10/como-filtrar-contenido-html-de-forma-segura/">Cómo filtrar contenido HTML de forma segura con jsoup</a></li>
 </ul>
-<p>Un ataque de XSS también puede producirse en contenidos distintos al HTML como pueden ser documentos JSON o XML en los que también hay que escapar los datos según su contexto para evitar por ejemplo que alguien cambien la estructura del XML o JSON previsto por la aplicación. El XSS es similar al problema de inyección de SQL si al construir las sentencias se insertan en ella datos en vez de usar en el caso de Java la clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/PreparedStatement.html">PreparedStatement</a> con parámetros.</p>
+<p>Un ataque de XSS también puede producirse en contenidos distintos al HTML como pueden ser documentos JSON o XML en los que también hay que escapar los datos según su contexto para evitar por ejemplo que alguien cambien la estructura del XML o JSON previsto por la aplicación. El XSS es similar al problema de inyección de SQL si al construir las sentencias se insertan en ella datos en vez de usar en el caso de Java la clase <a href="#ZgotmplZ">PreparedStatement</a> con parámetros.</p>
 <div class="reference">
     Referencia:<br>
 <ul>

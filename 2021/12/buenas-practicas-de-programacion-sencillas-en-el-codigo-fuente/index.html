@@ -313,15 +313,15 @@
 <div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
     <li><a href="#un-nivel-de-indentación-por-método">Un nivel de indentación por método</a></li>
-    <li><a href="#no-usar-la-palabra-clave-del-condicional-_else_">No usar la palabra clave del condicional <em>else</em></a></li>
+    <li><a href="#no-usar-la-palabra-clave-del-condicional-else">No usar la palabra clave del condicional <em>else</em></a></li>
     <li><a href="#encapsular-los-datos-primitivos">Encapsular los datos primitivos</a></li>
     <li><a href="#encapsular-las-colecciones">Encapsular las colecciones</a></li>
     <li><a href="#un-punto-por-línea-de-código">Un punto por línea de código</a></li>
     <li><a href="#evitar-abreviaturas">Evitar abreviaturas</a></li>
     <li><a href="#mantener-las-clases-pequeñas">Mantener las clases pequeñas</a></li>
-    <li><a href="#evitar-los-métodos-_getter_-y-_setter_">Evitar los métodos <em>getter</em> y <em>setter</em></a></li>
+    <li><a href="#evitar-los-métodos-getter-y-setter">Evitar los métodos <em>getter</em> y <em>setter</em></a></li>
     <li><a href="#revisar-las-dependencias-de-las-clases">Revisar las dependencias de las clases</a></li>
-    <li><a href="#segregar-los-cambios-en-los-_commits_">Segregar los cambios en los <em>commits</em></a></li>
+    <li><a href="#segregar-los-cambios-en-los-commits">Segregar los cambios en los <em>commits</em></a></li>
   </ol>
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
@@ -341,7 +341,7 @@
         <span>UnnestedLoop.java</span>
     </div>
 </div>
-<h2 id="no-usar-la-palabra-clave-del-condicional-_else_">No usar la palabra clave del condicional <em>else</em></h2>
+<h2 id="no-usar-la-palabra-clave-del-condicional-else">No usar la palabra clave del condicional <em>else</em></h2>
 <p>Las sentencias condicionales son sentencias de control de flujo del programa que permiten ejecutar uno u otro bloque de código en función de una condición. Tener dos bloques de código que hacen cosas diferentes ofuscan cual es el camino que sigue el programa, cuando en el flujo del programa se añaden más combinaciones el número de caminos posible capaz de tomar el programa crece rápidamente, simplemente con dos sentencias <em>if</em> anidadas el número de combinaciones son cuatro. Por otro lado, si el código de los bloques <em>if</em> y <em>else</em> son grandes impide visualizar ambos bloques al mismo tiempo lo que obliga a ejercitar la mente para recordar las líneas de código de cada uno en el análisis.</p>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2017/10/evitar-niveles-de-anidacion-de-sentencias-condicionales-con-guard-clauses/">Evitar niveles de anidación de sentencias condicionales con «guard clauses»</a></li>
@@ -406,7 +406,7 @@
 <p>Las excepción a esta regla son aquellas abreviaturas que están ampliamente aceptadas como las variables <em>i</em> y <em>j</em> como los contadores en una iteración, <em>it</em> par el dato de la <em>lambda</em> o <em>min</em> y <em>max</em> para para indicar el máximo o mínimo.</p>
 <h2 id="mantener-las-clases-pequeñas">Mantener las clases pequeñas</h2>
 <p>Cuando una clase es muy grande es más difícil de entender y de mantener. Si una clase supera cierta cantidad de líneas de código es muy posible que pueda ser dividida en una o más clases más pequeñas o dividir un método de muchas líneas en varios más pequeños.</p>
-<h2 id="evitar-los-métodos-_getter_-y-_setter_">Evitar los métodos <em>getter</em> y <em>setter</em></h2>
+<h2 id="evitar-los-métodos-getter-y-setter">Evitar los métodos <em>getter</em> y <em>setter</em></h2>
 <p>Los métodos <em>getter</em> y <em>setter</em> impiden mantener la encapsulación, las clases deben reflejar el dominio según <em>Domain Driven Design</em>. Estos métodos además impiden mantener la encapsulación de los datos y da lugar a clases anémicas que únicamente contiene propiedades y métodos <em>get</em> y <em>set</em>.</p>
 <p>En este ejemplo para incrementar el saldo de una cuenta con métodos <em>get</em> y <em>set</em> un código como el siguiente no tiene ninguna operación de dominio. La operación para incrementar el saldo no está encapsulada en la clase <em>Account</em>, en cualquier otra parte del código que necesite realizar la operación de incrementar el saldo hay que realizar la misma operación. Además, de no ser muy legible la operación de actualización del saldo de la cuenta en la clase controlador, se encadena varias operaciones con el operador punto.</p>
 <div class="code">
@@ -428,7 +428,7 @@
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2018/02/analisis-estatico-de-codigo-con-pmd-y-un-ejemplo/">Análisis estático de código con PMD y un ejemplo</a></li>
 </ul>
-<h2 id="segregar-los-cambios-en-los-_commits_">Segregar los cambios en los <em>commits</em></h2>
+<h2 id="segregar-los-cambios-en-los-commits">Segregar los cambios en los <em>commits</em></h2>
 <p>Utilizar una herramienta de control de versiones permite conservar todo el historial de cambios del código fuente, por otro lado permite a varias personas colaborar y compartir los cambios unos con otros. Para hacer más efectivo el uso del historial o la revisión de código es aconsejable que los cambios de cada <em>commit</em> tengan un único objetivo, es preferible crear varios <em>commits</em> con cada acción de cambio que uno solo con todos los cambio con varias cosas mezcladas. Esta segregación hace posible eliminar los cambios no deseados de un <em>commit</em> en concreto y hace más fácil revisar los cambios realizados.</p>
 <p>Por ejemplo, al hacer cambios es conveniente separar los cambios que arreglan un error de los cambios de formateo de código. Separar los cambios en diferentes <em>commits</em> requiere algo de planificación en los cambios que se desean hacer y dejar cambios para otro <em>commit</em> si se descubren nuevos cambios. con la herramienta de control de versiones <a href="https://git-scm.com/">Git</a> una opción es utilizar <em>git stash</em>, otra opción es simplemente anotar un cambio para realizarlo con posterioridad al actual.</p>
 <div class="reference">
@@ -476,7 +476,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/">
-                <img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu15762454492934130705.webp" width="326" height="125" alt="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" title="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" class="" loading="lazy">
+                <img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu_c1681c9a144c6877.webp" width="326" height="125" alt="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" title="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" class="" loading="lazy">
                 <h3>Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java</h3>
                 </a>
                 
@@ -518,7 +518,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/">
-                <img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu14179314344348991071.webp" width="326" height="125" alt="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" title="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" class="" loading="lazy">
+                <img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu_c6c44a89c143a1e9.webp" width="326" height="125" alt="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" title="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" class="" loading="lazy">
                 <h3>Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot</h3>
                 </a>
                 

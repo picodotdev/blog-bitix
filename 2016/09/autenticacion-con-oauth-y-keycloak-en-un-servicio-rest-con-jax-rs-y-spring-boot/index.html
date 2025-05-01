@@ -62,7 +62,7 @@
     "dateModified": "2022-09-16T19:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "935",
+    "wordCount": "937",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -307,10 +307,10 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/keycloak.svg" width="200" height="200" alt="Keycloak" title="Keycloak" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/keycloak.svg" width="200" height="200" alt="Keycloak" title="Keycloak" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Una forma de autenticar a los clientes de un servicio REST es usar <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">autenticación Basic</a> que se basa en añadir una cabecera en la petición en la que se incluye un usuario y contraseña. La autenticación Basic es sencilla pero para que sea segura ha de <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">usar el protocolo seguro HTTPS</a>.</p>
 <p>Sin embargo, presenta otros inconvenientes y es que si al servicio van a acceder varios clientes y a uno queremos impedirle el acceso no podremos hacerlo sin cambiar el usuario y contraseña lo que obligará al resto de clientes actualizarse para usar las nuevas credenciales si las comparten, que no siempre es posible sobre todo si esos clientes están fuera de nuestro control. Para solventar el segundo problema tenemos la posibilidad de securizar el servicio REST con el <a href="https://oauth.net/">protocolo OAuth</a>.</p>
@@ -341,8 +341,8 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-login_hu16073293087690285196.webp" data-gallery="" title="Inicio de sesión en Keycloak"><img src="/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-login_hu6672781580087079364.webp" width="300" height="195" alt="Inicio de sesión en Keycloak" title="Inicio de sesión en Keycloak" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-clients_hu1398297210732447756.webp" data-gallery="" title="Clientes OAuth"><img src="/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-clients_hu26971555269725758.webp" width="300" height="172" alt="Clientes OAuth" title="Clientes OAuth" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-login_hu_6685f02a039193f8.webp" data-gallery="" title="Inicio de sesión en Keycloak"><img src="/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-login_hu_1b6a101ef17938e1.webp" width="300" height="195" alt="Inicio de sesión en Keycloak" title="Inicio de sesión en Keycloak" class="" loading="lazy"></a>
+<a href="/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-clients_hu_b804a42e94dbd2f9.webp" data-gallery="" title="Clientes OAuth"><img src="/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-clients_hu_10d34067c20b3eaa.webp" width="300" height="172" alt="Clientes OAuth" title="Clientes OAuth" class="" loading="lazy"></a></p>
 <figcaption>Administación de Keycloak</figcaption>
 </figure>
 </div>
@@ -397,9 +397,9 @@
 </div>
 <p>En el siguiente artículo mostraré un <a href="https://picodotdev.github.io/blog-bitix/2016/10/cliente-de-un-servicio-rest-autenticado-con-oauth-en-java/">cliente del servicio REST autenticado con OAuth en Java</a> que haga las mismas llamadas que con <em>curl</em> pero usando código Java mediante la librería <a href="https://square.github.io/okhttp/">OkHttp</a>.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBootOauthClientServer">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradle server:run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBootOauthClientServer">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradle server:run</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

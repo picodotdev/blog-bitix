@@ -80,7 +80,7 @@ Los microservicios en una aplicación con una arquitectura de microservicios son
     "dateModified": "2018-09-07T19:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "798",
+    "wordCount": "800",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -97,10 +97,10 @@ Los microservicios en una aplicación con una arquitectura de microservicios son
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Los microservicios en una aplicación con una arquitectura de microservicios son efímeros, se crean, se escalan para atender picos de mayor demanda, pueden desaparecer por problemas de la red de comunicaciones que no es fiable y volverse a crear en una ubicación diferente. Por esta naturaleza efímera es necesario un servicio con el cual los clientes de los microservicios puedan encontrarlos y que los microservicios utilizan para registrarse cuando se inician.</p>"
 }
@@ -319,10 +319,10 @@ Los microservicios en una aplicación con una arquitectura de microservicios son
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Los microservicios en una aplicación con una arquitectura de microservicios son efímeros, se crean, se escalan para atender picos de mayor demanda, pueden desaparecer por problemas de la red de comunicaciones que no es fiable y volverse a crear en una ubicación diferente. Por esta naturaleza efímera es necesario un servicio con el cual los clientes de los microservicios puedan encontrarlos y que los microservicios utilizan para registrarse cuando se inician.</p>
 <p>Este servicio de registro y descubrimiento es esencial y crítico en una aplicación orientada a microservicios ya que sin él los clientes no pueden encontrar los servicios que necesitan. Dado que es un servicio esencial es necesario que esté siempre disponible y para ello es recomendable crear un cluster de servicios de registro y descubrimiento para que en caso de que una instancia de este servicio falle estén disponibles otras instancias para los clientes.</p>
@@ -372,15 +372,15 @@ Los microservicios en una aplicación con una arquitectura de microservicios son
 <p>Una vez iniciados los servidores de descubrimiento en la página <em>dashboard</em> de cualquiera de ellos cambiando el puerto de la dirección <em>http://ds1.127.0.0.1.xip.io:8761/</em> se observan varias propiedades como la lista de servidores del cluster, las réplicas registradas y disponibles y los servicios registrados con su ubicación y puerto. En este caso hay tres instancias del servicio de registro y descubrimiento, una de servidor de configuración y dos instancias de un servicio.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2018/09/registro-y-descubrimiento-de-servicios-con-spring-cloud-netflix/images/spring-eureka-1_hu16867923408235059800.webp" data-gallery="" title="Cluster del servicio de registro y descubrimiento"><img src="/blog-bitix/2018/09/registro-y-descubrimiento-de-servicios-con-spring-cloud-netflix/images/spring-eureka-1_hu11391601009882351547.webp" width="258" height="200" alt="Cluster del servicio de registro y descubrimiento" title="Cluster del servicio de registro y descubrimiento" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2018/09/registro-y-descubrimiento-de-servicios-con-spring-cloud-netflix/images/spring-eureka-2_hu2259182581163576791.webp" data-gallery="" title="Servicios registrados en el servicio de registro y descubrimiento"><img src="/blog-bitix/2018/09/registro-y-descubrimiento-de-servicios-con-spring-cloud-netflix/images/spring-eureka-2_hu17003284803156085043.webp" width="244" height="200" alt="Servicios registrados en el servicio de registro y descubrimiento" title="Servicios registrados en el servicio de registro y descubrimiento" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2018/09/registro-y-descubrimiento-de-servicios-con-spring-cloud-netflix/images/spring-eureka-1_hu_24a889d5b1ac04c8.webp" data-gallery="" title="Cluster del servicio de registro y descubrimiento"><img src="/blog-bitix/2018/09/registro-y-descubrimiento-de-servicios-con-spring-cloud-netflix/images/spring-eureka-1_hu_941b439d0f4e8c9c.webp" width="258" height="200" alt="Cluster del servicio de registro y descubrimiento" title="Cluster del servicio de registro y descubrimiento" class="" loading="lazy"></a>
+<a href="/blog-bitix/2018/09/registro-y-descubrimiento-de-servicios-con-spring-cloud-netflix/images/spring-eureka-2_hu_2e0a9f9904043aa8.webp" data-gallery="" title="Servicios registrados en el servicio de registro y descubrimiento"><img src="/blog-bitix/2018/09/registro-y-descubrimiento-de-servicios-con-spring-cloud-netflix/images/spring-eureka-2_hu_33a5d5d3d2f39f43.webp" width="244" height="200" alt="Servicios registrados en el servicio de registro y descubrimiento" title="Servicios registrados en el servicio de registro y descubrimiento" class="" loading="lazy"></a></p>
 <figcaption>Servicios y su estado registrados en el servicio de registro y descubrimiento</figcaption>
 </figure>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloud">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew discoveryserver:run --args=&#34;--spring.profiles.active=ds1&#34;</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloud">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew discoveryserver:run --args=&#34;--spring.profiles.active=ds1&#34;</code></p>
 </div>
 
     </div>

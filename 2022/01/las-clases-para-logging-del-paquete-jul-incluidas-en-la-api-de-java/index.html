@@ -62,7 +62,7 @@
     "dateModified": "2022-01-20T22:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "2215",
+    "wordCount": "2214",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -305,15 +305,15 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Las trazas o <em>logs</em>  en una aplicación forman parte de la parte del área de trazabilidad, observabilidad, monitorización e incluso en el área de seguridad, una de las <a href="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/">funcionalidades que necesitan las aplicaciones</a>, más imprescindible aún en los microservicios. Las trazas son mensajes con información que emite la aplicación para su análisis, estas se pueden emitir a un destino que puede ser simplemente la salida estándar de la consola, un archivo y en los sistemas más avanzados un sistema ELK para <a href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/">centralizar las trazas en un único sistema compuesto por múltiples aplicaciones</a>. Una buena práctica es emitir las trazas en la salida estándar de la aplicación y que sea un proceso externo el que determina como y donde se guardan las trazas de la aplicación,  lo que proporciona la flexibilidad de cambiar donde se guardan las trazas sin requerir cambios en la aplicación.</p>
 <p>Las trazas permiten ver qué ha ocurrido hace tiempo y conocer qué ocurre en la aplicación en tiempo real. Las trazas incluyen las excepciones que se generan en la aplicación y errores, identificados los errores que se están produciendo las mismas trazas dan pistas de las condiciones en las que se producen, identificar el problema, reproducirlo y con todo ello hacer los cambios en el código necesarios para corregir los errores. Sin las trazas es mucho más difícil conocer qué errores se están produciendo en la aplicación y en qué condiciones se producen para reproducirlo. Hay que tener en cuenta que muchas veces la mayor parte del tiempo que se emplea para corregir un error es en identificar las causas y reproducirlo, la parte de corregirlo haciendo cambios en el código generalmente es una pequeña parte de todo el tiempo empleado. La facilidad y rapidez para corregir un error en gran medida depende de que la aplicación emita una colección de buenas trazas.</p>
 <p>En Java la librería <a href="https://logging.apache.org/log4j/2.x/">Log4j</a> es la más utilizada para la funcionalidad de trazas, es una librería muy completa que tiene todas las funcionalidades relativas a trazas que requiera una aplicación en el momento actual o en el futuro. Otra librería muy popular en Java es <a href="https://www.slf4j.org/">SLF4</a> que permite independizar a la aplicación de la implementación de la traza pudiendo cambiar de una u otra según se desee.</p>
-<p>Otra alternativa es usar las clases que se incluyen en él la propia API de Java para <em>logging</em> en el paquete <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.logging/java/util/logging/package-summary.html">java.util.logging</a>. No son tan avanzadas como las de Log4j pero son suficientes para muchos casos de uso. Dado a un <a href="https://picodotdev.github.io/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/">grave fallo de seguridad en Log4j</a> qué ha afectado a muchas empresas, y raíz de esta situación quizá alguna persona considere utilizar o revisar las clases de <em>logging</em> de Java como alternativa a incluir una dependencia para algo que con lo que ofrece la API quizá sea suficiente para una aplicación.</p>
+<p>Otra alternativa es usar las clases que se incluyen en él la propia API de Java para <em>logging</em> en el paquete <a href="#ZgotmplZ">java.util.logging</a>. No son tan avanzadas como las de Log4j pero son suficientes para muchos casos de uso. Dado a un <a href="https://picodotdev.github.io/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/">grave fallo de seguridad en Log4j</a> qué ha afectado a muchas empresas, y raíz de esta situación quizá alguna persona considere utilizar o revisar las clases de <em>logging</em> de Java como alternativa a incluir una dependencia para algo que con lo que ofrece la API quizá sea suficiente para una aplicación.</p>
 <div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
-    <li><a href="#las-clases-de-_logging_-de-java">Las clases de <em>logging</em> de Java</a></li>
+    <li><a href="#las-clases-de-logging-de-java">Las clases de <em>logging</em> de Java</a></li>
     <li><a href="#motivos-para-usar-jul">Motivos para usar JUL</a></li>
     <li><a href="#ejemplo-usando-las-clases-de-java-para-trazas">Ejemplo usando las clases de Java para trazas</a>
       <ol>
@@ -325,16 +325,16 @@
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h2 id="las-clases-de-_logging_-de-java">Las clases de <em>logging</em> de Java</h2>
+<h2 id="las-clases-de-logging-de-java">Las clases de <em>logging</em> de Java</h2>
 <p>Al ofrecer Java en su API clases para realizar tareas de <em>logging</em> significa que cualquier aplicación las pueda utilizar sin ninguna dependencia adicional a partir de la versión 1.4 en la que fueron incluidas. A las clases y sistema de <em>logging</em> de Java se le denomina JUL por las primeras letras de los paquetes en las que están, <em>java.util.logging</em>.</p>
 <p>Las clases principales de JUL son equivalentes a las que se encuentran en otras librerías ya que en definitiva en cualquier librería representan los mismos conceptos del área de dominio de <em>logging</em>.</p>
 <ul>
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.logging/java/util/logging/Logger.html">Logger</a>: es la clase de entidad principal que usan las aplicaciones para emitir trazas. Se crea una instancia de <em>logger</em> diferente por cada componente específico del sistema o aplicación.</li>
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.logging/java/util/logging/LogRecord.html">LogRecord</a>: es una clase que contiene los datos a ser pasados entre el <em>framework</em> de logging y los <em>log handlers</em>.</li>
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.logging/java/util/logging/Handler.html">Handler</a>: envía los objetos <em>LogRecord</em> a una variedad de destinos incluyendo memoria, flujos de salida, la consola, archivos y <em>sockets</em>. Existe una variedad de subclases de <em>Handler</em> con una implementación  para cada destino. Adicionalmente los <em>Handlers</em> pueden ser desarrollados por tercera partes e integrados sobre el núcleo de la plataforma.</li>
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.logging/java/util/logging/Level.html">Level</a>: define un conjunto estándar de niveles de <em>log</em> que se usan para controlar la salida y gravedad del mensaje. Los programas pueden ser configurados para emitir trazas para algunos niveles mientras se ignoran las trazas de otros.</li>
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.logging/java/util/logging/Filter.html">Filter</a>: proporciona un control fino sobre lo que es emitido, más allá del control proporcionado por los niveles de <em>log</em>. La API de <em>logging</em> soporta un mecanismo de propósito general que permite al código de la aplicación asociar filtros arbitrarios para controlar la salida de las trazas..</li>
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/util/logging/Formatter.html">Formatter</a>: proporciona soporte para especificar cómo son formateados los objetos <em>LogRecord</em>. El paquete de JUL incluye dos formateadores, SimpleFormatter y XMLFormatter, para formatear los registros de log en texto plano o XML respectivamente. Al igual que con los <em>Handlers</em>, terceras partes pueden desarrollar <em>Formatters</em> adicionales.</li>
+<li><a href="#ZgotmplZ">Logger</a>: es la clase de entidad principal que usan las aplicaciones para emitir trazas. Se crea una instancia de <em>logger</em> diferente por cada componente específico del sistema o aplicación.</li>
+<li><a href="#ZgotmplZ">LogRecord</a>: es una clase que contiene los datos a ser pasados entre el <em>framework</em> de logging y los <em>log handlers</em>.</li>
+<li><a href="#ZgotmplZ">Handler</a>: envía los objetos <em>LogRecord</em> a una variedad de destinos incluyendo memoria, flujos de salida, la consola, archivos y <em>sockets</em>. Existe una variedad de subclases de <em>Handler</em> con una implementación  para cada destino. Adicionalmente los <em>Handlers</em> pueden ser desarrollados por tercera partes e integrados sobre el núcleo de la plataforma.</li>
+<li><a href="#ZgotmplZ">Level</a>: define un conjunto estándar de niveles de <em>log</em> que se usan para controlar la salida y gravedad del mensaje. Los programas pueden ser configurados para emitir trazas para algunos niveles mientras se ignoran las trazas de otros.</li>
+<li><a href="#ZgotmplZ">Filter</a>: proporciona un control fino sobre lo que es emitido, más allá del control proporcionado por los niveles de <em>log</em>. La API de <em>logging</em> soporta un mecanismo de propósito general que permite al código de la aplicación asociar filtros arbitrarios para controlar la salida de las trazas..</li>
+<li><a href="#ZgotmplZ">Formatter</a>: proporciona soporte para especificar cómo son formateados los objetos <em>LogRecord</em>. El paquete de JUL incluye dos formateadores, SimpleFormatter y XMLFormatter, para formatear los registros de log en texto plano o XML respectivamente. Al igual que con los <em>Handlers</em>, terceras partes pueden desarrollar <em>Formatters</em> adicionales.</li>
 </ul>
 <h2 id="motivos-para-usar-jul">Motivos para usar JUL</h2>
 <p>Log4j es una de las mejores sino la mejor librería para trazas en Java, las ventajas son flexibilidad en caso de necesitar funcionalidades más en el futuro siendo raro que se necesite algo en materia de <em>logging</em> que no soporte Log4j de alguna forma. Logj4 permite guardar archivos, rotar los archivos por fecha o volumen de datos guardando cierto número de copias de seguridad, información de contexto entre más funcionalidades avanzadas, cosas adicionales que no tiene JUL. JUL por el contrario es una solución que no requiere incluir una dependencia adicional el proyecto y una solución más sencilla que puede ser más que suficiente para una aplicación o un pequeño <em>script</em>.</p>
@@ -360,7 +360,7 @@
         <span>Main-run-1.out</span>
     </div>
 </div>
-<p>El formato del mensaje se puede cambiar estableciendo una propiedad de sistema en el comando de ejecución que inicia la máquina virtual. En el javadoc de la clase <em>SimpleFormatter</em> está detallada la explicación del <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.logging/java/util/logging/SimpleFormatter.html#format%28java.util.logging.LogRecord%29">formato y símbolos de la expresión para dar formato al mensaje</a>. Cambiando el formato el resultado en la salida del programa cambia.</p>
+<p>El formato del mensaje se puede cambiar estableciendo una propiedad de sistema en el comando de ejecución que inicia la máquina virtual. En el javadoc de la clase <em>SimpleFormatter</em> está detallada la explicación del <a href="#ZgotmplZ">formato y símbolos de la expresión para dar formato al mensaje</a>. Cambiando el formato el resultado en la salida del programa cambia.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ./gradlew run -Djava.util.logging.SimpleFormatter.format<span class="o">=</span><span class="s2">&#34;%1\$tF %1\$tT.%1\$tL %4\$-12.12s %2\$60.60s %5\$s%6\$s%n&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
@@ -432,9 +432,9 @@
 </div>
 <p>Con la petición de LOG4J2-3282 deja de ser necesario usar JUL directamente y se puede utilizar a través de Log4j pero este es un ejemplo de una implementación sencilla en vez de tener que recurrir al SLF4J para la tarea de tener la flexibilidad de cambiar de implementación entre JUL o Log4j.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub.</p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub.</p>
 </div>
 
     </div>
@@ -475,7 +475,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/">
-                <img src="/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu4366793428421493849.webp" width="326" height="125" alt="Analizar y detectar fallos de seguridad en las dependencias de Java" title="Analizar y detectar fallos de seguridad en las dependencias de Java" class="" loading="lazy">
+                <img src="/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu_4ada8614feda817b.webp" width="326" height="125" alt="Analizar y detectar fallos de seguridad en las dependencias de Java" title="Analizar y detectar fallos de seguridad en las dependencias de Java" class="" loading="lazy">
                 <h3>Analizar y detectar fallos de seguridad en las dependencias de Java</h3>
                 </a>
                 
@@ -545,7 +545,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/">
-                <img src="/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/images/java-17_hu15912779004733722682.webp" width="326" height="125" alt="Novedades y nuevas características de Java 17" title="Novedades y nuevas características de Java 17" class="" loading="lazy">
+                <img src="/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/images/java-17_hu_4d2013f5745ecc63.webp" width="326" height="125" alt="Novedades y nuevas características de Java 17" title="Novedades y nuevas características de Java 17" class="" loading="lazy">
                 <h3>Novedades y nuevas características de Java 17</h3>
                 </a>
                 

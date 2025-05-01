@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="Interfaz web para JMX con Hawtio">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_hu12632834955990237277.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_hu_afb9215ada26537a.png">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Una cosa es la funcionalidad que proporciona una aplicación y otra las tareas de administración y mantenimiento relacionas con la aplicación. Estas tareas de administración y mantenimiento no son tareas destinadas a los usuarios sino destinadas a los administradores de la aplicación. Estas tareas pueden ser manuales y ejecutadas a conveniencia siendo muy útil poder ejecutarlas sin necesidad de realizar cambios en el código ni un despliegue de la aplicación. La tecnología JMX de Java define una arquitectura para administrar y monitorizar aplicaciones que se puede utilizar para estas tareas administrativas, Hawtio es una interfaz que permite el acceso y ejecución a JMX mediante un navegador y proporciona una librería para integrase con Spring Boot. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_hu12632834955990237277.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_hu_afb9215ada26537a.png">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Interfaz web para JMX con Hawtio">
@@ -55,14 +55,14 @@
     "headline": "Interfaz web para JMX con Hawtio",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_hu12632834955990237277.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_hu_afb9215ada26537a.png"
         
       },
     "datePublished": "2022-07-14T00:00:00+02:00",
     "dateModified": "2022-07-14T00:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1352",
+    "wordCount": "1354",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -305,7 +305,7 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Las computadoras y las aplicaciones realizan sus funciones de forma rápida y determinista ofreciendo su servicio a sus usuarios. El software generalmente se diseña para el caso en el que todo funcione correctamente pero también ha de estar preparado para los casos en los que se produzca un error ya sea simplemente emitiendo una traza o autocorrigiendo el problema con un reintento.</p>
 <p>Especialmente con el advenimiento de los microservicios que se basan en la comunicación por red las aplicaciones han de estar preparadas para los errores. Si un proceso en una computadora es muy fiable salvo por fallo del hardware las redes son mucho menos fiables más cuando hay comunicación entre varios servicios dado que la conectividad de red se puede perder o un servicio puede fallar repentinamente por un fallo de software o por un fallo de hardware.</p>
@@ -364,7 +364,7 @@
 <p>Las operaciones administrativas seguramente sean funcionalidades que realicen tareas que no deban ser accesibles para los usuarios y han de estar protegidos. Hawtio permite la integración con Keycloak para la autenticación y permite solicitar credenciales para el acceso a la consola web.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_hu11642716256535407620.webp" data-gallery="" title="Consola de Hawtio como un actuator en aplicación de Spring Boot"><img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_hu9498121477971650109.webp" width="650" height="364" alt="Consola de Hawtio como un actuator en aplicación de Spring Boot" title="Consola de Hawtio como un actuator en aplicación de Spring Boot" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_hu_bdc6007c0b8ce864.webp" data-gallery="" title="Consola de Hawtio como un actuator en aplicación de Spring Boot"><img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_hu_bde2fe609f36f6f6.webp" width="650" height="364" alt="Consola de Hawtio como un actuator en aplicación de Spring Boot" title="Consola de Hawtio como un actuator en aplicación de Spring Boot" class="" loading="lazy"></a></p>
 <figcaption>Consola de Hawtio como un actuator en aplicación de Spring Boot</figcaption>
 </figure>
 </div>
@@ -378,15 +378,15 @@
 <p>Con Boundary iniciado y el <em>target</em> definido hay que establecer el túnel con la conexión a la máquina destino, esto crea un túnel abriendo un puerto en la máquina local que tiene como destino el <em>target</em> que se ha utilizado para la conexión, en este ejemplo a la propia máquina local al puerto <em>8081</em>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-console_hu6323947163622914746.webp" data-gallery="" title="Consola de Boundary"><img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-console_hu6967506952957386422.webp" width="200" height="112" alt="Consola de Boundary" title="Consola de Boundary" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-console_hu_5a6c53ee7a3b8f4e.webp" data-gallery="" title="Consola de Boundary"><img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-console_hu_46dc5a09653e9af5.webp" width="200" height="112" alt="Consola de Boundary" title="Consola de Boundary" class="" loading="lazy"></a></p>
 <figcaption>Consola de Boundary</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-1_hu4078382580203747152.webp" data-gallery="" title="Creación de un target en Boundary"><img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-1_hu15766352275208474130.webp" width="136" height="150" alt="Creación de un target en Boundary" title="Creación de un target en Boundary" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-2_hu8777987464381337545.webp" data-gallery="" title="Creación de un target en Boundary"><img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-2_hu9507165809328797879.webp" width="136" height="150" alt="Creación de un target en Boundary" title="Creación de un target en Boundary" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-3_hu528363770437038398.webp" data-gallery="" title="Creación de un target en Boundary"><img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-3_hu5482568386944910321.webp" width="136" height="150" alt="Creación de un target en Boundary" title="Creación de un target en Boundary" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-1_hu_428b5c47e41b014c.webp" data-gallery="" title="Creación de un target en Boundary"><img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-1_hu_4be2d54466f28486.webp" width="136" height="150" alt="Creación de un target en Boundary" title="Creación de un target en Boundary" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-2_hu_c708dbf375c9ad60.webp" data-gallery="" title="Creación de un target en Boundary"><img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-2_hu_eb2e52c7e5e9bd0.webp" width="136" height="150" alt="Creación de un target en Boundary" title="Creación de un target en Boundary" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-3_hu_3a4650f59323640c.webp" data-gallery="" title="Creación de un target en Boundary"><img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-target-3_hu_1a75d67a728faded.webp" width="136" height="150" alt="Creación de un target en Boundary" title="Creación de un target en Boundary" class="" loading="lazy"></a></p>
 <figcaption>Creación de un target en Boundary</figcaption>
 </figure>
 </div>
@@ -400,21 +400,21 @@
 <p>Esto proporciona un puerto en la máquina local abierto contra Boundary y este contra la máquina y el puerto destino. En este ejemplo está todo en la máquina local pero a efectos prácticos ahora es posible utilizar el puerto proporcionado por Boundary para hacer la conexión a la consola de Hawtio, en vez del puerto <em>8081</em> la conexión a través de Boundary se realiza mediante el puerto <em>43923</em>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-hawtio_hu11595655740266832256.webp" data-gallery="" title="Conexión a Hawtio a través de Boundary"><img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-hawtio_hu4032412875145410321.webp" width="650" height="364" alt="Conexión a Hawtio a través de Boundary" title="Conexión a Hawtio a través de Boundary" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-hawtio_hu_8bae4c607156ebd9.webp" data-gallery="" title="Conexión a Hawtio a través de Boundary"><img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-hawtio_hu_ba1e50bf8c15c788.webp" width="650" height="364" alt="Conexión a Hawtio a través de Boundary" title="Conexión a Hawtio a través de Boundary" class="" loading="lazy"></a></p>
 <figcaption>Conexión a Hawtio a través de Boundary</figcaption>
 </figure>
 </div>
 <p>Además, con Boundary es posible monitorizar las conexiones y sesiones establecidas lo que proporciona medidas adicionales de seguridad y auditoría.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-sessions_hu1449522940523391164.webp" data-gallery="" title="Sesiones establecidas y activas establecidas a través de Boudary"><img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-sessions_hu9745161770493361556.webp" width="650" height="377" alt="Sesiones establecidas y activas establecidas a través de Boudary" title="Sesiones establecidas y activas establecidas a través de Boudary" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-sessions_hu_e11f047dd2519e51.webp" data-gallery="" title="Sesiones establecidas y activas establecidas a través de Boudary"><img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/boundary-sessions_hu_916b47b590a46c81.webp" width="650" height="377" alt="Sesiones establecidas y activas establecidas a través de Boudary" title="Sesiones establecidas y activas establecidas a través de Boudary" class="" loading="lazy"></a></p>
 <figcaption>Sesiones establecidas y activas establecidas a través de Boudary</figcaption>
 </figure>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBootHawtio">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBootHawtio">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew run</code></p>
 </div>
 
     </div>
@@ -469,7 +469,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/">
-                <img src="/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-packages-artifact_hu11245262572644857252.webp" width="326" height="125" alt="Publicar y utilizar una dependencia de Java en un repositorio de Git con GitHub Packages" title="Publicar y utilizar una dependencia de Java en un repositorio de Git con GitHub Packages" class="" loading="lazy">
+                <img src="/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-packages-artifact_hu_3e10b1c901070052.webp" width="326" height="125" alt="Publicar y utilizar una dependencia de Java en un repositorio de Git con GitHub Packages" title="Publicar y utilizar una dependencia de Java en un repositorio de Git con GitHub Packages" class="" loading="lazy">
                 <h3>Publicar y utilizar una dependencia de Java en un repositorio de Git con GitHub Packages</h3>
                 </a>
                 

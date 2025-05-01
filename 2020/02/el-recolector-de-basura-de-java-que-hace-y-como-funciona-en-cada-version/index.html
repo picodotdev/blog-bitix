@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="El recolector de basura de Java, qué hace y cómo funciona en cada versión">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-3_hu15428708905056542485.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-3_hu_e45d1c443d422baf.png">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="El recolector de basura o garbage collector es una de las piezas fundamentales del lenguaje Java y su plataforma, es la funcionalidad que libera al programador de la solicitud y liberación de memoria de forma explícita lo que facilita a los programadores la creación de programas, una mayor productividad, evita errores y fallos de seguridad. Una ventaja sobre lenguajes que no poseen recolectores de basura y que se ha adoptado por los lenguajes desarrollados en la últimas décadas. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-3_hu15428708905056542485.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-3_hu_e45d1c443d422baf.png">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="El recolector de basura de Java, qué hace y cómo funciona en cada versión">
@@ -55,7 +55,7 @@
     "headline": "El recolector de basura de Java, qué hace y cómo funciona en cada versión",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-3_hu15428708905056542485.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-3_hu_e45d1c443d422baf.png"
         
       },
     "datePublished": "2020-02-14T17:00:00+01:00",
@@ -305,7 +305,7 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Den entre las características de Java ¿a qué se debe su popularidad? ¿al lenguaje simple de fácil lectura sin crípticas expresiones? ¿a ser multiplataforma, <em>write once, run everywhere</em>? ¿a la máquina virtual JVM que lo hace independiente de la plataforma sistema operativo y soporta múltiples lenguajes compilados a <em>bytecode</em>? ¿a su extensa y completa documentación Javadoc de cada clase incluida en el JDK? ¿a las clases incluidas en el JDK con una completa librería para trabajar con colecciones, interfaces gráficas o conexión a bases de datos? ¿a mantener la compatibilidad hacia atrás de modo que programas escritos hace 20 años sigan compilando y funcionando en versiones más recientes de la máquina virtual?</p>
 <p>Además de todas las anteriores entre las principales hay que añadir la recolección de basura que libera al programador la gestión de la memoria, tanto para solicitarla como para devolverla al sistema. Lenguajes más antiguos y con otros propósitos más cercanos a la programación de sistema donde prima el rendimiento y el acceso cercano al hardware como C no poseen recolector de memoria y requieren que el programador solicite de forma explícita con la función <em>malloc</em> la memoria y el tamaño de la memoria a reservar y la libere también cuando se deja de usar de forma explícita con la llamada a la función <em>free</em>.</p>
@@ -323,7 +323,7 @@
     </div>
 </div>
 <p>Como desarrollador de Java apenas hay que preocuparse de fugas de memoria ni de fallos en el programa por liberar memoria antes de que dejar de usarla. En Java la solicitud de memoria al sistema se hace de forma explícita con la palabra reservada <em>new</em> para crear una instancia de un objeto pero no hace falta especificar el tamaño de la memoria a reservar como en C. Tampoco hace falta liberar de forma explícita el objeto cuando dejar de usarse es el propio recolector de basura el que determina si una instancia ha quedado inaccesible desde el programa según por las referencias a objetos que siguen estando en uso, libera la memoria en el proceso de recolección de basura que ejecuta la máquina virtual de forma periódica y automática sin ninguna intervención.</p>
-<p>El recolector de basura además de simplificar el código de las aplicaciones, evita fallos en tiempo de ejecución con posibilidad de que sean difíciles de depurar, evita en gran medida las fugas de memoria y fallos graves de seguridad. En los programas en C es muy común errores de seguridad por casos en los que se sobrescriben zonas de memoria contiguas por no hacer comprobaciones en los límites de los arrays, muchos <a href="https://www.cve.org/">boletines de seguridad CVE</a> en muchas librerías tienen un origen de este tipo. En Java si se intenta acceder a un array fuera de sus límites se produce una excepción <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ArrayIndexOutOfBoundsException.html">ArrayIndexOutOfBoundsException</a>, el programa sigue teniendo un error pero no tiene por que terminar su funcionamiento de forma drástica porque el sistema operativo lo mata y no son posibles los fallos de seguridad por sobrescribir una zona de memoria contigua al array pero fuera de sus límites.</p>
+<p>El recolector de basura además de simplificar el código de las aplicaciones, evita fallos en tiempo de ejecución con posibilidad de que sean difíciles de depurar, evita en gran medida las fugas de memoria y fallos graves de seguridad. En los programas en C es muy común errores de seguridad por casos en los que se sobrescriben zonas de memoria contiguas por no hacer comprobaciones en los límites de los arrays, muchos <a href="https://www.cve.org/">boletines de seguridad CVE</a> en muchas librerías tienen un origen de este tipo. En Java si se intenta acceder a un array fuera de sus límites se produce una excepción <a href="#ZgotmplZ">ArrayIndexOutOfBoundsException</a>, el programa sigue teniendo un error pero no tiene por que terminar su funcionamiento de forma drástica porque el sistema operativo lo mata y no son posibles los fallos de seguridad por sobrescribir una zona de memoria contigua al array pero fuera de sus límites.</p>
 <p>La desventaja de los recolectores de basura es que cada cierto tiempo requieren detener la ejecución de la aplicación para proceder a liberar la memoria dejada de usar por la aplicación. Estas pausas que suceden fuera del control de la aplicación hace que para entornos donde se necesite una respuesta bajo unos términos de tiempo bajos o extremadamente alto rendimiento como en el caso de sistemas en tiempo real hace que los recolectores de basura sean una dificultad.</p>
 <p>En Java una de las áreas para mejorar el rendimiento y tiempo de respuesta de las aplicaciones es modificar el algoritmo de recolección de basura, para mejorar el tiempo que necesita para ejecutarse y número de pausas además de posibilitar el paralelizar la ejecución del recolector de basura con la ejecución de la aplicación. A lo largo de los años en Java ha habido varios recolectores de basura.</p>
 <p>Salvo casos en los que hay que ajustar al límite la máquina virtual en aplicaciones que necesitan gran rendimiento no es necesario preocuparse por el funcionamiento del recolector de basura, hace su cometido como se espera. En mis años de experiencia nunca he tenido que configurarlo, pero es interesante conocer que mejoras se van implementando en cada nueva generación de algoritmo. En la mayoría de los casos parece que el sucesor se basa en el anterior y aporta alguna mejora.</p>
@@ -370,21 +370,21 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-1_hu11210508923367375204.webp" data-gallery="" title="Objetos al inicializar la estructura de datos"><img src="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-1_hu11995502737664927807.webp" width="125" height="139" alt="Objetos al inicializar la estructura de datos" title="Objetos al inicializar la estructura de datos" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-1_hu_8cf1c2d64309ae7.webp" data-gallery="" title="Objetos al inicializar la estructura de datos"><img src="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-1_hu_33646be88951625e.webp" width="125" height="139" alt="Objetos al inicializar la estructura de datos" title="Objetos al inicializar la estructura de datos" class="" loading="lazy"></a></p>
 <figcaption>Objetos al inicializar la estructura de datos</figcaption>
 </figure>
 </div>
 <p>Al realizar la operación de eliminación de un nodo del árbol el objeto eliminado del árbol deja de ser accesibles para el programa sino hay más referencias en otras estructuras de datos  con la que alcanzar a ese objeto y pasa a ser reclamable por el recolector de basura.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-2_hu5971507804459240544.webp" data-gallery="" title="Objetos después de eliminar un nodo"><img src="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-2_hu9773313150871551410.webp" width="200" height="139" alt="Objetos después de eliminar un nodo" title="Objetos después de eliminar un nodo" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-2_hu_95e03f94cb21c1b9.webp" data-gallery="" title="Objetos después de eliminar un nodo"><img src="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-2_hu_b4add1833d51b114.webp" width="200" height="139" alt="Objetos después de eliminar un nodo" title="Objetos después de eliminar un nodo" class="" loading="lazy"></a></p>
 <figcaption>Objetos después de eliminar un nodo</figcaption>
 </figure>
 </div>
 <p>Con más operaciones los objetos no accesibles aumentan. Estos objetos no accesibles siguen consumiendo memoria, el recolector de basura se encarga de liberar la memoria de esos objetos y después compactar la memoria en uso y la liberada queda utilizable para nuevas instancias de objetos.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-3_hu13755664922537631409.webp" data-gallery="" title="Objetos después de realizar múltiples operaciones de inserción"><img src="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-3_hu12918425960159775017.webp" width="275" height="200" alt="Objetos después de realizar múltiples operaciones de inserción" title="Objetos después de realizar múltiples operaciones de inserción" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-3_hu_f0fc4bd1abe1bc20.webp" data-gallery="" title="Objetos después de realizar múltiples operaciones de inserción"><img src="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-3_hu_7d9abfa76765263b.webp" width="275" height="200" alt="Objetos después de realizar múltiples operaciones de inserción" title="Objetos después de realizar múltiples operaciones de inserción" class="" loading="lazy"></a></p>
 <figcaption>Objetos después de realizar múltiples operaciones de inserción</figcaption>
 </figure>
 </div>
@@ -410,7 +410,7 @@
 <p>El recolector de basura G1 también divide la memoria en regiones de memoria catalogadas como de objetos jóvenes y objetos viejos. Las regiones de objetos jóvenes las recolecta en cada pausa, para las zonas de objetos viejos tiene cierta flexibilidad para recolectar muchas o pocas como la estimación de tiempo que le llevará hacerlo le permita para cumplir con el objetivo de tiempo de pausa configurado dado que permite ajustar según preferencia el límite de tiempo máximo deseado para las pausas.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/gc-g1_hu2244693452748379761.webp" data-gallery="" title="División por zonas de G1 y compactación de objetos"><img src="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/gc-g1_hu17727050487194263635.webp" width="450" height="349" alt="División por zonas de G1 y compactación de objetos" title="División por zonas de G1 y compactación de objetos" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/gc-g1_hu_5edc043da821fa8f.webp" data-gallery="" title="División por zonas de G1 y compactación de objetos"><img src="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/gc-g1_hu_ebd270b6af0a0496.webp" width="450" height="349" alt="División por zonas de G1 y compactación de objetos" title="División por zonas de G1 y compactación de objetos" class="" loading="lazy"></a></p>
 <figcaption>División por zonas de G1 y compactación de objetos</figcaption>
 </figure>
 </div>
@@ -442,7 +442,7 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
 <p>Los recolectores de basura anteriores y hasta ahora necesitaban realizar pausas <em>stop-the-world</em> para algunas operaciones de recolección de basura. Para un recolector de basura de baja latencia esto es problemático de modo que ZGC realiza todas las operaciones concurrentemente a la aplicación de modo que no hay apenas latencias.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/zgc-stoptheworld_hu1098621842133072766.webp" data-gallery="" title="Comparación de latencia entre ZGC, Parallel y G1"><img src="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/zgc-stoptheworld_hu1796882996760120043.webp" width="514" height="450" alt="Comparación de latencia entre ZGC, Parallel y G1" title="Comparación de latencia entre ZGC, Parallel y G1" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/zgc-stoptheworld_hu_ee3b8eebae1de549.webp" data-gallery="" title="Comparación de latencia entre ZGC, Parallel y G1"><img src="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/zgc-stoptheworld_hu_cbe70e97b0bbb131.webp" width="514" height="450" alt="Comparación de latencia entre ZGC, Parallel y G1" title="Comparación de latencia entre ZGC, Parallel y G1" class="" loading="lazy"></a></p>
 <figcaption>Comparación de latencia entre ZGC, Parallel y G1</figcaption>
 </figure>
 </div>
@@ -492,7 +492,7 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/02/programacion-orientada-a-aspectos-con-aspectj-spring-aop-y-la-clase-proxy/">
-                <img src="/blog-bitix/2020/02/programacion-orientada-a-aspectos-con-aspectj-spring-aop-y-la-clase-proxy/images/aop-proxy-call_hu6136278005427656704.webp" width="326" height="125" alt="Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy" title="Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy" class="" loading="lazy">
+                <img src="/blog-bitix/2020/02/programacion-orientada-a-aspectos-con-aspectj-spring-aop-y-la-clase-proxy/images/aop-proxy-call_hu_bc27ffa5d91b779.webp" width="326" height="125" alt="Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy" title="Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy" class="" loading="lazy">
                 <h3>Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy</h3>
                 </a>
                 
@@ -506,7 +506,7 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/">
-                <img src="/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/images/java-access-specifier_hu15047890276518514370.webp" width="326" height="125" alt="Los modificadores de acceso de clases, propiedades y métodos en Java" title="Los modificadores de acceso de clases, propiedades y métodos en Java" class="" loading="lazy">
+                <img src="/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/images/java-access-specifier_hu_b7c2f25720b4b6af.webp" width="326" height="125" alt="Los modificadores de acceso de clases, propiedades y métodos en Java" title="Los modificadores de acceso de clases, propiedades y métodos en Java" class="" loading="lazy">
                 <h3>Los modificadores de acceso de clases, propiedades y métodos en Java</h3>
                 </a>
                 
@@ -534,7 +534,7 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/12/generar-documentos-informes-y-facturas-en-formato-pdf-con-jasperreports-y-java/">
-                <img src="/blog-bitix/2019/12/generar-documentos-informes-y-facturas-en-formato-pdf-con-jasperreports-y-java/images/jaspersoft-studio_hu7279855340601909363.webp" width="326" height="125" alt="Generar documentos, informes y facturas en formato PDF con JasperReports y Java" title="Generar documentos, informes y facturas en formato PDF con JasperReports y Java" class="" loading="lazy">
+                <img src="/blog-bitix/2019/12/generar-documentos-informes-y-facturas-en-formato-pdf-con-jasperreports-y-java/images/jaspersoft-studio_hu_91dd47597d91255d.webp" width="326" height="125" alt="Generar documentos, informes y facturas en formato PDF con JasperReports y Java" title="Generar documentos, informes y facturas en formato PDF con JasperReports y Java" class="" loading="lazy">
                 <h3>Generar documentos, informes y facturas en formato PDF con JasperReports y Java</h3>
                 </a>
                 
@@ -548,7 +548,7 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/">
-                <img src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu248334668893711718.webp" width="326" height="125" alt="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" title="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" class="" loading="lazy">
+                <img src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu_c415de9b81f47b65.webp" width="326" height="125" alt="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" title="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" class="" loading="lazy">
                 <h3>Implementar un segundo factor de autenticación en una aplicación web Java con Spring</h3>
                 </a>
                 

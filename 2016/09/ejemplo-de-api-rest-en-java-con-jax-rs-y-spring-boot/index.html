@@ -80,7 +80,7 @@ En Java a través de JAX-RS, una de entre las varias especificaciones de JavaEE,
     "dateModified": "2016-09-17T12:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "625",
+    "wordCount": "627",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -97,10 +97,10 @@ En Java a través de JAX-RS, una de entre las varias especificaciones de JavaEE,
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring Framework" title="Spring Framework" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring Framework" title="Spring Framework" class="" loading="false"></p>
 </div>
 <p>En Java a través de JAX-RS, una de entre las varias <a href="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/">especificaciones de JavaEE</a>, podemos desarrollar servicios web basados en <a href="https://es.wikipedia.org/wiki/Representational_State_Transfer"><abbr title="Representational State Transfer">REST</abbr></a> y <a href="https://json.org/"><abbr title="JavaScript Object Notation">JSON</abbr></a>. Estos servicios web al usar la infraestructura de la web y el protocolo HTTP podemos hacer uso de facilidades que proporciona como <a href="https://picodotdev.github.io/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/">cacheo</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/">protocolo seguro</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/02/introduccion-al-protocolo-http-2/">HTTP/2</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/">compresión</a> o autenticación. Usando <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> podemos desarrollar servicios web autocontenidos al igual que podemos hacer con las aplicaciones web tradicionales.</p>"
 }
@@ -319,10 +319,10 @@ En Java a través de JAX-RS, una de entre las varias especificaciones de JavaEE,
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring Framework" title="Spring Framework" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring Framework" title="Spring Framework" class="" loading="false"></p>
 </div>
 <p>En Java a través de JAX-RS, una de entre las varias <a href="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/">especificaciones de JavaEE</a>, podemos desarrollar servicios web basados en <a href="https://es.wikipedia.org/wiki/Representational_State_Transfer"><abbr title="Representational State Transfer">REST</abbr></a> y <a href="https://json.org/"><abbr title="JavaScript Object Notation">JSON</abbr></a>. Estos servicios web al usar la infraestructura de la web y el protocolo HTTP podemos hacer uso de facilidades que proporciona como <a href="https://picodotdev.github.io/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/">cacheo</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/">protocolo seguro</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/02/introduccion-al-protocolo-http-2/">HTTP/2</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/">compresión</a> o autenticación. Usando <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> podemos desarrollar servicios web autocontenidos al igual que podemos hacer con las aplicaciones web tradicionales.</p>
 <p>Para facilitar el inicio de los proyectos podemos usar <a href="https://start.spring.io/">Spring Initializr</a> seleccionando los módulos web y JAX-RS con la implementación de referencia <a href="https://jersey.github.io/">Jersey</a>. Al proyecto creado deberemos añadir los servicios que queramos proporcionar. En el ejemplo añadiré uno muy sencillo que devuelva un nuevo mensaje creado en un servicio inyectado en la clase del recurso del servicio REST.</p>
@@ -378,7 +378,7 @@ En Java a través de JAX-RS, una de entre las varias especificaciones de JavaEE,
         <span>out.txt</span>
     </div>
 </div>
-<p>Al diseñar APIs REST más complejas que este sencillo ejemplo conviene conocer el término <a href="https://en.wikipedia.org/wiki/HATEOAS">HATEOAS</a>. Deberemos definir como organizar la información devuelta por los diferentes que los libros <a href="https://amzn.to/2cxWMRo" rel="sponsored">RESTful Web APIs</a> y <a href="https://amzn.to/2cEzQz5" rel="sponsored">REST in Practice</a> además de <a href="https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api">artículos con consejos sobre como diseñar APIs RESTful</a>.</p>
+<p>Al diseñar APIs REST más complejas que este sencillo ejemplo conviene conocer el término <a href="https://en.wikipedia.org/wiki/HATEOAS">HATEOAS</a>. Deberemos definir como organizar la información devuelta por los diferentes que los libros <a href="https://amzn.to/2cxWMRo">RESTful Web APIs</a> y <a href="https://amzn.to/2cEzQz5">REST in Practice</a> además de <a href="https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api">artículos con consejos sobre como diseñar APIs RESTful</a>.</p>
 <div class="media media-amazon">
   <ul>
     <li><a href="https://amzn.to/3OsDOO9" title="RESTful Web APIs: Services for a Changing World">RESTful Web APIs: Services for a Changing World</a></li><li><a href="https://amzn.to/3Ut5qGQ" title="REST in Practise: Hypermedia and Systems Architecture">REST in Practise: Hypermedia and Systems Architecture</a></li></ul>
@@ -386,9 +386,9 @@ En Java a través de JAX-RS, una de entre las varias especificaciones de JavaEE,
 <p>Una vez que disponemos del servicio REST podemos <a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/">añadir autenticación y autorización con Keycloak como proveedor de OAuth</a>.</p>
 <p>Otra alternativa a una interfaz REST es usar <a href="https://graphql.org/">GraphQL</a> que muestro en el artículo <a href="https://picodotdev.github.io/blog-bitix/2017/11/que-es-graphql-y-ejemplo-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/">Qué es GraphQL y ejemplo para una interfaz de un servicio con Spring Boot y Java</a></p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBootJaxrs">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBootJaxrs">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew run</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

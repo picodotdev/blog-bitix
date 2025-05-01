@@ -62,7 +62,7 @@
     "dateModified": "2020-06-07T11:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "802",
+    "wordCount": "804",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -315,7 +315,7 @@
 <p>En el ejemplo se quiere probar un sistema de alarma que cuando detecte en tres mediciones consecutivas que la temperatura está por encima de cierto valor suene una alarma. Los elementos de este sistema serán una clase <em>Monitor</em> que obtiene las temperaturas de un sensor y si detecta la condición de una temperatura elevada hace sonar una alarma. El monitor será el sujeto bajo prueba y el sensor y la alarma los colaboradores. El sensor será un <em>fake</em> de tipo <em>stub</em> ya que solo se necesita preprogramar sus valores de retorno de temperaturas y la alarma un <em>fake</em> de tipo <em>mock</em> ya que se debe comprobar que el monitor ha llamado una vez al método que haría sonar la alarma, esto es se necesitan verificar las interacciones.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2018/07/que-es-un-sut-fake-stub-mock-y-spy-en-las-pruebas-con-un-ejemplo/images/monitor_hu7702407425101129064.webp" data-gallery="" title="Sistema simulado"><img src="/blog-bitix/2018/07/que-es-un-sut-fake-stub-mock-y-spy-en-las-pruebas-con-un-ejemplo/images/monitor_hu13744455848142888076.webp" width="268" height="450" alt="Sistema simulado" title="Sistema simulado" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2018/07/que-es-un-sut-fake-stub-mock-y-spy-en-las-pruebas-con-un-ejemplo/images/monitor_hu_a91ecb7b5912604c.webp" data-gallery="" title="Sistema simulado"><img src="/blog-bitix/2018/07/que-es-un-sut-fake-stub-mock-y-spy-en-las-pruebas-con-un-ejemplo/images/monitor_hu_ffb42deb701c105f.webp" width="268" height="450" alt="Sistema simulado" title="Sistema simulado" class="" loading="lazy"></a></p>
 <figcaption>Sistema de control de temperatura simulado</figcaption>
 </figure>
 </div>
@@ -344,16 +344,16 @@
     </div>
 </div>
 <p>Se pueden hacer más casos de prueba como por ejemplo probar que tras dos temperaturas altas siendo la siguiente baja y posteriormente otra alta la alarma no es disparada.</p>
-<p>En el libro <a href="https://amzn.to/2MMSV2J" rel="sponsored">Java Testing with Spock</a> explican toda esta teoría básica de pruebas además de explicar bastante detalladamente todas las posibilidades de la herramienta de <em>testing</em> <a href="https://code.google.com/p/spock/">Spock</a>.</p>
+<p>En el libro <a href="https://amzn.to/2MMSV2J">Java Testing with Spock</a> explican toda esta teoría básica de pruebas además de explicar bastante detalladamente todas las posibilidades de la herramienta de <em>testing</em> <a href="https://code.google.com/p/spock/">Spock</a>.</p>
 <p>Los dobles permiten susituir dependencias y programar su comportamiento, en algunos casos no es posible o no es deseable. Si se quiere probar un componente que accede a una base de datos el doble puede tener diferencias con la base de datos real. Para estos casos se usan pruebas de integración, la dificultad está disponer de estas dependencias en el entorno de prueba. La herramienta <a href="https://picodotdev.github.io/blog-bitix/2020/06/pruebas-de-integracion-con-testcontainers-ejemplo-de-jpa-con-la-base-de-datos-postgresql/">Testcontainers sirve para realizar pruebas de integración en Java usando contenedores Docker</a>.</p>
 <div class="media media-amazon">
   <ul>
     <li><a href="https://amzn.to/3OsMmEP" title="Java Testing with Spock">Java Testing with Spock</a></li></ul>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/TestingStubMock">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew test</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/TestingStubMock">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew test</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

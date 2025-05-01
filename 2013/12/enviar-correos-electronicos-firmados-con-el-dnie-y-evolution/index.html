@@ -97,10 +97,10 @@ Otra forma de la que podemos sacar partido al DNI electrónico además de para i
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/dnie.webp" width="200" height="150" alt="DNIe" title="DNIe" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/dnie.webp" width="200" height="150" alt="DNIe" title="DNIe" class="" loading="false"></p>
 </div>
 <p>Otra forma de la que podemos sacar partido al DNI electrónico además de para <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">identificarnos en sitios web</a> que lo soporten como medio de autenticación es usarlo para firmar digitalmente los correos electrónicos que enviamos. Ya he comentado <a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">como firmar correos electrónicos con GPG</a> pero hacerlo con el DNI electrónico tiene la ventaja de que no necesitaremos <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">crear una par de claves GPG</a> sino que con tener el DNI e <a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">instalar un lector de tarjetas inteligentes</a> será suficiente.</p>"
 }
@@ -319,10 +319,10 @@ Otra forma de la que podemos sacar partido al DNI electrónico además de para i
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/dnie.webp" width="200" height="150" alt="DNIe" title="DNIe" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/dnie.webp" width="200" height="150" alt="DNIe" title="DNIe" class="" loading="false"></p>
 </div>
 <p>Otra forma de la que podemos sacar partido al DNI electrónico además de para <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">identificarnos en sitios web</a> que lo soporten como medio de autenticación es usarlo para firmar digitalmente los correos electrónicos que enviamos. Ya he comentado <a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">como firmar correos electrónicos con GPG</a> pero hacerlo con el DNI electrónico tiene la ventaja de que no necesitaremos <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">crear una par de claves GPG</a> sino que con tener el DNI e <a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">instalar un lector de tarjetas inteligentes</a> será suficiente.</p>
 <p>En esta entrada explicaré como usar el DNI electrónico para firmar digitalmente correos usando el cliente de correo <a href="https://projects.gnome.org/evolution/">Evolution</a>. Primeramente necesitaremos hacer una configuración adicional a la que hemos necesitado para poder usar el lector de tarjetas inteligentes y el DNIe en Linux. Y es usar el siguiente comando tal y como está comentado en <a href="https://forja.cenatic.es/plugins/mediawiki/wiki/opendnie/index.php/Documentacion_Aplicaciones_Evolution#Configuraci.C3.B3n_del_DNIe_en_el_cliente_de_correo_Evolution">esta página</a> cambiando el directorio home del usuario por el que corresponda:</p>
@@ -335,20 +335,20 @@ Otra forma de la que podemos sacar partido al DNI electrónico además de para i
 <p>A continuación, el proceso es similar a como se configura la firma con claves GPG, con el lector de tarjetas inteligentes conectado al equipo y el DNI electrónico introducido accedemos a las propiedades de la cuenta, a la sección seguridad y en el apartado MIME seguro (S/MIME) seleccionamos nuestro certificado. Si queremos que nuestros mensajes se firmen automaticamente debemos marcar la opción «Firmar siempre los mensajes salientes cuando se use esta cuenta». Habiendo ejecutado el comando <em>modutil</em> cuando pulsemos el botón seleccionar en el apartado S/MIME se nos solicitará el PIN secreto de nuestro DNIe.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/pin_hu2692298408050674619.webp" data-gallery="" title="Diálogo de solicitud de PIN con el DNIe"><img src="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/pin_hu3554783952968291018.webp" width="300" height="105" alt="Diálogo de solicitud de PIN con el DNIe" title="Diálogo de solicitud de PIN con el DNIe" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seleccion-certificado_hu1594061124883937516.webp" data-gallery="" title="Selección de certificado digital con el DNIe"><img src="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seleccion-certificado_hu14759876242254959317.webp" width="300" height="132" alt="Selección de certificado digital con el DNIe" title="Selección de certificado digital con el DNIe" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/pin_hu_7ba17d43bd89d998.webp" data-gallery="" title="Diálogo de solicitud de PIN con el DNIe"><img src="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/pin_hu_e284754eee03a542.webp" width="300" height="105" alt="Diálogo de solicitud de PIN con el DNIe" title="Diálogo de solicitud de PIN con el DNIe" class="" loading="lazy"></a>
+<a href="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seleccion-certificado_hu_85147a967174f9e3.webp" data-gallery="" title="Selección de certificado digital con el DNIe"><img src="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seleccion-certificado_hu_f7a52e127b1395d2.webp" width="300" height="132" alt="Selección de certificado digital con el DNIe" title="Selección de certificado digital con el DNIe" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seguridad-evolution_hu5397302627973236812.webp" data-gallery="" title="Diálogo de preferencias de seguridad de Evolution para el DNIe"><img src="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seguridad-evolution_hu9669411297653831893.webp" width="247" height="200" alt="Diálogo de preferencias de seguridad de Evolution para el DNIe" title="Diálogo de preferencias de seguridad de Evolution para el DNIe" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seguridad-evolution_hu_583a5bd5e1734a63.webp" data-gallery="" title="Diálogo de preferencias de seguridad de Evolution para el DNIe"><img src="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seguridad-evolution_hu_af9c220c23cc4df3.webp" width="247" height="200" alt="Diálogo de preferencias de seguridad de Evolution para el DNIe" title="Diálogo de preferencias de seguridad de Evolution para el DNIe" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <p>Una vez con las propiedades de la cuenta configurada para que Evolution use nuestro DNI electrónico, si no hemos marcado la opción «Firmar siempre los mensajes&hellip;» podemos realizarlo al escribir el propio correo marcando la opción «Opciones&gt; Firmar con S/MIME». Al enviar un correo electrónico firmado se añadirá automáticamente un adjunto con la firma de nombre «smime.sp7». Al contrario que GPG la firma está en un formato binario y es dificilmente legible con un lector de texto plano.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/confimacion-firma_hu10250807194337970070.webp" data-gallery="" title="Confirmación de firma digital con el DNIe"><img src="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/confimacion-firma_hu9901445684736263275.webp" width="300" height="121" alt="Confirmación de firma digital con el DNIe" title="Confirmación de firma digital con el DNIe" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/mensaje-firmado-dnie_hu15463176353052698878.webp" data-gallery="" title="Mensaje firmado con el DNIe"><img src="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/mensaje-firmado-dnie_hu17791320450587070627.webp" width="300" height="121" alt="Mensaje firmado con el DNIe" title="Mensaje firmado con el DNIe" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/confimacion-firma_hu_f1446f9e2de00d15.webp" data-gallery="" title="Confirmación de firma digital con el DNIe"><img src="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/confimacion-firma_hu_5245f49e44c462f2.webp" width="300" height="121" alt="Confirmación de firma digital con el DNIe" title="Confirmación de firma digital con el DNIe" class="" loading="lazy"></a>
+<a href="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/mensaje-firmado-dnie_hu_b6351dcb668acc4c.webp" data-gallery="" title="Mensaje firmado con el DNIe"><img src="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/mensaje-firmado-dnie_hu_bbfa42b8fd329ef9.webp" width="300" height="121" alt="Mensaje firmado con el DNIe" title="Mensaje firmado con el DNIe" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="reference">
@@ -417,51 +417,9 @@ Otra forma de la que podemos sacar partido al DNI electrónico además de para i
         <div class="col-12 col-sm-4">
             <div class="related-article">
                 
-                <a href="/blog-bitix/pages/links/">
-                <img src="/blog-bitix/assets/images/logotypes/hugo.svg" width="326" height="125" alt="Enlaces a otros blogs y webs" title="Enlaces a otros blogs y webs" class="" loading="lazy">
-                <h3>Enlaces a otros blogs y webs</h3>
-                </a>
-                
-            </div>
-        </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
                 <a href="/blog-bitix/2013/12/hola-nuevo-mundo/">
                 <img src="/blog-bitix/assets/images/logotypes/octopress.webp" width="326" height="125" alt="¡Hola nuevo mundo!" title="¡Hola nuevo mundo!" class="" loading="lazy">
                 <h3>¡Hola nuevo mundo!</h3>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="row related">
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/pages/about/">
-                <img src="/blog-bitix/assets/images/logotypes/hugo.svg" width="326" height="125" alt="Acerca de..." title="Acerca de..." class="" loading="lazy">
-                <h3>Acerca de...</h3>
-                </a>
-                
-            </div>
-        </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/archive/">
-                <img src="/blog-bitix/assets/images/logotypes/hugo.svg" width="326" height="125" alt="Archivo y hemeroteca" title="Archivo y hemeroteca" class="" loading="lazy">
-                <h3>Archivo y hemeroteca</h3>
                 </a>
                 
             </div>

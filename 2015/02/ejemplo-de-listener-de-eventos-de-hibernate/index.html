@@ -112,7 +112,7 @@ Para realizar estas operaciones podemos hacerlas de varias formas, una puede ser
         }
     },
     "description": "<div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>En alguna ocasión puede que tengamos la necesidad de realizar alguna acción cuando una entidad es guardada en base de datos, actualizada, eliminada, cargada, &hellip; . Algunos casos de uso pueden ser:</p>
 <ul>
@@ -337,7 +337,7 @@ Para realizar estas operaciones podemos hacerlas de varias formas, una puede ser
 
       
       <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>En alguna ocasión puede que tengamos la necesidad de realizar alguna acción cuando una entidad es guardada en base de datos, actualizada, eliminada, cargada, &hellip; . Algunos casos de uso pueden ser:</p>
 <ul>
@@ -424,8 +424,8 @@ Para realizar estas operaciones podemos hacerlas de varias formas, una puede ser
 <p>Con esto ya recibiremos los eventos cuando ocurran. En el ejemplo aparecerá en la consola los mensajes cuando se inserte, actualice o elimine una fila de base de datos. En las capturas de imagen se muestran las trazas de una inserción, una traza para la preinseción <em>Action: preInsert, Id: null</em> donde se ve que la entidad no tienen identificativo asignado y otra traza después de la inserción <em>Action: postInsert, Id: 1</em> donde la entidad ya tiene identificativo asignado y la sentencia SQL se ha ejecutado, como se ve en la captura los mensajes salen antes y después de ejecutarse la sentencia SQL que se envía a la base de datos.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2015/02/ejemplo-de-listener-de-eventos-de-hibernate/images/aplicacion_hu14805143792472956669.webp" data-gallery="" title="Creando un registro en la base de datos"><img src="/blog-bitix/2015/02/ejemplo-de-listener-de-eventos-de-hibernate/images/aplicacion_hu10608790584394618136.webp" width="300" height="144" alt="Creando un registro en la base de datos" title="Creando un registro en la base de datos" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2015/02/ejemplo-de-listener-de-eventos-de-hibernate/images/consola_hu15401857696438481761.webp" data-gallery="" title="Trazas de ejecución del listener"><img src="/blog-bitix/2015/02/ejemplo-de-listener-de-eventos-de-hibernate/images/consola_hu8687927612690046863.webp" width="300" height="193" alt="Trazas de ejecución del listener" title="Trazas de ejecución del listener" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2015/02/ejemplo-de-listener-de-eventos-de-hibernate/images/aplicacion_hu_a31cfc1735ca2242.webp" data-gallery="" title="Creando un registro en la base de datos"><img src="/blog-bitix/2015/02/ejemplo-de-listener-de-eventos-de-hibernate/images/aplicacion_hu_76b783d959067bb6.webp" width="300" height="144" alt="Creando un registro en la base de datos" title="Creando un registro en la base de datos" class="" loading="lazy"></a>
+<a href="/blog-bitix/2015/02/ejemplo-de-listener-de-eventos-de-hibernate/images/consola_hu_3568f71b113b3919.webp" data-gallery="" title="Trazas de ejecución del listener"><img src="/blog-bitix/2015/02/ejemplo-de-listener-de-eventos-de-hibernate/images/consola_hu_feefdaacc0fa1cee.webp" width="300" height="193" alt="Trazas de ejecución del listener" title="Trazas de ejecución del listener" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <p>Otra implementación distinta a la expuesta en este artículo es con anotaciones tal y como hace JPA, podríamos hacer una implementación de <em>listener</em> que busque una anotación en la entidad y llame a ese método cuando se produzca el evento. Depende de como  prefiramos organizar el código, si preferimos tener el código del <em>listener</em> separado de la entidad o todo el código en la propia entidad.</p>

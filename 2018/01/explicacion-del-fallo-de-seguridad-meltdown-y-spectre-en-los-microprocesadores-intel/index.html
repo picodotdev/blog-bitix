@@ -311,8 +311,8 @@
 </ul>
 <div class="media">
 <figure>
-<p><img src="/blog-bitix/assets/images/logotypes/meltdown.svg" width="200" height="200" alt="Meltdown" title="Meltdown" class="&#34; " loading="lazy">
-<img src="/blog-bitix/assets/images/logotypes/spectre.svg" width="200" height="200" alt="Spectre" title="Spectre" class="&#34; " loading="lazy"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/meltdown.svg" width="200" height="200" alt="Meltdown" title="Meltdown" class="" loading="lazy">
+<img src="/blog-bitix/assets/images/logotypes/spectre.svg" width="200" height="200" alt="Spectre" title="Spectre" class="" loading="lazy"></p>
 <figcaption>Logotipos de Meltdown y Spectre</figcaption>
 </figure>
 </div>
@@ -320,9 +320,9 @@
 <p>Como usuarios domésticos para estar protegidos conviene descargar únicamente software de fuentes confiables pero para los usuarios empresariales con sus servicios en la nube en donde los sistemas están aislados pero usando infraestructura compartida y con el descubrimiento de este <em>bug</em> es más grave si no se parchea, los proveedores de infraestructura en la nube ya han planificando tareas de mantenimiento y reinicios obligatorios.</p>
 <div class="media">
 <figure>
-<p><img src="/blog-bitix/assets/images/logotypes/intel.svg" width="200" height="200" alt="Intel" title="Intel" class="&#34; " loading="lazy">
-<img src="/blog-bitix/assets/images/logotypes/amd.svg" width="200" height="200" alt="AMD" title="AMD" class="&#34; " loading="lazy">
-<img src="/blog-bitix/assets/images/logotypes/arm.svg" width="200" height="200" alt="ARM" title="ARM" class="&#34; " loading="lazy"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/intel.svg" width="200" height="200" alt="Intel" title="Intel" class="" loading="lazy">
+<img src="/blog-bitix/assets/images/logotypes/amd.svg" width="200" height="200" alt="AMD" title="AMD" class="" loading="lazy">
+<img src="/blog-bitix/assets/images/logotypes/arm.svg" width="200" height="200" alt="ARM" title="ARM" class="" loading="lazy"></p>
 </figure>
 </div>
 <h2 id="técnicas-para-aumentar-el-rendimiento">Técnicas para aumentar el rendimiento</h2>
@@ -385,7 +385,7 @@
 </div>
 <h2 id="cache">Cache</h2>
 <p>Los microprocesadores son muy rápidos comparados con la memoria o el acceso al almacenamiento secundario. Un Cortex-A53 de una Raspberry Pi puede ejecutar una instrucción en 0.5 nanosegundos pero el acceso a memoria costar 100 nanosegundos. Esto no es bueno pero por fortuna los accesos a memoria siguen patrones, accediendo repetidamente a variables recientemente accedidas y accediendo a variables en posiciones cercanas, de forma que colocando estas variables en una cache más rápida y cercana al procesador que la memoria principal se mitiga en gran medida el problema.</p>
-<h2 id="relación-entre-ejecución-especulativa-cache-y-_meltdown_-y-_spectre_">Relación entre ejecución especulativa, cache y <em>Meltdown</em> y <em>Spectre</em></h2>
+<h2 id="relación-entre-ejecución-especulativa-cache-y-meltdown-y-spectre">Relación entre ejecución especulativa, cache y <em>Meltdown</em> y <em>Spectre</em></h2>
 <p>La ejecución especulativa tiene el efecto colateral de colocar datos en la memoria cache del microprocesador y esto es utilizado para realizar una forma de <a href="https://en.wikipedia.org/wiki/Side-channel_attack">ataque side-channel</a>. Desde el punto de vista de <em>Meltdown</em> y <em>Spectre</em> y la ejecución especulativa lo importante es que midiendo el tiempo que tarda el acceso a memoria se puede conocer si el dato está en la cache (tarda poco) o no (tarda mucho).</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">t</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">u</span> <span class="o">=</span> <span class="n">t</span><span class="o">+</span><span class="n">c</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">v</span> <span class="o">=</span> <span class="n">u</span><span class="o">+</span><span class="n">d</span>&#10;</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">v</span><span class="p">:</span>&#10;</span></span><span class="line"><span class="cl">   <span class="n">w</span> <span class="o">=</span> <span class="n">kern_mem</span><span class="p">[</span><span class="n">address</span><span class="p">]</span>   <span class="c1"># si se llega aquí se produce un fallo</span>&#10;</span></span><span class="line"><span class="cl">   <span class="n">x</span> <span class="o">=</span> <span class="n">w</span> <span class="o">&amp;</span> <span class="mh">0x100</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="c1"># operación de bit and</span>&#10;</span></span><span class="line"><span class="cl">   <span class="n">y</span> <span class="o">=</span> <span class="n">user_mem</span><span class="p">[</span><span class="n">x</span><span class="p">]</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>

@@ -80,7 +80,7 @@ Este artículo es introductorio a los siguientes que escribiré y publicaré sob
     "dateModified": "2017-03-04T23:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "605",
+    "wordCount": "607",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -97,10 +97,10 @@ Este artículo es introductorio a los siguientes que escribiré y publicaré sob
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Este artículo es introductorio a los siguientes que escribiré y publicaré sobre el <a href="https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/">kit de iniciación a la electrónica para la Raspberry Pi</a>. Antes de empezar a cacharrear con los sensores y dispositivos de entrada y salida, con los <em>pines</em> GPIO y para hacerlo de forma cómoda crearé un entorno de desarrollo y despliegue en la <a href="https://www.raspberrypi.org/">Raspberry Pi</a> usando <a href="https://es.wikipedia.org/wiki/Secure_Shell">SSH</a>, <a href="https://rsync.samba.org/">rsync</a> para copiar los artefactos del equipo de desarrollo a la RPi y <a href="https://www.ansible.com/">Ansible</a> usándolo desde <a href="https://gradle.org/">Gradle</a> para lanzar comandos y ejecutar los ejemplos de forma remota aunque si no se quiere usar Ansible se pueden lanzar los comandos mediante SSH.</p>"
 }
@@ -319,10 +319,10 @@ Este artículo es introductorio a los siguientes que escribiré y publicaré sob
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Este artículo es introductorio a los siguientes que escribiré y publicaré sobre el <a href="https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/">kit de iniciación a la electrónica para la Raspberry Pi</a>. Antes de empezar a cacharrear con los sensores y dispositivos de entrada y salida, con los <em>pines</em> GPIO y para hacerlo de forma cómoda crearé un entorno de desarrollo y despliegue en la <a href="https://www.raspberrypi.org/">Raspberry Pi</a> usando <a href="https://es.wikipedia.org/wiki/Secure_Shell">SSH</a>, <a href="https://rsync.samba.org/">rsync</a> para copiar los artefactos del equipo de desarrollo a la RPi y <a href="https://www.ansible.com/">Ansible</a> usándolo desde <a href="https://gradle.org/">Gradle</a> para lanzar comandos y ejecutar los ejemplos de forma remota aunque si no se quiere usar Ansible se pueden lanzar los comandos mediante SSH.</p>
 <p>En la Raspberry Pi deberemos instalar por supuesto <a href="https://www.oracle.com/java/">Java</a> (es posible usar Java 8) junto con SSH y rsync, configurar el servidor SSH en la RPi modificando el archivo <em>/etc/ssh/sshd_config</em>, habilitar el servidor SSH, copiar nuestra <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">clave pública ssh generada previamente</a> al archivo <em>~/.ssh/authorized_keys</em> del usuario e instalar <a href="https://www.python.org/">Python</a> como requerimiento de Ansible. Los programas Java los escribiremos en un equipo más potente que la Raspberry Pi ya sea un portátil o un equipo de sobremesa con un IDE ya sea <a href="https://www.jetbrains.com/idea/">IntelliJ</a>, <a href="https://eclipse.org">eclipse</a> u otro, también deberemos instalar Gradle, Ansible y rsync. En Arch Linux con los siguientes comandos del gestor de paquetes:</p>
@@ -373,15 +373,15 @@ Este artículo es introductorio a los siguientes que escribiré y publicaré sob
 <p>El resultado de este ejemplo es un mensaje en la terminal que es emitido por un programa Java ejecutado en la Raspberry Pi y lanzado de forma remota.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/03/ejemplo-hello-world-con-java-en-la-raspberry-pi/images/java-raspberrypi-hello-world_hu4480157132368261701.webp" data-gallery="" title="Ejemplo Hello World con Java en la Raspberry Pi"><img src="/blog-bitix/2017/03/ejemplo-hello-world-con-java-en-la-raspberry-pi/images/java-raspberrypi-hello-world_hu5716215131095300247.webp" width="300" height="165" alt="Ejemplo Hello World con Java en la Raspberry Pi" title="Ejemplo Hello World con Java en la Raspberry Pi" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/03/ejemplo-hello-world-con-java-en-la-raspberry-pi/images/java-raspberrypi-hello-world_hu_67617fb38025a2aa.webp" data-gallery="" title="Ejemplo Hello World con Java en la Raspberry Pi"><img src="/blog-bitix/2017/03/ejemplo-hello-world-con-java-en-la-raspberry-pi/images/java-raspberrypi-hello-world_hu_b17aaeb607da1f99.webp" width="300" height="165" alt="Ejemplo Hello World con Java en la Raspberry Pi" title="Ejemplo Hello World con Java en la Raspberry Pi" class="" loading="lazy"></a></p>
 <figcaption>Ejemplo Hello World con Java en la Raspberry Pi</figcaption>
 </figure>
 </div>
 <p>En los siguientes artículos de la serie mostraré ya como usar diferentes elementos de salida como diodos LED, zumbador, <em>display</em> LCD 1602 o de entrada como un pulsador.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaRaspberryPi">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew executeHelloWorld</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaRaspberryPi">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew executeHelloWorld</code></p>
 </div>
 
     </div>

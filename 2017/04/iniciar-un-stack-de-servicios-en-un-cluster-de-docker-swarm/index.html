@@ -62,7 +62,7 @@
     "dateModified": "2017-04-02T12:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1121",
+    "wordCount": "1120",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -302,7 +302,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false"></p>
 </div>
 <p>Con <a href="https://docs.docker.com/compose/">Docker Compose</a> se pueden <a href="https://picodotdev.github.io/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/">definir en un único archivo un conjunto de contenedores</a> que forma un servicio o aplicación y que se lanzan como una unidad. En vez de ejecutar los comandos individuales que inician cada contenedor el archivo en formato <a href="https://www.yaml.org/">yaml</a> de Docker Compose define varios contenedores y al ser un archivo de texto es añadible a un sistema de control de versiones para registrar los cambios. La información del archivo de Docker Compose es la misma que se indicaría en el comando para iniciar un contenedor individual.</p>
 <p>En versiones más recientes se ha modificado ligeramente el formato del archivo de Docker Compose para añadirle las características necesarias que necesita <a href="https://docs.docker.com/swarm/">Docker Swarm</a>, la <a href="https://picodotdev.github.io/blog-bitix/2017/03/introduccion-y-ejemplo-de-cluster-de-contenedores-con-docker-swarm/">herramienta integrada en Docker que permite crear <em>clusters</em> de nodos</a> que ejecuten contenedores <a href="https://www.docker.com/">Docker</a>. A estos archivos ahora se les denomina como <em>stacks</em>. Así hay nuevas secciones como <em>services</em>, <em>networks</em>, <em>volumes</em> y <em>secrets</em> entre otras para soportar algunas funcionalidades adicionales. La sección <em>services</em> es similar a la que usábamos en Docker Compose y define los contenedores. Por ejemplo, para definir que el servicio se componga de un contenedor con un servidor web <a href="https://nginx.org/">nginx</a> usaríamos el siguiente archivo. El parámetro <em>version</em> es muy importante ya que indica las opciones soportadas en el archivo.</p>
@@ -330,7 +330,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/04/iniciar-un-stack-de-servicios-en-un-cluster-de-docker-swarm/images/nginx-service_hu7483505794594996009.webp" data-gallery=""><img src="/blog-bitix/2017/04/iniciar-un-stack-de-servicios-en-un-cluster-de-docker-swarm/images/nginx-service_hu15144011474904071110.webp" width="281" height="200" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/04/iniciar-un-stack-de-servicios-en-un-cluster-de-docker-swarm/images/nginx-service_hu_37c8d39552df2277.webp" data-gallery=""><img src="/blog-bitix/2017/04/iniciar-un-stack-de-servicios-en-un-cluster-de-docker-swarm/images/nginx-service_hu_43bb4858d9bd6708.webp" width="281" height="200" class="" loading="lazy"></a></p>
 <figcaption>Cluster de nodos de Docker Swarm con servicio de nginx replicado con 2 instancias</figcaption>
 </figure>
 </div>
@@ -342,16 +342,16 @@
         <span>docker-compose-stack-app.yml</span>
     </div>
 </div>
-<p>Un libro que me ha gustado mucho y que recomiendo leer sobre Docker Swarm es <a href="https://amzn.to/2mIirti" rel="sponsored">The Devops 2.1 Toolkit</a> que lo explica detalladamente y todo el libro está orientado a como usarlo en un entorno de producción. Un libro más introductorio que también he leído y que está bastante bien es <a href="https://amzn.to/4bkH5J8" rel="sponsored">Docker in Action</a>.</p>
+<p>Un libro que me ha gustado mucho y que recomiendo leer sobre Docker Swarm es <a href="https://amzn.to/2mIirti">The Devops 2.1 Toolkit</a> que lo explica detalladamente y todo el libro está orientado a como usarlo en un entorno de producción. Un libro más introductorio que también he leído y que está bastante bien es <a href="https://amzn.to/4bkH5J8">Docker in Action</a>.</p>
 <div class="media media-amazon">
   <ul>
     <li><a href="https://amzn.to/3HN3gKx" title="Docker: Up &amp; Running: Shipping Reliable Containers in Production">Docker: Up &amp; Running: Shipping Reliable Containers in Production</a></li><li><a href="https://amzn.to/4bkH5J8" title="Docker in Action">Docker in Action</a></li><li><a href="https://amzn.to/3upxvUA" title="The DevOps 2.1 Toolkit: Docker Swarm: building testing deploying and monitoring services inside Docker Swarm clusters">The DevOps 2.1 Toolkit: Docker Swarm: building testing deploying and monitoring services inside Docker Swarm clusters</a></li></ul>
 </div>
 <p>Docker Swarm es una opción simple y que está integrada en Docker pero no ofrece todas las funcionalidades de algunas otras opciones que el algunos casos de uso algo más avanzados son necesarias o convenientes. <a href="https://www.nomadproject.io/">Nomad</a> es otra opción simple para gestionar un conjunto de aplicaciones o servicios pero con algunas funcionalidades adicionales que no posee Docker Swarm como escribo en <a href="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/">Introducción a Nomad para gestionar aplicaciones y microservicios</a>.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/DockerSwarm">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub.</p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/DockerSwarm">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub.</p>
 </div>
 <div class="reference">
     Referencia:<br>

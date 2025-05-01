@@ -100,10 +100,10 @@ La mejora de rendimiento en los procesadores se conseguía a base de mejores dis
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/intel.svg" width="300" height="199" alt="Intel" title="Intel" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/intel.svg" width="300" height="199" alt="Intel" title="Intel" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/amd.svg" width="300" height="71" alt="AMD" title="AMD" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/amd.svg" width="300" height="71" alt="AMD" title="AMD" class="" loading="false"></p>
 </div>
 <p>Hace alguna década los procesadores eran de un solo núcleo y hasta la aparición de Windows NT y GNU/Linux los sistemas operativos no se aprovechaban plenamente las capacidades de multiprogramación de los procesadores que ya se incluían desde los <a href="https://es.wikipedia.org/wiki/Intel_80386">Intel 386</a>.</p>
 <p>La mejora de rendimiento en los procesadores se conseguía a base de mejores diseños en los procesadores como la segmentación, superescalaridad, caches de datos e caches de instrucciones más grandes que era posible debido también en parte al mayor número de transistores que permitían incluir los procesos de litografía de tamaño más reducidos para los transistores, también por la adición de nuevas <a href="https://en.wikipedia.org/wiki/Instruction_set_architecture">instrucciones en el conjunto de la arquitectura</a> o ISA, o mayor número de registros y de mayor tamaño entre otras cosas.</p>"
@@ -321,10 +321,10 @@ La mejora de rendimiento en los procesadores se conseguía a base de mejores dis
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/intel.svg" width="300" height="199" alt="Intel" title="Intel" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/intel.svg" width="300" height="199" alt="Intel" title="Intel" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/amd.svg" width="300" height="71" alt="AMD" title="AMD" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/amd.svg" width="300" height="71" alt="AMD" title="AMD" class="" loading="false"></p>
 </div>
 <p>Hace alguna década los procesadores eran de un solo núcleo y hasta la aparición de Windows NT y GNU/Linux los sistemas operativos no se aprovechaban plenamente las capacidades de multiprogramación de los procesadores que ya se incluían desde los <a href="https://es.wikipedia.org/wiki/Intel_80386">Intel 386</a>.</p>
 <p>La mejora de rendimiento en los procesadores se conseguía a base de mejores diseños en los procesadores como la segmentación, superescalaridad, caches de datos e caches de instrucciones más grandes que era posible debido también en parte al mayor número de transistores que permitían incluir los procesos de litografía de tamaño más reducidos para los transistores, también por la adición de nuevas <a href="https://en.wikipedia.org/wiki/Instruction_set_architecture">instrucciones en el conjunto de la arquitectura</a> o ISA, o mayor número de registros y de mayor tamaño entre otras cosas.</p>
@@ -338,16 +338,16 @@ La mejora de rendimiento en los procesadores se conseguía a base de mejores dis
 <p>Otra es aprovechar más la computación heterogénea para delegar tareas que son más eficientes realizarlas en un procesador especializado en vez de uno de propósito general como la CPU, un ejemplo de este caso es la GPU para los gráficos pero empleando la capacidad de estas también para tareas de propósito general de cálculos, una API como <a href="https://www.khronos.org/opencl/">OpenCL</a> permite realizar cálculos en la GPU para procesamiento de audio, vídeo, imagen, criptografía, &hellip; Otro serían los <a href="https://en.wikipedia.org/wiki/Digital_signal_processing">DSP</a> para procesamiento de señales como audio o vídeo. Una forma de computación heterogénea hace en el caso de la CPU y GPU que compartan la misma memoria del sistema evitando tener que hacer copias de los datos entre memorias al tenerlas dedicadas en exclusiva a cada una de los procesadores.</p>
 <p>Finalmente, pueden estar los <a href="https://en.wikipedia.org/wiki/Manycore_processor">procesadores <em>manycore</em></a> que a diferencia de los <em>multicore</em> actuales integran un número de núcleos más grande en varios órdenes de magnitud (100, 1000) e independientes que palía el problema de los <em>multicore</em> y su escalabilidad en número de núcleos por mantener la coherencia de las caches. Y para estos casos es más adecuado la arquitectura de procesadores ARM mucho más simple que la arquitectura x86, con procesadores más pequeños y más eficientes pero mayor número de ellos. Unido a si <a href="https://www.qualcomm.com/">Qualcomm</a> consigue traducir las instrucciones x86 sobre las de ARM manteniendo la compatibilidad con todo el software puede poner en serios aprietos la arquitectura x86 y hacer una realidad la citada convergencia entre móvil y PC. Siempre y cuando Intel lo permita, tal vez amenazado su hegemonía como recurso podrá defenderse de forma legal con juicios de patentes.</p>
 <p>Y en esa guerra de computación heterogénea y <em>manycore</em>, aunque eso es mucho decir, puede que salga vencedora ARM y la actual guerra de núcleos entre Intel y AMD quede como una anécdota en la historia como ya hay muchas otras.</p>
-<p>Si quieres conocer más en detalle los procesadores tanto de su historia, evolución y funcionamiento más minucioso la enciclopedia <a href="https://amzn.to/2n7Ayuv" rel="sponsored">El mundo de Bitman</a> de <a href="https://twitter.com/_iandatux_">@<em>iandatux</em></a> recoge en varios volúmenes una ingente cantidad de información que leyendo el indice de contenidos de cada libro se presenta muy interesante, diría que la obra disponible más completa sobre los procesadores, además en español. Si te interesa el tema me parece imprescincdible, en la descripción de los libros en Amazon están los índices completos. Por ejemplo, concretamente el volumen V cubre los materiales candidatos a emplearse en el futuro, los límites de los semiconductores actuales y el futuro en los procesadores que comento brevemente en este artículo:</p>
+<p>Si quieres conocer más en detalle los procesadores tanto de su historia, evolución y funcionamiento más minucioso la enciclopedia <a href="https://amzn.to/2n7Ayuv">El mundo de Bitman</a> de <a href="https://twitter.com/_iandatux_">@<em>iandatux</em></a> recoge en varios volúmenes una ingente cantidad de información que leyendo el indice de contenidos de cada libro se presenta muy interesante, diría que la obra disponible más completa sobre los procesadores, además en español. Si te interesa el tema me parece imprescincdible, en la descripción de los libros en Amazon están los índices completos. Por ejemplo, concretamente el volumen V cubre los materiales candidatos a emplearse en el futuro, los límites de los semiconductores actuales y el futuro en los procesadores que comento brevemente en este artículo:</p>
 <ul>
-<li><a href="https://amzn.to/2AE9v3u" rel="sponsored">El mundo de Bitman Volumen I: Regreso al futuro de la computación</a></li>
-<li><a href="https://amzn.to/2vyC0dc" rel="sponsored">El mundo de Bitman Volumen II: Caminando entre bits</a></li>
-<li><a href="https://amzn.to/2OHH2Nl" rel="sponsored">El mundo de Bitman Volumen III: Los pilares del microprocesador</a></li>
-<li><a href="https://amzn.to/2vup9bK" rel="sponsored">El mundo de Bitman Volumen IV: Mr. C y la fábrica de chips</a></li>
-<li><a href="https://amzn.to/2neGP7T" rel="sponsored">El mundo de Bitman Volumen V: El enigma de la microelectrónica</a></li>
-<li><a href="https://amzn.to/2vgvpoj" rel="sponsored">El mundo de Bitman Volumen VI: Viaje al centro de la CPU - Parte 1 de 2</a></li>
-<li><a href="https://amzn.to/2vupjjm" rel="sponsored">El mundo de Bitman Volumen VI: Viaje al centro de la CPU - Parte 2 de 2</a></li>
-<li><a href="https://amzn.to/2vtMxX0" rel="sponsored">El mundo de Bitman Volumen VII: En busca del valle de la sabiduría</a></li>
+<li><a href="https://amzn.to/2AE9v3u">El mundo de Bitman Volumen I: Regreso al futuro de la computación</a></li>
+<li><a href="https://amzn.to/2vyC0dc">El mundo de Bitman Volumen II: Caminando entre bits</a></li>
+<li><a href="https://amzn.to/2OHH2Nl">El mundo de Bitman Volumen III: Los pilares del microprocesador</a></li>
+<li><a href="https://amzn.to/2vup9bK">El mundo de Bitman Volumen IV: Mr. C y la fábrica de chips</a></li>
+<li><a href="https://amzn.to/2neGP7T">El mundo de Bitman Volumen V: El enigma de la microelectrónica</a></li>
+<li><a href="https://amzn.to/2vgvpoj">El mundo de Bitman Volumen VI: Viaje al centro de la CPU - Parte 1 de 2</a></li>
+<li><a href="https://amzn.to/2vupjjm">El mundo de Bitman Volumen VI: Viaje al centro de la CPU - Parte 2 de 2</a></li>
+<li><a href="https://amzn.to/2vtMxX0">El mundo de Bitman Volumen VII: En busca del valle de la sabiduría</a></li>
 </ul>
 <div class="media media-amazon">
   <ul>

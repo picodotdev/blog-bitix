@@ -62,7 +62,7 @@
     "dateModified": "2021-09-23T19:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1211",
+    "wordCount": "1210",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -302,12 +302,12 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad" class="" loading="false"></p>
 </div>
 <p>Con mucha seguridad surge la necesidad de ejecutar de forma periódica un pequeño proceso o <em>script</em> completamente autónomo con el que no interacciona ningún usuario o administrador pero realiza una función esencial para el funcionamiento de una aplicación u organización. Las funciones o tareas de los <em>scripts</em> son muy diversas desde <a href="https://picodotdev.github.io/blog-bitix/2016/05/ejemplo-sencillo-de-como-crear-un-excel-o-csv-en-java-con-apache-poi-y-opencsv/">generar informes en formato CSV</a> o <a href="https://picodotdev.github.io/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/">generador documentos PDF</a> a enviar correos electrónicos, para ello quizá se conecten a bases de datos relacionales o NoSQL o <a href="https://picodotdev.github.io/blog-bitix/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/">realizar llamadas usando REST a APIs de aplicaciones</a> propias o de otras organizaciones, incluso un <em>script</em> con la complejidad suficiente varias cosas de todo esto.</p>
 <p>Los lenguajes habitualmente usados para realizar tareas de <em>scripting</em> son dinámicos e interpretados por no requerir ser compilados y ejecutables desde el código fuente. En la plataforma Java una opción como lenguaje de <em>scripting</em> es <a href="https://www.groovy-lang.org/">Groovy</a> y en otros lenguajes son propio intérprete de comandos  <a href="https://es.wikipedia.org/wiki/Bash">Bash</a> o <a href="https://www.python.org/">Python</a>, aunque <a href="https://picodotdev.github.io/blog-bitix/2015/11/java-para-tareas-de-scripting-con-jbang-y-gradle/">el lenguaje Java con JBang o Gradle es una opción para realizar tareas de <em>scripting</em></a> con las ventajas de ser un lenguaje compilado con la asistencia de código de los entornos integrados de desarrollo o IDE.</p>
 <p>Una vez creado un <em>script</em> este ha de ser ejecutado en un sistema, dependiendo de las dependencias como fuentes de datos que tenga el <em>script</em> la ejecución se puede realizar de forma manual en la propia computadora de un usuario o desarrollador. Por el contrario, como cualquier otra aplicación requiere su propio entorno de ejecución en producción, la forma más simple con una expresión <em>cron</em> como un proceso del sistema habiendo aprovisionado previamente el entorno y las dependencias necesarias del mismo. Otra propiedad de muchos <em>scripts</em> es que su tiempo de ejecución no es continuo durando unos pocos minutos u alguna hora realizan su atarea y terminan hasta la siguiente ejecución, al contrario que las aplicaciones con funciones de servidor que están continuamente funcionado por si algún cliente se conecta. En función de las necesidades del <em>script</em> su ejecución se planifica con <a href="https://picodotdev.github.io/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/">una expresión cron cada minuto, hora, día o una vez a la semana</a>.</p>
-<h2 id="ejemplo-de-planificar-procesos-o-_scripts_-de-forma-periódica-con-nomad">Ejemplo de planificar procesos o <em>scripts</em> de forma periódica con Nomad</h2>
+<h2 id="ejemplo-de-planificar-procesos-o-scripts-de-forma-periódica-con-nomad">Ejemplo de planificar procesos o <em>scripts</em> de forma periódica con Nomad</h2>
 <p>Una de las ventajas de la computación en la nube es poder crear máquinas virtuales cuando se necesitan y destruirlas cuando ya no son necesarias, de forma rápida y bajo demanda. Los contenedores permiten ejecutar procesos en cualquier máquina que soporte para la ejecución de contenedores, esto permite que un proceso no dependa de una máquina física o virtual en concreto.</p>
 <p><a href="https://www.nomadproject.io/">Nomad</a> de <a href="https://www.hashicorp.com/">HashiCorp</a> es un orquestador de procesos y contenedores, en lo relativo al tema de este artículo permite planificar no solo tareas para mantenerse en ejecución de forma constante e indefinida sino también <a href="https://www.nomadproject.io/docs/job-specification/periodic">planificar una tarea de forma periódica y temporal</a>. Una ventaja de Nomad sobre una opción alternativa como <a href="https://kubernetes.io/">Kuberntes</a> es que permite planificar no solo <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">contenedores de Docker</a> sino también contenedores <a href="https://podman.io/">Podman</a> o procesos del sistema a partir de comandos existentes en el mismo. Otra ventaja de Nomad es que es simplemente un orquestador de procesos de fácil instalación y uso al constar de únicamente un binario, se integra con otras herramientas como <a href="https://www.consul.io/">Consul</a> para el registro y descubrimiento y conectividad y <a href="https://www.vaultproject.io/">Vault</a> para seguridad.</p>
 <ul>
@@ -343,14 +343,14 @@
 <p>Antes de enviar a Nomad las tareas el panel de administración integrado o <em>dashboard</em> permite ver el estado, está disponible en la dirección <em>http://127.0.0.1:4646/ui/</em>, inicialmente sin ninguna tarea planificada, una vez se envían las tareas aparecen en el panel.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard_hu1800103724083858081.webp" data-gallery="" title="Dashboard de Nomad"><img src="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard_hu14786376517008168798.webp" width="600" height="450" alt="Dashboard de Nomad" title="Dashboard de Nomad" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard_hu_17e8e341bc4526f7.webp" data-gallery="" title="Dashboard de Nomad"><img src="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard_hu_2c261cbdd52b9cd7.webp" width="600" height="450" alt="Dashboard de Nomad" title="Dashboard de Nomad" class="" loading="lazy"></a></p>
 <figcaption>Dashboard de Nomad</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-busybox_hu7424248696359966080.webp" data-gallery="" title="Dashboard de Nomad"><img src="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-busybox_hu11558073414719185635.webp" width="300" height="225" alt="Dashboard de Nomad" title="Dashboard de Nomad" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-bash_hu2664798664862322319.webp" data-gallery="" title="Dashboard de Nomad"><img src="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-bash_hu17531387702407605090.webp" width="300" height="225" alt="Dashboard de Nomad" title="Dashboard de Nomad" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-busybox_hu_a651de8a95982d45.webp" data-gallery="" title="Dashboard de Nomad"><img src="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-busybox_hu_2df2ffd739755e81.webp" width="300" height="225" alt="Dashboard de Nomad" title="Dashboard de Nomad" class="" loading="lazy"></a>
+<a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-bash_hu_a3c0b33e09a968a2.webp" data-gallery="" title="Dashboard de Nomad"><img src="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-bash_hu_77a643edf1fb5e77.webp" width="300" height="225" alt="Dashboard de Nomad" title="Dashboard de Nomad" class="" loading="lazy"></a></p>
 <figcaption>Dashboard de Nomad</figcaption>
 </figure>
 </div>
@@ -368,9 +368,9 @@
     </div>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/NomadCron">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub.</p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/NomadCron">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub.</p>
 </div>
 
     </div>

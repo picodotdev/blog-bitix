@@ -244,7 +244,7 @@
     
     <div class="row page-header">
       <div class="col-12">
-        <img src="/blog-bitix/2022/03/novedades-de-java-18/images/java-18_hu17183529048999185491.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+        <img src="/blog-bitix/2022/03/novedades-de-java-18/images/java-18_hu_66f24a1ccd9c524f.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
       </div>
     </div>
     
@@ -311,7 +311,7 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Las mejoras incrementales se siguen añadiendo en cada nueva versión lanzada cada seis meses. En marzo de 2022 ha sido publicada la versión de Java 18 como siguiente versión después de Java 17 que es una versión con soporte extendido o LTS. Seguramente no muchos van a poder utilizar esta nueva versión por restricciones en los proyectos que seguirán usando versiones ya consideradas bastante antiguas incluyendo Java 8 y más en los casos que utilizan versiones anteriores. Por otro lado, otra parte de usuarios quizá esperen a la siguiente versión LTS para actualizar las aplicaciones en el caso de que ya estén utilizando Java 17.</p>
 <p>La lista de características de Java 18 no es muy amplia pero hay algunas destacadas.</p>
@@ -330,10 +330,10 @@
     <li><a href="#nuevas-características-en-vista-previa">Nuevas características en vista previa</a>
       <ol>
         <li><a href="#vector-api">Vector API</a></li>
-        <li><a href="#_foreign-function--memory-api_"><em>Foreign Function &amp; Memory API</em></a></li>
+        <li><a href="#foreign-function--memory-api"><em>Foreign Function &amp; Memory API</em></a></li>
       </ol>
     </li>
-    <li><a href="#_pattern-matching_-para-las-sentencias-_switch_"><em>Pattern Matching</em> para las sentencias <em>switch</em></a></li>
+    <li><a href="#pattern-matching-para-las-sentencias-switch"><em>Pattern Matching</em> para las sentencias <em>switch</em></a></li>
     <li><a href="#otros-cambios">Otros cambios</a>
       <ol>
         <li><a href="#finalización-de-objetos-marcado-para-ser-eliminado">Finalización de objetos marcado para ser eliminado</a></li>
@@ -350,7 +350,7 @@
 <li><a href="https://openjdk.java.net/projects/jdk/18/">Características de Java 18</a></li>
 <li><a href="https://www.oracle.com/java/technologies/javase/18u-relnotes.html">Notas de publicación de Java 18</a></li>
 <li><a href="https://docs.oracle.com/en/java/javase/18/">Documentación de Java 18</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/18/docs/api/index.html">Documentación Javadoc de Java 18</a></li>
+<li><a href="#ZgotmplZ">Documentación Javadoc de Java 18</a></li>
 <li><a href="https://blogs.oracle.com/javamagazine/post/java-jdk-18-generally-available">JavaMagazine: Java 18 is here: 9 JEPs with core library improvements and updates</a></li>
 </ul>
 <p>Las mejoras incluidas en esta versión son:</p>
@@ -375,7 +375,7 @@
 <p>Con el nuevo calendario de publicaciones se observa claramente que los desarrolladores pueden predecir de forma más mucho fiable cuando se publicará una nueva versión. Se observa que el tiempo entre versiones se ha reducido considerablemente respecto a lo que tardaron las versiones Java 6 y 7 y se observa la incorporación de novedades de forma constante.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/03/novedades-de-java-18/images/java-releases_hu9166216801039904109.webp" data-gallery="" title="Publicaciones de Java"><img src="/blog-bitix/2022/03/novedades-de-java-18/images/java-releases_hu16363312424516003939.webp" width="650" height="309" alt="Publicaciones de Java" title="Publicaciones de Java" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/03/novedades-de-java-18/images/java-releases_hu_70d16b22b5043655.webp" data-gallery="" title="Publicaciones de Java"><img src="/blog-bitix/2022/03/novedades-de-java-18/images/java-releases_hu_27dd718e08aa87c3.webp" width="650" height="309" alt="Publicaciones de Java" title="Publicaciones de Java" class="" loading="lazy"></a></p>
 <figcaption>Publicaciones de Java</figcaption>
 </figure>
 </div>
@@ -412,8 +412,8 @@
 <h3 id="reimplementación-de-la-reflexión-con-manejadores-de-métodos">Reimplementación de la reflexión con manejadores de métodos</h3>
 <p>Se reimplementan varias funcionalidades relacionadas con la reflexión utilizando los manejadores de eventos con la intención de facilitar el mantenimiento del JDK. Los <em>MethodHandlers</em> ofrecen una alternativa a la reflexión con mejor rendimiento a la vez que es más legible. Es un cambio interno más para los desarrolladores del JDK que para los usuarios.</p>
 <ul>
-<li><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/invoke/MethodHandles.html">MethodHandles</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/invoke/MethodHandle.html">MethodHandle</a></li>
+<li><a href="#ZgotmplZ">MethodHandles</a></li>
+<li><a href="#ZgotmplZ">MethodHandle</a></li>
 </ul>
 <h3 id="proveedor-para-resolver-direcciones-ip">Proveedor para resolver direcciones IP</h3>
 <p>Hasta ahora el JDK utilizaba el mecanismo del sistema operativo para resolver direcciones IP. Este es compartido por todas las aplicaciones y la operación de resolución es bloqueante que es un problema para la incorporación de los <em>threads</em> ligeros del <a href="http://openjdk.java.net/projects/loom/">project Loom</a>. Se ha añadido un mecanismo extensible para proporcionar otras formas de resolución y soportar nuevos protocolos como DNS sobre QUIC, TLS y HTTPS. Ahora las aplicaciones tiene más control sobre el mecanismo de resolución y es útil en el contexto de pruebas automatizadas.</p>
@@ -422,16 +422,16 @@
 <h3 id="vector-api">Vector API</h3>
 <p>Se proporciona una nueva versión de la Vector API que permite aprovechar las instrucciones SIMD de los procesadores con una API de Java común  para todas las arquitecturas de procesadores. Se aprovechan las características disponibles de los procesadores y en aquellos que no tengan alguna se ofrece un modo de funcionamiento degradado.</p>
 <p>En esta nueva versión se soportan las instrucciones <em>Scalar Vector Extension</em> (SVE) de la plataforma <a href="https://www.arm.com/">ARM</a>. También se mejora el rendimiento de las operaciones que aceptan enmascaramiento en las arquitecturas hardware que soportan enmascaramiento.</p>
-<h3 id="_foreign-function--memory-api_"><em>Foreign Function &amp; Memory API</em></h3>
+<h3 id="foreign-function--memory-api"><em>Foreign Function &amp; Memory API</em></h3>
 <p>Esta API permite acceder a memoria de procesos externos y utilizar librerías programadas en otros lenguajes como una alternativa más fácil de usar, de mayor rendimiento, más general para diferentes arquitecturas y más simple que la anterior alternativa con JNI. En esta nueva versión se mejora la API para soportar y facilitar operaciones con diferentes tipos y accesos a memoria.</p>
-<h2 id="_pattern-matching_-para-las-sentencias-_switch_"><em>Pattern Matching</em> para las sentencias <em>switch</em></h2>
+<h2 id="pattern-matching-para-las-sentencias-switch"><em>Pattern Matching</em> para las sentencias <em>switch</em></h2>
 <p>El <em>parttern matching</em> en las sentencias <em>switch</em> permite al compilador comprobar de la expresión del <em>switch</em> contra los casos de la expresión del <em>switch</em>. En esta nueva revisión de esta característica el compilador lanza un error en caso de que un patrón domine al siguiente, sea más general siempre se cumpla antes que uno menos general. Ahora también el compilador es más preciso al comprobar la completitud de todos casos del <em>switch</em> en las clases <em>sealed</em>.</p>
 <h2 id="otros-cambios">Otros cambios</h2>
 <h3 id="finalización-de-objetos-marcado-para-ser-eliminado">Finalización de objetos marcado para ser eliminado</h3>
 <p>Java es un lenguaje que ha ofrecido recolección de basura desde las primeras versiones. Los programadores nunca han tenido que liberar la memoria de los objetos de forma explícita sino que de esta tarea se encarga la máquina virtual de Java. Pero también Java desde las primeras versiones ha ofrecido un mecanismo para la finalización de objetos que el tiempo ha demostrado que tiene varios fallos de diseño que no lo hacen útil y se desaconseja su utilización.</p>
 <p>Algunos fallos de su diseño son que tiene una latencia impredecible y arbitraria sin garantía de que la finalización del objeto se realice. Las acciones de finalización no tienen ninguna restricción pudiendo revivir una referencia de objeto. Siempre está activo para cada instancia de una clase se use o no, ni se puede cancelar. Tampoco hay un orden predefinido en un entorno multihilo de modo que la ejecución de la finalización se puede ejecutar en cualquier orden.</p>
 <p>Por los defectos anteriores la eliminación de la finalización de objetos en Java ha sido algo pendiente de realizar, en esta versión de Java aunque no se elimina se marca para la eliminación en versiones futuras de Java de modo que los que lo usen tengan tiempo de actualizar sus librerías y aplicaciones.</p>
-<p>Esto solo impactará a algunos usuarios que realicen tareas avanzadas en las que necesiten la finalización de objetos, no es algo que en circunstancias normales se use. La alternativa a la finalización de objetos es usar la sentencia <em>try-with-resources</em> y en los objetos que tengan un ámbito mayor de vida utilizar la clase <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/ref/Cleaner.html">Cleaner</a> que permite asociar acciones de finalización a una referencia de objeto cuando esta se convierte en una <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/ref/PhantomReference.html">referencia <em>phantom</em></a>.</p>
+<p>Esto solo impactará a algunos usuarios que realicen tareas avanzadas en las que necesiten la finalización de objetos, no es algo que en circunstancias normales se use. La alternativa a la finalización de objetos es usar la sentencia <em>try-with-resources</em> y en los objetos que tengan un ámbito mayor de vida utilizar la clase <a href="#ZgotmplZ">Cleaner</a> que permite asociar acciones de finalización a una referencia de objeto cuando esta se convierte en una <a href="#ZgotmplZ">referencia <em>phantom</em></a>.</p>
 <h3 id="otros-cambios-1">Otros cambios</h3>
 <p>Los anteriores son los cambios más destacados de Java 18 pero otro buen número de cambios menores e internos en el JDK. En las notas de publicación se incluye una lista detallada de todos.</p>
 <p>Estos son artículos que también hacen resúmenes de las novedades de Java 18.</p>

@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="Tipos de arquitecturas de aplicaciones de software">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu13786041258634926068.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu_ecb1fb3aec55d7b1.png">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Con el paso de los años las arquitectura recomendadas han cambiado. En el caso de las aplicaciones web pasando por la arquitectura spaghetti, a la por capas y finalmente con una mezcla de hexagonal, domain-driven-design o DDD y dependiendo del caso siendo RESTful, utilizando CQRS, estándo dirigida por eventos o event-driven y en los casos en los que su aplicación es útil usando event sourcing. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu13786041258634926068.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu_ecb1fb3aec55d7b1.png">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Tipos de arquitecturas de aplicaciones de software">
@@ -55,7 +55,7 @@
     "headline": "Tipos de arquitecturas de aplicaciones de software",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu13786041258634926068.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu_ecb1fb3aec55d7b1.png"
         
       },
     "datePublished": "2020-12-06T00:00:00+01:00",
@@ -244,7 +244,7 @@
     
     <div class="row page-header">
       <div class="col-12">
-        <img src="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture-1040_hu2716268621392160865.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+        <img src="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture-1040_hu_13e09009eec1f34c.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
       </div>
     </div>
     
@@ -322,11 +322,11 @@
     </li>
     <li><a href="#metodologías-relacionadas">Metodologías relacionadas</a>
       <ol>
-        <li><a href="#_domain-driven-design_"><em>Domain Driven Design</em></a></li>
+        <li><a href="#domain-driven-design"><em>Domain Driven Design</em></a></li>
         <li><a href="#apis-rest-o-graphql">APIs, REST o GraphQL</a></li>
         <li><a href="#cqrs">CQRS</a></li>
-        <li><a href="#_event-driven_"><em>Event-Driven</em></a></li>
-        <li><a href="#_event-sourcing_"><em>Event Sourcing</em></a></li>
+        <li><a href="#event-driven"><em>Event-Driven</em></a></li>
+        <li><a href="#event-sourcing"><em>Event Sourcing</em></a></li>
       </ol>
     </li>
   </ol>
@@ -340,21 +340,16 @@
 </ul>
 <p>Según alguna de la organización de estándar IEEE la definición de arquitectura de software es:</p>
 <blockquote>
-<p>Architecture is the fundamental <strong>organization</strong> of a <strong>system</strong> embodied in its <strong>components</strong>, their <strong>relationships</strong> to each other, and to the <strong>environment</strong>, and the principles guiding its design and evolution.</p>
-</blockquote>
+<p>Architecture is the fundamental <strong>organization</strong> of a <strong>system</strong> embodied in its <strong>components</strong>, their <strong>relationships</strong> to each other, and to the <strong>environment</strong>, and the principles guiding its design and evolution.</p></blockquote>
 <p>El estándar define los siguientes términos de la definición:</p>
 <blockquote>
-<p>A <strong>system</strong> is a collection of components organized to accomplish a specific function or set of functions. The term system encompasses individual applications, systems in the traditional sense, subsystems, systems of systems, product lines, product families, whole enterprises, and other aggregations of interest. A system exists to fulfill one or more <strong>missions</strong> in its environment.</p>
-</blockquote>
+<p>A <strong>system</strong> is a collection of components organized to accomplish a specific function or set of functions. The term system encompasses individual applications, systems in the traditional sense, subsystems, systems of systems, product lines, product families, whole enterprises, and other aggregations of interest. A system exists to fulfill one or more <strong>missions</strong> in its environment.</p></blockquote>
 <blockquote>
-<p>The <strong>environment</strong>, or context, determines the setting and circumstances of developmental, operational, political, and other influences upon that system.</p>
-</blockquote>
+<p>The <strong>environment</strong>, or context, determines the setting and circumstances of developmental, operational, political, and other influences upon that system.</p></blockquote>
 <blockquote>
-<p>A <strong>mission</strong> is a use or operation for which a system is intended by one or more <strong>stakeholders</strong> to meet some set of objectives.</p>
-</blockquote>
+<p>A <strong>mission</strong> is a use or operation for which a system is intended by one or more <strong>stakeholders</strong> to meet some set of objectives.</p></blockquote>
 <blockquote>
-<p>A <strong>stakeholder</strong> is an individual, team, or organization (or classes thereof) with interests in, or concerns relative to, a system.</p>
-</blockquote>
+<p>A <strong>stakeholder</strong> is an individual, team, or organization (or classes thereof) with interests in, or concerns relative to, a system.</p></blockquote>
 <h2 id="tipos-de-arquitecturas">Tipos de arquitecturas</h2>
 <h3 id="arquitectura-spaghetti">Arquitectura Spaghetti</h3>
 <p>En los inicios de las aplicaciones web con la aparición de las páginas programadas en en lado del servidor con <em>servlets</em> y JSP en Java, ASP de <a href="https://www.microsoft.com/">Microsoft</a> y <a href="https://secure.php.net/">PHP</a> la arquitectura de las mismas se caracterizaba por que no había arquitectura. En el mismo <em>servlet</em> o JSP, ASP o PHP el mismo código tenía diferentes responsabilidades sin ninguna separación entre ellas.</p>
@@ -371,7 +366,7 @@
 <p>La aparición de los <em>frameworks</em> de desarrollo facilitan la creación de los componentes que constituyen la aplicación utilizando el patrón modelo-vista-controlador o MVC basados en acciones como <a href="https://struts.apache.org/">Struts</a>, de componentes como JSF y <a href="https://tapestry.apache.org/">Apache Tapestry</a> u otros similares en otros lenguajes.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/layer-architecture.svg" data-gallery="" title="Arquitectura por capas"><img src="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/layer-architecture.svg" width="300" height="200" alt="Arquitectura por capas" title="Arquitectura por capas" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/layer-architecture.svg" data-gallery="" title="Arquitectura por capas"><img src="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/layer-architecture.svg" width="300" height="200" alt="Arquitectura por capas" title="Arquitectura por capas" class="" loading="lazy"></a></p>
 <figcaption>Arquitectura por capas</figcaption>
 </figure>
 </div>
@@ -383,13 +378,13 @@
 <p>En la <em>Figura 1</em> el paquete A depende del paquete B para invertir la dependencia se crea una interfaz de la que depende el paquete A unícamente depende, en la <em>Figura 2</em> es el paquete B el que depende de esa interfaz al implementarla.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu1815634161590491165.webp" data-gallery="" title="Arquitectura hexagonal"><img src="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu8742043782676222122.webp" width="267" height="200" alt="Arquitectura hexagonal" title="Arquitectura hexagonal" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/dependency-inversion_hu3851350508094171544.webp" data-gallery="" title="Inversión de dependencias"><img src="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/dependency-inversion_hu11482597827012467287.webp" width="300" height="118" alt="Inversión de dependencias" title="Inversión de dependencias" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu_3deb488ad97e4f2b.webp" data-gallery="" title="Arquitectura hexagonal"><img src="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu_a6ca5d609d761843.webp" width="267" height="200" alt="Arquitectura hexagonal" title="Arquitectura hexagonal" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/dependency-inversion_hu_cd056e48b9283574.webp" data-gallery="" title="Inversión de dependencias"><img src="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/dependency-inversion_hu_cd3ad829c3c7fb62.webp" width="300" height="118" alt="Inversión de dependencias" title="Inversión de dependencias" class="" loading="lazy"></a></p>
 <figcaption>Arquitectura hexagonal e inversión de dependencias <br>Fuente: herbertograca.com</figcaption>
 </figure>
 </div>
 <h2 id="metodologías-relacionadas">Metodologías relacionadas</h2>
-<h3 id="_domain-driven-design_"><em>Domain Driven Design</em></h3>
+<h3 id="domain-driven-design"><em>Domain Driven Design</em></h3>
 <p>La metodología <em>domain-driven-design</em> o DDD promueve que la aplicación ha de estar desarrollada basándose en los aspectos del negocio y del dominio de la aplicación, esto afecta tanto al lenguaje compartido denominado lenguaje ubicuo tanto en la aplicación como por todos <em>stakeholders</em> de cada contexto de la aplicación, también afecta a como se modulariza en subdominios la aplicación con las diferentes funcionalidades. El diseño estratégico define los aspectos de análisis de la aplicación el diseño estratégico los de implementación con los agregados, entidades, <em>value objects</em>, repositorios o eventos de dominio.</p>
 <p>La arquitectura hexagonal se complementa perfectamente con la metodología y principios de DDD ya que ambos casos tienen interés en aislar la lógica de negocio de las partes exteriores de la aplicación de modo que un cambio en el exterior no suponga cambios importantes en la lógica de negocio.</p>
 <ul>
@@ -402,12 +397,12 @@
 <h3 id="cqrs">CQRS</h3>
 <p>La metodología CQRS separa las operaciones de consulta que solicitan datos de las operaciones que modifican datos o comandos incluso utilizando diferentes bases de datos. El modelo necesario para la consulta puede ser distinto del necesario para la modificación y variar en diferentes casos de uso, por eso la necesidad o ventaja de separar el modelo de consulta del modelo de modificación. El modelo de consulta puede estar desnormalizado para ser más sencillo o eficiente a las necesidades de consulta que utilizando un único modelo para ambas operaciones.</p>
 <p>El modelo de consulta se actualiza de forma asíncrona con el modelo de modificación utilizando consistencia eventual. Para manejar esta consistencia eventual en la interfaz del usuario hay varias opciones, una de ellas mostrar los datos en la interfaz como si se hubieran modificado inmediatamente aún estándo pendientes de modificarse. Otra posibilidad es mostrar la fecha y hora de la última actualización de los datos o simplemente indicar al usuario que su petición ha sido aceptada y su procesamiento requiere algo de tiempo en procesarse.</p>
-<h3 id="_event-driven_"><em>Event-Driven</em></h3>
+<h3 id="event-driven"><em>Event-Driven</em></h3>
 <p>En las aplicaciones dirigidas por eventos o <em>event-driven</em> las aplicaciones reaccionan a los eventos que se producen en el sistema. El procesamiento de un evento devuelve una respuesta o genera nuevos eventos en el sistema.</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Event-driven_architecture">Event-driven architecture</a></li>
 </ul>
-<h3 id="_event-sourcing_"><em>Event Sourcing</em></h3>
+<h3 id="event-sourcing"><em>Event Sourcing</em></h3>
 <p>En vez de realizar modificaciones sobre los datos existentes simplemente se añaden nuevos eventos en el sistema, el estado actual del sistema se obtiene al procesar todos los eventos.</p>
 <ul>
 <li><a href="https://martinfowler.com/eaaDev/EventSourcing.html">Event Sourcing</a></li>
@@ -457,7 +452,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/11/las-formas-de-guardar-relaciones-jerarquicas-en-bases-de-datos-relacionales/">
-                <img src="/blog-bitix/2020/11/las-formas-de-guardar-relaciones-jerarquicas-en-bases-de-datos-relacionales/images/hierarchy-comparation_hu8034014865803373173.webp" width="326" height="125" alt="Las formas de guardar relaciones jerárquicas en bases de datos relacionales" title="Las formas de guardar relaciones jerárquicas en bases de datos relacionales" class="" loading="lazy">
+                <img src="/blog-bitix/2020/11/las-formas-de-guardar-relaciones-jerarquicas-en-bases-de-datos-relacionales/images/hierarchy-comparation_hu_56844c308c482d02.webp" width="326" height="125" alt="Las formas de guardar relaciones jerárquicas en bases de datos relacionales" title="Las formas de guardar relaciones jerárquicas en bases de datos relacionales" class="" loading="lazy">
                 <h3>Las formas de guardar relaciones jerárquicas en bases de datos relacionales</h3>
                 </a>
                 
@@ -471,7 +466,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/">
-                <img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu14179314344348991071.webp" width="326" height="125" alt="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" title="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" class="" loading="lazy">
+                <img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu_c6c44a89c143a1e9.webp" width="326" height="125" alt="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" title="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" class="" loading="lazy">
                 <h3>Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot</h3>
                 </a>
                 

@@ -64,7 +64,7 @@
     "dateModified": "2020-06-20T20:30:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "7237",
+    "wordCount": "7236",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -309,24 +309,23 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
 </div>
 <p>Hace tiempo que instalar una distribución <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> no tiene más dificultad que instalar un sistema operativo como <a href="https://www.microsoft.com/es-es/windows/">Windows</a>, que consiste en descargar la imagen ISO del CD o DVD, grabarla en un CD, DVD o memoria USB e iniciar el sistema con el medio. Las <a href="https://picodotdev.github.io/blog-bitix/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/">distribuciones aconsejadas para usuarios que provienen de Windows o macOS</a> o no tiene muchos conocimientos informáticos poseen instaladores gráficos o basados en texto y guiados en varios pasos hasta completar la instalación en menos de media hora. Distribuciones como <a href="https://www.ubuntu.com/">Ubuntu</a>, <a href="https://elementary.io/es/">elementary OS</a> o <a href="https://www.linuxmint.com/">Linux Mint</a> hacen que la instalación no requiera conocimientos y sea completada con éxito por cualquier usuario.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/debian-installer-text_hu4956505219307484259.webp" data-gallery="" title="Instalador de Debian en modo texto"><img src="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/debian-installer-text_hu4100570077739568661.webp" width="267" height="200" alt="Instalador de Debian en modo texto" title="Instalador de Debian en modo texto" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/debian-installer-graphics_hu17279310766693882706.webp" data-gallery="" title="Instalador de Debian en modo gráfico"><img src="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/debian-installer-graphics_hu1837252224917954584.webp" width="267" height="200" alt="Instalador de Debian en modo gráfico" title="Instalador de Debian en modo gráfico" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/debian-installer-text_hu_4bc8f9a1f874f730.webp" data-gallery="" title="Instalador de Debian en modo texto"><img src="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/debian-installer-text_hu_5aa9fa3bb8c5d77e.webp" width="267" height="200" alt="Instalador de Debian en modo texto" title="Instalador de Debian en modo texto" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/debian-installer-graphics_hu_89722d89ac0320cd.webp" data-gallery="" title="Instalador de Debian en modo gráfico"><img src="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/debian-installer-graphics_hu_61041bc323781cee.webp" width="267" height="200" alt="Instalador de Debian en modo gráfico" title="Instalador de Debian en modo gráfico" class="" loading="lazy"></a></p>
 <figcaption>Instalación guíada de Debian basada en texto y gráfica</figcaption>
 </figure>
 </div>
 <p>Otras distribuciones basadas en principios diferentes y usuarios a los que está destinadas con otras necesidades o preferencias puede que requieran algo más de conocimientos a cambio de realizar configuraciones más avanzadas como el particionado del disco, cifrado del disco o software que se instala. Algunas distribuciones como <a href="https://www.archlinux.org/">Arch Linux</a> incluso no proporcionan ningún instalador.</p>
 <blockquote>
 <p>It is targeted at the proficient GNU/Linux user, or anyone with a do-it-yourself attitude who is
-willing to read the documentation, and solve their own problems.</p>
-</blockquote>
+willing to read the documentation, and solve their own problems.</p></blockquote>
 <div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
     <li><a href="#la-instalación-del-sistena-con-arch-linux">La instalación del sistena con Arch Linux</a></li>
@@ -402,28 +401,28 @@ willing to read the documentation, and solve their own problems.</p>
 <p>Estas son algunas capturas de pantalla con diferentes entornos de escritorio que he probado con VirtualBox.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-gnome_hu6496071119861671121.webp" data-gallery="" title="GNOME"><img src="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-gnome_hu11214895282214552664.webp" width="267" height="200" alt="GNOME" title="GNOME" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-kde_hu12781960564086817194.webp" data-gallery="" title="KDE"><img src="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-kde_hu5186288280063233364.webp" width="267" height="200" alt="KDE" title="KDE" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-gnome_hu_5b018454e843bec.webp" data-gallery="" title="GNOME"><img src="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-gnome_hu_15b11b3db39c7bf6.webp" width="267" height="200" alt="GNOME" title="GNOME" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-kde_hu_c610a78fb90b11a2.webp" data-gallery="" title="KDE"><img src="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-kde_hu_6d58b067f7c98bee.webp" width="267" height="200" alt="KDE" title="KDE" class="" loading="lazy"></a></p>
 <figcaption>Entornos de escritorio GNOME y KDE</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-xfce_hu6772260033517731541.webp" data-gallery="" title="XFCE"><img src="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-xfce_hu11076775858523732039.webp" width="267" height="200" alt="XFCE" title="XFCE" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-cinnamon_hu3654265685565718864.webp" data-gallery="" title="Cinnamon"><img src="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-cinnamon_hu8175947563596199504.webp" width="267" height="200" alt="Cinnamon" title="Cinnamon" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-xfce_hu_d77069790d88c75e.webp" data-gallery="" title="XFCE"><img src="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-xfce_hu_944a27be1d455b6d.webp" width="267" height="200" alt="XFCE" title="XFCE" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-cinnamon_hu_41ad8dac132230b5.webp" data-gallery="" title="Cinnamon"><img src="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-cinnamon_hu_6e8f57b0ee956800.webp" width="267" height="200" alt="Cinnamon" title="Cinnamon" class="" loading="lazy"></a></p>
 <figcaption>Entornos de escritorio Xfce y Cinnamon</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-lxde_hu15311004027862143977.webp" data-gallery="" title="LXDE"><img src="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-lxde_hu16556381156704631272.webp" width="267" height="200" alt="LXDE" title="LXDE" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-mate_hu13975235756910383221.webp" data-gallery="" title="Mate"><img src="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-mate_hu1494025264936660311.webp" width="267" height="200" alt="Mate" title="Mate" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-lxde_hu_67ea2e881b5db6f9.webp" data-gallery="" title="LXDE"><img src="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-lxde_hu_633a68a77fc9a313.webp" width="267" height="200" alt="LXDE" title="LXDE" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-mate_hu_d7df18fbb3acf8a8.webp" data-gallery="" title="Mate"><img src="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-mate_hu_f3a4d06d95690102.webp" width="267" height="200" alt="Mate" title="Mate" class="" loading="lazy"></a></p>
 <figcaption>Entornos de escritorio LXDE y Mate</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-root-password_hu7765483341766269248.webp" data-gallery="" title="Solicitud de contraseña para descifrar partición root"><img src="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-root-password_hu2182761352180786929.webp" width="267" height="200" alt="Solicitud de contraseña para descifrar partición root" title="Solicitud de contraseña para descifrar partición root" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-root-password_hu_f92999673ab8e6a.webp" data-gallery="" title="Solicitud de contraseña para descifrar partición root"><img src="/blog-bitix/2017/01/script-para-instalar-arch-linux-de-forma-facil-rapido-desatendido-automatizado-y-personalizable/images/archlinux-root-password_hu_b1290b720d056b9f.webp" width="267" height="200" alt="Solicitud de contraseña para descifrar partición root" title="Solicitud de contraseña para descifrar partición root" class="" loading="lazy"></a></p>
 <figcaption>Solicitud de contraseña para descifrar partición root</figcaption>
 </figure>
 </div>
@@ -443,9 +442,9 @@ willing to read the documentation, and solve their own problems.</p>
     </div>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/alis/tree/master/">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub.</p>
+            You can download the <a href="https://github.com/picodotdev/alis/tree/master/">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub.</p>
 </div>
 
     </div>

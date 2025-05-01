@@ -62,7 +62,7 @@
     "dateModified": "2017-04-16T13:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "701",
+    "wordCount": "700",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -302,7 +302,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false"></p>
 </div>
 <p>Una vez que ya hemos <a href="https://picodotdev.github.io/blog-bitix/2017/03/introduccion-y-ejemplo-de-cluster-de-contenedores-con-docker-swarm/">creado un <em>cluster</em> de nodos con Docker Swarm</a> y hemos desplegado algunos servicios ya sea directamente mediante comandos para crear servicios o mediante un <a href="https://picodotdev.github.io/blog-bitix/2017/04/iniciar-un-stack-de-servicios-en-un-cluster-de-docker-swarm/"><em>stack</em> con un archivo similar a un Docker Compose</a> al cabo de un tiempo necesitaremos hacer otras operaciones. Dos de esas operaciónes básicas son escalar hacia arriba o hacia abajo un servicio cambiando el número de instancias de contenedores desplegadas o actualizar la imagen que utilizan los servicios por otra diferente posiblemente más nueva.</p>
 <p>En la documentación de <a href="https://www.docker.com/">Docker</a> están detallados y comentados los <a href="https://docs.docker.com/engine/swarm/swarm-tutorial/scale-service/">comandos para escalar un servicio</a>. Por ejemplo, en el <em>cluster</em> de ejemplo formado por tres nodos, uno con el rol de <em>manager</em> y otros dos como <em>worker</em>, ejecutándose en <a href="https://www.virtualbox.org/">VirtualBox</a> y desplegando un servicio para el servidor <a href="https://nginx.org/">nginx</a> con inicialmente una réplica o instancia podemos escalar el servicio para que se cree alguna instancia o contenedor más del servicio con el siguiente comando <code>docker service scale</code>.</p>
@@ -315,14 +315,14 @@
 <p>Al igual que cuando se crea un contenedor para un servicio en el <em>cluster</em> <a href="https://docs.docker.com/swarm/">Docker Swarm</a> si no se indica alguna restricción decidirá en qué nodos se crean las nuevas instancias o contenedores del servicio.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-1_hu13749270246144985270.webp" data-gallery="" title="Servicio de nginx con una réplica"><img src="/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-1_hu6113396079724250279.webp" width="300" height="161" alt="Servicio de nginx con una réplica" title="Servicio de nginx con una réplica" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-4_hu4661590567813203623.webp" data-gallery="" title="Servicio de nginx escalado a cuatro réplicas"><img src="/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-4_hu5571643811839479181.webp" width="300" height="161" alt="Servicio de nginx escalado a cuatro réplicas" title="Servicio de nginx escalado a cuatro réplicas" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-1_hu_abcad97d5bbc9ccf.webp" data-gallery="" title="Servicio de nginx con una réplica"><img src="/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-1_hu_9515a160d46a2dec.webp" width="300" height="161" alt="Servicio de nginx con una réplica" title="Servicio de nginx con una réplica" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-4_hu_4bb0d3f6bd521b0a.webp" data-gallery="" title="Servicio de nginx escalado a cuatro réplicas"><img src="/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-4_hu_3923155defc1e3a0.webp" width="300" height="161" alt="Servicio de nginx escalado a cuatro réplicas" title="Servicio de nginx escalado a cuatro réplicas" class="" loading="lazy"></a></p>
 <figcaption>Servicio de nginx antes y después de escalarlo</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-scale_hu5161581537628236139.webp" data-gallery="" title="Escalado del servicio de nginx"><img src="/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-scale_hu2373500173483802700.webp" width="300" height="161" alt="Escalado del servicio de nginx" title="Escalado del servicio de nginx" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-scale_hu_529c72ea82c9b9aa.webp" data-gallery="" title="Escalado del servicio de nginx"><img src="/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-scale_hu_dadf7ab20c1b557.webp" width="300" height="161" alt="Escalado del servicio de nginx" title="Escalado del servicio de nginx" class="" loading="lazy"></a></p>
 <figcaption>Escalado del servicio de nginx</figcaption>
 </figure>
 </div>
@@ -336,7 +336,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-update_hu11494978379185093270.webp" data-gallery="" title="Actualización de la imagen del servicio de nginx"><img src="/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-update_hu13401837134427532129.webp" width="300" height="161" alt="Actualización de la imagen del servicio de nginx" title="Actualización de la imagen del servicio de nginx" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-update_hu_b0edc1ede6afc003.webp" data-gallery="" title="Actualización de la imagen del servicio de nginx"><img src="/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/images/nginx-service-update_hu_14e39fd1561c8d11.webp" width="300" height="161" alt="Actualización de la imagen del servicio de nginx" title="Actualización de la imagen del servicio de nginx" class="" loading="lazy"></a></p>
 <figcaption>Actualización de la imagen del servicio de nginx</figcaption>
 </figure>
 </div>
@@ -357,9 +357,9 @@
     </div>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/DockerSwarm">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub.</p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/DockerSwarm">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub.</p>
 </div>
 
     </div>

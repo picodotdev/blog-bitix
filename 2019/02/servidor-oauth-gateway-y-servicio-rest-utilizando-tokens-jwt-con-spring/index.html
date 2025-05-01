@@ -80,7 +80,7 @@ Hace unos días encontré un articulo del blog técnico de los desarrolladores d
     "dateModified": "2019-02-08T20:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "2041",
+    "wordCount": "2043",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -97,10 +97,10 @@ Hace unos días encontré un articulo del blog técnico de los desarrolladores d
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Hace unos días encontré un <a href="https://www.idealista.com/labs/blog/spring-framework/autenticando-el-api-de-idealista-hipotecas-con-spring-oauth2-y-zuul/">articulo del blog técnico de los desarrolladores de Idealista</a>. En él comentaban que tenían una API para realizar simulaciones hipotecarias usando <a href="https://spring.io/">Spring</a> como <em>framework</em>, <a href="https://spring.io/projects/spring-security-oauth">Spring Security OAuth</a> como forma de autenticación y autorización y JWT como forma de codificar el <em>token</em> que otorga el servidor OAuth y contiene la información necesaria para que el servidor de recursos permita o no el acceso al recurso que aloja.</p>"
 }
@@ -321,10 +321,10 @@ Hace unos días encontré un articulo del blog técnico de los desarrolladores d
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Hace unos días encontré un <a href="https://www.idealista.com/labs/blog/spring-framework/autenticando-el-api-de-idealista-hipotecas-con-spring-oauth2-y-zuul/">articulo del blog técnico de los desarrolladores de Idealista</a>. En él comentaban que tenían una API para realizar simulaciones hipotecarias usando <a href="https://spring.io/">Spring</a> como <em>framework</em>, <a href="https://spring.io/projects/spring-security-oauth">Spring Security OAuth</a> como forma de autenticación y autorización y JWT como forma de codificar el <em>token</em> que otorga el servidor OAuth y contiene la información necesaria para que el servidor de recursos permita o no el acceso al recurso que aloja.</p>
 <p>Ya había oído mencionar JWT pero este artículo me ha permitido conocer su utilidad, y no es poca. Como se menciona en el artículo JWT tiene la ventaja de que que no es necesario persistirlo en una base de datos y contiene toda la información que el servidor de recursos necesita para realizar la autorización ya que es capaz de cargar con información arbitraria que el servicio desee en el momento de la emisión, la autenticación y comprobación de que ha sido emitido por el servidor OAuth la realiza sabiendo que el <em>token</em> está firmado.</p>
@@ -340,8 +340,8 @@ Hace unos días encontré un articulo del blog técnico de los desarrolladores d
 <p>Los servicios los mantengo separados ya que al combinarlos pueden surgir problemas de integración al usar diferentes versiones de librerías de Spring aún cuando todos los proyectos son de Spring. Por ejemplo, Spring Cloud Gateway utiliza Spring WebFlux que puede ser diferente del lo que utilice Spring Security OAuth y la integración puede no estar exenta de problemas.</p>
 <div class="media">
 <figure>
-<p><img src="/blog-bitix/assets/images/logotypes/oauth.svg" width="200" height="200" alt="OAuth" title="OAuth" class="&#34; " loading="lazy">
-<img src="/blog-bitix/assets/images/logotypes/jwt.svg" width="318" height="168" alt="JWT" title="JWT" class="&#34; " loading="lazy"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/oauth.svg" width="200" height="200" alt="OAuth" title="OAuth" class="" loading="lazy">
+<img src="/blog-bitix/assets/images/logotypes/jwt.svg" width="318" height="168" alt="JWT" title="JWT" class="" loading="lazy"></p>
 </figure>
 </div>
 <h2 id="servidor-oauth">Servidor OAuth</h2>
@@ -380,7 +380,7 @@ Hace unos días encontré un articulo del blog técnico de los desarrolladores d
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2019/02/servidor-oauth-gateway-y-servicio-rest-utilizando-tokens-jwt-con-spring/images/encoded-decoded-jwt_hu6178545763566817282.webp" data-gallery="" title="Token JWT codificado y decodificado"><img src="/blog-bitix/2019/02/servidor-oauth-gateway-y-servicio-rest-utilizando-tokens-jwt-con-spring/images/encoded-decoded-jwt_hu10057229943635012703.webp" width="494" height="450" alt="Token JWT codificado y decodificado" title="Token JWT codificado y decodificado" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2019/02/servidor-oauth-gateway-y-servicio-rest-utilizando-tokens-jwt-con-spring/images/encoded-decoded-jwt_hu_bff370aafe1be8eb.webp" data-gallery="" title="Token JWT codificado y decodificado"><img src="/blog-bitix/2019/02/servidor-oauth-gateway-y-servicio-rest-utilizando-tokens-jwt-con-spring/images/encoded-decoded-jwt_hu_e8ae296eba062830.webp" width="494" height="450" alt="Token JWT codificado y decodificado" title="Token JWT codificado y decodificado" class="" loading="lazy"></a></p>
 <figcaption>Token JWT codificado y decodificado</figcaption>
 </figure>
 </div>
@@ -431,9 +431,9 @@ Hace unos días encontré un articulo del blog técnico de los desarrolladores d
 </div>
 <p>Los <em>tokens</em> JWT además de firmar se pueden cifrar, en el ejemplo se usa una conexión no segura con el protocolo HTTP usando una conexión segura HTTPS ya se proporcionaría confidencialidad para los <em>tokens</em> y es lo recomendado.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringOauth">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew oauth:run, ./gradlew gateway:run, ./gradlew service:run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringOauth">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew oauth:run, ./gradlew gateway:run, ./gradlew service:run</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

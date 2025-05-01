@@ -307,7 +307,7 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/postgresql.svg" width="200" height="206" alt="PostgreSQL" title="PostgreSQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/postgresql.svg" width="200" height="206" alt="PostgreSQL" title="PostgreSQL" class="" loading="false"></p>
 </div>
 <p>Aún con el reciente auge de las bases de datos NoSQL las bases de datos relacionales siguen siendo la opción usada mayoritariamente para persistir los datos de una aplicación. El potente <a href="https://en.wikipedia.org/wiki/SQL">lenguaje SQL</a> permite obtener, modificar, insertar y eliminar datos de forma declarativa. Una característica deseada de las bases de datos relacionales es la de mantener con transacciones la integridad referencial y consistencia de los datos en todo momento que las bases de datos NoSQL no ofrecen aunque estas últimas a cambio ofrecen mejores opciones para escalar. Por otro lado los datos ya sean en una base de datos relacional o NoSQL seguirán un esquema aunque en este último caso no se exija, las bases de datos relacionales al exigir que los datos sigan un esquema evitará inconsistencias y los tipos de los datos serán los definidos en la tabla de datos en las que se guarden.</p>
 <p>De las bases de datos relacionales más utilizadas que tienen una licencia de software libre están <a href="https://www.mysql.com/">MySQL</a>, <a href="https://mariadb.org/">MariaDB</a> y <a href="https://www.postgresql.org/">PostgreSQL</a>, con licencia privativa y comerciales están <a href="https://www.microsoft.com/en-us/sql-server/sql-server-2016">Microsoft SQL Server</a>, <a href="https://www.oracle.com/database/">Oracle</a> y <a href="https://www.ibm.com/analytics/us/en/technology/db2/">DB2</a> siendo su coste significativo en algunos casos solo alcanzable por grandes organizaciones. PostgreSQL con su licencia de software libre es una de las bases de datos más avanzadas soportando muchas de las opciones definidas en el estándar del lenguaje SQL.</p>
@@ -317,19 +317,19 @@
 <div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
     <li><a href="#instalación-postgresql-con-docker">Instalación PostgreSQL con Docker</a></li>
-    <li><a href="#comandos-básicos-del-_shell_-psql">Comandos básicos del <em>shell</em> psql</a></li>
+    <li><a href="#comandos-básicos-del-shell-psql">Comandos básicos del <em>shell</em> psql</a></li>
     <li><a href="#importación-base-de-datos-de-ejemplo">Importación base de datos de ejemplo</a></li>
     <li><a href="#inserción-múltiple">Inserción múltiple</a></li>
     <li><a href="#upsert">UPSERT</a></li>
-    <li><a href="#_common-table-expressions_"><em>Common table expressions</em></a></li>
-    <li><a href="#_window-functions_"><em>Window functions</em></a></li>
+    <li><a href="#common-table-expressions"><em>Common table expressions</em></a></li>
+    <li><a href="#window-functions"><em>Window functions</em></a></li>
     <li><a href="#consultas-recursivas">Consultas recursivas</a></li>
     <li><a href="#tipo-array-enumerado">Tipo array, enumerado</a></li>
     <li><a href="#tipo-personalizado">Tipo personalizado</a></li>
     <li><a href="#índices">Índices</a></li>
     <li><a href="#índice-parcial">Índice parcial</a></li>
     <li><a href="#índices-multicolumna">Índices multicolumna</a></li>
-    <li><a href="#restricciones-_constraints_">Restricciones, <em>Constraints</em></a></li>
+    <li><a href="#restricciones-constraints">Restricciones, <em>Constraints</em></a></li>
     <li><a href="#tipos-de-tablas">Tipos de tablas</a></li>
     <li><a href="#plpgsql">PL/pgSQL</a></li>
     <li><a href="#otras">Otras</a></li>
@@ -351,7 +351,7 @@
         <span>docker-compose.sh</span>
     </div>
 </div>
-<h2 id="comandos-básicos-del-_shell_-psql">Comandos básicos del <em>shell</em> psql</h2>
+<h2 id="comandos-básicos-del-shell-psql">Comandos básicos del <em>shell</em> psql</h2>
 <p>El <em>shell</em> de psql usa varios comandos precedidos por una contrabarra para interpretar algunos comandos muy útiles como listar las bases de datos, cambiar de base de datos de trabajo, listar las tablas de una base de datos, mostrar la definición de una tabla para saber sus campos y tipos o salir del <em>shell</em>. Los siguientes son solo unos pocos de los disponibles.</p>
 <ul>
 <li>
@@ -418,12 +418,12 @@
 <ul>
 <li><a href="https://wiki.postgresql.org/wiki/UPSERT">UPSERT</a></li>
 </ul>
-<h2 id="_common-table-expressions_"><em>Common table expressions</em></h2>
+<h2 id="common-table-expressions"><em>Common table expressions</em></h2>
 <p>Las cláusula <em>WITH</em> que define las <em>common table expressions</em> o <em>CTE</em> proporcionan una forma de escribir sentencias auxiliares para su uso en una sentencia más grande. Cada sentencia auxiliar de una cláusula  <em>WITH</em> puede ser un <em>SELECT</em>, <em>INSERT</em>, <em>UPDATE</em> o <em>DELETE</em> y la sentencia primaria asociada a la cláusula <em>WITH</em> también puede ser un <em>SELECT</em>, <em>INSERT</em>, <em>UPDATE</em> o <em>DELETE</em>.</p>
 <ul>
 <li><a href="https://www.postgresql.org/docs/current/static/queries-with.html">WITH Queries (Common Table Expressions)</a></li>
 </ul>
-<h2 id="_window-functions_"><em>Window functions</em></h2>
+<h2 id="window-functions"><em>Window functions</em></h2>
 <p>Las <em>window functions</em> realizan cálculos sobre un conjunto de datos que están relacionados de alguna forma con la fila actual. Al contrario que las funciones de agregación el cálculo de las <em>window functions</em> no causan que las filas se agrupen en una única fila manteniéndose como filas separadas.</p>
 <p>Usando la base de datos <em>world</em> que contienen ciudades y países con sus poblaciones con la siguiente consulta SQL se obtienen las tres ciudades más pobladas de Alemania, España, Francia e Italia con su porcentaje respecto al total del país. En este caso Berlín es la ciudad más poblada de Alemania con aproximadamente el 12% de la población de ese país. En este caso además de usar <em>windows functions</em> se usa una <em>Common Table Expressions</em> con la cláusula <em>WITH</em>.</p>
 <div class="code">
@@ -491,7 +491,7 @@
 <ul>
 <li><a href="https://www.postgresql.org/docs/current/static/indexes-multicolumn.html">Multicolumn Indexes</a></li>
 </ul>
-<h2 id="restricciones-_constraints_">Restricciones, <em>Constraints</em></h2>
+<h2 id="restricciones-constraints">Restricciones, <em>Constraints</em></h2>
 <p>Los tipos de datos son una forma de limitar los tipos de datos que pueden ser almacenados en una tabla. Para muchas aplicaciones las restricciones que proporcionan son demasiado simples. Por ejemplo, una columna que contenga el precio de un producto debería aceptar solo valores positivos. Pero no hay un tipo de datos que acepte solo números positivos. Otro problema es que quizá deseemos restringir el dato de una columna respecto a otras columnas o filas. Por ejemplo, en una tabla que contenga información de un producto el número del producto debería ser único.</p>
 <p>SQL permite definir restricciones en columnas y tablas proporcionando el control sobre los datos que deseamos. Si se intentan almacenar datos en una columna que viola una restricción se lanza un error.</p>
 <div class="code">

@@ -62,7 +62,7 @@
     "dateModified": "2021-02-26T16:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1987",
+    "wordCount": "1989",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -305,10 +305,10 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="200" height="286" alt="HashiCorp Vault" title="HashiCorp Vault" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="200" height="286" alt="HashiCorp Vault" title="HashiCorp Vault" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp" class="" loading="false"></p>
 </div>
 <p>La seguridad en una aplicación involucra a los datos, tanto en la transmisión entre aplicaciones como en el almacenamiento a ambos se les conoce por la seguridad de los datos en tránsito o <em>transit</em> y por la seguridad en persistencia o <em>rest</em>. La seguridad de los datos en tránsito se consigue utilizando protocolos de comunicación seguros como TLS y la seguridad de los datos en persistencia se consigue cifrando los datos ya sea a nivel de sistema de archivos, base de datos o datos específicos aplicando un algoritmo de cifrado.</p>
 <p>No es fácil implementar la seguridad, por un lado hay que utilizar algoritmos de cifrado considerados seguros, en un sistema grande en el que hay múltiples aplicaciones que utilizan potencialmente diferentes lenguajes de programación y librerías han de tener soporte para esos algoritmos de cifrado. Por otro lado, al tener múltiples aplicaciones requiere que cada una de ellas mantenga seguras las claves privadas en las que se fundamenta la seguridad de cifrado y descifrado, con múltiples aplicaciones los posibles puntos vulnerables son varios.</p>
@@ -345,7 +345,7 @@
 <p>El proceso de cifrado de Vault transforma el dato original en un valor que no tiene ningún sentido sin aplicar el proceso de descifrado. El formato del dato original se pierde, esto es, si el dato original es un número de teléfono con el formato <em>(+34) 666554433</em> el dato cifrado es una secuencia de caracteres de cierta longitud con otro formato. Esta pérdida de formato es un inconveniente al guardar el dato en la base de datos para solventarlo Vault ofrece el servicio de transformación.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/images/vault-encryption_hu11132993780942952839.webp" data-gallery="" title="Uso del servicio de cifrado y descifrado de Vault"><img src="/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/images/vault-encryption_hu10134686741507214647.webp" width="650" height="242" alt="Uso del servicio de cifrado y descifrado de Vault" title="Uso del servicio de cifrado y descifrado de Vault" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/images/vault-encryption_hu_c616f36ff0753e79.webp" data-gallery="" title="Uso del servicio de cifrado y descifrado de Vault"><img src="/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/images/vault-encryption_hu_13899ec81805e1d5.webp" width="650" height="242" alt="Uso del servicio de cifrado y descifrado de Vault" title="Uso del servicio de cifrado y descifrado de Vault" class="" loading="lazy"></a></p>
 <figcaption>Uso del servicio de cifrado y descifrado de Vault</figcaption>
 </figure>
 </div>
@@ -420,7 +420,7 @@
 <p><a href="https://spring.io/">Spring</a> proporciona clases de soporte para el acceso al servicio de Vault. Tanto para la configuración de acceso a Vault como para usar sus servicios mediante una API de clases Java sin tener que recurrir a la API REST de Vault directamente. La clase <a href="https://docs.spring.io/spring-vault/docs/current/api/org/springframework/vault/core/VaultOperations.html">VaultOperations</a> contiene las referencias de clases para el acceso a las API de Vault, para el caso de el servicio de cifrado y descifrado con la clase <a href="https://docs.spring.io/spring-vault/docs/current/api/org/springframework/vault/core/VaultTransitOperations.html">VaultTransitOperations</a>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/images/vault-encryption-java_hu7064588640445946944.webp" data-gallery="" title="Uso del servicio de cifrado y descifrado de Vault en una aplicación Java"><img src="/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/images/vault-encryption-java_hu10657428699554391265.webp" width="650" height="251" alt="Uso del servicio de cifrado y descifrado de Vault en una aplicación Java" title="Uso del servicio de cifrado y descifrado de Vault en una aplicación Java" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/images/vault-encryption-java_hu_be04d4096e5ee0b9.webp" data-gallery="" title="Uso del servicio de cifrado y descifrado de Vault en una aplicación Java"><img src="/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/images/vault-encryption-java_hu_57091ce42ad36491.webp" width="650" height="251" alt="Uso del servicio de cifrado y descifrado de Vault en una aplicación Java" title="Uso del servicio de cifrado y descifrado de Vault en una aplicación Java" class="" loading="lazy"></a></p>
 <figcaption>Uso del servicio de cifrado y descifrado de Vault en una aplicación Java</figcaption>
 </figure>
 </div>
@@ -466,9 +466,9 @@
     </div>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloudVaultEncryption">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloudVaultEncryption">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew run</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

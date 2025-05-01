@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="Analizar y detectar fallos de seguridad en las dependencias de Java">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu5592822006436528765.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu_9e6be2577202e274.png">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Dada la complejidad de muchas aplicaciones de software hace que estas usen gran cantidad de dependencias, muchas de proyectos de software libre o código abierto. Es muy probable que con el paso del tiempo en alguna de las dependencias de las aplicaciones se descubra un error de seguridad importante y requiera una actualización lo más pronto posible. No es posible estar completamente a salvo de estar afectado por un fallo de seguridad en el software por mucho que se intente, por este motivo la mejor estrategia es detectar proactivamente y temprana los errores de seguridad y actualizar las dependencias a nuevas versiones con el fallo corregido. Varias organizaciones identifican, definen, describen y catalogan los fallos de seguridad de forma pública en una base de datos y hay herramientas automatizadas que con las bases de datos de fallos de seguridad permiten analizar las dependencias de un proyecto. Un ejemplo ha sido el caso de la librería Log4j 2 que por su gravedad y y popularidad muchas organizaciones han estado afectadas. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu5592822006436528765.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu_9e6be2577202e274.png">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Analizar y detectar fallos de seguridad en las dependencias de Java">
@@ -55,14 +55,14 @@
     "headline": "Analizar y detectar fallos de seguridad en las dependencias de Java",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu5592822006436528765.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu_9e6be2577202e274.png"
         
       },
     "datePublished": "2022-01-06T11:00:00+01:00",
     "dateModified": "2022-01-06T11:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1746",
+    "wordCount": "1748",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -307,7 +307,7 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Una vez desarrollada una aplicación esta entra en un modo de mantenimiento en el que se añaden nuevas funcionalidades a las existentes y se corrigen errores. La mayor parte de la vida de una aplicación es empleada en su mantenimiento con generalmente pequeños cambios incrementales. Algunas aplicaciones son empleadas durante periodos de tiempo muy largos, de lustros o décadas, que quizá ya se consideren como heredadas y en las que ya únicamente se hacen cambios en caso de errores graves.</p>
 <p>Aunque en una aplicación heredada ya no se hagan mejoras, ni se actualicen versiones mayores de librerías otro de los motivos por los que una aplicación requiere mantenimiento es por fallos de seguridad. Con el paso del tiempo es muy posible que en una aplicación que tenga dependencias de versiones antiguas de librerías se descubran fallos de seguridad. Si es posible y dependiendo de la gravedad del fallo de seguridad descubierto y la forma de explotarlo es conveniente actualizar a la última versión de la librería o al menos a la última versión compatible con el fallo de seguridad corregido. En una aplicación heredada quizá no sea posible actualizar a la última versión ya que posiblemente por un lado requiere cambios importantes en el código y tiempo para hacerlos y por otro lado se trate de evitar hacer cambios para no introducir errores en el código que está funcionando.</p>
@@ -347,7 +347,7 @@
 </ul>
 <div class="media">
 <figure>
-<p><img src="/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu4366793428421493849.webp" width="650" height="292" alt="Logotipo de Log4Shell" title="Logotipo de Log4Shell" class="&#34; " loading="lazy"></p>
+<p><img src="/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu_4ada8614feda817b.webp" width="650" height="292" alt="Logotipo de Log4Shell" title="Logotipo de Log4Shell" class="" loading="lazy"></p>
 <figcaption>Logotipo de Log4Shell <br>Fuente: https://www.lunasec.io/</figcaption>
 </figure>
 </div>
@@ -421,9 +421,9 @@
     </div>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/DependencyCheck">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew dependencyCheckAnalyze</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/DependencyCheck">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew dependencyCheckAnalyze</code></p>
 </div>
 <div class="reference">
     Referencia:<br>
@@ -478,7 +478,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/">
-                <img src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu248334668893711718.webp" width="326" height="125" alt="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" title="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" class="" loading="lazy">
+                <img src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu_c415de9b81f47b65.webp" width="326" height="125" alt="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" title="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" class="" loading="lazy">
                 <h3>Implementar un segundo factor de autenticación en una aplicación web Java con Spring</h3>
                 </a>
                 

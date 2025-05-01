@@ -62,7 +62,7 @@
     "dateModified": "2015-12-11T22:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1282",
+    "wordCount": "1284",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -306,10 +306,10 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Desarrollar una aplicación no consiste solo en programar el código que proporciona su funcionalidad, con igual de importancia está como poner en producción esa aplicación para que preste su servicio, algo de lo que el desarrollador no debería ser ajeno. Casi siempre hay algo de configuración que varia entre entornos siendo estos al menos el de desarrollo y producción. En el ciclo de vida de una aplicación esta pasa por varios entornos de ejecución hasta llegar a producción, desde desarrollo, pruebas, <abbr title="Quality assurance">QA</abbr> y finalmente en producción. Casi seguro que la aplicación en cada uno de estos entornos la configuración varía, por ejemplo, las direcciones ya sean IP o nombres de dominio de las bases de datos relacional u otros servicios externos. Para que en el entorno de pruebas y QA se use exactamente el mismo artefacto (en Java un archivo war o jar) que el que se enviaría al entorno de producción la configuración de la aplicación no debería ser incluida en el propio artefacto, si la configuración fuese incluida en el propio artefacto sería distinto que el que se enviaría a producción y las pruebas no válidas, podría haber alguna diferencia en la construcción del artefacto para cada entorno.</p>
 <p>El proyecto <a href="https://projects.spring.io/spring-cloud/">Spring Cloud</a> con <a href="https://cloud.spring.io/spring-cloud-config/">Spring Cloud Config</a> proporciona un mecanismo para externalizar y actualizar de forma sencilla las varias configuraciones de una aplicación en los diferentes entornos en los que se vaya a ejecutar. La opción recomendada es crear un repositorio de Git donde se almacenarán las diferentes configuraciones de la aplicación para cada entorno y bajo un sistema de control de versiones. El que las configuraciones se obtengan de un repositorio y con <a href="https://git-scm.com/">Git</a> evita que el archivo de configuración esté como un fichero regular en cada máquina del entorno de ejecución, duplicados si hay varias máquinas o con algunas diferencias en cada una. En caso de tener solo una máquina si deja de funcionar o ser accesible perderíamos el archivo de configuración y los cambios que hubiésemos hecho en él directamente, al mismo tiempo estando en un sistema de control de versiones como Git tendremos un histórico de los cambios realizados.</p>
@@ -374,7 +374,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2015/11/configuracion-de-una-aplicacion-en-diferentes-entornos-con-spring-cloud-config/images/spring-cloud-client-prod_hu10091387002528738963.webp" data-gallery="" title="Configuración de la aplicación para el entorno de producción"><img src="/blog-bitix/2015/11/configuracion-de-una-aplicacion-en-diferentes-entornos-con-spring-cloud-config/images/spring-cloud-client-prod_hu3326343151525478412.webp" width="300" height="188" alt="Configuración de la aplicación para el entorno de producción" title="Configuración de la aplicación para el entorno de producción" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2015/11/configuracion-de-una-aplicacion-en-diferentes-entornos-con-spring-cloud-config/images/spring-cloud-client-prod_hu_4c4d63c1762fd3bc.webp" data-gallery="" title="Configuración de la aplicación para el entorno de producción"><img src="/blog-bitix/2015/11/configuracion-de-una-aplicacion-en-diferentes-entornos-con-spring-cloud-config/images/spring-cloud-client-prod_hu_9642a580d11435e1.webp" width="300" height="188" alt="Configuración de la aplicación para el entorno de producción" title="Configuración de la aplicación para el entorno de producción" class="" loading="lazy"></a></p>
 <figcaption>Configuración de la aplicación para el entorno de producción</figcaption>
 </figure>
 </div>
@@ -404,9 +404,9 @@
 </div>
 <p>Este ejemplo solo muestra una pequeña parte de las posibilidades que ofrece Spring Cloud Config, otras son la posibilidad de <a href="http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html#_serving_plain_text">servir archivos de configuración completos</a> para por ejemplo <a href="https://nginx.org/">Nginx</a>, los valores de las propiedades de configuración en el repositorio de configuración pueden ser cifradas y al enviarlas al cliente ser descifradas. Spring Cloud Config solo es una pequeña parte del proyecto Spring Cloud que proporciona más funcionalidades útiles para sistemas distribuidos y microservicios y un complemento adicional interesante para Spring Boot.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloud">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew cloudconfig:run, ./gradlew clouddiscovery:run, ./gradlew service:run, ./gradlew client:run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloud">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew cloudconfig:run, ./gradlew clouddiscovery:run, ./gradlew service:run, ./gradlew client:run</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

@@ -80,7 +80,7 @@ Hace ya unos años escribí un ejemplo y un artículo con una implementación pr
     "dateModified": "2019-03-31T23:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "4810",
+    "wordCount": "4812",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -97,10 +97,10 @@ Hace ya unos años escribí un ejemplo y un artículo con una implementación pr
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Hace ya unos años escribí un <a href="https://picodotdev.github.io/blog-bitix/2015/08/implementacion-de-maquina-de-estados-finita-fsm-con-java-8/">ejemplo y un artículo con una implementación propia de una máquina de estado en Java</a>, para algún caso muy básico puede ser suficiente pero para algo serio no es la opción a elegir. Pasado un tiempo de ese ejemplo y artículo descubrí uno de los muchos proyectos de <a href="https://spring.io/">Spring</a> útiles para una aplicación, para las necesidades más habítuales tiene un proyecto que lo proporciona y para las menos habituales es también posible que la proporcione como en el caso del proyecto <a href="https://projects.spring.io/spring-statemachine/">Spring Statemachine</a> que precisamente tiene el mismo objetivo de implementar una máquina de estados cubriendo muchos casos de uso.</p>"
 }
@@ -317,10 +317,10 @@ Hace ya unos años escribí un ejemplo y un artículo con una implementación pr
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Hace ya unos años escribí un <a href="https://picodotdev.github.io/blog-bitix/2015/08/implementacion-de-maquina-de-estados-finita-fsm-con-java-8/">ejemplo y un artículo con una implementación propia de una máquina de estado en Java</a>, para algún caso muy básico puede ser suficiente pero para algo serio no es la opción a elegir. Pasado un tiempo de ese ejemplo y artículo descubrí uno de los muchos proyectos de <a href="https://spring.io/">Spring</a> útiles para una aplicación, para las necesidades más habítuales tiene un proyecto que lo proporciona y para las menos habituales es también posible que la proporcione como en el caso del proyecto <a href="https://projects.spring.io/spring-statemachine/">Spring Statemachine</a> que precisamente tiene el mismo objetivo de implementar una máquina de estados cubriendo muchos casos de uso.</p>
 <p>El uso de una máquina de estados permite modelar un proceso con cierta complejidad. Puede ser el ciclo de vida de una compra, un envío, un proceso documental, financiero, &hellip; cualquiera en el que intervengan estados, transiciones entre esos estados y realización de acciones necesarias para proporcionar la funcionalidad deseada.</p>
@@ -329,7 +329,7 @@ Hace ya unos años escribí un ejemplo y un artículo con una implementación pr
 <p>En el ejemplo he definido el siguiente grafo de estados y transiciones que contiene estado inicial, <em>choice</em>, <em>fork</em>, <em>join</em>, jerarquía de estados con en el estado <em>Tasks</em> y un estado final. Una selección completa del conjunto de tipos de estados. En este caso las flechas van únicamente en una dirección pero perfectamente el flujo podría tener transiciones que volviesen a estados anteriores creando ciclos.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/images/graph_hu8732922720164745356.webp" data-gallery="" title="Grafo de la máquina de estados"><img src="/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/images/graph_hu15899929510070670081.webp" width="600" height="99" alt="Grafo de la máquina de estados" title="Grafo de la máquina de estados" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/images/graph_hu_e028e632176c57e6.webp" data-gallery="" title="Grafo de la máquina de estados"><img src="/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/images/graph_hu_8764ed81576cf62b.webp" width="600" height="99" alt="Grafo de la máquina de estados" title="Grafo de la máquina de estados" class="" loading="lazy"></a></p>
 <figcaption>Grafo de la máquina de estados</figcaption>
 </figure>
 </div>
@@ -417,9 +417,9 @@ Hace ya unos años escribí un ejemplo y un artículo con una implementación pr
     </div>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringStatemachine">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradle run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringStatemachine">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradle run</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

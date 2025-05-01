@@ -91,7 +91,7 @@ La palabra final tiene su utilidad pero hacerlo de forma indiscriminada y en la 
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Algunas personas y en algunos proyectos Java añaden en la declaración de cada parámetro de un método o variable local la palabra reservada <em>final</em>.</p>
 <p>La palabra <em>final</em> tiene su utilidad pero hacerlo de forma indiscriminada y en la totalidad de cada parámetro y variable local de cada método hace más verboso el código sin proporcionar una utilidad significativa porque Java ya en ciertas circunstancias considera a muchas variables efectivamente como <em>final</em>, si al escribir el código se sigue la recomendación de no hacer nunca asignaciones sobre variables que son parámetros y se prefiere crear una nueva variable local en vez de modificar el valor de una existente.</p>"
@@ -307,11 +307,11 @@ La palabra final tiene su utilidad pero hacerlo de forma indiscriminada y en la 
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Algunas personas y en algunos proyectos Java añaden en la declaración de cada parámetro de un método o variable local la palabra reservada <em>final</em>.</p>
 <p>La palabra <em>final</em> tiene su utilidad pero hacerlo de forma indiscriminada y en la totalidad de cada parámetro y variable local de cada método hace más verboso el código sin proporcionar una utilidad significativa porque Java ya en ciertas circunstancias considera a muchas variables efectivamente como <em>final</em>, si al escribir el código se sigue la recomendación de no hacer nunca asignaciones sobre variables que son parámetros y se prefiere crear una nueva variable local en vez de modificar el valor de una existente.</p>
-<h2 id="qué-hace-la-palabra-clave-_final_">¿Qué hace la palabra clave <em>final</em>?</h2>
+<h2 id="qué-hace-la-palabra-clave-final">¿Qué hace la palabra clave <em>final</em>?</h2>
 <p>La palabra clave reservada <em>final</em> hace que el compilador genere un error de compilación cuando a una variable <em>final</em> se le intenta asignar un nuevo valor. El error de compilación quizá en algún caso evita un <em>bug</em> ya que no debería haber intención de asignar un nuevo valor a una variable <em>final</em>.</p>
 <p>La palabra clave reservada <em>final</em> se usa en diferentes contextos:</p>
 <ul>
@@ -338,7 +338,7 @@ La palabra final tiene su utilidad pero hacerlo de forma indiscriminada y en la 
         <span>Honda.java</span>
     </div>
 </div>
-<h2 id="debería-añadirse-la-palabra-clave-_final_-a-cada-uno-de-los-argumentos-de-un-método-y-variables-locales">¿Debería añadirse la palabra clave <em>final</em> a cada uno de los argumentos de un método y variables locales?</h2>
+<h2 id="debería-añadirse-la-palabra-clave-final-a-cada-uno-de-los-argumentos-de-un-método-y-variables-locales">¿Debería añadirse la palabra clave <em>final</em> a cada uno de los argumentos de un método y variables locales?</h2>
 <p>En teoría, sí. En la práctica, no. Sólo es útil en métodos cuyo código es largo y complicado, y en ese caso el método debería simplificarse, o cuando el argumento tiene la posibilidad de confundirse con una variable local o miembro de la clase con la posibilidad de reasignación.</p>
 <p>Aunque un argumento de un método se declare como <em>final</em> e impide asignarle un valor no se impide modificar su estado si esa variable es una referencia a un objeto como es modificar los elementos de una colección. Para evitar modificaciones en colecciones hay que hacerlas inmutables.</p>
 <p>La palabra <em>final</em> en un argumento sirve para capturar un error en el que el nombre de la variable del argumento se llama igual que una propiedad de la clase en un constructor o un <em>setter</em>, pero usarlo de forma indiscriminada para todos los argumentos puede hacer el código aún más verboso sin proporcionar nada significativo, en los constructores y métodos <em>setter</em>  puede ser útil como en el siguiente caso pero en el resto de métodos no es significativamente útil con el coste de legibilidad del código que genera.</p>
@@ -447,7 +447,7 @@ La palabra final tiene su utilidad pero hacerlo de forma indiscriminada y en la 
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/">
-                <img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu14179314344348991071.webp" width="326" height="125" alt="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" title="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" class="" loading="lazy">
+                <img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu_c6c44a89c143a1e9.webp" width="326" height="125" alt="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" title="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" class="" loading="lazy">
                 <h3>Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot</h3>
                 </a>
                 
@@ -489,7 +489,7 @@ La palabra final tiene su utilidad pero hacerlo de forma indiscriminada y en la 
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/">
-                <img src="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu6416305202514833929.webp" width="326" height="125" alt="Cómo depurar una aplicación Java con un IDE" title="Cómo depurar una aplicación Java con un IDE" class="" loading="lazy">
+                <img src="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu_ebec10e987a754f6.webp" width="326" height="125" alt="Cómo depurar una aplicación Java con un IDE" title="Cómo depurar una aplicación Java con un IDE" class="" loading="lazy">
                 <h3>Cómo depurar una aplicación Java con un IDE</h3>
                 </a>
                 

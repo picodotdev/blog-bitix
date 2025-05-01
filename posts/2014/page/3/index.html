@@ -246,7 +246,7 @@
         <p>
           
             <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false"></p>
 </div>
 <p>Con la versión 5.4 de Tapestry las <a href="https://elblogdepicodev.blogspot.com.es/2012/08/paginas-pagecatalog-servicestatus-e.html">páginas PageCatalog, ServiceStatus e HibernateStaticstis</a> han sido unificadas en la página T5Dashboard por lo que ahora en una sóla página tendremos toda la información. Una de las características más importantes de Tapestry es ser muy informativo proporcionando mucha y descriptiva información, esto se nota con la página de <a href="https://elblogdepicodev.blogspot.com.es/2013/07/personalizar-la-pagina-de-informe-de-error.html">informe de error incluso para las peticiones ajax</a>, los mensajes de logging y con estás páginas de información de estado.</p>
           
@@ -277,10 +277,10 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/wildfly.svg" width="200" height="200" alt="WildFly" title="WildFly" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/wildfly.svg" width="200" height="200" alt="WildFly" title="WildFly" class="" loading="false"></p>
 </div>
 <p>Los class loaders del <a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/">servidor de aplicaciones JBoss/WildFly</a> habitualmente han dado algún problema en la ejecución de las aplicaciones y la carga de clases. En versiones antiguas como la 4 se podían producir conflictos entre las librerías de las aplicaciones y las librerías instaladas en el servidor ya que en <a href="http://jbossas.jboss.org/">JBoss</a> se buscaba las clases por defecto y primero en el class loader del servidor en vez de en el <em>classloader</em> de la aplicación (war). Ya en las últimas versiones como JBoss 7 y <a href="http://wildfly.org/">WildFly</a> la forma de cargar las clases es más parecido al modelo habitual que se sigue en las aplicaciones Java EE y en servidores como Tomcat buscando primero en el directorio classes WEB-INF/classes y entre las librerías de la carpeta WEB-INF/lib del archivo war. Además, con la inclusión de JBoss Modules se puede seguir un esquema OSGi con lo que incluso podríamos usar simultáneamente en el servidor diferentes versiones de la misma librería.</p>
           
@@ -307,7 +307,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/grails.svg" width="200" height="200" alt="Grails" title="Grails" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/grails.svg" width="200" height="200" alt="Grails" title="Grails" class="" loading="false"></p>
 </div>
 <p>Una base de datos relacional guarda los datos de forma diferente al modelo orientado a objetos que utilizamos en lenguajes como <a href="https://www.oracle.com/us/technologies/java/overview/index.html">Java</a>, <a href="https://dotnet.microsoft.com/">C#</a> o <a href="https://www.python.org/">Python</a>. Los <a href="https://en.wikipedia.org/wiki/Object-relational_mapping">ORM (Object-relational mapping)</a> tratan de hacer una correspondencia entre los dos modelos, el relacional de las bases de datos y el orientado a objetos de los lenguajes. Una de las ventajas de usar en una aplicación un ORM para acceder a la base de datos es que podemos hacer una correspondencia entre los datos de una base de datos relacional y trabajar con esos datos utilizando el modelo orientado a objetos del lenguaje de programación que usemos.</p>
           
@@ -334,7 +334,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/grails.svg" width="300" height="300" alt="Grails" title="Grails" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/grails.svg" width="300" height="300" alt="Grails" title="Grails" class="" loading="false"></p>
 </div>
 <p>No es la primera vez que comento algo similar (<a href="https://elblogdepicodev.blogspot.com.es/2012/08/paginas-pagecatalog-servicestatus-e.html">I</a>, <a href="https://elblogdepicodev.blogspot.com.es/2011/08/motivos-para-elegir-apache-tapestry.html">II</a>) disponer de la mayor cantidad de información cuando se produce una excepción o un error en la aplicación es vital para determinar rápidamente la causa del error y para solucionarlo correctamente. Para disponer de esta información podemos generar un archivo de log que nos permita revisar lo que pasó en la aplicación en un determinado momento. En el momento de desarrollo también nos puede interesar tener una página de excepción informativa.</p>
           
@@ -365,7 +365,7 @@
         <p>
           
             <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/blogstack.webp" width="300" height="65" alt="Blog Stack" title="Blog Stack" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/blogstack.webp" width="300" height="65" alt="Blog Stack" title="Blog Stack" class="" loading="false"></p>
 </div>
 <p>Normalmente en esta bitácora suelo poner ejemplos para explicar como funciona una determinada herramienta, son ejemplos que podrían aprovecharse para algo productivo pero para mantenerlos simples por si mismos no suelen serlo. En esta entrada voy a comentar cual es la arquitectura y como está alojado <a href="http://www.blogstack.info/">Blog Stack</a>, que es un ejemplo de algo práctico y real por si la experiencia de este ejemplo le sirve de ayuda o de inspiración a alguien. En la red he encontrado comentada la experiencia de <del>Planeta Linux</del> y <a href="http://gallir.wordpress.com/2009/12/30/como-montamos-meneame-en-amazon-ec2/">Meneame</a>, otros proyectos web.</p>
           
@@ -396,12 +396,12 @@
         <p>
           
             <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/blogstack.webp" width="300" height="65" alt="Blog Stack" title="Blog Stack" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/blogstack.webp" width="300" height="65" alt="Blog Stack" title="Blog Stack" class="" loading="false"></p>
 </div>
 <p>Con este artículo quiero presentar un nuevo proyecto, Blog Stack. <a href="http://www.blogstack.info/">Blog Stack</a> (BS) es una agregador, planeta, o fuente de información de bitácoras sobre programación, desarrollo, desarrollo ágil, software, software libre, hardware, gnu/linux o en general temas relacionados con la tecnología.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2014/05/presentacion-blog-stack/images/blogstack-portada_hu5407602845691439170.webp" data-gallery="" title="Portada de Blog Stack"><img src="/blog-bitix/2014/05/presentacion-blog-stack/images/blogstack-portada_hu3657006541828033261.webp" width="216" height="200" alt="Portada de Blog Stack" title="Portada de Blog Stack" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2014/05/presentacion-blog-stack/images/blogstack-portada_hu_f2bf044de723b463.webp" data-gallery="" title="Portada de Blog Stack"><img src="/blog-bitix/2014/05/presentacion-blog-stack/images/blogstack-portada_hu_1775ee487867cee1.webp" width="216" height="200" alt="Portada de Blog Stack" title="Portada de Blog Stack" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <p>Otro agregador o planeta no es ninguna idea nueva pero BS incorpora alguna cosa adicional como poder suscribirse a únicamente el contenido etiquetado en que cada uno esté interesando (programación, desarrollo-ágil, java, python, linux, ubuntu, &hellip;) o recibir el contenido publicado en todas las bitácoras agregadas sin tener que suscribirse individualmente a cada una de ellas. BS aún está en desarrollo y posiblemente vaya incorporando nuevas ideas que me surjan o se me propongan pero en el estado actual ya cumple con la función básica de agregador.</p>
@@ -507,7 +507,7 @@
         <p>
           
             <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/grunt.webp" width="200" height="236" alt="Grunt" title="Grunt" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/grunt.webp" width="200" height="236" alt="Grunt" title="Grunt" class="" loading="false"></p>
 </div>
 <p>En la <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html">serie de artículos que escribí sobre javascript</a> hice un ejemplo más o menos complejo y parecido a lo que podría ser una aplicación real usando muchas de las herramientas que ahora se consideran una buena opción para desarrollar aplicaciones javascript como <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html">RequireJS</a>, <a href="http://www.genbetadev.com/desarrollo-web/patron-de-diseno-mvc-del-lado-cliente-con-backbonejs">Backbone</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html">Marionette</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.html">Jasmine y Sinon</a>. En el <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html">ejemplo de la lista de tareas con estas herramientas</a> hice unas cuantas pruebas unitarias para mostrar en un ejemplo como son y la forma de usar <a href="http://jasmine.github.io/">Jasmine</a>.</p>
           
@@ -582,7 +582,7 @@
         <p>
           
             <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/octopress.webp" width="300" height="300" alt="Octopress" title="Octopress" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/octopress.webp" width="300" height="300" alt="Octopress" title="Octopress" class="" loading="false"></p>
 </div>
 <p>En la <a href="https://picodotdev.github.io/blog-bitix/2013/12/hola-nuevo-mundo/">primera entrada de este blog usando Octopress</a> ya comentaba las razones por las que he pasado de usar <a href="http://www.blogger.com">Blogger</a> a usar <a href="http://octopress.org/">Octopress</a>. Entre las razones del cambio estaban la posibilidad en Octopress de escribir en markdown, edición desconectado (para textos e imágenes), diseño adaptable y más personalizable, git y control de versiones, alojamiento en cualquier servidor web. Aún sin ser Octpress también tiene cosas mejorables pero desde luego me está resultando mucho mejor que blogger.</p>
           

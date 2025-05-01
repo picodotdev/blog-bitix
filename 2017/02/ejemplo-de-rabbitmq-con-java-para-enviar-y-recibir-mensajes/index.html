@@ -62,7 +62,7 @@
     "dateModified": "2017-02-18T10:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "989",
+    "wordCount": "991",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -304,10 +304,10 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/rabbitmq.svg" width="200" height="211" alt="RabbitMQ" title="RabbitMQ" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/rabbitmq.svg" width="200" height="211" alt="RabbitMQ" title="RabbitMQ" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Las aplicaciones que se integran mediante el envío y recepción de mensajes evitan el acoplamiento y sincronía junto con la posibilidad de implementar cada una de ellas con diferentes lenguajes o plataformas. Entre las especificaciones que componen Java EE está &lt;abbr title=”Java Message Service”&gt;JMS</abbr> pero tanto la aplicación que envía como la que recibe mensajes deben estar programadas en el lenguaje Java, a menos que incluyamos un adaptador que permita a la aplicación no Java interactuar con JMS.</p>
 <p><a href="https://www.rabbitmq.com/">RabbitMQ</a> es un software de servidor que actúa como intermediario o <em>broker</em> de mensajería entre dos o más aplicaciones que se comunican o envían notificaciones con mensajes, proporciona una funcionalidad similar a JMS pero con la ventaja que ofrece soporte para los lenguajes más populares incluido <a href="https://www.oracle.com/java/">Java</a> y <a href="https://es.wikipedia.org/wiki/M%C3%A1quina_virtual_Java"><abbr title="Java Virtual Machine">JVM</abbr></a>, <a href="https://www.ruby-lang.org/es/">Ruby</a>, <a href="https://www.python.org/">Python</a>, <a href="https://www.microsoft.com/net">.NET</a>, <a href="https://secure.php.net/">PHP</a>, <a href="https://nodejs.org/en/">Node.js</a>, <a href="https://golang.org/">Go</a> y varios más. Usa varios conceptos similares a los presentes en JMS como que el emisor envía los mensajes a una cola y el receptor los lee.</p>
@@ -358,27 +358,27 @@
 <p>Una vez iniciado el contenedor y con el código fuente del ejemplo, iniciamos en cualquier orden la parte receptora de los mensajes y la parte emisora de mensajes con los comandos <code>./gradlew receive</code> y <code>./gradlew send</code> respectivamente, momento en el cual veremos que en la consola salen las notificaciones de recepción y envío.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/send_hu10545343156206764007.webp" data-gallery="" title="Aplicación de ejemplo enviando mensajes"><img src="/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/send_hu12107192623432295537.webp" width="300" height="165" alt="Aplicación de ejemplo enviando mensajes" title="Aplicación de ejemplo enviando mensajes" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/receive_hu6039087357265859740.webp" data-gallery="" title="Aplicación de ejemplo recibiendo mensajes"><img src="/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/receive_hu8606657719021195364.webp" width="300" height="165" alt="Aplicación de ejemplo recibiendo mensajes" title="Aplicación de ejemplo recibiendo mensajes" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/send_hu_ed64b88df0266937.webp" data-gallery="" title="Aplicación de ejemplo enviando mensajes"><img src="/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/send_hu_8c4cc059429f6adc.webp" width="300" height="165" alt="Aplicación de ejemplo enviando mensajes" title="Aplicación de ejemplo enviando mensajes" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/receive_hu_a192872ddbf10e32.webp" data-gallery="" title="Aplicación de ejemplo recibiendo mensajes"><img src="/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/receive_hu_27e0e2229e5488df.webp" width="300" height="165" alt="Aplicación de ejemplo recibiendo mensajes" title="Aplicación de ejemplo recibiendo mensajes" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <p>En la comunicación con RabbitMQ se puede usar <a href="http://www.rabbitmq.com/ssl.html">TLS/SSL</a> así como mecanismos de <a href="http://www.rabbitmq.com/authentication.html">autenticación</a> y <a href="http://www.rabbitmq.com/access-control.html">autorización</a> para mayor seguridad. Usando confirmaciones si el receptor falla en el procesado el mensaje no se pierde ya que no se habrá declarado como <em>acknowledge</em> aún así si RabbitMQ falla los mensajes se perderán a menos que las colas se declaren como persistentes las cuales se guardarán en disco perdurando a una catástrofe.</p>
 <p>RabbitMQ posee un <a href="https://www.rabbitmq.com/management.html"><em>plugin</em> para la administración</a> con el que podemos administrar permisos, tener una vista global, ver ratios de mensajes, estadísticas, colas, <em>exchanges</em> y más información, nos da información muy interesante sobre el estado del procesamiento de mensajes. Es accesible mediante el navegador y la URL <em>http://localhost:15672/</em>. En la captura del estado de la cola <em>hello</em> hay 10 mensajes encolados pendientes de entregar a algún receptor.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/rabbitmq-management_hu13204703195354151344.webp" data-gallery="" title="Aplicación web de administración de RabbitMQ"><img src="/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/rabbitmq-management_hu4157799117000932343.webp" width="300" height="164" alt="Aplicación web de administración de RabbitMQ" title="Aplicación web de administración de RabbitMQ" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/rabbitmq-queue_hu789035396198969983.webp" data-gallery="" title="Información de estado de una cola"><img src="/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/rabbitmq-queue_hu15092512405005771481.webp" width="274" height="200" alt="Información de estado de una cola" title="Información de estado de una cola" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/rabbitmq-management_hu_75cd1ace5e0131a1.webp" data-gallery="" title="Aplicación web de administración de RabbitMQ"><img src="/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/rabbitmq-management_hu_ec776c9f43514a2d.webp" width="300" height="164" alt="Aplicación web de administración de RabbitMQ" title="Aplicación web de administración de RabbitMQ" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/rabbitmq-queue_hu_db2007a05fc7fb68.webp" data-gallery="" title="Información de estado de una cola"><img src="/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/rabbitmq-queue_hu_c6747729602d2eb5.webp" width="274" height="200" alt="Información de estado de una cola" title="Información de estado de una cola" class="" loading="lazy"></a></p>
 </figure>
 </div>
-<p>Para profundizar más en las aplicaciones basadas en mensajes con RabbitMQ dos buenos libros son <a href="https://amzn.to/4bpjgQe" rel="sponsored">Learning RabbitMQ</a> y <a href="https://amzn.to/3OsxVjU" rel="sponsored">Matering RabbitMQ</a> cubriendo temas más avanzados como <em>clustering</em>, alta disponibilidad, arquitectura, patrones de diseño, seguridad y rendimiento.</p>
+<p>Para profundizar más en las aplicaciones basadas en mensajes con RabbitMQ dos buenos libros son <a href="https://amzn.to/4bpjgQe">Learning RabbitMQ</a> y <a href="https://amzn.to/3OsxVjU">Matering RabbitMQ</a> cubriendo temas más avanzados como <em>clustering</em>, alta disponibilidad, arquitectura, patrones de diseño, seguridad y rendimiento.</p>
 <div class="media media-amazon">
   <ul>
     <li><a href="https://amzn.to/4bpjgQe" title="Learning RabbitMQ">Learning RabbitMQ</a></li><li><a href="https://amzn.to/3OsxVjU" title="Mastering RabbitMQ">Mastering RabbitMQ</a></li></ul>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoRabbitMQ">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>docker-compose up, ./gradlew receive, ./gradle send</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoRabbitMQ">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>docker-compose up, ./gradlew receive, ./gradle send</code></p>
 </div>
 <div class="reference">
     Referencia:<br>

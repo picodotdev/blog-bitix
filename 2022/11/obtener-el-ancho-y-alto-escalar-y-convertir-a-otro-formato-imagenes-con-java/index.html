@@ -62,7 +62,7 @@
     "dateModified": "2022-11-25T20:30:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1532",
+    "wordCount": "1534",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -305,7 +305,7 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>El lenguaje de programación Java es un lenguaje de propósito general con el que es posible realizar cualquier tarea. Sin embargo, Java como lenguaje o plataforma aparte de <a href="https://www.android.com/">Android</a> el mayor uso que se le da es para aplicaciones y servicios en el lado del servidor.</p>
 <p>Una de las necesidades que pueden surgir es escalar una imagen o cambiarle de formato, aunque Java solo ofrece un soporte básico para el tratamiento de imágenes, hay varias librerías pero pocas bien mantenidas y con buen soporte, si ni una librería ofrece la funcionalidad deseada en el caso más extremo se puede invocar a un proceso del sistema que ofrezca la funcionalidad com <a href="https://www.imagemagick.org">ImageMagick</a> o <a href="https://www.ffmpeg.org/">FFmpeg</a>.</p>
@@ -338,7 +338,7 @@
 <p>El formato png es un formato sin pérdida que ofrece buenos resultados para capturas de pantalla del ordenador. Para fotos el formato jpg ofrece un archivo de tamaño significativamente más reducido con una calidad bastante fiel al original.</p>
 <p>Más recientemente han surgido nuevos formatos de imagen que utilizan otros algoritmos para la reducción de tamaño heic y heif utilizan el algoritmo con coste de licencia de x265 y el formato sin coste de licencia webp que ofrece similar o mejor resultado que el x265 que además soporta imágenes sin pérdida.</p>
 <h2 id="procesar-imágenes-con-java">Procesar imágenes con Java</h2>
-<p>En el propio JDK hay varias clases para la utilización de imágenes en el paquete <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/java/awt/package-summary.html">java.awt</a>.</p>
+<p>En el propio JDK hay varias clases para la utilización de imágenes en el paquete <a href="#ZgotmplZ">java.awt</a>.</p>
 <h3 id="formatos-de-imagen-soportados">Formatos de imagen soportados</h3>
 <p>Los formatos de imagen soportados se pueden obtener mediante código y son extensibles añadiendo librerías al <em>classpath</em>, es posible que un formato se soporte en modo lectura pero no en escritura.</p>
 <div class="code">
@@ -361,7 +361,7 @@
     </div>
 </div>
 <h3 id="lectura-y-escritura-de-una-imagen">Lectura y escritura de una imagen</h3>
-<p>La clase que representa una imagen en Java es <a href="#ZgotmplZ">BufferedImage</a> que se obtiene al leer el archivo del sistema de archivos o el <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/InputStream.html">InputStream</a>, para la lectura y la escritura está la clase <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/javax/imageio/ImageIO.html">ImageIO</a>.</p>
+<p>La clase que representa una imagen en Java es <a href="#ZgotmplZ">BufferedImage</a> que se obtiene al leer el archivo del sistema de archivos o el <a href="#ZgotmplZ">InputStream</a>, para la lectura y la escritura está la clase <a href="#ZgotmplZ">ImageIO</a>.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.javaimageprocess</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">...</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">...</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">BufferedImage</span><span class="w"> </span><span class="nf">readImage</span><span class="p">(</span><span class="n">InputStream</span><span class="w"> </span><span class="n">is</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="w"> </span><span class="n">ImageIO</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="n">is</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">writeImage</span><span class="p">(</span><span class="n">BufferedImage</span><span class="w"> </span><span class="n">image</span><span class="p">,</span><span class="w"> </span><span class="n">ImageFormat</span><span class="w"> </span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="n">OutputStream</span><span class="w"> </span><span class="n">os</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">ImageIO</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="w"> </span><span class="n">format</span><span class="p">.</span><span class="na">name</span><span class="p">(),</span><span class="w"> </span><span class="n">os</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">...</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
@@ -371,8 +371,8 @@
 <p>La imagen en formato jpg tiene un tamaño de 192 KB y en formato webp tiene un tamaño de 80 KB, menos de la mitad en webp con una calidad similar.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome_hu11224919176630963989.jpg" data-gallery="" title="Imagen en formato jpg"><img src="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome_hu11746909297407253327.jpg" width="300" height="168" alt="Imagen en formato jpg" title="Imagen en formato jpg" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-webp_hu11615307833199357704.webp" data-gallery="" title="Imagen en formato webp"><img src="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-webp_hu12918747814122002920.webp" width="300" height="168" alt="Imagen en formato webp" title="Imagen en formato webp" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome_hu_f43ba76c03cb3eaa.jpg" data-gallery="" title="Imagen en formato jpg"><img src="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome_hu_c2d8af38d0a3c9f7.jpg" width="300" height="168" alt="Imagen en formato jpg" title="Imagen en formato jpg" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-webp_hu_4cfba18e408d0459.webp" data-gallery="" title="Imagen en formato webp"><img src="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-webp_hu_782562f413e78e2a.webp" width="300" height="168" alt="Imagen en formato webp" title="Imagen en formato webp" class="" loading="lazy"></a></p>
 <figcaption>Imagenes en formatos jpg y webp</figcaption>
 </figure>
 </div>
@@ -402,7 +402,7 @@
 <p>Dependiendo de las opciones empleadas en el escalado la calidad y tamaño resultante es diferente y hay que conocerlas. Utilizando una librería permite realizar la operación de escalado con mejor calidad.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-scaled-java_hu17821774882495261633.webp" data-gallery="" title="Imagen escalada con Java"><img src="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-scaled-java_hu2287663750423331433.webp" width="650" height="362" alt="Imagen escalada con Java" title="Imagen escalada con Java" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-scaled-java_hu_8b288284fffce14.webp" data-gallery="" title="Imagen escalada con Java"><img src="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-scaled-java_hu_305eb8f624434685.webp" width="650" height="362" alt="Imagen escalada con Java" title="Imagen escalada con Java" class="" loading="lazy"></a></p>
 <figcaption>Imagen escalada con Java</figcaption>
 </figure>
 </div>
@@ -433,9 +433,9 @@
 <p>El tamaño de la imagen escalada por el código Java es de 28 KB, el tamaño de la imagen de Thuilmator es de 38 KB y el tamaño de TwelveMonkeys es de 26 KB con algunas pequeñas diferencias apreciables en el resultado de cada una de ellas.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-scaled-thumbnailator_hu18058986386100538971.webp" data-gallery="" title="Imagen escalada con Thumbnailator"><img src="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-scaled-thumbnailator_hu17821668360158630974.webp" width="200" height="112" alt="Imagen escalada con Thumbnailator" title="Imagen escalada con Thumbnailator" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-scaled-twelvemonkeys_hu18322962004950209075.webp" data-gallery="" title="Imagen escalada con Twelvemonkeys"><img src="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-scaled-twelvemonkeys_hu2088552300262676670.webp" width="200" height="111" alt="Imagen escalada con Twelvemonkeys" title="Imagen escalada con Twelvemonkeys" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-scaled-imagemagick_hu10349062462158760321.webp" data-gallery="" title="Imagen escalada con ImageMagick y Java"><img src="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-scaled-imagemagick_hu11899324752675585467.webp" width="200" height="112" alt="Imagen escalada con ImageMagick y Java" title="Imagen escalada con ImageMagick y Java" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-scaled-thumbnailator_hu_bb28e5c896735b7e.webp" data-gallery="" title="Imagen escalada con Thumbnailator"><img src="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-scaled-thumbnailator_hu_592c0e1286299428.webp" width="200" height="112" alt="Imagen escalada con Thumbnailator" title="Imagen escalada con Thumbnailator" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-scaled-twelvemonkeys_hu_6b09136b52866cf1.webp" data-gallery="" title="Imagen escalada con Twelvemonkeys"><img src="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-scaled-twelvemonkeys_hu_2fd0698ac3d997da.webp" width="200" height="111" alt="Imagen escalada con Twelvemonkeys" title="Imagen escalada con Twelvemonkeys" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-scaled-imagemagick_hu_bcab704b636e64ff.webp" data-gallery="" title="Imagen escalada con ImageMagick y Java"><img src="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-scaled-imagemagick_hu_a37da77598821942.webp" width="200" height="112" alt="Imagen escalada con ImageMagick y Java" title="Imagen escalada con ImageMagick y Java" class="" loading="lazy"></a></p>
 <figcaption>Imagen escaladas con diferentes librerías (Thumbnailator, Twelvemonkeys y ImageMagick)</figcaption>
 </figure>
 </div>
@@ -459,14 +459,14 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-convert-imagemagick_hu8639706754736070746.webp" data-gallery="" title="Imagen convertida a webp con ImageMagick y Java"><img src="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-convert-imagemagick_hu10047171763688465020.webp" width="300" height="168" alt="Imagen convertida a webp con ImageMagick y Java" title="Imagen convertida a webp con ImageMagick y Java" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-convert-imagemagick_hu_77637844b5fc3dcf.webp" data-gallery="" title="Imagen convertida a webp con ImageMagick y Java"><img src="/blog-bitix/2022/11/obtener-el-ancho-y-alto-escalar-y-convertir-a-otro-formato-imagenes-con-java/images/gnome-convert-imagemagick_hu_10c5150a7f8f0c6f.webp" width="300" height="168" alt="Imagen convertida a webp con ImageMagick y Java" title="Imagen convertida a webp con ImageMagick y Java" class="" loading="lazy"></a></p>
 <figcaption>Imagen convertida a webp con ImageMagick y Java</figcaption>
 </figure>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew run</code></p>
 </div>
 <div class="reference">
     Referencia:<br>
@@ -513,7 +513,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2022/09/novedades-de-java-19/">
-                <img src="/blog-bitix/2022/09/novedades-de-java-19/images/java-19_hu15409942009201107725.webp" width="326" height="125" alt="Novedades de Java 19" title="Novedades de Java 19" class="" loading="lazy">
+                <img src="/blog-bitix/2022/09/novedades-de-java-19/images/java-19_hu_1320c5a6ec79e0e4.webp" width="326" height="125" alt="Novedades de Java 19" title="Novedades de Java 19" class="" loading="lazy">
                 <h3>Novedades de Java 19</h3>
                 </a>
                 
@@ -569,7 +569,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/">
-                <img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_hu11642716256535407620.webp" width="326" height="125" alt="Interfaz web para JMX con Hawtio" title="Interfaz web para JMX con Hawtio" class="" loading="lazy">
+                <img src="/blog-bitix/2022/07/interfaz-web-para-jmx-con-hawtio/images/hawtio-console_hu_bdc6007c0b8ce864.webp" width="326" height="125" alt="Interfaz web para JMX con Hawtio" title="Interfaz web para JMX con Hawtio" class="" loading="lazy">
                 <h3>Interfaz web para JMX con Hawtio</h3>
                 </a>
                 

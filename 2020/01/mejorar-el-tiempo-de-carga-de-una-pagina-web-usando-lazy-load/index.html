@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="Mejorar el tiempo de carga de una página web usando lazy load">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-playstation-despues_hu10288568870779171570.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-playstation-despues_hu_fa9a014c7e06713.png">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Las páginas grandes y con muchos recursos como imágenes e iframes implementar la carga vaga o lazy load obtienen un gran beneficio, necesitando realizar menos peticiones en la carga inicial, con menos tamaño y cargándose en menos tiempo. Los navegadores han añadido soporte para desde JavaScript proporciona este soporte. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-playstation-despues_hu10288568870779171570.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-playstation-despues_hu_fa9a014c7e06713.png">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Mejorar el tiempo de carga de una página web usando lazy load">
@@ -55,7 +55,7 @@
     "headline": "Mejorar el tiempo de carga de una página web usando lazy load",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-playstation-despues_hu10288568870779171570.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-playstation-despues_hu_fa9a014c7e06713.png"
         
       },
     "datePublished": "2020-01-04T12:30:00+01:00",
@@ -304,38 +304,38 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/firefox.svg" width="200" height="188" alt="Firefox" title="Firefox" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/firefox.svg" width="200" height="188" alt="Firefox" title="Firefox" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/chromium.svg" width="200" height="200" alt="Chromium" title="Chromium" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/chromium.svg" width="200" height="200" alt="Chromium" title="Chromium" class="" loading="false"></p>
 </div>
 <p>El tiempo de carga de una página web es una métrica importante para una buena experiencia de usuario, es una métrica evaluada por <em>PageSpeed</em> y también de cara al posicionamiento en los buscadores o SEO ya que influye en la fórmula que usa Google para clasificar y posicionar las páginas en la página de resultados de búsqueda, un buen posicionamiento en los buscadores es importante porque significa más visitas a una web que en muchos casos es la mayor fuente de usuarios. Un tiempo de carga alto hace que los usuarios abandonen la página antes de que esté cargada completamente, influyendo en el porcentaje de rebote y el tiempo de visita que se puede medir con <a href="https://www.google.es/intl/es/analytics/">Google Analytics</a>.</p>
 <p>Una de las variables que influyen en el tiempo de carga es el número de peticiones y el tamaño de los recursos de esas peticiones que se hacen al servidor para descargar los elementos de la página completa, estos son imágenes, hojas de estilo, archivos de JavaScript, <em>iframes</em>, &hellip; Sin embargo, los navegadores cargan todos los elementos de una página incluso aquellos que están en la parte baja e inicialmente no se ven hasta que el usuario se desplaza hasta visualizarlos. Cargar elementos que no se visualizan es innecesario e ineficiente en el navegador pero también para el servidor que ha de atender a más peticiones.</p>
-<p>Los artículos de mi blog como <a href="https://picodotdev.github.io/blog-bitix/2019/09/desempaquetado-de-playstation-4-slim-de-1-tb/">Desempaquetado de PlayStation 4 Slim de 1 TB</a> o <a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)</a>, incluyen numerosas imágenes e <em>iframes</em> de vídeos de <a href="https://www.youtube.com/">Youtube</a> y publicidad de <a href="https://amzn.to/2flFhHA" rel="sponsored">Amazon</a>, en todas se carga los comentarios de <a href="https://disqus.com/">Disqus</a> y para compartir los artículos con <a href="https://www.sharethis.com/">ShareThis</a> que están al final de la página y hasta que el usuario no ha leído el artículo son innecesarios. Disqus además en concreto para cargarse realiza numerosas peticiones adicionales. Estás páginas son de las más complejas por número de recursos y extensión del artículo que tengo en el blog por lo que he analizado una de ellas antes y después aplicando <em>lazy loading</em> para cargar inicialmente solo los elementos que se visualizan que son aquellos que están en la parte superior de la página.</p>
+<p>Los artículos de mi blog como <a href="https://picodotdev.github.io/blog-bitix/2019/09/desempaquetado-de-playstation-4-slim-de-1-tb/">Desempaquetado de PlayStation 4 Slim de 1 TB</a> o <a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)</a>, incluyen numerosas imágenes e <em>iframes</em> de vídeos de <a href="https://www.youtube.com/">Youtube</a> y publicidad de <a href="https://amzn.to/2flFhHA">Amazon</a>, en todas se carga los comentarios de <a href="https://disqus.com/">Disqus</a> y para compartir los artículos con <a href="https://www.sharethis.com/">ShareThis</a> que están al final de la página y hasta que el usuario no ha leído el artículo son innecesarios. Disqus además en concreto para cargarse realiza numerosas peticiones adicionales. Estás páginas son de las más complejas por número de recursos y extensión del artículo que tengo en el blog por lo que he analizado una de ellas antes y después aplicando <em>lazy loading</em> para cargar inicialmente solo los elementos que se visualizan que son aquellos que están en la parte superior de la página.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/playstation-1_hu14857090147566598644.webp" data-gallery="" title="Página PlayStation"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/playstation-1_hu5541697819696768094.webp" width="229" height="200" alt="Página PlayStation" title="Página PlayStation" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/playstation-2_hu14064131466167364419.webp" data-gallery="" title="Página PlayStation"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/playstation-2_hu4284038410312370103.webp" width="229" height="200" alt="Página PlayStation" title="Página PlayStation" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/playstation-1_hu_79b87ffa24deec92.webp" data-gallery="" title="Página PlayStation"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/playstation-1_hu_b9d7fc6443f4095f.webp" width="229" height="200" alt="Página PlayStation" title="Página PlayStation" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/playstation-2_hu_e6dba0615176ba36.webp" data-gallery="" title="Página PlayStation"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/playstation-2_hu_90da8474ea9009e6.webp" width="229" height="200" alt="Página PlayStation" title="Página PlayStation" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/intel-nuc-1_hu2080029684914747621.webp" data-gallery="" title="Página Intel NUC"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/intel-nuc-1_hu2800892439391542450.webp" width="229" height="200" alt="Página Intel NUC" title="Página Intel NUC" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/intel-nuc-2_hu9603812366607067675.webp" data-gallery="" title="Página Intel NUC"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/intel-nuc-2_hu13094096121277051034.webp" width="229" height="200" alt="Página Intel NUC" title="Página Intel NUC" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/intel-nuc-1_hu_a5b1a92cbbc6cded.webp" data-gallery="" title="Página Intel NUC"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/intel-nuc-1_hu_6b326f19ba97f8f9.webp" width="229" height="200" alt="Página Intel NUC" title="Página Intel NUC" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/intel-nuc-2_hu_e203706abb52634.webp" data-gallery="" title="Página Intel NUC"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/intel-nuc-2_hu_331060e005c13e77.webp" width="229" height="200" alt="Página Intel NUC" title="Página Intel NUC" class="" loading="lazy"></a></p>
 <figcaption>Páginas representativas de Blog Bitix</figcaption>
 </figure>
 </div>
 <p>Analizando el número de peticiones, tamaño y tiempo de carga en la página de la PlayStation realizaban 343 peticiones inicialmente, con un tamaño de descarga de 5 MiB en un tiempo de carga según Firefox de 15 segundos. Evaluando esta página con <a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed</a> un aspecto importante que indica a mejora reducir el número de elementos descargados, además de reducir peticiones y tamaño de la página se descarguen inicialmente los elementos importantes y omitiendo recursos de JavaScript hace que el desempeño sea mejor. El resultado es un menor tiempo de carga.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-playstation-antes_hu11043480513101377034.webp" data-gallery="" title="Métricas de carga en PageSpeed página PlayStation antes"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-playstation-antes_hu17201682294396916065.webp" width="122" height="200" alt="Métricas de carga en PageSpeed página PlayStation antes" title="Métricas de carga en PageSpeed página PlayStation antes" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-intel-nuc-antes_hu12988351391475190366.webp" data-gallery="" title="Métricas de carga de PageSpeed página Intel NUC antes"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-intel-nuc-antes_hu738631895506682280.webp" width="118" height="200" alt="Métricas de carga de PageSpeed página Intel NUC antes" title="Métricas de carga de PageSpeed página Intel NUC antes" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-playstation-antes_hu_22e1587e471f85d0.webp" data-gallery="" title="Métricas de carga en PageSpeed página PlayStation antes"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-playstation-antes_hu_b5660f895c0ce550.webp" width="122" height="200" alt="Métricas de carga en PageSpeed página PlayStation antes" title="Métricas de carga en PageSpeed página PlayStation antes" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-intel-nuc-antes_hu_449ee1f3a5b869b9.webp" data-gallery="" title="Métricas de carga de PageSpeed página Intel NUC antes"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-intel-nuc-antes_hu_6ba22e055ab08ff7.webp" width="118" height="200" alt="Métricas de carga de PageSpeed página Intel NUC antes" title="Métricas de carga de PageSpeed página Intel NUC antes" class="" loading="lazy"></a></p>
 <figcaption>Métricas de carga en PageSpeed antes</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-firefox-antes_hu7364252302634982467.webp" data-gallery="" title="Métricas de carga de Firefox página PlayStation antes"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-firefox-antes_hu213764240782937318.webp" width="300" height="12" alt="Métricas de carga de Firefox página PlayStation antes" title="Métricas de carga de Firefox página PlayStation antes" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-firefox-antes_hu_43a26e5f6daa0690.webp" data-gallery="" title="Métricas de carga de Firefox página PlayStation antes"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-firefox-antes_hu_5894df754afeedb9.webp" width="300" height="12" alt="Métricas de carga de Firefox página PlayStation antes" title="Métricas de carga de Firefox página PlayStation antes" class="" loading="lazy"></a></p>
 <figcaption>Métricas de carga en Firefox</figcaption>
 </figure>
 </div>
@@ -388,14 +388,14 @@
 <p>La métrica de PageSpeed mejoran notablemente, es una cifra sobre 100 que aún dista de ser alta debido a que Analytics y AdSense imponen una fuerte penalización por utilizarlos e incluirlos en las páginas. La página <a href="https://webpagetest.org">WebPageTest</a> proporciona algunos datos adicionales y complementarios a los proporcinados por PageSpeed, también es recomendable usarla para medir la variación en los resultados con los cambios realizados con el objetivo de mejorar una página.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-playstation-despues_hu18118860278696255888.webp" data-gallery="" title="Métricas de carga en PageSpeed página PlayStation después"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-playstation-despues_hu6835519063383682006.webp" width="143" height="200" alt="Métricas de carga en PageSpeed página PlayStation después" title="Métricas de carga en PageSpeed página PlayStation después" class="&#34; " loading="lazy"></a>
-<a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-intel-nuc-despues_hu2356797227062575214.webp" data-gallery="" title="Métricas de carga de PageSpeed página Intel NUC después"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-intel-nuc-despues_hu12310645335018158275.webp" width="125" height="200" alt="Métricas de carga de PageSpeed página Intel NUC después" title="Métricas de carga de PageSpeed página Intel NUC después" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-playstation-despues_hu_dcd4da72c5f59c29.webp" data-gallery="" title="Métricas de carga en PageSpeed página PlayStation después"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-playstation-despues_hu_950eeabdcf27bc8.webp" width="143" height="200" alt="Métricas de carga en PageSpeed página PlayStation después" title="Métricas de carga en PageSpeed página PlayStation después" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-intel-nuc-despues_hu_df170d751085f04e.webp" data-gallery="" title="Métricas de carga de PageSpeed página Intel NUC después"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-intel-nuc-despues_hu_c754be1cd338899c.webp" width="125" height="200" alt="Métricas de carga de PageSpeed página Intel NUC después" title="Métricas de carga de PageSpeed página Intel NUC después" class="" loading="lazy"></a></p>
 <figcaption>Métricas de carga en PageSpeed después</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-firefox-despues_hu3542037886752785922.webp" data-gallery="" title="Métricas de carga de Firefox página PlayStation después"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-firefox-despues_hu5493835287080563469.webp" width="300" height="12" alt="Métricas de carga de Firefox página PlayStation después" title="Métricas de carga de Firefox página PlayStation después" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-firefox-despues_hu_86f69f17125fde43.webp" data-gallery="" title="Métricas de carga de Firefox página PlayStation después"><img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-firefox-despues_hu_e5fee573cdd18d5f.webp" width="300" height="12" alt="Métricas de carga de Firefox página PlayStation después" title="Métricas de carga de Firefox página PlayStation después" class="" loading="lazy"></a></p>
 <figcaption>Métricas de carga en Firefox</figcaption>
 </figure>
 </div>
@@ -461,7 +461,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/">
-                <img src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu248334668893711718.webp" width="326" height="125" alt="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" title="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" class="" loading="lazy">
+                <img src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu_c415de9b81f47b65.webp" width="326" height="125" alt="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" title="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" class="" loading="lazy">
                 <h3>Implementar un segundo factor de autenticación en una aplicación web Java con Spring</h3>
                 </a>
                 
@@ -489,7 +489,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/">
-                <img src="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole_hu12306730704600684612.webp" width="326" height="125" alt="Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java" title="Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java" class="" loading="lazy">
+                <img src="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole_hu_d9d40ac9775af82e.webp" width="326" height="125" alt="Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java" title="Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java" class="" loading="lazy">
                 <h3>Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java</h3>
                 </a>
                 

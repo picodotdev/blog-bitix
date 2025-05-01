@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta name="generator" content="Hugo 0.139.4">
+	<meta name="generator" content="Hugo 0.147.1">
   <meta name="base" href="/blog-bitix/">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -271,7 +271,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>La documentación generada por <a href="https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/">la herramienta Javadoc</a> se puede adaptar a las necesidades propias ya que tiene mecanismos para extenderla. <a href="https://picodotdev.github.io/blog-bitix/2017/09/crear-anotaciones-de-javadoc-personalizadas-con-taglets/">Crear un <em>taglet</em> propio</a> es una forma pero también se pueden modificar los estilos aplicados al HTML generado, por ejemplo, para adaptar el Javadoc a los colores de la organización o para incluir un logotipo en la cabecera o un texto en el pie de página.</p>
 <p>El comando <em>javadoc</em> con el que se genera la documentación posee opciones para modificar la cabecera, el pie de página o usar una hoja de estilos propia. Estas opciones son  <em>-header</em>, <em>-footer</em> y <em>-stylesheetfile</em>. Un punto de partida para modificar los estilos es usar la hoja de estilos generada por defecto, realizar en ella las modificaciones oportunas y finalmente indicar que se use con el opción <em>-stylesheetfile</em>.</p>
@@ -299,7 +299,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p><a href="https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/">La herramienta de documentación es Javadoc de Java</a> permite a partir del código fuente de un programa o librería generar un conjunto de documentos en formato HTML enlazados entre si consultables con un navegador web y accesibles desde internet si son accesibles con un servidor web. La documentación se genera a partir de las clases y métodos del código fuente y también a partir de los comentarios de las clases y métodos.</p>
           
@@ -326,7 +326,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Habiendo explicado <a href="https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/">qué es la herramienta Javadoc</a>, y en otros artículos <a href="https://picodotdev.github.io/blog-bitix/2017/09/crear-anotaciones-de-javadoc-personalizadas-con-taglets/">como crear taglets</a> para incluirlos en los comentarios y generar contenido con los mecanismos de extensión que ofrece y explicado <a href="https://picodotdev.github.io/blog-bitix/2017/09/cambiar-y-personalizar-los-estilos-de-la-documentacion-javadoc/">como cambiar los estilos que se usan por defecto en el Javadoc</a> para por ejemplo cambiar los colores según la organización o incluir un texto de derechos de autor en el pie de página, hay que generar la documentación <em>javadoc</em> usando la herramienta de construcción que usemos. En este artículo muestro como generar la documentación <em>javadoc</em> con <a href="https://gradle.org/">Gradle</a>.</p>
           
@@ -353,7 +353,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Programar y desarrollar requiere además de poseer diversos conocimientos disponer de una buena documentación de consulta y referencia. Una de las cosas buenas que me gustaron de Java cuando empecé a programar en este lenguaje, cuando aún estaba lejos de tener internet y aún me lo sigue pareciendo, fue su <a href="https://docs.oracle.com/javase/8/docs/api/overview-summary.html">documentación Javadoc</a> de toda la API de clases incluidas en el JDK.</p>
 <p>La documentación Javadoc es una colección de páginas HTML de todas las clases, métodos, parámetros y retornos junto con la información y especificaciones que quiera incluir el desarrollador de la API que en el caso de las clases de JDK incluye abundantes e interesantes detalles de implementación a tener en cuenta al usar las clases. El Javadoc es también es una herramienta de línea de comandos que permite generar la colección de páginas HTML a partir del código fuente Java.</p>
@@ -381,7 +381,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Cuando un objeto ya no es alcanzable a través de ninguna referencia directa o cadena de referencias fuertes el objeto es seleccionable para reclamar su memoria y el recolector de basura o <em>garbage collector</em> de Java lo hace cuando estima oportuno, liberándonos a los programadores de esta tarea, simplificando el código y evitando fugas de memoria. El lenguaje Java le debe al recolector de basura entre otras varias cosas una buena parte de su éxito.</p>
           
@@ -462,9 +462,9 @@ X{n,m}  X{n,m}?    X{n,m}+     X, al menos n veces pero no mas de m
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
-<p>En ocasiones es necesario usar una cache que contenga un número de elementos hasta un límite y que cuando se vayan añadiendo más se vayan borrando otros según algún criterio. En Java si no queremos añadir una nueva dependencia al proyecto con una librería especializada como <a href="https://www.ehcache.org/">Ehcache</a> la clase <a href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html">LinkedHashMap</a> sirve para aquellos casos de uso simples sin necesidad de dependencias adicionales.</p>
+<p>En ocasiones es necesario usar una cache que contenga un número de elementos hasta un límite y que cuando se vayan añadiendo más se vayan borrando otros según algún criterio. En Java si no queremos añadir una nueva dependencia al proyecto con una librería especializada como <a href="https://www.ehcache.org/">Ehcache</a> la clase <a href="#ZgotmplZ">LinkedHashMap</a> sirve para aquellos casos de uso simples sin necesidad de dependencias adicionales.</p>
 <p>Si el coste de obtener algunos datos es costoso ya sean porque hay que obtenerlos de una base de datos, mediante una operación de disco o red o hay que hacer algún cálculo sobre ellos en estos casos guardar los datos en una cache supondrá un aumento notable de rendimiento de mayor o menor medida según el coste de la operación que evita la cache. Usar una cache es viable si es posible usar datos no completamente actualizados y dedicar algo de espacio en memoria para la cache. Si en la mayor parte de las búsquedas que se hacen en la cache el elemento buscado está ya presente se considera un acierto o <em>hit</em> y si no está presente un fallo o <em>miss</em>, cuando mayor sea el número de aciertos en la cache mayor será el aumento rendimiento percibido.</p>
           
           <br>
@@ -518,9 +518,9 @@ X{n,m}  X{n,m}?    X{n,m}+     X, al menos n veces pero no mas de m
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
-<p>Java es un lenguaje más verboso y con menos azúcar sintáctico (o veneno para ratas, según se mire) que otros lenguajes. Esto hace que por ejemplo para declarar e inicializar objetos tan comunes en un programa de tipo <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html">Map</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a> o <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html">Set</a> que contengan un número fijo de elementos haya que escribir varias líneas de código. Estas clases de estructuras de datos del grupo de colecciones son de las más usadas en una aplicación Java. A la fecha de escribir este artículo Java no soporta literales para las colecciones que reduzca las lineas de código para inicializarlas y mejore la legibilidad del código aunque en versiones recientes si se han incorporado métodos de utilidad que cubren el requerimiento.</p>
+<p>Java es un lenguaje más verboso y con menos azúcar sintáctico (o veneno para ratas, según se mire) que otros lenguajes. Esto hace que por ejemplo para declarar e inicializar objetos tan comunes en un programa de tipo <a href="#ZgotmplZ">Map</a>, <a href="#ZgotmplZ">List</a> o <a href="#ZgotmplZ">Set</a> que contengan un número fijo de elementos haya que escribir varias líneas de código. Estas clases de estructuras de datos del grupo de colecciones son de las más usadas en una aplicación Java. A la fecha de escribir este artículo Java no soporta literales para las colecciones que reduzca las lineas de código para inicializarlas y mejore la legibilidad del código aunque en versiones recientes si se han incorporado métodos de utilidad que cubren el requerimiento.</p>
           
           <br>
           <a href="/blog-bitix/2017/08/el-antipatron-de-inicializacion-de-variables-con-dobles-llaves-en-java/">Continuar leyendo...</a>
@@ -587,7 +587,7 @@ X{n,m}  X{n,m}?    X{n,m}+     X, al menos n veces pero no mas de m
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/quercus-robur.webp" width="175" height="265" alt="Quercus Robur" title="Quercus Robur" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/quercus-robur.webp" width="175" height="265" alt="Quercus Robur" title="Quercus Robur" class="" loading="false"></p>
 </div>
 <p>Hace ya mucho tiempo de pequeño planté alguna semilla de manzana por curiosidad para ver si germinaba, y sí germinó, pero al cabo de unos meses por desconocimiento de la forma de como cuidar una planta, excesivo riego o tierra no adecuada el retoño de manzano pereció. También planté alguna bellota de algún tipo de roble que alguno de mis hermanos trajo a casa, y sí germinó, y al igual que el manzano duró unos cuantos meses pero sucumbió de la misma forma.</p>
           
@@ -607,7 +607,7 @@ X{n,m}  X{n,m}?    X{n,m}+     X, al menos n veces pero no mas de m
         </span>
         <p>
           
-            <p>Tener en casa un pequeño conjunto de herramientas es necesario para realizar pequeñas tareas domésticas, desde quitar un grifo a atornillar algún elemento. Buscando en el gran catálogo del que dispone <a href="https://amzn.to/2flFhHA" rel="sponsored">Amazon</a> en su web quería uno que fuese bastante completo sin ser muy caro y aunque no fuese de calidad profesional cumpliese con las tarea. Hay muchos modelos pero me fijé en uno de <a href="https://amzn.to/2w6YVem" rel="sponsored">Mannesmann modelo M29085</a>. También necesitaba unas bandejas para la cocina y salón.</p>
+            <p>Tener en casa un pequeño conjunto de herramientas es necesario para realizar pequeñas tareas domésticas, desde quitar un grifo a atornillar algún elemento. Buscando en el gran catálogo del que dispone <a href="https://amzn.to/2flFhHA">Amazon</a> en su web quería uno que fuese bastante completo sin ser muy caro y aunque no fuese de calidad profesional cumpliese con las tarea. Hay muchos modelos pero me fijé en uno de <a href="https://amzn.to/2w6YVem">Mannesmann modelo M29085</a>. También necesitaba unas bandejas para la cocina y salón.</p>
           
           <br>
           <a href="/blog-bitix/2017/07/desempaquetado-maletin-herramientas-mannesmann-y-bandejas-melamina-balvi/">Continuar leyendo...</a>

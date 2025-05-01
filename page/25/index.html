@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta name="generator" content="Hugo 0.139.4">
+	<meta name="generator" content="Hugo 0.147.1">
   <meta name="base" href="/blog-bitix/">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -245,10 +245,10 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/sun-microsystems.svg" width="300" height="131" alt="Sun Microsystems" title="Sun Microsystems" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/sun-microsystems.svg" width="300" height="131" alt="Sun Microsystems" title="Sun Microsystems" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/oracle.svg" width="300" height="42" alt="Oracle" title="Oracle" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/oracle.svg" width="300" height="42" alt="Oracle" title="Oracle" class="" loading="false"></p>
 </div>
 <p>Era enero del 2010 y se anunciaba que <a href="https://www.oracle.com/">Oracle</a> adquiría <a href="https://es.wikipedia.org/wiki/Sun_Microsystems">Sun</a> (<em>Stanford University Network</em>) por unos 7400 millones de dólares. Sun Microsystems era asimilada por uno de los grandes entre el mundo empresarial que eliminaba a uno de sus competidores. Fue un hecho importante debido a varias de las tecnologías que había desarrollado Sun y poseía como aún a día de hoy uno de los lenguajes más populares para el desarrollo de software, Java, y otras tecnologías importantes que había adquirido hace no tanto tiempo como la base de datos <a href="https://www.mysql.com/">MySQL</a> competencia de Oracle.</p>
           
@@ -277,10 +277,10 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Teniendo una buen número de microservicios con múltiples instancias ofreciendo cada uno una API y en una ubicación diferente para simplificar la visión de los que actúen clientes de los microservicios se puede utilizar un <em>proxy</em>. Con un <em>proxy</em> es posible centralizar todas las peticiones, que sea éste el encargado de conocer la ubicación de todas las instancias de los microservicios y de hacer la llamada allí donde se encuentre cada una de ellas.</p>
           
@@ -309,10 +309,10 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Un servicio que recibe numerosas peticiones o es crítico para el funcionamiento de una aplicación es necesario escalarlo o crear múltiples instancias de él para atender toda la carga que se demanda o para que en caso de que una instancia falle haya otras disponibles que funcionen correctamente para atender las peticiones.</p>
 <p>En este entorno de múltiples instancias se hace necesario un servicio de registro y descubrimiento que usando <a href="https://spring.io/">Spring</a>, <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> y <a href="https://cloud.spring.io/spring-cloud-netflix/">Spring Cloud Netflix</a> una implementación es <a href="https://github.com/Netflix/eureka">Eureka</a>. Una vez descubiertas las instancias que hay del servicio es necesario hacer balanceo de carga para conseguir escalabilidad y tolerancia a fallos, en el mismo proyecto de Spring Cloud Netflix para realizar balanceo de carga en el cliente se ofrece <a href="https://github.com/Netflix/ribbon">Ribbon</a>.</p>
@@ -342,10 +342,10 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Los microservicios son independientes unos de otros y se comunican mediante operaciones de red. Dado que las operaciones se realizan a través de un medio no confiable como la red, dada su naturaleza efímera y a que pueden fallar en los microservicios es importante que los clientes estén preparados ante posibles fallos.</p>
 <p>Un patrón o técnica que se suele emplear es el de <a href="https://www.martinfowler.com/bliki/CircuitBreaker.html">Circuit Breaker</a>, en Java y con <a href="https://spring.io/">Spring</a> se ofrece en el proyecto <a href="https://cloud.spring.io/spring-cloud-netflix/">Spring Cloud Netflix</a> mediante <a href="https://github.com/Netflix/Hystrix">Hystrix</a> y <a href="https://github.com/Netflix/Hystrix/tree/master/hystrix-contrib/hystrix-javanica">Javanica</a>. Este patrón soluciona dos problemas cuando un microservicio del que se depende falla y hace al microservicio que lo usa tolerante a fallos.</p>
@@ -375,10 +375,10 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Para no tener que hacer cambios en el código que implica recompilar la aplicación y generar de nuevos los artefactos al cambiar algunos valores de la aplicación se utilizan los archivos de configuración. Los archivos de configuración son archivos de texto plano que pueden seguir algún formato como <em>properties</em>, <em>xml</em> o <em>yaml</em>, externos a la aplicación pero que lee sus propiedades al iniciarse. Algunas propiedades de configuración de ejemplo pueden ser la cadena de conexión a una base de datos, el usuario y contraseña.</p>
           
@@ -433,10 +433,10 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>No es raro la necesidad de querer cambiar algunos valores de la configuración de una aplicación sin ningún cambio adicional en el código. Normalmente la configuración se externaliza en un archivo de texto en un determinado formato como <em>properties</em> o <em>yaml</em> que se lee al iniciarse la aplicación pero que al querer hacer cambios y hacerlos efectivos requiere reiniciar la aplicación.</p>
 <p>Para evitar la caída de servicio en un reinicio de aplicación requiere tener varias instancias de la aplicación, ir sacando del balanceador las instancias para que no le soliciten nuevas peticiones, reiniciarlas y añadirlas de nuevo al balanceador si se hace balanceo de carga en el servidor o reiniciar las aplicaciones progresivamente si se hace en el cliente. Y esto con todas las instancias del servicio. <a href="https://cloud.spring.io/spring-cloud-config/">Spring Cloud Config</a> y <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> entre sus funcionalidades de configuración posee una que consiste en recargar la configuración o ciertas partes de la misma. Para ello <a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready">Spring Boot Actuator</a> ofrece un <em>endpoint</em> con el que disparar la recarga.</p>
@@ -484,10 +484,10 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
 </div>
 <p>El siguiente aparente, gracioso e inocente conjunto de caracteres que parecen una colección de varios extraños <em>emojis</em> es un comando que si se ejecuta en una terminal de GNU/Linux crea gran cantidad de procesos de forma continua hasta que los recursos del sistema se agotan causando que sea inusable haya que reiniciarlo generando los problemas que de ello se deriven si el reinicio es forzado, este comando es el comando <a href="https://en.wikipedia.org/wiki/Fork_bomb">fork bomb</a> para el intérprete de comandos <a href="https://es.wikipedia.org/wiki/Bash">bash</a>.</p>
           
@@ -514,7 +514,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/visual-studio-code.svg" width="200" height="199" alt="Visual Studio Code" title="Visual Studio Code" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/visual-studio-code.svg" width="200" height="199" alt="Visual Studio Code" title="Visual Studio Code" class="" loading="false"></p>
 </div>
 <p>Para trabajar y desde que empecé a usar un generador estático para el blog primero con <a href="http://octopress.org/">Octopress</a> y luego con <a href="https://gohugo.io/">Hugo</a> he necesitado un editor de archivos de texto y de código fuente. Uno de los más conocidos es <a href="https://www.sublimetext.com/">Sublime Text</a> con numerosas funcionalidades y atajos de teclado para realizar muchas acciones únicamente pulsado unas pocas teclas y sin necesidad de ratón en gran medida. Sublime Text está muy bien pero no es gratuito por lo que después de un tiempo empecé a usar <a href="https://atom.io/">Atom</a>, sin embargo, al estar este basado en <a href="https://electronjs.org/">Electron</a> que en realidad es un navegador <a href="https://www.google.es/chrome/browser/desktop/">Chrome</a> y <a href="https://es.wikipedia.org/wiki/JavaScript">JavaScript</a> con <a href="https://nodejs.org/en/">Node</a> su rendimiento se nota pobre. Buscando más alternativas la gente mencionaba bastante a menudo <a href="https://code.visualstudio.com/">Visual Studio Code</a>, lo probé, es el que más me ha gustado de todos y el que uso ahora.</p>
           
@@ -543,10 +543,10 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Los microservicios en una aplicación con una arquitectura de microservicios son efímeros, se crean, se escalan para atender picos de mayor demanda, pueden desaparecer por problemas de la red de comunicaciones que no es fiable y volverse a crear en una ubicación diferente. Por esta naturaleza efímera es necesario un servicio con el cual los clientes de los microservicios puedan encontrarlos y que los microservicios utilizan para registrarse cuando se inician.</p>
           
@@ -573,10 +573,10 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>La arquitectura de las aplicaciones está cambiando en lo que era lo habitual hace no tanto. Con el desarrollo de las redes de comunicación entre computadoras tanto en una red local con ethernet como en internet con el protocolo TCP/IP se desarrollaron las primeras aplicaciones cliente/servidor como es un servidor web y un navegador o una base de datos y una aplicación.</p>
 <p>A las páginas HTML de los servidores web, estáticas hasta entonces, se les añadió lógica de servidor para procesar datos y generar el contenido dinámicamente, se crearon las aplicaciones web ejecutadas en el servidor en un principio en lo que ahora denominamos monolitos en forma de <a href="https://es.wikipedia.org/wiki/C%C3%B3digo_espagueti">código espagueti</a> o más estructurado con los denominados <em>frameworks</em> del lenguaje de programación de turno empleando el <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_por_capas">modelo de tres capas</a> formadas por la presentación, lógica y base de datos.</p>
@@ -604,7 +604,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
 </div>
 <p>Los fragmentos en el contexto de <a href="https://graphql.org/">GraphQL</a> pueden ser de dos tipos, definidos previamente o definidos en linea. Los primeros permiten simplificar las consultas definiendo en un bloque una colección de datos a recuperar si tener que indicarlos explícitamente individualmente, lo que resulta útil para no repetir el mimo grupo de datos si se utiliza en varias consultas diferentes. Los fragmentos en línea permiten recuperar unos datos u otros en función del tipo de la instancia de la cual se quieren recuperar.</p>
           
@@ -631,7 +631,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
 </div>
 <p>En <a href="https://graphql.org/">GraphQL</a> construyendo la consulta adecuada se recuperan exclusivamente los datos solicitados.</p>
 <p>Por ejemplo, si de un libro solo se requieren las propiedades el <em>id</em>, <em>title</em> y <em>date</em> de entre todas las que tienen la consulta sería en este caso la siguiente para una consulta que devuelve los datos de un conjunto de libros.</p>
@@ -666,7 +666,7 @@
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
 </div>
 <p>Hace ya un tiempo escribí una <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">serie de artículos sobre GraphQL</a> para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con <a href="https://graphql.org/">GraphQL</a> usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.</p>
 <p>Uno de esas posibilidades de GraphQL es la herramienta <a href="https://github.com/graphql/graphiql">GraphiQL</a> que es un editor interactivo para construir consultas y explorar la API. Una de sus mayores ventajas es que ofrece asistencia contextual y proporciona mensajes de error en caso de que la sintaxis de la consulta sea errónea. En los artículos que escribí con anterioridad los ejemplos los hice usando el comando <em>curl</em>. Ahora que he visto y aprendido algunas pocas cosas más de GraphQL en este artículo explico como usar la herramienta GraphiQL como alternativa a <em>curl</em>.</p>

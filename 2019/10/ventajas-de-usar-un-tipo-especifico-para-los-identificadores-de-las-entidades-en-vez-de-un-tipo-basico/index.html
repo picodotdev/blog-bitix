@@ -106,15 +106,15 @@ Al persistir una entidad de dominio en la base de datos su identificador se guar
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/hibernate.svg" width="200" height="200" alt="Hibernate" title="Hibernate" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/hibernate.svg" width="200" height="200" alt="Hibernate" title="Hibernate" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/jooq.webp" width="200" height="200" alt="jOOQ" title="jOOQ" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/jooq.webp" width="200" height="200" alt="jOOQ" title="jOOQ" class="" loading="false"></p>
 </div>
-<p>Al persistir una entidad de dominio en la base de datos su identificador se guarda como un tipo de datos soportado por la base de datos. Si es una base de datos relacional habitualmente es el equivalente a un <em>bigint</em> o en una base de datos de documentos quizá un UUID. En las entidades de dominio el tipo de datos usado para el identificador es el equivalente de la base de datos en el lenguaje de programación. Por ejemplo, si en una base de datos la clave primaria es un <em>bigint</em> el identificador en la entidad de dominio es un <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Long.html">Long</a>. Esto es lo mas simple pero tiene algún inconveniente.</p>"
+<p>Al persistir una entidad de dominio en la base de datos su identificador se guarda como un tipo de datos soportado por la base de datos. Si es una base de datos relacional habitualmente es el equivalente a un <em>bigint</em> o en una base de datos de documentos quizá un UUID. En las entidades de dominio el tipo de datos usado para el identificador es el equivalente de la base de datos en el lenguaje de programación. Por ejemplo, si en una base de datos la clave primaria es un <em>bigint</em> el identificador en la entidad de dominio es un <a href="#ZgotmplZ">Long</a>. Esto es lo mas simple pero tiene algún inconveniente.</p>"
 }
   </script>
   
@@ -329,15 +329,15 @@ Al persistir una entidad de dominio en la base de datos su identificador se guar
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/hibernate.svg" width="200" height="200" alt="Hibernate" title="Hibernate" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/hibernate.svg" width="200" height="200" alt="Hibernate" title="Hibernate" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/jooq.webp" width="200" height="200" alt="jOOQ" title="jOOQ" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/jooq.webp" width="200" height="200" alt="jOOQ" title="jOOQ" class="" loading="false"></p>
 </div>
-<p>Al persistir una entidad de dominio en la base de datos su identificador se guarda como un tipo de datos soportado por la base de datos. Si es una base de datos relacional habitualmente es el equivalente a un <em>bigint</em> o en una base de datos de documentos quizá un UUID. En las entidades de dominio el tipo de datos usado para el identificador es el equivalente de la base de datos en el lenguaje de programación. Por ejemplo, si en una base de datos la clave primaria es un <em>bigint</em> el identificador en la entidad de dominio es un <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Long.html">Long</a>. Esto es lo mas simple pero tiene algún inconveniente.</p>
+<p>Al persistir una entidad de dominio en la base de datos su identificador se guarda como un tipo de datos soportado por la base de datos. Si es una base de datos relacional habitualmente es el equivalente a un <em>bigint</em> o en una base de datos de documentos quizá un UUID. En las entidades de dominio el tipo de datos usado para el identificador es el equivalente de la base de datos en el lenguaje de programación. Por ejemplo, si en una base de datos la clave primaria es un <em>bigint</em> el identificador en la entidad de dominio es un <a href="#ZgotmplZ">Long</a>. Esto es lo mas simple pero tiene algún inconveniente.</p>
 <p>El inconveniente es que al ser el identificador un tipo de datos básico cualquier <em>Long</em> es aceptado, con lo que se hacen posibles errores o malos comportamientos al usar un identificador de otra entidad de dominio si también es un <em>Long</em> donde no se debería. El compilador no captura este tipo de errores porque entiende como correcto cualquier <em>Long</em> independientemente de su significado desde el punto de vista de la aplicación.</p>
 <p>También en cierta medida es un problema en la legibilidad del código ya que el tipo de dato de una variable no es significativo para saber si es un identificador. También es un problema al trabajar con colecciones, los siguientes ejemplos de código demuestran que los tipos no son todo lo semánticos o significativos que deberían.</p>
 <div class="code">
@@ -464,7 +464,7 @@ Al persistir una entidad de dominio en la base de datos su identificador se guar
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/09/novedades-de-java-13/">
-                <img src="/blog-bitix/2019/09/novedades-de-java-13/images/java-13_hu12208564887272785554.webp" width="326" height="125" alt="Novedades de Java 13" title="Novedades de Java 13" class="" loading="lazy">
+                <img src="/blog-bitix/2019/09/novedades-de-java-13/images/java-13_hu_d03bd780fc5bfcb8.webp" width="326" height="125" alt="Novedades de Java 13" title="Novedades de Java 13" class="" loading="lazy">
                 <h3>Novedades de Java 13</h3>
                 </a>
                 
@@ -478,7 +478,7 @@ Al persistir una entidad de dominio en la base de datos su identificador se guar
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/09/libreria-editor-de-markdown-javascript-y-procesador-de-markdown-para-generar-html-con-java/">
-                <img src="/blog-bitix/2019/09/libreria-editor-de-markdown-javascript-y-procesador-de-markdown-para-generar-html-con-java/images/editor-md_hu10051649768357703712.webp" width="326" height="125" alt="Librería editor de markdown JavaScript y procesador de markdown para generar HTML con Java" title="Librería editor de markdown JavaScript y procesador de markdown para generar HTML con Java" class="" loading="lazy">
+                <img src="/blog-bitix/2019/09/libreria-editor-de-markdown-javascript-y-procesador-de-markdown-para-generar-html-con-java/images/editor-md_hu_f671074decbef89b.webp" width="326" height="125" alt="Librería editor de markdown JavaScript y procesador de markdown para generar HTML con Java" title="Librería editor de markdown JavaScript y procesador de markdown para generar HTML con Java" class="" loading="lazy">
                 <h3>Librería editor de markdown JavaScript y procesador de markdown para generar HTML con Java</h3>
                 </a>
                 

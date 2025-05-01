@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/images/specification_hu2894649850528746535.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/images/specification_hu_5f36181ef323e038.png">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Los métodos de búsqueda y consulta permiten recuperar objetos de las bases de datos según los criterios deseados. Dependiendo del tamaño de la aplicación y sus casos de uso el número de consultas será más o menos grande. Con un número de consultas grande estas se vuelven complejas de mantener y generan duplicación de lógica de negocio. Para simplificar el mantenimiento de un número grande de consultas y evitar duplicidad de lógica de negocio una solución es implementar el patrón de diseño Specification. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/images/specification_hu2894649850528746535.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/images/specification_hu_5f36181ef323e038.png">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data">
@@ -55,14 +55,14 @@
     "headline": "El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/images/specification_hu2894649850528746535.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/images/specification_hu_5f36181ef323e038.png"
         
       },
     "datePublished": "2020-06-12T16:00:00+02:00",
     "dateModified": "2020-06-12T16:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "2329",
+    "wordCount": "2331",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -304,10 +304,10 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <p>Dado un objeto suele ser necesario comprobar si cumple una o más condiciones. Estas condiciones pueden implementarse tanto en un método del objeto como en la lógica de persistencia en la base de datos.</p>
 <p>Esta aproximación tiene dos inconvenientes, el número de métodos de consulta crece significativamente en las aplicaciones grandes y las consultas son conjunto fijo sin posibilidad de extensión salvo añadir nuevos métodos, las consultas no son fáciles de externalizar y reutilizar.</p>
@@ -405,7 +405,7 @@
 </div>
 <h2 id="implementación-para-jpa-con-spring-data">Implementación para JPA con Spring Data</h2>
 <p>El proyecto Spring Data para el acceso a bases de datos con JPA implementa el patrón de diseño <em>Specification</em>, la interfaz <a href="https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaSpecificationExecutor.html">JpaSpecificationExecutor</a> añade a los repositorios métodos de búsqueda que reciben un argumento de tipo <a href="https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/domain/Specification.html">Specification</a>.</p>
-<p>Esta clase <em>Specification</em> transforma las condiciones en un objeto <a href="https://javaee.github.io/javaee-spec/javadocs/javax/persistence/criteria/Predicate.html">Predicate</a> que es el que JPA usa para las condiciones de la consulta SQL que se genera. La interfaz <em>JpaSpecificationExecutor</em> también añade métodos para hacer búsquedas paginadas y con ordenación.</p>
+<p>Esta clase <em>Specification</em> transforma las condiciones en un objeto <a href="#ZgotmplZ">Predicate</a> que es el que JPA usa para las condiciones de la consulta SQL que se genera. La interfaz <em>JpaSpecificationExecutor</em> también añade métodos para hacer búsquedas paginadas y con ordenación.</p>
 <p>Si en el proyecto se utiliza Spring y JPA esta es la opción recomendada, si no se utiliza Spring o se utiliza otra librería de persistencia distinta a JPA se puede realizar una implementación siguiendo los principios del patrón <em>Specification</em>.</p>
 <p>Las clases <em>EqualsSpecification</em>, <em>IsCheapSpecification</em>, <em>IsLongTermSpecification</em>, y <em>IsOverstockSpecification</em> anteriores también implementan la interfaz <em>Specification</em> de Spring Data. Estas clases implementan dos interfaces distintas para diferentes cosas, para hacer comprobaciones sobre un objeto en memoria y para generar clases <em>Predicate</em> con las condiciones equivalentes de JPA, son símplemente ejemplos y para separar conceptos no estaría mal dividir cada clase en dos para que implementen las interfaces de forma individual.</p>
 <div class="code">
@@ -436,9 +436,9 @@
 </div>
 <p>Otra de las funcionalidades proporcionadas por Spring Data es hacer <a href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#query-by-example">consultas basadas en un objeto ejemplo</a> o <em>query by example</em>.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PatronSpecification">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradew test</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PatronSpecification">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradew test</code></p>
 </div>
 <p>Referencia:</p>
 <ul>

@@ -62,7 +62,7 @@
     "dateModified": "2021-07-30T12:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1943",
+    "wordCount": "1945",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -305,15 +305,15 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Una aplicación diseñada como una colección de microservicios se compone de múltiples de ellos, unos microservicios son consumidos por otros y a su vez un microservicio consume otros uno o varios.</p>
 <p>Algunas aplicaciones son diseñadas para ofrecer su funcionalidad a través de un API desde el primer momento por su independencia de los clientes que hagan uso de ella. Tener un API permite dar soporte a los múltiples clientes ya sean directamente desde el navegador web, una aplicación nativa de un dispositivo como un teléfono inteligente o incluso para ofrecer a tercera partes de modo que realicen integraciones y automatizaciones según sus necesidades.</p>
 <p>Las ventajas de los microservicios son varios como los anteriores junto a algunos otros adicionales, sin embargo, añaden otros problemas, principalmente el mayor número de elementos que los hacen más complejos comparado con una aplicación monolítica.</p>
 <div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
-    <li><a href="#el-servidor-_mock_">El servidor <em>mock</em></a></li>
-    <li><a href="#opciones-de-servidores-_mock_">Opciones de servidores <em>mock</em></a></li>
+    <li><a href="#el-servidor-mock">El servidor <em>mock</em></a></li>
+    <li><a href="#opciones-de-servidores-mock">Opciones de servidores <em>mock</em></a></li>
     <li><a href="#características-de-wiremock">Características de WireMock</a></li>
     <li><a href="#ejemplo-de-prueba-de-wiremock">Ejemplo de prueba de WireMock</a>
       <ol>
@@ -325,12 +325,12 @@
 </nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
     <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
 </div></div></div>
-<h2 id="el-servidor-_mock_">El servidor <em>mock</em></h2>
+<h2 id="el-servidor-mock">El servidor <em>mock</em></h2>
 <p>Muchas aplicaciones se basan en <a href="https://picodotdev.github.io/blog-bitix/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/">microservicios REST haciendo uso del protocolo HTTP y JSON</a> como formato de datos. Un servidor <em>mock</em> es simplemente un servidor web que en caso de los microservicios es utilizado para programar las respuestas para las peticiones que se le hagan según el <em>endpoint</em> invocado, variables en el <em>path</em>, parámetros o cabeceras. Las respuestas programadas incluyen el código de estado, cabeceras devueltas y datos del cuerpo.</p>
 <p>Un servidor de imitación o <em>mock</em> facilita el desarrollo de los microservicios de forma independiente y las pruebas. El servidor <em>mock</em> elimina la dependencia de un servicio real junto con todo el entorno de ejecución que necesite que en el caso de algunos llega a ser notablemente complejo si incluye base de datos, sistemas de mensajería u otros servicios. El servicio es sustituido por una imitación que devuelve las respuestas programadas para cada una de las peticiones.</p>
 <p>Otro caso de uso de un servidor <em>mock</em> es permitir realizar pruebas de código o convertir pruebas de integración en unitarias. Otro uso de un servidor <em>mock</em> es que permite centrarse en el desarrollo de un servicio sin necesidad de usar servicios reales incluso antes de que estos estén implementados si su interfaz está definida.</p>
 <p>Uno de los potenciales riesgos de utilizar un servidor <em>mock</em> es que este no se ajuste a la realidad del servicio real cuando este contenga cambios incompatibles. Un servidor <em>mock</em> permite simular las respuestas de un servicio HTTP lo que facilita las pruebas unitarias de la parte cliente, sin embargo, esto no asegura que el servidor al realizar en las pruebas de integración o en producción cumpla con el contrato que el cliente espera de su API. Para asegurar que el servidor soporta las peticiones esperadas por la parte cliente y devuelve los datos esperados otra forma de pruebas son las <a href="https://picodotdev.github.io/blog-bitix/2021/08/introduccion-y-ejemplo-de-contract-testing-con-pact/">pruebas de contrato o <em>contract testing</em> con Pact</a>, una herramienta de pruebas de contrato que soporta el lenguaje Java entre otros.</p>
-<h2 id="opciones-de-servidores-_mock_">Opciones de servidores <em>mock</em></h2>
+<h2 id="opciones-de-servidores-mock">Opciones de servidores <em>mock</em></h2>
 <p>Como cualquier otro tipo de herramienta hay múltiples opciones entre las que elegir. La principal característica de todo servidor <em>mock</em> es permitir programar las respuestas según las peticiones, sus diferencias está en el lenguaje de programación en el que están implementadas y su entorno de ejecución necesario así como su tipo de licencia. Algunas ofrecen programar las respuestas a través de una API del lenguaje de programación para el que están destinadas.</p>
 <p>Hay muchas opciones de servidor <em>mock</em> algunas conocidas son <a href="https://www.mock-server.com/">MockServer</a>, <a href="http://wiremock.org/">WireMock</a>, <a href="https://github.com/outofcoffee/imposter">Imposter</a> o <a href="https://stoplight.io/open-source/prism/">Prism</a>. Varias implementadas con JavaScript, otras en Java y algunas incluso se ofrecen en forma de software como servicio para delegar el mantenimiento de la herramienta en una tercera parte.</p>
 <h2 id="características-de-wiremock">Características de WireMock</h2>
@@ -407,9 +407,9 @@
 </div>
 <p>En este caso WireMock se ha usado de forma directa, en el caso de utilizar <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> uno de los proyectos de <a href="https://cloud.spring.io/spring-cloud-contract/reference/html/project-features.html#features-wiremock">Spring proporciona librerías para facilitar y hacer compatible el uso de WireMock con JUnit y Spring</a>.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaWireMock">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew test</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaWireMock">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew test</code></p>
 </div>
 
     </div>
@@ -492,7 +492,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/">
-                <img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu15762454492934130705.webp" width="326" height="125" alt="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" title="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" class="" loading="lazy">
+                <img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu_c1681c9a144c6877.webp" width="326" height="125" alt="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" title="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" class="" loading="lazy">
                 <h3>Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java</h3>
                 </a>
                 

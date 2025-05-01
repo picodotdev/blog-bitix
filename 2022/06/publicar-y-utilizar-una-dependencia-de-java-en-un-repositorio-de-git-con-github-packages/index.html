@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="Publicar y utilizar una dependencia de Java en un repositorio de Git con GitHub Packages">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-packages-artifact_hu3970703216180208815.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-packages-artifact_hu_f9ccfbaf097ef765.png">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="El software ofrecido como servicio tiene la ventaja principal de que delega en el proveedor del servicio su administración. El delegar la administración del servicio está motivada por tener ciertas garantías de que el software tiene mayor disponibilidad y fiabilidad. A cambio de esa administración el proveedor del software como servicio establece un precio por su SaaS que llega a compensar tener que administrar el servicio uno mismo que también tiene unos costes en servidor, personal, fiabilidad y también tiempo de dedicación. Una de las funcionalidades que requiere una infraestructura en una organización para desarrollar sus aplicaciones es un repositorio de artefactos o paquetes, GitHub Packages el servicio de repositorio de artefactos compatibles con los artefactos producidos por los principales lenguajes de programación para compartir bibliotecas de código entre ellos Java y JavaScript y tecnologías de contenedores como imágenes Docker. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-packages-artifact_hu3970703216180208815.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-packages-artifact_hu_f9ccfbaf097ef765.png">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Publicar y utilizar una dependencia de Java en un repositorio de Git con GitHub Packages">
@@ -55,14 +55,14 @@
     "headline": "Publicar y utilizar una dependencia de Java en un repositorio de Git con GitHub Packages",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-packages-artifact_hu3970703216180208815.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-packages-artifact_hu_f9ccfbaf097ef765.png"
         
       },
     "datePublished": "2022-06-09T19:00:00+02:00",
     "dateModified": "2022-06-09T19:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1203",
+    "wordCount": "1205",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -305,10 +305,10 @@
         
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/github.svg" width="200" height="195" alt="GitHub" title="GitHub" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/github.svg" width="200" height="195" alt="GitHub" title="GitHub" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>La forma de compartir y reutilizar código en Java es a través de librerías java que se incluyen como dependencias en los proyectos que las quieran usar. Las dependencias pueden tener a su vez dependencias que han de incluirse de forma transitiva, ni Java ni el JDK ofrece soporte para gestionar las dependencias en un proyecto más allá de <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">los módulos del incorporados en Java 9</a> pero que no cubren la resolución de dependencias ni el versionado.</p>
 <p>Para gestionar las dependencias en un proyecto Java se ha de utilizar <a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciar-rapido-un-proyecto-de-java-con-gradle-o-de-spring-con-spring-initializr/">la herramienta de construcción como Gradle</a> o <a href="https://maven.apache.org/">Maven</a>. Estas herramientas se encargan de descargar las versiones correctas y las dependencias transitivas declaradas en el proyecto y sus dependencias. Las dependencias se guardan en repositorios de Maven que además de los propios archivos Java de las librerías almacenan metadatos en los que se incluyen qué dependencias tiene cada una de esas librerías.</p>
@@ -361,7 +361,7 @@
 <p>Para publicar artefactos en el repositorio de Maven se requieren unas credenciales para limitar publicar únicamente artefactos a aquellas personas o procesos que tengan permisos. Una de las formas de publicar paquetes es utilizar un <em>Personal Access Token</em> o PAT al que se asocian unos permisos y se generan desde la sección <em>Settings</em> de la cuenta dentro de <a href="https://github.com/settings/apps">Developer settings</a> y <em>Personal access tokens</em>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-pat_hu18170292347986594140.webp" data-gallery="" title="GitHub Personal Access Token"><img src="/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-pat_hu642455191522443857.webp" width="596" height="450" alt="GitHub Personal Access Token" title="GitHub Personal Access Token" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-pat_hu_332245cde432b4c.webp" data-gallery="" title="GitHub Personal Access Token"><img src="/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-pat_hu_e111dda1bd38c99f.webp" width="596" height="450" alt="GitHub Personal Access Token" title="GitHub Personal Access Token" class="" loading="lazy"></a></p>
 <figcaption>GitHub Personal Access Token</figcaption>
 </figure>
 </div>
@@ -382,7 +382,7 @@
 <p>Una vez publicado el artefacto desde la administración del repositorio es posible descargar cada uno de los elementos del artefacto incluso eliminarlos asi como ver las diferentes versiones publicadas del mismo artefacto. En la siguiente imagen se muestra el artefacto anterior publicado en el repositorio con GitHub Packages.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-packages-artifact_hu11245262572644857252.webp" data-gallery="" title="Artefacto de Maven publicado un repositorio con GitHub Packages"><img src="/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-packages-artifact_hu16815890342833603908.webp" width="342" height="450" alt="Artefacto de Maven publicado un repositorio con GitHub Packages" title="Artefacto de Maven publicado un repositorio con GitHub Packages" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-packages-artifact_hu_3e10b1c901070052.webp" data-gallery="" title="Artefacto de Maven publicado un repositorio con GitHub Packages"><img src="/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-packages-artifact_hu_db0b7f39f2148552.webp" width="342" height="450" alt="Artefacto de Maven publicado un repositorio con GitHub Packages" title="Artefacto de Maven publicado un repositorio con GitHub Packages" class="" loading="lazy"></a></p>
 <figcaption>Artefacto de Maven publicado un repositorio con GitHub Packages</figcaption>
 </figure>
 </div>
@@ -408,9 +408,9 @@
     </div>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaGithubPackages">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew app:run</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaGithubPackages">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew app:run</code></p>
 </div>
 
     </div>
@@ -521,7 +521,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/">
-                <img src="/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu4366793428421493849.webp" width="326" height="125" alt="Analizar y detectar fallos de seguridad en las dependencias de Java" title="Analizar y detectar fallos de seguridad en las dependencias de Java" class="" loading="lazy">
+                <img src="/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu_4ada8614feda817b.webp" width="326" height="125" alt="Analizar y detectar fallos de seguridad en las dependencias de Java" title="Analizar y detectar fallos de seguridad en las dependencias de Java" class="" loading="lazy">
                 <h3>Analizar y detectar fallos de seguridad en las dependencias de Java</h3>
                 </a>
                 

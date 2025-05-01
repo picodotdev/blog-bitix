@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="El patrón Open Session in View, qué es, ventajas, problemas y alternativas">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu6245250197499031999.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu_263e2ba6b5adfd3f.png">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="En patrón Open Session in View lo que hace es mantener abierta la conexión a la base de datos durante toda la petición a un servidor. Esto tiene la ventaja de que en cualquier momento es posible recuperar datos de la base de datos, incluso desde las vistas pero tiene inconvenientes ya que las conexiones a la base de datos son un recurso escaso. Si además durante la petición se hacen peticiones a otros servicios que añaden tiempo de procesamiento la aplicación es posible que tenga problemas de escalabilidad con muchos usuarios y peticiones durante un corto periodo de tiempo. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu6245250197499031999.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu_263e2ba6b5adfd3f.png">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="El patrón Open Session in View, qué es, ventajas, problemas y alternativas">
@@ -55,7 +55,7 @@
     "headline": "El patrón Open Session in View, qué es, ventajas, problemas y alternativas",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu6245250197499031999.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu_263e2ba6b5adfd3f.png"
         
       },
     "datePublished": "2020-05-29T16:00:00+02:00",
@@ -304,7 +304,7 @@
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>La librería <a href="https://hibernate.org/">Hibernate</a> proporciona persistencia del modelo de objetos del lenguaje Java al modelo de las bases de datos relacionales de una forma sin que el programador necesite lanzar las consultas SQL directamente por lo general. Con Hibernate los objetos de las relaciones se cargan de los datos de las filas de la base de datos cuando son solicitadas si la relación es <em>lazy</em> o al obtener el objeto en el modo <em>eager</em>.</p>
 <p>El modo <em>lazy</em> tiene la ventaja de que los datos de las relaciones solo se cargan si se necesitan pero tiene el inconveniente de producir más SQLs a la base de datos. El modelo <em>eager</em> carga los datos con menos SQLs pero carga más datos de los necesarios si no se necesitan.</p>
@@ -313,7 +313,7 @@
 <p>En este diagrama se aprecia su funcionamiento. La primera acción en una petición es abrir una sesión para obtener datos de la base de datos, lo que se traduce en apropiarse de una conexión a la base de datos. El flujo del programa procesa la petición invocando la lógica de la aplicación y empleando los diferentes servicios en las diferentes capas formadas por el controlador, servicio y DAO para el acceso a la base de datos. El último paso es generar el resultado que es devuelto al cliente, puede ser contenido HTML o un resultado en formato JSON si es un servicio REST. En este punto se accede de nuevo a la base de datos para recuperar las relaciones <em>lazy</em> de los objetos que fueron devueltas por el servicio, esto es habitual en el caso de emplear un ORM como Hibernate o JPA.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu13563197333812880407.webp" data-gallery="" title="Diagrama del patrón open session in view"><img src="/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu7559327631595436382.webp" width="650" height="286" alt="Diagrama del patrón open session in view" title="Diagrama del patrón open session in view" class="&#34; " loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu_8a522d5058b8ee5d.webp" data-gallery="" title="Diagrama del patrón open session in view"><img src="/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu_e19e7aaea8e2599b.webp" width="650" height="286" alt="Diagrama del patrón open session in view" title="Diagrama del patrón open session in view" class="" loading="lazy"></a></p>
 <figcaption>Diagrama del patrón open session in view <br>Fuente: vladmihalcea.com</figcaption>
 </figure>
 </div>
@@ -395,7 +395,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/">
-                <img src="/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/images/java-access-specifier_hu15047890276518514370.webp" width="326" height="125" alt="Los modificadores de acceso de clases, propiedades y métodos en Java" title="Los modificadores de acceso de clases, propiedades y métodos en Java" class="" loading="lazy">
+                <img src="/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/images/java-access-specifier_hu_b7c2f25720b4b6af.webp" width="326" height="125" alt="Los modificadores de acceso de clases, propiedades y métodos en Java" title="Los modificadores de acceso de clases, propiedades y métodos en Java" class="" loading="lazy">
                 <h3>Los modificadores de acceso de clases, propiedades y métodos en Java</h3>
                 </a>
                 
@@ -409,7 +409,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/">
-                <img src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu248334668893711718.webp" width="326" height="125" alt="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" title="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" class="" loading="lazy">
+                <img src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu_c415de9b81f47b65.webp" width="326" height="125" alt="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" title="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" class="" loading="lazy">
                 <h3>Implementar un segundo factor de autenticación en una aplicación web Java con Spring</h3>
                 </a>
                 
@@ -437,7 +437,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/">
-                <img src="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole_hu12306730704600684612.webp" width="326" height="125" alt="Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java" title="Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java" class="" loading="lazy">
+                <img src="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole_hu_d9d40ac9775af82e.webp" width="326" height="125" alt="Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java" title="Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java" class="" loading="lazy">
                 <h3>Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java</h3>
                 </a>
                 

@@ -83,7 +83,7 @@ Para evitar la caída de servicio en un reinicio de aplicación requiere tener v
     "dateModified": "2018-09-23T00:50:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "796",
+    "wordCount": "798",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -100,10 +100,10 @@ Para evitar la caída de servicio en un reinicio de aplicación requiere tener v
         }
     },
     "description": "<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>No es raro la necesidad de querer cambiar algunos valores de la configuración de una aplicación sin ningún cambio adicional en el código. Normalmente la configuración se externaliza en un archivo de texto en un determinado formato como <em>properties</em> o <em>yaml</em> que se lee al iniciarse la aplicación pero que al querer hacer cambios y hacerlos efectivos requiere reiniciar la aplicación.</p>
 <p>Para evitar la caída de servicio en un reinicio de aplicación requiere tener varias instancias de la aplicación, ir sacando del balanceador las instancias para que no le soliciten nuevas peticiones, reiniciarlas y añadirlas de nuevo al balanceador si se hace balanceo de carga en el servidor o reiniciar las aplicaciones progresivamente si se hace en el cliente. Y esto con todas las instancias del servicio. <a href="https://cloud.spring.io/spring-cloud-config/">Spring Cloud Config</a> y <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> entre sus funcionalidades de configuración posee una que consiste en recargar la configuración o ciertas partes de la misma. Para ello <a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready">Spring Boot Actuator</a> ofrece un <em>endpoint</em> con el que disparar la recarga.</p>"
@@ -323,10 +323,10 @@ Para evitar la caída de servicio en un reinicio de aplicación requiere tener v
 
       
       <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false&#34;"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>No es raro la necesidad de querer cambiar algunos valores de la configuración de una aplicación sin ningún cambio adicional en el código. Normalmente la configuración se externaliza en un archivo de texto en un determinado formato como <em>properties</em> o <em>yaml</em> que se lee al iniciarse la aplicación pero que al querer hacer cambios y hacerlos efectivos requiere reiniciar la aplicación.</p>
 <p>Para evitar la caída de servicio en un reinicio de aplicación requiere tener varias instancias de la aplicación, ir sacando del balanceador las instancias para que no le soliciten nuevas peticiones, reiniciarlas y añadirlas de nuevo al balanceador si se hace balanceo de carga en el servidor o reiniciar las aplicaciones progresivamente si se hace en el cliente. Y esto con todas las instancias del servicio. <a href="https://cloud.spring.io/spring-cloud-config/">Spring Cloud Config</a> y <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> entre sus funcionalidades de configuración posee una que consiste en recargar la configuración o ciertas partes de la misma. Para ello <a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready">Spring Boot Actuator</a> ofrece un <em>endpoint</em> con el que disparar la recarga.</p>
@@ -390,9 +390,9 @@ Para evitar la caída de servicio en un reinicio de aplicación requiere tener v
     </div>
 </div>
 <div class="alert alert-secondary sourcecode fs-6">
-    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloud">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradle-run-1.sh, ./curl-1.sh</code></p>
+            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloud">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradle-run-1.sh, ./curl-1.sh</code></p>
 </div>
 <div class="reference">
     Referencia:<br>
