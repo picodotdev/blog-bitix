@@ -16,11 +16,12 @@
 {{- range $i := $strings -}}
   {{- $key := index (split $i "=") 0 -}}
   {{- $value := index (split $i "=") 1 -}}
+  {{- $value := replaceRE "^\"|\"$" "" $value -}}
   {{- $attributes = merge $attributes (dict $key $value) -}}
 {{- end -}}
 {{- $page := default "" (index $attributes "page") -}}
 {{- $url := index $attributes "url" -}}
-{{- $url := replaceRE "^\"|\"$" "" $url -}}
+{{- $url := replaceRE "^//" "" $url -}}
 {{- $command := default "Fit" (index $attributes "command") -}}
 {{- $options := default "2560x1440" (index $attributes "options") -}}
 {{- $options := replace $options "___" " " -}}

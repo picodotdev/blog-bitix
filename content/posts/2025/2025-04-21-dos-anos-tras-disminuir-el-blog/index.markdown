@@ -80,6 +80,12 @@ Otra cosa pendiente es plantearme comprar una nueva mesa de oficina de 180cm ele
 
 Estos pequeños arreglos para mi tienen un gran valor, son pequeñas victorias sobre problemas que surgen y resuelvo.
 
+{{< image
+    gallery="true"
+    image1="image:casa-1.webp" optionsthumb1="200x150" title1="Casa"
+    image2="image:casa-2.webp" optionsthumb2="200x150" title2="Casa"
+    caption="Casa, shit happens!" >}}
+
 ## Comida
 
 No he hecho muchas nuevas recetas de cocina aunque si he mejorado algunas conociendo mejor las proporciones y por otra parte tardando mucho menos en prepararlas como con las empanadillas, ensaladilla rusa y filetes rusos.
@@ -231,6 +237,11 @@ Y con los Echo sigo escuchando mucha música cuando me pongo a leer. Los siguien
 ## Otros
 
 Por diversión me hice unas camisetas friki personalizadas en [Créalo](https://www.crealo.es) con los logos de Arch Linux, Apache Tapestry y los productos de HashiCorp que utilizo como uniforme de trabajo cuando lo hago desde casa.
+
+{{< image
+    gallery="true"
+    image1="image:camisetas-1.webp" optionsthumb1="200x150" title1="Camisetas"
+    caption="Camisetas" >}}
 
 Hice un pre order para cambiar el Intel Nuc que uso por un Framework Desktop mucho más potente más por capricho que por necesidad. Cuando lo tenga publicaré su artículo de desempaquetado.
 
