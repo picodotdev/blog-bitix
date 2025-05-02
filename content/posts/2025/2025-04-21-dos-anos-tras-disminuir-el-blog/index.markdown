@@ -6,7 +6,7 @@ url: "/2025/04/dos-anos-tras-disminuir-el-blog/"
 date: 2025-04-21T18:00:00+02:00
 language: "es"
 index: true
-rss: true
+rss: false
 sharing: true
 comments: true
 promoted: false

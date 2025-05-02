@@ -6,7 +6,7 @@ url: "/2023/04/blog-bitix-con-menos-intensidad-se-apaga/"
 date: 2023-04-09T22:30:00+02:00
 language: "es"
 index: true
-rss: true
+rss: false
 sharing: true
 comments: true
 promoted: false

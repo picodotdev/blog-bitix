@@ -6,7 +6,7 @@ url: "/2024/03/pasado-un-ano-despues-de-bajar-la-intensidad-en-el-blog/"
 date: 2024-03-30T00:00:00+02:00
 language: "es"
 index: true
-rss: true
+rss: false
 sharing: true
 comments: true
 promoted: false
