@@ -129,7 +129,7 @@ Es otra área de aprendizaje a la que estoy dedicando tiempo. También leyendo a
 
 Por motivos a los que les puedo encontrar una explicación me doy cuenta que durante mucho tiempo me estuve descuidando a mi mismo. Por otro lado también me doy cuenta que los valores y medidas que tenía eran bastante meh! algunos externos sobre los que no tenía control.
 
-Tener autoestima insegura tiene muchas cosas malas pero he de reconocer que también tiene una cosa buena, y es que uno duda mucho de sí mismo y está muy abierto a lo que los demás dicen con lo que uno evalúa más las opciones, razona y argumenta sin tanta inflexibilidad. Los que están muy seguros y confiados de sí mismos lo están incluso cuando creyendo estar muy en lo cierto están tremendamente equivocados, juzgan y desprecian, al mismo tiempo si tienen reglas muy estrictas no están receptivos para aprender ni cambiar.
+Ser mayormente inseguro tiene muchas cosas malas pero he de reconocer que también tiene una cosa buena, y es que uno duda mucho de sí mismo y está muy abierto a lo que los demás dicen con lo que uno evalúa más las opciones, razona y argumenta sin tanta inflexibilidad. Los que están muy seguros y confiados de sí mismos lo están incluso cuando creyendo estar muy en lo cierto están tremendamente equivocados, juzgan y desprecian, al mismo tiempo si tienen reglas muy estrictas no están receptivos para aprender ni cambiar.
 
 Mi valor y por el que me mediré será seguir mis objetivos, intereses, mejorar, esforzarme sin la validación, aprobación, juicio u opinión de nadie. Trataré de no ser tan amable, solo con quien se gane mi respeto, confianza, lo demuestre, corresponda y no me sea tóxico.
 
