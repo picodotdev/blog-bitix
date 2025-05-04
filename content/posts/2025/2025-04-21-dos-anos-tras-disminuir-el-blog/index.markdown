@@ -84,7 +84,7 @@ Estos pequeños arreglos para mi tienen un gran valor, son pequeñas victorias s
     gallery="true"
     image1="image:casa-1.webp" optionsthumb1="200x150" title1="Casa"
     image2="image:casa-2.webp" optionsthumb2="200x150" title2="Casa"
-    caption="Casa, shit happens!" >}}
+    caption="Shit happens!" >}}
 
 ## Comida
 
