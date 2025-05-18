@@ -62,7 +62,7 @@
     "dateModified": "2016-03-19T10:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1202",
+    "wordCount": "1200",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -354,9 +354,9 @@
 </div>
 <p>En el anillo de claves de GPG la clave que usemos para firmar no ha de tener <em>passphrase</em> de lo contrario cuando se ejecute el comando GPG la solicitará en una ventana emergente. Aunque con las opciones <code>--passphrase</code> y <code>--batch</code> no debería solicitarla no he conseguido evitarlo.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
     <p>
-            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaMailGPG">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew --daemon run -Pargs=&#34;[contraseña de aplicación de cuenta gmail]&#34;</code></p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaMailGPG">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew --daemon run -Pargs=&#34;[contraseña de aplicación de cuenta gmail]&#34;</code></p>
 </div>
 <p>Las suplantaciones mediante correo electrónico son y seguirán siendo habituales si no son detectadas como <em>spam</em>. Después de escribir este artículo usar <a href="https://es.wikipedia.org/wiki/DomainKeys_Identified_Mail"><abbr title="DomainKeys Identified Mail">DKIM</abbr></a> parece ser la forma adecuada de firmar y cifrar los correos electrónicos y viendo el mensaje original de los que envían <a href="https://www.google.es/">Google</a> y <a href="https://amzn.to/2flFhHA">Amazon</a> es lo que utilizan ellos que algo sabrán de esto. Usar DKIM en los correos electrónicos será tema para otro posible artículo, la <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">nube de Amazon ofrece soporte para DKIM</a>.</p>
 <div class="code">

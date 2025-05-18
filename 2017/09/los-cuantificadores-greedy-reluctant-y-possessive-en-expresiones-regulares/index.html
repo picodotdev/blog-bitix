@@ -92,7 +92,7 @@ Aparentemente cada uno de los cuantificadores realiza lo mismo, sin embargo, hay
     "dateModified": "2017-09-09T11:30:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "901",
+    "wordCount": "899",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -364,9 +364,9 @@ X{n,m}  X{n,m}?    X{n,m}+     X, al menos n veces pero no mas de m
 <p>En el segundo ejemplo, sin embargo, el cuantificador es reacio o vago de modo que empieza consumiendo nada. Dado que <em>foo</em> no aparece en el inicio de la cadena es forzado a tomar la primera letra <em>x</em> con la que se encuentra la primera coincidencia entre 0 y 4. Se siguen encontrando coincidencias hasta que la cadena de entrada ha sido consumida. Encuentra otra coincidencia en 4 y 13.</p>
 <p>En el tercer caso se se hayan coincidencias ya que el cuantificador es posesivo. En este caso, la cadena completa es consumida por <em>.*+</em> dejando nada que satisfaga el patrón <em>foo</em> al final de la expresión. Dado que no vuelve hacia atrás tiene mejor rendimiento que el cuantificador <em>greedy</em> en los casos que se quiera encontrar una coincidencia completa en algo.</p>
 <div class="alert alert-secondary sourcecode fs-6">
-    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
     <p>
-            You can download the <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaRegexQuantifiers">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub and test it on your computer by executing the following command:<br><code>./gradlew run</code></p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaRegexQuantifiers">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
 </div>
 <div class="reference">
     Referencia:<br>
