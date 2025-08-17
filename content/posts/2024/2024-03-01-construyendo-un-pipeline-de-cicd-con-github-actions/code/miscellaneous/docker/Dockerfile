@@ -16,7 +16,7 @@ RUN ls -l /app/
 
 FROM eclipse-temurin:21-jdk
 
-ARG USERNAME=stubhub
+ARG USERNAME=picodotdev
 ARG GROUP_NAME=${USERNAME}
 ARG USER_UID=2000
 ARG USER_GID=${USER_UID}
