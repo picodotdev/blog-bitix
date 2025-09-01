@@ -13,6 +13,7 @@ comments: true
 promoted: false
 imagePost: "image:ts.webp"
 tags: ["opinion"]
+draft: true
 ---
 
 {{% post %}}

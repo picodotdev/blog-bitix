@@ -13,6 +13,7 @@ promoted: false
 imageHead: "image:deporte-6.webp"
 imagePost: "image:deporte-6.webp"
 tags: ["blog", "fuera-de-tema"]
+draft: true
 ---
 
 {{% post %}}
