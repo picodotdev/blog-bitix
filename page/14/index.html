@@ -231,54 +231,6 @@
 <ul class="list-unstyled">
     <li>
       <article>
-        <h1><a href="/blog-bitix/2020/10/sobre-la-generacion-de-consolas-playstation-5-y-xbox-series-x-s-antes-de-que-se-comercialice-y-la-renovacion-del-hardware-de-pc/">Sobre la generación de consolas PlayStation 5 y Xbox Series X/S antes de que se comercialice y la renovación del hardware de PC</a></h1>
-        <span class="information">
-          <time>11/10/2020</time>
-          
-            
-              <a href="/blog-bitix/tags/juegos/">juegos</a>
-            
-              <a href="/blog-bitix/tags/hardware/">hardware</a>
-            
-              <a href="/blog-bitix/tags/opinion/">opinion</a>
-            
-          
-        </span>
-        <p>
-          
-            <p>En un mes se comenzará la comercialización de la siguiente generación de consolas tanto de la <a href="https://en.wikipedia.org/wiki/Xbox_Series_X_and_Series_S">Xbox Series X/S</a> de <a href="https://www.microsoft.com/">Microsoft</a> que sustituye a la <a href="https://es.wikipedia.org/wiki/Xbox_One">Xbox One</a> y una semana más tarde la <a href="https://en.wikipedia.org/wiki/PlayStation_5">PlayStation 5</a> de <a href="https://www.sony.es/">Sony</a> que sustituye a la <a href="https://en.wikipedia.org/wiki/PlayStation_4">PlayStation 4</a> poco antes de la época navideña. Ambas consolas prometen ofrecer una calidad de juegos mucho mayores que los que ya eran en la generación que sustituyen, empezando por un hardware mucho más actual que el que tuvieron sus predecesoras que cuando salieron casi salieron anticuadas con respecto al hardware de la época.</p>
-          
-          <br>
-          <a href="/blog-bitix/2020/10/sobre-la-generacion-de-consolas-playstation-5-y-xbox-series-x-s-antes-de-que-se-comercialice-y-la-renovacion-del-hardware-de-pc/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/">Implementar un bus de eventos de dominio en Java</a></h1>
-        <span class="information">
-          <time>09/10/2020</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-          
-        </span>
-        <p>
-          
-            Un bus de eventos es el mecanismo por el que los eventos de dominio de DDD son publicados, son tratados y enviados a sus receptores de forma directa, mediante un <em>middleware</em> u de otra forma. El concepto bus de eventos para eventos de dominio se materializa de forma muy sencilla en código, simplemente una interfaz con un método. Cambiando la implementación de la interfaz un bus de eventos envía los eventos a un sistema de mensajería como RabbitMQ, persiste los eventos en base de datos como parte del <em>outbox pattern</em> o simplemente los imprime en la consola como en el ejemplo del artículo.
-          
-          <br>
-          <a href="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
         <h1><a href="/blog-bitix/2020/10/3-formas-de-gestionar-errores-en-los-lenguajes-de-programacion/">3 formas de gestionar errores en los lenguajes de programación</a></h1>
         <span class="information">
           <time>04/10/2020</time>
@@ -410,26 +362,6 @@
           
           <br>
           <a href="/blog-bitix/2020/09/como-comprar-una-licencia-y-activar-windows-10-y-office-2019/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2020/09/1-decada-en-la-misma-empresa-20-anos-trabajando/">1 década en la misma empresa, 20 años trabajando</a></h1>
-        <span class="information">
-          <time>06/09/2020</time>
-          
-            
-              <a href="/blog-bitix/tags/opinion/">opinion</a>
-            
-          
-        </span>
-        <p>
-          
-            <p>Llevo casi 20 años de vida laboral, 10 de los cuales en la misma empresa, en ese periodo hay a quien le da tiempo a venir, marchar, volver a venir y volver a marchar. En estos años he pasado diría que por pocas empresas comparado con lo rápido que otras personas se cambian de trabajo, aún así han sido empresas bastante diferentes entre ellas. Los últimos 10 años se me han pasado mucho más rápido que los 10 anteriores. Si pasase 10 años más en la misma empresa muy posiblemente sería bueno pero con la situación pandémica actual y el desenlace de acontecimientos que crea incertidumbre es mucho decir.</p>
-          
-          <br>
-          <a href="/blog-bitix/2020/09/1-decada-en-la-misma-empresa-20-anos-trabajando/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
@@ -577,6 +509,79 @@
           
           <br>
           <a href="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/">Comandos para crear una autoridad de certificación (CA) con OpenSSL</a></h1>
+        <span class="information">
+          <time>07/08/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Los certificados autofirmados no son suficientes para un entorno de producción. En producción hay que usar certificados firmados por una entidad de confianza. AWS Certificate Manager ofrece la suya pero tiene un coste elevado y los certificados de otras entidades tampoco son baratos. Para certificados de uso interno en una organización que proporcionan comunicaciones seguras OpenSSL permite con una serie de comandos crear una autoridad de certificación o CA en la que los servidores y clientes internos confíen. Las funciones de la CA incluyen crear certificados a partir de las solicitudes de los certificados para los servidores y también la revocación y renovación de certificados.
+          
+          <br>
+          <a href="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/">Configurar autenticación básica en los servidores web Nginx y Apache</a></h1>
+        <span class="information">
+          <time>02/08/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/web/">web</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/apache.svg" width="150" height="264" alt="Apache HTTPD" title="Apache HTTPD" class="" loading="false"></p>
+</div>
+<p>La autenticación básica o <em>basic auth</em> es un mecanismo de autenticación sencillo que permite proteger los recursos solicitados de un sitio o aplicación web. Es fácil de configurar en el servidor web y está implementado en los propios navegadores, otra ventaja es que se puede añadir a un sitio o aplicación web sin necesidad de realizar modificaciones en su código.</p>
+<p>La autenticación básica por seguridad requiere <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">utilizar en el servidor web el protocolo seguro HTTPS</a> y <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">obtener un certificado para el nombre del dominio del servidor web</a> ya que el navegador cuando envía al servidor el usuario y contraseña no los protege de forma especial y utiliza el mecanismo de comunicación de la conexión, es usual también <a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/">configurar un servidor web virtual</a> para aplicar esta configuración únicamente al sitio web deseado. Con el protocolo HTTPS el usuario y contraseña se transmite cifrada por la propia conexión segura.</p>
+          
+          <br>
+          <a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/07/obtener-un-nombre-de-dominio-para-una-direccion-ip-privada/">Obtener un nombre de dominio para una dirección IP privada</a></h1>
+        <span class="information">
+          <time>31/07/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            <p>Las direcciones IP en la versión 4 del protocolo son un número de 32 bits, se representan en cuatro grupos de números decimales que toman el valor entre 0 y 255 separados por un punto, por ejemplo para la dirección que representa la máquina local <em>127.0.0.1</em>. En <a href="https://picodotdev.github.io/blog-bitix/2018/11/el-agotamiento-de-direcciones-ipv4-y-el-protocolo-de-internet-ipv6/">la versión 6 del protocolo IP</a> las direcciones IP son un número de 128 bits. Dado que los números de la direcciones IP son difíciles de recordar para los humanos se usan alias o sinónimos denominados nombres de dominio, por ejemplo, <em>picodotdev.github.io</em> o <em>duckduckgo.com</em>. El software que permite la conversión de nombre de dominio a dirección IP son los servidores <em>DNS</em>.</p>
+          
+          <br>
+          <a href="/blog-bitix/2020/07/obtener-un-nombre-de-dominio-para-una-direccion-ip-privada/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
