@@ -2,7 +2,7 @@
 pid: 716
 type: "post"
 title: "Novedades y nuevas características de Java 25"
-url: "/2025/09/novedades-y-nuevas-características-de-java-25/"
+url: "/2025/09/novedades-y-nuevas-caracteristicas-de-java-25/"
 date: 2025-09-19T09:00:00+02:00
 language: "es"
 index: true
