@@ -5,12 +5,38 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/java/</id>
-    <updated>2025-05-18T10:00:00+02:00</updated>
+    <updated>2025-09-19T09:00:00+02:00</updated>
     <author></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2019/05/implementar-la-paginacion-eficientemente-en-consultas-sql-con-seek/</id>
+        <title>Implementar la paginación eficientemente en consultas SQL con seek</title>
+        <updated>2019-05-31T18:00:00+02:00</updated>
+        <published>2019-05-31T18:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/05/implementar-la-paginacion-eficientemente-en-consultas-sql-con-seek/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>Las aplicaciones que muestran listados probablemente necesiten mostrarlos paginados. Sin embargo, implementar la paginación correctamente para que sea eficiente no pasa por emplear las clausulas <em>limit</em> ni <em>offset</em> que habitualmente se utilizan sino con <em>seek</em>. Además de que <em>limit</em> y <em>offset</em> da lugar a resultados no deseados si entre obtención de página y página se insertan filas en páginas anteriores.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2019/05/implementar-la-paginacion-eficientemente-en-consultas-sql-con-seek/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2019/05/log-de-sentencias-sql-sentencias-lentas-y-otra-informacion-en-jooq/</id>
         <title>Log de sentencias SQL, sentencias lentas y otra información en jOOQ</title>
@@ -350,32 +376,6 @@
         
         
         <p><a href="https://picodotdev.github.io/blog-bitix/2019/02/las-clases-anidadas-inner-anonimas-y-locales-en-java/">Continuar leyendo en Blog Bitix</a></p>
-
-        ]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2019/02/ofuscar-datos-sensibles-en-las-trazas-con-log4j/</id>
-        <title>Ofuscar datos sensibles en las trazas con Log4j</title>
-        <updated>2019-02-10T10:30:00+01:00</updated>
-        <published>2019-02-10T10:30:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/02/ofuscar-datos-sensibles-en-las-trazas-con-log4j/"/>
-        <author><name></name></author>
-        <content type="html">
-        <![CDATA[
-
-        <p><strong>Ciertos datos son sensibles y hay que protegerlos al guardarlos en una base de datos, pero no sirve de nada si estos datos son emitidos en texto plano en las trazas de la aplicación invalidando cualesquiera otras medidas implementadas por muy correctas que sean en la aplicación. Los archivos de <em>log</em> también necesitan tener en cuenta ciertas medidas de seguridad para los datos que se emiten. Una de las medidas es no emitir en los <em>logs</em> los datos sensibles y otra ofuscarlos para que estén incompletos.</strong></p>
-        
-        <p><a href="https://picodotdev.github.io/blog-bitix/2019/02/ofuscar-datos-sensibles-en-las-trazas-con-log4j/">Continuar leyendo en Blog Bitix</a></p>
 
         ]]>
         </content>

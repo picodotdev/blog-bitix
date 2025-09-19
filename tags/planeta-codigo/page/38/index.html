@@ -228,6 +228,35 @@
 <ul class="list-unstyled">
     <li>
       <article>
+        <h1><a href="/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Integración entre Ansible y Docker</a></h1>
+        <span class="information">
+          <time>22/11/2014</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/ansible.svg" width="200" height="246" alt="Ansible" title="Ansible" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false"></p>
+</div>
+<p>En la <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">introducción de Docker</a> y <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">inicio básico de docker</a> explicaba como usar Docker y en la <a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/">introducción a Ansible</a> explicaba las características de Ansible y como usarlo. Podemos usar <a href="https://www.docker.com/">Docker</a> y <a href="https://www.ansible.com/">Ansible</a> de forma separada pero también podemos combinarlas para beneficiarnos de las propiedades de cada una. En Ansible disponemos de dos módulos que nos permite manejar las imágenes y los contenedores de Docker, estos son <a href="http://docs.ansible.com/docker_module.html">docker</a> y <a href="http://docs.ansible.com/docker_image_module.html">docker_image</a>.</p>
+<p>Usando tareas de ansible podemos automatizar el arranque del servicio de docker, la construcción de las imágenes con los Dokerfile y el inicio o parada de los contenedores de docker. En el ejemplo se construye una imagen base en la que se basarán el resto de imágenes, se crea una imagen con mysql, otra de redis y finalmente la imagen apps donde se ejecutarán las aplicaciones que usarán los servicios de mysql y redis.</p>
+          
+          <br>
+          <a href="/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2014/11/introduccion-a-ansible/">Introducción a Ansible</a></h1>
         <span class="information">
           <time>15/11/2014</time>
@@ -585,35 +614,6 @@
           
           <br>
           <a href="/blog-bitix/2014/08/doble-barra-de-botones-con-apache-tapestry/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2014/08/forzar-el-uso-del-protocolo-https-en-apache-tapestry/">Forzar el uso del protocolo HTTPS en Apache Tapestry</a></h1>
-        <span class="information">
-          <time>22/08/2014</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-              <a href="/blog-bitix/tags/tapestry/">tapestry</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false"></p>
-</div>
-<p>El <a href="https://es.wikipedia.org/wiki/Hypertext_Transfer_Protocol_Secure">protocolo seguro https</a> hace que los datos que viajan entre el servidor y el cliente a través de internet estén cifrados de modo que nadie más pueda saber cual es es la información intercambiada ni se pueda alterar sin el conocimiento entre las dos partes. Estas propiedades nos son de interés para ciertas partes de una aplicación o en algunos casos la aplicación entera. ¿Cuales son estos casos? Son aquellos en los que queramos garantizar una mayor seguridad, estos pueden ser para proteger usuarios y contraseñas de autenticación para iniciar sesión, ciertos datos sensibles como datos personales, datos de tarjetas de crédito, &hellip; evitando que una tercera parte los obtenga y los utilice para su provecho propio y supongan un problema de seguridad en la aplicación.</p>
-          
-          <br>
-          <a href="/blog-bitix/2014/08/forzar-el-uso-del-protocolo-https-en-apache-tapestry/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
