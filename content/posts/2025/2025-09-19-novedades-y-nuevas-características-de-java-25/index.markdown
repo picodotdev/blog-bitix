@@ -24,7 +24,7 @@ Java destaca por ser un lenguaje en el que la compatibilidad hacia atrás es imp
 
 Entre las dos LTS, de Java 21 a Java 25 ha habido 3 versiones no LTS algunas con nuevas características en modo de previsualización sujetas a cambios hasta su versión definitiva y actualizaciones de esas características en su versión final. También en todas estas nuevas versiones hasta Java 25 se han publicado varias características en su versión definitiva.
 
-En septiembre de 2025 se ha publicado la versión 25 del lenguaje de programación Java y su SDK, siguiendo el calendario que se estableció hace tiempo con el que las releases de Java son más frecuentes y previsibles.
+En septiembre de 2025 se ha publicado la versión 25 del lenguaje de programación Java y su SDK, siguiendo el calendario que se estableció hace tiempo con el que las _releases_ de Java son más frecuentes y previsibles.
 
 {{< tableofcontents >}}
 
@@ -63,7 +63,7 @@ Una de las características destacadas de Java 21 fueron los virtual threads.
 
 Desde Java 21 las características que destaco son las siguientes en sus versiones finales y no previsualización o experimentales, o alguna en previsualización destacada. Me centro más en las que tienen un impacto desde el punto de vista del desarrollador, también hay muchas novedades en cuanto al recolector de basura, seguridad con nuevos algoritmos y mejor soporte de Unicode.
 
-Cada una incorpora muchas actualizaciones en modo preview y menos en su versión definitiva, entre las 4 desde Java 22 hasta Java 25, proporcionan una mejora incremental notable sobre Jav 21.
+Cada una incorpora muchas actualizaciones en modo previsualización y menos en su versión definitiva, entre las 4 desde Java 22 hasta Java 25, proporcionan una mejora incremental notable sobre Jav 21.
 
 En las notas de publicación de cada una de las características las siguientes y otras están explicadas más extensamente y mejor.
 
@@ -75,21 +75,21 @@ En las notas de publicación de cada una de las características las siguientes 
 
 * [Graal JIT now Available](https://openjdk.org/jeps/474), el compilador de Graal JIT ahora es incluido como parte del JDK.
 * [Markdown Documentation Comments](https://openjdk.org/jeps/467), los comentarios pueden ser escritos usando el formato Markdown en vez de solo como una mezcla de HTML y anotaciones.
-* String Templates, eliminada y esta es la razón por la que no es recomendable usar características en modo preview ni definitivas para aplicaciones en producción.
+* String Templates, eliminada y esta es la razón por la que no es recomendable usar características en modo previsualización ni definitivas para aplicaciones en producción.
 
 ### Java 24
 
-* [Ahead-of-Time Class Loading & Linking](https://openjdk.org/jeps/483), proporciona una mejora en el tiempo de arranque de las aplicaciones mediante el uso de una cache para la carga de claes y enlazado. Los usuarios de Spring Boot pueden usar esta característica mediante Class Data Sharing y con el soporte de Buildpacks o el archivo Dockerfile. En la descripción del JEP la mejora del tiempo de arranque llega hasta el 40%.
-    * [Class Data Sharing](https://docs.spring.io/spring-boot/how-to/class-data-sharing.html)
+* [Ahead-of-Time Class Loading & Linking](https://openjdk.org/jeps/483), proporciona una mejora en el tiempo de arranque de las aplicaciones mediante el uso de una cache para la carga de claes y enlazado. Los usuarios de Spring Boot pueden usar esta característica mediante Class Data Sharing y con el soporte de [Buildpacks][buildpacks] o el archivo Dockerfile. En la descripción del JEP la mejora del tiempo de arranque llega hasta el 40%.
+    * [Class Data Sharing](https://docs.spring.io/spring-boot/how-to/class-data-sharing.html) (CDS)
     * [Dockerfiles](https://docs.spring.io/spring-boot/reference/packaging/container-images/dockerfiles.html#packaging.container-images.dockerfiles.cds)
 * [Stream Gatherers](https://openjdk.org/jeps/485), permiten aplicar operaciones de transformación al usar stream que eran difícil de aplicar sin estos nuevos añadidos a la API.
-* [Class-File API](https://openjdk.org/jeps/484), proporcionan una API standard para parsear, generar y transformar archivos class de Java. Será muy útil para las librerías que hacen manipulación de código en tiempo de compilación y ejecución.
+* [Class-File API](https://openjdk.org/jeps/484), proporcionan una API standard para _parsear_, generar y transformar archivos class de Java. Será muy útil para las librerías que hacen manipulación de código en tiempo de compilación y ejecución.
 
 ### Java 25
 
 * [Flexible Constructor Bodies](https://openjdk.org/jeps/513), la llamada a super en el constructor ya no es necesario que sea la primera línea, esto permite poner delante validaciones sobre los argumentos del constructor.
-* [Scoped Values](https://openjdk.org/jeps/506), permite compartir datos inmutables entre threads. Son más eficientes que las variables thread-local y de razonar. Útil al usar virtual threads y structured concurrency.
-* [Ahead-of-Time Command-Line Ergonomics](https://openjdk.org/jeps/515), hace más fácil usar las caches ahead-of-time.
+* [Scoped Values](https://openjdk.org/jeps/506), permite compartir datos inmutables entre threads. Son más eficientes y de razonar que las variables _thread-local_. Útil al usar _virtual threads_ y _structured concurrency_.
+* [Ahead-of-Time Command-Line Ergonomics](https://openjdk.org/jeps/515), hace más fácil usar las caches _ahead-of-time_.
 
 
 {{< reference >}}
