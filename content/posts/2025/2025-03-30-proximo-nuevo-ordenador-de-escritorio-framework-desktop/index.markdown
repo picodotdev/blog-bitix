@@ -22,7 +22,7 @@ summary: "He tenido un Intel NUC que me ha ofrecido todo el rendimiento que he n
 
 Con el uso intensivo y en algunos momentos exigente que le doy a los ordenadores que uso a nivel personal varias de las que he tenido se me han ido quedando pequeñas, habitualmente por cantidad de memoria o por soporte de nuevas tecnologías.
 
-Siendo un usuario exigente con el ordenador que tengo me es provechoso cambiar de equipo cada menos tiempo de lo que otro usuario menos exigente necesitaría. El último ordenador personal que he tenido ha sido un pequeño Intel NUC Bean Canyon con un procesador i5-8259U de 4 núcleos y 8 hilos con 32 GB de memoria RAM DDR4 a 2400 Mhz y almacenamiento NVMe Gen 3 con hasta 3000 Mbps en lectura y un poco menos en escritura.
+Siendo un usuario exigente con el ordenador que tengo me es provechoso cambiar de equipo cada menos tiempo del necesario. El último ordenador personal que he tenido ha sido un pequeño Intel NUC Bean Canyon con un procesador i5-8259U de 4 núcleos y 8 hilos con 32 GB de memoria RAM DDR4 a 2400 Mhz y almacenamiento NVMe Gen 3 con hasta 3000 Mbps en lectura y un poco menos en escritura.
 
 {{< tableofcontents >}}
 
@@ -30,7 +30,7 @@ Siendo un usuario exigente con el ordenador que tengo me es provechoso cambiar d
 
 A lo largo del tiempo he tenido varios ordenadores. El primero que tuve y usé para informática personal fue un Intel Pentium 120 Mhz con 8 MB de memoria y posteriormente ampliados a 32 MB para poder ejecutar el mítico entorno integrado de desarrollo JBuilder. Ordenador con el que cursé la universidad desde el año 1996 al 2001.
 
-En los primeros años de trabajo en el 2002 cambié a otro ordenador de escritorio un AMD Athlon XP 1800+ con 512 MB de memoria y una GeForce 2 MX 400 con el que jugué a algunos cuantos juegos como el Diablo 2. Aunque progresivamente mis intereses pasarón de los juegos al trabajo y al mismo tiempo el uso que le daba al ordenador era más profesional. Al final este ordenador acabó con los condensadores de la placa base abombados y dando problemas de fiabilidad. Los 512 MB y el procesador ya se me quedaban cortos y no podía virtualizar. Aún seguía usando Windows y en esta época Window XP que mejoró el desastre que fue Windows Millenium.
+En los primeros años de trabajo en el 2002 cambié a otro ordenador de escritorio un AMD Athlon XP 1800+ con 512 MB de memoria y una GeForce 2 MX 400 con el que jugué a algunos cuantos juegos como el Diablo 2. Aunque progresivamente mis intereses pasarón de los juegos al trabajo y al mismo tiempo el uso que le daba al ordenador era más profesional. Al final este ordenador acabó con los condensadores de la placa base abombados y dando problemas de fiabilidad. Los 512 MB y el procesador ya se me quedaban cortos y no podía virtualizar. Aún seguía usando Windows y en esta época Windows XP que mejoró el desastre que fue Windows Millenium.
 
 En el 2008 cambié a otro ordenador, para ahorrar espacio tanto en el ordenador como en el monitor el siguiente ordenador fué un portátil, un Dell XPS de 15” con un Intel 8100T de dos núcleos y 4 GB de memoria y una GeForce 8600 con 512 MB de memoria. Me salió una ruina, será difícil que vuelva a comprar nada de Dell ni ningún ordenador ni monitor que por experiencia también veo que tienen problemas, no quiero nada de esta marca. El portátil debería tener algún fallo de diseño ya que desconectado de la alimentación el reposamuñecas metálico hacía como calambre. También se me quedó pequeño por la memoria y por no poder virtualizar. Se lo pasé a mi sobrino y este jugando a juegos debió quemarlo ya que cierto día dejó de arrancar y falló completamente.
 
@@ -69,7 +69,7 @@ Uno de los requisitos que sigo teniendo es que sea un ordenador pequeño, nada d
 
 El precio no es problema, podría ser incluso un Mac Studio si no fuera porque solo funcionan con macOS y para uso personal y como desarrollador me siento muchísimo más agusto en Arch Linux y GNOME, además de que me parecen más adecuados y mejores para mi perfil y afinidades.
 
-En su momento cuando compré el NUC aún no había opciones con procesador Ryzen, en este momento hay muchas más opciones equivalente en tamaño y en este momento me he fijado en estos.
+En su momento cuando compré el NUC aún no había opciones con procesador Ryzen, en este momento hay muchas más opciones equivalente en tamaño, me he fijado en estos.
 
 * [Beelink SER9](https://www.bee-link.com/products/beelink-ser9-ai-9-hx-370). Con Ryzen AI 370, 12 núcleos, 4 x Zen 5 + 8 x Zen 5c, con posibilidad de 64 GB de memoria y gráfica 890M, 50 TOPS de IA, 1000 €.
 * [Beelink SER8](https://www.bee-link.com/products/beelink-ser8-8845hs). Con la anterior generación de procesadores Ryzen. Más econónimo, sigue siendo potente, 8 núcleos.
@@ -86,9 +86,9 @@ En su momento cuando compré el NUC aún no había opciones con procesador Ryzen
 
 Considerando las opciones y mis necesidades, el nuevo ordenador al que voy a cambiar es a un Framework Desktop, un ordenador de escritorio de torre algo más grande que el NUC pero de pequeñas dimensiones en una caja de 4,5 litros que sigue entrando en mi requerimientos de tamaño compacto.
 
-Por su tamaño es comparable a un _workstation_ ya que incorpora un potente procesador AMD Ryzen AI 395+ denominado como Strix Halo equipable con hasta 128 GB. Lo más potente de AMD en este momento en procesador configurable en voltajes bajos de entre 55 y 120 W con diferentes rendimientos según potencia configurada. Un procesador que sirve tanto para tareas de productividad como para juegos.
+Por su tamaño es comparable a un _workstation_ ya que incorpora un potente procesador AMD Ryzen AI 395+ denominado como _Strix Halo_ equipable con hasta 128 GB de memoria. Lo más potente de AMD en este momento en procesador configurable en voltajes bajos de entre 55 y 120 W con diferentes rendimientos según potencia configurada. Un procesador que sirve tanto para tareas de productividad como para juegos.
 
-Es una versión algo más potente en procesador sobre el Strix Point de Beelink SER9 pero sobre todo es más potente en capacidad gráfica y por su mayor voltaje puede ofrecer mayores cotas de rendimiento no estando tan limitando por la refrigeración y temperaturas.
+Es una versión algo más potente en procesador sobre el _Strix Point_ de Beelink SER9 pero sobre todo es más potente en capacidad gráfica y por su mayor voltaje puede ofrecer mayores cotas de rendimiento no estando tan limitando por la refrigeración y temperaturas.
 
 Por cantidad de memoria, por cantidad de núcleos, capacidades de IA y capacidad gráfica me es un salto notable sobre el Intel NUC, un salto más de lo que sería el SER9 con el 370. Por su capacidad gráfica y sistema de disipación jugar a juegos es una nueva posibilidad.
 
@@ -100,13 +100,13 @@ Respecto al Intel NUC supone una mejora del siguiente nivel en diferentes aspect
 * Pasar de 6 MiB de caché L3 a 64 MB de caché L3, casi 10 veces más.
 * Pasar de 32 GB de memoria a 128 GB de memoria, multiplicar por 4. Supone un ratio de 8 GB de memoria por núcleo. Una memoria a 8000 Mhz DDR5 varias veces más rápida que la DDR 4 a 2400 Mhz de NUC. 16K veces más memoria que el primer ordenador que tuve, el progreso tecnológico en 30 años.
 * Aunque es simplemente un dato estadístico, el procesador Intel está fabricado en 14 nanómetros y el de AMD en 4 nanómetros.
-* Una GPU abismalmente más potente que la del NUC que me permitirá jugar a juegos sin limitaciones en los juegos lanzados hasta el momento.
-* Mayor personalización en la parte frontal con los tiles en los que podrá unos especiales con los logotipos de Framework, AMD y Tux.
+* Una GPU abismalmente más potente que la del NUC que me permitirá jugar a juegos sin limitaciones en los lanzados hasta el momento.
+* Mayor personalización en la parte frontal con los _tiles_ en los que pondré unos especiales con los logotipos de Framework, AMD y Tux.
 * Acceso completo al interior del equipo para su limpieza, del ventilador y disipador que en el Intel NUC no podía. Con el panel transparente lateral podré ver el interior del equipo y estéticamente queda bonito. Cómo ventilador opto por el Noctua que no tiene luz ARGB pero que es algo más silencioso sobre las especificaciones detalladas por el fabricante.
 * Una segunda unidad NVMe en la que mantener por duplicado y como copia de seguridad datos de la unidad principal por si alguna de ambas fallase no perderé datos. Pasaré de tener 512 GB de almacenamiento más 512 GB en microSD a dos unidades de NVMe de 2 TB cada una.
 * Seguir usando GNU/Linux, Arch Linux y GNOME.
 
-Deberé revisar y actualizar el [script que hice para instalar Arch Linux][alis] para instalarlo en el nuevo Framework.
+Comprobaré si el [script que hice para instalar Arch Linux][alis] funciona en el Framework Desktop, si no realizaré los cambios necesarios que espero no sean muchos salvo que añada alguna nueva característica.
 
 En el momento de escribir y publicar este artículo simplemente se ha presentado, está disponible para precompra y no será hasta el Q3 del 2025 cuando se realicen los primeros envíos. Haberlo pedido en precompra antes de haberse lanzado al mercado es un tanto arriesgado en caso de que pasado un poco de tiempo se descubra un fallo en el diseño, sería un problema teniendo en cuenta su precio. Se presentó en el Q1 de 2025. HP ha anunciado el HP Z2 Mini G1a que también tendrá el AMD 395+ con 128 GB de memoria pero de momento sin opción de precompra.
 
@@ -221,13 +221,13 @@ La fuente de alimentación está integrada en la caja con lo que no necesita de 
 
 ### Que considero podría mejorar el Framework Desktop
 
-El precio elevado comparado con otras opciones y si otras opciones son válidas para las necesidades de cada uno el Framework Desktop no es lo más óptimo. Un Beelink SER9 o incluso SER 8 son más que suficientes para la mayoría de usuarios incluso para mi lo serían y eso que en ciertos momentos les exijo. Por el precio de un Framwork se puede comprar un SER 9 hoy y da para comprar otro dentro de 6 años, y ese segundo estará más que a la altura del Framework Desktop o lo superará.
+El precio elevado comparado con otras opciones y si otras opciones son válidas para las necesidades de cada uno el Framework Desktop no es lo más óptimo. Un Beelink SER9 o incluso SER 8 son buenas opciones incluso en los momentos que les exijo. Por el precio de un Framwork se puede comprar un SER 9 hoy y da para comprar otro dentro de 6 años, y ese segundo estará más que a la altura del Framework Desktop o lo superará.
 
 El Framework Desktop compensa a día de hoy sí a día de hoy es una necesidad y se le va a dar uso a su potencia ya sea por IA o por poder jugar. Los ordenadores pierden valor bastante rápido, el NUC me costó 800 € y a día de hoy si lo vendiese no creo que lo pudiera hacer por más de 350 € lo que es una pérdida de valor de casi 100 € al año. En el Framework posiblemente la pérdida de valor sea más grande.
 
 La GPU integrada es una RDNA 3.5 que queda desactualizada respecto a las recientemente lanzadas tarjetas gráficas de AMD 9700XT con arquitectura RDNA 4. Salvo que AMD decida lo contrario y de el soporte a RDNA 3.5 para FSR 4 es una pérdida notable ya que en la comparación sobre FSR 3.1 es apreciable una significativa mejora de calidad gráfica.
 
-Los puertos traseros podrían tener mejor disposición con los dos USB 4 más juntos y la salida HDMI al lado de los puertos DisplayPort. Preferiría que los SSD no tuvieran disipador premotnado en la placa, hay versiones de SSD que se venden con disipador, aunque tienen un precio algo. La pila de reloj requiere desmontar la placa, está en la parte trasera, podría tener una mejor disposición para que fuera más sencilla su sustitución. Los puertos delanteros podrían estar en en el centro y montados uno encima de otro u orientados verticalmente en vez uno al lado del otro, con esta disposición se podrían colocar más de dos puertos.
+Los puertos traseros podrían tener mejor disposición con los dos USB 4 más juntos y la salida HDMI al lado de los puertos DisplayPort. Como opción uy personal preferiría que los SSD no tuvieran disipador premontado en la placa, hay versiones de SSD que se venden con disipador, aunque tienen un precio algo superior. La pila de reloj requiere desmontar la placa, está en la parte trasera en un lugar un poco inaccesible, podría tener una mejor disposición para que fuera más sencilla su sustitución. Los puertos delanteros podrían estar en en el centro y montados uno encima de otro u orientados verticalmente en vez uno al lado del otro, con esta disposición se podrían colocar más de dos puertos.
 
 ### Comparación con Mac Mini y Mac Studio
 
