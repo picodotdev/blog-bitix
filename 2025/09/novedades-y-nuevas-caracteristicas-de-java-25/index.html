@@ -62,7 +62,7 @@
     "dateModified": "2025-09-19T09:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "863",
+    "wordCount": "864",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -309,7 +309,7 @@
 </div>
 <p>Java destaca por ser un lenguaje en el que la compatibilidad hacia atrás es importante, por ello migrar de una versión anterior a una nueva no suele dar excesivos problemas, aunque no fue así en el caso de Java 8 a Java 11 por cambios relevantes en el lenguaje y eliminación de clases en el JDK. Los problemas suelen estar en las librerías de las aplicaciones más que en el lenguaje en sí.</p>
 <p>Entre las dos LTS, de Java 21 a Java 25 ha habido 3 versiones no LTS algunas con nuevas características en modo de previsualización sujetas a cambios hasta su versión definitiva y actualizaciones de esas características en su versión final. También en todas estas nuevas versiones hasta Java 25 se han publicado varias características en su versión definitiva.</p>
-<p>En septiembre de 2025 se ha publicado la versión 25 del lenguaje de programación Java y su SDK, siguiendo el calendario que se estableció hace tiempo con el que las releases de Java son más frecuentes y previsibles.</p>
+<p>En septiembre de 2025 se ha publicado la versión 25 del lenguaje de programación Java y su SDK, siguiendo el calendario que se estableció hace tiempo con el que las <em>releases</em> de Java son más frecuentes y previsibles.</p>
 <div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
     <li><a href="#introducción">Introducción</a></li>
@@ -356,7 +356,7 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2023/10/novedades-y-nuevas-caracteristicas-de-java-21/">Novedades y nuevas características de Java 21</a></li>
 </ul>
 <p>Desde Java 21 las características que destaco son las siguientes en sus versiones finales y no previsualización o experimentales, o alguna en previsualización destacada. Me centro más en las que tienen un impacto desde el punto de vista del desarrollador, también hay muchas novedades en cuanto al recolector de basura, seguridad con nuevos algoritmos y mejor soporte de Unicode.</p>
-<p>Cada una incorpora muchas actualizaciones en modo preview y menos en su versión definitiva, entre las 4 desde Java 22 hasta Java 25, proporcionan una mejora incremental notable sobre Jav 21.</p>
+<p>Cada una incorpora muchas actualizaciones en modo previsualización y menos en su versión definitiva, entre las 4 desde Java 22 hasta Java 25, proporcionan una mejora incremental notable sobre Jav 21.</p>
 <p>En las notas de publicación de cada una de las características las siguientes y otras están explicadas más extensamente y mejor.</p>
 <h3 id="java-22">Java 22</h3>
 <ul>
@@ -366,24 +366,24 @@
 <ul>
 <li><a href="https://openjdk.org/jeps/474">Graal JIT now Available</a>, el compilador de Graal JIT ahora es incluido como parte del JDK.</li>
 <li><a href="https://openjdk.org/jeps/467">Markdown Documentation Comments</a>, los comentarios pueden ser escritos usando el formato Markdown en vez de solo como una mezcla de HTML y anotaciones.</li>
-<li>String Templates, eliminada y esta es la razón por la que no es recomendable usar características en modo preview ni definitivas para aplicaciones en producción.</li>
+<li>String Templates, eliminada y esta es la razón por la que no es recomendable usar características en modo previsualización ni definitivas para aplicaciones en producción.</li>
 </ul>
 <h3 id="java-24">Java 24</h3>
 <ul>
-<li><a href="https://openjdk.org/jeps/483">Ahead-of-Time Class Loading &amp; Linking</a>, proporciona una mejora en el tiempo de arranque de las aplicaciones mediante el uso de una cache para la carga de claes y enlazado. Los usuarios de Spring Boot pueden usar esta característica mediante Class Data Sharing y con el soporte de Buildpacks o el archivo Dockerfile. En la descripción del JEP la mejora del tiempo de arranque llega hasta el 40%.
+<li><a href="https://openjdk.org/jeps/483">Ahead-of-Time Class Loading &amp; Linking</a>, proporciona una mejora en el tiempo de arranque de las aplicaciones mediante el uso de una cache para la carga de claes y enlazado. Los usuarios de Spring Boot pueden usar esta característica mediante Class Data Sharing y con el soporte de <a href="https://buildpacks.io/">Buildpacks</a> o el archivo Dockerfile. En la descripción del JEP la mejora del tiempo de arranque llega hasta el 40%.
 <ul>
-<li><a href="https://docs.spring.io/spring-boot/how-to/class-data-sharing.html">Class Data Sharing</a></li>
+<li><a href="https://docs.spring.io/spring-boot/how-to/class-data-sharing.html">Class Data Sharing</a> (CDS)</li>
 <li><a href="https://docs.spring.io/spring-boot/reference/packaging/container-images/dockerfiles.html#packaging.container-images.dockerfiles.cds">Dockerfiles</a></li>
 </ul>
 </li>
 <li><a href="https://openjdk.org/jeps/485">Stream Gatherers</a>, permiten aplicar operaciones de transformación al usar stream que eran difícil de aplicar sin estos nuevos añadidos a la API.</li>
-<li><a href="https://openjdk.org/jeps/484">Class-File API</a>, proporcionan una API standard para parsear, generar y transformar archivos class de Java. Será muy útil para las librerías que hacen manipulación de código en tiempo de compilación y ejecución.</li>
+<li><a href="https://openjdk.org/jeps/484">Class-File API</a>, proporcionan una API standard para <em>parsear</em>, generar y transformar archivos class de Java. Será muy útil para las librerías que hacen manipulación de código en tiempo de compilación y ejecución.</li>
 </ul>
 <h3 id="java-25">Java 25</h3>
 <ul>
 <li><a href="https://openjdk.org/jeps/513">Flexible Constructor Bodies</a>, la llamada a super en el constructor ya no es necesario que sea la primera línea, esto permite poner delante validaciones sobre los argumentos del constructor.</li>
-<li><a href="https://openjdk.org/jeps/506">Scoped Values</a>, permite compartir datos inmutables entre threads. Son más eficientes que las variables thread-local y de razonar. Útil al usar virtual threads y structured concurrency.</li>
-<li><a href="https://openjdk.org/jeps/515">Ahead-of-Time Command-Line Ergonomics</a>, hace más fácil usar las caches ahead-of-time.</li>
+<li><a href="https://openjdk.org/jeps/506">Scoped Values</a>, permite compartir datos inmutables entre threads. Son más eficientes y de razonar que las variables <em>thread-local</em>. Útil al usar <em>virtual threads</em> y <em>structured concurrency</em>.</li>
+<li><a href="https://openjdk.org/jeps/515">Ahead-of-Time Command-Line Ergonomics</a>, hace más fácil usar las caches <em>ahead-of-time</em>.</li>
 </ul>
 <div class="reference">
     Referencia:<br>
