@@ -290,7 +290,7 @@ Con los siguientes notas:
 * Pulsando la tecla `F2` al iniciar el sistema se entra en la BIOS, pulsando `F12` se selecciona la unidad de arranque.
 * Antes de iniciar la instalación es recomendable una copia de seguridad del equipo anterior.
 * Tener y usar un teclado y ratón conectado por USB, ya que en la BIOS ni hasta iniciar el entorno de escritorio un teclado o ratón inalámbrico funciona. 
-* He desactivado la suspensión tras un periodo de inactividad.
+* En las opciones de energía he desactivado la suspensión tras un periodo de inactividad.
 
 Como medida de seguridad he optado por cifrar con LUKS ambas unidades de almacenamiento. Y todas las copias de seguridad extrernas, salvo una en caso de emergencia que mantendré sellada en un sobre. En cuanto a copias de seguridad para seguir las mejores prácticas me falta tener la copia de seguridad en otro sitio que no sea solo mi casa.
 
