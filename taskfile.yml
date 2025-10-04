@@ -1,87 +1,28 @@
 version: '3'
 
 tasks:
+  blog-convert-logotypes:
+    desc: Convert SVG logotypes to PNG using Inkscape
+    cmds:
+      - for f in static/assets/images/logotypes/*.svg; do inkscape -w 750 "$f" --export-background white --export-background-opacity 1 --export-type png --export-filename "static/assets/images/structured-data/$(basename ${f%.*})-750.png"; done
+
   blog-generate-styles:
     desc: Generate CSS styles from LESS and Hugo chromastyles
     cmds:
       - npm run less-main
       - hugo gen chromastyles --style=github > themes/bitix/static/assets/css/syntax.css
 
-  site-build:
-    desc: Build the Hugo site
-    deps:
-      - blog-generate-styles
+  blog-git-apply:
+    desc: Apply a Git patch from Downloads
     cmds:
-      - hugo --destination="deploy" --gc --cleanDestinationDir
-      - cp deploy/index.xml deploy/atom.xml
-      - mkdir -p deploy/categories/planeta-codigo/
-      - cp deploy/tags/planeta-codigo/index.xml deploy/categories/planeta-codigo/atom.xml
+      - git apply ~/Descargas/Backup/post.patch
 
-  site-deploy:
-    desc: Deploy the site to GitHub Pages
-    dir: deploy
+  blog-git-small-changes:
+    desc: Commit and push small changes
     cmds:
       - git add .
-      - git commit -m "Site update at $(LC_ALL=en_US.utf8 date +%Y-%m-%dT%H:%M:%S%z)"
-      - git push origin gh-pages
-
-  site-clean-public:
-    desc: Clean the public directory and rebuild
-    cmds:
-      - rm -r public/*
-      - task: site-build
-
-  server:
-    desc: Run Hugo development server
-    cmds:
-      - hugo server --buildDrafts --buildFuture --watch --disableLiveReload --gc
-
-  site-install:
-    desc: Initial setup - clone repository and install dependencies
-    cmds:
-      - git clone -b master git@github.com:picodotdev/blog-bitix.git
-      - cd blog-bitix && git config --local user.email "pico.dev@gmail.com"
-      - cd blog-bitix && git config --local user.name "pico.dev"
-      - cd blog-bitix && npm install
-      - git clone -b gh-pages git@github.com:picodotdev/blog-bitix.git deploy/
-      - cd deploy && git config --local user.email "pico.dev@gmail.com"
-      - cd deploy && git config --local user.name "pico.dev"
-
-  site-update:
-    desc: Update the deploy directory from remote
-    dir: deploy
-    cmds:
-      - git pull origin gh-pages
-
-  site-sync:
-    desc: Synchronize - update, build and deploy
-    cmds:
-      - task: site-update-build-deploy
-
-  new:
-    desc: Create a new Hugo post
-    cmds:
-      - hugo --source="." --theme="bitix" new {{.CLI_ARGS}}
-
-  site-update-build-deploy:
-    desc: Update, build and deploy the site
-    cmds:
-      - task: site-update
-      - task: site-build
-      - task: site-deploy
-
-  site-clean-deploy:
-    desc: Clean the deploy directory and rebuild
-    cmds:
-      - rm -r deploy/*
-      - task: site-build
-
-  npm-update:
-    desc: Update npm dependencies
-    cmds:
-      - ./node_modules/npm-check-updates/bin/ncu -u
-      - npm install
-      - npm audit fix
+      - git commit -m "Pequeños retoques"
+      - git push origin main
 
   blog-reset-deploy:
     desc: Reset the deploy directory with a fresh Git repository
@@ -101,18 +42,6 @@ tasks:
       - cd deploy/ && git push --force origin gh-pages
       - task: site-update-build-deploy
 
-  blog-convert-logotypes:
-    desc: Convert SVG logotypes to PNG using Inkscape
-    cmds:
-      - for f in static/assets/images/logotypes/*.svg; do inkscape -w 750 "$f" --export-background white --export-background-opacity 1 --export-type png --export-filename "static/assets/images/structured-data/$(basename ${f%.*})-750.png"; done
-
-  blog-git-small-changes:
-    desc: Commit and push small changes
-    cmds:
-      - git add .
-      - git commit -m "Pequeños retoques"
-      - git push origin main
-
   blog-reset-master:
     desc: Reset the master branch with a new Git repository
     cmds:
@@ -122,6 +51,33 @@ tasks:
       - git commit -m "Initial commit"
       - git remote add origin git@github.com:picodotdev/blog-bitix.git
       - git push -u --force origin master
+
+  new:
+    desc: Create a new Hugo post
+    cmds:
+      - hugo --source="." --theme="bitix" new {{.CLI_ARGS}}
+
+  npm-update:
+    desc: Update npm dependencies
+    cmds:
+      - ./node_modules/npm-check-updates/bin/ncu -u
+      - npm install
+      - npm audit fix
+
+  server:
+    desc: Run Hugo development server
+    cmds:
+      - hugo server --buildDrafts --buildFuture --watch --disableLiveReload --gc
+
+  site-build:
+    desc: Build the Hugo site
+    deps:
+      - blog-generate-styles
+    cmds:
+      - hugo --destination="deploy" --gc --cleanDestinationDir
+      - cp deploy/index.xml deploy/atom.xml
+      - mkdir -p deploy/categories/planeta-codigo/
+      - cp deploy/tags/planeta-codigo/index.xml deploy/categories/planeta-codigo/atom.xml
 
   site-check-firefox:
     desc: Take screenshots of links using Firefox headless
@@ -138,7 +94,51 @@ tasks:
     cmds:
       - docker run --rm -it linkchecker/linkchecker --verbose --check-extern https://picodotdev.github.io/blog-bitix/ > linkchecker.log
 
-  blog-git-apply:
-    desc: Apply a Git patch from Downloads
+  site-clean-deploy:
+    desc: Clean the deploy directory and rebuild
     cmds:
-      - git apply ~/Descargas/Backup/post.patch
+      - rm -r deploy/*
+      - task: site-build
+
+  site-clean-public:
+    desc: Clean the public directory and rebuild
+    cmds:
+      - rm -r public/*
+      - task: site-build
+
+  site-deploy:
+    desc: Deploy the site to GitHub Pages
+    dir: deploy
+    cmds:
+      - git add .
+      - git commit -m "Site update at $(LC_ALL=en_US.utf8 date +%Y-%m-%dT%H:%M:%S%z)"
+      - git push origin gh-pages
+
+  site-install:
+    desc: Initial setup - clone repository and install dependencies
+    cmds:
+      - git clone -b master git@github.com:picodotdev/blog-bitix.git
+      - cd blog-bitix && git config --local user.email "pico.dev@gmail.com"
+      - cd blog-bitix && git config --local user.name "pico.dev"
+      - cd blog-bitix && npm install
+      - git clone -b gh-pages git@github.com:picodotdev/blog-bitix.git deploy/
+      - cd deploy && git config --local user.email "pico.dev@gmail.com"
+      - cd deploy && git config --local user.name "pico.dev"
+
+  site-sync:
+    desc: Synchronize - update, build and deploy
+    cmds:
+      - task: site-update-build-deploy
+
+  site-update:
+    desc: Update the deploy directory from remote
+    dir: deploy
+    cmds:
+      - git pull origin gh-pages
+
+  site-update-build-deploy:
+    desc: Update, build and deploy the site
+    cmds:
+      - task: site-update
+      - task: site-build
+      - task: site-deploy
