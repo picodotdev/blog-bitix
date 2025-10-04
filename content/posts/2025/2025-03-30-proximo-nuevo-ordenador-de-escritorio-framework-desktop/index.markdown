@@ -24,6 +24,8 @@ Con el uso intensivo y en algunos momentos exigente que le doy a los ordenadores
 
 Siendo un usuario exigente con el ordenador que tengo me es provechoso cambiar de equipo cada menos tiempo del necesario. El último ordenador personal que he tenido ha sido un pequeño Intel NUC Bean Canyon con un procesador i5-8259U de 4 núcleos y 8 hilos con 32 GB de memoria RAM DDR4 a 2400 Mhz y almacenamiento NVMe Gen 3 con hasta 3000 Mbps en lectura y un poco menos en escritura.
 
+* [Desempaquetado y análisis de Framework Desktop, AMD Ryzen 395+ Max con 128 GB][blogbitix-717]
+
 {{< tableofcontents >}}
 
 ## Anteriores ordenadores que he tenido
