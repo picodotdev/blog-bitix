@@ -29,7 +29,7 @@ tasks:
     desc: Clean the public directory and rebuild
     cmds:
       - rm -r public/*
-      - ./build.sh
+      - task: site-build
 
   server:
     desc: Run Hugo development server
@@ -74,7 +74,7 @@ tasks:
     desc: Clean the deploy directory and rebuild
     cmds:
       - rm -r deploy/*
-      - ./build-deploy.sh
+      - task: site-build
 
   npm-update:
     desc: Update npm dependencies
