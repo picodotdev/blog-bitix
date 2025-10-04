@@ -135,10 +135,7 @@ A continuación hago el desempaquetado del equipo desde la apertura del paquete 
     gallery="true"
     image1="image:framework-desktop-desempaquetado-13.webp" optionsthumb1="200x150" title1="Desempaquetado de Framework Desktop"
     image2="image:framework-desktop-desempaquetado-14.webp" optionsthumb2="200x150" title2="Desempaquetado de Framework Desktop"
-    image3="image:framework-desktop-desempaquetado-15.webp" optionsthumb3="200x150" title3="Desempaquetado de Framework Desktop" >}}
-{{< image
-    gallery="true"
-    image1="image:framework-desktop-desempaquetado-16.webp" optionsthumb1="200x150" title1="Desempaquetado de Framework Desktop"
+    image3="image:framework-desktop-desempaquetado-15.webp" optionsthumb3="200x150" title3="Desempaquetado de Framework Desktop"
     caption="Desempaquetado de Framework Desktop" >}}
 
 ### Tiles
