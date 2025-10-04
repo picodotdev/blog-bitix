@@ -1,23 +1,23 @@
 version: '3'
 
 tasks:
-  generate-styles:
+  blog-generate-styles:
     desc: Generate CSS styles from LESS and Hugo chromastyles
     cmds:
       - npm run less-main
       - hugo gen chromastyles --style=github > themes/bitix/static/assets/css/syntax.css
 
-  build:
+  site-build:
     desc: Build the Hugo site
     deps:
-      - generate-styles
+      - blog-generate-styles
     cmds:
       - hugo --destination="deploy" --gc --cleanDestinationDir
       - cp deploy/index.xml deploy/atom.xml
       - mkdir -p deploy/categories/planeta-codigo/
       - cp deploy/tags/planeta-codigo/index.xml deploy/categories/planeta-codigo/atom.xml
 
-  deploy:
+  site-deploy:
     desc: Deploy the site to GitHub Pages
     dir: deploy
     cmds:
@@ -25,7 +25,7 @@ tasks:
       - git commit -m "Site update at $(LC_ALL=en_US.utf8 date +%Y-%m-%dT%H:%M:%S%z)"
       - git push origin gh-pages
 
-  clean-public:
+  site-clean-public:
     desc: Clean the public directory and rebuild
     cmds:
       - rm -r public/*
@@ -36,7 +36,7 @@ tasks:
     cmds:
       - hugo server --buildDrafts --buildFuture --watch --disableLiveReload --gc
 
-  install:
+  site-install:
     desc: Initial setup - clone repository and install dependencies
     cmds:
       - git clone -b master git@github.com:picodotdev/blog-bitix.git
@@ -47,30 +47,30 @@ tasks:
       - cd deploy && git config --local user.email "pico.dev@gmail.com"
       - cd deploy && git config --local user.name "pico.dev"
 
-  update:
+  site-update:
     desc: Update the deploy directory from remote
     dir: deploy
     cmds:
       - git pull origin gh-pages
 
-  sync:
+  site-sync:
     desc: Synchronize - update, build and deploy
     cmds:
-      - task: update-build-deploy
+      - task: site-update-build-deploy
 
   new:
     desc: Create a new Hugo post
     cmds:
       - hugo --source="." --theme="bitix" new {{.CLI_ARGS}}
 
-  update-build-deploy:
+  site-update-build-deploy:
     desc: Update, build and deploy the site
     cmds:
-      - task: update
-      - task: build
-      - task: deploy
+      - task: site-update
+      - task: site-build
+      - task: site-deploy
 
-  clean-deploy:
+  site-clean-deploy:
     desc: Clean the deploy directory and rebuild
     cmds:
       - rm -r deploy/*
@@ -83,7 +83,7 @@ tasks:
       - npm install
       - npm audit fix
 
-  reset-deploy:
+  blog-reset-deploy:
     desc: Reset the deploy directory with a fresh Git repository
     cmds:
       - mv deploy/ deploy-backup/
@@ -95,25 +95,25 @@ tasks:
       - cd deploy/ && git config --local pull.ff only
       - cd deploy/ && git checkout -b gh-pages
       - cp deploy-backup/.gitignore deploy/.gitignore
-      - task: build
+      - task: site-build
       - cd deploy/ && git add -A
       - cd deploy/ && git commit -m "Site reset at $(LC_ALL=en_US.utf8 date +%Y-%m-%dT%H:%M:%S%z)"
       - cd deploy/ && git push --force origin gh-pages
-      - task: update-build-deploy
+      - task: site-update-build-deploy
 
-  convert-logotypes:
+  blog-convert-logotypes:
     desc: Convert SVG logotypes to PNG using Inkscape
     cmds:
       - for f in static/assets/images/logotypes/*.svg; do inkscape -w 750 "$f" --export-background white --export-background-opacity 1 --export-type png --export-filename "static/assets/images/structured-data/$(basename ${f%.*})-750.png"; done
 
-  git-small-changes:
+  blog-git-small-changes:
     desc: Commit and push small changes
     cmds:
       - git add .
       - git commit -m "Pequeños retoques"
       - git push origin main
 
-  reset-master:
+  blog-reset-master:
     desc: Reset the master branch with a new Git repository
     cmds:
       - rm -rf .git
@@ -123,7 +123,7 @@ tasks:
       - git remote add origin git@github.com:picodotdev/blog-bitix.git
       - git push -u --force origin master
 
-  check-firefox:
+  site-check-firefox:
     desc: Take screenshots of links using Firefox headless
     cmds:
       - |
@@ -133,12 +133,12 @@ tasks:
           firefox -P headless -headless --screenshot "$NAME.png" $URL --window-size=1920
         done
 
-  check-links:
+  site-check-links:
     desc: Check external links using linkchecker
     cmds:
       - docker run --rm -it linkchecker/linkchecker --verbose --check-extern https://picodotdev.github.io/blog-bitix/ > linkchecker.log
 
-  git-apply:
+  blog-git-apply:
     desc: Apply a Git patch from Downloads
     cmds:
       - git apply ~/Descargas/Backup/post.patch
