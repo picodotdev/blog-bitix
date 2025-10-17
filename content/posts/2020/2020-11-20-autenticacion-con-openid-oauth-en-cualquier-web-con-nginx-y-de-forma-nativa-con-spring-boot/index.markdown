@@ -31,7 +31,7 @@ Para administrar de forma centralizada los usuarios o credenciales de las aplica
 
 OpenID Connect es una capa de identidad que funciona sobre el [protocolo OAuth][oauth] 2.0. Permite a los clientes verificar la identidad del usuario basándose en la autenticación realizada por el servidor de autorización, así como obtener información básica del perfil del usuario. El protocolo funciona con principios similares a REST lo que lo hace interoperable con cualquier sistema.
 
-Son varios los proveedores que ofrecen autenticación con sus cuentas, algunos de ellos son [Google][google], [GitHub][github], [Azure Active Directory][microsft-azure-active-directory], [AWS Cognito][amazon-cognito] u [Okta][okta]. Para implementar el servicio de autenticación y autorización OAuth gestionando sin depender de esas otras organizaciones está [Keycloak][keycloak].
+Son varios los proveedores que ofrecen autenticación con sus cuentas, algunos de ellos son [Google][google], [GitHub][github], [Azure Active Directory][microsoft-azure-active-directory], [AWS Cognito][amazon-cognito] u [Okta][okta]. Para implementar el servicio de autenticación y autorización OAuth gestionando sin depender de esas otras organizaciones está [Keycloak][keycloak].
 
 ## Autenticación OpenID/OAuth con Nginx
 
