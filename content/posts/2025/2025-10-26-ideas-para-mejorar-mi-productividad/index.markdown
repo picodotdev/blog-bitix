@@ -91,7 +91,7 @@ Voy a reservarme con un evento en el calendario de trabajo tiempo para:
 * Hacerme la comida, cuando no tengo algo congelado, algo que no requiere cocinar o preparar con tiempo. Prepararla para tenerla lista a la hora de comer, sino acabo comiendo tarde y a deshoras por eso de cuando termine esto voy, y luego terminado surge algo más.
 * Comer, ya que hay gente que aprovecha las horas de comida para convocar reuniones.
 * Tareas de investigación y formación, que son tareas que en la planificación de scrum por puntos no se suele tener en cuenta o tener un tiempo para investigar y explorar ideas que pueden ahorrar un montón de tiempo con una inversión de tiempo ridícula.
-* Preparar reuniones por mi cuenta ya muchas no se facilita prepararlas previamente a otras personas o se convoca una reunión cuando perfectamente podría ser un hilo de slack.
+* Preparar reuniones por mi cuenta, ya muchas no se facilita prepararlas previamente a otras personas o se convoca una reunión cuando perfectamente podría ser un hilo de slack.
 
 ## Conocer el sistema y herramientas
 
