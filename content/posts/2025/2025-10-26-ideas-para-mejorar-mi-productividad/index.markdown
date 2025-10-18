@@ -120,6 +120,13 @@ La utilizaré para realizar algunas acciones mecánicas como la comentada y en G
 * [Microsoft Copilot][microsoft-copilot]
 * [GitHub Copilot][github-copilot]
 
+Eso, y más cositas que seguiré cambiando.
+
+{{< image
+    gallery="true"
+    image1="image:mas-cositas.webp" optionsthumb1="300x200" title1="Más cositas"
+    caption="Más cositas" >}}
+
 Aunque usar todo esto puede que siga no siendo suficiente, una cosa el tener un plan y luego recibir el primer golpe, también hay otros aspectos relevantes como poner límites, comunicación asertiva, peopleware y _politics_, ciertos pensamientos y comportamientos dañinos.
 
 ¿Te dan ideas estás prácticas que he empezado a usar? ¿Haces alguna práctica que te ayude en el aspecto de bienestar y productividad? Me gustaría conocerlas, no te la guardes, deja un comentario abajo para que las conozca.
