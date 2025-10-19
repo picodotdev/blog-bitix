@@ -70,7 +70,7 @@ Compré un reloj con cuenta atrás para tomar la medida de cuánto tiempo le que
 
 Adicionalmente, para evitar distracciones en [Firefox][firefox] separaré en dos perfiles las cuentras personales e historial de nevegación y las profesionales.
 
-Podría utilizar y he estado utilizando el móvil pero me es más incómodo. Este es el reloj de cocina, mi nuevo _gadget_ preferido al que empiezo a adorar.
+Podría utilizar y he estado utilizando el móvil pero me es más incómodo. Este es el reloj de cocina, mi nuevo _gadget_ preferido al que empiezo a adorar, estoy casi por comprarme uno segundo.
 
 * [Reloj de cocina para pomodoros](https://amzn.to/4hzxeCZ)
 
