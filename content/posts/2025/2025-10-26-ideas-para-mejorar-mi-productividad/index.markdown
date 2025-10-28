@@ -95,7 +95,7 @@ Voy a reservarme con un evento en el calendario de trabajo tiempo para:
 
 ## Conocer el sistema y herramientas
 
-Organizar las ventanas y los espacios de trabajo ayuda a tener las actividades ordenadas y es algo que suelo utilizar. Estas son las combinaciones de teclas para las acciones más comunes que realizo. En `Configuración > Teclado > Atajos de teclado` están los atajos de GNOME. En macOS me instalaré la aplicación [Magnet](https://magnet.crowdcafe.com/) y en su página web están cada unas de las opciones.
+Organizar las ventanas y los espacios de trabajo ayuda a tener las actividades ordenadas y es algo que suelo utilizar. Estas son las combinaciones de teclas para las acciones más comunes que realizo. En `Configuración > Teclado > Atajos de teclado` están los atajos de GNOME. En macOS me instalaré la aplicación [Rectangle](https://rectangleapp.com/) y en su página web están cada unas de las opciones.
 
 * Alinear ventana a la mitad izquierda o derecha de la pantalla, para tener dos ventanas una al lado de la otra.
     * GNU/Linux: `Super + Flecha Izquierda`, `Super + Flecha Derecha`
@@ -124,7 +124,7 @@ Eso, y más cositas que seguiré cambiando.
 
 {{< image
     gallery="true"
-    image1="image:mas-cositas.webp" optionsthumb1="300x200" title1="Más cositas"
+    image1="image:mas-cositas.webp" optionsthumb1="650x450" title1="Más cositas"
     caption="Más cositas" >}}
 
 Aunque usar todo esto puede que siga no siendo suficiente, una cosa el tener un plan y luego recibir el primer golpe, también hay otros aspectos relevantes como poner límites, comunicación asertiva, peopleware y _politics_, ciertos pensamientos y comportamientos dañinos.
