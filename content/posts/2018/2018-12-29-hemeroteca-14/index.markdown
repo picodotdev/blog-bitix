@@ -4,7 +4,7 @@ type: "post"
 title: "Hemeroteca #14"
 url: "/2018/12/hemeroteca-14/"
 date: 2018-12-29T13:00:00+01:00
-date: 2018-12-30T19:00:00+01:00
+updated: 2018-12-30T19:00:00+01:00
 language: "es"
 index: true
 rss: true

@@ -20,14 +20,6 @@ languages:
 
 theme: "bitix"
 
-mediaTypes:
-  text/html:
-    suffixes:
-    - enr
-  text/html:
-    suffixes:
-    - asp
-
 outputs:
   home:
   - HTML
@@ -59,10 +51,12 @@ markup:
     ordered: true
 
 imaging:
+  resampleFilter: "box"
+  quality: 90
   exif:
     disableDate: true
     disableLatLong: true
-    excludeFields: "*"
+    excludeFields: ".*"
     includeFields: ""
 
 pygmentsUseClasses: true
@@ -77,10 +71,6 @@ permalinks:
 taxonomies:
   tag: "tags"
   series: "series"
-
-imaging:
-  resampleFilter: "box"
-  quality: 90
 
 menu:
   header:

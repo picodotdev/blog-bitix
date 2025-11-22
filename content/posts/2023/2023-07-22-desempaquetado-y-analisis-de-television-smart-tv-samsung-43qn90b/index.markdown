@@ -4,7 +4,7 @@ type: "post"
 title: "Desempaquetado y análisis de televisión smart tv Samsung 43QN90B"
 url: "/2023/07/desempaquetado-y-analisis-de-television-smart-tv-samsung-43qn90b/"
 date: 2023-07-22T11:00:00+02:00
-date: 2023-08-30T16:30:00+02:00
+updated: 2023-08-30T16:30:00+02:00
 language: "es"
 index: true
 rss: true

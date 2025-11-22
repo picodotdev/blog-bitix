@@ -7,8 +7,6 @@ date: 2018-03-24T23:30:00+01:00
 language: "es"
 index: true
 rss: true
-index: true
-rss: true
 sharing: true
 comments: true
 promoted: false

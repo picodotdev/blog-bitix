@@ -4,7 +4,7 @@ type: "post"
 title: "La herramienta SDKMAN para instalar varias versiones del JDK y software de la plataforma Java"
 url: "/2020/06/la-herramienta-sdkman-para-instalar-varias-versiones-del-jdk-y-software-de-la-plataforma-java/"
 date: 2020-06-05T18:00:00+02:00
-date: 2020-06-05T23:00:00+02:00
+updated: 2020-06-05T23:00:00+02:00
 language: "es"
 index: true
 rss: true

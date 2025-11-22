@@ -4,7 +4,7 @@ type: "post"
 title: "Codificar los datos para evitar ataques XSS en una página web"
 url: "/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/"
 date: 2019-03-24T12:00:00+01:00
-date: 2019-03-29T09:00:00+01:00
+updated: 2019-03-29T09:00:00+01:00
 language: "es"
 index: true
 rss: true

@@ -5,7 +5,7 @@ title: "Cómo migrar el contenido de un sitio web HTML a formato Markdown"
 url: "/2020/02/como-migrar-el-contenido-de-un-sitio-web-html-a-formato-markdown/"
 aliases: ["/2020/02/como-migrar-el-contenido-de-un-sitio-web-html-a-formato-markdown-de-wordpress-a-generador-estatico/"]
 date: 2020-02-23T11:00:00+01:00
-date: 2020-02-23T16:00:00+01:00
+updated: 2020-02-23T16:00:00+01:00
 language: "es"
 index: true
 rss: true
