@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="Centralizar y consultar las trazas de las aplicaciones con Elasticsearch, Logstash y Kibana">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/elk-beats-platform_hu_7435e8b9b7ff8261.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/elk-beats-platform_hu_3859ed4fd4114954.png">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Las aplicaciones monolíticas solo generan un archivo de trazas, es fácil de monitorizar, basta con conectarse por SSH a la máquina de su entorno de ejecución y utilizar los comandos grep o tail o descargarlo para examinarlo con otra herramienta de forma local. Pero aún siendo una aplicación monolítica es raro que una organización tenga solo una aplicación sino varias diferentes y las aplicaciones complejas se dividen en varias aún siendo parte de la misma aplicación. Esto hace que haya múltiples aplicaciones en cuyo caso acceder por SSH a una máquina diferente en cada caso no es cómodo. En el caso de múltiples aplicaciones o aplicaciones basadas en microservicios se opta por centralizar las trazas provenientes de múltiples fuentes en una única herramienta, una de las herramientas es la combinación de Elasticsearch, Logstash y Kibana que forma la pila ELK. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/elk-beats-platform_hu_7435e8b9b7ff8261.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/elk-beats-platform_hu_3859ed4fd4114954.png">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Centralizar y consultar las trazas de las aplicaciones con Elasticsearch, Logstash y Kibana">
@@ -55,7 +55,7 @@
     "headline": "Centralizar y consultar las trazas de las aplicaciones con Elasticsearch, Logstash y Kibana",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/elk-beats-platform_hu_7435e8b9b7ff8261.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/elk-beats-platform_hu_3859ed4fd4114954.png"
         
       },
     "datePublished": "2020-09-25T16:00:00+02:00",
@@ -315,7 +315,7 @@
 <p>En vez de usar Logstash se puede usar la herramienta más ligera <a href="https://www.elastic.co/es/beats/filebeat">Filebeat</a> para indexar la salida estándar de las aplicaciones directamente en Elasticsearch o para enviar a una instancia de Logstash que realice el procesado y el indexado en Elasticsearch.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/elk-beats-platform_hu_eb91ab824a9270b7.webp" data-gallery="" title="Arquitectura de la plataforma ELK"><img src="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/elk-beats-platform_hu_4e4c03350d2d39fe.webp" width="300" height="183" alt="Arquitectura de la plataforma ELK" title="Arquitectura de la plataforma ELK" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/elk-beats-platform_hu_65022e0e748c17a6.webp" data-gallery="" title="Arquitectura de la plataforma ELK"><img src="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/elk-beats-platform_hu_cb0dfb9cd7b4f1be.webp" width="300" height="183" alt="Arquitectura de la plataforma ELK" title="Arquitectura de la plataforma ELK" class="" loading="lazy"></a></p>
 <figcaption>Arquitectura de la plataforma ELK</figcaption>
 </figure>
 </div>
@@ -380,8 +380,8 @@
 <p>En el ejemplo Kibana se accede a través de la dirección <em>http://localhost:5601</em> con un navegador web.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/kibana_hu_3f1a67bf441bb797.webp" data-gallery="" title="Búsqueda en Kibana de trazas del contenedor Docker de Nginx"><img src="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/kibana_hu_15157cc9bc5ca454.webp" width="281" height="200" alt="Búsqueda en Kibana de trazas del contenedor Docker de Nginx" title="Búsqueda en Kibana de trazas del contenedor Docker de Nginx" class="" loading="lazy"></a>
-<a href="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/nginx_hu_12b067720cdd41f2.webp" data-gallery="" title="Página de inicio por defecto de Nginx"><img src="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/nginx_hu_a563e08de61b3482.webp" width="281" height="200" alt="Página de inicio por defecto de Nginx" title="Página de inicio por defecto de Nginx" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/kibana_hu_768fe087b27b921e.webp" data-gallery="" title="Búsqueda en Kibana de trazas del contenedor Docker de Nginx"><img src="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/kibana_hu_c9b0bc1a48b75a80.webp" width="281" height="200" alt="Búsqueda en Kibana de trazas del contenedor Docker de Nginx" title="Búsqueda en Kibana de trazas del contenedor Docker de Nginx" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/nginx_hu_f774b1d6d0cb3050.webp" data-gallery="" title="Página de inicio por defecto de Nginx"><img src="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/nginx_hu_d157e57a98b4604b.webp" width="281" height="200" alt="Página de inicio por defecto de Nginx" title="Página de inicio por defecto de Nginx" class="" loading="lazy"></a></p>
 <figcaption>Búsqueda en Kibana de trazas del contenedor Docker de Nginx al solicitar la página por defecto</figcaption>
 </figure>
 </div>
@@ -433,7 +433,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/">
-                <img src="/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/images/cncf-landscape_hu_f3d53408ab2b6ab3.webp" width="326" height="125" alt="Funcionalidades que necesitan las aplicaciones basadas en microservicios y herramientas que las proporcionan" title="Funcionalidades que necesitan las aplicaciones basadas en microservicios y herramientas que las proporcionan" class="" loading="lazy">
+                <img src="/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/images/cncf-landscape_hu_8d1a1b33d96d87da.webp" width="326" height="125" alt="Funcionalidades que necesitan las aplicaciones basadas en microservicios y herramientas que las proporcionan" title="Funcionalidades que necesitan las aplicaciones basadas en microservicios y herramientas que las proporcionan" class="" loading="lazy">
                 <h3>Funcionalidades que necesitan las aplicaciones basadas en microservicios y herramientas que las proporcionan</h3>
                 </a>
                 
@@ -461,7 +461,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/">
-                <img src="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/images/exrpresion-cron_hu_ea504d3540855687.webp" width="326" height="125" alt="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" title="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" class="" loading="lazy">
+                <img src="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/images/exrpresion-cron_hu_e20d433f48000e32.webp" width="326" height="125" alt="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" title="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" class="" loading="lazy">
                 <h3>Qué son, para qué sirven, formato y ejemplos de las expresiones cron</h3>
                 </a>
                 
@@ -475,7 +475,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/">
-                <img src="/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if-else_hu_67ea2f830f17fff4.webp" width="326" height="125" alt="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" title="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" class="" loading="lazy">
+                <img src="/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if-else_hu_aa67870ac7768de0.webp" width="326" height="125" alt="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" title="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" class="" loading="lazy">
                 <h3>Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)</h3>
                 </a>
                 
@@ -489,7 +489,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/">
-                <img src="/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/images/specification_hu_1f72d2f7349194b2.webp" width="326" height="125" alt="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data" title="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data" class="" loading="lazy">
+                <img src="/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/images/specification_hu_862757361c0f3aeb.webp" width="326" height="125" alt="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data" title="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data" class="" loading="lazy">
                 <h3>El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data</h3>
                 </a>
                 

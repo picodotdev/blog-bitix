@@ -324,17 +324,23 @@
 <p>El proyecto Loom modificará muchas de las clases de forma interna para implementar los <em>threads</em> con los <em>thread</em> virtuales. Las librerías y aplicaciones que hagan uso de estas clases se beneficiarán de estas mejoras sin necesidad de realizar ninguna modificación.</p>
 <p>Estos párrafos son varios extractos del magnífico artículo <a href="http://cr.openjdk.java.net/~rpressler/loom/loom/sol1_part1.html">State of Loom</a>.</p>
 <blockquote>
-<p>Programmers are forced to choose between modeling a unit of domain concurrency directly as a thread and wasting considerable throughput that their hardware can support, or using other ways to implement concurrency on a very fine-grained level but relinquishing the strengths of the Java platform. Both choices have a considerable financial cost, either in hardware or in development and maintenance effort.</p></blockquote>
+<p>Programmers are forced to choose between modeling a unit of domain concurrency directly as a thread and wasting considerable throughput that their hardware can support, or using other ways to implement concurrency on a very fine-grained level but relinquishing the strengths of the Java platform. Both choices have a considerable financial cost, either in hardware or in development and maintenance effort.</p>
+</blockquote>
 <blockquote>
-<p>We can do better.</p></blockquote>
+<p>We can do better.</p>
+</blockquote>
 <blockquote>
-<p>Project Loom intends to eliminate the frustrating tradeoff between efficiently running concurrent programs and efficiently writing, maintaining and observing them. It leans into the strengths of the platform rather than fight them, and also into the strengths of the efficient components of asynchronous programming. It lets you write programs in a familiar style, using familiar APIs, and in harmony with the platform and its tools — but also with the hardware — to reach a balance of write-time and runtime costs that, we hope, will be widely appealing. It does so without changing the language, and with only minor changes to the core library APIs. A simple, synchronous web server will be able to handle many more requests without requiring more hardware.</p></blockquote>
+<p>Project Loom intends to eliminate the frustrating tradeoff between efficiently running concurrent programs and efficiently writing, maintaining and observing them. It leans into the strengths of the platform rather than fight them, and also into the strengths of the efficient components of asynchronous programming. It lets you write programs in a familiar style, using familiar APIs, and in harmony with the platform and its tools — but also with the hardware — to reach a balance of write-time and runtime costs that, we hope, will be widely appealing. It does so without changing the language, and with only minor changes to the core library APIs. A simple, synchronous web server will be able to handle many more requests without requiring more hardware.</p>
+</blockquote>
 <blockquote>
-<p>Whereas the OS can support up to a few thousand active threads, the Java runtime can support millions of virtual threads. Every unit of concurrency in the application domain can be represented by its own thread, making programming concurrent applications easier. Forget about thread-pools, just spawn a new thread, one per task. You’ve already spawned a new virtual thread to handle an incoming HTTP request, but now, in the course of handling the request, you want to simultaneously query a database and issue outgoing requests to three other services? No problem — spawn more threads. You need to wait for something to happen without wasting precious resources? Forget about callbacks or reactive stream chaining — just block. Write straightforward, boring code. All the benefits threads give us — control flow, exception context, debugging flow, profiling organization — are preserved by virtual threads; only the runtime cost in footprint and performance is gone. There is no loss in flexibility compared to asynchronous programming because, as we’ll see, we have not ceded fine-grained control over scheduling.</p></blockquote>
+<p>Whereas the OS can support up to a few thousand active threads, the Java runtime can support millions of virtual threads. Every unit of concurrency in the application domain can be represented by its own thread, making programming concurrent applications easier. Forget about thread-pools, just spawn a new thread, one per task. You’ve already spawned a new virtual thread to handle an incoming HTTP request, but now, in the course of handling the request, you want to simultaneously query a database and issue outgoing requests to three other services? No problem — spawn more threads. You need to wait for something to happen without wasting precious resources? Forget about callbacks or reactive stream chaining — just block. Write straightforward, boring code. All the benefits threads give us — control flow, exception context, debugging flow, profiling organization — are preserved by virtual threads; only the runtime cost in footprint and performance is gone. There is no loss in flexibility compared to asynchronous programming because, as we’ll see, we have not ceded fine-grained control over scheduling.</p>
+</blockquote>
 <blockquote>
-<p>However, the existence of threads that are so lightweight compared to the threads we’re used to does require some mental adjustment. First, we no longer need to avoid blocking, because blocking a (virtual) thread is not costly. We can use all the familiar synchronous APIs without paying a high price in throughput. Second, creating these threads is cheap. Every task, within reason, can have its own thread entirely to itself; there is never a need to pool them. If we don’t pool them, how do we limit concurrent access to some service? Instead of breaking the task down and running the service-call subtask in a separate, constrained pool, we just let the entire task run start-to-finish, in its own thread, and use a semaphore in the service-call code to limit concurrency — this is how it should be done.</p></blockquote>
+<p>However, the existence of threads that are so lightweight compared to the threads we’re used to does require some mental adjustment. First, we no longer need to avoid blocking, because blocking a (virtual) thread is not costly. We can use all the familiar synchronous APIs without paying a high price in throughput. Second, creating these threads is cheap. Every task, within reason, can have its own thread entirely to itself; there is never a need to pool them. If we don’t pool them, how do we limit concurrent access to some service? Instead of breaking the task down and running the service-call subtask in a separate, constrained pool, we just let the entire task run start-to-finish, in its own thread, and use a semaphore in the service-call code to limit concurrency — this is how it should be done.</p>
+</blockquote>
 <blockquote>
-<p>Using virtual threads well does not require learning new concepts so much as it demands we unlearn old habits developed over the years to cope with the high cost of threads and that we’ve come to automatically associate with threads merely because we’ve only had the one implementation.</p></blockquote>
+<p>Using virtual threads well does not require learning new concepts so much as it demands we unlearn old habits developed over the years to cope with the high cost of threads and that we’ve come to automatically associate with threads merely because we’ve only had the one implementation.</p>
+</blockquote>
 <div class="media media-video">
   <iframe width="640" height="360" data-src="https://www.youtube.com/embed/lIq-x_iI-kc" frameborder="0" title="Vídeo de YouTube" class="lozad" allowfullscreen></iframe>
 </div>
@@ -424,7 +430,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/04/argumentos-de-linea-de-comandos-con-jcommander-en-una-aplicacion-java/">
-                <img src="/blog-bitix/2020/04/argumentos-de-linea-de-comandos-con-jcommander-en-una-aplicacion-java/images/jcommander_hu_1a6ed47185658742.webp" width="326" height="125" alt="Argumentos de línea de comandos con JCommander en una aplicación Java" title="Argumentos de línea de comandos con JCommander en una aplicación Java" class="" loading="lazy">
+                <img src="/blog-bitix/2020/04/argumentos-de-linea-de-comandos-con-jcommander-en-una-aplicacion-java/images/jcommander_hu_56ea823ba5955fa0.webp" width="326" height="125" alt="Argumentos de línea de comandos con JCommander en una aplicación Java" title="Argumentos de línea de comandos con JCommander en una aplicación Java" class="" loading="lazy">
                 <h3>Argumentos de línea de comandos con JCommander en una aplicación Java</h3>
                 </a>
                 
@@ -438,7 +444,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/03/novedades-de-java-14/">
-                <img src="/blog-bitix/2020/03/novedades-de-java-14/images/java-14_hu_9846255e45de0676.webp" width="326" height="125" alt="Novedades de Java 14" title="Novedades de Java 14" class="" loading="lazy">
+                <img src="/blog-bitix/2020/03/novedades-de-java-14/images/java-14_hu_5d39db383da46bcb.webp" width="326" height="125" alt="Novedades de Java 14" title="Novedades de Java 14" class="" loading="lazy">
                 <h3>Novedades de Java 14</h3>
                 </a>
                 
@@ -466,7 +472,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/02/las-convenciones-y-guia-de-estilos-para-el-codigo-fuente-de-java/">
-                <img src="/blog-bitix/2020/02/las-convenciones-y-guia-de-estilos-para-el-codigo-fuente-de-java/images/intellij-code-style-1_hu_4fc313d57058a551.webp" width="326" height="125" alt="Las convenciones y guía de estilos para el código fuente de Java" title="Las convenciones y guía de estilos para el código fuente de Java" class="" loading="lazy">
+                <img src="/blog-bitix/2020/02/las-convenciones-y-guia-de-estilos-para-el-codigo-fuente-de-java/images/intellij-code-style-1_hu_fa94b5a8d2447093.webp" width="326" height="125" alt="Las convenciones y guía de estilos para el código fuente de Java" title="Las convenciones y guía de estilos para el código fuente de Java" class="" loading="lazy">
                 <h3>Las convenciones y guía de estilos para el código fuente de Java</h3>
                 </a>
                 
@@ -480,7 +486,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/">
-                <img src="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-3_hu_f0fc4bd1abe1bc20.webp" width="326" height="125" alt="El recolector de basura de Java, qué hace y cómo funciona en cada versión" title="El recolector de basura de Java, qué hace y cómo funciona en cada versión" class="" loading="lazy">
+                <img src="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-3_hu_f606883095c20731.webp" width="326" height="125" alt="El recolector de basura de Java, qué hace y cómo funciona en cada versión" title="El recolector de basura de Java, qué hace y cómo funciona en cada versión" class="" loading="lazy">
                 <h3>El recolector de basura de Java, qué hace y cómo funciona en cada versión</h3>
                 </a>
                 
@@ -494,7 +500,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/02/programacion-orientada-a-aspectos-con-aspectj-spring-aop-y-la-clase-proxy/">
-                <img src="/blog-bitix/2020/02/programacion-orientada-a-aspectos-con-aspectj-spring-aop-y-la-clase-proxy/images/aop-proxy-call_hu_bc27ffa5d91b779.webp" width="326" height="125" alt="Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy" title="Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy" class="" loading="lazy">
+                <img src="/blog-bitix/2020/02/programacion-orientada-a-aspectos-con-aspectj-spring-aop-y-la-clase-proxy/images/aop-proxy-call_hu_1aa5ccc7c07725ef.webp" width="326" height="125" alt="Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy" title="Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy" class="" loading="lazy">
                 <h3>Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy</h3>
                 </a>
                 

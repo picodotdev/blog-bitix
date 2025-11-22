@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="Tipos de arquitecturas de aplicaciones de software">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu_ecb1fb3aec55d7b1.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu_378585aafbe24a97.png">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Con el paso de los años las arquitectura recomendadas han cambiado. En el caso de las aplicaciones web pasando por la arquitectura spaghetti, a la por capas y finalmente con una mezcla de hexagonal, domain-driven-design o DDD y dependiendo del caso siendo RESTful, utilizando CQRS, estándo dirigida por eventos o event-driven y en los casos en los que su aplicación es útil usando event sourcing. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu_ecb1fb3aec55d7b1.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu_378585aafbe24a97.png">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Tipos de arquitecturas de aplicaciones de software">
@@ -55,7 +55,7 @@
     "headline": "Tipos de arquitecturas de aplicaciones de software",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu_ecb1fb3aec55d7b1.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu_378585aafbe24a97.png"
         
       },
     "datePublished": "2020-12-06T00:00:00+01:00",
@@ -244,7 +244,7 @@
     
     <div class="row page-header">
       <div class="col-12">
-        <img src="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture-1040_hu_13e09009eec1f34c.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+        <img src="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture-1040_hu_4a80860a68ebd8c.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
       </div>
     </div>
     
@@ -340,16 +340,21 @@
 </ul>
 <p>Según alguna de la organización de estándar IEEE la definición de arquitectura de software es:</p>
 <blockquote>
-<p>Architecture is the fundamental <strong>organization</strong> of a <strong>system</strong> embodied in its <strong>components</strong>, their <strong>relationships</strong> to each other, and to the <strong>environment</strong>, and the principles guiding its design and evolution.</p></blockquote>
+<p>Architecture is the fundamental <strong>organization</strong> of a <strong>system</strong> embodied in its <strong>components</strong>, their <strong>relationships</strong> to each other, and to the <strong>environment</strong>, and the principles guiding its design and evolution.</p>
+</blockquote>
 <p>El estándar define los siguientes términos de la definición:</p>
 <blockquote>
-<p>A <strong>system</strong> is a collection of components organized to accomplish a specific function or set of functions. The term system encompasses individual applications, systems in the traditional sense, subsystems, systems of systems, product lines, product families, whole enterprises, and other aggregations of interest. A system exists to fulfill one or more <strong>missions</strong> in its environment.</p></blockquote>
+<p>A <strong>system</strong> is a collection of components organized to accomplish a specific function or set of functions. The term system encompasses individual applications, systems in the traditional sense, subsystems, systems of systems, product lines, product families, whole enterprises, and other aggregations of interest. A system exists to fulfill one or more <strong>missions</strong> in its environment.</p>
+</blockquote>
 <blockquote>
-<p>The <strong>environment</strong>, or context, determines the setting and circumstances of developmental, operational, political, and other influences upon that system.</p></blockquote>
+<p>The <strong>environment</strong>, or context, determines the setting and circumstances of developmental, operational, political, and other influences upon that system.</p>
+</blockquote>
 <blockquote>
-<p>A <strong>mission</strong> is a use or operation for which a system is intended by one or more <strong>stakeholders</strong> to meet some set of objectives.</p></blockquote>
+<p>A <strong>mission</strong> is a use or operation for which a system is intended by one or more <strong>stakeholders</strong> to meet some set of objectives.</p>
+</blockquote>
 <blockquote>
-<p>A <strong>stakeholder</strong> is an individual, team, or organization (or classes thereof) with interests in, or concerns relative to, a system.</p></blockquote>
+<p>A <strong>stakeholder</strong> is an individual, team, or organization (or classes thereof) with interests in, or concerns relative to, a system.</p>
+</blockquote>
 <h2 id="tipos-de-arquitecturas">Tipos de arquitecturas</h2>
 <h3 id="arquitectura-spaghetti">Arquitectura Spaghetti</h3>
 <p>En los inicios de las aplicaciones web con la aparición de las páginas programadas en en lado del servidor con <em>servlets</em> y JSP en Java, ASP de <a href="https://www.microsoft.com/">Microsoft</a> y <a href="https://secure.php.net/">PHP</a> la arquitectura de las mismas se caracterizaba por que no había arquitectura. En el mismo <em>servlet</em> o JSP, ASP o PHP el mismo código tenía diferentes responsabilidades sin ninguna separación entre ellas.</p>
@@ -378,8 +383,8 @@
 <p>En la <em>Figura 1</em> el paquete A depende del paquete B para invertir la dependencia se crea una interfaz de la que depende el paquete A unícamente depende, en la <em>Figura 2</em> es el paquete B el que depende de esa interfaz al implementarla.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu_3deb488ad97e4f2b.webp" data-gallery="" title="Arquitectura hexagonal"><img src="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu_a6ca5d609d761843.webp" width="267" height="200" alt="Arquitectura hexagonal" title="Arquitectura hexagonal" class="" loading="lazy"></a>
-<a href="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/dependency-inversion_hu_cd056e48b9283574.webp" data-gallery="" title="Inversión de dependencias"><img src="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/dependency-inversion_hu_cd3ad829c3c7fb62.webp" width="300" height="118" alt="Inversión de dependencias" title="Inversión de dependencias" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu_8ffe19eeff64e97.webp" data-gallery="" title="Arquitectura hexagonal"><img src="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/hexagonal-architecture_hu_bf9c3aa1227ce3db.webp" width="267" height="200" alt="Arquitectura hexagonal" title="Arquitectura hexagonal" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/dependency-inversion_hu_3789b0f0d48033fc.webp" data-gallery="" title="Inversión de dependencias"><img src="/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/images/dependency-inversion_hu_1c0094b8550a978e.webp" width="300" height="118" alt="Inversión de dependencias" title="Inversión de dependencias" class="" loading="lazy"></a></p>
 <figcaption>Arquitectura hexagonal e inversión de dependencias <br>Fuente: herbertograca.com</figcaption>
 </figure>
 </div>
@@ -452,7 +457,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/11/las-formas-de-guardar-relaciones-jerarquicas-en-bases-de-datos-relacionales/">
-                <img src="/blog-bitix/2020/11/las-formas-de-guardar-relaciones-jerarquicas-en-bases-de-datos-relacionales/images/hierarchy-comparation_hu_56844c308c482d02.webp" width="326" height="125" alt="Las formas de guardar relaciones jerárquicas en bases de datos relacionales" title="Las formas de guardar relaciones jerárquicas en bases de datos relacionales" class="" loading="lazy">
+                <img src="/blog-bitix/2020/11/las-formas-de-guardar-relaciones-jerarquicas-en-bases-de-datos-relacionales/images/hierarchy-comparation_hu_181d643e38f115df.webp" width="326" height="125" alt="Las formas de guardar relaciones jerárquicas en bases de datos relacionales" title="Las formas de guardar relaciones jerárquicas en bases de datos relacionales" class="" loading="lazy">
                 <h3>Las formas de guardar relaciones jerárquicas en bases de datos relacionales</h3>
                 </a>
                 
@@ -466,7 +471,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/">
-                <img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu_c6c44a89c143a1e9.webp" width="326" height="125" alt="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" title="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" class="" loading="lazy">
+                <img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu_dac0b734b7ed32b4.webp" width="326" height="125" alt="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" title="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" class="" loading="lazy">
                 <h3>Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot</h3>
                 </a>
                 

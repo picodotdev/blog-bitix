@@ -322,7 +322,7 @@
 <p>Consul además de descubrimiento de servicios proporciona otras funcionalidades como detección de fallos o caídas para prevenir enviar peticiones a máquinas fuera de servicio y almacenamiento básico clave/valor para configuración dinámica o activación de características. Dispone de una aplicación web en la que podemos ver el estado de los servicios, una <a href="https://www.consul.io/api/index.html">API REST</a> con la que comunicarse con Consul en una aplicación o en cada microservicio y un servidor de nombres <abbr>DNS</abbr>, podemos usar cualquiera de las dos interfaces de consulta, la basada en la <abbr>API</abbr> <abbr>REST</abbr> o la basada en DNS para obtener las direcciones IP con la ubicación de los servicios.</p>
 <div class="media">
 <figure>
-<p><img src="/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/consul_hu_81b82aacf3837c16.webp" width="200" height="199" alt="Consul" title="Consul" class="" loading="lazy"></p>
+<p><img src="/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/consul_hu_704bd30f890b949.webp" width="200" height="199" alt="Consul" title="Consul" class="" loading="lazy"></p>
 </figure>
 </div>
 <p>Instalar Consul es muy sencillo basta con <a href="https://www.consul.io/downloads.html">descargar un binario</a> y descargar la interfaz web si queremos tener el <em>dashboard</em> con la información del servicio. Descargados y descomprimidos Consul se inicia con el siguiente comando. Podemos acceder al panel <em>dashboard</em> con la dirección <em>http://localhost:8500</em> con un navegador web. Inicialmente en el panel de servicios solo se encuentra el propio de Consul cuando aún no se ha registrado ningún servicio, aplicación o microservicio.</p>
@@ -348,7 +348,7 @@
 <p>Spring Cloud proporciona además un servicio que podemos usar para conocer los servicios registrados en Consul, con la clase <em>DiscoveryClient</em> podemos conocer los nombres de los servicios, su nombre de máquina y puerto desde una aplicación Java. En el método <em>run</em> de la clase <em>Main</em> se usa en este ejemplo para imprimir en la salida el listado de servicios registrados en Consul. Uno de esos servicios esta aplicación de ejemplo, ya que se registra en Consul cuando se inicia.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/consul-services_hu_110548152df1915d.webp" data-gallery="" title="Servicios registrados en Consul"><img src="/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/consul-services_hu_b503d5623e869b4.webp" width="300" height="145" alt="Servicios registrados en Consul" title="Servicios registrados en Consul" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/consul-services_hu_bc31c04f8272e2db.webp" data-gallery="" title="Servicios registrados en Consul"><img src="/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/consul-services_hu_5b4d60260c24d89e.webp" width="300" height="145" alt="Servicios registrados en Consul" title="Servicios registrados en Consul" class="" loading="lazy"></a></p>
 <figcaption>Servicios registrados en Consul</figcaption>
 </figure>
 </div>
@@ -361,7 +361,7 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/service-health_hu_f25736f9c3bf470c.webp" data-gallery="" title="Endpoint de estado de servicio"><img src="/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/service-health_hu_ad86ecff7fb7bd43.webp" width="135" height="200" alt="Endpoint de estado de servicio" title="Endpoint de estado de servicio" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/service-health_hu_52497b450e675e9f.webp" data-gallery="" title="Endpoint de estado de servicio"><img src="/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/service-health_hu_cad324d909b7a959.webp" width="135" height="200" alt="Endpoint de estado de servicio" title="Endpoint de estado de servicio" class="" loading="lazy"></a></p>
 <figcaption>Endpoint de estado de servicio</figcaption>
 </figure>
 </div>

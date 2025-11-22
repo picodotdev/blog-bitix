@@ -328,23 +328,23 @@ Uno de los motivos por los que compré el kit de iniciación a la electrónica p
 <p>El <em>display</em> 1602 con su adaptador para el bus I2C que viene con el <em>kit</em> ya incorporado en la parte trasera es el siguiente.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/display-lcd-1602_hu_20904e6f28e2516c.webp" data-gallery="" title="Display LCD 16 columnas y 2 filas"><img src="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/display-lcd-1602_hu_aebb0f826b8cb0c2.webp" width="300" height="141" alt="Display LCD 16 columnas y 2 filas" title="Display LCD 16 columnas y 2 filas" class="" loading="lazy"></a>
-<a href="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/adaptador-bus-i2c-1602_hu_d71f6f556e147f81.webp" data-gallery="" title="Adaptador bus I2C para display 1602"><img src="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/adaptador-bus-i2c-1602_hu_3e134a27aceaf75c.webp" width="300" height="134" alt="Adaptador bus I2C para display 1602" title="Adaptador bus I2C para display 1602" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/display-lcd-1602_hu_4019bd5797d5587b.webp" data-gallery="" title="Display LCD 16 columnas y 2 filas"><img src="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/display-lcd-1602_hu_17b92a6e1355e5ea.webp" width="300" height="141" alt="Display LCD 16 columnas y 2 filas" title="Display LCD 16 columnas y 2 filas" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/adaptador-bus-i2c-1602_hu_957bc47c377be00f.webp" data-gallery="" title="Adaptador bus I2C para display 1602"><img src="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/adaptador-bus-i2c-1602_hu_904c7545cff5a145.webp" width="300" height="134" alt="Adaptador bus I2C para display 1602" title="Adaptador bus I2C para display 1602" class="" loading="lazy"></a></p>
 <figcaption>Display LCD 1602 y adaptador bus I2C</figcaption>
 </figure>
 </div>
 <p>El esquema de conexionado para controlar el <em>display</em> requiere usar los <em>pines</em> de la Raspberry Pi <em>SDA</em> y <em>SDL</em> además de un <em>pin</em> para proporcionar un voltaje de 5V y otro <em>pin</em> para la tierra. El <em>pin</em> <em>SDA</em> es el número 2 según la numeración de <em>pines</em> de la Raspberry Pi y el <em>SDL</em> es el 5. El <em>pin</em> <em>SDA</em> es utilizado en el bus I2C para transmitir los datos y el <em>SDL</em> para la señal de reloj o sincronización. Utilizando la placa de extensión wiringPi de 26 <em>pines</em> los <em>pines</em> <em>SDA</em> y <em>SDL</em> se encuentran identificados por su nombre y el de la placa de extensión de 40 <em>pines</em> que viene con el <em>kit</em> de iniciación también, deberemos identificar estos <em>pines</em> y realizar las conexiones adecuadamente.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/breadboard-cableado_hu_c7e10f982b70b5e0.webp" data-gallery="" title="Cableado en la breadboard"><img src="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/breadboard-cableado_hu_580d128f070a6c46.webp" width="164" height="200" alt="Cableado en la breadboard" title="Cableado en la breadboard" class="" loading="lazy"></a>
-<a href="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/esquema-cableado_hu_73c30a43e62aa35d.webp" data-gallery="" title="Esquema del cableado"><img src="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/esquema-cableado_hu_c50032d53d3f9445.webp" width="300" height="143" alt="Esquema del cableado" title="Esquema del cableado" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/breadboard-cableado_hu_3654d401823a61fb.webp" data-gallery="" title="Cableado en la breadboard"><img src="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/breadboard-cableado_hu_bfaaf5298f5420ac.webp" width="164" height="200" alt="Cableado en la breadboard" title="Cableado en la breadboard" class="" loading="lazy"></a>
+<a href="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/esquema-cableado_hu_1f9a18154dc064a5.webp" data-gallery="" title="Esquema del cableado"><img src="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/esquema-cableado_hu_7b4e763b28bae63a.webp" width="300" height="143" alt="Esquema del cableado" title="Esquema del cableado" class="" loading="lazy"></a></p>
 <figcaption>Cableado en la breadboard</figcaption>
 </figure>
 </div>
 <p>Hay que emplear varios cables macho-macho y hembra-hembra para conectar a los <em>pines</em> del adaptador I2C del <em>display</em>  a los <em>pines</em> del voltaje de 5V, tierra, <em>SDA</em> y <em>SDL</em> de la placa de pruebas sin soldadura.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/cables-macho-macho-hembra-hembra_hu_16fe9ad1c709e751.webp" data-gallery="" title="Unión cables macho-macho y hembra-hembra"><img src="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/cables-macho-macho-hembra-hembra_hu_2e6afaaa934644c9.webp" width="252" height="200" alt="Unión cables macho-macho y hembra-hembra" title="Unión cables macho-macho y hembra-hembra" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/cables-macho-macho-hembra-hembra_hu_f0e37b04d7cd61ad.webp" data-gallery="" title="Unión cables macho-macho y hembra-hembra"><img src="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/cables-macho-macho-hembra-hembra_hu_66a545c6a11a2e7a.webp" width="252" height="200" alt="Unión cables macho-macho y hembra-hembra" title="Unión cables macho-macho y hembra-hembra" class="" loading="lazy"></a></p>
 <figcaption>Unión cables macho-hembra</figcaption>
 </figure>
 </div>
@@ -357,7 +357,7 @@ Uno de los motivos por los que compré el kit de iniciación a la electrónica p
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/i2cdetect_hu_130719686fac80ba.webp" data-gallery="" title="Detección del display 1602 en el bus I2C"><img src="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/i2cdetect_hu_fa4d5cc3a1796571.webp" width="300" height="187" alt="Detección del display 1602 en el bus I2C" title="Detección del display 1602 en el bus I2C" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/i2cdetect_hu_e8265830155fdbf6.webp" data-gallery="" title="Detección del display 1602 en el bus I2C"><img src="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/i2cdetect_hu_3ca0a5f998dd8b3c.webp" width="300" height="187" alt="Detección del display 1602 en el bus I2C" title="Detección del display 1602 en el bus I2C" class="" loading="lazy"></a></p>
 <figcaption>Detección del display 1602 en el bus I2C</figcaption>
 </figure>
 </div>
@@ -397,7 +397,7 @@ Uno de los motivos por los que compré el kit de iniciación a la electrónica p
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/mensaje-lcd-1602_hu_ae2326ac48a0e77e.webp" data-gallery="" title="Mensaje en LCD 1602"><img src="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/mensaje-lcd-1602_hu_9537198db774d614.webp" width="300" height="140" alt="Mensaje en LCD 1602" title="Mensaje en LCD 1602" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/mensaje-lcd-1602_hu_8ca1be5e247f4520.webp" data-gallery="" title="Mensaje en LCD 1602"><img src="/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/images/mensaje-lcd-1602_hu_7be8fb4b8a6891d3.webp" width="300" height="140" alt="Mensaje en LCD 1602" title="Mensaje en LCD 1602" class="" loading="lazy"></a></p>
 <figcaption>Mensaje en LCD 1602</figcaption>
 </figure>
 </div>

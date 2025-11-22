@@ -346,7 +346,7 @@
 <p>El esquema de servicios sería el siguiente. Los <em>job</em> son enviados a Nomad desde la linea de comandos que inicia los contenedores en Docker y registra los servicios en Consul, Traefik monitoriza el catálogo de servicios registrados en Consul y se autoconfigura según los <em>tags</em> asociados a los servicios, los <em>tags</em> se especificar en los archivos de los servicios para Nomad. Una vez iniciados los servicios desde la terminal con un <em>curl</em> o desde la aplicación cliente que accede a Consul para conocer la ubicación del servicio de Traefik envían una petición a Traefik que haciendo balanceo de carga la reenvía a una de las instancias del servicio, el servicio responde y Traefik envía la respuesta al cliente.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/esquema-arquitectura_hu_79011153b3a02a66.webp" data-gallery="" title="Esquema arquitectura"><img src="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/esquema-arquitectura_hu_eaee54817e8e16da.webp" width="600" height="382" alt="Esquema arquitectura" title="Esquema arquitectura" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/esquema-arquitectura_hu_bcd6b1f5a022e682.webp" data-gallery="" title="Esquema arquitectura"><img src="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/esquema-arquitectura_hu_619d4b7b419978d1.webp" width="600" height="382" alt="Esquema arquitectura" title="Esquema arquitectura" class="" loading="lazy"></a></p>
 <figcaption>Esquema arquitectura</figcaption>
 </figure>
 </div>
@@ -382,15 +382,15 @@
 <p>Tanto Consul, Nomad como Traefik ofrecen una consola para ver su estado ubicadas en las siguientes direcciones respectivamente accesibles con el navegador <em>http://127.0.0.1:8500</em>, <em>http://127.0.0.1:4646</em>, <em>http://127.0.0.1:8092</em>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/consul_hu_a82af561aa50b293.webp" data-gallery="" title="Consul"><img src="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/consul_hu_b9ff5d208ce4885b.webp" width="160" height="150" alt="Consul" title="Consul" class="" loading="lazy"></a>
-<a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/nomad-1_hu_a9b6f0ee500c4569.webp" data-gallery="" title="Nomad"><img src="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/nomad-1_hu_59a927a05e390c6e.webp" width="160" height="150" alt="Nomad" title="Nomad" class="" loading="lazy"></a>
-<a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/nomad-2_hu_65a1bf11f7bbe276.webp" data-gallery="" title="Nomad"><img src="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/nomad-2_hu_cb8032f9a5caf673.webp" width="160" height="150" alt="Nomad" title="Nomad" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/consul_hu_9930ea382edcb611.webp" data-gallery="" title="Consul"><img src="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/consul_hu_c074fbe6826e6d69.webp" width="160" height="150" alt="Consul" title="Consul" class="" loading="lazy"></a>
+<a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/nomad-1_hu_b8977338741a1bf4.webp" data-gallery="" title="Nomad"><img src="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/nomad-1_hu_56f2222f321d3300.webp" width="160" height="150" alt="Nomad" title="Nomad" class="" loading="lazy"></a>
+<a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/nomad-2_hu_ccad3f4a8414ef47.webp" data-gallery="" title="Nomad"><img src="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/nomad-2_hu_bf33a1c0f56283cf.webp" width="160" height="150" alt="Nomad" title="Nomad" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/traefik-1_hu_5660bc161225641c.webp" data-gallery="" title="Traefik"><img src="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/traefik-1_hu_8d8ce07cb1406019.webp" width="160" height="150" alt="Traefik" title="Traefik" class="" loading="lazy"></a>
-<a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/traefik-2_hu_64376e380b79b65b.webp" data-gallery="" title="Traefik"><img src="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/traefik-2_hu_1f7cd188e64ecbc7.webp" width="160" height="150" alt="Traefik" title="Traefik" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/traefik-1_hu_2449c78075c0ba5e.webp" data-gallery="" title="Traefik"><img src="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/traefik-1_hu_bad6ad2956ce62bf.webp" width="160" height="150" alt="Traefik" title="Traefik" class="" loading="lazy"></a>
+<a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/traefik-2_hu_702c65efd0bd766.webp" data-gallery="" title="Traefik"><img src="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/images/traefik-2_hu_f9349f0cf29dd3ee.webp" width="160" height="150" alt="Traefik" title="Traefik" class="" loading="lazy"></a></p>
 <figcaption>Consolas de administración de Consul, Nomad y Traefik</figcaption>
 </figure>
 </div>

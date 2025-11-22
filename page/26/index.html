@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta name="generator" content="Hugo 0.151.0">
+	<meta name="generator" content="Hugo 0.152.2">
   <meta name="base" href="/blog-bitix/">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -229,6 +229,41 @@
             </div>
             
 <ul class="list-unstyled">
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2018/08/usando-directivas-en-graphql/">Usando directivas en GraphQL</a></h1>
+        <span class="information">
+          <time>24/08/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
+</div>
+<p>En <a href="https://graphql.org/">GraphQL</a> construyendo la consulta adecuada se recuperan exclusivamente los datos solicitados.</p>
+<p>Por ejemplo, si de un libro solo se requieren las propiedades el <em>id</em>, <em>title</em> y <em>date</em> de entre todas las que tienen la consulta sería en este caso la siguiente para una consulta que devuelve los datos de un conjunto de libros.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-graphql" data-lang="graphql"><span class="line"><span class="cl"><span class="kd">query</span><span class="w"> </span><span class="nc">Books</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="py">books</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">id</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">title</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">date</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>query-1.graphql</span>
+    </div>
+</div>
+<p>Si se desea recuperar solo el <em>id</em> y <em>title</em> sin el <em>date</em> la consulta debe ser diferente.</p>
+          
+          <br>
+          <a href="/blog-bitix/2018/08/usando-directivas-en-graphql/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
     <li>
       <article>
         <h1><a href="/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/">El editor, explorador e IDE GraphiQL para una API con GraphQL</a></h1>
@@ -624,38 +659,6 @@
           
           <br>
           <a href="/blog-bitix/2018/06/soporte-para-lanzar-eventos-desde-javascript-con-ajax-en-un-componente-de-apache-tapestry/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2018/06/actualizar-las-versiones-de-las-librerias-javascript-built-in-de-apache-tapestry/">Actualizar las versiones de las librerías JavaScript built-in de Apache Tapestry</a></h1>
-        <span class="information">
-          <time>03/06/2018</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-              <a href="/blog-bitix/tags/tapestry/">tapestry</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false"></p>
-</div>
-<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
-</div>
-<p>El <em>framework</em> <a href="https://tapestry.apache.org/">Apache Tapestry</a> para el desarrollo de aplicaciones web Java basado en componentes aparte de ser un <em>framework</em> para el desarrollo de la capa de presentación del lado del servidor y lógica de negocio también ofrece soporte para el desarrollo de funcionalidad del lado del cliente. Incorpora de serie las librerías <a href="https://requirejs.org/">RequireJS</a> para la gestión de módulos y dependencias de JavaScript, la popular <a href="https://jquery.com/">jQuery</a> para la manipulación de elementos del HTML y <a href="https://underscorejs.org/">Underscore</a> que añade algunas utilidades que no tiene el lenguaje JavaScript y <a href="https://getbootstrap.com/">Bootstrap</a> para los estilos además de alguna otra librería JavaScript de menor relevancia que estas.</p>
-          
-          <br>
-          <a href="/blog-bitix/2018/06/actualizar-las-versiones-de-las-librerias-javascript-built-in-de-apache-tapestry/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
