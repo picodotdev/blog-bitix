@@ -80,7 +80,7 @@ En los artículos anteriores de _review_ incluyen fotos mejores de las que he to
 
 El uso del monitor lo voy a hacer con [Arch Linux][archlinux] y [macOS][macos] y será de trabajo para lo que cuantos más pixles y tamaño mejor, ocio y juegos con la PlayStation o juegos de ordenador. En el primero me ha sorprendido que ha sido enchufarlo y [GNOME][gnome] reconocer el HDR, activarlo fácilmente y reconocer también la tasa de refresco de 120 Hz ya que lo utilizo a través de un _hdmi splitter_ y solo soporta hasta esa tasa de refresco en 4K. En Arch Linux me ha funcionado mejor que en macOS. La PS5 también ha detectado y reconocido el monitor iniciando una breve configuración.
 
-Entre todas esas características en mi caso destaco tres, la mayor resolución aún con el escalado. Que la definición del texto es apreciablemente mejor. En mi caso que lo utilizo mayormente para trabajar, leer texto y programar es una mayor comodidad. La mayor tasa de refresco se nota. Y finalmente, el HDR hace que el blanco se mucho más brillante. Los 144 Hz, HDR, KVM, Thunderbolt 4, carga de 90 W, 4K y conectividad de puertos USB hace que tenga el precio que tiene.
+Entre todas esas características en mi caso destaco cuatro, la mayor resolución aún con el escalado. Que la definición del texto es apreciablemente mejor. En mi caso que lo utilizo mayormente para trabajar, leer texto y programar es una mayor comodidad. La mayor tasa de refresco se nota. Es un monitor que sirve tanto para trabajar como para jugar con sus 144 Hz y soporte de FreeSync. Y finalmente, el HDR hace que el blanco se mucho más brillante. Los 144 Hz, HDR, KVM, Thunderbolt 4, carga de 90 W, 4K y conectividad de puertos USB hace que tenga el precio que tiene.
 
 Que todo esto justifique el precio del monitor creo que no. El monitor Dell S3225QS es una buena alternativa con las características esenciales y un precio notablemente más contenido. Sin embargo, yo no quiero nada de la marca Dell por malas experiencias anteriores en portátiles, monitores y otros productos. Otras opciones puede ser un QHD Ultrawide curvo con resolución 3440 x 1440 que ofrece más ancho de pantalla, aunque no mejor definición del texto.
 
@@ -93,6 +93,8 @@ El monitor es un nuevo paso más en el cambio de ordenador, la mesa de escritori
 * [Desempaquetado y análisis de monitor BenQ PD2700Q, 2K/QHD, IPS, 27 pulgadas][blogbitix-356]
 * [Decidido a comprar un Intel NUC entre las opciones que he evaluado][blogbitix-329]
 * [Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)][blogbitix-363]
+* [Desempaquetado de teclado mecánico Glorious GMMK TKL][blogbitix-609]
+* [Desempaquetado del ratón inalámbrico Logitech Signature M750][blogbitix-686]
 * [Próximo nuevo ordenador de escritorio, Framework Desktop][blogbitix-713]
 * [Desempaquetado y análisis de Framework Desktop, AMD Ryzen 395+ Max con 128 GB][blogbitix-717]
 
