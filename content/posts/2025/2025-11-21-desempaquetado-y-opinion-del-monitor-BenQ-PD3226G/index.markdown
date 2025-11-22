@@ -98,7 +98,7 @@ El monitor es un nuevo paso más en el cambio de ordenador, la mesa de escritori
 * [Próximo nuevo ordenador de escritorio, Framework Desktop][blogbitix-713]
 * [Desempaquetado y análisis de Framework Desktop, AMD Ryzen 395+ Max con 128 GB][blogbitix-717]
 
-El tiempo pasa. 2016, 2018 y 2025 y el pequeño tux sigue acompañándome, desde el 2010.
+El tiempo pasa. 2016, 2018 y 2025 pero el pequeño tux sigue acompañándome, desde el 2010.
 
 {{< image
     gallery="true"
