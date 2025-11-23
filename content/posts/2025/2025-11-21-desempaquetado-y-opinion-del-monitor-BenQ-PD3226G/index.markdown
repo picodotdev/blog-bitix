@@ -69,8 +69,7 @@ En los artículos anteriores de _review_ incluyen fotos mejores de las que he to
 {{< image
     gallery="true"
     image1="image:desempaquetado-benq-pd3226g-10.webp" optionsthumb1="200x150" title1="Desempaquetado monitor Benq PD3226G"
-    image2="image:desempaquetado-benq-pd3226g-11.webp" optionsthumb2="200x150" title2="Desempaquetado monitor Benq PD3226G"
-    image3="image:desempaquetado-benq-pd3226g-12.webp" optionsthumb3="200x150" title3="Desempaquetado monitor Benq PD3226G" >}}
+    image2="image:desempaquetado-benq-pd3226g-11.webp" optionsthumb2="200x150" title2="Desempaquetado monitor Benq PD3226G" >}}
 {{< image
     gallery="true"
     image1="image:desempaquetado-benq-pd3226g-13.webp" optionsthumb1="200x150" title1="Desempaquetado monitor Benq PD3226G"
