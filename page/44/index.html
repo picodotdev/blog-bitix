@@ -231,6 +231,41 @@
 <ul class="list-unstyled">
     <li>
       <article>
+        <h1><a href="/blog-bitix/2015/02/ejemplo-de-listener-de-eventos-de-hibernate/">Ejemplo de listener de eventos de Hibernate</a></h1>
+        <span class="information">
+          <time>20/02/2015</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes"> 
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>En alguna ocasión puede que tengamos la necesidad de realizar alguna acción cuando una entidad es guardada en base de datos, actualizada, eliminada, cargada, &hellip; . Algunos casos de uso pueden ser:</p>
+<ul>
+<li>Establecer la fecha de creación o de actualización del objeto cuando es persistido en base de datos.</li>
+<li>Cifrar un dato del objeto al ser persistido en base de datos.</li>
+<li>Proporcionar seguridad de modo que un usuario solo pueda modificar o acceder a los objetos a los que tenga acceso.</li>
+<li>Al persistir el objeto guardar en un campo el valor calculado resultado de una función.</li>
+<li>Cualquier otra restricción, cálculos o acciones.</li>
+</ul>
+<p>Para realizar estas operaciones podemos hacerlas de varias formas, una puede ser usando <em>triggers</em> de la base de datos disponibles en <a href="https://www.oracle.com/database/">Oracle</a> y <a href="https://www.postgresql.org/">PostgreSQL</a>. Si usamos <a href="https://hibernate.org/">Hibernate</a> como librería ORM de persistencia en una aplicación el equivalente a los <em>triggers</em> de BBDD es mediante un <em>listener</em> que sea llamado al ocurrir ciertos eventos. En la clase <a href="https://docs.jboss.org/hibernate/orm/4.3/javadocs/org/hibernate/event/spi/EventType.html"><em>EventType</em></a> está la lista completa de los eventos que podemos recibir y la clase <em>listener</em> que debemos implementar para recibir cada uno de los eventos. Esta es la lista de los eventos disponibles según los conceptos que usa Hibernate:</p>
+          
+          <br>
+          <a href="/blog-bitix/2015/02/ejemplo-de-listener-de-eventos-de-hibernate/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2015/02/la-palabra-clave-assert-de-java-y-un-ejemplo/">La palabra clave assert de Java y un ejemplo</a></h1>
         <span class="information">
           <time>13/02/2015</time>
@@ -609,35 +644,6 @@
           
           <br>
           <a href="/blog-bitix/2014/11/introduccion-a-bitnami/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Integración entre Ansible y Docker</a></h1>
-        <span class="information">
-          <time>22/11/2014</time>
-          
-            
-              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/ansible.svg" width="200" height="246" alt="Ansible" title="Ansible" class="" loading="false"></p>
-</div>
-<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false"></p>
-</div>
-<p>En la <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">introducción de Docker</a> y <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">inicio básico de docker</a> explicaba como usar Docker y en la <a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/">introducción a Ansible</a> explicaba las características de Ansible y como usarlo. Podemos usar <a href="https://www.docker.com/">Docker</a> y <a href="https://www.ansible.com/">Ansible</a> de forma separada pero también podemos combinarlas para beneficiarnos de las propiedades de cada una. En Ansible disponemos de dos módulos que nos permite manejar las imágenes y los contenedores de Docker, estos son <a href="http://docs.ansible.com/docker_module.html">docker</a> y <a href="http://docs.ansible.com/docker_image_module.html">docker_image</a>.</p>
-<p>Usando tareas de ansible podemos automatizar el arranque del servicio de docker, la construcción de las imágenes con los Dokerfile y el inicio o parada de los contenedores de docker. En el ejemplo se construye una imagen base en la que se basarán el resto de imágenes, se crea una imagen con mysql, otra de redis y finalmente la imagen apps donde se ejecutarán las aplicaciones que usarán los servicios de mysql y redis.</p>
-          
-          <br>
-          <a href="/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
