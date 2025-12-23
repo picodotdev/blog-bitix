@@ -9,17 +9,20 @@
       {{ else }}
         {{ i18n "writed_by" }}
       {{ end }} 
-      <span>{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Author.name }}{{ end }}</span> {{ i18n "writed_on" }} <time>{{ .Date.Format "02/01/2006" }}</time>{{ if isset .Params "updated" }}, {{ i18n "updated_on" }} <time>{{ dateFormat "02/01/2006" .Params.updated }}</time>.{{ else }}.{{ end }}
+      <span>{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author.name }}{{ end }}</span> {{ i18n "writed_on" }} <time>{{ .Date.Format "02/01/2006" }}</time>{{ if isset .Params "updated" }}, {{ i18n "updated_on" }} <time>{{ dateFormat "02/01/2006" .Params.updated }}</time>.{{ else }}.{{ end }}
       {{ if isset .Params "tags" }}
         <br>
+        <i class="bi bi-tag"></i>
         {{ range $tag := .Params.tags -}}
           {{ $url := print "tags/" $tag "/" $urlsuffix | relURL }}
           <a href="{{ $url }}">{{ $tag }}</a>
         {{ end }}
       {{ end }}
       <br>
+      <i class="bi bi-link-45deg"></i>
       <a href="{{ .RelPermalink }}">{{ i18n "permanent_link" }}</a>
       {{ if .Params.comments }}
+        <i class="bi bi-chat"></i>
         <a href="{{ .RelPermalink }}#comments">{{ i18n "comments" }}</a>
       {{ end }}
     </p>
