@@ -30,7 +30,7 @@ No voy a hacer un análisis como en años anteriores de visitas e ingresos ya qu
 
 ## Libros que he comprado
 
-Aún asi sigo aprendiendo, con libros y vídeos, cursos de Udemy y artículos de internet. Estos son algunos de los libros que he comprado este año y que recomiendo, algunos ya los he leído y otros los tengo pendientes de rumiar. Este 2026 quiero hacerme un mejor plan de formación más metódica y planificada. He empezado a usar algunas herramientas para mejorar mi productividad como [Google Keep][google-keep], [Todoist][todoist], y [Obsidian][obsidian], haciendo pomodoros y leyendo sobre productividad.
+Aún asi sigo aprendiendo, con libros y vídeos, cursos de Udemy y artículos de internet. Estos son algunos de los libros que he comprado este año y que recomiendo, algunos ya los he leído y otros los tengo pendientes de rumiar. Trataré de seguir un mejor plan de formación más metódica, planificada y menos anárquica. He empezado a usar algunas herramientas para mejorar mi productividad como [Google Keep][google-keep], [Todoist][todoist] y [Obsidian][obsidian], haciendo pomodoros y leyendo sobre productividad.
 
 Con esta lista de libros sigo aumentando mi pequeña biblioteca de libros técnicos y espero ampliar más mi conocimiento.
 
@@ -97,9 +97,9 @@ Y he escrito los siguientes pocos artículos, únicamente 8, ni uno al mes. El b
 
 Un artículo o vídeo que tengo pendiente de escribir es una presentación para el script de alis, lo llevo arrastrando mucho tiempo pero aún no me he puesto a ello ya que el formato vídeo o voz me es menos fácilmente editable que el formato texto. Si me gustaría hacer la prueba de ver que tal queda o como me es la experiencia.
 
-Por motivos laborales este 2025 me ha sido especialmente duro y doloroso. No voy a hacer propósitos o cambios para el 2026. Seguiré escribiendo algún artículo cuando me apetezca escribir o compartir algo, seguiré y recuperaré mis intereses y hacer lo que me motiva entre lo que es seguir aprendiendo y formándome.
+Por motivos laborales este 2025 me ha sido especialmente duro y doloroso. No voy a hacer propósitos o lista de cambios para el 2026. Seguiré escribiendo algún artículo cuando me apetezca escribir o compartir algo, seguiré y recuperaré mis intereses y hacer lo que me motiva entre lo que es seguir aprendiendo y formándome.
 
-Si aún sigues pasando por aquí a leer, serás de lo pocos, que te vaya bien en el 2026.
+Si aún sigues pasando por aquí a leer, serás de lo pocos, gracias, que te vaya bien en el 2026.
 
 {{< image
     gallery="true"
