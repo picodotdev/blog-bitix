@@ -22,15 +22,15 @@ library: "true"
 
 {{< logotype image1="blog-bitix.svg" >}}
 
-En este 2025 que acaba he escrito aún menos artículos que el 2024. No por falta de interés e ideas que tengo apuntadas y ganas querer compartir contenido y aprender sino por querer dedicar una buena cantidad de tiempo al blog, cada artículo me consume varias horas de dedicación entre la escritura y lectura, edición y publicación.
+En este 2025 que acaba he escrito aún menos artículos que el 2024. No por falta de interés e ideas que tengo apuntadas y ganas querer compartir contenido y aprender sino por querer dedicar una buena cantidad de tiempo al blog, cada artículo me consume varias horas de dedicación entre la escritura y lectura, edición y publicación como ya he comentado en varias ocasiones.
 
-No voy a hacer un análisis como en años anteriores de visitas e ingresos ya que ha sido mucho menos que la eṕoca dorada de este blog en el 2018. Quité Google Analytics y ahora mi única métrica no muy fiable son las impresiones de los anuncios.
+No voy a hacer un análisis como en años anteriores de visitas e ingresos ya que ha sido mucho menos que la eṕoca dorada de este blog en el 2018, y este año han sido residuales. Quité Google Analytics y ahora mi única métrica no muy fiable son las impresiones de los anuncios.
 
 {{< tableofcontents >}}
 
 ## Libros que he comprado
 
-Aún asi sigo aprendiendo, con libros y vídeos, cursos de Udemy y artículos de internet. Estos son algunos de los libros que he comprado este año y que recomiendo, algunos ya los he leído y otros los tengo pendientes de rumiar. Trataré de seguir un mejor plan de formación más metódica, planificada y menos anárquica. He empezado a usar algunas herramientas para mejorar mi productividad como [Google Keep][google-keep], [Todoist][todoist] y [Obsidian][obsidian], haciendo pomodoros y leyendo sobre productividad.
+Sigo aprendiendo, con libros y vídeos, cursos de [Udemy][udemy] y artículos de internet. Es algo que me motiva enormemente y con ello paso el tiempo. Estos son algunos de los libros que he comprado este año y que recomiendo, algunos ya los he leído y otros los tengo pendientes de rumiar. Trataré de seguir un mejor plan de formación más metódica, planificada y menos anárquica. He empezado a usar algunas herramientas para mejorar mi productividad como [Google Keep][google-keep], [Todoist][todoist] y [Obsidian][obsidian], haciendo pomodoros y leyendo algo sobre productividad.
 
 Con esta lista de libros sigo aumentando mi pequeña biblioteca de libros técnicos y espero ampliar más mi conocimiento.
 
@@ -62,20 +62,20 @@ En el blog no he hecho apenas cambios.
 * He eliminado el enlace a Twitter… quería decir X, red social que he dejado de usar ya que apenas me aportaba nada y me consumía tiempo.
 * Usado [Task][task] para los comandos que uso para gestionar el blog.
 * La integración que tenía con Videoo.tv para monetizar el blog con publicidad ha dejado de funcionar.
-* He actualizado la versión de Hugo.
+* He actualizado la versión de [Hugo][hugo].
 * Hecho una donación a Phoronix de 20 €, uno de los mejores sitios de información relacionada con GNU/Linux y software libre.
 * Mejorado un poco el script para instalar Arch Linux para necesitarlo una vez más al instalar Arch en el Framework Desktop.
-* Añadido un icono en el enlace permanente y en el de comentarios.
+* Añadido un icono en los enlaces de las etiquetas, el enlace permanente del artículo y en el de comentarios.
 
 Anteriormente ya he comentado que los blogs han perdido protagonismo sobre los vídeos como en YouTube y que ahora se crea más contenido en esta plataforma de contenido. Lo digo con algo de nostalgia y pesar pero realmente es la evolución, más ahora con los asistentes de IA como ChatGPT, Microsoft Copilot y Google Gemini que se comerán aún más tráfico de la web.
 
 ## Juegos
 
-Tengo pendiente escribir uno sobre el juego Assasins Creed II y la trilogía de Ezio Auditore y Desmon Miles, los primeros Assassin's Creed que juego, que ha sido especialmente largos cada uno de ellos con la cantidad de misiones secundarias del juego paralelas a la trama principal. Y empezaré a jugar la trilogía de Batman Arkhan en la PlayStation.
+Tengo pendiente escribir un artículo sobre el juego Assassin's Creed II y la trilogía de Ezio Auditore y Desmon Miles, los primeros Assassin's Creed que juego, han estado bien pero han sido especialmente largos cada uno de ellos con la cantidad de misiones secundarias del juego paralelas a la trama principal. Y empezaré a jugar la trilogía de Batman Arkham en la PlayStation.
 
 Por otro lado, ahora con el [Framework Desktop][framework-desktop] puedo jugar a juegos y he probado varios Pinball FX, Guild of Dungeoneering, Hordes of Hel, World of Warships y AutomaChef.
 
-Esta es la colección de favoritos que tengo de los juegos que he ido recopilando de la [Epic Games][epicgames], todos juegos que han ido regalando. Hay algunos especialmente significativos como Dead Stranding, Hogwarts Legacy, A Plague Tale, Control, los Tomb Raider, entre los otros que aparecen en la lista. Y que en GNU/Linux puedo jugar perfectamente.
+Esta es la colección de favoritos que tengo de los juegos que he ido recopilando de la [Epic Games][epicgames], todos juegos que han ido regalando, ya tengo una colección maja. Hay algunos especialmente significativos como Death Stranding, Hogwarts Legacy, A Plague Tale, Control, los Tomb Raider, entre los otros que aparecen en la lista. Y que en GNU/Linux y con el Framework Desktop puedo jugar perfectamente.
 
 {{< image
     gallery="true"
@@ -95,7 +95,7 @@ Y he escrito los siguientes pocos artículos, únicamente 8, ni uno al mes. El b
 * [Ideas para mejorar mi productividad][blogbitix-718]
 * [Desempaquetado y opinión del monitor BenQ PD3226G, 4K/UHD, IPS, 32"][blogbitix-719]
 
-Un artículo o vídeo que tengo pendiente de escribir es una presentación para el script de alis, lo llevo arrastrando mucho tiempo pero aún no me he puesto a ello ya que el formato vídeo o voz me es menos fácilmente editable que el formato texto. Si me gustaría hacer la prueba de ver que tal queda o como me es la experiencia.
+Un artículo o vídeo que tengo pendiente de escribir es una presentación para el [_script_ de alis][alis], lo llevo arrastrando mucho tiempo pero aún no me he puesto a ello ya que el formato vídeo o voz me es menos fácilmente editable que el formato texto. Si me gustaría hacer la prueba de ver que tal queda o como me es la experiencia.
 
 Por motivos laborales este 2025 me ha sido especialmente duro y doloroso. No voy a hacer propósitos o lista de cambios para el 2026. Seguiré escribiendo algún artículo cuando me apetezca escribir o compartir algo, seguiré y recuperaré mis intereses y hacer lo que me motiva entre lo que es seguir aprendiendo y formándome.
 
