@@ -4,7 +4,7 @@ title: "Enlaces a otros blogs y webs"
 url: "/pages/links/"
 aliases: ["/pages/enlaces-a-otros-blogs-y-webs/"]
 date: 2013-12-02T13:00:00+01:00
-updated: 2022-06-15T19:00:00+01:00
+updated: 2025-12-28T19:00:00+01:00
 index: false
 rss: false
 sharing: true
@@ -37,26 +37,31 @@ Aunque no hace falta actualizar cada día es aconsejable seguirlo para conocer s
 * [Phoronix][phoronix]: Una de las mejores páginas que tengo en mi lector de noticias, suele publicar un montón de información interesante sobre varias distribuciones linux, avances en el _kernel_, _drivers_, programas y análisis de rendimiento.
 * [DistroWatch](https://distrowatch.com/): distribuciones de linux hay muchas, unas más conocidas y otras no tanto en esta página podrás encontrar la que mejor se adapte a tus necesidades, además podrás conocer cuando se publica una nueva versión y el calendario de nuevas versiones de varias distribuciones. Una página para estar informado de cada una de las nuevas versiones. También publica un semanario con el análisis de alguna distribución o noticias recientes. Además, se puede encontrar en esta página una categorización de la distribuciones según su popularidad basada en las visitas que reciben y las últimas versiones publicadas del software que compone las distribuciones GNU/Linux.
 * [lwn.net](https://lwn.net/): publica noticias relacionadas con GNU/Linux algunas de libre acceso y otras limitadas durante un tiempo solo para los subscriptores pero que pasado un tiempo quedan accesibles para todo el mundo. Los artículos son muy interesantes y elaborados con un conocimiento grande que es difícil encontrar en la mayoría de blogs personales.
-* [Noticias 3D](https://www.noticias3d.com/) (su [feed](http://feed43.com/1358588145342036.xml)): noticias sobre tecnología y componentes informáticos, con unos análisis de productos hardware muy interesantes.
+* [Genbeta](https://www.genbeta.com/): una página con noticias de actualidad sobre el software, desde sistemas operativos a navegadores, cualquier información que se haga con código.
+* [Xataka](https://www.xataka.com/): al contrario que la web anterior en esta se publican noticias de actualidad relacionadas con el hardware y los _gadgets_.
 * [Geektopia](https://www.geektopia.es/es/): más noticias de actualidad sobre tecnología, videojuegos y una sección muy completa con guías de compras sobre componentes y configuraciones de ordenadores ajustadas según presupuesto.
 * [Parcela Digital](https://parceladigital.com/): si te gusta la historia de la informática y curiosidades de los ordenadores de antaño así como noticias de actualidad esta página te va a encantar.
 * [Microsiervos](https://www.microsiervos.com/): una web con noticias de ciencia, tecnología e internet. Una referencia que ocasionalmente además de noticias publica artículos divulgativos sobre estas materias.
-* [Genbeta](https://www.genbeta.com/): una página con noticias de actualidad sobre el software, desde sistemas operativos a navegadores, cualquier información que se haga con código.
-* [Xataka](https://www.xataka.com/): al contrario que la web anterior en esta se publican noticias de actualidad relacionadas con el hardware y los _gadgets_.
 * [Linwind](https://www.dacostabalboa.com/es/): página también con noticias de sistemas operativos, software y hardware.
 * [ADSLZone](https://www.adslzone.net/): su contenido no solo versa sobre redes sino que incluye noticias sobre tecnología.
+* [Incognitosis](https://javipas.com/): el blog personal de un editor de Xataka con artículos de opinión sobre tecnología.
+* [Noticias 3D](https://www.noticias3d.com/) (su [feed](http://feed43.com/1358588145342036.xml)): noticias sobre tecnología y componentes informáticos, con unos análisis de productos hardware muy interesantes.
 * [D'Oh](https://diegocg.blogspot.com/): un blog personal en el que suele publicar artículos de opinión y avances que se producen alrededor del software libre. Otro de los mejores blogs que tengo en mi lector de _feeds_, cada artículo suele ser una perla.
 * [Foro Noticias 3D](https://foro.noticias3d.com/): el foro de la página anterior donde podrás preguntar a usuarios con muchos conocimientos sobre cualquier problema en tu ordenador o consejos para
 uno nuevo según tus necesidades y restricciones de presupuesto.
-* [Incognitosis](https://javipas.com/): el blog personal de un editor de Xataka con artículos de opinión sobre tecnología.
+
+### Canales de YouTube
+
 * [Hardware 360º](https://www.youtube.com/channel/UC40Ztmc_11leuUR-tHh_irQ/videos): canal de YouTube especializado en hardware de consumo como procesadores y tarjetas gráficas pero también consolas. Son exhaustivos y de fácil comprensión con los que informarse en profundidad del hardware de las computadoras.
-* [Coreteks](https://www.youtube.com/channel/UCX_t3BvnQtS5IHzto_y7tbw/videos): canal de YouTube en inglés con información avanzada y profunda sobre tecnología hardware de procesadores, gráficos y computación, también incluye información de actualidad.
 * [Hardware Unboxed](https://www.youtube.com/c/Hardwareunboxednow): canal de YouTube en inglés independiente con información orientada al consumidor sobre tecnología hardware de procesadores, gráficos y componentes de computadoras de consumo. Incluye análisis de productos, comparaciones, análisis de rendimiento, recomendaciones de compra.
+* [Coreteks](https://www.youtube.com/channel/UCX_t3BvnQtS5IHzto_y7tbw/videos): canal de YouTube en inglés con información avanzada y profunda sobre tecnología hardware de procesadores, gráficos y computación, también incluye información de actualidad.
 * [HighYield](https://www.youtube.com/@HighYield): canal de YouTube con una asombrosa, interesante, en profundidad y detalla al mismo tiempo que explicada de forma comprensible con unos mínimos conocimientos sobre desarrollo de chips y los procesadores en CPU, GPU y tecnologías de fabricación. Una canal que también da opinión pero al contrario que muchos otros sustentada por un profundo conocimiento y sólidos argumentos.
 * [AnastasiInTech](https://www.youtube.com/@AnastasiInTech:: otro canal de YouTube que explica conceptos muy interesantes sobre la fabricación de chips.
 * Barrapunto (actualmente discontinuada): era la web al estilo de [slashdot](https://slashdot.org/) en español donde tan importante como la noticia eran los comentarios de sus usuarios.
 
 ## Software libre y GNU/Linux
+
+De distribuciones.
 
 * [Red Hat](https://www.redhat.com): web de una de las empresas que más colaboran con el desarrollo de GNU/Linux y que ofrece servicios para empresas siendo una de las que más éxito han tenido usando este modelo de negocio. Su distribución empresarial es RHEL.
 * [Fedora](https://getfedora.org/): distribución que incorpora rápido las nuevas tecnologías de Linux, respaldada por Red Hat y que pasado un tiempo incluye en su distribución empresarial RHEL las nuevas características ya probadas en Fedora.
@@ -65,6 +70,9 @@ uno nuevo según tus necesidades y restricciones de presupuesto.
 * [BSD Magazine](https://bsdmag.org/): publicación mensual relacionada con la distribuciones BSD pero con artículos interesantes. Conocer el punto de vista de BSD enriquece a cualquier persona que use GNU/Linux.
 * [Planet GNOME](https://planet.gnome.org/): agregador de diferentes blogs de algunos de los desarrolladores de GNOME, algunos artículos permiten conocer que desarrollo se están realizando y se incorporarán en futuras versiones del entorno de escritorio.
 * [Ubuntu Planet](http://planet.ubuntu.com/): agregador de blogs con la temática de la distribución Ubuntu.
+
+Blogs.
+
 * [Planeta Linux](http://planetalinux.org/es/): agregador de varios blogs con una temática sobre Linux o el software libre.
 * [ESLE](http://www.esle.eu/): web de la asociación de empresas de tecnologías y conocimiento libre de Euskadi.
 * [Software Libre Deusto](http://softwarelibre.deusto.es/)
@@ -73,10 +81,15 @@ uno nuevo según tus necesidades y restricciones de presupuesto.
 * [Linuxito](https://www.linuxito.com/): blog personal sobre distribuciones GNU/Linux y BSD con gran cantidad de artículos. Contiene una lista de la [blogosfera de GNU/Linux y el software libre](https://www.linuxito.com/herramientas/blogosfera) en la que conocer otros blogs de la misma temática.
 * [Linux Adictos](https://www.linuxadictos.com/): web centrada en el software libre y GNU/Linux con noticias de actualidad.
 * [Victorhck in the free world](https://victorhckinthefreeworld.com/): blog personal que promociona y defiende el software libre y los derechos de los usuarios en la tecnología.
-* [Karla's Project](https://www.youtube.com/channel/UCgHXvTpaNOBCIDqCNhOxPkg): una canal de una YouTuber sobre GNU/Linux, como un blog pero en vídeo. Detrás de sus numerosas cuñas de humor que hacen los vídeos amenos y divertidos explica de forma didáctica y sencilla muchos aspectos relacionados con del sistema operativo del pingüino y el software libre.
 * [La sombra del helicóptero](https://lasombradelhelicoptero.wordpress.com/): blog personal que ya no ofrece nuevo contenido ya que su autor dejó de publicar en él pero en el que encontrar todavía artículos interesantes.
 * [LiGNUx](https://lignux.com/)
 * [Listado de excelentes webs en español sobre software libre, código abierto y GNU/Linux](https://proyectotictac.com/blogs-linux/): un listado muy amplio de blogs, _podcasts_, canales de YouTube y otros formatos para compartir contenido centrados en la temática de software libre, código abierto y GNU/Linux.
+
+### Canales de YouTube
+
+* [Karla's Project](https://www.youtube.com/channel/UCgHXvTpaNOBCIDqCNhOxPkg): una canal de una YouTuber sobre GNU/Linux, como un blog pero en vídeo. Detrás de sus numerosas cuñas de humor que hacen los vídeos amenos y divertidos explica de forma didáctica y sencilla muchos aspectos relacionados con del sistema operativo del pingüino y el software libre.
+* [La chica de sistemas](https://www.youtube.com/@lachicadesistemas/videos)
+* [Computadoras y sensores](https://www.youtube.com/@ComputadorasySensores/videos)
 
 ## Desarrollo y programación
 
@@ -106,9 +119,9 @@ En español también hay algunos blogs personales con artículos desde la progra
 * [Félix López](https://flopezluis.medium.com/) en Medium y [en Substack](https://flopezluis.substack.com/): más centrado en los aspectos de _manager_ los artículos los artículos están más centrados en los aspectos organizativos, desde aspectos de modelos y cultura de organización, gestión de personas hasta reclutamiento todos esos aspectos no relacionados directamente con la programación pero también importantes para una empresa tecnológica.
 * [Koalite](http://blog.koalite.com/): un blog sobre programación con una buena cantidad de artículos interesantes. Muy recomendable.
 
-De canales de YouTube también recomiendo los siguientes.
+### Canales de TouTube
 
-* [Continuous Delivery](https://www.youtube.com/@ContinuousDelivery): un gran canal explicando los principios, buenas prácticas y fundamentos de la programación y desarrollo de sistemas. Su principal autor es David Farley escritor del libro [Continuous Delivery](https://amzn.to/3RnN083).
+* [Modern Software Engineering](https://www.youtube.com/@ModernSoftwareEngineeringYT): un gran canal explicando los principios, buenas prácticas y fundamentos de la programación y desarrollo de sistemas. Su principal autor es David Farley escritor del libro [Continuous Delivery](https://amzn.to/3RnN083).
 * [Pelado Nerd](https://www.youtube.com/@PeladoNerd): muchos aspectos de la programación y sistemas de alguien con experiencia que trabaja de lo que habla.
 
 ## Juegos

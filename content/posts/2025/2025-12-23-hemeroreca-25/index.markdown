@@ -84,7 +84,7 @@ Esta es la colección de favoritos que tengo de los juegos que he ido recopiland
 
 ## Artículos escritos
 
-Y he escrito los siguientes pocos artículos, únicamente 8, ni uno al mes. El blog aún no está acabado ni abandonado pero le dedico mucha menos intensidad que hace unos años. Solo he escrito dos artículos propiamente de programación.
+He escrito los siguientes pocos artículos, únicamente 8, ni uno al mes. El blog aún no está acabado ni abandonado pero le dedico mucha menos intensidad que hace unos años. Solo he escrito dos artículos propiamente de programación.
 
 * [Artículo resumen de tecnología del 2024 y futuro 2025][blogbitix-711]
 * [Análisis y guía de la pesadilla psicótica tipo soul de Hellblade: Senua Sacrifice][blogbitix-712]
