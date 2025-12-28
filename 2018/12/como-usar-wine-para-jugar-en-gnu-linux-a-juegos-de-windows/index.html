@@ -206,8 +206,7 @@ Desde el año 2008 que llevo utilizando GNU/Linux como único sistema operativo 
 </script>
 
   
-  <script defer id="videoowall" data-id="videoowall_bfd88eba13cf727a36cf22ed1d89f7838287bb68d8331d7b190920bc4530adc5" data-cfasync="false" src="https://static.videoo.tv/videoowall_bfd88eba13cf727a36cf22ed1d89f7838287bb68d8331d7b190920bc4530adc5.js"></script>
-<script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+  
 
 </head>
 <body>
@@ -365,9 +364,7 @@ Desde el año 2008 que llevo utilizando GNU/Linux como único sistema operativo 
     <li><a href="#otras-formas-de-ejecutar-juegos-y-programas-en-gnulinux">Otras formas de ejecutar juegos y programas en GNU/Linux</a></li>
     <li><a href="#desinstalar-wine">Desinstalar Wine</a></li>
   </ol>
-</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
-    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
-</div></div></div>
+</nav></div> </div><div class="col-12 col-lg-6"></div></div>
 <h2 id="como-instalar-wine-en-la-distribución-gnulinux">Como instalar Wine en la distribución GNU/Linux</h2>
 <p>Como siempre he empezado por leer el artículo de la <a href="https://wiki.archlinux.org/index.php/Wine">wiki de Arch Linux dedicado a Wine</a> pra ver que paquetes son necesarios instalar además del repositorio <em>multilib</em> y que información contiene, en un primer momento hay que habilitar el repositorio <em>multilib</em> con implementaciones de librerías de 32 bits. Para juegos la opción recomendable es <a href="https://www.archlinux.org/packages/multilib/x86_64/wine-staging/">wine-staging</a> que contiene los últimos parches añadidos, <a href="https://www.archlinux.org/packages/multilib/x86_64/wine/">wine</a> es una versión más estable pero con una cadencia de versiones más lenta que no tiene los últimos parches. También son necesarios los <a href="https://www.archlinux.org/packages/multilib/x86_64/lib32-mesa/">controladores gráficos de 32 bits de la tarjeta</a>, en este caso de Intel. Y el sistema de sonido para 32 bits, si no se instala <a href="https://www.archlinux.org/packages/multilib/x86_64/lib32-libpulse/">lib32-libpulse</a>  en la terminal aparecen mensajes de que no se encuentra las librerías <em>libpulse.so.0</em> y <em>libpulse.so.2</em>. <a href="https://www.archlinux.org/packages/multilib/x86_64/wine_gecko/">wine_gecko</a> y <a href="https://www.archlinux.org/packages/community/any/wine-mono/">wine-mono</a> son unos requerimientos de Wine y los programas Windows.</p>
 <div class="code">

@@ -170,8 +170,7 @@
 </script>
 
   
-  <script defer id="videoowall" data-id="videoowall_bfd88eba13cf727a36cf22ed1d89f7838287bb68d8331d7b190920bc4530adc5" data-cfasync="false" src="https://static.videoo.tv/videoowall_bfd88eba13cf727a36cf22ed1d89f7838287bb68d8331d7b190920bc4530adc5.js"></script>
-<script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+  
 
 </head>
 <body>
@@ -330,9 +329,7 @@
     <li><a href="#ejemplo-de-cifrado-y-descifrado-de-datos">Ejemplo de cifrado y descifrado de datos</a></li>
     <li><a href="#ejemplo-aplicación-con-spring">Ejemplo aplicación con Spring</a></li>
   </ol>
-</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
-    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
-</div></div></div>
+</nav></div> </div><div class="col-12 col-lg-6"></div></div>
 <h2 id="vault-como-servicio-de-cifrado-y-descifrado">Vault como servicio de cifrado y descifrado</h2>
 <p>Vault es una herramienta dedicada a la seguridad de la empresa HashiCorp. Tiene diferentes funcionalidades como servir de almacenamiento de secretos en su base de datos de claves y valores, <a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">generar credenciales de acceso bajo demanda a recursos como bases de datos</a> entre otras como cifrado y descifrado como servicio. En todas estás funcionalidades diversos aspectos de la seguridad se centralizan en un único componente del sistema.</p>
 <p>Las claves de cifrado únicamente se almacenan en Vault, por otro lado las aplicaciones no han de mantener credenciales para el acceso a una base de datos sino que es Vault el que crea las credenciales válidas únicamente por un periodo de tiempo corto con posibilidad de renovación. Esto aumenta la seguridad ya que una aplicación no ha de mantener unas credenciales para la base de datos válidas por un tiempo indefinido, al mismo tiempo las claves de cifrado están centralizadas en vez estar incluidas en cada aplicación. En caso necesario Vault es capaz de revocar las credenciales de cualquier aplicación.</p>

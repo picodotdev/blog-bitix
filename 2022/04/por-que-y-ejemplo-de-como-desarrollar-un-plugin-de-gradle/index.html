@@ -170,8 +170,7 @@
 </script>
 
   
-  <script defer id="videoowall" data-id="videoowall_bfd88eba13cf727a36cf22ed1d89f7838287bb68d8331d7b190920bc4530adc5" data-cfasync="false" src="https://static.videoo.tv/videoowall_bfd88eba13cf727a36cf22ed1d89f7838287bb68d8331d7b190920bc4530adc5.js"></script>
-<script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+  
 
 </head>
 <body>
@@ -327,9 +326,7 @@
       </ol>
     </li>
   </ol>
-</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
-    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
-</div></div></div>
+</nav></div> </div><div class="col-12 col-lg-6"></div></div>
 <h2 id="por-qué-desarrollar-un-plugin-propio-de-gradle">Por qué desarrollar un <em>plugin</em> propio de Gradle</h2>
 <p>Es seguro que en una empresa a lo largo del tiempo esta desarrolle varios proyectos, siendo varios una cantidad de unas pocas decenas a cientos dependiendo del tamaño de la organización. Con múltiples proyectos por motivos de mantenimiento el copiar y pegar código entre proyectos no es una opción viable con lo que también seguro que surge la necesidad de reutilizar código propio de la organización entre los diferentes proyectos tal y como se reutiliza código de otras librerías como <a href="https://spring.io/">Spring</a>, <a href="https://hibernate.org/">Hibernate</a> y otra multitud de librerías desarrolladas por terceros. La forma de reutilizar código en Java es a través de librerías que se publican en un repositorio de Maven igual que cualquier otra librería de terceros.</p>
 <p>También es seguro que con múltiples proyectos surge la necesidad de reutilizar código entre múltiples proyectos incluso en la herramienta de construcción. La forma que ofrece Grade de reutilizar código es a través de <em>plugins</em>. En el caso de la herramienta de construcción un <em>plugin</em> permite aplicar a todos los proyectos de forma sencilla, homogénea, mantenible y sin copiar y pegar elementos comunes considerados un estándar en la organización como comprobaciones estáticas de código con <a href="https://pmd.github.io/">PMD</a>, <a href="https://checkstyle.sourceforge.net/">Checkstyle</a> y <a href="https://spotbugs.github.io/">SpotBugs</a> entre otras muchas cosas propias de una organización. Muchos terceros publican <em>plugins</em> que cualquiera puede aplicar a un proyecto si este <em>plugin</em> ofrece la funcionalidad que necesita y si no existe ninguno también es posible desarrollar uno propio ajustado a las necesidades propias.</p>

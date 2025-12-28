@@ -170,8 +170,7 @@
 </script>
 
   
-  <script defer id="videoowall" data-id="videoowall_bfd88eba13cf727a36cf22ed1d89f7838287bb68d8331d7b190920bc4530adc5" data-cfasync="false" src="https://static.videoo.tv/videoowall_bfd88eba13cf727a36cf22ed1d89f7838287bb68d8331d7b190920bc4530adc5.js"></script>
-<script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+  
 
 </head>
 <body>
@@ -324,9 +323,7 @@
     <li><a href="#como-generar-y-lanzar-un-evento-de-dominio">Como generar y lanzar un evento de dominio</a></li>
     <li><a href="#otras-preguntas">Otras preguntas</a></li>
   </ol>
-</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
-    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
-</div></div></div>
+</nav></div> </div><div class="col-12 col-lg-6"></div></div>
 <h2 id="transaccionalidad-y-eventos-de-dominio">Transaccionalidad y eventos de dominio</h2>
 <p>En las aplicaciones un concepto importante es la transaccionalidad, es un requerimiento que se impone al sistema para su buen funcionamiento. Una transacción consiste en que un conjunto de acciones o cambios funciona todo de forma completa o no funciona nada pero nunca de forma parcial. Si la lógica de una aplicación emite varios eventos según se ejecuta y en la mitad del proceso algo falla las acciones desencadenadas por los eventos emitidos deben deshacerse o de lo contrario posiblemente se produzca un mal funcionamiento o una inconsistencia de datos.</p>
 <p>Las aplicaciones suelen trabajar con bases de datos y estas son las que proporcionan la transaccionalidad pero si los eventos se envían con un <em>middleware</em> de mensajería la transaccionalidad ya no afecta a un único sistema sino que afecta a dos, la base de datos relacional y el <em>middleware</em> de mensajería. Alguna solución a la transaccionalidad de dos sistemas diferentes como una <a href="https://es.wikipedia.org/wiki/Commit_de_dos_fases">transacción en dos fases</a> tiene sus propios problemas en cuanto a escalabilidad y complejidad.</p>

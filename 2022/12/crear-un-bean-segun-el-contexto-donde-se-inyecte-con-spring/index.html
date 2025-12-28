@@ -170,8 +170,7 @@
 </script>
 
   
-  <script defer id="videoowall" data-id="videoowall_bfd88eba13cf727a36cf22ed1d89f7838287bb68d8331d7b190920bc4530adc5" data-cfasync="false" src="https://static.videoo.tv/videoowall_bfd88eba13cf727a36cf22ed1d89f7838287bb68d8331d7b190920bc4530adc5.js"></script>
-<script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+  
 
 </head>
 <body>
@@ -330,9 +329,7 @@
   <ol>
     <li><a href="#crear-un-bean-según-el-contexto-donde-se-inyecte-con-spring">Crear un <em>bean</em> según el contexto donde se inyecte con Spring</a></li>
   </ol>
-</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
-    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
-</div></div></div>
+</nav></div> </div><div class="col-12 col-lg-6"></div></div>
 <h2 id="crear-un-bean-según-el-contexto-donde-se-inyecte-con-spring">Crear un <em>bean</em> según el contexto donde se inyecte con Spring</h2>
 <p>Las instancias de las dependencias en Spring se crean en los métodos anotados con la anotación <a href="#ZgotmplZ">Bean</a> pero en el caso del Logger el construir la instancia depende del contexto, la clase, donde se inyecte ya que para obtener la referencia del Logger depende de la clase.</p>
 <p>El método de creación del <em>bean</em> puede recibir un <a href="#ZgotmplZ">InjectionPoint</a> a partir del cual conocer cuál es la clase en la que inyecta el Logger y obtener una referencia a este según su clase que lo va a contener.</p>
