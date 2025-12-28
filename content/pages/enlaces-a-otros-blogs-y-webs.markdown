@@ -121,7 +121,7 @@ En español también hay algunos blogs personales con artículos desde la progra
 
 ### Canales de TouTube
 
-* [Modern Software Engineering](https://www.youtube.com/@ModernSoftwareEngineeringYT): un gran canal explicando los principios, buenas prácticas y fundamentos de la programación y desarrollo de sistemas. Su principal autor es David Farley escritor del libro [Continuous Delivery](https://amzn.to/3RnN083).
+* [Modern Software Engineering](https://www.youtube.com/@ModernSoftwareEngineeringYT/videos): un gran canal explicando los principios, buenas prácticas y fundamentos de la programación y desarrollo de sistemas. Su principal autor es David Farley escritor del libro [Continuous Delivery](https://amzn.to/3RnN083).
 * [Pelado Nerd](https://www.youtube.com/@PeladoNerd): muchos aspectos de la programación y sistemas de alguien con experiencia que trabaja de lo que habla.
 
 ## Juegos
