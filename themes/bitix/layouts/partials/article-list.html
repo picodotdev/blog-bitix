@@ -1,6 +1,6 @@
 {{ $urlsuffix := .Site.Params.outputformats.html.urlsuffix }}
 <ul class="list-unstyled">
-    {{ range (where .Paginator.Pages ".Params.index" true) -}}
+    {{ range first 15 (where .Site.RegularPages ".Params.index" true) }}
     <li>
       <article>
         <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>

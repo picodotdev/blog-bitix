@@ -1,9 +1,10 @@
-{{ $paginator := $.Paginator }}
+{{ $pages := where .Site.RegularPages ".Params.index" true }}
+{{ $paginator := .Paginate $pages.ByTitle 15 }}
 
 {{ if gt $paginator.TotalPages 1 }}
 <nav>
   <div class="row">
-    <div class="col-md-4 text-left">
+    <div class="col-md-4 text-start">
     {{ if $paginator.HasNext }}
       <a href="{{ if $paginator.HasNext }}{{ $paginator.Next.URL }}{{ end }}" aria-label="Next"><span aria-hidden="true">&laquo;</span> {{ i18n "older" }}</a>
     {{ end }}
@@ -11,7 +12,7 @@
     <div class="col-md-4 text-center">
       <a href="{{ ref . "archive" }}">{{ i18n "archive" }}</a>
     </div>
-    <div class="col-md-4 text-right">
+    <div class="col-md-4 text-end">
     {{ if $paginator.HasPrev }}
       <a href="{{ if $paginator.HasPrev }}{{ $paginator.Prev.URL }}{{ end }}" aria-label="Previous">{{ i18n "newer" }} <span aria-hidden="true">&raquo;</span></a>
     {{ end }}

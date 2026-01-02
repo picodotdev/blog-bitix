@@ -12,6 +12,7 @@ comments: true
 promoted: false
 imageHead: "image:hellblade-senua-sacrifice.webp"
 imagePost: "image:hellblade-senua-sacrifice.webp"
+tags: ["juegos"]
 series: ["juegos"]
 summary: "Este juego es algo distinto empezando por que aunque está creado en formato juego uno de sus objetivos es acercar en qué consiste la enfermedad mental y la psicosis a través del personaje de Senua. En una época en la que si el juego dura menos de medio centenar de horas se considera un juego corto este no dura más de 10 horas."
 ---
