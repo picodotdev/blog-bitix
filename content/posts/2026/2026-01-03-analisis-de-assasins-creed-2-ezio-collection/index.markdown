@@ -81,6 +81,13 @@ Una de las señas de identidad de los Assassin son las vistas de las atalayas, e
     image1="image:assasins-creed-the-ezio-collection-frase-requiest-4.webp" optionsthumb1="200x150" title1="Frases"
     caption="Frases" >}}
 
+{{< image
+    gallery="true"
+    image1="image:assasins-creed-the-ezio-collection-atalaya-1.webp" optionsthumb1="200x150" title1="Atalayas"
+    image2="image:assasins-creed-the-ezio-collection-atalaya-2.webp" optionsthumb2="200x150" title2="Atalayas"
+    image3="image:assasins-creed-the-ezio-collection-atalaya-3.webp" optionsthumb3="200x150" title3="Atalayas"
+    caption="Atalayas" >}}
+
 {{< amazon
     tags="game-console" >}}
 
