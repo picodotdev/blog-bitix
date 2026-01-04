@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="Guía de inicio del gestor de terminales y sesiones tmux">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/images/tmux_hu_b2ba83cee38752fd.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/images/tmux_hu_ac0ecd106699f2d3.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Las personas que usan de forma intensiva la terminal seguramente usando un multiplexador de terminales como tmux su trabajo es facilitado. Tmux permite dividir una terminal en paneles, ventanas independiente y sesiones. Usando sus múltiples combinaciones de teclas se divide una terminal o una ventana de forma horizontal y vertical en paneles del tamaño que se desee pudiendo de esta forma visualizar al mismo tiempo varias terminales ubicadas en cada panel. También se puede crear una configuración para iniciar tmux con la misma disposición de paneles, ventanas y sesiones. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/images/tmux_hu_b2ba83cee38752fd.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/images/tmux_hu_ac0ecd106699f2d3.webp">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Guía de inicio del gestor de terminales y sesiones tmux">
@@ -55,7 +55,7 @@
     "headline": "Guía de inicio del gestor de terminales y sesiones tmux",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/images/tmux_hu_b2ba83cee38752fd.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/images/tmux_hu_ac0ecd106699f2d3.webp"
         
       },
     "datePublished": "2019-10-04T18:00:00+02:00",
@@ -315,7 +315,7 @@
 <p><a href="https://github.com/tmux/tmux/wiki">Tmux</a> es un multiplexador de terminales con soporte para iniciar sesiones. Con tmux en una misma terminal o sesión SSH es posible dividirla en varios paneles y ventanas. También permite iniciar sesiones y salir de ellas sin que los procesos que están corriendo sean terminados lo que permite iniciar una sesión por ejemplo en el trabajo, dejarla suspendida y luego continuarla desde otro equipo, ubicación o ser iniciada por una persona y continuada por otra.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/images/tmux_hu_b30387e53282c823.webp" data-gallery="" title="Sesión de tmux en la terminal de GNOME"><img src="/blog-bitix/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/images/tmux_hu_4f09833a2f5dabb1.webp" width="300" height="166" alt="Sesión de tmux en la terminal de GNOME" title="Sesión de tmux en la terminal de GNOME" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/images/tmux_hu_d652369d2fa2bf8c.webp" data-gallery="" title="Sesión de tmux en la terminal de GNOME"><img src="/blog-bitix/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/images/tmux_hu_e9d4b9bbfc851052.webp" width="300" height="166" alt="Sesión de tmux en la terminal de GNOME" title="Sesión de tmux en la terminal de GNOME" class="" loading="lazy"></a></p>
 <figcaption>Sesión de tmux en la terminal de GNOME</figcaption>
 </figure>
 </div>
@@ -338,7 +338,7 @@
 </div>
 <p>Para automatizar la configuración inicial de tmux soporta un archivo para personalizarlo a través de un <em>script</em> con comandos. Así por ejemplo si siempre se desea una misma configuración de paneles y ventanas con la misma disposición es posible realizarlo con un <em>script</em> como el siguiente.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl"><span class="cp"></span>tmux new-session -s <span class="s2">&#34;Session&#34;</span> -d&#10;</span></span><span class="line"><span class="cl">tmux set-option -g mouse on&#10;</span></span><span class="line"><span class="cl">tmux split-window -h&#10;</span></span><span class="line"><span class="cl">tmux split-window -v&#10;</span></span><span class="line"><span class="cl">tmux attach-session -t <span class="s2">&#34;Session&#34;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl">tmux new-session -s <span class="s2">&#34;Session&#34;</span> -d&#10;</span></span><span class="line"><span class="cl">tmux set-option -g mouse on&#10;</span></span><span class="line"><span class="cl">tmux split-window -h&#10;</span></span><span class="line"><span class="cl">tmux split-window -v&#10;</span></span><span class="line"><span class="cl">tmux attach-session -t <span class="s2">&#34;Session&#34;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>tmux.sh</span>
     </div>
@@ -557,7 +557,7 @@
   </div>
   <div class="row">
     <div class="col-12">
-      Copyleft <span class="copyleft">&copy;</span> 2025 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      Copyleft <span class="copyleft">&copy;</span> 2026 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
       <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
       <br/>
       <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.

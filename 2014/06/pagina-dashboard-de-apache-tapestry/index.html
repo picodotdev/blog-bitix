@@ -315,7 +315,7 @@ Con la versión 5.4 de Tapestry las páginas PageCatalog, ServiceStatus e Hibern
 <p>La página <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/pages/T5Dashboard.html">T5Dashboard</a> está incluida en el propio core de <a href="http://tapestry.apache.org/">Apache Tapestry</a> y disponible en todas las aplicaciones en modo desarrollo y accediendo de forma local al servidor de aplicaciones. Si se incluye en la aplicación la dependencia tapestry-hibernate además en T5Dashboard podremos ver estadísticas de uso de Hibernate. La página T5Dashboard nos puede resultar muy útil ya que nos proporciona mucha información y alguna acción interesante.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-1_hu_7cd010f5d2bb3b48.webp" data-gallery="" title="Estado de la aplicación Tapestry"><img src="/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-1_hu_b5b9b207a851d40c.webp" width="300" height="138" alt="Estado de la aplicación Tapestry" title="Estado de la aplicación Tapestry" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-1_hu_58984d28a5d3ebed.webp" data-gallery="" title="Estado de la aplicación Tapestry"><img src="/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-1_hu_4e82d709daa0927.webp" width="300" height="138" alt="Estado de la aplicación Tapestry" title="Estado de la aplicación Tapestry" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <p>Como se ve en la imagen podemos ver las páginas disponibles, cargadas, cuanto tiempo llevó construirlas, que complejidad y por cuantos componentes están formadas. Y algo que nos resultará muy útil es provocar la acción de cargar todas las páginas quizá después de hacer un despliegue para evitar tiempos de inicialización en las primeras peticiones pero tan o más importante nos permitirá descubrir errores en los archivos tml de los componentes ¿cuantas veces te ha ocurrido que en un php, jsp, gsp, &hellip; hasta que no se usa esa plantilla no descubres un error digamos &ldquo;de compilación&rdquo; (variable con nombre que no existe, atributo mal entrecomillado, &hellip;) ? Seguramente como a mi, muchas. Los archivos de plantilla tml son xml válido con lo que si no están bien formados se nos notificará del error, nuevamente ¿te ha ocurrido alguna vez tener un php, jsp o gsp que no genera html bien balanceado? Pero también si se está usando un componente que no existe, varios componentes con el mismo nombre, &hellip; . Aunque parezca que no estos tipos de errores se pueden producir con relativa facilidad tanto en desarrollo y con mayor peligro si tenemos un flujo de trabajo con varias ramas donde vamos mergeando los cambios de trunk a la rama que se despliega en producción y nos ocurren conflictos en los merges que tenemos que resolver manualmente con la posibilidad de cometer un error.</p>
@@ -328,13 +328,13 @@ Con la versión 5.4 de Tapestry las páginas PageCatalog, ServiceStatus e Hibern
 </ul>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-2_hu_15596b3a5927bf3.webp" data-gallery=""><img src="/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-2_hu_ccbc473cdaf3d408.webp" width="300" height="138" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-2_hu_4a3d419660dd5f9e.webp" data-gallery=""><img src="/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-2_hu_7ccfa65e69d6ddc9.webp" width="300" height="138" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <p>Finalmente, en la sección HibernateStatistics podemos obtener un montón de datos que nos pueden servir para detectar situaciones anómalas en la aplicación como un gran número de sql que se lanzan en una página como podría ser en un problema de carga N+1 en una relación entre dos entidades, el estado de la cache de segundo nivel que nos permitirá optimizar las caches, la cache de queries, número de transacciones realizadas y otra gran cantidad de información.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-3_hu_d8f17edfc8e0b6.webp" data-gallery="" title="Estadísticas de Hibernate en Tapestry"><img src="/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-3_hu_4e215318af20608a.webp" width="300" height="138" alt="Estadísticas de Hibernate en Tapestry" title="Estadísticas de Hibernate en Tapestry" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-3_hu_84efd759ddf6d365.webp" data-gallery="" title="Estadísticas de Hibernate en Tapestry"><img src="/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-3_hu_6a7aa0c3349b5f0b.webp" width="300" height="138" alt="Estadísticas de Hibernate en Tapestry" title="Estadísticas de Hibernate en Tapestry" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <p>Para que hibernate genere estadísticas es necesario indica en el archivo hibernate.cfg.xml la propiedad hibernate.generate_statistics:</p>
@@ -560,7 +560,7 @@ Con la versión 5.4 de Tapestry las páginas PageCatalog, ServiceStatus e Hibern
   </div>
   <div class="row">
     <div class="col-12">
-      Copyleft <span class="copyleft">&copy;</span> 2025 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      Copyleft <span class="copyleft">&copy;</span> 2026 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
       <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
       <br/>
       <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.

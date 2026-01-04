@@ -385,7 +385,7 @@
 </ul>
 <p>Para la construcción con Buildpacks utilizaba el siguiente comando que a través de argumentos configuraban los <em>buidpacks</em> y construcción de la aplicación.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ pack build spring-injection-point <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--env <span class="s2">&#34;BP_JVM_TYPE=JDK&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--env <span class="s2">&#34;BP_JVM_VERSION=11&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--env <span class="s2">&#34;BP_GRADLE_BUILT_ARTIFACT=app/build/distributions/app.zip&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--builder paketobuildpacks/builder-jammy-base <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/ca-certificates <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/syft <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/procfile <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/adoptium <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/gradle <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/executable-jar <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/spring-boot <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--default-process app <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;--path .</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ pack build spring-injection-point <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;--env <span class="s2">&#34;BP_JVM_TYPE=JDK&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;--env <span class="s2">&#34;BP_JVM_VERSION=11&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;--env <span class="s2">&#34;BP_GRADLE_BUILT_ARTIFACT=app/build/distributions/app.zip&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;--builder paketobuildpacks/builder-jammy-base <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/ca-certificates <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/syft <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/procfile <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/adoptium <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/gradle <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/executable-jar <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;--buildpack gcr.io/paketo-buildpacks/spring-boot <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;--default-process app <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;--path .</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>pack-build.sh</span>
     </div>
@@ -495,15 +495,15 @@
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/images/waypoint_hu_de85164f21383e66.webp" data-gallery="" title="Interfaz web de Waypoint"><img src="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/images/waypoint_hu_7fecaff5376506b5.webp" width="465" height="450" alt="Interfaz web de Waypoint" title="Interfaz web de Waypoint" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/images/waypoint_hu_31f05289c669f131.webp" data-gallery="" title="Interfaz web de Waypoint"><img src="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/images/waypoint_hu_5667aba9c9fe5f99.webp" width="465" height="450" alt="Interfaz web de Waypoint" title="Interfaz web de Waypoint" class="" loading="lazy"></a></p>
 <figcaption>Interfaz web de Waypoint</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/images/waypoint-builds_hu_4f991f1874e78a56.webp" data-gallery="" title="Builds"><img src="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/images/waypoint-builds_hu_959ef963c0c0df96.webp" width="155" height="150" alt="Builds" title="Builds" class="" loading="lazy"></a>
-<a href="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/images/waypoint-deployments_hu_5314079347bbb689.webp" data-gallery="" title="Deployments"><img src="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/images/waypoint-deployments_hu_7f3228fbb7441039.webp" width="155" height="150" alt="Deployments" title="Deployments" class="" loading="lazy"></a>
-<a href="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/images/waypoint-releases_hu_747457527e1b304f.webp" data-gallery="" title="Relases"><img src="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/images/waypoint-releases_hu_313d2f42ae2814ac.webp" width="155" height="150" alt="Relases" title="Relases" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/images/waypoint-builds_hu_6c5a82c619204edf.webp" data-gallery="" title="Builds"><img src="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/images/waypoint-builds_hu_6ae3019e78c99e51.webp" width="155" height="150" alt="Builds" title="Builds" class="" loading="lazy"></a>
+<a href="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/images/waypoint-deployments_hu_eae00caa500f61e7.webp" data-gallery="" title="Deployments"><img src="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/images/waypoint-deployments_hu_fc5da5e2b10bce40.webp" width="155" height="150" alt="Deployments" title="Deployments" class="" loading="lazy"></a>
+<a href="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/images/waypoint-releases_hu_6e19dfe75779410b.webp" data-gallery="" title="Relases"><img src="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/images/waypoint-releases_hu_cf1091dcf21e199f.webp" width="155" height="150" alt="Relases" title="Relases" class="" loading="lazy"></a></p>
 <figcaption>Builds, deployments y releases de una aplicación en un proyecto</figcaption>
 </figure>
 </div>
@@ -538,60 +538,6 @@
       <h3>Este artículo forma parte de la serie <strong>hashicorp</strong>:</h3>
         
         <ol class="serie-articles">
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/">Introducción a Nomad para gestionar aplicaciones y microservicios</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/">Estrategias de despliegue para microservicios con Nomad</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2019/04/servicios-con-persistencia-en-el-orquestador-de-microservicios-nomad/">Servicios con persistencia en el orquestador de microservicios Nomad</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/">Crear de forma sencilla y rápida máquinas virtuales de VirtualBox con Vagrant</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/">Administrar secretos y proteger datos sensibles con Vault</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">Generar credenciales de conexión a base de datos bajo demanda con Vault</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/">Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/">Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/">Revertir un servicio a una versión anterior con Nomad</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/">Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/">Cifrado y descifrado como servicio con Vault</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/">Acceso simple y seguro a sistemas remotos con Boundary</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/">Planificar procesos periódicos y scripts con Nomad</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/">Las funcionalidades de un service mesh en una arquitectura de microservicios</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/">Construir, desplegar y observar aplicaciones de forma uniforme con Waypoint</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2024/02/configurar-gnu-linux-para-usar-forward-dns-y-el-servidor-dns-de-consul/">Configurar GNU/Linux para usar forward DNS y el servidor DNS de Consul</a>
-            </li>
           
         </ol>
       
@@ -693,7 +639,7 @@
   </div>
   <div class="row">
     <div class="col-12">
-      Copyleft <span class="copyleft">&copy;</span> 2025 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      Copyleft <span class="copyleft">&copy;</span> 2026 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
       <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
       <br/>
       <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.

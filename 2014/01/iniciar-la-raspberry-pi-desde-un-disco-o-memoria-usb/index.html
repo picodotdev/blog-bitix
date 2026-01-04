@@ -311,7 +311,7 @@
 <p>Teniendo instalado en la tarjeta SD tanto la partición de arranque como la partición del sistema donde está realmente la distribución que hayamos instalado necesitaremos mover la partición del sistema a una dispositivo USB. Para ello podemos utilizar el comando dd, deberemos conocer el dispositivo asignado a la tarjeta SD cuando la introduzcamos en el ordenador, para ello podemos usar el comando <em>lsblk</em>:</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/lsbk_hu_98b218be80012e1b.webp" data-gallery=""><img src="/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/lsbk_hu_e3c7a6d9bd27a3a9.webp" width="300" height="167" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/lsbk_hu_dce37bc4fef90377.webp" data-gallery=""><img src="/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/lsbk_hu_b4d2656ef834d947.webp" width="300" height="167" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="code">
@@ -330,7 +330,7 @@
 <p>Una vez escrita la imagen muy probablemente deberemos redimensionar la partición para aprovechar todo el espacio de almacenamiento del dispositivo. Con <a href="http://gparted.org/">GParted</a> podemos hacerlo de forma muy sencilla. Seleccionamos <em>/dev/sdb1</em>, desmontamos la partición y redimensionamos el espacio para la partición, finalmente pulsamos en la opción «Editar&gt; Aplicar operaciones».</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/gparted_hu_250836597f9d7a42.webp" data-gallery="" title="Redimiensionado de patición con GParted"><img src="/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/gparted_hu_55ae2bbd86be272.webp" width="288" height="200" alt="Redimiensionado de patición con GParted" title="Redimiensionado de patición con GParted" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/gparted_hu_574789e033cf3469.webp" data-gallery="" title="Redimiensionado de patición con GParted"><img src="/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/gparted_hu_4959638d3a47b773.webp" width="288" height="200" alt="Redimiensionado de patición con GParted" title="Redimiensionado de patición con GParted" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <p>El paso final que deberemos hacer es cambiar en la partición de arranque que sigue estando en la tarjeta SD un archivo para indicar que la partición del sistema ahora está en un dispositivo USB. Probablemente la partición del sistema que deberemos indicar sea <em>/dev/sda1</em>, con este valor modificamos el archivo <em>cmdline.txt</em> y lo asignamos al parámetro root, deberemos tener algo como como lo siguiente:</p>
@@ -531,7 +531,7 @@
   </div>
   <div class="row">
     <div class="col-12">
-      Copyleft <span class="copyleft">&copy;</span> 2025 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      Copyleft <span class="copyleft">&copy;</span> 2026 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
       <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
       <br/>
       <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.

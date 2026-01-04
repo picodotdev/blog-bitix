@@ -35,7 +35,7 @@ La función básica de un servidor web es devolver al navegador los recursos est
   <!-- Social -->
 <meta property="og:title" content="Configurar un servidor web virtual en Nginx y Apache">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu_f213354e1e193a61.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu_dd23a7835718794a.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="
@@ -48,7 +48,7 @@ La función básica de un servidor web es devolver al navegador los recursos est
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu_f213354e1e193a61.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu_dd23a7835718794a.webp">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Configurar un servidor web virtual en Nginx y Apache">
@@ -73,7 +73,7 @@ La función básica de un servidor web es devolver al navegador los recursos est
     "headline": "Configurar un servidor web virtual en Nginx y Apache",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu_f213354e1e193a61.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu_dd23a7835718794a.webp"
         
       },
     "datePublished": "2020-08-09T14:00:00+02:00",
@@ -353,7 +353,7 @@ La función básica de un servidor web es devolver al navegador los recursos est
     </div>
 </div>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl"><span class="cp"></span>docker run --rm -p 80:80 <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/nginx-www.127.0.0.1.xip.io.conf:/etc/nginx/conf.d/www.127.0.0.1.xip.io.conf:ro <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>  nginx:latest&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl">docker run --rm -p 80:80 <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">  -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/nginx-www.127.0.0.1.xip.io.conf:/etc/nginx/conf.d/www.127.0.0.1.xip.io.conf:ro <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">  nginx:latest&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>docker-nginx.sh</span>
     </div>
@@ -363,7 +363,7 @@ La función básica de un servidor web es devolver al navegador los recursos est
 <p>En el ejemplo se usa la misma raíz de documentos que el sitio web para <em>localhost</em>, si se añaden archivos de contenido en una raíz de documentos propia para el servidor web virtual el contenido devuelto cambia o si cambia la raíz de documentos al directorio <em>/usr/share/nginx</em> que Nginx no tiene permitido el acceso se observa que cuando se accede al servidor por el nombre del dominio <em>localhost</em> se muestra la página de inicio y cuando se accede por el nombre del dominio <em>www.127.0.0.1.xip.io</em> se devuelve un error <em>HTTP 403 Forbidden</em> por falta de permisos.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu_774d4e7d087afaea.webp" data-gallery="" title="Servidor web virtual en Nginx"><img src="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu_5c6f78929495e9a6.webp" width="300" height="196" alt="Servidor web virtual en Nginx" title="Servidor web virtual en Nginx" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu_17243b0d2cb30571.webp" data-gallery="" title="Servidor web virtual en Nginx"><img src="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu_e709fb91d2304ba0.webp" width="300" height="196" alt="Servidor web virtual en Nginx" title="Servidor web virtual en Nginx" class="" loading="lazy"></a></p>
 <figcaption>Servidor web virtual en Nginx</figcaption>
 </figure>
 </div>
@@ -376,7 +376,7 @@ La función básica de un servidor web es devolver al navegador los recursos est
     </div>
 </div>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl"><span class="cp"></span>docker run --rm -p 80:80 <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf:ro <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>  httpd:alpine&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl">docker run --rm -p 80:80 <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">  -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">  -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf:ro <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">  httpd:alpine&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>docker-apache.sh</span>
     </div>
@@ -384,7 +384,7 @@ La función básica de un servidor web es devolver al navegador los recursos est
 <p>Usando Apache también se accede al sitio web por su nombre de dominio <em>www.127.0.0.1.xip.io</em>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/apache-virtual-server_hu_cacd0a38871fd441.webp" data-gallery="" title="Servidor web virtual en Apache"><img src="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/apache-virtual-server_hu_18a478890d28619c.webp" width="300" height="196" alt="Servidor web virtual en Apache" title="Servidor web virtual en Apache" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/apache-virtual-server_hu_53bd1e47363c59e8.webp" data-gallery="" title="Servidor web virtual en Apache"><img src="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/apache-virtual-server_hu_3359844ad82287f1.webp" width="300" height="196" alt="Servidor web virtual en Apache" title="Servidor web virtual en Apache" class="" loading="lazy"></a></p>
 <figcaption>Servidor web virtual en Apache</figcaption>
 </figure>
 </div>
@@ -438,7 +438,7 @@ La función básica de un servidor web es devolver al navegador los recursos est
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/">
-                <img src="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hu_b204534173cfc69.webp" width="326" height="125" alt="Configurar autenticación básica en los servidores web Nginx y Apache" title="Configurar autenticación básica en los servidores web Nginx y Apache" class="" loading="lazy">
+                <img src="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hu_f816031ba669c441.webp" width="326" height="125" alt="Configurar autenticación básica en los servidores web Nginx y Apache" title="Configurar autenticación básica en los servidores web Nginx y Apache" class="" loading="lazy">
                 <h3>Configurar autenticación básica en los servidores web Nginx y Apache</h3>
                 </a>
                 
@@ -466,7 +466,7 @@ La función básica de un servidor web es devolver al navegador los recursos est
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/04/animaciones-y-transformaciones-2d-y-3d-con-css/">
-                <img src="/blog-bitix/2020/04/animaciones-y-transformaciones-2d-y-3d-con-css/images/css-animations-transformations_hu_addcbe2a4323382a.webp" width="326" height="125" alt="Animaciones y transformaciones 2D y 3D con CSS" title="Animaciones y transformaciones 2D y 3D con CSS" class="" loading="lazy">
+                <img src="/blog-bitix/2020/04/animaciones-y-transformaciones-2d-y-3d-con-css/images/css-animations-transformations_hu_3d09195f4066263e.webp" width="326" height="125" alt="Animaciones y transformaciones 2D y 3D con CSS" title="Animaciones y transformaciones 2D y 3D con CSS" class="" loading="lazy">
                 <h3>Animaciones y transformaciones 2D y 3D con CSS</h3>
                 </a>
                 
@@ -480,7 +480,7 @@ La función básica de un servidor web es devolver al navegador los recursos est
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/03/usar-un-paquete-npm-con-webpack-creado-con-storybook-react-y-typescript/">
-                <img src="/blog-bitix/2020/03/usar-un-paquete-npm-con-webpack-creado-con-storybook-react-y-typescript/images/hello-world-page_hu_e4d4fbb795ebaec3.webp" width="326" height="125" alt="Usar un paquete npm con Webpack creado con Storybook, React y TypeScript" title="Usar un paquete npm con Webpack creado con Storybook, React y TypeScript" class="" loading="lazy">
+                <img src="/blog-bitix/2020/03/usar-un-paquete-npm-con-webpack-creado-con-storybook-react-y-typescript/images/hello-world-page_hu_c2701eadb85c31f4.webp" width="326" height="125" alt="Usar un paquete npm con Webpack creado con Storybook, React y TypeScript" title="Usar un paquete npm con Webpack creado con Storybook, React y TypeScript" class="" loading="lazy">
                 <h3>Usar un paquete npm con Webpack creado con Storybook, React y TypeScript</h3>
                 </a>
                 
@@ -494,7 +494,7 @@ La función básica de un servidor web es devolver al navegador los recursos est
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/03/desarrollar-componentes-react-con-typescript-y-sistemas-de-diseno-con-storybook/">
-                <img src="/blog-bitix/2020/03/desarrollar-componentes-react-con-typescript-y-sistemas-de-diseno-con-storybook/images/storybook-helloworld_hu_f3142e376e4708cc.webp" width="326" height="125" alt="Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook" title="Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook" class="" loading="lazy">
+                <img src="/blog-bitix/2020/03/desarrollar-componentes-react-con-typescript-y-sistemas-de-diseno-con-storybook/images/storybook-helloworld_hu_f75ac757d0a97587.webp" width="326" height="125" alt="Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook" title="Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook" class="" loading="lazy">
                 <h3>Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook</h3>
                 </a>
                 
@@ -594,7 +594,7 @@ La función básica de un servidor web es devolver al navegador los recursos est
   </div>
   <div class="row">
     <div class="col-12">
-      Copyleft <span class="copyleft">&copy;</span> 2025 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      Copyleft <span class="copyleft">&copy;</span> 2026 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
       <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
       <br/>
       <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.

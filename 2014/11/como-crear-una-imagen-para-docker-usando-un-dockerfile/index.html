@@ -322,7 +322,7 @@
 <h2 id="archivo-dockerfile">Archivo Dockerfile</h2>
 <p>Este podría ser el contenido y la receta de un dockerfile si quisiésemos crear una imagen de docker con el servidor web nginx como servicio basada en la distribución <a href="https://www.ubuntu.com/">Ubuntu</a>.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="s">ubuntu:20.04</span><span class="err">&#10;</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">MAINTAINER</span><span class="w"> </span><span class="s">picodotdev</span> &lt;pico.dev@gmail.com&gt;<span class="err">&#10;</span></span></span><span class="line"><span class="cl"><span class="err">&#10;</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> apt-get -y update <span class="o">&amp;&amp;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;apt-get -y install nginx<span class="err">&#10;</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> ln -sf /dev/stdout /var/log/nginx/access.log <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">&amp;&amp;</span> ln -sf /dev/stderr /var/log/nginx/error.log<span class="err">&#10;</span></span></span><span class="line"><span class="cl"><span class="err">&#10;</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="w"> </span><span class="s">80</span><span class="err">&#10;</span></span></span><span class="line"><span class="cl"><span class="err">&#10;</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;nginx&#34;</span><span class="p">,</span> <span class="s2">&#34;-g&#34;</span><span class="p">,</span> <span class="s2">&#34;daemon off;&#34;</span><span class="p">]</span><span class="err">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="s">ubuntu:20.04</span><span class="err">&#10;</span></span></span><span class="line"><span class="cl"><span class="k">MAINTAINER</span><span class="w"> </span><span class="s">picodotdev</span> &lt;pico.dev@gmail.com&gt;<span class="err">&#10;</span></span></span><span class="line"><span class="cl"><span class="err">&#10;</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> apt-get -y update <span class="o">&amp;&amp;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;apt-get -y install nginx<span class="err">&#10;</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> ln -sf /dev/stdout /var/log/nginx/access.log <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">&amp;&amp;</span> ln -sf /dev/stderr /var/log/nginx/error.log<span class="err">&#10;</span></span></span><span class="line"><span class="cl"><span class="err">&#10;</span></span></span><span class="line"><span class="cl"><span class="k">EXPOSE</span><span class="w"> </span><span class="s">80</span><span class="err">&#10;</span></span></span><span class="line"><span class="cl"><span class="err">&#10;</span></span></span><span class="line"><span class="cl"><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;nginx&#34;</span><span class="p">,</span> <span class="s2">&#34;-g&#34;</span><span class="p">,</span> <span class="s2">&#34;daemon off;&#34;</span><span class="p">]</span><span class="err">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>Dockerfile</span>
     </div>
@@ -341,7 +341,7 @@
 <h2 id="construir-una-imagen-de-docker">Construir una imagen de Docker</h2>
 <p>Las instrucciones RUN y ADD permiten aprovisionar la imagen a partir de la imagen base, ejecutando comandos para instalar paquetes como Nginx y añadir archivos de configuración si los hubiera copiados de la máquina anfitrión. El archivo <em>Dockerfile</em> es la receta con la que se construye una imagen de Docker.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl"><span class="cp"></span>docker build -t <span class="s2">&#34;picodotdev/nginx:1.0&#34;</span> .&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl">docker build -t <span class="s2">&#34;picodotdev/nginx:1.0&#34;</span> .&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>docker-build.sh</span>
     </div>
@@ -368,7 +368,7 @@
 <h2 id="iniciar-un-contenedor-con-la-imagen">Iniciar un contenedor con la imagen</h2>
 <p>El siguiente comando inicia una instancia del contenedor con un servidor web virtual para el dominio <em>www.127.0.0.1.xip.io</em>.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl"><span class="cp"></span>docker run -it --rm <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;-v <span class="s2">&#34;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">/www.127.0.0.1.xip.io.conf:/etc/nginx/conf.d/www.127.0.0.1.xip.io.conf:ro&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;-v <span class="s2">&#34;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">/nginx/log:/var/log/nginx&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;-p <span class="s2">&#34;80:80&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl"><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;picodotdev/nginx:1.0</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl">docker run -it --rm <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;-v <span class="s2">&#34;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">/www.127.0.0.1.xip.io.conf:/etc/nginx/conf.d/www.127.0.0.1.xip.io.conf:ro&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;-v <span class="s2">&#34;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">/nginx/log:/var/log/nginx&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;-p <span class="s2">&#34;80:80&#34;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;picodotdev/nginx:1.0</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>docker-run.sh</span>
     </div>
@@ -381,13 +381,13 @@
 </div>
 <p>Otra forma de iniciar el contenedor es con un archivo de <a href="https://docs.docker.com/compose/">Docker Compose</a> que básicamente contiene los mismos parámetros del comando <em>docker run</em>.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;3.9&#34;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">nginx</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">nginx</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;80:80&#34;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">${PWD}/www.127.0.0.1.xip.io.conf:/etc/nginx/conf.d/www.127.0.0.1.xip.io.conf:ro</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">${PWD}/nginx/log:/var/log/nginx</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;3.9&#34;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">nginx</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">nginx</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;80:80&#34;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">${PWD}/www.127.0.0.1.xip.io.conf:/etc/nginx/conf.d/www.127.0.0.1.xip.io.conf:ro</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">${PWD}/nginx/log:/var/log/nginx</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>docker-compose.yml</span>
     </div>
 </div>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl"><span class="cp"></span>docker-compose up&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash&#10;</span></span></span><span class="line"><span class="cl">docker-compose up&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>docker-compose-up.sh</span>
     </div>
@@ -395,7 +395,7 @@
 <p>Accediendo con el navegador al servidor nginx del contenedor se devuelve la página por defecto.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/images/nginx_hu_b8a57ca6ad2d8204.webp" data-gallery="" title="Nginx"><img src="/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/images/nginx_hu_79ed27de4dc5c1fd.webp" width="300" height="176" alt="Nginx" title="Nginx" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/images/nginx_hu_fefb211b502cd481.webp" data-gallery="" title="Nginx"><img src="/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/images/nginx_hu_ccb95950262c3e38.webp" width="300" height="176" alt="Nginx" title="Nginx" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <p>Para aprender más sobre Docker es buena idea seguir un manual de referencia como los libros <a href="https://amzn.to/3unwPz9">Docker: Up &amp; Running</a> y <a href="https://amzn.to/3Oud8MX">Docker in Action</a>.</p>
@@ -439,54 +439,6 @@
       <h3>Este artículo forma parte de la serie <strong>docker</strong>:</h3>
         
         <ol class="serie-articles">
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">Introducción y características de Docker</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">Cómo instalar y guía de inicio básica de Docker</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">Cómo crear una imagen para Docker usando un Dockerfile</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Integración entre Ansible y Docker</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/">Aplicaciones multicontenedor con Docker Compose</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/">Crear y usar un repositorio en Docker Hub</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2015/07/usar-docker-con-docker-machine-en-linux-windows-o-mac/">Usar docker con Docker Machine en Linux, Windows o Mac</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/">Cambiar la ruta raíz del entorno de Docker</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2017/03/introduccion-y-ejemplo-de-cluster-de-contenedores-con-docker-swarm/">Introducción y ejemplo de cluster de contenedores con Docker Swarm</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2017/04/iniciar-un-stack-de-servicios-en-un-cluster-de-docker-swarm/">Iniciar un stack de servicios en un cluster de Docker Swarm</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/">Escalar y actualizar un servicio de un cluster de Docker Swarm</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/">Contenedores en Docker Swarm con volúmenes de datos persistentes usando REX-Ray y VirtualBox</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2017/04/informacion-sensible-en-los-contenedores-con-docker-secrets/">Información sensible en los contenedores con Docker Secrets</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2017/04/imagenes-de-docker-con-alpine-linux/">Imágenes de Docker con Alpine Linux</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2021/09/contenedores-en-macos-con-lima-y-minikube/">Contenedores en macOS con Lima y minikube</a>
-            </li>
           
         </ol>
       
@@ -588,7 +540,7 @@
   </div>
   <div class="row">
     <div class="col-12">
-      Copyleft <span class="copyleft">&copy;</span> 2025 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      Copyleft <span class="copyleft">&copy;</span> 2026 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
       <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
       <br/>
       <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.

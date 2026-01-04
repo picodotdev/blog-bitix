@@ -367,7 +367,7 @@ Este artículo es introductorio a los siguientes que escribiré y publicaré sob
 </div>
 <p>El programa de ejemplo es universal gracias a la idea <em>«Write once, run anywhere»</em> posibilitado por la máquina virtual o <abbr title="Java Virtual Machine"><a href="https://es.wikipedia.org/wiki/M%C3%A1quina_virtual_Java">JVM</a></abbr> y el <em>bytecode</em>, está compilado en un sistema con arquitectura x64 (el de mi equipo) y ejecutado en un sistema con arquitectura arm (el de la RPi). No se diferencia en nada al que usaríamos para lo mismo en cualquier otro sistema distinto de la Raspberry Pi.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.javaraspberrypi</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloWorld</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Hello World!&#34;</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.javaraspberrypi</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloWorld</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Hello World!&#34;</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>HelloWorld.java</span>
     </div>
@@ -375,7 +375,7 @@ Este artículo es introductorio a los siguientes que escribiré y publicaré sob
 <p>El resultado de este ejemplo es un mensaje en la terminal que es emitido por un programa Java ejecutado en la Raspberry Pi y lanzado de forma remota.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2017/03/ejemplo-hello-world-con-java-en-la-raspberry-pi/images/java-raspberrypi-hello-world_hu_28baef7cec6298c7.webp" data-gallery="" title="Ejemplo Hello World con Java en la Raspberry Pi"><img src="/blog-bitix/2017/03/ejemplo-hello-world-con-java-en-la-raspberry-pi/images/java-raspberrypi-hello-world_hu_980f70b9289df830.webp" width="300" height="165" alt="Ejemplo Hello World con Java en la Raspberry Pi" title="Ejemplo Hello World con Java en la Raspberry Pi" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2017/03/ejemplo-hello-world-con-java-en-la-raspberry-pi/images/java-raspberrypi-hello-world_hu_bb9615c3bb159693.webp" data-gallery="" title="Ejemplo Hello World con Java en la Raspberry Pi"><img src="/blog-bitix/2017/03/ejemplo-hello-world-con-java-en-la-raspberry-pi/images/java-raspberrypi-hello-world_hu_95eb730561180802.webp" width="300" height="165" alt="Ejemplo Hello World con Java en la Raspberry Pi" title="Ejemplo Hello World con Java en la Raspberry Pi" class="" loading="lazy"></a></p>
 <figcaption>Ejemplo Hello World con Java en la Raspberry Pi</figcaption>
 </figure>
 </div>
@@ -403,36 +403,6 @@ Este artículo es introductorio a los siguientes que escribiré y publicaré sob
       <h3>Este artículo forma parte de la serie <strong>electronica</strong>:</h3>
         
         <ol class="serie-articles">
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/">Desempaquetado del kit de iniciación a la electrónica para la Raspberry Pi</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-hello-world-con-java-en-la-raspberry-pi/">Ejemplo Hello World con Java en la Raspberry Pi</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-encender-y-apagar-diodo-led-con-la-raspberry-pi-en-java/">Ejemplo encender y apagar diodo LED con la Raspberry Pi en Java</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/">Controlar un display LCD 1602 para mostrar texto con la Raspberry Pi y Java</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-de-jni-usar-codigo-en-c-desde-java/">Ejemplo de JNI, usar código en C desde Java</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/">Obtener la temperatura y humedad con el sensor DHT11, la Raspberry Pi, C y Java</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/">Cómo usar un diodo LED, un pulsador y un zumbador con la Raspberry Pi y Java</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/">Ejemplo sensor de golpes y detector de movimiento en la Raspberry Pi con Java</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2017/05/controlar-un-servomotor-con-la-raspberry-pi-y-java/">Controlar un servomotor con la Raspberry Pi y Java</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/">Luces navideñas con la Raspberry Pi y Java</a>
-            </li>
           
         </ol>
       
@@ -536,7 +506,7 @@ Este artículo es introductorio a los siguientes que escribiré y publicaré sob
   </div>
   <div class="row">
     <div class="col-12">
-      Copyleft <span class="copyleft">&copy;</span> 2025 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      Copyleft <span class="copyleft">&copy;</span> 2026 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
       <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
       <br/>
       <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.

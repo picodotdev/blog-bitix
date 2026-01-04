@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta name="generator" content="Hugo 0.152.2">
   <meta name="base" href="/blog-bitix/">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,17 +9,17 @@
   <meta name="description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
   <meta name="theme-color" content="#FFFFFF"/>
 
-  <title>Blog Bitix</title>
+  <title></title>
 
   <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
   <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/" hreflang="es">
   <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
-  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/" hreflang="es" title="">
   
   <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/en/" hreflang="en" title="">
   
-  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="">
   
   <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
   <link rel="preload" href="/blog-bitix/asssets/fonts/pt-serif/pt-serif.css" as="style">
@@ -28,10 +27,10 @@
   <link href="/blog-bitix/assets/fonts/pt-serif/pt-serif.css" rel="stylesheet">
   <link href="/blog-bitix/assets/fonts/open-sans/open-sans.css" rel="stylesheet">
 
-  
+  <meta name="robots" content="noindex">
 
   <!-- Social -->
-<meta property="og:title" content="Blog Bitix">
+<meta property="og:title" content="">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/">
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blog-bitix-750.webp">
 
@@ -43,7 +42,7 @@
 <meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blog-bitix-750.webp">
 
 <meta name="twitter:site" content="">
-<meta name="twitter:title" content="Blog Bitix">
+<meta name="twitter:title" content="">
 <meta name="twitter:description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
 <meta name="twitter:creator" content="">
 
@@ -228,339 +227,334 @@
             </div>
             
 <ul class="list-unstyled">
+    
     <li>
       <article>
-        <h1><a href="/blog-bitix/2021/09/contenedores-en-macos-con-lima-y-minikube/">Contenedores en macOS con Lima y minikube</a></h1>
+        <h1><a href="/blog-bitix/2026/01/analisis-de-assasins-creed-2-ezio-collection/">Análisis de Assasins Creed II Ezio Collection</a></h1>
         <span class="information">
-          <time>25/09/2021</time>
-          
-            
-              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/apple/">apple</a>
-            
-          
-        </span>
-        <p>
-          
-            Para ejecutar contenedores en macOS hay dos opciones entre las posibles, una usar minikube que aunque su objetivo es ejecutar un <em>cluster</em> de Kubernetes permite usarlo para ejecutar contenedores de Docker directamente, la segunda opción es lime que es una opción similar que usa containerd en vez de Docker. La empresa encargada del desarrollo de Docker ha anunciado que el producto Docker Desktop pasa a requerir una licencia de pago para organizaciones empresariales grandes. Docker Desktop es usado tanto en Windows como en macOS para ejecutar contenedores de Docker con la opción también de ejecutar un <em>cluster</em> de Kubernetes, minikube y lima para macOS son una alternativa a Docker Desktop.
-          
-          <br>
-          <a href="/blog-bitix/2021/09/contenedores-en-macos-con-lima-y-minikube/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/">Planificar procesos periódicos y scripts con Nomad</a></h1>
-        <span class="information">
-          <time>23/09/2021</time>
-          
-            
-              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            Los pequeños <em>scripts</em> aún con su pequeña función específica, sus pocas líneas de código y breves instantes de ejecución limitados a segundos, minutos u pocas horas al día o a la semana realizan tareas importantes dentro de todas las tares de las que se compone un sistema computacional completo. Al igual que cualquier otro proceso requieren de un entorno de ejecución pero dada su naturaleza breve hace que dedicar una máquina reservada que estará infrautilizada en exclusiva para ellos sea ineficiente además de un coste en la infraestructura. En vez de dedicar una máquina en exclusiva para uno o unos pocos <em>scripts</em> el orquestador de procesos Nomad permite planificarlos en alguna de las instancias de computación existentes del <em>cluster</em> ya sea como procesos del sistema o dentro de contenedores.
-          
-          <br>
-          <a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/">El proxy inverso Traefik, características y funcionalidades que ofrece</a></h1>
-        <span class="information">
-          <time>19/09/2021</time>
-          
-            
-              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
-            
-          
-        </span>
-        <p>
-          
-            Un <em>proxy</em> inverso oculta la complejidad de los servicios para los que hace de intermediario. Al situarse como intermediario el <em>proxy</em> inverso es capaz de proporcionar funcionalidades adicionales como balanceo de carga, limitar el número de peticiones por unidad de tiempo, duplicar peticiones o realizar la autenticación entre otras funciones. Traefik es un <em>proxy</em> inverso diseñado para los entornos <em>cloud</em> dinámicos soportando autoconfigurarción a partir de varios proveedores de registro y descubrimiento de servicios como Consul o Docker, también se integra con herramientas para la observabilidad como Prometheus para métricas y Zipkin y Elastic para trazabilidad y registro de trazas.
-          
-          <br>
-          <a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/">Novedades y nuevas características de Java 17</a></h1>
-        <span class="information">
-          <time>16/09/2021</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            La versión Java 17 sucede a Java 11 como versión LTS, por ello es una versión más importante que las no LTS anteriores. Incorpora todas las mejoras incluidas en todas las no LTS previas más otras adicionales dede Java 16 publicada seis meses antes. Como versión LTS ofrece un soporte de correcciones de errores, fallos y alertas de seguridad  por un periodo de cinco años hasta septiembre de 2026 más un periodo adicional de tres años hasta 2029. La versión 6 del <em>framework</em> de Spring y Spring Boot 3 se tendrán como requisito mínimo Java 17 y Jakarta 9.
-          
-          <br>
-          <a href="/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2021/09/anadir-un-mapa-cartografico-con-javascript-leaflet-y-openstreetmap-a-una-pagina-web/">Añadir un mapa cartográfico con JavaScript, Leaflet y OpenStreetMap a una página web</a></h1>
-        <span class="information">
-          <time>12/09/2021</time>
-          
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/web/">web</a>
-            
-          
-        </span>
-        <p>
-          
-            Google Maps es un servicio de mapas cartográficos de Google que permite consultar mapas directamente desde la página de Google pero también insertarlo en páginas de terceros. En el caso de insertar mapas en una página de terceros como muchos de otros de sus servicios ofrece con una capa gratuita que cubre un pequeño número de peticiones. Aunque OpenStreetMap no ofrece el mismo nivel de detalle y calidad de la información que Google Maps permite su uso sin coste incluso con fines comerciales suficiente en muchos casos.
-          
-          <br>
-          <a href="/blog-bitix/2021/09/anadir-un-mapa-cartografico-con-javascript-leaflet-y-openstreetmap-a-una-pagina-web/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/">Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME</a></h1>
-        <span class="information">
-          <time>09/09/2021</time>
-          
-            
-              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
-            
-          
-        </span>
-        <p>
-          
-            Los entornos de escritorio proporcionan la interfaz gráfica de las computadoras, el aspecto de las ventanas, los estilos de los componentes junto con unas guías de interfaz de usuario que especifican como han de ser las aplicaciones en ese entorno de escritorio. El entorno de escritorio y las guías permiten que todas las aplicaciones tengan uniformidad visual y en su experiencia  que facilite al usuario el uso de las aplicaciones sin tener que aprender unas convenciones únicas para cada aplicación. La mayoría de entornos de escritorio integran unas pocas aplicaciones esenciales como explorador de archivos, visor de documentos e imágenes, editor de texto, terminal, reproductor de vídeo, navegador web y comunicación y gestor de software. El resto de aplicaciones necesarias son proporcionadas por desarrolladores ajenos al entorno de escritorio que no tienen por que seguir las mismas guías de estilos, sin embargo, algunas aplicaciones aún siendo de terceros si siguen las mismas guías de estilos del entorno de escritorio que proporcionan algunas funcionalidades adicionales a las de las aplicaciones esenciales.
-          
-          <br>
-          <a href="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/">Los diagramas UML para documentar y una aplicación para crearlos</a></h1>
-        <span class="information">
-          <time>02/09/2021</time>
-          
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-          
-        </span>
-        <p>
-          
-            Todo el conocimiento está en el código fuente pero este no tiene una forma de fácil y rápida comprensión a alto nivel, para comprender un sistema es necesario una forma de documentación que muestre los detalles importantes de los que se compone el sistema. El lenguaje unificado de desarrollo o UML permite describir un sistema utilizando diferentes diagramas específicos para mostrar diferentes aspectos del sistema. Gaphor es una aplicación de software libre disponible para diferentes sistemas operativos que permite crear y exportar a imágenes los diferentes diagramas.
-          
-          <br>
-          <a href="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2021/08/the-three-ways-y-the-five-ideals-de-los-libros-the-devops-handbook-the-phoenix-project-y-the-unicorn-project/">The three ways y The five ideals de los libros The DevOps Handbook, The Phoenix Project y The Unicorn Project</a></h1>
-        <span class="information">
-          <time>25/08/2021</time>
-          
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-          
-        </span>
-        <p>
-          
-            En la trilogía de los libros <em>The DevOps Handbook</em>, <em>The Phoenix Project</em> y <em>The Unicorn Project</em> se explican más detalladamente varios principios para conseguir que la cadena de valor en un producto de software funcione de forma correcta y evitar en gran medida muchos problemas comunes, son los principios denominados como <em>The three ways</em> y <em>The five ideals</em>.
-          
-          <br>
-          <a href="/blog-bitix/2021/08/the-three-ways-y-the-five-ideals-de-los-libros-the-devops-handbook-the-phoenix-project-y-the-unicorn-project/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2021/08/el-patron-de-estrangulacion-para-reemplazar-aplicaciones-heredadas/">El patrón de estrangulación para reemplazar aplicaciones heredadas</a></h1>
-        <span class="information">
-          <time>19/08/2021</time>
-          
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-          
-        </span>
-        <p>
-          
-            Reescribir partiendo desde cero una aplicación grande que tiene sus defectos pero que ha sido desarrollada durante mucho tiempo y su funcionalidad más importante opera mayormente bien no es una estrategia que esté exenta de riesgo ni garantiza que el el nuevo sistema tenga defectos parecidos, más graves o incluso la reescritura fracase. Si la reescritura tiene riesgos pero existe la necesidad de sustituir la aplicación heredada para solventar algunos de sus problemas es necesaria otra estrategia diferente a partir de cero. Una estrategia que se utiliza en estos casos es aplicar el patrón de estrangulación que reemplaza el sistema antiguo de forma incremental cada una de sus piezas.
-          
-          <br>
-          <a href="/blog-bitix/2021/08/el-patron-de-estrangulacion-para-reemplazar-aplicaciones-heredadas/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2021/08/introduccion-y-ejemplo-de-contract-testing-con-pact/">Introducción y ejemplo de contract testing con Pact</a></h1>
-        <span class="information">
-          <time>12/08/2021</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            Al realizar un cambio en un API hay que ser consciente de que los cambios sean compatibles hacia atrás, de lo contrario algunos clientes de la API es probable que dejen de funcionar o tengan un comportamiento erróneo. Para asegurar que los cambios sean compatibles hacia atrás se realizan pruebas unitarias automatizadas de contrato, en Java una opción es Pact para pruebas de contrato de APIs REST.
-          
-          <br>
-          <a href="/blog-bitix/2021/08/introduccion-y-ejemplo-de-contract-testing-con-pact/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/">Integración de servicios y sistemas con Apache Camel</a></h1>
-        <span class="information">
-          <time>05/08/2021</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            Apache Camel es una librería específica para realizar tareas de integración que ya proporciona e implementa múltiples protocolos de comunicación, formatos de datos, componentes y patrones de integración. Ya tiene implementada toda esta funcionalidad que no hay que implementar en el caso de una aplicación con código propio. Al ser una librería es posible integrarlo en cualquier tipo de aplicación, en el artículo se muestra cómo utilizarlo en una aplicación de Spring Boot en un ejemplo.
-          
-          <br>
-          <a href="/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2021/07/servidor-mock-para-imitar-peticiones-y-respuestas-de-servicios-http-con-wiremock/">Servidor mock para imitar peticiones y respuestas de servicios HTTP con WireMock</a></h1>
-        <span class="information">
-          <time>30/07/2021</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            Los microservicios aportan varias ventajas pero también algunos inconvenientes que si no son manejados generan sus propios problemas. Una dificultad de los servicios por las dependencias entre ellos es poder desarrollarlos y probarlos en local, algunos microservicios son complejos con dependencia sobre bases de datos, sistemas de envío de mensajes u otros servicios. Si un microservicio necesita iniciar en local o en entorno todas sus dependencias el desarrollo se vuelve complejo y lento. Para facilitar el desarrollo una opción es utilizar un servidor <em>mock</em> que imite las respuestas para las peticiones que se necesite de uno o varios servicios.
-          
-          <br>
-          <a href="/blog-bitix/2021/07/servidor-mock-para-imitar-peticiones-y-respuestas-de-servicios-http-con-wiremock/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2021/07/formas-de-generar-un-numero-aleatorio-en-un-rango-con-java/">Formas de generar un número aleatorio en un rango con Java</a></h1>
-        <span class="information">
-          <time>22/07/2021</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            En Java hay varias formas de generar números aleatorios, la clase <em>Random</em> permite generar números aleatorios individuales y desde Java 8 con la adición de <em>streams</em> permite obtener una secuencia de números aleatorios de tamaño determinado o indefinido. La clase <em>Math</em> también permite generar números aleatorios aunque es más recomendable usar la clase <em>Random</em>. Finalmente, en caso de querer un identificativo único universal está la clase UUID que genera números aleatorios de 128 bits que se representan mediante caracteres alfanuméricos.
-          
-          <br>
-          <a href="/blog-bitix/2021/07/formas-de-generar-un-numero-aleatorio-en-un-rango-con-java/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2021/07/los-niveles-de-madurez-rest-ejemplo-con-hateoas-y-documentacion-con-swagger-de-un-servicio-con-spring-boot/">Los niveles de madurez REST, ejemplo con HATEOAS y documentación con Swagger de un servicio con Spring Boot</a></h1>
-        <span class="information">
-          <time>15/07/2021</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            Los niveles de madurez de una API implementada con las convenciones REST trata de aplicar los conceptos y semántica de la web y el protocolo HTTP a un servicio web. Muchas APIs que dicen ser REST no cumplen con todos los niveles de madurez para ser considerada RESTful que incluyen HATEOAS para crear enlaces entre los recursos y HAL para codificar los datos. Muchas se quedan en el nivel 2 al hacer uso únicamente de recursos y verbos, llegar a cumplir el nivel 3 para incluir controles <em>hypermedia</em> tiene algunas ventajas adicionales. Spring Boot proporciona soporte para crear una API que soporte el nivel de madurez 3 de REST y Springdoc permite generar la documentación de la API con Swagger.
-          
-          <br>
-          <a href="/blog-bitix/2021/07/los-niveles-de-madurez-rest-ejemplo-con-hateoas-y-documentacion-con-swagger-de-un-servicio-con-spring-boot/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2021/07/prueba-y-opinion-sobre-jugar-mediante-streaming/">Prueba y opinión sobre jugar mediante streaming</a></h1>
-        <span class="information">
-          <time>08/07/2021</time>
+          <time>03/01/2026</time>
           
             
               <a href="/blog-bitix/tags/juegos/">juegos</a>
             
-              <a href="/blog-bitix/tags/opinion/">opinion</a>
+          
+        </span>
+        <p>
+          
+            El personaje de Ezio Auditore da Firenze de este Assasins de esta colección es uno de los personajes más reconocidos de la franquicia. Estos juegos dan pistas de los orígenes del credo del asesino y de la lucha con los templarios. Narra la historia de Ezio desde su iniciación en el credo hasta su madurez buscando pistas de la trama que va descubriendo, además se menciona a otro asesino mítico de la saga, Altair.
+          
+          <br>
+          <a href="/blog-bitix/2026/01/analisis-de-assasins-creed-2-ezio-collection/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2025/12/hemeroteca-25/">Hemeroteca #25</a></h1>
+        <span class="information">
+          <time>23/12/2025</time>
+          
+            
+              <a href="/blog-bitix/tags/blog/">blog</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
             
           
         </span>
         <p>
           
-            Cada una de las empresas más importantes en el sector de los juegos ya tienen sus servicios de juego en la nube o mediante <em>streaming</em>, en unos años puede ser la opción preferente de muchos jugadores dejando a las consolas como hardware dedicado a comprar obsoletas. El principal requerimiento del juego mediante <em>streaming</em> es tener una buena conexión a internet que sea estable y con un ancho de banda superior de al menos 35 Mbps para la máxima calidad. Ahora que tengo una conexión con fibra óptica he probado uno de estos servicios, GeForce NOW, por la buena experiencia que he tenido me replanteo las opciones a futuro para un nueva computadora, no teniendo que ser un equipo de más de 700 € ni requerir una tarjeta gráfica dedicada, puede ser de nuevo un pequeño y compacto Intel NUC.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/blog-bitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix" class="" loading="false"></p>
+</div>
+<p>En este 2025 que acaba he escrito aún menos artículos que el 2024. No por falta de interés e ideas que tengo apuntadas y ganas querer compartir contenido y aprender sino por querer dedicar una buena cantidad de tiempo al blog, cada artículo me consume varias horas de dedicación entre la escritura y lectura, edición y publicación como ya he comentado en varias ocasiones.</p>
+<p>No voy a hacer un análisis como en años anteriores de visitas e ingresos ya que ha sido mucho menos que la eṕoca dorada de este blog en el 2018, y este año han sido residuales. Quité Google Analytics y ahora mi única métrica no muy fiable son las impresiones de los anuncios.</p>
           
           <br>
-          <a href="/blog-bitix/2021/07/prueba-y-opinion-sobre-jugar-mediante-streaming/">Continuar leyendo...</a>
+          <a href="/blog-bitix/2025/12/hemeroteca-25/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2025/11/desempaquetado-y-opinion-del-monitor-benq-pd3226g/">Desempaquetado y opinión del monitor BenQ PD3226G, 4K/UHD, IPS, 32&#34;</a></h1>
+        <span class="information">
+          <time>21/11/2025</time>
+          
+            
+              <a href="/blog-bitix/tags/hardware/">hardware</a>
+            
+          
+        </span>
+        <p>
+          
+            Tras la decisión irracional de comprar un Framework Desktop con 128 GB de memoria la siguiente decisión irracional que he tomado a sido ponerle un monitor a la altura del equipo, un Benq PD3226G.
+          
+          <br>
+          <a href="/blog-bitix/2025/11/desempaquetado-y-opinion-del-monitor-benq-pd3226g/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2025/10/ideas-para-mejorar-mi-productividad/">Ideas para mejorar mi productividad</a></h1>
+        <span class="information">
+          <time>17/10/2025</time>
+          
+            
+              <a href="/blog-bitix/tags/fuera-de-tema/">fuera-de-tema</a>
+            
+          
+        </span>
+        <p>
+          
+            Las últimas semanas he pensado como mejorar o cubrir ciertos aspectos por falta de tiempo y conocimiento en mi productividad y bienestar personal y en el trabajo. He recopilado que herramientas puedo utilizar en aplicaciones para el ordenador y <em>gadgets</em> como un reloj de cocina. Aún con todas estas nuevas herramientas y otras acciones seguiré aprendiendo en dar prioridad a mi bienestar. Quizá algunas te sean de ayuda o tu utilices otras que te sirve y puedas comentármelas.
+          
+          <br>
+          <a href="/blog-bitix/2025/10/ideas-para-mejorar-mi-productividad/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2025/10/desempaquetado-y-analisis-de-framework-desktop-amd-ryzen-395-max-con-128-gb/">Desempaquetado y análisis de Framework Desktop, AMD Ryzen 395&#43; Max con 128 GB</a></h1>
+        <span class="information">
+          <time>04/10/2025</time>
+          
+            
+              <a href="/blog-bitix/tags/tecnologia/">tecnologia</a>
+            
+              <a href="/blog-bitix/tags/hardware/">hardware</a>
+            
+          
+        </span>
+        <p>
+          
+            He cambiado el pequeño gran Intel NUC que ha servido para mis propósitos de productividad con solvencia durante casi 7 años por un Framework Desktop que pasados esos años es mucho más capaz. En este artículo hago su desempaquetado y recojo la mejor información en artículos y vídeos que he sido capaz de recopilar del Framework Desktop.
+          
+          <br>
+          <a href="/blog-bitix/2025/10/desempaquetado-y-analisis-de-framework-desktop-amd-ryzen-395-max-con-128-gb/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2025/09/novedades-y-nuevas-caracteristicas-de-java-25/">Novedades y nuevas características de Java 25</a></h1>
+        <span class="information">
+          <time>19/09/2025</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Habitualmente publicaba un artículo por cada versión de Java, pero teniendo en cuenta que para producción es recomendable usar preferentemente las versiones LTS estoy prefiriendo publicar uno en cada versión LTS con el acumulado de características de la versión anterior. En este caso de Java 25 como nueva LTS que sucede a Java 21.
+          
+          <br>
+          <a href="/blog-bitix/2025/09/novedades-y-nuevas-caracteristicas-de-java-25/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2025/05/generar-clientes-rest-con-su-interfaz-openapi/">Generar clientes REST con su interfaz OpenAPI</a></h1>
+        <span class="information">
+          <time>18/05/2025</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Para hacer uso de una interfaz REST es necesario crear un cliente en el mismo lenguaje de programación de la aplicación. Dada una interfaz REST compuesta por sus <em>endpoints</em>, parámetros, <em>headers</em> y <em>payloads</em> de entrada y de salida asi como sus códigos de estado de respuesta es posible automatizar con un generador de código la creación de un cliente para cualquiera de los lenguajes que se necesite y el generador soporte.
+          
+          <br>
+          <a href="/blog-bitix/2025/05/generar-clientes-rest-con-su-interfaz-openapi/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2025/03/proximo-nuevo-ordenador-de-escritorio-framework-desktop/">Próximo nuevo ordenador de escritorio, Framework Desktop</a></h1>
+        <span class="information">
+          <time>30/03/2025</time>
+          
+            
+              <a href="/blog-bitix/tags/tecnologia/">tecnologia</a>
+            
+              <a href="/blog-bitix/tags/hardware/">hardware</a>
+            
+          
+        </span>
+        <p>
+          
+            He tenido un Intel NUC que me ha ofrecido todo el rendimiento que he necesitado para mis tareas de navegación por internet, ofimáticas y más exigentes de desarrollo, virtualización y trabajo con contenedores, con 32 GB de memoria su desempeño es más que suficiente. Su punto débil está en la gráfica que no es adecuada para juegos, sin embargo para juegos tengo la PlayStation 5. Aún así he decidido cambiar a un nuevo ordenador, el siguiente que tendré será un Framework Desktop. En este artículo describo mis necesidades, motivaciones, el equipo y recopilo la información que he encontrado de él.
+          
+          <br>
+          <a href="/blog-bitix/2025/03/proximo-nuevo-ordenador-de-escritorio-framework-desktop/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2025/01/analisis-y-guia-de-la-pesadilla-psicotica-tipo-soul-de-hellblade-senua-sacrifice/">Análisis y guía de la pesadilla psicótica tipo soul de Hellblade: Senua Sacrifice</a></h1>
+        <span class="information">
+          <time>17/01/2025</time>
+          
+            
+              <a href="/blog-bitix/tags/juegos/">juegos</a>
+            
+          
+        </span>
+        <p>
+          
+            Este juego es algo distinto empezando por que aunque está creado en formato juego uno de sus objetivos es acercar en qué consiste la enfermedad mental y la psicosis a través del personaje de Senua. En una época en la que si el juego dura menos de medio centenar de horas se considera un juego corto este no dura más de 10 horas.
+          
+          <br>
+          <a href="/blog-bitix/2025/01/analisis-y-guia-de-la-pesadilla-psicotica-tipo-soul-de-hellblade-senua-sacrifice/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2025/01/articulo-resumen-de-tecnologia-del-2024-y-futuro-2025/">Artículo resumen de tecnología del 2024 y futuro 2025</a></h1>
+        <span class="information">
+          <time>07/01/2025</time>
+          
+            
+              <a href="/blog-bitix/tags/tecnolog%c3%ada/">tecnología</a>
+            
+          
+        </span>
+        <p>
+          
+            <p>Cada año la tecnología avanza un poco y con la acumulación de años la diferencia es significativa. Hace 30 años los ordenadores únicamente 8 megas de memoria y un giga de disco duro, la frecuencia del procesador era mononúcleo de 120 megahercios, hay hablamos de guías de memoria, teras de almacenamiento ultrarrápido con nvmve y procesadores de gigaherzios de 16 núcleos o más. En estos 30 años esto supone haber multiplicado por 1000 algunos de estos datos. En general los avances son de un 10% anual producidos más bien por la mejora en litografía que permite incluir más transistores en el mismo espacio, salvo unos hitos relevantes y más drásticos como la inclusión de más núcleos, la tecnología de cache 3D gracias a las nuevas técnicas de encapsulado o el cambio de disco duros a SSDs y posteriormente a NVMe.</p>
+          
+          <br>
+          <a href="/blog-bitix/2025/01/articulo-resumen-de-tecnologia-del-2024-y-futuro-2025/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2024/12/hemeroteca-24/">Hemeroteca #24</a></h1>
+        <span class="information">
+          <time>24/12/2024</time>
+          
+            
+              <a href="/blog-bitix/tags/blog/">blog</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Aún con menos artículos publicados, menos incluso que el año pasado, algunos he seguido publicando y algún otro actualizando. Menos visitas, menos ingresos, menos tiempo que le dedico al blog aunque me gustaría más si el tiempo que tengo disponible no fuera limitado y los artículos me costase menos tiempo en escribirlos, ideas que voy acumulando tengo para escribir nuevos artículos totalmente libres de contenido generado por inteligencia artificial.
+          
+          <br>
+          <a href="/blog-bitix/2024/12/hemeroteca-24/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/">Análisis de juego de plataformas Astro’s Playroom</a></h1>
+        <span class="information">
+          <time>05/12/2024</time>
+          
+            
+              <a href="/blog-bitix/tags/juegos/">juegos</a>
+            
+          
+        </span>
+        <p>
+          
+            Como primer juego de PS5 que juego he pasado un buen rato con Astro&rsquo;s Playroom cargado de referencias a la consola PlayStation y toda su colección mítica de personajes que hace sacar una sonrisa y unos buenos recuerdos de haber jugado a muchos otros personajes de los juegos de Sony. Un juego que tiene como objetivo estar incluido en la PlayStation y ser una demostración de las capacidades de la consola y mando DualSense. Un juego corto y música divertida del robotito Astro con el que posteriomente se ha publicado ya si un juego completo con Astro Bot: Rescue Mission.
+          
+          <br>
+          <a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2024/10/desempaquetado-y-analisis-de-la-barra-de-luz-para-monitor-benq-screenbar-pro/">Desempaquetado y análisis de la barra de luz para monitor BenQ ScreenBar Pro</a></h1>
+        <span class="information">
+          <time>24/10/2024</time>
+          
+            
+              <a href="/blog-bitix/tags/hardware/">hardware</a>
+            
+          
+        </span>
+        <p>
+          
+            La luz led que tenía para iluminar la mesa y pantalla de ordenador no era la más adecuada. No estaba adaptada para el trabajo con ordenador con lo que la vista se me resentía y me molestaba ya que en parte me daba en los ojos. Una barra de luz para monitor de ordenador proporciona una mejor iluminación tanto para el monitor y la mesa, de modo que para cuidar lo que pueda mi vista he comprado una barra de luz para monitor. Estando contento con la marca BenQ por el monitor BenQ PD2700 que tengo he adquirido la barra de luz BenQ ScreenBar Pro de la que en este artículo  hago su desempaquetado y análisis.
+          
+          <br>
+          <a href="/blog-bitix/2024/10/desempaquetado-y-analisis-de-la-barra-de-luz-para-monitor-benq-screenbar-pro/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2024/10/mis-inversiones-con-indexa-capital-y-myinvestor-despues-de-un-ano/">Mis inversiones con Indexa Capital y MyInvestor después de un año</a></h1>
+        <span class="information">
+          <time>06/10/2024</time>
+          
+            
+              <a href="/blog-bitix/tags/fuera-de-tema/">fuera-de-tema</a>
+            
+          
+        </span>
+        <p>
+          
+            En el año 2023 empecé a conocer los conceptos básicos de inversión porque tenía la sensación de que en mi banco no me estaban ofreciendo buenos productos de inversión ni en rentabilidades ni en costes. Así que después de leer un par de libros con esos conceptos básicos de inversión abrí cuentas en Indexa Capital y MyInvestor. Pasado un año hago balance de estas inversiones y las comparo con las de mi banco. En conclusión del artículo las rentabilidades de los productos de mi banco son significativamente menores con lo que seguramente me planificaré el deshacerlas.
+          
+          <br>
+          <a href="/blog-bitix/2024/10/mis-inversiones-con-indexa-capital-y-myinvestor-despues-de-un-ano/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2024/09/analisis-y-guia-del-magnifico-juego-de-rol-the-witcher-3/">Análisis y guía del magnífico juego de rol The Witcher 3</a></h1>
+        <span class="information">
+          <time>15/09/2024</time>
+          
+            
+              <a href="/blog-bitix/tags/juegos/">juegos</a>
+            
+          
+        </span>
+        <p>
+          
+            The Witcher 3 es un juego muy apreciado, después de casi completarlo incluidas sus expansiones tiene varios aspectos por los que comprendo ese reconocimiento que tiene y que lo hace un poco diferente a los juegos que he jugado. Una cantidad de historias abrumadora, un mapa de mundo abierto plagado de localizaciones que explorar y donde las decisiones importan. Un juego largo pero que no se hace repetitivo y se disfruta más degustando de forma lenta las historias. Un juego muy recomendable si se quiere dedicarle la cantidad de horas que requiere.
+          
+          <br>
+          <a href="/blog-bitix/2024/09/analisis-y-guia-del-magnifico-juego-de-rol-the-witcher-3/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
@@ -573,9 +567,10 @@
             
 
 
+
 <nav>
   <div class="row">
-    <div class="col-md-4 text-left">
+    <div class="col-md-4 text-start">
     
       <a href="/blog-bitix/page/10/" aria-label="Next"><span aria-hidden="true">&laquo;</span> Más antiguo</a>
     
@@ -583,7 +578,7 @@
     <div class="col-md-4 text-center">
       <a href="https://picodotdev.github.io/blog-bitix/archive/">Archivo</a>
     </div>
-    <div class="col-md-4 text-right">
+    <div class="col-md-4 text-end">
     
       <a href="/blog-bitix/page/8/" aria-label="Previous">Más reciente <span aria-hidden="true">&raquo;</span></a>
     
@@ -666,7 +661,7 @@
   </div>
   <div class="row">
     <div class="col-12">
-      Copyleft <span class="copyleft">&copy;</span> 2025 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      Copyleft <span class="copyleft">&copy;</span> 2026 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
       <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
       <br/>
       <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.

@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu_108b40074275ce96.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu_7e021bee6e6f5c1e.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="La configuración de seguridad estática y basada en direcciones IP no es adecuada en un entorno en el que los recursos de computación está compartidos y no son confiables, ni para aplicaciones basadas en microservicios cuyo número de servicios e instancias cambia a lo largo del tiempo. Consul y Consul Connect ofrecen un mecanismo de comunicación segura adaptados a la computación en la nube y adecuado para aplicaciones basadas en microservicios. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu_108b40074275ce96.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu_7e021bee6e6f5c1e.webp">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad">
@@ -55,7 +55,7 @@
     "headline": "Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu_108b40074275ce96.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu_7e021bee6e6f5c1e.webp"
         
       },
     "datePublished": "2020-07-24T15:00:00+02:00",
@@ -318,22 +318,22 @@
 <p>Una de estas herramientas es <a href="https://www.consul.io/">Consul</a> que proporciona la funcionalidad de registro y descubrimiento de servicios y conectividad entre esos servicios. Consul Connect proporciona comunicaciones seguras de forma transparente para las aplicaciones.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static_hu_4f7afbb92d961570.webp" data-gallery="" title="Infraestructura estática"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static_hu_c320d332c4ff2eed.webp" width="270" height="200" alt="Infraestructura estática" title="Infraestructura estática" class="" loading="lazy"></a>
-<a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static-approach_hu_82e4fdcd3f92910b.webp" data-gallery="" title="Infraestructura estática"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static-approach_hu_a033606f7263480c.webp" width="267" height="200" alt="Infraestructura estática" title="Infraestructura estática" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static_hu_472375bdcd3f5bcb.webp" data-gallery="" title="Infraestructura estática"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static_hu_2b76991ef7a554da.webp" width="270" height="200" alt="Infraestructura estática" title="Infraestructura estática" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static-approach_hu_32099b2d92d7f3ae.webp" data-gallery="" title="Infraestructura estática"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static-approach_hu_f13695c329c28e97.webp" width="267" height="200" alt="Infraestructura estática" title="Infraestructura estática" class="" loading="lazy"></a></p>
 <figcaption>Infraestructura estática</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic_hu_9d7c5f8aea3a7972.webp" data-gallery="" title="Infraestructura dinámica"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic_hu_1c317bc18e7a44a4.webp" width="239" height="200" alt="Infraestructura dinámica" title="Infraestructura dinámica" class="" loading="lazy"></a>
-<a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic-approach_hu_26dc67c869438cc2.webp" data-gallery="" title="Infraestructura dinámica"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic-approach_hu_dcef503773f549fe.webp" width="267" height="200" alt="Infraestructura dinámica" title="Infraestructura dinámica" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic_hu_ba128563ab97d06e.webp" data-gallery="" title="Infraestructura dinámica"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic_hu_dd509946303e9e37.webp" width="239" height="200" alt="Infraestructura dinámica" title="Infraestructura dinámica" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic-approach_hu_90704d2a7306ff6a.webp" data-gallery="" title="Infraestructura dinámica"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic-approach_hu_d3e5f4877ba40c2a.webp" width="267" height="200" alt="Infraestructura dinámica" title="Infraestructura dinámica" class="" loading="lazy"></a></p>
 <figcaption>Infraestructura dinámica</figcaption>
 </figure>
 </div>
 <p>El esquema de funcionamiento de <a href="https://www.consul.io/docs/connect">Consul Connect</a> es hacer que los servicios no se comuniquen directamente entre ellos sino que utilizan <em>proxys</em>, la creación del enlace de comunicación se delega en Consul que crea los <em>proxys</em> y con ellos le es posible proporcionar comunicaciones seguras, con autenticación mutua y posibilitando autorización con intenciones. Las intenciones son los permisos que establece el operador de Consul para establecer que dos servicios tiene permitido la comunicación entre ellos, cualquier intento de comunicación si no está aprobado de forma explícita por su intención no se permite.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu_8b52c8a25ed1bd02.webp" data-gallery="" title="Comunicación servicio a servicio con Consul Connect"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu_9dc2137196bface6.webp" width="300" height="98" alt="Comunicación servicio a servicio con Consul Connect" title="Comunicación servicio a servicio con Consul Connect" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu_422b976113e74252.webp" data-gallery="" title="Comunicación servicio a servicio con Consul Connect"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu_9848966012dd8097.webp" width="300" height="98" alt="Comunicación servicio a servicio con Consul Connect" title="Comunicación servicio a servicio con Consul Connect" class="" loading="lazy"></a></p>
 <figcaption>Comunicación servicio a servicio con Consul Connect</figcaption>
 </figure>
 </div>
@@ -387,9 +387,9 @@
 <p>El resultado es esta aplicación sencilla de ejemplo que muestra un contador en una página web con el tiempo se va incrementando. En las consolas de administración de Consul se observan los servicios registrados y en Nomad la ejecución de los mismos.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-console_hu_36b5e97d1e011cac.webp" data-gallery="" title="Consola de administración de Consul"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-console_hu_323bf1c9f5300548.webp" width="226" height="200" alt="Consola de administración de Consul" title="Consola de administración de Consul" class="" loading="lazy"></a>
-<a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/nomad-console_hu_e8e8c34a188f6b90.webp" data-gallery="" title="Consola de administración de Nomad"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/nomad-console_hu_9869ebdb962275.webp" width="226" height="200" alt="Consola de administración de Nomad" title="Consola de administración de Nomad" class="" loading="lazy"></a>
-<a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard_hu_3fca00504f62bf6.webp" data-gallery="" title="Servicio count-dashboard"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard_hu_6616c99ab81659e0.webp" width="226" height="200" alt="Servicio count-dashboard" title="Servicio count-dashboard" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-console_hu_8bfed91c0a9a349b.webp" data-gallery="" title="Consola de administración de Consul"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-console_hu_9756c5f5366d5f1e.webp" width="226" height="200" alt="Consola de administración de Consul" title="Consola de administración de Consul" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/nomad-console_hu_75589c3ba7352f51.webp" data-gallery="" title="Consola de administración de Nomad"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/nomad-console_hu_24f58f97e58f6648.webp" width="226" height="200" alt="Consola de administración de Nomad" title="Consola de administración de Nomad" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard_hu_3222fbd7d87ca153.webp" data-gallery="" title="Servicio count-dashboard"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard_hu_8f703b51e5ffc3c9.webp" width="226" height="200" alt="Servicio count-dashboard" title="Servicio count-dashboard" class="" loading="lazy"></a></p>
 <figcaption>Consola de administración de Consul y Nomad y servicio count-dashboard</figcaption>
 </figure>
 </div>
@@ -397,15 +397,15 @@
 <p>En el modo desarrollo de Consul aún sin una intención la comunicación se autorizan las comunicaciones pero si se crea una intención que deniegue la comunicación desde el servicio <em>count-dashboard</em> a <em>count-api</em> el servicio <em>count-dashboard</em> no es capaz de recuperar el contador y se muestra desconectado. Cambiando la intención para que autorice el tráfico la comunicación se restaura y el servicio <em>count-dashboard</em> vuelve a mostrar el contador.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-deny_hu_c48a961b6e6b859a.webp" data-gallery="" title="Intención que deniega la comunicación"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-deny_hu_4ccfc68284089405.webp" width="226" height="200" alt="Intención que deniega la comunicación" title="Intención que deniega la comunicación" class="" loading="lazy"></a>
-<a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-deny_hu_2421756d3f5ebaf6.webp" data-gallery="" title="Intención que deniega la comunicación"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-deny_hu_efad8bb47dff4dae.webp" width="226" height="200" alt="Intención que deniega la comunicación" title="Intención que deniega la comunicación" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-deny_hu_83ec98d0ad8cffb7.webp" data-gallery="" title="Intención que deniega la comunicación"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-deny_hu_1643cc5027cc076.webp" width="226" height="200" alt="Intención que deniega la comunicación" title="Intención que deniega la comunicación" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-deny_hu_ceb6c63949121734.webp" data-gallery="" title="Intención que deniega la comunicación"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-deny_hu_7584126fec6c5b0d.webp" width="226" height="200" alt="Intención que deniega la comunicación" title="Intención que deniega la comunicación" class="" loading="lazy"></a></p>
 <figcaption>Intención que deniega la comunicación</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-allow_hu_d4ea089843a987da.webp" data-gallery="" title="Intención que permite la comunicación"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-allow_hu_c54b62e90fc020f.webp" width="226" height="200" alt="Intención que permite la comunicación" title="Intención que permite la comunicación" class="" loading="lazy"></a>
-<a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-allow_hu_1f084a0d56bf1a84.webp" data-gallery="" title="Intención que permite la comunicación"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-allow_hu_516ed867d261758e.webp" width="226" height="200" alt="Intención que permite la comunicación" title="Intención que permite la comunicación" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-allow_hu_f6cf97e7d7a9a450.webp" data-gallery="" title="Intención que permite la comunicación"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-allow_hu_67a8e1d82f984b76.webp" width="226" height="200" alt="Intención que permite la comunicación" title="Intención que permite la comunicación" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-allow_hu_fdf07a2f75dc7e5f.webp" data-gallery="" title="Intención que permite la comunicación"><img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-allow_hu_aa6bcdf0965c38e9.webp" width="226" height="200" alt="Intención que permite la comunicación" title="Intención que permite la comunicación" class="" loading="lazy"></a></p>
 <figcaption>Intención que permite la comunicación</figcaption>
 </figure>
 </div>
@@ -427,60 +427,6 @@
       <h3>Este artículo forma parte de la serie <strong>hashicorp</strong>:</h3>
         
         <ol class="serie-articles">
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/">Introducción a Nomad para gestionar aplicaciones y microservicios</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/">Estrategias de despliegue para microservicios con Nomad</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2019/04/servicios-con-persistencia-en-el-orquestador-de-microservicios-nomad/">Servicios con persistencia en el orquestador de microservicios Nomad</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/">Crear de forma sencilla y rápida máquinas virtuales de VirtualBox con Vagrant</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/">Administrar secretos y proteger datos sensibles con Vault</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">Generar credenciales de conexión a base de datos bajo demanda con Vault</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/">Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/">Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/">Revertir un servicio a una versión anterior con Nomad</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/">Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/">Cifrado y descifrado como servicio con Vault</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/">Acceso simple y seguro a sistemas remotos con Boundary</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/">Planificar procesos periódicos y scripts con Nomad</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/">Las funcionalidades de un service mesh en una arquitectura de microservicios</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/">Construir, desplegar y observar aplicaciones de forma uniforme con Waypoint</a>
-            </li>
-          <li>
-              <a href="https://picodotdev.github.io/blog-bitix/2024/02/configurar-gnu-linux-para-usar-forward-dns-y-el-servidor-dns-de-consul/">Configurar GNU/Linux para usar forward DNS y el servidor DNS de Consul</a>
-            </li>
           
         </ol>
       
@@ -584,7 +530,7 @@
   </div>
   <div class="row">
     <div class="col-12">
-      Copyleft <span class="copyleft">&copy;</span> 2025 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      Copyleft <span class="copyleft">&copy;</span> 2026 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
       <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
       <br/>
       <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
