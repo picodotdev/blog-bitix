@@ -67,6 +67,16 @@ jobs:
       - name: Generate content
         run: |
           hugo --destination="deploy/" --gc --cleanDestinationDir
+      - name: Echo content
+        run: |
+          echo "> ls"
+          ls
+          echo "> ls deploy/"
+          ls deploy/
+          echo "> ls deploy/tags/"
+          ls deploy/tags/
+          echo "> ls deploy/tags/planeta-codigo/"
+          ls deploy/tags/planeta-codigo/
       - name: Generate content (fixes)
         run: |
           cp deploy/index.xml deploy/atom.xml
