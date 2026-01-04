@@ -53,9 +53,9 @@ jobs:
       - name: Echo content
         run: |
           ls
-      - name: Echo content (deploy)
-        run: |
           ls deploy/
+          ls deploy/tags/
+          ls deploy/tags/planeta-codigo/
       - name: Generate styles
         run: |
           npm run less-main
