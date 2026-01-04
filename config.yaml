@@ -38,6 +38,14 @@ outputs:
   - html
   - rss
 
+taxonomies:
+  tag: tags
+  series: series
+  year: ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030"]
+
+permalinks:
+  post: "/:year/:month/:title/"
+
 pagination:
   pagerSize: 15
 
@@ -69,13 +77,6 @@ pygmentsOptions: linenos=table,linenostart=1
 pygmentsStyle: github
 
 copyright: https://creativecommons.org/licenses/by-sa/4.0/
-
-permalinks:
-  post: "/:year/:month/:title/"
-
-taxonomies:
-  tag: tags
-  series: series
 
 menu:
   header:
