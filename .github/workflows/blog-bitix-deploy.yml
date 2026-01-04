@@ -50,7 +50,7 @@ jobs:
       - name: Install packages (npm)
         run: |
           npm install
-      - name: Echo content
+      - name: Echo content (before)
         run: |
           echo "> ls"
           ls
@@ -67,7 +67,7 @@ jobs:
       - name: Generate content
         run: |
           hugo --destination="deploy/" --gc --cleanDestinationDir
-      - name: Echo content
+      - name: Echo content (after)
         run: |
           echo "> ls"
           ls
@@ -81,7 +81,7 @@ jobs:
         run: |
           cp deploy/index.xml deploy/atom.xml
           mkdir -p deploy/categories/planeta-codigo/
-          cp deploy/tags/planeta-codigo/index.xml deploy/categories/planeta-codigo/atom.xml
+          # cp deploy/tags/planeta-codigo/index.xml deploy/categories/planeta-codigo/atom.xml
       - name: Echo content (deploy)
         run: |
           ls deploy/

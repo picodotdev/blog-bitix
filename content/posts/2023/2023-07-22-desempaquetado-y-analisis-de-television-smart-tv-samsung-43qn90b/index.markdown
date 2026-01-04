@@ -199,8 +199,8 @@ El mando como característica destacable es que no usa pilas sino batería inter
 
 {{< image
     gallery="true"
-    image1="image:samsung-qn90ba-mando-6.jpg" optionsthumb1="300x250" title1="Mando físico de Samsung 43QN90B"
-    image2="image:samsung-qn90ba-mando-7.jpg" optionsthumb2="300x250" title2="Mando físico de Samsung 43QN90B"
+    image1="image:samsung-qn90ba-mando-6.webp" optionsthumb1="300x250" title1="Mando físico de Samsung 43QN90B"
+    image2="image:samsung-qn90ba-mando-7.webp" optionsthumb2="300x250" title2="Mando físico de Samsung 43QN90B"
     caption="Mando físico de Samsung 43QN90B" >}}
 
 Por fortuna la televisión se puede controlar de dos formas adicionales al mando, con la [aplicación oficial SmartThings de Samsung](https://play.google.com/store/apps/details?id=com.samsung.android.oneconnect) y con un teclado Bluetooth. El mando ofrecido por la aplicación SmartThings ofrece las mismas funciones que el mando físico pudiendo incluso encender y apagar la televisión a través de la conexión WIFI. El teclado Bluetooth permite cambiar de canales y una forma incluso más cómoda de utilizar la televisión por ser más fácil realizar las pulsaciones o escribir texto que el mando físico o con la aplicación de SmartThings. Le voy a dar un buen uso al teclado Kemove DK61 que me envió la marca para que lo analizase. El único inconveniente que he encontrado hasta el momento es que en la aplicación de Amazon Prime las teclas de caracteres no funcionan.
@@ -213,14 +213,14 @@ El manual de usuario explica las funciones que realizan las teclas para el contr
 
 {{< image
     gallery="true"
-    image1="image:samsung-qn90ba-mando-1.png" optionsthumb1="200x150" title1="Mando de SmartThings de Samsung 43QN90B"
-    image2="image:samsung-qn90ba-mando-2.png" optionsthumb2="200x150" title2="Mando de SmartThings de Samsung 43QN90B"
-    image3="image:samsung-qn90ba-mando-3.png" optionsthumb3="200x150" title3="Mando de SmartThings de Samsung 43QN90B" >}}
+    image1="image:samsung-qn90ba-mando-1.webp" optionsthumb1="200x150" title1="Mando de SmartThings de Samsung 43QN90B"
+    image2="image:samsung-qn90ba-mando-2.webp" optionsthumb2="200x150" title2="Mando de SmartThings de Samsung 43QN90B"
+    image3="image:samsung-qn90ba-mando-3.webp" optionsthumb3="200x150" title3="Mando de SmartThings de Samsung 43QN90B" >}}
 {{< image
     gallery="true"
-    image1="image:samsung-qn90ba-mando-4.png" optionsthumb1="200x150" title1="Mando de SmartThings de Samsung 43QN90B"
-    image2="image:samsung-qn90ba-mando-5.png" optionsthumb2="200x150" title2="Mando de SmartThings de Samsung 43QN90B"
-    image3="image:samsung-qn90ba-control-teclado.png" optionsthumb2="200x150" title2="Control por teclado de SmartThings de Samsung 43QN90B"
+    image1="image:samsung-qn90ba-mando-4.webp" optionsthumb1="200x150" title1="Mando de SmartThings de Samsung 43QN90B"
+    image2="image:samsung-qn90ba-mando-5.webp" optionsthumb2="200x150" title2="Mando de SmartThings de Samsung 43QN90B"
+    image3="image:samsung-qn90ba-control-teclado.webp" optionsthumb2="200x150" title2="Control por teclado de SmartThings de Samsung 43QN90B"
     caption="Mando de SmartThings y control por teclado de Samsung 43QN90B" >}}
 
 ### Otras opciones

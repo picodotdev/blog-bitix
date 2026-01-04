@@ -41,8 +41,8 @@ Tras no evaluar muchas opciones me que quedado con uno de la reconocida marca de
 {{< image
     gallery="true"
     image1="image:v7-ckw200-20.webp" optionsthumb1="200x150" title1="V7 CKW200"
-    image2="image:logitech-b100.jpg" optionsthumb2="200x150" title2="Logitech B100"
-    image3="image:apple-magic-mouse.jpg" optionsthumb3="200x150" title3="Apple Magic Mouse"
+    image2="image:logitech-b100.webp" optionsthumb2="200x150" title2="Logitech B100"
+    image3="image:apple-magic-mouse.webp" optionsthumb3="200x150" title3="Apple Magic Mouse"
     caption="Ratones V7 CKW200, Logitech B100 y Apple Magic Mouse" >}}
 
 {{< amazon

@@ -261,8 +261,8 @@ Salvo las plumas y armás ocultas los demás elementos aparecen es posible local
 
 {{< image
     gallery="true"
-    image1="image:assasins-creed-the-ezio-collection-puzzle-1.jpg" optionsthumb1="200x150" title1="Puzzle"
-    image2="image:assasins-creed-the-ezio-collection-puzzle-2.jpg" optionsthumb2="200x150" title2="Puzzle"
+    image1="image:assasins-creed-the-ezio-collection-puzzle-1.webp" optionsthumb1="200x150" title1="Puzzle"
+    image2="image:assasins-creed-the-ezio-collection-puzzle-2.webp" optionsthumb2="200x150" title2="Puzzle"
     caption="Puzzle" >}}
 
 ## Articulo argumento

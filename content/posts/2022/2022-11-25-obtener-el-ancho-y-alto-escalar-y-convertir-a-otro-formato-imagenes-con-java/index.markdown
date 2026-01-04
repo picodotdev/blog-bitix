@@ -66,7 +66,7 @@ La imagen en formato jpg tiene un tamaño de 192 KB y en formato webp tiene un t
 {{< image
     gallery="true"
     image1="image:gnome.jpg" optionsthumb1="300x200" title1="Imagen en formato jpg"
-    image2="image:gnome-webp.webp" optionsthumb2="300x200" title2="Imagen en formato webp"
+    image2="image:gnome.webp" optionsthumb2="300x200" title2="Imagen en formato webp"
     caption="Imagenes en formatos jpg y webp" >}}
 
 ### Obtener el ancho y alto de una imagen

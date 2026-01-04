@@ -67,28 +67,28 @@ Con todas estas cosas que he apuntado creo que he progresado bastante, quizá le
 
 {{< image
     gallery="true"
-    image1="image:comida-1.jpg" optionsthumb1="200x150" title1="Platos de comida"
-    image2="image:comida-2.jpg" optionsthumb2="200x150" title2="Platos de comida"
-    image3="image:comida-3.jpg" optionsthumb3="200x150" title3="Platos de comida" >}}
+    image1="image:comida-1.webp" optionsthumb1="200x150" title1="Platos de comida"
+    image2="image:comida-2.webp" optionsthumb2="200x150" title2="Platos de comida"
+    image3="image:comida-3.webp" optionsthumb3="200x150" title3="Platos de comida" >}}
 {{< image
     gallery="true"
-    image1="image:comida-4.jpg" optionsthumb1="200x150" title1="Platos de comida"
-    image2="image:comida-5.jpg" optionsthumb2="200x150" title2="Platos de comida"
-    image3="image:comida-6.jpg" optionsthumb3="200x150" title3="Platos de comida" >}}
+    image1="image:comida-4.webp" optionsthumb1="200x150" title1="Platos de comida"
+    image2="image:comida-5.webp" optionsthumb2="200x150" title2="Platos de comida"
+    image3="image:comida-6.webp" optionsthumb3="200x150" title3="Platos de comida" >}}
 {{< image
     gallery="true"
-    image1="image:comida-7.jpg" optionsthumb1="200x150" title1="Platos de comida"
-    image2="image:comida-8.jpg" optionsthumb2="200x150" title2="Platos de comida"
-    image3="image:comida-9.jpg" optionsthumb3="200x150" title3="Platos de comida" >}}
+    image1="image:comida-7.webp" optionsthumb1="200x150" title1="Platos de comida"
+    image2="image:comida-8.webp" optionsthumb2="200x150" title2="Platos de comida"
+    image3="image:comida-9.webp" optionsthumb3="200x150" title3="Platos de comida" >}}
 {{< image
     gallery="true"
-    image1="image:comida-10.jpg" optionsthumb1="200x150" title1="Platos de comida"
-    image2="image:comida-11.jpg" optionsthumb2="200x150" title2="Platos de comida"
-    image3="image:comida-12.jpg" optionsthumb3="200x150" title3="Platos de comida" >}}
+    image1="image:comida-10.webp" optionsthumb1="200x150" title1="Platos de comida"
+    image2="image:comida-11.webp" optionsthumb2="200x150" title2="Platos de comida"
+    image3="image:comida-12.webp" optionsthumb3="200x150" title3="Platos de comida" >}}
 {{< image
     gallery="true"
-    image1="image:comida-13.jpg" optionsthumb1="200x150" title1="Platos de comida"
-    image2="image:comida-14.jpg" optionsthumb2="200x150" title2="Platos de comida"
+    image1="image:comida-13.webp" optionsthumb1="200x150" title1="Platos de comida"
+    image2="image:comida-14.webp" optionsthumb2="200x150" title2="Platos de comida"
     caption="Platos de comida" >}}
 
 ### Ejercicio

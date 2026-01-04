@@ -27,8 +27,8 @@ Con las imágenes de fotos en formato JPG y sin pérdida de calidad PNG la resol
 
 {{< image
     gallery="true"
-    image1="image:201607.jpg" optionsthumb1="300x200" title1="Imagen en formato JPG original"
-    image2="image:201607-thumb-300x200.jpg" optionsthumb2="300x200" title2="Imagen en formato JPG escalada a 300x200 píxeles"
+    image1="image:201607.webp" optionsthumb1="300x200" title1="Imagen en formato JPG original"
+    image2="image:201607-thumb-300x200.webp" optionsthumb2="300x200" title2="Imagen en formato JPG escalada a 300x200 píxeles"
     caption="Imagen en formato JPG original y escalada a 300x200 píxeles" >}}
 
 Los navegadores y dispositivos móviles ya soportan como formato de imagen el SVG, en la web y los dispositivos móviles es especialmente adecuado este formato ya que además de adaptarse a la variedad de tamaños de los dispositivos de escritorio o móviles suelen tener un menor tamaño de archivo lo que hace que se descarguen más rápido al requerir menos ancho de banda.
