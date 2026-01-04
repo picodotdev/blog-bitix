@@ -52,9 +52,13 @@ jobs:
           npm install
       - name: Echo content
         run: |
+          echo "> ls"
           ls
+          echo "> ls deploy/"
           ls deploy/
+          echo "> ls deploy/tags/"
           ls deploy/tags/
+          echo "> ls deploy/tags/planeta-codigo/"
           ls deploy/tags/planeta-codigo/
       - name: Generate styles
         run: |
