@@ -2,7 +2,7 @@
 pid: 161
 type: "post"
 title: "Cómo crear miniaturas o vistas previas de imágenes con ImageMagick"
-url: "/2016/07/como-crear-miniaturas-o-vistas-previas-de-imagenes-con-imagemagick/"
+url: "git "
 aliases: ["/2016/07/como-crear-vistas-previas-de-imagenes-con-imagemagick/"]
 date: 2016-07-17T12:00:00+02:00
 updated: 2020-04-12T18:00:00+01:00
