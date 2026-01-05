@@ -228,331 +228,405 @@
     
     <li>
       <article>
-        <h1><a href="/blog-bitix/2026/01/analisis-de-assasins-creed-2-ezio-collection/">Análisis de Assasins Creed II Ezio Collection</a></h1>
+        <h1><a href="/blog-bitix/2017/11/la-forma-correcta-de-ordenar-alfabeticamente-cadenas-en-java/">La forma correcta de ordenar alfabéticamente cadenas en Java</a></h1>
         <span class="information">
-          <time>03/01/2026</time>
+          <time>04/11/2017</time>
           
             
-              <a href="/blog-bitix/tags/juegos/">juegos</a>
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
             
           
         </span>
         <p>
           
-            El personaje de Ezio Auditore da Firenze de este Assasins de esta colección es uno de los personajes más reconocidos de la franquicia. Estos juegos dan pistas de los orígenes del credo del asesino y de la lucha con los templarios. Narra la historia de Ezio desde su iniciación en el credo hasta su madurez buscando pistas de la trama que va descubriendo, además se menciona a otro asesino mítico de la saga, Altair.
+            Sin usar la clase <em>Collator</em> incluida en el JDK al ordenar alfabéticamente una lista de cadenas obtendremos en algún caso un resultado que nos extrañará y seguramente no sea lo esperado. La clase <em>String</em> implementa la interfaz <em>Comprable</em> pero esta ordenación es en base al valor del código <em>unicode</em> sin tener en cuenta los diferentes niveles de diferencias propios del idioma para algunos caracteres de la cadena como tildes o caracteres únicos como la <em>ñ</em>. La forma correcta de ordenar cadenas en Java es utilizando la clase <em>Collator</em>.
           
           <br>
-          <a href="/blog-bitix/2026/01/analisis-de-assasins-creed-2-ezio-collection/">Continuar leyendo...</a>
+          <a href="/blog-bitix/2017/11/la-forma-correcta-de-ordenar-alfabeticamente-cadenas-en-java/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
     
     <li>
       <article>
-        <h1><a href="/blog-bitix/2025/12/hemeroteca-25/">Hemeroteca #25</a></h1>
+        <h1><a href="/blog-bitix/2017/11/que-es-graphql-y-ejemplo-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/">Qué es GraphQL y ejemplo para una interfaz de un servicio con Spring Boot y Java</a></h1>
         <span class="information">
-          <time>23/12/2025</time>
+          <time>01/11/2017</time>
           
             
-              <a href="/blog-bitix/tags/blog/">blog</a>
+              <a href="/blog-bitix/tags/java/">java</a>
             
               <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/spring/">spring</a>
+            
+          
+        </span>
+        <p>
+          
+            GraphQL es una forma alternativa a una interfaz REST para crear una interfaz de un servicio basado en la comunicación utilizando los protocolos web HTTP y JSON como formato de intercambio de datos. Tiene varias ventajas sobre REST al poder realizar varias consultas en una misma petición y devolviendo únicamente los datos que requiera el cliente. Es una especificación y hay una implementación para los lenguajes de programación más populares entre ellos Java. Este artículo es una introducción con un ejemplo completo que muestra cómo se hacen consultas y modificaciones en los datos.
+          
+          <br>
+          <a href="/blog-bitix/2017/11/que-es-graphql-y-ejemplo-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/">Visualizar datos y generar gráficas en Java con JFreeChart</a></h1>
+        <span class="information">
+          <time>22/10/2017</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Visualizar datos de forma gŕafica ayuda a comprender un conjunto de datos grande mucho mejor que leyendo los valores en una tabla con varias columnas. En Java con la librería JFreeChart podemos generar gráficas de diferentes tipos que podremos incluir en los archivos <em>pdf</em> que generemos en un aplicación o podremos mostrar en forma de imagen en el navegador si se trata de una aplicación web.
+          
+          <br>
+          <a href="/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2017/10/formas-de-reducir-el-codigo-de-las-clases-pojo-de-java/">Formas de reducir el código de las clases POJO de Java</a></h1>
+        <span class="information">
+          <time>21/10/2017</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            La clases POJO o <em>beans</em> de Java son clases que en su mayor parte únicamente tiene la definición de sus propiedades. En Java al ser un lenguaje que promueve el ser explícito requiere definir mucho código que aporta poco valor. Cuando el número de estas clases simples es grande el código aún siendo simple se convierte en un problema de mantenimiento. Las librerías Immutables, Lombok y los <em>records</em> de Java incorporados en la versión 14 permite reducir en gran medida esa cantidad de código, mantener la consistencia y adicionalmente proporcionar clases que implementan el patrón <em>Builder</em>.
+          
+          <br>
+          <a href="/blog-bitix/2017/10/formas-de-reducir-el-codigo-de-las-clases-pojo-de-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2017/10/obtener-informacion-de-la-pila-de-las-excepciones/">Obtener información de la pila de las excepciones</a></h1>
+        <span class="information">
+          <time>15/10/2017</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
             
           
         </span>
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/blog-bitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
-<p>En este 2025 que acaba he escrito aún menos artículos que el 2024. No por falta de interés e ideas que tengo apuntadas y ganas querer compartir contenido y aprender sino por querer dedicar una buena cantidad de tiempo al blog, cada artículo me consume varias horas de dedicación entre la escritura y lectura, edición y publicación como ya he comentado en varias ocasiones.</p>
-<p>No voy a hacer un análisis como en años anteriores de visitas e ingresos ya que ha sido mucho menos que la eṕoca dorada de este blog en el 2018, y este año han sido residuales. Quité Google Analytics y ahora mi única métrica no muy fiable son las impresiones de los anuncios.</p>
+<p>Las excepciones son un mecanismo incorporado en algunos lenguajes como Java para el manejo de errores y condiciones de error. En la implementación de las excepciones en los lenguajes hay diferencias, por ejemplo, en Java hay <a href="https://picodotdev.github.io/blog-bitix/2017/10/las-excepciones-para-gestionar-errores-con-java/">excepciones <em>checked</em> y <em>unchecked</em></a> y en lenguajes como <a href="https://dotnet.microsoft.com/">C#</a> o <a href="https://www.groovy-lang.org/">Groovy</a> todas las excepciones son consideradas <em>unchecked</em>. En cualquier caso son una mejor forma de forzar a gestionar las condiciones de error que se producen que el comprobar no obligatoriamente el valor de retorno de una función, incluso JavaScript incorpora excepciones.</p>
           
           <br>
-          <a href="/blog-bitix/2025/12/hemeroteca-25/">Continuar leyendo...</a>
+          <a href="/blog-bitix/2017/10/obtener-informacion-de-la-pila-de-las-excepciones/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
     
     <li>
       <article>
-        <h1><a href="/blog-bitix/2025/11/desempaquetado-y-opinion-del-monitor-benq-pd3226g/">Desempaquetado y opinión del monitor BenQ PD3226G, 4K/UHD, IPS, 32&#34;</a></h1>
+        <h1><a href="/blog-bitix/2017/10/las-excepciones-para-gestionar-errores-en-java/">Las excepciones para gestionar errores en Java</a></h1>
         <span class="information">
-          <time>21/11/2025</time>
-          
-            
-              <a href="/blog-bitix/tags/hardware/">hardware</a>
-            
-          
-        </span>
-        <p>
-          
-            Tras la decisión irracional de comprar un Framework Desktop con 128 GB de memoria la siguiente decisión irracional que he tomado a sido ponerle un monitor a la altura del equipo, un Benq PD3226G.
-          
-          <br>
-          <a href="/blog-bitix/2025/11/desempaquetado-y-opinion-del-monitor-benq-pd3226g/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2025/10/ideas-para-mejorar-mi-productividad/">Ideas para mejorar mi productividad</a></h1>
-        <span class="information">
-          <time>17/10/2025</time>
-          
-            
-              <a href="/blog-bitix/tags/fuera-de-tema/">fuera-de-tema</a>
-            
-          
-        </span>
-        <p>
-          
-            Las últimas semanas he pensado como mejorar o cubrir ciertos aspectos por falta de tiempo y conocimiento en mi productividad y bienestar personal y en el trabajo. He recopilado que herramientas puedo utilizar en aplicaciones para el ordenador y <em>gadgets</em> como un reloj de cocina. Aún con todas estas nuevas herramientas y otras acciones seguiré aprendiendo en dar prioridad a mi bienestar. Quizá algunas te sean de ayuda o tu utilices otras que te sirve y puedas comentármelas.
-          
-          <br>
-          <a href="/blog-bitix/2025/10/ideas-para-mejorar-mi-productividad/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2025/10/desempaquetado-y-analisis-de-framework-desktop-amd-ryzen-395-max-con-128-gb/">Desempaquetado y análisis de Framework Desktop, AMD Ryzen 395&#43; Max con 128 GB</a></h1>
-        <span class="information">
-          <time>04/10/2025</time>
-          
-            
-              <a href="/blog-bitix/tags/tecnologia/">tecnologia</a>
-            
-              <a href="/blog-bitix/tags/hardware/">hardware</a>
-            
-          
-        </span>
-        <p>
-          
-            He cambiado el pequeño gran Intel NUC que ha servido para mis propósitos de productividad con solvencia durante casi 7 años por un Framework Desktop que pasados esos años es mucho más capaz. En este artículo hago su desempaquetado y recojo la mejor información en artículos y vídeos que he sido capaz de recopilar del Framework Desktop.
-          
-          <br>
-          <a href="/blog-bitix/2025/10/desempaquetado-y-analisis-de-framework-desktop-amd-ryzen-395-max-con-128-gb/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2025/09/novedades-y-nuevas-caracteristicas-de-java-25/">Novedades y nuevas características de Java 25</a></h1>
-        <span class="information">
-          <time>19/09/2025</time>
+          <time>15/10/2017</time>
           
             
               <a href="/blog-bitix/tags/java/">java</a>
             
               <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
             
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
           
         </span>
         <p>
           
-            Habitualmente publicaba un artículo por cada versión de Java, pero teniendo en cuenta que para producción es recomendable usar preferentemente las versiones LTS estoy prefiriendo publicar uno en cada versión LTS con el acumulado de características de la versión anterior. En este caso de Java 25 como nueva LTS que sucede a Java 21.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>En la ejecución de los programas se pueden producir numerosas condiciones de error, algunas condiciones son un dato con un formato inesperado como una letra cuando se espera un número o fallos en la entrada o salida al trabajar con archivos o comunicación por red si un archivo que se quiere utilizar en realidad no existe en el sistema de archivos o el servidor no está disponible en la comunicación por red, estos son solo unos pocos ejemplo de errores posibles en un programa. Pero hay muchas otras condiciones de error que se puedan producir para las que un programa ha de estar preparado.</p>
           
           <br>
-          <a href="/blog-bitix/2025/09/novedades-y-nuevas-caracteristicas-de-java-25/">Continuar leyendo...</a>
+          <a href="/blog-bitix/2017/10/las-excepciones-para-gestionar-errores-en-java/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
     
     <li>
       <article>
-        <h1><a href="/blog-bitix/2025/05/generar-clientes-rest-con-su-interfaz-openapi/">Generar clientes REST con su interfaz OpenAPI</a></h1>
+        <h1><a href="/blog-bitix/2017/10/obtener-el-minimo-o-maximo-de-dos-una-lista-o-stream-de-valores-en-java/">Obtener el mínimo o máximo de dos, una lista o stream de valores en Java</a></h1>
         <span class="information">
-          <time>18/05/2025</time>
+          <time>12/10/2017</time>
           
             
               <a href="/blog-bitix/tags/java/">java</a>
             
               <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
             
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
           
         </span>
         <p>
           
-            Para hacer uso de una interfaz REST es necesario crear un cliente en el mismo lenguaje de programación de la aplicación. Dada una interfaz REST compuesta por sus <em>endpoints</em>, parámetros, <em>headers</em> y <em>payloads</em> de entrada y de salida asi como sus códigos de estado de respuesta es posible automatizar con un generador de código la creación de un cliente para cualquiera de los lenguajes que se necesite y el generador soporte.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Si tenemos dos valores y queremos obtener el menor con una línea de código, podemos obtenerlo con un a sentencia <em>if</em> o con el operador condicional <em>? :</em>. Si queremos obtener el menor de tres valores con sentencias <em>if</em> o el operador <em>? :</em>  el problema aparentemente sencillo se complica y si optamos por usar una lista de valores tratándola como si el tamaño fuese desconocido quizá usemos un bucle <em>for</em> junto con una variable que mantenga el menor valor encontrado hasta el momento usando un <em>if</em> que compare el valor menor encontrado con el valor actual de la lista.</p>
           
           <br>
-          <a href="/blog-bitix/2025/05/generar-clientes-rest-con-su-interfaz-openapi/">Continuar leyendo...</a>
+          <a href="/blog-bitix/2017/10/obtener-el-minimo-o-maximo-de-dos-una-lista-o-stream-de-valores-en-java/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
     
     <li>
       <article>
-        <h1><a href="/blog-bitix/2025/03/proximo-nuevo-ordenador-de-escritorio-framework-desktop/">Próximo nuevo ordenador de escritorio, Framework Desktop</a></h1>
+        <h1><a href="/blog-bitix/2017/10/ejemplo-con-el-cliente-http-2-de-java/">Ejemplo con el cliente HTTP/2 de Java</a></h1>
         <span class="information">
-          <time>30/03/2025</time>
+          <time>08/10/2017</time>
           
             
-              <a href="/blog-bitix/tags/tecnologia/">tecnologia</a>
-            
-              <a href="/blog-bitix/tags/hardware/">hardware</a>
-            
-          
-        </span>
-        <p>
-          
-            He tenido un Intel NUC que me ha ofrecido todo el rendimiento que he necesitado para mis tareas de navegación por internet, ofimáticas y más exigentes de desarrollo, virtualización y trabajo con contenedores, con 32 GB de memoria su desempeño es más que suficiente. Su punto débil está en la gráfica que no es adecuada para juegos, sin embargo para juegos tengo la PlayStation 5. Aún así he decidido cambiar a un nuevo ordenador, el siguiente que tendré será un Framework Desktop. En este artículo describo mis necesidades, motivaciones, el equipo y recopilo la información que he encontrado de él.
-          
-          <br>
-          <a href="/blog-bitix/2025/03/proximo-nuevo-ordenador-de-escritorio-framework-desktop/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2025/01/analisis-y-guia-de-la-pesadilla-psicotica-tipo-soul-de-hellblade-senua-sacrifice/">Análisis y guía de la pesadilla psicótica tipo soul de Hellblade: Senua Sacrifice</a></h1>
-        <span class="information">
-          <time>17/01/2025</time>
-          
-            
-              <a href="/blog-bitix/tags/juegos/">juegos</a>
-            
-          
-        </span>
-        <p>
-          
-            Este juego es algo distinto empezando por que aunque está creado en formato juego uno de sus objetivos es acercar en qué consiste la enfermedad mental y la psicosis a través del personaje de Senua. En una época en la que si el juego dura menos de medio centenar de horas se considera un juego corto este no dura más de 10 horas.
-          
-          <br>
-          <a href="/blog-bitix/2025/01/analisis-y-guia-de-la-pesadilla-psicotica-tipo-soul-de-hellblade-senua-sacrifice/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2025/01/articulo-resumen-de-tecnologia-del-2024-y-futuro-2025/">Artículo resumen de tecnología del 2024 y futuro 2025</a></h1>
-        <span class="information">
-          <time>07/01/2025</time>
-          
-            
-              <a href="/blog-bitix/tags/tecnolog%c3%ada/">tecnología</a>
-            
-          
-        </span>
-        <p>
-          
-            <p>Cada año la tecnología avanza un poco y con la acumulación de años la diferencia es significativa. Hace 30 años los ordenadores únicamente 8 megas de memoria y un giga de disco duro, la frecuencia del procesador era mononúcleo de 120 megahercios, hay hablamos de guías de memoria, teras de almacenamiento ultrarrápido con nvmve y procesadores de gigaherzios de 16 núcleos o más. En estos 30 años esto supone haber multiplicado por 1000 algunos de estos datos. En general los avances son de un 10% anual producidos más bien por la mejora en litografía que permite incluir más transistores en el mismo espacio, salvo unos hitos relevantes y más drásticos como la inclusión de más núcleos, la tecnología de cache 3D gracias a las nuevas técnicas de encapsulado o el cambio de disco duros a SSDs y posteriormente a NVMe.</p>
-          
-          <br>
-          <a href="/blog-bitix/2025/01/articulo-resumen-de-tecnologia-del-2024-y-futuro-2025/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2024/12/hemeroteca-24/">Hemeroteca #24</a></h1>
-        <span class="information">
-          <time>24/12/2024</time>
-          
-            
-              <a href="/blog-bitix/tags/blog/">blog</a>
+              <a href="/blog-bitix/tags/java/">java</a>
             
               <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
             
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
           
         </span>
         <p>
           
-            Aún con menos artículos publicados, menos incluso que el año pasado, algunos he seguido publicando y algún otro actualizando. Menos visitas, menos ingresos, menos tiempo que le dedico al blog aunque me gustaría más si el tiempo que tengo disponible no fuera limitado y los artículos me costase menos tiempo en escribirlos, ideas que voy acumulando tengo para escribir nuevos artículos totalmente libres de contenido generado por inteligencia artificial.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Otra de las <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/">nuevas funcionalidades incluidas en Java 9</a> aunque en modo incubación e incorporado en Java 11 de forma estable es el cliente con soporte para HTTP/2 para realizar peticiones a recursos usando este protocolo más eficiente y rápido. Al mismo tiempo se ha simplificado el código necesario para realizar una petición y obtener el resultado de una URL. También se ha añadido la funcionalidad de realizar peticiones asíncronas y creación de conexiones de <em>WebSockets</em>.</p>
           
           <br>
-          <a href="/blog-bitix/2024/12/hemeroteca-24/">Continuar leyendo...</a>
+          <a href="/blog-bitix/2017/10/ejemplo-con-el-cliente-http-2-de-java/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
     
     <li>
       <article>
-        <h1><a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/">Análisis de juego de plataformas Astro’s Playroom</a></h1>
+        <h1><a href="/blog-bitix/2017/10/evitar-niveles-de-anidacion-de-sentencias-condicionales-con-guard-clauses/">Evitar niveles de anidación de sentencias condicionales con guard clauses</a></h1>
         <span class="information">
-          <time>05/12/2024</time>
+          <time>07/10/2017</time>
           
             
-              <a href="/blog-bitix/tags/juegos/">juegos</a>
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
             
           
         </span>
         <p>
           
-            Como primer juego de PS5 que juego he pasado un buen rato con Astro&rsquo;s Playroom cargado de referencias a la consola PlayStation y toda su colección mítica de personajes que hace sacar una sonrisa y unos buenos recuerdos de haber jugado a muchos otros personajes de los juegos de Sony. Un juego que tiene como objetivo estar incluido en la PlayStation y ser una demostración de las capacidades de la consola y mando DualSense. Un juego corto y música divertida del robotito Astro con el que posteriomente se ha publicado ya si un juego completo con Astro Bot: Rescue Mission.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Al escribir el código de un método es habitual hacer algunas comprobaciones sobre los parámetros, por ejemplo, para comprobar que el parámetro tiene una referencia, si es nulo o cumple alguna condición, si es una lista que no esté vacía o para validar mediante alguna otra regla. Estas validaciones o aserciones se realizan al inicio del método con sentencias <em>if</em> que añaden un nivel de tabulación al código si se anidan. Estos niveles de tabulación con sentencias <em>if</em> anidadas hacen poco legible el código.</p>
           
           <br>
-          <a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/">Continuar leyendo...</a>
+          <a href="/blog-bitix/2017/10/evitar-niveles-de-anidacion-de-sentencias-condicionales-con-guard-clauses/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
     
     <li>
       <article>
-        <h1><a href="/blog-bitix/2024/10/desempaquetado-y-analisis-de-la-barra-de-luz-para-monitor-benq-screenbar-pro/">Desempaquetado y análisis de la barra de luz para monitor BenQ ScreenBar Pro</a></h1>
+        <h1><a href="/blog-bitix/2017/10/la-triste-realidad-de-java-versiones-antiguas/">La triste realidad de Java, versiones antiguas</a></h1>
         <span class="information">
-          <time>24/10/2024</time>
+          <time>01/10/2017</time>
           
             
-              <a href="/blog-bitix/tags/hardware/">hardware</a>
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/opinion/">opinion</a>
             
           
         </span>
         <p>
           
-            La luz led que tenía para iluminar la mesa y pantalla de ordenador no era la más adecuada. No estaba adaptada para el trabajo con ordenador con lo que la vista se me resentía y me molestaba ya que en parte me daba en los ojos. Una barra de luz para monitor de ordenador proporciona una mejor iluminación tanto para el monitor y la mesa, de modo que para cuidar lo que pueda mi vista he comprado una barra de luz para monitor. Estando contento con la marca BenQ por el monitor BenQ PD2700 que tengo he adquirido la barra de luz BenQ ScreenBar Pro de la que en este artículo  hago su desempaquetado y análisis.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Algunos desarrolladores que utilizan el lenguaje de programación Java desearían que el tiempo que pasa entre publicación de una nueva versión y la siguiente fuese menor. Las nuevas versiones incorporan modificaciones en el lenguaje y en la API que facilitan el trabajo de los desarrolladores haciendo que escriban menos líneas de código, haciendo que el código fuente sea más legible que al final redunda en software con menos <em>bugs</em>, con más funcionalidades, un tiempo de desarrollo menor y con menos costes.</p>
           
           <br>
-          <a href="/blog-bitix/2024/10/desempaquetado-y-analisis-de-la-barra-de-luz-para-monitor-benq-screenbar-pro/">Continuar leyendo...</a>
+          <a href="/blog-bitix/2017/10/la-triste-realidad-de-java-versiones-antiguas/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
     
     <li>
       <article>
-        <h1><a href="/blog-bitix/2024/10/mis-inversiones-con-indexa-capital-y-myinvestor-despues-de-un-ano/">Mis inversiones con Indexa Capital y MyInvestor después de un año</a></h1>
+        <h1><a href="/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/">JShell la herramienta REPL incorporada en Java 9</a></h1>
         <span class="information">
-          <time>06/10/2024</time>
+          <time>29/09/2017</time>
           
             
-              <a href="/blog-bitix/tags/fuera-de-tema/">fuera-de-tema</a>
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
             
           
         </span>
         <p>
           
-            En el año 2023 empecé a conocer los conceptos básicos de inversión porque tenía la sensación de que en mi banco no me estaban ofreciendo buenos productos de inversión ni en rentabilidades ni en costes. Así que después de leer un par de libros con esos conceptos básicos de inversión abrí cuentas en Indexa Capital y MyInvestor. Pasado un año hago balance de estas inversiones y las comparo con las de mi banco. En conclusión del artículo las rentabilidades de los productos de mi banco son significativamente menores con lo que seguramente me planificaré el deshacerlas.
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Una de las <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">novedades de Java 9</a> es la incorporación de una herramienta <em>Read-Evaluation-Print-Loop</em> o REPL similar a las disponibles en otros lenguajes dinámicos para permitir evaluar pequeños ejemplos de código, hacer pruebas o como herramienta para alguien que esté aprendiendo a programar sin la necesidad de utilizar un entorno integrado de desarrollo, una herramienta de construcción y los varios archivos y comandos necesarios para compilar y ejecutar el código Java.</p>
           
           <br>
-          <a href="/blog-bitix/2024/10/mis-inversiones-con-indexa-capital-y-myinvestor-despues-de-un-ano/">Continuar leyendo...</a>
+          <a href="/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
     
     <li>
       <article>
-        <h1><a href="/blog-bitix/2024/09/analisis-y-guia-del-magnifico-juego-de-rol-the-witcher-3/">Análisis y guía del magnífico juego de rol The Witcher 3</a></h1>
+        <h1><a href="/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/">Novedades de Java 9, más allá de la modularidad</a></h1>
         <span class="information">
-          <time>15/09/2024</time>
+          <time>24/09/2017</time>
           
             
-              <a href="/blog-bitix/tags/juegos/">juegos</a>
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
             
           
         </span>
         <p>
           
-            The Witcher 3 es un juego muy apreciado, después de casi completarlo incluidas sus expansiones tiene varios aspectos por los que comprendo ese reconocimiento que tiene y que lo hace un poco diferente a los juegos que he jugado. Una cantidad de historias abrumadora, un mapa de mundo abierto plagado de localizaciones que explorar y donde las decisiones importan. Un juego largo pero que no se hace repetitivo y se disfruta más degustando de forma lenta las historias. Un juego muy recomendable si se quiere dedicarle la cantidad de horas que requiere.
+            La modularidad introducida en Java 9 no es la única novedad incorporada en esta nueva versión. Aunque haya llegado a eclipsar al resto hay otra buena colección de mejoras que sin duda facilitarán la programación con uno de los lenguajes más empleados por los programadores aún después de más de 20 años.
           
           <br>
-          <a href="/blog-bitix/2024/09/analisis-y-guia-del-magnifico-juego-de-rol-the-witcher-3/">Continuar leyendo...</a>
+          <a href="/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">Novedades y nuevas características de Java 9, los módulos</a></h1>
+        <span class="information">
+          <time>23/09/2017</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Si en Java 8 la característica más destacada fue la incorporación al lenguaje de las <em>lambdas</em> y los <em>streams</em> en Java 9 la característica que más destaca es la definición de los módulos que proporciona varios importantes beneficios.
+          
+          <br>
+          <a href="/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2017/09/cambiar-y-personalizar-los-estilos-de-la-documentacion-javadoc/">Cambiar y personalizar los estilos de la documentación Javadoc</a></h1>
+        <span class="information">
+          <time>16/09/2017</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>La documentación generada por <a href="https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/">la herramienta Javadoc</a> se puede adaptar a las necesidades propias ya que tiene mecanismos para extenderla. <a href="https://picodotdev.github.io/blog-bitix/2017/09/crear-anotaciones-de-javadoc-personalizadas-con-taglets/">Crear un <em>taglet</em> propio</a> es una forma pero también se pueden modificar los estilos aplicados al HTML generado, por ejemplo, para adaptar el Javadoc a los colores de la organización o para incluir un logotipo en la cabecera o un texto en el pie de página.</p>
+<p>El comando <em>javadoc</em> con el que se genera la documentación posee opciones para modificar la cabecera, el pie de página o usar una hoja de estilos propia. Estas opciones son  <em>-header</em>, <em>-footer</em> y <em>-stylesheetfile</em>. Un punto de partida para modificar los estilos es usar la hoja de estilos generada por defecto, realizar en ella las modificaciones oportunas y finalmente indicar que se use con el opción <em>-stylesheetfile</em>.</p>
+          
+          <br>
+          <a href="/blog-bitix/2017/09/cambiar-y-personalizar-los-estilos-de-la-documentacion-javadoc/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2017/09/crear-anotaciones-de-javadoc-personalizadas-con-taglets/">Crear anotaciones de Javadoc personalizadas con taglets</a></h1>
+        <span class="information">
+          <time>16/09/2017</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/">La herramienta de documentación es Javadoc de Java</a> permite a partir del código fuente de un programa o librería generar un conjunto de documentos en formato HTML enlazados entre si consultables con un navegador web y accesibles desde internet si son accesibles con un servidor web. La documentación se genera a partir de las clases y métodos del código fuente y también a partir de los comentarios de las clases y métodos.</p>
+          
+          <br>
+          <a href="/blog-bitix/2017/09/crear-anotaciones-de-javadoc-personalizadas-con-taglets/">Continuar leyendo...</a>
         </p>
       </article>
     </li>

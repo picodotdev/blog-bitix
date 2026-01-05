@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title type="text">Blog Bitix</title>
+    <subtitle type="text">Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</subtitle>
+    <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
+    <link href="https://picodotdev.github.io/blog-bitix/" />
+    <id>https://picodotdev.github.io/blog-bitix/tags/java/</id>
+    <updated>2025-09-19T09:00:00+02:00</updated>
+    <author></author>
+    <generator>Hugo</generator>
+    <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
+    <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
+    <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-comandos-y-consultas-en-java/</id>
+        <title>Implementar un bus de comandos y consultas en Java</title>
+        <updated>2020-10-16T17:00:00+02:00</updated>
+        <published>2020-10-16T17:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-comandos-y-consultas-en-java/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>Un bus de comandos y consultas permite separar en una aplicación las operaciones de modificación y operaciones de obtención de datos. Esto permite si es requerido dos bases de datos diferentes utilizando CQRS, una base de datos para operaciones de modificación y una base de datos para operaciones de consulta. Aún teniendo solo una base de datos para ambas operaciones un bus de comandos y eventos permite independizar a la aplicación de las interfaces con las que se use ya sea REST, GraphQL, línea de comandos o mensajería como RabbitQM y crear manejadores de operaciones siguiendo los principios SOLID de diseño.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-comandos-y-consultas-en-java/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/</id>
+        <title>Implementar un bus de eventos de dominio en Java</title>
+        <updated>2020-10-10T18:30:00+02:00</updated>
+        <published>2020-10-09T16:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>Un bus de eventos es el mecanismo por el que los eventos de dominio de DDD son publicados, son tratados y enviados a sus receptores de forma directa, mediante un <em>middleware</em> u de otra forma. El concepto bus de eventos para eventos de dominio se materializa de forma muy sencilla en código, simplemente una interfaz con un método. Cambiando la implementación de la interfaz un bus de eventos envía los eventos a un sistema de mensajería como RabbitMQ, persiste los eventos en base de datos como parte del <em>outbox pattern</em> o simplemente los imprime en la consola como en el ejemplo del artículo.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/10/3-formas-de-gestionar-errores-en-los-lenguajes-de-programacion/</id>
+        <title>3 formas de gestionar errores en los lenguajes de programación</title>
+        <updated>2020-10-04T02:00:00+02:00</updated>
+        <published>2020-10-04T02:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/10/3-formas-de-gestionar-errores-en-los-lenguajes-de-programacion/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>El lenguaje de programación C utiliza códigos de retorno como forma de gestionar errores, Java con excepciones y Go y Rust de forma similar a C códigos de retorno pero con la posibilidad de devolver varios valores, uno para el valor en caso correcto y un valor en caso de error. La gestión de errores es parte esencial de los programas para que funcionen correctamente estando preparados en los casos error posibles.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/10/3-formas-de-gestionar-errores-en-los-lenguajes-de-programacion/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/</id>
+        <title>Trazabilidad en servicios distribuidos con Sleuth y Zipkin</title>
+        <updated>2020-10-02T17:30:00+02:00</updated>
+        <published>2020-10-02T17:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>En un sistema complejo como una arquitectura de microservicios medir los tiempos de respuesta de cada uno de ellos ayuda a identificar si alguno se está comportando de forma anómala. Sleuth permite asignar un identificador global que es compartido por todos los microservicios invocados en la misma transacción, permite exportar los tiempos de respuesta a Zipkin que ofrece un panel web en el que identificar que llamadas se han hecho entre microservicios y cuales han sido sus tiempos de respuesta.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/09/novedades-de-java-15/</id>
+        <title>Novedades de Java 15</title>
+        <updated>2020-09-18T14:00:00+02:00</updated>
+        <published>2020-09-18T14:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/09/novedades-de-java-15/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>Algunas novedades de anteriores versiones que en la versión de Java 15 pasan a calificarse con el grado de producción y otras características como una segunda versión preliminar. Sin grandes cambios en el lenguaje tan destacables de versiones anteriores como las <em>lambdas</em> de Java 8 o los módulos de Java 9, en Java 15 se añaden las <em>sealed classes</em>.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/09/novedades-de-java-15/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/08/introduccion-a-grpc-y-ejemplo-con-java/</id>
+        <title>Introducción a gRPC y ejemplo con Java</title>
+        <updated>2020-08-30T11:30:00+02:00</updated>
+        <published>2020-08-30T11:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/08/introduccion-a-grpc-y-ejemplo-con-java/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>Para crear una API expuesta de forma externa o para ofrecer un servicio a otros servicios en una arquitectura de microservicios ha varias opciones. Tres de las opciones son REST, GraphQL y gRPC cada una con sus características que la hacen mas adecuadas según los requerimientos de la aplicación. gRPC es especialmente adecuada para servicios que requieran un alto rendimiento y solo necesite consumirse de forma interna. gRPC es una implementación de llamada a procedimiento remoto o RPC agnóstica del lenguaje de programación de alto rendimiento al emplear un formato de intercambio de datos binario más eficiente que JSON.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/08/introduccion-a-grpc-y-ejemplo-con-java/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/08/anadir-descripciones-y-documentar-los-campos-de-graphql/</id>
+        <title>Añadir descripciones y documentar los campos de GraphQL</title>
+        <updated>2020-08-28T00:00:00+02:00</updated>
+        <published>2020-08-28T00:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/08/anadir-descripciones-y-documentar-los-campos-de-graphql/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>A diferencia de una API basada REST una API basada GraphQL posee un esquema en el que quedan definidos los tipos, propiedades y tipos de esas propiedades. Para suplir las carencias de una API basada en REST se suele utilizar #Swagger como documentación y entorno de pruebas. GraphQL incluye la documentación en el propio código fuente y ofrece un IDE sin necesidad de herramientas adicionales. En el propio esquema de la API basada en GraphQL se pueden añadir descripciones a los tipos y propiedades para mayor detalle.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/08/anadir-descripciones-y-documentar-los-campos-de-graphql/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/</id>
+        <title>Qué son, para qué sirven, formato y ejemplos de las expresiones cron</title>
+        <updated>2020-07-10T16:15:00+02:00</updated>
+        <published>2020-07-10T16:15:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/07/tareas-programadas-de-forma-periodica-con-quartz-y-spring-en-java/</id>
+        <title>Tareas programadas de forma periódica con Quartz y Spring en Java</title>
+        <updated>2020-07-03T11:30:00+02:00</updated>
+        <published>2020-07-03T11:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/07/tareas-programadas-de-forma-periodica-con-quartz-y-spring-en-java/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/07/tareas-programadas-de-forma-periodica-con-quartz-y-spring-en-java/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/</id>
+        <title>Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)</title>
+        <updated>2020-06-21T07:30:00+02:00</updated>
+        <published>2020-06-21T07:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>El lenguaje de programación Java utiliza un paradigma orientado a objetos pero también emplea otros paradigmas como el funcional con la incorporación de las <em>lambas</em> en Java 8 y el imperativo en los bloques de sentencias de los métodos. En este artículo están los tipos de sentencias de control de flujo disponibles en el lenguaje de programación Java: condicionales, de repetición, de asignación, de gestión de excepciones e invocación de métodos en Java.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/06/generar-en-el-dominio-los-identificativos-de-las-entidades-aplicando-ddd-antes-de-persistirlas-en-la-base-de-datos/</id>
+        <title>Generar en el dominio los identificativos de las entidades aplicando DDD antes de persistirlas en la base de datos</title>
+        <updated>2020-06-19T17:00:00+02:00</updated>
+        <published>2020-06-19T17:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/06/generar-en-el-dominio-los-identificativos-de-las-entidades-aplicando-ddd-antes-de-persistirlas-en-la-base-de-datos/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>Las bases de datos tiene la capacidad de generar identificativos para los datos que se insertan. En el caso de las bases de datos relacionales con secuencias que generan en el momento de inserción la clave primaria de la fila en una tabla, normalmente es un número y utilizando Java con JPA con las anotaciones <em>Id</em>, <em>GeneratedValue</em> y <em>SequenceGenerator</em> en la clase Java que representa a la entidad. Para Domain Driven Design delegar en el momento de inserción la generación del identificativo de la entidad es un problema ya que hace que la entidad sea inválida al no tener identidad hasta persistirla y la base de datos es un elemento externo que debe ser independizado del dominio de la aplicación. En este artículo comento una implementación siguiendo los principios de DDD para dar solución a estos dos problemas.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/06/generar-en-el-dominio-los-identificativos-de-las-entidades-aplicando-ddd-antes-de-persistirlas-en-la-base-de-datos/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/</id>
+        <title>El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data</title>
+        <updated>2020-06-12T16:00:00+02:00</updated>
+        <published>2020-06-12T16:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>Los métodos de búsqueda y consulta permiten recuperar objetos de las bases de datos según los criterios deseados. Dependiendo del tamaño de la aplicación y sus casos de uso el número de consultas será más o menos grande. Con un número de consultas grande estas se vuelven complejas de mantener y generan duplicación de lógica de negocio. Para simplificar el mantenimiento de un número grande de consultas y evitar duplicidad de lógica de negocio una solución es implementar el patrón de diseño <em>Specification</em>.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/06/pruebas-de-integracion-con-testcontainers-ejemplo-de-jpa-con-la-base-de-datos-postgresql/</id>
+        <title>Pruebas de integración con Testcontainers, ejemplo de JPA con la base de datos PostgreSQL</title>
+        <updated>2020-06-07T10:00:00+02:00</updated>
+        <published>2020-06-07T10:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/06/pruebas-de-integracion-con-testcontainers-ejemplo-de-jpa-con-la-base-de-datos-postgresql/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>Algunas partes del código no es posibles probarlas con teses unitarios ya que tienen dependencias como una base de datos. En estos casos es necesario realizar un test de integración, la dificultad reside en tener esta dependencia en el entorno de pruebas. La herramienta Testcontainers permite iniciar un contenedor Docker con la dependencia cuando el test se ejecuta.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/06/pruebas-de-integracion-con-testcontainers-ejemplo-de-jpa-con-la-base-de-datos-postgresql/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/06/la-herramienta-sdkman-para-instalar-varias-versiones-del-jdk-y-software-de-la-plataforma-java/</id>
+        <title>La herramienta SDKMAN para instalar varias versiones del JDK y software de la plataforma Java</title>
+        <updated>2020-06-05T23:00:00+02:00</updated>
+        <published>2020-06-05T18:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/06/la-herramienta-sdkman-para-instalar-varias-versiones-del-jdk-y-software-de-la-plataforma-java/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>En ocasiones es necesario tener instaladas varias versiones de JDK según el proyecto, unos quizá usen Java 8 y otros quizá usen Java 11 o posterior. El gestor de software SDKMAN permite instalar múltiples versiones del JDK de forma simultánea y usar la deseada a conveniencia. Adicionalmente también permite instalar otras herramientas de la plataforma Java como Gradle y Maven o lenguajes como Groovy entre otros SDK comunes disponibles.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/06/la-herramienta-sdkman-para-instalar-varias-versiones-del-jdk-y-software-de-la-plataforma-java/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/05/copiar-datos-de-un-tipo-de-objeto-a-otro-con-modelmapper/</id>
+        <title>Copiar datos de un tipo de objeto a otro con ModelMapper</title>
+        <updated>2020-05-31T10:00:00+02:00</updated>
+        <published>2020-05-31T10:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/05/copiar-datos-de-un-tipo-de-objeto-a-otro-con-modelmapper/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>Las clases DTO son clases usadas como contenedores de datos sin ninguna lógica o con muy poca, se construyen con datos copiados de otras clases. Un uso de estas clases DTO es para evitar emplear el uso del patrón <em>Open Session in View</em> ya que aunque ofrece algunos beneficios también tiene algunos inconvenientes. La librería ModelMapper permite realizar los copiados de datos de un objeto origen a una nueva instancia destino de otra clase.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/05/copiar-datos-de-un-tipo-de-objeto-a-otro-con-modelmapper/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
+    
+</feed>

@@ -228,331 +228,371 @@
     
     <li>
       <article>
-        <h1><a href="/blog-bitix/2026/01/analisis-de-assasins-creed-2-ezio-collection/">Análisis de Assasins Creed II Ezio Collection</a></h1>
+        <h1><a href="/blog-bitix/2024/02/configurar-gnu-linux-para-usar-forward-dns-y-el-servidor-dns-de-consul/">Configurar GNU/Linux para usar forward DNS y el servidor DNS de Consul</a></h1>
         <span class="information">
-          <time>03/01/2026</time>
+          <time>24/02/2024</time>
           
             
-              <a href="/blog-bitix/tags/juegos/">juegos</a>
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
             
           
         </span>
         <p>
           
-            El personaje de Ezio Auditore da Firenze de este Assasins de esta colección es uno de los personajes más reconocidos de la franquicia. Estos juegos dan pistas de los orígenes del credo del asesino y de la lucha con los templarios. Narra la historia de Ezio desde su iniciación en el credo hasta su madurez buscando pistas de la trama que va descubriendo, además se menciona a otro asesino mítico de la saga, Altair.
+            Una de las cuestiones que tenía pendiente de mirar sobre Consul es como hacer que un nodo con GNU/Linux pueda acceder al catálogo de servicios mediante la interfaz DNS que ofrece Consul. Para esto es necesario configurar el forward DNS.
           
           <br>
-          <a href="/blog-bitix/2026/01/analisis-de-assasins-creed-2-ezio-collection/">Continuar leyendo...</a>
+          <a href="/blog-bitix/2024/02/configurar-gnu-linux-para-usar-forward-dns-y-el-servidor-dns-de-consul/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
     
     <li>
       <article>
-        <h1><a href="/blog-bitix/2025/12/hemeroteca-25/">Hemeroteca #25</a></h1>
+        <h1><a href="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/">Construir, desplegar y observar aplicaciones de forma uniforme con Waypoint</a></h1>
         <span class="information">
-          <time>23/12/2025</time>
+          <time>19/01/2023</time>
           
             
-              <a href="/blog-bitix/tags/blog/">blog</a>
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
             
               <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Cuando se tienen muchas aplicaciones si no se tienen unos procesos definidos seguramente cada una requerirá su propio proceso, herramientas de construcción y despliegue. Estas diferencias añaden complejidad y no es deseable para tener un flujo de trabajo ágil. La herramienta Waypoint de HashiCorp permite construir una aplicación independientemente del lenguaje en el que esté implementada, desplegar en diferentes proveedores de computación en la nube y observar las aplicaciones una vez desplegadas, todo con la misma herramienta y de forma uniforme que simplifica en gran medida el flujo de desarrollo.
+          
+          <br>
+          <a href="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/">Las funcionalidades de un service mesh en una arquitectura de microservicios</a></h1>
+        <span class="information">
+          <time>21/10/2022</time>
+          
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Los monolitos son la opción más sencilla y mejor en la mayoría de casos, los microservicios solo son recomendables cuando los problemas que resuelven compensan los problemas asociados que generan, entre ellos una mayor complejidad en la infraestructura y de comunicación entre servicios que utilizan un medio con fallos, la red de comunicaciones entre diferentes computadoras. Esta mayor complejidad, mayor número de servicios y mayor probabilidad de que alguna falle requiere utilizar herramientas para en el sistema tener seguridad, observabilidad, resiliencia y control de tráfico. Estas son funcionalidades que como una capa de red para los servicios proporciona un <em>service mesh</em>.
+          
+          <br>
+          <a href="/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/">Planificar procesos periódicos y scripts con Nomad</a></h1>
+        <span class="information">
+          <time>23/09/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Los pequeños <em>scripts</em> aún con su pequeña función específica, sus pocas líneas de código y breves instantes de ejecución limitados a segundos, minutos u pocas horas al día o a la semana realizan tareas importantes dentro de todas las tares de las que se compone un sistema computacional completo. Al igual que cualquier otro proceso requieren de un entorno de ejecución pero dada su naturaleza breve hace que dedicar una máquina reservada que estará infrautilizada en exclusiva para ellos sea ineficiente además de un coste en la infraestructura. En vez de dedicar una máquina en exclusiva para uno o unos pocos <em>scripts</em> el orquestador de procesos Nomad permite planificarlos en alguna de las instancias de computación existentes del <em>cluster</em> ya sea como procesos del sistema o dentro de contenedores.
+          
+          <br>
+          <a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/">Acceso simple y seguro a sistemas remotos con Boundary</a></h1>
+        <span class="information">
+          <time>05/03/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Boundary es otra herramienta de HashiCorp dedicada a la seguridad. Vault está centrada en el almacenamiento de secretos, Boundary está centrada en otro aspecto de la seguridad que es el acceso a sistemas remotos. Una herramienta mejor adaptada y teniendo en cuenta las propiedades dinámicas de los sistemas actuales. Es una alternativa a los métodos de VPN, bastión y <em>firewall</em> que se utilizan para permitir estos accesos remotos.
+          
+          <br>
+          <a href="/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/">Cifrado y descifrado como servicio con Vault</a></h1>
+        <span class="information">
+          <time>26/02/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Implementar la seguridad en una aplicación no es sencillo, cuando un sistema se compone de múltiples aplicaciones los posibles fallos de seguridad se multiplican. Vault es una herramienta que permite centralizar y delegar varios aspectos de las aplicaciones relativos a la seguridad, uno de ellos es el cifrado y descifrado de los datos para su almacenamiento y recuperación de una base de datos. Entre sus funcionalidades Vault ofrece como servicio el cifrado y descifrado de datos.
+          
+          <br>
+          <a href="/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/">Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos</a></h1>
+        <span class="information">
+          <time>14/08/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            HashiCorp proporciona una buena documentación de sus productos con tutoriales, documentación de las herramientas y vídeos de formación en su canal de Youtube. Aunque en la documentación está todo explicado para poner en práctica una arquitectura para un caso más real y con cierto grado de producción requiere leer múltiples artículos para aplicar y aglutinar todo lo descrito. En este artículo muestro una arquitectura de referencia de varios productos de HashiCorp como Consul, Vault y Nomad que forman un centro de datos o entorno de ejecución para servicios en un ejemplo aprovisionado con Vagrant en máquinas virtuales de VirtualBox.
+          
+          <br>
+          <a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/">Revertir un servicio a una versión anterior con Nomad</a></h1>
+        <span class="information">
+          <time>26/07/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Los errores no se planifican, se producen de forma inesperada. Además, un error en un entorno de producción es normalmente urgente e importante lo que obliga a cambiar las prioridades del equipo dejando lo que están haciendo y ocuparse de resolver el problema. En ocasiones no será posible resolver el problema y la única solución es revertir la versión de la aplicación a la anterior. Dependiendo de la automatización de los procesos incluso el volver a la versión anterior quizá sea complicado. Los errores no se planifican pero si se puede planificar estar preparado para algunos errores, una forma de estar preparado ante errores es tener un proceso y herramientas para volver a la versión anterior rápido y fácilmente.
+          
+          <br>
+          <a href="/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/">Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad</a></h1>
+        <span class="information">
+          <time>24/07/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            La configuración de seguridad estática y basada en direcciones IP no es adecuada en un entorno en el que los recursos de computación está compartidos y no son confiables, ni para aplicaciones basadas en microservicios cuyo número de servicios e instancias cambia a lo largo del tiempo. Consul y Consul Connect ofrecen un mecanismo de comunicación segura adaptados a la computación en la nube y adecuado para aplicaciones basadas en microservicios.
+          
+          <br>
+          <a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a></h1>
+        <span class="information">
+          <time>12/10/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+            
+          
+        </span>
+        <p>
+          
+            Sin entrar a si los microservicios son adecuados o no son adecuados en una aplicación, está claro que si se utilizan estos tienen varias necesidades. Un servicio de registro y descubrimiento, configuración centralizada, tolerancia a fallos, <em>gateway/load balancer/reverse proxy</em>, trazabilidad y métricas, autenticación, orquestación, &hellip; Los microservicios quizá no sean un gran monolito, quizá mas pequeños y con funcinalidad más acotada, pero el hecho de que se comuniquen a través de un medio más complejo y menos fiable como la red en vez de una llamada a un método y sean más numerosos hacen que la complejidad sea incluso mayor. Este artículo propone un ejemplo con Spring Cloud para los servicios, Consul para el registro y descubrimiento, Nomad para la orquestación y Traefik como <em>gateway</em>.
+          
+          <br>
+          <a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/">Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring</a></h1>
+        <span class="information">
+          <time>23/08/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Spring Cloud Vault facilita la integración con Vault, una de sus usos es utilizarlo para obtener unas credenciales de conexión a la base de datos generadas bajo demanda y con un tiempo de vida limitado en vez de embeberlas en la configuración de la aplicación y con u tiempo de vida indefinido.
+          
+          <br>
+          <a href="/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">Generar credenciales de conexión a base de datos bajo demanda con Vault</a></h1>
+        <span class="information">
+          <time>15/08/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+          
+        </span>
+        <p>
+          
+            Una de las funcionalidades proporcionada por Vault es generar credenciales dinámicas para la conexión a bases de datos. Generar las credenciales de forma dinámica proporciona varios beneficios: no hay unas credenciales que usen las aplicaciones que tengan un tiempo de vida indefinido, las aplicaciones no necesitan guardar en su configuración las credenciales, las credenciales se rotan de forma automática y los permisos para obtenerlas se pueden revocar de forma centralizada con Vault para cuales quiera bases de datos que se utilicen. Soporta las bases de datos más populares entre ellas PostgreSQL.
+          
+          <br>
+          <a href="/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/">Administrar secretos y proteger datos sensibles con Vault</a></h1>
+        <span class="information">
+          <time>27/07/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+          
+        </span>
+        <p>
+          
+            Herramientas de aprovisionamiento como Chef, Puppet y Ansible solucionan el problema de la seguridad de los secretos de forma similar, utilizando una única clave de cifrado. Los datos cifrados están siempre a un secreto (contraseña, clave, &hellip;) de ser descifrados y generalmente no está bien protegidos dado que en un entorno elástico cada servidor necesita disponer de este secreto para descifrar los datos. Adicionalmente el acceso a los datos cifrados no está registrado de modo que si hay una intrusión no está claro que dato ha sido accedido y por quien. Utilizar variables de entorno para proporcionar secretos tampoco es seguro, y en entornos Docker suele usarse.
+          
+          <br>
+          <a href="/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator</a></h1>
+        <span class="information">
+          <time>26/05/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+          
+        </span>
+        <p>
+          
+            En los microservicios se hace necesario un servicio de registro y descubrimiento como Eureka o Consul que permita conocer la ubicación de las instancias en cada momento. Las instancias de los servicios se pueden registrar ellas mismas o esta tarea se puede delegar en una en otro servicio. Al usar contenedores de Docker una herramienta que permite delegar el registro y desregistro en Consul de los servicios es GliderLabs Registrator.
+          
+          <br>
+          <a href="/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/">Crear de forma sencilla y rápida máquinas virtuales de VirtualBox con Vagrant</a></h1>
+        <span class="information">
+          <time>10/05/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/software/">software</a>
             
           
         </span>
         <p>
           
             <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/blog-bitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-vagrant.svg" width="200" height="200" alt="Vagrant" title="Vagrant" class="" loading="false"></p>
 </div>
-<p>En este 2025 que acaba he escrito aún menos artículos que el 2024. No por falta de interés e ideas que tengo apuntadas y ganas querer compartir contenido y aprender sino por querer dedicar una buena cantidad de tiempo al blog, cada artículo me consume varias horas de dedicación entre la escritura y lectura, edición y publicación como ya he comentado en varias ocasiones.</p>
-<p>No voy a hacer un análisis como en años anteriores de visitas e ingresos ya que ha sido mucho menos que la eṕoca dorada de este blog en el 2018, y este año han sido residuales. Quité Google Analytics y ahora mi única métrica no muy fiable son las impresiones de los anuncios.</p>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp" class="" loading="false"></p>
+</div>
+<p><a href="https://www.virtualbox.org/">VirtualBox</a> es una de las herramientas que permiten virtualizar un sistema operativo completo y sus aplicaciones dentro de otra máquina. Como es un sistema operativo completo requiere que el sistema que la alberga tenga RAM suficiente para sí mismo y RAM suficiente para el sistema virtualizado, se puede configurar la cantidad de RAM y almacenamiento persistente de la máquina virtual. En el proceso de virtualización se pierde algo de rendimiento por la sobrecarga que añade virtualizar un sistema operativo completo, los procesadores modernos ofrecen soporte para que el rendimiento sea lo mayor posible pero no es igual a ejecutar el sistema de forma nativa en el sistema, sobre todo en el aspecto de interfaces gráficas y aceleración 2D y 3D.</p>
           
           <br>
-          <a href="/blog-bitix/2025/12/hemeroteca-25/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2025/11/desempaquetado-y-opinion-del-monitor-benq-pd3226g/">Desempaquetado y opinión del monitor BenQ PD3226G, 4K/UHD, IPS, 32&#34;</a></h1>
-        <span class="information">
-          <time>21/11/2025</time>
-          
-            
-              <a href="/blog-bitix/tags/hardware/">hardware</a>
-            
-          
-        </span>
-        <p>
-          
-            Tras la decisión irracional de comprar un Framework Desktop con 128 GB de memoria la siguiente decisión irracional que he tomado a sido ponerle un monitor a la altura del equipo, un Benq PD3226G.
-          
-          <br>
-          <a href="/blog-bitix/2025/11/desempaquetado-y-opinion-del-monitor-benq-pd3226g/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2025/10/ideas-para-mejorar-mi-productividad/">Ideas para mejorar mi productividad</a></h1>
-        <span class="information">
-          <time>17/10/2025</time>
-          
-            
-              <a href="/blog-bitix/tags/fuera-de-tema/">fuera-de-tema</a>
-            
-          
-        </span>
-        <p>
-          
-            Las últimas semanas he pensado como mejorar o cubrir ciertos aspectos por falta de tiempo y conocimiento en mi productividad y bienestar personal y en el trabajo. He recopilado que herramientas puedo utilizar en aplicaciones para el ordenador y <em>gadgets</em> como un reloj de cocina. Aún con todas estas nuevas herramientas y otras acciones seguiré aprendiendo en dar prioridad a mi bienestar. Quizá algunas te sean de ayuda o tu utilices otras que te sirve y puedas comentármelas.
-          
-          <br>
-          <a href="/blog-bitix/2025/10/ideas-para-mejorar-mi-productividad/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2025/10/desempaquetado-y-analisis-de-framework-desktop-amd-ryzen-395-max-con-128-gb/">Desempaquetado y análisis de Framework Desktop, AMD Ryzen 395&#43; Max con 128 GB</a></h1>
-        <span class="information">
-          <time>04/10/2025</time>
-          
-            
-              <a href="/blog-bitix/tags/tecnologia/">tecnologia</a>
-            
-              <a href="/blog-bitix/tags/hardware/">hardware</a>
-            
-          
-        </span>
-        <p>
-          
-            He cambiado el pequeño gran Intel NUC que ha servido para mis propósitos de productividad con solvencia durante casi 7 años por un Framework Desktop que pasados esos años es mucho más capaz. En este artículo hago su desempaquetado y recojo la mejor información en artículos y vídeos que he sido capaz de recopilar del Framework Desktop.
-          
-          <br>
-          <a href="/blog-bitix/2025/10/desempaquetado-y-analisis-de-framework-desktop-amd-ryzen-395-max-con-128-gb/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2025/09/novedades-y-nuevas-caracteristicas-de-java-25/">Novedades y nuevas características de Java 25</a></h1>
-        <span class="information">
-          <time>19/09/2025</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            Habitualmente publicaba un artículo por cada versión de Java, pero teniendo en cuenta que para producción es recomendable usar preferentemente las versiones LTS estoy prefiriendo publicar uno en cada versión LTS con el acumulado de características de la versión anterior. En este caso de Java 25 como nueva LTS que sucede a Java 21.
-          
-          <br>
-          <a href="/blog-bitix/2025/09/novedades-y-nuevas-caracteristicas-de-java-25/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2025/05/generar-clientes-rest-con-su-interfaz-openapi/">Generar clientes REST con su interfaz OpenAPI</a></h1>
-        <span class="information">
-          <time>18/05/2025</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            Para hacer uso de una interfaz REST es necesario crear un cliente en el mismo lenguaje de programación de la aplicación. Dada una interfaz REST compuesta por sus <em>endpoints</em>, parámetros, <em>headers</em> y <em>payloads</em> de entrada y de salida asi como sus códigos de estado de respuesta es posible automatizar con un generador de código la creación de un cliente para cualquiera de los lenguajes que se necesite y el generador soporte.
-          
-          <br>
-          <a href="/blog-bitix/2025/05/generar-clientes-rest-con-su-interfaz-openapi/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2025/03/proximo-nuevo-ordenador-de-escritorio-framework-desktop/">Próximo nuevo ordenador de escritorio, Framework Desktop</a></h1>
-        <span class="information">
-          <time>30/03/2025</time>
-          
-            
-              <a href="/blog-bitix/tags/tecnologia/">tecnologia</a>
-            
-              <a href="/blog-bitix/tags/hardware/">hardware</a>
-            
-          
-        </span>
-        <p>
-          
-            He tenido un Intel NUC que me ha ofrecido todo el rendimiento que he necesitado para mis tareas de navegación por internet, ofimáticas y más exigentes de desarrollo, virtualización y trabajo con contenedores, con 32 GB de memoria su desempeño es más que suficiente. Su punto débil está en la gráfica que no es adecuada para juegos, sin embargo para juegos tengo la PlayStation 5. Aún así he decidido cambiar a un nuevo ordenador, el siguiente que tendré será un Framework Desktop. En este artículo describo mis necesidades, motivaciones, el equipo y recopilo la información que he encontrado de él.
-          
-          <br>
-          <a href="/blog-bitix/2025/03/proximo-nuevo-ordenador-de-escritorio-framework-desktop/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2025/01/analisis-y-guia-de-la-pesadilla-psicotica-tipo-soul-de-hellblade-senua-sacrifice/">Análisis y guía de la pesadilla psicótica tipo soul de Hellblade: Senua Sacrifice</a></h1>
-        <span class="information">
-          <time>17/01/2025</time>
-          
-            
-              <a href="/blog-bitix/tags/juegos/">juegos</a>
-            
-          
-        </span>
-        <p>
-          
-            Este juego es algo distinto empezando por que aunque está creado en formato juego uno de sus objetivos es acercar en qué consiste la enfermedad mental y la psicosis a través del personaje de Senua. En una época en la que si el juego dura menos de medio centenar de horas se considera un juego corto este no dura más de 10 horas.
-          
-          <br>
-          <a href="/blog-bitix/2025/01/analisis-y-guia-de-la-pesadilla-psicotica-tipo-soul-de-hellblade-senua-sacrifice/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2025/01/articulo-resumen-de-tecnologia-del-2024-y-futuro-2025/">Artículo resumen de tecnología del 2024 y futuro 2025</a></h1>
-        <span class="information">
-          <time>07/01/2025</time>
-          
-            
-              <a href="/blog-bitix/tags/tecnolog%c3%ada/">tecnología</a>
-            
-          
-        </span>
-        <p>
-          
-            <p>Cada año la tecnología avanza un poco y con la acumulación de años la diferencia es significativa. Hace 30 años los ordenadores únicamente 8 megas de memoria y un giga de disco duro, la frecuencia del procesador era mononúcleo de 120 megahercios, hay hablamos de guías de memoria, teras de almacenamiento ultrarrápido con nvmve y procesadores de gigaherzios de 16 núcleos o más. En estos 30 años esto supone haber multiplicado por 1000 algunos de estos datos. En general los avances son de un 10% anual producidos más bien por la mejora en litografía que permite incluir más transistores en el mismo espacio, salvo unos hitos relevantes y más drásticos como la inclusión de más núcleos, la tecnología de cache 3D gracias a las nuevas técnicas de encapsulado o el cambio de disco duros a SSDs y posteriormente a NVMe.</p>
-          
-          <br>
-          <a href="/blog-bitix/2025/01/articulo-resumen-de-tecnologia-del-2024-y-futuro-2025/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2024/12/hemeroteca-24/">Hemeroteca #24</a></h1>
-        <span class="information">
-          <time>24/12/2024</time>
-          
-            
-              <a href="/blog-bitix/tags/blog/">blog</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            Aún con menos artículos publicados, menos incluso que el año pasado, algunos he seguido publicando y algún otro actualizando. Menos visitas, menos ingresos, menos tiempo que le dedico al blog aunque me gustaría más si el tiempo que tengo disponible no fuera limitado y los artículos me costase menos tiempo en escribirlos, ideas que voy acumulando tengo para escribir nuevos artículos totalmente libres de contenido generado por inteligencia artificial.
-          
-          <br>
-          <a href="/blog-bitix/2024/12/hemeroteca-24/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/">Análisis de juego de plataformas Astro’s Playroom</a></h1>
-        <span class="information">
-          <time>05/12/2024</time>
-          
-            
-              <a href="/blog-bitix/tags/juegos/">juegos</a>
-            
-          
-        </span>
-        <p>
-          
-            Como primer juego de PS5 que juego he pasado un buen rato con Astro&rsquo;s Playroom cargado de referencias a la consola PlayStation y toda su colección mítica de personajes que hace sacar una sonrisa y unos buenos recuerdos de haber jugado a muchos otros personajes de los juegos de Sony. Un juego que tiene como objetivo estar incluido en la PlayStation y ser una demostración de las capacidades de la consola y mando DualSense. Un juego corto y música divertida del robotito Astro con el que posteriomente se ha publicado ya si un juego completo con Astro Bot: Rescue Mission.
-          
-          <br>
-          <a href="/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2024/10/desempaquetado-y-analisis-de-la-barra-de-luz-para-monitor-benq-screenbar-pro/">Desempaquetado y análisis de la barra de luz para monitor BenQ ScreenBar Pro</a></h1>
-        <span class="information">
-          <time>24/10/2024</time>
-          
-            
-              <a href="/blog-bitix/tags/hardware/">hardware</a>
-            
-          
-        </span>
-        <p>
-          
-            La luz led que tenía para iluminar la mesa y pantalla de ordenador no era la más adecuada. No estaba adaptada para el trabajo con ordenador con lo que la vista se me resentía y me molestaba ya que en parte me daba en los ojos. Una barra de luz para monitor de ordenador proporciona una mejor iluminación tanto para el monitor y la mesa, de modo que para cuidar lo que pueda mi vista he comprado una barra de luz para monitor. Estando contento con la marca BenQ por el monitor BenQ PD2700 que tengo he adquirido la barra de luz BenQ ScreenBar Pro de la que en este artículo  hago su desempaquetado y análisis.
-          
-          <br>
-          <a href="/blog-bitix/2024/10/desempaquetado-y-analisis-de-la-barra-de-luz-para-monitor-benq-screenbar-pro/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2024/10/mis-inversiones-con-indexa-capital-y-myinvestor-despues-de-un-ano/">Mis inversiones con Indexa Capital y MyInvestor después de un año</a></h1>
-        <span class="information">
-          <time>06/10/2024</time>
-          
-            
-              <a href="/blog-bitix/tags/fuera-de-tema/">fuera-de-tema</a>
-            
-          
-        </span>
-        <p>
-          
-            En el año 2023 empecé a conocer los conceptos básicos de inversión porque tenía la sensación de que en mi banco no me estaban ofreciendo buenos productos de inversión ni en rentabilidades ni en costes. Así que después de leer un par de libros con esos conceptos básicos de inversión abrí cuentas en Indexa Capital y MyInvestor. Pasado un año hago balance de estas inversiones y las comparo con las de mi banco. En conclusión del artículo las rentabilidades de los productos de mi banco son significativamente menores con lo que seguramente me planificaré el deshacerlas.
-          
-          <br>
-          <a href="/blog-bitix/2024/10/mis-inversiones-con-indexa-capital-y-myinvestor-despues-de-un-ano/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2024/09/analisis-y-guia-del-magnifico-juego-de-rol-the-witcher-3/">Análisis y guía del magnífico juego de rol The Witcher 3</a></h1>
-        <span class="information">
-          <time>15/09/2024</time>
-          
-            
-              <a href="/blog-bitix/tags/juegos/">juegos</a>
-            
-          
-        </span>
-        <p>
-          
-            The Witcher 3 es un juego muy apreciado, después de casi completarlo incluidas sus expansiones tiene varios aspectos por los que comprendo ese reconocimiento que tiene y que lo hace un poco diferente a los juegos que he jugado. Una cantidad de historias abrumadora, un mapa de mundo abierto plagado de localizaciones que explorar y donde las decisiones importan. Un juego largo pero que no se hace repetitivo y se disfruta más degustando de forma lenta las historias. Un juego muy recomendable si se quiere dedicarle la cantidad de horas que requiere.
-          
-          <br>
-          <a href="/blog-bitix/2024/09/analisis-y-guia-del-magnifico-juego-de-rol-the-witcher-3/">Continuar leyendo...</a>
+          <a href="/blog-bitix/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/">Continuar leyendo...</a>
         </p>
       </article>
     </li>

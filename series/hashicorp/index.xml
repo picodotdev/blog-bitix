@@ -13,47 +13,78 @@
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
     
     <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2026/01/analisis-de-assasins-creed-2-ezio-collection/</id>
-        <title>Análisis de Assasins Creed II Ezio Collection</title>
-        <updated>2026-01-03T00:00:00+02:00</updated>
-        <published>2026-01-03T00:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2026/01/analisis-de-assasins-creed-2-ezio-collection/"/>
+        <id>https://picodotdev.github.io/blog-bitix/2024/02/configurar-gnu-linux-para-usar-forward-dns-y-el-servidor-dns-de-consul/</id>
+        <title>Configurar GNU/Linux para usar forward DNS y el servidor DNS de Consul</title>
+        <updated>2024-02-24T18:00:00+02:00</updated>
+        <published>2024-02-24T18:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2024/02/configurar-gnu-linux-para-usar-forward-dns-y-el-servidor-dns-de-consul/"/>
         <author><name></name></author>
         <content type="html">
         <![CDATA[
 
-        <p><strong>El personaje de Ezio Auditore da Firenze de este Assasins de esta colección es uno de los personajes más reconocidos de la franquicia. Estos juegos dan pistas de los orígenes del credo del asesino y de la lucha con los templarios. Narra la historia de Ezio desde su iniciación en el credo hasta su madurez buscando pistas de la trama que va descubriendo, además se menciona a otro asesino mítico de la saga, Altair.</strong></p>
+        <p><strong>Una de las cuestiones que tenía pendiente de mirar sobre Consul es como hacer que un nodo con GNU/Linux pueda acceder al catálogo de servicios mediante la interfaz DNS que ofrece Consul. Para esto es necesario configurar el forward DNS.</strong></p>
         
-        <p><a href="https://picodotdev.github.io/blog-bitix/2026/01/analisis-de-assasins-creed-2-ezio-collection/">Continuar leyendo en Blog Bitix</a></p>
+        <p><a href="https://picodotdev.github.io/blog-bitix/2024/02/configurar-gnu-linux-para-usar-forward-dns-y-el-servidor-dns-de-consul/">Continuar leyendo en Blog Bitix</a></p>
 
         ]]>
         </content>
         
             
-                <category term="juegos"/>
+                <category term="planeta-codigo"/>
+            
+                <category term="gnu-linux"/>
             
         
     </entry>
     
     <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2025/12/hemeroteca-25/</id>
-        <title>Hemeroteca #25</title>
-        <updated>2025-12-23T18:00:00+02:00</updated>
-        <published>2025-12-23T18:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2025/12/hemeroteca-25/"/>
+        <id>https://picodotdev.github.io/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/</id>
+        <title>Construir, desplegar y observar aplicaciones de forma uniforme con Waypoint</title>
+        <updated>2023-01-19T20:00:00+01:00</updated>
+        <published>2023-01-19T20:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/"/>
         <author><name></name></author>
         <content type="html">
         <![CDATA[
 
+        <p><strong>Cuando se tienen muchas aplicaciones si no se tienen unos procesos definidos seguramente cada una requerirá su propio proceso, herramientas de construcción y despliegue. Estas diferencias añaden complejidad y no es deseable para tener un flujo de trabajo ágil. La herramienta Waypoint de HashiCorp permite construir una aplicación independientemente del lenguaje en el que esté implementada, desplegar en diferentes proveedores de computación en la nube y observar las aplicaciones una vez desplegadas, todo con la misma herramienta y de forma uniforme que simplifica en gran medida el flujo de desarrollo.</strong></p>
         
-        
-        <p><a href="https://picodotdev.github.io/blog-bitix/2025/12/hemeroteca-25/">Continuar leyendo en Blog Bitix</a></p>
+        <p><a href="https://picodotdev.github.io/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/">Continuar leyendo en Blog Bitix</a></p>
 
         ]]>
         </content>
         
             
-                <category term="blog"/>
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="software"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/</id>
+        <title>Las funcionalidades de un service mesh en una arquitectura de microservicios</title>
+        <updated>2022-10-21T20:00:00+02:00</updated>
+        <published>2022-10-21T20:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>Los monolitos son la opción más sencilla y mejor en la mayoría de casos, los microservicios solo son recomendables cuando los problemas que resuelven compensan los problemas asociados que generan, entre ellos una mayor complejidad en la infraestructura y de comunicación entre servicios que utilizan un medio con fallos, la red de comunicaciones entre diferentes computadoras. Esta mayor complejidad, mayor número de servicios y mayor probabilidad de que alguna falle requiere utilizar herramientas para en el sistema tener seguridad, observabilidad, resiliencia y control de tráfico. Estas son funcionalidades que como una capa de red para los servicios proporciona un <em>service mesh</em>.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2022/10/las-funcionalidades-de-un-service-mesh-en-una-arquitectura-de-microservicios/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="programacion"/>
             
                 <category term="planeta-codigo"/>
             
@@ -61,89 +92,168 @@
     </entry>
     
     <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2025/11/desempaquetado-y-opinion-del-monitor-benq-pd3226g/</id>
-        <title>Desempaquetado y opinión del monitor BenQ PD3226G, 4K/UHD, IPS, 32&#34;</title>
-        <updated>2025-11-21T20:00:00+01:00</updated>
-        <published>2025-11-21T20:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2025/11/desempaquetado-y-opinion-del-monitor-benq-pd3226g/"/>
+        <id>https://picodotdev.github.io/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/</id>
+        <title>Planificar procesos periódicos y scripts con Nomad</title>
+        <updated>2021-09-23T19:00:00+02:00</updated>
+        <published>2021-09-23T19:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/"/>
         <author><name></name></author>
         <content type="html">
         <![CDATA[
 
-        <p><strong>Tras la decisión irracional de comprar un Framework Desktop con 128 GB de memoria la siguiente decisión irracional que he tomado a sido ponerle un monitor a la altura del equipo, un Benq PD3226G.</strong></p>
+        <p><strong>Los pequeños <em>scripts</em> aún con su pequeña función específica, sus pocas líneas de código y breves instantes de ejecución limitados a segundos, minutos u pocas horas al día o a la semana realizan tareas importantes dentro de todas las tares de las que se compone un sistema computacional completo. Al igual que cualquier otro proceso requieren de un entorno de ejecución pero dada su naturaleza breve hace que dedicar una máquina reservada que estará infrautilizada en exclusiva para ellos sea ineficiente además de un coste en la infraestructura. En vez de dedicar una máquina en exclusiva para uno o unos pocos <em>scripts</em> el orquestador de procesos Nomad permite planificarlos en alguna de las instancias de computación existentes del <em>cluster</em> ya sea como procesos del sistema o dentro de contenedores.</strong></p>
         
-        <p><a href="https://picodotdev.github.io/blog-bitix/2025/11/desempaquetado-y-opinion-del-monitor-benq-pd3226g/">Continuar leyendo en Blog Bitix</a></p>
+        <p><a href="https://picodotdev.github.io/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/">Continuar leyendo en Blog Bitix</a></p>
 
         ]]>
         </content>
         
             
-                <category term="hardware"/>
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
             
         
     </entry>
     
     <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2025/10/ideas-para-mejorar-mi-productividad/</id>
-        <title>Ideas para mejorar mi productividad</title>
-        <updated>2025-10-17T12:00:00+02:00</updated>
-        <published>2025-10-17T12:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2025/10/ideas-para-mejorar-mi-productividad/"/>
+        <id>https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/</id>
+        <title>Acceso simple y seguro a sistemas remotos con Boundary</title>
+        <updated>2021-03-05T15:00:00+01:00</updated>
+        <published>2021-03-05T15:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/"/>
         <author><name></name></author>
         <content type="html">
         <![CDATA[
 
-        <p><strong>Las últimas semanas he pensado como mejorar o cubrir ciertos aspectos por falta de tiempo y conocimiento en mi productividad y bienestar personal y en el trabajo. He recopilado que herramientas puedo utilizar en aplicaciones para el ordenador y <em>gadgets</em> como un reloj de cocina. Aún con todas estas nuevas herramientas y otras acciones seguiré aprendiendo en dar prioridad a mi bienestar. Quizá algunas te sean de ayuda o tu utilices otras que te sirve y puedas comentármelas.</strong></p>
+        <p><strong>Boundary es otra herramienta de HashiCorp dedicada a la seguridad. Vault está centrada en el almacenamiento de secretos, Boundary está centrada en otro aspecto de la seguridad que es el acceso a sistemas remotos. Una herramienta mejor adaptada y teniendo en cuenta las propiedades dinámicas de los sistemas actuales. Es una alternativa a los métodos de VPN, bastión y <em>firewall</em> que se utilizan para permitir estos accesos remotos.</strong></p>
         
-        <p><a href="https://picodotdev.github.io/blog-bitix/2025/10/ideas-para-mejorar-mi-productividad/">Continuar leyendo en Blog Bitix</a></p>
+        <p><a href="https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/">Continuar leyendo en Blog Bitix</a></p>
 
         ]]>
         </content>
         
             
-                <category term="fuera-de-tema"/>
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
             
         
     </entry>
     
     <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2025/10/desempaquetado-y-analisis-de-framework-desktop-amd-ryzen-395-max-con-128-gb/</id>
-        <title>Desempaquetado y análisis de Framework Desktop, AMD Ryzen 395&#43; Max con 128 GB</title>
-        <updated>2025-10-04T10:00:00+02:00</updated>
-        <published>2025-10-04T10:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2025/10/desempaquetado-y-analisis-de-framework-desktop-amd-ryzen-395-max-con-128-gb/"/>
+        <id>https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/</id>
+        <title>Cifrado y descifrado como servicio con Vault</title>
+        <updated>2021-02-26T16:00:00+01:00</updated>
+        <published>2021-02-26T16:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/"/>
         <author><name></name></author>
         <content type="html">
         <![CDATA[
 
-        <p><strong>He cambiado el pequeño gran Intel NUC que ha servido para mis propósitos de productividad con solvencia durante casi 7 años por un Framework Desktop que pasados esos años es mucho más capaz. En este artículo hago su desempaquetado y recojo la mejor información en artículos y vídeos que he sido capaz de recopilar del Framework Desktop.</strong></p>
+        <p><strong>Implementar la seguridad en una aplicación no es sencillo, cuando un sistema se compone de múltiples aplicaciones los posibles fallos de seguridad se multiplican. Vault es una herramienta que permite centralizar y delegar varios aspectos de las aplicaciones relativos a la seguridad, uno de ellos es el cifrado y descifrado de los datos para su almacenamiento y recuperación de una base de datos. Entre sus funcionalidades Vault ofrece como servicio el cifrado y descifrado de datos.</strong></p>
         
-        <p><a href="https://picodotdev.github.io/blog-bitix/2025/10/desempaquetado-y-analisis-de-framework-desktop-amd-ryzen-395-max-con-128-gb/">Continuar leyendo en Blog Bitix</a></p>
+        <p><a href="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/">Continuar leyendo en Blog Bitix</a></p>
 
         ]]>
         </content>
         
             
-                <category term="tecnologia"/>
+                <category term="gnu-linux"/>
             
-                <category term="hardware"/>
+                <category term="planeta-codigo"/>
             
         
     </entry>
     
     <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2025/09/novedades-y-nuevas-caracteristicas-de-java-25/</id>
-        <title>Novedades y nuevas características de Java 25</title>
-        <updated>2025-09-19T09:00:00+02:00</updated>
-        <published>2025-09-19T09:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2025/09/novedades-y-nuevas-caracteristicas-de-java-25/"/>
+        <id>https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/</id>
+        <title>Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos</title>
+        <updated>2020-08-14T16:00:00+02:00</updated>
+        <published>2020-08-14T16:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/"/>
         <author><name></name></author>
         <content type="html">
         <![CDATA[
 
-        <p><strong>Habitualmente publicaba un artículo por cada versión de Java, pero teniendo en cuenta que para producción es recomendable usar preferentemente las versiones LTS estoy prefiriendo publicar uno en cada versión LTS con el acumulado de características de la versión anterior. En este caso de Java 25 como nueva LTS que sucede a Java 21.</strong></p>
+        <p><strong>HashiCorp proporciona una buena documentación de sus productos con tutoriales, documentación de las herramientas y vídeos de formación en su canal de Youtube. Aunque en la documentación está todo explicado para poner en práctica una arquitectura para un caso más real y con cierto grado de producción requiere leer múltiples artículos para aplicar y aglutinar todo lo descrito. En este artículo muestro una arquitectura de referencia de varios productos de HashiCorp como Consul, Vault y Nomad que forman un centro de datos o entorno de ejecución para servicios en un ejemplo aprovisionado con Vagrant en máquinas virtuales de VirtualBox.</strong></p>
         
-        <p><a href="https://picodotdev.github.io/blog-bitix/2025/09/novedades-y-nuevas-caracteristicas-de-java-25/">Continuar leyendo en Blog Bitix</a></p>
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/</id>
+        <title>Revertir un servicio a una versión anterior con Nomad</title>
+        <updated>2020-07-26T09:00:00+02:00</updated>
+        <published>2020-07-26T09:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>Los errores no se planifican, se producen de forma inesperada. Además, un error en un entorno de producción es normalmente urgente e importante lo que obliga a cambiar las prioridades del equipo dejando lo que están haciendo y ocuparse de resolver el problema. En ocasiones no será posible resolver el problema y la única solución es revertir la versión de la aplicación a la anterior. Dependiendo de la automatización de los procesos incluso el volver a la versión anterior quizá sea complicado. Los errores no se planifican pero si se puede planificar estar preparado para algunos errores, una forma de estar preparado ante errores es tener un proceso y herramientas para volver a la versión anterior rápido y fácilmente.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/</id>
+        <title>Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad</title>
+        <updated>2020-07-24T15:00:00+02:00</updated>
+        <published>2020-07-24T15:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>La configuración de seguridad estática y basada en direcciones IP no es adecuada en un entorno en el que los recursos de computación está compartidos y no son confiables, ni para aplicaciones basadas en microservicios cuyo número de servicios e instancias cambia a lo largo del tiempo. Consul y Consul Connect ofrecen un mecanismo de comunicación segura adaptados a la computación en la nube y adecuado para aplicaciones basadas en microservicios.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/</id>
+        <title>Microservicios con Spring Cloud, Consul, Nomad y Traefik</title>
+        <updated>2020-03-11T11:00:00+01:00</updated>
+        <published>2019-10-12T02:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/"/>
+        <author><name></name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>Sin entrar a si los microservicios son adecuados o no son adecuados en una aplicación, está claro que si se utilizan estos tienen varias necesidades. Un servicio de registro y descubrimiento, configuración centralizada, tolerancia a fallos, <em>gateway/load balancer/reverse proxy</em>, trazabilidad y métricas, autenticación, orquestación, &hellip; Los microservicios quizá no sean un gran monolito, quizá mas pequeños y con funcinalidad más acotada, pero el hecho de que se comuniquen a través de un medio más complejo y menos fiable como la red en vez de una llamada a un método y sean más numerosos hacen que la complejidad sea incluso mayor. Este artículo propone un ejemplo con Spring Cloud para los servicios, Consul para el registro y descubrimiento, Nomad para la orquestación y Traefik como <em>gateway</em>.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">Continuar leyendo en Blog Bitix</a></p>
 
         ]]>
         </content>
@@ -153,22 +263,28 @@
             
                 <category term="planeta-codigo"/>
             
+                <category term="programacion"/>
+            
+                <category term="software"/>
+            
+                <category term="software-libre"/>
+            
         
     </entry>
     
     <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2025/05/generar-clientes-rest-con-su-interfaz-openapi/</id>
-        <title>Generar clientes REST con su interfaz OpenAPI</title>
-        <updated>2025-05-18T10:00:00+02:00</updated>
-        <published>2025-05-18T10:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2025/05/generar-clientes-rest-con-su-interfaz-openapi/"/>
+        <id>https://picodotdev.github.io/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/</id>
+        <title>Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring</title>
+        <updated>2019-08-23T09:00:00+02:00</updated>
+        <published>2019-08-23T09:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/"/>
         <author><name></name></author>
         <content type="html">
         <![CDATA[
 
-        <p><strong>Para hacer uso de una interfaz REST es necesario crear un cliente en el mismo lenguaje de programación de la aplicación. Dada una interfaz REST compuesta por sus <em>endpoints</em>, parámetros, <em>headers</em> y <em>payloads</em> de entrada y de salida asi como sus códigos de estado de respuesta es posible automatizar con un generador de código la creación de un cliente para cualquiera de los lenguajes que se necesite y el generador soporte.</strong></p>
+        <p><strong>Spring Cloud Vault facilita la integración con Vault, una de sus usos es utilizarlo para obtener unas credenciales de conexión a la base de datos generadas bajo demanda y con un tiempo de vida limitado en vez de embeberlas en la configuración de la aplicación y con u tiempo de vida indefinido.</strong></p>
         
-        <p><a href="https://picodotdev.github.io/blog-bitix/2025/05/generar-clientes-rest-con-su-interfaz-openapi/">Continuar leyendo en Blog Bitix</a></p>
+        <p><a href="https://picodotdev.github.io/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/">Continuar leyendo en Blog Bitix</a></p>
 
         ]]>
         </content>
@@ -178,193 +294,115 @@
             
                 <category term="planeta-codigo"/>
             
-        
-    </entry>
-    
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2025/03/proximo-nuevo-ordenador-de-escritorio-framework-desktop/</id>
-        <title>Próximo nuevo ordenador de escritorio, Framework Desktop</title>
-        <updated>2025-03-30T00:00:00+02:00</updated>
-        <published>2025-03-30T00:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2025/03/proximo-nuevo-ordenador-de-escritorio-framework-desktop/"/>
-        <author><name></name></author>
-        <content type="html">
-        <![CDATA[
-
-        <p><strong>He tenido un Intel NUC que me ha ofrecido todo el rendimiento que he necesitado para mis tareas de navegación por internet, ofimáticas y más exigentes de desarrollo, virtualización y trabajo con contenedores, con 32 GB de memoria su desempeño es más que suficiente. Su punto débil está en la gráfica que no es adecuada para juegos, sin embargo para juegos tengo la PlayStation 5. Aún así he decidido cambiar a un nuevo ordenador, el siguiente que tendré será un Framework Desktop. En este artículo describo mis necesidades, motivaciones, el equipo y recopilo la información que he encontrado de él.</strong></p>
-        
-        <p><a href="https://picodotdev.github.io/blog-bitix/2025/03/proximo-nuevo-ordenador-de-escritorio-framework-desktop/">Continuar leyendo en Blog Bitix</a></p>
-
-        ]]>
-        </content>
-        
-            
-                <category term="tecnologia"/>
-            
-                <category term="hardware"/>
+                <category term="programacion"/>
             
         
     </entry>
     
     <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2025/01/analisis-y-guia-de-la-pesadilla-psicotica-tipo-soul-de-hellblade-senua-sacrifice/</id>
-        <title>Análisis y guía de la pesadilla psicótica tipo soul de Hellblade: Senua Sacrifice</title>
-        <updated>2025-01-17T20:00:00+01:00</updated>
-        <published>2025-01-17T20:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2025/01/analisis-y-guia-de-la-pesadilla-psicotica-tipo-soul-de-hellblade-senua-sacrifice/"/>
+        <id>https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/</id>
+        <title>Generar credenciales de conexión a base de datos bajo demanda con Vault</title>
+        <updated>2019-08-15T09:00:00+02:00</updated>
+        <published>2019-08-15T09:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/"/>
         <author><name></name></author>
         <content type="html">
         <![CDATA[
 
-        <p><strong>Este juego es algo distinto empezando por que aunque está creado en formato juego uno de sus objetivos es acercar en qué consiste la enfermedad mental y la psicosis a través del personaje de Senua. En una época en la que si el juego dura menos de medio centenar de horas se considera un juego corto este no dura más de 10 horas.</strong></p>
+        <p><strong>Una de las funcionalidades proporcionada por Vault es generar credenciales dinámicas para la conexión a bases de datos. Generar las credenciales de forma dinámica proporciona varios beneficios: no hay unas credenciales que usen las aplicaciones que tengan un tiempo de vida indefinido, las aplicaciones no necesitan guardar en su configuración las credenciales, las credenciales se rotan de forma automática y los permisos para obtenerlas se pueden revocar de forma centralizada con Vault para cuales quiera bases de datos que se utilicen. Soporta las bases de datos más populares entre ellas PostgreSQL.</strong></p>
         
-        <p><a href="https://picodotdev.github.io/blog-bitix/2025/01/analisis-y-guia-de-la-pesadilla-psicotica-tipo-soul-de-hellblade-senua-sacrifice/">Continuar leyendo en Blog Bitix</a></p>
+        <p><a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">Continuar leyendo en Blog Bitix</a></p>
 
         ]]>
         </content>
         
             
-                <category term="juegos"/>
-            
-        
-    </entry>
-    
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2025/01/articulo-resumen-de-tecnologia-del-2024-y-futuro-2025/</id>
-        <title>Artículo resumen de tecnología del 2024 y futuro 2025</title>
-        <updated>2025-01-07T14:00:00+01:00</updated>
-        <published>2025-01-07T14:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2025/01/articulo-resumen-de-tecnologia-del-2024-y-futuro-2025/"/>
-        <author><name></name></author>
-        <content type="html">
-        <![CDATA[
-
-        
-        
-        <p><a href="https://picodotdev.github.io/blog-bitix/2025/01/articulo-resumen-de-tecnologia-del-2024-y-futuro-2025/">Continuar leyendo en Blog Bitix</a></p>
-
-        ]]>
-        </content>
-        
-            
-                <category term="tecnología"/>
-            
-        
-    </entry>
-    
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2024/12/hemeroteca-24/</id>
-        <title>Hemeroteca #24</title>
-        <updated>2024-12-24T12:00:00+01:00</updated>
-        <published>2024-12-24T12:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2024/12/hemeroteca-24/"/>
-        <author><name></name></author>
-        <content type="html">
-        <![CDATA[
-
-        <p><strong>Aún con menos artículos publicados, menos incluso que el año pasado, algunos he seguido publicando y algún otro actualizando. Menos visitas, menos ingresos, menos tiempo que le dedico al blog aunque me gustaría más si el tiempo que tengo disponible no fuera limitado y los artículos me costase menos tiempo en escribirlos, ideas que voy acumulando tengo para escribir nuevos artículos totalmente libres de contenido generado por inteligencia artificial.</strong></p>
-        
-        <p><a href="https://picodotdev.github.io/blog-bitix/2024/12/hemeroteca-24/">Continuar leyendo en Blog Bitix</a></p>
-
-        ]]>
-        </content>
-        
-            
-                <category term="blog"/>
+                <category term="programacion"/>
             
                 <category term="planeta-codigo"/>
             
-        
-    </entry>
-    
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/</id>
-        <title>Análisis de juego de plataformas Astro’s Playroom</title>
-        <updated>2024-12-05T18:00:00+02:00</updated>
-        <published>2024-12-05T18:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/"/>
-        <author><name></name></author>
-        <content type="html">
-        <![CDATA[
-
-        <p><strong>Como primer juego de PS5 que juego he pasado un buen rato con Astro&rsquo;s Playroom cargado de referencias a la consola PlayStation y toda su colección mítica de personajes que hace sacar una sonrisa y unos buenos recuerdos de haber jugado a muchos otros personajes de los juegos de Sony. Un juego que tiene como objetivo estar incluido en la PlayStation y ser una demostración de las capacidades de la consola y mando DualSense. Un juego corto y música divertida del robotito Astro con el que posteriomente se ha publicado ya si un juego completo con Astro Bot: Rescue Mission.</strong></p>
-        
-        <p><a href="https://picodotdev.github.io/blog-bitix/2024/12/analisis-de-juego-de-plataformas-astros-playroom/">Continuar leyendo en Blog Bitix</a></p>
-
-        ]]>
-        </content>
-        
-            
-                <category term="juegos"/>
+                <category term="software"/>
             
         
     </entry>
     
     <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2024/10/desempaquetado-y-analisis-de-la-barra-de-luz-para-monitor-benq-screenbar-pro/</id>
-        <title>Desempaquetado y análisis de la barra de luz para monitor BenQ ScreenBar Pro</title>
-        <updated>2024-10-24T20:00:00+02:00</updated>
-        <published>2024-10-24T20:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2024/10/desempaquetado-y-analisis-de-la-barra-de-luz-para-monitor-benq-screenbar-pro/"/>
+        <id>https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/</id>
+        <title>Administrar secretos y proteger datos sensibles con Vault</title>
+        <updated>2019-07-27T23:00:00+02:00</updated>
+        <published>2019-07-27T18:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/"/>
         <author><name></name></author>
         <content type="html">
         <![CDATA[
 
-        <p><strong>La luz led que tenía para iluminar la mesa y pantalla de ordenador no era la más adecuada. No estaba adaptada para el trabajo con ordenador con lo que la vista se me resentía y me molestaba ya que en parte me daba en los ojos. Una barra de luz para monitor de ordenador proporciona una mejor iluminación tanto para el monitor y la mesa, de modo que para cuidar lo que pueda mi vista he comprado una barra de luz para monitor. Estando contento con la marca BenQ por el monitor BenQ PD2700 que tengo he adquirido la barra de luz BenQ ScreenBar Pro de la que en este artículo  hago su desempaquetado y análisis.</strong></p>
+        <p><strong>Herramientas de aprovisionamiento como Chef, Puppet y Ansible solucionan el problema de la seguridad de los secretos de forma similar, utilizando una única clave de cifrado. Los datos cifrados están siempre a un secreto (contraseña, clave, &hellip;) de ser descifrados y generalmente no está bien protegidos dado que en un entorno elástico cada servidor necesita disponer de este secreto para descifrar los datos. Adicionalmente el acceso a los datos cifrados no está registrado de modo que si hay una intrusión no está claro que dato ha sido accedido y por quien. Utilizar variables de entorno para proporcionar secretos tampoco es seguro, y en entornos Docker suele usarse.</strong></p>
         
-        <p><a href="https://picodotdev.github.io/blog-bitix/2024/10/desempaquetado-y-analisis-de-la-barra-de-luz-para-monitor-benq-screenbar-pro/">Continuar leyendo en Blog Bitix</a></p>
+        <p><a href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/">Continuar leyendo en Blog Bitix</a></p>
 
         ]]>
         </content>
         
             
-                <category term="hardware"/>
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+                <category term="software"/>
             
         
     </entry>
     
     <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2024/10/mis-inversiones-con-indexa-capital-y-myinvestor-despues-de-un-ano/</id>
-        <title>Mis inversiones con Indexa Capital y MyInvestor después de un año</title>
-        <updated>2024-10-06T15:00:00+02:00</updated>
-        <published>2024-10-06T15:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2024/10/mis-inversiones-con-indexa-capital-y-myinvestor-despues-de-un-ano/"/>
+        <id>https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/</id>
+        <title>Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator</title>
+        <updated>2019-05-26T11:30:00+02:00</updated>
+        <published>2019-05-26T11:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/"/>
         <author><name></name></author>
         <content type="html">
         <![CDATA[
 
-        <p><strong>En el año 2023 empecé a conocer los conceptos básicos de inversión porque tenía la sensación de que en mi banco no me estaban ofreciendo buenos productos de inversión ni en rentabilidades ni en costes. Así que después de leer un par de libros con esos conceptos básicos de inversión abrí cuentas en Indexa Capital y MyInvestor. Pasado un año hago balance de estas inversiones y las comparo con las de mi banco. En conclusión del artículo las rentabilidades de los productos de mi banco son significativamente menores con lo que seguramente me planificaré el deshacerlas.</strong></p>
+        <p><strong>En los microservicios se hace necesario un servicio de registro y descubrimiento como Eureka o Consul que permita conocer la ubicación de las instancias en cada momento. Las instancias de los servicios se pueden registrar ellas mismas o esta tarea se puede delegar en una en otro servicio. Al usar contenedores de Docker una herramienta que permite delegar el registro y desregistro en Consul de los servicios es GliderLabs Registrator.</strong></p>
         
-        <p><a href="https://picodotdev.github.io/blog-bitix/2024/10/mis-inversiones-con-indexa-capital-y-myinvestor-despues-de-un-ano/">Continuar leyendo en Blog Bitix</a></p>
+        <p><a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">Continuar leyendo en Blog Bitix</a></p>
 
         ]]>
         </content>
         
             
-                <category term="fuera-de-tema"/>
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+                <category term="software"/>
             
         
     </entry>
     
     <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2024/09/analisis-y-guia-del-magnifico-juego-de-rol-the-witcher-3/</id>
-        <title>Análisis y guía del magnífico juego de rol The Witcher 3</title>
-        <updated>2024-09-15T14:00:00+02:00</updated>
-        <published>2024-09-15T14:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2024/09/analisis-y-guia-del-magnifico-juego-de-rol-the-witcher-3/"/>
+        <id>https://picodotdev.github.io/blog-bitix/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/</id>
+        <title>Crear de forma sencilla y rápida máquinas virtuales de VirtualBox con Vagrant</title>
+        <updated>2019-05-10T17:00:00+02:00</updated>
+        <published>2019-05-10T17:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/"/>
         <author><name></name></author>
         <content type="html">
         <![CDATA[
 
-        <p><strong>The Witcher 3 es un juego muy apreciado, después de casi completarlo incluidas sus expansiones tiene varios aspectos por los que comprendo ese reconocimiento que tiene y que lo hace un poco diferente a los juegos que he jugado. Una cantidad de historias abrumadora, un mapa de mundo abierto plagado de localizaciones que explorar y donde las decisiones importan. Un juego largo pero que no se hace repetitivo y se disfruta más degustando de forma lenta las historias. Un juego muy recomendable si se quiere dedicarle la cantidad de horas que requiere.</strong></p>
         
-        <p><a href="https://picodotdev.github.io/blog-bitix/2024/09/analisis-y-guia-del-magnifico-juego-de-rol-the-witcher-3/">Continuar leyendo en Blog Bitix</a></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/">Continuar leyendo en Blog Bitix</a></p>
 
         ]]>
         </content>
         
             
-                <category term="juegos"/>
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+                <category term="software"/>
             
         
     </entry>
