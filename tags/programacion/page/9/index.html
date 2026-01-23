@@ -228,6 +228,35 @@
     
     <li>
       <article>
+        <h1><a href="/blog-bitix/2018/05/recuperar-datos-eficientemente-en-graphql-usando-batching/">Recuperar datos eficientemente en GraphQL usando batching</a></h1>
+        <span class="information">
+          <time>20/05/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
+</div>
+<p>Dada una consulta con los datos a recuperar <a href="https://graphql.org/">GraphQL</a> hace una llamada al correspondiente <em>resolver</em> o <em>data fecher</em> para obtener el valor de cada propiedad. Cuando se tratan de propiedades en un <em>java bean</em> esto no supone ningún problema en cuanto a rendimiento pero cuando obtener el valor de una propiedad es costoso la consulta resulta ineficiente.</p>
+<p>Por ejemplo, siguiendo el ejemplo que he utilizado en anteriores <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">artículos sobre GraphQL</a> de una librería en la que hay un tipo para representar un libro con una propiedad con sus comentarios, con una consulta que permite recuperar los libros para cada uno de ellos se llama al <em>resolver</em> que recupera los comentarios. En este ejemplo no ya que están los datos en memoria y no se usa una base de datos pero si recuperar los comentarios de cada libro supusiera una consulta SQL en una base de datos relacional (o tráfico de red en una base de datos NoSQL u otro servicio) y la lista de libros devuelta fuese grande cada vez que se realizará esta consulta el número de sentencias SQL a ejecutar sería grande y el tiempo de respuesta pobre y con una carga mayor para el servidor de base de datos.</p>
+          
+          <br>
+          <a href="/blog-bitix/2018/05/recuperar-datos-eficientemente-en-graphql-usando-batching/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2018/05/depurar-codigo-javascript-con-la-instruccion-debugger/">Depurar código JavaScript con la instrucción debugger</a></h1>
         <span class="information">
           <time>18/05/2018</time>
@@ -598,34 +627,6 @@
           
           <br>
           <a href="/blog-bitix/2018/02/las-6-plus-2-formas-normales-de-las-bases-de-datos-relacionales/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2018/02/analisis-estatico-de-codigo-con-pmd-y-un-ejemplo/">Análisis estático de código con PMD y un ejemplo</a></h1>
-        <span class="information">
-          <time>03/02/2018</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/pmd.webp" width="300" height="220" alt="PMD" title="PMD" class="" loading="false"></p>
-</div>
-<p>El mantenimiento de un programa es la parte que más tiempo consume en su desarrollo y realmente son más los proyectos que hay que mantener que los que se empiezan desde cero. Por lo tanto el software se debe diseñar además de para funcionar correctamente y de forma suficientemente eficiente de tal forma que los futuros cambios sean en la medida de lo posible sencillos de realizar. Hay varios motivos por los que un software necesita mantenimiento según sus categorías:</p>
-          
-          <br>
-          <a href="/blog-bitix/2018/02/analisis-estatico-de-codigo-con-pmd-y-un-ejemplo/">Continuar leyendo...</a>
         </p>
       </article>
     </li>

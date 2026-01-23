@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="La documentación es imprescindible en la programación o al menos de enorme ayuda que facilita comprender el elemento documentado. Sin embargo, ela documentación es uno de los aspecto que no siempre se le da la relevancia que se le da a otros aspectos. En la documentación ténica se incluyen diagramas que son una representación gŕafica del objeto documentado. Hay diagramas de diferentes tipos que representa un aspecto del objeto documentado como un diagramas de secuencia, de estado, de clases, entidad releación o de arquitectura. Habitualmente estos diagramas se crean con una herramienta gráfica y se exportan como una imagen, la dificultad está en la actualización de esa imagen que es mucho más compleja. Mermeaid es un formato de texto que permite crear diagramas con un formato de texto. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Crear diagramas gráficos con el formato de texto Mermaid</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/" hreflang="es" title="Crear diagramas gráficos con el formato de texto Mermaid">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preload" href="/blog-bitix/asssets/fonts/pt-serif/pt-serif.css" as="style">
+  <link rel="preload" href="/blog-bitix/asssets/fonts/open-sans/open-sans.css" as="style">
+  <link href="/blog-bitix/assets/fonts/pt-serif/pt-serif.css" rel="stylesheet">
+  <link href="/blog-bitix/assets/fonts/open-sans/open-sans.css" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Crear diagramas gráficos con el formato de texto Mermaid">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/images/diagrama-de-estado_hu_3096f939fb34a5d6.webp">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="La documentación es imprescindible en la programación o al menos de enorme ayuda que facilita comprender el elemento documentado. Sin embargo, ela documentación es uno de los aspecto que no siempre se le da la relevancia que se le da a otros aspectos. En la documentación ténica se incluyen diagramas que son una representación gŕafica del objeto documentado. Hay diagramas de diferentes tipos que representa un aspecto del objeto documentado como un diagramas de secuencia, de estado, de clases, entidad releación o de arquitectura. Habitualmente estos diagramas se crean con una herramienta gráfica y se exportan como una imagen, la dificultad está en la actualización de esa imagen que es mucho más compleja. Mermeaid es un formato de texto que permite crear diagramas con un formato de texto. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/images/diagrama-de-estado_hu_3096f939fb34a5d6.webp">
+
+<meta name="twitter:site" content="">
+<meta name="twitter:title" content="Crear diagramas gráficos con el formato de texto Mermaid">
+<meta name="twitter:description" content="La documentación es imprescindible en la programación o al menos de enorme ayuda que facilita comprender el elemento documentado. Sin embargo, ela documentación es uno de los aspecto que no siempre se le da la relevancia que se le da a otros aspectos. En la documentación ténica se incluyen diagramas que son una representación gŕafica del objeto documentado. Hay diagramas de diferentes tipos que representa un aspecto del objeto documentado como un diagramas de secuencia, de estado, de clases, entidad releación o de arquitectura. Habitualmente estos diagramas se crean con una herramienta gráfica y se exportan como una imagen, la dificultad está en la actualización de esa imagen que es mucho más compleja. Mermeaid es un formato de texto que permite crear diagramas con un formato de texto. &hellip;">
+<meta name="twitter:creator" content="">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/"
+    },
+    "headline": "Crear diagramas gráficos con el formato de texto Mermaid",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/images/diagrama-de-estado_hu_3096f939fb34a5d6.webp"
+        
+      },
+    "datePublished": "2026-01-17T00:00:00+02:00",
+    "dateModified": "2026-01-17T00:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "634",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "description": "",
+        "url": ""
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "La documentación es imprescindible en la programación o al menos de enorme ayuda que facilita comprender el elemento documentado. Sin embargo, ela documentación es uno de los aspecto que no siempre se le da la relevancia que se le da a otros aspectos. En la documentación ténica se incluyen diagramas que son una representación gŕafica del objeto documentado. Hay diagramas de diferentes tipos que representa un aspecto del objeto documentado como un diagramas de secuencia, de estado, de clases, entidad releación o de arquitectura. Habitualmente estos diagramas se crean con una herramienta gráfica y se exportan como una imagen, la dificultad está en la actualización de esa imagen que es mucho más compleja. Mermeaid es un formato de texto que permite crear diagramas con un formato de texto."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+  
+  <script type="text/javascript" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async></script>
+<script>
+    window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() {
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1750, 0], [[300, 600]])
+        .addSize([0, 0], [])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600]])
+        .addSize([1280, 0], [[160, 600]])
+        .addSize([0, 0], [])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+    });
+</script>
+
+  
+  
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/images/diagrama-de-estado_hu_4118b577bcb754a3.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            
+<div id='div-gpt-ad-1705155070019-0' style='min-width: 160px; min-height: 600px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705155070019-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Crear diagramas gráficos con el formato de texto Mermaid</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>17/01/2026</time>.
+      
+        <br>
+        <i class="bi bi-tag"></i>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <i class="bi bi-link-45deg"></i>
+      <a href="/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/">Enlace permanente</a>
+      
+        <i class="bi bi-chat"></i>
+        <a href="/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">La documentación es imprescindible en la programación o al menos de enorme ayuda que facilita comprender el elemento documentado. Sin embargo, ela documentación es uno de los aspecto que no siempre se le da la relevancia que se le da a otros aspectos. En la documentación ténica se incluyen diagramas que son una representación gŕafica del objeto documentado. Hay diagramas de diferentes tipos que representa un aspecto del objeto documentado como un diagramas de secuencia, de estado, de clases, entidad releación o de arquitectura. Habitualmente estos diagramas se crean con una herramienta gráfica y se exportan como una imagen, la dificultad está en la actualización de esa imagen que es mucho más compleja. Mermeaid es un formato de texto que permite crear diagramas con un formato de texto.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      
+<div id='div-gpt-ad-1705154918797-0' style='min-width: 300px; min-height: 90px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154918797-0'); });
+  </script>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+      <p>La documentación al igual que los teses unitarios o formatear bien el código siguiendo las convenciones definidas para mi es parte intrínseca de una tarea, no hace falta indicarlo explícitamente de una tarea.</p>
+<p>Al empezar en un área desconocida habitualmente lo primero que se pide a los demás casi como si fuera un derecho, también habitualmente ya hacerla para los demás ya tal.</p>
+<p>Hay varias formas de documentación, comentarios de código, archivo <em>README</em> de un repositorio, una página de gestión de conocimiento colaborativo como una wiki. Varias son en formato de texto y prosa, otras una representación gráfica de los conceptos.</p>
+<p>Al explicar conceptos complejos un gráfico permite transmitirlos de forma más fácil en la que queden representados los conceptos relevantes.</p>
+<p>Habitualmente se ha utilizado una imagen generada por alguna aplicación que permite componer el esquema con rectángulos, etiquetas y flechas. Una imagen es más difícil de actualizar en un futuro, cuanto más difícil y tiempo lleve actualizar la documentación más fácilmente es que no se actualice por pereza.</p>
+<p>Es por esta facilidad de actualización edición en la que los formatos de texto como Markdown para documentos se han expandido, tiene unas reglas simples para dar el formato, son simples de editar y no se necesita ninguna aplicación específica solo se necesita un editor de texto.</p>
+<h2 id="el-markdown-para-gráficos-orientados-a-programación">El Markdown para gráficos orientados a programación</h2>
+<p>¿No sería genial que por sus ventajas hubiera un formato de texto para representar gráficos orientados al área de tecnología y programación? Pues estamos de suerte porque si lo hay, y varios, dos de ellos son <a href="https://plantuml.com">PlantUML</a> y <a href="https://mermaid.js.org">Mermaid</a>, cualquiera de ellos puede considerarse el Markdown para gráficos como diagramas de secuencia, diagramas de estado, diagramas de clases, diagramas entidad relación, diagramas de arquitectura, &hellip; entre muchos otros. Mermaid posee un <a href="https://mermaid.live/edit">editor gráfico online</a> que va visualizando el resultado a medida que se edita el texto del diagrama.</p>
+<p>Habitualmente creando un gráfico empleamos más tiempo alineando los elementos, manipulando los elementos del gráfico y exportando el contenido a una imagen que creando el contenido del mismo. En las herramientas como Mermaid es al reves el tiempo que se emplea es únicamente para crear el contenido del gráfico, el tiempo nenecesario para conocer la sintaxis que es bastante simple y hay ejemplo de cada una de las opciones. Además algunas herramientas gráficas no son especificas para la creación de diagramas orientados a la programación.</p>
+<p>Mermaid se encarga de alinear y establecer la disposición de los elementos automáticamente para que se visualicen correctamente. Al crear digramas con un formato de texto obtenemos el mismo beneficio que el código fuente al incorporarlo a un sistema de control de versiones como <a href="https://git-scm.com/">Git</a>. Ver claramente las diferencias entre las diferentes versiones y menos espacio ocupado en el repositorio.</p>
+<p>Una herramienta gráfica como alternativa es <a href="https://gaphor.org/">Gaphor</a>.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/">Los diagramas UML para documentar y una aplicación para crearlos</a></li>
+</ul>
+<p>En la documentación de Mermaid hay ejemplos del formato de texto a seguir para cada uno de los diagramas y de las diferentes opciones que permite. Además tiene un editor que a medida que se escribe lo representa de forma gráfica.</p>
+<p>El Markdown de GitHub soporta Mermaid que a partir del texto lo representa de forma gráfica como en los archivos <em>README</em>.</p>
+<h3 id="ejemplos">Ejemplos</h3>
+<p>Estos son un diagrama de estado, un diagrama de clases, un diagrama de secuencia, un diagrama entidad relación y un diagrama de arquitectura.</p>
+<h4 id="diagrama-de-flujo">Diagrama de flujo</h4>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">flowchart LR&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Start --&gt; Process&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Process --&gt; End</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>diagrama-de-flujo.mermaid</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/images/diagrama-de-flujo_hu_72f8110fe2d2aa7d.webp" data-gallery="" title="Diagrama de flujo"><img src="/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/images/diagrama-de-flujo_hu_df00f77fcf1bdae1.webp" width="650" height="106" alt="Diagrama de flujo" title="Diagrama de flujo" class="" loading="lazy"></a></p>
+<figcaption>Diagrama de flujo</figcaption>
+</figure>
+</div>
+<h4 id="diagrama-de-secuencia">Diagrama de secuencia</h4>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">sequenceDiagram&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Alice -&gt;&gt; John: Hello John, how are you?&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;John --&gt;&gt; Alice: Great!&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Alice-)John: See you later!</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>diagrama-de-secuencia.mermaid</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/images/diagrama-de-secuencia_hu_1ef4d563ec5323ee.webp" data-gallery="" title="Diagrama de secuencia"><img src="/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/images/diagrama-de-secuencia_hu_cf2e06b7f2d87fe0.webp" width="634" height="450" alt="Diagrama de secuencia" title="Diagrama de secuencia" class="" loading="lazy"></a></p>
+<figcaption>Diagrama de secuencia</figcaption>
+</figure>
+</div>
+<h4 id="diagrama-de-estado">Diagrama de estado</h4>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">stateDiagram-v2&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;direction LR&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;[*] --&gt; Still&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Still --&gt; [*]&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Still --&gt; Moving&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Moving --&gt; Still&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Moving --&gt; Crash&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Crash --&gt; [*]</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>diagrama-de-estado.mermaid</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/images/diagrama-de-estado_hu_6e27a5fa42fb5dea.webp" data-gallery="" title="Diagrama de estado"><img src="/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/images/diagrama-de-estado_hu_728f1b45922ebbe1.webp" width="650" height="141" alt="Diagrama de estado" title="Diagrama de estado" class="" loading="lazy"></a></p>
+<figcaption>Diagrama de estado</figcaption>
+</figure>
+</div>
+<h4 id="diagrama-entidad-relación">Diagrama entidad relación</h4>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">erDiagram&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Customer ||--o{ Order : places&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Order ||--|{ Item : contains&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Customer }|..|{ Address : uses</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>diagrama-entidad-relacion.mermaid</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/images/diagrama-entidad-relacion_hu_bcb55327f6703c0b.webp" data-gallery="" title="Diagrama entidad relación"><img src="/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/images/diagrama-entidad-relacion_hu_88a11b24f34dc436.webp" width="342" height="450" alt="Diagrama entidad relación" title="Diagrama entidad relación" class="" loading="lazy"></a></p>
+<figcaption>Diagrama entidad relación</figcaption>
+</figure>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+          
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/">
+                <img src="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/qr-code_hu_2d035c8dc13167d3.webp" width="326" height="125" alt="Generar códigos de barras y códigos QR con Java" title="Generar códigos de barras y códigos QR con Java" class="" loading="lazy">
+                <h3>Generar códigos de barras y códigos QR con Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/02/introduccion-conceptos-y-uso-basico-del-broker-de-mensajes-apache-kafka/">
+                <img src="/blog-bitix/assets/images/logotypes/apache-kafka.svg" width="326" height="125" alt="Introducción, conceptos y uso básico del broker de mensajes Apache Kafka" title="Introducción, conceptos y uso básico del broker de mensajes Apache Kafka" class="" loading="lazy">
+                <h3>Introducción, conceptos y uso básico del broker de mensajes Apache Kafka</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-waypoint.svg" width="326" height="125" alt="Construir, desplegar y observar aplicaciones de forma uniforme con Waypoint" title="Construir, desplegar y observar aplicaciones de forma uniforme con Waypoint" class="" loading="lazy">
+                <h3>Construir, desplegar y observar aplicaciones de forma uniforme con Waypoint</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/01/construir-la-imagen-del-contenedor-de-la-aplicacion-usando-buildpacks/">
+                <img src="/blog-bitix/assets/images/logotypes/buildpacksio.svg" width="326" height="125" alt="Construir la imagen del contenedor de la aplicación usando Buildpacks" title="Construir la imagen del contenedor de la aplicación usando Buildpacks" class="" loading="lazy">
+                <h3>Construir la imagen del contenedor de la aplicación usando Buildpacks</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/12/radar-tecnologico-y-otras-fuentes-de-informacion-sobre-programacion/">
+                <img src="/blog-bitix/2022/12/radar-tecnologico-y-otras-fuentes-de-informacion-sobre-programacion/images/thoughtworks-radar_hu_7f06eebf3e5baae5.webp" width="326" height="125" alt="Radar tecnológico y otras fuentes de información sobre programación" title="Radar tecnológico y otras fuentes de información sobre programación" class="" loading="lazy">
+                <h3>Radar tecnológico y otras fuentes de información sobre programación</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/12/base-de-datos-de-paises-regiones-ciudades-codigos-postales-y-otra-informacion-geografica/">
+                <img src="/blog-bitix/2022/12/base-de-datos-de-paises-regiones-ciudades-codigos-postales-y-otra-informacion-geografica/images/geonames_hu_4f2ae1e0e53bcb68.webp" width="326" height="125" alt="Base de datos de países, regiones, ciudades, códigos postales y otra información geográfica" title="Base de datos de países, regiones, ciudades, códigos postales y otra información geográfica" class="" loading="lazy">
+                <h3>Base de datos de países, regiones, ciudades, códigos postales y otra información geográfica</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-722';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2026\/01\/crear-diagramas-graficos-con-el-formato-de-texto-mermaid\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/privacy/">Política de privacidad</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2026 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>
