@@ -18,15 +18,13 @@ summary: "La documentación es imprescindible en la programación o al menos de 
 
 {{% post %}}
 
-La documentación al igual que los teses unitarios o formatear bien el código siguiendo las convenciones definidas para mi es parte intrínseca de una tarea, no hace falta indicarlo explícitamente de una tarea.
+La documentación al igual que los teses unitarios o formatear bien el código siguiendo las convenciones definidas para mi es parte intrínseca de una tarea, no hace falta indicarlo explícitamente.
 
 Al empezar en un área desconocida habitualmente lo primero que se pide a los demás casi como si fuera un derecho, también habitualmente ya hacerla para los demás ya tal.
 
-Hay varias formas de documentación, comentarios de código, archivo _README_ de un repositorio, una página de gestión de conocimiento colaborativo como una wiki. Varias son en formato de texto y prosa, otras una representación gráfica de los conceptos.
+Hay varias formas de documentación, comentarios de código, archivo _README_ de un repositorio, una página de gestión de conocimiento colaborativo como una wiki. Varias son en formato de texto y prosa, otras una representación gráfica de los conceptos. Al explicar conceptos complejos un gráfico permite transmitirlos de forma más fácil en la que queden representados los conceptos relevantes.
 
-Al explicar conceptos complejos un gráfico permite transmitirlos de forma más fácil en la que queden representados los conceptos relevantes.
-
-Habitualmente se ha utilizado una imagen generada por alguna aplicación que permite componer el esquema con rectángulos, etiquetas y flechas. Una imagen es más difícil de actualizar en un futuro, cuanto más difícil y tiempo lleve actualizar la documentación más fácilmente es que no se actualice por pereza.
+En esos gráficos habitualmente se utiliza una imagen generada por alguna aplicación que permite componer el esquema con rectángulos, etiquetas y flechas. Una imagen es más difícil de actualizar en un futuro, cuanto más difícil y tiempo lleve actualizar la documentación más fácilmente es que no se actualice por pereza o por falta de tiempo.
 
 Es por esta facilidad de actualización edición en la que los formatos de texto como Markdown para documentos se han expandido, tiene unas reglas simples para dar el formato, son simples de editar y no se necesita ninguna aplicación específica solo se necesita un editor de texto.
 
@@ -34,7 +32,7 @@ Es por esta facilidad de actualización edición en la que los formatos de texto
 
 ¿No sería genial que por sus ventajas hubiera un formato de texto para representar gráficos orientados al área de tecnología y programación? Pues estamos de suerte porque si lo hay, y varios, dos de ellos son [PlantUML][plantuml] y [Mermaid][mermaid], cualquiera de ellos puede considerarse el Markdown para gráficos como diagramas de secuencia, diagramas de estado, diagramas de clases, diagramas entidad relación, diagramas de arquitectura, ... entre muchos otros. Mermaid posee un [editor gráfico online](https://mermaid.live/edit) que va visualizando el resultado a medida que se edita el texto del diagrama. 
 
-Habitualmente creando un gráfico empleamos más tiempo alineando los elementos, manipulando los elementos del gráfico y exportando el contenido a una imagen que creando el contenido del mismo. En las herramientas como Mermaid es al reves el tiempo que se emplea es únicamente para crear el contenido del gráfico, el tiempo nenecesario para conocer la sintaxis que es bastante simple y hay ejemplo de cada una de las opciones. Además algunas herramientas gráficas no son especificas para la creación de diagramas orientados a la programación.
+Habitualmente creando un gráfico empleamos más tiempo alineando los elementos, manipulando los elementos del gráfico y exportando el contenido a una imagen que creando el contenido del mismo. En las herramientas como Mermaid es al reves el tiempo que se emplea es únicamente para crear el contenido del gráfico, el tiempo nenecesario para conocer la sintaxis que es bastante simple y hay ejemplos de cada una de las opciones de la sintaxis y formato. Además algunas herramientas gráficas no son especificas para la creación de diagramas orientados a la programación.
 
 Mermaid se encarga de alinear y establecer la disposición de los elementos automáticamente para que se visualicen correctamente. Al crear digramas con un formato de texto obtenemos el mismo beneficio que el código fuente al incorporarlo a un sistema de control de versiones como [Git][git]. Ver claramente las diferencias entre las diferentes versiones y menos espacio ocupado en el repositorio. 
 
