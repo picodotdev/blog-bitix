@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="El tema de actualidad en este momento es la IA, está por ver si va a ser una evolución útil o una nueva burbuja. Que diferencia hay entre un buscador y un asistente de IA y revisitaindo anteriores evoluciones y burbujas está por ver si realmente son una mejora para realizar diferentes trabajos. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>La revolución de los asistentes de inteligencia artificial</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2026/03/la-revolucion-de-los-asistentes-de-inteligencia-artificial/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2026/03/la-revolucion-de-los-asistentes-de-inteligencia-artificial/" hreflang="es" title="La revolución de los asistentes de inteligencia artificial">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preload" href="/blog-bitix/asssets/fonts/pt-serif/pt-serif.css" as="style">
+  <link rel="preload" href="/blog-bitix/asssets/fonts/open-sans/open-sans.css" as="style">
+  <link href="/blog-bitix/assets/fonts/pt-serif/pt-serif.css" rel="stylesheet">
+  <link href="/blog-bitix/assets/fonts/open-sans/open-sans.css" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="La revolución de los asistentes de inteligencia artificial">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2026/03/la-revolucion-de-los-asistentes-de-inteligencia-artificial/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2026/03/la-revolucion-de-los-asistentes-de-inteligencia-artificial/images/asistentes-de-ia_hu_e5d9e2ba617f2679.webp">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="El tema de actualidad en este momento es la IA, está por ver si va a ser una evolución útil o una nueva burbuja. Que diferencia hay entre un buscador y un asistente de IA y revisitaindo anteriores evoluciones y burbujas está por ver si realmente son una mejora para realizar diferentes trabajos. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2026/03/la-revolucion-de-los-asistentes-de-inteligencia-artificial/images/asistentes-de-ia_hu_e5d9e2ba617f2679.webp">
+
+<meta name="twitter:site" content="">
+<meta name="twitter:title" content="La revolución de los asistentes de inteligencia artificial">
+<meta name="twitter:description" content="El tema de actualidad en este momento es la IA, está por ver si va a ser una evolución útil o una nueva burbuja. Que diferencia hay entre un buscador y un asistente de IA y revisitaindo anteriores evoluciones y burbujas está por ver si realmente son una mejora para realizar diferentes trabajos. &hellip;">
+<meta name="twitter:creator" content="">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2026/03/la-revolucion-de-los-asistentes-de-inteligencia-artificial/"
+    },
+    "headline": "La revolución de los asistentes de inteligencia artificial",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2026/03/la-revolucion-de-los-asistentes-de-inteligencia-artificial/images/asistentes-de-ia_hu_e5d9e2ba617f2679.webp"
+        
+      },
+    "datePublished": "2026-03-08T12:00:00+02:00",
+    "dateModified": "2026-03-08T12:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "3432",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "I ♥ Java, GNU/Linux and libre software.",
+        "url": ""
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "El tema de actualidad en este momento es la IA, está por ver si va a ser una evolución útil o una nueva burbuja. Que diferencia hay entre un buscador y un asistente de IA y revisitaindo anteriores evoluciones y burbujas está por ver si realmente son una mejora para realizar diferentes trabajos."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+  
+  <script type="text/javascript" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async></script>
+<script>
+    window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() {
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1750, 0], [[300, 600]])
+        .addSize([0, 0], [])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600]])
+        .addSize([1280, 0], [[160, 600]])
+        .addSize([0, 0], [])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+    });
+</script>
+
+  
+  
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2026/03/la-revolucion-de-los-asistentes-de-inteligencia-artificial/images/asistentes-de-ia_hu_10503d97c5e20436.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            
+<div id='div-gpt-ad-1705155070019-0' style='min-width: 160px; min-height: 600px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705155070019-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>La revolución de los asistentes de inteligencia artificial</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>08/03/2026</time>.
+      
+        <br>
+        <i class="bi bi-tag"></i>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <i class="bi bi-link-45deg"></i>
+      <a href="/blog-bitix/2026/03/la-revolucion-de-los-asistentes-de-inteligencia-artificial/">Enlace permanente</a>
+      
+        <i class="bi bi-chat"></i>
+        <a href="/blog-bitix/2026/03/la-revolucion-de-los-asistentes-de-inteligencia-artificial/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">El tema de actualidad en este momento es la IA, está por ver si va a ser una evolución útil o una nueva burbuja. Que diferencia hay entre un buscador y un asistente de IA y revisitaindo anteriores evoluciones y burbujas está por ver si realmente son una mejora para realizar diferentes trabajos.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      
+<div id='div-gpt-ad-1705154918797-0' style='min-width: 300px; min-height: 90px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154918797-0'); });
+  </script>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/claude.svg" width="300" height="300" alt="Claude" title="Claude" class="" loading="false"></p>
+</div>
+<p>Hace un tiempo las últimas ebulliciones estaban en el blockchain, luego en las criptomonedas y la ebullición actual es la inteligencia artificial o IA, y anteriormente en las empresas punto com. No hay empresa de relevancia que esté compitiendo en el mercado de la IA tanto que como resultado colateral los centros de datos están acaparando la capacidad de cómputo y almacenamiento afectando a los precios de la memoria y almacenamiento, al igual que pasó con las tarjetas gráficas y la minería de criptomonedas.</p>
+<p>Desde hace un tiempo he empezado a usar más un asistente de inteligencia artificial que un buscador, he estado usando el de DuckDuckGo por sus propiedades de privacidad. Y los resultados que me da son bastante acertados, por otro lado tardo menos tiempo el resolver el problema por el que pregunto.</p>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
+    <li><a href="#la-diferencia-entre-buscador-y-asistente-de-inteligencia-artificial">La diferencia entre buscador y asistente de inteligencia artificial</a></li>
+    <li><a href="#burbuja-o-nueva-revolución">¿Burbuja o nueva revolución?</a></li>
+    <li><a href="#usando-un-asistente-de-ia">Usando un asistente de IA</a></li>
+    <li><a href="#el-artículo-de-la-ia">El artículo de la IA</a>
+      <ol>
+        <li><a href="#introducción-el-ciclo-eterno-de-la-innovación-tecnológica">Introducción: El Ciclo Eterno de la Innovación Tecnológica</a></li>
+        <li><a href="#buscadores-vs-asistentes-de-ia-un-cambio-de-paradigma-en-el-acceso-al-conocimiento">Buscadores vs. Asistentes de IA: Un Cambio de Paradigma en el Acceso al Conocimiento</a></li>
+        <li><a href="#burbuja-o-revolución-la-ia-ante-el-juicio-de-la-historia">¿Burbuja o Revolución? La IA ante el Juicio de la Historia</a></li>
+        <li><a href="#claude-code-y-el-futuro-del-desarrollo-de-software">Claude Code y el Futuro del Desarrollo de Software</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav></div> </div><div class="col-12 col-lg-6"></div></div>
+<h2 id="la-diferencia-entre-buscador-y-asistente-de-inteligencia-artificial">La diferencia entre buscador y asistente de inteligencia artificial</h2>
+<p>Un buscador requiere dar con el artículo que contenta la solución al problema o información por la que se pregunta, los buscadores ordenan los resultados con la intención de que los primeros sean los más adecuados para la pregunta, pero en algunos casos no es así y uno tiene que pasar un buen tiempo accediendo a varios. Cada pregunta en un buscador es independiente de la anterior.</p>
+<p>Un asistente de IA en la respuesta que da crea el artículo ajustado a los que se pregunta, incluyendo una respuesta habitualmente acertada. Además, las diferentes preguntas sobre el mismo tema se mantienen en la misma conversación con lo que el asistente de IA tiene el contexto de las diferentes preguntas. Y si la respuesta en un primer momento no es adecuada es posible repreguntar para obtener una mejor respuesta.</p>
+<p>Los buscadores tradicionales simplemente indexan la web y la ordenan en relevancia, y dan resultados en base a palabras clave. Los asistentes de IA van un paso más, indexan el contenido de todos los artículos, libros y vídeos u otro material con el que se entrenan, categorizando la información, ordenandola y relacionándola para ser capaces no de proporcional el artículo que tiene la mejor respuesta sino de crear un nuevo artículo con todo su material del modelo. Otro aspecto de los asistentes de IA es que es posible proporcionar una conversación en lenguaje natural refinando las preguntas sobre un mismo tema y es posible proporcionar contexto que ayude al asistente de IA a proporcionar la respuesta.</p>
+<h2 id="burbuja-o-nueva-revolución">¿Burbuja o nueva revolución?</h2>
+<p>A lo largo del tiempo hay eventos y evoluciones que suponen un punto de inflexión, como los smartphones, computación en la nube o comercio electrónico que cambian drásticamente el mercado. La IA es uno de esos nuevos puntos de inflexión que cambia la forma en la que trabajamos y potencialmente aumenta la productividad y eficiencia de ciertos trabajos.</p>
+<p>En la competencia que existe ahora entre varias empresas es posible que como en anteriores ocasiones algunos triunfen y otros caigan en el olvido y en la irrelevancia según sean los usuarios los que elijan cual es la opción que prefieren.</p>
+<p>En el ámbito de mi trabajo como ingeniero de software es más una revolución que con la ayuda de un asistente de IA me va a permitir hacer mejor y más eficiente mi trabajo. Mejor porque con las preguntas adecuadas obtener mejores respuestas y opciones que puedo considerar, y por otro lado más eficiente porque obtengo las respuestas en menos tiempo.</p>
+<p>Tareas como implementar una petición, un plan de implementación, hacer una code review o explicaciones a un determinado error uno es mucho más rápido en tener una primera solución a la tarea. Los asistente de IA no solo son capaces de dar respuestas, son capaces de en el ámbito de software de implementar las tareas de cierta complejidad y realizar acciones como crear una branch de git, pull request en github o revisar que convenciones de programación no está siguiendo el código.</p>
+<h2 id="usando-un-asistente-de-ia">Usando un asistente de IA</h2>
+<p>El asistente que estoy empezando a usar es Claude y Claude Code este último orientado a tareas de desarrollo de software. Permite proporcionar contexto al asistente de diferentes formas ya sea como instrucciones personales, para un repositorio de código, como skills personales o compartidas entre el equipo y utilizar diferentes modelos de IA.</p>
+<p>Todo ese contexto proporcionado en lenguaje natural que puede ser considerado como una base de conocimiento. Ese mismo conocimiento que antes pudiera ser recogido en una wiki o documento estático y es útil para un nuevo miembro en el equipo ahora son además instrucciones para el asistente de IA, ahora ese conocimiento es «código ejecutable» para el asistente de IA.</p>
+<p>Al igual que en los IDEs hemos tenido evoluciones con herramientas como formatear el código, asistente de autocompletado o navegación entre referencias de código los asistentes de IA son una nueva forma de asistente que van a suponer un nuevo cambio importante en cómo desarrollamos software.</p>
+<p>A partir de ahora me planteo que si no tuviera una licencia de Claude Code o similar la solicitaría para hacer mi trabajo, hay múltiples formas en las puede mejorar el trabajo que hago.</p>
+<h2 id="el-artículo-de-la-ia">El artículo de la IA</h2>
+<p>Lo de arriba es el artículo que he escrito yo. Con este <em>prompt</em> es el artículo que ha escrito la IA de Claude.</p>
+<blockquote>
+<p>Escribe un artículo para un blog sobre la inteligencia artificial y como cambia la forma en la que trabajamos y cómo nos puede ayudar en el trabajo.</p>
+<p>Empieza por introducción sobre otros cambios han surgido a lo largo del tiempo como blockchain, criptomonedas y empresas punto com. 2 o 3 párrafos de 5 a 8 líneas.</p>
+<p>Luego crea una sección para comparar las diferencias entre un buscador y un asistente de IA y cuáles son los puntos fuertes y débiles de cada uno y en qué mejoran los asistentes de IA a los buscadores. De 5 párrafos de 5 a 8 líneas.</p>
+<p>Crea otra sección para comentar si la IA es una burbuja o revolución y comparalo con anteriores puntos de inflexión como los smartphones, computación en la nube o comercio electrónico y que puede pasar con las diferentes empresas que están compitiendo ahora en los inicios de la IA. De 5 párrafos de 5 a 8 líneas.</p>
+<p>Finalmente, otra sección sobre Claude Code y cómo va a cambiar la forma de desarrollar software al igual que otras mejoras como la asistencia de código, formateo de código. Responde a esta pregunta, ¿un asistente de código es capaz de implementar una tarea en base a su definición en lenguaje natural? Haz una introducción al contexto que necesita el asistente de IA para guiar la respuesta. De 5 párrafos de 5 a 8 líneas.</p>
+</blockquote>
+<p>Creo que el artículo de la IA es significativamente mejor que el que he escrito yo sin su ayuda, y el de la IA lo ha creado en un par de minutos proporcionado el <em>prompt</em>. Con los asistentes de IA la diferencia está en crear el <em>prompt</em> esa descripción del requerimiento, definir y documenar el contexto, la curiosidad haciendo preguntas, mantener la conversación con el asistente de IA para refinar la respuesta y adaptar el contenido proporcionado con conocimiento y criterio propio.</p>
+<p>La imagen de la cabecera de este artículo también está generada con Gemini con el siguiente <em>prompt</em>.</p>
+<blockquote>
+<p>crea una imagen con los logotipos de las herramientas de inteligencia artificial como duckduckgo, chatgpt, claude y copilot y estilo boceto</p>
+</blockquote>
+<h3 id="introducción-el-ciclo-eterno-de-la-innovación-tecnológica">Introducción: El Ciclo Eterno de la Innovación Tecnológica</h3>
+<p>La historia del capitalismo moderno está sembrada de promesas tecnológicas que, en su momento, prometían cambiar el mundo de forma irreversible. A finales de los años noventa, la fiebre de las empresas punto com inundó los mercados de optimismo desbordante: cualquier negocio con una dirección de internet en su tarjeta de visita valía millones. Los inversores apostaban no por beneficios reales, sino por la mera posibilidad de existir en ese nuevo espacio digital. La burbuja estalló en el año 2000, dejando tras de sí un rastro de quiebras, decepciones y, paradójicamente, los cimientos sobre los que se construyeron Amazon, Google y los gigantes digitales que hoy dominan la economía global.</p>
+<p>Años después, blockchain y las criptomonedas protagonizaron un episodio similar. La tecnología de cadena de bloques prometía descentralizar el poder financiero, eliminar intermediarios y crear un sistema monetario paralelo e incorruptible. Bitcoin pasó de ser un experimento de nicho a convertirse en objeto de especulación masiva, arrastrando consigo miles de proyectos de dudosa utilidad real. La volatilidad extrema, los escándalos de plataformas de intercambio y la falta de adopción masiva en casos de uso cotidianos moderaron las expectativas más exageradas, aunque la tecnología subyacente sigue madurando y encontrando aplicaciones concretas en finanzas, logística y contratos inteligentes. El patrón, en cualquier caso, resultaba ya familiar: euforia inicial, exceso de capital, corrección dolorosa y, finalmente, consolidación de lo que realmente aportaba valor.</p>
+<p>La inteligencia artificial que hoy ocupa portadas y conversaciones de empresa sigue, en parte, este mismo guion. Sin embargo, hay diferencias fundamentales que la distinguen de sus predecesoras. No se trata de un caso de uso concreto ni de una tecnología especializada: la IA generativa es, en esencia, una capa de capacidad cognitiva que puede aplicarse de forma transversal a prácticamente cualquier industria, tarea o disciplina. Estamos ante una tecnología habilitadora de primer orden, comparable en su potencial disruptivo a la electricidad o internet, con la diferencia de que su velocidad de adopción y su accesibilidad para usuarios no técnicos no tiene precedentes históricos. Entender dónde estamos en ese ciclo, y separar la espuma especulativa del valor real, resulta esencial para cualquier profesional o empresa que quiera navegar los próximos años con inteligencia.</p>
+<h3 id="buscadores-vs-asistentes-de-ia-un-cambio-de-paradigma-en-el-acceso-al-conocimiento">Buscadores vs. Asistentes de IA: Un Cambio de Paradigma en el Acceso al Conocimiento</h3>
+<p>Durante más de dos décadas, el buscador web fue la puerta de entrada al conocimiento digital. Google, Bing y sus equivalentes funcionaban como índices monumentales: ante una pregunta, devolvían una lista de enlaces ordenados por relevancia, dejando al usuario la tarea de navegar, leer, filtrar y sintetizar la información. Este modelo resultó extraordinariamente eficaz para encontrar recursos existentes —páginas web, documentos, imágenes, vídeos— y fue el motor silencioso que democratizó el acceso a la información a escala global. Sin embargo, el buscador tradicional no responde: muestra dónde podría estar la respuesta, pero exige que sea el humano quien la construya.</p>
+<p>Los asistentes de inteligencia artificial representan un salto cualitativo en esta relación. En lugar de ofrecer diez enlaces ante la pregunta &lsquo;¿cómo redacto un contrato de arrendamiento?&rsquo;, un asistente como Claude, ChatGPT o Gemini genera directamente el borrador del contrato, adaptado al contexto que el usuario describe, explicando cada cláusula y sugiriendo modificaciones según la legislación relevante. La diferencia no es de velocidad, sino de naturaleza: el asistente sintetiza, razona, genera y adapta, mientras que el buscador indexa y señala. Esto transforma radicalmente la experiencia del usuario y, sobre todo, el tiempo y el esfuerzo necesarios para convertir información en acción.</p>
+<p>Las fortalezas del buscador tradicional son, sin embargo, reales e importantes. Su principal ventaja es la trazabilidad: cada resultado tiene una fuente verificable, una fecha de publicación y un autor identificable. El usuario puede contrastar múltiples fuentes, evaluar su credibilidad y construir su propio criterio. Además, los buscadores tienen acceso en tiempo real a la web, lo que los hace insustituibles para información de actualidad: noticias de última hora, precios de mercado, eventos recientes. Son también herramientas neutras en el sentido de que no interpretan la intención del usuario ni añaden capas de inferencia que puedan introducir errores o sesgos en la respuesta.</p>
+<p>Los asistentes de IA, por su parte, presentan limitaciones propias que conviene no ignorar. El fenómeno conocido como &lsquo;alucinación&rsquo; —la tendencia de los modelos de lenguaje a generar afirmaciones falsas con aparente convicción— es quizás el más conocido y el que más erosiona la confianza en contextos donde la precisión es crítica, como el derecho, la medicina o la ingeniería. A esto se suma que los modelos tienen una fecha de corte de conocimiento: no saben qué ocurrió ayer ni pueden acceder a información que no estaba en sus datos de entrenamiento, salvo que se les dote de herramientas de búsqueda en tiempo real. La opacidad del proceso —no siempre es claro de dónde extrae el asistente una afirmación— dificulta también la verificación independiente por parte del usuario.</p>
+<p>No obstante, la dirección evolutiva es clara: los asistentes de IA están incorporando capacidades de búsqueda web en tiempo real, citas de fuentes y herramientas especializadas que reducen sus puntos débiles históricos. La convergencia entre el modelo de búsqueda y el modelo de asistencia está en marcha, y el resultado será probablemente un híbrido que combine lo mejor de ambos mundos: la trazabilidad y la actualidad del buscador con la síntesis y la capacidad generativa del asistente. Las empresas y profesionales que entiendan cuándo usar cada herramienta —y cuándo combinarlas— tendrán una ventaja significativa sobre quienes sigan dependiendo exclusivamente de los patrones de trabajo del pasado.</p>
+<h3 id="burbuja-o-revolución-la-ia-ante-el-juicio-de-la-historia">¿Burbuja o Revolución? La IA ante el Juicio de la Historia</h3>
+<p>La pregunta que más repite en foros de inversión, consejos de administración y conversaciones de café es siempre la misma: ¿es la inteligencia artificial una burbuja o una revolución genuina? La respuesta honesta es que, probablemente, es las dos cosas a la vez, dependiendo de a qué capa del ecosistema nos refiramos. Las valoraciones astronómicas de startups con pocos ingresos, la carrera armamentista por la capacidad de cómputo y la presión sobre las empresas de cualquier sector para &lsquo;integrar IA&rsquo; independientemente de si tiene sentido real, recuerdan inquietantemente a la euforia punto com. Pero la tecnología subyacente y su capacidad de impacto sobre la productividad son cualitativamente distintas a las promesas vacías de muchos proyectos de aquel ciclo.</p>
+<p>La comparación más útil no es con las punto com, sino con la aparición del smartphone y la computación en la nube. Cuando Apple lanzó el iPhone en 2007, nadie sabía con exactitud qué ecosistema de valor emergería de esa plataforma. Las valoraciones iniciales de muchas apps eran especulativas, y hubo una corrección significativa. Pero la transformación fue real: nuevas industrias enteras —la economía gig, el comercio móvil, las redes sociales modernas— nacieron de esa plataforma. De forma similar, la nube prometía en sus inicios mucho más de lo que podía entregar en el corto plazo, y muchos proyectos fracasaron. Sin embargo, hoy el 90% de las empresas del mundo depende de infraestructura cloud para operar. La IA tiene todas las papeletas para seguir este mismo patrón de adopción.</p>
+<p>El comercio electrónico ofrece otra lente reveladora. En 1999, todos sabían que comprar por internet era el futuro, pero casi nadie acertó a predecir qué empresas sobrevivirían. Muchas de las mejor financiadas y más publicitadas desaparecieron, mientras que Amazon —que en aquel momento parecía simplemente una librería online con pérdidas— construyó la infraestructura logística y tecnológica que la convertiría en el gigante que es hoy. En el ecosistema actual de la IA, el equivalente de Amazon podría no ser el chatbot más popular del momento, sino la empresa que esté construyendo silenciosamente la capa de infraestructura, datos o especialización vertical sobre la que otros dependerán. Identificar esa capa es el reto estratégico más interesante de esta década.</p>
+<p>En cuanto a las empresas que compiten hoy en los inicios de la IA, el panorama se divide en varias capas con dinámicas muy distintas. En la base están los proveedores de chips e infraestructura de cómputo —NVIDIA siendo el caso más obvio—, que se benefician de la demanda independientemente de qué aplicación gane la carrera. Encima de ellos, los laboratorios de modelos fundacionales como Anthropic, OpenAI, Google DeepMind y Meta compiten por el liderazgo técnico en una carrera donde los costes de entrenamiento son tan elevados que el número de actores con capacidad real para competir es necesariamente pequeño. Y en la capa de aplicación, miles de startups y grandes empresas tradicionales pugnan por encontrar los casos de uso donde la IA aporte suficiente valor diferencial como para justificar el cambio.</p>
+<p>La historia sugiere que la consolidación será severa: en cada gran ciclo tecnológico, el exceso de actores iniciales se reduce a un oligopolio de plataformas dominantes más un ecosistema de especializaciones verticales. No todos los modelos fundacionales actuales sobrevivirán como empresas independientes, y muchas aplicaciones que hoy parecen revolucionarias serán engullidas como funcionalidades nativas de plataformas más grandes. Pero las empresas y los profesionales que hayan desarrollado durante estos años una comprensión real de cómo integrar IA en sus procesos —no como experimento, sino como músculo operativo— estarán en una posición de ventaja duradera, independientemente de qué empresa &lsquo;gane&rsquo; la carrera de los modelos.</p>
+<h3 id="claude-code-y-el-futuro-del-desarrollo-de-software">Claude Code y el Futuro del Desarrollo de Software</h3>
+<p>El desarrollo de software ha experimentado en los últimos años una evolución acelerada en sus herramientas de asistencia. Lo que comenzó con el autocompletado inteligente de código —herramientas como GitHub Copilot, que sugerían líneas o bloques de código en tiempo real dentro del editor— ha progresado hacia asistentes conversacionales capaces de generar funciones completas, explicar código heredado, detectar vulnerabilidades de seguridad y proponer refactorizaciones. El formateo automático de código, los linters inteligentes y la generación de tests unitarios han pasado de ser comodidades a ser parte del flujo de trabajo estándar en equipos de desarrollo modernos. Cada una de estas mejoras ha reducido el tiempo dedicado a tareas mecánicas y ha permitido a los desarrolladores concentrar su energía cognitiva en los problemas de más alto nivel.</p>
+<p>Claude Code representa el siguiente escalón en esta evolución: un agente de codificación que opera directamente en la línea de comandos y puede ejecutar tareas de desarrollo de principio a fin dentro de una base de código real. A diferencia de los asistentes conversacionales que generan código para que el desarrollador lo copie y pegue, Claude Code puede leer el repositorio existente, comprender su estructura y sus convenciones, escribir código nuevo, ejecutar tests, interpretar los errores y corregirlos de forma iterativa, todo dentro de un flujo de trabajo continuo. Esta capacidad de actuar sobre el entorno real —no solo generar texto— marca una diferencia fundamental respecto a las generaciones anteriores de herramientas.</p>
+<p>La pregunta central que muchos desarrolladores se hacen es directa: ¿puede un asistente de código implementar una tarea completa a partir de su descripción en lenguaje natural? La respuesta es un sí matizado, y la matización importa mucho. Para tareas bien delimitadas y con suficiente contexto —&lsquo;añade un endpoint REST que devuelva el historial de pedidos de un usuario paginado, siguiendo las convenciones del resto de la API&rsquo;—, un agente como Claude Code puede producir una implementación funcional, con tests y documentación, en cuestión de minutos. Para tareas ambiguas, que requieren decisiones arquitectónicas de alto nivel o conocimiento de dominio muy especializado, el agente necesitará clarificación o supervisión humana. La clave no es si la IA puede hacerlo todo, sino hasta dónde puede llegar autónomamente antes de necesitar intervención, y ese umbral se desplaza continuamente hacia tareas más complejas.</p>
+<p>El elemento crítico que determina la calidad del resultado es el contexto que recibe el asistente. Un modelo de lenguaje, por muy capaz que sea, trabaja con la información que tiene disponible en su ventana de contexto: si no conoce las convenciones de nomenclatura del proyecto, la arquitectura elegida, las decisiones de diseño previas o las restricciones específicas del negocio, generará código que funciona genéricamente pero que no encaja con el ecosistema existente. Por eso, las organizaciones que obtendrán más valor de estas herramientas serán aquellas que inviertan en documentar bien su código, en mantener guías de estilo y decisiones de arquitectura actualizadas, y en proporcionar al agente el contexto relevante de forma sistemática. En cierto modo, la llegada de agentes de código está incentivando una disciplina de documentación y coherencia que muchos equipos nunca habían priorizado.</p>
+<p>El impacto sobre la profesión del desarrollador de software no será la eliminación del rol, sino su transformación. Del mismo modo que la calculadora no eliminó a los matemáticos sino que les permitió abordar problemas más complejos, los agentes de código liberarán a los ingenieros de las tareas más repetitivas para que puedan centrarse en el diseño de sistemas, la comprensión del negocio, la gestión de la calidad y la toma de decisiones donde el juicio humano sigue siendo insustituible. El desarrollador del futuro próximo será, en parte, un director de agentes: alguien que sabe formular problemas con precisión, evaluar la calidad de las soluciones generadas, identificar los riesgos ocultos y orquestar el trabajo entre humanos y sistemas de IA de forma eficiente. Es un cambio de rol que requiere nuevas habilidades, pero que también abre posibilidades de productividad e impacto sin precedentes en la historia de la ingeniería de software.</p>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/">
+                <img src="/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/images/diagrama-de-estado_hu_6e27a5fa42fb5dea.webp" width="326" height="125" alt="Crear diagramas gráficos con el formato de texto Mermaid" title="Crear diagramas gráficos con el formato de texto Mermaid" class="" loading="lazy">
+                <h3>Crear diagramas gráficos con el formato de texto Mermaid</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2024/03/construyendo-un-pipeline-de-cicd-con-github-actions/">
+                <img src="/blog-bitix/assets/images/logotypes/github.svg" width="326" height="125" alt="Construyendo un pipeline de CI/CD con Github Actions" title="Construyendo un pipeline de CI/CD con Github Actions" class="" loading="lazy">
+                <h3>Construyendo un pipeline de CI/CD con Github Actions</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/">
+                <img src="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/qr-code_hu_2d035c8dc13167d3.webp" width="326" height="125" alt="Generar códigos de barras y códigos QR con Java" title="Generar códigos de barras y códigos QR con Java" class="" loading="lazy">
+                <h3>Generar códigos de barras y códigos QR con Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/02/introduccion-conceptos-y-uso-basico-del-broker-de-mensajes-apache-kafka/">
+                <img src="/blog-bitix/assets/images/logotypes/apache-kafka.svg" width="326" height="125" alt="Introducción, conceptos y uso básico del broker de mensajes Apache Kafka" title="Introducción, conceptos y uso básico del broker de mensajes Apache Kafka" class="" loading="lazy">
+                <h3>Introducción, conceptos y uso básico del broker de mensajes Apache Kafka</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/01/construir-desplegar-y-observar-aplicaciones-de-forma-uniforme-con-waypoint/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-waypoint.svg" width="326" height="125" alt="Construir, desplegar y observar aplicaciones de forma uniforme con Waypoint" title="Construir, desplegar y observar aplicaciones de forma uniforme con Waypoint" class="" loading="lazy">
+                <h3>Construir, desplegar y observar aplicaciones de forma uniforme con Waypoint</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/01/construir-la-imagen-del-contenedor-de-la-aplicacion-usando-buildpacks/">
+                <img src="/blog-bitix/assets/images/logotypes/buildpacksio.svg" width="326" height="125" alt="Construir la imagen del contenedor de la aplicación usando Buildpacks" title="Construir la imagen del contenedor de la aplicación usando Buildpacks" class="" loading="lazy">
+                <h3>Construir la imagen del contenedor de la aplicación usando Buildpacks</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-723';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2026\/03\/la-revolucion-de-los-asistentes-de-inteligencia-artificial\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/privacy/">Política de privacidad</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2026 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>
