@@ -36,27 +36,27 @@ Los buscadores tradicionales simplemente indexan la web y la ordenan en relevanc
 
 ## ¿Burbuja o nueva revolución?
 
-A lo largo del tiempo hay eventos y evoluciones que suponen un punto de inflexión, como los smartphones, computación en la nube o comercio electrónico que cambian drásticamente el mercado. La IA es uno de esos nuevos puntos de inflexión que cambia la forma en la que trabajamos y potencialmente aumenta la productividad y eficiencia de ciertos trabajos.
+A lo largo del tiempo hay eventos y evoluciones que suponen un punto de inflexión, como los _smartphones_, computación en la nube o comercio electrónico que cambian drásticamente el mercado. La IA es uno de esos nuevos puntos de inflexión que cambia la forma en la que trabajamos y potencialmente aumenta la productividad y eficiencia de ciertos trabajos.
 
-En la competencia que existe ahora entre varias empresas es posible que como en anteriores ocasiones algunos triunfen y otros caigan en el olvido y en la irrelevancia según sean los usuarios los que elijan cual es la opción que prefieren.
+En la competencia que existe ahora entre varias empresas es posible que como en anteriores ocasiones algunos triunfen y otros caigan en el olvido y en la irrelevancia según sean los usuarios los que elijan cual es la opción que prefieren, la capacidad de estos de generar ingresos y proporcionar utilidad a las personas y procesos.
 
 En el ámbito de mi trabajo como ingeniero de software es más una revolución que con la ayuda de un asistente de IA me va a permitir hacer mejor y más eficiente mi trabajo. Mejor porque con las preguntas adecuadas obtener mejores respuestas y opciones que puedo considerar, y por otro lado más eficiente porque obtengo las respuestas en menos tiempo.
 
-Tareas como implementar una petición, un plan de implementación, hacer una code review o explicaciones a un determinado error uno es mucho más rápido en tener una primera solución a la tarea. Los asistente de IA no solo son capaces de dar respuestas, son capaces de en el ámbito de software de implementar las tareas de cierta complejidad y realizar acciones como crear una branch de git, pull request en github o revisar que convenciones de programación no está siguiendo el código.
+Tareas como implementar una petición, un plan de implementación, hacer una _code review_ o explicaciones a un determinado error uno es mucho más rápido en tener una primera solución a la tarea. Los asistente de IA no solo son capaces de dar respuestas, son capaces de en el ámbito de software de implementar las tareas de cierta complejidad y realizar acciones como crear una _branch_ de git, un _pull request_ en github o revisar que convenciones de programación no está siguiendo el código.
 
 ## Usando un asistente de IA
 
-El asistente que estoy empezando a usar es Claude y Claude Code este último orientado a tareas de desarrollo de software. Permite proporcionar contexto al asistente de diferentes formas ya sea como instrucciones personales, para un repositorio de código, como skills personales o compartidas entre el equipo y utilizar diferentes modelos de IA.
+El asistente que estoy empezando a usar es [Claude][claude] y [Claude Code][claude-code] este último orientado a tareas de desarrollo de software. Permite proporcionar contexto al asistente de diferentes formas ya sea como instrucciones personales, para un repositorio de código, como skills personales o compartidas entre el equipo y utilizar diferentes modelos de IA.
 
-Todo ese contexto proporcionado en lenguaje natural que puede ser considerado como una base de conocimiento. Ese mismo conocimiento que antes pudiera ser recogido en una wiki o documento estático y es útil para un nuevo miembro en el equipo ahora son además instrucciones para el asistente de IA, ahora ese conocimiento es «código ejecutable» para el asistente de IA.
+Todo ese contexto proporcionado en lenguaje natural que puede ser considerado como una base de conocimiento. Ese mismo conocimiento que antes pudiera ser recogido en una wiki o documento estático para ser leido por personas y es útil para un nuevo miembro en el equipo ahora son además instrucciones para el asistente de IA al ser capaces de trabajar con el mismo lenguaje natural, ahora esa documentación y conocimiento es «código ejecutable» para el asistente de IA.
 
 Al igual que en los IDEs hemos tenido evoluciones con herramientas como formatear el código, asistente de autocompletado o navegación entre referencias de código los asistentes de IA son una nueva forma de asistente que van a suponer un nuevo cambio importante en cómo desarrollamos software.
 
-A partir de ahora me planteo que si no tuviera una licencia de Claude Code o similar la solicitaría para hacer mi trabajo, hay múltiples formas en las puede mejorar el trabajo que hago.
+A partir de ahora me planteo que si no tuviera una licencia de Claude Code o similar la solicitaría para hacer mi trabajo, hay múltiples formas en las puede mejorar el trabajo que hago. Al mismo tiempo la IA es capaz de generar audio con una trasncripción de texto a voz incluso con entonaciones cercanas a la voz natural como la de [ElevenLabs](https://elevenlabs.io/). O tomar notas de reuniones con los puntos más importantes resumidos.
 
 ## El artículo de la IA
 
-Lo de arriba es el artículo que he escrito yo. Con este _prompt_ es el artículo que ha escrito la IA de Claude.
+Lo de arriba es el artículo que he escrito yo. Con este _prompt_ la IA de Claude ha creado un artículo.
 
 > Escribe un artículo para un blog sobre la inteligencia artificial y como cambia la forma en la que trabajamos y cómo nos puede ayudar en el trabajo.
 > 
@@ -68,9 +68,9 @@ Lo de arriba es el artículo que he escrito yo. Con este _prompt_ es el artícul
 > 
 > Finalmente, otra sección sobre Claude Code y cómo va a cambiar la forma de desarrollar software al igual que otras mejoras como la asistencia de código, formateo de código. Responde a esta pregunta, ¿un asistente de código es capaz de implementar una tarea en base a su definición en lenguaje natural? Haz una introducción al contexto que necesita el asistente de IA para guiar la respuesta. De 5 párrafos de 5 a 8 líneas.
 
-Creo que el artículo de la IA es significativamente mejor que el que he escrito yo sin su ayuda, y el de la IA lo ha creado en un par de minutos proporcionado el _prompt_. Con los asistentes de IA la diferencia está en crear el _prompt_ esa descripción del requerimiento, definir y documenar el contexto, la curiosidad haciendo preguntas, mantener la conversación con el asistente de IA para refinar la respuesta y adaptar el contenido proporcionado con conocimiento y criterio propio.
+Creo que el artículo de la IA es significativamente mejor que el que he escrito yo sin su ayuda, lo podría mejorar dedicándole más tiempo y con un mayor considerable de esfuerzo. Pero el de la IA lo ha creado en un par de minutos proporcionado el _prompt_. Con los asistentes de IA y la IA generativa la diferencia está en crear el _prompt_ esa descripción del requerimiento, definir y documenar el contexto, la curiosidad haciendo preguntas, mantener la conversación con el asistente de IA para refinar la respuesta y adaptar el contenido proporcionado con conocimiento y criterio propio. Una persona no puede competir con la cantidad de información que ha procesado un modelo de inteligencia artificial, más que inteligencia es gran cantidad de información indexada, estructurada y analizada y patrones de razonamiento en los modelos que aparentemente dan la sensación de inteligencia.
 
-La imagen de la cabecera de este artículo también está generada con Gemini con el siguiente _prompt_.
+La imagen de la cabecera de este artículo también está generada con IA, en este caso la de [Gemini][google-gemini] con el siguiente _prompt_.
 
 > crea una imagen con los logotipos de las herramientas de inteligencia artificial como duckduckgo, chatgpt, claude y copilot y estilo boceto
 
