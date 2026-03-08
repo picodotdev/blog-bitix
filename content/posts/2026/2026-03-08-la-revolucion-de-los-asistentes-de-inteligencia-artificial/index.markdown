@@ -46,13 +46,13 @@ Tareas como implementar una petición, un plan de implementación, hacer una _co
 
 ## Usando un asistente de IA
 
-El asistente que estoy empezando a usar es [Claude][claude] y [Claude Code][claude-code] este último orientado a tareas de desarrollo de software. Permite proporcionar contexto al asistente de diferentes formas ya sea como instrucciones personales, para un repositorio de código, como skills personales o compartidas entre el equipo y utilizar diferentes modelos de IA.
+El asistente que estoy empezando a usar es [Claude][claude] y [Claude Code][claude-code] este último orientado a tareas de desarrollo de software. Permite proporcionar contexto al asistente de diferentes formas ya sea como instrucciones personales, para un repositorio de código, como _skills_ personales o compartidas entre el equipo y utilizar diferentes modelos de IA.
 
 Todo ese contexto proporcionado en lenguaje natural que puede ser considerado como una base de conocimiento. Ese mismo conocimiento que antes pudiera ser recogido en una wiki o documento estático para ser leido por personas y es útil para un nuevo miembro en el equipo ahora son además instrucciones para el asistente de IA al ser capaces de trabajar con el mismo lenguaje natural, ahora esa documentación y conocimiento es «código ejecutable» para el asistente de IA.
 
 Al igual que en los IDEs hemos tenido evoluciones con herramientas como formatear el código, asistente de autocompletado o navegación entre referencias de código los asistentes de IA son una nueva forma de asistente que van a suponer un nuevo cambio importante en cómo desarrollamos software.
 
-A partir de ahora me planteo que si no tuviera una licencia de Claude Code o similar la solicitaría para hacer mi trabajo, hay múltiples formas en las puede mejorar el trabajo que hago. Al mismo tiempo la IA es capaz de generar audio con una trasncripción de texto a voz incluso con entonaciones cercanas a la voz natural como la de [ElevenLabs](https://elevenlabs.io/). O tomar notas de reuniones con los puntos más importantes resumidos.
+A partir de ahora me planteo que si no tuviera una licencia de Claude Code o similar la solicitaría para hacer mi trabajo, hay múltiples formas en las puede mejorar el trabajo que hago. Al mismo tiempo la IA es capaz de generar audio con una trasncripción de texto a voz incluso con entonaciones cercanas a la voz natural como la de [ElevenLabs](https://elevenlabs.io/). O tomar notas de reuniones con los puntos más importantes resumidos. Muchas tareas son candidatas a ser transformadas con la IA.
 
 ## El artículo de la IA
 
