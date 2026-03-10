@@ -34,6 +34,8 @@ Un asistente de IA en la respuesta que da crea el artículo ajustado a los que s
 
 Los buscadores tradicionales simplemente indexan la web y la ordenan en relevancia, y dan resultados en base a palabras clave. Los asistentes de IA van un paso más, indexan el contenido de todos los artículos, libros y vídeos u otro material con el que se entrenan, categorizando la información, ordenandola y relacionándola para ser capaces no de proporcional el artículo que tiene la mejor respuesta sino de crear un nuevo artículo con todo el material del modelo que puede haber sido entrenado con las mejores referencias de artículos de la web, libros, vídeos y cualesquiera otro material creado anteriormente. Otro aspecto de los asistentes de IA es que es posible proporcionar una conversación en lenguaje natural refinando las preguntas sobre un mismo tema y es posible proporcionar contexto que ayude al asistente de IA a proporcionar la respuesta.
 
+Al igual que a un buscador a un asistente de inteligencia artificial para obtener una respuesta es necesario proporcionarle un _prompt_, un texto, pregunta o palabras clave. Esta proactividad por parte del usuario contrasta con otro tipos de medios en los que el contenido se le envía al usuarios como las páginas de noticias, suscripciones a medios y medios de contenido y es el usuario el que decide a que dedica su atención y tiempo.
+
 ## ¿Burbuja o nueva revolución?
 
 A lo largo del tiempo hay eventos y evoluciones que suponen un punto de inflexión, como los _smartphones_, computación en la nube o comercio electrónico que cambian drásticamente el mercado. La IA es uno de esos nuevos puntos de inflexión que cambia la forma en la que trabajamos y potencialmente aumenta la productividad y eficiencia de ciertos trabajos.
