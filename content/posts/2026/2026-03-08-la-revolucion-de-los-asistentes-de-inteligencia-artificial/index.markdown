@@ -56,6 +56,8 @@ Al igual que en los IDEs hemos tenido evoluciones con herramientas como formatea
 
 A partir de ahora me planteo que si no tuviera una licencia de Claude Code o similar la solicitaría para hacer mi trabajo, hay múltiples formas en las puede mejorar el trabajo que hago. Al mismo tiempo la IA es capaz de generar audio con una trasncripción de texto a voz incluso con entonaciones cercanas a la voz natural como la de [ElevenLabs](https://elevenlabs.io/). O tomar notas de reuniones con los puntos más importantes resumidos. Muchas tareas son candidatas a ser transformadas con la IA.
 
+Observo dos puntos débiles de la IA. Una de las propiedades de las computadoras es que son deterministas, dada una misma entrada y realizado un mismo procesamiento el resultado es siempre el mismo, trazable y confiable. Por el contrario, el razonamiento de la IA y los diferentes modelos el resultado puede variar lo que no la hace confiable para ciertas tareas y la trazabilidad del resultado es difícil de inspeccionar. Por otro lado es que una variación del _propmt_ y del contexto puede producir resultados sgnificativamente diferentes. El segundo problema es que los asistentes de la IA son capaces de generar cantidad de contenido que alguien ha de mantener y cuando no sea el propio asistente de la IA el que sea capaz de mantenerlo puede ser un problema para el que lo tenga que hacer, se puede generar una funcionalidad muy rápidamente que se convierte en código _legacy_ desde el mismo momento de su generación. Otro de los problemas ya conocidos de la IA es realizar afirmaciones falsas con apariencia de razonables.
+
 ## El artículo de la IA
 
 Lo de arriba es el artículo que he escrito yo. Con este _prompt_ la IA de Claude ha creado un artículo.
