@@ -58,6 +58,8 @@ A partir de ahora me planteo que si no tuviera una licencia de Claude Code o sim
 
 Observo dos puntos débiles de la IA. Una de las propiedades de las computadoras es que son deterministas, dada una misma entrada y realizado un mismo procesamiento el resultado es siempre el mismo, trazable y confiable. Por el contrario, el razonamiento de la IA y los diferentes modelos el resultado puede variar lo que no la hace confiable para ciertas tareas y la trazabilidad del resultado es difícil de inspeccionar. Por otro lado es que una variación del _propmt_ y del contexto puede producir resultados sgnificativamente diferentes. El segundo problema es que los asistentes de la IA son capaces de generar cantidad de contenido que alguien ha de mantener y cuando no sea el propio asistente de la IA el que sea capaz de mantenerlo puede ser un problema para el que lo tenga que hacer, se puede generar una funcionalidad muy rápidamente que se convierte en código _legacy_ desde el mismo momento de su generación. Otro de los problemas ya conocidos de la IA es realizar afirmaciones falsas con apariencia de razonables.
 
+Para finalizar, quizá no sea tanto que uno tarda menos en implementar una _feature_, Claude Code tarda bastante en dar una respuesta e implementar una solución, sino es por el tiempo en que miestras da una respuesta se puede parelelizar otra tarea. Lo que si observo es que el resultado final es de mayor calidad ya que Claude Code da numerosos detalles que a uno se le puede pasar por alto como incosistencias, potenciales errores, aspectos de seguridad o legibilidad.
+
 ## El artículo de la IA
 
 Lo de arriba es el artículo que he escrito yo. Con este _prompt_ la IA de Claude ha creado un artículo.
