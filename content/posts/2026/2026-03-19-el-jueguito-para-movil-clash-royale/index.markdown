@@ -13,7 +13,7 @@ promoted: false
 imageHead: "image:clash-royale-head.webp"
 imagePost: "image:clash-royale-head.webp"
 tags: ["juegos"]
-summary: "“Clash Royale es un de los juegos más populares para móvil, gratuito pero con una calidad elevada. Un juego competitivo y estrategia de partidas casuales de tres minutos. En el artículo comento varios aspectos de este juego, sus mecanismos para crear adicción, la toxicidad de algunos jugadores, su modelo de negocio, el algoritmo de matchmaking, elementos del juego, estrategias y consejos."
+summary: "Clash Royale es un de los juegos más populares para móvil, gratuito pero con una calidad elevada. Un juego competitivo y estrategia de partidas casuales de tres minutos. En el artículo comento varios aspectos de este juego, sus mecanismos para crear adicción, la toxicidad de algunos jugadores, su modelo de negocio, el algoritmo de matchmaking, elementos del juego, estrategias y consejos."
 ---
 
 {{% post %}}
@@ -30,8 +30,9 @@ Se basa en partidas cortas, crea artificialmente escasez de recursos para manten
 
 {{< image
     gallery="true"
-    image1="image:clash-royale-splash-1.webp" optionsthumb1="300x200" title1="Inicio"
-    image2="image:clash-royale-splash-2.webp" optionsthumb2="300x200" title2="Inicio"
+    image1="image:clash-royale-supercell.webp" optionsthumb1="300x200" title1="Supercell"
+    image2="image:clash-royale-splash-1.webp" optionsthumb2="300x200" title2="Inicio"
+    image3="image:clash-royale-splash-2.webp" optionsthumb3="300x200" title3="Inicio"
     caption="Inicio" >}}
 
 {{< tableofcontents >}}
@@ -52,6 +53,30 @@ Los cofres tienen nel mecanismo de lotería, tienen establecido un número de ca
     gallery="true"
     image1="image:clash-royale-inicio-1.webp" optionsthumb1="300x200" title1="Inicio"
     caption="Inicio" >}}
+
+{{< image
+    gallery="true"
+    image1="image:clash-royale-aniversario-1.webp" optionsthumb1="300x200" title1="Aniversario"
+    image2="image:clash-royale-aniversario-2.webp" optionsthumb2="300x200" title2="Aniversario"
+    image3="image:clash-royale-aniversario-3.webp" optionsthumb3="300x200" title3="Aniversario" >}}
+{{< image
+    gallery="true"
+    image1="image:clash-royale-aniversario-4.webp" optionsthumb1="300x200" title1="Aniversario"
+    image2="image:clash-royale-aniversario-5.webp" optionsthumb2="300x200" title2="Aniversario"
+    image3="image:clash-royale-aniversario-6.webp" optionsthumb3="300x200" title3="Aniversario" >}}
+{{< image
+    gallery="true"
+    image1="image:clash-royale-aniversario-7.webp" optionsthumb1="300x200" title1="Aniversario"
+    image2="image:clash-royale-aniversario-8.webp" optionsthumb2="300x200" title2="Aniversario"
+    image3="image:clash-royale-aniversario-9.webp" optionsthumb3="300x200" title3="Aniversario"
+    caption="Aniversario" >}}
+
+{{< image
+    gallery="true"
+    image1="image:clash-royale-eventos-1.webp" optionsthumb1="300x200" title1="Eventos"
+    image2="image:clash-royale-eventos-2.webp" optionsthumb2="300x200" title2="Eventos"
+    image3="image:clash-royale-eventos-3.webp" optionsthumb3="300x200" title3="Eventos"
+    caption="Eventos" >}}
 
 ## La toxicidad: el arte de la burla digital
 
@@ -85,15 +110,24 @@ Para que pases por la tienda todos los días hay una sección en la que dan cada
 
 {{< image
     gallery="true"
-    image1="image:clash-royale-mercado-1.webp" optionsthumb1="300x200" title1="Mercado"
-    image2="image:clash-royale-mercado-2.webp" optionsthumb2="300x200" title2="Mercado"
-    image3="image:clash-royale-mercado-3.webp" optionsthumb3="300x200" title3="Mercado" >}}
+    image1="image:clash-royale-tienda-1.webp" optionsthumb1="300x200" title1="Tienda"
+    image2="image:clash-royale-tienda-2.webp" optionsthumb2="300x200" title2="Tienda"
+    image3="image:clash-royale-tienda-3.webp" optionsthumb3="300x200" title3="Tienda" >}}
 {{< image
     gallery="true"
-    image1="image:clash-royale-mercado-4.webp" optionsthumb1="300x200" title1="Mercado"
-    image2="image:clash-royale-mercado-5.webp" optionsthumb2="300x200" title2="Mercado"
-    image3="image:clash-royale-mercado-6.webp" optionsthumb3="300x200" title3="Mercado"
-    caption="Mercado" >}}
+    image1="image:clash-royale-tienda-4.webp" optionsthumb1="300x200" title1="Tienda"
+    image2="image:clash-royale-tienda-5.webp" optionsthumb2="300x200" title2="Tienda"
+    image3="image:clash-royale-tienda-6.webp" optionsthumb3="300x200" title3="Tienda" >}}
+{{< image
+    gallery="true"
+    image1="image:clash-royale-tienda-7.webp" optionsthumb1="300x200" title1="Tienda"
+    image2="image:clash-royale-tienda-8.webp" optionsthumb2="300x200" title2="Tienda"
+    image3="image:clash-royale-tienda-9.webp" optionsthumb3="300x200" title3="Tienda" >}}
+{{< image
+    gallery="true"
+    image1="image:clash-royale-tienda-10.webp" optionsthumb1="300x200" title1="Tienda"
+    image2="image:clash-royale-tienda-11.webp" optionsthumb2="300x200" title2="Tienda"
+    caption="Tienda" >}}
 
 ## El algoritmo: la caja negra del matchmaking
 
@@ -117,6 +151,16 @@ El modo de juego Clásico limita el nivel de las torres y cartas a 11 para ambos
     image1="image:clash-royale-batalla-4.webp" optionsthumb1="300x200" title1="Batalla"
     image2="image:clash-royale-batalla-5.webp" optionsthumb2="300x200" title2="Batalla"
     caption="Batalla" >}}
+
+{{< image
+    gallery="true"
+    image1="image:clash-royale-matchmaking-1.webp" optionsthumb1="300x200" title1="Matchmaking"
+    image2="image:clash-royale-matchmaking-2.webp" optionsthumb2="300x200" title2="Matchmaking"
+    image3="image:clash-royale-matchmaking-3.webp" optionsthumb3="300x200" title3="Matchmaking" >}}
+{{< image
+    gallery="true"
+    image1="image:clash-royale-matchmaking-4.webp" optionsthumb1="300x200" title1="Matchmaking"
+    caption="Matchmaking" >}}
 
 ## Los clanes: el componente social
 
