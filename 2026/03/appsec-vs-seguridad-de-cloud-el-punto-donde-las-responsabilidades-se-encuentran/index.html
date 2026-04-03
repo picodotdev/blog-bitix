@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="La seguridad de aplicaciones y la seguridad de cloud a menudo se toman como dos frentes separados. Mientras el equipo de AppSec revisa el código, las dependencias y los pipelines, cloud security vigila identidades y configuraciones.
+Aunque en el papel parece una división lógica, el informe State of AI in Security &amp; Development 2026, elaborado a partir de una encuesta a 450 profesionales de Europa y Estados Unidos que usan herramientas de seguridad de aplicaciones (application security tools), demuestra lo contrario. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>AppSec vs. seguridad de cloud: El punto donde las responsabilidades se encuentran</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2026/03/appsec-vs-seguridad-de-cloud-el-punto-donde-las-responsabilidades-se-encuentran/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2026/03/appsec-vs-seguridad-de-cloud-el-punto-donde-las-responsabilidades-se-encuentran/" hreflang="es" title="AppSec vs. seguridad de cloud: El punto donde las responsabilidades se encuentran">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preload" href="/blog-bitix/asssets/fonts/pt-serif/pt-serif.css" as="style">
+  <link rel="preload" href="/blog-bitix/asssets/fonts/open-sans/open-sans.css" as="style">
+  <link href="/blog-bitix/assets/fonts/pt-serif/pt-serif.css" rel="stylesheet">
+  <link href="/blog-bitix/assets/fonts/open-sans/open-sans.css" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="AppSec vs. seguridad de cloud: El punto donde las responsabilidades se encuentran">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2026/03/appsec-vs-seguridad-de-cloud-el-punto-donde-las-responsabilidades-se-encuentran/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2026/03/appsec-vs-seguridad-de-cloud-el-punto-donde-las-responsabilidades-se-encuentran/images/258fdd65-3b5d-4e70-bbf6-4cecabd18006_hu_8b922d270a72f1a9.webp">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="La seguridad de aplicaciones y la seguridad de cloud a menudo se toman como dos frentes separados. Mientras el equipo de AppSec revisa el código, las dependencias y los pipelines, cloud security vigila identidades y configuraciones.
+Aunque en el papel parece una división lógica, el informe State of AI in Security &amp; Development 2026, elaborado a partir de una encuesta a 450 profesionales de Europa y Estados Unidos que usan herramientas de seguridad de aplicaciones (application security tools), demuestra lo contrario. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2026/03/appsec-vs-seguridad-de-cloud-el-punto-donde-las-responsabilidades-se-encuentran/images/258fdd65-3b5d-4e70-bbf6-4cecabd18006_hu_8b922d270a72f1a9.webp">
+
+<meta name="twitter:site" content="">
+<meta name="twitter:title" content="AppSec vs. seguridad de cloud: El punto donde las responsabilidades se encuentran">
+<meta name="twitter:description" content="La seguridad de aplicaciones y la seguridad de cloud a menudo se toman como dos frentes separados. Mientras el equipo de AppSec revisa el código, las dependencias y los pipelines, cloud security vigila identidades y configuraciones.
+Aunque en el papel parece una división lógica, el informe State of AI in Security &amp; Development 2026, elaborado a partir de una encuesta a 450 profesionales de Europa y Estados Unidos que usan herramientas de seguridad de aplicaciones (application security tools), demuestra lo contrario. &hellip;">
+<meta name="twitter:creator" content="">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2026/03/appsec-vs-seguridad-de-cloud-el-punto-donde-las-responsabilidades-se-encuentran/"
+    },
+    "headline": "AppSec vs. seguridad de cloud: El punto donde las responsabilidades se encuentran",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2026/03/appsec-vs-seguridad-de-cloud-el-punto-donde-las-responsabilidades-se-encuentran/images/258fdd65-3b5d-4e70-bbf6-4cecabd18006_hu_8b922d270a72f1a9.webp"
+        
+      },
+    "datePublished": "2026-03-03T14:00:00+02:00",
+    "dateModified": "2026-03-03T14:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "848",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "I ♥ Java, GNU/Linux and libre software.",
+        "url": ""
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "<p>La seguridad de aplicaciones y la seguridad de cloud a menudo se toman como dos frentes separados. Mientras el equipo de AppSec revisa el código, las dependencias y los pipelines, cloud security vigila identidades y configuraciones.</p>
+<p>Aunque en el papel parece una división lógica, el informe State of AI in Security &amp; Development 2026, elaborado a partir de una encuesta a 450 profesionales de Europa y Estados Unidos que usan herramientas de seguridad de aplicaciones (<a href="https://www.aikido.dev/blog/top-appsec-tools">application security tools</a>), demuestra lo contrario.</p>"
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+  
+  <script type="text/javascript" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async></script>
+<script>
+    window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() {
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1750, 0], [[300, 600]])
+        .addSize([0, 0], [])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600]])
+        .addSize([1280, 0], [[160, 600]])
+        .addSize([0, 0], [])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+    });
+</script>
+
+  
+  
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2026/03/appsec-vs-seguridad-de-cloud-el-punto-donde-las-responsabilidades-se-encuentran/images/258fdd65-3b5d-4e70-bbf6-4cecabd18006_hu_b0388bc1341bb8b.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            
+<div id='div-gpt-ad-1705155070019-0' style='min-width: 160px; min-height: 600px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705155070019-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>AppSec vs. seguridad de cloud: El punto donde las responsabilidades se encuentran</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>03/03/2026</time>.
+      
+        <br>
+        <i class="bi bi-tag"></i>
+        
+          <a href="/blog-bitix/tags/patrocinado/">patrocinado</a>
+        
+      
+      <br>
+      <i class="bi bi-link-45deg"></i>
+      <a href="/blog-bitix/2026/03/appsec-vs-seguridad-de-cloud-el-punto-donde-las-responsabilidades-se-encuentran/">Enlace permanente</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      
+      <p>La seguridad de aplicaciones y la seguridad de cloud a menudo se toman como dos frentes separados. Mientras el equipo de AppSec revisa el código, las dependencias y los pipelines, cloud security vigila identidades y configuraciones.</p>
+<p>Aunque en el papel parece una división lógica, el informe State of AI in Security &amp; Development 2026, elaborado a partir de una encuesta a 450 profesionales de Europa y Estados Unidos que usan herramientas de seguridad de aplicaciones (<a href="https://www.aikido.dev/blog/top-appsec-tools">application security tools</a>), demuestra lo contrario.</p>
+<p>Los equipos que separan departamentos de seguridad de aplicaciones y de cloud tienen un 50% más probabilidades de atravesar un incidente. A continuación, los detalles.</p>
+<h2 id="1-de-cada-5-encuestados-sufrió-un-incidente-serio-vinculado-a-código-generado-por-ia">1 de cada 5 encuestados sufrió un incidente serio vinculado a código generado por IA</h2>
+<p>La encuesta de Aikido, una empresa de soluciones de desarrollo, marca que el 69% de las organizaciones detectó vulnerabilidades vinculadas al código generado con IA. La mayoría de estas dificultades fueron menores, pero 1 de cada 5 encuestados admite haber sufrido un incidente serio vinculado directamente a ese tipo de código.</p>
+<p>El 92% de los expertos en ciberseguridad admite estar preocupado por la filtración de datos a través de exposiciones accidentales, permisos mal definidos y superficies de ataque ampliadas, debido al uso excesivo de IA para crear código.</p>
+<p>La solución, de acuerdo a la empresa, parece ser la vinculación entre AppSec y Cloud Security. Mientras la primera detecta dónde nace el riesgo, la segunda observa los puntos donde las amenazas pueden escalar. Separar estos dos departamentos puede ser un riesgo en sí mismo, ya que no permite a los especialistas ver la película completa, sino pequeños fragmentos. Los datos actúan como un testimonio de este punto.</p>
+<h2 id="los-equipos-que-usan-appsec-y-cloudsec-separados-tienen-una-tendencia-50-mayor-a-los-incidentes">Los equipos que usan AppSec y CloudSec separados tienen una tendencia 50% mayor a los incidentes</h2>
+<p>Uno de los descubrimientos de la encuesta es que los equipos que usan herramientas separadas para AppSec y cloud security tienen un 50% más de probabilidades de sufrir incidentes que aquellos que trabajan con un enfoque integral de la ciberseguridad.</p>
+<p>De la misma forma, el 93% de los empleados que operan con stacks separados reporta problemas de integración, como alertas duplicadas o datos inconsistentes.</p>
+<p>Por ejemplo, cuando un hallazgo de SAST no conversa con una mala configuración en Kubernetes, o cuando una exposición en runtime no se conecta con una librería vulnerable detectada en SCA, el tiempo de respuesta se alarga. En ciberseguridad, retrasar la correlación suele equivaler a retrasar la remediación.</p>
+<p>Aquí cabe hacer una aclaración. La confianza en la IA no implica que no se revise el código. El 96% de los encuestados por Aikido cree que en el futuro las herramientas de inteligencia artificial crearán código &ldquo;casi perfecto&rdquo;, pero el matiz es que solamente el 21% piensa que esto se logrará sin supervisión de un especialista humano.</p>
+<h2 id="más-vendors-más-fricción-y-vulnerabilidades">Más vendors, más fricción y vulnerabilidades</h2>
+<p>De lo dicho anteriormente se desprende que sumar vendors no siempre es sinónimo de generar un entorno más seguro. En la realidad, a veces simplemente suma fricciones, y esto queda respaldado con el dato de que aquellos equipos que sufrieron incidentes usaban, de media, más herramientas de seguridad que los que no los sufrieron: 5,1 frente a 4,2.</p>
+<p>Asimismo, la separación entre AppSec y seguridad cloud aumenta el riesgo y castiga la operación diaria. Los ingenieros dedican una media de 6,1 horas semanales a revisar y priorizar alertas de seguridad, un volumen que crece a medida que aumenta el número de herramientas en uso.</p>
+<p>Los falsos positivos consumen unas 4,8 horas por semana. Por eso, añadir nuevas herramientas a un equipo ya saturado de alertas sin importancia es como seguir poniendo palos a la misma rueda.</p>
+<p>Esta dificultad operativa <a href="https://picodotdev.github.io/blog-bitix/2025/10/ideas-para-mejorar-mi-productividad/">mina la productividad</a>. Los especialistas pueden pasar casi 5 días más en arreglar amenazas reales, una demora que pone en peligro la integridad del sistema.</p>
+<p>Así se explica por qué AppSec y cloud security ya no deberían pensarse como silos organizativos, sino como una cadena continua de señal. Desde el commit hasta el runtime, la prioridad no debería ser detectar más, sino mejor.</p>
+<h2 id="si-la-experiencia-del-desarrollador-mejora-mejora-también-la-ciberseguridad">Si la experiencia del desarrollador mejora, mejora también la ciberseguridad</h2>
+<p>La unión hace la fuerza y por eso la discusión en 2026 ya no se centra en quién manda más, si AppSec o CloudSec. Las organizaciones que quieran corregir el riesgo de extremo a extremo deberán buscar herramientas que prioricen la <a href="https://www.codemotion.com/magazine/es/carreras-tech/experiencia-del-desarrollador/">experiencia del desarrollador</a> y que habiliten el trabajo entre equipos.</p>
+<p>La principal conclusión del informe realizado en base a la encuesta a más de 450 colaboradores es que las organizaciones que usan herramientas pensadas tanto para developers como para equipos de seguridad reportan menos incidentes materiales que aquellas que emplean soluciones orientadas a una sola audiencia.</p>
+<p>Un dato que no debe pasar inadvertido es que el 65% de los equipos acaba incurriendo en conductas arriesgadas (posponer fixes, descartar alertas o saltarse controles) debido a la fatiga provocada por falsos positivos.</p>
+<p>Para quien sepa leerla, esta información es oro. En ciberseguridad no gana el que hace más rápido o con un mayor número de herramientas, sino el que actúa preventivamente y con cabeza fría desde el principio.</p>
+
+    </div>
+
+    <p class="information">
+      
+        <div class="alert alert-info fs-6" role="alert">
+          <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Este es un artículo patrocinado cuyo contenido lo considero relevante para el lector y que me sirve para hacer <a href="https://picodotdev.github.io/blog-bitix/series/donacion/">pequeñas donaciones a proyectos de software libre</a>. Tanto el tema del artículo como el contenido y opinión sincera es propio y redactado con total libertad.
+        </div>
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+          
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/05/por-que-es-importante-escoger-un-buen-servicio-de-hosting-para-tu-negocio-en-linea/">
+                <img src="/blog-bitix/2022/05/por-que-es-importante-escoger-un-buen-servicio-de-hosting-para-tu-negocio-en-linea/images/header_hu_f7e3e849548347c8.webp" width="326" height="125" alt="¿Por qué es importante escoger un buen servicio de hosting para tu negocio en línea?" title="¿Por qué es importante escoger un buen servicio de hosting para tu negocio en línea?" class="" loading="lazy">
+                <h3>¿Por qué es importante escoger un buen servicio de hosting para tu negocio en línea?</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/12/aprovisionar-un-servidor-en-la-infraestructura-cloud-de-clouding-con-ubuntu-y-nginx-usando-ansible-y-protocolo-seguro-https-con-lets-encrypt/">
+                <img src="/blog-bitix/assets/images/logotypes/clouding.svg" width="326" height="125" alt="Aprovisionar un servidor en la infraestructura cloud de Clouding con Ubuntu y Nginx usando Ansible y protocolo seguro HTTPS con Let&#39;s Encrypt" title="Aprovisionar un servidor en la infraestructura cloud de Clouding con Ubuntu y Nginx usando Ansible y protocolo seguro HTTPS con Let&#39;s Encrypt" class="" loading="lazy">
+                <h3>Aprovisionar un servidor en la infraestructura cloud de Clouding con Ubuntu y Nginx usando Ansible y protocolo seguro HTTPS con Let&#39;s Encrypt</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/04/historias-de-un-streamer-un-nuevo-reto/">
+                <img src="/blog-bitix/2021/04/historias-de-un-streamer-un-nuevo-reto/images/seagate-game-drive-2tb-verde_hu_3d52d6fee133f467.webp" width="326" height="125" alt="Historias de un streamer, «Un nuevo reto»" title="Historias de un streamer, «Un nuevo reto»" class="" loading="lazy">
+                <h3>Historias de un streamer, «Un nuevo reto»</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/02/proyecto-de-mejora-de-smart-tv-usando-una-vpn-para-acceder-a-contenido-restringido-por-ip/">
+                <img src="/blog-bitix/assets/images/logotypes/hugo.svg" width="326" height="125" alt="Proyecto de mejora de Smart TV usando una VPN para acceder a contenido restringido por IP" title="Proyecto de mejora de Smart TV usando una VPN para acceder a contenido restringido por IP" class="" loading="lazy">
+                <h3>Proyecto de mejora de Smart TV usando una VPN para acceder a contenido restringido por IP</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/">
+                <img src="/blog-bitix/assets/images/logotypes/clouding.svg" width="326" height="125" alt="Servidores Cloud VPS de Clouding.io para hospedar blogs y páginas web" title="Servidores Cloud VPS de Clouding.io para hospedar blogs y páginas web" class="" loading="lazy">
+                <h3>Servidores Cloud VPS de Clouding.io para hospedar blogs y páginas web</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/02/cursos-de-formacion-de-keepcoding/">
+                <img src="/blog-bitix/assets/images/logotypes/keepcoding.webp" width="326" height="125" alt="Cursos de formación de KeepCoding" title="Cursos de formación de KeepCoding" class="" loading="lazy">
+                <h3>Cursos de formación de KeepCoding</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/privacy/">Política de privacidad</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2026 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>
