@@ -2,8 +2,9 @@
 pid: 726
 type: "post"
 title: "AppSec vs. seguridad de cloud: El punto donde las responsabilidades se encuentran"
-url: "/2026/03/appsec-vs-seguridad-de-cloud-el-punto-donde-las-responsabilidades-se-encuentran/"
-date: 2026-03-03T14:00:00+02:00
+url: "/2026/04/appsec-vs-seguridad-de-cloud-el-punto-donde-las-responsabilidades-se-encuentran/"
+aliases: ["/2026/03/appsec-vs-seguridad-de-cloud-el-punto-donde-las-responsabilidades-se-encuentran/"]
+date: 2026-04-03T14:00:00+02:00
 language: "es"
 index: true
 rss: false
