@@ -6,7 +6,7 @@ url: "/2026/04/appsec-vs-seguridad-de-cloud-el-punto-donde-las-responsabilidades
 aliases: ["/2026/03/appsec-vs-seguridad-de-cloud-el-punto-donde-las-responsabilidades-se-encuentran/"]
 date: 2026-04-03T14:00:00+02:00
 language: "es"
-index: true
+index: false
 rss: false
 sharing: true
 comments: false
