@@ -45,7 +45,7 @@ Destaco sus principios, sin ofertas para los clientes nuevos y las mejoras aplic
 
 Pero para mi ha llegado un nuevo cambio. En este caso a la cuarta operadora después de Telefónica, Masorange y Vodafone, la cuarta es [Digi][digi].
 
-La primera toma de contacto con Digi está siendo buena. Realicé la solicitud un viernes de madrugada con instalación de su fibra y portabilidad del móvil. El mismo sábado al medio día ya tenía la fibra instalada, tras dos días laborables la tarjeta sim en casa y en tres la portabilidad hecha. Me sorprende lo eficiente que son las operadoras en estos procesos de alta y baja, quizá lo damos por hecho pero es algo a destacar.
+La primera toma de contacto con Digi está siendo buena. Realicé la solicitud un viernes de madrugada con instalación de su fibra y portabilidad del móvil. El mismo sábado al medio día ya tenía la fibra instalada, tras dos días laborables la tarjeta SIM en casa y en tres la portabilidad hecha. Me sorprende lo eficiente que son las operadoras en estos procesos de alta y baja, quizá lo damos por hecho pero es algo a destacar.
 
 Una buena parte de los motivos por los que dejo Pepephone es el precio, en Pepephone tenía un precio de 34 € para la fibra y el móvil. En Digi el precio que tengo son 12 €, unos 20 € de ahorro al mes y unos 240 € al año, es una buena cantidad.
 
