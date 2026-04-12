@@ -35,6 +35,7 @@ Estos son algunos artículos patrocinados que he publicado.
 * [Desempaquetado de la funda de teclado 60% KEMOVE][blogbitix-635]
 * [Desempaquetado y análisis del micrófono MAONO HD300T][blogbitix-644]
 * [Desempaquetado y análisis de la interfaz de audio Maonocaster E2][blogbitix-649]
+* [AppSec vs. seguridad de cloud: El punto donde las responsabilidades se encuentran][blogbitix-726]
 
 Y muchos otros artículos no patrocinados de [desempaquetado y análisis de productos de tecnología][blogbitix-serie-desempaquetado-tecnologia] comprados para mi uso personal como los siguientes.
 
