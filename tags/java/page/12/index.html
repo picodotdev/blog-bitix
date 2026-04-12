@@ -228,6 +228,35 @@
     
     <li>
       <article>
+        <h1><a href="/blog-bitix/2018/03/la-herramienta-jlink-para-generar-runtimes-de-java-incluyendo-exclusivamente-los-modulos-que-usa-una-aplicacion/">La herramienta jlink para generar runtimes de Java incluyendo exclusivamente los módulos que usa una aplicación</a></h1>
+        <span class="information">
+          <time>24/03/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>En versiones anteriores de Java 9 había un único <em>runtime</em> para ejecutar cualquier aplicación que debía ser instalado previamente para la ejecución de la aplicación. Aunque la aplicación no usase <em>Swing</em> por ser una aplicación web o cosas como <a href="https://es.wikipedia.org/wiki/CORBA">CORBA</a> ya en desuso aún estaban disponibles en el <em>runtime</em> por motivos de no romper la compatibilidad con versiones anteriores.</p>
+<p>Esto hacía que las aplicaciones no fuesen lo más eficiente posible y aumenta el tamaño necesario ahora de las imágenes de contenedores como <a href="https://www.docker.com/">Docker</a> estas tuviesen un tamaño mayor del imprescindible, además de hacer que el tiempo de arranque sea algo mayor e incluir clases que aumentan la superficie de ataque ante un fallo de seguridad. Entre las <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">novedades de Java 8</a> se añadieron los <a href="https://www.oracle.com/technetwork/java/embedded/resources/tech/compact-profiles-overview-2157132.html"><em>compact profiles</em></a> que eran subconjuntos más reducidos del <em>runtime</em> pero eran conjuntos prefijados, las aplicaciones debían usar el mínimo que necesitasen si querían usar alguno. La solución de Java 8 fue una solución intermedia, <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">los módulos de Java 9</a> han sido la solución completa.</p>
+          
+          <br>
+          <a href="/blog-bitix/2018/03/la-herramienta-jlink-para-generar-runtimes-de-java-incluyendo-exclusivamente-los-modulos-que-usa-una-aplicacion/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2018/03/novedades-de-java-10/">Novedades de Java 10</a></h1>
         <span class="information">
           <time>23/03/2018</time>
@@ -613,31 +642,6 @@
           
           <br>
           <a href="/blog-bitix/2017/11/que-es-graphql-y-ejemplo-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/">Visualizar datos y generar gráficas en Java con JFreeChart</a></h1>
-        <span class="information">
-          <time>22/10/2017</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-          
-        </span>
-        <p>
-          
-            Visualizar datos de forma gŕafica ayuda a comprender un conjunto de datos grande mucho mejor que leyendo los valores en una tabla con varias columnas. En Java con la librería JFreeChart podemos generar gráficas de diferentes tipos que podremos incluir en los archivos <em>pdf</em> que generemos en un aplicación o podremos mostrar en forma de imagen en el navegador si se trata de una aplicación web.
-          
-          <br>
-          <a href="/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
