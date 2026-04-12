@@ -64,9 +64,9 @@ Un código del que alguien dejó escrito esto en el _README_ de un repositorio c
 
 ## La solución
 
-La solución implica analizar el _stacktrace_, conocer cómo inspeccionar el código fuente de las clases de ese _stacktrace_ y donde colocar esa nueva clase para que sea efectiva.
+La solución implica analizar el _stacktrace_, decompilar y conocer cómo inspeccionar el código fuente de las clases de ese _stacktrace_ y donde colocar esa nueva clase para que sea efectiva.
 
-El cambio es sencillo, modificar solo una línea de código fuente, para lo demás uno puede que necesite 25 años de experiencia trabajando con Java.
+El cambio es sencillo, modificar solo una línea de código fuente, para lo demás uno puede que necesite 25 años de experiencia trabajando con Java para idear esta solución.
 
 {{% /post %}}
 
