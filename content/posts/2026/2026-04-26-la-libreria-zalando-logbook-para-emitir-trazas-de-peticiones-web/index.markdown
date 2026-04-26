@@ -39,7 +39,13 @@ La forma de añadir logs en las llamadas HTTP depende de la librería utilizada:
 
 A continuación se muestra un ejemplo básico con OkHttp, válido para casos simples. Para necesidades más avanzadas, lo recomendable es utilizar una librería especializada como Zalando Logbook.
 
-Ejemplo código java simple
+La clase del OkHttp _HttpLoggingInterceptor_ permite cierto nivel de configucación en cuanto a que nivel de detalle mostrar pero no permite modificar el formato y tantas opciones de configuración como Logbook.
+
+{{< code file="Beans-1.java" language="java" options="" >}}
+
+El resultado es el siguiente.
+
+{{< code file="System-1.out" language="plain" options="" >}}
 
 ## La librería Zalando Logbook
 
@@ -58,15 +64,15 @@ Otra ventaja relevante es el desacoplamiento, si en algún momento se decide cam
 
 Esta es la configuración necesaria para proporcionar el _interceptor_.
 
-{{< code file="Beans.java" language="java" options="" >}}
+{{< code file="Beans-2.java" language="java" options="" >}}
 
 Y el código donde se emite la traza.
 
 {{< code file="Controller.java" language="java" options="" >}}
 
-El resultado.
+El resultado muestra no solo las peticiones que realiza la aplicación, también muestra las peticiones que recibe.
 
-{{< code file="output.log" language="plain" options="" >}}
+{{< code file="System-2.out" language="plain" options="" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/ZalandoLogbook" command="./gradlew run" %}}
 
