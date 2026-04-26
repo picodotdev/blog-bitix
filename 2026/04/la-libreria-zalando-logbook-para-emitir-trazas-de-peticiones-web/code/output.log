@@ -1,0 +1,8 @@
+2026-04-26 11:57:48,108  TRACE                                   org.zalando.logbook.Logbook Incoming request(precorrelation: 90414981e848eddf, remote: 0:0:0:0:0:0:0:1, host: localhost, method: GET, uri: http://localhost:8080/?aaa=b, protocol: HTTP/1.1, bodySize: 0)
+2026-04-26 11:57:48,134  INFO  0d042cea-6d13-400f-9f44-43aac43e106b     io.github.picodotdev.blogbitix.zalandologbook.Controller Without Logbook
+2026-04-26 11:57:48,135  INFO  0d042cea-6d13-400f-9f44-43aac43e106b                                         okhttp3.OkHttpClient --> GET https://duckduckgo.com/
+2026-04-26 11:57:48,446  INFO  0d042cea-6d13-400f-9f44-43aac43e106b                                         okhttp3.OkHttpClient <-- 200 https://duckduckgo.com/ (309ms, unknown-length body)
+2026-04-26 11:57:48,446  INFO  0d042cea-6d13-400f-9f44-43aac43e106b     io.github.picodotdev.blogbitix.zalandologbook.Controller With Logbook
+2026-04-26 11:57:48,537  TRACE 0d042cea-6d13-400f-9f44-43aac43e106b                                  org.zalando.logbook.Logbook Outgoing request(precorrelation: ba2a883ea8c6b2ca, remote: localhost, host: duckduckgo.com, method: GET, uri: https://duckduckgo.com/, protocol: HTTP/1.1, bodySize: 0)
+2026-04-26 11:57:48,654  TRACE 0d042cea-6d13-400f-9f44-43aac43e106b                                  org.zalando.logbook.Logbook Incoming response(correlation: ba2a883ea8c6b2ca, contentType: text/html; charset=UTF-8, status: 200, protocol: H2, duration: 117, bodySize: 0)
+2026-04-26 11:57:48,664  TRACE                                   org.zalando.logbook.Logbook Outgoing response(correlation: 90414981e848eddf, contentType: text/plain;charset=ISO-8859-1, status: 200, protocol: HTTP/1.1, duration: 559, bodySize: 0)

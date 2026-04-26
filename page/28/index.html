@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta name="generator" content="Hugo 0.157.0">
+	<meta name="generator" content="Hugo 0.160.1">
   <meta name="base" href="/blog-bitix/">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -229,6 +229,35 @@
             
 <ul class="list-unstyled">
     
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2018/04/la-controversia-sobre-las-excepciones-checked-y-unchecked/">La controversia sobre las excepciones checked y unchecked</a></h1>
+        <span class="information">
+          <time>20/04/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Las excepciones son una forma de gestionar las condiciones de error que se dan en los programas. En el lenguaje C se utiliza el valor de retorno de la función para determinar la condición de error que se ha producido, el problema es que comprobar el valor de retorno puede ignorarse y la gestión de errores está mezclada con la tarea del programa.</p>
+<p>El lenguaje Java utiliza un <a href="https://picodotdev.github.io/blog-bitix/2017/10/las-excepciones-para-gestionar-errores-con-java/">mecanismo de excepciones</a>, las excepciones son objetos que se lanzan cuando se produce una condición de error. Todas las excepciones en Java heredan de <a href="#ZgotmplZ">Throwable</a> subdividiéndose en <a href="#ZgotmplZ">Error</a> y <a href="#ZgotmplZ">Exception</a>, las primeras son condiciones de error del sistema y las segundas condiciones de error del programa. A su vez las <em>Exception</em> pueden ser <em>checked</em> si heredan de esta y son aquellas que el compilador fuerza a que sean capturadas no pudiendo ignorarse, han de capturarse en una construcción <em>try catch</em> o declarar que el método puede lanzar la excepción no capturada. Las excepciones <em>unchecked</em> heredan de <a href="#ZgotmplZ">RuntimeException</a> que heredan a su vez de <em>Exception</em> pero tienen la particularidad de que no es necesario capturarlas ni declararlas como que se pueden lanzar debido a que se consideran condiciones de error en la programación como un acceso a un <em>array</em> fuera de rango que produce un <a href="#ZgotmplZ">ArrayIndexOutOfBounds</a>, el conocido <a href="#ZgotmplZ">NullPointerException</a> cuando se utiliza una referencia nula, otro es <a href="#ZgotmplZ">ArithmeticException</a> que se produce al dividir por 0.</p>
+          
+          <br>
+          <a href="/blog-bitix/2018/04/la-controversia-sobre-las-excepciones-checked-y-unchecked/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
     
     <li>
       <article>
@@ -623,32 +652,6 @@
           
           <br>
           <a href="/blog-bitix/2018/02/las-6-plus-2-formas-normales-de-las-bases-de-datos-relacionales/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2018/02/8-aniversario-del-blog/">8º aniversario del blog</a></h1>
-        <span class="information">
-          <time>06/02/2018</time>
-          
-            
-              <a href="/blog-bitix/tags/blog/">blog</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/blog-bitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix" class="" loading="false"></p>
-</div>
-<p>Hoy se cumplen 8 años desde que creé y empecé a escribir en un blog, primeramente <a href="https://elblogdepicodev.blogspot.com.es">El blog de pico.dev</a> y más tarde en Blog Bitix. Durante este tiempo he escrito 485 artículos entre ambos blogs, en Blog Bitix ya tengo más artículos escritos y publicados de los que he tenido en El blog de pico.dev. Ocho años ya son una cifra considerable y requiere gran constancia, dedicación, motivación, perseverancia y gran cantidad de tiempo. Muchos blogs no llegan a esta cifra.</p>
-          
-          <br>
-          <a href="/blog-bitix/2018/02/8-aniversario-del-blog/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
