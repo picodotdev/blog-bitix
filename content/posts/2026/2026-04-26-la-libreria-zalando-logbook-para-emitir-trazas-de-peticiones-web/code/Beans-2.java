@@ -10,14 +10,7 @@ public class Beans {
         return new CustomHttpLogFormatter();
     }
 
-    @Bean("okHttpClient")
-    OkHttpClient buildOkHttpClient() {
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        logging.setLevel(HttpLoggingInterceptor.Level.BASIC);
-        return new OkHttpClient.Builder()
-                   .addInterceptor(logging)
-                   .build();
-    }
+    ...
 
     @Bean("logbookOkHttpClient")
     OkHttpClient buildLogbookOkHttpClient(Logbook logbook) {

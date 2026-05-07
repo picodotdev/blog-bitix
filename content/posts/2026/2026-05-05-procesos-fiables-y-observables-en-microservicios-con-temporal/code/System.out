@@ -1,0 +1,13 @@
+2026-05-07 20:19:25,156  INFO             io.temporal.serviceclient.WorkflowServiceStubsImpl Created WorkflowServiceStubs for channel: ManagedChannelOrphanWrapper{delegate=ManagedChannelImpl{logId=1, target=127.0.0.1:7233}}
+2026-05-07 20:19:25,244  INFO             io.temporal.serviceclient.WorkflowServiceStubsImpl Created WorkflowServiceStubs for channel: ManagedChannelOrphanWrapper{delegate=ManagedChannelImpl{logId=3, target=127.0.0.1:7233}}
+2026-05-07 20:19:25,278  INFO   codotdev.blogbitix.temporal.workers.PlaceOrderWorkflowWorker Starting PlaceOrderWorkflowWorker...
+2026-05-07 20:19:25,382  INFO                io.temporal.internal.worker.MultiThreadedPoller start: MultiThreadedPoller{name=Workflow Poller taskQueue="place-order-workflow-task-queue", namespace="default", identity=691@localhost}
+2026-05-07 20:19:25,386  INFO                io.temporal.internal.worker.MultiThreadedPoller start: MultiThreadedPoller{name=Activity Poller taskQueue="place-order-workflow-task-queue", namespace="default", identity=691@localhost}
+2026-05-07 20:19:26,453  INFO   odotdev.blogbitix.temporal.activities.DefaultOrderActivities Order generate id (orderId: 196969)
+2026-05-07 20:19:26,470  INFO   odotdev.blogbitix.temporal.activities.DefaultFraudActivities Fraud decide (orderId: 196969)
+2026-05-07 20:19:26,491  INFO   dev.blogbitix.temporal.activities.DefaultInventoryActivities Inventory book tickets (listingId: 1, quantity: 3)
+2026-05-07 20:19:26,497  INFO   otdev.blogbitix.temporal.activities.DefaultPaymentActivities Payments authorize (paymentId: 848778)
+2026-05-07 20:19:26,504  INFO   odotdev.blogbitix.temporal.activities.DefaultOrderActivities Order create (orderId: 196969, listingId: 1, quantity; 3)
+2026-05-07 20:19:26,513  INFO   odotdev.blogbitix.temporal.activities.DefaultFraudActivities Fraud decision (orderId: 196969, authorizeId: 848778, decision: APPROVE)
+2026-05-07 20:19:26,520  INFO   odotdev.blogbitix.temporal.activities.DefaultOrderActivities Order approve (orderId: 196969)
+2026-05-07 20:19:31,252  INFO                               io.temporal.worker.WorkerFactory shutdown: WorkerFactory{identity=691@localhost}
