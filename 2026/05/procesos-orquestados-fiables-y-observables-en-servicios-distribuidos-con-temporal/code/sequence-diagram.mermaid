@@ -1,0 +1,14 @@
+sequenceDiagram
+    Browser->>Checkout: Place order
+    Checkout->>Orders: Generate order id
+    Checkout->>Fraud: Fraud decide
+    Checkout->>Inventory: Reserve tickets
+    Checkout->>Payments: Payments authorize
+    alt Payment authorize fail
+        Checkout->>Fraud: Authorize fail
+        Checkout->>Inventory: Unreserve tickets
+    end
+    Checkout->>Orders: Create order
+    Checkout->>Fraud: Fraud decision
+    Checkout->>Orders: Approve order
+    Checkout->>Browser: Order placed

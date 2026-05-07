@@ -1,16 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title type="text">Blog Bitix</title>
-    <subtitle type="text">Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</subtitle>
+    <subtitle type="text">Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.</subtitle>
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/programacion/</id>
-    <updated>2026-03-08T12:00:00+02:00</updated>
+    <updated>2026-05-05T20:30:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/11/las-formas-de-guardar-relaciones-jerarquicas-en-bases-de-datos-relacionales/</id>
+        <title>Las formas de guardar relaciones jerárquicas en bases de datos relacionales</title>
+        <updated>2020-11-27T15:00:00+01:00</updated>
+        <published>2020-11-27T15:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/11/las-formas-de-guardar-relaciones-jerarquicas-en-bases-de-datos-relacionales/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>Para implementar relaciones jerárquicas en base de datos relacionales hay varias soluciones conocidas. En este artículo comento las más conocidas con sus desventajas y cual elegir en función de si la base de datos soporta consultas recursivas o en caso de que no las soporte.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2020/11/las-formas-de-guardar-relaciones-jerarquicas-en-bases-de-datos-relacionales/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/</id>
@@ -370,33 +395,6 @@
         <p><strong>Los métodos de búsqueda y consulta permiten recuperar objetos de las bases de datos según los criterios deseados. Dependiendo del tamaño de la aplicación y sus casos de uso el número de consultas será más o menos grande. Con un número de consultas grande estas se vuelven complejas de mantener y generan duplicación de lógica de negocio. Para simplificar el mantenimiento de un número grande de consultas y evitar duplicidad de lógica de negocio una solución es implementar el patrón de diseño <em>Specification</em>.</strong></p>
         
         <p><a href="https://picodotdev.github.io/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/">Continuar leyendo en Blog Bitix</a></p>
-
-        ]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-        
-    </entry>
-    
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2020/05/copiar-datos-de-un-tipo-de-objeto-a-otro-con-modelmapper/</id>
-        <title>Copiar datos de un tipo de objeto a otro con ModelMapper</title>
-        <updated>2020-05-31T10:00:00+02:00</updated>
-        <published>2020-05-31T10:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/05/copiar-datos-de-un-tipo-de-objeto-a-otro-con-modelmapper/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[
-
-        <p><strong>Las clases DTO son clases usadas como contenedores de datos sin ninguna lógica o con muy poca, se construyen con datos copiados de otras clases. Un uso de estas clases DTO es para evitar emplear el uso del patrón <em>Open Session in View</em> ya que aunque ofrece algunos beneficios también tiene algunos inconvenientes. La librería ModelMapper permite realizar los copiados de datos de un objeto origen a una nueva instancia destino de otra clase.</strong></p>
-        
-        <p><a href="https://picodotdev.github.io/blog-bitix/2020/05/copiar-datos-de-un-tipo-de-objeto-a-otro-con-modelmapper/">Continuar leyendo en Blog Bitix</a></p>
 
         ]]>
         </content>

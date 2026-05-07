@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Temporal es una herramienta open source que permite modelar procesos de larga duración directamente en código, con garantías de fiabilidad y resiliencia ante fallos. En este artículo explico sus conceptos fundamentales, workflows, actividades y señales, y los pongo en práctica implementando en Java un proceso de compra de entradas con múltiples microservicios implicados. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Procesos orquestados fiables y observables en servicios distribuidos con Temporal</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2026/05/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2026/05/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal/" hreflang="es" title="Procesos orquestados fiables y observables en servicios distribuidos con Temporal">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preload" href="/blog-bitix/asssets/fonts/pt-serif/pt-serif.css" as="style">
+  <link rel="preload" href="/blog-bitix/asssets/fonts/open-sans/open-sans.css" as="style">
+  <link href="/blog-bitix/assets/fonts/pt-serif/pt-serif.css" rel="stylesheet">
+  <link href="/blog-bitix/assets/fonts/open-sans/open-sans.css" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Procesos orquestados fiables y observables en servicios distribuidos con Temporal">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2026/05/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/temporal-750.webp">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Temporal es una herramienta open source que permite modelar procesos de larga duración directamente en código, con garantías de fiabilidad y resiliencia ante fallos. En este artículo explico sus conceptos fundamentales, workflows, actividades y señales, y los pongo en práctica implementando en Java un proceso de compra de entradas con múltiples microservicios implicados. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/temporal-750.webp">
+
+<meta name="twitter:site" content="">
+<meta name="twitter:title" content="Procesos orquestados fiables y observables en servicios distribuidos con Temporal">
+<meta name="twitter:description" content="Temporal es una herramienta open source que permite modelar procesos de larga duración directamente en código, con garantías de fiabilidad y resiliencia ante fallos. En este artículo explico sus conceptos fundamentales, workflows, actividades y señales, y los pongo en práctica implementando en Java un proceso de compra de entradas con múltiples microservicios implicados. &hellip;">
+<meta name="twitter:creator" content="">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2026/05/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal/"
+    },
+    "headline": "Procesos orquestados fiables y observables en servicios distribuidos con Temporal",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/temporal-750.webp"
+        
+      },
+    "datePublished": "2026-05-05T20:30:00+02:00",
+    "dateModified": "2026-05-05T20:30:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "2087",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "I ♥ Java, GNU/Linux and libre software.",
+        "url": ""
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Temporal es una herramienta open source que permite modelar procesos de larga duración directamente en código, con garantías de fiabilidad y resiliencia ante fallos. En este artículo explico sus conceptos fundamentales, workflows, actividades y señales, y los pongo en práctica implementando en Java un proceso de compra de entradas con múltiples microservicios implicados."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+  
+  <script type="text/javascript" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async></script>
+<script>
+    window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() {
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1750, 0], [[300, 600]])
+        .addSize([0, 0], [])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600]])
+        .addSize([1280, 0], [[160, 600]])
+        .addSize([0, 0], [])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+    });
+</script>
+
+  
+  
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2026/05/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal/images/header_hu_9d3eb6b22b2d33fa.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            
+<div id='div-gpt-ad-1705155070019-0' style='min-width: 160px; min-height: 600px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705155070019-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Procesos orquestados fiables y observables en servicios distribuidos con Temporal</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>05/05/2026</time>.
+      
+        <br>
+        <i class="bi bi-tag"></i>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <i class="bi bi-link-45deg"></i>
+      <a href="/blog-bitix/2026/05/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal/">Enlace permanente</a>
+      
+        <i class="bi bi-chat"></i>
+        <a href="/blog-bitix/2026/05/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Temporal es una herramienta open source que permite modelar procesos de larga duración directamente en código, con garantías de fiabilidad y resiliencia ante fallos. En este artículo explico sus conceptos fundamentales, workflows, actividades y señales, y los pongo en práctica implementando en Java un proceso de compra de entradas con múltiples microservicios implicados.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      
+<div id='div-gpt-ad-1705154918797-0' style='min-width: 300px; min-height: 90px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154918797-0'); });
+  </script>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/temporal.svg" width="200" height="200" alt="Temporal" title="Temporal" class="" loading="false"></p>
+</div>
+<p>Desde hace tiempo tenía pendiente investigar y entender Cadence, tras un tiempo leyendo su documentación no tenía claro cómo funcionaba, qué funcionalidad cubría y como funcionaba. Sin embargo, al preguntarle a Claude me indicó, como ocurre ocurre en muchos casos, los desarrolladores originales han creado un <em>fork</em>, en el caso de Cadence el <em>fork</em> es Temporal.</p>
+<p>Tras unos días y siguiendo la buena documentación ofrecida por temporal tengo un ejemplo con el que entender, practicar y usar un pequeño proceso. Con la documentación y el ejemplo pensar en posibles casos de uso al dar a solución a necesidades.</p>
+<p>En la web dan algunos ejemplos de casos de uso de Temporal y en su página de inicio una descripción introductoria de la herramienta.</p>
+<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
+    <li><a href="#procesos-con-temporal">Procesos con Temporal</a></li>
+    <li><a href="#conceptos">Conceptos</a></li>
+    <li><a href="#funcionalidades">Funcionalidades</a></li>
+    <li><a href="#definición-de-un-proceso">Definición de un proceso</a></li>
+    <li><a href="#ejemplo-con-temporal">Ejemplo con Temporal</a>
+      <ol>
+        <li><a href="#workflow">Workflow</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#worker">Worker</a></li>
+        <li><a href="#programa">Programa</a></li>
+      </ol>
+    </li>
+    <li><a href="#servicio-de-temporal">Servicio de Temporal</a></li>
+    <li><a href="#videos-de-introducción">Videos de introducción</a></li>
+  </ol>
+</nav></div> </div><div class="col-12 col-lg-6"></div></div>
+<h2 id="procesos-con-temporal">Procesos con Temporal</h2>
+<p>De forma muy resumida <a href="https://temporal.io/">Temporal</a> es una herramienta que permite modelar procesos que pueden durar minutos, días, meses o años e integrar interacciones humanas. Además, la implementación de los procesos se realiza con garantías de fiabilidad y resiliencia al considerar que cualquier paso del proceso puede fallar e implementando políticas de reintentos.</p>
+<p>Temporal tiene otras características diferenciadoras. Las herramientas tradicionales para modelar procesos se basan en la definición de un proceso en una notación textual como xml y su entorno de ejecución es el servidor de procesos. En Temporal por el contrario el proceso se define en código en alguno de los diferentes lenguajes de programación soportados con mayores capacidades que un archivo descriptor.</p>
+<p>Sus <a href="https://docs.temporal.io/evaluate/use-cases-design-patterns">casos de uso</a> son los siguientes:</p>
+<ul>
+<li>Máquinas de estados complejas: Modelar entidades de negocio con ciclos de vida largos y múltiples transiciones de estado, como un pedido que pasa por creado, reservado, pagado, enviado y entregado a lo largo de días.</li>
+<li>Procesos de larga duración con esperas humanas: Flujos de aprobación, onboarding de usuarios o procesos de KYC donde el workflow queda en espera de una acción humana durante horas, días, semanas, meses o años y luego continúa.</li>
+<li>Sagas y transacciones distribuidas: Implementar el patrón saga para gestionar la consistencia eventual entre microservicios con compensaciones automáticas si algún paso falla, evitando inconsistencias de datos.</li>
+<li>Tareas programadas y recurrentes: Con la funcionalidad de schedule, sustituir cronjobs frágiles por procesos planificados con reintentos, historial y observabilidad.</li>
+</ul>
+<p>Casos de no uso son los siguientes:</p>
+<ul>
+<li>Procesos simples y de corta duración: si el proceso se resuelve en una sola llamada HTTP o una transacción de base de datos, Temporal añade una complejidad innecesaria. Para esos casos un simple servicio REST o una cola de mensajes como Kafka es suficiente.</li>
+<li>Alta frecuencia y baja latencia: Temporal no está diseñado para procesos que requieren respuesta en milisegundos o millones de ejecuciones por segundo, como procesamiento de eventos en tiempo real o sistemas de trading de alta frecuencia.</li>
+<li>Equipos pequeños sin necesidad de resiliencia distribuida: Si la aplicación es un monolito o un sistema sencillo, introducir Temporal implica operar un servidor adicional con su base de datos, lo que puede no justificarse.</li>
+<li>Lógica puramente reactiva a eventos: Si el sistema ya está bien modelado con event sourcing y CQRS y los procesos son stateless, herramientas como Kafka Streams o Apache Flink encajan mejor de forma natural.</li>
+<li>Procesos con requisitos de latencia estrictos en cada actividad: Temporal introduce overhead en la coordinación entre el servidor y los workers, por lo que si cada actividad del proceso tiene un SLA de milisegundos, ese overhead puede ser un problema.</li>
+</ul>
+<h2 id="conceptos">Conceptos</h2>
+<p>Temporal define los siguientes conceptos.</p>
+<ul>
+<li>Workflows que representan los procesos y se implementan en código de un lenguaje de programación. En Java los workflows tienen la definición de una interfaz con un método que inicia el proceso, métodos para recibir mensajes que permiten consultar el estado del proceso y cambiar el estado. El proceso en su implementación invoca los pasos del proceso o actividades.</li>
+<li>Las actividades son los pasos del proceso, se ejecutan como consecuencia del progreso del proceso, cambio estado o de los mensajes que recibe el proceso.</li>
+<li>Las señales son la forma de comunicarse con el proceso, obtener información, cambiar el flujo de ejecución de forma síncrona y asíncrona.</li>
+<li>Finalmente los workers, son las unidades de cómputo que ejecutan el proceso y las actividades.</li>
+</ul>
+<p>Temporal es un binario que hace de servidor coordinando la ejecución de los procesos, gestionando los cambios de estado y almacenando el estado del proceso. Registra el inicio de una nueva instancia de un proceso, los datos de entrada y salida de cada actividad junto a otros metadatos como cuanto tiempo tarda cada paso.</p>
+<p>En modo desarrollo el estado de los procesos se almacena en memoria. En un entorno de producción el estado se aconseja guardar en una base de datos como PostgreSQL.</p>
+<p>Esta supervisión de los procesos permite a Temporal dar visibilidad de los procesos que es una característica que modelan los procesos con coreografía está distribuída entre los diferentes procesos.</p>
+<h2 id="funcionalidades">Funcionalidades</h2>
+<p>Temporal soporta diferentes funcionalidades, en la documentación se detallan entre las que están:</p>
+<ul>
+<li>Schedule: permite planificar procesos cada cierto tiempo.</li>
+<li>Composability: es posible crear e invocar subprocesos.</li>
+<li>Encryption: permite cifrar los datos del proceso, algunos de los datos pueden ser sensibles.</li>
+<li>Observability: se recogen métricas a raíz del estado del proceso.</li>
+<li>Testing: es posible crear diferentes tipos de teses unitarios, de integración y end-to-end.</li>
+</ul>
+<h2 id="definición-de-un-proceso">Definición de un proceso</h2>
+<p>Supongamos que tenemos un proceso de compra de entradas. El sistema ha sido desarrollado utilizando domain driven design y microservicios separando las funciones del sistema en diferentes subdominios y se compone del flujo hasta que el order queda en estado confirmada.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2026/05/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal/images/diagrama-de-secuencia_hu_4a204ccdd1893496.webp" data-gallery="" title="Diagrama de secuencia"><img src="/blog-bitix/2026/05/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal/images/diagrama-de-secuencia_hu_4616a7b164961294.webp" width="650" height="415" alt="Diagrama de secuencia" title="Diagrama de secuencia" class="" loading="lazy"></a></p>
+<figcaption>Diagrama de secuencia</figcaption>
+</figure>
+</div>
+<p>Tras el estado de confirmación o cancelación de la orden comenzaría un siguiente proceso, subprocesos asociados o faltaría definir más pasos en el proceso hasta que el producto o servicio por el que se ha pagado ha sido entregado al cliente. Para el ejemplo es suficiente hasta confirmación.</p>
+<p>Implementar este proceso en un sistema distribuido de microservicios en el que hay múltiples puntos de fallo basta que alguna de las actividades temporalmente no funcione para generar inconsistencias de datos aún con reintentos en los procesos de esta coreografía de microservicios.</p>
+<p>Que pasa si, ¿se reservan los tickets, falla la autorización y no se pueden liberar los tickets temporalmente? o ¿si se crea el order pero no se puede notificar la decisión al sistema de fraude si finalmente se acepta la transacción?. Además al estar el proceso distribuido en diferentes servicios es difícil tener visibilidad con información completa del estado del proceso y pasos por los que ha pasado.</p>
+<p>Generalmente un sistema con coreografía funciona pero en ciertos errores el proceso deja un estado inconsistente las transacciones, investigar y resolver las inconsistencias de datos, si la resolución es manual es una actividad que consume gran cantidad de tiempo.</p>
+<p>Temporal proporciona soluciones a estos problemas a un proceso vital en cualquier dominio como son las transacciones como este en el proceso de compra.</p>
+<h2 id="ejemplo-con-temporal">Ejemplo con Temporal</h2>
+<p>Esta es la definición del proceso en el lenguaje de programación Java. El proceso es simplemente una interfaz con anotaciones.</p>
+<h3 id="workflow">Workflow</h3>
+<p>La definición del <em>workflow</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.temporal.workflow</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.workflow.WorkflowInterface</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.workflow.WorkflowMethod</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="nd">@WorkflowInterface</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">PlaceOrderWorkflow</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@WorkflowMethod</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">void</span><span class="w"> </span><span class="nf">placeOrder</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">listingId</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">quantity</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>PlaceOrderWorkflow.java</span>
+    </div>
+</div>
+<p>Esta es la implementación del proceso. Contiene las diferentes actividades del proceso que invocan diferentes sistemas. No contiene más unas pocas sentencias de código haciendo uso de las actividades del proceso. Como si fuera una secuencia de intrucciones u orquestado en un patrón saga.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.temporal.workflow</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.workflow.WorkflowInterface</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.workflow.WorkflowMethod</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="nd">@WorkflowInterface</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">PlaceOrderWorkflow</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@WorkflowMethod</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">void</span><span class="w"> </span><span class="nf">placeOrder</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">listingId</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">quantity</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>PlaceOrderWorkflow.java</span>
+    </div>
+</div>
+<h3 id="activities">Activities</h3>
+<p>La definición en interfaces.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.temporal.activities</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.activity.ActivityInterface</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.activity.ActivityMethod</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="nd">@ActivityInterface</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">FraudActivities</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@ActivityMethod</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">FraudDecide</span><span class="w"> </span><span class="nf">decide</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">orderId</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@ActivityMethod</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">void</span><span class="w"> </span><span class="nf">authorizeFailure</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">orderId</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@ActivityMethod</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">void</span><span class="w"> </span><span class="nf">decision</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">orderId</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">auhtorizeId</span><span class="p">,</span><span class="w"> </span><span class="n">FraudDecision</span><span class="w"> </span><span class="n">decision</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">enum</span><span class="w"> </span><span class="n">FraudDecide</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">APPROVE</span><span class="p">,</span><span class="w"> </span><span class="n">REJECT</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">enum</span><span class="w"> </span><span class="n">FraudDecision</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">APPROVE</span><span class="p">,</span><span class="w"> </span><span class="n">REJECT</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>FraudActivities.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.temporal.activities</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.activity.ActivityInterface</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.activity.ActivityMethod</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="nd">@ActivityInterface</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">InventoryActivities</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@ActivityMethod</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">void</span><span class="w"> </span><span class="nf">bookTickets</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">listingId</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">quantity</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ReserveTicketsException</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@ActivityMethod</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">void</span><span class="w"> </span><span class="nf">releaseTickets</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">listingId</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">quantity</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ReleaseTicketsException</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>InventoryActivities.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.temporal.activities</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.activity.ActivityInterface</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.activity.ActivityMethod</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="nd">@ActivityInterface</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">OrderActivities</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@ActivityMethod</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">Long</span><span class="w"> </span><span class="nf">generateOrderId</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@ActivityMethod</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">void</span><span class="w"> </span><span class="nf">createOrder</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">orderId</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">listingId</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">quantity</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@ActivityMethod</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">OrderStatus</span><span class="w"> </span><span class="nf">approveOrder</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">orderId</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">enum</span><span class="w"> </span><span class="n">OrderStatus</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">CREATED</span><span class="p">,</span><span class="w"> </span><span class="n">APPROVED</span><span class="p">,</span><span class="w"> </span><span class="n">CANCELLED</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>OrderActivities.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.temporal.activities</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.activity.ActivityInterface</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.activity.ActivityMethod</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="nd">@ActivityInterface</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">PaymentActivities</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@ActivityMethod</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">Long</span><span class="w"> </span><span class="nf">authorizePayment</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>PaymentActivities.java</span>
+    </div>
+</div>
+<p>La implementación. Para el caso del ejemplo las actividades no invocan sistemas externos, simplemente emiten un mensaje. Los procesos han de ser reproducibles y reconstruibles, por tanto algunas funcionalidades han de usar las facilidades de Temporal, especialmente en el manejo de tiempo y datos aleatorios.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.temporal.activities</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.logging.log4j.LogManager</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.logging.log4j.Logger</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DefaultFraudActivities</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">FraudActivities</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">DefaultFraudActivities</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@Override</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="n">FraudDecide</span><span class="w"> </span><span class="nf">decide</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">orderId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;Fraud decide (orderId: {})&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">orderId</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="w"> </span><span class="n">FraudDecide</span><span class="p">.</span><span class="na">APPROVE</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@Override</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">authorizeFailure</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">orderId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;Fraud authorize failure (orderId: {})&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">orderId</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@Override</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">decision</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">orderId</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">authorizeId</span><span class="p">,</span><span class="w"> </span><span class="n">FraudDecision</span><span class="w"> </span><span class="n">decision</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;Fraud decision (orderId: {}, authorizeId: {}, decision: {})&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">orderId</span><span class="p">,</span><span class="w"> </span><span class="n">authorizeId</span><span class="p">,</span><span class="w"> </span><span class="n">decision</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>DefaultFraudActivities.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.temporal.activities</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.logging.log4j.LogManager</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.logging.log4j.Logger</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DefaultInventoryActivities</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">InventoryActivities</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">DefaultInventoryActivities</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@Override</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">bookTickets</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">listingId</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">quantity</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ReserveTicketsException</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;Inventory book tickets (listingId: {}, quantity: {})&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">listingId</span><span class="p">,</span><span class="w"> </span><span class="n">quantity</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@Override</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">releaseTickets</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">listingId</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">quantity</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ReleaseTicketsException</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;Inventory release tickets (listingId: {}, quantity: {})&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">listingId</span><span class="p">,</span><span class="w"> </span><span class="n">quantity</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>DefaultInventoryActivities.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.temporal.activities</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Random</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.workflow.Workflow</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.logging.log4j.LogManager</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.logging.log4j.Logger</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DefaultOrderActivities</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">OrderActivities</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">DefaultOrderActivities</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@Override</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="nf">generateOrderId</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">Long</span><span class="w"> </span><span class="n">orderId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">().</span><span class="na">nextLong</span><span class="p">(</span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">1_000_000</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;Order generate id (orderId: {})&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">orderId</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="w"> </span><span class="n">orderId</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@Override</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">createOrder</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">orderId</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">listingId</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">quantity</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;Order create (orderId: {}, listingId: {}, quantity; {})&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">orderId</span><span class="p">,</span><span class="w"> </span><span class="n">listingId</span><span class="p">,</span><span class="w"> </span><span class="n">quantity</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@Override</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="n">OrderStatus</span><span class="w"> </span><span class="nf">approveOrder</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">orderId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;Order approve (orderId: {})&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">orderId</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="w"> </span><span class="n">OrderStatus</span><span class="p">.</span><span class="na">APPROVED</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>DefaultOrderActivities.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.temporal.activities</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Random</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.workflow.Workflow</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.logging.log4j.LogManager</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.logging.log4j.Logger</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DefaultPaymentActivities</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">PaymentActivities</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">DefaultPaymentActivities</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@Override</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="nf">authorizePayment</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">Long</span><span class="w"> </span><span class="n">paymentId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">().</span><span class="na">nextLong</span><span class="p">(</span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">1_000_000</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;Payments authorize (paymentId: {})&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">paymentId</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="w"> </span><span class="n">paymentId</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>DefaultPaymentActivities.java</span>
+    </div>
+</div>
+<h3 id="worker">Worker</h3>
+<p>El worker registra que <em>workflows</em> y las <em>activities</em> va a ejecutar.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.temporal.workers</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.client.WorkflowClient</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.serviceclient.WorkflowServiceStubs</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.worker.Worker</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.worker.WorkerFactory</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.logging.log4j.LogManager</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.logging.log4j.Logger</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">...</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import static</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.temporal.Main.PLACE_ORDER_WORKFLOW_TASK_QUEUE</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PlaceOrderWorkflowWorker</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">PlaceOrderWorkflowWorker</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">private</span><span class="w"> </span><span class="n">WorkflowServiceStubs</span><span class="w"> </span><span class="n">service</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">private</span><span class="w"> </span><span class="n">WorkflowClient</span><span class="w"> </span><span class="n">client</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">private</span><span class="w"> </span><span class="n">WorkerFactory</span><span class="w"> </span><span class="n">factory</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="nf">PlaceOrderWorkflowWorker</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="na">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WorkflowServiceStubs</span><span class="p">.</span><span class="na">newLocalServiceStubs</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="na">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WorkflowClient</span><span class="p">.</span><span class="na">newInstance</span><span class="p">(</span><span class="n">service</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="na">factory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WorkerFactory</span><span class="p">.</span><span class="na">newInstance</span><span class="p">(</span><span class="n">client</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">Worker</span><span class="w"> </span><span class="n">worker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="p">.</span><span class="na">newWorker</span><span class="p">(</span><span class="n">PLACE_ORDER_WORKFLOW_TASK_QUEUE</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">worker</span><span class="p">.</span><span class="na">registerWorkflowImplementationTypes</span><span class="p">(</span><span class="n">DefaultPlaceOrderWorkflow</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">worker</span><span class="p">.</span><span class="na">registerActivitiesImplementations</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">DefaultFraudActivities</span><span class="p">());</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">worker</span><span class="p">.</span><span class="na">registerActivitiesImplementations</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">DefaultOrderActivities</span><span class="p">());</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">worker</span><span class="p">.</span><span class="na">registerActivitiesImplementations</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">DefaultPaymentActivities</span><span class="p">());</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">worker</span><span class="p">.</span><span class="na">registerActivitiesImplementations</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">DefaultInventoryActivities</span><span class="p">());</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;Starting PlaceOrderWorkflowWorker...&#34;</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">factory</span><span class="p">.</span><span class="na">start</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">shutdown</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">factory</span><span class="p">.</span><span class="na">shutdown</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>PlaceOrderWorkflowWorker.java</span>
+    </div>
+</div>
+<h3 id="programa">Programa</h3>
+<p>Luego arranca una instancia el <em>worker</em> y el <em>workflow</em>,</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.temporal</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">...</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="nd">@SpringBootApplication</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">ApplicationRunner</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">PLACE_ORDER_WORKFLOW_TASK_QUEUE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;place-order-workflow-task-queue&#34;</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">SpringApplication</span><span class="p">.</span><span class="na">run</span><span class="p">(</span><span class="n">Main</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@Override</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="n">ApplicationArguments</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">PlaceOrderWorkflowWorker</span><span class="w"> </span><span class="n">worker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PlaceOrderWorkflowWorker</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">Workflow</span><span class="w"> </span><span class="n">workflow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Workflow</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">ExecutorService</span><span class="w"> </span><span class="n">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Executors</span><span class="p">.</span><span class="na">newFixedThreadPool</span><span class="p">(</span><span class="n">3</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">executor</span><span class="p">.</span><span class="na">submit</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">worker</span><span class="p">.</span><span class="na">start</span><span class="p">());</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="n">1000</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">executor</span><span class="p">.</span><span class="na">submit</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">workflow</span><span class="p">.</span><span class="na">run</span><span class="p">());</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="n">5000</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">worker</span><span class="p">.</span><span class="na">shutdown</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">workflow</span><span class="p">.</span><span class="na">shutdown</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">executor</span><span class="p">.</span><span class="na">shutdown</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.temporal.workflow</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.UUID</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.client.WorkflowClient</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.client.WorkflowOptions</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.temporal.serviceclient.WorkflowServiceStubs</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import static</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.temporal.Main.PLACE_ORDER_WORKFLOW_TASK_QUEUE</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Workflow</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">private</span><span class="w"> </span><span class="n">WorkflowServiceStubs</span><span class="w"> </span><span class="n">service</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">private</span><span class="w"> </span><span class="n">WorkflowClient</span><span class="w"> </span><span class="n">client</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="nf">Workflow</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="na">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WorkflowServiceStubs</span><span class="p">.</span><span class="na">newLocalServiceStubs</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="na">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WorkflowClient</span><span class="p">.</span><span class="na">newInstance</span><span class="p">(</span><span class="n">service</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">UUID</span><span class="w"> </span><span class="n">uuid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UUID</span><span class="p">.</span><span class="na">randomUUID</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">PlaceOrderWorkflow</span><span class="w"> </span><span class="n">workflow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="na">newWorkflowStub</span><span class="p">(</span><span class="n">PlaceOrderWorkflow</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="n">WorkflowOptions</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">.</span><span class="na">setTaskQueue</span><span class="p">(</span><span class="n">PLACE_ORDER_WORKFLOW_TASK_QUEUE</span><span class="p">)</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">.</span><span class="na">setWorkflowId</span><span class="p">(</span><span class="n">uuid</span><span class="p">.</span><span class="na">toString</span><span class="p">())</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">workflow</span><span class="p">.</span><span class="na">placeOrder</span><span class="p">(</span><span class="n">1L</span><span class="p">,</span><span class="w"> </span><span class="n">3</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">shutdown</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">service</span><span class="p">.</span><span class="na">shutdown</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">service</span><span class="p">.</span><span class="na">awaitTermination</span><span class="p">(</span><span class="n">10</span><span class="p">,</span><span class="w"> </span><span class="n">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">concurrent</span><span class="p">.</span><span class="na">TimeUnit</span><span class="p">.</span><span class="na">SECONDS</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Workflow.java</span>
+    </div>
+</div>
+<h2 id="servicio-de-temporal">Servicio de Temporal</h2>
+<p>El servicio de temporal se inicia con el siguiente comando en modo desarrollo.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">temporal server start-dev&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>temporal.sh</span>
+    </div>
+</div>
+<p>Esta es la salida en la consola de la ejecución del <em>workflow</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">2026-05-07 20:19:25,156  INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; io.temporal.serviceclient.WorkflowServiceStubsImpl Created WorkflowServiceStubs for channel: ManagedChannelOrphanWrapper{delegate=ManagedChannelImpl{logId=1, target=127.0.0.1:7233}}&#10;</span></span><span class="line"><span class="cl">2026-05-07 20:19:25,244  INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; io.temporal.serviceclient.WorkflowServiceStubsImpl Created WorkflowServiceStubs for channel: ManagedChannelOrphanWrapper{delegate=ManagedChannelImpl{logId=3, target=127.0.0.1:7233}}&#10;</span></span><span class="line"><span class="cl">2026-05-07 20:19:25,278  INFO   codotdev.blogbitix.temporal.workers.PlaceOrderWorkflowWorker Starting PlaceOrderWorkflowWorker...&#10;</span></span><span class="line"><span class="cl">2026-05-07 20:19:25,382  INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;io.temporal.internal.worker.MultiThreadedPoller start: MultiThreadedPoller{name=Workflow Poller taskQueue=&#34;place-order-workflow-task-queue&#34;, namespace=&#34;default&#34;, identity=691@localhost}&#10;</span></span><span class="line"><span class="cl">2026-05-07 20:19:25,386  INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;io.temporal.internal.worker.MultiThreadedPoller start: MultiThreadedPoller{name=Activity Poller taskQueue=&#34;place-order-workflow-task-queue&#34;, namespace=&#34;default&#34;, identity=691@localhost}&#10;</span></span><span class="line"><span class="cl">2026-05-07 20:19:26,453  INFO   odotdev.blogbitix.temporal.activities.DefaultOrderActivities Order generate id (orderId: 196969)&#10;</span></span><span class="line"><span class="cl">2026-05-07 20:19:26,470  INFO   odotdev.blogbitix.temporal.activities.DefaultFraudActivities Fraud decide (orderId: 196969)&#10;</span></span><span class="line"><span class="cl">2026-05-07 20:19:26,491  INFO   dev.blogbitix.temporal.activities.DefaultInventoryActivities Inventory book tickets (listingId: 1, quantity: 3)&#10;</span></span><span class="line"><span class="cl">2026-05-07 20:19:26,497  INFO   otdev.blogbitix.temporal.activities.DefaultPaymentActivities Payments authorize (paymentId: 848778)&#10;</span></span><span class="line"><span class="cl">2026-05-07 20:19:26,504  INFO   odotdev.blogbitix.temporal.activities.DefaultOrderActivities Order create (orderId: 196969, listingId: 1, quantity; 3)&#10;</span></span><span class="line"><span class="cl">2026-05-07 20:19:26,513  INFO   odotdev.blogbitix.temporal.activities.DefaultFraudActivities Fraud decision (orderId: 196969, authorizeId: 848778, decision: APPROVE)&#10;</span></span><span class="line"><span class="cl">2026-05-07 20:19:26,520  INFO   odotdev.blogbitix.temporal.activities.DefaultOrderActivities Order approve (orderId: 196969)&#10;</span></span><span class="line"><span class="cl">2026-05-07 20:19:31,252  INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   io.temporal.worker.WorkerFactory shutdown: WorkerFactory{identity=691@localhost}</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out</span>
+    </div>
+</div>
+<p>La línea de comandos de Temporal permite iniciar <em>workflows</em>, actividades y enviar mensajes además de consultar el estado de los <em>workflows</em>. Temporal tiene una interfaz gráfica que permite visualizar y ver el estado de la ejecución de cada proceso, con los datos de entrada y salida de las actividades así como los tiempos de inicio y fin. Esta observabilidad es una característica que no tiene un sistema distribuido que emplea coreografía cuando hay que examinar en que estado está el proceso por alguna inconsistencia de datos.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2026/05/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal/images/temporal-1_hu_9ad5dc26d8266d13.webp" data-gallery="" title="Worflow en Temporal"><img src="/blog-bitix/2026/05/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal/images/temporal-1_hu_b9e76fcf0fc5a5d2.webp" width="300" height="180" alt="Worflow en Temporal" title="Worflow en Temporal" class="" loading="lazy"></a>
+<a href="/blog-bitix/2026/05/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal/images/temporal-2_hu_e4869353d46ecaec.webp" data-gallery="" title="Worflow en Temporal"><img src="/blog-bitix/2026/05/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal/images/temporal-2_hu_6ef12e17bd80114e.webp" width="300" height="180" alt="Worflow en Temporal" title="Worflow en Temporal" class="" loading="lazy"></a></p>
+<figcaption>Worflow en Temporal</figcaption>
+</figure>
+</div>
+<p>Finalmente, es posible construir teses unitarios para el proceso.</p>
+<h2 id="videos-de-introducción">Videos de introducción</h2>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/zLjhNrOKphE" frameborder="0" title="Vídeo de YouTube" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/2HjnQlnA5eY" frameborder="0" title="Vídeo de YouTube" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/EwweiH2rd7M" frameborder="0" title="Vídeo de YouTube" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/zLjhNrOKphE" frameborder="0" title="Vídeo de YouTube" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/rtWrzjnKlSQ" frameborder="0" title="Vídeo de YouTube" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="alert alert-secondary sourcecode fs-6">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoTemporal">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/">
+                <img src="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/qr-code_hu_2d035c8dc13167d3.webp" width="326" height="125" alt="Generar códigos de barras y códigos QR con Java" title="Generar códigos de barras y códigos QR con Java" class="" loading="lazy">
+                <h3>Generar códigos de barras y códigos QR con Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/02/introduccion-conceptos-y-uso-basico-del-broker-de-mensajes-apache-kafka/">
+                <img src="/blog-bitix/assets/images/logotypes/apache-kafka.svg" width="326" height="125" alt="Introducción, conceptos y uso básico del broker de mensajes Apache Kafka" title="Introducción, conceptos y uso básico del broker de mensajes Apache Kafka" class="" loading="lazy">
+                <h3>Introducción, conceptos y uso básico del broker de mensajes Apache Kafka</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/01/construir-la-imagen-del-contenedor-de-la-aplicacion-usando-buildpacks/">
+                <img src="/blog-bitix/assets/images/logotypes/buildpacksio.svg" width="326" height="125" alt="Construir la imagen del contenedor de la aplicación usando Buildpacks" title="Construir la imagen del contenedor de la aplicación usando Buildpacks" class="" loading="lazy">
+                <h3>Construir la imagen del contenedor de la aplicación usando Buildpacks</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/07/opciones-de-arquitectura-para-emitir-trazas-en-una-aplicacion-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Opciones de arquitectura para emitir trazas en una aplicación Java" title="Opciones de arquitectura para emitir trazas en una aplicación Java" class="" loading="lazy">
+                <h3>Opciones de arquitectura para emitir trazas en una aplicación Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/12/buenas-practicas-de-programacion-sencillas-en-el-codigo-fuente/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Buenas prácticas de programación sencillas en el código fuente" title="Buenas prácticas de programación sencillas en el código fuente" class="" loading="lazy">
+                <h3>Buenas prácticas de programación sencillas en el código fuente</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/">
+                <img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu_e8e648a2ed180ba6.webp" width="326" height="125" alt="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" title="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" class="" loading="lazy">
+                <h3>Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-729';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2026\/05\/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/privacy/">Política de privacidad</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2026 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

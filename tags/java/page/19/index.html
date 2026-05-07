@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+  <meta name="description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Java</title>
@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blog-bitix-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta property="og:description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -41,7 +41,7 @@
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Java">
-<meta name="twitter:description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta name="twitter:description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.">
 <meta name="twitter:creator" content="">
 
   
@@ -50,7 +50,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Blog Bitix",
-    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.",
     "url": "https://picodotdev.github.io/blog-bitix/",
     "logo": {
         "@type": "ImageObject",
@@ -225,6 +225,31 @@
             </div>
             
 <ul class="list-unstyled">
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2015/08/implementacion-de-maquina-de-estados-finita-fsm-con-java-8/">Implementación de máquina de estados finita (FSM) con Java 8</a></h1>
+        <span class="information">
+          <time>01/08/2015</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Es raro pero no he encontrado una librería adecuada en Java con una implementación de una máquina de estados. Stateless4j puede ser una candidata pero también tiene algunas deficiencias que pueden hacer que no nos sirva. Basándome en Stateless4j y usando Java 8 he creado una implementación de FSM con una funcionalidad similar y más ligera donde una única instancia de la máquina de estados es independiente del número de instancias de objetos en las que se use.
+          
+          <br>
+          <a href="/blog-bitix/2015/08/implementacion-de-maquina-de-estados-finita-fsm-con-java-8/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
     
     <li>
       <article>
@@ -626,36 +651,6 @@
       </article>
     </li>
     
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2015/03/datos-de-sesion-externalizados-con-spring-session/">Datos de sesión externalizados con Spring Session</a></h1>
-        <span class="information">
-          <time>07/03/2015</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-              <a href="/blog-bitix/tags/spring/">spring</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
-</div>
-<p>Por defecto los datos de la sesión de una aplicación web Java se guardan en el servidor de aplicaciones y en memoria, esto produce que al reiniciar el servidor por un despliegue los datos de la sesión se pierdan y provoque en los usuarios alguna molestia como tener que volver a iniciar sesión. En <a href="https://tomcat.apache.org/">Tomcat</a> existe la posibilidad de que los datos de las sesiones sean persistidas en disco con la opción <em>saveOnRestart</em> del <a href="https://tomcat.apache.org/tomcat-8.0-doc/config/manager.html">elemento de configuración <em>Manager</em></a> que evita que los datos de las sesiones se pierdan en los reinicios, al menos para los servicios formados por una única instancia. Para evitar que los usuarios perciban los reinicios o caídas del servidor hay varias soluciones algunas tratando de diferentes formas externalizar las sesiones del servidor de aplicaciones. Con estas soluciones se pueden hacer despliegues sin caídas, sin que las perciban los usuarios, siendo útil para hacer actualizaciones frecuentemente, continuos, y en cualquier momento cuando tengamos una nueva versión de la aplicación.</p>
-          
-          <br>
-          <a href="/blog-bitix/2015/03/datos-de-sesion-externalizados-con-spring-session/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
   </ul>
           </div>
         </div>
@@ -724,7 +719,7 @@
   <div class="row">
     <div class="col-12 col-sm-4">
       <p><strong>Blog Bitix</strong></p>
-      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.</p>
       <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
     </div>
     <div class="col-12 col-sm-4 text-center menu">

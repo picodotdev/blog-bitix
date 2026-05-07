@@ -1,16 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title type="text">Blog Bitix</title>
-    <subtitle type="text">Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</subtitle>
+    <subtitle type="text">Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.</subtitle>
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/java/</id>
-    <updated>2026-04-26T11:30:00+02:00</updated>
+    <updated>2026-05-05T20:30:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2026/05/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal/</id>
+        <title>Procesos orquestados fiables y observables en servicios distribuidos con Temporal</title>
+        <updated>2026-05-05T20:30:00+02:00</updated>
+        <published>2026-05-05T20:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2026/05/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[
+
+        <p><strong>Temporal es una herramienta open source que permite modelar procesos de larga duración directamente en código, con garantías de fiabilidad y resiliencia ante fallos. En este artículo explico sus conceptos fundamentales, workflows, actividades y señales, y los pongo en práctica implementando en Java un proceso de compra de entradas con múltiples microservicios implicados.</strong></p>
+        
+        <p><a href="https://picodotdev.github.io/blog-bitix/2026/05/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal/">Continuar leyendo en Blog Bitix</a></p>
+
+        ]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2026/04/la-libreria-zalando-logbook-para-emitir-trazas-de-peticiones-web/</id>
@@ -356,31 +381,6 @@
         <p><strong>El mecanismo de configuración de Spring Boot es muy flexible y por otro lado Spring Boot proporciona varias formas de extensión. En el proceso de inicialización de la aplicación Spring Boot permite recibir eventos y realizar las acciones que se deseen. Uno de estos eventos es <em>ApplicationEnvironmentPreparedEvent</em> antes de inicializar el contexto y crear los <em>beans</em> del contenedor de dependencias, cyando se lanza este evento es posible acceder a las propiedades de configuración.</strong></p>
         
         <p><a href="https://picodotdev.github.io/blog-bitix/2023/01/obtener-valores-de-configuracion-antes-iniciar-una-aplicacion-con-spring-boot/">Continuar leyendo en Blog Bitix</a></p>
-
-        ]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2022/12/crear-un-bean-segun-el-contexto-donde-se-inyecte-con-spring/</id>
-        <title>Crear un bean según el contexto donde se inyecte con Spring</title>
-        <updated>2022-12-22T19:00:00+02:00</updated>
-        <published>2022-12-22T19:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/12/crear-un-bean-segun-el-contexto-donde-se-inyecte-con-spring/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[
-
-        <p><strong>Spring permite inyectar un <em>bean</em> construido utilizando información del contexto o clase donde se inyecte. Una caso de uso para esta funcionalidad es eliminar la habitual forma estática de inyectar las referencias a un Logger de una librería de <em>logging</em>, la inyección según el contexto permite proporciona el colaborador del Logger no como una variable estática sino en el constructor igual que otros colaboradores. Los beneficios son dos, se elimina una referencia estática que facilita los teses unitarios y se elimina un poco de código repetido en cada clase donde se use un Logger.</strong></p>
-        
-        <p><a href="https://picodotdev.github.io/blog-bitix/2022/12/crear-un-bean-segun-el-contexto-donde-se-inyecte-con-spring/">Continuar leyendo en Blog Bitix</a></p>
 
         ]]>
         </content>

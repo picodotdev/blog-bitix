@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+  <meta name="description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Programacion</title>
@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blog-bitix-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta property="og:description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -41,7 +41,7 @@
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Programacion">
-<meta name="twitter:description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta name="twitter:description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.">
 <meta name="twitter:creator" content="">
 
   
@@ -50,7 +50,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Blog Bitix",
-    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.",
     "url": "https://picodotdev.github.io/blog-bitix/",
     "logo": {
         "@type": "ImageObject",
@@ -225,6 +225,31 @@
             </div>
             
 <ul class="list-unstyled">
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/">Estrategias de despliegue para microservicios con Nomad</a></h1>
+        <span class="information">
+          <time>18/04/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+          
+        </span>
+        <p>
+          
+            Ciertos servicios requieren que al hacer un despliegue el servicio continue funcionando. Para esto no es posible parar todas las instancias de un servicio a la vez, actualizarla y volverlas a iniciar porque durante este proceso se dejaría de prestar el servicio durante un corto periodo de tiempo en el mejor de los casos. Hay que hacer el despliegue de forma progresiva en las instancias. Algunas estrategias son <em>Rolling Update</em>, <em>Blue/Green</em> y <em>Canary</em>, el orquestador de servicios Nomad soporta y realiza de forma automatizada los despliegues usando una de estas estrategias.
+          
+          <br>
+          <a href="/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
     
     <li>
       <article>
@@ -624,34 +649,6 @@
       </article>
     </li>
     
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2019/01/comandos-para-compilar-codigo-fuente-y-ejecutar-programas-java/">Comandos para compilar código fuente y ejecutar programas Java</a></h1>
-        <span class="information">
-          <time>13/01/2019</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
-</div>
-<p>Aún recuerdo cuando empecé a programar con el lenguaje Java sobre el año 1997 que la compilación y ejecución del código la hacía manualmente con los comandos <a href="https://docs.oracle.com/en/java/javase/11/tools/javac.html">javac</a> <a href="https://docs.oracle.com/en/java/javase/11/tools/java.html">java</a> y <a href="https://docs.oracle.com/en/java/javase/11/tools/jar.html">jar</a> en un máquina Intel Pentium a 120 Mhz con tan solo 8 MiB, más tarde 32 MiB, con Windows 95 y Java 1.2, momento en el que ni siquiera había un IDE ni las herramientas de construcción modernas como <a href="https://maven.apache.org/">Maven</a> y <a href="https://gradle.org/">Gradle</a>, había que descargar manualmente las librerías de dependencias en forma de archivos <em>jar</em> que se requiriesen. Luego con JBuilder como IDE este se encargaba de realizar la compilación y ejecución y no hacía falta utilizar estos comandos directamente.</p>
-          
-          <br>
-          <a href="/blog-bitix/2019/01/comandos-para-compilar-codigo-fuente-y-ejecutar-programas-java/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
   </ul>
           </div>
         </div>
@@ -720,7 +717,7 @@
   <div class="row">
     <div class="col-12 col-sm-4">
       <p><strong>Blog Bitix</strong></p>
-      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.</p>
       <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
     </div>
     <div class="col-12 col-sm-4 text-center menu">

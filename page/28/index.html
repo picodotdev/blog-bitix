@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+  <meta name="description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Blog Bitix</title>
@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blog-bitix-750.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta property="og:description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -44,7 +44,7 @@
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Blog Bitix">
-<meta name="twitter:description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta name="twitter:description" content="Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.">
 <meta name="twitter:creator" content="">
 
   
@@ -53,7 +53,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Blog Bitix",
-    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.",
     "url": "https://picodotdev.github.io/blog-bitix/",
     "logo": {
         "@type": "ImageObject",
@@ -229,6 +229,35 @@
             
 <ul class="list-unstyled">
     
+    
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2018/04/la-sentencia-try-with-resources-de-java/">La sentencia try-with-resources de Java</a></h1>
+        <span class="information">
+          <time>21/04/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Una de las novedades que incorporó Java 7 es la sentencia <em>try-with-resources</em> con el objetivo de cerrar los recursos de forma automática en la sentencia <em>try-catch-finally</em> y hacer más simple el código. Aquellas variables cuyas clases implementan la interfaz <a href="#ZgotmplZ">AutoCloseable</a> pueden declararse en el bloque de inicialización de la sentencia <em>try-with-resources</em> y sus métodos <a href="#ZgotmplZ">close()</a> serán llamados después del bloque <em>finally</em> como si su código estuviese de forma explícita.</p>
+<p>Un ejemplo de código que lee una línea de un fichero usando la sentencia <em>try-with-resources</em> es la siguiente de Java 7. Como se observa no es necesario llamar de forma explícita al método <em>close</em> para liberar los recursos de la instancia de la clase <a href="#ZgotmplZ">BufferedReader</a>.</p>
+          
+          <br>
+          <a href="/blog-bitix/2018/04/la-sentencia-try-with-resources-de-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
     
     <li>
       <article>
@@ -633,29 +662,6 @@
       </article>
     </li>
     
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2018/02/las-6-plus-2-formas-normales-de-las-bases-de-datos-relacionales/">Las 6&#43;2 formas normales de las bases de datos relacionales</a></h1>
-        <span class="information">
-          <time>10/02/2018</time>
-          
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-          
-        </span>
-        <p>
-          
-            En la universidad se explican las formas normales, en mi caso que yo recuerde hasta la tercera forma normal. Conocer la tercera forma normal suele ser suficiente pero en la teoría existe hasta la sexta forma normal. Cumplir las formas normales evita redundancias e inconsistencias en los datos a costa de crear más tablas que en algunos consultas puede hacerlas lentas. El proceso contrario de la normalización es la desnormalización, puede producir inconsistencias pero los datos son más sencillos y en algunos casos más rápido de consultar.
-          
-          <br>
-          <a href="/blog-bitix/2018/02/las-6-plus-2-formas-normales-de-las-bases-de-datos-relacionales/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
   </ul>
           </div>
         </div>
@@ -724,7 +730,7 @@
   <div class="row">
     <div class="col-12 col-sm-4">
       <p><strong>Blog Bitix</strong></p>
-      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.</p>
       <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
     </div>
     <div class="col-12 col-sm-4 text-center menu">
