@@ -22,7 +22,7 @@ summary: "Temporal es una herramienta open source que permite modelar procesos d
 
 Desde hace tiempo tenía pendiente investigar y entender Cadence, tras un tiempo leyendo su documentación no tenía claro cómo funcionaba, qué funcionalidad cubría y como funcionaba. Sin embargo, al preguntarle a Claude me indicó, como ocurre ocurre en muchos casos, los desarrolladores originales han creado un _fork_, en el caso de Cadence el _fork_ es Temporal.
 
-Tras unos días y siguiendo la buena documentación ofrecida por temporal tengo un ejemplo con el que entender, practicar y usar un pequeño proceso. Con la documentación y el ejemplo pensar en posibles casos de uso al dar a solución a necesidades.
+Tras unos días y siguiendo la buena documentación ofrecida por Temporal tengo un ejemplo con el que entender, practicar y usar un pequeño proceso. Con la documentación y el ejemplo pensar en posibles casos de uso al dar a solución a necesidades.
 
 En la web dan algunos ejemplos de casos de uso de Temporal y en su página de inicio una descripción introductoria de la herramienta.
 
@@ -139,7 +139,7 @@ Luego arranca una instancia el _worker_ y el _workflow_,
 
 ## Servicio de Temporal
 
-El servicio de temporal se inicia con el siguiente comando en modo desarrollo.
+El servicio de Temporal se inicia con el siguiente comando en modo desarrollo.
 
 {{< code file="temporal.sh" language="bash" options="" >}}
 
