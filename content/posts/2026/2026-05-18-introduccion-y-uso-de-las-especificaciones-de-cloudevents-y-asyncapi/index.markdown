@@ -129,10 +129,11 @@ La regla práctica es que si el evento cruza una frontera de equipo, de sistema 
 
 ## Ejemplo usando CloudEvents y AsyncAPI
 
-En este ejemplo de aplicación Java hay un servicio REST que recibe una petición de _place order_ y genera un mensaje que es enviado a una cola de [Kafka][spring-kafka], el mensaje es encapsulado en un mensaje de CloudEvents usando el modo recomendado binario.
+En este ejemplo de aplicación Java hay un servicio REST que recibe una petición de y genera un mensaje que es enviado a una cola de [Kafka][spring-kafka], el mensaje es encapsulado en un mensaje de CloudEvents usando el modo recomendado binario.
 
 {{< code file="EventsController.java" language="java" options="" >}}
 {{< code file="EventsProducer.java" language="java" options="" >}}
+{{< code file="EventPayload.java" language="java" options="" >}}
 
 La configuración de Kafka para la aplicación de Spring Boot es la siguiente, junto con el archivo de construcción con las dependencias.
 
