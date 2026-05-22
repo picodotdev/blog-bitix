@@ -1,0 +1,9 @@
+flowchart LR
+  A["REST endpoint<br/>POST /orders"]
+  B["Producer Kafka<br/>CloudEvent (binario)"]
+  C["Topic Kafka<br/>orders.placed"]
+  D["Consumidor Kafka<br/>@KafkaListener"]
+
+  A -- "place order" --> B
+  B -- "produce" --> C
+  C -. "consume" .-> D
