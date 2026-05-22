@@ -321,7 +321,7 @@
 </ul>
 <p>En un <a href="https://martinfowler.com/articles/domain-oriented-observability.html">artículo publicado en el sitio web de Martin Fowller sobre la observabilidad en el dominio</a> hablan sobre cómo diseñar las clases para añadir esta funcionalidad al código. En este artículo comento sobre la trazabilidad de una aplicación pero lo mismo es aplicable a las métricas como se comenta en el sitio web de Fowller.</p>
 <p>Después de leer el artículo de Fowller y este artículo, ¿qué opción usas? ¿alguna otra opción o variante? ¿qué opinas?</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
+<div class="row toc"><div class="col-12 col-lg-8"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
     <li><a href="#opciones">Opciones</a>
       <ol>
@@ -334,7 +334,7 @@
     <li><a href="#argumentos">Argumentos</a></li>
     <li><a href="#implementación-de-inyección-por-constructor-con-spring">Implementación de inyección por constructor con Spring</a></li>
   </ol>
-</nav></div> </div><div class="col-12 col-lg-6"></div></div>
+</nav></div> </div><div class="col-12 col-lg-4"></div></div>
 <h2 id="opciones">Opciones</h2>
 <p>Estas cuatro opciones tratan dos asuntos diferentes. Las dos primeras tratan de si crear una abstracción o usar la librería de <em>logging</em> directamente sin ninguna abstracción.</p>
 <p>La tercera y la cuarta tratan otro aspecto que es como inyectar el <em>logger</em> en las clases que emitan trazas, en realidad no son excluyentes y como comento se puede optar por una u otra forma de inyectar el <em>logger</em> según la clase.</p>

@@ -311,14 +311,14 @@
 </div>
 <p>No creo que los creadores del lenguaje y ecosistema Java lo diseñaran pensando en que los desarrolladores pudiéramos parchear una clase de una librería redefiniendo y colocándola en el <em>classpath</em> con mayor prioridad de carga.</p>
 <p>Pero esto que es posible es precisamente lo que he tenido que hacer recientemente para solucionar un problema en una aplicación <em>legacy</em> al migrar versiones antiguas de librerías.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
+<div class="row toc"><div class="col-12 col-lg-8"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
     <li><a href="#el-error">El error</a></li>
     <li><a href="#la-sugerencia-de-claude-code">La sugerencia de Claude Code</a></li>
     <li><a href="#el-parche">El parche</a></li>
     <li><a href="#la-solución">La solución</a></li>
   </ol>
-</nav></div> </div><div class="col-12 col-lg-6"></div></div>
+</nav></div> </div><div class="col-12 col-lg-4"></div></div>
 <h2 id="el-error">El error</h2>
 <p>El error tenía el siguiente <em>stacktrace</em> motivado por una actualización mayor de Java y el <em>driver</em> de Oracle <em>ojdbc</em> desde Java 7 y <em>ojdbc</em> 5 a Java 8 y <em>ojdbc</em> 8, de una aplicación que usa <a href="https://spring.io/">Spring</a> e <a href="https://hibernate.org/">Hibernate</a> 3 en una versión antiguas.</p>
 <p>El error indica que alguna comprobación que realiza Hibernate empieza a fallar con la actualización de librerías. Con este <em>stacktrace</em> toca investigar si alguien con menos suerte ha sido el primero que se ha encontrado con esta misma excepción y la ha compartido en <a href="https://stackoverflow.com/">stackoverflow</a> o en un post de algún blog.</p>

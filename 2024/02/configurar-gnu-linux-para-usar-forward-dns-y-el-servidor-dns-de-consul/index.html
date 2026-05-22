@@ -311,13 +311,13 @@
 </div>
 <p>Quizá las aplicaciones no se pueden modificar para integrarse directamente con <a href="https://www.consul.io/">Consul</a> por su antigüedad o no hay tiempo ni personas para hacerle esos grandes cambios, una forma sencilla que no requiere grandes cambios en las aplicaciones y que les da acceso a algunas de las funcionalidades que proporciona Consul es utilizar su servicio DNS.</p>
 <p>Configurar que el nodo donde se ejecuta un servicio pueda acceder al catálogo de servicios de Consul mediante la interfaz DNS requiere configurar el <em>forward</em> DNS en la configuración de red.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
+<div class="row toc"><div class="col-12 col-lg-8"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
     <li><a href="#el-servidor-consul">El servidor Consul</a></li>
     <li><a href="#configurar-en-gnulinux-el-forward-dns-al-servicio-dns-de-consul">Configurar en GNU/Linux el <em>forward</em> DNS al servicio DNS de Consul</a></li>
     <li><a href="#redirigir-peticiones-dns-de-los-dominios-a-consul">Redirigir peticiones DNS de los dominios a Consul</a></li>
   </ol>
-</nav></div> </div><div class="col-12 col-lg-6"></div></div>
+</nav></div> </div><div class="col-12 col-lg-4"></div></div>
 <h2 id="el-servidor-consul">El servidor Consul</h2>
 <p>Consul es una herramienta desarrollada por <a href="https://www.hashicorp.com/">Hashicorp</a> centrada en la conectividad entre los servicios. Ofrece varias funcionalidades específicas para las aplicaciones compuestas de múltiples servicios. Consul proporciona una catálogo de servicios actualizado y con información del estado de los servicios, conectividad entre los servicios con el <em>service mesh</em> y almacenamiento clave-valor para la configuración de aplicaciones.</p>
 <p>Algo ya he comentado en varios artículos sobre Consul y otros productos de Hashicorp como <a href="https://www.vaultproject.io/">Vault</a> y <a href="https://www.nomadproject.io/">Nomad</a>.</p>

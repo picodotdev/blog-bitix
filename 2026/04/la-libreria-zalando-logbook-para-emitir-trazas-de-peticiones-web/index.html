@@ -310,13 +310,13 @@
 <p>Las trazas o logs son uno de los métodos para tener observabilidad en un servicio. En los microservicios que usa REST que utilizan un método poco fiable como la red o aún no fallando es posible obtener una respuesta indicando algún tipo de error como validación de datos o error interno del servidor.</p>
 <p>Añadir observabilidad en las llamadas REST es una forma de observar si los servicios están funcionando de la forma esperada o si hay errores que manifiestan algún tipo de comportamiento anómalo.</p>
 <p>La librería Zalando Logbook permite emitir trazas en las llamadas recibidas o realizadas y las respuestas devueltas o que se obtienen. Tiene soporte para las librerías que permiten hacer peticiones http más populares y una buena cantidad de opciones de configuración para adaptarla a las necesidades del servicio.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
+<div class="row toc"><div class="col-12 col-lg-8"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
     <li><a href="#llamadas-remotas">Llamadas remotas</a></li>
     <li><a href="#la-solución-simple">La solución simple</a></li>
     <li><a href="#la-librería-zalando-logbook">La librería Zalando Logbook</a></li>
   </ol>
-</nav></div> </div><div class="col-12 col-lg-6"></div></div>
+</nav></div> </div><div class="col-12 col-lg-4"></div></div>
 <h2 id="llamadas-remotas">Llamadas remotas</h2>
 <p>La red está compuesta por múltiples elementos (balanceadores, proxies, firewalls, DNS) cada uno de ellos un potencial punto de fallo. Pueden fallar de formas muy diversas: timeouts, pérdida de paquetes, reinicios abruptos o configuraciones incorrectas que interrumpen el servicio de forma temporal pero suficiente para causar errores en cascada.</p>
 <p>En arquitecturas de microservicios, una solución es adoptar un <em>service mesh</em> como <a href="https://istio.io/">Istio</a>, <a href="https://linkerd.io/">Linkerd</a> o <a href="https://www.consul.io/">Consul</a>, que traslada las responsabilidades de monitorización, trazabilidad y resiliencia a la infraestructura, evitando duplicar esa lógica en cada servicio. Sin embargo, cuando no se dispone de un service mesh, instrumentar los clientes HTTP con logs es la alternativa más directa para ganar visibilidad sobre esos puntos de fallo.</p>

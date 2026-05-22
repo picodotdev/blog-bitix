@@ -323,7 +323,7 @@
 </ul>
 <p>Es muy útil poder ejecutar procesos de forma uniforme independientemente del lenguaje y de forma aislada con todas las dependencias del entorno dentro de la imagen lo que permite ejecutar tantos servicios como se deseen sin que las dependencias de estos entre en conflicto.</p>
 <p>La misma utilidad y propiedades de los contenedores en tiempo de ejecución es deseable en el momento de construcción de las imágenes de los servicios.</p>
-<div class="row toc"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
+<div class="row toc"><div class="col-12 col-lg-8"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
     <li><a href="#la-herramienta-buildpacks">La herramienta Buildpacks</a></li>
     <li><a href="#el-proyecto-paketo">El proyecto Paketo</a></li>
@@ -331,7 +331,7 @@
     <li><a href="#construcción-de-la-imagen-del-contenedor">Construcción de la imagen del contenedor</a></li>
     <li><a href="#ejecución-del-contenedor-con-docker">Ejecución del contenedor con Docker</a></li>
   </ol>
-</nav></div> </div><div class="col-12 col-lg-6"></div></div>
+</nav></div> </div><div class="col-12 col-lg-4"></div></div>
 <h2 id="la-herramienta-buildpacks">La herramienta Buildpacks</h2>
 <p>La herramienta <a href="https://buildpacks.io/">Buildpacks</a> analiza el código fuente y permite construir imágenes de contenedores compatible con OCI con la misma herramienta independientemente del lenguaje o plataforma que utilice y sin utilizar archivos Dockerfile. Además, permite reutilizar las instrucciones de construcción sin tener que implementarlas.</p>
 <p>Los <em>buildpacks</em> son los módulos que añaden el soporte e implementan las instrucciones para construir las imágenes. Hay un <em>buildpack</em> específico según una necesidad de construcción, una aplicación puede necesitar varios <em>buildpacks</em> al mismo tiempo.</p>

@@ -1,0 +1,40 @@
+asyncapi: 3.0.0
+info:
+  title: Place Order API
+  version: 1.0.0
+  description: The API notifies you whenever a new order is placed.
+servers:
+  centralKafkaServer:
+    host: kafka.acme.com:8092
+    description: Kafka broker
+    protocol: kafka
+operations:
+  onPlaceOrder:
+    action: send
+    channel:
+      $ref: '#/channels/placeOrder'
+channels:
+  placeOrder:
+    description: A message when there is a new place order event.
+    address: place-order
+    messages:
+      placeOrder:
+        $ref: '#/components/messages/placeOrder'
+components:
+  messages:
+    placeOrder:
+      name: PlaceOrder
+      title: Place Order
+      payload:
+        $ref: '#/components/schemas/PlaceOrderPayload'
+  schemas:
+    PlaceOrderPayload:
+      type: object
+      title: PlaceOrderPayload
+      properties:
+        listingId:
+          type: string
+          description: Listing id
+        userId:
+          type: string
+          description: User id
