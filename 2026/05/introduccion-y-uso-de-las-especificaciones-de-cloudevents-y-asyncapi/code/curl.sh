@@ -1,0 +1,1 @@
+curl -v -H "Content-Type: application/json" -d '{"orderId": "1", "customerId": "42", "total": "150.30"}' http://localhost:8080/events
