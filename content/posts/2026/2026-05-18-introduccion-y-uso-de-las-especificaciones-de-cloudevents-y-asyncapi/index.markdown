@@ -147,6 +147,7 @@ El archivo de Docker Compose para iniciar el contenedor de Kafka.
 El consumidor del mensaje está en la misma aplicación que simplemente emite un mensaje en la salida del sistema.
 
 {{< code file="EventsConsumer.java" language="java" options="" >}}
+{{< code file="curl.sh" language="bash" options="" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/AsyncApiCloudEvents" command="./gradlew run" %}}
 

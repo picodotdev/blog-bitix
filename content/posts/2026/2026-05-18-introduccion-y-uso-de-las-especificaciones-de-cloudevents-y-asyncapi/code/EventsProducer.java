@@ -43,8 +43,8 @@ public class EventsProducer {
                     .withDataContentType("application/json")
                     .withData(data)
                     .build();
-            kafkaTemplate.send(topic, payload.eventId(), event);
-            log.info("Published event event (id={}, eventId={})", event.getId(), payload.eventId());
+            kafkaTemplate.send(topic, event.getId(), event);
+            log.info("Published event event (id={}, orderId={}, customerId={}, total={})", event.getId(), payload.orderId(), payload.customerId(), payload.total());
         } catch (JsonProcessingException e) {
             throw new IllegalStateException("Failed to serialize EventPayload", e);
         }
