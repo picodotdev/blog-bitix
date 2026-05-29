@@ -49,6 +49,10 @@ permalinks:
 pagination:
   pagerSize: 15
 
+security:
+  allowContent:
+  - '! ^text/dummy$'
+
 markup:
   defaultMarkdownHandler: goldmark
   blackFriday:
