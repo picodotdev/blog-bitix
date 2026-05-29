@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Mantener la consistencia en el código de un equipo no debería depender de la disciplina individual de cada desarrollador. El análisis estático de código automatiza esta tarea, desde verificar que se siguen las convenciones de formateo hasta detectar patrones que pueden convertirse en errores en producción. En este artículo repaso las herramientas disponibles para Java, comparo las opciones más habituales, Checkstyle, PMD y Spotbugs con alternativas como Spotless y Error Prone, y explico cómo integrarlas en el flujo de trabajo con Gradle. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Análisis estático de código Java con Spotless y Error Prone</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2026/05/analisis-estatico-de-codigo-java-con-spotless-y-error-prone/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2026/05/analisis-estatico-de-codigo-java-con-spotless-y-error-prone/" hreflang="es" title="Análisis estático de código Java con Spotless y Error Prone">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preload" href="/blog-bitix/asssets/fonts/pt-serif/pt-serif.css" as="style">
+  <link rel="preload" href="/blog-bitix/asssets/fonts/open-sans/open-sans.css" as="style">
+  <link href="/blog-bitix/assets/fonts/pt-serif/pt-serif.css" rel="stylesheet">
+  <link href="/blog-bitix/assets/fonts/open-sans/open-sans.css" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Análisis estático de código Java con Spotless y Error Prone">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2026/05/analisis-estatico-de-codigo-java-con-spotless-y-error-prone/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2026/05/analisis-estatico-de-codigo-java-con-spotless-y-error-prone/images/header_hu_2addffbf1277154b.webp">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Mantener la consistencia en el código de un equipo no debería depender de la disciplina individual de cada desarrollador. El análisis estático de código automatiza esta tarea, desde verificar que se siguen las convenciones de formateo hasta detectar patrones que pueden convertirse en errores en producción. En este artículo repaso las herramientas disponibles para Java, comparo las opciones más habituales, Checkstyle, PMD y Spotbugs con alternativas como Spotless y Error Prone, y explico cómo integrarlas en el flujo de trabajo con Gradle. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2026/05/analisis-estatico-de-codigo-java-con-spotless-y-error-prone/images/header_hu_2addffbf1277154b.webp">
+
+<meta name="twitter:site" content="">
+<meta name="twitter:title" content="Análisis estático de código Java con Spotless y Error Prone">
+<meta name="twitter:description" content="Mantener la consistencia en el código de un equipo no debería depender de la disciplina individual de cada desarrollador. El análisis estático de código automatiza esta tarea, desde verificar que se siguen las convenciones de formateo hasta detectar patrones que pueden convertirse en errores en producción. En este artículo repaso las herramientas disponibles para Java, comparo las opciones más habituales, Checkstyle, PMD y Spotbugs con alternativas como Spotless y Error Prone, y explico cómo integrarlas en el flujo de trabajo con Gradle. &hellip;">
+<meta name="twitter:creator" content="">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2026/05/analisis-estatico-de-codigo-java-con-spotless-y-error-prone/"
+    },
+    "headline": "Análisis estático de código Java con Spotless y Error Prone",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2026/05/analisis-estatico-de-codigo-java-con-spotless-y-error-prone/images/header_hu_2addffbf1277154b.webp"
+        
+      },
+    "datePublished": "2026-05-27T20:00:00+02:00",
+    "dateModified": "2026-05-27T20:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1435",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "I ♥ Java, GNU/Linux and libre software.",
+        "url": ""
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Mantener la consistencia en el código de un equipo no debería depender de la disciplina individual de cada desarrollador. El análisis estático de código automatiza esta tarea, desde verificar que se siguen las convenciones de formateo hasta detectar patrones que pueden convertirse en errores en producción. En este artículo repaso las herramientas disponibles para Java, comparo las opciones más habituales, Checkstyle, PMD y Spotbugs con alternativas como Spotless y Error Prone, y explico cómo integrarlas en el flujo de trabajo con Gradle."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+  
+  <script type="text/javascript" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async></script>
+<script>
+    window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() {
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1750, 0], [[300, 600]])
+        .addSize([0, 0], [])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600]])
+        .addSize([1280, 0], [[160, 600]])
+        .addSize([0, 0], [])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+    });
+</script>
+
+  
+  
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2026/05/analisis-estatico-de-codigo-java-con-spotless-y-error-prone/images/header_hu_d8ec3c2c39a34fb6.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            
+<div id='div-gpt-ad-1705155070019-0' style='min-width: 160px; min-height: 600px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705155070019-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Análisis estático de código Java con Spotless y Error Prone</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>27/05/2026</time>.
+      
+        <br>
+        <i class="bi bi-tag"></i>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+      
+      <br>
+      <i class="bi bi-link-45deg"></i>
+      <a href="/blog-bitix/2026/05/analisis-estatico-de-codigo-java-con-spotless-y-error-prone/">Enlace permanente</a>
+      
+        <i class="bi bi-chat"></i>
+        <a href="/blog-bitix/2026/05/analisis-estatico-de-codigo-java-con-spotless-y-error-prone/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Mantener la consistencia en el código de un equipo no debería depender de la disciplina individual de cada desarrollador. El análisis estático de código automatiza esta tarea, desde verificar que se siguen las convenciones de formateo hasta detectar patrones que pueden convertirse en errores en producción. En este artículo repaso las herramientas disponibles para Java, comparo las opciones más habituales, Checkstyle, PMD y Spotbugs con alternativas como Spotless y Error Prone, y explico cómo integrarlas en el flujo de trabajo con Gradle.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      
+<div id='div-gpt-ad-1705154918797-0' style='min-width: 300px; min-height: 90px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154918797-0'); });
+  </script>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Cada lenguaje de programación define unas convenciones para formatear el código, reglas de espaciado, orden de elementos, longitud de línea, entre otras. Seguirlas garantiza que cualquier desarrollador familiarizado con el lenguaje pueda leer el código sin fricción. A partir de esas convenciones estándar, los equipos pueden acordar ajustes propios, como aumentar la longitud máxima de línea si trabajan con monitores de alta resolución o adoptar alguna convención adicional que mejore la legibilidad en su contexto.</p>
+<p>Aunque el formateo pueda parecer un detalle menor, no lo es. Todo editor moderno lo aplica de forma automática con muy poco esfuerzo, por lo que no tenerlo en orden es una señal de que el código no se está manteniendo con el cuidado necesario. Su importancia radica en la legibilidad, dado que los desarrolladores pasamos la mayor parte del tiempo leyendo código, ya sea propio o ajeno, un código bien formateado reduce la carga cognitiva y facilita la comprensión.</p>
+<p>Más allá del formateo, existe otro tipo de herramientas orientadas a detectar errores simples pero frecuentes que pueden manifestarse en tiempo de ejecución o que introducen ruido innecesario en el código, <em>imports</em> no utilizados, variables declaradas pero nunca referenciadas, bloques <em>catch</em> vacíos que silencian excepciones, entre otros.</p>
+<p>El análisis estático de código consiste en examinar el código fuente tal y como está escrito, sin necesidad de ejecutarlo. Dependiendo de la herramienta, este análisis puede cubrir distintos objetivos, verificar que se siguen las convenciones de estilo, detectar patrones de código propensos a errores, o identificar el uso de librerías con vulnerabilidades de seguridad conocidas. Para Java existen varias opciones que cubren uno o varios de estos ámbitos, y que se pueden combinar para obtener una cobertura más completa.</p>
+<div class="row toc"><div class="col-12 col-lg-8"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
+    <li><a href="#formateo-de-código">Formateo de código</a></li>
+    <li><a href="#herramientas-de-análisis-estático-de-código">Herramientas de análisis estático de código</a></li>
+    <li><a href="#spotless">Spotless</a></li>
+    <li><a href="#error-prone">Error Prone</a></li>
+    <li><a href="#editorconfig">Editorconfig</a></li>
+    <li><a href="#integración-en-el-flujo-de-trabajo">Integración en el flujo de trabajo</a></li>
+    <li><a href="#recomendación-final">Recomendación final</a></li>
+  </ol>
+</nav></div> </div><div class="col-12 col-lg-4"></div></div>
+<h2 id="formateo-de-código">Formateo de código</h2>
+<p>Las convenciones de formateo más utilizadas en Java son las propias del lenguaje, definidas originalmente por Sun Microsystems, y las de Google, que introduce algunos ajustes sobre las anteriores. Como desarrolladores podemos usarlas como base para crear nuestra propia guía de estilo. Las dos primeras establecen una longitud máxima de línea de entre 80 y 100 caracteres, un límite que tiene su origen en las pantallas de terminal de los años 80 y que hoy resulta restrictivo.</p>
+<p>Con la verbosidad característica de Java, nombres de clases largos, genéricas, llamadas encadenadas, y los monitores actuales de alta resolución, una línea de 120 caracteres se queda corta con frecuencia. Por preferencia personal trabajo con 180 caracteres, que permite escribir código más expresivo sin necesidad de romper artificialmente las líneas.</p>
+<ul>
+<li><a href="https://www.oracle.com/technetwork/java/codeconventions-150003.pdf">Convenciones de Java</a></li>
+<li><a href="https://google.github.io/styleguide/javaguide.html">Convenciones de Google</a></li>
+<li><a href="https://github.com/palantir/gradle-baseline/tree/develop/docs">Convenciones de Palantir</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/10/sun-microsystems-cae-la-adquiere-oracle/">Sun Microsystems cae, la adquiere Oracle</a></li>
+</ul>
+<p>Los formateadores automáticos hacen un buen trabajo en la mayoría de situaciones, pero no siempre producen el resultado más legible cuando el código es complejo o tiene estructuras poco habituales. En esos casos es razonable aplicar un criterio manual. El valor real de estas herramientas no está en la perfección del resultado sino en la consistencia, cuando el equipo comparte las mismas reglas, los comentarios en una <em>code review</em> dejan de centrarse en el formateo y pueden dedicarse íntegramente a la lógica del programa.</p>
+<h2 id="herramientas-de-análisis-estático-de-código">Herramientas de análisis estático de código</h2>
+<p>Esta es la combinación de herramientas de análisis estático de código que he estado usando hasta ahora para mantener la consistencia en el formateo del código y detectar errores básicos en el código. Estas herramientas se solapan un poco entre ellas, PMD al igual que Checkstyle hace algunas comprobaciones de formateo de código.</p>
+<ul>
+<li><a href="https://pmd.github.io/">PMD</a>: análisis estático de código con más de 400 reglas.</li>
+<li><a href="https://checkstyle.sourceforge.net/">Checkstyle</a>: comprobación de reglas de formateo.</li>
+<li><a href="https://spotbugs.github.io/">Spotbugs</a>: para detectar errores de programación que pueden generar errores en tiempo de ejecución.</li>
+<li><a href="https://www.jetbrains.com/idea/">IntelliJ</a>: para aplicar las reglas de formateo.</li>
+</ul>
+<p>No son las únicas opciones disponibles. Preguntando a Claude otras opciones son Spotless y Error Prone en sustitución o combinación de las anteriores que son las que destacaré en este artículo.</p>
+<p>Esta es una tabla comparativa de las herramientas.</p>
+<table>
+	<thead>
+			<tr>
+					<th>Herramienta</th>
+					<th>Categoría</th>
+					<th>Formatea</th>
+					<th>Detecta bugs</th>
+					<th>Plugin Gradle</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Checkstyle</td>
+					<td>Estilo</td>
+					<td>No</td>
+					<td>No</td>
+					<td>Sí</td>
+			</tr>
+			<tr>
+					<td>Spotless</td>
+					<td>Estilo</td>
+					<td>Sí</td>
+					<td>No</td>
+					<td>Sí</td>
+			</tr>
+			<tr>
+					<td>PMD</td>
+					<td>Análisis</td>
+					<td>No</td>
+					<td>Parcial</td>
+					<td>Sí</td>
+			</tr>
+			<tr>
+					<td>Spotbugs</td>
+					<td>Bugs</td>
+					<td>No</td>
+					<td>Sí</td>
+					<td>Sí</td>
+			</tr>
+			<tr>
+					<td>Error Prone</td>
+					<td>Compilador</td>
+					<td>No</td>
+					<td>Sí</td>
+					<td>Sí</td>
+			</tr>
+	</tbody>
+</table>
+<h2 id="spotless">Spotless</h2>
+<p>Checkstyle solo detecta errores de formateo pero no formatea el código, no es un gran problema ya que IntelliJ es capaz de formatear todo el código con muy poco esfuerzo, <a href="https://github.com/diffplug/spotless">Spotless</a> realiza ambas funciones, detección de errores y formateo de código. El formateo usando la linea de comandos sin necesidad de utilizar el editor.</p>
+<p>Un problema de usar Checkstyle es que la configuración de reglas de formateo están duplicadas, hay que tener unas reglas para IntelliJ y otras reglas equivalentes para Checkstyle de modo que aplicando las reglas desde IntelliJ pasen las validaciones de Checkstyle. Spotless tiene la ventaja de poder usar las mismas reglas y formateador para ambos.</p>
+<ul>
+<li><a href="https://www.jetbrains.com/help/idea/configuring-code-style.html#export-code-style">Exportar desde IntelliJ en formato eclipse</a></li>
+<li><a href="https://github.com/diffplug/spotless/tree/main/plugin-gradle#intellij-idea">Usar Spotless con la configuración en foramto de eclipse</a></li>
+</ul>
+<p>En caso de que Spotless no formatee algún bloque de código como deseamos es posible desactivar el formateador en ciertas regiones, basta con encapsular el bloque de código que no se desea formatear ente dos comentarios <em>spotless:off</em> y <em>spotless:on</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.holamundospotless</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="c1">// spotless:off </span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">final</span><span class="w"> </span><span class="n">Greeter</span><span class="w"> </span><span class="n">greeter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Greeter</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">greeter</span><span class="p">.</span><span class="na">greet</span><span class="p">(</span><span class="s">&#34;Mundo&#34;</span><span class="p">));</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="c1">// spotless:on</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-spotless.java</span>
+    </div>
+</div>
+<h2 id="error-prone">Error Prone</h2>
+<p><a href="https://errorprone.info/">Error Prone</a> es una analizador estático del código para prevenir errores en tiempo de ejecución. Equivalente a PMD y Spotbugs. Error Prone se define a sí mismo de la siguiente manera.</p>
+<ul>
+<li>Es común que incluso los mejores programadores cometan errores simples. Y a veces, una refactorización que parece segura puede dejar código que nunca hará lo que se espera.</li>
+<li>Estamos acostumbrados a recibir ayuda del compilador, pero este no hace mucho más allá de la comprobación estática de tipos. Al usar Error Prone para complementar el análisis de tipos del compilador, puedes detectar más errores antes de que te hagan perder tiempo o se conviertan en errores en producción.</li>
+</ul>
+<p>En la siguiente página están listados los errores que detecta Error Prone.</p>
+<ul>
+<li><a href="https://errorprone.info/bugpatterns">Bug Patterns</a></li>
+</ul>
+<p>Error Prone es ejecutado en la compilación del código fuente, los errores detectados se reportan como <em>error</em> o <em>warning</em> como si fuera un mensaje de compilador. La anotación <em>@SuppressWarnings</em> permite suprimir un mensaje error que tenga el código, en este caso el de <em>SelfAssignment</em>.</p>
+<p>Por ejemplo, hacer una asignación a la misma variable no tiene efecto con lo que posiblemente sea un descuido del programador, Error Prone lo indica como un error a no ser que se suprima la comprobación.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.holamundospotless</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@SuppressWarnings</span><span class="p">(</span><span class="s">&#34;SelfAssignment&#34;</span><span class="p">)</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">Greeter</span><span class="w"> </span><span class="n">greeter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Greeter</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">greeter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">greeter</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">greeter</span><span class="p">.</span><span class="na">greet</span><span class="p">(</span><span class="s">&#34;Mundo&#34;</span><span class="p">));</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<h2 id="editorconfig">Editorconfig</h2>
+<p>Finalmente, <a href="https://editorconfig.org/">Editorconfig</a> permite definir las reglas de formateo de forma independiente del editor como longitud de líneas, usar espacios o tabuladores y tamaño de la indentación para cada tipo de archivo. IntelliJ tiene la opción de exportar las reglas en este formato aunque algunas opciones no sean interpretables por otros editores.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">root = true&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">[*]&#10;</span></span><span class="line"><span class="cl">charset = utf-8&#10;</span></span><span class="line"><span class="cl">end_of_line = lf&#10;</span></span><span class="line"><span class="cl">insert_final_newline = true&#10;</span></span><span class="line"><span class="cl">trim_trailing_whitespace = true&#10;</span></span><span class="line"><span class="cl">indent_style = space&#10;</span></span><span class="line"><span class="cl">indent_size = 4&#10;</span></span><span class="line"><span class="cl">max_line_length = 170&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">[*.{java,kt,groovy,gradle.kts}]&#10;</span></span><span class="line"><span class="cl">indent_size = 4&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">[*.{js,ts,jsx,tsx,css,scss,less}]&#10;</span></span><span class="line"><span class="cl">indent_size = 4&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">[*.{yml,yaml,json}]&#10;</span></span><span class="line"><span class="cl">indent_size = 4&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">[*.{xml,html}]&#10;</span></span><span class="line"><span class="cl">indent_size = 4&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">[*.{md}]&#10;</span></span><span class="line"><span class="cl">indent_size = 4&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>.editorconfig</span>
+    </div>
+</div>
+<h2 id="integración-en-el-flujo-de-trabajo">Integración en el flujo de trabajo</h2>
+<p>Spotless y Error Prone tienen un plugin para Gradle lo que permite ejecutar sus reglas al desarrollar y en el entorno de integración continua.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span><span class="lnt">59&#10;</span><span class="lnt">60&#10;</span><span class="lnt">61&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">import</span> <span class="nn">net.ltgt.gradle.errorprone.errorprone</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">plugins</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">application</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span><span class="p">(</span><span class="s2">&#34;com.diffplug.spotless&#34;</span><span class="p">)</span> <span class="n">version</span> <span class="s2">&#34;7.0.2&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span><span class="p">(</span><span class="s2">&#34;net.ltgt.errorprone&#34;</span><span class="p">)</span> <span class="n">version</span> <span class="s2">&#34;5.1.0&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">repositories</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="p">()</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">dependencies</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">errorprone</span><span class="p">(</span><span class="s2">&#34;com.google.errorprone:error_prone_core:2.28.0&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">java</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">toolchain</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">languageVersion</span><span class="p">.</span><span class="k">set</span><span class="p">(</span><span class="nc">JavaLanguageVersion</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="mi">21</span><span class="p">))</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">application</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mainClass</span><span class="p">.</span><span class="k">set</span><span class="p">(</span><span class="s2">&#34;io.github.picodotdev.blogbitix.holamundospotless.Main&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">spotless</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">java</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">target</span><span class="p">(</span><span class="s2">&#34;src/**/*.java&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">targetExclude</span><span class="p">(</span><span class="s2">&#34;**/build/**&#34;</span><span class="p">,</span> <span class="s2">&#34;**/generated/**&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">eclipse</span><span class="p">().</span><span class="n">configFile</span><span class="p">(</span><span class="s2">&#34;config/picodotdev.xml&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">kotlinGradle</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">target</span><span class="p">(</span><span class="s2">&#34;*.gradle.kts&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">ktlint</span><span class="p">(</span><span class="s2">&#34;1.3.0&#34;</span><span class="p">).</span><span class="n">setEditorConfigPath</span><span class="p">(</span><span class="s2">&#34;.editorconfig&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">format</span><span class="p">(</span><span class="s2">&#34;misc&#34;</span><span class="p">)</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">target</span><span class="p">(</span><span class="s2">&#34;*.md&#34;</span><span class="p">,</span> <span class="s2">&#34;*.yml&#34;</span><span class="p">,</span> <span class="s2">&#34;.gitignore&#34;</span><span class="p">,</span> <span class="s2">&#34;.editorconfig&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">trimTrailingWhitespace</span><span class="p">()</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">endWithNewline</span><span class="p">()</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">tasks</span><span class="p">.</span><span class="n">withType</span><span class="p">&lt;</span><span class="n">JavaCompile</span><span class="p">&gt;().</span><span class="n">configureEach</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">options</span><span class="p">.</span><span class="n">encoding</span> <span class="p">=</span> <span class="s2">&#34;UTF-8&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">options</span><span class="p">.</span><span class="n">compilerArgs</span><span class="p">.</span><span class="n">addAll</span><span class="p">(</span><span class="n">listOf</span><span class="p">(</span><span class="s2">&#34;-Xlint:all&#34;</span><span class="p">,</span> <span class="s2">&#34;-Werror&#34;</span><span class="p">))</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">options</span><span class="p">.</span><span class="n">errorprone</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">disableWarningsInGeneratedCode</span><span class="p">.</span><span class="k">set</span><span class="p">(</span><span class="k">true</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">excludedPaths</span><span class="p">.</span><span class="k">set</span><span class="p">(</span><span class="s2">&#34;.*/build/generated/.*&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">disable</span><span class="p">(</span><span class="s2">&#34;StringCaseLocaleUsage&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">error</span><span class="p">(</span><span class="s2">&#34;DefaultCharset&#34;</span><span class="p">,</span> <span class="s2">&#34;MissingOverride&#34;</span><span class="p">,</span> <span class="s2">&#34;UnusedVariable&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">tasks</span><span class="p">.</span><span class="n">named</span><span class="p">(</span><span class="s2">&#34;check&#34;</span><span class="p">)</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">dependsOn</span><span class="p">(</span><span class="s2">&#34;spotlessCheck&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle.kts</span>
+    </div>
+</div>
+<p>Los comandos para ejecutar Spotless y Error Prone son los siguientes.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./gradlew spotlessCheck&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-spotlessCheck.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./gradlew compileJava&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-compileJava.sh</span>
+    </div>
+</div>
+<h2 id="recomendación-final">Recomendación final</h2>
+<p>Mi recomendación es usar al menos una para analizar el estilo del código y mantener la consistencia y otra herramienta para detectar código que puede producir errores en  tiempo de ejecución. Con esta recomendación es posible usar las siguientes combinaciones:</p>
+<ul>
+<li>PMD, Checkstyle y Spotbugs</li>
+<li>Spotless y Error Prone</li>
+</ul>
+<p>Tras mucho tiempo usando la primera opción estoy evaluando la segunda con dos herramientas en vez de tres por el motivo de que cada una se centra en un área específica. Mi preferencia es no incluir las reglas de formateo de código como un <em>hook</em> al realizar un <em>commit</em> ya que añade tiempo para realizar el <em>commit</em> y realiza cambios sin supervisión, aplicar el formateo es simple y rápido desde el editor de código como IntelliJ.</p>
+<div class="alert alert-secondary sourcecode fs-6">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoSpotless">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2026/05/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal/">
+                <img src="/blog-bitix/assets/images/logotypes/temporal.svg" width="326" height="125" alt="Procesos orquestados fiables y observables en servicios distribuidos con Temporal" title="Procesos orquestados fiables y observables en servicios distribuidos con Temporal" class="" loading="lazy">
+                <h3>Procesos orquestados fiables y observables en servicios distribuidos con Temporal</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2026/04/la-libreria-zalando-logbook-para-emitir-trazas-de-peticiones-web/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="La librería Zalando Logbook para emitir trazas de peticiones web" title="La librería Zalando Logbook para emitir trazas de peticiones web" class="" loading="lazy">
+                <h3>La librería Zalando Logbook para emitir trazas de peticiones web</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2026/04/parchear-una-clase-de-una-libreria-java-para-solucionar-un-error/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Parchear una clase de una librería Java para solucionar un error" title="Parchear una clase de una librería Java para solucionar un error" class="" loading="lazy">
+                <h3>Parchear una clase de una librería Java para solucionar un error</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2025/09/novedades-y-nuevas-caracteristicas-de-java-25/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Novedades y nuevas características de Java 25" title="Novedades y nuevas características de Java 25" class="" loading="lazy">
+                <h3>Novedades y nuevas características de Java 25</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2025/05/generar-clientes-rest-con-su-interfaz-openapi/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Generar clientes REST con su interfaz OpenAPI" title="Generar clientes REST con su interfaz OpenAPI" class="" loading="lazy">
+                <h3>Generar clientes REST con su interfaz OpenAPI</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/10/novedades-y-nuevas-caracteristicas-de-java-21/">
+                <img src="/blog-bitix/2023/10/novedades-y-nuevas-caracteristicas-de-java-21/images/java-21_hu_4d64d22846e3016c.webp" width="326" height="125" alt="Novedades y nuevas características de Java 21" title="Novedades y nuevas características de Java 21" class="" loading="lazy">
+                <h3>Novedades y nuevas características de Java 21</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-731';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2026\/05\/analisis-estatico-de-codigo-java-con-spotless-y-error-prone\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/privacy/">Política de privacidad</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2026 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

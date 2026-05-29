@@ -228,6 +228,34 @@
     
     <li>
       <article>
+        <h1><a href="/blog-bitix/2018/07/identificar-todas-las-trazas-de-una-peticion-en-una-aplicacion-web-java-con-log4j/">Identificar todas las trazas de una petición en una aplicación web Java con Log4j</a></h1>
+        <span class="information">
+          <time>30/07/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>En una aplicación web hay múltiples usuarios realizando peticiones al servidor de modo que al usar una librería de <em>logging</em> como <a href="https://logging.apache.org/log4j/2.x/">Log4j</a> las trazas de información de los diferentes usuarios aparecerán intercaladas. En esta maraña de trazas resulta difícil obtener la secuencia de trazas de una petición siendo la diferencia entre descubrir la causa de un error o pasar varias horas revisando trazas sin encontrar nada significativo en la inmensa cantidad de ellas relativas a otras peticiones. La librería Log4j proporciona un mecanismo para seguir la secuencia completa de trazas de una petición con el <a href="https://logging.apache.org/log4j/2.x/manual/thread-context.html">concepto denominado <em>fish tagging</em></a>.</p>
+          
+          <br>
+          <a href="/blog-bitix/2018/07/identificar-todas-las-trazas-de-una-peticion-en-una-aplicacion-web-java-con-log4j/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2018/07/la-libreria-log4j-para-emitir-trazas-en-aplicaciones-java/">La librería Log4j para emitir trazas en aplicaciones Java</a></h1>
         <span class="information">
           <time>15/07/2018</time>
@@ -644,35 +672,6 @@
           
           <br>
           <a href="/blog-bitix/2018/04/la-sentencia-try-with-resources-de-java/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2018/04/la-controversia-sobre-las-excepciones-checked-y-unchecked/">La controversia sobre las excepciones checked y unchecked</a></h1>
-        <span class="information">
-          <time>20/04/2018</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
-</div>
-<p>Las excepciones son una forma de gestionar las condiciones de error que se dan en los programas. En el lenguaje C se utiliza el valor de retorno de la función para determinar la condición de error que se ha producido, el problema es que comprobar el valor de retorno puede ignorarse y la gestión de errores está mezclada con la tarea del programa.</p>
-<p>El lenguaje Java utiliza un <a href="https://picodotdev.github.io/blog-bitix/2017/10/las-excepciones-para-gestionar-errores-con-java/">mecanismo de excepciones</a>, las excepciones son objetos que se lanzan cuando se produce una condición de error. Todas las excepciones en Java heredan de <a href="#ZgotmplZ">Throwable</a> subdividiéndose en <a href="#ZgotmplZ">Error</a> y <a href="#ZgotmplZ">Exception</a>, las primeras son condiciones de error del sistema y las segundas condiciones de error del programa. A su vez las <em>Exception</em> pueden ser <em>checked</em> si heredan de esta y son aquellas que el compilador fuerza a que sean capturadas no pudiendo ignorarse, han de capturarse en una construcción <em>try catch</em> o declarar que el método puede lanzar la excepción no capturada. Las excepciones <em>unchecked</em> heredan de <a href="#ZgotmplZ">RuntimeException</a> que heredan a su vez de <em>Exception</em> pero tienen la particularidad de que no es necesario capturarlas ni declararlas como que se pueden lanzar debido a que se consideran condiciones de error en la programación como un acceso a un <em>array</em> fuera de rango que produce un <a href="#ZgotmplZ">ArrayIndexOutOfBounds</a>, el conocido <a href="#ZgotmplZ">NullPointerException</a> cuando se utiliza una referencia nula, otro es <a href="#ZgotmplZ">ArithmeticException</a> que se produce al dividir por 0.</p>
-          
-          <br>
-          <a href="/blog-bitix/2018/04/la-controversia-sobre-las-excepciones-checked-y-unchecked/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
