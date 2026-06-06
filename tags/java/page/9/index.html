@@ -228,6 +228,36 @@
     
     <li>
       <article>
+        <h1><a href="/blog-bitix/2019/03/varias-consideraciones-importantes-para-trabajar-con-importes-correctamente-tipo-de-datos-precision-y-guardado/">Varias consideraciones importantes para trabajar con importes correctamente (tipo de datos, precisión y guardado)</a></h1>
+        <span class="information">
+          <time>16/03/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Entre las cosas básicas a tener en cuenta en una aplicación que maneja fechas está en guardarlas en la zona horaria UTC que no sufre de cambios por zona horaria de verano o invierno, cambian más habitualmente de lo que parece e incluso por temas políticos.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/por-que-guardar-las-fechas-en-utc-en-la-base-de-datos/">Por qué guardar fechas con UTC en la base de datos</a></li>
+</ul>
+<p>Otra consideración distinta en aplicaciones que manejan importes es usar la clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html">BigDecimal</a> en vez de los tipos de datos de coma flotante <em>float</em> o <em>double</em> ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10. El asunto de este artículo es por que además de usar <em>BigDecimal</em> es aconsejable guardar los importes con al menos un dígito decimal más de la precisión necesaria para evitar problemas en los redondeos al aplicar operaciones matemáticas como multiplicación, división o porcentajes para algunos impuestos como el IVA, comisiones, descuentos o cambios de divisa.</p>
+          
+          <br>
+          <a href="/blog-bitix/2019/03/varias-consideraciones-importantes-para-trabajar-con-importes-correctamente-tipo-de-datos-precision-y-guardado/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2019/03/colecciones-sincronizadas-e-inmutables-en-java/">Colecciones sincronizadas e inmutables en Java</a></h1>
         <span class="information">
           <time>01/03/2019</time>
@@ -246,7 +276,7 @@
             <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
-<p>En la <a href="https://docs.oracle.com/en/java/javase/11/docs/api/index.html">API de Java</a> hay un conjunto amplio de <a href="https://picodotdev.github.io/blog-bitix/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/">estructuras de datos de diferentes tipos para guardar información</a> de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la <a href="#ZgotmplZ">API de colecciones</a>. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios <em>threads</em> hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes.</p>
+<p>En la <a href="https://docs.oracle.com/en/java/javase/11/docs/api/index.html">API de Java</a> hay un conjunto amplio de <a href="https://picodotdev.github.io/blog-bitix/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/">estructuras de datos de diferentes tipos para guardar información</a> de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html">API de colecciones</a>. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios <em>threads</em> hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes.</p>
           
           <br>
           <a href="/blog-bitix/2019/03/colecciones-sincronizadas-e-inmutables-en-java/">Continuar leyendo...</a>
@@ -274,7 +304,7 @@
             <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
-<p>Los programas en su funcionamiento manejan información y esta se guarda en algún tipo de estructura adecuada según el tipo de uso de esa información, ya sea para lectura al recuperar datos y escritura par insertar nuevos datos. En Java hay dos interfaces que el resto de colecciones implementa, una interfaz es <a href="#ZgotmplZ">Collection</a> y la otra es <a href="#ZgotmplZ">Map</a>, estas en su contrato define una serie de métodos que las implementaciones deben proporcionar.</p>
+<p>Los programas en su funcionamiento manejan información y esta se guarda en algún tipo de estructura adecuada según el tipo de uso de esa información, ya sea para lectura al recuperar datos y escritura par insertar nuevos datos. En Java hay dos interfaces que el resto de colecciones implementa, una interfaz es <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html">Collection</a> y la otra es <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a>, estas en su contrato define una serie de métodos que las implementaciones deben proporcionar.</p>
           
           <br>
           <a href="/blog-bitix/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/">Continuar leyendo...</a>
@@ -480,7 +510,7 @@
 <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/ffmpeg.svg" width="400" height="98" alt="FFmpeg" title="FFmpeg" class="" loading="false"></p>
 </div>
-<p>En la API de Java en el paquete <a href="#ZgotmplZ">javax.sound.sampled</a> hay unas pocas clases que permiten reproducir archivos de música o sonidos y en el paquete <a href="#ZgotmplZ">java.sound.midi</a> contiene clases para la música o sonidos digitales o sintetizados. Los tipos de archivos de música o sonidos soportados son <em>wav, au, aif</em> para los archivos <em>sampled</em>, y archivos <em>midi</em> para los digitales. Nativamente Java con las clases incluidas en el JDK no puede reproducir varios formatos de archivo de sonido populares como <em>mp3</em> u <em>ogg</em>.</p>
+<p>En la API de Java en el paquete <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/sampled/package-summary.html">javax.sound.sampled</a> hay unas pocas clases que permiten reproducir archivos de música o sonidos y en el paquete <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/midi/package-summary.html">java.sound.midi</a> contiene clases para la música o sonidos digitales o sintetizados. Los tipos de archivos de música o sonidos soportados son <em>wav, au, aif</em> para los archivos <em>sampled</em>, y archivos <em>midi</em> para los digitales. Nativamente Java con las clases incluidas en el JDK no puede reproducir varios formatos de archivo de sonido populares como <em>mp3</em> u <em>ogg</em>.</p>
           
           <br>
           <a href="/blog-bitix/2019/01/reproducir-audio-y-musica-midi-y-sampled-wav-mp3-ogg-con-java-y-ffmpeg/">Continuar leyendo...</a>
@@ -640,41 +670,6 @@
           
           <br>
           <a href="/blog-bitix/2018/12/hemeroteca-14/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2018/12/exponer-las-metricas-de-hystrix-en-grafana-con-prometheus-de-una-aplicacion-spring-boot/">Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot</a></h1>
-        <span class="information">
-          <time>21/12/2018</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-              <a href="/blog-bitix/tags/software/">software</a>
-            
-              <a href="/blog-bitix/tags/spring/">spring</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
-</div>
-<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
-</div>
-<p><a href="https://github.com/Netflix/Hystrix">Hystrix</a> es una implementación del patrón <em>circuit breaker</em> para hacer que un servicio sea tolerante fallos cuando aquellos que utiliza fallan. Es conveniente tener una herramienta de monitorización para conocer el estado del sistema y actuar pronto o conocer si el comportamiento del sistema es diferente al hacer algún cambio. Hystrix proporciona varios datos como el número de peticiones realizadas, cuantas han fallado o cual es el estado del patrón <em>circuit breaker</em>. <a href="https://prometheus.io/">Prometheus</a> es una herramienta de monitorización que recoge las métricas de los servicios de forma periódica y las almacena para una consulta posterior, <a href="https://grafana.com/">Grafana</a> es otra herramienta de monitorización que permite visualizar en gráficas las métricas almacenadas en Prometheus y observar los valores a lo largo del tiempo.</p>
-          
-          <br>
-          <a href="/blog-bitix/2018/12/exponer-las-metricas-de-hystrix-en-grafana-con-prometheus-de-una-aplicacion-spring-boot/">Continuar leyendo...</a>
         </p>
       </article>
     </li>

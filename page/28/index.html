@@ -232,6 +232,33 @@
     
     <li>
       <article>
+        <h1><a href="/blog-bitix/2018/05/plantillas-con-etiquetas-no-balanceadas-en-apache-tapestry/">Plantillas con etiquetas no balanceadas en Apache Tapestry</a></h1>
+        <span class="information">
+          <time>01/05/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/tapestry/">tapestry</a>
+            
+          
+        </span>
+        <p>
+          
+            Apache Tapestry es uno de los mejores <em>frameworks</em> web para Java que he usado, sin embargo, también tiene algún incordio o curiosidad. Una de ellas es que las plantillas han de ser XML bien formado y en este caso que comento en el que necesitaríamos una plantilla con etiquetas desbalanceadas nos obliga a buscar una solución, esta es la que uso.
+          
+          <br>
+          <a href="/blog-bitix/2018/05/plantillas-con-etiquetas-no-balanceadas-en-apache-tapestry/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/">Personalizar el prompt del sistema del intérprete de comandos Bash</a></h1>
         <span class="information">
           <time>29/04/2018</time>
@@ -304,8 +331,8 @@
             <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
-<p>Una de las novedades que incorporó Java 7 es la sentencia <em>try-with-resources</em> con el objetivo de cerrar los recursos de forma automática en la sentencia <em>try-catch-finally</em> y hacer más simple el código. Aquellas variables cuyas clases implementan la interfaz <a href="#ZgotmplZ">AutoCloseable</a> pueden declararse en el bloque de inicialización de la sentencia <em>try-with-resources</em> y sus métodos <a href="#ZgotmplZ">close()</a> serán llamados después del bloque <em>finally</em> como si su código estuviese de forma explícita.</p>
-<p>Un ejemplo de código que lee una línea de un fichero usando la sentencia <em>try-with-resources</em> es la siguiente de Java 7. Como se observa no es necesario llamar de forma explícita al método <em>close</em> para liberar los recursos de la instancia de la clase <a href="#ZgotmplZ">BufferedReader</a>.</p>
+<p>Una de las novedades que incorporó Java 7 es la sentencia <em>try-with-resources</em> con el objetivo de cerrar los recursos de forma automática en la sentencia <em>try-catch-finally</em> y hacer más simple el código. Aquellas variables cuyas clases implementan la interfaz <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/AutoCloseable.html">AutoCloseable</a> pueden declararse en el bloque de inicialización de la sentencia <em>try-with-resources</em> y sus métodos <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/AutoCloseable.html#close%28%29">close()</a> serán llamados después del bloque <em>finally</em> como si su código estuviese de forma explícita.</p>
+<p>Un ejemplo de código que lee una línea de un fichero usando la sentencia <em>try-with-resources</em> es la siguiente de Java 7. Como se observa no es necesario llamar de forma explícita al método <em>close</em> para liberar los recursos de la instancia de la clase <a href="https://docs.oracle.com/javase/10/docs/api/java/io/BufferedReader.html">BufferedReader</a>.</p>
           
           <br>
           <a href="/blog-bitix/2018/04/la-sentencia-try-with-resources-de-java/">Continuar leyendo...</a>
@@ -334,7 +361,7 @@
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Las excepciones son una forma de gestionar las condiciones de error que se dan en los programas. En el lenguaje C se utiliza el valor de retorno de la función para determinar la condición de error que se ha producido, el problema es que comprobar el valor de retorno puede ignorarse y la gestión de errores está mezclada con la tarea del programa.</p>
-<p>El lenguaje Java utiliza un <a href="https://picodotdev.github.io/blog-bitix/2017/10/las-excepciones-para-gestionar-errores-con-java/">mecanismo de excepciones</a>, las excepciones son objetos que se lanzan cuando se produce una condición de error. Todas las excepciones en Java heredan de <a href="#ZgotmplZ">Throwable</a> subdividiéndose en <a href="#ZgotmplZ">Error</a> y <a href="#ZgotmplZ">Exception</a>, las primeras son condiciones de error del sistema y las segundas condiciones de error del programa. A su vez las <em>Exception</em> pueden ser <em>checked</em> si heredan de esta y son aquellas que el compilador fuerza a que sean capturadas no pudiendo ignorarse, han de capturarse en una construcción <em>try catch</em> o declarar que el método puede lanzar la excepción no capturada. Las excepciones <em>unchecked</em> heredan de <a href="#ZgotmplZ">RuntimeException</a> que heredan a su vez de <em>Exception</em> pero tienen la particularidad de que no es necesario capturarlas ni declararlas como que se pueden lanzar debido a que se consideran condiciones de error en la programación como un acceso a un <em>array</em> fuera de rango que produce un <a href="#ZgotmplZ">ArrayIndexOutOfBounds</a>, el conocido <a href="#ZgotmplZ">NullPointerException</a> cuando se utiliza una referencia nula, otro es <a href="#ZgotmplZ">ArithmeticException</a> que se produce al dividir por 0.</p>
+<p>El lenguaje Java utiliza un <a href="https://picodotdev.github.io/blog-bitix/2017/10/las-excepciones-para-gestionar-errores-con-java/">mecanismo de excepciones</a>, las excepciones son objetos que se lanzan cuando se produce una condición de error. Todas las excepciones en Java heredan de <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/Throwable.html">Throwable</a> subdividiéndose en <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/Error.html">Error</a> y <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/Exception.html">Exception</a>, las primeras son condiciones de error del sistema y las segundas condiciones de error del programa. A su vez las <em>Exception</em> pueden ser <em>checked</em> si heredan de esta y son aquellas que el compilador fuerza a que sean capturadas no pudiendo ignorarse, han de capturarse en una construcción <em>try catch</em> o declarar que el método puede lanzar la excepción no capturada. Las excepciones <em>unchecked</em> heredan de <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/RuntimeException.html">RuntimeException</a> que heredan a su vez de <em>Exception</em> pero tienen la particularidad de que no es necesario capturarlas ni declararlas como que se pueden lanzar debido a que se consideran condiciones de error en la programación como un acceso a un <em>array</em> fuera de rango que produce un <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/ArrayIndexOutOfBoundsException.html">ArrayIndexOutOfBounds</a>, el conocido <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/NullPointerException.html">NullPointerException</a> cuando se utiliza una referencia nula, otro es <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/ArithmeticException.html">ArithmeticException</a> que se produce al dividir por 0.</p>
           
           <br>
           <a href="/blog-bitix/2018/04/la-controversia-sobre-las-excepciones-checked-y-unchecked/">Continuar leyendo...</a>
@@ -629,34 +656,6 @@
           
           <br>
           <a href="/blog-bitix/2018/03/el-problema-de-concurrencia-del-agente-y-los-fumadores-resuelto-en-java/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2018/02/el-problema-de-concurrencia-de-la-cena-de-los-filosofos-resuelto-con-java/">El problema de concurrencia de la cena de los filósofos resuelto con Java</a></h1>
-        <span class="information">
-          <time>25/02/2018</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
-</div>
-<p>En un <a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciacion-a-la-programacion-concurrente-en-java/">artículo de introducción sobre la programación concurrente en Java</a> explicaba cuales eran la facilidades que proporciona este lenguaje para la programación concurrente en múltiples hilos. En él exponía dos ejemplos clásicos que se estudian en las asignaturas de sistemas operativos, uno de ellos era el de <a href="https://es.wikipedia.org/wiki/Problema_de_la_cena_de_los_fil%C3%B3sofos">la cena de los filósofos</a> donde varios filósofos sentados en una tabla durante una cena se dedican a pensar y cuando tienen hambre comen usando para ello dos tenedores que comparten con sus compañeros que se sientan a la izquierda y derecha.</p>
-          
-          <br>
-          <a href="/blog-bitix/2018/02/el-problema-de-concurrencia-de-la-cena-de-los-filosofos-resuelto-con-java/">Continuar leyendo...</a>
         </p>
       </article>
     </li>

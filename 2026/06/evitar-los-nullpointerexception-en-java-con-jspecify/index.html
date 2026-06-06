@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Si llevas tiempo programando en Java, sabrás de sobra que el NullPointerException es uno de esos errores que aparece cuando menos lo esperas y que no en vano se le conoce como el error del billón de dólares: omnipresente, frustrante y, en teoría, completamente evitable. A diferencia de lenguajes más modernos como Kotlin, Java nunca fue diseñado para garantizar la seguridad frente a nulos a nivel del sistema de tipos, aunque el ecosistema ha evolucionado si no para resolver el problema para mitigarlo. Desde la llegada de Optional en Java 8 hasta la reciente adopción de JSpecify por parte de Spring, existen hoy herramientas y estándares para detectar y mitigar los NPE en tiempo de compilación, que vale la pena conocer. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Evitar los NullPointerException en Java con JSpecify</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2026/06/evitar-los-nullpointerexception-en-java-con-jspecify/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2026/06/evitar-los-nullpointerexception-en-java-con-jspecify/" hreflang="es" title="Evitar los NullPointerException en Java con JSpecify">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preload" href="/blog-bitix/asssets/fonts/pt-serif/pt-serif.css" as="style">
+  <link rel="preload" href="/blog-bitix/asssets/fonts/open-sans/open-sans.css" as="style">
+  <link href="/blog-bitix/assets/fonts/pt-serif/pt-serif.css" rel="stylesheet">
+  <link href="/blog-bitix/assets/fonts/open-sans/open-sans.css" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Evitar los NullPointerException en Java con JSpecify">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2026/06/evitar-los-nullpointerexception-en-java-con-jspecify/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2026/06/evitar-los-nullpointerexception-en-java-con-jspecify/images/header_hu_c2c61da61ac67dfe.webp">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Si llevas tiempo programando en Java, sabrás de sobra que el NullPointerException es uno de esos errores que aparece cuando menos lo esperas y que no en vano se le conoce como el error del billón de dólares: omnipresente, frustrante y, en teoría, completamente evitable. A diferencia de lenguajes más modernos como Kotlin, Java nunca fue diseñado para garantizar la seguridad frente a nulos a nivel del sistema de tipos, aunque el ecosistema ha evolucionado si no para resolver el problema para mitigarlo. Desde la llegada de Optional en Java 8 hasta la reciente adopción de JSpecify por parte de Spring, existen hoy herramientas y estándares para detectar y mitigar los NPE en tiempo de compilación, que vale la pena conocer. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2026/06/evitar-los-nullpointerexception-en-java-con-jspecify/images/header_hu_c2c61da61ac67dfe.webp">
+
+<meta name="twitter:site" content="">
+<meta name="twitter:title" content="Evitar los NullPointerException en Java con JSpecify">
+<meta name="twitter:description" content="Si llevas tiempo programando en Java, sabrás de sobra que el NullPointerException es uno de esos errores que aparece cuando menos lo esperas y que no en vano se le conoce como el error del billón de dólares: omnipresente, frustrante y, en teoría, completamente evitable. A diferencia de lenguajes más modernos como Kotlin, Java nunca fue diseñado para garantizar la seguridad frente a nulos a nivel del sistema de tipos, aunque el ecosistema ha evolucionado si no para resolver el problema para mitigarlo. Desde la llegada de Optional en Java 8 hasta la reciente adopción de JSpecify por parte de Spring, existen hoy herramientas y estándares para detectar y mitigar los NPE en tiempo de compilación, que vale la pena conocer. &hellip;">
+<meta name="twitter:creator" content="">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2026/06/evitar-los-nullpointerexception-en-java-con-jspecify/"
+    },
+    "headline": "Evitar los NullPointerException en Java con JSpecify",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2026/06/evitar-los-nullpointerexception-en-java-con-jspecify/images/header_hu_c2c61da61ac67dfe.webp"
+        
+      },
+    "datePublished": "2026-06-05T19:30:00+02:00",
+    "dateModified": "2026-06-05T19:30:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1311",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "I ♥ Java, GNU/Linux and libre software.",
+        "url": ""
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Si llevas tiempo programando en Java, sabrás de sobra que el NullPointerException es uno de esos errores que aparece cuando menos lo esperas y que no en vano se le conoce como el error del billón de dólares: omnipresente, frustrante y, en teoría, completamente evitable. A diferencia de lenguajes más modernos como Kotlin, Java nunca fue diseñado para garantizar la seguridad frente a nulos a nivel del sistema de tipos, aunque el ecosistema ha evolucionado si no para resolver el problema para mitigarlo. Desde la llegada de Optional en Java 8 hasta la reciente adopción de JSpecify por parte de Spring, existen hoy herramientas y estándares para detectar y mitigar los NPE en tiempo de compilación, que vale la pena conocer."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+  
+  <script type="text/javascript" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async></script>
+<script>
+    window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() {
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1750, 0], [[300, 600]])
+        .addSize([0, 0], [])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600]])
+        .addSize([1280, 0], [[160, 600]])
+        .addSize([0, 0], [])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+    });
+</script>
+
+  
+  
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2026/06/evitar-los-nullpointerexception-en-java-con-jspecify/images/header_hu_1c5ce3f87d92f85d.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            
+<div id='div-gpt-ad-1705155070019-0' style='min-width: 160px; min-height: 600px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705155070019-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Evitar los NullPointerException en Java con JSpecify</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>05/06/2026</time>.
+      
+        <br>
+        <i class="bi bi-tag"></i>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+      
+      <br>
+      <i class="bi bi-link-45deg"></i>
+      <a href="/blog-bitix/2026/06/evitar-los-nullpointerexception-en-java-con-jspecify/">Enlace permanente</a>
+      
+        <i class="bi bi-chat"></i>
+        <a href="/blog-bitix/2026/06/evitar-los-nullpointerexception-en-java-con-jspecify/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Si llevas tiempo programando en Java, sabrás de sobra que el NullPointerException es uno de esos errores que aparece cuando menos lo esperas y que no en vano se le conoce como el <em>error del billón de dólares</em>: omnipresente, frustrante y, en teoría, completamente evitable. A diferencia de lenguajes más modernos como Kotlin, Java nunca fue diseñado para garantizar la seguridad frente a nulos a nivel del sistema de tipos, aunque el ecosistema ha evolucionado si no para resolver el problema para mitigarlo. Desde la llegada de Optional en Java 8 hasta la reciente adopción de JSpecify por parte de Spring, existen hoy herramientas y estándares para detectar y mitigar los NPE en tiempo de compilación, que vale la pena conocer.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      
+<div id='div-gpt-ad-1705154918797-0' style='min-width: 300px; min-height: 90px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154918797-0'); });
+  </script>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Si hay un error que causa numerosos problemas en el lenguaje de programación es el de NullPointerException o NPE está en las primeras posiciones. Esto es debido a que el lenguaje de programación Java y su compilador hasta el momento no están diseñados para evitarlo.</p>
+<p>El SDK de Java si ha añadido algunas clases y métodos para mitigar el problema de los NPE.</p>
+<p>El siguiente artículo de Java Code Geeks explica muy bien muchos aspectos del problema, artículo que recomiendo leer. En este artículo explicaré un poco los detalles y proporciono un ejemplo de código ejecutable con la aplicación de la solución.</p>
+<ul>
+<li><a href="https://www.javacodegeeks.com/2026/03/jspecify-vs-kotlins-built-in-null-safety-can-annotations-ever-match-a-type-system.html">JSpecify vs. Kotlin’s Built-in Null Safety: Can Annotations Ever Match a Type System?</a></li>
+</ul>
+<div class="row toc"><div class="col-12 col-lg-8"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
+    <li><a href="#qué-son-los-punteros-o-referencias-a-objetos">Qué son los punteros o referencias a objetos</a></li>
+    <li><a href="#el-problema-de-los-nullpointerexception">El problema de los NullPointerException</a></li>
+    <li><a href="#soluciones">Soluciones</a>
+      <ol>
+        <li><a href="#optional">Optional</a></li>
+        <li><a href="#jspecify">JSpecify</a></li>
+      </ol>
+    </li>
+    <li><a href="#las-anotaciones-de-jspecify">Las anotaciones de JSpecify</a></li>
+    <li><a href="#el-checker">El checker</a></li>
+    <li><a href="#cómo-lo-soluciona-kotlin">Cómo lo soluciona Kotlin</a></li>
+    <li><a href="#el-ejemplo">El ejemplo</a></li>
+  </ol>
+</nav></div> </div><div class="col-12 col-lg-4"></div></div>
+<h2 id="qué-son-los-punteros-o-referencias-a-objetos">Qué son los punteros o referencias a objetos</h2>
+<p>Lo que en el lenguaje de programación C se llaman punteros en Java se conoce como referencias a objetos. C trabaja a más bajo nivel, Java oculta en gran parte la complejidad para el programador de referencia de objetos y desreferenciarlos. En cualquier caso es útil como es el funcionamiento a bajo nivel de C para comprender el problema de los NullPointerExceptions en Java.</p>
+<p>Un puntero o una referencia a un objeto es una variable que contiene la dirección de memoria a una estructura de datos u objeto.</p>
+<h2 id="el-problema-de-los-nullpointerexception">El problema de los NullPointerException</h2>
+<p>Lo que en C provoca un error fatal en el programa lo que puede provocar su finalización abrupta, en Java provoca un NullPointerException o NPE tratable de alguna forma, por ejemplo emitiendo una línea de log.</p>
+<p>Un NullPointerException es un error en tiempo de ejecución y un error en la implementación del programa. En un programa perfectamente implementado nunca debería darse un NullPointerException. Sin embargo, los desarrolladores cometen errores y este es uno de los errores más numerosos en los programas. Pero no todo es culpa de los desarrolladores al igual que el compilador valida los tipos en el código fuente del programa al compilarlo, el mismo compilador puede ayudar a evitarlos. Al mismo tiempo, el lenguaje Java podría haberse diseñado y con la ayuda del compilador para que los programas Java estuvieran libres de NullPointerException. Como han hecho lenguajes posteriores como Kotlin. Introducir un cambio a nivel del lenguaje provocaría romper la compatibilidad hacia atrás cosa que Java se caracteriza en evitarlo.</p>
+<p>El problema de los NullPointerException en Java surge cuando se intenta acceder a un miembro de una variable cuya referencia es null, no se puede invocar el método del objeto.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Car</span><span class="w"> </span><span class="n">car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="n">car</span><span class="p">.</span><span class="na">startEngine</span><span class="p">();</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Car.java</span>
+    </div>
+</div>
+<p>A los NPE se le conoce también como el problema del billón de dólares por su frecuencia en la mayoría de programas.</p>
+<h2 id="soluciones">Soluciones</h2>
+<p>Hasta que los diseñadores del lenguaje Java decidan incorporar alguna sintaxis para evitar los NullPointerException en este momento hay varias opciones para mitigar el problema.</p>
+<h3 id="optional">Optional</h3>
+<p>La clase <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html">Optional</a> introducida en Java 8 es una clase que referencia un objeto o no referencia ningún objeto. Tiene métodos para conocer si referencia o no un objeto y métodos orientados a la programación funcional. Además es una clase que usa los tipos genéricos de Java introducidos en Java 5.</p>
+<p>Sustituyendo el tipo de las variables que puedan ser null se mitigan los los NullPointerException.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Car</span><span class="o">&gt;</span><span class="w"> </span><span class="n">car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">ofNullable</span><span class="p">(</span><span class="n">otherCar</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="n">car</span><span class="p">.</span><span class="na">ifPresent</span><span class="p">(</span><span class="n">Car</span><span class="p">::</span><span class="n">startEngine</span><span class="p">);</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>CarOptional.java</span>
+    </div>
+</div>
+<p>El problema de los Optional es usar sustituir en todas las variables el tipo a Optional. En código existente y <em>legacy</em> esto significa mucho trabajo y propenso a introducir errores. Otra desventaja de los Optional es que hace más incómodo trabajar con objetos requiriendo el uso de sus métodos funcionales, y es innecesario cuando la referencia no hay posibilidad de que sea nula.</p>
+<p>Entre sus ventajas está que el tipo Optional comunica de forma clara al leer el código que la referencia puede ser nula.</p>
+<h3 id="jspecify">JSpecify</h3>
+<p>Dada la frecuencia de los NullPointerException varias organizaciones han acordado poner en común en el estándar de <a href="https://jspecify.dev/">JSpecify</a> una solución que use una combinación de anotaciones y la ayuda del compilador.</p>
+<p>A fecha de hoy solo incluye anotaciones para tratar los null aunque en el futuro podría incluir alguna anotación más para el análisis estático de código.</p>
+<p>JSpecify no evita los NPE en tiempo de ejecución simplemente hace que el compilador muestre una advertencia o error cuando se detecte un caso potencial de NPE, las anotaciones es información para el compilador. Se trata de detectar los casos en los que se usa una variable que puede ser nula</p>
+<p><a href="https://projects.spring.io/spring-framework/">Spring Framework</a> 6.x anotó su API pública con las anotaciones <em>@Nullable</em> y <em>@NonNull</em> de JSpecify, lo que permite que <a href="https://www.jetbrains.com/idea/">IntelliJ</a> y <a href="https://github.com/uber/NullAway">NullAway</a> propaguen el análisis de nulabilidad a través de las dependencias de Spring sin configuración extra.</p>
+<h2 id="las-anotaciones-de-jspecify">Las anotaciones de JSpecify</h2>
+<p>La especificación se compone de las siguientes 4 anotaciones. Dos para anotar un tipo de datos y dos para anotar ámbitos completos.</p>
+<p>Las 4 anotaciones <em>core</em>:</p>
+<table>
+	<thead>
+			<tr>
+					<th>Anotación</th>
+					<th>Ámbito</th>
+					<th>Descripción</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>@Nullable</td>
+					<td>Type</td>
+					<td>El tipo <strong>puede</strong> ser null</td>
+			</tr>
+			<tr>
+					<td>@NonNull</td>
+					<td>Type</td>
+					<td>El tipo <strong>nunca</strong> será null</td>
+			</tr>
+			<tr>
+					<td>@NullMarked</td>
+					<td>Package, Class, Method</td>
+					<td>Todo en el scope es non-null por defecto, (útil en migraciones)</td>
+			</tr>
+			<tr>
+					<td>@NullUnmarked</td>
+					<td>Nested scope</td>
+					<td>Revierte el NullMarked</td>
+			</tr>
+	</tbody>
+</table>
+<p>Una limitación de JSpecify es que las anotaciones solo tienen efecto si todo el código que interactúa con esa API también está anotado. En código <em>legacy</em> no anotado, el <em>checker</em> no puede hacer las comprobaciones y el comportamiento es como si no se usa JSpecify.</p>
+<h2 id="el-checker">El checker</h2>
+<p>Las anotaciones por sí mismas simplemente añaden información adicional a los tipos, es necesario hacer uso de un <em>checker</em> para que en tiempo de compilación el compilador emita mensajes de error cuando se haga uso de una variable que potencialmente genere un NPE.</p>
+<p>IntelliJ soporta las anotaciones de JSpecify, proporciona indicaciones en caso de detectar un potencial NullPointerException. Con la combinación de <a href="https://errorprone.info/">Error Prone</a> y su plugin de checker NullAway se añade al compilador la capacidad de hacer honor a las anotaciones de JSpecify generando errores de compilación.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2026/05/analisis-estatico-de-codigo-java-con-spotless-y-error-prone/">Análisis estático de código Java con Spotless y Error Prone</a></li>
+</ul>
+<p>Este es el error que da el compilador cuando detecta un uso de valor null en una variable que está anotada como no nula.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">$ ./gradlew run&#10;</span></span><span class="line"><span class="cl">...&#10;</span></span><span class="line"><span class="cl">&gt; Task :compileJava FAILED&#10;</span></span><span class="line"><span class="cl">.../blog-ejemplos/HolaMundoSpotless/src/main/java/io/github/picodotdev/blogbitix/holamundospotless/Main.java:10: error: [NullAway] passing @Nullable parameter &#39;null&#39; where @NonNull is required&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(greeter.greet(null));&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ^&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;(see http://t.uber.com/nullaway )&#10;</span></span><span class="line"><span class="cl">1 error</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out</span>
+    </div>
+</div>
+<p>En caso de querer ignorar el error se puede hacer con la anotacinón <em>@SuppressWarnings</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@SuppressWarnings</span><span class="p">({</span><span class="w"> </span><span class="s">&#34;NullAway&#34;</span><span class="w"> </span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>supresswarnings-nullaway.java</span>
+    </div>
+</div>
+<h2 id="cómo-lo-soluciona-kotlin">Cómo lo soluciona Kotlin</h2>
+<p>El lenguaje basado en la JVM <a href="https://kotlinlang.org/">Kotlin</a> más moderno que Java ha sido diseñado desde el principio para resolver el problema de los NullPointerExceptions. Para ello Kotlin tiene dos tipos distintos en el sistema de tipos para una misma clase.</p>
+<p>Un tipo nullable y otro no nullable. El tipo nullable es potencialmente causante de un NPE, un tipo no nullable no puede causar NPE ya que su referencia siempre apuntará a una instancia del objeto. El tipo nullable se especifica con el sufijo <em>?</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">var</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="k">null</span>   <span class="c1">// Error de compilación&#10;</span></span></span><span class="line"><span class="cl"><span class="k">var</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>  <span class="c1">// Tipo nullable explícito&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Name-1.kt</span>
+    </div>
+</div>
+<p>El compilador se encarga de verificar y forzar al programador a añadir comprobaciones para evitar NPE en los tipos nullables.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">?</span> <span class="p">=</span> <span class="n">getName</span><span class="p">()</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">name</span><span class="p">.</span><span class="n">length</span>        <span class="c1">// No compila, name puede ser ser null&#10;</span></span></span><span class="line"><span class="cl"><span class="n">name</span><span class="o">?.</span><span class="n">length</span>       <span class="c1">// Llamada segura, devuelve null si name es null&#10;</span></span></span><span class="line"><span class="cl"><span class="n">name</span><span class="o">!!</span><span class="p">.</span><span class="n">length</span>      <span class="c1">// Fuerza el unwrap, NPE si es null el error es responsabilidad del programador&#10;</span></span></span><span class="line"><span class="cl"><span class="n">name</span><span class="o">?.</span><span class="n">length</span> <span class="o">?:</span> <span class="mi">0</span>  <span class="c1">// Uso de elvis operator con fallback si es null</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Name-2.kt</span>
+    </div>
+</div>
+<h2 id="el-ejemplo">El ejemplo</h2>
+<p>El ejemplo de Spotless, Error Prone y JSpecify se puede probar con el siguiente código.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.holamundospotless</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@SuppressWarnings</span><span class="p">(</span><span class="s">&#34;SelfAssignment&#34;</span><span class="p">)</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">...</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">greeter</span><span class="p">.</span><span class="na">greet</span><span class="p">(</span><span class="kc">null</span><span class="p">));</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">import</span> <span class="nn">net.ltgt.gradle.errorprone.CheckSeverity</span>&#10;</span></span><span class="line"><span class="cl"><span class="k">import</span> <span class="nn">net.ltgt.gradle.errorprone.errorprone</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">plugins</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">application</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span><span class="p">(</span><span class="s2">&#34;com.diffplug.spotless&#34;</span><span class="p">)</span> <span class="n">version</span> <span class="s2">&#34;7.0.2&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span><span class="p">(</span><span class="s2">&#34;net.ltgt.errorprone&#34;</span><span class="p">)</span> <span class="n">version</span> <span class="s2">&#34;5.1.0&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">..</span><span class="p">.</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">dependencies</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">compileOnly</span><span class="p">(</span><span class="s2">&#34;org.jspecify:jspecify:1.0.0&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">errorprone</span><span class="p">(</span><span class="s2">&#34;com.google.errorprone:error_prone_core:2.49.0&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">errorprone</span><span class="p">(</span><span class="s2">&#34;com.uber.nullaway:nullaway:0.13.6&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">..</span><span class="p">.</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">tasks</span><span class="p">.</span><span class="n">withType</span><span class="p">&lt;</span><span class="n">JavaCompile</span><span class="p">&gt;().</span><span class="n">configureEach</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">options</span><span class="p">.</span><span class="n">encoding</span> <span class="p">=</span> <span class="s2">&#34;UTF-8&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">options</span><span class="p">.</span><span class="n">compilerArgs</span><span class="p">.</span><span class="n">addAll</span><span class="p">(</span><span class="n">listOf</span><span class="p">(</span><span class="s2">&#34;-Xlint:all&#34;</span><span class="p">,</span> <span class="s2">&#34;-Werror&#34;</span><span class="p">))</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">options</span><span class="p">.</span><span class="n">errorprone</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">..</span><span class="p">.</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">check</span><span class="p">(</span><span class="s2">&#34;NullAway&#34;</span><span class="p">,</span> <span class="nc">CheckSeverity</span><span class="p">.</span><span class="n">ERROR</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">option</span><span class="p">(</span><span class="s2">&#34;NullAway:AnnotatedPackages&#34;</span><span class="p">,</span> <span class="s2">&#34;io.github.picodotdev.blogbitix&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">..</span><span class="p">.</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle.kts</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode fs-6">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoSpotless">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2026/05/analisis-estatico-de-codigo-java-con-spotless-y-error-prone/">
+                <img src="/blog-bitix/2026/05/analisis-estatico-de-codigo-java-con-spotless-y-error-prone/images/header_hu_8c183caf20599c8.webp" width="326" height="125" alt="Análisis estático de código Java con Spotless y Error Prone" title="Análisis estático de código Java con Spotless y Error Prone" class="" loading="lazy">
+                <h3>Análisis estático de código Java con Spotless y Error Prone</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2026/05/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal/">
+                <img src="/blog-bitix/assets/images/logotypes/temporal.svg" width="326" height="125" alt="Procesos orquestados fiables y observables en servicios distribuidos con Temporal" title="Procesos orquestados fiables y observables en servicios distribuidos con Temporal" class="" loading="lazy">
+                <h3>Procesos orquestados fiables y observables en servicios distribuidos con Temporal</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2026/04/la-libreria-zalando-logbook-para-emitir-trazas-de-peticiones-web/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="La librería Zalando Logbook para emitir trazas de peticiones web" title="La librería Zalando Logbook para emitir trazas de peticiones web" class="" loading="lazy">
+                <h3>La librería Zalando Logbook para emitir trazas de peticiones web</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2026/04/parchear-una-clase-de-una-libreria-java-para-solucionar-un-error/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Parchear una clase de una librería Java para solucionar un error" title="Parchear una clase de una librería Java para solucionar un error" class="" loading="lazy">
+                <h3>Parchear una clase de una librería Java para solucionar un error</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2025/09/novedades-y-nuevas-caracteristicas-de-java-25/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Novedades y nuevas características de Java 25" title="Novedades y nuevas características de Java 25" class="" loading="lazy">
+                <h3>Novedades y nuevas características de Java 25</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2025/05/generar-clientes-rest-con-su-interfaz-openapi/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Generar clientes REST con su interfaz OpenAPI" title="Generar clientes REST con su interfaz OpenAPI" class="" loading="lazy">
+                <h3>Generar clientes REST con su interfaz OpenAPI</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-732';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2026\/06\/evitar-los-nullpointerexception-en-java-con-jspecify\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/privacy/">Política de privacidad</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2026 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

@@ -228,6 +228,31 @@
     
     <li>
       <article>
+        <h1><a href="/blog-bitix/2019/07/recuperar-datos-eficientemente-en-graphql-usando-batching-con-data-loaders/">Recuperar datos eficientemente en GraphQL usando batching con data loaders</a></h1>
+        <span class="information">
+          <time>12/07/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Al diferencia de una API REST donde cada recurso posee un <em>endpoint</em> propio en GraphQL los recursos están relacionados y forman un grafo. Por otro lado las propiedades devueltas en una consulta de GraphQL son las que se indiquen en la consulta en vez de prefijadas como en una API REST. Hay que tener en cuenta que GraphQL para recuperar las propiedades de las entidades usa un <em>resolver</em> y las recupera una a una, si se devuelve una lista de elementos y de cada uno de esos elementos otra propiedad para la que hay que generar una consulta adicional a la base de datos el rendimiento no será bueno. Los <em>data loaders</em> permiten recuperar las propiedades relacionadas de una colección de entidades eficientemente evitando el problema 1+N.
+          
+          <br>
+          <a href="/blog-bitix/2019/07/recuperar-datos-eficientemente-en-graphql-usando-batching-con-data-loaders/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2019/07/los-tipos-de-modulos-de-jmps-anadidos-a-partir-de-java-9/">Los tipos de módulos de JPMS añadidos a partir de Java 9</a></h1>
         <span class="information">
           <time>07/07/2019</time>
@@ -399,7 +424,7 @@
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>No es una buena práctica al igual que al no recomendado <a href="https://picodotdev.github.io/blog-bitix/2017/08/el-antipatron-de-inicializacion-de-variables-con-dobles-llaves-en-java/">antipatrón de inicialización de variables con dobles llaves</a> pero en el uso de <em>streams</em> que aceptan <em>lambdas</em> es un rodeo a la limitación de no poder lanzar excepciones <em>checked</em> por no estar definida en su API.</p>
-<p>En Java existen dos tipos de excepciones las <em>checked</em> que son de obligada captura o ser lanzadas y las <em>unchecked</em> que no son de obligada captura ni ser declaradas. Al usar <em>streams</em> y algunas interfaces funcionales de Java como <a href="#ZgotmplZ">Consumer</a> que no lanzan excepciones el compilador generará un error de compilación si la implementación lanza una excepción.</p>
+<p>En Java existen dos tipos de excepciones las <em>checked</em> que son de obligada captura o ser lanzadas y las <em>unchecked</em> que no son de obligada captura ni ser declaradas. Al usar <em>streams</em> y algunas interfaces funcionales de Java como <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html">Consumer</a> que no lanzan excepciones el compilador generará un error de compilación si la implementación lanza una excepción.</p>
           
           <br>
           <a href="/blog-bitix/2019/05/lanzar-excepciones-checked-como-si-fueran-unchecked-en-java/">Continuar leyendo...</a>
@@ -597,36 +622,6 @@
           
           <br>
           <a href="/blog-bitix/2019/03/ejemplo-de-reactive-streams-en-java/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2019/03/varias-consideraciones-importantes-para-trabajar-con-importes-correctamente-tipo-de-datos-precision-y-guardado/">Varias consideraciones importantes para trabajar con importes correctamente (tipo de datos, precisión y guardado)</a></h1>
-        <span class="information">
-          <time>16/03/2019</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
-</div>
-<p>Entre las cosas básicas a tener en cuenta en una aplicación que maneja fechas está en guardarlas en la zona horaria UTC que no sufre de cambios por zona horaria de verano o invierno, cambian más habitualmente de lo que parece e incluso por temas políticos.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/por-que-guardar-las-fechas-en-utc-en-la-base-de-datos/">Por qué guardar fechas con UTC en la base de datos</a></li>
-</ul>
-<p>Otra consideración distinta en aplicaciones que manejan importes es usar la clase <a href="#ZgotmplZ">BigDecimal</a> en vez de los tipos de datos de coma flotante <em>float</em> o <em>double</em> ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10. El asunto de este artículo es por que además de usar <em>BigDecimal</em> es aconsejable guardar los importes con al menos un dígito decimal más de la precisión necesaria para evitar problemas en los redondeos al aplicar operaciones matemáticas como multiplicación, división o porcentajes para algunos impuestos como el IVA, comisiones, descuentos o cambios de divisa.</p>
-          
-          <br>
-          <a href="/blog-bitix/2019/03/varias-consideraciones-importantes-para-trabajar-con-importes-correctamente-tipo-de-datos-precision-y-guardado/">Continuar leyendo...</a>
         </p>
       </article>
     </li>

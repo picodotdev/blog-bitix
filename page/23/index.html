@@ -232,6 +232,37 @@
     
     <li>
       <article>
+        <h1><a href="/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/">Ejemplo de máquina de estados con Spring Statemachine</a></h1>
+        <span class="information">
+          <time>31/03/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/spring/">spring</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Hace ya unos años escribí un <a href="https://picodotdev.github.io/blog-bitix/2015/08/implementacion-de-maquina-de-estados-finita-fsm-con-java-8/">ejemplo y un artículo con una implementación propia de una máquina de estado en Java</a>, para algún caso muy básico puede ser suficiente pero para algo serio no es la opción a elegir. Pasado un tiempo de ese ejemplo y artículo descubrí uno de los muchos proyectos de <a href="https://spring.io/">Spring</a> útiles para una aplicación, para las necesidades más habítuales tiene un proyecto que lo proporciona y para las menos habituales es también posible que la proporcione como en el caso del proyecto <a href="https://projects.spring.io/spring-statemachine/">Spring Statemachine</a> que precisamente tiene el mismo objetivo de implementar una máquina de estados cubriendo muchos casos de uso.</p>
+          
+          <br>
+          <a href="/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2019/03/escribir-en-la-misma-linea-de-la-consola-y-obtener-el-ancho-y-alto-de-la-terminal-con-java/">Escribir en la misma línea de la consola y obtener el ancho y alto de la terminal con Java</a></h1>
         <span class="information">
           <time>29/03/2019</time>
@@ -359,7 +390,7 @@
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2016/08/por-que-guardar-las-fechas-en-utc-en-la-base-de-datos/">Por qué guardar fechas con UTC en la base de datos</a></li>
 </ul>
-<p>Otra consideración distinta en aplicaciones que manejan importes es usar la clase <a href="#ZgotmplZ">BigDecimal</a> en vez de los tipos de datos de coma flotante <em>float</em> o <em>double</em> ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10. El asunto de este artículo es por que además de usar <em>BigDecimal</em> es aconsejable guardar los importes con al menos un dígito decimal más de la precisión necesaria para evitar problemas en los redondeos al aplicar operaciones matemáticas como multiplicación, división o porcentajes para algunos impuestos como el IVA, comisiones, descuentos o cambios de divisa.</p>
+<p>Otra consideración distinta en aplicaciones que manejan importes es usar la clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html">BigDecimal</a> en vez de los tipos de datos de coma flotante <em>float</em> o <em>double</em> ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10. El asunto de este artículo es por que además de usar <em>BigDecimal</em> es aconsejable guardar los importes con al menos un dígito decimal más de la precisión necesaria para evitar problemas en los redondeos al aplicar operaciones matemáticas como multiplicación, división o porcentajes para algunos impuestos como el IVA, comisiones, descuentos o cambios de divisa.</p>
           
           <br>
           <a href="/blog-bitix/2019/03/varias-consideraciones-importantes-para-trabajar-con-importes-correctamente-tipo-de-datos-precision-y-guardado/">Continuar leyendo...</a>
@@ -416,7 +447,7 @@
             <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
-<p>En la <a href="https://docs.oracle.com/en/java/javase/11/docs/api/index.html">API de Java</a> hay un conjunto amplio de <a href="https://picodotdev.github.io/blog-bitix/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/">estructuras de datos de diferentes tipos para guardar información</a> de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la <a href="#ZgotmplZ">API de colecciones</a>. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios <em>threads</em> hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes.</p>
+<p>En la <a href="https://docs.oracle.com/en/java/javase/11/docs/api/index.html">API de Java</a> hay un conjunto amplio de <a href="https://picodotdev.github.io/blog-bitix/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/">estructuras de datos de diferentes tipos para guardar información</a> de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html">API de colecciones</a>. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios <em>threads</em> hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes.</p>
           
           <br>
           <a href="/blog-bitix/2019/03/colecciones-sincronizadas-e-inmutables-en-java/">Continuar leyendo...</a>
@@ -444,7 +475,7 @@
             <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
-<p>Los programas en su funcionamiento manejan información y esta se guarda en algún tipo de estructura adecuada según el tipo de uso de esa información, ya sea para lectura al recuperar datos y escritura par insertar nuevos datos. En Java hay dos interfaces que el resto de colecciones implementa, una interfaz es <a href="#ZgotmplZ">Collection</a> y la otra es <a href="#ZgotmplZ">Map</a>, estas en su contrato define una serie de métodos que las implementaciones deben proporcionar.</p>
+<p>Los programas en su funcionamiento manejan información y esta se guarda en algún tipo de estructura adecuada según el tipo de uso de esa información, ya sea para lectura al recuperar datos y escritura par insertar nuevos datos. En Java hay dos interfaces que el resto de colecciones implementa, una interfaz es <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html">Collection</a> y la otra es <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a>, estas en su contrato define una serie de métodos que las implementaciones deben proporcionar.</p>
           
           <br>
           <a href="/blog-bitix/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/">Continuar leyendo...</a>
@@ -625,35 +656,6 @@
           
           <br>
           <a href="/blog-bitix/2019/02/log-de-sqls-y-de-sqls-lentas-en-myql-y-postgresql/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2019/02/convertir-un-json-a-objetos-y-objetos-a-json-con-json-b-gson-y-jackson-en-java/">Convertir un JSON a objetos y objetos a JSON con JSON-B, Gson y Jackson en Java</a></h1>
-        <span class="information">
-          <time>01/02/2019</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
-</div>
-<p>Continuando la serie de pequeños artículos sobre cómo procesar JSON después de ver anteriormente otras dos formas, <a href="https://picodotdev.github.io/blog-bitix/2019/01/generar-procesar-y-modificar-documentos-json-con-json-p-en-java/">Generar, procesar y modificar documentos JSON con JSON-P en Java</a> y <a href="https://picodotdev.github.io/blog-bitix/2019/01/usar-expresiones-jsonpath-para-extraer-datos-de-un-json-en-java/">Usar expresiones JSONPath para extraer datos de un JSON en Java</a>, en este artículo hay una tercera.</p>
-<p>En las dos primeras si los datos son muchos o son todos la tarea de recuperar los datos uno a uno requiere una buena cantidad de código. Dado que un JSON no son nada más que valores, arrays y mapas utilizando la estructuras de datos equivalentes de Java se puede hacer una correspondencia entre los datos del JSON a objetos POJO siguiendo ciertas convenciones.</p>
-          
-          <br>
-          <a href="/blog-bitix/2019/02/convertir-un-json-a-objetos-y-objetos-a-json-con-json-b-gson-y-jackson-en-java/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
