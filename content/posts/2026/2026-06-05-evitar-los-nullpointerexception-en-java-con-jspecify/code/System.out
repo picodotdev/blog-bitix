@@ -1,0 +1,8 @@
+$ ./gradlew run
+...
+> Task :compileJava FAILED
+.../blog-ejemplos/HolaMundoSpotless/src/main/java/io/github/picodotdev/blogbitix/holamundospotless/Main.java:10: error: [NullAway] passing @Nullable parameter 'null' where @NonNull is required
+        System.out.println(greeter.greet(null));
+                                         ^
+    (see http://t.uber.com/nullaway )
+1 error
