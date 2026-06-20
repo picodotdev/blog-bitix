@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    ...
+    stream:
+      bindings:
+        uppercase-in-0:
+          destination: message
+          group: uppercase-function
+        uppercase-out-0:
+          destination: message-uppercase
+        logger-in-0:
+          destination: message-uppercase
+          group: logger-consumer

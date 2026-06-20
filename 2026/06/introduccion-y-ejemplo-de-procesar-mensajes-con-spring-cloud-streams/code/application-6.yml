@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        bindings:
+          uppercase-in-0:
+            consumer:
+              auto-bind-dlq: true
