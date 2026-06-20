@@ -9,13 +9,13 @@
   <meta name="description" content="Las aplicaciones distribuidas emplean comunicación basada en mensajes para lograr un intercambio asíncrono y desacoplado entre servicios. Spring Kafka ofrece una integración directa con Apache Kafka mediante la anotación KafkaListener y KafkaTemplate, sin embargo, cuando los mensajes fluyen entre múltiples topics, esta aproximación de bajo nivel se vuelve compleja. Spring Cloud Stream resuelve este problema simplificando el modelo de desarrollo al usar las interfaces funcionales de Java, Consumer, Function y Supplier para modelar consumidores, procesadores y productores de forma declarativa y altamente configurable. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
-  <title>Introducción y ejemplo de procesar mensajes con Spring Cloud Streams</title>
+  <title>Introducción y ejemplo de procesar mensajes con Spring Cloud Stream</title>
 
   <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
-  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-streams/" hreflang="es">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-stream/" hreflang="es">
   <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
-  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-streams/" hreflang="es" title="Introducción y ejemplo de procesar mensajes con Spring Cloud Streams">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-stream/" hreflang="es" title="Introducción y ejemplo de procesar mensajes con Spring Cloud Stream">
   
   
   <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
@@ -27,19 +27,19 @@
   
 
   <!-- Social -->
-<meta property="og:title" content="Introducción y ejemplo de procesar mensajes con Spring Cloud Streams">
-<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-streams/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-streams/images/header_hu_8cd67552faaea96b.webp">
+<meta property="og:title" content="Introducción y ejemplo de procesar mensajes con Spring Cloud Stream">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-stream/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-stream/images/header_hu_8cd67552faaea96b.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Las aplicaciones distribuidas emplean comunicación basada en mensajes para lograr un intercambio asíncrono y desacoplado entre servicios. Spring Kafka ofrece una integración directa con Apache Kafka mediante la anotación KafkaListener y KafkaTemplate, sin embargo, cuando los mensajes fluyen entre múltiples topics, esta aproximación de bajo nivel se vuelve compleja. Spring Cloud Stream resuelve este problema simplificando el modelo de desarrollo al usar las interfaces funcionales de Java, Consumer, Function y Supplier para modelar consumidores, procesadores y productores de forma declarativa y altamente configurable. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-streams/images/header_hu_8cd67552faaea96b.webp">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-stream/images/header_hu_8cd67552faaea96b.webp">
 
 <meta name="twitter:site" content="">
-<meta name="twitter:title" content="Introducción y ejemplo de procesar mensajes con Spring Cloud Streams">
+<meta name="twitter:title" content="Introducción y ejemplo de procesar mensajes con Spring Cloud Stream">
 <meta name="twitter:description" content="Las aplicaciones distribuidas emplean comunicación basada en mensajes para lograr un intercambio asíncrono y desacoplado entre servicios. Spring Kafka ofrece una integración directa con Apache Kafka mediante la anotación KafkaListener y KafkaTemplate, sin embargo, cuando los mensajes fluyen entre múltiples topics, esta aproximación de bajo nivel se vuelve compleja. Spring Cloud Stream resuelve este problema simplificando el modelo de desarrollo al usar las interfaces funcionales de Java, Consumer, Function y Supplier para modelar consumidores, procesadores y productores de forma declarativa y altamente configurable. &hellip;">
 <meta name="twitter:creator" content="">
 
@@ -50,12 +50,12 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://picodotdev.github.io/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-streams/"
+        "@id": "https://picodotdev.github.io/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-stream/"
     },
-    "headline": "Introducción y ejemplo de procesar mensajes con Spring Cloud Streams",
+    "headline": "Introducción y ejemplo de procesar mensajes con Spring Cloud Stream",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-streams/images/header_hu_8cd67552faaea96b.webp"
+        "url": "https://picodotdev.github.io/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-stream/images/header_hu_8cd67552faaea96b.webp"
         
       },
     "datePublished": "2026-06-17T22:00:00+02:00",
@@ -243,7 +243,7 @@
     
     <div class="row page-header">
       <div class="col-12">
-        <img src="/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-streams/images/header_hu_a7d2562998e1f440.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+        <img src="/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-stream/images/header_hu_a7d2562998e1f440.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
       </div>
     </div>
     
@@ -264,7 +264,7 @@
 
 
 <article>
-    <h1>Introducción y ejemplo de procesar mensajes con Spring Cloud Streams</h1>
+    <h1>Introducción y ejemplo de procesar mensajes con Spring Cloud Stream</h1>
     <p class="information">
       
         Escrito por
@@ -281,10 +281,10 @@
       
       <br>
       <i class="bi bi-link-45deg"></i>
-      <a href="/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-streams/">Enlace permanente</a>
+      <a href="/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-stream/">Enlace permanente</a>
       
         <i class="bi bi-chat"></i>
-        <a href="/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-streams/#comments">Comentarios</a>
+        <a href="/blog-bitix/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-stream/#comments">Comentarios</a>
       
     </p>
 
@@ -610,7 +610,7 @@
   <script type="text/javascript" async>
     var disqus_shortname = 'blog-bitix';
     var disqus_identifier = 'blog-bitix-733';
-    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2026\/06\/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-streams\/';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2026\/06\/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-stream\/';
     var disqus_script = 'embed.js';
   </script>
 
