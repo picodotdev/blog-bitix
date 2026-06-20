@@ -1,8 +1,8 @@
 ---
 pid: 733
 type: "post"
-title: "Introducción y ejemplo de procesar mensajes con Spring Cloud Streams"
-url: "/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-streams/"
+title: "Introducción y ejemplo de procesar mensajes con Spring Cloud Stream"
+url: "/2026/06/introduccion-y-ejemplo-de-procesar-mensajes-con-spring-cloud-stream/"
 date: 2026-06-17T22:00:00+02:00
 language: "es"
 index: true
