@@ -54,7 +54,7 @@ Hasta que los diseñadores del lenguaje Java decidan incorporar alguna sintaxis 
 
 ### Optional
 
-La clase [Optional](javadoc25:java.base/java/util/Optional.html) introducida en Java 8 es una clase que referencia un objeto o no referencia ningún objeto. Tiene métodos para conocer si referencia o no un objeto y métodos orientados a la programación funcional. Además es una clase que usa los tipos genéricos de Java introducidos en Java 5.
+La clase [Optional](javadoc:java.base/java/util/Optional.html) introducida en Java 8 es una clase que referencia un objeto o no referencia ningún objeto. Tiene métodos para conocer si referencia o no un objeto y métodos orientados a la programación funcional. Además es una clase que usa los tipos genéricos de Java introducidos en Java 5.
 
 Sustituyendo el tipo de las variables que puedan ser null se mitigan los los NullPointerException.
 

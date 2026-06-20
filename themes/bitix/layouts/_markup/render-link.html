@@ -8,7 +8,7 @@
 {{- $binding := $nil -}}
 {{- $attributes := dict -}}
 
-{{- if or (eq (len (findRE "javadoc\\d+:" $href)) 1) (hasPrefix $href "javaee8:") (hasPrefix $href "tapestry:") (hasPrefix $href "spring-boot:") (hasPrefix $href "spring-framework:") -}}
+{{- if or (eq (len (findRE "javadoc\\d+:" $href)) 1) (hasPrefix $href "javadoc:") (hasPrefix $href "javaee8:") (hasPrefix $href "tapestry:") (hasPrefix $href "spring-boot:") (hasPrefix $href "spring-framework:") -}}
   {{- $binding = index (split $href ":") 0 -}}
   {{- $href = index (split $href ":") 1 -}}
 {{- end -}}
@@ -30,6 +30,8 @@
 {{- else if (eq (len (findRE "javadoc\\d+" $binding)) 1) -}}
 {{- $version := replace $binding "javadoc" "" -}}
 {{- $href = print "https://docs.oracle.com/en/java/javase/" $version "/docs/api/" $href -}}
+{{- else if eq $binding "javadoc" -}}
+{{- $href = print "https://docs.oracle.com/en/java/javase/25/docs/api/" $href -}}
 {{- else if eq $binding "javaee8" -}}
 {{- $href = print "https://javaee.github.io/javaee-spec/javadocs/" $href -}}
 {{- else if eq $binding "tapestry" -}}
