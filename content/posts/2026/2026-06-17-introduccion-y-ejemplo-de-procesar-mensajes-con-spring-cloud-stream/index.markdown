@@ -48,6 +48,7 @@ Las instancias de interfaces funcionales que procesan mensajes de Kafka se denom
 Estas definiciones de _bean_ junto con cierta configuración para definir de que _topics_ leen los mensajes y en cual se escriben permiten el procesado de los mensajes.
 
 {{< code file="UppercaseFunction.java" language="java" options="" >}}
+{{< code file="Beans.java" language="java" options="" >}}
 
 ### Binding names
 
@@ -84,7 +85,7 @@ Con la siguientes propiedades se especifica la configuración de conexión a los
 
 ### Consumer
 
-En el consumidor es posible querer especificar el serializer y deserializer de los mensajes, la configuración de procesamiento en _batches_, o el grupo del consumidor en caso de varias instancias.
+En el consumidor es posible querer especificar el _serializer_ y _deserializer_ de los mensajes, la configuración de procesamiento en _batches_ o el grupo del consumidor en caso de varias instancias.
 
 {{< code file="application-4.yml" language="yaml" options="" >}}
 
