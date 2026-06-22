@@ -13,7 +13,7 @@ promoted: false
 imageHead: "image:header.webp"
 imagePost: "image:header.webp"
 tags: ["java", "planeta-codigo"]
-summary: "Las aplicaciones distribuidas emplean comunicación basada en mensajes para lograr un intercambio asíncrono y desacoplado entre servicios. Spring Kafka ofrece una integración directa con Apache Kafka mediante la anotación KafkaListener y KafkaTemplate, sin embargo, cuando los mensajes fluyen entre múltiples topics, esta aproximación de bajo nivel se vuelve compleja. Spring Cloud Stream resuelve este problema simplificando el modelo de desarrollo al usar las interfaces funcionales de Java, Consumer, Function y Supplier para modelar consumidores, procesadores y productores de forma declarativa y altamente configurable."
+summary: "Las aplicaciones distribuidas emplean comunicación basada en mensajes para lograr un intercambio asíncrono y desacoplado entre servicios. Spring Kafka ofrece una integración directa con Apache Kafka mediante la anotación KafkaListener y KafkaTemplate, sin embargo, cuando los mensajes fluyen entre múltiples _topics_, esta aproximación de bajo nivel se vuelve compleja. Spring Cloud Stream resuelve este problema simplificando el modelo de desarrollo al usar las interfaces funcionales de Java, Consumer, Function y Supplier para modelar consumidores, procesadores y productores de forma agnística al _broker_ de mensajes, declarativa y altamente configurable."
 ---
 
 {{% post %}}
@@ -22,11 +22,11 @@ summary: "Las aplicaciones distribuidas emplean comunicación basada en mensajes
 
 Las aplicaciones distribuidas suelen emplear mecanismos de comunicación basados en mensajes. La comunicación basada en mensajes tiene la particularidad deseable en algunos casos de ser una forma de comunicación asíncrona y desacoplada entre el productor del mensaje y el consumidor del mensaje. Esto hace a las aplicaciones procesadores de un flujo o _stream_ constante de mensajes.
 
-Entre las muchas librerías que ofrece el framework de Spring está la integración con el sistema de mensajería de Kafka. Esta librería permite el consumo y producción de mensajes de los topics de Kafka. Con la anotación [KafkaListener](https://docs.spring.io/spring-kafka/reference/kafka/receiving-messages/listener-annotation.html) se define el punto de entrada en el código de los mensaje de Kafka, con la clase [KafkaTemplate](https://docs.spring.io/spring-kafka/api/org/springframework/kafka/core/KafkaTemplate.html) permite hacer el envío de mensajes de Kafka.
+Entre las muchas librerías que ofrece el framework de Spring está la integración con el sistema de mensajería de Apache Kafka. Esta librería permite el consumo y producción de mensajes de los _topics_. Con la anotación [KafkaListener](https://docs.spring.io/spring-kafka/reference/kafka/receiving-messages/listener-annotation.html) se define el punto de entrada en el código de los mensaje de Kafka, con la clase [KafkaTemplate](https://docs.spring.io/spring-kafka/api/org/springframework/kafka/core/KafkaTemplate.html) permite hacer el envío de mensajes.
 
 * [Introducción, conceptos y uso básico del broker de mensajes Apache Kafka][blogbitix-672]
 
-Algunas aplicaciones no solo escriben y leen de un _topic_ de Kafka, los mensajes siguen un flujo de procesamiento entre varios _topics_. Por otro lado, la librería de Spring Kafka ofrece una integración a bajo nivel que se vuelve compleja en integraciones con varios consumidores y productores. Spring Cloud Stream simplifica el modelo de desarrollo de Spring Kafka, al mismo tiempo lo hace más configurable.
+Algunas aplicaciones no solo escriben y leen de un _topic_ de Kafka, los mensajes siguen un flujo de procesamiento entre varios _topics_. Por otro lado, la librería de Spring Kafka ofrece una integración a bajo nivel que se vuelve compleja en integraciones con varios consumidores y productores. Spring Cloud Stream simplifica el modelo de desarrollo de Spring Kafka, al mismo tiempo que lo hace más configurable.
 
 {{< tableofcontents >}}
 
@@ -34,7 +34,7 @@ Algunas aplicaciones no solo escriben y leen de un _topic_ de Kafka, los mensaje
 
 [Spring Cloud Stream][spring-cloud-stream] permite en las aplicaciones de Spring utilizar las interfaces funcionales de Java como [Consumer](javadoc:java.base/java/util/function/Consumer.html), [Function](javadoc:java.base/java/util/function/Function.html) y [Supplier](javadoc:java.base/java/util/function/Supplier.html) para modelar consumidores, procesadores y productores de mensajes.
 
-Otra de sus propiedades es que permite la integración con diferentes tipos de sistemas de mensajería como [Kafka][apache-kafka] o [RabbitMQ][rabbitmq] con cambios mínimos en el código.
+Otra de sus propiedades es que permite la integración con diferentes tipos de sistemas de mensajería como [Kafka][apache-kafka] o [RabbitMQ][rabbitmq] con cambios mínimos en el código, ya que el modelo de programación está basado en interfaces estándar de Java agnósticas de los _brokers_ de menesajes.
 
 * [Spring Cloud Stream](https://spring.io/projects/spring-cloud-stream)
 * [Spring for Apache Kafka](https://spring.io/projects/spring-kafka)
@@ -45,7 +45,7 @@ Otra de sus propiedades es que permite la integración con diferentes tipos de s
 
 Las instancias de interfaces funcionales que procesan mensajes de Kafka se denominan _bindings_. No son más que un _bean_ de Spring que implementa una de las interfaces funcionales.
 
-Estas definiciones de _bean_ junto con cierta configuración para definir de que _topics_ leen los mensajes y en cual se escriben permiten el procesado de los mensajes.
+Estas definiciones de _bean_ junto con cierta configuración para definir de que _topics_ leen los mensajes y en cual se escriben permiten el procesado de los mensajes. Las propiedades _destination_ determinan de que _topics_ se leen los mensajes y escriben los mensajes.
 
 {{< code file="UppercaseFunction.java" language="java" options="" >}}
 {{< code file="Beans.java" language="java" options="" >}}
@@ -95,7 +95,7 @@ En el productor también es posible especificar el serializer para la _key_ y _v
 
 ## Gestión de errores
 
-Por defecto, la gestión de errores al procesar un mensaje es loggearlo y descartar. Es posible implementar handler personalizados en caso de errores, basta con definir un consumer de ErrorMessage.
+Por defecto, la gestión de errores al procesar un mensaje es loggearlo y descartar. Es posible implementar _handlers_ personalizados en caso de errores, basta con definir un consumer de [ErrorMessage](spring-framework:org/springframework/messaging/support/ErrorMessage.html).
 
 {{< code file="CustomErrorHandler.java" language="java" options="" >}}
 {{< code file="application-5.yml" language="yaml" options="" >}}
