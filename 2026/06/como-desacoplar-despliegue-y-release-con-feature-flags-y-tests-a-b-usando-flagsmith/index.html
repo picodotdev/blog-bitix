@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Desplegar sin liberar y experimentar sin intuición. En sistemas de software complejos, las feature flags y los tests A/B son herramientas clave para separar el despliegue del release y tomar decisiones basadas en métricas reales. En este artículo exploramos ambos conceptos y cómo implementarlos con Flagsmith en una aplicación Java. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Cómo desacoplar despliegue y release con feature flags y tests A/B usando Flagsmith</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2026/06/como-desacoplar-despliegue-y-release-con-feature-flags-y-tests-a-b-usando-flagsmith/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2026/06/como-desacoplar-despliegue-y-release-con-feature-flags-y-tests-a-b-usando-flagsmith/" hreflang="es" title="Cómo desacoplar despliegue y release con feature flags y tests A/B usando Flagsmith">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preload" href="/blog-bitix/asssets/fonts/pt-serif/pt-serif.css" as="style">
+  <link rel="preload" href="/blog-bitix/asssets/fonts/open-sans/open-sans.css" as="style">
+  <link href="/blog-bitix/assets/fonts/pt-serif/pt-serif.css" rel="stylesheet">
+  <link href="/blog-bitix/assets/fonts/open-sans/open-sans.css" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Cómo desacoplar despliegue y release con feature flags y tests A/B usando Flagsmith">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2026/06/como-desacoplar-despliegue-y-release-con-feature-flags-y-tests-a-b-usando-flagsmith/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2026/06/como-desacoplar-despliegue-y-release-con-feature-flags-y-tests-a-b-usando-flagsmith/images/header_hu_bc214d572271c043.webp">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Desplegar sin liberar y experimentar sin intuición. En sistemas de software complejos, las feature flags y los tests A/B son herramientas clave para separar el despliegue del release y tomar decisiones basadas en métricas reales. En este artículo exploramos ambos conceptos y cómo implementarlos con Flagsmith en una aplicación Java. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2026/06/como-desacoplar-despliegue-y-release-con-feature-flags-y-tests-a-b-usando-flagsmith/images/header_hu_bc214d572271c043.webp">
+
+<meta name="twitter:site" content="">
+<meta name="twitter:title" content="Cómo desacoplar despliegue y release con feature flags y tests A/B usando Flagsmith">
+<meta name="twitter:description" content="Desplegar sin liberar y experimentar sin intuición. En sistemas de software complejos, las feature flags y los tests A/B son herramientas clave para separar el despliegue del release y tomar decisiones basadas en métricas reales. En este artículo exploramos ambos conceptos y cómo implementarlos con Flagsmith en una aplicación Java. &hellip;">
+<meta name="twitter:creator" content="">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2026/06/como-desacoplar-despliegue-y-release-con-feature-flags-y-tests-a-b-usando-flagsmith/"
+    },
+    "headline": "Cómo desacoplar despliegue y release con feature flags y tests A/B usando Flagsmith",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2026/06/como-desacoplar-despliegue-y-release-con-feature-flags-y-tests-a-b-usando-flagsmith/images/header_hu_bc214d572271c043.webp"
+        
+      },
+    "datePublished": "2026-06-25T23:30:00+02:00",
+    "dateModified": "2026-06-25T23:30:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1080",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "I ♥ Java, GNU/Linux and libre software.",
+        "url": ""
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Desplegar sin liberar y experimentar sin intuición. En sistemas de software complejos, las feature flags y los tests A/B son herramientas clave para separar el despliegue del release y tomar decisiones basadas en métricas reales. En este artículo exploramos ambos conceptos y cómo implementarlos con Flagsmith en una aplicación Java."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+  
+  <script type="text/javascript" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async></script>
+<script>
+    window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() {
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1750, 0], [[300, 600]])
+        .addSize([0, 0], [])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600]])
+        .addSize([1280, 0], [[160, 600]])
+        .addSize([0, 0], [])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+    });
+</script>
+
+  
+  
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2026/06/como-desacoplar-despliegue-y-release-con-feature-flags-y-tests-a-b-usando-flagsmith/images/header_hu_2586b14f8e7688cd.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            
+<div id='div-gpt-ad-1705155070019-0' style='min-width: 160px; min-height: 600px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705155070019-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Cómo desacoplar despliegue y release con feature flags y tests A/B usando Flagsmith</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>25/06/2026</time>.
+      
+        <br>
+        <i class="bi bi-tag"></i>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <i class="bi bi-link-45deg"></i>
+      <a href="/blog-bitix/2026/06/como-desacoplar-despliegue-y-release-con-feature-flags-y-tests-a-b-usando-flagsmith/">Enlace permanente</a>
+      
+        <i class="bi bi-chat"></i>
+        <a href="/blog-bitix/2026/06/como-desacoplar-despliegue-y-release-con-feature-flags-y-tests-a-b-usando-flagsmith/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Desplegar sin liberar y experimentar sin intuición. En sistemas de software complejos, las feature flags y los tests A/B son herramientas clave para separar el despliegue del release y tomar decisiones basadas en métricas reales. En este artículo exploramos ambos conceptos y cómo implementarlos con Flagsmith en una aplicación Java.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      
+<div id='div-gpt-ad-1705154918797-0' style='min-width: 300px; min-height: 90px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154918797-0'); });
+  </script>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/flagsmith.svg" width="200" height="200" alt="Flagsmith" title="Flagsmith" class="" loading="false"></p>
+</div>
+<p>Un sistema de software complejo tiene muchas funcionalidades, para algunas de las cuales es casi seguro que surge la necesidad de activarla, desactivarla o cambiarla a demanda sin necesidad de hacer cambios de código simplemente por configuración o mediante un sistema externo que proporcione la configuración de las <em>features</em>.</p>
+<p>Por otro lado, al liberar un cambio que pueda tener un impacto en el comportamiento de los usuarios es habitual realizar teses A/B para medir ese impacto y conocer si es positivo o negativo. En vez de guiarse por la intuición y sesgos es más objetivo guiarse por métricas.</p>
+<div class="row toc"><div class="col-12 col-lg-8"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
+    <li><a href="#feature-flags">Feature flags</a></li>
+    <li><a href="#teses-ab">Teses A/B</a></li>
+    <li><a href="#herramientas">Herramientas</a>
+      <ol>
+        <li><a href="#flagsmith">Flagsmith</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav></div> </div><div class="col-12 col-lg-4"></div></div>
+<h2 id="feature-flags">Feature flags</h2>
+<p>Algunas de las <em>features</em> de un producto de software no se desarrollan por completo y despliegan de forma atómica. Siguiendo los principios de <em>continuous delivery</em> el despliegue o <em>deploy</em> se separa de la liberación o <em>release</em>. Con este principio hay algunos cambios de código que están desplegados pero aún desactivados y no visibles funcionalmente. Para poder implementar el <em>continuous delivery</em> una de las técnicas que se utilizan son las <em>feature flags</em>. Las <em>feature flags</em> no son más que un booleano que indica si una feature está habilitada o no.</p>
+<p>Los <em>feature flags</em> son útiles también para cambiar el comportamiento del software sin necesidad de cambiar el código. Este cambio se hace a demanda por ejemplo a necesidades técnicas pero también por necesidades de negocio o legales.</p>
+<p>Son una herramienta necesaria para servicios de backend, componentes de frontend y en las aplicaciones nativas donde liberar una nueva versión tarda varios días o hay usuarios que no las actualizan.</p>
+<p>Un ejemplo de <em>feature flags</em>, podría ser si un determinado producto está disponible para la venta, una nueva forma de calcular los precios está activada o más sencillas como el clor de un botón.</p>
+<h2 id="teses-ab">Teses A/B</h2>
+<p>Por otro lado, al liberar un cambio que pueda tener un impacto en el comportamiento de los usuarios es habitual realizar teses A/B para medir ese impacto y conocer si es positivo o negativo. Un experimento de un test A/B puede tener varias variantes el resultado se mide con referencia al comportamiento existente en una variante y las otras variantes introducen cambios de las que se quiere medir el impacto.</p>
+<p>Los teses A/B requieren de hacer uso de cierto estado para devolver a cada usuario siempre la misma variante y durante toda su interacción con el producto de software. Para ello es necesario un identificativo del usuario o segmentar a los usuarios por algunos criterios que se proporcionan en cada llamada al servicio que devuelve la variante del test A/B.</p>
+<p>Las variantes se asignan a los usuarios en el mismo espacio de tiemmpo para comprobar cual proporciona mejor rendimiento. Una prueba sencilla de test A/B puede tener diferentes variantes para el color de los botones, tipografía del texto o tamaño.</p>
+<h2 id="herramientas">Herramientas</h2>
+<p>No es necesario implementar un sistema personalizado y propio que permita hacer uso de <em>feature flags</em> y teses A/B, hay herramientas específicas con estos propósitos. En el <a href="https://landscape.cncf.io/">landscape de CNCF</a> hay varias opciones, el estándar de <a href="https://openfeature.dev/">open feature</a> y entre otras dos soluciones específicas <a href="https://www.flagsmith.com/">Flagsmith</a> y <a href="https://flipt.io/">Flipt</a>.</p>
+<h3 id="flagsmith">Flagsmith</h3>
+<p>Flagsmith es una herramienta que proporciona ambas, <em>feature flags</em> y teses A/B además de soportar el estándar open feature. Aunque ofrece un modelo SasS también puede ser hospedado en infraestructura propia, una versión <em>open source</em> y una versión <em>enterprise</em> con <em>features</em> adicionales, un modelo de negocio similar a otros proyectos de software. Dispone de SDK para los lenguajes de programación más populares tanto de lado del cliente como del lado del servidor.</p>
+<p>En la documentación de Flagsmith proporcionan una descripción de los <em>feature flags</em>, detallan que permiten, cuales son sus ventajas y cómo es un <em>workflow</em> de desarrollo usándolos.</p>
+<ul>
+<li><a href="https://docs.flagsmith.com/getting-started/feature-flags">Feature Flags</a></li>
+<li><a href="https://code.flickr.net/2009/12/02/flipping-out/">Flipping Out</a></li>
+</ul>
+<p>El comando de <a href="https://www.docker.com/">Docker</a> para iniciar una instancia de Flagsmith y su archivo de Docker Compose. Flagsmith usa una base de datos relacional en este caso <a href="https://www.postgresql.org/">PostgreSQL</a>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker compose up&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-compose-up.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span><span class="lnt">59&#10;</span><span class="lnt">60&#10;</span><span class="lnt">61&#10;</span><span class="lnt">62&#10;</span><span class="lnt">63&#10;</span><span class="lnt">64&#10;</span><span class="lnt">65&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># See https://docs.flagsmith.com/deployment/docker for more information on running Flagsmith in Docker</span>&#10;</span></span><span class="line"><span class="cl">x-flagsmith-env: <span class="p">&amp;</span>flagsmith-env&#10;</span></span><span class="line"><span class="cl">  DATABASE_URL: postgresql://postgres:password@postgres:5432/flagsmith&#10;</span></span><span class="line"><span class="cl">  USE_POSTGRES_FOR_ANALYTICS: <span class="s1">&#39;true&#39;</span>&#10;</span></span><span class="line"><span class="cl">  ENVIRONMENT: production&#10;</span></span><span class="line"><span class="cl">  DJANGO_ALLOWED_HOSTS: <span class="s1">&#39;*&#39;</span>&#10;</span></span><span class="line"><span class="cl">  FLAGSMITH_DOMAIN: localhost:8000&#10;</span></span><span class="line"><span class="cl">  DJANGO_SECRET_KEY: secret&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  TASK_RUN_METHOD: TASK_PROCESSOR <span class="c1"># other options are: SYNCHRONOUSLY, SEPARATE_THREAD (default)</span>&#10;</span></span><span class="line"><span class="cl">  PROMETHEUS_ENABLED: <span class="s1">&#39;true&#39;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">volumes:&#10;</span></span><span class="line"><span class="cl">  pgdata:&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">services:&#10;</span></span><span class="line"><span class="cl">  postgres:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;image: postgres:15.5-alpine&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;environment:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  POSTGRES_PASSWORD: password&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  POSTGRES_DB: flagsmith&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;container_name: flagsmith_postgres&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;volumes:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  - pgdata:/var/lib/postgresql/data&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;healthcheck:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  test: <span class="o">[</span><span class="s1">&#39;CMD-SHELL&#39;</span>, <span class="s1">&#39;pg_isready -d flagsmith -U postgres&#39;</span><span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  interval: 2s&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  timeout: 2s&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  retries: <span class="m">20</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  start_period: 20s&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  flagsmith:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;image: docker.flagsmith.com/flagsmith/flagsmith:latest&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;command:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  - serve&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;environment:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  &lt;&lt;: *flagsmith-env&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;ports:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  - 8000:8000&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;depends_on:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  flagsmith-migrate-db:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;condition: service_completed_successfully&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  flagsmith-task-processor:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;image: docker.flagsmith.com/flagsmith/flagsmith:latest&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;environment:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  &lt;&lt;: *flagsmith-env&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;ports:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  - 8001:8000&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;depends_on:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  flagsmith-migrate-db:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;condition: service_completed_successfully&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;command: run-task-processor&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  flagsmith-migrate-db:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;image: docker.flagsmith.com/flagsmith/flagsmith:latest&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;command:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  - migrate&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;environment:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  &lt;&lt;: *flagsmith-env&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;healthcheck:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  disable: <span class="nb">true</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;depends_on:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  postgres:&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;condition: service_healthy&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-compose.yml</span>
+    </div>
+</div>
+<p>En su panel de administración accesible mediante un navegador en la dirección <em>http://localhost:8000</em> es posible configurar los <em>feature flags</em> y teses A/B de los que queremos hacer uso. Los teses A/B tienen la particularidad que requeiren segmetar a los usuarios en una de las variantes, para ello es necesario utilizar cierta información del ususario, esta información en Flagsmith se conocen como <em>traits</em> como pudiera ser el navegador del usuario o país.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2026/06/como-desacoplar-despliegue-y-release-con-feature-flags-y-tests-a-b-usando-flagsmith/images/flagsmith-1_hu_59a7c80ebd75e4d7.webp" data-gallery="" title="Consola web de Flagsmith"><img src="/blog-bitix/2026/06/como-desacoplar-despliegue-y-release-con-feature-flags-y-tests-a-b-usando-flagsmith/images/flagsmith-1_hu_117bb3047c4ae59b.webp" width="200" height="120" alt="Consola web de Flagsmith" title="Consola web de Flagsmith" class="" loading="lazy"></a>
+<a href="/blog-bitix/2026/06/como-desacoplar-despliegue-y-release-con-feature-flags-y-tests-a-b-usando-flagsmith/images/flagsmith-2_hu_b22f2a6b627e6751.webp" data-gallery="" title="Consola web de Flagsmith"><img src="/blog-bitix/2026/06/como-desacoplar-despliegue-y-release-con-feature-flags-y-tests-a-b-usando-flagsmith/images/flagsmith-2_hu_8cae94acfdf78a8d.webp" width="200" height="120" alt="Consola web de Flagsmith" title="Consola web de Flagsmith" class="" loading="lazy"></a>
+<a href="/blog-bitix/2026/06/como-desacoplar-despliegue-y-release-con-feature-flags-y-tests-a-b-usando-flagsmith/images/flagsmith-3_hu_ce1431b2cf95aaa9.webp" data-gallery="" title="Consola web de Flagsmith"><img src="/blog-bitix/2026/06/como-desacoplar-despliegue-y-release-con-feature-flags-y-tests-a-b-usando-flagsmith/images/flagsmith-3_hu_1bae6ff96ba313a6.webp" width="200" height="120" alt="Consola web de Flagsmith" title="Consola web de Flagsmith" class="" loading="lazy"></a></p>
+<figcaption>Consola web de Flagsmith</figcaption>
+</figure>
+</div>
+<p>Para asignar los <em>feature flags</em> y las variantes de los teses A/B a un usuario se utiliza la siguiente petición con un comando curl.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -i <span class="s1">&#39;http://localhost:8000/api/v1/flags/&#39;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">	 -H <span class="s1">&#39;Accept: application/json&#39;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp; -H <span class="s1">&#39;X-Environment-Key: K5DcsiSmbvpSDFisFF9Yxt&#39;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-feature-flags.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -L <span class="s1">&#39;http://localhost:8000/api/v1/identities/&#39;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp; -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp; -H <span class="s1">&#39;Accept: application/json&#39;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp; -H <span class="s1">&#39;X-Environment-Key: K5DcsiSmbvpSDFisFF9Yxt&#39;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">-d <span class="s1">&#39;{&#10;</span></span></span><span class="line"><span class="cl"><span class="s1">  &#34;identifier&#34;: &#34;d4cb38f6-9945-4730-b779-e699039592f0&#34;,&#10;</span></span></span><span class="line"><span class="cl"><span class="s1">  &#34;traits&#34;: [&#10;</span></span></span><span class="line"><span class="cl"><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;{&#10;</span></span></span><span class="line"><span class="cl"><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;  &#34;trait_key&#34;: &#34;country&#34;,&#10;</span></span></span><span class="line"><span class="cl"><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;  &#34;trait_value&#34;: &#34;spain&#34;&#10;</span></span></span><span class="line"><span class="cl"><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span></span><span class="line"><span class="cl"><span class="s1">  ],&#10;</span></span></span><span class="line"><span class="cl"><span class="s1">  &#34;transient&#34;: false&#10;</span></span></span><span class="line"><span class="cl"><span class="s1">}&#39;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">curl -L <span class="s1">&#39;http://localhost:8000/api/v1/identities/&#39;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp; -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp; -H <span class="s1">&#39;Accept: application/json&#39;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp; -H <span class="s1">&#39;X-Environment-Key: K5DcsiSmbvpSDFisFF9Yxt&#39;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">-d <span class="s1">&#39;{&#10;</span></span></span><span class="line"><span class="cl"><span class="s1">  &#34;identifier&#34;: &#34;53b0780f-a55c-4e09-8dab-78fbad3f9a3f&#34;,&#10;</span></span></span><span class="line"><span class="cl"><span class="s1">  &#34;traits&#34;: [&#10;</span></span></span><span class="line"><span class="cl"><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;{&#10;</span></span></span><span class="line"><span class="cl"><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;  &#34;trait_key&#34;: &#34;country&#34;,&#10;</span></span></span><span class="line"><span class="cl"><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;  &#34;trait_value&#34;: &#34;united-kingdom&#34;&#10;</span></span></span><span class="line"><span class="cl"><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span></span><span class="line"><span class="cl"><span class="s1">  ],&#10;</span></span></span><span class="line"><span class="cl"><span class="s1">  &#34;transient&#34;: false&#10;</span></span></span><span class="line"><span class="cl"><span class="s1">}&#39;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">curl -L <span class="s1">&#39;http://localhost:8000/api/v1/identities/?identifier=d4cb38f6-9945-4730-b779-e699039592f0&#39;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp; -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp; -H <span class="s1">&#39;Accept: application/json&#39;</span> <span class="se">\&#10;</span></span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp; -H <span class="s1">&#39;X-Environment-Key: K5DcsiSmbvpSDFisFF9Yxt&#39;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-test-ab.sh</span>
+    </div>
+</div>
+<p>La respuesta devuelta contiene los valores de todas las <em>feature flags</em> y de los teses A/B con la variante seleccionada.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">[</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;feature&#34;</span><span class="p">:</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;show-prices&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;created_date&#34;</span><span class="p">:</span> <span class="s2">&#34;2026-06-27T16:14:48.924175Z&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;initial_value&#34;</span><span class="p">:</span> <span class="s2">&#34;true&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;default_enabled&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;STANDARD&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">},</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;feature_state_value&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;environment&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;identity&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;feature_segment&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;enabled&#34;</span><span class="p">:</span> <span class="kc">true</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">},</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;feature&#34;</span><span class="p">:</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;button-color&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;created_date&#34;</span><span class="p">:</span> <span class="s2">&#34;2026-06-27T16:15:46.651323Z&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;initial_value&#34;</span><span class="p">:</span> <span class="s2">&#34;default&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;default_enabled&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;MULTIVARIATE&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">},</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;feature_state_value&#34;</span><span class="p">:</span> <span class="s2">&#34;green&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;environment&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;identity&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;feature_segment&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;enabled&#34;</span><span class="p">:</span> <span class="kc">true</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">]</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-test-ab-response.json</span>
+    </div>
+</div>
+<p>En una aplicación Java y utilizando el SDK proporcionado por Flagsmith este es el código para obtener el valor de un <em>feature flag</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Flags</span><span class="w"> </span><span class="n">flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flagsmith</span><span class="p">.</span><span class="na">getEnvironmentFlags</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="n">Boolean</span><span class="w"> </span><span class="n">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flags</span><span class="p">.</span><span class="na">isFeatureEnabled</span><span class="p">(</span><span class="s">&#34;show-prices&#34;</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="n">Object</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flags</span><span class="p">.</span><span class="na">getFeatureValue</span><span class="p">(</span><span class="s">&#34;show-prices&#34;</span><span class="p">);</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-feature-flag.java</span>
+    </div>
+</div>
+<p>Y de un test A/B.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span><span class="w"> </span><span class="n">identifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;d4cb38f6-9945-4730-b779-e699039592f0&#34;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">traits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="n">traits</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;country&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;spain&#34;</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="n">Flags</span><span class="w"> </span><span class="n">flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flagsmith</span><span class="p">.</span><span class="na">getIdentityFlags</span><span class="p">(</span><span class="n">identifier</span><span class="p">,</span><span class="w"> </span><span class="n">traits</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="n">Boolean</span><span class="w"> </span><span class="n">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flags</span><span class="p">.</span><span class="na">isFeatureEnabled</span><span class="p">(</span><span class="s">&#34;show-prices&#34;</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="n">Object</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flags</span><span class="p">.</span><span class="na">getFeatureValue</span><span class="p">(</span><span class="s">&#34;show-prices&#34;</span><span class="p">);</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-test-ab.java</span>
+    </div>
+</div>
+<p>Finalmente, el código para crear la conexión entre el servicio como cliente y Flagsmith.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">FlagsmithClient</span><span class="w"> </span><span class="n">flagsmith</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FlagsmithClient</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">.</span><span class="na">setApiKey</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&#34;0cff2ed56eae3ff3f0a663208a7ee49336c79ccd&#34;</span><span class="p">))</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">.</span><span class="na">build</span><span class="p">();</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-init.java</span>
+    </div>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/6D4gtW7XrTI" frameborder="0" title="Vídeo de YouTube" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/Ua1gp6N7qLs" frameborder="0" title="Vídeo de YouTube" class="lozad" allowfullscreen></iframe>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2026/05/introduccion-y-uso-de-las-especificaciones-de-cloudevents-y-asyncapi/">
+                <img src="/blog-bitix/2026/05/introduccion-y-uso-de-las-especificaciones-de-cloudevents-y-asyncapi/images/header_hu_90274ea6466a5665.webp" width="326" height="125" alt="Introducción y uso de las especificaciones de CloudEvents y AsyncAPI" title="Introducción y uso de las especificaciones de CloudEvents y AsyncAPI" class="" loading="lazy">
+                <h3>Introducción y uso de las especificaciones de CloudEvents y AsyncAPI</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2026/05/procesos-orquestados-fiables-y-observables-en-servicios-distribuidos-con-temporal/">
+                <img src="/blog-bitix/assets/images/logotypes/temporal.svg" width="326" height="125" alt="Procesos orquestados fiables y observables en servicios distribuidos con Temporal" title="Procesos orquestados fiables y observables en servicios distribuidos con Temporal" class="" loading="lazy">
+                <h3>Procesos orquestados fiables y observables en servicios distribuidos con Temporal</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2026/03/la-revolucion-de-los-asistentes-de-inteligencia-artificial/">
+                <img src="/blog-bitix/2026/03/la-revolucion-de-los-asistentes-de-inteligencia-artificial/images/asistentes-de-ia_hu_6f10712f68b9a172.webp" width="326" height="125" alt="La revolución de los asistentes de inteligencia artificial" title="La revolución de los asistentes de inteligencia artificial" class="" loading="lazy">
+                <h3>La revolución de los asistentes de inteligencia artificial</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/">
+                <img src="/blog-bitix/2026/01/crear-diagramas-graficos-con-el-formato-de-texto-mermaid/images/diagrama-de-estado_hu_6e27a5fa42fb5dea.webp" width="326" height="125" alt="Crear diagramas gráficos con el formato de texto Mermaid" title="Crear diagramas gráficos con el formato de texto Mermaid" class="" loading="lazy">
+                <h3>Crear diagramas gráficos con el formato de texto Mermaid</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2024/03/construyendo-un-pipeline-de-cicd-con-github-actions/">
+                <img src="/blog-bitix/assets/images/logotypes/github.svg" width="326" height="125" alt="Construyendo un pipeline de CI/CD con Github Actions" title="Construyendo un pipeline de CI/CD con Github Actions" class="" loading="lazy">
+                <h3>Construyendo un pipeline de CI/CD con Github Actions</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/">
+                <img src="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/qr-code_hu_2d035c8dc13167d3.webp" width="326" height="125" alt="Generar códigos de barras y códigos QR con Java" title="Generar códigos de barras y códigos QR con Java" class="" loading="lazy">
+                <h3>Generar códigos de barras y códigos QR con Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-734';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2026\/06\/como-desacoplar-despliegue-y-release-con-feature-flags-y-tests-a-b-usando-flagsmith\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/privacy/">Política de privacidad</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2026 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>
