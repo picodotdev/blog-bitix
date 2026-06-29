@@ -46,7 +46,7 @@ Las variantes se asignan a los usuarios en el mismo espacio de tiemmpo para comp
 
 ## Herramientas
 
-No es necesario implementar un sistema personalizado y propio que permita hacer uso de _feature flags_ y teses A/B, hay herramientas específicas con estos propósitos. En el [landscape de CNCF](https://landscape.cncf.io/) hay varias opciones, el estándar de [open feature][openfeature] y entre otras dos soluciones específicas [Flagsmith][flagsmith] y [Flipt][flipt].
+No es necesario implementar un sistema personalizado y propio que permita hacer uso de _feature flags_ y teses A/B, hay herramientas específicas con estos propósitos. En el [landscape de CNCF](https://landscape.cncf.io/) hay varias opciones, el estándar de [open feature][openfeature] y entre otras dos soluciones específicas [Flagsmith][flagsmith], [Flipt][flipt] o [Unleash][unleash].
 
 ### Flagsmith
 
