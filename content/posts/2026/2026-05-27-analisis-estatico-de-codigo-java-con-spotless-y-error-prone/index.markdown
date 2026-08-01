@@ -58,11 +58,11 @@ Esta es una tabla comparativa de las herramientas.
 
 | Herramienta | Categoría  | Formatea | Detecta bugs | Plugin Gradle  |
 |-------------|------------|----------|--------------|----------------|
-| Checkstyle  | Estilo     | No       | No           | Sí             |
-| Spotless    | Estilo     | Sí       | No           | Sí             |
 | PMD         | Análisis   | No       | Parcial      | Sí             |
+| Checkstyle  | Estilo     | No       | No           | Sí             |
 | Spotbugs    | Bugs       | No       | Sí           | Sí             |
 | Error Prone | Compilador | No       | Sí           | Sí             |
+| Spotless    | Estilo     | Sí       | No           | Sí             |
 
 ## Spotless
 
@@ -113,12 +113,19 @@ Los comandos para ejecutar Spotless y Error Prone son los siguientes.
 
 ## Recomendación final
 
-Mi recomendación es usar al menos una para analizar el estilo del código y mantener la consistencia y otra herramienta para detectar código que puede producir errores en  tiempo de ejecución. Con esta recomendación es posible usar las siguientes combinaciones:
+Mi recomendación es usar al menos una para analizar formateo del código, convenciones y nomenclatura del lenguaje, buenas prácticas y otra herramienta para detectar código que puede producir errores en tiempo de ejecución. Con esta recomendación es posible usar las siguientes combinaciones:
 
 * PMD, Checkstyle y Spotbugs
-* Spotless y Error Prone
+* PMD, Checktyle, Error Prone y Spotless
 
-Tras mucho tiempo usando la primera opción estoy evaluando la segunda con dos herramientas en vez de tres por el motivo de que cada una se centra en un área específica. Mi preferencia es no incluir las reglas de formateo de código como un _hook_ al realizar un _commit_ ya que añade tiempo para realizar el _commit_ y realiza cambios sin supervisión, aplicar el formateo es simple y rápido desde el editor de código como IntelliJ.
+Tras mucho tiempo usando la primera opción estoy evaluando la segunda con las cuatro herramientas en vez de tres por el motivo de que cada una se centra en un área específica. Mi preferencia es no incluir las reglas de formateo de código como un _hook_ al realizar un _commit_ ya que añade tiempo para realizar el _commit_ y realiza cambios sin supervisión, aplicar el formateo es simple y rápido desde el editor de código como IntelliJ.
+
+Las áreas que detecta cada una de las herramientas son las siguientes:
+
+* PMD: buenas prácticas y recomendaciones de programación
+* Checkstyle: convenciones del lenguaje y nomenclatura
+* Error Prone: malas prácticas y potenciales errores de programación
+* Spotless: formateo del código
 
 {{% sourcecode git="blog-ejemplos/tree/master/HolaMundoSpotless" command="./gradlew run" %}}
 
