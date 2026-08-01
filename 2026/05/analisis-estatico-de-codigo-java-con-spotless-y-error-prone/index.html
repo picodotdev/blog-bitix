@@ -62,7 +62,7 @@
     "dateModified": "2026-05-27T20:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1435",
+    "wordCount": "1478",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -360,24 +360,17 @@
 	</thead>
 	<tbody>
 			<tr>
-					<td>Checkstyle</td>
-					<td>Estilo</td>
-					<td>No</td>
-					<td>No</td>
-					<td>Sí</td>
-			</tr>
-			<tr>
-					<td>Spotless</td>
-					<td>Estilo</td>
-					<td>Sí</td>
-					<td>No</td>
-					<td>Sí</td>
-			</tr>
-			<tr>
 					<td>PMD</td>
 					<td>Análisis</td>
 					<td>No</td>
 					<td>Parcial</td>
+					<td>Sí</td>
+			</tr>
+			<tr>
+					<td>Checkstyle</td>
+					<td>Estilo</td>
+					<td>No</td>
+					<td>No</td>
 					<td>Sí</td>
 			</tr>
 			<tr>
@@ -392,6 +385,13 @@
 					<td>Compilador</td>
 					<td>No</td>
 					<td>Sí</td>
+					<td>Sí</td>
+			</tr>
+			<tr>
+					<td>Spotless</td>
+					<td>Estilo</td>
+					<td>Sí</td>
+					<td>No</td>
 					<td>Sí</td>
 			</tr>
 	</tbody>
@@ -458,12 +458,19 @@
     </div>
 </div>
 <h2 id="recomendación-final">Recomendación final</h2>
-<p>Mi recomendación es usar al menos una para analizar el estilo del código y mantener la consistencia y otra herramienta para detectar código que puede producir errores en  tiempo de ejecución. Con esta recomendación es posible usar las siguientes combinaciones:</p>
+<p>Mi recomendación es usar al menos una para analizar formateo del código, convenciones y nomenclatura del lenguaje, buenas prácticas y otra herramienta para detectar código que puede producir errores en tiempo de ejecución. Con esta recomendación es posible usar las siguientes combinaciones:</p>
 <ul>
 <li>PMD, Checkstyle y Spotbugs</li>
-<li>Spotless y Error Prone</li>
+<li>PMD, Checktyle, Error Prone y Spotless</li>
 </ul>
-<p>Tras mucho tiempo usando la primera opción estoy evaluando la segunda con dos herramientas en vez de tres por el motivo de que cada una se centra en un área específica. Mi preferencia es no incluir las reglas de formateo de código como un <em>hook</em> al realizar un <em>commit</em> ya que añade tiempo para realizar el <em>commit</em> y realiza cambios sin supervisión, aplicar el formateo es simple y rápido desde el editor de código como IntelliJ.</p>
+<p>Tras mucho tiempo usando la primera opción estoy evaluando la segunda con las cuatro herramientas en vez de tres por el motivo de que cada una se centra en un área específica. Mi preferencia es no incluir las reglas de formateo de código como un <em>hook</em> al realizar un <em>commit</em> ya que añade tiempo para realizar el <em>commit</em> y realiza cambios sin supervisión, aplicar el formateo es simple y rápido desde el editor de código como IntelliJ.</p>
+<p>Las áreas que detecta cada una de las herramientas son las siguientes:</p>
+<ul>
+<li>PMD: buenas prácticas y recomendaciones de programación</li>
+<li>Checkstyle: convenciones del lenguaje y nomenclatura</li>
+<li>Error Prone: malas prácticas y potenciales errores de programación</li>
+<li>Spotless: formateo del código</li>
+</ul>
 <div class="alert alert-secondary sourcecode fs-6">
     <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
     <p>
