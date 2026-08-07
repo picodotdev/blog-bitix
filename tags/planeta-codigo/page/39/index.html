@@ -228,6 +228,35 @@
     
     <li>
       <article>
+        <h1><a href="/blog-bitix/2014/09/configuracion-usando-codigo-java/">Configuración usando código Java</a></h1>
+        <span class="information">
+          <time>26/09/2014</time>
+          
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes"> 
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>En las dos últimas entradas he explicado <a href="https://picodotdev.github.io/blog-bitix/2014/09/compilar-y-cargar-de-forma-dinamica-una-clase-java/">como compilar un archivo de código fuente Java desde una aplicación</a> y como cargar esa clase compilada de forma dinámica para ser utilizada en un programa, la segunda entrada trataba el <a href="https://picodotdev.github.io/blog-bitix/2014/09/monitorizar-archivos-con-java/">como monitorizar un directorio o archivo para ver si han tenido cambios</a> con la nueva API que a partir de Java 7 disponemos.</p>
+<p>En esta entrada quiero explicar un ejemplo de como aprovechar estas dos funcionalidades diferentes en un caso práctico y que nos puede ser útil en algún caso. La idea del ejemplo es definir la configuración de una aplicación como podría ser una aplicación web en un archivo de código fuente Java y que cuando se produjese algún cambio se recargase de forma dinámica.</p>
+          
+          <br>
+          <a href="/blog-bitix/2014/09/configuracion-usando-codigo-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2014/09/monitorizar-archivos-con-java/">Monitorizar archivos con Java</a></h1>
         <span class="information">
           <time>20/09/2014</time>
@@ -655,41 +684,6 @@
           
           <br>
           <a href="/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2014/06/ejecutar-apache-tapestry-en-el-servidor-de-aplicaciones-wildfly/">Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly</a></h1>
-        <span class="information">
-          <time>06/06/2014</time>
-          
-            
-              <a href="/blog-bitix/tags/software/">software</a>
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-              <a href="/blog-bitix/tags/tapestry/">tapestry</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false"></p>
-</div>
-<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/wildfly.svg" width="200" height="200" alt="WildFly" title="WildFly" class="" loading="false"></p>
-</div>
-<p>Los class loaders del <a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/">servidor de aplicaciones JBoss/WildFly</a> habitualmente han dado algún problema en la ejecución de las aplicaciones y la carga de clases. En versiones antiguas como la 4 se podían producir conflictos entre las librerías de las aplicaciones y las librerías instaladas en el servidor ya que en <a href="http://jbossas.jboss.org/">JBoss</a> se buscaba las clases por defecto y primero en el class loader del servidor en vez de en el <em>classloader</em> de la aplicación (war). Ya en las últimas versiones como JBoss 7 y <a href="http://wildfly.org/">WildFly</a> la forma de cargar las clases es más parecido al modelo habitual que se sigue en las aplicaciones Java EE y en servidores como Tomcat buscando primero en el directorio classes WEB-INF/classes y entre las librerías de la carpeta WEB-INF/lib del archivo war. Además, con la inclusión de JBoss Modules se puede seguir un esquema OSGi con lo que incluso podríamos usar simultáneamente en el servidor diferentes versiones de la misma librería.</p>
-          
-          <br>
-          <a href="/blog-bitix/2014/06/ejecutar-apache-tapestry-en-el-servidor-de-aplicaciones-wildfly/">Continuar leyendo...</a>
         </p>
       </article>
     </li>

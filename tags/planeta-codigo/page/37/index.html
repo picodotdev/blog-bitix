@@ -228,6 +228,39 @@
     
     <li>
       <article>
+        <h1><a href="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas</a></h1>
+        <span class="information">
+          <time>10/04/2015</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/seguridad/">seguridad</a>
+            
+              <a href="/blog-bitix/tags/tapestry/">tapestry</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/apache-shiro.webp" width="300" height="106" alt="Apache Shiro" title="Apache Shiro" class="" loading="false"></p>
+</div>
+<p>Para cada servicio deberíamos emplear una contraseña de una longitud de al menos 8 caracteres que incluya letras en minúscula, mayúscula, números y símbolos, una herramienta que podemos utilizar para generar contraseñas más seguras con los criterios que indiquemos es <a href="https://privacycanada.net/strong-password-generator/">Strong Password Generator</a> o <a href="https://passwords-generator.org/">Password Generator</a>.</p>
+<p>Sin embargo, recordar cada una de estas contraseñas es muy difícil de modo que es habitual que utilicemos la misma contraseña para varios o todos los servicios y no empleando todos los criterios anteriores o usar una herramienta con la que <a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">Guardar contraseñas de forma segura con KeePassXC</a>. Por otro lado, los desarrolladores no deberíamos guardar en la base de datos las contraseñas que nos entregan los usuarios en texto plano, para evitar guardalas en texto plano hace un tiempo se utilizaba únicamente una función de <em>hashing</em> unidireccional como MD5 o SHA, de este modo si la base de datos fuese comprometida en teoría no podrían conocer la contraseña original. En este artículo comentaré que aún guardando las contraseñas con una función de <em>hashing</em> no es suficiente para hacerlas seguras y comentaré una implementación con <a href="https://shiro.apache.org/">Apache Shiro</a> de una de las ideas propuestas, también con <a href="https://spring.io/projects/spring-security">Spring Security</a> es posible.</p>
+          
+          <br>
+          <a href="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2015/04/evitar-iniciar-varias-veces-la-maquina-virtual-java-para-procesos-cortos/">Evitar iniciar varias veces la máquina virtual Java para procesos cortos</a></h1>
         <span class="information">
           <time>03/04/2015</time>
@@ -624,37 +657,6 @@
           
           <br>
           <a href="/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/">Instalar y usar un plugin ágil en Redmine</a></h1>
-        <span class="information">
-          <time>03/01/2015</time>
-          
-            
-              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/software/">software</a>
-            
-              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes"> 
-<p><img src="/blog-bitix/assets/images/logotypes/redmine.webp" width="300" height="89" alt="Redmine" title="Redmine" class="" loading="false"></p>
-</div>
-<p>Las metodologías ágiles para la gestión de proyectos son ya ampliamente usadas, como <a href="https://es.wikipedia.org/wiki/Scrum_%28desarrollo_de_software%29">scrum</a> o <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_extrema">programación extrema</a> (XP). Una diferencia entre las metodologías ágiles y las metodologías empleadas tradicionalmente como el modelo en cascada es que en las metodologías ágiles se tiene en cuenta que se pueden producir cambios en el desarrollo del proyecto y suelen ser más flexibles y adaptables ante estos cambios.</p>
-<p>En el modelo de metodología ágil podemos usar un panel kanban donde ver de un vistazo rápido las tareas terminadas, las que están en progreso y las próximas tareas planificadas reflejando la realidad del equipo de desarrollo. Reorganizándolas según prioridades que pueden cambiar de una semana a otra, en las metodologías ágiles no se realiza una planificación completa inicial sino que se va realizando a medida que el proyecto progresa.</p>
-          
-          <br>
-          <a href="/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/">Continuar leyendo...</a>
         </p>
       </article>
     </li>

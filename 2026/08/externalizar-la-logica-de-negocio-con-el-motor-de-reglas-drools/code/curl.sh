@@ -1,0 +1,4 @@
+curl -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -d '{"loanApplication":{"applicantId": "1"}, "applicant":{"id": "1", "age": 16}}' http://localhost:8080/loan/rule
+curl -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -d '{"loanApplication":{"applicantId": "1"}, "applicant":{"id": "1", "age": 25}}' http://localhost:8080/loan/rule
+curl -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -d '{"loanApplication":{"applicantId": "1"}, "applicant":{"id": "1", "age": 16}}' http://localhost:8080/loan/decision
+curl -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -d '{"loanApplication":{"applicantId": "1"}, "applicant":{"id": "1", "age": 25}}' http://localhost:8080/loan/decision
