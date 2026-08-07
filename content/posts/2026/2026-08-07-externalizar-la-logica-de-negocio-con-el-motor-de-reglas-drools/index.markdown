@@ -124,7 +124,7 @@ Los modelos de las peticiones y respuestas.
 {{< code file="LoanRequest.java" language="java" options="" >}}
 {{< code file="LoanResponse.java" language="java" options="" >}}
 
-Beans del motor de reglas.
+Beans del motor de reglas..
 
 {{< code file="Beans.java" language="java" options="" >}}
 
