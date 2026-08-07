@@ -56,7 +56,6 @@ jobs:
           ls
           echo "> ls deploy/"
           ls deploy/
-          ls deploy/2026
           # echo "> ls deploy/tags/"
           # ls deploy/tags/
           # echo "> ls deploy/tags/planeta-codigo/"
@@ -82,6 +81,7 @@ jobs:
       - name: Echo content (deploy)
         run: |
           ls deploy/
+          ls deploy/2026
       - name: Deploy
         run: |
           cd deploy/
