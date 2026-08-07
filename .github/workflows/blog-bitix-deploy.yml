@@ -12,14 +12,14 @@ jobs:
     env:
       HUGO_VERSION: 0.164.0
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@7
         with:
           ref: main
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           path: deploy/
           ref: gh-pages
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 20
       - name: Environment information
@@ -27,14 +27,14 @@ jobs:
           uname -a
           lsb_release -a
       - name: Cache node modules
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         env:
           cache-name: cache-node-modules
         with:
           path: ./node_modules
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
       - name: Cache hugo resources
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         env:
           cache-name: cache-hugo-resources
         with:
