@@ -3,7 +3,7 @@ pid: 735
 type: "post"
 title: "Externalizar la lógica de negocio con el motor de reglas Drools"
 url: "/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/"
-date: 2026-08-08T19:00:00+02:00
+date: 2026-08-08T19:30:00+02:00
 language: "es"
 index: true
 rss: true
