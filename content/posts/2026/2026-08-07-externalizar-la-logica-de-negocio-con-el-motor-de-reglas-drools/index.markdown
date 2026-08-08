@@ -40,6 +40,8 @@ Por ello, y debido a que estas reglas idealmente son cambiables por personas de 
 
 Una herramienta para definir reglas de negocio de código abierto es Drools. Otras soluciones son [Easy Rules](https://github.com/j-easy/easy-rules) pero que está en modo mantenimiento aunque no tiene las mismas características de Drools en cuanto a inferencia.
 
+Por ejemplo, una regla de negocio puede ser cobrar un 5% más a los usuarios de Reino Unido, cuando quede menos de 5 días de una determinada fecha o hacer un descuento para una determinada categoría de productos en cierto periodo de tiempo.
+
 ### ¿Cuándo usar un motor de reglas y cuándo no?
 
 Una pregunta es cuándo compensa añadir la complejidad de un motor de reglas al sistema. La respuesta es cuando las reglas son complejas y la inferencia de los motores de reglas son una funcionalidad deseada o cuando se desea desacoplar el ciclo de vida del código del ciclo de vida de las reglas.
