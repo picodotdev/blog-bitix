@@ -70,6 +70,7 @@ http://thecoverproject.net
 https://www.igdb.com
 https://www.ign.com/wikis/
 https://www.youtube.com/@Kratosworld
+https://www.youtube.com/@MKIceAndFire
 
 {{< comment >}}Sponsored link: Smallpdf{{< /comment >}}
 
