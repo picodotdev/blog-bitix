@@ -23,11 +23,11 @@ Las películas de superheroes no son el tipo de películas que más me gustan as
 
 Sin embargo, tras haber completado la trilogía he de decir que en su aspecto de acción, combate y algunas mecánicas es de los que más me ha gustado. Tienen algunas cosas muy interesantes. Sin duda, es una colección de juegos que recomiendo jugar.
 
-Los juegos han sido desarrollados por Rocksteady Studios en las fechas de lanzamiento, 2009, 2011, 2015.
+Los juegos han sido desarrollados por [Rocksteady Studios](https://www.igdb.com/companies/rocksteady-studios) en las fechas de lanzamiento, 2009, 2011, 2015.
 
-* [Batman:_Arkham_Asylum](https://en.wikipedia.org/wiki/Batman:_Arkham_Asylum)
-* [Batman:_Arkham_City](https://es.wikipedia.org/wiki/Batman:_Arkham_City)
-* [Batman:_Arkham_Knight](https://es.wikipedia.org/wiki/Batman:_Arkham_Knight)
+* [Batman: Arkham Asylum](https://en.wikipedia.org/wiki/Batman:_Arkham_Asylum)
+* [Batman: Arkham City](https://es.wikipedia.org/wiki/Batman:_Arkham_City)
+* [Batman: Arkham Knight](https://es.wikipedia.org/wiki/Batman:_Arkham_Knight)
 
 {{< image
     gallery="true"
@@ -77,6 +77,9 @@ Los juegos han sido desarrollados por Rocksteady Studios en las fechas de lanzam
     image1="image:batman-arkham-knight-intro-4.webp" optionsthumb1="200x150" title1="Intro"
     image2="image:batman-arkham-knight-intro-5.webp" optionsthumb2="200x150" title2="Intro"
     caption="Intro" >}}
+
+{{< amazon
+    tags="game-console" >}}
 
 {{< game-spoiler >}}
 {{< tableofcontents >}}
@@ -173,7 +176,7 @@ Para ser juegos del 2009 tienen unos gráficos notables, como es lógico la cali
 
 Aparte de los gráficos la jugabilidad también mejora con nuevas formas de combate como la intimidación, algunas otras formas de combate se mantienen como el derribo silencioso desde las alturas.
 
-## Gameplays
+## Gameplay
 
 {{< youtube
     video="uFetB9Dbyrs" >}}
