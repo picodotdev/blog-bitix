@@ -90,6 +90,8 @@ La trilogía de Arkham está compuesta por tres videojuegos Arkham Asylum, Arkha
 
 Durante la historia aparecen varios de los archienemigos de Batman que asolan Gotham. Aparte del espantapájaros, Bane, Zsasz, Harley Quinn, Freeze, Hiedra Venenosa, El sombrerero Loco, Ra’s al Ghul, Dos Caras, El pinguino, Strange Deadshot, Robin y Enigma entre otros.
 
+Es de agradecer que las voces en los diálogos incluso de las masillas en los juegos estén doblados al español, no todos los juegos pueden decir los mismo. Escuchar los diálogos sin desviar la atención de la acción es más sencillo y hace que la experiencia del juego sea más óptima.
+
 ## Combates y mecánicas
 
 Un aspecto que más me ha llamado la atención ha sido la mecánica de los combates con su _free flow combat_ en el que se golpea a varios enemigos en secuencia, muchos de los combates la dificultad está en acabar con un grupo de villanos cuando más numeroso más difícil. No es suficiente dar continuamente mamporros y apretar botones sino que requiere cierta estrategia en los ataques, golpear y huir. Los grupos de los enemigos suelen ser numerosos, pueden ser más de una docena y enfrentarse directamente a todos no siempre es posible más cuando algunos requieren de una combinación distinta de botones o se comportan de forma diferente. Haciendo uso de las habilidades, combinaciones por dar varios golpes seguidos y haciendo uso del contraataque o la esquiva no suele haber problemas en la dificultad.
