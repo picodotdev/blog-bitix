@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Procesar un JSON cuya estructura no se conoce de antemano es un problema habitual cuando parte de sus propiedades son dinámicos y no se pueden mapear a un objeto en tiempo de compilación. En este artículo veremos cómo descubrir y recorrer esos atributos desconocidos con Jackson, utilizando JsonNode para inspeccionar el tipo y el valor de cada campo. Además, comprobaremos cómo lograr el mismo resultado con la API estándar de Java, para que puedas elegir la opción que mejor encaje en tu proyecto. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Lectura de un documento JSON conociendo y sin conocer que propiedades contiene</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2026/10/lectura-de-un-documento-json-conociendo-y-sin-conocer-que-propiedades-contiene/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2026/10/lectura-de-un-documento-json-conociendo-y-sin-conocer-que-propiedades-contiene/" hreflang="es" title="Lectura de un documento JSON conociendo y sin conocer que propiedades contiene">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preload" href="/blog-bitix/asssets/fonts/pt-serif/pt-serif.css" as="style">
+  <link rel="preload" href="/blog-bitix/asssets/fonts/open-sans/open-sans.css" as="style">
+  <link href="/blog-bitix/assets/fonts/pt-serif/pt-serif.css" rel="stylesheet">
+  <link href="/blog-bitix/assets/fonts/open-sans/open-sans.css" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Lectura de un documento JSON conociendo y sin conocer que propiedades contiene">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2026/10/lectura-de-un-documento-json-conociendo-y-sin-conocer-que-propiedades-contiene/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2026/10/lectura-de-un-documento-json-conociendo-y-sin-conocer-que-propiedades-contiene/images/header_hu_aad00dcc4e4a6cc1.webp">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Procesar un JSON cuya estructura no se conoce de antemano es un problema habitual cuando parte de sus propiedades son dinámicos y no se pueden mapear a un objeto en tiempo de compilación. En este artículo veremos cómo descubrir y recorrer esos atributos desconocidos con Jackson, utilizando JsonNode para inspeccionar el tipo y el valor de cada campo. Además, comprobaremos cómo lograr el mismo resultado con la API estándar de Java, para que puedas elegir la opción que mejor encaje en tu proyecto. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2026/10/lectura-de-un-documento-json-conociendo-y-sin-conocer-que-propiedades-contiene/images/header_hu_aad00dcc4e4a6cc1.webp">
+
+<meta name="twitter:site" content="">
+<meta name="twitter:title" content="Lectura de un documento JSON conociendo y sin conocer que propiedades contiene">
+<meta name="twitter:description" content="Procesar un JSON cuya estructura no se conoce de antemano es un problema habitual cuando parte de sus propiedades son dinámicos y no se pueden mapear a un objeto en tiempo de compilación. En este artículo veremos cómo descubrir y recorrer esos atributos desconocidos con Jackson, utilizando JsonNode para inspeccionar el tipo y el valor de cada campo. Además, comprobaremos cómo lograr el mismo resultado con la API estándar de Java, para que puedas elegir la opción que mejor encaje en tu proyecto. &hellip;">
+<meta name="twitter:creator" content="">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2026/10/lectura-de-un-documento-json-conociendo-y-sin-conocer-que-propiedades-contiene/"
+    },
+    "headline": "Lectura de un documento JSON conociendo y sin conocer que propiedades contiene",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2026/10/lectura-de-un-documento-json-conociendo-y-sin-conocer-que-propiedades-contiene/images/header_hu_aad00dcc4e4a6cc1.webp"
+        
+      },
+    "datePublished": "2026-10-02T23:00:00+02:00",
+    "dateModified": "2026-10-02T23:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "721",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "I ♥ Java, GNU/Linux and libre software.",
+        "url": ""
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Procesar un JSON cuya estructura no se conoce de antemano es un problema habitual cuando parte de sus propiedades son dinámicos y no se pueden mapear a un objeto en tiempo de compilación. En este artículo veremos cómo descubrir y recorrer esos atributos desconocidos con Jackson, utilizando JsonNode para inspeccionar el tipo y el valor de cada campo. Además, comprobaremos cómo lograr el mismo resultado con la API estándar de Java, para que puedas elegir la opción que mejor encaje en tu proyecto."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+  
+  <script type="text/javascript" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async></script>
+<script>
+    window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() {
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1750, 0], [[300, 600]])
+        .addSize([0, 0], [])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600]])
+        .addSize([1280, 0], [[160, 600]])
+        .addSize([0, 0], [])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+    });
+</script>
+
+  
+  
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2026/10/lectura-de-un-documento-json-conociendo-y-sin-conocer-que-propiedades-contiene/images/header_hu_78e8c9cc3ab826f0.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            
+<div id='div-gpt-ad-1705155070019-0' style='min-width: 160px; min-height: 600px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705155070019-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Lectura de un documento JSON conociendo y sin conocer que propiedades contiene</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>02/10/2026</time>.
+      
+        <br>
+        <i class="bi bi-tag"></i>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <i class="bi bi-link-45deg"></i>
+      <a href="/blog-bitix/2026/10/lectura-de-un-documento-json-conociendo-y-sin-conocer-que-propiedades-contiene/">Enlace permanente</a>
+      
+        <i class="bi bi-chat"></i>
+        <a href="/blog-bitix/2026/10/lectura-de-un-documento-json-conociendo-y-sin-conocer-que-propiedades-contiene/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Procesar un JSON cuya estructura no se conoce de antemano es un problema habitual cuando parte de sus propiedades son dinámicos y no se pueden mapear a un objeto en tiempo de compilación. En este artículo veremos cómo descubrir y recorrer esos atributos desconocidos con Jackson, utilizando JsonNode para inspeccionar el tipo y el valor de cada campo. Además, comprobaremos cómo lograr el mismo resultado con la API estándar de Java, para que puedas elegir la opción que mejor encaje en tu proyecto.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      
+<div id='div-gpt-ad-1705154918797-0' style='min-width: 300px; min-height: 90px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154918797-0'); });
+  </script>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Habitualmente al procesar datos en formato JSON se conoce la estructura de datos origen y es posible mapear esos datos a un objeto. En ocasiones el JSON puede tener una parte dinámica como una colleción de atrubitos que se conoce que existirá pero no se conoce que nombres tienen los atributos que se incluyen. Al tener una parte diámica no es posible mapaear completamente los datos a un objeto ya que se desconocen las propiedades y los tipos de esas propiedades.</p>
+<p>Tanto la librería Jackson como la API proporcionada por Java ofrecen la posiblidad de descubrir cuales son las propiedades del JSON.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2021/01/validar-documentos-json-con-json-schema/">Validar documentos JSON con JSON Schema</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/convertir-un-json-a-objetos-y-objetos-a-json-con-json-b-gson-y-jackson-en-java/">Convertir un JSON a objetos y objetos a JSON con JSON-B, Gson y Jackson en Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/01/usar-expresiones-jsonpath-para-extraer-datos-de-un-json-en-java/">Usar expresiones JSONPath para extraer datos de un JSON en Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/01/generar-procesar-y-modificar-documentos-json-con-json-p-en-java/">Generar, procesar y modificar documentos JSON con JSON-P en Java</a></li>
+</ul>
+<div class="row toc"><div class="col-12 col-lg-8"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
+    <li><a href="#leer-un-json-de-forma-dinámica-con-jackson">Leer un JSON de forma dinámica con Jackson</a>
+      <ol>
+        <li><a href="#leer-unn-json-a-un-map">Leer unn JSON a un Map</a></li>
+      </ol>
+    </li>
+    <li><a href="#leer-un-json-de-forma-dinámica-con-la-api-de-java">Leer un JSON de forma dinámica con la API de Java</a></li>
+  </ol>
+</nav></div> </div><div class="col-12 col-lg-4"></div></div>
+<h2 id="leer-un-json-de-forma-dinámica-con-jackson">Leer un JSON de forma dinámica con Jackson</h2>
+<p>Jackson ofrecen un una clase que representa el nodo raiz de on JSON, con una instancia de este objeto es posible conocer el tipo de nodo, de que propiedades se compone el JSON y los tipos de datos de esas propiedades.</p>
+<p>El siguiente ejemplo imprime en la consola algunas de las propiedades en el objeto raiz. Estas propiedades y valores son desonoccidos en tiempo de compilación. En el ejemplo se muestara también el uso de JSON-P para alguno de las propiedades que sean conocidos en tiempo de compilación.</p>
+<p>El archivo de datos y el programa de ejemplo.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">  <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">  <span class="nt">&#34;city&#34;</span><span class="p">:</span> <span class="s2">&#34;Madrid&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">  <span class="nt">&#34;population&#34;</span><span class="p">:</span> <span class="mi">3543630</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">  <span class="nt">&#34;other&#34;</span><span class="p">:</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;country&#34;</span><span class="p">:</span> <span class="s2">&#34;Spain&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;area&#34;</span><span class="p">:</span> <span class="mf">604.3</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;timezone&#34;</span><span class="p">:</span> <span class="s2">&#34;CET&#34;</span>&#10;</span></span><span class="line"><span class="cl">  <span class="p">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>data.json</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.javajsonread</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Jackson&#34;</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">ObjectMapper</span><span class="w"> </span><span class="n">mapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectMapper</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">JsonNode</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mapper</span><span class="p">.</span><span class="na">readTree</span><span class="p">(</span><span class="n">Main</span><span class="p">.</span><span class="na">class</span><span class="p">.</span><span class="na">getResourceAsStream</span><span class="p">(</span><span class="s">&#34;/data.json&#34;</span><span class="p">));</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">String</span><span class="w"> </span><span class="n">city1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&#34;city&#34;</span><span class="p">).</span><span class="na">asString</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">String</span><span class="w"> </span><span class="n">city2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="p">.</span><span class="na">at</span><span class="p">(</span><span class="s">&#34;/city&#34;</span><span class="p">).</span><span class="na">asString</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;City 1: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">city1</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;City 2: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">city2</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">root</span><span class="p">.</span><span class="na">propertyStream</span><span class="p">().</span><span class="na">filter</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">getValue</span><span class="p">().</span><span class="na">isValueNode</span><span class="p">()).</span><span class="na">forEach</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">getKey</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34; = &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">getValue</span><span class="p">().</span><span class="na">asString</span><span class="p">()));</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">root</span><span class="p">.</span><span class="na">at</span><span class="p">(</span><span class="s">&#34;/other&#34;</span><span class="p">).</span><span class="na">properties</span><span class="p">().</span><span class="na">forEach</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">getKey</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34; = &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">getValue</span><span class="p">().</span><span class="na">asString</span><span class="p">()));</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">...</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-1.java</span>
+    </div>
+</div>
+<p>La salida en la consola del programa es el siguiente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl"># Jackson&#10;</span></span><span class="line"><span class="cl">City 1: Madrid&#10;</span></span><span class="line"><span class="cl">City 2: Madrid&#10;</span></span><span class="line"><span class="cl">id = 1&#10;</span></span><span class="line"><span class="cl">city = Madrid&#10;</span></span><span class="line"><span class="cl">population = 3543630&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">country = Spain&#10;</span></span><span class="line"><span class="cl">area = 604.3&#10;</span></span><span class="line"><span class="cl">timezone = CET</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System-1.out</span>
+    </div>
+</div>
+<h3 id="leer-unn-json-a-un-map">Leer unn JSON a un Map</h3>
+<p>Otra forma de leer el JSON es mapeandolo a un objeto <em>Map</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.javajsonread</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">...</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Jackson (map)&#34;</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">ObjectMapper</span><span class="w"> </span><span class="n">mapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectMapper</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">InputStream</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Main</span><span class="p">.</span><span class="na">class</span><span class="p">.</span><span class="na">getResourceAsStream</span><span class="p">(</span><span class="s">&#34;/data.json&#34;</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mapper</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TypeReference</span><span class="o">&lt;&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{});</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">map</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;City 1: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">map</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&#34;city&#34;</span><span class="p">));</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">map</span><span class="p">.</span><span class="na">entrySet</span><span class="p">().</span><span class="na">stream</span><span class="p">().</span><span class="na">filter</span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getValue</span><span class="p">()</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Map</span><span class="p">)).</span><span class="na">forEach</span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getKey</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34; = &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getValue</span><span class="p">()));</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">((</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="n">map</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&#34;other&#34;</span><span class="p">)).</span><span class="na">forEach</span><span class="p">((</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34; = &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">value</span><span class="p">));</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">...</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-2.java</span>
+    </div>
+</div>
+<p>La salida en la consola del programa es el siguiente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl"># Jackson (map)&#10;</span></span><span class="line"><span class="cl">{id=1, city=Madrid, population=3543630, other={country=Spain, area=604.3, timezone=CET}}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">City 1: Madrid&#10;</span></span><span class="line"><span class="cl">id = 1&#10;</span></span><span class="line"><span class="cl">city = Madrid&#10;</span></span><span class="line"><span class="cl">population = 3543630&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">country = Spain&#10;</span></span><span class="line"><span class="cl">area = 604.3&#10;</span></span><span class="line"><span class="cl">timezone = CET</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System-2.out</span>
+    </div>
+</div>
+<h2 id="leer-un-json-de-forma-dinámica-con-la-api-de-java">Leer un JSON de forma dinámica con la API de Java</h2>
+<p>El siguiente ejemplo es el equivalente que on Jackson pero utilizando APIs ofrecidas por Java.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.javajsonread</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">...</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">...</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Jakarta JSON&#34;</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">JsonReader</span><span class="w"> </span><span class="n">reader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Json</span><span class="p">.</span><span class="na">createReader</span><span class="p">(</span><span class="n">Main</span><span class="p">.</span><span class="na">class</span><span class="p">.</span><span class="na">getResourceAsStream</span><span class="p">(</span><span class="s">&#34;/data.json&#34;</span><span class="p">));</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">JsonStructure</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reader</span><span class="p">.</span><span class="na">read</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">JsonValue</span><span class="w"> </span><span class="n">city1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="p">.</span><span class="na">asJsonObject</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="s">&#34;city&#34;</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">JsonValue</span><span class="w"> </span><span class="n">city2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Json</span><span class="p">.</span><span class="na">createPointer</span><span class="p">(</span><span class="s">&#34;/city&#34;</span><span class="p">).</span><span class="na">getValue</span><span class="p">(</span><span class="n">root</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;City: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">city1</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;City: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">city2</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">root</span><span class="p">.</span><span class="na">asJsonObject</span><span class="p">().</span><span class="na">entrySet</span><span class="p">().</span><span class="na">stream</span><span class="p">()</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">ValueType</span><span class="p">.</span><span class="na">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">ValueType</span><span class="p">.</span><span class="na">STRING</span><span class="p">,</span><span class="w"> </span><span class="n">ValueType</span><span class="p">.</span><span class="na">NUMBER</span><span class="p">,</span><span class="w"> </span><span class="n">ValueType</span><span class="p">.</span><span class="na">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">ValueType</span><span class="p">.</span><span class="na">FALSE</span><span class="p">).</span><span class="na">contains</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getValue</span><span class="p">().</span><span class="na">getValueType</span><span class="p">()))</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getKey</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34; = &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getValue</span><span class="p">().</span><span class="na">toString</span><span class="p">()));</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">Json</span><span class="p">.</span><span class="na">createPointer</span><span class="p">(</span><span class="s">&#34;/other&#34;</span><span class="p">).</span><span class="na">getValue</span><span class="p">(</span><span class="n">root</span><span class="p">).</span><span class="na">asJsonObject</span><span class="p">().</span><span class="na">forEach</span><span class="p">((</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34; = &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">value</span><span class="p">.</span><span class="na">toString</span><span class="p">()));</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-3.java</span>
+    </div>
+</div>
+<p>La salida en la consola del programa es el siguiente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl"># Jakarta JSON&#10;</span></span><span class="line"><span class="cl">City: &#34;Madrid&#34;&#10;</span></span><span class="line"><span class="cl">City: &#34;Madrid&#34;&#10;</span></span><span class="line"><span class="cl">id = 1&#10;</span></span><span class="line"><span class="cl">city = &#34;Madrid&#34;&#10;</span></span><span class="line"><span class="cl">population = 3543630&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">country = &#34;Spain&#34;&#10;</span></span><span class="line"><span class="cl">area = 604.3&#10;</span></span><span class="line"><span class="cl">timezone = &#34;CET&#34;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System-3.out</span>
+    </div>
+</div>
+<p>Las librerías dependencias del ejemplo.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">versions</span><span class="p">]</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">jackson</span> <span class="p">=</span> <span class="s2">&#34;3.0.0&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">jakarta-json-api</span> <span class="p">=</span> <span class="s2">&#34;2.1.3&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">libraries</span><span class="p">]</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">jacksonDependencies</span> <span class="p">=</span> <span class="p">{</span> <span class="nx">module</span> <span class="p">=</span> <span class="s2">&#34;tools.jackson:jackson-bom&#34;</span><span class="p">,</span> <span class="nx">version</span><span class="p">.</span><span class="nx">ref</span> <span class="p">=</span> <span class="s2">&#34;jackson&#34;</span> <span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nx">jackson-core</span> <span class="p">=</span> <span class="p">{</span> <span class="nx">module</span> <span class="p">=</span> <span class="s2">&#34;tools.jackson.core:jackson-core&#34;</span><span class="p">,</span> <span class="nx">version</span><span class="p">.</span><span class="nx">ref</span> <span class="p">=</span> <span class="s2">&#34;jackson&#34;</span> <span class="p">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">jackson-databind</span> <span class="p">=</span> <span class="p">{</span> <span class="nx">module</span> <span class="p">=</span> <span class="s2">&#34;tools.jackson.core:jackson-databind&#34;</span><span class="p">,</span> <span class="nx">version</span><span class="p">.</span><span class="nx">ref</span> <span class="p">=</span> <span class="s2">&#34;jackson&#34;</span> <span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nx">jakarta-json-api</span> <span class="p">=</span> <span class="p">{</span> <span class="nx">module</span> <span class="p">=</span> <span class="s2">&#34;jakarta.json:jakarta.json-api&#34;</span><span class="p">,</span> <span class="nx">version</span><span class="p">.</span><span class="nx">ref</span> <span class="p">=</span> <span class="s2">&#34;jakarta-json-api&#34;</span> <span class="p">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">parsson</span> <span class="p">=</span> <span class="p">{</span> <span class="nx">module</span> <span class="p">=</span> <span class="s2">&#34;org.eclipse.parsson:parsson&#34;</span><span class="p">,</span> <span class="nx">version</span> <span class="p">=</span> <span class="s2">&#34;1.1.9&#34;</span> <span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">bundles</span><span class="p">]</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">jackson</span> <span class="p">=</span> <span class="p">[</span>&#10;</span></span><span class="line"><span class="cl">  <span class="s2">&#34;jackson-core&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">  <span class="s2">&#34;jackson-databind&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">]</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nx">jakarta</span> <span class="p">=</span> <span class="p">[</span>&#10;</span></span><span class="line"><span class="cl">  <span class="s2">&#34;jakarta-json-api&#34;</span><span class="p">,</span>&#10;</span></span><span class="line"><span class="cl">  <span class="s2">&#34;parsson&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">]</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>libs.versions.toml</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode fs-6">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaJsonRead">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/">
+                <img src="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/header_hu_33b2c59c4c62aa5f.webp" width="326" height="125" alt="Externalizar la lógica de negocio con el motor de reglas Drools" title="Externalizar la lógica de negocio con el motor de reglas Drools" class="" loading="lazy">
+                <h3>Externalizar la lógica de negocio con el motor de reglas Drools</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/">
+                <img src="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/qr-code_hu_2d035c8dc13167d3.webp" width="326" height="125" alt="Generar códigos de barras y códigos QR con Java" title="Generar códigos de barras y códigos QR con Java" class="" loading="lazy">
+                <h3>Generar códigos de barras y códigos QR con Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/02/introduccion-conceptos-y-uso-basico-del-broker-de-mensajes-apache-kafka/">
+                <img src="/blog-bitix/assets/images/logotypes/apache-kafka.svg" width="326" height="125" alt="Introducción, conceptos y uso básico del broker de mensajes Apache Kafka" title="Introducción, conceptos y uso básico del broker de mensajes Apache Kafka" class="" loading="lazy">
+                <h3>Introducción, conceptos y uso básico del broker de mensajes Apache Kafka</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2023/01/construir-la-imagen-del-contenedor-de-la-aplicacion-usando-buildpacks/">
+                <img src="/blog-bitix/assets/images/logotypes/buildpacksio.svg" width="326" height="125" alt="Construir la imagen del contenedor de la aplicación usando Buildpacks" title="Construir la imagen del contenedor de la aplicación usando Buildpacks" class="" loading="lazy">
+                <h3>Construir la imagen del contenedor de la aplicación usando Buildpacks</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/07/opciones-de-arquitectura-para-emitir-trazas-en-una-aplicacion-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Opciones de arquitectura para emitir trazas en una aplicación Java" title="Opciones de arquitectura para emitir trazas en una aplicación Java" class="" loading="lazy">
+                <h3>Opciones de arquitectura para emitir trazas en una aplicación Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/12/buenas-practicas-de-programacion-sencillas-en-el-codigo-fuente/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Buenas prácticas de programación sencillas en el código fuente" title="Buenas prácticas de programación sencillas en el código fuente" class="" loading="lazy">
+                <h3>Buenas prácticas de programación sencillas en el código fuente</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-737';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2026\/10\/lectura-de-un-documento-json-conociendo-y-sin-conocer-que-propiedades-contiene\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/privacy/">Política de privacidad</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2026 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

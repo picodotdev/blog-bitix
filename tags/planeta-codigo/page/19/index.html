@@ -228,6 +228,35 @@
     
     <li>
       <article>
+        <h1><a href="/blog-bitix/2019/02/las-clases-anidadas-inner-anonimas-y-locales-en-java/">Las clases anidadas inner, anónimas y locales en Java</a></h1>
+        <span class="information">
+          <time>15/02/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Por regla general en Java cada clase se define en su propio archivo de código fuente, pdor ejemplo, una clase de nombre <em>Order</em> se ha de definir en el archivo <em>Order.java</em>. Sin embargo, esta no es la única forma de definir clases, es posible definir clases <em>inner</em> y anónimas que evita tener que crear un nuevo archivo de código fuente.</p>
+<p>Las clases <em>inner</em> se definen dentro de otra clase cuando esa clase <em>inner</em> tiene alta cohesión (su lógica está muy relacionada con la clase que la contiene), en algunos casos se emplean para ocultar los tipos que implementan la lógica. Dependiendo de si la clase <em>inner</em> debe acceder a los datos de la clase que la contiene o no la clase <em>inner</em> se define como no estática o como estática con la palabra reservada <em>static</em>. Las clases <em>inner</em> estáticas no necesitan una referencia a la clase que la contiene y por ello son algo más eficientes y el método preferido de definirlas, si la clase <em>inner</em> debe acceder a los miembros de la clase contenedora hay que definirla como no estática. Para desambiguar la referencia <em>this</em> y miembros con el mismo nombre de la clase <em>inner</em> con la de la clase contenedora se puede utilizar en el ejemplo <em>Order.this.products</em> quitando los <em>static</em> de las clases.</p>
+          
+          <br>
+          <a href="/blog-bitix/2019/02/las-clases-anidadas-inner-anonimas-y-locales-en-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2019/02/ofuscar-datos-sensibles-en-las-trazas-con-log4j/">Ofuscar datos sensibles en las trazas con Log4j</a></h1>
         <span class="information">
           <time>10/02/2019</time>
@@ -639,41 +668,6 @@
           
           <br>
           <a href="/blog-bitix/2018/12/permitir-o-denegar-trafico-de-red-con-el-firewall-ufw-en-gnu-linux/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2018/12/exponer-las-metricas-de-hystrix-en-grafana-con-prometheus-de-una-aplicacion-spring-boot/">Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot</a></h1>
-        <span class="information">
-          <time>21/12/2018</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-              <a href="/blog-bitix/tags/software/">software</a>
-            
-              <a href="/blog-bitix/tags/spring/">spring</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
-</div>
-<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
-</div>
-<p><a href="https://github.com/Netflix/Hystrix">Hystrix</a> es una implementación del patrón <em>circuit breaker</em> para hacer que un servicio sea tolerante fallos cuando aquellos que utiliza fallan. Es conveniente tener una herramienta de monitorización para conocer el estado del sistema y actuar pronto o conocer si el comportamiento del sistema es diferente al hacer algún cambio. Hystrix proporciona varios datos como el número de peticiones realizadas, cuantas han fallado o cual es el estado del patrón <em>circuit breaker</em>. <a href="https://prometheus.io/">Prometheus</a> es una herramienta de monitorización que recoge las métricas de los servicios de forma periódica y las almacena para una consulta posterior, <a href="https://grafana.com/">Grafana</a> es otra herramienta de monitorización que permite visualizar en gráficas las métricas almacenadas en Prometheus y observar los valores a lo largo del tiempo.</p>
-          
-          <br>
-          <a href="/blog-bitix/2018/12/exponer-las-metricas-de-hystrix-en-grafana-con-prometheus-de-una-aplicacion-spring-boot/">Continuar leyendo...</a>
         </p>
       </article>
     </li>

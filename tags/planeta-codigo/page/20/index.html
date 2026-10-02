@@ -228,6 +228,41 @@
     
     <li>
       <article>
+        <h1><a href="/blog-bitix/2018/12/exponer-las-metricas-de-hystrix-en-grafana-con-prometheus-de-una-aplicacion-spring-boot/">Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot</a></h1>
+        <span class="information">
+          <time>21/12/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+              <a href="/blog-bitix/tags/spring/">spring</a>
+            
+          
+        </span>
+        <p>
+          
+            <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
+</div>
+<p><a href="https://github.com/Netflix/Hystrix">Hystrix</a> es una implementación del patrón <em>circuit breaker</em> para hacer que un servicio sea tolerante fallos cuando aquellos que utiliza fallan. Es conveniente tener una herramienta de monitorización para conocer el estado del sistema y actuar pronto o conocer si el comportamiento del sistema es diferente al hacer algún cambio. Hystrix proporciona varios datos como el número de peticiones realizadas, cuantas han fallado o cual es el estado del patrón <em>circuit breaker</em>. <a href="https://prometheus.io/">Prometheus</a> es una herramienta de monitorización que recoge las métricas de los servicios de forma periódica y las almacena para una consulta posterior, <a href="https://grafana.com/">Grafana</a> es otra herramienta de monitorización que permite visualizar en gráficas las métricas almacenadas en Prometheus y observar los valores a lo largo del tiempo.</p>
+          
+          <br>
+          <a href="/blog-bitix/2018/12/exponer-las-metricas-de-hystrix-en-grafana-con-prometheus-de-una-aplicacion-spring-boot/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/">Monitorizar procesos que realizan lectura o escritura al almacenamiento en GNU/Linux</a></h1>
         <span class="information">
           <time>17/12/2018</time>
@@ -634,40 +669,6 @@
           
           <br>
           <a href="/blog-bitix/2018/10/balanceo-de-carga-y-resiliencia-en-un-microservicio-con-spring-cloud-netflix-y-ribbon/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/">Tolerancia a fallos en un cliente de microservicio con Spring Cloud Netflix y Hystrix</a></h1>
-        <span class="information">
-          <time>05/10/2018</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-              <a href="/blog-bitix/tags/spring/">spring</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
-</div>
-<div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
-</div>
-<p>Los microservicios son independientes unos de otros y se comunican mediante operaciones de red. Dado que las operaciones se realizan a través de un medio no confiable como la red, dada su naturaleza efímera y a que pueden fallar en los microservicios es importante que los clientes estén preparados ante posibles fallos.</p>
-<p>Un patrón o técnica que se suele emplear es el de <a href="https://www.martinfowler.com/bliki/CircuitBreaker.html">Circuit Breaker</a>, en Java y con <a href="https://spring.io/">Spring</a> se ofrece en el proyecto <a href="https://cloud.spring.io/spring-cloud-netflix/">Spring Cloud Netflix</a> mediante <a href="https://github.com/Netflix/Hystrix">Hystrix</a> y <a href="https://github.com/Netflix/Hystrix/tree/master/hystrix-contrib/hystrix-javanica">Javanica</a>. Este patrón soluciona dos problemas cuando un microservicio del que se depende falla y hace al microservicio que lo usa tolerante a fallos.</p>
-          
-          <br>
-          <a href="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/">Continuar leyendo...</a>
         </p>
       </article>
     </li>

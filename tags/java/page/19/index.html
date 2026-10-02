@@ -228,6 +228,31 @@
     
     <li>
       <article>
+        <h1><a href="/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/">Ejemplo del patrón de diseño Builder</a></h1>
+        <span class="information">
+          <time>27/09/2015</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Construir objetos es una tarea básica en los lenguajes orientados a objetos. En Java, las instancias de una clase se crean con la palabra clave reservada <em>new</em> y un método especial llamado constructor. Al diseñar una clase debemos tener algunas cuestiones para evitar varios constructores <em>telescópicos</em>, evitar constructores que son combinación de varios argumentos opcionales y permitir obtener instancias de objetos con estado válido. Si se nos presentan estas situaciones podemos usar el patrón de diseño <em>Builder</em> que consiste en básicamente en una clase especializada en construir instancias de otra clase que podemos hacer usable con una API fluida y alguna cosa más deseable que explico en el artículo.
+          
+          <br>
+          <a href="/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2015/09/generar-recursos-estaticos-con-wro4j/">Generar recursos estáticos con wro4j</a></h1>
         <span class="information">
           <time>25/09/2015</time>
@@ -599,39 +624,6 @@
           
           <br>
           <a href="/blog-bitix/2015/04/escribir-en-varios-writer-a-la-vez/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas</a></h1>
-        <span class="information">
-          <time>10/04/2015</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-              <a href="/blog-bitix/tags/seguridad/">seguridad</a>
-            
-              <a href="/blog-bitix/tags/tapestry/">tapestry</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-          
-        </span>
-        <p>
-          
-            <div class="logotypes">
-<p><img src="/blog-bitix/assets/images/logotypes/apache-shiro.webp" width="300" height="106" alt="Apache Shiro" title="Apache Shiro" class="" loading="false"></p>
-</div>
-<p>Para cada servicio deberíamos emplear una contraseña de una longitud de al menos 8 caracteres que incluya letras en minúscula, mayúscula, números y símbolos, una herramienta que podemos utilizar para generar contraseñas más seguras con los criterios que indiquemos es <a href="https://privacycanada.net/strong-password-generator/">Strong Password Generator</a> o <a href="https://passwords-generator.org/">Password Generator</a>.</p>
-<p>Sin embargo, recordar cada una de estas contraseñas es muy difícil de modo que es habitual que utilicemos la misma contraseña para varios o todos los servicios y no empleando todos los criterios anteriores o usar una herramienta con la que <a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">Guardar contraseñas de forma segura con KeePassXC</a>. Por otro lado, los desarrolladores no deberíamos guardar en la base de datos las contraseñas que nos entregan los usuarios en texto plano, para evitar guardalas en texto plano hace un tiempo se utilizaba únicamente una función de <em>hashing</em> unidireccional como MD5 o SHA, de este modo si la base de datos fuese comprometida en teoría no podrían conocer la contraseña original. En este artículo comentaré que aún guardando las contraseñas con una función de <em>hashing</em> no es suficiente para hacerlas seguras y comentaré una implementación con <a href="https://shiro.apache.org/">Apache Shiro</a> de una de las ideas propuestas, también con <a href="https://spring.io/projects/spring-security">Spring Security</a> es posible.</p>
-          
-          <br>
-          <a href="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
