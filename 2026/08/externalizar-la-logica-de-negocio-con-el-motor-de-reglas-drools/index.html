@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="Externalizar la lógica de negocio con el motor de reglas Drools">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/header_hu_2752d72d2ce3823.webp">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/header_hu_a785e71fce47603c.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Toda plataforma de cierta complejidad requiere gestionar reglas de negocio, lógica que cambia con frecuencia o que conviene desacoplar del código. Este artículo analiza en qué casos resulta conveniente externalizar dicha lógica mediante un motor de reglas y en cuáles no, centrándose en Drools, sus distintas formas de definición de reglas (DRL, DMN, tablas de decisión). El ejemplo de código práctico muestra una integración entre Drools con Spring Boot exponiendo una regla de negocio como un endpoint REST que otros servicios pueden consumir. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/header_hu_2752d72d2ce3823.webp">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/header_hu_a785e71fce47603c.webp">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Externalizar la lógica de negocio con el motor de reglas Drools">
@@ -55,7 +55,7 @@
     "headline": "Externalizar la lógica de negocio con el motor de reglas Drools",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/header_hu_2752d72d2ce3823.webp"
+        "url": "https://picodotdev.github.io/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/header_hu_a785e71fce47603c.webp"
         
       },
     "datePublished": "2026-08-07T22:30:00+02:00",
@@ -243,7 +243,7 @@
     
     <div class="row page-header">
       <div class="col-12">
-        <img src="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/header_hu_a1d75cd39cd75d00.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+        <img src="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/header_hu_770202caaf318da6.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
       </div>
     </div>
     
@@ -367,7 +367,7 @@
 <p>Los motores de reglas en esencia son <em>ifs</em> pero que usan algoritmos como RETE para evaluar los hechos contra las reglas de forma eficiente y efectiva, en el caso de Drools se usa el <a href="https://docs.drools.org/latest/drools-docs/drools/rule-engine/index.html#phreak-algorithm-con_rule-engine">algoritmo Phreak</a>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/drools_hu_c1db559758e6230b.webp" data-gallery="" title="Componentes básicos de Drools"><img src="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/drools_hu_8ad32fec28f05d59.webp" width="650" height="201" alt="Componentes básicos de Drools" title="Componentes básicos de Drools" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/drools_hu_6a1fb4b0275f48b1.webp" data-gallery="" title="Componentes básicos de Drools"><img src="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/drools_hu_464122b163f8cdeb.webp" width="650" height="201" alt="Componentes básicos de Drools" title="Componentes básicos de Drools" class="" loading="lazy"></a></p>
 <figcaption>Componentes básicos de Drools</figcaption>
 </figure>
 </div>
@@ -390,16 +390,16 @@
 <p>Otra forma de crear reglas son mediante archivos DMN, un estándar de Object Management Group (OMG) para describir y modelar decisiones operacionales. Estos se crean de forma gráfica con un editor especializado que las guarda las reglas en un archivo XML.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-1_hu_82fb38b6119691ce.webp" data-gallery="" title="Decision Model and Notation"><img src="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-1_hu_f0de43c67b2205c9.webp" width="200" height="105" alt="Decision Model and Notation" title="Decision Model and Notation" class="" loading="lazy"></a>
-<a href="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-2_hu_7a50e30dd81f9403.webp" data-gallery=""><img src="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-2_hu_fc3ac19977d3a011.webp" width="300" height="157" class="" loading="lazy"></a>
-<a href="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-3_hu_5c7f1cdbbbc2ac09.webp" data-gallery=""><img src="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-3_hu_732bf4d63a0cf6c3.webp" width="300" height="157" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-1_hu_471eaa4cfa27fadb.webp" data-gallery="" title="Decision Model and Notation"><img src="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-1_hu_b7d0b31d1ba8da6b.webp" width="200" height="105" alt="Decision Model and Notation" title="Decision Model and Notation" class="" loading="lazy"></a>
+<a href="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-2_hu_b19c804c0bc45753.webp" data-gallery=""><img src="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-2_hu_4b01a95f5f8090bb.webp" width="300" height="157" class="" loading="lazy"></a>
+<a href="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-3_hu_f4aaf7969a0a77b8.webp" data-gallery=""><img src="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-3_hu_daf89c2a12572f71.webp" width="300" height="157" class="" loading="lazy"></a></p>
 <figcaption>Decision Model and Notation</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-4_hu_1d5e0749c5cb07ff.webp" data-gallery="" title="Decision Model and Notation"><img src="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-4_hu_75a544c838b87011.webp" width="200" height="105" alt="Decision Model and Notation" title="Decision Model and Notation" class="" loading="lazy"></a>
-<a href="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-5_hu_7150fbc6961ac5af.webp" data-gallery=""><img src="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-5_hu_b36c74594827d4.webp" width="300" height="157" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-4_hu_6065608050c936dc.webp" data-gallery="" title="Decision Model and Notation"><img src="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-4_hu_3bce4a2030efafdc.webp" width="200" height="105" alt="Decision Model and Notation" title="Decision Model and Notation" class="" loading="lazy"></a>
+<a href="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-5_hu_6f04f1ab11d6556b.webp" data-gallery=""><img src="/blog-bitix/2026/08/externalizar-la-logica-de-negocio-con-el-motor-de-reglas-drools/images/loan-application-age-limit-5_hu_8635b65e3049d20e.webp" width="300" height="157" class="" loading="lazy"></a></p>
 <figcaption>Decision Model and Notation</figcaption>
 </figure>
 </div>
@@ -508,7 +508,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/">
-                <img src="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/qr-code_hu_2d035c8dc13167d3.webp" width="326" height="125" alt="Generar códigos de barras y códigos QR con Java" title="Generar códigos de barras y códigos QR con Java" class="" loading="lazy">
+                <img src="/blog-bitix/2023/02/generar-codigos-de-barras-y-codigos-qr-con-java/images/qr-code_hu_f6f06046022d5411.webp" width="326" height="125" alt="Generar códigos de barras y códigos QR con Java" title="Generar códigos de barras y códigos QR con Java" class="" loading="lazy">
                 <h3>Generar códigos de barras y códigos QR con Java</h3>
                 </a>
                 
@@ -578,7 +578,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/">
-                <img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu_e8e648a2ed180ba6.webp" width="326" height="125" alt="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" title="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" class="" loading="lazy">
+                <img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu_f65436cb50d6ab0c.webp" width="326" height="125" alt="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" title="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" class="" loading="lazy">
                 <h3>Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java</h3>
                 </a>
                 

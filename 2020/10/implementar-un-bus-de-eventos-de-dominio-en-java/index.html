@@ -29,14 +29,14 @@
   <!-- Social -->
 <meta property="og:title" content="Implementar un bus de eventos de dominio en Java">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu_3fd109df729d3393.webp">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu_b03047ed89f5cbfc.webp">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Un bus de eventos es el mecanismo por el que los eventos de dominio de DDD son publicados, son tratados y enviados a sus receptores de forma directa, mediante un middleware u de otra forma. El concepto bus de eventos para eventos de dominio se materializa de forma muy sencilla en código, simplemente una interfaz con un método. Cambiando la implementación de la interfaz un bus de eventos envía los eventos a un sistema de mensajería como RabbitMQ, persiste los eventos en base de datos como parte del outbox pattern o simplemente los imprime en la consola como en el ejemplo del artículo. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu_3fd109df729d3393.webp">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu_b03047ed89f5cbfc.webp">
 
 <meta name="twitter:site" content="">
 <meta name="twitter:title" content="Implementar un bus de eventos de dominio en Java">
@@ -55,7 +55,7 @@
     "headline": "Implementar un bus de eventos de dominio en Java",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu_3fd109df729d3393.webp"
+        "url": "https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu_b03047ed89f5cbfc.webp"
         
       },
     "datePublished": "2020-10-09T16:00:00+02:00",
@@ -330,7 +330,7 @@
 <p>Una solución es utilizar únicamente la base de datos. Los eventos se guardan en una tabla en la misma transacción que el resto de datos, de tal modo que si la transacción finaliza correctamente los eventos generados están almacenados y si la transacción falla no se guarda ninguno. Una vez los eventos están guardados otro proceso se encarga de emitirlos. Nuevamente este proceso que emite los eventos puede fallar y ocasionar que un evento sea lanzado dos veces pero al menos garantiza que si se ha generado un evento se emita al menos una vez en el sistema. Este es el patón <em>outbox pattern</em>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu_28107fdf4c9069ee.webp" data-gallery="" title="Outbox Pattern"><img src="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu_691dadef02bbb379.webp" width="650" height="405" alt="Outbox Pattern" title="Outbox Pattern" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu_febe7272bb2754b7.webp" data-gallery="" title="Outbox Pattern"><img src="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hu_a85343745ac3f584.webp" width="650" height="405" alt="Outbox Pattern" title="Outbox Pattern" class="" loading="lazy"></a></p>
 <figcaption>Outbox Pattern</figcaption>
 </figure>
 </div>
@@ -537,7 +537,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/">
-                <img src="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/images/exrpresion-cron_hu_b5cb8ea86cd01069.webp" width="326" height="125" alt="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" title="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" class="" loading="lazy">
+                <img src="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/images/exrpresion-cron_hu_4bdcb6cf026f67b9.webp" width="326" height="125" alt="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" title="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" class="" loading="lazy">
                 <h3>Qué son, para qué sirven, formato y ejemplos de las expresiones cron</h3>
                 </a>
                 
@@ -551,7 +551,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/">
-                <img src="/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if-else_hu_30a6ea2fa3685941.webp" width="326" height="125" alt="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" title="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" class="" loading="lazy">
+                <img src="/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if-else_hu_f0905aa37f46a9a8.webp" width="326" height="125" alt="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" title="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" class="" loading="lazy">
                 <h3>Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)</h3>
                 </a>
                 
@@ -565,7 +565,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/">
-                <img src="/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/images/specification_hu_7ad5604baf82be8a.webp" width="326" height="125" alt="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data" title="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data" class="" loading="lazy">
+                <img src="/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/images/specification_hu_79b3423db6357f3f.webp" width="326" height="125" alt="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data" title="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data" class="" loading="lazy">
                 <h3>El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data</h3>
                 </a>
                 
@@ -593,7 +593,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/">
-                <img src="/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu_b1d037da9c423c73.webp" width="326" height="125" alt="El patrón Open Session in View, qué es, ventajas, problemas y alternativas" title="El patrón Open Session in View, qué es, ventajas, problemas y alternativas" class="" loading="lazy">
+                <img src="/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu_b514919e4e98a618.webp" width="326" height="125" alt="El patrón Open Session in View, qué es, ventajas, problemas y alternativas" title="El patrón Open Session in View, qué es, ventajas, problemas y alternativas" class="" loading="lazy">
                 <h3>El patrón Open Session in View, qué es, ventajas, problemas y alternativas</h3>
                 </a>
                 
