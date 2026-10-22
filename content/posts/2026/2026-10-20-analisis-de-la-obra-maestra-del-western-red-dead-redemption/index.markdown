@@ -3,7 +3,7 @@ pid: 738
 type: "post"
 title: "Análisis de la obra maestra del western Red Dead Redemption"
 url: "/2026/10/analisis-de-la-obra-maestra-del-western-red-dead-redemption/"
-date: 2026-10-23T16:00:00+02:00
+date: 2026-10-22T16:00:00+02:00
 language: "es"
 index: true
 rss: true
