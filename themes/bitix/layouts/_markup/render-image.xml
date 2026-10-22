@@ -1,5 +1,5 @@
-{{- $links := .Page.Site.Data.theme.conf.links.xml -}}
-{{- $tags := .Page.Site.Data.theme.conf.tags.xml -}}
+{{- $links := hugo.Data.theme.conf.links.xml -}}
+{{- $tags := hugo.Data.theme.conf.tags.xml -}}
 {{- $imgtagopen := $tags.imgtagopen -}}
 {{- $imgtagclose := $tags.imgtagclose -}}
 {{- $imgtagsrc := $tags.imgtagsrc -}}

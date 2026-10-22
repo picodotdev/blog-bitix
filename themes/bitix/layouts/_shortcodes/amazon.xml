@@ -1,4 +1,4 @@
-{{ $amazontags := $.Site.Data.affiliates.amazon }}
+{{ $amazontags := hugo.Data.affiliates.amazon }}
 {{ if eq $amazontags nil }}{{ errorf "Missing affiliates amazon tags info: %s" .Position }}{{ end }}
 
 {{ $ttags := split (default "" .Params.tags) "," }}

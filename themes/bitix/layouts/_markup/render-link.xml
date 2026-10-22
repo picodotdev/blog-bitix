@@ -1,5 +1,5 @@
-{{- $links := .Page.Site.Data.theme.conf.links.xml -}}
-{{- $noLinks := .Page.Site.Data.theme.conf.links.amp -}}
+{{- $links := hugo.Data.theme.conf.links.xml -}}
+{{- $noLinks := hugo.Data.theme.conf.links.amp -}}
 {{- $href := .Destination -}}
 {{- $title := .Title -}}
 {{- $text := .Text -}}

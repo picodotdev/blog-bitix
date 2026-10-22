@@ -1,4 +1,4 @@
-{{- $product := index (index $.Site.Data.affiliates.amazon "prodcuts") .Params.product -}}
+{{- $product := index (index hugo.Data.affiliates.amazon "prodcuts") .Params.product -}}
 {{- if eq $product nil }}{{ errorf "Missing affiliates amazon product %s information" .Params.product }}{{ end -}}
 
 {{- $link := index $product "link" -}}

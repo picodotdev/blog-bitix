@@ -17,7 +17,7 @@
     {{- if and (isset .Params "tags") -}}
       {{- $tags := split .Params.tags "," -}}
       {{- range $index, $tag := $tags -}}
-          {{- $products := index (index $.Site.Data.affiliates.amazon "tags") $tag -}}
+          {{- $products := index (index hugo.Data.affiliates.amazon "tags") $tag -}}
           {{- if eq $products nil }}{{ errorf "Missing affiliates amazon tag %s information" $tag }}{{ end -}}
 
           {{- $links := split $products.links "," -}}
