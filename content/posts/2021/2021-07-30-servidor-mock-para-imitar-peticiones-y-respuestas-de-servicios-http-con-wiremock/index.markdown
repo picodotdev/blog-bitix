@@ -25,6 +25,8 @@ Algunas aplicaciones son diseñadas para ofrecer su funcionalidad a través de u
 
 Las ventajas de los microservicios son varios como los anteriores junto a algunos otros adicionales, sin embargo, añaden otros problemas, principalmente el mayor número de elementos que los hacen más complejos comparado con una aplicación monolítica.
 
+* [Teses de integración sobre mocks de un openAPI con Microcks][blogbitix-739]
+
 {{< tableofcontents >}}
 
 ## El servidor _mock_
