@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Los tests unitarios son rápidos, pero se ejecutan en un entorno mínimo y asilado que no es el de producción. Con Testcontainers, los tests de integración pueden usar las mismas herramientas que en producción, como PostgreSQL o Kafka. En este artículo vemos cómo probar los clientes REST de un microservicio, es decir, los adaptadores de salida de una arquitectura hexagonal, con Microcks. Microcks es un servidor mock de la CNCF que genera las respuestas directamente a partir de la definición OpenAPI o AsyncAPI de un servicio, y que permite empezar a desarrollar sin tener el servicio real ni un entorno sandbox. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Teses de integración sobre mocks de un OpenAPI con Microcks</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/" hreflang="es" title="Teses de integración sobre mocks de un OpenAPI con Microcks">
+  
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preload" href="/blog-bitix/asssets/fonts/pt-serif/pt-serif.css" as="style">
+  <link rel="preload" href="/blog-bitix/asssets/fonts/open-sans/open-sans.css" as="style">
+  <link href="/blog-bitix/assets/fonts/pt-serif/pt-serif.css" rel="stylesheet">
+  <link href="/blog-bitix/assets/fonts/open-sans/open-sans.css" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Teses de integración sobre mocks de un OpenAPI con Microcks">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/header_hu_edd402280e3c5953.webp">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Los tests unitarios son rápidos, pero se ejecutan en un entorno mínimo y asilado que no es el de producción. Con Testcontainers, los tests de integración pueden usar las mismas herramientas que en producción, como PostgreSQL o Kafka. En este artículo vemos cómo probar los clientes REST de un microservicio, es decir, los adaptadores de salida de una arquitectura hexagonal, con Microcks. Microcks es un servidor mock de la CNCF que genera las respuestas directamente a partir de la definición OpenAPI o AsyncAPI de un servicio, y que permite empezar a desarrollar sin tener el servicio real ni un entorno sandbox. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/header_hu_edd402280e3c5953.webp">
+
+<meta name="twitter:site" content="">
+<meta name="twitter:title" content="Teses de integración sobre mocks de un OpenAPI con Microcks">
+<meta name="twitter:description" content="Los tests unitarios son rápidos, pero se ejecutan en un entorno mínimo y asilado que no es el de producción. Con Testcontainers, los tests de integración pueden usar las mismas herramientas que en producción, como PostgreSQL o Kafka. En este artículo vemos cómo probar los clientes REST de un microservicio, es decir, los adaptadores de salida de una arquitectura hexagonal, con Microcks. Microcks es un servidor mock de la CNCF que genera las respuestas directamente a partir de la definición OpenAPI o AsyncAPI de un servicio, y que permite empezar a desarrollar sin tener el servicio real ni un entorno sandbox. &hellip;">
+<meta name="twitter:creator" content="">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/"
+    },
+    "headline": "Teses de integración sobre mocks de un OpenAPI con Microcks",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/header_hu_edd402280e3c5953.webp"
+        
+      },
+    "datePublished": "2026-10-29T22:00:00+02:00",
+    "dateModified": "2026-10-29T22:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "937",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "I ♥ Java, GNU/Linux and libre software.",
+        "url": ""
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Los tests unitarios son rápidos, pero se ejecutan en un entorno mínimo y asilado que no es el de producción. Con Testcontainers, los tests de integración pueden usar las mismas herramientas que en producción, como PostgreSQL o Kafka. En este artículo vemos cómo probar los clientes REST de un microservicio, es decir, los adaptadores de salida de una arquitectura hexagonal, con Microcks. Microcks es un servidor mock de la CNCF que genera las respuestas directamente a partir de la definición OpenAPI o AsyncAPI de un servicio, y que permite empezar a desarrollar sin tener el servicio real ni un entorno sandbox."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+  
+  <script type="text/javascript" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async></script>
+<script>
+    window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() {
+      
+      
+      
+      
+      
+      var headerSlot = googletag.defineSlot('/23054707577/ZH9HsBYd', [[980, 280], [728, 280], [300, 250], [250, 250]], 'div-gpt-ad-1705154566741-0').addService(googletag.pubads());
+      var footerSlot = googletag.defineSlot('/23054707577/ankvbP5Z', [[250, 250], [300, 250], [728, 280], [980, 280]], 'div-gpt-ad-1729812526422-0').addService(googletag.pubads());
+      var articleSlot = googletag.defineSlot('/23054707577/etaEP84a', [[728, 90], [468, 90], [300, 90]], 'div-gpt-ad-1705154918797-0').addService(googletag.pubads());
+      var sidebarLeftSlot = googletag.defineSlot('/23054707577/s42YszNi', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705605693502-0').addService(googletag.pubads());
+      var sidebarRightSlot = googletag.defineSlot('/23054707577/GrHBPdvN', [[300, 600], [250, 600], [160, 600]], 'div-gpt-ad-1705155070019-0').addService(googletag.pubads());
+
+      var headerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var footerMapping = googletag.sizeMapping()
+        .addSize([1025, 0], [[980, 280]])
+        .addSize([770, 0], [[728, 280]])
+        .addSize([335, 0], [[300, 250], [250, 250]])
+        .addSize([0, 0], [[300, 250], [250, 250]])
+        .build();
+      var articleMapping = googletag.sizeMapping()
+        .addSize([770, 0], [[728, 90]])
+        .addSize([0, 0], [[468, 90], [300, 90]])
+        .build();
+      var sidebarLeftMapping = googletag.sizeMapping()
+        .addSize([1750, 0], [[300, 600]])
+        .addSize([0, 0], [])
+        .build();
+      var sidebarRightMapping = googletag.sizeMapping()
+        .addSize([1440, 0], [[300, 600]])
+        .addSize([1366, 0], [[250, 600]])
+        .addSize([1280, 0], [[160, 600]])
+        .addSize([0, 0], [])
+        .build();
+
+      headerSlot.defineSizeMapping(headerMapping);
+      footerSlot.defineSizeMapping(footerMapping);
+      articleSlot.defineSizeMapping(articleMapping);
+      sidebarLeftSlot.defineSizeMapping(sidebarLeftMapping);
+      sidebarRightSlot.defineSizeMapping(sidebarRightMapping);
+
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+    });
+</script>
+
+  
+  
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/header_hu_c95b5ba83a0ab083.webp" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            
+<div id='div-gpt-ad-1705155070019-0' style='min-width: 160px; min-height: 600px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705155070019-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Teses de integración sobre mocks de un OpenAPI con Microcks</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>29/10/2026</time>.
+      
+        <br>
+        <i class="bi bi-tag"></i>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+        
+      
+      <br>
+      <i class="bi bi-link-45deg"></i>
+      <a href="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/">Enlace permanente</a>
+      
+        <i class="bi bi-chat"></i>
+        <a href="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Los tests unitarios son rápidos, pero se ejecutan en un entorno mínimo y asilado que no es el de producción. Con Testcontainers, los tests de integración pueden usar las mismas herramientas que en producción, como PostgreSQL o Kafka. En este artículo vemos cómo probar los clientes REST de un microservicio, es decir, los adaptadores de salida de una arquitectura hexagonal, con Microcks. Microcks es un servidor mock de la CNCF que genera las respuestas directamente a partir de la definición OpenAPI o AsyncAPI de un servicio, y que permite empezar a desarrollar sin tener el servicio real ni un entorno <em>sandbox</em>.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      
+<div id='div-gpt-ad-1705154918797-0' style='min-width: 300px; min-height: 90px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154918797-0'); });
+  </script>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/microcks.svg" width="250" height="221" alt="Microcks" title="Microcks" class="" loading="false"></p>
+</div>
+<p>Los teses unitarios son los más numerosos por su rapidez de ejecución y probar el objeto bajo prueba de forma aislada y controlada. Sin embargo, los teses unitarios se ejecutan en un entorno controlado sintético que no refleja el entorno de ejecución real. Los teses de integración prueban el objeto bajo prueba con elementos adicionales que representa de forma más fiable el entorno en el que se ejecutan en el entorno de producción.</p>
+<p>Los teses de integración han sido a veces limitados por la dificultad de simular el entorno de producción. Ahora gracias a los contenedores y con <a href="https://www.testcontainers.org/">Testcontainers</a> es posible crear teses de integración que usen las mismas herramientas de producción como una base de datos relacional <a href="https://www.postgresql.org/">PostgresSQL</a> o un sistema de mensajería como <a href="https://kafka.apache.org/">Apache Kafka</a>.</p>
+<p>Con Testcontainers es posible probar de forma completa el código de la aplicación incluida esa parte que se relaciona con el sistema externo. Por ejemplo, probar el acceso a una base de datos relacional y lanzar SQLs o enviar y recibir mensajes de Kafa y <a href="https://spring.io/projects/spring-cloud-stream">Spring Cloud Stream</a>.</p>
+<p>Una parte habitual en los microservicios es probar las peticiones REST que realiza a otros microservicios. Para esto se necesita un servidor ficticio o <em>mock</em> con respuestas preprogramadas que simulen las respuestas y que permitan validar el código de infraestructura y adaptador de salida en una arquitectura hexagonal que realiza las peticiones al sistema externo.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2021/07/servidor-mock-para-imitar-peticiones-y-respuestas-de-servicios-http-con-wiremock/">Servidor mock para imitar peticiones y respuestas de servicios HTTP con WireMock</a></li>
+</ul>
+<div class="row toc"><div class="col-12 col-lg-8"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
+  <ol>
+    <li><a href="#mickrocks">Mickrocks</a>
+      <ol>
+        <li><a href="#contenedor-de-microcks">Contenedor de Microcks</a></li>
+        <li><a href="#test-de-integración-con-testcontainers-y-spring-boot">Test de integración con Testcontainers y Spring Boot</a></li>
+      </ol>
+    </li>
+    <li><a href="#otras-opciones">Otras opciones</a></li>
+  </ol>
+</nav></div> </div><div class="col-12 col-lg-4"></div></div>
+<h2 id="mickrocks">Mickrocks</h2>
+<p><a href="https://microcks.io/">Microcks</a> es un servidor adoptado en la <a href="https://landscape.cncf.io/">CNCF</a> que permite preprogramar respuestas de servicios REST y sistemas de mensajes proporcionando simplemente la definición del documento <a href="https://www.openapis.org/">OpenAPI</a> o AsynAPI. A partir del documento OpenAPI para cada <em>endpoint</em> de la API se programa una respuesta válida según la definición de la API.</p>
+<p>Hay varias formas de usar Mickrocks, una de ellas es en teses de integración con Testcontainers y <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> para probar un cliente de una API. Esto tiene la ventaja de que teniendo disponible la definición del OpenAPI es posible empezar a desarrollar el cliente sin necesidad de tener la parte servidora real o un entorno <em>sandbox</em> para el mismo.</p>
+<p>Otra forma de ejecución es mediante un contenedor que arranque el servidor de Microcks. El propio servidor permite cargar varios ejemplos de APIs con su definición de OpenAPI como los de <em>petstore</em> y <em>pastry</em>.</p>
+<p>Microcks adicionalmente permite probar API en <a href="https://graphql.org/">GraphQL</a>, <a href="https://grpc.io/">gRPC</a> y los mencionados <a href="https://www.asyncapi.com/en">AsyncAPI</a>. Otras opciones solo soportan HTTP preprogramando las peticiones y respuestas a más bajo nivel sin partir del documento OpenAPI.</p>
+<h3 id="contenedor-de-microcks">Contenedor de Microcks</h3>
+<p>En la <a href="https://microcks.io/documentation/tutorials/getting-started/">guía de inicio de Microcks</a> se muestra y explica como probar Microcks utilizando <a href="https://www.docker.com/">Docker</a>.</p>
+<p>Lo primero es iniciar el contenedor de Microscks.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -p 8585:8080 -it --rm quay.io/microcks/microcks-uber:latest-native&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-run.sh</span>
+    </div>
+</div>
+<p>Accediendo a <em>http://localhost:8585</em> con el navegador se carga al panel de administración.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/microcks-1_hu_e7dd9c4c46017ee5.webp" data-gallery="" title="Consola de Microcks"><img src="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/microcks-1_hu_9e5229231079e003.webp" width="502" height="300" alt="Consola de Microcks" title="Consola de Microcks" class="" loading="lazy"></a></p>
+<figcaption>Consola de Microcks</figcaption>
+</figure>
+</div>
+<p>Desde <em>Microcks Hub</em> es posible cargar un ejemplo de OpenAPI.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/microcks-2_hu_98f6c4b68ee06ae8.webp" data-gallery="" title="Ejemplos de APIs en el Hub de Microcks"><img src="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/microcks-2_hu_270f0b534d75e62e.webp" width="200" height="120" alt="Ejemplos de APIs en el Hub de Microcks" title="Ejemplos de APIs en el Hub de Microcks" class="" loading="lazy"></a>
+<a href="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/microcks-3_hu_4788a417558cb8e6.webp" data-gallery="" title="Ejemplos de APIs en el Hub de Microcks"><img src="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/microcks-3_hu_c8b8a171dfd27b4b.webp" width="200" height="120" alt="Ejemplos de APIs en el Hub de Microcks" title="Ejemplos de APIs en el Hub de Microcks" class="" loading="lazy"></a>
+<a href="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/microcks-4_hu_8963053f6ab0c547.webp" data-gallery="" title="Ejemplos de APIs en el Hub de Microcks"><img src="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/microcks-4_hu_94fa4d6e9de053f3.webp" width="200" height="120" alt="Ejemplos de APIs en el Hub de Microcks" title="Ejemplos de APIs en el Hub de Microcks" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/microcks-5_hu_d8db244511083542.webp" data-gallery="" title="Ejemplos de APIs en el Hub de Microcks"><img src="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/microcks-5_hu_30291271c7e5d3aa.webp" width="200" height="120" alt="Ejemplos de APIs en el Hub de Microcks" title="Ejemplos de APIs en el Hub de Microcks" class="" loading="lazy"></a></p>
+<figcaption>Ejemplos de APIs en el Hub de Microcks</figcaption>
+</figure>
+</div>
+<p>En <em>APIs | Services</em> es posible inspeccionar las APIs cargadas como <em>mocks</em>.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/microcks-6_hu_bf3650afc9f74051.webp" data-gallery="" title="Ejemplo de mock de un OpenAPI en Microcks"><img src="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/microcks-6_hu_eb91a40c816c7359.webp" width="200" height="120" alt="Ejemplo de mock de un OpenAPI en Microcks" title="Ejemplo de mock de un OpenAPI en Microcks" class="" loading="lazy"></a>
+<a href="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/microcks-7_hu_35c476db0894abe5.webp" data-gallery="" title="Ejemplo de mock de un OpenAPI en Microcks"><img src="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/microcks-7_hu_d82b4a0a7a66ad82.webp" width="200" height="120" alt="Ejemplo de mock de un OpenAPI en Microcks" title="Ejemplo de mock de un OpenAPI en Microcks" class="" loading="lazy"></a>
+<a href="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/microcks-8_hu_9710335501207435.webp" data-gallery="" title="Ejemplo de mock de un OpenAPI en Microcks"><img src="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/microcks-8_hu_9c6d16e346aaaa00.webp" width="200" height="120" alt="Ejemplo de mock de un OpenAPI en Microcks" title="Ejemplo de mock de un OpenAPI en Microcks" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/microcks-9_hu_192e1c4708ea16b3.webp" data-gallery=""><img src="/blog-bitix/2026/10/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks/images/microcks-9_hu_f68552ee26ef933a.webp" width="200" height="120" class="" loading="lazy"></a></p>
+<figcaption>Ejemplo de mock de un OpenAPI en Microcks</figcaption>
+</figure>
+</div>
+<p>Con el comando <em>curl</em> se realiza la petición REST a la API mockeada.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -X GET <span class="s1">&#39;http://localhost:8585/rest/API+Pastry+-+2.0/2.0.0/pastry/Eclair+Cafe&#39;</span> -H <span class="s1">&#39;Accept: application/json&#39;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-pastry-request.sh</span>
+    </div>
+</div>
+<p>Este es la respuesta.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;Eclair Cafe&#34;</span><span class="p">,</span><span class="nt">&#34;description&#34;</span><span class="p">:</span><span class="s2">&#34;Delicieux Eclair au Cafe pas calorique du tout&#34;</span><span class="p">,</span><span class="nt">&#34;size&#34;</span><span class="p">:</span><span class="s2">&#34;M&#34;</span><span class="p">,</span><span class="nt">&#34;price&#34;</span><span class="p">:</span><span class="mf">2.5</span><span class="p">,</span><span class="nt">&#34;status&#34;</span><span class="p">:</span><span class="s2">&#34;available&#34;</span><span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pastry-response.out</span>
+    </div>
+</div>
+<h3 id="test-de-integración-con-testcontainers-y-spring-boot">Test de integración con Testcontainers y Spring Boot</h3>
+<p>Una forma alternativa muy útil a un servidor autónomo es realizar las pruebas como teses de integración del servicio. En la definición del contenedor de Testcontainers se añade el OpenAPI para que Microcks cree el <em>mock</em>, el proprio OpenAPI tiene instrucciones para definir el compoeramiento del <em>mock</em> con ejemplos de valores y código para su comportamiento. Tras crear el contenedor es posible obtener la URL base del servidor al que añadir el <em>path</em> del <em>endpoint</em> al que enviar las peticiones.</p>
+<p>Utilizando <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/RestClient.html">RestClient</a> el siguinte código hace una petición al servicio REST desde un test de integración que arranca Microcks con Testcontainers y obtiene el base URL del servidor de Mickrocks. La propiedad de configuración <em>pastry.api.base-url</em> se configura dinámicamente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.microcks</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import static</span><span class="w"> </span><span class="nn">org.assertj.core.api.Assertions.assertThat</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.math.BigDecimal</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">io.github.microcks.testcontainers.MicrocksContainer</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.junit.jupiter.api.Test</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.boot.test.context.SpringBootTest</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.test.context.DynamicPropertyRegistry</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.test.context.DynamicPropertySource</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.testcontainers.junit.jupiter.Container</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.testcontainers.junit.jupiter.Testcontainers</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.testcontainers.utility.DockerImageName</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="nd">@SpringBootTest</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="nd">@Testcontainers</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">PastryClientTest</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@Container</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">static</span><span class="w"> </span><span class="n">MicrocksContainer</span><span class="w"> </span><span class="n">microcks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MicrocksContainer</span><span class="p">(</span><span class="n">DockerImageName</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="s">&#34;quay.io/microcks/microcks-uber:1.11.0&#34;</span><span class="p">))</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">.</span><span class="na">withMainArtifacts</span><span class="p">(</span><span class="s">&#34;pastry-openapi.yaml&#34;</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@DynamicPropertySource</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">apiProperties</span><span class="p">(</span><span class="n">DynamicPropertyRegistry</span><span class="w"> </span><span class="n">registry</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">registry</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;pastry.api.base-url&#34;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">microcks</span><span class="p">.</span><span class="na">getRestMockEndpoint</span><span class="p">(</span><span class="s">&#34;API Pastries&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;0.0.1&#34;</span><span class="p">));</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@Autowired</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">PastryClient</span><span class="w"> </span><span class="n">client</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@Test</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">void</span><span class="w"> </span><span class="nf">shouldFindPastryByName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">Pastry</span><span class="w"> </span><span class="n">pastry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="na">findByName</span><span class="p">(</span><span class="s">&#34;Millefeuille&#34;</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">assertThat</span><span class="p">(</span><span class="n">pastry</span><span class="p">.</span><span class="na">name</span><span class="p">()).</span><span class="na">isEqualTo</span><span class="p">(</span><span class="s">&#34;Millefeuille&#34;</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">assertThat</span><span class="p">(</span><span class="n">pastry</span><span class="p">.</span><span class="na">size</span><span class="p">()).</span><span class="na">isEqualTo</span><span class="p">(</span><span class="s">&#34;L&#34;</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">assertThat</span><span class="p">(</span><span class="n">pastry</span><span class="p">.</span><span class="na">price</span><span class="p">()).</span><span class="na">isEqualByComparingTo</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BigDecimal</span><span class="p">(</span><span class="s">&#34;4.40&#34;</span><span class="p">));</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">assertThat</span><span class="p">(</span><span class="n">pastry</span><span class="p">.</span><span class="na">status</span><span class="p">()).</span><span class="na">isEqualTo</span><span class="p">(</span><span class="s">&#34;available&#34;</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>PastryClientTest.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.microcks</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.beans.factory.annotation.Value</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Component</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.client.RestClient</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="nd">@Component</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PastryClient</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">RestClient</span><span class="w"> </span><span class="n">restClient</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="nf">PastryClient</span><span class="p">(</span><span class="n">RestClient</span><span class="p">.</span><span class="na">Builder</span><span class="w"> </span><span class="n">builder</span><span class="p">,</span><span class="w"> </span><span class="nd">@Value</span><span class="p">(</span><span class="s">&#34;${pastry.api.base-url}&#34;</span><span class="p">)</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">baseUrl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="na">restClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="na">baseUrl</span><span class="p">(</span><span class="n">baseUrl</span><span class="p">).</span><span class="na">build</span><span class="p">();</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="w"> </span><span class="n">Pastry</span><span class="w"> </span><span class="nf">findByName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="w"> </span><span class="n">restClient</span><span class="p">.</span><span class="na">get</span><span class="p">()</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="p">.</span><span class="na">uri</span><span class="p">(</span><span class="s">&#34;/pastries/{name}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="p">.</span><span class="na">retrieve</span><span class="p">()</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="n">Pastry</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>PastryClient.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">pastry</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">api</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">base-url</span><span class="p">:</span><span class="w"> </span><span class="l">https://pastry.example.com/api</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application.yml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">io.github.picodotdev.blogbitix.microcks</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.math.BigDecimal</span><span class="p">;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">record</span> <span class="nc">Pastry</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">description</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">BigDecimal</span><span class="w"> </span><span class="n">price</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Pastry.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="n">plugins</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">application</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span><span class="p">(</span><span class="s2">&#34;org.springframework.boot&#34;</span><span class="p">)</span> <span class="n">version</span> <span class="s2">&#34;4.1.2&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">repositories</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="p">()</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">dependencies</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="p">(</span><span class="n">platform</span><span class="p">(</span><span class="s2">&#34;org.springframework.boot:spring-boot-dependencies:4.1.2&#34;</span><span class="p">))</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="p">(</span><span class="s2">&#34;org.springframework.boot:spring-boot-starter-webmvc&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="p">(</span><span class="s2">&#34;org.springframework.boot:spring-boot-starter-restclient&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">testImplementation</span><span class="p">(</span><span class="s2">&#34;org.springframework.boot:spring-boot-starter-test&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">testImplementation</span><span class="p">(</span><span class="s2">&#34;org.testcontainers:testcontainers-junit-jupiter&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">testImplementation</span><span class="p">(</span><span class="s2">&#34;io.github.microcks:microcks-testcontainers:0.5.0&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">testRuntimeOnly</span><span class="p">(</span><span class="s2">&#34;org.junit.platform:junit-platform-launcher&#34;</span><span class="p">)</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">java</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">sourceCompatibility</span> <span class="p">=</span> <span class="nc">JavaVersion</span><span class="p">.</span><span class="n">VERSION_21</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">targetCompatibility</span> <span class="p">=</span> <span class="nc">JavaVersion</span><span class="p">.</span><span class="n">VERSION_21</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">application</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mainClass</span> <span class="p">=</span> <span class="s2">&#34;io.github.picodotdev.blogbitix.microcks.Main&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">tasks</span><span class="p">.</span><span class="n">withType</span><span class="p">&lt;</span><span class="n">Test</span><span class="p">&gt;</span> <span class="p">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">useJUnitPlatform</span><span class="p">()</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle.kts</span>
+    </div>
+</div>
+<h2 id="otras-opciones">Otras opciones</h2>
+<p>Otras opciones populares de servidores mock para peticiones REST son <a href="http://wiremock.org/">WireMock</a>, <a href="https://www.mock-server.com/">Mock Server</a> y <a href="https://stoplight.io/open-source/prism/">Prism</a>. Sin embargo, estas opciones solo soportan el protocolo REST y no soportan el resto de protocolos que soporta Microcks. Otro aspecto relevante es que se programan con peticiones de ejemplo y no a partir de la definición del OpenAPI.</p>
+<div class="alert alert-secondary sourcecode fs-6">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaMicrocks">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew test</code></p>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/">
+                <img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu_bdaef561a7c6ff9e.webp" width="326" height="125" alt="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" title="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" class="" loading="lazy">
+                <h3>Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="326" height="125" alt="Microservicios con Spring Cloud, Consul, Nomad y Traefik" title="Microservicios con Spring Cloud, Consul, Nomad y Traefik" class="" loading="lazy">
+                <h3>Microservicios con Spring Cloud, Consul, Nomad y Traefik</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/12/hemeroteca-14/">
+                <img src="/blog-bitix/assets/images/logotypes/blog-bitix.svg" width="326" height="125" alt="Hemeroteca #14" title="Hemeroteca #14" class="" loading="lazy">
+                <h3>Hemeroteca #14</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/06/hemeroteca-13/">
+                <img src="/blog-bitix/assets/images/logotypes/blog-bitix.svg" width="326" height="125" alt="Hemeroteca #13" title="Hemeroteca #13" class="" loading="lazy">
+                <h3>Hemeroteca #13</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/12/hemeroteca-12/">
+                <img src="/blog-bitix/assets/images/logotypes/blog-bitix.svg" width="326" height="125" alt="Hemeroteca #12" title="Hemeroteca #12" class="" loading="lazy">
+                <h3>Hemeroteca #12</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/06/hemeroteca-11/">
+                <img src="/blog-bitix/assets/images/logotypes/blog-bitix.svg" width="326" height="125" alt="Hemeroteca #11" title="Hemeroteca #11" class="" loading="lazy">
+                <h3>Hemeroteca #11</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            
+<div id='div-gpt-ad-1705154566741-0' style='min-width: 250px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1705154566741-0'); });
+  </script>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-739';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2026\/10\/teses-de-integracion-sobre-mocks-de-un-openapi-con-microcks\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre el lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema y estar asistido por IA.</p>
+      <p>Publicaba de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/privacy/">Política de privacidad</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2026 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>
