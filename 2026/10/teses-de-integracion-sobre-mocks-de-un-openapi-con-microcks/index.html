@@ -326,7 +326,7 @@
 </ul>
 <div class="row toc"><div class="col-12 col-lg-8"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><p class="fs-5 fw-bold mt-3">Contenido del artículo</p><nav id="TableOfContents">
   <ol>
-    <li><a href="#mickrocks">Mickrocks</a>
+    <li><a href="#microcks">Microcks</a>
       <ol>
         <li><a href="#contenedor-de-microcks">Contenedor de Microcks</a></li>
         <li><a href="#test-de-integración-con-testcontainers-y-spring-boot">Test de integración con Testcontainers y Spring Boot</a></li>
@@ -335,7 +335,7 @@
     <li><a href="#otras-opciones">Otras opciones</a></li>
   </ol>
 </nav></div> </div><div class="col-12 col-lg-4"></div></div>
-<h2 id="mickrocks">Mickrocks</h2>
+<h2 id="microcks">Microcks</h2>
 <p><a href="https://microcks.io/">Microcks</a> es un servidor adoptado en la <a href="https://landscape.cncf.io/">CNCF</a> que permite preprogramar respuestas de servicios REST y sistemas de mensajes proporcionando simplemente la definición del documento <a href="https://www.openapis.org/">OpenAPI</a> o AsynAPI. A partir del documento OpenAPI para cada <em>endpoint</em> de la API se programa una respuesta válida según la definición de la API.</p>
 <p>Hay varias formas de usar Mickrocks, una de ellas es en teses de integración con Testcontainers y <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> para probar un cliente de una API. Esto tiene la ventaja de que teniendo disponible la definición del OpenAPI es posible empezar a desarrollar el cliente sin necesidad de tener la parte servidora real o un entorno <em>sandbox</em> para el mismo.</p>
 <p>Otra forma de ejecución es mediante un contenedor que arranque el servidor de Microcks. El propio servidor permite cargar varios ejemplos de APIs con su definición de OpenAPI como los de <em>petstore</em> y <em>pastry</em>.</p>
