@@ -32,7 +32,7 @@ Una parte habitual en los microservicios es probar las peticiones REST que reali
 
 {{< tableofcontents >}}
 
-## Mickrocks
+## Microcks
 
 [Microcks][microcks] es un servidor adoptado en la [CNCF][cncf-landscape] que permite preprogramar respuestas de servicios REST y sistemas de mensajes proporcionando simplemente la definición del documento [OpenAPI][openapi] o AsynAPI. A partir del documento OpenAPI para cada _endpoint_ de la API se programa una respuesta válida según la definición de la API.
 
